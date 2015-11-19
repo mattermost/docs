@@ -7,8 +7,6 @@ install:
 script:
 - make html
 
-before_deploy:
-  - rvm 1.9.3 do gem install aws-sdk -v 2.1.21
 
 deploy:
 - provider: s3
