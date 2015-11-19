@@ -10,6 +10,7 @@ install:
 
 script:
  - make html
+ - cat build/html/index.html
 
 # S3 deploy for documentation
  - provider: s3
