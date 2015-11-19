@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>- Beginning of release &mdash; Mattermost 1.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Mattermost 1.3 documentation" href="../index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>We&#8217;re working on making internal processes in the Mattermost core team more transparent for the community. Below is a working draft of our software development process, which will be updated live as we refine our process.</p>
+<p>Questions, feedback, comments always welcome,</p>
+<hr class="docutils" />
+<p>Mattermost core team works on a monthly release process, with a new version shipping on the 16th of each month.</p>
+<p>This document outlines the development process for the Mattermost core team, which draws from what we find works best for us from Agile, Scrum and Software Development Lifecycle approaches.</p>
+<p>This is a working document that will update as our process evolves.</p>
+<div class="section" id="beginning-of-release">
+<span id="beginning-of-release"></span><h1>- Beginning of release<a class="headerlink" href="#beginning-of-release" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>(Ops) Queue an agenda item for first team meeting of the release to review Roadmap</li>
+</ul>
+</div>
+<div class="section" id="weekdays-before-release-date-cut-off-for-major-features">
+<span id="weekdays-before-release-date-cut-off-for-major-features"></span><h1>- (10 weekdays before release date) Cut-off for major features<a class="headerlink" href="#weekdays-before-release-date-cut-off-for-major-features" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>No major features can be committed to the current release after this date</li>
+<li>(Dev) Prioritize reviewing, updating, and merging of all pull requests that are going to make it into the release<ul>
+<li>There should be no more tickets in the <a class="reference external" href="https://github.com/mattermost/platform/pulls">pull request queue</a> marked for the current release</li>
+</ul>
+</li>
+<li>(Leads) Meets to prioritize the final tickets of the release<ul>
+<li>Backlog is reviewed and major features that won’t make it are moved to next release</li>
+<li>Triage tickets</li>
+<li>Review roadmap for next release</li>
+</ul>
+</li>
+<li>(Marketing) Writes the &#8220;Highlights&#8221; section of the Changelog</li>
+<li>(PM) Write compatibility updates for config.json and database changes <a class="reference external" href="https://github.com/mattermost/platform/blob/master/CHANGELOG.md#compatibility">See example</a></li>
+<li>(PM) Update <a class="reference external" href="https://github.com/mattermost/platform/blob/master/doc/install/Upgrade-Guide.md">Upgrade Guide</a> for any steps needed to upgrade to new version</li>
+<li>(PM) Prepare tickets for cutting RCs builds, filing issue in GitLab omnibus to take RC candidate, testing GitLab RC with Mattermost</li>
+<li>(Stand-up) Each team member discusses worst bug</li>
+</ul>
+</div>
+<div class="section" id="weekdays-before-release-date-feature-complete-and-stabilization">
+<span id="weekdays-before-release-date-feature-complete-and-stabilization"></span><h1>- (8 weekdays before release date) Feature Complete and Stabilization<a class="headerlink" href="#weekdays-before-release-date-feature-complete-and-stabilization" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>After the cut-off time for Feature Complete, Dev prioritizes reviewing PRs and committing to master so Stabilization period can begin, with testing and high priority bug fixes</li>
+<li>During Stabilization period only BUGS can be committed to master, non-bug tickets are tagged for next version and wait until after a release candidate is cut to be added to master<ul>
+<li>(PM) Review all <a class="reference external" href="https://mattermost.atlassian.net/secure/IssueNavigator.jspa?mode=hide&amp;requestId=10600">S1 bugs</a> and mark important ones as high priority</li>
+<li>(Dev + PM) Exceptions can be made by triage team consensus across PM and Dev. List of approved changes for release candidate 1 here: https://mattermost.atlassian.net/issues/?filter=10204</li>
+</ul>
+</li>
+<li>(PM) Documentation<ul>
+<li>(PM) Make Changelog PR with updates for latest feature additions and changes</li>
+<li>(PM) Make Changelog PR with updates to contributors</li>
+<li>(PM) Make NOTICE.txt PR for any new libraries added from dev, if not added already</li>
+<li>(PM) Prioritize any developer documentation tickets</li>
+</ul>
+</li>
+<li>(PM and devs) Sign-off testing of their feature areas (i.e. PM/dev either signs-off that their area is well tested, or they flag that potential quality issues may exist)</li>
+<li>(Ops) Mail out mugs to any new contributors</li>
+<li>(Team) Select &#8220;Top Contributor&#8221; for the release from external contributions to be mentioned in release announcement</li>
+<li>(Marketing) Decides announce date (discuss in meeting)</li>
+<li>(Ops) Post Announce Date in Release channel + update the channel header to reflect date</li>
+<li>(Marketing) Communicates checklist of items needed by specific dates to write the blog post announce (e.g. screenshots, GIFs, documentation) and begins to write the blog post, tweet, and email for the release announcement</li>
+<li>(PM) Works with Ops to check the Quality Gate for feature complete</li>
+<li>(PM) Communicate to team the plan for next release</li>
+<li>(Stand-up) Each team member discusses worst bug</li>
+</ul>
+</div>
+<div class="section" id="weekdays-before-release-date-code-complete-and-release-candidate-cut">
+<span id="weekdays-before-release-date-code-complete-and-release-candidate-cut"></span><h1>- (5 weekdays before release date) Code Complete and Release Candidate Cut<a class="headerlink" href="#weekdays-before-release-date-code-complete-and-release-candidate-cut" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>(Team) Meets to discuss release at 10am PST<ul>
+<li>(PM) Each area changed in latest release is assigned a PM owner to lead testing</li>
+<li>(Ops) Walks through each item of the <strong>Code Complete and Release Candidate Cut</strong> checklist</li>
+<li>(Dev) Last check of tickets that need to be merged before RC1</li>
+<li>(Team) Each team member discusses worst bug</li>
+</ul>
+</li>
+<li>After 10am PST meeting the release is considered “Code Complete”.<ul>
+<li>(Dev) Completes final reviews and updates of PRs marked for the release version<ul>
+<li>There should be no more tickets in the <a class="reference external" href="https://github.com/mattermost/platform/pulls">pull request queue</a> marked for the current release</li>
+</ul>
+</li>
+<li>Master is tagged and branched and “Release Candidate 1″ is cut (e.g. 1.1.0-RC1) according to the Release Candidate Checklist</li>
+<li>(PM) Create meta issue for regressions in GitHub (see <a class="reference external" href="https://github.com/mattermost/platform/issues/574">example</a>)</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="weekdays-before-release-date-release-candidate-testing">
+<span id="weekdays-before-release-date-release-candidate-testing"></span><h1>- (4 weekdays before release date) Release Candidate Testing<a class="headerlink" href="#weekdays-before-release-date-release-candidate-testing" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Final testing is conducted by the team on the acceptance server and any issues found are filed</li>
+<li>(Dev) Tests upgrade from previous version to current version, following the <a class="reference external" href="https://github.com/mattermost/platform/blob/master/doc/install/Upgrade-Guide.md">Upgrade Guide</a></li>
+<li>(Ops) Posts copy of the <strong>Release Candidate Testing</strong> checklist into Town Square in PRODUCTION<ul>
+<li>(Ops) Moves meeting, test and community channels over to the production version of RC, and posts in Town Square asking everyone to move communication over to the new team for testing purposes</li>
+<li>(PM) Test feature areas and post bugs to Bugs/Issues in PRODUCTION</li>
+<li>(Ops) Runs through general testing checklist on RC1 and post bugs to Bugs/Issues in PRODUCTION</li>
+<li>(PM &amp; DEV) Add <strong>#p1</strong> tag to any “Blocking” issue that looks like a hotfix to the RC is needed, and create a public ticket in Jira. Blocking issues are considered to be security issues, data loss issues, issues that break core functionality, or significantly impact aesthetics.</li>
+</ul>
+</li>
+<li>(PM) Updates the GitHub meta issue<ul>
+<li>(PM) Posts links to all issues found in RC as comments on the meta issue</li>
+<li>(PM) Updates description to include approved fixes</li>
+<li>(PM) Posts screenshot and link to final tickets for next RC to the Release room</li>
+</ul>
+</li>
+<li>(PM &amp; DEV leads) Triage hotfix candidates and decide on whether and when to cut next RC or final</li>
+<li>(Dev) PRs for hotfixes made to release branch, and changes from release branch are merged into master</li>
+<li>(Ops) Tests approved fixes on master</li>
+<li>(Dev) Pushes next RC to acceptance after testing is complete and approved fixes merged</li>
+<li>(Dev) pushes next RC to acceptance and announces in Town Square on PRODUCTION<ul>
+<li>(PM) closes the meta issue after the next RC is cut, and opens another ticket for new RC</li>
+</ul>
+</li>
+<li>(Ops) verifies each of the issues in meta ticket is fixed</li>
+<li>(PM) If no blocking issues are found, PM, Dev and Ops signs off on the release</li>
+</ul>
+</div>
+<div class="section" id="weekdays-before-release-date-release">
+<span id="weekdays-before-release-date-release"></span><h1>- (2 weekdays before release date) Release<a class="headerlink" href="#weekdays-before-release-date-release" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>(Dev) Tags a new release (e.g. 1.1.0) and runs an official build which should be essentially identical to the last RC</li>
+<li>(PM) Any significant issues that were found and not fixed for the final release are noted in the release notes</li>
+<li>If an urgent and important issue needs to be addressed between major releases, a hotfix release (e.g. 1.1.1) may be released, however this should be very rare, given a monthly cadence</li>
+<li>(PM) Copy and paste the Release Notes from the Changelog to the Release Description</li>
+<li>(PM) Update the mattermost.org/download page</li>
+<li>(Dev) Delete RCs after final version is shipped</li>
+<li>(PM) Close final GitHub RC meta ticket</li>
+</ul>
+</div>
+<div class="section" id="weekdays-before-release-date-end-of-release">
+<span id="weekdays-before-release-date-end-of-release"></span><h1>- (0 weekdays before release date) End of Release<a class="headerlink" href="#weekdays-before-release-date-end-of-release" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>(PM) Makes sure marketing has been posted (animated GIFs, screenshots, mail announcement, Tweets, blog posts)</li>
+<li>(PM) Close the release in Jira</li>
+<li>(Dev) Check if any libraries need to be updated for the next release, and if so bring up in weekly team meeting</li>
+<li>(Ops) Post important dates for the next release in the header of the Release channel</li>
+<li>(Ops) Queue an agenda item for next team meeting for &#8220;Stepping Back&#8221; Q&amp;A</li>
+<li>(Ops) Queue an agenda item for next team meeting for Roadmap review</li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">- Beginning of release</a></li>
+<li><a class="reference internal" href="#weekdays-before-release-date-cut-off-for-major-features">- (10 weekdays before release date) Cut-off for major features</a></li>
+<li><a class="reference internal" href="#weekdays-before-release-date-feature-complete-and-stabilization">- (8 weekdays before release date) Feature Complete and Stabilization</a></li>
+<li><a class="reference internal" href="#weekdays-before-release-date-code-complete-and-release-candidate-cut">- (5 weekdays before release date) Code Complete and Release Candidate Cut</a></li>
+<li><a class="reference internal" href="#weekdays-before-release-date-release-candidate-testing">- (4 weekdays before release date) Release Candidate Testing</a></li>
+<li><a class="reference internal" href="#weekdays-before-release-date-release">- (2 weekdays before release date) Release</a></li>
+<li><a class="reference internal" href="#weekdays-before-release-date-end-of-release">- (0 weekdays before release date) End of Release</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/process/release-process.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015, Mattermost.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      
+      |
+      <a href="../_sources/process/release-process.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
