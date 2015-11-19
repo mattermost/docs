@@ -26,4 +26,4 @@ script:
    on:
      repo: mattermost/docs
      branch: master
-     go: 2.7
+     python: 2.7
