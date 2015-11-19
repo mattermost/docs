@@ -6,6 +6,7 @@ python:
 install:
  - pip install sphinx sphinx-autobuild
  - pip install recommonmark
+ - echo $PWD
 
 script:
  - make html
