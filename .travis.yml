@@ -16,7 +16,7 @@ deploy:
   secret_access_key: 
      secure: Ot8NVelbgbFM8nHnj/F72qPs3cRZs9Git2qpAVRtMTipGXSSCIifD0Fi/6a8fuKf0Cwa8ZYzaymoYLhMDhfbL3Cg49l71KemVOIxdrIeLkn936wzu/+/gRn+wrVYCfhDcyPRzM83U36KUFLp25V1dGa0qmaOcF8M0OWlIEAp8iEXe5jndIuoQuBmKTUZajB9EFB+W2qmJ3+b2uHQpGVeYStlmOTWn/mnpz/rRrSSuJVkbXlHj7oscUCijUhyeVl2aw42DL92w7C6Mm3y79sxQK34TFsGO+2k+Ksdw7dNcPoEUW/Ycc6qnBueYjtLqBJH3BhLNO3RXjAeYpzcd53vfVRqwaGmSR2LfCh2OivrXYdLJronElPW2CkxN979ZEYoypOVfqSDk98Hm0Rogc+MALh/ogBLYuPnENpWoynAa1zSY6I+pFsJZP+iW/Z9vpzE8Dc3Hx+OmL+mBHpCcGLuf82f8PVdWKQi4j8ur4Fa6IyjyrJ0eMP25tEONBJpVdaZ3kzGSoa3diQTGU+MMayUYgf5PiZRKOOz5LTkPoMubLr648unwMjbM0O3StAfoyt7WTfpkXMEAStYCUZl45MFQ9+Z7gPSZU9m4OGjSAOa502V2UdXjTUoZtGkj+i+PlpXlBbFTvP0KCDSBhsp72DuWiRTjYxWihr49xBjolct2R4=
   bucket: docs.mattermost.org
-  local_dir: build/html
+  local_dir: "build/html"
   acl: public_read
   region: us-east-1
   skip_cleanup: true
