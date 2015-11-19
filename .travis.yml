@@ -8,8 +8,8 @@ script:
 - make html
 
 before_deploy:
-  - rvm 1.9.3 do gem install aws-sdk -v 2.1.36
-  
+  - rvm 1.9.3 do gem install aws-sdk -v 2.1.21
+
 deploy:
 - provider: s3
   access_key_id: AKIAJ5AUBLQFMZ62ZDUA
