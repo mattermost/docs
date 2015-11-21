@@ -10,7 +10,7 @@ A couple key points:
 _Example:_
 
 Suppose you wanted to create a notification of the status of a daily build, with a table of total tests run and total tests failed by component category, with links to failed tests by category. You could create the following JSON payload to post to a Mattermost channel using webhooks:
-
+ 
 ```
 payload={"text": "
 ---
