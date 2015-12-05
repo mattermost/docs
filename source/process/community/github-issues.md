@@ -28,10 +28,6 @@ We are very happy to have you join our growing community!
 ```
 Thanks @[GITHUB_USERNAME], appreciate the feedback, 
 
-Agree this makes sense. This feature may require some detailed specification before tickets can be created, for example: 
-
-[Examples of design issues preventing this from becoming a ticket]
-
 Could we have your help [contributing this in the feature idea forum](http://www.mattermost.org/feature-requests/) so it can be upvoted by the community and the item prioritized? 
 ```
 
