@@ -3,29 +3,44 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Mattermost Documentation!
+Mattermost Documentation
 =========================
 
 **End User Help**  
-___  
 
 .. toctree::
    :titlesonly:
    :glob:
    
    help/*
+   help/system-console/*
    
 **Administrators Guide**  
-___  
 
 .. toctree::
    :titlesonly:
    :glob:
    
    install/*
-   integrations/*
+   
+**Integrations**  
+
+.. toctree::
+   :titlesonly:
+   :glob:
+   
+   integrations/single-sign-on*
+   integrations/services*
+   integrations/webhooks*
+   
+**Process**  
+
+.. toctree::
+   :titlesonly:
+   :glob:
+   
    process/*
-   usage/*
+   
 
 Indices and tables
 ==================
