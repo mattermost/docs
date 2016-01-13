@@ -3,21 +3,25 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Mattermost's documentation!
-======================================
+Mattermost Documentation!
+=========================
 
-Contents:
 
+   
+**End User Help**
+___
 .. toctree::
    :titlesonly:
    :glob:
    
-End User Help
-===
    help/*
    
-Administrators Guide
-===
+**Administrators Guide**
+___
+.. toctree::
+   :titlesonly:
+   :glob:
+   
    install/*
    integrations/*
    process/*
