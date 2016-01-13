@@ -12,7 +12,12 @@ Contents:
    :titlesonly:
    :glob:
    
+End User Help
+===
    help/*
+   
+Administrators Guide
+===
    install/*
    integrations/*
    process/*
