@@ -10,11 +10,11 @@ Contents:
 
 .. toctree::
    
-   help/
-   install/
-   integrations/
-   process/
-   usage/
+   help/*
+   install/*
+   integrations/*
+   process/*
+   usage/*
 
 Indices and tables
 ==================
