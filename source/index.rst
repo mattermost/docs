@@ -9,6 +9,7 @@ Welcome to Mattermost's documentation!
 Contents:
 
 .. toctree::
+   :glob:
    
    help/*
    install/*
