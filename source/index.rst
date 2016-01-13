@@ -6,18 +6,16 @@
 Mattermost Documentation!
 =========================
 
-
-   
-**End User Help**
-___
+**End User Help**  
+___  
 .. toctree::
    :titlesonly:
    :glob:
    
    help/*
    
-**Administrators Guide**
-___
+**Administrators Guide**  
+___  
 .. toctree::
    :titlesonly:
    :glob:
