@@ -8,6 +8,7 @@ Mattermost Documentation!
 
 **End User Help**  
 ___  
+
 .. toctree::
    :titlesonly:
    :glob:
@@ -16,6 +17,7 @@ ___
    
 **Administrators Guide**  
 ___  
+
 .. toctree::
    :titlesonly:
    :glob:
