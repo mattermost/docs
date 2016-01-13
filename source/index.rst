@@ -9,9 +9,12 @@ Welcome to Mattermost's documentation!
 Contents:
 
 .. toctree::
-   :maxdepth: 2
-
-
+   
+   help/
+   install/
+   integrations/
+   process/
+   usage/
 
 Indices and tables
 ==================
