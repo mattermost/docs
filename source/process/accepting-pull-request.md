@@ -1,6 +1,6 @@
-# Accepting Pull Requests (APRs)
+# Accepting Pull Requests
 
-Per the [Contributor Guide](https://github.com/mattermost/platform/blob/master/CONTRIBUTING.md), only PRs that reference Jira tickets with the "accepting pull requests" label should be submitted to this repo. This system ensures:
+Per the [Contributor Guide](https://github.com/mattermost/platform/blob/master/CONTRIBUTING.md), only PRs that reference Jira tickets with the "accepting pull requests" (APR) label should be submitted to the [Mattermost/Platform](https://github.com/mattermost/platform) repo. This system ensures:
 
 1. Proposed changes have been thoughtfully reviewed 
 2. Proposed changes can be tested, documented, and supported by volunteers
