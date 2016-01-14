@@ -14,7 +14,8 @@ Suppose you wanted to create a notification of the status of a daily build, with
 ```
 payload={"text": "
 ---
-##### Build Break - Project X - December 12, 2015 - 15:32 GMT +0
+Build Break - Project X - December 12, 2015 - 15:32 GMT +0  
+
 | Component  | Tests Run   | Tests Failed                                   |
 |:-----------|:------------|:-----------------------------------------------|
 | Server     | 948         | :white_check_mark: 0                           |
@@ -26,7 +27,8 @@ payload={"text": "
 Which would render in a Mattermost message as follows:
 
 ---
-##### Build Break - Project X - December 12, 2015 - 15:32 GMT +0
+Build Break - Project X - December 12, 2015 - 15:32 GMT +0  
+
 | Component  | Tests Run   | Tests Failed                                   |
 |:-----------|:------------|:-----------------------------------------------|
 | Server     | 948         | :white_check_mark: 0                           |
@@ -55,9 +57,9 @@ You can create a webhook integration to post into Mattermost channels and privat
  2. Next to **Incoming Webhooks** click **Edit**
  3. Select the channel or private group to receive webhook payloads, then click **Add** to create the webhook
  4. To see your new webhook in action, try a curl command from your terminal or command-line to send a JSON string as the `payload` parameter in a HTTP POST request
-     1. Example:
-     ```
-curl -i -X POST -d 'payload={"text": "Hello, this is some text."}' http://yourmattermost.com/hooks/xxx-generatedkey-xxx
+     - Example:
+```
+ curl -i -X POST -d 'payload={"text": "Hello, this is some text."}' http://yourmattermost.com/hooks/xxx-generatedkey-xxx
 ```
 
 3. Build your integration in the programming language of your choice

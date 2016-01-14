@@ -16,19 +16,38 @@ Mattermost Documentation
 
 .. toctree::
    :maxdepth: 1
-   :caption: Administration
+   :caption: Install Guides
    :glob:
    
    install/*
    
 .. toctree::
    :maxdepth: 1
+   :caption: Administration
+   :glob:
+   
+   administration/*   
+   
+.. toctree::
+   :maxdepth: 1
    :caption: Integrations
    :glob:
    
-   integrations/single-sign-on/*
-   integrations/services/*
    integrations/webhooks/*
+   integrations/services/*
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+   
+   integrations/Single-Sign-On/*
+   
+.. toctree::
+   :maxdepth: 1
+   :caption: Developer
+   :glob:
+   
+   developer/*
    
 .. toctree::
    :maxdepth: 1

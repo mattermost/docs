@@ -1,4 +1,7 @@
-## Software Requirements
+# Software & Hardware Requirements
+___
+
+## Software
 
 ### Web Client
 
@@ -43,7 +46,7 @@ Supported Operating Systems for the Mattermost Server include:
 
 The Mattermost roadmap does not currently include production support for Fedora, FreeBSD or Arch Linux. 
 
-## Hardware Requirements
+## Hardware
 
 Mattermost offers both real-time communication and file sharing. CPU and Memory requirements are typically driven by the number of concurrent users using real-time messaging. Storage requirements are typically driven by number and size of files shared. 
 

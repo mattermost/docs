@@ -1,4 +1,5 @@
-## Team Settings 
+## Team Settings  
+___ 
 
 The Team Settings menu offers Team Administrators, Team Owners and System Administrators the ability to adjust settings applied to a specific team. 
 
