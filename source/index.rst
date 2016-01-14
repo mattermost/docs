@@ -13,7 +13,7 @@ Mattermost Documentation
    :glob:
    
    help/*
-   help/system-console/*
+       help/system-console/*
    
 **Administrators Guide**  
 
@@ -29,9 +29,9 @@ Mattermost Documentation
    :titlesonly:
    :glob:
    
-   integrations/single-sign-on*
-   integrations/services*
-   integrations/webhooks*
+   integrations/single-sign-on/*
+   integrations/services/*
+   integrations/webhooks/*
    
 **Process**  
 
