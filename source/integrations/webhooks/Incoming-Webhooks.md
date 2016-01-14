@@ -14,7 +14,8 @@ Suppose you wanted to create a notification of the status of a daily build, with
 ```
 payload={"text": "
 ---
-##### Build Break - Project X - December 12, 2015 - 15:32 GMT +0
+Build Break - Project X - December 12, 2015 - 15:32 GMT +0  
+
 | Component  | Tests Run   | Tests Failed                                   |
 |:-----------|:------------|:-----------------------------------------------|
 | Server     | 948         | :white_check_mark: 0                           |
@@ -26,7 +27,8 @@ payload={"text": "
 Which would render in a Mattermost message as follows:
 
 ---
-Build Break - Project X - December 12, 2015 - 15:32 GMT +0
+Build Break - Project X - December 12, 2015 - 15:32 GMT +0  
+
 | Component  | Tests Run   | Tests Failed                                   |
 |:-----------|:------------|:-----------------------------------------------|
 | Server     | 948         | :white_check_mark: 0                           |
