@@ -17,9 +17,9 @@ Mattermost Documentation
 .. toctree::
    :maxdepth: 1
    :caption: Install Guides
-   
-   install/Requirements
    :glob:
+   
+   install/requirements*
    install/*
    
 .. toctree::
@@ -36,7 +36,10 @@ Mattermost Documentation
    
    integrations/webhooks/*
    integrations/services/*
+   
+.. toctree::
    :maxdepth: 2
+   :glob:
    integrations/Single-Sign-On/*
    
 .. toctree::
