@@ -1,8 +1,10 @@
-# Mattermost Release Process
+# Release Process
 
-Mattermost core team works on a monthly release process, with a new version shipping on the 16th of each month. 
+Mattermost core team works on a monthly release process, with a new version shipping on the 16th of each month in [binary form](https://github.com/mattermost/platform/releases). 
 
 This document outlines the development process for the Mattermost core team, which draws from what we find works best for us from Agile, Scrum and Software Development Lifecycle approaches.
+
+## Release Timeline
 
 Notes: 
 - All cut-off dates are based on 10am PST (UTC-07/08) on the day stated. 
@@ -154,3 +156,22 @@ The final release is cut. If an urgent and important issue needs to be addressed
   1. Check if any libraries need to be updated for the next release, and if so bring up in weekly team meeting
 - Marketing:
   1. Confirm marketing has been posted (animated GIFs, screenshots, mail announcement, tweets, blog posts)
+
+## Release Numbering 
+
+Mattermost numbers its stable releases based on the following format: 
+
+  `[Version Number].[Major Build Number].[Minor Build Number]`
+
+Version Number:
+
+- Indicates a major system release (e.g. 1.x.x, 2.x.x)
+
+Major Build Number:
+
+- Indicates significant new functionality, (e.g. 0.5.x, 0.6.x, 0.7.x)
+
+Minor Build Number:
+
+- Indicates a bug fix or security release (e.g. 1.2.5, 1.2.6)
+
