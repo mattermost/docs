@@ -1,4 +1,4 @@
-# Markdown Help
+# Formatting Text (Markdown)
 
 Markdown makes it easy to format messages. Type a message as you normally would, and use these rules to render it with special formatting. 
 
