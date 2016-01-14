@@ -26,17 +26,13 @@ Mattermost Documentation
    :caption: Integrations
    :glob:
    
-   integrations/services/*
-   
-.. toctree::
-   :hidden:
-   integrations/Single-Sign-On/GitHub
-   
-.. toctree::
-   :maxdepth: 1
-   :glob:   
-   
    integrations/webhooks/*
+   integrations/services/*
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+   
    integrations/Single-Sign-On/*
    
 .. toctree::
