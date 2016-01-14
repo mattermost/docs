@@ -10,7 +10,6 @@ Mattermost Documentation
    :maxdepth: 1
    :caption: User Help
    :glob:
-   :titlesonly:
    
    help/*
    help/system-console/*
