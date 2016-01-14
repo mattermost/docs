@@ -175,18 +175,12 @@ Renders as:
 ### Smaller Heading
 #### Even Smaller Heading
 
-Alternatively, for the large heading you can underline the text using `===`. For the smaller heading you can underline using `---`
+Alternatively, you can underline the text using `===` or `---` to create headings.
 ```
-Large Heading
-=============
-
-Smaller Heading
---------------
+Heading
+-------
 ```
 Renders as:  
 
-Large Heading
-=============
-
-Smaller Heading
---------------
+Heading
+-------
