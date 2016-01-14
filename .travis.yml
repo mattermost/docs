@@ -11,7 +11,7 @@ deploy:
     access_key_id: AKIAJXLDG4C2F4MIZP4Q
     secret_access_key:
       secure: B+Wiu/EVTzWAMFxfCHBr2I5anZ27NgGxEwVP5s8c9iczfUznex5gWkmIVcq4jHqZN6E5fJopIyvUC/lhL0nWALcptO2HSqH8Du1B1GNTus2JRgFsFSkK0wuDtx9Lhsh4ExRlfYyQn1QF5gSyjZq/a9t2ZCZpGpeVlXFGVz64v1GJOKABP79bd6FiiK7wu+o99Bqk8KrxelU6S0gSSiI+f2se1H252NCBLJcoqkXwgqccQe6ttSgW8xPEm3kpOW7oS2hjMRtsUHS5VVFngH6TZeq+6m8+eXr21IrrAw0sWR0VimXsCztzs5mK7Njs4G6suDcF3ExqK8CCIRkD2BTdoWs/6PPgNduRDIWPS9XqpA21eRQcknzFkpl2ZBeZ+gP+xTDxUwJQ/qkGLutJkAzKObG3OWDyYCUvQ2dhQ1nQ/joZhTV9iWu6WoAjqDAlQWSSYahQkqVCNDi9D0HR1ujOIs/XQ7ePfzIRIv6eXhsVttlhrnCKBou789qav+2ufEueRp2xFcMCrrcybMkAPQpoVmjsQa3obtI09CoO7JIFgaYBhgv6U7i/W1bkeId0AfSRPn8PUyCC7arRYoayht4VSWVompBmgF4lJSuJdavUpdqQE6fE/fcZIX8aaYgpJS1uPmc0Q1tAgJyKfPXyP/AwJPiBNCwh98ElE1q4iEdUPMY=
-    bucket: docs.mattermost.org
+    bucket: docs.mattermost.com
     local_dir: build/html
     acl: public_read
     region: us-east-1
