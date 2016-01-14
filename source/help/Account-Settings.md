@@ -20,7 +20,7 @@ Email is used for sign-in, notifications, and password reset. Email requires ver
 #### Profile Picture
 Profile pictures appear next to all posts and in the top of the channels pane next to your name. All users have a generic profile picture when they sign up for an account. Edit your profile picture by clicking **Select** and then choosing a picture in either JPG or PNG format that’s at least 128px wide and 128px high. For best results, choose an image that is square with the subject of interest centered. If you edit your profile picture, all past posts will appear with the new picture.
 
-##Security
+## Security
 Settings to configure your password, view access history, and view or logout of active sessions.
 
 #### Password
@@ -90,7 +90,7 @@ Incoming webhooks from external integrations can post messages to Mattermost in 
 #### Outgoing Webhooks
 Outgoing webhooks use trigger words to fire new message events to external integrations. For security reasons, outgoing webhooks are only available in public channels. Learn more about setting up outgoing webhooks on our [documentation page](https://github.com/mattermost/platform/blob/master/doc/integrations/webhooks/Outgoing-Webhooks.md).
 
-##Display
+## Display
 Settings to configure clock and teammate name display preferences.
 
 #### Display Font
