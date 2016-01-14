@@ -1,13 +1,9 @@
 # Manage Members  
 ___
 
-The Manage Members menu is used to change the user roles assigned to members belonging to a team. 
-
-## User Roles 
-
 The following user roles are assigned from the **Manage Members** menu option in the team site main menu. 
 
-### System Admin
+## System Admin
 
 The System Administrator is typically a member of the IT staff and has the follow privileges: 
 
@@ -18,7 +14,7 @@ The System Administrator is typically a member of the IT staff and has the follo
 
 The first user added to a newly installed Mattermost system is assigned the System Admin role. 
 
-### Team Admin 
+## Team Admin 
 
 The Team Administrator is typically a non-technical end user and has the following privileges: 
 
@@ -26,11 +22,11 @@ The Team Administrator is typically a non-technical end user and has the followi
 - Ability to change the team name and import data from Slack export files
 - Access to the "Manage Members" menu and change user roles to the levels of Team Administrator, Member and Inactive
 
-### Member 
+## Member 
 
 This is the default role given to end users who join the system. Members have basic permissions to use the Mattermost team site.
 
-### Inactive 
+## Inactive 
 
 This status is given to users whose accounts are marked inactive. These users can no longer log into the system. 
 
