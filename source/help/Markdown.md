@@ -3,7 +3,7 @@ ___
 
 Markdown makes it easy to format messages. Type a message as you normally would, and use these rules to render it with special formatting. 
 
-## Text Style: 
+## Text Style 
 
 You can use either `_` or `*` around a word to make it italic. Use two to make it bold.
 
@@ -12,7 +12,7 @@ You can use either `_` or `*` around a word to make it italic. Use two to make i
 * `**_bold-italic_**` renders as **_bold-italics_**
 * `~~strikethrough~~` renders as ~~strikethrough~~
 
-## Code Block: 
+## Code Block 
 
 Create a code block by indenting each line by four spaces, or by placing ``` on the line above and below your code. 
 
@@ -53,7 +53,7 @@ func main() {
 }
 ```
 
-## In-line Code:
+## In-line Code
 
 Create in-line monospaced font by surrounding it with backticks. 
 ```
@@ -61,7 +61,7 @@ Create in-line monospaced font by surrounding it with backticks.
 ```
 Renders as: `monospace`.
 
-## Links: 
+## Links  
 
 Create labeled links by putting the desired text in square brackets and the associated link in normal brackets. 
 
@@ -69,7 +69,7 @@ Create labeled links by putting the desired text in square brackets and the asso
 
 Renders as: [Check out Mattermost!](www.mattermost.com)
 
-## In-line Images
+## In-line Images  
 
 Create in-line images using an `!` followed by the alt text in square brackets and the link in normal brackets. Add hover text by placing it in quotes after the link.
 ```
@@ -87,7 +87,7 @@ and
 
 [![Build Status](https://travis-ci.org/mattermost/platform.svg?branch=master)](https://travis-ci.org/mattermost/platform) [![Github](https://assets-cdn.github.com/favicon.ico)](https://github.com/mattermost/platform)
 
-## Emojis
+## Emojis  
 
 Emoji provided free by [Emoji One](http://emojione.com/). Check out a full list of emojis [here](http://http://emoji.codes/).
 
@@ -97,21 +97,21 @@ Emoji provided free by [Emoji One](http://emojione.com/). Check out a full list 
 Renders as:
 :smile: :+1: :sheep:
 
-## Lines:
+## Lines  
 
 Create a line by using three `*`, `_`, or `-`.
 
 `***` renders as: 
 ***
 
-## Block quotes:
+## Block quotes  
 
 Create block quotes using `>`.
 
 `> block quotes` renders as:
 > block quotes
 
-## Lists: 
+## Lists  
 
 Create a list by using `*` or `-` as bullets. Indent a bullet point by adding two spaces in front of it.
 ```
@@ -144,7 +144,7 @@ Renders as:
 - [ ] Item two
 - [x] Completed item
 
-## Tables: 
+## Tables  
 
 Create a table by placing a dashed line under the header row and separating the columns with a pipe `|`. (The columns don’t need to line up exactly for it to work). Choose how to align table columns by including colons `:` within the header row.
 ```
@@ -163,7 +163,7 @@ Renders as:
 | Left column 2 | is              |   $10 |
 | Left column 3 | centered        |    $1 |
 
-## Headings: 
+## Headings:  
 
 Make a heading by typing # and a space before your title. For smaller headings, use more #’s. 
 ```
@@ -183,5 +183,5 @@ Heading
 ```
 Renders as:  
 
-Heading
+Large Heading
 -------
