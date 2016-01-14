@@ -6,37 +6,33 @@
 Mattermost Documentation
 =========================
 
-**End User Help**  
-
 .. toctree::
-   :titlesonly:
+   :maxdepth: 1
+   :caption: User Help
    :glob:
    
    help/*
-       help/system-console/*
-   
-**Administrators Guide**  
+   help/system-console/*
 
 .. toctree::
-   :titlesonly:
+   :maxdepth: 1
+   :caption: Administration
    :glob:
    
    install/*
    
-**Integrations**  
-
 .. toctree::
-   :titlesonly:
+   :maxdepth: 1
+   :caption: Integrations
    :glob:
    
    integrations/single-sign-on/*
    integrations/services/*
    integrations/webhooks/*
    
-**Process**  
-
 .. toctree::
-   :titlesonly:
+   :maxdepth: 1
+   :caption: Internal Process
    :glob:
    
    process/*
