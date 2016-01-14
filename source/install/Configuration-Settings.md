@@ -1,3 +1,6 @@
+# Configuration Settings
+Configuration settings can be modified by system administrators from the system console or directly in the config.json file.
+
 ## System Console Settings
 
 The System Console user interface lets system administrators manage a Mattermost server and multiple teams from a web-based user interface. The first user added to a new Mattermost install is assigned the system administrator role and can access the System Console from the main menu of any team. Setting changes in the System Console are stored in `config.json`. 
