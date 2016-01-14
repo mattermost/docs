@@ -36,12 +36,3 @@ Mattermost Documentation
    :glob:
    
    process/*
-   
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
