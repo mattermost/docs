@@ -1,6 +1,6 @@
 # (Community Guide) Production Installation on Debian Jessie (x64)
 
-Note: This install guide has been generously contributed by the Mattermost community. It has not yet been tested by the core. We have [an open ticket](https://github.com/mattermost/platform/issues/1185) requesting community help testing and improving this guide. Once the community has confirmed we have multiple deployments on these instructions, we can update the text here. If you're installing on Debian anyway, please let us know any issues or instruciton improvements? https://github.com/mattermost/platform/issues/1185
+Note: This install guide has been generously contributed by the Mattermost community. It has not yet been tested by the core team. We have [an open ticket](https://github.com/mattermost/platform/issues/1185) requesting community help testing and improving this guide. Once the community has confirmed we have multiple deployments on these instructions, we can update the text here. If you're installing on Debian anyway, please let us know any issues or instruciton improvements? https://github.com/mattermost/platform/issues/1185
 
 
 ## Install Debian Jessie (x64)
@@ -12,6 +12,7 @@ Note: This install guide has been generously contributed by the Mattermost commu
 1. Make sure the system is up to date with the most recent security patches.
   * ``` sudo apt-get update```
   * ``` sudo apt-get upgrade```
+
 
 ## Set up Database Server
 1. For the purposes of this guide we will assume this server has an IP address of 10.10.10.1
@@ -31,22 +32,36 @@ Note: This install guide has been generously contributed by the Mattermost commu
   * ```postgre=# \q```
 1. You can exit the postgres account by typing:
   * ``` exit```
+1. Allow Postgres to listen on all assigned IP Addresses
+  * ```sudo vi /etc/postgresql/9.3/main/postgresql.conf```
+  * Uncomment 'listen_addresses' and change 'localhost' to '*'
+1. Alter pg_hba.conf to allow the mattermost server to talk to the postgres database
+  * ```sudo vi /etc/postgresql/9.3/main/pg_hba.conf```
+  * Add the following line to the 'IPv4 local connections'
+  * host    all             all             10.10.10.2/32         md5
+1. Reload Postgres database
+  * ```sudo /etc/init.d/postgresql reload```
+1. Attempt to connect with the new created user to verify everything looks good
+  * ```psql --host=10.10.10.1 --dbname=mattermost --username=mmuser --password```
+  * ```mattermost=> \q```
+
 
 ## Set up Mattermost Server
 1. For the purposes of this guide we will assume this server has an IP address of 10.10.10.2
 1. Download the latest Mattermost Server by typing:
-  * ``` wget https://github.com/mattermost/platform/releases/download/v1.1.0/mattermost.tar.gz```
+  * ``` wget https://github.com/mattermost/platform/releases/download/v1.3.0/mattermost.tar.gz```
 1. Install Mattermost under /opt
-   * ``` cd /opt```
    * Unzip the Mattermost Server by typing:
    * ``` tar -xvzf mattermost.tar.gz```
-1. Create the storage directory for files.  We assume you will have attached a large drive for storage of images and files.  For this setup we will assume the directory is located at `/mattermost/data`.
+   * ``` sudo mv mattermost /opt```
+1. Create the storage directory for files.  We assume you will have attached a large drive for storage of images and files.  For this setup we will assume the directory is located at `/opt/mattermost/data`.
   * Create the directory by typing:
   * ``` sudo mkdir -p /opt/mattermost/data```
 1. Create a system user and group called mattermost that will run this service
-   * ``` useradd -r mattermost -U```
+   * ``` sudo useradd -r mattermost -U```
    * Set the mattermost account as the directory owner by typing:
    * ``` sudo chown -R mattermost:mattermost /opt/mattermost```
+   * ``` sudo chmod -R g+w /opt/mattermost```
    * Add yourself to the mattermost group to ensure you can edit these files:
    * ``` sudo usermod -aG mattermost USERNAME```
 1. Configure Mattermost Server by editing the config.json file at /opt/mattermost/config
@@ -183,7 +198,7 @@ esac
 exit 0
 ```
   * Make sure that /etc/init.d/mattermost is executable
-  * ``` chmod +x /etc/init.d/mattermost```
+  * ``` sudo chmod +x /etc/init.d/mattermost```
 1. On reboot, systemd will generate a unit file from the headers in this init script and install it in `/run/systemd/generator.late/`
   
 ## Set up Nginx Server
@@ -207,21 +222,22 @@ exit 0
   * Create a configuration for Mattermost
   * ``` sudo touch /etc/nginx/sites-available/mattermost```
   * Below is a sample configuration with the minimum settings required to configure Mattermost
- ```
+```
    server {
-	  server_name mattermost.example.com;
+      server_name mattermost.example.com;
+
       location / {
-		  client_max_body_size 50M;
-		  proxy_set_header Upgrade $http_upgrade;
-          proxy_set_header Connection "upgrade";
-		  proxy_set_header Host $http_host;
-		  proxy_set_header X-Real-IP $remote_addr;
-		  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-		  proxy_set_header X-Forwarded-Proto $scheme;
-		  proxy_set_header   X-Frame-Options   SAMEORIGIN;
-          proxy_pass http://localhost:8065;
+         client_max_body_size 50M;
+         proxy_set_header Upgrade $http_upgrade;
+         proxy_set_header Connection "upgrade";
+         proxy_set_header Host $http_host;
+         proxy_set_header X-Real-IP $remote_addr;
+         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+         proxy_set_header X-Forwarded-Proto $scheme;
+         proxy_set_header X-Frame-Options SAMEORIGIN;
+         proxy_pass http://10.10.10.2:8065;
       }
-    }
+   }
 ```
   * Remove the existing file with
   * ``` sudo rm /etc/nginx/sites-enabled/default```
@@ -249,32 +265,46 @@ exit 0
     Common Name (e.g. server FQDN or YOUR name) []:mattermost.example.com
     Email Address []:admin@mattermost.example.com
 ```
-1. Modify the file at `/etc/nginx/sites-available/mattermost` and add the following lines
-  * 
+1. Run `openssl dhparam -out dhparam.pem 4096` (it will take some time).
+1. Modify the file at `/etc/nginx/sites-available/mattermost` and add the following lines:
 ```
   server {
-       listen         80;
-       server_name    mattermost.example.com;
-       return         301 https://$server_name$request_uri;
+     listen         80;
+     server_name    mattermost.example.com;
+     return         301 https://$server_name$request_uri;
   }
-  
+
   server {
-        listen 443 ssl;
-        server_name mattermost.example.com;
-		
-        ssl on;
-        ssl_certificate /home/mattermost/cert/mattermost.crt;
-        ssl_certificate_key /home/mattermost/cert/mattermost.key;
-        ssl_session_timeout 5m;
-        ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;
-        ssl_ciphers "HIGH:!aNULL:!MD5 or HIGH:!aNULL:!MD5:!3DES";
-        ssl_prefer_server_ciphers on;
-		
-		# add to location / above
-		location / {
-			gzip off;
-			proxy_set_header X-Forwarded-Ssl on;
+     listen 443 ssl;
+     server_name mattermost.example.com;
+
+     ssl on;
+     ssl_certificate /home/ubuntu/cert/mattermost.crt;
+     ssl_certificate_key /home/ubuntu/cert/mattermost.key;
+     ssl_dhparam /home/ubuntu/cert/dhparam.pem;
+     ssl_session_timeout 5m;
+     ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+     ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
+     ssl_prefer_server_ciphers on;
+     ssl_session_cache shared:SSL:10m;
+
+     location / {
+        gzip off;
+        proxy_set_header X-Forwarded-Ssl on;
+        client_max_body_size 50M;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Frame-Options SAMEORIGIN;
+        proxy_pass http://10.10.10.2:8065;
+     }
+  }
 ```
+
+
 ## Finish Mattermost Server setup
 1. Navigate to https://mattermost.example.com and create a team and user.
 1. The first user in the system is automatically granted the `system_admin` role, which gives you access to the System Console.

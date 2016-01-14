@@ -86,14 +86,21 @@ For readability and clear layout, end a sub-section heading with a colon
 ##### Correct: 
 
 ---- 
+
 Service Based: 
+
 - [AWS Elastic Beanstalk Setup](https://github.com/mattermost/platform/blob/master/doc/install/Amazon-Elastic-Beanstalk.md)
+ 
 ---- 
 ##### Incorrect: 
 
 ---- 
-Optional
-- [Community Guide for Production Debian Setup](https://github.com/mattermost/platform/blob/master/doc/install/Production-Debian.md)
+
+Service Based
+
+- [AWS Elastic Beanstalk Setup](https://github.com/mattermost/platform/blob/master/doc/install/Amazon-Elastic-Beanstalk.md)
+ 
+
 ---- 
 
 ### One instruction per line

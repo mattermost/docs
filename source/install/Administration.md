@@ -30,7 +30,7 @@ Please follow the [GitLab Omnibus documentation for installing GitLab Mattermost
 
 For help and support around your GitLab Mattermost deployment please see:
 
-- [GitLab Mattermost discussion forum](https://forum.mattermost.org/c/general/gitlab)
+- [Troubleshooting Forum](https://forum.mattermost.org/t/about-the-trouble-shooting-category/150/1)
 - [GitLab Mattermost issue tracker on GitLab.com](https://gitlab.com/gitlab-org/gitlab-mattermost/issues)
 
 ### Connecting Mattermost to integrations with incoming webhooks
@@ -94,7 +94,13 @@ To upgrade GitLab Mattermost from the 0.7.1-beta release of Mattermost in GitLab
    1. Check that your SSL settings for the SSO provider match the `http://` or `https://` choice selected in `config.json` under `GitLabSettings`
    2. Follow steps 1 to 3 of the manual [GitLab SSO configuration procedure](https://github.com/mattermost/platform/blob/master/doc/integrations/Single-Sign-On/Gitlab.md) to confirm your `Secret` and `Id` settings in `config.json` match your GitLab settings, and if they don't, manually update `config.json` to the correct settings and see if this clears the issue. 
 
-###### `We couldn't find the existing account`
+###### `"The redirect URI included is not valid.`
+  - This error may be related to SSL configurations in your proxy after a GitLab omnibus upgrade from 8.0, which contained the Mattermost beta version.
+  - **Solution:** 
+    - Please check that each step of [the procedure for upgrading Mattermost in GitLab 8.0 to GitLab 8.1 was completed](https://github.com/mattermost/platform/blob/master/doc/install/Upgrade-Guide.md#upgrading-mattermost-in-gitlab-80-to-gitlab-81-with-omnibus). Then check upgrades to successive major versions were completed using the procedure in the [Upgrade Guide](https://github.com/mattermost/platform/blob/master/doc/install/Upgrade-Guide.md#upgrading-mattermost-to-next-major-release).
+
+
+###### `We couldn't find the existing account ...`
   - This error appears when a user attempts to sign in using a single-sign-on option with an account that was not created using that single-sign-on option. For example, if a user creates Account A using email sign-up, then attempts to sign-in using GitLab SSO, the error appears since Account A was not created using GitLab SSO. 
   - **Solution:** 
     - If you're switching from email auth to GitLab SSO, and you're getting this issue on an admin account, consider deactivating your email-based account, then creating a new account with System Admin privileges using GitLab SSO. Specifically: 

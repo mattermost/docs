@@ -22,7 +22,7 @@ The following is a list of common error messages and solutions:
 
 
 ###### `x509: certificate signed by unknown authority` in server logs when attempting to sign-up
-  - This error may appear when attempt to use a self-signed certificate to setup SSL, which is not yet supported by Mattermost. You
+  - This error may appear when attempt to use a self-signed certificate to setup SSL, which is not yet supported by Mattermost. 
   - **Solution:** Set up a load balancer like Ngnix [per production install guide](https://github.com/mattermost/platform/blob/master/doc/install/Production-Ubuntu.md#set-up-nginx-with-ssl-recommended). A ticket exists to [add support for self-signed certificates in future](x509: certificate signed by unknown authority). 
 
 ###### `panic: runtime error: invalid memory address or nil pointer dereference`
@@ -52,7 +52,7 @@ The following is a list of common error messages and solutions:
    1. Check that your SSL settings for the SSO provider match the `http://` or `https://` choice selected in `config.json` under `GitLabSettings`
    2. Follow steps 1 to 3 of the manual [GitLab SSO configuration procedure](https://github.com/mattermost/platform/blob/master/doc/integrations/Single-Sign-On/Gitlab.md) to confirm your `Secret` and `Id` settings in `config.json` match your GitLab settings, and if they don't, manually update `config.json` to the correct settings and see if this clears the issue. 
 
-###### `We couldn't find the existing account`
+###### `We couldn't find the existing account ...`
   - This error appears when a user attempts to sign in using a single-sign-on option with an account that was not created using that single-sign-on option. For example, if a user creates Account A using email sign-up, then attempts to sign-in using GitLab SSO, the error appears since Account A was not created using GitLab SSO. 
   - **Solution:** 
     - If you're switching from email auth to GitLab SSO, and you're getting this issue on an admin account, consider deactivating your email-based account, then creating a new account with System Admin privileges using GitLab SSO. Specifically: 
