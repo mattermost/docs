@@ -1,4 +1,5 @@
-# Team Statistics
+# Team Statistics  
+___
 
 Statistics on users, posts and channels are tracked for each team and are viewable under **System Console** > **Teams** > **Statistics**. 
 
