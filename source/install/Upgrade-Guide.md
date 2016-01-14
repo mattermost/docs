@@ -1,4 +1,4 @@
-# Mattermost Upgrade Guide
+# Upgrade Guide
 
 ### Upgrading Mattermost to Next Major Release 
 
