@@ -1,4 +1,5 @@
-# Search
+# Search  
+___
 
 The search box in Mattermost brings back results from any channel of which you’re a member. No results are returned from channels where you are not a member - even if they are open channels.
 
