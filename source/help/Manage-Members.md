@@ -1,4 +1,5 @@
-# Manage Members 
+# Manage Members  
+___
 
 The Manage Members menu is used to change the user roles assigned to members belonging to a team. 
 
