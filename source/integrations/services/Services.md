@@ -1,4 +1,7 @@
-# [GitLab Integration Service for Mattermost](https://github.com/mattermost/mattermost-integration-gitlab)
+# Services
+___
+
+## GitLab Integration Service
 
 This [open source integration service](https://github.com/mattermost/mattermost-integration-gitlab) let you configure real-time notifications on GitLab issues, merge requests and comments to be delivered to selected Mattermost channels.
 
