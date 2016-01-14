@@ -1,4 +1,4 @@
-# Mattermost Troubleshooting
+# Troubleshooting
 
 #### Important notes
 
