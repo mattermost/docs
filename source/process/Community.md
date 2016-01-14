@@ -1,4 +1,7 @@
-# GitHub Issues Process
+# Community
+___
+
+## GitHub Issues Process
 
 Below is a list of template responses for working with GitHub issues effectively. 
 
@@ -20,7 +23,6 @@ We are very happy to have you join our growing community!
 
 ```
 
-
 #### Feature Requests
 
 ##### Please add to feature request forum
@@ -31,8 +33,7 @@ Thanks @[GITHUB_USERNAME], appreciate the feedback,
 Could we have your help [contributing this in the feature idea forum](http://www.mattermost.org/feature-requests/) so it can be upvoted by the community and the item prioritized? 
 ```
 
-##### Changes required before accepting Feature Request
-
+##### Changes required before accepting feature request
 
 ```
 
