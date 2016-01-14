@@ -41,7 +41,7 @@ Mattermost Documentation
    
 .. toctree::
    :maxdepth: 1
-   :caption: Developer
+   :caption: Developer Help
    :glob:
    
    developer/*
