@@ -17,9 +17,9 @@ Mattermost Documentation
 .. toctree::
    :maxdepth: 1
    :caption: Install Guides
-   :glob:
    
-   install/Requirements*
+   install/Requirements
+   :glob:
    install/*
    
 .. toctree::
