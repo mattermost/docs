@@ -16,10 +16,17 @@ Mattermost Documentation
 
 .. toctree::
    :maxdepth: 1
-   :caption: Administration
+   :caption: Install Guides
    :glob:
    
    install/*
+   
+.. toctree::
+   :maxdepth: 1
+   :caption: Administration
+   :glob:
+   
+   administration/*   
    
 .. toctree::
    :maxdepth: 1
