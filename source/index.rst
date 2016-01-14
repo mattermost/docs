@@ -12,7 +12,13 @@ Mattermost Documentation
    :glob:
    
    help/*
-   help/system-console/*
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Administration
+   :glob:
+   
+   administration/*
 
 .. toctree::
    :maxdepth: 1
@@ -22,13 +28,7 @@ Mattermost Documentation
    install/Requirements*
    install/*
    
-.. toctree::
-   :maxdepth: 1
-   :caption: Administration
-   :glob:
-   
-   administration/*   
-   
+
 .. toctree::
    :maxdepth: 1
    :caption: Integrations
@@ -36,11 +36,6 @@ Mattermost Documentation
    
    integrations/webhooks/*
    integrations/services/*
-   
-.. toctree::
-   :maxdepth: 2
-   :glob:
-   
    integrations/Single-Sign-On/*
    
 .. toctree::
