@@ -166,14 +166,14 @@ Renders as:
 
 Make a heading by typing # and a space before your title. For smaller headings, use more #’s. 
 ```
-# Large heading
-## Smaller heading
-### Even smaller heading
+## Large Heading
+### Smaller Heading
+#### Even Smaller Heading
 ```
 Renders as: 
-# Large Heading
-## Smaller Heading
-### Even smaller heading
+## Large Heading
+### Smaller Heading
+#### Even Smaller Heading
 
 Alternatively, for the large heading you can underline the text using `===`. For the smaller heading you can underline using `---`
 ```
@@ -183,7 +183,8 @@ Large Heading
 Smaller Heading
 --------------
 ```
-Renders as:
+Renders as:  
+
 Large Heading
 =============
 
