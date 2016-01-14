@@ -55,4 +55,5 @@ Mattermost Documentation
    :caption: Internal Process
    :glob:
    
+   process/release-process*
    process/*
