@@ -104,13 +104,13 @@ exec bin/platform
 1. Install Nginx on RHEL with
     * ``` sudo vi /etc/yum.repos.d/nginx.repo```
     * Copy the below into the file
-```
+    ```
 [nginx]
 name=nginx repo
 baseurl=http://nginx.org/packages/rhel/6/$basearch/
 gpgcheck=0
 enabled=1
-```
+    ```
     * ``` sudo yum install nginx.x86_64```
     * ``` sudo service nginx start```
     * ``` sudo chkconfig nginx on```
