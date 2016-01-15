@@ -80,19 +80,19 @@
     * ``` sudo vi /etc/systemd/system/mattermost.service```
     * Copy the following lines into `/etc/systemd/system/mattermost.service`
     ```
-[Unit]
-Description=Mattermost
-After=syslog.target network.target
+    [Unit]
+    Description=Mattermost
+    After=syslog.target network.target
 
-[Service]
-Type=simple
-WorkingDirectory=/opt/mattermost/bin
-User=mattermost
-ExecStart=/opt/mattermost/bin/platform
-PIDFile=/var/spool/mattermost/pid/master.pid
+    [Service]
+    Type=simple
+    WorkingDirectory=/opt/mattermost/bin
+    User=mattermost
+    ExecStart=/opt/mattermost/bin/platform
+    PIDFile=/var/spool/mattermost/pid/master.pid
 
-[Install]
-WantedBy=multi-user.target
+    [Install]
+    WantedBy=multi-user.target
     ```
     * Make sure the service is executable with ``` sudo chmod 664 /etc/systemd/system/mattermost.service```
     * Reload the services with `sudo systemctl daemon-reload`
@@ -112,11 +112,11 @@ WantedBy=multi-user.target
     * ``` sudo vi /etc/yum.repos.d/nginx.repo```
     * Copy the below into the file
     ```
-[nginx]
-name=nginx repo
-baseurl=http://nginx.org/packages/rhel/7/$basearch/
-gpgcheck=0
-enabled=1
+    [nginx]
+    name=nginx repo
+    baseurl=http://nginx.org/packages/rhel/7/$basearch/
+    gpgcheck=0
+    enabled=1
     ```
     * ``` sudo yum install nginx.x86_64```
     * ``` sudo service nginx start```
@@ -174,7 +174,7 @@ enabled=1
     ```
 1. Run `openssl dhparam -out dhparam.pem 4096` (it will take some time).
 1. Modify the file at `/etc/nginx/conf.d/mattermost.conf` and add the following lines
-    ```
+```
   server {
      listen         80;
      server_name    mattermost.example.com;
@@ -209,7 +209,7 @@ enabled=1
         proxy_pass http://10.10.10.2:8065;
      }
   }
-    ```
+```
 
 ## Finish Mattermost Server setup
 1. Navigate to `https://mattermost.example.com` and create a team and user.
