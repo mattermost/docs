@@ -12,13 +12,8 @@ Press **ENTER** to send a message. Use **Shift+ENTER** to create a new line with
 
 Mattermost messages are formatted using a standard called "markdown". Here are examples:
 
-| Text Entered | How it appears |
-|:---------------|:---------------|
-|`**bold**`| **bold** |
-| `_italic_`|_italic_|
-|`[hyperlink](http://mattermost.org)`|[hyperlink](http://mattermost.org)|
-|`![embedded image](https://travis-ci.org/mattermost/platform.svg)`|![embedded image](https://travis-ci.org/mattermost/platform.svg)|
-|`:smile:` `:sheep:` `:alien:`|:smile: :sheep: :alien:|
+![check list](https://pre-release.mattermost.com/api/v1/files/get/pspxu7bu17yttmtnzsjnqu78fe/o1nq6cmn5pfo8k8tchb4gtx4kc/314c6qswn7fb7pcw6ydzt34z1o/Image%20Pasted%20at%202016-0-15%2013-05.png?d=%7B%22filename%22%3A%22314c6qswn7fb7pcw6ydzt34z1o%2FImage%2520Pasted%2520at%25202016-0-15%252013-05.png%22%2C%22time%22%3A%221452888265680%22%7D&h=%242a%2410%24NbaIc9vXOhuXbvS.w7uOY.5HSNDkqjpwF2QiXRagZo4OY%2FpAwKDJO&t=rcgiyftm7jyrxnma1osd8zswby)
+
 
 Emojis provided free from [Emoji One](http://emojione.com/). Check out a full list of Emojis [here](http://emoji.codes/).
 
