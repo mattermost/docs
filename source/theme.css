@@ -1,0 +1,13 @@
+@media screen and (min-width: 1400px) {
+	.wy-nav-content {
+		max-width: 100%;
+	}
+}
+
+.wy-nav-content .document {
+	max-width: 1000px;
+}
+
+h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
+    font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
+}
