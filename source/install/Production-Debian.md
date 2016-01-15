@@ -81,7 +81,7 @@ Note: This install guide has been generously contributed by the Mattermost commu
     * ``` sudo touch /etc/init.d/mattermost```
     * ``` sudo vi /etc/init.d/mattermost```
     * Copy the following lines into `/etc/init.d/mattermost`
-```
+    ```
 #! /bin/sh
 ### BEGIN INIT INFO
 # Provides:          mattermost
@@ -196,7 +196,7 @@ restart|force-reload)
 esac
 
 exit 0
-```
+    ```
     * Make sure that /etc/init.d/mattermost is executable
     * ``` sudo chmod +x /etc/init.d/mattermost```
 9. On reboot, systemd will generate a unit file from the headers in this init script and install it in `/run/systemd/generator.late/`
@@ -222,7 +222,7 @@ exit 0
     * Create a configuration for Mattermost
     * ``` sudo touch /etc/nginx/sites-available/mattermost```
     * Below is a sample configuration with the minimum settings required to configure Mattermost
-```
+    ```
    server {
       server_name mattermost.example.com;
 
@@ -238,7 +238,7 @@ exit 0
          proxy_pass http://10.10.10.2:8065;
       }
    }
-```
+    ```
     * Remove the existing file with
     * ``` sudo rm /etc/nginx/sites-enabled/default```
     * Link the mattermost config by typing:
@@ -256,7 +256,7 @@ exit 0
     * ``` cd ~/cert```
     * ``` sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mattermost.key -out mattermost.crt```
     * Input the following info 
-```
+    ```
     Country Name (2 letter code) [AU]:US
     State or Province Name (full name) [Some-State]:California
     Locality Name (eg, city) []:Palo Alto
@@ -264,10 +264,10 @@ exit 0
     Organizational Unit Name (eg, section) []:
     Common Name (e.g. server FQDN or YOUR name) []:mattermost.example.com
     Email Address []:admin@mattermost.example.com
-```
+    ```
 3. Run `openssl dhparam -out dhparam.pem 4096` (it will take some time).
 4. Modify the file at `/etc/nginx/sites-available/mattermost` and add the following lines:
-```
+    ```
   server {
      listen         80;
      server_name    mattermost.example.com;
@@ -302,7 +302,7 @@ exit 0
         proxy_pass http://10.10.10.2:8065;
      }
   }
-```
+    ```
 
 
 ## Finish Mattermost Server setup
