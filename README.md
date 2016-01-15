@@ -2,5 +2,5 @@
 
 ## Usage
 
-Download repro onto a machine with Python installed
-Type `make html`
+1. Download repro onto a machine with Python installed
+2. Type `make html`
