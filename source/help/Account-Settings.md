@@ -11,7 +11,7 @@ Full names appear in the Direct Messages member list and team management modal. 
 #### Username
 Usernames appear next to all posts. Pick something easy for teammates to recognize and recall. By default, you will receive mention notifications when someone types your username.
 
-####Nickname
+#### Nickname
 Nicknames appear in the Direct Messages member list and team management modal. You will not receive mention notifications when someone types your nickname unless you add it to the *Words That Trigger Mentions* in **Account Settings > Notifications**.
 
 #### Email
