@@ -139,10 +139,9 @@ Make a task list by including square brackets:
 - [ ] Item two
 - [x] Completed item
 ```
-Renders as:
-- [ ] Item one
-- [ ] Item two
-- [x] Completed item
+Renders as:  
+
+![check list](https://pre-release.mattermost.com/api/v1/files/get/pspxu7bu17yttmtnzsjnqu78fe/o1nq6cmn5pfo8k8tchb4gtx4kc/nrrtpzob338smc9zk7zjdy655c/Image%20Pasted%20at%202016-0-15%2012-57.png?d=%7B%22filename%22%3A%22nrrtpzob338smc9zk7zjdy655c%2FImage%2520Pasted%2520at%25202016-0-15%252012-57.png%22%2C%22time%22%3A%221452887842154%22%7D&h=%242a%2410%24hVg%2FvdcZJwD6dEvZc4YF8.X.ea84XqLLQvHHVGLfd8W9sjcG5hZCO&t=rcgiyftm7jyrxnma1osd8zswby)
 
 ## Tables  
 
@@ -157,11 +156,7 @@ Create a table by placing a dashed line under the header row and separating the 
 
 Renders as:
 
-| Left-Aligned  | Center Aligned  | Right Aligned |
-| :------------ |:---------------:| -----:|
-| Left column 1 | this text       |  $100 |
-| Left column 2 | is              |   $10 |
-| Left column 3 | centered        |    $1 |
+![table](https://pre-release.mattermost.com/api/v1/files/get/pspxu7bu17yttmtnzsjnqu78fe/o1nq6cmn5pfo8k8tchb4gtx4kc/xbx81knszjgz5f4bdwf4c89ykw/Image%20Pasted%20at%202016-0-15%2013-00.png?d=%7B%22filename%22%3A%22xbx81knszjgz5f4bdwf4c89ykw%2FImage%2520Pasted%2520at%25202016-0-15%252013-00.png%22%2C%22time%22%3A%221452887948032%22%7D&h=%242a%2410%24%2F528CxcUFR9bvnud2PLX9ebDn%2FJoVviuZfKtRiHcjdMaDH.tot92S&t=rcgiyftm7jyrxnma1osd8zswby)
 
 ## Headings:  
 
