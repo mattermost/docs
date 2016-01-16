@@ -81,7 +81,7 @@ Note: This install guide has been generously contributed by the Mattermost commu
     * ``` sudo touch /etc/init.d/mattermost```
     * ``` sudo vi /etc/init.d/mattermost```
     * Copy the following lines into `/etc/init.d/mattermost`
-    ```
+```
 #! /bin/sh
 ### BEGIN INIT INFO
 # Provides:          mattermost
@@ -196,7 +196,7 @@ restart|force-reload)
 esac
 
 exit 0
-    ```
+```
     * Make sure that /etc/init.d/mattermost is executable
     * ``` sudo chmod +x /etc/init.d/mattermost```
 9. On reboot, systemd will generate a unit file from the headers in this init script and install it in `/run/systemd/generator.late/`
