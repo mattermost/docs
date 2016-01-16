@@ -1,6 +1,5 @@
-## LDAP Setup
+## LDAP Setup (Enterprise Edition) 
 
-LDAP authentication is available in the Enterprise version of Mattermost.
 ### How to enable LDAP
 
 After installing Mattermost:
@@ -23,11 +22,11 @@ If you would like to switch your System Administrator account to LDAP authentica
   1. Note: If your LDAP credentials use the same email address as your System Administrator account, it is recommended you change the email on your System Administrator account by going to Main Menu -> Account Settings -> General -> Email. This will free up the email address so it can be used by the LDAP account.
   2. Sign in to your email based System Administrator account
   3. Navigate to the System Console
-  4. Go to Teams -> Team Name -> Users, and find your new LDAP user account
+  4. Go to **Teams** > **Team Name** > **Users**, and find your new LDAP user account
   5. Promote your LDAP account to “System Administrator” using the dropdown menu beside the username
   6. Log in with your LDAP account
   7. Navigate to the System Console
-  8. Go to Teams -> Team Name -> Users, and find your old email based System Administrator account
+  8. Go to **Teams** > **Team Name** > **Users**, and find your old email based System Administrator account
   9. Make the email account “Inactive” using the dropdown beside the username
 
   **Note: If you make the email account inactive without promoting another account to System Administrator, you will lose your System Administrator privileges. This can be fixed by promoting another account to System Administrator using the command line.**
