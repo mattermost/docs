@@ -6,12 +6,7 @@ After that, we can work on upgrading the quality of documentation. The below cha
 
 _Note: Documentation Guidelines are new, and iterating. Documentation has started to balloon and this is our attempt at reducing ambiguity and increasing consistency, but the conventions here are very open to discussion._
 
-| Stars | Benchmark                       | Timeline                        |
-|:-------------|:--------------------------------|:--------------------------------|
-| 1 | Documentation is correct. | First draft checked in by developer. Okay to ship in first release of new feature. |
-| 2 | Documentation a) follows all objective formatting criteria, b) is tested by someone other than the author, c) satisfies above. | First edit under objective rules. Required before second release cycle with this feature included. |
-| 3 | Documentation a) follows all subjective style criteria, b) is reviewed and edited by someone who has previously authored 3-star documentation, and c)  satisfies above. | Second edit under subjective rules. Required before third release cycle with this feature included |
-| 4 | Documentation a) has received at least 1 edit due to user feedback, b) has received at least one unprompted compliment from user community on quality, c) satisfies above. | Additional edits to refine documentation based on user feedback |
+![check list](https://pre-release.mattermost.com/api/v1/files/get/pspxu7bu17yttmtnzsjnqu78fe/o1nq6cmn5pfo8k8tchb4gtx4kc/8cbudpdbif8f3875ofohqyaxoy/Image%20Pasted%20at%202016-0-15%2017-31.png?d=%7B%22filename%22%3A%228cbudpdbif8f3875ofohqyaxoy%2FImage%2520Pasted%2520at%25202016-0-15%252017-31.png%22%2C%22time%22%3A%221452904229322%22%7D&h=%242a%2410%24Nj1ctbbYcb%2F8qMt7umAFpeZ3O85fUidZOdnLmCqmS7XZuC10ryf5O&t=rcgiyftm7jyrxnma1osd8zswby)
 
 ## 1-Star Requirements: Correctness
 
