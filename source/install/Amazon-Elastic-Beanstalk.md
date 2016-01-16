@@ -22,5 +22,5 @@ These instructions will guide you through the process of setting up Mattermost f
 14. It may take a few minutes for beanstalk to launch your environment. If the launch is successful, you will see a see a large green checkmark and the Health status should change to “Green”. 
 15. Test your environment by clicking the domain link next to your application name at the top of the dashboard. Alternatively, enter the domain into your browser in the form `http://<your-ebs-application-url>.elasticbeanstalk.com`. You can also map your own domain if you wish. If everything is working correctly, the domain should navigate you to the Mattermost signup page. Enjoy exploring Mattermost!
 	
-### (Recommended) Enable Email 
+#### (Recommended) Enable Email 
 The default single-container Docker instance for Mattermost is designed for product evaluation, and sets `SendEmailNotifications=false` so the product can function without enabling email. To see the product's full functionality, [enabling SMTP email is recommended](SMTP-Email-Setup.md).
