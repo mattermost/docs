@@ -46,11 +46,7 @@ Mattermost is designed to be upgraded sequentially through major version release
 2. If your version of the Mattermost binary doesn't match the version listed in the database error message, downgrade the version of the Mattermost binary you are using by [following the manual upgrade steps for Mattermost](https://github.com/mattermost/platform/blob/master/doc/install/Upgrade-Guide.md#upgrading-mattermost-to-next-major-release) and using the database schema version listed in the error messages for the version you select in Step 1) iv). 
 3. Once Mattermost is working again, you can use the same upgrade procedure to upgrade Mattermost version by version to your current GitLab version. After this is done, GitLab automation should continue to work for future upgrades, so long as you don't skip versions. 
 
-| GitLab Version | Mattermost Version | 
-|----------------|---------------------|
-|  8.1.x | v1.1.0 | 
-|  8.2.x | v1.2.1 | 
-|  8.3.x | v1.3.0 | 
+![check list](https://pre-release.mattermost.com/api/v1/files/get/pspxu7bu17yttmtnzsjnqu78fe/o1nq6cmn5pfo8k8tchb4gtx4kc/drxotqo833g6dycoqnteo9pxtr/Image%20Pasted%20at%202016-0-15%2017-20.png?d=%7B%22filename%22%3A%22drxotqo833g6dycoqnteo9pxtr%2FImage%2520Pasted%2520at%25202016-0-15%252017-20.png%22%2C%22time%22%3A%221452903541649%22%7D&h=%242a%2410%24vzr2kAFlM8cenAWX5pYp3uF6aaGXTgBjkN37qdkZZ4VziZTzCuu2y&t=rcgiyftm7jyrxnma1osd8zswby)
 
 ## Upgrade Guide for Mattermost Beta Release 
 
