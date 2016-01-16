@@ -3,7 +3,7 @@
 Note: This install guide has been generously contributed by the Mattermost community. It has not yet been tested by the core team. We have [an open ticket](https://github.com/mattermost/platform/issues/1185) requesting community help testing and improving this guide. Once the community has confirmed we have multiple deployments on these instructions, we can update the text here. If you're installing on Debian anyway, please let us know any issues or instruciton improvements? https://github.com/mattermost/platform/issues/1185
 
 
-## Install Debian Jessie (x64)
+### Install Debian Jessie (x64)
 1. Set up 3 machines with Debian Jessie with 2GB of RAM or more.  The servers will be used for the Load Balancer, Mattermost (this must be x64 to use pre-built binaries), and Database.  
 2. This can also be set up all on a single server for small teams:
     - I have a Mattermost instance running on a single Debian Jessie server with 1GB of ram and 30 GB SSD
@@ -14,7 +14,7 @@ Note: This install guide has been generously contributed by the Mattermost commu
     * ``` sudo apt-get upgrade```
 
 
-## Set up Database Server
+### Set up Database Server
 1. For the purposes of this guide we will assume this server has an IP address of 10.10.10.1
 2. Install PostgreSQL 9.3+ (or MySQL 5.6+)
     * ``` sudo apt-get install postgresql postgresql-contrib```
@@ -46,7 +46,7 @@ Note: This install guide has been generously contributed by the Mattermost commu
     * ```mattermost=> \q```
 
 
-## Set up Mattermost Server
+### Set up Mattermost Server
 1. For the purposes of this guide we will assume this server has an IP address of 10.10.10.2
 2. Download the latest Mattermost Server by typing:
     * ``` wget https://github.com/mattermost/platform/releases/download/v1.3.0/mattermost.tar.gz```
@@ -201,7 +201,7 @@ exit 0
     * ``` sudo chmod +x /etc/init.d/mattermost```
 9. On reboot, systemd will generate a unit file from the headers in this init script and install it in `/run/systemd/generator.late/`
   
-## Set up Nginx Server
+### Set up Nginx Server
 1. For the purposes of this guide we will assume this server has an IP address of 10.10.10.3
 2. We use Nginx for proxying request to the Mattermost Server.  The main benefits are:
     * SSL termination
@@ -249,7 +249,7 @@ exit 0
     * ``` curl http://localhost```
     * You should see a page titles *Mattermost - Signup*
   
-## Set up Nginx with SSL (Recommended)
+### Set up Nginx with SSL (Recommended)
 1. You will need a SSL cert from a certificate authority.
 2. For simplicity we will generate a test certificate.
     * ``` mkdir ~/cert```
@@ -305,7 +305,7 @@ exit 0
     ```
 
 
-## Finish Mattermost Server setup
+### Finish Mattermost Server setup
 1. Navigate to https://mattermost.example.com and create a team and user.
 2. The first user in the system is automatically granted the `system_admin` role, which gives you access to the System Console.
 3. From the `town-square` channel click the dropdown and choose the `System Console` option
