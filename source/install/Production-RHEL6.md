@@ -1,4 +1,4 @@
-# Production Installation on Red Hat Enterprise Linux 6.6
+# Production Installation on RHEL 6.6
 
 ## Install Red Hat Enterprise Linux (x64) 6.6
 1. Set up 3 machines with RHEL with 2GB of RAM or more.  The servers will be used for the Load Balancer, Mattermost (this must be x64 to use pre-built binaries), and Database.
