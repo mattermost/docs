@@ -1,4 +1,4 @@
-# Mattermost Web Service API
+# Web Service API
 
 This provides a basic overview of the Mattermost Web Service API. Drivers interfacing with this API are available in different languages. Current documentation focuses on the transport layer for the API and functional documentation will be developed next.  
 
