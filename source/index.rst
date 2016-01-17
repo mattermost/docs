@@ -41,13 +41,11 @@ Mattermost Documentation
    :caption: Integrations
    :glob:
    
-   integrations/webhooks/*
-   integrations/services/*
-   integrations/Single-Sign-On/*
+   integrations/*
    
 .. toctree::
    :maxdepth: 1
-   :caption: Developer Help
+   :caption: Developer Guide
    :glob:
    
    developer/*
