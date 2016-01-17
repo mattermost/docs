@@ -22,13 +22,19 @@ Mattermost Documentation
    administration/*
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Install Guides
    :glob:
    
    install/Requirements*
    install/*
    
+.. toctree::
+   :maxdepth: 1
+   :caption: Deployment 
+   :glob:
+   
+   deployment/*
 
 .. toctree::
    :maxdepth: 1
