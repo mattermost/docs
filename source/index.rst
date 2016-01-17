@@ -52,7 +52,7 @@ Mattermost Documentation
    
 .. toctree::
    :maxdepth: 1
-   :caption: Internal Process
+   :caption: Development Process
    :glob:
    
    process/release-process*
