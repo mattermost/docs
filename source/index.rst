@@ -26,7 +26,7 @@ Mattermost Documentation
    :caption: Install Guides
    :glob:
    
-   install/Requirements*
+   install/requirements*
    install/*
    
 .. toctree::
