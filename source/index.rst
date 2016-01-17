@@ -38,13 +38,6 @@ Mattermost Documentation
 
 .. toctree::
    :maxdepth: 1
-   :caption: Integrations
-   :glob:
-   
-   integrations/*
-   
-.. toctree::
-   :maxdepth: 1
    :caption: Developer Guide
    :glob:
    
@@ -57,3 +50,10 @@ Mattermost Documentation
    
    process/release-process*
    process/*
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Integrations
+   :glob:
+   
+   integrations/*
