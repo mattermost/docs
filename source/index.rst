@@ -15,13 +15,6 @@ Mattermost Documentation
    help/*
 
 .. toctree::
-   :maxdepth: 1
-   :caption: Administration
-   :glob:
-   
-   administration/*
-
-.. toctree::
    :maxdepth: 2
    :caption: Install Guides
    :glob:
@@ -35,6 +28,13 @@ Mattermost Documentation
    :glob:
    
    deployment/*
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Administration
+   :glob:
+   
+   administration/*
 
 .. toctree::
    :maxdepth: 1
