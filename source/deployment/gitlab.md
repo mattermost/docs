@@ -2,7 +2,7 @@
 ___
 Single-Sign-On can be configured with the following services.
 
-## GitLab SSO
+## GitLab Single-Sign-On
 
 Follow these steps to configure Mattermost to use GitLab as a single-sign-on (SSO) service for team creation, account creation and sign-in.
 
@@ -26,9 +26,13 @@ Follow these steps to configure Mattermost to use GitLab as a single-sign-on (SS
 
 6. Restart your Mattermost server to see the changes take effect.
 
-## GitHub SSO (unofficial)
+## Unofficial Single-Sign-On
 
-Note: Because the authentication interface of GitHub is similar to that of GitLab, the GitLab SSO feature can be used to unofficially also support GitHub SSO.
+Given the similarities of GitHub and GitHub Enterprise authentication mechanisms to GitLab, Mattermost offers "unofficial" support for GitHub and GitHub Enterprise. Each of the standards should work using the GitLab user interface, but the user interface will visually display GitLab icons and wording rather than GitHub or GitHub Enterprise.  
+
+Instructions for unofficial GitHub and GitHub Enterprise authentication setup are as follows: 
+
+### GitHub SSO (unofficial)
 
 Follow these steps to configure Mattermost to use Github as a single-sign-on (SSO) service for team creation, account creation and sign-in using the GitLab SSO interface.
 
@@ -51,9 +55,7 @@ to `true`.
 
 7. Tell the users to set their public email for GitHub at the [Public profile page](https://github.com/settings/profile). Mattermost uses the email to create account.
 
-## GitHub Enterprise SSO (unofficial)
-
-Note: Because the authentication interface of GitHub Enterprise is similar to that of GitLab, the GitLab SSO feature can be used to unofficially also support GitHub Enterprise SSO.
+### GitHub Enterprise SSO (unofficial)
 
 Follow these steps to configure Mattermost to use Github Enterprise as a single-sign-on (SSO) service for team creation, account creation and sign-in using the GitLab SSO interface.
 
