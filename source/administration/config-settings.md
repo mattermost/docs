@@ -170,9 +170,11 @@ Port of SMTP email server.
 
 **Push Notification Server** (`"PushNotificationServer": ""`) - Location of Mattermost Push Notification Service (MPNS), which re-sends push notifications from Mattermost to services like Apple Push Notification Service (APNS). 
 
-To run Mattermost entirely behind your firewall while sending offline push notifications to your iOS device (notifications appearing even when your iOS app is inactive), Apple Inc. requires you compile your own iOS app with your own certificates, mapped to your own push notification service. Source code for the Mattermost iOS application is available at: https://github.com/mattermost/ios and source code for MPNS is available at https://github.com/mattermost/push-proxy
+To run Mattermost entirely behind your firewall while sending offline push notifications to your iOS device (which show even when your app is closed), Apple Inc. requires you compile your own iOS app with your own certificates, mapped to your own push notification service. Source code for the Mattermost iOS application is available at: [https://github.com/mattermost/ios](https://github.com/mattermost/ios) and source code for MPNS is available at [https://github.com/mattermost/push-proxy](https://github.com/mattermost/push-proxy)
 
-Prior to compiling your own iOS app, you can test the rest of your setup using the reference implementation of the Mattermost Push Notification Service by entering https://push-test.mattermost.com as your **Push Notification Server** and downloading the reference implementation of the Mattermost iOS app from [iTunes](https://itunes.apple.com/us/app/mattermost/id984966508?ls=1&mt=8). While this reference implementation is fully functional, it is design for testing and not recommended for production deployments.
+Prior to compiling your own iOS app, you can test the rest of your setup using the reference implementation of the Mattermost Push Notification Service by entering `https://push-test.mattermost.com` as your **Push Notification Server** and downloading a compiled reference implementation of the Mattermost iOS app from [iTunes](https://itunes.apple.com/us/app/mattermost/id984966508?ls=1&mt=8). 
+
+While this reference implementation is fully functional, it is designed for testing and not recommended for production deployments. 
 
 ### File Settings
 
