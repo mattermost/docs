@@ -32,7 +32,7 @@ Given the similarities of GitHub and GitHub Enterprise authentication mechanisms
 
 Instructions for unofficial GitHub and GitHub Enterprise authentication setup are as follows: 
 
-### GitHub SSO (unofficial)
+### GitHub Single-Sign-On (unofficial)
 
 Follow these steps to configure Mattermost to use Github as a single-sign-on (SSO) service for team creation, account creation and sign-in using the GitLab SSO interface.
 
@@ -55,7 +55,7 @@ to `true`.
 
 7. Tell the users to set their public email for GitHub at the [Public profile page](https://github.com/settings/profile). Mattermost uses the email to create account.
 
-### GitHub Enterprise SSO (unofficial)
+### GitHub Enterprise Single-Sign-On (unofficial)
 
 Follow these steps to configure Mattermost to use Github Enterprise as a single-sign-on (SSO) service for team creation, account creation and sign-in using the GitLab SSO interface.
 
