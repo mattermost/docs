@@ -6,6 +6,7 @@
 Mattermost Documentation
 ========================
 -----
+```
 
 .. toctree::
    :maxdepth: 1
@@ -15,7 +16,7 @@ Mattermost Documentation
    help/*
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Install Guides
    :glob:
    
@@ -57,3 +58,5 @@ Mattermost Documentation
    :glob:
    
    integrations/*
+
+```
