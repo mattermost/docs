@@ -166,10 +166,14 @@ Port of SMTP email server.
 
 #### Push Notification Settings  
 
+##### Send Push Notifications 
 ```"SendPushNotifications": false```  
+
 "true": Your Mattermost server sends mobile push notifications to the server specified in **PushNotificationServer**; "false": Mobile push notifications are disabled.
 
+##### Push Notification Server 
 ```"PushNotificationServer": ""```  
+
 Location of Mattermost Push Notification Service (MPNS), which re-sends push notifications from Mattermost to services like Apple Push Notification Service (APNS). 
 
 To run Mattermost entirely behind your firewall while sending offline push notifications to your iOS device (notifications appearing even when your iOS app is inactive), Apple Inc. requires you compile your own iOS app with your own certificates, mapped to your own push notification service. Source code for the Mattermost iOS application is available at: https://github.com/mattermost/ios and source code for MPNS is available at https://github.com/mattermost/push-proxy
