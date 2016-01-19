@@ -6,7 +6,7 @@
 Mattermost Documentation
 ========================
 -----
-```
+
 
 .. toctree::
    :maxdepth: 1
@@ -59,4 +59,4 @@ Mattermost Documentation
    
    integrations/*
 
-```
+
