@@ -1,4 +1,4 @@
-## LDAP Setup (Enterprise Edition) 
+## LDAP Setup (Enterprise) 
 
 ### How to enable LDAP
 
