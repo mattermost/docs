@@ -28,6 +28,7 @@ Mattermost Documentation
    :caption: Deployment 
    :glob:
    
+   deployment/sso*
    deployment/*
 
 .. toctree::
