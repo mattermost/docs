@@ -380,7 +380,7 @@ This is also the value used to log in to Mattermost in the “LDAP Username” f
 ```"Query Timeout (seconds)": "60"```  
 The timeout value for queries to the LDAP server. Increase this value if you are getting timeout errors caused by a slow LDAP server.
 
-## Config.json Settings Not in System Console
+## Config.json settings not in System Console
 
 System Console allows an IT Admin to update settings defined in `config.json`. However there are a number of settings in `config.json` unavailable in the System Console and require update from the file itself. We describe them here: 
 
