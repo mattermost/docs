@@ -174,7 +174,8 @@ To run Mattermost entirely behind your firewall while sending offline push notif
 
 Prior to compiling your own iOS app, you can test the rest of your setup using the reference implementation of the Mattermost Push Notification Service by entering `https://push-test.mattermost.com` as your **Push Notification Server** and downloading a compiled reference implementation of the Mattermost iOS app from [iTunes](https://itunes.apple.com/us/app/mattermost/id984966508?ls=1&mt=8). 
 
-While this reference implementation is fully functional, it is designed for testing and not recommended for production deployments. 
+While this reference implementation is fully functional, it is designed for testing and not recommended for production deployments of more than 50 users. If you decide to use the reference implementation day-to-day it is highly recommended you join the [Mattermost Insiders Mailing List](http://mattermost.us11.list-manage.com/subscribe?u=6cdba22349ae374e188e7ab8e&id=2add1c8034) for notice of any changes. 
+
 
 ### File Settings
 
