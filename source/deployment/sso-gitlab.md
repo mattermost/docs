@@ -1,4 +1,4 @@
-# Configuring Single-Sign-On
+# Single-Sign-On Configuration
 ___
 Single-Sign-On can be configured with the following services.
 
