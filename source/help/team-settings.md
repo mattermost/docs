@@ -37,6 +37,8 @@ Team Administrators would set this to **Yes** when they:
 Team Administrators would set this to **No** when they:  
  1. Operate on the open internet and want a small, private team that is email-invite-only.
 
+System Administrators may choose to disable the Team Directory for their entire system by settings **System Console** > **Team Settings** > **Enable Team Directory** to false.
+
 #### Invite Code 
 
 The **Invite Code** is used as part of the URL in the team invitation link retrieved from the **Main Menu** > **Get Team Invite Link**. Click **Re-Generate** and then **Save** to generate a new team invitation link and invalidate the previous link.
