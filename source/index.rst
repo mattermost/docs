@@ -43,6 +43,12 @@ Mattermost Documentation
    :caption: Developer Guide
    :glob:
    
+   developer/api*
+   developer/web-service-
+   developer/webhooks*
+   developer/developer*
+   developer/contribution*
+   developer/style*
    developer/*
    
 .. toctree::
