@@ -315,23 +315,17 @@ Enter `https://<your-gitlab-url>/oauth/authorize` (example: `https://example.com
 
 ### Legals and Support Settings
 
-```"TermsOfServiceLink": "/static/help/terms.html"```  
-Set the link for the terms of service.
+**Terms of Service link** (`"TermsOfServiceLink": "/static/help/terms.html"`) - Set the link for the terms of service.
 
-```"PrivacyPolicyLink": "/static/help/privacy.html"```  
-Set the link for the privacy policy.
+**Privacy Policy link** (`"PrivacyPolicyLink": "/static/help/privacy.html"`) - Set the link for the privacy policy.
 
-```"AboutLink": "/static/help/about.html"```  
-Set the link for the about page.
+**About link** (`"AboutLink": "/static/help/about.html"`) - Set the link for the about page.
 
-```"HelpLink": "/static/help/help.html"```  
-Set the link for the help page.
+**Help link** (`"HelpLink": "/static/help/help.html"`) - Set the link for the help page.
 
-```"ReportAProblemLink": "/static/help/report_problem.html"```  
-Set the link for the support website.
+**Report a Problem link** (`"ReportAProblemLink": "/static/help/report_problem.html"`) - Set the link for the support website.
 
-`"SupportEmail":"feedback@mattermost.com"`  
-Set an email for feedback or support requests.
+**Support email** (`"SupportEmail":"feedback@mattermost.com"`) - Set an email for feedback or support requests.
 
 ### LDAP Settings (Enterprise)
 
