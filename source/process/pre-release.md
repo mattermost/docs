@@ -9,3 +9,5 @@ A pre-released version of Mattermost v1.3 is available for organizations who hav
 - You can also upgrade to the pre-released Enterprise Edition version from Mattermost v1.3 or Mattermost v1.2 using the [instructions in the upgrade guide](http://docs.mattermost.com/install/upgrade-guide.html)
 
 - Instructions for setting up AD/LDAP SSO are available in the [deployment guide.](http://docs.mattermost.com/deployment/sso-ldap.html)
+
+A [contact form](https://about.mattermost.com/contact/) is available for any questions.
