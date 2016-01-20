@@ -44,7 +44,7 @@ Mattermost Documentation
    :glob:
    
    developer/api*
-   developer/web-service-
+   developer/web-service*
    developer/webhooks*
    developer/developer*
    developer/contribution*
