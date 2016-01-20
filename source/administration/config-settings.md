@@ -313,7 +313,7 @@ Enter `https://<your-gitlab-url>/oauth/authorize` (example: `https://example.com
 ```"UserApiEndpoint": ""```  
 Enter `https://<your-gitlab-url>/oauth/authorize` (example: `https://example.com:3000/api/v3/user`). Use HTTP or HTTPS depending on how your server is configured.
 
-### Support Settings
+### Legals and Support Settings
 
 ```"TermsOfServiceLink": "/static/help/terms.html"```  
 Set the link for the terms of service.
