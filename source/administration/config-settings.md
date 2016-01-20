@@ -11,38 +11,27 @@ General settings to configure the listening address, login security, testing, we
 
 #### System
 
-```"ListenAddress": ":8065"```  
-The IP address on which to listen and the port on which to bind. Entering ":8065" will bind to all interfaces or you can choose one like "127.0.0.1:8065". Changing this will require a server restart before taking effect.
+**Listen Address** (`"ListenAddress": ":8065"`) - The IP address on which to listen and the port on which to bind. Entering ":8065" will bind to all interfaces or you can choose one like "127.0.0.1:8065". Changing this will require a server restart before taking effect.
 
-```"MaximumLoginAttempts": 10```  
-Failed login attempts allowed before a user is locked out and required to reset their password via email.
+**Maximum Login Attempts** (`"MaximumLoginAttempts": 10`) - Failed login attempts allowed before a user is locked out and required to reset their password via email.
 
-```"SegmentDeveloperKey": ""```  
-For users running SaaS services, signup for a key at Segment.com to track metrics.
+**Segment Developer Key** (`"SegmentDeveloperKey": ""`) - For users running SaaS services, signup for a key at Segment.com to track metrics.
 
-```"GoogleDeveloperKey": ""```  
-Set this key to enable embedding of YouTube video previews based on hyperlinks appearing in messages or comments. Instructions to obtain a key available at https://www.youtube.com/watch?v=Im69kzhpR3I. Leaving the field blank disables the automatic generation of YouTube video previews from links.
+**Google Developer Key** (`"GoogleDeveloperKey": ""`) - Set this key to enable embedding of YouTube video previews based on hyperlinks appearing in messages or comments. Instructions to obtain a key available at https://www.youtube.com/watch?v=Im69kzhpR3I. Leaving the field blank disables the automatic generation of YouTube video previews from links.
 
-```"EnableTesting": false```  
-"true": `/loadtest` slash command is enabled to load test accounts and test data.
+**Enable Testing** (`"EnableTesting": false`) - "true": `/loadtest` slash command is enabled to load test accounts and test data.
 
-```"EnableDeveloper": false```  
-"true": Users are alerted to any console errors that occur.
+**Enable Developer Mode** (`"EnableDeveloper": false`) - "true": Users are alerted to any console errors that occur.
 
-```"EnableSecurityFixAlert": true```  
-"true": System Administrators are notified by email if a relevant security fix alert has been announced in the last 12 hours. Requires email to be enabled.
+**Enable Security Fix Alert** (`"EnableSecurityFixAlert": true`) - "true": System Administrators are notified by email if a relevant security fix alert has been announced in the last 12 hours. Requires email to be enabled.
 
-```"SessionLengthWebInDays" : 30```
-Set the number of days before web sessions expire and users will need to log in again.
+**Session Length for Web in days** (`"SessionLengthWebInDays" : 30`) - Set the number of days before web sessions expire and users will need to log in again.
 
-```"SessionLengthMobileInDays" : 30```
-Set the number of days before native mobile sessions expire.
+**Session Length for Mobile in days** (`"SessionLengthMobileInDays" : 30`) - Set the number of days before native mobile sessions expire.
 
-```"SessionLengthSSOInDays" : 30```
-Set the number of days before SSO sessions expire.
+**Session Length for SSO in days** (`"SessionLengthSSOInDays" : 30`) - Set the number of days before SSO sessions expire.
 
-```"SessionCacheInMinutes" : 10```
-Set the number of minutes to cache a session in memory.
+**Session Cache in Minutes** (`"SessionCacheInMinutes" : 10`) - Set the number of minutes to cache a session in memory.
 
 #### Webhooks
 
