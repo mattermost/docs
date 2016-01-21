@@ -3,7 +3,7 @@
 Per the [Contributor Guide](https://github.com/mattermost/platform/blob/master/CONTRIBUTING.md), only PRs that reference Jira tickets with the "accepting pull requests" (APR) label should be submitted to the [Mattermost/Platform](https://github.com/mattermost/platform) repo. This system ensures:
 
 1. Proposed changes have been thoughtfully reviewed 
-2. Proposed changes can be tested, documented, and supported by volunteers
+2. Volunteers are willing to test, document, and support the changes
 3. The change meets the [fast, obvious, forgiving](http://www.mattermost.org/design-principles/) design principle for the project.
 4. The change [aligns to the stated purpose of the project](http://www.mattermost.org/vision/#mattermost-teams-v1)
 
