@@ -1,12 +1,31 @@
-# Services
+# GitLab
 ___
 
-## GitLab Integration Service
+### GitLab notifications in Mattermost
 
-This [open source integration service](https://github.com/mattermost/mattermost-integration-gitlab) let you configure real-time notifications on GitLab issues, merge requests and comments to be delivered to selected Mattermost channels.
+There are multiple ways to send notifications depending on how much control you'd like over the messages. 
 
-The service can be installed on any Linux-based web server and instructions for **Heroku** and **Ubuntu 14.04** are included. Please see [Mattermost incoming webhooks documentation](https://github.com/mattermost/platform/blob/master/doc/integrations/webhooks/Incoming-Webhooks.md) for details on formatting options within the service.
+#### Setting up Mattermost as a Slack project service integration:
 
-The Mattermost community is invited to fork, extend and repurpose this service for other applications. If you'd like your integration featured on http://mattermost.org/webhooks, please mail info@mattermost.org or tweet to us at @mattermosthq.
+Mattermost is "Slack-compatible, not Slack-limited" so if you like Slack's default formatting you can use their project service option to set up Mattermost integration: 
+
+1. In Mattermost go to **Account Settings** > **Integrations** > **Incoming Webhooks** 
+2. Select a channel and click **Add* and copy the `Webhook URL`
+3. In GitLab, go to **Settings** > **Project Services** > **Slack** and paste in the `Webhook URL` into **Webhook** 
+4. Enter **Username** for how you would like to name the account that posts the notifications
+4. Select **Triggers** for GitLab events on which you'd like to receive notifications
+6. Click **Save changes** then **Test settings** to make sure everything is working
+
+Any issues, please see the [Mattermost Troubleshooting Forum](https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150).
+
+#### Setting up GitLab integration service for Mattermost 
+
+You can also set up the [open source integration service](https://github.com/NotSqrt/mattermost-integration-gitlab) to let you configure notifications on GitLab issues, pushes, build events, merge requests and comments to be delivered to selected Mattermost channels. 
+
+This integration lets you completely control how notifications are formatted and, unlike Slack, offers full markdown support. 
+
+The source code can be modified to support not only GitLab, but any in-house applications you may have that support webhooks. Also see: 
+- [Mattermost incoming webhook documentation](http://docs.mattermost.com/developer/webhooks-incoming.html)
+- [GitLab webhook documentation](http://doc.gitlab.com/ce/web_hooks/web_hooks.html)
 
 ![webhooks](https://gitlab.com/gitlab-org/omnibus-gitlab/uploads/677b0aa055693c4dcabad0ee580c61b8/730_gitlab_feature_request.png)
