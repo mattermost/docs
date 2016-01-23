@@ -13,6 +13,8 @@ The platform lets users share messages and files across PCs, phones and tablets 
 
 **Mattermost Enterprise Edition** is a pre-released commercial version of Mattermost offering additional capabilities for enterprise communication and compliance available by `contacting Mattermost, Inc.`_
 
+This site offers documentation on User Help, Installation, Deployment, Administration, Development and Integrations.
+
 -----
 
 .. _`mattermost.org/download`: http://www.mattermost.org/download/
