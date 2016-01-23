@@ -1,4 +1,4 @@
-# GitLab
+# GitLab Mattermost
 
 ## GitLab Mattermost Administration 
 
