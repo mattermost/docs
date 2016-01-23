@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-# Mattermost Overview 
-
+Mattermost Overview 
+-------------------
 Mattermost is modern communication behind your firewall. 
 
 The platform lets users share messages and files across PCs, phones and tablets with continuous archiving and instant search, and supports notifications and integrations with your existing tools. 
