@@ -12,7 +12,7 @@ The total number of posts made in a team, including deleted posts and posts made
 ##### Public Groups
 The number of public channels created by your team, including channels that may have been archived.
 
-##### Private Group
+##### Private Groups
 The number of private groups created by your team, including groups that may have been archived.
 
 ##### Active Users With Posts
