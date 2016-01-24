@@ -13,16 +13,17 @@ When opening Jira tickets for accepting-pull-requests, please:
 
 1. Use titles that clearly describe the needed change and its value 
 2. Include (Proposed APR) in title, so triage team knows to add the APR tag if appropriate
-3. Provide unambiguous description so that feature can be tested by any volunteer
+3. Provide unambiguous description so that feature can be implemented and tested by any volunteer
 4. Link back to community discussions related to this change
-5. Apply "accepting-pull-requests", and optionally as "good-first-contribution".
-6. Post link back to community channels
+5. Post link back to community channels
+
+The triage team will add `accepting-pull-requests` label to have the ticket appear in the [issues Accepting Pull Requests](https://mattermost.atlassian.net/issues/?filter=10101) list. 
 
 Example of post back to the community: 
 
 ```
 Thanks @[USERNAME], 
 
-I created a ticket [for accepting pull requests on this issue](http://link). It will be reviewed in the triage meeting for addition to [the Accepting Pull Requests issues list](https://mattermost.atlassian.net/browse/PLT-797?filter=10101). [Code Contribution Guidelines](https://github.com/mattermost/platform/blob/master/CONTRIBUTING.md) are available for anyone interested in contributing to this project.
+I created a ticket [for accepting pull requests on this issue](http://link). It will be reviewed in the triage meeting for addition to [the Accepting Pull Requests issues list](https://mattermost.atlassian.net/issues/?filter=10101). [Code Contribution Guidelines](http://docs.mattermost.com/developer/contribution-guide.html) are available for anyone interested in contributing to this project.
 ```
 
