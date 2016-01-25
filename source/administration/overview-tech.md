@@ -28,15 +28,12 @@ This file, located in `bin/config.json` stores Mattermost system settings. This 
 
 ### 3) Database 
 
-The Mattermost database set up during installation stores user and system data. This database is versioned and Mattermost runs under two conditions: 
+The Mattermost database set up during installation stores user and system data. This database is versioned and the Mattermost server has two requirements for the database version: 
 
-1. **The major build number of the executable is THE SAME as the major build number of the database.**
-
-  For example, if the executable were 1.3.x and the database version was 1.3.x, Mattermost runs properly
-  
-2. **The major build number of the executable is ONE HIGHER than the major build number of the database.**  
-
-  For example, if the executable were 1.4.x and the database version was 1.3.x, then when run the executable would detect the version difference and upgrade the database to the same version as the executable. 
+1. The major build number of the executable is THE SAME as the major build number of the database.
+   - For example, if the executable were 1.3.x and the database version was 1.3.x, Mattermost runs properly
+2. The major build number of the executable is ONE HIGHER than the major build number of the database.
+   - For example, if the executable were 1.4.x and the database version was 1.3.x, then when run the executable would detect the version difference and upgrade the database to the same version as the executable. 
 
 
 
