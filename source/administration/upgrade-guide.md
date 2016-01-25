@@ -6,6 +6,7 @@ The following instructions upgrade Mattermost to the next major build release (f
 
 1. Download the **next major build release** of your server
 
+
     1. Run `platform -version` to check the current version of your Mattermost server
     2. Review the [Mattermost CHANGELOG](https://github.com/mattermost/platform/blob/master/CHANGELOG.md) to determine the next major build to download to your server using `wget https://github.com/mattermost/platform/releases/download/v1.x.x/mattermost.tar.gz`
 
@@ -21,8 +22,8 @@ The following instructions upgrade Mattermost to the next major build release (f
 4. Run `tar -xvzf mattermost.tar.gz` to decompress the upgraded version and replace the current version of Mattermost on disk
 5. Restore the state of your server by copying the backed up version of `config.json` in place of the default `config.json` 
 6. Start your server and address any setting changes relevant in the latest version of Mattermost
-  1. Run `sudo start mattermost`
-  2. Opening the **System Console** and saving a change will upgrade your `config.json` schema to the latest version using default values for new settings added
+     1. Run `sudo start mattermost`
+     2. Opening the **System Console** and saving a change will upgrade your `config.json` schema to the latest version using default values for new settings added
 7. Test the system is working by going to the URL of an existing team. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade
 
 
