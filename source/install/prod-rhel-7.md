@@ -208,7 +208,7 @@
   * ```sudo service nginx start```
 1. Add the following line to cron so the cert will renew every month
   * ```crontab -e```
-  * ```@monthly /home/ubuntu/letsencrypt/letsencrypt-auto certonly --reinstall -d yourdomainname && sudo service nginx reload```
+  * ```@monthly /home/YOURUSERNAME/letsencrypt/letsencrypt-auto certonly --reinstall -d yourdomainname && sudo service nginx reload```
 
 ## Finish Mattermost Server setup
 1. Navigate to `https://mattermost.example.com` and create a team and user.
