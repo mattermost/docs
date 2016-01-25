@@ -1,6 +1,6 @@
 ## AD/LDAP Setup (Enterprise) 
 
-### How to enable AD/LDAP
+### How to enable Active Directory/Lightweight Directory Access Protocol
 
 After installing Mattermost:
 
