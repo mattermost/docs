@@ -97,7 +97,7 @@ To upgrade GitLab Mattermost from the 0.7.1-beta release of Mattermost in GitLab
          1. Using the new GitLab SSO System Admin account go to **System Console** > **[TEAMNAME]** > **Users**, find the previous account and set it to "Inactive"
 
 
-### Upgrading from Mattermost Beta (Version 0.7)
+#### Upgrading from Mattermost Beta (Version 0.7)
 
 The following instructions apply to updating installations of Mattermost v0.7-Beta to Mattermost 1.1. 
 
@@ -115,7 +115,7 @@ Mattermost is designed to be upgraded sequentially through major version release
 
 ## Upgrade Guide for Mattermost Beta Release 
 
-#### Upgrading Mattermost in GitLab 8.0 to GitLab 8.1 with omnibus
+#### Legacy: Upgrading Mattermost in GitLab 8.0 to GitLab 8.1 with omnibus
 
 Mattermost 0.7.1-beta in GitLab 8.0 was a pre-release of Mattermost and Mattermost v1.1.1 in GitLab 8.1 was [updated significantly](https://github.com/mattermost/platform/blob/master/CHANGELOG.md#configjson-changes-from-v07-to-v10) to get to a stable, forwards-compatible platform for Mattermost. 
 
@@ -127,7 +127,7 @@ The Mattermost team didn't think it made sense for GitLab omnibus to attempt an 
 
 Optionally, you can use the new [System Console user interface](https://github.com/mattermost/platform/blob/master/doc/install/Configuration-Settings.md) to make changes to your new `config.json` file.
 
-#### Upgrading Mattermost v0.7.1-beta to v1.1.1
+#### Legacy: Upgrading Mattermost v0.7.1-beta to v1.1.1
 
 _Note: [Mattermost v1.1.1](https://github.com/mattermost/platform/releases/tag/v1.1.1) is a special release of Mattermost v1.1 that upgrades the database to Mattermost v1.1 from EITHER Mattermost v0.7 or Mattermost v1.0. The following instructions are for upgrading from Mattermost v0.7.1-beta to v1.1.1 and skipping the upgrade to Mattermost v1.0._
 
