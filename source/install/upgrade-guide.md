@@ -5,9 +5,12 @@
 The following instructions upgrade Mattermost to the next major build release (for example, from 1.3.x to 1.4.x). If you're upgrading across multiple releases (for example from 1.2.x to 1.4.x) please run the following procedure once for each incremental upgrade. 
 
 1. Download the **next major build release** of your server
+
     1. Run `platform -version` to check the current version of your Mattermost server
     2. Review the [Mattermost CHANGELOG](https://github.com/mattermost/platform/blob/master/CHANGELOG.md) to determine the next major build to download to your server using `wget https://github.com/mattermost/platform/releases/download/v1.x.x/mattermost.tar.gz`
+
 2. Review **Compatibility** section in CHANGELOG for the version downloaded and make sure to follow any instructions
+
 3. Stop the Mattermost Server
     1. Consider posting an announcement to active teams about stopping the Mattermost server for an upgrade
     2. To stop the server run `sudo stop mattermost`
