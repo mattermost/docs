@@ -6,12 +6,9 @@ The following instructions upgrade Mattermost to the next major build release (f
 
 1. Download the **next major build release** of your server
 
-
     1. Run `platform -version` to check the current version of your Mattermost server
     2. Review the [Mattermost CHANGELOG](https://github.com/mattermost/platform/blob/master/CHANGELOG.md) to determine the next major build to download to your server using `wget https://github.com/mattermost/platform/releases/download/v1.x.x/mattermost.tar.gz`
-
 2. Review **Compatibility** section in CHANGELOG for the version downloaded and make sure to follow any instructions
-
 3. Stop the Mattermost Server
     1. Consider posting an announcement to active teams about stopping the Mattermost server for an upgrade
     2. To stop the server run `sudo stop mattermost`
@@ -25,5 +22,3 @@ The following instructions upgrade Mattermost to the next major build release (f
      1. Run `sudo start mattermost`
      2. Opening the **System Console** and saving a change will upgrade your `config.json` schema to the latest version using default values for new settings added
 7. Test the system is working by going to the URL of an existing team. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade
-
-
