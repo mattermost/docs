@@ -4,23 +4,8 @@ $(document).ready(function(){
 		$(this).next().slideToggle();
 	});
 
-	var scrollPosition;
-
-	var scrollFunction = function(){
-		scrollPosition = $(window).scrollTop();
-		if(scrollPosition > 60){
-			$('.wy-side-nav-search').addClass('scrolled');
-		}
-		else {
-			$('.wy-side-nav-search').removeClass('scrolled');
-		}
-	}
-
-	scrollFunction();
-
-	$(window).scroll(function(){
-		scrollFunction();
-	});
+	var sidebarScrollPosition = $('.wy-menu-vertical li.current>a').offset().top;
+	$('.wy-side-scroll').scrollTop(sidebarScrollPosition-100);
 
 
 });
