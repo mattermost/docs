@@ -119,24 +119,13 @@ To upgrade GitLab Mattermost from the 0.7.1-beta release of Mattermost in GitLab
        3. Deactivate the previous System Admin account that used email authentication.
          1. Using the new GitLab SSO System Admin account go to **System Console** > **[TEAMNAME]** > **Users**, find the previous account and set it to "Inactive"
 
+##### `panic: The database schema version of 1.1.0 cannot be upgraded. You must not skip a version`
+- This error may appear in your `/var/log/gitlab/mattermost/current` if you're attempting to skip major versions when upgrading GitLab Mattermost (e.g. running an upgrade from GitLab 8.2.x to 8.4.x, instead of running from 8.2.x to 8.3.x to 8.4.x which is required for GitLab Mattermost). To address this: 
+    1. Run `platform -version` to check your version of Mattermost 
+    2. If your version of the Mattermost binary doesn't match the version listed in the database error message, downgrade the version of the Mattermost binary you are using by [following the manual upgrade steps for Mattermost](https://github.com/mattermost/platform/blob/master/doc/install/Upgrade-Guide.md#upgrading-mattermost-to-next-major-release) and using the database schema version listed in the error messages for the version you select in Step 1) iv). 
+    3. Once Mattermost is working again, you can use the same upgrade procedure to upgrade Mattermost version by version to your current GitLab version. After this is done, GitLab automation should continue to work for future upgrades, so long as you don't skip versions. 
 
-#### Upgrading from Mattermost Beta (Version 0.7)
-
-The following instructions apply to updating installations of Mattermost v0.7-Beta to Mattermost 1.1. 
-
-## GitLab Mattermost Upgrade Troubleshooting 
-
-#### Upgrading GitLab Mattermost when GitLab upgrade skips versions 
-
-Mattermost is designed to be upgraded sequentially through major version releases. If you skip versions when upgrading GitLab, you may find a `panic: The database schema version of 1.1.0 cannot be upgraded. You must not skip a version` error in your `/var/log/gitlab/mattermost/current` directory. If so: 
-
-1. Run `platform -version` to check your version of Mattermost 
-2. If your version of the Mattermost binary doesn't match the version listed in the database error message, downgrade the version of the Mattermost binary you are using by [following the manual upgrade steps for Mattermost](https://github.com/mattermost/platform/blob/master/doc/install/Upgrade-Guide.md#upgrading-mattermost-to-next-major-release) and using the database schema version listed in the error messages for the version you select in Step 1) iv). 
-3. Once Mattermost is working again, you can use the same upgrade procedure to upgrade Mattermost version by version to your current GitLab version. After this is done, GitLab automation should continue to work for future upgrades, so long as you don't skip versions. 
-
-![check list](https://pre-release.mattermost.com/api/v1/files/get/pspxu7bu17yttmtnzsjnqu78fe/o1nq6cmn5pfo8k8tchb4gtx4kc/drxotqo833g6dycoqnteo9pxtr/Image%20Pasted%20at%202016-0-15%2017-20.png?d=%7B%22filename%22%3A%22drxotqo833g6dycoqnteo9pxtr%2FImage%2520Pasted%2520at%25202016-0-15%252017-20.png%22%2C%22time%22%3A%221452903541649%22%7D&h=%242a%2410%24vzr2kAFlM8cenAWX5pYp3uF6aaGXTgBjkN37qdkZZ4VziZTzCuu2y&t=rcgiyftm7jyrxnma1osd8zswby)
-
-### Legacy: Upgrade GitLab Mattermost Beta 
+#### Upgrading from GitLab Mattermost Beta
 
 #### Upgrading Mattermost in GitLab 8.0
 
