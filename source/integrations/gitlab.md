@@ -8,6 +8,30 @@ GitLab Mattermost is a special version of Mattermost bundled with GitLab omnibus
 
 Please follow the [GitLab Omnibus documentation for installing GitLab Mattermost](http://doc.gitlab.com/omnibus/gitlab-mattermost/).
 
+### Upgrading GitLab Mattermost 
+
+GitLab Mattermost can be upgraded through the regular GitLab omnibus update process provided: 
+
+1. No major build versions are skipped 
+   (e.g. upgrading GitLab omnibus from 8.2.x to 8.3.x works, but upgrading from 8.2.x to 8.4.x will not) 
+2. Mattermost configuration settings have not been changed outside of GitLab
+   That means no changes to Mattermost's `config.json` file have been made, either directly or via the Mattermost **System Console** which saves back changes to `config.json`. 
+
+If this is the case, upgrading GitLab using omnibus and running `gitlab-ctl reconfigure` should upgrade GitLab Mattermost to the next version. 
+
+If this is not the case, there are two options: 
+
+1. Update [`gitlab.rb`](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-config-template/gitlab.rb.template#L706) with the changes done to `config.json`
+   This might require adding some parameters as not all settings in `config.json` are available in `gitlab.rb`. Once complete, GitLab omnibus should be able to upgrade GitLab Mattermost from one version to the next.
+2. Migrate Mattermost outside of the directory controlled by GitLab omnibus so it can be administered and upgraded independently (see below). 
+
+#### Migrating Mattermost outside of GitLab 
+
+To migrate Mattermost outside of GitLab: 
+
+TBD
+
+
 ### Community Support Resources
 
 For help and support around your GitLab Mattermost deployment please see:
