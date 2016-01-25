@@ -24,7 +24,7 @@ No pull requests for major features should be submitted to the current release a
   1. Write compatibility updates for config.json and database changes [See example](https://github.com/mattermost/platform/blob/master/CHANGELOG.md#compatibility)  
  - Confirm changes to config.json in compatibility section of Changelog are written back to [settings documentation](https://github.com/mattermost/platform/blob/master/doc/install/Configuration-Settings.md)
   - Update [Upgrade Guide](https://github.com/mattermost/platform/blob/master/doc/install/Upgrade-Guide.md) for any steps needed to upgrade to new version
- - Prepare tickets for [cutting RC builds](https://mattermost.atlassian.net/browse/PLT-985), [creating the final release candidate](https://mattermost.atlassian.net/browse/PLT-986), [creating AMIs](https://mattermost.atlassian.net/browse/PLT-1213), and [testing GitLab RC with Mattermost](https://mattermost.atlassian.net/browse/PLT-1013)  
+ - Prepare tickets for [cutting RC builds](https://mattermost.atlassian.net/browse/PLT-985), [creating the final release candidate](https://mattermost.atlassian.net/browse/PLT-986), [creating AMIs](https://mattermost.atlassian.net/browse/PLT-1213), [testing GitLab RC with Mattermost](https://mattermost.atlassian.net/browse/PLT-1013), and pushing to private cloud customers  
  - Queue an item for UX meeting to discuss worst UX bug  
  - Reach out to community and customers asking about top issues  
 3. Dev:
