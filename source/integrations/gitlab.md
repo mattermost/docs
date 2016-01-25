@@ -137,9 +137,9 @@ Mattermost is designed to be upgraded sequentially through major version release
 
 ![check list](https://pre-release.mattermost.com/api/v1/files/get/pspxu7bu17yttmtnzsjnqu78fe/o1nq6cmn5pfo8k8tchb4gtx4kc/drxotqo833g6dycoqnteo9pxtr/Image%20Pasted%20at%202016-0-15%2017-20.png?d=%7B%22filename%22%3A%22drxotqo833g6dycoqnteo9pxtr%2FImage%2520Pasted%2520at%25202016-0-15%252017-20.png%22%2C%22time%22%3A%221452903541649%22%7D&h=%242a%2410%24vzr2kAFlM8cenAWX5pYp3uF6aaGXTgBjkN37qdkZZ4VziZTzCuu2y&t=rcgiyftm7jyrxnma1osd8zswby)
 
-## Upgrade Guide for Mattermost Beta Release 
+### Legacy: Upgrade GitLab Mattermost Beta 
 
-#### Legacy: Upgrading Mattermost in GitLab 8.0 to GitLab 8.1 with omnibus
+#### Upgrading Mattermost in GitLab 8.0
 
 Mattermost 0.7.1-beta in GitLab 8.0 was a pre-release of Mattermost and Mattermost v1.1.1 in GitLab 8.1 was [updated significantly](https://github.com/mattermost/platform/blob/master/CHANGELOG.md#configjson-changes-from-v07-to-v10) to get to a stable, forwards-compatible platform for Mattermost. 
 
