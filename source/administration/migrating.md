@@ -18,5 +18,5 @@ The following instructions migrate Mattermost from one server to another by back
       1. Run `sudo start mattermost`
       2. Opening the **System Console** and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added
 6. Test the system is working by going to the URL of an existing team. 
-      You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade
+       You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade
  
