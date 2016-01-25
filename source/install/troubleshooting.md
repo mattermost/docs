@@ -34,12 +34,12 @@ The following is a list of common error messages and solutions:
 
 ###### `Please check connection, Mattermost unreachable. If issue persists, ask administrator to check WebSocket port.`
 - Message appears in blue bar on team site. 
-- **Solution:** Check that [your websocket port is properly configured](https://github.com/mattermost/platform/blob/master/doc/install/Production-Ubuntu.md#set-up-nginx-server). 
+- **Solution:** Check that [your websocket port is properly configured](Production-Ubuntu.md#set-up-nginx-server). 
 
 
 ###### `x509: certificate signed by unknown authority` 
   - This error may appear in server logs when attempting to sign-up when using self-signed certificates to setup SSL, which is not yet supported by Mattermost. 
-  - **Solution:** Set up a load balancer like Ngnix [per production install guide](https://github.com/mattermost/platform/blob/master/doc/install/Production-Ubuntu.md#set-up-nginx-with-ssl-recommended). A ticket exists to [add support for self-signed certificates in future](x509: certificate signed by unknown authority). 
+  - **Solution:** Set up a load balancer like Ngnix [per production install guide](Production-Ubuntu.md#set-up-nginx-with-ssl-recommended). A ticket exists to [add support for self-signed certificates in future](x509: certificate signed by unknown authority). 
 
 ###### `panic: runtime error: invalid memory address or nil pointer dereference`
  - This error can occur if you have manually manipulated the Mattermost database, typically with deletions. Mattermost is designed to serve as a searchable archive, and manual manipulation of the database elements compromises integrity and may prevent upgrade. 
