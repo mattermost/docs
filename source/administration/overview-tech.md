@@ -1,4 +1,4 @@
-# Mattermost Technical Overview
+# Technical Overview
 
 ## Release Numbering 
 
