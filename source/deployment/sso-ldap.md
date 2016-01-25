@@ -1,6 +1,6 @@
-## LDAP Setup (Enterprise) 
+## AD/LDAP Setup (Enterprise) 
 
-### How to enable LDAP
+### How to enable AD/LDAP
 
 After installing Mattermost:
 
