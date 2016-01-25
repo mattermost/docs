@@ -34,7 +34,7 @@ The following is a list of common error messages and solutions:
 
 ###### `Please check connection, Mattermost unreachable. If issue persists, ask administrator to check WebSocket port.`
 - Message appears in blue bar on team site. 
-- There are several part of Mattermost that need to connect to the Mattermost server using web sockets and this indicates at least one of those websocket connections is misconfigured. 
+- There are several parts of Mattermost that need to connect to the Mattermost server using web sockets and this indicates at least one of those websocket connections is misconfigured. 
 - The most likely cause is a proxy being misconfigured, and possibly stripping headers off of communications.
 - **Solution:** Check that [your websocket port is properly configured](prod-ubuntu.md#set-up-nginx-server). 
 
