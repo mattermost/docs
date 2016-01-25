@@ -2,6 +2,13 @@
 
 GitLab Mattermost is a special version of Mattermost bundled with GitLab omnibus. Here we consolidate administrative instructions, guides and troubleshooting guidance.
 
+## Community Support Resources
+
+For help and support around your GitLab Mattermost deployment please see:
+
+- [Troubleshooting Forum](https://forum.mattermost.org/t/about-the-trouble-shooting-category/150/1) for configuration questions and issues
+- [GitLab Mattermost issue tracker](https://gitlab.com/gitlab-org/gitlab-mattermost/issues) for verified bugs with repro steps
+
 ## Deploying GitLab Mattermost 
 
 ### Installing GitLab Mattermost
@@ -27,20 +34,11 @@ If this is not the case, there are two options:
 
 ### Migrating Mattermost outside of GitLab 
 
-To migrate Mattermost outside of GitLab: 
-
-TBD
+Follow the [**Mattermost Upgrade and Migration Guide**](../administration/Upgrade.md) to move your Mattermost configuration settings and data to another directory or server independent from GitLab omnibus.
 
 ### Upgrading GitLab Mattermost manually
 
 If you choose to upgrade Mattermost outside of GitLab's omnibus automation, please [follow this guide](http://docs.mattermost.com/administration/upgrade-guide.html).
-
-## Community Support Resources
-
-For help and support around your GitLab Mattermost deployment please see:
-
-- [Troubleshooting Forum](https://forum.mattermost.org/t/about-the-trouble-shooting-category/150/1)
-- [GitLab Mattermost issue tracker on GitLab.com](https://gitlab.com/gitlab-org/gitlab-mattermost/issues)
 
 ___
 ## Administering GitLab Mattermost 
