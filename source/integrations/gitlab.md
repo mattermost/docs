@@ -36,11 +36,10 @@ If this is not the case, there are two options:
 
 Follow the [**Mattermost Upgrade and Migration Guide**](../administration/upgrade-guide.md) to move your Mattermost configuration settings and data to another directory or server independent from GitLab omnibus.
 
-### Upgrading GitLab Mattermost manually
+### Upgrading GitLab Mattermost outside of GitLab
 
 If you choose to upgrade Mattermost outside of GitLab's omnibus automation, please [follow this guide](http://docs.mattermost.com/administration/upgrade-guide.html).
 
-___
 ## Administering GitLab Mattermost 
 
 ### GitLab notifications in Mattermost
