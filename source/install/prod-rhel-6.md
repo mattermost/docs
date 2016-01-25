@@ -153,38 +153,31 @@ exec bin/platform
     * **Optional** if you're running on the same server as the Mattermost server and see 502 errors you may need to run `sudo setsebool -P httpd_can_network_connect true` because SELinux is preventing the connection
 
 ## Set up Nginx with SSL (Recommended)
-1. You will need a SSL cert from a certificate authority.
-1. For simplicity we will generate a test certificate.
-    * ``` mkdir /top/mattermost/cert```
-    * ``` cd /top/mattermost/cert```
-    * ``` sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mattermost.key -out mattermost.crt```
-    * Input the following info 
-    ```
-    Country Name (2 letter code) [AU]:US
-    State or Province Name (full name) [Some-State]:California
-    Locality Name (eg, city) []:Palo Alto
-    Organization Name (eg, company) [Internet Widgits Pty Ltd]:Example LLC
-    Organizational Unit Name (eg, section) []:
-    Common Name (e.g. server FQDN or YOUR name) []:mattermost.example.com
-    Email Address []:admin@mattermost.example.com
-    ```
-1. Run `openssl dhparam -out dhparam.pem 4096` (it will take some time).
-1. Modify the file at `/etc/nginx/conf.d/mattermost.conf` and add the following lines
+1. You can use a free and an open certificate security like let's encrypt, this is how to proceed
+  * ```sudo apt-get install git```
+  * ```git clone https://github.com/letsencrypt/letsencrypt```
+  * ```cd letsencrypt```
+  1. Be sure that the port 80 is not use by stopping nginx
+  * ```sudo service nginx stop```
+  * ```netstat -na | grep ':80.*LISTEN'```
+  * ```./letsencrypt-auto certonly --standalone```
+  1. This command will download packages and run the instance, after that you will have to give your domain name
+  1. You can find your certificate in /etc/letsencrypt/live
+1. Modify the file at `/etc/nginx/sites-available/mattermost` and add the following lines:
 ```
   server {
      listen         80;
      server_name    mattermost.example.com;
      return         301 https://$server_name$request_uri;
   }
-
+  
   server {
      listen 443 ssl;
      server_name mattermost.example.com;
 
      ssl on;
-     ssl_certificate /home/ubuntu/cert/mattermost.crt;
-     ssl_certificate_key /home/ubuntu/cert/mattermost.key;
-     ssl_dhparam /home/ubuntu/cert/dhparam.pem;
+     ssl_certificate /etc/letsencrypt/live/yourdomainname/fullchain.pem;
+     ssl_certificate_key /etc/letsencrypt/live/yourdomainname/privkey.pem;
      ssl_session_timeout 5m;
      ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
      ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
@@ -206,6 +199,11 @@ exec bin/platform
      }
   }
 ```
+1. Be sure to restart nginx
+  * ```sudo service nginx start```
+1. Add the following line to cron so the cert will renew every month
+  * ```crontab -e```
+  * ```@monthly /home/ubuntu/letsencrypt/letsencrypt-auto certonly --reinstall -d yourdomainname && sudo service nginx reload```
 
 ## Finish Mattermost Server setup
 1. Navigate to `https://mattermost.example.com` and create a team and user.
