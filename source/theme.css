@@ -12,10 +12,6 @@ h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
 	font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
 }
 
-.wy-side-nav-search.scrolled {
-	margin-top: 0;
-}
-
 .wy-side-nav-search {
 	margin-top: 60px;
 }
@@ -70,7 +66,7 @@ header {
 	height: 60px;
 	line-height: 60px;
 	z-index: 999;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	width: 100%;
 }
