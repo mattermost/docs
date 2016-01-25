@@ -2,7 +2,7 @@
 
 Early customers who have deployed the pre-released version of Mattermost Enterprise Edition are providing feedback to shape the feature set, roadmap and pricing of the commercial verison of Mattermost. 
 
-A pre-released version of Enterprise Edition v1.4 is available for organizations who have deployed the open source version and are open to providing feedback on commerical features, such as authentication with Active Directory/Lightweight Directory Access Protocol (AD/LDAP). 
+A pre-released version of Enterprise Edition v1.4 is available for organizations who have deployed the open source version and are open to providing feedback on commerical features, such as authentication with Active Directory/Lightweight Directory Access Protocol (AD/LDAP) and features for advanced compliance requirements. 
 
 - **Accessing Enterprise Edition Pre-Release** - You can request access to a pre-released version of _Mattermost Enterprise Edition v1.4_ at https://about.mattermost.com/contact/
 
