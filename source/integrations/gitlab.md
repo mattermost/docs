@@ -1,8 +1,8 @@
-# GitLab Mattermost
-
-## GitLab Mattermost Administration 
+# GitLab Mattermost Administration 
 
 GitLab Mattermost is a special version of Mattermost bundled with GitLab omnibus. Here we consolidate administrative instructions, guides and troubleshooting guidance.
+
+## Deploying GitLab Mattermost 
 
 ### Installing GitLab Mattermost
 
@@ -25,14 +25,17 @@ If this is not the case, there are two options:
    This might require adding some parameters as not all settings in `config.json` are available in `gitlab.rb`. Once complete, GitLab omnibus should be able to upgrade GitLab Mattermost from one version to the next.
 2. Migrate Mattermost outside of the directory controlled by GitLab omnibus so it can be administered and upgraded independently (see below). 
 
-#### Migrating Mattermost outside of GitLab 
+### Migrating Mattermost outside of GitLab 
 
 To migrate Mattermost outside of GitLab: 
 
 TBD
 
+### Upgrading GitLab Mattermost manually
 
-### Community Support Resources
+If you choose to upgrade Mattermost outside of GitLab's omnibus automation, please [follow this guide](http://docs.mattermost.com/administration/upgrade-guide.html).
+
+## Community Support Resources
 
 For help and support around your GitLab Mattermost deployment please see:
 
@@ -40,6 +43,7 @@ For help and support around your GitLab Mattermost deployment please see:
 - [GitLab Mattermost issue tracker on GitLab.com](https://gitlab.com/gitlab-org/gitlab-mattermost/issues)
 
 ___
+## Administering GitLab Mattermost 
 
 ### GitLab notifications in Mattermost
 
@@ -70,9 +74,6 @@ The source code can be modified to support not only GitLab, but any in-house app
 
 ![webhooks](https://gitlab.com/gitlab-org/omnibus-gitlab/uploads/677b0aa055693c4dcabad0ee580c61b8/730_gitlab_feature_request.png)
 
-### Upgrading GitLab Mattermost manually
-
-If you choose to upgrade Mattermost outside of GitLab's omnibus automation, please [follow this guide](https://github.com/mattermost/platform/blob/master/doc/install/Upgrade-Guide.md#upgrading-mattermost-to-next-major-release).
 
 ### Upgrading GitLab Mattermost from GitLab 8.0 (containing Mattermost 0.7.1-beta)
 
