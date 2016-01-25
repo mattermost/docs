@@ -72,16 +72,11 @@ The source code can be modified to support not only GitLab, but any in-house app
 
 ![webhooks](https://gitlab.com/gitlab-org/omnibus-gitlab/uploads/677b0aa055693c4dcabad0ee580c61b8/730_gitlab_feature_request.png)
 
-
-### Upgrading GitLab Mattermost from GitLab 8.0 (containing Mattermost 0.7.1-beta)
-
-To upgrade GitLab Mattermost from the 0.7.1-beta release of Mattermost in GitLab 8.0, please [follow this guide](https://github.com/mattermost/platform/blob/master/doc/install/Upgrade-Guide.md#upgrading-mattermost-in-gitlab-80-to-gitlab-81-with-omnibus).
-
-### Troubleshooting GitLab Mattermost
+## Troubleshooting GitLab Mattermost
 
 - If you're having issues installing GitLab Mattermost with GitLab Omnibus, as a first step please turn on logging by updating the [log settings](https://github.com/mattermost/platform/blob/master/doc/install/Configuration-Settings.md#log-file-settings) section in your `config.json` file installed by omnibus, and they try a general web search for the error message you receive. 
 
-#### GitLab Mattermost Error Messages
+### GitLab Mattermost Error Messages
 
 ###### `We received an unexpected status code from the server (200)`
 
