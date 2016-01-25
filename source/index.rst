@@ -47,6 +47,12 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    :caption: Administration
    :glob:
    
+   administration/overview*
+   administration/command*
+   administration/config*
+   administration/statistics.md
+   administration/upgrade.md
+   administration/migrating.md
    administration/*
 
 .. toctree::
