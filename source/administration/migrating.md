@@ -4,7 +4,7 @@
 
 The following instructions migrate Mattermost from one server to another by backing up and restoring the Mattermost database and `config.json` file. For these instructions **SOURCE** refers to the Mattermost server _from which_ your system will be migrated and **DESTINATION** refers to the Mattermost server _to which_ your system will be migrated. 
 
-1. Upgrade your SOURCE Mattermost server to the latest major build version  
+1. Upgrade your SOURCE Mattermost server to the latest major build version. 
          1. See [Mattermost Upgrade Guide](upgrade.md)
 2. Install the latest major build of Mattermost server as your DESTINATION   
          1. See docs.mattermost.com for install guides. Make sure your new instance is properly configured and tested. The database type and version of SOURCE and DESTINATION deployments need to match.  
