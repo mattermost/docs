@@ -34,7 +34,7 @@ If this is not the case, there are two options:
 
 ### Migrating Mattermost outside of GitLab 
 
-Follow the [**Mattermost Upgrade and Migration Guide**](../administration/Upgrade.md) to move your Mattermost configuration settings and data to another directory or server independent from GitLab omnibus.
+Follow the [**Mattermost Upgrade and Migration Guide**](../administration/upgrade-guide.md) to move your Mattermost configuration settings and data to another directory or server independent from GitLab omnibus.
 
 ### Upgrading GitLab Mattermost manually
 
