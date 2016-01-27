@@ -21,9 +21,10 @@ This site offers documentation on User Help, Installation, Deployment, Administr
 .. _contacting Mattermost, Inc.: https://about.mattermost.com/contact/
 .. toctree::
    :maxdepth: 1
-   :caption: User Help
+   :caption: Getting Started
    :glob:
    
+   help/getting-started/signing-in.md
    help/*
 
 .. toctree::
