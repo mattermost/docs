@@ -87,15 +87,15 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - (Logistics) Walk through each item of this checklist  
     - (Dev) Last check of tickets that need to be merged before RC1  
     - (Team) Each team member discusses worst bug (10-15s)  
-4. **Code Complete** is declared after meeting  
-5. Dev:  
+    - **Code Complete** is declared after meeting  
+4. Dev:  
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/platform/pulls) marked for the current release  
-6. Build:  
+5. Build:  
     - Master is tagged and branched and “Release Candidate 1″ is cut (e.g. 1.1.0-RC1) according to the [Release Candidate Checklist](https://github.com/mattermost/process/blob/master/release/create-release-candidate.md)  
-7. PM:  
+6. PM:  
     - Create meta issue for regressions in GitHub (see [example](https://github.com/mattermost/platform/issues/574))  
     - Include link to meta-issue in release notes of RC1  
-8. Marketing:  
+7. Marketing:  
     - Tweet announcement that RC1 is ready (see [example](https://twitter.com/mattermosthq/status/664172166368264192))  
  
 ### E. (T-minus 4 working days) Release Candidate Testing 
@@ -168,18 +168,14 @@ The final release is cut. If an urgent and important issue needs to be addressed
 ## Release Numbering 
 
 Mattermost numbers its stable releases based on the following format: 
-
   `[Version Number].[Major Build Number].[Minor Build Number]`
 
 Version Number:
-
 - Indicates a major system release (e.g. 1.x.x, 2.x.x)
 
 Major Build Number:
-
 - Indicates significant new functionality, (e.g. 0.5.x, 0.6.x, 0.7.x)
 
 Minor Build Number:
-
 - Indicates a bug fix or security release (e.g. 1.2.5, 1.2.6)
 
