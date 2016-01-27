@@ -10,7 +10,7 @@ Thank you for your interest in contributing to Mattermost. Here's the process:
 
 2. If you have questions post in [Mattermost forum](http://forum.mattermost.org/) or join the [Mattermost core team discussion](https://pre-release.mattermost.com/signup_user_complete/?id=rcgiyftm7jyrxnma1osd8zswby) and post in the "APR Tickets" channel
 
-It's generally okay to submit PRs to fix obvious bugs or add small improvements, but anything that significantly changes behavior or user expectations [requires an APR ticket opened by the core team](http://docs.mattermost.com/process/accepting-pull-request.html) so that the change be tested, documented and supported. 
+It's okay to submit PRs to fix obvious bugs or add small improvements, but anything that significantly changes behavior or user expectations [requires an APR ticket opened by the core team](http://docs.mattermost.com/process/accepting-pull-request.html) so that the change can be tested, documented and supported. 
 
 The best way to discuss opening an APR ticket with the core team is by [starting a conversation in the feature idea forum](http://www.mattermost.org/feature-requests/) which is monitored via automation.
 
