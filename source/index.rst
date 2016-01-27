@@ -22,11 +22,32 @@ This site offers documentation on User Help, Installation, Deployment, Administr
 .. toctree::
    :maxdepth: 1
    :caption: Getting Started
-   :glob:
    
    help/getting-started/signing-in.md
-   help/*
-
+   help/getting-started/messaging-basics.md
+   help/getting-started/configuring-notifications.md
+   help/getting-started/organizing-conversations.md
+   help/getting-started/searching.md
+   help/getting-started/creating-teams.md
+   
+.. toctree::
+   :maxdepth: 1
+   :caption: Messaging
+   
+   help/messaging/sending-messages.md
+   help/messaging/reading-messages.md
+   help/messaging/mentioning-teammates.md
+   help/messaging/formatting-text.md
+   help/messaging/attaching-files.md
+ 
+.. toctree::
+   :maxdepth: 1
+   :caption: Settings
+   
+   help/settings/account-settings.md
+   help/settings/theme-colors.md
+   help/settings/channel-settings.md
+   
 .. toctree::
    :maxdepth: 1
    :caption: Install Guides
