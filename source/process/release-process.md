@@ -28,7 +28,7 @@ No pull requests for major features should be submitted to the current release a
     - Queue an item for UX meeting to discuss worst UX bug  
     - Reach out to community and customers asking about top issues  
 3. Dev:
-    1. Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/platform/pulls) marked for the current release 
+    - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/platform/pulls) marked for the current release 
 4. Leads: Meet to prioritize the final tickets of the release   
     - Backlog is reviewed and major features that won’t make it are moved to next release
     - Post a link to Release Discussion room for query of [remaining tickets in this release](https://mattermost.atlassian.net/issues/?filter=11102)  
