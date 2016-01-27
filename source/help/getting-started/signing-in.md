@@ -1,4 +1,4 @@
-# Signing in to Mattermost
+# Signing in
 _____
 
 You can sign-in to your team from the web address of `https://domain.com/teamname`. 
