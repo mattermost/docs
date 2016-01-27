@@ -14,8 +14,8 @@ Format your messages using Markdown that supports text styling, headings, links,
 Attach files by dragging and dropping into Mattermost or clicking the attachment icon in the text input box.
 
 Learn more about:
-- [Composing Messages and Replies](../messaging/sending-messages.md)
-- [Reading Messages](../messaging/reading-messages.md)
-- [Mentioning Teammates](../messaging/mentioning-teammates.md)
-- [Formatting Messages using Markdown](../messaging/formatting-text.md)
-- [Attaching Files](../messaging/attaching-files.md)
+- [Composing Messages and Replies](http://docs.mattermost.com/help/messaging/sending-messages.html)
+- [Reading Messages](http://docs.mattermost.com/help/messaging/reading-messages.html)
+- [Mentioning Teammates](http://docs.mattermost.com/help/messaging/mentioning-teammates.html)
+- [Formatting Messages using Markdown](http://docs.mattermost.com/help/messaging/formatting-text.html)
+- [Attaching Files](http://docs.mattermost.com/help/messaging/attaching-files.html)
