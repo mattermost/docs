@@ -9,11 +9,13 @@ Notify teammates when they are needed by typing `@username`.
 
 Format your messages using Markdown that supports text styling, headings, links, emoticons, code blocks, block quotes, tables, lists and in-line images.
 
+![markdown](https://cloud.githubusercontent.com/assets/14333569/12622129/2bcb04d6-c4e1-11e5-9701-3176e837c471.png)
+
 Attach files by dragging and dropping into Mattermost or clicking the attachment icon in the text input box.
 
 Learn more about:
-- [Composing Messages and Replies](XXXXXX)
-- [Reading Messages](XXXXXX)
-- [Mentioning Teammates](XXXXXX)
-- [Formatting Messages using Markdown](XXXXXX)
-- [Attaching Files](XXXXXX)
+- [Composing Messages and Replies](../messaging/sending-messages.md)
+- [Reading Messages](../messaging/reading-messages.md)
+- [Mentioning Teammates](../messaging/mentioning-teammates.md)
+- [Formatting Messages using Markdown](../messaging/formatting-text.md)
+- [Attaching Files](../messaging/attaching-files.md)
