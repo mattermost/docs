@@ -167,7 +167,7 @@ The final release is cut. If an urgent and important issue needs to be addressed
 
 ## Release Numbering 
 
-Mattermost numbers its stable releases based on the following format: 
+Mattermost numbers its stable releases based on the following format:  
   `[Version Number].[Major Build Number].[Minor Build Number]`
 
 Version Number:
