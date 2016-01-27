@@ -1,4 +1,4 @@
-# Writing Messages
+# Sending Messages
 _____
 
 ## Message Types
