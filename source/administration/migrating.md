@@ -12,8 +12,7 @@ The following instructions migrate Mattermost from one server to another by back
 3. Migrate database from SOURCE to DESTINATION  
     1. Backup the database from the SOURCE Mattermost server and restore it in place of the database to which the DESTINATION server is connected
 4. Migrate `config.json` from SOURCE to DESTINATION  
-    1. Create a copy of `config.json` file from SOURCE deployment and replace `DataSource` and `ListenAddress` with settings from `config.json` file in DESTINATION deployment
-    2. Use this file to replace `config.json` file in DESTINATION deployment
+    1. Copy of `config.json` file from SOURCE deployment to DESTINATION 
 5. Start the DESTINATION deployment  
     1. Run `sudo start mattermost`
     2. Opening the **System Console** and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added
