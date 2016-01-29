@@ -127,7 +127,6 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - Push next RC to acceptance after testing is complete and approved fixes merged, announces in Town Square on pre-release.mattermost.com/core
 9. PM:
     - Closes the meta issue after the next RC is cut, and opens another ticket for new RC
-    - Submit GitLab ticket to take next Mattermost version in the Omnibus after testing is complete
 10. Ops:
     - Verifies each of the issues in meta ticket is fixed
  
@@ -141,10 +140,11 @@ The final release is cut. If an urgent and important issue needs to be addressed
     - Tags a new release (e.g. 1.1.0) and runs an official build which should be essentially identical to the last RC
     - Delete RCs after final version is shipped
 3. PM:
-    - Copy and paste the Release Notes from the Changelog to the Release Description
-    - Update the mattermost.org/download page
-    - Update the AMI links on mattermost.org/download and mattermost.org/installation
-    - Close final GitHub RC meta ticket
+    - Submit GitLab ticket to take next Mattermost version in the Omnibus  
+    - Copy and paste the Release Notes from the Changelog to the Release Description  
+    - Update the mattermost.org/download page  
+    - Update the AMI links on mattermost.org/download and mattermost.org/installation  
+    - Close final GitHub RC meta ticket  
 4. Marketing:
     - Finalize mailchimp email blast
     - Finalize blog post and put on timer for release
@@ -162,6 +162,7 @@ The final release is cut. If an urgent and important issue needs to be addressed
     - Set header of next release as UNDER DEVELOPMENT in CHANGELOG on master
 3. Dev:
     - Check if any libraries need to be updated for the next release, and if so bring up in weekly team meeting
+    - Test the GitLab RC containing the Mattermost final bits
 4. Marketing:
     - Confirm marketing has been posted (animated GIFs, screenshots, mail announcement, tweets, blog posts)
 
