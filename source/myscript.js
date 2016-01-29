@@ -11,7 +11,7 @@ $(document).ready(function(){
 		setTimeout(function(){
 			var centerScrollPosition = $('.wy-body-for-nav').scrollTop();
 			$('.wy-body-for-nav').scrollTop(centerScrollPosition-70);
-		},10);
+		},100);
 	};
 
 	$('.wy-menu-vertical li.current li').on('click', function(){
