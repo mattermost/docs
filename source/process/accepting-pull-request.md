@@ -9,7 +9,9 @@ Per the [Contributor Guide](https://github.com/mattermost/platform/blob/master/C
 
 Key contributors and core team members are responsible opening Jira tickets that meet the above requirements, which are then reviewed in triage meetings. 
 
-When opening Jira tickets for accepting-pull-requests, please:
+#### Checklist for Accepting Pull Request Ticket 
+
+When opening Jira tickets for accepting-pull-requests core team members should:
 
 1. Use titles that clearly describe the needed change and its value 
 2. Include (Proposed APR) in title, so triage team knows to add the APR tag if appropriate
@@ -18,12 +20,4 @@ When opening Jira tickets for accepting-pull-requests, please:
 5. Post link back to community channels
 
 The triage team will add `accepting-pull-requests` label to have the ticket appear in the [issues Accepting Pull Requests](https://mattermost.atlassian.net/issues/?filter=10101) list. 
-
-Example of post back to the community: 
-
-```
-Thanks @[USERNAME], 
-
-I created a ticket [for accepting pull requests on this issue](http://link). It will be reviewed in the triage meeting for addition to [the Accepting Pull Requests issues list](https://mattermost.atlassian.net/issues/?filter=10101). [Code Contribution Guidelines](http://docs.mattermost.com/developer/contribution-guide.html) are available for anyone interested in contributing to this project.
-```
 
