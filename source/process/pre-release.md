@@ -10,6 +10,8 @@ A pre-released version of Enterprise Edition v1.4 is available for organizations
 
 - **Upgrading to Pre-release** - You can also upgrade to the pre-released Enterprise Edition version from Mattermost v1.4 or Mattermost v1.3 using the [instructions in the upgrade guide](http://docs.mattermost.com/install/upgrade-guide.html)
 
+- **Activating Pre-release** - If you don't see **LDAP Settings** in **System Console**, go to **System Console** > **Editions and License** > **License Key** > **Choose File** and select the license file provided, then click **Upload**. The **Edition** field should show **Mattermost Enterprise Edition** and the enteprise features should be activated. 
+
 - **Setting up Active Directory/LDAP** - Instructions for setting up AD/LDAP SSO are available in the [deployment guide.](http://docs.mattermost.com/deployment/sso-ldap.html)
 
 A [contact form](https://about.mattermost.com/contact/) is available for any questions.
