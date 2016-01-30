@@ -1,4 +1,4 @@
-## AD/LDAP Setup (Enterprise) 
+## LDAP/AD Setup (Enterprise) 
 
 ### Enabling Active Directory/Lightweight Directory Access Protocol (AD/LDAP)
 
