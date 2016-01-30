@@ -22,9 +22,9 @@ You can verify your upgrade to Enterprise Edition by going into a team site and 
 
 If you don't see **LDAP Settings** in **System Console** or by going to `<mattermost-url>/admin_console/ldap_settings` you need to activate the features using a trial license key. 
 
-Go to **System Console** > **Editions and License** > **License Key** > **Choose File** and select the license file provided, then click **Upload**. 
+Go to **System Console** > **Editions and License** > **License Key** > **Choose File** and select the license file provided, then click **Upload**. The **Edition** field should show **Mattermost Enterprise Edition** and the enteprise features should be activated. 
 
-The **Edition** field should show **Mattermost Enterprise Edition** and the enteprise features should be activated. In the team site when you go to the main menu and open the "About Mattermost" dialog the **Licensed by** field should say `trial`.
+In the team site when you go to the main menu and open the "About Mattermost" dialog the **Licensed by** field should say `trial`.
 
 #### Setting up Active Directory/LDAP
 
