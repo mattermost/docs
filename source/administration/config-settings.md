@@ -380,6 +380,12 @@ System Console allows an IT Admin to update settings defined in `config.json`. H
 ```"EnableOAuthServiceProvider": false```  
 "true": Allow Mattermost to function as an OAuth provider, allowing 3rd party apps access to your user store for authentication.
 
+```"WebsocketSecurePort" : 443```
+When present in `config.json`, this setting defines the port on which the secure WebSocket will listen. Otherwise it defaults to `443`.
+
+```WebsocketPort": 80```
+When present in `config.json`, this setting defines the port on which the WebSocket will listen. Otherwise it defaults to `80`.
+
 ### File Settings
 
 ```"InitialFont": "luximbi.ttf"```  
