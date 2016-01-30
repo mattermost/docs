@@ -9,7 +9,7 @@ Per the [Contributor Guide](https://github.com/mattermost/platform/blob/master/C
 
 Key contributors and core team members are responsible opening Jira tickets that meet the above requirements, which are then reviewed in triage meetings. 
 
-#### Checklist for Accepting Pull Request Ticket 
+#### Checklist for creating Accepting Pull Request Ticket 
 
 When opening Jira tickets for accepting-pull-requests core team members should:
 
