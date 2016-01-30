@@ -18,7 +18,11 @@ You can also upgrade to the pre-released Enterprise Edition version from Matterm
 
 #### Activate Pre-release
 
-If you don't see **LDAP Settings** in **System Console**, go to **System Console** > **Editions and License** > **License Key** > **Choose File** and select the license file provided, then click **Upload**. The **Edition** field should show **Mattermost Enterprise Edition** and the enteprise features should be activated. 
+If you don't see **LDAP Settings** in **System Console** or by going to `<mattermost-url>/admin_console/ldap_settings` you need to activate the features using a trial license key. 
+
+Go to **System Console** > **Editions and License** > **License Key** > **Choose File** and select the license file provided, then click **Upload**. 
+
+The **Edition** field should show **Mattermost Enterprise Edition** and the enteprise features should be activated. 
 
 #### Setting up Active Directory/LDAP
 
