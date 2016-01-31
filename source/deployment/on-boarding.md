@@ -2,10 +2,9 @@
 
 This document provides instructions for common administrator tasks
 
-#### Important notes
-
 ##### **DO NOT manipulate the Mattermost database**
-  - In particular, DO NOT delete data from the database, as Mattermost is designed to stop working if data integrity has been compromised. The system is designed to archive content continously and generally assumes data is never deleted. 
+  - In particular, DO NOT manually delete data from the database directly. Mattermost is designed as a continuous archive and cannot be supported after manual manipulation.
+  - If you need to permanently delete a team or user please use the [Command Line Tool](../administration/command-line-tools.md).
 
 ### Common Tasks
 
