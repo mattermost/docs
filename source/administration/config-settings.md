@@ -377,13 +377,19 @@ System Console allows an IT Admin to update settings defined in `config.json`. H
 
 ### Service Settings
 
-```"EnableOAuthServiceProvider": false```  
+#### Enable OAuth Service Provider 
+`"EnableOAuthServiceProvider": false`
+
 "true": Allow Mattermost to function as an OAuth provider, allowing 3rd party apps access to your user store for authentication.
 
-```"WebsocketSecurePort" : 443```
+#### WebSocket Secure Port
+`"WebsocketSecurePort" : 443`
+
 When present in `config.json`, this setting defines the port on which the secured WebSocket will listen using the `wss` protocol. Otherwise it defaults to `443`. When the client attempts to make a WebSocket connection it first checks to see if the page is loaded with HTTPS. If so, it will use the secure WebSocket connection. If not, it will use the unsecure WebSocket connection. IT IS HIGHLY RECOMMENDED PRODUCTION DEPLOYMENTS ONLY OPERATE UNDER HTTPS AND WSS. 
 
-```WebsocketPort": 80```
+#### WebSocket Port
+`WebsocketPort": 80`
+
 When present in `config.json`, this setting defines the port on which the unsecured WebSocket will listen using the `ws` protocol. Otherwise it defaults to `80`. When the client attempts to make a WebSocket connection it first checks to see if the page is loaded with HTTPS. If so, it will use the secure WebSocket connection. If not, it will use the unsecure WebSocket connection. IT IS HIGHLY RECOMMENDED PRODUCTION DEPLOYMENTS ONLY OPERATE UNDER HTTPS AND WSS. 
 
 ### File Settings
