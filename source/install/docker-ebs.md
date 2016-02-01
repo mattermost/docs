@@ -1,6 +1,6 @@
 
 ### AWS Elastic Beanstalk Docker Setup
-These instructions will guide you through the process of setting up Mattermost for product evaluation using an EBS Docker single-container application using [Dockerrun.aws.zip](https://github.com/mattermost/platform/raw/master/docker/1.1/Dockerrun.aws.zip).
+The following instructions use Docker to install Mattermost in _Preview Mode_ for exploring product functionality. This configuration should not be used in production, as it's using a known password string and contains other non-production configuration settings. 
 
 1. From your [AWS console]( https://console.aws.amazon.com/console/home) select **Elastic Beanstalk** under the Compute section.
 2. Select **Create New Application** from the top right.
@@ -11,7 +11,7 @@ These instructions will guide you through the process of setting up Mattermost f
 	1. Set Predefined Configuration to **Docker** under the generic heading in the drop-down list. 
 	2. Set Environment Type to **Single instance** in the drop-down list.
 	3. Click **Next**.
-7. For Application Source, select **Upload your own** and upload the [Dockerrun.aws.zip](https://github.com/mattermost/platform/raw/master/docker/1.1/Dockerrun.aws.zip) file, then click **Next**.
+7. For Application Source, select **Upload your own** and upload the [Dockerrun.aws.zip](https://github.com/mattermost/platform/raw/master/docker/1.4.0/Dockerrun.aws.zip) file, then click **Next**.
 8. Type an Environment Name and URL. Make sure the URL is available by clicking **Check availability**, then click **Next**.
 9. The options on the Additional Resources page may be left at default unless you wish to change them. Click **Next**.
 10. On the Configuration Details page, 
