@@ -11,7 +11,7 @@ The following instructions use Docker to install Mattermost in _Preview Mode_ fo
 	1. Set Predefined Configuration to **Docker** under the generic heading in the drop-down list. 
 	2. Set Environment Type to **Single instance** in the drop-down list.
 	3. Click **Next**.
-7. For Application Source, select **Upload your own** and upload the [Dockerrun.aws.zip](https://github.com/mattermost/platform/raw/master/docker/1.4.0/Dockerrun.aws.zip) file, then click **Next**.
+7. For Application Source, select **Upload your own** and upload the Dockerrun.aws.zip file from [https://github.com/mattermost/platform/tree/master/docker/](https://github.com/mattermost/platform/tree/master/docker/)(select version you'd like to use), then click **Next**.
 8. Type an Environment Name and URL. Make sure the URL is available by clicking **Check availability**, then click **Next**.
 9. The options on the Additional Resources page may be left at default unless you wish to change them. Click **Next**.
 10. On the Configuration Details page, 
