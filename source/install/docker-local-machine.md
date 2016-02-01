@@ -1,6 +1,6 @@
 # Local Machine Setup and Upgrade
 
-The following install instructions are for single-container installs of Mattermost using Docker for exploring product functionality and upgrading to newer versions.
+The following instructions use Docker to install Mattermost in _Preview Mode_ for exploring product functionality. This configuration should not be used in production, as it's using a known password string and contains other non-production configuration settings. 
 
 ### One-line Docker Install ###
 
