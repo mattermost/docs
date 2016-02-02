@@ -14,7 +14,7 @@ The pre-release of Mattermost Enterprise deploys using the same [install guides]
 
 Just replace the `mattermost.tar.gz` file with the pre-released Enterprise Edition file provided during the installation process. 
 
-#### Upgrading to Enterprise Edition Pre-released
+#### Upgrading to Enterprise Edition pre-release from Team Edition 
 
 To upgrade an existing Mattermost Team Edition deployment: 
 
@@ -33,10 +33,10 @@ In the team site when you go to the main menu and open the "About Mattermost" di
 
 #### Setting up Active Directory/LDAP
 
-Instructions for setting up AD/LDAP SSO are available in the [deployment guide.](http://docs.mattermost.com/deployment/sso-ldap.html)
+Instructions for setting up LDAP/AD SSO are available in the [deployment guide.](http://docs.mattermost.com/deployment/sso-ldap.html)
 
 #### Support
 
 After completing the [contact form](https://about.mattermost.com/contact/) to receive the pre-released version of Mattermost Enteprise Edition you should be in email contact with a support team who can help with your evaluation.
 
-Note: If you received a requested a pre-release of Enterprise Edition before January 21 it was the v1.3 edition, you can [contact Mattermost](https://about.mattermost.com/contact/) to receive the v1.4 discussed here. 
+Note: If you received a pre-release of Enterprise Edition before February 1, 2016 you should have been contacted to use the latest release, `ENT-6`. If not, can [contact Mattermost](https://about.mattermost.com/contact/) to receive the latest version. 
