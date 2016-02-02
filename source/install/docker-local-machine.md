@@ -82,12 +82,7 @@ Otherwise, see step-by-step available:
 
 ## Configuration Settings
 
-There are a few configuration settings you might want to adjust when setting up your instance of Mattermost. You can edit them in `config.json` or `config_docker.json` if you're running a Docker instance.
-
-* *EmailSettings*:*ByPassEmail* - If this is set to true, then users on the system will not need to verify their email addresses when signing up. In addition, no emails will ever be sent.  
-* *ServiceSettings*:*UseLocalStorage* - If this is set to true, then your Mattermost server will store uploaded files in the storage directory specified by *StorageDirectory*. *StorageDirectory* must be set if *UseLocalStorage* is set to true.  
-* *ServiceSettings*:*StorageDirectory* - The file path where files will be stored locally if *UseLocalStorage* is set to true. The operating system user that is running the Mattermost application must have read and write privileges to this directory.  
-* *AWSSettings*:*S3*\* - If *UseLocalStorage* is set to false, and the S3 settings are configured here, then Mattermost will store files in the provided S3 bucket.
+See [Configuration Settings](../administration/config-settings.md) documentation to customize your deployment. 
 
 ### (Recommended) Enable Email 
 
