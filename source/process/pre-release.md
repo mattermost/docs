@@ -19,7 +19,7 @@ Just replace the `mattermost.tar.gz` file with the pre-released Enterprise Editi
 To upgrade an existing Mattermost Team Edition deployment: 
 
 1. Upgrade your existing Mattermost deployment to v1.4 using the [standard upgrade process](http://docs.mattermost.com/install/upgrade-guide.html) 
-2. Run the[standard upgrade process](http://docs.mattermost.com/install/upgrade-guide.html) one more time using the  `mattermost.tar.gz` provided for the Mattermost Enterprise Edition pre-release.
+2. Run the [standard upgrade process](http://docs.mattermost.com/install/upgrade-guide.html) one more time using the  `mattermost.tar.gz` provided for the Mattermost Enterprise Edition pre-release.
 
 You can verify your upgrade to Enterprise Edition by going into a team site and in the "About Mattermost" dialog box and next to **Build Number** you should see `ENT-6`.
 
