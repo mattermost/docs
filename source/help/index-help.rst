@@ -16,5 +16,5 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    :maxdepth: 1
    :caption: End User Help Test
    
-   help/getting-started/signing-in.md
-   help/getting-started/messaging-basics.md
+   getting-started/signing-in.md
+   getting-started/messaging-basics.md
