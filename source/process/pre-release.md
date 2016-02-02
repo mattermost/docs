@@ -14,7 +14,7 @@ The pre-release of Mattermost Enterprise deploys using the same [install guides]
 
 Just replace the `mattermost.tar.gz` file with the pre-released Enterprise Edition file provided during the installation process. 
 
-#### Upgrading to Enterprise Edition pre-release from Team Edition 
+#### Upgrading to Enterprise Edition pre-release 
 
 To upgrade an existing Mattermost Team Edition deployment: 
 
