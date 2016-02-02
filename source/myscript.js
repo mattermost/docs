@@ -9,8 +9,8 @@ $(document).ready(function(){
 
 	var centerScroll = function(){
 		setTimeout(function(){
-			var centerScrollPosition = $('.wy-body-for-nav').scrollTop();
-			$('.wy-body-for-nav').scrollTop(centerScrollPosition-70);
+			var centerScrollPosition = $('.wy-nav-content-wrap').scrollTop();
+			$('.wy-nav-content-wrap').scrollTop(centerScrollPosition-70);
 		},100);
 	};
 

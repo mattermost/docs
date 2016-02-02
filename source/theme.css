@@ -4,8 +4,22 @@
 	}
 }
 
+html, body {
+	height: 100%;
+	overflow: hidden;
+}
+
 .wy-nav-content .document {
 	max-width: 1000px;
+}
+
+.rst-content tt, .rst-content tt, .rst-content code {
+	white-space: normal;
+}
+
+.wy-nav-content-wrap {
+	height: 100%;
+	overflow: auto;
 }
 
 h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
@@ -99,7 +113,7 @@ header .header__links li {
 }
 
 header .header__links li a.active {
-    color: #FEE882;
+	color: #FEE882;
 }
 
 header .header__links li a {
@@ -115,8 +129,8 @@ header .header__links li a {
 	header .header__links {
 		display: none;
 		width: 100%;
-	    line-height: 40px;
-	    padding-bottom: 10px;
+		line-height: 40px;
+		padding-bottom: 10px;
 	}
 	header .header__links li {
 		float: none;
