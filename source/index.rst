@@ -72,6 +72,7 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    administration/overview*
    administration/command*
    administration/config*
+   administration/team-settings.md
    administration/statistics.md
    administration/upgrade.md
    administration/migrating.md
