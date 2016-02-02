@@ -3,7 +3,8 @@ _____
 
 **Write messages** using the text input box at the bottom of Mattermost. Press **ENTER** to send a message. Use **Shift+ENTER** to create a new line without sending a message.
 
-**Reply to messages** by clicking the reply arrow next to the message text.    
+**Reply to messages** by clicking the reply arrow next to the message text.
+
 ![reply arrow](https://cloud.githubusercontent.com/assets/14333569/12757627/a47dbb0c-c98d-11e5-9331-4da5e57b5c95.png)
 
 **Notify teammates** when they are needed by typing `@username`.
