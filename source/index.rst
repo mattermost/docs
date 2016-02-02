@@ -23,7 +23,8 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    :maxdepth: 1
    :caption: Getting Started
    
-   help/index-help.rst
+   help/getting-started/signing-in.md
+   help/getting-started/messaging-basics.md
    help/getting-started/configuring-notifications.md
    help/getting-started/organizing-conversations.md
    help/getting-started/searching.md
