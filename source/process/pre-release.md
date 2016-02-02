@@ -2,21 +2,26 @@
 
 Early customers who have deployed the pre-released version of Mattermost Enterprise Edition are providing feedback to shape the feature set, roadmap and pricing of the commercial verison of Mattermost. 
 
-A pre-released version of Enterprise Edition v1.4 is available for organizations who have deployed the open source version and are open to providing feedback on commerical features, such as authentication with Active Directory/Lightweight Directory Access Protocol (AD/LDAP) and features for advanced compliance requirements. 
+Pre-released versions of Enterprise Edition are available for organizations who have deployed the open source version and are seeking to evaluate commerical features, such as authentication with Active Directory/Lightweight Directory Access Protocol (AD/LDAP), organization-wide reporting, and audit and compliance reporting. 
 
 #### Accessing Enterprise Edition Pre-Release
 
-You can request access to a pre-released version of _Mattermost Enterprise Edition v1.4_ at https://about.mattermost.com/contact/
+You can request access to a pre-released version of _Mattermost Enterprise Edition_ at https://about.mattermost.com/contact/
 
-#### Installing Pre-release
+#### Installing Enterprise Edition Pre-released
 
-The pre-release deploys using the same [install guides](http://docs.mattermost.com/index.html#install-guides) as the open sourced Mattermost v1.4 Team Edition
+The pre-release of Mattermost Enterprise deploys using the same [install guides](http://docs.mattermost.com/index.html#install-guides) as the open sourced Mattermost Team Edition. 
 
-#### Upgrading to Pre-release
+Just replace the `mattermost.tar.gz` file with the pre-released Enterprise Edition file provided during the installation process. 
 
-You can also upgrade to the pre-released Enterprise Edition version from Mattermost v1.4 or Mattermost v1.3 using the [instructions in the upgrade guide](http://docs.mattermost.com/install/upgrade-guide.html)
+#### Upgrading to Enterprise Edition Pre-released
 
-You can verify your upgrade to Enterprise Edition by going into a team site and in the "About Mattermost" dialog box and next to **Build Number** you should see `ent-[RELEASE_NUMBER]`.
+To upgrade an existing Mattermost Team Edition deployment: 
+
+1. Upgrade your existing Mattermost deployment to v1.4 using the [standard upgrade process](http://docs.mattermost.com/install/upgrade-guide.html) 
+2. Run the[standard upgrade process](http://docs.mattermost.com/install/upgrade-guide.html) one more time using the  `mattermost.tar.gz` provided for the Mattermost Enterprise Edition pre-release.
+
+You can verify your upgrade to Enterprise Edition by going into a team site and in the "About Mattermost" dialog box and next to **Build Number** you should see `ENT-6`.
 
 #### Activate Pre-release
 
@@ -24,7 +29,7 @@ If you don't see **LDAP Settings** in **System Console** or by going to `<matter
 
 Go to **System Console** > **Editions and License** > **License Key** > **Choose File** and select the license file provided, then click **Upload**. The **Edition** field should show **Mattermost Enterprise Edition** and the enteprise features should be activated. 
 
-In the team site when you go to the main menu and open the "About Mattermost" dialog the **Licensed by** field should say `trial`.
+In the team site when you go to the main menu and open the "About Mattermost" dialog the **Licensed by** field should say `trial_1000users`.
 
 #### Setting up Active Directory/LDAP
 
