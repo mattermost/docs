@@ -15,7 +15,7 @@ General settings to configure the listening address, login security, testing, we
 
 #### System
 
-**Listen Address** (`"ListenAddress": ":8065"`)    
+**Listen Address** (`"ListenAddress": ":8065"`)
 The IP address on which to listen and the port on which to bind. Entering ":8065" will bind to all interfaces or you can choose one like "127.0.0.1:8065". Changing this will require a server restart before taking effect.
 
 **Maximum Login Attempts** (`"MaximumLoginAttempts": 10`)  
