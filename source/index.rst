@@ -47,6 +47,7 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    help/settings/account-settings.md
    help/settings/theme-colors.md
    help/settings/channel-settings.md
+   help/settings/team-settings.md
    
 .. toctree::
    :maxdepth: 1
