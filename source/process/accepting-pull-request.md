@@ -7,17 +7,16 @@ Per the [Contributor Guide](https://github.com/mattermost/platform/blob/master/C
 3. Volunteers are willing to test, document, support and maintain changes (authentication options need manually testing with each monthly release in perpetuity)
 4. The change [aligns to the stated purpose of the project](http://www.mattermost.org/vision/#mattermost-teams-v1)
 
-Key contributors and core team members are responsible opening Jira tickets that meet the above requirements, which are then reviewed in triage meetings. 
+Key contributors and core team members are responsible for nominating changes for APR status by opening a Jira ticket. 
 
-#### Checklist for creating Accepting Pull Request Ticket 
+#### Nominating changes for Accepting Pull Request status 
 
-When opening Jira tickets for accepting-pull-requests core team members should:
+Jira tickets nominating a feature for APR status should include the following: 
 
-1. Titles should concisely describe change proposed
-2. Title includes "(Proposed APR)" so triage team knows to consider it for an `accepting-pull-requests` label
-3. Description is unambiuous, including user interface description and help text so that feature can be implemented and tested by any contributor
-4. Description should include a Link back to community discussions related to this change
-5. Link to Jira ticket should be posted in community channel where Jira ticket was needed 
+1. Title clearly and concisely describes change proposed
+2. Title includes "(Proposed APR)" so triage knows to consider it for an `accepting-pull-requests` label
+3. Description is unambiuous and includes UI description and help text so feature can be implemented and tested by any contributor
+4. If this ticket came from a community discussion, include a link in description to community channel, and in community channel link to Jira ticket
 
-The triage team will add `accepting-pull-requests` label to have the ticket appear in the [issues Accepting Pull Requests](https://mattermost.atlassian.net/issues/?filter=10101) list. 
+So long as tickets meet the APR criteria, triage team will add `accepting-pull-requests` label to have the ticket appear in the [issues Accepting Pull Requests](https://mattermost.atlassian.net/issues/?filter=10101) list. 
 
