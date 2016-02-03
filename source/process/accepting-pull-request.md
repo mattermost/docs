@@ -14,8 +14,8 @@ Key contributors and core team members are responsible opening Jira tickets that
 When opening Jira tickets for accepting-pull-requests core team members should:
 
 1. Use clear titles
-    1. Concisely describe the change propose
-    2. Include the words "(Proposed APR)" so triage team knows to add the `accepting-pull-requests` tag if appropriate
+  1. Concisely describe the change propose
+  2. Include the words "(Proposed APR)" so triage team knows to add the `accepting-pull-requests` tag if appropriate
 2. Provide unambiguous description so that feature can be implemented and tested by any volunteer, including explicit description of user interface and help text.
 3. Description should include a Link back to community discussions related to this change
 4. Link to Jira ticket should be posted in community channel where Jira ticket was needed 
