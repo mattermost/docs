@@ -1,5 +1,6 @@
 @media screen and (min-width: 1400px) {
 	.wy-nav-content {
+		height: auto;
 		max-width: 100%;
 	}
 }
@@ -20,6 +21,7 @@ html, body {
 .wy-nav-content-wrap {
 	height: 100%;
 	overflow: auto;
+	padding-bottom: 60px;
 }
 
 h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
