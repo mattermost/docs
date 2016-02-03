@@ -6,7 +6,7 @@ Mattermost APIs let you integrate your favorite tools and services withing your 
 
 To offer an alternative to propreitary SaaS services, Mattermost focuses on being "Slack-compatible, but not Slack limited". That means providing support for developers of Slack applications to easily extend their apps to Mattermost, as well as support and capabilities beyond what Slack offers. 
 
-### [Incoming Webhooks](https://github.com/mattermost/platform/blob/master/doc/integrations/webhooks/Incoming-Webhooks.md)
+### [Incoming Webhooks](http://docs.mattermost.com/developer/webhooks-incoming.html)
 
 Incoming webhooks allow external applications to post messages into Mattermost channels and private groups by sending a JSON payload via HTTP POST request to a secret Mattermost URL generated specifically for each application.
 
