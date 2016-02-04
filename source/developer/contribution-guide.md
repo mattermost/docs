@@ -42,20 +42,32 @@ git checkout -b <branch name>
 
 
 ## Submitting a Pull Request 
+### Submitting a Pull Request
 
-1. Please add yourself to the Mattermost [approved contributor list](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true) prior to submitting by completing the [contributor license agreement](http://www.mattermost.org/mattermost-contributor-agreement/). 
+Before submitting a pull request (PR), check that:  
 
-2. When you submit your pull request please make it against `master` and include the Ticket ID at the beginning of your pull request comment, followed by a colon
+1. Your change has a Jira Ticket (required for testing and documentation purposes)
+    1. To request a Jira Ticket, you can either [file a bug in GitHub](http://www.mattermost.org/filing-issues/) or  [file a feature idea](http://www.mattermost.org/feature-requests/)  
+- You’ve signed the [Contributor License Agreement](http://www.mattermost.org/mattermost-contributor-agreement/), so you can be added to the Mattermost [Approved Contributor List](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true)  
+- Code follows the [Style Guide](http://docs.mattermost.com/developer/style-guide.html)  
+- Unit tests are included  
+- Localization support is included  
+- Change meets UX Guidelines of [Fast, Obvious, Forgiving](http://www.mattermost.org/design-principles/)
+- Documentation PR is submitted to mattermost/docs  
+- You’ve throughly tested your change   
 
-    - For example, for a ticket ID `PLT-394` start your comment with:  `PLT-394:`. See [previously closed pull requests](https://github.com/mattermost/platform/pulls?q=is%3Apr+is%3Aclosed) for examples
-    - All pull requests must have a ticket ID so the issue can be tracked and tested properly. If there is no existing ticket in Jira, please [file a bug in GitHub](http://www.mattermost.org/filing-issues/) or a [feature idea you're proposing to implement](http://www.mattermost.org/feature-requests/) so a Jira ticket can be created
+When submitting a PR, check that:  
 
-3. Please include a comment on the pull request describing the changes
-   
-   For new features visible in the UI, please make sure there are enough details explaining how the feature is expected to work. This will be used when testing and writing help documentation. 
+1. PR is submitted against `master`  
+2. PR title begins with the Jira Ticket ID (eg `PLT-394:`, [see examples](https://github.com/mattermost/platform/pulls?q=is%3Apr+is%3Aclosed))  
+3. PR comment describes the changes and how the feature is supposed to work  
 
-4. Once submitted, your pull request will be checked via an automated build process and will be reviewed by at least two members of the Mattermost core team, who may either accept the PR or follow-up with feedback. It would then get merged into `master` for the next release
-    1. If the build fails, check the error log to narrow down the reason
-    2. Sometimes one of the multiple build tests will randomly fail due to issues in Travis CI so if you see just one build failure and no clear error message it may be a random issue. Add a comment so the reviewer for your change can re-run the build for you, or close the PR and re-submit and that typically clears the issue
+After submitting a PR, before it is merged:  
 
-5. If you've included your mailing address in Step 1, you'll be receiving a [Limited Edition Mattermost Mug](http://forum.mattermost.org/t/limited-edition-mattermost-mugs/143) as a thank you gift after your first pull request has been accepted
+1. Automated build process must pass  
+    1. If the build fails, check the error log to narrow down the reason  
+    2. Sometimes one of the multiple build tests will randomly fail due to issues in Travis CI. If you see just one build failure and no clear error message, it may be a random issue. Add a comment so the reviewer for your change can re-run the build for you, or close the PR and re-submit and that typically clears the issue.  
+- PR must be reviewed by two team members, and reviewer feedback must be addressed  
+- UI must be approved by PM  
+
+If you've included your mailing address in Step 1, you'll be receiving a [Limited Edition Mattermost Mug](https://forum.mattermost.org/t/limited-edition-mattermost-mugs/143) as a thank you gift after your first pull request has been accepted.
