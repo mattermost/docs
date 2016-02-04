@@ -7,16 +7,16 @@ Per the [Code Contribution Guidelines](http://docs.mattermost.com/developer/cont
 3. Volunteers are willing to test, document, support and maintain changes (authentication options need manually testing with each monthly release in perpetuity)
 4. The change [aligns to the stated purpose of the project](http://www.mattermost.org/vision/#mattermost-teams-v1)
 
-Key contributors and core team members are responsible for nominating changes for APR status by opening a Jira ticket. 
+Key contributors and core team members nominate changes for APR status by opening a Jira ticket. 
 
 #### Nominating changes for Accepting Pull Request status 
 
-Jira tickets nominating a feature for APR status should include the following: 
+Jira tickets nominating a feature for APR status should include: 
 
 1. Title clearly and concisely describes change proposed
 2. Title includes "(Proposed APR)" so triage knows to consider it for an `accepting-pull-requests` label
 3. Description is unambiuous and includes UI description and help text so feature can be implemented and tested by any contributor
-4. If this ticket came from a community discussion, include a link in description to community channel, and in community channel link to Jira ticket
+4. If related to a community discussion, include link to ticket in discussion and link to discussion in ticket
 
-So long as tickets meet the APR criteria, triage team will add `accepting-pull-requests` label to have the ticket appear in the [issues Accepting Pull Requests](https://mattermost.atlassian.net/issues/?filter=10101) list. 
+Tickets meeting APR criteria receive an `accepting-pull-requests` label by triage team and appear in [APR list](https://mattermost.atlassian.net/issues/?filter=10101) list. 
 
