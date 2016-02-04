@@ -26,7 +26,7 @@ No pull requests for major features should be submitted to the current release a
     - Update [Upgrade Guide](https://github.com/mattermost/platform/blob/master/doc/install/Upgrade-Guide.md) for any steps needed to upgrade to new version
     - Prepare tickets for [cutting RC builds](https://mattermost.atlassian.net/browse/PLT-985), [creating the final release candidate](https://mattermost.atlassian.net/browse/PLT-986), [creating AMIs](https://mattermost.atlassian.net/browse/PLT-1213), [testing GitLab RC with Mattermost](https://mattermost.atlassian.net/browse/PLT-1013), and pushing to private cloud customers  
     - Queue an item for UX meeting to discuss worst UX bug  
-    - Reach out to community and customers asking about top issues  
+    - Reach out to community and customers asking about top issues ([See example](https://pre-release.mattermost.com/core/pl/sisu6mpdqpb7ugi4t5sgwakrno))  
 3. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/platform/pulls) marked for the current release 
 4. Leads: Meet to prioritize the final tickets of the release   
@@ -69,8 +69,6 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
 4. **(Team) Feature Complete Meeting (10:15am PST)**:
     - (PM) Leads review of Changelog  
     - (Team) Each team member discusses worst bug (10-15s)  
-    - (PM) Review feature list for next release  
-    - (Marketing) Share draft of marketing bullet points for next release  
 5. Marketing:
     - Communicate checklist of items needed by specific dates to write the blog post announce (e.g. screenshots, GIFs, documentation) and begins to write the blog post, tweet, and email for the release announcement  
 
