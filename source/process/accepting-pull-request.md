@@ -1,6 +1,6 @@
 # Accepting Pull Requests
 
-Per the [Code Contribution Guidelines](http://docs.mattermost.com/developer/contribution-guide.html), other than small fixes and improvements, only pull requests [referencing Jira tickets with the `accepting pull requests` (APR) label](https://mattermost.atlassian.net/issues/?filter=10101) should be submitted to Mattermost projects. This ensures:
+Per the [Code Contribution Guidelines](http://docs.mattermost.com/developer/contribution-guide.html), other than small fixes and improvements, only pull requests referencing [Jira tickets with the `accepting pull requests` (APR) label](https://mattermost.atlassian.net/issues/?filter=10101) should be submitted to Mattermost projects. This ensures:
 
 1. Proposed changes have been unambiguously specified 
 2. The change meets the [fast, obvious, forgiving](http://www.mattermost.org/design-principles/) design principle for the project
