@@ -20,41 +20,22 @@ Once you have a ticket:
 
 1. Follow [developer setup instructions](https://github.com/mattermost/platform/blob/master/doc/developer/Setup.md) to install Mattermost
 
-2. Create a branch with <branch name> set to the ID of the ticket you're working on, for example ```PLT-394```, using command: 
+2. Create a branch with `<branch name>` set to the ID of the ticket you're working on, for example `PLT-394`, using command: `git checkout -b <branch name>`
 
-```
-git checkout -b <branch name>
-```
-
-## Programming and Testing 
-
-1. Please review the [Mattermost Style Guide](doc/developer/Style-Guide.md) prior to making changes
-
-   To keep code clean and well structured, Mattermost uses ESLint to check that pull requests adhere to style guidelines for React. In addition all code is run through the official go formatter tool gofmt. Code will need to follow Mattermost's React style guidelines and the golang official style guide in order to pass the automated build tests when a pull request is submitted. 
-   
-2. Please make sure to thoroughly test your change before submitting a pull request
-
-   For any changes to text processing, please run the text processing tests found in the [/tests](https://github.com/mattermost/platform/tree/master/doc/developer/tests) folder in GitHub.
-   
-   Please review the ["Fast, Obvious, Forgiving" experience design principles](http://www.mattermost.org/design-principles/) for Mattermost and check that your feature meets the criteria. Also, for any changes to user interface or help text, please read the changes out loud, as a quick and easy way to catch any inconsitencies
-
-3. For new server-side funcitonality, please include test cases that verify the code performs as you have intended
-
-
-## Submitting a Pull Request 
-### Submitting a Pull Request
+## Preparing a Pull Request 
 
 Before submitting a pull request (PR), check that:  
 
-1. Your change has a Jira Ticket (required for testing and documentation purposes)
-    1. To request a Jira Ticket, you can either [file a bug in GitHub](http://www.mattermost.org/filing-issues/) or  [file a feature idea](http://www.mattermost.org/feature-requests/)  
-- You’ve signed the [Contributor License Agreement](http://www.mattermost.org/mattermost-contributor-agreement/), so you can be added to the Mattermost [Approved Contributor List](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true)  
-- Code follows the [Style Guide](http://docs.mattermost.com/developer/style-guide.html)  
-- Unit tests are included  
-- Localization support is included  
-- Change meets UX Guidelines of [Fast, Obvious, Forgiving](http://www.mattermost.org/design-principles/)
-- Documentation PR is submitted to mattermost/docs  
-- You’ve throughly tested your change   
+1. You’ve signed the [Contributor License Agreement](http://www.mattermost.org/mattermost-contributor-agreement/), so you can be added 2. Your change has an [APR Ticket](http://docs.mattermost.com/process/accepting-pull-request.html)
+to the Mattermost [Approved Contributor List](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true)  
+3. Your code follows the [Mattermost Style Guide](http://docs.mattermost.com/developer/style-guide.html)  
+4. Unit tests are included for new server side functionality 
+5. Localization support is included  
+6. Change meets UX Guidelines of [Fast, Obvious, Forgiving](http://www.mattermost.org/design-principles/)
+7. If changes involves documentation, PR is submitted to [mattermost/docs](https://github.com/mattermost/docs)  
+8. Change is thoroughly tested. If your change involves text processing, make sure to run tests in [`/tests`](https://github.com/mattermost/platform/tree/master/doc/developer/tests)
+
+## Submitting a Pull Request 
 
 When submitting a PR, check that:  
 
@@ -62,12 +43,14 @@ When submitting a PR, check that:
 2. PR title begins with the Jira Ticket ID (eg `PLT-394:`, [see examples](https://github.com/mattermost/platform/pulls?q=is%3Apr+is%3Aclosed))  
 3. PR comment describes the changes and how the feature is supposed to work  
 
+## Managing an Open Pull Request 
+
 After submitting a PR, before it is merged:  
 
 1. Automated build process must pass  
     1. If the build fails, check the error log to narrow down the reason  
     2. Sometimes one of the multiple build tests will randomly fail due to issues in Travis CI. If you see just one build failure and no clear error message, it may be a random issue. Add a comment so the reviewer for your change can re-run the build for you, or close the PR and re-submit and that typically clears the issue.  
 - PR must be reviewed by two team members, and reviewer feedback must be addressed  
-- UI must be approved by PM  
+- UI must be approved by PM
 
 If you've included your mailing address in Step 1, you'll be receiving a [Limited Edition Mattermost Mug](https://forum.mattermost.org/t/limited-edition-mattermost-mugs/143) as a thank you gift after your first pull request has been accepted.
