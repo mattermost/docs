@@ -2,7 +2,7 @@
 
 ### Upgrading Mattermost to Next Major Release 
 
-The following instructions upgrade Mattermost to the next major build release (for example, from 1.3.x to 1.4.x). If you're upgrading across multiple releases (for example from 1.2.x to 1.4.x) please run the following procedure once for each incremental upgrade. 
+The following instructions upgrade Mattermost to the next major build release (for example, from 1.4.x to 2.0.0). You can upgrade to v2.0.0 directly from v1.3.x. or v1.4.x. If you're upgrading across more releases (for example from 1.2.x to v2.0.0) please run the following procedure once for each incremental upgrade up to v1.3.x, then again for v1.3.x to v2.0.0.  
 
 1. Download the **next major build release** of your server and note any compatibility procedures 
       1. Run `platform -version` to check the current version of your Mattermost server
