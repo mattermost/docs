@@ -49,7 +49,7 @@ Let us know your feedback and we can add a ticket to [**accepting-pull-requests*
 #### Duplicate of issue Accepting Pull Request
 
 ```
-Hi @danbeaulieu, thanks for the report!
+Hi @[GITHUB_USERNAME], thanks for the report!
 
 There's a [known issue accepting pull requests](https://mattermost.atlassian.net/browse/PLT-835) and we're hoping to have it resolved before the next release. 
 
@@ -57,3 +57,30 @@ Our hope is to find a community member who'd like to knock this out as a [good f
 
 We try to balance providing opportunities for the community to participate with product quality, 
 ```
+
+#### Bug Reports
+
+#### Add repro steps per mattermost.org/filing-issues/?
+
+```
+Thanks @[GITHUB_USERNAME] for the bug report, 
+
+Please help by adding repro steps and information on your browser/OS so it is easier for others to reproduce and later fix.
+````
+
+####  Can anyone from community repro this?
+
+```
+Thanks @[GITHUB_USERNAME] for the issue report, 
+
+We haven’t been able to get repro steps for this on the Core team.  Is anyone from the community able to repro?
+```
+
+#### Move per mattermost.org/troubleshoot?
+
+```
+Thanks @[GITHUB_USERNAME] for your query, 
+
+Please help by moving it to our [Troubleshooting Forum](http://www.mattermost.org/troubleshoot/), where you will have peer-to-peer help solving your issue.
+```
+
