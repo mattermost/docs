@@ -21,6 +21,7 @@ No pull requests for major features should be submitted to the current release a
 1. Logistics:
     - Post this checklist in Release channel 
 2. PM:
+    - Draft Changelog with updates for latest feature additions, known issues, and contributors
     - Write compatibility updates for config.json and database changes [See example](https://github.com/mattermost/platform/blob/master/CHANGELOG.md#compatibility)  
     - Confirm changes to config.json in compatibility section of Changelog are written back to [settings documentation](https://github.com/mattermost/platform/blob/master/doc/install/Configuration-Settings.md)
     - Update [Upgrade Guide](https://github.com/mattermost/platform/blob/master/doc/install/Upgrade-Guide.md) for any steps needed to upgrade to new version
@@ -37,8 +38,7 @@ No pull requests for major features should be submitted to the current release a
     - Draft roadmap for release after next (used to prioritize design tasks)  
 5. Marketing:
     - Drafts marketing bullet points for next release based off of roadmap  
-    - Submits pull request for "Highlights" section of the Changelog  
-    - Notes date of announcements in release channel  
+    - Notes date of marketing announcement for the release in release channel  
 6. Team:
     - In Stand-up, each team member discusses worst bug (10-15s)
  
@@ -56,20 +56,22 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/platform/pulls) marked for the current release 
 3. PM:
     - Review all [Severity 1 bugs (data loss or security)](https://mattermost.atlassian.net/secure/IssueNavigator.jspa?mode=hide&requestId=10600) to consider for adding to Hotfix list
-    - Update documentation:
-        - Make Changelog PR with updates for latest feature additions, known issues, and contributors
-        - Make NOTICE.txt PR for any new libraries added from dev, if not added already 
-        - Prioritize any developer documentation tickets
-        - Draft [GitLab ticket](https://gitlab.com/gitlab-org/omnibus-gitlab/issues/942) to take next Mattermost version in the Omnibus, but do not post until RC1 is cut
-    - Coordinate testing:
-        - Work with Ops to check the [Quality Gate](https://github.com/mattermost/process/blob/master/release/quality-gates.md) for feature complete
-        - Receive testing sign-off from feature area owners (i.e. PM/Dev either signs-off that their area is well tested, or flags potential quality issues that may exist)
-        - Check that Release Candidate Testing Spreadsheet is up to date
-        - Post in Release Discussion room asking what the current worst bug/issue is
-4. **(Team) Feature Complete Meeting (10:15am PST)**:
+    - Update documentation:  
+        - Submit Changelog PR  
+        - Make NOTICE.txt PR for any new libraries added from dev, if not added already  
+        - Create a checklist of documentation needed based off of Changelog  
+        - Prioritize any developer documentation tickets  
+        - Draft [GitLab ticket](https://gitlab.com/gitlab-org/omnibus-gitlab/issues/942) to take next Mattermost version in the Omnibus, but do not post until RC1 is cut  
+    - Coordinate testing:  
+        - Work with Ops to check the [Quality Gate](https://github.com/mattermost/process/blob/master/release/quality-gates.md) for feature complete  
+        - Receive testing sign-off from feature area owners (i.e. PM/Dev either signs-off that their area is well tested, or flags potential quality issues that may exist)  
+        - Check that Release Candidate Testing Spreadsheet is up to date  
+        - Post in Release Discussion room asking what the current worst bug/issue is  
+4. **(Team) Feature Complete Meeting (10:15am PST)**:  
     - (PM) Leads review of Changelog  
     - (Team) Each team member discusses worst bug (10-15s)  
 5. Marketing:
+    - Submits pull request for "Highlights" section of the Changelog 
     - Communicate checklist of items needed by specific dates to write the blog post announce (e.g. screenshots, GIFs, documentation) and begins to write the blog post, tweet, and email for the release announcement  
 
 ### D. (T-minus 5 working days) Code Complete and Release Candidate Cut 
@@ -77,6 +79,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
 1. Logistics:  
     - Post this checklist in Release channel  
     - For the next release, create team meetings on Feature Complete and Code Complete dates  
+    - Confirms documentation is complete, reads through documentation and confirms all links work  
 2. PM:  
     - Remove "Under Development" notice for current release from Changelog on master  
     - Assign each area of the release testing spreadsheet to a team member  
