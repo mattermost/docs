@@ -48,13 +48,13 @@ The Mattermost roadmap does not currently include production support for Fedora,
 
 ## Hardware
 
-Mattermost offers both real-time communication and file sharing. CPU and Memory requirements are typically driven by the number of concurrent users using real-time messaging. Storage requirements are typically driven by number and size of files shared. 
+Mattermost offers both real-time communication and file sharing. CPU and Memory requirements are driven by the number of concurrent users using real-time messaging. Storage requirements are driven by number and size of files shared. 
 
-The below guidelines offer estimates based on real world usage of Mattermost in multi-team configurations ranging from 10-100 users per team. 
+The below guidelines offer estimates based on real world usage of Mattermost configured to serve multiple independent teams of 10-100 registered users per team with moderate activity. 
 
 ### CPU
 
-- 2 cores is the recommended number of cores and supports up to 250 users
+- 2 cores is the recommended number of cores and supports up to 250 registered users
 - 4 cores supports up to 1,000 users
 - 8 cores supports up to 2,500 users
 - 16 cores supports up to 5,000 users
@@ -63,7 +63,7 @@ The below guidelines offer estimates based on real world usage of Mattermost in 
 
 ### Memory
 
-- 2GB RAM is the recommended memory size and supports up to 50 users
+- 2GB RAM is the recommended memory size and supports up to 50 registered users
 - 4GB RAM supports up to 500 users
 - 8GB RAM supports up to 1,000 users
 - 16GB RAM supports up to 2,000 users
@@ -92,3 +92,4 @@ File usage per user varies significantly across industries. The below benchmarks
 *Example:* A 30-person team with medium usage (5-25 MB/user/month) with a safety factor of 2x would require between 300 MB (30 users * 5 MB * 2x safety factor) and 1500 MB (30 users * 25 MB * 2x safety factor) of free space in the next year. 
 
 It's recommended to review storage utilization at least quarterly to ensure adequate free space is available. 
+
