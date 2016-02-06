@@ -34,10 +34,11 @@ The following is a list of common error messages and solutions:
 
 ###### `Please check connection, Mattermost unreachable. If issue persists, ask administrator to check WebSocket port.`
 - Message appears in blue bar on team site. 
-- There are several parts of Mattermost that need to connect to the Mattermost server using web sockets and this indicates at least one of those websocket connections is misconfigured. 
-- The most likely cause is a proxy being misconfigured, and possibly stripping headers off of communications.
-- **Solution:** Check that [your websocket port is properly configured](http://docs.mattermost.com/install/prod-ubuntu.html#set-up-nginx-server). 
-
+- The most likely cause is a proxy being misconfigured, and possibly stripping headers off of WebSocket communications.
+  - Mattermost clients connect to the server using multiple protocols, `https` to enable general site functionality, and `wss` for real-time updates. 
+  - This error message appears when the `https` connection is working, but the `wss` connection has issues, most commonly having headers stripped off by a firewall or proxy that is either misconfigure or which does not support secure WebSockets. 
+- Note: If your `https` connection is working and `wss` is not, and you dismiss the blue bar message, your team site will render, but will not support real time communications (you may need to refresh to see updates). 
+- **Solution:** follow the [installation guide to set up your WebSocket port properly](http://docs.mattermost.com/install/prod-ubuntu.html#set-up-nginx-server). 
 
 ###### `x509: certificate signed by unknown authority` 
   - This error may appear in server logs when attempting to sign-up when using self-signed certificates to setup SSL, which is not yet supported by Mattermost. 
