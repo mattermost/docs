@@ -30,6 +30,7 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    help/getting-started/searching.md
    help/getting-started/creating-teams.md
    help/getting-started/managing-members.md
+   help/getting-started/*
    
 .. toctree::
    :maxdepth: 1
@@ -40,7 +41,8 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    help/messaging/mentioning-teammates.md
    help/messaging/formatting-text.md
    help/messaging/attaching-files.md
- 
+   help/messaging/*
+   
 .. toctree::
    :maxdepth: 1
    :caption: Settings
@@ -49,6 +51,7 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    help/settings/theme-colors.md
    help/settings/channel-settings.md
    help/settings/team-settings.md
+   help/settings/*
    
 .. toctree::
    :maxdepth: 1
