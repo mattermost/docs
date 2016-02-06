@@ -29,6 +29,7 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    help/getting-started/organizing-conversations.md
    help/getting-started/searching.md
    help/getting-started/creating-teams.md
+   help/getting-started/managing-members.md
    
 .. toctree::
    :maxdepth: 1
