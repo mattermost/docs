@@ -1,6 +1,6 @@
 # Development Process Overview
 
-This document describes the process through which feedback and design discussions flow into community systems, then into tickets, then into pull requests, then into monthly releases based on the purpose of the product. 
+This document describes the process through which feedback and design discussions flow into community systems, then into tickets, then into pull requests, then into monthly releases based on product purpose. 
 
 ## Purpose
 
