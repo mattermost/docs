@@ -1,7 +1,68 @@
-# Community
+# Community Systems 
+
+The goal of Mattermost community systems is to more effectively fulfill the [purpose of Mattermost](http://www.mattermost.org/vision/) through increased communication and feedback from community constituents. 
+
+## Community Constituents 
+
+Feedback from the Mattermost comes from different types of constituent: 
+
+- **End Users** (~10-1000 per server) - Sharing messages and files using Mattermost day-to-day
+- **Team Admins** (~1-10 per server) - Managing teams within Mattermost, defining business process
+- **IT Admins** (~1-2 per server) - Installing, securing, deploying and managing Mattermost servers 
+- **Developers** (~0-1 per server) - Customizing and extending Mattermost through APIs (does not include end users)
+
+## Community Systems
+
+Because types of feedback need to be handled in different ways (E.g. voting for feature requests, hierarchical labels and process documentation for broad discussion, integration with source control systems for bugs and pull requests), multiple systems are used to manage, prioritize and address community feedback. 
+
+Systems include: 
+
+###  Feature Idea Forum 
+
+A forum for filing, upvoting and discussing feature ideas. Reviewed monthly by the core team as part of the planning process for new releases. 
+
+See [Contributing Feature Ideas](http://www.mattermost.org/feature-requests/) for more details on how to use this system. 
+
+_Note: If you want to promote an idea filed in the feature idea forum, or if you are out of votes and want to find like-minded colleagues to vote for you, consider posting to the [Feature Idea Discussion ](https://forum.mattermost.org/t/how-to-use-feature-idea-discussion/63/1) category in the General Forum._
+
+
+###  Troubleshooting Forum 
+
+A system for peer-to-peer support of installation and configuration questions. 
+
+See [Troubleshooting Forum](https://forum.mattermost.org/t/about-the-trouble-shooting-category/150/1).
+
+
+### GitHub Issues 
+
+A system primarily used by Mattermost for reporting bugs with clear statements on repro steps and expected behavior. While it's okay to add feature requests and questions here to start conversations, moderators may ask a submitter's help to move discussions to one of the other channels. 
+
+See [Filing Issues](http://www.mattermost.org/filing-issues/) for details on how to file issues for Mattermost in GitHub.
+
+Please consider using more mainstream processes for [filing feature ideas to be upvoted](https://github.com/mattermost/platform/blob/master/doc/process/overview.md#feature-idea-forum), to ask [troubleshooting questions](https://github.com/mattermost/platform/blob/master/doc/process/overview.md#troubleshooting-forum), or [general questions](https://github.com/mattermost/platform/blob/master/doc/process/overview.md#general-forum). 
+
+### GitHub Pull Requests 
+
+A system for submitting pull requests for changes to Mattermost. See [Pull Requests](https://github.com/mattermost/platform/blob/master/doc/process/overview.md#merge-requests) section below. 
+
+### General Forum 
+
+A general, peer-to-peer discussion forum with topics organized by category for general questions, trouble shooting, design feedback requests, and FAQs. Monitored and moderated by core team, which is also active on the forum.
+
+Read more about the [General Forum](https://forum.mattermost.org/t/welcome-to-mattermost-community-discussion/8). 
+
+### Primary Research 
+
+Core team members and key contributors may discuss Mattermost directly with users in a range of systems outside those listed here--in-person meetings, video-conference, usability testing, Twitter, email, etc. Those notes are shared in various Mattermost channels to inform designs. 
+
+
 ___
 
-## GitHub Issues Process
+## Automated responses 
+
+To minimize response times, templates and automation are used across community systems. 
+
+### Automated responses for GitHub Issues 
 
 Below is a list of template responses for working with GitHub issues effectively. 
 
