@@ -5,32 +5,21 @@ ___
 
 Below is a list of template responses for working with GitHub issues effectively. 
 
-#### Template for missing CLA
-
-```
-
-Thanks @[GITHUB_USERNAME] for the pull request! 
-
-Per the [**CONTRIBUTING.md**](https://github.com/mattermost/platform/blob/master/CONTRIBUTING.md#submitting-a-pull-request) file displayed when you created this pull request, we need to add you to the list of [approved contributors](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true) for the Mattermost project.
-
-**Please help complete the Mattermost [contribution license agreement](http://www.mattermost.org/mattermost-contributor-agreement/)?**
-
-This is a standard procedure for many open source projects. Your form should be processed within 24 hours and reviewers for your pull request will be able to proceed. 
-
-Please let us know if you have any questions. 
-
-We are very happy to have you join our growing community!
-
-```
-
 #### Feature Requests
 
 ##### Please add to feature request forum
 
-```
-Thanks @[GITHUB_USERNAME], appreciate the feedback, 
+This response should be used when there's a **Move to Troubleshooting** label attached to a response. 
 
-Could we have your help [contributing this in the feature idea forum](http://www.mattermost.org/feature-requests/) so it can be upvoted by the community and the item prioritized? 
+```
+Thanks @[GITHUB_USERNAME], appreciate your feedback, 
+
+To keep feature idea discussions in one place, could we have your help: 
+
+1. [Contributing this in the feature idea forum](http://www.mattermost.org/feature-requests/) so it can be upvoted, discussed and considered for a ticket accepting pull requests?
+2. Posting a link back from the feature idea forum to this thread? 
+
+This issue may be closed in 7-10 days. 
 ```
 
 ##### Changes required before accepting feature request
