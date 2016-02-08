@@ -26,13 +26,13 @@ Once you have a ticket:
 
 Before submitting a pull request (PR), check that:  
 
-1. You’ve signed the [Contributor License Agreement](http://www.mattermost.org/mattermost-contributor-agreement/), so you can be added 2. Your change has an [APR Ticket](http://docs.mattermost.com/process/accepting-pull-request.html)
-to the Mattermost [Approved Contributor List](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true)  
+1. You’ve signed the [Contributor License Agreement](http://www.mattermost.org/mattermost-contributor-agreement/), so you can be added to the Mattermost [Approved Contributor List](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true)  
+2. Your change has an [APR Ticket](http://docs.mattermost.com/process/accepting-pull-request.html)
 3. Your code follows the [Mattermost Style Guide](http://docs.mattermost.com/developer/style-guide.html)  
 4. Unit tests are included for new server side functionality 
 5. Localization support is included  
 6. Change meets UX Guidelines of [Fast, Obvious, Forgiving](http://www.mattermost.org/design-principles/)
-7. If changes involves documentation, PR is submitted to [mattermost/docs](https://github.com/mattermost/docs)  
+7. If change requires user to understand a new concept or make a decision, PR for help documentation is submitted to [mattermost/docs](https://github.com/mattermost/docs)  
 8. Change is thoroughly tested. If your change involves text processing, make sure to run tests in [`/tests`](https://github.com/mattermost/platform/tree/master/doc/developer/tests)
 
 ## Submitting a Pull Request 
@@ -51,6 +51,6 @@ After submitting a PR, before it is merged:
     1. If the build fails, check the error log to narrow down the reason  
     2. Sometimes one of the multiple build tests will randomly fail due to issues in Travis CI. If you see just one build failure and no clear error message, it may be a random issue. Add a comment so the reviewer for your change can re-run the build for you, or close the PR and re-submit and that typically clears the issue.  
 - PR must be reviewed by two team members, and reviewer feedback must be addressed  
-- UI must be approved by PM
+- UI must be approved by PM  
 
 If you've included your mailing address in Step 1, you'll be receiving a [Limited Edition Mattermost Mug](https://forum.mattermost.org/t/limited-edition-mattermost-mugs/143) as a thank you gift after your first pull request has been accepted.
