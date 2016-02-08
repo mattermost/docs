@@ -128,6 +128,9 @@ header .header__links li a {
 	header .links__icon {
 		display: block;
 	}
+	header .header__logo img {
+		width: 176px;
+	}
 	header .header__links {
 		display: none;
 		width: 100%;
@@ -140,5 +143,9 @@ header .header__links li a {
 	header .header__links li a {
 		display: block;
 		padding-left: 0;
+	}
+	img {
+		max-width: 100%;
+		width: auto;
 	}
 }
