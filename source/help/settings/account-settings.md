@@ -51,20 +51,6 @@ Email notifications are sent for mentions and direct messages after you’ve bee
 #### Words That Trigger Mentions
 By default, you will receive mention notifications from your non-case sensitive username, mentioned @username, @all, and @channel. Customize the words that trigger mentions by typing them in the input box. This is useful if you want to be notified of all posts on a certain topic, for example, “marketing”.
 
-## Appearance
-Settings to customize your account’s theme colors and code theme.
-
-#### Theme Colours
-Select **Theme Colors** to select from four standard themes designed by the Mattermost team. To make custom adjustments on the four standard theme colours, click a standard theme and then select **Custom Theme** to load the standard theme into the custom theme color selectors.
-
-#### Custom Theme
-Customize your theme colors and share them with others by copying and pasting theme vectors into the input box. Observe a live preview as you customize theme colors and then click **Save** to confirm your changes. Discard your changes by exiting the settings modal and clicking **Yes, Discard**.
-
-Learn more about the custom theme color selectors [here](XXXXXX).
-
-#### Import theme colors from Slack
-To import a theme, go to **Preferences > Sidebar Theme** from within Slack, open the custom theme option, copy the theme color vector and then paste it into the *Input Slack Theme* input box in Mattermost. Any theme settings that are not customizable in Slack will default to the “Mattermost” standard theme settings.
-
 ## Integrations
 Settings to configure incoming and outgoing webhooks for your team.
 
@@ -78,6 +64,16 @@ Outgoing webhooks use trigger words to fire new message events to external integ
 ## Display
 Settings to configure clock and teammate name display preferences.
 
+#### Theme 
+
+Select **Theme Colors** to select from four standard themes designed by the Mattermost team. To make custom adjustments on the four standard theme colours, click a standard theme and then select **Custom Theme** to load the standard theme into the custom theme color selectors.
+
+Select **Custom Theme** to customize your theme colors and share them with others by copying and pasting theme vectors into the input box. Observe a live preview as you customize theme colors and then click **Save** to confirm your changes. Discard your changes by clicking **Cancel** or by exiting the settings modal and clicking **Yes, Discard**.
+
+Learn more about the custom theme color selectors [here](http://docs.mattermost.com/help/settings/theme-colors.html#custom-themes).
+
+Select **Import theme colors from Slack** to import a Slack theme. In Slack, go to **Preferences > Sidebar Theme** and open the custom theme option. From there, copy the theme color vector and then paste it into the *Input Slack Theme* input box in Mattermost. Any theme settings that are not customizable in Slack will default to the “Mattermost” standard theme settings.
+
 #### Display Font
 Select what font is used.
 
@@ -85,7 +81,10 @@ Select what font is used.
 Choose a 12-hour or 24-hour time preference that appears on the time stamp for all posts. 
 
 #### Teammate Name Display
-Configure how names are displayed in the Direct Messages list in the Channels pane: nickname, username or full name.
+Configure how names are displayed in Mattermost: nickname, username or full name.
+
+#### Language
+Select what language Mattermost uses.  
 
 ## Advanced
 Setting to configure when messages are sent.
