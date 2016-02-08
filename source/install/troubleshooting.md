@@ -42,7 +42,7 @@ The following is a list of common error messages and solutions:
 
 ###### `x509: certificate signed by unknown authority` 
   - This error may appear in server logs when attempting to sign-up when using self-signed certificates to setup SSL, which is not yet supported by Mattermost. 
-  - **Solution:** Set up a load balancer like Ngnix [per production install guide](http://docs.mattermost.com/install/prod-debian.html#set-up-nginx-with-ssl-recommended). The core team is looking into allowing self-signed certificates in future. 
+  - **Solution:** Set up a load balancer like Ngnix [per production install guide](http://docs.mattermost.com/install/prod-debian.html#set-up-nginx-with-ssl-recommended). The core team is looking into allowing self-signed certificates in future. As a work around, in **System Console** > **Service Settings** set `Enable Insecure Outgoing Connections` to `true`. This will allow insecure TLS connections, but be careful in doing so as it also opens your Mattermost site to man-in-the-middle attacks.
 
 ###### `panic: runtime error: invalid memory address or nil pointer dereference`
  - This error can occur if you have manually manipulated the Mattermost database, typically with deletions. Mattermost is designed to serve as a searchable archive, and manual manipulation of the database elements compromises integrity and may prevent upgrade. 
