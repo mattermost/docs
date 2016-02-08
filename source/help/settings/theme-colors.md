@@ -1,6 +1,6 @@
 # Theme Colors
 _____
-The colors of the Mattermost user interface are customizable in **Account Settings** > **Appearance**. You can import your theme colors from Slack, customize the colors yourself, or choose from four standard themes designed by the Matternost team.
+The colors of the Mattermost user interface are customizable in **Account Settings** > **Display** > **Theme**. You can import your theme colors from Slack, customize the colors yourself, or choose from four standard themes designed by the Matternost team.
 
 ## Standard Themes
 Select **Theme Colors** to choose from four standard themes designed by the Mattermost team. To make custom adjustments on the four standard theme colours, click a standard theme and then select **Custom Theme** to load the standard theme into the custom theme color selectors.
