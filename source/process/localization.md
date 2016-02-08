@@ -26,16 +26,15 @@ Language option is listed as an option in **Account Settings > Display > Languag
 - More than 85% of translation verified by someone deeply knowledgeble in target language
 - Up to 5% of translation may be out-of-date due to changes to English-language text since the last translation and review cycle.
 
-Alpha quality translations may be checked into `master` so long as they are disabled by default and enabled using **Account Settings > Advanced > Preview pre-released features > Include Alpha-quality languages**, after which they would appear in **Account Settings > Display > Language** prefixed with **Alpha**.
+Alpha quality translations may be checked into `master` so long as they are disabled by default and enabled using **Account Settings > Advanced > Preview pre-released features > Include Alpha-quality languages**, after which they would appear in **Account Settings > Display > Language** prefixed with **(Alpha)**.
+
+#### Pre-Alpha 
+- Translation has not yet reached Alpha quality 
+
+As new languages are added, contributors may set up long running forks to translate and verify a new language prior to achieving Alpha-quality status and making a pull request to merge the new language option into `master`. 
+
+## Translation Process
+
+If you're interested in contributing translations to Mattermost, please join the [Mattermost localization channel to discuss.](https://pre-release.mattermost.com/core/channels/localization)
 
 
-
-
-
-
-Structure
-
-
-Process
-Beta
-Alpah r
