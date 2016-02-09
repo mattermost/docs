@@ -13,6 +13,8 @@ The following example sends a special mention notification to **alice** that ale
 @alice how did your interview go with the new candidate?
 ```
 
+If the user you mentioned does not belong to the channel, a System Message will be posted to let you know. This is a temporary message only seen by the person who triggered it. To add the mentioned user to the channel, go to the dropdown menu beside the channel name and select **Add Members**. 
+
 #### @Channel
 You can mention an entire channel by typing `@channel`. All members of the channel will receive a mention notification that behaves the same way as if the members had been mentioned personally.
 
