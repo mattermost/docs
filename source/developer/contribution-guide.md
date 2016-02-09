@@ -49,7 +49,7 @@ After submitting a PR, before it is merged:
 
 1. Automated build process must pass  
     1. If the build fails, check the error log to narrow down the reason  
-    2. Sometimes one of the multiple build tests will randomly fail due to issues in Travis CI. If you see just one build failure and no clear error message, it may be a random issue. Add a comment so the reviewer for your change can re-run the build for you, or close the PR and re-submit and that typically clears the issue.  
+    2. Sometimes one of the multiple build tests will randomly fail due to issues in Travis CI. If you see just one build failure and no clear error message, it may be a random issue. Add a comment so the reviewer for your change can re-run the build for you, or close the PR and re-submit and that typically clears the issue. 
 2. PR must be reviewed by two team members, and reviewer feedback must be addressed  
 3. UI must be approved by PM  
 
