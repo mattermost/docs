@@ -1,5 +1,7 @@
 # Frequently Asked Questions 
 
+## General Questions 
+
 #### Why was Mattermost created? 
 
 Mattermost was created to offer an alternative to propreitary SaaS services. For more info, please go to mattermost.org and click "Why we made Mattermost".
@@ -7,6 +9,10 @@ Mattermost was created to offer an alternative to propreitary SaaS services. For
 #### Can I use the Mattermost platform to create a propretary SaaS service?
 
 We prefer you didn't. For more info, please go to mattermost.org and click "Why we made Mattermost".
+
+#### Why does the open source repo contain code specific to the commercial version of Mattermost? 
+
+The commercial version of Mattermost is designed to never lock-in your data. Portions of the commercial version are shared with the open source version to ensure upgrade and downgrade across editions happens without data loss. 
 
 ## Enterprise Edition
 
