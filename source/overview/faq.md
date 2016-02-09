@@ -12,7 +12,7 @@ We prefer you didn't. For more info, please go to mattermost.org and click "Why 
 
 #### What is Mattermost Enterprise Edition? 
 
-Mattermost Enteprise Edition is a commercial workplace messaging solution for enterprises built atop the open source Mattermost platform. It is currently available as a "pre-release" by [contacting the Enterprise team.](https://about.mattermost.com/contact/)
+Mattermost Enterprise Edition is a commercial workplace messaging solution for enterprises built atop the open source Mattermost platform. It is currently available as a "pre-release" by [contacting the Enterprise team.](https://about.mattermost.com/contact/)
 
 The most recent verson includes LDAP/AD single-sign-on, auditing and advanced reporting for enterprises. It's feature set and roadmap are being determined in collaboration with early customers deploying and sharing feedback on the pre-release version. 
 
