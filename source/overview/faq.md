@@ -2,7 +2,7 @@
 
 #### Why was Mattermost created? 
 
-To offer an alternative to propreitary SaaS services. For more info, please go to mattermost.org and click "Why we made Mattermost".
+Mattermost was created to offer an alternative to propreitary SaaS services. For more info, please go to mattermost.org and click "Why we made Mattermost".
 
 #### Can I use the Mattermost platform to create a propretary SaaS service?
 
