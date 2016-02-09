@@ -2,11 +2,11 @@
 
 #### Why was Mattermost created? 
 
-To offer an alternative to propreitary SaaS services that monetize by paywalling users from their data. For more info, please go to mattermost.org and click "Why we made Mattermost".
+To offer an alternative to propreitary SaaS services. For more info, please go to mattermost.org and click "Why we made Mattermost".
 
 #### Can I use Mattermost to create a propretary SaaS service?
 
-We prefer you didn't. For more info, please go to mattermost.org and click "Mattermost Vision".
+We prefer you didn't. For more info, please go to mattermost.org and click "Why we made Mattermost".
 
 ## Enterprise Edition
 
