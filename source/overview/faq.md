@@ -4,7 +4,7 @@
 
 To offer an alternative to propreitary SaaS services. For more info, please go to mattermost.org and click "Why we made Mattermost".
 
-#### Can I use Mattermost to create a propretary SaaS service?
+#### Can I use the Mattermost platform to create a propretary SaaS service?
 
 We prefer you didn't. For more info, please go to mattermost.org and click "Why we made Mattermost".
 
@@ -29,7 +29,6 @@ Growing your Mattermost installation from supporting a team to supporting an ent
 
 **Technical Scaling** - Whether used for teams or enterprises, the Mattermost platform is designed to support tens of thousands of users on a single server with appropriate hardware. The platform is built using Golang, the language developed by Google to create internet-scale applications, and supports highly scalable databases like MySQL, which is [used extensively by Facebook](https://www.facebook.com/notes/facebook-engineering/mysql-and-database-engineering-mark-callaghan/10150599729938920/). Beyond tens of thousands of users,  Mattermost Enterprise Edition can offer high availability/horizontal scaling configurations using multiple servers to support even larger organizations. 
 
-**Functional Scaling** - Scaling from a team to an enterprise is like going from a "virtual office" to a "virtual campus" (which may include many virtual offices). Features enterprise authentication, granular permissions, compliance and auditing, and advanced reporting become increasingly important as organizations grow beyond teams. Organizations needing this flexibility can easily upgrade from Mattermost Team Edition to Mattermost Enterprise Edition, as well as downgrade without data loss, should their needs change. 
+**Functional Scaling** - Scaling from a team to an enterprise is like going from a "virtual office" to a "virtual campus". Advanced features like enterprise authentication, granular permissions, compliance and auditing, and advanced reporting become increasingly important as organizations grow beyond teams. Organizations needing this flexibility can easily upgrade from Mattermost Team Edition to Mattermost Enterprise Edition, as well as downgrade without data loss, should their needs change. 
 
 For more information on how Mattermost scales, technically and functionality, please [contact the Enterprise team.](https://about.mattermost.com/contact/)
-
