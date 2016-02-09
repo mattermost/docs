@@ -6,9 +6,9 @@ You can sign-in to your team from the web address of `https://domain.com/teamnam
 ## Sign-in Methods
 There are several options for signing in to your team depending on how your System Admin has configured your server. 
 
-#### Email Address and Password Sign-in
+#### Email Address or Username Sign-in  
 
-When enabled by your System Admin, you can sign in using the combination of email address and password used to create your account. 
+When enabled by your System Admin, you can sign in with the username or email address used to create your account.
 
 If you have forgotten your password, you can reset it by clicking **I forgot my password** on the sign-in screen, or contact your System Admin for help resetting your password. 
 
