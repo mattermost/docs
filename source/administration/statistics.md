@@ -23,7 +23,7 @@ Users who logged in and made a post on a certain day in all the teams on your sy
 #### Advanced System Statistics (Enterprise)  
 Enterprise Edition includes additional system statistics.
 
-**Incoming Webhooks** 
+**Incoming Webhooks**  
 The number of active Incoming Webhooks currently setup on your system. Webhooks that are created and then removed in the Account Settings menu are not counted.
 
 **Outgoing Webhooks**  
@@ -56,6 +56,6 @@ Users who logged in and made a post on a certain day.
 **Recently Active Users**  
 Users that have logged in and had recent browser activity in Mattermost.
 
-**Newly Created Users**
+**Newly Created Users**  
 Users that have recently completed the sign-up process to create a Mattermost account on the team.
 
