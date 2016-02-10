@@ -5,7 +5,7 @@ provide an (encrypted) endpoint for Mattermost.
 This description is based on a RHEL-7.1 installation, but should be applicable
 for other distributions using altered paths for the configuration files. The
 steps below can be used a substitute of the nginx setup in the section
-`Production Install on RHEL 7.1+`
+[Set up Nginx Server](prod-rhel-7.html#set-up-nginx-server).
 
 ## Set Up Apache server
 1. For the purposes of this guide we will assume this server has an IP address of `10.10.10.3`
@@ -72,4 +72,4 @@ steps below can be used a substitute of the nginx setup in the section
 
 
 ## Finish Mattermost Server setup
-Follow the guide as described in `Production Install on RHEL 7.1+`
+Follow the guide as described in [Production Install on RHEL 7.1+](prod-rhel-7.html).
