@@ -23,8 +23,8 @@ No pull requests for major features should be submitted to the current release a
 2. PM:
     - Draft Changelog with updates for latest feature additions, known issues, and contributors
     - Write compatibility updates for config.json and database changes [See example](https://github.com/mattermost/platform/blob/master/CHANGELOG.md#compatibility)  
-    - Confirm changes to config.json in compatibility section of Changelog are written back to [settings documentation](https://github.com/mattermost/platform/blob/master/doc/install/Configuration-Settings.md)
-    - Update [Upgrade Guide](https://github.com/mattermost/platform/blob/master/doc/install/Upgrade-Guide.md) for any steps needed to upgrade to new version
+    - Confirm changes to config.json in compatibility section of Changelog are written back to [settings documentation](https://github.com/mattermost/docs/blob/master/source/administration/config-settings.md)
+    - Update [Upgrade Guide](https://github.com/mattermost/docs/blob/master/source/administration/upgrade.md) for any steps needed to upgrade to new version
     - Prepare tickets for [cutting RC builds](https://mattermost.atlassian.net/browse/PLT-985), [creating the final release candidate](https://mattermost.atlassian.net/browse/PLT-986), [creating AMIs](https://mattermost.atlassian.net/browse/PLT-1213), [testing GitLab RC with Mattermost](https://mattermost.atlassian.net/browse/PLT-1013), and pushing to private cloud customers  
     - Queue an item for UX meeting to discuss worst UX bug  
     - Reach out to community and customers asking about top issues ([See example](https://pre-release.mattermost.com/core/pl/sisu6mpdqpb7ugi4t5sgwakrno))  
@@ -105,7 +105,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - Post this checklist in Release channel
     - Add Release Process Kaizen/Q&A item to next team meeting
 2. Build:
-    - Test upgrade from previous version to current version, following the [Upgrade Guide](https://github.com/mattermost/platform/blob/master/doc/install/Upgrade-Guide.md) 
+    - Test upgrade from previous version to current version, following the [Upgrade Guide](https://github.com/mattermost/docs/blob/master/source/administration/upgrade.md) 
     - Database upgrade should be tested on both MySQL and Postgres
 3. PM:
     - Post release testing instructions to Release Discussion channel ([example](https://pre-release.mattermost.com/core/pl/8z1tazpmm3ycbrehju36brd5nh))

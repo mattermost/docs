@@ -105,8 +105,9 @@
 1. Configure Nginx to proxy connections from the internet to the Mattermost Server
     * Create a configuration for Mattermost
     * ``` sudo touch /etc/nginx/sites-available/mattermost```
-    * Below is a sample configuration with the minimum settings required to configure Mattermost
-```
+    * Below is a sample configuration with the minimum settings required to configure Mattermost  
+     
+   ```
    server {
       server_name mattermost.example.com;
 
@@ -122,7 +123,8 @@
          proxy_pass http://10.10.10.2:8065;
       }
    }
-```
+   ```  
+
     * Remove the existing file with
     * ``` sudo rm /etc/nginx/sites-enabled/default```
     * Link the mattermost config by typing:

@@ -97,3 +97,6 @@ The following is a list of common error messages and solutions:
     1. Run `platform -version` to check your version of Mattermost 
     2. If your version of the Mattermost binary doesn't match the version listed in the database error message, downgrade the version of the Mattermost binary you are using by [following the manual upgrade steps for Mattermost](http://docs.mattermost.com/administration/upgrade.htmle) and using the database schema version listed in the error messages for the version you select in Step 1) iv). 
     3. Once Mattermost is working again, you can use the same upgrade procedure to upgrade Mattermost version by version to your current GitLab version. After this is done, GitLab automation should continue to work for future upgrades, so long as you don't skip versions. 
+
+###### `panic: Error decoding config file=/opt/mattermost/config/config.json, err=invalid character '"' after object key:value pair`
+- Your `config.json` is not a well-formed `.json` file. Try using a [json validator](https://jsonformatter.curiousconcept.com/) to find the error. 

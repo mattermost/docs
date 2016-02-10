@@ -11,7 +11,7 @@ Public Channels are open to everyone on a team. New team members are automatical
 Private Groups are for sensitive topics and are only visible to select team members. Any member of a Private Group can add additional members. Group members can choose to leave at any time, but only the group owner or Team Admin can remove other members. 
 
 #### Direct Messages
-Direct Messages are for conversations between two team members. These conversations are only visible to the two team members involved.
+Direct Messages are for conversations between two team members. These conversations are only visible to the team members involved. The online status indicator next to team members names in the direct message list displays: online (active browser), away (no browser activity for 5 minutes), and offline (browser closed).
 
 ## Managing Channels
 Channels can be created, joined, renamed, left and deleted.

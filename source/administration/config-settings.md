@@ -37,6 +37,11 @@ Set this key to enable embedding of YouTube video previews based on hyperlinks a
 **Enable Security Fix Alert** (`"EnableSecurityFixAlert": true`)  
 "true": System Administrators are notified by email if a relevant security fix alert has been announced in the last 12 hours. Requires email to be enabled.
 
+**Enable Insecure Outgoing Connections** (`"EnableInsecureOutgoingConnections": false`)  
+"true": Outgoing HTTPS requests can accept unverified, self-signed certificates. For example, outgoing webhooks to a server with a self-signed TLS certificate, using any domain, will be allowed; "false": Only secure HTTPS requests are allowed.
+
+Security note: Enabling this feature makes these connections susceptible to man-in-the-middle attacks.
+
 **Session Length for Web in days** (`"SessionLengthWebInDays" : 30`)  
 Set the number of days before web sessions expire and users will need to log in again.
 
@@ -49,7 +54,7 @@ Set the number of days before SSO sessions expire.
 **Session Cache in Minutes** (`"SessionCacheInMinutes" : 10`)  
 Set the number of minutes to cache a session in memory.
 
-#### Webhooks
+#### Webhooks and Slash Commands
 
 **Enable Incoming Webhooks** (`"EnableIncomingWebhooks": true`)    
 Developers building integrations can create webhook URLs for channels and private groups. Please see http://mattermost.org/webhooks to learn about creating webhooks, view samples, and to let the community know about integrations you have built. "true": Incoming webhooks will be allowed. To manage incoming webhooks, go to **Account Settings -> Integrations**. The webhook URLs created in Account Settings can be used by external applications to create posts in any channels or private groups that you have access to; “false”: The Integrations > Incoming Webhooks section of Account Settings is hidden and all incoming webhooks are disabled.
@@ -61,10 +66,16 @@ Developers building integrations can create webhook tokens for public channels. 
 
 Security note: By enabling this feature, users may be able to perform [phishing attacks](https://en.wikipedia.org/wiki/Phishing) by attempting to impersonate other users. To combat these attacks, a BOT tag appears next to all posts from a webhook. Enable at your own risk.
 
-**Enable Overriding Usernames from Webhooks** (`"EnablePostUsernameOverride": false`)  
+**Enable Slash Commands** (`"EnableCommands": false`)  
+Slash commands send events to external integrations that send a response back to Mattermost. "true": Allow users to create custom slash commands from **Account Settings** > **Integrations** > **Commands**; "false": Slash Commands are hidden in the **Integrations** user interface.
+
+**Enable Integrations for Admin Only** (`"EnableOnlyAdminIntegrations": true`)  
+"true": User created integrations can only be created by System or Team Admins. Members who are not admins trying to create integrations will hit an error message in the **Account Settings** dialog; "false": Any team members can create integrations from **Account Settings** > **Inegrations**.
+
+**Enable Overriding Usernames from Webhooks and Slash Commands** (`"EnablePostUsernameOverride": false`)  
 "true": Webhooks will be allowed to change the username they are posting as; “false”: Webhooks can only post as the username they were set up with. See http://mattermost.org/webhooks for more details.
 
-**Enable Overriding Icon from Webhooks** (`"EnablePostIconOverride": false`)  
+**Enable Overriding Icon from Webhooks and Slash Commands** (`"EnablePostIconOverride": false`)  
 "true": Webhooks will be allowed to change the icon they post with; “false”: Webhooks can only post with the profile picture of the account they were set up with. See http://mattermost.org/webhooks for more details.
 
 ### Team Settings
@@ -122,10 +133,18 @@ Maximum number of open connections held open to the database.
 
 Settings to configure email signup, notifications, security, and SMTP options. 
 
-#### Signup
+#### Sign Up  
 
 **Allow Sign Up With Email** (`"EnableSignUpWithEmail": true`)  
 "true": Allow team creation and account signup using email and password; “false”: Email signup is disabled and users are not able to invite new members. This limits signup to single-sign-on services like OAuth or LDAP.
+
+#### Sign In  
+
+**Allow Sign In With Email** (`"EnableSignInWithEmail": true`)  
+"true": Mattermost allows users to sign in using their email and password; "false": sign in with email is disabled and does not appear on the login screen.
+
+**Allow Sign In With Username** (`EnableSignInWithUsername": false`)  
+"true": Mattermost allows users to sign in using their username and password. This setting is typically only used when email verification is disabled; "false": sign in with username is disabled and does not appear on the login screen.
 
 #### Notifications
 
