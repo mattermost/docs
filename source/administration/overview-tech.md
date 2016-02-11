@@ -16,17 +16,13 @@ Mattermost releases new major builds monthly on the 16th from http://www.matterm
 
 ## Components 
 
-Following installation, Mattermost state is stored in three places: 
+Following installation, Mattermost state is stored in two places, a **system configuration** file and the **Mattermost database**. 
 
-### 1) Executable file
+### System Configuration File 
 
-Mattermost runs off this single executable file located in `bin/platform`. You can query its version with `platform -version`. 
+This file, located in `config/config.json` stores Mattermost system settings. This file should be backed up before any upgrade or migration attempt. 
 
-### 2) Configuration file 
-
-This file, located in `bin/config.json` stores Mattermost system settings. This file should be backed up before any upgrade or migration attempt. 
-
-### 3) Database 
+### Mattermost Database 
 
 The Mattermost database set up during installation stores user and system data. This database is versioned and the Mattermost server has two requirements for the database version: 
 
