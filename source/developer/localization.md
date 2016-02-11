@@ -56,8 +56,8 @@ To translate a language:
    3. Compile and run Mattermost to confirm everything works
    4. Modify your `[locale].json` files  to translate the system to your choosen language
 4. Follow the [contribution guide](http://docs.mattermost.com/developer/contribution-guide.html) to make a pull request with your translation 
-   1. The Mattermost core team will set up a server for the community to review and contribute to your translation prior to merging it to `master`. 
-   2. When there is consensus from at least 3 reviewers that the translation has achieved Alpha quality or higher, it will be merged
+   1. The Mattermost core team will set up a server for the community to test, review and contribute to your translation prior to merging it to `master`. 
+   2. When there is consensus from at least 2 reviewers that the translation has achieved Alpha quality or higher, it will be merged
    3. The review and revision process may take days to weeks and the submitter is expected to rebase as needed 
 
 #### Translation Maintenance 
