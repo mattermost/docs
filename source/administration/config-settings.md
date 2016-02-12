@@ -340,16 +340,16 @@ Enter `https://<your-gitlab-url>/oauth/authorize` (example: `https://example.com
 ### Legals and Support Settings
 
 **Terms of Service link** (`"TermsOfServiceLink": "/static/help/terms.html"`)  
-Set the link for the terms of service.
+Configurable link to Terms of Service your organization may provide to end users. By default, links to an editable file hosted in the `static/help/terms.html` found in the directory where the Mattermost server installed. Default file may be updated to state the terms under which your organization is providing its server to end users, in addition to the "Mattermost Conditions of Use" notice to end users that must be shown to users from the "Terms of Service" link. 
 
 **Privacy Policy link** (`"PrivacyPolicyLink": "/static/help/privacy.html"`)  
-Set the link for the privacy policy.
+Configurable link to Privacy Policy your organization may provide to end users. By default, links to an editable file hosted in the `static/help/privacy.html` found in the directory where the Mattermost server installed. 
 
 **About link** (`"AboutLink": "/static/help/about.html"`)  
-Set the link for the about page.
+Configurable link to an About page describing your organization may provide to end users. By default, links to an editable file hosted in the `static/help/about.html` found in the directory where the Mattermost server installed. 
 
 **Help link** (`"HelpLink": "/static/help/help.html"`)  
-Set the link for the help page.
+Configurable link to an About page describing your organization may provide to end users. By default, points to Mattermost default help documentation. Can be links to an editable file hosted in the `static/help/help.html` found in the directory where the Mattermost server installed. 
 
 **Report a Problem link** (`"ReportAProblemLink": "/static/help/report_problem.html"`)  
 Set the link for the support website.
