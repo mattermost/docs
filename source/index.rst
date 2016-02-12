@@ -67,6 +67,7 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    :glob:
    
    deployment/sso*
+   deployment/deployment*
    deployment/*
 
 .. toctree::
