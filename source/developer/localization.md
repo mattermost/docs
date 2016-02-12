@@ -42,17 +42,17 @@ If you're interested in contributing translations to Mattermost, please join the
 To translate a language: 
 
 1. Review GitHub issues and confirm someone else isn't already working on the same language
-  - If they are, perhap offer to help translate or review? 
+  - If they are, perhaps offer to help translate or review?
   - If no one is working on your language start a thread to see if others would collaborate with you
 2. Follow the [developer setup guide](http://docs.mattermost.com/developer/developer-setup.html) and build Mattermost on your own machine
 3. Set up translation for your language
-   1. Create tranlsation directories 
+   1. Create translation directories
     - Please create copies of the following files renamed using locale codes based on [Google's internationalization standard](https://developer.chrome.com/webstore/i18n): 
-      - https://github.com/mattermost/platform/blob/master/i18n/en.json
-      - https://github.com/mattermost/platform/blob/master/web/static/i18n/en.json
+      - [`https://github.com/mattermost/platform/blob/master/i18n/en.json`](https://github.com/mattermost/platform/blob/master/i18n/en.json)
+      - [`https://github.com/mattermost/platform/blob/master/web/static/i18n/en.json`](https://github.com/mattermost/platform/blob/master/web/static/i18n/en.json)
    2. Modify the following files to include your localization: 
-      - https://github.com/mattermost/platform/blob/master/web/react/utils/utils.jsx#L1390
-      - https://github.com/mattermost/platform/blob/master/web/templates/head.html#L51
+      - [`https://github.com/mattermost/platform/blob/master/web/react/utils/utils.jsx#L1390`](https://github.com/mattermost/platform/blob/master/web/react/utils/utils.jsx#L1390)
+      - [`https://github.com/mattermost/platform/blob/master/web/templates/head.html#L51`](https://github.com/mattermost/platform/blob/master/web/templates/head.html#L51)
    3. Compile and run Mattermost to confirm everything works
    4. Modify your `[locale].json` files  to translate the system to your choosen language
 4. Follow the [contribution guide](http://docs.mattermost.com/developer/contribution-guide.html) to make a pull request with your translation 
