@@ -93,7 +93,7 @@ Dozens of open source integrations to common tools like Jira, Jenkins, GitLab, T
 
 For notifications and account verification, Mattermost connects to your existing email service over SMTP, including Microsoft Exchange, Amazon SES, SendGrid and self-hosted email solutions. 
 
-### Mattermost Server
+## Mattermost Server
 
 The Mattermost server installs as a single compiled binary file. All server settings are stored in a configuration file, `config/config.json`, which can be updated directly or via a web-based System Console user interface. 
 
