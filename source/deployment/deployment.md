@@ -2,7 +2,7 @@
 
 The below diagram illustrates an on-premises deployment of Mattermost with optional configurations for scaling to performance from teams to large organizations. 
 
-![image](https://cloud.githubusercontent.com/assets/177788/13022821/9336477a-d198-11e5-8b98-6d967d253cfe.png)
+![image](https://cloud.githubusercontent.com/assets/177788/13025329/8d589422-d1b9-11e5-9074-3063dd0abb30.png)
 
 Note: Deployment guidance does not include GitLab Mattermost, whose setup is documented at [doc.gitlab.com/omnibus/gitlab-mattermost/](http://doc.gitlab.com/omnibus/gitlab-mattermost/)
 
@@ -142,4 +142,3 @@ See [Database Sizing Guide] for a discussion on how to estimate the appropriate 
 Images and files shared by users are stored and retrieved in one of three options. 
 
 For teams sharing only modest amounts of file data, local storage on the same physical machine as the Mattermost server may be sufficient. For enterprises sharing very large amounts of data, a Network-Attached Storage server may be used, which can scale to peta-bytes if necessary. Alternatively, for both easy-of-use and scale, Amazon's S3 file storage service is another option as well. 
-
