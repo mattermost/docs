@@ -5,39 +5,40 @@ ___
 
 ### PC Web Experience 
 
-Supported Operating Systems and Browsers for the Mattermost PC Web Experience include: 
+Supported operating systems and browsers for the Mattermost PC web experience include: 
 
-- PC: Windows 7, Windows 8, Windows 10 (Chrome 43+, Firefox 38+, Internet Explorer 11, Edge)  
+- PC: Windows 7, Windows 8, Windows 10 (IE 11, Chrome 43+, Firefox 38+, Edge)  
 - Mac: OS 10 (Safari 9, Chrome 43+)  
 - Linux: Arch 4.0.0  (Chrome 43+)  
 
+### Mobile App Experience 
+
+Native mobile apps for Mattermost are available on: 
+
+- iPhone 4s and later with iOS 9+ 
+- Android devices with Android 4.40+
+
 ### Mobile Web Experience 
 
-Supported Operating Systems and Browsers for the Mattermost Mobile Web Experience include: 
+Supported operating systems and browsers for the Mattermost mobile web experience include: 
 
 - iPhone 4s and higher (Safari on iOS 9+, Chrome 43+)  
 - Android 5 and higher (Chrome 43+)  
 
 ### Email Client
 
-Supported Email Clients for rendering Mattermost email notifications include:
-
-Web based clients: 
-- Gmail
-- Office 365
-- Outlook
-- Yahoo
-- AOL
+Supported email clients for rendering Mattermost email notifications include:
 
 Desktop Clients:
+- Outlook 2010+
 - Apple Mail version 7+
-- Outlook 2016+
 - Thunderbird 38.2+
 
+Web based clients: 
+- Office 365, Outlook, Gmail, Yahoo, AOL
+
 Mobile Clients: 
-- Gmail Mobile App (Android, iOS)
-- iOS Mail App (iOS 7+)
-- Blackberry Mail App  (OS version 4+)
+- iOS Mail App (iOS 7+), Gmail Mobile App (Android, iOS), Blackberry Mail App  (OS version 4+)
 
 ### Server
 
