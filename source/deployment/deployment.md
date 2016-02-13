@@ -3,9 +3,9 @@
 The below diagram illustrates an on-premises deployment of Mattermost with optional configurations for scaling to performance from teams to large organizations. 
 
 ![image](https://cloud.githubusercontent.com/assets/177788/13025329/8d589422-d1b9-11e5-9074-3063dd0abb30.png)
+[View Mattermost Network Diagram](https://cloud.githubusercontent.com/assets/177788/13025329/8d589422-d1b9-11e5-9074-3063dd0abb30.png)
 
-Note: Deployment guidance does not include GitLab Mattermost, whose setup is documented at [doc.gitlab.com/omnibus/gitlab-mattermost/](http://doc.gitlab.com/omnibus/gitlab-mattermost/)
-
+Note: GitLab Mattermost deployment is [documented separately](http://doc.gitlab.com/omnibus/gitlab-mattermost/) and not included below. 
 ## Requirements and Installation Guides 
 
 Mattermost supports workplace messaging for teams using one to three servers using instructions available on [docs.mattermost.com](http://docs.mattermost.com/install/requirements.html). See [Software and Hardware Requirements](http://docs.mattermost.com/install/requirements.html) documentation for server sizing estimates. 
@@ -119,7 +119,9 @@ Sends notifications via SMTP email and mobile push notifications via Mattermost 
 
 Connects to and manages supported databases. 
 
-### Mattermost Server in High Availability Configuration (Enterprise Edition only, available 2016)
+### Mattermost Server for Horizontal Scaling 
+
+_Enterprise Edition only, available 2016_
 
 Large organizations needing high scale, high availability configurations can contact the Enterprise team for advisory on how to configure and size Mattermost Enterprise Edition to support their specific needs. 
 
