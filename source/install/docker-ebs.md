@@ -27,4 +27,4 @@ The following instructions use Docker to install Mattermost in _Preview Mode_ fo
 See [Configuration Settings](../administration/config-settings.md) documentation to customize your deployment. 
 
 #### (Recommended) Enable Email 
-The default single-container Docker instance for Mattermost is designed for product evaluation, and sets `SendEmailNotifications=false` so the product can function without enabling email. To see the product's full functionality, [enabling SMTP email is recommended](SMTP-Email-Setup.md).
+The default single-container Docker instance for Mattermost is designed for product evaluation, and sets `SendEmailNotifications=false` so the product can function without enabling email. To see the product's full functionality, [enabling SMTP email is recommended](smtp-email-setup.md).
