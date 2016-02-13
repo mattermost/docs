@@ -3,13 +3,18 @@ ___
 
 ## Software
 
-### Web Client
+### PC Web Experience 
 
-Supported Operating Systems and Browsers for the Mattermost Web Client include: 
+Supported Operating Systems and Browsers for the Mattermost PC Web Experience include: 
 
 - PC: Windows 7, Windows 8, Windows 10 (Chrome 43+, Firefox 38+, Internet Explorer 11, Edge)  
 - Mac: OS 10 (Safari 9, Chrome 43+)  
 - Linux: Arch 4.0.0  (Chrome 43+)  
+
+### Mobile Web Experience 
+
+Supported Operating Systems and Browsers for the Mattermost Mobile Web Experience include: 
+
 - iPhone 4s and higher (Safari on iOS 9+, Chrome 43+)  
 - Android 5 and higher (Chrome 43+)  
 
