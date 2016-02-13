@@ -123,11 +123,7 @@ Connects to and manages supported databases.
 
 _Enterprise Edition only, available 2016_
 
-Large organizations needing high scale, high availability configurations can contact the Enterprise team for advisory on how to configure and size Mattermost Enterprise Edition to support their specific needs. 
-
-Please contact the [Mattermost Enteprise team](https://about.mattermost.com/contact/) to discuss a high availability configuration and hardware sizing guidance tailored to the needs of your organization. 
-
-Depending on customer needs, multiple Mattermost servers may be configured with cache and event synchronization to horizontally scale the Mattermost service. 
+Large organizations needing high scale, high availability configurations can contact the [Enteprise team](https://about.mattermost.com/contact/) for advisory on how to configure and size Mattermost Enterprise Edition to support their specific needs. Depending on customer needs, multiple Mattermost servers may be configured with cache and event synchronization to horizontally scale the Mattermost service. 
 
 ## Data Stores
 
@@ -136,8 +132,6 @@ Depending on customer needs, multiple Mattermost servers may be configured with 
 Mattermost uses a MySQL or Postgres database to store and retrieve system data and to execute full text search. 
 
 Depending on projected usage from your evaluation deployment, you may decide to add a multi-server database configuration with a master and multiple read relicas, or potentially use Solidstate Storage Drives. 
-
-See [Database Sizing Guide] for a discussion on how to estimate the appropriate hardware.
 
 ### File Store 
 
