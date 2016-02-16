@@ -1,3 +1,129 @@
 # Slash Commands
 
-In Mattermost 2.0 users will be able to create Slash commands similar to outgoing webhooks. Documentation will be added to this page. 
+Slash commands, like outgoing webhooks, allow users to interact with external applications right from within Mattermost. The user will enter a `/` followed by a command, and optionally some arguments, then an HTTP request will be sent to an external application. What occurs next is decided by how the application responds to the HTTP request.
+
+A couple key points:
+
+- **Mattermost slash commands are Slack-compatible.** If you've used Slack's slash commands to interact with external applications, you can reuse those same applications with Mattermost. Mattermost will automatically translate Slack's proprietary JSON payload format into markdown to render in Mattermost messages
+- **Custom commands support auto-complete.** When you a create a custom command for your teammates, you have the option to fill in information about how auto-complete should work with that command. This gives your teammates quick and easy access to use your custom slash command
+
+_Example:_
+
+Suppose you had an external application that had the ability to check the weather for certain cities. By creating a custom slash command, and setting up the application to handle the HTTP POST or GET from the command, you could allow your users to check the weather in their city using your command. For example, a user might be able to type:
+
+`/weather toronto week`
+
+Your external weather application would receive an HTTP request letting it know the user is interested in Toronto and would like to know the weather for the week. The application could simply respond to the HTTP request with the following JSON payload:
+
+```
+{"response_type": "in_channel", "text": "
+---
+#### Weather in Toronto, Ontario for the Week of February 16th, 2016
+
+| Day                 | Description                      | High   | Low    |
+|:--------------------|:---------------------------------|:-------|:-------|
+| Monday, Feb. 15     | Cloudy with a chance of flurries | 3 °C   | -12 °C |
+| Tuesday, Feb. 16    | Sunny                            | 4 °C   | -8 °C  |
+| Wednesday, Feb. 17  | Partly cloudly                   | 4 °C   | -14 °C |
+| Thursday, Feb. 18   | Cloudy with a chance of rain     | 2 °C   | -13 °C |
+| Friday, Feb. 19     | Overcast                         | 5 °C   | -7 °C  |
+| Saturday, Feb. 20   | Sunny with cloudy patches        | 7 °C   | -4 °C  |
+| Sunday, Feb. 21     | Partly cloudy                    | 6 °C   | -9 °C  |
+---
+"}
+```
+Which would render in a Mattermost message as follows:
+![weather bot](https://pre-release.mattermost.com/api/v1/files/get/qecsqoor73dx8xonizw9x3dhco/hy5sq51sebfh58ktrce5ijtcwy/jp6n66obuprijrueqyfkgymamh/Screen%20Shot%202016-02-16%20at%208.36.40%20AM.png?d=%7B%22filename%22%3A%22jp6n66obuprijrueqyfkgymamh%2FScreen%2520Shot%25202016-02-16%2520at%25208.36.40%2520AM.png%22%7D&h=%242a%2410%242bwydb.dQ0dbZFFQwZNPhOXXPfZPCNoZ1DDp3HeqED7.2Viikr5KG&t=rcgiyftm7jyrxnma1osd8zswby)
+
+### Built-in Commands
+Each Mattermost installation comes with some built-in slash commands that are ready to use. These commands are listed below:
+
+| Command   | Description | Example |
+|:----------|:------------|:--------|
+| /echo _message_ [delay in seconds] | Post a message as yourself, optionally adding a delay | /echo hello world 5 |
+| /join _channel-name_ | Join a channel | /join off-topic |
+| /logout | Log out of Mattermost | /logout |
+| /me _message_ | Post a message as yourself in italics | /me hello world |
+| /shrug _message_ | Post a message as yourself followed by ¯\\\_(ツ)\_/¯ | /shrug oh well |
+
+### Enabling Custom Commands
+Custom slash commands are off by default, and can be enabled by the system administrator. If you are the system administrator you can enable them by doing the following:
+
+1. Login to your Mattermost team account that has the system administrator role.
+2. Enable slash commands from **System Console -> Service Settings**.
+3. (Optional) Configure the **Enable Overriding Usernames from Webhooks and Slash Commands** option to allow custom slash commands to post under any name. If not enabled, the username of the user who activated the command will be used
+4. (Optional) Configure the **Enable Overriding Icon from Webhooks and Slash Commands** option to allow custom slash commands to post using any icon. If not enabled, the icon of the user who activated the command will be used
+5. (Optional) Configure the **Enable Integrations for Admin Only** option to allow only system and team admins to create slash commands
+
+### Set Up a Custom Command
+Once slash commands are enabled, you will be able to set some up through the Mattermost UI. You can do so by following these steps:
+
+1. Login to your Mattermost team site and go to **Account Settings -> Integrations**
+2. Next to **Slash Commands** click **Edit**
+3. Under **Add a new command** select your options
+ 1. Fill in **Command Trigger Word**, this will be the word that is your command
+ 2. Enter a **Request URL** that will be the endpoint Mattermost hits to reach your external application
+ 3. Select an HTTP **Request Method** from the dropdown
+ 4. (Optional) Type in a **Response Username** that will be used with any messages your command responds with
+ 5. (Optional) Enter the URL to a **Reponse Icon** that will be used with any messages your command responds with
+ 6. (Optional) Check the **Show this command in the autocomplete list.** to let users autocomplete your command
+ 7. (Optional) Fill in an **Autocomplete Hint** to let users know about possible arguments to your command
+ 8. (Optional) Add an **Autocomplete Description** to help users understand your command
+ 9. (Optional) Type in a **Descriptive Label** to provide a bit more information about your command
+4. Click **Add** to add your command to the system
+5. Your new slash command will be displayed below with a **Token** that your external application should use to verify the request came from Mattermost
+
+### Creating Integrations with Commands
+If you'd like to build your own integration that uses slash commands, you can follow these general guidelines:
+
+1. In the programming language of your choice, write your integration to perform what you had in mind
+ 1. Your integration should have a function for receiving HTTP POSTs or GETs from Mattermost that look like this example:
+  ```
+    Content-Length: 244
+    User-Agent: Go 1.1 package http
+    Host: localhost:5000
+    Accept: application/json
+    Content-Type: application/x-www-form-urlencoded
+
+    channel_id=cniah6qa73bjjjan6mzn11f4ie&
+    channel_name=town-square&
+    command=/somecommand&
+    response_url=not+supported+yet&
+    team_domain=someteam&
+    team_id=rdc9bgriktyx9p4kowh3dmgqyc&
+    text=hello+world&
+    token=xr3j5x3p4pfk7kk6ck7b4e6ghh&
+    user_id=c3a4cqe3dfy6dgopqt8ai3hydh&
+    user_name=somename
+  ```
+ 2. Your integration must have a configurable **MATTERMOST_TOKEN** variable that is the Token given to you when you set up the custom command in Mattermost as decribed in the previous section _Set Up a Custom Command_. This configurable **MATTERMOST_TOKEN** must match the token in the request body so your application can be sure the request came from Mattermost
+ 3. If you want your integration to post a message back to the same channel, it can respond to the HTTP POST request from Mattermost with a JSON response body similar to this example:
+  ```
+  {
+    "response_type": "in_channel",
+    "text": "This is some response text."
+  }
+  ```
+    - Change `response_type` to "ephemeral" to have the message appear temporarily and only display to the user who activated the command
+    - Use the field `goto_location` with a URL as the value to redirect the user of the command to a webpage
+2. Set up your integration running on Heroku, an AWS server or a server of your own to start using your application from within Mattermost
+
+Additional Notes:
+
+1. As mentioned previously, [markdown](../../usage/Markdown.md) can be used to create richly formatted responses, for example: ```{"text": "# A Header\nThe _text_ below **the** header."}``` creates a messages with a header, a carriage return, italicized text for "text" and bold text for "the"
+
+2. Just like regular posts, the text in a response will be limited to 4000 characters at maximum
+
+### Slack Compatibility
+
+As mentioned above, Mattermost makes it easy to take integrations written for Slack's proprietary JSON payload format and repurpose them to become Mattermost integrations. The following automatic translations are supported:
+
+1. The HTTP POST and GET request body is formatted the same as Slack's, which means your Slack integration's receiving function should not need to change at all to be compatible with Mattermost
+2.  JSON responses designed for Slack using `<>` to note the need to hyperlink a URL, such as ```{"text": "<http://www.mattermost.com/>"}```, are translated to the equivalent markdown in Mattermost and rendered the same as you would see in Slack
+3. Similiarly, responses designed for Slack using `|` within a `<>` to define linked text, such as ```{"text": "Click <http://www.mattermost.com/|here> for a link."}```, are also translated to the equivalent markdown in Mattermost and rendered the same as you would see in Slack
+
+#### Known Issues in v2.0
+
+- Conversion of Slack attachments and link conversion isn't working
+- Disabling slash commands from the system console only disables creation, not execution of user created slash commands
+- /me command sometimes posts as the webhook bot instead of the user
