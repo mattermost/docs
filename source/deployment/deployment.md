@@ -3,7 +3,7 @@
 The below diagram illustrates an on-premises deployment of Mattermost with optional configurations for scaling to performance from teams to large organizations. 
 
 ![image](https://cloud.githubusercontent.com/assets/177788/13056300/62381ea4-d3c9-11e5-8bdf-bdf94442d968.png)
-[View Mattermost Network Diagram](https://cloud.githubusercontent.com/assets/177788/13025329/8d589422-d1b9-11e5-9074-3063dd0abb30.png)
+[View Mattermost Network Diagram](https://cloud.githubusercontent.com/assets/177788/13056300/62381ea4-d3c9-11e5-8bdf-bdf94442d968.png)
 
 Note: GitLab Mattermost deployment is [documented separately](http://doc.gitlab.com/omnibus/gitlab-mattermost/) and not included below. 
 ## Requirements and Installation Guides 
