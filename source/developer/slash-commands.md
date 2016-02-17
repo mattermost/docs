@@ -72,32 +72,32 @@ If you'd like to build your own integration that uses slash commands, you can fo
 
 1. In the programming language of your choice, write your integration to perform what you had in mind
     1. Your integration should have a function for receiving HTTP POSTs or GETs from Mattermost that look like this example:
-    ```
-    Content-Length: 244
-    User-Agent: Go 1.1 package http
-    Host: localhost:5000
-    Accept: application/json
-    Content-Type: application/x-www-form-urlencoded
+        ```
+        Content-Length: 244
+        User-Agent: Go 1.1 package http
+        Host: localhost:5000
+        Accept: application/json
+        Content-Type: application/x-www-form-urlencoded
 
-    channel_id=cniah6qa73bjjjan6mzn11f4ie&
-    channel_name=town-square&
-    command=/somecommand&
-    response_url=not+supported+yet&
-    team_domain=someteam&
-    team_id=rdc9bgriktyx9p4kowh3dmgqyc&
-    text=hello+world&
-    token=xr3j5x3p4pfk7kk6ck7b4e6ghh&
-    user_id=c3a4cqe3dfy6dgopqt8ai3hydh&
-    user_name=somename
-    ```
+        channel_id=cniah6qa73bjjjan6mzn11f4ie&
+        channel_name=town-square&
+        command=/somecommand&
+        response_url=not+supported+yet&
+        team_domain=someteam&
+        team_id=rdc9bgriktyx9p4kowh3dmgqyc&
+        text=hello+world&
+        token=xr3j5x3p4pfk7kk6ck7b4e6ghh&
+        user_id=c3a4cqe3dfy6dgopqt8ai3hydh&
+        user_name=somename
+        ```
     2. Your integration must have a configurable **MATTERMOST_TOKEN** variable that is the Token given to you when you set up the custom command in Mattermost as decribed in the previous section _Set Up a Custom Command_. This configurable **MATTERMOST_TOKEN** must match the token in the request body so your application can be sure the request came from Mattermost
     3. If you want your integration to post a message back to the same channel, it can respond to the HTTP POST request from Mattermost with a JSON response body similar to this example:
-    ```
-    {
-      "response_type": "in_channel",
-      "text": "This is some response text."
-    }
-    ```
+        ```
+        {
+          "response_type": "in_channel",
+          "text": "This is some response text."
+        }
+        ```
         - Change `response_type` to "ephemeral" to have the message appear temporarily and only display to the user who activated the command
         - Use the field `goto_location` with a URL as the value to redirect the user of the command to a webpage
 2. Set up your integration running on Heroku, an AWS server or a server of your own to start using your application from within Mattermost
