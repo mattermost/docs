@@ -1,6 +1,6 @@
 # Searching
 _____
-The search box in Mattermost returns results from any channel of which you’re a member. Use search modifiers to narrow your search results. Click **Jump** on the right of a search result to view that post in the channel archive.
+The search box in Mattermost returns non-case sensitive results from any channel of which you’re a member. Use search modifiers to narrow your search results. Click **Jump** on the right of a search result to view that post in the channel archive.
 
 ## Search Modifiers
 
