@@ -92,6 +92,7 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    developer/api*
    developer/web-service*
    developer/webhooks*
+   developer/slash*
    developer/developer*
    developer/contribution*
    developer/style*
