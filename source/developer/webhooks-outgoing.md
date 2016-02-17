@@ -37,8 +37,9 @@ Outgoing webhooks are off by default, and can be enabled by the system administr
 
 1. Login to your Mattermost team account that has the system administrator role.
 1. Enable outgoing webhooks from **System Console -> Service Settings**.
-1. (Optional) Configure the **Enable Overriding of Usernames from Webhooks** option to allow external applications to post messages under any name. If not enabled, the username of the creator of the webhook URL is used to post messages.
-2. (Optional) Configure the **Enable Overriding of Icon from Webhooks** option to allow external applciations to change the icon of the account posting messages. If not enabled, the icon of the creator of the webhook URL is used to post messages.
+1. (Optional) Configure the **Enable Overriding Usernames from Webhooks and Slash Commands** option to allow external applications to post messages under any name. If not enabled, the username of the creator of the webhook URL is used to post messages.
+2. (Optional) Configure the **Enable Overriding Icon from Webhooks and Slash Commands** option to allow external applciations to change the icon of the account posting messages. If not enabled, the icon of the creator of the webhook URL is used to post messages.
+5. (Optional) Configure the **Enable Integrations for Admin Only** option to allow only system and team admins to create outgoing webhooks
 
 ### Set Up an Outgoing Webhook
 Once outgoing webhooks are enabled, you will be able to set one up through the Mattermost UI. You will need to know the following
@@ -59,7 +60,6 @@ Once you have those, you can follow these steps to set up your webhook:
 5. Your new outgoing webhook will be displayed below with a **Token** that any external application that wants to listen to the webhook should ask for in it's instructions
 
 ### Creating Integrations using Outgoing Webhooks
-
 If you'd like to build your own integration that uses outgoing webhooks, you can follow these general guidelines:
 
 1. In the programming language of your choice, write your integration to perform what you had in mind
@@ -75,7 +75,7 @@ If you'd like to build your own integration that uses outgoing webhooks, you can
     channel_name=town-square&
     team_domain=someteam&
     team_id=kwoknj9nwpypzgzy78wkw516qe&
-    text=some text here&
+    text=some+text+here&
     timestamp=1445532266&
     token=zmigewsanbbsdf59xnmduzypjc&
     trigger_word=some&
@@ -97,7 +97,7 @@ Additional Notes:
 
 2. With **Enable Overriding of Icon from Webhooks** turned on, you can similarly change the icon the message posts with by providing a link to an image in the `icon_url` parameter of your JSON response. For example, ```{"icon_url": "http://somewebsite.com/somecoolimage.jpg", "text": "Hello, this is some text."}``` will post using whatever image is located at `http://somewebsite.com/somecoolimage.jpg` as the icon for the post
 
-3. Also, as mentioned previously, [markdown](../../usage/Markdown.md) can be used to create richly formatted payloads, for example: ```payload={"text": "# A Header\nThe _text_ below **the** header."}``` creates a messages with a header, a carriage return and bold text for "the"
+3. Also, as mentioned previously, [markdown](../../usage/Markdown.md) can be used to create richly formatted payloads, for example: ```payload={"text": "# A Header\nThe _text_ below **the** header."}``` creates a messages with a header, a carriage return, italicized text for "text" and bold text for "the"
 
 4. Just like regular posts, the text will be limited to 4000 characters at maximum
 
@@ -111,7 +111,6 @@ As mentioned above, Mattermost makes it easy to take integrations written for Sl
 
 To see samples and community contributions, please visit <http://mattermost.org/webhooks>.
 
-#### Known Issues in v1.1
+#### Known Issues in v2.0
 
-- Overriding of usernames does not yet apply to notifications
 - Cannot supply `icon_emoji` to override the message icon
