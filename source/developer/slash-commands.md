@@ -38,13 +38,7 @@ Which would render in a Mattermost message as follows:
 ### Built-in Commands
 Each Mattermost installation comes with some built-in slash commands that are ready to use. These commands are listed below:
 
-| Command   | Description | Example |
-|:----------|:------------|:--------|
-| /echo _message_ [delay in seconds] | Post a message as yourself, optionally adding a delay | /echo hello world 5 |
-| /join _channel-name_ | Join a channel | /join off-topic |
-| /logout | Log out of Mattermost | /logout |
-| /me _message_ | Post a message as yourself in italics | /me hello world |
-| /shrug _message_ | Post a message as yourself followed by ¯\\\_(ツ)\_/¯ | /shrug oh well |
+![commands](https://cloud.githubusercontent.com/assets/14333569/13122278/283c738c-d584-11e5-9fac-6519e5c333f8.png)
 
 ### Enabling Custom Commands
 Custom slash commands are off by default, and can be enabled by the system administrator. If you are the system administrator you can enable them by doing the following:
@@ -61,15 +55,15 @@ Once slash commands are enabled, you will be able to set some up through the Mat
 1. Login to your Mattermost team site and go to **Account Settings -> Integrations**
 2. Next to **Slash Commands** click **Edit**
 3. Under **Add a new command** select your options
- 1. Fill in **Command Trigger Word**, this will be the word that is your command
- 2. Enter a **Request URL** that will be the endpoint Mattermost hits to reach your external application
- 3. Select an HTTP **Request Method** from the dropdown
- 4. (Optional) Type in a **Response Username** that will be used with any messages your command responds with
- 5. (Optional) Enter the URL to a **Reponse Icon** that will be used with any messages your command responds with
- 6. (Optional) Check the **Show this command in the autocomplete list.** to let users autocomplete your command
- 7. (Optional) Fill in an **Autocomplete Hint** to let users know about possible arguments to your command
- 8. (Optional) Add an **Autocomplete Description** to help users understand your command
- 9. (Optional) Type in a **Descriptive Label** to provide a bit more information about your command
+   1. Fill in **Command Trigger Word**, this will be the word that is your command
+   2. Enter a **Request URL** that will be the endpoint Mattermost hits to reach your external application
+   3. Select an HTTP **Request Method** from the dropdown
+   4. (Optional) Type in a **Response Username** that will be used with any messages your command responds with
+   5. (Optional) Enter the URL to a **Reponse Icon** that will be used with any messages your command responds with
+   6. (Optional) Check the **Show this command in the autocomplete list.** to let users autocomplete your command
+   7. (Optional) Fill in an **Autocomplete Hint** to let users know about possible arguments to your command
+   8. (Optional) Add an **Autocomplete Description** to help users understand your command
+   9. (Optional) Type in a **Descriptive Label** to provide a bit more information about your command
 4. Click **Add** to add your command to the system
 5. Your new slash command will be displayed below with a **Token** that your external application should use to verify the request came from Mattermost
 
@@ -77,35 +71,35 @@ Once slash commands are enabled, you will be able to set some up through the Mat
 If you'd like to build your own integration that uses slash commands, you can follow these general guidelines:
 
 1. In the programming language of your choice, write your integration to perform what you had in mind
- 1. Your integration should have a function for receiving HTTP POSTs or GETs from Mattermost that look like this example:
-  ```
-    Content-Length: 244
-    User-Agent: Go 1.1 package http
-    Host: localhost:5000
-    Accept: application/json
-    Content-Type: application/x-www-form-urlencoded
+    1. Your integration should have a function for receiving HTTP POSTs or GETs from Mattermost that look like this example:
+        ```
+        Content-Length: 244
+        User-Agent: Go 1.1 package http
+        Host: localhost:5000
+        Accept: application/json
+        Content-Type: application/x-www-form-urlencoded
 
-    channel_id=cniah6qa73bjjjan6mzn11f4ie&
-    channel_name=town-square&
-    command=/somecommand&
-    response_url=not+supported+yet&
-    team_domain=someteam&
-    team_id=rdc9bgriktyx9p4kowh3dmgqyc&
-    text=hello+world&
-    token=xr3j5x3p4pfk7kk6ck7b4e6ghh&
-    user_id=c3a4cqe3dfy6dgopqt8ai3hydh&
-    user_name=somename
-  ```
- 2. Your integration must have a configurable **MATTERMOST_TOKEN** variable that is the Token given to you when you set up the custom command in Mattermost as decribed in the previous section _Set Up a Custom Command_. This configurable **MATTERMOST_TOKEN** must match the token in the request body so your application can be sure the request came from Mattermost
- 3. If you want your integration to post a message back to the same channel, it can respond to the HTTP POST request from Mattermost with a JSON response body similar to this example:
-  ```
-  {
-    "response_type": "in_channel",
-    "text": "This is some response text."
-  }
-  ```
-    - Change `response_type` to "ephemeral" to have the message appear temporarily and only display to the user who activated the command
-    - Use the field `goto_location` with a URL as the value to redirect the user of the command to a webpage
+        channel_id=cniah6qa73bjjjan6mzn11f4ie&
+        channel_name=town-square&
+        command=/somecommand&
+        response_url=not+supported+yet&
+        team_domain=someteam&
+        team_id=rdc9bgriktyx9p4kowh3dmgqyc&
+        text=hello+world&
+        token=xr3j5x3p4pfk7kk6ck7b4e6ghh&
+        user_id=c3a4cqe3dfy6dgopqt8ai3hydh&
+        user_name=somename
+        ```
+    2. Your integration must have a configurable **MATTERMOST_TOKEN** variable that is the Token given to you when you set up the custom command in Mattermost as decribed in the previous section _Set Up a Custom Command_. This configurable **MATTERMOST_TOKEN** must match the token in the request body so your application can be sure the request came from Mattermost
+    3. If you want your integration to post a message back to the same channel, it can respond to the HTTP POST request from Mattermost with a JSON response body similar to this example:
+        ```
+        {
+          "response_type": "in_channel",
+          "text": "This is some response text."
+        }
+        ```
+        - Change `response_type` to "ephemeral" to have the message appear temporarily and only display to the user who activated the command
+        - Use the field `goto_location` with a URL as the value to redirect the user of the command to a webpage
 2. Set up your integration running on Heroku, an AWS server or a server of your own to start using your application from within Mattermost
 
 Additional Notes:
@@ -119,7 +113,7 @@ Additional Notes:
 As mentioned above, Mattermost makes it easy to take integrations written for Slack's proprietary JSON payload format and repurpose them to become Mattermost integrations. The following automatic translations are supported:
 
 1. The HTTP POST and GET request body is formatted the same as Slack's, which means your Slack integration's receiving function should not need to change at all to be compatible with Mattermost
-2.  JSON responses designed for Slack using `<>` to note the need to hyperlink a URL, such as ```{"text": "<http://www.mattermost.com/>"}```, are translated to the equivalent markdown in Mattermost and rendered the same as you would see in Slack
+2. JSON responses designed for Slack using `<>` to note the need to hyperlink a URL, such as ```{"text": "<http://www.mattermost.com/>"}```, are translated to the equivalent markdown in Mattermost and rendered the same as you would see in Slack
 3. Similiarly, responses designed for Slack using `|` within a `<>` to define linked text, such as ```{"text": "Click <http://www.mattermost.com/|here> for a link."}```, are also translated to the equivalent markdown in Mattermost and rendered the same as you would see in Slack
 
 #### Known Issues in v2.0
