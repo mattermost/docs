@@ -1,6 +1,14 @@
 # Software & Hardware Requirements
 ___
 
+## Deployment Overview
+
+Please see [Mattermost Deployment Overview](https://github.com/mattermost/docs/blob/master/source/install/network-diagram.png) for a summary of components listed here. 
+
+![Network Diagram](https://github.com/mattermost/docs/blob/master/source/install/network-diagram.png)
+
+[View Full Size Network Diagram](https://github.com/mattermost/docs/blob/master/source/install/network-diagram.png)
+
 ## Software 
 
 ### Client Software 
@@ -23,15 +31,15 @@ ___
 
 **Email Client** - Supported email clients for rendering Mattermost email notifications include:
 
-_Desktop clients:_ Outlook 2010+, Apple Mail version 7+, Thunderbird 38.2+  
-_Web based clients:_ Office 365, Outlook, Gmail, Yahoo, AOL  
-_Mobile clients:_ iOS Mail App (iOS 7+), Gmail Mobile App (Android, iOS), Blackberry Mail App  (OS version 4+)
+- _Desktop clients:_ Outlook 2010+, Apple Mail version 7+, Thunderbird 38.2+  
+- _Web based clients:_ Office 365, Outlook, Gmail, Yahoo, AOL  
+- _Mobile clients:_ iOS Mail App (iOS 7+), Gmail Mobile App (Android, iOS), Blackberry Mail App  (OS version 4+)
 
 ### Server Software 
 
-**Application Server Operating System** - Supported Operating Systems for the Mattermost Server include: 
+**Mattermost Server Operating System** - Supported Operating Systems for the Mattermost Server include: 
 
-Ubuntu 14.04, Debian Jessie, CentOS 6.6+, CentOS 7.1+, RedHat Enterprise Linux 6.6+, RedHat Enterprise Linux 7.1+, Oracle Linux 6.6+, Oracle Linux 7.1+
+- Ubuntu 14.04, Debian Jessie, CentOS 6.6+, CentOS 7.1+, RedHat Enterprise Linux 6.6+, RedHat Enterprise Linux 7.1+, Oracle Linux 6.6+, Oracle Linux 7.1+
 
 The Mattermost roadmap does not currently include production support for Fedora, FreeBSD or Arch Linux. 
 
