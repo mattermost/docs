@@ -5,9 +5,9 @@ ___
 
 Please see [Mattermost Deployment Overview](https://github.com/mattermost/docs/blob/master/source/install/network-diagram.png) for a summary of components listed here. 
 
-![Network Diagram](network-diagram.png)
+![image](https://cloud.githubusercontent.com/assets/177788/13056300/62381ea4-d3c9-11e5-8bdf-bdf94442d968.png)
 
-[View Full Size Network Diagram](https://github.com/mattermost/docs/blob/master/source/install/network-diagram.png)
+[View Mattermost Network Diagram](https://cloud.githubusercontent.com/assets/177788/13056300/62381ea4-d3c9-11e5-8bdf-bdf94442d968.png)
 
 ## Software 
 
