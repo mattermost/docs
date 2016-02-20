@@ -66,7 +66,7 @@ To minimize response times, templates and automation are used across community s
 
 Start with "Please..."
 
-#### GitHub Issues: Please move to Troubleshooting forum
+##### GitHub Issues: Please move to Troubleshooting forum
 
 ```
 Thanks @[GITHUB_USERNAME] for your question, 
@@ -76,14 +76,16 @@ Because this seems to be more a troubleshooting discussion than a product defect
 Please include repro steps, so members from the community will better be able to help solve your issue. Please add a link back to your new post from this ticket and close this ticket so it’s easier to keep track of issues? 
 ```
 
-##### GitHub Issues: Please move to Feature Ideas forum
+##### GitHub Issues Label: Please move to Feature Ideas forum
 
 ```
 Thanks @[GITHUB_USERNAME], appreciate your feedback, 
 
 To keep feature idea discussions in one place, could we have your help: 
 
-1. [Contributing this in the feature idea forum](http://www.mattermost.org/feature-requests/) so it can be discussed, upvoted and considered for a [ticket accepting pull requests](http://docs.mattermost.com/process/accepting-pull-request.html)? If you're interested in implementing, please say so and we'll prioritize the review. 
+1. [Contributing this in the feature idea forum](http://www.mattermost.org/feature-requests/) so it can be discussed, upvoted and considered for a [ticket accepting pull requests](http://docs.mattermost.com/process/accepting-pull-request.html)? 
+
+   Please include a link back to this GitHub Issue. If you're interested in implementing, please say so and we'll prioritize the review. 
 
 2. Posting a link back from the feature idea forum to this thread? 
 ```
