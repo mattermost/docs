@@ -1,4 +1,4 @@
-# Community Systems 
+# Bugs, Feature Ideas, Troubleshooting, Discussion
 
 The goal of Mattermost community systems is to more effectively fulfill the [purpose of Mattermost](http://www.mattermost.org/vision/) through increased communication and feedback from community constituents. 
 
@@ -25,13 +25,11 @@ See [Contributing Feature Ideas](http://www.mattermost.org/feature-requests/) fo
 
 _Note: If you want to promote an idea filed in the feature idea forum, or if you are out of votes and want to find like-minded colleagues to vote for you, consider posting to the [Feature Idea Discussion ](https://forum.mattermost.org/t/how-to-use-feature-idea-discussion/63/1) category in the General Forum._
 
-
 ###  Troubleshooting Forum 
 
 A system for peer-to-peer support of installation and configuration questions. 
 
 See [Troubleshooting Forum](https://forum.mattermost.org/t/about-the-trouble-shooting-category/150/1).
-
 
 ### GitHub Issues 
 
