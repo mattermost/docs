@@ -1,4 +1,4 @@
-# Bugs, Feature Ideas, Troubleshooting, Discussion
+# Bugs, Feature Ideas, Troubleshooting
 
 The goal of Mattermost community systems is to more effectively fulfill the [purpose of Mattermost](http://www.mattermost.org/vision/) through increased communication and feedback from community constituents. 
 
