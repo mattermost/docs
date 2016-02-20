@@ -1,56 +1,46 @@
 # Software & Hardware Requirements
 ___
 
-## Software
+## Software 
 
-### PC Web Experience 
+### Client Software 
 
-Supported operating systems and browsers for the Mattermost PC web experience include: 
+**PC Web Experience** - Supported operating systems and browsers for the Mattermost PC web experience include: 
 
 - PC: Windows 7, Windows 8, Windows 10 (IE 11, Chrome 43+, Firefox 38+, Edge)  
 - Mac: OS 10 (Safari 9, Chrome 43+)  
 - Linux: Arch 4.0.0  (Chrome 43+)  
 
-### Mobile App Experience 
-
-Native mobile apps for Mattermost are available on: 
+**Mobile App Experience** - Native mobile apps for Mattermost are available on: 
 
 - iPhone 4s and later with iOS 9+ 
 - Android devices with Android 4.40+
 
-### Mobile Web Experience 
-
-Supported operating systems and browsers for the Mattermost mobile web experience include: 
+**Mobile Web Experience** - Supported operating systems and browsers for the Mattermost mobile web experience include: 
 
 - iPhone 4s and higher (Safari on iOS 9+, Chrome 43+)  
 - Android 5 and higher (Chrome 43+)  
 
-### Email Client
+**Email Client** - Supported email clients for rendering Mattermost email notifications include:
 
-Supported email clients for rendering Mattermost email notifications include:
+_Desktop clients:_ Outlook 2010+, Apple Mail version 7+, Thunderbird 38.2+  
+_Web based clients:_ Office 365, Outlook, Gmail, Yahoo, AOL  
+_Mobile clients:_ iOS Mail App (iOS 7+), Gmail Mobile App (Android, iOS), Blackberry Mail App  (OS version 4+)
 
-Desktop Clients:
-- Outlook 2010+
-- Apple Mail version 7+
-- Thunderbird 38.2+
+### Server Software 
 
-Web based clients: 
-- Office 365, Outlook, Gmail, Yahoo, AOL
+**Application Server Operating System** - Supported Operating Systems for the Mattermost Server include: 
 
-Mobile Clients: 
-- iOS Mail App (iOS 7+), Gmail Mobile App (Android, iOS), Blackberry Mail App  (OS version 4+)
-
-### Server
-
-Supported Operating Systems for the Mattermost Server include: 
-
-- Ubuntu
-- Debian
-- CentOS
-- RedHat Enterprise Linux
-- Oracle Linux
+Ubuntu 14.04, Debian Jessie, CentOS 6.6+, CentOS 7.1+, RedHat Enterprise Linux 6.6+, RedHat Enterprise Linux 7.1+, Oracle Linux 6.6+, Oracle Linux 7.1+
 
 The Mattermost roadmap does not currently include production support for Fedora, FreeBSD or Arch Linux. 
+
+**Database Software** - Supported databases include: 
+
+- MySQL 5.6+
+- PostgreSQL 9.4+
+
+Deployments requiring searching in Chinese, Japanese and Korean languages require MySQL 5.7.6+ and the configuration of [ngram Full-Text parser](https://dev.mysql.com/doc/refman/5.7/en/fulltext-search-ngram.html). See [discussion on CJK implementation approaches](https://github.com/mattermost/platform/issues/2033#issuecomment-183872616) for more details. 
 
 ## Hardware
 
