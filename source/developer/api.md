@@ -18,6 +18,10 @@ Outgoing webhooks allow external applications to receive webhook events from eve
 
 Over time, Mattermost outgoing webhooks will support not only Slack applications using a compatible format, but also offer optional events and triggers beyond Slack's feature set. 
 
+### [Slash Commands](http://docs.mattermost.com/developer/slash-commands.html) 
+
+Slash commands, like outgoing webhooks, allow users to interact with external applications right from within Mattermost. The user will enter a / followed by a command, and optionally some arguments, then an HTTP request will be sent to an external application. What occurs next is decided by how the application responds to the HTTP request.
+
 ## Mattermost Web Service API
 
 Mattermost offers a Web Service API accessible by Mattermost Drivers, listed below. Initial documentation on the [transport layer for the web service is available](http://docs.mattermost.com/developer/web-service.html) and functional documentation is under development. 
