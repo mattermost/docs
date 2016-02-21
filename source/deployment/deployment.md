@@ -13,17 +13,17 @@ Mattermost supports workplace messaging for teams using one to three servers usi
 
 ## User Experience
 
-### PC Web Browser
+### PC Web Experience 
 
 End users can securely share messages and files using a web-based Mattermost experience in IE, Chrome and Firefox. Please see [Software and Hard Requirements](http://docs.mattermost.com/install/requirements.html) documentation for full details.
 
-### Native Mobile Applications
+### Mobile App Experience
 
 Note: At the time of this writing Android application has yet to be released. It should be released within the next two weeks.
 
 Native applications for iOS and Android are available for interacting with the Mattermost server and receiving encrypted push notifications.
 
-#### Mobile Applications for Mattermost Enterprise Edition
+#### Mobile Apps for Mattermost Enterprise Edition
 
 Customers of Mattermost Enterprise Edition have a convenience feature for using hosted versions of the iOS and Android applications provided by Mattermost.com from iTunes and the Google Play stores. These hosted applications include 256-bit AES SSL encryption from the customer's server to the hosted Mattermost service (https://push.mattermost.com) and then from the service to the native mobile application on iOS or Android.
 
@@ -32,7 +32,7 @@ Mattermost Enterprise Edition customers may also choose to customize, compile, a
 - [Open source Mattermost iOS application](https://github.com/mattermost/ios)
 - Open source Mattermost Android application
 
-#### Mobile Applications for Mattermost Team Edition
+#### Mobile App for Mattermost Team Edition
 
 Users of the free Mattermost Team Edition can also compile the open source repositories for the native mobile applications to enable the same functionality offered in hosted service for Enterprise Edition customers.
 
@@ -40,9 +40,13 @@ In addition, for organizations evaluating whether to compile their own mobile ap
 
 The test service does not offer encryption and may have occassional unannounced downtime, therefore it is not recommended for production.
 
-### Mobile Web Browser
+### Mobile Web Experience 
 
 End users can securely share messages and files using a web-mobiled-based Mattermost experience on iOS and Android devices. Please see [Software and Hard Requirements](http://docs.mattermost.com/install/requirements.html) documentation for full details.
+
+### Email Client 
+
+Receive emails on desktop and mobile from the Mattermost server.
 
 ## Communication Protocols
 
