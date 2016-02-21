@@ -48,7 +48,7 @@ The Mattermost roadmap does not currently include production support for Fedora,
 - MySQL 5.6+
 - PostgreSQL 9.4+
 
-Deployments requiring searching in Chinese, Japanese and Korean languages require MySQL 5.7.6+ and the configuration of [ngram Full-Text parser](https://dev.mysql.com/doc/refman/5.7/en/fulltext-search-ngram.html). See [discussion on CJK implementation approaches](https://github.com/mattermost/platform/issues/2033#issuecomment-183872616) for more details. 
+Deployments requiring searching in Chinese, Japanese and Korean languages require MySQL 5.7.6+ and the configuration of [ngram Full-Text parser](https://dev.mysql.com/doc/refman/5.7/en/fulltext-search-ngram.html). See [CJK discussion](https://github.com/mattermost/platform/issues/2033#issuecomment-183872616) for details. 
 
 ## Hardware
 
