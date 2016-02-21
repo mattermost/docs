@@ -48,7 +48,7 @@ Thanks @[GITHUB_USERNAME] for the bug report,
 Can you help [add more information](http://www.mattermost.org/filing-issues/) so we can reproduce the issue? 
 ```
 
-#### Label: Please rebase 
+##### Label: Please rebase 
 
 ```
 Please rebase this Pull Request
