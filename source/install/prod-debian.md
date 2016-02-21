@@ -10,35 +10,35 @@ Note: This install guide has been generously contributed by the Mattermost commu
     - This has been working in production for ~20 users without issue.
     - The only difference in the below instructions for this method is to do everything on the same server  
 3. Make sure the system is up to date with the most recent security patches.
-    * ``` sudo apt-get update```
-    * ``` sudo apt-get upgrade```
+    ``` sudo apt-get update```
+    ``` sudo apt-get upgrade```
 
 
 ### Set up Database Server
 1. For the purposes of this guide we will assume this server has an IP address of 10.10.10.1
 2. Install PostgreSQL 9.3+ (or MySQL 5.6+)
-    * ``` sudo apt-get install postgresql postgresql-contrib```
+    ``` sudo apt-get install postgresql postgresql-contrib```
 3. PostgreSQL created a user account called `postgres`.  You will need to log into that account with:
-    * ``` sudo -i -u postgres```
+    ``` sudo -i -u postgres```
 4. You can get a PostgreSQL prompt by typing:
-    * ``` psql```
+    ``` psql```
 5. Create the Mattermost database by typing:
-    * ```postgres=# CREATE DATABASE mattermost;```
+    ```postgres=# CREATE DATABASE mattermost;```
 6. Create the Mattermost user by typing:
-    * ```postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser_password';```
+    ```postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser_password';```
 7. Grant the user access to the Mattermost database by typing:
-    * ```postgres=# GRANT ALL PRIVILEGES ON DATABASE mattermost to mmuser;```
+    ```postgres=# GRANT ALL PRIVILEGES ON DATABASE mattermost to mmuser;```
 8. You can exit out of PostgreSQL by typing:
-    * ```postgre=# \q```
+    ```postgre=# \q```
 9. You can exit the postgres account by typing:
-    * ``` exit```
+    ``` exit```
 10. Allow Postgres to listen on all assigned IP Addresses
-    * ```sudo vi /etc/postgresql/9.3/main/postgresql.conf```
-    * Uncomment 'listen_addresses' and change 'localhost' to '*'
+    ```sudo vi /etc/postgresql/9.3/main/postgresql.conf```
+    Uncomment 'listen_addresses' and change 'localhost' to '*'
 11. Alter pg_hba.conf to allow the mattermost server to talk to the postgres database
-    * ```sudo vi /etc/postgresql/9.3/main/pg_hba.conf```
-    * Add the following line to the 'IPv4 local connections'
-    * host    all             all             10.10.10.2/32         md5
+    ```sudo vi /etc/postgresql/9.3/main/pg_hba.conf```
+    Add the following line to the `IPv4 local connections`: 
+    ```host    all             all             10.10.10.2/32         md5```
 12. Reload Postgres database
     * ```sudo /etc/init.d/postgresql reload```
 13. Attempt to connect with the new created user to verify everything looks good
@@ -49,39 +49,39 @@ Note: This install guide has been generously contributed by the Mattermost commu
 ### Set up Mattermost Server
 1. For the purposes of this guide we will assume this server has an IP address of 10.10.10.2
 2. Download the latest Mattermost Server by typing:
-    * ``` wget https://github.com/mattermost/platform/releases/download/vX.X.X/mattermost.tar.gz```
-    * Where vX.X.X is the latest Mattermost release version. For example, v1.4.0
+    ``` wget https://github.com/mattermost/platform/releases/download/vX.X.X/mattermost.tar.gz```
+    Where `vX.X.X` is the latest Mattermost release version. For example, `v1.4.0`
 3. Install Mattermost under /opt
-    * Unzip the Mattermost Server by typing:
-    * ``` tar -xvzf mattermost.tar.gz```
-    * ``` sudo mv mattermost /opt```
+    Unzip the Mattermost Server by typing:
+    ``` tar -xvzf mattermost.tar.gz```
+    ``` sudo mv mattermost /opt```
 4. Create the storage directory for files.  We assume you will have attached a large drive for storage of images and files.  For this setup we will assume the directory is located at `/opt/mattermost/data`.
-    * Create the directory by typing:
-    * ``` sudo mkdir -p /opt/mattermost/data```
+    Create the directory by typing:
+    ``` sudo mkdir -p /opt/mattermost/data```
 5. Create a system user and group called mattermost that will run this service
-    * ``` sudo useradd -r mattermost -U```
-    * Set the mattermost account as the directory owner by typing:
-    * ``` sudo chown -R mattermost:mattermost /opt/mattermost```
-    * ``` sudo chmod -R g+w /opt/mattermost```
-    * Add yourself to the mattermost group to ensure you can edit these files:
-    * ``` sudo usermod -aG mattermost USERNAME```
+    ``` sudo useradd -r mattermost -U```
+    Set the mattermost account as the directory owner by typing:
+    ``` sudo chown -R mattermost:mattermost /opt/mattermost```
+    ``` sudo chmod -R g+w /opt/mattermost```
+    Add yourself to the mattermost group to ensure you can edit these files:
+    ``` sudo usermod -aG mattermost USERNAME```
 6. Configure Mattermost Server by editing the config.json file at /opt/mattermost/config
-    * ``` cd /opt/mattermost/config```
-    * Edit the file by typing:
-    * ``` vi config.json```
-    * replace `DriverName": "mysql"` with `DriverName": "postgres"`
-    * replace `"DataSource": "mmuser:mostest@tcp(dockerhost:3306)/mattermost_test?charset=utf8mb4,utf8"` with `"DataSource": "postgres://mmuser:mmuser_password@10.10.10.1:5432/mattermost?sslmode=disable&connect_timeout=10"`
-    * Optionally you may continue to edit configuration settings in `config.json` or use the System Console described in a later section to finish the configuration.
+    ``` cd /opt/mattermost/config```
+    Edit the file by typing:
+    ``` vi config.json```
+    replace `DriverName": "mysql"` with `DriverName": "postgres"`
+    replace `"DataSource": "mmuser:mostest@tcp(dockerhost:3306)/mattermost_test?charset=utf8mb4,utf8"` with `"DataSource": "postgres://mmuser:mmuser_password@10.10.10.1:5432/mattermost?sslmode=disable&connect_timeout=10"`
+    Optionally you may continue to edit configuration settings in `config.json` or use the System Console described in a later section to finish the configuration.
 7. Test the Mattermost Server
-    * ``` cd /opt/mattermost/bin```
-    * Run the Mattermost Server by typing:
-    * ``` ./platform```
-    * You should see a console log like `Server is listening on :8065` letting you know the service is running.
-    * Stop the server for now by typing `ctrl-c`
+    ``` cd /opt/mattermost/bin```
+    Run the Mattermost Server by typing:
+    ``` ./platform```
+    You should see a console log like `Server is listening on :8065` letting you know the service is running.
+    Stop the server for now by typing `ctrl-c`
 8. Setup Mattermost to use the systemd init daemon which handles supervision of the  Mattermost process
-    * ``` sudo touch /etc/init.d/mattermost```
-    * ``` sudo vi /etc/init.d/mattermost```
-    * Copy the following lines into `/etc/init.d/mattermost`
+    ``` sudo touch /etc/init.d/mattermost```
+    ``` sudo vi /etc/init.d/mattermost```
+    Copy the following lines into `/etc/init.d/mattermost`
 ```
 #! /bin/sh
 ### BEGIN INIT INFO
@@ -198,8 +198,8 @@ esac
 
 exit 0
 ```
-    * Make sure that /etc/init.d/mattermost is executable
-    * ``` sudo chmod +x /etc/init.d/mattermost```
+    Make sure that /etc/init.d/mattermost is executable
+    ``` sudo chmod +x /etc/init.d/mattermost```
 9. On reboot, systemd will generate a unit file from the headers in this init script and install it in `/run/systemd/generator.late/`
   
 ### Set up Nginx Server
@@ -210,19 +210,19 @@ exit 0
     * Port mapping :80 to :8065
     * Standard request logs
 3. Install Nginx on Debian with
-    * ``` sudo apt-get install nginx```
+    ``` sudo apt-get install nginx```
 4. Verify Nginx is running
-    * ``` curl http://10.10.10.3```
-    * You should see a *Welcome to nginx!* page
+    ``` curl http://10.10.10.3```
+    You should see a *Welcome to nginx!* page
 5. You can manage Nginx with the following commands
-    * ``` sudo service nginx stop```
-    * ``` sudo service nginx start```
-    * ``` sudo service nginx restart```
+    ``` sudo service nginx stop```
+    ``` sudo service nginx start```
+    ``` sudo service nginx restart```
 6. Map a FQDN (fully qualified domain name) like **mattermost.example.com** to point to the Nginx server.
 7. Configure Nginx to proxy connections from the internet to the Mattermost Server
-    * Create a configuration for Mattermost
-    * ``` sudo touch /etc/nginx/sites-available/mattermost```
-    * Below is a sample configuration with the minimum settings required to configure Mattermost
+    Create a configuration for Mattermost
+    ``` sudo touch /etc/nginx/sites-available/mattermost```
+    Below is a sample configuration with the minimum settings required to configure Mattermost
     ```
    server {
       server_name mattermost.example.com;
@@ -241,27 +241,27 @@ exit 0
    }
     ```
     * Remove the existing file with
-    * ``` sudo rm /etc/nginx/sites-enabled/default```
+       ``` sudo rm /etc/nginx/sites-enabled/default```
     * Link the mattermost config by typing:
-    * ```sudo ln -s /etc/nginx/sites-available/mattermost /etc/nginx/sites-enabled/mattermost```
+       ```sudo ln -s /etc/nginx/sites-available/mattermost /etc/nginx/sites-enabled/mattermost```
     * Restart Nginx by typing:
-    * ``` sudo service nginx restart```
+       ``` sudo service nginx restart```
     * Verify you can see Mattermost thru the proxy by typing:
-    * ``` curl http://localhost```
+       ``` curl http://localhost```
     * You should see a page titles *Mattermost - Signup*
   
 ### Set up Nginx with SSL (Recommended)
 1. You can use a free and an open certificate security like let's encrypt, this is how to proceed
-  * ```sudo apt-get install git```
-  * ```git clone https://github.com/letsencrypt/letsencrypt```
-  * ```cd letsencrypt```
+  ```sudo apt-get install git```
+  ```git clone https://github.com/letsencrypt/letsencrypt```
+  ```cd letsencrypt```
   1. Be sure that the port 80 is not use by stopping nginx
-  * ```sudo service nginx stop```
-  * ```netstat -na | grep ':80.*LISTEN'```
-  * ```./letsencrypt-auto certonly --standalone```
-  1. This command will download packages and run the instance, after that you will have to give your domain name
-  1. You can find your certificate in /etc/letsencrypt/live
-1. Modify the file at `/etc/nginx/sites-available/mattermost` and add the following lines:
+  ```sudo service nginx stop```
+  ```netstat -na | grep ':80.*LISTEN'```
+  ```./letsencrypt-auto certonly --standalone```
+  2. This command will download packages and run the instance, after that you will have to give your domain name
+  3. You can find your certificate in /etc/letsencrypt/live
+2. Modify the file at `/etc/nginx/sites-available/mattermost` and add the following lines:
 ```
   server {
      listen         80;
@@ -297,11 +297,11 @@ exit 0
      }
   }
 ```
-1. Be sure to restart nginx
-  * ```sudo service nginx start```
-1. Add the following line to cron so the cert will renew every month
-  * ```crontab -e```
-  * ```@monthly /home/YOURUSERNAME/letsencrypt/letsencrypt-auto certonly --reinstall -d yourdomainname && sudo service nginx reload```
+3. Be sure to restart nginx
+  ```sudo service nginx start```
+4. Add the following line to cron so the cert will renew every month
+  ```crontab -e```
+  ```@monthly /home/YOURUSERNAME/letsencrypt/letsencrypt-auto certonly --reinstall -d yourdomainname && sudo service nginx reload```
 
 
 ### Finish Mattermost Server setup
