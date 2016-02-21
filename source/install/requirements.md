@@ -13,23 +13,23 @@ Please see [Mattermost Deployment Overview](https://github.com/mattermost/docs/b
 
 ### Client Software 
 
-**PC Web Experience**
+##### PC Web Experience
 
 - PC: Windows 7, Windows 8, Windows 10 (IE 11, Chrome 43+, Firefox 38+, Edge)  
 - Mac: OS 10 (Safari 9, Chrome 43+)  
 - Linux: Arch 4.0.0  (Chrome 43+)  
 
-**Mobile App Experience**
+##### Mobile App Experience
 
 - iPhone 4s and later with iOS 9+ 
 - Android devices with Android 4.40+
 
-**Mobile Web Experience**
+##### Mobile Web Experience
 
 - iPhone 4s and higher (Safari on iOS 9+, Chrome 43+)  
 - Android 5 and higher (Chrome 43+)  
 
-**Email Client** 
+##### Email Client
 
 - _Desktop clients:_ Outlook 2010+, Apple Mail version 7+, Thunderbird 38.2+  
 - _Web based clients:_ Office 365, Outlook, Gmail, Yahoo, AOL  
@@ -37,13 +37,13 @@ Please see [Mattermost Deployment Overview](https://github.com/mattermost/docs/b
 
 ### Server Software 
 
-**Mattermost Server Operating System**
+##### Mattermost Server Operating System
 
 - Ubuntu 14.04, Debian Jessie, CentOS 6.6+, CentOS 7.1+, RedHat Enterprise Linux 6.6+, RedHat Enterprise Linux 7.1+, Oracle Linux 6.6+, Oracle Linux 7.1+
 
 The Mattermost roadmap does not currently include production support for Fedora, FreeBSD or Arch Linux. 
 
-**Database Software** 
+##### Database Software
 
 - MySQL 5.6+
 - PostgreSQL 9.4+
