@@ -2,11 +2,10 @@
 
 Here's how to engage with the Mattermost community: 
 
-- Bugs - [Search for existing bugs and file a GitHub issue if your bug is new](http://www.mattermost.org/filing-issues/) 
-- Feature Ideas - [Add a feature idea to be discussed or upvoted](http://www.mattermost.org/feature-requests/)
-- Troubleshoot - [Search existing articles and add a new topic of your problem hasn't been covered](https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150)
-- General Discussion - [Join the Mattermost Forum](https://forum.mattermost.org/t/welcome-to-the-mattermost-general-forum/8) 
-
+- **Bugs** - [Search for existing bugs and file a GitHub issue if your bug is new](http://www.mattermost.org/filing-issues/) 
+- **Feature Ideas** - [Add a feature idea to be discussed or upvoted](http://www.mattermost.org/feature-requests/)
+- **Troubleshoot** - [Search articles and add topic if issue is new](https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150)
+- **General Discussion** - [Join the Mattermost Forum](https://forum.mattermost.org/t/welcome-to-the-mattermost-general-forum/8) 
 
 ## GitHub Issues Workflow
 
