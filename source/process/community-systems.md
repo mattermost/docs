@@ -88,9 +88,7 @@ Response after Jira ticket is created:
 Thanks @[GITHUB_USERNAME], [Jira ticket]([LINK_TO_JIRA_TICKET]) created for this issue. 
 ```
 
-### Category: Help from community 
-
-Start with "Asking..."
+### Category: Miscellanous Issues
 
 ##### Label: Asking community help to repro 
 
@@ -99,8 +97,6 @@ Thanks @[GITHUB_USERNAME] for the issue report,
 
 Would anyone from the community be able to help repro this issue to verify it can be reproduced? 
 ```
-
-### Category: Miscellanous Issues
 
 ##### Label: Duplicate Jira ticket
 
