@@ -33,7 +33,7 @@ Please see [Mattermost Deployment Overview](https://github.com/mattermost/docs/b
 
 - _Desktop clients:_ Outlook 2010+, Apple Mail version 7+, Thunderbird 38.2+  
 - _Web based clients:_ Office 365, Outlook, Gmail, Yahoo, AOL  
-- _Mobile clients:_ iOS Mail App (iOS 7+), Gmail Mobile App (Android, iOS), Blackberry Mail App  (OS version 4+)
+- _Mobile clients:_ iOS Mail App (iOS 7+), Gmail Mobile App (Android, iOS)
 
 ### Server Software 
 
