@@ -1,4 +1,4 @@
-# Custom Slash Commands
+# Slash Commands
 
 Slash commands, like outgoing webhooks, allow users to interact with external applications right from within Mattermost. The user will enter a `/` followed by a command, and optionally some arguments, then an HTTP request will be sent to an external application. What occurs next is decided by how the application responds to the HTTP request.
 
