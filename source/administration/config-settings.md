@@ -125,7 +125,7 @@ Teams and user accounts can only be created by a verified email from this list o
 
 **Enable Team Directory** (`"EnableTeamListing": false`)  
 
-"true": Teams that are configured to appear in the team directory will appear on the system main page. Teams can configure this setting from **Team Settings -> Include this team in the Team Directory**; "true": Team directory on the system main page is disabled.
+"true": Teams that are configured to appear in the team directory will appear on the system main page. Teams can configure this setting from **Team Settings -> Include this team in the Team Directory**; "false": Team directory on the system main page is disabled.
 
 
 ### SQL Settings
