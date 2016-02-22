@@ -1,5 +1,7 @@
 # Enterprise Edition (pre-release)
 
+Note: If you received a pre-release of Enterprise Edition before February 22, 2016 you can [contact Mattermost](https://about.mattermost.com/contact/) to receive the latest version, `ENT-7`, which supports upgrades from all other `ENT-` versions. 
+
 Early customers who have deployed the pre-released version of Mattermost Enterprise Edition are providing feedback to shape the feature set, roadmap and pricing of the commercial verison of Mattermost. 
 
 Pre-released versions of Enterprise Edition are available for organizations who have deployed the open source version and are seeking to evaluate commerical features, such as authentication with Active Directory/Lightweight Directory Access Protocol (AD/LDAP), organization-wide reporting, and audit and compliance reporting. 
@@ -21,7 +23,7 @@ To upgrade an existing Mattermost Team Edition deployment:
 1. Upgrade your existing Mattermost deployment to v1.4 using the [standard upgrade process](http://docs.mattermost.com/install/upgrade-guide.html) 
 2. Run the [standard upgrade process](http://docs.mattermost.com/install/upgrade-guide.html) one more time using the  `mattermost.tar.gz` provided for the Mattermost Enterprise Edition pre-release.
 
-You can verify your upgrade to Enterprise Edition by going into a team site and in the "About Mattermost" dialog box and next to **Build Number** you should see `ENT-6`.
+You can verify your upgrade to Enterprise Edition by going into a team site and in the "About Mattermost" dialog box and next to **Build Number** you should see `ENT-7`.
 
 #### Activate Pre-release
 
@@ -35,8 +37,15 @@ In the team site when you go to the main menu and open the "About Mattermost" di
 
 Instructions for setting up LDAP/AD SSO are available in the [deployment guide.](http://docs.mattermost.com/deployment/sso-ldap.html)
 
+#### Downgrading from Enterprise Edition to Team Edition 
+
+To downgrade from Enterprise Edition to Team Edition: 
+
+1. Disable Active Directory/LDAP SSO.
+2. Use the "Remove Enterprise License and Downgrade Server" option in the licensing menu from System Console.
+
 #### Support
 
 After completing the [contact form](https://about.mattermost.com/contact/) to receive the pre-released version of Mattermost Enteprise Edition you should be in email contact with a support team who can help with your evaluation.
 
-Note: If you received a pre-release of Enterprise Edition before February 1, 2016 you should have been contacted to use the latest release, `ENT-6`. If not, can [contact Mattermost](https://about.mattermost.com/contact/) to receive the latest version. 
+
