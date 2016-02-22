@@ -163,9 +163,7 @@ Large organizations needing high scale, high availability configurations can con
 
 Mattermost uses a MySQL or Postgres database to store and retrieve system data and to execute full text search.
 
-Depending on projected usage from your evaluation deployment, you may decide to add a multi-server database configuration with a master and multiple read replicas, and potentially use Solidstate Storage Drives. The read replicas can be configured as a redundant backup to the active server, so that should it fail operation could be diverted to the read replica server without interrupting service. The safest configuration is to have the disk space on the read replica used for failover two to three times larger than storage available on master, so that if the master fails because it runs out of disk space for an unforeseen reason it will fail over to a read replica with enough extra space to run smoothly until the master is corrected.
-
-When they database is down, its connection should time out before the Mattermost server request times out, so users should receive feedback that writing is unavailable.
+Depending on projected usage from your evaluation deployment, you may decide to add a multi-server database configuration with a master and multiple read replicas, and potentially use Solidstate Storage Drives for faster reads. The read replicas can be configured as a redundant backup to the active server, so that should it fail operation could be diverted to the read replica server without interrupting service. The safest configuration is to have the disk space on the read replica used for failover two to three times larger than storage available on master, so that if the master fails because it runs out of disk space for an unforeseen reason it will fail over to a read replica with enough extra space to run smoothly until the master is corrected.
 
 ### File Store
 
