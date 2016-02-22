@@ -20,7 +20,7 @@ End users can securely share messages and files using a web-based Mattermost exp
 
 ### Mobile App Experience
 
-Note: At the time of this writing Android application has yet to be released. It should be released within the next two weeks.
+Note: At the time of this writing Android application has yet to be released. It should be released by end of February 2016.
 
 Native applications for iOS and Android are available for interacting with the Mattermost server and receiving encrypted push notifications.
 
@@ -71,13 +71,13 @@ WSS is a secure, encrypted connection and is highly recommended. An unencrypted 
 
 Sending a push notification to a user's mobile device consists of three steps: 
 
-- Step 1: the Mattermost server sends notifications to the [Mattermost Push Notification Service](https://github.com/mattermost/push-proxy) (MPNS).
-- Step 2: The MPNS forwards the message to the push notification service of either Apple for iOS devices or Google for Android devices. 
-- Step 3: The push notification service hosted by Apple or Google forwards the message to the user's mobile device.
+- **Step 1:** the Mattermost server sends notifications to the [Mattermost Push Notification Service](https://github.com/mattermost/push-proxy) (MPNS).
+- **Step 2:** The MPNS forwards the message to the push notification service of either Apple for iOS devices or Google for Android devices. 
+- **Step 3:** The push notification service hosted by Apple or Google forwards the message to the user's mobile device.
 
 There are two options for setting up the MPNS to offer push notifications: 
 
-- Option A) Compile and deploy your own MPNS and mobile apps
+- **Option A) Compile and deploy your own MPNS and mobile apps**
 
    If your IT policy requires use of an Enterprise AppStore, or if you have expertise in mobile app development, you may choose to compile your own MPNS using the [open source repository](https://github.com/mattermost/push-proxy) provided, along with compiling your own iOS app using its [open source repository](https://github.com/mattermost/ios) or Android app (when source code is available). 
 
@@ -87,7 +87,7 @@ There are two options for setting up the MPNS to offer push notifications:
    Disadvantages:
    - Requires time and effort - An in-house developer would be required to properly compile, deploy and maintain the MPNS and mobile apps
 
-- Option B) Use a hosted MPNS service 
+- **Option B) Use a hosted MPNS service**
 
    Instead of compiling your own MPNS, you can put the address of a hosted MPNS supporting SSL into the **Push Notification Server** field inside the System Console and have your users install the iOS or Android native applications connected to the hosted service. 
    
@@ -97,7 +97,7 @@ There are two options for setting up the MPNS to offer push notifications:
    Disadvantages:
    - Requires trusting provider of hosted MPNS service - With this option, Step 2 happens outside of your firewall over an encrypted SSL connection which terminates at the MPNS. This means the MPNS decrypts the notification and re-encrypts it to send on to Step 3, so there is a moment when an unencrypted push notification message exists in the MPNS service. By default this is not an issue, since by default push notification messages only include generic descriptions and the names of users and channels (e.g. "@bob mentioned you in Town Square channel"). However, if in future you decide to enable push notifications to contain the contents from messages, you may need to review your internal IT policies to see whether Option A or Option B is most appropriate.
    
-Subscriptions to Mattermost Enterprise Edition include the use of a hosted, production-quality MPNS service with SSL, available at `https://push.mattermost.com`, which connects to the [pre-compiled Mattermost iOS application on iTunes](https://itunes.apple.com/us/app/mattermost/id984966508?mt=8) and the pre-compiled Mattermost Android application in the Google Play Store (release pending).
+Subscriptions to Mattertmost Enterprise Edition include the use of a hosted, production-quality MPNS service with SSL, available at `https://push.mattermost.com`, which connects to the [official Mattermost iOS application on iTunes](https://itunes.apple.com/us/app/mattermost/id984966508?mt=8) and the official Mattermost Android application in the Google Play Store (release pending).
 
 An additional MPNS service for testing server setups connected to the same mobile applications is available at `http://push-test.mattermost.com`. The test service does not include encryption and does not offer a production-quality service-level agreement. 
 
