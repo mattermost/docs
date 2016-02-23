@@ -4,7 +4,7 @@ This document provides instructions for common administrator tasks
 
 ##### **DO NOT manipulate the Mattermost database**
   - In particular, DO NOT manually delete data from the database directly. Mattermost is designed as a continuous archive and cannot be supported after manual manipulation.
-  - If you need to permanently delete a team or user please use the [Command Line Tool](../administration/command-line-tools.md).
+  - If you need to permanently delete a team or user please use the [Command Line Tool](http://docs.mattermost.com/administration/command-line-tools.html).
 
 ### Common Tasks
 
