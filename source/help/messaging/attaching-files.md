@@ -26,9 +26,9 @@ Download an attached file by clicking the download icon next to the file thumbna
 #### Supported Media Types
 If you are trying to preview a media type that is not supported, the file previewer will open a standard media attachment icon. Supported media formats depend heavily on your browser and operating system, but the following formats are supported by Mattermost on most browsers:
 
-Images: BMP, GIF, JPG, JPEG, PNG  
-Video: MP4  
-Audio: MP3, M4A  
+Images: BMP, GIF, JPG, JPEG, PNG    
+Video: MP4    
+Audio: MP3, M4A    
 
 Document preview (PDF, Word, Excel, PPT) is not yet supported.
 
