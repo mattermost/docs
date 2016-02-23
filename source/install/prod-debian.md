@@ -47,10 +47,10 @@ Note: This install guide has been generously contributed by the Mattermost commu
 
 
 ### Set up Mattermost Server
-1. For the purposes of this guide we will assume this server has an IP address of 10.10.10.2
+1. For the purposes of this guide we will assume this server has an IP address of 10.10.10.1
 2. Download the latest Mattermost Server by typing:
     * ``` wget https://github.com/mattermost/platform/releases/download/vX.X.X/mattermost.tar.gz```
-    * Where vX.X.X is the latest Mattermost release version. For example, v1.4.0
+    * Where vX.X.X is the latest Mattermost release version. For example, v2.0.0
 3. Install Mattermost under /opt
     * Unzip the Mattermost Server by typing:
     * ``` tar -xvzf mattermost.tar.gz```
@@ -71,6 +71,7 @@ Note: This install guide has been generously contributed by the Mattermost commu
     * ``` vi config.json```
     * replace `DriverName": "mysql"` with `DriverName": "postgres"`
     * replace `"DataSource": "mmuser:mostest@tcp(dockerhost:3306)/mattermost_test?charset=utf8mb4,utf8"` with `"DataSource": "postgres://mmuser:mmuser_password@10.10.10.1:5432/mattermost?sslmode=disable&connect_timeout=10"`
+        * Assuming a default IP address of 10.10.10.1
     * Optionally you may continue to edit configuration settings in `config.json` or use the System Console described in a later section to finish the configuration.
 7. Test the Mattermost Server
     * ``` cd /opt/mattermost/bin```
@@ -82,124 +83,127 @@ Note: This install guide has been generously contributed by the Mattermost commu
     * ``` sudo touch /etc/init.d/mattermost```
     * ``` sudo vi /etc/init.d/mattermost```
     * Copy the following lines into `/etc/init.d/mattermost`
-```
-#! /bin/sh
-### BEGIN INIT INFO
-# Provides:          mattermost
-# Required-Start:    $network $syslog
-# Required-Stop:     $network $syslog
-# Default-Start:     2 3 4 5
-# Default-Stop:      0 1 6
-# Short-Description: Mattermost Group Chat
-# Description:       Mattermost: An open-source Slack
-### END INIT INFO
 
-PATH=/sbin:/usr/sbin:/bin:/usr/bin
-DESC="Mattermost"
-NAME=mattermost
-MATTERMOST_ROOT=/opt/mattermost
-MATTERMOST_GROUP=mattermost
-MATTERMOST_USER=mattermost
-DAEMON="$MATTERMOST_ROOT/bin/platform"
-PIDFILE=/var/run/$NAME.pid
-SCRIPTNAME=/etc/init.d/$NAME
-
-. /lib/lsb/init-functions
-
-do_start() {
-    # Return
-    #   0 if daemon has been started
-    #   1 if daemon was already running
-    #   2 if daemon could not be started
-    start-stop-daemon --start --quiet \
-        --chuid $MATTERMOST_USER:$MATTERMOST_GROUP --chdir $MATTERMOST_ROOT --background \
-        --pidfile $PIDFILE --exec $DAEMON --test > /dev/null \
-        || return 1
-    start-stop-daemon --start --quiet \
-        --chuid $MATTERMOST_USER:$MATTERMOST_GROUP --chdir $MATTERMOST_ROOT --background \
-        --make-pidfile --pidfile $PIDFILE --exec $DAEMON \
-        || return 2
-}
-
-#
-# Function that stops the daemon/service
-#
-do_stop() {
-    # Return
-    #   0 if daemon has been stopped
-    #   1 if daemon was already stopped
-    #   2 if daemon could not be stopped
-    #   other if a failure occurred
-    start-stop-daemon --stop --quiet --retry=TERM/30/KILL/5 \
-        --pidfile $PIDFILE --exec $DAEMON
-    RETVAL="$?"
-    [ "$RETVAL" = 2 ] && return 2
-    # Wait for children to finish too if this is a daemon that forks
-    # and if the daemon is only ever run from this initscript.
-    # If the above conditions are not satisfied then add some other code
-    # that waits for the process to drop all resources that could be
-    # needed by services started subsequently.  A last resort is to
-    # sleep for some time.
-    start-stop-daemon --stop --quiet --oknodo --retry=0/30/KILL/5 \
-        --exec $DAEMON
-    [ "$?" = 2 ] && return 2
-    # Many daemons don't delete their pidfiles when they exit.
-    rm -f $PIDFILE
-    return "$RETVAL"
-}
-
-case "$1" in
-start)
-        [ "$VERBOSE" != no ] && log_daemon_msg "Starting $DESC" "$NAME"
-        do_start
-        case "$?" in
-                0|1) [ "$VERBOSE" != no ] && log_end_msg 0 ;;
-                2) [ "$VERBOSE" != no ] && log_end_msg 1 ;;
-        esac
-        ;;
-stop)
-        [ "$VERBOSE" != no ] && log_daemon_msg "Stopping $DESC" "$NAME"
-        do_stop
-        case "$?" in
-                0|1) [ "$VERBOSE" != no ] && log_end_msg 0 ;;
-                2) [ "$VERBOSE" != no ] && log_end_msg 1 ;;
-        esac
-        ;;
-status)
-    status_of_proc "$DAEMON" "$NAME" && exit 0 || exit $?
-    ;;
-restart|force-reload)
+        ```
+        #! /bin/sh
+        ### BEGIN INIT INFO
+        # Provides:          mattermost
+        # Required-Start:    $network $syslog
+        # Required-Stop:     $network $syslog
+        # Default-Start:     2 3 4 5
+        # Default-Stop:      0 1 6
+        # Short-Description: Mattermost Group Chat
+        # Description:       Mattermost: An open-source Slack
+        ### END INIT INFO
+        
+        PATH=/sbin:/usr/sbin:/bin:/usr/bin
+        DESC="Mattermost"
+        NAME=mattermost
+        MATTERMOST_ROOT=/opt/mattermost
+        MATTERMOST_GROUP=mattermost
+        MATTERMOST_USER=mattermost
+        DAEMON="$MATTERMOST_ROOT/bin/platform"
+        PIDFILE=/var/run/$NAME.pid
+        SCRIPTNAME=/etc/init.d/$NAME
+        
+        . /lib/lsb/init-functions
+        
+        do_start() {
+            # Return
+            #   0 if daemon has been started
+            #   1 if daemon was already running
+            #   2 if daemon could not be started
+            start-stop-daemon --start --quiet \
+                --chuid $MATTERMOST_USER:$MATTERMOST_GROUP --chdir $MATTERMOST_ROOT --background \
+                --pidfile $PIDFILE --exec $DAEMON --test > /dev/null \
+                || return 1
+            start-stop-daemon --start --quiet \
+                --chuid $MATTERMOST_USER:$MATTERMOST_GROUP --chdir $MATTERMOST_ROOT --background \
+                --make-pidfile --pidfile $PIDFILE --exec $DAEMON \
+                || return 2
+        }
+        
         #
-        # If the "reload" option is implemented then remove the
-        # 'force-reload' alias
+        # Function that stops the daemon/service
         #
-        log_daemon_msg "Restarting $DESC" "$NAME"
-        do_stop
-        case "$?" in
-        0|1)
+        do_stop() {
+            # Return
+            #   0 if daemon has been stopped
+            #   1 if daemon was already stopped
+            #   2 if daemon could not be stopped
+            #   other if a failure occurred
+            start-stop-daemon --stop --quiet --retry=TERM/30/KILL/5 \
+                --pidfile $PIDFILE --exec $DAEMON
+            RETVAL="$?"
+            [ "$RETVAL" = 2 ] && return 2
+            # Wait for children to finish too if this is a daemon that forks
+            # and if the daemon is only ever run from this initscript.
+            # If the above conditions are not satisfied then add some other code
+            # that waits for the process to drop all resources that could be
+            # needed by services started subsequently.  A last resort is to
+            # sleep for some time.
+            start-stop-daemon --stop --quiet --oknodo --retry=0/30/KILL/5 \
+                --exec $DAEMON
+            [ "$?" = 2 ] && return 2
+            # Many daemons don't delete their pidfiles when they exit.
+            rm -f $PIDFILE
+            return "$RETVAL"
+        }
+        
+        case "$1" in
+        start)
+                [ "$VERBOSE" != no ] && log_daemon_msg "Starting $DESC" "$NAME"
                 do_start
                 case "$?" in
-                        0) log_end_msg 0 ;;
-                        1) log_end_msg 1 ;; # Old process is still running
-                        *) log_end_msg 1 ;; # Failed to start
+                        0|1) [ "$VERBOSE" != no ] && log_end_msg 0 ;;
+                        2) [ "$VERBOSE" != no ] && log_end_msg 1 ;;
+                esac
+                ;;
+        stop)
+                [ "$VERBOSE" != no ] && log_daemon_msg "Stopping $DESC" "$NAME"
+                do_stop
+                case "$?" in
+                        0|1) [ "$VERBOSE" != no ] && log_end_msg 0 ;;
+                        2) [ "$VERBOSE" != no ] && log_end_msg 1 ;;
+                esac
+                ;;
+        status)
+            status_of_proc "$DAEMON" "$NAME" && exit 0 || exit $?
+            ;;
+        restart|force-reload)
+                #
+                # If the "reload" option is implemented then remove the
+                # 'force-reload' alias
+                #
+                log_daemon_msg "Restarting $DESC" "$NAME"
+                do_stop
+                case "$?" in
+                0|1)
+                        do_start
+                        case "$?" in
+                                0) log_end_msg 0 ;;
+                                1) log_end_msg 1 ;; # Old process is still running
+                                *) log_end_msg 1 ;; # Failed to start
+                        esac
+                        ;;
+                *)
+                        # Failed to stop
+                        log_end_msg 1
+                        ;;
                 esac
                 ;;
         *)
-                # Failed to stop
-                log_end_msg 1
+                echo "Usage: $SCRIPTNAME {start|stop|status|restart|force-reload}" >&2
+                exit 3
                 ;;
         esac
-        ;;
-*)
-        echo "Usage: $SCRIPTNAME {start|stop|status|restart|force-reload}" >&2
-        exit 3
-        ;;
-esac
+        
+        exit 0
+        ```  
 
-exit 0
-```
     * Make sure that /etc/init.d/mattermost is executable
-    * ``` sudo chmod +x /etc/init.d/mattermost```
+        * ``` sudo chmod +x /etc/init.d/mattermost```
+        
 9. On reboot, systemd will generate a unit file from the headers in this init script and install it in `/run/systemd/generator.late/`
   
 ### Set up Nginx Server
@@ -223,31 +227,31 @@ exit 0
     * Create a configuration for Mattermost
     * ``` sudo touch /etc/nginx/sites-available/mattermost```
     * Below is a sample configuration with the minimum settings required to configure Mattermost
-    ```
-   server {
-      server_name mattermost.example.com;
-
-      location / {
-         client_max_body_size 50M;
-         proxy_set_header Upgrade $http_upgrade;
-         proxy_set_header Connection "upgrade";
-         proxy_set_header Host $http_host;
-         proxy_set_header X-Real-IP $remote_addr;
-         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-         proxy_set_header X-Forwarded-Proto $scheme;
-         proxy_set_header X-Frame-Options SAMEORIGIN;
-         proxy_pass http://10.10.10.2:8065;
-      }
-   }
-    ```
+        ```
+       server {
+          server_name mattermost.example.com;
+    
+          location / {
+             client_max_body_size 50M;
+             proxy_set_header Upgrade $http_upgrade;
+             proxy_set_header Connection "upgrade";
+             proxy_set_header Host $http_host;
+             proxy_set_header X-Real-IP $remote_addr;
+             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+             proxy_set_header X-Forwarded-Proto $scheme;
+             proxy_set_header X-Frame-Options SAMEORIGIN;
+             proxy_pass http://10.10.10.2:8065;
+          }
+       }
+        ```
     * Remove the existing file with
-    * ``` sudo rm /etc/nginx/sites-enabled/default```
+        * ``` sudo rm /etc/nginx/sites-enabled/default```
     * Link the mattermost config by typing:
-    * ```sudo ln -s /etc/nginx/sites-available/mattermost /etc/nginx/sites-enabled/mattermost```
+        * ```sudo ln -s /etc/nginx/sites-available/mattermost /etc/nginx/sites-enabled/mattermost```
     * Restart Nginx by typing:
-    * ``` sudo service nginx restart```
+        * ``` sudo service nginx restart```
     * Verify you can see Mattermost thru the proxy by typing:
-    * ``` curl http://localhost```
+        * ``` curl http://localhost```
     * You should see a page titles *Mattermost - Signup*
   
 ### Set up Nginx with SSL (Recommended)
@@ -255,51 +259,51 @@ exit 0
   * ```sudo apt-get install git```
   * ```git clone https://github.com/letsencrypt/letsencrypt```
   * ```cd letsencrypt```
-  1. Be sure that the port 80 is not use by stopping nginx
+  * Be sure that the port 80 is not use by stopping nginx
   * ```sudo service nginx stop```
   * ```netstat -na | grep ':80.*LISTEN'```
   * ```./letsencrypt-auto certonly --standalone```
-  1. This command will download packages and run the instance, after that you will have to give your domain name
-  1. You can find your certificate in /etc/letsencrypt/live
-1. Modify the file at `/etc/nginx/sites-available/mattermost` and add the following lines:
-```
-  server {
-     listen         80;
-     server_name    mattermost.example.com;
-     return         301 https://$server_name$request_uri;
-  }
-  
-  server {
-     listen 443 ssl;
-     server_name mattermost.example.com;
-
-     ssl on;
-     ssl_certificate /etc/letsencrypt/live/yourdomainname/fullchain.pem;
-     ssl_certificate_key /etc/letsencrypt/live/yourdomainname/privkey.pem;
-     ssl_session_timeout 5m;
-     ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-     ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
-     ssl_prefer_server_ciphers on;
-     ssl_session_cache shared:SSL:10m;
-
-     location / {
-        gzip off;
-        proxy_set_header X-Forwarded-Ssl on;
-        client_max_body_size 50M;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection "upgrade";
-        proxy_set_header Host $http_host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-        proxy_set_header X-Frame-Options SAMEORIGIN;
-        proxy_pass http://10.10.10.2:8065;
-     }
-  }
-```
-1. Be sure to restart nginx
+      * This command will download packages and run the instance, after that you will have to give your domain name
+  * You can find your certificate in /etc/letsencrypt/live
+2. Modify the file at `/etc/nginx/sites-available/mattermost` and add the following lines:
+    ```
+      server {
+         listen         80;
+         server_name    mattermost.example.com;
+         return         301 https://$server_name$request_uri;
+      }
+      
+      server {
+         listen 443 ssl;
+         server_name mattermost.example.com;
+    
+         ssl on;
+         ssl_certificate /etc/letsencrypt/live/yourdomainname/fullchain.pem;
+         ssl_certificate_key /etc/letsencrypt/live/yourdomainname/privkey.pem;
+         ssl_session_timeout 5m;
+         ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+         ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
+         ssl_prefer_server_ciphers on;
+         ssl_session_cache shared:SSL:10m;
+    
+         location / {
+            gzip off;
+            proxy_set_header X-Forwarded-Ssl on;
+            client_max_body_size 50M;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection "upgrade";
+            proxy_set_header Host $http_host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_set_header X-Frame-Options SAMEORIGIN;
+            proxy_pass http://10.10.10.2:8065;
+         }
+      }
+    ```
+3. Be sure to restart nginx
   * ```sudo service nginx start```
-1. Add the following line to cron so the cert will renew every month
+4. Add the following line to cron so the cert will renew every month
   * ```crontab -e```
   * ```@monthly /home/YOURUSERNAME/letsencrypt/letsencrypt-auto certonly --reinstall -d yourdomainname && sudo service nginx reload```
 
