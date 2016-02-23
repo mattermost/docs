@@ -10,12 +10,26 @@ html, body {
 	overflow: hidden;
 }
 
+.wy-table td, .rst-content table.docutils td, .rst-content table.field-list td {
+	vertical-align: top;
+}
+
 .wy-nav-content .document {
 	max-width: 1000px;
 }
 
 .rst-content tt, .rst-content tt, .rst-content code {
 	white-space: normal;
+}
+
+.rst-content .line-block {
+	margin-left: 0;
+	line-height: 24px;
+}
+
+.rst-content dl dt {
+	margin-bottom: 5px;
+	line-height: 24px;
 }
 
 .wy-nav-content-wrap {
@@ -26,6 +40,11 @@ html, body {
 
 h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
 	font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
+}
+
+.wy-menu-vertical {
+	top: 120px;
+	position: relative;
 }
 
 .wy-side-nav-search {
@@ -46,7 +65,10 @@ h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
 
 .wy-side-nav-search {
 	background: transparent;
-	padding-bottom: 0;
+	position: fixed;
+	background: #343131;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #5D5D5D;
 }
 
 header .links__icon {
@@ -127,6 +149,12 @@ header .header__links li a {
 @media (max-width: 768px){
 	header .links__icon {
 		display: block;
+	}
+	.wy-side-nav-search {
+	    position: relative;
+	}
+	.wy-menu-vertical {
+		top: 0;
 	}
 	header .header__logo img {
 		width: 176px;

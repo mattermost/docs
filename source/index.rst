@@ -3,11 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Mattermost Overview 
+Mattermost Overview
 -------------------
-Mattermost is modern communication behind your firewall. 
+Mattermost is modern communication behind your firewall.
 
-The platform lets users share messages and files across PCs, phones and tablets with continuous archiving and instant search, and supports notifications and integrations with your existing tools. 
+The platform lets users share messages and files across PCs, phones and tablets with continuous archiving and instant search, and supports notifications and integrations with your existing tools.
 
 **Mattermost Team Edition** is an open source, self-hosted application offering "All your team communication in one place, easy-to-use, searchable, and accessible anywhere". New releases available monthly under an MIT license from `mattermost.org/download`_.
 
@@ -22,7 +22,7 @@ This site offers documentation on User Help, Installation, Deployment, Administr
 .. toctree::
    :maxdepth: 1
    :caption: Getting Started
-   
+
    help/getting-started/signing-in.md
    help/getting-started/messaging-basics.md
    help/getting-started/configuring-notifications.md
@@ -31,41 +31,41 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    help/getting-started/creating-teams.md
    help/getting-started/managing-members.md
    help/getting-started/*
-   
+
 .. toctree::
    :maxdepth: 1
    :caption: Messaging
-   
+
    help/messaging/sending-messages.md
    help/messaging/reading-messages.md
    help/messaging/mentioning-teammates.md
    help/messaging/formatting-text.md
    help/messaging/attaching-files.md
    help/messaging/*
-   
+
 .. toctree::
    :maxdepth: 1
    :caption: Settings
-   
+
    help/settings/account-settings.md
    help/settings/theme-colors.md
    help/settings/channel-settings.md
    help/settings/team-settings.md
    help/settings/*
-   
+
 .. toctree::
    :maxdepth: 1
    :caption: Install Guides
    :glob:
-   
+
    install/requirements*
    install/*
-   
+
 .. toctree::
    :maxdepth: 1
-   :caption: Deployment 
+   :caption: Deployment
    :glob:
-   
+
    deployment/sso*
    deployment/deployment*
    deployment/*
@@ -74,7 +74,7 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    :maxdepth: 1
    :caption: Administration
    :glob:
-   
+
    administration/overview*
    administration/command*
    administration/config*
@@ -88,7 +88,7 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    :maxdepth: 1
    :caption: Developer Guide
    :glob:
-   
+
    developer/api*
    developer/web-service*
    developer/webhooks*
@@ -97,12 +97,20 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    developer/contribution*
    developer/style*
    developer/*
-   
+
+.. toctree::
+   :caption: FX Guidelines
+   :glob:
+
+   fx-guidelines/introduction*
+   fx-guidelines/markup*
+   fx-guidelines/*
+
 .. toctree::
    :maxdepth: 1
    :caption: Development Process
    :glob:
-   
+
    process/release-process*
    process/*
 
@@ -110,7 +118,7 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    :maxdepth: 1
    :caption: Integrations
    :glob:
-   
+
    integrations/*
 
 
