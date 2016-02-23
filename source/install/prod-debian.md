@@ -256,15 +256,15 @@ Note: This install guide has been generously contributed by the Mattermost commu
   
 ### Set up Nginx with SSL (Recommended)
 1. You can use a free and an open certificate security like let's encrypt, this is how to proceed
-  * ```sudo apt-get install git```
-  * ```git clone https://github.com/letsencrypt/letsencrypt```
-  * ```cd letsencrypt```
-  * Be sure that the port 80 is not use by stopping nginx
-  * ```sudo service nginx stop```
-  * ```netstat -na | grep ':80.*LISTEN'```
-  * ```./letsencrypt-auto certonly --standalone```
+    * ```sudo apt-get install git```
+    * ```git clone https://github.com/letsencrypt/letsencrypt```
+    * ```cd letsencrypt```
+    * Be sure that the port 80 is not use by stopping nginx
+    * ```sudo service nginx stop```
+    * ```netstat -na | grep ':80.*LISTEN'```
+    * ```./letsencrypt-auto certonly --standalone```
       * This command will download packages and run the instance, after that you will have to give your domain name
-  * You can find your certificate in /etc/letsencrypt/live
+    * You can find your certificate in /etc/letsencrypt/live
 2. Modify the file at `/etc/nginx/sites-available/mattermost` and add the following lines:
     ```
       server {
@@ -302,10 +302,10 @@ Note: This install guide has been generously contributed by the Mattermost commu
       }
     ```
 3. Be sure to restart nginx
-  * ```sudo service nginx start```
+    * ```sudo service nginx start```
 4. Add the following line to cron so the cert will renew every month
-  * ```crontab -e```
-  * ```@monthly /home/YOURUSERNAME/letsencrypt/letsencrypt-auto certonly --reinstall -d yourdomainname && sudo service nginx reload```
+    * ```crontab -e```
+    * ```@monthly /home/YOURUSERNAME/letsencrypt/letsencrypt-auto certonly --reinstall -d yourdomainname && sudo service nginx reload```
 
 
 ### Finish Mattermost Server setup
