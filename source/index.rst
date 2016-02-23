@@ -43,15 +43,6 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    help/messaging/attaching-files.md
    help/messaging/*
 
-
-.. toctree::
-   :caption: FX Guidelines
-   :glob:
-
-   fx-guidelines/introduction*
-   fx-guidelines/markup*
-   fx-guidelines/*
-
 .. toctree::
    :maxdepth: 1
    :caption: Settings
@@ -106,6 +97,14 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    developer/contribution*
    developer/style*
    developer/*
+
+.. toctree::
+   :caption: FX Guidelines
+   :glob:
+
+   fx-guidelines/introduction*
+   fx-guidelines/markup*
+   fx-guidelines/*
 
 .. toctree::
    :maxdepth: 1
