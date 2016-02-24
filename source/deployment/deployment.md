@@ -2,7 +2,7 @@
 
 The below diagram illustrates an on-premises deployment of Mattermost with optional configurations for scaling to performance from teams to large organizations.
 
-![image](https://raw.githubusercontent.com/mattermost/docs/master/source/images/networkDiagram.PNG)
+![image](../images/networkDiagram.PNG)
 
 [View Mattermost Network Diagram](https://raw.githubusercontent.com/mattermost/docs/master/source/images/networkDiagram.PNG)
 
