@@ -8,7 +8,7 @@ Reply to posts to keep conversations organized in threads.
 Posts can be considered parent messages. They are the messages that often start a thread of replies. Posts are composed and sent from the text input box at the bottom of the center pane. 
 
 #### Replies
-Reply to a message by clicking the comment bubble next to any message text. This action opens the right-hand-side (RHS) where you can see the message thread, then compose and send your reply. Replies are indented slightly in the center pane to indicate that they are child messages of a parent post.
+Reply to a message by clicking the reply icon next to any message text. This action opens the right-hand-side (RHS) where you can see the message thread, then compose and send your reply. Replies are indented slightly in the center pane to indicate that they are child messages of a parent post.
 
 ## Sending a Message
 Write a message by typing into the text input box, then press **ENTER** to send it. Use **Shift + ENTER** to create a new line without sending a message. To send messages by pressing **Ctrl+Enter** go to **Main Menu > Account Settings > Send messages on Ctrl + Enter**.
