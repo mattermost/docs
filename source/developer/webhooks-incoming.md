@@ -29,7 +29,7 @@ Which would render in a Mattermost message as follows:
 ---
 Build Break - Project X - December 12, 2015 - 15:32 GMT +0  
 
-![table](https://raw.githubusercontent.com/mattermost/docs/master/source/images/webhooksTable.PNG)
+![table](../images/webhooksTable.PNG)
 
 ---
 
