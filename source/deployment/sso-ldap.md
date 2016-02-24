@@ -42,4 +42,4 @@ This should leave Active Directory/LDAP as the only single-sign-in option.
 
 ### Additional Active Directory/LDAP support
 
-Improvements Active Directory/LDAP support for Mattermost Enterprise Edition be released monthly to subscribers following the official release. 
+Improvements Active Directory/LDAP support for Mattermost Enterprise Edition be released monthly to subscribers following the official product release. 
