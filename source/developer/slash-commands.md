@@ -33,12 +33,12 @@ Your external weather application would receive an HTTP request letting it know 
 "}
 ```
 Which would render in a Mattermost message as follows:
-![weather bot](https://pre-release.mattermost.com/api/v1/files/get/qecsqoor73dx8xonizw9x3dhco/hy5sq51sebfh58ktrce5ijtcwy/jp6n66obuprijrueqyfkgymamh/Screen%20Shot%202016-02-16%20at%208.36.40%20AM.png?d=%7B%22filename%22%3A%22jp6n66obuprijrueqyfkgymamh%2FScreen%2520Shot%25202016-02-16%2520at%25208.36.40%2520AM.png%22%7D&h=%242a%2410%242bwydb.dQ0dbZFFQwZNPhOXXPfZPCNoZ1DDp3HeqED7.2Viikr5KG&t=rcgiyftm7jyrxnma1osd8zswby)
+![weather bot](https://raw.githubusercontent.com/mattermost/docs/master/source/images/weatherBot.PNG)
 
 ### Built-in Commands
 Each Mattermost installation comes with some built-in slash commands that are ready to use. These commands are listed below:
 
-![commands](https://cloud.githubusercontent.com/assets/14333569/13122278/283c738c-d584-11e5-9fac-6519e5c333f8.png)
+![commands](https://raw.githubusercontent.com/mattermost/docs/master/source/images/slashCommandsTable.PNG)
 
 ### Enabling Custom Commands
 Custom slash commands are off by default, and can be enabled by the system administrator. If you are the system administrator you can enable them by doing the following:

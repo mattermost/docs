@@ -29,7 +29,7 @@ Which would render in a Mattermost message as follows:
 ---
 Build Break - Project X - December 12, 2015 - 15:32 GMT +0  
 
-![check list](https://pre-release.mattermost.com/api/v1/files/get/pspxu7bu17yttmtnzsjnqu78fe/o1nq6cmn5pfo8k8tchb4gtx4kc/7ns9jpgnsfbninbzucpqtceheh/Image%20Pasted%20at%202016-0-15%2017-22.png?d=%7B%22filename%22%3A%227ns9jpgnsfbninbzucpqtceheh%2FImage%2520Pasted%2520at%25202016-0-15%252017-22.png%22%2C%22time%22%3A%221452903720817%22%7D&h=%242a%2410%24CQN5wnkdi6WAa8ucN3xI0.vlO0lUXpdteMRrzuW6ot2TfK4QbaORO&t=rcgiyftm7jyrxnma1osd8zswby)
+![table](https://raw.githubusercontent.com/mattermost/docs/master/source/images/webhooksTable.PNG)
 
 ---
 

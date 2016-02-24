@@ -6,7 +6,7 @@ After that, we can work on upgrading the quality of documentation. The below cha
 
 _Note: Documentation Guidelines are new, and iterating. Documentation has started to balloon and this is our attempt at reducing ambiguity and increasing consistency, but the conventions here are very open to discussion._
 
-![check list](https://pre-release.mattermost.com/api/v1/files/get/pspxu7bu17yttmtnzsjnqu78fe/o1nq6cmn5pfo8k8tchb4gtx4kc/8cbudpdbif8f3875ofohqyaxoy/Image%20Pasted%20at%202016-0-15%2017-31.png?d=%7B%22filename%22%3A%228cbudpdbif8f3875ofohqyaxoy%2FImage%2520Pasted%2520at%25202016-0-15%252017-31.png%22%2C%22time%22%3A%221452904229322%22%7D&h=%242a%2410%24Nj1ctbbYcb%2F8qMt7umAFpeZ3O85fUidZOdnLmCqmS7XZuC10ryf5O&t=rcgiyftm7jyrxnma1osd8zswby)
+![star table](https://raw.githubusercontent.com/mattermost/docs/master/source/images/documentationTable.PNG)
 
 ## 1-Star Requirements: Correctness
 

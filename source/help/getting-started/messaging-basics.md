@@ -5,13 +5,13 @@ _____
 
 **Reply to messages** by clicking the reply arrow next to the message text.
 
-![reply arrow](https://cloud.githubusercontent.com/assets/14333569/12757627/a47dbb0c-c98d-11e5-9331-4da5e57b5c95.png)
+![reply arrow](https://raw.githubusercontent.com/mattermost/docs/master/source/images/replyIcon.PNG)
 
 **Notify teammates** when they are needed by typing `@username`.
 
 **Format your messages** using Markdown that supports text styling, headings, links, emoticons, code blocks, block quotes, tables, lists and in-line images.
 
-![markdown](https://cloud.githubusercontent.com/assets/14333569/12622129/2bcb04d6-c4e1-11e5-9701-3176e837c471.png)
+![markdown](https://raw.githubusercontent.com/mattermost/docs/master/source/images/messagesTable1.PNG)
 
 **Attach files** by dragging and dropping into Mattermost or clicking the attachment icon in the text input box.
 
