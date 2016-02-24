@@ -141,7 +141,7 @@ Make a task list by including square brackets:
 ```
 Renders as:  
 
-![check list](https://raw.githubusercontent.com/mattermost/docs/master/source/images/checklist.PNG)
+![check list](../../images/checklist.PNG)
 
 ## Tables  
 
@@ -156,7 +156,7 @@ Create a table by placing a dashed line under the header row and separating the 
 
 Renders as:
 
-![table](https://raw.githubusercontent.com/mattermost/docs/master/source/images/markdownTable1.PNG)
+![table](../../images/markdownTable1.PNG)
 
 ## Headings:  
 
