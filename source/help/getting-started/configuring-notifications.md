@@ -16,7 +16,7 @@ These are browser notifications that appear in the corner of your main monitor. 
 
 
 ## Notification Sounds
-A notification sound plays for all activity that would fire a desktop notification. Notification sounds are available on Firefox, Safari, Chrome, Internet Explorer and Edge.
+A notification sound plays for all activity that would fire a desktop notification. Notification sounds are available on Safari, Chrome and Edge.
 
 - Turn notification sounds On or Off in **Account Settings** > **Notifications** > **Desktop Notification Sounds**. 
 
