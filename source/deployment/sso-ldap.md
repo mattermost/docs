@@ -39,3 +39,7 @@ If you would like to switch your System Administrator account to LDAP authentica
 3. Go to **System Console** > **Email Settings** and set **Allow Sign In With Email** to `false`.
 
 This should leave Active Directory/LDAP as the only single-sign-in option. 
+
+### Additional Active Directory/LDAP support
+
+Improvements Active Directory/LDAP support for Mattermost Enterprise Edition be released monthly to subscribers following the official release. 
