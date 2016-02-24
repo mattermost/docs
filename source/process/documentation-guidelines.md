@@ -6,7 +6,7 @@ After that, we can work on upgrading the quality of documentation. The below cha
 
 _Note: Documentation Guidelines are new, and iterating. Documentation has started to balloon and this is our attempt at reducing ambiguity and increasing consistency, but the conventions here are very open to discussion._
 
-![star table](https://raw.githubusercontent.com/mattermost/docs/master/source/images/documentationTable.PNG)
+![star table](../images/documentationTable.PNG)
 
 ## 1-Star Requirements: Correctness
 
