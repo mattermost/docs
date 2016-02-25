@@ -23,7 +23,7 @@ Observe a live preview as you customize theme colors and then click **Save** to 
 - **Mention Jewel BG:** Background color of the jewel indicating unread mentions that appears to the right of the channel name. This is also the background color of the “Unread Posts Below/Above” indicator appearing at the top or bottom of the Channels pane on shorter browser windows.
 - **Mention Jewel Text:** Text color on the mention jewel indicating the number of unread mentions. This is also the text color on the “Unread Posts Below/Above” indicator.
 - **Center Channel BG:** Color of the center pane, RHS and all modal backgrounds.
-- **Center Channel Text:** Color of all the text - with the exception of mentions, links, hashtags and code blocks - in the center pane, RHS and modals. 
+- **Center Channel Text:** Color of all the text - with the exception of mentions, links, hashtags and code blocks - in the center pane, RHS and modals.
 - **New Message Separator:** The new massage separator appears below the last read message when you click into a channel with unread messages.
 - **Link Color:** Text color of all links, hashtags, teammate mentions, and low priority UI buttons.
 - **Button BG:** Color of the rectangular background behind all high priority UI buttons.
@@ -32,29 +32,29 @@ Observe a live preview as you customize theme colors and then click **Save** to 
 - **Mention Highlight Link:** Text color of your words that trigger mentions in the center pane and RHS.
 - **Code Theme:** Background and syntax colors for all code blocks.
 
-#### Custom Theme Examples  
+#### Custom Theme Examples
 Customize your theme colors and share them with others by copying and pasting theme vectors into the input box. Below are some example themes with their corresponding theme vectors.
 
 ![theme1](../../images/theme1.PNG)
 ```
-#4f2f4c,#ffffff,#452842,#ffffff,#e5e5e5,#452842,#a65ea0,#ffffff,#52adad,#d4b579,#f2777a,#ffffff,#ffffff,#7a7a7a,#f2777a,#f2777a,#f2777a,#ffffff,#e08d8f,#ffffff,solarized_dark
+#4f2f4c,#ffffff,#452842,#ffffff,#e5e5e5,#452842,#a65ea0,#ffffff,#52adad,#d4b579,#f2777a,#ffffff,#ffffff,#444444,#f2777a,#f2777a,#f2777a,#ffffff,#e08d8f,#ffffff,solarized_dark
 ```
 ___
 
 ![theme2](../../images/theme2.PNG)
 ```
-#f2f0ec,#2e2e2e,#e8e6df,#424242,#515151,#e0e0e0,#66cccc,#594545,#52adad,#d4b579,#66cccc,#ffffff,#ffffff,#7a7a7a,#f2777a,#3dadad,#3dadad,#ffffff,#66cccc,#ffffff,github
+#f2f0ec,#2e2e2e,#e8e6df,#424242,#515151,#e0e0e0,#66cccc,#594545,#52adad,#d4b579,#66cccc,#ffffff,#ffffff,#444444,#f2777a,#3dadad,#3dadad,#ffffff,#66cccc,#ffffff,github
 ```
 ___
 
 ![theme3](../../images/theme3.PNG)
 ```
-#262626,#ffffff,#363636,#ffffff,#cccccc,#525252,#7e9949,#ffffff,#99cb3f,#b8b884,#7e9949,#ffffff,#ffffff,#7a7a7a,#90ad58,#90ad58,#90ad58,#ffffff,#90ad58,#ffffff,monokai
+#262626,#ffffff,#363636,#ffffff,#cccccc,#525252,#7e9949,#ffffff,#99cb3f,#b8b884,#7e9949,#ffffff,#ffffff,#444444,#90ad58,#90ad58,#90ad58,#ffffff,#90ad58,#ffffff,monokai
 ```
 ___
 
 ![theme4](../../images/theme4.PNG)
 ```
-#de718e,#ffffff,#de6785,#ffffff,#ffffff,#cc6983,#43e8d4,#ffffff,#88e0e5,#ccdb91,#55a3a8,#ffffff,#ffffff,#7a7a7a,#55a3a8,#55a3a8,#55a3a8,#ffffff,#55a3a8,#ffffff,solarized_light
+#de718e,#ffffff,#de6785,#ffffff,#ffffff,#cc6983,#43e8d4,#ffffff,#88e0e5,#ccdb91,#55a3a8,#ffffff,#ffffff,#444444,#55a3a8,#55a3a8,#55a3a8,#ffffff,#55a3a8,#ffffff,solarized_light
 ```
 ___
