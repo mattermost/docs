@@ -5,8 +5,11 @@ The colors of the Mattermost user interface are customizable in **Account Settin
 ## Standard Themes
 Select **Theme Colors** to choose from four standard themes designed by the Mattermost team. To make custom adjustments on the four standard theme colours, click a standard theme and then select **Custom Theme** to load the standard theme into the custom theme color selectors.
 
+## Import Theme from Slack
+To import a theme, go to **Preferences > Sidebar Theme** from within Slack, open the custom theme option, copy the theme color vector and then paste it into the *Input Slack Theme* input box in Mattermost. Any theme settings that are not customizable in Slack will default to the “Mattermost” standard theme settings.
+
 ## Custom Themes
-Customize your theme colors and share them with others by copying and pasting theme vectors into the input box. Observe a live preview as you customize theme colors and then click **Save** to confirm your changes. Discard your changes by exiting the settings modal and clicking **Yes, Discard**.
+Observe a live preview as you customize theme colors and then click **Save** to confirm your changes. Discard your changes by exiting the settings modal and clicking **Yes, Discard**.
 
 - **Sidebar BG:** Background color of the Channels pane, and Account and Team settings navigation sidebars.
 - **Sidebar Text:** Text colour of read channels in the Channels pane, and tabs in the Account and Team settings navigation sidebar.
@@ -29,5 +32,29 @@ Customize your theme colors and share them with others by copying and pasting th
 - **Mention Highlight Link:** Text color of your words that trigger mentions in the center pane and RHS.
 - **Code Theme:** Background and syntax colors for all code blocks.
 
-## Import Theme from Slack
-To import a theme, go to **Preferences > Sidebar Theme** from within Slack, open the custom theme option, copy the theme color vector and then paste it into the *Input Slack Theme* input box in Mattermost. Any theme settings that are not customizable in Slack will default to the “Mattermost” standard theme settings.
+#### Custom Theme Examples  
+Customize your theme colors and share them with others by copying and pasting theme vectors into the input box. Below are some example themes with their corresponding theme vectors.
+
+![theme1](../../images/theme1.PNG)
+```
+#4f2f4c,#ffffff,#452842,#ffffff,#e5e5e5,#452842,#a65ea0,#ffffff,#52adad,#d4b579,#f2777a,#ffffff,#ffffff,#7a7a7a,#f2777a,#f2777a,#f2777a,#ffffff,#e08d8f,#ffffff,solarized_dark
+```
+___
+
+![theme2](../../images/theme2.PNG)
+```
+#f2f0ec,#2e2e2e,#e8e6df,#424242,#515151,#e0e0e0,#66cccc,#594545,#52adad,#d4b579,#66cccc,#ffffff,#ffffff,#7a7a7a,#f2777a,#3dadad,#3dadad,#ffffff,#66cccc,#ffffff,github
+```
+___
+
+![theme3](../../images/theme3.PNG)
+```
+#262626,#ffffff,#363636,#ffffff,#cccccc,#525252,#7e9949,#ffffff,#99cb3f,#b8b884,#7e9949,#ffffff,#ffffff,#7a7a7a,#90ad58,#90ad58,#90ad58,#ffffff,#90ad58,#ffffff,monokai
+```
+___
+
+![theme4](../../images/theme4.PNG)
+```
+#de718e,#ffffff,#de6785,#ffffff,#ffffff,#cc6983,#43e8d4,#ffffff,#88e0e5,#ccdb91,#55a3a8,#ffffff,#ffffff,#7a7a7a,#55a3a8,#55a3a8,#55a3a8,#ffffff,#55a3a8,#ffffff,solarized_light
+```
+___
