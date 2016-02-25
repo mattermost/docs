@@ -255,7 +255,7 @@ Therefore, there are two options for setting up the MPNS to offer push notificat
    - Fewer dependencies - All communication between Step 1 and Step 2 happens behind your firewall, only Step 3 happens outside your firewall. 
 
    Disadvantages:
-   - Requires time and effort - An in-house developer would be required to properly compile, deploy and maintain the MPNS and mobile apps
+   - Requires time and effort - An in-house developer would be required to properly compile, deploy and maintain the MPNS and mobile apps  
 
 - **Option B) Use a hosted MPNS service**
 
