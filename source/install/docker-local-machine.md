@@ -88,7 +88,7 @@ See [Configuration Settings](../administration/config-settings.md) documentation
 
 The default single-container Docker instance for Mattermost is designed for product evaluation, and sets `ByPassEmail=true` so the product can run without enabling email, when doing so maybe difficult. 
 	
-To see the product's full functionality, [enabling SMTP email is recommended](SMTP-Email-Setup.md).
+To see the product's full functionality, [enabling SMTP email is recommended](smtp-email-setup.md).
 
 ## Upgrading Mattermost 
 

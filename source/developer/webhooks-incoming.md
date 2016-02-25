@@ -5,7 +5,7 @@ Incoming webhooks allow external applications, written in the programming langua
 A couple key points:
 
 - **Mattermost incoming webhooks are Slack-compatible.** If you've used Slack's incoming webhooks to create integrations, you can copy and paste that code to create Mattermost integrations. Mattermost automatically translates Slack's proprietary JSON payload format into markdown to render in Mattermost messages
-- **Mattermost incoming webhooks support full markdown.** A rich range of formatting unavailable in Slack is made possible through [markdown support](../../usage/Markdown.md) in Mattermost, including headings, formatted fonts, tables, inline images and other options supported by [Mattermost Markdown]
+- **Mattermost incoming webhooks support full markdown.** A rich range of formatting unavailable in Slack is made possible through [markdown support](../help/messaging/formatting-text.md) in Mattermost, including headings, formatted fonts, tables, inline images and other options supported by [Mattermost Markdown]
 
 _Example:_
 
@@ -74,7 +74,7 @@ Additional Notes:
 
 2. With **Enable Overriding of Icon from Webhooks** turned on, you can similarly change the icon the message posts with by providing a link to an image in the `icon_url` parameter of your payload. For example, ```payload={"icon_url": "http://somewebsite.com/somecoolimage.jpg", "text": "Hello, this is some text."}``` will post using whatever image is located at `http://somewebsite.com/somecoolimage.jpg` as the icon for the post
 
-3. Also, as mentioned previously, [markdown](../../usage/Markdown.md) can be used to create richly formatted payloads, for example: ```payload={"text": "# A Header\nThe _text_ below **the** header."}``` creates a messages with a header, a carriage return and bold text for "the"
+3. Also, as mentioned previously, [markdown](../help/messaging/formatting-text.md) can be used to create richly formatted payloads, for example: ```payload={"text": "# A Header\nThe _text_ below **the** header."}``` creates a messages with a header, a carriage return and bold text for "the"
 
 4. Just like regular posts, the text will be limited to 4000 characters at maximum
 
