@@ -69,37 +69,10 @@ WSS is a secure, encrypted connection and is highly recommended. An unencrypted 
 
 ### Push Notification Service
 
-Sending a push notification to a user's mobile device consists of three steps: 
+[Mattermost Push Notification Service](http://docs.mattermost.com/administration/config-settings.html?highlight=config#push-notification-settings) routes push notifications to: 
 
-- **Step 1:** the Mattermost server sends notifications to the [Mattermost Push Notification Service](https://github.com/mattermost/push-proxy) (MPNS).
-- **Step 2:** The MPNS forwards the message to the push notification service of either Apple for iOS devices or Google for Android devices. 
-- **Step 3:** The push notification service hosted by Apple or Google forwards the message to the user's mobile device.
-
-There are two options for setting up the MPNS to offer push notifications: 
-
-- **Option A) Compile and deploy your own MPNS and mobile apps**
-
-   If your IT policy requires use of an Enterprise AppStore, or if you have expertise in mobile app development, you may choose to compile your own MPNS using the [open source repository](https://github.com/mattermost/push-proxy) provided, along with compiling your own iOS app using its [open source repository](https://github.com/mattermost/ios) or Android app (when source code is available). 
-
-   Advantages: 
-   - Fewer dependencies - All communication between Step 1 and Step 2 happens behind your firewall, only Step 3 happens outside your firewall. 
-
-   Disadvantages:
-   - Requires time and effort - An in-house developer would be required to properly compile, deploy and maintain the MPNS and mobile apps
-
-- **Option B) Use a hosted MPNS service**
-
-   Instead of compiling your own MPNS, you can put the address of a hosted MPNS supporting SSL into the **Push Notification Server** field inside the System Console and have your users install the iOS or Android native applications connected to the hosted service. 
-   
-   Advantages: 
-   - Saves time - No need to compile open source applications 
-   
-   Disadvantages:
-   - Requires trusting provider of hosted MPNS service - With this option, Step 2 happens outside of your firewall over an encrypted SSL connection which terminates at the MPNS. This means the MPNS decrypts the notification and re-encrypts it to send on to Step 3, so there is a moment when an unencrypted push notification message exists in the MPNS service. By default this is not an issue, since by default push notification messages only include generic descriptions and the names of users and channels (e.g. "@bob mentioned you in Town Square channel"). However, if in future you decide to enable push notifications to contain the contents from messages, you may need to review your internal IT policies to see whether Option A or Option B is most appropriate.
-   
-Subscriptions to Mattertmost Enterprise Edition include the use of a hosted, production-quality MPNS service with SSL, available at `https://push.mattermost.com`, which connects to the [official Mattermost iOS application on iTunes](https://itunes.apple.com/us/app/mattermost/id984966508?mt=8) and the official Mattermost Android application in the Google Play Store (release pending).
-
-An additional MPNS service for testing server setups connected to the same mobile applications is available at `http://push-test.mattermost.com`. The test service does not include encryption and does not offer a production-quality service-level agreement. 
+1. Apple Push Notification Service to send notifications to the Mattermost iOS app. 
+2. Google Push Notification Service to send notifications to the Mattermost Android app.
 
 ### Proxy
 
@@ -161,9 +134,9 @@ Large organizations needing high scale, high availability configurations can con
 
 ### Databases
 
-Mattermost uses a MySQL or Postgres database to store and retrieve system data and to execute full text search.
+Mattermost uses a MySQL or Postgres database to store and retrieve system data and to execute full text search. 
 
-Depending on projected usage from your evaluation deployment, you may decide to add a multi-server database configuration with a master and multiple read replicas, and potentially use Solidstate Storage Drives for faster reads. The read replicas can be configured as a redundant backup to the active server, so that should it fail operation could be diverted to the read replica server without interrupting service. The safest configuration is to have the disk space on the read replica used for failover two to three times larger than storage available on master, so that if the master fails because it runs out of disk space for an unforeseen reason it will fail over to a read replica with enough extra space to run smoothly until the master is corrected.
+See [Database requirements](http://docs.mattermost.com/install/requirements.html#database-software) for full details. 
 
 ### File Store
 
