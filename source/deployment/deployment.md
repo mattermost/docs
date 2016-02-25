@@ -20,9 +20,7 @@ End users can securely share messages and files using a web-based Mattermost exp
 
 ### Mobile App Experience
 
-Note: At the time of this writing Android application has yet to be released. It should be released by end of February 2016.
-
-Native applications for iOS and Android are available for interacting with the Mattermost server and receiving encrypted push notifications.
+Native applications for iOS and Android are available for interacting with the Mattermost server and receiving encrypted push notifications. 
 
 #### Mobile Apps for Mattermost Enterprise Edition
 
@@ -31,7 +29,7 @@ Customers of Mattermost Enterprise Edition have a convenience feature for using 
 Mattermost Enterprise Edition customers may also choose to customize, compile, and extend their own versions of the Mattermost mobile applications for their internal Enterprise App Store, or public iTunes or Google Play App Stores, using open source repositories for the native applications:
 
 - [Open source Mattermost iOS application](https://github.com/mattermost/ios)
-- Open source Mattermost Android application
+- [Open source Mattermost Android application](https://github.com/mattermost/android)
 
 #### Mobile App for Mattermost Team Edition
 
