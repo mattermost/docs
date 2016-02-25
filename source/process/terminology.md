@@ -4,7 +4,7 @@ Mattermost terminology used across the project.
 
 #### Bug
 
-A defect in the code that varies from specification. Changes required to accomodate unsupported 3rd party software (such as browsers or operating systems) are not considered bugs, they care considered improvements. 
+A defect in the code that varies from specification. Changes required to accomodate unsupported 3rd party software (such as browsers or operating systems) are not considered bugs, they are considered improvements. 
 
 #### Dev Mana
 
