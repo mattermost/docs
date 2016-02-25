@@ -230,11 +230,11 @@ Port of SMTP email server.
 
 **Send Push Notifications** (`"SendPushNotifications": false`)  
 
-`true`: Your Mattermost server sends mobile push notifications to the server specified in **PushNotificationServer**; `false`: Mobile push notifications are disabled.
+`true`: Your Mattermost server sends mobile push notifications to the server specified in **PushNotificationServer**; `false`: Mobile push notifications are disabled.  
 
 **Push Notification Server** (`"PushNotificationServer": ""`)  
 
-Location of Mattermost Push Notification Service (MPNS), which re-sends push notifications from Mattermost to services like Apple Push Notification Service (APNS) and Google Cloud Messaging (GCM). 
+Location of Mattermost Push Notification Service (MPNS), which re-sends push notifications from Mattermost to services like Apple Push Notification Service (APNS) and Google Cloud Messaging (GCM).  
 
 
 Sending a push notification to a user's mobile device consists of three steps: 
@@ -249,7 +249,7 @@ Therefore, there are two options for setting up the MPNS to offer push notificat
 
 - **Option A) Compile and deploy your own MPNS and mobile apps**
 
-   If your IT policy requires use of an Enterprise AppStore, or if you have expertise in mobile app development, you may choose to compile your own MPNS using the [open source repository](https://github.com/mattermost/push-proxy) provided, along with compiling your own iOS app using its [open source repository](https://github.com/mattermost/ios) or Android app (when source code is available). 
+   If your IT policy requires use of an Enterprise AppStore, or if you have expertise in mobile app development, you may choose to compile your own MPNS using the [open source repository](https://github.com/mattermost/push-proxy) provided, along with compiling the official open source [iOS app](https://github.com/mattermost/ios) or [Android app](https://github.com/mattermost/android). 
 
    Advantages: 
    - Fewer dependencies - All communication between Step 1 and Step 2 happens behind your firewall, only Step 3 happens outside your firewall. 
