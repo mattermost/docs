@@ -17,7 +17,7 @@ General settings to configure the listening address, login security, testing, we
 
 **Listen Address** (`"ListenAddress": ":8065"`)  
 
-The IP address on which to listen and the port on which to bind. Entering ":8065" will bind to all interfaces or you can choose one like "127.0.0.1:8065". Changing this will require a server restart before taking effect.
+The IP address on which to listen and the port on which to bind. Entering ":8065" will bind to all interfaces or you can choose one like `127.0.0.1:8065`. Changing this will require a server restart before taking effect.
 
 **Maximum Login Attempts** (`"MaximumLoginAttempts": 10`)  
 
@@ -33,19 +33,19 @@ Set this key to enable embedding of YouTube video previews based on hyperlinks a
 
 **Enable Testing** (`"EnableTesting": false`)  
 
-"true": `/loadtest` slash command is enabled to load test accounts and test data.
+`true`: `/loadtest` slash command is enabled to load test accounts and test data.
 
 **Enable Developer Mode** (`"EnableDeveloper": false`)  
 
-"true": Users are alerted to any console errors that occur.
+`true`: Users are alerted to any console errors that occur.
 
 **Enable Security Fix Alert** (`"EnableSecurityFixAlert": true`)  
 
-"true": System Administrators are notified by email if a relevant security fix alert has been announced in the last 12 hours. Requires email to be enabled.
+`true`: System Administrators are notified by email if a relevant security fix alert has been announced in the last 12 hours. Requires email to be enabled.
 
 **Enable Insecure Outgoing Connections** (`"EnableInsecureOutgoingConnections": false`)  
 
-"true": Outgoing HTTPS requests can accept unverified, self-signed certificates. For example, outgoing webhooks to a server with a self-signed TLS certificate, using any domain, will be allowed; "false": Only secure HTTPS requests are allowed.
+`true`: Outgoing HTTPS requests can accept unverified, self-signed certificates. For example, outgoing webhooks to a server with a self-signed TLS certificate, using any domain, will be allowed; `false`: Only secure HTTPS requests are allowed.
 
 Security note: Enabling this feature makes these connections susceptible to man-in-the-middle attacks.
 
@@ -69,31 +69,31 @@ Set the number of minutes to cache a session in memory.
 
 **Enable Incoming Webhooks** (`"EnableIncomingWebhooks": true`)    
 
-Developers building integrations can create webhook URLs for channels and private groups. Please see http://mattermost.org/webhooks to learn about creating webhooks, view samples, and to let the community know about integrations you have built. "true": Incoming webhooks will be allowed. To manage incoming webhooks, go to **Account Settings -> Integrations**. The webhook URLs created in Account Settings can be used by external applications to create posts in any channels or private groups that you have access to; “false”: The Integrations > Incoming Webhooks section of Account Settings is hidden and all incoming webhooks are disabled.
+Developers building integrations can create webhook URLs for channels and private groups. Please see http://mattermost.org/webhooks to learn about creating webhooks, view samples, and to let the community know about integrations you have built. `true`: Incoming webhooks will be allowed. To manage incoming webhooks, go to **Account Settings > Integrations**. The webhook URLs created in Account Settings can be used by external applications to create posts in any channels or private groups that you have access to; “false”: The Integrations > Incoming Webhooks section of Account Settings is hidden and all incoming webhooks are disabled.
 
 Security note: By enabling this feature, users may be able to perform [phishing attacks](https://en.wikipedia.org/wiki/Phishing) by attempting to impersonate other users. To combat these attacks, a BOT tag appears next to all posts from a webhook. Enable at your own risk.
 
 **Enable Outgoing Webhooks** (`"EnableOutgoingWebhooks": true`)    
 
-Developers building integrations can create webhook tokens for public channels. Trigger words are used to fire new message events to external integrations. For security reasons, outgoing webhooks are only available in public channels. Please see our [documentation page](https://github.com/mattermost/platform/blob/master/doc/integrations/webhooks/Outgoing-Webhooks.md) to learn about creating webhooks and view samples. "true": Outgoing webhooks will be allowed. To manage outgoing webhooks, go to **Account Settings -> Integrations**; “false”: The Integrations > Outgoing Webhooks section of Account Settings is hidden and all outgoing webhooks are disabled.
+Developers building integrations can create webhook tokens for public channels. Trigger words are used to fire new message events to external integrations. For security reasons, outgoing webhooks are only available in public channels. Please see our [documentation page](https://github.com/mattermost/platform/blob/master/doc/integrations/webhooks/Outgoing-Webhooks.md) to learn about creating webhooks and view samples. `true`: Outgoing webhooks will be allowed. To manage outgoing webhooks, go to **Account Settings > Integrations**; “false”: The Integrations > Outgoing Webhooks section of Account Settings is hidden and all outgoing webhooks are disabled.
 
 Security note: By enabling this feature, users may be able to perform [phishing attacks](https://en.wikipedia.org/wiki/Phishing) by attempting to impersonate other users. To combat these attacks, a BOT tag appears next to all posts from a webhook. Enable at your own risk.
 
 **Enable Slash Commands** (`"EnableCommands": false`)  
 
-Slash commands send events to external integrations that send a response back to Mattermost. "true": Allow users to create custom slash commands from **Account Settings** > **Integrations** > **Commands**; "false": Slash Commands are hidden in the **Integrations** user interface.
+Slash commands send events to external integrations that send a response back to Mattermost. `true`: Allow users to create custom slash commands from **Account Settings** > **Integrations** > **Commands**; `false`: Slash Commands are hidden in the **Integrations** user interface.
 
 **Enable Integrations for Admin Only** (`"EnableOnlyAdminIntegrations": true`)  
 
-"true": User created integrations can only be created by System or Team Admins. Members who are not admins trying to create integrations will hit an error message in the **Account Settings** dialog; "false": Any team members can create integrations from **Account Settings** > **Inegrations**.
+`true`: User created integrations can only be created by System or Team Admins. Members who are not admins trying to create integrations will hit an error message in the **Account Settings** dialog; `false`: Any team members can create integrations from **Account Settings** > **Inegrations**.
 
 **Enable Overriding Usernames from Webhooks and Slash Commands** (`"EnablePostUsernameOverride": false`)  
 
-"true": Webhooks will be allowed to change the username they are posting as; “false”: Webhooks can only post as the username they were set up with. See http://mattermost.org/webhooks for more details.
+`true`: Webhooks will be allowed to change the username they are posting as; “false”: Webhooks can only post as the username they were set up with. See http://mattermost.org/webhooks for more details.
 
 **Enable Overriding Icon from Webhooks and Slash Commands** (`"EnablePostIconOverride": false`)  
 
-"true": Webhooks will be allowed to change the icon they post with; “false”: Webhooks can only post with the profile picture of the account they were set up with. See http://mattermost.org/webhooks for more details.
+`true`: Webhooks will be allowed to change the icon they post with; “false”: Webhooks can only post with the profile picture of the account they were set up with. See http://mattermost.org/webhooks for more details.
 
 ### Team Settings
 
@@ -109,11 +109,11 @@ Maximum number of users per team, including both active and inactive users.
 
 **Enable Team Creation** (`"EnableTeamCreation": true`)  
 
-"true": Ability to create a new team is enabled for all users; “false”: the ability to create teams is disabled. The Create A New Team button is hidden in the main menu UI.
+`true`: Ability to create a new team is enabled for all users; “false”: the ability to create teams is disabled. The Create A New Team button is hidden in the main menu UI.
 
 **Enable User Creation** (`"EnableUserCreation": true`)  
 
-"true": Ability to create new accounts is enabled via inviting new members or sharing the team invite link; “false”: the ability to create accounts is disabled. The create account button displays an error when trying to signup via an email invite or team invite link.
+`true`: Ability to create new accounts is enabled via inviting new members or sharing the team invite link; “false”: the ability to create accounts is disabled. The create account button displays an error when trying to signup via an email invite or team invite link.
 
 **Restrict Creation To Domains** (`"RestrictCreationToDomains": ""`)    
 
@@ -121,11 +121,11 @@ Teams and user accounts can only be created by a verified email from this list o
 
 **Restrict Team Names** (`"RestrictTeamNames": true`)  
 
-"true": Newly created team names cannot contain the following restricted words: www, web, admin, support, notify, test, demo, mail, team, channel, internal, localhost, dockerhost, stag, post, cluster, api, oauth; “false”: Newly created team names are not restricted. 
+`true`: Newly created team names cannot contain the following restricted words: www, web, admin, support, notify, test, demo, mail, team, channel, internal, localhost, dockerhost, stag, post, cluster, api, oauth; “false”: Newly created team names are not restricted. 
 
 **Enable Team Directory** (`"EnableTeamListing": false`)  
 
-"true": Teams that are configured to appear in the team directory will appear on the system main page. Teams can configure this setting from **Team Settings -> Include this team in the Team Directory**; "false": Team directory on the system main page is disabled.
+`true`: Teams that are configured to appear in the team directory will appear on the system main page. Teams can configure this setting from **Team Settings > Include this team in the Team Directory**; `false`: Team directory on the system main page is disabled.
 
 
 ### SQL Settings
@@ -134,15 +134,11 @@ Settings to configure the data sources, connections, and encryption of SQL datab
 
 **Driver Name** (`"DriverName": "mysql"`)  
 
-"mysql": enables driver to MySQL database; "postgres": enables driver to PostgreSQL database. This setting can only be changed from config.json file, it cannot be changed from the System Console user interface.
+`mysql`: enables driver to MySQL database; `postgres`: enables driver to PostgreSQL database. This setting can only be changed from config.json file, it cannot be changed from the System Console user interface.
 
 **Data Source** (`"DataSource": "mmuser:mostest@tcp(dockerhost:3306)/mattermost_test?charset=utf8mb4,utf8"`)  
 
-This is the connection string to the master database. When **DriverName**="postgres" then use a connection string in the form “postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10”. This setting can only be changed from config.json file, it cannot be changed from the System Console user interface.
-
-**Data Source Replicas** (`"DataSourceReplicas": []`)  
-
-This is a list of connection strings pointing to read replicas of MySQL or PostgreSQL database.  If running a single server, set to DataSource. This setting can only be changed from config.json file, it cannot be changed from the System Console user interface.
+This is the connection string to the master database. When **DriverName**="postgres" then use a connection string in the form `postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10`. This setting can only be changed from config.json file, it cannot be changed from the System Console user interface.
 
 **Maximum Idle Connections** (`"MaxIdleConns": 10`)  
 
@@ -158,7 +154,7 @@ Maximum number of open connections held open to the database.
 
 **Trace** (`"Trace": false`)  
 
-"true": Executing SQL statements are written to the log for development.
+`true`: Executing SQL statements are written to the log for development.
 
 ### Email Settings
 
@@ -168,28 +164,27 @@ Settings to configure email signup, notifications, security, and SMTP options.
 
 **Allow Sign Up With Email** (`"EnableSignUpWithEmail": true`)  
 
-"true": Allow team creation and account signup using email and password; “false”: Email signup is disabled and users are not able to invite new members. This limits signup to single-sign-on services like OAuth or LDAP.
+`true`: Allow team creation and account signup using email and password; “false”: Email signup is disabled and users are not able to invite new members. This limits signup to single-sign-on services like OAuth or LDAP.
 
 #### Sign In  
 
 **Allow Sign In With Email** (`"EnableSignInWithEmail": true`)  
 
-"true": Mattermost allows users to sign in using their email and password; "false": sign in with email is disabled and does not appear on the login screen.
+`true`: Mattermost allows users to sign in using their email and password; `false`: sign in with email is disabled and does not appear on the login screen.
 
 **Allow Sign In With Username** (`EnableSignInWithUsername": false`)  
 
-"true": Mattermost allows users to sign in using their username and password. This setting is typically only used when email verification is disabled; "false": sign in with username is disabled and does not appear on the login screen.
+`true`: Mattermost allows users to sign in using their username and password. This setting is typically only used when email verification is disabled; `false`: sign in with username is disabled and does not appear on the login screen.
 
 #### Notifications
 
 **Send Email Notifications** (`"SendEmailNotifications": false`)  
 
-"true": Enables sending of email notifications. “false”: Disables email notifications for developers who may want to skip email setup for faster development. Setting this to true removes the **Preview Mode: Email notifications have not been configured** banner (requires logging out and logging back in after setting is changed)
-
+`true`: Enables sending of email notifications. “false”: Disables email notifications for developers who may want to skip email setup for faster development. Setting this to true removes the **Preview Mode: Email notifications have not been configured** banner (requires logging out and logging back in after setting is changed)
 
 **Require Email Verification** (`"RequireEmailVerification": false`)  
 
-"true": Require email verification after account creation prior to allowing login; “false”: Users do not need to verify their email address prior to login. Developers may set this field to false so skip sending verification emails for faster development.
+`true`: Require email verification after account creation prior to allowing login; “false”: Users do not need to verify their email address prior to login. Developers may set this field to false so skip sending verification emails for faster development.
 
 **Notification Display Name** (`"FeedbackName": ""`)  
 
@@ -235,7 +230,7 @@ Port of SMTP email server.
 
 **Send Push Notifications** (`"SendPushNotifications": false`)  
 
-"true": Your Mattermost server sends mobile push notifications to the server specified in **PushNotificationServer**; "false": Mobile push notifications are disabled.
+`true`: Your Mattermost server sends mobile push notifications to the server specified in **PushNotificationServer**; `false`: Mobile push notifications are disabled.
 
 **Push Notification Server** (`"PushNotificationServer": ""`)  
 
@@ -306,7 +301,7 @@ The height to which profile pictures are resized after being uploaded via Accoun
 
 **Share Public File Link** (`"EnablePublicLink": true`)  
 
-"true": Allow users to share public links to files and images when previewing; “false”: The Get Public Link option is hidden from the image preview user interface.
+`true`: Allow users to share public links to files and images when previewing; “false”: The Get Public Link option is hidden from the image preview user interface.
 
 **Public Link Salt** (`"PublicLinkSalt": "A705AklYF8MFDOfcwh3I488G8vtLlVip"`)  
 
@@ -321,7 +316,7 @@ Settings to configure the console and log file output, detail level, format and 
 
 **Log To The Console** (`"EnableConsole": true`)  
 
-"true": Output log messages to the console based on **ConsoleLevel** option. The server writes messages to the standard output stream (stdout).
+`true`: Output log messages to the console based on **ConsoleLevel** option. The server writes messages to the standard output stream (stdout).
 
 **Console Log Level** (`"ConsoleLevel": "DEBUG"`)  
 
@@ -331,7 +326,7 @@ Level of detail at which log events are written to the console when **EnableCons
 
 **Log To File** (`"EnableFile": true`)  
 
-"true":  Log files are written to files specified in **FileLocation**.
+`true`:  Log files are written to files specified in **FileLocation**.
 
 **File Log Level** (`"FileLevel": "INFO"`)  
 
@@ -359,7 +354,7 @@ Settings to enable API rate limiting and configure requests per second, user ses
 
 **Enable Rate Limiter** (`"EnableRateLimiter": true`)  
 
-"true": APIs are throttled at the rate specified by **PerSec**.
+`true`: APIs are throttled at the rate specified by **PerSec**.
 
 **Number Of Queries Per Second** (`"PerSec": 10`)  
 
@@ -371,7 +366,7 @@ Maximum number of user sessions connected to the system as determined by **VaryB
 
 **Vary By Remote Address** (`"VaryByRemoteAddr": true`)  
 
-"true": Rate limit API access by IP address.
+`true`: Rate limit API access by IP address.
 
 **Vary By HTTP Header** (`"VaryByHeader": ""`)  
 
@@ -383,11 +378,11 @@ Settings to configure the name and email privacy of users on your system.
 
 **Show Email Address** (`"ShowEmailAddress": true`)  
 
-"true": Show email address of all users; "false": Hide email address of users from other users in the user interface, including team owners and team administrators. This is designed for managing teams where users choose to keep their contact information private.
+`true`: Show email address of all users; `false`: Hide email address of users from other users in the user interface, including team owners and team administrators. This is designed for managing teams where users choose to keep their contact information private.
 
 **Show Full Name** (`"ShowFullName": true`)  
 
-"true": Show full name of all users; “false”: hide full name of users from other users including team owner and team administrators.
+`true`: Show full name of all users; “false”: hide full name of users from other users including team owner and team administrators.
 
 ### GitLab Settings
 
@@ -395,15 +390,15 @@ Settings to configure account and team creation using GitLab OAuth.
 
 **Enable Sign Up With GitLab** (`"Enable": false`)  
 
-"true": Allow team creation and account signup using GitLab OAuth. To configure, input the **Secret** and **Id** credentials. 
+`true`: Allow team creation and account signup using GitLab OAuth. To configure, input the **Secret** and **Id** credentials. 
 
 **Id** (`"Id": ""`)  
 
-Obtain this value by logging into your GitLab account. Go to Profile Settings -> Applications -> New Application, enter a Name, then enter Redirect URLs `https://<your-mattermost-url>/login/gitlab/complete` (example: `https://example.com:8065/login/gitlab/complete`) and `https://<your-mattermost-url>/signup/gitlab/complete`.
+Obtain this value by logging into your GitLab account. Go to Profile Settings > Applications > New Application, enter a Name, then enter Redirect URLs `https://<your-mattermost-url>/login/gitlab/complete` (example: `https://example.com:8065/login/gitlab/complete`) and `https://<your-mattermost-url>/signup/gitlab/complete`.
 
 **Secret** (`"Secret": ""`)  
 
-Obtain this value by logging into your GitLab account. Go to Profile Settings -> Applications -> New Application, enter a Name, then enter Redirect URLs `https://<your-mattermost-url>/login/gitlab/complete` (example: `https://example.com:8065/login/gitlab/complete`) and `https://<your-mattermost-url>/signup/gitlab/complete`.
+Obtain this value by logging into your GitLab account. Go to Profile Settings > Applications > New Application, enter a Name, then enter Redirect URLs `https://<your-mattermost-url>/login/gitlab/complete` (example: `https://example.com:8065/login/gitlab/complete`) and `https://<your-mattermost-url>/signup/gitlab/complete`.
 
 **Auth Endpoint** (`"AuthEndpoint": ""`)  
 
@@ -448,7 +443,7 @@ Settings used to enable and configure LDAP authentication with Mattermost. Avail
 
 **Enable Login With LDAP** (`"Enable": false`)  
 
-"true": Mattermost allows login using LDAP.
+`true`: Mattermost allows login using LDAP.
 
 **LDAP Server** (`"LdapServer": ""`)  
 
@@ -506,7 +501,7 @@ System Console allows an IT Admin to update settings defined in `config.json`. H
 
 **Enable OAuth Service Provider** (`"EnableOAuthServiceProvider": false`)  
 
-"true": Allow Mattermost to function as an OAuth provider, allowing 3rd party apps access to your user store for authentication.
+`true`: Allow Mattermost to function as an OAuth provider, allowing 3rd party apps access to your user store for authentication.
 
 **WebSocket Secure Port** (`"WebsocketSecurePort" : 443`)  
 
