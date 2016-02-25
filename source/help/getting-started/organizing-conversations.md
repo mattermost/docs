@@ -30,3 +30,5 @@ Click the channel name at the top of the center pane to access the drop-down men
 
 #### Deleting a Channel
 Click the channel name at the top of the center pane to access the drop-down menu, then click **Delete Channel**. Channel owners can delete the Public Channels or Private Groups they’ve created. Team and System Admins can delete any channel or group.
+
+When a channel is deleted it is removed from the user interface, but an archived copy exists on the server in case it is needed for audit reasons later. For this reason, the URL of a newly created channel cannot be the same URL name as a deleted channel. 
