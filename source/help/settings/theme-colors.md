@@ -49,7 +49,7 @@ ___
 
 ![theme3](../../images/theme3.PNG)
 ```
-#262626,#ffffff,#363636,#ffffff,#cccccc,#525252,#7e9949,#ffffff,#99cb3f,#b8b884,#7e9949,#ffffff,#ffffff,#444444,#90ad58,#90ad58,#90ad58,#ffffff,#90ad58,#ffffff,monokai
+#262626,#ffffff,#363636,#ffffff,#cccccc,#525252,#7e9949,#ffffff,#99cb3f,#b8b884,#7e9949,#ffffff,#ffffff,#444444,#90ad58,#54850c,#90ad58,#ffffff,#90ad58,#ffffff,monokai
 ```
 ___
 
