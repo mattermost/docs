@@ -69,13 +69,13 @@ Set the number of minutes to cache a session in memory.
 
 **Enable Incoming Webhooks** (`"EnableIncomingWebhooks": true`)    
 
-Developers building integrations can create webhook URLs for channels and private groups. Please see http://mattermost.org/webhooks to learn about creating webhooks, view samples, and to let the community know about integrations you have built. `true`: Incoming webhooks will be allowed. To manage incoming webhooks, go to **Account Settings > Integrations**. The webhook URLs created in Account Settings can be used by external applications to create posts in any channels or private groups that you have access to; “false”: The Integrations > Incoming Webhooks section of Account Settings is hidden and all incoming webhooks are disabled.
+Developers building integrations can create webhook URLs for channels and private groups. Please see http://mattermost.org/webhooks to learn about creating webhooks, view samples, and to let the community know about integrations you have built. `true`: Incoming webhooks will be allowed. To manage incoming webhooks, go to **Account Settings > Integrations**. The webhook URLs created in Account Settings can be used by external applications to create posts in any channels or private groups that you have access to; `false`: The Integrations > Incoming Webhooks section of Account Settings is hidden and all incoming webhooks are disabled.
 
 Security note: By enabling this feature, users may be able to perform [phishing attacks](https://en.wikipedia.org/wiki/Phishing) by attempting to impersonate other users. To combat these attacks, a BOT tag appears next to all posts from a webhook. Enable at your own risk.
 
 **Enable Outgoing Webhooks** (`"EnableOutgoingWebhooks": true`)    
 
-Developers building integrations can create webhook tokens for public channels. Trigger words are used to fire new message events to external integrations. For security reasons, outgoing webhooks are only available in public channels. Please see our [documentation page](https://github.com/mattermost/platform/blob/master/doc/integrations/webhooks/Outgoing-Webhooks.md) to learn about creating webhooks and view samples. `true`: Outgoing webhooks will be allowed. To manage outgoing webhooks, go to **Account Settings > Integrations**; “false”: The Integrations > Outgoing Webhooks section of Account Settings is hidden and all outgoing webhooks are disabled.
+Developers building integrations can create webhook tokens for public channels. Trigger words are used to fire new message events to external integrations. For security reasons, outgoing webhooks are only available in public channels. Please see our [documentation page](https://github.com/mattermost/platform/blob/master/doc/integrations/webhooks/Outgoing-Webhooks.md) to learn about creating webhooks and view samples. `true`: Outgoing webhooks will be allowed. To manage outgoing webhooks, go to **Account Settings > Integrations**; `false`: The Integrations > Outgoing Webhooks section of Account Settings is hidden and all outgoing webhooks are disabled.
 
 Security note: By enabling this feature, users may be able to perform [phishing attacks](https://en.wikipedia.org/wiki/Phishing) by attempting to impersonate other users. To combat these attacks, a BOT tag appears next to all posts from a webhook. Enable at your own risk.
 
@@ -89,11 +89,11 @@ Slash commands send events to external integrations that send a response back to
 
 **Enable Overriding Usernames from Webhooks and Slash Commands** (`"EnablePostUsernameOverride": false`)  
 
-`true`: Webhooks will be allowed to change the username they are posting as; “false”: Webhooks can only post as the username they were set up with. See http://mattermost.org/webhooks for more details.
+`true`: Webhooks will be allowed to change the username they are posting as; `false`: Webhooks can only post as the username they were set up with. See http://mattermost.org/webhooks for more details.
 
 **Enable Overriding Icon from Webhooks and Slash Commands** (`"EnablePostIconOverride": false`)  
 
-`true`: Webhooks will be allowed to change the icon they post with; “false”: Webhooks can only post with the profile picture of the account they were set up with. See http://mattermost.org/webhooks for more details.
+`true`: Webhooks will be allowed to change the icon they post with; `false`: Webhooks can only post with the profile picture of the account they were set up with. See http://mattermost.org/webhooks for more details.
 
 ### Team Settings
 
@@ -109,11 +109,11 @@ Maximum number of users per team, including both active and inactive users.
 
 **Enable Team Creation** (`"EnableTeamCreation": true`)  
 
-`true`: Ability to create a new team is enabled for all users; “false”: the ability to create teams is disabled. The Create A New Team button is hidden in the main menu UI.
+`true`: Ability to create a new team is enabled for all users; `false`: the ability to create teams is disabled. The Create A New Team button is hidden in the main menu UI.
 
 **Enable User Creation** (`"EnableUserCreation": true`)  
 
-`true`: Ability to create new accounts is enabled via inviting new members or sharing the team invite link; “false”: the ability to create accounts is disabled. The create account button displays an error when trying to signup via an email invite or team invite link.
+`true`: Ability to create new accounts is enabled via inviting new members or sharing the team invite link; `false`: the ability to create accounts is disabled. The create account button displays an error when trying to signup via an email invite or team invite link.
 
 **Restrict Creation To Domains** (`"RestrictCreationToDomains": ""`)    
 
@@ -121,7 +121,7 @@ Teams and user accounts can only be created by a verified email from this list o
 
 **Restrict Team Names** (`"RestrictTeamNames": true`)  
 
-`true`: Newly created team names cannot contain the following restricted words: www, web, admin, support, notify, test, demo, mail, team, channel, internal, localhost, dockerhost, stag, post, cluster, api, oauth; “false”: Newly created team names are not restricted. 
+`true`: Newly created team names cannot contain the following restricted words: www, web, admin, support, notify, test, demo, mail, team, channel, internal, localhost, dockerhost, stag, post, cluster, api, oauth; `false`: Newly created team names are not restricted. 
 
 **Enable Team Directory** (`"EnableTeamListing": false`)  
 
@@ -164,7 +164,7 @@ Settings to configure email signup, notifications, security, and SMTP options.
 
 **Allow Sign Up With Email** (`"EnableSignUpWithEmail": true`)  
 
-`true`: Allow team creation and account signup using email and password; “false”: Email signup is disabled and users are not able to invite new members. This limits signup to single-sign-on services like OAuth or LDAP.
+`true`: Allow team creation and account signup using email and password; `false`: Email signup is disabled and users are not able to invite new members. This limits signup to single-sign-on services like OAuth or LDAP.
 
 #### Sign In  
 
@@ -180,11 +180,11 @@ Settings to configure email signup, notifications, security, and SMTP options.
 
 **Send Email Notifications** (`"SendEmailNotifications": false`)  
 
-`true`: Enables sending of email notifications. “false”: Disables email notifications for developers who may want to skip email setup for faster development. Setting this to true removes the **Preview Mode: Email notifications have not been configured** banner (requires logging out and logging back in after setting is changed)
+`true`: Enables sending of email notifications. `false`: Disables email notifications for developers who may want to skip email setup for faster development. Setting this to true removes the **Preview Mode: Email notifications have not been configured** banner (requires logging out and logging back in after setting is changed)
 
 **Require Email Verification** (`"RequireEmailVerification": false`)  
 
-`true`: Require email verification after account creation prior to allowing login; “false”: Users do not need to verify their email address prior to login. Developers may set this field to false so skip sending verification emails for faster development.
+`true`: Require email verification after account creation prior to allowing login; `false`: Users do not need to verify their email address prior to login. Developers may set this field to false so skip sending verification emails for faster development.
 
 **Notification Display Name** (`"FeedbackName": ""`)  
 
@@ -301,7 +301,7 @@ The height to which profile pictures are resized after being uploaded via Accoun
 
 **Share Public File Link** (`"EnablePublicLink": true`)  
 
-`true`: Allow users to share public links to files and images when previewing; “false”: The Get Public Link option is hidden from the image preview user interface.
+`true`: Allow users to share public links to files and images when previewing; `false`: The Get Public Link option is hidden from the image preview user interface.
 
 **Public Link Salt** (`"PublicLinkSalt": "A705AklYF8MFDOfcwh3I488G8vtLlVip"`)  
 
@@ -382,7 +382,7 @@ Settings to configure the name and email privacy of users on your system.
 
 **Show Full Name** (`"ShowFullName": true`)  
 
-`true`: Show full name of all users; “false”: hide full name of users from other users including team owner and team administrators.
+`true`: Show full name of all users; `false`: hide full name of users from other users including team owner and team administrators.
 
 ### GitLab Settings
 
