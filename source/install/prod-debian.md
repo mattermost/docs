@@ -205,6 +205,27 @@ Note: This install guide has been generously contributed by the Mattermost commu
         * ``` sudo chmod +x /etc/init.d/mattermost```
         
 9. On reboot, systemd will generate a unit file from the headers in this init script and install it in `/run/systemd/generator.late/`
+
+Note: This setup can also be done using a systemd unit, usable for non-Debian systems, such as Arch Linux. The unit file is as follows:
+
+```
+# cat /etc/systemd/system/mattermost.service 
+[Unit]
+Description=Mattermost
+After=network.target
+
+[Service]
+User=mattermost
+ExecStart=/home/mattermost/mattermost/bin/platform
+WorkingDirectory=/home/mattermost/mattermost
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
+# systemctl start mattermost
+# systemctl enable mattermost
+```
   
 ### Set up Nginx Server
 1. For the purposes of this guide we will assume this server has an IP address of 10.10.10.3
