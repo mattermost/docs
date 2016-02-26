@@ -31,7 +31,7 @@ You may change your password if you’ve logged in by email. If you are signing 
 Allows user to switch between single-sign-on option, such as GitLab authentication, and email authentication. 
 
 #### View Access History
-Access History displays a chronological list of the last 20 login and logout attempts, channel creations and deletions, account settings changes, or channel setting modifications made on your account. Click **More Info** to view the IP address and session ID of each action.
+Access History displays a chronological list of the last 20 login and logout attempts, channel creations and deletions, account settings changes, or channel setting modifications made on your account. The details of the Session ID (unique identifier for each Mattermost browser session) and IP Address of the action is recorded for audit log purposes.
 
 #### View and Logout of Active Sessions
 Sessions are created when you log in with your email and password to a new browser on a device. Sessions let you use Mattermost for up to 30 days without having to log in again. Click **Logout** on an active session if you want to revoke automatic login privileges for a specific browser or device. Click **More Info** to view details on browser and operating system.
