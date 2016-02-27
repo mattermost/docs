@@ -2,6 +2,10 @@
 
 Mattermost terminology used across the project. 
 
+#### APR
+
+Acronym for [Accepting Pull Request](http://docs.mattermost.com/process/accepting-pull-request.html) tickets, which are vetted changes to the source code open for community contributions.  
+
 #### Bug
 
 A defect in the code that varies from specification. Changes required to accomodate unsupported 3rd party software (such as browsers or operating systems) are not considered bugs, they are considered improvements. 
