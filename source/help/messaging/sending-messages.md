@@ -10,7 +10,7 @@ Posts can be considered parent messages. They are the messages that often start 
 #### Replies
 Reply to a message by clicking the reply icon next to any message text. This action opens the right-hand-side (RHS) where you can see the message thread, then compose and send your reply. Replies are indented slightly in the center pane to indicate that they are child messages of a parent post.
 
-## Sending a Message
+## Posting a Message
 Write a message by typing into the text input box, then press **ENTER** to send it. Use **Shift + ENTER** to create a new line without sending a message. To send messages by pressing **Ctrl+Enter** go to **Main Menu > Account Settings > Send messages on Ctrl + Enter**.
 
 ## Editing a Message
@@ -18,3 +18,6 @@ Edit a message by clicking the **[...]** icon next to any message text that youâ
 
 ## Deleting a message
 Delete a message by clicking the **[...]** icon next to any message text that youâ€™ve composed, then click **Delete**. System and Team Admins can delete any message on their system or team.
+
+## Linking to a message
+The **Permalink** feature creates a link to any message. Sharing this link with other users in the channel lets them view the linked message in the Message Archives. Users who are not a member of the channel where the message was posted cannot view the permalink. Get the permalink to any message by clicking the **[...]** icon next to the message text  > **Permalink** > **Copy Link**.
