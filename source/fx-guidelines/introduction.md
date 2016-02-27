@@ -1,23 +1,31 @@
-# Introduction
-___
+# Fan eXperience Guidelines (FX Guidelines)
 
-The purpose of the Mattermost FX Guidelines doc is to align our team around a set of standards to reduce ambiguity in building our fan experience and file tickets to course correct when we deviate from the standards we set.
+The purpose of the Mattermost Fan eXperience Guidelines ("FX Guidelines") is to deliver a level of usability and consistency that turns users of Mattermost software into fans of the Mattermost experience. 
 
-## Quality Gates
+## Design Principles
 
-As our team and service evolve, the number and precision level of our standards will also increase, which in turn increases product quality.
+“Fast, Obvious, and Forgiving” – These principles define the standard we’re setting for the Mattermost experience: 
 
-___
+### Fast
 
-## Principles
+Fast has two parts: being _responsive_ and being _quick_.
 
-As our team and service evolve, the number and precision level of our standards will also increase, which in turn increases product quality.
+**Responsive** means when a user clicks, taps, types or otherwise enters input we give immediate feedback that the input is received and something is happening. It could be a spinner animation, or just some text saying “Loading”, but something always responds to the user.
 
-#### Responsive (Fast)
-Any action by a fan always creates a response to let the fan know something is happening. Experience should feel quick and snappy.
+**Quick** means things happen as soon as they can. Loading pages, sending messages, receiving notifications and other vital actions should be automatically benchmarked for performance. Bugs should be opened on performance regressions.
 
-#### Consistent (Obvious)
-Fans should have a comfortable, familiar experience. Don’t force the fan to re-learn by having two different ways of doing similar actions, or displaying the same information
+### Obvious
 
-#### Easy (Forgiving)
-Common functions should be obvious and quick to find. Advanced options should be possible to find after some logical searching, and not clutter the core experience.
+Obvious means users are never confused. Across product features, interface layout, labeling, help text, and documentation, it is critical that everything we offer makes sense in the mind of the user, even if it means oversimplifying how things technically work.
+
+If a user doesn’t understand how to use a feature, the all the underlying effort and code is wasted. The “Obvious” design principle also flows through to our [Documentation Guidelines](http://www.mattermost.org/documentation-guidelines/).
+
+Given [Hick’s Law](https://en.wikipedia.org/wiki/Hick%27s_law), core functionality should be apparent, and advanced functionality should be possible via sub-menus and well documented and tested. 
+
+Functionality that is not fundamental to the product purpose should be ruthlessly omitted. 
+
+### Forgiving
+
+Forgiving means there’s no such thing as user error–-it’s always the fault of the product. This mindset means we can fix problems coming from users making unexpected decisions. Fixes could be through user interface improvements, adjustments to help text, or helping users recover when things go wrong–adding undelete, undo and rolling back for example.
+
+Forgiving extends to compatibility as well, and whether you’re working from a PC, phone or tablet, Mattermost should adjust to reasonably serve your device, screen size, and major browser type.
