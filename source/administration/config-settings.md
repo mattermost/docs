@@ -247,7 +247,7 @@ Because Apple requires encryption keys used to connect to iOS apps be compiled i
 
 Therefore, there are two options for setting up the MPNS to offer push notifications: 
 
-- **Option A) Compile and deploy your own MPNS and mobile apps**
+- **Option A) Compile and deploy your own MPNS and mobile apps**  
 
    If your IT policy requires use of an Enterprise AppStore, or if you have expertise in mobile app development, you may choose to compile your own MPNS using the [open source repository](https://github.com/mattermost/push-proxy) provided, along with compiling the official open source [iOS app](https://github.com/mattermost/ios) or [Android app](https://github.com/mattermost/android). 
 
@@ -257,7 +257,7 @@ Therefore, there are two options for setting up the MPNS to offer push notificat
    Disadvantages:
    - Requires time and effort - An in-house developer would be required to properly compile, deploy and maintain the MPNS and mobile apps  
 
-- **Option B) Use a hosted MPNS service**
+- **Option B) Use a hosted MPNS service**  
 
    Instead of compiling your own MPNS, you can put the address of a hosted MPNS supporting SSL into the **Push Notification Server** field inside the System Console and have your users install the iOS or Android native applications connected to the hosted service. 
    
@@ -266,14 +266,37 @@ Therefore, there are two options for setting up the MPNS to offer push notificat
    
    Disadvantages:
    - Requires trusting provider of hosted MPNS service - With this option, Step 2 happens outside of your firewall over an encrypted SSL connection which terminates at the MPNS. This means the MPNS decrypts the notification and re-encrypts it to send on to Step 3, so there is a moment when an unencrypted push notification message exists in the MPNS service. By default this is not an issue, since by default push notification messages only include generic descriptions and the names of users and channels (e.g. "@bob mentioned you in Town Square channel"). However, if in future you decide to enable push notifications to contain the contents from messages, you may need to review your internal IT policies to see whether Option A or Option B is most appropriate.
-   
+
+#### Hosted production-quality, encrypted push notification service for Enterprise Edition customers
+
 Subscriptions to Mattertmost Enterprise Edition include the use of a hosted, production-quality MPNS service with SSL, available at `https://push.mattermost.com`, which connects to the [official Mattermost iOS application on iTunes](https://itunes.apple.com/us/app/mattermost/id984966508?mt=8) and the official Mattermost Android application in the Google Play Store (release pending).
+
+#### Hosted test-quality, unencrypted push notification service for Team Edition users 
 
 For users of Mattermost Team Edition, an additional MPNS service for testing server setups connected to the same mobile applications is available at `http://push-test.mattermost.com`. The test service can be used prior to compiling your own components from the open source repositories and does not include encryption for push notifications and does not offer a production-quality service-level agreement. 
 
 If you choose to use the test service day-to-day, please subscribe to the [Mattermost announcement mailing list](https://mattermost.us11.list-manage.com/subscribe?u=6cdba22349ae374e188e7ab8e&id=2add1c8034) for updates on availability. 
 
-Some users of Mattermost Team Edition have requested Mattermost.com provide a paid service for encrypted push notifications, as an alternative to compiling their own MPNS and mobile apps from the source code provided. If you're interested in such a service, please mail commercial@mattermost.com to be added to the wait list. 
+Some users of Mattermost Team Edition have requested Mattermost.com provide a paid service for encrypted push notifications, as an alternative to compiling their own MPNS and mobile apps from the source code provided. If you're interested in such a service, please mail commercial@mattermost.com to be notified when it is available. 
+
+
+#### Troubleshooting Push Notifications 
+
+To confirm push notifications are working: 
+
+1. Set **System Console** > **Email Settings** > **Send Push Notifications** to `true`.
+2. Set **System Console** > **Email Settings** > **Push Notification Server** to `http://push.mattermost.com` if using Enterprise Edition or if using Team Edition, set the value to `http://push-test.mattermost.com`.
+4. Download and install [the Mattermost iOS app from iTunes](https://itunes.apple.com/us/app/mattermost/id984966508?mt=8) on your iPhone or iPad and log in to your team site. 
+5. Close the app on your device, and close any other connections to your team site.
+6. Wait 5 minutes and have another team member send you a direct messages, which should trigger a push notification to the Mattermost app on your mobile device. 
+7. You should receive a push notification on your device alerting you of the direct message. 
+
+If you did not receive an alert: 
+
+1. Set **System Console** > **Log Settings** > **File Log Level** to `DEBUG` (make sure to set this back to `INFO` after troubleshooting to save disk space). 
+2. Repeat the above steps
+3. Go to **System Console** > **OTHER** > **Logs** and copy the log output into a file 
+4. For Enterprise Edition customers, [submit a support request with the file attached](https://mattermost.zendesk.com/hc/en-us/requests/new). For Team Edition users, please start a thread in the [Troubleshooting forum](https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150) for peer-to-peer support. 
 
 ### File Settings
 
