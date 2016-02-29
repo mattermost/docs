@@ -109,7 +109,8 @@ Create a line by using three `*`, `_`, or `-`.
 Create block quotes using `>`.
 
 `> block quotes` renders as:
-> block quotes
+
+![block quotes](../../images/blockQuotes.PNG)
 
 ## Lists  
 
