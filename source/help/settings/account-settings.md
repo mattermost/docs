@@ -49,7 +49,7 @@ A notification sound plays for all Mattermost posts that would fire a desktop no
 Email notifications are sent for mentions and direct messages after you’ve been offline for more than 60 seconds or away from Mattermost for more than 5 minutes. Change the email where notifications are sent from **Account Settings > General > Email**.
 
 #### Words That Trigger Mentions
-By default, you will receive mention notifications from your non-case sensitive username, mentioned @username, @all, and @channel. Customize the words that trigger mentions by typing them in the input box. This is useful if you want to be notified of all posts on a certain topic, for example, “marketing”.
+By default, you will receive mention notifications from your non-case sensitive username, mentioned @username and @channel. Customize the words that trigger mentions by typing them in the input box. This is useful if you want to be notified of all posts on a certain topic, for example, “marketing”.
 
 ## Integrations
 Settings to configure incoming and outgoing webhooks for your team.
