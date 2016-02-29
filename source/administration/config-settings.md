@@ -285,7 +285,8 @@ Some users of Mattermost Team Edition have requested Mattermost.com provide a pa
 To confirm push notifications are working: 
 
 1. Set **System Console** > **Email Settings** > **Send Push Notifications** to `true`.
-2. Set **System Console** > **Email Settings** > **Push Notification Server** to `http://push.mattermost.com` if using Enterprise Edition or if using Team Edition, set the value to `http://push-test.mattermost.com`.
+2. Set **System Console** > **Email Settings** > **Send Email Notifications** to `true`.
+3. Set **System Console** > **Email Settings** > **Push Notification Server** to `http://push.mattermost.com` if using Enterprise Edition or if using Team Edition, set the value to `http://push-test.mattermost.com`.
 4. Download and install [the Mattermost iOS app from iTunes](https://itunes.apple.com/us/app/mattermost/id984966508?mt=8) on your iPhone or iPad and log in to your team site. 
 5. Close the app on your device, and close any other connections to your team site.
 6. Wait 5 minutes and have another team member send you a direct messages, which should trigger a push notification to the Mattermost app on your mobile device. 
