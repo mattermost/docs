@@ -9,7 +9,7 @@ Settings to configure name, username, nickname, email and profile picture.
 Full names appear in the Direct Messages member list and team management modal. By default, you will receive mention notifications when someone types your first name. Entering a full name is optional.
 
 #### Username
-Usernames appear next to all posts. Pick something easy for teammates to recognize and recall. By default, you will receive mention notifications when someone types your username. Changing your username will add your old username to *Words that Trigger Mentions* in the Notifications tab of Account Settings, and past mentions of your old username can be searched using the recent mentions button next to the search bar. Your username is not updated in messages already posted to maintain message integrity.  
+Usernames appear next to all posts. Pick something easy for teammates to recognize and recall. By default, you will receive mention notifications when someone types your username. In order to maintain message integrity, changing your username does not update @mentions in messages already posted.  
 
 #### Nickname
 Nicknames appear in the Direct Messages member list and team management modal. You will not receive mention notifications when someone types your nickname unless you add it to the *Words That Trigger Mentions* in **Account Settings > Notifications**.
@@ -49,7 +49,7 @@ A notification sound plays for all Mattermost posts that would fire a desktop no
 Email notifications are sent for mentions and direct messages after you’ve been offline for more than 60 seconds or away from Mattermost for more than 5 minutes. Change the email where notifications are sent from **Account Settings > General > Email**.
 
 #### Words That Trigger Mentions
-By default, you will receive mention notifications from your non-case sensitive username, mentioned @username, @all, and @channel. Customize the words that trigger mentions by typing them in the input box. This is useful if you want to be notified of all posts on a certain topic, for example, “marketing”.
+By default, you will receive mention notifications from your non-case sensitive username, mentioned @username and @channel. Customize the words that trigger mentions by typing them in the input box. This is useful if you want to be notified of all posts on a certain topic, for example, “marketing”.
 
 ## Integrations
 Settings to configure incoming and outgoing webhooks for your team.
