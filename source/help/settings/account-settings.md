@@ -9,7 +9,7 @@ Settings to configure name, username, nickname, email and profile picture.
 Full names appear in the Direct Messages member list and team management modal. By default, you will receive mention notifications when someone types your first name. Entering a full name is optional.
 
 #### Username
-Usernames appear next to all posts. Pick something easy for teammates to recognize and recall. By default, you will receive mention notifications when someone types your username. Changing your username will add your old username to *Words that Trigger Mentions* in the Notifications tab of Account Settings, and past mentions of your old username can be searched using the recent mentions button next to the search bar. Your username is not updated in messages already posted to maintain message integrity.  
+Usernames appear next to all posts. Pick something easy for teammates to recognize and recall. By default, you will receive mention notifications when someone types your username. In order to maintain message integrity, changing your username does not update @mentions in messages already posted.  
 
 #### Nickname
 Nicknames appear in the Direct Messages member list and team management modal. You will not receive mention notifications when someone types your nickname unless you add it to the *Words That Trigger Mentions* in **Account Settings > Notifications**.
