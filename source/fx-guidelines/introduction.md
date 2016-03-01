@@ -18,7 +18,7 @@ Fast has two parts: being _responsive_ and being _quick_.
 
 Obvious means users are never confused. Across product features, interface layout, labeling, help text, and documentation, it is critical that everything we offer makes sense in the mind of the user, even if it means oversimplifying how things technically work.
 
-If a user doesn’t understand how to use a feature, the all the underlying effort and code is wasted. The “Obvious” design principle also flows through to our [Documentation Guidelines](http://www.mattermost.org/documentation-guidelines/).
+If a user doesn’t understand how to use a feature, all the underlying effort and code is wasted. The “Obvious” design principle also flows through to our [Documentation Guidelines](http://www.mattermost.org/documentation-guidelines/).
 
 Given [Hick’s Law](https://en.wikipedia.org/wiki/Hick%27s_law), core functionality should be apparent, and advanced functionality should be possible via sub-menus and well documented and tested. 
 
