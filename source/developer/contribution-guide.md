@@ -59,4 +59,5 @@ If you've included your mailing address in Step 1, you may receive a [Limited Ed
 ### Approved Reviewers
 
 **Approved reviewers include**: coreyhulen, crspeller, hmhealey, jwilander  
+
 **Approved seconders include**: coreyhulen, crspeller, hmhealey, jwilander
