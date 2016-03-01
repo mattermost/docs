@@ -22,6 +22,7 @@ This site offers documentation on User Help, Installation, Deployment, Administr
 .. toctree::
    :maxdepth: 1
    :caption: Getting Started
+   :glob:
 
    help/getting-started/signing-in.md
    help/getting-started/messaging-basics.md
@@ -35,6 +36,7 @@ This site offers documentation on User Help, Installation, Deployment, Administr
 .. toctree::
    :maxdepth: 1
    :caption: Messaging
+   :glob:
 
    help/messaging/sending-messages.md
    help/messaging/reading-messages.md
@@ -47,6 +49,7 @@ This site offers documentation on User Help, Installation, Deployment, Administr
 .. toctree::
    :maxdepth: 1
    :caption: Settings
+   :glob:
 
    help/settings/account-settings.md
    help/settings/theme-colors.md
