@@ -50,7 +50,6 @@ The Mattermost roadmap does not currently include production support for Fedora,
 
 Deployments requiring searching in Chinese, Japanese and Korean languages require MySQL 5.7.6+ and the configuration of [ngram Full-Text parser](https://dev.mysql.com/doc/refman/5.7/en/fulltext-search-ngram.html). See [CJK discussion](https://github.com/mattermost/platform/issues/2033#issuecomment-183872616) for details. 
 
-
 ### Hardware Requirements 
 
 Usage of CPU, RAM and storage space can vary significantly based on user behavior. For deployments larger than 500 users, it's highly recommended usage patterns in a small pilot deployment representative of your large organization is observed before rolling out the full scale service. 
@@ -65,42 +64,28 @@ Most small to medium Mattermost team deployments can be supported on a single se
 
 Notes: 
 
+1. Hardware requirements for larger deployments should be extrapolated from initial deployments and the guidance provided here. 
 1. Storage recommendation is based on storing 3 years of archives with moderate file sharing. 
 2. Solid-state storage (SDD) can be used in place of disk storage to improve database performance when concurrency is high. 
 3. Team deployments assume registered users are divided into teams of 10-100. 
-
-#### Hardware Sizing for Enterprise Deployments (Single Server)
-
-Most small to medium Mattermost enterprise deployments can be supported on a single server with the following specifications: 
-
-- 250-500 users - 2 CPUs (2GHz or higher) with Hyper-Threading, 4GB RAM, and 90-180GB SDD storage
-- 500-1,000 users - 4 CPUs (2.8GHz or higher) with Hyper-Threading, 8GB RAM, and 180-360GB SDD storage
-- 1,000-2,000 users - 4 CPUs (2.8GHz or higher) with Hyper-Threading, 8GB RAM, and 360-720GB SDD storage
-- 2,000-5,000 users - 8 CPUs (2.8GHz or higher) with Hyper-Threading, 16GB RAM, and 720-1800GB SDD storage
-- 5,000-10,000 users - 8 CPUs (2.8GHz or higher) with Hyper-Threading, 16GB RAM, and 1800-3600GB SDD storage
-- 10,000-20,000 users - 16 CPUs (2.8GHz or higher) with Hyper-Threading, 32GB RAM, and 3.6-7.2TB SDD storage
-
-Notes:
-
-1. Storage recommendation is based on storing 3 years of archives with moderate file sharing plus a 2x safety factor.
-2. Regular harddrives can be used in place of solid state drives (SDDs) if high concurrent usages is not anticipated. 
 
 #### Hardware Sizing for Enterprise Deployments (Multi-Server)
 
 For enterprise deployments of 10,000-20,000 registered users with moderate usage and a peak of 2,000-4,000 concurrent users, the following hardware deployment configurations are recommended for redundant, highly available configurations: 
 
 **Proxy server**
-- One server with 8-16 CPU cores supporting hyper threading, 16-32 GB, SSD drive with at least 4GB of storage
+- One server with 4-8 CPU cores supporting Hyper-Threading, 16-32 GB, SSD drive with at least 4GB of storage
+- (Optional) Add one additional identical server for high availability mode, where one Mattermost server can be disabled or upgraded without interrupting service quality). Second server should be sized to carry the full load of the first server so performance does not degrade when the first server is taken offline. 
 
 **Mattermost server** (1 to 2 depending on high availability is desired)
-- One server with 8-16 CPU cores supporting hyper threading, 16-32GB memory, SSD drive with at least 4GB storage. 
+- One server with 4-8 CPU cores supporting Hyper-Threading, 16-32GB memory, SSD drive with at least 4GB storage. 
 - (Optional) Add one additional identical server for high availability mode, where one Mattermost server can be disabled or upgraded without interrupting service quality). Second server should be sized to carry the full load of the first server so performance does not degrade when the first server is taken offline. 
 
 **Network Attached Storage** 
 - One NAS server with 3.6-7.2TB of storage (based on moderate storage of 10MB per user per month times 20,000 users times 3 years of history, times 2x safety factor) or sized appropriately for your desired usage and redundancy estimates. 
 
 **Database server** (2 recommended for redundancy)
-- One database server with 8-16 CPU cores supporting hyper threading, 16-32GB memory, SSD drive with at least 100GB of storage. (Recommended) 
+- One database server with 8-16 CPU cores supporting Hyper-Threading, 16-32GB memory, SSD drive with at least 100GB of storage. (Recommended) 
 - (Recommended) Add one identical database server to setup a Master-Slave configuration where the master can failover to slave with minimal disruption to service.  
 
 Notes: 
