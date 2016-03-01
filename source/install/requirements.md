@@ -84,7 +84,7 @@ For enterprise deployments of 10,000-20,000 registered users with moderate usage
 - (Optional) Add one additional identical server for high availability mode, where one Mattermost server can be disabled or upgraded without interrupting service quality). Second server should be sized to carry the full load of the first server so performance does not degrade when the first server is taken offline. 
 
 **Network Attached Storage** 
-- One NAS server with 3.6-7.2TB of storage (based on moderate storage of 10MB per user per month times 20,000 users times 3 years of history, times 2x safety factor) or sized appropriately for your desired usage and redundancy estimates. 
+- One NAS server with 3.6-7.2TB of storage (based on moderate storage of 10MB per user per month times 20,000 users times 3 years of history, times 2x safety factor) or sized appropriately for your desired usage requirements. For high availability it is recommended you select a NAS server offering redundancy. 
 
 **Database server** (2 recommended for redundancy)
 - One database server with 8-16 CPU cores supporting Hyper-Threading, 16-32GB memory, SSD drive with at least 100GB of storage. (Recommended) 
