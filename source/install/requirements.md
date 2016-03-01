@@ -50,11 +50,11 @@ The Mattermost roadmap does not currently include production support for Fedora,
 
 Deployments requiring searching in Chinese, Japanese and Korean languages require MySQL 5.7.6+ and the configuration of [ngram Full-Text parser](https://dev.mysql.com/doc/refman/5.7/en/fulltext-search-ngram.html). See [CJK discussion](https://github.com/mattermost/platform/issues/2033#issuecomment-183872616) for details. 
 
-### Hardware Requirements 
+## Hardware Requirements 
 
 Usage of CPU, RAM and storage space can vary significantly based on user behavior. For deployments larger than 500 users, it's highly recommended usage patterns in a small pilot deployment representative of your large organization is observed before rolling out the full scale service. 
 
-#### Hardware Sizing for Team Deployments
+### Hardware Sizing for Team Deployments
 
 Most small to medium Mattermost team deployments can be supported on a single server with the following specifications based on registered users: 
 
@@ -66,10 +66,10 @@ Notes:
 
 1. Larger deployments should estimate utilization based on pilots represenative of full scale usage. 
 2. Storage recommendation is based on storing 3 years of archives with moderate file sharing. 
-3. Solid-state storage (SDD) can be used in place of disk storage to improve database performance when concurrency is high. 
+3. Solid-state storage drives (SDD) can be used in place of disk storage for higher concurrency. 
 4. Team deployments assume registered users are divided into teams of 10-100. 
 
-#### Hardware Sizing for Enterprise Deployments (Multi-Server)
+### Hardware Sizing for Enterprise Deployments (Multi-Server)
 
 Mattermost can also be configured with a redundant, highly available, highly scalable mode to support large organizations. The following is an example that can be scaled up or down in size: 
 
@@ -94,7 +94,7 @@ Notes:
 
 1. Regular hard drives can be used in place of solid-state hard drives if having top performance is not a priority. If using a mix of HDD and SSD drives, the greatest performance gain would come from using SDD in the database server. 
 
-#### Alternate Storage Calculations 
+### Alternate Storage Calculations 
 
 As an alternative to recommended storage sizing above, you can forecast your own storage usuage. Begin with a Mattermost server approximately 600 MB to 800 MB in size including operating system and database, then add the multiplied product of:
 
