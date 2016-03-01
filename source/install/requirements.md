@@ -60,18 +60,20 @@ Most small to medium Mattermost team deployments can be supported on a single se
 
 - 250-500 users - 2 CPUs (2GHz or higher) with Hyper-Threading, 4GB RAM, and 45-90GB HDD storage
 - 500-1,000 users - 4 CPUs (2.8GHz or higher) with Hyper-Threading, 8GB RAM, and 90-180GB HDD storage
-- 1,000-2,000 users - 4 CPUs (2.8GHz or higher) with Hyper-Threading, 16GB RAM, and 180-360GB HDD storage
+- 1,000-2,000 users - 4-8 CPUs (2.8GHz or higher) with Hyper-Threading, 16-32GB RAM, and 180-360GB HDD storage
 
 Notes: 
 
-1. Hardware requirements for larger deployments should be extrapolated from initial deployments and the guidance provided here. 
-1. Storage recommendation is based on storing 3 years of archives with moderate file sharing. 
-2. Solid-state storage (SDD) can be used in place of disk storage to improve database performance when concurrency is high. 
-3. Team deployments assume registered users are divided into teams of 10-100. 
+1. Larger deployments should estimate utilization based on pilots represenative of full scale usage. 
+2. Storage recommendation is based on storing 3 years of archives with moderate file sharing. 
+3. Solid-state storage (SDD) can be used in place of disk storage to improve database performance when concurrency is high. 
+4. Team deployments assume registered users are divided into teams of 10-100. 
 
 #### Hardware Sizing for Enterprise Deployments (Multi-Server)
 
-For enterprise deployments of 10,000-20,000 registered users with moderate usage and a peak of 2,000-4,000 concurrent users, the following hardware deployment configurations are recommended for redundant, highly available configurations: 
+Mattermost can also be configured with a redundant, highly available, highly scalable mode to support large organizations. The following is an example that can be scaled up or down in size: 
+
+For enterprise deployments of 10,000-20,000 registered users with moderate usage and a peak of 2,000-4,000 concurrent users, the following hardware deployment configurations are recommended: 
 
 **Proxy server**
 - One server with 4-8 CPU cores supporting Hyper-Threading, 16-32 GB, SSD drive with at least 4GB of storage
