@@ -5,9 +5,9 @@ ___
 
 Please see [Mattermost Deployment Overview](https://github.com/mattermost/docs/blob/master/source/install/network-diagram.png) for a summary of components listed here. 
 
-![image](https://cloud.githubusercontent.com/assets/177788/13199970/49774126-d7eb-11e5-8f07-95ddd33e9d72.png)
+![image](https://raw.githubusercontent.com/mattermost/docs/master/source/images/networkDiagram.PNG)
 
-[View Mattermost Network Diagram](https://cloud.githubusercontent.com/assets/177788/13199970/49774126-d7eb-11e5-8f07-95ddd33e9d72.png)
+[View Mattermost Network Diagram](https://raw.githubusercontent.com/mattermost/docs/master/source/images/networkDiagram.PNG)
 
 ## Software Requirements 
 
@@ -75,20 +75,20 @@ Mattermost can also be configured with a redundant, highly available, highly sca
 
 For enterprise deployments of 10,000-20,000 registered users with moderate usage and a peak of 2,000-4,000 concurrent users, the following hardware deployment configurations are recommended: 
 
-**Proxy server**
+**Proxy Server**
 - One server with 4-8 CPU cores supporting Hyper-Threading, 16-32 GB, SSD drive with at least 4GB of storage
 - (Optional) Add one additional identical server for high availability mode, where one Mattermost server can be disabled or upgraded without interrupting service quality). Second server should be sized to carry the full load of the first server so performance does not degrade when the first server is taken offline. 
 
-**Mattermost server** (1 to 2 depending on high availability is desired)
+**Mattermost Server** (1 to 2 depending on level of redundancy and high availability required)
 - One server with 4-8 CPU cores supporting Hyper-Threading, 16-32GB memory, SSD drive with at least 4GB storage. 
-- (Optional) Add one additional identical server for high availability mode, where one Mattermost server can be disabled or upgraded without interrupting service quality). Second server should be sized to carry the full load of the first server so performance does not degrade when the first server is taken offline. 
+- (Optional) Add one additional identical server for high availability mode, where one Mattermost server can be disabled or upgraded without interrupting service quality). Second server should be sized to carry the full load of the first server so performance does not degrade when the first server is taken offline. _Note: The high availability option is available only by [contacting the Enterprise Edition team](https://about.mattermost.com/contact/)._
 
 **Network Attached Storage** 
 - One NAS server with 3.6-7.2TB of storage (based on moderate storage of 10MB per user per month times 20,000 users times 3 years of history, times 2x safety factor) or sized appropriately for your desired usage requirements. For high availability it is recommended you select a NAS server offering redundancy. 
 
-**Database server** (2 recommended for redundancy)
+**Database Server** (2 recommended for redundancy)
 - One database server with 8-16 CPU cores supporting Hyper-Threading, 16-32GB memory, SSD drive with at least 100GB of storage. (Recommended) 
-- (Recommended) Add one identical database server to setup a Master-Slave configuration where the master can failover to slave with minimal disruption to service.  
+- (Recommended) Add one identical database server to setup a Master-Slave configuration where the master can failover to slave with minimal disruption to service. 
 
 Notes: 
 
