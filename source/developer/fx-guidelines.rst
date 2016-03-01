@@ -1,12 +1,77 @@
-UI Elements
+FX Gudelines
 ========================
+
+The purpose of the Mattermost Fan eXperience Guidelines ("FX Guidelines") is to deliver a level of usability and consistency that turns users of Mattermost software into fans of the Mattermost experience.
+
+
 ---------------------------
 
 |
-Header Notification
+
+Design Principles
+************************
+
+“Fast, Obvious, and Forgiving” – These principles define the standard we’re setting for the Mattermost experience:
+
+Fast
+-----------------------------------
+
+Fast has two parts: being _responsive_ and being _quick_.
+
+**Responsive** means when a user clicks, taps, types or otherwise enters input we give immediate feedback that the input is received and something is happening. It could be a spinner animation, or just some text saying “Loading”, but something always responds to the user.
+
+**Quick** means things happen as soon as they can. Loading pages, sending messages, receiving notifications and other vital actions should be automatically benchmarked for performance. Bugs should be opened on performance regressions.
+
+Obvious
+-----------------------------------
+
+Obvious means users are never confused. Across product features, interface layout, labeling, help text, and documentation, it is critical that everything we offer makes sense in the mind of the user, even if it means oversimplifying how things technically work.
+
+If a user doesn’t understand how to use a feature, all the underlying effort and code is wasted. The “Obvious” design principle also flows through to our [Documentation Guidelines](http://www.mattermost.org/documentation-guidelines/).
+
+Given [Hick’s Law](https://en.wikipedia.org/wiki/Hick%27s_law), core functionality should be apparent, and advanced functionality should be possible via sub-menus and well documented and tested.
+
+Functionality that is not fundamental to the product purpose should be ruthlessly omitted.
+
+Forgiving
+-----------------------------------
+
+Forgiving means there’s no such thing as user error–-it’s always the fault of the product. This mindset means we can fix problems coming from users making unexpected decisions. Fixes could be through user interface improvements, adjustments to help text, or helping users recover when things go wrong–adding undelete, undo and rolling back for example.
+
+Forgiving extends to compatibility as well, and whether you’re working from a PC, phone or tablet, Mattermost should adjust to reasonably serve your device, screen size, and major browser type.
+
+|
+---------------------------
+
+|
+
+Markup Guidelines
 ************************
 
 |
+Bootstrap Classes
+-----------------------------------
+
+Since we’re using [bootstrap](<http://getbootstrap.com/), try to utilize [bootstrap classes](<http://getbootstrap.com/css/>) as much as possible rather than creating new styles or using inline styles.
+
+Custom Styles
+-----------------------------------
+
+We’re using [BEM methodology](https://en.bem.info/method/) and would advise everyone to do so when creating new classes or ids. There’s a lot of places in our app that currently don’t follow BEM but we’re trying to improve the codebase. [Here](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) is a brief overview of the BEM syntax.
+
+
+|
+---------------------------
+
+|
+
+UI Elements
+************************
+
+|
+Header Notification
+---------------------------
+
 Appears as an additional header at the top of the UI. May include an “x” button to dismiss. Limited to 60 characters. May include a time-out. Header notification should appear over the rest of the UI instead of pushing the UI down. Multiple header header can appear, with the earliest notification at the top and more recent notifications appearing underneath.
 
 * Desktop
@@ -52,9 +117,8 @@ There are several modes for this element:
 
 |
 Confirmation Messages
-************************
+---------------------------
 
-|
 | Confirmation messages should look like this and should appear below the button that triggered them or at the top of the screen.
 | Example:
 | "Link copied to clipboard"
@@ -68,9 +132,8 @@ Confirmation Messages
 
 |
 Saving Settings
-************************
+---------------------------
 
-|
 | **Save Prompt**
 | A prompt should appears if a user makes changes to a setting and attempts to navigate away without saving them.
 |
@@ -83,9 +146,8 @@ Saving Settings
 
 |
 Icons
-************************
+---------------------------
 
-|
 1. When to use icons
     a. When there’s not enough space for the label and an icon can easily represent the label.
     b. When an icon can help the user more quickly understand a feature.
@@ -102,9 +164,8 @@ Icons
 
 |
 Input Hints
-************************
+---------------------------
 
-|
 **Fieldname:**
 
     The labels on input fields should be as obvious as possible for the intended user.
@@ -153,9 +214,8 @@ Input Hints
 
 |
 Input Fields
-************************
+---------------------------
 
-|
 Users should enter information into fields without much thinking.
 
 | ENTER button on last input field should trigger default dialog button.
@@ -188,9 +248,8 @@ Example:
 
 |
 Button Placement
-************************
+---------------------------
 
-|
 | **Dialog BOTTOM RIGHT BUTTONS should be either “Close”, or “Cancel” and [ACTION_BUTTON].**
 | If there’s one button on the bottom right, it should be “Close”, if there are two, the one on the left should be “Cancel” and the one on the right should be an [ACTION_BUTTON], like “Save” or “Send Invitations”.
 
@@ -226,9 +285,8 @@ Example:
 
 |
 Number of choices
-************************
+---------------------------
 
-|
 To simplify decisions, when practical, limit the number of choices to 3 or 4, and add separators or headings between logical groups. See Hick’s Law for background on why this helps: https://en.wikipedia.org/wiki/Hick%27s_law
 
 Example:
@@ -254,9 +312,8 @@ Example:
 
 |
 Alignment of Elements
-************************
+---------------------------
 
-|
 | **Elements should feature margins horizontally and vertically, evenly spaced.**
 | Create space between elements, such as buttons, text, line separators, headers and backgrounds, by leaving even space around them (either equal space or at most 1 pixel difference).
 |
@@ -321,9 +378,8 @@ Example:
 
 |
 Reduce obvious steps
-************************
+---------------------------
 
-|
 If what the users need to perform is obvious, we should make concious decisions and reduce some of the steps involved in that process.
 
 Examples:
@@ -353,9 +409,8 @@ Examples:
 
 |
 Input behaviours
-************************
+---------------------------
 
-|
 All inputs such as textareas should behave consistently, if the default behaviour is to perform an action on "Enter", then all inputs for eg: The center channel post input, the comment thread textarea, the edit header modals etc should be consistent with that behaviour and perform an action on "Enter".
 
 Examples:

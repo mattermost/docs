@@ -99,16 +99,9 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    developer/slash*
    developer/developer*
    developer/contribution*
+   developer/fx*
    developer/style*
    developer/*
-
-.. toctree::
-   :caption: FX Guidelines
-   :glob:
-
-   fx-guidelines/introduction*
-   fx-guidelines/markup*
-   fx-guidelines/*
 
 .. toctree::
    :maxdepth: 1
