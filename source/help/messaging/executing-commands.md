@@ -6,11 +6,11 @@ Slash commands allow users to perform operations in Mattermost or interact with 
 
 The following slash commands are available on all Mattermost installations:
 
-![commands](../images/slashCommandsTable.PNG)
+![commands](../../images/slashCommandsTable.PNG)
 
 Begin by typing `/` and a list of slash command options appears above the text input box. The autocomplete suggestions help by providing a format example in black text and a short description of the slash command in grey text.
 
-![autocomplete](../images/slashCommandsAutocomplete.PNG)
+![autocomplete](../../images/slashCommandsAutocomplete.PNG)
 
 ## Custom Commands
 Custom slash commands are used to integrate with external applications. For example, a team might configure a custom slash command to check internal health records with `/patient joe smith` or check the weekly weather forcast in a city with `/weather toronto week`. Check with your System Admin or open the autocomplete list by typing `/` to find out if your team has configured any custom slash commands.
