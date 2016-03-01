@@ -1,8 +1,11 @@
-# Mobile Apps and Push Notifications
+# Push Notifications
 
 This section explains how push notifications work with pre-compiled iOS and Android applications. 
 
-See [Push Notification Settings](http://docs.mattermost.com/administration/config-settings.html#push-notification-settings) to understand how they are configured.
+See [Push Notification Settings](http://docs.mattermost.com/administration/config-settings.html#push-notification-settings) to configure the settings for use with: 
+
+- [Mattermost iOS App on iTunes](https://itunes.apple.com/us/app/mattermost/id984966508?mt=8)
+- Mattermost Android App on Google Play (pending release)
 
 ## How push notifications are sent
 
