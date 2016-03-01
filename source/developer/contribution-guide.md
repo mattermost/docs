@@ -54,7 +54,9 @@ After submitting a PR, before it is merged:
 3. Feedback from reviewers needs to be addressed 
 3. If user interface changes do not match specification in Jira ticket, PM approval is needed.
 
-If you've included your mailing address in Step 1, you'll be receiving a [Limited Edition Mattermost Mug](https://forum.mattermost.org/t/limited-edition-mattermost-mugs/143) as a thank you gift after your first pull request has been accepted.
+If you've included your mailing address in Step 1, you may receive a [Limited Edition Mattermost Mug](https://forum.mattermost.org/t/limited-edition-mattermost-mugs/143) as a thank you gift after your first pull request is merged. 
+
+### Approved Reviewers
 
 **Approved reviewers include**: coreyhulen, crspeller, hmhealey, jwilander  
 **Approved seconders include**: coreyhulen, crspeller, hmhealey, jwilander
