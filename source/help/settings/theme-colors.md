@@ -9,8 +9,9 @@ Select **Theme Colors** to choose from four standard themes designed by the Matt
 To import a theme, go to **Preferences > Sidebar Theme** from within Slack, open the custom theme option, copy the theme color vector and then paste it into the *Input Slack Theme* input box in Mattermost. Any theme settings that are not customizable in Slack will default to the “Mattermost” standard theme settings.
 
 ## Custom Themes
-Observe a live preview as you customize theme colors and then click **Save** to confirm your changes. Discard your changes by exiting the settings modal and clicking **Yes, Discard**.
+Observe a live preview as you customize theme colors and then click **Save** to confirm your changes. Discard your changes by exiting the settings modal and clicking **Yes, Discard**.  
 
+#### Sidebar Styles  
 - **Sidebar BG:** Background color of the Channels pane, and Account and Team settings navigation sidebars.
 - **Sidebar Text:** Text colour of read channels in the Channels pane, and tabs in the Account and Team settings navigation sidebar.
 - **Sidebar Header BG:** Background color of the header above the Channels pane and all modal headers.
@@ -20,17 +21,24 @@ Observe a live preview as you customize theme colors and then click **Save** to 
 - **Sidebar Text Active Border:** Color of the rectangular marker on the left side of the Channels pane or Settings sidebar indicating the active channel or tab.
 - **Sidebar Text Active Color:** Text color of the active active channel or tab in the Channels pane or Settings sidebar.
 - **Online Indicator:** Color of the online indicator appearing next to team members names in the Direct Messages list.
+- **Away Indicator:** Color of the away indicator appearing next to team members names in the Direct Messages list when they have had no browser activity for 5 minutes.
 - **Mention Jewel BG:** Background color of the jewel indicating unread mentions that appears to the right of the channel name. This is also the background color of the “Unread Posts Below/Above” indicator appearing at the top or bottom of the Channels pane on shorter browser windows.
-- **Mention Jewel Text:** Text color on the mention jewel indicating the number of unread mentions. This is also the text color on the “Unread Posts Below/Above” indicator.
+- **Mention Jewel Text:** Text color on the mention jewel indicating the number of unread mentions. This is also the text color on the “Unread Posts Below/Above” indicator.  
+
+#### Center Channel Styles  
 - **Center Channel BG:** Color of the center pane, RHS and all modal backgrounds.
 - **Center Channel Text:** Color of all the text - with the exception of mentions, links, hashtags and code blocks - in the center pane, RHS and modals.
 - **New Message Separator:** The new massage separator appears below the last read message when you click into a channel with unread messages.
-- **Link Color:** Text color of all links, hashtags, teammate mentions, and low priority UI buttons.
-- **Button BG:** Color of the rectangular background behind all high priority UI buttons.
-- **Button Text:** Text colour appearing on the rectangular background for all high priority UI buttons.
 - **Mention Highlight BG:** Highlight color behind your words that trigger mentions in the center pane and RHS.
 - **Mention Highlight Link:** Text color of your words that trigger mentions in the center pane and RHS.
 - **Code Theme:** Background and syntax colors for all code blocks.
+
+#### Link and Button Styles  
+- **Link Color:** Text color of all links, hashtags, teammate mentions, and low priority UI buttons.
+- **Button BG:** Color of the rectangular background behind all high priority UI buttons.
+- **Button Text:** Text colour appearing on the rectangular background for all high priority UI buttons.
+
+
 
 #### Custom Theme Examples
 Customize your theme colors and share them with others by copying and pasting theme vectors into the input box. Below are some example themes with their corresponding theme vectors.
