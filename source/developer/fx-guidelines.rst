@@ -1,4 +1,4 @@
-FX Gudelines
+FX Guidelines
 ========================
 
 The purpose of the Mattermost Fan eXperience Guidelines ("FX Guidelines") is to deliver a level of usability and consistency that turns users of Mattermost software into fans of the Mattermost experience.
@@ -74,12 +74,12 @@ Header Notification
 
 Appears as an additional header at the top of the UI. May include an “x” button to dismiss. Limited to 60 characters. May include a time-out. Header notification should appear over the rest of the UI instead of pushing the UI down. Multiple header header can appear, with the earliest notification at the top and more recent notifications appearing underneath.
 
-* Desktop
+**Desktop**
 
 ..  image:: https://raw.githubusercontent.com/mattermost/docs/master/source/images/header1.png
     :alt: Header Notification Desktop
 
-* Mobile
+**Mobile**
 
 ..  image:: https://raw.githubusercontent.com/mattermost/docs/master/source/images/header2.png
     :alt: Header Notification Mobile
