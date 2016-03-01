@@ -9,7 +9,7 @@ Please see [Mattermost Deployment Overview](https://github.com/mattermost/docs/b
 
 [View Mattermost Network Diagram](https://cloud.githubusercontent.com/assets/177788/13199970/49774126-d7eb-11e5-8f07-95ddd33e9d72.png)
 
-## Software 
+## Software Requirements 
 
 ### Client Software 
 
@@ -50,34 +50,66 @@ The Mattermost roadmap does not currently include production support for Fedora,
 
 Deployments requiring searching in Chinese, Japanese and Korean languages require MySQL 5.7.6+ and the configuration of [ngram Full-Text parser](https://dev.mysql.com/doc/refman/5.7/en/fulltext-search-ngram.html). See [CJK discussion](https://github.com/mattermost/platform/issues/2033#issuecomment-183872616) for details. 
 
-## Hardware
 
-Mattermost offers both real-time communication and file sharing. CPU and Memory requirements are driven by the number of concurrent users using real-time messaging. Storage requirements are driven by number and size of files shared. 
+### Hardware Requirements 
 
-The below guidelines offer estimates based on real world usage of Mattermost configured to serve multiple independent teams of 10-100 registered users per team with moderate activity. 
+Usage of CPU, RAM and storage space can vary significantly based on user behavior. For deployments larger than 500 users, it's highly recommended usage patterns in a small pilot deployment representative of your large organization is observed before rolling out the full scale service. 
 
-### CPU
+#### Hardware Sizing for Team Deployments
 
-- 2 cores is the recommended number of cores and supports up to 250 registered users
-- 4 cores supports up to 1,000 users
-- 8 cores supports up to 2,500 users
-- 16 cores supports up to 5,000 users
-- 32 cores supports up to 10,000 users
-- 64 cores supports up to 20,000 users
+Most small to medium Mattermost team deployments can be supported on a single server with the following specifications based on registered users: 
 
-### Memory
+- 250-500 users - 2 CPUs (2GHz or higher) with Hyper-Threading, 4GB RAM, and 45-90GB HDD storage
+- 500-1,000 users - 4 CPUs (2.8GHz or higher) with Hyper-Threading, 8GB RAM, and 90-180GB HDD storage
+- 1,000-2,000 users - 4 CPUs (2.8GHz or higher) with Hyper-Threading, 16GB RAM, and 180-360GB HDD storage
 
-- 2GB RAM is the recommended memory size and supports up to 50 registered users
-- 4GB RAM supports up to 500 users
-- 8GB RAM supports up to 1,000 users
-- 16GB RAM supports up to 2,000 users
-- 32GB RAM supports up to 4,000 users
-- 64GB RAM supports up to 8,000 users
-- 128GB RAM supports up to 16,000 users
+Notes: 
 
-### Storage 
+1. Storage recommendation is based on storing 3 years of archives with moderate file sharing. 
+2. Solid-state storage (SDD) can be used in place of disk storage to improve database performance when concurrency is high. 
+3. Team deployments assume registered users are divided into teams of 10-100. 
 
-To estimate initial storage requirements, begin with a Mattermost server approximately 600 MB to 800 MB in size including operating system and database, then add the multiplied product of:
+#### Hardware Sizing for Enterprise Deployments (Single Server)
+
+Most small to medium Mattermost enterprise deployments can be supported on a single server with the following specifications: 
+
+- 250-500 users - 2 CPUs (2GHz or higher) with Hyper-Threading, 4GB RAM, and 90-180GB SDD storage
+- 500-1,000 users - 4 CPUs (2.8GHz or higher) with Hyper-Threading, 8GB RAM, and 180-360GB SDD storage
+- 1,000-2,000 users - 4 CPUs (2.8GHz or higher) with Hyper-Threading, 8GB RAM, and 360-720GB SDD storage
+- 2,000-5,000 users - 8 CPUs (2.8GHz or higher) with Hyper-Threading, 16GB RAM, and 720-1800GB SDD storage
+- 5,000-10,000 users - 8 CPUs (2.8GHz or higher) with Hyper-Threading, 16GB RAM, and 1800-3600GB SDD storage
+- 10,000-20,000 users - 16 CPUs (2.8GHz or higher) with Hyper-Threading, 32GB RAM, and 3.6-7.2TB SDD storage
+
+Notes:
+
+1. Storage recommendation is based on storing 3 years of archives with moderate file sharing plus a 2x safety factor.
+2. Regular harddrives can be used in place of solid state drives (SDDs) if high concurrent usages is not anticipated. 
+
+#### Hardware Sizing for Enterprise Deployments (Multi-Server)
+
+For enterprise deployments of 10,000-20,000 registered users with moderate usage and a peak of 2,000-4,000 concurrent users, the following hardware deployment configurations are recommended for redundant, highly available configurations: 
+
+**Proxy server**
+- One server with 8-16 CPU cores supporting hyper threading, 16-32 GB, SSD drive with at least 4GB of storage
+
+**Mattermost server** (1 to 2 depending on high availability is desired)
+- One server with 8-16 CPU cores supporting hyper threading, 16-32GB memory, SSD drive with at least 4GB storage. 
+- (Optional) Add one additional identical server for high availability mode, where one Mattermost server can be disabled or upgraded without interrupting service quality). Second server should be sized to carry the full load of the first server so performance does not degrade when the first server is taken offline. 
+
+**Network Attached Storage** 
+- One NAS server with 3.6-7.2TB of storage (based on moderate storage of 10MB per user per month times 20,000 users times 3 years of history, times 2x safety factor) or sized appropriately for your desired usage and redundancy estimates. 
+
+**Database server** (2 recommended for redundancy)
+- One database server with 8-16 CPU cores supporting hyper threading, 16-32GB memory, SSD drive with at least 100GB of storage. (Recommended) 
+- (Recommended) Add one identical database server to setup a Master-Slave configuration where the master can failover to slave with minimal disruption to service.  
+
+Notes: 
+
+1. Regular hard drives can be used in place of solid-state hard drives if having top performance is not a priority. If using a mix of HDD and SSD drives, the greatest performance gain would come from using SDD in the database server. 
+
+#### Alternate Storage Calculations 
+
+As an alternative to recommended storage sizing above, you can forecast your own storage usuage. Begin with a Mattermost server approximately 600 MB to 800 MB in size including operating system and database, then add the multiplied product of:
 
 - Estimated storage per user per month (see below), multipled by 12 months in a year
 - Estimated mean average number of users in a year
@@ -96,4 +128,3 @@ File usage per user varies significantly across industries. The below benchmarks
 *Example:* A 30-person team with medium usage (5-25 MB/user/month) with a safety factor of 2x would require between 300 MB (30 users * 5 MB * 2x safety factor) and 1500 MB (30 users * 25 MB * 2x safety factor) of free space in the next year. 
 
 It's recommended to review storage utilization at least quarterly to ensure adequate free space is available. 
-
