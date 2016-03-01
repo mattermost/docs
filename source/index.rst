@@ -41,6 +41,7 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    help/messaging/mentioning-teammates.md
    help/messaging/formatting-text.md
    help/messaging/attaching-files.md
+   help/messaging/executing-commands.md
    help/messaging/*
 
 .. toctree::
