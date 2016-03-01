@@ -50,7 +50,13 @@ After submitting a PR, before it is merged:
 1. Automated build process must pass  
     - If the build fails, check the error log to narrow down the reason  
     - Sometimes one of the multiple build tests will randomly fail due to issues in Travis CI. If you see just one build failure and no clear error message, it may be a random issue. Add a comment so the reviewer for your change can re-run the build for you, or close the PR and re-submit and that typically clears the issue. 
-2. PR must be reviewed by two team members, and reviewer feedback must be addressed  
-3. UI must be approved by PM  
+2. Pull requests require review by an approved reviewer and an approved seconder.
+3. Feedback from reviewers needs to be addressed 
+3. If user interface changes do not match specification in Jira ticket, PM approval is needed.
 
-If you've included your mailing address in Step 1, you'll be receiving a [Limited Edition Mattermost Mug](https://forum.mattermost.org/t/limited-edition-mattermost-mugs/143) as a thank you gift after your first pull request has been accepted.
+If you've included your mailing address in Step 1, you may receive a [Limited Edition Mattermost Mug](https://forum.mattermost.org/t/limited-edition-mattermost-mugs/143) as a thank you gift after your first pull request is merged. 
+
+### Approved Reviewers
+
+**Approved reviewers include**: coreyhulen, crspeller, hmhealey, jwilander  
+**Approved seconders include**: coreyhulen, crspeller, hmhealey, jwilander
