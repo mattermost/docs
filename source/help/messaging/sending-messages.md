@@ -14,7 +14,7 @@ Reply to a message by clicking the reply icon next to any message text. This act
 Write a message by typing into the text input box, then press **ENTER** to send it. Use **Shift + ENTER** to create a new line without sending a message. To send messages by pressing **Ctrl+Enter** go to **Main Menu > Account Settings > Send messages on Ctrl + Enter**.
 
 ## Editing a Message
-Edit a message by clicking the **[...]** icon next to any message text that you’ve composed, then click **Edit**. After making modifications to the message text, press **ENTER** to save the modifications. A message edit does not trigger a desktop notification or notification sound for team members in the channel.
+Edit a message by clicking the **[...]** icon next to any message text that you’ve composed, then click **Edit**. After making modifications to the message text, press **ENTER** to save the modifications. Message edits do not trigger new @mention notifications, desktop notifications or notification sounds.
 
 ## Deleting a message
 Delete a message by clicking the **[...]** icon next to any message text that you’ve composed, then click **Delete**. System and Team Admins can delete any message on their system or team.
