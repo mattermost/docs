@@ -56,7 +56,7 @@ You can create a webhook integration to post into Mattermost channels and privat
  4. To see your new webhook in action, try a curl command from your terminal or command-line to send a JSON string as the `payload` parameter in a HTTP POST request
      - Example:
 ```
- curl -i -X POST -d 'payload={"text": "Hello, this is some text."}' http://yourmattermost.com/hooks/xxx-generatedkey-xxx
+ curl -i -X POST -d 'payload={"text": "Hello, this is some text.\nThis is more text."}' http://yourmattermost.com/hooks/xxx-generatedkey-xxx
 ```
 
 3. Build your integration in the programming language of your choice
