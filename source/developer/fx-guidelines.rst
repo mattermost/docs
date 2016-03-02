@@ -8,7 +8,7 @@ The purpose of the Mattermost Fan eXperience Guidelines ("FX Guidelines") is to 
 
 |
 
-Design principles
+Design Principles
 ************************
 
 “Fast, Obvious, and Forgiving” – These principles define the standard we’re setting for the Mattermost experience:
@@ -16,7 +16,7 @@ Design principles
 Fast
 -----------------------------------
 
-Fast has two parts: being _responsive_ and being _quick_.
+Fast has two parts: being *responsive* and being *quick*.
 
 **Responsive** means when a user clicks, taps, types or otherwise enters input we give immediate feedback that the input is received and something is happening. It could be a spinner animation, or just some text saying “Loading”, but something always responds to the user.
 
@@ -45,19 +45,19 @@ Forgiving extends to compatibility as well, and whether you’re working from a 
 
 |
 
-Markup guidelines
+Markup Guidelines
 ************************
 
 |
 Bootstrap classes
 -----------------------------------
 
-Since we’re using [bootstrap](<http://getbootstrap.com/), try to utilize [bootstrap classes](<http://getbootstrap.com/css/>) as much as possible rather than creating new styles or using inline styles.
+Since we’re using `bootstrap <http://getbootstrap.com/>`_, try to utilize `bootstrap classes <http://getbootstrap.com/css/>`_ as much as possible rather than creating new styles or using inline styles.
 
 Custom styles
 -----------------------------------
 
-We’re using [BEM methodology](https://en.bem.info/method/) and would advise everyone to do so when creating new classes or ids. There’s a lot of places in our app that currently don’t follow BEM but we’re trying to improve the codebase. [Here](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) is a brief overview of the BEM syntax.
+We’re using `BEM methodology <https://en.bem.info/method/>`_  and would advise everyone to do so when creating new classes or ids. There’s a lot of places in our app that currently don’t follow BEM but we’re trying to improve the codebase. [Here](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) is a brief overview of the BEM syntax.
 
 
 |
@@ -65,7 +65,7 @@ We’re using [BEM methodology](https://en.bem.info/method/) and would advise ev
 
 |
 
-UI elements
+UI Elements
 ************************
 
 |
