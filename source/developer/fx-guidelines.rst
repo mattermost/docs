@@ -207,20 +207,23 @@ Input hints
 
     Use field validation to help “prevent or correct” any mistakes a user might make.
 
-        Example: If a field has a maximum of 140 characters, add a counter below the field to inform the user on how many characters are left and present a message if he exceeds the limit, the button should also be disabled if the character count exceeds.
+        For **textfields**, restrict users from just limiting characters via the maxlength attribute.
 
+        For **textareas**, present a counter and if it exceeds let the user know by an error.
 
-        ..  image:: ../images/valid1.png
-            :alt: Character count
-            :width: 500 px
+        **Example:**
 
-        |
+            ..  image:: ../images/valid1.png
+                :alt: Character count
+                :width: 500 px
 
-        ..  image:: ../images/valid2.png
-            :alt: Character count
-            :width: 500 px
+            |
 
-        |
+            ..  image:: ../images/valid2.png
+                :alt: Character count
+                :width: 500 px
+
+            |
 
         Example 2: If a user enters invalid uppercase letters and spaces for a URL, show an error message and also offer a correction, substituting dashes for spaces and lower case letters for uppercase letters, so the user can resubmit immediately with valid input.
 
@@ -271,8 +274,8 @@ Button placement
 
 | **Dialog BOTTOM RIGHT BUTTONS should be either “Close”, or “Cancel” and [ACTION_BUTTON].**
 | If there’s one button on the bottom right, it should be “Close”, if there are two, the one on the left should be “Cancel” and the one on the right should be an [ACTION_BUTTON], like “Save” or “Send Invitations”.
-
-Example:
+|
+**Example:**
 
     Correct:
         Single button at the bottom right should be “Close”.
@@ -336,36 +339,33 @@ Alignment of elements
 | **Elements should feature margins horizontally and vertically, evenly spaced.**
 | Create space between elements, such as buttons, text, line separators, headers and backgrounds, by leaving even space around them (either equal space or at most 1 pixel difference).
 |
-Example:
+**Example:**
 
-    Correct:
-        Button positioned in the middle of the header.
+    Button positioned in the middle of the header.
 
-        ..  image:: ../images/align1.jpg
-            :alt: Button positioning
-            :width: 500 px
+    ..  image:: ../images/align1.jpg
+        :alt: Button positioning
+        :width: 500 px
 
     |
 
-    Correct:
-        Error message does not expand the horizontal separator
+    Error message does not expand the horizontal separator
 
-        ..  image:: ../images/align2.png
-            :alt: Confined messages with respect to width
-            :width: 500 px
+    ..  image:: ../images/align2.png
+        :alt: Confined messages with respect to width
+        :width: 500 px
 
 |
 
 **Horizontally align multi-line elements along a vertical line.**
 
-Example:
+**Example:**
 
-    Correct:
-        Roles right justified with respect to the text and irrespective of the icon.
+    Roles right justified with respect to the text and irrespective of the icon.
 
-        ..  image:: ../images/align3.jpg
-            :alt: Vertically justified
-            :width: 500 px
+    ..  image:: ../images/align3.jpg
+        :alt: Vertically justified
+        :width: 500 px
 
 
 |
@@ -373,7 +373,7 @@ Example:
 | **Instructions should be sentences, one-line links should be fragments.**
 | Instructions, such as “A password reset link has been sent to you@email.com for your account.\nPlease check your inbox.”, should be displayed as sentences ending in periods. One-line links, such as “Find it here”, should not end in periods or commas, but question marks are okay.
 |
-Example:
+**Example:**
 
     Incorrect:
         Instruction “Please check your inbox”, didn't end with a period.
@@ -401,7 +401,7 @@ Reduce obvious steps
 
 If what the users need to perform is obvious, we should make concious decisions and reduce some of the steps involved in that process.
 
-Examples:
+**Examples:**
 
     Clicking on the search icon on mobile should focus the search bar when it slides in.
 
@@ -432,7 +432,7 @@ Input behaviours
 
 All inputs such as textareas should behave consistently, if the default behaviour is to perform an action on "Enter", then all inputs for eg: The center channel post input, the comment thread textarea, the edit header modals etc should be consistent with that behaviour and perform an action on "Enter".
 
-Examples:
+**Examples:**
 
     If pressing "Enter" posts a message in the center channel post input.
 
