@@ -16,7 +16,7 @@ Design Principles
 Fast
 -----------------------------------
 
-Fast has two parts: being _responsive_ and being _quick_.
+Fast has two parts: being *responsive* and being *quick*.
 
 **Responsive** means when a user clicks, taps, types or otherwise enters input we give immediate feedback that the input is received and something is happening. It could be a spinner animation, or just some text saying “Loading”, but something always responds to the user.
 
@@ -27,9 +27,9 @@ Obvious
 
 Obvious means users are never confused. Across product features, interface layout, labeling, help text, and documentation, it is critical that everything we offer makes sense in the mind of the user, even if it means oversimplifying how things technically work.
 
-If a user doesn’t understand how to use a feature, all the underlying effort and code is wasted. The “Obvious” design principle also flows through to our [Documentation Guidelines](http://www.mattermost.org/documentation-guidelines/).
+If a user doesn’t understand how to use a feature, all the underlying effort and code is wasted. The “Obvious” design principle also flows through to our `Documentation Guidelines <http://www.mattermost.org/documentation-guidelines/>`_.
 
-Given [Hick’s Law](https://en.wikipedia.org/wiki/Hick%27s_law), core functionality should be apparent, and advanced functionality should be possible via sub-menus and well documented and tested.
+Given `Hick’s Law <https://en.wikipedia.org/wiki/Hick%27s_law>`_, core functionality should be apparent, and advanced functionality should be possible via sub-menus and well documented and tested.
 
 Functionality that is not fundamental to the product purpose should be ruthlessly omitted.
 
@@ -52,12 +52,12 @@ Markup Guidelines
 Bootstrap Classes
 -----------------------------------
 
-Since we’re using [bootstrap](<http://getbootstrap.com/), try to utilize [bootstrap classes](<http://getbootstrap.com/css/>) as much as possible rather than creating new styles or using inline styles.
+Since we’re using `bootstrap <http://getbootstrap.com/>`_, try to utilize `bootstrap classes <http://getbootstrap.com/css/>`_ as much as possible rather than creating new styles or using inline styles.
 
 Custom Styles
 -----------------------------------
 
-We’re using [BEM methodology](https://en.bem.info/method/) and would advise everyone to do so when creating new classes or ids. There’s a lot of places in our app that currently don’t follow BEM but we’re trying to improve the codebase. [Here](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) is a brief overview of the BEM syntax.
+We’re using `BEM methodology <https://en.bem.info/method/>`_  and would advise everyone to do so when creating new classes or ids. There’s a lot of places in our app that currently don’t follow BEM but we’re trying to improve the codebase. `Here <http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/>`_ is a brief overview of the BEM syntax.
 
 
 |
@@ -76,17 +76,17 @@ Appears as an additional header at the top of the UI. May include an “x” but
 
 **Desktop**
 
-..  image:: https://raw.githubusercontent.com/mattermost/docs/master/source/images/header1.png
-    :alt: Header Notification Desktop
+    ..  image:: ../images/header1.png
+        :alt: Header Notification Desktop
 
 **Mobile**
 
-..  image:: https://raw.githubusercontent.com/mattermost/docs/master/source/images/header2.png
-    :alt: Header Notification Mobile
+    ..  image:: ../images/header2.png
+        :alt: Header Notification Mobile
 
 There are several modes for this element:
 
-    **System-Wide Header Notification:**
+    **System-wide header notification:**
 
         | Triggered on login. Includes “x” button to dismiss. No timeout. Removed when system admin cancels.
         |
@@ -96,7 +96,7 @@ There are several modes for this element:
 
         |
 
-    **Action Required Header Notification:**
+    **Action required header notification:**
 
         | Triggered on login. No “x” button to dismiss. No timeout. Dismissed when action completed.
         |
@@ -105,7 +105,7 @@ There are several modes for this element:
 
         |
 
-    **Persistent Error Header Notification:**
+    **Persistent error header notification:**
 
         | Triggered on error. No “x” button to dismiss. Dismissed when error no longer persists.
         |
@@ -116,30 +116,40 @@ There are several modes for this element:
 ---------------------------
 
 |
-Confirmation Messages
+Feedback Messages
 ---------------------------
 
-| Confirmation messages should look like this and should appear below the button that triggered them or at the top of the screen.
-| Example:
-| "Link copied to clipboard"
+
+| **Feedback on action**
+| The user should be notified about the action he performed along with any implications associated with it.
 |
 
-..  image:: https://raw.githubusercontent.com/mattermost/docs/master/source/images/confirm1.jpg
-    :alt: Confirmation message
+Example:
+    "Settings are saved but will be applied after a server restart"
+
+    ..  image:: ../images/confirm2.jpg
+        :alt: Settings saved
 
 |
----------------------------
+Example:
+    "Link copied to clipboard"
+
+    ..  image:: ../images/confirm1.jpg
+        :alt: Confirmation message
+
 
 |
-Saving Settings
----------------------------
-
-| **Save Prompt**
+| **Save prompt**
 | A prompt should appears if a user makes changes to a setting and attempts to navigate away without saving them.
 |
 
-..  image:: https://raw.githubusercontent.com/mattermost/docs/master/source/images/save1.png
-    :alt: Save Prompt
+Example:
+    "You have unsaved changes, are you sure you want to discard them?"
+
+    ..  image:: ../images/save1.png
+        :alt: Save prompt
+
+
 
 |
 ---------------------------
@@ -197,7 +207,23 @@ Input Hints
 
     Use field validation to help “prevent or correct” any mistakes a user might make.
 
-        Example: If a field has a maximum of 22 characters, don’t allow the user to enter more than 22 characters in the field.
+        For **textfields**, restrict users from just limiting characters via the maxlength attribute.
+
+        For **textareas**, present a counter and if it exceeds let the user know by an error.
+
+        **Example:**
+
+            ..  image:: ../images/valid1.png
+                :alt: Character count
+                :width: 500 px
+
+            |
+
+            ..  image:: ../images/valid2.png
+                :alt: Character count
+                :width: 500 px
+
+            |
 
         Example 2: If a user enters invalid uppercase letters and spaces for a URL, show an error message and also offer a correction, substituting dashes for spaces and lower case letters for uppercase letters, so the user can resubmit immediately with valid input.
 
@@ -222,26 +248,22 @@ Users should enter information into fields without much thinking.
 | When last input field in a series has focus and user hits ENTER it should trigger the default button in the dialog.
 |
 Example:
+    Having focus on last input field in dialog (“Miller”) and hitting ENTER triggers default dialog button (“Send Invitations”)
 
-    Correct:
-        Having focus on last input field in dialog (“Miller”) and hitting ENTER triggers default dialog button (“Send Invitations”)
+    ..  image:: ../images/inputField1.png
+        :alt: Input Field Enter
+        :width: 500 px
 
-        ..  image:: https://raw.githubusercontent.com/mattermost/docs/master/source/images/inputField1.png
-            :alt: Input Field Enter
-            :width: 500 px
-
-    |
+|
 
 We should use radio buttons/checkboxes for input options rather than custom bootstrap on/off switches.
 
 Example:
+    Having radio buttons for input options.
 
-    Correct:
-        Having radio buttons for input options.
-
-        ..  image:: https://raw.githubusercontent.com/mattermost/docs/master/source/images/inputField2.png
-            :alt: Radio Buttons
-            :width: 500 px
+    ..  image:: ../images/inputField2.png
+        :alt: Radio Buttons
+        :width: 500 px
 
 |
 ---------------------------
@@ -252,13 +274,13 @@ Button Placement
 
 | **Dialog BOTTOM RIGHT BUTTONS should be either “Close”, or “Cancel” and [ACTION_BUTTON].**
 | If there’s one button on the bottom right, it should be “Close”, if there are two, the one on the left should be “Cancel” and the one on the right should be an [ACTION_BUTTON], like “Save” or “Send Invitations”.
-
-Example:
+|
+**Example:**
 
     Correct:
         Single button at the bottom right should be “Close”.
 
-        ..  image:: https://raw.githubusercontent.com/mattermost/docs/master/source/images/buttonPlacement1.png
+        ..  image:: ../images/buttonPlacement1.png
             :alt: Button Placement 1
             :width: 500 px
 
@@ -267,7 +289,7 @@ Example:
     Correct:
         When there are two buttons on bottom right, left button should be “Cancel” and the button on the right should be the [ACTION_BUTTON], in this case “Send Invitations”.
 
-        ..  image:: https://raw.githubusercontent.com/mattermost/docs/master/source/images/buttonPlacement2.png
+        ..  image:: ../images/buttonPlacement2.png
             :alt: Button Placement 2
             :width: 500 px
 
@@ -276,7 +298,7 @@ Example:
     Incorrect:
         When there are two buttons at the bottom right, left button should not be “Close”, as it’s not clear if closing will or won’t execute the [ACTION_BUTTON].
 
-        ..  image:: https://raw.githubusercontent.com/mattermost/docs/master/source/images/buttonPlacement3.png
+        ..  image:: ../images/buttonPlacement3.png
             :alt: Button Placement 3
             :width: 500 px
 
@@ -284,17 +306,17 @@ Example:
 ---------------------------
 
 |
-Number of choices
+Number of Choices
 ---------------------------
 
-To simplify decisions, when practical, limit the number of choices to 3 or 4, and add separators or headings between logical groups. See Hick’s Law for background on why this helps: https://en.wikipedia.org/wiki/Hick%27s_law
+To simplify decisions, when practical, limit the number of choices to 3 or 4, and add separators or headings between logical groups. See `Hick’s Law <https://en.wikipedia.org/wiki/Hick%27s_law>`_ for background on why this helps.
 
 Example:
 
     Incorrect:
         No clear separation between distinct options.
 
-        ..  image:: https://raw.githubusercontent.com/mattermost/docs/master/source/images/choices1.png
+        ..  image:: ../images/choices1.png
             :alt: No separation
             :width: 500 px
 
@@ -303,7 +325,7 @@ Example:
     Correct:
         A clear separation between distinct options.
 
-        ..  image:: https://raw.githubusercontent.com/mattermost/docs/master/source/images/choices2.png
+        ..  image:: ../images/choices2.png
             :alt: Clear separation
             :width: 500 px
 
@@ -317,36 +339,33 @@ Alignment of Elements
 | **Elements should feature margins horizontally and vertically, evenly spaced.**
 | Create space between elements, such as buttons, text, line separators, headers and backgrounds, by leaving even space around them (either equal space or at most 1 pixel difference).
 |
-Example:
+**Example:**
 
-    Correct:
-        Button positioned in the middle of the header.
+    Button positioned in the middle of the header.
 
-        ..  image:: https://raw.githubusercontent.com/mattermost/docs/master/source/images/align1.jpg
-            :alt: Button positioning
-            :width: 500 px
+    ..  image:: ../images/align1.jpg
+        :alt: Button positioning
+        :width: 500 px
 
     |
 
-    Correct:
-        Error message does not expand the horizontal separator
+    Error message does not expand the horizontal separator
 
-        ..  image:: https://raw.githubusercontent.com/mattermost/docs/master/source/images/align2.png
-            :alt: Confined messages with respect to width
-            :width: 500 px
+    ..  image:: ../images/align2.png
+        :alt: Confined messages with respect to width
+        :width: 500 px
 
 |
 
 **Horizontally align multi-line elements along a vertical line.**
 
-Example:
+**Example:**
 
-    Correct:
-        Roles right justified with respect to the text and irrespective of the icon.
+    Roles right justified with respect to the text and irrespective of the icon.
 
-        ..  image:: https://raw.githubusercontent.com/mattermost/docs/master/source/images/align3.jpg
-            :alt: Vertically justified
-            :width: 500 px
+    ..  image:: ../images/align3.jpg
+        :alt: Vertically justified
+        :width: 500 px
 
 
 |
@@ -354,12 +373,12 @@ Example:
 | **Instructions should be sentences, one-line links should be fragments.**
 | Instructions, such as “A password reset link has been sent to you@email.com for your account.\nPlease check your inbox.”, should be displayed as sentences ending in periods. One-line links, such as “Find it here”, should not end in periods or commas, but question marks are okay.
 |
-Example:
+**Example:**
 
     Incorrect:
         Instruction “Please check your inbox”, didn't end with a period.
 
-        ..  image:: https://raw.githubusercontent.com/mattermost/docs/master/source/images/align4.png
+        ..  image:: ../images/align4.png
             :alt: Period Missing
             :width: 300 px
 
@@ -369,7 +388,7 @@ Example:
     Correct:
         Instruction “Please check your inbox”, ended with a period.
 
-        ..  image:: https://raw.githubusercontent.com/mattermost/docs/master/source/images/align5.jpg
+        ..  image:: ../images/align5.jpg
             :alt: Period added
             :width: 300 px
 
@@ -377,30 +396,30 @@ Example:
 ---------------------------
 
 |
-Reduce obvious steps
+Reduce Obvious Steps
 ---------------------------
 
 If what the users need to perform is obvious, we should make concious decisions and reduce some of the steps involved in that process.
 
-Examples:
+**Examples:**
 
     Clicking on the search icon on mobile should focus the search bar when it slides in.
 
-    ..  image:: https://raw.githubusercontent.com/mattermost/docs/master/source/images/reduce1.png
+    ..  image:: ../images/reduce1.png
         :alt: Search mobile
 
     |
 
     Clicking on the reply icon should move the focus to the comment box in the RHS.
 
-    ..  image:: https://raw.githubusercontent.com/mattermost/docs/master/source/images/reduce2.png
+    ..  image:: ../images/reduce2.png
         :alt: Reply icon
 
     |
 
     Switching channels should move the focus to the post box in the center channel.
 
-    ..  image:: https://raw.githubusercontent.com/mattermost/docs/master/source/images/reduce3.png
+    ..  image:: ../images/reduce3.png
         :alt: Switching channels
 
 
@@ -408,30 +427,30 @@ Examples:
 ---------------------------
 
 |
-Input behaviours
+Input Behaviours
 ---------------------------
 
 All inputs such as textareas should behave consistently, if the default behaviour is to perform an action on "Enter", then all inputs for eg: The center channel post input, the comment thread textarea, the edit header modals etc should be consistent with that behaviour and perform an action on "Enter".
 
-Examples:
+**Examples:**
 
     If pressing "Enter" posts a message in the center channel post input.
 
-    ..  image:: https://raw.githubusercontent.com/mattermost/docs/master/source/images/inputBehaviour1.png
+    ..  image:: ../images/inputBehaviour1.png
         :alt: Center channel post area
 
     |
 
     Then pressing "Enter" in the comment thread textarea should also post a comment.
 
-    ..  image:: https://raw.githubusercontent.com/mattermost/docs/master/source/images/inputBehaviour2.png
+    ..  image:: ../images/inputBehaviour2.png
         :alt: Comment thread textarea
 
     |
 
     And other textareas or inputs should also perform their primary action when "Enter" is pressed, here's an example of the "Edit Header" modal.
 
-    ..  image:: https://raw.githubusercontent.com/mattermost/docs/master/source/images/inputBehaviour3.png
+    ..  image:: ../images/inputBehaviour3.png
         :alt: Edit header modal
         :width: 500 px
 
