@@ -27,9 +27,9 @@ Obvious
 
 Obvious means users are never confused. Across product features, interface layout, labeling, help text, and documentation, it is critical that everything we offer makes sense in the mind of the user, even if it means oversimplifying how things technically work.
 
-If a user doesn’t understand how to use a feature, all the underlying effort and code is wasted. The “Obvious” design principle also flows through to our [Documentation Guidelines](http://www.mattermost.org/documentation-guidelines/).
+If a user doesn’t understand how to use a feature, all the underlying effort and code is wasted. The “Obvious” design principle also flows through to our `Documentation Guidelines <http://www.mattermost.org/documentation-guidelines/>`_.
 
-Given [Hick’s Law](https://en.wikipedia.org/wiki/Hick%27s_law), core functionality should be apparent, and advanced functionality should be possible via sub-menus and well documented and tested.
+Given `Hick’s Law <https://en.wikipedia.org/wiki/Hick%27s_law>`_, core functionality should be apparent, and advanced functionality should be possible via sub-menus and well documented and tested.
 
 Functionality that is not fundamental to the product purpose should be ruthlessly omitted.
 
@@ -49,15 +49,15 @@ Markup Guidelines
 ************************
 
 |
-Bootstrap classes
+Bootstrap Classes
 -----------------------------------
 
 Since we’re using `bootstrap <http://getbootstrap.com/>`_, try to utilize `bootstrap classes <http://getbootstrap.com/css/>`_ as much as possible rather than creating new styles or using inline styles.
 
-Custom styles
+Custom Styles
 -----------------------------------
 
-We’re using `BEM methodology <https://en.bem.info/method/>`_  and would advise everyone to do so when creating new classes or ids. There’s a lot of places in our app that currently don’t follow BEM but we’re trying to improve the codebase. [Here](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) is a brief overview of the BEM syntax.
+We’re using `BEM methodology <https://en.bem.info/method/>`_  and would advise everyone to do so when creating new classes or ids. There’s a lot of places in our app that currently don’t follow BEM but we’re trying to improve the codebase. `Here <http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/>`_ is a brief overview of the BEM syntax.
 
 
 |
@@ -69,7 +69,7 @@ UI Elements
 ************************
 
 |
-Header notification
+Header Notification
 ---------------------------
 
 Appears as an additional header at the top of the UI. May include an “x” button to dismiss. Limited to 60 characters. May include a time-out. Header notification should appear over the rest of the UI instead of pushing the UI down. Multiple header header can appear, with the earliest notification at the top and more recent notifications appearing underneath.
@@ -116,7 +116,7 @@ There are several modes for this element:
 ---------------------------
 
 |
-Feedback messages
+Feedback Messages
 ---------------------------
 
 
@@ -173,7 +173,7 @@ Icons
 ---------------------------
 
 |
-Input hints
+Input Hints
 ---------------------------
 
 **Fieldname:**
@@ -239,7 +239,7 @@ Input hints
 ---------------------------
 
 |
-Input fields
+Input Fields
 ---------------------------
 
 Users should enter information into fields without much thinking.
@@ -269,7 +269,7 @@ Example:
 ---------------------------
 
 |
-Button placement
+Button Placement
 ---------------------------
 
 | **Dialog BOTTOM RIGHT BUTTONS should be either “Close”, or “Cancel” and [ACTION_BUTTON].**
@@ -306,10 +306,10 @@ Button placement
 ---------------------------
 
 |
-Number of choices
+Number of Choices
 ---------------------------
 
-To simplify decisions, when practical, limit the number of choices to 3 or 4, and add separators or headings between logical groups. See Hick’s Law for background on why this helps: https://en.wikipedia.org/wiki/Hick%27s_law
+To simplify decisions, when practical, limit the number of choices to 3 or 4, and add separators or headings between logical groups. See `Hick’s Law <https://en.wikipedia.org/wiki/Hick%27s_law>`_ for background on why this helps.
 
 Example:
 
@@ -333,7 +333,7 @@ Example:
 ---------------------------
 
 |
-Alignment of elements
+Alignment of Elements
 ---------------------------
 
 | **Elements should feature margins horizontally and vertically, evenly spaced.**
@@ -396,7 +396,7 @@ Alignment of elements
 ---------------------------
 
 |
-Reduce obvious steps
+Reduce Obvious Steps
 ---------------------------
 
 If what the users need to perform is obvious, we should make concious decisions and reduce some of the steps involved in that process.
@@ -427,7 +427,7 @@ If what the users need to perform is obvious, we should make concious decisions 
 ---------------------------
 
 |
-Input behaviours
+Input Behaviours
 ---------------------------
 
 All inputs such as textareas should behave consistently, if the default behaviour is to perform an action on "Enter", then all inputs for eg: The center channel post input, the comment thread textarea, the edit header modals etc should be consistent with that behaviour and perform an action on "Enter".
