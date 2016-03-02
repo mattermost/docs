@@ -34,13 +34,23 @@ Examples:
 
 Hashtags do not link to channels. For example, if you have a channel named "Marketing", clicking a `#marketing` hashtag does not redirect you to that channel.
 
-## Search Notes and Limitations
+## Search Notes and Known Issues
 
 - Multiple search terms are connected with “OR” by default. Typing in `Mattermost website` returns results containing “Mattermost” or “website”
 - Search in Mattermost uses the full text search features included in either a MySQL or Postgres database. 
-- Special unsupported cases:
-    - There are a number of stop words that will return no results because the words are too frequently used to provide meaningful search results. See a full list of stop words for [MySQL](http://dev.mysql.com/doc/refman/5.7/en/fulltext-stopwords.html) and [Postgres](http://apt-browse.org/browse/ubuntu/precise/main/i386/postgresql-9.1/9.1.3-2/file/usr/share/postgresql/9.1/tsearch_data/english.stop) databases.
-    - Searching for IP addresses, for example `10.100.200.101`, is currently unsupported.
-    - Two letter searches and common words like "this", "a" and "is" will not appear in search results
-    - Chinese characters may not return exact matches. Try adding `*` to the end of queries to run a wildcard search.
-    - Wildcard searches on Postgres databases are currently unsupported.
+- Unsupported cases:
+    - Stop words will return no results because the words are used too frequently. See a full list of stop words for [MySQL](http://dev.mysql.com/doc/refman/5.7/en/fulltext-stopwords.html) and [Postgres](http://apt-browse.org/browse/ubuntu/precise/main/i386/postgresql-9.1/9.1.3-2/file/usr/share/postgresql/9.1/tsearch_data/english.stop) databases.
+    - Two letter searches do not return results.  
+- Known Issues:
+    - Postgres and MySQL databases:
+        - Wildcard searches do not return results.
+        - Chinese characters may not return exact matches. Try adding `*` to the end of queries to run a wildcard search.
+        - IP addresses, for example `10.100.200.101`, do not return results.
+    - Postgres databases:
+        - Phrases in quotations return results for the individual words in the phrase.
+        - Colons in quotations cause an error.
+        - Email addresses do not return results.
+    - MySQL databases:
+        - Hashtags or recent mentions of usernames containing a dot do return search results.
+
+    
