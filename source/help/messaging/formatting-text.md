@@ -65,9 +65,9 @@ Renders as: `monospace`.
 
 Create labeled links by putting the desired text in square brackets and the associated link in normal brackets. 
 
-`[Check out Mattermost!](www.mattermost.com)`
+`[Check out Mattermost!](https://about.mattermost.com/)`
 
-Renders as: [Check out Mattermost!](www.mattermost.com)
+Renders as: [Check out Mattermost!](https://about.mattermost.com/)
 
 ## In-line Images  
 
@@ -89,13 +89,14 @@ and
 
 ## Emojis  
 
-Emoji provided free by [Emoji One](http://emojione.com/). Check out a full list of emojis [here](http://http://emoji.codes/).
+Emoji provided free by [Emoji One](http://emojione.com/). Check out a full list of emojis [here](http://emoji.codes/).
 
 ```
 :smile: :+1: :sheep:
 ```
-Renders as:
-:smile: :+1: :sheep:
+Renders as:  
+
+![emojis](../../images/Emoji1.PNG)
 
 ## Lines  
 
@@ -159,7 +160,7 @@ Renders as:
 
 ![table](../../images/markdownTable1.PNG)
 
-## Headings:  
+## Headings  
 
 Make a heading by typing # and a space before your title. For smaller headings, use more #’s. 
 ```
@@ -167,10 +168,9 @@ Make a heading by typing # and a space before your title. For smaller headings, 
 ### Smaller Heading
 #### Even Smaller Heading
 ```
-Renders as: 
-## Large Heading
-### Smaller Heading
-#### Even Smaller Heading
+Renders as:  
+
+![headings](../../images/Headings1.PNG)
 
 Alternatively, you can underline the text using `===` or `---` to create headings.
 ```
@@ -179,5 +179,4 @@ Large Heading
 ```
 Renders as:  
 
-Large Heading
--------------
+![heading](../../images/Headings2.PNG)
