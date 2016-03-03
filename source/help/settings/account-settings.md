@@ -55,11 +55,11 @@ By default, you will receive mention notifications from your non-case sensitive 
 Settings to configure incoming and outgoing webhooks for your team.
 
 #### Incoming Webhooks
-Incoming webhooks from external integrations can post messages to Mattermost in public channels or private groups. Learn more about setting up incoming webhooks on our [documentation page](https://github.com/mattermost/platform/blob/master/doc/integrations/webhooks/Incoming-Webhooks.md).
+Incoming webhooks from external integrations can post messages to Mattermost in public channels or private groups. Learn more about setting up incoming webhooks on our [documentation page](http://docs.mattermost.com/developer/webhooks-incoming.html).
 
 
 #### Outgoing Webhooks
-Outgoing webhooks use trigger words to fire new message events to external integrations. For security reasons, outgoing webhooks are only available in public channels. Learn more about setting up outgoing webhooks on our [documentation page](https://github.com/mattermost/platform/blob/master/doc/integrations/webhooks/Outgoing-Webhooks.md).
+Outgoing webhooks use trigger words to fire new message events to external integrations. For security reasons, outgoing webhooks are only available in public channels. Learn more about setting up outgoing webhooks on our [documentation page](http://docs.mattermost.com/developer/webhooks-outgoing.html).
 
 ## Display
 Settings to configure clock and teammate name display preferences.
