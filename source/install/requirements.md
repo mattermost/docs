@@ -3,7 +3,7 @@ ___
 
 ## Deployment Overview
 
-Please see [Mattermost Deployment Overview](https://github.com/mattermost/docs/blob/master/source/install/network-diagram.png) for a summary of components listed here. 
+Please see [Mattermost Deployment Overview](http://docs.mattermost.com/deployment/deployment.html) for a summary of components listed here. 
 
 ![image](https://raw.githubusercontent.com/mattermost/docs/master/source/images/networkDiagram.PNG)
 
