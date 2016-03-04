@@ -38,6 +38,7 @@ Hashtags do not link to channels. For example, if you have a channel named "Mark
 
 - Multiple search terms are connected with “OR” by default. Typing in `Mattermost website` returns results containing “Mattermost” or “website”
 - Search in Mattermost uses the full text search features included in either a MySQL or Postgres database. 
+- Deployments requiring searching in Chinese, Japanese and Korean languages require MySQL 5.7.6+ and the configuration of [ngram Full-Text parser](https://dev.mysql.com/doc/refman/5.7/en/fulltext-search-ngram.html). See [CJK discussion](https://github.com/mattermost/platform/issues/2033#issuecomment-183872616) for details.
 - Unsupported cases:
     - Stop words will return no results because the words are used too frequently. See a full list of stop words for [MySQL](http://dev.mysql.com/doc/refman/5.7/en/fulltext-stopwords.html) and [Postgres](http://apt-browse.org/browse/ubuntu/precise/main/i386/postgresql-9.1/9.1.3-2/file/usr/share/postgresql/9.1/tsearch_data/english.stop) databases.
     - Two letter searches do not return results.  
