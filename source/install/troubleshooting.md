@@ -98,7 +98,7 @@ The following is a list of common error messages and solutions:
 ##### `panic: The database schema version of 1.1.0 cannot be upgraded. You must not skip a version`
 - This error may appear in your `/var/log/gitlab/mattermost/current` if you're attempting to skip major versions when upgrading GitLab Mattermost (e.g. running an upgrade from GitLab 8.2.x to 8.4.x, instead of running from 8.2.x to 8.3.x to 8.4.x which is required for GitLab Mattermost). To address this: 
     1. Run `platform -version` to check your version of Mattermost 
-    2. If your version of the Mattermost binary doesn't match the version listed in the database error message, downgrade the version of the Mattermost binary you are using by [following the manual upgrade steps for Mattermost](http://docs.mattermost.com/administration/upgrade.htmle) and using the database schema version listed in the error messages for the version you select in Step 1) iv). 
+    2. If your version of the Mattermost binary doesn't match the version listed in the database error message, downgrade the version of the Mattermost binary you are using by [following the manual upgrade steps for Mattermost](http://docs.mattermost.com/administration/upgrade.html) and using the database schema version listed in the error messages for the version you select in Step 1) iv). 
     3. Once Mattermost is working again, you can use the same upgrade procedure to upgrade Mattermost version by version to your current GitLab version. After this is done, GitLab automation should continue to work for future upgrades, so long as you don't skip versions. 
 
 ###### `panic: Error decoding config file=/opt/mattermost/config/config.json, err=invalid character '"' after object key:value pair`
