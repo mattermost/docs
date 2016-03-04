@@ -16,7 +16,7 @@ Mattermost supports workplace messaging for teams using one to three servers usi
 
 ### PC Web Experience 
 
-End users can securely share messages and files using a web-based Mattermost experience in IE, Chrome and Firefox. Please see [Software and Hard Requirements](http://docs.mattermost.com/install/requirements.html) documentation for full details.
+End users can securely share messages and files using a web-based Mattermost experience in IE, Chrome and Firefox. Please see [Software and Hardware Requirements](http://docs.mattermost.com/install/requirements.html) documentation for full details.
 
 ### Mobile App Experience
 
@@ -41,7 +41,7 @@ The test service does not offer encryption and may have occassional unannounced 
 
 ### Mobile Web Experience 
 
-End users can securely share messages and files using a web-mobiled-based Mattermost experience on iOS and Android devices. Please see [Software and Hard Requirements](http://docs.mattermost.com/install/requirements.html) documentation for full details.
+End users can securely share messages and files using a web-mobiled-based Mattermost experience on iOS and Android devices. Please see [Software and Hardware Requirements](http://docs.mattermost.com/install/requirements.html) documentation for full details.
 
 ### Email Client 
 
