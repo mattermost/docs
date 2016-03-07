@@ -75,7 +75,7 @@ Security note: By enabling this feature, users may be able to perform [phishing 
 
 **Enable Outgoing Webhooks** (`"EnableOutgoingWebhooks": true`)    
 
-Developers building integrations can create webhook tokens for public channels. Trigger words are used to fire new message events to external integrations. For security reasons, outgoing webhooks are only available in public channels. Please see our [documentation page](https://github.com/mattermost/platform/blob/master/doc/integrations/webhooks/Outgoing-Webhooks.md) to learn about creating webhooks and view samples. `true`: Outgoing webhooks will be allowed. To manage outgoing webhooks, go to **Account Settings > Integrations**; `false`: The Integrations > Outgoing Webhooks section of Account Settings is hidden and all outgoing webhooks are disabled.
+Developers building integrations can create webhook tokens for public channels. Trigger words are used to fire new message events to external integrations. For security reasons, outgoing webhooks are only available in public channels. Please see our [documentation page](http://docs.mattermost.com/developer/webhooks-outgoing.html) to learn about creating webhooks and view samples. `true`: Outgoing webhooks will be allowed. To manage outgoing webhooks, go to **Account Settings > Integrations**; `false`: The Integrations > Outgoing Webhooks section of Account Settings is hidden and all outgoing webhooks are disabled.
 
 Security note: By enabling this feature, users may be able to perform [phishing attacks](https://en.wikipedia.org/wiki/Phishing) by attempting to impersonate other users. To combat these attacks, a BOT tag appears next to all posts from a webhook. Enable at your own risk.
 
