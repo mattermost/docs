@@ -441,7 +441,7 @@ To limit the impact of this security issue, Mattermost v1.2.0 has been removed f
 
 #### Outgoing webhooks
 
-- Mattermost users can now interact with external applications using [outgoing webhooks](https://github.com/mattermost/platform/blob/master/doc/integrations/webhooks/Outgoing-Webhooks.md)
+- Mattermost users can now interact with external applications using [outgoing webhooks](http://docs.mattermost.com/developer/webhooks-outgoing.html)
 - An [application template](https://github.com/mattermost/mattermost-integration-giphy) demonstrating user queries sent to the Giphy search engine via Mattermost webhooks now available
 - A community application, [Matterbridge](https://github.com/42wim/matterbridge?files=1), shows how to use webhooks to connect Mattermost with IRC 
 
@@ -481,7 +481,7 @@ Search
 
 Integrations 
 
-- [Outgoing webhooks](https://github.com/mattermost/platform/blob/master/doc/integrations/webhooks/Outgoing-Webhooks.md) now available
+- [Outgoing webhooks](http://docs.mattermost.com/developer/webhooks-outgoing.html) now available
 - Made available [application template showing outgoing webhooks working with Mattermost and external application](https://github.com/mattermost/mattermost-integration-giphy)
 
 User Interface
@@ -600,7 +600,7 @@ Released 2015-10-20
 
 This is a bug fix release (v1.1.1) and recommended only for users needing a fix to the specific issue listed below. All other users should use the most recent major stable build release (v1.1.0). 
 
-[View more information on Mattermost release numbering](https://github.com/mattermost/platform/blob/master/doc/install/release-numbering.md).
+[View more information on Mattermost release numbering](http://docs.mattermost.com/process/release-process.html?highlight=release%20numbering#release-numbering).
 
 ### Release Purpose
 
@@ -612,7 +612,7 @@ This was problematic for installing Mattermost with GitLab omnibus since GitLab 
 
 Therefore Mattermost v1.1.1 was created that can upgrade the database in Mattermost v0.7 to Mattermost v1.1 directly. 
 
-Users who configured Mattermost v0.7 within GitLab via the `config.json` file should consult [documentation on upgrading configurations from Mattermost v0.7 to Mattermost v1.1](https://github.com/mattermost/platform/blob/master/doc/install/Upgrade-Guide.md#upgrading-mattermost-v07-to-v11).
+Users who configured Mattermost v0.7 within GitLab via the `config.json` file should consult [documentation on upgrading configurations from Mattermost v0.7 to Mattermost v1.1](http://docs.mattermost.com/administration/upgrade.html).
 
 #### Removes 32-char limit on salts 
 
