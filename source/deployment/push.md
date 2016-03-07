@@ -7,6 +7,17 @@ See [Push Notification Settings](http://docs.mattermost.com/administration/confi
 - [Mattermost iOS App on iTunes](https://itunes.apple.com/us/app/mattermost/id984966508?mt=8)
 - Mattermost Android App on Google Play (pending release)
 
+## Why do push notifications seem so complicated? 
+
+iOS apps require a private key issued by Apple for each iOS app in order to receive push notifications. To self-host Mattermost, teams need to request their own key from Apple to be used from behind their firewall. 
+
+Mattermost provides:  
+1. Source code to use your own key with your own iOS apps in an Enterprise App Store, or as an Android .apk file.  
+2. A free test service, http://push-test.mattermost.com, for you to use pre-compiled iOS and Android apps for testing before your compiled your own.  
+3. As an alternative to compiling your own, a [commercial service](https://about.mattermost.com/pre-compiled/) with pre-compiled apps and an encrypted push notification service is available.
+
+The following explains the details of how mobile applications and push notifications are set up. 
+
 ## How push notifications are sent
 
 Sending a push notification to a user's mobile device consists of three steps: 
@@ -30,27 +41,18 @@ There are two options for setting up the MPNS to offer push notifications:
    Advantages: 
    - Fewer dependencies - All communication between Step 1 and Step 2 happens behind your firewall, only Step 3 happens outside your firewall. 
 
-   Disadvantages:
-   - Requires time and effort - An in-house developer would be required to properly compile, deploy and maintain the MPNS and mobile apps  
+   Trade-offs:
+   - Requires time and effort - An in-house developer would be required to properly compile, deploy and maintain the MPNS and mobile apps.
 
-- **Option B) Use a hosted MPNS service**  
+   For Team Edition users, prior to compiling your own applications and MPNS service, you can set your Push Notification Service to `http://push-test.mattermost.com` in the System Console to test your deployment using the iOS app on iTunes and Android app on Google Play. This is a test-quality, unencrypted push notification service that is not recommended for production use. If you use the service on a day-to-day basis, please make sure to join the [Mattermost announcement mailing list](https://mattermost.us11.list-manage.com/subscribe?u=6cdba22349ae374e188e7ab8e&id=2add1c8034) for updates on availability. 
 
-   Instead of compiling your own MPNS, you can put the address of a hosted MPNS supporting SSL into the **Push Notification Server** field inside the System Console and have your users install the iOS or Android native applications connected to the hosted service. 
+- **Option B) Use the Mattermost Pre-compiled Mobile Applications Service (MPMAS)**  
+
+   Instead of compiling your own MPNS and mobile apps, you can purchase a subscripton to the [Mattermost Pre-compiled Mobile Application Service (PMAS)](https://about.mattermost.com/pre-compiled/) and have your users install the [iOS app from iTunes](https://itunes.apple.com/us/app/mattermost/id984966508?mt=8) or the Android app from Google Play (release pending). 
    
    Advantages: 
    - Saves time - No need to compile open source applications 
    
-   Disadvantages:
-   - Requires trusting provider of hosted MPNS service - With this option, Step 2 happens outside of your firewall over an encrypted SSL connection which terminates at the MPNS. This means the MPNS decrypts the notification and re-encrypts it to send on to Step 3, so there is a moment when an unencrypted push notification message exists in the MPNS service. By default this is not an issue, since by default push notification messages only include generic descriptions and the names of users and channels (e.g. "@bob mentioned you in Town Square channel"). However, if in future you decide to enable push notifications to contain the contents from messages, you may need to review your internal IT policies to see whether Option A or Option B is most appropriate.
-
-## Push notifications for Enterprise Edition customers
-
-Subscriptions to Mattertmost Enterprise Edition include the use of a hosted, production-quality MPNS service with SSL, available at `https://push.mattermost.com`, which connects to the [official Mattermost iOS application on iTunes](https://itunes.apple.com/us/app/mattermost/id984966508?mt=8) and the official Mattermost Android application in the Google Play Store (release pending).
-
-## Push notifications for Team Edition users 
-
-For users of Mattermost Team Edition, an additional MPNS service for testing server setups connected to the same mobile applications is available at `http://push-test.mattermost.com`. The test service can be used prior to compiling your own components from the open source repositories and does not include encryption for push notifications and does not offer a production-quality service-level agreement. 
-
-If you choose to use the test service day-to-day, please subscribe to the [Mattermost announcement mailing list](https://mattermost.us11.list-manage.com/subscribe?u=6cdba22349ae374e188e7ab8e&id=2add1c8034) for updates on availability. 
-
-Some users of Mattermost Team Edition have requested Mattermost.com provide a paid service for encrypted push notifications, as an alternative to compiling their own MPNS and mobile apps from the source code provided. If you're interested in such a service, please mail commercial@mattermost.com to be notified when it is available. 
+   Trade-offs:
+   - Team Edition users incur an additional financial cost (Enterprise Edition customers do not incur additional cost, since the service is included with their subscription). 
+   - As with any hosted service, MPMAS is a dependency that exists outside your firewall.
