@@ -46,9 +46,9 @@ There are two options for setting up the MPNS to offer push notifications:
 
    For Team Edition users, prior to compiling your own applications and MPNS service, you can set your Push Notification Service to `http://push-test.mattermost.com` in the System Console to test your deployment using the iOS app on iTunes and Android app on Google Play. This is a test-quality, unencrypted push notification service that is not recommended for production use. If you use the service on a day-to-day basis, please make sure to join the [Mattermost announcement mailing list](https://mattermost.us11.list-manage.com/subscribe?u=6cdba22349ae374e188e7ab8e&id=2add1c8034) for updates on availability. 
 
-- **Option B) Use the Mattermost Pre-compiled Mobile Applications Service (MPMAS)**  
+- **Option B) Use the Mattermost Hosted Push Notification Service (MHPNS)**  
 
-   Instead of compiling your own MPNS and mobile apps, you can purchase a subscripton to the [Mattermost Pre-compiled Mobile Application Service (PMAS)](https://about.mattermost.com/pre-compiled/) and have your users install the [iOS app from iTunes](https://itunes.apple.com/us/app/mattermost/id984966508?mt=8) or the Android app from Google Play (release pending). 
+   Instead of compiling your own MPNS and mobile apps, you can purchase a subscripton to the [Mattermost Hosted Push Notifications Service (MHPNS)](https://about.mattermost.com/pre-compiled/) and have your users install the [iOS app from iTunes](https://itunes.apple.com/us/app/mattermost/id984966508?mt=8) or the Android app from Google Play (release pending). 
    
    Advantages: 
    - Saves time - No need to compile open source applications 
