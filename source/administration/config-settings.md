@@ -69,7 +69,7 @@ Set the number of minutes to cache a session in memory.
 
 **Enable Incoming Webhooks** (`"EnableIncomingWebhooks": true`)    
 
-Developers building integrations can create webhook URLs for channels and private groups. Please see http://mattermost.org/webhooks to learn about creating webhooks, view samples, and to let the community know about integrations you have built. `true`: Incoming webhooks will be allowed. To manage incoming webhooks, go to **Account Settings > Integrations**. The webhook URLs created in Account Settings can be used by external applications to create posts in any channels or private groups that you have access to; `false`: The Integrations > Incoming Webhooks section of Account Settings is hidden and all incoming webhooks are disabled.
+Developers building integrations can create webhook URLs for channels and private groups. Please see our [documentation page](http://docs.mattermost.com/developer/webhooks-incoming.html) to learn about creating webhooks, view samples, and to let the community know about integrations you have built. `true`: Incoming webhooks will be allowed. To manage incoming webhooks, go to **Account Settings > Integrations**. The webhook URLs created in Account Settings can be used by external applications to create posts in any channels or private groups that you have access to; `false`: The Integrations > Incoming Webhooks section of Account Settings is hidden and all incoming webhooks are disabled.
 
 Security note: By enabling this feature, users may be able to perform [phishing attacks](https://en.wikipedia.org/wiki/Phishing) by attempting to impersonate other users. To combat these attacks, a BOT tag appears next to all posts from a webhook. Enable at your own risk.
 
