@@ -8,7 +8,7 @@ Acronym for [Accepting Pull Request](http://docs.mattermost.com/process/acceptin
 
 #### Bug
 
-A defect in the code that varies from specification. Changes required to accomodate unsupported 3rd party software (such as browsers or operating systems) are not considered bugs, they are considered improvements. 
+An obvious error in Mattermost software. Changes required to accomodate unsupported 3rd party software (such as browsers or operating systems) are not considered bugs, they are considered improvements. 
 
 #### Dev Mana
 
