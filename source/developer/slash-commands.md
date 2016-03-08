@@ -121,3 +121,145 @@ As mentioned above, Mattermost makes it easy to take integrations written for Sl
 - Conversion of Slack attachments and link conversion isn't working
 - Disabling slash commands from the system console only disables creation, not execution of user created slash commands
 - /me command sometimes posts as the webhook bot instead of the user
+
+
+### Pre-Released feature : Enabling external application to offer slash command autocomplete
+
+**Please note that you may experience lag as autocomplete request goes to Mattermost server, then to 3rd party, then back, then back on every keystroke.**
+
+#### What problem does it solve
+
+If your team relies heavily on slash commands, managing them directly in mattermost can become painfull.
+You have to create them one by one, add a trigger, an url, etc…
+
+With this feature, you will be able to add them on an external application the way you decided to.
+So you can manage roles on your side to offer commands to selected users.
+
+Another problem is that the auto-completion only works with command names, not their arguments.
+For commands that needs some object ids, you have to remember them, and mistakes may be dangerous.
+
+With this approach, you can send your own suggestions based on the current command content.
+This allows you to prevent any errors as your users don't have to remember anything.
+
+This post exposes the idea (originally based on outgoing webhooks): https://forum.mattermost.org/t/add-suggestion-autocompletion-webhook-setting/460
+
+#### Setup
+
+Under Account Settings > Advanced > Preview pre-released features check `Enable external application to offer slash command autocomplete`
+
+Under Account Settings / Integration / Slash Commands, **add only one new with this params** (others params are not needed and untested for now, and having several ones breaks everything, more known bugs below)
+
+- check "Enable external application to offer autocomplete"
+- leave trigger blank
+- enter an url
+- keep POST format
+
+#### Slash command auto-completion
+
+When `/` is entered in text box, and with any additional keystroke, a request is made to the url with this payload:
+```
+{
+  channel_id: 'xxxxx',
+  channel_name: 'xxxxx',
+  command: '<text box first word including />',
+  response_url: 'not supported yet',
+  suggest: 'true',
+  team_domain: 'xxxxx',
+  team_id: 'xxxxx',
+  text: '<remaining text box content>',
+  token: 'xxxxx',
+  user_id: 'xxxxx',
+  user_name: 'xxxxx'
+}
+```
+
+ie: if `/start webserver alpha` is typed in text box, we'll have this
+payload:
+```
+{
+  channel_id: 'xxxxx',
+  channel_name: 'xxxxx',
+  command: '/start',
+  response_url: 'not supported yet',
+  suggest: 'true',
+  team_domain: 'xxxxx',
+  team_id: 'xxxxx',
+  text: 'webserver alpha'
+  token: 'xxxxx',
+  user_id: 'xxxxx',
+  user_name: 'xxxxx'
+}
+```
+
+The server must respond with an array of objects:
+```
+[
+    {
+        auto_complete_desc: <command description>,
+        external_management: true,
+        trigger: <command trigger>
+    }
+]
+```
+
+ie, with '/sta' in the text box:
+```
+[
+    {
+        "auto_complete_desc": "start sub command  webserver
+description",
+        "external_management": true,
+        "trigger": "start webserver"
+    },
+    {
+        "auto_complete_desc": "start sub command  dbserver description",
+        "external_management": true,
+        "trigger": "start dbserver"
+    },
+    {
+        "auto_complete_desc": "start sub command  coffeeMachine
+description",
+        "external_management": true,
+        "trigger": "start coffeeMachine"
+    }
+]
+```
+
+#### Command execution
+
+Then, when command is send, regular slash command system is used:
+same payload is send, but without `suggest` param:
+```
+{
+  channel_id: 'xxxxx',
+  channel_name: 'xxxxx',
+  command: '<text box first word including />',
+  response_url: 'not supported yet',
+  team_domain: 'xxxxx',
+  team_id: 'xxxxx',
+  text: '<remaining text box content>',
+  token: 'xxxxx',
+  user_id: 'xxxxx',
+  user_name: 'xxxxx'
+}
+```
+
+Server must return this:
+```
+{
+    "response_type": "in_channel",
+    "text": <command output>,
+}
+```
+
+#### Known bugs
+
+##### Multiple setup breaks everything
+If you use more than one slash command autocomplete, no auto-complete suggestions are shown, even the built in ones.
+
+##### Double trigger character
+Sometimes, an extra `/` is added at the beginning of the text box content.
+
+##### Sub auto-completion
+
+When selecting first auto-completed command in the suggestion box, keystroke is needed to get sub auto-completion triggered. It should be triggered instantly.
