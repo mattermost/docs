@@ -43,3 +43,15 @@ This should leave Active Directory/LDAP as the only single-sign-in option.
 ### Additional Active Directory/LDAP support
 
 Improvements Active Directory/LDAP support for Mattermost Enterprise Edition be released monthly to subscribers following the official product release. 
+
+
+### Troubleshooting
+
+The following are troubleshooting suggestions on common error messages. 
+
+#### `User not registered on LDAP server`
+
+This means the query sent back to the Active Directory/LDAP server returned no results. 
+- Check that you correctly entered Active Directory/LDAP user credentials (e.g. did not mix username with email).
+- Check that the user account you're trying to use exists in the Active Directory/LDAP service.
+- Check that your Active Directory/LDAP properties were propertly configured.
