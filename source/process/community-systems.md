@@ -2,11 +2,14 @@
 
 Here's how to engage with the Mattermost community: 
 
-- **Bugs** - [Search for existing bugs and file a GitHub issue if your bug is new](http://www.mattermost.org/filing-issues/) 
-- **Feature Ideas** - [Add a feature idea to be discussed or upvoted](http://www.mattermost.org/feature-requests/)
-- **Troubleshoot** - [Search articles and add topic if issue is new](https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150)
-- **General Discussion** - [Join the Mattermost Forum](https://forum.mattermost.org/t/welcome-to-the-mattermost-general-forum/8) 
-
+- **Bugs** - [Search for existing bugs and file a GitHub issue if your bug is new](http://www.mattermost.org/filing-issues/). 
+- **Feature Ideas** - [Add a feature idea to be discussed or upvoted](http://www.mattermost.org/feature-requests/).
+- **Troubleshoot** - [Search articles and add topic if issue is new](https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150).
+- **General discussion** - [Join the Mattermost Forum](https://forum.mattermost.org/t/welcome-to-the-mattermost-general-forum/8). 
+- **Contribute code** - Select tickets [accepting pull requests](https://mattermost.atlassian.net/browse/PLT-2244?filter=10101) and follow [guidelines to contribute](http://docs.mattermost.com/developer/contribution-guide.html). 
+- **Contributor and tester discussion** - Contributors and testers can use [nightly builds server](https://pre-release.mattermost.com/core) to work on next release.
+- **Approved changes** - See [Jira database](https://mattermost.atlassian.net/secure/Dashboard.jspa) to view open, in-progress, resolved and closed tickets. 
+ 
 ## GitHub Issues Workflow
 
 To minimize response times, templates and automation are used across community systems for common requests. 
