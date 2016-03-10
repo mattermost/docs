@@ -26,14 +26,15 @@ Once you have a ticket:
 
 Before submitting a pull request (PR), check that:  
 
-1. You’ve signed the [Contributor License Agreement](http://www.mattermost.org/mattermost-contributor-agreement/), so you can be added to the Mattermost [Approved Contributor List](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true)  
-2. Your change has an [APR Ticket](http://docs.mattermost.com/process/accepting-pull-request.html)
-3. Your code follows the [Mattermost Style Guide](http://docs.mattermost.com/developer/style-guide.html)  
-4. Unit tests are included for new server side functionality 
-5. Strings in user interface are included in localization files
-6. Change meets UX Guidelines of [Fast, Obvious, Forgiving](http://www.mattermost.org/design-principles/)
-7. If change requires user to understand a new concept or make a decision, PR for help documentation is submitted to [mattermost/docs](https://github.com/mattermost/docs)  
-8. Change is thoroughly tested. If your change involves text processing, make sure to run tests in [`/tests`](https://github.com/mattermost/platform/tree/master/doc/developer/tests)
+1. You’ve signed the [Contributor License Agreement](http://www.mattermost.org/mattermost-contributor-agreement/), so you can be added to the Mattermost [Approved Contributor List](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true).  
+2. Your change has an [APR Ticket](http://docs.mattermost.com/process/accepting-pull-request.html).
+3. Your code follows the [Mattermost Style Guide](http://docs.mattermost.com/developer/style-guide.html).  
+4. Unit tests are included for new server side functionality. 
+5. Strings in user interface are included in localization files.
+6. Change meets UX Guidelines of [Fast, Obvious, Forgiving](http://www.mattermost.org/design-principles/).
+7. If change requires user to understand a new concept or make a decision, PR for help documentation is submitted to [mattermost/docs](https://github.com/mattermost/docs).
+8. Change is thoroughly tested. If your change involves text processing, make sure to run tests in [`/tests`](https://github.com/mattermost/platform/tree/master/doc/developer/tests).
+9. Confirm you have [squashed your commits](http://git-scm.com/book/en/v2/Git-Tools-Rewriting-History#Squashing-Commits).
 
 ## Submitting a Pull Request 
 
