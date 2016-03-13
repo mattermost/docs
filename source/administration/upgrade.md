@@ -2,7 +2,7 @@
 
 This guide explains how to upgrade your Mattermost deployment across versions and editions. 
 
-### Upgrading Mattermost Team Edition to next major version
+### Upgrading Team Edition to next major version
 
 The following instructions upgrade Mattermost to the next major build release (for example, from 1.4.x to 2.0.0). You can upgrade to v2.0.0 directly from v1.3.x. or v1.4.x. If you're upgrading across more releases (for example from 1.2.x to 2.0.0) please run the following procedure once for each incremental upgrade up to v1.3.x, then again for v1.3.x to v2.0.0.  
 
@@ -28,7 +28,7 @@ The following instructions upgrade Mattermost to the next major build release (f
 8. Test the system is working by going to the URL of an existing team. 
       You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade
 
-### Upgrade Mattermost Team Edition to Mattermost Enterprise Edition 
+### Upgrade Team Edition to Enterprise Edition 
 
 1. Confirm you have the latest version of Mattermost Team Edition installed
    1. Run `platform -version` to check the current version of your Mattermost server and compare the version with the latest release listed on https://mattermost.org/download
@@ -38,7 +38,6 @@ The following instructions upgrade Mattermost to the next major build release (f
    
 You will need an Enterprise Edition license key to activate the features. Follow the instructions that came with your license key to complete your upgrade.   
    
-
 ## Version Archive 
 
 Locations of previously compiled builds. 
