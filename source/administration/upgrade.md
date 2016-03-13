@@ -32,17 +32,27 @@ The following instructions upgrade Mattermost to the next major build release (f
 
 ### Mattermost Team Edition T0
 
-| Version | Release URL | 
-|:--- |:--- |:--- |
-| [t0-v2.1.0](http://docs.mattermost.com/administration/changelog.html#release-v2-1-0) | `https://github.com/mattermost/platform/releases/download/v2.0.0/mattermost.tar.gz` | 
-| [t0-v2.0.0](http://docs.mattermost.com/administration/changelog.html#release-v2-0-0) | `https://github.com/mattermost/platform/releases/download/v2.0.0/mattermost.tar.gz` | 
-| [t0-v1.4.0](http://docs.mattermost.com/administration/changelog.html#release-v1-4-0) | `https://github.com/mattermost/platform/releases/download/v1.4.0/mattermost.tar.gz` | 
-| [t0-v1.3.0](http://docs.mattermost.com/administration/changelog.html#release-v1-3-0) | `https://github.com/mattermost/platform/releases/download/v1.3.0/mattermost.tar.gz` | 
-| [t0-v1.2.1](http://docs.mattermost.com/administration/changelog.html#release-v1-2-1) | `https://github.com/mattermost/platform/releases/download/v1.2.1/mattermost.tar.gz` | 
-| [t0-v1.2.0](http://docs.mattermost.com/administration/changelog.html#release-v1-2-0) | Redacted due to security issue | 
-| [t0-v1.1.1](http://docs.mattermost.com/administration/changelog.html#release-v1-1-1) | `https://github.com/mattermost/platform/releases/download/v1.1.1/mattermost.tar.gz` | 
-| [t0-v1.1.0](http://docs.mattermost.com/administration/changelog.html#release-v1-1-0) | `https://github.com/mattermost/platform/releases/download/v1.1.0/mattermost.tar.gz` | 
-| [t0-v1.0.0](http://docs.mattermost.com/administration/changelog.html##release-v1-0-0) | `https://github.com/mattermost/platform/releases/download/v1.0.0/mattermost.tar.gz` | 
-| [t0-v0.7.0](http://docs.mattermost.com/administration/changelog.html#release-v0-7-0-beta) | `https://github.com/mattermost/platform/releases/download/v0.7.0/mattermost.tar.gz` | 
-| [t0-v0.6.0](http://docs.mattermost.com/administration/changelog.html#release-v0-6-0-alpha) | `https://github.com/mattermost/platform/releases/download/v0.6.0/mattermost.tar.gz` | 
-| [t0-v0.5.0](http://docs.mattermost.com/administration/changelog.html#release-v0-5-0-preview) | `https://github.com/mattermost/platform/releases/download/v0.5.0/mattermost.tar.gz` | 
+- [t0-v2.1.0](http://docs.mattermost.com/administration/changelog.html#release-v2-1-0) 
+  - `https://github.com/mattermost/platform/releases/download/v2.0.0/mattermost.tar.gz` 
+- [t0-v2.0.0](http://docs.mattermost.com/administration/changelog.html#release-v2-0-0) 
+  - `https://github.com/mattermost/platform/releases/download/v2.0.0/mattermost.tar.gz` 
+- [t0-v1.4.0](http://docs.mattermost.com/administration/changelog.html#release-v1-4-0)
+  - `https://github.com/mattermost/platform/releases/download/v1.4.0/mattermost.tar.gz` 
+- [t0-v1.3.0](http://docs.mattermost.com/administration/changelog.html#release-v1-3-0)
+  - `https://github.com/mattermost/platform/releases/download/v1.3.0/mattermost.tar.gz` 
+- [t0-v1.2.1](http://docs.mattermost.com/administration/changelog.html#release-v1-2-1)
+  - `https://github.com/mattermost/platform/releases/download/v1.2.1/mattermost.tar.gz` 
+- [t0-v1.2.0](http://docs.mattermost.com/administration/changelog.html#release-v1-2-0)
+  - Redacted due to security issue
+- [t0-v1.1.1](http://docs.mattermost.com/administration/changelog.html#release-v1-1-1)     
+   - `https://github.com/mattermost/platform/releases/download/v1.1.1/mattermost.tar.gz` 
+- [t0-v1.1.0](http://docs.mattermost.com/administration/changelog.html#release-v1-1-0)
+   - `https://github.com/mattermost/platform/releases/download/v1.1.0/mattermost.tar.gz` 
+- [t0-v1.0.0](http://docs.mattermost.com/administration/changelog.html##release-v1-0-0)
+   - `https://github.com/mattermost/platform/releases/download/v1.0.0/mattermost.tar.gz` 
+- [t0-v0.7.0](http://docs.mattermost.com/administration/changelog.html#release-v0-7-0-beta)
+   - `https://github.com/mattermost/platform/releases/download/v0.7.0/mattermost.tar.gz` 
+- [t0-v0.6.0](http://docs.mattermost.com/administration/changelog.html#release-v0-6-0-alpha)
+   - `https://github.com/mattermost/platform/releases/download/v0.6.0/mattermost.tar.gz`
+- [t0-v0.5.0](http://docs.mattermost.com/administration/changelog.html#release-v0-5-0-preview) 
+  - `https://github.com/mattermost/platform/releases/download/v0.5.0/mattermost.tar.gz` 
