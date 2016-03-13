@@ -63,7 +63,10 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    :glob:
 
    install/requirements*
-   install/*
+   install/docker*
+   install/prod*
+   install/smtp*
+   install/troubleshooting*
 
 .. toctree::
    :maxdepth: 1
