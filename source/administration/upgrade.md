@@ -42,7 +42,7 @@ You will need an Enterprise Edition license key to activate the features. Follow
 
 Locations of previously compiled builds. 
 
-### Mattermost Team Edition T0
+### Mattermost Team Edition
 
 Stable builds of open source team communication platform compiled by Mattermost, Inc, available under an MIT license.
 
@@ -71,7 +71,7 @@ Stable builds of open source team communication platform compiled by Mattermost,
 - [v0.5.0](http://docs.mattermost.com/administration/changelog.html#release-v0-5-0-preview) 
   - `https://github.com/mattermost/platform/releases/download/v0.5.0/mattermost.tar.gz` 
 
-### Mattermost Enterprise Edition E1
+### Mattermost Enterprise Edition
 
 Stable builds of commercial software for enterprise communication compiled by Mattermost, Inc. Requires paid subscription and valid license key for use. 
 
