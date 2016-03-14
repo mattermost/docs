@@ -49,6 +49,10 @@ Set this key to enable embedding of YouTube video previews based on hyperlinks a
 
 Security note: Enabling this feature makes these connections susceptible to man-in-the-middle attacks.
 
+**Allow Cross-origin Requests** (`"AllowCorsFrom": ""`)  
+
+Enable HTTP cross-origin requests from specific domains separated by spaces. Type `*` to allow CORS from any domain or leave it blank to disable it.
+
 **Session Length for Web in days** (`"SessionLengthWebInDays" : 30`)  
 
 Set the number of days before web sessions expire and users will need to log in again.
