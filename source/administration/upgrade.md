@@ -46,8 +46,8 @@ Locations of previously compiled builds.
 
 Stable builds of open source team communication platform compiled by Mattermost, Inc, available under an MIT license.
 
-- [mattermost-team-2.1.0-rc1-linux-amd64](http://docs.mattermost.com/administration/changelog.html#release-v2-1-0) 
-  - `https://releases.mattermost.com/2.1.0-rc1/mattermost-team-2.1.0-rc1-linux-amd64.tar.gz` 
+- [v2.1.0](http://docs.mattermost.com/administration/changelog.html#release-v2-1-0) 
+  - `https://github.com/mattermost/platform/releases/download/v2.1.0/mattermost.tar.gz` 
 - [v2.0.0](http://docs.mattermost.com/administration/changelog.html#release-v2-0-0) 
   - `https://github.com/mattermost/platform/releases/download/v2.0.0/mattermost.tar.gz` 
 - [v1.4.0](http://docs.mattermost.com/administration/changelog.html#release-v1-4-0)
