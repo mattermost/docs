@@ -115,6 +115,7 @@ Mattermost Android Application is for use with Mattermost platform v2.1 and high
 
 Many thanks to all our external contributors. In no particular order:
 
+- [yuya-oc](https://github.com/yuya-oc)
 - [rodrigocorsi2](https://github.com/rodrigocorsi2)
 - [enahum](https://github.com/enahum)
 - [khoa-le](https://github.com/khoa-le)
