@@ -95,6 +95,9 @@ Mattermost Android Application is for use with Mattermost platform v2.1 and high
 
 #### Known Issues
 
+- Edit post option appears, but doesn't work, on other users' posts in the RHS.
+- Text input box does not stay scrolled to the bottom when drafting a long message in Firefox.
+- Some characters in posts may display as HTML entities, such as `&#39;`. This can be fixed by switching to a different language and then back again.
 - File name tooltip stays open after clicking to download.
 - Unable to paste images into the text box on Firefox, Safari, and IE11.
 - Archived channels are not removed from the "More" menu for the person that archived the channel until after refresh.
