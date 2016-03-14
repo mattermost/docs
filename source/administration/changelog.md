@@ -93,6 +93,12 @@ Changes from v2.0 to v2.1:
 **Android**  
 Mattermost Android Application is for use with Mattermost platform v2.1 and higher.
 
+**config.json**    
+The following setting was added and can be modified in `config.json` or the System Console.  
+
+- Under `ServiceSettings` in `config.json`:
+    - `"AllowCorsFrom": ""` to allow the system to serve HTTP requests to other domains specified.
+
 #### Known Issues
 
 - Edit post option appears, but doesn't work, on other users' posts in the RHS.
