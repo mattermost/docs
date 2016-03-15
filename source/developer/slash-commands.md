@@ -104,7 +104,7 @@ If you'd like to build your own integration that uses slash commands, you can fo
 
 Additional Notes:
 
-1. As mentioned previously, [markdown](../../usage/Markdown.md) can be used to create richly formatted responses, for example: ```{"text": "# A Header\nThe _text_ below **the** header."}``` creates a messages with a header, a carriage return, italicized text for "text" and bold text for "the"
+1. As mentioned previously, [markdown](http://docs.mattermost.com/help/messaging/formatting-text.html) can be used to create richly formatted responses, for example: ```{"text": "# A Header\nThe _text_ below **the** header."}``` creates a messages with a header, a carriage return, italicized text for "text" and bold text for "the"
 
 2. Just like regular posts, the text in a response will be limited to 4000 characters at maximum
 
