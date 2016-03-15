@@ -9,7 +9,7 @@ The following instructions upgrade Mattermost to the next major build release (f
 1. Download the **next major build release** of your server and note any compatibility procedures 
       1. Run `platform -version` to check the current version of your Mattermost server
       2. Review the [Mattermost CHANGELOG](http://docs.mattermost.com/administration/changelog.html) to determine the next major build to download to your server. 
-      3. Check the [Version Archive table](http://docs.mattermost.com/administration/upgrade.html#version-archive) to find the `[RELEASE URL]` for your desired version and enter `wget [RELEASE URL]` to download. For example, to download v2.0.0, use `wget https://github.com/mattermost/platform/releases/download/v2.0.0/mattermost.tar.gz`
+      3. Check the [Version Archive table](http://docs.mattermost.com/administration/upgrade.html#version-archive) to find the `[RELEASE URL]` for your desired version and enter `wget [RELEASE URL]` to download. For example, to download v2.1.0, use `wget https://releases.mattermost.com/2.1.0/mattermost-team-2.1.0-linux-amd64.tar.gz`
       4. Review **Compatibility** section in CHANGELOG for the version downloaded and make sure to follow any instructions
 2. Stop the Mattermost Server
       1. Consider posting an announcement to active teams about stopping the Mattermost server for an upgrade
