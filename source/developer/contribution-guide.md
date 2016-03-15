@@ -18,7 +18,7 @@ The best way to discuss opening an APR ticket with the core team is by [starting
 
 Once you have a ticket: 
 
-1. Follow [developer setup instructions](https://github.com/mattermost/platform/blob/master/doc/developer/Setup.md) to install Mattermost
+1. Follow [developer setup instructions](http://docs.mattermost.com/developer/developer-setup.html) to install Mattermost
 
 2. Create a branch with `<branch name>` set to the ID of the ticket you're working on, for example `PLT-394`, using command: `git checkout -b <branch name>`
 
