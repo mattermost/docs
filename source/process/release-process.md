@@ -32,6 +32,7 @@ No pull requests for major features should be submitted to the current release a
         - [Pushing to Battlehouse](https://mattermost.atlassian.net/browse/PLT-2199)
         - [Test upgrade](https://mattermost.atlassian.net/browse/PLT-2344) to latest release based on [upgrade guide](https://github.com/mattermost/docs/blob/master/source/administration/upgrade.md)
         - [RC Build Testing for core team](https://mattermost.atlassian.net/browse/PLT-2208)
+        - Updating gitlab.mattermost.com to RC1, and then updating gitlab.mattermost.com to final build
     - Queue an item for UX meeting to discuss worst UX bug  
     - Post in Reception alerting community of upcoming release and to ask about top issues on master ([See example](https://pre-release.mattermost.com/core/pl/pfpzwpi7wj8zzpmeih87cdt77r))  
 3. Dev:
