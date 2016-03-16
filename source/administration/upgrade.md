@@ -7,7 +7,7 @@ This guide explains how to upgrade your Mattermost deployment across versions an
 1. Download the **appropriate next upgrade** of your server and note any compatibility procedures 
       1. Run `platform -version` to check the current version of your Mattermost server
       2. Determine the appropriate next upgrade for your server: 
-          - Mattermost `v1.3.x`, `v1.4.x` and `v2.0.x` can upgrade directly to Mattermost `v2.1.x`.
+          - Mattermost `v1.4.x` and `v2.0.x` can upgrade directly to Mattermost `v2.1.x`.
           - Mattermost `v1.2.x` must upgrade to Mattermost `v1.3.x` before further upgrades.
           - Mattermost `v1.1.x` must upgrade to Mattermost `v1.2.x` before further upgrades.
           - Mattermost `v1.0.x` must upgrade to Mattermost `v1.1.x` before further upgrades.
@@ -21,7 +21,7 @@ This guide explains how to upgrade your Mattermost deployment across versions an
       2. Backup your database using your organization's standard procedures for backing up MySQL or PostgreSQL
       3. If you're using local file storage, back up the location where files are stored
 5. Install new version 
-      1. Run `tar -xvzf mattermost.tar.gz` to decompress the upgraded version and replace the current version of Mattermost on disk
+      1. Run `tar -xvzf mattermost-team-X.X.X-linux-amd64.tar.gz` to decompress the upgraded version and replace the current version of Mattermost on disk, where `X.X.X` is the version number to which you are upgrading.  
 6. Restore the state of your server 
       1. Copy the backed up version of `config.json` in place of the default `config.json` 
 7. Start your server and address any setting changes relevant in the latest version of Mattermost
@@ -49,34 +49,34 @@ Locations of previously compiled builds.
 Stable builds of open source team communication platform compiled by Mattermost, Inc, available under an MIT license.
 
 - [v2.1.0](http://docs.mattermost.com/administration/changelog.html#release-v2-1-0) 
-  - `https://github.com/mattermost/platform/releases/download/v2.1.0/mattermost.tar.gz` 
+  - `https://releases.mattermost.com/2.1.0/mattermost-team-2.1.0-linux-amd64.tar.gz` 
 - [v2.0.0](http://docs.mattermost.com/administration/changelog.html#release-v2-0-0) 
-  - `https://github.com/mattermost/platform/releases/download/v2.0.0/mattermost.tar.gz` 
+  - `https://releases.mattermost.com/2.0.0/mattermost-team-2.0.0-linux-amd64.tar.gz` 
 - [v1.4.0](http://docs.mattermost.com/administration/changelog.html#release-v1-4-0)
-  - `https://github.com/mattermost/platform/releases/download/v1.4.0/mattermost.tar.gz` 
+  - `https://releases.mattermost.com/1.4.0/mattermost-team-1.4.0-linux-amd64.tar.gz` 
 - [v1.3.0](http://docs.mattermost.com/administration/changelog.html#release-v1-3-0)
-  - `https://github.com/mattermost/platform/releases/download/v1.3.0/mattermost.tar.gz` 
+  - `https://releases.mattermost.com/1.3.0/mattermost-team-1.3.0-linux-amd64.tar.gz` 
 - [v1.2.1](http://docs.mattermost.com/administration/changelog.html#release-v1-2-1)
-  - `https://github.com/mattermost/platform/releases/download/v1.2.1/mattermost.tar.gz` 
+  - `https://releases.mattermost.com/1.2.1/mattermost-team-1.2.1-linux-amd64.tar.gz` 
 - [v1.2.0](http://docs.mattermost.com/administration/changelog.html#release-v1-2-0)
   - Removed due to a security issue
 - [v1.1.1](http://docs.mattermost.com/administration/changelog.html#release-v1-1-1)     
-   - `https://github.com/mattermost/platform/releases/download/v1.1.1/mattermost.tar.gz` 
+   - `https://releases.mattermost.com/1.1.1/mattermost-team-1.1.1-linux-amd64.tar.gz` 
 - [v1.1.0](http://docs.mattermost.com/administration/changelog.html#release-v1-1-0)
-   - `https://github.com/mattermost/platform/releases/download/v1.1.0/mattermost.tar.gz` 
+   - `https://releases.mattermost.com/1.1.0/mattermost-team-1.1.0-linux-amd64.tar.gz` 
 - [v1.0.0](http://docs.mattermost.com/administration/changelog.html##release-v1-0-0)
-   - `https://github.com/mattermost/platform/releases/download/v1.0.0/mattermost.tar.gz` 
+   - `https://releases.mattermost.com/1.0.0/mattermost-team-1.0.0-linux-amd64.tar.gz` 
 - [v0.7.0](http://docs.mattermost.com/administration/changelog.html#release-v0-7-0-beta)
-   - `https://github.com/mattermost/platform/releases/download/v0.7.0/mattermost.tar.gz` 
+   - `https://releases.mattermost.com/0.7.0/mattermost-team-0.7.0-linux-amd64.tar.gz` 
 - [v0.6.0](http://docs.mattermost.com/administration/changelog.html#release-v0-6-0-alpha)
-   - `https://github.com/mattermost/platform/releases/download/v0.6.0/mattermost.tar.gz`
+   - `https://releases.mattermost.com/0.6.0/mattermost-team-0.6.0-linux-amd64.tar.gz`
 - [v0.5.0](http://docs.mattermost.com/administration/changelog.html#release-v0-5-0-preview) 
-  - `https://github.com/mattermost/platform/releases/download/v0.5.0/mattermost.tar.gz` 
+  - `https://releases.mattermost.com/0.5.0/mattermost-team-0.5.0-linux-amd64.tar.gz` 
 
 ### Mattermost Enterprise Edition
 
 Stable builds of commercial software for enterprise communication compiled by Mattermost, Inc. Requires paid subscription and valid license key for use. 
 
-- [mattermost-enterprise-2.1.0-rc1-linux-amd64](http://docs.mattermost.com/administration/changelog.html#release-v2-1-0) 
-  - `https://releases.mattermost.com/2.1.0-rc1/mattermost-enterprise-2.1.0-rc1-linux-amd64.tar.gz` 
+- [mattermost-enterprise-2.1.0-linux-amd64](http://docs.mattermost.com/administration/changelog.html#release-v2-1-0) 
+  - `https://releases.mattermost.com/2.1.0/mattermost-enterprise-2.1.0-linux-amd64.tar.gz` 
 
