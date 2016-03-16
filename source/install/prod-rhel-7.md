@@ -83,7 +83,7 @@
     ```
     [Unit]
     Description=Mattermost
-    After=syslog.target network.target
+    After=syslog.target network.target postgresql-9.4.service
 
     [Service]
     Type=simple
