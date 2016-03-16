@@ -22,15 +22,15 @@ No pull requests for major features should be submitted to the current release a
     - Post this checklist in Release channel 
 2. PM:
     - Draft Changelog with updates for latest feature additions, known issues, and contributors
-    - Write compatibility updates for config.json and database changes [See example](https://github.com/mattermost/platform/blob/master/CHANGELOG.md#compatibility)  
-    - Confirm changes to config.json in compatibility section of Changelog are written back to [settings documentation](https://github.com/mattermost/docs/blob/master/source/administration/config-settings.md)
-    - Update [Upgrade Guide](https://github.com/mattermost/docs/blob/master/source/administration/upgrade.md) for any steps needed to upgrade to new version
+    - Write compatibility updates for config.json and database changes [See example](http://docs.mattermost.com/administration/changelog.html#compatibility)  
+    - Confirm changes to config.json in compatibility section of Changelog are written back to [settings documentation](http://docs.mattermost.com/administration/config-settings.html#configuration-settings)
+    - Update [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) for any steps needed to upgrade to new version
     - Prepare tickets for:
         - [Cutting RC builds](https://mattermost.atlassian.net/browse/PLT-2200)
         - [Creating final release candidate](https://mattermost.atlassian.net/browse/PLT-2198)
         - [Testing GitLab RC with Mattermost](https://mattermost.atlassian.net/browse/PLT-2197) 
         - [Pushing to Battlehouse](https://mattermost.atlassian.net/browse/PLT-2199)
-        - [Test upgrade](https://mattermost.atlassian.net/browse/PLT-2344) to latest release based on [upgrade guide](https://github.com/mattermost/docs/blob/master/source/administration/upgrade.md)
+        - [Test upgrade](https://mattermost.atlassian.net/browse/PLT-2344) to latest release based on [upgrade guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide)
         - [RC Build Testing for core team](https://mattermost.atlassian.net/browse/PLT-2208)
         - Updating gitlab.mattermost.com to RC1, and then updating gitlab.mattermost.com to final build
     - Queue an item for UX meeting to discuss worst UX bug  
@@ -112,7 +112,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - Post this checklist in Release channel
     - Add Release Process Kaizen/Q&A item to next team meeting
 2. Build:
-    - Test upgrade from previous version to current version, following the [Upgrade Guide](https://github.com/mattermost/docs/blob/master/source/administration/upgrade.md) 
+    - Test upgrade from previous version to current version, following the [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) 
     - Database upgrade should be tested on both MySQL and Postgres
 3. PM:
     - Update Release Discussion header with links to RC instances and testing spreadsheet
