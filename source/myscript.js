@@ -17,7 +17,7 @@ $(document).ready(function(){
 	};
 
 	$('.wy-menu-vertical li.current li').on('click', function(){
-		centerScroll(40);
+		centerScroll(80);
 	});
 
 	centerScroll(75);
