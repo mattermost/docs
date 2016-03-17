@@ -10,9 +10,9 @@ Expected release date: 2016-03-16
 - New desktop applications for Windows, Mac and Linux now in beta.
 - Brazilian Portuguese translation added.
 
-### Security Fix
+### Security Update
 
-Mattermost v2.1.0 contains a security fix for a cross-site scripting vulnerability in Mattermost v1.2, v1.3, v1.4 and v2.0. [Upgrading to Mattermost v2.1.0](http://docs.mattermost.com/administration/upgrade.html#upgrading-team-edition) is highly recommended. Thanks to Luke Arntson for the [RPD report](www.mattermost.org/responsible-disclosure-policy/). 
+Mattermost v2.1.0 contains a security update for a cross-site scripting vulnerability in Mattermost v1.2, v1.3, v1.4 and v2.0. [Upgrading to Mattermost v2.1.0](http://docs.mattermost.com/administration/upgrade.html#upgrading-team-edition) is highly recommended. Thanks to Luke Arntson for the [RPD report](www.mattermost.org/responsible-disclosure-policy/). 
 
 ### New Features
 
