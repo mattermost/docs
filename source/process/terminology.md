@@ -2,6 +2,10 @@
 
 Mattermost terminology used across the project. 
 
+#### 0/5, 1/5, 2/5, 3/5, 4/5, 5/5 
+
+We use "x/5" to concisely communicate conviction. 0/5 means you don't have a strong opinion, you are just sharing an idea or asking a question. 5/5 means you are highly confident and would stake your reputation on the opinion you're expressing. 
+
 #### APR
 
 Acronym for [Accepting Pull Request](http://docs.mattermost.com/process/accepting-pull-request.html) tickets, which are vetted changes to the source code open for community contributions.  
