@@ -13,7 +13,7 @@ Here's how to engage with the Mattermost community:
 
 ## GitHub Issues Workflow
 
-To minimize response times, templates and automation are used across community systems for common requests. 
+To minimize response times, templates and automation are used across community systems for common requests. When misfiled requests are are posted in GitHub close them soon so the community does not confuse them as being appropriate. 
 
 ### Category: Issue Submitter needs to do something
 
