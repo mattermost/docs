@@ -52,11 +52,11 @@ Key contributors might also pick up tickets, or through conversations with the c
 
 ### Community Contributions 
 
-Community members following the [Contribution Guidelines](https://github.com/mattermost/platform/blob/master/CONTRIBUTING.md) might also submit pull requests. Pull requests should not disable existing functionality without a Jira ticket, which are opened [via the feature ideas process](http://www.mattermost.org/feature-requests/). 
+Community members following the [Contribution Guidelines](http://docs.mattermost.com/developer/contribution-guide.html#code-contribution-guidelines) might also submit pull requests. Pull requests should not disable existing functionality without a Jira ticket, which are opened [via the feature ideas process](http://www.mattermost.org/feature-requests/). 
 
 #### Bug Fixes 
 
-If you see an obvious bug and want to submit a fix, pull requests following the [contribution guidelines](https://github.com/mattermost/platform/blob/master/CONTRIBUTING.md) are gladly accepted. 
+If you see an obvious bug and want to submit a fix, pull requests following the [contribution guidelines](http://docs.mattermost.com/developer/contribution-guide.html#code-contribution-guidelines) are gladly accepted. 
 
 Examples: 
 - [Fix: Unable to change password #1390](https://github.com/mattermost/platform/pull/1390)
@@ -100,4 +100,4 @@ Examples:
 
 Mattermost ships stable releases on the 16th of the month. Releases begin with a planning process reviewing internal designs and community feedback in the context of the product purpose. Feature development is done in weekly sprints, and releases end with feature complete, stablization, code complete and release candidate milestones prior to final release. 
 
-See [release process documentation](https://github.com/mattermost/platform/blob/master/doc/process/release-process.md) for more details. 
+See [release process documentation](http://docs.mattermost.com/process/release-process.html#release-process) for more details. 
