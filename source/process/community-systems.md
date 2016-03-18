@@ -9,7 +9,8 @@ Here's how to engage with the Mattermost community:
 - **Contribute code** - Select tickets [accepting pull requests](https://mattermost.atlassian.net/browse/PLT-2244?filter=10101) and follow [guidelines to contribute](http://docs.mattermost.com/developer/contribution-guide.html). 
 - **Contributor and tester discussion** - Contributors and testers can use [nightly builds server](https://pre-release.mattermost.com/core) to work on next release.
 - **Approved changes** - See [Jira database](https://mattermost.atlassian.net/secure/Dashboard.jspa) to view open, in-progress, resolved and closed tickets. 
- 
+- **Licensing questions** - Please mail licensing@mattermost.com
+
 ## GitHub Issues Workflow
 
 To minimize response times, templates and automation are used across community systems for common requests. 
