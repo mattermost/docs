@@ -80,9 +80,7 @@ Mattermost install guides include setup instructions for the NGNIX software prox
 
 In a high availability configuration (Enteprise Edition only) the proxy would also balance network load across multiple Mattermost servers.
 
-### Microsoft Active Directory Single-Sign-On 
-
-_Enterprise Edition only_
+### Microsoft Active Directory Single-Sign-On (Enterprise Edition) 
 
 Mattermost Enterprise Edition supports Microsoft Active Directory and LDAP single-sign-on. 
 
@@ -122,7 +120,7 @@ Sends notifications via SMTP email and mobile push notifications via Mattermost 
 
 Connects to and manages supported databases.
 
-### Mattermost Server for Horizontal Scaling (Enterprise Edition, available 2016)
+### Horizontal Scaling (Enterprise Edition, available 2016)
 
 Large organizations needing high scale, high availability configurations can contact the [Enterprise team](https://about.mattermost.com/contact/) for advisory on how to configure and size Mattermost Enterprise Edition to support their specific needs. Depending on customer needs, multiple Mattermost servers may be configured with cache and event synchronization to horizontally scale the Mattermost service.
 
@@ -135,8 +133,6 @@ Mattermost uses a MySQL or Postgres database to store and retrieve system data a
 See [Database requirements](http://docs.mattermost.com/install/requirements.html#database-software) for full details. 
 
 #### Multiple Read Replicas (Enterprise Edition) 
-
-_Enterprise Edition only_.
 
 For enterprise deployments the Mattermost database can be configured with a master and multiple read replicas. The read replicas can be configured as a redundant backup to the active server, so that during hardware failures operation can be diverted to the read replica server without interrupting service. The safest configuration is to size the disk space on the read replica used for failover two to three times larger than storage available on master, so that if the master fails because it runs out of disk space it will fail over to a read replica with enough extra space to run smoothly until the master is corrected.
 
