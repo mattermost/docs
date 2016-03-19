@@ -120,9 +120,9 @@ Sends notifications via SMTP email and mobile push notifications via Mattermost 
 
 Connects to and manages supported databases.
 
-### Horizontal Scaling (Enterprise Edition, available 2016)
+### High Availability (Enterprise Edition, available 2016)
 
-Large organizations needing high scale, high availability configurations can contact the [Enterprise team](https://about.mattermost.com/contact/) for advisory on how to configure and size Mattermost Enterprise Edition to support their specific needs. Depending on customer needs, multiple Mattermost servers may be configured with cache and event synchronization to horizontally scale the Mattermost service.
+Large organizations needing sophisticated, high scale, high availability configurations can contact the [Enterprise team](https://about.mattermost.com/contact/) for guidance on configuring and sizing Mattermost Enterprise Edition to support their specific needs. Multiple Mattermost servers may be configured with cache and event synchronization to horizontally scale the Mattermost service.
 
 ## Data Stores
 
