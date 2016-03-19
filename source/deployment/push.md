@@ -5,7 +5,7 @@ This section explains how push notifications work with pre-compiled iOS and Andr
 See [Push Notification Settings](http://docs.mattermost.com/administration/config-settings.html#push-notification-settings) to configure the settings for use with: 
 
 - [Mattermost iOS App on iTunes](https://itunes.apple.com/us/app/mattermost/id984966508?mt=8)
-- Mattermost Android App on Google Play (pending release)
+- [Mattermost Android App on Google Play](https://play.google.com/store/apps/details?id=com.mattermost.mattermost&hl=en)
 
 ## Why do push notifications seem so complicated? 
 
@@ -13,7 +13,7 @@ iOS apps require a private key issued by Apple for each iOS app in order to rece
 
 Mattermost provides:  
 1. Source code to use your own key with your own iOS apps in an Enterprise App Store, or as an Android .apk file.  
-2. A free test service, http://push-test.mattermost.com, for you to use pre-compiled iOS and Android apps for testing before your compiled your own.  
+2. A free test service, `http://push-test.mattermost.com`, for you to use pre-compiled iOS and Android apps for testing before your compiled your own.  
 3. As an alternative to compiling your own, a [commercial service](https://about.mattermost.com/pre-compiled/) with pre-compiled apps and an encrypted push notification service is available.
 
 The following explains the details of how mobile applications and push notifications are set up. 
