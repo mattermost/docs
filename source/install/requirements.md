@@ -5,9 +5,9 @@ ___
 
 Please see [Mattermost Deployment Overview](http://docs.mattermost.com/deployment/deployment.html) for a summary of components listed here. 
 
-![image](https://raw.githubusercontent.com/mattermost/docs/master/source/images/networkDiagram.PNG)
+![image](../images/network.PNG)
 
-[View Mattermost Network Diagram](https://raw.githubusercontent.com/mattermost/docs/master/source/images/networkDiagram.PNG)
+[View Mattermost Network Diagram](../images/network.PNG)
 
 ## Software Requirements 
 
