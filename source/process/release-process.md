@@ -27,6 +27,8 @@ No pull requests for major features should be submitted to the current release a
     - Update [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) for any steps needed to upgrade to new version
     - Prepare tickets for:
         - [Cutting RC builds](https://mattermost.atlassian.net/browse/PLT-2200)
+        - Upgrade [Gitlab Mattermost](https://gitlab.mattermost.com/community/channels/town-square) to RC1
+        - Push final build to [GitLab Mattermost](https://gitlab.mattermost.com/community/channels/town-square)
         - [Creating final release candidate](https://mattermost.atlassian.net/browse/PLT-2198)
         - [Testing GitLab RC with Mattermost](https://mattermost.atlassian.net/browse/PLT-2197) 
         - [Pushing to Battlehouse](https://mattermost.atlassian.net/browse/PLT-2199)
@@ -88,7 +90,6 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - For the next release, create team meetings on Feature Complete and Code Complete dates  
     - Confirms documentation is complete, reads through documentation and confirms all links work  
 2. PM:  
-    - Remove "Under Development" notice for current release from Changelog on master  
     - Assign each area of the release testing spreadsheet to a team member  
     - Update the release start date for the next release in Jira (setting [here](https://mattermost.atlassian.net/plugins/servlet/project-config/PLT/versions))  
 3. **(Team) Code Complete Meeting (10:15am PST meeting)**  
@@ -137,6 +138,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - Push next RC to acceptance after testing is complete and approved fixes merged, announces in Town Square on pre-release.mattermost.com/core
 9. PM:
     - Closes the meta issue after the next RC is cut, and opens another ticket for new RC
+    - Test tickets on the new RC that were merged to the release branch.
 10. Ops:
     - Verifies each of the issues in meta ticket is fixed
  
@@ -166,10 +168,10 @@ The final release is cut. If an urgent and important issue needs to be addressed
 
 1. Logistics: 
     - Post this checklist in Release channel 
-    - Post key dates for the next release in the header of the Release channel
+    - Post key dates for the next release in the header of the Release Discussion channel and remove links to RC candidates and testing spreadsheet
 2. PM:
     - Close the release in Jira
-    - Set header of next release as UNDER DEVELOPMENT in CHANGELOG on master
+    - Create [documentation checklist ticket](https://mattermost.atlassian.net/browse/PLT-2373) for next release
 3. Dev:
     - Check if any libraries need to be updated for the next release, and if so bring up in weekly team meeting
     - Test the GitLab RC containing the Mattermost final bits
