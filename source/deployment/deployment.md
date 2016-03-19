@@ -2,9 +2,9 @@
 
 The below diagram illustrates an on-premises deployment of Mattermost with optional configurations for scaling to performance from teams to large organizations.
 
-![image](../images/networkDiagram.PNG)
+![image](../images/network.PNG)
 
-[View Mattermost Network Diagram](https://raw.githubusercontent.com/mattermost/docs/master/source/images/networkDiagram.PNG)
+[View Mattermost Network Diagram](../images/network.PNG)
 
 Note: GitLab Mattermost deployment is [documented separately](http://doc.gitlab.com/omnibus/gitlab-mattermost/) and not included below.
 
@@ -80,11 +80,11 @@ Mattermost install guides include setup instructions for the NGNIX software prox
 
 In a high availability configuration (Enteprise Edition only) the proxy would also balance network load across multiple Mattermost servers.
 
-### Single-Sign-On Service (Enterprise Edition only)
+### Microsoft Active Directory Single-Sign-On 
 
-In an enterprise, often Microsoft Active Directory or a similar LDAP-compatible systems are used to centrally manage single-sign-on and system provisioning.
+_Enterprise Edition only_
 
-Mattermost Enterprise Edition supports Active Directory and LDAP single-sign-on. Support for Active Directory and LDAP groups is expected to be added during 2016 to subscribers.
+Mattermost Enterprise Edition supports Microsoft Active Directory and LDAP single-sign-on. 
 
 ### On-Premises Integrations
 
@@ -122,22 +122,36 @@ Sends notifications via SMTP email and mobile push notifications via Mattermost 
 
 Connects to and manages supported databases.
 
-### Mattermost Server for Horizontal Scaling
+### Mattermost Server for Horizontal Scaling (Enterprise Edition, available 2016)
 
-_Enterprise Edition only, available 2016_
-
-Large organizations needing high scale, high availability configurations can contact the [Enteprise team](https://about.mattermost.com/contact/) for advisory on how to configure and size Mattermost Enterprise Edition to support their specific needs. Depending on customer needs, multiple Mattermost servers may be configured with cache and event synchronization to horizontally scale the Mattermost service.
+Large organizations needing high scale, high availability configurations can contact the [Enterprise team](https://about.mattermost.com/contact/) for advisory on how to configure and size Mattermost Enterprise Edition to support their specific needs. Depending on customer needs, multiple Mattermost servers may be configured with cache and event synchronization to horizontally scale the Mattermost service.
 
 ## Data Stores
 
 ### Databases
 
-Mattermost uses a MySQL or Postgres database to store and retrieve system data and to execute full text search. 
+Mattermost uses a MySQL or Postgres database to store and retrieve system data and to execute full text search. Solid State Drives can be used for faster read times to increase performance. 
 
 See [Database requirements](http://docs.mattermost.com/install/requirements.html#database-software) for full details. 
+
+#### Multiple Read Replicas (Enterprise Edition) 
+
+_Enterprise Edition only_.
+
+For enterprise deployments the Mattermost database can be configured with a master and multiple read replicas. The read replicas can be configured as a redundant backup to the active server, so that during hardware failures operation can be diverted to the read replica server without interrupting service. The safest configuration is to size the disk space on the read replica used for failover two to three times larger than storage available on master, so that if the master fails because it runs out of disk space it will fail over to a read replica with enough extra space to run smoothly until the master is corrected.
+
+#### Global Deployments (Enterprise Edition, available 2016)
+
+Enterprise customers with deployments spanning many time zones can contact the [Enterprise Team](https://about.mattermost.com/contact/) for advanced configurations to minimize latency by:    
+
+1. Storing static assets over a global CDN.   
+2. Deploying multiple Mattermost servers to host API communication closer to the location of end users.   
+3. Deploying multiple database read replicas closer to the location of end users.   
 
 ### File Store
 
 Images and files shared by users are stored and retrieved in one of three options.
-
-For teams sharing only modest amounts of file data, local storage on the same physical machine as the Mattermost server may be sufficient. For enterprises sharing very large amounts of data, a Network-Attached Storage server may be used, which can scale to peta-bytes if necessary. Alternatively, for both easy-of-use and scale, Amazon's S3 file storage service is another option as well.
+    
+1. For teams sharing only modest amounts of file data, local storage on the same physical machine as the Mattermost server may be sufficient.    
+2. For enterprises sharing very large amounts of data, a Network-Attached Storage server may be used, which can scale to peta-bytes if necessary.    
+3. Alternatively, for both easy-of-use and scale, Amazon's S3 file storage service is another option as well.
