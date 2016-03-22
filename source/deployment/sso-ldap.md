@@ -32,7 +32,7 @@ A user interface supporting an easy switch from LDAP to email authentication wil
   1. Sign in with your new LDAP-based System Administrator account
   2. Go to **Teams** > **Team Name** > **Users**, and find your old email based System Administrator account and change it to **Inactive**.
 
-If you make a mistake in this process by deactivating your System Administrator account prematurely you can restore the role from [the commandline tool.](http://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline). 
+If you make a mistake in this process by deactivating your System Administrator account prematurely you can restore the role from [the commandline tool.](http://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline)
 
 ### Restrict authentication to Active Directory/LDAP
 
