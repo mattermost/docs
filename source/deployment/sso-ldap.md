@@ -4,24 +4,24 @@
 
 After installing Mattermost:
 
-1. Secure your LDAP connection 
-  1. Setup stunnel to port 389, the standard AD/LDAP port. 
-  2. Note: The option to add TLS is scheduled for April 16, 2016 release. 
-2. Create a team using email authentication
+1. Create a team using email authentication
   1. Log in using an account assigned to the “System Administrator” role. The first account you create on the server is automatically assigned this role. You may also assign the role to another account. 
   2. In the team site, go to **Main Menu** (the three dots at top left) > **System Console** > **LDAP Settings** 
   3. Fill in the fields to set up Mattermost authentication with your LDAP server
-     - Note: If you're using Active Directory with nested security groups you need to write a PowerShell script, or similar, to flatten and aggregate the tree into a single security group to map into Mattermost. 
   4. After LDAP has been enabled, confirm that users can sign in using LDAP credentials. The **LDAP username** will be the attribute set in the **Id Attribute** field. 
   
+  - Note: If you're using Active Directory with **nested security groups** you need to write a PowerShell script, or similar, to flatten and aggregate the tree into a single security group to map into Mattermost. 
+
 2. (Optional) Change default Session Length for LDAP SSO 
   1. Go to **System Console** > **Service Settings** > **Session Length for SSO in days** to select the frequency with which users need to log into devices with LDAP credentials. Default is 30 days. 
   
   If a user attribute changes on the LDAP server it will be updated the next time the user enters their credentials to log in to Mattermost. This includes if a user is made inactive or removed from an LDAP server. The ability more quickly detect user attribute changes by polling the LDAP server as sessions start is planned for a future monthly release of Enterprise Edition. 
 
+- Note: Organizations that run secured connections behind their firewalls can set up stunnel to port 389, the standard AD/LDAP port. The option to add TLS for LDAP is scheduled for April 16, 2016 release. 
+
 ### Switching System Administrator account to LDAP from email authentication 
 
-A user interface supporting an easy switch from LDAP to email authentication will available in a future monthly release. A manual process is currently offered: 
+A user interface supporting an easy switch from LDAP to email authentication will available April 16, 2016 in Mattermost 2.2. A manual process is currently offered: 
 
 1. Create a new LDAP account to become the new System Administrator account 
   1. The new account should have a different email than the original System Administrator account. To change the email of the original System Administrator account go to **Main Menu** > **Account Settings** > **General** > **Email**. 
@@ -53,6 +53,3 @@ This means the query sent back to the Active Directory/LDAP server returned no r
 - Check that the user account you're trying to use exists in the Active Directory/LDAP service.
 - Check that your Active Directory/LDAP properties were propertly configured.
 
-### Work in progress
-
-- [Adding ability to migrate users created using email authentication to Active Directory/LDAP authentication.](https://mattermost.atlassian.net/browse/PLT-2260). For pre-release, you can deactivate accounts with email authentication and recreate them using Active Directory/LDAP. 
