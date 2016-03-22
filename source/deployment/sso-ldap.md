@@ -1,49 +1,47 @@
 ## Active Directory/LDAP Setup (Enterprise) 
 
-
 ### Enabling Active Directory/Lightweight Directory Access Protocol (AD/LDAP)
 
 After installing Mattermost:
 
-1. Create a team using email authentication
-  1. Note: The account used to create a team receives the “System Administrator” role, used to configure settings for your Mattermost site.
-  2. Go to **Main Menu** (the three dots at top left) > **System Console**
-  3. Go to **LDAP Settings**
-  4. Fill in the fields to set up Mattermost authentication with your LDAP server
+1. Secure your LDAP connection 
+  1. Setup stunnel to port 389, the standard AD/LDAP port. 
+  2. Note: The option to add TLS is scheduled for April 16, 2016 release. 
+2. Create a team using email authentication
+  1. Log in using an account assigned to the “System Administrator” role. The first account you create on the server is automatically assigned this role. You may also assign the role to another account. 
+  2. In the team site, go to **Main Menu** (the three dots at top left) > **System Console** > **LDAP Settings** 
+  3. Fill in the fields to set up Mattermost authentication with your LDAP server
+     - Note: If you're using Active Directory with nested security groups you need to write a PowerShell script, or similar, to flatten and aggregate the tree into a single security group to map into Mattermost. 
+  4. After LDAP has been enabled, confirm that users can sign in using LDAP credentials. The **LDAP username** will be the attribute set in the **Id Attribute** field. 
   
-  After LDAP has been enabled, users should be able to go to your Mattermost site and sign in using their LDAP credentials. The “LDAP username” will be the attribute set in the “Id Attribute” field. 
+2. (Optional) Change default Session Length for LDAP SSO 
+  1. Go to **System Console** > **Service Settings** > **Session Length for SSO in days** to select the frequency with which users need to log into devices with LDAP credentials. Default is 30 days. 
+  
+  If a user attribute changes on the LDAP server it will be updated the next time the user enters their credentials to log in to Mattermost. This includes if a user is made inactive or removed from an LDAP server. The ability more quickly detect user attribute changes by polling the LDAP server as sessions start is planned for a future monthly release of Enterprise Edition. 
 
-  **Note: If a user attribute changes on the LDAP server it will be updated the next time the user enters their credentials to log in to Mattermost. This includes if a user is made inactive or removed from an LDAP server. Synchronization with LDAP servers is planned in a future release.**
+### Switching System Administrator account to LDAP from email authentication 
 
-### Switching System Administrator account to LDAP authentication
+A user interface supporting an easy switch from LDAP to email authentication will available in a future monthly release. A manual process is currently offered: 
 
-If you would like to switch your System Administrator account to LDAP authentication, it is recommended you do the following:
+1. Create a new LDAP account to become the new System Administrator account 
+  1. The new account should have a different email than the original System Administrator account. To change the email of the original System Administrator account go to **Main Menu** > **Account Settings** > **General** > **Email**. 
+2. Promote your new LDAP account to System Administrator 
+  1. Sign in with your original your email-based System Administrator account
+  2. Go to **System Console**> **Teams** > **[Team Name]** > **Users**, find your new LDAP user account and promote it to **System Administrator**. )
+3. Disable your original email-based System Administrator account 
+  1. Sign in with your new LDAP-based System Administrator account
+  2. Go to **Teams** > **Team Name** > **Users**, and find your old email based System Administrator account and change it to **Inactive**.
 
-1. Create a new account using LDAP
-  1. Note: If your LDAP credentials use the same email address as your System Administrator account, it is recommended you change the email on your System Administrator account by going to Main Menu -> Account Settings -> General -> Email. This will free up the email address so it can be used by the LDAP account.
-  2. Sign in to your email based System Administrator account
-  3. Navigate to the System Console
-  4. Go to **Teams** > **Team Name** > **Users**, and find your new LDAP user account
-  5. Promote your LDAP account to “System Administrator” using the dropdown menu beside the username
-  6. Log in with your LDAP account
-  7. Navigate to the System Console
-  8. Go to **Teams** > **Team Name** > **Users**, and find your old email based System Administrator account
-  9. Make the email account “Inactive” using the dropdown beside the username
-
-  **Note: If you make the email account inactive without promoting another account to System Administrator, you will lose your System Administrator privileges. This can be fixed by promoting another account to System Administrator using the command line.**
+If you make a mistake in this process by deactivating your System Administrator account prematurely you can restore the role from [the commandline tool.](http://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline). 
 
 ### Restrict authentication to Active Directory/LDAP
 
-1. Switch your System Admin account to LDAP authentication per steps above
+1. Make sure your System Administrator authenticates with LDAP (see above instructions).
 2. Go to **System Console** > **Email Settings** and set **Allow Sign Up With Email** to `false`.
 3. Go to **System Console** > **Email Settings** and set **Allow Sign In With Email** to `false`.
 
-This should leave Active Directory/LDAP as the only single-sign-in option. 
+This should leave Active Directory/LDAP as the only single-sign-in option. If you've made a mistake you can [set an existing account to System Administrator using the commandline tool](http://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline). 
 
-### Additional Active Directory/LDAP support
-
-Improvements Active Directory/LDAP support for Mattermost Enterprise Edition be released monthly to subscribers following the official product release. 
- 
 ### Troubleshooting
 
 The following are troubleshooting suggestions on common error messages. 
