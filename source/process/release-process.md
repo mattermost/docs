@@ -154,7 +154,8 @@ The final release is cut. If an urgent and important issue needs to be addressed
 3. PM:
     - Submit GitLab ticket to take next Mattermost version in the Omnibus  
     - Copy and paste the Release Notes from the Changelog to the Release Description  
-    - Update the mattermost.org/download page  
+    - Update the mattermost.org/download page
+    - Contact owners of [community installers](http://www.mattermost.org/installation/) or submit [PRs](https://github.com/tommyvn/mattermost-heroku/commit/94f7c5c0c5d7d2672fb6d62b6a560b4b5c1b5131) to update install version number.
     - Update the AMI links on mattermost.org/download and mattermost.org/installation  
     - Close final GitHub RC meta ticket  
 4. Marketing:
