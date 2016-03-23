@@ -1,10 +1,9 @@
 # Push Notifications and Mobile Devices 
 
-To send push notifications from your private cloud to iOS apps and Android mobile apps, Apple and Google require a key to be compiled into your mobile applications.  
-
-There are 3 options for configuring push notifications to your Mattermost mobile apps: 
+To send push notifications from your private cloud to iOS apps and Android mobile apps, Apple and Google require a unique key to be compiled into your mobile applications. There are 3 deployment options: 
 
 1. Use a **Hosted Push Notification Service (HPNS)** and pre-compiled mobile applications using a key secured by Mattermost.com. 
+
 
     - Pros: 
         - Push notifications are encrypted.
@@ -14,7 +13,8 @@ There are 3 options for configuring push notifications to your Mattermost mobile
     - Cons: 
         - Some IT policies only allow mobile apps via Enteprise App Store.
 
-2. Use an **Enterprise App Store (EAS)** by compiling your own push notification service and mobile applications from source code with your own encryption key.
+2. Use an **Enterprise App Store (EAS)** by compiling your own push notification service and mobile applications from source code with your own key.
+
 
     - Pros: 
         - Push notifications are encrypted.
@@ -24,6 +24,7 @@ There are 3 options for configuring push notifications to your Mattermost mobile
         - Requires developer time to compile your organization's encryption key into the open source components and to deploy.
 
 3. Use the **Test Push Notification Service (TPNS)** and pre-compiled applications with unencrypted push notifications prior to selecting one of the above options.
+
 
     - Pros:
         - Easy and free solution to setting up and evaluating mobile apps.
@@ -36,7 +37,7 @@ To explain each option in detail:
 
 ## Hosted Push Notifications Service (HPNS) 
 
-Mattermost.com offers a [Hosted Push Notification Service (HPNS)](https://about.mattermost.com/pre-compiled/) for organizations who prefer using a hosted commercial service over deploying Mattermost mobile applications into an on-premises Enterprise App Store. 
+Mattermost.com offers a [Hosted Push Notification Service (HPNS)](https://about.mattermost.com/pre-compiled/) via commercial subscription for organizations who prefer using a hosted service to deploying to an Enterprise App Store. 
 
 With HPNS, end users can use publicly available iOS and Android mobile applications on iTunes and Google Play over encrypted connections: 
 
