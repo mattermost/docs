@@ -250,9 +250,11 @@ User Interface
 Changes from v1.4 to v2.0:
 
 **iOS**  
+
 Mattermost iOS app v2.0 requires Mattermost platform v2.0 and higher.
 
 **config.json**    
+
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console.  
 
 - Under `ServiceSettings` in `config.json`:
@@ -267,6 +269,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
     -  `"EnableSignInWithUsername": false` sets whether users can sign in with their username. Typically only used when email verification is disabled.
 
 **Localization**  
+
 There are two new directories for i18n localization JSON files:
 - platform/i18n for server-side localization files
 - platform/web/static/i18n for client-side localization files
