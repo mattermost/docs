@@ -20,7 +20,7 @@ End users can securely share messages and files using a web-based Mattermost exp
 
 ### Mobile App Experience
 
-Native applications for iOS and Android are available for interacting with the Mattermost server and receiving encrypted push notifications. Organizations can use [a Hosted Push Notification Service or deploy to an Enterprise App Store](http://docs.mattermost.com/deployment/push.html), and a Test Push Notification Service is available while evaluating the options. 
+Native applications for iOS and Android are available for interacting with the Mattermost server and receiving encrypted push notifications. Organizations can use [a Hosted Push Notification Service](http://docs.mattermost.com/deployment/push.html#hosted-push-notifications-service-hpns) using encrypted communications to mobile apps on iTunes and Google Play or deploy to an [Enterprise App Store](http://docs.mattermost.com/deployment/push.html#enterprise-app-store-eas). A [Test Push Notification Service](http://docs.mattermost.com/deployment/push.html#test-push-notifications-service-tpns) is available for use while evaluating options. 
 
 ### Mobile Web Experience 
 
