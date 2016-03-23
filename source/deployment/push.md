@@ -54,9 +54,9 @@ End users can then use the publicly available iOS and Android mobile application
 
 To set up an Enterprise App Store, teams can compile an encryption key exclusive to their deployment into the following open source Mattermost repositories: 
 
-- [Mattermost Push Notification Service](https://github.com/mattermost/push-proxy)
-- [Mattermost iOS application](https://github.com/mattermost/ios)
-- [Mattermost Android application](https://github.com/mattermost/android) 
+- [Open source repository for the Mattermost Push Notification Service](https://github.com/mattermost/push-proxy)
+- [Open source repository for the Mattermost iOS application](https://github.com/mattermost/ios)
+- [Open source repository for the Mattermost Android application](https://github.com/mattermost/android) 
 
 ## Test Push Notifications Service (TPNS) 
 
