@@ -6,13 +6,13 @@ Because of this, there are 3 options for configuring push notifications to your 
 
 1. Use a **Hosted Push Notification Service (HPNS)** and pre-compiled mobile applications using the provider's encryption key. 
 
-- Pros: 
+  - Pros: 
 
     - Push notifications are encrypted.
     - Saves time over deploying to an Enterprise App Store. 
     - Service level agreement offered via commercial subscription. 		  
 
-- Cons: 
+  - Cons: 
 
     - Some IT policies only allow mobile apps via Enteprise App Store.
 
