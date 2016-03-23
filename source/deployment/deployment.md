@@ -20,24 +20,7 @@ End users can securely share messages and files using a web-based Mattermost exp
 
 ### Mobile App Experience
 
-Native applications for iOS and Android are available for interacting with the Mattermost server and receiving encrypted push notifications. 
-
-#### Mobile Apps for Mattermost Enterprise Edition
-
-Customers of Mattermost Enterprise Edition have a convenience feature for using hosted versions of the iOS and Android applications provided by Mattermost.com from iTunes and the Google Play stores. These hosted applications include 256-bit AES SSL encryption from the customer's server to the hosted Mattermost service (https://push.mattermost.com) and then from the service to the native mobile application on iOS or Android.
-
-Mattermost Enterprise Edition customers may also choose to customize, compile, and extend their own versions of the Mattermost mobile applications for their internal Enterprise App Store, or public iTunes or Google Play App Stores, using open source repositories for the native applications:
-
-- [Open source Mattermost iOS application](https://github.com/mattermost/ios)
-- [Open source Mattermost Android application](https://github.com/mattermost/android)
-
-#### Mobile App for Mattermost Team Edition
-
-Users of the free Mattermost Team Edition can also compile the open source repositories for the native mobile applications to enable the same functionality offered in hosted service for Enterprise Edition customers.
-
-In addition, for organizations evaluating whether to compile their own mobile applications or upgrade to Enterprise Edition, a test service (http://push-test.mattermost.com) is available for using the same pre-compiled iOS and Android applications available in iTunes and on Google Play for Enterprise Edition customers.
-
-The test service does not offer encryption and may have occassional unannounced downtime, therefore it is not recommended for production.
+Native applications for iOS and Android are available for interacting with the Mattermost server and receiving encrypted push notifications. Organizations can use [a Hosted Push Notification Service or deploy to an Enterprise App Store](http://docs.mattermost.com/deployment/push.html), and a Test Push Notification Service is available while evaluating the options. 
 
 ### Mobile Web Experience 
 
