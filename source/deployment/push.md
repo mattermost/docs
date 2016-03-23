@@ -41,6 +41,8 @@ With HPNS, end users can use publicly available iOS and Android mobile applicati
 - [Mattermost iOS App on iTunes](https://itunes.apple.com/us/app/mattermost/id984966508?mt=8)
 - [Mattermost Android App on Google Play](https://play.google.com/store/apps/details?id=com.mattermost.mattermost&hl=en)
 
+HPNS is included with an Enterprise Edition E1 subscription and can also be purchased separately. 
+
 ## Enterprise App Store (EAS)
 
 To set up an Enterprise App Store, teams can compile an encryption key exclusive to their deployment into the following open source Mattermost repositories: 
