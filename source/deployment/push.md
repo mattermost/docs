@@ -36,7 +36,7 @@ To explain each option in detail:
 
 ## Hosted Push Notifications Service (HPNS) 
 
-Mattermost.com offers a [Hosted Push Notification Service (HPNS)](https://about.mattermost.com/pre-compiled/) for team who prefer using a commercial service over deploying Mattermost mobile applications into an on-premises Enterprise App Store. 
+Mattermost.com offers a [Hosted Push Notification Service (HPNS)](https://about.mattermost.com/pre-compiled/) for organizations who prefer using a hosted commercial service over deploying Mattermost mobile applications into an on-premises Enterprise App Store. 
 
 With HPNS, end users can use publicly available iOS and Android mobile applications on iTunes and Google Play over encrypted connections: 
 
