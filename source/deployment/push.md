@@ -6,39 +6,31 @@ Because of this, there are 3 options for configuring push notifications to your 
 
 1. Use a **Hosted Push Notification Service (HPNS)** and pre-compiled mobile applications using the provider's encryption key. 
 
-  - Pros: 
+    - Pros: 
+        - Push notifications are encrypted.
+        - Saves time over deploying to an Enterprise App Store. 
+        - Service level agreement offered via commercial subscription. 		  
 
-    - Push notifications are encrypted.
-    - Saves time over deploying to an Enterprise App Store. 
-    - Service level agreement offered via commercial subscription. 		  
-
-  - Cons: 
-
-    - Some IT policies only allow mobile apps via Enteprise App Store.
+    - Cons: 
+        - Some IT policies only allow mobile apps via Enteprise App Store.
 
 2. Use an **Enterprise App Store (EAS)** by compiling your own push notification service and mobile applications from source code with your own encryption key.
 
-     - Pros: 
+    - Pros: 
+        - Push notifications are encrypted.
+        - Enterprise App Store provides the highest level of mobile apps security. 
 
-	      - Push notifications are encrypted.
-		  - Enterprise App Store provides the highest level of mobile apps security. 
-
-	 - Cons: 
-
-		  - Requires developer time to compile your organization's encryption key into the open source components and to deploy.
-		  
+    - Cons: 
+        - Requires developer time to compile your organization's encryption key into the open source components and to deploy.
 
 3. Use the **Test Push Notification Service (TPNS)** and pre-compiled applications with unencrypted push notifications prior to selecting one of the above options.
 
-     - Pros: 
+    - Pros:
+        - Easy and free solution to setting up and evaluating mobile apps.
 
-          - Easy and free solution to setting up and evaluating mobile apps.
-
-	 - Cons: 
-
-	      - Does not offer encrypted push notifications.
-		  - Does not offer service level agreement.
-  
+    - Cons: 
+        - Does not offer encrypted push notifications.
+        - Does not offer service level agreement.
   
 ## Hosted Push Notifications Service (HPNS) 
 
