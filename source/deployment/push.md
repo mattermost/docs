@@ -1,58 +1,67 @@
-# Push Notifications
+# Push Notifications and Mobile Devices 
 
-This section explains how push notifications work with pre-compiled iOS and Android applications. 
+To send push notifications from your private cloud to iOS apps and Android mobile apps, Apple and Google require a key to be compiled into your mobile applications.  
 
-See [Push Notification Settings](http://docs.mattermost.com/administration/config-settings.html#push-notification-settings) to configure the settings for use with: 
+Because of this, there are 3 options for configuring push notifications to your mobile apps: 
+
+1. Use a **Hosted Push Notification Service (HPNS)** and pre-compiled mobile applications using the provider's encryption key. 
+
+     - Pros: 
+	      - Push notifications are encrypted.
+		  - Saves time over deploying to an Enterprise App Store. 
+		  - Service level agreement offered via commercial subscription. 		  
+	 - Cons: 
+	      - Some IT policies only allow mobile apps via Enteprise App Store.
+
+2. Use an **Enterprise App Store (EAS)** by compiling your own push notification service and mobile applications from source code with your own encryption key.
+
+     - Pros: 
+	      - Push notifications are encrypted.
+		  - Enterprise App Store provides the highest level of mobile apps security. 
+	 - Cons: 
+		  - Requires developer time to compile your organization's encryption key into the open source components and to deploy.
+		  
+
+3. Use the **Test Push Notification Service (TPNS)** and pre-compiled applications with unencrypted push notifications prior to selecting one of the above options.
+
+     - Pros: 
+          - Easy and free solution to setting up and evaluating mobile apps.
+	 - Cons: 
+	      - Does not offer encrypted push notifications.
+		  - Does not offer service level agreement.
+  
+  
+## Hosted Push Notifications Service (HPNS) 
+
+Mattermost.com offers a [Hosted Push Notification Service](https://about.mattermost.com/pre-compiled/) for team who prefer using a commercial service over compiling their own encryption key into the open source repositories. 
+
+End users can then use the publicly available iOS and Android mobile applications on iTunes and Google Play over encrypted connections: 
 
 - [Mattermost iOS App on iTunes](https://itunes.apple.com/us/app/mattermost/id984966508?mt=8)
 - [Mattermost Android App on Google Play](https://play.google.com/store/apps/details?id=com.mattermost.mattermost&hl=en)
 
-## Why do push notifications seem so complicated? 
+## Enterprise App Store (EAS)
 
-iOS apps require a private key issued by Apple for each iOS app in order to receive push notifications. To self-host Mattermost, teams need to request their own key from Apple to be used from behind their firewall. 
+To set up an Enterprise App Store, teams can compile an encryption key exclusive to their deployment into the following open source Mattermost repositories: 
 
-Mattermost provides:  
-1. Source code to use your own key with your own iOS apps in an Enterprise App Store, or as an Android .apk file.  
-2. A free test service, `http://push-test.mattermost.com`, for you to use pre-compiled iOS and Android apps for testing before your compiled your own.  
-3. As an alternative to compiling your own, a [commercial service](https://about.mattermost.com/pre-compiled/) with pre-compiled apps and an encrypted push notification service is available.
+- [Mattermost Push Notification Service](https://github.com/mattermost/push-proxy)
+- [Mattermost iOS application](https://github.com/mattermost/ios)
+- [Mattermost Android application](https://github.com/mattermost/android) 
 
-The following explains the details of how mobile applications and push notifications are set up. 
+## Test Push Notifications Service (TPNS) 
 
-## How push notifications are sent
+Mattermost.com also offers a free, unencrypted push notification service for trying out the Mattermost mobile applications prior to deciding whether to use the EAS or HPNS option. 
 
-Sending a push notification to a user's mobile device consists of three steps: 
+End users of TPNS can use the publicly available iOS and Android mobile applications on iTunes and Google Play, with unencrypted push notifications: 
 
-- **Step 1:** the Mattermost server sends notifications to the [Mattermost Push Notification Service](https://github.com/mattermost/push-proxy) (MPNS).
-- **Step 2:** The MPNS encrypts the message with a private key matching the public key registered with the mobile application and forwards the message to the push notification service of either Apple or Google. 
-- **Step 3:** Apple or Google decrypts the message using the public key matching the MPNS server re-ecrypts the message and forwards it the user's mobile device.
+- [Mattermost iOS App on iTunes](https://itunes.apple.com/us/app/mattermost/id984966508?mt=8)
+- [Mattermost Android App on Google Play](https://play.google.com/store/apps/details?id=com.mattermost.mattermost&hl=en)
 
-Because the MPNS server connected to the pre-compiled Mattermost iOS App on iTunes and Mattermost Android App on Google Play needs to contain the private key for the native apps, a pre-compiled version of the MPNS server cannot be offered. 
+You can connect to the TPNS by entering `http://push-test.mattermost.com` into **System Console** > **Email Settings** > **Push Notification Server**.
 
-Users need to either use a hosted service or compile their own MPNS and mobile apps (see below).
+#### Important notes on TPNS
 
-## Configuration options for push notifications
+1. **By default, unencrypted push notifications do not expose message-specific data.**  When the Mattermost server is installed, push notifications only give generic alerts like "@frank was mentioned in Town Square" but DO NOT display the contents of messages. The contents of messages are only included in push notifications after a System Administrator explicitly configure the option to include them. 
 
-There are two options for setting up the MPNS to offer push notifications: 
+2. **There is no service level agreement on the TPNS.** It may go down without notice, change or be discontinued. 
 
-- **Option A) Compile and deploy your own MPNS and mobile apps**  
-
-   If your IT policy requires use of an Enterprise AppStore, or if you have expertise in mobile app development, you may choose to compile your own MPNS using the [open source repository](https://github.com/mattermost/push-proxy) provided, along with compiling the official open source [iOS app](https://github.com/mattermost/ios) or [Android app](https://github.com/mattermost/android). 
-
-   Advantages: 
-   - Fewer dependencies - All communication between Step 1 and Step 2 happens behind your firewall, only Step 3 happens outside your firewall. 
-
-   Trade-offs:
-   - Requires time and effort - An in-house developer would be required to properly compile, deploy and maintain the MPNS and mobile apps.
-
-   For Team Edition users, prior to compiling your own applications and MPNS service, you can set your Push Notification Service to `http://push-test.mattermost.com` in the System Console to test your deployment using the iOS app on iTunes and Android app on Google Play. This is a test-quality, unencrypted push notification service that is not recommended for production use. If you use the service on a day-to-day basis, please make sure to join the [Mattermost announcement mailing list](https://mattermost.us11.list-manage.com/subscribe?u=6cdba22349ae374e188e7ab8e&id=2add1c8034) for updates on availability. 
-
-- **Option B) Use the Mattermost Hosted Push Notification Service (MHPNS)**  
-
-   Instead of compiling your own MPNS and mobile apps, you can purchase a subscripton to the [Mattermost Hosted Push Notifications Service (MHPNS)](https://about.mattermost.com/pre-compiled/) and have your users install the [iOS app from iTunes](https://itunes.apple.com/us/app/mattermost/id984966508?mt=8) or the Android app from Google Play (release pending). 
-   
-   Advantages: 
-   - Saves time - No need to compile open source applications 
-   
-   Trade-offs:
-   - Team Edition users incur an additional financial cost (Enterprise Edition customers do not incur additional cost, since the service is included with their subscription). 
-   - As with any hosted service, MPMAS is a dependency that exists outside your firewall.
