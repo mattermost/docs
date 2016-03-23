@@ -4,7 +4,6 @@ To send push notifications from your private cloud to iOS apps and Android mobil
 
 1. Use a **Hosted Push Notification Service (HPNS)** and pre-compiled mobile applications using a key secured by Mattermost.com. 
 
-
     - Pros: 
         - Push notifications are encrypted.
         - Saves time over deploying to an Enterprise App Store. 
@@ -15,7 +14,6 @@ To send push notifications from your private cloud to iOS apps and Android mobil
 
 2. Use an **Enterprise App Store (EAS)** by compiling your own push notification service and mobile applications from source code with your own key.
 
-
     - Pros: 
         - Push notifications are encrypted.
         - Enterprise App Store provides the highest level of mobile apps security. 
@@ -24,7 +22,6 @@ To send push notifications from your private cloud to iOS apps and Android mobil
         - Requires developer time to compile your organization's encryption key into the open source components and to deploy.
 
 3. Use the **Test Push Notification Service (TPNS)** and pre-compiled applications with unencrypted push notifications prior to selecting one of the above options.
-
 
     - Pros:
         - Easy and free solution to setting up and evaluating mobile apps.
