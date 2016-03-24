@@ -32,7 +32,13 @@ To send push notifications from your private cloud to iOS apps and Android mobil
         - Does not offer encrypted push notifications.
         - Does not offer service level agreement.
   
-To explain each option in detail: 
+
+The below explains each option in detail. 
+
+## Note: By default, push notifications do not contain specific message contents. 
+
+When the Mattermost server is installed, push notifications only give generic alerts like "@frank was mentioned in Town Square" but DO NOT display the contents of messages. The contents of messages are only included in push notifications after a System Administrator explicitly configure the option to include them. 
+
 
 ## Hosted Push Notifications Service (HPNS) 
 
@@ -64,11 +70,7 @@ End users of TPNS can use the publicly available iOS and Android mobile applicat
 
 You can connect to the TPNS by entering `http://push-test.mattermost.com` into **System Console** > **Email Settings** > **Push Notification Server**.
 
-#### Important notes on TPNS
-
-1. **By default, unencrypted push notifications do not expose message-specific data.**  When the Mattermost server is installed, push notifications only give generic alerts like "@frank was mentioned in Town Square" but DO NOT display the contents of messages. The contents of messages are only included in push notifications after a System Administrator explicitly configure the option to include them. 
-
-2. **There is no service level agreement on the TPNS.** It may go down without notice, change or be discontinued. 
+Note: **There is no service level agreement on the TPNS.** It may go down without notice. 
 
 ### What happens when a Mattermost push notification is sent? 
 
