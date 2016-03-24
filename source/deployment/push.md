@@ -68,3 +68,14 @@ You can connect to the TPNS by entering `http://push-test.mattermost.com` into *
 
 2. **There is no service level agreement on the TPNS.** It may go down without notice, change or be discontinued. 
 
+### What happens when a Mattermost push notification is sent? 
+
+To ensure only messages from authorized senders are received by a mobile application, each push notifications need to be signed with a private key corresponding to a public key registered with either Apple (for iOS) or Google (for Android). This means each mobile app needs its own key in order to trust messages from the Mattermost server in your private cloud. 
+
+Here is the full process: 
+
+1. When triggered, a push notification is sent from the Mattermost server to the Mattermost Push Notification Service over TLS
+
+2. The Mattermost Push Notification Service decrypts the message, signs it with a private key verifying it as a valid message for the target mobile app (which is registered with the corresponding public key), then encrypts the push notification to send to the Apple Push Notification Service (APNS) or to the Google Cloud Messaging (GCM) service depending on whether you're sending to an iOS or Android device. 
+ 
+3. The APNS or GCM service decrypts the message, uses the public key registered with the mobile app to verify the notification is from an authorized source, then encrypts the message and sends it to the appropriate mobile device where it is decrypted and displayed to the user.
