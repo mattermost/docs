@@ -21,6 +21,8 @@ To send push notifications from your private cloud to iOS apps and Android mobil
     - Cons: 
         - Requires developer time to compile your organization's encryption key into the open source components and to deploy.
 
+    EAS is most convenient when an organization has access to developers experienced in iOS mobile development, Android mobile development, Golang programming, and Enterprise App Store administration. 
+
 3. Use the **Test Push Notification Service (TPNS)** and pre-compiled applications with unencrypted push notifications prior to selecting one of the above options.
 
     - Pros:
