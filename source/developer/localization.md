@@ -50,9 +50,7 @@ To translate a language:
     - Please create copies of the following files renamed using locale codes based on [Google's internationalization standard](https://developer.chrome.com/webstore/i18n): 
       - [`https://github.com/mattermost/platform/blob/master/i18n/en.json`](https://github.com/mattermost/platform/blob/master/i18n/en.json)
       - [`https://github.com/mattermost/platform/blob/master/web/static/i18n/en.json`](https://github.com/mattermost/platform/blob/master/web/static/i18n/en.json)
-   2. Modify the following files to include your localization: 
-      - [`https://github.com/mattermost/platform/blob/master/web/react/utils/utils.jsx#L1390`](https://github.com/mattermost/platform/blob/master/web/react/utils/utils.jsx#L1390)
-      - [`https://github.com/mattermost/platform/blob/master/web/templates/head.html#L51`](https://github.com/mattermost/platform/blob/master/web/templates/head.html#L51)
+   2. Modify the following file to include your localization: [`https://github.com/mattermost/platform/blob/master/webapp/i18n/i18n.jsx`](https://github.com/mattermost/platform/blob/master/webapp/i18n/i18n.jsx)
    3. Compile and run Mattermost to confirm everything works
    4. Modify your `[locale].json` files  to translate the system to your choosen language
 4. Follow the [contribution guide](http://docs.mattermost.com/developer/contribution-guide.html) to make a pull request with your translation 
@@ -60,6 +58,21 @@ To translate a language:
    2. When there is consensus from at least 2 reviewers that the translation has achieved Alpha quality or higher, it will be merged
    3. The review and revision process may take days to weeks and the submitter may be requested to help rebase as needed until the PR can be merged
 
+#### Using Mattermost Translation Server
+
+Mattermost also hosts a Pootle server to perform collaborative internationalization online. Here's the process:
+
+1. Sign-up to [Mattermost's Translation Server](http://186.202.167.109/)
+2. Translate in your target language
+3. Use [Mattermosti18n](https://github.com/rodrigocorsi2/mattermosti18n#convert-po---json) to convert Pootle's output into JSON files
+4. Follow the [contribution guide](http://docs.mattermost.com/developer/contribution-guide.html) to make a pull request with your contribution
+
 #### Translation Maintenance 
 
-Translations require updates on a monthly basis as features are added and changed. The formal process for updates has yet to be determined. If you're interested in contributing to the process, please join the [Mattermost localization channel to discuss.](https://pre-release.mattermost.com/core/channels/localization). 
+Translations require updates on a monthly basis as features are added and changed. The formal process for updates has yet to be determined. If you're interested in contributing to the process, please join the [Mattermost localization channel to discuss](https://pre-release.mattermost.com/core/channels/localization). 
+
+Here are current maintainers for Alpha- or Beta-quality languages:
+
+- French: [Pierre-Julien Grizel](https://github.com/pjgrizel) 
+- Spanish: TBD
+- Portugese: TBD
