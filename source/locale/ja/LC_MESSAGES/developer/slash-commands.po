@@ -1,0 +1,130 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/developer/slash-commands.md
+msgid "Slash Commands"
+msgstr ""
+
+#: ../../source/developer/slash-commands.md:3
+msgid ""
+"Slash commands, like outgoing webhooks, allow users to interact with "
+"external applications right from within Mattermost. The user will enter a"
+" / followed by a command, and optionally some arguments, then an HTTP "
+"request will be sent to an external application. What occurs next is "
+"decided by how the application responds to the HTTP request."
+msgstr ""
+
+#: ../../source/developer/slash-commands.md:5
+msgid "A couple key points:"
+msgstr ""
+
+#: ../../source/developer/slash-commands.md:10
+msgid "Example:"
+msgstr ""
+
+#: ../../source/developer/slash-commands.md:12
+msgid ""
+"Suppose you had an external application that had the ability to check the"
+" weather for certain cities. By creating a custom slash command, and "
+"setting up the application to handle the HTTP POST or GET from the "
+"command, you could allow your users to check the weather in their city "
+"using your command. For example, a user might be able to type:"
+msgstr ""
+
+#: ../../source/developer/slash-commands.md:14
+msgid "/weather toronto week"
+msgstr ""
+
+#: ../../source/developer/slash-commands.md:16
+msgid ""
+"Your external weather application would receive an HTTP request letting "
+"it know the user is interested in Toronto and would like to know the "
+"weather for the week. The application could simply respond to the HTTP "
+"request with the following JSON payload:"
+msgstr ""
+
+#: ../../source/developer/slash-commands.md:35
+msgid "Which would render in a Mattermost message as follows: weather bot"
+msgstr ""
+
+#: ../../source/developer/slash-commands.md
+msgid "Built-in Commands"
+msgstr ""
+
+#: ../../source/developer/slash-commands.md:39
+msgid ""
+"Each Mattermost installation comes with some built-in slash commands that"
+" are ready to use. These commands are listed below:"
+msgstr ""
+
+#: ../../source/developer/slash-commands.md:41
+msgid "commands"
+msgstr ""
+
+#: ../../source/developer/slash-commands.md
+msgid "Enabling Custom Commands"
+msgstr ""
+
+#: ../../source/developer/slash-commands.md:44
+msgid ""
+"Custom slash commands are off by default, and can be enabled by the "
+"system administrator. If you are the system administrator you can enable "
+"them by doing the following:"
+msgstr ""
+
+#: ../../source/developer/slash-commands.md
+msgid "Set Up a Custom Command"
+msgstr ""
+
+#: ../../source/developer/slash-commands.md:53
+msgid ""
+"Once slash commands are enabled, you will be able to set some up through "
+"the Mattermost UI. You can do so by following these steps:"
+msgstr ""
+
+#: ../../source/developer/slash-commands.md
+msgid "Creating Integrations with Commands"
+msgstr ""
+
+#: ../../source/developer/slash-commands.md:71
+msgid ""
+"If you'd like to build your own integration that uses slash commands, you"
+" can follow these general guidelines:"
+msgstr ""
+
+#: ../../source/developer/slash-commands.md:105
+msgid "Additional Notes:"
+msgstr ""
+
+#: ../../source/developer/slash-commands.md
+msgid "Slack Compatibility"
+msgstr ""
+
+#: ../../source/developer/slash-commands.md:113
+msgid ""
+"As mentioned above, Mattermost makes it easy to take integrations written"
+" for Slack's proprietary JSON payload format and repurpose them to become"
+" Mattermost integrations. The following automatic translations are "
+"supported:"
+msgstr ""
+
+#: ../../source/developer/slash-commands.md
+msgid "Known Issues in v2.0"
+msgstr ""
+

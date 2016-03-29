@@ -1,0 +1,139 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/install/troubleshooting.md
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../source/install/troubleshooting.md
+msgid "Important notes"
+msgstr ""
+
+#: ../../source/install/troubleshooting.md
+msgid "DO NOT manipulate the Mattermost database"
+msgstr ""
+
+#: ../../source/install/troubleshooting.md
+msgid "Common Issues"
+msgstr ""
+
+#: ../../source/install/troubleshooting.md
+msgid "Lost System Administrator account"
+msgstr ""
+
+#: ../../source/install/troubleshooting.md
+msgid "Switching System Administrator Account to SSO Sign-in"
+msgstr ""
+
+#: ../../source/install/troubleshooting.md:17
+msgid ""
+"When Mattermost is initially set up, the first account created becomes "
+"the System Administrator account. This account will typically use email "
+"authentication to sign-in, since it is usually created before other sign-"
+"in methods are configured."
+msgstr ""
+
+#: ../../source/install/troubleshooting.md:19
+msgid ""
+"After setting up SSO authentication, it is common for the System "
+"Administrator to want to turn off email sign-in so users will only have "
+"SSO as a sign-in option."
+msgstr ""
+
+#: ../../source/install/troubleshooting.md:21
+msgid ""
+"Before doing this, the System Administrator needs to change their sign-in"
+" method to SSO by doing the following:"
+msgstr ""
+
+#: ../../source/install/troubleshooting.md:26
+msgid ""
+"The System Administrator can now turn off email sign-in and still access "
+"their account. (To avoid locking other existing users out of their "
+"accounts, it is recommended the System Administrator ask them to switch "
+"authentication methods as well.)"
+msgstr ""
+
+#: ../../source/install/troubleshooting.md
+msgid "Locked out of System Administrator account"
+msgstr ""
+
+#: ../../source/install/troubleshooting.md:29
+msgid ""
+"If email sign-in was turned off before the System Administrator switched "
+"sign-in methods, sign up for a new account and promote it to System "
+"Administrator from the command line."
+msgstr ""
+
+#: ../../source/install/troubleshooting.md
+msgid "Mattermost Error Messages"
+msgstr ""
+
+#: ../../source/install/troubleshooting.md:33
+msgid "The following is a list of common error messages and solutions:"
+msgstr ""
+
+#: ../../source/install/troubleshooting.md
+msgid ""
+"Please check connection, Mattermost unreachable. If issue persists, ask "
+"administrator to check WebSocket port."
+msgstr ""
+
+#: ../../source/install/troubleshooting.md
+msgid "x509: certificate signed by unknown authority"
+msgstr ""
+
+#: ../../source/install/troubleshooting.md
+msgid "panic: runtime error: invalid memory address or nil pointer dereference"
+msgstr ""
+
+#: ../../source/install/troubleshooting.md
+msgid ""
+"We couldn't find an existing account matching your email address for this"
+" team. This team may require an invite from the team owner to join."
+msgstr ""
+
+#: ../../source/install/troubleshooting.md
+msgid "GitLab Mattermost Error Messages"
+msgstr ""
+
+#: ../../source/install/troubleshooting.md
+msgid "We received an unexpected status code from the server (200)"
+msgstr ""
+
+#: ../../source/install/troubleshooting.md
+msgid "Token request failed"
+msgstr ""
+
+#: ../../source/install/troubleshooting.md
+msgid "The redirect URI included is not valid."
+msgstr ""
+
+#: ../../source/install/troubleshooting.md
+msgid ""
+"panic: The database schema version of 1.1.0 cannot be upgraded. You must "
+"not skip a version"
+msgstr ""
+
+#: ../../source/install/troubleshooting.md
+msgid ""
+"panic: Error decoding config file=/opt/mattermost/config/config.json, "
+"err=invalid character '\"' after object key:value pair"
+msgstr ""
+

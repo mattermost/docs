@@ -1,0 +1,106 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/help/getting-started/configuring-notifications.md
+msgid "Configuring Notifications"
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.md:3
+msgid "Notifications in Mattermost alert you to unread messages and mentions."
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.md
+msgid "Unread Notifications"
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.md:6
+msgid ""
+"Channel name bolding and mention jewels notify you if there’s been "
+"activity in channels that you’re a member of since you were last online. "
+"When a channel with unreads is opened, there is an unread messages "
+"indicator placed at the location of the last read message."
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.md
+msgid "Channel Bolding"
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.md:9
+msgid ""
+"Unread messages in a channel are indicated by a bold channel name in the "
+"left-hand-side (LHS). Clicking the channel name removes the bolding."
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.md
+msgid "Mention Jewels"
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.md:14
+msgid ""
+"Unread mentions in a channel are indicated by bold text and a mention "
+"jewel next to the channel name in the LHS. Clicking the channel name "
+"removes the bolding and mention jewel. You can always review your recent "
+"mentions by clicking @ next to the search box at the top of the screen. "
+"Learn more about mentioning teammates."
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.md
+msgid "Email Notifications"
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.md:17
+msgid ""
+"Emails are sent for any mentions you receive if you have mattermost "
+"closed or have not had any browser activity for a short time."
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.md
+msgid "Desktop Notifications"
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.md:23
+msgid ""
+"These are browser notifications that appear in the corner of your main "
+"monitor. By default these notifications are sent for all activity while "
+"Mattermost is open. Desktop notifications are available on Firefox, "
+"Safari, and Chrome."
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.md
+msgid "Notification Sounds"
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.md:29
+msgid ""
+"A notification sound plays for all activity that would fire a desktop "
+"notification. Notification sounds are available on Safari, Chrome and "
+"Edge."
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.md
+msgid "Browser Tab Notifications"
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.md:34
+msgid ""
+"The browser tab favicon updates to inform you of unread messages and "
+"mentions if Mattermost is open in an inactive browser tab. Browser tab "
+"notifications are available on Firefox and Chrome."
+msgstr ""
+

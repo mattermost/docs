@@ -1,0 +1,230 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/integrations/gitlab.md
+msgid "GitLab Mattermost Administration"
+msgstr ""
+
+#: ../../source/integrations/gitlab.md:3
+msgid ""
+"GitLab Mattermost is a special version of Mattermost bundled with GitLab "
+"omnibus. Here we consolidate administrative instructions, guides and "
+"troubleshooting guidance."
+msgstr ""
+
+#: ../../source/integrations/gitlab.md
+msgid "Community Support Resources"
+msgstr ""
+
+#: ../../source/integrations/gitlab.md:7
+msgid "For help and support around your GitLab Mattermost deployment please see:"
+msgstr ""
+
+#: ../../source/integrations/gitlab.md
+msgid "Deploying GitLab Mattermost"
+msgstr ""
+
+#: ../../source/integrations/gitlab.md
+msgid "Installing GitLab Mattermost"
+msgstr ""
+
+#: ../../source/integrations/gitlab.md:16
+msgid ""
+"Please follow the GitLab Omnibus documentation for installing GitLab "
+"Mattermost."
+msgstr ""
+
+#: ../../source/integrations/gitlab.md
+msgid "Upgrading GitLab Mattermost"
+msgstr ""
+
+#: ../../source/integrations/gitlab.md:20
+msgid ""
+"GitLab Mattermost can be upgraded through the regular GitLab omnibus "
+"update process provided:"
+msgstr ""
+
+#: ../../source/integrations/gitlab.md:27
+msgid ""
+"If this is the case, upgrading GitLab using omnibus and running gitlab-"
+"ctl reconfigure should upgrade GitLab Mattermost to the next version."
+msgstr ""
+
+#: ../../source/integrations/gitlab.md:29
+msgid "If this is not the case, there are two options:"
+msgstr ""
+
+#: ../../source/integrations/gitlab.md
+msgid "Migrating Mattermost outside of GitLab"
+msgstr ""
+
+#: ../../source/integrations/gitlab.md:37
+msgid ""
+"Follow the Mattermost Upgrade and Migration Guide to move your Mattermost"
+" configuration settings and data to another directory or server "
+"independent from GitLab omnibus."
+msgstr ""
+
+#: ../../source/integrations/gitlab.md
+msgid "Upgrading GitLab Mattermost outside of GitLab"
+msgstr ""
+
+#: ../../source/integrations/gitlab.md:41
+msgid ""
+"If you choose to upgrade Mattermost outside of GitLab's omnibus "
+"automation, please follow this guide."
+msgstr ""
+
+#: ../../source/integrations/gitlab.md
+msgid "Administering GitLab Mattermost"
+msgstr ""
+
+#: ../../source/integrations/gitlab.md
+msgid "GitLab notifications in Mattermost"
+msgstr ""
+
+#: ../../source/integrations/gitlab.md:47
+msgid ""
+"There are multiple ways to send notifications depending on how much "
+"control you'd like over the messages."
+msgstr ""
+
+#: ../../source/integrations/gitlab.md
+msgid "Setting up Mattermost as a Slack project service integration:"
+msgstr ""
+
+#: ../../source/integrations/gitlab.md:51
+msgid ""
+"Mattermost is \"Slack-compatible, not Slack-limited\" so if you like "
+"Slack's default formatting you can use their project service option to "
+"set up Mattermost integration:"
+msgstr ""
+
+#: ../../source/integrations/gitlab.md:60
+msgid "Any issues, please see the Mattermost Troubleshooting Forum."
+msgstr ""
+
+#: ../../source/integrations/gitlab.md
+msgid "Setting up GitLab integration service for Mattermost"
+msgstr ""
+
+#: ../../source/integrations/gitlab.md:64
+msgid ""
+"You can also set up the open source integration service to let you "
+"configure notifications on GitLab issues, pushes, build events, merge "
+"requests and comments to be delivered to selected Mattermost channels."
+msgstr ""
+
+#: ../../source/integrations/gitlab.md:66
+msgid ""
+"This integration lets you completely control how notifications are "
+"formatted and, unlike Slack, offers full markdown support."
+msgstr ""
+
+#: ../../source/integrations/gitlab.md:68
+msgid ""
+"The source code can be modified to support not only GitLab, but any in-"
+"house applications you may have that support webhooks. Also see:"
+msgstr ""
+
+#: ../../source/integrations/gitlab.md:72
+msgid "webhooks"
+msgstr ""
+
+#: ../../source/integrations/gitlab.md
+msgid "Troubleshooting GitLab Mattermost"
+msgstr ""
+
+#: ../../source/integrations/gitlab.md
+msgid "GitLab Mattermost Error Messages"
+msgstr ""
+
+#: ../../source/integrations/gitlab.md
+msgid "We received an unexpected status code from the server (200)"
+msgstr ""
+
+#: ../../source/integrations/gitlab.md
+msgid "Token request failed"
+msgstr ""
+
+#: ../../source/integrations/gitlab.md
+msgid "\"The redirect URI included is not valid."
+msgstr ""
+
+#: ../../source/integrations/gitlab.md
+msgid "We couldn't find the existing account ..."
+msgstr ""
+
+#: ../../source/integrations/gitlab.md
+msgid ""
+"panic: The database schema version of 1.1.0 cannot be upgraded. You must "
+"not skip a version"
+msgstr ""
+
+#: ../../source/integrations/gitlab.md
+msgid "Upgrading from GitLab Mattermost Beta"
+msgstr ""
+
+#: ../../source/integrations/gitlab.md
+msgid "Legacy: Upgrading Mattermost in GitLab 8.0"
+msgstr ""
+
+#: ../../source/integrations/gitlab.md:126
+msgid ""
+"Mattermost 0.7.1-beta in GitLab 8.0 was a pre-release of Mattermost and "
+"Mattermost v1.1.1 in GitLab 8.1 was updated significantly to get to a "
+"stable, forwards-compatible platform for Mattermost."
+msgstr ""
+
+#: ../../source/integrations/gitlab.md:128
+msgid ""
+"The Mattermost team didn't think it made sense for GitLab omnibus to "
+"attempt an automated re-configuration of Mattermost (since 0.7.1-beta was"
+" a pre-release) given the scale of change, so we're providing "
+"instructions for GitLab users who have customized their Mattermost "
+"deployments in 8.0 to move to 8.1:"
+msgstr ""
+
+#: ../../source/integrations/gitlab.md:134
+#: ../../source/integrations/gitlab.md:148
+msgid ""
+"Optionally, you can use the new System Console user interface to make "
+"changes to your new config.json file."
+msgstr ""
+
+#: ../../source/integrations/gitlab.md
+msgid "Legacy: Upgrading Mattermost v0.7.1-beta to v1.1.1"
+msgstr ""
+
+#: ../../source/integrations/gitlab.md:138
+msgid ""
+"Note: Mattermost v1.1.1 is a special release of Mattermost v1.1 that "
+"upgrades the database to Mattermost v1.1 from EITHER Mattermost v0.7 or "
+"Mattermost v1.0. The following instructions are for upgrading from "
+"Mattermost v0.7.1-beta to v1.1.1 and skipping the upgrade to Mattermost "
+"v1.0."
+msgstr ""
+
+#: ../../source/integrations/gitlab.md:140
+msgid ""
+"If you've manually changed Mattermost v0.7.1-beta configuration by "
+"updating the config.json file, you'll need to port those changes to "
+"Mattermost v1.1.1:"
+msgstr ""
+

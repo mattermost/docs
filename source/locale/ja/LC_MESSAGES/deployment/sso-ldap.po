@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/deployment/sso-ldap.md
+msgid "Active Directory/LDAP Setup (Enterprise)"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md
+msgid "Enabling Active Directory/Lightweight Directory Access Protocol (AD/LDAP)"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:5
+msgid "After installing Mattermost:"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md
+msgid "Switching System Administrator account to LDAP from email authentication"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:24
+msgid ""
+"A user interface supporting an easy switch from LDAP to email "
+"authentication will available April 16, 2016 in Mattermost 2.2. A manual "
+"process is currently offered:"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:35
+msgid ""
+"If you make a mistake in this process by deactivating your System "
+"Administrator account prematurely you can restore the role from the "
+"commandline tool."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md
+msgid "Restrict authentication to Active Directory/LDAP"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:43
+msgid ""
+"This should leave Active Directory/LDAP as the only single-sign-in "
+"option. If you've made a mistake you can set an existing account to "
+"System Administrator using the commandline tool."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:47
+msgid "The following are troubleshooting suggestions on common error messages."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md
+msgid "User not registered on LDAP server"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:51
+msgid ""
+"This means the query sent back to the Active Directory/LDAP server "
+"returned no results."
+msgstr ""
+

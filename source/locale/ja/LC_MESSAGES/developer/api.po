@@ -1,0 +1,162 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/developer/api.md
+msgid "Mattermost APIs"
+msgstr ""
+
+#: ../../source/developer/api.md:3
+msgid ""
+"Mattermost APIs let you integrate your favorite tools and services "
+"withing your Mattermost experience."
+msgstr ""
+
+#: ../../source/developer/api.md
+msgid "Slack-compatible Webhooks"
+msgstr ""
+
+#: ../../source/developer/api.md:7
+msgid ""
+"To offer an alternative to propreitary SaaS services, Mattermost focuses "
+"on being \"Slack-compatible, but not Slack limited\". That means "
+"providing support for developers of Slack applications to easily extend "
+"their apps to Mattermost, as well as support and capabilities beyond what"
+" Slack offers."
+msgstr ""
+
+#: ../../source/developer/api.md
+msgid "Incoming Webhooks"
+msgstr ""
+
+#: ../../source/developer/api.md:11
+msgid ""
+"Incoming webhooks allow external applications to post messages into "
+"Mattermost channels and private groups by sending a JSON payload via HTTP"
+" POST request to a secret Mattermost URL generated specifically for each "
+"application."
+msgstr ""
+
+#: ../../source/developer/api.md:13
+msgid ""
+"In addition to supporting Slack's incoming webhook formatting, Mattermost"
+" webhooks offer full support of industry-standard markdown formatting, "
+"including headings, tables and in-line images."
+msgstr ""
+
+#: ../../source/developer/api.md
+msgid "Outgoing Webhooks"
+msgstr ""
+
+#: ../../source/developer/api.md:17
+msgid ""
+"Outgoing webhooks allow external applications to receive webhook events "
+"from events happening within Mattermost channels and private groups via "
+"JSON payloads via HTTP POST requests sent to incoming webhook URLs "
+"defined by your applications."
+msgstr ""
+
+#: ../../source/developer/api.md:19
+msgid ""
+"Over time, Mattermost outgoing webhooks will support not only Slack "
+"applications using a compatible format, but also offer optional events "
+"and triggers beyond Slack's feature set."
+msgstr ""
+
+#: ../../source/developer/api.md
+msgid "Slash Commands"
+msgstr ""
+
+#: ../../source/developer/api.md:23
+msgid ""
+"Slash commands, like outgoing webhooks, allow users to interact with "
+"external applications right from within Mattermost. The user will enter a"
+" / followed by a command, and optionally some arguments, then an HTTP "
+"request will be sent to an external application. What occurs next is "
+"decided by how the application responds to the HTTP request."
+msgstr ""
+
+#: ../../source/developer/api.md
+msgid "Mattermost Web Service API"
+msgstr ""
+
+#: ../../source/developer/api.md:27
+msgid ""
+"Mattermost offers a Web Service API accessible by Mattermost Drivers, "
+"listed below. Initial documentation on the transport layer for the web "
+"service is available and functional documentation is under development."
+msgstr ""
+
+#: ../../source/developer/api.md
+msgid "Mattermost Drivers"
+msgstr ""
+
+#: ../../source/developer/api.md:31
+msgid ""
+"Mattermost drivers offer access to the Mattermost web service API in "
+"different languages and frameworks."
+msgstr ""
+
+#: ../../source/developer/api.md
+msgid "ReactJS Javascript Driver"
+msgstr ""
+
+#: ../../source/developer/api.md:35
+msgid ""
+"client.jsx - This Javascript driver connects with the ReactJS components "
+"of Mattermost. The web client does the vast majority of its work by "
+"connecting to a RESTful JSON web service. There is a very small amount of"
+" processing for error checking and set up that happens on the web server."
+msgstr ""
+
+#: ../../source/developer/api.md
+msgid "Golang Driver"
+msgstr ""
+
+#: ../../source/developer/api.md:39
+msgid ""
+"client.go - This is a RESTful driver connecting with the Golang-based "
+"webservice of Mattermost and is used by unit tests."
+msgstr ""
+
+#: ../../source/developer/api.md
+msgid "Building API Integration"
+msgstr ""
+
+#: ../../source/developer/api.md:43
+msgid ""
+"If you're building a deep integration with Mattermost, for example a "
+"mobile native client, and there is a driver available to support the "
+"programming language you are using, it's best to use the driver available"
+" to access the Mattermost Web Service APIs."
+msgstr ""
+
+#: ../../source/developer/api.md:45
+msgid ""
+"If no driver is available for the programming language of your choice, "
+"you can view the Golang Driver source code to understand how it exercises"
+" the Web Service API. You can also learn more by reviewing open source "
+"projects that use the Web Service API, like matterircd."
+msgstr ""
+
+#: ../../source/developer/api.md:47
+msgid ""
+"There are a wide range of installation guides for setting up your own "
+"Mattermost server on which to develop and test your integrations."
+msgstr ""
+

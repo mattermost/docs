@@ -1,0 +1,111 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/administration/overview-tech.md
+msgid "Overview"
+msgstr ""
+
+#: ../../source/administration/overview-tech.md:3
+msgid ""
+"Mattermost 2.0 is a production-quality, self-hosted workplace messaging "
+"solution."
+msgstr ""
+
+#: ../../source/administration/overview-tech.md:5
+msgid ""
+"We offer modern communication from behind your firewall. Your users can "
+"securely share messages and files across PCs and phones with continuous "
+"archiving and instant search while integrating with dozens of popular and"
+" custom tools."
+msgstr ""
+
+#: ../../source/administration/overview-tech.md
+msgid "Feature List"
+msgstr ""
+
+#: ../../source/administration/overview-tech.md
+msgid "Sharing Messaging and Files"
+msgstr ""
+
+#: ../../source/administration/overview-tech.md
+msgid "Archiving and Search"
+msgstr ""
+
+#: ../../source/administration/overview-tech.md
+msgid "Anywhere Access"
+msgstr ""
+
+#: ../../source/administration/overview-tech.md
+msgid "Self-Host Ready"
+msgstr ""
+
+#: ../../source/administration/overview-tech.md
+msgid "Release Numbering"
+msgstr ""
+
+#: ../../source/administration/overview-tech.md:35
+msgid "Mattermost numbers releases based on the following format:"
+msgstr ""
+
+#: ../../source/administration/overview-tech.md:37
+msgid "[Version Number].[Major Build Number].[Minor Build Number]"
+msgstr ""
+
+#: ../../source/administration/overview-tech.md
+msgid "Release Schedule"
+msgstr ""
+
+#: ../../source/administration/overview-tech.md:45
+msgid ""
+"Mattermost releases new major builds monthly on the 16th from "
+"http://www.mattermost.org/download/."
+msgstr ""
+
+#: ../../source/administration/overview-tech.md
+msgid "Components"
+msgstr ""
+
+#: ../../source/administration/overview-tech.md:49
+msgid ""
+"Following installation, Mattermost state is stored in two places, a "
+"system configuration file and the Mattermost database."
+msgstr ""
+
+#: ../../source/administration/overview-tech.md
+msgid "System Configuration File"
+msgstr ""
+
+#: ../../source/administration/overview-tech.md:53
+msgid ""
+"This file, located in config/config.json stores Mattermost system "
+"settings. This file should be backed up before any upgrade or migration "
+"attempt."
+msgstr ""
+
+#: ../../source/administration/overview-tech.md
+msgid "Mattermost Database"
+msgstr ""
+
+#: ../../source/administration/overview-tech.md:57
+msgid ""
+"The Mattermost database set up during installation stores user and system"
+" data. This database is versioned and the Mattermost server has two "
+"requirements for the database version:"
+msgstr ""
+

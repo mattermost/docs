@@ -1,0 +1,104 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/developer/contribution-guide.md
+msgid "Code Contribution Guidelines"
+msgstr ""
+
+#: ../../source/developer/contribution-guide.md:3
+msgid ""
+"Thank you for your interest in contributing to Mattermost. Here's the "
+"process:"
+msgstr ""
+
+#: ../../source/developer/contribution-guide.md
+msgid "Choose a Ticket"
+msgstr ""
+
+#: ../../source/developer/contribution-guide.md:13
+msgid ""
+"It's okay to submit PRs to fix obvious bugs or add small improvements, "
+"but anything that significantly changes behavior or user expectations "
+"requires an APR ticket opened by the core team so that the change can be "
+"tested, documented and supported."
+msgstr ""
+
+#: ../../source/developer/contribution-guide.md:15
+msgid ""
+"The best way to discuss opening an APR ticket with the core team is by "
+"starting a conversation in the feature idea forum which is monitored via "
+"automation."
+msgstr ""
+
+#: ../../source/developer/contribution-guide.md
+msgid "Install Mattermost and set up a Fork"
+msgstr ""
+
+#: ../../source/developer/contribution-guide.md:19
+msgid "Once you have a ticket:"
+msgstr ""
+
+#: ../../source/developer/contribution-guide.md
+msgid "Preparing a Pull Request"
+msgstr ""
+
+#: ../../source/developer/contribution-guide.md:27
+msgid "Before submitting a pull request (PR), check that:"
+msgstr ""
+
+#: ../../source/developer/contribution-guide.md
+msgid "Submitting a Pull Request"
+msgstr ""
+
+#: ../../source/developer/contribution-guide.md:41
+msgid "When submitting a PR, check that:"
+msgstr ""
+
+#: ../../source/developer/contribution-guide.md
+msgid "Managing an Open Pull Request"
+msgstr ""
+
+#: ../../source/developer/contribution-guide.md:49
+msgid "After submitting a PR, before it is merged:"
+msgstr ""
+
+#: ../../source/developer/contribution-guide.md:58
+msgid ""
+"If you've included your mailing address in Step 1, you may receive a "
+"Limited Edition Mattermost Mug as a thank you gift after your first pull "
+"request is merged."
+msgstr ""
+
+#: ../../source/developer/contribution-guide.md
+msgid "Approved Reviewers"
+msgstr ""
+
+#: ../../source/developer/contribution-guide.md:62
+msgid ""
+"Please DO NOT @-mention reviewers if they haven't yet commented on your "
+"PR. Pull requests are reviewed in sequence."
+msgstr ""
+
+#: ../../source/developer/contribution-guide.md:65
+msgid ""
+"Approved reviewers include: coreyhulen, crspeller, hmhealey, "
+"jwilanderApproved seconders include: coreyhulen, crspeller, hmhealey, "
+"jwilander"
+msgstr ""
+

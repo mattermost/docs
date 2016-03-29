@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/administration/compliance.md
+msgid "Compliance exports with oversight protection"
+msgstr ""
+
+#: ../../source/administration/compliance.md:3
+msgid ""
+"Basic reporting available in Enterprise Edition 2.1, full features "
+"available April 16, 2016 in Enterprise Edition 2.2"
+msgstr ""
+
+#: ../../source/administration/compliance.md:5
+msgid ""
+"Turning on this feature enables compliance exports to be produced from "
+"the System Console with each export and download action logged in an "
+"audit history to enable oversight and prevent unauthorized queries."
+msgstr ""
+
+#: ../../source/administration/compliance.md:7
+msgid ""
+"Compliance exports can be filtered to date range, user account, and "
+"keyword list and requests from queries can be downloaded from the user "
+"interface in .csv format, with a .json metafile documenting the query, as"
+" well as placed in a pre-defined directory."
+msgstr ""
+
+#: ../../source/administration/compliance.md:9
+msgid ""
+"Each export and each download action taken from the user interface is "
+"recorded in an audit log, including the user account taking the action, "
+"the action and a datetime stamp."
+msgstr ""
+
+#: ../../source/administration/compliance.md:11
+msgid ""
+"An option is also available to generate compliance reports on a daily "
+"basis."
+msgstr ""
+

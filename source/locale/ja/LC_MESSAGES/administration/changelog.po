@@ -1,0 +1,825 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/administration/changelog.md
+msgid "Mattermost Changelog"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Release v2.1.0"
+msgstr ""
+
+#: ../../source/administration/changelog.md:5
+msgid "Expected release date: 2016-03-16"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Highlights"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Security Update"
+msgstr ""
+
+#: ../../source/administration/changelog.md:15
+msgid ""
+"Mattermost v2.1.0 contains a security update for a cross-site scripting "
+"vulnerability in Mattermost v1.2, v1.3, v1.4 and v2.0. Upgrading to "
+"Mattermost v2.1.0 is highly recommended. Thanks to Luke Arntson for the "
+"RPD report."
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "New Features"
+msgstr ""
+
+#: ../../source/administration/changelog.md:19
+msgid "Android Application"
+msgstr ""
+
+#: ../../source/administration/changelog.md:23
+msgid "Desktop Application"
+msgstr ""
+
+#: ../../source/administration/changelog.md:27
+msgid "Languages"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Improvements"
+msgstr ""
+
+#: ../../source/administration/changelog.md:33
+#: ../../source/administration/changelog.md:185
+#: ../../source/administration/changelog.md:210
+#: ../../source/administration/changelog.md:366
+#: ../../source/administration/changelog.md:663
+#: ../../source/administration/changelog.md:799
+#: ../../source/administration/changelog.md:911
+msgid "System Console"
+msgstr ""
+
+#: ../../source/administration/changelog.md:39
+#: ../../source/administration/changelog.md:223
+msgid "Messaging"
+msgstr ""
+
+#: ../../source/administration/changelog.md:44
+msgid "Mobile"
+msgstr ""
+
+#: ../../source/administration/changelog.md:50
+#: ../../source/administration/changelog.md:195
+#: ../../source/administration/changelog.md:381
+#: ../../source/administration/changelog.md:907
+msgid "Files and Images"
+msgstr ""
+
+#: ../../source/administration/changelog.md:54
+#: ../../source/administration/changelog.md:228
+#: ../../source/administration/changelog.md:389
+#: ../../source/administration/changelog.md:525
+#: ../../source/administration/changelog.md:640
+#: ../../source/administration/changelog.md:918
+#: ../../source/administration/changelog.md:949
+msgid "User Interface"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Bug Fixes"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Compatibility"
+msgstr ""
+
+#: ../../source/administration/changelog.md:95
+msgid "Changes from v2.0 to v2.1:"
+msgstr ""
+
+#: ../../source/administration/changelog.md:97
+#: ../../source/administration/changelog.md:181
+msgid "Android"
+msgstr ""
+
+#: ../../source/administration/changelog.md:100
+#: ../../source/administration/changelog.md:256
+msgid "config.json"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Known Issues"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Contributors"
+msgstr ""
+
+#: ../../source/administration/changelog.md:127
+#: ../../source/administration/changelog.md:323
+msgid "Many thanks to all our external contributors. In no particular order:"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Release v2.0.0"
+msgstr ""
+
+#: ../../source/administration/changelog.md:142
+msgid "Expected Release date: 2016-02-16"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Incremented Version Number: Mattermost \"2.0\""
+msgstr ""
+
+#: ../../source/administration/changelog.md
+#: ../../source/administration/changelog.md:167
+#: ../../source/administration/changelog.md:271
+msgid "Localization"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Enhanced Support for Mobile Devices"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Upgrade and Deployment Improvements"
+msgstr ""
+
+#: ../../source/administration/changelog.md:172
+msgid "Slash Commands"
+msgstr ""
+
+#: ../../source/administration/changelog.md:176
+#: ../../source/administration/changelog.md:252
+msgid "iOS"
+msgstr ""
+
+#: ../../source/administration/changelog.md:191
+msgid "Upgrading"
+msgstr ""
+
+#: ../../source/administration/changelog.md:200
+#: ../../source/administration/changelog.md:522
+#: ../../source/administration/changelog.md:618
+msgid "Onboarding"
+msgstr ""
+
+#: ../../source/administration/changelog.md:205
+#: ../../source/administration/changelog.md:361
+#: ../../source/administration/changelog.md:492
+msgid "Authentication"
+msgstr ""
+
+#: ../../source/administration/changelog.md:216
+#: ../../source/administration/changelog.md:629
+msgid "Search"
+msgstr ""
+
+#: ../../source/administration/changelog.md:250
+msgid "Changes from v1.4 to v2.0:"
+msgstr ""
+
+#: ../../source/administration/changelog.md:254
+msgid "Mattermost iOS app v2.0 requires Mattermost platform v2.0 and higher."
+msgstr ""
+
+#: ../../source/administration/changelog.md:258
+msgid ""
+"Multiple setting options were added to config.json. Below is a list of "
+"the additions and their default values on install. The settings can be "
+"modified in config.json or the System Console."
+msgstr ""
+
+#: ../../source/administration/changelog.md:273
+msgid "There are two new directories for i18n localization JSON files:"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Database Changes from v1.4 to v2.0"
+msgstr ""
+
+#: ../../source/administration/changelog.md:279
+msgid ""
+"The following is for informational purposes only, no action needed. "
+"Mattermost automatically upgrades database tables from the previous "
+"version's schema using only additions."
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Users Table"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Licenses Table"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Commands Table"
+msgstr ""
+
+#: ../../source/administration/changelog.md:321
+msgid "Special thanks to enahum for creating the Spanish localization!"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Release v1.4.0"
+msgstr ""
+
+#: ../../source/administration/changelog.md:339
+msgid "Expected Release date: 2016-01-16"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Release Highlights"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Data Center Support"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+#: ../../source/administration/changelog.md:357
+msgid "Mobile Experience"
+msgstr ""
+
+#: ../../source/administration/changelog.md:373
+msgid "Performance and Testing"
+msgstr ""
+
+#: ../../source/administration/changelog.md:377
+#: ../../source/administration/changelog.md:635
+#: ../../source/administration/changelog.md:786
+#: ../../source/administration/changelog.md:924
+msgid "Integrations"
+msgstr ""
+
+#: ../../source/administration/changelog.md:385
+msgid "Notifications and Email"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Config.json Changes from v1.3 to v1.4"
+msgstr ""
+
+#: ../../source/administration/changelog.md:410
+msgid ""
+"Multiple settings were added to config.json. Below is a list of the "
+"changes and their new default values in a fresh install."
+msgstr ""
+
+#: ../../source/administration/changelog.md:412
+msgid "The following options can be modified in the System Console:"
+msgstr ""
+
+#: ../../source/administration/changelog.md:428
+msgid ""
+"The following options are not present in the System Console, and can be "
+"modified manually in the config.json file:"
+msgstr ""
+
+#: ../../source/administration/changelog.md:458
+#: ../../source/administration/changelog.md:569
+#: ../../source/administration/changelog.md:726
+#: ../../source/administration/changelog.md:843
+#: ../../source/administration/changelog.md:1105
+#: ../../source/administration/changelog.md:1179
+#: ../../source/administration/changelog.md:1283
+msgid "Many thanks to our external contributors. In no particular order:"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Release v1.3.0"
+msgstr ""
+
+#: ../../source/administration/changelog.md:470
+msgid "Release date: 2015-12-16"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "iOS App"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Search Upgrades"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Advanced Formatting"
+msgstr ""
+
+#: ../../source/administration/changelog.md:495
+msgid "Archives"
+msgstr ""
+
+#: ../../source/administration/changelog.md:499
+msgid "Account Settings"
+msgstr ""
+
+#: ../../source/administration/changelog.md:503
+#: ../../source/administration/changelog.md:517
+msgid "Messaging & Comments"
+msgstr ""
+
+#: ../../source/administration/changelog.md:507
+#: ../../source/administration/changelog.md:657
+msgid "Extras"
+msgstr ""
+
+#: ../../source/administration/changelog.md:512
+#: ../../source/administration/changelog.md:940
+msgid "Performance"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Config.json Changes from v1.2 to v1.3"
+msgstr ""
+
+#: ../../source/administration/changelog.md:548
+#: ../../source/administration/changelog.md:683
+msgid ""
+"Multiple settings were added to config.json. These options can be "
+"modified in the System Console, or manually updated in the existing "
+"config.json file. This is a list of changes and their new default values "
+"in a fresh install:"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Release v1.2.1"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Security Notice"
+msgstr ""
+
+#: ../../source/administration/changelog.md:589
+msgid ""
+"Mattermost v1.2.1 is a bug fix release addressing a security issue in "
+"v1.2.0 affecting a newly introduced outgoing webhooks feature. "
+"Specifically, in v1.2.0 there was a check missing from outgoing webhooks,"
+" so a team member creating outgoing webhooks could in theory find a way "
+"to listen to messages in private channels containing popular words like "
+"\"a\", \"the\", \"at\", etc. For added security, Mattermost v1.2.1 now "
+"installs with incoming and outgoing webhooks disabled by default."
+msgstr ""
+
+#: ../../source/administration/changelog.md:591
+msgid ""
+"To limit the impact of this security issue, Mattermost v1.2.0 has been "
+"removed from the source repo. It is recommended that anyone who's "
+"installed v1.2.0 upgrade to v1.2.1 via the procedure described in the "
+"Mattermost Upgrade Guide."
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Outgoing webhooks"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Search Scope Modifiers"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Syntax Highlighting"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Usability Improvements"
+msgstr ""
+
+#: ../../source/administration/changelog.md:622
+#: ../../source/administration/changelog.md:805
+msgid "Messaging and Notifications"
+msgstr ""
+
+#: ../../source/administration/changelog.md:651
+#: ../../source/administration/changelog.md
+msgid "Team Settings"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Config.json Changes from v1.1 to v1.2"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Database Changes from v1.1 to v1.2"
+msgstr ""
+
+#: ../../source/administration/changelog.md:693
+#: ../../source/administration/changelog.md:835
+#: ../../source/administration/changelog.md:1042
+msgid ""
+"The following is for informational purposes only, no action needed. "
+"Mattermost automatically upgrades database tables from the previous "
+"version's schema using only additions. Sessions table is dropped and "
+"rebuilt, no team data is affected by this."
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Channels Table"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Preferences Table"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Teams Table"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Release v1.2.0 (Redacted Release)"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Release v1.1.1 (Bug Fix Release)"
+msgstr ""
+
+#: ../../source/administration/changelog.md:750
+msgid "Released 2015-10-20"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "About Bug Fix Releases"
+msgstr ""
+
+#: ../../source/administration/changelog.md:754
+msgid ""
+"This is a bug fix release (v1.1.1) and recommended only for users needing"
+" a fix to the specific issue listed below. All other users should use the"
+" most recent major stable build release (v1.1.0)."
+msgstr ""
+
+#: ../../source/administration/changelog.md:756
+msgid "View more information on Mattermost release numbering."
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Release Purpose"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Provide option for upgrading database from Mattermost v0.7 to v1.1"
+msgstr ""
+
+#: ../../source/administration/changelog.md:762
+msgid ""
+"Upgrading Mattermost v0.7 to Mattermost v1.1 originally required "
+"installing Mattermost v1.0 to upgrade from the Mattermost v0.7 database, "
+"followed by an install of Mattermost v1.1."
+msgstr ""
+
+#: ../../source/administration/changelog.md:764
+msgid ""
+"This was problematic for installing Mattermost with GitLab omnibus since "
+"GitLab 8.0 contained Mattermost v0.7 and GitLab 8.1 was to include "
+"Mattermost v1.1"
+msgstr ""
+
+#: ../../source/administration/changelog.md:766
+msgid ""
+"Therefore Mattermost v1.1.1 was created that can upgrade the database in "
+"Mattermost v0.7 to Mattermost v1.1 directly."
+msgstr ""
+
+#: ../../source/administration/changelog.md:768
+msgid ""
+"Users who configured Mattermost v0.7 within GitLab via the config.json "
+"file should consult documentation on upgrading configurations from "
+"Mattermost v0.7 to Mattermost v1.1."
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Removes 32-char limit on salts"
+msgstr ""
+
+#: ../../source/administration/changelog.md:772
+msgid ""
+"Mattermost v1.1 introduced a 32-char limit on salts that broke the salt "
+"generating in GitLab and this restriction was removed for 1.1.1."
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Release v1.1.0"
+msgstr ""
+
+#: ../../source/administration/changelog.md:776
+msgid "Released: 2015-10-16"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Incoming Webhooks"
+msgstr ""
+
+#: ../../source/administration/changelog.md:782
+msgid ""
+"Mattermost now supports incoming webhooks for channels and private "
+"groups. This developer feature is available from the Account Settings -> "
+"Integrations menu. Documentation on how developers can use the webhook "
+"functionality to build custom integrations, along with samples, is "
+"available at http://mattermost.org/webhooks."
+msgstr ""
+
+#: ../../source/administration/changelog.md:790
+#: ../../source/administration/changelog.md:930
+#: ../../source/administration/changelog.md:1155
+#: ../../source/administration/changelog.md:1166
+#: ../../source/administration/changelog.md:1277
+msgid "Documentation"
+msgstr ""
+
+#: ../../source/administration/changelog.md:795
+msgid "Theme Colors"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Config.json Changes from v1.0 to v1.1"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Service Settings"
+msgstr ""
+
+#: ../../source/administration/changelog.md:827
+msgid ""
+"Multiple settings were added to config.json and System Console UI. Prior "
+"to upgrading the Mattermost binaries from the previous versions, these "
+"options would need to be manually updated in existing config.json file. "
+"This is a list of changes and their new default values in a fresh "
+"install:"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Database Changes from v1.0 to v1.1"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "ChannelMembers Table"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Release v1.0.0"
+msgstr ""
+
+#: ../../source/administration/changelog.md:862
+msgid "Released 2015-10-02"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Markdown"
+msgstr ""
+
+#: ../../source/administration/changelog.md:868
+msgid ""
+"Markdown support is now available across messages, comments and channel "
+"descriptions for:"
+msgstr ""
+
+#: ../../source/administration/changelog.md:877
+msgid "See documentation for full details."
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Themes"
+msgstr ""
+
+#: ../../source/administration/changelog.md:881
+msgid "Themes as been significantly upgraded in this release with:"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "System console and command line tools"
+msgstr ""
+
+#: ../../source/administration/changelog.md:889
+msgid ""
+"Added new web-based System Console for managing instance level "
+"configuration. This lets IT admins conveniently:"
+msgstr ""
+
+#: ../../source/administration/changelog.md:895
+msgid ""
+"In addition new command line tools are available for managing Mattermost "
+"system roles, creating users, resetting passwords, getting version info "
+"and other basic tasks."
+msgstr ""
+
+#: ../../source/administration/changelog.md:897
+msgid "Run ./platform -h for documentation using the new command line tool."
+msgstr ""
+
+#: ../../source/administration/changelog.md:902
+#: ../../source/administration/changelog.md:1151
+#: ../../source/administration/changelog.md:1161
+#: ../../source/administration/changelog.md:1251
+msgid "Messaging, Comments and Notifications"
+msgstr ""
+
+#: ../../source/administration/changelog.md:945
+msgid "Code Quality"
+msgstr ""
+
+#: ../../source/administration/changelog.md:953
+msgid "Licensing"
+msgstr ""
+
+#: ../../source/administration/changelog.md:963
+msgid ""
+"A large number of settings were changed in config.json and a System "
+"Console UI was added. This is a very large change due to Mattermost "
+"releasing as v1.0 and it's unlikely a change of this size would happen "
+"again."
+msgstr ""
+
+#: ../../source/administration/changelog.md:965
+msgid ""
+"Prior to upgrading the Mattermost binaries from the previous versions, "
+"the below options would need to be manually updated in your existing "
+"config.json file to migrate successfully. This is a list of changes and "
+"their new default values in a fresh install:"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Config.json Changes from v0.7 to v1.0"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "SSO Settings"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "AWS Settings"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Image Settings"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "EmailSettings"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Privacy Settings"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Database Changes from v0.7 to v1.0"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Sessions Table"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "OAuthAccessData Table"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "OAuthApps Table"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "OAuthAuthData Table"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "IncomingWebhooks Table"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Systems Table"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Release v0.7.0 (Beta1)"
+msgstr ""
+
+#: ../../source/administration/changelog.md:1116
+msgid "Released 2015-09-05"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Improved GitLab Mattermost support"
+msgstr ""
+
+#: ../../source/administration/changelog.md:1122
+msgid ""
+"Following the release of Mattermost v0.6.0 Alpha, GitLab 7.14 offered an "
+"automated install of Mattermost with GitLab Single-Sign-On (co-branded as"
+" \"GitLab Mattermost\") in its omnibus installer."
+msgstr ""
+
+#: ../../source/administration/changelog.md:1124
+msgid ""
+"New features, improvements, and bug fixes recommended by the GitLab "
+"community were incorporated into Mattermost v0.7.0 Beta1--in particular, "
+"extending support of GitLab SSO to team creation, and restricting team "
+"creation to users with verified emails from a configurable list of "
+"domains."
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Slack Import (Preview)"
+msgstr ""
+
+#: ../../source/administration/changelog.md:1128
+msgid ""
+"Preview of Slack import functionality supports the processing of an "
+"\"Export\" file from Slack containing account information and public "
+"channel archives from a Slack team."
+msgstr ""
+
+#: ../../source/administration/changelog.md:1133
+msgid "Limitations:"
+msgstr ""
+
+#: ../../source/administration/changelog.md:1141
+#: ../../source/administration/changelog.md:1241
+msgid "GitLab Mattermost"
+msgstr ""
+
+#: ../../source/administration/changelog.md:1146
+#: ../../source/administration/changelog.md:1247
+msgid "File and Image Sharing"
+msgstr ""
+
+#: ../../source/administration/changelog.md:1190
+msgid ""
+"Special thanks to the GitLab Mattermost early adopter community who "
+"influenced this release, and who play a pivotal role in bringing "
+"Mattermost to over 100,000 organizations using GitLab today. In no "
+"particular order:"
+msgstr ""
+
+#: ../../source/administration/changelog.md:1218
+msgid ""
+"Extra special thanks to GitLab community leaders for successful release "
+"of GitLab Mattermost Alpha:"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Release v0.6.0 (Alpha)"
+msgstr ""
+
+#: ../../source/administration/changelog.md:1226
+msgid "Released 2015-08-07"
+msgstr ""
+
+#: ../../source/administration/changelog.md:1235
+msgid ""
+"Note: While use of Mattermost Preview (v0.5.0) and Mattermost Alpha "
+"(v0.6.0) in production is not recommended, we document compatibility "
+"considerations for a small number of organizations running Mattermost in "
+"production, supported directly by Mattermost product team."
+msgstr ""
+
+#: ../../source/administration/changelog.md:1256
+msgid "Security and Administration"
+msgstr ""
+
+#: ../../source/administration/changelog.md:1261
+#: ../../source/administration/changelog.md:1273
+msgid "On-boarding"
+msgstr ""
+
+#: ../../source/administration/changelog.md:1267
+msgid "Installation"
+msgstr ""
+
+#: ../../source/administration/changelog.md
+msgid "Release v0.5.0 (Preview)"
+msgstr ""
+
+#: ../../source/administration/changelog.md:1294
+msgid "Released 2015-06-24"
+msgstr ""
+
+#: ../../source/administration/changelog.md:1302
+msgid "Messaging and File Sharing"
+msgstr ""
+
+#: ../../source/administration/changelog.md:1308
+msgid "Archiving and Search"
+msgstr ""
+
+#: ../../source/administration/changelog.md:1313
+msgid "Anywhere Access"
+msgstr ""
+

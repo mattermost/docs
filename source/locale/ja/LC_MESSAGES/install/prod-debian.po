@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/install/prod-debian.md
+msgid "Production Install on Debian Jessie"
+msgstr ""
+
+#: ../../source/install/prod-debian.md:3
+msgid ""
+"Note: This install guide has been generously contributed by the "
+"Mattermost community. It has not yet been tested by the core team. We "
+"have an open ticket requesting community help testing and improving this "
+"guide. Once the community has confirmed we have multiple deployments on "
+"these instructions, we can update the text here. If you're installing on "
+"Debian anyway, please let us know any issues or instruciton improvements?"
+" https://github.com/mattermost/platform/issues/1185"
+msgstr ""
+
+#: ../../source/install/prod-debian.md
+msgid "Install Debian Jessie (x64)"
+msgstr ""
+
+#: ../../source/install/prod-debian.md
+msgid "Set up Database Server"
+msgstr ""
+
+#: ../../source/install/prod-debian.md
+msgid "Set up Mattermost Server"
+msgstr ""
+
+#: ../../source/install/prod-debian.md:209
+msgid ""
+"Note: This setup can also be done using a systemd unit, usable for non-"
+"Debian systems, such as Arch Linux. The unit file is as follows:"
+msgstr ""
+
+#: ../../source/install/prod-debian.md
+msgid "Set up Nginx Server"
+msgstr ""
+
+#: ../../source/install/prod-debian.md
+msgid "Set up Nginx with SSL (Recommended)"
+msgstr ""
+
+#: ../../source/install/prod-debian.md
+msgid "Finish Mattermost Server setup"
+msgstr ""
+

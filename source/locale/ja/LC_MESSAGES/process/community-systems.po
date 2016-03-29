@@ -1,0 +1,153 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/process/community-systems.md
+msgid "Bugs, Feature Ideas, Troubleshooting"
+msgstr ""
+
+#: ../../source/process/community-systems.md:3
+msgid "Here's how to engage with the Mattermost community:"
+msgstr ""
+
+#: ../../source/process/community-systems.md
+msgid "GitHub Issues Workflow"
+msgstr ""
+
+#: ../../source/process/community-systems.md:16
+msgid ""
+"To minimize response times, templates and automation are used across "
+"community systems for common requests. When misfiled requests are are "
+"posted in GitHub close them soon so the community does not confuse them "
+"as being appropriate."
+msgstr ""
+
+#: ../../source/process/community-systems.md
+msgid "Category: Issue Submitter needs to do something"
+msgstr ""
+
+#: ../../source/process/community-systems.md:20
+msgid "Start with \"Please...\""
+msgstr ""
+
+#: ../../source/process/community-systems.md
+msgid "Label: Please move to Troubleshooting forum"
+msgstr ""
+
+#: ../../source/process/community-systems.md
+msgid "Label: Please move to Feature Ideas forum"
+msgstr ""
+
+#: ../../source/process/community-systems.md
+msgid "Label: Please add repro steps"
+msgstr ""
+
+#: ../../source/process/community-systems.md
+msgid "Label: Please rebase"
+msgstr ""
+
+#: ../../source/process/community-systems.md
+msgid "Category: We/community need to do something"
+msgstr ""
+
+#: ../../source/process/community-systems.md:62
+msgid "Start with \"Needs...\""
+msgstr ""
+
+#: ../../source/process/community-systems.md
+msgid "Label: Needs PR reviewer"
+msgstr ""
+
+#: ../../source/process/community-systems.md:66
+msgid ""
+"Needs Reviewer to add +1 or share feedback to submitter on how to adjust "
+"pull request."
+msgstr ""
+
+#: ../../source/process/community-systems.md
+msgid "Label: Needs PR seconder"
+msgstr ""
+
+#: ../../source/process/community-systems.md:70
+msgid ""
+"After code is reviewed, needs \"Seconder\" to add +1 or share feedback to"
+" submitter on how to adjust pull request."
+msgstr ""
+
+#: ../../source/process/community-systems.md
+msgid "Label: Needs PM review"
+msgstr ""
+
+#: ../../source/process/community-systems.md
+msgid "Label: Needs merge (review complete)"
+msgstr ""
+
+#: ../../source/process/community-systems.md:82
+msgid "PR has been reviewed and seconded and is awaiting merge."
+msgstr ""
+
+#: ../../source/process/community-systems.md
+msgid "Label: Needs Jira ticket"
+msgstr ""
+
+#: ../../source/process/community-systems.md:86
+msgid "? + Assign to ?"
+msgstr ""
+
+#: ../../source/process/community-systems.md:88
+msgid "Response after Jira ticket is created:"
+msgstr ""
+
+#: ../../source/process/community-systems.md
+msgid "Category: Miscellanous Issues"
+msgstr ""
+
+#: ../../source/process/community-systems.md
+msgid "Label: Asking community help to repro"
+msgstr ""
+
+#: ../../source/process/community-systems.md
+msgid "Label: Duplicate Jira ticket"
+msgstr ""
+
+#: ../../source/process/community-systems.md
+msgid "Label: Setup Test Server"
+msgstr ""
+
+#: ../../source/process/community-systems.md:114
+msgid ""
+"Adding this label sets up a test server, removing it shuts down the test "
+"server."
+msgstr ""
+
+#: ../../source/process/community-systems.md
+msgid "Label: Substantial commit"
+msgstr ""
+
+#: ../../source/process/community-systems.md:118
+msgid "A PR that requires careful review due to size."
+msgstr ""
+
+#: ../../source/process/community-systems.md
+msgid "Label: DO NOT MERGE"
+msgstr ""
+
+#: ../../source/process/community-systems.md:122
+msgid "A PR submitted for discussion that SHOULD NOT be merged."
+msgstr ""
+

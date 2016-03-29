@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/process/release-process.md
+msgid "Release Process"
+msgstr ""
+
+#: ../../source/process/release-process.md:3
+msgid ""
+"Mattermost core team works on a monthly release process, with a new "
+"version shipping on the 16th of each month in binary form."
+msgstr ""
+
+#: ../../source/process/release-process.md:5
+msgid ""
+"This document outlines the development process for the Mattermost core "
+"team, which draws from what we find works best for us from Agile, Scrum "
+"and Software Development Lifecycle approaches."
+msgstr ""
+
+#: ../../source/process/release-process.md
+msgid "Release Timeline"
+msgstr ""
+
+#: ../../source/process/release-process.md:9
+msgid "Notes:"
+msgstr ""
+
+#: ../../source/process/release-process.md
+msgid "A. (Code complete date of previous release) Beginning of release"
+msgstr ""
+
+#: ../../source/process/release-process.md:15
+msgid ""
+"Pre-work for the current release begins at the code complete date of the "
+"previous release. See \"Code Complete\" section below for details."
+msgstr ""
+
+#: ../../source/process/release-process.md
+msgid "B. (T-minus 10 working days) Cut-off for major features"
+msgstr ""
+
+#: ../../source/process/release-process.md:19
+msgid ""
+"No pull requests for major features should be submitted to the current "
+"release after this date (except if release manager decides to add "
+"\"release-exception\" label to Jira ticket)."
+msgstr ""
+
+#: ../../source/process/release-process.md
+msgid "C. (T-minus 8 working days) Feature Complete and Stabilization"
+msgstr ""
+
+#: ../../source/process/release-process.md:56
+msgid ""
+"Stablization period begins when all features for release have been "
+"committed. During this period, only bugs can be committed to master. Non-"
+"bug pull requests are tagged for next version, and are not committed to "
+"master until after a release candidate is cut."
+msgstr ""
+
+#: ../../source/process/release-process.md:58
+msgid ""
+"Exceptions can be made by the release manager setting priority to "
+"\"Highest\" and adding a \"release-exception\" label to the Jira ticket. "
+"This will add the ticket to the hotfix list for release candidate."
+msgstr ""
+
+#: ../../source/process/release-process.md
+msgid "D. (T-minus 5 working days) Code Complete and Release Candidate Cut"
+msgstr ""
+
+#: ../../source/process/release-process.md
+msgid "E. (T-minus 4 working days) Release Candidate Testing"
+msgstr ""
+
+#: ../../source/process/release-process.md
+msgid "F. (T-minus 2 working days) Release Build Cut"
+msgstr ""
+
+#: ../../source/process/release-process.md:147
+msgid ""
+"The final release is cut. If an urgent and important issue needs to be "
+"addressed between major releases, a bug fix release (e.g. 1.1.1) may be "
+"created"
+msgstr ""
+
+#: ../../source/process/release-process.md
+msgid "G. (T-minus 0 working days) Release Day"
+msgstr ""
+
+#: ../../source/process/release-process.md
+msgid "Release Numbering"
+msgstr ""
+
+#: ../../source/process/release-process.md:184
+msgid ""
+"Mattermost numbers its stable releases based on the following "
+"format:[Version Number].[Major Build Number].[Minor Build Number]"
+msgstr ""
+
+#: ../../source/process/release-process.md:187
+msgid "Version Number:"
+msgstr ""
+
+#: ../../source/process/release-process.md:190
+msgid "Major Build Number:"
+msgstr ""
+
+#: ../../source/process/release-process.md:193
+msgid "Minor Build Number:"
+msgstr ""
+

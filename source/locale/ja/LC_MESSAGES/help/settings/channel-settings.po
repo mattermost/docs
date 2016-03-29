@@ -1,0 +1,88 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/help/settings/channel-settings.md
+msgid "Channel Settings"
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.md:3
+msgid ""
+"Notification preferences, channel header, and channel purpose are "
+"customizable for each channel."
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.md
+msgid "Channel Notification Preferences"
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.md:6
+msgid ""
+"Notification preferences can be modified for each channel of which you "
+"are a member."
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.md
+msgid "Send Desktop Notifications"
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.md:9
+msgid ""
+"By default, the desktop notification preference assigned in Account "
+"Settings is used for all channels. To customize the desktop notification "
+"preference for each channel, click the channel name at the top of the "
+"center pane to access the drop-down menu, then click Notification "
+"Preferences > Send Desktop Notifications."
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.md
+msgid "Mark Channel Unread"
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.md:12
+msgid ""
+"Customize what activity causes the channel name to be bolded by accessing"
+" the channel name drop-down menu, then click Notification Preferences > "
+"Mark Channel Unread."
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.md
+msgid "Channel Header"
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.md:15
+msgid ""
+"The header is the text that appears next to the channel name at the top "
+"of the screen. It can be used to summarize the channel topic or provide "
+"links to frequently accessed documents. Any channel member can set the "
+"channel header by clicking the channel name at the top of the center pane"
+" to access the drop-down menu, then click  Set Channel Header."
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.md
+msgid "Channel Purpose"
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.md:18
+msgid ""
+"This text appears in the channel list in the More… menu and helps others "
+"decide whether to join. Any channel member can set the channel purpose by"
+" clicking the channel name at the top of the center pane to access the "
+"drop-down menu, then click  Set Channel Purpose."
+msgstr ""
+

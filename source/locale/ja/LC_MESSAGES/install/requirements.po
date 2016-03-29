@@ -1,0 +1,190 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/install/requirements.md
+msgid "Software & Hardware Requirements"
+msgstr ""
+
+#: ../../source/install/requirements.md
+msgid "Deployment Overview"
+msgstr ""
+
+#: ../../source/install/requirements.md:6
+msgid ""
+"Please see Mattermost Deployment Overview for a summary of components "
+"listed here."
+msgstr ""
+
+#: ../../source/install/requirements.md:8
+msgid "image"
+msgstr ""
+
+#: ../../source/install/requirements.md:10
+msgid "View Mattermost Network Diagram"
+msgstr ""
+
+#: ../../source/install/requirements.md
+msgid "Software Requirements"
+msgstr ""
+
+#: ../../source/install/requirements.md
+msgid "Client Software"
+msgstr ""
+
+#: ../../source/install/requirements.md
+msgid "PC Web Experience"
+msgstr ""
+
+#: ../../source/install/requirements.md
+msgid "Mobile App Experience"
+msgstr ""
+
+#: ../../source/install/requirements.md
+msgid "Mobile Web Experience"
+msgstr ""
+
+#: ../../source/install/requirements.md
+msgid "Email Client"
+msgstr ""
+
+#: ../../source/install/requirements.md
+msgid "Server Software"
+msgstr ""
+
+#: ../../source/install/requirements.md
+msgid "Mattermost Server Operating System"
+msgstr ""
+
+#: ../../source/install/requirements.md:44
+msgid ""
+"The Mattermost roadmap does not currently include production support for "
+"Fedora, FreeBSD or Arch Linux."
+msgstr ""
+
+#: ../../source/install/requirements.md
+msgid "Database Software"
+msgstr ""
+
+#: ../../source/install/requirements.md:51
+msgid ""
+"Deployments requiring searching in Chinese, Japanese and Korean languages"
+" require MySQL 5.7.6+ and the configuration of ngram Full-Text parser. "
+"See CJK discussion for details."
+msgstr ""
+
+#: ../../source/install/requirements.md
+msgid "Hardware Requirements"
+msgstr ""
+
+#: ../../source/install/requirements.md:55
+msgid ""
+"Usage of CPU, RAM and storage space can vary significantly based on user "
+"behavior. For deployments larger than 500 users, it's highly recommended "
+"usage patterns in a small pilot deployment representative of your large "
+"organization is observed before rolling out the full scale service."
+msgstr ""
+
+#: ../../source/install/requirements.md
+msgid "Hardware Sizing for Team Deployments"
+msgstr ""
+
+#: ../../source/install/requirements.md:59
+msgid ""
+"Most small to medium Mattermost team deployments can be supported on a "
+"single server with the following specifications based on registered "
+"users:"
+msgstr ""
+
+#: ../../source/install/requirements.md:65
+#: ../../source/install/requirements.md:93
+msgid "Notes:"
+msgstr ""
+
+#: ../../source/install/requirements.md
+msgid "Hardware Sizing for Enterprise Deployments (Multi-Server)"
+msgstr ""
+
+#: ../../source/install/requirements.md:74
+msgid ""
+"Mattermost can also be configured with a redundant, highly available, "
+"highly scalable mode to support large organizations. The following is an "
+"example that can be scaled up or down in size:"
+msgstr ""
+
+#: ../../source/install/requirements.md:76
+msgid ""
+"For enterprise deployments of 10,000-20,000 registered users with "
+"moderate usage and a peak of 2,000-4,000 concurrent users, the following "
+"hardware deployment configurations are recommended:"
+msgstr ""
+
+#: ../../source/install/requirements.md:78
+msgid "Proxy Server"
+msgstr ""
+
+#: ../../source/install/requirements.md:82
+msgid ""
+"Mattermost Server (1 to 2 depending on level of redundancy and high "
+"availability required)"
+msgstr ""
+
+#: ../../source/install/requirements.md:86
+msgid "Network Attached Storage"
+msgstr ""
+
+#: ../../source/install/requirements.md:89
+msgid "Database Server (2 recommended for redundancy)"
+msgstr ""
+
+#: ../../source/install/requirements.md
+msgid "Alternate Storage Calculations"
+msgstr ""
+
+#: ../../source/install/requirements.md:99
+msgid ""
+"As an alternative to recommended storage sizing above, you can forecast "
+"your own storage usuage. Begin with a Mattermost server approximately 600"
+" MB to 800 MB in size including operating system and database, then add "
+"the multiplied product of:"
+msgstr ""
+
+#: ../../source/install/requirements.md:105
+msgid "Estimated storage per user per month"
+msgstr ""
+
+#: ../../source/install/requirements.md:107
+msgid ""
+"File usage per user varies significantly across industries. The below "
+"benchmarks are recommended:"
+msgstr ""
+
+#: ../../source/install/requirements.md:115
+msgid ""
+"Example: A 30-person team with medium usage (5-25 MB/user/month) with a "
+"safety factor of 2x would require between 300 MB (30 users * 5 MB * 2x "
+"safety factor) and 1500 MB (30 users * 25 MB * 2x safety factor) of free "
+"space in the next year."
+msgstr ""
+
+#: ../../source/install/requirements.md:117
+msgid ""
+"It's recommended to review storage utilization at least quarterly to "
+"ensure adequate free space is available."
+msgstr ""
+

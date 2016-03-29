@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/index.rst:7
+msgid "Mattermost Overview"
+msgstr ""
+
+#: ../../source/index.rst:8
+msgid "Mattermost is modern communication behind your firewall."
+msgstr ""
+
+#: ../../source/index.rst:10
+msgid ""
+"The platform lets users share messages and files across PCs, phones and "
+"tablets with continuous archiving and instant search, and supports "
+"notifications and integrations with your existing tools."
+msgstr ""
+
+#: ../../source/index.rst:12
+msgid ""
+"**Mattermost Team Edition** is an open source, self-hosted application "
+"offering \"All your team communication in one place, easy-to-use, "
+"searchable, and accessible anywhere\". New releases available monthly "
+"under an MIT license from `mattermost.org/download`_."
+msgstr ""
+
+#: ../../source/index.rst:14
+msgid ""
+"**Mattermost Enterprise Edition** is a pre-released commercial version of"
+" Mattermost offering additional features for large organizations "
+"including enterprise authentication to systems like Active Directory, "
+"compliance and auditing support, and sophisticated configurations for "
+"high availability services. More information is available by `contacting "
+"Mattermost, Inc.`_"
+msgstr ""
+
+#: ../../source/index.rst:16
+msgid ""
+"This site offers documentation on User Help, Installation, Deployment, "
+"Administration, Development and Integrations."
+msgstr ""
+

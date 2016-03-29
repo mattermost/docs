@@ -1,0 +1,145 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/help/getting-started/organizing-conversations.md
+msgid "Organizing Conversations"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.md
+msgid "Channel Types"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.md:5
+msgid ""
+"Channels are used to organize conversations across different topics. "
+"There are three types of channels: Public Channels, Private Groups, and "
+"Direct Messages."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.md
+msgid "Public Channels"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.md:8
+msgid ""
+"Public Channels are open to everyone on a team. New team members are "
+"automatically a part of two Public Channels: Town Square and Off-Topic."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.md
+msgid "Private Groups"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.md:11
+msgid ""
+"Private Groups are for sensitive topics and are only visible to select "
+"team members. Any member of a Private Group can add additional members. "
+"Group members can choose to leave at any time, but only the group owner "
+"or Team Admin can remove other members."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.md
+msgid "Direct Messages"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.md:14
+msgid ""
+"Direct Messages are for conversations between two team members. These "
+"conversations are only visible to the team members involved. The online "
+"status indicator next to team members names in the direct message list "
+"displays: online (active browser), away (no browser activity for 5 "
+"minutes), and offline (browser closed)."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.md
+msgid "Managing Channels"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.md:17
+msgid "Channels can be created, joined, renamed, left and deleted."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.md
+msgid "Creating a Channel"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.md:20
+msgid ""
+"Create a new Public Channel or Private Group by selecting the + symbol "
+"next to the Channels or Private Groups header on the left hand side. To "
+"start a direct message thread, click More at the bottom of the Direct "
+"Messages list to view a list of team members you can message."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.md
+msgid "Joining a Channel"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.md:23
+msgid ""
+"Click More at the bottom of the Channels list to view a list of Public "
+"Channels you can join. To join a Private Group you need to be added by a "
+"member of that group."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.md
+msgid "Renaming a Channel"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.md:26
+msgid ""
+"Click the channel name at the top of the center pane to access the drop-"
+"down menu, then click Rename Channel. Channel owners can rename the "
+"Public Channels or Private Groups they’ve created. Team and System Admins"
+" can rename any channel or group."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.md
+msgid "Leaving a Channel"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.md:29
+msgid ""
+"Click the channel name at the top of the center pane to access the drop-"
+"down menu, then click Leave Channel. Any team member who leaves a Private"
+" Group must be added back by a group member if they wish to rejoin. Team "
+"members will not receive mention notifications from channels of which "
+"they are not members."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.md
+msgid "Deleting a Channel"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.md:32
+msgid ""
+"Click the channel name at the top of the center pane to access the drop-"
+"down menu, then click Delete Channel. Channel owners can delete the "
+"Public Channels or Private Groups they’ve created. Team and System Admins"
+" can delete any channel or group."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.md:34
+msgid ""
+"When a channel is deleted it is removed from the user interface, but an "
+"archived copy exists on the server in case it is needed for audit reasons"
+" later. Because of this, the URL of a newly created channel cannot be the"
+" same URL name as a deleted channel."
+msgstr ""
+
