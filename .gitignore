@@ -56,3 +56,6 @@ api/data/*
 .agignore
 .ctags
 tags
+
+# message catalog files(for i18n)
+*.mo
