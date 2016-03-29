@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../../source/index.rst:7
 msgid "Mattermost Overview"
-msgstr ""
+msgstr "Mattermost 概要"
 
 #: ../../source/index.rst:8
 msgid "Mattermost is modern communication behind your firewall."
-msgstr ""
+msgstr "Mattermostはファイアウォール背後での、現代的なコミュニケーション方法です。"
 
 #: ../../source/index.rst:10
 msgid ""
@@ -31,6 +31,10 @@ msgid ""
 "tablets with continuous archiving and instant search, and supports "
 "notifications and integrations with your existing tools."
 msgstr ""
+"このプラットフォームは、PC、スマートフォン、タブレットのユーザに対して、"
+"横断的に利用できる、"
+"メッセージとファイルの共有、アーカイブ化、インスタント検索、クライアント通知、"
+"既存ツールとのインテグレーション機能を提供します。"
 
 #: ../../source/index.rst:12
 msgid ""
@@ -39,6 +43,10 @@ msgid ""
 "searchable, and accessible anywhere\". New releases available monthly "
 "under an MIT license from `mattermost.org/download`_."
 msgstr ""
+"**Mattermost Team Edition** はオープンソースで、自分でホストを構築するタイプのアプリケーションです。"
+"\"あなたのチームのコミュニケーションを、すべて一箇所で、使いやすく、検索しやすく、"
+"どこからでもアクセスできるものに\" することができます。"
+"リリースはMITライセンスで、毎月行われています。`mattermost.org/download`_"
 
 #: ../../source/index.rst:14
 msgid ""
@@ -49,10 +57,13 @@ msgid ""
 "high availability services. More information is available by `contacting "
 "Mattermost, Inc.`_"
 msgstr ""
+"**Mattermost Enterprise Edition** は商用版で、"
+"Active Directoryのような大規模組織向けの認証システムや、コンプライアンス対応、監査機能、"
+"そして高性能で信頼性の高いサービスを提供します。（プレリリース段階）"
+"詳しい情報は `contacting Mattermost, Inc.`_ から。"
 
 #: ../../source/index.rst:16
 msgid ""
 "This site offers documentation on User Help, Installation, Deployment, "
 "Administration, Development and Integrations."
 msgstr ""
-
