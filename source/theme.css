@@ -18,6 +18,21 @@ html, body {
 	max-width: 1000px;
 }
 
+.wy-menu-vertical p.caption {
+	color: #FFF;
+	border-bottom: 1px solid #444;
+	border-top: 1px solid #444;
+	margin: 4px 0;
+    height: 33px;
+    font-weight: normal;
+    background: #444;
+}
+
+.wy-menu-vertical p.caption:first-child {
+	margin-top: -6px;
+	border-top: 0;
+}
+
 .rst-content tt, .rst-content tt, .rst-content code {
 	white-space: normal;
 }
