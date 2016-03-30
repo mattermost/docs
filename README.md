@@ -7,7 +7,7 @@ This repository generates the documentation available at http://docs.mattermost.
 To generate the HTML files from markdown in the `/source` directory: 
 
 1. Download repro onto a machine with Python installed
-2. `pip install sphinx sphinx-autobuild`
+2. `pip install sphinx sphinx-autobuild sphinx_rtd_theme`
 3. `pip install recommonmark`
 4. Type `make html`
 
