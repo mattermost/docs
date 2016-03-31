@@ -10,7 +10,6 @@ To send push notifications from your private cloud to iOS apps and Android mobil
         - Push notifications are encrypted.
         - Saves time over deploying to an Enterprise App Store. 
         - Service level agreement offered via commercial subscription. 		  
-
     - Cons: 
         - Some IT policies only allow mobile apps via Enteprise App Store.
 
@@ -19,7 +18,6 @@ To send push notifications from your private cloud to iOS apps and Android mobil
     - Pros: 
         - Push notifications are encrypted.
         - Enterprise App Store provides the highest level of mobile apps security. 
-
     - Cons: 
         - Requires developer time to compile your organization's encryption key into the open source components and to deploy.
 
@@ -29,7 +27,6 @@ To send push notifications from your private cloud to iOS apps and Android mobil
 
     - Pros:
         - Easy and free solution to setting up and evaluating mobile apps.
-
     - Cons: 
         - Does not offer encrypted push notifications.
         - Does not offer service level agreement.
@@ -37,9 +34,7 @@ To send push notifications from your private cloud to iOS apps and Android mobil
 
 The below explains each option in detail. 
 
-.. note:: By default, push notifications do not contain specific message contents. 
-
-When the Mattermost server is installed, push notifications only give generic alerts like "@frank was mentioned in Town Square" but DO NOT display the contents of messages. The contents of messages are only included in push notifications after a System Administrator explicitly configure the option to include them. 
+.. note:: By default, push notifications do not contain specific message contents. When the Mattermost server is installed, push notifications only give generic alerts like "@frank was mentioned in Town Square" but DO NOT display the contents of messages. The contents of messages are only included in push notifications after a System Administrator explicitly configure the option to include them. 
 
 
 Hosted Push Notifications Service (HPNS)
