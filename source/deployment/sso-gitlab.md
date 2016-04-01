@@ -26,6 +26,8 @@ Follow these steps to configure Mattermost to use GitLab as a single-sign-on (SS
 
 6. Restart your Mattermost server to see the changes take effect.
 
+You can connect Mattermost to [Active Directory / LDAP using GitLab single-sign-on](http://doc.gitlab.com/ee/integration/ldap.html).
+
 ## Unofficial Single-Sign-On
 
 Given the similarities of GitHub and GitHub Enterprise authentication mechanisms to GitLab, Mattermost users can "unofficially" login with GitHub and GitHub Enterprise accounts. Each of the standards work using the GitLab user interface, but the user interface will visually display GitLab icons and wording, rather than "GitHub" or "GitHub Enterprise".  
