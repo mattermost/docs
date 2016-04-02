@@ -1,6 +1,6 @@
 # Compliance exports with oversight protection 
 
-_Basic reporting available in Enterprise Edition 2.1, full features available April 16, 2016 in Enterprise Edition 2.2_
+_Basic reporting available in Enterprise Edition 2.1, full features available May 16, 2016_
 
 Turning on this feature enables compliance exports to be produced from the System Console with each export and download action logged in an audit history to enable oversight and prevent unauthorized queries. 
 
