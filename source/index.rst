@@ -67,6 +67,7 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    install/prod*
    install/smtp*
    install/troubleshooting*
+   install/i18n*
 
 .. toctree::
    :maxdepth: 1
