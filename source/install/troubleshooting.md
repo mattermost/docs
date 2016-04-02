@@ -5,6 +5,25 @@
 ##### **DO NOT manipulate the Mattermost database**
   - In particular, DO NOT delete data from the database, as Mattermost is designed to stop working if data integrity has been compromised. The system is designed to archive content continously and generally assumes data is never deleted. 
 
+#### Troubleshooting Basics
+
+If you're new to Mattermost or troubleshooting consider the following steps:
+
+1. Start simple
+
+   Use the step-by-step install guides before trying variations.
+   
+2. Check the logs for errors
+
+   In the directory where you installed Mattermost look in the `mattermost.log` file for error messages. Also check NGNIX error logs.
+
+3. Web search the error message
+
+   If you have an error message you don't understand, search the web for the message to try and find an existing article.
+  
+4. If you need more help, create a troubleshooting report
+
+   Please follow the steps at [Troubleshooting Forum](https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150) to share your issue with the community for peer-to-peer support.
 
 #### Common Issues 
 
