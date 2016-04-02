@@ -1,6 +1,6 @@
 # Overview
 
-Mattermost 2.0 is a production-quality, self-hosted workplace messaging solution. 
+Mattermost is a production-quality, self-hosted workplace messaging solution. 
 
 We offer modern communication from behind your firewall. Your users can securely share messages and files across PCs and phones with continuous archiving and instant search while integrating with dozens of popular and custom tools. 
 
@@ -14,13 +14,13 @@ We offer modern communication from behind your firewall. Your users can securely
 
 #### Archiving and Search 
 
-- Import Slack user accounts and channel archives
-- Search public and private channels for historical messages and comments 
+- Search historical messages and comments with filtering by sender and channel
 - View recent mentions of your name, username, nickname, and custom search terms
+- Import Slack user accounts and channel archives
 
 #### Anywhere Access
 
-- Use Mattermost from web-enabled PCs and phones
+- Native apps on iOS, Android, Windows, Linux and Mac, plus desktop and mobile web experience
 - Attach sound, video and image files from mobile devices 
 - Define team-specific branding and color themes across your devices
 
@@ -29,6 +29,10 @@ We offer modern communication from behind your firewall. Your users can securely
 - Host and manage dozens of teams from a single Mattermost server 
 - Easily manage your Mattermost server using a web-based System Console
 - Script setup and maintenance using Mattermost command line tools 
+
+#### Multi-Language Support
+
+- English, Spanish, and Brazilian Portuguese
 
 ## Release Numbering 
 
