@@ -17,7 +17,7 @@ After installing Mattermost:
   
     If a user attribute changes on the LDAP server it will be updated the next time the user enters their credentials to log in to Mattermost. This includes if a user is made inactive or removed from an LDAP server. The ability more quickly detect user attribute changes by polling the LDAP server as sessions start is planned for a future monthly release of Enterprise Edition. 
 
-- Note: Organizations that run secured connections behind their firewalls can set up stunnel to port 389, the standard AD/LDAP port. The option to add TLS for LDAP is scheduled for April 16, 2016 release. 
+- Note: Organizations that run secured connections behind their firewalls can set up stunnel to port 389, the standard AD/LDAP port. The option to add TLS for LDAP is scheduled for May 16, 2016 release. 
 
 ### Switching System Administrator account to LDAP from email authentication 
 
