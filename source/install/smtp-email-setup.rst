@@ -1,4 +1,4 @@
-..  _smtp-email-setup-rst:
+..  _smtp-email-setup:
 
 SMTP Email Setup
 ================
