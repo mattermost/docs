@@ -66,4 +66,5 @@ product can function without enabling email. To see the product's full
 functionality, `enabling SMTP email is
 recommended <smtp-email-setup.md>`__.
 
-.. include:: smtp-email-setup 
+.. include:: smtp-email-setup.rst 
+	:start-after: How to Enable Email
