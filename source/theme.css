@@ -18,21 +18,6 @@ html, body {
 	max-width: 1000px;
 }
 
-.wy-menu-vertical p.caption {
-	color: #FFF;
-	border-bottom: 1px solid #444;
-	border-top: 1px solid #444;
-	margin: 4px 0;
-    height: 33px;
-    font-weight: normal;
-    background: #444;
-}
-
-.wy-menu-vertical p.caption:first-child {
-	margin-top: -6px;
-	border-top: 0;
-}
-
 .rst-content tt, .rst-content tt, .rst-content code {
 	white-space: normal;
 }
@@ -53,7 +38,7 @@ html, body {
 	padding-bottom: 60px;
 }
 
-h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
+h1, h2, ul.toctree-l1, h3, h4, h5, h6, legend {
 	font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
 }
 
@@ -191,4 +176,17 @@ header .header__links li a {
 		max-width: 100%;
 		width: auto;
 	}
+}
+
+.wy-menu .toctree-l1 {
+	color: #FFF;
+	border-bottom: 1px solid #444;
+	border-top: 1px solid #444;
+	margin: 4px 0;
+    font-weight: normal;
+    background: #444;
+}
+
+.wy-menu li.toctree-l1:not(.current){
+    display: none;
 }
