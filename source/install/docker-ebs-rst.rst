@@ -18,11 +18,11 @@ contains other non-production configuration settings.
     click **Next**.
 6.  On the Enviroment Type page,
 
-    1. Set Predefined Configuration to **Docker** under the generic
+    a. Set Predefined Configuration to **Docker** under the generic
        heading in the drop-down list.
-    2. Set Environment Type to **Single instance** in the drop-down
+    b. Set Environment Type to **Single instance** in the drop-down
        list.
-    3. Click **Next**.
+    c. Click **Next**.
 
 7.  For Application Source, select **Upload your own** and upload the
     Dockerrun.aws.zip file from
@@ -34,8 +34,8 @@ contains other non-production configuration settings.
     unless you wish to change them. Click **Next**.
 10. On the Configuration Details page,
 
-    1. Select an Instance Type of **t2.small** or larger.
-    2. The remaining options may be left at their default values unless
+    a. Select an Instance Type of **t2.small** or larger.
+    b. The remaining options may be left at their default values unless
        you wish to change them. Click **Next**.
 
 11. Environment tags may be left blank. Click **Next**.
@@ -66,4 +66,4 @@ product can function without enabling email. To see the product's full
 functionality, `enabling SMTP email is
 recommended <smtp-email-setup.md>`__.
 
-.. include:: smtp-email-setup-rst.txt 
+.. include:: smtp-email-setup 
