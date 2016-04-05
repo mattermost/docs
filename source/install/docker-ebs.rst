@@ -1,4 +1,4 @@
-..  _docker-ebs-rst:
+..  _docker-ebs:
 
 AWS Elastic Beanstalk Docker Setup
 ==================================
