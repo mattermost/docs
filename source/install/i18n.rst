@@ -20,7 +20,7 @@ MySQL:
 `データベース構成に関する日本ご覧ください。ドキュメントを検索するにはMattermostを設定します <http://docs.mattermost.com/install/requirements.html#database-software>`__
 
 Postgres:
-`ここでは、日本のために、より良い検索作業を行うための提案です <https://github.com/mattermost/platform/issues/2622>`__
+`ここでは、日本のために、より良い検索作業を行うための提案です <https://github.com/mattermost/platform/issues/2159#issuecomment-206444074>`__
 
 私たちは、検索に日本語ドキュメントの改善を手助けしてください
 
