@@ -63,8 +63,7 @@ documentation to customize your deployment.
 The default single-container Docker instance for Mattermost is designed
 for product evaluation, and sets ``SendEmailNotifications=false`` so the
 product can function without enabling email. To see the product's full
-functionality, `enabling SMTP email is
-recommended <smtp-email-setup.md>`__.
+functionality, enabling SMTP email is recommended.
 
 .. include:: smtp-email-setup.rst 
 	:start-after: How to Enable Email
