@@ -86,12 +86,7 @@ Arch
 Additional Notes
 ----------------
 
--  If you want to work with the latest master from the repository (i.e.
-   not a stable release) you can run the cmd:
-
-   .. code:: bash
-
-       docker run --name mattermost-dev -d --publish 8065:80 mattermost/platform:dev
+-  If you are developing, it is recommended to pull from GitHub and run ``make test`` on your `developer machine <http://docs.mattermost.com/developer/developer-setup.html>`_. If you want the latest unstable build, you can get the compiled binary from the Developer Install section at http://www.mattermost.org/download/.
 
 -  Instructions on how to update your Docker image are found below.
 
@@ -142,9 +137,6 @@ database):
 
        docker run --name mattermost-dev -d --publish 8065:80 mattermost/platform
 
-To upgrade to the latest development build on master from the repository
-replace ``mattermost/platform`` with ``mattermost/platform:dev`` in the
-instructions 3) and 4) above.
 
 Configuration Settings
 ----------------------
