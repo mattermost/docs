@@ -86,8 +86,6 @@ Arch
 Additional Notes
 ----------------
 
--  If you are developing, it is recommended to pull from GitHub and run ``make test`` on your `developer machine <http://docs.mattermost.com/developer/developer-setup.html>`_. If you want the latest unstable build, you can get the compiled binary from the Developer Install section at http://www.mattermost.org/download/.
-
 -  Instructions on how to update your Docker image are found below.
 
 -  If you wish to remove mattermost-dev use:
