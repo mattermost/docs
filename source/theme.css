@@ -183,10 +183,50 @@ header .header__links li a {
 	border-bottom: 1px solid #444;
 	border-top: 1px solid #444;
 	margin: 4px 0;
-    font-weight: normal;
-    background: #444;
+	font-weight: normal;
+	background: #444;
+}
+
+.wy-menu li.toctree-l1.current > a {
+	background: transparent;
+	border: none;
+	color: inherit;
+	margin-bottom: 5px;
+}
+
+.wy-menu-vertical li.current a:hover {
+	background-color: #4e4a4a;
+	cursor: pointer;
+}
+
+.wy-menu-vertical li.toctree-l2.current>a {
+	color: #404040;
+	font-weight: bold;
+	position: relative;
+	background: #fcfcfc;
+	border: none;
+	border-bottom: solid 1px #c9c9c9;
+	border-top: solid 1px #c9c9c9;
+	padding-left: 1.618em -4px;
+}
+
+.wy-menu li.toctree-l1.current {
+	color: #FFF;
+	border-bottom: 1px solid #444;
+	margin: -6px -1px 4px;
+	height: 33px;
+	font-weight: normal;
+	background: #444;
 }
 
 .wy-menu li.toctree-l1:not(.current){
-    display: none;
+	display: none;
+}
+
+.wy-menu li.toctree-l1.current > a > .toctree-expand {
+	display: none;
+}
+
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3>a {
+	font-size: 95%;
 }
