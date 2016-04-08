@@ -6,21 +6,23 @@
 
 Mattermost was created to offer an alternative to propreitary SaaS services. For more info, please go to mattermost.org and click "Why we made Mattermost".
 
-#### Can I use the Mattermost platform to create a propretary SaaS service?
+#### Will the open source Team Edition offer more authentication add-ons? 
 
-We prefer you didn't. For more info, please go to mattermost.org and click "Why we made Mattermost".
+There are no current plans for auth add-ons for the following reasons: 
+
+1. Authentication is a critical path that needs to be tested, maintained and supported with each monthly release and volunteers aren't prepared to bear the tax this change would impose on them, and
+
+2. Such a change increases the difficulty of creating high quality apps and drivers, as developers would be taxed with requests for support, troubleshooting, and debug set ups that would be expensive to reproduce.
 
 #### Why does the open source repo contain code specific to the commercial version of Mattermost? 
 
-The commercial version of Mattermost is designed to never lock-in your data. Portions of the commercial version are shared with the open source version to ensure upgrade and downgrade across editions happens without data loss. 
+The commercial versionw of Mattermost is designed to never lock-in your data. Portions of the commercial version are shared with the open source version to ensure upgrade and downgrade across editions happens without data loss. 
 
 ## Enterprise Edition
 
 #### What is Mattermost Enterprise Edition? 
 
-Mattermost Enterprise Edition is a commercial workplace messaging solution for enterprises built atop the open source Mattermost platform. It is currently available as a "pre-release" by [contacting the Enterprise team.](https://about.mattermost.com/contact/)
-
-The most recent verson includes LDAP/AD single-sign-on, auditing and advanced reporting for enterprises. It's feature set and roadmap are being determined in collaboration with early customers deploying and sharing feedback on the pre-release version. 
+Mattermost Enterprise Edition is a commercial workplace messaging solution for large organizations operating under compliance and security requirements that is built on top of the open source Mattermost Team Edition.
 
 #### How can I be assured that my data will not be locked in to commercial software? 
 
