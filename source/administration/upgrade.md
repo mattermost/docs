@@ -7,6 +7,7 @@ This guide explains how to upgrade your Mattermost deployment across versions an
 1. Download the **appropriate next upgrade** of your server and note any compatibility procedures 
       1. Run `platform -version` to check the current version of your Mattermost server
       2. Determine the appropriate next upgrade for your server: 
+          - Mattermost `v2.0.x` and `v2.1.x` can upgrade directly to Mattermost `v2.2.x`.
           - Mattermost `v1.4.x` and `v2.0.x` can upgrade directly to Mattermost `v2.1.x`.
           - Mattermost `v1.2.x` must upgrade to Mattermost `v1.3.x` before further upgrades.
           - Mattermost `v1.1.x` must upgrade to Mattermost `v1.2.x` before further upgrades.
