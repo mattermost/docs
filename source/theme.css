@@ -178,13 +178,19 @@ header .header__links li a {
 	}
 }
 
-.wy-menu .toctree-l1 {
+.wy-menu .toctree-l1 > a {
 	color: #FFF;
-	border-bottom: 1px solid #444;
-	border-top: 1px solid #444;
-	margin: 4px 0;
 	font-weight: normal;
 	background: #444;
+    padding: 0.5em 1.618em;
+	text-transform: uppercase;
+	font-size: 80%;
+    border-top: solid 1px #666;
+}
+
+.wy-menu .toctree-l1:first-child > a {
+	border-top: none;
+	margin-top: -6px;
 }
 
 .wy-menu li.toctree-l1.current > a {
@@ -210,6 +216,12 @@ header .header__links li a {
 	padding-left: 1.618em -4px;
 }
 
+.wy-menu-vertical li span.toctree-expand {
+	color: #b3b3b3;
+	font-size: 90%;
+	margin: 1px 6px 0 -1em;
+}
+
 .wy-menu li.toctree-l1.current {
 	color: #FFF;
 	border-bottom: 1px solid #444;
@@ -219,7 +231,7 @@ header .header__links li a {
 	background: #444;
 }
 
-.wy-menu li.toctree-l1:not(.current){
+.wy-menu-vertical > ul.current li.toctree-l1:not(.current) {
 	display: none;
 }
 
