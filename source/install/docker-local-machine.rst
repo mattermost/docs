@@ -86,13 +86,6 @@ Arch
 Additional Notes
 ----------------
 
--  If you want to work with the latest master from the repository (i.e.
-   not a stable release) you can run the cmd:
-
-   .. code:: bash
-
-       docker run --name mattermost-dev -d --publish 8065:80 mattermost/platform:dev
-
 -  Instructions on how to update your Docker image are found below.
 
 -  If you wish to remove mattermost-dev use:
@@ -142,9 +135,6 @@ database):
 
        docker run --name mattermost-dev -d --publish 8065:80 mattermost/platform
 
-To upgrade to the latest development build on master from the repository
-replace ``mattermost/platform`` with ``mattermost/platform:dev`` in the
-instructions 3) and 4) above.
 
 Configuration Settings
 ----------------------
