@@ -178,15 +178,67 @@ header .header__links li a {
 	}
 }
 
-.wy-menu .toctree-l1 {
+.wy-menu .toctree-l1 > a {
 	color: #FFF;
-	border-bottom: 1px solid #444;
-	border-top: 1px solid #444;
-	margin: 4px 0;
-    font-weight: normal;
-    background: #444;
+	font-weight: normal;
+	background: #444;
+    padding: 0.5em 1.618em;
+	text-transform: uppercase;
+	font-size: 80%;
+    border-top: solid 1px #666;
 }
 
-.wy-menu li.toctree-l1:not(.current){
-    display: none;
+.wy-menu .toctree-l1:first-child > a {
+	border-top: none;
+	margin-top: -6px;
+}
+
+.wy-menu li.toctree-l1.current > a {
+	background: transparent;
+	border: none;
+	color: inherit;
+	margin-bottom: 5px;
+}
+
+.wy-menu-vertical li.current a:hover {
+	background-color: #4e4a4a;
+	cursor: pointer;
+}
+
+.wy-menu-vertical li.toctree-l2.current>a {
+	color: #404040;
+	font-weight: bold;
+	position: relative;
+	background: #fcfcfc;
+	border: none;
+	border-bottom: solid 1px #c9c9c9;
+	border-top: solid 1px #c9c9c9;
+	padding-left: 1.618em -4px;
+}
+
+.wy-menu-vertical li span.toctree-expand {
+	color: #b3b3b3;
+	font-size: 90%;
+	margin: 1px 6px 0 -1em;
+}
+
+.wy-menu li.toctree-l1.current {
+	color: #FFF;
+	border-bottom: 1px solid #444;
+	margin: -6px -1px 4px;
+	height: 33px;
+	font-weight: normal;
+	background: #444;
+}
+
+.wy-menu-vertical > ul.current li.toctree-l1:not(.current) {
+	display: none;
+}
+
+.wy-menu li.toctree-l1.current > a > .toctree-expand {
+	display: none;
+}
+
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3>a {
+	font-size: 95%;
 }
