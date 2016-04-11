@@ -29,3 +29,54 @@ Postgres:
 
 `インストールおよび構成のガイドを提供していますQiitta上Mattermost
 、詳細については、こちらをご覧ください。 <http://qiita.com/tags/Mattermost>`__
+
+中文 / Chinese
+-----------------
+
+以Ubuntu 14.04 PosgreSQL 9.3 数据库 mattermost 为例。
+更多中文相关问题讨论请访问 `中文讨论组 <https://forum.mattermost.org/c/international/chinese>`__
+
+编译scws:
+~~~~~~~~
+
+.. code:: bash
+
+    wget -q -O - http://www.xunsearch.com/scws/down/scws-1.2.2.tar.bz2 | tar xjf -
+    cd scws-1.2.2
+    ./configure
+    make install
+
+编译zhparser:
+~~~~~~~~
+
+.. code:: bash
+
+    sudo apt-get install --yes postgresql-server-dev-9.3 libpq-dev
+    git clone https://github.com/amutu/zhparser.git
+    SCWS_HOME=/usr/local make && make install
+
+创建extension以及增加解析配置:
+~~~~~~~~
+
+.. code:: bash
+
+   sudo -i -u postgres
+   psql mattermost -c 'CREATE EXTENSION zhparser'
+   psql mattermost -c 'CREATE TEXT SEARCH CONFIGURATION simple_zh_cfg (PARSER = zhparser);'
+   psql mattermost -c 'ALTER TEXT SEARCH CONFIGURATION simple_zh_cfg ADD MAPPING FOR n,v,a,i,e,l WITH simple;'
+
+
+配置postgresql
+~~~~~~~~
+
+将 /etc/postgresql/9.3/main/postgresql.conf 中 default_text_search_config 的值更改为 simple_zh_cfg，然后重启postgresql: sudo service postgresql restart
+
+调试
+~~~~~~~~
+可以打开 mattermost 的配置 config/config.json 中 SqlSettings 的配置 Trace: true，然后可以在mattermost的标准输出看到执行的SQL语句。
+
+.. code:: sql
+
+    SELECT to_tsvector('simple_zh_cfg', '开始全面整修道路');
+    SELECT to_tsvector('simple_zh_cfg', '开始全面整修道路') @@ to_tsquery('simple_zh_cfg', '全面');
+    SELECT * FROM Posts WHERE Message @@ to_tsquery('simple_zh_cfg', '全面');
