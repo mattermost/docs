@@ -4,8 +4,8 @@ $(document).ready(function(){
 		$(this).next().slideToggle();
 	});
 
-	if($('.wy-menu-vertical li.current>a').length){
-		var sidebarScrollPosition = $('.wy-menu-vertical li.current>a').offset().top;
+	if($('.wy-menu-vertical .toctree-l3.current').length){
+		var sidebarScrollPosition = $('.wy-menu-vertical .toctree-l3.current').offset().top;
 		$('.wy-side-scroll').scrollTop(sidebarScrollPosition-120);
 	}
 
@@ -21,5 +21,9 @@ $(document).ready(function(){
 	});
 
 	centerScroll(75);
+
+	if(!$('.toctree-l1').hasClass('current')){
+		$('.wy-body-for-nav').addClass('hidden-nav');
+	}
 
 });
