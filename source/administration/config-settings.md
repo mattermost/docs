@@ -499,7 +499,7 @@ Password of the user given in “Bind Username”.
 **User Filter** (`"UserFilter": ""`)  
 _Available May 16, 2016_  
 
-Optionally enter an LDAP Filter to use when searching for user objects (accepts [general syntax](http://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm)). Only the users selected by the query will be able to access Mattermost. In Active Directory, the query to filter out disabled users is `(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))`. 
+Optionally enter an LDAP Filter to use when searching for user objects (accepts [general syntax](http://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm)). Only the users selected by the query will be able to access Mattermost. For Active Directory, the query to filter out disabled users is `(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))`. 
 
 **First Name Attribute** (`"FirstNameAttribute": ""`)  
 
