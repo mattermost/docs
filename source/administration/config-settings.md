@@ -220,7 +220,7 @@ Port of SMTP email server.
 
 **Connection Security** (`"ConnectionSecurity": ""`)  
 
-"none": Send email over an unsecure connection; "TLS": Communication between Mattermost and your email server is encrypted; “STARTTLS”: Attempts to upgrade an existing insecure connection to a secure connection using TLS.
+`""`: Send email over an unsecure connection; `"TLS"`: Communication between Mattermost and your email server is encrypted; `“STARTTLS”`: Attempts to upgrade an existing insecure connection to a secure connection using TLS.
 
 **Invite Salt** (`"InviteSalt": "bjlSR4QqkXFBr7TP4oDzlfZmcNuH9YoS"`)  
 
@@ -478,6 +478,12 @@ The domain or IP address of the LDAP server.
 
 The port Mattermost will use to connect to the LDAP server. Default is 389.
 
+**Connection Security** (`"ConnectionSecurity": ""`)    
+_Available May 16, 2016_  
+
+The type of connection security Mattermost uses to connect to LDAP.      
+`""`: No security, Mattermost will connect over an unsecure connection; `TLS`: Encrypts the communication between Mattermost and your server using TLS; `STARTTLS`: Takes an existing insecure connection and attempts to upgrade it to a secure connection using TLS.    
+
 **Base DN** (`"BaseDN": ""`)    
 
 The Base DN is the Distinguished Name of the location where Mattermost should start its search for users in the LDAP tree.
@@ -489,6 +495,11 @@ The username used to perform the LDAP search. This should typically be an accoun
 **Bind Password** (`"BindPassword": ""`)  
 
 Password of the user given in “Bind Username”.
+
+**User Filter** (`"UserFilter": ""`)  
+_Available May 16, 2016_  
+
+Optionally enter an LDAP Filter to use when searching for user objects (accepts [general syntax](http://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm)). Only the users selected by the query will be able to access Mattermost. In Active Directory, the query to filter out disabled users is `(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))`. 
 
 **First Name Attribute** (`"FirstNameAttribute": ""`)  
 
@@ -513,6 +524,11 @@ The attribute in the LDAP server that will be used as a unique identifier in Mat
 This is the attribute that will be used to create Mattermost accounts. It should be an LDAP attribute with a value that does not change, such as username or uid. If a user’s Id Attribute changes, it will create a new Mattermost account unassociated with their old one. 
 
 This is also the value used to log in to Mattermost in the “LDAP Username” field on the sign in page. Normally this attribute is the same as the “Username Attribute” field above. If your team typically uses domain\username to sign in to other services with LDAP, you may choose to put domain\username in this field to maintain consistency between sites.
+
+**Skip Certificate Verification** (`"SkipCertificateVerification": false`)  
+_Available May 16, 2016_  
+
+`true`: Skips the certificate verification step for TLS or STARTTLS connections. Not recommended for production environments where TLS is required. For testing only.
 
 **Query Timeout (seconds)** (`"QueryTimeout": 60`)  
 
