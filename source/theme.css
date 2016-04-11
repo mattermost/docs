@@ -18,6 +18,21 @@ html, body {
 	max-width: 1000px;
 }
 
+.wy-menu-vertical p.caption {
+	color: #FFF;
+	border-bottom: 1px solid #444;
+	border-top: 1px solid #444;
+	margin: 4px 0;
+	height: 33px;
+	font-weight: normal;
+	background: #444;
+}
+
+.wy-menu-vertical p.caption:first-child {
+	margin-top: -6px;
+	border-top: 0;
+}
+
 .rst-content tt, .rst-content tt, .rst-content code {
 	white-space: normal;
 }
@@ -38,7 +53,7 @@ html, body {
 	padding-bottom: 60px;
 }
 
-h1, h2, ul.toctree-l1, h3, h4, h5, h6, legend {
+h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
 	font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
 }
 
@@ -178,67 +193,115 @@ header .header__links li a {
 	}
 }
 
-.wy-menu .toctree-l1 > a {
-	color: #FFF;
-	font-weight: normal;
-	background: #444;
-    padding: 0.5em 1.618em;
-	text-transform: uppercase;
-	font-size: 80%;
-    border-top: solid 1px #666;
-}
-
-.wy-menu .toctree-l1:first-child > a {
-	border-top: none;
-	margin-top: -6px;
-}
-
-.wy-menu li.toctree-l1.current > a {
-	background: transparent;
-	border: none;
-	color: inherit;
-	margin-bottom: 5px;
-}
-
-.wy-menu-vertical li.current a:hover {
-	background-color: #4e4a4a;
-	cursor: pointer;
-}
-
-.wy-menu-vertical li.toctree-l2.current>a {
-	color: #404040;
-	font-weight: bold;
-	position: relative;
-	background: #fcfcfc;
-	border: none;
-	border-bottom: solid 1px #c9c9c9;
-	border-top: solid 1px #c9c9c9;
-	padding-left: 1.618em -4px;
-}
-
-.wy-menu-vertical li span.toctree-expand {
-	color: #b3b3b3;
-	font-size: 90%;
-	margin: 1px 6px 0 -1em;
-}
-
-.wy-menu li.toctree-l1.current {
-	color: #FFF;
-	border-bottom: 1px solid #444;
-	margin: -6px -1px 4px;
-	height: 33px;
-	font-weight: normal;
-	background: #444;
-}
-
-.wy-menu-vertical > ul.current li.toctree-l1:not(.current) {
+.wy-menu-vertical li.toctree-l1 {
 	display: none;
 }
 
-.wy-menu li.toctree-l1.current > a > .toctree-expand {
+.wy-menu-vertical li.toctree-l1.current {
+	display: block;
+}
+
+.wy-menu-vertical li.toctree-l1.current {
+	background: transparent;
+}
+
+.wy-menu-vertical li.toctree-l1.current > a {
+	border: none;
+	color: #909090;
+	pointer-events: none;
+	background: transparent;
+	padding: 0.5em 1em 0.6em;
+}
+
+.wy-menu-vertical li.toctree-l1.current li.toctree-l2 > ul {
+	display: block;
+}
+
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a {
+	padding-left: 3em;
+}
+
+.wy-menu-vertical li.toctree-l2 li.toctree-l3 > a .toctree-expand {
+	display: none;
+}
+
+.wy-menu-vertical li.toctree-l2 li.toctree-l3 > a.current .toctree-expand {
+	display: block;
+}
+
+.wy-menu-vertical li.toctree-l1.current > a > .toctree-expand {
+	display: none;
+}
+
+.wy-menu-vertical li.toctree-l2 > a > span.toctree-expand {
 	display: none;
 }
 
 .wy-menu-vertical li.toctree-l2.current li.toctree-l3>a {
-	font-size: 95%;
+	background: transparent;
 }
+
+.wy-menu-vertical li.toctree-l2 > a {
+	color: #FFF;
+	margin: 4px 0;
+	height: 33px;
+	font-weight: normal;
+	background: #444 !important;
+	text-transform: uppercase;
+	font-size: 80%;
+	line-height: 33px;
+	padding: 0 0 0 1.5em !important;
+	pointer-events: none;
+	border: none;
+	-webkit-font-smoothing: auto;
+}
+
+.wy-menu-vertical li.current {
+	background: transparent;
+}
+
+.wy-menu-vertical li.toctree-l3.current > ul {
+	background: #e3e3e3;
+}
+
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a {
+	background: transparent;
+	font-size: 100%;
+	padding-left: 2.4em;
+}
+
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a.current {
+	border-bottom: solid 1px #c9c9c9;
+	border-top: solid 1px #c9c9c9;
+	background: #fcfcfc;
+}
+
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a {
+	padding-left: 1.5em;
+}
+
+.wy-menu-vertical li.current a:hover {
+	background-color: #4e4a4a;
+}
+
+.wy-menu-vertical li.toctree-l3 > a {
+	font-size: 100%;
+	padding-left: 1.5em;
+}
+
+.wy-menu-vertical li.toctree-l3 > ul {
+	display: none;
+}
+
+.wy-menu-vertical li.toctree-l2.current>a {
+	background: transparent;
+}
+
+.wy-body-for-nav.hidden-nav .wy-nav-side {
+	display: none;
+}
+
+.wy-body-for-nav.hidden-nav .wy-nav-content-wrap {
+	margin-left: 0;
+}
+
