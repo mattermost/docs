@@ -1,6 +1,6 @@
 # Release Process
 
-Mattermost core team works on a monthly release process, with a new version shipping on the 16th of each month in [binary form](https://github.com/mattermost/platform/releases). 
+Mattermost core team works on a monthly release process, with a new version shipping on the 16th of each month in [binary form](http://docs.mattermost.com/administration/upgrade.html#mattermost-team-edition). 
 
 This document outlines the development process for the Mattermost core team, which draws from what we find works best for us from Agile, Scrum and Software Development Lifecycle approaches.
 

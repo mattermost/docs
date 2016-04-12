@@ -100,7 +100,7 @@ Set up Mattermost Server
    address of 10.10.10.1
 2. Download the latest Mattermost Server by typing:
 
-   -  ``wget https://github.com/mattermost/platform/releases/download/vX.X.X/mattermost.tar.gz``
+   -  ``wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz``
    -  Where vX.X.X is the latest Mattermost release version. For
       example, v2.0.0
 
