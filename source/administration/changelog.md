@@ -68,6 +68,8 @@ Many thanks to all our external contributors. In no particular order:
 - [jblobel](https://github.com/jblobel)
 - [rodrigocorsi2](https://github.com/rodrigocorsi2) 
 - [enahum](https://github.com/enahum)
+- [schemacs](https://github.com/schemacs)
+- [raelga](https://github.com/raelga)
 
 ## Release v2.1.0
 
