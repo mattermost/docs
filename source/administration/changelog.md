@@ -1,8 +1,77 @@
 # Mattermost Changelog
 
+## Release v2.2.0
+
+Expected release date: 2016-04-16
+
+### Security Update
+
+- Mattermost v2.2.0 contains multiple security updates. [Upgrading to Mattermost v2.2.0](http://docs.mattermost.com/administration/upgrade.html#upgrading-team-edition) is highly recommended. 
+- Thanks to Jim Hebert from Fitbit Security, Andreas Lindh, and Uchida Taishi for contributing security reports through the [Mattermost Responsible Disclosure Policy](www.mattermost.org/responsible-disclosure-policy/). 
+
+### Highlights 
+
+#### New themes 
+
+- User now have access to additional themes from Account Settings > Display Settings > Themes > See other themes
+- A [contest for the user community to contribute new themes is now available.](https://forum.mattermost.org/t/share-your-favorite-mattermost-theme-colors/1330)
+
+#### French language translation 
+
+- French language translation is now available.
+
+#### TPNS and EAS options
+
+- Enterprise App Store (EAS) and [Test Push Notification Service](http://docs.mattermost.com/deployment/push.html#test-push-notifications-service-tpns) (TPNS) option are now included in **System Console** > **Email Settings** > **Push Notification Settings** as built-in options.
+
+### Languages 
+
+- Added French language translation (Beta) available from **Account Settings** > **Display**.
+
+### Improvements 
+
+User Interface
+
+- New themes can be imported into Mattermost user interface from [production documentation](http://docs.mattermost.com/help/settings/theme-colors.html#custom-theme-examples). 
+
+### Bug Fixes
+
+- Characters in some posts will no longer display as HTML entities, such as `&#39;`
+
+### Known Issues
+
+- Regression: Get Public Link downloads a file and does not product a public link. 
+- Edit post option appears, but doesn't work, on other users' posts in the RHS.
+- Text input box does not stay scrolled to the bottom when drafting a long message in Firefox.
+- File name tooltip stays open after clicking to download.
+- Unable to paste images into the text box on Firefox, Safari, and IE11.
+- Archived channels are not removed from the "More" menu for the person that archived the channel until after refresh.
+- First load of an empty channel does not display the introduction message.
+- Search results don't highlight searches for @username, non-latin characters, or terms inside Markdown code blocks.
+- Searching for a username or hashtag containing a dot returns a search where the dot is replaced with the "or" operator.
+- Hashtags containing a dash incorrectly highlight in the search results.
+- Emoji smileys ending with a letter at the end of a message do not auto-complete as expected.
+- Incorrect formatting when a new line is added directly after a list.
+- Timestamps are displayed in 12-hour format when set to 24-hour format.
+- Syntax highlighting code block is missing the label for Latex documents.
+- Posts from webhooks do not fire notifications to the user who created the webhook.
+- Theme color vector is not updated after making custom changes to a default theme.
+- Search term highlighting doesn't update on IE11 when search terms change but return the same posts.
+- Team creation via SSO fails when email domain is restricted.
+
+### Contributors 
+
+Many thanks to all our external contributors. In no particular order:
+
+- [pjgrizel](https://github.com/pjgrizel)
+- [tbolon](https://github.com/tbolon) 
+- [jblobel](https://github.com/jblobel)
+- [rodrigocorsi2](https://github.com/rodrigocorsi2) 
+- [enahum](https://github.com/enahum)
+
 ## Release v2.1.0
 
-Expected release date: 2016-03-16
+Release date: 2016-03-16
 
 ### Highlights 
 
