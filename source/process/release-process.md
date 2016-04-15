@@ -60,7 +60,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
 1. Logistics:
     - Post this checklist in Release channel
     - Update the channel header to reflect finalized marketing release date
-    - Mail out mugs to any new contributors
+    - Mail out mugs to any new contributors (platform and docs repo)
 2. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/platform/pulls) marked for the current release 
 3. PM:
@@ -130,6 +130,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - Update the meta issue description to include approved fixes
     - Post screenshot and link to final tickets for next RC to the Release room
     - Update Changelog “Known Issues” section with any significant issues that were found and not fixed for the final release
+    - Add docs repo contributors to Changelog
 6. Dev:
     - PRs for hotfixes made to release branch, and changes from release branch are merged into master
 7. Logistics:
