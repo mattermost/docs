@@ -4,6 +4,7 @@ python:
 install:
 - pip install sphinx sphinx-autobuild sphinx_rtd_theme
 - pip install recommonmark
+- pip install sphinxcontrib-googleanalytics
 script:
 - make html
 deploy:
