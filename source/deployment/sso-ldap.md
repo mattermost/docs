@@ -8,10 +8,10 @@ After installing Mattermost:
     1. Log in using an account assigned to the “System Administrator” role. The first account you create on the server is automatically assigned this role. You may also assign the role to another account.    
     2. In the team site, go to **Main Menu** (the three dots at top left) > **System Console** > **LDAP Settings**     
     3. Fill in the fields to set up Mattermost authentication with your LDAP server.    
-      - (Optional - _Available May 16, 2016_) Fill in the **User Filter** field to restrict Mattermost access to a subset of LDAP users. For example, to filter out disabled accounts in Active Directory enter `(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))`
+      - (Optional - _Available May 16, 2016_) Fill in the **User Filter** field to restrict Mattermost access to a subset of LDAP users. For example, to filter out disabled accounts in Active Directory enter `(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))`  
     4. After LDAP has been enabled, confirm that users can sign in using LDAP credentials. The **LDAP username** will be the attribute set in the **Id Attribute** field. 
   
-    - Note: If you're using Active Directory with **nested security groups** you need to write a PowerShell script, or similar, to flatten and aggregate the tree into a single security group to map into Mattermost. 
+    - Note: If you're using Active Directory with **nested security groups** you need to write a PowerShell script, or similar, to flatten and aggregate the tree into a single security group to map into Mattermost.  
 
 2. (Optional) Change default Session Length for LDAP SSO     
     1. Go to **System Console** > **Service Settings** > **Session Length for SSO in days** to select the frequency with which users need to log into devices with LDAP credentials. Default is 30 days. 
@@ -45,12 +45,20 @@ This should leave Active Directory/LDAP as the only single-sign-in option. If yo
 
 ### Troubleshooting
 
-The following are troubleshooting suggestions on common error messages. 
+The following are troubleshooting suggestions on common error messages and issues. 
 
 ##### `User not registered on LDAP server`
 
 This means the query sent back to the Active Directory/LDAP server returned no results. 
 - Check that you correctly entered Active Directory/LDAP user credentials (e.g. did not mix username with email).
 - Check that the user account you're trying to use exists in the Active Directory/LDAP service.
-- Check that your Active Directory/LDAP properties were propertly configured.
+- Check that your Active Directory/LDAP properties were propertly configured.  
+
+##### "I updated a user account in LDAP, and they can no longer log in to Mattermost"
+
+If the user can no longer log in to Mattermost with their LDAP credentials - for example, they get an error message `An account with that email already exists`, or a new Mattermost account is created when they try to log in - this means the ID attribute for their account has changed. 
+
+The issue can be fixed by changing the value of the field used for the ID attribute back to the old value. 
+
+Note: Currently the value is case sensitive. If the ID attribute is set to the username and the username changes from John.Smith to john.smith, the user would have problems logging in.   
 
