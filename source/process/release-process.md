@@ -61,6 +61,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - Post this checklist in Release channel
     - Update the channel header to reflect finalized marketing release date
     - Mail out mugs to any new contributors (platform and docs repo)
+    - Verify all items in the last posted release checklist are complete, if not alert the release manager.
 2. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/platform/pulls) marked for the current release 
 3. PM:
@@ -88,7 +89,8 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
 1. Logistics:  
     - Post this checklist in Release channel  
     - For the next release, create team meetings on Feature Complete and Code Complete dates  
-    - Confirms documentation is complete, reads through documentation and confirms all links work  
+    - Confirms documentation is complete, reads through documentation and confirms all links work
+    - Verify all items in the last posted release checklist are complete, if not alert the release manager.
 2. PM:  
     - Assign each area of the release testing spreadsheet to a team member  
     - Update the release start date for the next release in Jira (setting [here](https://mattermost.atlassian.net/plugins/servlet/project-config/PLT/versions))  
@@ -112,6 +114,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
 1. Logistics:
     - Post this checklist in Release channel
     - Add Release Process Kaizen/Q&A item to next team meeting
+    - Verify all items in the last posted release checklist are complete, if not alert the release manager.
 2. Build:
     - Test upgrade from previous version to current version, following the [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) 
     - Database upgrade should be tested on both MySQL and Postgres
@@ -148,7 +151,8 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
 The final release is cut. If an urgent and important issue needs to be addressed between major releases, a bug fix release (e.g. 1.1.1) may be created
 
 1. Logistics:
-    - Post this checklist in Release channel 
+    - Post this checklist in Release channel
+    - Verify all items in the last posted release checklist are complete, if not alert the release manager.
 2. Build:
     - Tags a new release (e.g. 1.1.0) and runs an official build which should be essentially identical to the last RC
     - Delete RCs after final version is shipped
@@ -171,6 +175,7 @@ The final release is cut. If an urgent and important issue needs to be addressed
 1. Logistics: 
     - Post this checklist in Release channel 
     - Post key dates for the next release in the header of the Release Discussion channel and remove links to RC candidates and testing spreadsheet
+    - Verify all items in the last posted release checklist are complete, if not alert the release manager.
 2. PM:
     - Close the release in Jira
     - Create [documentation checklist ticket](https://mattermost.atlassian.net/browse/PLT-2373) for next release
