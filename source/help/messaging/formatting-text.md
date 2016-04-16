@@ -29,10 +29,10 @@ code block
 
 ### Syntax Highlighting
 
-To add syntax highlighting, type the language to be highlighted after the ``` at the beginning of the code block. 
+To add syntax highlighting, type the language to be highlighted after the ``` at the beginning of the code block. Mattermost also offers four different code themes (GitHub, Solarized Dark, Solarized Light, Monokai) that can be changed in **Account Settings** > **Display** > **Theme** > **Custom Theme** > **Center Channel Styles** 
 
 Supported languages are:
-`diff, apache, makefile, http, json, markdown, javascript, css, nginx, objectivec, python, xml, perl, bash, php, coffeescript, cs (C#), cpp (C++), sql, go, ruby, java, ini, latex`
+`as`, `applescript`, `osascript`, `scpt`, `bash`, `sh`, `zsh`, `clj`, `boot`, `cl2`, `cljc`, `cljs`, `cljs.hl`, `cljscm`, `cljx`, `hic`, `coffee`, `_coffee`, `cake`, `cjsx`, `cson`, `iced`, `cpp`, `c`, `cc`, `h`, `c++`, `h++`, `hpp`, `cs`, `csharp`, `css`, `d`, `di`, `dart`, `delphi`, `dpr`, `dfm`, `pas`, `pascal`, `freepascal`, `lazarus`, `lpr`, `lfm`, `diff`, `django`, `jinja`, `dockerfile`, `docker`, `erl`, `f90`, `f95`, `fsharp`, `fs`, `gcode`, `nc`, `go`, `groovy`, `handlebars`, `hbs`, `html.hbs`, `html.handlebars`, `hs`, `hx`, `java`, `jsp`, `js`, `jsx`, `json`, `jl`, `kt`, `ktm`, `kts`, `less`, `lisp`, `lua`, `mk`, `mak`, `md`, `mkdown`, `mkd`, `matlab`, `m`, `mm`, `objc`, `obj-c`, `ml`, `perl`, `pl`, `php`, `php3`, `php4`, `php5`, `php6`, `ps`, `ps1`, `pp`, `py`, `gyp`, `r`, `ruby`, `rb`, `gemspec`, `podspec`, `thor`, `irb`, `rs`, `scala`, `scm`, `sld`, `scss`, `st`, `sql`, `swift`, `tex`, `vbnet`, `vb`, `bas`, `vbs`, `v`, `veo`, `xml`, `html`, `xhtml`, `rss`, `atom`, `xsl`, `plist`, `yaml`
 
 Example:
 
@@ -45,13 +45,23 @@ Example:
     ```
 
 Renders as: 
-``` go
-package main
-import "fmt"
-func main() {
-	fmt.Println("Hello, 世界")
-}
-```
+
+**GitHub Theme**    
+
+![go syntax-highlighting](../../images/syntax-highlighting-github.PNG) 
+
+**Solarized Dark Theme**    
+
+![go syntax-highlighting](../../images/syntax-highlighting-sol-dark.PNG) 
+
+**Solarized Light Theme**    
+
+![go syntax-highlighting](../../images/syntax-highlighting-sol-light.PNG) 
+
+**Monokai Theme**    
+
+![go syntax-highlighting](../../images/syntax-highlighting-monokai.PNG) 
+
 
 ## In-line Code
 
