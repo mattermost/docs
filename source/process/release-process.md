@@ -180,6 +180,7 @@ The final release is cut. If an urgent and important issue needs to be addressed
 3. Dev:
     - Check if any libraries need to be updated for the next release, and if so bring up in weekly team meeting
     - Test the GitLab RC containing the Mattermost final bits
+    - Confirm gitlab.mattermost.com is updated to final build
 4. Marketing:
     - Confirm marketing has been posted (animated GIFs, screenshots, mail announcement, tweets, blog posts)
 
