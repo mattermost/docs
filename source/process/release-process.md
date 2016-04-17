@@ -157,18 +157,16 @@ The final release is cut. If an urgent and important issue needs to be addressed
     - Tags a new release (e.g. 1.1.0) and runs an official build which should be essentially identical to the last RC
     - Delete RCs after final version is shipped
 3. PM:
-    - Submit GitLab ticket to take next Mattermost version in the Omnibus  
-    - Copy and paste the Release Notes from the Changelog to the Release Description  
+    - Submit GitLab ticket to take next Mattermost version in the Omnibus using [template](https://gitlab.com/gitlab-org/omnibus-gitlab/issues/1241)
     - Update the mattermost.org/download page
     - Contact owners of [community installers](http://www.mattermost.org/installation/) or submit [PRs](https://github.com/tommyvn/mattermost-heroku/commit/94f7c5c0c5d7d2672fb6d62b6a560b4b5c1b5131) to update install version number.
     - Update the AMI links on mattermost.org/download and mattermost.org/installation  
     - Close final GitHub RC meta ticket  
 4. Marketing:
-    - Finalize mailchimp email blast
-    - Finalize blog post and put on timer for release
-    - Finalize tweet announcement
-    - Finalize announcement on general mailing list
-    - Finalize announcement for gitlab.mattermost.com
+    - Finalize Mailchimp email blast
+    - Finalize blog post for mattermost.org set timer for 06:00 PDT on first non-holiday weekday morning after release
+    - Queue Tweet announcement
+    - Find [GitLab release announcement merge request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests) and post proposal for [GitLab Mattermost update text](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests/1633/diffs#efdba966a222d7071509e0dd4f39de5c9d7c1200_0_185)
 
 ### G. (T-minus 0 working days) Release Day
 
@@ -184,6 +182,23 @@ The final release is cut. If an urgent and important issue needs to be addressed
     - Test the GitLab RC containing the Mattermost final bits
 4. Marketing:
     - Confirm marketing has been posted (animated GIFs, screenshots, mail announcement, tweets, blog posts)
+
+## Templates
+
+
+Templates for GitLab announcement proposal
+```
+Proposed update for new version of [Mattermost](https://gitlab.com/gitlab-org/omnibus-gitlab/issues/1241). 
+
+## GitLab Mattermost 2.2
+
+[Mattermost 2.2](http://www.mattermost.org/mattermost-2-2-threaded-messages-and-more/) ships in GitLab 8.7 with threaded messages, French translation, new themes, new Trello and IRC support, plus many more new benefits. 
+
+This version also includes security updates and [upgrade from earlier versions]((http://doc.gitlab.com/omnibus/gitlab-mattermost/)) is recommended.
+```
+
+
+
 
 ## Release Numbering 
 
