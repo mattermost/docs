@@ -14,6 +14,10 @@ Acronym for [Accepting Pull Request](http://docs.mattermost.com/process/acceptin
 
 An obvious error in Mattermost software. Changes required to accomodate unsupported 3rd party software (such as browsers or operating systems) are not considered bugs, they are considered improvements. 
 
+#### Dead Tarzan 
+
+The idea of letting go of an imperfect solution without a clearly thought out alternative. Based on idea of [Tarzan of the Jungle](https://en.wikipedia.org/wiki/Tarzan) letting go of a vine without having a new vine to swing to. 
+
 #### Dev Mana
 
 A specific type of mana for developers similar to "points" or "jelly beans" in an Agile/Scrum methodology. On average, full time Mattermost developers each complete tickets adding up to approximately 28 mana per week. A "small" item is 2 mana, a "medium" is 4, a "large" is 8 and any project bigger needs to be broken down into smaller tickets. 
@@ -41,3 +45,7 @@ Every feature added has an initial and on-going mana cost, which is taken into a
 #### RHS
 
 The "Right-Hand Sidebar" in the Mattermost team site, used for navigation.
+
+#### Windows Vista approach
+
+An attempt to add functionality through a massive, complex one-time re-write hoping to improve the architecture, but which likely ends in repeated delays, wasted effort, buggy code and limited architectural improvement (compared to re-writing the architecture in phases). This tempting, high risk approach is named after Microsoft's "Windows Vista" operating system, one of its most famous examples.
