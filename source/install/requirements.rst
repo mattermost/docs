@@ -29,7 +29,7 @@ PC Web Experience
 -  Mac: OS 10 (Safari 9, Chrome 43+)
 -  Linux: Arch 4.0.0 (Chrome 43+)
 
-* IE 11 Compatiblity View is not supported. 
+`*` IE 11 Compatiblity View is not supported. 
 
 Mobile App Experience
 ^^^^^^^^^^^^^^^^^^^^^
