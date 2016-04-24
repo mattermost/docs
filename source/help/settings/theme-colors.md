@@ -38,6 +38,21 @@ Observe a live preview as you customize theme colors and then click **Save** to 
 - **Button BG:** Color of the rectangular background behind all high priority UI buttons.
 - **Button Text:** Text colour appearing on the rectangular background for all high priority UI buttons.
 
+#### Exporting a Custom Theme
+
+You can export a theme by copying the "Theme Code" from the Custom Theme menu.
+
+Go to **Account Settings** > **Display** > **Custom Theme** > **Copy and paste to share theme colors** and copy the theme code to export it.
+
+#### Importing a Custom Theme
+
+You can import a theme by pasting a "Theme Code" into the Custom Theme menu. 
+
+Go to **Account Settings** > **Display** > **Custom Theme** > **Copy and paste to share theme colors** and paste a theme code to import it, then click **Save**.
+
+You can find sample themes below. You can also find [theme codes shared by the community from the Mattermost community forum.](https://forum.mattermost.org/t/share-your-favorite-mattermost-theme-colors/1330). 
+
+
 
 
 #### Custom Theme Examples
@@ -66,3 +81,4 @@ ___
 #de718e,#ffffff,#de6785,#ffffff,#ffffff,#cc6983,#43e8d4,#ffffff,#88e0e5,#ccdb91,#55a3a8,#ffffff,#ffffff,#444444,#55a3a8,#55a3a8,#55a3a8,#ffffff,#55a3a8,#ffffff,solarized_light
 ```
 ___
+
