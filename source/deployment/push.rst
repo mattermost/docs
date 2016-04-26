@@ -42,14 +42,16 @@ The below explains each option in detail.
 Hosted Push Notifications Service (HPNS)
 -----
 
-Mattermost.com offers a `Hosted Push Notification Service (HPNS) <https://about.mattermost.com/pre-compiled/>`_ via commercial subscription for organizations who want encrypted push notifications sent from behind their firewall, with production-quality uptime and commercial support, as an alternative to deploying their own Enterprise App Store (EAS) solution described below. 
+Mattermost.com offers a `Hosted Push Notification Service (HPNS) <https://about.mattermost.com/pre-compiled/>`_ via commercial subscription for organizations who want encrypted push notifications sent from behind their firewall, with production-quality uptime and commercial support, as an alternative to compiling, deploying and securing their own service from source code provided (see "Enterprise App Store" in next section). 
 
 With HPNS, end users can use publicly available iOS and Android mobile applications on iTunes and Google Play over encrypted connections: 
 
 - `Mattermost iOS App on iTunes <https://itunes.apple.com/us/app/mattermost/id984966508?mt=8>`_
 - `Mattermost Android App on Google Play <https://play.google.com/store/apps/details?id=com.mattermost.mattermost&hl=en>`_
 
-`HPNS is available with Mattermost Enterprise Edition <https://about.mattermost.com/pricing/>`_. After purchasing and installing a license key, you can turn on HPNS using **System Console** > **Email Settings** > **Send Push Notifications** > **Use encrypted, production-quality HPNS connection to iOS and Android apps**.
+A license key to activate HPNS is available with a `subscription to Mattermost Enterprise Edition <https://about.mattermost.com/pricing/>`_. 
+
+After purchasing and installing a license key, you can turn on HPNS using **System Console** > **Email Settings** > **Send Push Notifications** > **Use encrypted, production-quality HPNS connection to iOS and Android apps**.
 
 Enterprise App Store (EAS)
 -----
