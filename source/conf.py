@@ -40,7 +40,7 @@ def setup(app):
 # ones.
 extensions = ['sphinxcontrib.googleanalytics']
 
-googleanalytics_id = 'UA-76369845-1'
+googleanalytics_id = 'UA-67846571-2'
 googleanalytics_enabled = True
 
 # Add any paths that contain templates here, relative to this directory.
