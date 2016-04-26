@@ -2,26 +2,28 @@
 Push Notifications and Mobile Devices
 ======
 
-To send push notifications from your private cloud to iOS apps and Android mobile apps, Apple and Google require a unique key to be compiled into your mobile applications. There are 3 deployment options: 
+For Mattermost iOS apps and Android mobile apps to receive puch notifications the service sending notifications needs to be verified as an authorized sender. There are 3 options to provide this verification: 
 
-1. Use a **Hosted Push Notification Service (HPNS)** and pre-compiled mobile applications using a key secured by Mattermost.com. 
+1. Use the **Hosted Push Notification Service (HPNS)** from Mattermost.com that is trusted by Mattermost iOS and Android applications on iTunes and Google Play.
 
     - Pros: 
         - Push notifications are encrypted.
         - Saves time over deploying to an Enterprise App Store. 
-        - Service level agreement offered via commercial subscription. 		  
+        - Production quality uptime offered via commercial subscription. 		  
+        - Commercial support from Mattermost.com included with subscription.
     - Cons: 
         - Some IT policies only allow mobile apps via Enteprise App Store.
 
-2. Use an **Enterprise App Store (EAS)** by compiling your own push notification service and mobile applications from source code with your own key.
+2. Use an **Enterprise App Store (EAS)** by compiling your own push notification service and mobile applications from source code to manually establish verification.
 
     - Pros: 
         - Push notifications are encrypted.
         - Enterprise App Store provides the highest level of mobile apps security. 
+        
     - Cons: 
-        - Requires developer time to compile your organization's encryption key into the open source components and to deploy.
+        - Requires developer time to compile, secure, deploy and maintain components.
 
-    EAS is most convenient when an organization has access to developers experienced in iOS mobile development, Android mobile development, Golang programming, and Enterprise App Store administration. 
+    EAS is most convenient when an organization has access to developers experienced in iOS mobile development, Android mobile development, Golang programming, Enterprise App Store administration and system security. 
 
 3. Use the **Test Push Notification Service (TPNS)** and pre-compiled applications with unencrypted push notifications prior to selecting one of the above options.
 
@@ -29,8 +31,8 @@ To send push notifications from your private cloud to iOS apps and Android mobil
         - Easy and free solution to setting up and evaluating mobile apps.
     - Cons: 
         - Does not offer encrypted push notifications.
-        - Does not offer service level agreement.
-  
+        - Not intended as a production quality service.
+        - No commercial support from Mattermost.com
 
 The below explains each option in detail. 
 
@@ -40,23 +42,25 @@ The below explains each option in detail.
 Hosted Push Notifications Service (HPNS)
 -----
 
-Mattermost.com offers a `Hosted Push Notification Service (HPNS) <https://about.mattermost.com/pre-compiled/>`_ via commercial subscription for organizations who prefer using a hosted service to deploying to an Enterprise App Store. 
+Mattermost.com offers a `Hosted Push Notification Service (HPNS) <https://about.mattermost.com/pre-compiled/>`_ via commercial subscription for organizations who want encrypted push notifications sent from behind their firewall, with production-quality uptime and commercial support, as an alternative to deploying their own Enterprise App Store (EAS) solution described below. 
 
 With HPNS, end users can use publicly available iOS and Android mobile applications on iTunes and Google Play over encrypted connections: 
 
 - `Mattermost iOS App on iTunes <https://itunes.apple.com/us/app/mattermost/id984966508?mt=8>`_
 - `Mattermost Android App on Google Play <https://play.google.com/store/apps/details?id=com.mattermost.mattermost&hl=en>`_
 
-HPNS is included with an Enterprise Edition E1 subscription and can also be purchased separately. 
+`HPNS is available with Mattermost Enterprise Edition <https://about.mattermost.com/pricing/>`_. After purchasing and installing a license key, you can turn on HPNS using **System Console** > **Email Settings** > **Send Push Notifications** > **Use encrypted, production-quality HPNS connection to iOS and Android apps**.
 
 Enterprise App Store (EAS)
 -----
 
-To set up an Enterprise App Store, teams can compile an encryption key exclusive to their deployment into the following open source Mattermost repositories: 
+To set up an Enterprise App Store, teams can set up verified relationships by compiling, deploying, securing and maintaining the following open source repositories: 
 
 - `Open source repository for the Mattermost Push Notification Service <https://github.com/mattermost/push-proxy>`_
 - `Open source repository for the Mattermost iOS application <https://github.com/mattermost/ios>`_
 - `Open source repository for the Mattermost Android application <https://github.com/mattermost/android>`_
+
+After deploying the mobile applications and push notification service, go to **System Console** > **Email Settings** > **Send Push Notifications** > **Manually enter Push Notification Service location** and enter the location of your Push Notification Service in the **Push Notification Server** field. 
 
 Test Push Notifications Service (TPNS) 
 -----
@@ -68,19 +72,19 @@ End users of TPNS can use the publicly available iOS and Android mobile applicat
 - `Mattermost iOS App on iTunes <https://itunes.apple.com/us/app/mattermost/id984966508?mt=8>`_
 - `Mattermost Android App on Google Play <https://play.google.com/store/apps/details?id=com.mattermost.mattermost&hl=en>`_
 
-You can connect to the TPNS by entering ``http://push-test.mattermost.com`` into **System Console** > **Email Settings** > **Push Notification Server**.
+You can connect to the TPNS by going to **System Console** > **Email Settings** > **Send Push Notifications** > **Use iOS and Android apps on iTunes and Google Play with TPNS.**
 
-Note: **There is no service level agreement on the TPNS.** It is a test service that may go down without notice. 
+Note: TPNS is a test service that does not encrypt push notifications and does not offer production-quality uptime. 
 
 What happens when a Mattermost push notification is sent? 
 ``````
 
-To ensure only messages from authorized senders are received by a mobile application, each push notifications need to be signed with a private key corresponding to a public key registered with either Apple (for iOS) or Google (for Android). This means each mobile app needs its own key in order to trust messages from the Mattermost server in your private cloud. 
+To ensure only push notifications from authorized senders are processed by iOS and Android mobile application, each push notifications need to come from a trusted source.  
 
 Here is the full process: 
 
 1. When triggered, a push notification is sent from the Mattermost server to the Mattermost Push Notification Service over TLS
 
-2. The Mattermost Push Notification Service decrypts the message, signs it with a private key verifying it as a valid message for the target mobile app (which is registered with the corresponding public key), then encrypts the push notification to send to the Apple Push Notification Service (APNS) or to the Google Cloud Messaging (GCM) service depending on whether you're sending to an iOS or Android device. 
+2. The Mattermost Push Notification Service forwards the message to either Apple Push Notification Service (APNS) or to the Google Cloud Messaging (GCM) service depending on whether you're sending to an iOS or Android device. The message from the Mattermost Push Notification Service is signed with a key that's registered with the recieving service, corresponding to the target mobile app, so its authenticity is verified. 
  
-3. The APNS or GCM service decrypts the message, uses the public key registered with the mobile app to verify the notification is from an authorized source, then encrypts the message and sends it to the appropriate mobile device where it is decrypted and displayed to the user.
+3. The APNS or GCM service confirms that the message from the Mattermost Push Notification Service is authorized for the target mobile application and forwards the message to the app to be displayed. 
