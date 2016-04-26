@@ -20,21 +20,6 @@ After installing Mattermost:
 
 - Note: Organizations that run secured connections behind their firewalls can set up stunnel to port 389, the standard AD/LDAP port. The option to add TLS for LDAP is scheduled for May 16, 2016 release. 
 
-### Switching System Administrator account to LDAP from email authentication 
-
-A user interface supporting an easy switch from LDAP to email authentication will be available in the May 16, 2016 release. A manual process is currently offered: 
-
-1. Create a new LDAP account to become the new System Administrator account     
-    1. The new account should have a different email than the original System Administrator account. To change the email of the original System Administrator account go to **Main Menu** > **Account Settings** > **General** > **Email**.     
-2. Promote your new LDAP account to System Administrator      
-    1. Sign in with your original your email-based System Administrator account    
-    2. Go to **System Console**> **Teams** > **[Team Name]** > **Users**, find your new LDAP user account and promote it to **System Administrator**. )     
-3. Disable your original email-based System Administrator account      
-    1. Sign in with your new LDAP-based System Administrator account     
-    2. Go to **Teams** > **Team Name** > **Users**, and find your old email based System Administrator account and change it to **Inactive**.     
-
-If you make a mistake in this process by deactivating your System Administrator account prematurely you can restore the role from [the commandline tool.](http://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline)
-
 ### Restrict authentication to Active Directory/LDAP
 
 1. Make sure your System Administrator authenticates with LDAP (see above instructions).    
@@ -62,3 +47,17 @@ The issue can be fixed by changing the value of the field used for the ID attrib
 
 Note: Currently the value is case sensitive. If the ID attribute is set to the username and the username changes from John.Smith to john.smith, the user would have problems logging in.   
 
+### Switching System Administrator account to LDAP from email authentication 
+
+A user interface supporting an easy switch from LDAP to email authentication will be available in the May 16, 2016 release. A manual process is currently offered: 
+
+1. Create a new LDAP account to become the new System Administrator account     
+    1. The new account should have a different email than the original System Administrator account. To change the email of the original System Administrator account go to **Main Menu** > **Account Settings** > **General** > **Email**.     
+2. Promote your new LDAP account to System Administrator      
+    1. Sign in with your original your email-based System Administrator account    
+    2. Go to **System Console**> **Teams** > **[Team Name]** > **Users**, find your new LDAP user account and promote it to **System Administrator**. )     
+3. Disable your original email-based System Administrator account      
+    1. Sign in with your new LDAP-based System Administrator account     
+    2. Go to **Teams** > **Team Name** > **Users**, and find your old email based System Administrator account and change it to **Inactive**.     
+
+If you make a mistake in this process by deactivating your System Administrator account prematurely you can restore the role from [the commandline tool.](http://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline)
