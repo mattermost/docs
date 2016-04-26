@@ -42,7 +42,7 @@ The below explains each option in detail.
 Hosted Push Notifications Service (HPNS)
 -----
 
-Mattermost.com offers a `Hosted Push Notification Service (HPNS) <https://about.mattermost.com/pre-compiled/>`_ via commercial subscription for organizations who want encrypted push notifications sent from behind their firewall, with production-quality uptime and commercial support, as an alternative to compiling, deploying and securing their own service from source code provided (see "Enterprise App Store" in next section). 
+Mattermost.com offers a Hosted Push Notification Service (HPNS) via commercial subscription for organizations who want encrypted push notifications sent from behind their firewall, with production-quality uptime and commercial support, as an alternative to compiling, deploying and securing their own service from source code provided (see "Enterprise App Store" in next section). 
 
 With HPNS, end users can use publicly available iOS and Android mobile applications on iTunes and Google Play over encrypted connections: 
 
