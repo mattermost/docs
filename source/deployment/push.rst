@@ -46,8 +46,8 @@ Mattermost.com offers a Hosted Push Notification Service (HPNS) via commercial s
 
 With HPNS, end users can use publicly available iOS and Android mobile applications on iTunes and Google Play over encrypted connections: 
 
-- `Mattermost iOS App on iTunes <https://itunes.apple.com/us/app/mattermost/id984966508?mt=8>`_
-- `Mattermost Android App on Google Play <https://play.google.com/store/apps/details?id=com.mattermost.mattermost&hl=en>`_
+- `Mattermost iOS App on iTunes with encrypted push notifications <https://itunes.apple.com/us/app/mattermost/id984966508?mt=8>`_
+- `Mattermost Android App on Google Play with encrypted push notifications <https://play.google.com/store/apps/details?id=com.mattermost.mattermost&hl=en>`_
 
 A license key to activate HPNS is available with a `subscription to Mattermost Enterprise Edition <https://about.mattermost.com/pricing/>`_. 
 
