@@ -36,7 +36,7 @@ For Mattermost iOS apps and Android mobile apps to receive puch notifications th
 
 The below explains each option in detail. 
 
-.. note::  By default, push notifications do not contain specific message contents. When the Mattermost server is installed, push notifications only give generic alerts like "@frank was mentioned in Town Square" but DO NOT display the contents of messages. The contents of messages are only included in push notifications after a System Administrator explicitly configure the option to include them. 
+.. note::  By default, push notifications do not contain specific message contents. They use generic messages like "@frank was mentioned in Town Square" but DO NOT display the contents of messages until System Admins configure the option to include them. 
 
 
 Hosted Push Notifications Service (HPNS)
