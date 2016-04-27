@@ -90,3 +90,35 @@ Here is the full process:
 2. The Mattermost Push Notification Service forwards the message to either Apple Push Notification Service (APNS) or to the Google Cloud Messaging (GCM) service depending on whether you're sending to an iOS or Android device. The message from the Mattermost Push Notification Service is signed with a key that's registered with the recieving service, corresponding to the target mobile app, so its authenticity is verified. 
  
 3. The APNS or GCM service confirms that the message from the Mattermost Push Notification Service is authorized for the target mobile application and forwards the message to the app to be displayed. 
+
+Setting up HPNS 
+``````
+
+To setup HPNS please follow the following steps: 
+
+1. Install HPNS
+
+     1. Follow the instructions you received with your Mattermost Enterprise Edition purchase to install or upgrade to Enterprise Edition
+     2. Under **System Console** > **Email Settings** > **Send Push Notifications**  select **Use encrypted, production-quality HPNS connection to iOS and Android apps** (this option appears only in Enterprise Edition, not Team Edition)
+     3. Check the box "I understand and accept the Mattermost Hosted Push Notification Service Terms of Service and Privacy Policy." after reading the documents referenced, then click **Save**. 
+     4. Download either the Mattermost iOS app from iTunes or the Mattermost Android app from Google Play and sign into the app using an account on your Mattermost server, which we'll refer to as "Account A". 
+     
+2. Trigger a push notification
+
+     1. Have "Account A" close the mobile application, but do not log out. Make sure "Account A"does not have Mattermost open in any other web, desktop or mobile app for at least 30 seconds in order to make the account go offline. 
+     2. Using "Account B", on the same Mattermost team as "Account A", use the "More" menu under the Direct Messages section in the left hand side of the team site to add "Account A" to the Direct Message list. Confirm from the indicator next to "Account A"'s name in the direct message list that "Account A" is not online. 
+     3. Have "Account B" send a direct message "Hello" to "Account A". 
+     4. This should trigger a push notification to the mobile device of "Account A". 
+     
+3. If you did not receive a push notification, use the following procedure to troubleshoot: 
+
+     1. Under **System Console** > **Logs Settings** > **File Log Level** select **DEBUG** in order to watch for push notifications in the server log. IMPORTANT: Make sure to switch this back to ERROR level logging after setting up push notifications to conserve disk space. 
+     
+     2. Repeat step 2 and if you still don't receive a push notification, go to **System Console** > **Logs** click **Reload** and scroll to the bottom and look for a message similar to: ```[2016/04/21 03:16:44 UTC] [DEBG] Sending push notification to 63c06ca8e3949ca7e5996c31fcf07ecb36c658a3e7c2c227a4af949cc4777a87 wi msg of '@accountb: Hello'```
+     
+         - If the log message appears, it means a message was sent to the HPNS server and was not received by your mobile application. Please contact support@mattermost.com with the subject "HPNS issue on Step 8" for help from the commercial support team. 
+         
+         
+         - If the log message does not appear, it means no mobile push notification was sent to "Account A". Please repeat step 2 and double check each step. 
+         
+4. After your issue is resolved, go to **System Console** > **Logs Settings** > **File Log Level** and select **ERROR** to switch your logging detail level to Errors Only, instead of DEBUG, in order to conserve disk space. 
