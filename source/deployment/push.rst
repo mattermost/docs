@@ -106,20 +106,19 @@ To setup HPNS please follow the following steps:
      
 2. Trigger a push notification
 
-     1. Have "Account A" close the mobile application, but do not log out. The mobile app needs to be in the background for the test to work. Make sure "Account A"does not have Mattermost open in any other web, desktop or mobile app for at least 30 seconds in order to make the account go offline. 
-     2. Using "Account B", on the same Mattermost team as "Account A", use the "More" menu under the Direct Messages section in the left hand side of the team site to add "Account A" to the Direct Message list. Confirm from the indicator next to "Account A"'s name in the direct message list that "Account A" is not online. 
-     3. Have "Account B" send a direct message "Hello" to "Account A". 
-     4. This should trigger a push notification to the mobile device of "Account A". 
+     1. From the mobile application used by "Account A", click the three dot menu on the top right and go to **Account Settings** > **Security** > **View and Logout of Active Sessions** and logout of all sessions EXCEPT your mobile application session (either "iPhone Native App" or "Android Native app"). This ensures your mobile app is the only location where "Account A" is logged in to Mattermost.
+     2. Have "Account A" close the mobile application, but do not log out. The mobile app needs to be in the background for the test to work. Make sure "Account A"does not have Mattermost open in any other web, desktop or mobile app for at least 30 seconds in order to make the account go offline. 
+     3. Using "Account B", on the same Mattermost team as "Account A", use the "More" menu under the Direct Messages section in the left hand side of the team site to add "Account A" to the Direct Message list. Confirm from the indicator next to "Account A"'s name in the direct message list that "Account A" is offline. 
+     4. Have "Account B" send a direct message "Hello" to "Account A". 
+     5. This should trigger a push notification to the mobile device of "Account A". 
      
 3. If you did not receive a push notification, use the following procedure to troubleshoot: 
 
      1. Under **System Console** > **Logs Settings** > **File Log Level** select **DEBUG** in order to watch for push notifications in the server log. IMPORTANT: Make sure to switch this back to ERROR level logging after setting up push notifications to conserve disk space. 
      
-     2. In your team site, go to **Account Settings** > **Security** > **View and Logout of Active Sessions** and logout of all sessions on your mobile device. 
+     2. Delete your mobile application, install it again and sign-in with "Account A" and **confirm you want to receive push notifications** when prompted by the mobile app. 
      
-     3. Delete your mobile application, install it again and sign-in with "Account A" and **confirm you want to receive push notifications** when prompted by the mobile app. 
-     
-     4. Repeat the "Trigger a push notification" procedure above and if you still don't receive a push notification, go to **System Console** > **Logs** click **Reload** and scroll to the bottom and look for a message similar to: ```[2016/04/21 03:16:44 UTC] [DEBG] Sending push notification to 63c06ca8e3949ca7e5996c31fcf07ecb36c658a3e7c2c227a4af949cc4777a87 wi msg of '@accountb: Hello'```
+     3. Repeat the "Trigger a push notification" procedure above and if you still don't receive a push notification, go to **System Console** > **Logs** click **Reload** and scroll to the bottom and look for a message similar to: ```[2016/04/21 03:16:44 UTC] [DEBG] Sending push notification to 63c06ca8e3949ca7e5996c31fcf07ecb36c658a3e7c2c227a4af949cc4777a87 wi msg of '@accountb: Hello'```
      
          - If the log message appears, it means a message was sent to the HPNS server and was not received by your mobile application. Please contact support@mattermost.com with the subject "HPNS issue on Step 8" for help from the commercial support team. 
          
