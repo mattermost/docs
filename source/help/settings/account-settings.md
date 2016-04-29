@@ -95,7 +95,13 @@ Choose a 12-hour or 24-hour time preference that appears on the time stamp for a
 Configure how names are displayed in Mattermost: nickname, username or full name.
 
 #### Language
-Select what language Mattermost uses.  
+Select what language Mattermost displays in the user interface. Options include: 
+
+- English
+- Spanish
+- Portuguese
+- French
+- Japanese (_available May 16, 2016_)
 
 ## Advanced
 Setting to configure when messages are sent.
