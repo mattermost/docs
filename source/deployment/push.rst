@@ -98,7 +98,7 @@ To setup HPNS please follow the following steps:
 
 1. Install HPNS
 
-     1. Follow the instructions you received with your Mattermost Enterprise Edition purchase to install or upgrade to Enterprise Edition
+     1. Follow the [instructions you received with your Mattermost Enterprise Edition purchase to install or upgrade to Enterprise Edition](http://docs.mattermost.com/install/ee-install.html)
      2. Under **System Console** > **Email Settings** > **Send Push Notifications**  select **Use encrypted, production-quality HPNS connection to iOS and Android apps** (this option appears only in Enterprise Edition, not Team Edition)
      3. Check the box "I understand and accept the Mattermost Hosted Push Notification Service Terms of Service and Privacy Policy." after reading the documents referenced, then click **Save**. 
      4. Download either the Mattermost iOS app from iTunes or the Mattermost Android app from Google Play and sign into the app using an account on your Mattermost server, which we'll refer to as "Account A". 
