@@ -31,7 +31,7 @@ No pull requests for major features should be submitted to the current release a
         - Push final build to [GitLab Mattermost](https://gitlab.mattermost.com/community/channels/town-square)
         - [Creating final release candidate](https://mattermost.atlassian.net/browse/PLT-2198)
         - [Testing GitLab RC with Mattermost](https://mattermost.atlassian.net/browse/PLT-2197) 
-        - [Pushing to Battlehouse](https://mattermost.atlassian.net/browse/PLT-2199)
+        - [Push to private cloud customers](https://mattermost.atlassian.net/browse/PLT-2199)
         - [Test upgrade](https://mattermost.atlassian.net/browse/PLT-2344) to latest release based on [upgrade guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide)
         - [RC Build Testing for core team](https://mattermost.atlassian.net/browse/PLT-2208)
         - Updating gitlab.mattermost.com to RC1, and then updating gitlab.mattermost.com to final build
