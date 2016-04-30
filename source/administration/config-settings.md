@@ -29,7 +29,7 @@ For deployments seeking additional tracking of system behavior using Segment.com
 
 **Google Developer Key** (`"GoogleDeveloperKey": ""`)  
 
-Set this key to enable embedding of YouTube video previews based on hyperlinks appearing in messages or comments. Instructions to obtain a key available at https://www.youtube.com/watch?v=Im69kzhpR3I. Leaving the field blank disables the automatic generation of YouTube video previews from links.
+Mattermost offers the ability to embed YouTube videos from URLs shared by end users. If Google detects the number of views is exceedingly high, they may throttle embed access. Should this occur, you can remove the throttle by registering for a Google Developer Key and entering it in this field following these instructions: https://www.youtube.com/watch?v=Im69kzhpR3I. Your Google Developer Key is used in client-side Javascript. 
 
 **Enable Testing** (`"EnableTesting": false`)  
 
