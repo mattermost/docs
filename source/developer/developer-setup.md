@@ -31,6 +31,7 @@ Developer Machine Setup
 	- `git clone https://github.com/mattermost/platform.git`  
 	- `cd platform`
 
+5. Install godep with `go get github.com/tools/godep`
 5. Run unit tests on Mattermost using `make test` to make sure the installation was successful
 6. If tests passed, you can now run Mattermost using `make run`
 7. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
@@ -75,6 +76,7 @@ Any issues? Please let us know on our forums at: http://forum.mattermost.org
 	- `cd src/github.com/mattermost`  
 	- `git clone https://github.com/mattermost/platform.git`  
 	- `cd platform`
+5. Install godep with `go get github.com/tools/godep`
 8. Run unit tests on Mattermost using `make test` to make sure the installation was successful
 9. If tests passed, you can now run Mattermost using `make run`
 10. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
@@ -122,6 +124,7 @@ Any issues? Please let us know on our forums at: http://forum.mattermost.org
 	`cd src/github.com/mattermost`  
 	`git clone https://github.com/mattermost/platform.git`  
 	`cd platform`  
+5. Install godep with `go get github.com/tools/godep`
 7. Run unit tests on Mattermost using `make test` to make sure the installation was successful
 8. If tests passed, you can now run Mattermost using `make run`
 9. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
