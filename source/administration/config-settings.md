@@ -25,7 +25,7 @@ Failed login attempts allowed before a user is locked out and required to reset 
 
 **Segment Developer Key** (`"SegmentDeveloperKey": ""`)  
 
-For users running SaaS services, signup for a key at Segment.com to track metrics.
+For deployments seeking additional tracking of system behavior using Segment.com, you can enter a Segment WRITE_KEY using this field. This value works like a tracking code and is used in client-side Javascript and will send events to Segment.com attributed to the account you used to generate the WRITE_KEY.
 
 **Google Developer Key** (`"GoogleDeveloperKey": ""`)  
 
