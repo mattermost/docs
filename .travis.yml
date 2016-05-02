@@ -5,10 +5,10 @@ install:
 - pip install sphinx sphinx-autobuild sphinx_rtd_theme
 - pip install recommonmark
 - pip install sphinxcontrib-googleanalytics
-- pip install s3cmd
+- pip install awscli
 script:
 - make html
-- s3cmd rm s3://docs.mattermost.com/* --force --recursive --region us-east-1 --access_key=$AWS_ACCESS_KEY_ID --secret_key=$AWS_SECRET_ACCESS_KEY
+- aws s3 rm s3://docs.mattermost.com/ --recursive --region us-east-1
 deploy:
   - provider: s3
     access_key_id: AKIAJXLDG4C2F4MIZP4Q
