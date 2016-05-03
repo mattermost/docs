@@ -137,6 +137,23 @@ Teams and user accounts can only be created by a verified email from this list o
 
 `true`: Teams that are configured to appear in the team directory will appear on the system main page. Teams can configure this setting from **Team Settings > Include this team in the Team Directory**; `false`: Team directory on the system main page is disabled.
 
+**Enable Custom Branding** (`"EnableCustomBrand": false`)  Enterprise Edition
+
+_Available May 16, 2016 in Enterprise Edition_
+
+`true`: Enables custom branding to show a JPG image some custom text on the server login page. 
+
+**Custom Brand Image** (`"CustomBrandText": [BLANK]` ) Enterprise Edition
+
+_Available May 16, 2016 in Enterprise Edition_
+
+Custom JPG image is displayed on left side of server login page. Recommended maximum image size is less than 2 MB because image will be loaded for every user who logs in.
+
+**Custom Brand Text** Enterprise Edition
+
+_Available May 16, 2016 in Enterprise Edition_
+
+Custom text will be shown below custom brand image on left side of server login page. Maximum 500 characters allowed. You can format this text using the same [Markdown formatting codes](http://docs.mattermost.com/help/messaging/formatting-text.html) as using in Mattermost messages. 
 
 ### SQL Settings
 
