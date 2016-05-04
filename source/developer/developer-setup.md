@@ -33,9 +33,16 @@ Developer Machine Setup
 
 5. Install godep with `go get github.com/tools/godep`
 5. Run unit tests on Mattermost using `make test` to make sure the installation was successful
-6. If tests passed, you can now run Mattermost using `make run`
-7. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
-    - Note: You can skip the platform you are on because you have that target installed by default. 
+6. If the tests passed, you need to create a team and an admin account. You can choose a team name, email and password:
+	- Note: Make sure your team name does not contain any spaces.
+	- `godep go run mattermost.go  -create_team -team_name="name" -email="user@example.com"`
+	- `godep go run mattermost.go  -create_user -team_name="name" -email="user@example.com" -password="mypassword"`
+	- `godep go run mattermost.go  -assign_role -team_name="name" -email="user@example.com" -role="system_admin"`
+
+7. Now you can run Mattermost using `make run`. Log-in as the admin account you created in step 6
+8. You can stop Mattermost using `make stop`
+9. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
+    - Note: You can skip the platform you are on because you have that target installed by default.
     - `env GOOS=windows GOARCH=amd64 go install std`
     - `env GOOS=darwin GOARCH=amd64 go install std`
     - `env GOOS=linux GOARCH=amd64 go install std`
@@ -78,9 +85,16 @@ Any issues? Please let us know on our forums at: http://forum.mattermost.org
 	- `cd platform`
 5. Install godep with `go get github.com/tools/godep`
 8. Run unit tests on Mattermost using `make test` to make sure the installation was successful
-9. If tests passed, you can now run Mattermost using `make run`
-10. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
-    - Note: You can skip the platform you are on because you have that target installed by default. 
+9. If the tests passed, you need to create a team and an admin account. You can choose a team name, email and password:
+	- Note: Make sure your team name does not contain any spaces.
+	- `godep go run mattermost.go  -create_team -team_name="name" -email="user@example.com"`
+	- `godep go run mattermost.go  -create_user -team_name="name" -email="user@example.com" -password="mypassword"`
+	- `godep go run mattermost.go  -assign_role -team_name="name" -email="user@example.com" -role="system_admin"`
+
+10. Now you can run Mattermost using `make run`. Log-in as the admin account you created in step 10
+11. You can stop Mattermost using `make stop`
+12. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
+    - Note: You can skip the platform you are on because you have that target installed by default.
     - `env GOOS=windows GOARCH=amd64 go install std`
     - `env GOOS=darwin GOARCH=amd64 go install std`
     - `env GOOS=linux GOARCH=amd64 go install std`
@@ -126,9 +140,16 @@ Any issues? Please let us know on our forums at: http://forum.mattermost.org
 	`cd platform`  
 5. Install godep with `go get github.com/tools/godep`
 7. Run unit tests on Mattermost using `make test` to make sure the installation was successful
-8. If tests passed, you can now run Mattermost using `make run`
-9. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
-    - Note: You can skip the platform you are on because you have that target installed by default. 
+8. If the tests passed, you need to create a team an admin account. You can choose a team name, email and password:
+	- Note: Make sure your team name does not contain any spaces.
+	- `godep go run mattermost.go  -create_team -team_name="name" -email="user@example.com"`
+	- `godep go run mattermost.go  -create_user -team_name="name" -email="user@example.com" -password="mypassword"`
+	- `godep go run mattermost.go  -assign_role -team_name="name" -email="user@example.com" -role="system_admin"`
+
+9. Now you can run Mattermost using `make run`. Log-in as the admin account you created in step 8
+10. You can stop Mattermost using `make stop`
+11. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
+    - Note: You can skip the platform you are on because you have that target installed by default.
     - `env GOOS=windows GOARCH=amd64 go install std`
     - `env GOOS=darwin GOARCH=amd64 go install std`
     - `env GOOS=linux GOARCH=amd64 go install std`
