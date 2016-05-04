@@ -8,7 +8,7 @@ Mattermost 3.0 lets users maintain a single account across multiple teams on a M
 
 #### Special instructions for 2.x servers with duplicate accounts
 
-If your Mattermost server has duplicate accounts (users with multiple accounts in multiple teams with the same email address), you need to understand the 3.0 upgrade process in detail and take special steps to upgrade successfully.
+If your Mattermost server has duplicate accounts (users with multiple accounts in multiple teams with the same email address or username), you need to understand the 3.0 upgrade process in detail and take special steps to upgrade successfully.
 
 1. Download Mattermost Team Edition 3.0.0
       1. Run `platform -version` to confirm the current version of your Mattermost server is `v2.2.0`, `v2.1.1`, or `v2.0.0`. If not, please [upgrade to `v2.0.0`](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide).
@@ -22,9 +22,12 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
       3. If you're using local file storage, back up the location where files are stored.
       4. Verify your backups are successful.
 4. Install new version
-      1. Double check that your database has been backed up, as the database upgrade to 3.x from 2.x cannot be reversed.
+      1. Double check that your database and configuration file has been backed up, as the database upgrade to 3.x from 2.x cannot be reversed.
       2. Run `tar -xvzf mattermost-team-X.X.X-linux-amd64.tar.gz` to decompress the upgraded version and replace the current version of Mattermost on disk, where `X.X.X` is the version number to which you are upgrading.
-      3. Run `./platform -upgrade_db_30` to upgrade your database from 2.x to 3.x
+5. Restore the state of your server
+      1. Copy the backed up version of `config.json` in place of the default `config.json`.
+6. Upgrade your database
+      1. Run `./platform -upgrade_db_30` to upgrade your database from 2.x to 3.x
          - You will be asked `Have you performed a database backup? (YES/NO):` 
              - If you have not backed up your database, enter `NO` and then backup your database
              - If you have verified your database has been backed up, enter `YES`
@@ -36,14 +39,12 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
                          - An account with a **duplicate email address** will be updated so `+[TEAM_URL_NAME]` is appended to the local part of the email address. For example: An account with a duplicate email `steve@company.com` in the team at URL `https://mattermost.company.com/marketing` becomes `steve+marketing@company.com`. The `+marketing` used in this procedure is part of the RFC5233 email specification and most email systems will properly route `steve+marketing@company.com` to `steve@company.com`. After the upgrade, if email authentication is used for sign-in, the user would need to sign-in with the new email address.
                          - An account with a **duplicate username** will be updated so `[TEAM_URL_NAME].`” is prepended to the username. For example: An account with a duplicate username `steve` in the team at URL `https://mattermost.company.com/marketing` becomes `marketing.steve`.
          - Users with accounts containing duplicate emails or usernames will receive a notification email explaining the upgrade, and instructions on how to move to a single user account ([see example](http://www.mattermost.org/upgrading-to-mattermost-3-0/#notification))
-5. Restore the state of your server
-      1. Copy the backed up version of `config.json` in place of the default `config.json`.
-6. Start your server and address any setting changes relevant in the latest version of Mattermost
+7. Start your server and address any setting changes relevant in the latest version of Mattermost
       1. Run `sudo start mattermost`.
       2. Opening the **System Console** and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added. 
-7. Test the system is working by going to the URL of an existing team.
+8. Test the system is working by going to the URL of an existing team.
       1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
-8. After the Mattermost 3.0 upgrade users with duplicate accounts can follow instructions in the upgrade email they received to login to teams on which the duplicate accounts were created and add their primary account to the team and any private groups that are still actively used. Users can continue to access the direct message history of their duplicate accounts using their updated email addresses.
+9. After the Mattermost 3.0 upgrade users with duplicate accounts can follow instructions in the upgrade email they received to login to teams on which the duplicate accounts were created and add their primary account to the team and any private groups that are still actively used. Users can continue to access the direct message history of their duplicate accounts using their updated email addresses.
 
 ### Upgrading Team Edition prior to 3.x
 
