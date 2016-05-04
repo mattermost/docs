@@ -68,7 +68,7 @@ To enable email, configure an SMTP email service as follows:
       11. Then click **Save**
       12. Then click **Test Connection**
       13. If the test failed please look in **OTHER** > **Logs** for any
-          errors that look like ``[EROR] /api/v1/admin/test_email ...``
+          errors that look like ``[EROR] /api/v3/admin/test_email ...``
 
 Sample SMTP Settings
 ~~~~~~
