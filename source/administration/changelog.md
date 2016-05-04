@@ -1,8 +1,175 @@
 # Mattermost Changelog
 
+## Release v3.0.0
+
+Release date: 2016-05-16
+
+### Security Update
+
+- Mattermost v3.0.0 contains multiple security updates. [Upgrading to Mattermost v3.0.0](LINK) is highly recommended. 
+- Thanks to Yoni Ramon from the Tesla security team, Andreas Lindh and Uchida Ta for contributing security reports through the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/). 
+
+### Highlights 
+
+(Draft in progress)
+
+### Languages 
+
+- Added Japanese translation for user interface (beta). 
+
+### Improvements 
+
+iOS app
+- Added support for multiple teams on the same server. 
+- Added autocorrect.
+- Note: Users of Mattermost 3.0 server need to install new iOS 3.0 app. iOS 2.x apps are not compatible with Mattermost 3.0 server. Also, iOS 3.0 app is not compatible with Mattermost 2.x server. 
+
+Android app
+- Added support for multiple teams on the same server. 
+- Added autocorrect.
+- Note: Users of Mattermost 3.0 server need to install new Android 3.0 app. Android 2.x apps are not compatible with Mattermost 3.0 server. Also, Android 3.0 app is not compatible with Mattermost 2.x server. 
+
+User Interface
+- Switched to new emoji set.
+- Account Settings > Display option lets users set the channel view to full width.
+- Smoother overlay transition when opening sidebar on mobile.
+
+Integrations
+- Moved webhooks and slash command settings to a new “Integrations” page.
+- Added "Display Name" and “Description” to incoming and outgoing webhooks.
+- Changed webhooks to always show the username and profile picture, even if posts are consecutive.
+- Added a /msg command to open a direct message channel with another user.
+
+Authentication
+- Changed the user model so accounts are per server instead of per team.
+- Updated the login flow so users can select which team to open after signing in.
+- Combined Email, Username, and LDAP options into one login box so users can enter their credentials and the system will identify which kind of authentication to use.
+- GitLab SSO now creates an account from the "Sign In" button if an account previously did not exist.
+
+Files and Attachments
+- Added a preview for code files in the image viewer.
+- Added keyboard shortcut Control + U or Command + U to upload a file.
+
+Notifications 
+- Added the option to enable full snippets in push notifications.
+
+Search
+- Changed searches to connect terms with "AND" instead of "OR". 
+
+Enterprise:
+- Added the ability to map nickname to an LDAP field.
+- Added the ability to filter LDAP users, so only users selected by the filter can log in to Mattermost.
+- Added the option to connect to LDAP with TLS or STARTTLS
+- Added the option to replace the “LDAP username” login field placeholder text with custom text.
+- Users can now switch between LDAP and email login from Account Settings > Security > Sign-in Method.
+- Added the option to sign up with LDAP on the "Get Team Invite" link and email invite sign up pages.
+- Added multi-factor authentication.
+- Added compliance reporting and the option to generate daily compliance reports. 
+- Added custom branding, so System Admins can set a custom logo and text on the sign in page.
+- Added a command line option to upload a license file.
+
+### Bug Fixes
+
+- Posts from webhooks now fire notifications to the user who created the webhook.
+- Edit post option no longer appears, but doesn't work, on other users' posts in the RHS.
+- Text input box does not stay scrolled to the bottom when drafting a long message in Firefox.
+- Webhooks in search results now show the username/profile pic of the bot, instead of the user who set up the webhook.
+- Outgoing webhooks triggers now work when followed by any type of white space, instead of only spaces
+- "User is typing" message now follows Teammate Name Display setting
+- Log in with GitLab on mobile now works in the case where there is a space after the email address
+- Links in System Console > Legal and Support settings now open properly even if http or https is not included
+- Timestamps are displayed in 12-hour format when set to 24-hour format.
+
+### Compatibility  
+Changes from v2.2 to v3.0:
+
+**iOS and Android**  
+
+Mattermost iOS and Android app v3.0 requires Mattermost platform v3.0 and higher.
+
+**APIs**
+
+Web Service API is upgraded to Version 3 and previous Version 1 API is no longer supported. Golang driver, Javascript driver, incoming and outgoing webhooks and Slash commands continue to function as in previous release
+
+**config.json**    
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console.  
+
+**Changes to Team Edition:** 
+
+- Under `TeamSettings` in `config.json`:
+    - Added `"EnableOpenServer": false` to set whether users can sign up to the server without an invite.    
+    - Removed `"EnableTeamListing": false` since the team directory was replaced with new functionality.
+
+- Under `EmailSettings` in `config.json`:
+    -  Added `"PushNotificationContents": "generic"` to set whether push notifications send a generic message (`generic`) or send a snippet of the conversation (`full`)
+
+**Changes to Enterprise Edition:**
+
+The following config settings will only work on servers with an Enterprise License that has the feature enabled. 
+
+- Under `ServiceSettings` in `config.json`:
+  - Added `"EnableMultifactorAuthentication": false` to enable Multifactor Authentication
+
+- Under `TeamSettings` in `config.json`:
+    -  Added `"EnableCustomBrand": false` to set whether custom branding of the login page is turned on. 
+    -  Added `"CustomBrandText": ""` to set what text will show up on the login page, if `"EnableCustomBrand":` is set to `true`.
+
+- Under `LdapSettings` in `config.json`:
+    - Added `"ConnectionSecurity":""` to set the type of connection security Mattermost uses to connect to LDAP. Options are `""` (no security), `TLS` or `STARTTLS`.
+    - Added `"UserFilter": ""` (optional) to set an LDAP Filter to use when searching for user objects. 
+    - Added `"NicknameAttribute": ""` to set the attribute in the LDAP server that will be used to populate the nickname field in Mattermost.
+    - Added `"SkipCertificateVerification": false` to set whether the certificate verification step for TLS or STARTTLS connections is skipped. (For testing purposes only. Should be set to `false` in production.)
+    - Added `"LoginFieldName": ""` to set the help text in the login box (for example, LDAP username or Company username).
+
+- Added `ComplianceSettings` to `config.json`:
+    - Added `"Enable": false` to set whether compliance reports are enabled.
+    - Added `"Directory": "./data/"` to set where the reports are stored. 
+    - Added `"EnableDaily": false` to set whether Daily Reports are turned on.
+
+#### Database Changes from v2.2 to v3.0
+
+Version 3.0 uses a different database than version 2.0. A one-way change to the database will be required when upgrading from v2.2 to v3.0.  
+
+### Known Issues
+
+- “More” option under Direct Message list no longer shows count of team members not in your direct message list. 
+- Regression: Get Public Link downloads a file and does not produce a public link. 
+- File name tooltip stays open after clicking to download.
+- Unable to paste images into the text box on Firefox, Safari, and IE11.
+- Search results don't highlight properly for searches containing @username, non-latin characters, terms inside Markdown code blocks, or hashtags containing a dash
+- Emoji smileys ending with a letter at the end of a message do not auto-complete as expected.
+- Incorrect formatting when a new line is added directly after a list.
+- Syntax highlighting code block is missing the label for Apache, HTTP, NGINX, INI, and Latex 
+- Searching for a username or hashtag containing a dot now returns the correct results.
+- Search term highlighting doesn't update when search terms change but return the same posts.
+
+### Contributors 
+
+Many thanks to all our external contributors. In no particular order:
+
+- [rodrigocorsi2](https://github.com/rodrigocorsi2) 
+- [khoa-le](https://github.com/khoa-le)
+- [FeliciousX](https://github.com/FeliciousX)
+- [chengweiv5](https://github.com/chengweiv5)
+- [stupied4ever](https://github.com/stupied4ever)
+- [ryoon](https://github.com/ryoon)
+- [alanmoo](https://github.com/alanmoo)
+- [pjgrizel](https://github.com/pjgrizel)
+- [brunoqc](https://github.com/brunoqc)
+- [samogot](https://github.com/samogot)
+- [hauschke](https://github.com/hauschke)
+- [olivierperes](https://github.com/olivierperes)
+- [CyrilTerets](https://github.com/CyrilTerets)
+- [yumenohosi](https://github.com/yumenohosi)
+- [Compaurum](https://github.com/Compaurum)
+- [loafoe](https://github.com/loafoe)
+- [apheleia](https://github.com/apheleia)
+- [usmanarif](https://github.com/usmanarif)
+
 ## Release v2.2.0
 
-Expected release date: 2016-04-16
+Release date: 2016-04-16
 
 ### Security Update
 
