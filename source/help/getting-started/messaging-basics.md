@@ -17,7 +17,7 @@ _____
 
 Learn more about:
 - [Composing Messages and Replies](http://docs.mattermost.com/help/messaging/sending-messages.html)
-- [Reading Messages](http://docs.mattermost.com/help/messaging/reading-messages.html)
 - [Mentioning Teammates](http://docs.mattermost.com/help/messaging/mentioning-teammates.html)
 - [Formatting Messages using Markdown](http://docs.mattermost.com/help/messaging/formatting-text.html)
 - [Attaching Files](http://docs.mattermost.com/help/messaging/attaching-files.html)
+- [Executing Commands](http://docs.mattermost.com/help/messaging/executing-commands.html)
