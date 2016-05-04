@@ -99,7 +99,7 @@ and
 
 ## Emojis  
 
-Emoji provided free by [Emoji One](http://emojione.com/). Check out a full list of emojis [here](http://emoji.codes/).
+Open the emoji autocomplete by typing `:`. A full list of emojis can be found [here](http://www.emoji-cheat-sheet.com/).
 
 ```
 :smile: :+1: :sheep:
