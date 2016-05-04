@@ -1,7 +1,9 @@
 ## Team Settings  
 ___ 
 
-The Team Settings menu offers Team Administrators, Team Owners and System Administrators the ability to adjust settings applied to a specific team. 
+This documentation refers to Mattermost v3.0. For v2.2, see [archived documentation](http://docs.mattermost.com/archives/docs-v2.2.html#team-settings).
+
+The Team Settings menu offers Team Administrators and System Administrators the ability to adjust settings applied to a specific team. 
 
 The following settings are found in a Team Site from the **Three-Dot** menu at the top of the left sidebar under **Team Settings**. 
 
@@ -13,31 +15,9 @@ General settings under the **Team Settings** > **General** configure how a team 
 
 Your **Team Name** is displayed on the sign-in page, and in the top of the left-hand sidebar for your team. 
 
-#### Allow anyone to sign-up from login page
+#### Allow anyone to join this team (*Available May 16th*)
 
-Setting this option to **Yes** shows a link to the account creation page on the sign-in page of this team. 
-
-Team Administrators would set this to **Yes** when they:  
- 1. Operate on a closed network and want to make sign-up easy.  
- 2. Operate on the open internet with sign-up restricted to specific domains, and want to allow easy sign-up from users with email addresses. Note: System Administrators can restrict sign-up to specific domains via the System Console.  
- 3. Operate on the open internet and want to allow anyone to sign-up.
-
-Team Administrators would set this to **No** when they:  
- 1. Operate on the open internet and want a small, private team that is email-invite-only.
-
-#### Include this team in the Team Directory
-
-Setting this option to **Yes** includes the Team Name on the Home Page and a link to this team's sign-in page. 
-
-Team Administrators would set this to **Yes** when they:  
- 1. Operate on a closed network and want to make it easy to discover their team from the Home Page of the Mattermost server.
- 2. Operate on the open internet with sign-up restricted to specific domains, and want to allow easy sign-up from users with email addresses. Note: System Administrators can restrict sign-up to specific domains via the System Console.  
- 3. Operate on the open internet and want to allow anyone to sign-up to their team from the Home Page of the Mattermost server.
-
-Team Administrators would set this to **No** when they:  
- 1. Operate on the open internet and want a small, private team that is email-invite-only.
-
-System Administrators may choose to disable the Team Directory for their entire system by settings **System Console** > **Team Settings** > **Enable Team Directory** to false.
+After a user logs in to the site, they are shown a Team Selection page. Any team with **Allow anyone to join this team** option set to **Yes** will show up on this page under "Open teams you can join".
 
 #### Invite Code 
 
@@ -53,7 +33,7 @@ The Slack Import feature in Mattermost is in "Beta" and focus is on supporting m
 
 1. Generate a Slack "Export" file from **Slack > Team Settings > Import/Export Data > Export > Start Export**.  
 
-2. In Mattermost go to **Team Settings > Import > Import from Slack**. _Team Owner_ or _Team Administrator_ role is required to access this menu option.
+2. In Mattermost go to **Team Settings > Import > Import from Slack**. _Team Administrator_ or _System Administrator_ role is required to access this menu option.
 
 3. Click **Select file** to upload Slack export file and click **Import**.   
 
