@@ -26,7 +26,7 @@ Settings to configure your password, view access history, and view or logout of 
 #### Password
 You may change your password if you’ve logged in by email. If you are signing in using a single sign-on service, the password field is not editable, and you must access your SSO service’s account settings to update your password.
 
-#### Multi-Factor Authentication (Enterprise) 
+#### Multi-Factor Authentication (Enterprise - Available May 16th) 
 When this option is available you can requires a phone-based passcode in addition your password for sign-in. 
 
 To enable, download Google Authenticator from [iTunes](https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8) or [Google Play](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en) for your phone, then 
@@ -39,7 +39,7 @@ In future, you will be asked to enter a passcode from Google Authenticator in ad
 
 #### Sign-in Method 
 
-Allows user to switch between single-sign-on option, such as GitLab authentication, and email authentication. 
+Allows user to switch between a single-sign-on option, such as GitLab or LDAP authentication, and email authentication. 
 
 #### View Access History
 Access History displays a chronological list of the last 20 login and logout attempts, channel creations and deletions, account settings changes, or channel setting modifications made on your account. The details of the Session ID (unique identifier for each Mattermost browser session) and IP Address of the action is recorded for audit log purposes.
@@ -63,14 +63,7 @@ Email notifications are sent for mentions and direct messages after you’ve bee
 By default, you will receive mention notifications from your non-case sensitive username, mentioned @username and @channel. Customize the words that trigger mentions by typing them in the input box. This is useful if you want to be notified of all posts on a certain topic, for example, “marketing”.
 
 ## Integrations
-Settings to configure incoming and outgoing webhooks for your team.
-
-#### Incoming Webhooks
-Incoming webhooks from external integrations can post messages to Mattermost in public channels or private groups. Learn more about setting up incoming webhooks on our [documentation page](http://docs.mattermost.com/developer/webhooks-incoming.html).
-
-
-#### Outgoing Webhooks
-Outgoing webhooks use trigger words to fire new message events to external integrations. For security reasons, outgoing webhooks are only available in public channels. Learn more about setting up outgoing webhooks on our [documentation page](http://docs.mattermost.com/developer/webhooks-outgoing.html).
+[Integrations](http://docs.mattermost.com/help/settings/integration-settings.html) are moving out of Account Settings to their own page May 16th.
 
 ## Display
 Settings to configure clock and teammate name display preferences.
@@ -94,6 +87,9 @@ Choose a 12-hour or 24-hour time preference that appears on the time stamp for a
 #### Teammate Name Display
 Configure how names are displayed in Mattermost: nickname, username or full name.
 
+#### Channel Display Mode (*Available May 16th*)
+Select if the text in the center channel is fixed width and centered, or full width. 
+
 #### Language
 Select what language Mattermost displays in the user interface. Options include: 
 
@@ -113,3 +109,4 @@ If enabled, press **Enter** to insert a new line and **Ctrl + Enter** posts the 
 Turn on preview features to view them early, ahead of their official release:
 - **Show markdown preview option in message input box:** Turning this on will show a "Preview" option when typing in the text input box. Pressing "Preview" shows what the Markdown formatting in the message looks like before the message is sent.
 - **Show preview snippet of links below message:** Turning this on will show a preview snippet posted below links from select websites. 
+- **Show toggle for all embed previews** Turning this on shows an collapse/expand icon beside posts with image or link previews.
