@@ -125,11 +125,20 @@ Maximum number of users per team, including both active and inactive users.
 
 `true`: Ability to create new accounts is enabled via inviting new members or sharing the team invite link; `false`: the ability to create accounts is disabled. The create account button displays an error when trying to signup via an email invite or team invite link.
 
+**Enable Open Server** (`"EnableOpenServer": false`)  
+
+_Available in May 16, 2016 release_
+
+`true`: Users can sign up to the server from the root page without an invite. 
+`true`: Users can only sign up to the server if they receive an invite.
+
 **Restrict Creation To Domains** (`"RestrictCreationToDomains": ""`)    
 
 Teams and user accounts can only be created by a verified email from this list of comma-separated domains (e.g. "corp.mattermost.com, mattermost.org").
 
 **Restrict Team Names** (`"RestrictTeamNames": true`)  
+
+_Removed in May 16th, 2016 release_ 
 
 `true`: Newly created team names cannot contain the following restricted words: www, web, admin, support, notify, test, demo, mail, team, channel, internal, localhost, dockerhost, stag, post, cluster, api, oauth; `false`: Newly created team names are not restricted. 
 
@@ -235,7 +244,7 @@ Obtain this credential from the administrator setting up your email server.
 
 Location of SMTP email server.
 
-**SMTP Port** (``"SMTPPort": ""`)  
+**SMTP Port** (`"SMTPPort": ""`)  
 
 Port of SMTP email server.
 
@@ -271,6 +280,14 @@ To confirm push notifications are working, connect to the [Mattermost iOS App on
 Please review full documentation on [push Notifications and mobile applications](http://docs.mattermost.com/deployment/push.html) including guidance on compiling your own mobile apps and MPNS before deploying to production. 
 
 Note: The `http://push-test.mattermost.com` provided for testing push notifications prior to compiling your own service please make sure [to read about its limitations.](http://docs.mattermost.com/deployment/push.html#push-notifications-for-team-edition-users) 
+
+**Push Notification Contents** (`"PushNotificationContents": "generic"`)
+
+_Available May 16, 2016_  
+
+`generic`: Selecting "Send generic description with user and channel names" provides push notifications with generic messages, including names of users and channels but no specific details from the message text.  
+
+`full`: Selecting "Send full message snippet" sends excerpts from messages triggering notifications with specifics and may include confidential information sent in messages. If your Push Notification Service is outside your firewall, it is HIGHLY RECOMMENDED this option only be used with an "https" protocol to encrypt the connection.
 
 #### Troubleshooting Push Notifications 
 
@@ -501,7 +518,8 @@ The domain or IP address of the LDAP server.
 
 The port Mattermost will use to connect to the LDAP server. Default is 389.
 
-**Connection Security** (`"ConnectionSecurity": ""`)    
+**Connection Security** (`"ConnectionSecurity": ""`) 
+   
 _Available May 16, 2016_  
 
 The type of connection security Mattermost uses to connect to LDAP.      
@@ -520,6 +538,7 @@ The username used to perform the LDAP search. This should typically be an accoun
 Password of the user given in “Bind Username”.
 
 **User Filter** (`"UserFilter": ""`)  
+
 _Available May 16, 2016_  
 
 Optionally enter an LDAP Filter to use when searching for user objects (accepts [general syntax](http://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm)). Only the users selected by the query will be able to access Mattermost. For Active Directory, the query to filter out disabled users is `(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))`. 
@@ -531,6 +550,12 @@ The attribute in the LDAP server that will be used to populate the first name of
 **Last Name Attribute** (`"LastNameAttribute": ""`)  
 
 The attribute in the LDAP server that will be used to populate the last name of users in Mattermost.
+
+**Nickname Attribute** (`"NicknameAttribute": ""`)  
+
+_Available May 16, 2016_  
+
+(Optional) The attribute in the LDAP server that will be used to populate the nickname of users in Mattermost.
 
 **Email Attribute** (`"EmailAttribute": ""`)  
 
@@ -549,13 +574,36 @@ This is the attribute that will be used to create Mattermost accounts. It should
 This is also the value used to log in to Mattermost in the “LDAP Username” field on the sign in page. Normally this attribute is the same as the “Username Attribute” field above. If your team typically uses domain\username to sign in to other services with LDAP, you may choose to put domain\username in this field to maintain consistency between sites.
 
 **Skip Certificate Verification** (`"SkipCertificateVerification": false`)  
+
 _Available May 16, 2016_  
+
+(Optional) The attribute in the LDAP server that will be used to populate the nickname of users in Mattermost.
 
 `true`: Skips the certificate verification step for TLS or STARTTLS connections. Not recommended for production environments where TLS is required. For testing only.
 
 **Query Timeout (seconds)** (`"QueryTimeout": 60`)  
 
 The timeout value for queries to the LDAP server. Increase this value if you are getting timeout errors caused by a slow LDAP server.
+
+**Login Field Name** (`"LoginFieldName": ""`)
+
+_Available May 16, 2016_  
+
+The placeholder text that appears in the login field on the login page. Typically this would be whatever name is used to refer to LDAP credentials in your company, so it is recognizable to your users. Defaults to "LDAP Username".
+
+### Compliance Settings (Enterprise)  
+_Available May 16th, 2016 in the Enterprise version of Mattermost._
+
+Settings used to enable and configure Mattermost compliance reports. 
+
+**Enable Compliance** (`"Enable": false`)
+`true`: Compliance reporting is enabled in Mattermost; `false`: Compliance reporting is disabled. 
+
+**Compliance Directory Location** (`"Directory": "./data/"`)
+Sets the directory where compliance reports are stored. Defaults to "./data/". 
+
+**Compliance Directory Location** (`"EnableDaily": false`)
+`true`: Mattermost generates a daily compliance report; `false`: Daily reports are not generated. 
 
 ## Config.json settings not in System Console
 
