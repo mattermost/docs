@@ -1,12 +1,14 @@
 # Web Service
 
+*Note: This document refers to Mattermost v3.0. For previous versions, use api/v1.*
+
 This provides a basic overview of the Mattermost Web Service API. Drivers interfacing with this API are available in different languages. Current documentation focuses on the transport layer for the API and functional documentation will be developed next.  
 
 All examples assume there is a Mattermost instance running at http://localhost:8065.
 
 ## Schema
 
-All API access is done through `yourdomain.com/api/v1/`, with all data being sent and received as JSON.
+All API access is done through `yourdomain.com/api/v3/`, with all data being sent and received as JSON.
 
 
 ## Authentication
@@ -15,10 +17,10 @@ The majority of the Mattermost API involves interacting with teams. Therefore, m
 
 ##### Session Token
 
-Make an HTTP POST to `yourdomain.com/api/v1/users/login` with a JSON body indicating the `name` of the team, the user's `email` and `password`.
+Make an HTTP POST to `yourdomain.com/api/v3/users/login` with a JSON body indicating the `name` of the team, the user's `email` and `password`.
 
 ```
-curl -i -d '{"name":"exampleteam","email":"someone@nowhere.com","password":"thisisabadpassword"}' http://localhost:8065/api/v1/users/login
+curl -i -d '{"name":"exampleteam","email":"someone@nowhere.com","password":"thisisabadpassword"}' http://localhost:8065/api/v3/users/login
 ```
 
 If successful, the response will contain a `Token` header and a User object in the body.
@@ -42,7 +44,7 @@ Content-Type: application/json; charset=utf-8
 Include the `Token` as part of the `Authentication` header on your future API requests with the `Bearer` method.
 
 ```
-curl -i -H 'Authorization: Bearer hyr5dmb1mbb49c44qmx4whniso' http://localhost:8065/api/v1/users/me
+curl -i -H 'Authorization: Bearer hyr5dmb1mbb49c44qmx4whniso' http://localhost:8065/api/v3/users/me
 ```
 
 That's it! You should now be able to access the API as the user you logged in as.
