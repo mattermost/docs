@@ -91,7 +91,7 @@ Here is the full process:
  
 3. The APNS or GCM service confirms that the message from the Mattermost Push Notification Service is authorized for the target mobile application and forwards the message to the app to be displayed. 
 
-Confirming HPNS is properly configured
+Confirming HPNS push notifications are properly configured
 ``````
 
 To setup HPNS please follow the following steps: 
@@ -126,5 +126,15 @@ To setup HPNS please follow the following steps:
          - If the log message does not appear, it means no mobile push notification was sent to "Account A". Please repeat step 2 and double check each step. 
          
 4. After your issue is resolved, go to **System Console** > **Logs Settings** > **File Log Level** and select **ERROR** to switch your logging detail level to Errors Only, instead of DEBUG, in order to conserve disk space. 
+
+Confirming TPNS push notifications are properly configured
+``````
+
+To setup TPNS please [follow the instructions to confirm HPNS is correctly configured](http://docs.mattermost.com/deployment/push.html#confirming-hpns-is-properly-configured) with the following changes: 
+
+1. Omit step 1.1, as there is no need to install Enterprise Edition.
+2. In step 1.2, select "User iOS and Android apps on iTunes and Google Play with TPNS"
+
+The same instructions should then verify the functionality of TPNS.
 
 .. note::  Mobile push notifications currently trigger on the same events as email notifications. The option to trigger mobile push notifications `based on mentions <https://mattermost.uservoice.com/forums/306457-general/suggestions/13609332-add-option-to-trigger-push-notifications-on-mentio>`_ and `based on all desktop notifications <https://mattermost.uservoice.com/forums/306457-general/suggestions/13608870-add-option-to-trigger-push-notifications-on-same-e>`_ are feature candidate for a future release. 
