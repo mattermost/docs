@@ -4,7 +4,7 @@ The below diagram illustrates an on-premises deployment of Mattermost with optio
 
 ![image](../images/network.PNG)
 
-[View Mattermost Network Diagram](../images/network.PNG)
+[View Mattermost Network Diagram](http://docs.mattermost.com/_images/network.PNG)
 
 Note: GitLab Mattermost deployment is [documented separately](http://doc.gitlab.com/omnibus/gitlab-mattermost/) and not included below.
 

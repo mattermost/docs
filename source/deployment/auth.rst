@@ -5,7 +5,7 @@ Multi-Factor Authentication (Enterprise)
 
 For increased security, Mattermost Enterprise Edition offers the option to require a phone-based passcode, in addition to email-password or Active Directory/LDAP authentication, to sign in to the Mattermost server. 
 
-Supported phones include iOS, Android, Blackberry and Windows Phone devices that are able to install `Google Authenticator <https://en.wikipedia.org/wiki/Google_Authenticator>`_. Other than requiring internet access to download and install Google Authenticator, the phone used for Mattermost MFA does not require internet access. 
+Supported phones include iOS, Android, Blackberry and Windows Phone devices that are able to install `Google Authenticator <https://support.google.com/accounts/answer/1066447?hl=en>`_. Other than requiring internet access to download and install Google Authenticator, the phone used for Mattermost MFA does not require internet access.
 
 Enabling MFA
 ------
