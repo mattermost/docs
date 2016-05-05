@@ -26,7 +26,7 @@ Follow these steps to configure Mattermost to use GitLab as a single-sign-on (SS
 
 6. Restart your Mattermost server to see the changes take effect.
 
-You can connect Mattermost to [Active Directory / LDAP using GitLab single-sign-on](http://doc.gitlab.com/ee/integration/ldap.html).
+You can connect Mattermost to [Active Directory / LDAP using GitLab single-sign-on](http://doc.gitlab.com/ee/administration/auth/ldap.html).
 
 ## Unofficial Single-Sign-On
 
@@ -53,7 +53,7 @@ Follow these steps to configure Mattermost to use Github as an unofficial single
 
 6. Restart your Mattermost server to see the changes take effect.
 
-7. Tell the users to set their public email for GitHub at the [public profile page](https://github.com/settings/profile). Mattermost uses the email to create account.
+7. Tell the users to set their public email for GitHub at the [public profile page](https://github.com/settings/emails). Mattermost uses the email to create account.
 
 ### GitHub Enterprise (unofficial)
 
