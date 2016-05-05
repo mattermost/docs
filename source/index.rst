@@ -13,12 +13,15 @@ The platform lets users share messages and files across PCs, phones and tablets 
 
 **Mattermost Enterprise Edition** is a commercial enteprise messaging solution offering advanced features including integration with corporate directories, compliance and auditing support, and sophisticated configurations for horizontal and multi-region scaling. More information is available by `contacting Mattermost, Inc.`_
 
+Read more about the `Mattermost product direction online.`_
+
 This site offers documentation on User Help, Installation, Deployment, Administration, Development and Integrations.
 
 -----
 
 .. _`mattermost.org/download`: http://www.mattermost.org/download/
 .. _contacting Mattermost, Inc.: https://about.mattermost.com/contact/
+.. _Mattermost product direction online.: https://about.mattermost.com/direction/
 .. toctree::
    :maxdepth: 1
    :caption: Getting Started
