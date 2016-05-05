@@ -3,6 +3,12 @@
 Enterprise Edition Installation
 ===============================
 
+Installing a New License Key
+----------------------
+
+See `Configuration Settings <../administration/config-settings.md>`__
+
+
 To unlock the features of Enterprise Edition:
 
 1. Install the latest version of `Mattermost Team Edition from any
@@ -17,3 +23,15 @@ To unlock the features of Enterprise Edition:
 The **Edition** and **License** sections on the page should update to
 confirm your system has been updated to the commercial Enterprise
 Edition version.
+
+
+Change a License Key
+----------------------
+
+To change an existing license key on an Enterprise Edition server to a new license key:
+
+1. Go to the **System Console** > **OTHER** > **Edition and License** > **License Key** and click "Remove Enterprise License and Downgrade Server". This clears the license from the server and refreshes the System Console. 
+2. Go to the **System Console** > **OTHER** > **Edition and License** > **License Key** and upload the new license key file.
+   
+The **Edition** and **License** sections on the page should update to show the capabilities of your new license key. 
+
