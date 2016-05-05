@@ -240,6 +240,10 @@ header .header__links li a {
 	padding-left: 3em;
 }
 
+.wy-menu-vertical li.toctree-l2:first-child a {
+	margin-top: 4px;
+}
+
 .wy-menu-vertical li.toctree-l2 li.toctree-l3 > a .toctree-expand {
 	display: none;
 }
@@ -272,7 +276,7 @@ header .header__links li a {
 .wy-menu-vertical li.toctree-l2 > a {
 	border: none;
 	color: #777;
-	margin: 5px 0;
+	margin: 12px 0 3px;
 	height: 33px;
 	font-weight: bold;
 	background: #E4E4E4 !important;
@@ -298,6 +302,10 @@ header .header__links li a {
 	padding-left: 2.4em;
 }
 
+.wy-menu-vertical li.on a span.toctree-expand, .wy-menu-vertical li.current>a span.toctree-expand {
+	margin-top: 1px;
+}
+
 .wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a.current {
 	border: none;
 	background: transparent;
@@ -305,6 +313,7 @@ header .header__links li a {
 
 .wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a {
 	padding-left: 1.5em;
+	margin: 0;
 }
 
 .wy-menu-vertical li.current a {
