@@ -4,8 +4,9 @@ $(document).ready(function(){
 		$(this).next().slideToggle();
 	});
 
-	if($('.wy-menu-vertical li.current>a').length){
-		var sidebarScrollPosition = $('.wy-menu-vertical li.current>a').offset().top;
+	if($('.wy-menu-vertical li.toctree-l3.current>a').length){
+		var sidebarScrollPosition = $('.wy-menu-vertical li.toctree-l3.current>a').offset().top;
+		console.log(sidebarScrollPosition);
 		$('.wy-side-scroll').scrollTop(sidebarScrollPosition-120);
 	}
 
