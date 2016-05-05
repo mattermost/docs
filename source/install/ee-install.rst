@@ -25,7 +25,7 @@ confirm your system has been updated to the commercial Enterprise
 Edition version.
 
 
-Change a License Key
+Changing a License Key
 ----------------------
 
 To change an existing license key on an Enterprise Edition server to a new license key:
