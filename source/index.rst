@@ -9,9 +9,9 @@ Mattermost is modern communication behind your firewall.
 
 The platform lets users share messages and files across PCs, phones and tablets with continuous archiving and instant search, and supports notifications and integrations with your existing tools.
 
-**Mattermost Team Edition** is an open source, self-hosted application offering "All your team communication in one place, easy-to-use, searchable, and accessible anywhere". New releases available monthly under an MIT license from `mattermost.org/download`_.
+**Mattermost Team Edition** is an open source, self-hosted alternative to propretiary SaaS messaging. Mattermost brings all your team communication into one place, making it searchable and accessible anywhere. Deploys as single Linux binary on MySQL or PostgreSQL under an MIT license from `mattermost.org/download`_.
 
-**Mattermost Enterprise Edition** is a pre-released commercial version of Mattermost offering additional features for large organizations including enterprise authentication to systems like Active Directory, compliance and auditing support, and sophisticated configurations for high availability services. More information is available by `contacting Mattermost, Inc.`_
+**Mattermost Enterprise Edition** is a commercial enteprise messaging solution offering advanced features including integration with corporate directories, compliance and auditing support, and sophisticated configurations for horizontal and multi-region scaling. More information is available by `contacting Mattermost, Inc.`_
 
 This site offers documentation on User Help, Installation, Deployment, Administration, Development and Integrations.
 
