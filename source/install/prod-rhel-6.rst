@@ -102,7 +102,7 @@ Set up Mattermost Server
 3. Install Mattermost under ``/opt``
 
    -  Unzip the Mattermost Server by typing:
-   -  ``tar -xvzf mattermost.tar.gz``
+   -  ``tar -xvzf mattermost-team-X.X.X-linux-amd64.tar.gz``
    -  ``sudo mv mattermost /opt``
 
 4. Create the storage directory for files. We assume you will have
