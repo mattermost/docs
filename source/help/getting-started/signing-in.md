@@ -34,7 +34,7 @@ You can log out from the **Main Menu**, which is accessed by clicking the three 
 
 Your Mattermost teams can be accessed on iOS mobile devices by downloading the Mattermost App.
 
-1. Open the App Store on your Apple device running iOS 9.0 or later.
+1. Open the [App Store](https://geo.itunes.apple.com/us/app/mattermost/id984966508?mt=8) on your Apple device running iOS 9.0 or later.
 2. Search for "Mattermost" and click **GET** to download the App for free.
 3. Open Mattermost from your homescreen and input your team and account information to login:
     1. Enter Server URL: This is the web address you go to when you want to access Mattermost. You can find the Server URL by asking your System Admin or by looking at the address bar in a desktop browser tab with Mattermost open. It is in the form `https://domain.com/`.
@@ -44,7 +44,7 @@ Your Mattermost teams can be accessed on iOS mobile devices by downloading the M
 
 Your Mattermost teams can be accessed on Android mobile devices by downloading the Mattermost App.
 
-1. Open the Google Play Store on your Android device.
+1. Open the [Google Play Store](https://play.google.com/store/apps/details?id=com.mattermost.mattermost&hl=en) on your Android device.
 2. Search for "Mattermost" and click **INSTALL** to download the App for free.
 3. Open Mattermost from your homescreen and input your team and account information to login:
     1. Enter Server URL: This is the web address you go to when you want to access Mattermost. You can find the Server URL by asking your System Admin or by looking at the address bar in a desktop browser tab with Mattermost open. It is in the form `https://domain.com/`.
