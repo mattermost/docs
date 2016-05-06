@@ -39,3 +39,13 @@ Your Mattermost teams can be accessed on iOS mobile devices by downloading the M
 3. Open Mattermost from your homescreen and input your team and account information to login:
     1. Enter Server URL: This is the web address you go to when you want to access Mattermost. You can find the Server URL by asking your System Admin or by looking at the address bar in a desktop browser tab with Mattermost open. It is in the form `https://domain.com/`.
     2. Sign in to Mattermost: This is your account login information as decribed by one of the sign in methods above. 
+
+## Android Setup
+
+Your Mattermost teams can be accessed on Android mobile devices by downloading the Mattermost App.
+
+1. Open the Google Play Store on your Android device.
+2. Search for "Mattermost" and click **INSTALL** to download the App for free.
+3. Open Mattermost from your homescreen and input your team and account information to login:
+    1. Enter Server URL: This is the web address you go to when you want to access Mattermost. You can find the Server URL by asking your System Admin or by looking at the address bar in a desktop browser tab with Mattermost open. It is in the form `https://domain.com/`.
+    2. Sign in to Mattermost: This is your account login information as decribed by one of the sign in methods above. 
