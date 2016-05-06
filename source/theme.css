@@ -18,14 +18,27 @@ html, body {
 	max-width: 1000px;
 }
 
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3>a {
+	border: none;
+	background: #D0D0D0;
+}
+
+.wy-menu-vertical li.toctree-l2.current>a {
+	background: #E0E0E0;
+	border-color: #ddd;
+	border-top: none;
+}
+
+.wy-menu-vertical li.on a, .wy-menu-vertical li.current>a {
+	border-bottom: 1px solid #ddd;
+}
+
 .wy-menu-vertical p.caption {
-	color: #FFF;
-	border-bottom: 1px solid #444;
-	border-top: 1px solid #444;
+	color: #555;
+	font-weight: bold;
 	margin: 4px 0;
-    height: 33px;
-    font-weight: normal;
-    background: #444;
+	height: 33px;
+	background: #CACACA;
 }
 
 .wy-menu-vertical p.caption:first-child {
@@ -57,21 +70,42 @@ h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
 	font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
 }
 
+.wy-menu-vertical a {
+	color: #888;
+}
+
+.wy-menu-vertical li.current {
+	background: #ececec;
+}
+
+.wy-menu-vertical a:hover {
+	background-color: #E7EFF5;
+}
+
 .wy-menu-vertical {
-	top: 120px;
+	top: 130px;
 	position: relative;
 }
 
-.wy-side-nav-search {
-	margin-top: 60px;
+.wy-nav-side {
+	border-right: 1px solid #ddd;
+	background: #f9f9f9;
 }
 
-.wy-body-for-nav {
-	padding-top: 60px;
+.wy-side-nav-search {
+	margin-top: 70px;
 }
 
 .wy-side-nav-search .icon, .wy-side-nav-search .version {
 	display: none;
+}
+
+.wy-body-for-nav {
+	position: fixed;
+	width: 100%;
+	top: 70px;
+	height: 100%;
+	background: transparent;
 }
 
 .wy-side-nav-search input[type=text] {
@@ -79,11 +113,10 @@ h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
 }
 
 .wy-side-nav-search {
-	background: transparent;
+	background: #f9f9f9;
 	position: fixed;
-	background: #343131;
 	padding-bottom: 10px;
-	border-bottom: 1px solid #5D5D5D;
+	border-bottom: 1px solid #ddd;
 }
 
 header .links__icon {
@@ -125,10 +158,12 @@ header {
 }
 
 header .header__container {
-	line-height: 60px;
-	color: #fff;
-	background: #0072c6;
-	padding: 0 15px;
+	line-height: 67px;
+	height: 70px;
+	color: #444;
+	border-bottom: 1px solid #ddd;
+	background: #fff;
+	padding: 0 15px 0 20px;
 	overflow: hidden;
 }
 
@@ -152,13 +187,16 @@ header .header__links li {
 }
 
 header .header__links li a.active {
-	color: #FEE882;
+	color: #2e97e2;
+	border-color: #2e97e2;
 }
 
 header .header__links li a {
 	font-size: 15px;
 	padding: 0 1em;
 	color: inherit;
+	display: block;
+	border-top: 3px solid transparent;
 }
 
 @media (max-width: 768px){
