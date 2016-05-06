@@ -464,10 +464,10 @@ Finish Mattermost Server setup
    -  Set *Require Email Verification* to true
    -  Set *Feedback Name* to ``No-Reply``
    -  Set *Feedback Email* to ``mattermost@example.com``
-   -  Set *SMTP Username* to ``SMTP_USERNAME``
-   -  Set *SMTP Password* to ``SMTP_PASSWORD``
-   -  Set *SMTP Server* to ``SMTP_SERVER``
-   -  Set *SMTP Port* to ``SMTP_PORT``
+   -  Set *SMTP Username* to ``[SMTP USERNAME]``
+   -  Set *SMTP Password* to ``[SMTP PASSWORD]``
+   -  Set *SMTP Server* to ``email-smtp.us-east-1.amazonaws.com``
+   -  Set *SMTP Port* to ``465``
    -  Set *Connection Security* to ``TLS``
    -  Save the Settings
 
