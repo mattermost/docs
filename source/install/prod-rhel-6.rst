@@ -329,8 +329,8 @@ Finish Mattermost Server setup
    -  Set *Require Email Verification* to true
    -  Set *Feedback Name* to ``No-Reply``
    -  Set *Feedback Email* to ``mattermost@example.com``
-   -  Set *SMTP Username* to ``AFIADTOVDKDLGERR``
-   -  Set *SMTP Password* to ``DFKJoiweklsjdflkjOIGHLSDFJewiskdjf``
+   -  Set *SMTP Username* to ``[YOUR_SMTP_USERNAME]``
+   -  Set *SMTP Password* to ``[YOUR_SMTP_PASSWORD]``
    -  Set *SMTP Server* to ``email-smtp.us-east-1.amazonaws.com``
    -  Set *SMTP Port* to ``465``
    -  Set *Connection Security* to ``TLS``
