@@ -76,11 +76,11 @@ Sample SMTP Settings
 Amazon SES
 ^^^^^^
 
--  Set **SMTP Username** to **SMTP_USERNAME**
+-  Set **SMTP Username** to **[SMTP USERNAME]**
 -  Set **SMTP Password** to
-   **SMTP_PASSWORD**
--  Set **SMTP Server** to **SMTP_SERVER**
--  Set **SMTP Port** to **SMTP_PORT**
+   **[SMTP-PASSWORD]**
+-  Set **SMTP Server** to **email-smtp.us-east-1.amazonaws.com**
+-  Set **SMTP Port** to **465**
 -  Set **Connection Security** to **TLS**
 
 Postfix
