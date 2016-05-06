@@ -1,8 +1,10 @@
 # Enterprise Edition (pre-release)
 
-As of March 16th, 2016, Mattermost Enteprise Edition 2.1.0 is officially released and available by [contacting Mattermost to purchase a license key](https://about.mattermost.com/contact/).
+Mattermost Enteprise Edition was officially released March 16th, 2016, and is [available for purchase online.](https://about.mattermost.com/pricing/)
 
-- Pre-release versions `ENT-7`, `ENT-6`, `ENT-5`, and `ENT-4` can [upgrade directly](http://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition) to Mattermost Enterprise Edition 2.1.0. Users with earlier versions should contact their success manager for upgrade instructions. 
+The following instructions are for users of the Mattermost Enterprise Edition pre-release. 
+
+- Pre-release versions `ENT-7`, `ENT-6`, `ENT-5`, and `ENT-4` can [upgrade directly](http://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition) to Mattermost Enterprise Edition 2.1.0, which [upgrades to newer versions](http://docs.mattermost.com/administration/upgrade.html#upgrading-enterprise-edition). Users with earlier versions should contact their success manager for upgrade instructions. 
 
 #### Installing Enterprise Edition 
 
