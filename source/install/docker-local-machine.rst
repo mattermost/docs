@@ -139,7 +139,7 @@ database):
 Configuration Settings
 ----------------------
 
-See `Configuration Settings <../administration/config-settings.md>`__
+See `Configuration Settings <http://docs.mattermost.com/administration/config-settings.html>`__
 documentation to customize your deployment.
 
 (Recommended) Enable Email
