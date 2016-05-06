@@ -6,7 +6,9 @@ The below diagram illustrates an on-premises deployment of Mattermost with optio
 
 [View Mattermost Network Diagram](http://docs.mattermost.com/_images/network.PNG)
 
-Note: GitLab Mattermost deployment is [documented separately](http://doc.gitlab.com/omnibus/gitlab-mattermost/) and not included below.
+Notes: 
+- Mattermost Enterprise Edition server in High Availability configuration available Q3, 2016.
+- GitLab Mattermost deployment is [documented separately](http://doc.gitlab.com/omnibus/gitlab-mattermost/) and not included below.
 
 ## Requirements and Installation Guides
 
