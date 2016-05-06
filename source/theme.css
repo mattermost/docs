@@ -10,6 +10,14 @@ html, body {
 	overflow: hidden;
 }
 
+footer {
+	padding-bottom: 30px;
+}
+
+.wy-nav-content {
+	padding-top: 6em;
+}
+
 .wy-table td, .rst-content table.docutils td, .rst-content table.field-list td {
 	vertical-align: top;
 }
@@ -63,7 +71,6 @@ html, body {
 .wy-nav-content-wrap {
 	height: 100%;
 	overflow: auto;
-	padding-bottom: 60px;
 }
 
 h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
@@ -101,9 +108,8 @@ h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
 }
 
 .wy-body-for-nav {
-	position: fixed;
+	position: relative;
 	width: 100%;
-	top: 70px;
 	height: 100%;
 	background: transparent;
 }
