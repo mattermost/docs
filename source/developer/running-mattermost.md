@@ -18,22 +18,14 @@ To run a test SMTP server: `sudo python -m smtpd -n -c DebuggingServer localhost
 
 ### Make Commands ###
 
-Here is a complete listing of all `make` commands:
+Here is a complete list of all `make` commands:
 
 - `start-docker`: Starts docker daemons
 - `stop-docker`: Stops docker daemons
 - `clean-docker`: Removes docker daemons
 - `check-style`: Runs `gofmt`
 - `test`: Runs server tests
-- `setup-run-client-tests`: Sets up client tests
-- `cleanup-run-client-tests`: Cleans up client tests
 - `test-client` Runs client tests
-- `.prebuild` Preparation for running go code
-- `prepare-enterprise` Preparation for enterprise build
-- `build-linux` Builds enterprise for Linux
-- `build-osx` Builds enterprise for Mac OSX
-- `build-windows` Builds enterprise for Windows
-- `build` Builds all enterprise versions
 - `package` Packages Mattermost
 - `run-server` Runs server
 - `run-client` Runs client
@@ -47,4 +39,3 @@ Here is a complete listing of all `make` commands:
 - `restart-client` Stops and starts client
 - `clean` Cleans docker, data, logs, and workspace
 - `nuke` Cleans all data
-- `setup-mac` Sets up mac
