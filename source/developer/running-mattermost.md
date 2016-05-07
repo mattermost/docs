@@ -20,9 +20,9 @@ To run a test SMTP server: `sudo python -m smtpd -n -c DebuggingServer localhost
 
 Here is a complete list of all `make` commands:
 
-- `start-docker`: Starts docker daemons
-- `stop-docker`: Stops docker daemons
-- `clean-docker`: Removes docker daemons
+- `start-docker`: Starts docker mattermost containers
+- `stop-docker`: Stops docker mattermost containers
+- `clean-docker`: Removes docker mattermost containers
 - `check-style`: Runs `gofmt`
 - `test`: Runs server tests
 - `test-client` Runs client tests
