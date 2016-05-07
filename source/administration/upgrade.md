@@ -2,7 +2,7 @@
 
 This guide explains how to upgrade your Mattermost deployment across versions and editions.
 
-### Upgrading from Team Edition 2.2, 2.1 or 2.0 to Team Edition 3.0.0
+### Upgrading to Team Edition 3.0.x from 2.x
 
 Mattermost 3.0 lets users maintain a single account across multiple teams on a Mattermost server. This means one set of credentials, one place to configure all account settings, and a more streamlined sign-up and team joining process.
 
