@@ -6,10 +6,10 @@ Troubleshooting
 Important notes
 ---------------
 
-Database
+**DO NOT Manipulate the Mattermost Database**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- DO NOT manipulate the database directly. Mattermost is designed to stop working if data integrity is compromised. 
+- Do not manipulate the database directly. Mattermost is designed to stop working if data integrity is compromised. 
 - Any manipulation of the database must be done using the built in command-line tools
 
 Troubleshooting Basics
@@ -17,13 +17,13 @@ Troubleshooting Basics
 
 If you're new to Mattermost or troubleshooting consider the following steps:
 
-- Start simple with the step-by-step install guides for your operating system
+- Start simple with the step-by-step install guides for your operating system.
 
-- Check the logs (``mattermost.log`` and NGNIX logs) for errors
+- Check the logs (``mattermost.log`` and NGNIX logs) for errors.
 
-- Search error messages, existing solutions can often work
+- Search error messages online (Google, Yahoo, Bing, or your favorite search engine), existing solutions can often work.
 
-- For more help, create a troubleshooting report at `Troubleshooting Forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__
+- For more help, create a troubleshooting report at `Troubleshooting Forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__.
 
 Common Issues
 -------------
@@ -33,19 +33,14 @@ Lost System Administrator account
 
 -  To reset the account, run from the command line:
    ``./platform -assign_role -team_name="yourteam" -email="you@example.com" -role="system_admin"``.
--  Log out and back in for the change to apply
+-  Log out and back in for the change to apply.
 
 Switching System Administrator Account to SSO Sign-in
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When Mattermost is initially set up, the first account created becomes
-the System Administrator account. This account will typically use email
-authentication to sign-in, since it is usually created before other
-sign-in methods are configured.
+When Mattermost is initially set up, the first account created becomes the System Administrator account. This account will typically use email authentication to sign-in, since it is usually created before other sign-in methods are configured.
 
-After setting up SSO authentication, it is common for the System
-Administrator to want to turn off email sign-in so users will only have
-SSO as a sign-in option.
+After setting up SSO authentication, it is common for the System Administrator to want to turn off email sign-in so users will only have SSO as a sign-in option.
 
 Before doing this, the System Administrator needs to change their sign-in method to SSO by doing the following:
 
@@ -53,17 +48,12 @@ Before doing this, the System Administrator needs to change their sign-in method
 2. Go to Account Settings > Security > Sign-in Method 
 3. Click the "Switch" button for the sign in method you would like to use, and complete the process for switching sign-in method.
 
-The System Administrator can now turn off email sign-in and still access
-their account. (To avoid locking other existing users out of their
-accounts, it is recommended the System Administrator ask them to switch
-authentication methods as well.)
+The System Administrator can now turn off email sign-in and still access their account. (To avoid locking other existing users out of their accounts, it is recommended the System Administrator ask them to switch authentication methods as well.)
 
 Locked out of System Administrator account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If email sign-in was turned off before the System Administrator switched
-sign-in methods, sign up for a new account and promote it to System
-Administrator from the command line.
+If email sign-in was turned off before the System Administrator switched sign-in methods, sign up for a new account and promote it to System Administrator from the command line.
 
 Mattermost Error Messages
 -------------------------
@@ -82,11 +72,8 @@ The following is a list of common error messages and solutions:
 
 **Solution:**
 
-      1. Follow the `installation guide to set up your WebSocket port
-         properly <http://docs.mattermost.com/install/prod-ubuntu.html#set-up-nginx-server>`__.
-      2. Speak with the owner of any other proxies between your device and
-         the Mattermost server to ensure ``wss`` connections are passing
-         through without issue.
+      1. Follow the `installation guide to set up your WebSocket port properly <http://docs.mattermost.com/install/prod-ubuntu.html#set-up-nginx-server>`__.
+      2. Speak with the owner of any other proxies between your device and the Mattermost server to ensure ``wss`` connections are passing through without issue.
 
 If this issue is reported rarely, in some cases the issue comes from *intermittent* internet connectivity, where the initial load works, but the device then becomes disconnected from the internet and real time updates over the ``wss`` connection fail repeatedly and the error is displayed to check if the ``wss`` connection were misconfigured.
 
@@ -184,18 +171,8 @@ This error may appear in your ``/var/log/gitlab/mattermost/current`` if you're a
 
 To address this:
    1. Run ``platform -version`` to check your version of Mattermost
-   2. If your version of the Mattermost binary doesn't match the version
-      listed in the database error message, downgrade the version of the
-      Mattermost binary you are using by `following the manual upgrade
-      steps for
-      Mattermost <http://docs.mattermost.com/administration/upgrade.html>`__
-      and using the database schema version listed in the error messages
-      for the version you select in Step 1) iv).
-   3. Once Mattermost is working again, you can use the same upgrade
-      procedure to upgrade Mattermost version by version to your current
-      GitLab version. After this is done, GitLab automation should
-      continue to work for future upgrades, so long as you don't skip
-      versions.
+   2. If your version of the Mattermost binary doesn't match the version listed in the database error message, downgrade the version of the Mattermost binary you are using by `following the manual upgrade steps for Mattermost <http://docs.mattermost.com/administration/upgrade.html>`__ and using the database schema version listed in the error messages for the version you select in Step 1) iv).
+   3. Once Mattermost is working again, you can use the same upgrade procedure to upgrade Mattermost version by version to your current GitLab version. After this is done, GitLab automation should continue to work for future upgrades, so long as you don't skip versions.
 
 ``panic: Error decoding config file=/opt/mattermost/config/config.json, err=invalid character '"' after object key:value pair``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
