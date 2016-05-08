@@ -14,6 +14,11 @@ footer {
 	padding-bottom: 30px;
 }
 
+.rst-content tt.literal, .rst-content tt.literal, .rst-content code.literal {
+	color: #151515;
+	background: #EEEEEE;
+}
+
 .wy-nav-content {
 	padding-top: 6em;
 }
