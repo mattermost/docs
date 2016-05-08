@@ -159,12 +159,12 @@ Set up Mattermost Server
    -  You can also stop the process by running the command
       ``sudo stop mattermost``, but we will skip this step for now.
 
-Set up Nginx Server
+Set up NGINX Server
 -------------------
 
 1. For the purposes of this guide we will assume this server has an IP
    address of 10.10.10.3
-2. We use Nginx for proxying request to the Mattermost Server. The main
+2. We use NGINX for proxying request to the Mattermost Server. The main
    benefits are:
 
    -  SSL termination
@@ -172,24 +172,24 @@ Set up Nginx Server
    -  Port mapping :80 to :8065
    -  Standard request logs
 
-3. Install Nginx on Ubuntu with
+3. Install NGINX on Ubuntu with
 
    -  ``sudo apt-get install nginx``
 
-4. Verify Nginx is running
+4. Verify NGINX is running
 
    -  ``curl http://10.10.10.3``
    -  You should see a *Welcome to nginx!* page
 
-5. You can manage Nginx with the following commands
+5. You can manage NGINX with the following commands
 
    -  ``sudo service nginx stop``
    -  ``sudo service nginx start``
    -  ``sudo service nginx restart``
 
 6. Map a FQDN (fully qualified domain name) like
-   **mattermost.example.com** to point to the Nginx server.
-7. Configure Nginx to proxy connections from the internet to the
+   **mattermost.example.com** to point to the NGINX server.
+7. Configure NGINX to proxy connections from the internet to the
    Mattermost Server
 
    -  Create a configuration for Mattermost
@@ -220,13 +220,13 @@ Set up Nginx Server
    * ``` sudo rm /etc/nginx/sites-enabled/default```
    * Link the mattermost config by typing:
    * ```sudo ln -s /etc/nginx/sites-available/mattermost /etc/nginx/sites-enabled/mattermost```
-   * Restart Nginx by typing:
+   * Restart NGINX by typing:
    * ``` sudo service nginx restart```
    * Verify you can see Mattermost thru the proxy by typing:
    * ``` curl http://localhost```
    * You should see a page titles *Mattermost - Signup*
 
-Set up Nginx with SSL (Recommended)
+Set up NGINX with SSL (Recommended)
 -----------------------------------
 
 1. You can use a free and an open certificate security like let's
@@ -246,7 +246,7 @@ Set up Nginx with SSL (Recommended)
    you will have to give your domain name
 4. You can find your certificate in /etc/letsencrypt/live
 5. Modify the file at ``/etc/nginx/sites-available/mattermost`` and add
-   the following lines: 
+   the following lines:
 
   ::
 
@@ -255,7 +255,7 @@ Set up Nginx with SSL (Recommended)
          server_name    mattermost.example.com;
          return         301 https://$server_name$request_uri;
       }
-      
+
       server {
          listen 443 ssl;
          server_name mattermost.example.com;
@@ -286,9 +286,9 @@ Set up Nginx with SSL (Recommended)
 
 
 
-6. Be sure to restart nginx   
-  * ``\ sudo service nginx start`` 
-7. Add the following line to cron so the cert will renew every month   
+6. Be sure to restart nginx
+  * ``\ sudo service nginx start``
+7. Add the following line to cron so the cert will renew every month
   * ``crontab -e``
   * ``@monthly /home/ubuntu/letsencrypt/letsencrypt-auto certonly --reinstall -d yourdomainname && sudo service nginx reload``
 

@@ -154,10 +154,10 @@ Set up Mattermost Server
    -  ``sudo touch /etc/systemd/system/mattermost.service``
    -  ``sudo vi /etc/systemd/system/mattermost.service``
    -  Copy the following lines into
-      ``/etc/systemd/system/mattermost.service`` 
+      ``/etc/systemd/system/mattermost.service``
 
       ::
-      
+
           [Unit]
           Description=Mattermost
           After=syslog.target network.target postgresql-9.4.service
@@ -178,12 +178,12 @@ Set up Mattermost Server
    * ``sudo chkconfig mattermost on``
    * Start server on reboot ``sudo systemctl enable mattermost.service``
 
-Set up Nginx Server
+Set up NGINX Server
 -------------------
 
 1. For the purposes of this guide we will assume this server has an IP
    address of ``10.10.10.3``
-2. We use Nginx for proxying request to the Mattermost Server. The main
+2. We use NGINX for proxying request to the Mattermost Server. The main
    benefits are:
 
    -  SSL termination
@@ -191,7 +191,7 @@ Set up Nginx Server
    -  Port mapping :80 to :8065
    -  Standard request logs
 
-3. Install Nginx on RHEL with
+3. Install NGINX on RHEL with
 
    -  ``sudo vi /etc/yum.repos.d/nginx.repo``
    -  Copy the below into the file
@@ -208,14 +208,14 @@ Set up Nginx Server
    -  ``sudo service nginx start``
    -  ``sudo chkconfig nginx on``
 
-4. Verify Nginx is running
+4. Verify NGINX is running
 
    -  ``curl http://10.10.10.3``
    -  You should see a *Welcome to nginx!* page
 
 5. Map a FQDN (fully qualified domain name) like
-   **mattermost.example.com** to point to the Nginx server.
-6. Configure Nginx to proxy connections from the internet to the
+   **mattermost.example.com** to point to the NGINX server.
+6. Configure NGINX to proxy connections from the internet to the
    Mattermost Server
 
    -  Create a configuration for Mattermost
@@ -239,21 +239,21 @@ Set up Nginx Server
                proxy_set_header X-Frame-Options SAMEORIGIN;
                proxy_pass http://10.10.10.2:8065;
             }
-         } 
+         }
 
 
-   - Remove the existing file with: 
+   - Remove the existing file with:
    - ``sudo mv /etc/nginx/conf.d/default.conf/etc/nginx/conf.d/default.conf.bak``
-   - Restart Nginx by typing: 
+   - Restart NGINX by typing:
    - ``sudo service nginx restart``
-   - Verify you can see Mattermost thru the proxy by typing: 
+   - Verify you can see Mattermost thru the proxy by typing:
    - ``curl http://localhost``
-   - You should see a page titles *Mattermost - Signup* 
+   - You should see a page titles *Mattermost - Signup*
    - Not seeing the page?  Look for errors with ``sudo cat /var/log/audit/audit.log \| grep nginx \| grep denied``
    - **Optional** if you're running on the same server as the Mattermost server and see 502 errors you may need to run ``\ sudo setsebool -P httpd\_can\_network\_connect true\`` because SELinux is
      preventing the connection
 
-Set up Nginx with SSL (Recommended)
+Set up NGINX with SSL (Recommended)
 -----------------------------------
 
 1. You can use a free and an open certificate security like let's
@@ -273,7 +273,7 @@ Set up Nginx with SSL (Recommended)
    you will have to give your domain name
 4. You can find your certificate in /etc/letsencrypt/live
 5. Modify the file at ``/etc/nginx/sites-available/mattermost`` and add
-   the following lines: 
+   the following lines:
 
   ::
 
@@ -282,7 +282,7 @@ Set up Nginx with SSL (Recommended)
          server_name    mattermost.example.com;
          return         301 https://$server_name$request_uri;
       }
-      
+
       server {
          listen 443 ssl;
          server_name mattermost.example.com;
@@ -309,12 +309,12 @@ Set up Nginx with SSL (Recommended)
             proxy_set_header X-Frame-Options SAMEORIGIN;
             proxy_pass http://10.10.10.2:8065;
          }
-      } 
+      }
 
 
-6. Be sure to restart nginx   
-  * ``\ sudo service nginx start`` 
-7. Add the following line to cron so the cert will renew every month   
+6. Be sure to restart nginx
+  * ``\ sudo service nginx start``
+7. Add the following line to cron so the cert will renew every month
   * ``crontab -e``
   * ``@monthly /home/YOURUSERNAME/letsencrypt/letsencrypt-auto certonly --reinstall -d yourdomainname && sudo service nginx reload``
 
