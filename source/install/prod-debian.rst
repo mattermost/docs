@@ -292,7 +292,7 @@ non-Debian systems, such as Arch Linux. The unit file is as follows:
 
 ::
 
-    # cat /etc/systemd/system/mattermost.service 
+    # cat /etc/systemd/system/mattermost.service
     [Unit]
     Description=Mattermost
     After=network.target
@@ -309,12 +309,12 @@ non-Debian systems, such as Arch Linux. The unit file is as follows:
     # systemctl start mattermost
     # systemctl enable mattermost
 
-Set up Nginx Server
+Set up NGINX Server
 -------------------
 
 1. For the purposes of this guide we will assume this server has an IP
    address of 10.10.10.3
-2. We use Nginx for proxying request to the Mattermost Server. The main
+2. We use NGINX for proxying request to the Mattermost Server. The main
    benefits are:
 
    -  SSL termination
@@ -322,24 +322,24 @@ Set up Nginx Server
    -  Port mapping :80 to :8065
    -  Standard request logs
 
-3. Install Nginx on Debian with
+3. Install NGINX on Debian with
 
    -  ``sudo apt-get install nginx``
 
-4. Verify Nginx is running
+4. Verify NGINX is running
 
    -  ``curl http://10.10.10.3``
    -  You should see a *Welcome to nginx!* page
 
-5. You can manage Nginx with the following commands
+5. You can manage NGINX with the following commands
 
    -  ``sudo service nginx stop``
    -  ``sudo service nginx start``
    -  ``sudo service nginx restart``
 
 6. Map a FQDN (fully qualified domain name) like
-   **mattermost.example.com** to point to the Nginx server.
-7. Configure Nginx to proxy connections from the internet to the
+   **mattermost.example.com** to point to the NGINX server.
+7. Configure NGINX to proxy connections from the internet to the
    Mattermost Server
 
    -  Create a configuration for Mattermost
@@ -373,7 +373,7 @@ Set up Nginx Server
 
       -  ``sudo ln -s /etc/nginx/sites-available/mattermost /etc/nginx/sites-enabled/mattermost``
 
-   -  Restart Nginx by typing:
+   -  Restart NGINX by typing:
 
       -  ``sudo service nginx restart``
 
@@ -383,7 +383,7 @@ Set up Nginx Server
 
    -  You should see a page titles *Mattermost - Signup*
 
-Set up Nginx with SSL (Recommended)
+Set up NGINX with SSL (Recommended)
 -----------------------------------
 
 1. You can use a free and an open certificate security like let's
