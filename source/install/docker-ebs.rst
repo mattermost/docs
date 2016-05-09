@@ -25,8 +25,8 @@ contains other non-production configuration settings.
     c. Click **Next**.
 
 7.  For Application Source, select **Upload your own** and upload the
-    Dockerrun.aws.zip file from
-    https://github.com/mattermost/mattermost-docker/\ (select
+    Dockerrun.aws.json file from
+    https://raw.githubusercontent.com/mattermost/mattermost-docker/master/Dockerrun.aws.json\ (select
     version you'd like to use), then click **Next**.
 8.  Type an Environment Name and URL. Make sure the URL is available by
     clicking **Check availability**, then click **Next**.
