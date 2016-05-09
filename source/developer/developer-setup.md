@@ -155,3 +155,16 @@ Any issues? Please let us know on our forums at: http://forum.mattermost.org
     - `env GOOS=linux GOARCH=amd64 go install std`
 
 Any issues? Please let us know on our forums at: http://forum.mattermost.org
+
+## Developing Using PostgreSQL
+
+By default, development is done using a MySQL database. To switch your developement instance to use a PostgreSQL database, update the following settings in the `SqlSettings` section of your `config/config.json`
+```
+    "DriverName": "mysql",
+    "DataSource": "mmuser:mostest@tcp(dockerhost:3306)/mattermost_test?charset=utf8mb4,utf8",
+```
+to
+```
+    "DriverName": "postgres",
+    "DataSource": "postgres://mmuser:mostest@dockerhost:5432?sslmode=disable&connect_timeout=10",
+```
