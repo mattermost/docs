@@ -5,28 +5,27 @@ AWS Elastic Beanstalk Docker Setup
 
 The following instructions use Docker to install Mattermost in *Preview
 Mode* for exploring product functionality. This configuration should not
-be used in production, as it's using a known password string and
-contains other non-production configuration settings.
+be used in production.
 
 1.  From your `AWS
     console <https://console.aws.amazon.com/console/home>`__ select
     **Elastic Beanstalk** under the Compute section.
 2.  Select **Create New Application** from the top right.
 3.  Name your Elastic Beanstalk application and click **Next**,
-4.  Select **Create web server** on the New Enviroment page.
+4.  Select **Create web server** on the New Environment page.
 5.  If asked, select **Create an IAM role and instance profile**, then
     click **Next**.
-6.  On the Enviroment Type page,
+6.  On the Environment Type page,
 
-    a. Set Predefined Configuration to **Docker** under the generic
+    a. Set Predefined Configuration to **Multi-Continer Docker** under the generic
        heading in the drop-down list.
     b. Set Environment Type to **Single instance** in the drop-down
        list.
     c. Click **Next**.
 
 7.  For Application Source, select **Upload your own** and upload the
-    Dockerrun.aws.zip file from
-    https://github.com/mattermost/platform/tree/master/docker/\ (select
+    Dockerrun.aws.json file from
+    https://raw.githubusercontent.com/mattermost/mattermost-docker/master/Dockerrun.aws.json (select
     version you'd like to use), then click **Next**.
 8.  Type an Environment Name and URL. Make sure the URL is available by
     clicking **Check availability**, then click **Next**.
@@ -60,7 +59,7 @@ documentation to customize your deployment.
 (Recommended) Enable Email
 --------------------------
 
-The default single-container Docker instance for Mattermost is designed
+The default Docker instance for Mattermost is designed
 for product evaluation, and sets ``SendEmailNotifications=false`` so the
 product can function without enabling email. To see the product's full
 functionality, enabling SMTP email is recommended.

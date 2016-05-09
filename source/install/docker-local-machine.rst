@@ -5,16 +5,19 @@ Local Machine Setup and Upgrade
 
 The following instructions use Docker to install Mattermost in *Preview
 Mode* for exploring product functionality. This configuration should not
-be used in production, as it's using a known password string and
-contains other non-production configuration settings.
+be used in production. Knowledge of Docker and Docker-Compose is required
+to setup a production docker environments.
 
-One-line Docker Install
+Docker Install
 -----------------------
 
-| If you have Docker set up, Mattermost installs in one-line:
-| ``docker run --name mattermost-dev -d --publish 8065:80 mattermost/platform``
+| If you have Docker Compose set up, follow these instructions:
+| ``git clone https://github.com/mattermost/mattermost-docker.git``
+| ``cd mattermost-docker``
+| ``ln -s docker-compose-nossl.yml docker-compose.yml``
+| ``docker-compose up -d``
 
-Otherwise, see step-by-step available:
+Otherwise, see step-by-step docker setup available:
 
 Mac OSX
 -------
@@ -31,10 +34,6 @@ Mac OSX
 4. Run: ``docker-machine env dev`` and copy the export statements to
    your ~/.bash\_profile by running ``sudo nano ~/.bash_profile``. Then
    run: ``source ~/.bash_profile``
-5. Run:
-   ``docker run --name mattermost-dev -d --publish 8065:80 mattermost/platform``
-6. When docker is done fetching the image, open http://dockerhost:8065/
-   in your browser.
 
 Ubuntu
 ------
@@ -52,15 +51,6 @@ Ubuntu
        sudo service docker start
        newgrp docker
 
-2. Start docker container:
-
-   .. code:: bash
-
-       docker run --name mattermost-dev -d --publish 8065:80 mattermost/platform
-
-3. When docker is done fetching the image, open http://localhost:8065/
-   in your browser.
-
 Arch
 ----
 
@@ -74,68 +64,6 @@ Arch
        gpasswd -a <username> docker
        newgrp docker
 
-2. Start Docker container:
-
-   .. code:: bash
-
-       docker run --name mattermost-dev -d --publish 8065:80 mattermost/platform
-
-3. When Docker is done fetching the image, open http://localhost:8065/
-   in your browser.
-
-Additional Notes
-----------------
-
--  Instructions on how to update your Docker image are found below.
-
--  If you wish to remove mattermost-dev use:
-
-   .. code:: bash
-
-       docker stop mattermost-dev
-       docker rm -v mattermost-dev
-
--  If you wish to gain access to a shell on the container use:
-
-   .. code:: bash
-
-       docker exec -ti mattermost-dev /bin/bash
-
-Upgrading Mattermost
---------------------
-
-Docker
-~~~~~~
-
-To upgrade your Docker image to a preview of the latest stable release
-(NOTE: this will erase all data in the Docker container, including the
-database):
-
-1. Stop your Docker container by running:
-
-   .. code:: bash
-
-       docker stop mattermost-dev
-
-2. Delete your Docker container by running:
-
-   .. code:: bash
-
-       docker rm mattermost-dev
-
-3. Update your Docker image by running:
-
-   .. code:: bash
-
-       docker pull mattermost/platform
-
-4. Start your Docker container by running:
-
-   .. code:: bash
-
-       docker run --name mattermost-dev -d --publish 8065:80 mattermost/platform
-
-
 Configuration Settings
 ----------------------
 
@@ -145,7 +73,7 @@ documentation to customize your deployment.
 (Recommended) Enable Email
 -----
 
-The default single-container Docker instance for Mattermost is designed
+The default Docker instance for Mattermost is designed
 for product evaluation, and sets ``SendEmailNotifications=false`` so the
 product can function without enabling email. To see the product's full
 functionality, enabling SMTP email is recommended.
