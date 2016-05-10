@@ -93,11 +93,11 @@ Most small to medium Mattermost team deployments can be supported on a
 single server with the following specifications based on registered
 users:
 
--  250-500 users - 2 CPUs (2GHz or higher) with Hyper-Threading, 4GB
+-  250-500 users - 2 CPUs (2GHz or higher), 4GB
    RAM, and 45-90GB HDD storage
--  500-1,000 users - 4 CPUs (2.8GHz or higher) with Hyper-Threading, 8GB
+-  500-1,000 users - 4 CPUs (2.8GHz or higher), 8GB
    RAM, and 90-180GB HDD storage
--  1,000-2,000 users - 4-8 CPUs (2.8GHz or higher) with Hyper-Threading,
+-  1,000-2,000 users - 4-8 CPUs (2.8GHz or higher),
    16-32GB RAM, and 180-360GB HDD storage
 
 Notes:
