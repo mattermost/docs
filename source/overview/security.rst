@@ -10,11 +10,11 @@ Mattermost Enterprise Edition E20, E10, and Team Edition offer:
    - Ability to `self-host mobile applications <http://docs.mattermost.com/deployment/push.html#enterprise-app-store-eas>`_ through use of source code available for Mattermost iOS and Android apps.
 
 - End-to-end encryption
-   - Encrypted transient communications using TLS across the Mattermost system.
+   - Supports TLS encryption using AES-256 with 2048-bit RSA on all data transmissions across both LAN and internet.
    - Encrypted data at rest through compatibility with disk-level encryption on the Mattermost database server.
    
 - Centralized Security and Administration 
-   - Manage users, permissions and devices in a web-based UI accessible from any browser.
+   - Manage users, permissions and devices in a web-based UI.
    - Remotely revoke user sessions across mobile devices and native desktop apps.
 
 - Collaboration with the global security research community to continuously improve security
