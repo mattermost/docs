@@ -35,7 +35,7 @@ Mobile App Experience
 ^^^^^^^^^^^^^^^^^^^^^
 
 -  iPhone 4s and later with iOS 9+
--  Android devices with Android 4.40+
+-  Android devices with Android 4.4+
 
 Mobile Web Experience
 ^^^^^^^^^^^^^^^^^^^^^
