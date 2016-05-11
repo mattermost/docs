@@ -160,7 +160,6 @@ Version 3.0 uses a different database than version 2.0. A one-way change to the 
 ### Known Issues
 
 - “More” option under Direct Message list no longer shows count of team members not in your direct message list. 
-- Regression: Get Public Link downloads a file and does not produce a public link. 
 - File name tooltip stays open after clicking to download.
 - Unable to paste images into the text box on Firefox, Safari, and IE11.
 - Search results don't highlight properly for searches containing @username, non-latin characters, terms inside Markdown code blocks, or hashtags containing a dash
