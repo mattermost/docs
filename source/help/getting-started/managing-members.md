@@ -19,36 +19,38 @@ From the three dot **Main Menu** in the Mattermost header, select **Get Team Inv
 
 ## User Roles  
 
-There are four types of user roles with different permission levels in Mattermost: System Admins, Team Admins, Members and Inactive accounts. The following user roles are assigned from the **Manage Members** menu option in the team site main menu. 
+There are four types of user roles with different permission levels in Mattermost: System Admins, Team Admins, Members and Inactive accounts. To view a list of users on the team and what their roles are, Team Administrators can go to the three dot **Main Menu** and select **Manage Members**.  
 
 #### Member 
 
-This is the default role given to end users who join the system. Members have basic permissions to use the Mattermost team site.
-
-#### Inactive 
-
-This status is given to users whose accounts are marked inactive. These users can no longer log into the system. 
-
-Because Mattermost is designed as a system-of-record, there is not an option to delete users from the Mattermost system, as such an operation could compromise the integrity of message archives. 
-
-#### System Admin
-
-The System Administrator is typically a member of the IT staff and has the follow privileges: 
-
-- Access to the System Console from the main menu in any team site. 
-- Change any setting on the Mattermost server available in the System Console.
-- Promote and demote other users to and from the System Admin role.
-- This role also has all the privileges of the Team Administrator as described below
-
-The first user added to a newly installed Mattermost system is assigned the System Admin role. 
+This is the default role given to users when they join a team. Members have basic permissions on the Mattermost team.
 
 #### Team Admin 
 
-The Team Administrator is typically a non-technical end user and has the following privileges: 
+When a team is first created, the person who set it up is made a Team Administrator. It is a team specific role, meaning that someone can be a Team Admin for one team but only a Member on another team. Team Administrators have the following privileges: 
 
 - Access to the "Team Settings" menu from the team site main menu
 - Ability to change the team name and import data from Slack export files
-- Access to the "Manage Members" menu and change user roles to the levels of Team Administrator, Member and Inactive
+- Access to the "Manage Members" menu, where they can control whether team members are "Members" or "Team Administrators" 
 
+#### System Admin
 
+The first user added to a newly installed Mattermost system is assigned the System Admin role.
 
+The System Admin is typically a member of the IT staff and has all the privileges of a Team Admin, along with the following additional privileges: 
+
+- Access to the System Console from the main menu in any team site
+- Ability to change any setting on the Mattermost server available in the System Console
+- Ability to promote and demote other users to and from the System Admin role
+- Ability to make a user account Inactive and to reactivate an Inactive account
+ 
+
+#### Inactive 
+
+A System Administrator has the ability to make a user account Inactive by going to **System Console** > **Teams**, and selecting a team to manage. From their they can go to the **User** page for the team, and manage a user's role. 
+
+When "Inactive" is selected, the user will no longer be able to log into the system. 
+
+Because Mattermost is designed as a system-of-record, there is not an option to delete users from the Mattermost system, as such an operation could compromise the integrity of message archives. 
+
+An Inactive account can also be reactivated from the System Console.
