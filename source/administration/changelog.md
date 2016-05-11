@@ -1,21 +1,47 @@
 # Mattermost Changelog
 
+This changelog summarizes updates to Mattermost Team Edition, an open source team messaging solution released monthly under an MIT license, and Mattermost Enterprise Edition, a commercial enterprise messaging solution for large organizations.
+
 ## Release v3.0.0
 
-Release date: 2016-05-16
+Anticipated release date: 2016-05-16
 
 ### Security Update
 
-- Mattermost v3.0.0 contains multiple security updates. [Upgrading to Mattermost v3.0.0](LINK) is highly recommended. 
+- Mattermost v3.0.0 contains multiple security updates. [Upgrading to Mattermost v3.0.0](http://docs.mattermost.com/administration/upgrade.html#upgrading-to-team-edition-3-0-x-from-2-x) is highly recommended. 
 - Thanks to Yoni Ramon from the Tesla security team, Andreas Lindh and Uchida Ta for contributing security reports through the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/). 
+
+### Major Version Release 
+
+Mattermost 3.0 is a new major version of Mattermost with fundamental changes affecting Mattermost 2.x deployments. [An understanding of the upgrade process from 2.x to 3.0](http://www.mattermost.org/upgrading-to-mattermost-3-0/), including manual steps, is required to upgrade successfully. 
 
 ### Highlights 
 
-(Draft in progress)
+#### Unified Accounts
+
+- Users manage a single account across multiple teams
+- Users from different teams can share messages and files
+- Improved multi-team login and sign-up experience 
+
+#### Enterprise Edition Upgrades 
+
+- Added multi-factor authentication
+- Added tools for custom branding
+- Added multiple Active Directory/LDAP upgrades (TLS, filters, custom labels, nickname support)
+
+#### User Interface Upgrades
+- New Emoji set 
+- Added full width option for text display
+- New UI for managing webhooks and slash commands 
+
+#### iOS and Android mobile app improvements 
+- Added support for multiple teams
+- New option to include message snippets in push notifications 
+- Added auto-correct
 
 ### Languages 
 
-- Added Japanese translation for user interface (beta). 
+- Added Japanese translation for user interface. 
 
 ### Improvements 
 
