@@ -23,16 +23,16 @@ Mattermost 3.0 is a new major version of Mattermost with fundamental changes aff
 - Users from different teams can share messages and files
 - Improved multi-team login and sign-up experience 
 
-#### Enterprise Edition Upgrades 
+#### Enterprise Edition Security, Authentication and Branding Upgrades 
 
 - Added multi-factor authentication
-- Added tools for custom branding
 - Added multiple Active Directory/LDAP upgrades (TLS, filters, custom labels, nickname support)
+- Added tools for custom branding
 
 #### User Interface Upgrades
 - New Emoji set 
 - Added full width option for text display
-- New UI for managing webhooks and slash commands 
+- Improved UI for managing webhooks and slash commands 
 
 #### iOS and Android mobile app improvements 
 - Added support for multiple teams
