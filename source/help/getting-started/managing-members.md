@@ -5,6 +5,8 @@ ___
 
 If user creation is enabled by the System Admin, there are two methods to invite new members after team creation: sending direct invites and sharing the team invite link.
 
+If a user already has an account on the site but they are not on your team, you can also send them an invitation. If they are signed in, they will be automatically added to your team when they click the invitation link.
+
 #### Direct Invites  
 
 Direct invites are invitation emails sent from your teams server directly to the invited members email address. A link within the invitation email directs the users to an account creation page.
