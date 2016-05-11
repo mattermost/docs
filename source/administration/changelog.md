@@ -172,26 +172,79 @@ Version 3.0 uses a different database than version 2.0. A one-way change to the 
 
 ### Contributors 
 
-Many thanks to all our external contributors. In no particular order:
+Many thanks to all our contributors. In alphabetical order:
 
-- [rodrigocorsi2](https://github.com/rodrigocorsi2) 
-- [khoa-le](https://github.com/khoa-le)
+/platform
+- [alanmoo] (https://github.com/alanmoo)
+- [asaadmahmoodspin] (https://github.com/asaadmahmoodspin)
+- [augustohp] (https://github.com/augustohp)
+- [brunoqc] (https://github.com/brunoqc)
+- [chengweiv5] (https://github.com/chengweiv5)
+- [Compaurum] (https://github.com/Compaurum)
+- [coreyhulen] (https://github.com/coreyhulen)
+- [crspeller] (https://github.com/crspeller)
+- [CyrilTerets] (https://github.com/CyrilTerets)
+- [DavidLu1997] (https://github.com/DavidLu1997)
+- [enahum] (https://github.com/enahum)
 - [FeliciousX](https://github.com/FeliciousX)
-- [chengweiv5](https://github.com/chengweiv5)
-- [stupied4ever](https://github.com/stupied4ever)
-- [ryoon](https://github.com/ryoon)
-- [alanmoo](https://github.com/alanmoo)
-- [pjgrizel](https://github.com/pjgrizel)
-- [brunoqc](https://github.com/brunoqc)
-- [samogot](https://github.com/samogot)
-- [hauschke](https://github.com/hauschke)
-- [olivierperes](https://github.com/olivierperes)
-- [CyrilTerets](https://github.com/CyrilTerets)
-- [yumenohosi](https://github.com/yumenohosi)
-- [Compaurum](https://github.com/Compaurum)
+- [hauschke] (https://github.com/hauschke)
+- [hmhealey] (https://github.com/hmhealey)
+- [insin] (https://github.com/insin)
+- [it33] (https://github.com/it33)
+- [jwilander] (https://github.com/jwilander)
+- [khoa-le](https://github.com/khoa-le)
+- [lfbrock] (https://github.com/lfbrock)
 - [loafoe](https://github.com/loafoe)
-- [apheleia](https://github.com/apheleia)
-- [usmanarif](https://github.com/usmanarif)
+- [maruTA-bis5] (https://github.com/maruTA-bis5)
+- [moogle19] (https://github.com/moogle19)
+- [olivierperes] (https://github.com/olivierperes)
+- [pjgrizel] (https://github.com/pjgrizel)
+- [qcu] (https://github.com/qcu)
+- [rodrigocorsi2] (https://github.com/rodrigocorsi2)
+- [ryoon] (https://github.com/ryoon)
+- [samogot] (https://github.com/samogot)
+- [stupied4ever](https://github.com/stupied4ever)
+- [takashibagura] (https://github.com/takashibagura)
+- [usmanarif] (https://github.com/usmanarif)
+- [yumenohosi] (https://github.com/yumenohosi)
+
+/mattermost-docker
+- [npcode] (https://github.com/npcode)
+- [xcompass] (https://github.com/xcompass)
+- [it33] (https://github.com/it33)
+
+/ios
+- [coreyhulen] (https://github.com/coreyhulen)
+- [it33] (https://github.com/it33)
+
+/android
+- [arusahni] (https://github.com/arusahni)
+- [JohnMaguire] (https://github.com/JohnMaguire)
+- [lindy65] (https://github.com/lindy65)
+- [nicolas-raoul] (https://github.com/nicolas-raoul)
+- [ptersilie] (https://github.com/ptersilie)
+
+/desktop
+- [asaadmahmoodspin] (https://github.com/asaadmahmoodspin)
+- [it33] (https://github.com/it33)
+- [jeremycook] (https://github.com/jeremycook)
+- [lloeki] (https://github.com/lloeki)
+- [mgielda] (https://github.com/mgielda)
+- [yuya-oc] (https://github.com/yuya-oc)
+
+/docs
+- [ajerezr] (https://github.com/ajerezr)
+- [apheleia] (https://github.com/apheleia)
+- [asaadmahmoodspin] (https://github.com/asaadmahmoodspin)
+- [crspeller] (https://github.com/crspeller)
+- [DavidLu1997] (https://github.com/DavidLu1997)
+- [enahum] (https://github.com/enahum)
+- [esethna] (https://github.com/esethna)
+- [it33] (https://github.com/it33)
+- [lfbrock] (https://github.com/lfbrock)
+- [lindy65] (https://github.com/lindy65)
+- [pjgrizel] (https://github.com/pjgrizel)
+- [schemacs] (https://github.com/schemacs)
 
 ## Release v2.2.0
 
