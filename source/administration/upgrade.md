@@ -119,6 +119,8 @@ Locations of previously compiled builds.
 
 Stable builds of open source team communication platform compiled by Mattermost, Inc, available under an MIT license.
 
+- [Mattermost Team Edition v3.0.0](http://docs.mattermost.com/administration/changelog.html#release-v3-0-0)
+  - `https://releases.mattermost.com/3.0.0/mattermost-team-3.0.0-linux-amd64.tar.gz`
 - [Mattermost Team Edition v2.2.0](http://docs.mattermost.com/administration/changelog.html#release-v2-2-0)
   - `https://releases.mattermost.com/2.2.0/mattermost-team-2.2.0-linux-amd64.tar.gz`
 - [Mattermost Team Edition v2.1.0](http://docs.mattermost.com/administration/changelog.html#release-v2-1-0)
@@ -150,6 +152,8 @@ Stable builds of open source team communication platform compiled by Mattermost,
 
 Commercial software for self-hosted enterprise communication compiled by Mattermost, Inc. Requires paid subscription and valid license key for use.
 
+- [Mattermost Enterprise Edition v3.0.0](http://docs.mattermost.com/administration/changelog.html#release-v3-0-0)
+  - `https://releases.mattermost.com/3.0.0/mattermost-enterprise-3.0.0-linux-amd64.tar.gz`
 - [Mattermost Enterprise Edition v2.2.0](http://docs.mattermost.com/administration/changelog.html#release-v2-2-0)
   - `https://releases.mattermost.com/2.2.0/mattermost-enterprise-2.2.0-linux-amd64.tar.gz`
 - [Mattermost Enterprise Edition v2.1.0](http://docs.mattermost.com/administration/changelog.html#release-v2-1-0)
