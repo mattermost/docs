@@ -50,14 +50,13 @@ Once outgoing webhooks are enabled, you will be able to set one up through the M
 
 Once you have those, you can follow these steps to set up your webhook:
 
-1. Login to your Mattermost team site and go to **Main Menu** > **Integrations**
-2. Next to **Outgoing Webhooks** click **Edit**
-3. Under **Add a new outgoing webhook** select your options
+1. Login to your Mattermost team site and go to **Main Menu** > **Integrations** > **Outgoing Webhooks**
+2. Click **Add outgoing webhook**, and select your options
  1. Select a channel from the **Channel** dropdown to only report events from a certain channel (optional if Trigger Words selected)
  2. Enter comma separated words into **Trigger Words** to only report events from posts that start with one of those words (optional if **Channel** selected)
  3. Enter new line separated URLs that the post events will be sent too
-4. Click **Add** to add your webhook to the system
-5. Your new outgoing webhook will be displayed below with a **Token** that any external application that wants to listen to the webhook should ask for in it's instructions
+3. Click **Add** to add your webhook to the system
+4. Your new outgoing webhook will be displayed with a **Token** that any external application that wants to listen to the webhook should ask for in its instructions
 
 ### Creating Integrations using Outgoing Webhooks
 If you'd like to build your own integration that uses outgoing webhooks, you can follow these general guidelines:
