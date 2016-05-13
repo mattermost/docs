@@ -52,9 +52,8 @@ Custom slash commands are off by default, and can be enabled by the system admin
 ### Set Up a Custom Command
 Once slash commands are enabled, you will be able to set some up through the Mattermost UI. You can do so by following these steps:
 
-1. Login to your Mattermost team site and go to **Account Settings -> Integrations**
-2. Next to **Slash Commands** click **Edit**
-3. Under **Add a new command** select your options
+1. Login to your Mattermost team site and go to **Main Menu** > **Integrations** > **Slash Commands**
+2. Click **Add a new command**, and select your options
    1. Fill in **Command Trigger Word**, this will be the word that is your command
    2. Enter a **Request URL** that will be the endpoint Mattermost hits to reach your external application
    3. Select an HTTP **Request Method** from the dropdown
@@ -65,7 +64,7 @@ Once slash commands are enabled, you will be able to set some up through the Mat
    8. (Optional) Add an **Autocomplete Description** to help users understand your command
    9. (Optional) Type in a **Descriptive Label** to provide a bit more information about your command
 4. Click **Add** to add your command to the system
-5. Your new slash command will be displayed below with a **Token** that your external application should use to verify the request came from Mattermost
+5. Your new slash command will be displayed with a **Token** that your external application should use to verify the request came from Mattermost
 
 ### Creating Integrations with Commands
 If you'd like to build your own integration that uses slash commands, you can follow these general guidelines:
@@ -116,7 +115,7 @@ As mentioned above, Mattermost makes it easy to take integrations written for Sl
 2. JSON responses designed for Slack using `<>` to note the need to hyperlink a URL, such as ```{"text": "<http://www.mattermost.com/>"}```, are translated to the equivalent markdown in Mattermost and rendered the same as you would see in Slack
 3. Similiarly, responses designed for Slack using `|` within a `<>` to define linked text, such as ```{"text": "Click <http://www.mattermost.com/|here> for a link."}```, are also translated to the equivalent markdown in Mattermost and rendered the same as you would see in Slack
 
-#### Known Issues in v2.0
+#### Known Issues 
 
 - Conversion of Slack attachments and link conversion isn't working
 - Disabling slash commands from the system console only disables creation, not execution of user created slash commands
