@@ -107,9 +107,9 @@ Upgrading Mattermost
 Docker
 ~~~~~~
 
-To upgrade your Docker image to a preview of the latest stable release
-(NOTE: this will erase all data in the Docker container, including the
-database):
+To upgrade your Docker image to a preview of the latest stable release:
+
+.. warning:: This will erase all data in the Docker container, including the database.
 
 1. Stop your Docker container by running:
 
