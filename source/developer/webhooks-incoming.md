@@ -50,8 +50,8 @@ You can create a webhook integration to post into Mattermost channels and privat
 **Note: Incoming webhooks must be enabled. Only your Mattermost system administrator can enable incoming webhooks if they are currently disabled.**
 
 2. Create a Mattermost Incoming Webhook URL
- 1. Login to your Mattermost team site and go to **Account Settings -> Integrations**
- 2. Next to **Incoming Webhooks** click **Edit**
+ 1. Login to your Mattermost team site and go to **Account Settings** > **Integrations** > **Incoming Webhooks**
+ 2. Click **Add incoming webhook**
  3. Select the channel or private group to receive webhook payloads, then click **Add** to create the webhook
  4. To see your new webhook in action, try a curl command from your terminal or command-line to send a JSON string as the `payload` parameter in a HTTP POST request
      - Example:
