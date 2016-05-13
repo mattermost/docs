@@ -74,7 +74,6 @@ Authentication
 
 Files and Attachments
 - Added a preview for code files in the image viewer.
-- Added keyboard shortcut Control + U or Command + U to upload a file.
 
 Notifications 
 - Added the option to enable full snippets in push notifications.
@@ -159,15 +158,14 @@ Version 3.0 uses a different database than version 2.0. A one-way change to the 
 
 ### Known Issues
 
-- “More” option under Direct Message list no longer shows count of team members not in your direct message list. 
-- File name tooltip stays open after clicking to download.
-- Unable to paste images into the text box on Firefox, Safari, and IE11.
-- Search results don't highlight properly for searches containing @username, non-latin characters, terms inside Markdown code blocks, or hashtags containing a dash
+- “More” option under Direct Message list no longer shows count of team members not in your direct message list.
 - Emoji smileys ending with a letter at the end of a message do not auto-complete as expected.
 - Incorrect formatting when a new line is added directly after a list.
-- Syntax highlighting code block is missing the label for Apache, HTTP, NGINX, INI, and Latex 
 - Searching for a username or hashtag containing a dot now returns the correct results.
+- On Postgres databases, searching for websites, emails, and searching with quotations does not work properly.
 - Search term highlighting doesn't update when search terms change but return the same posts.
+- Search results don't highlight properly for searches containing @username, non-latin characters, terms inside Markdown code blocks, or hashtags containing a dash.
+- Custom brand image size isn’t properly limited on IE11.
 
 ### Contributors 
 
