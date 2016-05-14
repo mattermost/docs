@@ -158,6 +158,37 @@ Set up Mattermost Server
 
 8. Setup Mattermost to use the systemd init daemon which handles
    supervision of the Mattermost process
+   
+   **Set up systemd with a unit file**
+   
+   -  ``sudo touch /etc/systemd/system/mattermost.service``
+   -  ``sudo vi /etc/init.d/mattermost``
+   -  Copy the following lines into ``/etc/init.d/mattermost``
+
+      ::
+
+         [Unit]
+         Description=Mattermost is an open source, self-hosted Slack-alternative
+         After=syslog.target network.target
+         
+         [Service]
+         Type=simple
+         User=mattermost
+         Group=mattermost
+         ExecStart=/opt/mattermost/bin/platform
+         PrivateTmp=yes
+         WorkingDirectory=/opt/mattermost
+         Restart=always
+         RestartSec=30
+         
+         [Install]
+         WantedBy=multi-user.target
+   
+   - ``systemctl daemon-reload``
+   - ``systemctl enable mattermost``
+   - ``systemctl start mattermost``
+   
+   **Set up systemd with a legacy init script** (applies to Debian installations that are not using systemd)
 
    -  ``sudo touch /etc/init.d/mattermost``
    -  ``sudo vi /etc/init.d/mattermost``
@@ -283,31 +314,11 @@ Set up Mattermost Server
    -  Make sure that /etc/init.d/mattermost is executable
 
       -  ``sudo chmod +x /etc/init.d/mattermost``
+   
+   - ``systemctl daemon-reload``
+   - ``systemctl enable mattermost``
+   - ``systemctl start mattermost``
 
-9. On reboot, systemd will generate a unit file from the headers in this
-   init script and install it in ``/run/systemd/generator.late/``
-
-Note: This setup can also be done using a systemd unit, usable for
-non-Debian systems, such as Arch Linux. The unit file is as follows:
-
-::
-
-    # cat /etc/systemd/system/mattermost.service
-    [Unit]
-    Description=Mattermost
-    After=network.target
-
-    [Service]
-    User=mattermost
-    ExecStart=/home/mattermost/mattermost/bin/platform
-    WorkingDirectory=/home/mattermost/mattermost
-    Restart=always
-    RestartSec=30
-
-    [Install]
-    WantedBy=multi-user.target
-    # systemctl start mattermost
-    # systemctl enable mattermost
 
 Set up NGINX Server
 -------------------
