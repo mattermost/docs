@@ -65,7 +65,7 @@ Set up Database Server
 
 8.  You can exit out of PostgreSQL by typing:
 
-    -  ``postgre=# \q``
+    -  ``postgres=# \q``
 
 9.  You can exit the postgres account by typing:
 
