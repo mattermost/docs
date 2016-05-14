@@ -142,6 +142,11 @@ Set up Mattermost Server
       ``"DataSource": "postgres://mmuser:mmuser_password@10.10.10.1:5432/mattermost?sslmode=disable&connect_timeout=10"``
 
       -  Assuming a default IP address of 10.10.10.1
+   
+   -  ``config.json`` contains some configuration options that are relevant to the security of your mattermost instance.
+      Therefore you should make sure you changed all those options from the default configuration to something different.
+      This includes, but is not limited to, the following configuration options:
+      * ``PublicLinkSalt``, ``InviteSalt``, ``PasswordResetSalt``, ``AtRestEncryptKey``
 
    -  Optionally you may continue to edit configuration settings in
       ``config.json`` or use the System Console described in a later
