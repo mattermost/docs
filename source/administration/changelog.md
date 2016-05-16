@@ -59,6 +59,7 @@ User Interface
 - Switched to new emoji set.
 - Account Settings > Display option lets users set the channel view to full width.
 - Smoother overlay transition when opening sidebar on mobile.
+- Back and forward browser buttons can now move back and forward in channel history.
 
 Integrations
 - Moved webhooks and slash command settings to a new “Integrations” page.
