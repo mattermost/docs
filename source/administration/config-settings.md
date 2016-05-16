@@ -138,13 +138,19 @@ Teams and user accounts can only be created by a verified email from this list o
 
 **Restrict Team Names** (`"RestrictTeamNames": true`)  
 
-_Removed in May 16th, 2016 release_ 
-
 `true`: Newly created team names cannot contain the following restricted words: www, web, admin, support, notify, test, demo, mail, team, channel, internal, localhost, dockerhost, stag, post, cluster, api, oauth; `false`: Newly created team names are not restricted. 
 
 **Enable Team Directory** (`"EnableTeamListing": false`)  
 
+_Removed in May 16th, 2016 release_ 
+
 `true`: Teams that are configured to appear in the team directory will appear on the system main page. Teams can configure this setting from **Team Settings > Include this team in the Team Directory**; `false`: Team directory on the system main page is disabled.
+
+**Enable users to open Direct Message channels with:** (`"RestrictDirectMessage": "any"`)  
+
+Any user on the Mattermost server (`"any"`): The Direct Messages "More" menu has the option to open a Direct Message channel with any user on the server.  
+
+'Any member of the team' (`"team"`): The Direct Messages "More" menu only has the option to open a Direct Message channel with users on the current team.  If a user belongs to multiple teams, direct messages will still be received regardless of what team they are currently on.  
 
 **Enable Custom Branding** (`"EnableCustomBrand": false`)  Enterprise Edition
 
