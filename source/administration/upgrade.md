@@ -28,6 +28,7 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
       1. Copy the backed up version of `config.json` in place of the default `config.json`.
 6. Upgrade your database
       1. Run `./platform -upgrade_db_30` to upgrade your database from 2.x to 3.x
+         - You may need to run with `sudo -u linux_user_account ./platform -upgrade_db_30` if you've setup Mattermost to run under a different account.  This will ensure files under `./data/` have the correct permissions.
          - You will be asked `Have you performed a database backup? (YES/NO):` 
              - If you have not backed up your database, enter `NO` and then backup your database
              - If you have verified your database has been backed up, enter `YES`
