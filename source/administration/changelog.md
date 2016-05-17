@@ -2,13 +2,15 @@
 
 This changelog summarizes updates to [Mattermost Team Edition](http://www.mattermost.org/), an open source team messaging solution released monthly under an MIT license, and [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/), a commercial upgrade offering enterprise messaging for large organizations.
 
-## Release v3.0.0
+## Release v3.0.1
 
-Anticipated release date: 2016-05-16
+Release date: 2016-05-16
+
+Note: v3.0.1 fixes an error in GitLab SSO found in v3.0.0 and is considered the official 3.0 release.
 
 ### Security Update
 
-- Mattermost v3.0.0 contains multiple security updates. [Upgrading to Mattermost v3.0.0](http://docs.mattermost.com/administration/upgrade.html#upgrading-to-team-edition-3-0-x-from-2-x) is highly recommended. 
+- Mattermost v3.0.1 contains multiple security updates. [Upgrading to Mattermost v3.0.1](http://docs.mattermost.com/administration/upgrade.html#upgrading-to-team-edition-3-0-x-from-2-x) is highly recommended. 
 - Thanks to Yoni Ramon from the Tesla security team, Andreas Lindh and Uchida Ta for contributing security reports through the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/). 
 
 ### Major Version Release 
