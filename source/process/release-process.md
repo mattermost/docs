@@ -20,6 +20,7 @@ No pull requests for major features should be submitted to the current release a
 
 1. Logistics:
     - Post this checklist in Release channel 
+    - Begin posting Zero Bug Balance query daily
 2. PM:
     - Complete draft of Changelog with updates for latest feature additions, known issues, and contributors
     - Confirm the documentation checklist is up to date compared to the Changelog 
@@ -38,8 +39,8 @@ No pull requests for major features should be submitted to the current release a
     - Coordinate testing:  
         - Work with Ops to check the [Quality Gate](https://github.com/mattermost/process/blob/master/release/quality-gates.md) for feature complete  
         - Receive testing sign-off from feature area owners (i.e. PM/Dev either signs-off that their area is well tested, or flags potential quality issues that may exist)  
-        - Check that RC Testing Spreadsheet covers any changes or new features, and ensure core team has access permissions 
-        - Assign each area of the release testing spreadsheet to a team member  
+        - Check that RC Testing Spreadsheet covers any changes or new features, and that known issues are listed in the relevant tests
+        - Assign each area of the release testing spreadsheet to a team member and ensure core team has access permissions 
         - Queue an item for UX meeting to discuss worst UX bug  
         - Post in Reception alerting community of upcoming release and to ask about top issues on master ([See example](https://pre-release.mattermost.com/core/pl/pfpzwpi7wj8zzpmeih87cdt77r))  
 3. Dev:
@@ -135,7 +136,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
  
 ### F. (T-minus 2 working days) Release Build Cut
 
-The final release is cut. If an urgent and important issue needs to be addressed between major releases, a bug fix release (e.g. 1.1.1) may be created
+The final release is cut. If an urgent and important issue needs to be addressed between major releases, a bug fix release (e.g. 1.1.1) may be created.
 
 1. Logistics:
     - Post this checklist in Release channel
@@ -148,13 +149,24 @@ The final release is cut. If an urgent and important issue needs to be addressed
     - Update the mattermost.org/download page
     - Add the download links to http://docs.mattermost.com/administration/upgrade.html#version-archive
     - Contact owners of [community installers](http://www.mattermost.org/installation/) or submit [PRs](https://github.com/tommyvn/mattermost-heroku/commit/94f7c5c0c5d7d2672fb6d62b6a560b4b5c1b5131) to update install version number.
-    - Update the AMI links on mattermost.org/download and mattermost.org/installation  
     - Close final GitHub RC meta ticket  
 4. Marketing:
     - Finalize Mailchimp email blast
     - Finalize blog post for mattermost.org set timer for 06:00 PDT on first non-holiday weekday morning after release
     - Queue Tweet announcement
     - Find [GitLab release announcement merge request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests) and post proposal for [GitLab Mattermost update text](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests/1633/diffs#efdba966a222d7071509e0dd4f39de5c9d7c1200_0_185)
+
+If a bug fix release is required, run through the following steps again: 
+
+1. Build:  
+    - Tag a new release (e.g. 1.1.1) and run an official build  
+    - Update testing sites to the final version  
+2. PM:  
+    - Update the mattermost.org/download page  
+    - Add the download links to http://docs.mattermost.com/administration/upgrade.html#version-archive  
+    - Update the Changelog with notes on patch releases (see [example entry](http://docs.mattermost.com/administration/changelog.html#release-v3-0-2))  
+3.  Ops:  
+    - Verifies each of the issues in the patch release are fixed  
 
 ### G. (T-minus 0 working days) Release Day
 
