@@ -28,8 +28,8 @@ Developer Machine Setup
 		- `export GOROOT=/usr/local/go/`
 4. Fork Mattermost on GitHub.com from [https://github.com/mattermost/platform](https://github.com/mattermost/platform), then:
 	1. `cd ~/go`  
-	2. `mkdir -p src/github.com/<username>`  
-	3. `cd src/github.com/<username>`  
+	2. `mkdir -p src/github.com/mattermost`  
+	3. `cd src/github.com/mattermost`  
 	4. `git clone https://github.com/<username>/platform.git`  
 	5. `cd platform`
 
@@ -76,8 +76,8 @@ Any issues? Please let us know on our forums at: http://forum.mattermost.org
 	- `sudo apt-get install -y nodejs`
 7. Fork Mattermost on GitHub.com from [https://github.com/mattermost/platform](https://github.com/mattermost/platform), then:
 	1. `cd ~/go`  
-	2. `mkdir -p src/github.com/<username>`  
-	3. `cd src/github.com/<username>`  
+	2. `mkdir -p src/github.com/mattermost`  
+	3. `cd src/github.com/mattermost`  
 	4. `git clone https://github.com/<username>/platform.git`  
 	5. `cd platform`
 8. Install godep with `go get github.com/tools/godep`
@@ -133,8 +133,8 @@ Any issues? Please let us know on our forums at: http://forum.mattermost.org
 	`pacman -S nodejs npm`
 6. Fork Mattermost on GitHub.com from [https://github.com/mattermost/platform](https://github.com/mattermost/platform), then:
 	1. `cd ~/go`  
-	2. `mkdir -p src/github.com/<username>`  
-	3. `cd src/github.com/<username>`  
+	2. `mkdir -p src/github.com/mattermost`  
+	3. `cd src/github.com/mattermost`  
 	4. `git clone https://github.com/<username>/platform.git`  
 	5. `cd platform`
 7. Install godep with `go get github.com/tools/godep`
