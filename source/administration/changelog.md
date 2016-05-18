@@ -2,15 +2,23 @@
 
 This changelog summarizes updates to [Mattermost Team Edition](http://www.mattermost.org/), an open source team messaging solution released monthly under an MIT license, and [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/), a commercial upgrade offering enterprise messaging for large organizations.
 
-## Release v3.0.1
+## Release v3.0.2
 
-Release date: 2016-05-16
+Release date: 2016-05-17
 
-Note: v3.0.1 fixes an error in GitLab SSO found in v3.0.0 and is considered the official 3.0 release.
+Notes on patches releases: 
+- v3.0.2, released 2016-05-17
+   - Fixed an error with team creation by accounts using email authentation.
+   - Fixed an error where if you upgrade having never previously saved config.json from System Console, saving from System Console will not work. 
+   - Fixed a situation where, when using Postgres, attempting to log in with an LDAP that has the same email address or username as an email-based acconut shows a confusing error message.
+- v3.0.1, released 2016-05-16
+   - v3.0.1 fixed an error in GitLab SSO found in v3.0.0
+- v3.0.0, released 2016-05-16
+
 
 ### Security Update
 
-- Mattermost v3.0.1 contains multiple security updates. [Upgrading to Mattermost v3.0.1](http://docs.mattermost.com/administration/upgrade.html#upgrading-to-team-edition-3-0-x-from-2-x) is highly recommended. 
+- Mattermost v3.0.0 contains multiple security updates. [Upgrading to Mattermost v3.0.0](http://docs.mattermost.com/administration/upgrade.html#upgrading-to-team-edition-3-0-x-from-2-x) is highly recommended. 
 - Thanks to Yoni Ramon from the Tesla security team, Andreas Lindh and Uchida Ta for contributing security reports through the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/). 
 
 ### Major Version Release 
