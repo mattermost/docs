@@ -10,7 +10,7 @@ Mattermost 3.0 lets users maintain a single account across multiple teams on a M
 
 If your Mattermost server has duplicate accounts (users with multiple accounts in multiple teams with the same email address or username), you need to understand the 3.0 upgrade process in detail and take special steps to upgrade successfully.
 
-1. Download Mattermost Team Edition 3.0.0
+1. Download Mattermost Team Edition 3.0.2
       1. Run `platform -version` to confirm the current version of your Mattermost server is `v2.2.0`, `v2.1.1`, or `v2.0.0`. If not, please [upgrade to `v2.0.0`](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide).
       2. Run `wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz` to download the appropriate new version. 
 2. Stop the Mattermost Server
