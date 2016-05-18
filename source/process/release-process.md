@@ -21,7 +21,8 @@ No pull requests for major features should be submitted to the current release a
 1. Logistics:
     - Post this checklist in Release channel 
 2. PM:
-    - Draft Changelog with updates for latest feature additions, known issues, and contributors
+    - Complete draft of Changelog with updates for latest feature additions, known issues, and contributors
+    - Confirm the documentation checklist is up to date compared to the Changelog 
     - Write compatibility updates for config.json and database changes [See example](http://docs.mattermost.com/administration/changelog.html#compatibility)  
     - Confirm changes to config.json in compatibility section of Changelog are written back to [settings documentation](http://docs.mattermost.com/administration/config-settings.html#configuration-settings)
     - Update [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) for any steps needed to upgrade to new version
@@ -34,13 +35,18 @@ No pull requests for major features should be submitted to the current release a
         - [Push to private cloud customers](https://mattermost.atlassian.net/browse/PLT-2199)
         - [Test upgrade](https://mattermost.atlassian.net/browse/PLT-2344) to latest release based on [upgrade guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide)
         - [RC Build Testing for core team](https://mattermost.atlassian.net/browse/PLT-2208)
-    - Queue an item for UX meeting to discuss worst UX bug  
-    - Post in Reception alerting community of upcoming release and to ask about top issues on master ([See example](https://pre-release.mattermost.com/core/pl/pfpzwpi7wj8zzpmeih87cdt77r))  
+    - Coordinate testing:  
+        - Work with Ops to check the [Quality Gate](https://github.com/mattermost/process/blob/master/release/quality-gates.md) for feature complete  
+        - Receive testing sign-off from feature area owners (i.e. PM/Dev either signs-off that their area is well tested, or flags potential quality issues that may exist)  
+        - Check that RC Testing Spreadsheet covers any changes or new features, and ensure core team has access permissions 
+        - Assign each area of the release testing spreadsheet to a team member  
+        - Queue an item for UX meeting to discuss worst UX bug  
+        - Post in Reception alerting community of upcoming release and to ask about top issues on master ([See example](https://pre-release.mattermost.com/core/pl/pfpzwpi7wj8zzpmeih87cdt77r))  
 3. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/platform/pulls) marked for the current release 
 4. Leads: 
     - Meet to prioritize the final tickets of the release
-    - Backlog is reviewed and major features that won’t make it are moved to next release
+    - Backlog is reviewed and tickets that won’t make it are moved to next release
     - Post a link to Release Discussion room for query of [remaining tickets in this release](https://mattermost.atlassian.net/issues/?filter=11102)
     - Finalize roadmap for next release  
     - Draft roadmap for release after next (used to prioritize design tasks)  
@@ -50,77 +56,58 @@ No pull requests for major features should be submitted to the current release a
 6. Team:
     - In Stand-up, each team member discusses worst bug (10-15s)
  
-### C. (T-minus 8 working days) Feature Complete and Stabilization
+### C. (T-minus 8 working days) Code Complete and Release Candidate Cut
 
-**Stablization** period begins when all features for release have been committed. During this period, only **bugs** can be committed to master. Non-bug pull requests are tagged for next version, and are not committed to master until after a release candidate is cut.
+**Stablization** period begins when all features for release have been committed. During this period, only **bugs** can be committed to the release branch. Non-bug pull requests are tagged for next version.
 
 Exceptions can be made by the release manager setting priority to "Highest" and adding a "release-exception" label to the Jira ticket. This will add the ticket to the [hotfix list for release candidate](https://mattermost.atlassian.net/issues/?filter=10204).
 
 1. Logistics:
     - Post this checklist in Release channel
     - Update the channel header to reflect finalized marketing release date
+    - For the next release, create team meetings on Code Complete date
     - Mail out mugs to any new contributors (platform and docs repo)
-    - Verify all items in the last posted release checklist are complete, if not alert the release manager.
+    - Confirm documentation is complete, read through documentation and confirm all links work
+    - Verify all items in the last posted release checklist are complete, if not alert the release manager
 2. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/platform/pulls) marked for the current release 
 3. PM:
     - Review all [Severity 1 bugs (data loss or security)](https://mattermost.atlassian.net/secure/IssueNavigator.jspa?mode=hide&requestId=10600) to consider for adding to Hotfix list
     - Update documentation:  
         - Submit Changelog PR  
-        - Make NOTICE.txt PR for any new libraries added from dev, if not added already  
-        - Create a checklist of documentation needed based off of Changelog  
+        - Make NOTICE.txt PR for any new libraries added from dev, if not added already   
         - Prioritize any developer documentation tickets  
         - Draft [GitLab ticket](https://gitlab.com/gitlab-org/omnibus-gitlab/issues/942) to take next Mattermost version in the Omnibus, but do not post until RC1 is cut  
-    - Coordinate testing:  
-        - Work with Ops to check the [Quality Gate](https://github.com/mattermost/process/blob/master/release/quality-gates.md) for feature complete  
-        - Receive testing sign-off from feature area owners (i.e. PM/Dev either signs-off that their area is well tested, or flags potential quality issues that may exist)  
-        - Update RC Testing Spreadsheet with any new features and ensure core team has access permissions. 
-        - Post in Release Discussion room asking what the current worst bug/issue is  
-4. **(Team) Feature Complete Meeting (10:15am PST)**:  
+4. **(Team) Code Complete Meeting (10:15am PST)**:  
     - (PM) Leads team review of Changelog  
     - (Team) Each team member discusses worst bug (10-15s)  
-5. Marketing:
-    - Submits pull request for "Highlights" section of the Changelog 
-    - Communicate checklist of items needed by specific dates to write the blog post announce (e.g. screenshots, GIFs, documentation) and begins to write the blog post, tweet, and email for the release announcement  
-
-### D. (T-minus 5 working days) Code Complete and Release Candidate Cut 
-
-1. Logistics:  
-    - Post this checklist in Release channel  
-    - For the next release, create team meetings on Feature Complete and Code Complete dates  
-    - Confirms documentation is complete, reads through documentation and confirms all links work
-    - Verify all items in the last posted release checklist are complete, if not alert the release manager.
-2. PM:  
-    - Assign each area of the release testing spreadsheet to a team member  
-    - Update the release start date for the next release in Jira (setting [here](https://mattermost.atlassian.net/plugins/servlet/project-config/PLT/versions))  
-3. **(Team) Code Complete Meeting (10:15am PST meeting)**  
     - (Logistics) Walk through each unfinished item of this checklist  
     - (Dev) Last check of tickets that need to be merged before RC1  
-    - (Team) Each team member discusses worst bug (10-15s)  
-    - **Code Complete** is declared after meeting  
-4. Dev:  
-    - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/platform/pulls) marked for the current release  
+
 5. Build:  
-    - Master is tagged and branched and “Release Candidate 1″ is cut (e.g. 1.1.0-RC1) according to the [Release Candidate Checklist](https://github.com/mattermost/process/blob/master/release/create-release-candidate.md)  
+    - Master is tagged and branched and “Release Candidate 1″ is cut (e.g. 1.1.0-RC1) according to the [Release Candidate Checklist](https://github.com/mattermost/process/blob/master/release/create-release-candidate.md) 
+    - CI servers are updated to the release branch  
 6. PM:  
     - Create meta issue for regressions in GitHub (see [example](https://github.com/mattermost/platform/issues/574))  
     - Include link to meta-issue in release notes of RC1  
-7. Marketing:  
-    - Tweet announcement that RC1 is ready (see [example](https://twitter.com/mattermosthq/status/664172166368264192))  
+7. Marketing:
+    - Tweet announcement that RC1 is ready (see [example](https://twitter.com/mattermosthq/status/664172166368264192))
+    - Submits pull request for "Highlights" section of the Changelog 
+    - Communicate checklist of items needed by specific dates to write the blog post announce (e.g. screenshots, GIFs, documentation) and begins to write the blog post, tweet, and email for the release announcement  
  
-### E. (T-minus 4 working days) Release Candidate Testing 
+### E. (T-minus 7 working days) Release Candidate Testing 
 
 1. Logistics:
     - Post this checklist in Release channel
-    - Add Release Process Kaizen/Q&A item to next team meeting
-    - Verify all items in the last posted release checklist are complete, if not alert the release manager.
+    - Add “Release Retrospective” item to next team meeting in place of Kaizen/User Issues
+    - Verify all items in the last posted release checklist are complete, if not alert the release manager
 2. Build:
     - Test upgrade from previous version to current version, following the [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) 
     - Database upgrade should be tested on both MySQL and Postgres
 3. PM:
     - Update Release Discussion header with links to RC instances and testing spreadsheet
-    - Post release testing instructions to Release Discussion channel ([example](https://pre-release.mattermost.com/core/pl/8z1tazpmm3ycbrehju36brd5nh)). 
-    - Post to Reception directing community testers to the Release Discussion channel for details.
+    - Post release testing instructions to Release Discussion channel ([example](https://pre-release.mattermost.com/core/pl/8z1tazpmm3ycbrehju36brd5nh))
+    - Post to Reception directing community testers to the Release Discussion channel for details
     - Post "Known Issues" to Release Discussion channel
 4. Team:
     - Test assigned areas of the Release Candidate Testing Spreadsheet and file any bugs found in Jira
@@ -132,11 +119,12 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - Update the meta issue description to include approved fixes
     - Post screenshot and link to final tickets for next RC to the Release room
     - Update Changelog “Known Issues” section with any significant issues that were found and not fixed for the final release
-    - Add docs repo contributors to Changelog
+    - Check that the contributors section of Changelog is updated (including contributors from all repos)
 6. Dev:
-    - PRs for hotfixes made to release branch, and changes from release branch are merged into master
+    - PRs for hotfixes made to release branch
+    - Review PRs made from release branch and merge changes into both the release branch and master
 7. Logistics:
-    - For potentially destabilizing changes, test approved fixes on a spinmint private build
+    - Test RC fixes as they come in on CI servers
 8. Build: 
     - Push next RC to acceptance after testing is complete and approved fixes merged, announces in Town Square on pre-release.mattermost.com/core
 9. PM:
@@ -158,6 +146,7 @@ The final release is cut. If an urgent and important issue needs to be addressed
 3. PM:
     - Submit GitLab ticket to take next Mattermost version in the Omnibus using [template](https://gitlab.com/gitlab-org/omnibus-gitlab/issues/1241)
     - Update the mattermost.org/download page
+    - Add the download links to http://docs.mattermost.com/administration/upgrade.html#version-archive
     - Contact owners of [community installers](http://www.mattermost.org/installation/) or submit [PRs](https://github.com/tommyvn/mattermost-heroku/commit/94f7c5c0c5d7d2672fb6d62b6a560b4b5c1b5131) to update install version number.
     - Update the AMI links on mattermost.org/download and mattermost.org/installation  
     - Close final GitHub RC meta ticket  
@@ -176,12 +165,14 @@ The final release is cut. If an urgent and important issue needs to be addressed
 2. PM:
     - Close the release in Jira
     - Create [documentation checklist ticket](https://mattermost.atlassian.net/browse/PLT-2373) for next release
+    - Create a performance improvement ticket for next release, and move to the sprint before feature complete
 3. Dev:
     - Check if any libraries need to be updated for the next release, and if so bring up in weekly team meeting
     - Test the GitLab RC containing the Mattermost final bits
     - Confirm gitlab.mattermost.com is updated to final build
 4. Marketing:
     - Confirm marketing has been posted (animated GIFs, screenshots, mail announcement, tweets, blog posts)
+
 
 ## Templates
 
