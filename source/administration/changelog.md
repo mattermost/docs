@@ -8,13 +8,13 @@ Release date: 2016-05-17
 
 Notes on patches releases: 
 - v3.0.2, released 2016-05-17
-   - Fixed an error with team creation by accounts using email authentation.
+   - Fixed an error where, when using Postgres, attempting to log in with an LDAP that has the same email address or username as an email-based account shows a confusing error message.
+   - Fixed an error accounts using email authentation attempt to create new teams. 
    - Fixed an error where if you upgrade having never previously saved config.json from System Console, saving from System Console will not work. 
-   - Fixed a situation where, when using Postgres, attempting to log in with an LDAP that has the same email address or username as an email-based acconut shows a confusing error message.
 - v3.0.1, released 2016-05-16
-   - v3.0.1 fixed an error in GitLab SSO found in v3.0.0
+   - v3.0.1 fixed an error in GitLab SSO. 
 - v3.0.0, released 2016-05-16
-
+   - Original 3.0 release.
 
 ### Security Update
 
