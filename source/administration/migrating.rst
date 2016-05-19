@@ -21,13 +21,3 @@ The following instructions migrate Mattermost from one server to another by back
 6. Test the system is working by going to the URL of an existing team.   
     1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade
  
-Migrating to Active Directory / LDAP from email-based authentication  
-==== 
-
-If you've evaluated Mattermost using email authentication and decide to deploy broadly using Active Directory/LDAP you can follow this procedure: 
-
-1. `Set up Active Directory/LDAP <http://docs.mattermost.com/deployment/sso-ldap.html>`_ for all users who would optionally have access to the system. 
-2. Post an announcement about how the migration will work to users.
-3. Users who do not yet have an account on Mattermost will have a new account created when they sign-in using their AD/LDAP credentials.
-4. Users who use email-based authentication can change their sign-in method to AD/LDAP via **Account Settings** > **Security** > **Sign-in method**.
-5. If someone attempts to sign-in with AD with an email matching that of an existing account, they'll get an error message and will need to switch sign-in methods per procedure in 4. 
