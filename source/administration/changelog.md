@@ -6,8 +6,9 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Release date: 2016-05-17
 
-Notes on patches releases: 
+Notes on patch releases: 
 - v3.0.2, released 2016-05-17
+   - Security update to reduce information disclosure, thanks to Andreas Lindh for [reporting responsibly](http://www.mattermost.org/responsible-disclosure-policy/)
    - Fixed an error where, when using Postgres, attempting to log in with an LDAP that has the same email address or username as an email-based account shows a confusing error message.
    - Fixed an error accounts using email authentation attempt to create new teams. 
    - Fixed an error where if you upgrade having never previously saved config.json from System Console, saving from System Console will not work. 
@@ -18,7 +19,7 @@ Notes on patches releases:
 
 ### Security Update
 
-- Mattermost v3.0.0 contains multiple security updates. [Upgrading to Mattermost v3.0.0](http://docs.mattermost.com/administration/upgrade.html#upgrading-to-team-edition-3-0-x-from-2-x) is highly recommended. 
+- Mattermost v3.0.2 contains multiple security updates. [Upgrading to Mattermost v3.0.2](http://docs.mattermost.com/administration/upgrade.html#upgrading-to-team-edition-3-0-x-from-2-x) is highly recommended. 
 - Thanks to Yoni Ramon from the Tesla security team, Andreas Lindh and Uchida Ta for contributing security reports through the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/). 
 
 ### Major Version Release 
