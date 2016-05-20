@@ -26,7 +26,7 @@ Settings to configure your password, view access history, and view or logout of 
 #### Password
 You may change your password if you’ve logged in by email. If you are signing in using a single sign-on service, the password field is not editable, and you must access your SSO service’s account settings to update your password.
 
-#### Multi-Factor Authentication (Enterprise - Available May 16th) 
+#### Multi-Factor Authentication 
 When this option is available you can requires a phone-based passcode in addition your password for sign-in. 
 
 To enable, download Google Authenticator from [iTunes](https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8) or [Google Play](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en) for your phone, then 
@@ -62,9 +62,6 @@ Email notifications are sent for mentions and direct messages after you’ve bee
 #### Words That Trigger Mentions
 By default, you will receive mention notifications from your non-case sensitive username, mentioned @username and @channel. Customize the words that trigger mentions by typing them in the input box. This is useful if you want to be notified of all posts on a certain topic, for example, “marketing”.
 
-## Integrations
-[Integrations](http://docs.mattermost.com/help/settings/integration-settings.html) are moving out of Account Settings to their own page May 16th.
-
 ## Display
 Settings to configure clock and teammate name display preferences.
 
@@ -87,7 +84,7 @@ Choose a 12-hour or 24-hour time preference that appears on the time stamp for a
 #### Teammate Name Display
 Configure how names are displayed in Mattermost: nickname, username or full name.
 
-#### Channel Display Mode (*Available May 16th*)
+#### Channel Display Mode
 Select if the text in the center channel is fixed width and centered, or full width. 
 
 #### Language
@@ -97,7 +94,7 @@ Select what language Mattermost displays in the user interface. Options include:
 - Spanish
 - Portuguese
 - French
-- Japanese (_available May 16, 2016_)
+- Japanese
 
 ## Advanced
 Setting to configure when messages are sent.

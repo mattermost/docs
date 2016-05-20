@@ -17,7 +17,7 @@ Your **Team Name** is displayed on the sign-in page, and in the top of the left-
 
 You can enter a name up to 22 characters in length. The length of team names is limited to ensure readability.
 
-#### Allow anyone to join this team (*Available May 16th*)
+#### Allow anyone to join this team
 
 After a user logs in to the site, they are shown a Team Selection page. Any team with **Allow anyone to join this team** option set to **Yes** will show up on this page under "Open teams you can join".
 
