@@ -13,7 +13,7 @@ Notes on patch releases:
    - Fixed an error accounts using email authentation attempt to create new teams. 
    - Fixed an error where if you upgrade having never previously saved config.json from System Console, saving from System Console will not work. 
 - v3.0.1, released 2016-05-16
-   - v3.0.1 fixed an error in GitLab SSO. 
+   - v3.0.1 fixed an error in GitLab SSO, thanks to [ArthurHlt](https://github.com/ArthurHlt) for the pull request fixing the issue. 
 - v3.0.0, released 2016-05-16
    - Original 3.0 release.
 
@@ -185,6 +185,7 @@ Many thanks to all our contributors. In alphabetical order:
 
 /platform
 - [alanmoo](https://github.com/alanmoo)
+- [ArthurHlt](https://github.com/ArthurHlt)
 - [asaadmahmoodspin](https://github.com/asaadmahmoodspin)
 - [augustohp](https://github.com/augustohp)
 - [brunoqc](https://github.com/brunoqc)
