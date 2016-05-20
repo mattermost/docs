@@ -1,7 +1,6 @@
 ..  _auth_mfa:
 Multi-Factor Authentication (Enterprise)
 ======
-*Available in May 16, 2016 release* 
 
 For increased security, Mattermost Enterprise Edition offers the option to require a phone-based passcode, in addition to email-password or Active Directory/LDAP authentication, to sign in to the Mattermost server. 
 
