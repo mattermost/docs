@@ -3,7 +3,7 @@ ___
 Statistics on users, posts and channels are tracked for each system and team. Enterprise Editions have access to advanced system statistics.
 
 ## System Statistics  
-System statistics are viewable under **System Console** > **Site Reports** > **View Statistics**. The data shown here is a cummulative sum across all teams on the system.
+System statistics are viewable under **System Console** > **Site Reports** > **View Statistics**. The data shown here is a cumulative sum across all teams on the system.
 
 **Total Users:** The total number of accounts created on your system, including both active and inactive accounts. 
 
