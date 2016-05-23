@@ -103,7 +103,7 @@ users:
 Notes:
 
 1. Larger deployments should estimate utilization based on pilots
-   represenative of full scale usage.
+   representative of full scale usage.
 2. Storage recommendation is based on storing 3 years of archives with
    moderate file sharing.
 3. Solid-state storage drives (SDD) can be used in place of disk storage
