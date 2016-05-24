@@ -523,7 +523,7 @@ The Base DN is the Distinguished Name of the location where Mattermost should st
 
 **Bind Username** (`"BindUsername": ""`)  
 
-The username used to perform the LDAP search. This should typically be an account created specifically for use with Mattermost. It should be a read only account with access limited to the portion of the LDAP tree specified in the BaseDN field.
+The username used to perform the LDAP search. This should typically be an account created specifically for use with Mattermost. It should be a read only account with access limited to the portion of the LDAP tree specified in the BaseDN field. Bind username should specify domain in `DOMAIN/username` format. 
 
 **Bind Password** (`"BindPassword": ""`)  
 
@@ -573,7 +573,7 @@ The timeout value for queries to the LDAP server. Increase this value if you are
 
 **Login Field Name** (`"LoginFieldName": ""`) 
 
-The placeholder text that appears in the login field on the login page. Typically this would be whatever name is used to refer to LDAP credentials in your company, so it is recognizable to your users. Defaults to "LDAP Username".
+The placeholder text that appears in the login field on the login page. Typically this would be whatever name is used to refer to LDAP credentials in your company, so it is recognizable to your users. Defaults to "LDAP Username". 
 
 ### Compliance Settings (Enterprise)  
 
