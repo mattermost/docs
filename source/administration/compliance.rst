@@ -58,7 +58,7 @@ The report will be queued in the display below the fields described above. The p
 
 Each Compliance Report includes a "Download" link which downloads a compressed file named ``adhoc-[UNIQUE_ID].zip``. Inside the file is `meta.json`, which includes the parameters of the search executed and `posts.csv` which includes the contenst of messages found by the request. 
 
-Example of the contents of ``meta.json``:
+``meta.json`` contains the following information about the compliance query: 
 
 {
     "id": "ja8z8egap7nq9kqetz3rt98khe",
@@ -74,24 +74,38 @@ Example of the contents of ``meta.json``:
     "emails": "person@example.com"
 }
 
-For each post found, the following information is available: 
+```posts.csv``  contains the following information about the compliance query results:
 
-- TeamName	
-- TeamDisplayName	
-- ChannelName	
-- ChannelDisplayName	
-- UserUsername	
-- UserEmail	
-- UserNickname	
-- PostId	
-- PostCreateAt	
-- PostUpdateAt	
-- PostDeleteAt	
-- PostRootId	
-- PostParentId	
-- PostOriginalId	
-- PostMessage	
-- PostType	
-- PostProps	
-- PostHashtags	
-- PostFilenames
++---------------------+---------------------------------------------------------------+-------------------------------+
+| Field               | Description                                                   | Example                       |
++=====================+===============================================================+===============================+
+| TeamName            | URL name of team                                              | contosi                       |
++---------------------+---------------------------------------------------------------+-------------------------------+
+| TeamDisplayName     | Display name of team                                          | Contosi Corporation           | 
++---------------------+---------------------------------------------------------------+-------------------------------+
+| ChannelDisplayName  | Display name of channel where keyword was found               | Community Heartbeat           | 
++---------------------+---------------------------------------------------------------+-------------------------------+
+| ChannelName         | URL name of channel                                           | community-heartbeat           | 
++---------------------+---------------------------------------------------------------+-------------------------------+
+| UserUsername        | Username of user posting the message containing keyword       | frank.yu                      |
++---------------------+---------------------------------------------------------------+-------------------------------+
+| UserEmail           | Email of user posting the message containing keyword          | frank.yu@contosi.com          | 
++---------------------+---------------------------------------------------------------+-------------------------------+
+| UserNickname        | Nickname of user posting the message containing keyword       | fan du                        | 
++---------------------+---------------------------------------------------------------+-------------------------------+
+| PostId              | Unique ID of message post containing keyword                  | xt9anyx6x3fx9y84aehgakdpze    | 
++---------------------+---------------------------------------------------------------+-------------------------------+
+| PostCreateAt        | Timestamp at which post was created                           | 2016-03-02T16:01:59Z          | 
++---------------------+---------------------------------------------------------------+-------------------------------+
+| PostDeletedAt       | Timestamp at which post was deleted (if applicable)           | 2016-03-02T16:01:59Z          | 
++---------------------+---------------------------------------------------------------+-------------------------------+
+| PostUpdatedAt       | Timestamp at which post was last edited (if applicable        | 2016-03-02T16:01:59Z          | 
++---------------------+---------------------------------------------------------------+-------------------------------+
+| PostParentId        | Unique ID of parent post if post is a comment                 | xt9anyx6x3fx9y84aehgakdpze    | 
++---------------------+---------------------------------------------------------------+-------------------------------+
+| PostOriginalId      | Unique ID of post if deleted or edited                        | xt9anyx6x3fx9y84aehgakdpze    | 
++---------------------+---------------------------------------------------------------+-------------------------------+
+| PostMessage         | Message containing keyword                                    | Drinking from the fire hose   | 
++---------------------+---------------------------------------------------------------+-------------------------------+
+| PostFilenames       | Comma separated list of filesnames attached to post           | ["/f../ho.png","/f../hi.png"] |
++---------------------+---------------------------------------------------------------+-------------------------------+
