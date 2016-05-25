@@ -87,9 +87,9 @@ Compliance query definition stored in ``meta.json`` file
 +---------------------+---------------------------------------------------------------+-------------------------------+
 | end_at              | Timestamp at which query ended                                | 1463529600000                 | 
 +---------------------+---------------------------------------------------------------+-------------------------------+
-| keywords            | Keyword query attempts to match                               | "drinking"                    | 
+| keywords            | Comma-separated, case insensitive keywords to match in query  | "drinking"                    | 
 +---------------------+---------------------------------------------------------------+-------------------------------+
-| emails              | Comma separated emails of users whose messages are searched   | frank.yu@ha.ca, mary.li@hi.co |  
+| emails              | Comma-separated emails of users to search. Blank returns all  | frank.yu@ha.ca, mary.li@hi.co |  
 +---------------------+---------------------------------------------------------------+-------------------------------+
 
 Compliance query results stored in ``posts.csv`` file 
