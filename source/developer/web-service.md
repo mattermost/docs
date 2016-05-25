@@ -20,7 +20,7 @@ The majority of the Mattermost API involves interacting with teams. Therefore, m
 Make an HTTP POST to `yourdomain.com/api/v3/users/login` with a JSON body indicating the `name` of the team, the user's `email` and `password`.
 
 ```
-curl -i -d '{"name":"exampleteam","email":"someone@nowhere.com","password":"thisisabadpassword"}' http://localhost:8065/api/v3/users/login
+curl -i -d '{"name":"exampleteam","user_id":"someone@nowhere.com","password":"thisisabadpassword"}' http://localhost:8065/api/v3/users/login
 ```
 
 If successful, the response will contain a `Token` header and a User object in the body.
