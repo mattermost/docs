@@ -126,7 +126,7 @@ Maximum number of users per team, including both active and inactive users.
 **Enable Open Server** (`"EnableOpenServer": false`)  
 
 `true`: Users can sign up to the server from the root page without an invite. 
-`true`: Users can only sign up to the server if they receive an invite.
+`false`: Users can only sign up to the server if they receive an invite.
 
 **Restrict Creation To Domains** (`"RestrictCreationToDomains": ""`)    
 
