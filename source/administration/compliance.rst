@@ -60,19 +60,33 @@ Each Compliance Report includes a "Download" link which downloads a compressed f
 
 ``meta.json`` contains the following information about the compliance query: 
 
-{
-    "id": "ja8z8egap7nq9kqetz3rt98khe",
-    "create_at": 1463637842478,
-    "user_id": "3bq1shta93yztg3i6aiu1tzi5h",
-    "status": "",
-    "count": 0,
-    "desc": "HR Audit 388",
-    "type": "adhoc",
-    "start_at": 1451606400000,
-    "end_at": 1463529600000,
-    "keywords": "drinking",
-    "emails": "person@example.com"
-}
+
++---------------------+---------------------------------------------------------------+-------------------------------+
+| Field               | Description                                                   | Example                       |
++=====================+===============================================================+===============================+
+| id                  | Unique identifier for compliance query                        | ja8z8egap7nq9kqetz3rt98khe    |
++---------------------+---------------------------------------------------------------+-------------------------------+
+| create_at           | Timestamp at which compliance query was executed              | 1463637842478                 |
++---------------------+---------------------------------------------------------------+-------------------------------+
+| user_id             | Mattermost User ID for person creating query                  | 3bq1shta93yztg3i6aiu1tzi5h    |
++---------------------+---------------------------------------------------------------+-------------------------------+
+| status              | Status of query: 'finished' or 'failed'                       | finished                      |
++---------------------+---------------------------------------------------------------+-------------------------------+
+| count               | Count of messages found matching keyword                      | 36                            |
++---------------------+---------------------------------------------------------------+-------------------------------+
+| desc                | User entered description of compliance query                  | Example Compliance Report     | 
++---------------------+---------------------------------------------------------------+-------------------------------+
+| type                | Type of compliance query: "adhoc" or "daily"                  | "adhoc"                       | 
++---------------------+---------------------------------------------------------------+-------------------------------+
+| start_at            | Timestamp at which query began to run                         | 1451606400000                 | 
++---------------------+---------------------------------------------------------------+-------------------------------+
+| end_at              | Timestamp at which query ended                                | 1463529600000                 | 
++---------------------+---------------------------------------------------------------+-------------------------------+
+| keywords            | Keyword query attempts to match                               | "drinking"                    | 
++---------------------+---------------------------------------------------------------+-------------------------------+
+| emails              | Comma separated emails of users whose messages are searched   | frank.yu@ha.ca, mary.li@hi.co |  
++---------------------+---------------------------------------------------------------+-------------------------------+
+
 
 ```posts.csv``  contains the following information about the compliance query results:
 
