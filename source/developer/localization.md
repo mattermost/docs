@@ -52,6 +52,19 @@ Language option is listed as an option in **Account Settings > Display > Languag
 
 As new languages are added, contributors may set up long running forks to translate and verify a new language prior to achieving Alpha-quality status and making a pull request to merge the new language option into `master`.
 
+#### Test your translations
+
+In order to test your translations you can follow this steps:
+1. Follow the [developer setup guide](http://docs.mattermost.com/developer/developer-setup.html) and build Mattermost on your own machine.
+2. Download a copy of your translations to your local machine.
+    ![translations_download](../images/translations_download.png)
+3. Use [Mattermosti18n](https://github.com/rodrigocorsi2/mattermosti18n#convert-po---json) to convert Pootle's output into JSON files.
+4. Copy the generated [locale].json files to the corresponding directories
+    1. For platform they should be in the `i18n` directory.
+    2. For webapp they should be in the `webapp/i18n` directory.
+5. Modify the file `webapp/i18n/i18n.jsx` to include your localization
+6. Compile and run **Mattermost** to confirm everything works.
+
 #### Translation Maintenance
 
 Translations require updates on a monthly basis as features are added and changed. The formal process for updates has yet to be determined. If you're interested in contributing to the process, please join the [Mattermost localization channel to discuss](https://pre-release.mattermost.com/core/channels/localization).
