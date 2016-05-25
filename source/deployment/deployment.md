@@ -135,4 +135,4 @@ Images and files shared by users are stored and retrieved in one of three option
     
 1. For teams sharing only modest amounts of file data, local storage on the same physical machine as the Mattermost server may be sufficient.    
 2. For enterprises sharing very large amounts of data, a Network-Attached Storage server may be used, which can scale to peta-bytes if necessary.    
-3. Alternatively, for both easy-of-use and scale, Amazon's S3 file storage service is another option as well.
+3. Alternatively, for both ease-of-use and scale, Amazon's S3 file storage service is another option as well.

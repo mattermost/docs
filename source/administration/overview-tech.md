@@ -32,7 +32,7 @@ We offer modern communication from behind your firewall. Your users can securely
 
 #### Multi-Language Support
 
-- English, Spanish, and Brazilian Portuguese
+- English, Spanish, Brazilian Portuguese, French, and Japanese
 
 ## Release Numbering 
 
