@@ -138,3 +138,57 @@ To setup TPNS please [follow the instructions to confirm HPNS is correctly confi
 The same instructions should then verify the functionality of TPNS.
 
 .. note::  Mobile push notifications currently trigger on the same events as email notifications. The option to trigger mobile push notifications `based on mentions <https://mattermost.uservoice.com/forums/306457-general/suggestions/13609332-add-option-to-trigger-push-notifications-on-mentio>`_ and `based on all desktop notifications <https://mattermost.uservoice.com/forums/306457-general/suggestions/13608870-add-option-to-trigger-push-notifications-on-same-e>`_ are feature candidate for a future release. 
+
+
+Troubleshooting performance of mobile apps 
+``````
+
+The response times of Mattermost mobile apps should perform to standard benchmarks, provided device model, connection speed and server configuration are comparable to benchmark setups.
+
+Performance Benchmarks for Mobile Applications 
+^^^^^^ 
+
+Properly configured mobile applications should perform as follows: 
+
+iPhone Plus 6s on an LTE network using 256-bit AES encryption on 4G/LTE connection with 50  millisecond ping time: 
+
+- **Loading a new channel:** 1-4 seconds (depending on content in channel) 
+- **Returning to a channel previously viewed:** less than 1 second
+- **Switching back to app after it's recently been in the background:** less than 1 second 
+- **Switching to app and loading channel after phone has been asleep:** less than 5 seconds 
+- **Cold start of app until first page load:** 10 seconds 
+
+Removing bottlenecks to mobile app performance 
+^^^^^^ 
+
+If your mobile app is not performing to these sample benchmarks, you can identify bottlenecks using the following process: 
+
+1. Confirm your mobile device connection speed 
+
+   - From your mobile browser go to https://speedtest.net/mobile, download the speed test app and begin a test
+   - Check if your **ping time** (a measure of signal latency) to see if it's similar to the benchmarks in the above section. If they are significantly lower, move to an area with better reception or contact your wireless provider to correct any technical issues. 
+   - Some typical ping times on different wireless networks:
+   
+      - 4G/LTE wireless: 50-150 milliseconds
+      - 3G wireless: 100-350 milliseconds
+      - Satellite: 750-2000 milliseconds 
+
+2. Confirm your mobile app is performing properly 
+
+     - Test the response of your iOS or Android app relevate to the above benchmarks
+     - Test the response of opening your Mattermost team site on your phone's mobile browser
+     - If using your team site in your iOS or Android app is noticebly slower than using it in the browser, delete your mobile app and reinstall it to clear the issue. 
+   
+3. Check your server performance 
+
+     - If 1) and 2) are working properly and you're still not achieveing benchmarks, check your server for proper sizing.
+     
+          - Please review the `recommended minimum hardware guidelines <http://docs.mattermost.com/install/requirements.html#hardware-sizing-for-team-deployments>`_ and confirm that you're using the properly sized hardware. If you're having performance issues, please do not scale down hardware below the minimum level suggested. 
+          
+         - If you're using a shared server, you may experience latency with a shared proxy server if it's under load from other applications. You can either switch to a dedicated proxy, or set up your own proxy server using NGINX by following one of the `standard install guides. <http://docs.mattermost.com/#install-guides>`_ 
+
+These procedures summarize all potential bottlenecks in a system for mobile app performance: Connection speed, mobile app performance, and server performance. 
+
+- If you're an Enterprise Edition subscriber and continue to have issues please email support@mattermost.com with a measure of the benchmarks you're experiencing. 
+
+- If you're not a subscriber, please `open a thread in the Mattermost Troubleshooting forum <http://www.mattermost.org/troubleshoot/>`_ with a summary of the performance you're seeing, details on the model of your mobile device, connection speed and server sizing. 
