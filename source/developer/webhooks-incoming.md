@@ -102,5 +102,10 @@ The following describes the automatic translations Mattermost performance to pro
 
 To see samples and community contributions, please visit <http://mattermost.org/webhooks>.
 
-#### Known Issues
-- Mattermost does not yet support Slack's feature of using _icon_emoji_ to override the message icon.
+#### Known Slack Compatibility Issues
+
+1. Using icon_emoji to override the username is not supported  
+2. Referencing  channels using <#CHANNEL_ID> does not link to the channel  
+3. <!here>, <!everyone>, and <!group> are not supported  
+4. Parameter "mrkdwn", "parse", and "link_names" are not supported (Mattermost always converts markdown and automatically links @mentions)  
+5. Bold formatting as *bold* is not supported (must be done as **bold**)  
