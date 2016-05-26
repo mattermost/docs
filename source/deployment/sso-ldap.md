@@ -7,13 +7,10 @@ After installing Mattermost:
 1. Create a team using email authentication    
     1. Log in using an account assigned to the “System Administrator” role. The first account you create on the server is automatically assigned this role. You may also assign the role to another account.    
     2. In the team site, go to **Main Menu** (the three dots at top left) > **System Console** > **LDAP Settings**     
-    3. Fill in the fields to set up Mattermost authentication with your LDAP server.    
-    4. (Optional - *Available in version 3+*) Fill in the **User Filter** field to restrict Mattermost access to a subset of LDAP users. For example, to filter out disabled accounts in Active Directory enter `(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))`
-    5. (Optional - *Available in version 3+*) Fill in the **Login Field Name** to update what help text is shown in the login field. Typically this would be whatever name is used to refer to LDAP credentials in your company, so it is recognizable to your users.
-    6. After LDAP has been enabled, confirm that users can sign in using LDAP credentials. The **LDAP username** will be the attribute set in the **Id Attribute** field. 
+    3. Fill in LDAP settings based on [configuration settings documentation](http://docs.mattermost.com/administration/config-settings.html#ldap-settings-enterprise)    
+    4. After LDAP has been enabled, confirm that users can sign in using LDAP credentials. The **LDAP username** will be the attribute set in the **Id Attribute** field. 
   
     - Note: If you're using Active Directory with **nested security groups** you need to write a PowerShell script, or similar, to flatten and aggregate the tree into a single security group to map into Mattermost.   
-
 
 2. (Optional) Change default Session Length for LDAP SSO     
     1. Go to **System Console** > **Service Settings** > **Session Length for SSO in days** to select the frequency with which users need to log into devices with LDAP credentials. Default is 30 days. 

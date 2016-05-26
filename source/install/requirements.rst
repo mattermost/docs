@@ -103,10 +103,10 @@ users:
 Notes:
 
 1. Larger deployments should estimate utilization based on pilots
-   represenative of full scale usage.
+   representative of full scale usage.
 2. Storage recommendation is based on storing 3 years of archives with
    moderate file sharing.
-3. Solid-state storage drives (SDD) can be used in place of disk storage
+3. Solid-state storage drives (SSD) can be used in place of disk storage
    for higher concurrency.
 4. Team deployments assume registered users are divided into teams of
    10-100.
@@ -125,13 +125,13 @@ hardware deployment configurations are recommended:
 **Proxy Server** 
 
 - One server with 4-8 CPU cores supporting Hyper-Threading, 16-32 GB, SSD drive with at least 4GB of storage 
-- (Optional) Add one additional identical server for high availability mode, where one Mattermost server can be disabled or upgraded without interrupting service quality). Second server should be sized to carry the full load of the first server so performance does not degrade when the first server is taken offline.
+- (Optional) Add one additional identical server for high availability mode, where one Mattermost server can be disabled or upgraded without interrupting service quality. Second server should be sized to carry the full load of the first server so performance does not degrade when the first server is taken offline. Note: The high availability option is available only by `contacting the Enterprise Edition team <https://about.mattermost.com/contact/>`_.
 
-**Mattermost Server** (1 to 2 depending on level of redundancy and high
+**Mattermost Server** (1 to 2 depending on the level of redundancy and high
 availability required) 
 
 - One server with 4-8 CPU cores supporting Hyper-Threading, 16-32GB memory, SSD drive with at least 4GB storage. 
-- (Optional) Add one additional identical server for high availability mode, where one Mattermost server can be disabled or upgraded without interrupting service quality). Second server should be sized to carry the full load of the first server so performance does not degrade when the first server is taken offline. Note: The high availability option is available only by `contacting the Enterprise Edition team <https://about.mattermost.com/contact/>`_.
+- (Optional) Add one additional identical server for high availability mode, where one Mattermost server can be disabled or upgraded without interrupting service quality. Second server should be sized to carry the full load of the first server so performance does not degrade when the first server is taken offline. Note: The high availability option is available only by `contacting the Enterprise Edition team <https://about.mattermost.com/contact/>`_.
 
 **Network Attached Storage** 
 
@@ -144,7 +144,7 @@ availability required)
 
 **Notes:**
 
-- Regular hard drives can be used in place of solid-state hard drives if having top performance is not a priority. If using a mix of HDD and SSD drives, the greatest performance gain would come from using SDD in the database server.
+- Regular hard drives can be used in place of solid-state hard drives if having top performance is not a priority. If using a mix of HDD and SSD drives, the greatest performance gain would come from using SSD in the database server.
 
 Alternate Storage Calculations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

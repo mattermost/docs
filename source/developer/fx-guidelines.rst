@@ -72,7 +72,7 @@ UI Elements
 Header Notification
 ---------------------------
 
-Appears as an additional header at the top of the UI. May include an “x” button to dismiss. Limited to 60 characters. May include a time-out. Header notification should appear over the rest of the UI instead of pushing the UI down. Multiple header header can appear, with the earliest notification at the top and more recent notifications appearing underneath.
+Appears as an additional header at the top of the UI. May include an “x” button to dismiss. Limited to 60 characters. May include a time-out. Header notification should appear over the rest of the UI instead of pushing the UI down. Multiple headers can appear, with the earliest notification at the top and more recent notifications appearing underneath.
 
 **Desktop**
 
