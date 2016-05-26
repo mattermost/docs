@@ -47,7 +47,7 @@ Mattermost numbers releases based on the following format:
    - This number is incremented with each monthly release on the 16th of the month, and represents significant code changes from the previous major build release. 
 
 - Minor Build Number: Indicates a bug fix or security release (e.g. 1.2.5, 1.2.6)
-   - This number is incremented for bug fixes or security releases and does not typically contain significant code changes.
+   - This number is incremented for high priority bug fixes or security releases and does not typically contain significant code changes.
 
 ## Release Schedule
 
