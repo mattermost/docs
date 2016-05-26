@@ -5,27 +5,25 @@ Keyboard Shortcuts
 
 Keyboard shortcuts perform operations in Mattermost to help you navigate through channels and make a more efficient use of your keyboard. Also see `slash commands <https://docs.mattermost.com/help/messaging/executing-commands.html>`_ for alternate ways to help carry out actions with a keyboard instead of a mouse.
 
-Browser Built-in
+Navigation
 ====
 
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
 | On Windows                             | On Mac                                 | Description                                                    | 
 +========================================+========================================+================================================================+
-| ALT [left arrow]                       | CMD [                                  | Previous channel in your history                               |
+| ALT+UP                                 | ALT+UP                                 | Previous channel or direct message in LHS                      |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
-| ALT [right arrow]                      | CMD ]                                  | Next channel in your history                                   |
+| ALT+DOWN                               | ALT+DOWN                               | Next channel or direct message in LHS                          |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
-| CTRL +                                 | CMD +                                  | Increase font size                                             |
+| ALT+SHIFT+UP                           | ALT+SHIFT+UP                           | Previous channel or direct message in LHS with unread messages |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
-| CTRL -                                 | CMD -                                  | Decrease font size                                             |
+| ALT+SHIFT+DOWN                         | ALT+SHIFT+DOWN                         | Next channel or direct message in LHS with unread messages     |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
-| PgUp / PgDn                            | Fn + [up/down arrow]                   | Scroll through your messages                                   |
+| CTRL+SHIFT+A                           | CMD+SHIFT+A                            | Open account settings                                          |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
-| SHIFT [up arrow] (in input field)      | SHIFT [up arrow] (in input field)      | Highlight text to the beginning of the current line            |
+| CTRL+SHIFT+K                           | CMD+SHIFT+K                            | Open a quick channel switcher dialog                           |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
-| SHIFT [down arrow] (in input field)    | SHIFT [down arrow] (in input field)    | Highlight text to the end of the current line                  |
-+----------------------------------------+----------------------------------------+----------------------------------------------------------------+
-| SHIFT ENTER (in input field)           | SHIFT ENTER (in input field)           | Create a new line                                              |
+| CTRL+SHIFT+M                           | CMD+SHIFT+M                            | Open recent mentions                                           |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
 
 Files
@@ -34,7 +32,7 @@ Files
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
 | On Windows                             | On Mac                                 | Description                                                    | 
 +========================================+========================================+================================================================+
-| CTRL U                                 | CMD U                                  | Upload a file                                                  |
+| CTRL+U                                 | CMD+U                                  | Upload a file                                                  |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
 
 Messages
@@ -43,36 +41,34 @@ Messages
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
 | On Windows                             | On Mac                                 | Description                                                    | 
 +========================================+========================================+================================================================+
-| @[character] TAB                       | @[character] TAB                       | Autocomplete @username beginning with [character]              |
+| @[character]+TAB                       | @[character]+TAB                       | Autocomplete @username beginning with [character]              |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
-| :[character] TAB                       | :[character] TAB                       | Autocomplete emoji beginning with [character]                  |
+| :[character]+TAB                       | :[character]+TAB                       | Autocomplete emoji beginning with [character]                  |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
-| [up arrow] (in empty input field)      | [up arrow] (in empty input field)      | Edit your last message in the current channel                  |
+| UP (in empty input field)              | UP (in empty input field)              | Edit your last message in the current channel                  |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
-| CTRL [up arrow] (in empty input field) | CMD [up arrow] (in empty input field)  | Reprint the last message or slash command you entered          |
-+----------------------------------------+----------------------------------------+----------------------------------------------------------------+
-| CTRL /                                 | CMD /                                  | Open keyboard shortcuts help text                              |
+| CTRL+UP (in empty input field)         | CMD+UP (in empty input field)          | Reprint the last message or slash command you entered          |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
 
-Navigation
+Browser Built-in
 ====
 
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
 | On Windows                             | On Mac                                 | Description                                                    | 
 +========================================+========================================+================================================================+
-| ALT [up arrow]                         | ALT [up arrow]                         | Previous channel or direct message in LHS                      |
+| ALT+LEFT                               | CMD+[                                  | Previous channel in your history                               |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
-| ALT [down arrow]                       | ALT [down arrow]                       | Next channel or direct message in LHS                          |
+| ALT+RIGHT                              | CMD+]                                  | Next channel in your history                                   |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
-| ALT SHIFT [up arrow]                   | ALT SHIFT [up arrow]                   | Previous channel or direct message in LHS with unread messages |
+| CTRL+PLUS                              | CMD+PLUS                               | Increase font size                                             |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
-| ALT SHIFT [down arrow]                 | ALT SHIFT [down arrow]                 | Next channel or direct message in LHS with unread messages     |
+| CTRL+MINUS                             | CMD+MINUS                              | Decrease font size                                             |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
-| CTRL SHIFT A                           | CMD SHIFT A                            | Open account settings                                          |
+| PgUp / PgDn                            | Fn+ UP/DOWN                            | Scroll through your messages                                   |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
-| CTRL SHIFT K                           | CMD SHIFT K                            | Open a quick channel switcher dialog                           |
+| SHIFT+UP (in input field)              | SHIFT+UP (in input field)              | Highlight text to the next line                                |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
-| CTRL SHIFT M                           | CMD SHIFT M                            | Open recent mentions                                           |
+| SHIFT+DOWN (in input field)            | SHIFT+DOWN (in input field)            | Highlight text to the previous line                            |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
-| ESC                                    | ESC                                    | Close RHS                                                      |
+| SHIFT+ENTER (in input field)           | SHIFT+ENTER (in input field)           | Create a new line                                              |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
