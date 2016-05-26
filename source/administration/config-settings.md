@@ -29,7 +29,9 @@ For deployments seeking additional tracking of system behavior using Segment.com
 
 **Google Developer Key** (`"GoogleDeveloperKey": ""`)  
 
-Mattermost offers the ability to embed YouTube videos from URLs shared by end users. If Google detects the number of views is exceedingly high, they may throttle embed access. Should this occur, you can remove the throttle by registering for a Google Developer Key and entering it in this field following these instructions: https://www.youtube.com/watch?v=Im69kzhpR3I. Your Google Developer Key is used in client-side Javascript. 
+Mattermost offers the ability to embed YouTube videos from URLs shared by end users. If Google detects the number of views is exceedingly high, they may throttle embed access. Should this occur, you can remove the throttle by registering for a Google Developer Key and entering it in this field following these instructions: https://www.youtube.com/watch?v=Im69kzhpR3I. Your Google Developer Key is used in client-side Javascript.
+
+Another benefit of using the Google Developer Key is that Mattermost can detect when a video is no longer available and show a nice post with a *Video not found* label.
 
 **Enable Testing** (`"EnableTesting": false`)  
 
