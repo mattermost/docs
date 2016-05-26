@@ -174,15 +174,15 @@ If your mobile app is not performing to these sample benchmarks, you can identif
 
 3. Confirm your mobile app is performing properly 
 
-     - Test the response of your iOS or Android app relevate to the above benchmarks
-     - Test the response of opening your Mattermost team site on your phone's mobile browser
-     - If using your team site in your iOS or Android app is noticebly slower than using it in the browser, delete your mobile app and reinstall it to clear the issue. 
+   - Test the response of your iOS or Android app relevate to the above benchmarks
+   - Test the response of opening your Mattermost team site on your phone's mobile browser
+   - If using your team site in your iOS or Android app is noticebly slower than using it in the browser, delete your mobile app and reinstall it to clear the issue. 
    
 4. Check your server performance 
 
      - If 1) and 2) are working properly and you're still not achieveing benchmarks, check your server for proper sizing.
      
-          - Please review the `recommended minimum hardware guidelines <http://docs.mattermost.com/install/requirements.html#hardware-sizing-for-team-deployments>`_ and confirm that you're using the properly sized hardware. If you're having performance issues, please do not scale down hardware below the minimum level suggested. 
+         - Please review the `recommended minimum hardware guidelines <http://docs.mattermost.com/install/requirements.html#hardware-sizing-for-team-deployments>`_ and confirm that you're using the properly sized hardware. If you're having performance issues, please do not scale down hardware below the minimum level suggested. 
           
          - If you're using a shared server, you may experience latency with a shared proxy server if it's under load from other applications. You can either switch to a dedicated proxy, or set up your own proxy server using NGINX by following one of the `standard install guides. <http://docs.mattermost.com/#install-guides>`_ 
 
