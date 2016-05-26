@@ -40,9 +40,14 @@ Mattermost numbers releases based on the following format:
 
   `[Version Number].[Major Build Number].[Minor Build Number]`
 
-- Version Number: Indicates a major system release (e.g. 1.x.x, 2.x.x)
+- Major Version Number: Indicates a major system release (e.g. 1.x.x, 2.x.x)
+   - Incrementing this number represents a major change to the codebase and potentially incompatibility with the previous major version release. 
+
 - Major Build Number: Indicates significant new functionality, (e.g. 0.5.x, 0.6.x, 0.7.x)
+   - This number is incremented with each monthly release on the 16th of the month, and represents significant code changes from the previous major build release. 
+
 - Minor Build Number: Indicates a bug fix or security release (e.g. 1.2.5, 1.2.6)
+   - This number is incremented for high priority bug fixes or security releases and does not typically contain significant code changes.
 
 ## Release Schedule
 
