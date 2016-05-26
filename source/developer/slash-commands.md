@@ -115,8 +115,10 @@ As mentioned above, Mattermost makes it easy to take integrations written for Sl
 2. JSON responses designed for Slack using `<>` to note the need to hyperlink a URL, such as ```{"text": "<http://www.mattermost.com/>"}```, are translated to the equivalent markdown in Mattermost and rendered the same as you would see in Slack
 3. Similiarly, responses designed for Slack using `|` within a `<>` to define linked text, such as ```{"text": "Click <http://www.mattermost.com/|here> for a link."}```, are also translated to the equivalent markdown in Mattermost and rendered the same as you would see in Slack
 
-#### Known Issues 
+#### Known Slack Compatibility Issues
 
-- Conversion of Slack attachments and link conversion isn't working
-- Disabling slash commands from the system console only disables creation, not execution of user created slash commands
-- /me command sometimes posts as the webhook bot instead of the user
+1. Using icon_emoji to override the username is not supported  
+2. Referencing  channels using <#CHANNEL_ID> does not link to the channel  
+3. `<!here>`, `<!everyone>`, and `<!group>` are not supported  
+4. Parameters "mrkdwn", "parse", and "link_names" are not supported (Mattermost always converts markdown and automatically links @mentions)  
+5. Bold formatting as `*bold*` is not supported (must be done as `**bold**`)  
