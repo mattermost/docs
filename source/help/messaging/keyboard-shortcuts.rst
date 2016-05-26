@@ -3,7 +3,9 @@ Keyboard Shortcuts
 
 *Available in June 16, 2016 release*
 
-Keyboard shortcuts perform operations in Mattermost to help you navigate through channels and make a more efficient use of your keyboard. Also see `slash commands <https://docs.mattermost.com/help/messaging/executing-commands.html>`_ for alternate ways to help carry out actions with a keyboard instead of a mouse.
+Keyboard shortcuts perform operations in Mattermost to help you navigate through channels and make a more efficient use of your keyboard. See also `slash commands <https://docs.mattermost.com/help/messaging/executing-commands.html>`_ for alternate ways to help carry out actions with a keyboard instead of a mouse.
+
+You can type ``/shortcuts`` to display a list of available keyboard shortcuts.
 
 Navigation
 ====
@@ -64,7 +66,7 @@ Browser Built-in
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
 | CTRL+MINUS                             | CMD+MINUS                              | Decrease font size                                             |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
-| PgUp / PgDn                            | Fn+ UP/DOWN                            | Scroll through your messages                                   |
+| PgUp / PgDn                            | Fn+UP/DOWN                            | Scroll through your messages                                   |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
 | SHIFT+UP (in input field)              | SHIFT+UP (in input field)              | Highlight text to the next line                                |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
