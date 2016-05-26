@@ -553,9 +553,9 @@ Email notifications will be sent to this email address, and this email address m
 
 **Username Attribute** (`"UsernameAttribute": ""`)  
 
-**The attribute in the LDAP server that will be used to populate the username field in Mattermost user interface.** This attribute will be used to identify and mention users. For example, if a Username Attribute is set to **john.smith** a user typing "@john" will see "@john.smith" in their auto-complete options and posting a message with @john.smith will send a notification to that user that they've been mentioned. 
+**The attribute in the LDAP server that will be used to populate the username field in Mattermost user interface.** This attribute will be used to identify and mention users. For example, if a Username Attribute is set to **john.smith** a user typing `@john` will see `@john.smith` in their auto-complete options and posting a message with @john.smith will send a notification to that user that they've been mentioned. 
 
-The **Username Attribute** may be set to the same value as the unique field user to login to the system, called an **ID Attribute**, or if can be mapped to a different value. 
+The **Username Attribute** may be set to the same value as the unique field user to login to the system, called an **ID Attribute**, or it can be mapped to a different value. 
 
 **ID Attribute** (`"IdAttribute": ""`)  
 
@@ -563,7 +563,7 @@ The attribute in the LDAP server that will be used as a unique identifier in Mat
 
 **This value is used to sign in to Mattermost in the “LDAP Username” field on the sign in page.** This attribute can be the same as the **Username Attribute** field above, which is what is used to identify users in the Mattermost interface, or it can be a different value, for example a User ID number, or an LDAP PIN. If your team typically uses `DOMAIN\username` to sign in to other services with LDAP, you may choose to put `DOMAIN\username` in this field to maintain consistency between sites.
 
-**This is the attribute that will be used to create unique Mattermost accounts.** This attribute should be an LDAP attribute with a value that does not change, such as username or uid. If a user’s **ID Attribute** changes and the user attempts to login, a new Mattermost account will be created for that user with a new ID Attribute and the new account will not be associated with the previous account. 
+**This is the attribute that will be used to create unique Mattermost accounts.** This attribute should be an LDAP attribute with a value that does not change, such as `username` or `uid`. If a user’s **ID Attribute** changes and the user attempts to login, a new Mattermost account will be created for that user with a new ID Attribute and the new account will not be associated with the previous account. 
 
 **Skip Certificate Verification** (`"SkipCertificateVerification": false`)  
 
