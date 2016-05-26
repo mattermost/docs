@@ -163,19 +163,14 @@ Removing bottlenecks to mobile app performance
 
 If your mobile app is not performing to these sample benchmarks, you can identify bottlenecks using the following process: 
 
-1. Confirm your mobile device meets minimum standards 
+1. Confirm your mobile device meets minimum hardware and operating system requirements 
 
    - Please confirm the device you're testing `meets the minimum operating system and hardware requirements of Mattermost Mobile Apps. <http://docs.mattermost.com/install/requirements.html#mobile-app-experience>`_
 
-2. Confirm your mobile device connection speed meets benchmark requirements
+2. Confirm your mobile device connection is on 4G/LTE or Wifi and meets ping time requirements
 
    - From your mobile browser go to https://speedtest.net/mobile, download the speed test app and begin a test
    - Check if your **ping time** (a measure of signal latency) to see if it's similar to the benchmarks in the above section. If they are significantly lower, move to an area with better reception or contact your wireless provider to correct any technical issues. 
-   - Some typical ping times on different wireless networks:
-   
-      - 4G/LTE wireless: 50-150 milliseconds
-      - 3G wireless: 100-350 milliseconds
-      - Satellite: 750-2000 milliseconds 
 
 3. Confirm your mobile app is performing properly 
 
