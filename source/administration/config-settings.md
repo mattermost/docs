@@ -547,19 +547,23 @@ The attribute in the LDAP server that will be used to populate the last name of 
 
 **Email Attribute** (`"EmailAttribute": ""`)  
 
-The attribute in the LDAP server that will be used to populate the email addresses of users in Mattermost.
+The attribute in the LDAP server that will be used to populate the email addresses of users in Mattermost. 
+
+Email notifications will be sent to this email address, and this email address may be viewable by other Mattermost users depending on privacy settings choosen by the System Administrator. 
 
 **Username Attribute** (`"UsernameAttribute": ""`)  
 
-The attribute in the LDAP server that will be used to populate the username field in Mattermost. This may be the same as the ID Attribute.
+**The attribute in the LDAP server that will be used to populate the username field in Mattermost user interface.** This attribute will be used within the Mattermost user interface to identify and mention users. For example, if a Username Attribute is set to **john.smith** a user typing `@john` will see `@john.smith` in their auto-complete options and posting a message with `@john.smith` will send a notification to that user that they've been mentioned. 
+
+The **Username Attribute** may be set to the same value used to sign-in to the system, called an **ID Attribute**, or it can be mapped to a different value. 
 
 **ID Attribute** (`"IdAttribute": ""`)  
 
-The attribute in the LDAP server that will be used as a unique identifier in Mattermost.
+The attribute in the LDAP server that will be used as a unique identifier in Mattermost. It serves two purposes: 
 
-This is the attribute that will be used to create Mattermost accounts. It should be an LDAP attribute with a value that does not change, such as username or uid. If a user’s Id Attribute changes, it will create a new Mattermost account unassociated with their old one. 
+**This value is used to sign in to Mattermost in the “LDAP Username” field on the sign in page.** This attribute can be the same as the **Username Attribute** field above, which is what is used to identify users in the Mattermost interface, or it can be a different value, for example a User ID number. If your team typically uses `DOMAIN\username` to sign in to other services with LDAP, you may enter a field name that maps to `DOMAIN\username` to maintain consistency between sites.
 
-This is also the value used to log in to Mattermost in the “LDAP Username” field on the sign in page. Normally this attribute is the same as the “Username Attribute” field above. If your team typically uses domain\username to sign in to other services with LDAP, you may choose to put domain\username in this field to maintain consistency between sites.
+**This is the attribute that will be used to create unique Mattermost accounts.** This attribute should be an LDAP attribute with a value that does not change, such as `username` or `uid`. If a user’s **ID Attribute** changes and the user attempts to login the Mattermost server will attempt to create a new Mattermost user account based on the new **ID Attribute** and fail since new Mattermost users accounts can't be created with duplicate email addresses or Mattermost usernames (as defined in the **Username Attribute**).  
 
 **Skip Certificate Verification** (`"SkipCertificateVerification": false`)  
 
