@@ -98,7 +98,7 @@ To setup HPNS please follow the following steps:
 
 1. Install HPNS
 
-     1. Follow the [instructions you received with your Mattermost Enterprise Edition purchase to install or upgrade to Enterprise Edition](http://docs.mattermost.com/install/ee-install.html)
+     1. Follow the `instructions you received with your Mattermost Enterprise Edition purchase to install or upgrade to Enterprise Edition <http://docs.mattermost.com/install/ee-install.html>`_
      2. Under **System Console** > **Email Settings** > **Send Push Notifications**  select **Use encrypted, production-quality HPNS connection to iOS and Android apps** (this option appears only in Enterprise Edition, not Team Edition)
      3. Check the box "I understand and accept the Mattermost Hosted Push Notification Service Terms of Service and Privacy Policy." after reading the documents referenced, then click **Save**. 
      4. Download either the Mattermost iOS app from iTunes or the Mattermost Android app from Google Play and sign into the app using an account on your Mattermost server, which we'll refer to as "Account A". 
@@ -130,7 +130,7 @@ To setup HPNS please follow the following steps:
 Confirming TPNS push notifications are properly configured
 ``````
 
-To setup TPNS please [follow the instructions to confirm HPNS is correctly configured](http://docs.mattermost.com/deployment/push.html#confirming-hpns-is-properly-configured) with the following changes: 
+To setup TPNS please `follow the instructions to confirm HPNS is correctly configured <http://docs.mattermost.com/deployment/push.html#confirming-hpns-is-properly-configured>`_ with the following changes: 
 
 1. Omit step 1.1, as there is no need to install Enterprise Edition.
 2. In step 1.2, select "User iOS and Android apps on iTunes and Google Play with TPNS"
@@ -163,7 +163,11 @@ Removing bottlenecks to mobile app performance
 
 If your mobile app is not performing to these sample benchmarks, you can identify bottlenecks using the following process: 
 
-1. Confirm your mobile device connection speed 
+1. Confirm your mobile device meets minimum standards 
+
+   - Please confirm the device you're testing `meets the minimum operating system and hardware requirements of Mattermost Mobile Apps. <http://docs.mattermost.com/install/requirements.html#mobile-app-experience>`_
+
+2. Confirm your mobile device connection speed meets benchmark requirements
 
    - From your mobile browser go to https://speedtest.net/mobile, download the speed test app and begin a test
    - Check if your **ping time** (a measure of signal latency) to see if it's similar to the benchmarks in the above section. If they are significantly lower, move to an area with better reception or contact your wireless provider to correct any technical issues. 
@@ -173,13 +177,13 @@ If your mobile app is not performing to these sample benchmarks, you can identif
       - 3G wireless: 100-350 milliseconds
       - Satellite: 750-2000 milliseconds 
 
-2. Confirm your mobile app is performing properly 
+3. Confirm your mobile app is performing properly 
 
      - Test the response of your iOS or Android app relevate to the above benchmarks
      - Test the response of opening your Mattermost team site on your phone's mobile browser
      - If using your team site in your iOS or Android app is noticebly slower than using it in the browser, delete your mobile app and reinstall it to clear the issue. 
    
-3. Check your server performance 
+4. Check your server performance 
 
      - If 1) and 2) are working properly and you're still not achieveing benchmarks, check your server for proper sizing.
      
