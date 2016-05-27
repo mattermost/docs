@@ -512,13 +512,14 @@ The domain or IP address of the LDAP server.
 
 **LDAP Port** (`"LdapPort": 389`)    
 
-The port Mattermost will use to connect to the LDAP server. Default is 389.
+The port Mattermost will use to connect to the AD/LDAP server. Default is 389.
 
 **Connection Security** (`"ConnectionSecurity": ""`) 
 
-The type of connection security Mattermost uses to connect to LDAP.      
-`""`: No security, Mattermost will connect over an unsecure connection; `TLS`: Encrypts the communication between Mattermost and your server using TLS; `STARTTLS`: Takes an existing insecure connection and attempts to upgrade it to a secure connection using TLS. 
-As an alternative to these options, stunnel can be used to establish secure connections. 
+The type of connection security Mattermost uses to connect to LDAP. 
+`""`: No encryption, Mattermost will not attempt to establish an encrypted connection to the LDAP server; `TLS`: Encrypts the communication between Mattermost and your server using TLS; `STARTTLS`: Takes an existing insecure connection and attempts to upgrade it to a secure connection using TLS. 
+
+If the "No encryption" option is selected it is highly recommended that the LDAP connection is secured outside of Mattermost, for example, by adding a stunnel proxy. 
 
 **Base DN** (`"BaseDN": ""`)    
 
@@ -526,7 +527,7 @@ The **Base DN** is the _Base Distinguished Name_ of the location where Mattermos
 
 **Bind Username** (`"BindUsername": ""`)  
 
-The username used to perform the AD/LDAP search. This should be an account created specifically for use with Mattermost  Its permissions should be limited to read-only access to the portion of the LDAP tree specified in the **Base DN** field. **Bind Username** should specify domain in `DOMAIN/username` format. 
+The username used to perform the AD/LDAP search. This should be an account created specifically for use with Mattermost  Its permissions should be limited to read-only access to the portion of the LDAP tree specified in the **Base DN** field. When using Active Directory, **Bind Username** should specify domain in `DOMAIN/username` format. 
 
 **Bind Password** (`"BindPassword": ""`)  
 
