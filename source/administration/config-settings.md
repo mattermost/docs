@@ -517,15 +517,16 @@ The port Mattermost will use to connect to the LDAP server. Default is 389.
 **Connection Security** (`"ConnectionSecurity": ""`) 
 
 The type of connection security Mattermost uses to connect to LDAP.      
-`""`: No security, Mattermost will connect over an unsecure connection; `TLS`: Encrypts the communication between Mattermost and your server using TLS; `STARTTLS`: Takes an existing insecure connection and attempts to upgrade it to a secure connection using TLS.    
+`""`: No security, Mattermost will connect over an unsecure connection; `TLS`: Encrypts the communication between Mattermost and your server using TLS; `STARTTLS`: Takes an existing insecure connection and attempts to upgrade it to a secure connection using TLS. 
+As an alternative to these options, stunnel can be used to establish secure connections. 
 
 **Base DN** (`"BaseDN": ""`)    
 
-The Base DN is the Distinguished Name of the location where Mattermost should start its search for users in the LDAP tree.
+The **Base DN** is the _Base Distinguished Name_ of the location where Mattermost should start its search for users in the LDAP tree.
 
 **Bind Username** (`"BindUsername": ""`)  
 
-The username used to perform the LDAP search. This should typically be an account created specifically for use with Mattermost. It should be a read only account with access limited to the portion of the LDAP tree specified in the BaseDN field. Bind username should specify domain in `DOMAIN/username` format. 
+The username used to perform the AD/LDAP search. This should be an account created specifically for use with Mattermost  Its permissions should be limited to read-only access to the portion of the LDAP tree specified in the **Base DN** field. **Bind Username** should specify domain in `DOMAIN/username` format. 
 
 **Bind Password** (`"BindPassword": ""`)  
 
@@ -534,6 +535,8 @@ Password of the user given in “Bind Username”.
 **User Filter** (`"UserFilter": ""`)  
 
 Optionally enter an LDAP Filter to use when searching for user objects (accepts [general syntax](http://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm)). Only the users selected by the query will be able to access Mattermost. For Active Directory, the query to filter out disabled users is `(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))`. 
+
+This filter uses the permissions of the **Bind Username** account to execute the search. Administrators should make sure to use a specially created account for Bind Username with read-only access to the portion of the LDAP tree specified in the **Base DN** field. 
 
 **First Name Attribute** (`"FirstNameAttribute": ""`)  
 
