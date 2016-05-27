@@ -148,15 +148,33 @@ The response times of Mattermost mobile apps should perform to standard benchmar
 Performance Benchmarks for Mobile Applications 
 ^^^^^^ 
 
-Properly configured mobile applications should perform as follows: 
+Properly configured mobile applications on 4G/LTE or Wifi should perform as follows: 
 
-iPhone Plus 6s on an LTE network using 256-bit AES encryption on 4G/LTE connection with 50  millisecond ping time: 
+iPhone Plus 6s on 4G/LTE connection (50 ms ping time, 50 Mbps upload, 8 Mbps download): 
 
-- **Loading a new channel:** 1-4 seconds (depending on content in channel) 
+- **Loading a new channel:** less than 4 seconds 
 - **Returning to a channel previously viewed:** less than 1 second
 - **Switching back to app after it's recently been in the background:** less than 1 second 
 - **Switching to app and loading channel after phone has been asleep:** less than 5 seconds 
 - **Cold start of app until first page load:** 10 seconds 
+
+iPhone 5s on 5G connection (20 ms ping time, 77 Mbps download, 12 Mbps upload):
+
+- **Loading a new channel:** less than 3 seconds
+- **Returning to a channel previously viewed:** less than 1 second
+- **Switching back to app after it's recently been in the background:** less than 1 second
+- **Switching to app and loading channel after phone has been asleep:** less than 3 seconds
+- **Cold start of app until first page load:** less than 5 seconds
+
+Samsung Galaxy S6 on LTE connection (23 millisecond ping time):
+
+- **Loading a new channel:** less than 4 seconds
+- **Returning to a channel previously viewed:** less than 1 second
+- **Switching back to app after it's recently been in the background:** less than 1 second 
+- **Switching to app and loading channel after phone has been asleep:** less than 5 seconds 
+- **Cold start of app until first page load:** less than 5 seconds
+
+Note: While using Mattermost mobile applications may be used on connections 3G and lower, this configuration is not recommended. 
 
 Removing bottlenecks to mobile app performance 
 ^^^^^^ 
