@@ -17,7 +17,7 @@ The majority of the Mattermost API involves interacting with teams. Therefore, m
 
 ##### Session Token
 
-Make an HTTP POST to `yourdomain.com/api/v3/users/login` with a JSON body indicating the `name` of the team, the user's `email` and `password`.
+Make an HTTP POST to `yourdomain.com/api/v3/users/login` with a JSON body indicating the `name` of the team, the user's `login_id` and `password`.
 
 ```
 curl -i -d '{"name":"exampleteam","login_id":"someone@nowhere.com","password":"thisisabadpassword"}' http://localhost:8065/api/v3/users/login
