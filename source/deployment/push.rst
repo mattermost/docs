@@ -154,7 +154,7 @@ iPhone 6s Plus on 4G/LTE connection (50 ms ping time, 50 Mb/s download, 8 Mb/s u
 
 - **Loading a new channel:** less than 4 seconds
 - **Returning to a channel previously viewed:** less than 1 second
-- **Switching to the app after previously opening it:** less than 1 second
+- **Switching back to the app after it has recently been in the background:** less than 1 second
 - **Switching to the app and loading a channel after the phone has been asleep:** less than 5 seconds
 - **Fresh start of the app until first page load:** less than 10 seconds
 
@@ -162,7 +162,7 @@ iPhone 5s on 5G connection (20 ms ping time, 77 Mb/s download, 12 Mb/s upload):
 
 - **Loading a new channel:** less than 3 seconds
 - **Returning to a channel previously viewed:** less than 1 second
-- **Switching to the app after previously opening it:** less than 1 second
+- **Switching back to the app after it has recently been in the background:** less than 1 second
 - **Switching to the app and loading a channel after the phone has been asleep:** less than 3 seconds
 - **Fresh start of the app until first page load:** less than 5 seconds
 
@@ -170,7 +170,7 @@ Samsung Galaxy S6 on 4G/LTE connection (23 ms ping time, 36 Mb/s download, 17 Mb
 
 - **Loading a new channel:** less than 4 seconds
 - **Returning to a channel previously viewed:** less than 1 second
-- **Switching to the app after previously opening it:** less than 1 second
+- **Switching back to the app after it has recently been in the background:** less than 1 second
 - **Switching to the app and loading a channel after the phone has been asleep:** less than 5 seconds
 - **Fresh start of the app until first page load:** less than 5 seconds
 
@@ -178,7 +178,7 @@ Samsung Galaxy S6 on Wifi connection (23 ms ping time, 138 Mb/s download, 12 Mb/
 
 - **Loading a new channel:** less than 3 seconds
 - **Returning to a channel previously viewed:** less than 1 second
-- **Switching to the app after previously opening it:** less than 1 second
+- **Switching back to the app after it has recently been in the background:** less than 1 second
 - **Switching to the app and loading a channel after the phone has been asleep:** less than 5 seconds
 - **Fresh start of the app until first page load:** less than 4 seconds
 
