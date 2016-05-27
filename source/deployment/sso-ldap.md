@@ -1,31 +1,44 @@
 ## Active Directory/LDAP Setup (Enterprise) 
 
-### Enabling Active Directory/Lightweight Directory Access Protocol (AD/LDAP)
+### Overview 
+
+Active Directory/LDAP integration offers the following benefits: 
+
+- **Single-sign-on.** Users can sign-in to Mattermost with their AD/LDAP credentials.
+- **Centralized identity management.** Mattermost accounts can display user information from AD/LDAP, such as first and last name, email and username.
+- **Automatic account provisioning.** New Mattermost user accounts are automatically created the first time a user signs in with their AD/LDAP credentials on the Mattermost server. 
+
+### Pre-installation notes
+
+- If you're using Active Directory with **nested security groups** you need to write a PowerShell script, or similar, to flatten and aggregate the tree into a single security group to map into Mattermost.   
+
+### Getting started
+
+There are two ways to setup AD/LDAP: 
+
+1. **Configure AD/LDAP using the System Console user interface**
+     - Start the Mattermost server and create a new account using email and password, which is assigned the System Administrator role as the first user created, then configure AD/LDAP and then convert your System Administror account to use the AD/LDAP sign-in method.
+2. **Configure AD/LDAP by editing `config.json`**
+     - Before starting the Mattermost server, edit `config.json` to enable AD/LDAP based on [AD/LDAP settings documentation](http://docs.mattermost.com/administration/config-settings.html#ldap-settings-enterprise). When you start the Mattermost server the first user to log in with valid AD/LDAP credentials will be assigned the System Administrator role. 
+
+#### Configure AD/LDAP using the System Console user interface 
 
 After installing Mattermost:
 
-1. Create a team using email authentication    
-    1. Log in using an account assigned to the “System Administrator” role. The first account you create on the server is automatically assigned this role. You may also assign the role to another account.    
-    2. In the team site, go to **Main Menu** (the three dots at top left) > **System Console** > **LDAP Settings**     
-    3. Fill in LDAP settings based on [configuration settings documentation](http://docs.mattermost.com/administration/config-settings.html#ldap-settings-enterprise)    
-    4. After LDAP has been enabled, confirm that users can sign in using LDAP credentials. The **LDAP username** will be the attribute set in the **Id Attribute** field. 
-  
-    - Note: If you're using Active Directory with **nested security groups** you need to write a PowerShell script, or similar, to flatten and aggregate the tree into a single security group to map into Mattermost.   
+1. **Create a System Administrator account using email authentication**. On a new server create an account using email and password, which is automatically assigned the **System Administrator** role since it is the first account created. You may also assign the role to another account.    
 
-2. (Optional) Change default Session Length for LDAP SSO     
-    1. Go to **System Console** > **Service Settings** > **Session Length for SSO in days** to select the frequency with which users need to log into devices with LDAP credentials. Default is 30 days. 
-  
-    If a user attribute changes on the LDAP server it will be updated the next time the user enters their credentials to log in to Mattermost. This includes if a user is made inactive or removed from an LDAP server. The ability more quickly detect user attribute changes by polling the LDAP server as sessions start is planned for a future monthly release of Enterprise Edition. 
+2. **Configure AD/LDAP**. Select **System Console** from the main screen, go to **LDAP Settings** and fill in AD/LDAP settings based on [configuration settings documentation](http://docs.mattermost.com/administration/config-settings.html#ldap-settings-enterprise)    
 
-- Note: Organizations that run secured connections behind their firewalls can set up stunnel to port 389. 
+3. **Confirm AD/LDAP sign-on is enabled**.  After AD/LDAP has been enabled, confirm that users can sign in using AD/LDAP credentials. 
 
-### Restrict authentication to Active Directory/LDAP
+4. **Switch your System Administrator account from email to AD/LDAP authentication**. Go to **Account Settings** > **General** > **Sign-in Method** > **Switch to LDAP** and sign-in with your AD/LDAP credentials to complete the switch. 
 
-1. Make sure your System Administrator authenticates with LDAP (see above instructions).    
-2. Go to **System Console** > **Email Settings** and set **Allow Sign Up With Email** to `false`.    
-3. Go to **System Console** > **Email Settings** and set **Allow Sign In With Email** to `false`.    
+5. **(Optional) Restrict authentication to AD/LDAP**. Go to **System Console** > **Email Settings** and set **Allow Sign Up With Email** to `false` and **Allow Sign In With Email** to `false`. This should leave Active Directory/LDAP as the only single-sign-in option. 
 
-This should leave Active Directory/LDAP as the only single-sign-in option. If you've made a mistake you can [set an existing account to System Administrator using the commandline tool](http://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline). 
+If you've made a mistake and lock yourself out of the system somehow, you can [set an existing account to System Administrator using the commandline tool](http://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline). 
+
+Notes: 
+- Mattermost 3.0 checks AD/LDAP credentials at the time of sign-in and issues session tokens with configurable durations, defaulting to 30 days. If a shorter time intervals is required, this option can be changed in **System Console** > **Service Settings** > **Session Length for SSO in days**. The ability more quickly detect user attribute changes by polling the AD/LDAP server as sessions start is planned for a future monthly release of Enterprise Edition. 
 
 ### Troubleshooting
 
@@ -44,15 +57,4 @@ If the user can no longer log in to Mattermost with their LDAP credentials - for
 
 The issue can be fixed by changing the value of the field used for the ID attribute back to the old value. 
 
-Note: Currently the value is case sensitive. If the ID attribute is set to the username and the username changes from John.Smith to john.smith, the user would have problems logging in.   
-
-### Switching to LDAP sign in from email authentication 
-
-1. Go to Account Settings > Security > Sign-in Method
-2. Click "Switch to using LDAP"
-3. Enter your current password, and then your LDAP credentials. 
-4. Click "Switch account to LDAP".
-
-Your account should now use LDAP credentials to sign in.
-
-See [archived documentation](http://docs.mattermost.com/archives/docs-v2.2.html#switching-system-administrator-account-to-ldap-from-email-authentication) for instructions on how to do this prior to v3.0. 
+Note: Currently the value is case sensitive. If the ID attribute is set to the username and the username changes from `John.Smith` to `john.smith`, the user would have problems logging in.   
