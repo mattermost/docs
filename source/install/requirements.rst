@@ -97,12 +97,12 @@ For enterprise deployments of 10,000-20,000 registered users with moderate usage
 **Proxy Server** 
 
 - One server with 4-8 vCPUs/cores, 16-32 GB RAM, minimum 4 GB SSD storage
-- (Optional) Add one additional identical server for high availability mode, where one Mattermost server can be disabled or upgraded without interrupting service quality). Second server should be sized to carry the full load of the first server so performance does not degrade when the first server is taken offline.
+- (Optional) Add one additional identical server for high availability mode, where one Mattermost server can be disabled or upgraded without interrupting service quality. Second server should be sized to carry the full load of the first server so performance does not degrade when the first server is taken offline.
 
 **Mattermost Server** (1 to 2 depending on level of redundancy and high availability required) 
 
 - One server with 4-8 vCPUs/cores, 16-32 GB RAM, minimum 4 GB SSD storage
-- (Optional) Add one additional identical server for high availability mode, where one Mattermost server can be disabled or upgraded without interrupting service quality). Second server should be sized to carry the full load of the first server so performance does not degrade when the first server is taken offline. Note: The high availability option is available only by `contacting the Enterprise Edition team <https://about.mattermost.com/contact/>`_.
+- (Optional) Add one additional identical server for high availability mode, where one Mattermost server can be disabled or upgraded without interrupting service quality. Second server should be sized to carry the full load of the first server so performance does not degrade when the first server is taken offline. Note: The high availability option is available only by `contacting the Enterprise Edition team <https://about.mattermost.com/contact/>`_.
 
 **Network Attached Storage** 
 
