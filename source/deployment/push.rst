@@ -140,12 +140,12 @@ The same instructions should then verify the functionality of TPNS.
 .. note::  Mobile push notifications currently trigger on the same events as email notifications. The option to trigger mobile push notifications `based on mentions <https://mattermost.uservoice.com/forums/306457-general/suggestions/13609332-add-option-to-trigger-push-notifications-on-mentio>`_ and `based on all desktop notifications <https://mattermost.uservoice.com/forums/306457-general/suggestions/13608870-add-option-to-trigger-push-notifications-on-same-e>`_ are feature candidate for a future release. 
 
 
-Troubleshooting performance of mobile apps 
+Troubleshooting Performance of Mobile Applications 
 ``````
 
 The response times of Mattermost mobile apps should perform to standard benchmarks, provided device model, connection speed and server configuration are comparable to benchmark setups.
 
-Performance Benchmarks for Mobile Applications 
+Mobile Performance Benchmarks
 ^^^^^^ 
 
 Properly configured mobile applications on 4G/LTE or Wifi should perform as follows: 
