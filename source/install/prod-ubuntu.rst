@@ -93,9 +93,10 @@ Set up Mattermost Server
    service under a ``mattermost`` user account with limited permissions.
 4. Download the latest Mattermost Server by typing:
 
-   -  ``wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz``
-   -  Where vX.X.X is the latest Mattermost release version. For
-      example, v1.4.0
+   -  For Mattermost Team Edition: ``wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz``
+   -  For Mattermost Enterprise Edition: ``wget https://releases.mattermost.com/X.X.X/mattermost-enterprise-X.X.X-linux-amd64.tar.gz``
+   
+   Where `vX.X.X` is the latest Mattermost release version. For example, v1.4.0
 
 5. Unzip the Mattermost Server by typing:
 
