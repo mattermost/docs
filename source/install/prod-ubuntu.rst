@@ -335,3 +335,8 @@ Finish Mattermost Server setup
 9. Restart the Mattermost Service by typing:
 
    -  ``sudo restart mattermost``
+
+Activating Mattermost Enterprise Edition
+------------------------------
+
+To activate Enterprise Edition go to **System Console** > **Edition and License** > **License Key** and upload the license file included with your purchase. Your screen will refresh and Enterprise Edition features will be activated. 
