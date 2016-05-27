@@ -519,7 +519,7 @@ The port Mattermost will use to connect to the AD/LDAP server. Default is 389.
 The type of connection security Mattermost uses to connect to LDAP. 
 `""`: No encryption, Mattermost will not attempt to establish an encrypted connection to the LDAP server; `TLS`: Encrypts the communication between Mattermost and your server using TLS; `STARTTLS`: Takes an existing insecure connection and attempts to upgrade it to a secure connection using TLS. 
 
-If the "No encryption" option is selected it is highly recommended that the LDAP connection is secured outside of Mattermost, for example, by adding an stunnel proxy. 
+If the "No encryption" option is selected it is highly recommended that the LDAP connection is secured outside of Mattermost, for example, by adding a stunnel proxy. 
 
 **Base DN** (`"BaseDN": ""`)    
 
