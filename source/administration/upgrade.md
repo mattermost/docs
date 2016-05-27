@@ -2,9 +2,9 @@
 
 This guide explains how to upgrade your Mattermost deployment across versions and editions.
 
-### Upgrading to Team Edition 
+### Upgrade Team Edition 
 
-#### Upgrading to Team Edition to 3.0.x 
+#### Upgrade to Team Edition to 3.0.x 
 
 Mattermost 3.0 lets users maintain a single account across multiple teams on a Mattermost server. This means one set of credentials, one place to configure all account settings, and a more streamlined sign-up and team joining process.
 
@@ -49,7 +49,7 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
       1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 9. After the Mattermost 3.0 upgrade users with duplicate accounts can follow instructions in the upgrade email they received to login to teams on which the duplicate accounts were created and add their primary account to the team and any private groups that are still actively used. Users can continue to access the direct message history of their duplicate accounts using their updated email addresses.
 
-##### Upgrading Team Edition for 2.2.x and earlier 
+##### Upgrade Team Edition for 2.2.x and earlier 
 
 1. Download the **appropriate next upgrade** of your Team Edition server and note any compatibility procedures
       1. Run `platform -version` to check the current version of your Mattermost server
@@ -78,9 +78,21 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
 8. Test the system is working by going to the URL of an existing team.
       You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 
-### Upgrading Enterprise Edition 
+### Upgrade Team Edition to Enterprise Edition
 
-#### Upgrading to Enterprise Edition 3.0.x 
+1. Confirm you have the latest version of Mattermost Team Edition installed
+   1. Run `platform -version` to check the current version of your Mattermost server and compare the version with the latest release listed on https://mattermost.org/download.
+   2. If it is not the latest release, [upgrade to the latest release.](http://docs.mattermost.com/administration/upgrade.html#upgrade-to-team-edition)
+2. Follow the [Enterprise Edition upgrade procedure](http://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition) to replace the Team Edition binary with the [latest Mattermost Enterprise Edition build](http://docs.mattermost.com/administration/upgrade.html#mattermost-enterprise-edition) (in the format `https://releases.mattermost.com/X.X.X/mattermost-enterprise-X.X.X-linux-amd64.tar.gz`). 
+3. Run `platform -version` to confirm the latest Enterprise Edition version has been successfully installed.
+
+You will need an Enterprise Edition license key to activate the features. Follow the instructions that came with your license key to complete your upgrade.
+
+For any issues, Mattermost Enterprise Edition subscribers and trial license users can email support@mattermost.com 
+
+### Upgrade Enterprise Edition 
+
+#### Upgrade to Enterprise Edition 3.0.x 
 
 Mattermost 3.0 lets users maintain a single account across multiple teams on a Mattermost server. This means one set of credentials, one place to configure all account settings, and a more streamlined sign-up and team joining process.
 
@@ -89,7 +101,7 @@ Mattermost 3.0 lets users maintain a single account across multiple teams on a M
 If your Mattermost server has duplicate accounts (users with multiple accounts in multiple teams with the same email address or username), you need to understand the 3.0 upgrade process in detail and take special steps to upgrade successfully.
 
 1. Download Mattermost Enterprise Edition 3.0.2
-      1. Run `platform -version` to confirm the current version of your Mattermost server is `v2.2.0`, `v2.1.1`, or `v2.0.0`. If not, please [upgrade to `v2.0.0`](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide).
+      1. Run `platform -version` to confirm the current version of your Mattermost server is `v2.2.0`, `v2.1.1`, or `v2.0.0` of either Mattermost Enteprrise Edition or Mattermost Team Edition. If not, please [upgrade to at least Mattermost Enterprise Edition `v2.0.0`](http://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition-to-2-2-x).
       2. Run `wget https://releases.mattermost.com/X.X.X/mattermost-enterprise-X.X.X-linux-amd64.tar.gz` to download the appropriate new version. 
 2. Stop the Mattermost Server
       1. Consider posting an announcement to active teams about stopping the Mattermost server for an upgrade
@@ -125,6 +137,8 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
       1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 9. After the Mattermost 3.0 upgrade users with duplicate accounts can follow instructions in the upgrade email they received to login to teams on which the duplicate accounts were created and add their primary account to the team and any private groups that are still actively used. Users can continue to access the direct message history of their duplicate accounts using their updated email addresses.
 
+For any issues, Mattermost Enterprise Edition subscribers and trial license users can email support@mattermost.com 
+
 #### Upgrading Enterprise Edition to 2.2.x 
 
 1. Download the **appropriate next upgrade** of your Enterprise Edition server and note any compatibility procedures
@@ -154,16 +168,7 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
 8. Test the system is working by going to the URL of an existing team.
       You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 
-#### Upgrade Team Edition to Enterprise Edition
-
-1. Confirm you have the latest version of Mattermost Team Edition installed
-   1. Run `platform -version` to check the current version of your Mattermost server and compare the version with the latest release listed on https://mattermost.org/download.
-   2. If it is not the latest release, [upgrade to the latest release.](http://docs.mattermost.com/administration/upgrade.html#upgrading-mattermost-to-next-major-version)
-2. Follow the standard upgrade procedure to install the [latest Mattermost Enterprise Edition build](http://docs.mattermost.com/administration/upgrade.html#mattermost-enterprise-edition) (in the format `https://releases.mattermost.com/X.X.X/mattermost-enterprise-X.X.X-linux-amd64.tar.gz`), instead of the latest Team Edition build
-   1. Run `platform -version` to confirm the latest Enterprise Edition version has been successfully installed.
-
-You will need an Enterprise Edition license key to activate the features. Follow the instructions that came with your license key to complete your upgrade.
-
+For any issues, Mattermost Enterprise Edition subscribers and trial license users can email support@mattermost.com 
 
 ## Version Archive
 
