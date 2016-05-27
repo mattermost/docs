@@ -150,47 +150,39 @@ Performance Benchmarks for Mobile Applications
 
 Properly configured mobile applications on 4G/LTE or Wifi should perform as follows: 
 
-iPhone 6s Plus on 4G/LTE connection 
+iPhone 6s Plus on 4G/LTE connection (50 ms ping time, 50 Mb/s download, 8 Mb/s upload): 
 
-(50 ms ping, 50 Mb/s download, 8 Mb/s upload): 
+- **Loading a new channel:** less than 4 seconds
+- **Returning to a channel previously viewed:** less than 1 second
+- **Switching to the app after previously opening it:** less than 1 second
+- **Switching to the app and loading a channel after the phone has been asleep:** less than 5 seconds
+- **Fresh start of the app until first page load:** less than 10 seconds
 
-- **Loading a new channel:** <4 s 
-- **Returning to a channel previously viewed:** <1 s
-- **Switching to the app after previously opening it:** <1 s
-- **Switching to the app and loading a channel after the phone has been asleep:** <5 s
-- **Fresh start of the app until first page load:** <10 s 
+iPhone 5s on 5G connection (20 ms ping time, 77 Mb/s download, 12 Mb/s upload):
 
-iPhone 5s on 5G connection 
+- **Loading a new channel:** less than 3 seconds
+- **Returning to a channel previously viewed:** less than 1 second
+- **Switching to the app after previously opening it:** less than 1 second
+- **Switching to the app and loading a channel after the phone has been asleep:** less than 3 seconds
+- **Fresh start of the app until first page load:** less than 5 seconds
 
-(20 ms ping, 77 Mb/s download, 12 Mb/s upload):
+Samsung Galaxy S6 on 4G/LTE connection (23 ms ping time, 36 Mb/s download, 17 Mb/s upload):
 
-- **Loading a new channel:** <3 s
-- **Returning to a channel previously viewed:** <1 s
-- **Switching to the app after previously opening it:** <1 s
-- **Switching to the app and loading a channel after the phone has been asleep:** <3 s
-- **Fresh start of the app until first page load:** <5 s
+- **Loading a new channel:** less than 4 seconds
+- **Returning to a channel previously viewed:** less than 1 second
+- **Switching to the app after previously opening it:** less than 1 second
+- **Switching to the app and loading a channel after the phone has been asleep:** less than 5 seconds
+- **Fresh start of the app until first page load:** less than 5 seconds
 
-Samsung Galaxy S6 on 4G/LTE connection 
+Samsung Galaxy S6 on Wifi connection (23 ms ping time, 138 Mb/s download, 12 Mb/s upload):
 
-(23 ms ping, 36 Mb/s download, 17 Mb/s upload):
+- **Loading a new channel:** less than 3 seconds
+- **Returning to a channel previously viewed:** less than 1 second
+- **Switching to the app after previously opening it:** less than 1 second
+- **Switching to the app and loading a channel after the phone has been asleep:** less than 5 seconds
+- **Fresh start of the app until first page load:** less than 4 seconds
 
-- **Loading a new channel:** <4 s
-- **Returning to a channel previously viewed:** <1 s
-- **Switching to the app after previously opening it:** <1 s
-- **Switching to the app and loading a channel after the phone has been asleep:** <5 s
-- **Fresh start of the app until first page load:** <5 s
-
-Samsung Galaxy S6 on Wifi connection (optimal performance)
-
-(23 ms ping, 138 Mb/s download, 12 Mb/s upload):
-
-- **Loading a new channel:** <3 s
-- **Returning to a channel previously viewed:** <1 s
-- **Switching to the app after previously opening it:** <1 s
-- **Switching to the app and loading a channel after the phone has been asleep:** <5 s
-- **Fresh start of the app until first page load:** <4 s
-
-Note: While using Mattermost mobile applications may be used on connections 3G and lower, this configuration is not recommended. 
+Note: While Mattermost mobile applications may be used on 3G (and lower) connections, this configuration is not recommended.
 
 Removing bottlenecks to mobile app performance 
 ^^^^^^ 
@@ -203,20 +195,20 @@ If your mobile app is not performing to these sample benchmarks, you can identif
 
 2. Confirm your mobile device connection is on 4G/LTE or Wifi and meets ping time requirements
 
-   - From your mobile browser go to https://speedtest.net/mobile, download the speed test app and begin a test
-   - Check if your **ping time** (a measure of signal latency) to see if it's similar to the benchmarks in the above section. If they are significantly lower, move to an area with better reception or contact your wireless provider to correct any technical issues. 
+   - From your mobile browser go to https://speedtest.net/mobile, download the SpeedTest app and begin a test
+   - Check if your **ping time** (a measure of signal latency) to see if it's similar to the benchmarks in the above section. If they are significantly higher, move to an area with better reception or contact your wireless provider to correct any technical issues. 
 
 3. Confirm your mobile app is performing properly 
 
-   - Test the response of your iOS or Android app relevate to the above benchmarks
+   - Test the response of your iOS or Android app as compared to the above benchmarks
    - Test the response of opening your Mattermost team site on your phone's mobile browser
    - If using your team site in your iOS or Android app is noticebly slower than using it in the browser, delete your mobile app and reinstall it to clear the issue. 
    
 4. Check your server performance 
 
-     - If 1) and 2) are working properly and you're still not achieveing benchmarks, check your server for proper sizing.
+     - If 1) and 2) are working properly and you are still encountering performance issues, please ensure that your server is properly sized.
      
-         - Please review the `recommended minimum hardware guidelines <http://docs.mattermost.com/install/requirements.html#hardware-sizing-for-team-deployments>`_ and confirm that you're using the properly sized hardware. If you're having performance issues, please do not scale down hardware below the minimum level suggested. 
+         - Please review the `recommended minimum hardware guidelines <http://docs.mattermost.com/install/requirements.html#hardware-sizing-for-team-deployments>`_ and confirm that you're using properly sized hardware. If you're having performance issues, please do not scale down hardware below the minimum level suggested. 
           
          - If you're using a shared server, you may experience latency with a shared proxy server if it's under load from other applications. You can either switch to a dedicated proxy, or set up your own proxy server using NGINX by following one of the `standard install guides. <http://docs.mattermost.com/#install-guides>`_ 
 
