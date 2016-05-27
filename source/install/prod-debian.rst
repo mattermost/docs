@@ -65,7 +65,7 @@ Set up Database Server
 
 8.  You can exit out of PostgreSQL by typing:
 
-    -  ``postgre=# \q``
+    -  ``postgres=# \q``
 
 9.  You can exit the postgres account by typing:
 
@@ -142,6 +142,11 @@ Set up Mattermost Server
       ``"DataSource": "postgres://mmuser:mmuser_password@10.10.10.1:5432/mattermost?sslmode=disable&connect_timeout=10"``
 
       -  Assuming a default IP address of 10.10.10.1
+   
+   -  ``config.json`` contains some configuration options that are relevant to the security of your mattermost instance.
+      Therefore you should make sure you changed all those options from the default configuration to something different.
+      This includes, but is not limited to, the following configuration options:
+      * ``PublicLinkSalt``, ``InviteSalt``, ``PasswordResetSalt``, ``AtRestEncryptKey``
 
    -  Optionally you may continue to edit configuration settings in
       ``config.json`` or use the System Console described in a later
@@ -158,6 +163,37 @@ Set up Mattermost Server
 
 8. Setup Mattermost to use the systemd init daemon which handles
    supervision of the Mattermost process
+   
+   **Set up systemd with a unit file**
+   
+   -  ``sudo touch /etc/systemd/system/mattermost.service``
+   -  ``sudo vi /etc/init.d/mattermost``
+   -  Copy the following lines into ``/etc/init.d/mattermost``
+
+      ::
+
+         [Unit]
+         Description=Mattermost is an open source, self-hosted Slack-alternative
+         After=syslog.target network.target
+         
+         [Service]
+         Type=simple
+         User=mattermost
+         Group=mattermost
+         ExecStart=/opt/mattermost/bin/platform
+         PrivateTmp=yes
+         WorkingDirectory=/opt/mattermost
+         Restart=always
+         RestartSec=30
+         
+         [Install]
+         WantedBy=multi-user.target
+   
+   - ``systemctl daemon-reload``
+   - ``systemctl enable mattermost``
+   - ``systemctl start mattermost``
+   
+   **Set up systemd with a legacy init script** (applies to Debian installations that are not using systemd)
 
    -  ``sudo touch /etc/init.d/mattermost``
    -  ``sudo vi /etc/init.d/mattermost``
@@ -283,31 +319,11 @@ Set up Mattermost Server
    -  Make sure that /etc/init.d/mattermost is executable
 
       -  ``sudo chmod +x /etc/init.d/mattermost``
+   
+   - ``systemctl daemon-reload``
+   - ``systemctl enable mattermost``
+   - ``systemctl start mattermost``
 
-9. On reboot, systemd will generate a unit file from the headers in this
-   init script and install it in ``/run/systemd/generator.late/``
-
-Note: This setup can also be done using a systemd unit, usable for
-non-Debian systems, such as Arch Linux. The unit file is as follows:
-
-::
-
-    # cat /etc/systemd/system/mattermost.service
-    [Unit]
-    Description=Mattermost
-    After=network.target
-
-    [Service]
-    User=mattermost
-    ExecStart=/home/mattermost/mattermost/bin/platform
-    WorkingDirectory=/home/mattermost/mattermost
-    Restart=always
-    RestartSec=30
-
-    [Install]
-    WantedBy=multi-user.target
-    # systemctl start mattermost
-    # systemctl enable mattermost
 
 Set up NGINX Server
 -------------------
