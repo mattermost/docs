@@ -100,7 +100,8 @@ Set up Mattermost Server
 
 5. Unzip the Mattermost Server by typing:
 
-   -  ``tar -xvzf mattermost-team-X.X.X-linux-amd64.tar.gz``
+   -  For Mattermost Team Edition: ``tar -xvzf mattermost-team-X.X.X-linux-amd64.tar.gz``
+   -  For Mattermost Enterprise Edition: ``tar -xvzf mattermost-enterprise-X.X.X-linux-amd64.tar.gz``
 
 6. Create the storage directory for files. We assume you will have
    attached a large drive for storage of images and files. For this
