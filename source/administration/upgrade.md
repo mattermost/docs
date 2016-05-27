@@ -12,7 +12,7 @@ Mattermost 3.0 lets users maintain a single account across multiple teams on a M
 
 If your Mattermost server has duplicate accounts (users with multiple accounts in multiple teams with the same email address or username), you need to understand the 3.0 upgrade process in detail and take special steps to upgrade successfully.
 
-1. Download Mattermost Team Edition 3.0.2
+1. Download Mattermost Team Edition 3.0.3
       1. Run `platform -version` to confirm the current version of your Mattermost server is `v2.2.0`, `v2.1.0`, or `v2.0.0`. If not, please [upgrade to `v2.0.0`](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide).
       2. Run `wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz` to download the appropriate new version. 
 2. Stop the Mattermost Server
@@ -100,7 +100,7 @@ Mattermost 3.0 lets users maintain a single account across multiple teams on a M
 
 If your Mattermost server has duplicate accounts (users with multiple accounts in multiple teams with the same email address or username), you need to understand the 3.0 upgrade process in detail and take special steps to upgrade successfully.
 
-1. Download Mattermost Enterprise Edition 3.0.2
+1. Download Mattermost Enterprise Edition 3.0.3
       1. Run `platform -version` to confirm the current version of your Mattermost server is `v2.2.0`, `v2.1.1`, or `v2.0.0` of either Mattermost Enteprrise Edition or Mattermost Team Edition. If not, please [upgrade to at least Mattermost Enterprise Edition `v2.0.0`](http://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition-to-2-2-x).
       2. Run `wget https://releases.mattermost.com/X.X.X/mattermost-enterprise-X.X.X-linux-amd64.tar.gz` to download the appropriate new version. 
 2. Stop the Mattermost Server
@@ -178,8 +178,8 @@ Locations of previously compiled builds.
 
 Stable builds of open source team communication platform compiled by Mattermost, Inc, available under an MIT license.
 
-- [Mattermost Team Edition v3.0.2](http://docs.mattermost.com/administration/changelog.html#release-v3-0-0)
-  - `https://releases.mattermost.com/3.0.2/mattermost-team-3.0.2-linux-amd64.tar.gz`
+- [Mattermost Team Edition v3.0.3](http://docs.mattermost.com/administration/changelog.html#release-v3-0-0)
+  - `https://releases.mattermost.com/3.0.3/mattermost-team-3.0.3-linux-amd64.tar.gz`
 - [Mattermost Team Edition v2.2.0](http://docs.mattermost.com/administration/changelog.html#release-v2-2-0)
   - `https://releases.mattermost.com/2.2.0/mattermost-team-2.2.0-linux-amd64.tar.gz`
 - [Mattermost Team Edition v2.1.0](http://docs.mattermost.com/administration/changelog.html#release-v2-1-0)
@@ -211,8 +211,8 @@ Stable builds of open source team communication platform compiled by Mattermost,
 
 Commercial software for self-hosted enterprise communication compiled by Mattermost, Inc. Requires paid subscription and valid license key for use.
 
-- [Mattermost Enterprise Edition v3.0.2](http://docs.mattermost.com/administration/changelog.html#release-v3-0-0)
-  - `https://releases.mattermost.com/3.0.2/mattermost-enterprise-3.0.2-linux-amd64.tar.gz`
+- [Mattermost Enterprise Edition v3.0.3](http://docs.mattermost.com/administration/changelog.html#release-v3-0-0)
+  - `https://releases.mattermost.com/3.0.3/mattermost-enterprise-3.0.3-linux-amd64.tar.gz`
 - [Mattermost Enterprise Edition v2.2.0](http://docs.mattermost.com/administration/changelog.html#release-v2-2-0)
   - `https://releases.mattermost.com/2.2.0/mattermost-enterprise-2.2.0-linux-amd64.tar.gz`
 - [Mattermost Enterprise Edition v2.1.0](http://docs.mattermost.com/administration/changelog.html#release-v2-1-0)
