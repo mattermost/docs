@@ -140,7 +140,7 @@ The same instructions should then verify the functionality of TPNS.
 .. note::  Mobile push notifications currently trigger on the same events as email notifications. The option to trigger mobile push notifications `based on mentions <https://mattermost.uservoice.com/forums/306457-general/suggestions/13609332-add-option-to-trigger-push-notifications-on-mentio>`_ and `based on all desktop notifications <https://mattermost.uservoice.com/forums/306457-general/suggestions/13608870-add-option-to-trigger-push-notifications-on-same-e>`_ are feature candidate for a future release. 
 
 
-Mobile app performance 
+Troubleshooting performance of mobile apps 
 ``````
 
 The response times of Mattermost mobile apps should perform to standard benchmarks, provided device model, connection speed and server configuration are comparable to benchmark setups.
@@ -150,29 +150,45 @@ Performance Benchmarks for Mobile Applications
 
 Properly configured mobile applications on 4G/LTE or Wifi should perform as follows: 
 
-iPhone Plus 6s on 4G/LTE connection (50 ms ping time, 50 Mbps upload, 8 Mbps download): 
+iPhone 6s Plus on 4G/LTE connection 
 
-- **Loading a new channel:** less than 4 seconds 
-- **Returning to a channel previously viewed:** less than 1 second
-- **Switching back to app after it's recently been in the background:** less than 1 second 
-- **Switching to app and loading channel after phone has been asleep:** less than 5 seconds 
-- **Cold start of app until first page load:** 10 seconds 
+(50 ms ping, 50 Mb/s download, 8 Mb/s upload): 
 
-iPhone 5s on 5G connection (20 ms ping time, 77 Mbps download, 12 Mbps upload):
+- **Loading a new channel:** <4 s 
+- **Returning to a channel previously viewed:** <1 s
+- **Switching to the app after previously opening it:** <1 s
+- **Switching to the app and loading a channel after the phone has been asleep:** <5 s
+- **Fresh start of the app until first page load:** <10 s 
 
-- **Loading a new channel:** less than 3 seconds
-- **Returning to a channel previously viewed:** less than 1 second
-- **Switching back to app after it's recently been in the background:** less than 1 second
-- **Switching to app and loading channel after phone has been asleep:** less than 3 seconds
-- **Cold start of app until first page load:** less than 5 seconds
+iPhone 5s on 5G connection 
 
-Samsung Galaxy S6 on LTE connection (23 millisecond ping time):
+(20 ms ping, 77 Mb/s download, 12 Mb/s upload):
 
-- **Loading a new channel:** less than 4 seconds
-- **Returning to a channel previously viewed:** less than 1 second
-- **Switching back to app after it's recently been in the background:** less than 1 second 
-- **Switching to app and loading channel after phone has been asleep:** less than 5 seconds 
-- **Cold start of app until first page load:** less than 5 seconds
+- **Loading a new channel:** <3 s
+- **Returning to a channel previously viewed:** <1 s
+- **Switching to the app after previously opening it:** <1 s
+- **Switching to the app and loading a channel after the phone has been asleep:** <3 s
+- **Fresh start of the app until first page load:** <5 s
+
+Samsung Galaxy S6 on 4G/LTE connection 
+
+(23 ms ping, 36 Mb/s download, 17 Mb/s upload):
+
+- **Loading a new channel:** <4 s
+- **Returning to a channel previously viewed:** <1 s
+- **Switching to the app after previously opening it:** <1 s
+- **Switching to the app and loading a channel after the phone has been asleep:** <5 s
+- **Fresh start of the app until first page load:** <5 s
+
+Samsung Galaxy S6 on Wifi connection (optimal performance)
+
+(23 ms ping, 138 Mb/s download, 12 Mb/s upload):
+
+- **Loading a new channel:** <3 s
+- **Returning to a channel previously viewed:** <1 s
+- **Switching to the app after previously opening it:** <1 s
+- **Switching to the app and loading a channel after the phone has been asleep:** <5 s
+- **Fresh start of the app until first page load:** <4 s
 
 Note: While using Mattermost mobile applications may be used on connections 3G and lower, this configuration is not recommended. 
 
