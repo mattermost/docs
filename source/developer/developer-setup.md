@@ -37,11 +37,12 @@ Developer Machine Setup
 6. Run unit tests on Mattermost using `make test` to make sure the installation was successful
 7. If the tests passed, you need to create a team and an admin account. You can choose a team name, email and password:
 	- Note: Make sure your team name does not contain any spaces.
+    - Note: The latest version of mattermast does not rely on `godep` anymore. If you have the latest version, run the commands by omitting the `godep` at the beginning (e.g. `go run mattermost.go  -create_team -team_name="name" -email="user@example.com"`)
 	- `godep go run mattermost.go  -create_team -team_name="name" -email="user@example.com"`
 	- `godep go run mattermost.go  -create_user -team_name="name" -email="user@example.com" -password="mypassword"`
 	- `godep go run mattermost.go  -assign_role -team_name="name" -email="user@example.com" -role="system_admin"`
 
-8. Now you can run Mattermost using `make run`. Log-in as the admin account you created in step 6
+8. Now you can run Mattermost using `make run`. Log-in as the admin account you created in step 7.
 9. You can stop Mattermost using `make stop`
 10. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
     - Note: You can skip the platform you are on because you have that target installed by default.
@@ -84,11 +85,12 @@ Any issues? Please let us know on our forums at: http://forum.mattermost.org
 9. Run unit tests on Mattermost using `make test` to make sure the installation was successful
 10. If the tests passed, you need to create a team and an admin account. You can choose a team name, email and password:
 	- Note: Make sure your team name does not contain any spaces.
+    - Note: The latest version of mattermast does not rely on `godep` anymore. If you have the latest version, run the commands by omitting the `godep` at the beginning (e.g. `go run mattermost.go  -create_team -team_name="name" -email="user@example.com"`)
 	- `godep go run mattermost.go  -create_team -team_name="name" -email="user@example.com"`
 	- `godep go run mattermost.go  -create_user -team_name="name" -email="user@example.com" -password="mypassword"`
 	- `godep go run mattermost.go  -assign_role -team_name="name" -email="user@example.com" -role="system_admin"`
 
-11. Now you can run Mattermost using `make run`. Log-in as the admin account you created in step 10
+11. Now you can run Mattermost using `make run`. Log-in as the admin account you created in step 10.
 12. You can stop Mattermost using `make stop`
 13. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
     - Note: You can skip the platform you are on because you have that target installed by default.
@@ -141,11 +143,12 @@ Any issues? Please let us know on our forums at: http://forum.mattermost.org
 8. Run unit tests on Mattermost using `make test` to make sure the installation was successful
 9. If the tests passed, you need to create a team an admin account. You can choose a team name, email and password:
 	- Note: Make sure your team name does not contain any spaces.
+    - Note: The latest version of mattermast does not rely on `godep` anymore. If you have the latest version, run the commands by omitting the `godep` at the beginning (e.g. `go run mattermost.go  -create_team -team_name="name" -email="user@example.com"`)
 	- `godep go run mattermost.go  -create_team -team_name="name" -email="user@example.com"`
 	- `godep go run mattermost.go  -create_user -team_name="name" -email="user@example.com" -password="mypassword"`
 	- `godep go run mattermost.go  -assign_role -team_name="name" -email="user@example.com" -role="system_admin"`
 
-10. Now you can run Mattermost using `make run`. Log-in as the admin account you created in step 8
+10. Now you can run Mattermost using `make run`. Log-in as the admin account you created in step 9.
 11. You can stop Mattermost using `make stop`
 12. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
     - Note: You can skip the platform you are on because you have that target installed by default.
