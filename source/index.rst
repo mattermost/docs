@@ -70,6 +70,7 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    install/prod*
    install/smtp*
    install/troubleshooting*
+   install/ee-install*
    install/i18n*
 
 .. toctree::
