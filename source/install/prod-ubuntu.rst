@@ -93,15 +93,13 @@ Set up Mattermost Server
    service under a ``mattermost`` user account with limited permissions.
 4. Download the latest Mattermost Server by typing:
 
-   -  For Mattermost Team Edition: ``wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz``
-   -  For Mattermost Enterprise Edition: ``wget https://releases.mattermost.com/X.X.X/mattermost-enterprise-X.X.X-linux-amd64.tar.gz``
-   
+   -  ``wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz``
+
    Where `vX.X.X` is the latest Mattermost release version. For example, v1.4.0
 
 5. Unzip the Mattermost Server by typing:
 
-   -  For Mattermost Team Edition: ``tar -xvzf mattermost-team-X.X.X-linux-amd64.tar.gz``
-   -  For Mattermost Enterprise Edition: ``tar -xvzf mattermost-enterprise-X.X.X-linux-amd64.tar.gz``
+   -  ``tar -xvzf mattermost-team-X.X.X-linux-amd64.tar.gz``
 
 6. Create the storage directory for files. We assume you will have
    attached a large drive for storage of images and files. For this
@@ -336,8 +334,3 @@ Finish Mattermost Server setup
 9. Restart the Mattermost Service by typing:
 
    -  ``sudo restart mattermost``
-
-Activating Mattermost Enterprise Edition
-------------------------------
-
-To activate Enterprise Edition go to **System Console** > **Edition and License** > **License Key** and upload the license file included with your purchase. Your screen will refresh and Enterprise Edition features will be activated. 
