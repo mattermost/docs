@@ -1,4 +1,4 @@
-..  _ee_prod-rhel-7:
+..  _ee-prod-rhel-7:
 
 Production Enterprise Edition Install on RHEL 7.1+
 ===============================
