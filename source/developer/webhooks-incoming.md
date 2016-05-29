@@ -70,13 +70,15 @@ Additional Notes:
 
 2. You can override the channel specified in the webhook definition by specifying a `channel` parameter in your payload. For example, you might have a single webhook created for _Town Square_, but you can use ```payload={"channel": "off-topic", "text": "Hello, this is some text."}``` to send a message to the _Off-Topic_ channel using the same webhook URL. If an `@` symbol followed by a username is specified, then the message will be sent to that user's direct message channel
 
-1. In addition, with **Enable Overriding of Usernames from Webhooks** turned on,  you can also override the username the message posts as by providing a `username` parameter in your JSON payload. For example, you might want your message looking like it came from a robot so you can use ```payload={"username": "robot", "text": "Hello, this is some text."}``` to change the username of the post to robot. Note, to combat any malicious users from trying to use this to perform [phishing attacks](https://en.wikipedia.org/wiki/Phishing) a `BOT` indicator appears next to posts coming from webhooks
+3. In addition, with **Enable Overriding of Usernames from Webhooks** turned on,  you can also override the username the message posts as by providing a `username` parameter in your JSON payload. For example, you might want your message looking like it came from a robot so you can use ```payload={"username": "robot", "text": "Hello, this is some text."}``` to change the username of the post to robot. Note, to combat any malicious users from trying to use this to perform [phishing attacks](https://en.wikipedia.org/wiki/Phishing) a `BOT` indicator appears next to posts coming from webhooks
 
-2. With **Enable Overriding of Icon from Webhooks** turned on, you can similarly change the icon the message posts with by providing a link to an image in the `icon_url` parameter of your payload. For example, ```payload={"icon_url": "http://somewebsite.com/somecoolimage.jpg", "text": "Hello, this is some text."}``` will post using whatever image is located at `http://somewebsite.com/somecoolimage.jpg` as the icon for the post
+4. With **Enable Overriding of Icon from Webhooks** turned on, you can similarly change the icon the message posts with by providing a link to an image in the `icon_url` parameter of your payload. For example, ```payload={"icon_url": "http://somewebsite.com/somecoolimage.jpg", "text": "Hello, this is some text."}``` will post using whatever image is located at `http://somewebsite.com/somecoolimage.jpg` as the icon for the post
 
-3. Also, as mentioned previously, [markdown](../help/messaging/formatting-text.md) can be used to create richly formatted payloads, for example: ```payload={"text": "# A Header\nThe _text_ below **the** header."}``` creates a messages with a header, a carriage return and bold text for "the"
+5. Also, as mentioned previously, [markdown](../help/messaging/formatting-text.md) can be used to create richly formatted payloads, for example: ```payload={"text": "# A Header\nThe _text_ below **the** header."}``` creates a messages with a header, a carriage return and bold text for "the"
 
-4. Just like regular posts, the text will be limited to 4000 characters at maximum
+6. Just like regular posts, the text will be limited to 4000 characters at maximum
+
+7. With debugging enabled, the server will print the request body of all incoming webhooks to the console.
 
 ### Slack Compatibility
 
