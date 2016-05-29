@@ -3,17 +3,23 @@
 Enterprise Edition Installation
 ===============================
 
-Installing a New License Key
+Enterprise Edition can be installed either directly or via upgrade from Team Editon.
+
+Installing Enterprise Edition 
 ---------------
 
-To unlock the features of Mattermost Enterprise Edition:
+To install Mattermost Enterprise Edition directly please use one of the following guides: 
 
-1. Install the latest version of `Mattermost Team Edition from any install guide. <https://mattermost.org/download>`__
-2. Follow the procedure to `upgrade Mattermost Team Edition to Mattermost Enterprise Edition. <http://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition>`__
-3. In the **System Console**, go to **OTHER** > **Edition and License** > **License Key** and upload the license key file you received by email when you purchased a subscription to Mattermost Enterprise Edition.
+1. Production Enterprise Edition on Ubunutu
+2. Production Enterprise Edition on RHEL7
+3. Production Enterprise Edition on RHEL6
 
-The **Edition** and **License** sections on the page should update to confirm your system has been updated to the Enterprise Edition.
+Upgrading to Enterprise Edition from Mattermost Team Edition 
+---------------
 
+1. Follow the procedure to `upgrade Team Edition to Enterprise Edition. <http://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition>`_
+
+If you need to migrate Team Edition prior to install, `please follow the migration guide. <http://docs.mattermost.com/administration/migrating.html>`_
 
 Changing a License Key
 ----------------------
