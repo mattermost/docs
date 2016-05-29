@@ -33,6 +33,8 @@ Build Break - Project X - December 12, 2015 - 15:32 GMT +0
 
 ---
 
+Note: If the contents of incoming webhooks are cluttering your debug log, disable it in the `config/config.json` by setting `"EnableWebhookDebugging": false`
+
 ### Enabling Incoming Webhooks
 Incoming webhooks should be enabled on your Mattermost instance by default, but if they are not you'll need to get your system administrator to enable them. If you are the system administrator you can enable them by doing the following:
 
@@ -78,7 +80,7 @@ Additional Notes:
 
 6. Just like regular posts, the text will be limited to 4000 characters at maximum
 
-7. With debugging enabled, the server will print the request body of all incoming webhooks to the console.
+7. With debugging enabled, the server will print the request body of all incoming webhooks to the console. You can enable and disable debugging in the `config/config.json` file under `"EnableWebhookDebugging"`
 
 ### Slack Compatibility
 
