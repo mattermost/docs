@@ -10,9 +10,9 @@ Installing Enterprise Edition
 
 To install Mattermost Enterprise Edition directly please use one of the following guides: 
 
-1. `Production Enterprise Edition on Ubunutu 14 <http://docs.mattermost.com/install/ee_prod-ubuntu.html>`_
-2. `Production Enterprise Edition on RHEL 7.1 <http://docs.mattermost.com/install/ee_prod-rhel-7.html>`_
-3. `Production Enterprise Edition on RHEL 6.6 <http://docs.mattermost.com/install/ee_prod-rhel-6.html>`_
+1. `Production Enterprise Edition on Ubunutu 14 <http://docs.mattermost.com/install/ee-prod-ubuntu.html>`_
+2. `Production Enterprise Edition on RHEL 7.1 <http://docs.mattermost.com/install/ee-prod-rhel-7.html>`_
+3. `Production Enterprise Edition on RHEL 6.6 <http://docs.mattermost.com/install/ee-prod-rhel-6.html>`_
 
 Upgrading to Enterprise Edition from Mattermost Team Edition 
 ---------------
