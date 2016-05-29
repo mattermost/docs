@@ -1,4 +1,4 @@
-..  _ee_prod-rhel-6:
+..  _ee-prod-rhel-6:
 
 Production Enterprise Edition Install on RHEL 6.6
 ==============================
