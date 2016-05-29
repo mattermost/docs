@@ -85,8 +85,9 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
    2. If it is not the latest release, [upgrade to the latest release.](http://docs.mattermost.com/administration/upgrade.html#upgrade-to-team-edition)
 2. Follow the [Enterprise Edition upgrade procedure](http://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition) to replace the Team Edition binary with the [latest Mattermost Enterprise Edition build](http://docs.mattermost.com/administration/upgrade.html#mattermost-enterprise-edition) (in the format `https://releases.mattermost.com/X.X.X/mattermost-enterprise-X.X.X-linux-amd64.tar.gz`). 
 3. Run `platform -version` to confirm the latest Enterprise Edition version has been successfully installed.
+4. In the **System Console**, go to **OTHER** > **Edition and License** > **License Key** and upload the license key file you received via email. 
 
-You will need an Enterprise Edition license key to activate the features. Follow the instructions that came with your license key to complete your upgrade.
+The **Edition** and **License** sections on the page should update to confirm your system has been updated to the Enterprise Edition.
 
 For any issues, Mattermost Enterprise Edition subscribers and trial license users can email support@mattermost.com 
 
