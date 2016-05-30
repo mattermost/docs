@@ -18,7 +18,7 @@ Nicknames appear in the Direct Messages member list and team management modal. Y
 Email is used for sign-in, notifications, and password reset. Email requires verification if changed. If you are signing in using a single sign-on service, the email field is not editable and you will receive email notifications to the email you used to sign up to your SSO service.
 
 #### Profile Picture
-Profile pictures appear next to all posts and in the top of the channels pane next to your name. All users have a generic profile picture when they sign up for an account. Edit your profile picture by clicking **Select** and then choosing a picture in either JPG or PNG format that’s at least 128px wide and 128px high. For best results, choose an image that is square with the subject of interest centered. If you edit your profile picture, all past posts will appear with the new picture.
+Profile pictures appear next to all posts and in the top of the channels pane next to your name. All users have a generic profile picture when they sign up for an account. Edit your profile picture by clicking **Select** and then choosing a picture in either JPG or PNG format that’s at least 128px wide and 128px high. For best results, choose an image that is square with the subject of interest centered, and note that it will be cropped in a circular fashion. If you edit your profile picture, all past posts will appear with the new picture.
 
 ## Security
 Settings to configure your password, view access history, and view or logout of active sessions.
@@ -88,13 +88,15 @@ Configure how names are displayed in Mattermost: nickname, username or full name
 Select if the text in the center channel is fixed width and centered, or full width. 
 
 #### Language
-Select what language Mattermost displays in the user interface. Options include: 
+Select what language Mattermost displays in the user interface. Options currently include: 
 
 - English
 - Spanish
 - Portuguese
 - French
 - Japanese
+
+More languages are being added, please check back later if your preferred language is not on the list.
 
 ## Advanced
 Setting to configure when messages are sent.
