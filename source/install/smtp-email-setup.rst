@@ -3,10 +3,7 @@
 SMTP Email Setup
 ================
 
-In product evaluation setups with single-container Docker instances,
-email is intentionally disabled. This allows account creation and system
-operation without having to set up email, but it also means email
-notification and password reset functionality aren't available.
+To run in production, Mattermost requires SMTP email to be enabled for email notifications and password reset for systems usign email-based authentication. 
 
 How to Enable Email
 ~~~~~~
