@@ -10,8 +10,11 @@ If you're looking for a production installation with Docker, please see the `Mat
 One-line Docker Install
 -----------------------
 
-| If you have Docker set up, Mattermost installs in one-line:
-| ``docker run --name mattermost-dev -d --publish 8065:80 mattermost/platform``
+If you have Docker set up, Mattermost installs in one-line:
+
+   .. code:: bash
+
+       docker run --name mattermost-dev -d --publish 8065:80 mattermost/platform
 
 Otherwise, see step-by-step instructions:
 
