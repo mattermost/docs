@@ -23,7 +23,7 @@ Notes on patch releases:
 
 ### Security Update
 
-- Mattermost v3.0.2 contains multiple security updates. [Upgrading to Mattermost v3.0.2](http://docs.mattermost.com/administration/upgrade.html#upgrading-to-team-edition-3-0-x-from-2-x) is highly recommended. 
+- Mattermost v3.0.3 contains multiple security updates. [Upgrading to Mattermost v3.0.3](http://docs.mattermost.com/administration/upgrade.html#upgrading-to-team-edition-3-0-x-from-2-x) is highly recommended. 
 - Thanks to Yoni Ramon from the Tesla security team, Andreas Lindh and Uchida Ta for contributing security reports through the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/). 
 
 ### Major Version Release 
