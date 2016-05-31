@@ -28,7 +28,7 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
       2. Run `tar -xvzf mattermost-team-X.X.X-linux-amd64.tar.gz` to decompress the upgraded version and replace the current version of Mattermost on disk, where `X.X.X` is the version number to which you are upgrading.
 5. Restore the state of your server
       1. Copy the backed up version of `config.json` in place of the default `config.json`.
-      2. If you're using local file storage, restore the data you backed up before running the server. Keep the backup until you're sure the upgrade has succeded.
+      2. If you're using local file storage, restore the data you backed up before running the server. Keep the backup until you're sure the upgrade has succeeded.
 6. Upgrade your database
       1. Run `./platform -upgrade_db_30` to upgrade your database from 2.x to 3.x
          - You may need to run with `sudo -u linux_user_account ./platform -upgrade_db_30` if you've setup Mattermost to run under a different account.  This will ensure files under `./data/` have the correct permissions.
