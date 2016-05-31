@@ -140,7 +140,7 @@ The same instructions should then verify the functionality of TPNS.
 .. note::  Mobile push notifications currently trigger on the same events as email notifications. The option to trigger mobile push notifications `based on mentions <https://mattermost.uservoice.com/forums/306457-general/suggestions/13609332-add-option-to-trigger-push-notifications-on-mentio>`_ and `based on all desktop notifications <https://mattermost.uservoice.com/forums/306457-general/suggestions/13608870-add-option-to-trigger-push-notifications-on-same-e>`_ are feature candidate for a future release. 
 
 
-Troubleshooting Performance of Mobile Applications 
+Confirming Performance of Mobile Applications 
 ``````
 
 The response times of Mattermost mobile apps should perform to standard benchmarks, provided device model, connection speed and server configuration are comparable to benchmark setups.
@@ -148,13 +148,13 @@ The response times of Mattermost mobile apps should perform to standard benchmar
 Mobile Performance Benchmarks
 ^^^^^^ 
 
-Properly configured mobile applications on 4G/LTE or Wifi should perform as follows: 
+Properly configured mobile applications on 4G/LTE or wifi should perform as follows: 
 
 iPhone 6s Plus on 4G/LTE connection (50 ms ping time, 50 Mb/s download, 8 Mb/s upload): 
 
 - **Loading a new channel:** less than 4 seconds
 - **Returning to a channel previously viewed:** less than 1 second
-- **Switching back to the app after it has recently been in the background:** less than 1 second
+- **Switching to app when it is running in the background:** less than 1 second
 - **Switching to the app and loading a channel after the phone has been asleep:** less than 5 seconds
 - **Fresh start of the app until first page load:** less than 10 seconds
 
@@ -162,7 +162,7 @@ iPhone 5s on 5G connection (20 ms ping time, 77 Mb/s download, 12 Mb/s upload):
 
 - **Loading a new channel:** less than 3 seconds
 - **Returning to a channel previously viewed:** less than 1 second
-- **Switching back to the app after it has recently been in the background:** less than 1 second
+- **Switching to app when it is running in the background:** less than 1 second
 - **Switching to the app and loading a channel after the phone has been asleep:** less than 3 seconds
 - **Fresh start of the app until first page load:** less than 5 seconds
 
@@ -170,15 +170,15 @@ Samsung Galaxy S6 on 4G/LTE connection (23 ms ping time, 36 Mb/s download, 17 Mb
 
 - **Loading a new channel:** less than 4 seconds
 - **Returning to a channel previously viewed:** less than 1 second
-- **Switching back to the app after it has recently been in the background:** less than 1 second
+- **Switching to app when it is running in the background:** less than 1 second
 - **Switching to the app and loading a channel after the phone has been asleep:** less than 5 seconds
 - **Fresh start of the app until first page load:** less than 5 seconds
 
-Samsung Galaxy S6 on Wifi connection (23 ms ping time, 138 Mb/s download, 12 Mb/s upload):
+Samsung Galaxy S6 on wifi connection (23 ms ping time, 138 Mb/s download, 12 Mb/s upload):
 
 - **Loading a new channel:** less than 3 seconds
 - **Returning to a channel previously viewed:** less than 1 second
-- **Switching back to the app after it has recently been in the background:** less than 1 second
+- **Switching to app when it is running in the background:** less than 1 second
 - **Switching to the app and loading a channel after the phone has been asleep:** less than 5 seconds
 - **Fresh start of the app until first page load:** less than 4 seconds
 
