@@ -78,8 +78,6 @@ Additional Notes:
 
 6. Just like regular posts, the text will be limited to 4000 characters at maximum
 
-7. With debugging enabled, the server will print the request body of all incoming webhooks to the console.
-
 ### Slack Compatibility
 
 Mattermost makes it easy to take integrations written for Slack's proprietary JSON payload format and repurpose them to become Mattermost integrations. For example:
