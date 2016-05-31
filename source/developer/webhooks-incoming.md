@@ -70,30 +70,30 @@ Additional Notes:
 
 2. You can override the channel specified in the webhook definition by specifying a `channel` parameter in your payload. For example, you might have a single webhook created for _Town Square_, but you can use ```payload={"channel": "off-topic", "text": "Hello, this is some text."}``` to send a message to the _Off-Topic_ channel using the same webhook URL. If an `@` symbol followed by a username is specified, then the message will be sent to that user's direct message channel
 
-1. In addition, with **Enable Overriding of Usernames from Webhooks** turned on,  you can also override the username the message posts as by providing a `username` parameter in your JSON payload. For example, you might want your message looking like it came from a robot so you can use ```payload={"username": "robot", "text": "Hello, this is some text."}``` to change the username of the post to robot. Note, to combat any malicious users from trying to use this to perform [phishing attacks](https://en.wikipedia.org/wiki/Phishing) a `BOT` indicator appears next to posts coming from webhooks
+3. In addition, with **Enable Overriding of Usernames from Webhooks** turned on,  you can also override the username the message posts as by providing a `username` parameter in your JSON payload. For example, you might want your message looking like it came from a robot so you can use ```payload={"username": "robot", "text": "Hello, this is some text."}``` to change the username of the post to robot. Note, to combat any malicious users from trying to use this to perform [phishing attacks](https://en.wikipedia.org/wiki/Phishing) a `BOT` indicator appears next to posts coming from webhooks
 
-2. With **Enable Overriding of Icon from Webhooks** turned on, you can similarly change the icon the message posts with by providing a link to an image in the `icon_url` parameter of your payload. For example, ```payload={"icon_url": "http://somewebsite.com/somecoolimage.jpg", "text": "Hello, this is some text."}``` will post using whatever image is located at `http://somewebsite.com/somecoolimage.jpg` as the icon for the post
+4. With **Enable Overriding of Icon from Webhooks** turned on, you can similarly change the icon the message posts with by providing a link to an image in the `icon_url` parameter of your payload. For example, ```payload={"icon_url": "http://somewebsite.com/somecoolimage.jpg", "text": "Hello, this is some text."}``` will post using whatever image is located at `http://somewebsite.com/somecoolimage.jpg` as the icon for the post
 
-3. Also, as mentioned previously, [markdown](../help/messaging/formatting-text.md) can be used to create richly formatted payloads, for example: ```payload={"text": "# A Header\nThe _text_ below **the** header."}``` creates a messages with a header, a carriage return and bold text for "the"
+5. Also, as mentioned previously, [markdown](../help/messaging/formatting-text.md) can be used to create richly formatted payloads, for example: ```payload={"text": "# A Header\nThe _text_ below **the** header."}``` creates a messages with a header, a carriage return and bold text for "the"
 
-4. Just like regular posts, the text will be limited to 4000 characters at maximum
+6. Just like regular posts, the text will be limited to 4000 characters at maximum
 
 ### Slack Compatibility
 
 Mattermost makes it easy to take integrations written for Slack's proprietary JSON payload format and repurpose them to become Mattermost integrations. For example:
 
-#### Connecting Mattermost to GitLab using Slack UI 
+#### Connecting Mattermost to GitLab using Slack UI
 
-GitLab is the leading open-source alternative to GitHub and offers built-in integrations with Slack. Rather than having to change code to support Mattermost, users can add Mattermost webhooks directly into the interface for Slack. 
+GitLab is the leading open-source alternative to GitHub and offers built-in integrations with Slack. Rather than having to change code to support Mattermost, users can add Mattermost webhooks directly into the interface for Slack.
 
 1. In GitLab, go to **Settings** > **Services** and select **Slack**.
 2. Paste in the incoming webhook URL provided by Mattermost from under **Main Menu** > **Integration** > **Incoming Webhooks**.
 3. Optionally set the **Username** you'd like displayed when the notification is made. Leave the **Channel** field blank
 4. Click **Save** then test the settings to confirm posts will be made to Mattermost
 
-#### Translating Slack's proprietary data format to Mattermost 
+#### Translating Slack's proprietary data format to Mattermost
 
-The following describes the automatic translations Mattermost performance to process data coming from Slack: 
+The following describes the automatic translations Mattermost performance to process data coming from Slack:
 
 1. Payloads designed for Slack using `<>` to note the need to hyperlink a URL, such as ```payload={"text": "<http://www.mattermost.com/>"}```, are translated to the equivalent markdown in Mattermost and rendered the same as you would see in Slack
 2. Similiarly, payloads designed for Slack using `|` within a `<>` to define linked text, such as ```payload={"text": "Click <http://www.mattermost.com/|here> for a link."}```, are also translated to the equivalent markdown in Mattermost and rendered the same as you would see in Slack
@@ -109,3 +109,8 @@ To see samples and community contributions, please visit <http://mattermost.org/
 3. `<!here>`, `<!everyone>`, and `<!group>` are not supported  
 4. Parameters "mrkdwn", "parse", and "link_names" are not supported (Mattermost always converts markdown and automatically links @mentions)  
 5. Bold formatting as `*bold*` is not supported (must be done as `**bold**`)  
+
+### Troubleshooting
+#### Debugging Incoming Webhooks
+By default, Mattermost will print the content of the request body of an incoming webhook to the console, if the console log level is set to “DEBUG”.
+If the contents of incoming webhooks are cluttering your debug log, disable it in the `config/config.json` or in the system console by setting `"EnableWebhookDebugging": false`
