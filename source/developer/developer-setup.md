@@ -33,7 +33,7 @@ Developer Machine Setup
 	4. `git clone https://github.com/<username>/platform.git`  
 	5. `cd platform`
 
-5. If you are using version 3.0 or older, install godep with `go get github.com/tools/godep`
+5. If you are running Mattermost version 3.0 or older, install godep with `go get github.com/tools/godep`
 6. Run unit tests on Mattermost using `make test` to make sure the installation was successful
 7. If the tests passed, you can run Mattermost using `make run`
 8. You need to create a team and admin account. You can choose a team name, email and password:
@@ -83,7 +83,7 @@ Any issues? Please let us know on our forums at: http://forum.mattermost.org
 	3. `cd src/github.com/mattermost`  
 	4. `git clone https://github.com/<username>/platform.git`  
 	5. `cd platform`
-8. If you are using version 3.0 or older, install godep with `go get github.com/tools/godep`
+8. If you are running Mattermost version 3.0 or older, install godep with `go get github.com/tools/godep`
 9. Run unit tests on Mattermost using `make test` to make sure the installation was successful
 10. If the tests passed, you can run Mattermost using `make run`
 11. You need to create a team and admin account. You can choose a team name, email and password:
@@ -143,7 +143,7 @@ Any issues? Please let us know on our forums at: http://forum.mattermost.org
 	3. `cd src/github.com/mattermost`  
 	4. `git clone https://github.com/<username>/platform.git`  
 	5. `cd platform`
-7. If you are using version 3.0 or older, install godep with `go get github.com/tools/godep`
+7. If you are running Mattermost version 3.0 or older, install godep with `go get github.com/tools/godep`
 8. Run unit tests on Mattermost using `make test` to make sure the installation was successful
 9. If the tests passed, you can run Mattermost using `make run`
 10. You need to create a team and admin account. You can choose a team name, email and password:
