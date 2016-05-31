@@ -33,8 +33,6 @@ Build Break - Project X - December 12, 2015 - 15:32 GMT +0
 
 ---
 
-Note: If the contents of incoming webhooks are cluttering your debug log, disable it in the `config/config.json` by setting `"EnableWebhookDebugging": false`
-
 ### Enabling Incoming Webhooks
 Incoming webhooks should be enabled on your Mattermost instance by default, but if they are not you'll need to get your system administrator to enable them. If you are the system administrator you can enable them by doing the following:
 
@@ -80,24 +78,24 @@ Additional Notes:
 
 6. Just like regular posts, the text will be limited to 4000 characters at maximum
 
-7. With debugging enabled, the server will print the request body of all incoming webhooks to the console. You can enable and disable debugging in the `config/config.json` file under `"EnableWebhookDebugging"`
+7. With debugging enabled, the server will print the request body of all incoming webhooks to the console.
 
 ### Slack Compatibility
 
 Mattermost makes it easy to take integrations written for Slack's proprietary JSON payload format and repurpose them to become Mattermost integrations. For example:
 
-#### Connecting Mattermost to GitLab using Slack UI 
+#### Connecting Mattermost to GitLab using Slack UI
 
-GitLab is the leading open-source alternative to GitHub and offers built-in integrations with Slack. Rather than having to change code to support Mattermost, users can add Mattermost webhooks directly into the interface for Slack. 
+GitLab is the leading open-source alternative to GitHub and offers built-in integrations with Slack. Rather than having to change code to support Mattermost, users can add Mattermost webhooks directly into the interface for Slack.
 
 1. In GitLab, go to **Settings** > **Services** and select **Slack**.
 2. Paste in the incoming webhook URL provided by Mattermost from under **Main Menu** > **Integration** > **Incoming Webhooks**.
 3. Optionally set the **Username** you'd like displayed when the notification is made. Leave the **Channel** field blank
 4. Click **Save** then test the settings to confirm posts will be made to Mattermost
 
-#### Translating Slack's proprietary data format to Mattermost 
+#### Translating Slack's proprietary data format to Mattermost
 
-The following describes the automatic translations Mattermost performance to process data coming from Slack: 
+The following describes the automatic translations Mattermost performance to process data coming from Slack:
 
 1. Payloads designed for Slack using `<>` to note the need to hyperlink a URL, such as ```payload={"text": "<http://www.mattermost.com/>"}```, are translated to the equivalent markdown in Mattermost and rendered the same as you would see in Slack
 2. Similiarly, payloads designed for Slack using `|` within a `<>` to define linked text, such as ```payload={"text": "Click <http://www.mattermost.com/|here> for a link."}```, are also translated to the equivalent markdown in Mattermost and rendered the same as you would see in Slack
@@ -113,3 +111,8 @@ To see samples and community contributions, please visit <http://mattermost.org/
 3. `<!here>`, `<!everyone>`, and `<!group>` are not supported  
 4. Parameters "mrkdwn", "parse", and "link_names" are not supported (Mattermost always converts markdown and automatically links @mentions)  
 5. Bold formatting as `*bold*` is not supported (must be done as `**bold**`)  
+
+### Troubleshooting
+#### Debugging Incoming Webhooks
+By default, Mattermost will print the content of the request body of an incoming webhook to the console, if the console log level is set to “DEBUG”.
+If the contents of incoming webhooks are cluttering your debug log, disable it in the `config/config.json` or in the system console by setting `"EnableWebhookDebugging": false`
