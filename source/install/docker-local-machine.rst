@@ -34,7 +34,7 @@ Mac OSX
    your ~/.bash\_profile by running ``sudo nano ~/.bash_profile``. Then
    run: ``source ~/.bash_profile``
 5. Run:
-   ``docker run --name mattermost-dev -d --publish 8065:80 mattermost/platform``
+   ``docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview``
 6. When docker is done fetching the image, open http://dockerhost:8065/
    in your browser.
 
@@ -58,7 +58,7 @@ Ubuntu
 
    .. code:: bash
 
-       docker run --name mattermost-dev -d --publish 8065:80 mattermost/platform
+       docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview
 
 3. When docker is done fetching the image, open http://localhost:8065/
    in your browser.
@@ -80,7 +80,7 @@ Arch
 
    .. code:: bash
 
-       docker run --name mattermost-dev -d --publish 8065:80 mattermost/platform
+       docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview
 
 3. When Docker is done fetching the image, open http://localhost:8065/
    in your browser.
