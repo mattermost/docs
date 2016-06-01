@@ -14,7 +14,7 @@ If you have Docker set up, Mattermost installs in one-line:
 
    .. code:: bash
 
-       docker run --name mattermost-dev -d --publish 8065:80 mattermost/platform
+       docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview
 
 Otherwise, see step-by-step instructions:
 
