@@ -1,13 +1,13 @@
 ..  _docker-local-machine:
 
-Mattermost Production Docker Deployment 
+Production Docker Deployment 
 ==============================
 
 This guide walks through deploying a multi-node production configuration using Docker compose. Experience setting up production Docker environments using Docker-Compose is recommended. 
 
 If you're looking for a quick "Preview Mode" setup of Mattermost on a local machine using Docker on a single node, please see the guide for `Local Machine Setup using Docker <http://docs.mattermost.com/install/docker-local-machine.html>`_. 
 
-Deploying Production Docker configuration on Ubuntu
+Production Docker on Ubuntu
 ------
 
 1. **Setup Docker Compose** using `the Ubuntu online guide <https://docs.docker.com/installation/ubuntulinux/>`_ or these instructions: 
@@ -34,7 +34,7 @@ Deploying Production Docker configuration on Ubuntu
 
 4. **Configure your server** based on `configuration settings documentation <http://docs.mattermost.com/administration/config-settings.html>`_
 
-Deploying Production Docker configuration on Mac OS X 
+Production Docker on Mac OS X 
 ------
 
 You can run a test deployment on Mac OS X by `installing Docker Compose using the online guide <http://docs.docker.com/installation/mac/>`_ then following the above instructions. 
