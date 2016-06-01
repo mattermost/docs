@@ -90,18 +90,18 @@ Additional Notes
 
 -  Instructions on how to update your Docker image are found below.
 
--  If you wish to remove mattermost-dev use:
+-  If you wish to remove mattermost-preview use:
 
    .. code:: bash
 
-       docker stop mattermost-dev
-       docker rm -v mattermost-dev
+       docker stop mattermost-preview
+       docker rm -v mattermost-preview
 
 -  If you wish to gain access to a shell on the container use:
 
    .. code:: bash
 
-       docker exec -ti mattermost-dev /bin/bash
+       docker exec -ti mattermost-preview /bin/bash
 
 Configuration Settings
 ----------------------
