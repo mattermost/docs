@@ -185,6 +185,7 @@ Set up Mattermost Server
          WorkingDirectory=/opt/mattermost
          Restart=always
          RestartSec=30
+         LimitNOFILE=49152
          
          [Install]
          WantedBy=multi-user.target
