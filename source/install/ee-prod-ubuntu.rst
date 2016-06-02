@@ -147,6 +147,7 @@ Set up Mattermost Server
           start on runlevel [2345]
           stop on runlevel [016]
           respawn
+          limit nofile 50000 50000
           chdir /home/ubuntu/mattermost
           setuid ubuntu
           exec bin/platform
