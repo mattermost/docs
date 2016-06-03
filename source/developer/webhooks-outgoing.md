@@ -6,6 +6,7 @@ A couple key points:
 
 - **Mattermost outgoing webhooks are Slack-compatible.** If you've used Slack's outgoing webhooks to create integrations, you can copy and paste that code to create Mattermost integrations. Mattermost automatically translates Slack's proprietary JSON payload format into markdown to render in Mattermost messages
 - **Mattermost outgoing webhooks support full markdown.** When an integration responds with a message to post, it will have access to a rich range of formatting unavailable in Slack that is made possible through [markdown support](../help/messaging/formatting-text.md) in Mattermost. This includes headings, formatted fonts, tables, inline images and other options supported by [Mattermost Markdown]
+- **Outgoing webhooks are only supported in public channels.** If you need something that works in a private channel, consider using a [Slash Command](http://docs.mattermost.com/developer/slash-commands.html). 
 
 _Example:_
 
@@ -98,7 +99,11 @@ Additional Notes:
 
 3. Also, as mentioned previously, [markdown](../help/messaging/formatting-text.md) can be used to create richly formatted payloads, for example: ```payload={"text": "# A Header\nThe _text_ below **the** header."}``` creates a messages with a header, a carriage return, italicized text for "text" and bold text for "the"
 
-4. Just like regular posts, the text will be limited to 4000 characters at maximum
+4. Including `@username` in the JSON payload will trigger a mention notification for the person with the specified username. Channels can be mentioned by including `@channel` or `<!channel>`. For example:  ```payload={"text": "<!channel> this is a notification""}``` would create a message that mentions `@channel`
+
+5. Just like regular posts, the text will be limited to 4000 characters at maximum
+
+6. Posts with advanced formatting can be created by including an [attachment array](http://docs.mattermost.com/developer/message-attachments.html) in the JSON payload
 
 ### Slack Compatibility
 
