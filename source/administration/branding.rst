@@ -5,7 +5,7 @@ Available in `Enterprise Edition E10 and higher <https://about.mattermost.com/pr
 
 Use custom branding tools to present a Mattermost experienced tailored to the branding of your organization. 
 
-.. figure:: images/custom-branding-tools.PNG
+.. figure:: ../images/custom-branding-tools.PNG
 
 Enable Custom Branding
 -----
