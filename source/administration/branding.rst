@@ -1,11 +1,11 @@
 Custom Branding Tools
 =====
 
-Available in `Enterprise Edition 10 and higher <https://about.mattermost.com/pricing/>`_.
+Available in `Enterprise Edition E10 and higher <https://about.mattermost.com/pricing/>`_.
 
-Use custom branding tools to specify a site name, upload a branding image and write text to be shown on the login screen.
+Use custom branding tools to present a Mattermost experienced tailored to the branding of your organization. 
 
-.. figure:: images/custom-branding-tools.PNG
+.. figure:: ../images/custom-branding-tools.PNG
 
 Enable Custom Branding
 -----
@@ -15,6 +15,10 @@ After purchasing and installing a license key for Enterprise Edition E10 or E20:
 1. Go to **System Console** > **Customization** > **Custom Branding** and set the value to ``true``.
 2. Choose a **Site Name**, upload a **Custom Brand Image** and write **Custom Brand Text**.
 3. Click **Save**.
+
+Users should see your new custom branding on the login page of your Mattermost server the next time they sign-in. 
+
+More about settings available in **Customer Branding Tools**:
 
 Site Name
 `````
