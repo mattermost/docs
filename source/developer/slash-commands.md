@@ -54,7 +54,7 @@ Once slash commands are enabled, you will be able to set some up through the Mat
 
 1. Login to your Mattermost team site and go to **Main Menu** > **Integrations** > **Slash Commands**
 2. Click **Add a new command**, and select your options
-   1. Fill in **Command Trigger Word**, this will be the word that is your command
+   1. Fill in **Command Trigger Word**, this will be the word that is your command (Note: The trigger word must be unique, and cannot begin with a slash or contain any spaces)
    2. Enter a **Request URL** that will be the endpoint Mattermost hits to reach your external application
    3. Select an HTTP **Request Method** from the dropdown
    4. (Optional) Type in a **Response Username** that will be used with any messages your command responds with
@@ -105,7 +105,11 @@ Additional Notes:
 
 1. As mentioned previously, [markdown](http://docs.mattermost.com/help/messaging/formatting-text.html) can be used to create richly formatted responses, for example: ```{"text": "# A Header\nThe _text_ below **the** header."}``` creates a messages with a header, a carriage return, italicized text for "text" and bold text for "the"
 
-2. Just like regular posts, the text in a response will be limited to 4000 characters at maximum
+2. Including `@username` will trigger a mention notification for the person with the specified username, and channels can be mentioned by including `@channel` or `<!channel>`. For example:  ```{"text": "<!channel> this is a notification""}``` would create a message that mentions `@channel` 
+
+3. Just like regular posts, the text in a response will be limited to 4000 characters at maximum
+
+4. Posts with advanced formatting can be created by including an [attachment array](http://docs.mattermost.com/developer/message-attachments.html) in the JSON payload
 
 ### Slack Compatibility
 
