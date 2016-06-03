@@ -2,6 +2,178 @@
 
 This changelog summarizes updates to [Mattermost Team Edition](http://www.mattermost.org/), an open source team messaging solution released monthly under an MIT license, and [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/), a commercial upgrade offering enterprise messaging for large organizations.
 
+## Release v3.1.0
+
+Release date: 2016-06-16
+
+### Security Update
+
+- Mattermost v3.1.0 contains multiple security updates. [Upgrading to Mattermost v3.1.0](http://docs.mattermost.com/administration/upgrade.html#upgrading-team-edition) is highly recommended.
+- Thanks to Uchida Taishi for contributing security reports through the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+
+### Highlights
+
+#### Keyboard shortcuts
+
+- Added keyboard shortcuts for navigation, messages and files
+- Full list of available shortcuts can be found [here](http://docs.mattermost.com/help/messaging/keyboard-shortcuts.rst) or by typing /shortcuts in an empty input box.
+
+#### System console
+
+- System console has been reorganized to improve workflow and allow settings to be found more easily.
+- New setting to limit maximum file size of message attachments.
+- Ability to failover without downing the server by changing the database line in the config.json, then clicking the new buttons to “Reload Configuration from Disk” then “Recycle Database Connections” to reconnect to the database listed in configuration settings.
+
+### Improvements
+
+iOS App
+- Account Settings > Notifications option lets users to enable mobile push notifications for chosen activities.
+- Push notifications sent even if a user is online on desktop.
+- Removed auto-capitalization on login screen, so email is no longer capitalized.
+
+Android App
+- Account Settings > Notifications option lets users to enable mobile push notifications for chosen activities.
+- Push notifications sent even if a user is online on desktop.
+- Removed auto-capitalization on login screen, so email is no longer capitalized.
+
+User Interface
+
+- Account Settings > Display option lets users set channels to compact view.
+- Autocomplete closes with ESC button.
+- Sequential messages with a username also show profile pictures.
+- Channel introduction message conforms to the channel width chosen in Account Settings > Display.
+- The message '[user] is typing' now uses the username instead of the display name.
+- Date markers now show absolute time.
+
+Performance:
+
+- Performance improvements to posting and replying.
+- Online status in Direct Message list updated on first load.
+
+Notifications
+
+- `@all` mention added back with equivalent functionality to `@channel`.
+- An email notification is now sent when username is changed.
+
+Channels
+- Removed the option to leave a channel for the last person in a private group, so private groups can no longer end up in an ownerless state.
+
+Messaging
+
+- Move link preview toggle out of preview feature list and add /collapse and /expand.
+
+Localization
+
+- [Mattermost Translation Server](translate.mattermost.com) upgraded to smooth out [localization process](http://docs.mattermost.com/developer/localization.html).
+
+Integrations
+
+- Integrations now support advanced formatting through [message attachments] (link to doc).
+- Added support for sending `@channel` notifications by using `<!channel>`.
+- Added support for raw new lines in the text payload.
+- Added validation for command trigger words.
+
+Enterprise:
+
+- Added LDAP synchronization.
+
+### Bug Fixes
+
+- Incoming webhooks have been made available in all public channels, and in private channels the user belongs to.
+- A space between two named emojis is no longer required for correct rendering.
+- Emojis now render inside parenthesis or brackets.
+- Links that are enclosed with a right parenthesis now work properly.
+- Search term highlighting now updates when search terms change but return the same posts.
+- Search results now properly highlight for searches containing @username, non-latin characters, terms inside Markdown code blocks, and hashtags containing a dash.
+- A single numbered item no longer resets numbering to 1.
+- Previews for removed YouTube videos no longer throw a 404 error.
+- Team and System Admins can now update channel settings after leaving and rejoining the channel.
+- After initial load on iOS, centre channel no longer appears blank.
+- When creating a team with a new account, channel introduction message is now displayed.
+- Sidebar notification for direct messages now clear once viewed, regardless of which team you are in.
+- Custom brand image size is now properly limited on IE11.
+
+### Compatibility  
+Changes from v3.0 to v3.1:
+
+**config.json**    
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console. 
+
+ - Under `FileSettings` in `config.json`:
+    - Added `"MaxFileSize": "52428800"` to allow system admins adjust the MAX_FILE_SIZE for message attachments
+
+ - Under `LocalizationSettings` in `config.json`:
+    - Added `"DefaultServerLocale": “en”` to set default language for the system messages and logs
+    - Added `"DefaultClientLocale": “en”` to set default language for newly created users and for pages where the user hasn't logged in
+    - Added `"AvailableLocales": “en,es,fr,ja,pt-BR”` to set which languages are available for users in Account Settings. The language specified in `DefaultClientLocale` should be included in this list.
+
+### Known Issues
+
+- “More” option under Direct Message list no longer shows count of team members not in your direct message list.
+- Emoji smileys ending with a letter at the end of a message do not auto-complete as expected.
+- Incorrect formatting when a new line is added directly after a list.
+- On Postgres databases, searching for websites and emails does not work properly.
+- Clicking on a desktop notification from another team doesn’t open the team.
+- Browser back/forward keyboard shortcuts don’t work on the desktop app.
+- Zoom in/out keyboard shortcuts don’t work on the desktop app.
+- Webhook attachments don't show up in search results.
+
+### Contributors
+
+Many thanks to all our contributors. In alphabetical order:
+
+/platform
+- [apheleia](https://github.com/apheleia)
+- [ArthurHlt](https://github.com/ArthurHlt)
+- [asaadmahmoodspin](https://github.com/asaadmahmoodspin)
+- [coreyhulen](https://github.com/coreyhulen)
+- [crspeller](https://github.com/crspeller)
+- [DavidLu1997](https://github.com/DavidLu1997)
+- [enahum](https://github.com/enahum)
+- [hmhealey](https://github.com/hmhealey)
+- [it33](https://github.com/it33)
+- [jasonblais](https://github.com/jasonblais)
+- [jwilander](https://github.com/jwilander)
+- [khoa-le](https://github.com/khoa-le)
+- [lfbrock](https://github.com/lfbrock)
+- [rompic](https://github.com/rompic)
+- [ryoon](https://github.com/ryoon)
+- [samogot](https://github.com/samogot)
+- [ScriptAutomate](https://github.com/ScriptAutomate)
+- [tbalthazar](https://github.com/tbalthazar)
+
+/android
+- [DavidLu1997](https://github.com/DavidLu1997)
+- [nineinchnick](https://github.com/nineinchnick)
+
+/desktop
+- [jnugh](https://github.com/jnugh)
+- [Razzeee](https://github.com/Razzeee)
+
+/docs
+- [apheleia](https://github.com/apheleia)
+- [coreyhulen](https://github.com/coreyhulen)
+- [crspeller](https://github.com/crspeller)
+- [DavidLu1997](https://github.com/DavidLu1997)
+- [enahum](https://github.com/enahum)
+- [esethna](https://github.com/esethna)
+- [hannapark84](https://github.com/hannapark84)
+- [hmhealey](https://github.com/hmhealey)
+- [it33](https://github.com/it33)
+- [jasonblais](https://github.com/jasonblais)
+- [lfbrock](https://github.com/lfbrock)
+- [maxlmo](https://github.com/maxlmo)
+- [mkhsueh](https://github.com/mkhsueh)
+- [npcode](https://github.com/npcode)
+- [TwizzyDizzy](https://github.com/TwizzyDizzy)
+
+/mattermost-driver-javascript
+- [coreyhulen](https://github.com/coreyhulen)
+- [crspeller](https://github.com/crspeller)
+- [enahum](https://github.com/enahum)
+- [jwilander](https://github.com/jwilander)
+
 ## Release v3.0.3
 
 Release date: 2016-05-27
