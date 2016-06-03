@@ -5,7 +5,7 @@ Keyboard Shortcuts
 
 Keyboard shortcuts perform operations in Mattermost to help you navigate through channels and make a more efficient use of your keyboard. See also `slash commands <https://docs.mattermost.com/help/messaging/executing-commands.html>`_ for alternate ways to help carry out actions with a keyboard instead of a mouse.
 
-To display a list of available keyboard shortcuts, type ``CTRL + /``, or ``/shortcuts``.
+To display a list of available keyboard shortcuts, type ``CTRL/CMD + /``, or ``/shortcuts``.
 
 Navigation
 ==========
@@ -21,9 +21,9 @@ Navigation
 +----------------------------------------+----------------------------------------+------------------------------------------------------------------------------+
 | ALT+SHIFT+DOWN                         | ALT+SHIFT+DOWN                         | Next channel or direct message in left hand sidebar with unread messages     |
 +----------------------------------------+----------------------------------------+------------------------------------------------------------------------------+
-| CTRL+SHIFT+A                           | CMD+SHIFT+A                            | Open account settings                                                        |
+| CTRL+K                                 | CMD+K                                  | Open a quick channel switcher dialog                                         |
 +----------------------------------------+----------------------------------------+------------------------------------------------------------------------------+
-| CTRL+SHIFT                             | CMD+SHIFT                              | Open a quick channel switcher dialog                                         |
+| CTRL+SHIFT+A                           | CMD+SHIFT+A                            | Open account settings                                                        |
 +----------------------------------------+----------------------------------------+------------------------------------------------------------------------------+
 | CTRL+SHIFT+M                           | CMD+SHIFT+M                            | Open recent mentions                                                         |
 +----------------------------------------+----------------------------------------+------------------------------------------------------------------------------+
@@ -45,9 +45,9 @@ Messages
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------------------+
 | On Windows                             | On Mac                                 | Description                                                                | 
 +========================================+========================================+============================================================================+
-| CTRL+UP (in empty input field)         | CMD+UP (in empty input field)          | Reprint previous message or slash command you entered (up to 100 messages) |
+| CTRL+UP (in empty input field)         | CMD+UP (in empty input field)          | Reprint previous message or slash command you entered                      |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------------------+
-| CTRL+DOWN (in empty input field)       | CMD+DOWN (in empty input field)        | Reprint next message or slash command you entered (up to 100 messages)     |
+| CTRL+DOWN (in empty input field)       | CMD+DOWN (in empty input field)        | Reprint next message or slash command you entered                          |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------------------+
 | UP (in empty input field)              | UP (in empty input field)              | Edit your last message in the current channel                              |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------------------+
@@ -68,7 +68,7 @@ Browser Built-in
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
 | CTRL+PLUS                              | CMD+PLUS                               | Increase font size (zoom in)                                   |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
-| CTRL+MINUS                             | CMD+MINUS                              | Decrease font size (zoom in)                                   |
+| CTRL+MINUS                             | CMD+MINUS                              | Decrease font size (zoom out)                                  |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
 | SHIFT+UP (in input field)              | SHIFT+UP (in input field)              | Highlight text to the next line                                |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
