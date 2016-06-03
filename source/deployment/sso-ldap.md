@@ -38,7 +38,8 @@ After installing Mattermost:
 If you've made a mistake and lock yourself out of the system somehow, you can [set an existing account to System Administrator using the commandline tool](http://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline). 
 
 Notes: 
-- Mattermost 3.0 checks AD/LDAP credentials at the time of sign-in and issues session tokens with configurable durations, defaulting to 30 days. If a shorter time intervals is required, this option can be changed in **System Console** > **Service Settings** > **Session Length for SSO in days**. The ability more quickly detect user attribute changes by polling the AD/LDAP server as sessions start is planned for a future monthly release of Enterprise Edition. 
+- Mattermost 3.0 checks AD/LDAP credentials at the time of sign-in and issues session tokens with configurable durations, defaulting to 30 days. If a shorter time intervals is required, this option can be changed in **System Console > Service Settings > Session Length** for SSO in days. 
+- Any user attributes updated in the LDAP Server will be reflected in Mattermost when LDAP Synchronization occurs. The time interval for synchronization can be set in the System Console.
 
 ### Troubleshooting
 
