@@ -45,7 +45,7 @@ Incoming webhooks should be enabled on your Mattermost instance by default, but 
 If you've already found or built an integration and are just looking to hook it up, then you should just need to follow the specific instructions of that integration. If the integration is using Mattermost incoming webhooks, then at some point in the instructions it will ask for a webhook URL. You can get this URL by following the first step in the next section _Creating Integrations using Incoming Webhooks_.
 
 ### Creating Integrations using Incoming Webhooks
-You can create a webhook integration to post into Mattermost channels and private groups using these steps:
+You can create a webhook integration to post into any Mattermost public channels and into private groups you have permission to by using these steps:
 
 **Note: Incoming webhooks must be enabled. Only your Mattermost system administrator can enable incoming webhooks if they are currently disabled.**
 
@@ -76,7 +76,11 @@ Additional Notes:
 
 5. Also, as mentioned previously, [markdown](../help/messaging/formatting-text.md) can be used to create richly formatted payloads, for example: ```payload={"text": "# A Header\nThe _text_ below **the** header."}``` creates a messages with a header, a carriage return and bold text for "the"
 
-6. Just like regular posts, the text will be limited to 4000 characters at maximum
+6. Including `@username` in the JSON payload will trigger a mention notification for the person with the specified username. Channels can be mentioned by including `@channel` or `<!channel>`. For example:  ```payload={"text": "<!channel> this is a notification""}``` would create a message that mentions `@channel`
+
+7. Just like regular posts, the text will be limited to 4000 characters at maximum
+
+8. Posts with advanced formatting can be created by including an [attachment array](http://docs.mattermost.com/developer/message-attachments.html) in the JSON payload
 
 ### Slack Compatibility
 
