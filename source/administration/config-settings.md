@@ -164,6 +164,8 @@ Custom text will be shown below custom brand image on left side of server login 
 
 ### Localization Settings
 
+_Available in June 16, 2016 release_
+
 Settings to configure localization options for teams.
 
 **Default Server Language** (`"DefaultServerLocale": "en"`)  
