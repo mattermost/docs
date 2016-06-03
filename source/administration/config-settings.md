@@ -162,6 +162,24 @@ Custom JPG image is displayed on left side of server login page. Recommended max
 
 Custom text will be shown below custom brand image on left side of server login page. Maximum 500 characters allowed. You can format this text using the same [Markdown formatting codes](http://docs.mattermost.com/help/messaging/formatting-text.html) as using in Mattermost messages. 
 
+### Localization Settings
+
+_Available in June 16, 2016 release_
+
+Settings to configure localization options for teams.
+
+**Default Server Language** (`"DefaultServerLocale": "en"`)  
+
+Sets the default language for system messages and logs (needs a server restart).
+
+**Default Client Language** (`"DefaultClientLocale": "en"`)  
+
+Sets the default language for newly created users and for pages where the user hasn't loggged in.
+
+**Available Languages** (`"AvailableLocales": "en,es,fr,ja,pt-BR"`)  
+
+Sets which languages are available for users in Account Settings. The language specified in `DefaultClientLocale` should be included in this list.
+
 ### SQL Settings
 
 Settings to configure the data sources, connections, and encryption of SQL databases. Changing properties in this section will require a server restart before taking effect. 
