@@ -1,11 +1,11 @@
 High Availability 
 ----
 
-*Available in Enterprise Edition E20 version 3.1 and later.*
+*Available in Enterprise Edition E20 version 3.1 and higher.*
 
 High Availability support enables a Mattermost server to maintain service during outages and hardware failures of underlying services and hardware through the use of redundant infrastructure. 
 
-- Support for high availability database configurations is available in Mattermost Enterprise Edition E20 version 3.1 and later. 
+- Support for high availability database configurations is available in Mattermost Enterprise Edition E20 version 3.1 and higher. 
 - Support for high availability configurations of the Mattermost application server is planned for release in Mattermost Enterprise Edition E20 during summer 2016. 
 
 Setting up an active-passive redundant database configuration
