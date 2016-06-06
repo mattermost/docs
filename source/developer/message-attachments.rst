@@ -62,7 +62,7 @@ Fields can be included as an optional array within ``attachments``, and are used
 
 ``image_url``: An optional URL to an image file (GIF, JPEG, PNG, or BMP) that will be displayed inside a message attachment.
 
-Large images will be resized to a maximum width of 400px or a maximum height of 500px, while still maintaining the original aspect ratio.
+Large images will be resized to a maximum width of 400px or a maximum height of 300px, while still maintaining the original aspect ratio.
 
 .. image:: ../images/attachments-image.png
 
