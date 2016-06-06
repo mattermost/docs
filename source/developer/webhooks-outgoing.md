@@ -75,6 +75,7 @@ If you'd like to build your own integration that uses outgoing webhooks, you can
     channel_name=town-square&
     team_domain=someteam&
     team_id=kwoknj9nwpypzgzy78wkw516qe&
+    post_id=axdygg1957njfe5pu38saikdho&
     text=some+text+here&
     timestamp=1445532266&
     token=zmigewsanbbsdf59xnmduzypjc&
