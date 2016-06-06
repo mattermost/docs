@@ -8,7 +8,7 @@ Anticipated release date: 2016-06-16
 
 ### Security Update
 
-- Mattermost v3.1.0 contains [multiple security updates](http://about.mattermost.com/security-updates/). [Upgrading to Mattermost v3.1.0](http://docs.mattermost.com/administration/upgrade.html#upgrading-team-edition) is highly recommended.
+- Mattermost v3.1.0 contains [multiple security updates](http://about.mattermost.com/security-updates/). [Upgrading to Mattermost v3.1.0](http://docs.mattermost.com/administration/upgrade.html) is highly recommended.
 - Thanks to Uchida Taishi for contributing security reports through the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
 ### Highlights
@@ -73,8 +73,8 @@ Messaging
 
 Localization
 
-- New settings to configure localization options for teams.
-- [Mattermost Translation Server](translate.mattermost.com) upgraded to better support [localization process](http://docs.mattermost.com/developer/localization.html).
+- New settings to configure localization options for teams, including default language.
+- [Mattermost Translation Server](http://translate.mattermost.com/) upgraded to better support [localization process](http://docs.mattermost.com/developer/localization.html).
 
 Integrations
 
@@ -83,9 +83,13 @@ Integrations
 - Added support for raw new lines in the text payload.
 - Added validation for command trigger words.
 
+Onboarding
+
+- Slash command `\invite_people [email address]` sends an email invite to your Mattermost team.
+
 Enterprise:
 
-- (E10 and higher): Added AD/LDAP synchronization to automatically deactivate Mattermost accounts after AD/LDAP accounts are deactivated. Previous behavior only checked AD/LDAP credentials on sign-in. Synchronization time defaults to one hour and is configurable from *System Console** > **Synchronization Interval**.
+- (E10 and higher): Added AD/LDAP synchronization to automatically deactivate Mattermost accounts after AD/LDAP accounts are deactivated. Previous behavior only checked AD/LDAP credentials on sign-in. Synchronization time defaults to one hour and is configurable from **System Console** > **Synchronization Interval**.
 - (E20 and higher): Added support for [high availability database configurations](http://docs.mattermost.com/deployment/ha.html) using read replicas and a manual failover process to deploy database reconfigurations without stopping the Mattermost server.
 
 ### Bug Fixes
