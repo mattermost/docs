@@ -87,6 +87,9 @@ Choose a 12-hour or 24-hour time preference that appears on the time stamp for a
 #### Teammate Name Display
 Configure how names are displayed in Mattermost: nickname, username or full name.
 
+#### Auto Collapse Previews
+Select whether links posted on Mattermost show a preview below them. When "On", link previews will be collapsed and hidden from view. When "Off", links to Youtube videos and GIF, PNG, JPEG, and BMP files will show a preview below them. 
+
 #### Message Display
 Select the formatting for messages in the center channel. "Compact" mode decreases the spacing around posts, collapses link previews, and hides thumbnails so only file names are shown. Some formatting types, such as block quotes and headings, are also reduced in size.
 
@@ -108,8 +111,10 @@ Setting to configure when messages are sent.
 #### Send Messages on Ctrl+Enter
 If enabled, press **Enter** to insert a new line and **Ctrl + Enter** posts the message. If disabled, **Shift + Enter** inserts a new line and **Enter** posts the message.
 
+#### Enable Post Formatting
+This setting is only visible if testing has been enabled by the System Administrator. When on, posts will be rendered with markdown formatting. When off, the raw text will be shown. 
+
 #### Preview pre-release features
 Turn on preview features to view them early, ahead of their official release:
 - **Show markdown preview option in message input box:** Turning this on will show a "Preview" option when typing in the text input box. Pressing "Preview" shows what the Markdown formatting in the message looks like before the message is sent.
 - **Show preview snippet of links below message:** Turning this on will show a preview snippet posted below links from select websites. 
-- **Show toggle for all embed previews** Turning this on shows an collapse/expand icon beside posts with image or link previews.
