@@ -22,6 +22,7 @@ Release date: 2016-06-16
 
 - System console has been reorganized to improve workflow and allow settings to be found more easily.
 - New setting to limit maximum file size of message attachments.
+- New settings to configure localization options for teams.
 - Ability to failover without downing the server by changing the database line in the config.json, then clicking the new buttons to “Reload Configuration from Disk” then “Recycle Database Connections” to reconnect to the database listed in configuration settings.
 
 ### Improvements
@@ -64,6 +65,7 @@ Messaging
 
 Localization
 
+- New settings to configure localization options for teams.
 - [Mattermost Translation Server](translate.mattermost.com) upgraded to smooth out [localization process](http://docs.mattermost.com/developer/localization.html).
 
 Integrations
@@ -100,8 +102,23 @@ Changes from v3.0 to v3.1:
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console. 
 
+**Changes to Team Edition:**
+
  - Under `FileSettings` in `config.json`:
     - Added `"MaxFileSize": "52428800"` to allow system admins adjust the MAX_FILE_SIZE for message attachments
+
+ - Under `LocalizationSettings` in `config.json`:
+    - Added `"DefaultServerLocale": “en”` to set default language for the system messages and logs
+    - Added `"DefaultClientLocale": “en”` to set default language for newly created users and for pages where the user hasn't logged in
+    - Added `"AvailableLocales": “en,es,fr,ja,pt-BR”` to set which languages are available for users in Account Settings. The language specified in `DefaultClientLocale` should be included in this list.
+
+**Changes to Enterprise Edition:**
+
+ - Under `FileSettings` in `config.json`:
+    - Added `"MaxFileSize": "52428800"` to allow system admins adjust the MAX_FILE_SIZE for message attachments
+
+ - Under `LdapSettings` in `config.json`:
+    - Added `"SyncIntervalMinutes": "60"` to allow system admins adjust how frequently Mattermost performs LDAP synchronization to update users
 
  - Under `LocalizationSettings` in `config.json`:
     - Added `"DefaultServerLocale": “en”` to set default language for the system messages and logs
