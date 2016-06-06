@@ -345,6 +345,14 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Under `EmailSettings` in `config.json`:
     -  Added `"PushNotificationContents": "generic"` to set whether push notifications send a generic message (`generic`) or send a snippet of the conversation (`full`)
 
+- Under `SupportSettings` in `config.json`, default support links were changed and need to be manually updated for existing installs:
+    - Changed: `"TermsOfServiceLink": "https://about.mattermost.com/default-terms/"`
+    - Changed: `"PrivacyPolicyLink": "https://about.mattermost.com/default-privacy-policy/"`
+    - Changed: `"AboutLink": "https://about.mattermost.com/default-about/"`
+    - Changed: `"HelpLink": "https://about.mattermost.com/default-help/"`
+    - Changed: `"ReportAProblemLink": "https://about.mattermost.com/default-report-a-problem/"`
+    - Changed: `"SupportEmail": "feedback@mattermost.com"`
+
 **Changes to Enterprise Edition:**
 
 The following config settings will only work on servers with an Enterprise License that has the feature enabled. 
@@ -355,6 +363,14 @@ The following config settings will only work on servers with an Enterprise Licen
 - Under `TeamSettings` in `config.json`:
     -  Added `"EnableCustomBrand": false` to set whether custom branding of the login page is turned on. 
     -  Added `"CustomBrandText": ""` to set what text will show up on the login page, if `"EnableCustomBrand":` is set to `true`.
+
+- Under `SupportSettings` in `config.json`, default support links were changed and need to be manually updated for existing installs:
+    - Changed: `"TermsOfServiceLink": "https://about.mattermost.com/default-terms/"`
+    - Changed: `"PrivacyPolicyLink": "https://about.mattermost.com/default-privacy-policy/"`
+    - Changed: `"AboutLink": "https://about.mattermost.com/default-about/"`
+    - Changed: `"HelpLink": "https://about.mattermost.com/default-help/"`
+    - Changed: `"ReportAProblemLink": "https://about.mattermost.com/default-report-a-problem/"`
+    - Changed: `"SupportEmail": "feedback@mattermost.com"`
 
 - Under `LdapSettings` in `config.json`:
     - Added `"ConnectionSecurity":""` to set the type of connection security Mattermost uses to connect to LDAP. Options are `""` (no security), `TLS` or `STARTTLS`.
