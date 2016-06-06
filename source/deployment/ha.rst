@@ -38,7 +38,7 @@ Loading a multi-database configuration onto an active server
 
 After a multi-database configuration has been defined in ``config.json`` the following procedure can be used to apply the settings without shutting down the Mattermost server: 
 
-1. Go to **System Console** > **Configuration** and press *Reload Configuration from Disk** to reload configuration settings for the Mattermost server from ``config.json``. 
+1. Go to **System Console** > **Configuration** and press **Reload Configuration from Disk** to reload configuration settings for the Mattermost server from ``config.json``. 
 2. Go to **System Console** > **Database** and press **Recycle Database Connections** to takedown existing database connections and set up new connections in the multi-database configuration. 
 
 While connection settings are changing there may be a brief moment when writes to the master database will be unsuccessful. The process waits for all existing connections to finish and starts serving new requests with the new connections. End users attempting to send messages while the switch is happening will have an experience similar to losing connection to the Mattermost server.
