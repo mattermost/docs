@@ -2,28 +2,36 @@
 
 This changelog summarizes updates to [Mattermost Team Edition](http://www.mattermost.org/), an open source team messaging solution released monthly under an MIT license, and [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/), a commercial upgrade offering enterprise messaging for large organizations.
 
-## Release v3.1.0
+## Release v3.1.0 (UNDER DEVELOPMENT)
 
-Release date: 2016-06-16
+Anticipated release date: 2016-06-16
 
 ### Security Update
 
-- Mattermost v3.1.0 contains multiple security updates. [Upgrading to Mattermost v3.1.0](http://docs.mattermost.com/administration/upgrade.html#upgrading-team-edition) is highly recommended.
+- Mattermost v3.1.0 contains [multiple security updates](http://about.mattermost.com/security-updates/). [Upgrading to Mattermost v3.1.0](http://docs.mattermost.com/administration/upgrade.html#upgrading-team-edition) is highly recommended.
 - Thanks to Uchida Taishi for contributing security reports through the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
 ### Highlights
 
-#### Keyboard shortcuts
+#### Keyboard shortcuts and channel switcher 
 
 - Added keyboard shortcuts for navigation, messages and files
-- Full list of available shortcuts can be found [here](http://docs.mattermost.com/help/messaging/keyboard-shortcuts.rst) or by typing /shortcuts in an empty input box.
+- Added channel switcher available from CTRL+K in Windows and CMD+K on Mac. 
+- See [shortcut documentation](http://docs.mattermost.com/help/messaging/keyboard-shortcuts.html) or use the `/shortcuts` slash command for details. 
 
-#### System console
+#### Upgraded System Console
 
-- System console has been reorganized to improve workflow and allow settings to be found more easily.
-- New setting to limit maximum file size of message attachments.
-- New settings to configure localization options for teams.
-- Ability to failover without downing the server by changing the database line in the config.json, then clicking the new buttons to “Reload Configuration from Disk” then “Recycle Database Connections” to reconnect to the database listed in configuration settings.
+- Re-organized System Console to make settings easier to find for new users. 
+- Added setting to configure maximum file size of message attachments.
+
+#### Upgraded Push Notification options
+
+- Added ability for mobile push notifications to trigger on only mentions, all activity and no activity, configurable from **Account Settings** > **Notifications** > **Mobile push notificiations**
+- Added ability to trigger mobile push notifications while user is logged into Mattermost on desktop.
+
+#### Compact View
+
+- Added "Compact" view option to display more text on a smaller screen, configurable from **Account Settings** > **Display** > **Message Display**.
 
 ### Improvements
 
@@ -66,18 +74,19 @@ Messaging
 Localization
 
 - New settings to configure localization options for teams.
-- [Mattermost Translation Server](translate.mattermost.com) upgraded to smooth out [localization process](http://docs.mattermost.com/developer/localization.html).
+- [Mattermost Translation Server](translate.mattermost.com) upgraded to better support [localization process](http://docs.mattermost.com/developer/localization.html).
 
 Integrations
 
-- Integrations now support advanced formatting through [message attachments] (link to doc).
+- Integrations now support advanced formatting through [message attachments](http://docs.mattermost.com/developer/message-attachments.html).
 - Added support for sending `@channel` notifications by using `<!channel>`.
 - Added support for raw new lines in the text payload.
 - Added validation for command trigger words.
 
 Enterprise:
 
-- Added LDAP synchronization.
+- (E10 and higher): Added AD/LDAP synchronization to automatically deactivate Mattermost accounts after AD/LDAP accounts are deactivated. Previous behavior only checked AD/LDAP credentials on sign-in. Synchronization time defaults to one hour and is configurable from *System Console** > **Synchronization Interval**.
+- (E20 and higher): Added support for [high availability database configurations](http://docs.mattermost.com/deployment/ha.html) using read replicas and a manual failover process to deploy database reconfigurations without stopping the Mattermost server.
 
 ### Bug Fixes
 
@@ -190,6 +199,8 @@ Many thanks to all our contributors. In alphabetical order:
 - [crspeller](https://github.com/crspeller)
 - [enahum](https://github.com/enahum)
 - [jwilander](https://github.com/jwilander)
+
+If we missed your name, please let us know at feedback@mattermost.com. Recognition is a manual process and mistakes can happen. We want to include anyone who's made a pull request that got merged during the release.
 
 ## Release v3.0.3
 
