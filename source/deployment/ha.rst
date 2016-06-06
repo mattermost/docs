@@ -37,12 +37,12 @@ After a multi-database configuration has been defined in `config.json` the follo
 1. Go to **System Console** > **Configuration** and press *Reload Configuration from Disk** to reload configuration settings for the Mattermost server from `config.json`. 
 2. Go to **System Console** > **Database** and press **Recycle Database Connections** to takedown existing database connections and set up new connections in the multi-database configuration. 
 
-While connection settings are changing there will be a brief moment when writes to the master database will be unsuccessful. End users attempting to send messages while the switch is happening will have an experience similar to losing connection to the Mattermost server.
+While connection settings are changing there may be a brief moment when writes to the master database will be unsuccessful. The process waits for all existing connections to finish and starts serving new requests with the new connections. End users attempting to send messages while the switch is happening will have an experience similar to losing connection to the Mattermost server.
 
 Automatic read replica failover 
 ^^^^
 
-Should a read replica fail from exceed disk space, having a hardware failure, a network disconnection, or any other reason, the Mattermost server will automatically re-distribute read requests to the other read replica and master database servers. 
+The Mattermost server can be connected to a database cluster to enable automatic failover from read replicas that are disabled from exceeding disk space, having a hardware failure, a network disconnection, or for other reasons. 
 
 Manual failover for master database  
 ^^^^
@@ -52,4 +52,4 @@ If the need arises to switch from the current master database--for example, if i
 1. Go to **System Console** > **Configuration** and press *Reload Configuration from Disk** to reload configuration settings for the Mattermost server from `config.json`. 
 2. Go to **System Console** > **Database** and press **Recycle Database Connections** to takedown existing database connections and set up new connections in the multi-database configuration. 
 
-While connection settings are changing there will be a brief moment when writes to the master database will be unsuccessful. End users attempting to send messages while the switch is happening will have an experience similar to losing connection to the Mattermost server.
+While connection settings are changing there may be a brief moment when writes to the master database will be unsuccessful. The process waits for all existing connections to finish and starts serving new requests with the new connections. End users attempting to send messages while the switch is happening will have an experience similar to losing connection to the Mattermost server.
