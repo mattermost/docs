@@ -106,9 +106,9 @@ To setup HPNS please follow the following steps:
      
 2. Trigger a push notification
 
-     1. From the mobile application used by "Account A", click the three dot menu on the top right and go to **Account Settings** > **Security** > **View and Logout of Active Sessions** and logout of all sessions EXCEPT your mobile application session (either "iPhone Native App" or "Android Native app"). This ensures your mobile app is the only location where "Account A" is logged in to Mattermost.
-     2. Have "Account A" close the mobile application, but do not log out. The mobile app needs to be in the background for the test to work. Make sure "Account A"does not have Mattermost open in any other web, desktop or mobile app for at least 30 seconds in order to make the account go offline. 
-     3. Using "Account B", on the same Mattermost team as "Account A", use the "More" menu under the Direct Messages section in the left hand side of the team site to add "Account A" to the Direct Message list. Confirm from the indicator next to "Account A"'s name in the direct message list that "Account A" is offline. 
+     1. From the mobile application used by "Account A", click the three dot menu on the top right and go to **Account Settings** > **Notifications** > **Mobile push notifications**. Click "Edit" and select "For mentions and direct messages", then "Save" the setting. 
+     2. Have "Account A" close the mobile application, but do not log out. The mobile app needs to be in the background for the test to work. 
+     3. Using "Account B", on the same Mattermost team as "Account A", use the "More" menu under the Direct Messages section in the left hand side of the team site to add "Account A" to the Direct Message list. 
      4. Have "Account B" send a direct message "Hello" to "Account A". 
      5. This should trigger a push notification to the mobile device of "Account A". 
      
