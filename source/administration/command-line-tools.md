@@ -4,6 +4,7 @@ From the directory where the Mattermost platform is installed a `platform` comma
 
 - Creating teams
 - Creating users
+- Inviting users
 - Assigning roles to users 
 - Reseting user passwords
 - Permanently deleting users (use cautiously - database backup recommended before use)
@@ -51,6 +52,11 @@ COMMANDS:
                                        and -team_name and -username are optional to create a user.
         Example:
             platform -create_user -team_name="name" -email="user@example.com" -password="mypassword" -username="user"
+            
+    -invite_user                      Invites a user to a team by email. It requires the -team_name
+                                        and -email flags.
+        Example:
+            platform -invite_user -team_name="name" -email="user@example.com"
 
     -join_team                        Joins a user to the team.  It required the -email and
                                        -team_name.  You may need to logout of your current session
