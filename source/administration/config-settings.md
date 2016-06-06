@@ -161,6 +161,24 @@ Custom JPG image is displayed on left side of server login page. Recommended max
 **Custom Brand Text** Enterprise Edition
 
 Custom text will be shown below custom brand image on left side of server login page. Maximum 500 characters allowed. You can format this text using the same [Markdown formatting codes](http://docs.mattermost.com/help/messaging/formatting-text.html) as using in Mattermost messages. 
+ 
+### Localization Settings
+
+_Available in June 16, 2016 release_
+
+Settings to configure localization options for teams.
+
+**Default Server Language** (`"DefaultServerLocale": "en"`)  
+
+Default language for system messages and logs. Changing this will require a server restart before taking effect.
+
+**Default Client Language** (`"DefaultClientLocale": "en"`)  
+
+Default language for newly created users and pages where the user hasn't logged in.
+
+**Available Languages** (`"AvailableLocales": "en,es,fr,ja,pt-BR"`)  
+
+Determines which languages are available for users in Account Settings.
 
 ### SQL Settings
 
@@ -582,6 +600,12 @@ The attribute in the LDAP server that will be used as a unique identifier in Mat
 (Optional) The attribute in the LDAP server that will be used to populate the nickname of users in Mattermost.
 
 `true`: Skips the certificate verification step for TLS or STARTTLS connections. Not recommended for production environments where TLS is required. For testing only.
+
+_Available June 16, 2016_
+
+**Synchronization Interval (In Minutes)** (`"SyncIntervalMinutes": 60`)  
+
+LDAP Synchronization is the process by which Mattermost updates its users to reflect any updated data on the LDAP server. For example if a name for a user is updated on the LDAP server, the change will be reflected in Mattermost when the synchronization is performed. Accounts that have been removed from the LDAP server will have their active sessions cleared and no longer be able to login to Mattermost. Mattermost will perform this synchronization regularly according to the interval supplied here. For example, if 60 is supplied, Mattermost will update the users every hour.
 
 **Query Timeout (seconds)** (`"QueryTimeout": 60`)  
 
