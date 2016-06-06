@@ -59,6 +59,9 @@ A notification sound plays for all Mattermost posts that would fire a desktop no
 #### Email Notifications
 Email notifications are sent for mentions and direct messages after you’ve been offline for more than 60 seconds or away from Mattermost for more than 5 minutes. Change the email where notifications are sent from **Account Settings > General > Email**.
 
+#### Mobile Push Notifications
+Push notifications are sent to your mobile device if you have the Android or iOS app installed. They are sent even if you are online, similar to desktop notifications. By default, push notifications are sent "For mentions and direct messages". If your System Administrator has not set up push notifications, this setting will be disabled.
+
 #### Words That Trigger Mentions
 By default, you will receive mention notifications from your non-case sensitive username, mentioned @username and @channel. Customize the words that trigger mentions by typing them in the input box. This is useful if you want to be notified of all posts on a certain topic, for example, “marketing”.
 
@@ -83,6 +86,9 @@ Choose a 12-hour or 24-hour time preference that appears on the time stamp for a
 
 #### Teammate Name Display
 Configure how names are displayed in Mattermost: nickname, username or full name.
+
+#### Message Display
+Select the formatting for messages in the center channel. "Compact" mode decreases the spacing around posts, collapses link previews, and hides thumbnails so only file names are shown. Some formatting types, such as block quotes and headings, are also reduced in size.
 
 #### Channel Display Mode
 Select if the text in the center channel is fixed width and centered, or full width. 
