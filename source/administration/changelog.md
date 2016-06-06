@@ -2,6 +2,206 @@
 
 This changelog summarizes updates to [Mattermost Team Edition](http://www.mattermost.org/), an open source team messaging solution released monthly under an MIT license, and [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/), a commercial upgrade offering enterprise messaging for large organizations.
 
+## Release v3.1.0 (UNDER DEVELOPMENT)
+
+Anticipated release date: 2016-06-16
+
+### Security Update
+
+- Mattermost v3.1.0 contains [multiple security updates](http://about.mattermost.com/security-updates/). [Upgrading to Mattermost v3.1.0](http://docs.mattermost.com/administration/upgrade.html#upgrading-team-edition) is highly recommended.
+- Thanks to Uchida Taishi for contributing security reports through the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+
+### Highlights
+
+#### Keyboard shortcuts and channel switcher 
+
+- Added keyboard shortcuts for navigation, messages and files
+- Added channel switcher available from CTRL+K in Windows and CMD+K on Mac. 
+- See [shortcut documentation](http://docs.mattermost.com/help/messaging/keyboard-shortcuts.html) or use the `/shortcuts` slash command for details. 
+
+#### Upgraded System Console
+
+- Re-organized System Console to make settings easier to find for new users. 
+- Added setting to configure maximum file size of message attachments.
+
+#### Upgraded Push Notification options
+
+- Added ability for mobile push notifications to trigger on only mentions, all activity and no activity, configurable from **Account Settings** > **Notifications** > **Mobile push notificiations**
+- Added ability to trigger mobile push notifications while user is logged into Mattermost on desktop.
+
+#### Compact View
+
+- Added "Compact" view option to display more text on a smaller screen, configurable from **Account Settings** > **Display** > **Message Display**.
+
+### Improvements
+
+iOS App
+- Account Settings > Notifications option lets users to enable mobile push notifications for chosen activities.
+- Push notifications sent even if a user is online on desktop.
+- Removed auto-capitalization on login screen, so email is no longer capitalized.
+
+Android App
+- Account Settings > Notifications option lets users to enable mobile push notifications for chosen activities.
+- Push notifications sent even if a user is online on desktop.
+- Removed auto-capitalization on login screen, so email is no longer capitalized.
+
+User Interface
+
+- Account Settings > Display option lets users set channels to compact view.
+- Autocomplete closes with ESC button.
+- Sequential messages with a username also show profile pictures.
+- Channel introduction message conforms to the channel width chosen in Account Settings > Display.
+- The message '[user] is typing' now uses the username instead of the display name.
+- Date markers now show absolute time.
+
+Performance:
+
+- Performance improvements to posting and replying.
+- Online status in Direct Message list updated on first load.
+
+Notifications
+
+- `@all` mention added back with equivalent functionality to `@channel`.
+- An email notification is now sent when username is changed.
+
+Channels
+- Removed the option to leave a channel for the last person in a private group, so private groups can no longer end up in an ownerless state.
+
+Messaging
+
+- Move link preview toggle out of preview feature list and add /collapse and /expand.
+
+Localization
+
+- New settings to configure localization options for teams.
+- [Mattermost Translation Server](translate.mattermost.com) upgraded to better support [localization process](http://docs.mattermost.com/developer/localization.html).
+
+Integrations
+
+- Integrations now support advanced formatting through [message attachments](http://docs.mattermost.com/developer/message-attachments.html).
+- Added support for sending `@channel` notifications by using `<!channel>`.
+- Added support for raw new lines in the text payload.
+- Added validation for command trigger words.
+
+Enterprise:
+
+- (E10 and higher): Added AD/LDAP synchronization to automatically deactivate Mattermost accounts after AD/LDAP accounts are deactivated. Previous behavior only checked AD/LDAP credentials on sign-in. Synchronization time defaults to one hour and is configurable from *System Console** > **Synchronization Interval**.
+- (E20 and higher): Added support for [high availability database configurations](http://docs.mattermost.com/deployment/ha.html) using read replicas and a manual failover process to deploy database reconfigurations without stopping the Mattermost server.
+
+### Bug Fixes
+
+- Incoming webhooks have been made available in all public channels, and in private channels the user belongs to.
+- A space between two named emojis is no longer required for correct rendering.
+- Emojis now render inside parenthesis or brackets.
+- Links that are enclosed with a right parenthesis now work properly.
+- Search term highlighting now updates when search terms change but return the same posts.
+- Search results now properly highlight for searches containing @username, non-latin characters, terms inside Markdown code blocks, and hashtags containing a dash.
+- A single numbered item no longer resets numbering to 1.
+- Previews for removed YouTube videos no longer throw a 404 error.
+- Team and System Admins can now update channel settings after leaving and rejoining the channel.
+- After initial load on iOS, centre channel no longer appears blank.
+- When creating a team with a new account, channel introduction message is now displayed.
+- Sidebar notification for direct messages now clear once viewed, regardless of which team you are in.
+- Custom brand image size is now properly limited on IE11.
+
+### Compatibility  
+Changes from v3.0 to v3.1:
+
+**config.json**    
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console. 
+
+**Changes to Team Edition:**
+
+ - Under `FileSettings` in `config.json`:
+    - Added `"MaxFileSize": "52428800"` to allow system admins adjust the MAX_FILE_SIZE for message attachments
+
+ - Under `LocalizationSettings` in `config.json`:
+    - Added `"DefaultServerLocale": “en”` to set default language for the system messages and logs
+    - Added `"DefaultClientLocale": “en”` to set default language for newly created users and for pages where the user hasn't logged in
+    - Added `"AvailableLocales": “en,es,fr,ja,pt-BR”` to set which languages are available for users in Account Settings. The language specified in `DefaultClientLocale` should be included in this list.
+
+**Changes to Enterprise Edition:**
+
+ - Under `FileSettings` in `config.json`:
+    - Added `"MaxFileSize": "52428800"` to allow system admins adjust the MAX_FILE_SIZE for message attachments
+
+ - Under `LdapSettings` in `config.json`:
+    - Added `"SyncIntervalMinutes": "60"` to allow system admins adjust how frequently Mattermost performs LDAP synchronization to update users
+
+ - Under `LocalizationSettings` in `config.json`:
+    - Added `"DefaultServerLocale": “en”` to set default language for the system messages and logs
+    - Added `"DefaultClientLocale": “en”` to set default language for newly created users and for pages where the user hasn't logged in
+    - Added `"AvailableLocales": “en,es,fr,ja,pt-BR”` to set which languages are available for users in Account Settings. The language specified in `DefaultClientLocale` should be included in this list.
+
+### Known Issues
+
+- “More” option under Direct Message list no longer shows count of team members not in your direct message list.
+- Emoji smileys ending with a letter at the end of a message do not auto-complete as expected.
+- Incorrect formatting when a new line is added directly after a list.
+- On Postgres databases, searching for websites and emails does not work properly.
+- Clicking on a desktop notification from another team doesn’t open the team.
+- Browser back/forward keyboard shortcuts don’t work on the desktop app.
+- Zoom in/out keyboard shortcuts don’t work on the desktop app.
+- Webhook attachments don't show up in search results.
+
+### Contributors
+
+Many thanks to all our contributors. In alphabetical order:
+
+/platform
+- [apheleia](https://github.com/apheleia)
+- [ArthurHlt](https://github.com/ArthurHlt)
+- [asaadmahmoodspin](https://github.com/asaadmahmoodspin)
+- [coreyhulen](https://github.com/coreyhulen)
+- [crspeller](https://github.com/crspeller)
+- [DavidLu1997](https://github.com/DavidLu1997)
+- [enahum](https://github.com/enahum)
+- [hmhealey](https://github.com/hmhealey)
+- [it33](https://github.com/it33)
+- [jasonblais](https://github.com/jasonblais)
+- [jwilander](https://github.com/jwilander)
+- [khoa-le](https://github.com/khoa-le)
+- [lfbrock](https://github.com/lfbrock)
+- [rompic](https://github.com/rompic)
+- [ryoon](https://github.com/ryoon)
+- [samogot](https://github.com/samogot)
+- [ScriptAutomate](https://github.com/ScriptAutomate)
+- [tbalthazar](https://github.com/tbalthazar)
+
+/android
+- [DavidLu1997](https://github.com/DavidLu1997)
+- [nineinchnick](https://github.com/nineinchnick)
+
+/desktop
+- [jnugh](https://github.com/jnugh)
+- [Razzeee](https://github.com/Razzeee)
+
+/docs
+- [apheleia](https://github.com/apheleia)
+- [coreyhulen](https://github.com/coreyhulen)
+- [crspeller](https://github.com/crspeller)
+- [DavidLu1997](https://github.com/DavidLu1997)
+- [enahum](https://github.com/enahum)
+- [esethna](https://github.com/esethna)
+- [hannapark84](https://github.com/hannapark84)
+- [hmhealey](https://github.com/hmhealey)
+- [it33](https://github.com/it33)
+- [jasonblais](https://github.com/jasonblais)
+- [lfbrock](https://github.com/lfbrock)
+- [maxlmo](https://github.com/maxlmo)
+- [mkhsueh](https://github.com/mkhsueh)
+- [npcode](https://github.com/npcode)
+- [TwizzyDizzy](https://github.com/TwizzyDizzy)
+
+/mattermost-driver-javascript
+- [coreyhulen](https://github.com/coreyhulen)
+- [crspeller](https://github.com/crspeller)
+- [enahum](https://github.com/enahum)
+- [jwilander](https://github.com/jwilander)
+
+If we missed your name, please let us know at feedback@mattermost.com. Recognition is a manual process and mistakes can happen. We want to include anyone who's made a pull request that got merged during the release.
+
 ## Release v3.0.3
 
 Release date: 2016-05-27
