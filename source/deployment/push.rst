@@ -51,7 +51,7 @@ With HPNS, end users can use publicly available iOS and Android mobile applicati
 
 A license key to activate HPNS is available with a `subscription to Mattermost Enterprise Edition <https://about.mattermost.com/pricing/>`_. 
 
-After purchasing and installing a license key, you can turn on HPNS using **System Console** > **Email Settings** > **Send Push Notifications** > **Use encrypted, production-quality HPNS connection to iOS and Android apps**.
+After purchasing and installing a license key, you can turn on HPNS by setting **System Console** > **Mobile Push** > **Send Push Notifications** to **Use encrypted, production-quality HPNS connection to iOS and Android apps**.
 
 Enterprise App Store (EAS)
 -----
@@ -62,7 +62,7 @@ To set up an Enterprise App Store, teams can set up verified relationships by co
 - `Open source repository for the Mattermost iOS application <https://github.com/mattermost/ios>`_
 - `Open source repository for the Mattermost Android application <https://github.com/mattermost/android>`_
 
-After deploying the mobile applications and push notification service, go to **System Console** > **Email Settings** > **Send Push Notifications** > **Manually enter Push Notification Service location** and enter the location of your Push Notification Service in the **Push Notification Server** field. 
+After deploying the mobile applications and push notification service, set **System Console** > **Mobile Push** > **Send Push Notifications** to **Manually enter Push Notification Service location** and enter the location of your Push Notification Service in the **Push Notification Server** field. 
 
 Test Push Notifications Service (TPNS) 
 -----
@@ -74,7 +74,7 @@ End users of TPNS can use the publicly available iOS and Android mobile applicat
 - `Mattermost iOS App on iTunes <https://itunes.apple.com/us/app/mattermost/id984966508?mt=8>`_
 - `Mattermost Android App on Google Play <https://play.google.com/store/apps/details?id=com.mattermost.mattermost&hl=en>`_
 
-You can connect to the TPNS by going to **System Console** > **Email Settings** > **Send Push Notifications** > **Use iOS and Android apps on iTunes and Google Play with TPNS.**
+You can connect to the TPNS by setting **System Console** > **Mobile Push** > **Send Push Notifications** to **Use iOS and Android apps on iTunes and Google Play with TPNS.**
 
 Note: TPNS is a test service that does not encrypt push notifications and does not offer production-quality uptime. 
 
@@ -99,7 +99,7 @@ To setup HPNS please follow the following steps:
 1. Install HPNS
 
      1. Follow the `instructions you received with your Mattermost Enterprise Edition purchase to install or upgrade to Enterprise Edition <http://docs.mattermost.com/install/ee-install.html>`_
-     2. Under **System Console** > **Email Settings** > **Send Push Notifications**  select **Use encrypted, production-quality HPNS connection to iOS and Android apps** (this option appears only in Enterprise Edition, not Team Edition)
+     2. Set **System Console** > **Mobile Push** > **Send Push Notifications** to **Use encrypted, production-quality HPNS connection to iOS and Android apps** (this option appears only in Enterprise Edition, not Team Edition)
      3. Check the box "I understand and accept the Mattermost Hosted Push Notification Service Terms of Service and Privacy Policy." after reading the documents referenced, then click **Save**. 
      4. Download either the Mattermost iOS app from iTunes or the Mattermost Android app from Google Play and sign into the app using an account on your Mattermost server, which we'll refer to as "Account A". 
      5. When asked whether you wish to receive notifications, **confirm you want to receive notifications**
@@ -114,7 +114,7 @@ To setup HPNS please follow the following steps:
      
 3. If you did not receive a push notification, use the following procedure to troubleshoot: 
 
-     1. Under **System Console** > **Logs Settings** > **File Log Level** select **DEBUG** in order to watch for push notifications in the server log. IMPORTANT: Make sure to switch this back to ERROR level logging after setting up push notifications to conserve disk space. 
+     1. Under **System Console** > **Logging** > **File Log Level** select **DEBUG** in order to watch for push notifications in the server log. IMPORTANT: Make sure to switch this back to ERROR level logging after setting up push notifications to conserve disk space. 
      
      2. Delete your mobile application, install it again and sign-in with "Account A" and **confirm you want to receive push notifications** when prompted by the mobile app. 
      
@@ -125,7 +125,7 @@ To setup HPNS please follow the following steps:
          
          - If the log message does not appear, it means no mobile push notification was sent to "Account A". Please repeat step 2 and double check each step. 
          
-4. After your issue is resolved, go to **System Console** > **Logs Settings** > **File Log Level** and select **ERROR** to switch your logging detail level to Errors Only, instead of DEBUG, in order to conserve disk space. 
+4. After your issue is resolved, go to **System Console** > **Logging** > **File Log Level** and select **ERROR** to switch your logging detail level to Errors Only, instead of DEBUG, in order to conserve disk space. 
 
 Confirming TPNS push notifications are properly configured
 ``````
