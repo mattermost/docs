@@ -41,15 +41,9 @@ If you would like to suggest alternative solutions, please [discuss here](https:
 
 ## Where should I install my integrations? 
 
-If you want to keep all your integrations on your own servers, we suggest the following as general guidelines:
+For self-hosted deployments in small setups you might host integrations on the same server on which Mattermost is installed. For larger deployments you can setup a separate server for integrations, or add them to the server on which the external application is hosted--for example, if you're self-hosting a Jira server you could deploy a Jira integration on the Jira server itself. 
 
-- Small Organizations: Set integrations up on the same server machine Mattermost runs on.  
-- Medium-sized Organizations: Set up a separate server machine just for integrations.  
-- Large Organizations: Consider using a different box for each integration.  
-
-These are approximate suggestions, but overall where you install your integrations should be dependent on how many integrations you have, how often they’re used, and the size of your team. 
-
-If it’s not necessary for your organization to host their own integrations, we recommend using a hosting service such as Heroku.
+When self-hosting restrictions are less strict, AWS, Heroku and other public cloud options could also be used. 
 
 ## How should I automate the install and upgrade of Mattermost when included in another application? 
 
@@ -66,5 +60,10 @@ Automating Mattermost installation within another application:
 Automating Mattermost upgrade within another application: 
 
 1. Review the [upgrade guide](http://docs.mattermost.com/administration/upgrade.html) for an overview of the upgrade procedure. 
-2. Create automation to upgrade to the next Mattermost versions by backing up the `config.json` file to preserve any settings a user may have made, then replacing the contents of `/mattermost` directory, then starting the Mattermost server to upgrade the database and `config.json` file.
+2. Create automation to upgrade to the next Mattermost versions: 
+    - backup the `config.json` file to preserve any settings a user may have made.
+    - backup the `./data` directory if local storage is used for files.
+    - replace the contents of `/mattermost` directory with the decompressed contents of the latest release.
+    - restore `config.json` and `./data` to their previous locations (which may have been overwritten).
+    - starting the Mattermost server to upgrade the database, `config.json` file, and `./data` as necessary. 
 3. Optionally the upgrade procedure can be chained so users can upgrade across an arbitrary number of Mattermost versions rather than to just the latest release. 
