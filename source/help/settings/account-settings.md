@@ -112,7 +112,7 @@ Setting to configure when messages are sent.
 If enabled, press **Enter** to insert a new line and **Ctrl + Enter** posts the message. If disabled, **Shift + Enter** inserts a new line and **Enter** posts the message.
 
 #### Enable Post Formatting
-This setting is only visible if testing has been enabled by the System Administrator. When on, posts will be rendered with markdown formatting. When off, the raw text will be shown. 
+This setting is only visible if testing has been enabled by the System Administrator. When "On", posts will be rendered with markdown formatting. When "Off", the raw text will be shown. 
 
 #### Preview pre-release features
 Turn on preview features to view them early, ahead of their official release:
