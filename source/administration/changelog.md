@@ -26,7 +26,7 @@ Anticipated release date: 2016-06-16
 
 #### Upgraded Push Notification options
 
-- Added ability for mobile push notifications to trigger on only mentions, all activity and no activity, configurable from **Account Settings** > **Notifications** > **Mobile push notificiations**
+- Added ability for mobile push notifications to trigger on only mentions, all activity and no activity, configurable from **Account Settings** > **Notifications** > **Mobile push notifications**
 - Added ability to trigger mobile push notifications while user is logged into Mattermost on desktop.
 
 #### Compact View
@@ -156,7 +156,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - When upgrading to 3.X, syntax highlighting using Solarized code theme is lost
 - In Compact view, clicking on a file in the first post in the right hand sidebar attempts to download the file
 - Unable to leave a private channel in mobile view
-- @all notifications received even after being unselected from notification options
+- `@all` notifications received even after being unselected from notification options
 - Channel header disappears after renaming a channel (fixed with channel switch)
 
 ### Contributors
