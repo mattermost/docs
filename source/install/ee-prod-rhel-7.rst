@@ -168,6 +168,7 @@ Set up Mattermost Server
           User=mattermost
           ExecStart=/opt/mattermost/bin/platform
           PIDFile=/var/spool/mattermost/pid/master.pid
+          LimitNOFILE=49152
 
           [Install]
           WantedBy=multi-user.target
