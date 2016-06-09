@@ -153,6 +153,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - `@all` notifications received even after being unselected from notification options
 - Channel header disappears after renaming a channel (fixed with channel switch)
 - Updates to **System Console** > **Privacy** settings for existing users requires a session update
+- Max File Size setting in **System Console** > **Storage** doesn't properly update
 
 ### Contributors
 
