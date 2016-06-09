@@ -22,11 +22,11 @@ Anticipated release date: 2016-06-16
 #### Upgraded System Console
 
 - Re-organized System Console to make settings easier to find for new users. 
-- Added setting to configure maximum file size of message attachments.
+- Added setting to set default server and client languages.
 
 #### Upgraded Push Notification options
 
-- Added ability for mobile push notifications to trigger on only mentions, all activity and no activity, configurable from **Account Settings** > **Notifications** > **Mobile push notificiations**
+- Added ability for mobile push notifications to trigger on only mentions, all activity and no activity, configurable from **Account Settings** > **Notifications** > **Mobile push notifications**
 - Added ability to trigger mobile push notifications while user is logged into Mattermost on desktop.
 
 #### Compact View
@@ -85,7 +85,7 @@ Integrations
 
 Onboarding
 
-- Slash command `\invite_people [email address]` sends an email invite to your Mattermost team.
+- Slash command `/invite_people [email address]` sends an email invite to your Mattermost team.
 
 Enterprise:
 
@@ -117,9 +117,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 **Changes to Team Edition:**
 
- - Under `FileSettings` in `config.json`:
-    - Added `"MaxFileSize": "52428800"` to allow system admins adjust the MAX_FILE_SIZE for message attachments
-
  - Under `LocalizationSettings` in `config.json`:
     - Added `"DefaultServerLocale": “en”` to set default language for the system messages and logs
     - Added `"DefaultClientLocale": “en”` to set default language for newly created users and for pages where the user hasn't logged in
@@ -127,11 +124,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 **Changes to Enterprise Edition:**
 
- - Under `FileSettings` in `config.json`:
-    - Added `"MaxFileSize": "52428800"` to allow system admins adjust the MAX_FILE_SIZE for message attachments
-
  - Under `LdapSettings` in `config.json`:
-    - Added `"SyncIntervalMinutes": "60"` to allow system admins adjust how frequently Mattermost performs LDAP synchronization to update users
+    - Added `"SyncIntervalMinutes": "60"` to allow system admins adjust how frequently Mattermost performs LDAP synchronization to update users (requires a server restart)
 
  - Under `LocalizationSettings` in `config.json`:
     - Added `"DefaultServerLocale": “en”` to set default language for the system messages and logs
@@ -143,11 +137,23 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - “More” option under Direct Message list no longer shows count of team members not in your direct message list.
 - Emoji smileys ending with a letter at the end of a message do not auto-complete as expected.
 - Incorrect formatting when a new line is added directly after a list.
-- On Postgres databases, searching for websites and emails does not work properly.
+- On Postgres databases, searching for websites and emails does not work properly and hashtags which end with an inverted questionmark aren't properly highlighted.
+- On Firefox, search results for hashtags are not properly highlighted.
 - Clicking on a desktop notification from another team doesn’t open the team.
-- Browser back/forward keyboard shortcuts don’t work on the desktop app.
-- Zoom in/out keyboard shortcuts don’t work on the desktop app.
 - Webhook attachments don't show up in search results.
+- On Firefox, System Console sidebar completely disappears when an LDAP setting is saved
+- On Firefox, `CTRL/CMD + U` keyboard shortcut doesn't work
+- Copying and pasting an image from a browser doesn't work
+- Youtube videos continue playing when collapsed
+- Code theme under Account Settings > Display > Theme doesn't save unless entered in vectorized form
+- `/join` sometimes throws an error
+- When upgrading to 3.X, syntax highlighting using Solarized code theme is lost
+- In Compact view, clicking on a file in the first post in the right hand sidebar attempts to download the file
+- Unable to leave a private channel in mobile view
+- `@all` notifications received even after being unselected from notification options
+- Channel header disappears after renaming a channel (fixed with channel switch)
+- Updates to **System Console** > **Privacy** settings for existing users requires a session update
+- Max File Size setting in **System Console** > **Storage** doesn't properly update
 
 ### Contributors
 
