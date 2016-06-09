@@ -22,7 +22,7 @@ Anticipated release date: 2016-06-16
 #### Upgraded System Console
 
 - Re-organized System Console to make settings easier to find for new users. 
-- Added setting to configure maximum file size of message attachments.
+- Added setting to set default server and client languages.
 
 #### Upgraded Push Notification options
 
@@ -117,18 +117,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 **Changes to Team Edition:**
 
- - Under `FileSettings` in `config.json`:
-    - Added `"MaxFileSize": "52428800"` to allow system admins adjust the MAX_FILE_SIZE for message attachments
-
  - Under `LocalizationSettings` in `config.json`:
     - Added `"DefaultServerLocale": “en”` to set default language for the system messages and logs
     - Added `"DefaultClientLocale": “en”` to set default language for newly created users and for pages where the user hasn't logged in
     - Added `"AvailableLocales": “en,es,fr,ja,pt-BR”` to set which languages are available for users in Account Settings. The language specified in `DefaultClientLocale` should be included in this list.
 
 **Changes to Enterprise Edition:**
-
- - Under `FileSettings` in `config.json`:
-    - Added `"MaxFileSize": "52428800"` to allow system admins adjust the MAX_FILE_SIZE for message attachments
 
  - Under `LdapSettings` in `config.json`:
     - Added `"SyncIntervalMinutes": "60"` to allow system admins adjust how frequently Mattermost performs LDAP synchronization to update users (requires a server restart)
@@ -158,6 +152,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Unable to leave a private channel in mobile view
 - `@all` notifications received even after being unselected from notification options
 - Channel header disappears after renaming a channel (fixed with channel switch)
+- Updates to **System Console** > **Privacy** settings for existing users requires a session update
 
 ### Contributors
 
