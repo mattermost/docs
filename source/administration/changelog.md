@@ -173,10 +173,13 @@ Many thanks to all our contributors. In alphabetical order:
 - [crspeller](https://github.com/crspeller)
 - [DavidLu1997](https://github.com/DavidLu1997)
 - [enahum](https://github.com/enahum)
+- [goofy-bz](https://github.com/goofy-bz)
+- [gramakri](https://github.com/gramakri)
 - [hmhealey](https://github.com/hmhealey)
 - [it33](https://github.com/it33)
 - [jasonblais](https://github.com/jasonblais)
 - [jwilander](https://github.com/jwilander)
+- [kevynb](https://github.com/kevynb)
 - [khoa-le](https://github.com/khoa-le)
 - [lfbrock](https://github.com/lfbrock)
 - [rompic](https://github.com/rompic)
@@ -184,14 +187,26 @@ Many thanks to all our contributors. In alphabetical order:
 - [samogot](https://github.com/samogot)
 - [ScriptAutomate](https://github.com/ScriptAutomate)
 - [tbalthazar](https://github.com/tbalthazar)
+- [tehraven](https://github.com/tehraven/)
+
+/ios
+- [coreyhulen](https://github.com/coreyhulen)
+- [lfbrock](https://github.com/lfbrock)
 
 /android
+- [coreyhulen](https://github.com/coreyhulen)
 - [DavidLu1997](https://github.com/DavidLu1997)
+- [it33](https://github.com/it33)
+- [lfbrock](https://github.com/lfbrock)
 - [nineinchnick](https://github.com/nineinchnick)
 
 /desktop
+- [CarmDam](https://github.com/CarmDam)
+- [it33](https://github.com/it33)
 - [jnugh](https://github.com/jnugh)
+- [MetalCar](https://github.com/MetalCar)
 - [Razzeee](https://github.com/Razzeee)
+- [yuya-oc](https://github.com/yuya-oc)
 
 /docs
 - [apheleia](https://github.com/apheleia)
@@ -215,6 +230,16 @@ Many thanks to all our contributors. In alphabetical order:
 - [crspeller](https://github.com/crspeller)
 - [enahum](https://github.com/enahum)
 - [jwilander](https://github.com/jwilander)
+
+/mattermost-docker
+- [npcode](https://github.com/npcode)
+- [pierreozoux](https://github.com/pierreozoux)
+
+/mattermost/push-proxy
+- [coreyhulen](https://github.com/coreyhulen)
+
+/mattermost/mattermost-docker-preview
+- [crspeller](https://github.com/crspeller)
 
 If we missed your name, please let us know at feedback@mattermost.com. Recognition is a manual process and mistakes can happen. We want to include anyone who's made a pull request that got merged during the release.
 
