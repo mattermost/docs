@@ -332,7 +332,7 @@ _Available in June 16, 2016 release_
 
 **Maximum File Size** (`"MaxFileSize": "52428800"`)
 
-Used to adjust the MAX_FILE_SIZE for message attachments.
+Maximum file size for message attachments in bytes. Caution: Verify server memory can support your setting choice. Large file sizes increase the risk of server crashes and failed uploads due to network interruptions.
 
 **Store Files In** (`"DriverName": "local"`)  
 
