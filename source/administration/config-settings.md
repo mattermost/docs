@@ -603,9 +603,9 @@ The attribute in the LDAP server that will be used as a unique identifier in Mat
 
 _Available June 16, 2016_
 
-**Synchronization Interval (In Minutes)** (`"SyncIntervalMinutes": 60`)  
+**Synchronization Interval (In Minutes)** (`"SyncIntervalMinutes": 60`)
 
-LDAP Synchronization is the process by which Mattermost updates its users to reflect any updated data on the LDAP server. For example if a name for a user is updated on the LDAP server, the change will be reflected in Mattermost when the synchronization is performed. Accounts that have been removed from the LDAP server will have their active sessions cleared and no longer be able to login to Mattermost. Mattermost will perform this synchronization regularly according to the interval supplied here.
+LDAP Synchronization is the process by which Mattermost updates its users to reflect any updated data on the LDAP server. For example if a name for a user is updated on the LDAP server, the change will be reflected in Mattermost when the synchronization is performed. Accounts that have been removed from the LDAP server will have their active sessions cleared and no longer be able to login to Mattermost. Mattermost will perform this synchronization regularly according to the interval supplied here. Changing this will require a server restart before taking effect.
 
 **Query Timeout (seconds)** (`"QueryTimeout": 60`)  
 
