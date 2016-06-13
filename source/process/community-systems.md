@@ -35,6 +35,21 @@ Every month, the Mattermost community plans, builds, tests, documents, releases 
     2. Building a client application using the Mattermost Web Service API. This is useful if you want to customize the user experience to your specific needs. Example: You can re-create the Mattermost web interface using Windows controls to define front end logic, similar to the [MattermostWPF project](https://github.com/limey98/MattermostWPF). 
     
     3. Creating an open source variation of Mattermost using the Team Edition source code. Example: The Mozilla Foundation created their own [open source Mattermost variation](https://github.com/mozilla/chat.mozillafoundation.org), which includes changes specific to their needs.
+    
+## Drafting a Ticket for New Features
+
+Before a new feature can be implemented, it needs a ticket specifying how it should work. To speed up the process of implementing feature ideas, community members are welcome to propose what the ticket should say for a new feature. 
+
+When drafting a ticket for a new feature, please include:
+
+1. **Title:** A clear, concise title describing the new feature
+2. **Description:** Instructions on how the feature should be implemented. The following checklist should be addressed:
+  1. Does this feature require an Account Setting, Team Setting, or System Console Setting?
+    1. If yes, please include the proposed Location, Title, Setting Options, What the default option is, and Help Text (see [example](https://mattermost.atlassian.net/browse/PLT-1577))
+  2. Is there any ambiguity in the ticket? 
+    1. If yes, please update description to remove ambiguity. 
+    2. The ticket should not include multiple potential solutions. (The exception to this is if a second solution is suggested as an alternative if the first is too much work). 
+    3. The ticket should include specific numbers where necessary. (For example, it should not say to “increase” or “decrease” the length of something without specifying what number to increase/decrease it to). 
 
 ## GitHub Issues Workflow
 
