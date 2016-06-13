@@ -328,12 +328,6 @@ Settings to configure storage, appearance, and security of files and images.
 
 #### File Storage
 
-_Available in June 16, 2016 release_
-
-**Maximum File Size** (`"MaxFileSize": "52428800"`)
-
-Maximum file size for message attachments in bytes. Caution: Verify server memory can support your setting choice. Large file sizes increase the risk of server crashes and failed uploads due to network interruptions.
-
 **Store Files In** (`"DriverName": "local"`)  
 
 System used for file storage. “local”: Files and images are stored on the local file system. “amazons3”: Files and images are stored on Amazon S3 based on the provided access key, bucket and region fields.
