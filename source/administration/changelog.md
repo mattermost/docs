@@ -117,18 +117,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 **Changes to Team Edition:**
 
- - Under `FileSettings` in `config.json`:
-    - Added `"MaxFileSize": "52428800"` to allow system admins adjust the MAX_FILE_SIZE for message attachments
-
  - Under `LocalizationSettings` in `config.json`:
     - Added `"DefaultServerLocale": “en”` to set default language for the system messages and logs
     - Added `"DefaultClientLocale": “en”` to set default language for newly created users and for pages where the user hasn't logged in
     - Added `"AvailableLocales": “en,es,fr,ja,pt-BR”` to set which languages are available for users in Account Settings. The language specified in `DefaultClientLocale` should be included in this list.
 
 **Changes to Enterprise Edition:**
-
- - Under `FileSettings` in `config.json`:
-    - Added `"MaxFileSize": "52428800"` to allow system admins adjust the MAX_FILE_SIZE for message attachments
 
  - Under `LdapSettings` in `config.json`:
     - Added `"SyncIntervalMinutes": "60"` to allow system admins adjust how frequently Mattermost performs LDAP synchronization to update users
