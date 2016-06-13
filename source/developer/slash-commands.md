@@ -109,8 +109,6 @@ Additional Notes:
 
 3. Just like regular posts, the text in a response will be limited to 4000 characters at maximum
 
-4. Posts with advanced formatting can be created by including an [attachment array](http://docs.mattermost.com/developer/message-attachments.html) in the JSON payload
-
 ### Slack Compatibility
 
 As mentioned above, Mattermost makes it easy to take integrations written for Slack's proprietary JSON payload format and repurpose them to become Mattermost integrations. The following automatic translations are supported:
