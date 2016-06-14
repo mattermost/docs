@@ -54,7 +54,7 @@ User Interface
 - The message '[user] is typing' now uses the username instead of the display name.
 - Date markers now show absolute time.
 
-Performance:
+Performance
 
 - Performance improvements to posting and replying.
 - Online status in Direct Message list updated on first load.
@@ -87,7 +87,7 @@ Onboarding
 
 - Slash command `/invite_people [email address]` sends an email invite to your Mattermost team.
 
-Enterprise:
+Enterprise
 
 - (E10 and higher): Added AD/LDAP synchronization to automatically deactivate Mattermost accounts after AD/LDAP accounts are deactivated. Previous behavior only checked AD/LDAP credentials on sign-in. Synchronization time defaults to one hour and is configurable from **System Console** > **Synchronization Interval**.
 - (E20 and higher): Added support for [high availability database configurations](http://docs.mattermost.com/deployment/ha.html) using read replicas and a manual failover process to deploy database reconfigurations without stopping the Mattermost server.
@@ -153,7 +153,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - `@all` notifications received even after being unselected from notification options
 - Channel header disappears after renaming a channel (fixed with channel switch)
 - Updates to **System Console** > **Privacy** settings for existing users requires a session update
-- Max File Size setting in **System Console** > **Storage** doesn't properly update
 
 ### Contributors
 
