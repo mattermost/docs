@@ -1,0 +1,128 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/developer/localization.md
+msgid "Localization"
+msgstr ""
+
+#: ../../source/developer/localization.md:3
+msgid ""
+"The goal of the localization process is to consistently produce high "
+"quality translations release after release through collaboration between "
+"the international community, translators, project managers, language "
+"leads and the core team."
+msgstr ""
+
+#: ../../source/developer/localization.md
+msgid "Translation Quality"
+msgstr ""
+
+#: ../../source/developer/localization.md:7
+msgid ""
+"So users understand the accuracy and coverage of language translations, "
+"quality levels are explicitly defined for each language:"
+msgstr ""
+
+#: ../../source/developer/localization.md
+msgid "Official"
+msgstr ""
+
+#: ../../source/developer/localization.md:15
+msgid ""
+"Language option is listed as an option in Account Settings > Display > "
+"Language."
+msgstr ""
+
+#: ../../source/developer/localization.md
+msgid "Beta"
+msgstr ""
+
+#: ../../source/developer/localization.md:22
+msgid ""
+"Language option is listed as an option in Account Settings > Display > "
+"Language prefixed with (Beta)."
+msgstr ""
+
+#: ../../source/developer/localization.md
+msgid "Alpha"
+msgstr ""
+
+#: ../../source/developer/localization.md:29
+msgid ""
+"Language option is listed as an option in Account Settings > Display > "
+"Language prefixed with (Alpha)."
+msgstr ""
+
+#: ../../source/developer/localization.md
+msgid "Pre-Alpha"
+msgstr ""
+
+#: ../../source/developer/localization.md:34
+msgid ""
+"As new languages are added, contributors may set up long running forks to"
+" translate and verify a new language prior to achieving Alpha-quality "
+"status and making a pull request to merge the new language option into "
+"master."
+msgstr ""
+
+#: ../../source/developer/localization.md
+msgid "Translation Process"
+msgstr ""
+
+#: ../../source/developer/localization.md:38
+msgid ""
+"If you're interested in contributing translations to Mattermost, please "
+"join the Mattermost localization channel to discuss. Below are "
+"descriptions of the overall localization process."
+msgstr ""
+
+#: ../../source/developer/localization.md
+msgid "Initial Translation"
+msgstr ""
+
+#: ../../source/developer/localization.md:42
+msgid "To translate a language:"
+msgstr ""
+
+#: ../../source/developer/localization.md
+msgid "Using Mattermost Translation Server"
+msgstr ""
+
+#: ../../source/developer/localization.md:63
+msgid ""
+"Mattermost also hosts a Pootle server to perform collaborative "
+"internationalization online. Here's the process:"
+msgstr ""
+
+#: ../../source/developer/localization.md
+msgid "Translation Maintenance"
+msgstr ""
+
+#: ../../source/developer/localization.md:72
+msgid ""
+"Translations require updates on a monthly basis as features are added and"
+" changed. The formal process for updates has yet to be determined. If "
+"you're interested in contributing to the process, please join the "
+"Mattermost localization channel to discuss."
+msgstr ""
+
+#: ../../source/developer/localization.md:74
+msgid "Here are current maintainers for Alpha- or Beta-quality languages:"
+msgstr ""
+

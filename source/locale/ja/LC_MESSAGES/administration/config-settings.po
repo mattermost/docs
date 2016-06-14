@@ -1,0 +1,1411 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/administration/config-settings.md
+msgid "Configuration Settings"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:2
+msgid ""
+"Configuration settings can be modified by system administrators from the "
+"system console or directly in the config.json file."
+msgstr ""
+
+#: ../../source/administration/config-settings.md
+msgid "System Console Settings"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:6
+msgid ""
+"The System Console user interface lets system administrators manage a "
+"Mattermost server and multiple teams from a web-based user interface. The"
+" first user added to a new Mattermost install is assigned the system "
+"administrator role and can access the System Console from the main menu "
+"of any team."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:8
+msgid "Setting changes in the System Console are stored in config/config.json."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:10
+msgid ""
+"Note: For any setting not explicitly set in config.json the Mattermost "
+"server will use the default value as documented here, and which can be "
+"observed in the default config/config.json file included in each "
+"Mattermost release."
+msgstr ""
+
+#: ../../source/administration/config-settings.md
+msgid "Service Settings"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:14
+msgid ""
+"General settings to configure the listening address, login security, "
+"testing, webhooks and service integration of Mattermost."
+msgstr ""
+
+#: ../../source/administration/config-settings.md
+msgid "System"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:18
+msgid "Listen Address (\"ListenAddress\": \":8065\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:20
+msgid ""
+"The IP address on which to listen and the port on which to bind. Entering"
+" \":8065\" will bind to all interfaces or you can choose one like "
+"127.0.0.1:8065. Changing this will require a server restart before taking"
+" effect."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:22
+msgid "Maximum Login Attempts (\"MaximumLoginAttempts\": 10)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:24
+msgid ""
+"Failed login attempts allowed before a user is locked out and required to"
+" reset their password via email."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:26
+msgid "Segment Developer Key (\"SegmentDeveloperKey\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:28
+msgid ""
+"For users running SaaS services, signup for a key at Segment.com to track"
+" metrics."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:30
+msgid "Google Developer Key (\"GoogleDeveloperKey\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:32
+msgid ""
+"Set this key to enable embedding of YouTube video previews based on "
+"hyperlinks appearing in messages or comments. Instructions to obtain a "
+"key available at https://www.youtube.com/watch?v=Im69kzhpR3I. Leaving the"
+" field blank disables the automatic generation of YouTube video previews "
+"from links."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:34
+msgid "Enable Testing (\"EnableTesting\": false)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:36
+msgid ""
+"true: /loadtest slash command is enabled to load test accounts and test "
+"data."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:38
+msgid "Enable Developer Mode (\"EnableDeveloper\": false)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:40
+msgid "true: Users are alerted to any console errors that occur."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:42
+msgid "Enable Security Fix Alert (\"EnableSecurityFixAlert\": true)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:44
+msgid ""
+"true: System Administrators are notified by email if a relevant security "
+"fix alert has been announced in the last 12 hours. Requires email to be "
+"enabled."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:46
+msgid ""
+"Enable Insecure Outgoing Connections "
+"(\"EnableInsecureOutgoingConnections\": false)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:48
+msgid ""
+"true: Outgoing HTTPS requests can accept unverified, self-signed "
+"certificates. For example, outgoing webhooks to a server with a self-"
+"signed TLS certificate, using any domain, will be allowed; false: Only "
+"secure HTTPS requests are allowed."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:50
+msgid ""
+"Security note: Enabling this feature makes these connections susceptible "
+"to man-in-the-middle attacks."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:52
+msgid "Allow Cross-origin Requests (\"AllowCorsFrom\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:54
+msgid ""
+"Enable HTTP cross-origin requests from specific domains separated by "
+"spaces. Type * to allow CORS from any domain or leave it blank to disable"
+" it."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:56
+msgid "Session Length for Web in days (\"SessionLengthWebInDays\" : 30)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:58
+msgid ""
+"Set the number of days before web sessions expire and users will need to "
+"log in again."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:60
+msgid "Session Length for Mobile in days (\"SessionLengthMobileInDays\" : 30)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:62
+msgid "Set the number of days before native mobile sessions expire."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:64
+msgid "Session Length for SSO in days (\"SessionLengthSSOInDays\" : 30)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:66
+msgid "Set the number of days before SSO sessions expire."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:68
+msgid "Session Cache in Minutes (\"SessionCacheInMinutes\" : 10)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:70
+msgid "Set the number of minutes to cache a session in memory."
+msgstr ""
+
+#: ../../source/administration/config-settings.md
+msgid "Webhooks and Slash Commands"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:74
+msgid "Enable Incoming Webhooks (\"EnableIncomingWebhooks\": true)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:76
+msgid ""
+"Developers building integrations can create webhook URLs for channels and"
+" private groups. Please see our documentation page to learn about "
+"creating webhooks, view samples, and to let the community know about "
+"integrations you have built. true: Incoming webhooks will be allowed. To "
+"manage incoming webhooks, go to Account Settings > Integrations. The "
+"webhook URLs created in Account Settings can be used by external "
+"applications to create posts in any channels or private groups that you "
+"have access to; false: The Integrations > Incoming Webhooks section of "
+"Account Settings is hidden and all incoming webhooks are disabled."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:78
+#: ../../source/administration/config-settings.md:84
+msgid ""
+"Security note: By enabling this feature, users may be able to perform "
+"phishing attacks by attempting to impersonate other users. To combat "
+"these attacks, a BOT tag appears next to all posts from a webhook. Enable"
+" at your own risk."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:80
+msgid "Enable Outgoing Webhooks (\"EnableOutgoingWebhooks\": true)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:82
+msgid ""
+"Developers building integrations can create webhook tokens for public "
+"channels. Trigger words are used to fire new message events to external "
+"integrations. For security reasons, outgoing webhooks are only available "
+"in public channels. Please see our documentation page to learn about "
+"creating webhooks and view samples. true: Outgoing webhooks will be "
+"allowed. To manage outgoing webhooks, go to Account Settings > "
+"Integrations; false: The Integrations > Outgoing Webhooks section of "
+"Account Settings is hidden and all outgoing webhooks are disabled."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:86
+msgid "Enable Slash Commands (\"EnableCommands\": false)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:88
+msgid ""
+"Slash commands send events to external integrations that send a response "
+"back to Mattermost. true: Allow users to create custom slash commands "
+"from Account Settings > Integrations > Commands; false: Slash Commands "
+"are hidden in the Integrations user interface."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:90
+msgid "Enable Integrations for Admin Only (\"EnableOnlyAdminIntegrations\": true)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:92
+msgid ""
+"true: User created integrations can only be created by System or Team "
+"Admins. Members who are not admins trying to create integrations will hit"
+" an error message in the Account Settings dialog; false: Any team members"
+" can create integrations from Account Settings > Inegrations."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:94
+msgid ""
+"Enable Overriding Usernames from Webhooks and Slash Commands "
+"(\"EnablePostUsernameOverride\": false)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:96
+msgid ""
+"true: Webhooks will be allowed to change the username they are posting "
+"as; false: Webhooks can only post as the username they were set up with. "
+"See http://mattermost.org/webhooks for more details."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:98
+msgid ""
+"Enable Overriding Icon from Webhooks and Slash Commands "
+"(\"EnablePostIconOverride\": false)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:100
+msgid ""
+"true: Webhooks will be allowed to change the icon they post with; false: "
+"Webhooks can only post with the profile picture of the account they were "
+"set up with. See http://mattermost.org/webhooks for more details."
+msgstr ""
+
+#: ../../source/administration/config-settings.md
+msgid "Team Settings"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:104
+msgid "Settings to configure the appearance, size, and access options for teams."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:106
+msgid "Site Name (\"SiteName\": \"Mattermost\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:108
+msgid "Name of service shown in login screens and UI."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:110
+msgid "Max Users Per Team (\"MaxUsersPerTeam\": 50)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:112
+msgid ""
+"Maximum number of users per team, including both active and inactive "
+"users."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:114
+msgid "Enable Team Creation (\"EnableTeamCreation\": true)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:116
+msgid ""
+"true: Ability to create a new team is enabled for all users; false: the "
+"ability to create teams is disabled. The Create A New Team button is "
+"hidden in the main menu UI."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:118
+msgid "Enable User Creation (\"EnableUserCreation\": true)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:120
+msgid ""
+"true: Ability to create new accounts is enabled via inviting new members "
+"or sharing the team invite link; false: the ability to create accounts is"
+" disabled. The create account button displays an error when trying to "
+"signup via an email invite or team invite link."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:122
+msgid "Restrict Creation To Domains (\"RestrictCreationToDomains\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:124
+msgid ""
+"Teams and user accounts can only be created by a verified email from this"
+" list of comma-separated domains (e.g. \"corp.mattermost.com, "
+"mattermost.org\")."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:126
+msgid "Restrict Team Names (\"RestrictTeamNames\": true)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:128
+msgid ""
+"true: Newly created team names cannot contain the following restricted "
+"words: www, web, admin, support, notify, test, demo, mail, team, channel,"
+" internal, localhost, dockerhost, stag, post, cluster, api, oauth; false:"
+" Newly created team names are not restricted."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:130
+msgid "Enable Team Directory (\"EnableTeamListing\": false)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:132
+msgid ""
+"true: Teams that are configured to appear in the team directory will "
+"appear on the system main page. Teams can configure this setting from "
+"Team Settings > Include this team in the Team Directory; false: Team "
+"directory on the system main page is disabled."
+msgstr ""
+
+#: ../../source/administration/config-settings.md
+msgid "SQL Settings"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:137
+msgid ""
+"Settings to configure the data sources, connections, and encryption of "
+"SQL databases. Changing properties in this section will require a server "
+"restart before taking effect."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:139
+msgid "Driver Name (\"DriverName\": \"mysql\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:141
+msgid ""
+"mysql: enables driver to MySQL database; postgres: enables driver to "
+"PostgreSQL database. This setting can only be changed from config.json "
+"file, it cannot be changed from the System Console user interface."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:143
+msgid ""
+"Data Source (\"DataSource\": "
+"\"mmuser:mostest@tcp(dockerhost:3306)/mattermost_test?charset=utf8mb4,utf8\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:145
+msgid ""
+"This is the connection string to the master database. When "
+"DriverName=\"postgres\" then use a connection string in the form "
+"postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10."
+" This setting can only be changed from config.json file, it cannot be "
+"changed from the System Console user interface."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:147
+msgid "Maximum Idle Connections (\"MaxIdleConns\": 10)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:149
+msgid "Maximum number of idle connections held open to the database."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:151
+msgid "Maximum Open Connections (\"MaxOpenConns\": 10)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:153
+msgid "Maximum number of open connections held open to the database."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:155
+msgid ""
+"At Rest Encrypt Key (\"AtRestEncryptKey\": "
+"\"7rAh6iwQCkV4cA1Gsg3fgGOXJAQ43QVg\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:157
+msgid ""
+"32-character (to be randomly generated via Admin Console) salt available "
+"to encrypt and decrypt sensitive fields in database."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:159
+msgid "Trace (\"Trace\": false)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:161
+msgid "true: Executing SQL statements are written to the log for development."
+msgstr ""
+
+#: ../../source/administration/config-settings.md
+msgid "Email Settings"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:165
+msgid ""
+"Settings to configure email signup, notifications, security, and SMTP "
+"options."
+msgstr ""
+
+#: ../../source/administration/config-settings.md
+msgid "Sign Up"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:169
+msgid "Allow Sign Up With Email (\"EnableSignUpWithEmail\": true)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:171
+msgid ""
+"true: Allow team creation and account signup using email and password; "
+"false: Email signup is disabled and users are not able to invite new "
+"members. This limits signup to single-sign-on services like OAuth or "
+"LDAP."
+msgstr ""
+
+#: ../../source/administration/config-settings.md
+msgid "Sign In"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:175
+msgid "Allow Sign In With Email (\"EnableSignInWithEmail\": true)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:177
+msgid ""
+"true: Mattermost allows users to sign in using their email and password; "
+"false: sign in with email is disabled and does not appear on the login "
+"screen."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:179
+msgid "Allow Sign In With Username (EnableSignInWithUsername\": false)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:181
+msgid ""
+"true: Mattermost allows users to sign in using their username and "
+"password. This setting is typically only used when email verification is "
+"disabled; false: sign in with username is disabled and does not appear on"
+" the login screen."
+msgstr ""
+
+#: ../../source/administration/config-settings.md
+msgid "Notifications"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:185
+msgid "Send Email Notifications (\"SendEmailNotifications\": false)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:187
+msgid ""
+"true: Enables sending of email notifications. false: Disables email "
+"notifications for developers who may want to skip email setup for faster "
+"development. Setting this to true removes the Preview Mode: Email "
+"notifications have not been configured banner (requires logging out and "
+"logging back in after setting is changed)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:189
+msgid "Require Email Verification (\"RequireEmailVerification\": false)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:191
+msgid ""
+"true: Require email verification after account creation prior to allowing"
+" login; false: Users do not need to verify their email address prior to "
+"login. Developers may set this field to false so skip sending "
+"verification emails for faster development."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:193
+msgid "Notification Display Name (\"FeedbackName\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:195
+msgid ""
+"Name displayed on email account used when sending notification emails "
+"from Mattermost system."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:197
+msgid "Notification Email Address (\"FeedbackEmail\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:199
+msgid ""
+"Address displayed on email account used when sending notification emails "
+"from Mattermost system."
+msgstr ""
+
+#: ../../source/administration/config-settings.md
+msgid "SMTP"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:203
+msgid "SMTP Username (\"SMTPUsername\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:205
+#: ../../source/administration/config-settings.md:209
+msgid ""
+"Obtain this credential from the administrator setting up your email "
+"server."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:207
+msgid "SMTP Password (\"SMTPPassword\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:211
+msgid "SMTP Server (\"SMTPServer\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:213
+msgid "Location of SMTP email server."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:215
+msgid "SMTP Port (``\"SMTPPort\": \"\"`)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:217
+msgid "Port of SMTP email server."
+msgstr ""
+
+#: ../../source/administration/config-settings.md
+msgid "Security"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:221
+msgid "Connection Security (\"ConnectionSecurity\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:223
+msgid ""
+"\"none\": Send email over an unsecure connection; \"TLS\": Communication "
+"between Mattermost and your email server is encrypted; “STARTTLS”: "
+"Attempts to upgrade an existing insecure connection to a secure "
+"connection using TLS."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:225
+msgid "Invite Salt (\"InviteSalt\": \"bjlSR4QqkXFBr7TP4oDzlfZmcNuH9YoS\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:227
+msgid ""
+"32-character (to be randomly generated via Admin Console) salt added to "
+"signing of email invites."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:229
+msgid ""
+"Password Reset Salt  (\"PasswordResetSalt\": "
+"\"vZ4DcKyVVRlKHHJpexcuXzojkE5PZ5eL\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:231
+msgid ""
+"32-character (to be randomly generated via Admin Console) salt added to "
+"signing of password reset emails."
+msgstr ""
+
+#: ../../source/administration/config-settings.md
+msgid "Push Notification Settings"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:235
+msgid "Send Push Notifications (\"SendPushNotifications\": false)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:237
+msgid ""
+"true: Your Mattermost server sends mobile push notifications to the "
+"server specified in PushNotificationServer; false: Mobile push "
+"notifications are disabled."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:239
+msgid "Push Notification Server (\"PushNotificationServer\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:241
+msgid ""
+"Location of Mattermost Push Notification Service (MPNS), which re-sends "
+"push notifications from Mattermost to services like Apple Push "
+"Notification Service (APNS) and Google Cloud Messaging (GCM)."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:243
+msgid ""
+"To confirm push notifications are working, connect to the Mattermost iOS "
+"App on iTunes or the Mattermost Android App on Google Play:"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:248
+msgid ""
+"Please review full documentation on push Notifications and mobile "
+"applications including guidance on compiling your own mobile apps and "
+"MPNS before deploying to production."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:250
+msgid ""
+"Note: The http://push-test.mattermost.com provided for testing push "
+"notifications prior to compiling your own service please make sure to "
+"read about its limitations."
+msgstr ""
+
+#: ../../source/administration/config-settings.md
+msgid "Troubleshooting Push Notifications"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:254
+msgid "To confirm push notifications are working:"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:264
+msgid "If you did not receive an alert:"
+msgstr ""
+
+#: ../../source/administration/config-settings.md
+msgid "File Settings"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:273
+msgid ""
+"Settings to configure storage, appearance, and security of files and "
+"images."
+msgstr ""
+
+#: ../../source/administration/config-settings.md
+msgid "File Storage"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:277
+msgid "Store Files In (\"DriverName\": \"local\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:279
+msgid ""
+"System used for file storage. “local”: Files and images are stored on the"
+" local file system. “amazons3”: Files and images are stored on Amazon S3 "
+"based on the provided access key, bucket and region fields."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:281
+msgid "Local Directory Location (\"Directory\": \"./data/\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:283
+msgid ""
+"Directory to which files are written. If blank, directory will be set to "
+"./data/."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:285
+msgid "Amazon S3 Access Key Id (\"AmazonS3AccessKeyId\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:287
+#: ../../source/administration/config-settings.md:291
+msgid "Obtain this credential from your Amazon EC2 administrator."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:289
+msgid "Amazon S3 Secret Access Key (\"AmazonS3SecretAccessKey\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:293
+msgid "Amazon S3 Bucket (\"AmazonS3Bucket\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:295
+msgid "Name you selected for your S3 bucket in AWS."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:297
+msgid "Amazon S3 Region (\"AmazonS3Region\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:299
+msgid ""
+"AWS region you selected for creating your S3 bucket. Refer to AWS "
+"Reference Documentation and choose this variable from the Region column."
+msgstr ""
+
+#: ../../source/administration/config-settings.md
+msgid "Image Settings"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:303
+msgid "Thumbnail Width (\"ThumbnailWidth\": 120)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:305
+msgid ""
+"Width of thumbnails generated from uploaded images. Updating this value "
+"changes how thumbnail images render in future, but does not change images"
+" created in the past."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:307
+msgid "Thumbnail Height (\"ThumbnailHeight\": 100)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:309
+msgid ""
+"Height of thumbnails generated from uploaded images. Updating this value "
+"changes how thumbnail images render in future, but does not change images"
+" created in the past."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:311
+msgid "Preview Width (\"PreviewWidth\": 1024)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:313
+msgid ""
+"Maximum width of preview image. Updating this value changes how preview "
+"images render in future, but does not change images created in the past."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:315
+msgid "Preview Height (\"PreviewHeight\": 0)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:317
+msgid ""
+"Maximum height of preview image (\"0\": Sets to auto-size). Updating this"
+" value changes how preview images render in future, but does not change "
+"images created in the past."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:319
+msgid "Profile Width (\"ProfileWidth\": 128)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:321
+msgid ""
+"The width to which profile pictures are resized after being uploaded via "
+"Account Settings."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:323
+msgid "Profile Height (\"ProfileHeight\": 128)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:325
+msgid ""
+"The height to which profile pictures are resized after being uploaded via"
+" Account Settings."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:327
+msgid "Share Public File Link (\"EnablePublicLink\": true)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:329
+msgid ""
+"true: Allow users to share public links to files and images when "
+"previewing; false: The Get Public Link option is hidden from the image "
+"preview user interface."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:331
+msgid ""
+"Public Link Salt (\"PublicLinkSalt\": "
+"\"A705AklYF8MFDOfcwh3I488G8vtLlVip\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:333
+msgid ""
+"32-character (to be randomly generated via Admin Console) salt added to "
+"signing of public image links."
+msgstr ""
+
+#: ../../source/administration/config-settings.md
+msgid "Log Settings"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:338
+msgid ""
+"Settings to configure the console and log file output, detail level, "
+"format and location of error messages."
+msgstr ""
+
+#: ../../source/administration/config-settings.md
+msgid "Console Settings"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:342
+msgid "Log To The Console (\"EnableConsole\": true)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:344
+msgid ""
+"true: Output log messages to the console based on ConsoleLevel option. "
+"The server writes messages to the standard output stream (stdout)."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:346
+msgid "Console Log Level (\"ConsoleLevel\": \"DEBUG\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:348
+msgid ""
+"Level of detail at which log events are written to the console when "
+"EnableConsole=true. ”ERROR”: Outputs only error messages; “INFO”: Outputs"
+" error messages and information around startup and initialization; "
+"“DEBUG”: Prints high detail for developers debugging issues."
+msgstr ""
+
+#: ../../source/administration/config-settings.md
+msgid "Log File Settings"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:352
+msgid "Log To File (\"EnableFile\": true)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:354
+msgid "true:  Log files are written to files specified in FileLocation."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:356
+msgid "File Log Level (\"FileLevel\": \"INFO\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:358
+msgid ""
+"Level of detail at which log events are written to log files when "
+"EnableFile=true. “ERROR”: Outputs only error messages; “INFO”: Outputs "
+"error messages and information around startup and initialization; "
+"“DEBUG”: Prints high detail for developers debugging issues."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:360
+msgid "File Location (\"FileLocation\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:362
+msgid ""
+"Directory to which log files are written. If blank, log files write to "
+"./logs/mattermost/mattermost.log. Log rotation is enabled and every "
+"10,000 lines of log information is written to new files stored in the "
+"same directory, for example mattermost.2015-09-23.001, "
+"mattermost.2015-09-23.002, and so forth."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:364
+msgid "File Format (\"FileFormat\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:366
+msgid ""
+"Format of log message output. If blank, FileFormat = \"[%D %T] [%L] (%S) "
+"%M\", where:"
+msgstr ""
+
+#: ../../source/administration/config-settings.md
+msgid "Rate Limit Settings"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:378
+msgid ""
+"Settings to enable API rate limiting and configure requests per second, "
+"user sessions and variables for rate limiting. Changing properties in "
+"this section will require a server restart before taking effect."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:380
+msgid "Enable Rate Limiter (\"EnableRateLimiter\": true)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:382
+msgid "true: APIs are throttled at the rate specified by PerSec."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:384
+msgid "Number Of Queries Per Second (\"PerSec\": 10)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:386
+msgid ""
+"Throttle API at this number of requests per second if "
+"EnableRateLimiter=true."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:388
+msgid "Memory Store Size (\"MemoryStoreSize\": 10000)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:390
+msgid ""
+"Maximum number of user sessions connected to the system as determined by "
+"VaryByRemoteAddr and VaryByHeader variables."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:392
+msgid "Vary By Remote Address (\"VaryByRemoteAddr\": true)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:394
+msgid "true: Rate limit API access by IP address."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:396
+msgid "Vary By HTTP Header (\"VaryByHeader\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:398
+msgid ""
+"Vary rate limiting by HTTP header field specified (e.g. when configuring "
+"Ngnix set to \"X-Real-IP\", when configuring AmazonELB set to \"X"
+"-Forwarded-For\")."
+msgstr ""
+
+#: ../../source/administration/config-settings.md
+msgid "Privacy Settings"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:402
+msgid "Settings to configure the name and email privacy of users on your system."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:404
+msgid "Show Email Address (\"ShowEmailAddress\": true)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:406
+msgid ""
+"true: Show email address of all users; false: Hide email address of users"
+" from other users in the user interface, including team owners and team "
+"administrators. This is designed for managing teams where users choose to"
+" keep their contact information private."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:408
+msgid "Show Full Name (\"ShowFullName\": true)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:410
+msgid ""
+"true: Show full name of all users; false: hide full name of users from "
+"other users including team owner and team administrators."
+msgstr ""
+
+#: ../../source/administration/config-settings.md
+msgid "GitLab Settings"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:414
+msgid "Settings to configure account and team creation using GitLab OAuth."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:416
+msgid "Enable Sign Up With GitLab (\"Enable\": false)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:418
+msgid ""
+"true: Allow team creation and account signup using GitLab OAuth. To "
+"configure, input the Secret and Id credentials."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:420
+msgid "Id (\"Id\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:422
+#: ../../source/administration/config-settings.md:426
+msgid ""
+"Obtain this value by logging into your GitLab account. Go to Profile "
+"Settings > Applications > New Application, enter a Name, then enter "
+"Redirect URLs https://<your-mattermost-url>/login/gitlab/complete "
+"(example: https://example.com:8065/login/gitlab/complete) and https"
+"://<your-mattermost-url>/signup/gitlab/complete."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:424
+msgid "Secret (\"Secret\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:428
+msgid "Auth Endpoint (\"AuthEndpoint\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:430
+msgid ""
+"Enter https://<your-gitlab-url>/oauth/authorize (example: "
+"https://example.com:3000/oauth/authorize). Use HTTP or HTTPS depending on"
+" how your server is configured."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:432
+msgid "Token Endpoint (\"TokenEndpoint\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:434
+msgid ""
+"Enter https://<your-gitlab-url>/oauth/authorize (example: "
+"https://example.com:3000/oauth/token). Use HTTP or HTTPS depending on how"
+" your server is configured."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:436
+msgid "User API Endpoint (\"UserApiEndpoint\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:438
+msgid ""
+"Enter https://<your-gitlab-url>/oauth/authorize (example: "
+"https://example.com:3000/api/v3/user). Use HTTP or HTTPS depending on how"
+" your server is configured."
+msgstr ""
+
+#: ../../source/administration/config-settings.md
+msgid "Legals and Support Settings"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:442
+msgid ""
+"Terms of Service link (\"TermsOfServiceLink\": "
+"\"/static/help/terms.html\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:444
+msgid ""
+"Configurable link to Terms of Service your organization may provide to "
+"end users. By default, links to an editable file hosted in the "
+"static/help/terms.html found in the directory where the Mattermost server"
+" installed. Default file may be updated to state the terms under which "
+"your organization is providing its server to end users, in addition to "
+"the \"Mattermost Conditions of Use\" notice to end users that must also "
+"be shown to users from the \"Terms of Service\" link."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:446
+msgid "Privacy Policy link (\"PrivacyPolicyLink\": \"/static/help/privacy.html\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:448
+msgid ""
+"Configurable link to Privacy Policy your organization may provide to end "
+"users. By default, links to an editable file hosted in the "
+"static/help/privacy.html found in the directory where the Mattermost "
+"server installed."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:450
+msgid "About link (\"AboutLink\": \"/static/help/about.html\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:452
+msgid ""
+"Configurable link to an About page describing your organization may "
+"provide to end users. By default, links to an editable file hosted in the"
+" static/help/about.html found in the directory where the Mattermost "
+"server installed."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:454
+msgid "Help link (\"HelpLink\": \"/static/help/help.html\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:456
+msgid ""
+"Configurable link to an About page describing your organization may "
+"provide to end users. By default, points to Mattermost default help "
+"documentation. Can be links to an editable file hosted in the "
+"static/help/help.html found in the directory where the Mattermost server "
+"installed."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:458
+msgid ""
+"Report a Problem link (\"ReportAProblemLink\": "
+"\"/static/help/report_problem.html\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:460
+msgid "Set the link for the support website."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:462
+msgid "Support email (\"SupportEmail\":\"feedback@mattermost.com\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:464
+msgid "Set an email for feedback or support requests."
+msgstr ""
+
+#: ../../source/administration/config-settings.md
+msgid "LDAP Settings (Enterprise)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:467
+msgid ""
+"Settings used to enable and configure LDAP authentication with "
+"Mattermost. Available in the Enterprise version of Mattermost."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:469
+msgid "Enable Login With LDAP (\"Enable\": false)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:471
+msgid "true: Mattermost allows login using LDAP."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:473
+msgid "LDAP Server (\"LdapServer\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:475
+msgid "The domain or IP address of the LDAP server."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:477
+msgid "LDAP Port (\"LdapPort\": 389)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:479
+msgid ""
+"The port Mattermost will use to connect to the LDAP server. Default is "
+"389."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:481
+msgid "Base DN (\"BaseDN\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:483
+msgid ""
+"The Base DN is the Distinguished Name of the location where Mattermost "
+"should start its search for users in the LDAP tree."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:485
+msgid "Bind Username (\"BindUsername\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:487
+msgid ""
+"The username used to perform the LDAP search. This should typically be an"
+" account created specifically for use with Mattermost. It should be a "
+"read only account with access limited to the portion of the LDAP tree "
+"specified in the BaseDN field."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:489
+msgid "Bind Password (\"BindPassword\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:491
+msgid "Password of the user given in “Bind Username”."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:493
+msgid "First Name Attribute (\"FirstNameAttribute\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:495
+msgid ""
+"The attribute in the LDAP server that will be used to populate the first "
+"name of users in Mattermost."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:497
+msgid "Last Name Attribute (\"LastNameAttribute\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:499
+msgid ""
+"The attribute in the LDAP server that will be used to populate the last "
+"name of users in Mattermost."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:501
+msgid "Email Attribute (\"EmailAttribute\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:503
+msgid ""
+"The attribute in the LDAP server that will be used to populate the email "
+"addresses of users in Mattermost."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:505
+msgid "Username Attribute (\"UsernameAttribute\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:507
+msgid ""
+"The attribute in the LDAP server that will be used to populate the "
+"username field in Mattermost. This may be the same as the ID Attribute."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:509
+msgid "ID Attribute (\"IdAttribute\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:511
+msgid ""
+"The attribute in the LDAP server that will be used as a unique identifier"
+" in Mattermost."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:513
+msgid ""
+"This is the attribute that will be used to create Mattermost accounts. It"
+" should be an LDAP attribute with a value that does not change, such as "
+"username or uid. If a user’s Id Attribute changes, it will create a new "
+"Mattermost account unassociated with their old one."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:515
+msgid ""
+"This is also the value used to log in to Mattermost in the “LDAP "
+"Username” field on the sign in page. Normally this attribute is the same "
+"as the “Username Attribute” field above. If your team typically uses "
+"domain\\username to sign in to other services with LDAP, you may choose "
+"to put domain\\username in this field to maintain consistency between "
+"sites."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:517
+msgid "Query Timeout (seconds) (\"QueryTimeout\": 60)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:519
+msgid ""
+"The timeout value for queries to the LDAP server. Increase this value if "
+"you are getting timeout errors caused by a slow LDAP server."
+msgstr ""
+
+#: ../../source/administration/config-settings.md
+msgid "Config.json settings not in System Console"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:523
+msgid ""
+"System Console allows an IT Admin to update settings defined in "
+"config.json. However there are a number of settings in config.json "
+"unavailable in the System Console and require update from the file "
+"itself. We describe them here:"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:527
+msgid "Enable OAuth Service Provider (\"EnableOAuthServiceProvider\": false)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:529
+msgid ""
+"true: Allow Mattermost to function as an OAuth provider, allowing 3rd "
+"party apps access to your user store for authentication."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:531
+msgid "WebSocket Secure Port (\"WebsocketSecurePort\" : 443)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:533
+msgid ""
+"When present in config.json, this setting defines the port on which the "
+"secured WebSocket will listen using the wss protocol. Otherwise it "
+"defaults to 443. When the client attempts to make a WebSocket connection "
+"it first checks to see if the page is loaded with HTTPS. If so, it will "
+"use the secure WebSocket connection. If not, it will use the unsecure "
+"WebSocket connection. IT IS HIGHLY RECOMMENDED PRODUCTION DEPLOYMENTS "
+"ONLY OPERATE UNDER HTTPS AND WSS."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:535
+msgid "WebSocket Port (WebsocketPort\": 80)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:537
+msgid ""
+"When present in config.json, this setting defines the port on which the "
+"unsecured WebSocket will listen using the ws protocol. Otherwise it "
+"defaults to 80. When the client attempts to make a WebSocket connection "
+"it first checks to see if the page is loaded with HTTPS. If so, it will "
+"use the secure WebSocket connection. If not, it will use the unsecure "
+"WebSocket connection. IT IS HIGHLY RECOMMENDED PRODUCTION DEPLOYMENTS "
+"ONLY OPERATE UNDER HTTPS AND WSS."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:541
+msgid "Initial Font (\"InitialFont\": \"luximbi.ttf\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:543
+msgid "Font used in auto-generated profile pics with colored backgrounds."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:545
+msgid "Amazon S3 Endpoint (\"AmazonS3Endpoint\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:547
+msgid "Set an endpoint URL for an Amazon S3 instance."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:549
+msgid "Amazon S3 Bucket Endpoint (\"AmazonS3BucketEndpoint\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:551
+msgid "Set an endpoint URL for Amazon S3 buckets."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:553
+msgid "Amazon S3 Location Constraint (\"AmazonS3LocationConstraint\": false)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:555
+msgid "Set whether the S3 region is location constrained."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:557
+msgid "Amazon S3 Lowercase Bucket (\"AmazonS3LowercaseBucket\": false)"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:559
+msgid "Set whether bucket names are fully lowercase or not."
+msgstr ""
+
+#: ../../source/administration/config-settings.md:563
+msgid "Scope (\"Scope\": \"\")"
+msgstr ""
+
+#: ../../source/administration/config-settings.md:565
+msgid ""
+"Standard setting for OAuth to determine the scope of information shared "
+"with OAuth client. Not currently supported by GitLab OAuth."
+msgstr ""
+

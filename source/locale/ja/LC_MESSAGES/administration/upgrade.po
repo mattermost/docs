@@ -1,0 +1,73 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/administration/upgrade.md
+msgid "Upgrade Guide"
+msgstr ""
+
+#: ../../source/administration/upgrade.md:3
+msgid ""
+"This guide explains how to upgrade your Mattermost deployment across "
+"versions and editions."
+msgstr ""
+
+#: ../../source/administration/upgrade.md
+msgid "Upgrading Team Edition"
+msgstr ""
+
+#: ../../source/administration/upgrade.md
+msgid "Upgrade Team Edition to Enterprise Edition"
+msgstr ""
+
+#: ../../source/administration/upgrade.md:41
+msgid ""
+"You will need an Enterprise Edition license key to activate the features."
+" Follow the instructions that came with your license key to complete your"
+" upgrade."
+msgstr ""
+
+#: ../../source/administration/upgrade.md
+msgid "Version Archive"
+msgstr ""
+
+#: ../../source/administration/upgrade.md:45
+msgid "Locations of previously compiled builds."
+msgstr ""
+
+#: ../../source/administration/upgrade.md
+msgid "Mattermost Team Edition"
+msgstr ""
+
+#: ../../source/administration/upgrade.md:49
+msgid ""
+"Stable builds of open source team communication platform compiled by "
+"Mattermost, Inc, available under an MIT license."
+msgstr ""
+
+#: ../../source/administration/upgrade.md
+msgid "Mattermost Enterprise Edition"
+msgstr ""
+
+#: ../../source/administration/upgrade.md:78
+msgid ""
+"Stable builds of commercial software for enterprise communication "
+"compiled by Mattermost, Inc. Requires paid subscription and valid license"
+" key for use."
+msgstr ""
+

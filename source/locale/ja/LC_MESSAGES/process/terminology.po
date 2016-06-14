@@ -1,0 +1,132 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/process/terminology.md
+msgid "Terminology"
+msgstr ""
+
+#: ../../source/process/terminology.md:3
+msgid "Mattermost terminology used across the project."
+msgstr ""
+
+#: ../../source/process/terminology.md
+msgid "0/5, 1/5, 2/5, 3/5, 4/5, 5/5"
+msgstr ""
+
+#: ../../source/process/terminology.md:7
+msgid ""
+"We use \"x/5\" to concisely communicate conviction. 0/5 means you don't "
+"have a strong opinion, you are just sharing an idea or asking a question."
+" 5/5 means you are highly confident and would stake your reputation on "
+"the opinion you're expressing."
+msgstr ""
+
+#: ../../source/process/terminology.md
+msgid "APR"
+msgstr ""
+
+#: ../../source/process/terminology.md:11
+msgid ""
+"Acronym for Accepting Pull Request tickets, which are vetted changes to "
+"the source code open for community contributions."
+msgstr ""
+
+#: ../../source/process/terminology.md
+msgid "Bug"
+msgstr ""
+
+#: ../../source/process/terminology.md:15
+msgid ""
+"An obvious error in Mattermost software. Changes required to accomodate "
+"unsupported 3rd party software (such as browsers or operating systems) "
+"are not considered bugs, they are considered improvements."
+msgstr ""
+
+#: ../../source/process/terminology.md
+msgid "Dev Mana"
+msgstr ""
+
+#: ../../source/process/terminology.md:19
+msgid ""
+"A specific type of mana for developers similar to \"points\" or \"jelly "
+"beans\" in an Agile/Scrum methodology. On average, full time Mattermost "
+"developers each complete tickets adding up to approximately 28 mana per "
+"week. A \"small\" item is 2 mana, a \"medium\" is 4, a \"large\" is 8 and"
+" any project bigger needs to be broken down into smaller tickets."
+msgstr ""
+
+#: ../../source/process/terminology.md
+msgid "FX Guidelines"
+msgstr ""
+
+#: ../../source/process/terminology.md:23
+msgid ""
+"Short for \"Fan eXperience Guidelines\" defining usability requirements "
+"to turn users into fans."
+msgstr ""
+
+#: ../../source/process/terminology.md
+msgid "Improvement"
+msgstr ""
+
+#: ../../source/process/terminology.md:27
+msgid "A beneficial change to code that is not fixing a bug."
+msgstr ""
+
+#: ../../source/process/terminology.md
+msgid "LHS"
+msgstr ""
+
+#: ../../source/process/terminology.md:31
+msgid ""
+"The \"Left-Hand Sidebar\" in the Mattermost team site, used for "
+"navigation."
+msgstr ""
+
+#: ../../source/process/terminology.md
+msgid "Mana"
+msgstr ""
+
+#: ../../source/process/terminology.md:35
+msgid "An estimate of total energy, attention and effort required for a task."
+msgstr ""
+
+#: ../../source/process/terminology.md:37
+msgid ""
+"A one-line change to code can cost more mana than a 100-line change due "
+"to risk and the need for documentation, testing, support and all the "
+"other activities needed."
+msgstr ""
+
+#: ../../source/process/terminology.md:39
+msgid ""
+"Every feature added has an initial and on-going mana cost, which is taken"
+" into account in feature decsions."
+msgstr ""
+
+#: ../../source/process/terminology.md
+msgid "RHS"
+msgstr ""
+
+#: ../../source/process/terminology.md:43
+msgid ""
+"The \"Right-Hand Sidebar\" in the Mattermost team site, used for "
+"navigation."
+msgstr ""
+

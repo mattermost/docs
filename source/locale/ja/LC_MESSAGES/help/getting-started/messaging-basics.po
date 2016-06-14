@@ -1,0 +1,63 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/help/getting-started/messaging-basics.md
+msgid "Messaging Basics"
+msgstr ""
+
+#: ../../source/help/getting-started/messaging-basics.md:4
+msgid ""
+"Write messages using the text input box at the bottom of Mattermost. "
+"Press ENTER to send a message. Use Shift+ENTER to create a new line "
+"without sending a message."
+msgstr ""
+
+#: ../../source/help/getting-started/messaging-basics.md:6
+msgid "Reply to messages by clicking the reply arrow next to the message text."
+msgstr ""
+
+#: ../../source/help/getting-started/messaging-basics.md:8
+msgid "reply arrow"
+msgstr ""
+
+#: ../../source/help/getting-started/messaging-basics.md:10
+msgid "Notify teammates when they are needed by typing @username."
+msgstr ""
+
+#: ../../source/help/getting-started/messaging-basics.md:12
+msgid ""
+"Format your messages using Markdown that supports text styling, headings,"
+" links, emoticons, code blocks, block quotes, tables, lists and in-line "
+"images."
+msgstr ""
+
+#: ../../source/help/getting-started/messaging-basics.md:14
+msgid "markdown"
+msgstr ""
+
+#: ../../source/help/getting-started/messaging-basics.md:16
+msgid ""
+"Attach files by dragging and dropping into Mattermost or clicking the "
+"attachment icon in the text input box."
+msgstr ""
+
+#: ../../source/help/getting-started/messaging-basics.md:18
+msgid "Learn more about:"
+msgstr ""
+

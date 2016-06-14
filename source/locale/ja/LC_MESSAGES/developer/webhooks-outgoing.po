@@ -1,0 +1,125 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/developer/webhooks-outgoing.md
+msgid "Outgoing Webhooks"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.md:3
+msgid ""
+"Outgoing webhooks allow external applications, written in the programming"
+" language of your choice--to receive HTTP POST requests whenever a user "
+"posts to a certain channel, with a trigger word at the beginning of the "
+"message, or a combination of both. If the external application responds "
+"appropriately to the HTTP request, as response post can be made in the "
+"channel where the original post occurred."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.md:5
+msgid "A couple key points:"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.md:10
+msgid "Example:"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.md:12
+msgid ""
+"Suppose you had an external application that recieved a post event "
+"whenever a message starting with #build. If a user posted the message "
+"#build Let's see the status, then the external application would receive "
+"an HTTP POST with data about that message. The application could then "
+"respond with a table of total tests run and total tests failed by "
+"component category, with links to failed tests by category. An example "
+"response might be:"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.md:26
+msgid "Which would render in a Mattermost message as follows:"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.md:29
+msgid "Build Break - Project X - December 12, 2015 - 15:32 GMT +0"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.md:31
+msgid "table"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.md
+msgid "Enabling Outgoing Webhooks"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.md:36
+msgid ""
+"Outgoing webhooks are off by default, and can be enabled by the system "
+"administrator. If you are the system administrator you can enable them by"
+" doing the following:"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.md
+msgid "Set Up an Outgoing Webhook"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.md:45
+msgid ""
+"Once outgoing webhooks are enabled, you will be able to set one up "
+"through the Mattermost UI. You will need to know the following"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.md:51
+msgid "Once you have those, you can follow these steps to set up your webhook:"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.md
+msgid "Creating Integrations using Outgoing Webhooks"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.md:63
+msgid ""
+"If you'd like to build your own integration that uses outgoing webhooks, "
+"you can follow these general guidelines:"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.md:94
+msgid "Additional Notes:"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.md
+msgid "Slack Compatibility"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.md:106
+msgid ""
+"As mentioned above, Mattermost makes it easy to take integrations written"
+" for Slack's proprietary JSON payload format and repurpose them to become"
+" Mattermost integrations. The following automatic translations are "
+"supported:"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.md:112
+msgid ""
+"To see samples and community contributions, please visit "
+"http://mattermost.org/webhooks."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.md
+msgid "Known Issues in v2.0"
+msgstr ""
+

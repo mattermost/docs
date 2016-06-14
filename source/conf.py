@@ -301,3 +301,9 @@ texinfo_documents = [
 
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #texinfo_no_detailmenu = False
+
+# -- Options for i18n -----------------------------------------------------
+# ref. http://www.sphinx-doc.org/en/stable/intl.html
+
+locale_dirs = ['locale/']   # path is example but recommended.
+gettext_compact = False     # optional.

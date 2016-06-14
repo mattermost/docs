@@ -1,0 +1,239 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/help/messaging/formatting-text.md
+msgid "Formatting Text"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:4
+msgid ""
+"Markdown makes it easy to format messages. Type a message as you normally"
+" would, and use these rules to render it with special formatting."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md
+msgid "Text Style"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:8
+msgid ""
+"You can use either _ or * around a word to make it italic. Use two to "
+"make it bold."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md
+msgid "Code Block"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:17
+msgid ""
+"Create a code block by indenting each line by four spaces, or by placing "
+"``` on the line above and below your code."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:19
+#: ../../source/help/messaging/formatting-text.md:37
+msgid "Example:"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:25
+#: ../../source/help/messaging/formatting-text.md:47
+#: ../../source/help/messaging/formatting-text.md:82
+#: ../../source/help/messaging/formatting-text.md:97
+#: ../../source/help/messaging/formatting-text.md:124
+#: ../../source/help/messaging/formatting-text.md:134
+#: ../../source/help/messaging/formatting-text.md:144
+#: ../../source/help/messaging/formatting-text.md:159
+#: ../../source/help/messaging/formatting-text.md:171
+#: ../../source/help/messaging/formatting-text.md:180
+msgid "Renders as:"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md
+msgid "Syntax Highlighting"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:32
+msgid ""
+"To add syntax highlighting, type the language to be highlighted after the"
+" ``` at the beginning of the code block."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:34
+msgid ""
+"Supported languages are: diff, apache, makefile, http, json, markdown, "
+"javascript, css, nginx, objectivec, python, xml, perl, bash, php, "
+"coffeescript, cs (C#), cpp (C++), sql, go, ruby, java, ini, latex"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md
+msgid "In-line Code"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:58
+msgid "Create in-line monospaced font by surrounding it with backticks."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:62
+msgid "Renders as: monospace."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md
+msgid "Links"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:66
+msgid ""
+"Create labeled links by putting the desired text in square brackets and "
+"the associated link in normal brackets."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:68
+msgid "[Check out Mattermost!](https://about.mattermost.com/)"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:70
+msgid "Renders as: Check out Mattermost!"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md
+msgid "In-line Images"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:74
+msgid ""
+"Create in-line images using an ! followed by the alt text in square "
+"brackets and the link in normal brackets. Add hover text by placing it in"
+" quotes after the link."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:84
+msgid "alt text"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:86
+msgid "and"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:88
+msgid "Build Status Github"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md
+msgid "Emojis"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:92
+msgid "Emoji provided free by Emoji One. Check out a full list of emojis here."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:99
+msgid "emojis"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md
+msgid "Lines"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:103
+msgid "Create a line by using three *, _, or -."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:105
+msgid "*** renders as:"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md
+msgid "Block quotes"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:110
+msgid "Create block quotes using >."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:112
+msgid "> block quotes renders as:"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:114
+msgid "block quotes"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md
+msgid "Lists"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:118
+msgid ""
+"Create a list by using * or - as bullets. Indent a bullet point by adding"
+" two spaces in front of it."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:129
+msgid "Make it an ordered list by using numbers instead:"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:138
+msgid "Make a task list by including square brackets:"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:146
+msgid "check list"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md
+msgid "Tables"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:150
+msgid ""
+"Create a table by placing a dashed line under the header row and "
+"separating the columns with a pipe |. (The columns don’t need to line up "
+"exactly for it to work). Choose how to align table columns by including "
+"colons : within the header row."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:161
+msgid "table"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md
+msgid "Headings"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:165
+msgid ""
+"Make a heading by typing # and a space before your title. For smaller "
+"headings, use more #’s."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:173
+msgid "headings"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:175
+msgid ""
+"Alternatively, you can underline the text using === or --- to create "
+"headings."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.md:182
+msgid "heading"
+msgstr ""
+

@@ -1,0 +1,105 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/developer/style-guide.md
+msgid "Mattermost Style Guide"
+msgstr ""
+
+#: ../../source/developer/style-guide.md
+msgid "Go"
+msgstr ""
+
+#: ../../source/developer/style-guide.md:10
+msgid "All go code must follow the golang official Style Guide"
+msgstr ""
+
+#: ../../source/developer/style-guide.md:12
+msgid ""
+"In addition all code must be run though the official go formatter tool "
+"gofmt"
+msgstr ""
+
+#: ../../source/developer/style-guide.md
+msgid "Javascript"
+msgstr ""
+
+#: ../../source/developer/style-guide.md:17
+#: ../../source/developer/style-guide.md:131
+msgid ""
+"Part of the build process is running ESLint. ESLint is the final "
+"authority on all style issues. PRs will not be accepted unless there are "
+"no errors running ESLint. The ESLint configuration file can be found in: "
+"web/react/.eslintrc"
+msgstr ""
+
+#: ../../source/developer/style-guide.md:19
+#: ../../source/developer/style-guide.md:133
+msgid ""
+"Instructions on how to use ESLint with your favourite editor can be found"
+" here: http://eslint.org/docs/user-guide/integrations"
+msgstr ""
+
+#: ../../source/developer/style-guide.md:21
+#: ../../source/developer/style-guide.md:135
+msgid "You can run eslint using the makefile by using make check"
+msgstr ""
+
+#: ../../source/developer/style-guide.md:23
+#: ../../source/developer/style-guide.md:137
+msgid ""
+"The following is a subset of what ESLint checks for. ESLint is always the"
+" authority."
+msgstr ""
+
+#: ../../source/developer/style-guide.md
+msgid "Whitespace"
+msgstr ""
+
+#: ../../source/developer/style-guide.md
+msgid "Semicolons"
+msgstr ""
+
+#: ../../source/developer/style-guide.md
+msgid "Variables"
+msgstr ""
+
+#: ../../source/developer/style-guide.md
+msgid "Blocks"
+msgstr ""
+
+#: ../../source/developer/style-guide.md
+msgid "Strings"
+msgstr ""
+
+#: ../../source/developer/style-guide.md
+msgid "React-JSX"
+msgstr ""
+
+#: ../../source/developer/style-guide.md
+msgid "General"
+msgstr ""
+
+#: ../../source/developer/style-guide.md
+msgid "Alignment"
+msgstr ""
+
+#: ../../source/developer/style-guide.md
+msgid "Naming"
+msgstr ""
+

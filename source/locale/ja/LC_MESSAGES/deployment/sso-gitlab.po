@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/deployment/sso-gitlab.md
+msgid "Single-Sign-On Configuration"
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.md:3
+msgid "Single-Sign-On can be configured with the following services."
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.md
+msgid "GitLab"
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.md:7
+msgid ""
+"Follow these steps to configure Mattermost to use GitLab as a single-"
+"sign-on (SSO) service for team creation, account creation and sign-in."
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.md
+msgid "Unofficial Single-Sign-On"
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.md:31
+msgid ""
+"Given the similarities of GitHub and GitHub Enterprise authentication "
+"mechanisms to GitLab, Mattermost users can \"unofficially\" login with "
+"GitHub and GitHub Enterprise accounts. Each of the standards work using "
+"the GitLab user interface, but the user interface will visually display "
+"GitLab icons and wording, rather than \"GitHub\" or \"GitHub "
+"Enterprise\"."
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.md:33
+msgid ""
+"Instructions for unofficial GitHub and GitHub Enterprise authentication "
+"setup are as follows:"
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.md
+msgid "GitHub (unofficial)"
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.md:37
+msgid ""
+"Follow these steps to configure Mattermost to use Github as an unofficial"
+" single-sign-on (SSO) service for team creation, account creation and "
+"sign-in using the GitLab SSO interface."
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.md
+msgid "GitHub Enterprise (unofficial)"
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.md:58
+msgid ""
+"Follow these steps to configure Mattermost to use Github Enterprise as an"
+" unofficial single-sign-on (SSO) service for team creation, account "
+"creation and sign-in using the GitLab SSO interface."
+msgstr ""
+

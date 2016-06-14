@@ -1,0 +1,86 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/help/messaging/executing-commands.md
+msgid "Executing Commands"
+msgstr ""
+
+#: ../../source/help/messaging/executing-commands.md:3
+msgid ""
+"Slash commands perform operations in Mattermost by typing into the text "
+"input box. Enter a / followed by a command and some arguments to perform "
+"actions."
+msgstr ""
+
+#: ../../source/help/messaging/executing-commands.md:5
+msgid ""
+"Built-in slash commands come with all Mattermost installations and custom"
+" slash commands are configurable to interact with external applications. "
+"Learn about configuring custom slash commands on the developer slash "
+"command documentation page."
+msgstr ""
+
+#: ../../source/help/messaging/executing-commands.md
+msgid "Built-in Commands"
+msgstr ""
+
+#: ../../source/help/messaging/executing-commands.md:9
+msgid ""
+"The following slash commands are available on all Mattermost "
+"installations:"
+msgstr ""
+
+#: ../../source/help/messaging/executing-commands.md:11
+msgid "commands"
+msgstr ""
+
+#: ../../source/help/messaging/executing-commands.md:13
+msgid ""
+"Begin by typing / and a list of slash command options appears above the "
+"text input box. The autocomplete suggestions help by providing a format "
+"example in black text and a short description of the slash command in "
+"grey text."
+msgstr ""
+
+#: ../../source/help/messaging/executing-commands.md:15
+msgid "autocomplete"
+msgstr ""
+
+#: ../../source/help/messaging/executing-commands.md
+msgid "Custom Commands"
+msgstr ""
+
+#: ../../source/help/messaging/executing-commands.md:18
+msgid ""
+"Custom slash commands integrate with external applications. For example, "
+"a team might configure a custom slash command to check internal health "
+"records with /patient joe smith or check the weekly weather forcast in a "
+"city with /weather toronto week. Check with your System Admin or open the"
+" autocomplete list by typing / to determine if your team configured any "
+"custom slash commands."
+msgstr ""
+
+#: ../../source/help/messaging/executing-commands.md:20
+msgid ""
+"Custom slash commands are disabled by default and can be enabled by the "
+"System Admin in the System Console > Service Settings. Learn about "
+"configuring custom slash commands on the developer slash command "
+"documentation page."
+msgstr ""
+

@@ -1,0 +1,141 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/help/settings/team-settings.md
+msgid "Team Settings"
+msgstr ""
+
+#: ../../source/help/settings/team-settings.md:4
+msgid ""
+"The Team Settings menu offers Team Administrators, Team Owners and System"
+" Administrators the ability to adjust settings applied to a specific "
+"team."
+msgstr ""
+
+#: ../../source/help/settings/team-settings.md:6
+msgid ""
+"The following settings are found in a Team Site from the Three-Dot menu "
+"at the top of the left sidebar under Team Settings."
+msgstr ""
+
+#: ../../source/help/settings/team-settings.md
+msgid "General"
+msgstr ""
+
+#: ../../source/help/settings/team-settings.md:10
+msgid ""
+"General settings under the Team Settings > General configure how a team "
+"is displayed to users."
+msgstr ""
+
+#: ../../source/help/settings/team-settings.md
+msgid "Team Name"
+msgstr ""
+
+#: ../../source/help/settings/team-settings.md:14
+msgid ""
+"Your Team Name is displayed on the sign-in page, and in the top of the "
+"left-hand sidebar for your team."
+msgstr ""
+
+#: ../../source/help/settings/team-settings.md
+msgid "Allow anyone to sign-up from login page"
+msgstr ""
+
+#: ../../source/help/settings/team-settings.md:18
+msgid ""
+"Setting this option to Yes shows a link to the account creation page on "
+"the sign-in page of this team."
+msgstr ""
+
+#: ../../source/help/settings/team-settings.md:20
+#: ../../source/help/settings/team-settings.md:32
+msgid "Team Administrators would set this to Yes when they:"
+msgstr ""
+
+#: ../../source/help/settings/team-settings.md:25
+#: ../../source/help/settings/team-settings.md:37
+msgid "Team Administrators would set this to No when they:"
+msgstr ""
+
+#: ../../source/help/settings/team-settings.md
+msgid "Include this team in the Team Directory"
+msgstr ""
+
+#: ../../source/help/settings/team-settings.md:30
+msgid ""
+"Setting this option to Yes includes the Team Name on the Home Page and a "
+"link to this team's sign-in page."
+msgstr ""
+
+#: ../../source/help/settings/team-settings.md:40
+msgid ""
+"System Administrators may choose to disable the Team Directory for their "
+"entire system by settings System Console > Team Settings > Enable Team "
+"Directory to false."
+msgstr ""
+
+#: ../../source/help/settings/team-settings.md
+msgid "Invite Code"
+msgstr ""
+
+#: ../../source/help/settings/team-settings.md:44
+msgid ""
+"The Invite Code is used as part of the URL in the team invitation link "
+"retrieved from the Main Menu > Get Team Invite Link. Click Re-Generate "
+"and then Save to generate a new team invitation link and invalidate the "
+"previous link."
+msgstr ""
+
+#: ../../source/help/settings/team-settings.md
+msgid "Import"
+msgstr ""
+
+#: ../../source/help/settings/team-settings.md
+msgid "Import from Slack (Beta)"
+msgstr ""
+
+#: ../../source/help/settings/team-settings.md:50
+msgid ""
+"Note: As a proprietary SaaS service, Slack is able to change its export "
+"format quickly and without notice. If you encounter issues not mentioned "
+"in the documentation below, please alert the product team by filing an "
+"issue."
+msgstr ""
+
+#: ../../source/help/settings/team-settings.md:52
+msgid ""
+"The Slack Import feature in Mattermost is in \"Beta\" and focus is on "
+"supporting migration of teams of less than 100 registered users. To use:"
+msgstr ""
+
+#: ../../source/help/settings/team-settings.md:66
+msgid ""
+"It is highly recommended that you test Slack import before applying it to"
+" an instance intended for production. If you use Docker, you can spin up "
+"a test instance in one line (docker run --name mattermost-dev -d "
+"--publish 8065:80 mattermost/platform). If you don't use Docker, there "
+"are step-by-step instructions to install Mattermost in preview mode in "
+"less than 5 minutes."
+msgstr ""
+
+#: ../../source/help/settings/team-settings.md
+msgid "Limitations"
+msgstr ""
+

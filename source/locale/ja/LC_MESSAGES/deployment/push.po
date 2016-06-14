@@ -1,0 +1,130 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/deployment/push.md
+msgid "Push Notifications and Mobile Devices"
+msgstr ""
+
+#: ../../source/deployment/push.md:3
+msgid ""
+"To send push notifications from your private cloud to iOS apps and "
+"Android mobile apps, Apple and Google require a unique key to be compiled"
+" into your mobile applications. There are 3 deployment options:"
+msgstr ""
+
+#: ../../source/deployment/push.md:36
+msgid "The below explains each option in detail."
+msgstr ""
+
+#: ../../source/deployment/push.md
+msgid ""
+"Note: By default, push notifications do not contain specific message "
+"contents."
+msgstr ""
+
+#: ../../source/deployment/push.md:40
+msgid ""
+"When the Mattermost server is installed, push notifications only give "
+"generic alerts like \"@frank was mentioned in Town Square\" but DO NOT "
+"display the contents of messages. The contents of messages are only "
+"included in push notifications after a System Administrator explicitly "
+"configure the option to include them."
+msgstr ""
+
+#: ../../source/deployment/push.md
+msgid "Hosted Push Notifications Service (HPNS)"
+msgstr ""
+
+#: ../../source/deployment/push.md:45
+msgid ""
+"Mattermost.com offers a Hosted Push Notification Service (HPNS) via "
+"commercial subscription for organizations who prefer using a hosted "
+"service to deploying to an Enterprise App Store."
+msgstr ""
+
+#: ../../source/deployment/push.md:47
+msgid ""
+"With HPNS, end users can use publicly available iOS and Android mobile "
+"applications on iTunes and Google Play over encrypted connections:"
+msgstr ""
+
+#: ../../source/deployment/push.md:52
+msgid ""
+"HPNS is included with an Enterprise Edition E1 subscription and can also "
+"be purchased separately."
+msgstr ""
+
+#: ../../source/deployment/push.md
+msgid "Enterprise App Store (EAS)"
+msgstr ""
+
+#: ../../source/deployment/push.md:56
+msgid ""
+"To set up an Enterprise App Store, teams can compile an encryption key "
+"exclusive to their deployment into the following open source Mattermost "
+"repositories:"
+msgstr ""
+
+#: ../../source/deployment/push.md
+msgid "Test Push Notifications Service (TPNS)"
+msgstr ""
+
+#: ../../source/deployment/push.md:64
+msgid ""
+"Mattermost.com also offers a free, unencrypted push notification service "
+"for trying out the Mattermost mobile applications prior to deciding "
+"whether to use the EAS or HPNS option."
+msgstr ""
+
+#: ../../source/deployment/push.md:66
+msgid ""
+"End users of TPNS can use the publicly available iOS and Android mobile "
+"applications on iTunes and Google Play, with unencrypted push "
+"notifications:"
+msgstr ""
+
+#: ../../source/deployment/push.md:71
+msgid ""
+"You can connect to the TPNS by entering http://push-test.mattermost.com "
+"into System Console > Email Settings > Push Notification Server."
+msgstr ""
+
+#: ../../source/deployment/push.md:73
+msgid ""
+"Note: There is no service level agreement on the TPNS. It may go down "
+"without notice."
+msgstr ""
+
+#: ../../source/deployment/push.md
+msgid "What happens when a Mattermost push notification is sent?"
+msgstr ""
+
+#: ../../source/deployment/push.md:77
+msgid ""
+"To ensure only messages from authorized senders are received by a mobile "
+"application, each push notifications need to be signed with a private key"
+" corresponding to a public key registered with either Apple (for iOS) or "
+"Google (for Android). This means each mobile app needs its own key in "
+"order to trust messages from the Mattermost server in your private cloud."
+msgstr ""
+
+#: ../../source/deployment/push.md:79
+msgid "Here is the full process:"
+msgstr ""
+

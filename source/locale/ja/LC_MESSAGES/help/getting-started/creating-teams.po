@@ -1,0 +1,130 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/help/getting-started/creating-teams.md
+msgid "Creating Teams"
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.md:3
+msgid ""
+"New teams can be created if the System Admin has Enable Team Creation set"
+" to true from the System Console."
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.md
+msgid "Methods to Create a Team"
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.md:6
+msgid ""
+"Teams can be created from the main menu, system home page or team sign in"
+" page."
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.md
+msgid "Main Menu"
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.md:9
+msgid ""
+"Click the Three-Dot menu in Mattermost, then select Create a New Team. If"
+" this option is not visible in the menu, then the System Admin has Enable"
+" Team Creation set to false."
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.md
+msgid "System Home Page"
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.md:13
+msgid ""
+"Navigate to the web address of your system, https://domain.com/. Enter a "
+"valid email address and click Create Team to be guided through the rest "
+"of the set up steps. If this option is not visible on the web page, then "
+"the System Admin has Enable Team Creation set to false. It is not "
+"necessary to have an existing account on the system in order to create a "
+"team from the system home page."
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.md
+msgid "Team Sign In Page"
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.md:16
+msgid ""
+"Navigate to the web address of your team, https://domain.com/teamurl/. If"
+" you are logged in, the web address will open Mattermost and you can "
+"create a new team from the main menu. If you are logged out, the web "
+"address will direct you to the sign in page where you can click Create a "
+"New Team. If this option is not visible on the web page, then the System "
+"Admin has Enable Team Creation set to false. It is not necessary to have "
+"an existing account on the system in order to create a team from the sign"
+" in page."
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.md
+msgid "Team Name and URL Selection"
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.md:19
+msgid ""
+"There are a few details and restrictions to consider when selecting a "
+"team name and team URL."
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.md
+msgid "Team Name"
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.md:22
+msgid "This is the display name of your team that appears in menus and headings."
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.md
+msgid "Team URL"
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.md:29
+msgid ""
+"The team URL is part of the web address that navigates to your team on "
+"the system domain, https://domain.com/teamurl/."
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.md:35
+msgid ""
+"If the System Admin has Restrict Team Names set to true, the team URL "
+"cannot start with the following restricted words: www, web, admin, "
+"support, notify, test, demo, mail, team, channel, internal, localhost, "
+"dockerhost, stag, post, cluster, api, oauth."
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.md
+msgid "User Roles on Multiple Teams"
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.md:38
+msgid ""
+"Each user is distinct and owned by a team. A team creator is "
+"automatically granted Team Admin privileges for that team, even if they "
+"are a System Admin on another team. A System Admin with accounts on "
+"multiple teams must grant all their accounts System Admin privileges from"
+" the System Console. To do this, go to the Main Menu > System Console, "
+"then click Users under the Teams heading for the team you want to manage."
+msgstr ""
+

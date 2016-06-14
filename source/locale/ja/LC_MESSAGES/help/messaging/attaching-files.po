@@ -1,0 +1,130 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/help/messaging/attaching-files.md
+msgid "Attaching Files"
+msgstr ""
+
+#: ../../source/help/messaging/attaching-files.md
+msgid "Attachment Methods"
+msgstr ""
+
+#: ../../source/help/messaging/attaching-files.md:5
+msgid ""
+"Attach a file by drag and drop or by clicking the attachment icon in the "
+"message input box."
+msgstr ""
+
+#: ../../source/help/messaging/attaching-files.md
+msgid "Drag and Drop"
+msgstr ""
+
+#: ../../source/help/messaging/attaching-files.md:8
+msgid ""
+"Upload a file or selection of files by dragging the files from your "
+"computer into the RHS or center pane. Dragging and dropping attaches the "
+"files to the message input box, then you can optionally type a message "
+"and press ENTER to post."
+msgstr ""
+
+#: ../../source/help/messaging/attaching-files.md
+msgid "Attachment Icon"
+msgstr ""
+
+#: ../../source/help/messaging/attaching-files.md:11
+msgid ""
+"Alternatively, upload files by clicking the grey paperclip icon inside "
+"the message input box. This opens up your system file viewer where you "
+"can navigate to the desired files and then click Open to upload the files"
+" to the message input box. Optionally type a message and then press ENTER"
+" to post."
+msgstr ""
+
+#: ../../source/help/messaging/attaching-files.md
+msgid "File Previewer"
+msgstr ""
+
+#: ../../source/help/messaging/attaching-files.md:14
+msgid ""
+"Mattermost has a built in file previewer that is used to view media, "
+"download files and share public links. Click the thumbnail of an attached"
+" file to open it in the file previewer."
+msgstr ""
+
+#: ../../source/help/messaging/attaching-files.md
+msgid "Sharing Public Links"
+msgstr ""
+
+#: ../../source/help/messaging/attaching-files.md:18
+msgid ""
+"Public links allow you to share file attachments with people outside your"
+" Mattermost team. Open the file previewer by clicking on the thumbnail of"
+" an attachment, then click Get Public Link. The file will open in a new "
+"browser tab and the redirect URL can be shared with anyone. Public links "
+"expire after a period of time and become inaccessible for security "
+"reasons."
+msgstr ""
+
+#: ../../source/help/messaging/attaching-files.md:20
+msgid ""
+"If Get Public Link is not visible in the file previewer then contact your"
+" system administrator to enable public file links in the System Console "
+"file settings."
+msgstr ""
+
+#: ../../source/help/messaging/attaching-files.md
+msgid "Downloading Files"
+msgstr ""
+
+#: ../../source/help/messaging/attaching-files.md:24
+msgid ""
+"Download an attached file by clicking the download icon next to the file "
+"thumbnail or by opening the file previewer and clicking Download."
+msgstr ""
+
+#: ../../source/help/messaging/attaching-files.md
+msgid "Supported Media Types"
+msgstr ""
+
+#: ../../source/help/messaging/attaching-files.md:27
+msgid ""
+"If you are trying to preview a media type that is not supported, the file"
+" previewer will open a standard media attachment icon. Supported media "
+"formats depend heavily on your browser and operating system, but the "
+"following formats are supported by Mattermost on most browsers:"
+msgstr ""
+
+#: ../../source/help/messaging/attaching-files.md:29
+msgid "Images: BMP, GIF, JPG, JPEG, PNGVideo: MP4Audio: MP3, M4A"
+msgstr ""
+
+#: ../../source/help/messaging/attaching-files.md:33
+msgid "Document preview (PDF, Word, Excel, PPT) is not yet supported."
+msgstr ""
+
+#: ../../source/help/messaging/attaching-files.md
+msgid "File Size Limitations"
+msgstr ""
+
+#: ../../source/help/messaging/attaching-files.md:36
+msgid ""
+"Mattermost supports a maximum of five attached files per post, each with "
+"a maximum file size of 50Mb."
+msgstr ""
+

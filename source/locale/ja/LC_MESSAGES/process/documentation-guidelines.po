@@ -1,0 +1,304 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/process/documentation-guidelines.md
+msgid "Documentation Conventions"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:3
+msgid ""
+"The most important thing about documentation is getting it done and out "
+"to the community."
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:5
+msgid ""
+"After that, we can work on upgrading the quality of documentation. The "
+"below chart summarizes the different levels of documentation and how the "
+"quality gates are applied."
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:7
+msgid ""
+"Note: Documentation Guidelines are new, and iterating. Documentation has "
+"started to balloon and this is our attempt at reducing ambiguity and "
+"increasing consistency, but the conventions here are very open to "
+"discussion."
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:9
+msgid "star table"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md
+msgid "1-Star Requirements: Correctness"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md
+msgid "List precise dependencies"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md
+msgid "Correct"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:22
+msgid ""
+"This procedure works on an Ubuntu 14.04 server with Python 2.6 installed "
+"and should work on compatible Linux-based operating systems and "
+"compatible versions of Python."
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md
+msgid "Incorrect"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:28
+msgid "This procedure works on Linux servers running Python."
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:30
+msgid "also:"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:32
+msgid "This procedure works on Linux servers running Python 2.6 and higher."
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md
+msgid "2-Star Requirements: Objective Formatting Checklist"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md
+msgid "Use headings"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:39
+msgid ""
+"Headings in markdown provide anchors that can be used to easily reference"
+" sub-sections of long pieces of documentation. This is preferable to just"
+" numbering sections without headings."
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md
+msgid "Correct:"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md
+msgid "Step 1: Add a heading"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:45
+msgid "This makes things easier to reference via hyperlinks"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md
+msgid "Step 2: Link to headings"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:47
+msgid "So things are easier to find"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md
+msgid "Incorrect:"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:53
+msgid ""
+"Step 1: Add a heading This makes things easier to reference via "
+"hyperlinks Step 2: Link to headings So things are easier to find"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md
+msgid "Use appropriate heading case"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:61
+msgid "Cases in headings may vary depending on usage."
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md
+msgid "When to use Title Case"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:65
+msgid ""
+"H1, H2, H3 headings should be \"Title Case\" and less than four words, "
+"except if a colon is used, then four words per segment separated by the "
+"colon."
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:67
+msgid ""
+"These large headings are typically shorter and help with navigating large"
+" documents"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md
+msgid "When to use sentence case"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:71
+msgid "H3, H4, H5 headings should be \"Sentence case\" and can be any length."
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:73
+msgid ""
+"These headers are smaller and used to summarize sections. H3 can be "
+"considered either a large or small heading."
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:75
+msgid ""
+"These conventions are new, so there's flexibility around them, when "
+"you're not sure, consider the convention here as default."
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md
+msgid "Sub-section headings should end with a colon"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:79
+msgid "For readability and clear layout, end a sub-section heading with a colon"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:85
+msgid "Service Based:"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:94
+msgid "Service Based"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md
+msgid "One instruction per line"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:103
+msgid ""
+"It's easy to miss instructions when they're compounded. Have only one "
+"instruction per line, so documentation looks more like a checklist."
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:105
+msgid ""
+"A support person should be able to say \"Did you complete step 7?\" "
+"instead of \"Did you complete the second part of step 7 after doing "
+"XXX?\""
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md
+msgid "End Lists Consistently"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:126
+msgid ""
+"Full sentences in lists should end with proper punctuation. If one point "
+"in a bulleted list or numbered list ends with a period, end all points in"
+" the list with a period. If all points in the list are fragments, use no "
+"end punctuation."
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md
+msgid "Avoid Passive Phrases"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:142
+msgid ""
+"Examples of passive phrases include \"have\", \"had\", \"was\", \"can "
+"be\", \"has been\" and documentation is shorter and clearer without them."
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:147
+msgid "This software runs on any server that supports Python."
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:153
+msgid "This software can be run on any server that supports Python."
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md
+msgid "3-Star Requirements: Subjective Style Guidelines"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md
+msgid "Be Concise"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:160
+msgid "Try to use fewer words when possible."
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:165
+msgid ""
+"This integration posts issue, comment and merge request events from a "
+"GitLab repository into specific Mattermost channels by formatting output "
+"from GitLab's outgoing webhooks to Mattermost's incoming webhooks."
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:171
+msgid ""
+"This integration makes use of GitLab's outgoing webhooks and Mattermost's"
+" incoming webhooks to post GitLab events into Mattermost. You can find "
+"GitLab's outgoing webhooks described here and Mattermost's incoming "
+"webhooks described here."
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md
+msgid "Use appropriate emphasis"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:177
+msgid ""
+"Mention Clickable Controls in Bold, Sections and Setting Names in "
+"Italics, and Key Strokes in pre-formatted text."
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:179
+msgid ""
+"To make it clear and consistent across documentation on how we describe "
+"controls that a user is asked to manipulate, we have a number of "
+"guidelines:"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:181
+msgid "Bold"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:186
+msgid "Italics"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:190
+msgid "pre-formatted text"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:196
+msgid ""
+"Type mattermost-integration-giphy in the repo-name field, then click "
+"Search and then the Connect button once Heroku finds your repository"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.md:202
+msgid ""
+"Type \"mattermost-integration-giphy\" in the repo-name field, then click "
+"Search and then the Connect button once Heroku finds your repository"
+msgstr ""
+

@@ -1,0 +1,106 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/help/settings/theme-colors.md
+msgid "Theme Colors"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.md:3
+msgid ""
+"The colors of the Mattermost user interface are customizable in Account "
+"Settings > Display > Theme. You can import your theme colors from Slack, "
+"customize the colors yourself, or choose from four standard themes "
+"designed by the Matternost team."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.md
+msgid "Standard Themes"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.md:6
+msgid ""
+"Select Theme Colors to choose from four standard themes designed by the "
+"Mattermost team. To make custom adjustments on the four standard theme "
+"colours, click a standard theme and then select Custom Theme to load the "
+"standard theme into the custom theme color selectors."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.md
+msgid "Import Theme from Slack"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.md:9
+msgid ""
+"To import a theme, go to Preferences > Sidebar Theme from within Slack, "
+"open the custom theme option, copy the theme color vector and then paste "
+"it into the Input Slack Theme input box in Mattermost. Any theme settings"
+" that are not customizable in Slack will default to the “Mattermost” "
+"standard theme settings."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.md
+msgid "Custom Themes"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.md:12
+msgid ""
+"Observe a live preview as you customize theme colors and then click Save "
+"to confirm your changes. Discard your changes by exiting the settings "
+"modal and clicking Yes, Discard."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.md
+msgid "Sidebar Styles"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.md
+msgid "Center Channel Styles"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.md
+msgid "Link and Button Styles"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.md
+msgid "Custom Theme Examples"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.md:44
+msgid ""
+"Customize your theme colors and share them with others by copying and "
+"pasting theme vectors into the input box. Below are some example themes "
+"with their corresponding theme vectors."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.md:46
+msgid "theme2"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.md:52
+msgid "theme3"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.md:58
+msgid "theme1"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.md:64
+msgid "theme4"
+msgstr ""
+

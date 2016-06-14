@@ -1,0 +1,103 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/help/getting-started/signing-in.md
+msgid "Signing in"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.md:4
+msgid ""
+"You can sign in to your team from the web address of "
+"https://domain.com/teamname."
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.md
+msgid "Sign In Methods"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.md:7
+msgid ""
+"There are several options for signing in to your team depending on how "
+"your System Admin has configured your server."
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.md
+msgid "Email Address or Username Sign In"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.md:11
+msgid ""
+"When enabled by your System Admin, you can sign in with the username or "
+"email address used to create your account."
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.md:13
+msgid ""
+"If you have forgotten your password, you can reset it by clicking I "
+"forgot my password on the sign in screen, or contact your System Admin "
+"for help resetting your password."
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.md
+msgid "GitLab Single-Sign-On (SSO)"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.md:17
+msgid ""
+"When enabled by your System Admin, you can sign in using your GitLab "
+"account using a one-click sign in option. GitLab SSO lets you create "
+"teams, create accounts on teams, and sign in to teams using one username,"
+" email address, and password that works across everything on the server."
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.md
+msgid "Switching Teams"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.md:21
+msgid ""
+"When you've used the same email address to sign up and sign in to "
+"multiple teams, you can switch among those teams using the Main Menu, "
+"accessed by clicking the three dots in the top header of any team site on"
+" the server. By default, devices remember which teams you have signed "
+"into for 30 days."
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.md
+msgid "Logging Out"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.md:25
+msgid ""
+"You can log out from the Main Menu, which is accessed by clicking the "
+"three dots in the top header on the left side of the screen. Clicking "
+"\"Logout\" logs you out of all teams that are signed in and open in your "
+"browser."
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.md
+msgid "iOS Setup"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.md:29
+msgid ""
+"Your Mattermost teams can be accessed on iOS mobile devices by "
+"downloading the Mattermost App."
+msgstr ""
+

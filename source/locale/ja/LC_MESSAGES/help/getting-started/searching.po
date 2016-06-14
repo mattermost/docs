@@ -1,0 +1,92 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/help/getting-started/searching.md
+msgid "Searching"
+msgstr ""
+
+#: ../../source/help/getting-started/searching.md:3
+msgid ""
+"The search box in Mattermost returns non-case sensitive results from any "
+"channel of which you’re a member. Use search modifiers to narrow your "
+"search results. Click Jump on the right of a search result to view that "
+"post in the channel archive."
+msgstr ""
+
+#: ../../source/help/getting-started/searching.md
+msgid "Search Modifiers"
+msgstr ""
+
+#: ../../source/help/getting-started/searching.md
+msgid "From: and In:"
+msgstr ""
+
+#: ../../source/help/getting-started/searching.md:8
+msgid ""
+"Use from: to find posts from specific users and in: to find posts in "
+"specific channels."
+msgstr ""
+
+#: ../../source/help/getting-started/searching.md
+msgid "“Quotation Marks”"
+msgstr ""
+
+#: ../../source/help/getting-started/searching.md:13
+msgid "Use quotation marks to return search results for exact terms."
+msgstr ""
+
+#: ../../source/help/getting-started/searching.md
+msgid "Wildcard*"
+msgstr ""
+
+#: ../../source/help/getting-started/searching.md:18
+msgid "Use the * character for wildcard searches that match within words."
+msgstr ""
+
+#: ../../source/help/getting-started/searching.md
+msgid "Hashtags"
+msgstr ""
+
+#: ../../source/help/getting-started/searching.md:24
+msgid ""
+"Hashtags are searchable labels for posts. Search for any posts containing"
+" a hashtag by clicking the hashtag in an existing post or typing the "
+"hashtag with the pound symbol into the search bar. Create hastags in any "
+"post by using the pound sign # followed by alphanumeric characters."
+msgstr ""
+
+#: ../../source/help/getting-started/searching.md:26
+msgid "Valid hastags:"
+msgstr ""
+
+#: ../../source/help/getting-started/searching.md:32
+msgid "Examples: #bug, #marketing, #v2.1, #user_testing, #per.iod, #check-in"
+msgstr ""
+
+#: ../../source/help/getting-started/searching.md:35
+msgid ""
+"Hashtags do not link to channels. For example, if you have a channel "
+"named \"Marketing\", clicking a #marketing hashtag does not redirect you "
+"to that channel."
+msgstr ""
+
+#: ../../source/help/getting-started/searching.md
+msgid "Search Notes and Known Issues"
+msgstr ""
+

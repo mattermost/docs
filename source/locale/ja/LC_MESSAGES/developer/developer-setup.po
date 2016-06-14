@@ -1,0 +1,43 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, 2016 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../source/developer/developer-setup.md
+msgid "Developer Machine Setup"
+msgstr ""
+
+#: ../../source/developer/developer-setup.md
+msgid "Mac OS X"
+msgstr ""
+
+#: ../../source/developer/developer-setup.md:39
+#: ../../source/developer/developer-setup.md:82
+#: ../../source/developer/developer-setup.md:130
+msgid ""
+"Any issues? Please let us know on our forums at: "
+"http://forum.mattermost.org"
+msgstr ""
+
+#: ../../source/developer/developer-setup.md
+msgid "Ubuntu"
+msgstr ""
+
+#: ../../source/developer/developer-setup.md
+msgid "Archlinux"
+msgstr ""
+
