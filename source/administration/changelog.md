@@ -160,74 +160,25 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 Many thanks to all our contributors. In alphabetical order:
 
 /platform
-- [apheleia](https://github.com/apheleia)
-- [ArthurHlt](https://github.com/ArthurHlt)
-- [asaadmahmoodspin](https://github.com/asaadmahmoodspin)
-- [coreyhulen](https://github.com/coreyhulen)
-- [crspeller](https://github.com/crspeller)
-- [DavidLu1997](https://github.com/DavidLu1997)
-- [enahum](https://github.com/enahum)
-- [goofy-bz](https://github.com/goofy-bz)
-- [gramakri](https://github.com/gramakri)
-- [hmhealey](https://github.com/hmhealey)
-- [it33](https://github.com/it33)
-- [jasonblais](https://github.com/jasonblais)
-- [jwilander](https://github.com/jwilander)
-- [kevynb](https://github.com/kevynb)
-- [khoa-le](https://github.com/khoa-le)
-- [lfbrock](https://github.com/lfbrock)
-- [rompic](https://github.com/rompic)
-- [ryoon](https://github.com/ryoon)
-- [samogot](https://github.com/samogot)
-- [ScriptAutomate](https://github.com/ScriptAutomate)
-- [tbalthazar](https://github.com/tbalthazar)
-- [tehraven](https://github.com/tehraven/)
+- [apheleia](https://github.com/apheleia), [ArthurHlt](https://github.com/ArthurHlt), [asaadmahmoodspin](https://github.com/asaadmahmoodspin), [coreyhulen](https://github.com/coreyhulen), [crspeller](https://github.com/crspeller), [DavidLu1997](https://github.com/DavidLu1997), [enahum](https://github.com/enahum), [goofy-bz](https://github.com/goofy-bz), [gramakri](https://github.com/gramakri), [hmhealey](https://github.com/hmhealey), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [jwilander](https://github.com/jwilander), [kevynb](https://github.com/kevynb), [khoa-le](https://github.com/khoa-le), [lfbrock](https://github.com/lfbrock), [rompic](https://github.com/rompic), [ryoon](https://github.com/ryoon), [samogot](https://github.com/samogot), [ScriptAutomate](https://github.com/ScriptAutomate), [tbalthazar](https://github.com/tbalthazar), [tehraven](https://github.com/tehraven/)
 
 /ios
-- [coreyhulen](https://github.com/coreyhulen)
-- [lfbrock](https://github.com/lfbrock)
+- [coreyhulen](https://github.com/coreyhulen), [lfbrock](https://github.com/lfbrock)
 
 /android
-- [coreyhulen](https://github.com/coreyhulen)
-- [DavidLu1997](https://github.com/DavidLu1997)
-- [it33](https://github.com/it33)
-- [lfbrock](https://github.com/lfbrock)
-- [nineinchnick](https://github.com/nineinchnick)
+- [coreyhulen](https://github.com/coreyhulen), [DavidLu1997](https://github.com/DavidLu1997), [it33](https://github.com/it33), [lfbrock](https://github.com/lfbrock), [nineinchnick](https://github.com/nineinchnick)
 
 /desktop
-- [CarmDam](https://github.com/CarmDam)
-- [it33](https://github.com/it33)
-- [jnugh](https://github.com/jnugh)
-- [MetalCar](https://github.com/MetalCar)
-- [Razzeee](https://github.com/Razzeee)
-- [yuya-oc](https://github.com/yuya-oc)
+- [CarmDam](https://github.com/CarmDam), [it33](https://github.com/it33), [jnugh](https://github.com/jnugh), [MetalCar](https://github.com/MetalCar), [Razzeee](https://github.com/Razzeee), [yuya-oc](https://github.com/yuya-oc)
 
 /docs
-- [apheleia](https://github.com/apheleia)
-- [coreyhulen](https://github.com/coreyhulen)
-- [crspeller](https://github.com/crspeller)
-- [DavidLu1997](https://github.com/DavidLu1997)
-- [enahum](https://github.com/enahum)
-- [esethna](https://github.com/esethna)
-- [hannapark84](https://github.com/hannapark84)
-- [hmhealey](https://github.com/hmhealey)
-- [it33](https://github.com/it33)
-- [jasonblais](https://github.com/jasonblais)
-- [lfbrock](https://github.com/lfbrock)
-- [maxlmo](https://github.com/maxlmo)
-- [mkhsueh](https://github.com/mkhsueh)
-- [npcode](https://github.com/npcode)
-- [TwizzyDizzy](https://github.com/TwizzyDizzy)
+- [apheleia](https://github.com/apheleia), [coreyhulen](https://github.com/coreyhulen), [crspeller](https://github.com/crspeller), [DavidLu1997](https://github.com/DavidLu1997), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [hannapark84](https://github.com/hannapark84), [hmhealey](https://github.com/hmhealey), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [lfbrock](https://github.com/lfbrock), [maxlmo](https://github.com/maxlmo), [mkhsueh](https://github.com/mkhsueh), [npcode](https://github.com/npcode), [TwizzyDizzy](https://github.com/TwizzyDizzy)
 
 /mattermost-driver-javascript
-- [coreyhulen](https://github.com/coreyhulen)
-- [crspeller](https://github.com/crspeller)
-- [enahum](https://github.com/enahum)
-- [jwilander](https://github.com/jwilander)
+- [coreyhulen](https://github.com/coreyhulen), [crspeller](https://github.com/crspeller), [enahum](https://github.com/enahum), [jwilander](https://github.com/jwilander)
 
 /mattermost-docker
-- [npcode](https://github.com/npcode)
-- [pierreozoux](https://github.com/pierreozoux)
+- [npcode](https://github.com/npcode), [pierreozoux](https://github.com/pierreozoux)
 
 /mattermost/push-proxy
 - [coreyhulen](https://github.com/coreyhulen)
@@ -439,77 +390,22 @@ Version 3.0 uses a different database than version 2.0. A one-way change to the 
 Many thanks to all our contributors. In alphabetical order:
 
 /platform
-- [alanmoo](https://github.com/alanmoo)
-- [ArthurHlt](https://github.com/ArthurHlt)
-- [asaadmahmoodspin](https://github.com/asaadmahmoodspin)
-- [augustohp](https://github.com/augustohp)
-- [brunoqc](https://github.com/brunoqc)
-- [chengweiv5](https://github.com/chengweiv5)
-- [Compaurum](https://github.com/Compaurum)
-- [coreyhulen](https://github.com/coreyhulen)
-- [crspeller](https://github.com/crspeller)
-- [CyrilTerets](https://github.com/CyrilTerets)
-- [DavidLu1997](https://github.com/DavidLu1997)
-- [enahum](https://github.com/enahum)
-- [FeliciousX](https://github.com/FeliciousX)
-- [hauschke](https://github.com/hauschke)
-- [hmhealey](https://github.com/hmhealey)
-- [insin](https://github.com/insin)
-- [it33](https://github.com/it33)
-- [jwilander](https://github.com/jwilander)
-- [khoa-le](https://github.com/khoa-le)
-- [lfbrock](https://github.com/lfbrock)
-- [loafoe](https://github.com/loafoe)
-- [maruTA-bis5](https://github.com/maruTA-bis5)
-- [moogle19](https://github.com/moogle19)
-- [olivierperes](https://github.com/olivierperes)
-- [pjgrizel](https://github.com/pjgrizel)
-- [qcu](https://github.com/qcu)
-- [rodrigocorsi2](https://github.com/rodrigocorsi2)
-- [ryoon](https://github.com/ryoon)
-- [samogot](https://github.com/samogot)
-- [stupied4ever](https://github.com/stupied4ever)
-- [takashibagura](https://github.com/takashibagura)
-- [usmanarif](https://github.com/usmanarif)
-- [yumenohosi](https://github.com/yumenohosi)
+- [alanmoo](https://github.com/alanmoo), [ArthurHlt](https://github.com/ArthurHlt), [asaadmahmoodspin](https://github.com/asaadmahmoodspin), [augustohp](https://github.com/augustohp),  [brunoqc](https://github.com/brunoqc), [chengweiv5](https://github.com/chengweiv5), [Compaurum](https://github.com/Compaurum), [coreyhulen](https://github.com/coreyhulen), [crspeller](https://github.com/crspeller), [CyrilTerets](https://github.com/CyrilTerets), [DavidLu1997](https://github.com/DavidLu1997), [enahum](https://github.com/enahum), [FeliciousX](https://github.com/FeliciousX), [hauschke](https://github.com/hauschke), [hmhealey](https://github.com/hmhealey), [insin](https://github.com/insin), [it33](https://github.com/it33), [jwilander](https://github.com/jwilander), [khoa-le](https://github.com/khoa-le), [lfbrock](https://github.com/lfbrock), [loafoe](https://github.com/loafoe), [maruTA-bis5](https://github.com/maruTA-bis5), [moogle19](https://github.com/moogle19), [olivierperes](https://github.com/olivierperes), [pjgrizel](https://github.com/pjgrizel), [qcu](https://github.com/qcu), [rodrigocorsi2](https://github.com/rodrigocorsi2), [ryoon](https://github.com/ryoon), [samogot](https://github.com/samogot), [stupied4ever](https://github.com/stupied4ever), [takashibagura](https://github.com/takashibagura), [usmanarif](https://github.com/usmanarif), [yumenohosi](https://github.com/yumenohosi)
 
 /mattermost-docker
-- [npcode](https://github.com/npcode)
-- [xcompass](https://github.com/xcompass)
-- [it33](https://github.com/it33)
+- [npcode](https://github.com/npcode), [xcompass](https://github.com/xcompass), [it33](https://github.com/it33)
 
 /ios
-- [coreyhulen](https://github.com/coreyhulen)
-- [it33](https://github.com/it33)
+- [coreyhulen](https://github.com/coreyhulen), [it33](https://github.com/it33)
 
 /android
-- [arusahni](https://github.com/arusahni)
-- [JohnMaguire](https://github.com/JohnMaguire)
-- [lindy65](https://github.com/lindy65)
-- [nicolas-raoul](https://github.com/nicolas-raoul)
-- [ptersilie](https://github.com/ptersilie)
+- [arusahni](https://github.com/arusahni), [JohnMaguire](https://github.com/JohnMaguire), [lindy65](https://github.com/lindy65), [nicolas-raoul](https://github.com/nicolas-raoul), [ptersilie](https://github.com/ptersilie)
 
 /desktop
-- [asaadmahmoodspin](https://github.com/asaadmahmoodspin)
-- [it33](https://github.com/it33)
-- [jeremycook](https://github.com/jeremycook)
-- [lloeki](https://github.com/lloeki)
-- [mgielda](https://github.com/mgielda)
-- [yuya-oc](https://github.com/yuya-oc)
+- [asaadmahmoodspin](https://github.com/asaadmahmoodspin), [it33](https://github.com/it33), [jeremycook](https://github.com/jeremycook), [lloeki](https://github.com/lloeki), [mgielda](https://github.com/mgielda), [yuya-oc](https://github.com/yuya-oc)
 
 /docs
-- [ajerezr](https://github.com/ajerezr)
-- [apheleia](https://github.com/apheleia)
-- [asaadmahmoodspin](https://github.com/asaadmahmoodspin)
-- [crspeller](https://github.com/crspeller)
-- [DavidLu1997](https://github.com/DavidLu1997)
-- [enahum](https://github.com/enahum)
-- [esethna](https://github.com/esethna)
-- [it33](https://github.com/it33)
-- [lfbrock](https://github.com/lfbrock)
-- [lindy65](https://github.com/lindy65)
-- [pjgrizel](https://github.com/pjgrizel)
-- [schemacs](https://github.com/schemacs)
+- [ajerezr](https://github.com/ajerezr), [apheleia](https://github.com/apheleia), [asaadmahmoodspin](https://github.com/asaadmahmoodspin), [crspeller](https://github.com/crspeller), [DavidLu1997](https://github.com/DavidLu1997), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [it33](https://github.com/it33), [lfbrock](https://github.com/lfbrock), [lindy65](https://github.com/lindy65), [pjgrizel](https://github.com/pjgrizel), [schemacs](https://github.com/schemacs)
 
 ## Release v2.2.0
 
@@ -574,13 +470,7 @@ User Interface
 
 Many thanks to all our external contributors. In no particular order:
 
-- [pjgrizel](https://github.com/pjgrizel)
-- [tbolon](https://github.com/tbolon) 
-- [jblobel](https://github.com/jblobel)
-- [rodrigocorsi2](https://github.com/rodrigocorsi2) 
-- [enahum](https://github.com/enahum)
-- [schemacs](https://github.com/schemacs)
-- [raelga](https://github.com/raelga)
+- [pjgrizel](https://github.com/pjgrizel), [tbolon](https://github.com/tbolon) , [jblobel](https://github.com/jblobel), [rodrigocorsi2](https://github.com/rodrigocorsi2) , [enahum](https://github.com/enahum), [schemacs](https://github.com/schemacs), [raelga](https://github.com/raelga)
 
 ## Release v2.1.0
 
@@ -708,16 +598,7 @@ Changes from v2.0 to v2.1:
 
 Many thanks to all our external contributors. In no particular order:
 
-- [yuya-oc](https://github.com/yuya-oc)
-- [rodrigocorsi2](https://github.com/rodrigocorsi2)
-- [enahum](https://github.com/enahum)
-- [khoa-le](https://github.com/khoa-le)
-- [alanmoo](https://github.com/alanmoo) 
-- [daizenberg](https://github.com/daizenberg) 
-- [GuillaumeAmat](https://github.com/GuillaumeAmat) 
-- [kernicPanel](https://github.com/kernicPanel) 
-- [timlyo](https://github.com/timlyo) 
-- [ttyniwa](https://github.com/ttyniwa) 
+- [yuya-oc](https://github.com/yuya-oc), [rodrigocorsi2](https://github.com/rodrigocorsi2), [enahum](https://github.com/enahum), [khoa-le](https://github.com/khoa-le), [alanmoo](https://github.com/alanmoo), [daizenberg](https://github.com/daizenberg), [GuillaumeAmat](https://github.com/GuillaumeAmat), [kernicPanel](https://github.com/kernicPanel), [timlyo](https://github.com/timlyo), [ttyniwa](https://github.com/ttyniwa) 
 
 ## Release v2.0.0
 
@@ -904,17 +785,7 @@ Special thanks to [enahum](https://github.com/enahum) for creating the Spanish l
 
 Many thanks to all our external contributors. In no particular order:
 
-- [enahum](https://github.com/enahum)
-- [trashcan](https://github.com/trashcan)
-- [khoa-le](https://github.com/khoa-le)
-- [alanmoo](https://github.com/alanmoo)
-- [fallenby](https://github.com/fallenby)
-- [loafoe](https://github.com/loafoe)
-- [gramakri](https://github.com/gramakri)
-- [pawelad](https://github.com/pawelad)
-- [cifvts](https://github.com/cifvts)
-- [rosskusler](https://github.com/rosskusler)
-- [apskim](https://github.com/apskim) 
+- [enahum](https://github.com/enahum), [trashcan](https://github.com/trashcan), [khoa-le](https://github.com/khoa-le), [alanmoo](https://github.com/alanmoo), [fallenby](https://github.com/fallenby), [loafoe](https://github.com/loafoe), [gramakri](https://github.com/gramakri), [pawelad](https://github.com/pawelad), [cifvts](https://github.com/cifvts), [rosskusler](https://github.com/rosskusler), [apskim](https://github.com/apskim) 
 
 ## Release v1.4.0
 
@@ -1039,13 +910,7 @@ The following options are not present in the System Console, and can be modified
 
 Many thanks to our external contributors. In no particular order:
 
-- [npcode](https://github.com/npcode)
-- [hjf288](https://github.com/hjf288)
-- [apskim](https://github.com/apskim)
-- [ejm2172](https://github.com/ejm2172)
-- [hvnsweeting](https://github.com/hvnsweeting)
-- [benburkert](https://github.com/benburkert)
-- [erikthered](https://github.com/erikthered)
+- [npcode](https://github.com/npcode), [hjf288](https://github.com/hjf288), [apskim](https://github.com/apskim), [ejm2172](https://github.com/ejm2172), [hvnsweeting](https://github.com/hvnsweeting), [benburkert](https://github.com/benburkert), [erikthered](https://github.com/erikthered)
 
 ## Release v1.3.0
 
@@ -1150,17 +1015,7 @@ Multiple settings were added to [`config.json`](./config/config.json). These opt
 
 Many thanks to our external contributors. In no particular order:
 
-- [florianorben](https://github.com/florianorben)
-- [npcode](https://github.com/npcode)
-- [42wim](https://github.com/42wim)
-- [cifvts](https://github.com/cifvts)
-- [rompic](https://github.com/rompic)
-- [jdhoek](https://github.com/jdhoek)
-- [Tsynapse](https://github.com/Tsynapse)
-- [alexgaribay](https://github.com/alexgaribay)
-- [vladikoff](https://github.com/vladikoff)
-- [jonathanwiesel](https://github.com/jonathanwiesel)
-- [tamtamchik](https://github.com/tamtamchik)
+- [florianorben](https://github.com/florianorben), [npcode](https://github.com/npcode), [42wim](https://github.com/42wim), [cifvts](https://github.com/cifvts), [rompic](https://github.com/rompic), [jdhoek](https://github.com/jdhoek), [Tsynapse](https://github.com/Tsynapse), [alexgaribay](https://github.com/alexgaribay), [vladikoff](https://github.com/vladikoff), [jonathanwiesel](https://github.com/jonathanwiesel), [tamtamchik](https://github.com/tamtamchik)
 
 ## Release v1.2.1
 
@@ -1307,21 +1162,7 @@ The following is for informational purposes only, no action needed. Mattermost a
 
 Many thanks to our external contributors. In no particular order:
 
-- [florianorben](https://github.com/florianorben)
-- [trashcan](https://github.com/trashcan)
-- [girishso](https://github.com/girishso)
-- [apaatsio](https://github.com/apaatsio)
-- [jlebleu](https://github.com/jlebleu)
-- [stasvovk](https://github.com/stasvovk)
-- [mcmillhj](https://github.com/mcmillhj)
-- [sharms](https://github.com/sharms)
-- [jvasallo](https://github.com/jvasallo)
-- [layzerar](https://github.com/layzerar)
-- [optimistiks](https://github.com/optimistiks)
-- [Tsynapse](https://github.com/Tsynapse)
-- [vinnymac](https://github.com/vinnymac)
-- [yuvipanda](https://github.com/yuvipanda)
-- [toyorg](https://github.com/toyorg)
+- [florianorben](https://github.com/florianorben), [trashcan](https://github.com/trashcan), [girishso](https://github.com/girishso), [apaatsio](https://github.com/apaatsio), [jlebleu](https://github.com/jlebleu), [stasvovk](https://github.com/stasvovk), [mcmillhj](https://github.com/mcmillhj), [sharms](https://github.com/sharms), [jvasallo](https://github.com/jvasallo), [layzerar](https://github.com/layzerar), [optimistiks](https://github.com/optimistiks), [Tsynapse](https://github.com/Tsynapse), [vinnymac](https://github.com/vinnymac), [yuvipanda](https://github.com/yuvipanda), [toyorg](https://github.com/toyorg)
 
 ## Release v1.2.0 (Redacted Release)
 
@@ -1424,20 +1265,7 @@ The following is for informational purposes only, no action needed. Mattermost a
 
 Many thanks to our external contributors. In no particular order: 
 
-- [chengweiv5](https://github.com/chengweiv5)
-- [pstonier](https://github.com/pstonier)
-- [teviot](https://github.com/teviot)
-- [tmuwandi](https://github.com/tmuwandi)
-- [driou](https://github.com/driou)
-- [justyns](https://github.com/justyns)
-- [drbaker](https://github.com/drbaker)
-- [thomas9987](https://github.com/thomas9987)
-- [chuck5](https://github.com/chuck5)
-- [sjmog](https://github.com/sjmog)
-- [chengkun](https://github.com/chengkun)
-- [sexybern](https://github.com/sexybern)
-- [tomitm](https://github.com/tomitm)
-- [stephenfin](https://github.com/stephenfin)
+- [chengweiv5](https://github.com/chengweiv5), [pstonier](https://github.com/pstonier), [teviot](https://github.com/teviot), [tmuwandi](https://github.com/tmuwandi), [driou](https://github.com/driou), [justyns](https://github.com/justyns), [drbaker](https://github.com/drbaker), [thomas9987](https://github.com/thomas9987), [chuck5](https://github.com/chuck5), [sjmog](https://github.com/sjmog), [chengkun](https://github.com/chengkun), [sexybern](https://github.com/sexybern), [tomitm](https://github.com/tomitm), [stephenfin](https://github.com/stephenfin)
 
 ## Release v1.0.0
 
@@ -1686,12 +1514,7 @@ The following is for informational purposes only, no action needed. Mattermost a
 
 Many thanks to our external contributors. In no particular order: 
 
-- [jdeng](https://github.com/jdeng)
-- [Trozz](https://github.com/Trozz)
-- [LAndres](https://github.com/LAndreas)
-- [JessBot](https://github.com/JessBot)
-- [apaatsio](https://github.com/apaatsio)
-- [chengweiv5](https://github.com/chengweiv5)
+- [jdeng](https://github.com/jdeng), [Trozz](https://github.com/Trozz), [LAndres](https://github.com/LAndreas), [JessBot](https://github.com/JessBot), [apaatsio](https://github.com/apaatsio), [chengweiv5](https://github.com/chengweiv5)
 
 ## Release v0.7.0 (Beta1) 
 
@@ -1760,47 +1583,15 @@ Documentation
 
 Many thanks to our external contributors. In no particular order: 
 
-- [asubset](https://github.com/asubset)
-- [felixbuenemann](https://github.com/felixbuenemann)
-- [CtrlZvi](https://github.com/CtrlZvi)
-- [BastienDurel](https://github.com/BastienDurel)
-- [manusajith](https://github.com/manusajith)
-- [doosp](https://github.com/doosp)
-- [zackify](https://github.com/zackify)
-- [willstacey](https://github.com/willstacey)
+- [asubset](https://github.com/asubset), [felixbuenemann](https://github.com/felixbuenemann), [CtrlZvi](https://github.com/CtrlZvi), [BastienDurel](https://github.com/BastienDurel), [manusajith](https://github.com/manusajith), [doosp](https://github.com/doosp), [zackify](https://github.com/zackify), [willstacey](https://github.com/willstacey)
 
 Special thanks to the GitLab Mattermost early adopter community who influenced this release, and who play a pivotal role in bringing Mattermost to over 100,000 organizations using GitLab today. In no particular order: 
 
-- [cifvts](http://forum.mattermost.org/users/cifvts/activity)
-- [Chryb](https://gitlab.com/u/Chryb)
-- [cookacounty](https://gitlab.com/u/cookacounty)
-- [bweston92](https://gitlab.com/u/bweston92)
-- [mablae](https://gitlab.com/u/mablae)
-- [picharmer](https://gitlab.com/u/picharmer)
-- [cmtonkinson](https://gitlab.com/u/cmtonkinson)
-- [cmthomps](https://gitlab.com/u/cmthomps)
-- [m.gamperl](https://gitlab.com/u/m.gamperl)
-- [StanMarsh](https://gitlab.com/u/StanMarsh)
-- [alx1](https://gitlab.com/u/alx1)
-- [jeanmarc-leroux](https://gitlab.com/u/jeanmarc-leroux)
-- [dnoe](https://gitlab.com/u/dnoe)
-- [dblessing](https://gitlab.com/u/dblessing)
-- [mechanicjay](https://gitlab.com/u/mechanicjay)
-- [larsemil](https://gitlab.com/u/larsemil)
-- [vga](https://gitlab.com/u/vga)
-- [stanhu](https://gitlab.com/u/stanhu)
-- [kohenkatz](https://gitlab.com/u/kohenkatz)
-- [RavenB1](https://gitlab.com/u/RavenB1)
-- [booksprint](http://forum.mattermost.org/users/booksprint/activity)
-- [scottcorscadden](http://forum.mattermost.org/users/scottcorscadden/activity)
-- [sskmani](http://forum.mattermost.org/users/sskmani/activity)
-- [gosure](http://forum.mattermost.org/users/gosure/activity)
-- [jigarshah](http://forum.mattermost.org/users/jigarshah/activity)
+- [cifvts](http://forum.mattermost.org/users/cifvts/activity), [Chryb](https://gitlab.com/u/Chryb), [cookacounty](https://gitlab.com/u/cookacounty), [bweston92](https://gitlab.com/u/bweston92), [mablae](https://gitlab.com/u/mablae), [picharmer](https://gitlab.com/u/picharmer), [cmtonkinson](https://gitlab.com/u/cmtonkinson), [cmthomps](https://gitlab.com/u/cmthomps), [m.gamperl](https://gitlab.com/u/m.gamperl), [StanMarsh](https://gitlab.com/u/StanMarsh), [alx1](https://gitlab.com/u/alx1), [jeanmarc-leroux](https://gitlab.com/u/jeanmarc-leroux), [dnoe](https://gitlab.com/u/dnoe), [dblessing](https://gitlab.com/u/dblessing), [mechanicjay](https://gitlab.com/u/mechanicjay), [larsemil](https://gitlab.com/u/larsemil), [vga](https://gitlab.com/u/vga), [stanhu](https://gitlab.com/u/stanhu), [kohenkatz](https://gitlab.com/u/kohenkatz), [RavenB1](https://gitlab.com/u/RavenB1), [booksprint](http://forum.mattermost.org/users/booksprint/activity), [scottcorscadden](http://forum.mattermost.org/users/scottcorscadden/activity), [sskmani](http://forum.mattermost.org/users/sskmani/activity), [gosure](http://forum.mattermost.org/users/gosure/activity), [jigarshah](http://forum.mattermost.org/users/jigarshah/activity)
 
 Extra special thanks to GitLab community leaders for successful release of GitLab Mattermost Alpha: 
 
-- [marin](https://gitlab.com/u/marin)
-- [sytse](https://gitlab.com/u/sytse) 
+- [marin](https://gitlab.com/u/marin), [sytse](https://gitlab.com/u/sytse) 
 
 
 ## Release v0.6.0 (Alpha) 
@@ -1864,12 +1655,7 @@ Documentation
 
 Many thanks to our external contributors. In no particular order: 
 
-- [ralder](https://github.com/ralder)
-- [jedisct1](https://github.com/jedisct1)
-- [faebser](https://github.com/faebser)
-- [firstrow](https://github.com/firstrow)
-- [haikoschol](https://github.com/haikoschol)
-- [adamenger](https://github.com/adamenger)
+- [ralder](https://github.com/ralder), [jedisct1](https://github.com/jedisct1), [faebser](https://github.com/faebser), [firstrow](https://github.com/firstrow), [haikoschol](https://github.com/haikoschol), [adamenger](https://github.com/adamenger)
 
 ## Release v0.5.0 (Preview) 
 
