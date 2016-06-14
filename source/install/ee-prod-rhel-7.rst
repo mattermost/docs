@@ -176,8 +176,7 @@ Set up Mattermost Server
    - Make sure the service is executable with ``sudo chmod 664 /etc/systemd/system/mattermost.service``
    * Reload the services with ``sudo systemctl daemon-reload``
    * Start Mattermost service with``\ sudo systemctl start mattermost.service``
-   * ``sudo chkconfig mattermost on``
-   * Start server on reboot ``sudo systemctl enable mattermost.service``
+   * Start service on reboot ``sudo systemctl enable mattermost.service``
 
 Set up NGINX Server
 -------------------
