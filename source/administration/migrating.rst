@@ -21,3 +21,7 @@ The following instructions migrate Mattermost from one server to another by back
 6. Test the system is working by going to the URL of an existing team.   
     1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade
  
+Migrating from Slack
+==== 
+
+You can import channels and users from Slack into Mattermost from Team Settings > Import. Please review our documentation on `Slack Import <http://docs.mattermost.com/help/settings/team-settings.html>`_ for more details.
