@@ -9,7 +9,7 @@ Supported phones include iOS, Android, Blackberry and Windows Phone devices that
 Enabling MFA
 ------
 
-This option can be enabled by the System Administrator in the `System Console <http://docs.mattermost.com/administration/config-settings.html#service-settings>`_ under **Service Settings** > **Enable Multi-Factor Authentication**
+This option can be enabled by the System Administrator in the `System Console <http://docs.mattermost.com/administration/config-settings.html#security>`_ under **Security** > **Login** > **Enable Multi-Factor Authentication**
 
 End users can set up this feature in the `Account Settings <http://docs.mattermost.com/help/settings/account-settings.html#multi-factor-authentication-enterprise>`_ menu under **Security** > **Multi-Factor Authentication**.
 
