@@ -16,7 +16,7 @@ An obvious error in Mattermost software. Changes required to accomodate unsuppor
 
 #### Crimson Force Field
 
-When on screen text, particularly error messages, isn't helpful to its intended audience we call it a "Crimson Force Field" situation. This implies the text presented is not substantially better than using random words like "Crimson Force Field" to explain things, and may even be worse, if the text ends up misleading its audience. The words "Crimson Force Field" are intended to reproduce the feeling of confusion and awkwardness a user feels when software is cryptic and unclear. 
+When on screen text, particularly error messages, isn't helpful to its intended audience we call it a "Crimson Force Field" situation. This implies the text presented is not substantially better than using random words like "Crimson Force Field" to explain things, and may even be worse, if the text ends up misleading its audience. The words "Crimson Force Field" are intended to reproduce for the reader the feeling of confusion and awkwardness a user feels when software is cryptic and unclear. 
 
 #### Dead Tarzan 
 
