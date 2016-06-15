@@ -474,8 +474,7 @@ Finish Mattermost Server setup
    ``system_admin`` role, which gives you access to the System Console.
 3. From the ``town-square`` channel click the dropdown and choose the
    ``System Console`` option
-4. Update Email Settings. We recommend using an email sending service.
-   The example below assumes AmazonSES.
+4.  Update **Notification** > **Email** settings. We recommend using an email sending service. The example below assumes AmazonSES.
 
    -  Set *Send Email Notifications* to true
    -  Set *Require Email Verification* to true
@@ -488,16 +487,16 @@ Finish Mattermost Server setup
    -  Set *Connection Security* to ``TLS``
    -  Save the Settings
 
-5. Update File Settings
+5. Update **File** > **Storage** settings:
 
    -  Change *Local Directory Location* from ``./data/`` to
       ``/mattermost/data``
 
-6. Update Log Settings.
+6. Update **General** > **Logging** settings:
 
-   -  Set *Log to The Console* to false
+   -  Set *Log to The Console* to ``false``
 
-7. Update Rate Limit Settings.
+7. Update **Advanced** > **Rate Limiting** settings:
 
    -  Set *Vary By Remote Address* to false
    -  Set *Vary By HTTP Header* to X-Real-IP
