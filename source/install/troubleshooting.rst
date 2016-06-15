@@ -86,7 +86,7 @@ This error may appear in server logs when attempting to sign-up when using self-
 
 **Solution:** Set up a load balancer like Ngnix `per production install guide <http://docs.mattermost.com/install/prod-debian.html#set-up-nginx-with-ssl-recommended>`__. The core team is looking into allowing self-signed certificates in the future. 
 
-As a work around, in **System Console** > **ServiceSettings** set ``Enable Insecure Outgoing Connections`` to ``true``.
+As a work around, in **System Console** > **Security** > **Connections** set ``Enable Insecure Outgoing Connections`` to ``true``.
    
 This will allow insecure TLS connections, but be careful in doing so as it also opens your Mattermost site to man-in-the-middle attacks.
 
