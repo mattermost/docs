@@ -37,7 +37,7 @@ Build Break - Project X - December 12, 2015 - 15:32 GMT +0
 Outgoing webhooks are off by default, and can be enabled by the system administrator. If you are the system administrator you can enable them by doing the following:
 
 1. Login to your Mattermost team account that has the system administrator role.
-1. Enable outgoing webhooks from **System Console -> Service Settings**.
+1. Enable outgoing webhooks from **System Console** > **Integrations** > **Webhooks and Commands**.
 1. (Optional) Configure the **Enable Overriding Usernames from Webhooks and Slash Commands** option to allow external applications to post messages under any name. If not enabled, the username of the creator of the webhook URL is used to post messages.
 2. (Optional) Configure the **Enable Overriding Icon from Webhooks and Slash Commands** option to allow external applciations to change the icon of the account posting messages. If not enabled, the icon of the creator of the webhook URL is used to post messages.
 5. (Optional) Configure the **Enable Integrations for Admin Only** option to allow only system and team admins to create outgoing webhooks
