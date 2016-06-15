@@ -48,23 +48,25 @@ To enable email, configure an SMTP email service as follows:
          ``http://dockerhost:8065/`` in your browser, create a team,
          then from the main menu click **System Console**
 
-   2. Go to the **Email Settings** tab and configure the following:
+   2. Go to the **Authentication** > **Email** tab and configure the following:
 
       1.  **Allow Sign Up With Email:** ``true``
-      2.  **Send Email Notifications:** ``true``
-      3.  **Require Email Verification:** ``true``
-      4.  **Notification Display Name:** Display name on email account
+      
+   3. Go to the **Notifications** > **Email** tab and configure the following:
+   
+      1.  **Send Email Notifications:** ``true``
+      2.  **Notification Display Name:** Display name on email account
           sending notifications
-      5.  **Notification Email Address:** Email address displayed on
+      3.  **Notification Email Address:** Email address displayed on
           email account used to send notifications
-      6.  **SMTP Username**: ``SMTP Username`` from Step 1
-      7.  **SMTP Password**: ``SMTP Password`` from Step 1
-      8.  **SMTP Server**: ``SMTP Server`` from Step 1
-      9.  **SMTP Port**: ``SMTP Port`` from Step 1
-      10. **Connection Security**: ``TLS (Recommended)``
-      11. Then click **Save**
-      12. Then click **Test Connection**
-      13. If the test failed please look in **OTHER** > **Logs** for any
+      4.  **SMTP Username**: ``SMTP Username`` from Step 1
+      5.  **SMTP Password**: ``SMTP Password`` from Step 1
+      6.  **SMTP Server**: ``SMTP Server`` from Step 1
+      7.  **SMTP Port**: ``SMTP Port`` from Step 1
+      8. **Connection Security**: ``TLS (Recommended)``
+      9. Then click **Save**
+      10. Then click **Test Connection**
+      11. If the test failed please look in **OTHER** > **Logs** for any
           errors that look like ``[EROR] /api/v3/admin/test_email ...``
 
 Sample SMTP Settings
