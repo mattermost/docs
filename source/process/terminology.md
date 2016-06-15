@@ -14,6 +14,10 @@ Acronym for [Accepting Pull Request](http://docs.mattermost.com/process/acceptin
 
 An obvious error in Mattermost software. Changes required to accomodate unsupported 3rd party software (such as browsers or operating systems) are not considered bugs, they are considered improvements. 
 
+#### Crimson Force Field
+
+When on screen text, particularly error messages, isn't helpful to its intended audience we call it a "Crimson Force Field" situation. This implies the text presented is not substantially better than using random words like "Crimson Force Field" to explain things, and may even be worse, if the text ends up misleading its audience. The words "Crimson Force Field" are intended to reproduce for the reader the feeling of confusion and awkwardness a user feels when software is cryptic and unclear. 
+
 #### Dead Tarzan 
 
 The idea of letting go of an imperfect solution without a clearly thought out alternative. Based on idea of [Tarzan of the Jungle](https://en.wikipedia.org/wiki/Tarzan) letting go of a vine without having a new vine to swing to. 
