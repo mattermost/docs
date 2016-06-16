@@ -16,18 +16,18 @@ Enabling Compliance Reporting
 
 After purchasing and installing a license key for Enterprise Edition E20: 
 
-1. Go to **System Console** > **Compliance Settings** > **Enable Compliance** and set the value to ``true``.
+1. Go to **System Console** > **General** > **Compliance** > **Enable Compliance** and set the value to ``true``.
 2. (Optional) In Compliance Directory Location specify the directory in which to place completed compliance reports. Defaults to ``./data/`` if left blank.
 3. Click **Save**. 
 
-This will enable Compliance Reports to be run from the **System Console** > **OTHER** > **Compliance and Auditing** tab, as well as enable the option to generate Daily Compliance Reports.
+This will enable Compliance Reports to be run from the **System Console** > **Compliance and Auditing** tab, as well as enable the option to generate Daily Compliance Reports.
 
 Turn on Daily Compliance Reports 
 ====
 
 After enabling compliance reporting: 
 
-1. Go to **System Console** > **Compliance Settings** > **Enable Daily Report** and set the value to ``true``.
+1. Go to **System Console** > **General** > **Compliance** > **Enable Daily Report** and set the value to ``true``.
 2. Click **Save**. 
 
 Your system will now export all new messages posted within a 24-hour period as a .csv file to the location specified in **Compliance Directory Location**. This feature can be used in conjunction with centralized compliance reporting systems that move 
