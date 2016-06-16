@@ -164,8 +164,6 @@ Custom text will be shown below custom brand image on left side of server login 
  
 ### Localization Settings
 
-_Available in June 16, 2016 release_
-
 Settings to configure localization options for teams.
 
 **Default Server Language** (`"DefaultServerLocale": "en"`)  
@@ -594,8 +592,6 @@ The attribute in the LDAP server that will be used as a unique identifier in Mat
 (Optional) The attribute in the LDAP server that will be used to populate the nickname of users in Mattermost.
 
 `true`: Skips the certificate verification step for TLS or STARTTLS connections. Not recommended for production environments where TLS is required. For testing only.
-
-_Available June 16, 2016_
 
 **Synchronization Interval (In Minutes)** (`"SyncIntervalMinutes": 60`)
 
