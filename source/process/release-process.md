@@ -82,7 +82,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - CI servers are updated to the release branch  
 6. PM:  
     - Create meta issue for regressions in GitHub (see [example](https://github.com/mattermost/platform/issues/574))  
-    - For each new feature, prepare a section for the blog post, highlighting their end user benefits
+    - PM owners for each new feature prepare a section highlighting end user benefits for the blog post and post to the Marketing room, including screenshots. See [example thread](https://pre-release.mattermost.com/core/pl/3mw3dfugutndipp1a8gzczqj6c) for formatting.
 7. Marketing:
     - Tweet announcement that RC1 is ready (see [example](https://twitter.com/mattermosthq/status/664172166368264192))
     - Submits pull request for "Highlights" section of the Changelog 
