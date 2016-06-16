@@ -88,6 +88,7 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    :glob:
 
    administration/overview*
+   overview/security*
    administration/command*
    administration/config*
    administration/team-settings.md
