@@ -17,7 +17,7 @@ Mattermost has a built in file previewer that is used to view media, download fi
 #### Sharing Public Links
 Public links allow you to share file attachments with people outside your Mattermost team. Open the file previewer by clicking on the thumbnail of an attachment, then click **Get Public Link**. This opens a dialog box with a link to copy. When the link is shared and opened by another user, the file will automatically download. 
 
-If **Get Public Link** is not visible in the file previewer then contact your system administrator to enable public file links in the System Console security settings.
+If **Get Public Link** is not visible in the file previewer and you prefer the feature enabled, you can request that your System Admin enable the feature from the System Console under **Security** > **Public Links**.
 
 
 #### Downloading Files
