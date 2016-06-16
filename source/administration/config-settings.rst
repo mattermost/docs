@@ -9,7 +9,7 @@ Note: For any setting not explicitly set in ``config.json`` the Mattermost serve
 Quick Links:
 
 `General <http://docs.mattermost.com/administration/config-settings.html#id2>`_
-	`Configuration <http://docs.mattermost.com/administration/config-settings.html#id3>`_ - `Localization <http://docs.mattermost.com/administration/config-settings.html#id4>`_ - `Users and Teams <http://docs.mattermost.com/users-and-teams/config-settings.html#id5>`_ - `Privacy <http://docs.mattermost.com/administration/config-settings.html#id6>`_ - `Compliance <http://docs.mattermost.com/administration/config-settings.html#complicance-enterprise>`_ - `Logging <http://docs.mattermost.com/administration/config-settings.html#id7>`_
+	`Configuration <http://docs.mattermost.com/administration/config-settings.html#id3>`_ - `Localization <http://docs.mattermost.com/administration/config-settings.html#id4>`_ - `Users and Teams <http://docs.mattermost.com/administration/config-settings.html#id5>`_ - `Privacy <http://docs.mattermost.com/administration/config-settings.html#id6>`_ - `Compliance <http://docs.mattermost.com/administration/config-settings.html#complicance-enterprise>`_ - `Logging <http://docs.mattermost.com/administration/config-settings.html#id7>`_
 
 `Authentication <http://docs.mattermost.com/administration/config-settings.html#id12>`_
 	`Email <http://docs.mattermost.com/administration/config-settings.html#id13>`_ - `GitLab <http://docs.mattermost.com/administration/config-settings.html#id14>`_ - `LDAP <http://docs.mattermost.com/administration/config-settings.html#ldap-enterprise>`_
@@ -31,7 +31,6 @@ Quick Links:
 
 `Advanced <http://docs.mattermost.com/administration/config-settings.html#id36>`_
 	`Rate Limiting <http://docs.mattermost.com/administration/config-settings.html#id37>`_ - `Database <http://docs.mattermost.com/administration/config-settings.html#id38>`_ - `Developer <http://docs.mattermost.com/administration/config-settings.html#id39>`_
-
 
 General
 ---------------------------------
@@ -829,7 +828,7 @@ ________
 Settings configurable in config.json
 -------------------------------
 
-There are a number of settings customizable in `config.json` unavailable in the System Console and require updating from the file itself. 
+There are a number of settings customizable in ``config.json`` unavailable in the System Console and require updating from the file itself. 
 
 Service Settings
 ```````````````````````````
