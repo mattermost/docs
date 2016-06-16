@@ -19,7 +19,7 @@ If you're new to Mattermost or troubleshooting consider the following steps:
 
 - Start simple with the step-by-step install guides for your operating system.
 
-- Check the logs (``mattermost.log`` and NGNIX logs) for errors.
+- Check the logs (``mattermost.log`` and NGINX logs) for errors.
 
 - Search error messages online (Google, Yahoo, Bing, or your favorite search engine), existing solutions can often work.
 
@@ -84,7 +84,7 @@ If only a small number of users have this issue, it could be from intermittent i
 
 This error may appear in server logs when attempting to sign-up when using self-signed certificates to setup SSL, which is not yet supported by Mattermost.
 
-**Solution:** Set up a load balancer like Ngnix `per production install guide <http://docs.mattermost.com/install/prod-debian.html#set-up-nginx-with-ssl-recommended>`__. The core team is looking into allowing self-signed certificates in the future. 
+**Solution:** Set up a load balancer like NGINX `per production install guide <http://docs.mattermost.com/install/prod-debian.html#set-up-nginx-with-ssl-recommended>`__. The core team is looking into allowing self-signed certificates in the future. 
 
 As a work around, in **System Console** > **Security** > **Connections** set ``Enable Insecure Outgoing Connections`` to ``true``.
    
