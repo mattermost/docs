@@ -34,7 +34,7 @@ We offer modern communication from behind your firewall. Your users can securely
 
 - Supports integrations via webhooks, slash commands, and Web Service API
 - Offers 1st party Javascript and Golang drivers, plus a host of 3rd party drivers
-- Extended by dozens of open source, 3rd party integrations, bots, and installers
+- Extended by dozens of open source, [3rd party integrations, bots, and installers](http://www.mattermost.org/community-applications/)
 
 #### Multi-Language Support
 
