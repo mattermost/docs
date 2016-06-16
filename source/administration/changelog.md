@@ -2,9 +2,9 @@
 
 This changelog summarizes updates to [Mattermost Team Edition](http://www.mattermost.org/), an open source team messaging solution released monthly under an MIT license, and [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/), a commercial upgrade offering enterprise messaging for large organizations.
 
-## Release v3.1.0 (UNDER DEVELOPMENT)
+## Release v3.1.0
 
-Anticipated release date: 2016-06-16
+Release date: 2016-06-16
 
 ### Security Update
 
@@ -153,6 +153,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - `@all` notifications received even after being unselected from notification options
 - Channel header disappears after renaming a channel (fixed with channel switch)
 - Updates to **System Console** > **Privacy** settings for existing users requires a session update
+- Invalid config setting causes server to panic on start
 
 ### Contributors
 
