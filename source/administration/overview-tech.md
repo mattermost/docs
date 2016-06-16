@@ -1,6 +1,6 @@
-# Overview
+# Product Overview
 
-Mattermost is a production-quality, self-hosted workplace messaging solution. 
+Mattermost is a modern, self-hosted workplace messaging solution.
 
 We offer modern communication from behind your firewall. Your users can securely share messages and files across PCs and phones with continuous archiving and instant search while integrating with dozens of popular and custom tools. 
 
@@ -29,6 +29,12 @@ We offer modern communication from behind your firewall. Your users can securely
 - Host and manage dozens of teams from a single Mattermost server 
 - Easily manage your Mattermost server using a web-based System Console
 - Script setup and maintenance using Mattermost command line tools 
+
+#### Extensible 
+
+- Supports integrations via webhooks, slash commands, and Web Service API
+- Offers 1st party Javascript and Golang drivers, plus a host of 3rd party drivers
+- Extended by dozens of open source, [3rd party integrations, bots, and installers](http://www.mattermost.org/community-applications/)
 
 #### Multi-Language Support
 
