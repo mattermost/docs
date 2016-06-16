@@ -322,7 +322,7 @@ Finish Mattermost Server setup
    ``system_admin`` role, which gives you access to the System Console.
 3. From the ``town-square`` channel click the dropdown and choose the
    ``System Console`` option
-4.  Update **Notification** > **Email** settings. We recommend using an email sending service. The example below assumes AmazonSES.
+4.  Update **Notification** > **Email** settings to setup an SMTP email service. The example below assumes AmazonSES.
 
    -  Set *Send Email Notifications* to true
    -  Set *Require Email Verification* to true
