@@ -5,8 +5,8 @@ This guide explains how to upgrade your Mattermost deployment across versions an
 To start, select one of the following guides: 
 
 - [Upgrade Team Edition](http://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition)
-- [Upgrade Enterprise Edition](http://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition) 
-- [Upgrade Team Edition to Enterprise Edition](http://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition)
+- [Upgrade Enterprise Edition](http://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition)
+- [Upgrade Team Edition to Enterprise Edition](http://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition) 
 
 ### Upgrade Team Edition 
 
