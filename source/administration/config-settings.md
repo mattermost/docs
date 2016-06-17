@@ -485,11 +485,11 @@ Enter `https://<your-gitlab-url>/oauth/authorize` (example: `https://example.com
 
 **Token Endpoint** (`"TokenEndpoint": ""`)  
 
-Enter `https://<your-gitlab-url>/oauth/authorize` (example: `https://example.com:3000/oauth/token`). Use HTTP or HTTPS depending on how your server is configured.
+Enter `https://<your-gitlab-url>/oauth/token` (example: `https://example.com:3000/oauth/token`). Use HTTP or HTTPS depending on how your server is configured.
 
 **User API Endpoint** (`"UserApiEndpoint": ""`)  
 
-Enter `https://<your-gitlab-url>/oauth/authorize` (example: `https://example.com:3000/api/v3/user`). Use HTTP or HTTPS depending on how your server is configured.
+Enter `https://<your-gitlab-url>/api/v3/user` (example: `https://example.com:3000/api/v3/user`). Use HTTP or HTTPS depending on how your server is configured.
 
 ### Legals and Support Settings
 
