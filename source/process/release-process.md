@@ -79,7 +79,9 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - (Dev) Last check of tickets that need to be merged before RC1  
 5. Build:  
     - Master is tagged and branched and “Release Candidate 1″ is cut (e.g. 1.1.0-RC1) according to the [Release Candidate Checklist](https://github.com/mattermost/process/blob/master/release/create-release-candidate.md) 
-    - CI servers are updated to the release branch  
+    - CI servers are updated to the release branch 
+    - Size of bundle is checked
+    - Directory structure is reviewed and large changes posted to the team channel
 6. PM:  
     - Create meta issue for regressions in GitHub (see [example](https://github.com/mattermost/platform/issues/574))  
     - PM owners for each new feature prepare a section highlighting end user benefits for the blog post and post to the Marketing room, including screenshots. See [example thread](https://pre-release.mattermost.com/core/pl/3mw3dfugutndipp1a8gzczqj6c) for formatting.
