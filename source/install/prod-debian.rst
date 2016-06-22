@@ -167,8 +167,8 @@ Set up Mattermost Server
    **Set up systemd with a unit file**
    
    -  ``sudo touch /etc/systemd/system/mattermost.service``
-   -  ``sudo vi /etc/init.d/mattermost``
-   -  Copy the following lines into ``/etc/init.d/mattermost``
+   -  ``sudo vi /etc/systemd/system/mattermost.service``
+   -  Copy the following lines into ``/etc/systemd/system/mattermost.service``
 
       ::
 
