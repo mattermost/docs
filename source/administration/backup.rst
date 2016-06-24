@@ -3,8 +3,11 @@ Backup
 
 To backup your Mattermost server: 
 
-1. Backup your Mattermost database using standard `MySQL <https://dev.mysql.com/doc/refman/5.6/en/backup-types.html>`_ or `PostgreSQL <https://www.postgresql.org/docs/9.5/static/backup-dump.html>`_ procedures depending on your database version.
+1. Backup your Mattermost database using standard MySQL or PostgreSQL procedures depending on your database version.
 
+      - `MySQL backup documentation <https://dev.mysql.com/doc/refman/5.6/en/backup-types.html>`_ is available online. Use the selector on the page to choose your MySQL version. 
+      - `PostgreSQL backup documentation <https://www.postgresql.org/docs/9.5/static/backup-dump.html>`_ is available online. Use the navigation at the top of the page to select your PostgreSQL version. 
+     
 2. Backup your server settings stored in `config/config.json`.
 
 3. Backup files stored by your users with one of the following options: 
