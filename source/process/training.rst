@@ -54,9 +54,9 @@ Books
 Culture 
 ^^^^^
 
-Talks
+Video
 
-1. `Tribes. Seth Godin at TED <https://www.ted.com/talks/seth_godin_on_the_tribes_we_lead>`_ Creating effective teams through bottoms-up culture. 
+1. `Tribes. Seth Godin at TED <https://www.ted.com/talks/seth_godin_on_the_tribes_we_lead>`_  (17m) Creating effective teams through bottoms-up culture. 
 
 Books
 
@@ -67,8 +67,10 @@ Books
 Marketing
 ^^^^^
 
-Talks 
-- `Getting Ideas to Spread. Seth Godin. TED. <https://www.ted.com/talks/seth_godin_on_sliced_bread#t-631421>`_ - Focus your messaging on a clear target market, not the "average". 
+Video
+
+- `Getting Ideas to Spread. Seth Godin. TED. <https://www.ted.com/talks/seth_godin_on_sliced_bread#t-631421>`_ (17m) - Focus your messaging on a clear target market, not the "average". 
+
 Books
 
 1. `Marketing Principles (1-2h read) <http://www.barcharts.com/9781423215042-details.aspx#.V2dn3vkrJ1M>`_ - Crash course on marketing terminology and concepts.
@@ -88,6 +90,14 @@ Software Development Process
 1. `Scrum. Jeff Sutherland <https://www.amazon.com/Scrum-Doing-Twice-Work-Half/dp/038534645X/ref=sr_1_1?ie=UTF8&qid=1466396699&sr=8-1&keywords=scrum>`_ (256 pages) - One point of view on agile software development, with examples. 
 
 2. `ISTQB Certification Study Guide <http://istqbexamcertification.com/>`_ - Common terminology & process in software development. 
+
+Quality 
+^^^^^
+
+Video 
+
+1. `This is broken <https://www.ted.com/talks/seth_godin_this_is_broken_1>`_ (~20m) - Why bad design happens. 
+
 
 Interaction Design 
 ^^^^^
