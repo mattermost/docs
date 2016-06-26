@@ -56,7 +56,7 @@ Culture
 
 Talks
 
-1. `Tribes. Seth Godin at TED <https://www.ted.com/talks/seth_godin_on_the_tribes_we_lead>`_
+1. `Tribes. Seth Godin at TED <https://www.ted.com/talks/seth_godin_on_the_tribes_we_lead>`_ Creating effective teams through bottoms-up culture. 
 
 Books
 
@@ -67,6 +67,8 @@ Books
 Marketing
 ^^^^^
 
+Talks 
+- `Getting Ideas to Spread. Seth Godin. TED. <https://www.ted.com/talks/seth_godin_on_sliced_bread#t-631421>`_ - Focus your messaging on a clear target market, not the "average". 
 Books
 
 1. `Marketing Principles (1-2h read) <http://www.barcharts.com/9781423215042-details.aspx#.V2dn3vkrJ1M>`_ - Crash course on marketing terminology and concepts.
