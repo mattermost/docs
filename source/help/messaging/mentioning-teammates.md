@@ -5,7 +5,9 @@ _____
 Use @mentions to get the attention of specific team members.
 
 #### @Username
-You can mention a teammate by using the `@` symbol plus their username to send them a mention notification. Type `@` and you will see a list of team members who can be mentioned. Completely type a username or use the **Up** and **Down** arrow keys and then **ENTER** to select them to be mentioned.
+You can mention a teammate by using the `@` symbol plus their username to send them a mention notification. 
+
+Type `@` to bring up a list of team members who can be mentioned. To filter the list, type the first few letters of any username, first name, last name, or nickname. The **Up** and **Down** arrow keys can then be used to scroll through entries in the list, and pressing **ENTER** will select which user to mention. Once selected, the username will automatically replace the full name or nickname. 
 
 The following example sends a special mention notification to **alice** that alerts her of the channel and message where she has been mentioned. If **alice** is away from Mattermost and has [email notifications](http://docs.mattermost.com/help/getting-started/configuring-notifications.html#email-notifications) turned on, then she will receive an email alert of her mention along with the message text.
 
