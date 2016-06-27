@@ -43,6 +43,14 @@ Resources
 
 The following is a list of recommended resources for developing skills "the Mattermost way" in different areas. For the ones that require purchase you can message @matterbot to request an order, whether as physical books, digital books, audiobooks or other formats. 
 
+
+Product Management 
+^^^^^
+
+Courses
+
+- `Harvard Business School PM 101 <https://sites.google.com/site/hbspm101/home/2015-16-sessions/the-mrd-customer-discovery>`_
+
 High Performance Teams 
 ^^^^^
 
