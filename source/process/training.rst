@@ -62,7 +62,7 @@ Video
 Books
 
 1. `Tribes. Seth Godin <https://www.amazon.com/Tribes-We-Need-You-Lead/dp/1591842336?ie=UTF8&ref_=asap_bc>`_ - Creating effective teams through bottoms-up culture. 
-2. `Insider Apple. Adam Lashinsky <https://www.amazon.com/Inside-Apple-Americas-Admired---Secretive--Company-ebook/dp/B005LH4Y3G/ref=sr_1_1?s=books&ie=UTF8&qid=1466393946&sr=1-1&keywords=inside+apple>`_ - Achieving high performance in top-down culture. 
+2. `Inside Apple. Adam Lashinsky <https://www.amazon.com/Inside-Apple-Americas-Admired---Secretive--Company-ebook/dp/B005LH4Y3G/ref=sr_1_1?s=books&ie=UTF8&qid=1466393946&sr=1-1&keywords=inside+apple>`_ - Achieving high performance in top-down culture. 
 
 
 Marketing
@@ -97,7 +97,7 @@ Quality
 
 Video 
 
-1. `This is broken <https://www.ted.com/talks/seth_godin_this_is_broken_1>`_ (~20m) - Why bad design happens. 
+1. `This is broken. Seth Godin <https://www.ted.com/talks/seth_godin_this_is_broken_1>`_ (~20m) - Why bad design happens. 
 
 
 Interaction Design 
