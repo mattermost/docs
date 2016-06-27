@@ -67,7 +67,7 @@ In a high availability configuration (Enteprise Edition only) the proxy would al
 
 ### Microsoft Active Directory Single-Sign-On (Enterprise Edition) 
 
-Mattermost Enterprise Edition supports Microsoft Active Directory and LDAP single-sign-on. 
+Mattermost Enterprise Edition supports Microsoft Active Directory and LDAP single-sign-on with secure transport over TLS or stunnel. 
 
 ### On-Premises Integrations
 
@@ -136,3 +136,17 @@ Images and files shared by users are stored and retrieved in one of three option
 1. For teams sharing only modest amounts of file data, local storage on the same physical machine as the Mattermost server may be sufficient.    
 2. For enterprises sharing very large amounts of data, a Network-Attached Storage server may be used, which can scale to peta-bytes if necessary.    
 3. Alternatively, for both ease-of-use and scale, Amazon's S3 file storage service is another option as well.
+
+## Deployment Options 
+
+### Mobile devices with VPN clients (recommended) 
+
+Mattermost can be deployed behind your company firewall on a private network with access from the outside via a Virtual Private Network (VPN). This means running a VPN client on the mobile devices and desktop computers that need to access Mattermost. 
+
+The [Mattermost Push Notification Service](http://docs.mattermost.com/deployment/deployment.html#push-notification-service) (MPNS) should be behind your firewall on your private network. MPNS does not connect with mobile apps directly, it forwards push notifications from the Mattermost server to a relay service for iTunes or Google Play, or to mobile apps within an Enterprise App Store. 
+
+### Mobile devices without VPN clients 
+
+Mattermost can be deployed outside your private network by opening standard ports like 80 or 443. With this option, mobile clients and desktop computers access the Mattermost server without a VPN client, and it is recommended that users sign in with multi-factor authentication, available in Mattermost Enterprise Edition. 
+
+The [Mattermost Push Notification Service](http://docs.mattermost.com/deployment/deployment.html#push-notification-service) (MPNS) should be behind your firewall inside your private network. MPNS does not connect with mobile apps directly, it forwards push notifications from the Mattermost server to a relay service for iTunes or Google Play, or directly to mobile apps within an Enterprise App Store behind your firewall. 
