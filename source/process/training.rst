@@ -29,10 +29,10 @@ Product Managers
 Product managers are responsible for aligning teams to strategic priorities, leading and managing the product development process, and working effectively with marketing to bring the full benefits of Mattermost solutions to users and customers. 
 
 - Strategy 
-   - Every project and every team needs to align to strategic priorities and focus on intended outcomes. Amid a flood of compelling suggestions, opinions, and data, product managers must find what's vital, and rally teams around a shared vision. 
+   - Every project and every team needs to align to strategic priorities and focus on intended outcomes developed through a deep understanding of the market, user, customers and competing products and services. Amid a flood of compelling suggestions, opinions, and data, product managers must find what's vital, and rally teams around a shared vision. 
 
 - Product development 
-   - Product managers lead both the functional design process (user and customer research, analysis, ideation, prioritization, functional and user experience design, functional specification, user and customer validation), and the software development process (ticketing, prioritization, roadmap design, scheduling, sprint planning, triage, functional verification, implementation validation with users and customers, documentation, and release logistics). 
+   - Product managers lead both the functional design process (user, customer and competitor research, analysis, ideation, prioritization, functional and user experience design, functional specification, user and customer validation), and the software development process (ticketing, prioritization, roadmap design, scheduling, sprint planning, triage, functional verification, implementation validation with users and customers, documentation, and release logistics). 
    - It's the product manager's responsibility to see features shipped predictably and at high quality through planning, attention to detail and thoughtful persuasion. 
    
 - Marketing connection 
