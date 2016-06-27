@@ -33,6 +33,7 @@ Product managers are responsible for aligning teams to strategic priorities, lea
 
 - Product development 
    - Product managers lead both the functional design process (user and customer research, analysis, ideation, prioritization, functional and user experience design, functional specification, user and customer validation), and the software development process (ticketing, prioritization, roadmap design, scheduling, sprint planning, triage, functional verification, implementation validation with users and customers, documentation, and release logistics). 
+   - It's the product manager's responsibility to see features shipped predictably and at high quality through planning, attention to detail and thoughtful persuasion. 
    
 - Marketing connection 
    - Delivering benefits to users and customers based on product features is a core responsibility of product managers, working in conjunction with marketing to shape messaging and positioning and delivering collateral, events, and user and customer discussions to support sales. 
