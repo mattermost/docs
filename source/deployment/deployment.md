@@ -139,6 +139,8 @@ Images and files shared by users are stored and retrieved in one of three option
 
 ## Deployment Options 
 
+Mattermost Enterprise Edition customers can contact Mattermost, Inc. for advisory on deployment options for their specific environments. The following section describes common deployment configurations. 
+
 ### Mobile devices with VPN clients (recommended) 
 
 Mattermost can be deployed behind your company firewall on a private network with access from the outside via a Virtual Private Network (VPN). This means running a VPN client on the mobile devices and desktop computers that need to access Mattermost. 
@@ -147,6 +149,8 @@ The [Mattermost Push Notification Service](http://docs.mattermost.com/deployment
 
 ### Mobile devices without VPN clients 
 
-Mattermost can be deployed outside your private network by opening standard ports like 80 or 443. With this option, mobile clients and desktop computers access the Mattermost server without a VPN client, and it is recommended that users sign in with multi-factor authentication, available in Mattermost Enterprise Edition. 
+Mattermost can be deployed outside your private network by opening standard ports like 80 or 443. With this option, mobile clients and desktop computers access the Mattermost server without a VPN client, and it is recommended that users sign in with multi-factor authentication, available in Mattermost E10 and higher. 
 
 The [Mattermost Push Notification Service](http://docs.mattermost.com/deployment/deployment.html#push-notification-service) (MPNS) should be behind your firewall inside your private network. MPNS does not connect with mobile apps directly, it forwards push notifications from the Mattermost server to a relay service for iTunes or Google Play, or directly to mobile apps within an Enterprise App Store behind your firewall. 
+
+Certificate-based authentication for mobile devices is planned for Mattermost E20, [contact the Enterprise Sales Team for more information](https://about.mattermost.com/pricing/).
