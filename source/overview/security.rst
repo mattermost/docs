@@ -6,6 +6,7 @@ Mattermost keeps your data safe, secure, and private with enterprise-class data 
 Mattermost Enterprise Edition E20, E10, and Team Edition offer: 
 
 - Data Center-ready, private cloud deployment 
+   - Ability to keep 100% of your messaging on-premises, including mobile applications via an Enterprise App Store.
    - Ability to run behind your firewall as a Linux binary with a MySQL or PostgreSQL database.
    - Ability to use `self-host mobile applications <http://docs.mattermost.com/deployment/push.html#enterprise-app-store-eas>`_ through source code available for Mattermost iOS and Android apps, as an alternative to pre-compiled mobile apps from iTunes and Google Play.
 
