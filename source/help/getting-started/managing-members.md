@@ -48,30 +48,24 @@ The System Admin is typically a member of the IT staff and has all the privilege
 
 #### Inactive 
 
-A System Administrator has the ability to make a user account Inactive by going to **System Console > Teams**, and selecting a team to manage. From there they can go to the **User** page for the team, and manage a user's role. 
-
-When "Inactive" is selected, the user will no longer be able to log into the system. 
+A System Administrator can turn a user account Inactive by going to **System Console > Teams**, selecting a team to manage, the clicking on **User** and selecing "Make Inactive". Inactive users are removed from all teams and private groups and logged out from all devices and can no longer log in to the system. Users can be re-activated using the "Make Active" menu option. 
 
 Because Mattermost is designed as a system-of-record, there is not an option to delete users from the Mattermost system, as such an operation could compromise the integrity of message archives. 
-
-An Inactive account can also be reactivated from the System Console.
 
 ## Removing a User from a Team or Leaving a Team
 
 #### Remove from Team
 
-Any Team Administrator has the ability to remove a user from a team by going to the three dot **Main Menu > Manage Members**, and selecting **Remove From Team** in the dropdown menu beside a user entry. 
+Team Administrators can remove a user from a team by going to **Main Menu > Manage Members**, and selecting **Remove From Team** in the dropdown menu beside a user entry. 
 
 When a user is removed from a team, if they currently have the team open they will be sent back to the team selection page. The team will no longer show up in their teams list. 
 
-Removing a user from the team does not make the account Inactive. The user will still be able to sign in to the site, and join other teams. They will also be able to rejoin the team they were removed from if they receive another invite, or if the team is an ["Open"](http://docs.mattermost.com/help/settings/team-settings.html#allow-anyone-to-join-this-team) team. If the user does rejoin the team, they will no longer belong to the channels they were previously a part of. 
+Removing a user from the team does not make the account Inactive. The user will still be able to sign in to the site, and join other teams. They will also be able to rejoin the team depending on the team's restrictions. If the user does rejoin the team, they will no longer belong to the channels they were previously a part of. 
 
 A System Administrator can also remove users from teams by going to **System Console > Teams**, and selecting a team to manage. From there, they can go to the **User** page for the team and select **Remove From Team** in the dropdown beside a user entry. 
 
 #### Leaving a Team
 
-Users can also choose to remove themselves from a team, by going to the three dot **Main Menu > Leave Team**. This will remove the user from the team, and from all public channels and private groups on the team. 
+Users can remove themselves from a team by going to the three dot **Main Menu > Leave Team**. This will remove the user from the team, and from all public channels and private groups on the team. 
 
-They will only be able to rejoin the team if it is an ["Open"](http://docs.mattermost.com/help/settings/team-settings.html#allow-anyone-to-join-this-team) team, or if they receive a new invite. If they do rejoin, they will no longer be a part of their old public channels and private groups. 
-
-
+The user will still be able to sign in to the site, and join other teams. They will also be able to rejoin the team depending on the team's restrictions. If they do rejoin, they will no longer be a part of their old public channels and private groups. 
