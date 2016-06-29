@@ -105,7 +105,7 @@ Select what language Mattermost displays in the user interface. Options include:
 - French
 - German
 - Japanese
-- Portuguese
+- Portuguese (Brazilian)
 - Spanish
 
 ## Advanced
