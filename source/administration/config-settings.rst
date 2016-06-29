@@ -353,9 +353,11 @@ Skip Certificate Verification ``"SkipCertificateVerification": false``
 
 ``true``: Skips the certificate verification step for TLS or STARTTLS connections. Not recommended for production environments where TLS is required. For testing only.
 
-Synchronization Interval ``"SyncIntervalMinutes": 60``
+Synchronization Interval (minutes) ``"SyncIntervalMinutes": 60``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-LDAP Synchronization is the process by which Mattermost updates its users to reflect any updated data on the LDAP server. For example if a name for a user is updated on the LDAP server, the change will be reflected in Mattermost when the synchronization is performed. Accounts that have been removed from the LDAP server will have their active sessions cleared and no longer be able to login to Mattermost. Mattermost will perform this synchronization regularly according to the interval supplied here. Changing this will require a server restart before taking effect.
+Set how often Mattermost accounts synchronize with LDAP, in minutes (requires server restart to take effect). When synchronizing, Mattermost queries LDAP for all relevant account information and updates Mattermost accounts based on changes to attributes (first name, last name, etc.) and active/inactive status. When accounts made inactive in LDAP are made inactive in Mattermost, the user's active sessions are revoked and they are no longer able to sign-in to Mattermost. 
+
+Note: If a user is made inactive in LDAP and does not have an active session in Mattermost, they immediately lose the ability to login to the system even without synchronization being run. This is because when the user attempts to enter their LDAP credentials, Mattermost checks those credentials against the LDAP server, which will show the user as inactive. 
 
 Query Timeout ``"QueryTimeout": 60`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
