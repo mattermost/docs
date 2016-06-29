@@ -355,9 +355,7 @@ Skip Certificate Verification ``"SkipCertificateVerification": false``
 
 Synchronization Interval (minutes) ``"SyncIntervalMinutes": 60``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Set how often Mattermost accounts synchronize with LDAP, in minutes (requires server restart to take effect). When synchronizing, Mattermost queries LDAP for all relevant account information and updates Mattermost accounts based on changes to attributes (first name, last name, etc.) and active/inactive status. When accounts made inactive in LDAP are made inactive in Mattermost, the user's active sessions are revoked and they are no longer able to sign-in to Mattermost. 
-
-Note: If a user is made inactive in LDAP and does not have an active session in Mattermost, they immediately lose the ability to login to the system even without synchronization being run. This is because when the user attempts to enter their LDAP credentials, Mattermost checks those credentials against the LDAP server, which will show the user as inactive. 
+Set how often Mattermost accounts synchronize attributes with AD/LDAP, in minutes (requires server restart to take effect). When synchronizing, Mattermost queries AD/LDAP for relevant account information and updates Mattermost accounts based on changes to attributes (first name, last name, and nickname). When accounts are disabled in AD/LDAP users can no longer sign-in to Mattermost using AD/LDAP credentials, and their active sessions are revoked once Mattermost synchronizes attributes. Disabling a user in AD/LDAP does not automatically set its Mattermost account to "Inactive" it only disables AD/LDAP authentication. 
 
 Query Timeout ``"QueryTimeout": 60`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
