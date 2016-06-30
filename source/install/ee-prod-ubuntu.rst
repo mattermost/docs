@@ -189,7 +189,7 @@ Set up NGINX Server
    -  ``sudo service nginx restart``
 
 6. Map a FQDN (fully qualified domain name) like
-   **mattermost.example.com** to point to the NGINX server.
+   ``mattermost.example.com`` to point to the NGINX server.
 7. Configure NGINX to proxy connections from the internet to the
    Mattermost Server
 
@@ -296,7 +296,7 @@ Set up NGINX with SSL (Recommended)
 Finish Mattermost Server setup
 ------------------------------
 
-1. Navigate to https://mattermost.example.com and create a team and
+1. Navigate to ``https://mattermost.example.com`` and create a team and
    user.
 2. The first user in the system is automatically granted the
    ``system_admin`` role, which gives you access to the System Console.
