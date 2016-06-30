@@ -72,13 +72,13 @@ Enable User Creation ``"EnableUserCreation": true``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 ``true``: Ability to create new accounts is enabled via inviting new members or sharing the team invite link.
 
-``false``: the ability to create accounts is disabled. The create account button displays an error when trying to signup via an email invite or team invite link.
+``false``: Ability to create accounts is disabled. The **Create Account** button displays an error when trying to signup via an email invite or team invite link.
 
 Enable Team Creation ``"EnableTeamCreation": true``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
 ``true``: Ability to create a new team is enabled for all users.
 
-``false``: the ability to create teams is disabled. The Create A New Team button is hidden in the main menu UI.
+``false``: Only System Administrators can create teams from the team selection page. The **Create A New Team** button is hidden in the main menu UI.
 
 Max Users Per Team ``"MaxUsersPerTeam": 50``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
