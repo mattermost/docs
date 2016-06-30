@@ -28,7 +28,7 @@ No pull requests for major features should be submitted to the current release a
     - Update [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) for any steps needed to upgrade to new version
     - Submit NOTICE.txt PR for any new libraries added from dev, if not added already   
     - Coordinate testing:  
-        - Work with Ops to check the [Quality Gate](https://github.com/mattermost/process/blob/master/release/quality-gates.md) for feature complete  
+        - Work with Ops to check the Quality Gate for feature complete.  
         - Receive testing sign-off from feature area owners (i.e. PM/Dev either signs-off that their area is well tested, or flags potential quality issues that may exist)  
         - Check that RC Testing Spreadsheet covers any changes or new features, and that known issues are listed in the relevant tests
         - Assign each area of the release testing spreadsheet to a team member and ensure core team has access permissions 
@@ -78,7 +78,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - (Logistics) Walk through each unfinished item of this checklist  
     - (Dev) Last check of tickets that need to be merged before RC1  
 5. Build:  
-    - Master is tagged and branched and “Release Candidate 1″ is cut (e.g. 1.1.0-RC1) according to the [Release Candidate Checklist](https://github.com/mattermost/process/blob/master/release/create-release-candidate.md) 
+    - Master is tagged and branched and “Release Candidate 1″ is cut (e.g. 1.1.0-RC1) according to the Release Candidate Checklist in ``mattermost/process``
     - CI servers are updated to the release branch 
     - Size of bundle is checked
     - Directory structure is reviewed and large changes posted to the team channel
