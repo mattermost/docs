@@ -30,9 +30,9 @@ Mattermost offers a Web Service API accessible by Mattermost Drivers, listed bel
 
 Mattermost drivers offer access to the Mattermost web service API in different languages and frameworks.
 
-### [ReactJS Javascript Driver](https://github.com/mattermost/platform/blob/master/web/react/utils/client.jsx)
+### [ReactJS Javascript Driver](https://github.com/mattermost/platform/blob/master/webapp/utils/web_client.jsx)
 
-[client.jsx](https://github.com/mattermost/platform/blob/master/web/react/utils/client.jsx) - This Javascript driver connects with the ReactJS components of Mattermost. The web client does the vast majority of its work by connecting to a RESTful JSON web service. There is a very small amount of processing for error checking and set up that happens on the web server.
+[web-client.jsx](https://github.com/mattermost/platform/blob/master/webapp/utils/web_client.jsx) - This Javascript driver connects with the ReactJS components of Mattermost. The web client does the vast majority of its work by connecting to a RESTful JSON web service. There is a very small amount of processing for error checking and set up that happens on the web server.
 
 ### [Golang Driver](https://github.com/mattermost/platform/blob/master/model/client.go)
 

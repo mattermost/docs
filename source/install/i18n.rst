@@ -6,7 +6,7 @@ International Support
 This section provides documentation for countries where English language
 in uncommon. Additions from the international community are highly
 welcome. You can `help edit this document on
-GitHub. <https://github.com/mattermost/docs/edit/master/source/install/i18n.md>`__
+GitHub. <https://github.com/mattermost/docs/blob/master/source/install/i18n.rst>`__
 
 日本語 / Japanese
 -----------------
