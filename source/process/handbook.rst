@@ -6,7 +6,7 @@ Mission & Vision
 
 Our mission is: "to give every organization the power to achieve their highest priorities through modern communication."
 
-We intend to disrupt the global workplace communications market with open core solutions delivering irreistable value.
+We intend to disrupt the global workplace communications market with open core solutions delivering irresistible value.
 
 Values
 --------
@@ -19,7 +19,7 @@ We exist to serve customers. In everything we do, start with customer perspectiv
 
 Ownership 
 ======
-Own the outcomes of your activity. Don't drop the ball. When we see a vaccum on something important, we jump in--we never say "it's not my job." 
+Own the outcomes of your activity. Don't drop the ball. When we see a vacuum on something important, we jump in--we never say "it's not my job." 
 
 High Impact 
 ===========
