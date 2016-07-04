@@ -15,7 +15,7 @@ Direct Messages are for conversations between two users. These conversations are
 
 When you open a Direct Message channel with someone who is not on your current team, they will show up in the bottom section of the Direct Messages list under the "Outside this team" indicator. When you switch between teams, the list will update to reflect whether or not users belong to the current team. 
 
-There is also an online status indicator next to the names in the direct message list. It displays: online (active browser), away (no browser activity for 5 minutes), and offline (browser closed).
+There is also an online status indicator next to the names in the Direct Message list, and beside the name at the top of a Direct Message channel. It displays: online (active browser), away (no browser activity for 5 minutes), and offline (browser closed).
 
 ## Managing Channels
 Channels can be created, joined, renamed, left and deleted.
