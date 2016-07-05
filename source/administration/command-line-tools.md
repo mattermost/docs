@@ -4,9 +4,13 @@ From the directory where the Mattermost platform is installed a `platform` comma
 
 - Creating teams
 - Creating users
-- Inviting users
 - Assigning roles to users 
 - Reseting user passwords
+- Inviting users to teams
+- Inviting users to channels (Enterprise)
+- Removing users from channels (Enterprise)
+- Listing all public channels and private groups for a team (Enterprise)
+- Restoring previously deleted channels (Enterprise)
 - Permanently deleting users (use cautiously - database backup recommended before use)
 - Permanently deleting teams (use cautiously - database backup recommended before use)
 
@@ -58,8 +62,8 @@ COMMANDS:
         Example:
             platform -invite_user -team_name="name" -email="user@example.com"
 
-    -join_team                        Joins a user to the team.  It required the -email and
-                                       -team_name.  You may need to logout of your current session
+    -join_team                        Joins a user to the team.  It requires the -email and
+                                       -team_name flags.  You may need to logout of your current session
                                        for the new team to be applied.
         Example:
             platform -join_team -email="user@example.com" -team_name="name"
@@ -70,6 +74,30 @@ COMMANDS:
                                       applied.
         Example:
             platform -assign_role -email="user@example.com" -role="system_admin"
+
+    -join_channel                     Joins a user to the channel.  It requires the -email, channel_name and
+                                      -team_name flags.  You may need to logout of your current session
+                                      for the new channel to be applied.  Requires an enterprise license.
+        Example:
+            platform -join_channel -email="user@example.com" -team_name="name" -channel_name="channel_name"
+
+    -leave_channel                     Removes a user from the channel.  It requires the -email, channel_name and
+                                       -team_name flags.  You may need to logout of your current session
+                                       for the channel to be removed.  Requires an enterprise license.
+        Example:
+            platform -leave_channel -email="user@example.com" -team_name="name" -channel_name="channel_name"
+
+    -list_channels                     Lists all public channels and private groups for a given team.
+                                       It will append ' (archived)' to the channel name if archived.  It requires the 
+                                       -team_name flag.  Requires an enterprise license.
+        Example:
+            platform -list_channels -team_name="name"
+
+    -restore_channel                  Restores a previously deleted channel.
+                                      It requires the -channel_name flag and
+                                      -team_name flag.  Requires an enterprise license.
+        Example:
+            platform -restore_channel -team_name="name" -channel_name="channel_name"
 
     -reset_password                   Resets the password for a user.  It requires the
                                       -email and -password flag.
