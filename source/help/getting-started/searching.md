@@ -36,7 +36,7 @@ Hashtags do not link to channels. For example, if you have a channel named "Mark
 
 ## Search Notes and Known Issues
 
-- Search in Mattermost uses the full text search features included in either a MySQL or Postgres database. To determine what database is being used, go to the three dot **Main Menu > About Mattermost** and look for the database type.
+- Search in Mattermost uses the full text search features included in either a MySQL or Postgres database. To determine what database is being used, go to the **Main Menu** > **About Mattermost** and look for the database type.
 - Multiple search terms are connected with “AND” by default. Typing in `Mattermost website` returns results containing “Mattermost” and “website”.
 - Deployments requiring searching in Chinese, Japanese and Korean languages require MySQL 5.7.6+ and the configuration of [ngram Full-Text parser](https://dev.mysql.com/doc/refman/5.7/en/fulltext-search-ngram.html). See [CJK discussion](https://github.com/mattermost/platform/issues/2033#issuecomment-183872616) for details.
 - Unsupported cases:
@@ -44,12 +44,9 @@ Hashtags do not link to channels. For example, if you have a channel named "Mark
     - Two letter searches do not return results.  
 - Known Issues:
     - Postgres and MySQL databases:
-        - Wildcard searches do not return results.
         - Chinese characters may not return exact matches. Try adding `*` to the end of queries to run a wildcard search.
         - IP addresses, for example `10.100.200.101`, do not return results.
     - Postgres databases:
-        - Phrases in quotations return results for the individual words in the phrase.
-        - Colons in quotations cause an error.
         - Email addresses do not return results.
     - MySQL databases:
         - Hashtags or recent mentions of usernames containing a dot do return search results.
