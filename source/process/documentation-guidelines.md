@@ -84,7 +84,7 @@ For readability and clear layout, end a sub-section heading with a colon
 
 Service Based: 
 
-- [AWS Elastic Beanstalk Setup](https://github.com/mattermost/platform/blob/master/doc/install/Amazon-Elastic-Beanstalk.md)
+- [AWS Elastic Beanstalk Setup](http://docs.mattermost.com/install/docker-ebs.html)
  
 ---- 
 ##### Incorrect: 
@@ -93,7 +93,7 @@ Service Based:
 
 Service Based
 
-- [AWS Elastic Beanstalk Setup](https://github.com/mattermost/platform/blob/master/doc/install/Amazon-Elastic-Beanstalk.md)
+- [AWS Elastic Beanstalk Setup](http://docs.mattermost.com/install/docker-ebs.html)
  
 
 ---- 
@@ -162,13 +162,13 @@ Try to use fewer words when possible.
 ##### Correct: 
 
 ----
-This integration posts [issue](http://doc.gitlab.com/ee/web_hooks/web_hooks.html#issues-events), [comment](http://doc.gitlab.com/ee/web_hooks/web_hooks.html#comment-events) and [merge request](http://doc.gitlab.com/ee/web_hooks/web_hooks.html#merge-request-events) events from a GitLab repository into specific Mattermost channels by formatting output from [GitLab's outgoing webhooks](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/web_hooks/web_hooks.md) to [Mattermost's incoming webhooks](https://github.com/mattermost/platform/blob/master/doc/integrations/webhooks/Incoming-Webhooks.md).
+This integration posts [issue](http://doc.gitlab.com/ee/web_hooks/web_hooks.html#issues-events), [comment](http://doc.gitlab.com/ee/web_hooks/web_hooks.html#comment-events) and [merge request](http://doc.gitlab.com/ee/web_hooks/web_hooks.html#merge-request-events) events from a GitLab repository into specific Mattermost channels by formatting output from [GitLab's outgoing webhooks](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/web_hooks/web_hooks.md) to [Mattermost's incoming webhooks](http://docs.mattermost.com/developer/webhooks-incoming.html).
 
 ----
 ##### Incorrect: 
 
 ----
-This integration makes use of GitLab's outgoing webhooks and Mattermost's incoming webhooks to post GitLab events into Mattermost. You can find GitLab's outgoing webhooks described [here](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/web_hooks/web_hooks.md) and Mattermost's incoming webhooks described [here](https://github.com/mattermost/platform/blob/master/doc/integrations/webhooks/Incoming-Webhooks.md).
+This integration makes use of GitLab's outgoing webhooks and Mattermost's incoming webhooks to post GitLab events into Mattermost. You can find GitLab's outgoing webhooks described [here](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/web_hooks/web_hooks.md) and Mattermost's incoming webhooks described [here](http://docs.mattermost.com/developer/webhooks-incoming.html).
 
 ----
 

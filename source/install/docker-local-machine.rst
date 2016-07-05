@@ -35,7 +35,7 @@ Mac OSX
    run: ``source ~/.bash_profile``
 5. Run:
    ``docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview``
-6. When docker is done fetching the image, open http://dockerhost:8065/
+6. When docker is done fetching the image, open ``http://dockerhost:8065/``
    in your browser.
 
 Ubuntu
