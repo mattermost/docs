@@ -8,37 +8,42 @@ Expected release date: 2016-07-16
 
 ### Highlights
 
-#### Custom Emoji
+#### Languages
 
-- Create Custom Emoji from the **Main Menu** > **Custom Emoji** when enabled from the **System Console** > **Customization** > **Custom Emoji**.
-- Restrict the permissions required to create Custom Emoji (Enterprise).
-
-#### SAML Single-Sign-On (Enterprise):
-
-- Users can sign in to Mattermost with their SAML credentials and new Mattermost user accounts are automatically created on first login. Mattermost pulls user information from SAML, including first and last name, email and username.
-- Mattermost officially supports Okta and Microsoft ADFS as the identity providers (IDPs), but you may also try configuring SAML for a custom IDP.
+- Added German translation for the user interface if enabled by the System Admin from **System Console > Localization > Available Languages**.
 
 #### Policy (Enterprise)
 
 - Restrict the permission levels required to send team invitiations in **System Console** > **Policy**.
 - Restrict the permission levels required to manage public and private channels, including creating, deleting, renaming, and setting the channel header or purpose. 
 
-#### Languages
+#### SAML Single-Sign-On (Enterprise):
 
-- Added German translation for the user interface if enabled by the System Admin from **System Console > Localization > Available Languages**.
+- Users can sign in to Mattermost with their SAML credentials and new Mattermost user accounts are automatically created on first login. Mattermost pulls user information from SAML, including first and last name, email and username.
+- Mattermost officially supports Okta and Microsoft ADFS as the identity providers (IDPs), but you may also try configuring SAML for a custom IDP.
 
+#### Custom Emoji
+
+- Create Custom Emoji from the **Main Menu** > **Custom Emoji** when enabled from **System Console** > **Customization** > **Custom Emoji**.
+- Restrict the permissions required to create Custom Emoji (Enterprise).
+
+#### Performance
+- Gzip compression for static content files decreases time for first page load, enabled from **System Console** > **Configuration**.
+- Reduced the total Mattermost package size from 25.7MB to 18.9MB.
 
 ### Improvements
 
-**On-Boarding**
+**Users**
 
 - After account creation, users are automatically directed to the team where they were invited instead of the Team Selection page.
-- Allow System Admins to create teams even if team creation is disabled via the System Console.
+- Users can now be removed from teams via the **Main Menu** > **Manage Members** modal.
+
 
 **System Console**
 
 - Updated labeling of System Console settings in the UI for consistency and accuracy.
 - (Enterprise) Help text was added to the **Reload Configuration from Disk** and **Recycle Database Connections** buttons to explain their use in the switching databases with no down time.
+- Allow System Admins to create teams even if team creation is disabled via the System Console.
 
 **Notifications**
 
@@ -49,30 +54,25 @@ Expected release date: 2016-07-16
 
 - Reply button and [...] menu now appear in a hovering UI element to increase the available margin width in the center channel.
 - Right-hand sidebar can now be expanded when viewing threads or search results.
-- Smileys ending in a letter are now prioritized first in the autocomplete list.
+- Text emoticons now show up as the first entries in the autocomplete list
 - Added an online indicator to the header of Direct Message channels.
 - Added database type to the About Mattermost dialog.
 - Removed unnecessary resizing when opening and closing the right hand sidebar.
 - Removed jumping of the center channel when new messages are posted.
 - Updated the channel info dialog to be more user friendly.
 
-**LDAP (Enterprise)**
-
-- Added a button to manually trigger LDAP synchronization.
-- Updating Synchronization Interval no longer requires a server restart to take effect.
-- Improved logging for LDAP synchronization.
-- Added validation to the LDAP settings in the System Console so an error is triggered if required fields are missing.
-
 **Enterprise**
 
 - [New command line tools](http://docs.mattermost.com/administration/command-line-tools.html) added, such as inviting and removing users from channels, and restoring previously deleted channels.
-- Added the ability to set different themes per team.
+- Added a button to manually trigger LDAP synchronization.
+- Updating LDAP Synchronization Interval no longer requires a server restart to take effect.
+- Improved logging for LDAP synchronization.
+- Added validation to the LDAP settings in the System Console so an error is triggered if required fields are missing.
 
 ### Bug Fixes
 
 - Privacy settings in the system console now refresh correctly when hiding email addresses or full names.
 - Fixed the cross contamination of new channels created on different teams in the same browser.
-- Create channel modal now saves upon pressing `ENTER` or `CTRL+ENTER` depending on the user setting.
 - Updated the GitLab SSO error message for clarity if another Mattermost account is already associated with the GitLab account.
 - Team creation via GitLab SSO no longer throws an error if email domains are restricted.
 - Channel header no longer disappears after renaming a channel
@@ -168,12 +168,18 @@ In addition to changes to Team Edition, the following config settings were made 
 ### Known Issues
 
 - “More” option under Direct Message list no longer shows count of team members not in your direct message list.
-- On Firefox, search results for hashtags are not properly highlighted.
-- Clicking on a desktop notification from another team doesn’t open the team.
 - Webhook attachments don't show up in search results.
-- On Firefox, System Console sidebar completely disappears when an LDAP setting is saved
-- On Firefox, `CTRL/CMD + U` keyboard shortcut doesn't work
-- `/join` sometimes throws an error
+- On Firefox, System Console sidebar completely disappears when an LDAP setting is saved.
+- On Firefox, `CTRL/CMD + U` keyboard shortcut doesn't work.
+- `/join` sometimes throws an error.
+- Sometimes only the last character typed in the channel switcher appears.
+- Formatting of multiple lists in a row breaks markdown.
+- Hitting the URL of a private team you used to belong to shows a blank Team Selection page.
+- Accessing the System Console URL when logged out causes the browser to hang.
+- Youtube videos show as "Video not found" on Desktop App
+- Search terms contained in hashtags are not highlighted in the search results.
+- Files sent in private chat to members in a different team are not accessible.
+- Center channel appears blank after initial page load on iOS.
 
 ### Contributors
 
