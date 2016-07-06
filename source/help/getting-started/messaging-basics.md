@@ -13,6 +13,8 @@ _____
 
 ![markdown](../../images/messagesTable1.PNG)
 
+**Quickly add emoji** by typing ":", which will open an emoji autocomplete. If the existing emoji don't cover what you want to express, you can also create your own [Custom Emoji](http://docs.mattermost.com/help/settings/custom-emoji.html).
+
 **Attach files** by dragging and dropping into Mattermost or clicking the attachment icon in the text input box.
 
 Learn more about:
