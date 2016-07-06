@@ -8,25 +8,187 @@ Expected release date: 2016-07-16
 
 ### Highlights
 
+#### Custom Emoji
+
+- Create Custom Emoji from the **Main Menu** > **Custom Emoji** when enabled from the **System Console** > **Customization** > **Custom Emoji**.
+- Restrict the permissions required to create Custom Emoji (Enterprise).
+
+#### SAML Single-Sign-On (Enterprise):
+
+- New Mattermost user accounts are automatically created the first time a user signs in with their SAML credentials. Mattermost pulls user information from SAML, including first and last name, email and username.
+- Mattermost officially supports Okta and Microsoft ADFS as the identity providers (IDPs), but you may also try configuring SAML for a custom IDP.
+
+#### Policy (Enterprise)
+
+- Restrict the permission levels required to send team invitiations in **System Console** > **Policy**.
+- Restrict the permission levels required to manage public and private channels, including creating, deleting, renaming, and setting the channel header or purpose. 
+
+#### Languages
+
+- Added German translation for the user interface if enabled by the System Admin from **System Console > Localization > Available Languages**.
+
+
 ### Improvements
 
-Enterprise
+**On-Boarding**
+
+- After account creation, users are automatically directed to the team where they were invited instead of the Select Teams page.
+- Allow System Admins to create teams even if team creation is disabled via the System Console.
+
+**System Console**
+
+- Updated labeling of System Console settings in the UI for consistency and accuracy.
+- (Enterprise) Help text was added to the **Reload Configuration from Disk** and **Recycle Database Connections** buttons to explain their use in the switching databases with no down time.
+
+**Notifications**
+
+- Address displayed in the email notification footer is now configurable in the System Console.
+- Direct Message desktop notifications now display with a "Direct Message" title.
+
+**Web UI**
+
+- Reply button and [...] menu now appear in a hovering UI element to increase the available margin width in the center channel.
+- Right-hand sidebar can now be expanded when viewing threads or search results.
+- Added an online indicator to the header of Direct Message channels.
+- Added database type to the About Mattermost dialog.
+- Removed unnecessary resizing when opening and closing the right hand sidebar.
+- Removed jumping of the center channel when new messages are posted.
+- Updated the channel info dialog to be more user friendly.
+
+**LDAP (Enterprise)**
+
+- Added a button to manually trigger LDAP synchronization.
+- Updating Synchronization Interval no longer requires a server restart to take effect.
+- Improved logging for LDAP synchronization.
+- Added validation to the LDAP settings in the System Console so an error is triggered if required fields are missing.
+
+**Enterprise**
+
+- [New command line tools](http://docs.mattermost.com/administration/command-line-tools.html) added, such as inviting and removing users from channels, and restoring previously deleted channels.
+- Added the ability to set different themes per team.
 
 ### Bug Fixes
+
+- Smileys ending in a letter are now prioritized first in the autocomplete list.
+- Clarified the GitLab SSO error message if another Mattermost account is already associated with the GitLab account.
+- Privacy settings in the system console now refresh correctly when hiding email addresses or full names.
+- Fixed the cross contamination of new channels created on different teams in the same browser.
+- Create channel modal now saves upon pressing `ENTER` or `CTRL+ENTER` depending on the user setting.
+- Team creation via GitLab SSO no longer throws an error if email domains are restricted.
+- Channel header no longer disappears after renaming a channel
+- Testing the email connection in the System Console no longer throws an error.
+- Multiline list items are now displayed correctly on new lines.
+- Error message is updated when switching from email to GitLab SSO authentication that is already used by another account.
+- Timestamps no longer require a page refresh when switching between 12h and 24h display formats.
+- `#in`, `#from`, or `#channel` now highlight in search results.
+- No longer require a page refresh before enabling compliance reporting in the System Console.
+- `@all` no longer sends mentions if unselected in Account Settings.
+- Users are no longer redirected to the switch teams page after changing authentication method from GitLab SSO to email.
+- Invalid MFA token error message now clears correcly from the UI.
+- Errors now correcly clear from the UI when changing passwords.
+- System Console users list no longer throws an error when trying to demote a member from a System Admin.
+- iOS radio buttons no longer stay selected when switching between options.
+- Email addresses now display for System Admins even if hidden in the System Console.
+- Code themes now save when updated via Account settings.
+- file name is now displayed inctead of the full path to the file in code snippet previews.
+- Config settings are refreshed immediately when **Reload Configuration from Disk** is clicked.
+- Preview feature checkboxes now reset after changes are canceled.
+- Updated the markdown parser to fix poor handling of certain links.
+- Right-hand sidebar no longer appears black in some cases on IE11 and Edge.
+- Error box highlighting on the claim LDAP account page is fixed to only highlight the invalid input box.
+- Errors in the system console are now properly aligned.
+- Button to resend verification email no longer throws an error when clicked.
+- Direct Messages modal loads faster since it is no longer cleared from memory each time it closes.
+- Graphs in the **System Console > Site Statistics** now have the same start date for comparison.
+- Fixed an issue where new languages are not added by default. Any server which is upgraded to Mattermost v3.1 will need to manually set **System Console > Localization > Available Languages** blank to have new languages added by default.
+- Previously, a few shortcuts that used `CTRL` were overwriting existing messaging shortcuts in Mac. This has been changed so they only work with `CMD`. See [documentation](http://docs.mattermost.com/help/messaging/keyboard-shortcuts.html) for more details.
+- Email body now contains the `siteURL` when inviting a user by email via CLI (command line interface)
+- YouTube videos now stop playing when collapsed.
+- Fixed error when adding an incoming webhook to a public channel the user is currently not in.
+- Error merssage displayed on password reset page is now formatted correctly.
 
 
 ### Compatibility  
 Changes from v3.1 to v3.2:
 
-**config.json**    
+#### config.json   
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console. 
 
 **Changes to Team Edition:**
 
+- Under `EmailSettings` in `config.json`:
+   - Added `"FeedbackOrganization": ""` to specify organization name and address, which will be displayed on email notifications from Mattermost.
+
+- Under `ServiceSettings` in `config.json`:
+   - Added `"EnableCustomEmoji": false`. When set to `true`, enables Custom Emoji option in the Main Menu where users can create customized emoji.
+
+ - Under `LocalizationSettings` in `config.json`:
+   - Changed: `"AvailableLocales": ""` to allow new languages be added by default.
+
+ - Under `LogSettings` in `config.json`:
+   - Added `"EnableWebhookDebugging": true`. When set to `true`, contents of incoming webhooks are printed to log files for debugging.
+
 **Changes to Enterprise Edition:**
 
+- Under `EmailSettings` in `config.json`:
+   - Added `"FeedbackOrganization": ""` to specify organization name and address, which will be displayed on email notifications from Mattermost.
+
+ - Under `LocalizationSettings` in `config.json`:
+   - Changed: `"AvailableLocales": ""` to allow new languages be added by default.
+
+ - Under `LogSettings` in `config.json`:
+   - Added `"EnableWebhookDebugging": true`. When set to `true`, contents of incoming webhooks are printed to log files for debugging.
+   
+- Under `TeamSettings` in `config.json`:
+   - Added `"RestrictTeamInvite": "all"` to set the permissions required to send team invites.
+   - Added `"RestrictPublicChannelManagement": "all"` to set the permissions required to manage public channels.
+   - Added `"RestrictPrivateChannelManagement": "all"` to set the permissions required to manage private channels.
+
+- Under `ServiceSettings` in `config.json`:
+   - Added `"EnableCustomEmoji": false`. When set to `true`, enables Custom Emoji option in the Main Menu, where users can go to create customized emoji.
+   - Added `"RestrictCustomEmojiCreation": "all"` to set the permissions required to create custom emoji.
+
+ - Under `SamlSettings` in `config.json`:
+   - Added `"Enable": false` to allow login using SAML. See [documentation](http://docs.mattermost.com/deployment/sso-saml.html) to learn more about configuring SAML for Mattermost.
+   - Added `"Verify": false` to control whether Mattermost verifies the signature sent from the SAML Response matches the Service Provider Login URL.
+   - Added `"Encrypt": false`to control whether Mattermost will decrypt SAML Assertions encrypted with your Service Provider Public Certificate.
+   - Added `"IdpUrl": ""` to set the SAML SSO URL where Mattermost sends a SAML request to start login sequence.
+   - Added `"IdpDescriptorUrl": ""` to set the Identity Provider Issuer URL for the Identity Provider you use for SAML requests.
+   - Added `"AssertionConsumerServiceURL": ""` to set the Service Provider Login URL.
+   - Added `"IdpCertificateFile": ""` to set the public authentication certificate issued by your Identity Provider.
+   - Added `"PublicCertificateFile": ""` to set certificate used to generate the signature on a SAML request to the Identity Provider for a service provider initiated SAML login, when Mattermost is the Service Provider.
+   - Added `"PrivateKeyFile": ""` to set the private key used to decrypt SAML Assertions from the Identity Provider.
+   - Added `"FirstNameAttribute": ""` to set the attribute in the SAML Assertion that will be used to populate the first name of users in Mattermost.
+   - Added `"LastNameAttribute": ""` to set the attribute in the SAML Assertion that will be used to populate the last name of users in Mattermost.
+   - Added `"EmailAttribute": ""` to set the attribute in the SAML Assertion that will be used to populate the email of users in Mattermost.
+   - Added `"UsernameAttribute": ""` to set the attribute in the SAML Assertion that will be used to populate the username of users in Mattermost.
+   - Added `"NicknameAttribute": ""` to set the attribute in the SAML Assertion that will be used to populate the nickname of users in Mattermost.
+   - Added `"LocaleAttribute": ""` to set the attribute in the SAML Assertion that will be used to populate the language of users in Mattermost.
+   - Added `"LoginButtonText": ""` set the text that appears in the login button on the login page.
+
+#### Database Changes from v3.1 to v3.2
+
+**TeamMembers Table**    
+- Added `DeleteAt` column.
+
+**Emoji Table**    
+- Added `Emoji` table.
+
 ### Known Issues
+
+- “More” option under Direct Message list no longer shows count of team members not in your direct message list.
+- On Firefox, search results for hashtags are not properly highlighted.
+- Clicking on a desktop notification from another team doesn’t open the team.
+- Webhook attachments don't show up in search results.
+- On Firefox, System Console sidebar completely disappears when an LDAP setting is saved
+- On Firefox, `CTRL/CMD + U` keyboard shortcut doesn't work
+- Copying and pasting an image from a browser doesn't work
+- `/join` sometimes throws an error
+- When upgrading to 3.X, syntax highlighting using Solarized code theme is lost
+- In Compact view, clicking on a file in the first post in the right hand sidebar attempts to download the file
+- Unable to leave a private channel in mobile view
+- Invalid config setting causes server to panic on start
 
 ### Contributors
 
