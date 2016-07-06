@@ -131,40 +131,40 @@ Next, we export the identity provider certificate, which will be later uploaded 
 
 ![adfs_20_export_idp_cert_copy.PNG](../../source/images/adfs_20_export_idp_cert_copy.PNG)
 
-23. In the **Certificate Export Wizard** screen, select the option **Base-64 encoded X.509 (.CER)** and click **Next**.
+23) In the **Certificate Export Wizard** screen, select the option **Base-64 encoded X.509 (.CER)** and click **Next**.
 
 ![adfs_21_export_idp_cert_wizard.PNG](../../source/images/adfs_21_export_idp_cert_wizard.PNG)
 
-24. In the **Completing the Certificate Export Wizard** screen, click `Finish`, then `OK`.
+24) In the **Completing the Certificate Export Wizard** screen, click `Finish`, then `OK`.
 
 You’re now about to finish configuring SAML for Mattermost!
 
 ### Configure SAML for Mattermost
 
-25. Start Mattermost server and sign into Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**.
+25) Start Mattermost server and sign into Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**.
   - `SAML SSO URL`: **SAML 2.0/W-Federation URL** from the ADFS Endpoints section (see [Basic Requirements](http://docs.mattermost.com/deployment/sso-saml-adfs-basic-requirements.html))
   - `Identity Provider Issuer URL`: `Relying party trust identifier` from ADFS you specified in step 8.
   - `Identity Provider Public Certificate`: X.509 Public Certificate you downloaded in step 24.
 
 ![adfs_22_mattermost_basics.PNG](../../source/images/adfs_22_mattermost_basics.PNG)
 
-26. (Optional) Configure Mattermost to verify the signature. The `Service Provider Login URL` is the `SAML 2.0 SSO service URL` you specified in ADFS in step 7.
+26) (Optional) Configure Mattermost to verify the signature. The `Service Provider Login URL` is the `SAML 2.0 SSO service URL` you specified in ADFS in step 7.
 
 ![adfs_23_mattermost_verification.PNG](../../source/images/adfs_23_mattermost_verification.PNG)
 
-27. (Optional) Enable encryption based on the parameters provided in ADFS in step 6.
+27) (Optional) Enable encryption based on the parameters provided in ADFS in step 6.
 
 ![adfs_24_mattermost_encryption.PNG](../../source/images/adfs_24_mattermost_encryption.PNG)
 
-28. Set attributes for the SAML Assertions, which will be used to update user information in Mattermost. Attributes for email, username, first name and last name are required and should match the values you entered in ADFS in step 15. See [documentation on SAML configuration settings](http://docs.mattermost.com/administration/config-settings.html#saml-enterprise) for more detail.
+28) Set attributes for the SAML Assertions, which will be used to update user information in Mattermost. Attributes for email, username, first name and last name are required and should match the values you entered in ADFS in step 15. See [documentation on SAML configuration settings](http://docs.mattermost.com/administration/config-settings.html#saml-enterprise) for more detail.
 
 ![adfs_25_mattermost_attributes.PNG](../../source/images/adfs_25_mattermost_attributes.PNG)
 
-29. (Optional) Lastly, customize the login button text.
+29) (Optional) Lastly, customize the login button text.
 
 ![adfs_26_mattermost_login_button.PNG](../../source/images/adfs_26_mattermost_login_button.PNG)
 
-30. Click `Save`.
+30) Click `Save`.
 
 You’re done! If you’d like to confirm SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication via **Account Settings > General > Sign-in Method > Switch to SAML SSO** and sign in with your SAML credentials to complete the switch.
 
