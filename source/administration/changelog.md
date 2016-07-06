@@ -122,10 +122,10 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Under `ServiceSettings` in `config.json`:
    - Added `"EnableCustomEmoji": false`. When set to `true`, enables Custom Emoji option in the Main Menu where users can create customized emoji.
 
- - Under `LocalizationSettings` in `config.json`:
+- Under `LocalizationSettings` in `config.json`:
    - Changed: `"AvailableLocales": ""` to allow new languages be added by default.
 
- - Under `LogSettings` in `config.json`:
+- Under `LogSettings` in `config.json`:
    - Added `"EnableWebhookDebugging": true`. When set to `true`, contents of incoming webhooks are printed to log files for debugging.
 
 **Changes to Enterprise Edition:**    
@@ -139,7 +139,7 @@ In addition to changes to Team Edition, the following config settings were made 
 - Under `ServiceSettings` in `config.json`:
    - Added `"RestrictCustomEmojiCreation": "all"` to set the permissions required to create custom emoji.
 
- - Under `SamlSettings` in `config.json`:
+- Under `SamlSettings` in `config.json`:
    - Added `"Enable": false` to allow login using SAML. See [documentation](http://docs.mattermost.com/deployment/sso-saml.html) to learn more about configuring SAML for Mattermost.
    - Added `"Verify": false` to control whether Mattermost verifies the signature sent from the SAML Response matches the Service Provider Login URL.
    - Added `"Encrypt": false`to control whether Mattermost will decrypt SAML Assertions encrypted with your Service Provider Public Certificate.
