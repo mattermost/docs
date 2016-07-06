@@ -15,7 +15,7 @@ Expected release date: 2016-07-16
 
 #### SAML Single-Sign-On (Enterprise):
 
-- New Mattermost user accounts are automatically created the first time a user signs in with their SAML credentials. Mattermost pulls user information from SAML, including first and last name, email and username.
+- Users can sign in to Mattermost with their SAML credentials and new Mattermost user accounts are automatically created on first login. Mattermost pulls user information from SAML, including first and last name, email and username.
 - Mattermost officially supports Okta and Microsoft ADFS as the identity providers (IDPs), but you may also try configuring SAML for a custom IDP.
 
 #### Policy (Enterprise)
@@ -32,7 +32,7 @@ Expected release date: 2016-07-16
 
 **On-Boarding**
 
-- After account creation, users are automatically directed to the team where they were invited instead of the Select Teams page.
+- After account creation, users are automatically directed to the team where they were invited instead of the Team Selection page.
 - Allow System Admins to create teams even if team creation is disabled via the System Console.
 
 **System Console**
@@ -49,6 +49,7 @@ Expected release date: 2016-07-16
 
 - Reply button and [...] menu now appear in a hovering UI element to increase the available margin width in the center channel.
 - Right-hand sidebar can now be expanded when viewing threads or search results.
+- Smileys ending in a letter are now prioritized first in the autocomplete list.
 - Added an online indicator to the header of Direct Message channels.
 - Added database type to the About Mattermost dialog.
 - Removed unnecessary resizing when opening and closing the right hand sidebar.
@@ -69,11 +70,10 @@ Expected release date: 2016-07-16
 
 ### Bug Fixes
 
-- Smileys ending in a letter are now prioritized first in the autocomplete list.
-- Clarified the GitLab SSO error message if another Mattermost account is already associated with the GitLab account.
 - Privacy settings in the system console now refresh correctly when hiding email addresses or full names.
 - Fixed the cross contamination of new channels created on different teams in the same browser.
 - Create channel modal now saves upon pressing `ENTER` or `CTRL+ENTER` depending on the user setting.
+- Updated the GitLab SSO error message for clarity if another Mattermost account is already associated with the GitLab account.
 - Team creation via GitLab SSO no longer throws an error if email domains are restricted.
 - Channel header no longer disappears after renaming a channel
 - Testing the email connection in the System Console no longer throws an error.
@@ -85,16 +85,15 @@ Expected release date: 2016-07-16
 - `@all` no longer sends mentions if unselected in Account Settings.
 - Users are no longer redirected to the switch teams page after changing authentication method from GitLab SSO to email.
 - Invalid MFA token error message now clears correcly from the UI.
-- Errors now correcly clear from the UI when changing passwords.
+- Errors now correctly clear from the UI when changing passwords.
 - System Console users list no longer throws an error when trying to demote a member from a System Admin.
 - iOS radio buttons no longer stay selected when switching between options.
 - Email addresses now display for System Admins even if hidden in the System Console.
 - Code themes now save when updated via Account settings.
-- file name is now displayed inctead of the full path to the file in code snippet previews.
+- File name is now displayed instead of the full path to the file in code snippet previews.
 - Config settings are refreshed immediately when **Reload Configuration from Disk** is clicked.
 - Preview feature checkboxes now reset after changes are canceled.
 - Updated the markdown parser to fix poor handling of certain links.
-- Right-hand sidebar no longer appears black in some cases on IE11 and Edge.
 - Error box highlighting on the claim LDAP account page is fixed to only highlight the invalid input box.
 - Errors in the system console are now properly aligned.
 - Button to resend verification email no longer throws an error when clicked.
@@ -174,12 +173,7 @@ In addition to changes to Team Edition, the following config settings were made 
 - Webhook attachments don't show up in search results.
 - On Firefox, System Console sidebar completely disappears when an LDAP setting is saved
 - On Firefox, `CTRL/CMD + U` keyboard shortcut doesn't work
-- Copying and pasting an image from a browser doesn't work
 - `/join` sometimes throws an error
-- When upgrading to 3.X, syntax highlighting using Solarized code theme is lost
-- In Compact view, clicking on a file in the first post in the right hand sidebar attempts to download the file
-- Unable to leave a private channel in mobile view
-- Invalid config setting causes server to panic on start
 
 ### Contributors
 
