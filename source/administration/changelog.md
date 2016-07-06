@@ -129,16 +129,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under `LogSettings` in `config.json`:
    - Added `"EnableWebhookDebugging": true`. When set to `true`, contents of incoming webhooks are printed to log files for debugging.
 
-**Changes to Enterprise Edition:**
-
-- Under `EmailSettings` in `config.json`:
-   - Added `"FeedbackOrganization": ""` to specify organization name and address, which will be displayed on email notifications from Mattermost.
-
- - Under `LocalizationSettings` in `config.json`:
-   - Changed: `"AvailableLocales": ""` to allow new languages be added by default.
-
- - Under `LogSettings` in `config.json`:
-   - Added `"EnableWebhookDebugging": true`. When set to `true`, contents of incoming webhooks are printed to log files for debugging.
+**Changes to Enterprise Edition:**    
+In addition to changes to Team Edition, the following config settings were made to the Enterprise Edition. They will only work on servers with an Enterprise License that has the feature enabled.
    
 - Under `TeamSettings` in `config.json`:
    - Added `"RestrictTeamInvite": "all"` to set the permissions required to send team invites.
@@ -146,7 +138,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
    - Added `"RestrictPrivateChannelManagement": "all"` to set the permissions required to manage private channels.
 
 - Under `ServiceSettings` in `config.json`:
-   - Added `"EnableCustomEmoji": false`. When set to `true`, enables Custom Emoji option in the Main Menu, where users can go to create customized emoji.
    - Added `"RestrictCustomEmojiCreation": "all"` to set the permissions required to create custom emoji.
 
  - Under `SamlSettings` in `config.json`:
@@ -340,15 +331,11 @@ Multiple setting options were added to `config.json`. Below is a list of the add
     - Added `"DefaultClientLocale": “en”` to set default language for newly created users and for pages where the user hasn't logged in
     - Added `"AvailableLocales": “en,es,fr,ja,pt-BR”` to set which languages are available for users in Account Settings. The language specified in `DefaultClientLocale` should be included in this list.
 
-**Changes to Enterprise Edition:**
+**Changes to Enterprise Edition:**    
+In addition to changes to Team Edition, the following config settings were made to the Enterprise Edition. They will only work on servers with an Enterprise License that has the feature enabled.
 
  - Under `LdapSettings` in `config.json`:
     - Added `"SyncIntervalMinutes": "60"` to allow system admins adjust how frequently Mattermost performs LDAP synchronization to update users
-
- - Under `LocalizationSettings` in `config.json`:
-    - Added `"DefaultServerLocale": “en”` to set default language for the system messages and logs
-    - Added `"DefaultClientLocale": “en”` to set default language for newly created users and for pages where the user hasn't logged in
-    - Added `"AvailableLocales": “en,es,fr,ja,pt-BR”` to set which languages are available for users in Account Settings. The language specified in `DefaultClientLocale` should be included in this list.
 
 ### Known Issues
 
@@ -558,8 +545,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
     - Changed: `"SupportEmail": "feedback@mattermost.com"`
 
 **Changes to Enterprise Edition:**
-
-The following config settings will only work on servers with an Enterprise License that has the feature enabled. 
+In addition to changes to Team Edition, the following config settings were made to the Enterprise Edition. They will only work on servers with an Enterprise License that has the feature enabled.
 
 - Under `ServiceSettings` in `config.json`:
   - Added `"EnableMultifactorAuthentication": false` to enable Multifactor Authentication
@@ -567,14 +553,6 @@ The following config settings will only work on servers with an Enterprise Licen
 - Under `TeamSettings` in `config.json`:
     -  Added `"EnableCustomBrand": false` to set whether custom branding of the login page is turned on. 
     -  Added `"CustomBrandText": ""` to set what text will show up on the login page, if `"EnableCustomBrand":` is set to `true`.
-
-- Under `SupportSettings` in `config.json`, default support links were changed and need to be manually updated for existing installs:
-    - Changed: `"TermsOfServiceLink": "https://about.mattermost.com/default-terms/"`
-    - Changed: `"PrivacyPolicyLink": "https://about.mattermost.com/default-privacy-policy/"`
-    - Changed: `"AboutLink": "https://about.mattermost.com/default-about/"`
-    - Changed: `"HelpLink": "https://about.mattermost.com/default-help/"`
-    - Changed: `"ReportAProblemLink": "https://about.mattermost.com/default-report-a-problem/"`
-    - Changed: `"SupportEmail": "feedback@mattermost.com"`
 
 - Under `LdapSettings` in `config.json`:
     - Added `"ConnectionSecurity":""` to set the type of connection security Mattermost uses to connect to LDAP. Options are `""` (no security), `TLS` or `STARTTLS`.
