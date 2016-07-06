@@ -50,7 +50,7 @@ The System Admin is typically a member of the IT staff and has all the privilege
 
 A System Administrator has the ability to make a user account Inactive by going to **System Console > Teams**, and selecting a team to manage. From there they can go to the **User** page for the team, and manage a user's role. 
 
-When "Inactive" is selected, the user will be logged out of the system, and will no longer be able to log into the system. They will no longer appear in the channel members list. They will be removed from the Direct Message "More" menu, the Direct Message channel will remain open for all users with it in the sidebar until it is closed. In the "Manage Members" list and the users list in the System Console, the user will show as "Inactive". 
+When "Inactive" is selected, the user will be logged out of the system, and will receive an error message if they try to log back in. The user will no longer appear in the channel members list. They will be removed from the Direct Message "More" menu, the Direct Message channel will remain open for all users with it in the sidebar until it is closed. In the "Manage Members" list and the users list in the System Console, the user will show as "Inactive". 
 
 Because Mattermost is designed as a system-of-record, there is not an option to delete users from the Mattermost system, as such an operation could compromise the integrity of message archives. 
 
