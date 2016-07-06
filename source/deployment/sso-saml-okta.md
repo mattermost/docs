@@ -2,6 +2,10 @@
 
 The following process provides steps to configure SAML with Okta for Mattermost.
 
+### Pre-installation
+
+Before configuring SAML with Okta, make sure you have the [XML Security Library](https://www.aleksey.com/xmlsec/download.html)  installed on your Mattermost instance. The XML Security Library is usually included as part of Debian GNU/Linux.
+
 ### Set up a connection app for Mattermost SSO
 
 1) Sign into Okta as an administrator.
@@ -14,7 +18,7 @@ The following process provides steps to configure SAML with Okta for Mattermost.
 
 4) Enter **General Settings** for the application, including `App name` and `App logo` (optional). It is recommended to display the application icon to users, including in the Okta Mobile app.
 
-If you’d like to use a Mattermost logo for the application, you are free to download one [here](../../source/images/okta_mattermost_logo.PNG)
+If you’d like to use a Mattermost logo for the application, you are free to download one [from our page](http://www.mattermost.org/brand-guidelines/)
 
 ![okta_2_general_settings](../../source/images/okta_2_general_settings.PNG)
 
@@ -30,7 +34,7 @@ If you’d like to use a Mattermost logo for the application, you are free to do
 
 ![okta_4_initial_saml_settings.PNG](../../source/images/okta_4_initial_saml_settings.PNG)
 
-Then, set **Assertion Encryption** as `Encrypted` and generate the encryption certificates. You are free to generate the certificates by [downloading a built script here](broken link, to be added).
+Then, set **Assertion Encryption** as `Encrypted` and generate the encryption certificates. You are welcome to generate the certificates by [downloading a built script here](broken link, to be added).
 
 After generating your x509.crt encryption certificate, upload it to **Encryption Certificate** field.
 
@@ -56,7 +60,7 @@ Furthermore, you **must download the X.509 Public Certificate file** and save it
 
 ![okta_9_view_instructions.PNG](../../source/images/okta_9_view_instructions.PNG)
 
-##### Configure SAML for Mattermost
+### Configure SAML for Mattermost
 
 11) Start Mattermost server and sign into Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**, and enter the following fields:
  - **SAML SSO URL**: `Identity Provider Single Sign-On URL` from Okta, specified in step 10.
@@ -87,4 +91,24 @@ You’re done! If you’d like to confirm SAML SSO is successfully enabled, swit
 
 It is also recommended to post an announcement about how the migration will work to users.
 
-You may also configure SAML for Okta by editing `config.json`. Before starting the Mattermost server, edit `config.json` to enable SAML based on [SAML configuration settings](http://docs.mattermost.com/administration/config-settings.html#saml-enterprise). After starting the Mattermost server, the first user to log in with valid SAML credentials will be assigned the System Administrator role.
+You may also configure SAML for Okta by editing `config.json`. Before starting the Mattermost server, edit `config.json` to enable SAML based on [SAML configuration settings](http://docs.mattermost.com/administration/config-settings.html#saml-enterprise). You must restart Mattermost server for the changes to take effect.
+
+### Troubleshooting
+
+The following are troubleshooting suggestions on common error messages and issues. 
+
+#### 1. System Administrator locks themselves out of the system
+
+If the System Administrator is locked out of the system during SAML configuration process, they can set an existing account to System Administrator using [a commandline tool](http://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline). 
+
+#### 2. Received error message: `An account with that username already exists. Please contact your Administrator.`
+
+This usually means an existing account has another authentication method enabled. If so, the user should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
+
+This error message can also be received if the `Username Attribute` of their SAML credentials is incorrect. If so, the user can update the attribute at their identity provider (for instance, back to the old value if it had been previously updated). 
+
+#### 3. Received error message: `An account with that email already exists. Please contact your Administrator.`
+
+This usually means an existing account has another authentication method enabled. If so, the user should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
+
+This error message can also be received if the `Email Attribute` of their SAML credentials is incorrect. If so, the user can update the attribute at their identity provider (for instance, back to the old value if it had been previously updated).
