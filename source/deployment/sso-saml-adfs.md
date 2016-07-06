@@ -1,6 +1,6 @@
 ## Configure SAML with Microsoft ADFS (Active Directory Federation Services)
 
-The following process provides steps to configure SAML with Okta for Mattermost.
+The following process provides steps to configure SAML with Microsoft ADFS for Mattermost.
 
 ### Pre-installation
 
@@ -50,7 +50,7 @@ However, if you would like to set up encryption for your SAML connection, click 
 
 ![adfs_8_configure_url.PNG](../../source/images/adfs_8_configure_url.PNG)
 
-8) In the **Configure Identifiers** screen, enter the **Relying party trust identifier** (also known as the **Identity Provider Issuer URL**) of the form `https://<your-idp-url>/adfs/services/trust`and click `Add`.
+8) In the **Configure Identifiers** screen, enter the **Relying party trust identifier** (also known as the **Identity Provider Issuer URL**) of the form `https://<your-idp-url>/adfs/services/trust`and click **Add**.
 
 ![adfs_9_configure_identifiers.PNG](../../source/images/adfs_9_configure_identifiers.PNG)
 
@@ -66,7 +66,7 @@ However, if you would like to set up encryption for your SAML connection, click 
 
 ![adfs_12_ready_to_add_trust.PNG](../../source/images/adfs_12_ready_to_add_trust.PNG)
 
-12) In the **Finish** screen, select the option **Open the Edit Claim Rules dialog for this relying party trust when the wizard closes**, and click `Close`. You will now exit configuration wizard and a **Claim Rules** editor opens.
+12) In the **Finish** screen, select the option **Open the Edit Claim Rules dialog for this relying party trust when the wizard closes**, and click **Close**. You will now exit configuration wizard and a **Claim Rules** editor opens.
 
 ![adfs_13_finish_trust.PNG](../../source/images/adfs_13_finish_trust.PNG)
 
@@ -103,7 +103,7 @@ Note that the entries in the **Outgoing Claim Type** column can be chosen to be 
   - Select `Unspecified` for the **Incoming name ID format**
   - Select `E-Mail Address` for the **Outgoing claim type**
 
-Moreover, select the *Pass through all claim values* option. Then click *Finish*.
+Moreover, select the **Pass through all claim values** option. Then click **Finish**.
 
 ![adfs_18_configure_incoming_claim.PNG](../../source/images/adfs_18_configure_incoming_claim.PNG)
 
@@ -135,7 +135,7 @@ Next, we export the identity provider certificate, which will be later uploaded 
 
 ![adfs_21_export_idp_cert_wizard.PNG](../../source/images/adfs_21_export_idp_cert_wizard.PNG)
 
-24) In the **Completing the Certificate Export Wizard** screen, click `Finish`, then `OK`.
+24) In the **Completing the Certificate Export Wizard** screen, click **Finish**, then **OK**.
 
 You’re now about to finish configuring SAML for Mattermost!
 
