@@ -186,27 +186,26 @@ In addition to changes to Team Edition, the following config settings were made 
 
 Many thanks to all our contributors. In alphabetical order:
 
-/platform
+/platform    
+- [42wim](https://github.com/42wim), [apheleia](https://github.com/apheleia), [asaadmahmoodspin](https://github.com/asaadmahmoodspin), [coreyhulen](https://github.com/coreyhulen),[crspeller](https://github.com/crspeller), [DavidLu1997](https://github.com/DavidLu1997), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [hmhealey](https://github.com/hmhealey), [iansim](https://github.com/iansim), [it33](https://github.com/it33), [jwilander](https://github.com/jwilander), [kevynb](https://github.com/kevynb), [lfbrock](https://github.com/lfbrock), [samogot](https://github.com/samogot), [tbalthazar](https://github.com/tbalthazar), [tehraven](https://github.com/tehraven), [thiyagaraj](https://github.com/thiyagaraj), [yumenohosi](https://github.com/yumenohosi)
 
+/ios  
+- [coreyhulen](https://github.com/coreyhulen)
 
-/ios
+/desktop    
+- [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [magicmonty](https://github.com/magicmonty), [Razzeee](https://github.com/Razzeee), [yuya-oc](https://github.com/yuya-oc)
 
+/docs    
+- [apheleia](https://github.com/apheleia), [asaadmahmoodspin](https://github.com/asaadmahmoodspin), [crspeller](https://github.com/crspeller), [esethna](https://github.com/esethna), [Fonata](https://github.com/Fonata), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [lfbrock](https://github.com/lfbrock), [lindy65](https://github.com/lindy65), [npcode](https://github.com/npcode), [yangchen1](https://github.com/yangchen1)
 
-/android
-
-
-/desktop
-
-
-/docs
-
-
-/mattermost-driver-javascript
-
+/mattermost-driver-javascript    
+- [coreyhulen](https://github.com/coreyhulen), [crspeller](https://github.com/crspeller), [DavidLu1997](https://github.com/DavidLu1997), [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [it33](https://github.com/it33), [samogot](https://github.com/samogot)
 
 /mattermost-docker
+- [npcode](https://github.com/npcode)
 
 /mattermost/push-proxy
+- [coreyhulen](https://github.com/coreyhulen)
 
 /mattermost/mattermost-docker-preview
 
