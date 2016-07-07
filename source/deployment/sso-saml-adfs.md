@@ -11,8 +11,8 @@ Before configuring SAML with Microsoft ADFS, make sure you have the [XML Securit
 The following are basic requirements to use ADFS for Mattermost:
  - An Active Directory instance where all users have a specified email, first name, last name and username attributes.
  - A Microsoft Server running. The screenshots used in this guide are from Microsoft Server 2012R2, but similar steps should work for other versions.
- - A SSL certificate to sign your ADFS login page
- - ADFS installed on your Microsoft Server. You can find a detailed guide for deploying and configuring ADFS in [this article](https://msdn.microsoft.com/en-us/library/gg188612.aspx)
+ - A SSL certificate to sign your ADFS login page.
+ - ADFS installed on your Microsoft Server. You can find a detailed guide for deploying and configuring ADFS in [this article](https://msdn.microsoft.com/en-us/library/gg188612.aspx).
 
 On your ADFS installation, note down the value of the **SAML 2.0/W-Federation URL** in ADFS Endpoints section, also known as the **SAML SSO URL**. If you chose the defaults for the installation, this will be `/adfs/ls/`.
 
@@ -42,7 +42,7 @@ On your ADFS installation, note down the value of the **SAML 2.0/W-Federation UR
 
 ![adfs_6_configure_certificate_default.PNG](../../source/images/adfs_6_configure_certificate_default.PNG)
 
-However, if you would like to set up encryption for your SAML connection, click the **Browse…** button and upload your Service Provider Private Key and Service Provider Public Certificate. You are welcome to generate the certificate by [downloading a built script here](broken link, to be added).
+However, if you would like to set up encryption for your SAML connection, click the **Browse…** button and upload your Service Provider Public Certificate.
 
 ![adfs_7_configure_certificate_encryption.PNG](../../source/images/adfs_7_configure_certificate_encryption.PNG)
 
@@ -54,7 +54,7 @@ However, if you would like to set up encryption for your SAML connection, click 
 
 ![adfs_9_configure_identifiers.PNG](../../source/images/adfs_9_configure_identifiers.PNG)
 
-9) In the **Configure Multi-factor Authentication Now?** screen, you may enable multi-factor authentication, but this is beyond the scope of this guide.
+9) In the **Configure Multi-factor Authentication Now** screen, you may enable multi-factor authentication, but this is beyond the scope of this guide.
 
 ![adfs_10_configure_mfa.PNG](../../source/images/adfs_10_configure_mfa.PNG)
 
@@ -109,8 +109,6 @@ Moreover, select the **Pass through all claim values** option. Then click **Fini
 
 19) Click **OK** to create the claim rule, and **OK** again to finish creating rules.
 
-# // Is step 20 optional???
-
 20) Open Windows PowerShell as an administrator and run the following command:
 
 `Set-ADFSRelyingPartyTrust -TargetName <display-name> -SamlResponseSignature "MessageAndAssertion"`
@@ -152,7 +150,7 @@ You’re now about to finish configuring SAML for Mattermost!
 
 ![adfs_23_mattermost_verification.PNG](../../source/images/adfs_23_mattermost_verification.PNG)
 
-27) (Optional) Enable encryption based on the parameters provided in ADFS in step 6.
+27) (Optional) Enable encryption by uploading the Service Provider Private Key and Service Provider Public Certificate if you uploaded the certificate in ADFS in step 6.
 
 ![adfs_24_mattermost_encryption.PNG](../../source/images/adfs_24_mattermost_encryption.PNG)
 
@@ -172,22 +170,30 @@ It is also recommended to post an announcement about how the migration will work
 
 You may also configure SAML for ADFS by editing `config.json`. Before starting the Mattermost server, edit `config.json` to enable SAML based on [SAML configuration settings](http://docs.mattermost.com/administration/config-settings.html#saml-enterprise). You must restart Mattermost server for the changes to take effect.
 
-### Troubleshooting
+#### Troubleshooting
 
 The following are troubleshooting suggestions on common error messages and issues. 
 
-#### 1. System Administrator locks themselves out of the system
+##### 1. System Administrator locks themselves out of the system
 
 If the System Administrator is locked out of the system during SAML configuration process, they can set an existing account to System Administrator using [a commandline tool](http://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline). 
 
-#### 2. Received error message: `An account with that username already exists. Please contact your Administrator.`
+##### 2. Received error message: `An account with that username already exists. Please contact your Administrator.`
 
 This usually means an existing account has another authentication method enabled. If so, the user should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
 
 This error message can also be received if the `Username Attribute` of their SAML credentials is incorrect. If so, the user can update the attribute at their identity provider (for instance, back to the old value if it had been previously updated). 
 
-#### 3. Received error message: `An account with that email already exists. Please contact your Administrator.`
+##### 3. Received error message: `An account with that email already exists. Please contact your Administrator.`
 
 This usually means an existing account has another authentication method enabled. If so, the user should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
 
 This error message can also be received if the `Email Attribute` of their SAML credentials is incorrect. If so, the user can update the attribute at their identity provider (for instance, back to the old value if it had been previously updated).
+
+##### 4. Unable to switch to SAML authentication successfully
+
+First, ensure you have installed the [XML Security Library](https://www.aleksey.com/xmlsec/download.html) on your Mattermost instance and that **it is available in your** `PATH`.
+
+Second, ensure you have completed each step in our guides for [configuring SAML with Okta](http://docs.mattermost.com/deployment/sso-saml-okta.html) or for [configuring SAML with Microsoft ADFS](http://docs.mattermost.com/deployment/sso-saml-adfs.html).
+
+Lastly, if you are still having trouble with configuration, feel free to post in our [Troubleshooting forum](http://www.mattermost.org/troubleshoot/) and we'll be happy to help with issues during setup.
