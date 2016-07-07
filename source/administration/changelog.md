@@ -207,8 +207,6 @@ Many thanks to all our contributors. In alphabetical order:
 /mattermost/push-proxy
 - [coreyhulen](https://github.com/coreyhulen)
 
-/mattermost/mattermost-docker-preview
-
 If we missed your name, please let us know at feedback@mattermost.com. Recognition is a manual process and mistakes can happen. We want to include anyone who's made a pull request that got merged during the release.
 
 ## Release v3.1.0
@@ -376,19 +374,19 @@ Many thanks to all our contributors. In alphabetical order:
 /desktop
 - [CarmDam](https://github.com/CarmDam), [it33](https://github.com/it33), [jnugh](https://github.com/jnugh), [MetalCar](https://github.com/MetalCar), [Razzeee](https://github.com/Razzeee), [yuya-oc](https://github.com/yuya-oc)
 
-/docs
+/docs    
 - [apheleia](https://github.com/apheleia), [coreyhulen](https://github.com/coreyhulen), [crspeller](https://github.com/crspeller), [DavidLu1997](https://github.com/DavidLu1997), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [hannapark84](https://github.com/hannapark84), [hmhealey](https://github.com/hmhealey), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [lfbrock](https://github.com/lfbrock), [maxlmo](https://github.com/maxlmo), [mkhsueh](https://github.com/mkhsueh), [npcode](https://github.com/npcode), [TwizzyDizzy](https://github.com/TwizzyDizzy)
 
-/mattermost-driver-javascript
+/mattermost-driver-javascript    
 - [coreyhulen](https://github.com/coreyhulen), [crspeller](https://github.com/crspeller), [enahum](https://github.com/enahum), [jwilander](https://github.com/jwilander)
 
-/mattermost-docker
+/mattermost-docker    
 - [npcode](https://github.com/npcode), [pierreozoux](https://github.com/pierreozoux)
 
-/mattermost/push-proxy
+/mattermost/push-proxy    
 - [coreyhulen](https://github.com/coreyhulen)
 
-/mattermost/mattermost-docker-preview
+/mattermost/mattermost-docker-preview    
 - [crspeller](https://github.com/crspeller)
 
 If we missed your name, please let us know at feedback@mattermost.com. Recognition is a manual process and mistakes can happen. We want to include anyone who's made a pull request that got merged during the release.
