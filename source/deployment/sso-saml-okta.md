@@ -18,7 +18,7 @@ Before configuring SAML with Okta, make sure you have the [XML Security Library]
 
 4) Enter **General Settings** for the application, including `App name` and `App logo` (optional). It is recommended to display the application icon to users, including in the Okta Mobile app.
 
-If you’d like to use a Mattermost logo for the application, you are free to download one [from our page](http://www.mattermost.org/brand-guidelines/)
+If you’d like to use a Mattermost logo for the application, you are free to download one [from our page](http://www.mattermost.org/brand-guidelines/).
 
 ![okta_2_general_settings](../../source/images/okta_2_general_settings.PNG)
 
@@ -30,11 +30,11 @@ If you’d like to use a Mattermost logo for the application, you are free to do
 
 ![okta_3_initial_saml_settings.PNG](../../source/images/okta_3_initial_saml_settings.PNG)
 
-6) (Optional) Set up encryption for your SAML connection. First, click **Show Advanced Settings**
+6) (Optional) Set up encryption for your SAML connection. First, click **Show Advanced Settings**.
 
 ![okta_4_initial_saml_settings.PNG](../../source/images/okta_4_initial_saml_settings.PNG)
 
-Then, set **Assertion Encryption** as `Encrypted` and generate the encryption certificates. You are welcome to generate the certificates by [downloading a built script here](broken link, to be added).
+Then, set **Assertion Encryption** as `Encrypted` and generate the encryption certificates.
 
 After generating your x509.crt encryption certificate, upload it to **Encryption Certificate** field.
 
@@ -93,22 +93,30 @@ It is also recommended to post an announcement about how the migration will work
 
 You may also configure SAML for Okta by editing `config.json`. Before starting the Mattermost server, edit `config.json` to enable SAML based on [SAML configuration settings](http://docs.mattermost.com/administration/config-settings.html#saml-enterprise). You must restart Mattermost server for the changes to take effect.
 
-### Troubleshooting
+#### Troubleshooting
 
 The following are troubleshooting suggestions on common error messages and issues. 
 
-#### 1. System Administrator locks themselves out of the system
+##### 1. System Administrator locks themselves out of the system
 
 If the System Administrator is locked out of the system during SAML configuration process, they can set an existing account to System Administrator using [a commandline tool](http://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline). 
 
-#### 2. Received error message: `An account with that username already exists. Please contact your Administrator.`
+##### 2. Received error message: `An account with that username already exists. Please contact your Administrator.`
 
 This usually means an existing account has another authentication method enabled. If so, the user should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
 
 This error message can also be received if the `Username Attribute` of their SAML credentials is incorrect. If so, the user can update the attribute at their identity provider (for instance, back to the old value if it had been previously updated). 
 
-#### 3. Received error message: `An account with that email already exists. Please contact your Administrator.`
+##### 3. Received error message: `An account with that email already exists. Please contact your Administrator.`
 
 This usually means an existing account has another authentication method enabled. If so, the user should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
 
 This error message can also be received if the `Email Attribute` of their SAML credentials is incorrect. If so, the user can update the attribute at their identity provider (for instance, back to the old value if it had been previously updated).
+
+##### 4. Unable to switch to SAML authentication successfully
+
+First, ensure you have installed the [XML Security Library](https://www.aleksey.com/xmlsec/download.html) on your Mattermost instance and that **it is available in your** `PATH`.
+
+Second, ensure you have completed each step in our guides for [configuring SAML with Okta](http://docs.mattermost.com/deployment/sso-saml-okta.html) or for [configuring SAML with Microsoft ADFS](http://docs.mattermost.com/deployment/sso-saml-adfs.html).
+
+Lastly, if you are still having trouble with configuration, feel free to post in our [Troubleshooting forum](http://www.mattermost.org/troubleshoot/) and we'll be happy to help with issues during setup.
