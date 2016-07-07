@@ -12,6 +12,15 @@ Expected release date: 2016-07-16
 
 - Added German translation for the user interface if enabled by the System Admin from **System Console > Localization > Available Languages**.
 
+#### Custom Emoji
+
+- Create Custom Emoji from the **Main Menu** > **Custom Emoji** when enabled from **System Console** > **Customization** > **Custom Emoji**.
+- Restrict the permissions required to create Custom Emoji (Enterprise).
+
+#### Performance
+- Gzip compression for static content files decreases time for first page load, enabled from **System Console** > **Configuration**.
+- Reduced the total Mattermost package size from 25.7MB to 18.9MB.
+
 #### Policy (Enterprise)
 
 - Restrict the permission levels required to send team invitiations in **System Console** > **Policy**.
@@ -21,15 +30,6 @@ Expected release date: 2016-07-16
 
 - Users can sign in to Mattermost with their SAML credentials and new Mattermost user accounts are automatically created on first login. Mattermost pulls user information from SAML, including first and last name, email and username.
 - Mattermost officially supports Okta and Microsoft ADFS as the identity providers (IDPs), but you may also try configuring SAML for a custom IDP.
-
-#### Custom Emoji
-
-- Create Custom Emoji from the **Main Menu** > **Custom Emoji** when enabled from **System Console** > **Customization** > **Custom Emoji**.
-- Restrict the permissions required to create Custom Emoji (Enterprise).
-
-#### Performance
-- Gzip compression for static content files decreases time for first page load, enabled from **System Console** > **Configuration**.
-- Reduced the total Mattermost package size from 25.7MB to 18.9MB.
 
 ### Improvements
 
