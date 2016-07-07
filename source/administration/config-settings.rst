@@ -72,13 +72,13 @@ Enable User Creation ``"EnableUserCreation": true``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 ``true``: Ability to create new accounts is enabled via inviting new members or sharing the team invite link.
 
-``false``: the ability to create accounts is disabled. The create account button displays an error when trying to signup via an email invite or team invite link.
+``false``: Ability to create accounts is disabled. The **Create Account** button displays an error when trying to signup via an email invite or team invite link.
 
 Enable Team Creation ``"EnableTeamCreation": true``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
 ``true``: Ability to create a new team is enabled for all users.
 
-``false``: the ability to create teams is disabled. The Create A New Team button is hidden in the main menu UI.
+``false``: Only System Administrators can create teams from the team selection page. The **Create A New Team** button is hidden in the main menu UI.
 
 Max Users Per Team ``"MaxUsersPerTeam": 50``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
@@ -119,13 +119,13 @@ Show Email Address ``"ShowEmailAddress": true``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
 ``true``: Show email address of all users.
 
-``false``: Hide email address of users from other users in the user interface, including Team Admins. This is designed for managing teams where users choose to keep their contact information private.
+``false``: Hide email address of users from other users in the user interface, including Team Admins. This is designed for managing teams where users choose to keep their contact information private. System Administrators will still be able to see email addresses in the UI. 
 
 Show Full Name ``"ShowFullName": true``  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ``true``: Show full name of all users.
 
-``false``: hide full name of users from other users including Team Admins. This is designed for managing teams where users choose to keep their contact information private.
+``false``: hide full name of users from other users including Team Admins. This is designed for managing teams where users choose to keep their contact information private. System Administrators will still be able to see full names in the UI.
 
 ________
 
