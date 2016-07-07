@@ -75,13 +75,13 @@ COMMANDS:
         Example:
             platform -assign_role -email="user@example.com" -role="system_admin"
 
-    -join_channel                     Joins a user to the channel.  It requires the -email, channel_name and
+    -join_channel                     Joins a user to the channel.  It requires the -email, -channel_name and
                                       -team_name flags.  You may need to logout of your current session
                                       for the new channel to be applied.  Requires an enterprise license.
         Example:
             platform -join_channel -email="user@example.com" -team_name="name" -channel_name="channel_name"
 
-    -leave_channel                     Removes a user from the channel.  It requires the -email, channel_name and
+    -leave_channel                     Removes a user from the channel.  It requires the -email, -channel_name and
                                        -team_name flags.  You may need to logout of your current session
                                        for the channel to be removed.  Requires an enterprise license.
         Example:
