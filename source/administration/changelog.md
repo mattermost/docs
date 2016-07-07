@@ -33,11 +33,11 @@ Expected release date: 2016-07-16
 
 ### Improvements
 
-**Users**
+**On-Boarding and Off-Boarding**
 
 - After account creation, users are automatically directed to the team where they were invited instead of the Team Selection page.
+- "Get Team Invite Link" is now accessible on mobile.
 - Users can now be removed from teams via the **Main Menu** > **Manage Members** modal.
-
 
 **System Console**
 
@@ -55,6 +55,7 @@ Expected release date: 2016-07-16
 - Reply button and [...] menu now appear in a hovering UI element to increase the available margin width in the center channel.
 - Right-hand sidebar can now be expanded when viewing threads or search results.
 - Text emoticons now show up as the first entries in the autocomplete list
+- @mention autocomplete now filters on nickname, full name, and username.
 - Added an online indicator to the header of Direct Message channels.
 - Added database type to the About Mattermost dialog.
 - Removed unnecessary resizing when opening and closing the right hand sidebar.
@@ -80,7 +81,7 @@ Expected release date: 2016-07-16
 - Multiline list items are now displayed correctly on new lines.
 - Error message is updated when switching from email to GitLab SSO authentication that is already used by another account.
 - Timestamps no longer require a page refresh when switching between 12h and 24h display formats.
-- `#in`, `#from`, or `#channel` now highlight in search results.
+- Hashtags containing `¿` are now returned with proper highlighting in search results.
 - No longer require a page refresh before enabling compliance reporting in the System Console.
 - `@all` no longer sends mentions if unselected in Account Settings.
 - Users are no longer redirected to the switch teams page after changing authentication method from GitLab SSO to email.
