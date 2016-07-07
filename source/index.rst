@@ -77,9 +77,14 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    :caption: Deployment
    :glob:
 
-   deployment/sso*
+   deployment/sso-gitlab*
+   deployment/sso-ldap*
+   deployment/sso-saml*
    deployment/deployment*
-   deployment/*
+   deployment/auth*
+   deployment/ha*
+   deployment/on-boarding*
+   deployment/push*
 
 .. toctree::
    :maxdepth: 1
