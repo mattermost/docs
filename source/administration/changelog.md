@@ -21,12 +21,12 @@ Expected release date: 2016-07-16
 - Gzip compression for static content files decreases time for first page load, enabled from **System Console** > **Configuration**.
 - Reduced the total Mattermost package size from 25.7MB to 18.9MB.
 
-#### Policy (Enterprise)
+#### Policy ([Enterprise E10, E20](https://about.mattermost.com/pricing/))
 
 - Restrict the permission levels required to send team invitiations in **System Console** > **Policy**.
 - Restrict the permission levels required to manage public and private channels, including creating, deleting, renaming, and setting the channel header or purpose. 
 
-#### SAML Single-Sign-On (Enterprise):
+#### SAML Single-Sign-On ([Enterprise E20](https://about.mattermost.com/pricing/)):
 
 - Users can sign in to Mattermost with their SAML credentials and new Mattermost user accounts are automatically created on first login. Mattermost pulls user information from SAML, including first and last name, email and username.
 - Mattermost officially supports Okta and Microsoft ADFS as the identity providers (IDPs), but you may also try configuring SAML for a custom IDP.
@@ -42,7 +42,7 @@ Expected release date: 2016-07-16
 **System Console**
 
 - Updated labeling of System Console settings in the UI for consistency and accuracy.
-- (Enterprise) Help text was added to the **Reload Configuration from Disk** and **Recycle Database Connections** buttons to explain their use in the switching databases with no down time.
+- ([Enterprise E20](https://about.mattermost.com/pricing/)) High availability support via **Reload Configuration from Disk** and **Recycle Database Connections** buttons had help text added so they're easier to understand. 
 - Allow System Admins to create teams even if team creation is disabled via the System Console.
 
 **Notifications**
@@ -62,11 +62,11 @@ Expected release date: 2016-07-16
 - Removed jumping of the center channel when new messages are posted.
 - Updated the channel info dialog to be more user friendly.
 
-**Enterprise**
+**[Enterprise E10, E20](https://about.mattermost.com/pricing/)**
 
-- [New command line tools](http://docs.mattermost.com/administration/command-line-tools.html) added, such as inviting and removing users from channels, and restoring previously deleted channels.
+-  [New command line tools](http://docs.mattermost.com/administration/command-line-tools.html) added, such as adding and removing users from channels, and restoring previously deleted channels.
 - Added a button to manually trigger LDAP synchronization.
-- Updating LDAP Synchronization Interval no longer requires a server restart to take effect.
+- Updating LDAP Synchronization Interval to no longer require a server restart to take effect.
 - Improved logging for LDAP synchronization.
 - Added validation to the LDAP settings in the System Console so an error is triggered if required fields are missing.
 
