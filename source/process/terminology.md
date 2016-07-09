@@ -1,6 +1,26 @@
 # Terminology 
 
-Mattermost terminology used across the project. 
+Designing world-class software means bringing people together across disciplines and cultures. We want to create a limited amount of shared terminology to help us work better together, while being careful not to make it difficult for newcomers to follow our conversation. 
+
+Perhaps in future we'll have a bot that helps teach newcomers about the terminology in-context. Until then we have this guide. 
+
+## Purpose
+
+We use Mattermost terminology to achieve specific benefits: 
+
+#### 1) to increase precision in communication through unambiguous definitions of terms that could otherwise have many interpretations
+
+For example, "0/5" and "5/5" help convey the level of conviction behind an opinion. A precise classification of tickets as "Bug" or "Improvement" is critical since it affects scheduling and decision making. 
+
+#### 2) to increase the speed of communication via a small number of frequently used acronyms 
+
+LHS and RHS are examples of a very limited number of acronyms to use to speed discussions, specifications, and ticket writing. 
+
+#### 3) to reduce repeated mistakes by naming very specific undesirable behaviors
+
+Naming a specific repeated mistake lets us remember it as an organization and identify patterns. It also helps innoculate newcomers to mistakes of the past as they learn our organization's termniology. 
+
+## List of Terms
 
 #### 0/5, 1/5, 2/5, 3/5, 4/5, 5/5 
 
@@ -20,15 +40,11 @@ When on screen text, particularly error messages, isn't helpful to its intended 
 
 #### Dead Tarzan 
 
-The idea of letting go of an imperfect solution without a clearly thought out alternative. Based on idea of [Tarzan of the Jungle](https://en.wikipedia.org/wiki/Tarzan) letting go of a vine without having a new vine to swing to. 
+Discarding an imperfect solution without a clearly thought out alternative. Based on idea of [Tarzan of the Jungle](https://en.wikipedia.org/wiki/Tarzan) letting go of a vine without having a new vine to swing to. 
 
 #### Dev Mana
 
 A specific type of mana for developers similar to "points" or "jelly beans" in an Agile/Scrum methodology. On average, full time Mattermost developers each complete tickets adding up to approximately 28 mana per week. A "small" item is 2 mana, a "medium" is 4, a "large" is 8 and any project bigger needs to be broken down into smaller tickets. 
-
-#### FX Guidelines
-
-Short for "Fan eXperience Guidelines" defining usability requirements to turn users into fans.
 
 #### Improvement 
 
