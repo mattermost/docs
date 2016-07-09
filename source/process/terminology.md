@@ -42,6 +42,10 @@ When on screen text, particularly error messages, isn't helpful to its intended 
 
 Discarding an imperfect solution without a clearly thought out alternative. Based on idea of [Tarzan of the Jungle](https://en.wikipedia.org/wiki/Tarzan) letting go of a vine without having a new vine to swing to. 
 
+#### Decking 
+
+A term for shipping something that is below quality standards. This terms is used by mountain climbers to describe falling off the side of a mountain, which often involves a series of failures, not just one.
+
 #### Dev Mana
 
 A specific type of mana for developers similar to "points" or "jelly beans" in an Agile/Scrum methodology. On average, full time Mattermost developers each complete tickets adding up to approximately 28 mana per week. A "small" item is 2 mana, a "medium" is 4, a "large" is 8 and any project bigger needs to be broken down into smaller tickets. 
