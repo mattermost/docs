@@ -8,9 +8,9 @@ Perhaps in future we'll have a bot that helps teach newcomers about the terminol
 
 We use Mattermost terminology to achieve specific benefits: 
 
-#### 1) to increase precision in communication through unambiguous definitions of terms that could otherwise have many interpretations
+#### 1) to increase precision through unambiguous definitions of useful terms
 
-For example, "0/5" and "5/5" help convey the level of conviction behind an opinion. A precise classification of tickets as "Bug" or "Improvement" is critical since it affects scheduling and decision making. 
+For example, "0/5" and "5/5" help convey the level of conviction behind an opinion. Also, a precise classification of tickets as "Bug" or "Improvement" is critical since it affects scheduling and decision making, and so forth. 
 
 #### 2) to increase the speed of communication via a small number of frequently used acronyms 
 
