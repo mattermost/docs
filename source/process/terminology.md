@@ -36,9 +36,9 @@ An obvious error in Mattermost software. Changes required to accomodate unsuppor
 
 #### Crimson Force Field
 
-When on-screen text, particularly error messages, may be confusing or unhelpful for its intended audience we call it a "Crimson Force Field" situation. The purpose of on-screen text is to be helpful to the reader, its purpose is not merely "correctness". 
+When on-screen text, particularly error messages, may be confusing or unhelpful for its intended audience we call it "Crimson Force Field". 
 
-We use the term "Crimson Force Field" to reproduce for the reader the awkward, confused feeling a user experiences when software is cryptic and unclear, and yet technically "correct". 
+The purpose of on-screen text is to be helpful to the reader, its purpose is not merely "correctness". We use the term "Crimson Force Field" to reproduce the awkward, confused feeling a user experiences when software is cryptic and unclear, and yet "not incorrect". 
 
 #### Dead Tarzan 
 
