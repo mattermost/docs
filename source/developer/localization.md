@@ -73,5 +73,5 @@ Here are current maintainers for Alpha- or Beta-quality languages:
 
 - French: [Pierre-Julien Grizel](https://github.com/pjgrizel)
 - Spanish: [Elias Nahum](https://github.com/enahum)
-- Portugese: TBD
+- Portugese: [Rodrigo Corsi](https://github.com/rodrigocorsi2), [Carlos Tadeu Panato Junior](https://github.com/ctadeu)
 - Japanese [Ryo Onodera](https://github.com/ryoon)
