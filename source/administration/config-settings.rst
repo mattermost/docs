@@ -62,7 +62,7 @@ Default language for newly created users and pages where the user hasn't logged 
 
 Available Languages ``"AvailableLocales": ""``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
-Sets which languages are available for users in **Account Settings** > **Display** > **Languages**. Leave the field blank to add new languages automatically by default, or add new languages using the dropdown menu manually as they become available.
+Sets which languages are available for users in **Account Settings** > **Display** > **Languages**. Leave the field blank to add new languages automatically by default, or add new languages using the dropdown menu manually as they become available. If you're choosing available languages manually, the default client language must be selected.
 
 Note: Servers which upgraded to v3.1 need to manually set this field blank to have new languages added by default.
 ________
