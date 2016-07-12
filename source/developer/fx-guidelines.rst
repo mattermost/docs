@@ -195,7 +195,7 @@ Input Hints
 
     In general, avoid describing the technical requirements of the field in Help Text, and use Placeholder input text, field validation and error messages to convey requirements. The exception to this guideline is if requirements are non-obvious, such as passwords needing different numbers of characters, symbols, etc.
     
-    For a setting involving a CONDITION and an ACTION, the help text should be written as ``ACTION when/for CONDITION``
+    For a setting involving a CONDITION and an ACTION, the help text should be written as "ACTION when/for CONDITION"
 
     Incorrect:
         When a new message is received, flash the taskbar icon.
