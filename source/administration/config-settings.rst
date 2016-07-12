@@ -62,7 +62,7 @@ Default language for newly created users and pages where the user hasn't logged 
 
 Available Languages ``"AvailableLocales": ""``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
-Sets which languages are available for users in **Account Settings** > **Display** > **Languages**. Leave the field blank to add new languages automatically by default, or add new languages using the dropdown menu manually as they become available. If you're choosing available languages manually, the default client language must be selected.
+Sets which languages are available for users in **Account Settings** > **Display** > **Languages**. Leave the field blank to add new languages automatically by default, or add new languages using the dropdown menu manually as they become available.
 
 Note: Servers which upgraded to v3.1 need to manually set this field blank to have new languages added by default.
 ________
@@ -212,8 +212,10 @@ Format of log message output. If blank, FileFormat = "[%D %T] [%L] (%S) %M", whe
      
 Enable Webhook Debugging ``"EnableWebhookDebugging": true``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-When set to `true`, contents of incoming webhooks are printed to log files for debugging.
 
+``true``: Contents of incoming webhooks are printed to log files for debugging.
+
+``false``: Contents of incoming webhooks are not printed to log files.
 ________
 
 Authentication
@@ -482,9 +484,9 @@ Notification Email Address ``"FeedbackEmail": ""``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Address displayed on email account used when sending notification emails from Mattermost system.
 
-Notification Footer Address ``"FeedbackOrganization": ""`` 
+Notification Footer Mailing Address ``"FeedbackOrganization": ""`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Organization name and address displayed on email notifications from Mattermost, such as "© ABC Corporation, 565 Knight Way, Palo Alto, California, 94305, USA". If the field is left empty, the organization name and address will not be displayed.
+Organization name and mailing address displayed in the footer of email notifications from Mattermost, such as "© ABC Corporation, 565 Knight Way, Palo Alto, California, 94305, USA". If the field is left empty, the organization name and mailing address will not be displayed.
 
 SMTP Username ``"SMTPUsername": ""`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
