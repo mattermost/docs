@@ -2,6 +2,8 @@
 _____
 The search box in Mattermost returns non-case sensitive results from any channel of which you’re a member. Use search modifiers to narrow your search results. Click **Jump** on the right of a search result to view that post in the channel archive.
 
+Expand the right-hand sidebar to make search results easier to read by clicking on the expand/collapse icon with two arrows in the top right corner of the sidebar. 
+
 ## Search Modifiers
 
 #### From: and In:

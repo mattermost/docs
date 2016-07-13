@@ -10,6 +10,8 @@ Posts can be considered parent messages. They are the messages that often start 
 #### Replies
 Reply to a message by clicking the reply icon next to any message text. This action opens the right-hand-side (RHS) where you can see the message thread, then compose and send your reply. Replies are indented slightly in the center pane to indicate that they are child messages of a parent post.
 
+When composing a reply in the right-hand side, click the expand/collapse icon with two arrows at the top of the sidebar to make things easier to read.
+
 ## Posting a Message
 Write a message by typing into the text input box, then press **ENTER** to send it. Use **Shift + ENTER** to create a new line without sending a message. To send messages by pressing **Ctrl+Enter** go to **Main Menu > Account Settings > Send messages on Ctrl + Enter**.
 
