@@ -26,7 +26,7 @@ Instructions for setting up SAML SSO are available in the [SAML deployment guide
 
 To downgrade from Enterprise Edition to Team Edition: 
 
-1. Disable Active Directory/LDAP SSO and SAML SSO.
+1. Disable Active Directory/LDAP SSO and SAML SSO, and ensure all accounts have switched to another authentication method.
 2. Use the "Remove Enterprise License and Downgrade Server" option in the licensing menu from System Console.
 
 #### Support
