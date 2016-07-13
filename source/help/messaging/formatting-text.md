@@ -99,7 +99,7 @@ and
 
 ## Emojis  
 
-Open the emoji autocomplete by typing `:`. A full list of emojis can be found [here](http://www.emoji-cheat-sheet.com/).
+Open the emoji autocomplete by typing `:`. A full list of emojis can be found [here](http://www.emoji-cheat-sheet.com/). It is also possible to create your own [Custom Emoji](http://docs.mattermost.com/help/settings/custom-emoji.html) if the emoji you want to use doesn't exist.
 
 ```
 :smile: :+1: :sheep:

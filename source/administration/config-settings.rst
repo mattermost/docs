@@ -710,6 +710,22 @@ Custom text will be shown below custom brand image on left side of server login 
 
 ________
 
+Custom Emoji
+```````````````````````````
+Enable Custom Emoji ``"EnableCustomEmoji": false`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``true``: Enables a Custom Emoji option in the Main Menu, where users can go to create customized emoji.
+
+Restrict Custom Emoji Creation ``"RestrictCustomEmojiCreation": "all"`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``"all"``: Allows everyone to create custom emoji.
+
+``"admin"``: Allows only System Admins and Team Admins to create custom emoji.
+
+``"system_admin"``: Allows only System Admins to create custom emoji.
+
+________
+
 Legal and Support
 ```````````````````````````
 Terms of Service link ``"TermsOfServiceLink": "/static/help/terms.html"`` 
