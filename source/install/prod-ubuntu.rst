@@ -295,7 +295,7 @@ Set up NGINX with SSL (Recommended)
 Finish Mattermost Server setup
 ------------------------------
 
-1. Navigate to https://mattermost.example.com and create a team and
+1. Navigate to ``https://mattermost.example.com`` and create a team and
    user.
 2. The first user in the system is automatically granted the
    ``system_admin`` role, which gives you access to the System Console.
