@@ -168,6 +168,7 @@ In addition to changes to Team Edition, the following config settings were made 
 
 ### Known Issues
 
+- The behavior of setting for Link Previews in Account Settings is reversed.
 - “More” option under Direct Message list no longer shows count of team members not in your direct message list.
 - Webhook attachments don't show up in search results.
 - On Firefox, System Console sidebar completely disappears when an LDAP setting is saved.
