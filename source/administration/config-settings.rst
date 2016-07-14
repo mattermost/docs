@@ -9,7 +9,7 @@ Note: For any setting not explicitly set in ``config.json`` the Mattermost serve
 Quick Links:
 
 `General <http://docs.mattermost.com/administration/config-settings.html#id2>`_
-	`Configuration <http://docs.mattermost.com/administration/config-settings.html#id3>`_ - `Localization <http://docs.mattermost.com/administration/config-settings.html#id4>`_ - `Users and Teams <http://docs.mattermost.com/administration/config-settings.html#id5>`_ - `Privacy <http://docs.mattermost.com/administration/config-settings.html#id6>`_ - `Compliance <http://docs.mattermost.com/administration/config-settings.html#complicance-enterprise>`_ - `Logging <http://docs.mattermost.com/administration/config-settings.html#id7>`_
+	`Configuration <http://docs.mattermost.com/administration/config-settings.html#id3>`_ - `Localization <http://docs.mattermost.com/administration/config-settings.html#id4>`_ - `Users and Teams <http://docs.mattermost.com/administration/config-settings.html#id5>`_ - `Privacy <http://docs.mattermost.com/administration/config-settings.html#id6>`_ - `Compliance <http://docs.mattermost.com/administration/config-settings.html#compliance-enterprise>`_ - `Logging <http://docs.mattermost.com/administration/config-settings.html#id7>`_
 
 `Authentication <http://docs.mattermost.com/administration/config-settings.html#id12>`_
 	`Email <http://docs.mattermost.com/administration/config-settings.html#id13>`_ - `GitLab <http://docs.mattermost.com/administration/config-settings.html#id14>`_ - `LDAP <http://docs.mattermost.com/administration/config-settings.html#ldap-enterprise>`_
@@ -60,10 +60,11 @@ Default Client Language ``"DefaultClientLocale": "en"``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Default language for newly created users and pages where the user hasn't logged in.
 
-Available Languages ``"AvailableLocales": "en,es,fr,ja,pt-BR"``
+Available Languages ``"AvailableLocales": ""``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
-Sets which languages are available for users in **Account Settings** > **Display** > **Languages**. Add new languages using the dropdown menu as they become available.
+Sets which languages are available for users in **Account Settings** > **Display** > **Languages**. Leave the field blank to add new languages automatically by default, or add new languages using the dropdown menu manually as they become available. If you're manually adding new languages, the **Default Client Language** must be added before saving the setting.
 
+Note: Servers which upgraded to v3.1 need to manually set this field blank to have new languages added by default.
 ________
 
 Users and Teams
@@ -129,7 +130,7 @@ Show Full Name ``"ShowFullName": true``
 
 ________
 
-Complicance (Enterprise)
+Compliance (Enterprise)
 ```````````````````````````
 Settings used to enable and configure Mattermost compliance reports. 
 
@@ -208,9 +209,14 @@ Format of log message output. If blank, FileFormat = "[%D %T] [%L] (%S) %M", whe
      - Source
    * - %M
      - Message  
+     
+Enable Webhook Debugging ``"EnableWebhookDebugging": true``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 
+``true``: Contents of incoming webhooks are printed to log files for debugging.
+
+``false``: Contents of incoming webhooks are not printed to log files.
 ________
-
 
 Authentication
 -------------------------------
@@ -481,6 +487,10 @@ Name displayed on email account used when sending notification emails from Matte
 Notification Email Address ``"FeedbackEmail": ""`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Address displayed on email account used when sending notification emails from Mattermost system.
+
+Notification Footer Mailing Address ``"FeedbackOrganization": ""`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Organization name and mailing address displayed in the footer of email notifications from Mattermost, such as "© ABC Corporation, 565 Knight Way, Palo Alto, California, 94305, USA". If the field is left empty, the organization name and mailing address will not be displayed.
 
 SMTP Username ``"SMTPUsername": ""`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
