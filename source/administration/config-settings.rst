@@ -46,11 +46,11 @@ Webserver Mode ``"WebserverMode": "gzip"``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 gzip compression applies to the HTML, CSS, Javascript, and other static content files that make up the Mattermost web client. It is recommended to enable gzip to improve performance unless your environment has specific restrictions, such as a web proxy that distributes gzip files poorly. This setting requires a server restart to take effect.
 
-``gzip``: Selecting "gzip" causes the Mattermost server to serve static files compressed with gzip to improve performance.
+``gzip``: The Mattermost server will serve static files compressed with gzip to improve performance.
 
-``uncompressed``: Selecting "Uncompressed" causes the Mattermost server to serve static files uncompressed.
+``uncompressed``: he Mattermost server will serve static files uncompressed.
 
-``disabled``: The Mattermost server will not serve static files when selecting "Disabled".
+``disabled``: The Mattermost server will not serve static files.
 
 Reload Configuration from Disk (Enterprise)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
@@ -129,33 +129,33 @@ Settings to configure the permission restrictions for sending team invite links 
 
 Enable sending team invites from ``"RestrictTeamInvite": "all"``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Restrict the permission levels required to send team invites. Note: if permissions are restricted and "Get Team Invite Link" is used to share a link, it will need to be regenerated after the desired users joined the team.
+Restrict the permission levels required to send team invites. Note: if permissions are restricted to Admins and "Get Team Invite Link" is used to share a link, it is recommended to regenerate the invite code from **Team Settings** > **Invite Code** after the desired users joined the team so the old link cannot be shared again.
 
-``all``: Selecting "All team members" allows any team member to invite others using an email invitation or team invite link.
+``all``: Any user can invite others via **Main Menu** > **Invite New Member** or **Main Menu** > **Get Team Invite Link**
 
-``admin``: Selecting "Team and System Admins" hides the email invitation and team invite link in the Main Menu from users who are not Team or System Admins.
+``team_admin``: Only Team and System Admins can invite others via **Main Menu** > **Invite New Member** or **Main Menu** > **Get Team Invite Link**. These options are hidden in the menu from other users.
 
-``system_admin``: Selecting "System Admins" hides the email invitation and team invite link in the Main Menu from users who are not System Admins.
+``system_admin``: Only System Admins can invite others via **Main Menu** > **Invite New Member** or **Main Menu** > **Get Team Invite Link**. These options are hidden in the menu from other users.
 
 Enable public channel management permissions for ``"RestrictPublicChannelManagement": "all"``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Restrict the permission levels required to to create, delete, rename, and set the header or purpose for public channels. The last member of a public channel has the ability to archive the channel regardless of their permission level.
+Restrict the permission levels required to create, delete, rename, and set the header or purpose for public channels. The last member of a public channel has the ability to delete the channel regardless of their permission level.
 
-``all``: Selecting "All team members" allows any team member to create, delete, rename, and set the header or purpose for public channels.
+``all``: Channel management permissions for public channels are enabled for all users.
 
-``admin``: Selecting "Team and System Admins" restricts channel management permissions for public channels to Team and System Admins.
+``team_admin``: Channel management permissions for public channels are restricted to Team and System Admins.
 
-``system_admin``: Selecting "System Admins" restricts channel management permissions for public channels to System Admins.
+``system_admin``: Channel management permissions for public channels are restricted to System Admins.
 
 Enable private channel management permissions for ``"RestrictPrivateChannelManagement": "all"``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Restrict the permission levels required to to create, delete, rename, and set the header or purpose for private channels. The last member of a private channel has the ability to archive the channel regardless of their permission level.
+Restrict the permission levels required to to create, delete, rename, and set the header or purpose for private channels. The last member of a private channel has the ability to delete the channel regardless of their permission level.
 
-``all``: Selecting "All team members" allows any team member to create, delete, rename, and set the header or purpose for private channels.
+``all``: Channel management permissions for private channels are enabled for all users.
 
-``admin``: Selecting "Team and System Admins" restricts channel management permissions for private channels to Team and System Admins.
+``team_admin``: Channel management permissions for private channels are restricted to Team and System Admins.
 
-``system_admin``: Selecting "System Admins" restricts channel management permissions for private channels to System Admins.
+``system_admin``: Channel management permissions for private channels are restricted to System Admins.
 
 ________
 
@@ -732,7 +732,7 @@ Maximum File Size ``"MaxFileSize": 52428800``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Maximum file size for message attachments entered in megabytes in the System Console UI. Converted to bytes in ``config.json`` at 1048576 bytes per megabyte.
 
-.. warning:: Verify server memory can support your setting choice. Large file sizes increase the risk of server crashes and failed uploads due to network interruptions.
+.. warning:: Verify server memory can support your setting choice. Large file sizes increase the risk of server crashes and failed uploads due to network disruptions.
 
 ________
 
