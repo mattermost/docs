@@ -80,13 +80,11 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    deployment/sso-gitlab*
    deployment/sso-ldap*
    deployment/sso-saml.md
-   deployment/sso-saml-*
    deployment/deployment*
    deployment/auth*
    deployment/ha*
    deployment/on-boarding*
    deployment/push*
-   deployment/*
    
 
 .. toctree::
