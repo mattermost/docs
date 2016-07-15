@@ -104,8 +104,6 @@ Additional Notes:
 
 5. Just like regular posts, the text will be limited to 4000 characters at maximum
 
-6. Posts with advanced formatting can be created by including an [attachment array](http://docs.mattermost.com/developer/message-attachments.html) in the JSON payload
-
 ### Slack Compatibility
 
 As mentioned above, Mattermost makes it easy to take integrations written for Slack's proprietary JSON payload format and repurpose them to become Mattermost integrations. The following automatic translations are supported:
@@ -122,4 +120,5 @@ To see samples and community contributions, please visit <http://mattermost.org/
 2. Referencing  channels using <#CHANNEL_ID> does not link to the channel  
 3. `<!here>`, `<!everyone>`, and `<!group>` are not supported  
 4. Parameters "mrkdwn", "parse", and "link_names" are not supported (Mattermost always converts markdown and automatically links @mentions)  
-5. Bold formatting as `*bold*` is not supported (must be done as `**bold**`)  
+5. Bold formatting as `*bold*` is not supported (must be done as `**bold**`) 
+6. Advanced formatting using [attachments](http://docs.mattermost.com/developer/message-attachments.html) is not yet supported
