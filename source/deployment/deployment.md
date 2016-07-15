@@ -22,7 +22,7 @@ End users can securely share messages and files using a web-based Mattermost exp
 
 ### Mobile App Experience
 
-Native applications for iOS and Android are available for interacting with the Mattermost server and receiving encrypted push notifications from your private cloud. Organizations can use [a Hosted Push Notification Service](http://docs.mattermost.com/deployment/push.html#hosted-push-notifications-service-hpns) with encrypted communications to mobile apps on iTunes and Google Play, or deploy to an [Enterprise App Store](http://docs.mattermost.com/deployment/push.html#enterprise-app-store-eas). A [Test Push Notification Service](http://docs.mattermost.com/deployment/push.html#test-push-notifications-service-tpns) is available for use while evaluating options. 
+Native applications for iOS and Android are available for interacting with the Mattermost server and receiving encrypted push notifications from your private cloud. Organizations can use [a Hosted Push Notification Service](http://docs.mattermost.com/deployment/push.html#hosted-push-notifications-service-hpns) with encrypted communications to mobile apps on iTunes and Google Play, or deploy to an [Enterprise App Store](http://docs.mattermost.com/deployment/push.html#enterprise-app-store-eas) on your organization's private network. A [Test Push Notification Service](http://docs.mattermost.com/deployment/push.html#test-push-notifications-service-tpns) is available for use while evaluating options. 
 
 ### Mobile Web Experience 
 
@@ -48,14 +48,24 @@ Typically a "Mattermost unreachable" error message will be displayed warning use
 
 WSS is a secure, encrypted connection and is highly recommended. An unencrypted WS connection may be used in initial testing and configuration but it is not recommended for production.
 
+## VPN Setup
+
+Mattermost is designed to be deployed behind a firewall on your private network, with optional access from the outside over a Virtual Private Network (VPN). This means running a VPN client on PC and mobile devices accessing Mattermost.
+
+An alternative option is to run Mattermost from outside your private network by opening standard ports like 80 or 443. If this option is taken it is recommended that desktop and mobile clients accessing Mattermost without a VPN use at least the multi-factor authentication feature included in Mattermost Enterprise Edition. 
+
 ## Data Center Infrastructure
 
 ### Push Notification Service
 
-[Mattermost Push Notification Service](http://docs.mattermost.com/administration/config-settings.html?highlight=config#push-notification-settings) routes push notifications to: 
+The [Mattermost Push Notification Service (MPNS)](http://docs.mattermost.com/deployment/push.html) routes push notifications to: 
 
 1. Apple Push Notification Service to send notifications to the Mattermost iOS app. 
 2. Google Push Notification Service to send notifications to the Mattermost Android app.
+
+If you're deploying mobile applications to an Enterprise App Store, your MPNS should be behind your firewall on your private network. If you're using mobile apps in iTunes and Google Play, you can relay notifications to mobile apps using the [Hosted Push Notification Service (HPNS)](http://docs.mattermost.com/deployment/push.html#hosted-push-notifications-service-hpns) included with Mattermost Enterprise Edition. 
+
+HPNS does not connect to your mobile apps directly, it send messages over an encrypted channel to Apple or Google to relay to the apps users download from iTunes or Google Play. 
 
 ### Proxy
 
