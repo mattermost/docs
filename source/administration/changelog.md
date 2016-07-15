@@ -6,6 +6,11 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Expected release date: 2016-07-16
 
+### Security Update
+
+- Mattermost v3.2.0 contains [multiple security updates](http://about.mattermost.com/security-updates/). [Upgrading to Mattermost v3.2.0](http://docs.mattermost.com/administration/upgrade.html) is highly recommended.
+- Thanks to Bastian Ike, Mohammad Razavi, Steve MacQuiddy, Christer Mjellem Strand and Jonas Arneberg for contributing security reports through the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+
 ### Highlights
 
 #### Languages
