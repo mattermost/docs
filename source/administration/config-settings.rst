@@ -9,13 +9,13 @@ Note: For any setting not explicitly set in ``config.json`` the Mattermost serve
 Quick Links:
 
 `General <http://docs.mattermost.com/administration/config-settings.html#id2>`_
-	`Configuration <http://docs.mattermost.com/administration/config-settings.html#id3>`_ - `Localization <http://docs.mattermost.com/administration/config-settings.html#id4>`_ - `Users and Teams <http://docs.mattermost.com/administration/config-settings.html#id5>`_ - `Privacy <http://docs.mattermost.com/administration/config-settings.html#id6>`_ - `Compliance <http://docs.mattermost.com/administration/config-settings.html#complicance-enterprise>`_ - `Logging <http://docs.mattermost.com/administration/config-settings.html#id7>`_
+	`Configuration <http://docs.mattermost.com/administration/config-settings.html#id3>`_ - `Localization <http://docs.mattermost.com/administration/config-settings.html#id4>`_ - `Users and Teams <http://docs.mattermost.com/administration/config-settings.html#id5>`_ - `Privacy <http://docs.mattermost.com/administration/config-settings.html#id6>`_ - `Policy <http://docs.mattermost.com/administration/config-settings.html#policy-enterprise>`_ - `Compliance <http://docs.mattermost.com/administration/config-settings.html#compliance-enterprise>`_ - `Logging <http://docs.mattermost.com/administration/config-settings.html#id7>`_
 
 `Authentication <http://docs.mattermost.com/administration/config-settings.html#id12>`_
-	`Email <http://docs.mattermost.com/administration/config-settings.html#id13>`_ - `GitLab <http://docs.mattermost.com/administration/config-settings.html#id14>`_ - `LDAP <http://docs.mattermost.com/administration/config-settings.html#ldap-enterprise>`_
+	`Email <http://docs.mattermost.com/administration/config-settings.html#id13>`_ - `GitLab <http://docs.mattermost.com/administration/config-settings.html#id14>`_ - `LDAP <http://docs.mattermost.com/administration/config-settings.html#ldap-enterprise>`_ - `SAML <http://docs.mattermost.com/administration/config-settings.html#saml-enterprise>`_
 
 `Security <http://docs.mattermost.com/administration/config-settings.html#id15>`_
-	`Sign Up <http://docs.mattermost.com/administration/config-settings.html#id16>`_ - `Login <http://docs.mattermost.com/administration/config-settings.html#id17>`_ - `Public Links <http://docs.mattermost.com/administration/config-settings.html#id18>`_ - `Sessions <http://docs.mattermost.com/administration/config-settings.html#id19>`_ - `Connections <http://docs.mattermost.com/administration/config-settings.html#id20>`_
+	`Sign Up <http://docs.mattermost.com/administration/config-settings.html#id16>`_ - `Password <http://docs.mattermost.com/administration/config-settings.html#id17>`_ - `Public Links <http://docs.mattermost.com/administration/config-settings.html#id18>`_ - `Sessions <http://docs.mattermost.com/administration/config-settings.html#id19>`_ - `Connections <http://docs.mattermost.com/administration/config-settings.html#id20>`_
 
 `Notifications <http://docs.mattermost.com/administration/config-settings.html#id21>`_
 	`Email <http://docs.mattermost.com/administration/config-settings.html#id22>`_ - `Mobile Push <http://docs.mattermost.com/administration/config-settings.html#id24>`_
@@ -42,6 +42,16 @@ Listen Address ``"ListenAddress": ":8065"``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 The IP address on which to listen and the port on which to bind. Entering ":8065" will bind to all interfaces or you can choose one like ``127.0.0.1:8065``. Changing this will require a server restart before taking effect.
 
+Webserver Mode ``"WebserverMode": "gzip"`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+gzip compression applies to the HTML, CSS, Javascript, and other static content files that make up the Mattermost web client. It is recommended to enable gzip to improve performance unless your environment has specific restrictions, such as a web proxy that distributes gzip files poorly. This setting requires a server restart to take effect.
+
+``gzip``: The Mattermost server will serve static files compressed with gzip to improve performance.
+
+``uncompressed``: he Mattermost server will serve static files uncompressed.
+
+``disabled``: The Mattermost server will not serve static files.
+
 Reload Configuration from Disk (Enterprise)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 This button resets the configuration settings by reloading the settings from the disk. The server will still need to be restarted if a setting requiring server restart was changed.
@@ -60,31 +70,33 @@ Default Client Language ``"DefaultClientLocale": "en"``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Default language for newly created users and pages where the user hasn't logged in.
 
-Available Languages ``"AvailableLocales": "en,es,fr,ja,pt-BR"``
+Available Languages ``"AvailableLocales": ""``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
-Sets which languages are available for users in **Account Settings** > **Display** > **Languages**. Add new languages using the dropdown menu as they become available.
+Sets which languages are available for users in **Account Settings** > **Display** > **Languages**. Leave the field blank to add new languages automatically by default, or add new languages using the dropdown menu manually as they become available. If you're manually adding new languages, the **Default Client Language** must be added before saving the setting.
+
+Note: Servers which upgraded to v3.1 need to manually set this field blank to have new languages added by default.
 
 ________
 
 Users and Teams
 ``````````````````````````
-Enable User Creation ``"EnableUserCreation": true``
+Enable Account Creation ``"EnableUserCreation": true``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 ``true``: Ability to create new accounts is enabled via inviting new members or sharing the team invite link.
 
-``false``: the ability to create accounts is disabled. The create account button displays an error when trying to signup via an email invite or team invite link.
+``false``: Ability to create accounts is disabled. The **Create Account** button displays an error when trying to signup via an email invite or team invite link.
 
 Enable Team Creation ``"EnableTeamCreation": true``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
 ``true``: Ability to create a new team is enabled for all users.
 
-``false``: the ability to create teams is disabled. The Create A New Team button is hidden in the main menu UI.
+``false``: Only System Administrators can create teams from the team selection page. The **Create A New Team** button is hidden in the main menu UI.
 
 Max Users Per Team ``"MaxUsersPerTeam": 50``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 Maximum number of users per team, including both active and inactive users.
 
-Restrict Creation To Domains ``"RestrictCreationToDomains": ""``
+Restrict account creation to specified email domains ``"RestrictCreationToDomains": ""``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    
 Teams and user accounts can only be created by a verified email from this list of comma-separated domains (e.g. "corp.mattermost.com, mattermost.org").
 
@@ -111,6 +123,42 @@ Enable Team Directory ``"EnableTeamListing": false``
 
 ________
 
+Policy (Enterprise)
+``````````````````````````
+Settings to configure the permission restrictions for sending team invite links and managing channels.  
+
+Enable sending team invites from ``"RestrictTeamInvite": "all"``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Restrict the permission levels required to send team invites. Note: if permissions are restricted to Admins and "Get Team Invite Link" is used to share a link, it is recommended to regenerate the invite code from **Team Settings** > **Invite Code** after the desired users joined the team so the old link cannot be shared again.
+
+``all``: Any user can invite others via **Main Menu** > **Invite New Member** or **Main Menu** > **Get Team Invite Link**
+
+``team_admin``: Only Team and System Admins can invite others via **Main Menu** > **Invite New Member** or **Main Menu** > **Get Team Invite Link**. These options are hidden in the menu from other users.
+
+``system_admin``: Only System Admins can invite others via **Main Menu** > **Invite New Member** or **Main Menu** > **Get Team Invite Link**. These options are hidden in the menu from other users.
+
+Enable public channel management permissions for ``"RestrictPublicChannelManagement": "all"``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Restrict the permission levels required to create, delete, rename, and set the header or purpose for public channels. The last member of a public channel has the ability to delete the channel regardless of their permission level.
+
+``all``: Channel management permissions for public channels are enabled for all users.
+
+``team_admin``: Channel management permissions for public channels are restricted to Team and System Admins.
+
+``system_admin``: Channel management permissions for public channels are restricted to System Admins.
+
+Enable private channel management permissions for ``"RestrictPrivateChannelManagement": "all"``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Restrict the permission levels required to to create, delete, rename, and set the header or purpose for private channels. The last member of a private channel has the ability to delete the channel regardless of their permission level.
+
+``all``: Channel management permissions for private channels are enabled for all users.
+
+``team_admin``: Channel management permissions for private channels are restricted to Team and System Admins.
+
+``system_admin``: Channel management permissions for private channels are restricted to System Admins.
+
+________
+
 Privacy
 ``````````````````````````
 Settings to configure the name and email privacy of users on your system.  
@@ -119,31 +167,31 @@ Show Email Address ``"ShowEmailAddress": true``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
 ``true``: Show email address of all users.
 
-``false``: Hide email address of users from other users in the user interface, including Team Admins. This is designed for managing teams where users choose to keep their contact information private.
+``false``: Hide email address of users from other users in the user interface, including Team Admins. This is designed for managing teams where users choose to keep their contact information private. System Administrators will still be able to see email addresses in the UI. 
 
 Show Full Name ``"ShowFullName": true``  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ``true``: Show full name of all users.
 
-``false``: hide full name of users from other users including Team Admins. This is designed for managing teams where users choose to keep their contact information private.
+``false``: hide full name of users from other users including Team Admins. This is designed for managing teams where users choose to keep their contact information private. System Administrators will still be able to see full names in the UI.
 
 ________
 
-Complicance (Enterprise)
+Compliance (Enterprise)
 ```````````````````````````
 Settings used to enable and configure Mattermost compliance reports. 
 
-Enable Compliance ``"Enable": false``
+Enable Compliance Reporting ``"Enable": false``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ``true``: Compliance reporting is enabled in Mattermost.
 
 ``false``: Compliance reporting is disabled. 
 
-Compliance Directory Location ``"Directory": "./data/"``
+Compliance Report Directory ``"Directory": "./data/"``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Sets the directory where compliance reports are written. 
 
-Compliance Directory Location ``"EnableDaily": false``
+Enable Daily Report ``"EnableDaily": false``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ``true``: Mattermost generates a daily compliance report.
 
@@ -153,7 +201,7 @@ ________
 
 Logging
 ``````````````````````````
-Log To The Console ``"EnableConsole": true`` 
+Output logs to console ``"EnableConsole": true`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 
 ``true``: Output log messages to the console based on **ConsoleLevel** option. The server writes messages to the standard output stream (stdout).
@@ -168,7 +216,7 @@ Level of detail at which log events are written to the console when **EnableCons
 
 ``DEBUG``: Prints high detail for developers debugging issues.
 
-Log To File ``"EnableFile": true``
+Output logs to file ``"EnableFile": true``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
 ``true``:  Log files are written to files specified in **FileLocation**.
 
@@ -182,11 +230,11 @@ Level of detail at which log events are written to log files when **EnableFile**
 
 ``DEBUG``: Prints high detail for developers debugging issues.
 
-File Location ``"FileLocation": ""``
+File Log Directory ``"FileLocation": ""``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 Directory to which log files are written. If blank, log files write to ./logs/mattermost/mattermost.log. Log rotation is enabled and every 10,000 lines of log information is written to new files stored in the same directory, for example mattermost.2015-09-23.001, mattermost.2015-09-23.002, and so forth.
 
-File Format ``"FileFormat": ""`` 
+File Log Format ``"FileFormat": ""`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Format of log message output. If blank, FileFormat = "[%D %T] [%L] (%S) %M", where:
@@ -208,9 +256,14 @@ Format of log message output. If blank, FileFormat = "[%D %T] [%L] (%S) %M", whe
      - Source
    * - %M
      - Message  
+     
+Enable Webhook Debugging ``"EnableWebhookDebugging": true``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 
+``true``: Contents of incoming webhooks are printed to log files for debugging.
+
+``false``: Contents of incoming webhooks are not printed to log files.
 ________
-
 
 Authentication
 -------------------------------
@@ -218,21 +271,21 @@ Authentication settings to enable account creation and sign in with email, GitLa
 
 Email
 ``````````````````````````
-Allow Sign Up With Email ``"EnableSignUpWithEmail": true``
+Enable account creation with email ``"EnableSignUpWithEmail": true``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
 
 ``true``: Allow team creation and account signup using email and password.
 
 ``false``: Email signup is disabled and users are not able to invite new members. This limits signup to single-sign-on services like OAuth or LDAP.  
 
-Allow Sign In With Email ``"EnableSignInWithEmail": true``
+Enable sign-in with email ``"EnableSignInWithEmail": true``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
 
 ``true``: Mattermost allows users to sign in using their email and password.
 
 ``false``: sign in with email is disabled and does not appear on the login screen.
 
-Allow Sign In With Username ``EnableSignInWithUsername": false`` 
+Enable sign-in with username ``EnableSignInWithUsername": false`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``true``: Mattermost allows users to sign in using their username and password. This setting is typically only used when email verification is disabled.
@@ -243,17 +296,17 @@ ________
 
 GitLab
 ``````````````````````````
-Enable Sign Up With GitLab ``"Enable": false`` 
+Enable authentication with GitLab ``"Enable": false`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ``true``: Allow team creation and account signup using GitLab OAuth. To configure, input the **Secret** and **Id** credentials. 
 
 ``false``: GitLab OAuth cannot be used for team creation or account signup. 
 
-Id ``"Id": ""``
+Application ID ``"Id": ""``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Obtain this value by logging into your GitLab account. Go to Profile Settings > Applications > New Application, enter a Name, then enter Redirect URLs ``https://<your-mattermost-url>/login/gitlab/complete`` (example: ``https://example.com:8065/login/gitlab/complete``and ``https://<your-mattermost-url>/signup/gitlab/complete``.
 
-Secret ``"Secret": ""``  
+Application Secret Key ``"Secret": ""``  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Obtain this value by logging into your GitLab account. Go to Profile Settings > Applications > New Application, enter a Name, then enter Redirect URLs ``https://<your-mattermost-url>/login/gitlab/complete`` (example: ``https://example.com:8065/login/gitlab/complete``and ``https://<your-mattermost-url>/signup/gitlab/complete``.
 
@@ -273,7 +326,7 @@ ________
 
 LDAP (Enterprise)
 ```````````````````````````
-Enable Login With LDAP ``"Enable": false``
+Enable sign-in with LDAP ``"Enable": false``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ``true``: Mattermost allows login using LDAP.
 
@@ -355,15 +408,89 @@ Skip Certificate Verification ``"SkipCertificateVerification": false``
 
 Synchronization Interval (minutes) ``"SyncIntervalMinutes": 60``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Set how often Mattermost accounts synchronize attributes with AD/LDAP, in minutes (requires server restart to take effect). When synchronizing, Mattermost queries AD/LDAP for relevant account information and updates Mattermost accounts based on changes to attributes (first name, last name, and nickname). When accounts are disabled in AD/LDAP users can no longer sign-in to Mattermost using AD/LDAP credentials, and their active sessions are revoked once Mattermost synchronizes attributes. Disabling a user in AD/LDAP does not automatically set its Mattermost account to "Inactive" it only disables AD/LDAP authentication. 
+Set how often Mattermost accounts synchronize attributes with AD/LDAP, in minutes. When synchronizing, Mattermost queries AD/LDAP for relevant account information and updates Mattermost accounts based on changes to attributes (first name, last name, and nickname). When accounts are disabled in AD/LDAP users can no longer sign-in to Mattermost using AD/LDAP credentials, and their active sessions are revoked once Mattermost synchronizes attributes. Disabling a user in AD/LDAP does not automatically set its Mattermost account to "Inactive" it only disables AD/LDAP authentication. 
 
-Query Timeout ``"QueryTimeout": 60`` 
+Query Timeout (seconds) ``"QueryTimeout": 60`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The timeout value for queries to the LDAP server. Increase this value if you are getting timeout errors caused by a slow LDAP server.
 
 Login Field Name ``"LoginFieldName": ""``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The placeholder text that appears in the login field on the login page. Typically this would be whatever name is used to refer to LDAP credentials in your company, so it is recognizable to your users. Defaults to **LDAP Username**.
+
+LDAP Syncrhonize Now
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+This button causes LDAP synchronization to occur as soon as it is pressed. Use it whenever you have made a change in the LDAP server you want to take effect immediately. After using the button, the next LDAP synchronization will occur after the time specified by the Synchronization Interval.  
+
+________
+
+SAML (Enterprise)
+```````````````````````````
+Enable Login With SAML ``"Enable": false``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``true``: Mattermost allows login using SAML. Please see `documentation <http://docs.mattermost.com/deployment/sso-saml.html>`_ to learn more about configuring SAML for Mattermost.
+
+SAML SSO URL ``"IdpURL": ""`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The URL where Mattermost sends a SAML request to start login sequence.
+
+Identity Provider Issuer URL ``"IdpDescriptorUrl": ""`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The issuer URL for the Identity Provider you use for SAML requests.
+
+Identity Provider Public Certificate: ``"IdpCertificateFile": ""`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The public authentication certificate issued by your Identity Provider.
+
+Verify Signature ``"Verify": false``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``true``: When true, Mattermost verifies that the signature sent from the SAML Response matches the Service Provider Login URL.
+
+Service Provider Login URL ``"AssertionConsumerServiceURL": ""`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enter ``https://<your-mattermost-url>/login/sso/saml`` (example: ``https://example.com/login/sso/saml``). Make sure you use HTTP or HTTPS in your URL depending on your server configuration. This field is also known as the Assertion Consumer Service URL.
+
+Enable Encryption ``"Encrypt": false``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``true``: When true, Mattermost will decrypt SAML Assertions encrypted with your Service Provider Public Certificate.
+
+Service Provider Private Key: ``"PrivateKeyFile": ""`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The private key used to decrypt SAML Assertions from the Identity Provider.
+
+Service Provider Public Certificate: ``"PublicCertificateFile": ""`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The certificate file used to generate the signature on a SAML request to the Identity Provider for a service provider initiated SAML login, when Mattermost is the Service Provider.
+
+Email Attribute ``"EmailAttribute": ""`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The attribute in the SAML Assertion that will be used to populate the email addresses of users in Mattermost. 
+
+Email notifications will be sent to this email address, and this email address may be viewable by other Mattermost users depending on privacy settings choosen by the System Admin. 
+
+Username Attribute ``"UsernameAttribute": ""`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The attribute in the SAML Assertion that will be used to populate the username field in Mattermost user interface. This attribute will be used within the Mattermost user interface to identify and mention users. For example, if a Username Attribute is set to **john.smith** a user typing ``@john`` will see ``@john.smith`` in their auto-complete options and posting a message with ``@john.smith`` will send a notification to that user that they've been mentioned. 
+
+First Name Attribute ``"FirstNameAttribute": ""`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The attribute in the SAML Assertion that will be used to populate the first name of users in Mattermost.
+
+Last Name Attribute ``"LastNameAttribute": ""`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The attribute in the SAML Assertion that will be used to populate the last name of users in Mattermost.
+
+Nickname Attribute ``"NicknameAttribute": ""`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+(Optional) The attribute in the SAML Assertion that will be used to populate the nickname of users in Mattermost.
+
+Preferred Language Attribute ``"LocaleAttribute": ""``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+(Optional) The attribute in the SAML Assertion that will be used to populate the language of users in Mattermost.
+
+Login Button Text ``"LoginButtonText": ""`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+(Optional) The text that appears in the login button on the login page. Defaults to ``With SAML``.
 
 ________
 
@@ -380,7 +507,7 @@ Require Email Verification ``"RequireEmailVerification": false``
 
 ``false``: Users do not need to verify their email address prior to login. Developers may set this field to false so skip sending verification emails for faster development.
 
-Invite Salt ``"InviteSalt": "bjlSR4QqkXFBr7TP4oDzlfZmcNuH9YoS"`` 
+Email Invite Salt ``"InviteSalt": "bjlSR4QqkXFBr7TP4oDzlfZmcNuH9YoS"`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 32-character (to be randomly generated via Admin Console) salt added to signing of email invites. Click **Regenerate** to create new salt.
 
@@ -392,8 +519,21 @@ Enable Open Server ``"EnableOpenServer": false``
 
 ________
 
-Login
+Password
 ```````````````````````````
+Minimum Password Length ``"MinimumLength": 5"`` (Enterprise)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Minimum number of characters required for a valid password. Must be a whole number greater than or equal to 5 and less than or equal to 64.
+
+Password Requirements (Enterprise)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Set the required character types to be included in a valid password. Defaults to allow any characters unless otherwise specified by the checkboxes. The error messasage previewed in the System Console will appear on the account creation page if a user enters an invalid password.
+
+- ``"Lowercase": false``: Select this checkbox if a valid password must contain at least one lowercase letter.    
+- ``"Number": false``: Select this checkbox if a valid password must contain at least one uppercase letter.    
+- ``"Uppercase": false``: Select this checkbox if a valid password must contain at least one number.    
+- ``"Symbol": false``: Select this checkbox if a valid password must contain at least one symbol. Valid symbols include: ``!"#$%&'()*+,-./:;<=>?@[]^_`|~``    
+
 Password Reset Salt ``"PasswordResetSalt": "vZ4DcKyVVRlKHHJpexcuXzojkE5PZ5eL"`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 32-character (to be randomly generated via Admin Console) salt added to signing of password reset emails. Click **Regenerate** to create new salt.
@@ -410,7 +550,7 @@ ________
 
 Public Links
 ```````````````````````````
-Share Public File Link ``"EnablePublicLink": true`` 
+Enable Public File Links ``"EnablePublicLink": true`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ``true``: Allow users to share public links to files and images when previewing.
 
@@ -424,19 +564,19 @@ _________
 
 Sessions
 ``````````````````````````
-Session Length for Web in days ``"SessionLengthWebInDays" : 30`` 
+Session length for email and LDAP authentication (days) ``"SessionLengthWebInDays" : 30`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Set the number of days before web sessions expire and users will need to log in again.
 
-Session Length for Mobile in days ``"SessionLengthMobileInDays" : 30`` 
+Session length for mobile apps (days) ``"SessionLengthMobileInDays" : 30`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Set the number of days before native mobile sessions expire.
 
-Session Length for SSO in days ``"SessionLengthSSOInDays" : 30`` 
+Session length for GitLab SSO authentication (days) ``"SessionLengthSSOInDays" : 30`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Set the number of days before SSO sessions expire.
 
-Session Cache in Minutes ``"SessionCacheInMinutes" : 10`` 
+Session Cache (minutes) ``"SessionCacheInMinutes" : 10`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Set the number of minutes to cache a session in memory.
 
@@ -444,7 +584,7 @@ ________
 
 Connections
 ``````````````````````````
-Allow Cross-origin Requests ``"AllowCorsFrom": ""`` 
+Enable cross-origin requests from ``"AllowCorsFrom": ""`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Enable HTTP cross-origin requests from specific domains separated by spaces. Type ``*`` to allow CORS from any domain or leave it blank to disable it.
 
@@ -464,7 +604,7 @@ Settings to configure email and mobile push notifications.
 
 Email
 ``````````````````````````
-Send Email Notifications ``"SendEmailNotifications": false`` 
+Enable Email Notifications ``"SendEmailNotifications": false`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ``true``: Enables sending of email notifications. 
 
@@ -474,15 +614,19 @@ Notification Display Name ``"FeedbackName": ""``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Name displayed on email account used when sending notification emails from Mattermost system.
 
-Notification Email Address ``"FeedbackEmail": ""`` 
+Notification From Address ``"FeedbackEmail": ""`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Address displayed on email account used when sending notification emails from Mattermost system.
 
-SMTP Username ``"SMTPUsername": ""`` 
+Notification Footer Mailing Address ``"FeedbackOrganization": ""`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Organization name and mailing address displayed in the footer of email notifications from Mattermost, such as "© ABC Corporation, 565 Knight Way, Palo Alto, California, 94305, USA". If the field is left empty, the organization name and mailing address will not be displayed.
+
+SMTP Server Username ``"SMTPUsername": ""`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Obtain this credential from the administrator setting up your email server.
 
-SMTP Password ``"SMTPPassword": ""`` 
+SMTP Server Password ``"SMTPPassword": ""`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Obtain this credential from the administrator setting up your email server.
 
@@ -490,7 +634,7 @@ SMTP Server ``"SMTPServer": ""``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Location of SMTP email server.
 
-SMTP Port ``"SMTPPort": ""`` 
+SMTP Server Port ``"SMTPPort": ""`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Port of SMTP email server.
 
@@ -510,7 +654,7 @@ ________
 
 Mobile Push
 ```````````````````````````
-Send Push Notifications ``"SendPushNotifications": false`` 
+Enable Push Notifications ``"SendPushNotifications": false`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ``true``: Your Mattermost server sends mobile push notifications to the server specified in **PushNotificationServer**.
 
@@ -582,7 +726,7 @@ Developers building integrations can create webhook tokens for public channels. 
 
 Security note: By enabling this feature, users may be able to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`_ by attempting to impersonate other users. To combat these attacks, a BOT tag appears next to all posts from a webhook. Enable at your own risk.
 
-Enable Slash Commands ``"EnableCommands": false`` 
+Enable Custom Slash Commands ``"EnableCommands": false`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Slash commands send events to external integrations that send a response back to Mattermost. 
 
@@ -590,19 +734,19 @@ Slash commands send events to external integrations that send a response back to
 
 ``false``: Slash Commands are hidden in the **Integrations** user interface.
 
-Enable Integrations for Admin Only ``"EnableOnlyAdminIntegrations": true`` 
+Restrict creating integrations to Team and System Admins ``"EnableOnlyAdminIntegrations": true`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ``true``: User created integrations can only be created by System or Team Admins. Members who are not admins trying to create integrations will hit an error message on the **Integrations** page.
 
 ``false``: Any team members can create integrations from **Main Menu** > **Integrations**.
 
-Enable Overriding Usernames from Webhooks and Slash Commands ``"EnablePostUsernameOverride": false`` 
+Enable webhooks and slash commands to override usernames ``"EnablePostUsernameOverride": false`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ``true``: Webhooks will be allowed to change the username they are posting as.
 
 ``false``: Webhooks can only post as the username they were set up with. See http://mattermost.org/webhooks for more details.
 
-Enable Overriding Icon from Webhooks and Slash Commands ``"EnablePostIconOverride": false`` 
+Enable webhooks and slash commands to override profile picture iconss ``"EnablePostIconOverride": false`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ``true``: Webhooks will be allowed to change the icon they post with.
 
@@ -612,11 +756,11 @@ ________
 
 External Services
 ```````````````````````````
-Segment Developer Key ``"SegmentDeveloperKey": ""`` 
+Segment Write Key ``"SegmentDeveloperKey": ""`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 For deployments seeking additional tracking of system behavior using Segment.com, you can enter a Segment WRITE_KEY using this field. This value works like a tracking code and is used in client-side Javascript and will send events to Segment.com attributed to the account you used to generate the WRITE_KEY.
 
-Google Developer Key ``"GoogleDeveloperKey": ""`` 
+Google API Key ``"GoogleDeveloperKey": ""`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Mattermost offers the ability to embed YouTube videos from URLs shared by end users. If Google detects the number of views is exceedingly high, they may throttle embed access. Should this occur, you can remove the throttle by registering for a Google Developer Key and entering it in this field following these instructions: https://www.youtube.com/watch?v=Im69kzhpR3I. Your Google Developer Key is used in client-side Javascript.
 
@@ -630,15 +774,15 @@ Settings to configure files storage and image handling.
 
 Storage
 ```````````````````````````
-Store Files In ``"DriverName": "local"`` 
+File Storage System ``"DriverName": "local"`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 System used for file storage. “local”: Files and images are stored on the local file system. “amazons3”: Files and images are stored on Amazon S3 based on the provided access key, bucket and region fields.
 
-Local Directory Location ``"Directory": "./data/"`` 
+Local Storage Directory ``"Directory": "./data/"`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Directory to which files are written. If blank, directory will be set to ./data/.
 
-Amazon S3 Access Key Id ``"AmazonS3AccessKeyId": ""`` 
+Amazon S3 Access Key ID ``"AmazonS3AccessKeyId": ""`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Obtain this credential from your Amazon EC2 administrator.
 
@@ -654,31 +798,37 @@ Amazon S3 Region ``"AmazonS3Region": ""``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 AWS region you selected for creating your S3 bucket. Refer to `AWS Reference Documentation <http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region>`_ and choose this variable from the Region column.
 
+Maximum File Size ``"MaxFileSize": 52428800`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Maximum file size for message attachments entered in megabytes in the System Console UI. Converted to bytes in ``config.json`` at 1048576 bytes per megabyte.
+
+.. warning:: Verify server memory can support your setting choice. Large file sizes increase the risk of server crashes and failed uploads due to network disruptions.
+
 ________
 
 Images
 ```````````````````````````
-Thumbnail Width ``"ThumbnailWidth": 120`` 
+Attachment Thumbnail Width ``"ThumbnailWidth": 120`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Width of thumbnails generated from uploaded images. Updating this value changes how thumbnail images render in future, but does not change images created in the past.
 
-Thumbnail Height ``"ThumbnailHeight": 100`` 
+Attachment Thumbnail Height ``"ThumbnailHeight": 100`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Height of thumbnails generated from uploaded images. Updating this value changes how thumbnail images render in future, but does not change images created in the past.
 
-Preview Width ``"PreviewWidth": 1024`` 
+Image Preview Width ``"PreviewWidth": 1024`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Maximum width of preview image. Updating this value changes how preview images render in future, but does not change images created in the past.
 
-Preview Height ``"PreviewHeight": 0`` 
+Image Preview Height ``"PreviewHeight": 0`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Maximum height of preview image ("0": Sets to auto-size). Updating this value changes how preview images render in future, but does not change images created in the past.
 
-Profile Width ``"ProfileWidth": 128`` 
+Profile Picture Width ``"ProfileWidth": 128`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The width to which profile pictures are resized after being uploaded via Account Settings.
 
-Profile Height ``"ProfileHeight": 128`` 
+Profile Picture Height ``"ProfileHeight": 128`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The height to which profile pictures are resized after being uploaded via Account Settings.
 
@@ -710,6 +860,22 @@ Custom text will be shown below custom brand image on left side of server login 
 
 ________
 
+Custom Emoji
+```````````````````````````
+Enable Custom Emoji ``"EnableCustomEmoji": false`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``true``: Enables a Custom Emoji option in the Main Menu, where users can go to create customized emoji.
+
+Restrict Custom Emoji Creation ``"RestrictCustomEmojiCreation": "all"`` (Enterprise)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``"all"``: Allows everyone to create custom emoji.
+
+``"admin"``: Allows only System Admins and Team Admins to create custom emoji.
+
+``"system_admin"``: Allows only System Admins to create custom emoji.
+
+________
+
 Legal and Support
 ```````````````````````````
 Terms of Service link ``"TermsOfServiceLink": "/static/help/terms.html"`` 
@@ -732,7 +898,7 @@ Report a Problem link ``"ReportAProblemLink": "/static/help/report_problem.html"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Set the link for the support website.
 
-Support email ``"SupportEmail":"feedback@mattermost.com"`` 
+Support Email ``"SupportEmail":"feedback@mattermost.com"`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Set an email for feedback or support requests.
 
@@ -747,11 +913,11 @@ Rate Limiting
 ```````````````````````````
 Changing properties in this section will require a server restart before taking effect.
 
-Enable Rate Limiter ``"EnableRateLimiter": true`` 
+Enable Rate Limiting ``"EnableRateLimiter": true`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ``true``: APIs are throttled at the rate specified by **PerSec**.
 
-Number Of Queries Per Second ``"PerSec": 10`` 
+Maximum Queries per Second ``"PerSec": 10`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Throttle API at this number of requests per second if rate limiting is enabled.
 
@@ -759,11 +925,11 @@ Memory Store Size ``"MemoryStoreSize": 10000``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Maximum number of user sessions connected to the system as determined by **VaryByRemoteAddr** and **VaryByHeader** variables.
 
-Vary By Remote Address ``"VaryByRemoteAddr": true`` 
+Vary rate limit by remote address ``"VaryByRemoteAddr": true`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ``true``: Rate limit API access by IP address.
 
-Vary By HTTP Header ``"VaryByHeader": ""`` 
+Vary rate limit by HTTP header ``"VaryByHeader": ""`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Vary rate limiting by HTTP header field specified (e.g. when configuring Ngnix set to "X-Real-IP", when configuring AmazonELB set to "X-Forwarded-For").
 
@@ -814,7 +980,7 @@ ________
 Developer
 ```````````````````````````
 
-Enable Testing ``"EnableTesting": false`` 
+Enable Testing Commands ``"EnableTesting": false`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ``true``: `/loadtest` slash command is enabled to load test accounts and test data.
 

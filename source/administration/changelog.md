@@ -2,6 +2,214 @@
 
 This changelog summarizes updates to [Mattermost Team Edition](http://www.mattermost.org/), an open source team messaging solution released monthly under an MIT license, and [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/), a commercial upgrade offering enterprise messaging for large organizations.
 
+## Release v3.2.0
+
+Expected release date: 2016-07-16
+
+### Highlights
+
+#### Languages
+
+- Added German translation for the user interface if enabled by the System Admin from **System Console > Localization > Available Languages**.
+
+#### Custom Emoji
+
+- Create Custom Emoji from the **Main Menu** > **Custom Emoji** when enabled from **System Console** > **Customization** > **Custom Emoji**.
+- Restrict the permissions required to create Custom Emoji (Enterprise).
+
+#### Performance
+- Gzip compression for static content files decreases time for first page load, enabled from **System Console** > **Configuration**.
+- Reduced the total Mattermost package size from 25.7MB to 18.9MB.
+
+#### Policy ([Enterprise E10, E20](https://about.mattermost.com/pricing/))
+
+- Restrict the permission levels required to send team invitiations in **System Console** > **Policy**.
+- Restrict the permission levels required to manage public and private channels, including creating, deleting, renaming, and setting the channel header or purpose. 
+
+#### SAML Single-Sign-On ([Enterprise E20](https://about.mattermost.com/pricing/)):
+
+- Users can sign in to Mattermost with their SAML credentials and new Mattermost user accounts are automatically created on first login. Mattermost pulls user information from SAML, including first and last name, email and username.
+- Mattermost officially supports Okta and Microsoft ADFS as the identity providers (IDPs), but you may also try configuring SAML for a custom IDP.
+
+### Improvements
+
+**On-Boarding and Off-Boarding**
+
+- After account creation, users are automatically directed to the team where they were invited instead of the Team Selection page.
+- "Get Team Invite Link" is now accessible on mobile.
+- Users can now be removed from teams via the **Main Menu** > **Manage Members** modal.
+
+**System Console**
+
+- Updated labeling of System Console settings in the UI for consistency and accuracy.
+- ([Enterprise E20](https://about.mattermost.com/pricing/)) High availability support via **Reload Configuration from Disk** and **Recycle Database Connections** buttons had help text added so they're easier to understand. 
+- Allow System Admins to create teams even if team creation is disabled via the System Console.
+
+**Notifications**
+
+- Address displayed in the email notification footer is now configurable in the System Console.
+- Direct Message desktop notifications now display with a "Direct Message" title.
+
+**Web UI**
+
+- Reply button and [...] menu now appear in a hovering UI element to increase the available margin width in the center channel.
+- Right-hand sidebar can now be expanded when viewing threads or search results.
+- Text emoticons now show up as the first entries in the autocomplete list
+- @mention autocomplete now filters on nickname, full name, and username.
+- Added an online indicator to the header of Direct Message channels.
+- Added database type to the About Mattermost dialog.
+- Removed unnecessary resizing when opening and closing the right hand sidebar.
+- Removed jumping of the center channel when new messages are posted.
+- Updated the channel info dialog to be more user friendly.
+
+**[Enterprise E10, E20](https://about.mattermost.com/pricing/)**
+
+-  [New command line tools](http://docs.mattermost.com/administration/command-line-tools.html) added, such as adding and removing users from channels, and restoring previously deleted channels.
+- Added a button to manually trigger LDAP synchronization.
+- Updating LDAP Synchronization Interval to no longer require a server restart to take effect.
+- Improved logging for LDAP synchronization.
+- Added validation to the LDAP settings in the System Console so an error is triggered if required fields are missing.
+
+### Bug Fixes
+
+- Privacy settings in the system console now refresh correctly when hiding email addresses or full names.
+- Fixed the cross contamination of new channels created on different teams in the same browser.
+- Updated the GitLab SSO error message for clarity if another Mattermost account is already associated with the GitLab account.
+- Team creation via GitLab SSO no longer throws an error if email domains are restricted.
+- Channel header no longer disappears after renaming a channel
+- Testing the email connection in the System Console no longer throws an error.
+- Multiline list items are now displayed correctly on new lines.
+- Error message is updated when switching from email to GitLab SSO authentication that is already used by another account.
+- Timestamps no longer require a page refresh when switching between 12h and 24h display formats.
+- Hashtags containing `¿` are now returned with proper highlighting in search results.
+- No longer require a page refresh before enabling compliance reporting in the System Console.
+- `@all` no longer sends mentions if unselected in Account Settings.
+- Users are no longer redirected to the switch teams page after changing authentication method from GitLab SSO to email.
+- Invalid MFA token error message now clears correcly from the UI.
+- Errors now correctly clear from the UI when changing passwords.
+- System Console users list no longer throws an error when trying to demote a member from a System Admin.
+- iOS radio buttons no longer stay selected when switching between options.
+- Email addresses now display for System Admins even if hidden in the System Console.
+- Code themes now save when updated via Account settings.
+- File name is now displayed instead of the full path to the file in code snippet previews.
+- Config settings are refreshed immediately when **Reload Configuration from Disk** is clicked.
+- Preview feature checkboxes now reset after changes are canceled.
+- Updated the markdown parser to fix poor handling of certain links.
+- Error box highlighting on the claim LDAP account page is fixed to only highlight the invalid input box.
+- Errors in the system console are now properly aligned.
+- Button to resend verification email no longer throws an error when clicked.
+- Direct Messages modal loads faster since it is no longer cleared from memory each time it closes.
+- Graphs in the **System Console > Site Statistics** now have the same start date for comparison.
+- Fixed an issue where new languages are not added by default. Any server which is upgraded to Mattermost v3.1 will need to manually set **System Console > Localization > Available Languages** blank to have new languages added by default.
+- Previously, a few shortcuts that used `CTRL` were overwriting existing messaging shortcuts in Mac. This has been changed so they only work with `CMD`. See [documentation](http://docs.mattermost.com/help/messaging/keyboard-shortcuts.html) for more details.
+- Email body now contains the `siteURL` when inviting a user by email via CLI (command line interface)
+- YouTube videos now stop playing when collapsed.
+- Fixed error when adding an incoming webhook to a public channel the user is currently not in.
+- Error merssage displayed on password reset page is now formatted correctly.
+
+
+### Compatibility  
+Changes from v3.1 to v3.2:
+
+#### config.json   
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console. 
+
+**Changes to Team Edition:**
+
+- Under `EmailSettings` in `config.json`:
+   - Added `"FeedbackOrganization": ""` to specify organization name and address, which will be displayed on email notifications from Mattermost.
+
+- Under `ServiceSettings` in `config.json`:
+   - Added `"EnableCustomEmoji": false`. When set to `true`, enables Custom Emoji option in the Main Menu where users can create customized emoji.
+
+- Under `LocalizationSettings` in `config.json`:
+   - Changed: `"AvailableLocales": ""` to allow new languages be added by default.
+
+- Under `LogSettings` in `config.json`:
+   - Added `"EnableWebhookDebugging": true`. When set to `true`, contents of incoming webhooks are printed to log files for debugging.
+
+**Changes to Enterprise Edition:**    
+In addition to changes to Team Edition, the following config settings were made to the Enterprise Edition. They will only work on servers with an Enterprise License that has the feature enabled.
+   
+- Under `TeamSettings` in `config.json`:
+   - Added `"RestrictTeamInvite": "all"` to set the permissions required to send team invites.
+   - Added `"RestrictPublicChannelManagement": "all"` to set the permissions required to manage public channels.
+   - Added `"RestrictPrivateChannelManagement": "all"` to set the permissions required to manage private channels.
+
+- Under `ServiceSettings` in `config.json`:
+   - Added `"RestrictCustomEmojiCreation": "all"` to set the permissions required to create custom emoji.
+
+- Under `SamlSettings` in `config.json`:
+   - Added `"Enable": false` to allow login using SAML. See [documentation](http://docs.mattermost.com/deployment/sso-saml.html) to learn more about configuring SAML for Mattermost.
+   - Added `"Verify": false` to control whether Mattermost verifies the signature sent from the SAML Response matches the Service Provider Login URL.
+   - Added `"Encrypt": false`to control whether Mattermost will decrypt SAML Assertions encrypted with your Service Provider Public Certificate.
+   - Added `"IdpUrl": ""` to set the SAML SSO URL where Mattermost sends a SAML request to start login sequence.
+   - Added `"IdpDescriptorUrl": ""` to set the Identity Provider Issuer URL for the Identity Provider you use for SAML requests.
+   - Added `"AssertionConsumerServiceURL": ""` to set the Service Provider Login URL.
+   - Added `"IdpCertificateFile": ""` to set the public authentication certificate issued by your Identity Provider.
+   - Added `"PublicCertificateFile": ""` to set certificate used to generate the signature on a SAML request to the Identity Provider for a service provider initiated SAML login, when Mattermost is the Service Provider.
+   - Added `"PrivateKeyFile": ""` to set the private key used to decrypt SAML Assertions from the Identity Provider.
+   - Added `"FirstNameAttribute": ""` to set the attribute in the SAML Assertion that will be used to populate the first name of users in Mattermost.
+   - Added `"LastNameAttribute": ""` to set the attribute in the SAML Assertion that will be used to populate the last name of users in Mattermost.
+   - Added `"EmailAttribute": ""` to set the attribute in the SAML Assertion that will be used to populate the email of users in Mattermost.
+   - Added `"UsernameAttribute": ""` to set the attribute in the SAML Assertion that will be used to populate the username of users in Mattermost.
+   - Added `"NicknameAttribute": ""` to set the attribute in the SAML Assertion that will be used to populate the nickname of users in Mattermost.
+   - Added `"LocaleAttribute": ""` to set the attribute in the SAML Assertion that will be used to populate the language of users in Mattermost.
+   - Added `"LoginButtonText": ""` set the text that appears in the login button on the login page.
+
+#### Database Changes from v3.1 to v3.2
+
+**TeamMembers Table**    
+- Added `DeleteAt` column.
+
+**Emoji Table**    
+- Added `Emoji` table.
+
+### Known Issues
+
+- The behavior of setting for Link Previews in Account Settings is reversed.
+- “More” option under Direct Message list no longer shows count of team members not in your direct message list.
+- Webhook attachments don't show up in search results.
+- On Firefox, System Console sidebar completely disappears when an LDAP setting is saved.
+- On Firefox, `CTRL/CMD + U` keyboard shortcut doesn't work.
+- `/join` sometimes throws an error.
+- Sometimes only the last character typed in the channel switcher appears.
+- Formatting of multiple lists in a row breaks markdown.
+- Hitting the URL of a private team you used to belong to shows a blank Team Selection page.
+- Accessing the System Console URL when logged out causes the browser to hang.
+- Youtube videos show as "Video not found" on Desktop App
+- Search terms contained in hashtags are not highlighted in the search results.
+- Files sent in private chat to members in a different team are not accessible.
+- Center channel appears blank after initial page load on iOS.
+
+### Contributors
+
+Many thanks to all our contributors. In alphabetical order:
+
+/platform    
+- [42wim](https://github.com/42wim), [apheleia](https://github.com/apheleia), [asaadmahmoodspin](https://github.com/asaadmahmoodspin), [coreyhulen](https://github.com/coreyhulen),[crspeller](https://github.com/crspeller), [DavidLu1997](https://github.com/DavidLu1997), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [hmhealey](https://github.com/hmhealey), [iansim](https://github.com/iansim), [it33](https://github.com/it33), [jwilander](https://github.com/jwilander), [kevynb](https://github.com/kevynb), [lfbrock](https://github.com/lfbrock), [samogot](https://github.com/samogot), [tbalthazar](https://github.com/tbalthazar), [tehraven](https://github.com/tehraven), [thiyagaraj](https://github.com/thiyagaraj), [yumenohosi](https://github.com/yumenohosi)
+
+/ios  
+- [coreyhulen](https://github.com/coreyhulen)
+
+/desktop    
+- [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [magicmonty](https://github.com/magicmonty), [Razzeee](https://github.com/Razzeee), [yuya-oc](https://github.com/yuya-oc)
+
+/docs    
+- [apheleia](https://github.com/apheleia), [asaadmahmoodspin](https://github.com/asaadmahmoodspin), [crspeller](https://github.com/crspeller), [esethna](https://github.com/esethna), [Fonata](https://github.com/Fonata), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [lfbrock](https://github.com/lfbrock), [lindy65](https://github.com/lindy65), [npcode](https://github.com/npcode), [yangchen1](https://github.com/yangchen1)
+
+/mattermost-driver-javascript    
+- [coreyhulen](https://github.com/coreyhulen), [crspeller](https://github.com/crspeller), [DavidLu1997](https://github.com/DavidLu1997), [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [it33](https://github.com/it33), [samogot](https://github.com/samogot)
+
+/mattermost-docker
+- [npcode](https://github.com/npcode)
+
+/mattermost/push-proxy
+- [coreyhulen](https://github.com/coreyhulen)
+
+If we missed your name, please let us know at feedback@mattermost.com. Recognition is a manual process and mistakes can happen. We want to include anyone who's made a pull request that got merged during the release.
+
 ## Release v3.1.0
 
 Release date: 2016-06-16
@@ -122,15 +330,11 @@ Multiple setting options were added to `config.json`. Below is a list of the add
     - Added `"DefaultClientLocale": “en”` to set default language for newly created users and for pages where the user hasn't logged in
     - Added `"AvailableLocales": “en,es,fr,ja,pt-BR”` to set which languages are available for users in Account Settings. The language specified in `DefaultClientLocale` should be included in this list.
 
-**Changes to Enterprise Edition:**
+**Changes to Enterprise Edition:**    
+In addition to changes to Team Edition, the following config settings were made to the Enterprise Edition. They will only work on servers with an Enterprise License that has the feature enabled.
 
  - Under `LdapSettings` in `config.json`:
     - Added `"SyncIntervalMinutes": "60"` to allow system admins adjust how frequently Mattermost performs LDAP synchronization to update users
-
- - Under `LocalizationSettings` in `config.json`:
-    - Added `"DefaultServerLocale": “en”` to set default language for the system messages and logs
-    - Added `"DefaultClientLocale": “en”` to set default language for newly created users and for pages where the user hasn't logged in
-    - Added `"AvailableLocales": “en,es,fr,ja,pt-BR”` to set which languages are available for users in Account Settings. The language specified in `DefaultClientLocale` should be included in this list.
 
 ### Known Issues
 
@@ -171,19 +375,19 @@ Many thanks to all our contributors. In alphabetical order:
 /desktop
 - [CarmDam](https://github.com/CarmDam), [it33](https://github.com/it33), [jnugh](https://github.com/jnugh), [MetalCar](https://github.com/MetalCar), [Razzeee](https://github.com/Razzeee), [yuya-oc](https://github.com/yuya-oc)
 
-/docs
+/docs    
 - [apheleia](https://github.com/apheleia), [coreyhulen](https://github.com/coreyhulen), [crspeller](https://github.com/crspeller), [DavidLu1997](https://github.com/DavidLu1997), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [hannapark84](https://github.com/hannapark84), [hmhealey](https://github.com/hmhealey), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [lfbrock](https://github.com/lfbrock), [maxlmo](https://github.com/maxlmo), [mkhsueh](https://github.com/mkhsueh), [npcode](https://github.com/npcode), [TwizzyDizzy](https://github.com/TwizzyDizzy)
 
-/mattermost-driver-javascript
+/mattermost-driver-javascript    
 - [coreyhulen](https://github.com/coreyhulen), [crspeller](https://github.com/crspeller), [enahum](https://github.com/enahum), [jwilander](https://github.com/jwilander)
 
-/mattermost-docker
+/mattermost-docker    
 - [npcode](https://github.com/npcode), [pierreozoux](https://github.com/pierreozoux)
 
-/mattermost/push-proxy
+/mattermost/push-proxy    
 - [coreyhulen](https://github.com/coreyhulen)
 
-/mattermost/mattermost-docker-preview
+/mattermost/mattermost-docker-preview    
 - [crspeller](https://github.com/crspeller)
 
 If we missed your name, please let us know at feedback@mattermost.com. Recognition is a manual process and mistakes can happen. We want to include anyone who's made a pull request that got merged during the release.
@@ -340,8 +544,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
     - Changed: `"SupportEmail": "feedback@mattermost.com"`
 
 **Changes to Enterprise Edition:**
-
-The following config settings will only work on servers with an Enterprise License that has the feature enabled. 
+In addition to changes to Team Edition, the following config settings were made to the Enterprise Edition. They will only work on servers with an Enterprise License that has the feature enabled.
 
 - Under `ServiceSettings` in `config.json`:
   - Added `"EnableMultifactorAuthentication": false` to enable Multifactor Authentication
@@ -349,14 +552,6 @@ The following config settings will only work on servers with an Enterprise Licen
 - Under `TeamSettings` in `config.json`:
     -  Added `"EnableCustomBrand": false` to set whether custom branding of the login page is turned on. 
     -  Added `"CustomBrandText": ""` to set what text will show up on the login page, if `"EnableCustomBrand":` is set to `true`.
-
-- Under `SupportSettings` in `config.json`, default support links were changed and need to be manually updated for existing installs:
-    - Changed: `"TermsOfServiceLink": "https://about.mattermost.com/default-terms/"`
-    - Changed: `"PrivacyPolicyLink": "https://about.mattermost.com/default-privacy-policy/"`
-    - Changed: `"AboutLink": "https://about.mattermost.com/default-about/"`
-    - Changed: `"HelpLink": "https://about.mattermost.com/default-help/"`
-    - Changed: `"ReportAProblemLink": "https://about.mattermost.com/default-report-a-problem/"`
-    - Changed: `"SupportEmail": "feedback@mattermost.com"`
 
 - Under `LdapSettings` in `config.json`:
     - Added `"ConnectionSecurity":""` to set the type of connection security Mattermost uses to connect to LDAP. Options are `""` (no security), `TLS` or `STARTTLS`.

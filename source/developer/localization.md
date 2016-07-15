@@ -72,6 +72,7 @@ Translations require updates on a monthly basis as features are added and change
 Here are current maintainers for Alpha- or Beta-quality languages:
 
 - French: [Pierre-Julien Grizel](https://github.com/pjgrizel)
-- Spanish: [Elias Nahum](https://github.com/enahum)
-- Portugese: TBD
+- German: [Christian Arnold](https://github.com/meilon)
 - Japanese [Ryo Onodera](https://github.com/ryoon)
+- Portuguese (Brazilian): TBD
+- Spanish: [Elias Nahum](https://github.com/enahum)

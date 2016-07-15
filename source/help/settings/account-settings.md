@@ -76,6 +76,8 @@ Select **Theme Colors** to select from four standard themes designed by the Matt
 
 Select **Custom Theme** to customize your theme colors and share them with others by copying and pasting theme vectors into the input box. Observe a live preview as you customize theme colors and then click **Save** to confirm your changes. Discard your changes by clicking **Cancel** or by exiting the settings modal and clicking **Yes, Discard**.
 
+If you belong to multiple teams, you can optionally select the checkbox "Apply New Theme to All Teams" to have the theme show up across teams. Otherwise, the changes will only apply to the current team. 
+
 Learn more about the custom theme color selectors [here](http://docs.mattermost.com/help/settings/theme-colors.html#custom-themes).
 
 Select **Import theme colors from Slack** to import a Slack theme. In Slack, go to **Preferences > Sidebar Theme** and open the custom theme option. From there, copy the theme color vector and then paste it into the *Input Slack Theme* input box in Mattermost. Any theme settings that are not customizable in Slack will default to the “Mattermost” standard theme settings.
@@ -102,10 +104,11 @@ Select if the text in the center channel is fixed width and centered, or full wi
 Select what language Mattermost displays in the user interface. Options include: 
 
 - English
-- Spanish
-- Portuguese
 - French
+- German
 - Japanese
+- Portuguese (Brazilian)
+- Spanish
 
 ## Advanced
 Setting to configure when messages are sent.
@@ -114,7 +117,7 @@ Setting to configure when messages are sent.
 If enabled, press **Enter** to insert a new line and **Ctrl + Enter** posts the message. If disabled, **Shift + Enter** inserts a new line and **Enter** posts the message.
 
 #### Enable Post Formatting
-This setting is only visible if testing has been enabled by the System Administrator. When "On", posts will be rendered with markdown formatting. When "Off", the raw text will be shown. 
+This setting controls whether post formatting is rendered. When "On", posts will be rendered with [markdown formatting](http://docs.mattermost.com/help/messaging/formatting-text.html), emoji, autolinked URLs, and line breaks. When "Off", the raw text will be shown. 
 
 #### Preview pre-release features
 Turn on preview features to view them early, ahead of their official release:
