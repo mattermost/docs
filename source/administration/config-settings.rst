@@ -12,7 +12,7 @@ Quick Links:
 	`Configuration <http://docs.mattermost.com/administration/config-settings.html#id3>`_ - `Localization <http://docs.mattermost.com/administration/config-settings.html#id4>`_ - `Users and Teams <http://docs.mattermost.com/administration/config-settings.html#id5>`_ - `Privacy <http://docs.mattermost.com/administration/config-settings.html#id6>`_ - `Policy <http://docs.mattermost.com/administration/config-settings.html#policy-enterprise>`_ - `Compliance <http://docs.mattermost.com/administration/config-settings.html#compliance-enterprise>`_ - `Logging <http://docs.mattermost.com/administration/config-settings.html#id7>`_
 
 `Authentication <http://docs.mattermost.com/administration/config-settings.html#id12>`_
-	`Email <http://docs.mattermost.com/administration/config-settings.html#id13>`_ - `GitLab <http://docs.mattermost.com/administration/config-settings.html#id14>`_ - `LDAP <http://docs.mattermost.com/administration/config-settings.html#ldap-enterprise>`_
+	`Email <http://docs.mattermost.com/administration/config-settings.html#id13>`_ - `GitLab <http://docs.mattermost.com/administration/config-settings.html#id14>`_ - `LDAP <http://docs.mattermost.com/administration/config-settings.html#ldap-enterprise>`_ - `SAML <http://docs.mattermost.com/administration/config-settings.html#saml-enterprise>`_
 
 `Security <http://docs.mattermost.com/administration/config-settings.html#id15>`_
 	`Sign Up <http://docs.mattermost.com/administration/config-settings.html#id16>`_ - `Password <http://docs.mattermost.com/administration/config-settings.html#id17>`_ - `Public Links <http://docs.mattermost.com/administration/config-settings.html#id18>`_ - `Sessions <http://docs.mattermost.com/administration/config-settings.html#id19>`_ - `Connections <http://docs.mattermost.com/administration/config-settings.html#id20>`_
@@ -421,6 +421,76 @@ The placeholder text that appears in the login field on the login page. Typicall
 LDAP Syncrhonize Now
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 This button causes LDAP synchronization to occur as soon as it is pressed. Use it whenever you have made a change in the LDAP server you want to take effect immediately. After using the button, the next LDAP synchronization will occur after the time specified by the Synchronization Interval.  
+
+________
+
+SAML (Enterprise)
+```````````````````````````
+Enable Login With SAML ``"Enable": false``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``true``: Mattermost allows login using SAML. Please see `documentation <http://docs.mattermost.com/deployment/sso-saml.html>`_ to learn more about configuring SAML for Mattermost.
+
+SAML SSO URL ``"IdpURL": ""`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The URL where Mattermost sends a SAML request to start login sequence.
+
+Identity Provider Issuer URL ``"IdpDescriptorUrl": ""`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The issuer URL for the Identity Provider you use for SAML requests.
+
+Identity Provider Public Certificate: ``"IdpCertificateFile": ""`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The public authentication certificate issued by your Identity Provider.
+
+Verify Signature ``"Verify": false``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``true``: When true, Mattermost verifies that the signature sent from the SAML Response matches the Service Provider Login URL.
+
+Service Provider Login URL ``"AssertionConsumerServiceURL": ""`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enter ``https://<your-mattermost-url>/login/sso/saml`` (example: ``https://example.com/login/sso/saml``). Make sure you use HTTP or HTTPS in your URL depending on your server configuration. This field is also known as the Assertion Consumer Service URL.
+
+Enable Encryption ``"Encrypt": false``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``true``: When true, Mattermost will decrypt SAML Assertions encrypted with your Service Provider Public Certificate.
+
+Service Provider Private Key: ``"PrivateKeyFile": ""`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The private key used to decrypt SAML Assertions from the Identity Provider.
+
+Service Provider Public Certificate: ``"PublicCertificateFile": ""`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The certificate file used to generate the signature on a SAML request to the Identity Provider for a service provider initiated SAML login, when Mattermost is the Service Provider.
+
+Email Attribute ``"EmailAttribute": ""`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The attribute in the SAML Assertion that will be used to populate the email addresses of users in Mattermost. 
+
+Email notifications will be sent to this email address, and this email address may be viewable by other Mattermost users depending on privacy settings choosen by the System Admin. 
+
+Username Attribute ``"UsernameAttribute": ""`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The attribute in the SAML Assertion that will be used to populate the username field in Mattermost user interface. This attribute will be used within the Mattermost user interface to identify and mention users. For example, if a Username Attribute is set to **john.smith** a user typing ``@john`` will see ``@john.smith`` in their auto-complete options and posting a message with ``@john.smith`` will send a notification to that user that they've been mentioned. 
+
+First Name Attribute ``"FirstNameAttribute": ""`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The attribute in the SAML Assertion that will be used to populate the first name of users in Mattermost.
+
+Last Name Attribute ``"LastNameAttribute": ""`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The attribute in the SAML Assertion that will be used to populate the last name of users in Mattermost.
+
+Nickname Attribute ``"NicknameAttribute": ""`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+(Optional) The attribute in the SAML Assertion that will be used to populate the nickname of users in Mattermost.
+
+Preferred Language Attribute ``"LocaleAttribute": ""``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+(Optional) The attribute in the SAML Assertion that will be used to populate the language of users in Mattermost.
+
+Login Button Text ``"LoginButtonText": ""`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+(Optional) The text that appears in the login button on the login page. Defaults to ``With SAML``.
 
 ________
 
