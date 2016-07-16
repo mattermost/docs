@@ -263,6 +263,7 @@ Enable Webhook Debugging ``"EnableWebhookDebugging": true``
 ``true``: Contents of incoming webhooks are printed to log files for debugging.
 
 ``false``: Contents of incoming webhooks are not printed to log files.
+
 ________
 
 Authentication
@@ -998,13 +999,6 @@ There are a number of settings customizable in ``config.json`` unavailable in th
 
 Service Settings
 ```````````````````````````
-
-Static Content Compression ``"WebserverMode": "gzip"`` 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-``gzip``: GZIP compression is applied to static content to increase performance. This setting is recommended unless your infrastructure has issues with GZIP compresson. 
-
-``regular``: No GZIP compression is applied to static content. This setting is not recommended unless your infrastructure has issues with GZIP compression. Results in slower performance. 
-
 
 Enable OAuth Service Provider ``"EnableOAuthServiceProvider": false`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
