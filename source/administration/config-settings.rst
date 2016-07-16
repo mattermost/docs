@@ -137,8 +137,9 @@ Set policy on who can invite others to a team using "Invite New Member" to invit
 
 **System Admins** - hides the email invitation and team invite link in the Main Menu from users who are not System Admins. 
 
-.. note:: This features's ``config.json`` setting is ``"RestrictTeamInvite": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively. 
-
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This features's ``config.json`` setting is ``"RestrictTeamInvite": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively. |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable public channel management permissions for ``"RestrictPublicChannelManagement": "all"``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
