@@ -127,15 +127,18 @@ Policy (Enterprise)
 ``````````````````````````
 Settings to configure the permission restrictions for sending team invite links and managing channels.  
 
-Enable sending team invites from ``"RestrictTeamInvite": "all"``
+Enable sending team invites from:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Restrict the permission levels required to send team invites. Note: if permissions are restricted to Admins and "Get Team Invite Link" is used to share a link, it is recommended to regenerate the invite code from **Team Settings** > **Invite Code** after the desired users joined the team so the old link cannot be shared again.
+Set policy on who can invite others to a team using "Invite New Member" to invite new users by email, or the "Get Team Invite Link" options from the main menu. If "Get Team Invite Link" is used to share a link, you can expire the invite code from **Team Settings** > **Invite Code** after the desired users joined the team. Options include: 
 
-``all``: Any user can invite others via **Main Menu** > **Invite New Member** or **Main Menu** > **Get Team Invite Link**
+**All team members** - allows any team member to invite others using an email invitation or team invite link.
 
-``team_admin``: Only Team and System Admins can invite others via **Main Menu** > **Invite New Member** or **Main Menu** > **Get Team Invite Link**. These options are hidden in the menu from other users.
+**Team and System Admins** - hides the email invitation and team invite link in the Main Menu from users who are not Team Admins or System Admins. 
 
-``system_admin``: Only System Admins can invite others via **Main Menu** > **Invite New Member** or **Main Menu** > **Get Team Invite Link**. These options are hidden in the menu from other users.
+**System Admins** - hides the email invitation and team invite link in the Main Menu from users who are not System Admins. 
+
+.. note:: This features's ``config.json`` setting is ``"RestrictTeamInvite": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively. 
+
 
 Enable public channel management permissions for ``"RestrictPublicChannelManagement": "all"``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
