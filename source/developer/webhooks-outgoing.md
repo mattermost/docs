@@ -45,7 +45,7 @@ Outgoing webhooks are off by default, and can be enabled by the system administr
 ### Set Up an Outgoing Webhook
 Once outgoing webhooks are enabled, you will be able to set one up through the Mattermost UI. You will need to know the following
 
-1. The channel (if not all of them) you want to listen to post events from
+1. The channel you want to listen to post events from (you can leave the channel field blank if you would like to set up the webhook for all channels)
 2. The trigger words (if any) that will trigger a post event if they are the **first word** of the post
 3. The URL you want Mattermost to report the events to
 
