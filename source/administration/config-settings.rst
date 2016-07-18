@@ -375,11 +375,11 @@ This filter uses the permissions of the **Bind Username** account to execute the
 
 First Name Attribute ``"FirstNameAttribute": ""`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The attribute in the LDAP server that will be used to populate the first name of users in Mattermost.
+The attribute in the LDAP server that will be used to populate the first name of users in Mattermost. This field is required.
 
 Last Name Attribute ``"LastNameAttribute": ""`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The attribute in the LDAP server that will be used to populate the last name of users in Mattermost.
+The attribute in the LDAP server that will be used to populate the last name of users in Mattermost. This field is required.
 
 Nickname Attribute ``"NicknameAttribute": ""`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
