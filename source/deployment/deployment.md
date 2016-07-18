@@ -52,7 +52,7 @@ WSS is a secure, encrypted connection and is highly recommended. An unencrypted 
 
 Mattermost is designed to be deployed behind a firewall on your private network, with optional access from the outside over a Virtual Private Network (VPN). This means running a VPN client on PC and mobile devices accessing Mattermost.
 
-An alternative option is to run Mattermost from outside your private network by opening standard ports like 80 or 443. If this option is taken it is recommended that desktop and mobile clients accessing Mattermost without a VPN use at least the multi-factor authentication feature included in Mattermost Enterprise Edition. 
+An alternative option is to run Mattermost from outside your private network by opening standard ports, such as 80 or 443. If this option is taken it is recommended that desktop and mobile clients accessing Mattermost without a VPN use at least the multi-factor authentication feature included in Mattermost Enterprise Edition. 
 
 ## Data Center Infrastructure
 
@@ -65,7 +65,7 @@ The [Mattermost Push Notification Service (MPNS)](http://docs.mattermost.com/dep
 
 If you're deploying mobile applications to an Enterprise App Store, your MPNS should be behind your firewall on your private network. If you're using mobile apps in iTunes and Google Play, you can relay notifications to mobile apps using the [Hosted Push Notification Service (HPNS)](http://docs.mattermost.com/deployment/push.html#hosted-push-notifications-service-hpns) included with Mattermost Enterprise Edition. 
 
-HPNS does not connect to your mobile apps directly, it send messages over an encrypted channel to Apple or Google to relay to the apps users download from iTunes or Google Play. 
+HPNS does not connect to your mobile apps directly, it sends messages over an encrypted channel to Apple or Google which are relayed to the app users download from iTunes or Google Play. 
 
 ### Proxy
 
