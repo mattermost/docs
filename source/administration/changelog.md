@@ -158,6 +158,9 @@ In addition to changes to Team Edition, the following config settings were made 
    - Added `"LocaleAttribute": ""` to set the attribute in the SAML Assertion that will be used to populate the language of users in Mattermost.
    - Added `"LoginButtonText": ""` set the text that appears in the login button on the login page.
 
+- Under `LdapSettings` in `config.json`:
+   - `"FirstNameAttribute": ""` and `"LastNameAttribute": ""` are now required fields.
+
 #### Database Changes from v3.1 to v3.2
 
 **TeamMembers Table**    
