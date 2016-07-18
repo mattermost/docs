@@ -23,11 +23,11 @@ Own the outcomes of your activity. Don't drop the ball. When we see a vacuum on 
 
 High Impact 
 ===========
-Figure out what matters most, and focus on those priorities. When deciding to work on low impact and high impact projects, choose high impact. 
+Figure out what matters most, and focus on those priorities. When deciding to work on low impact or high impact projects, choose high impact. 
 
 Be proud of what you build
 ==========================
-Insist on high standards. Ensure that you're building highest quality products, services, and processes possible, and constantly raise the bar. 
+Insist on high standards. Ensure that you're building the highest quality products, services, and processes possible, and constantly raising the bar. 
 
 
 Training 
