@@ -65,7 +65,7 @@ The [Mattermost Push Notification Service (MPNS)](http://docs.mattermost.com/dep
 
 If you're deploying mobile applications to an Enterprise App Store, your MPNS should be behind your firewall on your private network. If you're using mobile apps in iTunes and Google Play, you can relay notifications to mobile apps using the [Hosted Push Notification Service (HPNS)](http://docs.mattermost.com/deployment/push.html#hosted-push-notifications-service-hpns) included with Mattermost Enterprise Edition. 
 
-HPNS does not connect to your mobile apps directly, it send messages over an encrypted channel to Apple or Google which are relayed to the apps users download from iTunes or Google Play. 
+HPNS does not connect to your mobile apps directly, it sends messages over an encrypted channel to Apple or Google which are relayed to the app users download from iTunes or Google Play. 
 
 ### Proxy
 
