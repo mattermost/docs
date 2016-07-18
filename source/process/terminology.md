@@ -8,17 +8,17 @@ Perhaps in future we'll have a bot that helps teach newcomers about the terminol
 
 We use Mattermost terminology to achieve specific benefits: 
 
-#### 1) to increase precision through unambiguous definitions of useful terms
+#### 1) Increase precision through unambiguous definitions of useful terms
 
 For example, "0/5" and "5/5" help convey the level of conviction behind an opinion. Also, a precise classification of tickets as "Bug" or "Improvement" is critical since it affects scheduling and decision making, and so forth. 
 
-#### 2) to increase the speed of communication via a small number of frequently used acronyms 
+#### 2) Increase the speed of communication via a small number of frequently used acronyms 
 
-LHS and RHS are examples of a very limited number of acronyms to use to speed discussions, specifications, and ticket writing. 
+[LHS](http://docs.mattermost.com/process/terminology.html#lhs) and [RHS](http://docs.mattermost.com/process/terminology.html#rhs) are examples of a very limited number of acronyms to use to speed discussions, specifications, and ticket writing. 
 
-#### 3) to reduce repeated mistakes by naming very specific undesirable behaviors
+#### 3) Reduce repeated mistakes by naming very specific undesirable behaviors
 
-Naming a specific repeated mistake lets us remember it as an organization and identify patterns. It also helps innoculate newcomers to mistakes of the past as they learn our organization's termniology. 
+Naming specific repeated mistake helps us find patterns, avoid repeated mistakes in future, and helps newcomers avoid making similar mistakes as they learn our organization's termniology. 
 
 ## List of Terms
 
