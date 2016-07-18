@@ -67,12 +67,14 @@ In order to test your translations you can follow this steps:
 
 #### Translation Maintenance
 
-Translations require updates on a monthly basis as features are added and changed. The formal process for updates has yet to be determined. If you're interested in contributing to the process, please join the [Mattermost localization channel to discuss](https://pre-release.mattermost.com/core/channels/localization).
+Translations require updates on a monthly basis as features are added and changed. The formal process for updates has yet to be determined.
 
-Here are current maintainers for Alpha- or Beta-quality languages:
+Below are current official reviewers and maintainers for Alpha- and Beta-quality languages. Official reviewers submit final translations for languages; maintainers suggest translations and step in when official reviewers aren't able to help in a certain release. If you're interested in contributing to the process, please join the [Mattermost localization channel to discuss](https://pre-release.mattermost.com/core/channels/localization).
 
-- French: [Pierre-Julien Grizel](https://github.com/pjgrizel)
-- German: [Christian Arnold](https://github.com/meilon)
-- Japanese [Ryo Onodera](https://github.com/ryoon)
-- Portuguese (Brazilian): TBD
-- Spanish: [Elias Nahum](https://github.com/enahum)
+| Language                    | Official Reviewer                                   |  Maintainers                                            |
+|-----------------------------|-----------------------------------------------------|---------------------------------------------------------|
+| French (Beta)               | [Pierre-Julien Grizel](https://github.com/pjgrizel) |                                                         |
+| German (Beta)               | [Christian Arnold](https://github.com/meilon)       |                                                         |
+| Japanese (Beta)             | [Ryo Onodera](https://github.com/ryoon)             |                                                         |
+| Portuguese (Beta)           | [Rodrigo Corsi](https://github.com/rodrigocorsi2)   | [Carlos Tadeu Panato Junior](https://github.com/ctadeu) |
+| Spanish (Beta)              | [Elias Nahum](https://github.com/enahum)            |                                                         |
