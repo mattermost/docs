@@ -24,7 +24,8 @@ To start, select one of the following guides:
       2. Determine the appropriate next upgrade for your server:
           - Mattermost `v3.0.x` and `v3.1.x` can upgrade directly to Mattermost `v3.2.x`.
           - Mattermost `v3.0.x` can upgrade directly to Mattermost `v3.1.x`
-          - Mattermost `v2.2.x` and below must follow the process to [upgrade to `v3.0.x`](http://docs.mattermost.com/administration/upgrade.html#upgrade-to-team-edition-to-3-0-x) before upgrading further
+          - Mattermost `v2.2.x` can upgrade directly to `v3.1` or `v3.2` but must follow the [extended upgrade guide for `v3.0.x`](http://docs.mattermost.com/administration/upgrade.html#upgrade-to-team-edition-to-3-0-x)   
+          - Mattermost `v2.1.x` and below must follow the process to [upgrade to `v3.0.x`](http://docs.mattermost.com/administration/upgrade.html#upgrade-to-team-edition-to-3-0-x) before upgrading further
       3. Use the [Version Archive table](http://docs.mattermost.com/administration/upgrade.html#version-archive) to find the `[RELEASE URL]` for your desired version and enter `wget [RELEASE URL]` to download. For example, to download `vX.X.X`, use `wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz`.
       4. Review **Compatibility** section in [CHANGELOG](http://docs.mattermost.com/administration/changelog.html) for the version downloaded and make sure to follow any instructions.
 2. Stop the Mattermost Server
@@ -90,7 +91,7 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
       1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 9. After the Mattermost 3.0 upgrade users with duplicate accounts can follow instructions in the upgrade email they received to login to teams on which the duplicate accounts were created and add their primary account to the team and any private groups that are still actively used. Users can continue to access the direct message history of their duplicate accounts using their updated email addresses.
 
-##### Upgrade Team Edition for 2.2.x and earlier 
+#### Upgrade Team Edition for 2.2.x and earlier 
 
 1. Download the **appropriate next upgrade** of your Team Edition server and note any compatibility procedures
       1. Run `platform -version` to check the current version of your Mattermost server
@@ -145,7 +146,8 @@ Upgrading to `v3.2.x` follows the procedure to [upgrade to `v3.1.x` and above](h
       2. Determine the appropriate next upgrade for your server:
           - Mattermost `v3.0.x` and `v3.1.x` can upgrade directly to Mattermost `v3.2.x`.
           - Mattermost `v3.0.x` can upgrade directly to Mattermost `v3.1.x`
-          - Mattermost `v2.2.x` and below must follow the process to [upgrade to `v3.0.x`](http://docs.mattermost.com/administration/upgrade.html#upgrade-to-enterprise-edition-3-0-x) before upgrading further
+          - Mattermost `v2.2.x` can upgrade directly to `v3.1` or `v3.2` but must follow the [extended upgrade guide for `v3.0.x`](http://docs.mattermost.com/administration/upgrade.html#upgrade-to-enterprise-edition-to-3-0-x)   
+          - Mattermost `v2.1.x` and below must follow the process to [upgrade to `v3.0.x`](http://docs.mattermost.com/administration/upgrade.html#upgrade-to-enterprise-edition-3-0-x) before upgrading further
       3. Use the [Version Archive table](http://docs.mattermost.com/administration/upgrade.html#version-archive) to find the `[RELEASE URL]` for your desired version and enter `wget [RELEASE URL]` to download. For example, to download `vX.X.X`, use `wget https://releases.mattermost.com/X.X.X/mattermost-enterprise-X.X.X-linux-amd64.tar.gz`.
       4. Review **Compatibility** section in [CHANGELOG](http://docs.mattermost.com/administration/changelog.html) for the version downloaded and make sure to follow any instructions.
 2. Stop the Mattermost Server
