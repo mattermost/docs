@@ -419,11 +419,15 @@ Query Timeout (seconds) ``"QueryTimeout": 60``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The timeout value for queries to the LDAP server. Increase this value if you are getting timeout errors caused by a slow LDAP server.
 
+Maximum Page Size ``"MaxPageSize": 0`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The maximum number of users the Mattermost server will request from the LDAP server at one time. 0 is unlimited.
+
 Login Field Name ``"LoginFieldName": ""``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The placeholder text that appears in the login field on the login page. Typically this would be whatever name is used to refer to LDAP credentials in your company, so it is recognizable to your users. Defaults to **LDAP Username**.
 
-LDAP Syncrhonize Now
+LDAP Synchronize Now
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 This button causes LDAP synchronization to occur as soon as it is pressed. Use it whenever you have made a change in the LDAP server you want to take effect immediately. After using the button, the next LDAP synchronization will occur after the time specified by the Synchronization Interval.  
 
