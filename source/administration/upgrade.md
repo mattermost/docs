@@ -17,7 +17,7 @@ To start, select one of the following guides:
       2. Determine the appropriate next upgrade for your server:
           - Mattermost `v3.0.x` and `v3.1.x` can upgrade directly to Mattermost `v3.2.x`.
           - Mattermost `v3.0.x` can upgrade directly to Mattermost `v3.1.x`
-          - Mattermost `v2.2.x` and below must follow the process to [upgrade to v3.0.x](http://docs.mattermost.com/administration/upgrade.html#upgrade-to-team-edition-to-3-0-x) before upgrading further
+          - Mattermost `v2.2.x` and below must follow the process to [upgrade to `v3.0.x`](http://docs.mattermost.com/administration/upgrade.html#upgrade-to-team-edition-to-3-0-x) before upgrading further
       3. Use the [Version Archive table](http://docs.mattermost.com/administration/upgrade.html#version-archive) to find the `[RELEASE URL]` for your desired version and enter `wget [RELEASE URL]` to download. For example, to download `vX.X.X`, use `wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz`.
       4. Review **Compatibility** section in [CHANGELOG](http://docs.mattermost.com/administration/changelog.html) for the version downloaded and make sure to follow any instructions.
 2. Stop the Mattermost Server
@@ -129,7 +129,7 @@ For any issues, Mattermost Enterprise Edition subscribers and trial license user
 
 #### Upgrade Enterprise Edition to 3.2.x
 
-Upgrading to `v3.2.x` follows the procedure to [upgrade to v3.1.x and above](http://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition-to-3-1-x-and-above), but there is a breaking change where under LdapSettings in config.json ["FirstNameAttribute" and "LastNameAttribute" are now required fields](http://docs.mattermost.com/administration/changelog.html?highlight=upgrade%20guide#config-json).
+Upgrading to `v3.2.x` follows the procedure to [upgrade to `v3.1.x` and above](http://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition-to-3-1-x-and-above), but there is a breaking change where under LdapSettings in config.json ["FirstNameAttribute" and "LastNameAttribute" are now required fields](http://docs.mattermost.com/administration/changelog.html?highlight=upgrade%20guide#config-json).
 
 #### Upgrade Enterprise Edition to 3.1.x and above
 
@@ -138,7 +138,7 @@ Upgrading to `v3.2.x` follows the procedure to [upgrade to v3.1.x and above](htt
       2. Determine the appropriate next upgrade for your server:
           - Mattermost `v3.0.x` and `v3.1.x` can upgrade directly to Mattermost `v3.2.x`.
           - Mattermost `v3.0.x` can upgrade directly to Mattermost `v3.1.x`
-          - Mattermost `v2.2.x` and below must follow the process to [upgrade to v3.0.x](http://docs.mattermost.com/administration/upgrade.html#upgrade-to-enterprise-edition-3-0-x) before upgrading further
+          - Mattermost `v2.2.x` and below must follow the process to [upgrade to `v3.0.x`](http://docs.mattermost.com/administration/upgrade.html#upgrade-to-enterprise-edition-3-0-x) before upgrading further
       3. Use the [Version Archive table](http://docs.mattermost.com/administration/upgrade.html#version-archive) to find the `[RELEASE URL]` for your desired version and enter `wget [RELEASE URL]` to download. For example, to download `vX.X.X`, use `wget https://releases.mattermost.com/X.X.X/mattermost-enterprise-X.X.X-linux-amd64.tar.gz`.
       4. Review **Compatibility** section in [CHANGELOG](http://docs.mattermost.com/administration/changelog.html) for the version downloaded and make sure to follow any instructions.
 2. Stop the Mattermost Server
