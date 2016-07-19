@@ -23,7 +23,6 @@ To start, select one of the following guides:
       1. Run `platform -version` to check the current version of your Mattermost server
       2. Determine the appropriate next upgrade for your server:
           - Mattermost `v3.0.x` and `v3.1.x` can upgrade directly to Mattermost `v3.2.x`.
-          - Mattermost `v3.0.x` can upgrade directly to Mattermost `v3.1.x`
           - Mattermost `v2.2.x` can upgrade directly to `v3.1` or `v3.2` but must follow the [extended upgrade guide for `v3.0.x`](http://docs.mattermost.com/administration/upgrade.html#upgrade-to-team-edition-to-3-0-x)   
           - Mattermost `v2.1.x` and below must follow the process to [upgrade to `v3.0.x`](http://docs.mattermost.com/administration/upgrade.html#upgrade-to-team-edition-to-3-0-x) before upgrading further
       3. Use the [Version Archive table](http://docs.mattermost.com/administration/upgrade.html#version-archive) to find the `[RELEASE URL]` for your desired version and enter `wget [RELEASE URL]` to download. For example, to download `vX.X.X`, use `wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz`.
@@ -145,7 +144,6 @@ Upgrading to `v3.2.x` follows the procedure to [upgrade to `v3.1.x` and above](h
       1. Run `platform -version` to check the current version of your Mattermost server
       2. Determine the appropriate next upgrade for your server:
           - Mattermost `v3.0.x` and `v3.1.x` can upgrade directly to Mattermost `v3.2.x`.
-          - Mattermost `v3.0.x` can upgrade directly to Mattermost `v3.1.x`
           - Mattermost `v2.2.x` can upgrade directly to `v3.1` or `v3.2` but must follow the [extended upgrade guide for `v3.0.x`](http://docs.mattermost.com/administration/upgrade.html#upgrade-to-enterprise-edition-to-3-0-x)   
           - Mattermost `v2.1.x` and below must follow the process to [upgrade to `v3.0.x`](http://docs.mattermost.com/administration/upgrade.html#upgrade-to-enterprise-edition-3-0-x) before upgrading further
       3. Use the [Version Archive table](http://docs.mattermost.com/administration/upgrade.html#version-archive) to find the `[RELEASE URL]` for your desired version and enter `wget [RELEASE URL]` to download. For example, to download `vX.X.X`, use `wget https://releases.mattermost.com/X.X.X/mattermost-enterprise-X.X.X-linux-amd64.tar.gz`.
