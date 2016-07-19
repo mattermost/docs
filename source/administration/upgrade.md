@@ -127,6 +127,10 @@ For any issues, Mattermost Enterprise Edition subscribers and trial license user
 
 ### Upgrade Enterprise Edition 
 
+#### Upgrade Enterprise Edition to 3.2.x
+
+Upgrading to `v3.2.x` follows the procedure to [upgrade to v3.1.x and above](http://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition-to-3-1-x-and-above), but there is a breaking change where under LdapSettings in config.json ["FirstNameAttribute" and "LastNameAttribute" are now required fields](http://docs.mattermost.com/administration/changelog.html?highlight=upgrade%20guide#config-json).
+
 #### Upgrade Enterprise Edition to 3.1.x and above
 
 1. Download the **appropriate next upgrade** of your Team Edition server and note any compatibility procedures
