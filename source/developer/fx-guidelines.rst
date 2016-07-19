@@ -193,10 +193,15 @@ Input Hints
 
     Text below an input field should clearly and concisely describe the PURPOSE of the input.
 
-    In general, avoid describing the technical requirements of the field in Help Text, and use Placeholder input text, field validation and error messages to convey requirements.
+    In general, avoid describing the technical requirements of the field in Help Text, and use Placeholder input text, field validation and error messages to convey requirements. The exception to this guideline is if requirements are non-obvious, such as passwords needing different numbers of characters, symbols, etc.
+    
+    For a setting involving a CONDITION and an ACTION, the help text should be written as "ACTION when/for CONDITION"
 
-    The exception to this guideline is if requirements are non-obvious, such as passwords needing different numbers of characters, symbols, etc.
+    Incorrect:
+        When a new message is received, flash the taskbar icon.
 
+    Correct:
+        Flash the taskbar icon when a new message is received.
 
 **Placeholder input text:**
 
