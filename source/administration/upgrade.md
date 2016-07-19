@@ -5,8 +5,15 @@ This guide explains how to upgrade your Mattermost deployment across versions an
 To start, select one of the following guides: 
 
 - [Upgrade Team Edition](http://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition)
+  - [Upgrade Team Edition to 3.1.x and above](http://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-3-1-x-and-above)
+  - [Upgrade Team Edition to 3.0.x](http://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-3-0-x)
+  - [Upgrade Team Edition for 2.2.x and earlier](http://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-for-2-2-x-and-earlier)
 - [Upgrade Enterprise Edition](http://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition)
-- [Upgrade Team Edition to Enterprise Edition](http://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition) 
+  - [Upgrade Enterprise Edition to 3.2.x](http://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition-to-3-2-x)
+  - [Upgrade Enterprise Edition to 3.1.x and above](http://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition-to-3-1-x-and-above)
+  - [Upgrade to Enterprise Edition 3.0.x](http://docs.mattermost.com/administration/upgrade.html#upgrade-to-enterprise-edition-3-0-x)
+  - [Upgrade Enterprise Edition to 2.2.x and earlier](http://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition-to-2-2-x-and-earlier)
+- [Upgrade Team Edition to Enterprise Edition](http://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition)  
 
 ### Upgrade Team Edition 
 
@@ -205,7 +212,7 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
 
 For any issues, Mattermost Enterprise Edition subscribers and trial license users can email support@mattermost.com 
 
-#### Upgrading Enterprise Edition to 2.2.x 
+#### Upgrade Enterprise Edition to 2.2.x and earlier
 
 1. Download the **appropriate next upgrade** of your Enterprise Edition server and note any compatibility procedures
       1. Run `platform -version` to check the current version of your Mattermost server
