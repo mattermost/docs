@@ -15,7 +15,7 @@ Values are deliberate choices defining our behavior. When facing complexity, unc
 
 Customer Obsession 
 ==================
-We exist to serve customers. In everything we do, start with customer perspective and work backwards. Earn and keep their trust. 
+We exist to make customers successful. In everything we do, start with customer perspective and work backwards. Earn and keep their trust. 
 
 Ownership 
 ======
