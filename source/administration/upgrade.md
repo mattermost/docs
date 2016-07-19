@@ -5,19 +5,19 @@ This guide explains how to upgrade your Mattermost deployment across versions an
 To start, select one of the following guides: 
 
 - [Upgrade Team Edition](http://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition)
-  - [Upgrade Team Edition to 3.1.x and above](http://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-3-1-x-and-above)
+  - [Upgrade Team Edition to 3.1.x and later](http://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-3-1-x-and-later)
   - [Upgrade Team Edition to 3.0.x](http://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-3-0-x)
   - [Upgrade Team Edition for 2.2.x and earlier](http://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-for-2-2-x-and-earlier)
 - [Upgrade Enterprise Edition](http://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition)
   - [Upgrade Enterprise Edition to 3.2.x](http://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition-to-3-2-x)
-  - [Upgrade Enterprise Edition to 3.1.x and above](http://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition-to-3-1-x-and-above)
+  - [Upgrade Enterprise Edition to 3.1.x and later](http://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition-to-3-1-x-and-later)
   - [Upgrade to Enterprise Edition 3.0.x](http://docs.mattermost.com/administration/upgrade.html#upgrade-to-enterprise-edition-3-0-x)
   - [Upgrade Enterprise Edition to 2.2.x and earlier](http://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition-to-2-2-x-and-earlier)
 - [Upgrade Team Edition to Enterprise Edition](http://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition)  
 
 ### Upgrade Team Edition 
 
-#### Upgrade Team Edition to 3.1.x and above
+#### Upgrade Team Edition to 3.1.x and later
 
 1. Download the **appropriate next upgrade** of your Team Edition server and note any compatibility procedures
       1. Run `platform -version` to check the current version of your Mattermost server
@@ -136,9 +136,9 @@ For any issues, Mattermost Enterprise Edition subscribers and trial license user
 
 #### Upgrade Enterprise Edition to 3.2.x
 
-Upgrading to `v3.2.x` follows the procedure to [upgrade to `v3.1.x` and above](http://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition-to-3-1-x-and-above), but there is a breaking change where under LdapSettings in config.json ["FirstNameAttribute" and "LastNameAttribute" are now required fields](http://docs.mattermost.com/administration/changelog.html?highlight=upgrade%20guide#config-json).
+Upgrading to `v3.2.x` follows the procedure to [upgrade to `v3.1.x` and above](http://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition-to-3-1-x-and-later), but there is a breaking change where under LdapSettings in config.json ["FirstNameAttribute" and "LastNameAttribute" are now required fields](http://docs.mattermost.com/administration/changelog.html?highlight=upgrade%20guide#config-json).
 
-#### Upgrade Enterprise Edition to 3.1.x and above
+#### Upgrade Enterprise Edition to 3.1.x and later
 
 1. Download the **appropriate next upgrade** of your Team Edition server and note any compatibility procedures
       1. Run `platform -version` to check the current version of your Mattermost server
