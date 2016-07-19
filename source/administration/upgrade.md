@@ -158,7 +158,6 @@ Upgrading to `v3.2.x` follows the procedure to [upgrade to v3.1.x and above](htt
 8. Test the system is working by going to the URL of an existing team.
       You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 
-
 #### Upgrade to Enterprise Edition 3.0.x 
 
 Mattermost 3.0 lets users maintain a single account across multiple teams on a Mattermost server. This means one set of credentials, one place to configure all account settings, and a more streamlined sign-up and team joining process.
