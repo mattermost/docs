@@ -165,6 +165,7 @@ In addition to changes to Team Edition, the following config settings were made 
 
 - Under `LdapSettings` in `config.json`:
    - `"FirstNameAttribute": ""` and `"LastNameAttribute": ""` are now required fields.
+   - Added `"MaxPageSize": 0` to set the maximum number of users that will be requested from the LDAP server at one time.
 
 #### Database Changes from v3.1 to v3.2
 
