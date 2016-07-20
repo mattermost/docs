@@ -421,7 +421,7 @@ The timeout value for queries to the LDAP server. Increase this value if you are
 
 Maximum Page Size ``"MaxPageSize": 0`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The maximum number of users the Mattermost server will request from the LDAP server at one time. 0 is unlimited.
+The maximum number of users the Mattermost server will request from the LDAP server at one time. Use this setting if your LDAP server limits the number of users that can be requested at once. 0 is unlimited. 
 
 Login Field Name ``"LoginFieldName": ""``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
