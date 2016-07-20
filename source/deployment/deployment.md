@@ -12,7 +12,7 @@ Notes:
 
 ## Requirements and Installation Guides
 
-Mattermost supports workplace messaging for teams using one to three servers with instructions available in the Install Guides section of [docs.mattermost.com](http://docs.mattermost.com/). See [Software and Hardware Requirements](http://docs.mattermost.com/install/requirements.html) documentation for server sizing estimates.
+Mattermost supports workplace messaging for teams using one to three servers with instructions available in the Install Guides section of this documentation. See [Software and Hardware Requirements](http://docs.mattermost.com/install/requirements.html) documentation for server sizing estimates.
 
 ## User Experience
 
