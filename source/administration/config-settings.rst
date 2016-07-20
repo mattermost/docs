@@ -14,7 +14,7 @@ Quick Links:
 `Authentication <http://docs.mattermost.com/administration/config-settings.html#id12>`_
 	`Email <http://docs.mattermost.com/administration/config-settings.html#id13>`_ - `GitLab <http://docs.mattermost.com/administration/config-settings.html#id14>`_ - `LDAP <http://docs.mattermost.com/administration/config-settings.html#ldap-enterprise>`_ - `SAML <http://docs.mattermost.com/administration/config-settings.html#saml-enterprise>`_
 
-`Security <http://docs.mattermost.com/administration/config-settings.html#id15>`_
+`Security <http://docs.mattermost.com/administration/config-settings.html#id20>`_
 	`Sign Up <http://docs.mattermost.com/administration/config-settings.html#id21>`_ - `Password <http://docs.mattermost.com/administration/config-settings.html#id22>`_ - `Public Links <http://docs.mattermost.com/administration/config-settings.html#id23>`_ - `Sessions <http://docs.mattermost.com/administration/config-settings.html#id24>`_ - `Connections <http://docs.mattermost.com/administration/config-settings.html#id25>`_
 
 `Notifications <http://docs.mattermost.com/administration/config-settings.html#id26>`_
@@ -27,10 +27,10 @@ Quick Links:
 	`Storage <http://docs.mattermost.com/administration/config-settings.html#id36>`_ - `Images <http://docs.mattermost.com/administration/config-settings.html#id37>`_
 
 `Customization <http://docs.mattermost.com/administration/config-settings.html#id38>`_
-	`Custom Branding <http://docs.mattermost.com/administration/config-settings.html#id39>`_ - `Custom Emoji <http://docs.mattermost.com/administration/config-settings.html#custom-emoji>`_ - `Legal and Support <http://docs.mattermost.com/administration/config-settings.html#id40>`_
+	`Custom Branding <http://docs.mattermost.com/administration/config-settings.html#id39>`_ - `Custom Emoji <http://docs.mattermost.com/administration/config-settings.html#id40>`_ - `Legal and Support <http://docs.mattermost.com/administration/config-settings.html#id41>`_
 
-`Advanced <http://docs.mattermost.com/administration/config-settings.html#id41>`_
-	`Rate Limiting <http://docs.mattermost.com/administration/config-settings.html#id42>`_ - `Database <http://docs.mattermost.com/administration/config-settings.html#id43>`_ - `Developer <http://docs.mattermost.com/administration/config-settings.html#id44>`_
+`Advanced <http://docs.mattermost.com/administration/config-settings.html#id42>`_
+	`Rate Limiting <http://docs.mattermost.com/administration/config-settings.html#id43>`_ - `Database <http://docs.mattermost.com/administration/config-settings.html#id44>`_ - `Developer <http://docs.mattermost.com/administration/config-settings.html#id45>`_
 
 General
 ---------------------------------
