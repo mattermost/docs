@@ -136,7 +136,7 @@ For any issues, Mattermost Enterprise Edition subscribers and trial license user
 
 #### Upgrade Enterprise Edition to 3.2.x
 
-Upgrading to `v3.2.x` follows the procedure to [upgrade to `v3.1.x` and above](http://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition-to-3-1-x-and-later), but there is a breaking change where under `LdapSettings` in `config.json` `"FirstNameAttribute"` and `"LastNameAttribute"` are now required fields. Other config changes can be reviewed in the [compatibility section of the changelog](http://docs.mattermost.com/administration/changelog.html?highlight=upgrade%20guide#config-json).
+Upgrading to `v3.2.x` follows the procedure to [upgrade to `v3.1.x` and above](http://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition-to-3-1-x-and-later), but there is a breaking change where under `LdapSettings` in `config.json` `"FirstNameAttribute"`, `"LastNameAttribute"`, `"BindUsername"`, and `"BindPassword"` are now required fields. Anonymous bind is not currently supported. Other config changes can be reviewed in the [compatibility section of the changelog](http://docs.mattermost.com/administration/changelog.html?highlight=upgrade%20guide#config-json).
 
 #### Upgrade Enterprise Edition to 3.1.x and later
 
