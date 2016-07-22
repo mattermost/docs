@@ -140,7 +140,6 @@ header .links__icon {
 	float: right;
 	font-size: 20px;
 	padding: 0 20px;
-	right: -15px;
 	position: relative;
 }
 
@@ -173,13 +172,11 @@ header {
 }
 
 header .header__container {
-	line-height: 67px;
-	height: 70px;
-	color: #444;
-	border-bottom: 1px solid #ddd;
 	background: #fff;
-	padding: 0 15px 0 20px;
-	overflow: hidden;
+	border-bottom: 1px solid #ddd;
+	color: #444;
+	height: 70px;
+	line-height: 67px;
 }
 
 header .header__logo img {
@@ -188,6 +185,7 @@ header .header__logo img {
 }
 
 header .header__logo {
+	margin-left: 15px;
 	float: left;
 }
 
@@ -228,10 +226,12 @@ header .header__links li a {
 		width: 176px;
 	}
 	header .header__links {
+		border-bottom: 1px solid #ccc;
 		display: none;
-		width: 100%;
+		background: #fff;
 		line-height: 40px;
-		padding-bottom: 10px;
+		padding: 0 15px 5px;
+		width: 100%;
 	}
 	header .header__links li {
 		float: none;
