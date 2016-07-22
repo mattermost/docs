@@ -191,7 +191,7 @@ header .header__logo {
 
 header .header__links {
 	float: right;
-	padding: 0;
+	padding: 0 5px 0 0;
 }
 
 header .header__links li {
