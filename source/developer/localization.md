@@ -78,3 +78,18 @@ Below are current official reviewers and maintainers for Alpha- and Beta-quality
 | Japanese (Beta)             | [Ryo Onodera](https://github.com/ryoon)             |                                                         |
 | Portuguese (Beta)           | [Rodrigo Corsi](https://github.com/rodrigocorsi2)   | [Carlos Tadeu Panato Junior](https://github.com/ctadeu) |
 | Spanish (Beta)              | [Elias Nahum](https://github.com/enahum)            |                                                         |
+
+
++-----------------------------+-----------------------------------------------------+---------------------------------------------------------+
+| Language                    | Official Reviewer                                   |  Maintainers                                            |
++=============================+=====================================================+=========================================================+
+| French (Beta)               | [Pierre-Julien Grizel](https://github.com/pjgrizel) |                                                         |
++-----------------------------+-----------------------------------------------------+---------------------------------------------------------+
+| German (Beta)               | [Christian Arnold](https://github.com/meilon)       |                                                         |
++-----------------------------+-----------------------------------------------------+---------------------------------------------------------+
+| Japanese (Beta)             | [Ryo Onodera](https://github.com/ryoon)             |                                                         |
++-----------------------------+-----------------------------------------------------+---------------------------------------------------------+
+| Portuguese (Beta)           | [Rodrigo Corsi](https://github.com/rodrigocorsi2)   | [Carlos Tadeu Panato Junior](https://github.com/ctadeu) |
++-----------------------------+-----------------------------------------------------+---------------------------------------------------------+
+| Spanish (Beta)              | [Elias Nahum](https://github.com/enahum)            |                                                         |
++-----------------------------+-----------------------------------------------------+---------------------------------------------------------+
