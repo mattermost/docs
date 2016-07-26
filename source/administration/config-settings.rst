@@ -52,7 +52,7 @@ gzip compression applies to the HTML, CSS, Javascript, and other static content 
 
 **gzip**: The Mattermost server will serve static files compressed with gzip to improve performance.
 
-**Uncompressed**: he Mattermost server will serve static files uncompressed.
+**Uncompressed**: The Mattermost server will serve static files uncompressed.
 
 **Disabled**: The Mattermost server will not serve static files.
 
