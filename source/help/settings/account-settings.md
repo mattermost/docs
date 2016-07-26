@@ -92,7 +92,7 @@ Choose a 12-hour or 24-hour time preference that appears on the time stamp for a
 Configure how names are displayed in Mattermost: nickname, username or full name.
 
 #### Link Previews
-Select whether links posted on Mattermost show a preview below them. When "On", a preview will be shown below links to Youtube Videos and GIF, PNG, JPEG, and BMP files. When "Off", no preview will be shown. This setting can also be controlled using the slash commands /expand and /collapse. 
+Select whether links posted on Mattermost show a preview below them. When "On", a preview will be shown below links to Youtube Videos and GIF, PNG, JPEG, and BMP files. When "Off", no preview will be shown. This setting can also be controlled using the slash commands `/expand` and `/collapse`. 
 
 #### Message Display
 Select the formatting for messages in the center channel. "Compact" mode decreases the spacing around posts, collapses link previews, and hides thumbnails so only file names are shown. Some formatting types, such as block quotes and headings, are also reduced in size.
