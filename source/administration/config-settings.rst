@@ -413,7 +413,7 @@ Skip Certificate Verification ``"SkipCertificateVerification": false``
 
 Synchronization Interval (minutes) ``"SyncIntervalMinutes": 60``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Set how often Mattermost accounts synchronize attributes with AD/LDAP, in minutes. When synchronizing, Mattermost queries AD/LDAP for relevant account information and updates Mattermost accounts based on changes to attributes (first name, last name, and nickname). When accounts are disabled in AD/LDAP users can no longer sign-in to Mattermost using AD/LDAP credentials, and their active sessions are revoked once Mattermost synchronizes attributes. Disabling a user in AD/LDAP does not automatically set its Mattermost account to "Inactive" it only disables AD/LDAP authentication. 
+Set how often Mattermost accounts synchronize attributes with AD/LDAP, in minutes. When synchronizing, Mattermost queries AD/LDAP for relevant account information and updates Mattermost accounts based on changes to attributes (first name, last name, and nickname). When accounts are disabled in AD/LDAP users are made inactive in Mattermost, and their active sessions are revoked once Mattermost synchronizes attributes. To syncrhonize immediately after disabling an account, use the "LDAP Synchronize Now" button. 
 
 Query Timeout (seconds) ``"QueryTimeout": 60`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -423,7 +423,7 @@ Login Field Name ``"LoginFieldName": ""``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The placeholder text that appears in the login field on the login page. Typically this would be whatever name is used to refer to LDAP credentials in your company, so it is recognizable to your users. Defaults to **LDAP Username**.
 
-LDAP Syncrhonize Now
+LDAP Synchronize Now
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 This button causes LDAP synchronization to occur as soon as it is pressed. Use it whenever you have made a change in the LDAP server you want to take effect immediately. After using the button, the next LDAP synchronization will occur after the time specified by the Synchronization Interval.  
 
