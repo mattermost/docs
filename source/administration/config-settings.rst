@@ -883,29 +883,45 @@ ________
 
 Legal and Support
 ```````````````````````````
-Terms of Service link ``"TermsOfServiceLink": "/static/help/terms.html"`` 
+Terms of Service link ``"TermsOfServiceLink": "https://about.mattermost.com/default-terms/"`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Configurable link to Terms of Service your organization may provide to end users. By default, links to an editable file hosted in the ``static/help/terms.html`` found in the directory where the Mattermost server installed. Default file may be updated to state the terms under which your organization is providing its server to end users, in addition to the "Mattermost Conditions of Use" notice to end users that must also be shown to users from the "Terms of Service" link. 
+Configurable link to Terms of Service your organization may provide to end users. By default, links to a Terms of Service page hosted on about.mattermost.com. If changing the link to a different Terms of Service, make sure to include the "Mattermost Conditions of Use" notice to end users that must also be shown to users from the "Terms of Service" link. 
 
-Privacy Policy link ``"PrivacyPolicyLink": "/static/help/privacy.html"`` 
+Privacy Policy link ``"PrivacyPolicyLink": "https://about.mattermost.com/default-privacy-policy/"`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Configurable link to Privacy Policy your organization may provide to end users. By default, links to an editable file hosted in the ``static/help/privacy.html`` found in the directory where the Mattermost server installed. 
+Configurable link to Privacy Policy your organization may provide to end users.  By default, links to a Privacy Policy page hosted on about.mattermost.com.
 
-About link ``"AboutLink": "/static/help/about.html"`` 
+About link ``"AboutLink": "https://about.mattermost.com/default-about/"`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Configurable link to an About page describing your organization may provide to end users. By default, links to an editable file hosted in the ``static/help/about.html`` found in the directory where the Mattermost server installed. 
+Configurable link to an About page describing your organization may provide to end users. By default, links to an About page hosted on about.mattermost.com.
 
-Help link ``"HelpLink": "/static/help/help.html"`` 
+Help link ``"HelpLink": "https://about.mattermost.com/default-help/"`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Configurable link to an About page describing your organization may provide to end users. By default, points to Mattermost default help documentation. Can be links to an editable file hosted in the ``static/help/help.html`` found in the directory where the Mattermost server installed. 
+Configurable link to an About page describing your organization may provide to end users. By default, points to Mattermost default help documentation.  
 
-Report a Problem link ``"ReportAProblemLink": "/static/help/report_problem.html"`` 
+Report a Problem link ``"ReportAProblemLink": "https://about.mattermost.com/default-report-a-problem/"`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Set the link for the support website.
 
 Support Email ``"SupportEmail":"feedback@mattermost.com"`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Set an email for feedback or support requests.
+
+________
+
+Native App Links
+```````````````````````````
+Mattermost Apps Download Page Link ``"AppDownloadLink": "https://about.mattermost.com/downloads/"`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configurable link to a download page for Native Apps. When a link is present, an option to "Download Mattermost Apps" will be added in the Main Menu so users can find the download page. Leave this field blank to hide the option from the Main Menu. Defaults to a page on about.mattermost.com where users can download the iOS, Android, and Desktop clients. If you are using an `Enterprise App Store <https://docs.mattermost.com/deployment/push.html?highlight=enterprise%20app#push-notifications-and-mobile-devices>`_for your mobile apps, change this link to point to a customized download page where users can find the correct apps.
+
+Android App Download Link ``"AndroidAppDownloadLink": "https://about.mattermost.com/mattermost-android-app/"`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configurable link to download the Android app. When a link is present, users who access the site on a mobile web browser will be prompted with a page giving them the option to download the app. Leave this field blank to prevent the page from appearing. If you are using an `Enterprise App Store <https://docs.mattermost.com/deployment/push.html?highlight=enterprise%20app#push-notifications-and-mobile-devices>`_for your mobile apps, change this link to point to the correct app.
+
+iOS App Download Link ``"IosAppDownloadLink": "https://about.mattermost.com/mattermost-ios-app/"`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configurable link to download the iOS app. When a link is present, users who access the site on a mobile web browser will be prompted with a page giving them the option to download the app. Leave this field blank to prevent the page from appearing. If you are using an `Enterprise App Store <https://docs.mattermost.com/deployment/push.html?highlight=enterprise%20app#push-notifications-and-mobile-devices>`_for your mobile apps, change this link to point to the correct app.
 
 ________
 
