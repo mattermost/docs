@@ -1,6 +1,6 @@
 # Mattermost APIs
 
-Mattermost APIs let you integrate your favorite tools and services withing your Mattermost experience. 
+Mattermost APIs let you integrate your favorite tools and services within your Mattermost instance. 
 
 ## Slack-compatible Webhooks
 
