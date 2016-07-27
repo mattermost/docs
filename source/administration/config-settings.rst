@@ -1623,7 +1623,7 @@ Enable Developer Mode
 ________
 
 
-Settings configurable in config.json
+Settings configurable only in config.json
 -------------------------------
 
 There are a number of settings customizable in ``config.json`` unavailable in the System Console and require updating from the file itself. 
