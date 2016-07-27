@@ -883,6 +883,8 @@ ________
 
 Legal and Support
 ```````````````````````````
+Legal and Supprt links will be hidden in the user interface if these fields are left blank.
+
 Terms of Service link ``"TermsOfServiceLink": "https://about.mattermost.com/default-terms/"`` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Configurable link to Terms of Service your organization may provide to end users. By default, links to a Terms of Service page hosted on about.mattermost.com. If changing the link to a different Terms of Service, make sure to include the "Mattermost Conditions of Use" notice to end users that must also be shown to users from the "Terms of Service" link. 
