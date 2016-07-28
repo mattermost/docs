@@ -17,9 +17,9 @@ _____
 
 **Attach files** by dragging and dropping into Mattermost or clicking the attachment icon in the text input box.
 
-**Flag messages for follow up** by clicking the flag icon next to a message. 
+**Flag messages for follow up** by clicking the flag icon next to the message timestamp. 
 
-![flags](../../images/flag.png)
+![flags](../../images/flagicon.png)
 
 
 Learn more about:
