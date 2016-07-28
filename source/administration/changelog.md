@@ -4,7 +4,7 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 ## Release v3.2.0
 
-Expected release date: 2016-07-16
+Release date: 2016-07-16
 
 ### Security Update
 
