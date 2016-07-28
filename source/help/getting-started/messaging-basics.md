@@ -19,7 +19,7 @@ _____
 
 **Flag messages for follow up** by clicking the flag icon next to a message. 
 
-![flags](../../images/flagIcon.PNG)
+![flags](../../images/flag.png)
 
 
 Learn more about:
