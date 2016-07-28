@@ -17,6 +17,11 @@ _____
 
 **Attach files** by dragging and dropping into Mattermost or clicking the attachment icon in the text input box.
 
+**Flag messages for follow up** by clicking the flag icon next to a message. 
+
+![flags](../../images/flagIcon.PNG)
+
+
 Learn more about:
 - [Composing Messages and Replies](http://docs.mattermost.com/help/messaging/sending-messages.html)
 - [Mentioning Teammates](http://docs.mattermost.com/help/messaging/mentioning-teammates.html)
