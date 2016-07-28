@@ -2,9 +2,59 @@
 
 This changelog summarizes updates to [Mattermost Team Edition](http://www.mattermost.org/), an open source team messaging solution released monthly under an MIT license, and [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/), a commercial upgrade offering enterprise messaging for large organizations.
 
+## Release v3.3.0
+
+Expected release date: 2016-08-16
+
+### Highlights
+
+### Improvements
+
+####
+
+**[Enterprise E10, E20](https://about.mattermost.com/pricing/)**
+
+- 
+
+### Bug Fixes
+
+-
+
+### Compatibility  
+Changes from v3.1 to v3.2:
+
+#### config.json   
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console. 
+
+**Changes to Team Edition:**
+
+-
+
+**Changes to Enterprise Edition:**    
+In addition to changes to Team Edition, the following config settings were made to the Enterprise Edition. They will only work on servers with an Enterprise License that has the feature enabled.
+   
+-
+
+#### Database Changes from v3.1 to v3.2
+
+-
+
+### Known Issues
+
+-
+
+### Contributors
+
+Many thanks to all our contributors. In alphabetical order:
+
+\platform
+
+If we missed your name, please let us know at feedback@mattermost.com. Recognition is a manual process and mistakes can happen. We want to include anyone who's made a pull request that got merged during the release.
+
 ## Release v3.2.0
 
-Expected release date: 2016-07-16
+Release date: 2016-07-16
 
 ### Security Update
 
