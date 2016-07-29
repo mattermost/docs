@@ -22,11 +22,11 @@ No pull requests for major features should be submitted to the current release a
     - Post this checklist in Release channel 
     - Begin posting Zero Bug Balance query daily
 2. PM:
-    - Complete draft of Changelog with updates for latest feature additions, known issues, compatibility updates for config.json and database changes ([see example](http://docs.mattermost.com/administration/changelog.html#compatibility))
-    - Confirm the documentation checklist is up to date compared to the Changelog 
+    - PM area owners complete draft of Changelog in a WIP PR with updates for highlights, feature additions, known issues, compatibility updates for config.json and database changes ([see example](http://docs.mattermost.com/administration/changelog.html#compatibility))
     - Confirm changes to config.json in compatibility section of Changelog are written back to [settings documentation](http://docs.mattermost.com/administration/config-settings.html#configuration-settings)
     - Update [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) for any steps needed to upgrade to new version
-    - Submit NOTICE.txt PR for any new libraries added from dev, if not added already   
+    - Submit NOTICE.txt PR for any new libraries added from dev, if not added already
+    - Create meta issue for release in GitHub (see [example]https://github.com/mattermost/platform/issues/3702)).
     - Coordinate testing:  
         - Work with Ops to check the Quality Gate for feature complete.  
         - Receive testing sign-off from feature area owners (i.e. PM/Dev either signs-off that their area is well tested, or flags potential quality issues that may exist)  
@@ -43,7 +43,7 @@ No pull requests for major features should be submitted to the current release a
     - Finalize roadmap for next release  
     - Draft roadmap for release after next (used to prioritize design tasks)  
 5. Marketing:
-    - Drafts marketing bullet points for next release based off of roadmap  
+    - Drafts marketing bullet points for next release based off of roadmap
     - Notes date of marketing announcement for the release in release channel  
 6. Team:
     - In Stand-up, each team member discusses worst bug (10-15s)
@@ -70,7 +70,6 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
         - Submit Changelog PR 
         - Submit Changelog PR for [/ios](https://github.com/mattermost/ios) and [/android](https://github.com/mattermost/android) repositories
         - Prioritize any developer documentation tickets  
-        - Draft [GitLab ticket](https://gitlab.com/gitlab-org/omnibus-gitlab/issues/942) to take next Mattermost version in the Omnibus, but do not post until RC1 is cut  
         - Draft [Mattermost Security Updates](http://about.mattermost.com/security-updates/), but do not post until seven days after official release
 4. **(Team) Code Complete Meeting (10:15am PST)**:  
     - (PM) Leads team review of Changelog  
@@ -80,14 +79,13 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
 5. Build:  
     - Master is tagged and branched and “Release Candidate 1″ is cut (e.g. 1.1.0-RC1) according to the Release Candidate Checklist in ``mattermost/process``
     - CI servers are updated to the release branch 
-    - Size of bundle is checked
     - Directory structure is reviewed and large changes posted to the team channel
 6. PM:  
-    - Create meta issue for regressions in GitHub (see [example](https://github.com/mattermost/platform/issues/574))  
-    - PM owners for each new feature prepare a section highlighting end user benefits for the blog post and post to the Marketing room, including screenshots. See [example thread](https://pre-release.mattermost.com/core/pl/3mw3dfugutndipp1a8gzczqj6c) for formatting.
+    - PM owners for each new feature prepare a section highlighting end user benefits for the blog post and post to the Marketing room, including screenshots. See [example thread](https://pre-release.mattermost.com/core/pl/o611i4wz3pfafb6fpha9ggxxnh) for formatting.
+        - PMs ensure tweet banners are speced and all assets are passed to the artist.
+    - Merge changelog PR after team review is complete. Post a link to the changelog on the documention branch in the GitHub meta issue.
 7. Marketing:
     - Tweet announcement that RC1 is ready (see [example](https://twitter.com/mattermosthq/status/664172166368264192))
-    - Submits pull request for "Highlights" section of the Changelog 
     - Communicate checklist of items needed by specific dates to write the blog post announce (e.g. screenshots, GIFs, documentation) and begins to write the blog post, tweet, and email for the release announcement  
  
 ### E. (T-minus 7 working days) Release Candidate Testing 
@@ -112,9 +110,10 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - Triage hotfix candidates and decide on whether and when to cut next RC or final
     - If no blocking issues are found, PM, Dev and Ops signs off on the release
 5. PM:
-    - Post links to all issues found in RC as comments on the meta issue
-    - Update the meta issue description to include approved fixes
-    - Post screenshot and link to final tickets for next RC to the Release room
+    - Update the meta issue:
+        - Post comments to the meta issue with approved fixes for the next RCs
+        - Download links and testing server links to the RCs
+    - Post screenshot and link to final tickets for next RC to the Release Discussion room
     - Update Changelog “Known Issues” section with any significant issues that were found and not fixed for the final release
     - Check that the contributors section of Changelog is updated (including contributors from all repos)
 6. Dev:
@@ -123,9 +122,8 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
 7. Logistics:
     - Test RC fixes as they come in on CI servers
 8. Build: 
-    - Push next RC to acceptance after testing is complete and approved fixes merged, announces in Town Square on pre-release.mattermost.com/core
+    - Push next RC to acceptance after testing is complete and approved fixes merged, announces in Town Square. Build manager verifies with release manager before cutting any new RCs.
 9. PM:
-    - Closes the meta issue after the next RC is cut, and opens another ticket for new RC
     - Test tickets on the new RC that were merged to the release branch and post in Release channel after testing
 10. Ops:
     - Verifies each of the issues in meta ticket is fixed
@@ -138,16 +136,21 @@ The final release is cut. If an urgent and important issue needs to be addressed
     - Post this checklist in Release channel
     - Verify all items in the last posted release checklist are complete, if not alert the release manager.
 2. Build:
-    - Tags a new release (e.g. 1.1.0) and runs an official build which should be essentially identical to the last RC
+    - Tags a new release (e.g. 1.1.0) and runs an official build which should be essentially identical to the last RC. 
 3. PM:
+    - Post in Release Discussion with links to the EE and Team Edition bits.
     - Submit GitLab ticket to take next Mattermost version in the Omnibus using [template](https://gitlab.com/gitlab-org/omnibus-gitlab/issues/1241)
     - Update the mattermost.org/download page
     - Add the download links to http://docs.mattermost.com/administration/upgrade.html#version-archive
     - Contact owners of [community installers](http://www.mattermost.org/installation/) or submit [PRs](https://github.com/tommyvn/mattermost-heroku/commit/94f7c5c0c5d7d2672fb6d62b6a560b4b5c1b5131) to update install version number.
-    - Close final GitHub RC meta ticket  
+    - Close GitHub meta ticket for the release.
+    - Merge the docs release branch to master and verify all changes on docs.mattermost.com once the build is up. Submit a correction PR for any incorrect formatting or other errors missed during the intitial review.
+    - Update [MVP page](https://www.mattermost.org/mvp/) with the most valuable contributor of the release.
+    - Submit [GitLab MR](https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests/871/diffs) to take next Mattermost version in the Omnibus.
+    - Update [Docker preview image to latest version](https://github.com/mattermost/mattermost-docker-preview/commit/1c34195d70b26bd4c82b5ef4fa0ebaf421096881).
 4. Marketing:
     - Finalize Mailchimp email blast
-    - Finalize blog post for mattermost.org set timer for 06:00 PDT on first non-holiday weekday morning after release
+    - Finalize blog post for mattermost.org set timer for 06:00 PDT on the day of release.
     - Queue Tweet announcement
     - Find [GitLab release announcement merge request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests) and post proposal for [GitLab Mattermost update text](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests/1633/diffs#efdba966a222d7071509e0dd4f39de5c9d7c1200_0_185)
 
@@ -176,9 +179,6 @@ If a bug fix release is required, run through the following steps again:
     - Prepare tickets for the next release,  with a corresponding vX.X prefix
         - [Performance improvement ticket](https://mattermost.atlassian.net/browse/PLT-3363)
         - [Update testing spreadsheet](https://mattermost.atlassian.net/browse/PLT-3044)
-        - [Cutting RC builds](https://mattermost.atlassian.net/browse/PLT-2200)
-        - Upgrade [Gitlab Mattermost](https://gitlab.mattermost.com/community/channels/town-square) to RC1
-        - Push final build to [GitLab Mattermost](https://gitlab.mattermost.com/community/channels/town-square)
         - [Creating final release candidate](https://mattermost.atlassian.net/browse/PLT-2198)
         - [Test Gitlab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/PLT-2197) 
         - [Push to private cloud customers](https://mattermost.atlassian.net/browse/PLT-2199)
@@ -187,6 +187,12 @@ If a bug fix release is required, run through the following steps again:
         - [Upgrade GitLab Mattermost to RC1](https://mattermost.atlassian.net/browse/PLT-3116)
         - [Push final build to GitLab Mattermost](https://mattermost.atlassian.net/browse/PLT-3117)
         - [Cut build and set up RC1 servers](https://mattermost.atlassian.net/browse/PLT-3115)
+    - Create [PR tracking spreadsheet](https://docs.google.com/spreadsheets/d/1YkRqyQk0Y4ZouV-SsXbSjbzGOXu2ZSPSd4XC_4LAErI/edit#gid=0) for next release.
+        - Populate with any PR's that have already went in for the next release.
+        - Zapier manager updates GitHub automation zap to new PR tracking spreadsheet.
+    - Create a new branch on docs for the next release - `vX.X-documentation`.
+3. Build
+    - Put pre-release and CI servers back onto master.
 3. Dev:
     - Delete RCs after final version is shipped    
     - Check if any libraries need to be updated for the next release, and if so bring up in weekly team meeting
