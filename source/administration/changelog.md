@@ -8,13 +8,33 @@ Expected release date: 2016-08-16
 
 ### Highlights
 
+Improved Statuses:
+- Improved response time of status indicator changing between online/offline/away
+- Added status indicators to the Direct Message and Channel member lists
+- Added `@here` to mention users who are online
+
+Flagged Messages: 
+- Added the ability to flag a message for follow up, so users can track messages they want to go back to later
+
 ### Improvements
 
-####
+#### iOS app
+- Fixed issue where “Refresh/Log out” was appearing frequently
+- Improved caching, so only the necessary information is downloaded
+
+#### Android App
+- Improved caching, so only the necessary information is downloaded
+
+#### Mobile
+- Enter key now creates a new line instead of sending the message
+- Added links to the mobile apps in the welcome email, tutorial, and main menu
+- Added a mobile landing page that informs users of the mobile app when they access the site on a mobile web browser
 
 **[Enterprise E10, E20](https://about.mattermost.com/pricing/)**
 
-- 
+- Added the ability to set different themes for each team
+- Users disabled of removed from the LDAP server are now made “Inactive” in Mattermost (previously they had their sessions revoked and could no longer log in, but their account status was not set to “Inactive”)
+- Added the ability to force migrating authentication methods
 
 ### Bug Fixes
 
@@ -29,12 +49,16 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 **Changes to Team Edition:**
 
--
+- Under a new section `NativeAppSettings`:
+   - Added `"AppDownloadLink": "https://about.mattermost.com/downloads/"` to point towards a download page for native apps
+   - Added `"AndroidAppDownloadLink": "https://about.mattermost.com/mattermost-android-app/"` to point towards the Android app
+   - Added `"IosAppDownloadLink": "https://about.mattermost.com/mattermost-ios-app/"` to point towards the iOS app
 
 **Changes to Enterprise Edition:**    
 In addition to changes to Team Edition, the following config settings were made to the Enterprise Edition. They will only work on servers with an Enterprise License that has the feature enabled.
    
--
+- Under `LdapSettings` in `config.json`:
+   - `"BindUsername": ""` and `"BindPassword": ""` are no longer required fields, so anonymous binding is possible
 
 #### Database Changes from v3.1 to v3.2
 
