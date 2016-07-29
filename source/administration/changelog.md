@@ -135,6 +135,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
    - Added `"EnableWebhookDebugging": true`. When set to `true`, contents of incoming webhooks are printed to log files for debugging.
 
 **Changes to Enterprise Edition:**    
+
 In addition to changes to Team Edition, the following config settings were made to the Enterprise Edition. They will only work on servers with an Enterprise License that has the feature enabled.
    
 - Under `TeamSettings` in `config.json`:
@@ -341,6 +342,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
     - Added `"AvailableLocales": “en,es,fr,ja,pt-BR”` to set which languages are available for users in Account Settings. The language specified in `DefaultClientLocale` should be included in this list.
 
 **Changes to Enterprise Edition:**    
+
 In addition to changes to Team Edition, the following config settings were made to the Enterprise Edition. They will only work on servers with an Enterprise License that has the feature enabled.
 
  - Under `LdapSettings` in `config.json`:
@@ -554,6 +556,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
     - Changed: `"SupportEmail": "feedback@mattermost.com"`
 
 **Changes to Enterprise Edition:**
+
 In addition to changes to Team Edition, the following config settings were made to the Enterprise Edition. They will only work on servers with an Enterprise License that has the feature enabled.
 
 - Under `ServiceSettings` in `config.json`:
