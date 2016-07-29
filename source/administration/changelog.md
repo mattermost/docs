@@ -38,7 +38,9 @@ Flagged Messages:
 
 ### Bug Fixes
 
--
+- The behavior of setting for Link Previews in Account Settings is no longer reversed.
+- Hitting the URL of a private team you used to belong to now redirects properly
+- Search terms contained in hashtags are now highlighted in the search results.
 
 ### Compatibility  
 Changes from v3.1 to v3.2:
