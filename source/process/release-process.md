@@ -195,6 +195,13 @@ If a bug fix release is required, run through the following steps again:
 4. Marketing:
     - Confirm marketing has been posted (animated GIFs, screenshots, mail announcement, tweets, blog posts)
 
+### H. (T-plus 5 working days) Release Updates
+1. Logistics: 
+    - Post this checklist in Release channel 
+    - Verify all items in the last posted release checklist are complete, if not alert the release manager.
+2. Leads:
+    - Update [company roadmap at mattermost.com](https://about.mattermost.com/direction/)
+    - Post and review [Mattermost Security Updates](https://about.mattermost.com/security-updates/)
 
 ## Templates
 
