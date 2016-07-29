@@ -113,15 +113,14 @@ Release date: 2016-07-16
 - Error merssage displayed on password reset page is now formatted correctly.
 
 
-### Compatibility  
-
-**Changes to Team Edition and Enterprise Edition**:
+### Compatibility
+Changes from v3.1 to v3.2:
 
 #### config.json   
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console. 
 
-**Changes to Team Edition:**
+**Changes to Team Edition and Enterprise Edition**:
 
 - Under `EmailSettings` in `config.json`:
    - Added `"FeedbackOrganization": ""` to specify organization name and address, which will be displayed on email notifications from Mattermost.
