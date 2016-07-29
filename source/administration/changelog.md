@@ -20,10 +20,6 @@ Flagged Messages:
 
 #### iOS app
 - Fixed issue where “Refresh/Log out” was appearing frequently
-- Improved caching, so only the necessary information is downloaded
-
-#### Android App
-- Improved caching, so only the necessary information is downloaded
 
 #### Mobile
 - Enter key now creates a new line instead of sending the message
