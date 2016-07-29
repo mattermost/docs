@@ -114,7 +114,8 @@ Release date: 2016-07-16
 
 
 ### Compatibility  
-Changes from v3.1 to v3.2:
+
+**Changes to Team Edition and Enterprise Edition**:
 
 #### config.json   
 
@@ -134,9 +135,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Under `LogSettings` in `config.json`:
    - Added `"EnableWebhookDebugging": true`. When set to `true`, contents of incoming webhooks are printed to log files for debugging.
 
-**Changes to Enterprise Edition:**    
+**Additional Changes to Enterprise Edition:**    
 
-In addition to changes to Team Edition, the following config settings were made to the Enterprise Edition. They will only work on servers with an Enterprise License that has the feature enabled.
+The following config settings will only work on servers with an Enterprise License that has the feature enabled.
    
 - Under `TeamSettings` in `config.json`:
    - Added `"RestrictTeamInvite": "all"` to set the permissions required to send team invites.
@@ -334,16 +335,16 @@ Changes from v3.0 to v3.1:
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console. 
 
-**Changes to Team Edition:**
+**Changes to Team Edition and Enterprise Edition**:
 
  - Under `LocalizationSettings` in `config.json`:
     - Added `"DefaultServerLocale": “en”` to set default language for the system messages and logs
     - Added `"DefaultClientLocale": “en”` to set default language for newly created users and for pages where the user hasn't logged in
     - Added `"AvailableLocales": “en,es,fr,ja,pt-BR”` to set which languages are available for users in Account Settings. The language specified in `DefaultClientLocale` should be included in this list.
 
-**Changes to Enterprise Edition:**    
+**Additional Changes to Enterprise Edition:**    
 
-In addition to changes to Team Edition, the following config settings were made to the Enterprise Edition. They will only work on servers with an Enterprise License that has the feature enabled.
+The following config settings will only work on servers with an Enterprise License that has the feature enabled.
 
  - Under `LdapSettings` in `config.json`:
     - Added `"SyncIntervalMinutes": "60"` to allow system admins adjust how frequently Mattermost performs LDAP synchronization to update users
@@ -538,7 +539,7 @@ Web Service API is upgraded to Version 3 and previous Version 1 API is no longer
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console.  
 
-**Changes to Team Edition:** 
+**Changes to Team Edition and Enterprise Edition**:
 
 - Under `TeamSettings` in `config.json`:
     - Added `"EnableOpenServer": false` to set whether users can sign up to the server without an invite.    
@@ -555,9 +556,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
     - Changed: `"ReportAProblemLink": "https://about.mattermost.com/default-report-a-problem/"`
     - Changed: `"SupportEmail": "feedback@mattermost.com"`
 
-**Changes to Enterprise Edition:**
+**Additional Changes to Enterprise Edition:**    
 
-In addition to changes to Team Edition, the following config settings were made to the Enterprise Edition. They will only work on servers with an Enterprise License that has the feature enabled.
+The following config settings will only work on servers with an Enterprise License that has the feature enabled.
 
 - Under `ServiceSettings` in `config.json`:
   - Added `"EnableMultifactorAuthentication": false` to enable Multifactor Authentication
