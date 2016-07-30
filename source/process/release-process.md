@@ -26,7 +26,7 @@ No pull requests for major features should be submitted to the current release a
     - Confirm changes to config.json in compatibility section of Changelog are written back to [settings documentation](http://docs.mattermost.com/administration/config-settings.html#configuration-settings)
     - Update [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) for any steps needed to upgrade to new version
     - Submit NOTICE.txt PR for any new libraries added from dev, if not added already
-    - Create meta issue for release in GitHub (see [example]https://github.com/mattermost/platform/issues/3702)).
+    - Create meta issue for release in GitHub (see [example](https://github.com/mattermost/platform/issues/3702)).
     - Coordinate testing:  
         - Work with Ops to check the Quality Gate for feature complete.  
         - Receive testing sign-off from feature area owners (i.e. PM/Dev either signs-off that their area is well tested, or flags potential quality issues that may exist)  
