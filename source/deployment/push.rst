@@ -130,14 +130,12 @@ To setup HPNS please follow the following steps:
 Confirming TPNS push notifications are properly configured
 ``````
 
-To setup TPNS please `follow the instructions to confirm HPNS is correctly configured <http://docs.mattermost.com/deployment/push.html#confirming-hpns-is-properly-configured>`_ with the following changes: 
+To setup TPNS please `follow the instructions to confirm HPNS is correctly configured <http://docs.mattermost.com/deployment/push.html#confirming-hpns-push-notifications-are-properly-configured>`_ with the following changes: 
 
 1. Omit step 1.1, as there is no need to install Enterprise Edition.
 2. In step 1.2, select "User iOS and Android apps on iTunes and Google Play with TPNS"
 
 The same instructions should then verify the functionality of TPNS.
-
-.. note::  Mobile push notifications currently trigger on the same events as email notifications. The option to trigger mobile push notifications `based on mentions <https://mattermost.uservoice.com/forums/306457-general/suggestions/13609332-add-option-to-trigger-push-notifications-on-mentio>`_ and `based on all desktop notifications <https://mattermost.uservoice.com/forums/306457-general/suggestions/13608870-add-option-to-trigger-push-notifications-on-same-e>`_ are feature candidate for a future release. 
 
 
 Confirming Performance of Mobile Applications 

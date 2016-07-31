@@ -6,11 +6,12 @@ Here's how to engage with the Mattermost community:
 - **Feature Ideas** - [Add a feature idea to be discussed or upvoted](http://www.mattermost.org/feature-requests/).
 - **Troubleshoot** - [Search articles and add topic if issue is new](https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150).
 - **General discussion** - [Join the Mattermost Forum](https://forum.mattermost.org/t/welcome-to-the-mattermost-general-forum/8). 
-- **Contribute code** - Select tickets [accepting pull requests](https://mattermost.atlassian.net/browse/PLT-2244?filter=10101) and follow [guidelines to contribute](http://docs.mattermost.com/developer/contribution-guide.html). 
+- **Contribute code** - Select tickets marked [Accepting Pull Requests](https://mattermost.atlassian.net/browse/PLT-2244?filter=10101) (APR) and follow [guidelines to contribute](http://docs.mattermost.com/developer/contribution-guide.html). Join the [APR channel](https://pre-release.mattermost.com/core/channels/tickets) to ask questions and discuss your work. 
 - **Contributor and tester discussion** - Contributors and testers can use [nightly builds server](https://pre-release.mattermost.com/core) to work on next release.
+- **Integrations** - [Let us know about your work so we can promote it!](https://www.mattermost.org/share-your-mattermost-projects/) Join the [Integrations and Apps channel](https://pre-release.mattermost.com/core/channels/integrations) to discuss your project. 
+- **Localization** - Join the [translation server](http://translate.mattermost.com/projects/mattermost/) to start translating right away. If your language isn't yet started, join our [Localization channel](https://pre-release.mattermost.com/core/channels/localization) to request a new language, or to ask general questions and meet others in the community. Join language-specific channels to discuss translation work. 
 - **Approved changes** - See [Jira database](https://mattermost.atlassian.net/secure/Dashboard.jspa) to view open, in-progress, resolved and closed tickets. 
-- **Licensing questions** - Please mail info@mattermost.com. 
-- **Commercial support** - Mattermost Enterprise Edition customers can access [commercial support](https://about.mattermost.com/support/) based on their subscription option.
+- **Commercial support** - [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/) customers can access [commercial support](https://about.mattermost.com/support/) based on their subscription option.
 
 ## How improvements are made to Mattermost
 

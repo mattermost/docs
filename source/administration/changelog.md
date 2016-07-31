@@ -4,7 +4,7 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 ## Release v3.2.0
 
-Expected release date: 2016-07-16
+Release date: 2016-07-16
 
 ### Security Update
 
@@ -113,14 +113,14 @@ Expected release date: 2016-07-16
 - Error merssage displayed on password reset page is now formatted correctly.
 
 
-### Compatibility  
+### Compatibility
 Changes from v3.1 to v3.2:
 
 #### config.json   
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console. 
 
-**Changes to Team Edition:**
+**Changes to Team Edition and Enterprise Edition**:
 
 - Under `EmailSettings` in `config.json`:
    - Added `"FeedbackOrganization": ""` to specify organization name and address, which will be displayed on email notifications from Mattermost.
@@ -134,8 +134,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Under `LogSettings` in `config.json`:
    - Added `"EnableWebhookDebugging": true`. When set to `true`, contents of incoming webhooks are printed to log files for debugging.
 
-**Changes to Enterprise Edition:**    
-In addition to changes to Team Edition, the following config settings were made to the Enterprise Edition. They will only work on servers with an Enterprise License that has the feature enabled.
+**Additional Changes to Enterprise Edition:**    
+
+The following config settings will only work on servers with an Enterprise License that has the feature enabled.
    
 - Under `TeamSettings` in `config.json`:
    - Added `"RestrictTeamInvite": "all"` to set the permissions required to send team invites.
@@ -164,7 +165,8 @@ In addition to changes to Team Edition, the following config settings were made 
    - Added `"LoginButtonText": ""` set the text that appears in the login button on the login page.
 
 - Under `LdapSettings` in `config.json`:
-   - `"FirstNameAttribute": ""` and `"LastNameAttribute": ""` are now required fields.
+   - `"FirstNameAttribute": ""`, `"LastNameAttribute": ""`, `"BindUsername": ""`, and `"BindPassword": ""` are now required fields.
+   - Added `"MaxPageSize": 0` to set the maximum number of users that will be requested from the LDAP server at one time.
 
 #### Database Changes from v3.1 to v3.2
 
@@ -176,6 +178,7 @@ In addition to changes to Team Edition, the following config settings were made 
 
 ### Known Issues
 
+- In System Console > Notifications > Email the "Test Connection" button does not properly use the saved SMTP password. The temporary workaround is to re-type your SMTP Server Password into the field prior to using the "Test Connection", and then to "Save" afterwards.
 - The behavior of setting for Link Previews in Account Settings is reversed.
 - “More” option under Direct Message list no longer shows count of team members not in your direct message list.
 - Webhook attachments don't show up in search results.
@@ -331,15 +334,16 @@ Changes from v3.0 to v3.1:
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console. 
 
-**Changes to Team Edition:**
+**Changes to Team Edition and Enterprise Edition**:
 
  - Under `LocalizationSettings` in `config.json`:
     - Added `"DefaultServerLocale": “en”` to set default language for the system messages and logs
     - Added `"DefaultClientLocale": “en”` to set default language for newly created users and for pages where the user hasn't logged in
     - Added `"AvailableLocales": “en,es,fr,ja,pt-BR”` to set which languages are available for users in Account Settings. The language specified in `DefaultClientLocale` should be included in this list.
 
-**Changes to Enterprise Edition:**    
-In addition to changes to Team Edition, the following config settings were made to the Enterprise Edition. They will only work on servers with an Enterprise License that has the feature enabled.
+**Additional Changes to Enterprise Edition:**    
+
+The following config settings will only work on servers with an Enterprise License that has the feature enabled.
 
  - Under `LdapSettings` in `config.json`:
     - Added `"SyncIntervalMinutes": "60"` to allow system admins adjust how frequently Mattermost performs LDAP synchronization to update users
@@ -534,7 +538,7 @@ Web Service API is upgraded to Version 3 and previous Version 1 API is no longer
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console.  
 
-**Changes to Team Edition:** 
+**Changes to Team Edition and Enterprise Edition**:
 
 - Under `TeamSettings` in `config.json`:
     - Added `"EnableOpenServer": false` to set whether users can sign up to the server without an invite.    
@@ -551,8 +555,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
     - Changed: `"ReportAProblemLink": "https://about.mattermost.com/default-report-a-problem/"`
     - Changed: `"SupportEmail": "feedback@mattermost.com"`
 
-**Changes to Enterprise Edition:**
-In addition to changes to Team Edition, the following config settings were made to the Enterprise Edition. They will only work on servers with an Enterprise License that has the feature enabled.
+**Additional Changes to Enterprise Edition:**    
+
+The following config settings will only work on servers with an Enterprise License that has the feature enabled.
 
 - Under `ServiceSettings` in `config.json`:
   - Added `"EnableMultifactorAuthentication": false` to enable Multifactor Authentication

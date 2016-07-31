@@ -136,7 +136,7 @@ For any issues, Mattermost Enterprise Edition subscribers and trial license user
 
 #### Upgrade Enterprise Edition to 3.2.x
 
-Upgrading to `v3.2.x` follows the procedure to [upgrade to `v3.1.x` and above](http://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition-to-3-1-x-and-later), but there is a breaking change where under LdapSettings in config.json ["FirstNameAttribute" and "LastNameAttribute" are now required fields](http://docs.mattermost.com/administration/changelog.html?highlight=upgrade%20guide#config-json).
+Upgrading to `v3.2.x` follows the procedure to [upgrade to `v3.1.x` and above](http://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition-to-3-1-x-and-later), but there is a breaking change where under `LdapSettings` in `config.json` `"FirstNameAttribute"`, `"LastNameAttribute"`, `"BindUsername"`, and `"BindPassword"` are now required fields. Anonymous bind is not currently supported. Other config changes can be reviewed in the [compatibility section of the changelog](http://docs.mattermost.com/administration/changelog.html?highlight=upgrade%20guide#config-json).
 
 #### Upgrade Enterprise Edition to 3.1.x and later
 
@@ -252,7 +252,7 @@ Locations of previously compiled builds.
 Stable builds of open source team communication platform compiled by Mattermost, Inc, available under an MIT license.
 
 - [Mattermost Team Edition v3.2.0](http://docs.mattermost.com/administration/changelog.html#release-v3-2-0)
-  - `http://releases.mattermost.com/3.2.0/mattermost-team-3.2.0-linux-amd64.tar.gz`
+  - `https://releases.mattermost.com/3.2.0/mattermost-team-3.2.0-linux-amd64.tar.gz`
 - [Mattermost Team Edition v3.1.0](http://docs.mattermost.com/administration/changelog.html#release-v3-1-0)
   - `https://releases.mattermost.com/3.1.0/mattermost-team-3.1.0-linux-amd64.tar.gz`
 - [Mattermost Team Edition v3.0.3](http://docs.mattermost.com/administration/changelog.html#release-v3-0-0)
@@ -289,7 +289,7 @@ Stable builds of open source team communication platform compiled by Mattermost,
 Commercial software for self-hosted enterprise communication compiled by Mattermost, Inc. Requires paid subscription and valid license key for use.
 
 - [Mattermost Enterprise Edition v3.2.0](http://docs.mattermost.com/administration/changelog.html#release-v3-2-0)
-  - `http://releases.mattermost.com/3.2.0/mattermost-enterprise-3.2.0-linux-amd64.tar.gz`
+  - `https://releases.mattermost.com/3.2.0/mattermost-enterprise-3.2.0-linux-amd64.tar.gz`
 - [Mattermost Enterprise Edition v3.1.0](http://docs.mattermost.com/administration/changelog.html#release-v3-1-0)
   - `https://releases.mattermost.com/3.1.0/mattermost-enterprise-3.1.0-linux-amd64.tar.gz`
 - [Mattermost Enterprise Edition v3.0.3](http://docs.mattermost.com/administration/changelog.html#release-v3-0-0)
