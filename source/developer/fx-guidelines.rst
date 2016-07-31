@@ -205,7 +205,7 @@ Input Hints
 
 **Placeholder input text:**
 
-    Show examples of valid input, such as “name@example.com” for email addresses, as well as examples of functionality that is not obvious supported, for example in inputting team name, offer placeholder input text with “Example: Marketing, John’s Room, 中国业务”.
+    Show examples of valid input, such as ``name@example.com`` for email addresses, as well as examples of functionality that is not obvious supported, for example in inputting team name, offer placeholder input text with “Example: Marketing, John’s Room, 中国业务”.
 
 
 **Field validation:**
@@ -354,7 +354,7 @@ Alignment of Elements
 
     |
 
-    Error message does not expand the horizontal separator
+    Error message does not extend beyond the horizontal line separator.
 
     ..  image:: ../images/align2.png
         :alt: Confined messages with respect to width
@@ -376,7 +376,7 @@ Alignment of Elements
 |
 
 | **Instructions should be sentences, one-line links should be fragments.**
-| Instructions, such as “A password reset link has been sent to you@email.com for your account.\nPlease check your inbox.”, should be displayed as sentences ending in periods. One-line links, such as “Find it here”, should not end in periods or commas, but question marks are okay.
+| Instructions, such as “A password reset link has been sent to ``you@email.com`` for your account.\nPlease check your inbox.”, should be displayed as sentences ending in periods. One-line links, such as “Find it here”, should not end in periods or commas, but question marks are okay.
 |
 **Example:**
 
