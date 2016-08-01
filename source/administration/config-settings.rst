@@ -624,7 +624,7 @@ Skip Certificate Verification
 
 Synchronization Interval (minutes) 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Set how often Mattermost accounts synchronize attributes with AD/LDAP, in minutes. When synchronizing, Mattermost queries AD/LDAP for relevant account information and updates Mattermost accounts based on changes to attributes (first name, last name, and nickname). When accounts are disabled in AD/LDAP users can no longer sign-in to Mattermost using AD/LDAP credentials, and their active sessions are revoked once Mattermost synchronizes attributes. Disabling a user in AD/LDAP does not automatically set its Mattermost account to "Inactive" it only disables AD/LDAP authentication.
+Set how often Mattermost accounts synchronize attributes with AD/LDAP, in minutes. When synchronizing, Mattermost queries AD/LDAP for relevant account information and updates Mattermost accounts based on changes to attributes (first name, last name, and nickname). When accounts are disabled in AD/LDAP users are made inactive in Mattermost, and their active sessions are revoked once Mattermost synchronizes attributes. To synchronize immediately after disabling an account, use the "LDAP Synchronize Now" button.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This features's ``config.json`` setting is ``"SyncIntervalMinutes": 60`` with whole number input.                                                                     |
@@ -1222,9 +1222,9 @@ For deployments seeking additional tracking of system behavior using Segment.com
 
 Google API Key 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Mattermost offers the ability to embed YouTube videos from URLs shared by end users. If Google detects the number of views is exceedingly high, they may throttle embed access. Should this occur, you can remove the throttle by registering for a Google Developer Key and entering it in this field following these instructions: https://www.youtube.com/watch?v=Im69kzhpR3I. Your Google Developer Key is used in client-side Javascript.
+Mattermost offers the ability to embed YouTube videos from URLs shared by end users. Set this key to enable the display of titles for embedded YouTube video previews. Without the key, YouTube previews will still be created based on hyperlinks appearing in messages or comments but they will not show the video title. If Google detects the number of views is exceedingly high, they may throttle embed access. Should this occur, you can remove the throttle by registering for a Google Developer Key and entering it in this field following these instructions: https://www.youtube.com/watch?v=Im69kzhpR3I. Your Google Developer Key is used in client-side Javascript.
 
-Using a Google Developer Key allows Mattermost to detect when a video is no longer available and display the post with a *Video not found* label.
+Using a Google API Key allows Mattermost to detect when a video is no longer available and display the post with a *Video not found* label.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This features's ``config.json`` setting is ``"GoogleDeveloperKey": ""`` with string input.                                                                            |
@@ -1425,45 +1425,47 @@ ________
 
 Legal and Support
 ```````````````````````````
+Legal and Supprt links will be hidden in the user interface if these fields are left blank.
+
 Terms of Service link 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Configurable link to Terms of Service your organization may provide to end users. By default, links to an editable file hosted in the ``static/help/terms.html`` found in the directory where the Mattermost server installed. Default file may be updated to state the terms under which your organization is providing its server to end users, in addition to the "Mattermost Conditions of Use" notice to end users that must also be shown to users from the "Terms of Service" link. 
+Configurable link to Terms of Service your organization may provide to end users. By default, links to a Terms of Service page hosted on about.mattermost.com. If changing the link to a different Terms of Service, make sure to include the "Mattermost Conditions of Use" notice to end users that must also be shown to users from the "Terms of Service" link.  
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This features's ``config.json`` setting is ``"TermsOfServiceLink": "/static/help/terms.html"`` with string input.                                                     |
+| This features's ``config.json`` setting is ``"https://about.mattermost.com/default-terms/"`` with string input.                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Privacy Policy link  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Configurable link to Privacy Policy your organization may provide to end users. By default, links to an editable file hosted in the ``static/help/privacy.html`` found in the directory where the Mattermost server installed. 
+Configurable link to Privacy Policy your organization may provide to end users.  By default, links to a Privacy Policy page hosted on about.mattermost.com.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This features's ``config.json`` setting is ``"PrivacyPolicyLink": "/static/help/privacy.html"`` with string input.                                                    |
+| This features's ``config.json`` setting is ``https://about.mattermost.com/default-privacy-policy/"`` with string input.                                               |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 About link  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Configurable link to an About page describing your organization may provide to end users. By default, links to an editable file hosted in the ``static/help/about.html`` found in the directory where the Mattermost server installed. 
+Configurable link to an About page describing your organization may provide to end users. By default, links to an About page hosted on about.mattermost.com. 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This features's ``config.json`` setting is ``"AboutLink": "/static/help/about.html"`` with string input.                                                              |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This features's ``config.json`` setting is ``"AboutLink": "https://about.mattermost.com/default-about/"`` with string input.                                                              |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Help link  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Configurable link to an About page describing your organization may provide to end users. By default, points to Mattermost default help documentation. Can be links to an editable file hosted in the ``static/help/help.html`` found in the directory where the Mattermost server installed. 
+Configurable link to a Help page your organization may provide to end users. By default, links to Mattermost help documentation hosted on `docs.mattermost.com <https://docs.mattermost.com/>`_ .
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This features's ``config.json`` setting is ``"HelpLink": "/static/help/help.html"`` with string input.                                                                |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This features's ``config.json`` setting is ``"HelpLink": "https://about.mattermost.com/default-help/"`` with string input.                                                                |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Report a Problem link  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Set the link for the support website.
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This features's ``config.json`` setting is ``"ReportAProblemLink": "/static/help/report_problem.html"`` with string input.                                            |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This features's ``config.json`` setting is ``"ReportAProblemLink": "https://about.mattermost.com/default-report-a-problem/"`` with string input.                                            |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Support Email  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1475,6 +1477,34 @@ Set an email for feedback or support requests.
 
 ________
 
+Native App Links
+```````````````````````````
+
+Mattermost Apps Download Page Link  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configurable link to a download page for Native Apps. When a link is present, an option to "Download Mattermost Apps" will be added in the Main Menu so users can find the download page. Leave this field blank to hide the option from the Main Menu. Defaults to a page on about.mattermost.com where users can download the iOS, Android, and Desktop clients. If you are using an `Enterprise App Store <https://docs.mattermost.com/deployment/push.html?highlight=enterprise%20app#push-notifications-and-mobile-devices>`_for your mobile apps, change this link to point to a customized download page where users can find the correct apps.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This features's ``config.json`` setting is ``"AppDownloadLink": "https://about.mattermost.com/downloads/"`` with string input.                                                            |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Android App Download Link  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configurable link to download the Android app. When a link is present, users who access the site on a mobile web browser will be prompted with a page giving them the option to download the app. Leave this field blank to prevent the page from appearing. If you are using an `Enterprise App Store <https://docs.mattermost.com/deployment/push.html?highlight=enterprise%20app#push-notifications-and-mobile-devices>`_for your mobile apps, change this link to point to the correct app.
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This features's ``config.json`` setting is ``"AndroidAppDownloadLink": "https://about.mattermost.com/mattermost-android-app/"`` with string input.                                                            |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+iOS App Download Link  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configurable link to download the iOS app. When a link is present, users who access the site on a mobile web browser will be prompted with a page giving them the option to download the app. Leave this field blank to prevent the page from appearing. If you are using an `Enterprise App Store <https://docs.mattermost.com/deployment/push.html?highlight=enterprise%20app#push-notifications-and-mobile-devices>`_for your mobile apps, change this link to point to the correct app.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This features's ``config.json`` setting is ``"IosAppDownloadLink": "https://about.mattermost.com/mattermost-ios-app/"`` with string input.                                                            |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+________
 
 Advanced
 --------------------------------
