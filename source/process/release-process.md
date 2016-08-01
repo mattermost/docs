@@ -92,10 +92,6 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
 
 1. Logistics:
     - Post this checklist in Release channel
-    - Add “Release Retrospective” item to next team meeting in place of Kaizen/User Issues, asking each core team member to give a letter grade (and brief explanation) for:
-        - Release Quality
-        - Release Process
-        - Testing Process
     - Verify all items in the last posted release checklist are complete, if not alert the release manager
 2. Dev:
     - Test upgrade from previous version to current version, following the [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) with database upgrades on both MySQL and Postgres
@@ -174,6 +170,10 @@ If a bug fix release is required, run through the following steps again:
     - Verify all items in the last posted release checklist are complete, if not alert the release manager.
     - For the next release, create team meetings on Code Complete date
     - For the next release, create PM Release Update meeting on two days before cut-off for major features
+    - Add “Release Retrospective” item to next team meeting in place of Kaizen/User Issues, asking each core team member to give a letter grade (and brief explanation) for:
+        - Release Quality
+        - Release Process
+        - Testing Process
 2. PM:
     - Close the release in Jira
     - Prepare tickets for the next release,  with a corresponding vX.X prefix
