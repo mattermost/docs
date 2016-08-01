@@ -158,7 +158,7 @@ If a bug fix release is required, run through the following steps again:
 2. PM:  
     - Update the mattermost.org/download page  
     - Add the download links to http://docs.mattermost.com/administration/upgrade.html#version-archive  
-    - Update the Changelog with notes on patch releases (see [example entry](http://docs.mattermost.com/administration/changelog.html#release-v3-0-2))  
+    - Update the Changelog with notes on patch releases (see [example entry](https://docs.mattermost.com/administration/changelog.html#release-v3-0-3))  
 3.  Ops:  
     - Verifies each of the issues in the patch release are fixed  
 
