@@ -81,8 +81,8 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - CI servers are updated to the release branch 
     - Directory structure is reviewed and large changes posted to the team channel
 6. PM:  
-    - PM owners for each new feature prepare a section highlighting end user benefits for the blog post and post to the Marketing room, including screenshots. See [example thread](https://pre-release.mattermost.com/core/pl/o611i4wz3pfafb6fpha9ggxxnh) for formatting.
-        - PMs ensure tweet banners are speced and all assets are passed to the artist.
+    - PM owners for each new feature prepare a section highlighting end-user benefits for the blog post and post to the Marketing room, including screenshots. See [example thread](https://pre-release.mattermost.com/core/pl/o611i4wz3pfafb6fpha9ggxxnh) for formatting.
+        - PMs ensure tweet banners are spec'd and all assets are passed to the artist.
     - Merge changelog PR after team review is complete. Post a link to the changelog on the documention branch in the GitHub meta issue.
 7. Marketing:
     - Tweet announcement that RC1 is ready (see [example](https://twitter.com/mattermosthq/status/664172166368264192))
@@ -118,7 +118,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
 7. Logistics:
     - Test RC fixes as they come in on CI servers
 8. Build: 
-    - Push next RC to acceptance after testing is complete and approved fixes merged, announces in Town Square. Build manager verifies with release manager before cutting any new RCs.
+    - Push next RC to acceptance and announces in Town Square with new RC link after testing is complete and approved fixes are merged. Build manager verifies with release manager before cutting any new RCs.
 9. PM:
     - Test tickets on the new RC that were merged to the release branch and post in Release channel after testing
 10. Ops:
@@ -146,7 +146,7 @@ The final release is cut. If an urgent and important issue needs to be addressed
     - Update [Docker preview image to latest version](https://github.com/mattermost/mattermost-docker-preview/commit/1c34195d70b26bd4c82b5ef4fa0ebaf421096881).
 4. Marketing:
     - Finalize Mailchimp email blast
-    - Finalize blog post for mattermost.org set timer for 06:00 PDT on the day of release.
+    - Finalize blog post for mattermost.org and set timer for 06:00 PDT on the day of release.
     - Queue Tweet announcement
     - Find [GitLab release announcement merge request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests) and post proposal for [GitLab Mattermost update text](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests/1633/diffs#efdba966a222d7071509e0dd4f39de5c9d7c1200_0_185)
 
