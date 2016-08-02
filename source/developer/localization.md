@@ -16,7 +16,7 @@ To translate a language:
 
 #### Translations Updates
 
-1. **New** and **updated** strings are imported to the [Mattermost Translation Server](http://translate.mattermost.com) each day at **00:00 GMT**
+1. New and updated strings are imported to the [Mattermost Translation Server](http://translate.mattermost.com) each day at 00:00 GMT
 2. A new pull request with latest translations that reach at least Beta Quality is submitted to the [Mattermost Platform Repo](https://github.com/mattermost/platform) each Monday at 22:00 GMT.
     - A pull request will also be submitted on the day of major feature complete and code complete to ensure latest translations are included in the release. An additional pull request may also be submitted for a release candidate.
 
