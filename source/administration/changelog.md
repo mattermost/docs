@@ -8,28 +8,54 @@ Expected release date: 2016-08-16
 
 ### Highlights
 
-Improved Statuses:
+#### Languages
+- Added Dutch, Korean, Simplified Chinese and Traditional Chinese translations for the user interface
+- Promoted Portuguese and Spanish to release-quality translations
+
+#### Improved Statuses
 - Improved response time of status indicator changing between online/offline/away
 - Added status indicators to the Direct Message and Channel member lists
 - Added `@here` to mention users who are online
 
-Flagged Messages: 
+#### Flagged Messages
 - Added the ability to flag a message for follow up, so users can track messages they want to go back to later
+
+#### OAuth 2.0 Support
+- Added support for OAuth 2.0, allowing external applications to authenticate API requests to Mattermost.
+- Added an option to enable automatic authorization of trusted OAuth 2.0 applications by the Mattermost server.
+
+#### Google and Office 365 SSO ([Enterprise E10, E20](https://about.mattermost.com/pricing/))
+- Added support for Google and Office 365 Single-sign-on
+
+#### Mattermost WebRTC Support (Beta) ([Enterprise E20](https://about.mattermost.com/pricing/))
+- Added initial Beta-support for Mattermost Hosted WebRTC Service
+- Enabling the service allows one-on-one calls with users who belong to the same Mattermost server
 
 ### Improvements
 
 #### iOS app
 - Fixed issue where “Refresh/Log out” was appearing frequently
+- Fixed issue where center channel appears blank after initial page load.
 
 #### Mobile
 - Enter key now creates a new line instead of sending the message
 - Added links to the mobile apps in the welcome email, tutorial, and main menu
 - Added a mobile landing page that informs users of the mobile app when they access the site on a mobile web browser
 
+#### Keyboard Shortcuts
+- Added a shortcut to set a message as your oldest unread message in the current channel (`ALT+[click on a message]`)
+- Added a shortcut to mark all messages in the current channel as read (`ESC`)
+- Added icons next to channel names and improved sorting in the channel switcher (`CTRL/CMD+K`)
+- Keyboard shortcuts that open modals can now toggle them open and closed (`CTRL/CMD+SHIFT+A`, `CTRL/CMD+K`)
+
+#### Integrations
+- Added an option to trigger outgoing webhook if the first word starts with the specified trigger word
+- Added a confirmation dialog when creating webhooks and slash commands
+
 **[Enterprise E10, E20](https://about.mattermost.com/pricing/)**
 
 - Added the ability to set different themes for each team
-- Users disabled of removed from the LDAP server are now made “Inactive” in Mattermost (previously they had their sessions revoked and could no longer log in, but their account status was not set to “Inactive”)
+- Users disabled or removed from the LDAP server are now made “Inactive” in Mattermost (previously their sessions were revoked and could no longer log in, but their account status was not set to “Inactive”)
 - Added the ability to force migrating authentication methods
 
 ### Bug Fixes
@@ -37,6 +63,13 @@ Flagged Messages:
 - The behavior of setting for Link Previews in Account Settings is no longer reversed.
 - Hitting the URL of a private team you used to belong to now redirects properly
 - Search terms contained in hashtags are now highlighted in the search results.
+- Fixed an issue with quick typesetting on IE-11 and Edge.
+- Fixed an issue with uploading SAML certificates if the files were removed from `config.json`.
+- Multiple files can now be selected on the file upload dialog of the desktop app.
+- Fixed a scrolling issue with the channel switcher.
+- Fixed system messages showing a small empty white box.
+- Accessing the System Console URL when logged out no longer causes the browser to hang.
+- Fixed a markdown formatting issue with multiple lists in a row.
 
 ### Compatibility  
 Changes from v3.1 to v3.2:
@@ -64,13 +97,26 @@ In addition to changes to Team Edition, the following config settings were made 
 
 ### Known Issues
 
--
+- In **System Console > Notifications > Email** the “Test Connection” button now properly uses the saved SMTP password.
+- Deleted messages don't disappear from the channel for the user who deleted the message, if the message was previously edited and right hand sidebar is open.
+- After receiving an error for creating a channel with one character, updated channel name is not saved.
+- A single collapsed preview re-opens after refresh.
+- Removed user from team still appears in DM list from the team.
+- Files sent in private chat to members in a different team are not accessible.
+- Youtube videos show as “Video not found” on Desktop App.
+- “More” option under Direct Message list no longer shows count of team members not in your direct message list.
+- /join sometimes throws an error.
+- On Firefox, CTRL/CMD + U keyboard shortcut doesn’t work.
+- Sometimes only the last character typed in the channel switcher appears.
+- Webhook attachments don’t show up in search results.
 
 ### Contributors
 
 Many thanks to all our contributors. In alphabetical order:
 
 \platform
+
+...
 
 If we missed your name, please let us know at feedback@mattermost.com. Recognition is a manual process and mistakes can happen. We want to include anyone who's made a pull request that got merged during the release.
 
