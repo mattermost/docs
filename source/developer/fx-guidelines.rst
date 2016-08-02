@@ -467,13 +467,13 @@ In addition to above guidelines, the below provides a concrete checklist of mist
 User Experience Checklist 
 ------------------------------
 
-**1\) Is the WHITESPACE next to icons REGULARLY SPACED?**
+**1\) Is the WHITESPACE next to icons SUFFICIENTLY SPACED?**
 
 Example of not enough space next to FLAG icon on RIGHT: 
 
 ..  image:: https://cloud.githubusercontent.com/assets/177788/17340912/1599a0aa-58a7-11e6-94e3-1e2a0895c40f.png
 
-**2\) Is the WHITESPACE next to icons EVEN?** 
+**2\) Is the WHITESPACE next to icons EVENLY SPACED?** 
 
 Example of uneven icon spacing: 
 
