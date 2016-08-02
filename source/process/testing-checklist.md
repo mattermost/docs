@@ -1,7 +1,8 @@
 # Testing Checklist 
 
+This document provides a checklist of different things to look for when testing product changes. 
 
-User Experience Checklist 
+### User Experience Checklist 
 
 #### 1) Is the WHITESPACE next to icons REGULARLY SPACED? 
 
@@ -23,6 +24,8 @@ Example of gaps in a visual design:
 
 #### 4) Read all help text OUT LOUD--is it helpful to a new user? 
 
+Example of help text that doesn't communicate enough information to a user (no information included on how to use flagged posts): 
 
+![a](https://cloud.githubusercontent.com/assets/177788/17341029/956c749c-58a7-11e6-8c7c-055606027406.png) 
 
 
