@@ -462,7 +462,7 @@ All inputs such as textareas should behave consistently, if the default behaviou
 Testing Checklist 
 ************************
 
-In addition to above guidelines, the below provides a concrete checklist of mistakes to watch for whem reviewing proposed product changes. 
+In addition to above guidelines, the below provides a concrete checklist of mistakes to watch for when reviewing proposed product changes. 
 
 User Experience Checklist 
 ------------------------------
@@ -479,7 +479,7 @@ Example of uneven icon spacing:
 
 ..  image:: https://cloud.githubusercontent.com/assets/177788/17340912/1599a0aa-58a7-11e6-94e3-1e2a0895c40f.png
 
-**3\) Are there visual GAPS**
+**3\) Are there visual GAPS?**
 
 Example of gaps in a visual design: 
 
