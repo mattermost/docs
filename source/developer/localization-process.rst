@@ -38,8 +38,8 @@ So users understand the accuracy and coverage of language translations, quality 
 -----------------
 Official
 -----------------
-- 100% of translation verified by someone deeply knowledgeble in Mattermost functionality.
-- 100% of translation verified by someone deeply knowledgeble in target language.
+- 100% of translation verified by someone deeply knowledgeable in Mattermost functionality.
+- 100% of translation verified by someone deeply knowledgeable in target language.
 - No translation may be out-of-date due to changes to English-language text since the last translation and review cycle.
 - Language must have at least one official reviewer who maintains the language with updated strings imported to the `Translation Server <http://translate.mattermost.com>`_ over time.
 - Language must have been in use for **at least 3 full release cycles** where end users in target language can share feedback and corrections.
@@ -50,8 +50,8 @@ Language option is listed as an option in **Account Settings > Display > Languag
 -----------------
 Beta
 -----------------
-- 100% of translation verified by someone deeply knowledgeble in Mattermost functionality.
-- 100% of translation verified by someone deeply knowledgeble in target language.
+- 100% of translation verified by someone deeply knowledgeable in Mattermost functionality.
+- 100% of translation verified by someone deeply knowledgeable in target language.
 - Up to 5% of translation may be out-of-date due to changes to English-language text since the last translation and review cycle.
 
 Language option is listed as an option in **Account Settings > Display > Language** prefixed with **(Beta)**.
@@ -94,7 +94,7 @@ Below are current official reviewers and maintainers for languages that have rea
 If you're interested in contributing to the process, please join the `Mattermost localization channel to discuss <https://pre-release.mattermost.com/core/channels/localization>`_.
 
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
-| Langugage                                | Official Reviewer(s)                                                                                                  | Maintainers                                                                                          | 
+| Language                                 | Official Reviewer(s)                                                                                                  | Maintainers                                                                                          | 
 +==========================================+=======================================================================================================================+======================================================================================================+
 | Deutsch - German                         | `Christian Arnold <https://github.com/meilon>`_                                                                       |                                                                                                      |
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
