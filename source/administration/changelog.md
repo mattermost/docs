@@ -139,11 +139,17 @@ Multiple setting options were added to `config.json`. Below is a list of the add
    - Added `"AppDownloadLink": "https://about.mattermost.com/downloads/"` to point towards a download page for native apps
    - Added `"AndroidAppDownloadLink": "https://about.mattermost.com/mattermost-android-app/"` to point towards the Android app
    - Added `"IosAppDownloadLink": "https://about.mattermost.com/mattermost-ios-app/"` to point towards the iOS app
+- Under a new section `ClusterSettings`:
+    - Added `"Enable": false` to enable High Availability mode.
+    - Added `"InterNodeListenAddress": ":8075"` to specify the address the server will listen on for communicating with other servers.
+    - Added `"InterNodeUrls": []` to specify the internal/private URLs of all the Mattermost servers separated by commas.
 - Under `ServiceSettings`:
     - Added `"SiteURL": ""` to allow the server to overwrite the site_url
 - Under `TeamSettings`:
     - Added `"CustomDescriptionText": ""` to set the site description shown in login screens and user interface.
     - Added `"UserStatusAwayTimeout": 300` to specify the number of seconds before users are considered "away".
+- Under `EmailSettings`:
+    - Added `"EnableEmailBatching": true` to enable batching of email notifications configurable in Account Settings.
 
 **Changes to Enterprise Edition:**    
 In addition to changes to Team Edition, the following config settings were made to the Enterprise Edition. They will only work on servers with an Enterprise License that has the feature enabled.
