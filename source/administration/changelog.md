@@ -24,12 +24,19 @@ Expected release date: 2016-08-16
 - Added support for OAuth 2.0, allowing external applications to authenticate API requests to Mattermost.
 - Added an option to enable automatic authorization of trusted OAuth 2.0 applications by the Mattermost server.
 
+#### Email Batching
+- Mentions and Direct Messages recieved over a specified period of time are batched into a single email notification.
+
 #### Google and Office 365 SSO ([Enterprise E10, E20](https://about.mattermost.com/pricing/))
 - Added support for Google and Office 365 Single-sign-on
+
+#### High Availability Mode ([Enterprise E20](https://about.mattermost.com/pricing/))
+- Support for highly available application servers configurable in the System Console and configuration files. See [documentation](http://docs.mattermost.com/deployment/cluster.html) for more details.
 
 #### Mattermost WebRTC Support (Beta) ([Enterprise E20](https://about.mattermost.com/pricing/))
 - Added initial Beta-support for Mattermost Hosted WebRTC Service
 - Enabling the service allows one-on-one calls with users who belong to the same Mattermost server
+
 
 ### Improvements
 
@@ -41,6 +48,9 @@ Expected release date: 2016-08-16
 - Enter key now creates a new line instead of sending the message
 - Added links to the mobile apps in the welcome email, tutorial, and main menu
 - Added a mobile landing page that informs users of the mobile app when they access the site on a mobile web browser
+- Mobile landing pages are added to direct users to download the mobile apps if they access Mattermost from a browser on iOS or Android.
+- Permalinks are now availabe on mobile.
+- Keyboard is now closed when a user executes a search on mobile.
 
 #### Keyboard Shortcuts
 - Added a shortcut to set a message as your oldest unread message in the current channel (`ALT+[click on a message]`)
@@ -52,11 +62,36 @@ Expected release date: 2016-08-16
 - Added an option to trigger outgoing webhook if the first word starts with the specified trigger word
 - Added a confirmation dialog when creating webhooks and slash commands
 
-**[Enterprise E10, E20](https://about.mattermost.com/pricing/)**
+#### System Console
+- Username is now added to the System Console users list.
+- Legal and Support links are now hidden in the user interface if no link is specified in the System Console.
+- If the Terms of Service link is left blank in the System Console then it defaults to the "Mattermost Conditions of Use" page.
+- Added Site Description field to the System Console > Customization > Custom Branding section.
+
+#### Authentication
+- Improved sign up flow with separate buttons and pages for each enabled authentication method.
+- The username "matterbot" is now restricted from account creation.
+- Link to create an account is hidden on the login page if no account creation methods are turned on in the System Console.
+- All team members can View Members for the team or specific channels.
+
+#### User Interface
+- Channel header is now added to the View Info modal.
+- Username is now always shown on user contact cards. 
+- @mention auto-complete is now sorted with channel members appearing first.
+- Single image attachments will now appear as larger thumbnails.
+
+#### Notifications
+- Mention notifications can be turned on for any new messages in comment threads that you participate in.
+
+#### [Enterprise E10, E20](https://about.mattermost.com/pricing/)
 
 - Added the ability to set different themes for each team
+- Added a checkbox to apply theme settings to all teams of which you are a member.
 - Users disabled or removed from the LDAP server are now made “Inactive” in Mattermost (previously their sessions were revoked and could no longer log in, but their account status was not set to “Inactive”)
 - Added the ability to force migrating authentication methods
+- LDAP Bindusername and Bindpassword fields in the System Console are now optional to support anonymous binding.
+- Added support for mass migration from LDAP to other authentication methods.
+- Changed LDAP behavour so users disabled on the LDAP server are set as disabled in Mattermost.
 
 ### Bug Fixes
 
@@ -70,9 +105,29 @@ Expected release date: 2016-08-16
 - Fixed system messages showing a small empty white box.
 - Accessing the System Console URL when logged out no longer causes the browser to hang.
 - Fixed a markdown formatting issue with multiple lists in a row.
+- Team Admins can no longer demote System Admins.
+- The channel header now respects the setting for Channel Display Mode.
+- The System Console no longers freezes if accessing via URL when not logged in.
+- Site Name is now restricted to 30 characters to avoid text overflow.
+- Error is no longer thrown when switching between teams in the System Console.
+- Invalid password error is thrown if System Admin resets a password to something that doesn't meet the specified password requirements.
+- Fixed the percentage loading indicator on the image preview modal.
+- File upload overlay now appears on Edge.
+- Maximum Users per team and Minimum Password Length now default to resonable values if a bad input is saved.
+- Right-hand side now updates when a new profile picture is saved.
+- Channels in the Channel Switcher are sorted by their handle if their display name is identical.
+- Setting the length for mobile sessions is now fixed in the System Console.
+- The “Test Connection” button in the System Console > Notifications > Email section now properly uses the saved SMTP password.
+- System Admins no longer recieve a Javascript error if a new message is recieved while in the System Console.
+- Dropdown in the Manage Members modal is no longer empty for System Admins.
+- @all is now correctly highlighted if the trigger setting is selected in Account Settings.
+- Fixed unformatted error message on account creation page if no creation methods are enabled.
+- Corrected the formatting of some help text in the System Console.
+- Color picker in Custom Theme settings now disappears once setting has been saved on mobile.
+- System Console menu no longer cuts off long team names.
 
 ### Compatibility  
-Changes from v3.1 to v3.2:
+Changes from v3.2 to v3.3:
 
 #### config.json   
 
@@ -89,15 +144,14 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 In addition to changes to Team Edition, the following config settings were made to the Enterprise Edition. They will only work on servers with an Enterprise License that has the feature enabled.
    
 - Under `LdapSettings` in `config.json`:
-   - `"BindUsername": ""` and `"BindPassword": ""` are no longer required fields, so anonymous binding is possible
+   - `"BindUsername": ""` and `"BindPassword": ""` are no longer required fields, so anonymous binding is possible.
 
-#### Database Changes from v3.1 to v3.2
+#### Database Changes from v3.2 to v3.3
 
 -
 
 ### Known Issues
 
-- In **System Console > Notifications > Email** the “Test Connection” button now properly uses the saved SMTP password.
 - Deleted messages don't disappear from the channel for the user who deleted the message, if the message was previously edited and right hand sidebar is open.
 - After receiving an error for creating a channel with one character, updated channel name is not saved.
 - A single collapsed preview re-opens after refresh.
