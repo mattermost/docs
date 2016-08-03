@@ -149,14 +149,14 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 **Changes to Enterprise Edition:**    
 In addition to changes to Team Edition, the following config settings were made to the Enterprise Edition. They will only work on servers with an Enterprise License that has the feature enabled.
    
-- Under `LdapSettings` in `config.json`:
-   - `"BindUsername": ""` and `"BindPassword": ""` are no longer required fields, so anonymous binding is possible.
 - Under a new section `ClusterSettings`:
     - Added `"Enable": false` to enable High Availability mode.
     - Added `"InterNodeListenAddress": ":8075"` to specify the address the server will listen on for communicating with other servers.
     - Added `"InterNodeUrls": []` to specify the internal/private URLs of all the Mattermost servers separated by commas.
 - Under `TeamSettings`:
     - Added `"CustomDescriptionText": ""` to set the site description shown in login screens and user interface.
+- Under `LdapSettings` in `config.json`:
+   - `"BindUsername": ""` and `"BindPassword": ""` are no longer required fields, so anonymous binding is possible.
 
 #### Database Changes from v3.2 to v3.3
 
