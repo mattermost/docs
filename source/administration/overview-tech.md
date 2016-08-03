@@ -38,7 +38,7 @@ We offer modern communication from behind your firewall. Your users can securely
 
 #### Multi-Language Support
 
-- English, French, German, Japanese, Portuguese (Brazilian), Spanish
+- Chinese (Simplified and Traditional), Dutch, English, French, German, Japanese, Korean, Portuguese (Brazilian), Spanish
 
 ## Release Numbering 
 

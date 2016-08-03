@@ -103,12 +103,16 @@ Select if the text in the center channel is fixed width and centered, or full wi
 #### Language
 Select what language Mattermost displays in the user interface. Options include: 
 
+- Deutsch - German
 - English
-- French
-- German
-- Japanese
-- Portuguese (Brazilian)
-- Spanish
+- Español - Spanish
+- Français - French
+- Nederlands - Dutch
+- Português (Brasil) - Portuguese
+- 中文 (简体) - Simplified Chinese
+- 中文 (繁體) - Traditional Chinese
+- 日本語 - Japanese
+- 한국어 - Korean
 
 ## Advanced
 Setting to configure when messages are sent.
