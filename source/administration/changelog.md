@@ -27,7 +27,7 @@ Expected release date: 2016-08-16
 #### Google and Office 365 SSO ([Enterprise E10, E20](https://about.mattermost.com/pricing/))
 - Added support for Google and Office 365 single-sign-on.
 
-#### High Availability Mode ([Enterprise E20](https://about.mattermost.com/pricing/))
+#### High Availability Mode (Beta) ([Enterprise E20](https://about.mattermost.com/pricing/))
 - Support for highly available application servers configurable in the System Console and configuration files. See [documentation](http://docs.mattermost.com/deployment/cluster.html) for more details.
 
 ### Improvements
@@ -43,11 +43,13 @@ Expected release date: 2016-08-16
 - Added a landing page that informs users of the mobile app when they access the site on a mobile web browser.
 - Permalinks are now available on mobile.
 - Made it easier to click on the ... menu when in the right-hand sidebar view.
+- Enable auto-complete for "from:" and "in:".
 
 #### User Interface
 - Channel header is now added to the View Info modal.
 - Configured channel introduction to respect the full width and centred channel views.
 - Removed signup link from sign in page if all signup methods are disabled.
+- Improved channel header popover behaviour.
 
 #### Authentication
 - The username "matterbot" is now restricted from account creation.
@@ -63,13 +65,11 @@ Expected release date: 2016-08-16
 
 #### Integrations
 - Added an option to trigger outgoing webhook if the first word starts with the specified trigger word.
-- Added a confirmation dialog when creating webhooks and slash commands.
 
 #### System Console
 - Username is now added to the System Console users list.
 - Legal and Support links are now hidden in the user interface if no link is specified in the System Console.
 - If the Terms of Service link is left blank in the System Console then it defaults to the "Mattermost Conditions of Use" page.
-
 
 #### [Enterprise E10, E20](https://about.mattermost.com/pricing/)
 
@@ -198,6 +198,7 @@ The following config settings will only work on servers with an Enterprise Licen
 - On Firefox, CTRL/CMD + U keyboard shortcut doesn’t work.
 - Sometimes only the last character typed in the channel switcher appears.
 - Webhook attachments don’t show up in search results.
+- Count of unread mentions are sometimes mixed when switching between multiple teams.
 
 ### Contributors
 
