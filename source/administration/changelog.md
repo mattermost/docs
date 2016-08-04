@@ -45,12 +45,12 @@ Expected release date: 2016-08-16
 - Added links to the mobile apps in the welcome email, tutorial, and main menu.
 - Added a mobile landing page that informs users of the mobile app when they access the site on a mobile web browser.
 - Permalinks are now availabe on mobile.
+- Made it easier to click on the ... menu when in the right hand sidebar view.
 
 #### User Interface
 - Channel header is now added to the View Info modal.
-- Username is now always shown on user contact cards. 
-- @mention auto-complete is now sorted with channel members appearing first.
-- Single image attachments will now appear as larger thumbnails.
+- Configured channel introduction to respect the full width and centred channel views.
+- Removed signup link from signin page if all signup methods are disabled.
 
 #### Authentication
 - Improved sign up flow with separate buttons and pages for each enabled authentication method.
