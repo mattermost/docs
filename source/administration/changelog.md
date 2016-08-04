@@ -165,18 +165,32 @@ The following config settings will only work on servers with an Enterprise Licen
 
 #### Database Changes from v3.2 to v3.3
 
-**OAuthApps Table**
-
- - Added `IconURL` column
-
 **OAuthAccessData Table**
 
- - Added column `ClientId`
- - Added column `UserId`
- - Removed column `AuthCode`
- - Set Unique key on `ClientId` and `UserId` columns
- - Removed index from `idx_oauthaccessdata_auth_code` column
- - Added indexes to `idx_oauthaccessdata_client_id`, `idx_oauthaccessdata_user_id` and `idx_oauthaccessdata_refresh_token` columns
+ - Added `ClientId` column.
+ - Added `UserId` column.
+ - Removed `AuthCode` column.
+ - Set Unique key on `ClientId` and `UserId` columns.
+ - Removed index from `idx_oauthaccessdata_auth_code` column.
+ - Added indexes to `idx_oauthaccessdata_client_id`, `idx_oauthaccessdata_user_id` and `idx_oauthaccessdata_refresh_token` columns.
+
+**OAuthApps Table**
+
+ - Added `IconURL` column.
+
+**OutgoingWebhooks Table**
+
+ - Added `TriggerWhen` column.
+
+**Status Table**
+
+ - Added `Status` table.
+
+**Users Table**
+
+ - Added `LastActivityAt` column.
+ - Added `LastPingAt` column.
+ - Removed `ThemeProps` column.
 
 ### Known Issues
 
