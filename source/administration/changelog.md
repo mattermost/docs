@@ -200,16 +200,6 @@ The following config settings will only work on servers with an Enterprise Licen
 - Webhook attachments don’t show up in search results.
 - Count of unread mentions are sometimes mixed when switching between multiple teams.
 
-### Contributors
-
-Many thanks to all our contributors. In alphabetical order:
-
-\platform
-
-...
-
-If we missed your name, please let us know at feedback@mattermost.com. Recognition is a manual process and mistakes can happen. We want to include anyone who's made a pull request that got merged during the release.
-
 ## Release v3.2.0
 
 Release date: 2016-07-16
