@@ -20,8 +20,8 @@ Expected release date: 2016-08-16
 - Added status indicators to the Direct Message and Channel member lists.
 - Added `@here` to mention users who are online.
 
-#### OAuth 2.0 Support
-- Added support for OAuth 2.0, allowing external applications to authenticate API requests to Mattermost.
+#### OAuth 2.0 Service Provider
+- Added support for OAuth 2.0 service provider, allowing external applications to authenticate API requests to Mattermost.
 - Added an option to enable automatic authorization of trusted OAuth 2.0 applications by the Mattermost server.
 
 #### Email Batching
