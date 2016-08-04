@@ -25,7 +25,7 @@ Expected release date: 2016-08-16
 - Added an option to enable automatic authorization of trusted OAuth 2.0 applications by the Mattermost server.
 
 #### Email Batching
-- Added an option to oombine mentions and direct messages received over a specified time period into a single email notification.
+- Added an option to combine mentions and direct messages received over a specified time period into a single email notification.
 
 #### Google and Office 365 SSO ([Enterprise E10, E20](https://about.mattermost.com/pricing/))
 - Added support for Google and Office 365 Single-sign-on.
@@ -44,13 +44,13 @@ Expected release date: 2016-08-16
 - Enter key now creates a new line instead of sending the message.
 - Added links to the mobile apps in the welcome email, tutorial, and main menu.
 - Added a mobile landing page that informs users of the mobile app when they access the site on a mobile web browser.
-- Permalinks are now availabe on mobile.
+- Permalinks are now available on mobile.
 - Made it easier to click on the ... menu when in the right hand sidebar view.
 
 #### User Interface
 - Channel header is now added to the View Info modal.
 - Configured channel introduction to respect the full width and centred channel views.
-- Removed signup link from signin page if all signup methods are disabled.
+- Removed signup link from sign in page if all signup methods are disabled.
 
 #### Authentication
 - Improved sign up flow with separate buttons and pages for each enabled authentication method.
@@ -86,7 +86,7 @@ Expected release date: 2016-08-16
 ### Bug Fixes
 
 - The behavior of setting for Link Previews in Account Settings is no longer reversed.
-- Hitting the URL of a private team you used to belong to now redirects properly
+- Hitting the URL of a private team you used to belong to now redirects properly.
 - Search terms contained in hashtags are now highlighted in the search results.
 - Fixed an issue with quick typesetting on IE-11 and Edge.
 - Fixed an issue with uploading SAML certificates if the files were removed from `config.json`.
@@ -96,18 +96,18 @@ Expected release date: 2016-08-16
 - Fixed a markdown formatting issue with multiple lists in a row.
 - Team Admins can no longer demote System Admins.
 - The channel header now respects the setting for Channel Display Mode.
-- The System Console no longers freezes if accessing via URL when not logged in.
+- The System Console no longer freezes if accessing via URL when not logged in.
 - Site Name is now restricted to 30 characters to avoid text overflow.
 - Error is no longer thrown when switching between teams in the System Console.
 - Invalid password error is thrown if System Admin resets a password to something that doesn't meet the specified password requirements.
 - Fixed the percentage loading indicator on the image preview modal.
 - File upload overlay now appears on Edge.
-- Maximum Users per team and Minimum Password Length now default to resonable values if a bad input is saved.
+- Maximum Users per team and Minimum Password Length now default to reasonable values if a bad input is saved.
 - Right-hand side now updates when a new profile picture is saved.
 - Channels in the Channel Switcher are sorted by their handle if their display name is identical.
 - Setting the length for mobile sessions is now fixed in the System Console.
 - The “Test Connection” button in the System Console > Notifications > Email section now properly uses the saved SMTP password.
-- System Admins no longer recieve a Javascript error if a new message is recieved while in the System Console.
+- System Admins no longer receive a JavaScript error if a new message is received while in the System Console.
 - Dropdown in the Manage Members modal is no longer empty for System Admins.
 - @all is now correctly highlighted if the trigger setting is selected in Account Settings.
 - Fixed unformatted error message on account creation page if no creation methods are enabled.
@@ -174,7 +174,7 @@ The following config settings will only work on servers with an Enterprise Licen
 - A single collapsed preview re-opens after refresh.
 - Removed user from team still appears in DM list from the team.
 - Files sent in private chat to members in a different team are not accessible.
-- Youtube videos show as “Video not found” on Desktop App.
+- YouTube videos show as “Video not found” on Desktop App.
 - “More” option under Direct Message list no longer shows count of team members not in your direct message list.
 - /join sometimes throws an error.
 - On Firefox, CTRL/CMD + U keyboard shortcut doesn’t work.
