@@ -28,7 +28,7 @@ Expected release date: 2016-08-16
 - Added an option to combine mentions and direct messages received over a specified time period into a single email notification.
 
 #### Google and Office 365 SSO ([Enterprise E10, E20](https://about.mattermost.com/pricing/))
-- Added support for Google and Office 365 Single-sign-on.
+- Added support for Google and Office 365 single-sign-on.
 
 #### High Availability Mode ([Enterprise E20](https://about.mattermost.com/pricing/))
 - Support for highly available application servers configurable in the System Console and configuration files. See [documentation](http://docs.mattermost.com/deployment/cluster.html) for more details.
@@ -43,9 +43,9 @@ Expected release date: 2016-08-16
 #### Mobile (iOS and Android apps)
 - Enter key now creates a new line instead of sending the message.
 - Added links to the mobile apps in the welcome email, tutorial, and main menu.
-- Added a mobile landing page that informs users of the mobile app when they access the site on a mobile web browser.
+- Added a landing page that informs users of the mobile app when they access the site on a mobile web browser.
 - Permalinks are now available on mobile.
-- Made it easier to click on the ... menu when in the right hand sidebar view.
+- Made it easier to click on the ... menu when in the right-hand sidebar view.
 
 #### User Interface
 - Channel header is now added to the View Info modal.
@@ -73,7 +73,7 @@ Expected release date: 2016-08-16
 - Username is now added to the System Console users list.
 - Legal and Support links are now hidden in the user interface if no link is specified in the System Console.
 - If the Terms of Service link is left blank in the System Console then it defaults to the "Mattermost Conditions of Use" page.
-- Added Site Description field to the System Console > Customization > Custom Branding section.
+
 
 #### [Enterprise E10, E20](https://about.mattermost.com/pricing/)
 
@@ -81,6 +81,7 @@ Expected release date: 2016-08-16
 - Added a checkbox to apply theme settings to all teams of which you are a member.
 - Users disabled or removed from the LDAP server are now made “Inactive” in Mattermost (previously their sessions were revoked and could no longer log in, but their account status was not set to “Inactive”).
 - Added the ability to force migrating authentication methods.
+- Added Site Description field to the System Console > Customization > Custom Branding section.
 - LDAP `Bindusername` and `Bindpassword` fields in the System Console are now optional to support anonymous binding.
 
 ### Bug Fixes
@@ -102,7 +103,7 @@ Expected release date: 2016-08-16
 - Invalid password error is thrown if System Admin resets a password to something that doesn't meet the specified password requirements.
 - Fixed the percentage loading indicator on the image preview modal.
 - File upload overlay now appears on Edge.
-- Maximum Users per team and Minimum Password Length now default to reasonable values if a bad input is saved.
+- Maximum Users per Team and Minimum Password Length now default to reasonable values if a bad input is saved.
 - Right-hand side now updates when a new profile picture is saved.
 - Channels in the Channel Switcher are sorted by their handle if their display name is identical.
 - Setting the length for mobile sessions is now fixed in the System Console.
@@ -134,8 +135,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
     - Added `"UserStatusAwayTimeout": 300` to specify the number of seconds before users are considered "away".
 - Under `EmailSettings`:
     - Added `"EnableEmailBatching": true` to enable batching of email notifications configurable in Account Settings.
-    - Added `"EmailBatchingBufferSize": 256` to ....
-    - Added `"EmailBatchingInterval": 30` to ...
+    - Added `"EmailBatchingBufferSize": 256` to specify the maximum number of notifications batched into a single email.
+    - Added `"EmailBatchingInterval": 30` to specify the maximum frequency in which the batching job checks for new notifications.
 
 **Additional Changes to Enterprise Edition:**    
 
