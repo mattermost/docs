@@ -24,9 +24,6 @@ Expected release date: 2016-08-16
 - Added support for OAuth 2.0 service provider, allowing external applications to authenticate API requests to Mattermost.
 - Added an option to enable automatic authorization of trusted OAuth 2.0 applications by the Mattermost server.
 
-#### Email Batching
-- Added an option to combine mentions and direct messages received over a specified time period into a single email notification.
-
 #### Google and Office 365 SSO ([Enterprise E10, E20](https://about.mattermost.com/pricing/))
 - Added support for Google and Office 365 single-sign-on.
 
@@ -53,7 +50,6 @@ Expected release date: 2016-08-16
 - Removed signup link from sign in page if all signup methods are disabled.
 
 #### Authentication
-- Improved sign up flow with separate buttons and pages for each enabled authentication method.
 - The username "matterbot" is now restricted from account creation.
 - Link to create an account is hidden on the login page if no account creation methods are turned on in the System Console.
 - All team members can View Members for the team or specific channels.
@@ -133,10 +129,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
     - Added `"SiteURL": ""` to allow the server to overwrite the site_url.
 - Under `TeamSettings`:
     - Added `"UserStatusAwayTimeout": 300` to specify the number of seconds before users are considered "away".
-- Under `EmailSettings`:
-    - Added `"EnableEmailBatching": true` to enable batching of email notifications configurable in Account Settings.
-    - Added `"EmailBatchingBufferSize": 256` to specify the maximum number of notifications batched into a single email.
-    - Added `"EmailBatchingInterval": 30` to specify the maximum frequency in which the batching job checks for new notifications.
 
 **Additional Changes to Enterprise Edition:**    
 
