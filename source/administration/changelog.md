@@ -9,70 +9,42 @@ Expected release date: 2016-08-16
 ### Highlights
 
 #### Languages
-- Added Dutch, Korean, Simplified Chinese and Traditional Chinese translations for the user interface
-- Promoted Portuguese and Spanish to release-quality translations
-
-#### Improved Statuses
-- Improved response time of status indicator changing between online/offline/away
-- Added status indicators to the Direct Message and Channel member lists
-- Added `@here` to mention users who are online
+- Added Dutch, Korean, Simplified Chinese and Traditional Chinese translations for the user interface.
+- Promoted Portuguese and Spanish to release-quality translations.
 
 #### Flagged Messages
-- Added the ability to flag a message for follow up, so users can track messages they want to go back to later
+- Added the ability to flag a message for follow up, so users can track messages they want to go back to later.
+
+#### Improved Statuses
+- Improved response time of status indicator changing between online/offline/away.
+- Added status indicators to the Direct Message and Channel member lists.
+- Added `@here` to mention users who are online.
 
 #### OAuth 2.0 Support
 - Added support for OAuth 2.0, allowing external applications to authenticate API requests to Mattermost.
 - Added an option to enable automatic authorization of trusted OAuth 2.0 applications by the Mattermost server.
 
 #### Email Batching
-- Mentions and Direct Messages recieved over a specified period of time are batched into a single email notification.
+- Added an option to oombine mentions and direct messages received over a specified time period into a single email notification.
 
 #### Google and Office 365 SSO ([Enterprise E10, E20](https://about.mattermost.com/pricing/))
-- Added support for Google and Office 365 Single-sign-on
+- Added support for Google and Office 365 Single-sign-on.
 
 #### High Availability Mode ([Enterprise E20](https://about.mattermost.com/pricing/))
 - Support for highly available application servers configurable in the System Console and configuration files. See [documentation](http://docs.mattermost.com/deployment/cluster.html) for more details.
 
-#### Mattermost WebRTC Support (Beta) ([Enterprise E20](https://about.mattermost.com/pricing/))
-- Added initial Beta-support for Mattermost Hosted WebRTC Service
-- Enabling the service allows one-on-one calls with users who belong to the same Mattermost server
-
-
 ### Improvements
 
 #### iOS app
-- Fixed issue where “Refresh/Log out” was appearing frequently
+- Fixed issue where “Refresh/Log out” was appearing frequently.
 - Fixed issue where center channel appears blank after initial page load.
+- Keyboard is now closed when a user executes a search.
 
-#### Mobile
-- Enter key now creates a new line instead of sending the message
-- Added links to the mobile apps in the welcome email, tutorial, and main menu
-- Added a mobile landing page that informs users of the mobile app when they access the site on a mobile web browser
-- Mobile landing pages are added to direct users to download the mobile apps if they access Mattermost from a browser on iOS or Android.
+#### Mobile (iOS and Android apps)
+- Enter key now creates a new line instead of sending the message.
+- Added links to the mobile apps in the welcome email, tutorial, and main menu.
+- Added a mobile landing page that informs users of the mobile app when they access the site on a mobile web browser.
 - Permalinks are now availabe on mobile.
-- Keyboard is now closed when a user executes a search on mobile.
-
-#### Keyboard Shortcuts
-- Added a shortcut to set a message as your oldest unread message in the current channel (`ALT+[click on a message]`)
-- Added a shortcut to mark all messages in the current channel as read (`ESC`)
-- Added icons next to channel names and improved sorting in the channel switcher (`CTRL/CMD+K`)
-- Keyboard shortcuts that open modals can now toggle them open and closed (`CTRL/CMD+SHIFT+A`, `CTRL/CMD+K`)
-
-#### Integrations
-- Added an option to trigger outgoing webhook if the first word starts with the specified trigger word
-- Added a confirmation dialog when creating webhooks and slash commands
-
-#### System Console
-- Username is now added to the System Console users list.
-- Legal and Support links are now hidden in the user interface if no link is specified in the System Console.
-- If the Terms of Service link is left blank in the System Console then it defaults to the "Mattermost Conditions of Use" page.
-- Added Site Description field to the System Console > Customization > Custom Branding section.
-
-#### Authentication
-- Improved sign up flow with separate buttons and pages for each enabled authentication method.
-- The username "matterbot" is now restricted from account creation.
-- Link to create an account is hidden on the login page if no account creation methods are turned on in the System Console.
-- All team members can View Members for the team or specific channels.
 
 #### User Interface
 - Channel header is now added to the View Info modal.
@@ -80,18 +52,36 @@ Expected release date: 2016-08-16
 - @mention auto-complete is now sorted with channel members appearing first.
 - Single image attachments will now appear as larger thumbnails.
 
+#### Authentication
+- Improved sign up flow with separate buttons and pages for each enabled authentication method.
+- The username "matterbot" is now restricted from account creation.
+- Link to create an account is hidden on the login page if no account creation methods are turned on in the System Console.
+- All team members can View Members for the team or specific channels.
+
 #### Notifications
 - Mention notifications can be turned on for any new messages in comment threads that you participate in.
 
+#### Keyboard Shortcuts
+- Added icons next to channel names and improved sorting in the channel switcher (`CTRL/CMD+K`).
+- Keyboard shortcuts that open modals can now toggle them open and closed (`CTRL/CMD+SHIFT+A`, `CTRL/CMD+K`).
+
+#### Integrations
+- Added an option to trigger outgoing webhook if the first word starts with the specified trigger word.
+- Added a confirmation dialog when creating webhooks and slash commands.
+
+#### System Console
+- Username is now added to the System Console users list.
+- Legal and Support links are now hidden in the user interface if no link is specified in the System Console.
+- If the Terms of Service link is left blank in the System Console then it defaults to the "Mattermost Conditions of Use" page.
+- Added Site Description field to the System Console > Customization > Custom Branding section.
+
 #### [Enterprise E10, E20](https://about.mattermost.com/pricing/)
 
-- Added the ability to set different themes for each team
+- Added the ability to set different themes for each team.
 - Added a checkbox to apply theme settings to all teams of which you are a member.
-- Users disabled or removed from the LDAP server are now made “Inactive” in Mattermost (previously their sessions were revoked and could no longer log in, but their account status was not set to “Inactive”)
-- Added the ability to force migrating authentication methods
-- LDAP Bindusername and Bindpassword fields in the System Console are now optional to support anonymous binding.
-- Added support for mass migration from LDAP to other authentication methods.
-- Changed LDAP behavour so users disabled on the LDAP server are set as disabled in Mattermost.
+- Users disabled or removed from the LDAP server are now made “Inactive” in Mattermost (previously their sessions were revoked and could no longer log in, but their account status was not set to “Inactive”).
+- Added the ability to force migrating authentication methods.
+- LDAP `Bindusername` and `Bindpassword` fields in the System Console are now optional to support anonymous binding.
 
 ### Bug Fixes
 
@@ -103,7 +93,6 @@ Expected release date: 2016-08-16
 - Multiple files can now be selected on the file upload dialog of the desktop app.
 - Fixed a scrolling issue with the channel switcher.
 - Fixed system messages showing a small empty white box.
-- Accessing the System Console URL when logged out no longer causes the browser to hang.
 - Fixed a markdown formatting issue with multiple lists in a row.
 - Team Admins can no longer demote System Admins.
 - The channel header now respects the setting for Channel Display Mode.
@@ -133,30 +122,46 @@ Changes from v3.2 to v3.3:
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console. 
 
-**Changes to Team Edition:**
+**Changes to Team Edition and Enterprise Edition:**
 
 - Under a new section `NativeAppSettings`:
-   - Added `"AppDownloadLink": "https://about.mattermost.com/downloads/"` to point towards a download page for native apps
-   - Added `"AndroidAppDownloadLink": "https://about.mattermost.com/mattermost-android-app/"` to point towards the Android app
-   - Added `"IosAppDownloadLink": "https://about.mattermost.com/mattermost-ios-app/"` to point towards the iOS app
+   - Added `"AppDownloadLink": "https://about.mattermost.com/downloads/"` to point towards a download page for native apps.
+   - Added `"AndroidAppDownloadLink": "https://about.mattermost.com/mattermost-android-app/"` to point towards the Android app.
+   - Added `"IosAppDownloadLink": "https://about.mattermost.com/mattermost-ios-app/"` to point towards the iOS app.
 - Under `ServiceSettings`:
-    - Added `"SiteURL": ""` to allow the server to overwrite the site_url
+    - Added `"SiteURL": ""` to allow the server to overwrite the site_url.
 - Under `TeamSettings`:
     - Added `"UserStatusAwayTimeout": 300` to specify the number of seconds before users are considered "away".
 - Under `EmailSettings`:
     - Added `"EnableEmailBatching": true` to enable batching of email notifications configurable in Account Settings.
+    - Added `"EmailBatchingBufferSize": 256` to ....
+    - Added `"EmailBatchingInterval": 30` to ...
 
-**Changes to Enterprise Edition:**    
-In addition to changes to Team Edition, the following config settings were made to the Enterprise Edition. They will only work on servers with an Enterprise License that has the feature enabled.
+**Additional Changes to Enterprise Edition:**    
+
+The following config settings will only work on servers with an Enterprise License that has the feature enabled.
    
+- Under `TeamSettings`:
+    - Added `"CustomDescriptionText": ""` to set the site description shown in login screens and user interface.
+- Under `GoogleSettings` in `config.json`:
+   - Changed: `"Scope": "profile email"` to set the standard setting for OAuth to determine the scope of information shared with OAuth client.
+   - Changed: `"AuthEndpoint": "https://accounts.google.com/o/oauth2/v2/auth"` to set the authorization endpoint for Google SSO.
+   - Changed: `"TokenEndpoint": "https://www.googleapis.com/oauth2/v4/token"` to set the token endpoint for Google SSO.
+   - Changed: `"UserApiEndpoint": "https://www.googleapis.com/plus/v1/people/me"` to set the user API endpoint for Google SSO.
+- Under a new section `Office365Settings`:
+   - Added `"Enable": false` to allow login using Office 365 SSO when set to `true`.
+   - Added `"Secret": ""` to set the Client Secret received when registering the application with Google.
+   - Added `"Id": ""` to set the Client ID received when registering the application with Google.
+   - Added `"Scope": "User.Read"` to set the standard setting for OAuth to determine the scope of information shared with OAuth client.
+   - Added `"AuthEndpoint": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize"` to set the authorization endpoint for Office 365 SSO.
+   - Added `"TokenEndpoint": "https://login.microsoftonline.com/common/oauth2/v2.0/token"` to set the token endpoint for Office 365 SSO.
+   - Added `"UserApiEndpoint": "https://graph.microsoft.com/v1.0/me"` to set the user API endpoint for Office 365 SSO.
+- Under `LdapSettings` in `config.json`:
+   - `"BindUsername": ""` and `"BindPassword": ""` are no longer required fields, so anonymous binding is possible.
 - Under a new section `ClusterSettings`:
     - Added `"Enable": false` to enable High Availability mode.
     - Added `"InterNodeListenAddress": ":8075"` to specify the address the server will listen on for communicating with other servers.
     - Added `"InterNodeUrls": []` to specify the internal/private URLs of all the Mattermost servers separated by commas.
-- Under `TeamSettings`:
-    - Added `"CustomDescriptionText": ""` to set the site description shown in login screens and user interface.
-- Under `LdapSettings` in `config.json`:
-   - `"BindUsername": ""` and `"BindPassword": ""` are no longer required fields, so anonymous binding is possible.
 
 #### Database Changes from v3.2 to v3.3
 
