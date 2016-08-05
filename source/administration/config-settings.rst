@@ -1366,7 +1366,7 @@ Site Name
 Name of service shown in login screens and UI. Maximum 30 characters.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This features's ``config.json`` setting is ``"RestrictCreationToDomains": ""`` with string input.                                                                     |
+| This features's ``config.json`` setting is ``"SiteName": "Mattermost"`` with string input.                                                                            |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Custom Branding (Enterprise)
