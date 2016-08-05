@@ -141,6 +141,16 @@ COMMANDS:
 
         Example:
             platform -upload_license -license="/path/to/license/example.mattermost-license"
+    
+    -migrate_accounts				  Migrates accounts from one authentication provider to another. 
+                                      Requires -from_auth -to_auth and -match_field flags. Supported 
+                                      options for -from_auth: email, gitlab, saml. Supported options 
+                                      for -to_auth: ldap. Supported options for -match_field: email, 
+                                      username. Output will display any accounts that are not migrated 
+                                      succesfully.
+    
+        Example:
+            platform -migrate_accounts -from_auth email -to_auth ldap -match_field username
 
     -upgrade_db_30                   Upgrades the database from a version 2.x schema to version 3 see
                                       http://www.mattermost.org/upgrading-to-mattermost-3-0/
