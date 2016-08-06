@@ -257,7 +257,7 @@ Stable builds of open source team communication platform compiled by Mattermost,
   - `https://releases.mattermost.com/3.2.0/mattermost-team-3.2.0-linux-amd64.tar.gz`
 - [Mattermost Team Edition v3.1.0](https://docs.mattermost.com/administration/changelog.html#release-v3-1-0)
   - `https://releases.mattermost.com/3.1.0/mattermost-team-3.1.0-linux-amd64.tar.gz`
-- [Mattermost Team Edition v3.0.3](https://docs.mattermost.com/administration/changelog.html#release-v3-0-0)
+- [Mattermost Team Edition v3.0.3](https://docs.mattermost.com/administration/changelog.html#release-v3-0-3)
   - `https://releases.mattermost.com/3.0.3/mattermost-team-3.0.3-linux-amd64.tar.gz`
 - [Mattermost Team Edition v2.2.0](https://docs.mattermost.com/administration/changelog.html#release-v2-2-0)
   - `https://releases.mattermost.com/2.2.0/mattermost-team-2.2.0-linux-amd64.tar.gz`
@@ -294,7 +294,7 @@ Commercial software for self-hosted enterprise communication compiled by Matterm
   - `https://releases.mattermost.com/3.2.0/mattermost-enterprise-3.2.0-linux-amd64.tar.gz`
 - [Mattermost Enterprise Edition v3.1.0](https://docs.mattermost.com/administration/changelog.html#release-v3-1-0)
   - `https://releases.mattermost.com/3.1.0/mattermost-enterprise-3.1.0-linux-amd64.tar.gz`
-- [Mattermost Enterprise Edition v3.0.3](https://docs.mattermost.com/administration/changelog.html#release-v3-0-0)
+- [Mattermost Enterprise Edition v3.0.3](https://docs.mattermost.com/administration/changelog.html#release-v3-0-3)
   - `https://releases.mattermost.com/3.0.3/mattermost-enterprise-3.0.3-linux-amd64.tar.gz`
 - [Mattermost Enterprise Edition v2.2.0](https://docs.mattermost.com/administration/changelog.html#release-v2-2-0)
   - `https://releases.mattermost.com/2.2.0/mattermost-enterprise-2.2.0-linux-amd64.tar.gz`
