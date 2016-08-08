@@ -116,5 +116,4 @@ To see samples and community contributions, please visit <http://mattermost.org/
 
 ### Troubleshooting
 #### Debugging Incoming Webhooks
-By default, Mattermost will print the content of the request body of an incoming webhook to the console, if the console log level is set to “DEBUG”.
-If the contents of incoming webhooks are cluttering your debug log, disable it in the `config/config.json` by setting `"EnableWebhookDebugging": false`
+To debug, set **System Console** > **Logging** > **Enable Webhook Debugging** to `true` and set **System Console** > **Logging** > **Console Log Level** to `DEBUG`. 
