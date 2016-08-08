@@ -26,7 +26,9 @@ Follow these steps to configure Mattermost to use GitLab as a single-sign-on (SS
 
 6. Restart your Mattermost server to see the changes take effect.
 
-You can connect Mattermost to [Active Directory / LDAP using GitLab single-sign-on](http://doc.gitlab.com/ee/administration/auth/ldap.html).
+Notes: 
+- It may be possible to connect to [Active Directory/LDAP using GitLab SSO](http://doc.gitlab.com/ee/administration/auth/ldap.html), but this configuration is not in scope for the Mattermost test suite, and is not officially supported. 
+- Using GitLab SSO to connect to SAML login is not expected to work because it requires multiple redirects on login, which is not supported. 
 
 ## Unofficial Single-Sign-On
 
