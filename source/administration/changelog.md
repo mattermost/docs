@@ -200,6 +200,44 @@ The following config settings will only work on servers with an Enterprise Licen
 - Webhook attachments don’t show up in search results.
 - Count of unread mentions are sometimes mixed when switching between multiple teams.
 
+### Contributors
+
+Many thanks to all our contributors. In alphabetical order:
+
+/platform
+
+- [asaadmahmood](https://github.com/asaadmahmood), [coreyhulen](https://github.com/coreyhulen), [crspeller](https://github.com/crspeller), [DavidLu1997](https://github.com/DavidLu1997), [eadmund](https://github.com/eadmund), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [hmhealey](https://github.com/hmhealey), [jasonblais](https://github.com/jasonblais), [jwilander](https://github.com/jwilander), [lfbrock](https://github.com/lfbrock), [maruTA-bis5](https://github.com/maruTA-bis5), [Rudloff](https://github.com/Rudloff), [samogot](https://github.com/samogot), [yuters](https://github.com/yuters)
+
+/desktop
+
+- [jasonblais](https://github.com/jasonblais), [jnugh](https://github.com/jnugh), [Razzeee](https://github.com/Razzeee), [timroes](https://github.com/timroes), [yuya-oc](https://github.com/yuya-oc)
+
+/android
+
+- [coreyhulen](https://github.com/coreyhulen), [lfbrock](https://github.com/lfbrock)
+
+/ios
+
+- [coreyhulen](https://github.com/coreyhulen), [hmhealey](https://github.com/hmhealey), [lfbrock](https://github.com/lfbrock)
+
+/docs
+
+- [asaadmahmood](https://github.com/asaadmahmood), [esethna](https://github.com/esethna), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [lfbrock](https://github.com/lfbrock), [lindy65](https://github.com/lindy65)
+
+/mattermost-docker
+
+- [npcode](https://github.com/npcode)
+
+/mattermost-driver-javascript
+
+- [jwilander](https://github.com/jwilander)
+
+/mattermost-bot-sample-golang
+
+- [coreyhulen](https://github.com/coreyhulen), [jasonblais](https://github.com/jasonblais)
+
+If we missed your name, please let us know at feedback@mattermost.com. Recognition is a manual process and mistakes can happen. We want to include anyone who's made a pull request that got merged during the release.
+
 ## Release v3.2.0
 
 Release date: 2016-07-16
