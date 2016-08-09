@@ -147,7 +147,7 @@ COMMANDS:
                                       options for -from_auth: email, gitlab, saml. Supported options 
                                       for -to_auth: ldap. Supported options for -match_field: email, 
                                       username. Output will display any accounts that are not migrated 
-                                      succesfully.
+                                      successfully.
     
         Example:
             platform -migrate_accounts -from_auth email -to_auth ldap -match_field username
