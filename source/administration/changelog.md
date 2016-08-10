@@ -20,12 +20,11 @@ Expected release date: 2016-08-16
 - Added status indicators to the Direct Message and Channel member lists.
 - Added `@here` to mention users who are online.
 
-#### OAuth 2.0 Service Provider
-- Added support for OAuth 2.0 service provider, allowing external applications to authenticate API requests to Mattermost.
-- Added an option to enable automatic authorization of trusted OAuth 2.0 applications by the Mattermost server.
+#### Google SSO ([Enterprise E10, E20](https://about.mattermost.com/pricing/))
+- Users can sign in to Mattermost with their Google credentials and new Mattermost user accounts are automatically created on first login.
 
-#### Google and Office 365 SSO ([Enterprise E10, E20](https://about.mattermost.com/pricing/))
-- Added support for Google and Office 365 single-sign-on.
+#### Office 365 SSO (Beta) ([Enterprise E10, E20](https://about.mattermost.com/pricing/))
+- Users can sign in to Mattermost with their Office 365 credentials and new Mattermost user accounts are automatically created on first login.
 
 #### High Availability Mode (Beta) ([Enterprise E20](https://about.mattermost.com/pricing/))
 - Support for highly available application servers configurable in the System Console and configuration files. See [documentation](http://docs.mattermost.com/deployment/cluster.html) for more details.
