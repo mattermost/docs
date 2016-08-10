@@ -10,6 +10,8 @@ To backup your Mattermost server:
      
 2. Backup your server settings stored in ``config/config.json``.
 
+      - If you are using SAML configuration for Mattermost, your SAML certificate files will be saved in the ``config`` directory. Therefore, it is recommended to backup the entire directory.
+   
 3. Backup files stored by your users with one of the following options: 
 
      - If you use local storage using the default ``./data`` directory back up this directory.

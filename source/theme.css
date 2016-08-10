@@ -35,6 +35,14 @@ footer {
 	max-width: 1000px;
 }
 
+.wy-menu-vertical > ul {
+	display: none;
+}
+
+.wy-menu-vertical > ul.current {
+	display: block;
+}
+
 .wy-menu-vertical li.toctree-l2.current li.toctree-l3>a {
 	border: none;
 	background: #D0D0D0;
@@ -56,6 +64,7 @@ footer {
 	margin: 4px 0;
 	height: 33px;
 	background: #CACACA;
+	cursor:pointer;
 }
 
 .wy-menu-vertical p.caption:first-child {

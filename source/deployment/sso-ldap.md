@@ -41,6 +41,10 @@ Notes:
 - Mattermost 3.0 checks AD/LDAP credentials at the time of sign-in and issues session tokens with configurable durations, defaulting to 30 days. If a shorter time intervals is required, this session length for SSO can be changed in **System Console** > **Security** > **Sessions**.
 - Any user attributes updated in the LDAP Server will be reflected in Mattermost when LDAP Synchronization occurs. The time interval for synchronization can be set in the **System Console** > **Authentication** > **LDAP** > **Syncronization Interval**.
 
+#### Configure AD/LDAP deployments with multiple domains 
+
+Organizations using multiple domains can integrate with Mattermost using a "Forest" configuration to bring together multiple domains. Please see [Forests as Collections of Domain Controllers that Trust Each Other](https://technet.microsoft.com/en-us/library/cc759073%28v=ws.10%29.aspx?f=255&MSPPError=-2147217396) for more information. 
+
 ### Troubleshooting
 
 The following are troubleshooting suggestions on common error messages and issues. 

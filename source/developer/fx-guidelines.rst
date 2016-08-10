@@ -205,7 +205,7 @@ Input Hints
 
 **Placeholder input text:**
 
-    Show examples of valid input, such as “name@example.com” for email addresses, as well as examples of functionality that is not obvious supported, for example in inputting team name, offer placeholder input text with “Example: Marketing, John’s Room, 中国业务”.
+    Show examples of valid input, such as ``name@example.com`` for email addresses, as well as examples of functionality that is not obvious supported, for example in inputting team name, offer placeholder input text with “Example: Marketing, John’s Room, 中国业务”.
 
 
 **Field validation:**
@@ -354,7 +354,7 @@ Alignment of Elements
 
     |
 
-    Error message does not expand the horizontal separator
+    Error message does not extend beyond the horizontal line separator.
 
     ..  image:: ../images/align2.png
         :alt: Confined messages with respect to width
@@ -376,7 +376,7 @@ Alignment of Elements
 |
 
 | **Instructions should be sentences, one-line links should be fragments.**
-| Instructions, such as “A password reset link has been sent to you@email.com for your account.\nPlease check your inbox.”, should be displayed as sentences ending in periods. One-line links, such as “Find it here”, should not end in periods or commas, but question marks are okay.
+| Instructions, such as “A password reset link has been sent to ``you@email.com`` for your account.\nPlease check your inbox.”, should be displayed as sentences ending in periods. One-line links, such as “Find it here”, should not end in periods or commas, but question marks are okay.
 |
 **Example:**
 
@@ -458,6 +458,38 @@ All inputs such as textareas should behave consistently, if the default behaviou
     ..  image:: ../images/inputBehaviour3.png
         :alt: Edit header modal
         :width: 500 px
+
+Testing Checklist 
+************************
+
+In addition to above guidelines, the below provides a concrete checklist of mistakes to watch for when reviewing proposed product changes. 
+
+User Experience Checklist 
+------------------------------
+
+**1\) Is the WHITESPACE next to icons SUFFICIENTLY SPACED?**
+
+Example of not enough space next to FLAG icon on RIGHT: 
+
+..  image:: https://cloud.githubusercontent.com/assets/177788/17340912/1599a0aa-58a7-11e6-94e3-1e2a0895c40f.png
+
+**2\) Is the WHITESPACE next to icons EVENLY SPACED?** 
+
+Example of uneven icon spacing: 
+
+..  image:: https://cloud.githubusercontent.com/assets/177788/17340912/1599a0aa-58a7-11e6-94e3-1e2a0895c40f.png
+
+**3\) Are there visual GAPS?**
+
+Example of gaps in a visual design: 
+
+..  image:: https://cloud.githubusercontent.com/assets/177788/17340886/f3f4c9de-58a6-11e6-8331-550b319b1483.png
+
+**4\) Read all help text OUT LOUD--is it helpful to a new user?** 
+
+Example of help text that doesn't communicate enough information to a user (no information included on how to use flagged posts): 
+
+..  image:: https://cloud.githubusercontent.com/assets/177788/17341029/956c749c-58a7-11e6-8c7c-055606027406.png
 
 
 |

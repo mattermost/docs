@@ -3,13 +3,12 @@ Compliance exports with oversight protection
 
 Available in `Enterprise Edition E20 <https://about.mattermost.com/pricing/>`_
 
-Turning on this feature enables compliance exports to be produced from the System Console with each export and download action logged in an audit history to enable oversight and prevent unauthorized queries. 
+This feature enables compliance exports produced from the System Console with query and download actions logged in an audit history to enable oversight and prevent unauthorized queries. 
 
-Compliance exports can be filtered to date range, user account, and keyword list and requests from queries can be downloaded from the user interface in ``.csv`` format, with a ``.json`` metafile documenting the query, as well as placed in a pre-defined directory. 
+Compliance exports can be filtered to date range, user account, and keyword list. Requests from queries can be downloaded from the user interface in ``.csv`` format, with a ``.json`` metafile documenting the query, as well as placed in a directory set by the System Administrator. 
 
-Each export and each download action taken from the user interface is recorded in an audit log, including the user account taking the action, the action and a datetime stamp. 
+Daily compliance reports may also be generated, supporting integration with compliance solutions like `Global Relay <https://docs.mattermost.com/administration/compliance.html#global-relay-support>`_. 
 
-An option is also available to generate compliance reports on a daily basis.
 
 Enabling Compliance Reporting 
 ====
@@ -44,7 +43,7 @@ Compliance Reports are exports of all messages in Mattermost matching the report
      - **Job Name:** Name the compliance report you are about to run, e.g. "HR Audit 455".
      - **From:** Start Date for search in YYYY-MM-DD format, e.g. "2016-03-11".
      - **To:** End Date of search in YYYY-MM-DD format, e.g. "2016-05-11".
-     - **Emails:** Comma separated list of email addresses of users who's posted messages you want to search. e.g. "bill@example.com, bob@example.com".
+     - **Emails:** Comma separated list of email addresses of users who's posted messages you want to search. e.g. ``bill@example.com, bob@example.com``.
      - **Keywords:** Indicate the words that would be contained in a message for it to be included in the Compliance Report results.
      
 3. Click "Run Compliance Report" 
@@ -66,31 +65,31 @@ Compliance query definition stored in ``meta.json`` file
 
 ``meta.json`` contains the following information about the compliance query: 
 
-+---------------------+---------------------------------------------------------------+-------------------------------+
-| Field               | Description                                                   | Example                       |
-+=====================+===============================================================+===============================+
-| id                  | Unique identifier for compliance query                        | ja8z8egap7nq9kqetz3rt98khe    |
-+---------------------+---------------------------------------------------------------+-------------------------------+
-| create_at           | Timestamp at which compliance query was executed              | 1463637842478                 |
-+---------------------+---------------------------------------------------------------+-------------------------------+
-| user_id             | Mattermost User ID for person creating query                  | 3bq1shta93yztg3i6aiu1tzi5h    |
-+---------------------+---------------------------------------------------------------+-------------------------------+
-| status              | Status of query: 'finished' or 'failed'                       | finished                      |
-+---------------------+---------------------------------------------------------------+-------------------------------+
-| count               | Count of messages found matching keyword                      | 36                            |
-+---------------------+---------------------------------------------------------------+-------------------------------+
-| desc                | User entered description of compliance query                  | Example Compliance Report     | 
-+---------------------+---------------------------------------------------------------+-------------------------------+
-| type                | Type of compliance query: "adhoc" or "daily"                  | "adhoc"                       | 
-+---------------------+---------------------------------------------------------------+-------------------------------+
-| start_at            | Timestamp at which query began to run                         | 1451606400000                 | 
-+---------------------+---------------------------------------------------------------+-------------------------------+
-| end_at              | Timestamp at which query ended                                | 1463529600000                 | 
-+---------------------+---------------------------------------------------------------+-------------------------------+
-| keywords            | Comma-separated, case insensitive keywords to match in query  | "drinking"                    | 
-+---------------------+---------------------------------------------------------------+-------------------------------+
-| emails              | Comma-separated emails of users to search. Blank returns all  | frank.yu@ha.ca, mary.li@hi.co |  
-+---------------------+---------------------------------------------------------------+-------------------------------+
++---------------------+---------------------------------------------------------------+-----------------------------------+
+| Field               | Description                                                   | Example                           |
++=====================+===============================================================+===================================+
+| id                  | Unique identifier for compliance query                        | ja8z8egap7nq9kqetz3rt98khe        |
++---------------------+---------------------------------------------------------------+-----------------------------------+
+| create_at           | Timestamp at which compliance query was executed              | 1463637842478                     |
++---------------------+---------------------------------------------------------------+-----------------------------------+
+| user_id             | Mattermost User ID for person creating query                  | 3bq1shta93yztg3i6aiu1tzi5h        |
++---------------------+---------------------------------------------------------------+-----------------------------------+
+| status              | Status of query: 'finished' or 'failed'                       | finished                          |
++---------------------+---------------------------------------------------------------+-----------------------------------+
+| count               | Count of messages found matching keyword                      | 36                                |
++---------------------+---------------------------------------------------------------+-----------------------------------+
+| desc                | User entered description of compliance query                  | Example Compliance Report         | 
++---------------------+---------------------------------------------------------------+-----------------------------------+
+| type                | Type of compliance query: "adhoc" or "daily"                  | "adhoc"                           | 
++---------------------+---------------------------------------------------------------+-----------------------------------+
+| start_at            | Timestamp at which query began to run                         | 1451606400000                     | 
++---------------------+---------------------------------------------------------------+-----------------------------------+
+| end_at              | Timestamp at which query ended                                | 1463529600000                     | 
++---------------------+---------------------------------------------------------------+-----------------------------------+
+| keywords            | Comma-separated, case insensitive keywords to match in query  | "drinking"                        | 
++---------------------+---------------------------------------------------------------+-----------------------------------+
+| emails              | Comma-separated emails of users to search. Blank returns all  | ``frank.yu@ha.ca, mary.li@hi.co`` |  
++---------------------+---------------------------------------------------------------+-----------------------------------+
 
 Compliance query results stored in ``posts.csv`` file 
 ^^^^^
@@ -111,7 +110,7 @@ Compliance query results stored in ``posts.csv`` file
 +---------------------+---------------------------------------------------------------+-------------------------------+
 | UserUsername        | Username of user posting the message containing keyword       | frank.yu                      |
 +---------------------+---------------------------------------------------------------+-------------------------------+
-| UserEmail           | Email of user posting the message containing keyword          | frank.yu@contosi.com          | 
+| UserEmail           | Email of user posting the message containing keyword          | ``frank.yu@contosi.com``      | 
 +---------------------+---------------------------------------------------------------+-------------------------------+
 | UserNickname        | Nickname of user posting the message containing keyword       | fan du                        | 
 +---------------------+---------------------------------------------------------------+-------------------------------+
@@ -131,3 +130,9 @@ Compliance query results stored in ``posts.csv`` file
 +---------------------+---------------------------------------------------------------+-------------------------------+
 | PostFilenames       | Comma separated list of filesnames attached to post           | ["/f../ho.png","/f../hi.png"] |
 +---------------------+---------------------------------------------------------------+-------------------------------+
+
+
+Global Relay Support 
+====
+
+Mattermost daily compliance reports are compatible with Global Relay compliance solutions through the conversion of Mattermost ``.CSV`` exports into Global Relay ``EML`` files. Contact your Global Relay account manager about enabling `Secure, Compliant Internal Instant Messenger <https://www.globalrelay.com/uploads/resources/files/GlobalRelay-Services-Guide.pdf>`_ support in Global Relay. 

@@ -124,6 +124,17 @@ todo_include_todos = False
 
 # -- Options for HTML output ----------------------------------------------
 
+# Global variables available to all templates
+html_context = {
+    # Enable the "Edit in GitHub link within the header of each page.
+    'display_github': True,
+    # Set the following variables to generate the resulting github URL for each page. 
+    # Format Template: https://{{ github_host|default("github.com") }}/{{ github_user }}/{{ github_repo }}/blob/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ suffix }}
+    'github_user': 'mattermost',
+    'github_repo': 'docs',
+    'github_version': 'master/source/' 
+}
+
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 html_theme = 'sphinx_rtd_theme'

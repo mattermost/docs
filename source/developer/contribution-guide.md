@@ -8,11 +8,11 @@ Thank you for your interest in contributing to Mattermost. Here's the process:
     - Choose any ticket marked "Open", even if it's assigned, and comment to let people know you're working on it. 
     - If you're looking for a quick ticket, pick something from the [Good First Contribution](https://mattermost.atlassian.net/issues/?filter=10206) list instead
 
-2. If you have questions post in [Mattermost forum](http://forum.mattermost.org/) or join the [APR Tickets](https://pre-release.mattermost.com/core/channels/developers) channel and announce the ticket you'd like to work on so it can be assigned to you. 
+2. If you have questions post in [Mattermost forum](http://forum.mattermost.org/) or join the [APR Tickets](https://pre-release.mattermost.com/core/channels/tickets) channel and announce the ticket you'd like to work on so it can be assigned to you. 
 
 It's okay to submit PRs to fix obvious bugs or add small improvements, but anything that significantly changes behavior or user expectations [requires an APR ticket opened by the core team](http://docs.mattermost.com/process/accepting-pull-request.html) so that the change can be tested, documented and supported. 
 
-The best way to discuss opening an APR ticket with the core team is by [starting a conversation in the feature idea forum](http://www.mattermost.org/feature-requests/) which is monitored via automation.
+The best way to discuss opening an APR ticket with the core team is by [starting a conversation in the feature idea forum](http://www.mattermost.org/feature-requests/).
 
 ## Install Mattermost and set up a Fork
 
