@@ -202,6 +202,7 @@ The following config settings will only work on servers with an Enterprise Licen
 - Office 365 login sometimes causes a bad token error.
 - Messages sometimes don't appear deleted until the page is refreshed.
 - When joining a channel from a public link, the page sometimes loads for a long time and requires a refresh.
+- After leaving a team, joining or creating a team sometimes causes an error.
 
 ### Contributors
 
