@@ -3,7 +3,7 @@
 Chinese, Korean & Japanese Search
 =====================
 
-Search for Chinese, Korean and Japanese requires special configuration
+Search for Chinese, Korean and Japanese requires special configuration.
 
 日本語 / Japanese
 -----------------
