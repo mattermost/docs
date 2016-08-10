@@ -54,7 +54,7 @@ Other notes:
 
 ### Differences between MySQL and Postgres search 
 
-By default, Mattermost uses full text search support included in MySQL and PostgreSQL. These databases have slighty different search behavior. Check **Main Menu** > **About Mattermost** to see which database you're using.
+By default, Mattermost uses full text search support included in MySQL and PostgreSQL. These databases have slightly different search behavior. Check **Main Menu** > **About Mattermost** to see which database you're using.
 
 For example, different databases have different "stop words" filtered out of search results. See database documentation on [MySQL](http://dev.mysql.com/doc/refman/5.7/en/fulltext-stopwords.html) and [Postgres](http://apt-browse.org/browse/ubuntu/precise/main/i386/postgresql-9.1/9.1.3-2/file/usr/share/postgresql/9.1/tsearch_data/english.stop) for a full list. Other differences include: 
 
