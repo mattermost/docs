@@ -43,7 +43,7 @@ Listen Address
 The IP address on which to listen and the port on which to bind. Entering ":8065" will bind to all interfaces or you can choose one like ``127.0.0.1:8065``. Changing this will require a server restart before taking effect.
 
 +--------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"ListenAddress": ":8065"``  |
+| This features’s ``config.json`` setting is ``"ListenAddress": ":8065"``  |
 +--------------------------------------------------------------------------+
 
 Webserver Mode  
@@ -57,7 +57,7 @@ gzip compression applies to the HTML, CSS, Javascript, and other static content 
 **Disabled**: The Mattermost server will not serve static files.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"WebserverMode": "gzip"`` with options ``gzip``, ``uncompressed`` and ``disabled`` for above settings respectively.      |
+| This features’s ``config.json`` setting is ``"WebserverMode": "gzip"`` with options ``gzip``, ``uncompressed`` and ``disabled`` for above settings respectively.      |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Reload Configuration from Disk (Enterprise)
@@ -75,7 +75,7 @@ Default Server Language
 Default language for system messages and logs. Changing this will require a server restart before taking effect.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"DefaultServerLocale": "en"`` with options ``de``, ``en``, ``es``, ``fr``, ``ja`` and ``pt-br``                          |
+| This features’s ``config.json`` setting is ``"DefaultServerLocale": "en"`` with options ``de``, ``en``, ``es``, ``fr``, ``ja`` and ``pt-br``                          |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Default Client Language
@@ -83,7 +83,7 @@ Default Client Language
 Default language for newly created users and pages where the user hasn't logged in.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"DefaultClientLocale": "en"`` with options ``de``, ``en``, ``es``, ``fr``, ``ja`` and ``pt-br``                          |
+| This features’s ``config.json`` setting is ``"DefaultClientLocale": "en"`` with options ``de``, ``en``, ``es``, ``fr``, ``ja`` and ``pt-br``                          |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Available Languages
@@ -93,7 +93,7 @@ Sets which languages are available for users in **Account Settings** > **Display
 Note: Servers which upgraded to v3.1 need to manually set this field blank to have new languages added by default.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"AvailableLocales": ""`` with options with options ``""``, ``de``, ``en``, ``es``, ``fr``, ``ja`` and ``pt-br``          |
+| This features’s ``config.json`` setting is ``"AvailableLocales": ""`` with options with options ``""``, ``de``, ``en``, ``es``, ``fr``, ``ja`` and ``pt-br``          |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -107,7 +107,7 @@ Enable Account Creation
 **False**: Ability to create accounts is disabled. The **Create Account** button displays an error when trying to signup via an email invite or team invite link.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EnableUserCreation": true`` with options ``true`` and ``false`` for above settings respectively.                        |
+| This features’s ``config.json`` setting is ``"EnableUserCreation": true`` with options ``true`` and ``false`` for above settings respectively.                        |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -118,7 +118,7 @@ Enable Team Creation
 **False**: Only System Administrators can create teams from the team selection page. The **Create A New Team** button is hidden in the main menu UI.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EnableTeamCreation": true`` with options ``true`` and ``false`` for above settings respectively.                        |
+| This features’s ``config.json`` setting is ``"EnableTeamCreation": true`` with options ``true`` and ``false`` for above settings respectively.                        |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Max Users Per Team
@@ -126,7 +126,7 @@ Max Users Per Team
 Maximum number of users per team, including both active and inactive users.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"MaxUsersPerTeam": 50`` with whole number input.                                                                         |
+| This features’s ``config.json`` setting is ``"MaxUsersPerTeam": 50`` with whole number input.                                                                         |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Restrict account creation to specified email domains
@@ -134,7 +134,7 @@ Restrict account creation to specified email domains
 Teams and user accounts can only be created by a verified email from this list of comma-separated domains (e.g. "corp.mattermost.com, mattermost.org").
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"RestrictCreationToDomains": ""`` with string input.                                                                     |
+| This features’s ``config.json`` setting is ``"RestrictCreationToDomains": ""`` with string input.                                                                     |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Restrict Team Names 
@@ -144,7 +144,7 @@ Restrict Team Names
 **False**: Newly created team names are not restricted. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EnableTeamCreation": true`` with options ``true`` and ``false`` for above settings respectively.                        |
+| This features’s ``config.json`` setting is ``"EnableTeamCreation": true`` with options ``true`` and ``false`` for above settings respectively.                        |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable users to open Direct Message channels with 
@@ -155,7 +155,7 @@ Enable users to open Direct Message channels with
 **Any member of the team**: The Direct Messages "More" menu only has the option to open a Direct Message channel with users on the current team.  If a user belongs to multiple teams, direct messages will still be received regardless of what team they are currently on. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"RestrictDirectMessage": "any"`` with options ``any`` and ``team`` for above settings respectively.                      |
+| This features’s ``config.json`` setting is ``"RestrictDirectMessage": "any"`` with options ``any`` and ``team`` for above settings respectively.                      |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Team Directory  
@@ -167,7 +167,7 @@ Enable Team Directory
 **False**: Team directory on the system main page is disabled.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EnableTeamListing": false`` with options ``true`` and ``false`` for above settings respectively.                        |
+| This features’s ``config.json`` setting is ``"EnableTeamListing": false`` with options ``true`` and ``false`` for above settings respectively.                        |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -187,7 +187,7 @@ Set policy on who can invite others to a team using "Invite New Member" to invit
 **System Admins**: Hides the email invitation and team invite link in the Main Menu from users who are not System Admins. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"RestrictTeamInvite": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively. |
+| This features’s ``config.json`` setting is ``"RestrictTeamInvite": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively. |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable public channel management permissions for 
@@ -201,7 +201,7 @@ Restrict the permission levels required to create, delete, rename, and set the h
 **System Admins**: Channel management permissions for public channels are restricted to System Admins.
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"RestrictPublicChannelManagement": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively. |
+| This features’s ``config.json`` setting is ``"RestrictPublicChannelManagement": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively. |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable private channel management permissions for 
@@ -215,7 +215,7 @@ Restrict the permission levels required to to create, delete, rename, and set th
 **System Admins**: Channel management permissions for private channels are restricted to System Admins.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"RestrictPrivateChannelManagement": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively. |
+| This features’s ``config.json`` setting is ``"RestrictPrivateChannelManagement": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively. |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -232,7 +232,7 @@ Show Email Address
 **False**: Hide email address of users from other users in the user interface, including Team Admins. This is designed for managing teams where users choose to keep their contact information private. System Administrators will still be able to see email addresses in the UI. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"ShowEmailAddress": true`` with options ``true`` and ``false`` for above settings respectively.                          |
+| This features’s ``config.json`` setting is ``"ShowEmailAddress": true`` with options ``true`` and ``false`` for above settings respectively.                          |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Show Full Name 
@@ -242,7 +242,7 @@ Show Full Name
 **False**: hide full name of users from other users including Team Admins. This is designed for managing teams where users choose to keep their contact information private. System Administrators will still be able to see full names in the UI.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"ShowFullName": true`` with options ``true`` and ``false`` for above settings respectively.                              |
+| This features’s ``config.json`` setting is ``"ShowFullName": true`` with options ``true`` and ``false`` for above settings respectively.                              |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -258,7 +258,7 @@ Enable Compliance Reporting
 **False**: Compliance reporting is disabled. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                                   |
+| This features’s ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                                   |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Compliance Report Directory 
@@ -266,7 +266,7 @@ Compliance Report Directory
 Sets the directory where compliance reports are written. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"Directory": "./data/"`` with string input.                                                                              |
+| This features’s ``config.json`` setting is ``"Directory": "./data/"`` with string input.                                                                              |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Daily Report
@@ -276,7 +276,7 @@ Enable Daily Report
 **False**: Daily reports are not generated. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EnableDaily": false`` with options ``true`` and ``false`` for above settings respectively.                              |
+| This features’s ``config.json`` setting is ``"EnableDaily": false`` with options ``true`` and ``false`` for above settings respectively.                              |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -291,7 +291,7 @@ Output logs to console
 **False**: Output log messages are not written to the console.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EnableConsole": true`` with options ``true`` and ``false`` for above settings respectively.                             |
+| This features’s ``config.json`` setting is ``"EnableConsole": true`` with options ``true`` and ``false`` for above settings respectively.                             |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Console Log Level
@@ -305,7 +305,7 @@ Level of detail at which log events are written to the console when **EnableCons
 **INFO**: Outputs error messages and information around startup and initialization,
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"ConsoleLevel": "DEBUG"`` with options ``DEBUG``, ``ERROR`` and ``INFO`` for above settings respectively.                |
+| This features’s ``config.json`` setting is ``"ConsoleLevel": "DEBUG"`` with options ``DEBUG``, ``ERROR`` and ``INFO`` for above settings respectively.                |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Output logs to file 
@@ -315,7 +315,7 @@ Output logs to file
 **False**: Log files are not written.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EnableFile": true`` with options ``true`` and ``false`` for above settings respectively.                                |
+| This features’s ``config.json`` setting is ``"EnableFile": true`` with options ``true`` and ``false`` for above settings respectively.                                |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 File Log Level
@@ -329,7 +329,7 @@ Level of detail at which log events are written to log files when **EnableFile**
 **DEBUG**: Prints high detail for developers debugging issues.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"FileLevel": "INFO"`` with options ``DEBUG``, ``ERROR`` and ``INFO`` for above settings respectively.                    |
+| This features’s ``config.json`` setting is ``"FileLevel": "INFO"`` with options ``DEBUG``, ``ERROR`` and ``INFO`` for above settings respectively.                    |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 File Log Directory
@@ -337,7 +337,7 @@ File Log Directory
 Directory to which log files are written. If blank, log files write to ./logs/mattermost/mattermost.log. Log rotation is enabled and every 10,000 lines of log information is written to new files stored in the same directory, for example mattermost.2015-09-23.001, mattermost.2015-09-23.002, and so forth.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"FileLocation": ""`` with string input.                                                                                  |
+| This features’s ``config.json`` setting is ``"FileLocation": ""`` with string input.                                                                                  |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 File Log Format  
@@ -364,7 +364,7 @@ Format of log message output. If blank, FileFormat = "[%D %T] [%L] (%S) %M", whe
      - Message  
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"FileFormat": ""`` with string input.                                                                                    |
+| This features’s ``config.json`` setting is ``"FileFormat": ""`` with string input.                                                                                    |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
      
@@ -376,7 +376,7 @@ Enable Webhook Debugging
 **False**: Contents of incoming webhooks are not printed to log files.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EnableWebhookDebugging": true`` with options ``true`` and ``false`` for above settings respectively.                    |
+| This features’s ``config.json`` setting is ``"EnableWebhookDebugging": true`` with options ``true`` and ``false`` for above settings respectively.                    |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -395,7 +395,7 @@ Enable account creation with email
 **False**: Email signup is disabled and users are not able to invite new members. This limits signup to single-sign-on services like OAuth or LDAP.  
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EnableSignUpWithEmail": true`` with options ``true`` and ``false`` for above settings respectively.                     |
+| This features’s ``config.json`` setting is ``"EnableSignUpWithEmail": true`` with options ``true`` and ``false`` for above settings respectively.                     |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable sign-in with email 
@@ -406,7 +406,7 @@ Enable sign-in with email
 **False**: sign in with email is disabled and does not appear on the login screen.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EnableSignInWithEmail": true`` with options ``true`` and ``false`` for above settings respectively.                     |
+| This features’s ``config.json`` setting is ``"EnableSignInWithEmail": true`` with options ``true`` and ``false`` for above settings respectively.                     |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable sign-in with username 
@@ -417,7 +417,7 @@ Enable sign-in with username
 **False**: sign in with username is disabled and does not appear on the login screen.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``EnableSignInWithUsername": false`` with options ``true`` and ``false`` for above settings respectively.                  |
+| This features’s ``config.json`` setting is ``EnableSignInWithUsername": false`` with options ``true`` and ``false`` for above settings respectively.                  |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -431,7 +431,7 @@ Enable authentication with GitLab
 **False**: GitLab OAuth cannot be used for team creation or account signup. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                                   |
+| This features’s ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                                   |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Application ID 
@@ -439,7 +439,7 @@ Application ID
 Obtain this value by logging into your GitLab account. Go to Profile Settings > Applications > New Application, enter a Name, then enter Redirect URLs ``https://<your-mattermost-url>/login/gitlab/complete`` (example: ``https://example.com:8065/login/gitlab/complete``and ``https://<your-mattermost-url>/signup/gitlab/complete``.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"Id": ""`` with string input.                                                                                            |
+| This features’s ``config.json`` setting is ``"Id": ""`` with string input.                                                                                            |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Application Secret Key  
@@ -447,7 +447,7 @@ Application Secret Key
 Obtain this value by logging into your GitLab account. Go to Profile Settings > Applications > New Application, enter a Name, then enter Redirect URLs ``https://<your-mattermost-url>/login/gitlab/complete`` (example: ``https://example.com:8065/login/gitlab/complete``and ``https://<your-mattermost-url>/signup/gitlab/complete``.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"Secret": ""`` with string input.                                                                                        |
+| This features’s ``config.json`` setting is ``"Secret": ""`` with string input.                                                                                        |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 User API Endpoint 
@@ -455,7 +455,7 @@ User API Endpoint
 Enter ``https://<your-gitlab-url>/oauth/authorize`` (example: ``https://example.com:3000/api/v3/user``). Use HTTP or HTTPS depending on how your server is configured.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"UserApiEndpoint": ""`` with string input.                                                                               |
+| This features’s ``config.json`` setting is ``"UserApiEndpoint": ""`` with string input.                                                                               |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Auth Endpoint  
@@ -463,7 +463,7 @@ Auth Endpoint
 Enter ``https://<your-gitlab-url>/oauth/authorize`` (example: ``https://example.com:3000/oauth/authorize``). Use HTTP or HTTPS depending on how your server is configured.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"AuthEndpoint": ""`` with string input.                                                                                  |
+| This features’s ``config.json`` setting is ``"AuthEndpoint": ""`` with string input.                                                                                  |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Token Endpoint  
@@ -471,7 +471,7 @@ Token Endpoint
 Enter ``https://<your-gitlab-url>/oauth/authorize`` (example: ``https://example.com:3000/oauth/token``). Use HTTP or HTTPS depending on how your server is configured.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"TokenEndpoint": ""`` with string input.                                                                                 |
+| This features’s ``config.json`` setting is ``"TokenEndpoint": ""`` with string input.                                                                                 |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -485,7 +485,7 @@ Enable sign-in with LDAP
 **False**: Login with LDAP is disabled.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                                   |
+| This features’s ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                                   |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 LDAP Server  
@@ -493,7 +493,7 @@ LDAP Server
 The domain or IP address of the LDAP server.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"LdapServer": ""`` with string input.                                                                                    |
+| This features’s ``config.json`` setting is ``"LdapServer": ""`` with string input.                                                                                    |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 LDAP Port 
@@ -501,7 +501,7 @@ LDAP Port
 The port Mattermost will use to connect to the AD/LDAP server. Default is 389.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"LdapPort": 389`` with numerical input.                                                                                  |
+| This features’s ``config.json`` setting is ``"LdapPort": 389`` with numerical input.                                                                                  |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Connection Security
@@ -517,7 +517,7 @@ The type of connection security Mattermost uses to connect to LDAP.
 If the "No encryption" option is selected it is highly recommended that the LDAP connection is secured outside of Mattermost, for example, by adding a stunnel proxy. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"ConnectionSecurity": ""`` with options ``""``, ``TLS`` and ``STARTTLS`` for above settings respectively.                |
+| This features’s ``config.json`` setting is ``"ConnectionSecurity": ""`` with options ``""``, ``TLS`` and ``STARTTLS`` for above settings respectively.                |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Base DN   
@@ -525,7 +525,7 @@ Base DN
 The **Base Distinguished Name** of the location where Mattermost should start its search for users in the LDAP tree.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"BaseDN": ""`` with string input.                                                                                        |
+| This features’s ``config.json`` setting is ``"BaseDN": ""`` with string input.                                                                                        |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Bind Username 
@@ -533,7 +533,7 @@ Bind Username
 The username used to perform the AD/LDAP search. This should be an account created specifically for use with Mattermost  Its permissions should be limited to read-only access to the portion of the LDAP tree specified in the **Base DN** field. When using Active Directory, **Bind Username** should specify domain in ``DOMAIN/username`` format. This field is required, and anonymous bind is not currently supported. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"BindUsername": ""`` with string input.                                                                                  |
+| This features’s ``config.json`` setting is ``"BindUsername": ""`` with string input.                                                                                  |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Bind Password   
@@ -541,7 +541,7 @@ Bind Password
 Password of the user given in **Bind Username**. This field is required, and anonymous bind is not currently supported. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"BindPassword": ""`` with string input.                                                                                  |
+| This features’s ``config.json`` setting is ``"BindPassword": ""`` with string input.                                                                                  |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 User Filter  
@@ -551,7 +551,7 @@ User Filter
 This filter uses the permissions of the **Bind Username** account to execute the search. Administrators should make sure to use a specially created account for Bind Username with read-only access to the portion of the LDAP tree specified in the **Base DN** field. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"UserFilter": ""`` with string input.                                                                                    |
+| This features’s ``config.json`` setting is ``"UserFilter": ""`` with string input.                                                                                    |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 First Name Attribute 
@@ -559,7 +559,7 @@ First Name Attribute
 The attribute in the LDAP server that will be used to populate the first name of users in Mattermost. This field is required.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"FirstNameAttribute": ""``  with string input.                                                                           |
+| This features’s ``config.json`` setting is ``"FirstNameAttribute": ""``  with string input.                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Last Name Attribute  
@@ -567,7 +567,7 @@ Last Name Attribute
 The attribute in the LDAP server that will be used to populate the last name of users in Mattermost. This field is required.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"LastNameAttribute": ""`` with string input.                                                                             |
+| This features’s ``config.json`` setting is ``"LastNameAttribute": ""`` with string input.                                                                             |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Nickname Attribute 
@@ -575,7 +575,7 @@ Nickname Attribute
 (Optional) The attribute in the LDAP server that will be used to populate the nickname of users in Mattermost.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"NicknameAttribute": ""`` with string input.                                                                             |
+| This features’s ``config.json`` setting is ``"NicknameAttribute": ""`` with string input.                                                                             |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Email Attribute  
@@ -585,7 +585,7 @@ The attribute in the LDAP server that will be used to populate the email address
 Email notifications will be sent to this email address, and this email address may be viewable by other Mattermost users depending on privacy settings choosen by the System Admin. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EmailAttribute": ""`` with string input.                                                                                |
+| This features’s ``config.json`` setting is ``"EmailAttribute": ""`` with string input.                                                                                |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Username Attribute  
@@ -595,7 +595,7 @@ The attribute in the LDAP server that will be used to populate the username fiel
 The **Username Attribute** may be set to the same value used to sign-in to the system, called an **ID Attribute**, or it can be mapped to a different value. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"UsernameAttribute": ""`` with string input.                                                                             |
+| This features’s ``config.json`` setting is ``"UsernameAttribute": ""`` with string input.                                                                             |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ID Attribute  
@@ -607,7 +607,7 @@ This value is used to sign in to Mattermost in the **LDAP Username** field on th
 **This is the attribute that will be used to create unique Mattermost accounts.** This attribute should be an LDAP attribute with a value that does not change, such as ``username`` or ``uid``. If a user’s **ID Attribute** changes and the user attempts to login the Mattermost server will attempt to create a new Mattermost user account based on the new **ID Attribute** and fail since new Mattermost users accounts can't be created with duplicate email addresses or Mattermost usernames (as defined in the **Username Attribute**).  
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"IdAttribute": ""`` with string input.                                                                                   |
+| This features’s ``config.json`` setting is ``"IdAttribute": ""`` with string input.                                                                                   |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Skip Certificate Verification 
@@ -619,7 +619,7 @@ Skip Certificate Verification
 **False**: Mattermost does not skip certificate verification.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"SkipCertificateVerification": false`` with options ``true`` and ``false`` for above settings respectively.              |
+| This features’s ``config.json`` setting is ``"SkipCertificateVerification": false`` with options ``true`` and ``false`` for above settings respectively.              |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Synchronization Interval (minutes) 
@@ -627,7 +627,7 @@ Synchronization Interval (minutes)
 Set how often Mattermost accounts synchronize attributes with AD/LDAP, in minutes. When synchronizing, Mattermost queries AD/LDAP for relevant account information and updates Mattermost accounts based on changes to attributes (first name, last name, and nickname). When accounts are disabled in AD/LDAP users can no longer sign-in to Mattermost using AD/LDAP credentials, and their active sessions are revoked once Mattermost synchronizes attributes. Disabling a user in AD/LDAP does not automatically set its Mattermost account to "Inactive" it only disables AD/LDAP authentication.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"SyncIntervalMinutes": 60`` with whole number input.                                                                     |
+| This features’s ``config.json`` setting is ``"SyncIntervalMinutes": 60`` with whole number input.                                                                     |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+ 
 
 Query Timeout (seconds)  
@@ -635,7 +635,7 @@ Query Timeout (seconds)
 The timeout value for queries to the LDAP server. Increase this value if you are getting timeout errors caused by a slow LDAP server.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"QueryTimeout": 60`` with whole number input.                                                                            |
+| This features’s ``config.json`` setting is ``"QueryTimeout": 60`` with whole number input.                                                                            |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Maximum Page Size  
@@ -643,7 +643,7 @@ Maximum Page Size
 The maximum number of users the Mattermost server will request from the LDAP server at one time. Use this setting if your LDAP server limits the number of users that can be requested at once. 0 is unlimited. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"MaxPageSize": 0`` with whole number input.                                                                              |
+| This features’s ``config.json`` setting is ``"MaxPageSize": 0`` with whole number input.                                                                              |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Login Field Name 
@@ -651,7 +651,7 @@ Login Field Name
 The placeholder text that appears in the login field on the login page. Typically this would be whatever name is used to refer to LDAP credentials in your company, so it is recognizable to your users. Defaults to **LDAP Username**.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"LoginFieldName": ""`` with string input.                                                                                |
+| This features’s ``config.json`` setting is ``"LoginFieldName": ""`` with string input.                                                                                |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 LDAP Synchronize Now
@@ -669,7 +669,7 @@ Enable Login With SAML
 **False**: Login with SAML is disabled.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                                   |
+| This features’s ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                                   |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 SAML SSO URL 
@@ -677,7 +677,7 @@ SAML SSO URL
 The URL where Mattermost sends a SAML request to start login sequence.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"IdpURL": ""``  with string input.                                                                                       |
+| This features’s ``config.json`` setting is ``"IdpURL": ""``  with string input.                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Identity Provider Issuer URL 
@@ -685,7 +685,7 @@ Identity Provider Issuer URL
 The issuer URL for the Identity Provider you use for SAML requests.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"IdpDescriptorUrl": ""``  with string input.                                                                             |
+| This features’s ``config.json`` setting is ``"IdpDescriptorUrl": ""``  with string input.                                                                             |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Identity Provider Public Certificate  
@@ -693,7 +693,7 @@ Identity Provider Public Certificate
 The public authentication certificate issued by your Identity Provider.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"IdpCertificateFile": ""`` with string input.                                                                            |
+| This features’s ``config.json`` setting is ``"IdpCertificateFile": ""`` with string input.                                                                            |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Verify Signature 
@@ -701,7 +701,7 @@ Verify Signature
 ``true``: When true, Mattermost verifies that the signature sent from the SAML Response matches the Service Provider Login URL.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"Verify": false`` with string input.                                                                                     |
+| This features’s ``config.json`` setting is ``"Verify": false`` with string input.                                                                                     |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Service Provider Login URL  
@@ -709,7 +709,7 @@ Service Provider Login URL
 Enter ``https://<your-mattermost-url>/login/sso/saml`` (example: ``https://example.com/login/sso/saml``). Make sure you use HTTP or HTTPS in your URL depending on your server configuration. This field is also known as the Assertion Consumer Service URL.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"AssertionConsumerServiceURL": ""`` with string input.                                                                   |
+| This features’s ``config.json`` setting is ``"AssertionConsumerServiceURL": ""`` with string input.                                                                   |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Encryption
@@ -719,7 +719,7 @@ Enable Encryption
 **False**: Encyption is disabled.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"Encrypt": false`` with options ``true`` and ``false`` for above settings respectively.                                  |
+| This features’s ``config.json`` setting is ``"Encrypt": false`` with options ``true`` and ``false`` for above settings respectively.                                  |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Service Provider Private Key 
@@ -727,7 +727,7 @@ Service Provider Private Key
 The private key used to decrypt SAML Assertions from the Identity Provider.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"PrivateKeyFile": ""`` with string input.                                                                                |
+| This features’s ``config.json`` setting is ``"PrivateKeyFile": ""`` with string input.                                                                                |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Service Provider Public Certificate 
@@ -735,7 +735,7 @@ Service Provider Public Certificate
 The certificate file used to generate the signature on a SAML request to the Identity Provider for a service provider initiated SAML login, when Mattermost is the Service Provider.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"PublicCertificateFile": ""`` with string input.                                                                         |
+| This features’s ``config.json`` setting is ``"PublicCertificateFile": ""`` with string input.                                                                         |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Email Attribute 
@@ -745,7 +745,7 @@ The attribute in the SAML Assertion that will be used to populate the email addr
 Email notifications will be sent to this email address, and this email address may be viewable by other Mattermost users depending on privacy settings choosen by the System Admin. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EmailAttribute": ""`` with string input.                                                                                |
+| This features’s ``config.json`` setting is ``"EmailAttribute": ""`` with string input.                                                                                |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Username Attribute  
@@ -753,7 +753,7 @@ Username Attribute
 The attribute in the SAML Assertion that will be used to populate the username field in Mattermost user interface. This attribute will be used within the Mattermost user interface to identify and mention users. For example, if a Username Attribute is set to **john.smith** a user typing ``@john`` will see ``@john.smith`` in their auto-complete options and posting a message with ``@john.smith`` will send a notification to that user that they've been mentioned. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"UsernameAttribute": ""`` with string input.                                                                             |
+| This features’s ``config.json`` setting is ``"UsernameAttribute": ""`` with string input.                                                                             |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 First Name Attribute  
@@ -761,7 +761,7 @@ First Name Attribute
 The attribute in the SAML Assertion that will be used to populate the first name of users in Mattermost.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"FirstNameAttribute": ""`` with string input.                                                                            |
+| This features’s ``config.json`` setting is ``"FirstNameAttribute": ""`` with string input.                                                                            |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Last Name Attribute  
@@ -769,7 +769,7 @@ Last Name Attribute
 The attribute in the SAML Assertion that will be used to populate the last name of users in Mattermost.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"LastNameAttribute": ""`` with string input.                                                                             |
+| This features’s ``config.json`` setting is ``"LastNameAttribute": ""`` with string input.                                                                             |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Nickname Attribute  
@@ -777,7 +777,7 @@ Nickname Attribute
 (Optional) The attribute in the SAML Assertion that will be used to populate the nickname of users in Mattermost.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"NicknameAttribute": ""`` with string input.                                                                             |
+| This features’s ``config.json`` setting is ``"NicknameAttribute": ""`` with string input.                                                                             |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Preferred Language Attribute 
@@ -785,7 +785,7 @@ Preferred Language Attribute
 (Optional) The attribute in the SAML Assertion that will be used to populate the language of users in Mattermost.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"LocaleAttribute": ""`` with string input.                                                                               |
+| This features’s ``config.json`` setting is ``"LocaleAttribute": ""`` with string input.                                                                               |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Login Button Text  
@@ -793,7 +793,7 @@ Login Button Text
 (Optional) The text that appears in the login button on the login page. Defaults to ``With SAML``.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"LoginButtonText": ""`` with string input.                                                                               |
+| This features’s ``config.json`` setting is ``"LoginButtonText": ""`` with string input.                                                                               |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -812,7 +812,7 @@ Require Email Verification
 **False**: Users do not need to verify their email address prior to login. Developers may set this field to false so skip sending verification emails for faster development.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"RequireEmailVerification": false`` with options ``true`` and ``false`` for above settings respectively.                 |
+| This features’s ``config.json`` setting is ``"RequireEmailVerification": false`` with options ``true`` and ``false`` for above settings respectively.                 |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Email Invite Salt  
@@ -820,7 +820,7 @@ Email Invite Salt
 32-character (to be randomly generated via System Console) salt added to signing of email invites. Click **Regenerate** to create new salt.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"InviteSalt": ""`` with string input.                                                                                    |
+| This features’s ``config.json`` setting is ``"InviteSalt": ""`` with string input.                                                                                    |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Open Server  
@@ -830,7 +830,7 @@ Enable Open Server
 **False**: Users can only sign up to the server if they receive an invite.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EnableOpenServer": false`` with options ``true`` and ``false`` for above settings respectively.                         |
+| This features’s ``config.json`` setting is ``"EnableOpenServer": false`` with options ``true`` and ``false`` for above settings respectively.                         |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -842,7 +842,7 @@ Minimum Password Length (Enterprise)
 Minimum number of characters required for a valid password. Must be a whole number greater than or equal to 5 and less than or equal to 64.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"MinimumLength": 5"`` with whole number input.                                                                           |
+| This features’s ``config.json`` setting is ``"MinimumLength": 5"`` with whole number input.                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Password Requirements (Enterprise)
@@ -854,7 +854,7 @@ Set the required character types to be included in a valid password. Defaults to
 - **At least one number**: Select this checkbox if a valid password must contain at least one number.    
 - **At least one symbol**: Select this checkbox if a valid password must contain at least one symbol. Valid symbols include: ``!"#$%&'()*+,-./:;<=>?@[]^_`|~``   
 
-This feature’s ``config.json`` settings are, respectively:
+This features’s ``config.json`` settings are, respectively:
 
 .. list-table::
     :widths: 80
@@ -870,7 +870,7 @@ Password Reset Salt
 32-character (to be randomly generated via Admin Console) salt added to signing of password reset emails. Click **Regenerate** to create new salt.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"PasswordResetSalt": ""``  with string input.                                                                            |
+| This features’s ``config.json`` setting is ``"PasswordResetSalt": ""``  with string input.                                                                            |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Maximum Login Attempts 
@@ -878,7 +878,7 @@ Maximum Login Attempts
 Failed login attempts allowed before a user is locked out and required to reset their password via email.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"MaximumLoginAttempts": 10`` with whole number input.                                                                    |
+| This features’s ``config.json`` setting is ``"MaximumLoginAttempts": 10`` with whole number input.                                                                    |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Multi-factor Authentication (Enterprise) 
@@ -888,7 +888,7 @@ Enable Multi-factor Authentication (Enterprise)
 **False**: Multi-factor authentication is disabled.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EnableSecurityFixAlert": true`` with options ``true`` and ``false`` for above settings respectively.                    |
+| This features’s ``config.json`` setting is ``"EnableSecurityFixAlert": true`` with options ``true`` and ``false`` for above settings respectively.                    |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -902,7 +902,7 @@ Enable Public File Links
 **False**: The Get Public Link option is hidden from the image preview user interface.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EnablePublicLink": true`` with options ``true`` and ``false`` for above settings respectively.                          |
+| This features’s ``config.json`` setting is ``"EnablePublicLink": true`` with options ``true`` and ``false`` for above settings respectively.                          |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Public Link Salt 
@@ -910,7 +910,7 @@ Public Link Salt
 32-character (to be randomly generated via Admin Console) salt added to signing of public image links. Click **Regenerate** to create new salt.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"PublicLinkSalt": ""``  with string input.                                                                               |
+| This features’s ``config.json`` setting is ``"PublicLinkSalt": ""``  with string input.                                                                               |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 _________
@@ -922,7 +922,7 @@ Session length for email and LDAP authentication (days)
 Set the number of days before web sessions expire and users will need to log in again.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"SessionLengthWebInDays" : 30`` with whole number input.                                                                 |
+| This features’s ``config.json`` setting is ``"SessionLengthWebInDays" : 30`` with whole number input.                                                                 |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Session length for mobile apps (days) 
@@ -930,7 +930,7 @@ Session length for mobile apps (days)
 Set the number of days before native mobile sessions expire.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"SessionLengthMobileInDays" : 30`` with whole number input.                                                              |
+| This features’s ``config.json`` setting is ``"SessionLengthMobileInDays" : 30`` with whole number input.                                                              |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Session length for GitLab SSO authentication (days) 
@@ -938,7 +938,7 @@ Session length for GitLab SSO authentication (days)
 Set the number of days before SSO sessions expire.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"SessionLengthSSOInDays" : 30`` with whole number input.                                                                 |
+| This features’s ``config.json`` setting is ``"SessionLengthSSOInDays" : 30`` with whole number input.                                                                 |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Session Cache (minutes) 
@@ -946,7 +946,7 @@ Session Cache (minutes)
 Set the number of minutes to cache a session in memory.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"SessionCacheInMinutes" : 10`` with whole number input.                                                                  |
+| This features’s ``config.json`` setting is ``"SessionCacheInMinutes" : 10`` with whole number input.                                                                  |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -958,7 +958,7 @@ Enable cross-origin requests from
 Enable HTTP cross-origin requests from specific domains separated by spaces. Type ``*`` to allow CORS from any domain or leave it blank to disable it.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"AllowCorsFrom": ""`` with string input.                                                                                 |
+| This features’s ``config.json`` setting is ``"AllowCorsFrom": ""`` with string input.                                                                                 |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Insecure Outgoing Connections 
@@ -970,7 +970,7 @@ Enable Insecure Outgoing Connections
 Security note: Enabling this feature makes these connections susceptible to man-in-the-middle attacks.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EnableInsecureOutgoingConnections": false`` with options ``true`` and ``false`` for above settings respectively.        |
+| This features’s ``config.json`` setting is ``"EnableInsecureOutgoingConnections": false`` with options ``true`` and ``false`` for above settings respectively.        |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -988,7 +988,7 @@ Enable Email Notifications
 **False**: Disables email notifications for developers who may want to skip email setup for faster development. Setting this to true removes the **Preview Mode: Email notifications have not been configured** banner (requires logging out and logging back in after setting is changed)
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"SendEmailNotifications": false`` with options ``true`` and ``false`` for above settings respectively.                   |
+| This features’s ``config.json`` setting is ``"SendEmailNotifications": false`` with options ``true`` and ``false`` for above settings respectively.                   |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Notification Display Name  
@@ -996,7 +996,7 @@ Notification Display Name
 Name displayed on email account used when sending notification emails from Mattermost system.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"FeedbackName": ""`` with string input.                                                                                  |
+| This features’s ``config.json`` setting is ``"FeedbackName": ""`` with string input.                                                                                  |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Notification From Address  
@@ -1004,7 +1004,7 @@ Notification From Address
 Address displayed on email account used when sending notification emails from Mattermost system.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"FeedbackEmail": ""`` with string input.                                                                                 |
+| This features’s ``config.json`` setting is ``"FeedbackEmail": ""`` with string input.                                                                                 |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Notification Footer Mailing Address  
@@ -1012,7 +1012,7 @@ Notification Footer Mailing Address
 Organization name and mailing address displayed in the footer of email notifications from Mattermost, such as "© ABC Corporation, 565 Knight Way, Palo Alto, California, 94305, USA". If the field is left empty, the organization name and mailing address will not be displayed.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"FeedbackOrganization": ""`` with string input.                                                                          |
+| This features’s ``config.json`` setting is ``"FeedbackOrganization": ""`` with string input.                                                                          |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 SMTP Server Username  
@@ -1020,7 +1020,7 @@ SMTP Server Username
 Obtain this credential from the administrator setting up your email server.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"SMTPUsername": ""`` with string input.                                                                                  |
+| This features’s ``config.json`` setting is ``"SMTPUsername": ""`` with string input.                                                                                  |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 SMTP Server Password  
@@ -1028,7 +1028,7 @@ SMTP Server Password
 Obtain this credential from the administrator setting up your email server.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"SMTPPassword": ""`` with string input.                                                                                  |
+| This features’s ``config.json`` setting is ``"SMTPPassword": ""`` with string input.                                                                                  |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 SMTP Server 
@@ -1036,7 +1036,7 @@ SMTP Server
 Location of SMTP email server.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"SMTPServer": ""``  with string input.                                                                                   |
+| This features’s ``config.json`` setting is ``"SMTPServer": ""``  with string input.                                                                                   |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 SMTP Server Port  
@@ -1044,7 +1044,7 @@ SMTP Server Port
 Port of SMTP email server.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"SMTPPort": ""`` with string input.                                                                                      |
+| This features’s ``config.json`` setting is ``"SMTPPort": ""`` with string input.                                                                                      |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Connection Security 
@@ -1056,7 +1056,7 @@ Connection Security
 ``STARTTLS``: Attempts to upgrade an existing insecure connection to a secure connection using TLS.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"ConnectionSecurity": ""`` with options ``""``, ``TLS`` and ``STARTTLS`` for above settings respectively.                |
+| This features’s ``config.json`` setting is ``"ConnectionSecurity": ""`` with options ``""``, ``TLS`` and ``STARTTLS`` for above settings respectively.                |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Security Alerts 
@@ -1066,7 +1066,7 @@ Enable Security Alerts
 **False**: Security alerts are disabled.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EnableSecurityFixAlert": true`` with options ``true`` and ``false`` for above settings respectively.                    |
+| This features’s ``config.json`` setting is ``"EnableSecurityFixAlert": true`` with options ``true`` and ``false`` for above settings respectively.                    |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -1080,7 +1080,7 @@ Enable Push Notifications
 **False**: Mobile push notifications are disabled.  
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"SendPushNotifications": false`` with options ``true`` and ``false`` for above settings respectively.                    |
+| This features’s ``config.json`` setting is ``"SendPushNotifications": false`` with options ``true`` and ``false`` for above settings respectively.                    |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Push Notification Server 
@@ -1097,7 +1097,7 @@ Please review full documentation on `push Notifications and mobile applications 
 Note: The ``http://push-test.mattermost.com`` provided for testing push notifications prior to compiling your own service please make sure `to read about its limitations <http://docs.mattermost.com/deployment/push.html#push-notifications-for-team-edition-users>`_. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"PushNotificationServer": ""`` with string input.                                                                        |
+| This features’s ``config.json`` setting is ``"PushNotificationServer": ""`` with string input.                                                                        |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Push Notification Contents
@@ -1107,7 +1107,7 @@ Push Notification Contents
 **Send full message snippet**: Selecting "Send full message snippet" sends excerpts from messages triggering notifications with specifics and may include confidential information sent in messages. If your Push Notification Service is outside your firewall, it is HIGHLY RECOMMENDED this option only be used with an "https" protocol to encrypt the connection.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"PushNotificationContents": "generic"`` with options ``generic`` and ``full`` for above settings respectively.           |
+| This features’s ``config.json`` setting is ``"PushNotificationContents": "generic"`` with options ``generic`` and ``full`` for above settings respectively.           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 **Troubleshooting Push Notifications**
@@ -1149,7 +1149,7 @@ Developers building integrations can create webhook URLs for channels and privat
 Security note: By enabling this feature, users may be able to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`_ by attempting to impersonate other users. To combat these attacks, a BOT tag appears next to all posts from a webhook. Enable at your own risk.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EnableIncomingWebhooks": true`` with options ``true`` and ``false`` for above settings respectively.                    |
+| This features’s ``config.json`` setting is ``"EnableIncomingWebhooks": true`` with options ``true`` and ``false`` for above settings respectively.                    |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Outgoing Webhooks    
@@ -1163,7 +1163,7 @@ Developers building integrations can create webhook tokens for public channels. 
 Security note: By enabling this feature, users may be able to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`_ by attempting to impersonate other users. To combat these attacks, a BOT tag appears next to all posts from a webhook. Enable at your own risk.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EnableOutgoingWebhooks": true`` with options ``true`` and ``false`` for above settings respectively.                    |
+| This features’s ``config.json`` setting is ``"EnableOutgoingWebhooks": true`` with options ``true`` and ``false`` for above settings respectively.                    |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Custom Slash Commands  
@@ -1175,7 +1175,7 @@ Slash commands send events to external integrations that send a response back to
 **False**: Slash Commands are hidden in the **Integrations** user interface.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EnableCommands": false`` with options ``true`` and ``false`` for above settings respectively.                           |
+| This features’s ``config.json`` setting is ``"EnableCommands": false`` with options ``true`` and ``false`` for above settings respectively.                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable OAuth Service Provider  
@@ -1185,7 +1185,7 @@ Enable OAuth Service Provider
 **False**: Mattermost does not function as an OAuth 2.0 service provider.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EnableOAuthServiceProvider": false`` with options ``true`` and ``false`` for above settings respectively.               |
+| This features’s ``config.json`` setting is ``"EnableOAuthServiceProvider": false`` with options ``true`` and ``false`` for above settings respectively.               |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Restrict creating integrations to Team and System Admins  
@@ -1195,7 +1195,7 @@ Restrict creating integrations to Team and System Admins
 **False**: Any team members can create integrations from **Main Menu** > **Integrations**.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EnableOnlyAdminIntegrations": true`` with options ``true`` and ``false`` for above settings respectively.               |
+| This features’s ``config.json`` setting is ``"EnableOnlyAdminIntegrations": true`` with options ``true`` and ``false`` for above settings respectively.               |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable webhooks and slash commands to override usernames  
@@ -1205,7 +1205,7 @@ Enable webhooks and slash commands to override usernames
 **False**: Webhooks can only post as the username they were set up with. See http://mattermost.org/webhooks for more details.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EnablePostUsernameOverride": false`` with options ``true`` and ``false`` for above settings respectively.               |
+| This features’s ``config.json`` setting is ``"EnablePostUsernameOverride": false`` with options ``true`` and ``false`` for above settings respectively.               |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable webhooks and slash commands to override profile picture iconss  
@@ -1215,7 +1215,7 @@ Enable webhooks and slash commands to override profile picture iconss
 **False**: Webhooks can only post with the profile picture of the account they were set up with. See http://mattermost.org/webhooks for more details.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EnablePostIconOverride": false`` with options ``true`` and ``false`` for above settings respectively.                   |
+| This features’s ``config.json`` setting is ``"EnablePostIconOverride": false`` with options ``true`` and ``false`` for above settings respectively.                   |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -1227,7 +1227,7 @@ Segment Write Key
 For deployments seeking additional tracking of system behavior using Segment.com, you can enter a Segment WRITE_KEY using this field. This value works like a tracking code and is used in client-side Javascript and will send events to Segment.com attributed to the account you used to generate the WRITE_KEY.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"SegmentDeveloperKey": ""`` with string input.                                                                           |
+| This features’s ``config.json`` setting is ``"SegmentDeveloperKey": ""`` with string input.                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Google API Key 
@@ -1237,7 +1237,7 @@ Mattermost offers the ability to embed YouTube videos from URLs shared by end us
 Using a Google Developer Key allows Mattermost to detect when a video is no longer available and display the post with a *Video not found* label.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"GoogleDeveloperKey": ""`` with string input.                                                                            |
+| This features’s ``config.json`` setting is ``"GoogleDeveloperKey": ""`` with string input.                                                                            |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -1257,7 +1257,7 @@ Storage system where files and image attachments are saved.
 “Amazon S3”: Files and images are stored on Amazon S3 based on the provided access key, bucket and region fields.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"DriverName": "local"`` with options ``local`` and ``amazons3`` for above settings respectively.                         |
+| This features’s ``config.json`` setting is ``"DriverName": "local"`` with options ``local`` and ``amazons3`` for above settings respectively.                         |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Local Storage Directory  
@@ -1265,7 +1265,7 @@ Local Storage Directory
 Directory to which files are written. If blank, directory will be set to ./data/.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"Directory": "./data/"`` with string input.                                                                              |
+| This features’s ``config.json`` setting is ``"Directory": "./data/"`` with string input.                                                                              |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Amazon S3 Access Key ID 
@@ -1273,7 +1273,7 @@ Amazon S3 Access Key ID
 Obtain this credential from your Amazon EC2 administrator.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"AmazonS3AccessKeyId": ""`` with string input.                                                                           |
+| This features’s ``config.json`` setting is ``"AmazonS3AccessKeyId": ""`` with string input.                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Amazon S3 Secret Access Key 
@@ -1281,7 +1281,7 @@ Amazon S3 Secret Access Key
 Obtain this credential from your Amazon EC2 administrator.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"AmazonS3SecretAccessKey": ""`` with string input.                                                                       |
+| This features’s ``config.json`` setting is ``"AmazonS3SecretAccessKey": ""`` with string input.                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Amazon S3 Bucket 
@@ -1289,7 +1289,7 @@ Amazon S3 Bucket
 Name you selected for your S3 bucket in AWS.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"AmazonS3Bucket": ""`` with string input.                                                                                |
+| This features’s ``config.json`` setting is ``"AmazonS3Bucket": ""`` with string input.                                                                                |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Amazon S3 Region 
@@ -1297,7 +1297,7 @@ Amazon S3 Region
 AWS region you selected for creating your S3 bucket. Refer to `AWS Reference Documentation <http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region>`_ and choose this variable from the Region column.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"AmazonS3Region": ""`` with string input.                                                                                |
+| This features’s ``config.json`` setting is ``"AmazonS3Region": ""`` with string input.                                                                                |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Maximum File Size 
@@ -1305,7 +1305,7 @@ Maximum File Size
 Maximum file size for message attachments entered in megabytes in the System Console UI. Converted to bytes in ``config.json`` at 1048576 bytes per megabyte.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"MaxFileSize": 52428800`` with whole number input.                                                                       |
+| This features’s ``config.json`` setting is ``"MaxFileSize": 52428800`` with whole number input.                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. warning:: Verify server memory can support your setting choice. Large file sizes increase the risk of server crashes and failed uploads due to network disruptions.
@@ -1319,7 +1319,7 @@ Attachment Thumbnail Width
 Width of thumbnails generated from uploaded images. Updating this value changes how thumbnail images render in future, but does not change images created in the past.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"ThumbnailWidth": 120`` with whole number input.                                                                         |
+| This features’s ``config.json`` setting is ``"ThumbnailWidth": 120`` with whole number input.                                                                         |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Attachment Thumbnail Height 
@@ -1327,7 +1327,7 @@ Attachment Thumbnail Height
 Height of thumbnails generated from uploaded images. Updating this value changes how thumbnail images render in future, but does not change images created in the past.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"ThumbnailHeight": 100`` with whole number input.                                                                        |
+| This features’s ``config.json`` setting is ``"ThumbnailHeight": 100`` with whole number input.                                                                        |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Image Preview Width 
@@ -1335,7 +1335,7 @@ Image Preview Width
 Maximum width of preview image. Updating this value changes how preview images render in future, but does not change images created in the past.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"PreviewWidth": 1024`` with whole number input.                                                                          |
+| This features’s ``config.json`` setting is ``"PreviewWidth": 1024`` with whole number input.                                                                          |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Image Preview Height 
@@ -1343,7 +1343,7 @@ Image Preview Height
 Maximum height of preview image ("0": Sets to auto-size). Updating this value changes how preview images render in future, but does not change images created in the past.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"PreviewHeight": 0`` with whole number input.                                                                            |
+| This features’s ``config.json`` setting is ``"PreviewHeight": 0`` with whole number input.                                                                            |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Profile Picture Width 
@@ -1351,7 +1351,7 @@ Profile Picture Width
 The width to which profile pictures are resized after being uploaded via Account Settings.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"ProfileWidth": 128`` with whole number input.                                                                           |
+| This features’s ``config.json`` setting is ``"ProfileWidth": 128`` with whole number input.                                                                           |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Profile Picture Height 
@@ -1359,7 +1359,7 @@ Profile Picture Height
 The height to which profile pictures are resized after being uploaded via Account Settings.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"ProfileHeight": 128`` with whole number input.                                                                          |
+| This features’s ``config.json`` setting is ``"ProfileHeight": 128`` with whole number input.                                                                          |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -1376,7 +1376,7 @@ Site Name
 Name of service shown in login screens and UI. Maximum 30 characters.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"RestrictCreationToDomains": ""`` with string input.                                                                     |
+| This features’s ``config.json`` setting is ``"RestrictCreationToDomains": ""`` with string input.                                                                     |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Custom Branding (Enterprise)
@@ -1386,7 +1386,7 @@ Enable Custom Branding (Enterprise)
 **False**: Custom branding is disabled.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EnableCustomBrand": false`` with options ``true`` and ``false`` for above settings respectively.                        |
+| This features’s ``config.json`` setting is ``"EnableCustomBrand": false`` with options ``true`` and ``false`` for above settings respectively.                        |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Custom Brand Image (Enterprise)
@@ -1402,7 +1402,7 @@ Custom Brand Text (Enterprise)
 Custom text will be shown below custom brand image on left side of server login page. Maximum 500 characters allowed. You can format this text using the same `Markdown formatting codes <http://docs.mattermost.com/help/messaging/formatting-text.html>`_ as using in Mattermost messages. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"CustomBrandText": ""`` with string input.                                                                               |
+| This features’s ``config.json`` setting is ``"CustomBrandText": ""`` with string input.                                                                               |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Site Description (Enterprise)
@@ -1410,7 +1410,7 @@ Site Description (Enterprise)
 Description of service shown in login screens and UI. When not specified, "All team communication in one place, searchable and accessible anywhere" is displayed.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"CustomDescriptionText": ""`` with string input.                                                                         |
+| This features’s ``config.json`` setting is ``"CustomDescriptionText": ""`` with string input.                                                                         |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -1424,7 +1424,7 @@ Enable Custom Emoji
 **False**: Custom emojis are disabled.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EnableCustomEmoji": false`` with options ``true`` and ``false`` for above settings respectively.                        |
+| This features’s ``config.json`` setting is ``"EnableCustomEmoji": false`` with options ``true`` and ``false`` for above settings respectively.                        |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Restrict Custom Emoji Creation (Enterprise)
@@ -1436,7 +1436,7 @@ Restrict Custom Emoji Creation (Enterprise)
 **Only allow System Admins to create custom emoji**: The Custom Emoji option is hidden from the Main Menu for users who are not System or Team Admins.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"RestrictCustomEmojiCreation": "all"`` with options ``all``, ``admin`` and ``system_admin`` for above settings respectively. |
+| This features’s ``config.json`` setting is ``"RestrictCustomEmojiCreation": "all"`` with options ``all``, ``admin`` and ``system_admin`` for above settings respectively. |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -1448,7 +1448,7 @@ Terms of Service link
 Configurable link to Terms of Service your organization may provide to end users. By default, links to an editable file hosted in the ``static/help/terms.html`` found in the directory where the Mattermost server installed. Default file may be updated to state the terms under which your organization is providing its server to end users, in addition to the "Mattermost Conditions of Use" notice to end users that must also be shown to users from the "Terms of Service" link. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"TermsOfServiceLink": "/static/help/terms.html"`` with string input.                                                     |
+| This features’s ``config.json`` setting is ``"TermsOfServiceLink": "/static/help/terms.html"`` with string input.                                                     |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Privacy Policy link  
@@ -1456,7 +1456,7 @@ Privacy Policy link
 Configurable link to Privacy Policy your organization may provide to end users. By default, links to an editable file hosted in the ``static/help/privacy.html`` found in the directory where the Mattermost server installed. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"PrivacyPolicyLink": "/static/help/privacy.html"`` with string input.                                                    |
+| This features’s ``config.json`` setting is ``"PrivacyPolicyLink": "/static/help/privacy.html"`` with string input.                                                    |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 About link  
@@ -1464,7 +1464,7 @@ About link
 Configurable link to an About page describing your organization may provide to end users. By default, links to an editable file hosted in the ``static/help/about.html`` found in the directory where the Mattermost server installed. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"AboutLink": "/static/help/about.html"`` with string input.                                                              |
+| This features’s ``config.json`` setting is ``"AboutLink": "/static/help/about.html"`` with string input.                                                              |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Help link  
@@ -1472,7 +1472,7 @@ Help link
 Configurable link to an About page describing your organization may provide to end users. By default, points to Mattermost default help documentation. Can be links to an editable file hosted in the ``static/help/help.html`` found in the directory where the Mattermost server installed. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"HelpLink": "/static/help/help.html"`` with string input.                                                                |
+| This features’s ``config.json`` setting is ``"HelpLink": "/static/help/help.html"`` with string input.                                                                |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Report a Problem link  
@@ -1480,7 +1480,7 @@ Report a Problem link
 Set the link for the support website.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"ReportAProblemLink": "/static/help/report_problem.html"`` with string input.                                            |
+| This features’s ``config.json`` setting is ``"ReportAProblemLink": "/static/help/report_problem.html"`` with string input.                                            |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Support Email  
@@ -1488,7 +1488,7 @@ Support Email
 Set an email for feedback or support requests.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"SupportEmail":"feedback@mattermost.com"`` with string input.                                                            |
+| This features’s ``config.json`` setting is ``"SupportEmail":"feedback@mattermost.com"`` with string input.                                                            |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -1509,7 +1509,7 @@ Enable Rate Limiting
 **False**: APIs are not throttled.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EnableRateLimiter": true`` with options ``true`` and ``false`` for above settings respectively.                         |
+| This features’s ``config.json`` setting is ``"EnableRateLimiter": true`` with options ``true`` and ``false`` for above settings respectively.                         |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Maximum Queries per Second  
@@ -1517,7 +1517,7 @@ Maximum Queries per Second
 Throttle API at this number of requests per second if rate limiting is enabled.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"PerSec": 10`` with whole number input.                                                                                  |
+| This features’s ``config.json`` setting is ``"PerSec": 10`` with whole number input.                                                                                  |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Memory Store Size  
@@ -1525,7 +1525,7 @@ Memory Store Size
 Maximum number of user sessions connected to the system as determined by **VaryByRemoteAddr** and **VaryByHeader** variables.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"MemoryStoreSize": 10000`` with whole number input.                                                                      |
+| This features’s ``config.json`` setting is ``"MemoryStoreSize": 10000`` with whole number input.                                                                      |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Vary rate limit by remote address  
@@ -1535,7 +1535,7 @@ Vary rate limit by remote address
 **False**: Rate limiting does not vary by IP address.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"VaryByRemoteAddr": true`` with options ``true`` and ``false`` for above settings respectively.                          |
+| This features’s ``config.json`` setting is ``"VaryByRemoteAddr": true`` with options ``true`` and ``false`` for above settings respectively.                          |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Vary rate limit by HTTP header  
@@ -1543,7 +1543,7 @@ Vary rate limit by HTTP header
 Vary rate limiting by HTTP header field specified (e.g. when configuring Ngnix set to "X-Real-IP", when configuring AmazonELB set to "X-Forwarded-For").
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"VaryByHeader": ""`` with string input.                                                                                  |
+| This features’s ``config.json`` setting is ``"VaryByHeader": ""`` with string input.                                                                                  |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -1562,7 +1562,7 @@ This setting can only be changed from config.json file, it cannot be changed fro
 ``postgres``: enables driver to PostgreSQL database.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"DriverName": "mysql"`` with string input.                                                                               |
+| This features’s ``config.json`` setting is ``"DriverName": "mysql"`` with string input.                                                                               |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Data Source 
@@ -1570,7 +1570,7 @@ Data Source
 This is the connection string to the master database. When **DriverName** ="postgres" then use a connection string in the form ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10``. This setting can only be changed from config.json file, it cannot be changed from the System Console user interface.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"DataSource": ""`` with string input.                                                                                    |
+| This features’s ``config.json`` setting is ``"DataSource": ""`` with string input.                                                                                    |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Maximum Idle Connections  
@@ -1578,7 +1578,7 @@ Maximum Idle Connections
 Maximum number of idle connections held open to the database.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"MaxIdleConns": 10`` with whole number input.                                                                            |
+| This features’s ``config.json`` setting is ``"MaxIdleConns": 10`` with whole number input.                                                                            |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Maximum Open Connections 
@@ -1586,7 +1586,7 @@ Maximum Open Connections
 Maximum number of open connections held open to the database.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"MaxOpenConns": 10`` with whole number input.                                                                             |
+| This features’s ``config.json`` setting is ``"MaxOpenConns": 10`` with whole number input.                                                                             |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 At Rest Encrypt Key
@@ -1594,7 +1594,7 @@ At Rest Encrypt Key
 32-character (to be randomly generated via Admin Console) salt available to encrypt and decrypt sensitive fields in database.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"AtRestEncryptKey": ""`` with string input.                                                                              |
+| This features’s ``config.json`` setting is ``"AtRestEncryptKey": ""`` with string input.                                                                              |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Trace  
@@ -1604,7 +1604,7 @@ Trace
 **False**: SQL statements are not written to the log.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"Trace": false`` with options ``true`` and ``false`` for above settings respectively.                                    |
+| This features’s ``config.json`` setting is ``"Trace": false`` with options ``true`` and ``false`` for above settings respectively.                                    |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Recycle Database Connections (Enterprise)
@@ -1626,7 +1626,7 @@ Enable Testing Commands
 **False**: `/loadtest` slash command is disabled.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EnableTesting": false`` with options ``true`` and ``false`` for above settings respectively.                            |
+| This features’s ``config.json`` setting is ``"EnableTesting": false`` with options ``true`` and ``false`` for above settings respectively.                            |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Developer Mode  
@@ -1636,7 +1636,7 @@ Enable Developer Mode
 **False**: Users are not alerted to Javascript errors. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EnableDeveloper": false`` with options ``true`` and ``false`` for above settings respectively.                          |
+| This features’s ``config.json`` setting is ``"EnableDeveloper": false`` with options ``true`` and ``false`` for above settings respectively.                          |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ________
 
@@ -1654,7 +1654,7 @@ Site URL
 Allows the server to overwrite site_url.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SiteURL": ""`` with string input.                                                                                        |
+| This features’s ``config.json`` setting is ``"SiteURL": ""`` with string input.                                                                                        |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 WebSocket Secure Port 
@@ -1663,7 +1663,7 @@ WebSocket Secure Port
 (Optional) This setting defines the port on which the secured WebSocket will listen using the `wss` protocol. Otherwise it defaults to `443`. When the client attempts to make a WebSocket connection it first checks to see if the page is loaded with HTTPS. If so, it will use the secure WebSocket connection. If not, it will use the unsecure WebSocket connection. IT IS HIGHLY RECOMMENDED PRODUCTION DEPLOYMENTS ONLY OPERATE UNDER HTTPS AND WSS. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is  ``"WebsocketSecurePort" : 443`` with whole number input.                                                                  |
+| This features’s ``config.json`` setting is  ``"WebsocketSecurePort" : 443`` with whole number input.                                                                  |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 WebSocket Port 
@@ -1672,7 +1672,7 @@ WebSocket Port
 (Optional) this setting defines the port on which the unsecured WebSocket will listen using the `ws` protocol. Otherwise it defaults to `80`. When the client attempts to make a WebSocket connection it first checks to see if the page is loaded with HTTPS. If so, it will use the secure WebSocket connection. If not, it will use the unsecure WebSocket connection. IT IS HIGHLY RECOMMENDED PRODUCTION DEPLOYMENTS ONLY OPERATE UNDER HTTPS AND WSS. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``WebsocketPort": 80`` with whole number input.                                                                            |
+| This features’s ``config.json`` setting is ``WebsocketPort": 80`` with whole number input.                                                                            |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -1684,7 +1684,7 @@ User Status Away Timeout
 This setting defines the number of seconds after which the user's status indicator changes to "Away", when they are away from Mattermost.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"UserStatusAwayTimeout": 300`` with whole number input.                                                                  |
+| This features’s ``config.json`` setting is ``"UserStatusAwayTimeout": 300`` with whole number input.                                                                  |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -1697,7 +1697,7 @@ Initial Font
 Font used in auto-generated profile pics with colored backgrounds.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"InitialFont": "luximbi.ttf"`` with string input.                                                                        |
+| This features’s ``config.json`` setting is ``"InitialFont": "luximbi.ttf"`` with string input.                                                                        |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Amazon S3 Endpoint  
@@ -1705,7 +1705,7 @@ Amazon S3 Endpoint
 Set an endpoint URL for an Amazon S3 instance.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"AmazonS3Endpoint": ""`` with string input.                                                                              |
+| This features’s ``config.json`` setting is ``"AmazonS3Endpoint": ""`` with string input.                                                                              |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Amazon S3 Bucket Endpoint
@@ -1713,7 +1713,7 @@ Amazon S3 Bucket Endpoint
 Set an endpoint URL for Amazon S3 buckets.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"AmazonS3BucketEndpoint": ""`` with string input.                                                                         |
+| This features’s ``config.json`` setting is ``"AmazonS3BucketEndpoint": ""`` with string input.                                                                         |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Amazon S3 Location Constraint  
@@ -1723,7 +1723,7 @@ Amazon S3 Location Constraint
 **False**: S3 region is not location constrained.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"AmazonS3LocationConstraint": false`` with options ``true`` and ``false`` for above settings respectively.               |
+| This features’s ``config.json`` setting is ``"AmazonS3LocationConstraint": false`` with options ``true`` and ``false`` for above settings respectively.               |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Amazon S3 Lowercase Bucket    
@@ -1733,7 +1733,7 @@ Amazon S3 Lowercase Bucket
 **False**: S3 bucket names may contain uppercase and lowercase letters.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"AmazonS3LowercaseBucket": false`` with options ``true`` and ``false`` for above settings respectively.                  |
+| This features’s ``config.json`` setting is ``"AmazonS3LowercaseBucket": false`` with options ``true`` and ``false`` for above settings respectively.                  |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -1746,5 +1746,5 @@ Scope
 Standard setting for OAuth to determine the scope of information shared with OAuth client. Not currently supported by GitLab OAuth.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"Scope": ""`` with string input.                                                                                         |
+| This features’s ``config.json`` setting is ``"Scope": ""`` with string input.                                                                                         |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
