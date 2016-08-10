@@ -1,8 +1,14 @@
 # Searching
 _____
-The search box in Mattermost returns non-case sensitive results from any channel of which you’re a member. Use search modifiers to narrow your search results. Click **Jump** on the right of a search result to view that post in the channel archive.
 
-Expand the right-hand sidebar to make search results easier to read by clicking on the expand/collapse icon with two arrows in the top right corner of the sidebar. 
+The search box in Mattermost returns search results from any channel of which you’re a member. 
+
+- Searching multiple words returns results with any one of the words listed. 
+- When results appear, click the **Jump** link to view that post in the channel archive.
+- You can expand the search results window by clicking the "Expand" button in the top right corner. 
+- Use search modifiers, like `from:dave`, to return results only from certain people or in certain channels (see below)
+
+Like many search engines, highly common words like `the`, `which`, `are` (known as "stop words"), as well as two-letter and one-letter search terms, are not shown in search because they typically return too may results. 
 
 ## Search Modifiers
 
@@ -36,21 +42,26 @@ Examples:
 
 Hashtags do not link to channels. For example, if you have a channel named "Marketing", clicking a `#marketing` hashtag does not redirect you to that channel.
 
-## Search Notes and Known Issues
+Other notes: 
 
-- Search in Mattermost uses the full text search features included in either a MySQL or Postgres database. To determine what database is being used, go to the **Main Menu** > **About Mattermost** and look for the database type.
-- Multiple search terms are connected with “AND” by default. Typing in `Mattermost website` returns results containing “Mattermost” and “website”.
-- Deployments requiring searching in Chinese, Japanese and Korean languages require MySQL 5.7.6+ and the configuration of [ngram Full-Text parser](https://dev.mysql.com/doc/refman/5.7/en/fulltext-search-ngram.html). See [CJK discussion](https://github.com/mattermost/platform/issues/2033#issuecomment-183872616) for details.
-- Unsupported cases:
-    - Stop words will return no results because the words are used too frequently. See a full list of stop words for [MySQL](http://dev.mysql.com/doc/refman/5.7/en/fulltext-stopwords.html) and [Postgres](http://apt-browse.org/browse/ubuntu/precise/main/i386/postgresql-9.1/9.1.3-2/file/usr/share/postgresql/9.1/tsearch_data/english.stop) databases.
-    - Two letter searches do not return results.  
-- Known Issues:
-    - Postgres and MySQL databases:
-        - Chinese characters may not return exact matches. Try adding `*` to the end of queries to run a wildcard search.
-        - IP addresses, for example `10.100.200.101`, do not return results.
-    - Postgres databases:
-        - Email addresses do not return results.
-    - MySQL databases:
-        - Hashtags or recent mentions of usernames containing a dot do return search results.
+- IP addresses, for example `10.100.200.101`, do not return results.
+
+## Technical Notes
+
+### Searching Chinese, Korean and Japanese
+- The best experience for searching in Chinese, Korean and Japanese is to use MySQL 5.7.6 or later with special configuration. Please see [documentation](https://docs.mattermost.com/install/i18n.html).
+- You can search to some degree without this configuration by adding `*` to the end of search terms. 
+
+### Differences between MySQL and Postgres search 
+
+By default, Mattermost uses full text search support included in MySQL and PostgreSQL. These databases have slighty different search behavior. Check **Main Menu** > **About Mattermost** to see which database you're using.
+
+For example, different databases have different "stop words" filtered out of search results. See database documentation on [MySQL](http://dev.mysql.com/doc/refman/5.7/en/fulltext-stopwords.html) and [Postgres](http://apt-browse.org/browse/ubuntu/precise/main/i386/postgresql-9.1/9.1.3-2/file/usr/share/postgresql/9.1/tsearch_data/english.stop) for a full list. Other differences include: 
+
+PostgreSQL: 
+- Email addresses do not return results.
+
+MySQL 
+- Hashtags or recent mentions of usernames containing a dot do return search results.
 
     
