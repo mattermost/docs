@@ -21,7 +21,7 @@ Quick Links:
 	`Email <http://docs.mattermost.com/administration/config-settings.html#id27>`_ - `Mobile Push <http://docs.mattermost.com/administration/config-settings.html#id29>`_
 
 `Integrations <http://docs.mattermost.com/administration/config-settings.html#id30>`_
-	`Webhooks and Commands <http://docs.mattermost.com/administration/config-settings.html#id31>`_ - `External Services <http://docs.mattermost.com/administration/config-settings.html#id34>`_
+	`Custom Integrations <http://docs.mattermost.com/administration/config-settings.html#id31>`_ - `External Services <http://docs.mattermost.com/administration/config-settings.html#id34>`_
 
 `Files <http://docs.mattermost.com/administration/config-settings.html#id35>`_
 	`Storage <http://docs.mattermost.com/administration/config-settings.html#id36>`_ - `Images <http://docs.mattermost.com/administration/config-settings.html#id37>`_
@@ -38,6 +38,15 @@ General settings for server configuration, language defaults, user and team mana
 
 Configuration
 ``````````````````````````
+
+Site URL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+The URL, including port number and protocol, from which users will access Mattermost. Leave blank to automatically configure based on incoming traffic.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SiteURL": ""`` with string input.                                                                     |
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Listen Address  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 The IP address on which to listen and the port on which to bind. Entering ":8065" will bind to all interfaces or you can choose one like ``127.0.0.1:8065``. Changing this will require a server restart before taking effect.
@@ -1136,7 +1145,7 @@ Integrations
 --------------------------------
 Settings to configure webhooks, slash commands and external integration services.
 
-Webhooks and Commands
+Custom Integrations
 ``````````````````````````
 Enable Incoming Webhooks    
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1176,6 +1185,18 @@ Slash commands send events to external integrations that send a response back to
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableCommands": false`` with options ``true`` and ``false`` for above settings respectively.                           |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable OAuth 2.0 Service Provider
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Slash commands send events to external integrations that send a response back to Mattermost. 
+
+**True**: Mattermost acts as an OAuth 2.0 service provider allowing Mattermost to authorize API requests from external applications.
+
+**False**: Mattermost does not function as an OAuth 2.0 service provider.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"EnableOAuthServiceProvider": false`` with options ``true`` and ``false`` for above settings respectively.               |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Restrict creating integrations to Team and System Admins  
@@ -1394,6 +1415,14 @@ Custom text will be shown below custom brand image on left side of server login 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"CustomBrandText": ""`` with string input.                                                                               |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Site Description (Enterprise)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Description of service shown in login screens and UI. When not specified, "All team communication in one place, searchable and accessible anywhere" is displayed.
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"CustomDescriptionText": ""`` with string input.                                                                          |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
 
@@ -1661,16 +1690,6 @@ There are a number of settings customizable in ``config.json`` unavailable in th
 Service Settings
 ```````````````````````````
 
-Enable OAuth Service Provider  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**True**: Allow Mattermost to function as an OAuth provider, allowing 3rd party apps access to your user store for authentication.
-
-**False**: Mattermost does not function as an OAuth provider.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableOAuthServiceProvider": false`` with options ``true`` and ``false`` for above settings respectively.               |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 WebSocket Secure Port 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1686,11 +1705,24 @@ WebSocket Port
 (Optional) this setting defines the port on which the unsecured WebSocket will listen using the `ws` protocol. Otherwise it defaults to `80`. When the client attempts to make a WebSocket connection it first checks to see if the page is loaded with HTTPS. If so, it will use the secure WebSocket connection. If not, it will use the unsecure WebSocket connection. IT IS HIGHLY RECOMMENDED PRODUCTION DEPLOYMENTS ONLY OPERATE UNDER HTTPS AND WSS. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``WebsocketPort": 80`` with whole number input.                                                                            |
+| This feature’s ``config.json`` setting is ``WebsocketPort": 80`` with whole number input.                                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
 
+Team Settings
+```````````````````````````
+
+User Status Away Timeout 
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting defines the number of seconds after which the user's status indicator changes to "Away", when they are away from Mattermost.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"UserStatusAwayTimeout": 300`` with whole number input.                                                                  |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+________
 
 File Settings
 ```````````````````````````
