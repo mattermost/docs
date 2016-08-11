@@ -28,8 +28,7 @@ Under **Restrictions** > **Authorized redirect URIs**, enter `your-mattermost-ur
 
 7 - Finally, go to [Google+ API](https://console.developers.google.com/apis/api/plus/overview) and click **Enable** in the header. This might take a few minutes to propagate through Google's systems.
 8 - In **System Console > OAuth 2.0 > Select OAuth 2.0 service provider**, choose **Google Apps** as the service provider and enter **Client ID** and **Client Secret** from step 6 in their respective fields.
-9 - (Optional) If you would like to force all users to sign-up with GitLab only, in the `ServiceSettings` section of `config/config.json` set _DisableEmailSignUp_ to `true`.
-10 - Restart your Mattermost server to see the changes take effect.
+9 - Restart your Mattermost server to see the changes take effect.
 
 Notes: 
 - You may also enter **Client ID** and **Client Secret** fields from step 6 directly in `GoogleSettings` section of `config/config.json`.
