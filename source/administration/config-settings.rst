@@ -435,13 +435,14 @@ OAuth 2.0 (Enterprise)
 ``````````````````````````
 Settings to configure OAuth login for account creation and login.
 
-Select OAuth 2.0 service provider
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Select OAuth 2.0 service provider:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Choose whether OAuth can be used for account creation and login. Options include:
-    - Do not allow sign-in via an OAuth 2.0 provider
-    - GitLab (see `GitLab Settings <http://docs.mattermost.com/administration/config-settings.html#id14>`_ for more detail)
-    - Google (see `Google Settings <http://docs.mattermost.com/administration/config-settings.html#google-enterprise>`_ for more detail)
-    - Office 365 (Beta) (see `Office 365 Settings <http://docs.mattermost.com/administration/config-settings.html#office-365-enterprise>`_ for more detail)
+
+    - **Do not allow sign-in via an OAuth 2.0 provider**
+    - **GitLab** (see `GitLab Settings <http://docs.mattermost.com/administration/config-settings.html#id14>`_ for more detail)
+    - **Google Apps** (see `Google Settings <http://docs.mattermost.com/administration/config-settings.html#google-enterprise>`_ for more detail)
+    - **Office 365 (Beta)** (see `Office 365 Settings <http://docs.mattermost.com/administration/config-settings.html#office-365-enterprise>`_ for more detail)
 
 This feature's setting does not appear in ``config.json``.
 
@@ -505,8 +506,8 @@ ________
 
 Google (Enterprise)
 ``````````````````````````
-Enable authentication with Google by selecting `Google Apps` from **OAuth 2.0 > Select OAuth 2.0 service provider**
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable authentication with Google by selecting ``Google Apps`` from **OAuth 2.0 > Select OAuth 2.0 service provider**
+
 **True**: Allow team creation and account signup using Google OAuth. To configure, input the **Client ID** and **Client Secret** credentials. See `Documentation <https://docs.mattermost.com/deployment/sso-google.html>`_ for more detail.
 
 **False**: Google OAuth cannot be used for team creation or account signup. 
@@ -557,10 +558,10 @@ It is recommended to use `https://www.googleapis.com/oauth2/v4/token` as the Tok
 
 ________
 
-Ofice 365 (Enterprise)
+Office 365 (Enterprise)
 ``````````````````````````
-Enable authentication with Office 365 by selecting `Office 365 (Beta)` from **OAuth 2.0 > Select OAuth 2.0 service provider**
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable authentication with Office 365 by selecting ``Office 365 (Beta)`` from **OAuth 2.0 > Select OAuth 2.0 service provider**
+
 **True**: Allow team creation and account signup using Office 365 OAuth. To configure, input the **Application ID** and **Application Secret Password** credentials. See `Documentation <https://docs.mattermost.com/deployment/sso-office.html>`_ for more detail.
 
 **False**: Office 365 OAuth cannot be used for team creation or account signup. 
@@ -1914,7 +1915,7 @@ Google Settings
 ```````````````````````````
 Scope  
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-Standard setting for OAuth to determine the scope of information shared with OAuth client. Recommended setting is `profile email`.
+Standard setting for OAuth to determine the scope of information shared with OAuth client. Recommended setting is ``profile email``.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Scope": "profile email"`` with string input.                                                                            |
@@ -1926,7 +1927,7 @@ Office 365 Settings
 ```````````````````````````
 Scope  
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-Standard setting for OAuth to determine the scope of information shared with OAuth client. Recommended setting is `User.Read`.
+Standard setting for OAuth to determine the scope of information shared with OAuth client. Recommended setting is ``User.Read``.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Scope": "User.Read"`` with string input.                                                                                |
