@@ -8,7 +8,7 @@ The core offer for users of Mattermost is:
 
 - **All your team communication in one place, searchable and accessible anywhere.**
 
-The design is successful if 100% of team members use Mattermost for internal communications, and are largely off of email and propreitary SaaS products that lock-in user data as part of their business model. 
+The design is successful if 100% of team members use Mattermost for internal communications, and are largely off of email and proprietary SaaS products that lock-in user data as part of their business model. 
 
 See [Mattermost scope statement](http://www.mattermost.org/vision/#mattermost-teams-v1) for more details. 
 
@@ -24,13 +24,13 @@ Mattermost priorities are managed in Jira tickets, which are created by the core
 
 On non-holiday weekdays new tickets are reviewed in a process called "triage", and assigned a Fix Version of "backlog", indicating the ticket has enough specificity that it can be assigned to a developer to be completed. 
 
-By default, all tickets are created as public unless they contain sensitive information. The triage process reviews them for sufficient specifity. If the ticket is unclear, triage may reassign the ticket back to the original reporter to add more details. 
+By default, all tickets are created as public unless they contain sensitive information. The triage process reviews them for sufficient specificity. If the ticket is unclear, triage may reassign the ticket back to the original reporter to add more details. 
 
 View [current issues scheduled for the next triage meeting](https://mattermost.atlassian.net/browse/PLT-1203?filter=10105). 
 
 #### Re-triage 
 
-If someone feels an existing ticket should be reexamined, they can add "triage" to the Fix Version and it will be routed to the triage team for review at the next meeting. 
+If someone feels an existing ticket should be re-examined, they can add "triage" to the Fix Version and it will be routed to the triage team for review at the next meeting. 
 
 ### Release Planning
 
@@ -82,7 +82,7 @@ Please see [documentation contribution guidelines](https://forum.mattermost.org/
 
 Examples: 
 - [Production installation instructions for Debian Jessie with Systemd #1134](https://github.com/mattermost/platform/pull/1134)
-- [Fix deadlink to AWS file in doc #622]( https://github.com/mattermost/platform/pull/622)
+- [Fix dead link to AWS file in doc #622](https://github.com/mattermost/platform/pull/622)
 
 #### Minor Improvements 
 
@@ -98,6 +98,6 @@ Examples:
 
 ## Release
 
-Mattermost ships stable releases on the 16th of the month. Releases begin with a planning process reviewing internal designs and community feedback in the context of the product purpose. Feature development is done in weekly sprints, and releases end with feature complete, stablization, code complete and release candidate milestones prior to final release. 
+Mattermost ships stable releases on the 16th of the month. Releases begin with a planning process reviewing internal designs and community feedback in the context of the product purpose. Feature development is done in weekly sprints, and releases end with feature complete, stabilization, code complete and release candidate milestones prior to final release. 
 
 See [release process documentation](http://docs.mattermost.com/process/release-process.html#release-process) for more details. 
