@@ -20,10 +20,10 @@ Expected release date: 2016-08-16
 - Added status indicators to the Direct Message and Channel member lists.
 - Added `@here` to mention users who are online.
 
-#### Google SSO ([Enterprise E10, E20](https://about.mattermost.com/pricing/))
+#### Google SSO ([Enterprise E20](https://about.mattermost.com/pricing/))
 - Users can sign in to Mattermost with their Google credentials and new Mattermost user accounts are automatically created on first login.
 
-#### Office 365 SSO (Beta) ([Enterprise E10, E20](https://about.mattermost.com/pricing/))
+#### Office 365 SSO (Beta) ([Enterprise E20](https://about.mattermost.com/pricing/))
 - Users can sign in to Mattermost with their Office 365 credentials and new Mattermost user accounts are automatically created on first login.
 
 #### High Availability Mode (Beta) ([Enterprise E20](https://about.mattermost.com/pricing/))
