@@ -7,19 +7,19 @@ Follow these steps to configure Mattermost to use Office 365 as a single-sign-on
 
 2 - Go to [Application Registration Portal](https://apps.dev.microsoft.com), click **Go to app list** > **Add an app** and use "Mattermost - your-company-name" as the **Application Name**.
 
-![office_1_add_app](../../source/images/office_1_add_app.PNG)
+![office_1_add_app](../../source/images/office_1_add_app.png)
 
 3 - Under **Application Secrets**, click **Generate New Password** and copy it, as it will be used to configure Office 365 SSO for Mattermost.
 
-![office_2_generate_password](../../source/images/office_2_generate_password.PNG)
+![office_2_generate_password](../../source/images/office_2_generate_password.png)
 
 4 - Under **Platforms**, click **Add Platform**, choose **Web** and enter `your-mattermost-url/signup/office365/complete` (example: `http://localhost:8065/signup/office365/complete`) under **Redirect URIs**. Also uncheck **Allow Implicit Flow**.
 
-![office_3_platform](../../source/images/office_3_platform.PNG)
+![office_3_platform](../../source/images/office_3_platform.png)
 
 5 - Click **Save** and copy the **Application ID**.
 
-![office_4_application_id](../../source/images/office_4_application_id.PNG)
+![office_4_application_id](../../source/images/office_4_application_id.png)
 
 6 - In **System Console > OAuth 2.0 > Select OAuth 2.0 service provider**, choose **Office 365 (Beta)** as the service provider and enter **Application ID** from step 5 and **Application Secret Password** from step 3 in their respective fields.
 
