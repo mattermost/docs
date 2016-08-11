@@ -12,7 +12,7 @@ Quick Links:
 	`Configuration <http://docs.mattermost.com/administration/config-settings.html#id3>`_ - `Localization <http://docs.mattermost.com/administration/config-settings.html#id4>`_ - `Users and Teams <http://docs.mattermost.com/administration/config-settings.html#id5>`_ - `Privacy <http://docs.mattermost.com/administration/config-settings.html#id6>`_ - `Policy <http://docs.mattermost.com/administration/config-settings.html#policy-enterprise>`_ - `Compliance <http://docs.mattermost.com/administration/config-settings.html#compliance-enterprise>`_ - `Logging <http://docs.mattermost.com/administration/config-settings.html#id7>`_
 
 `Authentication <http://docs.mattermost.com/administration/config-settings.html#id12>`_
-	`Email <http://docs.mattermost.com/administration/config-settings.html#id13>`_ - `GitLab <http://docs.mattermost.com/administration/config-settings.html#id14>`_ - `LDAP <http://docs.mattermost.com/administration/config-settings.html#ldap-enterprise>`_ - `SAML <http://docs.mattermost.com/administration/config-settings.html#saml-enterprise>`_
+	`Email <http://docs.mattermost.com/administration/config-settings.html#id13>`_ - `OAuth 2.0 <http://docs.mattermost.com/administration/config-settings.html#oauth-2-0-enterprise>`_ - `GitLab <http://docs.mattermost.com/administration/config-settings.html#id14>`_ - `Google <http://docs.mattermost.com/administration/config-settings.html#google-enterprise>`_ - `Office 365 <http://docs.mattermost.com/administration/config-settings.html#office-365-enterprise>`_ - `LDAP <http://docs.mattermost.com/administration/config-settings.html#ldap-enterprise>`_ - `SAML <http://docs.mattermost.com/administration/config-settings.html#saml-enterprise>`_
 
 `Security <http://docs.mattermost.com/administration/config-settings.html#id20>`_
 	`Sign Up <http://docs.mattermost.com/administration/config-settings.html#id21>`_ - `Password <http://docs.mattermost.com/administration/config-settings.html#id22>`_ - `Public Links <http://docs.mattermost.com/administration/config-settings.html#id23>`_ - `Sessions <http://docs.mattermost.com/administration/config-settings.html#id24>`_ - `Connections <http://docs.mattermost.com/administration/config-settings.html#id25>`_
@@ -392,7 +392,7 @@ ________
 
 Authentication
 -------------------------------
-Authentication settings to enable account creation and sign in with email, GitLab OAuth or LDAP.
+Authentication settings to enable account creation and sign in with email, GitLab, Google or Office 365 OAuth, LDAP, or SAML.
 
 Email
 ``````````````````````````
@@ -431,6 +431,22 @@ Enable sign-in with username
 
 ________
 
+OAuth 2.0 (Enterprise)
+``````````````````````````
+Settings to configure OAuth login for account creation and login.
+
+Select OAuth 2.0 service provider
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Choose whether OAuth can be used for account creation and login. Options include:
+    - Do not allow sign-in via an OAuth 2.0 provider
+    - GitLab (see `GitLab Settings <http://docs.mattermost.com/administration/config-settings.html#id14>`_ for more detail)
+    - Google (see `Google Settings <http://docs.mattermost.com/administration/config-settings.html#google-enterprise>`_ for more detail)
+    - Office 365 (Beta) (see `Office 365 Settings <http://docs.mattermost.com/administration/config-settings.html#office-365-enterprise>`_ for more detail)
+
+This feature's setting does not appear in ``config.json``.
+
+________
+
 GitLab
 ``````````````````````````
 Enable authentication with GitLab  
@@ -442,6 +458,8 @@ Enable authentication with GitLab
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+**Note**: For Enterprise, GitLab settigs can be found under **OAuth 2.0**
 
 Application ID 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -481,6 +499,114 @@ Enter ``https://<your-gitlab-url>/oauth/authorize`` (example: ``https://example.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"TokenEndpoint": ""`` with string input.                                                                                 |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+________
+
+Google (Enterprise)
+``````````````````````````
+Enable authentication with Google by selecting `Google Apps` from **OAuth 2.0 > Select OAuth 2.0 service provider**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**True**: Allow team creation and account signup using Google OAuth. To configure, input the **Client ID** and **Client Secret** credentials. See `Documentation <https://docs.mattermost.com/deployment/sso-google.html>`_ for more detail.
+
+**False**: Google OAuth cannot be used for team creation or account signup. 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                                   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Client ID 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Obtain this value by registering Mattermost as an application in your Google account.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Id": ""`` with string input.                                                                                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Client Secret
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Obtain this value by registering Mattermost as an application in your Google account.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Secret": ""`` with string input.                                                                                        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+User API Endpoint 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+It is recommended to use `https://www.googleapis.com/plus/v1/people/me` as the User API Endpoint. Otherwise, enter a custom endpoint in `config.json` with HTTP or HTTPS depending on how your server is configured.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"UserApiEndpoint": "https://www.googleapis.com/plus/v1/people/me"`` with string input.                                   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Auth Endpoint  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+It is recommended to use `https://accounts.google.com/o/oauth2/v2/auth` as the Auth Endpoint. Otherwise, enter a custom endpoint in `config.json` with HTTP or HTTPS depending on how your server is configured.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AuthEndpoint": "https://accounts.google.com/o/oauth2/v2/auth"`` with string input.                                      |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Token Endpoint  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+It is recommended to use `https://www.googleapis.com/oauth2/v4/token` as the Token Endpoint. Otherwise, enter a custom endpoint in `config.json` with HTTP or HTTPS depending on how your server is configured.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"TokenEndpoint": "https://www.googleapis.com/oauth2/v4/token"`` with string input.                                       |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+________
+
+Ofice 365 (Enterprise)
+``````````````````````````
+Enable authentication with Office 365 by selecting `Office 365 (Beta)` from **OAuth 2.0 > Select OAuth 2.0 service provider**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**True**: Allow team creation and account signup using Office 365 OAuth. To configure, input the **Application ID** and **Application Secret Password** credentials. See `Documentation <https://docs.mattermost.com/deployment/sso-office.html>`_ for more detail.
+
+**False**: Office 365 OAuth cannot be used for team creation or account signup. 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                                   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Application ID 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Obtain this value by registering Mattermost as an application in your Microsoft or Office account.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Id": ""`` with string input.                                                                                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Application Secret Password
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Obtain this value by registering Mattermost as an application in your Microsoft or Office account.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Secret": ""`` with string input.                                                                                        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+User API Endpoint 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+It is recommended to use `https://graph.microsoft.com/v1.0/me` as the User API Endpoint. Otherwise, enter a custom endpoint in `config.json` with HTTP or HTTPS depending on how your server is configured.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"UserApiEndpoint": "https://graph.microsoft.com/v1.0/me"`` with string input.                                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Auth Endpoint  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+It is recommended to use `https://accounts.google.com/o/oauth2/v2/auth` as the Auth Endpoint. Otherwise, enter a custom endpoint in `config.json` with HTTP or HTTPS depending on how your server is configured.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AuthEndpoint": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize"`` with string input.                    |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Token Endpoint  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+It is recommended to use `https://login.microsoftonline.com/common/oauth2/v2.0/token` as the Token Endpoint. Otherwise, enter a custom endpoint in `config.json` with HTTP or HTTPS depending on how your server is configured.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"TokenEndpoint": "https://login.microsoftonline.com/common/oauth2/v2.0/token"`` with string input.                       |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -1772,7 +1898,6 @@ Amazon S3 Lowercase Bucket
 
 ________
 
-
 GitLab Settings
 ```````````````````````````
 Scope  
@@ -1781,4 +1906,28 @@ Standard setting for OAuth to determine the scope of information shared with OAu
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Scope": ""`` with string input.                                                                                         |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+________
+
+Google Settings
+```````````````````````````
+Scope  
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Standard setting for OAuth to determine the scope of information shared with OAuth client. Recommended setting is `profile email`.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Scope": "profile email"`` with string input.                                                                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+________
+
+Office 365 Settings
+```````````````````````````
+Scope  
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Standard setting for OAuth to determine the scope of information shared with OAuth client. Recommended setting is `User.Read`.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Scope": "User.Read"`` with string input.                                                                                |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
