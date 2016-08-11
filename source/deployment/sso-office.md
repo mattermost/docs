@@ -18,6 +18,7 @@ Follow these steps to configure Mattermost to use Office 365 as a single-sign-on
 ![office_3_platform](../../source/images/office_3_platform.PNG)
 
 5 - Click **Save** and copy the **Application ID**.
+
 ![office_4_application_id](../../source/images/office_4_application_id.PNG)
 
 6 - In **System Console > OAuth 2.0 > Select OAuth 2.0 service provider**, choose **Office 365 (Beta)** as the service provider and enter **Application ID** from step 5 and **Application Secret Password** from step 3 in their respective fields.
