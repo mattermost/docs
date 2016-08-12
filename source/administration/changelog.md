@@ -191,16 +191,16 @@ The following config settings will only work on servers with an Enterprise Licen
 
 **New admin routes:**
  - Added `GET` at `/posts/flagged/{offset:[0-9]+}/{limit:[0-9]+}`
-     - Returns a post list of posts that have been flagged by the user; `offset` is the offset to start the page at; `limit` is the max number of posts to return.
+     - Returns a list of posts that have been flagged by the user; `offset` is the offset to start the page at; `limit` is the max number of posts to return.
  - Added `GET` at `/admin/cluster_status`
      - Returns a json with a status of each of the reachable nodes in the cluster
  - Added `GET` at `/oauth/list`
      - Returns a list of OAuth 2.0 apps registered by the user
- - Added `GET` at `/oauth/app/{clientId:""}
+ - Added `GET` at `/oauth/app/{clientId:""}`
      - Returns a Sanitized OAuth 2.0 application where `clientId` corresponds to the application
  - Added `POST` at `/oauth/delete`
      - Returns status = OK if the OAuth 2.0 application owned by the current user was successfully deleted.
- - Added GET at `/oauth/access_token`
+ - Added `GET` at `/oauth/access_token`
      - Returns the access token for OAuth 2.0 application
  - Added `POST` at `/preferences/delete`
      - Returns status = OK if the list of preferences owned by the current user were successfully deleted.
