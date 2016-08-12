@@ -49,7 +49,7 @@ Developer Machine Setup
     - `env GOOS=darwin GOARCH=amd64 go install std`
     - `env GOOS=linux GOARCH=amd64 go install std`
 
-Any issues? Please let us know on our forums at: http://forum.mattermost.org
+Any issues? Please let us know on our forums at: https://forum.mattermost.org/
 
 ### Ubuntu ###
 

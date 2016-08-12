@@ -56,3 +56,4 @@ api/data/*
 .agignore
 .ctags
 tags
+source/developer/localization.md
