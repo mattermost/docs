@@ -78,6 +78,8 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    :glob:
 
    deployment/sso-gitlab*
+   deployment/sso-google*
+   deployment/sso-office*
    deployment/sso-ldap*
    deployment/sso-saml.md
    deployment/deployment*
