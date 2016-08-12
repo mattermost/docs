@@ -1,7 +1,7 @@
 Message Attachments
 ------------------
 
-Basic formatting such as bold, italic, can be included in the ``text`` field of an integration’s payload by using markdown.
+Basic formatting such as bold and italic can be included in the ``text`` field of an integration’s payload by using markdown.
 
 For more advanced formatting, it is necessary to send an ``attachments`` array in the payload sent by an integration.
 

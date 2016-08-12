@@ -2,6 +2,245 @@
 
 This changelog summarizes updates to [Mattermost Team Edition](http://www.mattermost.org/), an open source team messaging solution released monthly under an MIT license, and [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/), a commercial upgrade offering enterprise messaging for large organizations.
 
+## Release v3.3.0
+
+Expected release date: 2016-08-16
+
+### Highlights
+
+#### Languages
+- Added Dutch, Korean, Simplified Chinese and Traditional Chinese translations for the user interface.
+- Promoted Portuguese and Spanish to release-quality translations.
+
+#### Flagged Messages
+- Added the ability to flag a message for follow up, so users can track messages they want to go back to later.
+
+#### Improved Statuses
+- Improved response time of status indicator changing between online/offline/away.
+- Added status indicators to the Direct Message and Channel member lists.
+- Added `@here` to mention users who are online.
+
+#### Google SSO ([Enterprise E20](https://about.mattermost.com/pricing/))
+- Users can sign in to Mattermost with their Google credentials and new Mattermost user accounts are automatically created on first login.
+
+#### Office 365 SSO (Beta) ([Enterprise E20](https://about.mattermost.com/pricing/))
+- Users can sign in to Mattermost with their Office 365 credentials and new Mattermost user accounts are automatically created on first login.
+
+#### High Availability Mode (Beta) ([Enterprise E20](https://about.mattermost.com/pricing/))
+- Support for highly available application servers configurable in the System Console and configuration files. See [documentation](http://docs.mattermost.com/deployment/cluster.html) for more details.
+
+### Improvements
+
+#### iOS app
+- Fixed issue where “Refresh/Log out” was appearing frequently.
+- Fixed issue where center channel appears blank after initial page load.
+- Keyboard is now closed when a user executes a search.
+
+#### Mobile (iOS and Android apps)
+- Enter key now creates a new line instead of sending the message.
+- Added links to the mobile apps in the welcome email, tutorial, and main menu.
+- Added a landing page that informs users of the mobile app when they access the site on a mobile web browser.
+- Permalinks are now available on mobile.
+- Made it easier to click on the ... menu when in the right-hand sidebar view.
+- Enable auto-complete for "from:" and "in:".
+
+#### User Interface
+- Channel header is now added to the View Info modal.
+- Configured channel introduction to respect the full width and centred channel views.
+- Removed signup link from sign in page if all signup methods are disabled.
+- Improved channel header popover behaviour.
+
+#### Authentication
+- The username "matterbot" is now restricted from account creation.
+- Link to create an account is hidden on the login page if no account creation methods are turned on in the System Console.
+- All team members can View Members for the team or specific channels.
+
+#### Notifications
+- Mention notifications can be turned on for any new messages in comment threads that you participate in.
+
+#### Keyboard Shortcuts
+- Added icons next to channel names and improved sorting in the channel switcher (`CTRL/CMD+K`).
+- Keyboard shortcuts that open modals can now toggle them open and closed (`CTRL/CMD+SHIFT+A`, `CTRL/CMD+K`).
+
+#### Integrations
+- Added an option to trigger outgoing webhook if the first word starts with the specified trigger word.
+
+#### System Console
+- Username is now added to the System Console users list.
+- Legal and Support links are now hidden in the user interface if no link is specified in the System Console.
+- If the Terms of Service link is left blank in the System Console then it defaults to the "Mattermost Conditions of Use" page.
+
+#### [Enterprise E10, E20](https://about.mattermost.com/pricing/)
+
+- Added the ability to set different themes for each team.
+- Added a checkbox to apply theme settings to all teams of which you are a member.
+- Users disabled or removed from the LDAP server are now made “Inactive” in Mattermost (previously their sessions were revoked and could no longer log in, but their account status was not set to “Inactive”).
+- Added the ability to force migrating authentication methods.
+- Added Site Description field to the System Console > Customization > Custom Branding section.
+- LDAP `Bindusername` and `Bindpassword` fields in the System Console are now optional to support anonymous binding.
+
+### Bug Fixes
+
+- The behavior of setting for Link Previews in Account Settings is no longer reversed.
+- Hitting the URL of a private team you used to belong to now redirects properly.
+- Search terms contained in hashtags are now highlighted in the search results.
+- Fixed an issue with quick typesetting on IE-11 and Edge.
+- Fixed an issue with uploading SAML certificates if the files were removed from `config.json`.
+- Multiple files can now be selected on the file upload dialog of the desktop app.
+- Fixed a scrolling issue with the channel switcher.
+- Fixed system messages showing a small empty white box.
+- Fixed a markdown formatting issue with multiple lists in a row.
+- Team Admins can no longer demote System Admins.
+- The channel header now respects the setting for Channel Display Mode.
+- The System Console no longer freezes if accessing via URL when not logged in.
+- Site Name is now restricted to 30 characters to avoid text overflow.
+- Error is no longer thrown when switching between teams in the System Console.
+- Invalid password error is thrown if System Admin resets a password to something that doesn't meet the specified password requirements.
+- Fixed the percentage loading indicator on the image preview modal.
+- File upload overlay now appears on Edge.
+- Maximum Users per Team and Minimum Password Length now default to reasonable values if a bad input is saved.
+- Right-hand side now updates when a new profile picture is saved.
+- Channels in the Channel Switcher are sorted by their handle if their display name is identical.
+- Setting the length for mobile sessions is now fixed in the System Console.
+- The “Test Connection” button in the System Console > Notifications > Email section now properly uses the saved SMTP password.
+- System Admins no longer receive a JavaScript error if a new message is received while in the System Console.
+- Dropdown in the Manage Members modal is no longer empty for System Admins.
+- @all is now correctly highlighted if the trigger setting is selected in Account Settings.
+- Fixed unformatted error message on account creation page if no creation methods are enabled.
+- Corrected the formatting of some help text in the System Console.
+- Color picker in Custom Theme settings now disappears once setting has been saved on mobile.
+- System Console menu no longer cuts off long team names.
+
+### Compatibility  
+Changes from v3.2 to v3.3:
+
+#### config.json   
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console. 
+
+**Changes to Team Edition and Enterprise Edition:**
+
+- Under a new section `NativeAppSettings`:
+   - Added `"AppDownloadLink": "https://about.mattermost.com/downloads/"` to point towards a download page for native apps.
+   - Added `"AndroidAppDownloadLink": "https://about.mattermost.com/mattermost-android-app/"` to point towards the Android app.
+   - Added `"IosAppDownloadLink": "https://about.mattermost.com/mattermost-ios-app/"` to point towards the iOS app.
+- Under `ServiceSettings`:
+    - Added `"SiteURL": ""` to allow the server to overwrite the site_url.
+- Under `TeamSettings`:
+    - Added `"UserStatusAwayTimeout": 300` to specify the number of seconds before users are considered "away".
+
+**Additional Changes to Enterprise Edition:**    
+
+The following config settings will only work on servers with an Enterprise License that has the feature enabled.
+   
+- Under `TeamSettings`:
+    - Added `"CustomDescriptionText": ""` to set the site description shown in login screens and user interface.
+- Under `GoogleSettings` in `config.json`:
+   - Changed: `"Scope": "profile email"` to set the standard setting for OAuth to determine the scope of information shared with OAuth client.
+   - Changed: `"AuthEndpoint": "https://accounts.google.com/o/oauth2/v2/auth"` to set the authorization endpoint for Google SSO.
+   - Changed: `"TokenEndpoint": "https://www.googleapis.com/oauth2/v4/token"` to set the token endpoint for Google SSO.
+   - Changed: `"UserApiEndpoint": "https://www.googleapis.com/plus/v1/people/me"` to set the user API endpoint for Google SSO.
+- Under a new section `Office365Settings`:
+   - Added `"Enable": false` to allow login using Office 365 SSO when set to `true`.
+   - Added `"Secret": ""` to set the Client Secret received when registering the application with Google.
+   - Added `"Id": ""` to set the Client ID received when registering the application with Google.
+   - Added `"Scope": "User.Read"` to set the standard setting for OAuth to determine the scope of information shared with OAuth client.
+   - Added `"AuthEndpoint": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize"` to set the authorization endpoint for Office 365 SSO.
+   - Added `"TokenEndpoint": "https://login.microsoftonline.com/common/oauth2/v2.0/token"` to set the token endpoint for Office 365 SSO.
+   - Added `"UserApiEndpoint": "https://graph.microsoft.com/v1.0/me"` to set the user API endpoint for Office 365 SSO.
+- Under `LdapSettings` in `config.json`:
+   - `"BindUsername": ""` and `"BindPassword": ""` are no longer required fields, so anonymous binding is possible.
+- Under a new section `ClusterSettings`:
+    - Added `"Enable": false` to enable High Availability mode.
+    - Added `"InterNodeListenAddress": ":8075"` to specify the address the server will listen on for communicating with other servers.
+    - Added `"InterNodeUrls": []` to specify the internal/private URLs of all the Mattermost servers separated by commas.
+
+#### Database Changes from v3.2 to v3.3
+
+**OAuthAccessData Table**
+
+ - Added `ClientId` column.
+ - Added `UserId` column.
+ - Removed `AuthCode` column.
+ - Set Unique key on `ClientId` and `UserId` columns.
+ - Removed index from `idx_oauthaccessdata_auth_code` column.
+ - Added indexes to `idx_oauthaccessdata_client_id`, `idx_oauthaccessdata_user_id` and `idx_oauthaccessdata_refresh_token` columns.
+
+**OAuthApps Table**
+
+ - Added `IconURL` column.
+
+**OutgoingWebhooks Table**
+
+ - Added `TriggerWhen` column.
+
+**Status Table**
+
+ - Added `Status` table.
+
+**Users Table**
+
+ - Added `LastActivityAt` column.
+ - Added `LastPingAt` column.
+ - Removed `ThemeProps` column.
+
+### Known Issues
+
+- Deleted messages don't disappear from the channel for the user who deleted the message, if the message was previously edited and right hand sidebar is open.
+- After receiving an error for creating a channel with one character, updated channel name is not saved.
+- A single collapsed preview re-opens after refresh.
+- Removed user from team still appears in DM list from the team.
+- Files sent in private chat to members in a different team are not accessible.
+- YouTube videos show as “Video not found” on Desktop App.
+- “More” option under Direct Message list no longer shows count of team members not in your direct message list.
+- /join sometimes throws an error.
+- On Firefox, CTRL/CMD + U keyboard shortcut doesn’t work.
+- Sometimes only the last character typed in the channel switcher appears.
+- Webhook attachments don’t show up in search results.
+- Count of unread mentions are sometimes mixed when switching between multiple teams.
+- Office 365 login sometimes causes a bad token error.
+- Messages sometimes don't appear deleted until the page is refreshed.
+- When joining a channel from a public link, the page sometimes loads for a long time and requires a refresh.
+- After leaving a team, joining or creating a team sometimes causes an error.
+
+### Contributors
+
+Many thanks to all our contributors. In alphabetical order:
+
+/platform
+
+- [asaadmahmood](https://github.com/asaadmahmood), [coreyhulen](https://github.com/coreyhulen), [crspeller](https://github.com/crspeller), [DavidLu1997](https://github.com/DavidLu1997), [eadmund](https://github.com/eadmund), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [hmhealey](https://github.com/hmhealey), [jasonblais](https://github.com/jasonblais), [jwilander](https://github.com/jwilander), [lfbrock](https://github.com/lfbrock), [maruTA-bis5](https://github.com/maruTA-bis5), [Rudloff](https://github.com/Rudloff), [samogot](https://github.com/samogot), [yuters](https://github.com/yuters)
+
+/desktop
+
+- [jasonblais](https://github.com/jasonblais), [jnugh](https://github.com/jnugh), [Razzeee](https://github.com/Razzeee), [timroes](https://github.com/timroes), [yuya-oc](https://github.com/yuya-oc)
+
+/android
+
+- [coreyhulen](https://github.com/coreyhulen), [lfbrock](https://github.com/lfbrock)
+
+/ios
+
+- [coreyhulen](https://github.com/coreyhulen), [hmhealey](https://github.com/hmhealey), [lfbrock](https://github.com/lfbrock)
+
+/docs
+
+- [asaadmahmood](https://github.com/asaadmahmood), [esethna](https://github.com/esethna), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [lfbrock](https://github.com/lfbrock), [lindy65](https://github.com/lindy65)
+
+/mattermost-docker
+
+- [npcode](https://github.com/npcode)
+
+/mattermost-driver-javascript
+
+- [jwilander](https://github.com/jwilander)
+
+/mattermost-bot-sample-golang
+
+- [coreyhulen](https://github.com/coreyhulen), [jasonblais](https://github.com/jasonblais)
+
+If we missed your name, please let us know at feedback@mattermost.com. Recognition is a manual process and mistakes can happen. We want to include anyone who's made a pull request that got merged during the release.
+
 ## Release v3.2.0
 
 Release date: 2016-07-16

@@ -24,4 +24,4 @@ The following instructions migrate Mattermost from one server to another by back
 Migrating from Slack
 ==== 
 
-You can import channels and users from Slack into Mattermost from Team Settings > Import. Please review our documentation on `Slack Import <http://docs.mattermost.com/help/settings/team-settings.html>`_ for more details.
+You can import channels and users from Slack into Mattermost from Team Settings > Import. Please review our documentation on `Slack Import <https://docs.mattermost.com/help/settings/team-settings.html#import-from-slack-beta>`_ for more details.

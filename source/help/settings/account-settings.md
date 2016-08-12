@@ -67,6 +67,9 @@ Push notifications are sent to your mobile device if you have the Android or iOS
 #### Words That Trigger Mentions
 By default, you will receive mention notifications from your non-case sensitive username, mentioned @username and @channel. Customize the words that trigger mentions by typing them in the input box. This is useful if you want to be notified of all posts on a certain topic, for example, “marketing”.
 
+#### Comment Thread Notifications
+In addition to **Words that Trigger Mentions**, if you'd like to receive mention notifications when someone replies to a thread that you started, select **Mention any comments on your post**. If you'd like to receive mention notifications for replies on any thread that you start or participate in, select **Mention any comments in a thread you participated in**.
+
 ## Display
 Settings to configure clock and teammate name display preferences.
 
@@ -103,12 +106,16 @@ Select if the text in the center channel is fixed width and centered, or full wi
 #### Language
 Select what language Mattermost displays in the user interface. Options include: 
 
+- Deutsch - German
 - English
-- French
-- German
-- Japanese
-- Portuguese (Brazilian)
-- Spanish
+- Español - Spanish
+- Français - French
+- Nederlands - Dutch
+- Português (Brasil) - Portuguese
+- 中文 (简体) - Simplified Chinese
+- 中文 (繁體) - Traditional Chinese
+- 日本語 - Japanese
+- 한국어 - Korean
 
 ## Advanced
 Setting to configure when messages are sent.
