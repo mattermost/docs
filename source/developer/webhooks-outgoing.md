@@ -56,6 +56,7 @@ Once you have those, you can follow these steps to set up your webhook:
  1. Select a channel from the **Channel** dropdown to only report events from a certain channel (optional if Trigger Words selected)
  2. Enter comma separated words into **Trigger Words** to only report events from posts that start with one of those words (optional if **Channel** selected)
  3. Enter new line separated URLs that the post events will be sent too
+ 4. Choose when to trigger the outgoing webhook; if the first word of a message matches a Trigger Word exactly, or if the first word of a message starts with a Trigger Word.
 3. Click **Add** to add your webhook to the system
 4. Your new outgoing webhook will be displayed with a **Token** that any external application that wants to listen to the webhook should ask for in its instructions
 

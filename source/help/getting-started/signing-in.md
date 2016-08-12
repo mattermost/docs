@@ -18,11 +18,19 @@ If you have forgotten your password, you can reset it by clicking **I forgot my 
 
 When enabled by your System Admin, you can sign in using your GitLab account using a one-click sign in option. 
 
-#### LDAP Sign In (Enterprise Edition)
+#### Google Single-Sign-On ([Enterprise Edition](https://about.mattermost.com/pricing/))
+
+When enabled by your System Admin, you can sign in using your Google account using a one-click sign in option. 
+
+#### Office 365 Single-Sign-On (Beta) ([Enterprise Edition](https://about.mattermost.com/pricing/))
+
+When enabled by your System Admin, you can sign in using your Office 365 account using a one-click sign in option. 
+
+#### LDAP Sign In ([Enterprise Edition](https://about.mattermost.com/pricing/))
 
 When enabled by your System Admin, you can sign in with your LDAP credentials. This lets you use the same username and password for Mattermost that you use for various other company services. 
 
-#### SAML Single-Sign-On (SSO) (Enterprise Edition)
+#### SAML Single-Sign-On (SSO) ([Enterprise Edition](https://about.mattermost.com/pricing/))
 
 When enabled by your System Admin, you can sign in with your SAML credentials. This lets you use the same username and password for Mattermost that you use for various other company services. Mattermost officially supports [Okta](http://developer.okta.com/docs/guides/saml_guidance.html) and [Microsoft ADFS](https://msdn.microsoft.com/en-us/library/bb897402.aspx) as an identity provider (IDP) for SAML, but you may use other SAML IDPs as well. Please see [documentation](http://docs.mattermost.com/deployment/sso-saml.html) to learn more about configuring SAML for Mattermost.
 

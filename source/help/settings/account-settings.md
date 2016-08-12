@@ -67,6 +67,9 @@ Push notifications are sent to your mobile device if you have the Android or iOS
 #### Words That Trigger Mentions
 By default, you will receive mention notifications from your non-case sensitive username, mentioned @username and @channel. Customize the words that trigger mentions by typing them in the input box. This is useful if you want to be notified of all posts on a certain topic, for example, “marketing”.
 
+#### Comment Thread Notifications
+In addition to **Words that Trigger Mentions**, if you'd like to receive mention notifications when someone replies to a thread that you started, select **Mention any comments on your post**. If you'd like to receive mention notifications for replies on any thread that you start or participate in, select **Mention any comments in a thread you participated in**.
+
 ## Display
 Settings to configure clock and teammate name display preferences.
 
@@ -76,7 +79,7 @@ Select **Theme Colors** to select from four standard themes designed by the Matt
 
 Select **Custom Theme** to customize your theme colors and share them with others by copying and pasting theme vectors into the input box. Observe a live preview as you customize theme colors and then click **Save** to confirm your changes. Discard your changes by clicking **Cancel** or by exiting the settings modal and clicking **Yes, Discard**.
 
-In v3.3 Enterprise Edition (releasing August 16, 2016) if you belong to multiple teams, you can optionally select the checkbox "Apply New Theme to All Teams" to have the theme show up across teams. Otherwise, the changes will only apply to the current team. 
+In Enterprise Edition, if you belong to multiple teams, you can optionally select the checkbox "Apply New Theme to All Teams" to have the theme show up across teams. Otherwise, the changes will only apply to the current team. 
 
 Learn more about the custom theme color selectors [here](http://docs.mattermost.com/help/settings/theme-colors.html#custom-themes).
 
@@ -91,8 +94,8 @@ Choose a 12-hour or 24-hour time preference that appears on the time stamp for a
 #### Teammate Name Display
 Configure how names are displayed in Mattermost: nickname, username or full name.
 
-#### Auto Collapse Previews
-Select whether links posted on Mattermost show a preview below them. When "On", link previews will be collapsed and hidden from view. When "Off", links to Youtube videos and GIF, PNG, JPEG, and BMP files will show a preview below them. 
+#### Link Previews
+Select whether links posted on Mattermost show a preview below them. When "On", a preview will be shown below links to Youtube Videos and GIF, PNG, JPEG, and BMP files. When "Off", no preview will be shown. This setting can also be controlled using the slash commands `/expand` and `/collapse`. 
 
 #### Message Display
 Select the formatting for messages in the center channel. "Compact" mode decreases the spacing around posts, collapses link previews, and hides thumbnails so only file names are shown. Some formatting types, such as block quotes and headings, are also reduced in size.
@@ -103,12 +106,16 @@ Select if the text in the center channel is fixed width and centered, or full wi
 #### Language
 Select what language Mattermost displays in the user interface. Options include: 
 
+- Deutsch - German
 - English
-- French
-- German
-- Japanese
-- Portuguese (Brazilian)
-- Spanish
+- Español - Spanish
+- Français - French
+- Nederlands - Dutch
+- Português (Brasil) - Portuguese
+- 中文 (简体) - Simplified Chinese
+- 中文 (繁體) - Traditional Chinese
+- 日本語 - Japanese
+- 한국어 - Korean
 
 ## Advanced
 Setting to configure when messages are sent.

@@ -78,6 +78,8 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    :glob:
 
    deployment/sso-gitlab*
+   deployment/sso-google*
+   deployment/sso-office*
    deployment/sso-ldap*
    deployment/sso-saml.md
    deployment/deployment*
@@ -115,7 +117,10 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    developer/contribution*
    developer/fx*
    developer/style*
-   developer/*
+   developer/integration*
+   developer/localization.rst
+   developer/message-attachments*
+   developer/running-mattermost*
 
 .. toctree::
    :maxdepth: 1
