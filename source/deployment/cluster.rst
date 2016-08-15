@@ -35,11 +35,10 @@ Initial Setup Guide for High Availability
 --------------------------------------------------------------
 To ensure your instance and configuration are compatible with high availability, please review the `Configuration and Compatibility <https://docs.mattermost.com/deployment/cluster.html#configuration-details>`_ section.
 
-.. note:: Backup your `Mattermost database <https://docs.mattermost.com/deployment/cluster.html#database-configuration>`_ and `file storage locations <https://docs.mattermost.com/deployment/cluster.html#file-storage-configuration>`_.
- before configuring high availability.
+.. note:: Backup your `Mattermost database <https://docs.mattermost.com/deployment/cluster.html#database-configuration>`_ and `file storage locations <https://docs.mattermost.com/deployment/cluster.html#file-storage-configuration>`_ before configuring high availability.
 
 1. Follow our `upgrade guide <https://docs.mattermost.com/administration/upgrade.html>`_ to upgrade your Mattermost server to v3.3 or later. 
-2. Setup a second Mattermost server  with v3.3 or later following one of our **Install Guides**. This server must use an identical copy of the configuration file, ``config.json``. Verify the servers are functioning by hitting each independent server through it’s private IP address.
+2. Setup a new Mattermost server with v3.3 or later following one of our **Install Guides**. This server must use an identical copy of the configuration file, ``config.json``. Verify the servers are functioning by hitting each independent server through it’s private IP address.
 3. Modify the ``config.json`` files on both servers to add the ``ClusterSettings`` as `described in this documentation <https://docs.mattermost.com/administration/config-settings.html#high-availability-beta>`_. 
 4. Verify the configuration files are identical on both servers then restart each machine in the cluster.
 5. `Modify your NGINX setup <https://docs.mattermost.com/deployment/cluster.html#proxy-server-configuration>`_ so it proxies to both servers.
@@ -49,7 +48,7 @@ Adding a Server to the Cluster
 ------------------------------------------------------------
 
 1. Backup your `Mattermost database <https://docs.mattermost.com/deployment/cluster.html#database-configuration>`_ and `file storage location <https://docs.mattermost.com/deployment/cluster.html#file-storage-configuration>`_.
-2. Setup a Mattermost server following one of our **Install Guides**. This server must use an identical copy of the configuration file, ``config.json``. Verify the server is functioning by hitting the private IP address.
+2. Setup a new Mattermost server following one of our **Install Guides**. This server must use an identical copy of the configuration file, ``config.json``. Verify the server is functioning by hitting the private IP address.
 3. Modify the ``config.json`` files on all servers with the ``ClusterSettings`` as `described in this documentation <https://docs.mattermost.com/administration/config-settings.html#high-availability-beta>`_. Be sure to add the new server URL to ``InterNodeUrls``. 
 4. Verify the configuration files are identical on all servers, then restart each machine in the cluster in sequence with 10 or more seconds between each restart.
 5. `Modify your NGINX setup <https://docs.mattermost.com/deployment/cluster.html#proxy-server-configuration>`_ to add the new server.
@@ -76,7 +75,7 @@ Mattermost Server Configuration
 
 Configuration Settings
 ````````````````````````````````````
-High availability is configured in the ``ClusterSettings`` section of ``config.json`` and viewable in the System Console. When high availability is enabled, the System Console is set to read-only mode to ensure all the ``config.json`` files on the Mattermost servers are identical.
+High availability is configured in the ``ClusterSettings`` section of ``config.json`` and the settings are viewable in the System Console. When high availability is enabled, the System Console is set to read-only mode to ensure all the ``config.json`` files on the Mattermost servers are identical.
  
 .. code::
 
@@ -92,10 +91,10 @@ Please refer to our `Configuration Settings documentation <https://docs.mattermo
 State
 ``````````````````
 The Mattermost Server is designed to have very little state to allow for horizontal scaling.  The items in state considered for scaling Mattermost are listed below:
-In memory session cache for quick validation and channel access,
-In memory online/offline cache for quick response,
-System configuration file that is loaded and stored in memory,
-WebSocket connections from clients used to send messages.
+- In memory session cache for quick validation and channel access,
+- In memory online/offline cache for quick response,
+- System configuration file that is loaded and stored in memory,
+- WebSocket connections from clients used to send messages.
 
 When the Mattermost Server is configured for high availability, the servers will use an inter-node communication protocol on a different listening address to keep the state in sync.  When a state changes it is written back to the database and an inter-node message is sent to notify the other servers of the state change.  The true state of the items can always be read from the database.  Mattermost also uses inter-node communication to forward WebSocket messages to the other servers in the cluster for real-time messages like “[User X] is typing.”
 
@@ -123,7 +122,7 @@ A sample configuration for NGINX is provided below.  It assumes you have two Mat
           location / {
                 client_max_body_size 50M;
                 proxy_set_header Upgrade $http_upgrade;
-              proxy_set_header Connection "upgrade";
+                proxy_set_header Connection "upgrade";
                 proxy_set_header Host $http_host;
                 proxy_set_header X-Real-IP $remote_addr;
                 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -142,7 +141,7 @@ File Storage Configuration
 
 .. note:: File storage is assumed to be shared between all the machines utilizing services such as NAS or Amazon S3. If ``"DriverName": "local"`` is used then the directory at ``"FileSettings":`` ``"Directory": "./data/"`` is expected to be a NAS location mapped as a local directory, otherwise high availability will not function correctly and may corrupt your file storage. If you’re using Amazon S3 for file storage then no other configuration is required.
 
-If you’re using the Compliance Reports feature in Enterprise Edition E20, you will need to configure the  ``"ComplianceSettings":`` ``"Directory": "./data/",`` to share between all machines or the reports may not be accessible from the System Console and only available on the local Mattermost server.
+If you’re using the Compliance Reports feature in Enterprise Edition E20, you will need to configure the  ``"ComplianceSettings":`` ``"Directory": "./data/",`` to share between all machines or the reports will only be available from the System Console on the local Mattermost server.
 
 Migrating to NAS or S3 from local storage is beyond the scope of this document.
 
@@ -161,8 +160,8 @@ Deploying a multi-database configuration
 ````````````````````````````````````````````````````````````````````````
 To configure a multi-database Mattermost server: 
 
-1. Update the ``DataSource`` setting ``config.json`` with a connection string to your master database server based on the database type set in ``DriverName``, which would be either ``postgres`` or ``mysql``. 
-2. Update the ``DataSourceReplicas`` setting ``config.json`` with a series of connection strings to your database read replica servers in the format ``["readreplia1", "readreplia2"]``. Each connection should also be compatible with the ``DriverName`` setting.
+1. Update the ``DataSource`` setting in ``config.json`` with a connection string to your master database server. The connection string is based on the database type set in ``DriverName``, either ``postgres`` or ``mysql``. 
+2. Update the ``DataSourceReplicas`` setting in ``config.json`` with a series of connection strings to your database read replica servers in the format ``["readreplica1", "readreplica2"]``. Each connection should also be compatible with the ``DriverName`` setting.
 
 The new settings can be applied by either stopping and starting the server, or by loading the configuration settings as described in the next section. 
 
@@ -179,7 +178,7 @@ While connection settings are changing there may be a brief moment when writes t
 
 Manual failover for master database  
 `````````````````````````````````````````````````````````````````
-If the need arises to switch from the current master database--for example, if it is running out of disk space, or requires maintenance updates, or for other reasons--the Mattermost server can switch to using one of its read replicas as a master database by updating `DataSource` in `config.json` the following procedure can be used to apply the settings without shutting down the Mattermost server: 
+If the need arises to switch from the current master database--for example, if it is running out of disk space, or requires maintenance updates, or for other reasons--the Mattermost server can switch to using one of its read replicas as a master database by updating ``DataSource`` in ``config.json``. The following procedure can be used to apply the settings without shutting down the Mattermost server: 
 
 1. Go to **System Console** > **Configuration** and press **Reload Configuration from Disk** to reload configuration settings for the Mattermost server from ``config.json``. 
 2. Go to **System Console** > **Database** and press **Recycle Database Connections** to takedown existing database connections and set up new connections in the multi-database configuration. 
@@ -188,7 +187,7 @@ While connection settings are changing there may be a brief moment when writes t
 
 Transparent Failover
 ````````````````````````````````````
-The database can be configured for high availability and transparent failover utilizing the existing database technologies.  We recommend users to look into MySQL Clustering, Postgres Clustering, or Amazon Aoura.  Database transparent failover is beyond the scope of this documentation.
+The database can be configured for high availability and transparent failover utilizing the existing database technologies.  We recommend MySQL Clustering, Postgres Clustering, or Amazon Aoura.  Database transparent failover is beyond the scope of this documentation.
 
 -----
 
