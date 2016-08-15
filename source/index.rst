@@ -84,7 +84,7 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    deployment/sso-saml.md
    deployment/deployment*
    deployment/auth*
-   deployment/ha*
+   deployment/cluster*
    deployment/on-boarding*
    deployment/push*
    
