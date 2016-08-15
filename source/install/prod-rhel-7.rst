@@ -259,7 +259,7 @@ Set up NGINX with SSL (Recommended)
 1. You can use a free and an open certificate security like let's
    encrypt, this is how to proceed
 
--  ``sudo apt-get install git``
+-  ``sudo yum install git``
 -  ``git clone https://github.com/letsencrypt/letsencrypt``
 -  ``cd letsencrypt``
 
