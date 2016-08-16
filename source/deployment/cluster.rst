@@ -11,18 +11,18 @@ High Availability support enables a Mattermost server to scale and maintain serv
 This documentation provides a deployment guide, configuration and compatibility details, as well as troubleshooting advice.
 
 
-- `Deployment Guide <https://docs.mattermost.com/deployment/cluster.html#deployment-guide>`_ - **Instructions to setup and maintain high availability on your Mattermost servers.**
- - `Initial Setup Guide for High Availability <https://docs.mattermost.com/deployment/cluster.html#Initial-Setup-Guide-for-High-Availability>`_
- - `Adding a Server to the Cluster <https://docs.mattermost.com/deployment/cluster.html#Adding-a-Server-to-the-Cluster>`_
- - `Removing a Server from the Cluster <https://docs.mattermost.com/deployment/cluster.html#Removing-a-Server-from-the-Cluster>`_
+- `Deployment Guide <https://docs.mattermost.com/deployment/cluster.html#id1>`_ - **Instructions to setup and maintain high availability on your Mattermost servers.**
+ - `Initial Setup Guide for High Availability <https://docs.mattermost.com/deployment/cluster.html#id2>`_
+ - `Adding a Server to the Cluster <https://docs.mattermost.com/deployment/cluster.html#id4>`_
+ - `Removing a Server from the Cluster <https://docs.mattermost.com/deployment/cluster.html#id9>`_
 
-- `Configuration and Compatibility <https://docs.mattermost.com/deployment/cluster.html#configuration-and-compatibility>`_ - **Details on configuring your system for high availability.**
+- `Configuration and Compatibility <https://docs.mattermost.com/deployment/cluster.html#id13>`_ - **Details on configuring your system for high availability.**
  - `Mattermost Server <https://docs.mattermost.com/deployment/cluster.html#mattermost-server-configuration>`_ - Configure the cluster settings for the Mattermost application server. 
  - `Proxy Server <https://docs.mattermost.com/deployment/cluster.html#proxy-server-configuration>`_ - Configure NGINX or another load balancer to proxy servers in the cluster.
  - `File Storage Location <https://docs.mattermost.com/deployment/cluster.html#file-storage-configuration>`_ - Configure the file storage location to be compatible with a high availability setup.
  - `Database <https://docs.mattermost.com/deployment/cluster.html#database-configuration>`_ - Size and deploy a multi-database configuration for high availability and scaling.
 
-- `Troubleshooting <https://docs.mattermost.com/deployment/cluster.html#troubleshooting>`_ - **Advice on troubleshooting your high availability setup.**
+- `Troubleshooting <https://docs.mattermost.com/deployment/cluster.html#id14>`_ - **Advice on troubleshooting your high availability setup.**
 
 -----
 

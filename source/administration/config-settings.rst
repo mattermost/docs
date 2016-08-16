@@ -30,7 +30,7 @@ Quick Links:
 	`Custom Branding <http://docs.mattermost.com/administration/config-settings.html#id39>`_ - `Custom Emoji <http://docs.mattermost.com/administration/config-settings.html#id40>`_ - `Legal and Support <http://docs.mattermost.com/administration/config-settings.html#id41>`_
 
 `Advanced <http://docs.mattermost.com/administration/config-settings.html#id42>`_
-	`Rate Limiting <http://docs.mattermost.com/administration/config-settings.html#id43>`_ - `Database <http://docs.mattermost.com/administration/config-settings.html#id44>`_ - `Developer <http://docs.mattermost.com/administration/config-settings.html#id45>`_
+	`Rate Limiting <http://docs.mattermost.com/administration/config-settings.html#id43>`_ - `Database <http://docs.mattermost.com/administration/config-settings.html#id44>`_ - `Developer <http://docs.mattermost.com/administration/config-settings.html#id45>`_ - `High Availability (Beta) <https://docs.mattermost.com/administration/config-settings.html#high-availability-beta>`_
 
 General
 ---------------------------------
@@ -1809,7 +1809,7 @@ ________
 
 High Availability (Beta)
 ```````````````````````````
-Changing properties in this section will require a server restart before taking effect. When High Availability mode is enabled, the System Console is set to read-only and can only be changed from the configuration file.
+Changing properties in this section will require a server restart before taking effect. When High Availability mode is enabled, the System Console is set to read-only and can only be changed from the configuration file. Learn more about configuring high availability in our `documentation <https://docs.mattermost.com/deployment/cluster.html>`_.
 
 Enable High Availability Mode  
 ~~~~~~~~~~~~~~~~~~~~~~~
