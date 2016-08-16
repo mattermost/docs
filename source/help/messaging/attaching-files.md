@@ -31,9 +31,10 @@ If you are trying to preview a media type that is not supported, the file previe
 
 - Images: BMP, GIF, JPG, JPEG, PNG    
 - Video: MP4    
-- Audio: MP3, M4A    
+- Audio: MP3, M4A   
+- Files: PDF
 
-Document preview (PDF, Word, Excel, PPT) is not yet supported.
+Other document previews (Word, Excel, PPT) are not yet supported.
 
 ## File Size Limitations
 Mattermost supports a maximum of five attached files per post, each with a maximum file size of 50Mb.
