@@ -24,11 +24,12 @@ footer {
 .rst-versions .rst-current-version {
     background-color: rgba(255, 255, 255, 0.1);
     color: #fff;
+	text-transform: uppercase;
 }
 
 .rst-versions {
-    background: #2071a7 none repeat scroll 0 0;
-    border-top: 10px solid #2071a7;
+    background: #404040 none repeat scroll 0 0;
+    border-style: none; /* removes the underlying theme's top border */
 }
 
 .rst-versions .rst-current-version .fa-cog {
