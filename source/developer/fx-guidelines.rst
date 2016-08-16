@@ -376,7 +376,7 @@ Alignment of Elements
 |
 
 | **Instructions should be sentences, one-line links should be fragments.**
-| Instructions, such as “A password reset link has been sent to ``you@email.com`` for your account.\nPlease check your inbox.”, should be displayed as sentences ending in periods. One-line links, such as “Find it here”, should not end in periods or commas, but question marks are okay.
+| Instructions, such as “A password reset link has been sent to ``you@email.com`` for your account. Please check your inbox.”, should be displayed as sentences ending in periods. One-line links, such as “Find it here”, should not end in periods or commas, but question marks are okay.
 |
 **Example:**
 
