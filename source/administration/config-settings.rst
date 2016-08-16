@@ -1807,6 +1807,38 @@ Enable Developer Mode
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ________
 
+High Availability (Beta)
+```````````````````````````
+Changing properties in this section will require a server restart before taking effect. When High Availability mode is enabled, the System Console is set to read-only and can only be changed from the configuration file.
+
+Enable High Availability Mode  
+~~~~~~~~~~~~~~~~~~~~~~~
+**True**: The Mattermost Server will attempt inter-node communication with the other servers in the cluster. This sets the System Console to read-only mode to keep the servers ``config.json`` files in sync.  
+
+**False**: Mattemost high availability is disabled.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                                             |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+Inter-Node Listen Address  
+~~~~~~~~~~~~~~~~~~~~~~~
+The address the Mattermost Server will listen on for inter-node communication. When setting up your network you should secure the listen address so that only machines in the cluster have access to that port. This can be done in different ways, for example, using IPsec, security groups, or routing tables.
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"InterNodeListenAddress": ":8075"`` with string input.                                                                          |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Inter-Node URLs
+~~~~~~~~~~~~~~~~~~~~~~~
+A list of all the machines in the cluster, separated by commas, for example, ``[“http://10.10.10.2, http://10.10.10.4”]``. It is recommended to use the internal IP addresses so all the traffic can be secured.
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"InterNodeUrls": []`` with string input.                                                                                        |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+------
 
 Settings configurable only in config.json
 -------------------------------
