@@ -104,7 +104,7 @@ Proxy Server Configuration
 
 The proxy server will expose the cluster of Mattermost servers to the outside world.  The Mattermost servers are designed for use with a proxy server like NGINX, hardware load balancer, or a cloud service like Amazon Elastic Load Balancer.
 
-If you wish to monitor the server with a health check you can use ``http://http://10.10.10.2/api/v3/general/ping`` and check the response for ``Status 200``, indicating success.  Use this health check route to mark the server in-service or out-of-service.
+If you wish to monitor the server with a health check you can use ``http://10.10.10.2/api/v3/general/ping`` and check the response for ``Status 200``, indicating success.  Use this health check route to mark the server in-service or out-of-service.
 
 A sample configuration for NGINX is provided below.  It assumes you have two Mattermost servers running on private IP addresses of ``10.10.10.2`` and ``10.10.10.4``.
 
@@ -153,7 +153,7 @@ Sizing databases
 ```````````````````````````````````````
 Please see `documentation on sizing database servers <http://docs.mattermost.com/install/requirements.html#hardware-requirements>`_ for guidance to determine appropriate hardware. 
 
-It's highly recommended that at least one read replica have a minimum of **three times the disk space** of the master database. This way, if the master database signals a "low disk space" warning the administrator can switch over to the read replica with a larger disk and continue operation, while also having room to locally duplicate and manipulate the production database. 
+In a master/slave environment, make sure to size the slave machine to take 100% of the load in the event that the master machine goes down and you need to fail over.
 
 
 Deploying a multi-database configuration 
@@ -198,7 +198,8 @@ Red Server Status
 ---------------------------
 When high availability is enabled, the System Console displays the server status as red or green, indicating if the servers are communicating correctly with the cluster. The servers use inter-node communication to ping the other machines in the cluster, and once a ping is established the servers exchange information, such as server version and configuration files. Red server status may display for the following reasons:
 
-- **Configuration file mismatch between the servers**: Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the since the high availability feature assumes the same server version and configuration file to function properly.
+- **Configuration file mismatch**: Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the high availability feature assumes the same configuration file to function properly.
+- **Server version mismatch**: Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the high availability feature assumes the same version of Mattermost is installed on each server in the cluster. It is recommended to use the `latest version of Mattermost <https://www.mattermost.org/download/>`_ on all servers. Follow the `upgrade procedure <https://docs.mattermost.com/administration/upgrade.html>`_ for any server that needs to be upgraded.
 - **Server is down**: If an inter-node communication fails to send a message it will attempt again in 15 seconds.  If the second attempt fails, the server is assumed to be down. An error message is written to the logs and the System Console will show a status of red for that server.
 
 Websocket Disconnect
