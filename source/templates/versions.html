@@ -1,3 +1,11 @@
+{# Support for Sphinx 1.3+ page_source_suffix, but don't break old builds. #}
+{% if page_source_suffix %} 
+{% set suffix = page_source_suffix %}
+{% else %}
+{% set suffix = source_suffix %}
+{% endif %}
+
+{% if display_github %}
 <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
         <span class="fa fa-cog"> Options</span>&nbsp;
@@ -9,11 +17,12 @@
             <dd>
                 <a href="https://github.com/{{ github_user }}/{{ github_repo }}/issues">Report a Problem</a>
             </dd>
-            {% if pagename != "search" %}
+            {% if pagename != "search" and suffix %}
             <dd>
-                <a href="https://github.com/{{ github_user }}/{{ github_repo }}/blob/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ page_source_suffix }}"> Edit on GitHub</a>
+                <a href="https://github.com/{{ github_user }}/{{ github_repo }}/blob/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ suffix }}"> Edit on GitHub</a>
             </dd>
             {% endif %}
         </dl>
     </div>
 </div>
+{% endif %}
