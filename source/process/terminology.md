@@ -18,7 +18,7 @@ For example, "0/5" and "5/5" help convey the level of conviction behind an opini
 
 #### 3) Reduce repeated mistakes by naming very specific undesirable behaviors
 
-Naming specific repeated mistake helps us find patterns, avoid repeated mistakes in future, and helps newcomers avoid making similar mistakes as they learn our organization's termniology. 
+Naming specific repeated mistake helps us find patterns, avoid repeated mistakes in future, and helps newcomers avoid making similar mistakes as they learn our organization's terminology. 
 
 ## List of Terms
 
@@ -32,7 +32,7 @@ Acronym for [Accepting Pull Request](http://docs.mattermost.com/process/acceptin
 
 #### Bug
 
-An obvious error in Mattermost software. Changes required to accomodate unsupported 3rd party software (such as browsers or operating systems) are not considered bugs, they are considered improvements. 
+An obvious error in Mattermost software. Changes required to accommodate unsupported 3rd party software (such as browsers or operating systems) are not considered bugs, they are considered improvements. 
 
 #### Crimson Force Field
 
@@ -46,7 +46,7 @@ Discarding an imperfect solution without a clearly thought out alternative. Base
 
 #### Decking 
 
-A term for shipping something that is below quality standards. This terms is used by mountain climbers to describe falling off the side of a mountain, which often involves a series of failures, not just one.
+A term for shipping something that is below quality standards. This term is used by mountain climbers to describe falling off the side of a mountain, which often involves a series of failures, not just one.
 
 #### Dev Mana
 
@@ -66,7 +66,7 @@ An estimate of total energy, attention and effort required for a task.
 
 A one-line change to code can cost more mana than a 100-line change due to risk and the need for documentation, testing, support and all the other activities needed. 
 
-Every feature added has an initial and on-going mana cost, which is taken into account in feature decsions. 
+Every feature added has an initial and on-going mana cost, which is taken into account in feature decisions. 
 
 #### RHS
 
