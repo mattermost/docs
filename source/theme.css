@@ -145,6 +145,7 @@ h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
 
 .wy-side-nav-search {
 	margin-top: 70px;
+	border-right: 1px solid #ddd;
 }
 
 .wy-side-nav-search .icon, .wy-side-nav-search .version {

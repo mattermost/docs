@@ -9,9 +9,11 @@
             <dd>
                 <a href="https://github.com/{{ github_user }}/{{ github_repo }}/issues">Report a Problem</a>
             </dd>
+            {% if pagename != "search" %}
             <dd>
-                <a href="https://github.com/{{ github_user }}/{{ github_repo }}/blob/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ suffix }}"> Edit on GitHub</a>
+                <a href="https://github.com/{{ github_user }}/{{ github_repo }}/blob/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ page_source_suffix }}"> Edit on GitHub</a>
             </dd>
+            {% endif %}
         </dl>
     </div>
 </div>
