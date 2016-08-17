@@ -215,3 +215,29 @@ These procedures summarize all potential bottlenecks in a system for mobile app 
 - If you're an Enterprise Edition subscriber and continue to have issues please email support@mattermost.com with a measure of the benchmarks you're experiencing. 
 
 - If you're not a subscriber, please `open a thread in the Mattermost Troubleshooting forum <http://www.mattermost.org/troubleshoot/>`_ with a summary of the performance you're seeing, details on the model of your mobile device, connection speed and server sizing. 
+
+
+Troubleshooting mobile applications 
+``````
+
+Error message: “We would not connect to the Mattermost server or the server is running an incompatible version”
+^^^^^^ 
+
+This error message, whether on iOS or Android, typically results from a typo in the server URL or an SSL configuration issue. To troubleshoot: 
+
+Check that your mobile application works properly with HTTPS by connecting to a test server: 
+
+1. Create an account at https://demo.mattermost.com 
+2. Erase your mobile application and reinstall it
+3. In your mobile app, enter the server URL https://demo.mattermost.com and confirm the connection is working by entering your credentials to login 
+
+If the login doesn't work, please report an issue to https://github.com/mattermost/platform/issues
+
+If the login does work: 
+
+1. Check that the SSL URL is properly installed by entering it in a certificate checker, such as: https://cryptoreport.websecurity.symantec.com/checker/
+2. Correct any issues with your certificate 
+3. Try connecting to the HTTPS URL of your server using the mobile app
+4. If you're still having issues please `open a new topic in the troubleshooting forum <https://forum.mattermost.org/c/general/trouble-shoot>`_ with steps to reproduce your issue. If you're an Enterprise Edition subscriber, you can also email subscribers@mattermost.com for support. 
+
+Note: Mobile apps do not currenly support self-signed certificates, nor client-side certificates. To use free certificates signed by a Certificate Authority, visit https://letsencrypt.org/
