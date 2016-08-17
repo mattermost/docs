@@ -249,8 +249,8 @@ Set up NGINX Server
    - Verify you can see Mattermost thru the proxy by typing:
    - ``curl http://localhost``
    - You should see a page titles *Mattermost - Signup*
-   - Not seeing the page?  Look for errors with ``sudo cat /var/log/audit/audit.log \| grep nginx \| grep denied``
-   - **Optional** if you're running on the same server as the Mattermost server and see 502 errors you may need to run ``\ sudo setsebool -P httpd\_can\_network\_connect true\`` because SELinux is
+   - Not seeing the page?  Look for errors with ``sudo cat /var/log/audit/audit.log | grep nginx | grep denied``
+   - **Optional** if you're running on the same server as the Mattermost server and see 502 errors you may need to run ``sudo setsebool -P httpd_can_network_connect true`` because SELinux is
      preventing the connection
 
 Set up NGINX with SSL (Recommended)
