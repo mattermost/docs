@@ -14,6 +14,33 @@ footer {
 	padding-bottom: 30px;
 }
 
+.rst-versions .rst-other-versions {
+    color: rgba(255, 255, 255, 0.6);
+    display: none;
+    font-size: 90%;
+    padding: 12px;
+}
+
+.rst-versions .rst-current-version {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+	text-transform: uppercase;
+}
+
+.rst-versions {
+    background: #404040 none repeat scroll 0 0;
+    border-style: none; /* removes the underlying theme's top border */
+}
+
+.rst-versions .rst-current-version .fa-cog {
+	float: left;
+}
+
+.rst-versions.shift-up .rst-current-version .fa.fa-angle-up:before {
+	/* converts to angle-down when the .shift-up class is applied (e.g. the options pane is visible) */
+	content: "\f107";
+}
+
 .rst-content tt.literal, .rst-content tt.literal, .rst-content code.literal {
 	color: #151515;
 	background: #EEEEEE;
@@ -119,6 +146,7 @@ h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
 
 .wy-side-nav-search {
 	margin-top: 70px;
+	border-right: 1px solid #ddd;
 }
 
 .wy-side-nav-search .icon, .wy-side-nav-search .version {
