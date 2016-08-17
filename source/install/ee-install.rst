@@ -14,6 +14,11 @@ To install Mattermost Enterprise Edition directly please use one of the followin
 2. `Production Enterprise Edition on RHEL 7.1 <http://docs.mattermost.com/install/ee-prod-rhel-7.html>`_
 3. `Production Enterprise Edition on RHEL 6.6 <http://docs.mattermost.com/install/ee-prod-rhel-6.html>`_
 
+Upgrading Enterprise Edition to a newer version
+---------------
+
+1. Follow the procedure to `upgrade Enterprise Edition to a newer version. <https://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition>`_
+
 Upgrading to Enterprise Edition from Mattermost Team Edition 
 ---------------
 
