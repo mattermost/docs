@@ -240,4 +240,4 @@ If the login does work:
 3. Try connecting to the HTTPS URL of your server using the mobile app
 4. If you're still having issues please `open a new topic in the troubleshooting forum <https://forum.mattermost.org/c/general/trouble-shoot>`_ with steps to reproduce your issue. If you're an Enterprise Edition subscriber, you can also email subscribers@mattermost.com for support. 
 
-Note: Mobile apps do not support self-signed certificates. To use free certificates signed by a Certificate Authority, visit https://letsencrypt.org/
+Note: Mobile apps do not currenly support self-signed certificates, nor client-side certificates. To use free certificates signed by a Certificate Authority, visit https://letsencrypt.org/
