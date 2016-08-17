@@ -1,4 +1,4 @@
-Scaling and High Availability (Beta)
+High Availability (Beta)
 ===============================
 
 *Available in Enterprise Edition E20.*
