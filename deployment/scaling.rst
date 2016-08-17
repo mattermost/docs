@@ -4,29 +4,29 @@ Scaling for Enterprise
 
 Mattermost is designed to scale from small teams hosted on a single server to large enterprises running in cluster-based, highly available deployment configurations. 
 
-Server requirements vary based on usage and it is highly recommended that pilots are run before enterprise-wide deployments in order to estimate full scale usage based on your specific organizational needs. 
+- Server requirements vary based on usage and it is highly recommended that pilots are run before enterprise-wide deployments in order to estimate full scale usage based on your specific organizational needs. 
 
-Small Teams 
+Single Machine Deployment 
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Small teams can run Mattermost on a single server. 
+Organizations less than 500 users can typically run on a single server. 
 
 - See `install guides for step-by-step configuration instructions for single machine setup. <https://docs.mattermost.com/#install-guides>`_
 - See `hardware and software requirements for hardware sizing <https://docs.mattermost.com/install/requirements.html>`_
 
-Vertical Scaling 
+Multi-Machine Deployment 
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-For deployments with fewer than 10,000 to 20,000 registered users with moderate usage, deployments can be supported by adding more powerful hardware to Mattermost's multi-machine production deployment installation. 
+For deployments between 500 and 20,000 registered users with moderate usage can run on a standard three machine Mattermost deployment with a proxy, an application server, and a database server. At this scale, demands of larger organizations can typically be met by using powerful hardware in a standard configuration. 
 
 - See `install guides for step-by-step configuration instructions for multi-machine setup. <https://docs.mattermost.com/#install-guides>`_
 - See `hardware and software requirements for hardware sizing <https://docs.mattermost.com/install/requirements.html>`_
 
-Horizontal Scaling 
+Cluster-based Deployment 
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-For deployments over 10,000 to 20,000 registered users with moderate usage, deployments can be supported by both adding more powerful hardware and by scaling horizontally in cluster-based high availability deployment configurations. 
+*Available in Enterprise Edition E20*
 
-- See `install guides for step-by-step configuration instructions for multi-machine setup. <https://docs.mattermost.com/#install-guides>`_
-- See `hardware and software requirements for hardware sizing <https://docs.mattermost.com/install/requirements.html>`_
+Deployments over 10,000 to 20,000 registered users with moderate usage can be supported by adding additional servers in cluster-based, high availability configuration. This configuration uses a load balancer to distribute requests from users across multiple Mattermost application servers, allowing the system to scale beyond the limits of any single server. 
+
 - See `high availability deployment guide for horizontal scaling setup (Enterprise E20 only) <https://docs.mattermost.com/deployment/cluster.html>`_
