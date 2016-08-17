@@ -253,4 +253,7 @@ header .header__links li a {
 		max-width: 100%;
 		width: auto;
 	}
+	.wy-nav-top {
+	    margin-top: 70px;
+	}
 }
