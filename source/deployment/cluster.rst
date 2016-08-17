@@ -11,7 +11,7 @@ High Availability support enables a Mattermost server to scale and maintain serv
 This documentation provides a deployment guide, configuration and compatibility details, as well as troubleshooting advice.
 
 
-- `Deployment Guide <https://docs.mattermost.com/deployment/cluster.html#id1>`_ - **Instructions to setup and maintain high availability on your Mattermost servers.**
+- `Deployment Guide <https://docs.mattermost.com/deployment/cluster.html#id1>`_ - **Instructions to set up and maintain high availability on your Mattermost servers.**
  - `Initial Setup Guide for High Availability <https://docs.mattermost.com/deployment/cluster.html#id2>`_
  - `Adding a Server to the Cluster <https://docs.mattermost.com/deployment/cluster.html#id4>`_
  - `Removing a Server from the Cluster <https://docs.mattermost.com/deployment/cluster.html#id9>`_
@@ -33,13 +33,13 @@ Deployment guide to setup and maintain high availability on your Mattermost serv
 
 Initial Setup Guide for High Availability
 --------------------------------------------------------------
-To ensure your instance and configuration are compatible with high availability, please review the `Configuration and Compatibility <https://docs.mattermost.com/deployment/cluster.html#configuration-details>`_ section.
+To ensure your instance and configuration are compatible with high availability, please review the `Configuration and Compatibility <https://docs.mattermost.com/deployment/cluster.html#id13>`_ section.
 
 .. note:: Backup your `Mattermost database <https://docs.mattermost.com/deployment/cluster.html#database-configuration>`_ and `file storage locations <https://docs.mattermost.com/deployment/cluster.html#file-storage-configuration>`_ before configuring high availability.
 
 1. Follow our `upgrade guide <https://docs.mattermost.com/administration/upgrade.html>`_ to upgrade your Mattermost server to v3.3 or later. 
-2. Setup a new Mattermost server with v3.3 or later following one of our **Install Guides**. This server must use an identical copy of the configuration file, ``config.json``. Verify the servers are functioning by hitting each independent server through it’s private IP address.
-3. Modify the ``config.json`` files on both servers to add the ``ClusterSettings`` as `described in this documentation <https://docs.mattermost.com/administration/config-settings.html#high-availability-beta>`_. 
+2. Setup a new Mattermost server with v3.3 or later following one of our **Install Guides**. This server must use an identical copy of the configuration file, ``config.json``. Verify the servers are functioning by hitting each independent server through its private IP address.
+3. Modify the ``config.json`` files on both servers to add the ``ClusterSettings`` as `described in this documentation <https://docs.mattermost.com/administration/config-settings.html#id57>`_. 
 4. Verify the configuration files are identical on both servers then restart each machine in the cluster.
 5. `Modify your NGINX setup <https://docs.mattermost.com/deployment/cluster.html#proxy-server-configuration>`_ so it proxies to both servers.
 6. Open the **System Console** > **Advanced** > **High Availability (Beta)** to verify all the machines in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
@@ -91,6 +91,7 @@ Please refer to our `Configuration Settings documentation <https://docs.mattermo
 State
 ``````````````````
 The Mattermost Server is designed to have very little state to allow for horizontal scaling.  The items in state considered for scaling Mattermost are listed below:
+
 - In memory session cache for quick validation and channel access,
 - In memory online/offline cache for quick response,
 - System configuration file that is loaded and stored in memory,
@@ -202,6 +203,6 @@ When high availability is enabled, the System Console displays the server status
 - **Server version mismatch**: Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the high availability feature assumes the same version of Mattermost is installed on each server in the cluster. It is recommended to use the `latest version of Mattermost <https://www.mattermost.org/download/>`_ on all servers. Follow the `upgrade procedure <https://docs.mattermost.com/administration/upgrade.html>`_ for any server that needs to be upgraded.
 - **Server is down**: If an inter-node communication fails to send a message it will attempt again in 15 seconds.  If the second attempt fails, the server is assumed to be down. An error message is written to the logs and the System Console will show a status of red for that server.
 
-Websocket Disconnect
+WebSocket Disconnect
 ----------------------------------------
 When a client WebSocket receives a disconnect it will automatically attempt to re-establish a connection every three seconds with a backoff.  Once the connection is established the client will attempt to receive any missing messages since it was disconnected.
