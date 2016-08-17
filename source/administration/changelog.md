@@ -241,11 +241,11 @@ Many thanks to all our contributors. In alphabetical order:
 
 /android
 
-- [coreyhulen](https://github.com/coreyhulen), [lfbrock](https://github.com/lfbrock)
+- [coreyhulen](https://github.com/coreyhulen), [jasonblais](https://github.com/jasonblais)
 
 /ios
 
-- [coreyhulen](https://github.com/coreyhulen), [hmhealey](https://github.com/hmhealey), [lfbrock](https://github.com/lfbrock)
+- [coreyhulen](https://github.com/coreyhulen), [macdabby](https://github.com/macdabby), [jasonblais](https://github.com/jasonblais)
 
 /docs
 
