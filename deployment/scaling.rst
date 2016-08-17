@@ -29,4 +29,4 @@ Cluster-based Deployment
 
 Deployments over 10,000 to 20,000 registered users with moderate usage can be supported by adding additional servers in cluster-based, high availability configuration. This configuration uses a load balancer to distribute requests from users across multiple Mattermost application servers, allowing the system to scale beyond the limits of any single server. 
 
-- See `high availability deployment guide for horizontal scaling setup (Enterprise E20 only) <https://docs.mattermost.com/deployment/cluster.html>`_
+- See `high availability deployment guide for horizontal scaling setup <https://docs.mattermost.com/deployment/cluster.html>`_
