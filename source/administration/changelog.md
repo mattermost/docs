@@ -209,6 +209,7 @@ The following config settings will only work on servers with an Enterprise Licen
 
 ### Known Issues
 
+- Desktop apps sometimes require a refresh to solve 404 errors.
 - Deleted messages don't disappear from the channel for the user who deleted the message, if the message was previously edited and right hand sidebar is open.
 - After receiving an error for creating a channel with one character, updated channel name is not saved.
 - A single collapsed preview re-opens after refresh.
