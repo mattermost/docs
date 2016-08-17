@@ -65,7 +65,8 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    :glob:
 
    install/requirements*
-   install/docker*
+   install/docker-local*
+   install/docker-ebs*
    install/prod*
    install/smtp*
    install/troubleshooting*
@@ -77,17 +78,18 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    :caption: Deployment
    :glob:
 
+   deployment/deployment*
+   deployment/on-boarding*
    deployment/sso-gitlab*
    deployment/sso-google*
    deployment/sso-office*
    deployment/sso-ldap*
    deployment/sso-saml.md
-   deployment/deployment*
    deployment/auth*
-   deployment/cluster*
-   deployment/on-boarding*
    deployment/push*
-   
+   deployment/scaling*
+   deployment/cluster*
+
 
 .. toctree::
    :maxdepth: 1
