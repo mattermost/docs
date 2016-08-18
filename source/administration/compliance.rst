@@ -3,12 +3,13 @@ Compliance exports with oversight protection
 
 Available in `Enterprise Edition E20 <https://about.mattermost.com/pricing/>`_
 
-This feature enables compliance exports produced from the System Console with query and download actions logged in an audit history to enable oversight and prevent unauthorized queries. 
+This feature enables compliance exports to be produced from the System Console, with all query and download actions logged in an audit history to enable oversight and prevent unauthorized queries. 
 
 Compliance exports can be filtered to date range, user account, and keyword list. Requests from queries can be downloaded from the user interface in ``.csv`` format, with a ``.json`` metafile documenting the query, as well as placed in a directory set by the System Administrator. 
 
 Daily compliance reports may also be generated, supporting integration with compliance solutions like `Global Relay <https://docs.mattermost.com/administration/compliance.html#global-relay-support>`_. 
 
+Note: By default, all Mattermost Editions retain all messages, including edits and deletes, along with all files uploaded. 
 
 Enabling Compliance Reporting 
 ====
