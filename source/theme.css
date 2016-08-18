@@ -158,6 +158,10 @@ h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
 	width: 100%;
 	height: 100%;
 	background: transparent;
+	
+	/* May seem out of place, but it enables smooth/momentum/elastic scrolling on mobile devices */
+	overflow-y: scroll; /* has to be scroll, not auto */
+    -webkit-overflow-scrolling: touch;
 }
 
 .wy-side-nav-search input[type=text] {
