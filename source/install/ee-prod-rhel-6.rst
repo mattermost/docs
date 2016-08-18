@@ -237,7 +237,7 @@ Set up NGINX Server
         }
 
    - Remove the existing file with:
-   - ``sudo mv /etc/nginx/conf.d/default.conf/etc/nginx/conf.d/default.conf.bak``
+   - ``sudo mv /etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf.bak``
    - Restart NGINX by typing:
    - ``sudo service nginx restart``
    - Verify you can see Mattermost thru the proxy by typing:
