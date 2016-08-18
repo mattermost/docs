@@ -70,7 +70,7 @@ Tickets labelled "accepting pull requests" are intended to be unambiguous projec
 
 Tickets may have a "mana" value assigned, which is an estimate of the relative complexity of each ticket (2 is "small", "4" is medium, "8" is large). 
 
-Even if the ticket is assigned to someone else, so long as the ticket has Status set to Open and the ticket is not in the [Active Sprint](https://mattermost.atlassian.net/browse/PLT-839?jql=status%20%3D%20Open%20AND%20sprint%20in%20openSprints%20()) contributors following the contribution guidelines are welcome to submit pull requests. 
+Even if the ticket is assigned to someone else, so long as the ticket has Status set to Open and the ticket is not in the Active Sprint, contributors following the contribution guidelines are welcome to submit pull requests. 
 
 For a list of tickets that meet this criteria, please the list of [Tickets Accepting Pull Requests](https://mattermost.atlassian.net/browse/PLT-1263?filter=10101).
 

@@ -188,7 +188,7 @@ Set up NGINX Server
    -  ``sudo service nginx restart``
 
 6. Map a FQDN (fully qualified domain name) like
-   **mattermost.example.com** to point to the NGINX server.
+   ``mattermost.example.com`` to point to the NGINX server.
 7. Configure NGINX to proxy connections from the internet to the
    Mattermost Server
 
