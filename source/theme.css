@@ -15,21 +15,21 @@ footer {
 }
 
 .rst-versions .rst-other-versions {
-    color: rgba(255, 255, 255, 0.6);
-    display: none;
-    font-size: 90%;
-    padding: 12px;
+	color: rgba(255, 255, 255, 0.6);
+	display: none;
+	font-size: 90%;
+	padding: 12px;
 }
 
 .rst-versions .rst-current-version {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #fff;
+	background-color: rgba(255, 255, 255, 0.1);
+	color: #fff;
 	text-transform: uppercase;
 }
 
 .rst-versions {
-    background: #404040 none repeat scroll 0 0;
-    border-style: none; /* removes the underlying theme's top border */
+	background: #404040 none repeat scroll 0 0;
+	border-style: none; /* removes the underlying theme's top border */
 }
 
 .rst-versions .rst-current-version .fa-cog {
@@ -161,7 +161,7 @@ h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
 	
 	/* May seem out of place, but it enables smooth/momentum/elastic scrolling on mobile devices */
 	overflow-y: scroll; /* has to be scroll, not auto */
-    -webkit-overflow-scrolling: touch;
+	-webkit-overflow-scrolling: touch;
 }
 
 .wy-side-nav-search input[type=text] {
@@ -286,6 +286,6 @@ header .header__links li a {
 		width: auto;
 	}
 	.wy-nav-top {
-	    margin-top: 70px;
+		margin-top: 70px;
 	}
 }
