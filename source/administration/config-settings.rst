@@ -15,22 +15,22 @@ Quick Links:
 	`Email <http://docs.mattermost.com/administration/config-settings.html#id13>`_ - `OAuth 2.0 <http://docs.mattermost.com/administration/config-settings.html#oauth-2-0-enterprise>`_ - `GitLab <http://docs.mattermost.com/administration/config-settings.html#id14>`_ - `Google <http://docs.mattermost.com/administration/config-settings.html#google-enterprise>`_ - `Office 365 <http://docs.mattermost.com/administration/config-settings.html#office-365-enterprise>`_ - `LDAP <http://docs.mattermost.com/administration/config-settings.html#ldap-enterprise>`_ - `SAML <http://docs.mattermost.com/administration/config-settings.html#saml-enterprise>`_
 
 `Security <http://docs.mattermost.com/administration/config-settings.html#id20>`_
-	`Sign Up <http://docs.mattermost.com/administration/config-settings.html#id21>`_ - `Password <http://docs.mattermost.com/administration/config-settings.html#id22>`_ - `Public Links <http://docs.mattermost.com/administration/config-settings.html#id23>`_ - `Sessions <http://docs.mattermost.com/administration/config-settings.html#id24>`_ - `Connections <http://docs.mattermost.com/administration/config-settings.html#id25>`_
+	`Sign Up <http://docs.mattermost.com/administration/config-settings.html#id30>`_ - `Password <http://docs.mattermost.com/administration/config-settings.html#id31>`_ - `Public Links <http://docs.mattermost.com/administration/config-settings.html#id32>`_ - `Sessions <http://docs.mattermost.com/administration/config-settings.html#id33>`_ - `Connections <http://docs.mattermost.com/administration/config-settings.html#id34>`_
 
-`Notifications <http://docs.mattermost.com/administration/config-settings.html#id26>`_
-	`Email <http://docs.mattermost.com/administration/config-settings.html#id27>`_ - `Mobile Push <http://docs.mattermost.com/administration/config-settings.html#id29>`_
+`Notifications <http://docs.mattermost.com/administration/config-settings.html#id35>`_
+	`Email <http://docs.mattermost.com/administration/config-settings.html#id36>`_ - `Mobile Push <http://docs.mattermost.com/administration/config-settings.html#id38>`_
 
-`Integrations <http://docs.mattermost.com/administration/config-settings.html#id30>`_
-	`Custom Integrations <http://docs.mattermost.com/administration/config-settings.html#id31>`_ - `External Services <http://docs.mattermost.com/administration/config-settings.html#id34>`_
+`Integrations <http://docs.mattermost.com/administration/config-settings.html#id39>`_
+	`Custom Integrations <http://docs.mattermost.com/administration/config-settings.html#id40>`_ - `External Services <http://docs.mattermost.com/administration/config-settings.html#id43>`_
 
-`Files <http://docs.mattermost.com/administration/config-settings.html#id35>`_
-	`Storage <http://docs.mattermost.com/administration/config-settings.html#id36>`_ - `Images <http://docs.mattermost.com/administration/config-settings.html#id37>`_
+`Files <http://docs.mattermost.com/administration/config-settings.html#id44>`_
+	`Storage <http://docs.mattermost.com/administration/config-settings.html#id45>`_ - `Images <http://docs.mattermost.com/administration/config-settings.html#id46>`_
 
-`Customization <http://docs.mattermost.com/administration/config-settings.html#id38>`_
-	`Custom Branding <http://docs.mattermost.com/administration/config-settings.html#id39>`_ - `Custom Emoji <http://docs.mattermost.com/administration/config-settings.html#id40>`_ - `Legal and Support <http://docs.mattermost.com/administration/config-settings.html#id41>`_
+`Customization <http://docs.mattermost.com/administration/config-settings.html#id47>`_
+	`Custom Branding <http://docs.mattermost.com/administration/config-settings.html#id48>`_ - `Custom Emoji <http://docs.mattermost.com/administration/config-settings.html#id49>`_ - `Legal and Support <http://docs.mattermost.com/administration/config-settings.html#id50>`_ - `Native App Links <http://docs.mattermost.com/administration/config-settings.html#native-app-links>`_
 
-`Advanced <http://docs.mattermost.com/administration/config-settings.html#id42>`_
-	`Rate Limiting <http://docs.mattermost.com/administration/config-settings.html#id43>`_ - `Database <http://docs.mattermost.com/administration/config-settings.html#id44>`_ - `Developer <http://docs.mattermost.com/administration/config-settings.html#id45>`_ - `High Availability (Beta) <https://docs.mattermost.com/administration/config-settings.html#high-availability-beta>`_
+`Advanced <http://docs.mattermost.com/administration/config-settings.html#id53>`_
+	`Rate Limiting <http://docs.mattermost.com/administration/config-settings.html#id54>`_ - `Database <http://docs.mattermost.com/administration/config-settings.html#id55>`_ - `Developer <http://docs.mattermost.com/administration/config-settings.html#id56>`_ - `High Availability (Beta) <https://docs.mattermost.com/administration/config-settings.html#57>`_
 
 General
 ---------------------------------
