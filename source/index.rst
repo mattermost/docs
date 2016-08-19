@@ -120,7 +120,7 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    developer/fx*
    developer/style*
    developer/integration*
-   developer/localization.rst
+   developer/localization-process.rst
    developer/message-attachments*
    developer/running-mattermost*
 
