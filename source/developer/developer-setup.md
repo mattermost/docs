@@ -36,7 +36,7 @@ Developer Machine Setup
 
 5. Run unit tests on Mattermost using `make test` to make sure the installation was successful
 6. If the tests passed, you can run `make clean-docker` to clean the database, then `make run` to start Mattermost
-7. Browse to `localhost:8065`, and you will be prompted to create an account. This account will have System Administrator priviledges.
+7. Browse to `localhost:8065`, and you will be prompted to create an account. This account will have System Administrator privileges.
 8. You can stop Mattermost using `make stop`
 9. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
     - Note: You can skip the platform you are on because you have that target installed by default.
@@ -77,7 +77,7 @@ Any issues? Please let us know on our forums at: https://forum.mattermost.org/
 	5. `cd platform`
 8. Run unit tests on Mattermost using `make test` to make sure the installation was successful
 9. If the tests passed, you can run `make clean-docker` to clean the database, then `make run` to start Mattermost
-10. Browse to `localhost:8065`, and you will be prompted to create an account. This account will have System Administrator priviledges.
+10. Browse to `localhost:8065`, and you will be prompted to create an account. This account will have System Administrator privileges.
 11. You can stop Mattermost using `make stop`
 12. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
     - Note: You can skip the platform you are on because you have that target installed by default.
@@ -128,7 +128,7 @@ Any issues? Please let us know on our forums at: http://forum.mattermost.org
 	5. `cd platform`
 7. Run unit tests on Mattermost using `make test` to make sure the installation was successful
 8. If the tests passed, you can run `make clean-docker` to clean the database, then `make run` to start Mattermost
-9. Browse to `localhost:8065`, and you will be prompted to create an account. This account will have System Administrator priviledges.
+9. Browse to `localhost:8065`, and you will be prompted to create an account. This account will have System Administrator privileges.
 10. You can stop Mattermost using `make stop`
 11. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
     - Note: You can skip the platform you are on because you have that target installed by default.
