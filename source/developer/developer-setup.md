@@ -9,8 +9,9 @@ Developer Machine Setup
 		`docker-machine create -d virtualbox dev`
 	2. Get the IP address of your docker host  
 		`docker-machine ip dev`
-	3. Add a line to your /etc/hosts that goes `<Docker IP> dockerhost`
-	4. Run `docker-machine env dev` and copy the export statements to your ~/.bash_profile
+	3. Add the following line to `/etc/hosts`
+		`<Docker IP> dockerhost`
+	4. Run `docker-machine env dev` and copy the export statements to `~/.bash_profile`
 2. Download Go 1.6 and Node.js using Homebrew
 	1. Download Homebrew from [http://brew.sh/](http://brew.sh/)
 	2. `brew install go`
@@ -34,16 +35,10 @@ Developer Machine Setup
 	5. `cd platform`
 
 5. Run unit tests on Mattermost using `make test` to make sure the installation was successful
-6. If the tests passed, you can run Mattermost using `make run`
-7. You need to create a team and admin account. You can choose a team name, email and password:
-	- Note: Make sure your team name does not contain any spaces
-	- `go run mattermost.go  -create_team -team_name="name" -email="user@example.com"`
-	- `go run mattermost.go  -create_user -team_name="name" -email="user@example.com" -password="mypassword"`
-	- `go run mattermost.go  -assign_role -team_name="name" -email="user@example.com" -role="system_admin"`
-
-8. Now you can log into Mattermost as the user you created in step 7
-9. You can stop Mattermost using `make stop`
-10. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
+6. If the tests passed, you can run `make clean-docker` to clean the database, then `make run` to start Mattermost
+7. Browse to `localhost:8065`, and you will be prompted to create an account. This account will have System Administrator priviledges.
+8. You can stop Mattermost using `make stop`
+9. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
     - Note: You can skip the platform you are on because you have that target installed by default.
     - `env GOOS=windows GOARCH=amd64 go install std`
     - `env GOOS=darwin GOARCH=amd64 go install std`
@@ -81,16 +76,10 @@ Any issues? Please let us know on our forums at: https://forum.mattermost.org/
 	4. `git clone https://github.com/<username>/platform.git`  
 	5. `cd platform`
 8. Run unit tests on Mattermost using `make test` to make sure the installation was successful
-9. If the tests passed, you can run Mattermost using `make run`
-10. You need to create a team and admin account. You can choose a team name, email and password:
-	- Note: Make sure your team name does not contain any spaces
-	- `go run mattermost.go  -create_team -team_name="name" -email="user@example.com"`
-	- `go run mattermost.go  -create_user -team_name="name" -email="user@example.com" -password="mypassword"`
-	- `go run mattermost.go  -assign_role -team_name="name" -email="user@example.com" -role="system_admin"`
-
-11. Now you can log into Mattermost as the user you created in step 10
-12. You can stop Mattermost using `make stop`
-13. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
+9. If the tests passed, you can run `make clean-docker` to clean the database, then `make run` to start Mattermost
+10. Browse to `localhost:8065`, and you will be prompted to create an account. This account will have System Administrator priviledges.
+11. You can stop Mattermost using `make stop`
+12. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
     - Note: You can skip the platform you are on because you have that target installed by default.
     - `env GOOS=windows GOARCH=amd64 go install std`
     - `env GOOS=darwin GOARCH=amd64 go install std`
@@ -138,16 +127,10 @@ Any issues? Please let us know on our forums at: http://forum.mattermost.org
 	4. `git clone https://github.com/<username>/platform.git`  
 	5. `cd platform`
 7. Run unit tests on Mattermost using `make test` to make sure the installation was successful
-8. If the tests passed, you can run Mattermost using `make run`
-9. You need to create a team and admin account. You can choose a team name, email and password:
-	- Note: Make sure your team name does not contain any spaces
-	- `go run mattermost.go  -create_team -team_name="name" -email="user@example.com"`
-	- `go run mattermost.go  -create_user -team_name="name" -email="user@example.com" -password="mypassword"`
-	- `go run mattermost.go  -assign_role -team_name="name" -email="user@example.com" -role="system_admin"`
-
-10. Now you can log into Mattermost as the user you created in step 9
-11. You can stop Mattermost using `make stop`
-12. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
+8. If the tests passed, you can run `make clean-docker` to clean the database, then `make run` to start Mattermost
+9. Browse to `localhost:8065`, and you will be prompted to create an account. This account will have System Administrator priviledges.
+10. You can stop Mattermost using `make stop`
+11. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
     - Note: You can skip the platform you are on because you have that target installed by default.
     - `env GOOS=windows GOARCH=amd64 go install std`
     - `env GOOS=darwin GOARCH=amd64 go install std`
