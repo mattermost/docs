@@ -15,21 +15,21 @@ footer {
 }
 
 .rst-versions .rst-other-versions {
-    color: rgba(255, 255, 255, 0.6);
-    display: none;
-    font-size: 90%;
-    padding: 12px;
+	color: rgba(255, 255, 255, 0.6);
+	display: none;
+	font-size: 90%;
+	padding: 12px;
 }
 
 .rst-versions .rst-current-version {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #fff;
+	background-color: rgba(255, 255, 255, 0.1);
+	color: #fff;
 	text-transform: uppercase;
 }
 
 .rst-versions {
-    background: #404040 none repeat scroll 0 0;
-    border-style: none; /* removes the underlying theme's top border */
+	background: #404040 none repeat scroll 0 0;
+	border-style: none; /* removes the underlying theme's top border */
 }
 
 .rst-versions .rst-current-version .fa-cog {
@@ -286,6 +286,6 @@ header .header__links li a {
 		width: auto;
 	}
 	.wy-nav-top {
-	    margin-top: 70px;
+		margin-top: 70px;
 	}
 }
