@@ -144,11 +144,12 @@ The final release is cut. If an urgent and important issue needs to be addressed
     - Update [MVP page](https://www.mattermost.org/mvp/) with the most valuable contributor of the release.
     - Submit [GitLab MR](https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests/871/diffs) to take next Mattermost version in the Omnibus.
     - Update [Docker preview image to latest version](https://github.com/mattermost/mattermost-docker-preview/commit/1c34195d70b26bd4c82b5ef4fa0ebaf421096881).
+    - Check Security Issues spreadsheet and confirm disclosure text
+    - Confirm link to security updates appears in blog post if there are security updates in this release 
 4. Marketing:
     - Finalize Mailchimp email blast
-    - Finalize blog post for mattermost.org and set timer for 06:00 PDT on the day of release.
-    - Queue Tweet announcement
-    - Find [GitLab release announcement merge request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests) and post proposal for [GitLab Mattermost update text](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests/1633/diffs#efdba966a222d7071509e0dd4f39de5c9d7c1200_0_185)
+    - Finalize blog post for mattermost.org and set timer for 06:00 PDT on the day of release.    - 
+    - Queue Tweet announcement (include animated banner image) 
 
 If a bug fix release is required, run through the following steps again: 
 
@@ -184,8 +185,8 @@ If a bug fix release is required, run through the following steps again:
         - [Push to private cloud customers](https://mattermost.atlassian.net/browse/PLT-2199)
         - [Test upgrade](https://mattermost.atlassian.net/browse/PLT-2344) to latest release based on [upgrade guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide)
         - [RC Build Testing for core team](https://mattermost.atlassian.net/browse/PLT-2208)
-        - [Upgrade GitLab Mattermost to RC1](https://mattermost.atlassian.net/browse/PLT-3116)
-        - [Push final build to GitLab Mattermost](https://mattermost.atlassian.net/browse/PLT-3117)
+        - [Upgrade gitlab.mattermost.com to RC1](https://mattermost.atlassian.net/browse/PLT-3116)
+        - [Push final build to gitlab.mattermost.com](https://mattermost.atlassian.net/browse/PLT-3117)
         - [Cut build and set up RC1 servers](https://mattermost.atlassian.net/browse/PLT-3115)
     - Create [PR tracking spreadsheet](https://docs.google.com/spreadsheets/d/1YkRqyQk0Y4ZouV-SsXbSjbzGOXu2ZSPSd4XC_4LAErI/edit#gid=0) for next release.
         - Populate with any PR's that have already went in for the next release.
@@ -200,7 +201,9 @@ If a bug fix release is required, run through the following steps again:
     - Confirm gitlab.mattermost.com is updated to final build
 5. Marketing:
     - Confirm marketing has been posted (animated GIFs, screenshots, mail announcement, tweets, blog posts)
-
+    - Find [www-gitlab-com merge request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests) for latest GitLab release blog post and make request for adding GitLab Mattermost update (see [example request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests/2910#note_14096885), [example update](https://about.gitlab.com/2016/07/22/gitlab-8-10-released/#gitlab-mattermost-32)). 
+    - Update [feature list](https://about.mattermost.com/pricing/) on mattermost.com with relevant new features.
+    
 ### H. (T-plus 5 working days) Release Updates
 1. Logistics: 
     - Post this checklist in Release channel 
@@ -208,8 +211,10 @@ If a bug fix release is required, run through the following steps again:
 2. Leads:
     - Update [company roadmap at mattermost.com](https://about.mattermost.com/direction/)
     - Post and review [Mattermost Security Updates](https://about.mattermost.com/security-updates/)
-
-
+    - Update Security Issues spreadsheet with issue number from posted update (e.g. v3.2.0.1)
+3. PM: 
+    - Review "Community Installers" and update version numbers if there are any discrepencies https://www.mattermost.org/installation/ (move this to ops eventually)  
+    
 ## Templates
 
 Templates for GitLab announcement proposal
