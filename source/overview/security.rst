@@ -2,7 +2,7 @@
 Security Overview
 =====================================
 
-Mattermost offers modern communication behind your firewall to keep your data safe, secure, and private with enterprise-class data security and control.
+Mattermost offers modern communication behind your firewall to keep your data safe, secure, and private.
 
 Security Improvements 
 ------
