@@ -2,11 +2,11 @@
 Security Overview
 =====================================
 
-Mattermost offers modern communication behind your firewall to keep your data safe, secure, and private.
+Mattermost offers modern communication behind your firewall to keep your data safe, secure and private. 
 
-Mattermost is built on an open source platform whose security is under continual review by developers, IT administrators and security researchers accountable for deploying the software in their organizations. 
+Security in Mattermost software is continually reviewed by developers, IT administrators and security researchers accountable for deploying the software in their organizations. 
 
-The software has undergone multiple rounds of security analysis and penetration testing, which drives two types of security improvements in the product: 
+Multiple rounds of penetration testing and security analysis, in addition to internal reviews, have produced a long list of security improvements, in two forms: 
 
 - **Security Updates**
    - Upgrades addressing newly discovered attacks confidentially disclosed to Mattermost, Inc. by the product community and security researchers
@@ -19,7 +19,7 @@ To expand on each type:
 Security Updates 
 ------
 
-Security reseachers provide confidential feedback to Mattermost, Inc. using a responsible disclosure policy, allowing for security updates to be provided to the community prior to public disclosure.
+Security updates address newly discovered attacks reported to Mattermost, Inc. by the security research community. Disclosures are made confidentially, under the Mattermost responsible disclosure policy, allowing for Mattermost, Inc. to provide security updates to the community prior to public disclosure.
 
 For more information, please see:
 
