@@ -7,6 +7,7 @@ From the directory where the Mattermost platform is installed a `platform` comma
 - Assigning roles to users 
 - Reseting user passwords
 - Inviting users to teams
+- Creating channels (Enterprise)
 - Inviting users to channels (Enterprise)
 - Removing users from channels (Enterprise)
 - Listing all public channels and private groups for a team (Enterprise)
@@ -39,13 +40,24 @@ FLAGS:
 
     -team_name="name"                 The team name used in other commands
 
-    -role="system_admin"               The role used in other commands
+    -channel_name="name"	          The channel name used in other commands
+
+    -channel_header="string"	      The channel header used in other commands
+
+    -channel_purpose="string"	      The channel purpose used in other commands
+
+    -channel_type="type"	          The channel type used in other commands
                                       valid values are
-                                        "" - The empty role is basic user
-                                           permissions
-                                        "system_admin" - Represents a system
-                                           admin who has access to all teams
-                                           and configuration settings.
+     				                    "O" - public channel
+     				                    "P" - private group
+
+    -role="system_admin"               The role used in other commands
+                                       valid values are
+                                         "" - The empty role is basic user
+                                            permissions
+                                         "system_admin" - Represents a system
+                                            admin who has access to all teams
+                                            and configuration settings.
 COMMANDS:
     -create_team                      Creates a team.  It requires the -team_name
                                       and -email flag to create a team.
@@ -74,6 +86,12 @@ COMMANDS:
                                       applied.
         Example:
             platform -assign_role -email="user@example.com" -role="system_admin"
+
+    -create_channel		              Create a new channel in the specified team. It requires the -email,
+    					              -team_name, -channel_name, -channel_type flags. Optional you can set
+    				                  the -channel_header and -channel_purpose.
+	    Example:
+            platform -create_channel -email="user@example.com" -team_name="name" -channel_name="channel_name" -channel_type="O"
 
     -join_channel                     Joins a user to the channel.  It requires the -email, -channel_name and
                                       -team_name flags.  You may need to logout of your current session
