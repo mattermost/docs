@@ -55,17 +55,18 @@ Mattermost offers a host of features to help keep your private cloud communicati
 - Integrity & Audit Controls
    - By default, Mattermost stores a complete history of messages, including edits and deletes, along with all files uploaded. User interface actions for "deleting" messages, channels and private groups only remove the data from the user interface, the data is retained within your database. 
    - The `output and archives of server logs <https://docs.mattermost.com/administration/config-settings.html#file-log-directory>`_ can be saved to a directory of your choice. Mattermost server logs plus logs from your web proxy can provide an end-to-end history of system usage.
-   - `Ad hoc compliance reports of messaging by user, date range, and keyword, including edited and deleted messages <https://docs.mattermost.com/administration/compliance.html>`_ are avilable (E20). To protect against unauthorized use, all ad hoc report requests are logged. 
+   - `Ad hoc compliance reports of messaging by user, date range, and keyword, including edited and deleted messages <https://docs.mattermost.com/administration/compliance.html>`_ are available (E20). To protect against unauthorized use, all ad hoc report requests are logged. 
    - Daily compliance reports compatible with 3rd compliance solutions such as `Global Relay <https://docs.mattermost.com/administration/compliance.html#global-relay-support>`_ are also available (E20). 
 
 - Authentication Safeguards 
    - To protect against brute force attacks, you can set `rate limiting on APIs <https://docs.mattermost.com/administration/config-settings.html#id55>`_, varied by query frequency, memory store size, remote address and headers.    
    - Session length and session cache can be `configured according to your internal policies <https://docs.mattermost.com/administration/config-settings.html#id33>`_.
    - Remotely `revoke user sessions <https://docs.mattermost.com/help/settings/account-settings.html#view-and-logout-of-active-sessions>`_ across web, mobile devices and native desktop apps.
-   - Mattermost supports integrated authentcation with `Active Directory and LDAP <https://docs.mattermost.com/deployment/sso-ldap.html>`_ (E10) as well as `Active Directory Federation Services <https://docs.mattermost.com/deployment/sso-saml-adfs.html>`_ and `Okta <https://docs.mattermost.com/deployment/sso-saml-okta.html>`_ via SAML 2.0 (E20)
+   - Mattermost supports integrated authentication with `Active Directory and LDAP <https://docs.mattermost.com/deployment/sso-ldap.html>`_ (E10) as well as `Active Directory Federation Services <https://docs.mattermost.com/deployment/sso-saml-adfs.html>`_ and `Okta <https://docs.mattermost.com/deployment/sso-saml-okta.html>`_ via SAML 2.0 (E20)
    - The ability to require `multi-factor authentication <https://docs.mattermost.com/deployment/auth.html>`_ is also available (E10) 
 
-- Advanced IT Policy 
+- Access Control Policy 
+   - Limit communications to specific users, private groups, or team-wide public channels
    - Increase system security `by restricting email-based account creation to email addresses from a list of specific domains, <https://docs.mattermost.com/administration/config-settings.html#restrict-account-creation-to-specified-email-domains>`_ e.g. "corp.mattermost.com", "mattermost.org", etc." 
    - Choose whether to restrict or enable `cross-origin requests. <https://docs.mattermost.com/administration/config-settings.html#enable-cross-origin-requests-from>`_
    - If sharing of public links for account creation or sharing of files and images are enabled, links can be invalidated via the System Console by `regenerating salts <https://docs.mattermost.com/administration/config-settings.html#public-link-salt>`_. 
@@ -87,5 +88,6 @@ Special notes on encryption requirements in highly regulated industries:
 HIPAA compliance 
 ^^^^^^^ 
 
-- Deploying Mattermost as part of a HIPAA-compliant IT infrastructure requires a deployment team trained on `HIPAA-compliance requirements and standards <http://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/>`_, including administrative safeguards, physical safeguards, organizational requirements and other standards. Techincal safeguards relevant to HIPAA-compliance deployments are described above, please take special note of the deployment notes for "highly regulated industries".
+- Deploying Mattermost as part of a HIPAA-compliant IT infrastructure requires a deployment team trained on `HIPAA-compliance requirements and standards <http://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/>`_, including administrative safeguards, physical safeguards, organizational requirements and other standards. 
+- Technincal safeguards relevant to HIPAA-compliance deployments are described above (Access Control, Audit Controls, Integrity Controls, Transmission Security), please take special note of the deployment notes for "highly regulated industries".
 
