@@ -1,1 +1,1 @@
-Please see [updated localization guides](http://docs.mattermost.com/administration/localization-process.html).
+Please see [updated localization guides](https://docs.mattermost.com/developer/localization-process.html).
