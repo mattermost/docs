@@ -75,7 +75,7 @@ Special notes on encryption requirements in highly regulated industries:
 ^^^^^^^ 
 
 - Mobile apps from iTunes or Google Play require special configuration for advanced transmission security
-   - Any mobile app hosted in iTunes or Google Play using push notifications has a moment where the contents of push notifications is decrypted on Apple or Google servers in order to relay the notification to a mobile app. For highly regulated industries that do not allow any moment where confidential data may appear decrypted to a 3rd party, Mattermost offers the ability to prevent the contents from messages from being included in push notifications, by setting `push notification contents <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_ to ``generic``. 
+   - Any mobile app hosted in iTunes or Google Play using push notifications has a moment where the contents of push notifications are decrypted on Apple or Google servers in order to relay the notification to a mobile app. For highly regulated industries that do not allow any moment where confidential data may appear decrypted to a 3rd party, Mattermost offers the ability to prevent the contents from messages from being included in push notifications, by setting `push notification contents <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_ to ``generic``. 
    
 - Disk encryption is recommended for meeting encryption-at-rest requirements 
    - The Mattermost database can be deployed on its own server and hard drive to make use of both software and hardware disk encryption solutions based on your data center standards. 
