@@ -90,6 +90,7 @@ The Mattermost team has over 50 zaps integrated on our `pre-release server <http
 **GitHub Issues & Comments, UserVoice Suggestions & Comments, GitLab MM Issues, GitLab Omnibus MM Issues:**
  
 .. code:
+
 #### [Title of issue]  
 
 #[searchable-hashtag] in [external service](link to service) by [author](link to author profile) on [time-stamp](link to specific issue or comment) 
@@ -102,6 +103,7 @@ screen15
 **Forum Posts, Jira Comments, Hacker News Mentions, Tweets:**
 
 .. code:
+
 > [forum post, media mention, or tweet]  
 
 #[searchable-hashtag] in [external service](link to service) by [author](link to author profile) on [time-stamp](link to specific forum post, media mention or tweet)
