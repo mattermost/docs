@@ -15,11 +15,11 @@ Zapier Setup Guide
 Zapier is authorized using OAuth2.0. The setup guide requires that a System Admin register the Zapier app on their Mattermost server and can then optionally allow any users on the system to create Zapier integrations.
 
 Enable Zapier on your Mattermost Instance
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The first time you set up Zapier on your Mattermost instance you will be required to enable an OAuth 2.0 application which can be accessible by everyone on your server. Your System Admin must execute these steps.
 
 Enable OAuth 2.0
-``````````````````````````````
+```````````````````````````
 1. Go to the **Main Menu** > **System Console**
 2. Under **Integrations** > **Custom Integrations**
   a. Set `Enable OAuth 2.0 Service Provider <https://docs.mattermost.com/administration/config-settings.html#enable-oauth-2-0-service-provider>`_ to **True**.
@@ -28,23 +28,22 @@ Enable OAuth 2.0
 
 Register Zapier as an OAuth 2.0 Application
 ````````````````````````````````````````````````````````````````
-3. Go to **Main Menu** > **Integrations** screen2
-4. Click **OAuth 2.0 Applications**, then click **Add OAuth 2.0 Application**. Screen3
-5. Enter the Zapier OAuth Application fields:
+1. Go to **Main Menu** > **Integrations**
+2. Click **OAuth 2.0 Applications**, then click **Add OAuth 2.0 Application** and enter the following fields:
   a. **Is Trusted**: Yes
   b. **Display Name**: ``Zapier``
   c. **Description**: ``Application for Zapier integrations``
   d. **Homepage**: ``https://zapier.com/``
   e. **Icon URL**: ``http://bit.ly/2bxrzv0``
   f. **Callback URLs**: ``https://zapier.com/dashboard/auth/oauth/return/App27274API/``
-6. Click **Save** to create the application. You will be provided with a **Client ID** and **Client Secret**. Save these values to connect Zapier in the steps below.
+3. Click **Save** to create the application. You will be provided with a **Client ID** and **Client Secret**. Save these values to connect Zapier in the steps below.
 
 .. image:: ../images/zapier-oauth.png
 
 
 Create your First Zap
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-1. XXXXXX invite link?
+1. XXXXXX how does this step work with the link to an "Invite only" app? Need to test.
 2. **Trigger App**: Events in this app will trigger new messages in Mattermost.
   a. **Select a Trigger App** or choose from one of Zapier’s built-in apps that will trigger new messages in Mattermost. If the app you’re looking to connect isn’t supported on Zapier, consider firing in-app events to a Gmail account and then connecting Gmail to Mattermost using Zapier.
   b. **Select the Trigger Event**. New messages in Mattermost will fire depending on these selected events in conjunction with any filters you apply.
@@ -86,7 +85,7 @@ Here are some useful tips we recommend to get the most out of Zapier integration
 Examples
 ~~~~~~~~~~~~~
 
-The Mattermost team has over 50 zaps integrated on our `pre-release server <https://pre-release.mattermost.com/>`_ used for internal communication and interacting with contributors. The `Community Heartbeat <https://pre-release.mattermost.com/core/channels/community-heartbeat>`_ channel integrates all our community services in one accessible location. These zaps are formatted in two ways depending on the service:
+The Mattermost team has over 50 zaps integrated on our `Pre-Release Contributors team <https://pre-release.mattermost.com/core/>`_ used for internal communication and interacting with contributors. The `Community Heartbeat channel <https://pre-release.mattermost.com/core/channels/community-heartbeat>`_ integrates all our community services in one accessible location. These zaps are formatted in two ways depending on the service:
 
 **GitHub Issues & Comments, UserVoice Suggestions & Comments, GitLab MM Issues, GitLab Omnibus MM Issues:**
  
