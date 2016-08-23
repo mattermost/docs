@@ -39,7 +39,7 @@ Register Zapier as an OAuth 2.0 Application
   f. **Callback URLs**: ``https://zapier.com/dashboard/auth/oauth/return/App27274API/``
 6. Click **Save** to create the application. You will be provided with a **Client ID** and **Client Secret**. Save these values to connect Zapier in the steps below.
 
-screen19
+.. image:: ../images/zapier-oauth.png
 
 
 Create your First Zap
@@ -64,11 +64,12 @@ Create your First Zap
     1. **Team**. Choose the team where new messages will post. The dropdown should contain all teams you have access to on Mattermost.
     2. **Channel**. Choose the channel where new messages will post. Zapier cannot post into Direct Message channels, but all other Channels and Private Groups should appear in the dropdown.
     3. **Message Text**. Enter the message text that will post to Mattermost. This text can be formatted using `Markdown <https://docs.mattermost.com/help/messaging/formatting-text.html>`_ and include the dynamic fields offered by your selected trigger app. Read our `message formatting tips <https://docs.mattermost.com/integrations/zapier.html#message-formatting-tips>`_ below.
+    
+      .. image:: ../images/zapier-dynamic-fields.png    
+    
     4. **Username**. This is the username that Zapier will post as. Zapier integrations will always appear with a ``BOT`` tag next to the username.
     5. **Icon URL**. This is the profile picture of the bot that Zapier will post as.
   e. **Test the Zap**. You may want to test your zap formatting in a Private Group before posting in a channel that is visible to your entire team.
-
- Screen14.
  
 -----------
 
@@ -97,7 +98,7 @@ The Mattermost team has over 50 zaps integrated on our `pre-release server <http
 
 [Body of issue or comment]
 
-screen15
+.. image:: ../images/zapier-ch1.png
 
 
 **Forum Posts, Jira Comments, Hacker News Mentions, Tweets:**
@@ -109,6 +110,6 @@ screen15
 #[searchable-hashtag] in [external service](link to service) by [author](link to author profile) on [time-stamp](link to specific forum post, media mention or tweet)
 ```
 
-screen16
+.. image:: ../images/zapier-ch2.png
 
 -----------
