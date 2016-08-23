@@ -1036,13 +1036,15 @@ Enable Public File Links
 
 **False**: The Get Public Link option is hidden from the image preview user interface.
 
+**Note:** When switched to **False**, anyone who tries to visit a previously generated public link will receive an error message saying public links have been disabled. When switched back to **True**, old public links will work again unless the **Public Link Salt** has been regenerated. 
+
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnablePublicLink": true`` with options ``true`` and ``false`` for above settings respectively.                          |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Public Link Salt 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-32-character (to be randomly generated via Admin Console) salt added to signing of public image links. Click **Regenerate** to create new salt.
+32-character (to be randomly generated via Admin Console) salt added to signing of public image links. Click **Regenerate** to create new salt. After regeneration, old public links will not work. Anyone who visits an old public link will receive an error message saying the link does not appear to be valid. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PublicLinkSalt": ""``  with string input.                                                                               |
