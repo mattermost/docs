@@ -1,8 +1,6 @@
 Zapier and Mattermost
 ===================
 
-
-
 Integrate Mattermost with over 500 supported apps on Zapier, including `GitHub <https://zapier.com/zapbook/github/>`_, `Jira <https://zapier.com/zapbook/jira/>`_, `Wufoo <https://zapier.com/zapbook/wufoo/>`_, `Salesforce <https://zapier.com/zapbook/salesforce/>`_, `Twitter <https://zapier.com/zapbook/twitter/>`_, `Gmail <https://zapier.com/zapbook/gmail/>`_ and `many more <https://zapier.com/zapbook/>`_. Zapier integration triggers new Mattermost messages for events in other apps. This documentation includes:
 
 - `Zapier Setup Guide <https://docs.mattermost.com/integrations/zapier.html#zapier-setup-guide>`_ - **Instructions on registering the Zapier app on your server and creating a zap**
@@ -41,22 +39,23 @@ Register Zapier as an OAuth 2.0 Application
 .. image:: ../images/zapier-oauth.png
 
 
-Create your First Zap
+Create a Zap
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-1. XXXXXX how does this step work with the link to an "Invite only" app? Need to test.
-2. **Trigger App**: Events in this app will trigger new messages in Mattermost.
+1. Click and accept this invitation to our Zapier app: https://zapier.com/developer/invite/27274/233f5629a5c215f542747a9c6d395b98/
+2. On your `Zapier dashboard <https://zapier.com/app/dashboard>`_ click **Make a Zap!**.
+3. **Trigger App**: Events in this app will trigger new messages in Mattermost.
   a. **Select a Trigger App** or choose from one of Zapier’s built-in apps that will trigger new messages in Mattermost. If the app you’re looking to connect isn’t supported on Zapier, consider firing in-app events to a Gmail account and then connecting Gmail to Mattermost using Zapier.
   b. **Select the Trigger Event**. New messages in Mattermost will fire depending on these selected events in conjunction with any filters you apply.
   c. **Connect the Trigger Account**. Connect the account from which you’d like to trigger events and **Test** it to ensure Zapier can connect successfully.
-3. **Filtering** (Optional): Exclude certain events from triggering new messages. Learn more about using `Zapier custom filtering <https://zapier.com/learn/how-to-use-zapier/custom-filters/>`_.
+4. **Filtering** (Optional): Exclude certain events from triggering new messages. Learn more about using `Zapier custom filtering <https://zapier.com/learn/how-to-use-zapier/custom-filters/>`_.
   a. Add a filter by clicking the small **+** icon before the **Action** step.
   b. Zapier supports **AND** and **OR** filters. Use the dropdown selectors to choose what events will allow the trigger to send a Mattermost message.
-4. **Mattermost Action**: Connect your Mattermost Account and then specify posting details.
-  a. **Select the Action App**. Search for “Mattermost” XXXXXX how does this work with invite only?
+5. **Mattermost Action**: Connect your Mattermost Account and then specify posting details.
+  a. **Select the Action App**. Search for “Mattermost”.
   b. **Select the Action Event**. Select **Post a Message**. The Mattermost team plans to expand the actions available here.
   c. **Connect the Action Account**. Click **Connect a New Account** and enter the following fields:
     1. **Mattermost URL**: This is the URL you use to access your Mattermost site. Do not include a slash at the end of the URL and do not append a team to the end of the server URL. For example, ``https://pre-release.mattermost.com/core`` is the entire URL to the Contributors team on our pre-release server. The **Mattermost URL** entered here would be ``https://pre-release.mattermost.com``.
-    2. **Client ID/Secret**: These values were obtained in Step 4 in the section above. If Zapier has been enabled as an OAuth applications as per the steps above, then these values can also be found by navigating to one of your Mattermost teams, then **Main Menu** > **Integrations** > **OAuth 2.0 Applications**. Click **Show Secret** next to the Zapier app, then obtain the Client ID and Client Secret. 
+    2. **Client ID/Secret**: If Zapier has been enabled as an OAuth application as per the steps above, then these values can also be found by navigating to one of your Mattermost teams, then **Main Menu** > **Integrations** > **OAuth 2.0 Applications**. Click **Show Secret** next to the Zapier app, then obtain the Client ID and Client Secret. 
     3. **Login to Mattermost**. After completing the above fields you will be prompted to login to your Mattermost account if you are not logged in already. If you’re having trouble connecting then please read our `troubleshooting guide <https://docs.mattermost.com/integrations/zapier.html#troubleshooting-guide>`_. 
   d. **Message Post Details**: Specify the formatting of the messages and the team/channel where messages will post.
     1. **Team**: Choose the team where new messages will post. The dropdown should contain all teams you have access to on Mattermost.
