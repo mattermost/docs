@@ -110,3 +110,37 @@ The Mattermost team has over 50 zaps integrated on our `Pre-Release Contributors
 .. image:: ../images/zapier-ch2.png
 
 -----------
+
+Troubleshooting Guide
+--------------------------------
+
+Cannot connect a Mattermost account
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. "Token named access_token was not found in oauth response!"
+  a. Possbile Solution: Try removing any trailing ``/``'s on the end of your **Mattermost URL**.
+    - Correct: ``https://pre-release.mattermost.com``
+    - Incorrect: ``https://pre-release.mattermost.com/``
+  
+    .. image:: ../images/zapier-error1.png
+  
+2. "[Server URL] returned (404)"
+  a. Possbile Solution: The **Mattermost URL** cannot have a team appended to the end of the server URL.
+    - Correct: ``https://pre-release.mattermost.com``
+    - Incorrect: ``https://pre-release.mattermost.com/core``
+
+  .. image:: ../images/zapier-error2.png
+
+3. "[Server URL] returned (500) Internal Server Error"
+  a. Possbile Solution: The **Client Secret** might be incorrect. Verify this value in **Main Menu** > **Integrations** > **OAuth 2.0 Applications**, or check with your System Admin.
+  
+  .. image:: ../images/zapier-error4.png
+
+4. "Mattermost needs your help: We couldn't find the requested app"
+  a. Possbile Solution: The **Client ID** might be incorrect. Verify this value in **Main Menu** > **Integrations** > **OAuth 2.0 Applications**, or check with your System Admin.
+
+  .. image:: ../images/zapier-error3.png
+
+
+
+
