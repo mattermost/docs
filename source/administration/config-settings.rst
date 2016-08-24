@@ -1407,7 +1407,7 @@ Directory to which files are written. If blank, directory will be set to ./data/
 
 Amazon S3 Access Key ID 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Obtain this credential from your Amazon EC2 administrator.
+Obtain this credential from your Amazon AWS administrator.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AmazonS3AccessKeyId": ""`` with string input.                                                                           |
@@ -1415,7 +1415,7 @@ Obtain this credential from your Amazon EC2 administrator.
 
 Amazon S3 Secret Access Key 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Obtain this credential from your Amazon EC2 administrator.
+Obtain this credential from your Amazon AWS administrator.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AmazonS3SecretAccessKey": ""`` with string input.                                                                       |
