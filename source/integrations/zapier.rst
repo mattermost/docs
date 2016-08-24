@@ -113,6 +113,7 @@ The Mattermost team has over 50 zaps integrated on our `Pre-Release Contributors
 
 Troubleshooting Guide
 --------------------------------
+Possible solutions to common issues encountered during setup.
 
 Cannot connect a Mattermost account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
