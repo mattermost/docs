@@ -1032,7 +1032,7 @@ Public Links
 ```````````````````````````
 Enable Public File Links 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**True**: Allow users to generated public links to files and images for sharing outside the Mattermost system on a public URL. 
+**True**: Allow users to generate public links to files and images for sharing outside the Mattermost system with a public URL. 
 
 **False**: The Get Public Link option is hidden from the image preview user interface.
 
@@ -1042,7 +1042,7 @@ Enable Public File Links
 
 Public Link Salt 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-32-character salt added to URL of public links when public links are enabled. Click **Regenerate** in the System Console to create new salt, which will invalidate all existing public links. 
+32-character salt added to the URL of public links when public links are enabled. Click **Regenerate** in the System Console to create a new salt, which will invalidate all existing public links. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PublicLinkSalt": ""``  with string input.                                                                               |
