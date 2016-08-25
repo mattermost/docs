@@ -5,9 +5,9 @@ Zapier and Mattermost
 
 Integrate Mattermost with over 500 supported apps on Zapier, including `GitHub <https://zapier.com/zapbook/github/>`_, `Jira <https://zapier.com/zapbook/jira/>`_, `Wufoo <https://zapier.com/zapbook/wufoo/>`_, `Salesforce <https://zapier.com/zapbook/salesforce/>`_, `Twitter <https://zapier.com/zapbook/twitter/>`_, `Gmail <https://zapier.com/zapbook/gmail/>`_ and `many more <https://zapier.com/zapbook/>`_. Zapier integrations trigger new Mattermost messages for events in other apps. This documentation includes:
 
-- `Zapier Setup Guide <https://docs.mattermost.com/integrations/zapier.html#zapier-setup-guide>`_ - **Instructions on registering the Zapier app on your server and creating a zap**
-- `Message Formatting Tips <https://docs.mattermost.com/integrations/zapier.html#message-formatting-tips>`_ - **Tips from the Mattermost team on formatting Zapier integration messages**
-- `Troubleshooting Guide <https://docs.mattermost.com/integrations/zapier.html#troubleshooting-guide>`_ - **Advice on troubleshooting common setup issues**
+- `Zapier Setup Guide <https://docs.mattermost.com/integrations/zapier.html#id1>`_ - **Instructions on registering the Zapier app on your server and creating a zap**
+- `Message Formatting Tips <https://docs.mattermost.com/integrations/zapier.html#id4>`_ - **Tips from the Mattermost team on formatting Zapier integration messages**
+- `Troubleshooting Guide <https://docs.mattermost.com/integrations/zapier.html#id10>`_ - **Advice on troubleshooting common setup issues**
 
 
 Zapier Setup Guide
@@ -59,12 +59,12 @@ Create a Zap
   c. **Connect the Action Account**. Click **Connect a New Account** and enter the following fields:
     1. **Mattermost URL**: This is the URL you use to access your Mattermost site. Do not include a slash at the end of the URL and do not append a team to the end of the server URL. For example, ``https://pre-release.mattermost.com/core`` is the entire URL to the Contributors team on our pre-release server. The **Mattermost URL** entered here would be ``https://pre-release.mattermost.com``.
     2. **Client ID/Secret**: If Zapier has been enabled as an OAuth application as per the steps above, then these values can be found by navigating to one of your Mattermost teams, then **Main Menu** > **Integrations** > **OAuth 2.0 Applications**. Click **Show Secret** next to the Zapier app, then obtain the Client ID and Client Secret. 
-    3. **Login to Mattermost**. After completing the above fields you will be prompted to login to your Mattermost account if you are not logged in already. If you’re having trouble connecting then please read our `troubleshooting guide <https://docs.mattermost.com/integrations/zapier.html#troubleshooting-guide>`_. 
+    3. **Login to Mattermost**. After completing the above fields you will be prompted to login to your Mattermost account if you are not logged in already. If you’re having trouble connecting then please read our `troubleshooting guide <https://docs.mattermost.com/integrations/zapier.html#id10>`_. 
     4. You'll then be prompted to allow Zapier to access your Mattermost account. Click **Allow**.
   d. **Message Post Details**: Specify the formatting of the messages and the team/channel where messages will post.
     1. **Team**: Choose the team where new messages will post. The dropdown should contain all teams you have access to on Mattermost.
     2. **Channel**: Choose the channel where new messages will post. The dropdown will contain all Public Channels and Private Groups that you belong to. Zapier cannot post into Direct Message channels.
-    3. **Message Text**: Enter the message text that will post to Mattermost. This text can be formatted using `Markdown <https://docs.mattermost.com/help/messaging/formatting-text.html>`_ and include the dynamic fields offered by your selected trigger app. Read our `message formatting tips <https://docs.mattermost.com/integrations/zapier.html#message-formatting-tips>`_ below.
+    3. **Message Text**: Enter the message text that will post to Mattermost. This text can be formatted using `Markdown <https://docs.mattermost.com/help/messaging/formatting-text.html>`_ and include the dynamic fields offered by your selected trigger app. Read our `message formatting tips <https://docs.mattermost.com/integrations/zapier.html#id4>`_ below.
     
       .. image:: ../images/zapier-dynamic-fields.png    
     
@@ -93,11 +93,11 @@ The Mattermost team has over 50 zaps integrated on our `Pre-Release Contributors
  
 .. code:
 
-#### [Title of issue]  
+    #### [Title of issue]  
 
-#[searchable-hashtag] in [external service](link to service) by [author](link to author profile) on [time-stamp](link to specific issue or comment) 
+    #[searchable-hashtag] in [external service](link to service) by [author](link to author profile) on [time-stamp](link to specific issue or comment) 
 
-[Body of issue or comment]
+    [Body of issue or comment]
 
 .. image:: ../images/zapier-ch1.png
 
@@ -106,10 +106,9 @@ The Mattermost team has over 50 zaps integrated on our `Pre-Release Contributors
 
 .. code:
 
-> [forum post, media mention, or tweet]  
+     > [forum post, media mention, or tweet]  
 
-#[searchable-hashtag] in [external service](link to service) by [author](link to author profile) on [time-stamp](link to specific forum post, media mention or tweet)
-```
+     #[searchable-hashtag] in [external service](link to service) by [author](link to author profile) on [time-stamp](link to specific forum post, media mention or tweet)
 
 .. image:: ../images/zapier-ch2.png
 
