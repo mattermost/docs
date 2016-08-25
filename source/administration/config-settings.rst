@@ -30,7 +30,7 @@ Quick Links:
 	`Custom Branding <http://docs.mattermost.com/administration/config-settings.html#id48>`_ - `Custom Emoji <http://docs.mattermost.com/administration/config-settings.html#id49>`_ - `Legal and Support <http://docs.mattermost.com/administration/config-settings.html#id50>`_ - `Native App Links <http://docs.mattermost.com/administration/config-settings.html#51>`_
 
 `Advanced <http://docs.mattermost.com/administration/config-settings.html#id54>`_
-	`Rate Limiting <http://docs.mattermost.com/administration/config-settings.html#id55>`_ - `Database <http://docs.mattermost.com/administration/config-settings.html#id56>`_ - `Developer <http://docs.mattermost.com/administration/config-settings.html#id57>`_ - `High Availability (Beta) <https://docs.mattermost.com/administration/config-settings.html#58>`_
+	`Rate Limiting <http://docs.mattermost.com/administration/config-settings.html#id55>`_ - `Database <http://docs.mattermost.com/administration/config-settings.html#id56>`_ - `Developer <http://docs.mattermost.com/administration/config-settings.html#id57>`_ - `High Availability (Beta) <https://docs.mattermost.com/administration/config-settings.html#id58>`_
 
 General
 ---------------------------------
