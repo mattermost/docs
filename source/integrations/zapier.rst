@@ -91,7 +91,7 @@ The Mattermost team has over 50 zaps integrated on our `Pre-Release Contributors
 
 **GitHub Issues & Comments, UserVoice Suggestions & Comments, GitLab MM Issues, GitLab Omnibus MM Issues:**
  
-.. code:
+.. code::
 
     #### [Title of issue]  
 
@@ -104,7 +104,7 @@ The Mattermost team has over 50 zaps integrated on our `Pre-Release Contributors
 
 **Forum Posts, Jira Comments, Hacker News Mentions, Tweets:**
 
-.. code:
+.. code::
 
      > [forum post, media mention, or tweet]  
 
