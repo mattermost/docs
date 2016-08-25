@@ -1327,9 +1327,11 @@ Slash commands send events to external integrations that send a response back to
 
 Restrict creating integrations to Team and System Admins  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**True**: User created integrations can only be created by System or Team Admins. Members who are not admins trying to create integrations will hit an error message on the **Integrations** page.
+**True**: User created integrations can only be created by System or Team Admins. Members who are not admins will have the **Integrations** tab hidden in the Main Menu.
 
 **False**: Any team members can create integrations from **Main Menu** > **Integrations**.
+
+Note: OAuth 2.0 applications can be authorized by all users if they have the **Client ID** and **Client Secret** for an app setup on the server.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableOnlyAdminIntegrations": true`` with options ``true`` and ``false`` for above settings respectively.               |
@@ -1337,9 +1339,9 @@ Restrict creating integrations to Team and System Admins
 
 Enable webhooks and slash commands to override usernames  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**True**: Webhooks will be allowed to change the username they are posting as.
+**True**: Webhooks, slash commands and OAuth 2.0 apps will be allowed to change the username they are posting as.
 
-**False**: Webhooks can only post as the username they were set up with. See http://mattermost.org/webhooks for more details.
+**False**: Webhooks, slash commands and OAuth 2.0 apps can only post as the username of the account they were set up with. See http://mattermost.org/webhooks for more details.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnablePostUsernameOverride": false`` with options ``true`` and ``false`` for above settings respectively.               |
@@ -1347,9 +1349,9 @@ Enable webhooks and slash commands to override usernames
 
 Enable webhooks and slash commands to override profile picture iconss  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**True**: Webhooks will be allowed to change the icon they post with.
+**True**: Webhooks, slash commands and OAuth 2.0 apps will be allowed to change the profile picture they post with.
 
-**False**: Webhooks can only post with the profile picture of the account they were set up with. See http://mattermost.org/webhooks for more details.
+**False**: Webhooks, slash commands and OAuth 2.0 apps can only post with the profile picture of the account they were set up with. See http://mattermost.org/webhooks for more details.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnablePostIconOverride": false`` with options ``true`` and ``false`` for above settings respectively.                   |
