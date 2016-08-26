@@ -7,7 +7,7 @@ Integrate Mattermost with over 500 supported apps on Zapier, including `GitHub <
 
 - `Zapier Setup Guide <https://docs.mattermost.com/integrations/zapier.html#id1>`_ - **Instructions on registering the Zapier app on your server and creating a zap**
 - `Message Formatting Tips <https://docs.mattermost.com/integrations/zapier.html#id4>`_ - **Tips from the Mattermost team on formatting Zapier integration messages**
-- `Troubleshooting Guide <https://docs.mattermost.com/integrations/zapier.html#id10>`_ - **Advice on troubleshooting common setup issues**
+- `Troubleshooting Guide <https://docs.mattermost.com/integrations/zapier.html#id6>`_ - **Advice on troubleshooting common setup issues**
 
 
 Zapier Setup Guide
@@ -59,7 +59,7 @@ Create a Zap
   c. **Connect the Action Account**. Click **Connect a New Account** and enter the following fields:
     1. **Mattermost URL**: This is the URL you use to access your Mattermost site. Do not include a slash at the end of the URL and do not append a team to the end of the server URL. For example, ``https://pre-release.mattermost.com/core`` is the entire URL to the Contributors team on our pre-release server. The **Mattermost URL** entered here would be ``https://pre-release.mattermost.com``.
     2. **Client ID/Secret**: If Zapier has been enabled as an OAuth application as per the steps above, then these values can be found by navigating to one of your Mattermost teams, then **Main Menu** > **Integrations** > **OAuth 2.0 Applications**. Click **Show Secret** next to the Zapier app, then obtain the Client ID and Client Secret. 
-    3. **Login to Mattermost**. After completing the above fields you will be prompted to login to your Mattermost account if you are not logged in already. If you’re having trouble connecting then please read our `troubleshooting guide <https://docs.mattermost.com/integrations/zapier.html#id10>`_. 
+    3. **Login to Mattermost**. After completing the above fields you will be prompted to login to your Mattermost account if you are not logged in already. If you’re having trouble connecting then please read our `troubleshooting guide <https://docs.mattermost.com/integrations/zapier.html#id6>`_. 
     4. You'll then be prompted to allow Zapier to access your Mattermost account. Click **Allow**.
   d. **Message Post Details**: Specify the formatting of the messages and the team/channel where messages will post.
     1. **Team**: Choose the team where new messages will post. The dropdown should contain all teams you have access to on Mattermost.
