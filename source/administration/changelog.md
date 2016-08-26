@@ -219,7 +219,7 @@ The following config settings will only work on servers with an Enterprise Licen
 - After receiving an error for creating a channel with one character, updated channel name is not saved.
 - A single collapsed preview re-opens after refresh.
 - Removed user from team still appears in DM list from the team.
-- Files sent in private chat to members in a different team are not accessible.
+- Files sent in private messages to members in a different team are not accessible.
 - YouTube videos show as “Video not found” on Desktop App.
 - “More” option under Direct Message list no longer shows count of team members not in your direct message list.
 - /join sometimes throws an error.
@@ -459,7 +459,7 @@ The following config settings will only work on servers with an Enterprise Licen
 - Accessing the System Console URL when logged out causes the browser to hang.
 - Youtube videos show as "Video not found" on Desktop App
 - Search terms contained in hashtags are not highlighted in the search results.
-- Files sent in private chat to members in a different team are not accessible.
+- Files sent in private messages to members in a different team are not accessible.
 - Center channel appears blank after initial page load on iOS.
 
 ### Contributors
