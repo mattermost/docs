@@ -72,21 +72,28 @@ Set up Database Server
     -  Uncomment 'listen\_addresses' and change 'localhost' to '\*'
 
 11. Alter ``pg_hba.conf`` to allow the Mattermost Server to talk to the
-    Postgres database:
+    Postgres database through the Postgres unix socket:
 
     -  ``sudo vi /var/lib/pgsql/9.4/data/pg_hba.conf``
-    -  Add the following line to the 'IPv4 local connections':
-    -  host all all 10.10.10.2/32 md5
+    -  Add the following line :
+    -   local   mattermost          mmuser          peer       map=mattermap
 
-12. Reload Postgres database:
+12. Alter `pg_ident.conf`` to map system user to database user:
+
+    - ``sudo vi /var/lib/pgsql/9.4/data/pg_ident.conf``
+    - Add the following line :
+    - mattermap      mattermost              mmuser
+
+13. Reload Postgres database:
 
     -  ``sudo systemctl reload postgresql-9.4.service``
 
-13. Attempt to connect with the new created user to verify everything
+14. Attempt to connect with the new created user to verify everything
     looks good:
 
-    -  ``psql --host=10.10.10.1 --dbname=mattermost --username=mmuser --password``
-    -  ``mattermost=> \q``
+    -  ``su - mattermost``
+    -  ``psql -d mattermost -U mmuser``
+    - ``mattermost=> \qmattermost=> \q``
 
 Set up Mattermost Server
 ------------------------
@@ -363,4 +370,4 @@ Finish Mattermost Server setup
 Activating Mattermost Enterprise Edition
 ------------------------------
 
-To activate Enterprise Edition go to **System Console** > **Edition and License** > **License Key** and upload the license file included with your purchase. Your screen will refresh and Enterprise Edition features will be activated. 
+To activate Enterprise Edition go to **System Console** > **Edition and License** > **License Key** and upload the license file included with your purchase. Your screen will refresh and Enterprise Edition features will be activated.
