@@ -1,6 +1,22 @@
 # Mattermost APIs
 
-Mattermost APIs let you integrate your favorite tools and services within your Mattermost instance. 
+With Mattermost you have complete access to the server's [Web Service APIs](https://docs.mattermost.com/developer/api.html#mattermost-web-service-api), along with [language specific drivers](https://docs.mattermost.com/developer/api.html#mattermost-drivers) (the same used by the web, desktop and mobile experiences), plus [Slack-compatible webhooks](https://docs.mattermost.com/developer/api.html#incoming-webhooks) and [Slash commands](https://docs.mattermost.com/developer/api.html#slash-commands) for creating quick integrations. 
+
+There's a [vibrant community developing open source apps on Mattermost](https://docs.mattermost.com/developer/api.html#community-apps-and-integrations) and you can start your work based on their code, or use [a pre-made sample](https://docs.mattermost.com/developer/api.html#matermost-golang-bot-sample) provided by the Mattermost team. 
+
+Slack Compatible Webhooks & Slash Commands 
+- [Incoming Webooks](https://docs.mattermost.com/developer/api.html#incoming-webhooks)
+- [Outgoing Webooks](https://docs.mattermost.com/developer/api.html#outgoing-webhooks)
+- [Slash Commands](https://docs.mattermost.com/developer/api.html#slash-commands)
+
+API and Drivers 
+- [Mattermost Web Service API](https://docs.mattermost.com/developer/api.html#mattermost-web-service-api)
+- [Golang Driver](https://docs.mattermost.com/developer/api.html#golang-driver)
+- [JavaScript Driver](https://docs.mattermost.com/developer/api.html#golang-driver)
+
+Building API Integrations 
+- [Mattermost Golang Bot Sample](https://docs.mattermost.com/developer/api.html#matermost-golang-bot-sample)
+- [Community Apps and Integrations](https://docs.mattermost.com/developer/api.html#community-apps-and-integrations) 
 
 ## Slack-compatible Webhooks
 
@@ -38,7 +54,7 @@ Mattermost drivers offer access to the Mattermost web service API in different l
 
 [client.go](https://github.com/mattermost/platform/blob/master/model/client.go) - This is a RESTful driver connecting with the Golang-based webservice of Mattermost and is used by unit tests. 
 
-## Building API Integration 
+## Building API Integrations 
 
 If you're building a deep integration with Mattermost, for example a mobile native client, and there is a driver available to support the programming language you are using, it's best to use the driver available to access the [Mattermost Web Service APIs](http://docs.mattermost.com/developer/web-service.html).
 
@@ -46,6 +62,10 @@ If no driver is available for the programming language of your choice, you can v
 
 There are a wide range of [installation guides](http://www.mattermost.org/installation/) for setting up your own Mattermost server on which to develop and test your integrations. 
 
+## Mattermsot Golang Bot Sample (Driver Example) 
 
+Mattermost provides a [Golang Bot Sample](https://github.com/mattermost/mattermost-bot-sample-golang) to demonstration how Mattermost works with the Golang driver and the APIs.
 
+## Community Apps and Integrations 
 
+The Mattermost community has shared back dozens of open source integrations showing how to use webhooks, drivers and APIs in different ways. See the [Community Applications Directory](https://www.mattermost.org/community-applications/) to learn more. 
