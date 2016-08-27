@@ -3,7 +3,7 @@
 Enterprise Edition Installation and Upgrade
 ===========================================
 
-Mattermost Enterprise Edition is free to use with enterprise features not enabled. You can enable enteprise features by purchasing an  subscription and entering a license key, or using a trial license. 
+Mattermost Enterprise Edition is free to use with enterprise features not enabled. You can enable enteprise features by `purchasing a license key <https://about.mattermost.com/pricing/>`_, or using a `trial license <https://about.mattermost.com/trial/>`_. 
 
 - `Compare Mattermost Enterprise Edition features <https://about.mattermost.com/features/>`_
 - `Request a trial license <https://about.mattermost.com/trial/>`_
@@ -17,7 +17,7 @@ To install Mattermost Enterprise Edition directly please use one of the followin
 1. `Production Enterprise Edition on Ubunutu 14 <http://docs.mattermost.com/install/ee-prod-ubuntu.html>`_
 2. `Production Enterprise Edition on RHEL 7.1 <http://docs.mattermost.com/install/ee-prod-rhel-7.html>`_
 3. `Production Enterprise Edition on RHEL 6.6 <http://docs.mattermost.com/install/ee-prod-rhel-6.html>`_
-
+4. `Production Enterprise Edition on Docker using Docker Compose <https://docs.mattermost.com/install/prod-docker.html#production-docker-on-ubuntu-with-enterprise-edition>`_
 
 
 Upgrading Enterprise Edition to a newer version
