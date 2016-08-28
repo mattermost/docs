@@ -27,51 +27,6 @@ Follow these steps to configure Mattermost to use GitLab as a single-sign-on (SS
 6. Restart your Mattermost server to see the changes take effect.
 
 Notes: 
-- It may be possible to connect to [Active Directory/LDAP using GitLab SSO](http://doc.gitlab.com/ee/administration/auth/ldap.html), but this configuration is not in scope for the Mattermost test suite, and is not officially supported. 
-- Using GitLab SSO to connect to SAML login is not expected to work because it requires multiple redirects on login, which is not supported. 
-
-## Unofficial Single-Sign-On
-
-Given the similarities of GitHub and GitHub Enterprise authentication mechanisms to GitLab, Mattermost users can "unofficially" login with GitHub and GitHub Enterprise accounts. Each of the standards work using the GitLab user interface, but the user interface will visually display GitLab icons and wording, rather than "GitHub" or "GitHub Enterprise".  
-
-Instructions for unofficial GitHub and GitHub Enterprise authentication setup are as follows: 
-
-### GitHub (unofficial)
-
-Follow these steps to configure Mattermost to use Github as an unofficial single-sign-on (SSO) service for team creation, account creation and sign-in using the GitLab SSO interface.
-
-1. Login to your GitHub account and under **Profile Settings** go to the **Applications** section.
-2. Add a new application called "Mattermost" with the following as Authorization callback URL:
-    * `<your-mattermost-url>` (example: http://localhost:8065)
-
-3. Submit the application and copy the given _Id_ and _Secret_ into the appropriate _GitLabSettings_ fields in `config/config.json`
-
-4. Also in `config/config.json`, set _Enable_ to `true` for the _gitlab_ section, leave _Scope_ blank and use the following for the endpoints:
-    * _AuthEndpoint_: `https://github.com/login/oauth/authorize`
-    * _TokenEndpoint_: `https://github.com/login/oauth/access_token`
-    * _UserApiEndpoint_: `https://api.github.com/user`
-
-6. (Optional) If you would like to force all users to sign-up with GitHub only, in the _ServiceSettings_ section of `config/config.json` set _DisableEmailSignUp_ to `true`.
-
-6. Restart your Mattermost server to see the changes take effect.
-
-7. Tell the users to set their public email for GitHub at the [public profile page](https://github.com/settings/emails). Mattermost uses the email to create account.
-
-### GitHub Enterprise (unofficial)
-
-Follow these steps to configure Mattermost to use Github Enterprise as an unofficial single-sign-on (SSO) service for team creation, account creation and sign-in using the GitLab SSO interface.
-
-1. Login to your GitHub Enterprise account and under **Profile Settings** go to the **Applications** section.
-2. Add a new application called "Mattermost" with the following as Authorization callback URL:
-    * `<your-mattermost-url>` (example: http://localhost:8065)
-
-3. Submit the application and copy the given _Id_ and _Secret_ into the appropriate _GitLabSettings_ fields in `config/config.json`
-
-4. Also in `config/config.json`, set _Enable_ to `true` for the _gitlab_ section, leave _Scope_ blank and use the following for the endpoints:
-    * _AuthEndpoint_: `https://<your-github-enterprise-url>/oauth/authorize` (example https://github.com/oauth/authorize)
-    * _TokenEndpoint_: `https://<your-github-enterprise-url>/oauth/access_token`
-    * _UserApiEndpoint_: `https://<your-github-enterprise-url>/api/v3/user`
-
-5. (Optional) If you would like to force all users to sign-up with GitHub Enterprise only, in the _ServiceSettings_ section of config/config.json set _DisableEmailSignUp_ to `true`.
-
-6. Restart your Mattermost server to see the changes take effect.
+- Only the default GitLab SSO is officially supported. 
+   - It may be possible to connect to use GitLab SSO in some cases with AD, LDAP, SAML or MFA add-ons, but because of the special logic required they're not officially supported and are known not to work on some experiences.
+   - If having official AD, LDAP, SAML or MFA support is critical to your enterprise, please consider purchasing [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/). Given all the features of Mattermost, it's quite affordable. 
