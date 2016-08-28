@@ -129,8 +129,9 @@ This site offers documentation on User Help, Installation, Deployment, Administr
    :caption: Team Handbook
    :glob:
 
+   process/overview*
    process/release-process*
-   process/community*
+   process/*
 
 .. toctree::
    :maxdepth: 1
