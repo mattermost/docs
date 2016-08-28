@@ -126,11 +126,11 @@ This site offers documentation on User Help, Installation, Deployment, Administr
 
 .. toctree::
    :maxdepth: 1
-   :caption: Development Process
+   :caption: Team Handbook
    :glob:
 
    process/release-process*
-   process/*
+   process/community*
 
 .. toctree::
    :maxdepth: 1
