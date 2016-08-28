@@ -2,10 +2,13 @@
 Meetings 
 =========
 
-This document summarizes norms for public and private meetings for the Mattermost community and for Mattermost Inc. 
+This document summarizes norms for public and private meetings for the Mattermost community and for Mattermost Inc. Where possible, 
+
+Open Meetings 
+----------------------------------------------------
 
 Developer Meeting
-----------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Open to the public** - (Developers - 1-2 hours/week) Wednesdays 10:00 UTC-7 
 
@@ -21,13 +24,58 @@ Procedure:
 
 To review past agendas for the Developer meeting in the `Developers channel <https://pre-release.mattermost.com/core/channels/developers>`_ click on the ``#devmeeting`` hashtag in any of the meeting notes, or search for it directly. 
 
+
+Mattermost Inc-only Meetings 
+----------------------------------------------------
+
+For confidentiality of customers, internal process meetings are limited to Mattermost Inc. only. 
+
+
+Sprint Planning 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Mattermost Inc-only** - (Developer - 5-10 minutes/week) Tuesdays between 10:00 and 11:00 UTC-7 
+
+- Goal: Review and discuss tickets selected by Developer for next sprint
+- Attendees: (required) Each developer in sequence, plus spint planngers (one dev, one PM) (optional) Mattermost Inc. colleagues welcome
+
+Note: 
+
+- This meeting uses a special `Mattermost Inc only BACKLOG query <https://mattermost.atlassian.net/secure/RapidBoard.jspa?rapidView=1&view=planning.nodetail&quickFilter=7>`_ showing tickets by sprint, with tabs across the top for each developer. 
+- Prior to meeting, developers drag and drop tickets from their backlog to next sprint based on team priorities 
+
+     - Developers are welcome at any time to discuss reassigning tickets with colleagues using common sense (if both are okay with the change, add "triage" tag to fix version with comment and triage team will review to make the change)
+- During the meeting, developer's next sprint is reviewed, discussed, possibly adjusted and locked
+
+Procedure: 
+
+1. (Chair): Just prior to meeting, post **Hangout** link in `Standup private group <https://pre-release.mattermost.com/core/channels/stand-up>`_
+2. (Developer): Replies in Standup private group when sprint is ready for review
+3. (Chair): Will (at)mention next developer to join **Hangout** to review tickets. Developer joins, tickets are discussed and finalized for next sprint. Developer leaves **Hangout** and next developer rotates in. 
+
 Triage Meeting
-----------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Mattermost Inc-only** - (Leads - 1-3 hours/week) Monday, Wednesday, Friday 09:00 UTC-7 
+**Mattermost Inc-only** - (Triage team - 1-3 hours/week) Monday, Wednesday, Friday 09:00 UTC-7 
 
-- Goal: Review, prioritize and assign owners to tickets needing triage 
-- Attendees: (required) One developer, one product manager from Mattermost Inc., typically leads (optional) any other Mattermost Inc. colleagues
+- Goal: To provide consistent review, prioritization and ownership assignment of all tickets 
+- Attendees: (required) dev and PM from Mattermost Inc., typically leads (optional) other Mattermost Inc. colleagues welcome
+
+Note: 
+
+- ONLY TRIAGE TEAM should set or change the **Fix Verion** of a ticket. 
+
+    - When tickets are first created, they go to triage to be reviewed for clarity and priority and assigned a **Fix Version**. Unclear tickets may be assigned to their creator for more information.
+    - The **Fix Version** determines the sequence in which tickets are addressed and triage team is accountable for that sequence. 
+    
+- If you're ever unsure about a ticket (if it's not clear, or doesn't seem appropriate) add a comment and add **triage** to the **Fix Version** field, which will trigger a review by the triage team in 1-2 working days.  
+
+    - It's the responsibility of the triage team to make sure tickets are clear before they're assigned a **Fix Version**.
+    
+- ONLY TRIAGE TEAM can close a ticket resolved as **Won't Fix** or **Won't do**
+
+    - These tickets resolved in such a way are reviewed by triage team. 
+    - Only resolve a ticket as **Won't Fix** or **Won't Do** if you're highly confident it's the correct decision, otherwise, add "triage" to Fix Version for review. In either case, include a comment with your reason.  
 
 Procedure: 
 
@@ -38,7 +86,7 @@ Procedure:
 3. (Attendees): Review `query for tickets needing triage <https://mattermost.atlassian.net/browse/PLT-1203?filter=10105>`_ and assign owner and fix version 
 
 Platform Meeting 
-----------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Mattermost Inc-only** - (Platform colleagues - 1-2 hours/week) Friday's at 10:10 UTC-7 after platform team standup.
 
@@ -74,7 +122,6 @@ Procedure:
     - Add **Follow-ups** from previous meeting 
     - Add **New items** queued in `Platform private group <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only)
 
-
 Meeting Agenda: 
 
 - **Warm-up** - Currently: "Share something interesting about your home town."
@@ -93,7 +140,7 @@ Post Meeting:
 - Follow-up items are posted to the  `Platform private group <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only)
 
 Meeting Elements
-================
+-----------------------
 
 Here we summarize meeting elements that can be re-used for meetings across teams. 
 
