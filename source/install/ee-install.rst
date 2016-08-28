@@ -3,7 +3,7 @@
 Enterprise Edition Installation and Upgrade
 ===========================================
 
-Mattermost Enterprise Edition is free to use with enterprise features not enabled. You can enable enteprise features by `purchasing a license key <https://about.mattermost.com/pricing/>`_, or using a `trial license <https://about.mattermost.com/trial/>`_. 
+Mattermost Enterprise Edition is free to use in "team mode" without enterprise features enabled. Enable enteprise features using a `trial license <https://about.mattermost.com/trial/>`_ or by `purchasing a license key <https://about.mattermost.com/pricing/>`_. 
 
 - `Compare Mattermost Enterprise Edition features <https://about.mattermost.com/features/>`_
 - `Request a trial license <https://about.mattermost.com/trial/>`_
@@ -23,12 +23,12 @@ To install Mattermost Enterprise Edition directly please use one of the followin
 Upgrading Enterprise Edition to a newer version
 ---------------
 
-1. Follow the procedure to `upgrade Enterprise Edition to a newer version. <https://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition>`_
+- Upgrade previous version of Mattermost Enterprise Edition to later versions by following the `upgrade procedure. <https://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition>`_
 
 Upgrading to Enterprise Edition from Mattermost Team Edition 
 ---------------
 
-1. Follow the procedure to `upgrade Team Edition to Enterprise Edition. <http://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition>`_
+- The open source Mattermost Team Edition can be upgraded to the commercial Mattermost Enterprise Edition via `upgrade procedure <http://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition>`_.
 
 If you need to migrate Team Edition prior to install, `please follow the migration guide. <http://docs.mattermost.com/administration/migrating.html>`_
 
