@@ -11,9 +11,7 @@ The platform lets users share messages and files across PCs, phones and tablets 
 
 **Mattermost Team Edition** is an open source, self-hosted alternative to propretiary SaaS messaging. Mattermost brings all your team communication into one place, making it searchable and accessible anywhere. Deploys as single Linux binary on MySQL or PostgreSQL under an MIT license from `mattermost.org/download`_.
 
-**Mattermost Enterprise Edition** is a commercial enterprise messaging solution offering advanced features including integration with corporate directories, compliance and auditing support, and sophisticated configurations for horizontal and multi-region scaling. More information is available by `contacting Mattermost, Inc.`_
-
-Read more about the `Mattermost product direction online.`_
+**Mattermost Enterprise Edition** is a commercial enterprise messaging solution offering advanced features including integration with corporate directories, compliance and auditing support, and sophisticated configurations for horizontal and multi-region scaling. You can `download and try it today.`_
 
 This site offers documentation on User Help, Installation, Deployment, Administration, Development and Integrations.
 
@@ -21,7 +19,8 @@ This site offers documentation on User Help, Installation, Deployment, Administr
 
 .. _`mattermost.org/download`: http://www.mattermost.org/download/
 .. _contacting Mattermost, Inc.: https://about.mattermost.com/contact/
-.. _Mattermost product direction online.: https://about.mattermost.com/direction/
+.. _download and try it today.: https://docs.mattermost.com/install/ee-install.html
+
 .. toctree::
    :maxdepth: 1
    :caption: Getting Started
