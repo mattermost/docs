@@ -7,9 +7,10 @@ This document summarizes norms for public and private meetings for the Mattermos
 Developer Meeting
 ----------------
 
-**Open to the public** - Wednesdays 10:00 UTC-7 
+**Open to the public** - (Developers - 1-2 hours/week) Wednesdays 10:00 UTC-7 
 
 - Goal: Discuss developer issues across Mattermost Inc, key contributors and the contributor community.
+- Attendees: (required) Mattermost Inc developers, (optional) key contributors, contributors and anyone who would like to join.
 
 Procedure: 
 
@@ -20,16 +21,32 @@ Procedure:
 
 To review past agendas for the Developer meeting in the `Developers channel <https://pre-release.mattermost.com/core/channels/developers>`_ click on the ``#devmeeting`` hashtag in any of the meeting notes, or search for it directly. 
 
+Triage Meeting
+----------------
+
+**Mattermost Inc-only** - (Leads - 1-3 hours/week) Monday, Wednesday, Friday 09:00 UTC-7 
+
+- Goal: Review, prioritize and assign owners to tickets needing triage 
+- Attendees: (required) One developer, one product manager from Mattermost Inc., typically leads (optional) any other Mattermost Inc. colleagues
+
+Procedure: 
+
+1. (Chair): Just prior to meeting, post **Hangout** link in `Standup private group <https://pre-release.mattermost.com/core/channels/stand-up>`_ (Mattermost Inc. only) 
+
+2. (Attendees): Join the link 
+
+3. (Attendees): Review `query for tickets needing triage <https://mattermost.atlassian.net/browse/PLT-1203?filter=10105>`_ and assign owner and fix version 
+
 Platform Meeting 
 ----------------
 
-**Mattermost Inc-only** - Friday's at 10:10 UTC-7 after platform team standup.
+**Mattermost Inc-only** - (Platform colleagues - 1-2 hours/week) Friday's at 10:10 UTC-7 after platform team standup.
 
 Regular team meeting for platform team at Mattermost Inc.
 
 - Goal: Increase team output by effectively informing and reviewing priority projects and next steps.
 - Scope: Mattermost Inc-only meeting given confidential customer issues discussed
-
+- Attendees: Mattermost Inc colleagues working on platform
 Procedure: 
 
 1. (Chair) 3-hours before standup, post reminders in `Platform private group <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only)
