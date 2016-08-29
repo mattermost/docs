@@ -1,4 +1,4 @@
-# GitLab Single-Sign-On Setup
+# GitLab Single-Sign-On 
 ___
 Single-Sign-On can be configured with the following services.
 
