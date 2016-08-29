@@ -43,7 +43,6 @@ Mattermost is modern communication behind your firewall.
    :caption: Deployment
    :glob:
 
-   deployment/deployment*
    deployment/on-boarding*
    deployment/sso-gitlab*
    deployment/sso-google*
@@ -61,8 +60,6 @@ Mattermost is modern communication behind your firewall.
    :caption: Administration
    :glob:
 
-   administration/overview*
-   overview/security*
    administration/command*
    administration/config*
    administration/team-settings.md
@@ -76,27 +73,13 @@ Mattermost is modern communication behind your firewall.
    :caption: Integrations
    :glob:
 
-   integrations/overview*
-   integrations/zapier*
-   integrations/*
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Developer Guide
-   :glob:
-
    developer/api*
    developer/web-service*
    developer/webhooks*
    developer/slash*
-   developer/developer*
-   developer/contribution*
-   developer/fx*
-   developer/style*
    developer/integration*
-   developer/localization-process.rst
-   developer/message-attachments*
-   developer/running-mattermost*
+   integrations/zapier*
+   integrations/*
 
 .. toctree::
    :maxdepth: 1
@@ -134,6 +117,20 @@ Mattermost is modern communication behind your firewall.
    help/settings/channel-settings.md
    help/settings/team-settings.md
    help/settings/*
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Contributor's Guide
+   :glob:
+
+   developer/message-attachments*
+   developer/contribution*
+   developer/developer-setup.html
+   developer/running-mattermost*
+   developer/style*
+   developer/fx*
+   developer/localization-process.rst
 
 .. toctree::
    :maxdepth: 1
