@@ -1,4 +1,4 @@
-Compliance exports with oversight protection 
+Compliance Reporting and Oversight
 ----
 
 Available in `Enterprise Edition E20 <https://about.mattermost.com/pricing/>`_
