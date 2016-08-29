@@ -3,17 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Mattermost Overview
+Mattermost Documentation 
 -------------------
 Mattermost is modern communication behind your firewall.
-
-The platform lets users share messages and files across PCs, phones and tablets with continuous archiving and instant search, and supports notifications and integrations with your existing tools.
-
-**Mattermost Team Edition** is an open source, self-hosted alternative to propretiary SaaS messaging. Mattermost brings all your team communication into one place, making it searchable and accessible anywhere. Deploys as single Linux binary on MySQL or PostgreSQL under an MIT license from `mattermost.org/download`_.
-
-**Mattermost Enterprise Edition** is a commercial enterprise messaging solution offering advanced features including integration with corporate directories, compliance and auditing support, and sophisticated configurations for horizontal and multi-region scaling. You can `download and try it today.`_
-
-This site offers documentation on User Help, Installation, Deployment, Administration, Development and Integrations.
 
 -----
 
