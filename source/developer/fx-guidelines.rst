@@ -1,4 +1,4 @@
-UX Guidelines
+User Experience Guidelines
 ========================
 
 The purpose of the Mattermost User Experience Guidelines ("UX Guidelines") is to deliver a level of usability and consistency that turns users of Mattermost software into fans of the Mattermost experience.
