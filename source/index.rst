@@ -107,7 +107,7 @@ Mattermost is modern communication behind your firewall.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Getting Started
+   :caption: Help: Getting Started
    :glob:
 
    help/getting-started/signing-in.md
@@ -120,7 +120,7 @@ Mattermost is modern communication behind your firewall.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Messaging
+   :caption: Help: Messaging
    :glob:
 
    help/messaging/sending-messages.md
@@ -133,7 +133,7 @@ Mattermost is modern communication behind your firewall.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Settings
+   :caption: Help: Settings
    :glob:
 
    help/settings/account-settings.md
