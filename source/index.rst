@@ -19,10 +19,10 @@ Mattermost is modern communication behind your firewall.
    :caption: Overview
    :glob:
 
-   administration/overview-tech*
+   overview/product*
    overview/security*
    deployment/deployment*
-   integrations/overview*
+   overview/integrations*
    
 .. toctree::
    :maxdepth: 1
