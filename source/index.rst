@@ -125,7 +125,7 @@ Mattermost is modern communication behind your firewall.
    :glob:
 
    developer/contribution*
-   developer/developer-setup.html
+   developer/developer-setup*
    developer/running-mattermost*
    developer/style*
    developer/fx*
