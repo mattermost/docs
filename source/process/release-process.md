@@ -230,7 +230,7 @@ If a bug fix release is required, run through the following steps again:
         - [Test Gitlab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/PLT-2197) 
         - [Push to private cloud customers](https://mattermost.atlassian.net/browse/PLT-2199)
         - [Push to private long-running feature branches](https://mattermost.atlassian.net/browse/PLT-2199)
-        - [Test upgrade](https://mattermost.atlassian.net/browse/PLT-2344) to latest release based on [upgrade guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide)
+        - [Test upgrade](https://mattermost.atlassian.net/browse/PLT-3940) to latest release based on [upgrade guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide)
         - [RC Build Testing for core team](https://mattermost.atlassian.net/browse/PLT-2208)
         - [Upgrade gitlab.mattermost.com to RC1](https://mattermost.atlassian.net/browse/PLT-3116)
         - [Push final build to gitlab.mattermost.com](https://mattermost.atlassian.net/browse/PLT-3117)
