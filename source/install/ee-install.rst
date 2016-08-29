@@ -1,6 +1,6 @@
 ..  _ee-install:
 
-Enterprise Edition Installation and Upgrade
+Enterprise Install and Upgrade 
 ===========================================
 
 Mattermost Enterprise Edition is free to use in "team mode" without enterprise features enabled. Enable enteprise features using a `trial license <https://about.mattermost.com/trial/>`_ or by `purchasing a license key <https://about.mattermost.com/pricing/>`_. 
