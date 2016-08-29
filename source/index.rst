@@ -21,43 +21,17 @@ This site offers documentation on User Help, Installation, Deployment, Administr
 .. _contacting Mattermost, Inc.: https://about.mattermost.com/contact/
 .. _download and try it today.: https://docs.mattermost.com/install/ee-install.html
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Getting Started
-   :glob:
-
-   help/getting-started/signing-in.md
-   help/getting-started/messaging-basics.md
-   help/getting-started/configuring-notifications.md
-   help/getting-started/organizing-conversations.md
-   help/getting-started/searching.md
-   help/getting-started/creating-teams.md
-   help/getting-started/managing-members.md
 
 .. toctree::
    :maxdepth: 1
-   :caption: Messaging
+   :caption: Overview
    :glob:
 
-   help/messaging/sending-messages.md
-   help/messaging/reading-messages.md
-   help/messaging/mentioning-teammates.md
-   help/messaging/formatting-text.md
-   help/messaging/attaching-files.md
-   help/messaging/executing-commands.md
-   help/messaging/*
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Settings
-   :glob:
-
-   help/settings/account-settings.md
-   help/settings/theme-colors.md
-   help/settings/channel-settings.md
-   help/settings/team-settings.md
-   help/settings/*
-
+   administration/overview-tech*
+   overview/security*
+   deployment/deployment*
+   integrations/overview*
+   
 .. toctree::
    :maxdepth: 1
    :caption: Install Guides
@@ -139,4 +113,39 @@ This site offers documentation on User Help, Installation, Deployment, Administr
 
    integrations/*
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Getting Started
+   :glob:
 
+   help/getting-started/signing-in.md
+   help/getting-started/messaging-basics.md
+   help/getting-started/configuring-notifications.md
+   help/getting-started/organizing-conversations.md
+   help/getting-started/searching.md
+   help/getting-started/creating-teams.md
+   help/getting-started/managing-members.md
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Messaging
+   :glob:
+
+   help/messaging/sending-messages.md
+   help/messaging/reading-messages.md
+   help/messaging/mentioning-teammates.md
+   help/messaging/formatting-text.md
+   help/messaging/attaching-files.md
+   help/messaging/executing-commands.md
+   help/messaging/*
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Settings
+   :glob:
+
+   help/settings/account-settings.md
+   help/settings/theme-colors.md
+   help/settings/channel-settings.md
+   help/settings/team-settings.md
+   help/settings/*
