@@ -85,6 +85,35 @@ Procedure:
 
 3. (Attendees): Review `query for tickets needing triage <https://mattermost.atlassian.net/browse/PLT-1203?filter=10105>`_ and assign owner and fix version 
 
+Leads Meeting
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Mattermost Inc-only** - (Leads - 1-3 hours/week) Monday, Wednesday, Friday after Triage Meeting (09:00 UTC-7)
+
+- Goal: Address leadership and process topics 
+- Attendees: (required) dev, PM and community/marketing leads from Mattermost Inc. (optional) other Mattermost Inc. colleagues welcome
+
+Note: 
+
+- Decisions should go to Leads meetings when there is lack of clarify or ownership
+
+    - When possible, decision-making should belong to the people closes to details
+    - Individual developers or PMs should make most decisions, and raise to developer or PM team if things are unclear, and go to Leads if lack of clarify persists.
+    
+- To queue an item for Leads ask the dev or PM lead
+
+- Leads is also used for cross-discipline Q&A
+
+    - Rather than randomize individual contributors, cross-discipline discussion (e.g. marketing to PM, community to dev, etc.) can happen in leads
+
+Procedure: 
+
+1. (PM & Dev Leads): Stay in **Hangout** after Triage meeting and message community/marketing lead to join. 
+
+2. (Attendees): Discuss agenda items in Leads private group
+
+3. (Attendees): Respond to respective colleagues on decisions from Leads meeting 
+
 Platform Meeting 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
