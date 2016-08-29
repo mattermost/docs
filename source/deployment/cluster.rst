@@ -1,4 +1,4 @@
-High Availability (Beta)
+High Availability (E20) - Beta
 ===============================
 
 *Available in Enterprise Edition E20.*
