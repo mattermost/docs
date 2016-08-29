@@ -1,4 +1,4 @@
-## SAML Single-Sign-On Setup (Enterprise) 
+## SAML Single-Sign-On (E20) 
 
 ### Overview
 
