@@ -30,3 +30,5 @@ Notes:
 - Only the default GitLab SSO is officially supported. 
    - It may be possible to connect to use GitLab SSO in some cases with AD, LDAP, SAML or MFA add-ons, but because of the special logic required they're not officially supported and are known not to work on some experiences.
    - If having official AD, LDAP, SAML or MFA support is critical to your enterprise, please consider purchasing [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/). Given all the features of Mattermost, it's quite affordable. 
+- See [GitLab section of Mattermost forum for troubleshooting help](https://forum.mattermost.org/c/general/gitlab).
+- See [GitLab Omnibus documentation for installing GitLab Mattermost](http://doc.gitlab.com/omnibus/gitlab-mattermost/).   
