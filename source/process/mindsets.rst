@@ -28,3 +28,17 @@ When you rush to get something done quickly, it can actually increase the time a
 
 Rushing means a higher chance of missing things that need to be done, and the cost of doing them later is significantly higher because you have to re-create your orignal setup to add on the work. 
 
+Assumption or Emotion 
+~~~~~
+
+There are only two reasons why people disagree, either: 
+
+1. There is an **emotion** in the way (and probing for this typically solves ii)
+2. People have different underlying **assumptions**
+
+When you disagree, try ask questions until you find where your underlying assumptions differ, then: 
+
+a. Try to find a way to replace assumptions with facts
+b. See if you can agree on a decision after understanding each other's assumptions 
+
+People here are generally very smart, and it's worthwhile to understand where they're coming from. 
