@@ -1,4 +1,4 @@
-Zapier and Mattermost
+Zapier Integration
 ===================
 
 `Zapier <https://zapier.com/>`_ is a service that automates tasks between web apps. You can create zaps that contains a trigger and an action for a task that you want to perform repeatedly. Zapier regularly checks your trigger for new data and automatically performs the action for you.
