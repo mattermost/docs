@@ -1,4 +1,4 @@
-## Active Directory/LDAP Setup (Enterprise) 
+## Active Directory/LDAP Setup (E10+) 
 
 ### Overview 
 
