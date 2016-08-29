@@ -1,4 +1,4 @@
-# Office 365 Single-Sign-On Setup (Enterprise)
+# Office 365 Single-Sign-On (E20)
 ___
 
 Follow these steps to configure Mattermost to use Office 365 as a single-sign-on (SSO) service for team creation, account creation and sign-in.
