@@ -19,10 +19,10 @@ Mattermost is modern communication behind your firewall.
    :caption: Overview
    :glob:
 
-   administration/overview-tech*
+   overview/product*
    overview/security*
    deployment/deployment*
-   integrations/overview*
+   overview/integrations*
    
 .. toctree::
    :maxdepth: 1
@@ -77,9 +77,9 @@ Mattermost is modern communication behind your firewall.
    developer/web-service*
    developer/webhooks*
    developer/slash*
-   developer/integration*
+   developer/message-attachments*
    integrations/zapier*
-   integrations/*
+   developer/integration*
 
 .. toctree::
    :maxdepth: 1
@@ -124,9 +124,8 @@ Mattermost is modern communication behind your firewall.
    :caption: Contributor's Guide
    :glob:
 
-   developer/message-attachments*
    developer/contribution*
-   developer/developer-setup.html
+   developer/developer-setup*
    developer/running-mattermost*
    developer/style*
    developer/fx*
