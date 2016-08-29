@@ -73,6 +73,15 @@ Mattermost is modern communication behind your firewall.
 
 .. toctree::
    :maxdepth: 1
+   :caption: Integrations
+   :glob:
+
+   integrations/overview*
+   integrations/zapier*
+   integrations/*
+
+.. toctree::
+   :maxdepth: 1
    :caption: Developer Guide
    :glob:
 
@@ -88,22 +97,6 @@ Mattermost is modern communication behind your firewall.
    developer/localization-process.rst
    developer/message-attachments*
    developer/running-mattermost*
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Team Handbook
-   :glob:
-
-   process/overview*
-   process/release-process*
-   process/*
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Integrations
-   :glob:
-
-   integrations/*
 
 .. toctree::
    :maxdepth: 1
@@ -141,3 +134,12 @@ Mattermost is modern communication behind your firewall.
    help/settings/channel-settings.md
    help/settings/team-settings.md
    help/settings/*
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Team Handbook
+   :glob:
+
+   process/overview*
+   process/release-process*
+   process/*
