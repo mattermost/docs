@@ -40,7 +40,11 @@ We offer modern communication from behind your firewall. Your users can securely
 
 - Chinese (Simplified and Traditional), Dutch, English, French, German, Japanese, Korean, Portuguese (Brazilian), Spanish
 
-## Release Numbering 
+## Release Schedule
+
+Mattermost releases new major builds monthly on the 16th from http://www.mattermost.org/download/. 
+
+### Release Numbering 
 
 Mattermost numbers releases based on the following format: 
 
@@ -54,28 +58,6 @@ Mattermost numbers releases based on the following format:
 
 - Minor Build Number: Indicates a bug fix or security release (e.g. 1.2.5, 1.2.6)
    - This number is incremented for high priority bug fixes or security releases and does not typically contain significant code changes.
-
-## Release Schedule
-
-Mattermost releases new major builds monthly on the 16th from http://www.mattermost.org/download/. 
-
-## Components 
-
-Following installation, Mattermost state is stored in two places, a **system configuration** file and the **Mattermost database**. 
-
-### System Configuration File 
-
-This file, located in `config/config.json` stores Mattermost system settings. This file should be backed up before any upgrade or migration attempt. 
-
-### Mattermost Database 
-
-The Mattermost database set up during installation stores user and system data. This database is versioned and the Mattermost server has two requirements for the database version: 
-
-1. The major build number of the executable is THE SAME as the major build number of the database.
-   - For example, if the executable were 1.3.x and the database version was 1.3.x, Mattermost runs properly
-2. The major build number of the executable is ONE HIGHER than the major build number of the database.
-   - For example, if the executable were 1.4.x and the database version was 1.3.x, then when run the executable would detect the version difference and upgrade the database to the same version as the executable. 
-
 
 
 
