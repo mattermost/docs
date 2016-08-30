@@ -137,7 +137,7 @@ Next, we export the identity provider certificate, which will be later uploaded 
 
 ![adfs_21_export_idp_cert_wizard.PNG](../../source/images/adfs_21_export_idp_cert_wizard.PNG)
 
-27 - In the **Certificate Export Wizard** screen, click **Browser** to specify the location you want the Identity Provider Certificate to be exported, and specify the file name.
+27 - In the **Certificate Export Wizard** screen, click **Browse** to specify the location you want the Identity Provider Certificate to be exported, and specify the file name.
 
 ![adfs_21-2_export_idp_cert_wizard.PNG](../../source/images/adfs_21-2_export_idp_cert_wizard.PNG)
 
