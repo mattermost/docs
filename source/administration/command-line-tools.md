@@ -2,17 +2,30 @@
 
 From the directory where the Mattermost platform is installed a `platform` command is available for configuring the system, including: 
 
+#### General Administration 
+
 - Creating teams
 - Creating users
 - Assigning roles to users 
 - Reseting user passwords
 - Inviting users to teams
-- Inviting users to channels (Enterprise)
-- Removing users from channels (Enterprise)
-- Listing all public channels and private groups for a team (Enterprise)
-- Restoring previously deleted channels (Enterprise)
+
+#### Advanced Administration
+
 - Permanently deleting users (use cautiously - database backup recommended before use)
 - Permanently deleting teams (use cautiously - database backup recommended before use)
+
+#### Advanced Automation
+
+_Available in Enterprise Edition E10 and higher_ 
+
+- Inviting users to channels 
+- Removing users from channels 
+- Listing all public channels and private groups for a team 
+- Restoring previously deleted channels 
+- Migrating sign-in options 
+- Resetting multi-factor authentication for a user 
+
 
 Typing `platform -help` brings up the below documentation on usage. 
 
