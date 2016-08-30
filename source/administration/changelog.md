@@ -2,6 +2,23 @@
 
 This changelog summarizes updates to [Mattermost Team Edition](http://www.mattermost.org/), an open source team messaging solution released monthly under an MIT license, and [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/), a commercial upgrade offering enterprise messaging for large organizations.
 
+## Release v3.4.0
+
+Expected release date: 2016-08-16
+
+### Highlights
+
+### Improvements
+
+#### User Interface
+- User profile popover now shows both username and full name if available
+- Improved design of signup pages when multiple account creation methods are enabled
+
+### Bug Fixes
+
+### Compatibility  
+Changes from v3.3 to v3.4:
+
 ## Release v3.3.0
 
 Expected release date: 2016-08-16
