@@ -21,7 +21,7 @@ Otherwise, see step-by-step instructions:
 Mac OS X and Windows 10
 -------
 
-1. Install [Docker for Mac](http://docs.docker.com/installation/mac/) or [Docker for Windows](https://docs.docker.com/engine/installation/windows/)
+1. Install `Docker for Mac <http://docs.docker.com/installation/mac/>`_ or `Docker for Windows <http://docs.docker.com/installation/windows/>`_
 2. Run:
    ``docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview``
 3. When docker is done fetching the image, open ``http://localhost:8065/``
