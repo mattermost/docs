@@ -72,7 +72,7 @@ If you'd like to review and verify translations prior to achieving Beta-quality 
 
 2 - Download a copy of your translations to your local machine.
 
-.. image:: ../../source/images/translations_download.PNG
+.. image:: ../../source/images/translations_download.png
 
 3 - Use `Mattermosti18n <https://github.com/rodrigocorsi2/mattermosti18n#convert-po---json>`_ to convert Pootle's output into JSON files.
 
@@ -104,7 +104,7 @@ If you're interested in contributing to the process, please join the `Mattermost
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
 | Nederlands - Dutch                       | `Ron Hartman <https://github.com/rononline>`_ , `Wai Yi Leung <https://github.com/wyleung>`_                          |                                                                                                      |
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
-| Português do Brasil - Portuguese         | `Rodrgio Corsi <https://github.com/rodrigocorsi2>`_                                                                   | `Carlos Tadeu Panato Junior <https://github.com/ctadeu>`_                                            |
+| Português do Brasil - Portuguese         | `Rodrgio Corsi <https://github.com/rodrigocorsi2>`_                                                                   | `Carlos Tadeu Panato Junior <https://github.com/cpanato>`_                                           |
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
 | 中文 (简体) - Simplified Chinese         | `aeomin <http://translate.mattermost.com/user/aeomin/>`_                                                              |                                                                                                      |
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
