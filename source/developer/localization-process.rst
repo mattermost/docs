@@ -72,7 +72,7 @@ If you'd like to review and verify translations prior to achieving Beta-quality 
 
 2 - Download a copy of your translations to your local machine.
 
-.. image:: ../../source/images/translations_download.png
+.. image:: ../../source/images/translations_download.PNG
 
 3 - Use `Mattermosti18n <https://github.com/rodrigocorsi2/mattermosti18n#convert-po---json>`_ to convert Pootle's output into JSON files.
 
