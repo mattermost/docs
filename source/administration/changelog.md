@@ -90,7 +90,7 @@ The following config settings will only work on servers with an Enterprise Licen
      - Deauthorizes a user on an OAuth 2.0 app, where `clientId` corresponds to the application. Returns status OK on success or an AppError on fail. 
  - Added `POST` at `/oauth/"+clientId+"/regen_secret`
      - Generates a new OAuth App Client Secret, where `clientId` corresponds to the application. Returns an OAuth2 App on success. Must be authenticated as a user and the same user who registered the app or a System Admin. 
- - Added POST at /admin/ldap_test
+ - Added `POST` at `/admin/ldap_test`
      - Will run a connection test on the current LDAP settings. It will return the standard OK response if settings work. Otherwise it will return an appropriate error.
 
 ### Known Issues
