@@ -44,3 +44,18 @@ a. See if you can agree on assumptions through discussion, fact finding or apply
 b. See if merely understanding each other's assumptions lets you get to a share decision
 
 While this mindset won't work for everyone, it's helped resolve complex decisions in our company's history. 
+
+
+Mini-boss, End-boss
+~~~~~
+
+When reviewing user interface design, pull requests, or marketing materials, there are ideally two reviewers: 
+
+- **Mini-boss**: Reviewer with less experience to do the first review
+- **End-boss**: More experienced reviewer to do the final review
+
+This system has several benefits: 
+
+1. The Mini-boss provides feedback on the most obvious issues, allowing the End-boss to focus on nuanced issues the Mini-boss didn't find.
+2. The Mini-boss learns from the End-boss feedback, understanding what was missed, and becoming a better reviewer.
+3. Eventually the Mini-boss will be as skilled at reviewing as the End-boss, who will have nothing futher to add after the Mini-boss review. At this point, the Mini-boss becomes an End-boss, ready to train a new Mini-boss.
