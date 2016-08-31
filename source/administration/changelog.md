@@ -58,6 +58,9 @@ Improved Notifications and Status Indicators
 ### Compatibility  
 Changes from v3.3 to v3.4:
 
+**Special Note**
+After upgrading to v3.4, old public links to files will become invalidated. 
+
 **config.json**    
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console. 
@@ -79,13 +82,15 @@ The following config settings will only work on servers with an Enterprise Licen
 
 ### API Changes from v3.2 to v3.3
 
-**New admin routes:**
+**New routes:**
  - Added `GET` at `/oauth/authorized`
      - Returns the OAuth2 Apps authorized by the user.  On success it returns a list of sanitized OAuth2 Authorized Apps by the user.
  - Added `POST` at `/oauth/"+clientId+"/deauthorize`
      - Deauthorizes a user on an OAuth 2.0 app, where `clientId` corresponds to the application. Returns status OK on success or an AppError on fail. 
  - Added `POST` at `/oauth/"+clientId+"/regen_secret`
      - Generates a new OAuth App Client Secret, where `clientId` corresponds to the application. Returns an OAuth2 App on success. Must be authenticated as a user and the same user who registered the app or a System Admin. 
+ - Added POST at /admin/ldap_test
+     - Will run a connection test on the current LDAP settings. It will return the standard OK response if settings work. Otherwise it will return an appropriate error.
 
 ### Known Issues
 
