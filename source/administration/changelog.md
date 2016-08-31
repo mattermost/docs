@@ -185,8 +185,8 @@ The following config settings will only work on servers with an Enterprise Licen
 
 **Users Table**
 
- - Added `LastActivityAt` column.
- - Added `LastPingAt` column.
+ - Removed `LastActivityAt` column.
+ - Removed `LastPingAt` column.
  - Removed `ThemeProps` column.
 
 ### API Changes from v3.2 to v3.3
