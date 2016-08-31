@@ -59,6 +59,7 @@ Improved Notifications and Status Indicators
 Changes from v3.3 to v3.4:
 
 **Special Note**
+
 After upgrading to v3.4, old public links to files will become invalidated. 
 
 **config.json**    
