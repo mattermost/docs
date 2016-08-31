@@ -43,15 +43,15 @@ Mattermost Documentation
    :glob:
 
    deployment/on-boarding*
+   deployment/push*
+   deployment/sso-ldap*
+   deployment/auth*
+   deployment/sso-saml.md
+   deployment/scaling*
+   deployment/cluster*
    deployment/sso-gitlab*
    deployment/sso-google*
    deployment/sso-office*
-   deployment/sso-ldap*
-   deployment/sso-saml.md
-   deployment/auth*
-   deployment/push*
-   deployment/scaling*
-   deployment/cluster*
 
 
 .. toctree::
