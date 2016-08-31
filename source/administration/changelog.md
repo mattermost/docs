@@ -8,16 +8,64 @@ Expected release date: 2016-08-16
 
 ### Highlights
 
+Heroku Deployment
+
+Zapier App
+
+Improved Notifications and Status Indicators
+- Users can now control how often email notifications are sent
+- Users can now control whether push notifications are sent when they are online, offline or away
+- Users can now set how long desktop notifications stay onscreen for
+- Email notifications now include the channel name
+- (?) Push notifications are now cleared after the message is read somewhere else
+- /away, /online, /offline can now be used to manually set your status
+- Status indicators are now shown on the profile pictures in the centre channel and right hand side
+
 ### Improvements
 
+#### Files and Images
+- PDFs now show a preview in the image previewer
+
+#### Integrations
+- Added the ability to revoke permissions for OAuth apps
+- After an integration is created, a confirmation screen now displays the relevant token or webhook URL
+
 #### User Interface
-- User profile popover now shows both username and full name if available
 - Improved design of signup pages when multiple account creation methods are enabled
+- User profile popover now shows both username and full name (if available)
+- @mention autocomplete now groups users according to who is in the channel
+- Channel URL no longer updates when the Channel Name changes
+- Markdown headings are now rendered in Compact View
+- A System Message now posts when new users join Town Square
+
+#### Enterprise Edition: 
+- Added a CLI tool for creating channels
+- Added a display option to hide join/leave messages from view (added + removed messages still show up)
+- System Admins can now test their LDAP connection using the “Test Connection” button
+- LDAP FirstName and LastName fields are now optional
 
 ### Bug Fixes
+- Old public links are now invalidated when the salt is regenerated
+- Messages can now be flagged from the search results list
+- Count of unread mentions are no longer mixed when switching between multiple teams.
+- Recent Mentions search on mobile no longer contains `@all`
+- For those using the mobile view on desktop, Ctrl+Enter now sends messages on mobile web view 
+- User removed from team now shows up in DM list under "Outside this team"
 
 ### Compatibility  
 Changes from v3.3 to v3.4:
+
+### Known Issues
+
+- Deleted messages don't disappear from the channel for the user who deleted the message, if the message was previously edited and right hand sidebar is open.
+- A single collapsed link or image preview re-opens after refresh.
+- Files sent in private chat to members in a different team are not accessible.
+- YouTube videos show as “Video not found” on Desktop App.
+- “More” option under Direct Message list no longer shows count of team members not in your direct message list.
+- On Firefox, CTRL/CMD + U keyboard shortcut doesn’t work.
+- Webhook attachments don’t show up in search results.
+- Messages sometimes don't appear deleted until the page is refreshed.
+- When joining a channel from a public link, the page sometimes loads for a long time and requires a refresh.
 
 ## Release v3.3.0
 
