@@ -5,7 +5,6 @@
 
 Mattermost Documentation 
 -------------------
-Mattermost is modern communication behind your firewall.
 
 -----
 
@@ -32,27 +31,30 @@ Mattermost is modern communication behind your firewall.
    install/requirements*
    install/docker-local*
    install/docker-ebs*
+   install/ee-install*
+   install/prod-ubuntu*
+   install/prod-rhel*
    install/prod*
    install/smtp*
    install/troubleshooting*
-   install/ee-install*
    install/i18n*
 
+   
 .. toctree::
    :maxdepth: 1
    :caption: Deployment
    :glob:
 
    deployment/on-boarding*
+   deployment/push*
+   deployment/sso-ldap*
+   deployment/auth*
+   deployment/sso-saml.md
+   deployment/scaling*
+   deployment/cluster*
    deployment/sso-gitlab*
    deployment/sso-google*
    deployment/sso-office*
-   deployment/sso-ldap*
-   deployment/sso-saml.md
-   deployment/auth*
-   deployment/push*
-   deployment/scaling*
-   deployment/cluster*
 
 
 .. toctree::
@@ -74,10 +76,10 @@ Mattermost is modern communication behind your firewall.
    :glob:
 
    developer/api*
-   developer/web-service*
    developer/webhooks*
    developer/slash*
    developer/message-attachments*
+   developer/web-service*
    integrations/zapier*
    developer/integration*
 
