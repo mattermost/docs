@@ -32,12 +32,13 @@ Mattermost Documentation
    install/docker-local*
    install/docker-ebs*
    install/ee-install*
-   install/prod-rhel*
    install/prod-ubuntu*
+   install/prod-rhel*
+   install/prod*
    install/smtp*
    install/troubleshooting*
    install/i18n*
-   install/prod*
+
    
 .. toctree::
    :maxdepth: 1
