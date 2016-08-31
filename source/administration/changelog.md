@@ -30,6 +30,9 @@ Improved Notifications and Status Indicators
 - Added the ability to revoke permissions for OAuth apps
 - After an integration is created, a confirmation screen now displays the relevant token or webhook URL
 
+#### Slack Import
+- Slack import now imports @mentions correctly
+
 #### User Interface
 - Improved design of signup pages when multiple account creation methods are enabled
 - User profile popover now shows both username and full name (if available)
