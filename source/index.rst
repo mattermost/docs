@@ -5,7 +5,6 @@
 
 Mattermost Documentation 
 -------------------
-Mattermost is modern communication behind your firewall.
 
 -----
 
@@ -74,10 +73,10 @@ Mattermost is modern communication behind your firewall.
    :glob:
 
    developer/api*
-   developer/web-service*
    developer/webhooks*
    developer/slash*
    developer/message-attachments*
+   developer/web-service*
    integrations/zapier*
    developer/integration*
 
