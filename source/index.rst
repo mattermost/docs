@@ -31,12 +31,14 @@ Mattermost Documentation
    install/requirements*
    install/docker-local*
    install/docker-ebs*
-   install/prod*
+   install/ee-install*
+   install/prod-rhel*
+   install/prod-ubuntu*
    install/smtp*
    install/troubleshooting*
-   install/ee-install*
    install/i18n*
-
+   install/prod*
+   
 .. toctree::
    :maxdepth: 1
    :caption: Deployment
