@@ -239,6 +239,8 @@ If a bug fix release is required, run through the following steps again:
         - Populate with any PR's that have already went in for the next release
         - Zapier manager updates GitHub automation zap to new PR tracking spreadsheet
     - Create a new branch on docs for the next release - `vX.X-documentation`
+        - Submit a PR for changelog against the `vX.X-documentation` branch and add a `Work in Progress` label for it
+        - Submit a PR to change version number in `docs/source/conf.py` against the `vX.X-documentation` branch
 3. Build
     - Put pre-release, CI servers and translation server back onto master
 4. Dev:
