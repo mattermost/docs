@@ -58,10 +58,29 @@ Improved Notifications and Status Indicators
 ### Compatibility  
 Changes from v3.3 to v3.4:
 
-- Under `EmailSettings` in `config.json`:
+**config.json**    
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console. 
+
+**Changes to Team Edition and Enterprise Edition**:
+
+ - Under `EmailSettings` in `config.json`:
     - Added `"EnableEmailBatching": false` to enable batching of email notifications configurable in Account Settings. To enable email batching, the `SiteURL` field must be filled out and `Enable` under `ClusterSettings` must be set to `false` to disable high availability mode.
     - Added `"EmailBatchingBufferSize": 256` to specify the maximum number of notifications batched into a single email.
     - Added `"EmailBatchingInterval": 30` to specify the maximum frequency, in seconds, which the batching job checks for new notifications.
+
+**Additional Changes to Enterprise Edition:**    
+
+The following config settings will only work on servers with an Enterprise License that has the feature enabled.
+ 
+- Under `LdapSettings` in `config.json`:
+    - `"FirstNameAttribute": ""` is no longer a required field
+    - `"LastNameAttribute": ""` is no longer a required field
+
+
+### Database Changes from v3.2 to v3.3
+
+### API Changes from v3.2 to v3.3
 
 ### Known Issues
 
@@ -74,6 +93,7 @@ Changes from v3.3 to v3.4:
 - Webhook attachments don’t show up in search results.
 - Messages sometimes don't appear deleted until the page is refreshed.
 - When joining a channel from a public link, the page sometimes loads for a long time and requires a refresh.
+
 
 ## Release v3.3.0
 
