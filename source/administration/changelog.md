@@ -58,6 +58,11 @@ Improved Notifications and Status Indicators
 ### Compatibility  
 Changes from v3.3 to v3.4:
 
+- Under `EmailSettings` in `config.json`:
+    - Added `"EnableEmailBatching": true` to enable batching of email notifications configurable in Account Settings. To enable email batching, the `SiteURL` field must be filled out and `Enable` under `ClusterSettings` must be set to `false` to disable high availability mode.
+    - Added `"EmailBatchingBufferSize": 256` to specify the maximum number of notifications batched into a single email.
+    - Added `"EmailBatchingInterval": 30` to specify the maximum frequency, in seconds, which the batching job checks for new notifications.
+
 ### Known Issues
 
 - Deleted messages don't disappear from the channel for the user who deleted the message, if the message was previously edited and right hand sidebar is open.
