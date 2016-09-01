@@ -38,7 +38,8 @@ Mattermost Documentation
    install/smtp*
    install/troubleshooting*
    install/i18n*
-
+   install/desktop*
+   
    
 .. toctree::
    :maxdepth: 1
