@@ -140,6 +140,7 @@ For any issues, Mattermost Enterprise Edition subscribers and trial license user
       1. Run `platform -version` to check the current version of your Mattermost server
       2. Determine the appropriate next upgrade for your server:
           - Mattermost `v3.0.x` and above can upgrade directly to Mattermost `v3.4.x`.
+            - Note: Upgrading to `v3.4.x` will cause existing public links to break. 
           - Mattermost `v2.2.x` can upgrade directly to `v3.1` or `v3.2` but must follow the [extended upgrade guide for `v3.0.x`](https://docs.mattermost.com/administration/upgrade.html#upgrade-to-enterprise-edition-3-0-x)   
             - Note: For `v3.2.x` only, `"BindUsername"`, and `"BindPassword"` under `LdapSettings` are required fields with anonymous bind not supported. For `v3.2.x` and `v3.3.x` only, `"FirstNameAttribute"` and `"LastNameAttribute"` under `LdapSettings` are required fields.
           - Mattermost `v2.1.x` and below must follow the process to [upgrade to `v3.0.x`](https://docs.mattermost.com/administration/upgrade.html#upgrade-to-enterprise-edition-3-0-x) before upgrading further
