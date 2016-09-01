@@ -46,6 +46,17 @@ b. See if merely understanding each other's assumptions lets you get to a share 
 While this mindset won't work for everyone, it's helped resolve complex decisions in our company's history. 
 
 
+Likes & Wishes 
+~~~~~
+
+An easy way to check in with team members about how things are going. 
+
+- What do you *like* about how things are going? 
+- What do you *wish* we might change? 
+
+Use these one-on-one or in a group as a way to open conversations about what to keep and what to change in how we do things. 
+
+
 Mini-boss, End-boss
 ~~~~~
 
