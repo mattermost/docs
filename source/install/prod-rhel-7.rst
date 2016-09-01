@@ -26,8 +26,7 @@ Set up Database Server
 1.  For the purposes of this guide we will assume this server has an IP
     address of ``10.10.10.1``
 
-    -  **Optional:** if installing on the same machine substitute
-       ``10.10.10.1`` with ``127.0.0.1``
+    -  **Optional:** if installing on the same machine substitute ``10.10.10.1`` with ``127.0.0.1``
 
 2.  Install PostgreSQL 9.4+ (or MySQL 5.6+)
 
@@ -93,6 +92,9 @@ Set up Mattermost Server
 
 1. For the purposes of this guide we will assume this server has an IP
    address of ``10.10.10.2``
+   
+   -  **Optional:** if installing on the same machine substitute ``10.10.10.2`` with ``127.0.0.1``
+       
 2. Download the latest Mattermost Server by typing:
 
    -  ``wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz``
@@ -183,6 +185,9 @@ Set up NGINX Server
 
 1. For the purposes of this guide we will assume this server has an IP
    address of ``10.10.10.3``
+   
+   -  **Optional:** if installing on the same machine substitute ``10.10.10.3`` with ``127.0.0.1``
+   
 2. We use NGINX for proxying request to the Mattermost Server. The main
    benefits are:
 
