@@ -58,7 +58,7 @@ No pull requests for major features should be **merged** to the current release 
 
 ### D. (T-minus 11 working days) Judgment Day
 
-Day when leads and PM area owners meet to discuss which major features will be cut from the release, if any.
+Day when leads and PM area owners decide which major features are included in the release, and which are postponed. 
 
 1. Logistics:
     - Post this checklist in Release channel 
