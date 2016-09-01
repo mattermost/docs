@@ -139,6 +139,59 @@ Any issues? Please let us know on our forums at: http://forum.mattermost.org
 
 Any issues? Please let us know on our forums at: http://forum.mattermost.org
 
+### Windows ###
+
+1. Install and setup Docker
+    1. If you are using Win10 Pro/Ent, you might want to use Docker for Windows
+        1. Install [Docker for Windows](https://docs.docker.com/docker-for-windows/)
+        2. Add the line `127.0.0.1 dockerhost` to `C:\Windows\System32\drivers\etc\hosts` using editor with administrator privilege
+    2. For other version or you prefer using VirtualBox, use Docker Toolbox
+        1. Install [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
+        2. Run the `Docker Quickstart Terminal` and let it configure `default` machine
+        3. Get `default` IP by run `docker-machine ip default` in the terminal
+        4. Add the line `<Docker-IP> dockerhost` to `C:\Windows\System32\drivers\etc\hosts` using editor with administrator privilege
+2. Install and setup Node.Js
+    1. Download and install from [https://nodejs.org/](https://nodejs.org/)
+    2. Open `Node.js command prompt` and run `npm config set cache <short-path>` to set npm global cache to shorter path, the default path will likely cause path over 255 characters.
+3. Download and install Go from [https://golang.org/dl/](https://golang.org/dl/) 
+4. Fork Mattermost on GitHub.com from [https://github.com/mattermost/platform](https://github.com/mattermost/platform), then do the following in Git Bash:
+    1. `cd ~/go`  
+    2. `mkdir -p src/github.com/mattermost`  
+    3. `cd src/github.com/mattermost`  
+    4. `git clone https://github.com/<username>/platform.git`  
+    5. `cd platform`
+    6. `git config core.eol lf`
+    7. `git config core.autocrlf input`
+    8. `git reset --hard HEAD`
+5. Install and setup babun
+    1. Download and install from [http://babun.github.io/](http://babun.github.io/)
+6. Setup the following environment variable (change the path accordingly):
+      
+    ```
+    export PATH="/c/Program Files/go/bin":$PATH
+    export PATH="/c/Program Files/nodejs":$PATH
+    export PATH="/c/Program Files/Git/bin":$PATH    
+    export GOROOT='c:\\Program Files\\go\
+    export GOPATH='c:\\User\\<user-name\\go'
+    export PATH="/c/Program Files/Docker Toolbox":$PATH #change the path accordingly if you are using Docker for Windows
+    eval $(docker-machine env default) #skip this line if you are using Docker for Windows
+    ```
+
+7. Run unit tests on Mattermost using `make test` to make sure the installation was successful
+8. If the tests passed, you can run Mattermost using `make run`
+9. You need to create a team and admin account. You can choose a team name, email and password in third shell:
+	- Note: Make sure your team name does not contain any spaces
+	- `go run mattermost.go  -create_team -team_name="name" -email="user@example.com"`
+	- `go run mattermost.go  -create_user -team_name="name" -email="user@example.com" -password="mypassword"`
+	- `go run mattermost.go  -assign_role -team_name="name" -email="user@example.com" -role="system_admin"`
+
+10. Now you can log into Mattermost as the user you created in step 9
+11. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
+    - Note: You can skip the platform you are on because you have that target installed by default.
+    - `env GOOS=windows GOARCH=amd64 go install std`
+    - `env GOOS=darwin GOARCH=amd64 go install std`
+    - `env GOOS=linux GOARCH=amd64 go install std`
+
 ## Developing Using PostgreSQL
 
 By default, development is done using a MySQL database. To switch your developement instance to use a PostgreSQL database, update the following settings in the `SqlSettings` section of your `config/config.json`
