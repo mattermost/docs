@@ -18,24 +18,13 @@ If you have Docker set up, Mattermost installs in one-line:
 
 Otherwise, see step-by-step instructions:
 
-Mac OSX
+Mac OS X and Windows 10
 -------
 
-1. Install Docker Toolbox using instructions at:
-   http://docs.docker.com/installation/mac/
-
-   1. Start Docker Toolbox from the command line and run:
-      ``docker-machine create -d virtualbox dev``
-
-2. Get your Docker IP address with: ``docker-machine ip dev``
-3. Use ``sudo nano /etc/hosts`` to add ``<Docker IP> dockerhost`` to
-   your /etc/hosts file
-4. Run: ``docker-machine env dev`` and copy the export statements to
-   your ~/.bash\_profile by running ``sudo nano ~/.bash_profile``. Then
-   run: ``source ~/.bash_profile``
-5. Run:
+1. Install `Docker for Mac <http://docs.docker.com/installation/mac/>`_ or `Docker for Windows <http://docs.docker.com/installation/windows/>`_
+2. Run:
    ``docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview``
-6. When docker is done fetching the image, open ``http://dockerhost:8065/``
+3. When docker is done fetching the image, open ``http://localhost:8065/``
    in your browser.
 
 Ubuntu
