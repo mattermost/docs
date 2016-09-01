@@ -140,8 +140,7 @@ For any issues, Mattermost Enterprise Edition subscribers and trial license user
       2. Determine the appropriate next upgrade for your server:
           - Mattermost `v3.0.x` and above can upgrade directly to Mattermost `v3.4.x`.
           - Mattermost `v2.2.x` can upgrade directly to `v3.1` or `v3.2` but must follow the [extended upgrade guide for `v3.0.x`](https://docs.mattermost.com/administration/upgrade.html#upgrade-to-enterprise-edition-3-0-x)   
-            - Note: For `v3.2.x` only, `"BindUsername"`, and `"BindPassword"` are required fields with anonymous bind not supported.
-For `v3.2.x` and `v3.3.x` only, `"FirstNameAttribute"` and `"LastNameAttribute"` are required fields.
+            - Note: For `v3.2.x` only, `"BindUsername"`, and `"BindPassword"` under `LdapSettings` are required fields with anonymous bind not supported. For `v3.2.x` and `v3.3.x` only, `"FirstNameAttribute"` and `"LastNameAttribute"` under `LdapSettings` are required fields.
           - Mattermost `v2.1.x` and below must follow the process to [upgrade to `v3.0.x`](https://docs.mattermost.com/administration/upgrade.html#upgrade-to-enterprise-edition-3-0-x) before upgrading further
       3. Use the [Version Archive table](https://docs.mattermost.com/administration/upgrade.html#version-archive) to find the `[RELEASE URL]` for your desired version and enter `wget [RELEASE URL]` to download. For example, to download `vX.X.X`, use `wget https://releases.mattermost.com/X.X.X/mattermost-enterprise-X.X.X-linux-amd64.tar.gz`.
       4. Review **Compatibility** section in [CHANGELOG](https://docs.mattermost.com/administration/changelog.html) for the version downloaded and make sure to follow any instructions.
