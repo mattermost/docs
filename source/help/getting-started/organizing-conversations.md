@@ -29,7 +29,7 @@ Click **More** at the bottom of the *Channels* list to view a list of Public Cha
 #### Renaming a Channel
 Click the channel name at the top of the center pane to access the drop-down menu, then click **Rename Channel**. Channel owners can rename the Public Channels or Private Groups they’ve created. [Team and System Admins](http://docs.mattermost.com/help/getting-started/managing-members.html#user-roles) can rename any channel or group.
 
-You may also change the channel URL (also known as the channel handle) when renaming a channel. The URL is not automatically updated to prevent unintentionally breaking existing links and integrations.
+You may also change the channel URL (also known as the channel handle) when renaming a channel. Changing channel URL may break existing links.
 
 #### Leaving a Channel
 Click the channel name at the top of the center pane to access the drop-down menu, then click **Leave Channel**. Any team member who leaves a Private Group must be added back by a group member if they wish to rejoin. Team members will not receive mention notifications from channels of which they are not members.
