@@ -1393,7 +1393,7 @@ Storage system where files and image attachments are saved.
 
 **Local File System**: Files and images are stored in the specified local file directory. 
 
-“Amazon S3”: Files and images are stored on Amazon S3 based on the provided access key, bucket and region fields.
+**Amazon S3**: Files and images are stored on Amazon S3 based on the provided access key, bucket and region fields.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DriverName": "local"`` with options ``local`` and ``amazons3`` for above settings respectively.                         |
@@ -1834,7 +1834,7 @@ The address the Mattermost Server will listen on for inter-node communication. W
 
 Inter-Node URLs
 ~~~~~~~~~~~~~~~~~~~~~~~
-A list of all the machines in the cluster, separated by commas, for example, ``[“http://10.10.10.2", "http://10.10.10.4”]``. It is recommended to use the internal IP addresses so all the traffic can be secured.
+A list of all the machines in the cluster, separated by commas, for example, ``["http://10.10.10.2", "http://10.10.10.4"]``. It is recommended to use the internal IP addresses so all the traffic can be secured.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"InterNodeUrls": []`` with string input.                                                                                        |
