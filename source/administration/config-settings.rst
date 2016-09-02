@@ -1834,7 +1834,7 @@ The address the Mattermost Server will listen on for inter-node communication. W
 
 Inter-Node URLs
 ~~~~~~~~~~~~~~~~~~~~~~~
-A list of all the machines in the cluster, separated by commas, for example, ``[“http://10.10.10.2", "http://10.10.10.4”]``. It is recommended to use the internal IP addresses so all the traffic can be secured.
+A list of all the machines in the cluster, separated by commas, for example, ``["http://10.10.10.2", "http://10.10.10.4"]``. It is recommended to use the internal IP addresses so all the traffic can be secured.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"InterNodeUrls": []`` with string input.                                                                                        |
