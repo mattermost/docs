@@ -28,7 +28,8 @@ Improved Notifications and Status Indicators
 
 #### Integrations
 - Added the ability to revoke permissions for OAuth apps
-- After an integration is created, a confirmation screen now displays the relevant token or webhook URL
+- Added the ability to regenerate client secrets for OAuth apps
+- After an integration is created, a confirmation screen now displays the relevant token, webhook URL or OAuth client secret.
 
 #### Slack Import
 - Slack import now imports @mentions correctly
@@ -54,6 +55,7 @@ Improved Notifications and Status Indicators
 - Recent Mentions search on mobile no longer contains `@all`
 - For those using the mobile view on desktop, Ctrl+Enter now sends messages on mobile web view 
 - User removed from team now shows up in DM list under "Outside this team"
+- Mentions update properly when team is switched
 
 ### Compatibility  
 Changes from v3.3 to v3.4:
