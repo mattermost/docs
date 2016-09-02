@@ -1393,7 +1393,7 @@ Storage system where files and image attachments are saved.
 
 **Local File System**: Files and images are stored in the specified local file directory. 
 
-“Amazon S3”: Files and images are stored on Amazon S3 based on the provided access key, bucket and region fields.
+**Amazon S3**: Files and images are stored on Amazon S3 based on the provided access key, bucket and region fields.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DriverName": "local"`` with options ``local`` and ``amazons3`` for above settings respectively.                         |
