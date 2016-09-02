@@ -11,7 +11,7 @@ They support all the features of the web experience, plus:
 - Windows: Add Mattermost to Start menu, taskbar and system tray.
 - Mac: Add Mattermsot to the applications Dock
 
-You can `download them directly <https://about.mattermost.com/downloads/>`_, or use one fo the below installation guides:
+You can `download them directly <https://about.mattermost.com/downloads/>`_, or use one of the below installation guides:
 
 - `Windows Desktop installation guide <https://github.com/mattermost/desktop/blob/master/docs/setup.md#windows>`_
 - `Mac Desktop installation guide <https://github.com/mattermost/desktop/blob/master/docs/setup.md#os-x>`_
