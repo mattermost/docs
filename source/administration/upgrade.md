@@ -247,60 +247,63 @@ For any issues, Mattermost Enterprise Edition subscribers and trial license user
 
 ## Version Archive
 
-Locations of previously compiled builds.
+### Mattermost Enterprise Edition Server
 
-### Mattermost Team Edition
+Private cloud enterprise communications server. 
+- Free to use in "team mode" with same features as open source version.
+- Enterprise features unlock with a license key and purchase of a subscription. [See feature list and pricing](https://about.mattermost.com/pricing/).
 
-Stable builds of open source team communication platform compiled by Mattermost, Inc, available under an MIT license.
+- Mattermost Enterprise Edition v3.3.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-3-0) - [Download](https://releases.mattermost.com/3.3.0/mattermost-3.3.0-linux-amd64.tar.gz)
+  - `https://releases.mattermost.com/3.3.0/mattermost-3.3.0-linux-amd64.tar.gz`
+- Mattermost Enterprise Edition v3.2.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-2-0) - [Download](https://releases.mattermost.com/3.2.0/mattermost-3.2.0-linux-amd64.tar.gz)
+  - `https://releases.mattermost.com/3.2.0/mattermost-3.2.0-linux-amd64.tar.gz`
+- Mattermost Enterprise Edition v3.1.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-1-0) - [Download](https://releases.mattermost.com/3.1.0/mattermost-3.1.0-linux-amd64.tar.gz)
+  - `https://releases.mattermost.com/3.1.0/mattermost-3.1.0-linux-amd64.tar.gz`
+- Mattermost Enterprise Edition v3.0.3 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-0-3) - [Download](https://releases.mattermost.com/3.0.3/mattermost-3.0.3-linux-amd64.tar.gz)
+  - `https://releases.mattermost.com/3.0.3/mattermost-3.0.3-linux-amd64.tar.gz`
+- Mattermost Enterprise Edition v2.2.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v2-2-0) - [Download](https://releases.mattermost.com/2.2.0/mattermost-2.2.0-linux-amd64.tar.gz)
+  - `https://releases.mattermost.com/2.2.0/mattermost-2.2.0-linux-amd64.tar.gz`
+- Mattermost Enterprise Edition v2.1.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v2-1-0) - [Download](https://releases.mattermost.com/2.1.0/mattermost-2.1.0-linux-amd64.tar.gz)
+  - `https://releases.mattermost.com/2.1.0/mattermost-2.1.0-linux-amd64.tar.gz`
 
-- [Mattermost Team Edition v3.3.0](https://docs.mattermost.com/administration/changelog.html#release-v3-3-0)
+
+### Mattermost Team Edition Server
+
+Open source self-hosted team communication server compiled by Mattermost, Inc, available under an MIT license. 
+- Identical feature set to free version of Mattermost Enterprise Edition, but cannot be unlocked with a license key.
+
+- Mattermost Team Edition v3.3.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-3-0) - [Download](https://releases.mattermost.com/3.3.0/mattermost-team-3.3.0-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/3.3.0/mattermost-team-3.3.0-linux-amd64.tar.gz`
-- [Mattermost Team Edition v3.2.0](https://docs.mattermost.com/administration/changelog.html#release-v3-2-0)
+- Mattermost Team Edition v3.2.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-2-0) - [Download](https://releases.mattermost.com/3.2.0/mattermost-team-3.2.0-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/3.2.0/mattermost-team-3.2.0-linux-amd64.tar.gz`
-- [Mattermost Team Edition v3.1.0](https://docs.mattermost.com/administration/changelog.html#release-v3-1-0)
+- Mattermost Team Edition v3.1.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-1-0) - [Download](https://releases.mattermost.com/3.1.0/mattermost-team-3.1.0-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/3.1.0/mattermost-team-3.1.0-linux-amd64.tar.gz`
-- [Mattermost Team Edition v3.0.3](https://docs.mattermost.com/administration/changelog.html#release-v3-0-3)
+- Mattermost Team Edition v3.0.3 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-0-3) - [Download](https://releases.mattermost.com/3.0.3/mattermost-team-3.0.3-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/3.0.3/mattermost-team-3.0.3-linux-amd64.tar.gz`
-- [Mattermost Team Edition v2.2.0](https://docs.mattermost.com/administration/changelog.html#release-v2-2-0)
+- Mattermost Team Edition v2.2.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v2-2-0) - [Download](https://releases.mattermost.com/2.2.0/mattermost-team-2.2.0-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/2.2.0/mattermost-team-2.2.0-linux-amd64.tar.gz`
-- [Mattermost Team Edition v2.1.0](https://docs.mattermost.com/administration/changelog.html#release-v2-1-0)
+- Mattermost Team Edition v2.1.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v2-1-0) - [Download](https://releases.mattermost.com/2.1.0/mattermost-team-2.1.0-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/2.1.0/mattermost-team-2.1.0-linux-amd64.tar.gz`
-- [Mattermost Team Edition v2.0.0](https://docs.mattermost.com/administration/changelog.html#release-v2-0-0)
+- Mattermost Team Edition v2.0.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v2-0-0) - [Download](https://releases.mattermost.com/2.0.0/mattermost-team-2.0.0-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/2.0.0/mattermost-team-2.0.0-linux-amd64.tar.gz`
-- [Mattermost Team Edition v1.4.0](https://docs.mattermost.com/administration/changelog.html#release-v1-4-0)
+- Mattermost Team Edition v1.4.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v1-4-0) - [Download](https://releases.mattermost.com/1.4.0/mattermost-team-1.4.0-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/1.4.0/mattermost-team-1.4.0-linux-amd64.tar.gz`
-- [Mattermost Team Edition v1.3.0](https://docs.mattermost.com/administration/changelog.html#release-v1-3-0)
+- Mattermost Team Edition v1.3.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v1-3-0) - [Download](https://releases.mattermost.com/1.3.0/mattermost-team-1.3.0-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/1.3.0/mattermost-team-1.3.0-linux-amd64.tar.gz`
-- [Mattermost Team Edition v1.2.1](https://docs.mattermost.com/administration/changelog.html#release-v1-2-1)
+- Mattermost Team Edition v1.2.1 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v1-2-1) - [Download](https://releases.mattermost.com/1.2.1/mattermost-team-1.2.1-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/1.2.1/mattermost-team-1.2.1-linux-amd64.tar.gz`
-- [Mattermost Team Edition v1.2.0](https://docs.mattermost.com/administration/changelog.html#release-v1-2-0)
+- Mattermost Team Edition v1.2.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v1-2-0) - [Download](https://releases.mattermost.com/1.2.0/mattermost-team-1.2.0-linux-amd64.tar.gz)
   - Removed due to a security issue
-- [Mattermost Team Edition v1.1.1](https://docs.mattermost.com/administration/changelog.html#release-v1-1-1)
+- Mattermost Team Edition v1.1.1 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v1-1-1) - [Download](https://releases.mattermost.com/1.1.1/mattermost-team-1.1.1-linux-amd64.tar.gz)
    - `https://releases.mattermost.com/1.1.1/mattermost-team-1.1.1-linux-amd64.tar.gz`
-- [Mattermost Team Edition v1.1.0](https://docs.mattermost.com/administration/changelog.html#release-v1-1-0)
+- Mattermost Team Edition v1.1.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v1-1-0) - [Download](https://releases.mattermost.com/1.1.0/mattermost-team-1.1.0-linux-amd64.tar.gz)
    - `https://releases.mattermost.com/1.1.0/mattermost-team-1.1.0-linux-amd64.tar.gz`
-- [Mattermost Team Edition v1.0.0](https://docs.mattermost.com/administration/changelog.html##release-v1-0-0)
+- Mattermost Team Edition v1.0.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html##release-v1-0-0) - [Download](https://releases.mattermost.com/1.0.0/mattermost-team-1.0.0-linux-amd64.tar.gz)
    - `https://releases.mattermost.com/1.0.0/mattermost-team-1.0.0-linux-amd64.tar.gz`
-- [Mattermost Team Edition v0.7.0](https://docs.mattermost.com/administration/changelog.html#release-v0-7-0-beta)
+- Mattermost Team Edition v0.7.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v0-7-0-beta) - [Download](https://releases.mattermost.com/0.7.0/mattermost-team-0.7.0-linux-amd64.tar.gz)
    - `https://releases.mattermost.com/0.7.0/mattermost-team-0.7.0-linux-amd64.tar.gz`
-- [Mattermost Team Edition v0.6.0](https://docs.mattermost.com/administration/changelog.html#release-v0-6-0-alpha)
+- Mattermost Team Edition v0.6.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v0-6-0-alpha) - [Download](https://releases.mattermost.com/0.6.0/mattermost-team-0.6.0-linux-amd64.tar.gz)
    - `https://releases.mattermost.com/0.6.0/mattermost-team-0.6.0-linux-amd64.tar.gz`
-- [Mattermost Team Edition v0.5.0](https://docs.mattermost.com/administration/changelog.html#release-v0-5-0-preview)
+- Mattermost Team Edition v0.5.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v0-5-0-preview) - [Download](https://releases.mattermost.com/0.5.0/mattermost-team-0.5.0-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/0.5.0/mattermost-team-0.5.0-linux-amd64.tar.gz`
 
-### Mattermost Enterprise Edition
-
-Commercial software for self-hosted enterprise communication compiled by Mattermost, Inc. Requires paid subscription and valid license key for use.
-
-- [Mattermost Enterprise Edition v3.3.0](https://docs.mattermost.com/administration/changelog.html#release-v3-3-0)
-  - `https://releases.mattermost.com/3.3.0/mattermost-3.3.0-linux-amd64.tar.gz`
-- [Mattermost Enterprise Edition v3.2.0](https://docs.mattermost.com/administration/changelog.html#release-v3-2-0)
-  - `https://releases.mattermost.com/3.2.0/mattermost-3.2.0-linux-amd64.tar.gz`
-- [Mattermost Enterprise Edition v3.1.0](https://docs.mattermost.com/administration/changelog.html#release-v3-1-0)
-  - `https://releases.mattermost.com/3.1.0/mattermost-3.1.0-linux-amd64.tar.gz`
-- [Mattermost Enterprise Edition v3.0.3](https://docs.mattermost.com/administration/changelog.html#release-v3-0-3)
-  - `https://releases.mattermost.com/3.0.3/mattermost-3.0.3-linux-amd64.tar.gz`
-- [Mattermost Enterprise Edition v2.2.0](https://docs.mattermost.com/administration/changelog.html#release-v2-2-0)
-  - `https://releases.mattermost.com/2.2.0/mattermost-2.2.0-linux-amd64.tar.gz`
-- [Mattermost Enterprise Edition v2.1.0](https://docs.mattermost.com/administration/changelog.html#release-v2-1-0)
-  - `https://releases.mattermost.com/2.1.0/mattermost-2.1.0-linux-amd64.tar.gz`
