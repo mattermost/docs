@@ -19,7 +19,7 @@ Install Red Hat Enterprise Linux (x64) 7.1+
    be used for the Proxy, Mattermost (this must be x64 to use
    pre-built binaries), and Database.
 
-   -  **Optional:** You can also use a **one machine setup** (Proxy, Mattermost and Database on one machine) or a **two machine setup** (Proxy and Mattermost on one machine, Database on another) depending on your data center standards. 
+   -  **Optional:** You can also use a **1 machine setup** (Proxy, Mattermost and Database on one machine) or a **2 machine setup** (Proxy and Mattermost on one machine, Database on another) depending on your data center standards. 
 
 2. Make sure the system is up to date with the most recent security
    patches.
