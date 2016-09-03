@@ -74,7 +74,7 @@ Set up Database Server
 10. Allow Postgres to listen on all assigned IP Addresses:
 
     -  ``sudo vi /var/lib/pgsql/9.4/data/postgresql.conf``
-    -  Uncomment ``listen\_addresses`` and change ``localhost`` to ``\*``
+    -  Uncomment ``listen_addresses`` and change ``localhost`` to ``\*``
 
 11. Alter ``pg_hba.conf`` to allow the Mattermost Server to talk to the
     Postgres database:
