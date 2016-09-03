@@ -100,9 +100,8 @@ Set up Mattermost Server
    service under a ``mattermost`` user account with limited permissions.
 4. Download the latest Mattermost Server by typing:
 
-   -  ``wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz``
-
-   Where ``vX.X.X`` is the latest Mattermost release version. For example, ``v3.3.0``
+   - ``wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz``
+   - Where ``vX.X.X`` is the latest Mattermost release version. For example, ``v3.3.0``
 
 5. Unzip the Mattermost Server by typing:
 
