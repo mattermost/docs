@@ -17,7 +17,7 @@ Install Red Hat Enterprise Linux (x64) 6.6
 1. Set up **3 machines** with RHEL with 2GB of RAM or more. The servers will
    be used for the Proxy, Mattermost Server (must be x64), and Database.
 
-   -  **Optional:** You can also use a **one machine setup** (Proxy, Mattermost and Database on one machine) or a **two machine setup** (Proxy and Mattermost on one machine, Database on another) depending on your data center standards. 
+   -  **Optional:** You can also use a **1 machine setup** (Proxy, Mattermost and Database on one machine) or a **2 machine setup** (Proxy and Mattermost on one machine, Database on another) depending on your data center standards. 
 
 2. Make sure the system is up to date with the most recent security
    patches.
