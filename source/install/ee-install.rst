@@ -28,7 +28,8 @@ Upgrading Enterprise Edition to a newer version
 Upgrading to Enterprise Edition from Mattermost Team Edition 
 ---------------
 
-- The open source Mattermost Team Edition can be upgraded to the commercial Mattermost Enterprise Edition via `upgrade procedure <http://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition>`_.
+- The open source Mattermost Team Edition is functionally identical to the commercial Mattermost Enterprise Edition in its free "team mode", but there is no ability to unlock enterprise features.
+- To enable the unlocking of enterprise features, replace the Mattermost Team Edition binary with a Mattermost Enterprise Edition binary via an `upgrade procedure <http://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition>`_.
 
 If you need to migrate Team Edition prior to install, `please follow the migration guide. <http://docs.mattermost.com/administration/migrating.html>`_
 
