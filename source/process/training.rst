@@ -55,15 +55,24 @@ Developers
 Books 
 ^^^^^^
 
-- `Code Compete, Steve McConnell <https://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670>`_ - Best practices and guidelines for writing high quality code.
-- `Design Patterns,  Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides (aka "Group of Four") <https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented-ebook/dp/B000SEIBB8>`_ - Fundamental reading on design patterns. Other design pattern books work too, this is one of the most popular. 
+1. `Code Compete, Steve McConnell <https://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670>`_ - Best practices and guidelines for writing high quality code.
+2. `Design Patterns,  Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides (aka "Group of Four") <https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented-ebook/dp/B000SEIBB8>`_ - Fundamental reading on design patterns. Other design pattern books work too, this is one of the most popular. 
 
 Product Management 
 ^^^^^
 
 Courses
 
-- `Harvard Business School PM 101 <https://sites.google.com/site/hbspm101/home/2015-16-sessions/the-mrd-customer-discovery>`_
+1. `Harvard Business School PM 101 <https://sites.google.com/site/hbspm101/home/2015-16-sessions/the-mrd-customer-discovery>`_
+
+System Security 
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Papers 
+
+1. `Computer Security in the Real World. Butler Lampson <http://research.microsoft.com/en-us/um/people/blampson/69-SecurityRealIEEE/69-SecurityRealIEEE.pdf>`_ - Fundamental challenges with system security.
+2. `Course notes from CS513: System Security (Cornell University). Fred B. Schneider <http://www.cs.cornell.edu/courses/cs513/2007fa/02.outline.html>`_ - Well written introduction to system security from one of the leaders in the field.
+
 
 High Performance Teams 
 ^^^^^
