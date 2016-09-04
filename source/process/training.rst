@@ -68,7 +68,7 @@ Courses
 System Security 
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Papers 
+Papers & Course Materials 
 
 1. `Computer Security in the Real World. Butler Lampson <http://research.microsoft.com/en-us/um/people/blampson/69-SecurityRealIEEE/69-SecurityRealIEEE.pdf>`_ - Fundamental challenges with system security.
 2. `Course notes from CS513: System Security (Cornell University). Fred B. Schneider <http://www.cs.cornell.edu/courses/cs513/2007fa/02.outline.html>`_ - Well written introduction to system security from one of the leaders in the field.
