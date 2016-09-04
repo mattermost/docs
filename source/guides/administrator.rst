@@ -16,7 +16,8 @@ Install Guides
    /install/ee-install*
    /install/prod-ubuntu*
    /install/prod-rhel*
-   /install/prod*
+   /install/prod-debian*
+   /install/prod-docker*
    /install/setup-tls*
    /install/smtp*
    /install/troubleshooting*
