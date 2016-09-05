@@ -28,22 +28,18 @@ When you rush to get something done quickly, it can actually increase the time a
 
 Rushing means a higher chance of missing things that need to be done, and the cost of doing them later is significantly higher because you have to re-create your original setup to add on the work. 
 
-Assumption or Emotion 
+Emotion, Assumption, and Priority 
 ~~~~~
 
-What if there were only two reasons why people disagree? 
+Consider when two rational people disagree, the cause often comes from one of three areas: 
 
-Either: 
+1. **Emotion** - There could be an **emotion** biasing the discussion. Just asking if this might be the case can clear the issue. It's okay to have emotions. We are humans, not robots. 
 
-1. There is an **emotion** in the way (and asking about this often solves the issue)
-2. People have different underlying **assumptions** (including definitions, logic, priorities, etc.)
+2. **Assumption** - People may have different underlying **assumptions** (including definitions). Try to understand each other's assumptions and get to agreement or facts when you can. 
 
-In this world, disagreements are best resolved by finding where your underlying assumptions differ, then: 
+3. **Priorities** - Finally people can have different **priorities**. When everyone's priorities are shared and understood it's easier to find solutions that satisfy everyone's criteria. 
 
-a. See if you can agree on assumptions through discussion, fact finding or applying `cultural values <https://docs.mattermost.com/process/handbook.html#values>`_, and
-b. See if merely understanding each other's assumptions lets you get to a share decision
-
-While this mindset won't work for everyone, it's helped resolve complex decisions in our company's history. 
+While the emotions, assumptions, priority mindset won't work for everyone in every case, it's helped resolve complex decisions in our company's history. 
 
 
 Likes & Wishes 
