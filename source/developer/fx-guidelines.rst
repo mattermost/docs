@@ -243,24 +243,6 @@ Input: Hints
 
         Example 2: If a user enters invalid uppercase letters and spaces for a URL, show an issue message and also offer a correction, substituting dashes for spaces and lower case letters for uppercase letters, so the user can resubmit immediately with valid input.
 
-**Error messages:**
-
-    The word "error" in the Mattermost user interface should be reserved for only `bugs <https://docs.mattermost.com/process/terminology.html#bug>`_ in Mattermost software, such as encountering a JavaScript error. 
-    
-    Under the fast, obvious, forgiving design principle, it should be impossible for users to make an "error" in Mattermost. If they do something unintended the system should provide an "issue message" (see below). 
-
-
-**Issue messages:**
-
-    Issues messages help a user adjust their actions to produce a desired result. They different from "error messages" (see above) that indicate a `bug <https://docs.mattermost.com/process/terminology.html#bug>`_ with Mattermost software. 
-
-    Issue messages should appear immediately below input fields and offer clear and concise information about why an input cannot be accepted.
-
-    Issue messages should aesthetically appear helpful, and not punishing.
-
-    Issue messages do not need to explain every issue in a bad input, just clearly explain one issue, and allow for that to be corrected before displaying next issue, example: If an input is both short and contains invalid characters, show just the message about input being too short FIRST, and if the field isn’t valid on the second attempt, show the invalid character issue message.
-
-|
 ---------------------------
 
 |
