@@ -60,6 +60,17 @@ Custom Styles
 We’re using `BEM methodology <https://en.bem.info/method/>`_  and would advise everyone to do so when creating new classes or ids. There’s a lot of places in our app that currently don’t follow BEM but we’re trying to improve the codebase. `Here <http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/>`_ is a brief overview of the BEM syntax.
 
 
+Minimum Display Requirements 
+************************
+
+Desktop 
+-----------------------------------
+
+- **Minimum screen resolution:** 1280 x 800
+
+- **Color Depth:** 16.7M colors 
+
+
 |
 ---------------------------
 
