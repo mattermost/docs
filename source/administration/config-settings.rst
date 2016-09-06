@@ -1188,12 +1188,14 @@ Connection Security
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ``""``: Send email over an unsecure connection.
 
+``PLAIN``: Mattermost will connect and authenticate over an unsecure connection.
+
 ``TLS``: Communication between Mattermost and your email server is encrypted.
 
 ``STARTTLS``: Attempts to upgrade an existing insecure connection to a secure connection using TLS.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ConnectionSecurity": ""`` with options ``""``, ``TLS`` and ``STARTTLS`` for above settings respectively.                |
+| This feature's ``config.json`` setting is ``"ConnectionSecurity": ""`` with options ``""``, ``PLAIN``, ``TLS`` and ``STARTTLS`` for above settings respectively.                |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Security Alerts 
