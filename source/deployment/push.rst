@@ -220,6 +220,16 @@ These procedures summarize all potential bottlenecks in a system for mobile app 
 Troubleshooting mobile applications 
 ``````
 
+Here are solutions to common troubleshooting requests: 
+
+Internal proxy configuration needed for outbound requests to HPNS 
+^^^^^^ 
+
+When Mattermost is deployed on a private network without direct access to the internet, special steps are needed to allow the Mattermost server to reach the Mattermost Hosted Push Notification Service at https://push.mattermost.com to send outbound push notifications. 
+
+Please speak with your internal IT staff responsible for routing and whitelisting outbound connections to enable requests to be sent from your Mattermost server to https://push.mattermost.com 
+
+
 Error message: “We would not connect to the Mattermost server or the server is running an incompatible version”
 ^^^^^^ 
 
