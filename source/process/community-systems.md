@@ -57,7 +57,7 @@ When writing the description, the following checklist should be addressed:
 
 ## GitHub Issues Workflow
 
-To minimize response times, templates and automation are used across community systems for common requests. When misfiled requests are are posted in GitHub close them soon so the community does not confuse them as being appropriate. 
+To minimize response times, templates and automation are used across community systems for common requests. When misfiled requests are posted in GitHub close them soon so the community does not confuse them as being appropriate. 
 
 ### Category: Issue Submitter needs to do something
 
