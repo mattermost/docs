@@ -128,6 +128,33 @@ The following config settings will only work on servers with an Enterprise Licen
 - Messages sometimes don't appear deleted until the page is refreshed.
 - When joining a channel from a public link, the page sometimes loads for a long time and requires a refresh.
 
+### Contributors
+
+Many thanks to all our contributors. In alphabetical order:
+
+/platform
+- [asaadmahmood](https://github.com/asaadmahmood), [coreyhulen](https://github.com/coreyhulen), [crspeller](https://github.com/crspeller), [daizenberg](https://github.com/daizenberg), [DavidLu1997](https://github.com/DavidLu1997), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [gramakri](https://github.com/gramakri), [grundleborg](https://github.com/grundleborg), [hmhealey](https://github.com/hmhealey), [HugoGiraudel](https://github.com/HugoGiraudel), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [joonsun-baek](https://github.com/joonsun-baek), [jwilander](https://github.com/jwilander), [lfbrock](https://github.com/lfbrock), [npcode](https://github.com/npcode), [paranbaram](https://github.com/paranbaram), [phrix32](https://github.com/phrix32), [R-Wang97](https://github.com/R-Wang97), [shieldsjared](https://github.com/shieldsjared)
+
+/ios
+- [jasonblais](https://github.com/jasonblais), [lfbrock](https://github.com/lfbrock)
+
+/desktop
+- [jasonblais](https://github.com/jasonblais), [jgis](https://github.com/jgis), [jnugh](https://github.com/jnugh), [Razzeee](https://github.com/Razzeee), [St-Ex](https://github.com/St-Ex), [yuya-oc](https://github.com/yuya-oc)
+
+/docs
+- [asaadmahmood](https://github.com/asaadmahmood), [coreyhulen](https://github.com/coreyhulen), [DavidLu1997](https://github.com/DavidLu1997), [esethna](https://github.com/esethna), [friism](https://github.com/friism), [hmhealey](https://github.com/hmhealey), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [lfbrock](https://github.com/lfbrock), [lindy65](https://github.com/lindy65), [pmccarthy01](https://github.com/pmccarthy01), [shieldsjared](https://github.com/shieldsjared)
+
+/mattermost-docker
+- [npcode](https://github.com/npcode), [xcompass](https://github.com/xcompass)
+
+/android
+- [coreyhulen](https://github.com/coreyhulen), [enahum](https://github.com/enahum), [jasonblais](https://github.com/jasonblais), [jwilander](https://github.com/jwilander), [lfbrock](https://github.com/lfbrock)
+
+/push-proxy
+- [jwilander](https://github.com/jwilander)
+
+/mattermost-heroku
+- [it33](https://github.com/it33), [jwilander](https://github.com/jwilander)
 
 ## Release v3.3.0
 
