@@ -291,8 +291,6 @@ Open source self-hosted team communication server compiled by Mattermost, Inc, a
   - `https://releases.mattermost.com/1.3.0/mattermost-team-1.3.0-linux-amd64.tar.gz`
 - Mattermost Team Edition v1.2.1 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v1-2-1) - [Download](https://releases.mattermost.com/1.2.1/mattermost-team-1.2.1-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/1.2.1/mattermost-team-1.2.1-linux-amd64.tar.gz`
-- Mattermost Team Edition v1.2.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v1-2-0) - [Download](https://releases.mattermost.com/1.2.0/mattermost-team-1.2.0-linux-amd64.tar.gz)
-  - Removed due to a security issue
 - Mattermost Team Edition v1.1.1 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v1-1-1) - [Download](https://releases.mattermost.com/1.1.1/mattermost-team-1.1.1-linux-amd64.tar.gz)
    - `https://releases.mattermost.com/1.1.1/mattermost-team-1.1.1-linux-amd64.tar.gz`
 - Mattermost Team Edition v1.1.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v1-1-0) - [Download](https://releases.mattermost.com/1.1.0/mattermost-team-1.1.0-linux-amd64.tar.gz)
