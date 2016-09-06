@@ -1,5 +1,5 @@
-Team Handbook
-#############
+Mission, Vision & Values
+#########################
 
 Mattermost, Inc is the company behind: 
 
