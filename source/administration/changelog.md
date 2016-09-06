@@ -83,7 +83,7 @@ The following config settings will only work on servers with an Enterprise Licen
     - `"FirstNameAttribute": ""` is no longer a required field
     - `"LastNameAttribute": ""` is no longer a required field
 
-### Database Changes from v3.2 to v3.3
+### Database Changes from v3.3 to v3.4
 
 **Status Table**
 
