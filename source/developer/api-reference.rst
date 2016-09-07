@@ -2,6 +2,22 @@
 Web Service API Reference 
 ##########################
 
+Documentation for the Web Service API is under development. 
+
+Final documentation will cover the following sections: 
+
+- User
+- Team
+- Channel
+- Posts
+- Admin
+- General
+- Emoji
+- Preferences
+- Files
+- OAuth
+- Public
+
 User API Reference
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -20,3 +36,54 @@ User API Reference
 +-------------------------+-------------+-------------------------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
 | /users/me               | GET         | Get the current logged in user.                 | N/A                                                                                                  | User object         |
 +-------------------------+-------------+-------------------------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
+
+Team API Reference
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Under development.
+
+Channel API Reference
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Under development.
+
+Posts API Reference
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Under development.
+
+Admin API Reference
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Under development.
+
+General API Reference
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Under development.
+
+Emoji API Reference
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Under development.
+
+Preferences API Reference
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Under development.
+
+Files API Reference
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Under development.
+
+OAuth API Reference
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Under development.
+
+Public API Reference
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Under development.
+
