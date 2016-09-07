@@ -90,11 +90,7 @@ X-Ratelimit-Reset: 1441983590
 
 These headers are telling you your current rate limit status.
 
-|Header                | Description|
-|:--------------------- |:-----------|
-|X-Ratelimit-Limit     | The maximum number of requests you can make per second.|
-|X-Ratelimit-Remaining | The number of requests remaining in the current window.|
-|X-Ratelimit-Reset     | The remaining UTC epoch seconds before the rate limit resets.|
+![table](../images/web-service-table.png)
 
 If you exceed your rate limit for a window you will receive the following error in the body of the response:
 ```
@@ -120,15 +116,15 @@ The API implementation contained in these drivers demonstrates their schema and 
 
 GoDoc automatically generates documentation for the Golang driver, which links to Golang code demonstrating the specific use of the Web Service API calls. 
 
-You can view GoDocs for the Golang driver at: https://godoc.org/github.com/mattermost/platform/model
+You can view GoDocs for the Golang driver at: [https://godoc.org/github.com/mattermost/platform/model](https://godoc.org/github.com/mattermost/platform/model)
 
 For example:
 
 1. If you want to add a user to a team, you can reference the [AddUserToTeam function](https://godoc.org/github.com/mattermost/platform/model#Client.AddUserToTeam) in the Golang driver documentation to understand the available method 
-2. You can click on the name of the function to view how the Web Service API is used, which leads you to https://github.com/mattermost/platform/blob/master/model/client.go#L368, showing the following: 
+2. You can click on the name of the function to view how the Web Service API is used, which leads you to [https://github.com/mattermost/platform/blob/master/model/client.go#L368](https://github.com/mattermost/platform/blob/master/model/client.go#L368), showing the following: 
 
 ```
-//  Adds a user directly to the team without sending an invite.
+//  AddUserToTeam adds a user directly to the team without sending an invite.
 //  The teamId and userId are required.  You must be a valid member of the team and/or
 //  have the correct role to add new users to the team.  Returns a map of user_id=userId
 //  if successful, otherwise returns an AppError.
@@ -156,7 +152,7 @@ Code examples like this are used to demonstrate the schema and functionality of 
 If you're developing in JavaScript-style languages, you can reference the Web Service API using the implementation shown in the JavaScript driver. 
 
 For example, to add a user to a team using the Web Service API you can reference the JavaScript driver implementation at: 
-https://github.com/mattermost/mattermost-driver-javascript/blob/master/client.jsx#L552
+[https://github.com/mattermost/mattermost-driver-javascript/blob/master/client.jsx#L552](https://github.com/mattermost/mattermost-driver-javascript/blob/master/client.jsx#L552)
 
 ```
     addUserToTeam(teamId, userId, success, error) {
@@ -178,4 +174,5 @@ https://github.com/mattermost/mattermost-driver-javascript/blob/master/client.js
 ```
 
 Code examples like this are used to demonstrate the schema and functionality of the underlying Web Service API. 
+
 
