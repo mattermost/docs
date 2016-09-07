@@ -37,26 +37,25 @@ No pull requests for major features should be **merged** to the current release 
     - Begin posting Zero Bug Balance query daily
     - Verify all items in the last posted release checklist are complete, if not alert the release manager
 2. PM:
-    - PM area owners complete draft of Changelog in a WIP PR with updates for highlights, feature additions, known issues, compatibility updates for config.json, database and [API changes](https://github.com/mattermost/platform/commits/release-3.3/model/client.go) changes ([see example](http://docs.mattermost.com/administration/changelog.html#compatibility))
-    - PM owners for each new feature prepare a section highlighting end-user benefits for the blog post and post to the Marketing room, including screenshots and a hashtag #mattermostXX where XX is the version number (see [example thread](https://pre-release.mattermost.com/core/pl/o611i4wz3pfafb6fpha9ggxxnh) for formatting)
-    - Confirm changes to config.json in compatibility section of Changelog are written back to [settings documentation](http://docs.mattermost.com/administration/config-settings.html#configuration-settings)
+    - PM area owners complete draft of Changelog in a WIP PR with updates for highlights, feature additions, known issues, compatibility updates for config.json, [database changes](https://github.com/mattermost/platform/blob/master/store/sql_upgrade.go#L181) and [API changes](https://github.com/mattermost/platform/commits/master/model/client.go) (search `#api-proposal` and confirm with Dev); [see example](http://docs.mattermost.com/administration/changelog.html#compatibility)
+    - PM feature owners post draft section for the blog post in the Marketing Channel (including screenshots and a hashtag #mattermostXX where XX is the version number, see [example thread](https://pre-release.mattermost.com/core/pl/o611i4wz3pfafb6fpha9ggxxnh)) and [queue a tweet](https://pre-release.mattermost.com/core/pl/f3wsbwkgzfdr9nf9amtcwfpo6h)
     - Update [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) for any steps needed to upgrade to new version
     - Submit NOTICE.txt PR for any new libraries added from dev, if not added already. The following two files contain a list of dependancies:
         - https://github.com/mattermost/platform/blob/master/webapp/package.json
         - https://github.com/mattermost/platform/blob/master/glide.yaml
     - Coordinate testing:  
         - Queue an item for UX meeting to discuss worst UX bug
-        - Queue an item for closest stand-up meeting to discuss worst bug
-        - Work with Ops to check the Quality Gate for feature complete
         - Receive testing sign-off from feature area owners (i.e. PM/Dev either signs-off that their area is well tested, or flags potential quality issues that may exist)  
-        - Check that RC Testing Spreadsheet covers any changes or new features, and that known issues are listed in the relevant tests
+        - Prioritize updating the RC Testing Spreadsheet to cover any changes or new features, and confirm that known issues are listed in the relevant tests
         - Assign each area of the release testing spreadsheet to a team member and ensure core team has access permissions 
         - Post in Reception alerting community of upcoming release and to ask about top issues on master ([See example](https://pre-release.mattermost.com/core/pl/pfpzwpi7wj8zzpmeih87cdt77r))  
-    - Create meta issue for release in GitHub (see [example](https://github.com/mattermost/platform/issues/3702))
-3. Dev:
+3. **(Team) Major Feature Complete Meeting (10:15am PST)**:  
+    - Discuss worst bug currently on master
+    - Review status of last feature PRs to be merged
+4. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/platform/pulls) marked for the current release 
 
-### D. (T-minus 11 working days) Judgment Day
+### D. (T-minus 10 working days) Judgment Day
 
 Day when leads and PM area owners decide which major features are included in the release, and which are postponed. 
 
@@ -65,14 +64,16 @@ Day when leads and PM area owners decide which major features are included in th
     - Verify all items in the last posted release checklist are complete, if not alert the release manager
     - Confirm date of marketing announcement for the release and update release channel header if needed
 2. Leads:
-    - Meet with PM area owners to discuss release update and decide which major features will be in or out for the release
     - Finalize roadmap for next release, and identify planned marketing bullet points  
-3. PM: 
-    - Based on Leads discussion, create tickets for features that need to be turned on or off for the release
+3. **(Team) Judgment Day Meeting (10:15am PST)**:  
+    - Meet to discuss release update and finalize which major features will be in or out for the release
+4. PM: 
+    - Based on discussion, create tickets for features that need to be turned on or off for the release
     - Backlog is reviewed and tickets that won’t make it are moved to next release
     - Post a link to Release Discussion room for query of [remaining tickets in this release](https://mattermost.atlassian.net/issues/?filter=11102)
-    - Update Changelog PR based on what's in/out of the release
-4. Marketing:
+    - Update Changelog PR based on what's in/out of the release 
+    - Create meta issue for release in GitHub (see [example](https://github.com/mattermost/platform/issues/3702))
+5. Marketing:
     - Begins to draft blog post, tweet, and email for the release announcement
  
 ### E. (T-minus 8 working days) Code Complete and Release Candidate Cut
@@ -86,15 +87,17 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - Mail out mugs to any new contributors
     - Update [Team](http://www.mattermost.org/team/) page with new contributors
     - Verify all items in the last posted release checklist are complete, if not alert the release manager
+    - Confirm all PRs merged into the current release have been tested
 2. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/platform/pulls) marked for the current release 
 3. PM:
     - Review all [Severity 1 bugs (data loss or security)](https://mattermost.atlassian.net/secure/IssueNavigator.jspa?mode=hide&requestId=10600) to consider for adding to Hotfix list
     - Gather a list of contributors across all [public Mattermost GitHub repos](https://github.com/mattermost/), and add to the Changelog draft
     - Update documentation:  
-        - Submit Changelog PR 
+        - Submit Changelog PR
         - Submit Changelog PR for [/ios](https://github.com/mattermost/ios) and [/android](https://github.com/mattermost/android) repositories
         - Submit all doc PRs for review
+        - Confirm changes to config.json in compatibility section of Changelog are written back to [settings documentation](http://docs.mattermost.com/administration/config-settings.html#configuration-settings)
         - Prioritize any developer documentation tickets  
         - Draft [Mattermost Security Updates](http://about.mattermost.com/security-updates/), but do not post until seven days after official release
 4. **(Team) Code Complete Meeting (10:15am PST)**:  
@@ -102,13 +105,13 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - (Logistics) Walk through each unfinished item of this checklist  
     - (Dev) Last check of tickets that need to be merged before RC1  
 5. Build:  
+    - Review all `XXX FIXME` notes 
     - Master is tagged and branched and “Release Candidate 1″ is cut (e.g. 1.1.0-RC1) according to the Release Candidate Checklist in ``mattermost/process``
     - CI servers are updated to the release branch
     - Translation server is locked to the release branch
-    - Directory structure is reviewed and large changes posted to the team channel
+    - Directory structure is reviewed and large changes posted to the Release Discussion channel
 6. PM:  
     - Merge changelog PR after team review is complete, and update the GitHub meta issue to include a link to the changelog on the documention branch
-7. Marketing:
     - Tweet announcement that RC1 is ready (see [example](https://twitter.com/mattermosthq/status/664172166368264192))
  
 ### F. (T-minus 7 working days) Release Candidate Testing 
@@ -118,6 +121,8 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - Verify all items in the last posted release checklist are complete, if not alert the release manager
 2. Dev:
     - Test upgrade from previous version to current version, following the [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) with database upgrades on both MySQL and Postgres
+    - Test upgrade from Team Edition to Enterprise edition based on the [Upgrade Guide](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition)
+    - Review any changes made to install guides, and test if necessary
 3. PM:
     - Update Release Discussion header with links to RC instances and testing spreadsheet
     - Post release testing instructions to Release Discussion channel ([example](https://pre-release.mattermost.com/core/pl/8z1tazpmm3ycbrehju36brd5nh))
@@ -213,10 +218,12 @@ If a bug fix release is required, run through the following steps again:
     - Post key dates for the next release in the header of the Release Discussion channel and remove links to RC candidates and testing spreadsheet
     - Verify all items in the last posted release checklist are complete, if not alert the release manager
     - For the next release, create the following team meetings:
+        - Major Feature Complete Meeting on T-12 
+        - Judgment Day Meeting on T-10
         - Code Complete Meeting on T-8
-        - Team-wide Triage each weekday starting at T-7 and ending at T-2, with optional attendance
+        - Team-wide Triage each weekday starting at T-8 and ending at T-2, with optional attendance
         - Release Update each weekday starting at T-7 and ending at T-2
-    - For the next release, create PM Release Update meeting on T-14
+    - For the next release, create PM Release Update meeting on T-15 one hour before UX meeting
     - Add “Release Retrospective” item to next team meeting in place of Kaizen/User Issues, asking each core team member to give a letter grade (and brief explanation) for:
         - Release Quality
         - Release Process
@@ -231,6 +238,7 @@ If a bug fix release is required, run through the following steps again:
         - [Push to private cloud customers](https://mattermost.atlassian.net/browse/PLT-2199)
         - [Push to private long-running feature branches](https://mattermost.atlassian.net/browse/PLT-2199)
         - [Test upgrade](https://mattermost.atlassian.net/browse/PLT-3940) to latest release based on [upgrade guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide)
+        - Test upgrade from Team Edition to Enterprise Edition
         - [RC Build Testing for core team](https://mattermost.atlassian.net/browse/PLT-2208)
         - [Upgrade gitlab.mattermost.com to RC1](https://mattermost.atlassian.net/browse/PLT-3116)
         - [Push final build to gitlab.mattermost.com](https://mattermost.atlassian.net/browse/PLT-3117)
@@ -260,6 +268,7 @@ If a bug fix release is required, run through the following steps again:
     - Post and review [Mattermost Security Updates](https://about.mattermost.com/security-updates/)
 3. PM:
     - Update Security Issues spreadsheet with issue number from posted update (e.g. v3.2.0.1)
+    - Confirm the Security Researchers list on the [Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/) is up to date
     - Review "Community Installers" and update version numbers if there are any discrepencies https://www.mattermost.org/installation/ (move this to ops eventually)
 
 
