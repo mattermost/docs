@@ -80,6 +80,7 @@ Mattermost Documentation
    developer/slash*
    developer/message-attachments*
    developer/web-service*
+   developer/web-service-reference*
    integrations/zapier*
    developer/integration*
 
