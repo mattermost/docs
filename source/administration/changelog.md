@@ -127,6 +127,7 @@ The following config settings will only work on servers with an Enterprise Licen
 - Webhook attachments don’t show up in search results.
 - Messages sometimes don't appear deleted until the page is refreshed.
 - When joining a channel from a public link, the page sometimes loads for a long time and requires a refresh.
+- Recent mentions search for usernames containing a dot returns results containing only part of the username, due to database search limitations.
 
 ### Contributors
 
