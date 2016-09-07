@@ -56,7 +56,7 @@ Improved Notifications and Status Indicators
 - LDAP FirstName and LastName fields are now optional
 
 ### Bug Fixes
-- In past versions, when the Public Link Salt was regenerated existing public links were not invalidated. Now, when the salt is regenerated, existing links are made invalid.
+- Old public links are now invalidated when the salt is regenerated. 
 - Messages can now be flagged from the search results list
 - Count of unread mentions are no longer mixed when switching between multiple teams.
 - Recent Mentions search on mobile no longer contains `@all`
@@ -69,7 +69,7 @@ Changes from v3.3 to v3.4:
 
 **Special Note**
 
-After upgrading to v3.4, old public links to files will become invalidated. 
+(Only affects servers with public links enabled) After upgrading to v3.4, existing public links will no longer be valid. This is because in past versions, when the Public Link Salt was regenerated existing public links were not invalidated. Now, when the salt is regenerated, existing links are made invalid.
 
 **config.json**    
 
