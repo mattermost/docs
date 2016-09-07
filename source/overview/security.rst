@@ -2,32 +2,14 @@
 Security Overview
 =====================================
 
-Mattermost offers modern communication behind your firewall to keep your data safe, secure and private. 
-
 Security in Mattermost software is continually reviewed by developers, IT administrators and security researchers accountable for deploying the software in their organizations. 
 
-Multiple rounds of penetration testing and security analysis, in addition to internal reviews, have produced a long list of security improvements, in two forms: 
+Multiple rounds of penetration testing and security analysis, in addition to internal reviews, have produced a long list of safeguards, in two forms: 
 
-- **Security Updates**
-   - Upgrades addressing newly discovered attacks confidentially disclosed to Mattermost, Inc. by the product community and security researchers
-   
-- **Security Features**
-   - Optional features to enhance security on the Mattermost platform. 
+- `Security Features <https://docs.mattermost.com/overview/security.html#security-features>`_ - Recommended features to enhance security on the Mattermost platform. 
+- `Security Updates <https://docs.mattermost.com/overview/security.html#security-updates>`_ - Upgrades addressing newly discovered attacks `confidentially disclosed to Mattermost, Inc. <https://www.mattermost.org/responsible-disclosure-policy/>`_
 
-To expand on each type: 
-
-Security Updates 
-------
-
-Security updates address newly discovered attacks reported to Mattermost, Inc. by the security research community. Disclosures are made confidentially, under the Mattermost responsible disclosure policy, allowing for Mattermost, Inc. to provide security updates to the community prior to public disclosure.
-
-For more information, please see:
-
-- `Mattermost Security Updates Disclosures <http://about.mattermost.com/security-updates/>`_ 
-   - A summary of security updates made based on past and on-going security analysis and penetration testing. 
-
-- `Mattermost Responsible Disclosure Policy <https://www.mattermost.org/responsible-disclosure-policy/>`_ 
-   - An overview of how security issues are confidentially reported to and address by Mattermost, Inc. 
+To expand on each: 
 
 Security Features 
 ------
@@ -78,7 +60,20 @@ Access Control Policy
    - Optionally restrict `creation, renaming, archiving of channels, private groups and integrations to team admins, system admins or end users <https://docs.mattermost.com/administration/config-settings.html#policy-enterprise>`_ (E10)
    - Optionally restrict `sending team invites to team admins, system admins or end users <https://docs.mattermost.com/administration/config-settings.html#policy-enterprise>`_ (E10)
    - Optionally add `advanced passwords requirements <https://docs.mattermost.com/administration/config-settings.html#password-requirements-enterprise>`_ with minimum numbers of symbols, numbers, and lower and uppercase letters (E10).
-   
+
+Security Updates 
+------
+
+Security updates address newly discovered attacks reported to Mattermost, Inc. by the security research community. Disclosures are made confidentially, under the Mattermost responsible disclosure policy, allowing for Mattermost, Inc. to provide security updates to the community prior to public disclosure.
+
+For more information, please see:
+
+- `Mattermost Security Updates Disclosures <http://about.mattermost.com/security-updates/>`_ 
+   - A summary of security updates made based on past and on-going security analysis and penetration testing. 
+
+- `Mattermost Responsible Disclosure Policy <https://www.mattermost.org/responsible-disclosure-policy/>`_ 
+   - An overview of how security issues are confidentially reported to and address by Mattermost, Inc. 
+
 HIPAA compliance 
 ----------------
 
@@ -91,6 +86,12 @@ Deploying Mattermost as part of a HIPAA-compliant IT infrastructure requires a d
      - `Transmission Security <https://docs.mattermost.com/overview/security.html#transmission-security>`_
      - `Audit Controls <https://docs.mattermost.com/overview/security.html#integrity-audit-controls>`_
      
+- HIPAA-compliant deployments commonly consider the following: 
+     
+     - Omitting the contents of messages from mobile push notifications:
+     
+        - If your `Push Notifications Contents <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_ option is set to ``Send full message snippet`` there is a chance Personal Health Information (PHI) contained in messages could be displayed on a user's locked phone as a notification. To avoid this, set the option to ``Send generic description with user and channel names``.
+
 - Beyond Technical Safeguards, HIPAA compliance deployments also require: 
 
      - Administrative Safeguards
