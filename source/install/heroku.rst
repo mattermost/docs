@@ -14,7 +14,7 @@ Heroku Installation
 
 .. |HerokuDeploy| image:: https://www.herokucdn.com/deploy/button.svg
 .. _HerokuDeploy: https://heroku.com/deploy?template=https://github.com/mattermost/mattermost-heroku
-3. (Optional) Adjust the default settings in Heroku 
+3. (Optional) Customize the default settings in Heroku
   - ``App Name``: Optionally select a name for your application (this will be used in the app URL)
   - ``Runtime Selection``: Select which region your app should run in (United States or Europe)
   - ``Config Variables``:
