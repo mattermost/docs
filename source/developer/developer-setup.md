@@ -3,7 +3,8 @@ Developer Machine Setup
 
 ### Mac OS X ###
 
-1. Download and set up Docker Toolbox
+1. Download and set up the latest version of VirtualBox. [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
+2. Download and set up Docker Toolbox
 	1. Follow the instructions at [http://docs.docker.com/installation/mac/](http://docs.docker.com/installation/mac/)
 	2. Start a new docker host  
 		`docker-machine create -d virtualbox dev`
@@ -12,11 +13,11 @@ Developer Machine Setup
 	3. Add the following line to `/etc/hosts`
 		`<Docker IP> dockerhost`
 	4. Run `docker-machine env dev` and copy the export statements to `~/.bash_profile`
-2. Download Go 1.6 and Node.js using Homebrew
+3. Download Go 1.6 and Node.js using Homebrew
 	1. Download Homebrew from [http://brew.sh/](http://brew.sh/)
 	2. `brew install go`
 	3. `brew install node`
-3. Set up your Go workspace
+4. Set up your Go workspace
 	1. `mkdir ~/go`
 	2. Add the following to your `~/.bash_profile`  
 		- `export GOPATH=$HOME/go`  
@@ -27,18 +28,18 @@ Developer Machine Setup
 		`source ~/.bash_profile`
 	4. Set GOROOT (optional) in your `~/.bash_profile`
 		- `export GOROOT=/usr/local/go/`
-4. Fork Mattermost on GitHub.com from [https://github.com/mattermost/platform](https://github.com/mattermost/platform), then:
+5. Fork Mattermost on GitHub.com from [https://github.com/mattermost/platform](https://github.com/mattermost/platform), then:
 	1. `cd ~/go`  
 	2. `mkdir -p src/github.com/mattermost`  
 	3. `cd src/github.com/mattermost`  
 	4. `git clone https://github.com/<username>/platform.git`  
 	5. `cd platform`
 
-5. Run unit tests on Mattermost using `make test` to make sure the installation was successful
-6. If the tests passed, you can run `make clean-docker` to clean the database, then `make run` to start Mattermost
-7. Browse to `localhost:8065`, and you will be prompted to create an account. This account will have System Administrator privileges.
-8. You can stop Mattermost using `make stop`
-9. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
+6. Run unit tests on Mattermost using `make test` to make sure the installation was successful
+7. If the tests passed, you can run `make clean-docker` to clean the database, then `make run` to start Mattermost
+8. Browse to `localhost:8065`, and you will be prompted to create an account. This account will have System Administrator privileges.
+9. You can stop Mattermost using `make stop`
+10. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
     - Note: You can skip the platform you are on because you have that target installed by default.
     - `env GOOS=windows GOARCH=amd64 go install std`
     - `env GOOS=darwin GOARCH=amd64 go install std`
