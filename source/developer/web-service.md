@@ -1,4 +1,4 @@
-# Web Service API 
+# Web Service API Overview 
 
 _API Version v3.0_
 
@@ -6,12 +6,12 @@ Mattermost offers a RESTful Web Service API for interacting with the server, alo
 
 The document includes: 
 
-- Web Service API Schema 
-- Authentication Examples
-- Client Errors 
-- Rate Limiting 
-- API Reference 
-- Bot Example
+- [Web Service API Schema](https://docs.mattermost.com/developer/web-service.html#web-service-api-schema)
+- [Authentication Examples](https://docs.mattermost.com/developer/web-service.html#authentication-examples)
+- [Client Errors](https://docs.mattermost.com/developer/web-service.html#client-errors)
+- [Rate Limiting](https://docs.mattermost.com/developer/web-service.html#rate-limiting)
+- [Web Service API Reference](https://docs.mattermost.com/developer/api-reference.html)
+- [Bot Example](https://github.com/mattermost/mattermost-bot-sample-golang)
 
 All examples assume there is a Mattermost instance running at http://localhost:8065.
 
@@ -107,7 +107,7 @@ X-RateLimit-Reset: 1
 limit exceeded
 ```
 
-## Web Service API Reference 
+## Extended Web Service API Examples
 
 The easiest way to interact with the Mattermost Web Service API is through a language specific driver, such as: 
 
