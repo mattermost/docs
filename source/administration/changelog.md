@@ -8,16 +8,18 @@ Expected release date: 2016-08-16
 
 ### Highlights
 
-Heroku Deployment
+#### Heroku Deployment
 - Install a preview of Mattermost with one-click using our new Heroku deployment
 
 [![Deploy a Preview](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/mattermost/mattermost-heroku)
 
-OAuth 2.0 
+#### OAuth 2.0 
 
-Zapier App
+#### Zapier Integration
+[Zapier](https://zapier.com) is a service to automates tasks between web apps. You can create zaps that contains a trigger and an automated action for a task that you want to perform repeatedly. With Zapier, you can integrate your Mattermost instance with over [500 supported apps](https://zapier.com/zapbook/). Please [refer to our documentation](https://docs.mattermost.com/integrations/zapier.html) for more details.
 
-Improved Notifications and Status Indicators
+
+#### Improved Notifications and Status Indicators
 - Users can now control how often email notifications are sent
 - Users can now control whether push notifications are sent when they are online, offline or away
 - Users can now set how long desktop notifications stay onscreen for
