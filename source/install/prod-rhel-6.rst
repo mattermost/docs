@@ -3,16 +3,21 @@
 Production Install on RHEL 6.6
 ==============================
 
+Install Mattermost in production mode on one, two or three machines, using the following steps: 
+
+- `Install Red Hat Enterprise Linux (x64) 6.6 <#install-red-hat-enterprise-linux-x64-66>`_
+- `Set up Database Server <#set-up-database-server>`_
+- `Set up Mattermost Server <#set-up-mattermost-server>`_
+- `Set up NGINX Server <#set-up-nginx-server>`_
+- `Test setup and configure Mattermost Server <#test-setup-and-configure-mattermost-server>`_
+
 Install Red Hat Enterprise Linux (x64) 6.6
 ------------------------------------------
 
-1. Set up 3 machines with RHEL with 2GB of RAM or more. The servers will
-   be used for the Load Balancer, Mattermost (this must be x64 to use
-   pre-built binaries), and Database.
+1. Set up **3 machines** with RHEL with 2GB of RAM or more. The servers will
+   be used for the Proxy, Mattermost Server (must be x64), and Database.
 
-   -  **Optional:** You can also use a single machine for all 3
-      components in this install guide, depending on the standards of
-      your data center.
+   -  **Optional:** You can also use a **1 machine setup** (Proxy, Mattermost and Database on one machine) or a **2 machine setup** (Proxy and Mattermost on one machine, Database on another) depending on your data center standards. 
 
 2. Make sure the system is up to date with the most recent security
    patches.
@@ -69,14 +74,14 @@ Set up Database Server
 10. Allow Postgres to listen on all assigned IP Addresses:
 
     -  ``sudo vi /var/lib/pgsql/9.4/data/postgresql.conf``
-    -  Uncomment 'listen\_addresses' and change 'localhost' to '\*'
+    -  Uncomment ``listen_addresses`` and change ``localhost`` to ``\*``
 
 11. Alter ``pg_hba.conf`` to allow the Mattermost Server to talk to the
     Postgres database:
 
     -  ``sudo vi /var/lib/pgsql/9.4/data/pg_hba.conf``
-    -  Add the following line to the 'IPv4 local connections':
-    -  host all all 10.10.10.2/32 md5
+    -  Add the following line to the ``IPv4 local connections``:
+    -  ``host all all 10.10.10.2/32 md5``
 
 12. Reload Postgres database:
 
@@ -93,16 +98,15 @@ Set up Mattermost Server
 
 1. For the purposes of this guide we will assume this server has an IP
    address of ``10.10.10.2``
-2. Download the latest Mattermost Server by typing:
+2. Download `any version of the Mattermost Server <https://docs.mattermost.com/administration/upgrade.html#version-archive>`_ by typing:
 
-   -  ``wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz``
-   -  Where vX.X.X is the latest Mattermost release version. For
-      example, v1.4.0
-
+   -  ``wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz``
+   -  Where ``vX.X.X`` is typically the latest Mattermost release version, which is currently ``v3.3.0``. 
+   
 3. Install Mattermost under ``/opt``
 
    -  Unzip the Mattermost Server by typing:
-   -  ``tar -xvzf mattermost-team-X.X.X-linux-amd64.tar.gz``
+   -  ``tar -xvzf mattermost-X.X.X-linux-amd64.tar.gz``
    -  ``sudo mv mattermost /opt``
 
 4. Create the storage directory for files. We assume you will have
@@ -182,7 +186,7 @@ Set up NGINX Server
 
    -  SSL termination
    -  HTTP to HTTPS redirect
-   -  Port mapping :80 to :8065
+   -  Port mapping ``:80`` to ``:8065``
    -  Standard request logs
 
 3. Install NGINX on RHEL with
@@ -205,7 +209,7 @@ Set up NGINX Server
 4. Verify NGINX is running
 
    -  ``curl http://10.10.10.3``
-   -  You should see a *Welcome to nginx!* page
+   -  You should see a *Welcome to NGINX!* page
 
 5. Map a FQDN (fully qualified domain name) like
    **mattermost.example.com** to point to the NGINX server.
@@ -250,8 +254,8 @@ Set up NGINX Server
 Set up NGINX with SSL (Recommended)
 -----------------------------------
 
-1. You can use a free and an open certificate security like let's
-   encrypt, this is how to proceed
+1. You can use a free and an open certificate security like `Let's
+   Encrypt <https://letsencrypt.org/>`_, this is how to proceed
 
   -  ``sudo apt-get install git``
   -  ``git clone https://github.com/letsencrypt/letsencrypt``
@@ -265,7 +269,7 @@ Set up NGINX with SSL (Recommended)
 
 3. This command will download packages and run the instance, after that
    you will have to give your domain name
-4. You can find your certificate in /etc/letsencrypt/live
+4. You can find your certificate in ``/etc/letsencrypt/live``
 5. Modify the file at ``/etc/nginx/sites-available/mattermost`` and add
    the following lines:
 
@@ -313,8 +317,8 @@ Set up NGINX with SSL (Recommended)
   * ``crontab -e``
   * ``@monthly /home/YOURUSERNAME/letsencrypt/letsencrypt-auto certonly --reinstall -d yourdomainname && sudo service nginx reload``
 
-Finish Mattermost Server setup
-------------------------------
+Test setup and configure Mattermost Server
+------------------------------------------
 
 1. Navigate to ``https://mattermost.example.com`` and create a team and
    user.
@@ -324,8 +328,8 @@ Finish Mattermost Server setup
    ``System Console`` option
 4.  Update **Notification** > **Email** settings to setup an SMTP email service. The example below assumes AmazonSES.
 
-   -  Set *Send Email Notifications* to true
-   -  Set *Require Email Verification* to true
+   -  Set *Send Email Notifications* to ``true``
+   -  Set *Require Email Verification* to ``true``
    -  Set *Feedback Name* to ``No-Reply``
    -  Set *Feedback Email* to ``mattermost@example.com``
    -  Set *SMTP Username* to ``[YOUR_SMTP_USERNAME]``
@@ -346,8 +350,8 @@ Finish Mattermost Server setup
 
 7. Update **Advanced** > **Rate Limiting** settings:
 
-   -  Set *Vary By Remote Address* to false
-   -  Set *Vary By HTTP Header* to X-Real-IP
+   -  Set *Vary By Remote Address* to ``false``
+   -  Set *Vary By HTTP Header* to ``X-Real-IP``
 
 8. Feel free to modify other settings
 9. Restart the Mattermost Service by typing:
