@@ -16,7 +16,7 @@ Expected release date: 2016-08-16
 #### OAuth 2.0 
 
 #### Zapier Integration
-[Zapier](https://zapier.com) is a service to automates tasks between web apps. You can create zaps that contains a trigger and an automated action for a task that you want to perform repeatedly. With Zapier, you can integrate your Mattermost instance with over [500 supported apps](https://zapier.com/zapbook/). Please [refer to our documentation](https://docs.mattermost.com/integrations/zapier.html) for more details.
+[Zapier](https://zapier.com) is a service to automate tasks between web apps. You can create zaps that automate posts in Mattermost based on triggers in over [500 supported apps](https://zapier.com/zapbook/) on Zapier. Please [refer to our documentation](https://docs.mattermost.com/integrations/zapier.html) for more details.
 
 
 #### Improved Notifications and Status Indicators
