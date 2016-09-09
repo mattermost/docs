@@ -27,7 +27,7 @@ Quick Links:
 	`Storage <http://docs.mattermost.com/administration/config-settings.html#id36>`_ - `Images <http://docs.mattermost.com/administration/config-settings.html#id37>`_
 
 `Customization <http://docs.mattermost.com/administration/config-settings.html#id38>`_
-	`Custom Branding <http://docs.mattermost.com/administration/config-settings.html#id39>`_ - `Custom Emoji <http://docs.mattermost.com/administration/config-settings.html#id40>`_ - `Legal and Support <http://docs.mattermost.com/administration/config-settings.html#id41>`_
+	`Custom Branding <http://docs.mattermost.com/administration/config-settings.html#id39>`_ - `Custom Emoji <http://docs.mattermost.com/administration/config-settings.html#id40>`_ - `Legal and Support <http://docs.mattermost.com/administration/config-settings.html#id41>`_ - `Mattermost App Links <http://docs.mattermost.com/administration/config-settings.html#mattermost-app-links>`_
 
 `Advanced <http://docs.mattermost.com/administration/config-settings.html#id42>`_
 	`Rate Limiting <http://docs.mattermost.com/administration/config-settings.html#id43>`_ - `Database <http://docs.mattermost.com/administration/config-settings.html#id44>`_ - `Developer <http://docs.mattermost.com/administration/config-settings.html#id45>`_
@@ -1634,12 +1634,12 @@ Set an email for feedback or support requests.
 
 ________
 
-Native App Links
+Mattermost App Links
 ```````````````````````````
 
 Mattermost Apps Download Page Link  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Configurable link to a download page for Native Apps. When a link is present, an option to "Download Apps" will be added in the Main Menu so users can find the download page. Leave this field blank to hide the option from the Main Menu. Defaults to a page on about.mattermost.com where users can download the iOS, Android, and Desktop clients. If you are using an `Enterprise App Store <https://docs.mattermost.com/deployment/push.html?highlight=enterprise%20app#push-notifications-and-mobile-devices>`_ for your mobile apps, change this link to point to a customized download page where users can find the correct apps.
+Configurable link to a download page for Mattermost Apps. When a link is present, an option to "Download Apps" will be added in the Main Menu so users can find the download page. Leave this field blank to hide the option from the Main Menu. Defaults to a page on about.mattermost.com where users can download the iOS, Android, and Desktop clients. If you are using an `Enterprise App Store <https://docs.mattermost.com/deployment/push.html?highlight=enterprise%20app#push-notifications-and-mobile-devices>`_ for your mobile apps, change this link to point to a customized download page where users can find the correct apps.
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AppDownloadLink": "https://about.mattermost.com/downloads/"`` with string input.                                                            |
