@@ -208,7 +208,7 @@ This error message can also be received if the `Email Attribute` of their SAML c
 
 ##### 4. Received error message: `SAML login was unsuccessful because one of the attributes is incorrect. Please contact your System Administrator.`
 
-Confirm all attributes, including `Email Attribute` and `Username Attribute`, are correct in both the Okta configuration and in **System Console > SAML**.
+Confirm all attributes, including `Email Attribute` and `Username Attribute`, are correct in both the ADFS configuration and in **System Console > SAML**.
 
 ##### 5. Unable to switch to SAML authentication successfully
 
