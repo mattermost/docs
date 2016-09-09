@@ -127,8 +127,8 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
 3. Run `platform -version` to confirm the latest Enterprise Edition version has been successfully installed.
 4. In the **System Console**, go to **OTHER** > **Edition and License** > **License Key** and upload the license key file you received via email. 
 5. Reset the Mattermost account as the directory owner by typing:
- - `sudo chown -R mattermost:mattermost /opt/mattermost`
- - `sudo chmod -R g+w /opt/mattermost`
+ - `sudo chown -R mattermost:mattermost <path-to-your-mattermost-folder>`
+ - `sudo chmod -R g+w <path-to-your-mattermost-folder>`
 
 The **Edition** and **License** sections on the page should update to confirm your system has been updated to the Enterprise Edition.
 
