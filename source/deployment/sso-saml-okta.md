@@ -115,7 +115,11 @@ This usually means an existing account has another authentication method enabled
 
 This error message can also be received if the `Email Attribute` of their SAML credentials doesn't match the email address of their Mattermost account. If so, the user can update the attribute at their identity provider (for instance, back to the old value if it had been previously updated).
 
-##### 4. Unable to switch to SAML authentication successfully
+##### 4. Received error message: `SAML login was unsuccessful because one of the attributes is incorrect. Please contact your System Administrator.`
+
+Confirm all attributes, including `Email Attribute` and `Username Attribute`, are correct in both the Identity Provider configuration and in **System Console > SAML**.
+
+##### 5. Unable to switch to SAML authentication successfully
 
 First, ensure you have installed the [XML Security Library](https://www.aleksey.com/xmlsec/download.html) on your Mattermost instance and that **it is available in your** `PATH`.
 
