@@ -26,9 +26,9 @@ When enabled by your System Admin, you can sign in using your Google account usi
 
 When enabled by your System Admin, you can sign in using your Office 365 account using a one-click sign in option. 
 
-#### LDAP Sign In ([Enterprise Edition](https://about.mattermost.com/pricing/))
+#### AD/LDAP Sign In ([Enterprise Edition](https://about.mattermost.com/pricing/))
 
-When enabled by your System Admin, you can sign in with your LDAP credentials. This lets you use the same username and password for Mattermost that you use for various other company services. 
+When enabled by your System Admin, you can sign in with your AD/LDAP credentials. This lets you use the same username and password for Mattermost that you use for various other company services. 
 
 #### SAML Single-Sign-On (SSO) ([Enterprise Edition](https://about.mattermost.com/pricing/))
 

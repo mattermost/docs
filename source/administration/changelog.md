@@ -74,10 +74,10 @@ Expected release date: 2016-08-16
 
 - Added the ability to set different themes for each team.
 - Added a checkbox to apply theme settings to all teams of which you are a member.
-- Users disabled or removed from the LDAP server are now made “Inactive” in Mattermost (previously their sessions were revoked and could no longer log in, but their account status was not set to “Inactive”).
+- Users disabled or removed from the AD/LDAP server are now made “Inactive” in Mattermost (previously their sessions were revoked and could no longer log in, but their account status was not set to “Inactive”).
 - Added the ability to force migrating authentication methods.
 - Added Site Description field to the System Console > Customization > Custom Branding section.
-- LDAP `Bindusername` and `Bindpassword` fields in the System Console are now optional to support anonymous binding.
+- AD/LDAP `Bindusername` and `Bindpassword` fields in the System Console are now optional to support anonymous binding.
 
 ### Bug Fixes
 
@@ -332,10 +332,10 @@ Release date: 2016-07-16
 **[Enterprise E10, E20](https://about.mattermost.com/pricing/)**
 
 -  [New command line tools](http://docs.mattermost.com/administration/command-line-tools.html) added, such as adding and removing users from channels, and restoring previously deleted channels.
-- Added a button to manually trigger LDAP synchronization.
-- Updating LDAP Synchronization Interval to no longer require a server restart to take effect.
-- Improved logging for LDAP synchronization.
-- Added validation to the LDAP settings in the System Console so an error is triggered if required fields are missing.
+- Added a button to manually trigger AD/LDAP synchronization.
+- Updating AD/LDAP Synchronization Interval to no longer require a server restart to take effect.
+- Improved logging for AD/LDAP synchronization.
+- Added validation to the AD/LDAP settings in the System Console so an error is triggered if required fields are missing.
 
 ### Bug Fixes
 
@@ -362,7 +362,7 @@ Release date: 2016-07-16
 - Config settings are refreshed immediately when **Reload Configuration from Disk** is clicked.
 - Preview feature checkboxes now reset after changes are canceled.
 - Updated the markdown parser to fix poor handling of certain links.
-- Error box highlighting on the claim LDAP account page is fixed to only highlight the invalid input box.
+- Error box highlighting on the claim AD/LDAP account page is fixed to only highlight the invalid input box.
 - Errors in the system console are now properly aligned.
 - Button to resend verification email no longer throws an error when clicked.
 - Direct Messages modal loads faster since it is no longer cleared from memory each time it closes.
@@ -428,7 +428,7 @@ The following config settings will only work on servers with an Enterprise Licen
 
 - Under `LdapSettings` in `config.json`:
    - `"FirstNameAttribute": ""`, `"LastNameAttribute": ""`, `"BindUsername": ""`, and `"BindPassword": ""` are now required fields.
-   - Added `"MaxPageSize": 0` to set the maximum number of users that will be requested from the LDAP server at one time.
+   - Added `"MaxPageSize": 0` to set the maximum number of users that will be requested from the AD/LDAP server at one time.
 
 #### Database Changes from v3.1 to v3.2
 
@@ -444,7 +444,7 @@ The following config settings will only work on servers with an Enterprise Licen
 - The behavior of setting for Link Previews in Account Settings is reversed.
 - “More” option under Direct Message list no longer shows count of team members not in your direct message list.
 - Webhook attachments don't show up in search results.
-- On Firefox, System Console sidebar completely disappears when an LDAP setting is saved.
+- On Firefox, System Console sidebar completely disappears when an AD/LDAP setting is saved.
 - On Firefox, `CTRL/CMD + U` keyboard shortcut doesn't work.
 - `/join` sometimes throws an error.
 - Sometimes only the last character typed in the channel switcher appears.
@@ -608,7 +608,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 The following config settings will only work on servers with an Enterprise License that has the feature enabled.
 
  - Under `LdapSettings` in `config.json`:
-    - Added `"SyncIntervalMinutes": "60"` to allow system admins adjust how frequently Mattermost performs LDAP synchronization to update users
+    - Added `"SyncIntervalMinutes": "60"` to allow system admins adjust how frequently Mattermost performs AD/LDAP synchronization to update users
 
 ### Known Issues
 
@@ -619,7 +619,7 @@ The following config settings will only work on servers with an Enterprise Licen
 - On Firefox, search results for hashtags are not properly highlighted.
 - Clicking on a desktop notification from another team doesn’t open the team.
 - Webhook attachments don't show up in search results.
-- On Firefox, System Console sidebar completely disappears when an LDAP setting is saved
+- On Firefox, System Console sidebar completely disappears when an AD/LDAP setting is saved
 - On Firefox, `CTRL/CMD + U` keyboard shortcut doesn't work
 - Copying and pasting an image from a browser doesn't work
 - Youtube videos continue playing when collapsed
@@ -672,12 +672,12 @@ Release date: 2016-05-27
 
 Notes on patch releases: 
 - v3.0.3, released 2016-05-27
-   - Fixed an error with LDAP signup if user already existed.
+   - Fixed an error with AD/LDAP signup if user already existed.
    - Fixed an error where setting language to one of the supported langugages caused a blank page.
-   - Fixed an error where upgrading team admins on the primary team with LDAP/Gitlab accounts caused an error.
+   - Fixed an error where upgrading team admins on the primary team with AD/LDAP and Gitlab accounts caused an error.
 - v3.0.2, released 2016-05-17
    - Security update to reduce information disclosure, thanks to Andreas Lindh for [reporting responsibly](http://www.mattermost.org/responsible-disclosure-policy/)
-   - Fixed an error where, when using Postgres, attempting to log in with an LDAP that has the same email address or username as an email-based account shows a confusing error message.
+   - Fixed an error where, when using Postgres, attempting to log in with an AD/LDAP that has the same email address or username as an email-based account shows a confusing error message.
    - Fixed an error accounts using email authentation attempt to create new teams. 
    - Fixed an error where if you upgrade having never previously saved config.json from System Console, saving from System Console will not work. 
 - v3.0.1, released 2016-05-16
@@ -749,7 +749,7 @@ Integrations
 Authentication
 - Changed the user model so accounts are per server instead of per team.
 - Updated the login flow so users can select which team to open after signing in.
-- Combined Email, Username, and LDAP options into one login box so users can enter their credentials and the system will identify which kind of authentication to use.
+- Combined Email, Username, and AD/LDAP options into one login box so users can enter their credentials and the system will identify which kind of authentication to use.
 - GitLab SSO now creates an account from the "Sign In" button if an account previously did not exist.
 
 Files and Attachments
@@ -762,12 +762,12 @@ Search
 - Changed searches to connect terms with "AND" instead of "OR". 
 
 Enterprise:
-- Added the ability to map nickname to an LDAP field.
-- Added the ability to filter LDAP users, so only users selected by the filter can log in to Mattermost.
-- Added the option to connect to LDAP with TLS or STARTTLS
-- Added the option to replace the “LDAP username” login field placeholder text with custom text.
-- Users can now switch between LDAP and email login from Account Settings > Security > Sign-in Method.
-- Added the option to sign up with LDAP on the "Get Team Invite" link and email invite sign up pages.
+- Added the ability to map nickname to an AD/LDAP field.
+- Added the ability to filter AD/LDAP users, so only users selected by the filter can log in to Mattermost.
+- Added the option to connect to AD/LDAP with TLS or STARTTLS
+- Added the option to replace the “AD/LDAP username” login field placeholder text with custom text.
+- Users can now switch between AD/LDAP and email login from Account Settings > Security > Sign-in Method.
+- Added the option to sign up with AD/LDAP on the "Get Team Invite" link and email invite sign up pages.
 - Added multi-factor authentication.
 - Added compliance reporting and the option to generate daily compliance reports. 
 - Added custom branding, so System Admins can set a custom logo and text on the sign in page.
@@ -829,11 +829,11 @@ The following config settings will only work on servers with an Enterprise Licen
     -  Added `"CustomBrandText": ""` to set what text will show up on the login page, if `"EnableCustomBrand":` is set to `true`.
 
 - Under `LdapSettings` in `config.json`:
-    - Added `"ConnectionSecurity":""` to set the type of connection security Mattermost uses to connect to LDAP. Options are `""` (no security), `TLS` or `STARTTLS`.
-    - Added `"UserFilter": ""` (optional) to set an LDAP Filter to use when searching for user objects. 
-    - Added `"NicknameAttribute": ""` to set the attribute in the LDAP server that will be used to populate the nickname field in Mattermost.
+    - Added `"ConnectionSecurity":""` to set the type of connection security Mattermost uses to connect to AD/LDAP. Options are `""` (no security), `TLS` or `STARTTLS`.
+    - Added `"UserFilter": ""` (optional) to set an AD/LDAP Filter to use when searching for user objects. 
+    - Added `"NicknameAttribute": ""` to set the attribute in the AD/LDAP server that will be used to populate the nickname field in Mattermost.
     - Added `"SkipCertificateVerification": false` to set whether the certificate verification step for TLS or STARTTLS connections is skipped. (For testing purposes only. Should be set to `false` in production.)
-    - Added `"LoginFieldName": ""` to set the help text in the login box (for example, LDAP username or Company username).
+    - Added `"LoginFieldName": ""` to set the help text in the login box (for example, AD/LDAP username or Company username).
 
 - Added `ComplianceSettings` to `config.json`:
     - Added `"Enable": false` to set whether compliance reports are enabled.
@@ -1089,7 +1089,7 @@ Expected Release date: 2016-02-16
 
 - BREAKING CHANGE to APIs: New Android and updated iOS apps require `platform` 2.0 and higher
 - iOS added app support for GitLab single-sign-on
-- iOS added app support for LDAP/AD single-sign-on (Enterprise Edition only) 
+- iOS added app support for AD/LDAP single-sign-on (Enterprise Edition only) 
 
 ##### Upgrade and Deployment Improvements
 - Mattermost v2.0 now upgrades from up to two previous major builds (e.g. v1.4.x and v1.3.x)
@@ -1109,7 +1109,7 @@ Slash Commands
 iOS
 
 - [iOS app](https://github.com/mattermost/ios) added support for GitLab single-sign-on
-- [iOS app](https://github.com/mattermost/ios) added support for LDAP/AD single-sign-on (Enterprise Edition only) 
+- [iOS app](https://github.com/mattermost/ios) added support for AD/LDAP single-sign-on (Enterprise Edition only) 
 
 Android 
 

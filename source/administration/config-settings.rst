@@ -12,7 +12,7 @@ Quick Links:
 	`Configuration <http://docs.mattermost.com/administration/config-settings.html#id3>`_ - `Localization <http://docs.mattermost.com/administration/config-settings.html#id4>`_ - `Users and Teams <http://docs.mattermost.com/administration/config-settings.html#id5>`_ - `Privacy <http://docs.mattermost.com/administration/config-settings.html#id6>`_ - `Policy <http://docs.mattermost.com/administration/config-settings.html#policy-enterprise>`_ - `Compliance <http://docs.mattermost.com/administration/config-settings.html#compliance-enterprise>`_ - `Logging <http://docs.mattermost.com/administration/config-settings.html#id7>`_
 
 `Authentication <http://docs.mattermost.com/administration/config-settings.html#id12>`_
-	`Email <http://docs.mattermost.com/administration/config-settings.html#id13>`_ - `OAuth 2.0 <http://docs.mattermost.com/administration/config-settings.html#oauth-2-0-enterprise>`_ - `GitLab <http://docs.mattermost.com/administration/config-settings.html#id14>`_ - `Google <http://docs.mattermost.com/administration/config-settings.html#google-enterprise>`_ - `Office 365 <http://docs.mattermost.com/administration/config-settings.html#office-365-enterprise>`_ - `LDAP <http://docs.mattermost.com/administration/config-settings.html#ldap-enterprise>`_ - `SAML <http://docs.mattermost.com/administration/config-settings.html#saml-enterprise>`_
+	`Email <http://docs.mattermost.com/administration/config-settings.html#id13>`_ - `OAuth 2.0 <http://docs.mattermost.com/administration/config-settings.html#oauth-2-0-enterprise>`_ - `GitLab <http://docs.mattermost.com/administration/config-settings.html#id14>`_ - `Google <http://docs.mattermost.com/administration/config-settings.html#google-enterprise>`_ - `Office 365 <http://docs.mattermost.com/administration/config-settings.html#office-365-enterprise>`_ - `AD/LDAP <http://docs.mattermost.com/administration/config-settings.html#ldap-enterprise>`_ - `SAML <http://docs.mattermost.com/administration/config-settings.html#saml-enterprise>`_
 
 `Security <http://docs.mattermost.com/administration/config-settings.html#id20>`_
 	`Sign Up <http://docs.mattermost.com/administration/config-settings.html#id21>`_ - `Password <http://docs.mattermost.com/administration/config-settings.html#id22>`_ - `Public Links <http://docs.mattermost.com/administration/config-settings.html#id23>`_ - `Sessions <http://docs.mattermost.com/administration/config-settings.html#id24>`_ - `Connections <http://docs.mattermost.com/administration/config-settings.html#id25>`_
@@ -391,7 +391,7 @@ ________
 
 Authentication
 -------------------------------
-Authentication settings to enable account creation and sign in with email, GitLab, Google or Office 365 OAuth, LDAP, or SAML.
+Authentication settings to enable account creation and sign in with email, GitLab, Google or Office 365 OAuth, AD/LDAP, or SAML.
 
 Email
 ``````````````````````````
@@ -400,7 +400,7 @@ Enable account creation with email
 
 **True**: Allow team creation and account signup using email and password.
 
-**False**: Email signup is disabled and users are not able to invite new members. This limits signup to single-sign-on services like OAuth or LDAP.  
+**False**: Email signup is disabled and users are not able to invite new members. This limits signup to single-sign-on services like OAuth or AD/LDAP.  
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableSignUpWithEmail": true`` with options ``true`` and ``false`` for above settings respectively.                     |
@@ -611,27 +611,27 @@ It is recommended to use `https://login.microsoftonline.com/common/oauth2/v2.0/t
 
 ________
 
-LDAP (Enterprise)
+AD/LDAP (Enterprise)
 ```````````````````````````
-Enable sign-in with LDAP
+Enable sign-in with AD/LDAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**True**: Mattermost allows login using LDAP.
+**True**: Mattermost allows login using AD/LDAP or Active Directory.
 
-**False**: Login with LDAP is disabled.
+**False**: Login with AD/LDAP is disabled.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-LDAP Server  
+AD/LDAP Server  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-The domain or IP address of the LDAP server.
+The domain or IP address of the AD/LDAP server.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LdapServer": ""`` with string input.                                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-LDAP Port 
+AD/LDAP Port 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The port Mattermost will use to connect to the AD/LDAP server. Default is 389.
 
@@ -641,23 +641,35 @@ The port Mattermost will use to connect to the AD/LDAP server. Default is 389.
 
 Connection Security
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-The type of connection security Mattermost uses to connect to LDAP. 
+The type of connection security Mattermost uses to connect to AD/LDAP. 
 
-**None**: No encryption, Mattermost will not attempt to establish an encrypted connection to the LDAP server.
+**None**: No encryption, Mattermost will not attempt to establish an encrypted connection to the AD/LDAP server.
 
 **TLS**: Encrypts the communication between Mattermost and your server using TLS. 
 
 **STARTTLS**: Takes an existing insecure connection and attempts to upgrade it to a secure connection using TLS. 
 
-If the "No encryption" option is selected it is highly recommended that the LDAP connection is secured outside of Mattermost, for example, by adding a stunnel proxy. 
+If the "No encryption" option is selected it is highly recommended that the AD/LDAP connection is secured outside of Mattermost, for example, by adding a stunnel proxy. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ConnectionSecurity": ""`` with options ``""``, ``TLS`` and ``STARTTLS`` for above settings respectively.                |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Skip Certificate Verification 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+(Optional) The attribute in the AD/LDAP server that will be used to populate the nickname of users in Mattermost.
+
+**True**: Skips the certificate verification step for TLS or STARTTLS connections. Not recommended for production environments where TLS is required. For testing only.
+
+**False**: Mattermost does not skip certificate verification.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SkipCertificateVerification": false`` with options ``true`` and ``false`` for above settings respectively.              |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Base DN   
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-The **Base Distinguished Name** of the location where Mattermost should start its search for users in the LDAP tree.
+The **Base Distinguished Name** of the location where Mattermost should start its search for users in the AD/LDAP tree.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"BaseDN": ""`` with string input.                                                                                        |
@@ -665,7 +677,7 @@ The **Base Distinguished Name** of the location where Mattermost should start it
 
 Bind Username 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
-The username used to perform the AD/LDAP search. This should be an account created specifically for use with Mattermost  Its permissions should be limited to read-only access to the portion of the LDAP tree specified in the **Base DN** field. When using Active Directory, **Bind Username** should specify domain in ``DOMAIN/username`` format. This field is required, and anonymous bind is not currently supported. 
+The username used to perform the AD/LDAP search. This should be an account created specifically for use with Mattermost  Its permissions should be limited to read-only access to the portion of the AD/LDAP tree specified in the **Base DN** field. When using Active Directory, **Bind Username** should specify domain in ``DOMAIN/username`` format. This field is required, and anonymous bind is not currently supported. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"BindUsername": ""`` with string input.                                                                                  |
@@ -681,9 +693,9 @@ Password of the user given in **Bind Username**. This field is required, and ano
 
 User Filter  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-(Optional) Enter an LDAP Filter to use when searching for user objects (accepts `general syntax <http://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm>`_). Only the users selected by the query will be able to access Mattermost. For Active Directory, the query to filter out disabled users is ``(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))``
+(Optional) Enter an AD/LDAP Filter to use when searching for user objects (accepts `general syntax <http://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm>`_). Only the users selected by the query will be able to access Mattermost. For Active Directory, the query to filter out disabled users is ``(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))``
 
-This filter uses the permissions of the **Bind Username** account to execute the search. Administrators should make sure to use a specially created account for Bind Username with read-only access to the portion of the LDAP tree specified in the **Base DN** field. 
+This filter uses the permissions of the **Bind Username** account to execute the search. Administrators should make sure to use a specially created account for Bind Username with read-only access to the portion of the AD/LDAP tree specified in the **Base DN** field. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"UserFilter": ""`` with string input.                                                                                    |
@@ -691,7 +703,7 @@ This filter uses the permissions of the **Bind Username** account to execute the
 
 First Name Attribute 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The attribute in the LDAP server that will be used to populate the first name of users in Mattermost. This field is required.
+(Optional) The attribute in the AD/LDAP server that will be used to populate the first name of users in Mattermost.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FirstNameAttribute": ""``  with string input.                                                                           |
@@ -699,7 +711,7 @@ The attribute in the LDAP server that will be used to populate the first name of
 
 Last Name Attribute  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The attribute in the LDAP server that will be used to populate the last name of users in Mattermost. This field is required.
+(Optional) The attribute in the AD/LDAP server that will be used to populate the last name of users in Mattermost.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LastNameAttribute": ""`` with string input.                                                                             |
@@ -707,7 +719,7 @@ The attribute in the LDAP server that will be used to populate the last name of 
 
 Nickname Attribute 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-(Optional) The attribute in the LDAP server that will be used to populate the nickname of users in Mattermost.
+(Optional) The attribute in the AD/LDAP server that will be used to populate the nickname of users in Mattermost.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"NicknameAttribute": ""`` with string input.                                                                             |
@@ -715,7 +727,7 @@ Nickname Attribute
 
 Email Attribute  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The attribute in the LDAP server that will be used to populate the email addresses of users in Mattermost. 
+The attribute in the AD/LDAP server that will be used to populate the email addresses of users in Mattermost. 
 
 Email notifications will be sent to this email address, and this email address may be viewable by other Mattermost users depending on privacy settings choosen by the System Admin. 
 
@@ -725,7 +737,7 @@ Email notifications will be sent to this email address, and this email address m
 
 Username Attribute  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The attribute in the LDAP server that will be used to populate the username field in Mattermost user interface. This attribute will be used within the Mattermost user interface to identify and mention users. For example, if a Username Attribute is set to **john.smith** a user typing ``@john`` will see ``@john.smith`` in their auto-complete options and posting a message with ``@john.smith`` will send a notification to that user that they've been mentioned. 
+The attribute in the AD/LDAP server that will be used to populate the username field in Mattermost user interface. This attribute will be used within the Mattermost user interface to identify and mention users. For example, if a Username Attribute is set to **john.smith** a user typing ``@john`` will see ``@john.smith`` in their auto-complete options and posting a message with ``@john.smith`` will send a notification to that user that they've been mentioned. 
 
 The **Username Attribute** may be set to the same value used to sign-in to the system, called an **ID Attribute**, or it can be mapped to a different value. 
 
@@ -735,63 +747,55 @@ The **Username Attribute** may be set to the same value used to sign-in to the s
 
 ID Attribute  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The attribute in the LDAP server that will be used as a unique identifier in Mattermost. It serves two purposes: 
+The attribute in the AD/LDAP server that will be used as a unique identifier in Mattermost. It serves two purposes: 
 
-This value is used to sign in to Mattermost in the **LDAP Username** field on the sign in page. This attribute can be the same as the **Username Attribute** field above, which is what is used to identify users in the Mattermost interface, or it can be a different value, for example a User ID number. If your team typically uses ``DOMAIN\username`` to sign in to other services with LDAP, you may enter a field name that maps to ``DOMAIN\username`` to maintain consistency between sites.
+This value is used to sign in to Mattermost in the **AD/LDAP Username** field on the sign in page. This attribute can be the same as the **Username Attribute** field above, which is what is used to identify users in the Mattermost interface, or it can be a different value, for example a User ID number. If your team typically uses ``DOMAIN\username`` to sign in to other services with AD/LDAP, you may enter a field name that maps to ``DOMAIN\username`` to maintain consistency between sites.
 
-**This is the attribute that will be used to create unique Mattermost accounts.** This attribute should be an LDAP attribute with a value that does not change, such as ``username`` or ``uid``. If a user’s **ID Attribute** changes and the user attempts to login the Mattermost server will attempt to create a new Mattermost user account based on the new **ID Attribute** and fail since new Mattermost users accounts can't be created with duplicate email addresses or Mattermost usernames (as defined in the **Username Attribute**).  
+**This is the attribute that will be used to create unique Mattermost accounts.** This attribute should be an AD/LDAP attribute with a value that does not change, such as ``username`` or ``uid``. If a user’s **ID Attribute** changes and the user attempts to login the Mattermost server will attempt to create a new Mattermost user account based on the new **ID Attribute** and fail since new Mattermost users accounts can't be created with duplicate email addresses or Mattermost usernames (as defined in the **Username Attribute**).  
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IdAttribute": ""`` with string input.                                                                                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Skip Certificate Verification 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-(Optional) The attribute in the LDAP server that will be used to populate the nickname of users in Mattermost.
-
-**True**: Skips the certificate verification step for TLS or STARTTLS connections. Not recommended for production environments where TLS is required. For testing only.
-
-**False**: Mattermost does not skip certificate verification.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SkipCertificateVerification": false`` with options ``true`` and ``false`` for above settings respectively.              |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Synchronization Interval (minutes) 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Set how often Mattermost accounts synchronize attributes with AD/LDAP, in minutes. When synchronizing, Mattermost queries AD/LDAP for relevant account information and updates Mattermost accounts based on changes to attributes (first name, last name, and nickname). When accounts are disabled in AD/LDAP users are made inactive in Mattermost, and their active sessions are revoked once Mattermost synchronizes attributes. To synchronize immediately after disabling an account, use the "LDAP Synchronize Now" button.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SyncIntervalMinutes": 60`` with whole number input.                                                                     |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+ 
-
-Query Timeout (seconds)  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The timeout value for queries to the LDAP server. Increase this value if you are getting timeout errors caused by a slow LDAP server.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"QueryTimeout": 60`` with whole number input.                                                                            |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Maximum Page Size  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The maximum number of users the Mattermost server will request from the LDAP server at one time. Use this setting if your LDAP server limits the number of users that can be requested at once. 0 is unlimited. 
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MaxPageSize": 0`` with whole number input.                                                                              |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Login Field Name 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The placeholder text that appears in the login field on the login page. Typically this would be whatever name is used to refer to LDAP credentials in your company, so it is recognizable to your users. Defaults to **LDAP Username**.
+The placeholder text that appears in the login field on the login page. Typically this would be whatever name is used to refer to AD/LDAP credentials in your company, so it is recognizable to your users. Defaults to **AD/LDAP Username**.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginFieldName": ""`` with string input.                                                                                |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-LDAP Synchronize Now
+Synchronization Interval (minutes) 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Set how often Mattermost accounts synchronize attributes with AD/LDAP, in minutes. When synchronizing, Mattermost queries AD/LDAP for relevant account information and updates Mattermost accounts based on changes to attributes (first name, last name, and nickname). When accounts are disabled in AD/LDAP users are made inactive in Mattermost, and their active sessions are revoked once Mattermost synchronizes attributes. To synchronize immediately after disabling an account, use the "AD/LDAP Synchronize Now" button.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SyncIntervalMinutes": 60`` with whole number input.                                                                     |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+ 
+
+Maximum Page Size  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The maximum number of users the Mattermost server will request from the AD/LDAP server at one time. Use this setting if your AD/LDAP server limits the number of users that can be requested at once. 0 is unlimited. 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"MaxPageSize": 0`` with whole number input.                                                                              |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Query Timeout (seconds)  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The timeout value for queries to the AD/LDAP server. Increase this value if you are getting timeout errors caused by a slow AD/LDAP server.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"QueryTimeout": 60`` with whole number input.                                                                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+AD/LDAP Synchronize Now
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-This button causes LDAP synchronization to occur as soon as it is pressed. Use it whenever you have made a change in the LDAP server you want to take effect immediately. After using the button, the next LDAP synchronization will occur after the time specified by the Synchronization Interval.  
+This button causes AD/LDAP synchronization to occur as soon as it is pressed. Use it whenever you have made a change in the AD/LDAP server you want to take effect immediately. After using the button, the next AD/LDAP synchronization will occur after the time specified by the Synchronization Interval.  
+
+AD/LDAP Test
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+This button can be used to test the connection to the AD/LDAP server. If the test us successful, it shows a confirmation message and if there is a problem with the configuration settings it will show an error message.
 
 ________
 
@@ -1054,7 +1058,7 @@ _________
 
 Sessions
 ``````````````````````````
-Session length for email and LDAP authentication (days)  
+Session length for email and AD/LDAP authentication (days)  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Set the number of days before web sessions expire and users will need to log in again.
 
