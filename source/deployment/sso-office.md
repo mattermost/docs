@@ -3,7 +3,7 @@ ___
 
 Follow these steps to configure Mattermost to use Office 365 as a single-sign-on (SSO) service for team creation, account creation and sign-in.
 
-Note that the system must be using SSL for use with Office365 as Microsoft only allows OAuth redirect URIs that are SSL enabled.
+**The system must be using SSL for use with Office365 as Microsoft only allows OAuth redirect URIs that are SSL enabled.**
 
 1 - [Log in](https://login.microsoftonline.com/) to your Microsoft or Office 365 account. Make sure it's the account on the same tenant that you would like users to log in with.
 
