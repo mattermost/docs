@@ -13,10 +13,11 @@ Expected release date: 2016-08-16
 
 [![Deploy a Preview](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/mattermost/mattermost-heroku)
 
-#### OAuth 2.0 
+#### OAuth 2.0 Service Provider
+- Users with an account on a Mattermost server can securely sign in to third-party application with an OAuth 2.0 protocol. See [documentation](https://docs.mattermost.com/developer/oauth-2-0-applications.html) to learn more.
 
 #### Zapier Integration
-[Zapier](https://zapier.com) is a service to automate tasks between web apps. You can create zaps that automate posts in Mattermost based on triggers in over [500 supported apps](https://zapier.com/zapbook/) on Zapier. Please [refer to our documentation](https://docs.mattermost.com/integrations/zapier.html) for more details.
+- [Zapier](https://zapier.com) is a service to automate tasks between web apps. You can create zaps that automate posts in Mattermost based on triggers in over [500 supported apps](https://zapier.com/zapbook/) on Zapier. Please [refer to our documentation](https://docs.mattermost.com/integrations/zapier.html) for more details.
 
 
 #### Improved Notifications and Status Indicators
@@ -83,6 +84,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
     - Added `"EnableEmailBatching": false` to enable batching of email notifications configurable in Account Settings. To enable email batching, the `SiteURL` field must be filled out and `Enable` under `ClusterSettings` must be set to `false` to disable high availability mode.
     - Added `"EmailBatchingBufferSize": 256` to specify the maximum number of notifications batched into a single email.
     - Added `"EmailBatchingInterval": 30` to specify the maximum frequency, in seconds, which the batching job checks for new notifications.
+
+ - Under `LogSettings` in `config.json`:
+    - Added `"EnableDiagnostics": true` to enable sending error reporting and diagnostic information to Mattermost to improve the quality and performance of the software.
 
 **Additional Changes to Enterprise Edition:**    
 
