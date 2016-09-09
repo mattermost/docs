@@ -147,7 +147,7 @@ Renders as: `monospace`.
 
 Create in-line images using an `!` followed by the alt text in square brackets and the link in normal brackets. Add hover text by placing it in quotes after the link.
 ```
-![alt text](link "hover text")
+![alt text that shows when a link is broken](broken-link "hover text")
 
 and
 
@@ -155,7 +155,7 @@ and
 ```
 Renders as: 
 
-![alt text](link "hover text")
+![alt text that shows when a link is broken](broken-link "hover text")
 
 and
 
