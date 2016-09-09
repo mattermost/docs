@@ -35,4 +35,4 @@ You can mention everyone who is online in a channel by typing `@here`. This will
 In addition to being notified by @username and @channel, you can customize words that trigger mention notifications in **Account Settings** > **Notifications** > **Words that trigger mentions**. By default, you will receive mention notifications on your first name, and you can add more words by typing them into the input box separated by commas. This is useful if you want to be notified of all posts on certain topics, for example, “interviewing” or “marketing”.
 
 ## Recent Mentions
-Click `@` next to the search box to query for your most recent @mentions and words that trigger mentions. Click **Jump** next to a search result in the RHS to jump the center pane to the channel and location of the message with the mention.
+Click `@` next to the search box to query for your most recent @mentions and words that trigger mentions. Click **Jump** next to a search result in the right-hand sidebar to jump the center pane to the channel and location of the message with the mention.
