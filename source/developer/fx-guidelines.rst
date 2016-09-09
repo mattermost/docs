@@ -415,7 +415,7 @@ If what the users need to perform is obvious, we should make concious decisions 
 
     |
 
-    Clicking on the reply icon should move the focus to the comment box in the RHS.
+    Clicking on the reply icon should move the focus to the comment box in the right-hand sidebar.
 
     ..  image:: ../images/reduce2.png
         :alt: Reply icon
