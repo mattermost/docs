@@ -23,14 +23,14 @@ Enable OAuth 2.0
 1. Go to the **Main Menu** > **System Console**
 2. Under **Integrations** > **Custom Integrations**
   a. Set `Enable OAuth 2.0 Service Provider <https://docs.mattermost.com/administration/config-settings.html#enable-oauth-2-0-service-provider>`_ to **True**.
-  b. If you’d like to allow Zapier integrations to post with customizable usernames and profile pictures, then set `Enable webhooks and slash commands to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-webhooks-and-slash-commands-to-override-usernames>`_ and `Enable webhooks and slash commands to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-webhooks-and-slash-commands-to-override-profile-picture-iconss>`_ to **True**.
-  c. If you’d like to allow users on your system who are not Team or System Admins to create Zapier integrations, then set `Restrict creating integrations to Team and System Admins <https://docs.mattermost.com/administration/config-settings.html#restrict-creating-integrations-to-team-and-system-admins>`_ to **False**.
+  b. If you’d like to allow Zapier integrations to post with customizable usernames and profile pictures, then set `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`_ and `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-iconss>`_ to **True**.
+  c. If you’d like to allow users on your system who are not Team or System Admins to create Zapier integrations, then set `Restrict managing integrations to Admins <https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins>`_ to **False**.
 
 Register Zapier as an OAuth 2.0 Application
 ````````````````````````````````````````````````````````````````
 1. Go to **Main Menu** > **Integrations**
 2. Click **OAuth 2.0 Applications**, then click **Add OAuth 2.0 Application** and enter the following fields:
-  a. **Is Trusted**: Yes
+  a. **Is Trusted**: No
   b. **Display Name**: ``Zapier``
   c. **Description**: ``Application for Zapier integrations``
   d. **Homepage**: ``https://zapier.com/``
@@ -68,8 +68,8 @@ Create a Zap
     
       .. image:: ../images/zapier-dynamic-fields.png    
     
-    4. **Username**: This is the username that Zapier will post as. Zapier integrations will always appear with a ``BOT`` tag next to the username.
-    5. **Icon URL**: This is the profile picture of the bot that Zapier will post as.
+    4. **Username**: This is the username that Zapier will post as. Zapier integrations will always appear with a ``BOT`` tag next to the username. In order for bots to override the username of the authorized user, your System Admin must set `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`_ to **True**.
+    5. **Icon URL**: This is the profile picture of the bot that Zapier will post as. In order for bots to override the profile picture of the authorized user, your System Admin must set `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-iconss>`_ to **True**.
   e. **Test the Zap**: You may want to test your zap formatting in a Private Group before posting in a channel that is visible to your entire team.
  
 -----------
@@ -145,6 +145,9 @@ Cannot connect a Mattermost account
 
   .. image:: ../images/zapier-error3.png
 
+Deauthorize the Zapier App
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+1. If you'd deauthorize Zapier so it can no longer post through your connected account, go to **Account Settings** > **Security** > **OAuth 2.0 Applications**, then click **Deauthorize** on the Zapier app.
 
-
+.. image:: ../images/zapier-deauthorize.png
