@@ -6,6 +6,10 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Expected release date: 2016-09-16
 
+### Special Note
+
+To improve the quality and performance of Mattermost, a new configuration setting enables sending error reporting and diagnostic information to Mattermost, Inc. You may opt out from **General > Logging > Enable Error and Diagnostics Information** in the System Console. Read our [privacy policy](https://about.mattermost.com/default-privacy-policy>) to learn more.
+
 ### Highlights
 
 #### Heroku Deployment
