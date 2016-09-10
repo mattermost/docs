@@ -10,7 +10,7 @@ The document includes:
 - [Authentication Examples](https://docs.mattermost.com/developer/web-service.html#authentication-examples)
 - [Client Errors](https://docs.mattermost.com/developer/web-service.html#client-errors)
 - [Rate Limiting](https://docs.mattermost.com/developer/web-service.html#rate-limiting)
-- [Web Service API Reference](https://docs.mattermost.com/developer/api-reference.html)
+- [Web Service API Reference](https://api.mattermost.com/)
 - [Bot Example](https://github.com/mattermost/mattermost-bot-sample-golang)
 
 All examples assume there is a Mattermost instance running at http://localhost:8065.
