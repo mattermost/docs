@@ -60,7 +60,7 @@ To improve the quality and performance of Mattermost, a new configuration settin
 - Added a CLI tool for creating channels
 - Added a display option to hide join/leave messages from view (added + removed messages still show up)
 - System Admins can now test their LDAP connection using the “Test Connection” button
-- LDAP FirstName and LastName fields are now optional
+- FirstName and LastName fields are now optional for LDAP and SAML
 
 ### Bug Fixes
 - Old public links are now invalidated when the salt is regenerated. 
