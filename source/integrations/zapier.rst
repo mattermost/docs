@@ -151,7 +151,7 @@ Post Error
 1. **"We hit an error creating a post message."**
   a. Possible Solution: The post message is greater than 4000 characters long. Ensure your **Message Text** is less than 4000 characters.
   
-  .. image:: ../images/zapier-error4.png
+  .. image:: ../images/zapier-error5.png
 
 Deauthorize the Zapier App
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
