@@ -390,7 +390,7 @@ Enable Webhook Debugging
 
 Enable Diagnostics and Error Reporting 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**true**: To improve the quality and performance of Mattermost, you may send error reporting and diagnostic information to Mattermost, Inc. Read our `privacy policy <https://about.mattermost.com/default-privacy-policy>`_ to learn more.
+**True**: To improve the quality and performance of Mattermost, you may send error reporting and diagnostic information to Mattermost, Inc. Read our `privacy policy <https://about.mattermost.com/default-privacy-policy>`_ to learn more.
 
 **False**: Diagnostics and error reporting are disabled.
 
