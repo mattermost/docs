@@ -126,6 +126,9 @@ If enabled, press **Enter** to insert a new line and **Ctrl + Enter** posts the 
 #### Enable Post Formatting
 This setting controls whether post formatting is rendered. When "On", posts will be rendered with [markdown formatting](http://docs.mattermost.com/help/messaging/formatting-text.html), emoji, autolinked URLs, and line breaks. When "Off", the raw text will be shown. 
 
+#### Enable Join/Leave Messages (Enterprise Edition)
+This setting controls whether system messages about users joining or leaving a channel are visible. When **On** these messages will appear. When **Off**, these messages will be hidden. If any users are added to or removed from a channel or group, a system message will still be shown even if this setting is **Off**.
+
 #### Preview pre-release features
 Turn on preview features to view them early, ahead of their official release:
 - **Show markdown preview option in message input box:** Turning this on will show a "Preview" option when typing in the text input box. Pressing "Preview" shows what the Markdown formatting in the message looks like before the message is sent.
