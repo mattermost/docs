@@ -249,8 +249,11 @@ For any issues, Mattermost Enterprise Edition subscribers and trial license user
 ### Mattermost Enterprise Edition Server
 
 Private cloud enterprise communications server. 
+
 - Free to use in "team mode" with same features as open source version.
 - Enterprise features unlock with a license key and purchase of a subscription. [See feature list and pricing](https://about.mattermost.com/pricing/).
+
+-------
 
 - Mattermost Enterprise Edition v3.3.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-3-0) - [Download](https://releases.mattermost.com/3.3.0/mattermost-3.3.0-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/3.3.0/mattermost-3.3.0-linux-amd64.tar.gz`
@@ -269,7 +272,10 @@ Private cloud enterprise communications server.
 ### Mattermost Team Edition Server
 
 Open source self-hosted team communication server compiled by Mattermost, Inc, available under an MIT license. 
+
 - Identical feature set to free version of Mattermost Enterprise Edition, but cannot be unlocked with a license key.
+
+-------
 
 - Mattermost Team Edition v3.3.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-3-0) - [Download](https://releases.mattermost.com/3.3.0/mattermost-team-3.3.0-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/3.3.0/mattermost-team-3.3.0-linux-amd64.tar.gz`
