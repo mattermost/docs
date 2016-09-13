@@ -70,7 +70,7 @@ Sets how long desktop notifications will remain on screen. If set to **Unlimited
 #### Email Notifications
 Email notifications are sent for mentions and direct messages after you’ve been offline for more than 60 seconds or away from Mattermost for more than 5 minutes. Change the email where notifications are sent in **Account Settings > General > Email**.
 
-If your System Administrator has enabled **Email Batching**, you will have additional options under this settings to select a maximum frequency for which email notifications will be sent. All notifications received over this time period are combined and sent in a single email. 
+If your System Administrator has enabled **Email Batching**, you will have additional options under this settings to select how often email notifications will be sent. All notifications received over this time period are combined and sent in a single email. 
 
 #### Mobile Push Notifications
 Push notifications are sent to your mobile device if you have the Android or iOS app installed. They are sent even if you are online, similar to desktop notifications. By default, push notifications are sent "For mentions and direct messages". If your System Administrator has not set up push notifications, this setting will be disabled.
