@@ -165,8 +165,8 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - Check that the contributors section of Changelog is updated (including contributors from all repos)
 4. Marketing:
     - Finish draft of blog post for mattermost.org and send for marketing lead to review
-        - Upgrade should be recommended if there are security fixed in this version
-    - Finish drafts of all art work (screenshots, GIFs and twitter banners) used for the blog post and send for marketing lead to review
+        - Upgrade should be recommended if there are security fixes in this version
+    - Finish drafts of all art work (screenshots, GIFs and twitter banners) used for the blog post and send to marketing lead for review
 
 ### H. (T-minus 2 working days) Release Build Cut
 
