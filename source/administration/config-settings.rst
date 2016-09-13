@@ -897,7 +897,7 @@ The attribute in the SAML Assertion that will be used to populate the username f
 
 First Name Attribute  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The attribute in the SAML Assertion that will be used to populate the first name of users in Mattermost.
+(Optional) The attribute in the SAML Assertion that will be used to populate the first name of users in Mattermost.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FirstNameAttribute": ""`` with string input.                                                                            |
@@ -905,7 +905,7 @@ The attribute in the SAML Assertion that will be used to populate the first name
 
 Last Name Attribute  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The attribute in the SAML Assertion that will be used to populate the last name of users in Mattermost.
+(Optional) The attribute in the SAML Assertion that will be used to populate the last name of users in Mattermost.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LastNameAttribute": ""`` with string input.                                                                             |
