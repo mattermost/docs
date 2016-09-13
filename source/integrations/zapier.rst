@@ -24,7 +24,7 @@ Enable OAuth 2.0
 2. Under **Integrations** > **Custom Integrations**
   a. Set `Enable OAuth 2.0 Service Provider <https://docs.mattermost.com/administration/config-settings.html#enable-oauth-2-0-service-provider>`_ to **True**.
   b. If you’d like to allow Zapier integrations to post with customizable usernames and profile pictures, then set `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`_ and `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-iconss>`_ to **True**.
-  c. If you’d like to allow users on your system who are not Team or System Admins to create Zapier integrations, then set `Restrict managing integrations to Admins <https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins>`_ to **False**.
+  c. If you’d like to allow users on your system who are not Team or System Admins to connect a Zapier account, then set `Restrict managing integrations to Admins <https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins>`_ to **False**.
 
 Register Zapier as an OAuth 2.0 Application
 ````````````````````````````````````````````````````````````````
@@ -149,13 +149,13 @@ Post Error
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. **"We hit an error creating a post message."**
-  a. Possible Solution: The post message is greater than 4000 characters long. Ensure your **Message Text** is less than 4000 characters.
+  a. Possible Solution: Ensure your **Message Text** is less than 4000 characters, since that is the maximum character limit for any single message in Mattermost.
   
   .. image:: ../images/zapier-error5.png
 
 Deauthorize the Zapier App
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. If you'd deauthorize Zapier so it can no longer post through your connected account, go to **Account Settings** > **Security** > **OAuth 2.0 Applications**, then click **Deauthorize** on the Zapier app.
+1. If you'd like to deauthorize Zapier so it can no longer post through your connected account, go to **Account Settings** > **Security** > **OAuth 2.0 Applications**, then click **Deauthorize** on the Zapier app.
 
 .. image:: ../images/zapier-deauthorize.png
