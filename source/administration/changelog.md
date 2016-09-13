@@ -782,7 +782,7 @@ Enterprise:
 ### Bug Fixes
 
 - Posts from webhooks now fire notifications to the user who created the webhook.
-- Edit post option no longer appears, but doesn't work, on other users' posts in the RHS.
+- Edit post option no longer appears, but doesn't work, on other users' posts in the right-hand sidebar.
 - Text input box does not stay scrolled to the bottom when drafting a long message in Firefox.
 - Webhooks in search results now show the username/profile pic of the bot, instead of the user who set up the webhook.
 - Outgoing webhooks triggers now work when followed by any type of white space, instead of only spaces
@@ -924,7 +924,7 @@ User Interface
 ### Known Issues
 
 - Regression: Get Public Link downloads a file and does not product a public link. 
-- Edit post option appears, but doesn't work, on other users' posts in the RHS.
+- Edit post option appears, but doesn't work, on other users' posts in the right-hand sidebar.
 - Text input box does not stay scrolled to the bottom when drafting a long message in Firefox.
 - File name tooltip stays open after clicking to download.
 - Unable to paste images into the text box on Firefox, Safari, and IE11.
@@ -1004,9 +1004,9 @@ User Interface
 - Custom theme color selectors are now organized into categories.
 - Add Members and Manage Members dialogs can now be filtered using a search bar.
 - Deactivated members no longer appear in the channel members list.
-- Keyboard focus is set to the text input box in the RHS if a user clicks the reply icon.
+- Keyboard focus is set to the text input box in the right-hand sidebar if a user clicks the reply icon.
 - Permalinks are now displayed in a Copy Permalink dialog instead of a popover.
-- Permalink option is now available from the [...] menu on messages and comments in the RHS.
+- Permalink option is now available from the [...] menu on messages and comments in the right-hand sidebar.
 - Reply icon now only appears on-hover for messages that don’t have replies.
 - Scroll bar now appears in the center channel.
 
@@ -1016,19 +1016,19 @@ User Interface
 - Yellow text box error no longer appears when the system is connected.
 - Wildcard search on MySQL databases is now fixed.
 - Usernames in the center channel no longer appear as “...” on login.
-- Deleted messages now delete in the RHS and center channel without requiring a page refresh.
+- Deleted messages now delete in the right-hand sidebar and center channel without requiring a page refresh.
 - Contact us email address in the footer of notification emails now uses the SupportEmail config setting instead of FeedbackEmail. 
 - Email addresses are now required to have at least one letter before and after the @ sign.
 - Firefox desktop notifications are now fixed for some users experiencing missed notifications.
 - “User is typing” message containing long usernames no longer causes text wrapping.
-- Usernames appearing as “...” in the RHS when performing a search is fixed.
+- Usernames appearing as “...” in the right-hand sidebar when performing a search is fixed.
 - Links that end in image extensions but do not actually link to raw images no longer generate a blank image preview.
 - Channel handle field in the Rename Channel dialog is now visible on themes with dark backgrounds.
 - Autolinked images no longer persist after the post containing the link is deleted.
 - Code theme selector on IE11 now only shows one dropdown arrow and clicking directly on the arrow opens the dropdown.
 - Save/Cancel buttons for language selection in Account Settings are now formatted the same as other settings.
 - Inconsistent field spacing in the Channel Info dialog is fixed.
-- Recent mentions icon no longer jumps to the left of the search bar when the RHS is opened.
+- Recent mentions icon no longer jumps to the left of the search bar when the right-hand sidebar is opened.
 - Custom slash command hints now show up in the autocomplete list.
 - GIF links inside code blocks no longer auto-post the GIFs.
 - Changing usernames no longer adds the old username to “words that trigger mentions”.
@@ -1051,7 +1051,7 @@ Changes from v2.0 to v2.1:
 
 #### Known Issues
 
-- Edit post option appears, but doesn't work, on other users' posts in the RHS.
+- Edit post option appears, but doesn't work, on other users' posts in the right-hand sidebar.
 - Text input box does not stay scrolled to the bottom when drafting a long message in Firefox.
 - Some characters in posts may display as HTML entities, such as `&#39;`. This can be fixed by switching to a different language and then back again.
 - File name tooltip stays open after clicking to download.
@@ -1160,14 +1160,14 @@ Search
 - Moved the recent mentions icon to the right of the search bar
 
 Messaging 
-- Changed the comment bubble to a reply arrow to make post replies and the RHS more discoverable
+- Changed the comment bubble to a reply arrow to make post replies and the right-hand sidebar more discoverable
 - Time stamp next to sequential posts made by users now shows HH:MM instead of on-hover timestamp
 - Code blocks now support horizontal scrolling if content exceeds the max width 
 
 User Interface
 
 - Away status added to note users who have been idle for more than 5 minutes.
-- Long usernames are now truncated in the center channel and RHS
+- Long usernames are now truncated in the center channel and right-hand sidebar
 - Added more favicon sizes for home screen icons on mobile devices
 
 #### Bug Fixes  
@@ -1253,7 +1253,7 @@ The following is for informational purposes only, no action needed. Mattermost a
 - Timestamps are displayed in 12-hour format when set to 24-hour format.
 - GIF links inside code blocks auto-post the GIFs.
 - Syntax highlighting code block is missing the label for Latex documents.
-- Deleted messages don't delete in the RHS until a page refresh.
+- Deleted messages don't delete in the right-hand sidebar until a page refresh.
 
 #### Contributors 
 

@@ -28,11 +28,11 @@ Observe a live preview as you customize theme colors and then click **Save** to 
 - **Mention Jewel Text:** Text color on the mention jewel indicating the number of unread mentions. This is also the text color on the “Unread Posts Below/Above” indicator.  
 
 #### Center Channel Styles  
-- **Center Channel BG:** Color of the center pane, RHS and all modal backgrounds.
-- **Center Channel Text:** Color of all the text - with the exception of mentions, links, hashtags and code blocks - in the center pane, RHS and modals.
+- **Center Channel BG:** Color of the center pane, right-hand sidebar and all modal backgrounds.
+- **Center Channel Text:** Color of all the text - with the exception of mentions, links, hashtags and code blocks - in the center pane, right-hand sidebar and modals.
 - **New Message Separator:** The new massage separator appears below the last read message when you click into a channel with unread messages.
-- **Mention Highlight BG:** Highlight color behind your words that trigger mentions in the center pane and RHS.
-- **Mention Highlight Link:** Text color of your words that trigger mentions in the center pane and RHS.
+- **Mention Highlight BG:** Highlight color behind your words that trigger mentions in the center pane and right-hand sidebar.
+- **Mention Highlight Link:** Text color of your words that trigger mentions in the center pane and right-hand sidebar.
 - **Code Theme:** Background and syntax colors for all code blocks.
 
 #### Link and Button Styles  
