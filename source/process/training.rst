@@ -142,7 +142,7 @@ Primer
 
 Video
 
-1. `IDEA shopping cart project <https://www.youtube.com/watch?v=taJOV-YCieI>`_ (22m) - Illustration of design thinking 
+1. `IDEO shopping cart project <https://www.youtube.com/watch?v=taJOV-YCieI>`_ (22m) - Illustration of design thinking 
 
 Books
 
