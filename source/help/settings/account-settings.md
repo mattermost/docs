@@ -52,14 +52,25 @@ Sessions are created when you log in with your email and password to a new brows
 ## Notifications
 Settings to configure desktop notifications, desktop notification sounds, email notifications, and words that trigger mentions.
 
-#### Send Desktop Notifications
-Desktop notifications appear at the bottom right corner of your main monitor. The desktop notification preference you choose in *Account Settings* applies globally, but this preference is customizable for each channel from the channel name drop-down menu. Desktop notifications are available on Firefox, Safari, and Chrome.
+#### Desktop Notifications
+Desktop notifications appear in the corner of your main monitor when there is activity in Mattermost. 
 
-#### Desktop Notification Sounds
-A notification sound plays for all Mattermost posts that would fire a desktop notification, unless *Desktop Notification Sound* is turned off. Desktop notification sounds are available on Firefox, Safari, Chrome, Internet Explorer, and Edge.
+##### Send Desktop Notifications
+
+Choose what activity triggers a desktop notification. This setting applies globally, but this preference is customizable for each channel from the channel name drop-down menu. Desktop notifications are available on Firefox, Safari, and Chrome.
+
+##### Notification Sound
+
+Notification sounds fire for any activity that would trigger a desktop notification. Notification sounds are available on IE11, Edge, Safari and Chrome.
+
+##### Notification Duration
+
+Sets how long desktop notifications will remain on screen. If set to **Unlimited**, the user will have to manually clear each notification as it appears on screen. Desktop notifications in Safari can only stay on screen for a maximum of 5 seconds.
 
 #### Email Notifications
-Email notifications are sent for mentions and direct messages after you’ve been offline for more than 60 seconds or away from Mattermost for more than 5 minutes. Change the email where notifications are sent from **Account Settings > General > Email**.
+Email notifications are sent for mentions and direct messages after you’ve been offline for more than 60 seconds or away from Mattermost for more than 5 minutes. Change the email where notifications are sent in **Account Settings > General > Email**.
+
+If your System Administrator has enabled **Email Batching**, you will have additional options under this settings to select how often email notifications will be sent. All notifications received over this time period are combined and sent in a single email. 
 
 #### Mobile Push Notifications
 Push notifications are sent to your mobile device if you have the Android or iOS app installed. They are sent even if you are online, similar to desktop notifications. By default, push notifications are sent "For mentions and direct messages". If your System Administrator has not set up push notifications, this setting will be disabled.
@@ -67,8 +78,8 @@ Push notifications are sent to your mobile device if you have the Android or iOS
 #### Words That Trigger Mentions
 By default, you will receive mention notifications from your non-case sensitive username, mentioned @username and @channel. Customize the words that trigger mentions by typing them in the input box. This is useful if you want to be notified of all posts on a certain topic, for example, “marketing”.
 
-#### Comment Thread Notifications
-In addition to **Words that Trigger Mentions**, if you'd like to receive mention notifications when someone replies to a thread that you started, select **Mention any comments on your post**. If you'd like to receive mention notifications for replies on any thread that you start or participate in, select **Mention any comments in a thread you participated in**.
+#### Reply Notifications
+In addition to **Words that Trigger Mentions**, this setting allows you to receive mention notifications when someone replies to a thread that you started or participated in. You are considered to start a thread when you post a message to which other members of your team reply. You are considered to participate in a thread when you post a message using the [reply button](https://docs.mattermost.com/help/getting-started/messaging-basics.html#messaging-basics) in an already existing thread.
 
 ## Display
 Settings to configure clock and teammate name display preferences.

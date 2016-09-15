@@ -1126,6 +1126,16 @@ Enable Email Notifications
 | This feature's ``config.json`` setting is ``"SendEmailNotifications": false`` with options ``true`` and ``false`` for above settings respectively.                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable Email Batching
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**True**: Users can select how often to receive email notifications, and multiple notifications within that timeframe will be combined into a single email, configurable in **Account Settings** > **Notifications**. Note: Email batching cannot be enabled unless the `SiteURL <https://docs.mattermost.com/administration/config-settings.html#site-url>`_ is configured and `High Availability <https://docs.mattermost.com/administration/config-settings.html#enable-high-availability-mode>`_ is disabled.
+
+**False**: If email notifications are enabled in Account Settings, emails will be sent individually for every mention or direct message received.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableEmailBatching": false`` with options ``true`` and ``false`` for above settings respectively.                      |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Notification Display Name  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Name displayed on email account used when sending notification emails from Mattermost system.
@@ -1337,9 +1347,9 @@ Note: OAuth 2.0 applications can be authorized by all users if they have the **C
 | This feature's ``config.json`` setting is ``"EnableOnlyAdminIntegrations": true`` with options ``true`` and ``false`` for above settings respectively.               |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable webhooks and slash commands to override usernames  
+Enable integrations to override usernames  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**True**: Webhooks, slash commands and OAuth 2.0 apps will be allowed to change the username they are posting as.
+**True**: Webhooks, slash commands and other integrations, such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`_, will be allowed to change the username they are posting as.
 
 **False**: Webhooks, slash commands and OAuth 2.0 apps can only post as the username of the account they were set up with. See http://mattermost.org/webhooks for more details.
 
@@ -1347,9 +1357,9 @@ Enable webhooks and slash commands to override usernames
 | This feature's ``config.json`` setting is ``"EnablePostUsernameOverride": false`` with options ``true`` and ``false`` for above settings respectively.               |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable webhooks and slash commands to override profile picture iconss  
+Enable integrations to override profile picture icons  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**True**: Webhooks, slash commands and OAuth 2.0 apps will be allowed to change the profile picture they post with.
+**True**: Webhooks, slash commands and other integrations, such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`_, will be allowed to change the profile picture they post with.
 
 **False**: Webhooks, slash commands and OAuth 2.0 apps can only post with the profile picture of the account they were set up with. See http://mattermost.org/webhooks for more details.
 
@@ -1931,6 +1941,25 @@ Amazon S3 Lowercase Bucket
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
+
+Email Settings
+```````````````````````````
+Email Batching Buffer Size 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Specify the maximum number of notifications batched into a single email.
+
++--------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``EmailBatchingBufferSize": 256`` with whole number input                      |
++--------------------------------------------------------------------------------------------------------------------------+
+
+Email Batching Interval
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Specify the maximum frequency, in seconds, which the batching job checks for new notifications. Longer batching intervals will increase performance.
+
++-----------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``EmailBatchingInterval": 30`` with whole number input                      |
++-----------------------------------------------------------------------------------------------------------------------+
+
 
 GitLab Settings
 ```````````````````````````
