@@ -20,10 +20,16 @@ Emails are sent for any mentions you receive if you have mattermost closed or ha
 - Configure the email address where notifications are sent in **Account Settings** > **General** > **Email** 
 
 ## Desktop Notifications
-These are browser notifications that appear in the corner of your main monitor. By default these notifications are sent for all activity while Mattermost is open. Desktop notifications are available on Firefox, Safari, and Chrome.
+These are browser notifications that appear in the corner of your main monitor. By default, these notifications are sent for all activity while Mattermost is open. Desktop notifications are available on Firefox, Safari, and Chrome.
 
-- Configure when desktop notifications are sent from **Account Settings** > **Notifications** > **Send Desktop Notifications**.
+- Configure when desktop notifications are sent from **Account Settings** > **Notifications** > **Desktop Notifications** > **Send Desktop Notifications**.
 - Configure channel specific desktop notifications from **Channel Menu** > **Notification Preferences** > **Send Desktop Notifications**. By default, all channels use the global setting configured in *Account Settings*.
+
+## Mobile Push Notifications
+If the Mattermost Android or iOS app is installed, push notifications can be sent to your mobile device. By default, these notifications are sent for all activity for any channel that is not being viewed on desktop.
+
+- Configure when push notifications are sent from **Account Settings** > **Notifications** > **Mobile Push Notifications** > **Send mobile push notifications**.
+- Configure when push notifications are sent depending on your status from **Account Settings** > **Notifications** > **Mobile Push Notifications** > **Trigger push notifications when**.
 
 ## Notification Sounds
 A notification sound plays for all activity that would fire a desktop notification. Notification sounds are available on Safari, Chrome and Edge.
