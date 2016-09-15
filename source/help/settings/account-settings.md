@@ -53,7 +53,7 @@ Sessions are created when you log in with your email and password to a new brows
 Settings to configure desktop notifications, desktop notification sounds, email notifications, and words that trigger mentions.
 
 #### Desktop Notifications
-Desktop notifications appear at the bottom right corner of your main monitor when there is activity in Mattermost. 
+Desktop notifications appear in the corner of your main monitor when there is activity in Mattermost. 
 
 ##### Send Desktop Notifications
 
@@ -65,7 +65,7 @@ Notification sounds fire for any activity that would trigger a desktop notificat
 
 ##### Notification Duration
 
-Sets how long desktop notifications will remain on screen. If set to **Unlimited**, the user will have to manually clear each notification as it appears on screen.
+Sets how long desktop notifications will remain on screen. If set to **Unlimited**, the user will have to manually clear each notification as it appears on screen. Desktop notifications in Safari can only stay on screen for a maximum of 5 seconds.
 
 #### Email Notifications
 Email notifications are sent for mentions and direct messages after you’ve been offline for more than 60 seconds or away from Mattermost for more than 5 minutes. Change the email where notifications are sent in **Account Settings > General > Email**.
