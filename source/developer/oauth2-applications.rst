@@ -1,7 +1,7 @@
 OAuth 2.0 Applications
 ===============
 
-OAuth 2.0 is a protocol that allows Mattermost to authorize API requests from external applications. The authorization lets 
+OAuth 2.0 is a protocol that allows Mattermost to authorize API requests from external applications. The authorization allows 
 
  - users with an account on a Mattermost server to sign in to third-party applications. You can find a `sample OAuth2 Client Application for Mattermost here <https://github.com/enahum/mattermost-oauth2-client-sample>`_ to test the functionality.
 
@@ -48,7 +48,7 @@ Register an OAuth 2.0 Application
 
 5 - Add **Description**: This is a short description of your application that users will see when viewing a list of authorized applications in **Account Settings > Security > OAuth 2.0 Applications**.
 
-6 - Specify the **Homepage**: This is the homepage of the OAuth 2.0 application and let's users visit the app page to learn more what it does. The URL must be a valid URL and start with ``http://`` or ``https://`` depending on your server configuration.
+6 - Specify the **Homepage**: This is the homepage of the OAuth 2.0 application and lets users visit the app page to learn more what it does. The URL must be a valid URL and start with ``http://`` or ``https://`` depending on your server configuration.
 
 7 - (Optional) Add **Icon URL**: The image users will see when viewing a list of authorized applications in **Account Settings > Security > OAuth 2.0 Applications** and when viewing a list of OAuth 2.0 applications in **Main Menu** > **Integrations**. Must be a valid URL and start with ``http://`` or ``https://``.
 
