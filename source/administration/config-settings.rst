@@ -387,6 +387,19 @@ Enable Webhook Debugging
 | This feature's ``config.json`` setting is ``"EnableWebhookDebugging": true`` with options ``true`` and ``false`` for above settings respectively.                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+
+Enable Diagnostics and Error Reporting 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**True**: To improve the quality and performance of Mattermost, you may send error reporting and diagnostic information to Mattermost, Inc. Read our `privacy policy <https://about.mattermost.com/default-privacy-policy>`_ to learn more.
+
+**False**: Diagnostics and error reporting are disabled.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableDiagnostics": true`` with options ``true`` and ``false`` for above settings respectively.                         |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+
 ________
 
 Authentication
@@ -1367,14 +1380,6 @@ ________
 
 External Services
 ```````````````````````````
-Segment Write Key  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-For deployments seeking additional tracking of system behavior using Segment.com, you can enter a Segment WRITE_KEY using this field. This value works like a tracking code and is used in client-side Javascript and will send events to Segment.com attributed to the account you used to generate the WRITE_KEY.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SegmentDeveloperKey": ""`` with string input.                                                                           |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Google API Key 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Mattermost offers the ability to embed YouTube videos from URLs shared by end users. Set this key to enable the display of titles for embedded YouTube video previews. Without the key, YouTube previews will still be created based on hyperlinks appearing in messages or comments but they will not show the video title. If Google detects the number of views is exceedingly high, they may throttle embed access. Should this occur, you can remove the throttle by registering for a Google Developer Key and entering it in this field following these instructions: https://www.youtube.com/watch?v=Im69kzhpR3I. Your Google Developer Key is used in client-side Javascript.
@@ -1823,6 +1828,14 @@ There are a number of settings customizable in ``config.json`` unavailable in th
 
 Service Settings
 ```````````````````````````
+
+Segment Write Key  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+For deployments seeking additional tracking of system behavior using Segment.com, you can enter a Segment WRITE_KEY using this field. This value works like a tracking code and is used in client-side Javascript and will send events to Segment.com attributed to the account you used to generate the WRITE_KEY.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SegmentDeveloperKey": ""`` with string input.                                                                           |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 WebSocket Secure Port 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
