@@ -1,4 +1,6 @@
-## Active Directory/LDAP Setup (E10+) 
+## Active Directory/LDAP Setup
+
+_Available in Enterprise Edition E10 & E20_
 
 ### Overview 
 
@@ -49,7 +51,7 @@ Organizations using multiple domains can integrate with Mattermost using a "Fore
 
 The following are troubleshooting suggestions on common error messages and issues. 
 
-##### `User not registered on LDAP server`
+##### User not registered on LDAP server
 
 This means the query sent back to the Active Directory/LDAP server returned no results. 
 - Check that you correctly entered Active Directory/LDAP user credentials (e.g. did not mix username with email).
@@ -63,3 +65,11 @@ If the user can no longer log in to Mattermost with their LDAP credentials - for
 The issue can be fixed by changing the value of the field used for the ID attribute back to the old value. 
 
 Note: Currently the value is case sensitive. If the ID attribute is set to the username and the username changes from `John.Smith` to `john.smith`, the user would have problems logging in.   
+
+##### System Log Error: LDAP Result Code 4 "Size Limit Exceeded" 
+
+This indicates your AD/LDAP server configuration has a maximum page size set and the query coming from Mattermost is returning a result set in excess of that limit. 
+
+To address this issue you can set [max page size](https://docs.mattermost.com/administration/config-settings.html#maximum-page-size) for Mattermost's AD/LDAP configuration to return a sequence of results sets below the max page size set in AD/LDAP, rather than all results in a single query. 
+
+
