@@ -35,7 +35,7 @@ Register Zapier as an OAuth 2.0 Application
   c. **Description**: ``Application for Zapier integrations``
   d. **Homepage**: ``https://zapier.com/``
   e. **Icon URL**: ``http://bit.ly/2bxrzv0``
-  f. **Callback URLs**: ``https://zapier.com/dashboard/auth/oauth/return/App27274API/``
+  f. **Callback URLs**: ``https://zapier.com/dashboard/auth/oauth/return/MattermostDevAPI/``
 3. Click **Save** to create the application. You will be provided with a **Client ID** and **Client Secret**. Save these values to connect Zapier in the steps below.
 
 .. image:: ../images/zapier-oauth.png
