@@ -8,17 +8,16 @@ Expected release date: 2016-09-16
 
 ### Highlights
 
-#### Heroku Deployment
-- Install a preview of Mattermost with one-click using our new Heroku deployment
-
-[![Deploy a Preview](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/mattermost/mattermost-heroku)
+#### Zapier Integration
+- [Zapier](https://zapier.com) is a service to automate tasks between web apps. You can create zaps that automate posts in Mattermost based on triggers in over [700 supported apps](https://zapier.com/zapbook/) on Zapier. Please [refer to our documentation](https://docs.mattermost.com/integrations/zapier.html) for more details.
 
 #### OAuth 2.0 Service Provider
 - Users with an account on a Mattermost server can securely sign in to third-party application with an OAuth 2.0 protocol. See [documentation](https://docs.mattermost.com/developer/oauth-2-0-applications.html) to learn more.
 
-#### Zapier Integration
-- [Zapier](https://zapier.com) is a service to automate tasks between web apps. You can create zaps that automate posts in Mattermost based on triggers in over [500 supported apps](https://zapier.com/zapbook/) on Zapier. Please [refer to our documentation](https://docs.mattermost.com/integrations/zapier.html) for more details.
+#### Heroku Deployment
+- Install a preview of Mattermost with one-click using our new Heroku deployment
 
+[![Deploy a Preview](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/mattermost/mattermost-heroku)
 
 #### Improved Notifications and Status Indicators
 - Users can now control how often email notifications are sent
@@ -128,13 +127,12 @@ The following config settings will only work on servers with an Enterprise Licen
 - Deleted messages don't disappear from the channel for the user who deleted the message, if the message was previously edited and right hand sidebar is open.
 - A single collapsed link or image preview re-opens after refresh.
 - Files sent in private chat to members in a different team are not accessible.
-- YouTube videos show as “Video not found” on Desktop App.
+- YouTube video links show as “Video not found” on Desktop App if "Allow mixed content" is turned on.
 - “More” option under Direct Message list no longer shows count of team members not in your direct message list.
 - On Firefox, CTRL/CMD + U keyboard shortcut doesn’t work.
 - Webhook attachments don’t show up in search results.
 - Messages sometimes don't appear deleted until the page is refreshed.
 - When joining a channel from a public link, the page sometimes loads for a long time and requires a refresh.
-- Recent mentions search for usernames containing a dot returns results containing only part of the username, due to database search limitations.
 
 ### Contributors
 
