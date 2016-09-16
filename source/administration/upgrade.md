@@ -130,6 +130,7 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
 5. Reset the Mattermost account as the directory owner by typing:
  - `sudo chown -R mattermost:mattermost <path-to-your-mattermost-folder>`
  - `sudo chmod -R g+w <path-to-your-mattermost-folder>`
+6. To force the client to refresh for your users, save a setting in the System Console. For example, go to **System Console** > **General** > **Configuration**, and copy the Listen Address. Then paste the Listen Address back into the field, and press **Save**.
 
 The **Edition** and **License** sections on the page should update to confirm your system has been updated to the Enterprise Edition.
 
