@@ -184,6 +184,7 @@ The final release is cut. If an urgent and important issue needs to be addressed
     - Contact owners of [community installers](http://www.mattermost.org/installation/) or submit [PRs](https://github.com/tommyvn/mattermost-heroku/commit/94f7c5c0c5d7d2672fb6d62b6a560b4b5c1b5131) to update install version number
     - Close GitHub meta ticket for the release
     - Finalize docs
+      - If reviews are not complete, hold a 30 minute doc review meeting with PMs
       - Merge the docs release branch to master and verify all changes on docs.mattermost.com once the build is up
       - Submit a correction PR for any incorrect formatting or other errors missed during the intitial review
     - Update [MVP page](https://www.mattermost.org/mvp/) with the most valuable contributor of the release
@@ -235,7 +236,6 @@ If a bug fix release is required, run through the following steps again:
         - [Update testing spreadsheet](https://mattermost.atlassian.net/browse/PLT-3044)
         - [Creating final release candidate](https://mattermost.atlassian.net/browse/PLT-2198)
         - [Test Gitlab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/PLT-2197) 
-        - [Push to private cloud customers](https://mattermost.atlassian.net/browse/PLT-2199)
         - [Push to private long-running feature branches](https://mattermost.atlassian.net/browse/PLT-2199)
         - [Test upgrade](https://mattermost.atlassian.net/browse/PLT-3940) to latest release based on [upgrade guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide)
         - Test upgrade from Team Edition to Enterprise Edition
