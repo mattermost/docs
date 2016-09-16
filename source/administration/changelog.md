@@ -4,12 +4,12 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 ## Release v3.4.0
 
-Expected release date: 2016-09-16
+Release date: 2016-09-16
 
 ### Highlights
 
 #### Zapier Integration
-- [Zapier](https://zapier.com) is a service to automate tasks between web apps. You can create zaps that automate posts in Mattermost based on triggers in over [500 supported apps](https://zapier.com/zapbook/) on Zapier. Please [refer to our documentation](https://docs.mattermost.com/integrations/zapier.html) for more details.
+- [Zapier](https://zapier.com) is a service to automate tasks between web apps. You can create zaps that automate posts in Mattermost based on triggers in over [700 supported apps](https://zapier.com/zapbook/) on Zapier. To get started, [click and accept this invitation link](https://zapier.com/developer/invite/47050/902cde1eb8e0b3eb1223a2cf05331abd/) and then [refer to our documentation](https://docs.mattermost.com/integrations/zapier.html) for more details.
 
 #### OAuth 2.0 Service Provider
 - Users with an account on a Mattermost server can securely sign in to third-party application with an OAuth 2.0 protocol. See [documentation](https://docs.mattermost.com/developer/oauth-2-0-applications.html) to learn more.
