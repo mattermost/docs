@@ -54,7 +54,7 @@ Once slash commands are enabled, you will be able to set some up through the Mat
 
 1. Login to your Mattermost team site and go to **Main Menu** > **Integrations** > **Slash Commands**
 2. Click **Add a new command**, and select your options
-   1. Fill in **Command Trigger Word**, this will be the word that is your command (Note: The trigger word must be unique, and cannot begin with a slash or contain any spaces)
+   1. Fill in **Command Trigger Word**, this will be the word that is your command (Note: The trigger word must be unique, and cannot contain any spaces)
    2. Enter a **Request URL** that will be the endpoint Mattermost hits to reach your external application
    3. Select an HTTP **Request Method** from the dropdown
    4. (Optional) Type in a **Response Username** that will be used with any messages your command responds with

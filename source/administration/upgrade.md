@@ -9,8 +9,7 @@ To start, select one of the following guides:
   - [Upgrade Team Edition to 3.0.x](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-3-0-x)
   - [Upgrade Team Edition for 2.2.x and earlier](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-for-2-2-x-and-earlier)
 - [Upgrade Enterprise Edition](https://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition)
-  - [Upgrade Enterprise Edition to 3.2.x and later](https://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition-to-3-2-x-and-later)
-  - [Upgrade Enterprise Edition to 3.1.x](https://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition-to-3-1-x)
+  - [Upgrade Enterprise Edition to 3.1.x and later](https://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition-to-3-1-x-and-later)
   - [Upgrade to Enterprise Edition 3.0.x](https://docs.mattermost.com/administration/upgrade.html#upgrade-to-enterprise-edition-3-0-x)
   - [Upgrade Enterprise Edition to 2.2.x and earlier](https://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition-to-2-2-x-and-earlier)
 - [Upgrade Team Edition to Enterprise Edition](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition)  
@@ -22,8 +21,10 @@ To start, select one of the following guides:
 1. Download the **appropriate next upgrade** of your Team Edition server and note any compatibility procedures
       1. Run `platform -version` to check the current version of your Mattermost server
       2. Determine the appropriate next upgrade for your server:
-          - Mattermost `v3.0.x`, `v3.1.x` and `v3.2.x` can upgrade directly to Mattermost `v3.3.x`.
-          - Mattermost `v2.2.x` and `v2.1.x` need to [upgrade to `v3.0.x`](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-3-0-x) before upgrading further
+          - Mattermost `v3.0.x` and above can upgrade directly to Mattermost `v3.4.x`
+              - Note: Upgrading to `v3.4.x` will cause existing public links to break. 
+          - Mattermost `v2.2.x` can upgrade directly to `v3.1.x` or `v3.2.x` but must follow the [extended upgrade guide for `v3.0.x`](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-3-0-x)   
+          - Mattermost `v2.1.x` and below must follow the process to [upgrade to `v3.0.x`](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-3-0-x) before upgrading further
       3. Use the [Version Archive table](https://docs.mattermost.com/administration/upgrade.html#version-archive) to find the `[RELEASE URL]` for your desired version and enter `wget [RELEASE URL]` to download. For example, to download `vX.X.X`, use `wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz`.
       4. Review **Compatibility** section in [CHANGELOG](https://docs.mattermost.com/administration/changelog.html) for the version downloaded and make sure to follow any instructions.
 2. Stop the Mattermost Server
@@ -136,19 +137,15 @@ For any issues, Mattermost Enterprise Edition subscribers and trial license user
 
 ### Upgrade Enterprise Edition 
 
-#### Upgrade Enterprise Edition to 3.2.x and later
-
-Upgrading to `v3.2.x` and `v3.3.x` follows the procedure to [upgrade to `v3.1.x` and later](https://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition-to-3-1-x), but there is a breaking change where under `LdapSettings` in `config.json` `"FirstNameAttribute"` and `"LastNameAttribute"` **are now required fields**.
-
-Furthermore, for `v3.2.x` only, `"BindUsername"`, and `"BindPassword"` **are also required fields** with anonymous bind not supported.
-
-#### Upgrade Enterprise Edition to 3.1.x
+#### Upgrade Enterprise Edition to 3.1.x and later
 
 1. Download the **appropriate next upgrade** of your Team Edition server and note any compatibility procedures
       1. Run `platform -version` to check the current version of your Mattermost server
       2. Determine the appropriate next upgrade for your server:
-          - Mattermost `v3.0.x` and `v3.1.x` can upgrade directly to Mattermost `v3.2.x`.
+          - Mattermost `v3.0.x` and above can upgrade directly to Mattermost `v3.4.x`.
+            - Note: Upgrading to `v3.4.x` will cause existing public links to break. 
           - Mattermost `v2.2.x` can upgrade directly to `v3.1` or `v3.2` but must follow the [extended upgrade guide for `v3.0.x`](https://docs.mattermost.com/administration/upgrade.html#upgrade-to-enterprise-edition-3-0-x)   
+            - Note: For `v3.2.x` only, `"BindUsername"`, and `"BindPassword"` under `LdapSettings` are required fields with anonymous bind not supported. For `v3.2.x` and `v3.3.x` only, `"FirstNameAttribute"` and `"LastNameAttribute"` under `LdapSettings` are required fields.
           - Mattermost `v2.1.x` and below must follow the process to [upgrade to `v3.0.x`](https://docs.mattermost.com/administration/upgrade.html#upgrade-to-enterprise-edition-3-0-x) before upgrading further
       3. Use the [Version Archive List](https://docs.mattermost.com/administration/upgrade.html#version-archive) to find the `[RELEASE URL]` for your desired version and enter `wget [RELEASE URL]` to download. For example, to download `vX.X.X`, use `wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz`.
       4. Review **Compatibility** section in [CHANGELOG](https://docs.mattermost.com/administration/changelog.html) for the version downloaded and make sure to follow any instructions.
@@ -258,6 +255,8 @@ Private cloud enterprise communications server.
 
 -------
 
+- Mattermost Enterprise Edition v3.4.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-4-0) - [Download](https://releases.mattermost.com/3.4.0/mattermost-3.4.0-linux-amd64.tar.gz)
+  - `https://releases.mattermost.com/3.4.0/mattermost-3.4.0-linux-amd64.tar.gz`
 - Mattermost Enterprise Edition v3.3.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-3-0) - [Download](https://releases.mattermost.com/3.3.0/mattermost-3.3.0-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/3.3.0/mattermost-3.3.0-linux-amd64.tar.gz`
 - Mattermost Enterprise Edition v3.2.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-2-0) - [Download](https://releases.mattermost.com/3.2.0/mattermost-3.2.0-linux-amd64.tar.gz)
@@ -280,6 +279,8 @@ Open source self-hosted team communication server compiled by Mattermost, Inc, a
 
 -------
 
+- Mattermost Team Edition v3.4.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-4-0) - [Download](https://releases.mattermost.com/3.4.0/mattermost-team-3.4.0-linux-amd64.tar.gz)
+  - `https://releases.mattermost.com/3.4.0/mattermost-team-3.4.0-linux-amd64.tar.gz`
 - Mattermost Team Edition v3.3.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-3-0) - [Download](https://releases.mattermost.com/3.3.0/mattermost-team-3.3.0-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/3.3.0/mattermost-team-3.3.0-linux-amd64.tar.gz`
 - Mattermost Team Edition v3.2.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-2-0) - [Download](https://releases.mattermost.com/3.2.0/mattermost-team-3.2.0-linux-amd64.tar.gz)
@@ -312,4 +313,3 @@ Open source self-hosted team communication server compiled by Mattermost, Inc, a
    - `https://releases.mattermost.com/0.6.0/mattermost-team-0.6.0-linux-amd64.tar.gz`
 - Mattermost Team Edition v0.5.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v0-5-0-preview) - [Download](https://releases.mattermost.com/0.5.0/mattermost-team-0.5.0-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/0.5.0/mattermost-team-0.5.0-linux-amd64.tar.gz`
-

@@ -7,7 +7,7 @@ This document provides instructions for common administrator tasks.
   - In particular, DO NOT manually delete data from the database directly. Mattermost is designed as a continuous archive and cannot be supported after manual manipulation.
   - If you need to permanently delete a team or user please use the `Command Line Tool <http://docs.mattermost.com/administration/command-line-tools.html>`_.
 
-Migrating to LDAP or SAML from email-based authentication  
+Migrating to AD/LDAP or SAML from email-based authentication  
 ==== 
 
 If you've evaluated Mattermost using email authentication and decide to deploy broadly using Active Directory/LDAP or SAML Single-Sign-On, you can follow this procedure: 

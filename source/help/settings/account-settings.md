@@ -41,7 +41,7 @@ In future, you will be asked to enter a passcode from Google Authenticator in ad
 
 This option allows you to switch your sign-in method from email/password to a single-sign-on option, and back again. 
 
-For example, if LDAP single-sign-on is enabled, users can click a "Switch to using LDAP" button and the enter their LDAP credentials to switch sign-in over to LDAP. They also need to enter the password for their email account to verify their existing credentials. Following the change, users receive an email to confirm the action. 
+For example, if AD/LDAP single-sign-on is enabled, users can click a "Switch to using AD/LDAP" button and the enter their AD/LDAP credentials to switch sign-in over to AD/LDAP. They also need to enter the password for their email account to verify their existing credentials. Following the change, users receive an email to confirm the action. 
 
 #### View Access History
 Access History displays a chronological list of the last 20 login and logout attempts, channel creations and deletions, account settings changes, or channel setting modifications made on your account. The details of the Session ID (unique identifier for each Mattermost browser session) and IP Address of the action is recorded for audit log purposes.

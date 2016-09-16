@@ -5,7 +5,7 @@ The following process provides steps to configure SAML with Microsoft ADFS for M
 ### Basic Requirements for ADFS
 
 The following are basic requirements to use ADFS for Mattermost:
- - An Active Directory instance where all users have a specified email, first name, last name and username attributes.
+ - An Active Directory instance where all users have a specified email and username attributes. For Mattermost servers running 3.3 and earlier, users must also have their first name and last name attributes specified.
  - A Microsoft Server running. The screenshots used in this guide are from Microsoft Server 2012R2, but similar steps should work for other versions.
  - An SSL certificate to sign your ADFS login page.
  - ADFS installed on your Microsoft Server. You can find a detailed guide for deploying and configuring ADFS in [this article](https://msdn.microsoft.com/en-us/library/gg188612.aspx).
@@ -90,6 +90,8 @@ However, if you would like to set up encryption for your SAML connection, click 
   - From the **LDAP Attribute column**, select `Surname`. From the **Outgoing Claim Type**, type `LastName`
   - From the **LDAP Attribute column**, select `SAM-Account-Name`. From the **Outgoing Claim Type**, type `Username`
 
+For Mattermost 3.4 and later, the `FirstName` and `LastName` attributes are optional.
+
 Then, click **Finish** to add the rule.
 
 Note that the entries in the **Outgoing Claim Type** column can be chosen to be something else. They can contain dashes but no spaces. Note that they will be used to map the corresponding fields in Mattermost later.
@@ -166,7 +168,9 @@ You’re now about to finish configuring SAML for Mattermost!
 
 ![adfs_24_mattermost_encryption.PNG](../../source/images/adfs_24_mattermost_encryption.PNG)
 
-33 - Set attributes for the SAML Assertions, which will be used to update user information in Mattermost. Attributes for email, username, first name and last name are required and should match the values you entered in ADFS in step 15. See [documentation on SAML configuration settings](http://docs.mattermost.com/administration/config-settings.html#saml-enterprise) for more detail.
+33 - Set attributes for the SAML Assertions, which will be used to update user information in Mattermost. Attributes for email and username are required and should match the values you entered in ADFS in step 15. See [documentation on SAML configuration settings](http://docs.mattermost.com/administration/config-settings.html#saml-enterprise) for more detail.
+
+For Mattermost servers running 3.3 and earlier, the first name and last name attributes are also required fields.
 
 ![adfs_25_mattermost_attributes.PNG](../../source/images/adfs_25_mattermost_attributes.PNG)
 
@@ -202,7 +206,11 @@ This usually means an existing account has another authentication method enabled
 
 This error message can also be received if the `Email Attribute` of their SAML credentials doesn't match the email address of their Mattermost account. If so, the user can update the attribute at their identity provider (for instance, back to the old value if it had been previously updated).
 
-##### 4. Unable to switch to SAML authentication successfully
+##### 4. Received error message: `SAML login was unsuccessful because one of the attributes is incorrect. Please contact your System Administrator.`
+
+Confirm all attributes, including `Email Attribute` and `Username Attribute`, are correct in both the ADFS configuration and in **System Console > SAML**.
+
+##### 5. Unable to switch to SAML authentication successfully
 
 First, ensure you have installed the [XML Security Library](https://www.aleksey.com/xmlsec/download.html) on your Mattermost instance and that **it is available in your** `PATH`.
 
