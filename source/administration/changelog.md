@@ -9,7 +9,7 @@ Release date: 2016-09-16
 ### Highlights
 
 #### Zapier Integration
-- [Zapier](https://zapier.com) is a service to automate tasks between web apps. You can create zaps that automate posts in Mattermost based on triggers in over [700 supported apps](https://zapier.com/zapbook/) on Zapier. To get started, [click and accept this invitation link](https://zapier.com/developer/invite/47050/902cde1eb8e0b3eb1223a2cf05331abd/) and then [refer to our documentation](https://docs.mattermost.com/integrations/zapier.html) for more details.
+- Integrate over [700 public cloud applications](https://zapier.com/zapbook/) using [Zapier](https://zapier.com), will full support for Markdown formatting. To start, [click here to accept an invitation to Zapier](https://zapier.com/developer/invite/47050/902cde1eb8e0b3eb1223a2cf05331abd/), then [follow the setup guide](https://docs.mattermost.com/integrations/zapier.html).
 
 #### OAuth 2.0 Service Provider
 - Users with an account on a Mattermost server can securely sign in to third-party application with an OAuth 2.0 protocol. See [documentation](https://docs.mattermost.com/developer/oauth-2-0-applications.html) to learn more.
@@ -17,8 +17,8 @@ Release date: 2016-09-16
 #### Improved Notifications and Status Indicators
 - Users can now control how often email notifications are sent
 - Users can now control whether push notifications are sent when they are online, offline or away
-- Users can now set how long desktop notifications stay onscreen for
-- Email notifications now include the channel name
+- Users can now set the display duration of a desktop notification
+- Email notifications now include channel names
 - Android push notifications are now cleared after the message is read somewhere else
 - /away, /online, /offline can now be used to manually set your status
 - Status indicators are now shown on the profile pictures in the centre channel and right hand side
@@ -37,7 +37,7 @@ Release date: 2016-09-16
 - Added [Error and Diagnostics Reporting option](https://docs.mattermost.com/administration/config-settings.html#enable-diagnostics-and-error-reporting) to help Mattermost, Inc. improve reliability and performance for your deployment configuration.
 
 #### Slack Import
-- Slack import now imports @mentions correctly
+- Slack import now imports @mentions mapped to user names
 
 #### User Interface
 - Improved design of signup pages when multiple account creation methods are enabled
@@ -49,8 +49,8 @@ Release date: 2016-09-16
 
 #### Enterprise Edition: 
 - Added a CLI tool for creating channels
-- Added a display option to hide join/leave messages from view (added + removed messages still show up)
-- System Admins can now test their LDAP connection using the “Test Connection” button
+- Added a display option to hide join/leave messages from view (user added and user removed messages still appear)
+- System Admins can now test their LDAP connection using a “Test Connection” button
 - FirstName and LastName fields are now optional for LDAP and SAML
 
 ### Bug Fixes
@@ -124,7 +124,7 @@ The following config settings will only work on servers with an Enterprise Licen
 - Files sent in private chat to members in a different team are not accessible.
 - YouTube video links show as “Video not found” on Desktop App if "Allow mixed content" is turned on.
 - “More” option under Direct Message list no longer shows count of team members not in your direct message list.
-- On Firefox, CTRL/CMD + U keyboard shortcut doesn’t work.
+- On Firefox, CTRL/CMD + U keyboard shortcut to upload a file doesn’t work.
 - Webhook attachments don’t show up in search results.
 - Messages sometimes don't appear deleted until the page is refreshed.
 - When joining a channel from a public link, the page sometimes loads for a long time and requires a refresh.
