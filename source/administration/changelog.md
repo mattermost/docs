@@ -14,11 +14,6 @@ Expected release date: 2016-09-16
 #### OAuth 2.0 Service Provider
 - Users with an account on a Mattermost server can securely sign in to third-party application with an OAuth 2.0 protocol. See [documentation](https://docs.mattermost.com/developer/oauth-2-0-applications.html) to learn more.
 
-#### Heroku Deployment
-- Install a preview of Mattermost with one-click using our new Heroku deployment
-
-[![Deploy a Preview](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/mattermost/mattermost-heroku)
-
 #### Improved Notifications and Status Indicators
 - Users can now control how often email notifications are sent
 - Users can now control whether push notifications are sent when they are online, offline or away
