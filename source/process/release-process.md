@@ -188,7 +188,9 @@ The final release is cut. If an urgent and important issue needs to be addressed
       - Merge the docs release branch to master and verify all changes on docs.mattermost.com once the build is up
       - Submit a correction PR for any incorrect formatting or other errors missed during the intitial review
     - Update [MVP page](https://www.mattermost.org/mvp/) with the most valuable contributor of the release
-    - Submit GitLab MR for `config/software/mattermost.rb` to take next Mattermost version in the Omnibus. The MR should include changes to the `default_version` and `md5` sum (see [example](https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests/933/diffs)
+    - Submit GitLab MR to take next Mattermost version in the Omnibus (see [example](https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests/933/diffs)):
+        - Include changes to Mattermost version number ([`default_version`](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/config/software/mattermost.rb#L20)) and SHA key of the final build ([`source md5`](https://gitlab.com/jasonblais/omnibus-gitlab/blob/master/config/software/mattermost.rb#L23)) in  [`config/software/mattermost.rb`](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/config/software/mattermost.rb).
+        - Include a summary of updates in Team Edition that are relevant to GitLab.
     - Update [Docker preview image to latest version](https://github.com/mattermost/mattermost-docker-preview/commit/1c34195d70b26bd4c82b5ef4fa0ebaf421096881)
     - Check Security Issues spreadsheet and confirm disclosure text
     - Confirm link to security updates appears in blog post if there are security updates in this release 
