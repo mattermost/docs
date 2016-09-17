@@ -9,8 +9,8 @@ OAuth 2.0 is a protocol that allows Mattermost to authorize API requests from ex
 
 This documentation includes the following details:
 
- - `Register your application in Mattermost <https://docs.mattermost.com/developer/oauth-2-0-applications#register-your-application-in-mattermost>`_
- - `Granting permissions to your application  <https://docs.mattermost.com/developer/oauth-2-0-applications#granting-permissions-to-your-application>`_
+ - `Register your application in Mattermost <https://docs.mattermost.com/developer/oauth-2-0-applications.html#id1>`_
+ - `Granting permissions to your application <https://docs.mattermost.com/developer/oauth-2-0-applications.html#id3>`_
 
 Register your application in Mattermost
 ---------------------------------------------------------
