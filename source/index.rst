@@ -81,6 +81,7 @@ Mattermost Documentation
    developer/message-attachments*
    developer/web-service*
    developer/web-service-reference*
+   developer/oauth*
    integrations/zapier*
    developer/integration*
 
