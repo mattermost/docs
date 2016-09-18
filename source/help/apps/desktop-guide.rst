@@ -57,6 +57,8 @@ Description of each setting is included below this table.
 +-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Allow mixed content                                                           | v1.2.0 +                  | v1.2.0 +                  | v1.2.0 +                  | `yuya-oc <https://github.com/yuya-oc>`_                                                                                                                |
 +-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Show icon on menu bar                                                         | N/A                       | v1.2.0 +                  | N/A                       | `yuya-oc <https://github.com/yuya-oc>`_                                                                                                                |
++-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Start app on login                                                            | v1.3.0 +                  | v1.3.0 +                  | v1.3.0 +                  | `Razzeee <https://github.com/Razzeee>`_                                                                                                                |
 +-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Toggle window visibility when clicking on the tray icon                       | v1.3.0 +                  | N/A                       | N/A                       | `magicmonty <https://github.com/magicmonty>`_                                                                                                          |
@@ -82,6 +84,12 @@ If your server is hosted on `https://`, insecure content, images and scripts wit
 This setting is on by default.
 
 Note: Enabling both secure and insecure content will break YouTube videos. An open issue for ``electron`` on which the app is built is under investigation: https://github.com/electron/electron/issues/2749
+
+**Show icon on Menu Bar** (OS X)
+
+When enabled, a black dot indicating unread messages is displayed on the team tab bar.
+
+This setting is off by default.
 
 **Start app on login**
 
