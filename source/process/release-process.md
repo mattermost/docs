@@ -4,6 +4,11 @@ Mattermost core team works on a monthly release process, with a new version ship
 
 This document outlines the development process for the Mattermost core team, which draws from what we find works best for us from Agile, Scrum and Software Development Lifecycle approaches.
 
+Recommended pre-reading: 
+
+- [Mattermost Software Development Process training materials](https://docs.mattermost.com/process/training.html#software-development-process)
+- [Mattermost Security Practices training](https://docs.mattermost.com/process/training.html#system-security) (particularly NIST standards) 
+
 ## Release Timeline
 
 Notes: 
