@@ -1,5 +1,5 @@
 ===================================
-Desktop Applications 
+Desktop Application Install Guides
 ===================================
 
 Mattermost desktop applications are available for Windows, Mac and Linux operation systems. 
@@ -21,7 +21,8 @@ Below is a list of additional resources:
 
 You can `download the apps directly from our downloads page <https://about.mattermost.com/downloads/>`_. You may also use the following installation guides for Windows, Mac and Linux:
 
-**Windows 7+:**
+ Windows 10+, Windows 8.1+, Windows 7+
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Download latest version of the Mattermost desktop app:
 
@@ -32,7 +33,8 @@ You can `download the apps directly from our downloads page <https://about.matte
 
 This will start an installer for the app. Once finished, the Mattermost desktop app will open automatically.
 
-**Mac OS X 10.9+:**
+Mac OS X 10.9:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Download `latest version of the Mattermost desktop app <https://releases.mattermost.com/desktop/1.3.0/mattermost-desktop-1.3.0-osx.tar.gz>`_
 
@@ -44,7 +46,8 @@ This will start an installer for the app. Once finished, the Mattermost desktop 
 
 The Mattermost desktop should open automatically.
 
-**Linux (Beta):**
+Linux (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Download latest version of the Mattermost desktop app:
 
