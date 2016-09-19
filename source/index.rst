@@ -22,6 +22,7 @@ Mattermost Documentation
    overview/security*
    deployment/deployment*
    overview/integrations*
+   overview/auth*
    
 .. toctree::
    :maxdepth: 1
