@@ -201,7 +201,7 @@ Effect:
 Solution(s): 
 - Should a support channel be out-of-service, Mattermost, Inc. provides redundant support options through email, online ticketing and (for customers who have purchased core access premium support) online message via Mattermost.  
 
-### Priority 2: Outages having immediate impact on Mattermost, Inc.'s ability to continue business 
+### Priority 2: Outages having immediate impact on business continuity 
 
 #### Outage due to malicious software (viruses, works, trojans and similar)
 
@@ -220,7 +220,7 @@ Solution(s):
 - Mattermost, Inc. runs multiple monitoring and alerting services to detect and isolate suspicious traffic and requests in order to minimize downtime from potential online threats.  
 - Should our self-hosted Mattermost instance be disrupted we can, if needed, quickly re-deploy the solution within our VPN. 
 
-### Priority 3: Outages greater than 72 hours impacting Mattermost, Inc.'s ability to continue business 
+### Priority 3: Outages greater than 72 hours impacting business continuity 
 
 #### Outage of online CRM system 
 
@@ -230,7 +230,7 @@ Effect:
 Solution(s): 
 - While there is no current failover plan should our online CRM system become disrupted, we have SLAs with our CRM vendor--which is used by thousands of other organizations--and believe the probability out sustained outage is low. 
 
-### Priority 4: Outages greater than 10 days impacting Mattermost, Inc.'s ability to continue business 
+### Priority 4: Outages greater than 10 days impacting business continuity 
 
 #### Outage of online HR and intranet systems
 
