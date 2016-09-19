@@ -15,7 +15,7 @@ Roles
 The "Learn, Master, Teach" cycle happens in the context of roles. Roles are sets of responsibility needed to achieve objectives. Roles aren't necessarily job titles, for small projects, a developer might take on a product manager role, or vice versa. Each team member has a "primary role" and training should move people to mastery and teaching in that role, before moving to the next role. 
 
 Developer
-^^^^^
+^^^^^^^^^
 
 Developers are responsible for architecting and delivering software improvements, and for technical leadership among the Mattermost community. 
 
@@ -29,7 +29,7 @@ Developers are responsible for architecting and delivering software improvements
    - As leading experts on Mattermost technology, developers support and engage constantly with the broader Mattermost community to accelerate adoption and to discover new ways to improve Mattermost software and processes. This includes investigating and  supporting issues from users and customers, reviewing and providing feedback on projects from contributors, and understanding priorities, trends and patterns across the community. 
 
 Product Managers
-^^^^^
+^^^^^^^^^^^^^^^^
 
 Product managers are responsible for aligning teams to strategic priorities, leading and managing the product development process, and working effectively with marketing to bring the full benefits of Mattermost solutions to users and customers. 
 
@@ -44,29 +44,29 @@ Product managers are responsible for aligning teams to strategic priorities, lea
    - Delivering benefits to users and customers based on product features is a core responsibility of product managers, working in conjunction with marketing to shape messaging and positioning and delivering collateral, events, and user and customer discussions to support sales. 
    
 Resources 
-=====
+=========
 
 The following is a list of recommended resources for developing skills "the Mattermost way" in different areas. For the ones that require purchase you can message @matterbot to request an order, whether as physical books, digital books, audiobooks or other formats. 
 
 
 Developers
-^^^^^
+^^^^^^^^^^
 
 Books 
-^^^^^^
+^^^^^
 
-1. `Code Compete, Steve McConnell <https://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670>`_ - Best practices and guidelines for writing high quality code.
+1. `Code Complete, Steve McConnell <https://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670>`_ - Best practices and guidelines for writing high quality code.
 2. `Design Patterns,  Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides (aka "Group of Four") <https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented-ebook/dp/B000SEIBB8>`_ - Fundamental reading on design patterns. Other design pattern books work too, this is one of the most popular. 
 
 Product Management 
-^^^^^
+^^^^^^^^^^^^^^^^^^
 
 Courses
 
 1. `Harvard Business School PM 101 <https://sites.google.com/site/hbspm101/home/2015-16-sessions/the-mrd-customer-discovery>`_
 
 System Security 
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 Papers & Course Materials 
 
@@ -77,7 +77,7 @@ Papers & Course Materials
 
 
 High Performance Teams 
-^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 Books
 
@@ -86,7 +86,7 @@ Books
 3. `How to Win Friends and Influence People <https://www.amazon.com/How-Win-Friends-Influence-People-ebook/dp/B003WEAI4E/ref=sr_1_1?s=books&ie=UTF8&qid=1466394700&sr=1-1&keywords=how+to+win+friends+and+influence+people>`_ - How to build interpersonal skills to work more effectively in teams. 
 
 Culture 
-^^^^^
+^^^^^^^
 
 Video
 
@@ -99,7 +99,7 @@ Books
 
 
 Marketing
-^^^^^
+^^^^^^^^^
 
 Video
 
@@ -111,7 +111,7 @@ Books
 2. `All Marketers Tell Stories, Seth Godin <https://www.amazon.com/All-Marketers-Are-Liars-Works---ebook/dp/B00315QK8M/ref=sr_1_1?s=books&ie=UTF8&qid=1466393785&sr=1-1&keywords=%22all+marketers+are+liars%22>`_ - Ideas for creating compelling messages. 
 
 High Performance Mindsets 
-^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Books
 
@@ -119,14 +119,14 @@ Books
 2. `Getting Things Done. David Allen <https://www.amazon.com/Getting-Things-Done-Stress-Free-Productivity/dp/0142000280>`_ - How to do more in less time. 
 
 Software Development Process
-^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. `Scrum. Jeff Sutherland <https://www.amazon.com/Scrum-Doing-Twice-Work-Half/dp/038534645X/ref=sr_1_1?ie=UTF8&qid=1466396699&sr=8-1&keywords=scrum>`_ (256 pages) - One point of view on agile software development, with examples. 
 
 2. `ISTQB Certification Study Guide <http://istqbexamcertification.com/>`_ - Common terminology & process in software development. 
 
 Quality 
-^^^^^
+^^^^^^^
 
 Video 
 
@@ -134,7 +134,7 @@ Video
 
 
 Interaction Design 
-^^^^^
+^^^^^^^^^^^^^^^^^^
 
 Primer
 
