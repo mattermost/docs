@@ -1,5 +1,5 @@
 ===================================
-Desktop Guide
+Desktop Application's End User's Guide
 ===================================
 
 Mattermost desktop applications are available for Windows, Mac and Linux operation systems. 
@@ -17,7 +17,8 @@ Team management
 
 You can connect to multiple Mattermost servers from a single interface on the desktop app.
 
-**Adding servers and teams**
+Adding servers and teams
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To add a new server on the Mattermost instance, 
 
@@ -29,7 +30,8 @@ You can now access all teams you have joined in the server once you have saved t
 
 You may also add a separate instance for each team, if you'd like.
 
-**Editing servers and teams**
+Editing servers and teams
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To edit a server, 
 
@@ -37,7 +39,8 @@ To edit a server,
 2. Edit **Name** and/or **URL**.
 3. Click **Save**.
 
-**Removing servers and teams**
+Removing servers and teams
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To remove a server from your desktop app environment, click on **Remove** next to the server or a team you want removed. Note that this action cannot be undone.
 
@@ -50,73 +53,79 @@ The Settings Page is available from the `File` menu under `Settings`, and can be
 
 Description of each setting is included below this table.
 
-+-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Setting                                                                       | On Windows                | On OS X                   | On Linux                  | Contributors                                                                                                                                           | 
-+===============================================================================+===========================+===========================+===========================+========================================================================================================================================================+
-| Hide menu bar                                                                 | v0.5.0 +                  | v0.5.0 +                  | v1.0.3 +                  | `yuya-oc <https://github.com/yuya-oc>`_ (Windows, OS X); `alerque <https://github.com/alerque>`_ (Linux)                                               |
-+-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Allow mixed content                                                           | v1.2.0 +                  | v1.2.0 +                  | v1.2.0 +                  | `yuya-oc <https://github.com/yuya-oc>`_                                                                                                                |
-+-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Show icon on menu bar                                                         | N/A                       | v1.2.0 +                  | N/A                       | `yuya-oc <https://github.com/yuya-oc>`_                                                                                                                |
-+-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Start app on login                                                            | v1.3.0 +                  | v1.3.0 +                  | v1.3.0 +                  | `Razzeee <https://github.com/Razzeee>`_                                                                                                                |
-+-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Toggle window visibility when clicking on the tray icon                       | v1.3.0 +                  | N/A                       | N/A                       | `magicmonty <https://github.com/magicmonty>`_                                                                                                          |
-+-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Leave app running in notification center when application window is closed    | N/A                       | v1.3.0 +                  | v1.3.0 +                  | `magicmonty <https://github.com/magicmonty>`_ (OS X); `yuya-oc <https://github.com/yuya-oc>`_ (Linux)                                                  |
-+-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Show red badge on taskbar icon to indicate unread messages                    | v1.4.0 +                  | v1.4.0 +                  | N/A                       | `Razzeee <https://github.com/Razzeee>`_                                                                                                                |
-+-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Flash taskbar icon when a new message is received                             | v1.3.0 +                  | N/A                       | v1.4.0 +                  | `MetalCar <https://github.com/metalcar>`_ (Windows); `jnugh <https://github.com/jnugh>`_ (Linux)                                                       |
-+-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+
+| Setting                                                                       | On Windows                | On OS X                   | On Linux                  |
++===============================================================================+===========================+===========================+===========================+
+| Hide menu bar                                                                 | v0.5.0 +                  | v0.5.0 +                  | v1.0.3 +                  |
++-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+
+| Allow mixed content                                                           | v1.2.0 +                  | v1.2.0 +                  | v1.2.0 +                  |
++-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+
+| Show icon on menu bar                                                         | N/A                       | v1.2.0 +                  | N/A                       |
++-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+
+| Start app on login                                                            | v1.3.0 +                  | v1.3.0 +                  | v1.3.0 +                  |
++-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+
+| Toggle window visibility when clicking on the tray icon                       | v1.3.0 +                  | N/A                       | N/A                       |
++-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+
+| Leave app running in notification center when application window is closed    | N/A                       | v1.3.0 +                  | v1.3.0 +                  |
++-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+
+| Show red badge on taskbar icon to indicate unread messages                    | v1.4.0 +                  | v1.4.0 +                  | N/A                       |
++-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+
+| Flash taskbar icon when a new message is received                             | v1.3.0 +                  | N/A                       | v1.4.0 +                  |
++-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+
 
-
-**Hide menu bar**
+Hide menu bar
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Hides the menu bar. When enabled, pressing ``ALT`` will toggle whether the menu bar is shown or hidden.
 
 This setting is off by default.
 
-**Allow mixed content**
+Allow mixed content
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If your server is hosted on `https://`, insecure content, images and scripts with `http://` are not rendered by default. This option allows such content to be rendered. If you do enable it, please be mindful of potential security risks shared over `http://` protocols.
 
 This setting is on by default.
 
-Note: Enabling both secure and insecure content will break YouTube videos. An open issue for ``electron`` on which the app is built is under investigation: https://github.com/electron/electron/issues/2749
+Note: Enabling mixed content will disable YouTube video previews [due to an issue in the underlying technology](https://github.com/electron/electron/issues/2749) used by the Mattermost Desktop app.
 
-**Show icon on Menu Bar** (OS X)
+Show icon on Menu Bar (OS X only)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When enabled, a black dot indicating unread messages is displayed on the team tab bar.
 
 This setting is off by default.
 
-**Start app on login**
+Start app on login (Windows, Linux only)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When enabled, Mattermost application starts when you login to your machine.
 
 This setting is on by default.
 
-**Toggle window visibility when clicking on the tray icon** (Windows)
+Toggle window visibility when clicking on the tray icon (Windows only)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When enabled, clicking on the system tray icon allows you to toggle the window open and minimized.
 
 This setting is off by default.
 
-**Leave app running in notification center when application window is closed.** (OS X, Linux)
+Leave app running in notification center when application window is closed (OS X, Linux only)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When enabled, closing the application window will leave the Mattermost desktop app running in your notification center. This can be useful if you’d like to check for unread mentions while away from the app.
 
 This setting is off by default.
 
-**Show red badge on taskbar icon to indicate unread messages** (Windows, OS X)
+Show red badge on taskbar icon to indicate unread messages (Windows, OS X only)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you have multiple active teams (either on a single or multiple servers), having a red badge for unread messages may be annoying as it would likely be displayed most of the time. You may use this setting to configure when the red badge is shown on the taskbar icon. 
-If enabled, a red badge is shown for unread messages with a number count indicating unread mentions. If disabled, a red badge is only shown for unread mentions (with a number count).
+When enabled, a red badge is shown on the taskbar icon for unread messages with a number count indicating unread mentions. If disabled, a red badge is only shown for unread mentions (with a number count).
 
 This setting is on by default.
 
-**Flash taskbar icon when a new message is received** (Windows, Linux)
+Flash taskbar icon when a new message is received (Windows, Linux only)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Configure whether the taskbar icon flashes when a new message is received on any of your active teams and servers.
 
