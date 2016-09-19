@@ -2,7 +2,7 @@
 
 ## Release v3.4.0
 
-Expected release date: End of September 2016
+Expected release date: September 22, 2016
 
 This release contains a security update and it is highly recommended that users upgrade to this version.
 
@@ -11,8 +11,8 @@ Version number updated to 3.4 to make numbering consistent with Mattermost serve
 ### Improvements
 
 #### Windows
- - Current team and channel name shown in window caption
- - Team tab is bolded for unread messages and has a red dot with a numbeer counter for unread mentions
+ - Current team and channel name shown in window title bar
+ - Team tab is bolded for unread messages and has a red dot with a count of unread mentions
  - Added an option to configure whether a red badge is shown on taskbar icon for unread messages
  - Added new shortcuts:
      - `CTRL + S`: sets focus on the Mattermost search box
@@ -23,10 +23,10 @@ Version number updated to 3.4 to make numbering consistent with Mattermost serve
  - Added access to the settings menu from the system tray icon
  - Added validation for name and URL when adding a new team on the Settings page
  - The app now tries to reconnect periodically if a page fails to load
- - The app now works as a single instance (an existing application instance will be used when launching a new one)
+ - Only one instance of the desktop application will now load at a time
 
 #### OS X
- - Current team and channel name shown in window caption
+ - Current team and channel name shown in window title bar
  - Team tab is bolded for unread messages and has a red dot with a count of unread mentions
  - Added an option to configure whether a red badge is shown on taskbar icon for unread messages
  - Added new shortcuts:
@@ -39,7 +39,7 @@ Version number updated to 3.4 to make numbering consistent with Mattermost serve
  - Added validation for name and URL when adding a new team on the Settings page
 
 #### Linux (Beta)
- - Current team and channel name shown in window caption
+ - Current team and channel name shown in window title bar
  - Team tab is bolded for unread messages and has a red dot with a count of unread mentions
  - Added an option to flash taskbar icon when a new message is received
  - Added a red badge to count mentions on the taskbar icon (for Unity)
@@ -53,7 +53,7 @@ Version number updated to 3.4 to make numbering consistent with Mattermost serve
  - Added access to the settings menu from the system tray icon
  - The app now tries to reconnect periodically if a page fails to load
  - Added validation for name and URL when adding a new team on the Settings page
- - The app now works as a single instance (an existing application instance will be used when launching a new one)
+ - Only one instance of the desktop application will now load at a time
 
 ### Bug Fixes
 
