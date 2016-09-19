@@ -4,7 +4,7 @@ This document summarizes the internal security policies at Mattermost, Inc.
 
 - [Security benefits of the Mattermost open source platform](#open-source-security)
 - [Mattermost Development Guidelines](#development-guidelines)
-- [Security Checklist](#security-checklist) 
+- [Security Review Checklist](#security-checklist) 
 - [Common Security Related Questions for Enterprises](#common-security-related-questions)
    - [Governance](#governance)
    - [Software Development Life Cycle (SDLC)](#sdlc)
@@ -40,7 +40,7 @@ REPORTING
 
 ### Security Review Checklist<a name="security-checklist"></a> 
 
-Among other design principles to increase system security, code changes receive multiple reviews for: 
+In addition to checklists for quality and reliability, code changes receive multiple reviews for the following system security design principles: 
 
 - Reducing information disclosure 
 - Reducing attack surface 
@@ -168,9 +168,76 @@ Among other design principles to increase system security, code changes receive 
 
 Mattermost, Inc. is headquartered in Palo Alto, California with a distributed organization across three timezones, and is therefore not easily affected by typical causes of business disruption, such as local failures of equipment, power, telecommunications, social unrest, fire, or natural disasters. Even so, threats considered in the context of business continuity are categorized by impact of the disruption.
 
-### P1: Outage would have immediate impact on a Mattermost customer / user operations
+### Priority 1: Outages that would have immediate impact on a Mattermost customer 
 
-1. Disruption of Mattermost Hosted Push Notification Service (HPNS)
+#### Key support staff unavailable in case of customer emergency.
 
-   - Effect: A loss of availability of Mattermost hosted infrastructure for relaying push notifications from a customer's private cloud to hosted mobile apps in iTunes and Google Play could result in loss of push notifications in live deployments using HPNS.
-   - Solution(s): The Mattermost Hosted Push Notification Service can be re-deployed from backup to new infrastructure, should its existing infrastructure suffer an outage. Moreover, the code base of HPNS is available as open source software available on GitHub.com, allowing enterprises an option to compile and self-host the service rather than use the solution hosted by Mattermost, Inc. 
+Effect: 
+- Emergency response times exceed expectations 
+
+Solution(s): 
+- Level 1 (Critical Business Impact) and Level 2 (Major Business Impact) support requests are received by on-call support staff, as well as three supervisory staff who can monitor and escalate issues should the assigned staff member appear to be unavailable or unable to repsond to the request within the SLA time alotted. 
+   - As an additional safeguard, when an L1 or L2 escalation is reported, a notification is sent via the company's internal Mattermost instance to all qualified support staff to be aware of the issue, and any member can step in if it seems follow-up may not be achieved within SLA expectations. 
+    
+Mitigation(s): 
+- Mattermost, Inc. employs support staff and engineers in multiple timezones to increase availability, reduce response times and to reduce the risk that key support staff would be unavailable to service emergency requests. 
+
+#### Downtime for Mattermost Hosted Push Notification Service (HPNS) 
+
+Effect: 
+- End users at customer sites deploying on HPNS do not receive mobile push notifications. 
+ 
+Solution(s): 
+- Mattermost, Inc. can re-deploy the service from backup to new infrastructure, should its existing infrastructure suffer an outage. 
+ 
+Mitigation(s): 
+- HPNS is available [as open source software hosted on GitHub.com](https://github.com/mattermost/push-proxy), allowing enterprises an option to compile and self-host the service, should they choose not to use HPNS hosted by Mattermost, Inc. 
+
+#### Disruption of infrastructure providing support over email, online tickets or Mattermost messaging during customer emergency 
+
+Effect: 
+- Unable to communicate with Mattermost, Inc. support team during emergency 
+
+Solution(s): 
+- Should a support channel be out-of-service, Mattermost, Inc. provides redundant support options through email, online ticketing and (for customers who have purchased core access premium support) online message via Mattermost.  
+
+### Priority 2: Outages having immediate impact on Mattermost, Inc.'s ability to continue business 
+
+#### Outage due to malicious software (viruses, works, trojans and similar)
+
+Effect: 
+- Reduced capacity to continue business operations, depending on attack.
+
+Solution(s): 
+- Mattermost, Inc. staff uses multiple anti-virus solutions for detecting and removing malicious software and regularly backs up key systems to delete infected systems and re-deploy its infrastructure. Moreover, the company uses a range of Windows, Mac and Linux-based workstations, reducing the probability of a company-wide disruption from a single strain of malicious software. 
+
+#### Outage due to online attacks 
+
+Effect: 
+- Reduced capacity to continue business operations, depending on attack.
+
+Solution(s): 
+- Mattermost, Inc. runs multiple monitoring and alerting services to detect and isolate suspicious traffic and requests in order to minimize downtime from potential online threats.  
+- Should our self-hosted Mattermost instance be disrupted we can, if needed, quickly re-deploy the solution within our VPN. 
+
+### Priority 3: Outages greater than 72 hours impacting Mattermost, Inc.'s ability to continue business 
+
+#### Outage of online CRM system 
+
+Effect: 
+- Reduced ability to continue sales operations
+
+Solution(s): 
+- While there is no current failover plan should our online CRM system become disrupted, we have SLAs with our CRM vendor--which is used by thousands of other organizations--and believe the probability out sustained outage is low. 
+
+### Priority 4: Outages greater than 10 days impacting Mattermost, Inc.'s ability to continue business 
+
+#### Outage of online HR and intranet systems
+
+Effect: 
+- Reduced ability to continue HR and internal operations
+
+Solution(s): 
+- While there is no current failover plan should our online HR or intranet system become disrupted, we have SLAs with our  vendors--which is used by thousands of other organizations--and believe the probability out sustained outage is low. 
+
+
