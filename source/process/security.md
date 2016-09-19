@@ -35,7 +35,7 @@ REVIEW
 * All open source contributions are available for public inspection and commentary before and after acceptance. 
 
 REPORTING 
-* Mattermost uses a [responsible disclosure policy](https://www.mattermost.org/responsible-disclosure-policy/) to accept confidental reports of new threats, so they can be addressed either immediately through a dot release, or by the next monthly release depending on potential impact. 
+* Mattermost uses a [responsible disclosure policy](https://www.mattermost.org/responsible-disclosure-policy/) to accept confidential reports of new threats, so they can be addressed either immediately through a dot release, or by the next monthly release depending on potential impact. 
 * When Mattermost software undergoes security and penetration testing at customer sites security updates are added to the core software and [publicly documented by release](http://about.mattermost.com/security-updates/). 
 
 ### Security Review Checklist<a name="security-checklist"></a> 
@@ -176,7 +176,7 @@ Effect:
 - Emergency response times exceed expectations 
 
 Solution(s): 
-- Level 1 (Critical Business Impact) and Level 2 (Major Business Impact) support requests are received by on-call support staff, as well as three supervisory staff who can monitor and escalate issues should the assigned staff member appear to be unavailable or unable to repsond to the request within the SLA time alotted. 
+- Level 1 (Critical Business Impact) and Level 2 (Major Business Impact) support requests are received by on-call support staff, as well as three supervisory staff who can monitor and escalate issues should the assigned staff member appear to be unavailable or unable to respond to the request within the SLA time allotted. 
    - As an additional safeguard, when an L1 or L2 escalation is reported, a notification is sent via the company's internal Mattermost instance to all qualified support staff to be aware of the issue, and any member can step in if it seems follow-up may not be achieved within SLA expectations. 
     
 Mitigation(s): 
