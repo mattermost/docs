@@ -23,20 +23,29 @@ The commercial Mattermost Enterprise Edition extends the security and productivi
 
 ## Mattermost Development Guidelines<a name="development-guidelines"></a>
 
-TRACKING 
+#### Tracking 
+
 * Prior to implementation, potential code changes are discussed and documented in [Mattermost's issue tracking system](https://mattermost.atlassian.net/). 
 * Security tickets are confidential to Mattermost, Inc. staff, who are under NDA, and specially tagged to avoid disclosure. 
 * All potential code changes are mapped to tickets prior to acceptance, with the exception of trivial changes and bug fixes. 
 
-REVIEW 
+#### Review 
+
 * To uphold security, quality and reliability standards, all potential changes submitted by open source contributors must pass an [accepting pull requests](https://docs.mattermost.com/process/accepting-pull-request.html) vetting process prior to submission. 
 * Clarity and readability of code is enforced through [Mattermost style guides](https://docs.mattermost.com/developer/style-guide.html).
 * After submission, all proposed changes require at least two code reviews for reliability, quality and system security. 
 * All open source contributions are available for public inspection and commentary before and after acceptance. 
 
-REPORTING 
+#### Reporting 
+
 * Mattermost uses a [responsible disclosure policy](https://www.mattermost.org/responsible-disclosure-policy/) to accept confidential reports of new threats, so they can be addressed either immediately through a dot release, or by the next monthly release depending on potential impact. 
 * When Mattermost software undergoes security and penetration testing at customer sites security updates are added to the core software and [publicly documented by release](http://about.mattermost.com/security-updates/). 
+
+#### Patch Management 
+* Critical updates are released for urgent, high priority security issues or critical losses of functionality that should not wait for the next monthly release. 
+* Mattermost software has as mandatory upgrade policy and customers and users need to be on the latest release to receive critical updates. 
+* Critical updates are delivered as dot releases, for example a critical update to release `3.1.0` would be named `3.1.1`.
+* Customers and subscribers to the Mattermost Insiders mailing list receive notification about all critical updates. 
 
 ### Security Review Checklist<a name="security-checklist"></a> 
 
