@@ -26,7 +26,7 @@ These are browser notifications that appear in the corner of your main monitor. 
 - Configure channel specific desktop notifications from **Channel Menu** > **Notification Preferences** > **Send Desktop Notifications**. By default, all channels use the global setting configured in *Account Settings*.
 
 ## Mobile Push Notifications
-If the Mattermost Android or iOS app is installed, push notifications can be sent to your mobile device. By default, these notifications are sent for all activity for any channel that is not being viewed on desktop.
+If the Mattermost Android or iOS app is installed, push notifications can be sent to your mobile device. By default, these notifications are sent for mentions in any channel or direct message channel that is not being viewed on desktop.
 
 - Configure when push notifications are sent from **Account Settings** > **Notifications** > **Mobile Push Notifications** > **Send mobile push notifications**.
 - Configure when push notifications are sent depending on your status from **Account Settings** > **Notifications** > **Mobile Push Notifications** > **Trigger push notifications when**.
