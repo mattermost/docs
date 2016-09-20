@@ -189,7 +189,7 @@ The final release is cut. If an urgent and important issue needs to be addressed
     - Contact owners of [community installers](http://www.mattermost.org/installation/) or submit [PRs](https://github.com/tommyvn/mattermost-heroku/commit/94f7c5c0c5d7d2672fb6d62b6a560b4b5c1b5131) to update install version number
     - Close GitHub meta ticket for the release
     - Finalize docs
-      - If reviews are not complete, hold a 30 minute doc review meeting with PMs
+      - If reviews are not complete, hold a 30 minute doc review meeting with PMs and anyone else who has changed or reviewed docs this release and wants to join
       - Merge the docs release branch to master and verify all changes on docs.mattermost.com once the build is up
       - Submit a correction PR for any incorrect formatting or other errors missed during the intitial review
     - Update [MVP page](https://www.mattermost.org/mvp/) with the most valuable contributor of the release
