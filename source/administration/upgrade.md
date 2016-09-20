@@ -22,7 +22,7 @@ To start, select one of the following guides:
       1. Run `platform -version` to check the current version of your Mattermost server
       2. Determine the appropriate next upgrade for your server:
           - Mattermost `v3.0.x` and above can upgrade directly to Mattermost `v3.4.x`
-              - Note: Upgrading to `v3.4.x` will cause existing public links to break. 
+              - Note: If public links are enabled, upgrading to `v3.4.x` will invalidate existing public links due to a security upgrade allowing admins to invalidate links by resetting a public link salt from the System Console.
           - Mattermost `v2.2.x` can upgrade directly to `v3.1.x` or `v3.2.x` but must follow the [extended upgrade guide for `v3.0.x`](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-3-0-x)   
           - Mattermost `v2.1.x` and below must follow the process to [upgrade to `v3.0.x`](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-3-0-x) before upgrading further
       3. Use the [Version Archive table](https://docs.mattermost.com/administration/upgrade.html#version-archive) to find the `[RELEASE URL]` for your desired version and enter `wget [RELEASE URL]` to download. For example, to download `vX.X.X`, use `wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz`.
@@ -130,6 +130,7 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
 5. Reset the Mattermost account as the directory owner by typing:
  - `sudo chown -R mattermost:mattermost <path-to-your-mattermost-folder>`
  - `sudo chmod -R g+w <path-to-your-mattermost-folder>`
+6. To ensure client applications don't encounter issues with out-of-sync caches, you can force clients to refresh after a server upgrade by changing any setting in the System Console. For example, go to **System Console** > **General** > **Configuration**, and copy the Listen Address. Then paste the Listen Address back into the field, and press **Save**.
 
 The **Edition** and **License** sections on the page should update to confirm your system has been updated to the Enterprise Edition.
 
