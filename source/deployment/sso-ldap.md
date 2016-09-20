@@ -70,6 +70,6 @@ Note: Currently the value is case sensitive. If the ID attribute is set to the u
 
 This indicates your AD/LDAP server configuration has a maximum page size set and the query coming from Mattermost is returning a result set in excess of that limit. 
 
-To address this issue you can set [max page size](https://docs.mattermost.com/administration/config-settings.html#maximum-page-size) for Mattermost's AD/LDAP configuration to return a sequence of results sets below the max page size set in AD/LDAP, rather than all results in a single query. 
+To address this issue you can set the [max page size](https://docs.mattermost.com/administration/config-settings.html#maximum-page-size) for Mattermost's AD/LDAP configuration. This will return a sequence of result sets below the max page size set in AD/LDAP, rather than returning all results in a single query. 
 
 
