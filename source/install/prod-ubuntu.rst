@@ -80,6 +80,14 @@ Set up Database Server
 12. Reload Postgres database
 
     -  ``sudo /etc/init.d/postgresql reload``
+    
+    check with netstat command to see postgresql actually running on given ip and port
+    
+    - ``sudo netstat -anp | grep 5432``
+    
+    try restarting the postgresql service if reload won't work
+
+    - ``sudo service postgresql restart``
 
 13. Attempt to connect with the new created user to verify everything
     looks good
