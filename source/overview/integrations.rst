@@ -1,6 +1,6 @@
-===========================
-Integrations Guide 
-===========================
+=====================
+Integrations Overview 
+=====================
 
 Mattermost offers a host of options for connecting to systems on your private network as well as services hosted on hybrid and public clouds. 
 

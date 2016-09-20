@@ -1,1 +1,1 @@
-Please see http://docs.mattermost.com/administration/upgrade.html
+Please see :doc:`upgrade`.
