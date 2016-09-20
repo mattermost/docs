@@ -62,7 +62,7 @@ A notification sound plays for all Mattermost posts that would fire a desktop no
 Email notifications are sent for mentions and direct messages after you’ve been offline for more than 60 seconds or away from Mattermost for more than 5 minutes. Change the email where notifications are sent from **Account Settings > General > Email**.
 
 #### Send Mobile Push Notifications
-Push notifications can be sent to your mobile device if you have the Android or iOS app installed. You can choose the type of activity that will send a notification. By default, push notifications are sent "For mentions and direct messages". If push notifications are sent "Never", the setting to trigger push notifications depending on your status is hidden. If your System Administrator has not set up push notifications, this setting will be disabled.
+Push notifications can be sent to your mobile device if you have the Android or iOS app installed. You can choose the type of activity that will send a notification. By default, push notifications are sent "For mentions and direct messages". If push notifications are sent "Never", the Mattermost setting to trigger push notifications depending on your status is hidden. If your System Administrator has not set up push notifications, this setting will be disabled.
 
 If you are actively viewing a channel (public, private, or direct message) on desktop or web, no push notifications will be sent for that channel. If a notification is viewed on desktop or web, the lockscreen notification will clear on Android, and on iOS the badge on the Mattermost app icon will decrement accordingly.
 
