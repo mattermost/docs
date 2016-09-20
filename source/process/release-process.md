@@ -249,7 +249,7 @@ If a bug fix release is required, run through the following steps again:
         - [RC Build Testing for core team](https://mattermost.atlassian.net/browse/PLT-2208)
         - [Upgrade gitlab.mattermost.com to RC1](https://mattermost.atlassian.net/browse/PLT-3116)
         - [Push final build to gitlab.mattermost.com](https://mattermost.atlassian.net/browse/PLT-3117)
-        - [Cut build and set up RC1 servers](https://mattermost.atlassian.net/browse/PLT-3937)
+        - [Cut build and set up RC1 servers, including a note to check for all XXX items](https://mattermost.atlassian.net/browse/PLT-3937)
     - Create [PR tracking spreadsheet](https://docs.google.com/spreadsheets/d/1YkRqyQk0Y4ZouV-SsXbSjbzGOXu2ZSPSd4XC_4LAErI/edit#gid=0) for next release
         - Populate with any PR's that have already went in for the next release
         - Zapier manager updates GitHub automation zap to new PR tracking spreadsheet
