@@ -204,7 +204,7 @@ Input: Hints
 
     Text below an input field should clearly and concisely describe the PURPOSE of the input.
 
-    In general, avoid describing the technical requirements of the field in Help Text, and use Placeholder input text, field validation and issue messages to convey requirements. The exception to this guideline is if requirements are non-obvious, such as passwords needing different numbers of characters, symbols, etc.
+    In general, avoid describing the technical requirements of the field in Help Text, and use Placeholder input text, field validation and error messages to convey requirements. The exception to this guideline is if requirements are non-obvious, such as passwords needing different numbers of characters, symbols, etc.
     
     For a setting involving a CONDITION and an ACTION, the help text should be written as "ACTION when/for CONDITION"
 
@@ -225,7 +225,7 @@ Input: Hints
 
         For **textfields**, restrict users from just limiting characters via the maxlength attribute.
 
-        For **textareas**, present a counter and if it exceeds let the user know by an issue.
+        For **textareas**, present a counter and if it exceeds let the user know by an error.
 
         **Example:**
 
@@ -241,7 +241,7 @@ Input: Hints
 
             |
 
-        Example 2: If a user enters invalid uppercase letters and spaces for a URL, show an issue message and also offer a correction, substituting dashes for spaces and lower case letters for uppercase letters, so the user can resubmit immediately with valid input.
+        Example 2: If a user enters invalid uppercase letters and spaces for a URL, show an error message and also offer a correction, substituting dashes for spaces and lower case letters for uppercase letters, so the user can resubmit immediately with valid input.
 
 ---------------------------
 
@@ -356,7 +356,7 @@ Display: Alignment
 
     |
 
-    Issue message does not extend beyond the horizontal line separator.
+    Error message does not extend beyond the horizontal line separator.
 
     ..  image:: ../images/align2.png
         :alt: Confined messages with respect to width
@@ -429,6 +429,43 @@ If what the users need to perform is obvious, we should make concious decisions 
     ..  image:: ../images/reduce3.png
         :alt: Switching channels
 
+
+|
+---------------------------
+
+|
+Feedback: Error Messages
+---------------------------
+
+On occasion, users of Mattermost may encounter a problem that prevents them or the Mattermost system from successfully completing a task. The unexpected user behaviour or system response should be communicated to the user through an error message, and should follow the design principles of forgiving and obvious.
+ 
+Error messages should:
+- State the encountered problem with the component in the title. (e.g. Team URL Not Found)
+- Describe very briefly why the error happened under the title.
+- When possible, have a direct link to direct users to help complete their original task or return to the previous state
+- Give recommendations/solution(s) for the next course of action
+- Be consistent with the Mattermost voice and look professional.
+- Be avoided when possible (by avoiding the error condition)
+
+Error message should not:
+- Be in red or in capital letters
+- Say or have the term “Error”
+- Be lengthy
+- Be generic
+
+**Examples:**
+
+    This is an example of a good error message:
+
+    ..  image:: ../images/error1.png
+        :alt: Good Error Message
+
+    |
+
+    This is an example of a bad error message:
+
+    ..  image:: ../images/error2.png
+        :alt: Bad Error Message
 
 |
 ---------------------------
