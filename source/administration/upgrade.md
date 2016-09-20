@@ -23,6 +23,9 @@ To start, select one of the following guides:
       2. Determine the appropriate next upgrade for your server:
           - Mattermost `v3.0.x` and above can upgrade directly to Mattermost `v3.4.x`
               - Note: If public links are enabled, upgrading to `v3.4.x` will invalidate existing public links due to a security upgrade allowing admins to invalidate links by resetting a public link salt from the System Console.
+              - Note: Upgrading from 3.2 to 3.4 will be incomplete due to a migration code not being ran properly. You can either 
+                  - upgrade from 3.2 to 3.3 and then from 3.3 to 3.4
+                  - upgrade from 3.2 to 3.4, then run the following SQL query to make Mattermost rerun upgrade steps that were not properly completed `UPDATE Systems SET Value = '3.1.0' WHERE Name = 'Version';`
           - Mattermost `v2.2.x` can upgrade directly to `v3.1.x` or `v3.2.x` but must follow the [extended upgrade guide for `v3.0.x`](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-3-0-x)   
           - Mattermost `v2.1.x` and below must follow the process to [upgrade to `v3.0.x`](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-3-0-x) before upgrading further
       3. Use the [Version Archive table](https://docs.mattermost.com/administration/upgrade.html#version-archive) to find the `[RELEASE URL]` for your desired version and enter `wget [RELEASE URL]` to download. For example, to download `vX.X.X`, use `wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz`.
@@ -144,7 +147,10 @@ For any issues, Mattermost Enterprise Edition subscribers and trial license user
       1. Run `platform -version` to check the current version of your Mattermost server
       2. Determine the appropriate next upgrade for your server:
           - Mattermost `v3.0.x` and above can upgrade directly to Mattermost `v3.4.x`.
-            - Note: Upgrading to `v3.4.x` will cause existing public links to break. 
+              - Note: If public links are enabled, upgrading to `v3.4.x` will invalidate existing public links due to a security upgrade allowing admins to invalidate links by resetting a public link salt from the System Console.
+              - Note: Upgrading from 3.2 to 3.4 will be incomplete due to a migration code not being ran properly. You can either 
+                  - upgrade from 3.2 to 3.3 and then from 3.3 to 3.4
+                  - upgrade from 3.2 to 3.4, then run the following SQL query to make Mattermost rerun upgrade steps that were not properly completed `UPDATE Systems SET Value = '3.1.0' WHERE Name = 'Version';` 
           - Mattermost `v2.2.x` can upgrade directly to `v3.1` or `v3.2` but must follow the [extended upgrade guide for `v3.0.x`](https://docs.mattermost.com/administration/upgrade.html#upgrade-to-enterprise-edition-3-0-x)   
             - Note: For `v3.2.x` only, `"BindUsername"`, and `"BindPassword"` under `LdapSettings` are required fields with anonymous bind not supported. For `v3.2.x` and `v3.3.x` only, `"FirstNameAttribute"` and `"LastNameAttribute"` under `LdapSettings` are required fields.
           - Mattermost `v2.1.x` and below must follow the process to [upgrade to `v3.0.x`](https://docs.mattermost.com/administration/upgrade.html#upgrade-to-enterprise-edition-3-0-x) before upgrading further
