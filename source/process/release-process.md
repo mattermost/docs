@@ -4,6 +4,11 @@ Mattermost core team works on a monthly release process, with a new version ship
 
 This document outlines the development process for the Mattermost core team, which draws from what we find works best for us from Agile, Scrum and Software Development Lifecycle approaches.
 
+Recommended pre-reading: 
+
+- [Mattermost Software Development Process training materials](https://docs.mattermost.com/process/training.html#software-development-process)
+- [Mattermost Security Practices training](https://docs.mattermost.com/process/training.html#system-security) (particularly NIST standards) 
+
 ## Release Timeline
 
 Notes: 
@@ -177,24 +182,29 @@ The final release is cut. If an urgent and important issue needs to be addressed
     - Verify all items in the last posted release checklist are complete, if not alert the release manager
 2. Build:
     - Tags a new release (e.g. 1.1.0) and runs an official build which should be essentially identical to the last RC 
+    - Posts SHA key and md5 sum of the final build to release channel
 3. PM:
     - Post in Release Discussion with links to the EE and Team Edition bits
     - Update the [Mattermost server download page](mattermost.org/download)
-    - Add the download links to [upgrdae guide](http://docs.mattermost.com/administration/upgrade.html#version-archive)
+    - Add the download links, SHA key and md5 sum to [upgrade guide](http://docs.mattermost.com/administration/upgrade.html#version-archive)
     - Contact owners of [community installers](http://www.mattermost.org/installation/) or submit [PRs](https://github.com/tommyvn/mattermost-heroku/commit/94f7c5c0c5d7d2672fb6d62b6a560b4b5c1b5131) to update install version number
     - Close GitHub meta ticket for the release
     - Finalize docs
+      - If reviews are not complete, hold a 30 minute doc review meeting with PMs and anyone else who has changed or reviewed docs this release and wants to join
       - Merge the docs release branch to master and verify all changes on docs.mattermost.com once the build is up
       - Submit a correction PR for any incorrect formatting or other errors missed during the intitial review
     - Update [MVP page](https://www.mattermost.org/mvp/) with the most valuable contributor of the release
-    - Submit GitLab MR for `config/software/mattermost.rb` to take next Mattermost version in the Omnibus. The MR should include changes to the `default_version` and `md5` sum (see [example](https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests/933/diffs)
+    - Submit GitLab MR to take next Mattermost version in the Omnibus (see [example](https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests/998)):
+        - Include changes to Mattermost version number ([`default_version`](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/config/software/mattermost.rb#L20)) and md5 sum of the final TE build ([`source md5`](https://gitlab.com/jasonblais/omnibus-gitlab/blob/master/config/software/mattermost.rb#L23)) in  [`config/software/mattermost.rb`](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/config/software/mattermost.rb).
+        - Include a summary of updates in Team Edition that are relevant to GitLab.
     - Update [Docker preview image to latest version](https://github.com/mattermost/mattermost-docker-preview/commit/1c34195d70b26bd4c82b5ef4fa0ebaf421096881)
     - Check Security Issues spreadsheet and confirm disclosure text
     - Confirm link to security updates appears in blog post if there are security updates in this release 
 4. Marketing:
-    - Finalize Mailchimp email blast
-    - Finalize blog post for mattermost.org and set timer for 06:00 PDT on the day of release    - 
-    - Queue Tweet announcement (include animated banner image) 
+    - Finish draft of animated GIF (for Twitter announcement, MailChimp and blog post) made up of top announcements
+    - Finish draft of MailChimp email blast and Twitter announcement and send for marketing lead to review. Once reviewed, schedule for 08:00 PST on the date of marketing announcement
+    - Finalize blog post for mattermost.com and set timer for 08:00 PST on the day of release
+    - Turn on CrazyEgg for blog post page
     - Find [www-gitlab-com merge request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests) for latest GitLab release blog post and make request for adding GitLab Mattermost update (see [example request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests/2910#note_14096885), [example update](https://about.gitlab.com/2016/07/22/gitlab-8-10-released/#gitlab-mattermost-32)) 
     - Update [feature list](https://about.mattermost.com/pricing/) on mattermost.com with relevant new features
 
@@ -235,14 +245,13 @@ If a bug fix release is required, run through the following steps again:
         - [Update testing spreadsheet](https://mattermost.atlassian.net/browse/PLT-3044)
         - [Creating final release candidate](https://mattermost.atlassian.net/browse/PLT-2198)
         - [Test Gitlab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/PLT-2197) 
-        - [Push to private cloud customers](https://mattermost.atlassian.net/browse/PLT-2199)
         - [Push to private long-running feature branches](https://mattermost.atlassian.net/browse/PLT-2199)
         - [Test upgrade](https://mattermost.atlassian.net/browse/PLT-3940) to latest release based on [upgrade guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide)
         - Test upgrade from Team Edition to Enterprise Edition
         - [RC Build Testing for core team](https://mattermost.atlassian.net/browse/PLT-2208)
         - [Upgrade gitlab.mattermost.com to RC1](https://mattermost.atlassian.net/browse/PLT-3116)
         - [Push final build to gitlab.mattermost.com](https://mattermost.atlassian.net/browse/PLT-3117)
-        - [Cut build and set up RC1 servers](https://mattermost.atlassian.net/browse/PLT-3937)
+        - [Cut build and set up RC1 servers, including a note to check for all XXX items](https://mattermost.atlassian.net/browse/PLT-3937)
     - Create [PR tracking spreadsheet](https://docs.google.com/spreadsheets/d/1YkRqyQk0Y4ZouV-SsXbSjbzGOXu2ZSPSd4XC_4LAErI/edit#gid=0) for next release
         - Populate with any PR's that have already went in for the next release
         - Zapier manager updates GitHub automation zap to new PR tracking spreadsheet
