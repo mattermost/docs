@@ -16,7 +16,6 @@ Version number updated to 3.4 to make numbering consistent with Mattermost serve
  - Added an option to configure whether a red badge is shown on taskbar icon for unread messages
  - Added new shortcuts:
      - `CTRL + S`: sets focus on the Mattermost search box
-     - `CTRL + SHIFT + S`: sets focus on the Mattermost search box and adds `in:[channel_url]` to search in current channel
      - `ALT + Left Arrow`: go to previous page in history
      - `ALT + Right Arrow`: go to next page in history
  - Upgraded the Settings page user interface
@@ -31,7 +30,6 @@ Version number updated to 3.4 to make numbering consistent with Mattermost serve
  - Added an option to configure whether a red badge is shown on taskbar icon for unread messages
  - Added new shortcuts:
      - `CMD + S`: sets focus on the Mattermost search box
-     - `CMD + SHIFT + S`: sets focus on the Mattermost search box and adds `in:[channel_url]` to search in current channel
      - `CMD + [`: go to previous page in history
      - `CMD + ]`: go to next page in history
  - Upgraded the Settings page user interface
@@ -46,7 +44,6 @@ Version number updated to 3.4 to make numbering consistent with Mattermost serve
  - Added a script to create `Mattermost.desktop` desktop entry to help [integrate the application into a desktop environment](https://wiki.archlinux.org/index.php/Desktop_entries) more easily
  - Added new shortcuts:
      - `CTRL + S`: sets focus on the Mattermost search box
-     - `CTRL + SHIFT + S`: sets focus on the Mattermost search box and adds `in:[channel_url]` to search in current channel
      - `ALT + Left Arrow`: go to previous page in history
      - `ALT + Right Arrow`: go to next page in history
  - Upgraded the Settings page user interface
@@ -67,7 +64,7 @@ Version number updated to 3.4 to make numbering consistent with Mattermost serve
  - Fixed the Mattermost icon for desktop notifications in Windows 10
  - Fixed an issue where the maximized state of the app window was lost in some cases
  - Fixed an issue where shortcuts didn't work when switching applications or tabs in some cases
- - Fixed a pixelated application icon in top left of the window
+ - Fixed an issue where application icon at the top left of the window was pixelated
  - Fixed an issue where the application kept focus after closing the app window
 
 #### OS X
