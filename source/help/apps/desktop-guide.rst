@@ -4,9 +4,9 @@ Desktop Application's End User's Guide
 
 Mattermost desktop applications are available for Windows, Mac and Linux operating systems. 
 
-You can `download the apps directly from our download page <https://about.mattermost.com/downloads/>`_ and you can visit our `installation guides <https://docs.mattermost.com/install/desktop.html>`_ for help during set up.
+You can `download the apps directly from our download page <https://about.mattermost.com/downloads/>`_ and visit our `installation guides <https://docs.mattermost.com/install/desktop.html>`_ for help during set up.
 
-For latest updates, please see our `changelog <https://docs.mattermost.com/help/apps/desktop-changelog.html>`_.
+To view the latest updates, please see our `changelog <https://docs.mattermost.com/help/apps/desktop-changelog.html>`_.
 
 Below are a few tips to get you started and configuring your experience on the desktop app:
 
