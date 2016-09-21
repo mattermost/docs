@@ -1,5 +1,5 @@
 ===================================
-Desktop Application's End User's Guide
+Desktop Application's User Guide
 ===================================
 
 Mattermost desktop applications are available for Windows, Mac and Linux operating systems. 
@@ -30,7 +30,7 @@ To add a new server on the Mattermost instance,
 
 You can now access all teams you have joined in the server once you have saved the settings, and each will appear as a separate tab in the app. 
 
-You may also add a separate instance for each team, if you'd like.
+You may also add each team separately, if you'd like.
 
 Editing servers and teams
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -44,7 +44,7 @@ To edit a server,
 Removing servers and teams
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To remove a server from your desktop app environment, click on **Remove** next to the server or a team you want removed. Note that this action cannot be undone.
+To remove a server from your desktop app environment, click on **Remove** next to the server or a team you want removed.
 
 Settings
 ---------------------------------------------------------------------
@@ -94,14 +94,14 @@ Note: Enabling mixed content will disable YouTube video previews [due to an issu
 Show icon on Menu Bar (OS X only)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When enabled, a black dot indicating unread messages is displayed on the team tab bar.
+When enabled, a red dot with a count of unread mentions is displayed on the team tab bar.
 
 This setting is off by default.
 
 Start app on login (Windows, Linux only)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When enabled, Mattermost application starts when you login to your machine.
+When enabled, Mattermost application starts when you log in to your machine.
 
 This setting is on by default.
 
