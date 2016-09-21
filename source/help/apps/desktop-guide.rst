@@ -10,9 +10,9 @@ To view the latest updates, please see our `changelog <https://docs.mattermost.c
 
 Below are a few tips to get you started and configuring your experience on the desktop app:
 
- - `Team Management <https://docs.mattermost.com/help/apps/desktop-guide.html#team-management>`_
- - `Settings <https://docs.mattermost.com/help/apps/desktop-guide.html#settings>`_
- - `Menu Bar <https://docs.mattermost.com/help/apps/desktop-guide.html#menu-bar>`_
+ - `Team Management <https://docs.mattermost.com/help/apps/desktop-guide.html#id1>`_
+ - `Settings <https://docs.mattermost.com/help/apps/desktop-guide.html#id2>`_
+ - `Menu Bar <https://docs.mattermost.com/help/apps/desktop-guide.html#id3>`_
 
 Team management
 ---------------------------------------------------------------------
@@ -51,7 +51,7 @@ Settings
 
 In addition to `Mattermost Account Settings <https://docs.mattermost.com/help/settings/account-settings.html>`_ , the desktop app provides additional options to customize your experience. 
 
-The Settings Page is available from the `File` menu under `Settings`, and can be accessed with `CTRL + COMMA` on Windows and Linux, and with `CMD + COMMA` on Mac.
+The Settings Page is available from the `File` menu under `Settings`, and can be accessed with ``CTRL + COMMA`` on Windows and Linux, and with ``CMD + COMMA`` on Mac.
 
 Description of each setting is included below this table.
 
@@ -85,11 +85,11 @@ This setting is off by default.
 Allow mixed content
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If your server is hosted on `https://`, insecure content, images and scripts with `http://` are not rendered by default. This option allows such content to be rendered. If you do enable it, please be mindful of potential security risks shared over `http://` protocols.
+If your server is hosted on ``https://``, insecure content, images and scripts with ``http://`` are not rendered by default. This option allows such content to be rendered. If you do enable it, please be mindful of potential security risks shared over ``http://`` protocols.
 
 This setting is on by default.
 
-Note: Enabling mixed content will disable YouTube video previews [due to an issue in the underlying technology](https://github.com/electron/electron/issues/2749) used by the Mattermost Desktop app.
+Note: Enabling mixed content will disable YouTube video previews `due to an issue in the underlying technology <https://github.com/electron/electron/issues/2749>`_ used by the Mattermost Desktop app.
 
 Show icon on Menu Bar (OS X only)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -140,12 +140,12 @@ The desktop app contains a menu bar with additional features and shortcuts to st
 
 If the menu bar is hidden, you may use the ``ALT`` key to display the menu. To have the menu displayed at all times, go to the Settings page and uncheck the **Hide menu bar** setting.
 
-Below is a list of menu options with the corresponding keyboard shortcuts. For Mac OS X, replace `CTRL` by `CMD` unless otherwise specified.
+Below is a list of menu options with the corresponding keyboard shortcuts. For Mac OS X, replace ``CTRL`` by ``CMD`` unless otherwise specified.
 
 **File**
 
  - Settings (CTRL + COMMA): Opens app settings where you can manage your servers and configure desktop app settings
- - Exit (CTRL + Q): Closes the application. Labeled `Quit` on Mac OS X
+ - Exit (CTRL + Q): Closes the application. Labeled ``Quit`` on Mac OS X
 
 **Edit**
 
@@ -156,7 +156,6 @@ Below is a list of menu options with the corresponding keyboard shortcuts. For M
  - Paste (CTRL + V): Pastes text from the clipboard
  - Select All (CTRL + A): Selects all text in input box
  - Search in Team (CTRL + S): Sets focus on the Mattermost search box
- - Search in Channel (CTRL + SHIFT + S): Sets focus on the Mattermost search box and adds `in:[Channel]` to search in current channel
 
 **View**
 
@@ -183,5 +182,5 @@ Below is a list of menu options with the corresponding keyboard shortcuts. For M
 
 **Help**
 
- - Mattermost Docs - Links to a parent page for `Desktop applications documentation <https://docs.mattermost.com/install/desktop.html>`_ .
+ - Mattermost Docs - Links to `Desktop Application’s User Guide <https://docs.mattermost.com/help/apps/desktop-guide.html>`_ .
  - Version - Indicates the desktop application version in use
