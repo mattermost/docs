@@ -152,7 +152,7 @@ Restrict Team Names
 **False**: Newly created team names are not restricted. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableTeamCreation": true`` with options ``true`` and ``false`` for above settings respectively.                        |
+| This feature's ``config.json`` setting is ``"RestrictTeamNames": true`` with options ``true`` and ``false`` for above settings respectively.                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable users to open Direct Message channels with 
@@ -304,13 +304,13 @@ Output logs to console
 
 Console Log Level
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Level of detail at which log events are written to the console when **EnableConsole**= ``true``. 
+Level of detail at which log events are written to the console when **EnableConsole** = ``true``.
 
 **DEBUG**: Prints high detail for developers debugging issues.
 
 **ERROR**: Outputs only error messages.
 
-**INFO**: Outputs error messages and information around startup and initialization,
+**INFO**: Outputs error messages and information around startup and initialization.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ConsoleLevel": "DEBUG"`` with options ``DEBUG``, ``ERROR`` and ``INFO`` for above settings respectively.                |
@@ -328,11 +328,11 @@ Output logs to file
 
 File Log Level
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Level of detail at which log events are written to log files when **EnableFile**=``true``.
+Level of detail at which log events are written to log files when **EnableFile** = ``true``.
 
 **ERROR**: Outputs only error messages.
 
-**INFO**: Outputs error messages and information around startup and initialization,
+**INFO**: Outputs error messages and information around startup and initialization.
 
 **DEBUG**: Prints high detail for developers debugging issues.
 
@@ -1040,7 +1040,7 @@ Enable Multi-factor Authentication (Enterprise)
 **False**: Multi-factor authentication is disabled.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableSecurityFixAlert": true`` with options ``true`` and ``false`` for above settings respectively.                    |
+| This feature's ``config.json`` setting is ``"EnableMultifactorAuthentication": true`` with options ``true`` and ``false`` for above settings respectively.                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -1227,7 +1227,7 @@ Connection Security
 
 Enable Security Alerts 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**true**: System Admins are notified by email if a relevant security fix alert has been announced in the last 12 hours. Requires email to be enabled.
+**True**: System Admins are notified by email if a relevant security fix alert has been announced in the last 12 hours. Requires email to be enabled.
 
 **False**: Security alerts are disabled.
 
@@ -1346,8 +1346,6 @@ Slash commands send events to external integrations that send a response back to
 
 Enable OAuth 2.0 Service Provider
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Slash commands send events to external integrations that send a response back to Mattermost. 
-
 **True**: Mattermost acts as an OAuth 2.0 service provider allowing Mattermost to authorize API requests from external applications.
 
 **False**: Mattermost does not function as an OAuth 2.0 service provider.
@@ -1538,7 +1536,7 @@ Site Name
 Name of service shown in login screens and UI. Maximum 30 characters.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RestrictCreationToDomains": ""`` with string input.                                                                     |
+| This feature's ``config.json`` setting is ``"SiteName": "Mattermost"`` with string input.                                                                     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Custom Branding (Enterprise)
@@ -1612,7 +1610,7 @@ Terms of Service link
 Configurable link to Terms of Service your organization may provide to end users. By default, links to a Terms of Service page hosted on about.mattermost.com. If changing the link to a different Terms of Service, make sure to include the "Mattermost Conditions of Use" notice to end users that must also be shown to users from the "Terms of Service" link.  
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"https://about.mattermost.com/default-terms/"`` with string input.                                                       |
+| This feature's ``config.json`` setting is ``"TermsOfServiceLink": "https://about.mattermost.com/default-terms/"`` with string input.                                                       |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Privacy Policy link  
@@ -1620,7 +1618,7 @@ Privacy Policy link
 Configurable link to Privacy Policy your organization may provide to end users.  By default, links to a Privacy Policy page hosted on about.mattermost.com.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``https://about.mattermost.com/default-privacy-policy/"`` with string input.                                               |
+| This feature's ``config.json`` setting is ``"PrivacyPolicyLink": "https://about.mattermost.com/default-privacy-policy/"`` with string input.                                               |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 About link  
