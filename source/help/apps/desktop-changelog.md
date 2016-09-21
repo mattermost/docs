@@ -2,7 +2,7 @@
 
 ## Release v3.4.0
 
-Expected release date: September 22, 2016
+Release date: September 22, 2016
 
 This release contains a security update and it is highly recommended that users upgrade to this version.
 
