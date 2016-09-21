@@ -2,12 +2,12 @@
 
 This document summarizes the internal security policies at Mattermost, Inc. 
 
-- [Security benefits of the Mattermost open source platform](https://docs.mattermost.com/process/security.html#security-benefits-of-an-open-source-platform)
-- [Mattermost Development Guidelines](https://docs.mattermost.com/process/security.html#mattermost-development-guidelines)
-    - [Security Review Checklist](#security-checklist) 
-- [Common Security Related Questions for Enterprises](https://docs.mattermost.com/process/security.html#common-security-related-questions-for-enterprises)
-   - [Governance](https://docs.mattermost.com/process/security.html#governance)
-   - [Software Development Life Cycle (SDLC)](https://docs.mattermost.com/process/security.html#software-development-life-cycle-sdlc)
+- [Security benefits of the Mattermost open source platform](#security-benefits-of-an-open-source-platform)
+- [Mattermost Development Guidelines](#mattermost-development-guidelines)
+  - [Security Review Checklist](#security-review-checklist) 
+- [Common Security Related Questions for Enterprises](#common-security-related-questions-for-enterprises)
+   - [Governance](#governance)
+   - [Software Development Life Cycle (SDLC)](#software-development-life-cycle-sdlc)
    - [Training](#training)
    - [Validation](#validation)
    - [Security Response](#security-response)
@@ -47,8 +47,7 @@ The commercial Mattermost Enterprise Edition extends the security and productivi
 * Critical updates are delivered as dot releases, for example a critical update to release `3.1.0` would be named `3.1.1`.
 * Customers and subscribers to the Mattermost Insiders mailing list receive notification about all critical updates. 
 
-### Security Review Checklist
-
+### Security Review Checklist 
 In addition to checklists for quality and reliability, code changes receive multiple reviews for the following system security design principles: 
 
 - Reducing information disclosure 
@@ -142,7 +141,7 @@ In addition to checklists for quality and reliability, code changes receive mult
 1. Are personnel training plans and records kept for internal company compliance purposes?
    - Yes.
 
-### Validation<a name="validation"></a>
+### Validation
 
 1. Are results from the execution of test plans reported and used to track and justify release readiness?
    - Yes. 
