@@ -50,8 +50,12 @@ footer {
 	font-size: 105%;
 }
 
+.wy-grid-for-nav {
+	padding-top: 70px;
+}
+
 .wy-nav-content {
-	padding-top: 6em;
+	padding-top: 26px;
 }
 
 .wy-table td, .rst-content table.docutils td, .rst-content table.field-list td {
@@ -60,10 +64,6 @@ footer {
 
 .wy-nav-content .document {
 	max-width: 1000px;
-}
-
-.wy-menu-vertical > ul {
-	display: none;
 }
 
 .wy-menu-vertical > ul.current {
@@ -79,6 +79,10 @@ footer {
 	background: #E0E0E0;
 	border-color: #ddd;
 	border-top: none;
+}
+
+.wy-menu-vertical li a {
+	white-space: nowrap;
 }
 
 .wy-menu-vertical li.on a, .wy-menu-vertical li.current>a {
@@ -263,6 +267,9 @@ header .header__links li a {
 		overflow-y: scroll;
 		-webkit-overflow-scrolling: touch;
 	}
+	.wy-nav-content-wrap.shift {
+		top: 70px;
+	}
 	header .header__logo img {
 		width: 176px;
 	}
@@ -285,7 +292,10 @@ header .header__links li a {
 		max-width: 100%;
 		width: auto;
 	}
-	.wy-nav-top {
-		margin-top: 70px;
+}
+
+@media screen and (min-width: 1400px) {
+	.wy-nav-content-wrap {
+    	background: #fcfcfc; /* gets rid of the wony gray bottom of the page when viewed on a wide screen */
 	}
 }

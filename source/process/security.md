@@ -2,18 +2,18 @@
 
 This document summarizes the internal security policies at Mattermost, Inc. 
 
-- [Security benefits of the Mattermost open source platform](#open-source-security)
-- [Mattermost Development Guidelines](#development-guidelines)
-- [Security Review Checklist](#security-checklist) 
-- [Common Security Related Questions for Enterprises](#common-security-related-questions)
+- [Security benefits of the Mattermost open source platform](#security-benefits-of-an-open-source-platform)
+- [Mattermost Development Guidelines](#mattermost-development-guidelines)
+  - [Security Review Checklist](#security-review-checklist) 
+- [Common Security Related Questions for Enterprises](#common-security-related-questions-for-enterprises)
    - [Governance](#governance)
-   - [Software Development Life Cycle (SDLC)](#sdlc)
+   - [Software Development Life Cycle (SDLC)](#software-development-life-cycle-sdlc)
    - [Training](#training)
    - [Validation](#validation)
    - [Security Response](#security-response)
 - [Business Continuity Plan](#business-continuity-plan)
 
-## Security benefits of an open source platform <a name="open-source-security"></a>
+## Security benefits of an open source platform
 
 The open source Mattermost Team Edition is used by thousands of teams around the world. Development is aided by hundreds of open source contributors, with full access to the product source code, who have a vested interest in keeping the software secure and vetted. 
 
@@ -21,7 +21,7 @@ As new threats emerge, a [responsible disclosure policy](https://www.mattermost.
 
 The commercial Mattermost Enterprise Edition extends the security and productivity benefits of the open source solution with support for advanced security, management, scale and policy compliance features for complex organizations. 
 
-## Mattermost Development Guidelines<a name="development-guidelines"></a>
+## Mattermost Development Guidelines
 
 #### Tracking 
 
@@ -47,8 +47,7 @@ The commercial Mattermost Enterprise Edition extends the security and productivi
 * Critical updates are delivered as dot releases, for example a critical update to release `3.1.0` would be named `3.1.1`.
 * Customers and subscribers to the Mattermost Insiders mailing list receive notification about all critical updates. 
 
-### Security Review Checklist<a name="security-checklist"></a> 
-
+### Security Review Checklist 
 In addition to checklists for quality and reliability, code changes receive multiple reviews for the following system security design principles: 
 
 - Reducing information disclosure 
@@ -59,9 +58,9 @@ In addition to checklists for quality and reliability, code changes receive mult
 - Preventing cross-site forgery 
 - Preventing remote code execution 
 
-## Common Security Related Questions for Enterprises<a name="common-security-related-questions"></a>
+## Common Security Related Questions for Enterprises
 
-### Governance<a name="governance"></a>
+### Governance
 
 1. Do you maintain a quality management system (QMS) approved by management? Does your quality management system (QMS) include coverage for software application security principles?
    - Yes. 
@@ -96,7 +95,7 @@ In addition to checklists for quality and reliability, code changes receive mult
 1. If user accounts are assigned to non-permanent personnel (e.g., contractors, consultants)  for troubleshooting purposes, are the accounts disabled or removed after each use?
    - Yes
 
-### Software Development Life Cycle (SDLC)<a name="sdlc"></a>
+### Software Development Life Cycle (SDLC)
 
 1. Are there documented processes, procedures, standards and templates used in your SDLC process?  
    - Yes. 
@@ -128,7 +127,7 @@ In addition to checklists for quality and reliability, code changes receive mult
 1. If so, is access to data controlled by terms of Non-Disclosure Agreements?
    - Yes.
 
-### Training<a name="training"></a>
+### Training
 
 1. Is Internal company training available & performed commensurate with personnel roles and responsibilities?
    - Yes.
@@ -142,7 +141,7 @@ In addition to checklists for quality and reliability, code changes receive mult
 1. Are personnel training plans and records kept for internal company compliance purposes?
    - Yes.
 
-### Validation<a name="validation"></a>
+### Validation
 
 1. Are results from the execution of test plans reported and used to track and justify release readiness?
    - Yes. 
@@ -156,7 +155,7 @@ In addition to checklists for quality and reliability, code changes receive mult
 1. Is some form of dynamic code scanning performed as part of the release acceptance? What tools are used?
    - Yes, Jenkins is used for dynamic code scanning as part of the release process. 
 
-### Security Response<a name="security-response"></a>
+### Security Response
 
 1. Do you have a documented company security incident response process?
    - Yes. 
@@ -173,7 +172,7 @@ In addition to checklists for quality and reliability, code changes receive mult
 1. Is there a specified response policy that includes the timeframe issues are to be addressed?
    - Yes, please see: https://about.mattermost.com/support/
 
-## Business Continuity Plan<a name="business-continuity-plan"></a>
+## Business Continuity Plan
 
 Mattermost, Inc. is headquartered in Palo Alto, California with a distributed organization across three timezones, and is therefore not easily affected by typical causes of business disruption, such as local failures of equipment, power, telecommunications, social unrest, fire, or natural disasters. Even so, threats considered in the context of business continuity are categorized by impact of the disruption.
 

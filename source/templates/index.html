@@ -1,0 +1,178 @@
+{# Overrides the output of converting index.rst to enable a custom landing page for the docs #}
+{# Ensure that all links found within the index.rst are transposed here as well. #}
+
+{%- extends "layout-notoc.html" %}
+{% set title = _('Mattermost Documentation') %}
+
+{% block body %}
+
+    <style type="text/css">
+
+        .landing {
+            width: 100%;
+            max-width: 700px; /* Force to a maximum of 3 tiles wide */
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .landing .landing-title {
+            text-align:center;
+            font-size: 2em;
+            margin: .67em 0
+        }
+
+        .tiles-flex {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -ms-flex-line-pack: center;
+            align-content: center;
+            max-width: 700px; /* purely to stop the max width of tiles at 3 */
+        }
+
+        .tile {
+            /* looks */
+            border-top: 8px solid #343537;
+            background-color: #fff;
+            box-shadow: .5px 2px 4px 0 #bdbdbd;
+            /* sizing/boxing */
+            width: 200px;
+            height: 220px;
+            margin: 10px;
+            padding: 10px;
+            /* animation */
+            -webkit-transition: 250ms;
+            transition: 250ms;
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+            will-change: transform;
+            /* layout */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -ms-flex-line-pack: stretch;
+            align-content: stretch;
+            -webkit-box-align: stretch;
+            -ms-flex-align: stretch;
+            align-items: stretch;
+        }
+
+        .tile:hover {
+            -webkit-transform: translate3d(0,-6px,0);
+            transform: translate3d(0,-6px,0)
+        }
+
+        .tile .tile-title {
+            /* looks */
+            font-size: 20px;
+            letter-spacing: .4px;
+            color: #676363;
+            /* sizing/boxing */
+            height: 89px;
+            width: 100%;
+            margin: 0px;
+            padding: 0px 20px;
+            /* layout */
+            display:-webkit-box;
+            display:-ms-flexbox;
+            display:flex;
+            -ms-flex-item-align: auto;
+            align-self: auto;
+            -webkit-box-orient:vertical;
+            -webkit-box-direction:normal;
+            -ms-flex-direction:column;
+            flex-direction:column;
+            -ms-flex-pack:distribute;
+            justify-content:space-around;
+        }
+
+        .tile .tile-divider {
+            height:2px;
+            width: 100%;
+            margin: 0 5px;
+            border: .5px solid #343537;
+            background-color: #343537;
+            -ms-flex-item-align: auto;
+            align-self: auto;
+        }
+
+        .tile .tile-description {
+            /* looks */
+            font-size: 14px;
+            letter-spacing: .2px;
+            line-height: 1.25;
+            color: #757575;
+            /* sizing/boxing */
+            height: 89px;
+            width: 100%;
+            margin: 0px;
+            /* layout */            
+            display:-webkit-box;
+            display:-ms-flexbox;
+            display:flex;
+            -ms-flex-item-align: auto;
+            align-self: auto;
+            -webkit-box-orient:vertical;
+            -webkit-box-direction:normal;
+            -ms-flex-direction:column;
+            flex-direction:column;
+            -ms-flex-pack:distribute;
+            justify-content:space-around;
+        }
+
+    </style>
+
+    <div class="landing">
+        <h1 class="landing-title">Mattermost Documentation</h1>
+        <div class="tiles-flex">
+            <a class="tile" href="overview/index.html">
+                <h2 class="tile-title">Overview</h2>
+                <div class="tile-divider"></div>
+                <p class="tile-description">Solution benefits, features, security, deployment and integrations.</p>
+            </a>
+            <a class="tile" href="guides/user.html">
+                <h2 class="tile-title">User's Guide</h2>
+                <div class="tile-divider"></div>
+                <p class="tile-description">End user help and documentation</p>
+            </a>
+            <a class="tile" href="guides/administrator.html">
+                <h2 class="tile-title">Administrator's Guide</h2>
+                <div class="tile-divider"></div>
+                <p class="tile-description"> Installation, deployment and administration guides</p>
+            </a>
+            <a class="tile" href="guides/integration.html">
+                <h2 class="tile-title">Integration Guide</h2>
+                <div class="tile-divider"></div>
+                <p class="tile-description">Integrating other systems into messaging solution</p>
+            </a>
+            <a class="tile" href="guides/developer.html">
+                <h2 class="tile-title">Developer's Guide</h2>
+                <div class="tile-divider"></div>
+                <p class="tile-description">Contributing to the Mattermost open source project</p>
+            </a>
+            <a class="tile" href="guides/core.html">
+                <h2 class="tile-title">Core Team Handbook</h2>
+                <div class="tile-divider"></div>
+                <p class="tile-description">Joining the Mattermost core team</p>
+            </a>
+        </div>
+    </div>
+
+{% endblock %}
