@@ -26,17 +26,17 @@ You can `download the apps directly from our downloads page <https://about.matte
 
 1. Download latest version of the Mattermost desktop app:
 
-   - `64-bit version of Windows <https://releases.mattermost.com/desktop/1.3.0/mattermost-setup-1.3.0-win64.exe>`_
-   - `32-bit version of Windows <https://releases.mattermost.com/desktop/1.3.0/mattermost-setup-1.3.0-win32.exe>`_
+   - `64-bit version of Windows <https://releases.mattermost.com/desktop/3.4.0/mattermost-setup-3.4.0-win64.exe>`_
+   - `32-bit version of Windows <https://releases.mattermost.com/desktop/3.4.0/mattermost-setup-3.4.0-win32.exe>`_
 
-2. From the ``\Downloads`` directory right-click on the file `mattermost-setup-1.3.0...` and select **Open**.
+2. From the ``\Downloads`` directory right-click on the file ``mattermost-setup-3.4.0...`` and select **Open**.
 
 This will start an installer for the app. Once finished, the Mattermost desktop app will open automatically.
 
-Mac OS X 10.9:
+Mac OS X 10.9
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Download `latest version of the Mattermost desktop app <https://releases.mattermost.com/desktop/1.3.0/mattermost-desktop-1.3.0-osx.tar.gz>`_
+1. Download `latest version of the Mattermost desktop app <https://releases.mattermost.com/desktop/3.4.0/mattermost-desktop-3.4.0-osx.tar.gz>`_
 
 2. From the ``/Downloads`` directory, find ``/mattermost-desktop...`` folder.
 
@@ -51,8 +51,8 @@ Linux (Beta)
 
 1. Download latest version of the Mattermost desktop app:
 
-   - `x64.tar.gz <https://releases.mattermost.com/desktop/1.3.0/mattermost-desktop-1.3.0-linux-x64.tar.gz>`_
-   - `ia32.tar.gz <https://releases.mattermost.com/desktop/1.3.0/mattermost-desktop-1.3.0-linux-ia32.tar.gz>`_
+   - `x64.tar.gz <https://releases.mattermost.com/desktop/3.4.0/mattermost-desktop-3.4.0-linux-x64.tar.gz>`_
+   - `ia32.tar.gz <https://releases.mattermost.com/desktop/3.4.0/mattermost-desktop-3.4.0-linux-ia32.tar.gz>`_
 
 2. Extract the archive, then execute ``Mattermost`` which is located inside the extracted directory.
 
