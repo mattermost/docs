@@ -72,8 +72,13 @@ Email notifications are sent for mentions and direct messages after you’ve bee
 
 If your System Administrator has enabled **Email Batching**, you will have additional options under this settings to select how often email notifications will be sent. All notifications received over this time period are combined and sent in a single email. 
 
-#### Mobile Push Notifications
-Push notifications are sent to your mobile device if you have the Android or iOS app installed. They are sent even if you are online, similar to desktop notifications. By default, push notifications are sent "For mentions and direct messages". If your System Administrator has not set up push notifications, this setting will be disabled.
+#### Send Mobile Push Notifications
+Push notifications can be sent to your mobile device if you have the Android or iOS app installed. You can choose the type of activity that will send a notification. By default, push notifications are sent "For mentions and direct messages". If push notifications are sent "Never", the Mattermost setting to trigger push notifications depending on your status is hidden. If your System Administrator has not set up push notifications, this setting will be disabled.
+
+If you are actively viewing a channel (public, private, or direct message) on desktop or web, no push notifications will be sent for that channel. If a notification is viewed on desktop or web, the lockscreen notification will clear on Android, and on iOS the badge on the Mattermost app icon will decrement accordingly.
+
+#### Trigger Mobile Push Notifications When
+You can also choose when to send push notifications depending on your status. By default, push notifications are sent if your status is "Online, away or offline". If "Send Mobile Push Notifications" is set as "Never", this setting is hidden. If your System Administrator has not set up push notifications, this setting will be disabled.
 
 #### Words That Trigger Mentions
 By default, you will receive mention notifications from your non-case sensitive username, mentioned @username and @channel. Customize the words that trigger mentions by typing them in the input box. This is useful if you want to be notified of all posts on a certain topic, for example, “marketing”.
