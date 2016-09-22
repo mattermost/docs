@@ -18,6 +18,7 @@ Install Guides
    /install/smtp*
    /install/troubleshooting*
    /install/i18n*
+   /install/desktop*
 
 Deployment
 ==========
