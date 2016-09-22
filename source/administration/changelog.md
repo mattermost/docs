@@ -119,6 +119,9 @@ The following config settings will only work on servers with an Enterprise Licen
 
 ### Known Issues
 
+- Upgrading from 3.2 to 3.4 will be incomplete due to a migration code not being run properly. You can either:
+    - Upgrade from 3.2 to 3.3 and then from 3.3 to 3.4, or
+    - Upgrade from 3.2 to 3.4, then run the following SQL query to make Mattermost rerun upgrade steps that were not properly completed: `UPDATE Systems SET Value = '3.1.0' WHERE Name = 'Version';`
 - Deleted messages don't disappear from the channel for the user who deleted the message, if the message was previously edited and right hand sidebar is open.
 - A single collapsed link or image preview re-opens after refresh.
 - Files sent in private chat to members in a different team are not accessible.
