@@ -40,7 +40,10 @@ Slash commands, like outgoing webhooks, allow users to interact with external ap
 
 ## Mattermost Web Service API
 
-Mattermost offers a Web Service API accessible by Mattermost Drivers, listed below. Initial documentation on the [transport layer for the web service is available](http://docs.mattermost.com/developer/web-service.html) and functional documentation is under development. 
+Mattermost offers a Web Service API accessible by Mattermost Drivers, listed below. See: 
+
+- [Documentation for the transport layer for the web service](http://docs.mattermost.com/developer/web-service.html) 
+- [Web Service API Reference](https://api.mattermost.com/) (Work in Progress)
 
 ## Mattermost Drivers
 
@@ -50,9 +53,13 @@ Mattermost drivers offer access to the Mattermost web service API in different l
 
 [web-client.jsx](https://github.com/mattermost/platform/blob/master/webapp/client/client.jsx) - This Javascript driver connects with the ReactJS components of Mattermost. The web client does the vast majority of its work by connecting to a RESTful JSON web service. There is a very small amount of processing for error checking and set up that happens on the web server.
 
+- The Javascript Driver is [mirrored in an external repository](https://github.com/mattermost/mattermost-driver-javascript) that can be included in custom projects. 
+
 ### [Golang Driver](https://github.com/mattermost/platform/blob/master/model/client.go)
 
 [client.go](https://github.com/mattermost/platform/blob/master/model/client.go) - This is a RESTful driver connecting with the Golang-based webservice of Mattermost and is used by unit tests. 
+
+- See [GoDocs](https://godoc.org/github.com/mattermost/platform/model) for documentation on the Golang Driver.
 
 ## Building API Integrations 
 

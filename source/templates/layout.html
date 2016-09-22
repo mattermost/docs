@@ -1,4 +1,3 @@
-{# layout.html #}
 {# Import the theme's layout. #}
 {% extends "!layout.html" %}
 
@@ -6,22 +5,5 @@
 {% set script_files = script_files + ['_static/myscript.js'] %}
 
 {% block footer %}
-<header>
-	<div class="header__container">
-		<a href="http://docs.mattermost.com/" class="header__logo">
-			<img width="176" src="https://about.mattermost.com/wp-content/uploads/2016/01/logo.png">
-		</a>
-		<div class="links__icon">
-			<i class="fa fa-bars"></i>
-		</div>
-		<ul class="header__links">
-			<li><a href="https://about.mattermost.com/solutions/">Solutions</a></li>
-			<li><a href="https://about.mattermost.com/features/">Features</a></li>
-			<li><a class="active" href="http://docs.mattermost.com/">Documentation</a></li>
-			<li><a href="https://about.mattermost.com/pricing/">Pricing</a></li>
-			<li><a href="https://about.mattermost.com/contact/">Contact</a></li>
-			<li><a href="https://www.mattermost.org/download/">Download</a></li>
-		</ul>
-	</div>
-</header>
+	{% include "header.html" %}
 {% endblock %}

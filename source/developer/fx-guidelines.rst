@@ -45,7 +45,7 @@ Forgiving extends to compatibility as well, and whether you’re working from a 
 
 |
 
-Markup Guidelines
+Technical Guidelines
 ************************
 
 |
@@ -60,16 +60,27 @@ Custom Styles
 We’re using `BEM methodology <https://en.bem.info/method/>`_  and would advise everyone to do so when creating new classes or ids. There’s a lot of places in our app that currently don’t follow BEM but we’re trying to improve the codebase. `Here <http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/>`_ is a brief overview of the BEM syntax.
 
 
+Minimum Display Requirements 
+************************
+
+Desktop 
+-----------------------------------
+
+- **Minimum screen resolution:** 1280 x 800
+
+- **Color Depth:** 16.7M colors 
+
+
 |
 ---------------------------
 
 |
 
-UI Elements
+Design Guidelines 
 ************************
 
 |
-Header Notification
+Notifications: Header 
 ---------------------------
 
 Appears as an additional header at the top of the UI. May include an “x” button to dismiss. Limited to 60 characters. May include a time-out. Header notification should appear over the rest of the UI instead of pushing the UI down. Multiple headers can appear, with the earliest notification at the top and more recent notifications appearing underneath.
@@ -105,9 +116,9 @@ There are several modes for this element:
 
         |
 
-    **Persistent error header notification:**
+    **Persistent issue header notification:**
 
-        | Triggered on error. No “x” button to dismiss. Dismissed when error no longer persists.
+        | Triggered on issue. No “x” button to dismiss. Dismissed when issue no longer persists.
         |
         | Examples:
         | “You are not connected to the internet.”
@@ -116,7 +127,7 @@ There are several modes for this element:
 ---------------------------
 
 |
-Feedback Messages
+Input: Validation
 ---------------------------
 
 
@@ -155,7 +166,7 @@ Example:
 ---------------------------
 
 |
-Icons
+Display: Icons
 ---------------------------
 
 1. When to use icons
@@ -173,7 +184,7 @@ Icons
 ---------------------------
 
 |
-Input Hints
+Input: Hints
 ---------------------------
 
 **Fieldname:**
@@ -193,7 +204,7 @@ Input Hints
 
     Text below an input field should clearly and concisely describe the PURPOSE of the input.
 
-    In general, avoid describing the technical requirements of the field in Help Text, and use Placeholder input text, field validation and error messages to convey requirements. The exception to this guideline is if requirements are non-obvious, such as passwords needing different numbers of characters, symbols, etc.
+    In general, avoid describing the technical requirements of the field in Help Text, and use Placeholder input text, field validation and issue messages to convey requirements. The exception to this guideline is if requirements are non-obvious, such as passwords needing different numbers of characters, symbols, etc.
     
     For a setting involving a CONDITION and an ACTION, the help text should be written as "ACTION when/for CONDITION"
 
@@ -214,7 +225,7 @@ Input Hints
 
         For **textfields**, restrict users from just limiting characters via the maxlength attribute.
 
-        For **textareas**, present a counter and if it exceeds let the user know by an error.
+        For **textareas**, present a counter and if it exceeds let the user know by an issue.
 
         **Example:**
 
@@ -230,21 +241,12 @@ Input Hints
 
             |
 
-        Example 2: If a user enters invalid uppercase letters and spaces for a URL, show an error message and also offer a correction, substituting dashes for spaces and lower case letters for uppercase letters, so the user can resubmit immediately with valid input.
+        Example 2: If a user enters invalid uppercase letters and spaces for a URL, show an issue message and also offer a correction, substituting dashes for spaces and lower case letters for uppercase letters, so the user can resubmit immediately with valid input.
 
-**Error messages:**
-
-    Error messages should appear immediately below input fields and offer clear and concise information about why an input cannot be accepted.
-
-    Error messages should aesthetically appear helpful, and not punishing.
-
-    Error messages do not need to explain every error in a bad input, just clearly explain one error, and allow for that to be corrected before displaying next error, example: If an input is both short and contains invalid characters, show just the message about input being too short FIRST, and if the field isn’t valid on the second attempt, show the invalid character error message.
-
-|
 ---------------------------
 
 |
-Input Fields
+Input: Fields
 ---------------------------
 
 Users should enter information into fields without much thinking.
@@ -274,7 +276,7 @@ Example:
 ---------------------------
 
 |
-Button Placement
+Display: Button Placement
 ---------------------------
 
 | **Dialog BOTTOM RIGHT BUTTONS should be either “Close”, or “Cancel” and [ACTION_BUTTON].**
@@ -311,7 +313,7 @@ Button Placement
 ---------------------------
 
 |
-Number of Choices
+Display: Number of Choices
 ---------------------------
 
 To simplify decisions, when practical, limit the number of choices to 3 or 4, and add separators or headings between logical groups. See `Hick’s Law <https://en.wikipedia.org/wiki/Hick%27s_law>`_ for background on why this helps.
@@ -338,7 +340,7 @@ Example:
 ---------------------------
 
 |
-Alignment of Elements
+Display: Alignment
 ---------------------------
 
 | **Elements should feature margins horizontally and vertically, evenly spaced.**
@@ -354,7 +356,7 @@ Alignment of Elements
 
     |
 
-    Error message does not extend beyond the horizontal line separator.
+    Issue message does not extend beyond the horizontal line separator.
 
     ..  image:: ../images/align2.png
         :alt: Confined messages with respect to width
@@ -401,7 +403,7 @@ Alignment of Elements
 ---------------------------
 
 |
-Reduce Obvious Steps
+Organization: Reduce Obvious Steps
 ---------------------------
 
 If what the users need to perform is obvious, we should make concious decisions and reduce some of the steps involved in that process.
@@ -415,7 +417,7 @@ If what the users need to perform is obvious, we should make concious decisions 
 
     |
 
-    Clicking on the reply icon should move the focus to the comment box in the RHS.
+    Clicking on the reply icon should move the focus to the comment box in the right-hand sidebar.
 
     ..  image:: ../images/reduce2.png
         :alt: Reply icon
@@ -432,7 +434,7 @@ If what the users need to perform is obvious, we should make concious decisions 
 ---------------------------
 
 |
-Input Behaviours
+Input: Input Patterns
 ---------------------------
 
 All inputs such as textareas should behave consistently, if the default behaviour is to perform an action on "Enter", then all inputs for eg: The center channel post input, the comment thread textarea, the edit header modals etc should be consistent with that behaviour and perform an action on "Enter".

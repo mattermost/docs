@@ -16,7 +16,7 @@ Once activated you should see additional options in the System Console and the "
 
 #### Setting up Active Directory/LDAP
 
-Instructions for setting up LDAP/AD SSO are available in the [LDAP deployment guide.](http://docs.mattermost.com/deployment/sso-ldap.html)
+Instructions for setting up AD/LDAP SSO are available in the [Active Directory/LDAP deployment guide.](http://docs.mattermost.com/deployment/sso-ldap.html)
 
 #### Setting up SAML Single-Sign-On (SSO)
 

@@ -5,7 +5,7 @@ _____
 Attach a file by drag and drop or by clicking the attachment icon in the message input box. 
 
 #### Drag and Drop
-Upload a file or selection of files by dragging the files from your computer into the RHS or center pane. Dragging and dropping attaches the files to the message input box, then you can optionally type a message and press **ENTER** to post.
+Upload a file or selection of files by dragging the files from your computer into the right-hand sidebar or center pane. Dragging and dropping attaches the files to the message input box, then you can optionally type a message and press **ENTER** to post.
 
 #### Attachment Icon
 Alternatively, upload files by clicking the grey paperclip icon inside the message input box. This opens up your system file viewer where you can navigate to the desired files and then click **Open** to upload the files to the message input box. Optionally type a message and then press **ENTER** to post.
@@ -31,9 +31,10 @@ If you are trying to preview a media type that is not supported, the file previe
 
 - Images: BMP, GIF, JPG, JPEG, PNG    
 - Video: MP4    
-- Audio: MP3, M4A    
+- Audio: MP3, M4A   
+- Files: PDF
 
-Document preview (PDF, Word, Excel, PPT) is not yet supported.
+Other document previews (Word, Excel, PPT) are not yet supported.
 
 ## File Size Limitations
 Mattermost supports a maximum of five attached files per post, each with a maximum file size of 50Mb.

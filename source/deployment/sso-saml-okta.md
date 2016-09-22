@@ -42,7 +42,7 @@ Then, set **Assertion Encryption** as `Encrypted` and upload the **Service Provi
 
 ![okta_5_advanced_saml_settings.PNG](../../source/images/okta_5_advanced_saml_settings.PNG)
 
-9 - Enter attribute statements, which will be used to map attributes between Okta and Mattermost. For more information on which attributes are configurable, see our [documentation on SAML configuration settings](http://docs.mattermost.com/administration/config-settings.html#saml-enterprise). Email, first name, last name and username attributes are required.
+9 - Enter attribute statements, which will be used to map attributes between Okta and Mattermost. For more information on which attributes are configurable, see our [documentation on SAML configuration settings](http://docs.mattermost.com/administration/config-settings.html#saml-enterprise). Email and username attributes are required. For Mattermost servers running 3.3 and earlier, first name and last name attributes are also required.
 
 ![okta_6_attribute_statements.PNG](../../source/images/okta_6_attribute_statements.PNG)
 
@@ -79,7 +79,9 @@ Furthermore, you **must download the X.509 Public Certificate file** and save it
 
 ![okta_12_mattermost_encryption.PNG](../../source/images/okta_12_mattermost_encryption.PNG)
 
-16 - Set attributes for the SAML Assertions, which will be used to update user information in Mattermost. Attributes for email, username, first name and last name are required and should match the values you entered in Okta in step 9. See [documentation on SAML configuration settings](http://docs.mattermost.com/administration/config-settings.html#saml-enterprise) for more detail.
+16 - Set attributes for the SAML Assertions, which will be used to update user information in Mattermost. Attributes for email and username are required and should match the values you entered in Okta in step 9. See [documentation on SAML configuration settings](http://docs.mattermost.com/administration/config-settings.html#saml-enterprise) for more detail.
+
+For Mattermost servers running 3.3 and earlier, the first name and last name attributes are also required fields.
 
 ![okta_13_mattermost_attributes.PNG](../../source/images/okta_13_mattermost_attributes.PNG)
 
@@ -115,7 +117,11 @@ This usually means an existing account has another authentication method enabled
 
 This error message can also be received if the `Email Attribute` of their SAML credentials doesn't match the email address of their Mattermost account. If so, the user can update the attribute at their identity provider (for instance, back to the old value if it had been previously updated).
 
-##### 4. Unable to switch to SAML authentication successfully
+##### 4. Received error message: `SAML login was unsuccessful because one of the attributes is incorrect. Please contact your System Administrator.`
+
+Confirm all attributes, including `Email Attribute` and `Username Attribute`, are correct in both the Okta configuration and in **System Console > SAML**.
+
+##### 5. Unable to switch to SAML authentication successfully
 
 First, ensure you have installed the [XML Security Library](https://www.aleksey.com/xmlsec/download.html) on your Mattermost instance and that **it is available in your** `PATH`.
 

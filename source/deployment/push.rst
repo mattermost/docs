@@ -225,10 +225,11 @@ Here are solutions to common troubleshooting requests:
 Internal proxy configuration needed for outbound requests to HPNS 
 ^^^^^^ 
 
-When Mattermost is deployed on a private network without direct access to the internet, special steps are needed to allow the Mattermost server to reach the Mattermost Hosted Push Notification Service at https://push.mattermost.com to send outbound push notifications. 
+When Mattermost is deployed on a private network without direct access to the internet, special steps are needed to allow the Mattermost server to reach the Mattermost Hosted Push Notification Service at ``https://push.mattermost.com`` to send outbound push notifications. 
 
-Please speak with your internal IT staff responsible for routing and whitelisting outbound connections to enable requests to be sent from your Mattermost server to https://push.mattermost.com 
+Please speak with your internal IT staff responsible for routing and whitelisting outbound connections to enable requests to be sent from your Mattermost server to ``https://push.mattermost.com``.
 
+If you need to enter an internal proxy server to relay outbound messages to ``https://push.mattermost.com`` go to **System Console** > **Notification Settings**, set **Enable Push Notifications** to ``Manually enter Push Notification Service location`` and enter the proxy in the **Push Notification Server** field.  
 
 Error message: “We would not connect to the Mattermost server or the server is running an incompatible version”
 ^^^^^^ 

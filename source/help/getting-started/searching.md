@@ -61,6 +61,7 @@ For example, different databases have different "stop words" filtered out of sea
 PostgreSQL: 
 - Email addresses do not return results.
 - Hashtags or recent mentions of usernames containing a dash do not return search results.
+- Terms containing a dash return incorrect results as dashes are ignored in the search engine.
 
 MySQL 
 - Hashtags or recent mentions of usernames containing a dot do not return search results.
