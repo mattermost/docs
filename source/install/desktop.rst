@@ -21,8 +21,8 @@ Below is a list of additional resources:
 
 You can `download the apps directly from our downloads page <https://about.mattermost.com/downloads/>`_. You may also use the following installation guides for Windows, Mac and Linux:
 
- Windows 10+, Windows 8.1+, Windows 7+
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Windows 10+, Windows 8.1+, Windows 7+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Download latest version of the Mattermost desktop app:
 
