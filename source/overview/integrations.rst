@@ -6,22 +6,22 @@ Mattermost offers a host of options for connecting to systems on your private ne
 
 **Pre-configured integrations options include:**
 
-1. Deploy open source, self-hosted integrations to popular systems (private & public cloud) 
-2. Use webhook integrations built for Slack to send data to Mattermost (private & public cloud) 
-3. Bring in data from over 600 public cloud applications using Zapier (public cloud only) 
-4. Deploy a self-hosted bot as an interface to other systems
+1. Open source, self-hosted integrations (private & public cloud) 
+2. Slack-compatible webhooks (private & public cloud) 
+3. 700 app integrations using Zapier (public cloud only) 
+4. Self-hosted bots interfacing to other systems (private & public cloud) 
 
 **Custom integrations options include:** 
 
-1. Write command line integrations (private & public cloud) 
-2. Build and deploy custom apps (private & public cloud) 
-3. Create Slack-compatible Slash Commands (private & public cloud) 
+1. Command line interface (private & public cloud) 
+2. Custom applications (private & public cloud) 
+3. Slack-compatible Slash Commands (private & public cloud) 
 
 Pre-configured integrations 
 ---------------------------------------------------------
 
-Open source, self-hosted integrations 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Open source, self-hosted integrations (private & public cloud) 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A wide array of open source self-hosted integrations are available from the community applications directory. 
 
@@ -29,7 +29,7 @@ Many of these use Mattermost incoming webhooks to deliver data into Mattermost f
 
 - Learn about `Mattermost open source apps and integrations <https://www.mattermost.org/community-applications/>`_
 
-Slack-compatible webhooks
+Slack-compatible webhooks (private & public cloud) 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost webhooks are "Slack-compatible, not Slack limited". In applications supporting Slack webhooks you can replace the Slack webhook URL with a Mattermost webhook URL and the integration will work. 
@@ -37,15 +37,15 @@ Mattermost webhooks are "Slack-compatible, not Slack limited". In applications s
 - Learn about `incoming Webhooks <https://docs.mattermost.com/developer/webhooks-incoming.html>`_
 - Learn about `Outgoing Webhooks <https://docs.mattermost.com/developer/webhooks-outgoing.html>`_ 
 
-Zapier
+700 app integrations using Zapier (public cloud only) 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost's Zapier support enablees you to connect to over 500 public cloud services, like GitHub, Jira, BitBucket and Confluence. 
+Mattermost's Zapier support enablees you to connect to over 700 public cloud services, like Email, Gmail, GitHub, Jira, BitBucket and Confluence. 
 
 - Learn about `Mattermost-Zapier integration <https://docs.mattermost.com/integrations/zapier.html>`_
 
-Self-hosted Bots
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Self-hosted bots interfacing to other systems (private & public cloud) 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can deploy interactive bots with Mattermost to issue commands and receive responses through a centralized interface. The Hubot open source project, created by GitHub, Inc., is among the most popular of the bot options. 
 
@@ -55,7 +55,7 @@ You can deploy interactive bots with Mattermost to issue commands and receive re
 Custom Integrations 
 ---------------------------------------------------------
 
-Commandline integrations 
+Command line interface (private & public cloud) 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can send data into Mattermost real-time using command line tools by posting HTTP requests with JSON payloads into a Mattermost webhook. You can do this using `curl` or use an open source tool, like `mattersend <https://github.com/mtorromeo/mattersend>`_, to create an integration. 
@@ -63,7 +63,7 @@ You can send data into Mattermost real-time using command line tools by posting 
 - Learn about `incoming Webhooks <https://docs.mattermost.com/developer/webhooks-incoming.html>`_
 - Learn about the `mattersend CLI integration in Python <https://github.com/mtorromeo/mattersend>`_
 
-Custom applications
+Custom applications (private & public cloud) 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost provides complete access to server APIs, along with language specific drivers to integrate into your own applications. You can also draw from dozens of open source applications to build your own. 
@@ -72,7 +72,7 @@ Mattermost provides complete access to server APIs, along with language specific
 - Learn about `Mattermost open source apps and integrations <https://www.mattermost.org/community-applications/>`_
 - Learn about the `Mattermost Golang Bot Sample <https://github.com/mattermost/mattermost-bot-sample-golang>`_
 
-Mattermost Slash Commands 
+Slack-compatible Slash Commands (private & public cloud) 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In addition to built-in slash commands, Mattermost lets you add your own to execute commands and actions from the Mattermost user interface. The Mattermost slash command format is compatible with Slack's format, so you can re-create functionality your team had in Slack. 
