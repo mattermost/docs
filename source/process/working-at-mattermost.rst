@@ -61,13 +61,13 @@ When working on problems, make sure to be clear about next steps, and either fol
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 We have `warm-ups <https://docs.mattermost.com/process/meetings.html#warm-ups>`_ in some meetings to learn more about each other. It's part of a culture where we get to know each other. 
 
-Find time after meetings and video conferences to get to know your team mates. Ask them about their weekends and how their life is outside of work.
+Find time after meetings and video conferences to get to know your teammates. Ask them about their weekends and how their life is outside of work.
 
 When you meet in person at off-sites and events, build on those relationships.  
 
 5) Be the change you want to see
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-When something's not clearly documented, take the intiative to figure out what's going on and update the documentation for the people who come after you. 
+When something's not clearly documented, take the initiative to figure out what's going on and update the documentation for the people who come after you. 
 
 "Learn, Master, Teach" is a model we use to pass on training after you've been trained to help grow everyone at the company. 
 
