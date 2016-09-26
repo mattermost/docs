@@ -2,9 +2,9 @@
 Working at Mattermost
 ==============================================================
 
-The mission of Mattermost, Inc. is to give all organizations the power to achieve their highest priorities through modern communication. Our vision is a world where people are in constant, seemless communication about what matters most to them.
+The mission of Mattermost, Inc. is to give all organizations the power to achieve their highest priorities through modern communication. Our vision is a world where people are in constant, seamless communication about what matters most to them.
 
-Our company maintains the Mattermost open source project, providing easy-to-use, multi-lingual self-hosted team communication across web, PC and phones. 
+Our company maintains the Mattermost open source project, providing easy-to-use, multi-lingual, self-hosted team communication across web, PC and phones. 
 
 We also provide Mattermost Enterprise Edition, a secure, modern, enterprise messaging solution for large organizations, as a commercial, fully supported extension of our open source software. 
 
@@ -47,7 +47,7 @@ The one requirement is having a strong internet connection for occassional video
 
 2) Be explicit 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-When you send a message, you take someone's full attention, so get across the relvant information as soon as you can.
+When you send a message, you take someone's full attention, so get across the relevant information as soon as you can.
 
 Don't say "Are you free to talk?", instead say "Catch up on ulimit issue Customer X is having?"
 
