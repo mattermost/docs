@@ -440,6 +440,7 @@ Feedback: Error Messages
 On occasion, Mattermost users may encounter a problem that prevents them or the Mattermost system from successfully completing a task. The unexpected user behaviour or system response should be communicated to the user through an error message, and should follow the design principles of forgiving and obvious.
  
 Error messages should:
+
 - State the encountered problem with the component in the title (e.g. Team URL Not Found).
 - Describe very briefly why the error happened under the title.
 - When possible, have a link to direct users to help complete their original task or return to the previous state.
@@ -448,6 +449,7 @@ Error messages should:
 - Be avoided when possible (by avoiding the error condition).
 
 Error message should not:
+
 - Be in red or in capital letters.
 - Say or have the term “Error”.
 - Be lengthy.
