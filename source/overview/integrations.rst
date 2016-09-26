@@ -6,16 +6,16 @@ Mattermost offers a host of options for connecting to systems on your private ne
 
 **Pre-configured integrations options include:**
 
-1. Open source, self-hosted integrations (private & public cloud) 
-2. Slack-compatible webhooks (private & public cloud) 
-3. 700 app integrations using Zapier (public cloud only) 
-4. Self-hosted bots interfacing to other systems (private & public cloud) 
+1. `Open source, self-hosted integrations (private & public cloud) <https://docs.mattermost.com/overview/integrations.html#open-source-self-hosted-integrations-private-public-cloud>`_
+2. `Slack-compatible webhooks (private & public cloud) <https://docs.mattermost.com/overview/integrations.html#slack-compatible-webhooks-private-public-cloud>`_ 
+3. `700 app integrations using Zapier (public cloud only) <https://docs.mattermost.com/overview/integrations.html#app-integrations-using-zapier-public-cloud-only>`_
+4. `Self-hosted bots interfacing to other systems (private & public cloud) <https://docs.mattermost.com/overview/integrations.html#self-hosted-bots-interfacing-to-other-systems-private-public-cloud>`_ 
 
 **Custom integrations options include:** 
 
-1. Command line interface (private & public cloud) 
-2. Custom applications (private & public cloud) 
-3. Slack-compatible Slash Commands (private & public cloud) 
+1. `Command line interface (private & public cloud) <https://docs.mattermost.com/overview/integrations.html#command-line-interface-private-public-cloud>`_
+2. `Custom applications (private & public cloud) <https://docs.mattermost.com/overview/integrations.html#custom-applications-private-public-cloud>`_
+3. `Slack-compatible Slash Commands (private & public cloud) <https://docs.mattermost.com/overview/integrations.html#slack-compatible-slash-commands-private-public-cloud>`_
 
 Pre-configured integrations 
 ---------------------------------------------------------
