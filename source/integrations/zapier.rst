@@ -3,7 +3,7 @@ Zapier Integration
 
 Integrate over 700 apps into Mattermost, including `Email <https://zapier.com/zapbook/email-parser/>`_, `GitHub <https://zapier.com/zapbook/github/>`_, `Jira <https://zapier.com/zapbook/jira/>`_, `Wufoo <https://zapier.com/zapbook/wufoo/>`_, `Salesforce <https://zapier.com/zapbook/salesforce/>`_, `Twitter <https://zapier.com/zapbook/twitter/>`_, `Gmail <https://zapier.com/zapbook/gmail/>`_ and `many more <https://zapier.com/zapbook/>`_, using Zapier integration.
 
-`Zapier <https://zapier.com/>`_ is a service that automates tasks between web apps. You can create "zaps" that contains a trigger and an action for a task that you want to perform repeatedly. Zapier regularly checks your trigger for new data and automatically performs the action for you.
+`Zapier <https://zapier.com/>`_ is a service that automates tasks between web apps. You can create "zaps" that contain a trigger and an action for a task that you want to perform repeatedly. Zapier regularly checks your trigger for new data and automatically performs the action for you.
 
 This documentation includes:
 
