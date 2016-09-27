@@ -69,5 +69,5 @@ When you meet in person at off-sites and events, build on those relationships.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 When something's not clearly documented, take the initiative to figure out what's going on and update the documentation for the people who come after you. 
 
-"Learn, Master, Teach" is a model we use to pass on training after you've been trained to help grow everyone at the company. 
+`Learn, Master, Teach <https://docs.mattermost.com/process/mindsets.html#learn-master-teach>`_ is a model we use to pass on training after you've been trained to help grow everyone at the company. 
 
