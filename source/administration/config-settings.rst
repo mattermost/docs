@@ -12,7 +12,7 @@ Quick Links:
 	`Configuration`_ - `Localization`_ - `Users and Teams`_ - `Privacy`_ - `Policy`_ - `Compliance`_ - `Logging`_
 
 `Authentication`_
-	`Email`_ - `OAuth 2.0`_ - `GitLab`_ - `Google`_ - `Office 365`_ - `AD/LDAP`_ - `SAML`_
+	`Email Auth`_ - `OAuth 2.0`_ - `GitLab`_ - `Google`_ - `Office 365`_ - `AD/LDAP`_ - `SAML`_
 
 `Security`_
 	`Sign Up`_ - `Password`_ - `Public Links`_ - `Sessions`_ - `Connections`_
@@ -71,7 +71,7 @@ gzip compression applies to the HTML, CSS, Javascript, and other static content 
 
 Reload Configuration from Disk
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-_Available in Enterprise Edition E10 and higher_
+*Available in Enterprise Edition E10 and higher*
 
 This button resets the configuration settings by reloading the settings from the disk. The server will still need to be restarted if a setting requiring server restart was changed.
 
@@ -184,7 +184,7 @@ ________
 
 Policy
 ``````````````````````````
-_Available in Enterprise Edition E10 and higher_
+*Available in Enterprise Edition E10 and higher*
 
 Settings to configure the permission restrictions for sending team invite links and managing channels.  
 
@@ -261,7 +261,7 @@ ________
 
 Compliance
 ```````````````````````````
-_Available in Enterprise Edition E20_
+*Available in Enterprise Edition E20*
 
 Settings used to enable and configure Mattermost compliance reports. 
 
@@ -412,7 +412,7 @@ Authentication
 -------------------------------
 Authentication settings to enable account creation and sign in with email, GitLab, Google or Office 365 OAuth, AD/LDAP, or SAML.
 
-Email
+Email Auth
 ``````````````````````````
 Enable account creation with email 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
@@ -451,7 +451,7 @@ ________
 
 OAuth 2.0
 ``````````````````````````
-_Available in Enterprise Edition E10 and higher_
+*Available in Enterprise Edition E10 and higher*
 
 Settings to configure OAuth login for account creation and login.
 
@@ -526,7 +526,7 @@ ________
 
 Google
 ``````````````````````````
-_Available in Enterprise Edition E10 and higher_
+*Available in Enterprise Edition E10 and higher*
 
 Enable authentication with Google by selecting ``Google Apps`` from **OAuth 2.0 > Select OAuth 2.0 service provider**
 
@@ -582,7 +582,7 @@ ________
 
 Office 365
 ``````````````````````````
-_Available in Enterprise Edition E10 and higher_
+*Available in Enterprise Edition E10 and higher*
 
 Enable authentication with Office 365 by selecting ``Office 365 (Beta)`` from **OAuth 2.0 > Select OAuth 2.0 service provider**
 
@@ -638,7 +638,7 @@ ________
 
 AD/LDAP
 ```````````````````````````
-_Available in Enterprise Edition E10 and higher_
+*Available in Enterprise Edition E10 and higher*
 
 Enable sign-in with AD/LDAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -828,7 +828,7 @@ ________
 
 SAML
 ```````````````````````````
-_Available in Enterprise Edition E20_
+*Available in Enterprise Edition E20*
 
 Enable Login With SAML 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1007,7 +1007,7 @@ Password
 ```````````````````````````
 Minimum Password Length
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-_Available in Enterprise Edition E10 and higher_
+*Available in Enterprise Edition E10 and higher*
 
 Minimum number of characters required for a valid password. Must be a whole number greater than or equal to 5 and less than or equal to 64.
 
@@ -1017,7 +1017,7 @@ Minimum number of characters required for a valid password. Must be a whole numb
 
 Password Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-_Available in Enterprise Edition E10 and higher_
+*Available in Enterprise Edition E10 and higher*
 
 Set the required character types to be included in a valid password. Defaults to allow any characters unless otherwise specified by the checkboxes. The error messasage previewed in the System Console will appear on the account creation page if a user enters an invalid password.
 
@@ -1055,7 +1055,7 @@ Failed login attempts allowed before a user is locked out and required to reset 
 
 Enable Multi-factor Authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-_Available in Enterprise Edition E10 and higher_
+*Available in Enterprise Edition E10 and higher*
 
 **True**: When true, users will be given the option to require a phone-based passcode, in addition to their password-based authentication, to sign-in to the Mattermost server. Specifically, they will be asked to download the `Google Authenticator <https://en.wikipedia.org/wiki/Google_Authenticator>`_ app to their iOS or Android mobile device, connect the app with their account, and then enter a passcode generated by the app on their phone whenever they log in to the Mattermost server.
 
@@ -1563,7 +1563,7 @@ Name of service shown in login screens and UI. Maximum 30 characters.
 
 Enable Custom Branding
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-_Available in Enterprise Edition E10 and higher_
+*Available in Enterprise Edition E10 and higher*
 
 **True**: Enables custom branding to show a JPG image some custom text on the server login page. 
 
@@ -1575,7 +1575,7 @@ _Available in Enterprise Edition E10 and higher_
 
 Custom Brand Image
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-_Available in Enterprise Edition E10 and higher_
+*Available in Enterprise Edition E10 and higher*
 
 Custom JPG image is displayed on left side of server login page. Recommended maximum image size is less than 2 MB because image will be loaded for every user who logs in.
 
@@ -1585,7 +1585,7 @@ Custom JPG image is displayed on left side of server login page. Recommended max
 
 Custom Brand Text
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-_Available in Enterprise Edition E10 and higher_
+*Available in Enterprise Edition E10 and higher*
 
 Custom text will be shown below custom brand image on left side of server login page. Maximum 500 characters allowed. You can format this text using the same `Markdown formatting codes <http://docs.mattermost.com/help/messaging/formatting-text.html>`_ as using in Mattermost messages. 
 
@@ -1595,7 +1595,7 @@ Custom text will be shown below custom brand image on left side of server login 
 
 Site Description
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-_Available in Enterprise Edition E10 and higher_
+*Available in Enterprise Edition E10 and higher*
 Description of service shown in login screens and UI. When not specified, "All team communication in one place, searchable and accessible anywhere" is displayed.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1618,7 +1618,7 @@ Enable Custom Emoji
 
 Restrict Custom Emoji Creation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-_Available in Enterprise Edition E10 and higher_
+*Available in Enterprise Edition E10 and higher*
 
 **Allow everyone to create custom emoji**: Allows everyone to create custom emoji from the **Main Menu** > **Custom Emoji**.
 
@@ -1830,7 +1830,7 @@ Trace
 
 Recycle Database Connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-_Available in Enterprise Edition E10 and higher_
+*Available in Enterprise Edition E10 and higher*
 
 This button reconnects to the database listed in the configuration settings. All old connections are closed after 20s.
 
@@ -1865,7 +1865,7 @@ ________
 
 High Availability (Beta)
 ```````````````````````````
-_Available in Enterprise Edition E20_
+*Available in Enterprise Edition E20*
 
 Changing properties in this section will require a server restart before taking effect. When High Availability mode is enabled, the System Console is set to read-only and can only be changed from the configuration file. Learn more about configuring high availability in our `documentation <https://docs.mattermost.com/deployment/cluster.html>`_.
 
