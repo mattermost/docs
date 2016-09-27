@@ -13,6 +13,8 @@ $(document).ready(function(){
 		if(!$(this).next().is(":visible")) {
 			$(".wy-menu-vertical > ul:visible").slideToggle();
 			$(this).next().slideToggle();
+		} else {
+			$(this).next().slideToggle();
 		}
 	});
 
