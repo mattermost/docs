@@ -2,13 +2,13 @@
 Working at Mattermost
 ==============================================================
 
-The mission of Mattermost, Inc. is to give all organizations the power to achieve their highest priorities through modern communication. Our vision is a world where people are in constant, seamless communication about what matters most to them.
+The mission of Mattermost, Inc. is to give all organizations the power to achieve their highest priorities through modern communication. Our vision is a world more connected to what matters most.
 
 Our company maintains the Mattermost open source project, providing easy-to-use, multi-lingual, self-hosted team communication across web, PC and phones. 
 
-We also provide Mattermost Enterprise Edition, a secure, modern, enterprise messaging solution for large organizations, as a commercial, fully supported extension of our open source software. 
+We also provide Mattermost Enterprise Edition, a secure, modern, enterprise messaging solution for large organizations as a fully supported commercial extension of our open source software. 
 
-While our headquarters is in Palo Alto, California, we use Mattermost software to work remotely around the world. 
+While our headquarters is in Palo Alto, California, we use Mattermost software to work remotely around the world in partnership with our community. 
 
 Top 10 reasons to work for Mattermost: 
 
@@ -27,7 +27,7 @@ Top 10 reasons to work for Mattermost:
 Working Remotely 
 ----------------------------------------------------------
 
-While we're headquartered in Palo Alto, California, like many open source companies, a large portion of Mattermost, Inc. works remotely from around the world. 
+We're headquartered in Palo Alto, California, and like many open source companies a large portion of Mattermost, Inc. works remotely from around the world. 
 
 This gives us tremendous advantages: 
 
@@ -37,7 +37,7 @@ This gives us tremendous advantages:
 4. **Time zone coverage.** It's easier to support customers any time of day, without being up at odd hours.
 5. **Results-focused culture.** Output matters more than hours at a desk. 
 
-Running a distributed, high performance organization 
+We run as a distributed, high performance team using a few principles: 
 
 1) Work from anywhere with good Internet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -51,7 +51,7 @@ When you send a message, you take someone's full attention, so get across the re
 
 Don't say "Are you free to talk?", instead say "Catch up on ulimit issue Customer X is having?"
 
-Likewise, over communicate in writing when you can. The more people can read, the faster they can become effective. 
+Likewise, we emphasize written communication. Reading is faster than listening and it reaches more people, which means more happens in less time. 
 
 3) Follow through 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
