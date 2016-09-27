@@ -351,5 +351,5 @@ release:
    on will show a "Preview" option when typing in the text input box.
    Pressing "Preview" shows what the Markdown formatting in the message
    looks like before the message is sent.
--  \*\*Show preview snippet of links below message:** Turning this on
+-  **Show preview snippet of links below message:** Turning this on
    will show a preview snippet posted below links from select websites.
