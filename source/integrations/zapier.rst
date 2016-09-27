@@ -87,7 +87,7 @@ Examples
 
 The Mattermost team has over 50 zaps integrated on our `Pre-Release Contributors team <https://pre-release.mattermost.com/core/>`_ used for internal communication and interacting with contributors. The `Community Heartbeat channel <https://pre-release.mattermost.com/core/channels/community-heartbeat>`_ integrates all our community services in one accessible location. These zaps are formatted in two ways depending on the service:
 
-**GitHub Issues & Comments, UserVoice Suggestions & Comments, GitLab MM Issues, GitLab Omnibus MM Issues:**
+**GitHub Issues and Comments, UserVoice Suggestions and Comments, GitLab MM Issues, GitLab Omnibus MM Issues:**
  
 .. code::
 

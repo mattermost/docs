@@ -204,7 +204,7 @@ Input: Hints
 
     Text below an input field should clearly and concisely describe the PURPOSE of the input.
 
-    In general, avoid describing the technical requirements of the field in Help Text, and use Placeholder input text, field validation and issue messages to convey requirements. The exception to this guideline is if requirements are non-obvious, such as passwords needing different numbers of characters, symbols, etc.
+    In general, avoid describing the technical requirements of the field in Help Text, and use Placeholder input text, field validation and error messages to convey requirements. The exception to this guideline is if requirements are non-obvious, such as passwords needing different numbers of characters, symbols, etc.
     
     For a setting involving a CONDITION and an ACTION, the help text should be written as "ACTION when/for CONDITION"
 
@@ -216,16 +216,16 @@ Input: Hints
 
 **Placeholder input text:**
 
-    Show examples of valid input, such as ``name@example.com`` for email addresses, as well as examples of functionality that is not obvious supported, for example in inputting team name, offer placeholder input text with “Example: Marketing, John’s Room, 中国业务”.
+    Show examples of valid input, such as ``name@example.com`` for email addresses, as well as examples of functionality that is not obviously supported. For example, for a channel name field the placeholder input text could be “Example: Marketing, John’s Room, 中国业务”.
 
 
 **Field validation:**
 
     Use field validation to help “prevent or correct” any mistakes a user might make.
 
-        For **textfields**, restrict users from just limiting characters via the maxlength attribute.
+        For **textfields**, restrict users from making entries that are too long by limiting characters via the maxlength attribute.
 
-        For **textareas**, present a counter and if it exceeds let the user know by an issue.
+        For **textareas**, show a character counter and then a helpful message if the user exceeds the maximum number of characters.
 
         **Example:**
 
@@ -241,7 +241,7 @@ Input: Hints
 
             |
 
-        Example 2: If a user enters invalid uppercase letters and spaces for a URL, show an issue message and also offer a correction, substituting dashes for spaces and lower case letters for uppercase letters, so the user can resubmit immediately with valid input.
+        Example 2: If a user enters invalid uppercase letters and spaces for a URL, show an error message and also offer a correction, substituting dashes for spaces and lower case letters for uppercase letters, so the user can resubmit immediately with valid input.
 
 ---------------------------
 
@@ -255,7 +255,7 @@ Users should enter information into fields without much thinking.
 | When last input field in a series has focus and user hits ENTER it should trigger the default button in the dialog.
 |
 Example:
-    Having focus on last input field in dialog (“Miller”) and hitting ENTER triggers default dialog button (“Send Invitations”)
+    If focus is on the last input field in dialog (“Miller”), hitting ENTER triggers the default dialog button (“Send Invitations”)
 
     ..  image:: ../images/inputField1.png
         :alt: Input Field Enter
@@ -356,7 +356,7 @@ Display: Alignment
 
     |
 
-    Issue message does not extend beyond the horizontal line separator.
+    Error message does not extend beyond the horizontal line separator.
 
     ..  image:: ../images/align2.png
         :alt: Confined messages with respect to width
@@ -406,7 +406,7 @@ Display: Alignment
 Organization: Reduce Obvious Steps
 ---------------------------
 
-If what the users need to perform is obvious, we should make concious decisions and reduce some of the steps involved in that process.
+If the action users need to perform is obvious, we should make concious decisions to reduce some of the steps involved in that process.
 
 **Examples:**
 
@@ -434,10 +434,49 @@ If what the users need to perform is obvious, we should make concious decisions 
 ---------------------------
 
 |
+Feedback: Error Messages
+---------------------------
+
+On occasion, Mattermost users may encounter a problem that prevents them or the Mattermost system from successfully completing a task. The unexpected user behaviour or system response should be communicated to the user through an error message, and should follow the design principles of forgiving and obvious.
+ 
+Error messages should:
+
+- State the encountered problem with the component in the title (e.g. Team URL Not Found).
+- Describe very briefly why the error happened under the title.
+- When possible, have a link to direct users to help complete their original task or return to the previous state.
+- Give recommendations/solution(s) for the next course of action.
+- Be consistent with the Mattermost voice and look professional.
+- Be avoided when possible (by avoiding the error condition).
+
+Error message should not:
+
+- Be in red or in capital letters.
+- Say or have the term “Error”.
+- Be lengthy.
+- Be generic.
+
+**Examples:**
+
+    This is an example of a good error message:
+
+    ..  image:: ../images/error1.png
+        :alt: Good Error Message
+
+    |
+
+    This is an example of a bad error message:
+
+    ..  image:: ../images/error2.png
+        :alt: Bad Error Message
+
+|
+---------------------------
+
+|
 Input: Input Patterns
 ---------------------------
 
-All inputs such as textareas should behave consistently, if the default behaviour is to perform an action on "Enter", then all inputs for eg: The center channel post input, the comment thread textarea, the edit header modals etc should be consistent with that behaviour and perform an action on "Enter".
+All inputs such as textareas should behave consistently. If the default behaviour is to perform an action on "Enter", then all inputs of that type should be consistent and perform an action on "Enter".
 
 **Examples:**
 
@@ -493,6 +532,9 @@ Example of help text that doesn't communicate enough information to a user (no i
 
 ..  image:: https://cloud.githubusercontent.com/assets/177788/17341029/956c749c-58a7-11e6-8c7c-055606027406.png
 
+**5\) Does the UI work with a dark theme?** 
+
+Sometimes bugs are found with theme colors, so it's important to test on both light and dark themes. 
 
 |
 |

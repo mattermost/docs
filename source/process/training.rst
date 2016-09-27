@@ -85,6 +85,10 @@ Books
 2. `Creativity, Inc. Ed Catmull <https://www.amazon.com/Creativity-Inc-Overcoming-Unseen-Inspiration-ebook/dp/B00FUZQYBO/ref=sr_1_1?s=books&ie=UTF8&qid=1466393928&sr=1-1&keywords=creativity%2C+inc>`_ - Achieving high performance through process and culture. From CEO fo Pixar.
 3. `How to Win Friends and Influence People <https://www.amazon.com/How-Win-Friends-Influence-People-ebook/dp/B003WEAI4E/ref=sr_1_1?s=books&ie=UTF8&qid=1466394700&sr=1-1&keywords=how+to+win+friends+and+influence+people>`_ - How to build interpersonal skills to work more effectively in teams. 
 
+Articles
+
+1. `Fire & Motion. Joel Spolsky <http://www.joelonsoftware.com/articles/fog0000000339.html>`_ - How to get more things done in less time by doing a little every day. 
+
 Culture 
 ^^^^^^^
 
