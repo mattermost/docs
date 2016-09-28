@@ -165,7 +165,10 @@ Icons
 2. When not to use icons
     a. When the term/phrase is too specific or complicated.
 
-3. Testing
+3. Icons should vary across different options
+    a. When using icons, different options in the same section should have different icons.
+
+4. Testing
     a. File a bug if the icon is difficult to understand or has cosmetic defects (size, blur, etc.)
     b. File a bug when an icon doesn’t obviously indicate the underlying feature
 
@@ -194,7 +197,7 @@ Input Hints
     Text below an input field should clearly and concisely describe the PURPOSE of the input.
 
     In general, avoid describing the technical requirements of the field in Help Text, and use Placeholder input text, field validation and error messages to convey requirements. The exception to this guideline is if requirements are non-obvious, such as passwords needing different numbers of characters, symbols, etc.
-    
+
     For a setting involving a CONDITION and an ACTION, the help text should be written as "ACTION when/for CONDITION"
 
     Incorrect:
@@ -459,35 +462,53 @@ All inputs such as textareas should behave consistently, if the default behaviou
         :alt: Edit header modal
         :width: 500 px
 
-Testing Checklist 
-************************
+|
+---------------------------
 
-In addition to above guidelines, the below provides a concrete checklist of mistakes to watch for when reviewing proposed product changes. 
+|
+Menu items
+---------------------------
 
-User Experience Checklist 
+Items in a menu should be grouped together based on the category they belong to. Items per category however should not exceed 5 for the app and 7 for system console.
+
+**Example:**
+
+    ..  image:: ../images/group.png
+        :alt: Center channel post area
+
+|
+---------------------------
+
+|
+Testing Checklist
+---------------------------
+
+In addition to above guidelines, the below provides a concrete checklist of mistakes to watch for when reviewing proposed product changes.
+
+User Experience Checklist
 ------------------------------
 
 **1\) Is the WHITESPACE next to icons SUFFICIENTLY SPACED?**
 
-Example of not enough space next to FLAG icon on RIGHT: 
+Example of not enough space next to FLAG icon on RIGHT:
 
 ..  image:: https://cloud.githubusercontent.com/assets/177788/17340912/1599a0aa-58a7-11e6-94e3-1e2a0895c40f.png
 
-**2\) Is the WHITESPACE next to icons EVENLY SPACED?** 
+**2\) Is the WHITESPACE next to icons EVENLY SPACED?**
 
-Example of uneven icon spacing: 
+Example of uneven icon spacing:
 
 ..  image:: https://cloud.githubusercontent.com/assets/177788/17340912/1599a0aa-58a7-11e6-94e3-1e2a0895c40f.png
 
 **3\) Are there visual GAPS?**
 
-Example of gaps in a visual design: 
+Example of gaps in a visual design:
 
 ..  image:: https://cloud.githubusercontent.com/assets/177788/17340886/f3f4c9de-58a6-11e6-8331-550b319b1483.png
 
-**4\) Read all help text OUT LOUD--is it helpful to a new user?** 
+**4\) Read all help text OUT LOUD--is it helpful to a new user?**
 
-Example of help text that doesn't communicate enough information to a user (no information included on how to use flagged posts): 
+Example of help text that doesn't communicate enough information to a user (no information included on how to use flagged posts):
 
 ..  image:: https://cloud.githubusercontent.com/assets/177788/17341029/956c749c-58a7-11e6-8c7c-055606027406.png
 
