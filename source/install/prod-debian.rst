@@ -465,6 +465,11 @@ Set up NGINX with SSL (Recommended)
    -  ``crontab -e``
    -  ``@monthly /home/YOURUSERNAME/letsencrypt/letsencrypt-auto certonly --reinstall -d yourdomainname && sudo service nginx reload``
 
+5. Check that your SSL certificate is set up correctly
+
+   - Test the SSL certificate by visiting a site such as `https://www.ssllabs.com/ssltest/index.html <https://www.ssllabs.com/ssltest/index.html>`_
+   - If there’s an error about the missing chain or certificate path, there is likely an intermediate certificate missing that needs to be included
+
 Finish Mattermost Server setup
 ------------------------------
 
