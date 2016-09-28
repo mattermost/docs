@@ -9,13 +9,6 @@ $(document).ready(function(){
 		$('.wy-side-scroll').scrollTop(sidebarScrollPosition-120);
 	}
 
-	$('.wy-menu-vertical .caption').on('click', function(){
-		if(!$(this).next().is(":visible")) {
-			$(".wy-menu-vertical > ul:visible").slideToggle();
-			$(this).next().slideToggle();
-		}
-	});
-
 	var centerScroll = function(position){
 		setTimeout(function(){
 			var centerScrollPosition = $('.wy-nav-content-wrap').scrollTop();

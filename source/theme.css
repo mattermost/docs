@@ -70,9 +70,26 @@ footer {
 	display: block;
 }
 
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3.current >a {
+    background: #E0E0E0;
+}
+
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4.current > a {
+	background: #cacaca;
+}
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a {
+	font-weight: bold;
+    font-size: 0.95em;
+}
+
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4>a {
+	background: transparent;
+}
+
 .wy-menu-vertical li.toctree-l2.current li.toctree-l3>a {
+	background: transparent;
 	border: none;
-	background: #D0D0D0;
+	font-size: 1em;
 }
 
 .wy-menu-vertical li.toctree-l2.current>a {
