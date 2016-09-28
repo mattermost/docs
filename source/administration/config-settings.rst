@@ -71,7 +71,7 @@ gzip compression applies to the HTML, CSS, Javascript, and other static content 
 
 Reload Configuration from Disk
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-*Available in Enterprise Edition E10 and higher*
+*Available in Enterprise Edition E20*
 
 This button resets the configuration settings by reloading the settings from the disk. The server will still need to be restarted if a setting requiring server restart was changed.
 
@@ -526,7 +526,7 @@ ________
 
 Google
 ``````````````````````````
-*Available in Enterprise Edition E10 and higher*
+*Available in Enterprise Edition E20*
 
 Enable authentication with Google by selecting ``Google Apps`` from **OAuth 2.0 > Select OAuth 2.0 service provider**
 
@@ -582,7 +582,7 @@ ________
 
 Office 365
 ``````````````````````````
-*Available in Enterprise Edition E10 and higher*
+*Available in Enterprise Edition E20*
 
 Enable authentication with Office 365 by selecting ``Office 365 (Beta)`` from **OAuth 2.0 > Select OAuth 2.0 service provider**
 
@@ -1830,7 +1830,7 @@ Trace
 
 Recycle Database Connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*Available in Enterprise Edition E10 and higher*
+*Available in Enterprise Edition E20*
 
 This button reconnects to the database listed in the configuration settings. All old connections are closed after 20s.
 
