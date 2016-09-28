@@ -69,7 +69,7 @@ If no driver is available for the programming language of your choice, you can v
 
 There are a wide range of [installation guides](http://www.mattermost.org/installation/) for setting up your own Mattermost server on which to develop and test your integrations. 
 
-## Mattermsot Golang Bot Sample (Driver Example) 
+## Mattermost Golang Bot Sample (Driver Example) 
 
 Mattermost provides a [Golang Bot Sample](https://github.com/mattermost/mattermost-bot-sample-golang) to demonstration how Mattermost works with the Golang driver and the APIs.
 
