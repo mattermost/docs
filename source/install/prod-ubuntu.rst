@@ -308,17 +308,14 @@ Setup HTTP2
 
 It is recomented to enable HTTP2 for inhanced performance. 
 
-1. Modify your NGINX configuration as above. Change the line
-   ``listen 443 ssl;``
-   to
-   ``listen 443 ssl http2;``
-   and the line
-   ``proxy_pass http://10.10.10.2:8065;``
-   to
-   ``proxy_pass https://10.10.10.2:8065;``
-   Then restart NGINX
+1. Modify your NGINX configuration as above. Then,
 
-2. Setup TLS on the mattermost server by following `these instrucions. <setup-tls>`_
+  - Change the line ``listen 443 ssl;`` to ``listen 443 ssl http2;``
+  - Change the line ``proxy_pass http://10.10.10.2:8065;`` to ``proxy_pass https://10.10.10.2:8065;``
+  
+2. Restart NGINX
+
+3. Setup TLS on the mattermost server by following `these instrucions. <setup-tls>`_
 
 Test setup and configure Mattermost Server
 ------------------------------------------
