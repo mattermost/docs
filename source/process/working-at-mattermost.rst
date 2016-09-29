@@ -12,8 +12,8 @@ While our headquarters is in Palo Alto, California, we use Mattermost software t
 
 Top 10 reasons to work for Mattermost: 
 
-1. **Join an outstanding team:** Work with thoughtful, talented, high performance people who care about results. 
-2. **Growth:** Join a growing open source project, a growing business, and a growing company. When you're growing, every day is your best day ever.
+1. **Do the best work of your career:** Join like-minded people with high standards and outstanding talent. 
+2. **Growth:** Join a growing open source project, a growing business, and a growing company. 
 3. **Work remote:** No commute, plus complete control of your environment and freedom to travel.
 4. **Do good:** Build open source software benefiting thousands of companies, research institutions, schools and non-profits.
 5. **Improve a product you use every day:** Your opinion matters. 
