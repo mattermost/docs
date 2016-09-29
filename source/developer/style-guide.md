@@ -166,3 +166,25 @@ The following is a subset of what ESLint checks for. ESLint is always the author
 // Correct
 <ReactComponent propertyOne="value" />
 ```
+
+## APIs
+
+API documentation can be found at https://api.mattermost.com/. Contributions to documentation are welcome at https://github.com/mattermost/mattermost-api-reference
+
+### Naming 
+
+API naming should be explicit and not rely on HTTP method. Where possible try to make the API name explain what it does without comments. 
+
+This is preferred: 
+
+POST `/api/v3/teams/TEAM_ID/commands/create`
+GET `/api/v3/teams/TEAM_ID/commands/list_team_commands`
+POST `/api/v3/teams/TEAM_ID/commands/delete`
+
+This is not preferred: 
+
+GET `/api/v3/teams/TEAM_ID/commands` -- List commands
+POST `/api/v3/teams/TEAM_ID/commands` -- Create a new command
+DELETE `api/v3/teams/TEAM_ID/commands/COMMAND_ID` -- Delete a command
+
+
