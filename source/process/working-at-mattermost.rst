@@ -35,7 +35,7 @@ This gives us tremendous advantages:
 2. **More comfort.** People have 100% control of their surroundings. 
 3. **No commute.** Removing a 30-60 minute commute saves 250-500 hours a year. 
 4. **Time zone coverage.** Support customers with team members near their timezone. 
-5. **Output-focused culture.** Results matters more than hours at a desk. 
+5. **Output-focused culture.** Results matter more than hours at a desk. 
 
 You may be asked to travel two or three times a year for in-person "offsites" with the team, each trip being about a week long. 
 
