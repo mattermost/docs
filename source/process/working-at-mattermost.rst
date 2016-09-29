@@ -34,10 +34,12 @@ This gives us tremendous advantages:
 1. **Access to top talent.** We can hire from anywhere.
 2. **More comfort.** People have 100% control of their surroundings. 
 3. **No commute.** Removing a 30-60 minute commute saves 250-500 hours a year. 
-4. **Time zone coverage.** It's easier to support customers any time of day, without being up at odd hours.
-5. **Results-focused culture.** Output matters more than hours at a desk. 
+4. **Time zone coverage.** Support customers with team members near their timezone. 
+5. **Output-focused culture.** Results matters more than hours at a desk. 
 
-We run as a distributed, high performance team using a few principles: 
+You may be asked to travel two or three times a year for in-person "offsites" with the team, each trip being about a week long. 
+
+Outside of those trips, we run as a distributed, high performance team using a few principles: 
 
 1) Work from anywhere with good Internet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
