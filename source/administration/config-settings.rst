@@ -730,7 +730,7 @@ This filter uses the permissions of the **Bind Username** account to execute the
 
 First Name Attribute 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-(Optional) The attribute in the AD/LDAP server that will be used to populate the first name of users in Mattermost.
+(Optional) The attribute in the AD/LDAP server that will be used to populate the first name of users in Mattermost. When set, users will not be able to edit their First Name, since it is synchronized with the LDAP server. When left blank, users can set their own First Name in Account Settings.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FirstNameAttribute": ""``  with string input.                                                                           |
@@ -738,7 +738,7 @@ First Name Attribute
 
 Last Name Attribute  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-(Optional) The attribute in the AD/LDAP server that will be used to populate the last name of users in Mattermost.
+(Optional) The attribute in the AD/LDAP server that will be used to populate the last name of users in Mattermost. When set, users will not be able to edit their Last Name, since it is synchronized with the LDAP server. When left blank, users can set their own Last Name in Account Settings.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LastNameAttribute": ""`` with string input.                                                                             |
@@ -746,7 +746,7 @@ Last Name Attribute
 
 Nickname Attribute 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-(Optional) The attribute in the AD/LDAP server that will be used to populate the nickname of users in Mattermost.
+(Optional) The attribute in the AD/LDAP server that will be used to populate the nickname of users in Mattermost. When set, users will not be able to edit their Nickname, since it is synchronized with the LDAP server. When left blank, users can set their own Nickname in Account Settings.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"NicknameAttribute": ""`` with string input.                                                                             |
