@@ -12,8 +12,8 @@ While our headquarters is in Palo Alto, California, we use Mattermost software t
 
 Top 10 reasons to work for Mattermost: 
 
-1. **Join an outstanding team:** Work with thoughtful, talented, high performance people who care about results. 
-2. **Growth:** Join a growing open source project, a growing business, and a growing company. When you're growing, every day is your best day ever.
+1. **Do the best work of your career:** Join like-minded people with high standards and outstanding talent. 
+2. **Growth:** Join a growing open source project, a growing business, and a growing company. 
 3. **Work remote:** No commute, plus complete control of your environment and freedom to travel.
 4. **Do good:** Build open source software benefiting thousands of companies, research institutions, schools and non-profits.
 5. **Improve a product you use every day:** Your opinion matters. 
@@ -34,10 +34,12 @@ This gives us tremendous advantages:
 1. **Access to top talent.** We can hire from anywhere.
 2. **More comfort.** People have 100% control of their surroundings. 
 3. **No commute.** Removing a 30-60 minute commute saves 250-500 hours a year. 
-4. **Time zone coverage.** It's easier to support customers any time of day, without being up at odd hours.
-5. **Results-focused culture.** Output matters more than hours at a desk. 
+4. **Time zone coverage.** Support customers with team members near their timezone. 
+5. **Output-focused culture.** Results matter more than hours at a desk. 
 
-We run as a distributed, high performance team using a few principles: 
+You may be asked to travel two or three times a year for in-person "offsites" with the team, each trip being about a week long. 
+
+Outside of those trips, we run as a distributed, high performance team using a few principles: 
 
 1) Work from anywhere with good Internet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
