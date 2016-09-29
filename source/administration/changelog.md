@@ -1118,7 +1118,7 @@ Release date: 2016-03-16
 
 ### Security Update
 
-Mattermost v2.1.0 contains a security update for a cross-site scripting vulnerability in Mattermost v1.2, v1.3, v1.4 and v2.0. [Upgrading to Mattermost v2.1.0](http://docs.mattermost.com/administration/upgrade.html#upgrading-team-edition) is highly recommended. Thanks to Luke Arntson for the [RPD report](www.mattermost.org/responsible-disclosure-policy/). 
+Mattermost v2.1.0 contains a security update for a cross-site scripting vulnerability in Mattermost v1.2, v1.3, v1.4 and v2.0. [Upgrading to Mattermost v2.1.0](http://docs.mattermost.com/administration/upgrade.html#upgrading-team-edition) is highly recommended. Thanks to Luke Arntson for the [RPD report](https://www.mattermost.org/responsible-disclosure-policy/). 
 
 ### New Features
 
@@ -1918,7 +1918,7 @@ Markdown support is now available across messages, comments and channel descript
 - **Tables** - for keeping things organized 
 - **Emoticons** - translation of emoji codes to images like :sheep: :boom: :rage1: :+1: 
 
-See [documentation](doc/help/enduser/markdown.md) for full details.
+See [documentation](https://docs.mattermost.com/help/messaging/formatting-text.html) for full details.
 
 #### Themes
 
@@ -2004,7 +2004,7 @@ Licensing
 
 ### Compatibility 
 
-A large number of settings were changed in [`config.json`](./config/config.json) and a System Console UI was added. This is a very large change due to Mattermost releasing as v1.0 and it's unlikely a change of this size would happen again. 
+A large number of settings were changed in `config.json` and a System Console UI was added. This is a very large change due to Mattermost releasing as v1.0 and it's unlikely a change of this size would happen again. 
 
 Prior to upgrading the Mattermost binaries from the previous versions, the below options would need to be manually updated in your existing config.json file to migrate successfully. This is a list of changes and their new default values in a fresh install: 
 #### Config.json Changes from v0.7 to v1.0 
