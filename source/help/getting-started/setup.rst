@@ -131,27 +131,27 @@ connections to team sites and other settings.
 
 -  **Add a Team Site**:
 
-#. Under **Teams** section, enter **Name** for team name to show in top
+   #. Under **Teams** section, enter **Name** for team name to show in top
    tab
-#. Enter **URL** for the team site location. For example:
+   #. Enter **URL** for the team site location. For example:
    ``https://example.com/teamname`` then click **Add**.
 
 -  **Delete a Team Site**:
--  Delete a Team Site by clicking the “x” next to the URL of the team
+   -  Delete a Team Site by clicking the “x” next to the URL of the team
    site you wish to delete.
 -  **Options**
--  **Hide Menu Bar** (Windows, Linux)
+   -  **Hide Menu Bar** (Windows, Linux)
 
-   -  This option hides the menu bar. Press “Alt” to show it.
+      -  This option hides the menu bar. Press “Alt” to show it.
 
--  **Show Icon on Menu Bar** (OS X)
+   -  **Show Icon on Menu Bar** (OS X)
 
-   -  The icon apeears on menu bar to indicate whether there are new
+      -  The icon apeears on menu bar to indicate whether there are new
       messages or mention.
 
--  **Allow insecure contents**
+   -  **Allow insecure contents**
 
-   -  If your team is hosted on ``https://``, images with ``http://``
+      -  If your team is hosted on ``https://``, images with ``http://``
       are not rendered by default.
       This option allows such images to be rendered, but please be
       careful for security.
@@ -166,25 +166,25 @@ Below lists menu options (shortcut keys are listed in brackets, ``Ctrl``
 becomes ``Command`` on OS X):
 
 -  **File**
--  **About Mattermost** - Shows version information for Mattermost
+   -  **About Mattermost** - Shows version information for Mattermost
    desktop application
--  **Settings** (Ctrl+Comma) - Opens setting menu to add new team sites
+   -  **Settings** (Ctrl+Comma) - Opens setting menu to add new team sites
    and configure shortcut key options
--  **Quit** (Ctrl+Q) - Exits the application
+   -  **Quit** (Ctrl+Q) - Exits the application
 -  **Edit**
--  **Undo** (Ctrl+Z) - Reverses previous action
--  **Redo** (Ctrl+Shift+Z) - Replays most recent action
--  **Cut** (Ctrl+X) - Cuts selected text
--  **Copy** (Ctrl+C) - Copies selected text
--  **Paste** (Ctrl+V) - Pastes text from clipboard
--  **Select All** (Ctrl+A) - Select all text in input box
+   -  **Undo** (Ctrl+Z) - Reverses previous action
+   -  **Redo** (Ctrl+Shift+Z) - Replays most recent action
+   -  **Cut** (Ctrl+X) - Cuts selected text
+   -  **Copy** (Ctrl+C) - Copies selected text
+   -  **Paste** (Ctrl+V) - Pastes text from clipboard
+   -  **Select All** (Ctrl+A) - Select all text in input box
 -  **View**
--  **Reload** (Ctrl+R) - Reload page from the server
--  **Clear Cache and Reload** (Ctrl+Shift+R) - Clear cached content in
+   -  **Reload** (Ctrl+R) - Reload page from the server
+   -  **Clear Cache and Reload** (Ctrl+Shift+R) - Clear cached content in
    application and reload page
--  **Toggle Full Screen** (F11) - Toggle application from window to full
+   -  **Toggle Full Screen** (F11) - Toggle application from window to full
    screen and back
--  **Toggle Developer Tools** (Ctrl+Shift+I) - Turn on and off sidebar
+   -  **Toggle Developer Tools** (Ctrl+Shift+I) - Turn on and off sidebar
    showing developer tools
 
 Notifications
