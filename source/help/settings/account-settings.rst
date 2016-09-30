@@ -24,7 +24,7 @@ types your first name. Entering a full name is optional.
 Username
 ^^^^^^^^
 
-Usernames are unique identifers appearing next to all posts. Pick
+Usernames are unique identifiers appearing next to all posts. Pick
 something easy for teammates to recognize and recall. By default, you
 will receive mention notifications when someone types your username. In
 order to maintain message integrity, changing your username does not
@@ -75,8 +75,7 @@ update your password.
 Multi-Factor Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When this option is available you can requires a phone-based passcode in
-addition your password for sign-in.
+When this option is available, a phone-based passcode is required in addition to your password for sign-in.
 
 To enable, download Google Authenticator from
 `iTunes <https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8>`__
@@ -168,7 +167,7 @@ more than 5 minutes. Change the email where notifications are sent in
 **Account Settings > General > Email**.
 
 If your System Administrator has enabled **Email Batching**, you will
-have additional options under this settings to select how often email
+have additional options under this setting to select how often email
 notifications will be sent. All notifications received over this time
 period are combined and sent in a single email.
 
@@ -275,7 +274,7 @@ Link Previews
 ^^^^^^^^^^^^^
 
 Select whether links posted on Mattermost show a preview below them.
-When "On", a preview will be shown below links to Youtube Videos and
+When "On", a preview will be shown below links to YouTube Videos and
 GIF, PNG, JPEG, and BMP files. When "Off", no preview will be shown.
 This setting can also be controlled using the slash commands ``/expand``
 and ``/collapse``.
