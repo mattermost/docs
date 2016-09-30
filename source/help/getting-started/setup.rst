@@ -90,10 +90,8 @@ You have to configure the application to interact with your teams.
 
 #. Open **Settings Page**. If you use the application for the first time, **Settings Page** should appear automatically. You can also see **Settings Page** by following methods.
 
-   -  Windows: Press ``Alt`` key to bring up the menu at the top of the
-   window, then click ``File -> Settings``.
-   -  OS X: Click ``Mattermost`` from the menu at the top of the screen,
-   then click ``Preferences...``.
+   -  Windows: Press ``Alt`` key to bring up the menu at the top of the window, then click ``File -> Settings``.
+   -  OS X: Click ``Mattermost`` from the menu at the top of the screen, then click ``Preferences...``.
    -  Linux: Click ``File -> Settings`` on the menu.
 
 #. Press ``+`` button next to the "Teams" label.
@@ -132,10 +130,9 @@ The Settings Page is available from the **File** menu under **Settings**
 connections to team sites and other settings.
 
 -  **Add a Team Site**:
-   #. Under **Teams** section, enter **Name** for team name to show in top
-   tab
-   #. Enter **URL** for the team site location. For example:
-   ``https://example.com/teamname`` then click **Add**.
+
+   #. Under **Teams** section, enter **Name** for team name to show in top tab
+   #. Enter **URL** for the team site location. For example: ``https://example.com/teamname`` then click **Add**.
 
 -  **Delete a Team Site**:
    -  Delete a Team Site by clicking the "x" next to the URL of the team
