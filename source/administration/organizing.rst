@@ -42,7 +42,7 @@ As you grow further, you can combine the hierarchies, with formats like ``[SUB-T
 
 .. tip :: Shorten words, particularly categories, by removing vowels, endings and redundant letter sounds. Example: Turn "Marketing" into "Mrkt", and "Project" into "Prjt".
 
-Good naming can take a team up to several thousand channels without causing significant confusion. Eventually every organization hits a limit and an additional team might need to be created on the server to accomodate a very large number of channels. 
+Good naming can take a team up to several thousand channels without causing significant confusion. Eventually every organization hits a limit and an additional team might need to be created on the server to accommodate a very large number of channels. 
 
 Navigating to channels using the keyboard 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -88,7 +88,7 @@ There are a number of built-in features to make meetings in Mattermost easier to
 
 You can number and format messages as agenda items to discuss for the next meeting. 
 
-Try pasting the following as a example in a channel designated for meetings::
+Try pasting the following as an example in a channel designated for meetings::
 
 	#### 1) Agenda item example
 
@@ -96,7 +96,7 @@ Try pasting the following as a example in a channel designated for meetings::
 
 2) Threaded messaging 
 
-On an agenda item message, you can select ``[...] > Reply`` to leave comments about an agenda item before of after a meeting to extended discussion. 
+On an agenda item message, you can select ``[...] > Reply`` to leave comments about an agenda item before or after a meeting to extended discussion. 
 
 3) Header links 
 
@@ -111,7 +111,7 @@ Sub-teams can include people from the same discipline, project teams, people wit
 
 	Examples: Developers, Marketers, Offsite Organizing Committee, SusanK's Directs 
 
-As sub-teams grow beyond a managable size for one channel, they can sub-divide::
+As sub-teams grow beyond a manageable size for one channel, they can sub-divide::
 
 	Examples: US: Developers, UK: Developers, SusanK's Directs, SusanK's Extended Directs
 
@@ -127,7 +127,7 @@ Projects are often private groups rather than public channels and are often used
 Location Channels 
 ~~~~~~~~~~~~~~~~~~
 
-If your teams are in different buildings, cities or regions, you can create channels to help people coordinate meetings and get togethers::
+If your teams are in different buildings, cities or regions, you can create channels to help people coordinate meetings and get-togethers::
 
 	Examples: Building 10, Palo Alto, Toronto, Delaware
 
