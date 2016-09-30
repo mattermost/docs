@@ -26,15 +26,9 @@ To set up the Mattermost desktop application for Windows 7, 8 and 10:
    -  Look for the new application directory at ``C:\Users\(currentuser)\AppData\Local\mattermost-desktop...``.
    -  Remove the version number by renaming the ``mattermost-desktop...``
    application directory to ``mattermost-desktop``.
-   -  If a ``mattermost-desktop`` directory already exists then you are
-   upgrading Mattermost, and need to quit Mattermost if it is running
-   and then delete the ``mattermost-desktop`` directory. After that you
-   can rename the ``mattermost-desktop...`` directory to
-   ``mattermost-desktop``. Don't worry, no settings will be lost, they
-   are stored elsewhere.
+   -  If a ``mattermost-desktop`` directory already exists then you are upgrading Mattermost, and need to quit Mattermost if it is running and then delete the ``mattermost-desktop`` directory. After that you can rename the ``mattermost-desktop...`` directory to ``mattermost-desktop``. Don't worry, no settings will be lost, they are stored elsewhere.
 
-#. Go to the ``\mattermost-desktop`` application directory and find the
-   file named ``Mattermost``.
+#. Go to the ``\mattermost-desktop`` application directory and find the file named ``Mattermost``.
 
    -  Right-click the file and select "Pin to Taskbar" to make the
    application available from your Windows task bar.
@@ -158,7 +152,6 @@ The Settings Page is available from the **File** menu under **Settings**
 connections to team sites and other settings.
 
 -  **Add a Team Site**:
-
    #. Under **Teams** section, enter **Name** for team name to show in top
    tab
    #. Enter **URL** for the team site location. For example:
@@ -169,20 +162,12 @@ connections to team sites and other settings.
    site you wish to delete.
 -  **Options**
    -  **Hide Menu Bar** (Windows, Linux)
-
       -  This option hides the menu bar. Press "Alt" to show it.
-
    -  **Show Icon on Menu Bar** (OS X)
-
       -  The icon apeears on menu bar to indicate whether there are new
       messages or mention.
-
    -  **Allow insecure contents**
-
-      -  If your team is hosted on ``https://``, images with ``http://``
-      are not rendered by default.
-      This option allows such images to be rendered, but please be
-      careful for security.
+      -  If your team is hosted on ``https://``, images with ``http://`` are not rendered by default. This option allows such images to be rendered, but please be careful for security.
 
 Menu Bar
 --------
