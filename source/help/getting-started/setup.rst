@@ -16,6 +16,7 @@ To set up the Mattermost desktop application for Windows 7, 8 and 10:
    -  Find the file ending in ``-win64.zip`` if you're running a x64 version of Windows and ``-win32.zip`` if you're running an older 32-bit version.
 
 #. From the ``\Downloads`` directory right-click on the file and select "Extract All..."
+
    -  Change the extract folder from ``C:\Users\(currentuser)\Downloads\mattermost-desktop-1.1.1-win64`` to ``C:\Users\(currentuser)\AppData\Local`` where ``(currentuser)`` will be the name of your user account.
    -  Check the "Show extracted files when complete" checkbox.
    -  Click the "Extract" button.
@@ -77,8 +78,7 @@ Other distributions
 
    -  Find the file ending in ``-linux-*.tar.gz``
 
-#. Extract the archive, then execute ``Mattermost`` which is located at
-   inside of the extracted directory
+#. Extract the archive, then execute ``Mattermost`` which is located at inside of the extracted directory
 
 #. If you need the Desktop Entry, please refer
    https://wiki.archlinux.org/index.php/Desktop_entries
