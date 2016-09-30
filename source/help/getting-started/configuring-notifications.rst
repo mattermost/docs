@@ -29,7 +29,7 @@ Mention Jewels
 Unread mentions in a channel are indicated by bold text and a mention
 jewel next to the channel name in the LHS. Clicking the channel name
 removes the bolding and mention jewel. You can always review your recent
-mentions by clicking **@*\ \* next to the search box at the top of the
+mentions by clicking **@** next to the search box at the top of the
 screen. Learn more about `mentioning
 teammates <http://docs.mattermost.com/help/messaging/mentioning-teammates.html>`__.
 
@@ -51,9 +51,6 @@ These are browser notifications that appear in the corner of your main
 monitor. By default, these notifications are sent for all activity while
 Mattermost is open. Desktop notifications are available on Firefox,
 Safari, and Chrome.
-
-| <<<<<<< HEAD
-| <<<<<<< HEAD
 
 -  Configure when desktop notifications are sent from **Account
    Settings** > **Notifications** > **Desktop Notifications** > **Send
