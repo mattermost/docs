@@ -20,14 +20,10 @@ To set up the Mattermost desktop application for Windows 7, 8 and 10:
 #. From the ``\Downloads`` directory right-click on the file and select
    "Extract All..."
 
-   -  Change the extract folder from
-   ``C:\Users\(currentuser)\Downloads\mattermost-desktop-1.1.1-win64``
-   to ``C:\Users\(currentuser)\AppData\Local`` where ``(currentuser)``
-   will be the name of your user account.
+   -  Change the extract folder from ``C:\Users\(currentuser)\Downloads\mattermost-desktop-1.1.1-win64`` to ``C:\Users\(currentuser)\AppData\Local`` where ``(currentuser)`` will be the name of your user account.
    -  Check the "Show extracted files when complete" checkbox.
    -  Click the "Extract" button.
-   -  Look for the new application directory at
-   ``C:\Users\(currentuser)\AppData\Local\mattermost-desktop...``.
+   -  Look for the new application directory at ``C:\Users\(currentuser)\AppData\Local\mattermost-desktop...``.
    -  Remove the version number by renaming the ``mattermost-desktop...``
    application directory to ``mattermost-desktop``.
    -  If a ``mattermost-desktop`` directory already exists then you are
@@ -163,27 +159,27 @@ connections to team sites and other settings.
 
 -  **Add a Team Site**:
 
-#. Under **Teams** section, enter **Name** for team name to show in top
+   #. Under **Teams** section, enter **Name** for team name to show in top
    tab
-#. Enter **URL** for the team site location. For example:
+   #. Enter **URL** for the team site location. For example:
    ``https://example.com/teamname`` then click **Add**.
 
 -  **Delete a Team Site**:
--  Delete a Team Site by clicking the "x" next to the URL of the team
+   -  Delete a Team Site by clicking the "x" next to the URL of the team
    site you wish to delete.
 -  **Options**
--  **Hide Menu Bar** (Windows, Linux)
+   -  **Hide Menu Bar** (Windows, Linux)
 
-   -  This option hides the menu bar. Press "Alt" to show it.
+      -  This option hides the menu bar. Press "Alt" to show it.
 
--  **Show Icon on Menu Bar** (OS X)
+   -  **Show Icon on Menu Bar** (OS X)
 
-   -  The icon apeears on menu bar to indicate whether there are new
+      -  The icon apeears on menu bar to indicate whether there are new
       messages or mention.
 
--  **Allow insecure contents**
+   -  **Allow insecure contents**
 
-   -  If your team is hosted on ``https://``, images with ``http://``
+      -  If your team is hosted on ``https://``, images with ``http://``
       are not rendered by default.
       This option allows such images to be rendered, but please be
       careful for security.
