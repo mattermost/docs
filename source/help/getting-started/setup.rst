@@ -130,15 +130,18 @@ The Settings Page is available from the **File** menu under **Settings**
 connections to team sites and other settings.
 
 -  **Add a Team Site**:
+
    #. Under **Teams** section, enter **Name** for team name to show in top
    tab
    #. Enter **URL** for the team site location. For example:
    ``https://example.com/teamname`` then click **Add**.
 
 -  **Delete a Team Site**:
+
    -  Delete a Team Site by clicking the “x” next to the URL of the team
    site you wish to delete.
 -  **Options**
+
    -  **Hide Menu Bar** (Windows, Linux)
 
       -  This option hides the menu bar. Press “Alt” to show it.
@@ -165,12 +168,14 @@ Below lists menu options (shortcut keys are listed in brackets, ``Ctrl``
 becomes ``Command`` on OS X):
 
 -  **File**
+
    -  **About Mattermost** - Shows version information for Mattermost
    desktop application
    -  **Settings** (Ctrl+Comma) - Opens setting menu to add new team sites
    and configure shortcut key options
    -  **Quit** (Ctrl+Q) - Exits the application
 -  **Edit**
+
    -  **Undo** (Ctrl+Z) - Reverses previous action
    -  **Redo** (Ctrl+Shift+Z) - Replays most recent action
    -  **Cut** (Ctrl+X) - Cuts selected text
@@ -178,6 +183,7 @@ becomes ``Command`` on OS X):
    -  **Paste** (Ctrl+V) - Pastes text from clipboard
    -  **Select All** (Ctrl+A) - Select all text in input box
 -  **View**
+
    -  **Reload** (Ctrl+R) - Reload page from the server
    -  **Clear Cache and Reload** (Ctrl+Shift+R) - Clear cached content in
    application and reload page
