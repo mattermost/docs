@@ -13,24 +13,24 @@ To set up the Mattermost desktop application for Windows 7, 8 and 10:
    release <https://github.com/mattermost/desktop/releases>`__ of
    Mattermost Desktop
 
--  Find the file ending in ``-win64.zip`` if you're running a x64
+   -  Find the file ending in ``-win64.zip`` if you're running a x64
    version of Windows and ``-win32.zip`` if you're running an older
    32-bit version.
 
 #. From the ``\Downloads`` directory right-click on the file and select
    "Extract All..."
 
--  Change the extract folder from
+   -  Change the extract folder from
    ``C:\Users\(currentuser)\Downloads\mattermost-desktop-1.1.1-win64``
    to ``C:\Users\(currentuser)\AppData\Local`` where ``(currentuser)``
    will be the name of your user account.
--  Check the "Show extracted files when complete" checkbox.
--  Click the "Extract" button.
--  Look for the new application directory at
+   -  Check the "Show extracted files when complete" checkbox.
+   -  Click the "Extract" button.
+   -  Look for the new application directory at
    ``C:\Users\(currentuser)\AppData\Local\mattermost-desktop...``.
--  Remove the version number by renaming the ``mattermost-desktop...``
+   -  Remove the version number by renaming the ``mattermost-desktop...``
    application directory to ``mattermost-desktop``.
--  If a ``mattermost-desktop`` directory already exists then you are
+   -  If a ``mattermost-desktop`` directory already exists then you are
    upgrading Mattermost, and need to quit Mattermost if it is running
    and then delete the ``mattermost-desktop`` directory. After that you
    can rename the ``mattermost-desktop...`` directory to
@@ -40,11 +40,11 @@ To set up the Mattermost desktop application for Windows 7, 8 and 10:
 #. Go to the ``\mattermost-desktop`` application directory and find the
    file named ``Mattermost``.
 
--  Right-click the file and select "Pin to Taskbar" to make the
+   -  Right-click the file and select "Pin to Taskbar" to make the
    application available from your Windows task bar.
--  Right-click the file and select "Pin to Start Menu" to make the
+   -  Right-click the file and select "Pin to Start Menu" to make the
    application available from your Windows Start menu.
--  Double-click the file to open the application.
+   -  Double-click the file to open the application.
 
 OS X
 ~~~~
@@ -55,20 +55,20 @@ For OS X 10.11 El Capitan. An older version of OS X has similar way.
    release <https://github.com/mattermost/desktop/releases>`__ of
    Mattermost Desktop
 
--  Find the file ending in ``-osx.tar.gz``.
+   -  Find the file ending in ``-osx.tar.gz``.
 
 #. Go to your ``/Downloads`` folder. There should be a
    ``/mattermost-desktop...`` folder.
 
--  If not, double-click on the Mattermost file ending in
+   -  If not, double-click on the Mattermost file ending in
    ``-osx.tar.gz``.
    The ``/mattermost-desktop...`` folder should be created.
 
 #. Click on the ``/mattermost-desktop...`` folder, and right-click on
    ``Mattermost`` package and select "Open"
 
--  If you see a dialog to confirm the application, select "Open".
--  You should see a new application called **Mattermost Desktop** open.
+   -  If you see a dialog to confirm the application, select "Open".
+   -  You should see a new application called **Mattermost Desktop** open.
 
 Linux
 ~~~~~
@@ -82,16 +82,16 @@ For Ubuntu 16.04.
    release <https://github.com/mattermost/desktop/releases>`__ of
    Mattermost Desktop
 
--  Find the file ending in ``-linux-*.deb``.
+   -  Find the file ending in ``-linux-*.deb``.
 
 #. Open a terminal and execute a command:
 
--  ``sudo dpkg -i mattermost-desktop-<VERSION>-<ARCH>.deb``
+   -  ``sudo dpkg -i mattermost-desktop-<VERSION>-<ARCH>.deb``
 
 #. Open Dash (located at top left corner) and input ``mattermost``, then
    click ``Mattermost`` icon
 
--  You should see a new application called **Mattermost Desktop** open.
+   -  You should see a new application called **Mattermost Desktop** open.
 
 Other distributions
 ^^^^^^^^^^^^^^^^^^^
@@ -100,7 +100,7 @@ Other distributions
    release <https://github.com/mattermost/desktop/releases>`__ of
    Mattermost Desktop
 
--  Find the file ending in ``-linux-*.tar.gz``
+   -  Find the file ending in ``-linux-*.tar.gz``
 
 #. Extract the archive, then execute ``Mattermost`` which is located at
    inside of the extracted directory
@@ -117,11 +117,11 @@ You have to configure the application to interact with your teams.
    time, **Settings Page** should appear automatically.
    You can also see **Settings Page** by following methods.
 
--  Windows: Press ``Alt`` key to bring up the menu at the top of the
+   -  Windows: Press ``Alt`` key to bring up the menu at the top of the
    window, then click ``File -> Settings``.
--  OS X: Click ``Mattermost`` from the menu at the top of the screen,
+   -  OS X: Click ``Mattermost`` from the menu at the top of the screen,
    then click ``Preferences...``.
--  Linux: Click ``File -> Settings`` on the menu.
+   -  Linux: Click ``File -> Settings`` on the menu.
 
 #. Press ``+`` button next to the "Teams" label.
 
