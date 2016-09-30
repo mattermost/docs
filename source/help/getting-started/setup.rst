@@ -126,23 +126,35 @@ Settings Page
 -------------
 
 The Settings Page is available from the **File** menu under **Settings**
-(Click ``Alt`` to show the menu if it's not visible). This page manages
+(Click ``Alt`` to show the menu if it’s not visible). This page manages
 connections to team sites and other settings.
 
 -  **Add a Team Site**:
-   #. Under **Teams** section, enter **Name** for team name to show in top tab
-   #. Enter **URL** for the team site location. For example: ``https://example.com/teamname`` then click **Add**.
+
+#. Under **Teams** section, enter **Name** for team name to show in top
+   tab
+#. Enter **URL** for the team site location. For example:
+   ``https://example.com/teamname`` then click **Add**.
 
 -  **Delete a Team Site**:
-   -  Delete a Team Site by clicking the "x" next to the URL of the team site you wish to delete.
+-  Delete a Team Site by clicking the “x” next to the URL of the team
+   site you wish to delete.
 -  **Options**
-   -  **Hide Menu Bar** (Windows, Linux)
-      -  This option hides the menu bar. Press "Alt" to show it.
-   -  **Show Icon on Menu Bar** (OS X)
-      -  The icon apeears on menu bar to indicate whether there are new
+-  **Hide Menu Bar** (Windows, Linux)
+
+   -  This option hides the menu bar. Press “Alt” to show it.
+
+-  **Show Icon on Menu Bar** (OS X)
+
+   -  The icon apeears on menu bar to indicate whether there are new
       messages or mention.
-   -  **Allow insecure contents**
-      -  If your team is hosted on ``https://``, images with ``http://`` are not rendered by default. This option allows such images to be rendered, but please be careful for security.
+
+-  **Allow insecure contents**
+
+   -  If your team is hosted on ``https://``, images with ``http://``
+      are not rendered by default.
+      This option allows such images to be rendered, but please be
+      careful for security.
 
 Menu Bar
 --------
