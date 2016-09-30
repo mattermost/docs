@@ -140,6 +140,7 @@ connections to team sites and other settings.
 
    -  Delete a Team Site by clicking the “x” next to the URL of the team
    site you wish to delete.
+
 -  **Options**
 
    -  **Hide Menu Bar** (Windows, Linux)
@@ -148,15 +149,11 @@ connections to team sites and other settings.
 
    -  **Show Icon on Menu Bar** (OS X)
 
-      -  The icon apeears on menu bar to indicate whether there are new
-      messages or mention.
+      -  The icon apeears on menu bar to indicate whether there are new messages or mention.
 
    -  **Allow insecure contents**
 
-      -  If your team is hosted on ``https://``, images with ``http://``
-      are not rendered by default.
-      This option allows such images to be rendered, but please be
-      careful for security.
+      -  If your team is hosted on ``https://``, images with ``http://`` are not rendered by default. This option allows such images to be rendered, but please be careful for security.
 
 Menu Bar
 --------
