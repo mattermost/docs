@@ -130,7 +130,6 @@ The Settings Page is available from the **File** menu under **Settings**
 connections to team sites and other settings.
 
 -  **Add a Team Site**:
-
    #. Under **Teams** section, enter **Name** for team name to show in top
    tab
    #. Enter **URL** for the team site location. For example:
@@ -166,10 +165,8 @@ becomes ``Command`` on OS X):
 
 -  **File**
 
-   -  **About Mattermost** - Shows version information for Mattermost
-   desktop application
-   -  **Settings** (Ctrl+Comma) - Opens setting menu to add new team sites
-   and configure shortcut key options
+   -  **About Mattermost** - Shows version information for Mattermost desktop application
+   -  **Settings** (Ctrl+Comma) - Opens setting menu to add new team sites and configure shortcut key options
    -  **Quit** (Ctrl+Q) - Exits the application
 -  **Edit**
 
@@ -182,12 +179,9 @@ becomes ``Command`` on OS X):
 -  **View**
 
    -  **Reload** (Ctrl+R) - Reload page from the server
-   -  **Clear Cache and Reload** (Ctrl+Shift+R) - Clear cached content in
-   application and reload page
-   -  **Toggle Full Screen** (F11) - Toggle application from window to full
-   screen and back
-   -  **Toggle Developer Tools** (Ctrl+Shift+I) - Turn on and off sidebar
-   showing developer tools
+   -  **Clear Cache and Reload** (Ctrl+Shift+R) - Clear cached content in application and reload page
+   -  **Toggle Full Screen** (F11) - Toggle application from window to fullscreen and back
+   -  **Toggle Developer Tools** (Ctrl+Shift+I) - Turn on and off sidebar showing developer tools
 
 Notifications
 -------------
