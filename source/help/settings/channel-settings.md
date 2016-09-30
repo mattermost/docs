@@ -14,6 +14,8 @@ Customize what activity causes the channel name to be bolded by accessing the ch
 ## Channel Header
 The header is the text that appears next to the channel name at the top of the screen. It can be used to summarize the channel topic or provide links to frequently accessed documents. Any channel member can set the channel header by clicking the channel name at the top of the center pane to access the drop-down menu, then click  **Set Channel Header**.
 
+The channel header is limited to 1024 characters.     
+
 ### Creating header links: 
 
 You can create a link using the format `[LINK_NAME](LINK_URL)` for example `[Mattermost](https://mattermost.com)` will create a link that looks like this: [Mattermost](https://mattermost.com). 
@@ -24,3 +26,5 @@ You can embed an image into your header using the format `![IMAGE_NAME](IMAGE_UR
 
 ## Channel Purpose
 This text appears in the channel list in the *More…* menu and helps others decide whether to join. Any channel member can set the channel purpose by clicking the channel name at the top of the center pane to access the drop-down menu, then click  **Set Channel Purpose**.
+
+Channel names are limited to 128 characters. 
