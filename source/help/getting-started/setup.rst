@@ -130,15 +130,13 @@ The Settings Page is available from the **File** menu under **Settings**
 connections to team sites and other settings.
 
 -  **Add a Team Site**:
-   #. Under **Teams** section, enter **Name** for team name to show in top
-   tab
-   #. Enter **URL** for the team site location. For example:
-   ``https://example.com/teamname`` then click **Add**.
+
+   #. Under **Teams** section, enter **Name** for team name to show in top tab
+   #. Enter **URL** for the team site location. For example: ``https://example.com/teamname`` then click **Add**.
 
 -  **Delete a Team Site**:
 
-   -  Delete a Team Site by clicking the “x” next to the URL of the team
-   site you wish to delete.
+   -  Delete a Team Site by clicking the “x” next to the URL of the team site you wish to delete.
 
 -  **Options**
 
