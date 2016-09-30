@@ -130,7 +130,6 @@ The Settings Page is available from the **File** menu under **Settings**
 connections to team sites and other settings.
 
 -  **Add a Team Site**:
-
    #. Under **Teams** section, enter **Name** for team name to show in top
    tab
    #. Enter **URL** for the team site location. For example:
