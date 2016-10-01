@@ -13,14 +13,14 @@ While our headquarters is in Palo Alto, California, we use Mattermost software t
 Top 10 reasons to work for Mattermost: 
 
 1. **Join an outstanding team:** Work with thoughtful, talented, high performance people who care about results. 
-2. **Growth:** Join a growing open source project, a growing business, and a growing company. When you're growing, every day is your best day ever.
+2. **Leading technology:** Work in Golang, React, React Native and other technologies that change the world.
 3. **Work remote:** No commute, plus complete control of your environment and freedom to travel.
-4. **Do good:** Build open source software benefiting thousands of companies, research institutions, schools and non-profits.
-5. **Improve a product you use every day:** Your opinion matters. 
-6. **Be recognized:** Working in open source, your contributions are publicly visible and will echo on throughout your career. 
-7. **Focus on results:** Output matters, not hours worked. Enjoy life and don't burn out. 
-8. **Continual development:** Cross-training and rotation builds up everyone on the team. It's core to our culture. 
-9. **Global perspective:** Develop outstanding software in a multi-lingual, multi-cultural community. 
+4. **Be recognized:** Working in open source, your contributions are publicly visible and will echo on throughout your career. 
+5. **Growth:** Join a growing open source project, a growing business, and a growing company.
+6. **Do good:** Build open source software benefiting thousands of companies, research institutions, schools and non-profits.
+7. **Improve a product you use every day:** Work on a team with deep empathy for users and customers. 
+8. **Focus on results:** Output matters, not hours worked. Enjoy life and don't burn out. 
+9. **Learn, Master, Teach:** Building new skills, becoming experts, and training others is core to our culture. 
 10. **Friends around the world:** Build relationships with staff and contributors in dozens of countries. 
 
 ----------------------------------------------------------
@@ -70,4 +70,55 @@ When you meet in person at off-sites and events, build on those relationships.
 When something's not clearly documented, take the initiative to figure out what's going on and update the documentation for the people who come after you. 
 
 `Learn, Master, Teach <https://docs.mattermost.com/process/mindsets.html#learn-master-teach>`_ is a model we use to pass on training after you've been trained to help grow everyone at the company. 
+
+
+----------------------------------------------------------
+Paid Time Off 
+----------------------------------------------------------
+
+1) Time-off
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Our culture is high trust and results-focused. No need to ask anyone when you plan to be away, just plan ahead and let teammates know in advance. 
+
+When you take time-off, please remember: 
+
+a) Block off time on your calendar so it's easy to see when you're away. 
+
+b) For meetings you'll miss, message the chair with any status update. 
+
+c) Post in the Standup channel dates you're away and who'll be your backup 
+
+There is no limit to how much time-off you can take. We strongly recommend a minimum of 2 weeks per year. 
+
+2) Holidays 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Please take off holidays relevant to your culture, resident country and preferences. Please just follow the TIME OFF process in 1) above. 
+
+We're headquartered in the US and have a large Canadian contingent, so below are holidays we're expecting people from those countries to take off:
+
+For 2016: 
+
+- New Year's (1/1/2016)* 
+- Canadian Family Day (2/15/2016)
+- Good Friday (3/25/2016) 
+- Canadian Victoria Day (5/23/2016)
+- Canada Day (7/1/2016)
+- US Independence Day (7/4/2016)
+- Canadian Labour Day, US Labor Day (9/5/2016)
+- Canadian Thanksgiving (10/10/2016)
+- US Thanksgiving (11/24/2016)
+- Christmas Day (12/25/2016)
+- Canadian Boxing Day (12/26/2016) 
+
+It's up to meeting chairs to decide whether to reschedule if few people can attend (e.g. if there are a lot of US or Canadians in the meeting). 
+
+3) On-call rotations 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+We have an "On-call" schedule for key staff to support customer escalations and for sales. Should your on-call schedule fall on a holiday or during time-off, you can trade with teammates of similar qualification, or if you are called in because you are on-call during a holiday, you're encouraged to take time-off on a non-holiday in exchange. 
+
+
+
 
