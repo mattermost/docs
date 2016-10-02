@@ -14,10 +14,10 @@ Top 10 reasons to work for Mattermost:
 
 1. **Join an outstanding team:** Work with thoughtful, talented, high performance people who care about results. 
 2. **Build on the cutting edge:** Develop in Golang, React, React Native and other technologies changing the world.
-3. **Work remote:** No commute, plus complete control of your environment and freedom to travel.
-4. **Be recognized:** Working in open source, your contributions are publicly visible and will echo on throughout your career. 
+3. **Work remote:** No commute, freedom to travel, complete control of your environment.
+4. **Be recognized:** Working in open source, your contributions are public and echo on throughout your career. 
 5. **Growth:** Join a growing open source project, a growing business, and a growing company.
-6. **Do good:** Build open source software benefiting thousands of companies, research institutions, schools and non-profits.
+6. **Do good:** Build open source software benefiting thousands of companies, institutions, schools and non-profits.
 7. **Improve a product you use every day:** Work on a team with deep empathy for users and customers. 
 8. **Focus on results:** Output matters, not hours worked. Enjoy life and don't burn out. 
 9. **Learn, Master, Teach:** Building new skills, becoming experts, and training others is core to our culture. 
@@ -34,7 +34,7 @@ This gives us tremendous advantages:
 1. **Access to top talent.** We can hire from anywhere.
 2. **More comfort.** People have 100% control of their surroundings. 
 3. **No commute.** Removing a 30-60 minute commute saves 250-500 hours a year. 
-4. **Time zone coverage.** It's easier to support customers any time of day, without being up at odd hours.
+4. **Time zone coverage.** We can more easily support global customers. 
 5. **Results-focused culture.** Output matters more than hours at a desk. 
 
 We run as a distributed, high performance team using a few principles: 
@@ -98,18 +98,18 @@ Please take off holidays relevant to your culture, resident country and preferen
 
 We're headquartered in the US and have a large Canadian contingent, so below are holidays we're expecting people from those countries to take off:
 
-For 2016: 
+US & Canadian Holidays for 2016: 
 
-- New Year's (1/1/2016)* 
+- US & Canadian New Year's (1/1/2016)
 - Canadian Family Day (2/15/2016)
-- Good Friday (3/25/2016) 
+- US & Canadian Good Friday (3/25/2016) 
 - Canadian Victoria Day (5/23/2016)
 - Canada Day (7/1/2016)
 - US Independence Day (7/4/2016)
-- Canadian Labour Day, US Labor Day (9/5/2016)
+- US Labor Day, Canadian Labour Day (9/5/2016)
 - Canadian Thanksgiving (10/10/2016)
 - US Thanksgiving (11/24/2016)
-- Christmas Day (12/25/2016)
+- US & Canadian Christmas Day (12/25/2016)
 - Canadian Boxing Day (12/26/2016) 
 
 It's up to meeting chairs to decide whether to reschedule if few people can attend (e.g. if there are a lot of US or Canadians in the meeting). 
@@ -144,9 +144,8 @@ Just as flexible as our working hours, learn more about our `paid time-off polic
 
 In the unfortunate event that a Mattermost team member passes away, Mattermost will provide a $20,000 lump sum to anyone of their choosing. This can be a spouse, partner, family member, friend, or charity.
 
-For US-based employees this benefit is replaced by the Basic Life Insurance benefit included in employment. 
-
-For Canada-based employees this benefit is replaced by the Basic Life Insurance benefit included in employment. 
+- For US-based employees this benefit is replaced by the Basic Life Insurance benefit. 
+- For Canada-based employees this benefit is replaced by the Basic Life Insurance benefit. 
 
 For all other team members, the following conditions apply:
 
