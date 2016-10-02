@@ -12,9 +12,11 @@ We are headquartered in Palo Alto, California in the United States, and work as 
 Mission & Vision
 -------
 
-Our mission is: "to give every organization the power to achieve their highest priorities through modern communication."
+Our mission is to give every organization the power to achieve their highest priorities through modern communication.
 
-We intend to disrupt the global workplace communications market with open source and commercial solutions delivering irresistible value.
+Our vision is a world more connected to what matters most. 
+
+
 
 Values
 --------
