@@ -4,18 +4,14 @@
 
 Release date: September 30, 2016
 
-### Bug Fixes
-
-#### OS X
- - Fixed an issue where the app window pops up second to foreground when a new message is received
-
-## Release v3.4.0
-
-Release date: September 22, 2016
-
 This release contains a security update and it is highly recommended that users upgrade to this version.
 
 Version number updated to 3.4 to make numbering consistent with Mattermost server and mobile app releases. This change will not imply monthly releases.
+
+ - v3.4.1, released 2016-09-30
+     - (OS X) Fixed an issue where the app window pops up second to foreground when a new message is received
+ - v3.4.0, released 2016-09-22
+     - Original v3.4 release
 
 ### Improvements
 
