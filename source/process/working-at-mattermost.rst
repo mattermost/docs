@@ -138,20 +138,7 @@ The comfort of home, freedom to travel, no commute--learn more about our `remote
 
 **3. Paid time-off**
 
-Just as flexible as our working hours, learn more about our `paid time-off policies <https://docs.mattermost.com/process/working-at-mattermost.html#paid-time-off>`_. 
-
-**4. Deceased team member benefit** 
-
-In the unfortunate event that a Mattermost team member passes away, Mattermost will provide a $20,000 lump sum to anyone of their choosing. This can be a spouse, partner, family member, friend, or charity.
-
-- For US-based employees this benefit is replaced by the Basic Life Insurance benefit. 
-- For Canada-based employees this benefit is replaced by the Basic Life Insurance benefit. 
-
-For all other team members, the following conditions apply:
-
-- The team member must be either an employee or direct contractor,
-- The team member must have indicated in writing to whom the money should be transferred.
-- For part-time team members, the lump sum is calculated pro-rata, so for example for a team member that works for Mattermost 50% of the time, the lump sum would be $10,000.
+Just as flexible as our working hours, learn more about our `paid time-off policies <https://docs.mattermost.com/process/working-at-mattermost.html#paid-time-off>`_.
 
 
 Specific to Canada-based employees
