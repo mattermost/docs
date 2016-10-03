@@ -10,7 +10,7 @@ Mattermost was created to offer an alternative to propreitary SaaS services. For
 
 There are no current plans for auth add-ons for the following reasons: 
 
-1. Authentication is a critical path that needs to be tested, maintained and supported with each monthly release and volunteers aren't prepared to bear the tax this change would impose on them, and
+1. Authentication is a critical path that needs to be tested, maintained and supported with each bi-monthly release and volunteers aren't prepared to bear the tax this change would impose on them, and
 
 2. Such a change increases the difficulty of creating high quality apps and drivers, as developers would be taxed with requests for support, troubleshooting, and debug set ups that would be expensive to reproduce.
 
