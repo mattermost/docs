@@ -1,5 +1,14 @@
 # Desktop Application Changelog
 
+## Release v3.4.1
+
+Release date: September 30, 2016
+
+### Bug Fixes
+
+#### OS X
+ - Fixed an issue where the app window pops up second to foreground when a new message is received
+
 ## Release v3.4.0
 
 Release date: September 22, 2016
