@@ -17,8 +17,7 @@ Install Red Hat Enterprise Linux (x64) 7.1+
 2. Make sure the system is up to date with the most recent security
    patches.
 
-   -  ``sudo yum update``
-   -  ``sudo yum upgrade``
+   -  ``# dnf update``
 
 Set up Database Server
 ----------------------
@@ -31,16 +30,16 @@ Set up Database Server
 
 2.  Install PostgreSQL 9.4+ (or MySQL 5.6+)
 
-    -  ``sudo yum install http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/pgdg-redhat94-9.4-1.noarch.rpm``
-    -  ``sudo yum install postgresql94-server postgresql94-contrib``
-    -  ``sudo /usr/pgsql-9.4/bin/postgresql94-setup initdb``
-    -  ``sudo systemctl enable postgresql-9.4.service``
-    -  ``sudo systemctl start postgresql-9.4.service``
+    -  ``# dnf install http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/pgdg-redhat94-9.4-1.noarch.rpm``
+    -  ``# dnf install postgresql94-server postgresql94-contrib``
+    -  ``# /usr/pgsql-9.4/bin/postgresql94-setup initdb``
+    -  ``# systemctl enable postgresql-9.4.service``
+    -  ``# systemctl start postgresql-9.4.service``
 
 3.  PostgreSQL created a user account called ``postgres``. You will need
     to log into that account with:
 
-    -  ``sudo -i -u postgres``
+    -  ``# -i -u postgres``
 
 4.  You can get a PostgreSQL prompt by typing:
 
@@ -68,32 +67,32 @@ Set up Database Server
 
 10. Allow Postgres to listen on all assigned IP Addresses:
 
-    -  ``sudo vi /var/lib/pgsql/9.4/data/postgresql.conf``
+    -  ``# vi /var/lib/pgsql/9.4/data/postgresql.conf``
     -  Uncomment 'listen\_addresses' and change 'localhost' to '\*'
 
 11. Alter ``pg_hba.conf`` to allow the Mattermost Server to talk to the
     Postgres database through the Postgres unix socket:
 
-    -  ``sudo vi /var/lib/pgsql/9.4/data/pg_hba.conf``
+    -  ``# vi /var/lib/pgsql/9.4/data/pg_hba.conf``
     -  Add the following line :
     -   local   mattermost          mmuser          peer       map=mattermap
 
 12. Alter `pg_ident.conf`` to map system user to database user:
 
-    - ``sudo vi /var/lib/pgsql/9.4/data/pg_ident.conf``
+    - ``# vi /var/lib/pgsql/9.4/data/pg_ident.conf``
     - Add the following line :
     - mattermap      mattermost              mmuser
 
 13. Reload Postgres database:
 
-    -  ``sudo systemctl reload postgresql-9.4.service``
+    -  ``# systemctl reload postgresql-9.4.service``
 
 14. Attempt to connect with the new created user to verify everything
     looks good:
 
     -  ``su - mattermost``
     -  ``psql -d mattermost -U mmuser``
-    - ``mattermost=> \qmattermost=> \q``
+    - ``mattermost=> \quit``
 
 Set up Mattermost Server
 ------------------------
@@ -110,7 +109,7 @@ Set up Mattermost Server
 
    -  Unzip the Mattermost Server by typing:
    -  ``tar -xvzf mattermost-enterprise-X.X.X-linux-amd64.tar.gz``
-   -  ``sudo mv mattermost /opt``
+   -  ``# mv mattermost /opt``
 
 4. Create the storage directory for files. We assume you will have
    attached a large drive for storage of images and files. For this
@@ -118,25 +117,25 @@ Set up Mattermost Server
    ``/opt/mattermost/data``.
 
    -  Create the directory by typing:
-   -  ``sudo mkdir -p /opt/mattermost/data``
+   -  ``# mkdir -p /opt/mattermost/data``
 
 5. Create a system user and group called mattermost that will run this
    service:
 
-   -  ``sudo useradd -r mattermost -U``
+   -  ``# useradd -r mattermost -U``
    -  Set the Mattermost account as the directory owner by typing:
-   -  ``sudo chown -R mattermost:mattermost /opt/mattermost``
-   -  ``sudo chmod -R g+w /opt/mattermost``
+   -  ``# chown -R mattermost:mattermost /opt/mattermost``
+   -  ``# chmod -R g+w /opt/mattermost``
    -  Add yourself to the mattermost group to ensure you can edit these
       files:
-   -  ``sudo usermod -aG mattermost USERNAME``
+   -  ``# usermod -aG mattermost USERNAME``
 
 6. Configure Mattermost Server by editing the ``config.json`` file at
    ``/opt/mattermost/config``
 
    -  ``cd /opt/mattermost/config``
    -  Edit the file by typing:
-   -  ``sudo vi config.json``
+   -  ``# vi config.json``
    -  replace ``DriverName": "mysql"`` with ``DriverName": "postgres"``
    -  replace
       ``"DataSource": "mmuser:mostest@tcp(dockerhost:3306)/mattermost_test?charset=utf8mb4,utf8"``
@@ -158,8 +157,8 @@ Set up Mattermost Server
 8. Set up Mattermost to use the systemd init daemon which handles
    supervision of the Mattermost process:
 
-   -  ``sudo touch /etc/systemd/system/mattermost.service``
-   -  ``sudo vi /etc/systemd/system/mattermost.service``
+   -  ``# touch /etc/systemd/system/mattermost.service``
+   -  ``# vi /etc/systemd/system/mattermost.service``
    -  Copy the following lines into
       ``/etc/systemd/system/mattermost.service``
 
@@ -180,10 +179,10 @@ Set up Mattermost Server
           [Install]
           WantedBy=multi-user.target
 
-   - Make sure the service is executable with ``sudo chmod 664 /etc/systemd/system/mattermost.service``
-   * Reload the services with ``sudo systemctl daemon-reload``
-   * Start Mattermost service with``\ sudo systemctl start mattermost.service``
-   * Start service on reboot ``sudo systemctl enable mattermost.service``
+   - Make sure the service is executable with ``# chmod 664 /etc/systemd/system/mattermost.service``
+   * Reload the services with ``# systemctl daemon-reload``
+   * Start Mattermost service with``# systemctl start mattermost.service``
+   * Start service on reboot ``# systemctl enable mattermost.service``
 
 Set up NGINX Server
 -------------------
@@ -200,7 +199,7 @@ Set up NGINX Server
 
 3. Install NGINX on RHEL with
 
-   -  ``sudo vi /etc/yum.repos.d/nginx.repo``
+   -  ``# vi /etc/yum.repos.d/nginx.repo``
    -  Copy the below into the file
 
       ::
@@ -211,9 +210,9 @@ Set up NGINX Server
           gpgcheck=0
           enabled=1
 
-   -  ``sudo yum install nginx.x86_64``
-   -  ``sudo service nginx start``
-   -  ``sudo chkconfig nginx on``
+   -  ``# dnf install nginx.x86_64``
+   -  ``# service nginx start``
+   -  ``# chkconfig nginx on``
 
 4. Verify NGINX is running
 
@@ -226,7 +225,7 @@ Set up NGINX Server
    Mattermost Server
 
    -  Create a configuration for Mattermost
-   -  ``sudo touch /etc/nginx/conf.d/mattermost.conf``
+   -  ``# touch /etc/nginx/conf.d/mattermost.conf``
    -  Below is a sample configuration with the minimum settings required
       to configure Mattermost:
 
@@ -250,14 +249,14 @@ Set up NGINX Server
 
 
    - Remove the existing file with:
-   - ``sudo mv /etc/nginx/conf.d/default.conf/etc/nginx/conf.d/default.conf.bak``
+   - ``# mv /etc/nginx/conf.d/default.conf/etc/nginx/conf.d/default.conf.bak``
    - Restart NGINX by typing:
-   - ``sudo service nginx restart``
+   - ``# service nginx restart``
    - Verify you can see Mattermost thru the proxy by typing:
    - ``curl http://localhost``
    - You should see a page titles *Mattermost - Signup*
-   - Not seeing the page?  Look for errors with ``sudo cat /var/log/audit/audit.log \| grep nginx \| grep denied``
-   - **Optional** if you're running on the same server as the Mattermost server and see 502 errors you may need to run ``\ sudo setsebool -P httpd\_can\_network\_connect true\`` because SELinux is
+   - Not seeing the page?  Look for errors with ``# cat /var/log/audit/audit.log \| grep nginx \| grep denied``
+   - **Optional** if you're running on the same server as the Mattermost server and see 502 errors you may need to run ``\ # setsebool -P httpd\_can\_network\_connect true\`` because SELinux is
      preventing the connection
 
 Set up NGINX with SSL (Recommended)
@@ -266,13 +265,13 @@ Set up NGINX with SSL (Recommended)
 1. You can use a free and an open certificate security like let's
    encrypt, this is how to proceed
 
--  ``sudo apt-get install git``
+-  ``# apt-get install git``
 -  ``git clone https://github.com/letsencrypt/letsencrypt``
 -  ``cd letsencrypt``
 
 2. Be sure that the port 80 is not use by stopping nginx
 
--  ``sudo service nginx stop``
+-  ``# service nginx stop``
 -  ``netstat -na | grep ':80.*LISTEN'``
 -  ``./letsencrypt-auto certonly --standalone``
 
@@ -320,7 +319,7 @@ Set up NGINX with SSL (Recommended)
 
 
 6. Be sure to restart nginx
-  * ``\ sudo service nginx start``
+  * ``# service nginx start``
 7. Add the following line to cron so the cert will renew every month
   * ``crontab -e``
   * ``@monthly /home/YOURUSERNAME/letsencrypt/letsencrypt-auto certonly --reinstall -d yourdomainname && sudo service nginx reload``
@@ -365,7 +364,7 @@ Finish Mattermost Server setup
 8. Feel free to modify other settings
 9. Restart the Mattermost Service by typing:
 
-   -  ``sudo restart mattermost``
+   -  ``# restart mattermost``
 
 Activating Mattermost Enterprise Edition
 ------------------------------
