@@ -56,23 +56,23 @@ The Settings Page is available from the `File` menu under `Settings`, and can be
 Description of each setting is included below this table.
 
 +-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+
-| Setting                                                                       | On Windows                | On OS X                   | On Linux                  |
+| Setting                                                                       | Windows                   | Mac                       | Linux                     |
 +===============================================================================+===========================+===========================+===========================+
 | Hide menu bar                                                                 | Yes                       | Yes                       | Yes                       |
 +-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+
 | Allow mixed content                                                           | Yes                       | Yes                       | Yes                       |
 +-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+
-| Show icon on menu bar                                                         |                           | Yes                       |                           |
-+-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+
-| Start app on login                                                            | Yes                       | Yes                       | Yes                       |
-+-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+
-| Toggle window visibility when clicking on the tray icon                       | Yes                       |                           |                           |
-+-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+
-| Leave app running in notification center when application window is closed    |                           | Yes                       | Yes                       |
-+-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+
 | Show red badge on taskbar icon to indicate unread messages                    | Yes                       | Yes                       |                           |
 +-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+
 | Flash taskbar icon when a new message is received                             | Yes                       |                           | Yes                       |
++-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+
+| Start app on login                                                            | Yes                       |                           | Yes                       |
++-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+
+| Toggle window visibility when clicking on the tray icon                       | Yes                       |                           |                           |
++-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+
+| Show icon on menu bar                                                         |                           | Yes                       | Yes                       |
++-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+
+| Leave app running in notification center when application window is closed    |                           | Yes                       | Yes                       |
 +-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+
 
 Hide menu bar
@@ -91,10 +91,17 @@ This setting is on by default.
 
 Note: Enabling mixed content will disable YouTube video previews `due to an issue in the underlying technology <https://github.com/electron/electron/issues/2749>`_ used by the Mattermost Desktop app.
 
-Show icon on Menu Bar (OS X only)
+Show red badge on taskbar icon to indicate unread messages (Windows, Mac only)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When enabled, a red dot with a count of unread mentions is displayed on the team tab bar.
+When enabled, a red badge is shown on the taskbar icon for unread messages with a number count indicating unread mentions. If disabled, a red badge is only shown for unread mentions (with a number count).
+
+This setting is on by default.
+
+Flash taskbar icon when a new message is received (Windows, Linux only)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Configure whether the taskbar icon flashes when a new message is received on any of your active teams and servers.
 
 This setting is off by default.
 
@@ -112,24 +119,17 @@ When enabled, clicking on the system tray icon allows you to toggle the window o
 
 This setting is off by default.
 
-Leave app running in notification center when application window is closed (OS X, Linux only)
+Show icon on Menu Bar (Mac, Linux only)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When enabled, closing the application window will leave the Mattermost desktop app running in your notification center. This can be useful if you’d like to check for unread mentions while away from the app.
+When enabled, a red dot with a count of unread mentions is displayed on the team tab bar.
 
 This setting is off by default.
 
-Show red badge on taskbar icon to indicate unread messages (Windows, OS X only)
+Leave app running in notification center when application window is closed (Mac, Linux only)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When enabled, a red badge is shown on the taskbar icon for unread messages with a number count indicating unread mentions. If disabled, a red badge is only shown for unread mentions (with a number count).
-
-This setting is on by default.
-
-Flash taskbar icon when a new message is received (Windows, Linux only)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Configure whether the taskbar icon flashes when a new message is received on any of your active teams and servers.
+When enabled, closing the application window will leave the Mattermost desktop app running in your notification center. This can be useful if you’d like to check for unread mentions while away from the app.
 
 This setting is off by default.
 
@@ -140,12 +140,12 @@ The desktop app contains a menu bar with additional features and shortcuts to st
 
 If the menu bar is hidden, you may use the ``ALT`` key to display the menu. To have the menu displayed at all times, go to the Settings page and uncheck the **Hide menu bar** setting.
 
-Below is a list of menu options with the corresponding keyboard shortcuts. For Mac OS X, replace ``CTRL`` by ``CMD`` unless otherwise specified.
+Below is a list of menu options with the corresponding keyboard shortcuts. For Mac, replace ``CTRL`` by ``CMD`` unless otherwise specified.
 
 **File**
 
  - Settings (CTRL + COMMA): Opens app settings where you can manage your servers and configure desktop app settings
- - Exit (CTRL + Q): Closes the application. Labeled ``Quit`` on Mac OS X
+ - Exit (CTRL + Q): Closes the application. Labeled ``Quit`` on Mac
 
 **Edit**
 
@@ -169,16 +169,16 @@ Below is a list of menu options with the corresponding keyboard shortcuts. For M
 
 **History**
 
- - Back (ALT + Left Arrow; CMD + [ on OS X): Go to previous page in history
- - Forward (ALT + Right Arrow; CMD + [ on OS X): Go to next page in history
+ - Back (ALT + Left Arrow; CMD + [ on Mac): Go to previous page in history
+ - Forward (ALT + Right Arrow; CMD + [ on Mac): Go to next page in history
 
 **Window**
 
  - Close (CTRL + W) - Closes the application window
  - Minimize (CTRL + M) - Minimizes the application window to the taskbar
  - Team Name (CTRL + {1-9}) - Opens the n-th tab
- - Select Next Team (CTRL + TAB; ALT + CMD + Right Arrow on OS X) - Opens the next tab
- - Select Previous Team (CTRL+ SHIFT + TAB; ALT + CMD + Left Arrow on OS X) - Open the previous tab
+ - Select Next Team (CTRL + TAB; ALT + CMD + Right Arrow on Mac) - Opens the next tab
+ - Select Previous Team (CTRL+ SHIFT + TAB; ALT + CMD + Left Arrow on Mac) - Open the previous tab
 
 **Help**
 
