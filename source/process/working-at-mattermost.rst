@@ -197,6 +197,6 @@ The Company covers health insurance up the following contribution caps:
 - Group Vision Employee + Child(ren): $9.31
 - Group Vision Employee + Spouse + Child(ren): $13.13
 
-Employees are responsible for the remainder of the premium cost, if any. 
+Employees are responsible for the remainder of the premium cost, if any. A summary of plan options showing remainder of premium costs after employer contribution will be provided with your offer. 
 
 We're working on setting up a 401K plan for US employees.
