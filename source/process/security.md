@@ -172,6 +172,13 @@ In addition to checklists for quality and reliability, code changes receive mult
 1. Is there a specified response policy that includes the timeframe issues are to be addressed?
    - Yes, please see: https://about.mattermost.com/support/
 
+
+## Infrastructure Security Policies
+
+1. Technical infrastructure, including network security, servers and access control protocols are regularly reviewed for potential threats and vulnerabilities.
+
+1. Business process, HR process and policies are regularly reviewed for potential threats and vulnerabilities.
+
 ## Business Continuity Plan
 
 Mattermost, Inc. is headquartered in Palo Alto, California with a distributed organization across three timezones, and is therefore not easily affected by typical causes of business disruption, such as local failures of equipment, power, telecommunications, social unrest, fire, or natural disasters. Even so, threats considered in the context of business continuity are categorized by impact of the disruption.
