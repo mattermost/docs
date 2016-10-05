@@ -1,8 +1,8 @@
 ==================================================
-Norms
+Mattermost Norms 
 ==================================================
 
-This handbook provides an overview of norms working at Mattermost, Inc., including: 
+This document in intended for new hires to summarize norms for working at Mattermost, Inc. including: 
 
 - `Meetings`_ - When we get together and why 
 - `Mindsets`_ - Shared toolsets we have for solving problems 
