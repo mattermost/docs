@@ -113,7 +113,7 @@ Set up MySQL Database Server
 
     When prompted, enter the root password that you created when installing MySQL.
 
-3. Create the Mattermost user.
+3. Create the Mattermost user, 'mmuser'.
 
     - ``mysql> create user 'mmuser'@'%' identified by 'mmuser-password';``
 
@@ -128,52 +128,60 @@ Set up MySQL Database Server
 
     - ``mysql> create database mattermost;``
 
-5. Grant access privileges to the mmuser
+5. Grant access privileges to the user 'mmuser'
 
     - ``mysql> grant all privileges on mattermost.* to 'mmuser'@'%';``
 
 Set up Mattermost Server
 ------------------------
 
-1. For the purposes of this guide we will assume this server has an IP
+For the purposes of this guide we will assume this server has an IP
    address of ``10.10.10.2``
-2. For the sake of making this guide simple we located the files at
-   ``/home/ubuntu/mattermost``. In the future we will give guidance for
-   storing under ``/opt``.
-3. We have also elected to run the Mattermost Server as the ``ubuntu``
-   account for simplicity. We recommend setting up and running the
-   service under a ``mattermost`` user account with limited permissions.
+
+2. Create a mattermost user and group
+
+    - ``sudo adduser --system --group mattermost``
+
+3. Change to the mattermost home directory.
+
+    ``cd /home/mattermost``
+
 4. Download `any version of the Mattermost Server <https://docs.mattermost.com/administration/upgrade.html#version-archive>`_ by typing:
 
    -  ``wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz``
-   -  Where ``vX.X.X`` is typically the latest Mattermost release version, which is currently ``v3.3.0``.
+   -  Where ``vX.X.X`` is the latest version.
 
-5. Unzip the Mattermost Server by typing:
+5. Extract the Mattermost Server files by typing:
 
-   -  ``tar -xvzf mattermost-X.X.X-linux-amd64.tar.gz``
+   -  ``sudo tar -xvzf *.gz``
 
-6. Create the storage directory for files. We assume you will have
+6. Change the user and group of the extracted files to mattermost
+
+   - ``sudo chown -R mattermost:mattermost mattermost/``
+
+7. Create the storage directory for files. We assume you will have
    attached a large drive for storage of images and files. For this
    setup we will assume the directory is located at
    ``/mattermost/data``.
 
    -  Create the directory by typing:
    -  ``sudo mkdir -p /mattermost/data``
-   -  Set the ubuntu account as the directory owner by typing:
-   -  ``sudo chown -R ubuntu /mattermost``
+   -  Set the mattermost account as the directory owner by typing:
+   -  ``sudo chown -R mattermost:mattermost /mattermost``
 
 7. Configure Mattermost Server by editing the config.json file at
-   ``/home/ubuntu/mattermost/config``
+   ``/home/mattermost/config``
 
-   -  ``cd ~/mattermost/config``
+   -  ``cd /home/mattermost/mattermost/config``
    -  Edit the file by typing:
    -  ``vi config.json``
-   -  replace ``DriverName": "mysql"`` with ``DriverName": "postgres"``
-   -  replace
-      ``"DataSource": "mmuser:mostest@tcp(dockerhost:3306)/mattermost_test?charset=utf8mb4,utf8"``
-      with
-      ``"DataSource": "postgres://mmuser:mmuser_password@10.10.10.1:5432/mattermost?sslmode=disable&connect_timeout=10"``
-   -  Optionally you may continue to edit configuration settings in
+   - If you are using PostgreSQL:
+      1. Set ``DriverName":`` to ``"postgres"``
+      2. Set ``"DataSource:"`` to the following value: ``"postgres://mmuser:mmuser_password@10.10.10.1:5432/mattermost?sslmode=disable&connect_timeout=10"``
+   - If you are using MySQL:
+      1. Set ``DriverName":`` to ``"mysql"``
+      2. Set ``"DataSource":`` to the following value: ``"mmuser:mmuser_password@tcp(10.10.10.1:3306)/mattermost?charset=utf8"``
+   -  You can continue to edit configuration settings in
       ``config.json`` or use the System Console described in a later
       section to finish the configuration.
 
@@ -199,8 +207,8 @@ Set up Mattermost Server
           stop on runlevel [016]
           respawn
           limit nofile 50000 50000
-          chdir /home/ubuntu/mattermost
-          setuid ubuntu
+          chdir /home/mattermost/mattermost
+          setuid mattermost
           exec bin/platform
 
    -  You can manage the process by typing:
