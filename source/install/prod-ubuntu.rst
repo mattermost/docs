@@ -3,7 +3,7 @@
 Production Install on Ubuntu 14.04 LTS
 ======================================
 
-Install Mattermost in production mode on one, two or three machines, using the following steps: 
+Install Mattermost in production mode on one, two or three machines, using the following steps:
 
 - `Install Ubuntu Server (x64) 14.04 LTS <#production-install-on-ubuntu-14-04-lts>`_
 - `Set up Database Server <#set-up-database-server>`_
@@ -19,7 +19,7 @@ Install Ubuntu Server (x64) 14.04 LTS
    servers will be used for the Proxy, Mattermost (must be
    x64), and Database.
 
-   -  **Optional:** You can also use a **1 machine setup** (Proxy, Mattermost and Database on one machine) or a **2 machine setup** (Proxy and Mattermost on one machine, Database on another) depending on your data center standards. 
+   -  **Optional:** You can also use a **1 machine setup** (Proxy, Mattermost and Database on one machine) or a **2 machine setup** (Proxy and Mattermost on one machine, Database on another) depending on your data center standards.
 
 2. Make sure the system is up to date with the most recent security
    patches.
@@ -30,9 +30,14 @@ Install Ubuntu Server (x64) 14.04 LTS
 Set up Database Server
 ----------------------
 
+Install and set up either PostgreSQL 9.3 or MySQL 5.6.
+
+Set up PostreSQL
+~~~~~~~~~~~~~~~~
+
 1.  For the purposes of this guide we will assume this server has an IP
     address of 10.10.10.1
-2.  Install PostgreSQL 9.3+ (or MySQL 5.6+)
+2.  Install PostgreSQL 9.3+
 
     -  ``sudo apt-get install postgresql postgresql-contrib``
 
@@ -80,11 +85,11 @@ Set up Database Server
 12. Reload Postgres database
 
     -  ``sudo /etc/init.d/postgresql reload``
-    
+
     check with netstat command to see postgresql actually running on given ip and port
-    
+
     - ``sudo netstat -anp | grep 5432``
-    
+
     try restarting the postgresql service if reload won't work
 
     - ``sudo service postgresql restart``
@@ -94,6 +99,38 @@ Set up Database Server
 
     -  ``psql --host=10.10.10.1 --dbname=mattermost --username=mmuser --password``
     -  ``mattermost=> \q``
+
+Set up MySQL Database Server
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Install MySQL 5.6.
+
+    - ``sudo apt-get install mysql-server-5.6``
+
+2. Log in to MySQL as root.
+
+    - ``mysql -u root -p``
+
+    When prompted, enter the root password that you created when installing MySQL.
+
+3. Create the Mattermost user.
+
+    - ``mysql> create user 'mmuser'@'%' identified by 'mmuser-password';``
+
+    **Notes**:
+
+    1. Use a password that is more secure than 'mmuser-password'
+    2. The '%' means that mmuser can connect from any machine on the network.   However, it's more secure to use the IP address of the machine that hosts Mattermost. For example, if you install Mattermost on the machine with IP address 10.10.10.2, then use the following command:
+
+    - ``mysql> create user 'mmuser'@'10.10.10.2' identified by 'mmuser-password';``
+
+4. Create the Mattermost database.
+
+    - ``mysql> create database mattermost;``
+
+5. Grant access privileges to the mmuser
+
+    - ``mysql> grant all privileges on mattermost.* to 'mmuser'@'%';``
 
 Set up Mattermost Server
 ------------------------
@@ -109,8 +146,8 @@ Set up Mattermost Server
 4. Download `any version of the Mattermost Server <https://docs.mattermost.com/administration/upgrade.html#version-archive>`_ by typing:
 
    -  ``wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz``
-   -  Where ``vX.X.X`` is typically the latest Mattermost release version, which is currently ``v3.3.0``. 
-   
+   -  Where ``vX.X.X`` is typically the latest Mattermost release version, which is currently ``v3.3.0``.
+
 5. Unzip the Mattermost Server by typing:
 
    -  ``tar -xvzf mattermost-X.X.X-linux-amd64.tar.gz``
