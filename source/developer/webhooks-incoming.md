@@ -112,7 +112,8 @@ To see samples and community contributions, please visit <http://mattermost.org/
 2. Referencing  channels using <#CHANNEL_ID> does not link to the channel  
 3. `<!here>`, `<!everyone>`, and `<!group>` are not supported  
 4. Parameters "mrkdwn", "parse", and "link_names" are not supported (Mattermost always converts markdown and automatically links @mentions)  
-5. Bold formatting as `*bold*` is not supported (must be done as `**bold**`)  
+5. Bold formatting as `*bold*` is not supported (must be done as `**bold**`) 
+6. Messages cannot be sent to the user who created the webhook
 
 ### Troubleshooting
 #### Debugging Incoming Webhooks
