@@ -47,9 +47,16 @@ The one requirement is having a strong internet connection for occassional video
 
 2) Be explicit 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-When you send a message, you take someone's full attention, so get across the relevant information as soon as you can.
 
-Don't say "Are you free to talk?", instead say "Catch up on ulimit issue Customer X is having?"
+Working remote means it may take time before a person reads your message and responds, so make sure you are clear. 
+
+Communicate relevant information in the first message: 
+
+- Avoid "Are you free to talk?", instead use "Catch up on ulimit issue Customer X is having?"
+
+Write unambiguously: 
+
+- Avoid "I think the answer is Yes", instead use "Yes", "No", or "I think the answer is Yes, I'll confirm with Steve and let you know." 
 
 Likewise, we emphasize written communication. Reading is faster than listening and it reaches more people, which means more happens in less time. 
 
