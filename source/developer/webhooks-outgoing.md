@@ -123,3 +123,4 @@ To see samples and community contributions, please visit <http://mattermost.org/
 4. Parameters "mrkdwn", "parse", and "link_names" are not supported (Mattermost always converts markdown and automatically links @mentions)  
 5. Bold formatting as `*bold*` is not supported (must be done as `**bold**`) 
 6. Advanced formatting using [attachments](http://docs.mattermost.com/developer/message-attachments.html) is not yet supported
+7. Webhook responses cannot be sent to the direct message channel of the user who created the webhook
