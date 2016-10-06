@@ -150,9 +150,7 @@ Any issues? Please let us know on our forums at: http://forum.mattermost.org
         2. Run the `Docker Quickstart Terminal` and let it configure `default` machine
         3. Get `default` IP by run `docker-machine ip default` in the terminal
         4. Add the line `<Docker-IP> dockerhost` to `C:\Windows\System32\drivers\etc\hosts` using editor with administrator privilege
-2. Install and setup Node.Js
-    1. Download and install from [https://nodejs.org/](https://nodejs.org/)
-    2. Open `Node.js command prompt` and run `npm config set cache <short-path>` to set npm global cache to shorter path, the default path will likely cause path over 255 characters.
+2. Download and install Node.js from [https://nodejs.org/](https://nodejs.org/)
 3. Download and install Go from [https://golang.org/dl/](https://golang.org/dl/) 
 4. Fork Mattermost on GitHub.com from [https://github.com/mattermost/platform](https://github.com/mattermost/platform), then do the following in Git Bash:
     1. `cd ~/go`  
