@@ -115,7 +115,7 @@ if (something)
 ```javascript
 // Correct
 function getStr(stuff) {
-    return "This is the ${stuff} string";
+    return `This is the ${stuff} string`;
 }
 
 // Incorrect
