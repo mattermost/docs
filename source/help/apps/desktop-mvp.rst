@@ -1,5 +1,7 @@
 **The following awards have been given for significant contributions to the Mattermost Desktop App:**
 
+Mattermost Desktop Top Contributor: **Jonas Schwabe** (`jnugh <https://github.com/jnugh>`_) - v3.4 - September 22, 2016
+
 Mattermost Desktop Top Contributor: **Kolja Lampe** (`Razzeee <https://github.com/Razzeee>`_) - v1.3 - July 18, 2016
 
 Mattermost Desktop Quality Champion : **Michael Bisbjerg** (`LordMike <https://github.com/LordMike>`_) - v1.3 - July 18, 2016
