@@ -49,7 +49,7 @@ Any issues? Please let us know on our forums at: https://forum.mattermost.org/
 
 ### Ubuntu ###
 
-1. Download Docker, follow the instructions at [https://docs.docker.com/installation/ubuntulinux/](https://docs.docker.com/installation/ubuntulinux/)
+1. Download Docker, follow the instructions at [https://docs.docker.com/engine/installation/linux/ubuntulinux/](https://docs.docker.com/engine/installation/linux/ubuntulinux/)
 2. Set up your dockerhost address
 	1. Edit your `/etc/hosts` file to include the following line  
 		- `127.0.0.1 dockerhost`
