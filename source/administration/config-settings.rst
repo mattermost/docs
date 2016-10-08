@@ -1189,6 +1189,8 @@ Notification From Address
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Address displayed on email account used when sending notification emails from Mattermost system.
 
+So you don't miss messages, please make sure to change this value to an email your system administrator receives, example: `admin@yourcompany.com`.
+
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FeedbackEmail": ""`` with string input.                                                                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
