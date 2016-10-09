@@ -21,6 +21,31 @@
             margin: .67em 0
         }
 
+        .landing .landing-search {
+            overflow: hidden;
+            padding:20px;
+        }
+
+        .landing .landing-search input[type="text"] {
+            width: 640px;
+            border-style: none;
+            padding: 8px 12px;
+            font-size: 16px;
+            box-shadow: .5px 2px 4px 0 #bdbdbd;
+        }
+
+        @media screen and (max-width: 728px) {
+            .landing .landing-search input[type="text"] {
+                width: 420px;
+            }
+        }
+
+        @media screen and (max-width: 508px) {
+            .landing .landing-search {
+                display: none;
+            }
+        }
+
         .tiles-flex {
             display: -webkit-box;
             display: -ms-flexbox;
@@ -141,6 +166,13 @@
 
     <div class="landing">
         <h1 class="landing-title">Mattermost Documentation</h1>
+        <div class="landing-search" role="search">
+            <form id="rtd-search-form" class="wy-form" action="{{ pathto('search') }}" method="get">
+                <input type="text" name="q" placeholder="What can we help you find?" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+        </div>
         <div class="tiles-flex">
             <a class="tile" href="overview/index.html">
                 <h2 class="tile-title">Overview</h2>
