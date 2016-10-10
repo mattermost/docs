@@ -142,17 +142,17 @@ Any issues? Please let us know on our forums at: http://forum.mattermost.org
 ### Windows ###
 
 1. Install and setup Docker
-    1. If you are using Win10 Pro/Ent, you might want to use Docker for Windows
+    1. If you are using Windows 10 Pro or Enterprise, you may use Docker for Windows
         1. Install [Docker for Windows](https://docs.docker.com/docker-for-windows/)
-        2. Add the line `127.0.0.1 dockerhost` to `C:\Windows\System32\drivers\etc\hosts` using editor with administrator privilege
-    2. For other version or you prefer using VirtualBox, use Docker Toolbox
+        2. Add the line `127.0.0.1 dockerhost` to `C:\Windows\System32\drivers\etc\hosts` using a text editor with administrator privileges
+    2. For other Windows versions, or if you prefer to use [VirtualBox](https://www.virtualbox.org/wiki/Downloads), use Docker Toolbox
         1. Install [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
-        2. Run the `Docker Quickstart Terminal` and let it configure `default` machine
-        3. Get `default` IP by run `docker-machine ip default` in the terminal
-        4. Add the line `<Docker-IP> dockerhost` to `C:\Windows\System32\drivers\etc\hosts` using editor with administrator privilege
+        2. Run the `Docker Quickstart Terminal` and let it configure the `default` machine
+        3. Run `docker-machine ip default` in the terminal to get `default` IP
+        4. Add the line `<Docker-IP> dockerhost` to `C:\Windows\System32\drivers\etc\hosts` using a text editor with administrator privileges
 2. Download and install Node.js from [https://nodejs.org/](https://nodejs.org/)
 3. Download and install Go from [https://golang.org/dl/](https://golang.org/dl/) 
-4. Fork Mattermost on GitHub.com from [https://github.com/mattermost/platform](https://github.com/mattermost/platform), then do the following in Git Bash:
+4. Fork Mattermost on GitHub.com from [https://github.com/mattermost/platform](https://github.com/mattermost/platform), then:
     1. `cd ~/go`  
     2. `mkdir -p src/github.com/mattermost`  
     3. `cd src/github.com/mattermost`  
@@ -161,9 +161,8 @@ Any issues? Please let us know on our forums at: http://forum.mattermost.org
     6. `git config core.eol lf`
     7. `git config core.autocrlf input`
     8. `git reset --hard HEAD`
-5. Install and setup babun
-    1. Download and install from [http://babun.github.io/](http://babun.github.io/)
-6. Setup the following environment variable (change the path accordingly):
+5. Install and setup babun from [http://babun.github.io/](http://babun.github.io/)
+6. Setup the following environment variables (change the path accordingly):
       
     ```
     export PATH="/c/Program Files/go/bin":$PATH
@@ -183,12 +182,14 @@ Any issues? Please let us know on our forums at: http://forum.mattermost.org
 	- `go run mattermost.go  -create_user -team_name="name" -email="user@example.com" -password="mypassword"`
 	- `go run mattermost.go  -assign_role -team_name="name" -email="user@example.com" -role="system_admin"`
 
-10. Now you can log into Mattermost as the user you created in step 9
+10. You can now log in to Mattermost as the user you created in step 9
 11. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
     - Note: You can skip the platform you are on because you have that target installed by default.
     - `env GOOS=windows GOARCH=amd64 go install std`
     - `env GOOS=darwin GOARCH=amd64 go install std`
     - `env GOOS=linux GOARCH=amd64 go install std`
+
+Any issues? Please let us know on our forums at: http://forum.mattermost.org
 
 ## Developing Using PostgreSQL
 
