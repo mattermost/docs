@@ -3,11 +3,11 @@
 Production Docker Deployment 
 ==============================
 
-This guide walks through deploying a multi-node production configuration using `Docker Compose <https://docs.docker.com/compose/>`_. Experience setting up production Docker environments using `Docker Compose <https://docs.docker.com/compose/>`_ is recommended. 
+Deploy a multi-node production configuration using `Docker Compose <https://docs.docker.com/compose/>`_. Docker Compose experience recommended. 
 
-If you're looking for a quick "Preview Mode" setup of Mattermost on a local machine using Docker on a single node, please see the guide for `Local Machine Setup using Docker <http://docs.mattermost.com/install/docker-local-machine.html>`_. 
+For a single-node preview of Mattermost (without email) see `Local Machine Setup using Docker <http://docs.mattermost.com/install/docker-local-machine.html>`_. 
 
-Production Docker on Ubuntu 
+Production Docker Setup on Ubuntu 
 ----------------------------------------------------
 
 1. **Setup Docker Compose** using `the Ubuntu online guide <https://docs.docker.com/installation/ubuntulinux/>`_ or these instructions: 
@@ -34,12 +34,12 @@ Production Docker on Ubuntu
 
 4. **Setup Email** by following the `SMTP email setup guide <http://docs.mattermost.com/install/smtp-email-setup.html>`_ 
 
-5. Under **System Console** > **Edition and License** upload your `license file received in email with purchase. <https://about.mattermost.com/pricing/>`_
+5. (Optional) Under **System Console** > **Edition and License** upload your `trial license <https://about.mattermost.com/trial/>`_ or `subscription license file <https://about.mattermost.com/pricing/>`_ received via email.
 
 6. **Configure your server** based on `configuration settings documentation <http://docs.mattermost.com/administration/config-settings.html>`_
 
-Production Docker on Mac OS X 
-------------------------------
+Production Docker Setup on Mac OS X 
+------------------------------------------------------------
 
 You can run a test deployment on Mac OS X by `installing Docker Compose using the online guide <http://docs.docker.com/installation/mac/>`_ then following the above instructions. 
 
