@@ -38,9 +38,18 @@ Production Docker Setup on Ubuntu
 
 6. **Configure your server** based on `configuration settings documentation <http://docs.mattermost.com/administration/config-settings.html>`_
 
+Additional Guides: 
+
+- **Start, stop and remove containers** using `management instructions. <https://github.com/mattermost/mattermost-docker/tree/enterprise#startingstopping>`_
+ 
+- **Setup Database Backup** following the `database backup instructions. <https://github.com/mattermost/mattermost-docker/tree/enterprise#database-backup>`_
+
 Production Docker Setup on Mac OS X 
 ------------------------------------------------------------
 
 You can run a test deployment on Mac OS X by `installing Docker Compose using the online guide <http://docs.docker.com/installation/mac/>`_ then following the above instructions. 
 
 **Other options:** To install a feature-equivalent version of Mattermost that does not upgrade to enterprise features using a license key, Mattermost Team Edition, repeat steps above excluding ``-b enterprise`` from ``git clone`` command.
+
+
+
