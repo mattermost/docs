@@ -43,6 +43,4 @@ Production Docker on Mac OS X
 
 You can run a test deployment on Mac OS X by `installing Docker Compose using the online guide <http://docs.docker.com/installation/mac/>`_ then following the above instructions. 
 
-**Other options:**
-
-To install a feature-equivalent version of Mattermost that does not upgrade to enterprise features using a license key, Mattermost Team Edition, please repeat the steps above where the ``git clone`` command does not include the ``-b enterprise`` flag.
+**Other options:** To install a feature-equivalent version of Mattermost that does not upgrade to enterprise features using a license key, Mattermost Team Edition, please repeat the steps above where the ``git clone`` command does not include the ``-b enterprise`` flag.
