@@ -11,11 +11,17 @@ Release date:
 
 ### Improvements
 
+#### User Interface
+- Channels on the left hand side now sorted numerically, alphabetically, and based on locale
+- Clicking on a profile picture in center channel or right hand sidebar brings up profile popover
+- Text (.txt) files now show a preview in the image previewer
 
 #### Enterprise Edition: 
 
 
 ### Bug Fixes
+- Correct login method now shown in System Console user lists
+- Channel switcher (`CTRL + K`) no longer throws an error when switching to a user outside of your current team
 
 ### Compatibility  
 Changes from v3.4 to v3.5:
