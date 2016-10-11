@@ -171,7 +171,7 @@ Set up Mattermost Server
 
           [Service]
           Type=simple
-          WorkingDirectory=/opt/mattermost/bin
+          WorkingDirectory=/opt/mattermost
           User=mattermost
           ExecStart=/opt/mattermost/bin/platform
           PIDFile=/var/spool/mattermost/pid/master.pid
