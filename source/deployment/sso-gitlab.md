@@ -26,7 +26,7 @@ Follow these steps to configure Mattermost to use GitLab as a single-sign-on (SS
 
 6. Restart your Mattermost server to see the changes take effect.
 
-Notes: 
+#### Notes: 
 - Only the default GitLab SSO is officially supported. 
    - It may be possible to connect to use GitLab SSO in some cases with AD, LDAP, SAML or MFA add-ons, but because of the special logic required they're not officially supported and are known not to work on some experiences.
    - If having official AD, LDAP, SAML or MFA support is critical to your enterprise, please consider purchasing [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/). Given all the features of Mattermost, it's quite affordable. 
