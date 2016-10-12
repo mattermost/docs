@@ -58,22 +58,41 @@ We’re using `BEM methodology <https://en.bem.info/method/>`_  and would advise
 
 -----
 
-Minimum Display Requirements 
+Minimum Display Requirements
 ****************************
 
-Desktop 
+Desktop
 -------
 
 - **Minimum screen resolution:** 1280 x 800
 
-- **Color Depth:** 16.7M colors 
+- **Color Depth:** 16.7M colors
 
 -----
 
-Design Guidelines 
+Design Guidelines
 *****************
 
-Notifications: Header 
+|
+Button States
+---------------------------
+
+All buttons should have a visually distinct appearence for the following states (if applicable):
+
+- default
+- on_hover / on_hover (w tooltip)
+- active
+- disabled (greyed out or hidden)
+
+**Example:**
+
+    ..  image:: ../images/buttonDesign.png
+        :alt: Button design
+
+|
+---------------------------
+
+Notifications: Header
 ---------------------
 
 Appears as an additional header at the top of the UI. May include an “x” button to dismiss. Limited to 60 characters. May include a time-out. Header notification should appear over the rest of the UI instead of pushing the UI down. Multiple headers can appear, with the earliest notification at the top and more recent notifications appearing underneath.
@@ -218,7 +237,7 @@ Input: Hints
                 :width: 500 px
 
         **Example 2:**
-        
+
             If a user enters invalid uppercase letters and spaces for a URL, show an error message and also offer a correction, substituting dashes for spaces and lower case letters for uppercase letters, so the user can resubmit immediately with valid input.
 
 -----
@@ -226,12 +245,12 @@ Input: Hints
 Input: Fields
 -------------
 
-Users should enter information into fields without much thinking. ENTER button on last 
-input field should trigger default dialog button. When last input field in a series has 
+Users should enter information into fields without much thinking. ENTER button on last
+input field should trigger default dialog button. When last input field in a series has
 focus and user hits ENTER it should trigger the default button in the dialog.
 
 **Example 1:**
-    
+
     If focus is on the last input field in dialog (“Miller”), hitting ENTER triggers the default dialog button (“Send Invitations”)
 
     ..  image:: ../images/inputField1.png
@@ -239,8 +258,8 @@ focus and user hits ENTER it should trigger the default button in the dialog.
         :width: 500 px
 
 **Example 2:**
-    
-    Having radio buttons for input options.  
+
+    Having radio buttons for input options.
     **NOTE**: We should use radio buttons/checkboxes for input options rather than custom bootstrap on/off switches.
 
     ..  image:: ../images/inputField2.png
@@ -383,7 +402,7 @@ Feedback: Error Messages
 ------------------------
 
 On occasion, Mattermost users may encounter a problem that prevents them or the Mattermost system from successfully completing a task. The unexpected user behaviour or system response should be communicated to the user through an error message, and should follow the design principles of forgiving and obvious.
- 
+
 Error messages should:
 
 - State the encountered problem with the component in the title (e.g. Team URL Not Found).
@@ -484,6 +503,6 @@ User Experience Checklist
 
     ..  image:: ../images/fx-guidelines-read-outloud.png
 
-**5\) Does the UI work with a dark theme?** 
+**5\) Does the UI work with a dark theme?**
 
-    Sometimes bugs are found with theme colors, so it's important to test on both light and dark themes. 
+    Sometimes bugs are found with theme colors, so it's important to test on both light and dark themes.
