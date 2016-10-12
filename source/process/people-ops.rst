@@ -1,5 +1,5 @@
 ============================================================
-WIP: People Ops
+People Ops
 ============================================================
 
 This page summarizes logistics for working at Mattermost. 
@@ -25,12 +25,12 @@ Regular Compensation
 
 1. Employees of our US entity, Mattermost, Inc., receive salary by semi-monthly direct deposit via TriNet. Pay slips are available via `TriNet's portal <https://www.hrpassport.com/>`_.
 
-2. Employees of our Canadian co-employer receive salary by direct deposit semi-monthly via ADP. (XXXX website link?) 
+2. Employees of our Canadian co-employer receive salary by direct deposit semi-monthly via ADP. 
 
 3. Contractors to Mattermost, Inc. should email invoices monthly with:: 
 
-    TO:       ap@mattermost.com 
-    CC:       [YOUR_MANAGER_EMAIL]
+    TO:       [Email specified in "Mattermost Invoice Instructions" emailed with your on-boarding instructions]
+    CC:       [Email of your manager]
     SUBJECT:  [Please include MONTH YEAR and YOUR NAME or YOUR COMPANY NAME]
 
   - For 'fixed fee' contracts, it is fine to send invoice before the time period covered. Example: An invoice for services April 1-30 can be sent on April 25.
