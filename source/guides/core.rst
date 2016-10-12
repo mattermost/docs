@@ -9,4 +9,11 @@ This handbook is a guide to working at Mattermost. Please consider it--along wit
 
    /process/overview*
    /process/release-process*
-   /process/*
+   /process/accepting-pull-request*
+   /process/community-systems*
+   /process/documentation-guidelines*
+   /process/security*
+   /process/handbook*
+   /process/working-at-mattermost*
+   /process/training*
+   
