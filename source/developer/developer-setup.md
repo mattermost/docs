@@ -151,3 +151,21 @@ to
     "DriverName": "postgres",
     "DataSource": "postgres://mmuser:mostest@dockerhost:5432?sslmode=disable&connect_timeout=10",
 ```
+
+## Development Flow 
+
+A few tips to develop efficiently: 
+
+### Making quick user interface changes 
+
+Use `make run` to run locally. This starts a watcher process and you can change JavaScript files without restarting the server. Just wait a few seconds, refresh the page and you should see changes. 
+
+Connect to your server using `http://localhost:8065`
+
+### Debugging JavaScript 
+
+Use `make run-fullmap` to produce JavaScript that you can look at in a debugger. 
+
+### Restarting the server quickly 
+
+After `make run` you can restart the server while leaving the JavaScript running using `make stop-server` then `make run-server`. This usually takes less than 10 seconds. 
