@@ -16,4 +16,4 @@ This handbook is a guide to working at Mattermost. Please consider it--along wit
    /process/handbook*
    /process/working-at-mattermost*
    /process/training*
-   
+   /process/people-ops*
