@@ -1,6 +1,8 @@
 Developer Machine Setup
 -----------------------------
 
+If you run into any issues getting your environment set up, please check the Troubleshooting section at the bottom for common solutions.
+
 ### Mac OS X ###
 
 1. Download and set up the latest version of VirtualBox. [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
@@ -34,12 +36,10 @@ Developer Machine Setup
 	3. `cd src/github.com/mattermost`  
 	4. `git clone https://github.com/<username>/platform.git`  
 	5. `cd platform`
-
-6. Run unit tests on Mattermost using `make test` to confirm the installation succeeded
-7. If the tests passed, you run `make clean-docker` to clean the database, then `make run` to start Mattermost
-8. Browse to `http://localhost:8065` to create an account. The first account created has System Administrator privileges.
-9. You can stop Mattermost using `make stop`
-10. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
+6. Run `make run` to start Mattermost
+7. Browse to `http://localhost:8065` to create an account. The first account created has System Administrator privileges.
+8. You can stop Mattermost using `make stop`
+9. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
     - Note: You can skip the platform you are on because you have that target installed by default.
     - `env GOOS=windows GOARCH=amd64 go install std`
     - `env GOOS=darwin GOARCH=amd64 go install std`
@@ -76,11 +76,10 @@ Any issues? Please let us know on our forums at: https://forum.mattermost.org/
 	3. `cd src/github.com/mattermost`  
 	4. `git clone https://github.com/<username>/platform.git`  
 	5. `cd platform`
-8. Run unit tests on Mattermost using `make test` to confirm the installation succeeded
-9. If the tests passed, you run `make clean-docker` to clean the database, then `make run` to start Mattermost
-10. Browse to `http://localhost:8065` to create an account. The first account created has System Administrator privileges.
-11. You can stop Mattermost using `make stop`
-12. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
+8. Run `make run` to start Mattermost
+9. Browse to `http://localhost:8065` to create an account. The first account created has System Administrator privileges.
+10. You can stop Mattermost using `make stop`
+11. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
     - Note: You can skip the platform you are on because you have that target installed by default.
     - `env GOOS=windows GOARCH=amd64 go install std`
     - `env GOOS=darwin GOARCH=amd64 go install std`
@@ -127,11 +126,10 @@ Any issues? Please let us know on our forums at: http://forum.mattermost.org
 	3. `cd src/github.com/mattermost`  
 	4. `git clone https://github.com/<username>/platform.git`  
 	5. `cd platform`
-7. Run unit tests on Mattermost using `make test` to confirm the installation succeeded
-8. If the tests passed, you run `make clean-docker` to clean the database, then `make run` to start Mattermost
-9. Browse to `http://localhost:8065` to create an account. The first account created has System Administrator privileges.
-10. You can stop Mattermost using `make stop`
-11. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
+7. Run `make run` to start Mattermost
+8. Browse to `http://localhost:8065` to create an account. The first account created has System Administrator privileges.
+9. You can stop Mattermost using `make stop`
+10. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
     - Note: You can skip the platform you are on because you have that target installed by default.
     - `env GOOS=windows GOARCH=amd64 go install std`
     - `env GOOS=darwin GOARCH=amd64 go install std`
@@ -174,16 +172,9 @@ Any issues? Please let us know on our forums at: http://forum.mattermost.org
     eval $(docker-machine env default) #skip this line if you are using Docker for Windows
     ```
 
-7. Run unit tests on Mattermost using `make test` to make sure the installation was successful
-8. If the tests passed, you can run `make clean-docker` to clean the database, then `make run` to start Mattermost
-9. You need to create a team and admin account. You can choose a team name, email and password in third shell:
-	- Note: Make sure your team name does not contain any spaces
-	- `go run mattermost.go  -create_team -team_name="name" -email="user@example.com"`
-	- `go run mattermost.go  -create_user -team_name="name" -email="user@example.com" -password="mypassword"`
-	- `go run mattermost.go  -assign_role -team_name="name" -email="user@example.com" -role="system_admin"`
-
-10. You can now log in to Mattermost as the user you created in step 9
-11. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
+7. Run `make run` to start Mattermost
+8. You can now log in to Mattermost as the user you created in step 9
+9. If you want to setup for cross compilation (required for the `make package` and dependant targets) run:
     - Note: You can skip the platform you are on because you have that target installed by default.
     - `env GOOS=windows GOARCH=amd64 go install std`
     - `env GOOS=darwin GOARCH=amd64 go install std`
@@ -191,17 +182,46 @@ Any issues? Please let us know on our forums at: http://forum.mattermost.org
 
 Any issues? Please let us know on our forums at: http://forum.mattermost.org
 
-## Developing Using PostgreSQL
+## Troubleshooting
 
-By default, development is done using a MySQL database. To switch your developement instance to use a PostgreSQL database, update the following settings in the `SqlSettings` section of your `config/config.json`
+#### I get the following error when running `make run` on Mac OS X: "Cannot connect ot the Docker daemon"
+
+If you have Docker Tools installed (as opposed to Docker for Mac), you need make sure `docker-machine` is running with the following:
 ```
-    "DriverName": "mysql",
-    "DataSource": "mmuser:mostest@tcp(dockerhost:3306)/mattermost_test?charset=utf8mb4,utf8",
+docker-machine start dev
 ```
-to
+
+#### I get the following error when running `make run`: "Failed to ping db err:dial tcp 192.168.99.100:3306: getsockopt: connection refused"
+
+It appears that your MySQL database isn't running. If you run `docker ps`, you should see a line like
 ```
-    "DriverName": "postgres",
-    "DataSource": "postgres://mmuser:mostest@dockerhost:5432?sslmode=disable&connect_timeout=10",
+ecb17c10973d    mysql:5.7  "/entrypoint.sh mysql"   2 weeks ago    Up 24 hours  0.0.0.0:3306->3306/tcp     mattermost-mysql
+```
+If not, running `make clean-docker` will remove all existing docker containers so that they'll be recreated next time you call `make run`.
+
+#### I get the following error when running `make run`: "Error starting server, err:listen tcp :8065: bind: address already in use"
+
+There's likely another Mattermost instance already running. You can use `make stop` to stop it before running `make run` again.
+
+If there isn't another copy of Mattermost running and you need to change the port that Mattermost is running on, you can do so by changing the `ListenAddress` setting in the `ServiceSettings` section of `config/config.json`.
+
+#### I don't see any error messages, but I can't access `http://localhost:8065`
+
+It's possible that the server reported an error, but it was missed because of all of the output from the Javascript compiler. Try running `make run-server` by itself to see its output. If you still don't see any error messages, continue to the next section.
+
+#### I don't see anything logged to the console when Mattermost is running
+
+You can enable console logging in the `LogSettings` section of your `config/config.json` by setting `EnableConsole` to `true`.
+
+#### I can't log into Mattermost because I don't have an account
+
+You can create an account using the following command:
+```
+go run mattermost.go -create_user -email="user@example.com" -password="mypassword"
+```
+Optionally, you can make that account a System Admin with the following command:
+```
+go run mattermost.go -assign_role -email="user@example.com" -role="system_admin system_user"
 ```
 
 ## Development Flow 
@@ -220,4 +240,17 @@ Use `make run-fullmap` to produce JavaScript that you can look at in a debugger.
 
 ### Restarting the server quickly 
 
-After `make run` you can restart the server while leaving the JavaScript running using `make stop-server` then `make run-server`. This usually takes less than 10 seconds. 
+After `make run` you can restart the server while leaving the JavaScript running using `make restart-server`. This usually takes less than 10 seconds. 
+
+### Running only specific unit tests
+
+Since running every single unit test takes a lot of time while making changes, you can run a subset of the serverside unit tests by using the following:
+```
+go test -v -run='<test name or regex>' ./<package containing test>
+```
+For example, if you wanted to run `TestPostUpdate` in `api/post_test.go`, you would run the following:
+```
+go test -v -run='TestPostUpdate' ./api
+```
+
+Alternatively, if you're writing client-side code, you can run only the client-side unit tests by using `make test-client`.
