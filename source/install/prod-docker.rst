@@ -25,7 +25,7 @@ Production Docker Setup on Ubuntu
 
    .. code:: bash
 
-       git clone https://github.com/mattermost/mattermost-docker.git -b enterprise
+       git clone https://github.com/mattermost/mattermost-docker.git -b team-and-enterprise
        cd mattermost-docker
        docker-compose build
        docker-compose up -d
