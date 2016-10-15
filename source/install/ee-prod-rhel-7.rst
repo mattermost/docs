@@ -40,8 +40,8 @@ Set up Database Server
     -  ``sudo dnf install http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/pgdg-redhat94-9.4-1.noarch.rpm``
     -  ``sudo dnf install postgresql94-server postgresql94-contrib``
     -  ``sudo /usr/pgsql-9.4/bin/postgresql94-setup initdb``
-    -  ``sudo systemctl enable postgresql-9.4.service``
-    -  ``sudo systemctl start postgresql-9.4.service``
+    -  ``sudo systemctl enable postgresql.service``
+    -  ``sudo systemctl start postgresql.service``
 
 3.  PostgreSQL created a user account called ``postgres``. You will need
     to log into that account with:
