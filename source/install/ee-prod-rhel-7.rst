@@ -3,7 +3,7 @@
 Production Enterprise Install on RHEL 7.1+
 ===============================
 
-Install Mattermost Enterprise Edition in production mode on one, two or three machines, using the following steps: 
+Install Mattermost Enterprise Edition in production mode on one, two or three machines, using the following steps:
 
 - `Install Red Hat Enterprise Linux (x64) 7.1 <#install-red-hat-enterprise-linux-x64-71>`_
 - `Set up Database Server <#set-up-database-server>`_
@@ -19,13 +19,13 @@ Install Red Hat Enterprise Linux (x64) 7.1+
    be used for the Proxy, Mattermost (this must be x64 to use
    pre-built binaries), and Database.
 
-   -  **Optional:** You can also use a **1 machine setup** (Proxy, Mattermost and Database on one machine) or a **2 machine setup** (Proxy and Mattermost on one machine, Database on another) depending on your data center standards. 
+   -  **Optional:** You can also use a **1 machine setup** (Proxy, Mattermost and Database on one machine) or a **2 machine setup** (Proxy and Mattermost on one machine, Database on another) depending on your data center standards.
 
 2. Make sure the system is up to date with the most recent security
    patches.
 
-   -  ``sudo yum update``
-   -  ``sudo yum upgrade``
+   -  ``sudo dnf update``
+   -  ``sudo dnf upgrade``
 
 Set up Database Server
 ----------------------
@@ -99,13 +99,13 @@ Set up Mattermost Server
 
 1. For the purposes of this guide we will assume this server has an IP
    address of ``10.10.10.2``
-   
+
    -  **Optional:** if installing on the same machine substitute ``10.10.10.2`` with ``127.0.0.1``
-       
+
 2. Download `any version of Mattermost Enterprise Edition <https://docs.mattermost.com/administration/upgrade.html#version-archive>`_ by typing:
 
    -  ``wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz``
-   -  Where ``vX.X.X`` is typically the latest Mattermost release version, which is currently ``v3.3.0``. 
+   -  Where ``vX.X.X`` is typically the latest Mattermost release version, which is currently ``v3.3.0``.
 3. Install Mattermost under ``/opt``
 
    -  Unzip the Mattermost Server by typing:
@@ -191,9 +191,9 @@ Set up NGINX Server
 
 1. For the purposes of this guide we will assume this server has an IP
    address of ``10.10.10.3``
-   
+
    -  **Optional:** if installing on the same machine substitute ``10.10.10.3`` with ``127.0.0.1``
-   
+
 2. We use NGINX for proxying request to the Mattermost Server. The main
    benefits are:
 
