@@ -29,6 +29,10 @@ Install Red Hat Enterprise Linux (x64) 7.1+
 Set up Database Server
 ----------------------
 
+**NOTE**: following instructions are for the case where mattermost connect to postgresql
+via the TCP/IP socket. For a connection through an Unix-domain socket, specific instructions
+will be added when needed.
+
 1.  For the purposes of this guide we will assume this server has an IP
     address of ``10.10.10.1``
 
@@ -54,6 +58,8 @@ Set up Database Server
 5.  Create the Mattermost database by typing:
 
     -  ``postgres=# CREATE DATABASE mattermost;``
+
+
 
 6.  Create the Mattermost user by typing:
 
