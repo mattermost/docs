@@ -31,7 +31,8 @@ Set up Database Server
 
 **NOTE**: following instructions are for the case where mattermost connect to postgresql
 via the TCP/IP socket. For a connection through an Unix-domain socket, specific instructions
-will be added when needed.
+will be added when needed. When Mattermost and postgresql are on the same machine,
+it is recommended to use unix socket mechanism as it is more secure and faster.
 
 1.  For the purposes of this guide we will assume this server has an IP
     address of ``10.10.10.1``
@@ -58,8 +59,6 @@ will be added when needed.
 5.  Create the Mattermost database by typing:
 
     -  ``postgres=# CREATE DATABASE mattermost;``
-
-
 
 6.  Create the Mattermost user by typing:
 
@@ -89,6 +88,8 @@ will be added when needed.
     -  Add the following line to the ``IPv4 local connections``:
     -  ``host all all 10.10.10.2/32 md5``
 
+    > In case of unix socket, add the following line instead:
+    local   mattermost_db       mattermost              peer       map=mattermap
 12. Reload Postgres database:
 
     -  ``sudo systemctl reload postgresql-9.4.service``
