@@ -79,15 +79,14 @@ section.
 
     -  ``exit``
 
-10. Allow Postgres to listen on all assigned IP Addresses:
+10. Alter ``/var/lib/pgsql/9.4/data/postgresql.conf`` to allow Postgres to listen 
+on all assigned IP Addresses:
 
-    -  ``sudo vi /var/lib/pgsql/9.4/data/postgresql.conf``
     -  Uncomment ``listen_addresses`` and change ``localhost`` to ``\*``
 
-11. Alter ``pg_hba.conf`` to allow the Mattermost Server to talk to the
+11. Alter ``/var/lib/pgsql/9.4/data/pg_hba.conf`` to allow the Mattermost Server to talk to the
     Postgres database:
 
-    -  ``sudo vi /var/lib/pgsql/9.4/data/pg_hba.conf``
     -  Add the following line to the ``IPv4 local connections``:
     -  ``host all all 10.10.10.2/32 md5``
 
