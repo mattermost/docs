@@ -79,7 +79,7 @@ section.
 
     -  ``exit``
 
-10. Alter ``/var/lib/pgsql/9.4/data/postgresql.conf`` to allow Postgres to listen 
+10. Alter ``/var/lib/pgsql/9.4/data/postgresql.conf`` to allow Postgres to listen
 on all assigned IP Addresses:
 
     -  Uncomment ``listen_addresses`` and change ``localhost`` to ``\*``
@@ -167,8 +167,9 @@ Set up Mattermost Server
 
    -  ``sudo touch /etc/systemd/system/mattermost.service``
    -  ``sudo vi /etc/systemd/system/mattermost.service``
-   -  Copy the following lines into
-      ``/etc/systemd/system/mattermost.service``
+   -  Copy the following lines into``/etc/systemd/system/mattermost.service``
+
+
 
       ::
 
@@ -207,9 +208,17 @@ Only changes from the original setup described above will be mentioned.
   ``local   mattermost_db       mattermost          peer       map=mattermap``
 
 - Append the following line to ``/var/lib/pgsql/9.4/data/pg_ident.conf``:
+
   ``mattermap      mattermost              mattermost``
 
   It maps unix user *mattermost* to psql user *mattermost*.
+
+- Test the connection::
+
+    $ su mattermost
+    $ psql --dbname=mattermost_db --username=mattermost
+    mattermost_db=> \q
+
 
 Set up NGINX Server
 -------------------
