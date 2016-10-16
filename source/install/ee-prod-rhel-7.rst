@@ -29,10 +29,13 @@ Install Red Hat Enterprise Linux (x64) 7.1+
 Set up Database Server
 ----------------------
 
-**NOTE**: following instructions are for the case where mattermost connect to postgresql
-via the TCP/IP socket. For a connection through an Unix-domain socket, specific instructions
-will be added when needed. When Mattermost and postgresql are on the same machine,
-it is recommended to use unix socket mechanism as it is more secure and faster.
+**NOTE**: When Mattermost and postgresql are on the same machine,
+it is recommended to use unix socket mechanism for the connection between Mattermost and Postgresql,
+as it is more secure and faster.
+Below instructions are for a connection via the TCP/IP socket.
+
+Settings specific to the unix socket connection are detailed in the *Unix-domain socket connection*
+section.
 
 1.  For the purposes of this guide we will assume this server has an IP
     address of ``10.10.10.1``
@@ -88,8 +91,6 @@ it is recommended to use unix socket mechanism as it is more secure and faster.
     -  Add the following line to the ``IPv4 local connections``:
     -  ``host all all 10.10.10.2/32 md5``
 
-    > In case of unix socket, add the following line instead:
-    local   mattermost_db       mattermost              peer       map=mattermap
 12. Reload Postgres database:
 
     -  ``sudo systemctl reload postgresql-9.4.service``
@@ -192,6 +193,24 @@ Set up Mattermost Server
    * Start Mattermost service with``\ sudo systemctl start mattermost.service``
    * ``sudo chkconfig mattermost on``
    * Start server on reboot ``sudo systemctl enable mattermost.service``
+
+Unix-domain socket connection
+-----------------------------
+
+Below are the instructions specific to a connection between Postgresql and Mattermost via an Unix-domain socket.
+Only changes from the original setup described above will be mentioned.
+
+- Database server [5]: name the database *mattermost_db*
+
+- Database server [6]: name the user *mattermost*
+
+- Database server [11]: add the following line instead:
+  ``local   mattermost_db       mattermost          peer       map=mattermap``
+
+- Append the following line to ``/var/lib/pgsql/9.4/data/pg_ident.conf``:
+  ``mattermap      mattermost              mattermost``
+
+  It maps unix user *mattermost* to psql user *mattermost*.
 
 Set up NGINX Server
 -------------------
