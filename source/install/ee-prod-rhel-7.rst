@@ -93,7 +93,7 @@ section.
 
 12. Reload Postgres database:
 
-    -  ``sudo systemctl reload postgresql-9.4.service``
+    -  ``sudo systemctl reload postgresql.service``
 
 13. Attempt to connect with the new created user to verify everything
     looks good:
