@@ -200,11 +200,13 @@ Unix-domain socket connection
 Below are the instructions specific to a connection between Postgresql and Mattermost via an Unix-domain socket.
 Only changes from the original setup described above will be mentioned.
 
-- Database server [5]: name the database *mattermost_db*
+**Set up database server**
 
-- Database server [6]: name the user *mattermost*
+- [5]: name the database *mattermost_db*
 
-- Database server [11]: add the following line instead:
+- [6]: name the user *mattermost*
+
+- [11]: add the following line instead:
   ``local   mattermost_db       mattermost          peer       map=mattermap``
 
 - Append the following line to ``/var/lib/pgsql/9.4/data/pg_ident.conf``:
@@ -213,12 +215,21 @@ Only changes from the original setup described above will be mentioned.
 
   It maps unix user *mattermost* to psql user *mattermost*.
 
-- Test the connection::
+- [13]: Verify everything looks good::
 
     $ su mattermost
     $ psql --dbname=mattermost_db --username=mattermost
     mattermost_db=> \q
 
+**Set up Mattermost server**
+
+[6]: Edit ``/opt/mattermost/config/config.json``
+
+- replace ``DriverName": "mysql"`` with ``DriverName": "postgres"``
+- replace  ``"DataSource": "mmuser:mostest@tcp(dockerhost:3306)/mattermost_test?charset=utf8mb4,utf8"``
+  with
+
+  ``"DataSource": "postgres:///mattermost_db?host=/var/run/postgresql"``
 
 Set up NGINX Server
 -------------------
