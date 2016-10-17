@@ -12,7 +12,7 @@ Please see `Mattermost Deployment Overview <http://docs.mattermost.com/deploymen
 
 .. figure:: ../images/network.PNG
    :alt: image
-`View Mattermost Network Diagram <https://github.com/mattermost/docs/blob/broken-links/source/images/network.PNG>`__
+`View Mattermost Network Diagram <https://github.com/mattermost/docs/blob/master/source/images/network.PNG>`__
 
 Software Requirements
 ---------------------
