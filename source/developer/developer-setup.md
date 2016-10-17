@@ -5,7 +5,7 @@ Developer Machine Setup
 
 1. Download and set up the latest version of VirtualBox. [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
 2. Download and set up Docker Toolbox
-	1. Follow the instructions at [http://docs.docker.com/installation/mac/](http://docs.docker.com/installation/mac/)
+	1. Follow the instructions at [https://docs.docker.com/toolbox/toolbox_install_mac/](https://docs.docker.com/toolbox/toolbox_install_mac/)
 	2. Start a new docker host  
 		`docker-machine create -d virtualbox dev`
 	2. Get the IP address of your docker host  
