@@ -30,7 +30,7 @@ Before submitting a pull request (PR), check that:
 2. Your change has an [APR Ticket](http://docs.mattermost.com/process/accepting-pull-request.html).
 3. Your code follows the [Mattermost Style Guide](http://docs.mattermost.com/developer/style-guide.html).  
 4. Unit tests are included for new server side functionality. 
-5. Strings in user interface are included in localization files.
+5. Strings in user interface are included in [.../i18n/en.json](https://github.com/mattermost/platform/blob/master/i18n/en.json) and [.../webapp/i18n/en.json](https://github.com/mattermost/platform/tree/master/webapp/i18n/en.json) localization files. Files for other languages will automatically be updated through the [Mattermost Translation Server](http://translate.mattermost.com) and do not need to be included in the pull request.
 6. Change meets UX Guidelines of [Fast, Obvious, Forgiving](http://www.mattermost.org/design-principles/).
 7. If change requires user to understand a new concept or make a decision, PR for help documentation is submitted to [mattermost/docs](https://github.com/mattermost/docs).
 8. Change is thoroughly tested. If your change involves text processing, make sure to run tests in [`/tests`](https://github.com/mattermost/platform/tree/master/tests).
