@@ -3,16 +3,9 @@ Developer Machine Setup
 
 ### Mac OS X ###
 
-1. Download and set up the latest version of VirtualBox. [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
-2. Download and set up Docker Toolbox
-	1. Follow the instructions at [http://docs.docker.com/installation/mac/](http://docs.docker.com/installation/mac/)
-	2. Start a new docker host  
-		`docker-machine create -d virtualbox dev`
-	2. Get the IP address of your docker host  
-		`docker-machine ip dev`
-	3. Add the following line to `/etc/hosts`
-		`<Docker IP> dockerhost`
-	4. Run `docker-machine env dev` and copy the export statements to `~/.bash_profile`
+1. Install [Docker for Mac](https://docs.docker.com/docker-for-mac/)
+2. Add the following line to `/etc/hosts` 
+  - `127.0.0.1 dockerhost`
 3. Download Go 1.6 and Node.js using Homebrew
 	1. Download Homebrew from [http://brew.sh/](http://brew.sh/)
 	2. `brew install go`
