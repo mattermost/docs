@@ -163,25 +163,20 @@ Set up Mattermost Server
    -  Stop the server for now by typing ``Ctrl-C``
 
 8. Set up Mattermost to use the systemd init daemon which handles
-   supervision of the Mattermost process:
-
-   -  ``sudo touch /etc/systemd/system/mattermost.service``
-   -  ``sudo vi /etc/systemd/system/mattermost.service``
-   -  Copy the following lines into``/etc/systemd/system/mattermost.service``
-
-
+   supervision of the Mattermost process. Create and edit ``/etc/systemd/system/mattermost.service``
 
       ::
 
           [Unit]
-          Description=Mattermost
-          After=syslog.target network.target postgresql-9.4.service
+          Description=Mattermost server
+          After=network.target postgresql.service
 
           [Service]
-          Type=simple
-          WorkingDirectory=/opt/mattermost/bin
           User=mattermost
+          Group=mattermost
+          WorkingDirectory=/opt/mattermost
           ExecStart=/opt/mattermost/bin/platform
+          Restart=on-failures
           PIDFile=/var/spool/mattermost/pid/master.pid
           LimitNOFILE=49152
 
