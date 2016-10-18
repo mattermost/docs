@@ -33,6 +33,10 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 **Changes to Team Edition and Enterprise Edition**:
 
+ - Under `RateLimitSettings` in `config.json`:
+    - Changed: `"Enable": false` to disable rate limiting by default
+    - Added `"MaxBurst": 100` to set the maximum number of requests allowed beyond the per second query limit
+
 **Additional Changes to Enterprise Edition:**    
 
 The following config settings will only work on servers with an Enterprise License that has the feature enabled.
