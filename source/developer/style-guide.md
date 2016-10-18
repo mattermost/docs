@@ -149,11 +149,11 @@ The following is a subset of what ESLint checks for. ESLint is always the author
     propertyOne="1"
     propertyTwo="2"
 >
-  <Child />
+  <Child/>
 </Tag>
 
 // Correct
-<Tag propertyOne="1" />
+<Tag propertyOne="1"/>
 ```
 
 ### Naming
@@ -164,5 +164,5 @@ The following is a subset of what ESLint checks for. ESLint is always the author
 
 ```xml
 // Correct
-<ReactComponent propertyOne="value" />
+<ReactComponent propertyOne="value"/>
 ```
