@@ -15,7 +15,7 @@ Review the `full feature list <https://about.mattermost.com/features/>`_.
 Release Schedule
 ---------------------------
 
-New Mattermost releases new major versions on the 16th of every month.
+Mattermost releases new major versions on the 16th of every other month.
 
 - Learn about the latest features in the `Mattermost Changelog <https://docs.mattermost.com/administration/changelog.html>`_
 
