@@ -27,15 +27,15 @@ _Available in Enterprise Edition E10 and higher_
 - Migrating sign-in options 
 - Resetting multi-factor authentication for a user 
 
-#### Using the CLI tool 
+#### Using the CLI tool
 
 Typing `platform -help` brings up documentation for the CLI tool.
 
-Notes: 
+Notes:
 - Parameters in CLI commands are order-specific.
-- Special characters (e.g. `!`) need to be escaped out (e.g. `/!`) if passed into parameters, like `-password`
+- If special characters (`!`, `|`, `(`, `)`, `\`, \`, and `"` ) are used, the entire argument needs to be surrounded by single quotes (e.g. `-password 'mypassword!'`, or the individual characters need to be escaped out (e.g. `-password mypassword/!`).
 
-CLI documentation: 
+CLI Documentation:
 
 ```
 Mattermost commands to help configure the system
