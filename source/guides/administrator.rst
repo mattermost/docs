@@ -17,6 +17,7 @@ Install Guides
    /install/prod-ubuntu*
    /install/prod-rhel*
    /install/prod*
+   /install/setup-tls*
    /install/smtp*
    /install/troubleshooting*
    /install/i18n*
