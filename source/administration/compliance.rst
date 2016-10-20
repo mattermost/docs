@@ -1,5 +1,5 @@
 Compliance Reporting and Oversight
-----
+----------------------------------
 
 Available in `Enterprise Edition E20 <https://about.mattermost.com/pricing/>`_
 
@@ -12,7 +12,7 @@ Daily compliance reports may also be generated, supporting integration with comp
 Note: By default, all Mattermost Editions retain all messages, including edits and deletes, along with all files uploaded. 
 
 Enabling Compliance Reporting 
-====
+=============================
 
 After purchasing and installing a license key for Enterprise Edition E20: 
 
@@ -23,7 +23,7 @@ After purchasing and installing a license key for Enterprise Edition E20:
 This will enable Compliance Reports to be run from the **System Console** > **Compliance and Auditing** tab, as well as enable the option to generate Daily Compliance Reports.
 
 Turn on Daily Compliance Reports 
-====
+================================
 
 After enabling compliance reporting: 
 
@@ -33,7 +33,7 @@ After enabling compliance reporting:
 Your system will now export all new messages posted within a 24-hour period as a .csv file to the location specified in **Compliance Directory Location**. This feature can be used in conjunction with centralized compliance reporting systems that move 
 
 Run Compliance Reports  
-====
+======================
 
 Compliance Reports are exports of all messages in Mattermost matching the report criteria. To run a report: 
 
@@ -62,7 +62,7 @@ The report will be queued in the display below the fields described above. The p
 Each Compliance Report includes a "Download" link which downloads a compressed file named ``adhoc-[UNIQUE_ID].zip``. Inside the file is ``meta.json``, which includes the parameters of the search executed and ``posts.csv`` which includes the contenst of messages found by the request. 
 
 Compliance query definition stored in ``meta.json`` file 
-^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ``meta.json`` contains the following information about the compliance query: 
 
@@ -93,7 +93,7 @@ Compliance query definition stored in ``meta.json`` file
 +---------------------+---------------------------------------------------------------+-----------------------------------+
 
 Compliance query results stored in ``posts.csv`` file 
-^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ``posts.csv`` contains the following information about the compliance query results, one search result per row:
 
@@ -134,6 +134,6 @@ Compliance query results stored in ``posts.csv`` file
 
 
 Global Relay Support 
-====
+====================
 
 Mattermost daily compliance reports are compatible with Global Relay compliance solutions through the conversion of Mattermost ``.CSV`` exports into Global Relay ``EML`` files. Contact your Global Relay account manager about enabling `Secure, Compliant Internal Instant Messenger <https://www.globalrelay.com/uploads/resources/files/GlobalRelay-Services-Guide.pdf>`_ support in Global Relay. 

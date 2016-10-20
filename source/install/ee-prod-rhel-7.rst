@@ -1,7 +1,7 @@
 ..  _prod-rhel-7:
 
 Production Enterprise Install on RHEL 7.1+
-===============================
+==========================================
 
 Install Mattermost Enterprise Edition in production mode on one, two or three machines, using the following steps: 
 

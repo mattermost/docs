@@ -92,14 +92,14 @@ This setting is on by default.
 Note: Enabling mixed content will disable YouTube video previews `due to an issue in the underlying technology <https://github.com/electron/electron/issues/2749>`_ used by the Mattermost Desktop app.
 
 Show red badge on taskbar icon to indicate unread messages (Windows, Mac only)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When enabled, a red badge is shown on the taskbar icon for unread messages with a number count indicating unread mentions. If disabled, a red badge is only shown for unread mentions (with a number count).
 
 This setting is on by default.
 
 Flash taskbar icon when a new message is received (Windows, Linux only)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Configure whether the taskbar icon flashes when a new message is received on any of your active teams and servers.
 
@@ -113,7 +113,7 @@ When enabled, Mattermost application starts when you log in to your machine.
 This setting is on by default.
 
 Toggle window visibility when clicking on the tray icon (Windows only)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When enabled, clicking on the system tray icon allows you to toggle the window open and minimized.
 
@@ -127,7 +127,7 @@ When enabled, a red dot with a count of unread mentions is displayed on the team
 This setting is off by default.
 
 Leave app running in notification center when application window is closed (Mac, Linux only)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When enabled, closing the application window will leave the Mattermost desktop app running in your notification center. This can be useful if you’d like to check for unread mentions while away from the app.
 
