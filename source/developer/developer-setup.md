@@ -6,7 +6,7 @@ Developer Machine Setup
 1. Install [Docker for Mac](https://docs.docker.com/docker-for-mac/)
 2. Add the following line to `/etc/hosts` 
   - `127.0.0.1 dockerhost`
-3. Download Go 1.6 and Node.js using Homebrew
+3. [Download Go 1.6](http://golang.org/dl/) (Go 1.5 and earlier is not supported) and Node.js using Homebrew.
 	1. Download Homebrew from [http://brew.sh/](http://brew.sh/)
 	2. `brew install go`
 	3. `brew install node`
@@ -48,7 +48,7 @@ Any issues? Please let us know on our forums at: https://forum.mattermost.org/
 		- `127.0.0.1 dockerhost`
 3. Install build essentials
 	1. `apt-get install build-essential`
-4. Download Go 1.6 from [http://golang.org/dl/](http://golang.org/dl/)
+4.  [Download Go 1.6](http://golang.org/dl/) (Go 1.5 and earlier is not supported).
 5. Set up your Go workspace and add Go to the PATH
 	1. `mkdir ~/go`
 	2. Add the following to your `~/.bashrc`
