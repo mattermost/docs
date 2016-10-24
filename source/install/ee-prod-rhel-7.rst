@@ -163,7 +163,9 @@ Set up Mattermost Server
    -  Stop the server for now by typing ``Ctrl-C``
 
 8. Set up Mattermost to use the systemd init daemon which handles
-   supervision of the Mattermost process. Create and edit ``/etc/systemd/system/mattermost.service``
+   supervision of the Mattermost process. 
+
+   * Create and edit ``/etc/systemd/system/mattermost.service``
 
       ::
 
@@ -197,11 +199,11 @@ Only changes from the original setup described above will be mentioned.
 
 **Set up database server**
 
-- [5]: name the database *mattermost_db*
+- Step 5: Name the database ``mattermost_db``
 
-- [6]: name the user *mattermost*
+- Step 6: Name the user ``mattermost``
 
-- [11]: add the following line instead:
+- Step 11: Add the following line instead:
   ``local   mattermost_db       mattermost          peer       map=mattermap``
 
 - Append the following line to ``/var/lib/pgsql/9.4/data/pg_ident.conf``:
@@ -210,7 +212,7 @@ Only changes from the original setup described above will be mentioned.
 
   It maps unix user *mattermost* to psql user *mattermost*.
 
-- [13]: Verify everything looks good::
+- Step 13: Verify everything looks good::
 
     $ su mattermost
     $ psql --dbname=mattermost_db --username=mattermost
@@ -218,13 +220,10 @@ Only changes from the original setup described above will be mentioned.
 
 **Set up Mattermost server**
 
-[6]: Edit ``/opt/mattermost/config/config.json``
+- Step 6: Edit ``/opt/mattermost/config/config.json``
 
-- replace ``DriverName": "mysql"`` with ``DriverName": "postgres"``
-- replace  ``"DataSource": "mmuser:mostest@tcp(dockerhost:3306)/mattermost_test?charset=utf8mb4,utf8"``
-  with
-
-  ``"DataSource": "postgres:///mattermost_db?host=/var/run/postgresql"``
+   * Replace ``DriverName": "mysql"`` with ``DriverName": "postgres"``
+   * Replace  ``"DataSource": "mmuser:mostest@tcp(dockerhost:3306)/mattermost_test?charset=utf8mb4,utf8"`` with ``"DataSource": "postgres:///mattermost_db?host=/var/run/postgresql"``
 
 Set up NGINX Server
 -------------------
