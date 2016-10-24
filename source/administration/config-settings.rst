@@ -154,7 +154,7 @@ Restrict Team Names
 **False**: Newly created team names are not restricted. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RestrictTeamNames": true`` with options ``true`` and ``false`` for above settings respectively.                        |
+| This feature's ``config.json`` setting is ``"RestrictTeamNames": true`` with options ``true`` and ``false`` for above settings respectively.                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable users to open Direct Message channels with 
@@ -1066,7 +1066,7 @@ If you choose to run Mattermost outside your private network, bypassing your exi
 **False**: Multi-factor authentication is disabled.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableMultifactorAuthentication": true`` with options ``true`` and ``false`` for above settings respectively.                    |
+| This feature's ``config.json`` setting is ``"EnableMultifactorAuthentication": true`` with options ``true`` and ``false`` for above settings respectively.           |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -1564,7 +1564,7 @@ Site Name
 Name of service shown in login screens and UI. Maximum 30 characters.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SiteName": "Mattermost"`` with string input.                                                                     |
+| This feature's ``config.json`` setting is ``"SiteName": "Mattermost"`` with string input.                                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Custom Branding
@@ -1647,7 +1647,7 @@ Terms of Service link
 Configurable link to Terms of Service your organization may provide to end users. By default, links to a Terms of Service page hosted on about.mattermost.com. If changing the link to a different Terms of Service, make sure to include the "Mattermost Conditions of Use" notice to end users that must also be shown to users from the "Terms of Service" link.  
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"TermsOfServiceLink": "https://about.mattermost.com/default-terms/"`` with string input.                                                       |
+| This feature's ``config.json`` setting is ``"TermsOfServiceLink": "https://about.mattermost.com/default-terms/"`` with string input.                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Privacy Policy link  
@@ -1655,7 +1655,7 @@ Privacy Policy link
 Configurable link to Privacy Policy your organization may provide to end users.  By default, links to a Privacy Policy page hosted on about.mattermost.com.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PrivacyPolicyLink": "https://about.mattermost.com/default-privacy-policy/"`` with string input.                                               |
+| This feature's ``config.json`` setting is ``"PrivacyPolicyLink": "https://about.mattermost.com/default-privacy-policy/"`` with string input.                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 About link  
@@ -2054,5 +2054,5 @@ Scope
 Standard setting for OAuth to determine the scope of information shared with OAuth client. Recommended setting is ``User.Read``.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Scope": "User.Read"`` with string input.                                                                                |
+| This feature's ``config.json`` setting is ``"Scope": "User.Read"`` with string input                                                                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
