@@ -363,14 +363,52 @@ Set up NGINX with SSL (Recommended)
 
 
 6. Be sure to restart nginx
-  * ``\ sudo service nginx start``
-7. Add the following line to cron so the cert will renew every month
-  * ``crontab -e``
-  * ``@monthly /home/YOURUSERNAME/letsencrypt/letsencrypt-auto certonly --reinstall -d yourdomainname && sudo service nginx reload``
-8. Check that your SSL certificate is set up correctly
-  * Test the SSL certificate by visiting a site such as `https://www.ssllabs.com/ssltest/index.html <https://www.ssllabs.com/ssltest/index.html>`_
-  * If there’s an error about the missing chain or certificate path, there is likely an intermediate certificate missing that needs to be included
 
+   ``sudo systemctl restart nginx``
+
+7. Check that your SSL certificate is set up correctly
+
+Test the SSL certificate by visiting a site such as `https://www.ssllabs.com/ssltest/index.html`.
+
+If there’s an error about the missing chain or certificate path, there is likely
+an intermediate certificate missing that needs to be included.
+
+8. Set up Letsencrypt cert automatic renewal
+
+- Check your Letsencrypt setup is correct by running the below command. It renew
+the certificate in a fake manner:
+
+``sudo certbot renew --dry-run``
+
+You should see a congratulation message if successful.
+
+Then, add a cron job or use systemd timer capability to run twice a day the renewal
+process.
+
+- write the ``/etc/systemd/system/letsencrypt.renewal.service`` file
+
+::
+
+     [Unit]
+     Description=Renew let's encrypt certificates
+
+     [Service]
+     ExecStart=/usr/bin/certbot renew --quiet
+
+- write the ``/etc/systemd/system/letsencrypt.timer`` file
+
+::
+
+     [Unit]
+     Description=start letsencrypt.renewal.service every 12 hours
+
+     [Timer]
+     OnUnitActiveSec=12hours
+
+     [Install]
+     WantedBy=timers.target
+
+- Start and enable these two systemd files.
 
 Test setup and configure Mattermost Server
 -------------------------------------------
