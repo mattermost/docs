@@ -1237,7 +1237,7 @@ Port of SMTP email server.
 
 Connection Security 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-``````````````````````````````````````````````````````````````````````````````````````````
+``""``: Send email over an unsecure connection.
 
 ``PLAIN``: Mattermost will connect and authenticate over an unsecure connection.
 
