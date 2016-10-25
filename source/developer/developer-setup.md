@@ -55,7 +55,7 @@ Any issues? Please let us know on our forums at: https://forum.mattermost.org/
 		- `127.0.0.1 dockerhost`
 3. Install build essentials
 	1. `apt-get install build-essential`
-4. Download Go 1.5.1 from [https://golang.org/dl/](https://golang.org/dl/)
+4.  [Download Go 1.6](http://golang.org/dl/) (Go 1.5 and earlier is not supported).
 5. Set up your Go workspace and add Go to the PATH
 	1. `mkdir ~/go`
 	2. Add the following to your `~/.bashrc`
