@@ -304,7 +304,7 @@ Set up NGINX with SSL (Recommended)
 Setup HTTP2
 ------------
 
-It is recomented to enable HTTP2 for enhanced performance. 
+It is recommended to enable HTTP2 for enhanced performance. 
 
 1. Modify your NGINX configuration as above. Then,
 
