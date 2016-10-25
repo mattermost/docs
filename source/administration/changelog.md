@@ -16,6 +16,9 @@ Release date:
 - Clicking on a profile picture in center channel or right hand sidebar brings up profile popover
 - Text (.txt) files now show a preview in the image previewer
 
+#### System Console
+- Maximum number of channels per team is now configurable
+
 #### Enterprise Edition: 
 
 
