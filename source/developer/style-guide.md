@@ -126,7 +126,7 @@ function wrongGetStr(stuff) {
 
 ## React-JSX
 
-Part of the build process is running ESLint. ESLint is the final authority on all style issues. PRs will not be accepted unless there are no errors running ESLint. The ESLint configuration file can be found in: [web/react/.eslintrc](/web/react/.eslintrc)
+Part of the build process is running ESLint. ESLint is the final authority on all style issues. PRs will not be accepted unless there are no errors running ESLint. The ESLint configuration file can be found in: [webapp/.eslintrc](https://github.com/mattermost/platform/blob/master/webapp/.eslintrc.json)
 
 Instructions on how to use ESLint with your favourite editor can be found here: [http://eslint.org/docs/user-guide/integrations](http://eslint.org/docs/user-guide/integrations)
 

@@ -156,7 +156,7 @@ Release date: 2016-07-18
     - Ctrl+Shift+Tab or Alt+Command+Left (Menu Bar -> Window -> Select Previous Team): Switch to the previous window.
     - Right click on the tray item, to see an overview of all your teams. You can also select one and jump right into it.
 - Added **Help** to the Menu Bar, which includes
-    - Link to [**Mattermost Docs**](docs.mattermost.com)
+    - Link to [**Mattermost Docs**](https://docs.mattermost.com/)
     - Field to indicate the application version number.
 
 #### Settings Page

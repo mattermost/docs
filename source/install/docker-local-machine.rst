@@ -49,7 +49,7 @@ Ubuntu
 
        docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview
 
-3. When docker is done fetching the image, open http://localhost:8065/
+3. When docker is done fetching the image, open ``http://localhost:8065/``
    in your browser.
 
 Arch
@@ -71,7 +71,7 @@ Arch
 
        docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview
 
-3. When Docker is done fetching the image, open http://localhost:8065/
+3. When Docker is done fetching the image, open ``http://localhost:8065/``
    in your browser.
 
 Additional Notes
