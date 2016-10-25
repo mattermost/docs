@@ -1,8 +1,8 @@
 Migration Guide 
----- 
+---------------
 
 Migrating the Mattermost Server  
-==== 
+===============================
 
 The following instructions migrate Mattermost from one server to another by backing up and restoring the Mattermost database and ``config.json`` file. For these instructions **SOURCE** refers to the Mattermost server *from which* your system will be migrated and **DESTINATION** refers to the Mattermost server *to which* your system will be migrated. 
 
@@ -24,6 +24,6 @@ The following instructions migrate Mattermost from one server to another by back
     1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade
  
 Migrating from Slack
-==== 
+====================
 
 You can import channels and users from Slack into Mattermost from Team Settings > Import. Please review our documentation on `Slack Import <https://docs.mattermost.com/help/settings/team-settings.html#import-from-slack-beta>`_ for more details.

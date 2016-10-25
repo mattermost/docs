@@ -1,6 +1,6 @@
 ..  _push_test:
 Push Notifications and Mobile Devices
-======
+=====================================
 
 For Mattermost iOS apps and Android mobile apps to receive puch notifications the service sending notifications needs to be verified as an authorized sender. There are 3 options to provide this verification: 
 
@@ -40,7 +40,7 @@ The below explains each option in detail.
 
 
 Hosted Push Notifications Service (HPNS)
------
+----------------------------------------
 
 Mattermost.com offers a Hosted Push Notification Service (HPNS) via commercial subscription for organizations who want encrypted push notifications sent from behind their firewall, with production-quality uptime and commercial support, as an alternative to compiling, deploying and securing their own service from source code provided (see "Enterprise App Store" in next section). 
 
@@ -54,7 +54,7 @@ A license key to activate HPNS is available with a `subscription to Mattermost E
 After purchasing and installing a license key, you can turn on HPNS using **System Console** > **Notifications** > **Mobile Push** > **Send Push Notifications** > **Use encrypted, production-quality HPNS connection to iOS and Android apps**.
 
 Enterprise App Store (EAS)
------
+--------------------------
 
 To set up an Enterprise App Store, teams can set up verified relationships by compiling, deploying, securing and maintaining the following open source repositories: 
 
@@ -65,7 +65,7 @@ To set up an Enterprise App Store, teams can set up verified relationships by co
 After deploying the mobile applications and push notification service, go to **System Console** > **Notifications** > **Mobile Push** > **Send Push Notifications** > **Manually enter Push Notification Service location** and enter the location of your Push Notification Service in the **Push Notification Server** field. 
 
 Test Push Notifications Service (TPNS) 
------
+--------------------------------------
 
 Mattermost.com also offers a free, unencrypted push notification service for trying out the Mattermost mobile applications prior to deciding whether to use the EAS or HPNS option. 
 
@@ -79,7 +79,7 @@ You can connect to the TPNS by going to **System Console** > **Notifications** >
 Note: TPNS is a test service that does not encrypt push notifications and does not offer production-quality uptime. 
 
 What happens when a Mattermost push notification is sent? 
-``````
+`````````````````````````````````````````````````````````
 
 To ensure only push notifications from authorized senders are processed by iOS and Android mobile application, each push notifications need to come from a trusted source.  
 
@@ -92,7 +92,7 @@ Here is the full process:
 3. The APNS or GCM service confirms that the message from the Mattermost Push Notification Service is authorized for the target mobile application and forwards the message to the app to be displayed. 
 
 Confirming HPNS push notifications are properly configured
-``````
+``````````````````````````````````````````````````````````
 
 To setup HPNS please follow the following steps: 
 
@@ -128,7 +128,7 @@ To setup HPNS please follow the following steps:
 4. After your issue is resolved, go to **System Console** > **General** > **Logging** > **File Log Level** and select **ERROR** to switch your logging detail level to Errors Only, instead of DEBUG, in order to conserve disk space. 
 
 Confirming TPNS push notifications are properly configured
-``````
+``````````````````````````````````````````````````````````
 
 To setup TPNS please `follow the instructions to confirm HPNS is correctly configured <http://docs.mattermost.com/deployment/push.html#confirming-hpns-push-notifications-are-properly-configured>`_ with the following changes: 
 
@@ -139,12 +139,12 @@ The same instructions should then verify the functionality of TPNS.
 
 
 Confirming Performance of Mobile Applications 
-``````
+`````````````````````````````````````````````
 
 The response times of Mattermost mobile apps should perform to standard benchmarks, provided device model, connection speed and server configuration are comparable to benchmark setups.
 
 Mobile Performance Benchmarks
-^^^^^^ 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Properly configured mobile applications on 4G/LTE or wifi should perform as follows: 
 
@@ -183,7 +183,7 @@ Samsung Galaxy S6 on wifi connection (23 ms ping time, 138 Mb/s download, 12 Mb/
 Note: While Mattermost mobile applications may be used on 3G (and lower) connections, this configuration is not recommended.
 
 Removing bottlenecks to mobile app performance 
-^^^^^^ 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If your mobile app is not performing to these sample benchmarks, you can identify bottlenecks using the following process: 
 
@@ -218,12 +218,12 @@ These procedures summarize all potential bottlenecks in a system for mobile app 
 
 
 Troubleshooting mobile applications 
-``````
+```````````````````````````````````
 
 Here are solutions to common troubleshooting requests: 
 
 Internal proxy configuration needed for outbound requests to HPNS 
-^^^^^^ 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Make sure your proxy server is properly configured to support SSL. Confirm it works by checking the URL at `https://www.digicert.com/help/`. 
 
@@ -234,7 +234,7 @@ Internal proxy configuration needed for outbound requests to HPNS
 Depending on how your proxy is configured you may need to add a port number and create a URL like `https://push.internalproxy.com:8000` mapped to `https://push.mattermost.com`
 
 Error message: “We would not connect to the Mattermost server or the server is running an incompatible version”
-^^^^^^ 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This error message, whether on iOS or Android, typically results from a typo in the server URL or an SSL configuration issue. To troubleshoot: 
 

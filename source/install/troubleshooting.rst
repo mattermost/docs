@@ -100,7 +100,7 @@ This error can occur if you have manually manipulated the Mattermost database, t
 **Solution:** Restore from database backup created prior to manual database updates, or reinstall the system.
 
 ``We couldn't find an existing account matching your email address for this team. This team may require an invite from the team owner to join.``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This error appears when a user tries to sign in, and Mattermost can't find an account matching the credentials they entered.
 
@@ -177,6 +177,6 @@ To address this:
    3. Once Mattermost is working again, you can use the same upgrade procedure to upgrade Mattermost version by version to your current GitLab version. After this is done, GitLab automation should continue to work for future upgrades, so long as you don't skip versions.
 
 ``panic: Error decoding config file=/opt/mattermost/config/config.json, err=invalid character '"' after object key:value pair``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Your ``config.json`` is not a well-formed ``.json`` file. Try using a `json validator <https://jsonformatter.curiousconcept.com/>`__ to find the error.

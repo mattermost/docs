@@ -21,7 +21,7 @@ To translate a language:
     - If not, ask to setup your language on the `Mattermost localization channel <https://pre-release.mattermost.com/core/channels/localization>`_, so you can start helping with the translation.
 
 Translations Updates
-===================
+====================
 
 1 - New and updated strings are imported to the `Mattermost Translation Server <http://translate.mattermost.com>`_ each day at 00:00 GMT
 
@@ -87,7 +87,7 @@ If you'd like to review and verify translations prior to achieving Beta-quality 
 6 - Compile and run **Mattermost** to confirm everything works. You can then review and verify translations from your machine.
 
 Translation Maintenance
-===================
+=======================
 
 Translations require updates on a bi-monthly basis as features are added and changed. The formal process for updates has yet to be determined.
 

@@ -1,7 +1,7 @@
 ..  _prod-ubuntu:
 
 Production Enterprise Install on Ubuntu 14.04 LTS
-======================================
+=================================================
 
 Install Mattermost Enterprise Edition in production mode on one, two or three machines, using the following steps: 
 

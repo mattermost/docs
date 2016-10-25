@@ -6,7 +6,7 @@ SMTP Email Setup
 To run in production, Mattermost requires SMTP email to be enabled for email notifications and password reset for systems usign email-based authentication. 
 
 How to Enable Email
-~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 To enable email, configure an SMTP email service as follows:
 
@@ -70,10 +70,10 @@ To enable email, configure an SMTP email service as follows:
           errors that look like ``[EROR] /api/v3/admin/test_email ...``
 
 Sample SMTP Settings
-~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 Amazon SES
-^^^^^^
+^^^^^^^^^^
 
 -  Set **SMTP Username** to **[YOUR_SMTP_USERNAME]**
 -  Set **SMTP Password** to
@@ -83,7 +83,7 @@ Amazon SES
 -  Set **Connection Security** to **TLS**
 
 Postfix
-^^^^^^
+^^^^^^^
 
 -  Make sure Postfix is installed on the machine where Mattermost is
    installed
@@ -103,7 +103,7 @@ Gmail
 -  Set **Connection Security** to **TLS**
 
 Hotmail
-^^^^^^
+^^^^^^^
 
 -  Set **SMTP Username** to **your\_email@hotmail.com**
 -  Set **SMTP Password** to **your\_password**
@@ -112,7 +112,7 @@ Hotmail
 -  Set **Connection Security** to **STARTTLS**
 
 Troubleshooting SMTP
-~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 Tip 1
 ^^^^^
