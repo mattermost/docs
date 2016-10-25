@@ -11,8 +11,8 @@ Setting up Mattermost server to run TLS
 
 At this point you have two options: automatic certificate retrieval though Let's Encrypt or manually specifying a certificate.
 
-Automatic Certificate Retreval
-===============================
+Automatic Certificate Retrieval
+================================
 
 In this mode a certificate will be automatically retrieved the first time a client tries to connect to the Mattermost server. Certificates will be retrieved for any hostname a client tries to reach the server at. Setting this up is only one step:
 
