@@ -40,9 +40,9 @@ Production Docker Setup on Ubuntu
 
 Additional Guides: 
 
-- **Start, stop and remove containers** using `management instructions. <https://github.com/mattermost/mattermost-docker/tree/enterprise#startingstopping>`_
+- **Start, stop and remove containers** using `management instructions. <https://github.com/mattermost/mattermost-docker/tree/team-and-enterprise#startingstopping>`_
  
-- **Setup Database Backup** following the `database backup instructions. <https://github.com/mattermost/mattermost-docker/tree/enterprise#database-backup>`_
+- **Setup Database Backup** following the `database backup instructions. <https://github.com/mattermost/mattermost-docker/tree/team-and-enterprise#database-backup>`_
 
 Production Docker Setup on Mac OS X 
 ------------------------------------------------------------
