@@ -5,11 +5,11 @@ Production Enterprise Install on RHEL 7.1+
 
 Install Mattermost Enterprise Edition in production mode on one, two or three machines, using the following steps:
 
-- `Install Red Hat Enterprise Linux (x64) 7.1 <#install-red-hat-enterprise-linux-x64-71>`_
-- `Set up Database Server <#set-up-database-server>`_
-- `Set up Mattermost Server <#set-up-mattermost-server>`_
-- `Set up NGINX Server <#set-up-nginx-server>`_
-- `Test setup and configure Mattermost Server <#test-setup-and-configure-mattermost-server>`_
+- `Install Red Hat Enterprise Linux (x64) 7.1+`_
+- `Set up Database Server`_
+- `Set up Mattermost Server`_
+- `Set up NGINX Server`_
+- `Test setup and configure Mattermost Server`_
 
 
 Install Red Hat Enterprise Linux (x64) 7.1+
