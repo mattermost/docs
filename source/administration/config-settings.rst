@@ -137,6 +137,15 @@ Maximum number of users per team, including both active and inactive users.
 | This feature's ``config.json`` setting is ``"MaxUsersPerTeam": 50`` with whole number input.                                                                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Max Channels Per Team
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Maximum number of channels per team, including both active and deleted channels.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"MaxChannelsPerTeam": 2000`` with whole number input.                                                                    |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 Restrict account creation to specified email domains
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    
 Teams and user accounts can only be created by a verified email from this list of comma-separated domains (e.g. "corp.mattermost.com, mattermost.org").
