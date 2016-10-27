@@ -68,7 +68,7 @@ Set up Database Server
 10. Allow Postgres to listen on all assigned IP Addresses
 
     -  ``sudo vi /etc/postgresql/9.3/main/postgresql.conf``
-    -  Uncomment ``listen_addresses`` and change ``localhost`` to ``\*``
+    -  Uncomment ``listen_addresses`` and change ``localhost`` to ``*``
 
 11. Alter pg\_hba.conf to allow the mattermost server to talk to the
     postgres database
