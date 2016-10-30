@@ -48,8 +48,12 @@ The URL, including port number and protocol, from which users will access Matter
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Listen Address  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The IP address on which to listen and the port on which to bind. Entering ":8065" will bind to all interfaces or you can choose one like ``127.0.0.1:8065``. Changing this will require a server restart before taking effect.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+The address and port to which to bind and listen. Specifying ":8065" will bind to all network interfaces. Specifying ``127.0.0.1:8065`` will only bind to the network interface having that IP address. 
+
+If you choose a port of a lower level (called "system ports" or "well-known ports", in the range of 0-1023), you must have permissions to bind to that port. 
+
+On Linux you can use: ``sudo setcap cap_net_bind_service=+ep ./bin/platform`` to allow Mattermost to bind to well-known ports.
 
 +-------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ListenAddress": ":8065"``  |
