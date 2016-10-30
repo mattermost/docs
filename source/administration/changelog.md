@@ -8,13 +8,39 @@ Release date:
 
 ### Highlights
 
+#### Languages
+- Added Russian translations for the user interface.
+
+#### Performance
+
+Added significant improvements for large organizations running on a single server, including:
+
+ - Ability to download assets in parallel via HTTP2 support
+ - Reduced CPU bottlenecks through optimized SQL queries
+ - Improved support for 20,000 active users in the user interface through paging controls, server-side search and on-the-fly data loading that requests data as the client needs it
+ - Added paging APIs for profiles, channels and user lists
+ - Added client-scaling for auto-complete and status indicators
+ - Added server-side in-memory caching to reduce DB reads/writes
 
 ### Improvements
 
 #### User Interface
-- Channels on the left hand side now sorted numerically, alphabetically, and based on locale
-- Clicking on a profile picture in center channel or right hand sidebar brings up profile popover
 - Text (.txt) files now show a preview in the image previewer
+- Clicking on a profile picture in center channel or right hand sidebar brings up profile popover
+- The "@" and flag icons next to search bar now toggles results
+- [...] menu no longer displayed for system messages
+
+#### Notifications
+- Notification sound settings are now honoured on the [Mattermost Desktop Apps](https://about.mattermost.com/download/#mattermostApps)
+
+#### Integrations
+- If a webhook is sent to a direct message channel that has not been created yet, the channel is now automatically created
+
+#### Keyboard Shortcuts
+- `CTRL + SHIFT + M` now toggles recent mentions results
+
+#### Team Settings
+- Team names are now restricted to be a minimum of two characters long, instead of four, to support abbreviated team names
 
 #### System Console
 - Maximum number of channels per team is now configurable
@@ -25,6 +51,9 @@ Release date:
 ### Bug Fixes
 - Correct login method now shown in System Console user lists
 - Channel switcher (`CTRL + K`) no longer throws an error when switching to a user outside of your current team
+- Channels on the left hand side now sort numerically, alphabetically, and based on locale
+- Fixed incorrect error message when trying a team URL with one character
+- `/join` no longer throws an error for non-admin accounts
 
 ### Compatibility  
 Changes from v3.4 to v3.5:
@@ -39,6 +68,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under `RateLimitSettings` in `config.json`:
     - Changed: `"Enable": false` to disable rate limiting by default
     - Added `"MaxBurst": 100` to set the maximum number of requests allowed beyond the per second query limit
+ - Under `TeamSettings` in `config.json`:
+    - Added `"MaxChannelsPerTeam": 2000` to set the maximum number of channels per team
 
 **Additional Changes to Enterprise Edition:**    
 
