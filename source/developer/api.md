@@ -30,7 +30,7 @@ In addition to supporting Slack's incoming webhook formatting, Mattermost webhoo
 
 ### [Outgoing Webhooks](http://docs.mattermost.com/developer/webhooks-outgoing.html) 
 
-Outgoing webhooks allow external applications to receive webhook events from events happening within Mattermost channels and private groups via JSON payloads via HTTP POST requests sent to incoming webhook URLs defined by your applications. 
+Outgoing webhooks allow external applications to receive webhook events from events happening within Mattermost channels via JSON payloads via HTTP POST requests sent to incoming webhook URLs defined by your applications. 
 
 Over time, Mattermost outgoing webhooks will support not only Slack applications using a compatible format, but also offer optional events and triggers beyond Slack's feature set. 
 
