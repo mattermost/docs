@@ -317,7 +317,7 @@ We use "x/5" to concisely communicate conviction. 0/5 means you don't have a str
 APR
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Acronym for [Accepting Pull Request](http://docs.mattermost.com/process/accepting-pull-request.html) tickets, which are vetted changes to the source code open for community contributions.  
+Acronym for `Accepting Pull Request <http://docs.mattermost.com/process/accepting-pull-request.html>`_ tickets, which are vetted changes to the source code open for community contributions.  
 
 Bug
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -327,7 +327,7 @@ An obvious error in Mattermost software. Changes required to accommodate unsuppo
 Dead Tarzan 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Discarding an imperfect solution without a clearly thought out alternative. Based on idea of [Tarzan of the Jungle](https://en.wikipedia.org/wiki/Tarzan) letting go of a vine without having a new vine to swing to. 
+Discarding an imperfect solution without a clearly thought out alternative. Based on idea of `Tarzan of the Jungle <https://en.wikipedia.org/wiki/Tarzan>`_ letting go of a vine without having a new vine to swing to. 
 
 Expert Mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
