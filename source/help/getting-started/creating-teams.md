@@ -1,8 +1,6 @@
 # Creating Teams
 ___
 
-This documentation refers to Mattermost v3.0. For v2.2, see [archived documentation](http://docs.mattermost.com/archives/docs-v2.2.html#creating-teams).
-
 New teams can be created if the System Admin has *Enable Team Creation* set to true from the System Console.
 
 ## Methods to Create a Team
@@ -22,13 +20,13 @@ This is the display name of your team that appears in menus and headings.
 
 - It can contain any letters, numbers or symbols.
 - It is case sensitive.
-- It must be 4 - 15 characters in length.
+- It must be 2 - 15 characters in length.
 
 #### Team URL
 The team URL is part of the web address that navigates to your team on the system domain, `https://domain.com/teamurl/`. 
 
 - It may contain only lowercase letters, numbers and dashes.
 - It must start with a letter and cannot end in a dash.
-- It must be 4 - 15 characters in length.
+- It must be 2 - 15 characters in length.
 
 If the System Admin has *Restrict Team Names* set to true, the team URL cannot start with the following restricted words: www, web, admin, support, notify, test, demo, mail, team, channel, internal, localhost, dockerhost, stag, post, cluster, api, oauth.
