@@ -10,6 +10,7 @@ Getting Started
    :maxdepth: 1
    :glob:
 
+   Creating an account </help/getting-started/creating-an-account.rst>
    /help/getting-started/signing-in.md
    /help/getting-started/messaging-basics.md
    /help/getting-started/configuring-notifications.md
