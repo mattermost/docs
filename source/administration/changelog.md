@@ -21,14 +21,19 @@ Added significant improvements for large organizations running on a single serve
  - Added paging APIs for profiles, channels and user lists
  - Added client-scaling for auto-complete and status indicators
  - Added server-side in-memory caching to reduce DB reads/writes
+ 
+#### Favorite Channels
+- Added the ability to select Favorite Channels that appear at the top of the channels sidebar
 
 ### Improvements
 
 #### User Interface
 - Text (.txt) files now show a preview in the image previewer
+- Status indicators are now visible in compact view
 - Clicking on a profile picture in center channel or right hand sidebar brings up profile popover
 - The "@" and flag icons next to search bar now toggles results
 - [...] menu no longer displayed for system messages
+- A loading icon now shows on the team selection page
 
 #### Notifications
 - Notification sound settings are now honoured on the [Mattermost Desktop Apps](https://about.mattermost.com/download/#mattermostApps)
@@ -49,11 +54,14 @@ Added significant improvements for large organizations running on a single serve
 
 
 ### Bug Fixes
+- Files can now be sent in Direct Messages across teams
 - Correct login method now shown in System Console user lists
 - Channel switcher (`CTRL + K`) no longer throws an error when switching to a user outside of your current team
+- Channel switcher (CTRL / CMD + K) now works for creating new Direct Message channels
 - Channels on the left hand side now sort numerically, alphabetically, and based on locale
 - Fixed incorrect error message when trying a team URL with one character
 - `/join` no longer throws an error for non-admin accounts
+- Added System Message when user joins Off-Topic channel
 
 ### Compatibility  
 Changes from v3.4 to v3.5:
