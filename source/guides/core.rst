@@ -14,8 +14,17 @@ Development Process
    /process/release-process*
    /process/accepting-pull-request*
    /process/community-systems*
-   /process/documentation-guidelines*
+   /process/documentation-guidelines.md
 
+Documentation Style Guide
+=========================
+
+.. toctree::
+   :maxdepth: 3
+
+   Introduction </process/sg_mattermost-doc-style.rst>
+   /process/sg_document-structure.rst
+   /process/sg_grammar-spelling-mechanics.rst
 
 Joining the Team 
 =========================
@@ -29,4 +38,3 @@ Joining the Team
    /process/security*
    /process/training*
    /process/people-ops*
-
