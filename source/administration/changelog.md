@@ -25,7 +25,14 @@ Added significant improvements for large organizations running on a single serve
 #### Favorite Channels
 - Added the ability to select Favorite Channels that appear at the top of the channels sidebar
 
+#### WebRTC (Beta)
+- Added Beta support for 1-1 video calls
+
 ### Improvements
+
+#### Mobile (iOS and Android Apps)
+- Channel and account settings, and channel header are now full screen modals for better visibility
+- [...] menu options now displayed larger for better usability
 
 #### User Interface
 - Text (.txt) files now show a preview in the image previewer
@@ -33,6 +40,7 @@ Added significant improvements for large organizations running on a single serve
 - Clicking on a profile picture in center channel or right hand sidebar brings up profile popover
 - The "@" and flag icons next to search bar now toggles results
 - [...] menu no longer displayed for system messages
+- Browser tab name now changes when switching to System Console or Integrations pages
 - A loading icon now shows on the team selection page
 
 #### Notifications
