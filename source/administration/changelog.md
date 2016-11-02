@@ -51,7 +51,7 @@ Added significant improvements for large organizations running on a single serve
 - Maximum number of channels per team is now configurable
 
 #### Enterprise Edition: 
-
+- Made the MFA secret key visible, so it's possible to set up Google Authenticator without scanning the QR code
 
 ### Bug Fixes
 - Files can now be sent in Direct Messages across teams
@@ -62,6 +62,7 @@ Added significant improvements for large organizations running on a single serve
 - Fixed incorrect error message when trying a team URL with one character
 - `/join` no longer throws an error for non-admin accounts
 - Added System Message when user joins Off-Topic channel
+- Added the "View Members" option to the channel menu on mobile
 
 ### Compatibility  
 Changes from v3.4 to v3.5:
