@@ -28,6 +28,10 @@ Added significant improvements for large organizations running on a single serve
 #### WebRTC (Beta)
 - Added Beta support for 1-1 video calls
 
+#### Slack Import (Beta)
+- Added the ability to import files from Slack (CLI command also supported)
+- Channel topics, purpose, and users now import correctly
+
 ### Improvements
 
 #### Mobile (iOS and Android Apps)
@@ -45,6 +49,10 @@ Added significant improvements for large organizations running on a single serve
 
 #### Notifications
 - Notification sound settings are now honoured on the [Mattermost Desktop Apps](https://about.mattermost.com/download/#mattermostApps)
+
+#### Channel Shortlinking
+- Channels can be shortlinked using the ~ character.
+- Auto-complete works with both the channel handle and name
 
 #### Integrations
 - If a webhook is sent to a direct message channel that has not been created yet, the channel is now automatically created
