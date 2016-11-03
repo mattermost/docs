@@ -28,5 +28,4 @@ The team URL is part of the web address that navigates to your team on the syste
 - It may contain only lowercase letters, numbers and dashes.
 - It must start with a letter and cannot end in a dash.
 - It must be 2 - 15 characters in length.
-
-If the System Admin has *Restrict Team Names* set to true, the team URL cannot start with the following restricted words: www, web, admin, support, notify, test, demo, mail, team, channel, internal, localhost, dockerhost, stag, post, cluster, api, oauth.
+- It cannot start with the following restricted words: `signup`, `login`, `admin`, `channel`, `post`, `api`, `oauth`
