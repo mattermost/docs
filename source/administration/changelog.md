@@ -25,8 +25,9 @@ Added significant improvements for large organizations running on a single serve
 #### Favorite Channels
 - Added the ability to select Favorite Channels that appear at the top of the channels sidebar
 
-#### WebRTC (Beta)
-- Added Beta support for 1-1 video calls
+#### Video and Audio Calling (Beta)
+- Added early preview of video and audio calling option using self-hosted proxy.
+- Intended as working prototype for community development, not recommended for production.
 
 #### Slack Import (Beta)
 - Added the ability to import files from Slack (CLI command also supported)
