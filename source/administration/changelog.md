@@ -30,7 +30,9 @@ Added significant improvements for large organizations running on a single serve
 
 #### Slack Import (Beta)
 - Added the ability to import files from Slack (CLI command also supported)
+- Added the ability to import bot/integration messages, and /me messages
 - Channel topics, purpose, and users now import correctly
+- Fixed channel linking import bug
 
 ### Improvements
 
