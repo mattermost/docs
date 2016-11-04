@@ -36,9 +36,15 @@ Added significant improvements for large organizations running on a single serve
 
 ### Improvements
 
-#### Mobile (iOS and Android Apps)
+#### iOS Apps
 - Channel and account settings, and channel header are now full screen modals for better visibility
 - [...] menu options now displayed larger for better usability
+
+#### Android Apps
+- Channel and account settings, and channel header are now full screen modals for better visibility
+- [...] menu options now displayed larger for better usability
+- Disabled screen rotation
+- Fixed where clicking on download button for a file attachment did nothing
 
 #### User Interface
 - Text (.txt) files now show a preview in the image previewer
