@@ -98,6 +98,7 @@ Added significant improvements for large organizations running on a single serve
 - `/join` no longer throws an error for non-admin accounts
 - Added System Message when user joins Off-Topic channel
 - Added the "View Members" option to the channel menu on mobile
+- Send button is now visible on tablet sized screens
 
 ### Compatibility  
 Changes from v3.4 to v3.5:
