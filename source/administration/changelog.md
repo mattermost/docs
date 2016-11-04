@@ -16,19 +16,24 @@ Release date:
 Added significant improvements for large organizations running on a single server, including:
 
  - Ability to download assets in parallel via HTTP2 support
- - Reduced CPU bottlenecks through optimized SQL queries
+ - Reduced CPU bottlenecks and optimized SQL queries
  - Improved support for 20,000 active users in the user interface through paging controls, server-side search and on-the-fly data loading that requests data as the client needs it
  - Added paging APIs for profiles, channels and user lists
  - Added client-scaling for auto-complete and status indicators
  - Added server-side in-memory caching to reduce DB reads/writes
- 
+
+#### Connection Security
+- TLS is now supported directly on the Mattermost server. Learn more in our [documentation]()
+- Support for automatically fetching certificates through Let's Encrypt
+
 #### Favorite Channels
 - Added the ability to select Favorite Channels that appear at the top of the channels sidebar
 
-#### WebRTC (Beta)
-- Added Beta support for 1-1 video calls
+#### Video and Audio Calling (Beta)
+- Added early preview of video and audio calling option using self-hosted proxy.
+- Intended as working prototype for community development, not recommended for production.
 
-#### Slack Import (Beta)
+#### Improved Slack Import
 - Added the ability to import files from Slack (CLI command also supported)
 - Added the ability to import bot/integration messages, Join/Leave messages, and /me messages
 - Duplicate users are now merged
@@ -190,6 +195,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
     - Retrieves profiles for users in the channel
 - Added `GET` at `/channels/{channel_id}/users/not_in_channel/{offset}/{limit}`
     - Retrieves profiles for users not in the channel
+- Added `POST` at `/webrtc/token`
+    - Retrieves a valid token and servers to establish a webrtc connection between the peers
 
     
 **Moved routes:**
