@@ -207,6 +207,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
     
 ### Known Issues
 
+- Channel autolinking with `~` only works if you are a member of the channel
 
 ### Contributors
 
