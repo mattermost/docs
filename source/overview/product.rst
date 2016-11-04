@@ -8,7 +8,7 @@ Mattermost is a modern, self-hosted workplace messaging solution.
 
 **Mattermost Enterprise Edition** is a commercial enterprise messaging solution offering advanced features including integration with corporate directories, compliance and auditing support, and sophisticated configurations for horizontal and multi-region scaling. You can `download and try it today. <https://docs.mattermost.com/install/ee-install.html>`_
 
-Mattermost offers translations in Chinese (Simplified and Traditional), Dutch, English, French, German, Japanese, Korean, Portuguese (Brazilian), and Spanish.
+Mattermost offers translations in Chinese (Simplified and Traditional), Dutch, English, French, German, Japanese, Korean, Portuguese (Brazilian), Russian, and Spanish.
 
 Review the `full feature list <https://about.mattermost.com/features/>`_.
 

@@ -137,10 +137,11 @@ Select what language Mattermost displays in the user interface. Options include:
 - Français - French
 - Nederlands - Dutch
 - Português (Brasil) - Portuguese
+- Pусский - Russian
+- 한국어 - Korean
 - 中文 (简体) - Simplified Chinese
 - 中文 (繁體) - Traditional Chinese
 - 日本語 - Japanese
-- 한국어 - Korean
 
 ## Advanced
 Setting to configure when messages are sent.
