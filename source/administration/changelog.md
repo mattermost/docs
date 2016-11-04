@@ -58,6 +58,7 @@ Added significant improvements for large organizations running on a single serve
 
 #### Notifications
 - Notification sound settings are now honoured on the [Mattermost Desktop Apps](https://about.mattermost.com/download/#mattermostApps)
+- Push notifications can now be received on more than one device
 
 #### Channel Shortlinking
 - Channels can be shortlinked using the ~ character.
