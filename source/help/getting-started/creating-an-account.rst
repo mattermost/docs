@@ -41,15 +41,13 @@ To create an account
 What to do next
 ===============
 
-Type a message into the **Write a message** field and press *Enter*.
+Update your profile to make sure that you like the settings. You can change your name and your user name, add a nickname, change your email, and upload a profile picture.
 
-After you have played around with messages and replies, review your account settings. You can modify how and when you receive notifications, set the font and colors of the display, upload a picture of yourself, change your password, and more.
-
-To  modify your account settings, open the main menu by clicking the channel name at the top of the navigation panel, and click **Account Settings**. 
+To  update your profile, see :doc:`updating-your-profile`. 
 
 Related information
 ===================
 
+- :doc:`messaging-basics`
 - :doc:`../settings/account-settings`
-- :doc:`../messaging/sending-messages`
 - :doc:`../../../guides/user`
