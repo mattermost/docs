@@ -60,6 +60,7 @@ Added significant improvements for large organizations running on a single serve
 - [...] menu no longer displayed for system messages
 - Browser tab name now changes when switching to System Console or Integrations pages
 - A loading icon now shows on the team selection page
+- On mobile devices, the keyboard now stays open after sending a message to make sending multiple messages easier
 
 #### Notifications
 - Notification sound settings are now honoured on the [Mattermost Desktop Apps](https://about.mattermost.com/download/#mattermostApps)
