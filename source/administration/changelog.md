@@ -15,30 +15,33 @@ Release date:
 
 Added significant improvements for large organizations running on a single server, including:
 
- - Ability to download assets in parallel via HTTP2 support
- - Reduced CPU bottlenecks and optimized SQL queries
- - Improved support for 20,000 active users in the user interface through paging controls, server-side search and on-the-fly data loading that requests data as the client needs it
- - Added paging APIs for profiles, channels and user lists
- - Added client-scaling for auto-complete and status indicators
- - Added server-side in-memory caching to reduce DB reads/writes
+ - Ability to download assets in parallel via HTTP2 support.
+ - Reduced CPU bottlenecks and optimized SQL queries.
+ - Improved support for 20,000 active users in the user interface through paging controls, server-side search and on-the-fly data loading that requests data as the client needs it.
+ - Added paging APIs for profiles, channels and user lists.
+ - Added client-scaling for auto-complete and status indicators.
+ - Added server-side in-memory caching to reduce DB reads/writes.
 
 #### Connection Security
-- TLS is now supported directly on the Mattermost server. Learn more in our [documentation]()
-- Support for automatically fetching certificates through Let's Encrypt
+- TLS is now supported directly on the Mattermost server. Learn more in our [documentation](https://docs.mattermost.com/install/setup-tls.html).
+- Support for automatically fetching certificates through Let's Encrypt.
+
+#### Minio File Storage
+- Minio fully manages S3 API requests with automatic bucket location management across S3 regions.
 
 #### Favorite Channels
-- Added the ability to select Favorite Channels that appear at the top of the channels sidebar
+- Added the ability to select Favorite Channels that appear at the top of the channels sidebar.
 
 #### Video and Audio Calling (Beta)
 - Added early preview of video and audio calling option using self-hosted proxy.
 - Intended as working prototype for community development, not recommended for production.
 
 #### Improved Slack Import
-- Added the ability to import files from Slack (CLI command also supported)
-- Added the ability to import bot/integration messages, Join/Leave messages, and /me messages
-- Duplicate users are now merged
-- Channel topics, purpose, and users now import correctly
-- Channel links now import correctly
+- Added the ability to import files from Slack (CLI command also supported).
+- Added the ability to import bot/integration messages, Join/Leave messages, and /me messages.
+- Duplicate users are now merged.
+- Channel topics, purpose, and users now import correctly.
+- Channel links now import correctly.
 
 ### Improvements
 
