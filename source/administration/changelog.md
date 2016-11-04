@@ -99,7 +99,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 **Changes to Team Edition and Enterprise Edition**:
 
-- Under 'ServiceSettings` in `config.json`:
+- Under `ServiceSettings` in `config.json`:
     - Added `"ConnectionSecurity": ""` to select the type of encryption between Mattermost and your server
     - Added `"TLSCertFile": ""` to specify the certificate file to use.
     - Added `"TLSKeyFile": ""` to specify the private key to use.
@@ -134,31 +134,31 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 **Posts Table**
 
 - Added `FileIds` column
-- Added 'DeleteAt` column
+- Added indexes for `DeleteAt`
 
 **Channels Table**, **Commands Table**, **Emoji Table**, **Teams Table**, **IncomingWebhooks Table**, **OutgoingWebhooks Table**
 
-- Added `CreateAt` column
-- Added `UpdateAt` column
-- Added `DeleteAt` column
+- Added indexes for `CreateAt`
+- Added indexes for `UpdateAt`
+- Added indexes for `DeleteAt`
 
 **TeamMembers Table**
 
-- Added `DeleteAt` column
+- Added indexes for `DeleteAt`
 
 **Sessions Table**
 
-- Added `ExpiresAt` column
-- Added `CreateAt` column
-- Added `Last ActivityAt` column
+- Added indexes for `ExpiresAt`
+- Added indexes for `CreateAt`
+- Added indexes for `Last ActivityAt`
 
 **Users Table**
 
-- Added `CreateAt` column
-- Added `UpdateAt` column
-- Added `DeleteAt` column
-- Full text indexes for `idx_users_all_txt`: Username, FirstName, LastName, Nickname, Email
-- Full text indexes for `idx_users_names_txt`:Username, FirstName, LastName, Nickname
+- Added indexes for `CreateAt`
+- Added indexes for `UpdateAt`
+- Added indexes for `DeleteAt`
+- Added full text indexes for `idx_users_all_txt`: Username, FirstName, LastName, Nickname, Email
+- Added full text indexes for `idx_users_names_txt`:Username, FirstName, LastName, Nickname
 
 ### API Changes from v3.4 to v3.5
 
