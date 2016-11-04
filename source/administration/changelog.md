@@ -174,7 +174,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 **New routes:**
 
-- Added `GET` at `/users/search`
+- Added `POST` at `/users/search`
     - Search for user profiles based on username, full name and optionally team id.
 - Added `POST` at `/users/{user_id}/update_roles`
     - Update the users system wide roles.
@@ -182,20 +182,18 @@ Multiple setting options were added to `config.json`. Below is a list of the add
     - Retrieves a page of system-wide users
 - Added `POST` at `/teams/{team_id}/update_member_roles`
     - Update a user's roles for the specified team.
-- Added `GET` at `/teams/{team_id}/channels/{channel_id}/member/{user_id}`
+- Added `GET` at `/teams/{team_id}/channels/{channel_id}/members/{user_id}`
     - Retrieves the channel member for the specified user. Useful for fetching the channel member after updates are made to it. If the channel member does not exist, then return an error.
 - Added `GET` at `/teams/{team_id}/stats`
     - Returns stats for teams
-- Added `POST` at `/teams/{team_id}/members/{offset}/{limit}`
+- Added `GET` at `/teams/{team_id}/members/{offset}/{limit}`
     - To page through team members
-- Added `GET` at `/teams/{team_id}/members/ids`
+- Added `POST` at `/teams/{team_id}/members/ids`
     - Retrieves a list of team members based on user ids
 - Added `GET` at `/teams/{team_id}/members/{user_id}`
     - Retrieves a single team member
 - Added `GET` at `/teams/{team_id}/posts/{post_id}/get_file_infos`
     - Retrieves file attachment info for a post
-- Added `GET` at `/channels/{channel_id}/member/{user_id}`
-    - Retrieves a single channel member
 - Added `GET` at `/channels/{channel_id}/users/{offset}/{limit}`
     - Retrieves profiles for users in the channel
 - Added `GET` at `/channels/{channel_id}/users/not_in_channel/{offset}/{limit}`
