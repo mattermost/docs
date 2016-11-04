@@ -156,6 +156,9 @@ Teams and user accounts can only be created by a verified email from this list o
 
 Restrict Team Names 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+
+*Removed in November 16th, 2016 release*
+
 **True**: Newly created team names cannot contain the following restricted words: www, web, admin, support, notify, test, demo, mail, team, channel, internal, localhost, dockerhost, stag, post, cluster, api, oauth.
 
 **False**: Newly created team names are not restricted. 
