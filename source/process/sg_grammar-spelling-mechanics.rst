@@ -2,15 +2,12 @@
 Grammar, spelling, and mechanics
 ================================
 
-To maintain consistency across all Mattermost technical documentation, adhere to the guidelines here. in all cases, accuracy and clarity over rule 
-consistency of tone, of typographical conventions such as capitalization of titles and inline text highlighting of filenames, 
-clarity aids
- covers the language to use, the tone of voice, 
+To maintain consistency across all Mattermost technical documentation, adhere to the guidelines here.
 
 Language and spelling
 =====================
 
-Write documents in English. Use American spelling conventions.
+Write documents in English. Use American spelling.
 
 Paragraphs and sentences
 ========================
@@ -73,8 +70,6 @@ Person
 Use the second person and avoid the first person.
 
 Preferred
-  To open the program, click **Open**.
-  
   You can view the status in the *Status* pane.
 
 Avoid
@@ -85,8 +80,11 @@ Numbers
 
 Use decimal numbers except when the number is the first word of a sentence. Use commas to make long numbers easier to read.
 
-Good
+Preferred
   Three cows ran for 6 kilometers when they saw 2,300,097 mosquitoes chasing them.
+
+Avoid
+  3 cows ran for six kilometers when they saw 2300097 mosquitoes chasing them.
 
 Text highlighting
 =================
@@ -106,7 +104,7 @@ references      italic
 Contractions
 ============
 
-As a general rule, contractions are fine.
+As a general rule, contractions are acceptable in Mattermost documents.
 
 Verb tense
 ==========
@@ -114,13 +112,26 @@ Verb tense
 Use the present tense.
 
 Preferred
-  Click **Open**. The *File Open* window opens.
+  Sharing this link lets other users view the linked message.
 
 Avoid
-  Click **Open**. The *File Open* window will open.
+  Sharing this link will let other users view the linked message.
 
 Bullet lists
 ============
 
-Procedures
-==========
+The list items in a bullet list can be either all complete sentences or all sentence fragments. Don't mix complete sentences and sentence fragments in a single list. Remember that a complete sentence begins with an upper case letter and ends with a punctuation mark.
+
+Numbered lists and procedures
+=============================
+
+Create numbered lists and procedure steps using arabic numerals for the top-level list and lower case alpha characters for the first nested list. For example:
+
+
+1. This is the first step.
+2. This is the second step.
+  
+  a. This is a substep.
+  b. This is another substep.
+  
+3. This is the third step.
