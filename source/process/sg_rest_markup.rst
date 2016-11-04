@@ -96,6 +96,33 @@ For more information about how to use :doc: and :ref:, see `Inline markup`_ on t
 .. _Sphinx Markup Constructs: http://www.sphinx-doc.org/en/stable/markup/index.html
 .. _Inline markup: http://www.sphinx-doc.org/en/stable/markup/inline.html
 
-.. comments
+Literal blocks
+==============
 
-  relative links only, except of course for pages that are external to the docs
+In reStructuredText markup, the double colon marks the start of a section of literal text that corresponds to the HTML <pre> tag. However, the Sphinx processor applies syntax highlighting for Python to literal blocks.
+
+To use a literal block as originally intended in the reStructuredText specification, you must cheat a little, and use explicit code block markup with the language set to `none`. For example:
+
+.. code-block:: none
+
+  .. code-block:: none
+
+
+Menu selections
+===============
+
+To indicate a series of menu selections, avoud the menuselection role that the Sphinx processor provides.
+
+Preferred
+  .. code-block:: none
+  
+    Click **File > Open**.
+
+  This produces Click **File > Open**.
+
+Avoid
+  .. code-block:: none
+  
+    Click :menuselection:`File --> Open`.
+
+  This produces :menuselection:`File --> Open`
