@@ -83,26 +83,72 @@ Added significant improvements for large organizations running on a single serve
 ### Compatibility  
 Changes from v3.4 to v3.5:
 
-
 #### config.json   
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console. 
 
 **Changes to Team Edition and Enterprise Edition**:
 
- - Under `RateLimitSettings` in `config.json`:
+- Under 'ServiceSettings` in `config.json`:
+    - Added `"ConnectionSecurity": ""` to select the type of encryption between Mattermost and your server
+    - Added `"TLSCertFile": ""` to specify the certificate file to use.
+    - Added `"TLSKeyFile": ""` to specify the private key to use.
+    - Added `"UseLetsEncrypt": false` to enable automatic retreval of certificates from the Let's Encrypt.
+    - Added `"LetsEncryptCertificateCacheFile": "./config/letsencrypt.cache"` to specify the file to store certificates retrieved and other data about the Let's Encrypt service.
+    - Added `"Forward80To443": false` to enable forwarding of all insecure traffic from port 80 to secure port 443.
+    - Added `"ReadTimeout": 300` to specify the maximum time allowed from when the connection is accepted to when the request body is fully read.
+    - Added `"WriteTimeout": 300` to specify the maximum time allowed from the end of reading the request headers until the response is written.
+- Under `FileSettings` in `config.json`:
+    - Addded `AmazonS3SSL": true` to allow insecure connections to Amazon S3.
+- Under `RateLimitSettings` in `config.json`:
     - Changed: `"Enable": false` to disable rate limiting by default
     - Added `"MaxBurst": 100` to set the maximum number of requests allowed beyond the per second query limit
- - Under `TeamSettings` in `config.json`:
+- Under `TeamSettings` in `config.json`:
     - Added `"MaxChannelsPerTeam": 2000` to set the maximum number of channels per team
-
-**Additional Changes to Enterprise Edition:**    
-
-The following config settings will only work on servers with an Enterprise License that has the feature enabled.
-
+- Under `WebrtcSettings` in `config.json`
+    - Added `"Enable": false` to enable one-on-one video calls.
+    - Added `"GatewayWebsocketUrl": ""` to specify the websocket used to signal and establish communication between the peers.
+    - Added `"GatewayAdminUrl": ""` to specify the URl to obtain valid tokens for each peer to establish the connection.
+    - Added `"GatewayAdminSecret": ""` to specify your admin secret password to access the Gateway Admin URL.
+    - Added `"StunURI": ""` to specify your STUN URI.
+    - Added `"TurnURI": ""` to specify your TURN URI.
+    - Added `"TurnUsername": ""` to specify your TURN username
+    - Added `"TurnSharedKey": ""` to specify your TURN server shared key to created dynamic passwords to establish the connection. 
 
 ### Database Changes from v3.4 to v3.5
 
+**FileInfo Table**
+
+- Added `FileInfo` table
+
+**Posts Table**
+
+- Added `FileIds` column
+- Added 'DeleteAt` column
+
+**Channels Table**, **Commands Table**, **Emoji Table**, **Teams Table**, **IncomingWebhooks Table**, **OutgoingWebhooks Table**
+
+- Added `CreateAt` column
+- Added `UpdateAt` column
+- Added `DeleteAt` column
+
+**TeamMembers Table**
+
+- Added `DeleteAt` column
+
+**Sessions Table**
+
+- Added `ExpiresAt` column
+- Added `CreateAt` column
+- Added `Last ActivityAt` column
+
+**Users Table**
+
+- Added `CreateAt` column
+- Added `UpdateAt` column
+- Added `DeleteAt` column
+- Full text indexes for `idx_users_all_txt`: Username, FirstName, LastName, Nickname, Email
+- Full text indexes for `idx_users_names_txt`:Username, FirstName, LastName, Nickname
 
 ### API Changes from v3.4 to v3.5
 
