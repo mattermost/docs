@@ -30,9 +30,7 @@ Added significant improvements for large organizations running on a single serve
 
 #### Slack Import (Beta)
 - Added the ability to import files from Slack (CLI command also supported)
-- Added the ability to import bot/integration messages, and /me messages
 - Channel topics, purpose, and users now import correctly
-- Fixed channel linking import bug
 
 ### Improvements
 
@@ -154,7 +152,49 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### API Changes from v3.4 to v3.5
 
+**New routes:**
 
+- Added `GET` at `/users/search`
+    - Search for user profiles based on username, full name and optionally team id.
+- Added `POST` at `/users/{user_id}/update_roles`
+    - Update the users system wide roles.
+- Added `GET` at `/users/{offset}/{limit}`
+    - Retrieves a page of system-wide users
+- Added `POST` at `/teams/{team_id}/update_member_roles`
+    - Update a user's roles for the specified team.
+- Added `GET` at `/teams/{team_id}/channels/{channel_id}/member/{user_id}`
+    - Retrieves the channel member for the specified user. Useful for fetching the channel member after updates are made to it. If the channel member does not exist, then return an error.
+- Added `GET` at `/teams/{team_id}/stats`
+    - Returns stats for teams
+- Added `POST` at `/teams/{team_id}/members/{offset}/{limit}`
+    - To page through team members
+- Added `GET` at `/teams/{team_id}/members/ids`
+    - Retrieves a list of team members based on user ids
+- Added `GET` at `/teams/{team_id}/members/{user_id}`
+    - Retrieves a single team member
+- Added `GET` at `/channels/{channel_id}/member/{user_id}`
+    - Retrieves a single channel member
+- Added `GET` at `/channels/{channel_id}/users/{offset}/{limit}`
+    - Retrieves profiles for users in the channel
+- Added `GET` at `/channels/{channel_id}/users/not_in_channel/{offset}/{limit}`
+    - Retrieves profiles for users not in the channel
+
+    
+**Moved routes:**
+
+- Updated `GET` at `/channels/{channel_id}/extra_info` to `/channels/{channel_id}/stats`
+    - No longer returns a list of channel members and only returns the member count
+- Updated `POST` at `/users/profiles/{team_id}/{offset}/{limit}` to `/teams/{team_id}/user_profiles/{offset}/{limit}`
+    - Functionally performs the same, just moves it to match our other APIs that need a team ID. 
+- Updated `GET` at `/users/profiles_for_dm_list/{team_id}/{offset}/{limit}` to `/users/profiles/{offset}/{limit}`
+    - The old functionality would return all the profiles on the system if cross-team DMs were enabled or the profiles for the team if it was disabled. The new functionality will just return all profiles since the cross-team DMs setting is purely meant for the UI.
+
+**Removed routes:**
+
+- Removed `GET` at `/users/direct_profiles`
+- Removed `GET` at `/users/profiles_for_dm_list/{team_id}/{offset}/{limit}`
+- Removed `GET` at `/members/{team_id}`
+    
 ### Known Issues
 
 
