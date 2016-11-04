@@ -25,6 +25,6 @@ Document sections
 
 To make pages easier for people to quickly scan for the content that they're looking for, break your document up into logical sections. Each section should have a title, and the title should relate to the content of the section.
 
-A title is not required if you have only one section.
+A section title is not required if you have only one section.
 
 Avoid subsections. If you find that you need subsections, quite often the document is too long, or too complex, and needs to be broken up into several pages.
