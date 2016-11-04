@@ -25,6 +25,7 @@ Documentation Style Guide
    Introduction </process/sg_mattermost-doc-style.rst>
    /process/sg_document-structure.rst
    /process/sg_grammar-spelling-mechanics.rst
+   /process/sg_rest_markup.rst
 
 Joining the Team 
 =========================
