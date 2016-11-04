@@ -182,6 +182,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
     - Retrieves a list of team members based on user ids
 - Added `GET` at `/teams/{team_id}/members/{user_id}`
     - Retrieves a single team member
+- Added `GET` at `/teams/{team_id}/posts/{post_id}/get_file_infos`
+    - Retrieves file attachment info for a post
 - Added `GET` at `/channels/{channel_id}/member/{user_id}`
     - Retrieves a single channel member
 - Added `GET` at `/channels/{channel_id}/users/{offset}/{limit}`
