@@ -34,7 +34,7 @@ Set up Database Server
 ----------------------
 
 1.  For the purposes of this guide we will assume this server has an IP
-    address of 10.10.10.1
+    address of ``10.10.10.1``.
 2.  Install PostgreSQL 9.5+::
 
         sudo apt-get install postgresql postgresql-contrib
