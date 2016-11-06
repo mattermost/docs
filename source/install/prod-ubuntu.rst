@@ -1,4 +1,4 @@
-..  _prod-ubuntu:
+..  _prod-ubuntu-1404:
 
 Production Install on Ubuntu 14.04 LTS
 ======================================
