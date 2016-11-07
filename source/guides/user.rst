@@ -1,6 +1,8 @@
 Mattermost User's Guide
 -----------------------
 
+End user help and documentation. 
+
 Getting Started
 ===============
 
@@ -15,6 +17,7 @@ Getting Started
    /help/getting-started/searching.md
    /help/getting-started/creating-teams.md
    /help/getting-started/managing-members.md
+   /help/getting-started/organizing.rst
 
 Messaging
 =========

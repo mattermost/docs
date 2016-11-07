@@ -10,7 +10,7 @@ Mattermost Enterprise Edition is free to use in "team mode" without enterprise f
 - `Purchase a license key <https://about.mattermost.com/pricing/>`_
 
 Installing Enterprise Edition 
----------------
+-----------------------------
 
 To install Mattermost Enterprise Edition directly please use one of the following guides: 
 
@@ -21,12 +21,12 @@ To install Mattermost Enterprise Edition directly please use one of the followin
 
 
 Upgrading Enterprise Edition to a newer version
----------------
+-----------------------------------------------
 
 - Upgrade previous version of Mattermost Enterprise Edition to later versions by following the `upgrade procedure. <https://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition>`_
 
 Upgrading to Enterprise Edition from Mattermost Team Edition 
----------------
+------------------------------------------------------------
 
 - The open source Mattermost Team Edition is functionally identical to the commercial Mattermost Enterprise Edition in its free "team mode", but there is no ability to unlock enterprise features.
 - To enable the unlocking of enterprise features, replace the Mattermost Team Edition binary with a Mattermost Enterprise Edition binary via an `upgrade procedure <http://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition>`_.

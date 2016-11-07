@@ -1,7 +1,7 @@
 ..  _i18n:
 
 Chinese, Korean & Japanese Search
-=====================
+=================================
 
 Search for Chinese, Korean and Japanese requires special configuration.
 
@@ -47,7 +47,7 @@ Postgres:
     make install
 
 编译zhparser:
-~~~~~~~~
+~~~~~~~~~~~
 
 .. code:: bash
 
@@ -56,7 +56,7 @@ Postgres:
     SCWS_HOME=/usr/local make && make install
 
 创建extension以及增加解析配置:
-~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 .. code:: bash
 
@@ -67,7 +67,7 @@ Postgres:
 
 
 配置postgresql
-~~~~~~~~
+~~~~~~~~~~~~
 
 将 /etc/postgresql/9.3/main/postgresql.conf 中 default_text_search_config 的值更改为 simple_zh_cfg，然后重启postgresql: sudo service postgresql restart
 

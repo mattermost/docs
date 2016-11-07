@@ -1,12 +1,17 @@
 # Desktop Application Changelog
 
-## Release v3.4.0
+## Release v3.4.1
 
-Release date: September 22, 2016
+Release date: September 30, 2016
 
 This release contains a security update and it is highly recommended that users upgrade to this version.
 
-Version number updated to 3.4 to make numbering consistent with Mattermost server and mobile app releases. This change will not imply monthly releases.
+Version number updated to 3.4 to make numbering consistent with Mattermost server and mobile app releases. This change will not imply bi-monthly releases.
+
+ - v3.4.1, released 2016-09-30
+     - (OS X) Fixed an issue where the app window pops up second to foreground when a new message is received
+ - v3.4.0, released 2016-09-22
+     - Original v3.4 release
 
 ### Improvements
 
@@ -151,7 +156,7 @@ Release date: 2016-07-18
     - Ctrl+Shift+Tab or Alt+Command+Left (Menu Bar -> Window -> Select Previous Team): Switch to the previous window.
     - Right click on the tray item, to see an overview of all your teams. You can also select one and jump right into it.
 - Added **Help** to the Menu Bar, which includes
-    - Link to [**Mattermost Docs**](docs.mattermost.com)
+    - Link to [**Mattermost Docs**](https://docs.mattermost.com/)
     - Field to indicate the application version number.
 
 #### Settings Page

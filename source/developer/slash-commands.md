@@ -124,3 +124,10 @@ As mentioned above, Mattermost makes it easy to take integrations written for Sl
 3. `<!here>`, `<!everyone>`, and `<!group>` are not supported  
 4. Parameters "mrkdwn", "parse", and "link_names" are not supported (Mattermost always converts markdown and automatically links @mentions)  
 5. Bold formatting as `*bold*` is not supported (must be done as `**bold**`)  
+6. Slack assumes default values for some fields if they are not specified by the integration, while Mattermost does not 
+
+#### Troubleshooting
+
+##### `Command with a trigger of 'trigger_word' returned an empty response` 
+
+If you are using a slash command that previously worked in Slack, try specifying the "response_type" for the slash command. Slack assumes the "response_type" is "ephemeral" while Mattermost does not, so the "response_type" must be specified before the command will work.

@@ -2,19 +2,26 @@
 _____
 Notifications in Mattermost alert you to unread messages and mentions.
 
-## Unread Notifications  
-Channel name bolding and mention jewels notify you if there’s been activity in channels that you’re a member of since you were last online. When a channel with unreads is opened, there is an unread messages indicator placed at the location of the last read message.
+## Unreads indicated by Bold Channel Header   
+  
+The name of a channel in the left-hand sidebar shows as **bold** when there are unread messages in the channel. Clicking on the channel removes the bold indicator, and brings you to the earliest unread message in the channel. 
 
-#### Channel Bolding  
-Unread messages in a channel are indicated by a bold channel name in the left-hand-side (LHS). Clicking the channel name removes the bolding.
+### Muting Unreads in a Channel 
 
-- Change what activity triggers the channel bolding by clicking **Channel Menu** > **Notification Preferences** > **Mark Channel Unread**.  
+You can choose not to show unread indicators in a channel by clicking **Channel Menu** > **Notification Preferences** > **Mark Channel Unread** and selecting **Only for mentions**. 
 
-#### Mention Jewels  
-Unread mentions in a channel are indicated by bold text and a mention jewel next to the channel name in the LHS. Clicking the channel name removes the bolding and mention jewel. You can always review your recent mentions by clicking **@** next to the search box at the top of the screen. Learn more about [mentioning teammates](http://docs.mattermost.com/help/messaging/mentioning-teammates.html).
+This will only notify you if a mention is triggered on your name or a keyword for which you're listening. 
+
+## Mentions indicated by Mention Count 
+  
+Unread mentions or [your name or selected keywords](https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions) in a channel are indicated by bold text and a mention counter next to the channel name in the left-hand-sidebar. 
+
+Clicking the channel name removes the bolding and mention count. You can review your recent mentions by clicking **@** next to the search box at the top of the screen. 
+
+Learn more about [mentioning teammates](http://docs.mattermost.com/help/messaging/mentioning-teammates.html).
 
 ## Email Notifications
-Emails are sent for any mentions you receive if you have mattermost closed or have not had any browser activity for a short time.
+Emails are sent for any mentions you receive if you have Mattermost closed or have not had any browser activity for a short time.
 
 - Turn email notifications On or Off in **Account Settings** > **Notifications** > **Email Notifications**.
 - Configure the email address where notifications are sent in **Account Settings** > **General** > **Email** 
@@ -22,8 +29,6 @@ Emails are sent for any mentions you receive if you have mattermost closed or ha
 ## Desktop Notifications
 These are browser notifications that appear in the corner of your main monitor. By default, these notifications are sent for all activity while Mattermost is open. Desktop notifications are available on Firefox, Safari, and Chrome.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 - Configure when desktop notifications are sent from **Account Settings** > **Notifications** > **Desktop Notifications** > **Send Desktop Notifications**.
 - Configure channel specific desktop notifications from **Channel Menu** > **Notification Preferences** > **Send Desktop Notifications**. By default, all channels use the global setting configured in *Account Settings*.
 

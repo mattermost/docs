@@ -1,4 +1,4 @@
-=====================
+
 Integrations Overview 
 =====================
 
@@ -14,7 +14,7 @@ Mattermost offers a host of options for connecting to systems on your private ne
 **Custom integrations options include:** 
 
 1. `Command line interface (private and public cloud)`_
-2. `Custom applications (private and public cloud)`_
+2. `Custom applications using APIs and Drivers (private and public cloud)`_
 3. `Slack-compatible Slash Commands (private and public cloud)`_
 
 Pre-configured integrations 
@@ -63,12 +63,13 @@ You can send data into Mattermost real-time using command line tools by posting 
 - Learn about `incoming Webhooks <https://docs.mattermost.com/developer/webhooks-incoming.html>`_
 - Learn about the `mattersend CLI integration in Python <https://github.com/mtorromeo/mattersend>`_
 
-Custom applications (private and public cloud)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Custom applications using APIs and Drivers (private and public cloud)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost provides complete access to server APIs, along with language specific drivers to integrate into your own applications. You can also draw from dozens of open source applications to build your own. 
+Mattermost provides complete access to `server APIs <https://api.mattermost.com/>`_, along with language specific drivers to integrate into your own applications. You can also draw from dozens of open source applications to build your own. 
 
-- Learn about `Mattermost APIs, drivers, webhooks and slash commands <https://docs.mattermost.com/developer/api.html>`_
+- Learn about `Mattermost REST APIs <https://api.mattermost.com/>`_
+- Learn about `Mattermost drivers, webhooks and slash commands <https://docs.mattermost.com/developer/api.html>`_
 - Learn about `Mattermost open source apps and integrations <https://www.mattermost.org/community-applications/>`_
 - Learn about the `Mattermost Golang Bot Sample <https://github.com/mattermost/mattermost-bot-sample-golang>`_
 

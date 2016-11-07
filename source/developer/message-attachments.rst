@@ -1,5 +1,5 @@
 Message Attachments
-------------------
+-------------------
 
 Basic formatting such as bold and italic can be included in the ``text`` field of an integration’s payload by using markdown.
 
@@ -10,7 +10,7 @@ For more advanced formatting, it is necessary to send an ``attachments`` array i
 |
 
 Attachment Options
-=================
+==================
 
 When sending an attachment, you can use any of the following to format how you want the posted message to look.
 

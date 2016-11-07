@@ -8,29 +8,29 @@ Note: For any setting not explicitly set in ``config.json`` the Mattermost serve
 
 Quick Links:
 
-`General <http://docs.mattermost.com/administration/config-settings.html#id2>`_
-	`Configuration <http://docs.mattermost.com/administration/config-settings.html#id3>`_ - `Localization <http://docs.mattermost.com/administration/config-settings.html#id4>`_ - `Users and Teams <http://docs.mattermost.com/administration/config-settings.html#id5>`_ - `Privacy <http://docs.mattermost.com/administration/config-settings.html#id6>`_ - `Policy <http://docs.mattermost.com/administration/config-settings.html#policy-enterprise>`_ - `Compliance <http://docs.mattermost.com/administration/config-settings.html#compliance-enterprise>`_ - `Logging <http://docs.mattermost.com/administration/config-settings.html#id7>`_
+`General`_
+	`Configuration`_ - `Localization`_ - `Users and Teams`_ - `Privacy`_ - `Policy`_ - `Compliance`_ - `Logging`_
 
-`Authentication <http://docs.mattermost.com/administration/config-settings.html#id12>`_
-	`Email <http://docs.mattermost.com/administration/config-settings.html#id13>`_ - `OAuth 2.0 <http://docs.mattermost.com/administration/config-settings.html#oauth-2-0-enterprise>`_ - `GitLab <http://docs.mattermost.com/administration/config-settings.html#id14>`_ - `Google <http://docs.mattermost.com/administration/config-settings.html#google-enterprise>`_ - `Office 365 <http://docs.mattermost.com/administration/config-settings.html#office-365-enterprise>`_ - `AD/LDAP <http://docs.mattermost.com/administration/config-settings.html#ad-ldap-enterprise>`_ - `SAML <http://docs.mattermost.com/administration/config-settings.html#saml-enterprise>`_
+`Authentication`_
+	`Email Auth`_ - `OAuth 2.0`_ - `GitLab`_ - `Google`_ - `Office 365`_ - `AD/LDAP`_ - `SAML`_
 
-`Security <http://docs.mattermost.com/administration/config-settings.html#id29>`_
-	`Sign Up <http://docs.mattermost.com/administration/config-settings.html#id30>`_ - `Password <http://docs.mattermost.com/administration/config-settings.html#id31>`_ - `Public Links <http://docs.mattermost.com/administration/config-settings.html#id32>`_ - `Sessions <http://docs.mattermost.com/administration/config-settings.html#id33>`_ - `Connections <http://docs.mattermost.com/administration/config-settings.html#id34>`_
+`Security`_
+	`Sign Up`_ - `Password`_ - `Public Links`_ - `Sessions`_ - `Connections`_
 
-`Notifications <http://docs.mattermost.com/administration/config-settings.html#id35>`_
-	`Email <http://docs.mattermost.com/administration/config-settings.html#id36>`_ - `Mobile Push <http://docs.mattermost.com/administration/config-settings.html#id38>`_
+`Notifications`_
+	`Email`_ - `Mobile Push`_
 
-`Integrations <http://docs.mattermost.com/administration/config-settings.html#id39>`_
-	`Custom Integrations <http://docs.mattermost.com/administration/config-settings.html#id40>`_ - `External Services <http://docs.mattermost.com/administration/config-settings.html#id44>`_
+`Integrations`_
+	`Custom Integrations`_ - `External Services`_
 
-`Files <http://docs.mattermost.com/administration/config-settings.html#id45>`_
-	`Storage <http://docs.mattermost.com/administration/config-settings.html#id46>`_ - `Images <http://docs.mattermost.com/administration/config-settings.html#id47>`_
+`Files`_
+	`Storage`_ - `Images`_
 
-`Customization <http://docs.mattermost.com/administration/config-settings.html#id48>`_
-	`Custom Branding <http://docs.mattermost.com/administration/config-settings.html#id49>`_ - `Custom Emoji <http://docs.mattermost.com/administration/config-settings.html#id50>`_ - `Legal and Support <http://docs.mattermost.com/administration/config-settings.html#id51>`_ - `Mattermost App Links <http://docs.mattermost.com/administration/config-settings.html#id52>`_
+`Customization`_
+	`Custom Branding`_ - `Custom Emoji`_ - `Legal and Support`_ - `Mattermost App Links`_
 
-`Advanced <http://docs.mattermost.com/administration/config-settings.html#id55>`_
-	`Rate Limiting <http://docs.mattermost.com/administration/config-settings.html#id56>`_ - `Database <http://docs.mattermost.com/administration/config-settings.html#id57>`_ - `Developer <http://docs.mattermost.com/administration/config-settings.html#id58>`_ - `High Availability (Beta) <https://docs.mattermost.com/administration/config-settings.html#id59>`_
+`Advanced`_
+	`Rate Limiting`_ - `Database`_ - `Developer`_ - `High Availability (Beta)`_
 
 General
 ---------------------------------
@@ -40,7 +40,7 @@ Configuration
 ``````````````````````````
 
 Site URL
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The URL, including port number and protocol, from which users will access Mattermost. Leave blank to automatically configure based on incoming traffic.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -49,14 +49,18 @@ The URL, including port number and protocol, from which users will access Matter
 
 Listen Address  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-The IP address on which to listen and the port on which to bind. Entering ":8065" will bind to all interfaces or you can choose one like ``127.0.0.1:8065``. Changing this will require a server restart before taking effect.
+The address and port to which to bind and listen. Specifying ":8065" will bind to all network interfaces. Specifying ``127.0.0.1:8065`` will only bind to the network interface having that IP address. 
+
+If you choose a port of a lower level (called "system ports" or "well-known ports", in the range of 0-1023), you must have permissions to bind to that port. 
+
+On Linux you can use: ``sudo setcap cap_net_bind_service=+ep ./bin/platform`` to allow Mattermost to bind to well-known ports.
 
 +-------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ListenAddress": ":8065"``  |
 +-------------------------------------------------------------------------+
 
 Webserver Mode  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 gzip compression applies to the HTML, CSS, Javascript, and other static content files that make up the Mattermost web client. It is recommended to enable gzip to improve performance unless your environment has specific restrictions, such as a web proxy that distributes gzip files poorly. This setting requires a server restart to take effect.
 
 **gzip**: The Mattermost server will serve static files compressed with gzip to improve performance.
@@ -69,8 +73,10 @@ gzip compression applies to the HTML, CSS, Javascript, and other static content 
 | This feature's ``config.json`` setting is ``"WebserverMode": "gzip"`` with options ``gzip``, ``uncompressed`` and ``disabled`` for above settings respectively.      |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Reload Configuration from Disk (Enterprise)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Reload Configuration from Disk
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*Available in Enterprise Edition E20*
+
 This button resets the configuration settings by reloading the settings from the disk. The server will still need to be restarted if a setting requiring server restart was changed.
 
 The workflow for failover without downing the server is to change the database line in the config.json file, click **Reload Configuration from Disk** then click **Recycle Database Connections** in the Advanced > Database section.
@@ -80,7 +86,7 @@ ________
 Localization
 ```````````````````````````
 Default Server Language 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Default language for system messages and logs. Changing this will require a server restart before taking effect.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -95,7 +101,7 @@ Default language for newly created users and pages where the user hasn't logged 
 | This feature's ``config.json`` setting is ``"DefaultClientLocale": "en"`` with options ``de``, ``en``, ``es``, ``fr``, ``ja``, ``ko``, ``nl``, ``pt-br``, ``zh_CN`` and ``zh_TW``   |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 Available Languages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Sets which languages are available for users in **Account Settings** > **Display** > **Languages**. Leave the field blank to add new languages automatically by default, or add new languages using the dropdown menu manually as they become available. If you're manually adding new languages, the **Default Client Language** must be added before saving the setting.
 
 Note: Servers which upgraded to v3.1 need to manually set this field blank to have new languages added by default.
@@ -109,7 +115,7 @@ ________
 Users and Teams
 ``````````````````````````
 Enable Account Creation 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **True**: Ability to create new accounts is enabled via inviting new members or sharing the team invite link.
 
 **False**: Ability to create accounts is disabled. The **Create Account** button displays an error when trying to signup via an email invite or team invite link.
@@ -120,7 +126,7 @@ Enable Account Creation
 
 
 Enable Team Creation 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **True**: Ability to create a new team is enabled for all users.
 
 **False**: Only System Administrators can create teams from the team selection page. The **Create A New Team** button is hidden in the main menu UI.
@@ -130,7 +136,7 @@ Enable Team Creation
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Max Users Per Team
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Maximum number of users per team, including both active and inactive users.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -138,7 +144,7 @@ Maximum number of users per team, including both active and inactive users.
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Restrict account creation to specified email domains
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Teams and user accounts can only be created by a verified email from this list of comma-separated domains (e.g. "corp.mattermost.com, mattermost.org").
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -146,13 +152,13 @@ Teams and user accounts can only be created by a verified email from this list o
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Restrict Team Names 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **True**: Newly created team names cannot contain the following restricted words: www, web, admin, support, notify, test, demo, mail, team, channel, internal, localhost, dockerhost, stag, post, cluster, api, oauth.
 
 **False**: Newly created team names are not restricted. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RestrictTeamNames": true`` with options ``true`` and ``false`` for above settings respectively.                        |
+| This feature's ``config.json`` setting is ``"RestrictTeamNames": true`` with options ``true`` and ``false`` for above settings respectively.                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable users to open Direct Message channels with 
@@ -180,8 +186,10 @@ Enable Team Directory
 
 ________
 
-Policy (Enterprise)
+Policy
 ``````````````````````````
+*Available in Enterprise Edition E10 and higher*
+
 Settings to configure the permission restrictions for sending team invite links and managing channels.  
 
 Enable sending team invites from:
@@ -234,7 +242,7 @@ Privacy
 Settings to configure the name and email privacy of users on your system.  
 
 Show Email Address 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **True**: Show email address of all users.
 
 **False**: Hide email address of users from other users in the user interface, including Team Admins. This is designed for managing teams where users choose to keep their contact information private. System Administrators will still be able to see email addresses in the UI. 
@@ -255,8 +263,10 @@ Show Full Name
 
 ________
 
-Compliance (Enterprise)
+Compliance
 ```````````````````````````
+*Available in Enterprise Edition E20*
+
 Settings used to enable and configure Mattermost compliance reports. 
 
 Enable Compliance Reporting 
@@ -292,7 +302,7 @@ ________
 Logging
 ``````````````````````````
 Output logs to console 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Output log messages to the console based on **ConsoleLevel** option. The server writes messages to the standard output stream (stdout).
 
@@ -317,7 +327,7 @@ Level of detail at which log events are written to the console when **EnableCons
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Output logs to file 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **True**:  Log files are written to files specified in **FileLocation**.
 
 **False**: Log files are not written.
@@ -341,7 +351,7 @@ Level of detail at which log events are written to log files when **EnableFile**
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 File Log Directory
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Directory to which log files are written. If blank, log files write to ./logs/mattermost/mattermost.log. Log rotation is enabled and every 10,000 lines of log information is written to new files stored in the same directory, for example mattermost.2015-09-23.001, mattermost.2015-09-23.002, and so forth.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -377,7 +387,7 @@ Format of log message output. If blank, FileFormat = "[%D %T] [%L] (%S) %M", whe
 
      
 Enable Webhook Debugging
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Contents of incoming webhooks are printed to log files for debugging.
 
@@ -406,10 +416,10 @@ Authentication
 -------------------------------
 Authentication settings to enable account creation and sign in with email, GitLab, Google or Office 365 OAuth, AD/LDAP, or SAML.
 
-Email
+Email Auth
 ``````````````````````````
 Enable account creation with email 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Allow team creation and account signup using email and password.
 
@@ -420,7 +430,7 @@ Enable account creation with email
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable sign-in with email 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Mattermost allows users to sign in using their email and password.
 
@@ -443,8 +453,10 @@ Enable sign-in with username
 
 ________
 
-OAuth 2.0 (Enterprise)
+OAuth 2.0
 ``````````````````````````
+*Available in Enterprise Edition E10 and higher*
+
 Settings to configure OAuth login for account creation and login.
 
 Select OAuth 2.0 service provider:
@@ -516,8 +528,10 @@ Enter ``https://<your-gitlab-url>/oauth/authorize`` (example: ``https://example.
 
 ________
 
-Google (Enterprise)
+Google
 ``````````````````````````
+*Available in Enterprise Edition E20*
+
 Enable authentication with Google by selecting ``Google Apps`` from **OAuth 2.0 > Select OAuth 2.0 service provider**
 
 **True**: Allow team creation and account signup using Google OAuth. To configure, input the **Client ID** and **Client Secret** credentials. See `Documentation <https://docs.mattermost.com/deployment/sso-google.html>`_ for more detail.
@@ -570,8 +584,10 @@ It is recommended to use `https://www.googleapis.com/oauth2/v4/token` as the Tok
 
 ________
 
-Office 365 (Enterprise)
+Office 365
 ``````````````````````````
+*Available in Enterprise Edition E20*
+
 Enable authentication with Office 365 by selecting ``Office 365 (Beta)`` from **OAuth 2.0 > Select OAuth 2.0 service provider**
 
 **True**: Allow team creation and account signup using Office 365 OAuth. To configure, input the **Application ID** and **Application Secret Password** credentials. See `Documentation <https://docs.mattermost.com/deployment/sso-office.html>`_ for more detail.
@@ -624,8 +640,10 @@ It is recommended to use `https://login.microsoftonline.com/common/oauth2/v2.0/t
 
 ________
 
-AD/LDAP (Enterprise)
+AD/LDAP
 ```````````````````````````
+*Available in Enterprise Edition E10 and higher*
+
 Enable sign-in with AD/LDAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **True**: Mattermost allows login using AD/LDAP or Active Directory.
@@ -637,7 +655,7 @@ Enable sign-in with AD/LDAP
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 AD/LDAP Server
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The domain or IP address of the AD/LDAP server.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -653,7 +671,7 @@ The port Mattermost will use to connect to the AD/LDAP server. Default is 389.
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Connection Security
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The type of connection security Mattermost uses to connect to AD/LDAP.
 
 **None**: No encryption, Mattermost will not attempt to establish an encrypted connection to the AD/LDAP server.
@@ -681,7 +699,7 @@ Skip Certificate Verification
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Base DN
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The **Base Distinguished Name** of the location where Mattermost should start its search for users in the AD/LDAP tree.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -689,7 +707,7 @@ The **Base Distinguished Name** of the location where Mattermost should start it
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Bind Username 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The username used to perform the AD/LDAP search. This should be an account created specifically for use with Mattermost  Its permissions should be limited to read-only access to the portion of the AD/LDAP tree specified in the **Base DN** field. When using Active Directory, **Bind Username** should specify domain in ``DOMAIN/username`` format. This field is required, and anonymous bind is not currently supported.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -716,7 +734,7 @@ This filter uses the permissions of the **Bind Username** account to execute the
 
 First Name Attribute 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-(Optional) The attribute in the AD/LDAP server that will be used to populate the first name of users in Mattermost.
+(Optional) The attribute in the AD/LDAP server that will be used to populate the first name of users in Mattermost. When set, users will not be able to edit their First Name, since it is synchronized with the LDAP server. When left blank, users can set their own First Name in Account Settings.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FirstNameAttribute": ""``  with string input.                                                                           |
@@ -724,7 +742,7 @@ First Name Attribute
 
 Last Name Attribute  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-(Optional) The attribute in the AD/LDAP server that will be used to populate the last name of users in Mattermost.
+(Optional) The attribute in the AD/LDAP server that will be used to populate the last name of users in Mattermost. When set, users will not be able to edit their Last Name, since it is synchronized with the LDAP server. When left blank, users can set their own Last Name in Account Settings.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LastNameAttribute": ""`` with string input.                                                                             |
@@ -732,7 +750,7 @@ Last Name Attribute
 
 Nickname Attribute 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-(Optional) The attribute in the AD/LDAP server that will be used to populate the nickname of users in Mattermost.
+(Optional) The attribute in the AD/LDAP server that will be used to populate the nickname of users in Mattermost. When set, users will not be able to edit their Nickname, since it is synchronized with the LDAP server. When left blank, users can set their own Nickname in Account Settings.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"NicknameAttribute": ""`` with string input.                                                                             |
@@ -803,7 +821,7 @@ The timeout value for queries to the AD/LDAP server. Increase this value if you 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 AD/LDAP Synchronize Now
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 This button causes AD/LDAP synchronization to occur as soon as it is pressed. Use it whenever you have made a change in the AD/LDAP server you want to take effect immediately. After using the button, the next AD/LDAP synchronization will occur after the time specified by the Synchronization Interval.
 
 AD/LDAP Test
@@ -812,8 +830,10 @@ This button can be used to test the connection to the AD/LDAP server. If the tes
 
 ________
 
-SAML (Enterprise)
+SAML
 ```````````````````````````
+*Available in Enterprise Edition E20*
+
 Enable Login With SAML 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **True**: Mattermost allows login using SAML. Please see `documentation <http://docs.mattermost.com/deployment/sso-saml.html>`_ to learn more about configuring SAML for Mattermost.
@@ -989,16 +1009,20 @@ ________
 
 Password
 ```````````````````````````
-Minimum Password Length (Enterprise)
+Minimum Password Length
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*Available in Enterprise Edition E10 and higher*
+
 Minimum number of characters required for a valid password. Must be a whole number greater than or equal to 5 and less than or equal to 64.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MinimumLength": 5"`` with whole number input.                                                                           |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Password Requirements (Enterprise)
+Password Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*Available in Enterprise Edition E10 and higher*
+
 Set the required character types to be included in a valid password. Defaults to allow any characters unless otherwise specified by the checkboxes. The error messasage previewed in the System Console will appear on the account creation page if a user enters an invalid password.
 
 - **At least one lowercase letter**: Select this checkbox if a valid password must contain at least one lowercase letter.    
@@ -1033,14 +1057,20 @@ Failed login attempts allowed before a user is locked out and required to reset 
 | This feature's ``config.json`` setting is ``"MaximumLoginAttempts": 10`` with whole number input.                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable Multi-factor Authentication (Enterprise) 
+Enable Multi-factor Authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*Available in Enterprise Edition E10 and higher*
+
+The default recommendation for secure deployment is to host Mattermost within your own private network, with VPN clients on mobile, so everything works under your existing security policies and authentication protocols, which may already include multi-factor authentication. 
+
+If you choose to run Mattermost outside your private network, bypassing your existing security protocols, it is recommended you upgrade to Mattermost Enterprise Edition to set up a multi-factor authentication service specifically for accessing Mattermost. 
+
 **True**: When true, users will be given the option to require a phone-based passcode, in addition to their password-based authentication, to sign-in to the Mattermost server. Specifically, they will be asked to download the `Google Authenticator <https://en.wikipedia.org/wiki/Google_Authenticator>`_ app to their iOS or Android mobile device, connect the app with their account, and then enter a passcode generated by the app on their phone whenever they log in to the Mattermost server.
 
 **False**: Multi-factor authentication is disabled.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableMultifactorAuthentication": true`` with options ``true`` and ``false`` for above settings respectively.                    |
+| This feature's ``config.json`` setting is ``"EnableMultifactorAuthentication": true`` with options ``true`` and ``false`` for above settings respectively.           |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -1166,6 +1196,8 @@ Name displayed on email account used when sending notification emails from Matte
 Notification From Address  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Address displayed on email account used when sending notification emails from Mattermost system.
+
+So you don't miss messages, please make sure to change this value to an email your system administrator receives, example: `admin@yourcompany.com`.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FeedbackEmail": ""`` with string input.                                                                                 |
@@ -1536,11 +1568,13 @@ Site Name
 Name of service shown in login screens and UI. Maximum 30 characters.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SiteName": "Mattermost"`` with string input.                                                                     |
+| This feature's ``config.json`` setting is ``"SiteName": "Mattermost"`` with string input.                                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable Custom Branding (Enterprise)
+Enable Custom Branding
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*Available in Enterprise Edition E10 and higher*
+
 **True**: Enables custom branding to show a JPG image some custom text on the server login page. 
 
 **False**: Custom branding is disabled.
@@ -1549,24 +1583,29 @@ Enable Custom Branding (Enterprise)
 | This feature's ``config.json`` setting is ``"EnableCustomBrand": false`` with options ``true`` and ``false`` for above settings respectively.                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Custom Brand Image (Enterprise)
+Custom Brand Image
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*Available in Enterprise Edition E10 and higher*
+
 Custom JPG image is displayed on left side of server login page. Recommended maximum image size is less than 2 MB because image will be loaded for every user who logs in.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This features has no ``config.json`` setting and must be set in the System Console user interface.                                                                    |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Custom Brand Text (Enterprise)
+Custom Brand Text
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*Available in Enterprise Edition E10 and higher*
+
 Custom text will be shown below custom brand image on left side of server login page. Maximum 500 characters allowed. You can format this text using the same `Markdown formatting codes <http://docs.mattermost.com/help/messaging/formatting-text.html>`_ as using in Mattermost messages. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"CustomBrandText": ""`` with string input.                                                                               |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Site Description (Enterprise)
+Site Description
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*Available in Enterprise Edition E10 and higher*
 Description of service shown in login screens and UI. When not specified, "All team communication in one place, searchable and accessible anywhere" is displayed.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1587,8 +1626,10 @@ Enable Custom Emoji
 | This feature's ``config.json`` setting is ``"EnableCustomEmoji": false`` with options ``true`` and ``false`` for above settings respectively.                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Restrict Custom Emoji Creation (Enterprise)
+Restrict Custom Emoji Creation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*Available in Enterprise Edition E10 and higher*
+
 **Allow everyone to create custom emoji**: Allows everyone to create custom emoji from the **Main Menu** > **Custom Emoji**.
 
 **Allow System and Team Admins to create custom emoji**: The Custom Emoji option is hidden from the Main Menu for users who are not System or Team Admins.
@@ -1610,7 +1651,7 @@ Terms of Service link
 Configurable link to Terms of Service your organization may provide to end users. By default, links to a Terms of Service page hosted on about.mattermost.com. If changing the link to a different Terms of Service, make sure to include the "Mattermost Conditions of Use" notice to end users that must also be shown to users from the "Terms of Service" link.  
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"TermsOfServiceLink": "https://about.mattermost.com/default-terms/"`` with string input.                                                       |
+| This feature's ``config.json`` setting is ``"TermsOfServiceLink": "https://about.mattermost.com/default-terms/"`` with string input.                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Privacy Policy link  
@@ -1618,7 +1659,7 @@ Privacy Policy link
 Configurable link to Privacy Policy your organization may provide to end users.  By default, links to a Privacy Policy page hosted on about.mattermost.com.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PrivacyPolicyLink": "https://about.mattermost.com/default-privacy-policy/"`` with string input.                                               |
+| This feature's ``config.json`` setting is ``"PrivacyPolicyLink": "https://about.mattermost.com/default-privacy-policy/"`` with string input.                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 About link  
@@ -1648,6 +1689,8 @@ Set the link for the support website.
 Support Email  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Set an email for feedback or support requests.
+
+So you don't miss messages, please make sure to change this value to an email your system administrator receives, example: `support@yourcompany.com`.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SupportEmail":"feedback@mattermost.com"`` with string input.                                                            |
@@ -1797,8 +1840,10 @@ Trace
 | This feature's ``config.json`` setting is ``"Trace": false`` with options ``true`` and ``false`` for above settings respectively.                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Recycle Database Connections (Enterprise)
+Recycle Database Connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*Available in Enterprise Edition E20*
+
 This button reconnects to the database listed in the configuration settings. All old connections are closed after 20s.
 
 The workflow for failover without downing the server is to change the database line in the config.json file, click **Reload Configuration from Disk** in the General > Configuration section then click **Recycle Database Connections**.
@@ -1828,14 +1873,16 @@ Enable Developer Mode
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableDeveloper": false`` with options ``true`` and ``false`` for above settings respectively.                          |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-________
+________________________________________________________________________________________________________________________________________________________________________
 
 High Availability (Beta)
 ```````````````````````````
+*Available in Enterprise Edition E20*
+
 Changing properties in this section will require a server restart before taking effect. When High Availability mode is enabled, the System Console is set to read-only and can only be changed from the configuration file. Learn more about configuring high availability in our `documentation <https://docs.mattermost.com/deployment/cluster.html>`_.
 
 Enable High Availability Mode
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **True**: The Mattermost Server will attempt inter-node communication with the other servers in the cluster. This sets the System Console to read-only mode to keep the servers ``config.json`` files in sync.
 
 **False**: Mattemost high availability is disabled.
@@ -1846,7 +1893,7 @@ Enable High Availability Mode
 
 
 Inter-Node Listen Address
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 The address the Mattermost Server will listen on for inter-node communication. When setting up your network you should secure the listen address so that only machines in the cluster have access to that port. This can be done in different ways, for example, using IPsec, security groups, or routing tables.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1864,7 +1911,7 @@ A list of all the machines in the cluster, separated by commas, for example, ``[
 ------
 
 Settings configurable only in config.json
--------------------------------
+-----------------------------------------
 
 There are a number of settings customizable in ``config.json`` unavailable in the System Console and require updating from the file itself. 
 
@@ -2011,5 +2058,5 @@ Scope
 Standard setting for OAuth to determine the scope of information shared with OAuth client. Recommended setting is ``User.Read``.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Scope": "User.Read"`` with string input.                                                                                |
+| This feature's ``config.json`` setting is ``"Scope": "User.Read"`` with string input                                                                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+

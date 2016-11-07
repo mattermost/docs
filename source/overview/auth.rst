@@ -55,7 +55,7 @@ When deploying Mattermost to a DMZ location outside a private network, a range o
 Future authentication methods 
 -----------------------------
 
-Mattermost Enterprise Edition releases new improvements monthly. Several additional authentication methods are planned, but not yet scheduled. If you're an enterprise interested in deploying with one of the following options, or another option not yet listed, please contact sales@mattermost.com to start a discussion. 
+Mattermost Enterprise Edition releases new improvements bi-monthly. Several additional authentication methods are planned, but not yet scheduled. If you're an enterprise interested in deploying with one of the following options, or another option not yet listed, please contact sales@mattermost.com to start a discussion. 
 
 - Certificate-based authentication
 - Authentication via reverse proxy

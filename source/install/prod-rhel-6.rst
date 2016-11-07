@@ -5,11 +5,11 @@ Production Install on RHEL 6.6
 
 Install Mattermost in production mode on one, two or three machines, using the following steps: 
 
-- `Install Red Hat Enterprise Linux (x64) 6.6 <#install-red-hat-enterprise-linux-x64-66>`_
-- `Set up Database Server <#set-up-database-server>`_
-- `Set up Mattermost Server <#set-up-mattermost-server>`_
-- `Set up NGINX Server <#set-up-nginx-server>`_
-- `Test setup and configure Mattermost Server <#test-setup-and-configure-mattermost-server>`_
+- `Install Red Hat Enterprise Linux (x64) 6.6`_
+- `Set up Database Server`_
+- `Set up Mattermost Server`_
+- `Set up NGINX Server`_
+- `Test setup and configure Mattermost Server`_
 
 Install Red Hat Enterprise Linux (x64) 6.6
 ------------------------------------------
@@ -317,6 +317,9 @@ Set up NGINX with SSL (Recommended)
 7. Add the following line to cron so the cert will renew every month
   * ``crontab -e``
   * ``@monthly /home/YOURUSERNAME/letsencrypt/letsencrypt-auto certonly --reinstall -d yourdomainname && sudo service nginx reload``
+8. Check that your SSL certificate is set up correctly
+  * Test the SSL certificate by visiting a site such as `https://www.ssllabs.com/ssltest/index.html <https://www.ssllabs.com/ssltest/index.html>`_
+  * If there’s an error about the missing chain or certificate path, there is likely an intermediate certificate missing that needs to be included
 
 Test setup and configure Mattermost Server
 ------------------------------------------

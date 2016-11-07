@@ -30,7 +30,7 @@ In addition to supporting Slack's incoming webhook formatting, Mattermost webhoo
 
 ### [Outgoing Webhooks](http://docs.mattermost.com/developer/webhooks-outgoing.html) 
 
-Outgoing webhooks allow external applications to receive webhook events from events happening within Mattermost channels and private groups via JSON payloads via HTTP POST requests sent to incoming webhook URLs defined by your applications. 
+Outgoing webhooks allow external applications to receive webhook events from events happening within Mattermost channels via JSON payloads via HTTP POST requests sent to incoming webhook URLs defined by your applications. 
 
 Over time, Mattermost outgoing webhooks will support not only Slack applications using a compatible format, but also offer optional events and triggers beyond Slack's feature set. 
 
@@ -69,7 +69,7 @@ If no driver is available for the programming language of your choice, you can v
 
 There are a wide range of [installation guides](http://www.mattermost.org/installation/) for setting up your own Mattermost server on which to develop and test your integrations. 
 
-## Mattermsot Golang Bot Sample (Driver Example) 
+## Mattermost Golang Bot Sample (Driver Example) 
 
 Mattermost provides a [Golang Bot Sample](https://github.com/mattermost/mattermost-bot-sample-golang) to demonstration how Mattermost works with the Golang driver and the APIs.
 

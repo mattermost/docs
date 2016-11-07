@@ -5,11 +5,11 @@ Production Install on Ubuntu 14.04 LTS
 
 Install Mattermost in production mode on one, two or three machines, using the following steps: 
 
-- `Install Ubuntu Server (x64) 14.04 LTS <#production-install-on-ubuntu-14-04-lts>`_
-- `Set up Database Server <#set-up-database-server>`_
-- `Set up Mattermost Server <#set-up-mattermost-server>`_
-- `Set up NGINX Server <#set-up-nginx-server>`_
-- `Test setup and configure Mattermost Server <#test-setup-and-configure-mattermost-server>`_
+- `Install Ubuntu Server (x64) 14.04 LTS`_
+- `Set up Database Server`_
+- `Set up Mattermost Server`_
+- `Set up NGINX Server`_
+- `Test setup and configure Mattermost Server`_
 
 
 Install Ubuntu Server (x64) 14.04 LTS
@@ -68,7 +68,7 @@ Set up Database Server
 10. Allow Postgres to listen on all assigned IP Addresses
 
     -  ``sudo vi /etc/postgresql/9.3/main/postgresql.conf``
-    -  Uncomment ``listen_addresses`` and change ``localhost`` to ``\*``
+    -  Uncomment ``listen_addresses`` and change ``localhost`` to ``*``
 
 11. Alter pg\_hba.conf to allow the mattermost server to talk to the
     postgres database
@@ -80,6 +80,14 @@ Set up Database Server
 12. Reload Postgres database
 
     -  ``sudo /etc/init.d/postgresql reload``
+    
+    check with netstat command to see postgresql actually running on given ip and port
+    
+    - ``sudo netstat -anp | grep 5432``
+    
+    try restarting the postgresql service if reload won't work
+
+    - ``sudo service postgresql restart``
 
 13. Attempt to connect with the new created user to verify everything
     looks good
@@ -202,26 +210,53 @@ Set up NGINX Server
 
    -  Create a configuration for Mattermost
    -  ``sudo touch /etc/nginx/sites-available/mattermost``
-   -  Below is a sample configuration with the minimum settings required
-      to configure Mattermost
+   -  Below is a sample nginx configuration optimized for performance:
 
     ::
+        upstream backend {
+            server 10.10.10.2:8065;
+        }
+
+        proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=mattermost_cache:10m max_size=3g inactive=120m use_temp_path=off;
 
         server {
-          server_name mattermost.example.com;
+            listen 80;
+            server_name    mattermost.example.com;
 
-          location / {
-             client_max_body_size 50M;
-             proxy_set_header Upgrade $http_upgrade;
-             proxy_set_header Connection "upgrade";
-             proxy_set_header Host $http_host;
-             proxy_set_header X-Real-IP $remote_addr;
-             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-             proxy_set_header X-Forwarded-Proto $scheme;
-             proxy_set_header X-Frame-Options SAMEORIGIN;
-             proxy_pass http://10.10.10.2:8065;
-          }
-       }
+            location /api/v3/users/websocket {
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "upgrade";
+                client_max_body_size 50M;
+                proxy_set_header Host $http_host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+                proxy_set_header X-Frame-Options SAMEORIGIN;
+                proxy_buffers 256 16k;
+                proxy_buffer_size 16k;
+                proxy_read_timeout 600s;
+                proxy_pass http://backend;
+            }
+
+            location / {
+                client_max_body_size 50M;
+                proxy_set_header Connection "";
+                proxy_set_header Host $http_host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+                proxy_set_header X-Frame-Options SAMEORIGIN;
+                proxy_buffers 256 16k;
+                proxy_buffer_size 16k;
+                proxy_read_timeout 600s;
+                proxy_cache mattermost_cache;
+                proxy_cache_revalidate on;
+                proxy_cache_min_uses 2;
+                proxy_cache_use_stale timeout;
+                proxy_cache_lock on;
+                proxy_pass http://backend;
+            }
+        }
 
 
    * Remove the existing file with
@@ -258,40 +293,67 @@ Set up NGINX with SSL (Recommended)
 
   ::
 
-      server {
-         listen         80;
-         server_name    mattermost.example.com;
-         return         301 https://$server_name$request_uri;
-      }
+    upstream backend {
+        server 10.10.10.2:8065;
+    }
 
-      server {
-         listen 443 ssl;
-         server_name mattermost.example.com;
+    server {
+       listen         80;
+       server_name    mattermost.example.com;
+       return         301 https://$server_name$request_uri;
+    }
 
-         ssl on;
-         ssl_certificate /etc/letsencrypt/live/yourdomainname/fullchain.pem;
-         ssl_certificate_key /etc/letsencrypt/live/yourdomainname/privkey.pem;
-         ssl_session_timeout 5m;
-         ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-         ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
-         ssl_prefer_server_ciphers on;
-         ssl_session_cache shared:SSL:10m;
+    proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=mattermost_cache:10m max_size=3g inactive=120m use_temp_path=off;
 
-         location / {
-            gzip off;
-            proxy_set_header X-Forwarded-Ssl on;
-            client_max_body_size 50M;
-            proxy_set_header Upgrade $http_upgrade;
-            proxy_set_header Connection "upgrade";
-            proxy_set_header Host $http_host;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header X-Forwarded-Proto $scheme;
-            proxy_set_header X-Frame-Options SAMEORIGIN;
-            proxy_pass http://10.10.10.2:8065;
-         }
-      }
+    server {
+       listen 443 ssl;
+       server_name mattermost.example.com;
 
+       ssl on;
+       ssl_certificate /etc/letsencrypt/live/yourdomainname/fullchain.pem;
+       ssl_certificate_key /etc/letsencrypt/live/yourdomainname/privkey.pem;
+       ssl_session_timeout 5m;
+       ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+       ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
+       ssl_prefer_server_ciphers on;
+       ssl_session_cache shared:SSL:10m;
+
+       location /api/v3/users/websocket {
+          proxy_set_header Upgrade $http_upgrade;
+          proxy_set_header Connection "upgrade";
+          proxy_set_header X-Forwarded-Ssl on;
+          client_max_body_size 50M;
+          proxy_set_header Host $http_host;
+          proxy_set_header X-Real-IP $remote_addr;
+          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+          proxy_set_header X-Forwarded-Proto $scheme;
+          proxy_set_header X-Frame-Options SAMEORIGIN;
+          proxy_buffers 256 16k;
+          proxy_buffer_size 16k;
+          proxy_read_timeout 600s;
+          proxy_pass http://backend;
+       }
+
+       location / {
+          proxy_set_header X-Forwarded-Ssl on;
+          client_max_body_size 50M;
+          proxy_set_header Connection "";
+          proxy_set_header Host $http_host;
+          proxy_set_header X-Real-IP $remote_addr;
+          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+          proxy_set_header X-Forwarded-Proto $scheme;
+          proxy_set_header X-Frame-Options SAMEORIGIN;
+          proxy_buffers 256 16k;
+          proxy_buffer_size 16k;
+          proxy_read_timeout 600s;
+          proxy_cache mattermost_cache;
+          proxy_cache_revalidate on;
+          proxy_cache_min_uses 2;
+          proxy_cache_use_stale timeout;
+          proxy_cache_lock on;
+          proxy_pass http://backend;
+        }
+    }
 
 
 6. Be sure to restart NGINX
@@ -299,8 +361,11 @@ Set up NGINX with SSL (Recommended)
 7. Add the following line to cron so the cert will renew every month
   * ``crontab -e``
   * ``@monthly /home/ubuntu/letsencrypt/letsencrypt-auto certonly --reinstall -d yourdomainname && sudo service nginx reload``
+8. Check that your SSL certificate is set up correctly
+  * Test the SSL certificate by visiting a site such as `https://www.ssllabs.com/ssltest/index.html <https://www.ssllabs.com/ssltest/index.html>`_
+  * If there’s an error about the missing chain or certificate path, there is likely an intermediate certificate missing that needs to be included
 
-Test setup and configure Mattermost Server
+Additional Mattermost Configuration
 ------------------------------------------
 
 1. Navigate to ``https://mattermost.example.com`` and create a team and
@@ -331,12 +396,7 @@ Test setup and configure Mattermost Server
 
    -  Set *Log to The Console* to ``false``
 
-7. Update **Advanced** > **Rate Limiting** settings:
-
-   -  Set *Vary By Remote Address* to ``false``
-   -  Set *Vary By HTTP Header* to ``X-Real-IP``
-
-8. Feel free to modify other settings.
-9. Restart the Mattermost Service by typing:
+7. Feel free to modify other settings.
+8. Restart the Mattermost Service by typing:
 
    -  ``sudo restart mattermost``

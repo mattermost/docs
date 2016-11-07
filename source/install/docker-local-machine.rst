@@ -1,7 +1,7 @@
 ..  _docker-local-machine:
 
 Local Machine Setup using Docker 
-===============================
+================================
 
 The following instructions use Docker to install Mattermost in *Preview Mode* for exploring product functionality on a single machine using Docker. This configuration should not be used in production, as it's using a known password string and contains other non-production configuration settings, and it does not support upgrade. 
 
@@ -19,7 +19,7 @@ If you have Docker set up, Mattermost installs in one-line:
 Otherwise, see step-by-step instructions:
 
 Mac OS X and Windows 10
--------
+-----------------------
 
 1. Install `Docker for Mac <http://docs.docker.com/installation/mac/>`_ or `Docker for Windows <http://docs.docker.com/installation/windows/>`_
 2. Run:
@@ -49,7 +49,7 @@ Ubuntu
 
        docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview
 
-3. When docker is done fetching the image, open http://localhost:8065/
+3. When docker is done fetching the image, open ``http://localhost:8065/``
    in your browser.
 
 Arch
@@ -71,7 +71,7 @@ Arch
 
        docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview
 
-3. When Docker is done fetching the image, open http://localhost:8065/
+3. When Docker is done fetching the image, open ``http://localhost:8065/``
    in your browser.
 
 Additional Notes
@@ -99,7 +99,7 @@ See `Configuration Settings <http://docs.mattermost.com/administration/config-se
 documentation to customize your deployment.
 
 (Recommended) Enable Email
------
+--------------------------
 
 The default single-container Docker instance for Mattermost is designed
 for product evaluation, and sets ``SendEmailNotifications=false`` so the
