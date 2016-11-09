@@ -22,10 +22,7 @@ Documentation Style Guide
 .. toctree::
    :maxdepth: 3
 
-   Introduction </process/sg_mattermost-doc-style.rst>
-   /process/sg_document-structure.rst
-   /process/sg_grammar-spelling-mechanics.rst
-   /process/sg_rest_markup.rst
+   /process/sg_mattermost-doc-style.rst
 
 Joining the Team 
 =========================
