@@ -15,6 +15,7 @@ Development Process
    /process/accepting-pull-request*
    /process/community-systems*
    /process/documentation-guidelines*
+   /process/marketing-guidelines*
 
 
 Joining the Team 
