@@ -18,7 +18,7 @@ Mattermost officially supports Okta and Microsoft ADFS as the identity providers
 
 Before configuring SAML with Okta or Microsoft ADFS, make sure you have the [XML Security Library](https://www.aleksey.com/xmlsec/download.html) installed on your Mattermost instance. The XML Security Library is usually included as part of Debian GNU/Linux.
 
-If you're deploying on Ubuntu, make sure you also have [OpenSSL version 0.9.8](https://www.openssl.org/source/) installed on your Mattermost instance.
+If you're deploying on Ubuntu, make sure you also have [OpenSSL version 0.9.8 or later](https://www.openssl.org/source/) installed on your Mattermost instance.
 
 #### Troubleshooting
 
