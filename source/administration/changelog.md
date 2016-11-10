@@ -10,6 +10,7 @@ Release date:
 
 #### Languages
 - Added Russian translations for the user interface.
+- Promoted Chinese (both simplified and traditional) to release-quality translations.
 
 #### Performance
 
@@ -48,12 +49,15 @@ Added significant improvements for large organizations running on a single serve
 #### iOS Apps
 - Channel and account settings, and channel header are now full screen modals for better visibility
 - [...] menu options now displayed larger for better usability
+- Keyboard doesn't automatically close when sending a message, letting you quickly send several messages in succession
+- When the "Download" link is clicked on files, a "Back" button lets users get back to the app
 
 #### Android Apps
 - Channel and account settings, and channel header are now full screen modals for better visibility
 - [...] menu options now displayed larger for better usability
 - Disabled screen rotation
 - Fixed where clicking on download button for a file attachment did nothing
+- Keyboard doesn't automatically close when sending a message, letting you quickly send several messages in succession
 
 #### User Interface
 - Text (.txt) files now show a preview in the image previewer
@@ -221,6 +225,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Known Issues
 
 - Channel autolinking with `~` only works if you are a member of the channel
+- User can receive a video call from another browser tab while already on a call
+- Video calls do not work with Chrome v56 and later
 
 ### Contributors
 
