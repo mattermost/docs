@@ -6,6 +6,8 @@ The following process provides steps to configure SAML with Okta for Mattermost.
 
 1 - Before configuring SAML with Okta, make sure you have the [XML Security Library](https://www.aleksey.com/xmlsec/download.html)  installed on your Mattermost instance. The XML Security Library is usually included as part of Debian GNU/Linux.
 
+If you're deploying on Ubuntu, make sure you also have [OpenSSL version 0.9.8](https://www.openssl.org/source/) installed on your Mattermost instance.
+
 2 - (Optional) If you would like to set up encryption for your SAML connection, generate encryption certificates now. You are free to use [our script in the `/docs` repo](https://github.com/mattermost/docs/tree/master/source/scripts/generate-certificates) or use another method to generate them.
 
 You should save the two files that are generated, which will be referred to as the **Service Provider Private Key** and the **Service Provider Public Certificate** in this guide.
