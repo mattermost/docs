@@ -22,10 +22,6 @@ To start, select one of the following guides:
       1. Run `platform -version` to check the current version of your Mattermost server
       2. Determine the appropriate next upgrade for your server:
           - Mattermost `v3.0.x` and later can upgrade directly to Mattermost `v3.5.x`
-              - Note: If public links are enabled, upgrading to `v3.4.x` and later will invalidate existing public links due to a security upgrade allowing admins to invalidate links by resetting a public link salt from the System Console.
-              - Note: Upgrading from 3.2 to 3.4 and later will be incomplete due to a migration code not being run properly. You can either:
-                  - Upgrade from 3.2 to 3.3 and then from 3.3 to 3.4 and later, or
-                  - Upgrade from 3.2 to 3.4 and later, then run the following SQL query to make Mattermost rerun upgrade steps that were not properly completed: `UPDATE Systems SET Value = '3.1.0' WHERE Name = 'Version';`
               - Note: RHEL6 and Ubuntu installations must verify the line `limit nofile 50000 50000` is included in `/etc/init/mattermost.conf` file. See the [installation guide](https://docs.mattermost.com/guides/administrator.html#install-guides) for your operating system for more details.
               - Note: RHEL7 and Debian installations must verify the line `LimitNOFILE=49152` is included in the `/etc/systemd/system/mattermost.service` file. See the [installation guide](https://docs.mattermost.com/guides/administrator.html#install-guides) for your operating system for more details.
           - Mattermost `v2.2.x` can upgrade directly to `v3.1.x` or `v3.2.x` but must follow the [extended upgrade guide for `v3.0.x`](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-3-0-x)   
@@ -149,10 +145,6 @@ For any issues, Mattermost Enterprise Edition subscribers and trial license user
       1. Run `platform -version` to check the current version of your Mattermost server
       2. Determine the appropriate next upgrade for your server:
           - Mattermost `v3.0.x` and later can upgrade directly to Mattermost `v3.5.x`
-              - Note: If public links are enabled, upgrading to `v3.4.x` and later will invalidate existing public links due to a security upgrade allowing admins to invalidate links by resetting a public link salt from the System Console.
-              - Note: Upgrading from 3.2 to 3.4 and later will be incomplete due to a migration code not being run properly. You can either:
-                  - Upgrade from 3.2 to 3.3 and then from 3.3 to 3.4 and later, or
-                  - Upgrade from 3.2 to 3.4 and later, then run the following SQL query to make Mattermost rerun upgrade steps that were not properly completed: `UPDATE Systems SET Value = '3.1.0' WHERE Name = 'Version';`
               - Note: RHEL6 and Ubuntu installations must verify the line `limit nofile 50000 50000` is included in `/etc/init/mattermost.conf` file. See the [installation guide](https://docs.mattermost.com/guides/administrator.html#install-guides) for your operating system for more details.
               - Note: RHEL7 and Debian installations must verify the line `LimitNOFILE=49152` is included in the `/etc/systemd/system/mattermost.service` file. See the [installation guide](https://docs.mattermost.com/guides/administrator.html#install-guides) for your operating system for more details.
           - Mattermost `v2.2.x` can upgrade directly to `v3.1` or `v3.2` but must follow the [extended upgrade guide for `v3.0.x`](https://docs.mattermost.com/administration/upgrade.html#upgrade-to-enterprise-edition-3-0-x)   
