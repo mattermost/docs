@@ -1,13 +1,40 @@
 ==================================================
-Mattermost Norms 
+Onboarding 
 ==================================================
 
 This document in intended for new hires to summarize norms for working at Mattermost, Inc. including: 
 
+- `Getting Started Checklist`_ - Getting ready to work here 
 - `Meetings`_ - When we get together and why 
 - `Mindsets`_ - Shared toolsets we have for solving problems 
 - `Terminology`_- Shared vocabulary to convey ideas quickly
 - `Training`_ - Material available to help us ramp quickly in different areas 
+
+---------------------------------------------------------
+Getting Started Checklist 
+---------------------------------------------------------
+
+Hiring 
+
+- (People Ops & New Hire) Offer letter accepted via click-sign 
+- (Logistics) Mail t-shirt & track jacket 
+
+T-minus 1-3 weeks 
+
+- (People Ops & New Hire) Order laptop to be sent to New Hire's address or expensed. For non-developers, budget is cost of a Macbook in your local area, for developers budget is cost of a Macbook Pro. 
+- (New Hire) Read the entirety of Onboarding page for info on meetings, mindsets, terminology and training materials.
+
+T-minus 1 week
+
+- (People Ops) Send email invite to New Hire to set up an @mattermost.com email address. New Hire should use this email address on pre-release.mattermost.com (replace personal email with company email if already registered there) 
+
+- (People Ops & New Hire) Setup Payroll. Non-US Employee/Non-Canada Employee, complete bank info form for monthly wire transfer. 
+
+First Day 
+
+- (Manager) Posts welcome message in stand-up channel 
+- (Manager) Meets New Hire for first 1-1 meeting
+- (Buddy) Meets New Hire for first 1-1 meeting, 
 
 ---------------------------------------------------------
 Meetings 
