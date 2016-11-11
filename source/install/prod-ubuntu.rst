@@ -9,7 +9,6 @@ Install Mattermost in production mode on one, two or three machines, using the f
 - `Set up Database Server`_
 - `Set up Mattermost Server`_
 - `Set up NGINX Server`_
-- `Test setup and configure Mattermost Server`_
 
 
 Install Ubuntu Server (x64) 14.04 LTS
