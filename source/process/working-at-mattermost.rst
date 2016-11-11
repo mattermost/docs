@@ -147,8 +147,8 @@ The comfort of home, freedom to travel, no commute--learn more about our `remote
 
 Just as flexible as our working hours, learn more about our `paid time-off policies <https://docs.mattermost.com/process/working-at-mattermost.html#paid-time-off>`_.
 
-**4. US and Canadian employee benefits**
+**4. Additional US and Canadian employee benefits**
 
-Mattermost uses professional employement organizations in the United States and Canada and are able to offer additional `benefits to US employees <benefits-us>`_ and `benefits to Canadian employees <benefits-canada>`_. 
+Mattermost uses professional employement organizations in the United States and Canada and are able to offer additional `benefits to US employees <benefits-us.html>`_ and `benefits to Canadian employees <benefits-canada.html>`_. 
 
 
