@@ -15,7 +15,7 @@ General settings under the **Team Settings** > **General** configure how a team 
 
 Your **Team Name** is displayed on the sign-in page, and in the top of the left-hand sidebar for your team. 
 
-You can enter a name up to 15 characters in length. The length of team names is limited to ensure readability.
+You can enter a name up to 22 characters in length. The length of team names is limited to ensure readability.
 
 #### Allow anyone to join this team
 
