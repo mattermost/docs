@@ -219,7 +219,7 @@ go run mattermost.go -assign_role -email="user@example.com" -role="system_admin 
 
 ## Development Flow
 
-Here's a general workflow a Mattermost developer working on our [platform repository](https://github.com/mattermost/platform) will follow:
+Here's a general workflow a Mattermost developer working on our [platform repository](https://github.com/mattermost/platform) follows:
 
 1. Take a look at the `Repository structure` to find out where to look for what you're working on.
 2. On your fork, create a branch `PLT-####` where #### is the ticket number if it is a [Jira](https://mattermost.atlassian.net) ticket, or `GH-####` if it is a GitHub Issue without a Jira ticket.
