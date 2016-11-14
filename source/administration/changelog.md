@@ -225,6 +225,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Known Issues
 
 - Channel autolinking with `~` only works if you are a member of the channel
+- Slack Import doesn't add merged members/e-mail accounts to imported channels
 - User can receive a video call from another browser tab while already on a call
 - Video calls do not work with Chrome v56 and later
 
