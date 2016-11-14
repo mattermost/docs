@@ -1401,7 +1401,7 @@ WebRTC (Beta)
 ``````````````````````````
 Enable Mattermost WebRTC 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**True**: Mattermost will allow making one-on-one video calls on Chrome, Firefox and `Mattermost Desktop Apps <https://about.mattermost.com/download/#mattermostApps>`_.
+**True**: Mattermost will allow making one-on-one video calls on Chrome, Firefox and `Mattermost Desktop Apps <https://about.mattermost.com/download/#mattermostApps>`_ on a server running in SSL mode.
 
 **False**: Mattermost doesn't allow one-on-one video calls.
 
@@ -1416,7 +1416,7 @@ Gateway Websocket URL
 This is the websocket used to signal and establish communication between the peers. Enter ``wss://<mattermost-webrtc-gateway-url>:<port>``. Make sure you use WS or WSS in your URL depending on your server configuration.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"GatewayWebsocketUrl": ""`` with with string input                                                                       |
+| This feature's ``config.json`` setting is ``"GatewayWebsocketUrl": ""`` with string input                                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Gateway Admin URL
@@ -1424,7 +1424,7 @@ Gateway Admin URL
 Mattermost WebRTC uses this URL to obtain valid tokens for each peer to establish the connection. Enter ``https://<mattermost-webrtc-gateway-url>:<port>/admin``. Make sure you use HTTP or HTTPS in your URL depending on your server configuration. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"GatewayAdminUrl": ""`` with with string input                                                                           |
+| This feature's ``config.json`` setting is ``"GatewayAdminUrl": ""`` with string input                                                                                |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Gateway Admin Secret
@@ -1432,7 +1432,7 @@ Gateway Admin Secret
 Enter your admin secret password to access the Gateway Admin URL.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"GatewayAdminSecret": ""`` with with string input                                                                        |
+| This feature's ``config.json`` setting is ``"GatewayAdminSecret": ""`` with string input                                                                             |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 STUN URI
@@ -1440,7 +1440,7 @@ STUN URI
 Enter your STUN URI as ``stun:<your-stun-url>:<port>``. STUN is a standardized network protocol to allow an end host to assist devices to access its public IP address if it is located behind a NAT.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"StunURI": ""`` with with string input                                                                                   |
+| This feature's ``config.json`` setting is ``"StunURI": ""`` with string input                                                                                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 TURN URI
@@ -1448,7 +1448,7 @@ TURN URI
 Enter your TURN URI as ``turn:<your-turn-url>:<port>``. TURN is a standardized network protocol to allow an end host to assist devices to establish a connection by using a relay public IP address if it is located behind a symmetric NAT.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"TurnURI": ""`` with with string input                                                                                   |
+| This feature's ``config.json`` setting is ``"TurnURI": ""`` with string input                                                                                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 TURN Username
@@ -1456,7 +1456,7 @@ TURN Username
 Enter your TURN Server Username.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"TurnUsername": ""`` with with string input                                                                              |
+| This feature's ``config.json`` setting is ``"TurnUsername": ""`` with string input                                                                                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 TURN Shared Key
@@ -1464,7 +1464,7 @@ TURN Shared Key
 Enter your TURN Server Shared Key. This is used to created dynamic passwords to establish the connection. Each password is valid for a short period of time.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"TurnSharedKey": ""`` with with string input                                                                             |
+| This feature's ``config.json`` setting is ``"TurnSharedKey": ""`` with string input                                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
