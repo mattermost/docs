@@ -221,6 +221,24 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 - Added `POST` at `/users/{user_id}/update_roles`
     - Only allows updating of system wide roles. If you want to update team wide roles, please use the new route `/teams/{team_id}/update_member_roles`
+
+**Changes to File Routes:**
+
+Routes used to get files and their metadata from the server have been changed substantially in 3.5 so that each file will be given a unique identifier to make them easier to use through the API. In addition, the `Filenames` field of each post has been deprecated in favor of the new `FileIds` field.
+
+- The response type of `GET` at `/teams/{team_id}/files/upload` has been changed to return more information about the uploaded file. See [the documentation for this route on api.mattermost.com](https://api.mattermost.com/#tag/files%2Fpaths%2F~1teams~1%7Bteam_id%7D~1files~1upload%2Fpost) for more information
+- Split `GET` at `/teams/{team_id}/files/get/{channel_id}/{user_id}/{filename}` into:
+    - `GET` at `/files/{file_id}/get`
+        - Get a file
+    - `GET` at `/files/{file_id}/get_thumbnail`
+        - Get a small thumbnail for image files
+    - `GET` at `/files/{file_id}/get_preview`
+        - Get a medium-sized preview image for image files
+- Updated `GET` at `/teams/{team_id}/files/get_info/{channel_id}/{user_id}/{filename}` to `/files/{file_id}/get_info`
+- Updated `GET` at `/teams/{team_id}/files/get_public_link` to `/files/{file_id}/get_public_link`
+- Added `GET` at `/public/files/{file_id}/get`
+    - Get a file without logging in
+    - The previous route `GET` at `/public/files/get/{team_id}/{channel_id}/{user_id}/filename` has been deprecated, but will remain available for files that were uploaded prior to 3.5
     
 ### Known Issues
 
