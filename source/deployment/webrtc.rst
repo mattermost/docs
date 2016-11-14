@@ -8,7 +8,7 @@ The feature is currently intended as a working prototype for community developme
 Configuring video and audio calls
 --------------------------
 
-This option can be enabled by the System Administrator in the `System Console <https://docs.mattermost.com/administration/config-settings.html#webrtc-beta>`_ under **Integrations > WebRTC (Beta)**.
+This option can be enabled by the System Administrator in the System Console under **Integrations > WebRTC (Beta)** - `see configuration settings documentation to learn more <https://docs.mattermost.com/administration/config-settings.html#webrtc-beta>`_.
 
 To set up the WebRTC server, you may either
 
@@ -21,6 +21,7 @@ Starting a video call
 After enabling the feature:
 
 1 - Go to **Account Settings > Advanced > Preview pre-release features** and select **Enable the ability to make and receive one-on-one WebRTC calls**.
+
 2 - Initiate a call with another user by either 
 
 Clicking the video icon on a user's profile popover, which appears after clicking their profile picture or name on the center channel or right hand sidebar
