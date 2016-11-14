@@ -1,9 +1,9 @@
 Video and Audio Calling (Beta)
 =====================================
 
-Mattermost supports an early preview of video and audio calling option using a self-hosted proxy. The implementation is based on `WebRTC integration <https://www.html5rocks.com/en/tutorials/webrtc/basics/>`_ enabling one-on-one video and audio chat without plugins.
+Mattermost supports an early preview of video and audio calling option using a self-hosted proxy. The implementation is based on WebRTC integration enabling one-on-one video and audio chat without plugins.
 
-The feature is currently intended as a working prototype for community development and not recommended for production. It is supported on Chrome, Firefox and the Mattermost Desktop Apps.
+The feature is currently intended as a working prototype for community development and not recommended for production. It is supported on Chrome, Firefox and the Mattermost Desktop Apps on a server running in SSL mode.
 
 Configuring video and audio calls
 --------------------------
@@ -13,12 +13,12 @@ This option can be enabled by the System Administrator in the System Console und
 To set up the WebRTC server, you may either
 
  - use a `Mattermost docker container created for testing WebRTC <https://hub.docker.com/r/mattermost/webrtc/>`_
- - set up a `Janus <https://github.com/meetecho/janus-gateway>`_ or `Coturn <https://github.com/coturn/coturn/wiki>`_ gateway server for your Mattermost installation.
+ - set up a `Janus server <https://github.com/meetecho/janus-gateway>`_ to act as the WebRTC gateway and `Coturn <https://github.com/coturn/coturn/wiki>`_ for STUN and TURN servers for your Mattermost installation.
 
 Starting a video call
 --------------------------
 
-After enabling the feature:
+After enabling the feature in the System Console by a System Administrator:
 
 1 - Go to **Account Settings > Advanced > Preview pre-release features** and select **Enable the ability to make and receive one-on-one WebRTC calls**.
 
@@ -26,11 +26,11 @@ After enabling the feature:
 
 Clicking the video icon on a user's profile popover, which appears after clicking their profile picture or name on the center channel or right hand sidebar
 
-![webrtc-popover](../../source/images/webrtc-popover.png)
+![webrtc-popover](../../images/webrtc-popover.png)
 
 Clicking the video icon on the channel header of a direct message channel with that user
 
-![webrtc-header](../../source/images/webrtc-header.png)
+![webrtc-header](../../images/webrtc-header.png)
 
 Troubleshooting
 --------------------------
@@ -44,7 +44,7 @@ If you are still experiencing problems, post your issue in our `Troubleshooting 
 There was a problem connecting the video call
 ..........................
 
-Confirm video and audio calls were `configured successfully <https://docs.mattermost.com/deployment/webrtc.html#configuring-video-and-audio-calls>`_ and that both users are connected to 
+Confirm video and audio calls were `configured successfully <https://docs.mattermost.com/deployment/webrtc.html#configuring-video-and-audio-calls>`_ and that both users have a good Internet connection.
 
 Unable to access camera or microphone
 ..........................
