@@ -8,29 +8,29 @@ Note: For any setting not explicitly set in ``config.json`` the Mattermost serve
 
 Quick Links:
 
-`General <http://docs.mattermost.com/administration/config-settings.html#id2>`_
-	`Configuration <http://docs.mattermost.com/administration/config-settings.html#id3>`_ - `Localization <http://docs.mattermost.com/administration/config-settings.html#id4>`_ - `Users and Teams <http://docs.mattermost.com/administration/config-settings.html#id5>`_ - `Privacy <http://docs.mattermost.com/administration/config-settings.html#id6>`_ - `Policy <http://docs.mattermost.com/administration/config-settings.html#policy-enterprise>`_ - `Compliance <http://docs.mattermost.com/administration/config-settings.html#compliance-enterprise>`_ - `Logging <http://docs.mattermost.com/administration/config-settings.html#id7>`_
+`General`_
+	`Configuration`_ - `Localization`_ - `Users and Teams`_ - `Privacy`_ - `Policy`_ - `Compliance`_ - `Logging`_
 
-`Authentication <http://docs.mattermost.com/administration/config-settings.html#id12>`_
-	`Email <http://docs.mattermost.com/administration/config-settings.html#id13>`_ - `OAuth 2.0 <http://docs.mattermost.com/administration/config-settings.html#oauth-2-0-enterprise>`_ - `GitLab <http://docs.mattermost.com/administration/config-settings.html#id14>`_ - `Google <http://docs.mattermost.com/administration/config-settings.html#google-enterprise>`_ - `Office 365 <http://docs.mattermost.com/administration/config-settings.html#office-365-enterprise>`_ - `AD/LDAP <http://docs.mattermost.com/administration/config-settings.html#ad-ldap-enterprise>`_ - `SAML <http://docs.mattermost.com/administration/config-settings.html#saml-enterprise>`_
+`Authentication`_
+	`Email Auth`_ - `OAuth 2.0`_ - `GitLab`_ - `Google`_ - `Office 365`_ - `AD/LDAP`_ - `SAML`_
 
-`Security <http://docs.mattermost.com/administration/config-settings.html#id29>`_
-	`Sign Up <http://docs.mattermost.com/administration/config-settings.html#id30>`_ - `Password <http://docs.mattermost.com/administration/config-settings.html#id31>`_ - `Public Links <http://docs.mattermost.com/administration/config-settings.html#id32>`_ - `Sessions <http://docs.mattermost.com/administration/config-settings.html#id33>`_ - `Connections <http://docs.mattermost.com/administration/config-settings.html#id34>`_
+`Security`_
+	`Sign Up`_ - `Password`_ - `Public Links`_ - `Sessions`_ - `Connections`_
 
-`Notifications <http://docs.mattermost.com/administration/config-settings.html#id35>`_
-	`Email <http://docs.mattermost.com/administration/config-settings.html#id36>`_ - `Mobile Push <http://docs.mattermost.com/administration/config-settings.html#id38>`_
+`Notifications`_
+	`Email`_ - `Mobile Push`_
 
-`Integrations <http://docs.mattermost.com/administration/config-settings.html#id39>`_
-	`Custom Integrations <http://docs.mattermost.com/administration/config-settings.html#id40>`_ - `External Services <http://docs.mattermost.com/administration/config-settings.html#id44>`_
+`Integrations`_
+	`Custom Integrations`_ - `WebRTC (Beta)`_ - `External Services`_
 
-`Files <http://docs.mattermost.com/administration/config-settings.html#id45>`_
-	`Storage <http://docs.mattermost.com/administration/config-settings.html#id46>`_ - `Images <http://docs.mattermost.com/administration/config-settings.html#id47>`_
+`Files`_
+	`Storage`_ - `Images`_
 
-`Customization <http://docs.mattermost.com/administration/config-settings.html#id48>`_
-	`Custom Branding <http://docs.mattermost.com/administration/config-settings.html#id49>`_ - `Custom Emoji <http://docs.mattermost.com/administration/config-settings.html#id50>`_ - `Legal and Support <http://docs.mattermost.com/administration/config-settings.html#id51>`_ - `Mattermost App Links <http://docs.mattermost.com/administration/config-settings.html#id52>`_
+`Customization`_
+	`Custom Branding`_ - `Custom Emoji`_ - `Legal and Support`_ - `Mattermost App Links`_
 
-`Advanced <http://docs.mattermost.com/administration/config-settings.html#id55>`_
-	`Rate Limiting <http://docs.mattermost.com/administration/config-settings.html#id56>`_ - `Database <http://docs.mattermost.com/administration/config-settings.html#id57>`_ - `Developer <http://docs.mattermost.com/administration/config-settings.html#id58>`_ - `High Availability (Beta) <https://docs.mattermost.com/administration/config-settings.html#id59>`_
+`Advanced`_
+	`Rate Limiting`_ - `Database`_ - `Developer`_ - `High Availability (Beta)`_
 
 General
 ---------------------------------
@@ -418,7 +418,7 @@ Authentication
 -------------------------------
 Authentication settings to enable account creation and sign in with email, GitLab, Google or Office 365 OAuth, AD/LDAP, or SAML.
 
-Email
+Email Auth
 ``````````````````````````
 Enable account creation with email 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
@@ -1396,6 +1396,78 @@ Enable integrations to override profile picture icons
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnablePostIconOverride": false`` with options ``true`` and ``false`` for above settings respectively.                   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+________
+
+WebRTC (Beta)
+``````````````````````````
+Enable Mattermost WebRTC 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**True**: Mattermost will allow making one-on-one video calls on Chrome, Firefox and `Mattermost Desktop Apps <https://about.mattermost.com/download/#mattermostApps>`_ on a server running in SSL mode.
+
+**False**: Mattermost doesn't allow one-on-one video calls.
+
+Note: To enable the Mattermost WebRTC service, the System Administrator agrees to the `Terms of Service <https://about.mattermost.com/webrtc-terms/>`_ and `Privacy Policy <https://about.mattermost.com/webrtc-privacy/>`_.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                                   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Gateway Websocket URL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This is the websocket used to signal and establish communication between the peers. Enter ``wss://<mattermost-webrtc-gateway-url>:<port>``. Make sure you use WS or WSS in your URL depending on your server configuration.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"GatewayWebsocketUrl": ""`` with string input                                                                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Gateway Admin URL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Mattermost WebRTC uses this URL to obtain valid tokens for each peer to establish the connection. Enter ``https://<mattermost-webrtc-gateway-url>:<port>/admin``. Make sure you use HTTP or HTTPS in your URL depending on your server configuration. 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"GatewayAdminUrl": ""`` with string input                                                                                |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Gateway Admin Secret
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enter your admin secret password to access the Gateway Admin URL.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"GatewayAdminSecret": ""`` with string input                                                                             |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+STUN URI
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enter your STUN URI as ``stun:<your-stun-url>:<port>``. STUN is a standardized network protocol to allow an end host to assist devices to access its public IP address if it is located behind a NAT.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"StunURI": ""`` with string input                                                                                        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+TURN URI
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enter your TURN URI as ``turn:<your-turn-url>:<port>``. TURN is a standardized network protocol to allow an end host to assist devices to establish a connection by using a relay public IP address if it is located behind a symmetric NAT.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"TurnURI": ""`` with string input                                                                                        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+TURN Username
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enter your TURN Server Username.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"TurnUsername": ""`` with string input                                                                                   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+TURN Shared Key
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enter your TURN Server Shared Key. This is used to created dynamic passwords to establish the connection. Each password is valid for a short period of time.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"TurnSharedKey": ""`` with string input                                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
