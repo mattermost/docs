@@ -4,7 +4,11 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 ## Release v3.5.0  
 
-Release date:
+Release date: 2016-11-16
+
+### Security Update
+
+- Mattermost v3.5.0 contains a [security update](http://about.mattermost.com/security-updates/). [Upgrading to Mattermost v3.5.0](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Thanks to Alyssa Milburn for contributing security reports through the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
 ### Highlights
 
