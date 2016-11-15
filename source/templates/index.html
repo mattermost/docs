@@ -21,6 +21,31 @@
             margin: .67em 0
         }
 
+        .landing .landing-search {
+            overflow: hidden;
+            padding:20px;
+        }
+
+        .landing .landing-search input[type="text"] {
+            width: 640px;
+            border-style: none;
+            padding: 8px 12px;
+            font-size: 16px;
+            box-shadow: .5px 2px 4px 0 #bdbdbd;
+        }
+
+        @media screen and (max-width: 728px) {
+            .landing .landing-search input[type="text"] {
+                width: 420px;
+            }
+        }
+
+        @media screen and (max-width: 508px) {
+            .landing .landing-search {
+                display: none;
+            }
+        }
+
         .tiles-flex {
             display: -webkit-box;
             display: -ms-flexbox;
@@ -141,11 +166,18 @@
 
     <div class="landing">
         <h1 class="landing-title">Mattermost Documentation</h1>
+        <div class="landing-search" role="search">
+            <form id="rtd-search-form" class="wy-form" action="{{ pathto('search') }}" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+        </div>
         <div class="tiles-flex">
             <a class="tile" href="overview/index.html">
                 <h2 class="tile-title">Overview</h2>
                 <div class="tile-divider"></div>
-                <p class="tile-description">Solution benefits, features, security, deployment and integrations.</p>
+                <p class="tile-description">Features, security, deployment & integration.</p>
             </a>
             <a class="tile" href="guides/user.html">
                 <h2 class="tile-title">User's Guide</h2>
@@ -155,7 +187,7 @@
             <a class="tile" href="guides/administrator.html">
                 <h2 class="tile-title">Administrator's Guide</h2>
                 <div class="tile-divider"></div>
-                <p class="tile-description"> Installation, deployment and administration guides</p>
+                <p class="tile-description"> Installation, deployment & administration guides</p>
             </a>
             <a class="tile" href="guides/integration.html">
                 <h2 class="tile-title">Integration Guide</h2>
@@ -165,7 +197,7 @@
             <a class="tile" href="guides/developer.html">
                 <h2 class="tile-title">Developer's Guide</h2>
                 <div class="tile-divider"></div>
-                <p class="tile-description">Contributing to the Mattermost open source project</p>
+                <p class="tile-description">Contributing to the open source project</p>
             </a>
             <a class="tile" href="guides/core.html">
                 <h2 class="tile-title">Core Team Handbook</h2>

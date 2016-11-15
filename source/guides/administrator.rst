@@ -1,6 +1,8 @@
 Mattermost Administrator's Guide
 --------------------------------
 
+In-depth documentation on installation, deployment and administration of Mattermost system. 
+
 Install Guides
 ==============
 

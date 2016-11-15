@@ -1,6 +1,410 @@
+==================================================
+Onboarding 
+==================================================
 
+This document in intended for new hires to summarize norms for working at Mattermost, Inc. including: 
+
+- `Getting Started Checklist`_ - Getting ready to work here 
+- `Meetings`_ - When we get together and why 
+- `Mindsets`_ - Shared toolsets we have for solving problems 
+- `Terminology`_- Shared vocabulary to convey ideas quickly
+- `Training`_ - Material available to help us ramp quickly in different areas 
+
+---------------------------------------------------------
+Getting Started Checklist 
+---------------------------------------------------------
+
+Hiring 
+
+- (People Ops & New Hire) Offer letter accepted via click-sign 
+- (Logistics) Mail t-shirt & track jacket 
+
+T-minus 1-3 weeks 
+
+- (People Ops & New Hire) Order laptop to be sent to New Hire's address or expensed. For non-developers, budget is cost of a Macbook in your local area, for developers budget is cost of a Macbook Pro. 
+- (New Hire) Read the entirety of Onboarding page for info on meetings, mindsets, terminology and training materials.
+
+T-minus 1 week
+
+- (People Ops) Send email invite to New Hire to set up an @mattermost.com email address. New Hire should use this email address on pre-release.mattermost.com (replace personal email with company email if already registered there) 
+
+- (People Ops & New Hire) Setup Payroll. Non-US Employee/Non-Canada Employee, complete bank info form for monthly wire transfer. 
+
+First Day 
+
+- (Manager) Posts welcome message in stand-up channel 
+- (Manager) Meets New Hire for first 1-1 meeting
+- (Buddy) Meets New Hire for first 1-1 meeting, 
+
+---------------------------------------------------------
+Meetings 
+---------------------------------------------------------
+
+This section summarizes norms for public and private meetings for the Mattermost community and for Mattermost Inc. Where possible, 
+
+Open Meetings 
+---------------------------------------------------------
+
+Developer Meeting
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Open to the public** - (Developers - 1-2 hours/week) Wednesdays 10:00 UTC-7 
+
+- Goal: Discuss developer issues across Mattermost Inc, key contributors and the contributor community.
+- Attendees: (required) Mattermost Inc developers, (optional) key contributors, contributors and anyone who would like to join.
+
+Procedure: 
+
+1. (Chair): Post meeting agenda in `Developers channel <https://pre-release.mattermost.com/core/channels/developers>`_ (open to the public), tagged with ``#devmeeting``
+2. (Team and Public): At the time of the meeting: 
+
+      - Join the **Hangouts** link posted in the meeting agenda in the `Developers channel <https://pre-release.mattermost.com/core/channels/developers>`_
+
+To review past agendas for the Developer meeting in the `Developers channel <https://pre-release.mattermost.com/core/channels/developers>`_ click on the ``#devmeeting`` hashtag in any of the meeting notes, or search for it directly. 
+
+
+Mattermost Inc-only Meetings 
+----------------------------------------------------
+
+For confidentiality of customers, internal process meetings are limited to Mattermost Inc. only. 
+
+
+Sprint Planning 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Mattermost Inc-only** - (Developer - 5-10 minutes/week) Tuesdays between 10:00 and 11:00 UTC-7 
+
+- Goal: Review and discuss tickets selected by Developer for next sprint
+- Attendees: (required) Each developer in sequence, plus spint planngers (one dev, one PM) (optional) Mattermost Inc. colleagues welcome
+
+Note: 
+
+- This meeting uses a special `Mattermost Inc only BACKLOG query <https://mattermost.atlassian.net/secure/RapidBoard.jspa?rapidView=1&view=planning.nodetail&quickFilter=7>`_ showing tickets by sprint, with tabs across the top for each developer. 
+- Prior to meeting, developers drag and drop tickets from their backlog to next sprint based on team priorities 
+
+     - Developers are welcome at any time to discuss reassigning tickets with colleagues using common sense (if both are okay with the change, add "triage" tag to fix version with comment and triage team will review to make the change)
+- During the meeting, developer's next sprint is reviewed, discussed, possibly adjusted and locked
+
+Procedure: 
+
+1. (Chair): Just prior to meeting, post **Hangout** link in `Standup private group <https://pre-release.mattermost.com/core/channels/stand-up>`_
+2. (Developer): Replies in Standup private group when sprint is ready for review
+3. (Chair): Will (at)mention next developer to join **Hangout** to review tickets. Developer joins, tickets are discussed and finalized for next sprint. Developer leaves **Hangout** and next developer rotates in. 
+
+Triage Meeting
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Mattermost Inc-only** - (Triage team - 1-3 hours/week) Monday, Wednesday, Friday 09:00 UTC-7 
+
+- Goal: To provide consistent review, prioritization and ownership assignment of all tickets 
+- Attendees: (required) dev and PM from Mattermost Inc., typically leads (optional) other Mattermost Inc. colleagues welcome
+
+Note: 
+
+- ONLY TRIAGE TEAM should set or change the **Fix Verion** of a ticket. 
+
+    - When tickets are first created, they go to triage to be reviewed for clarity and priority and assigned a **Fix Version**. Unclear tickets may be assigned to their creator for more information.
+    - The **Fix Version** determines the sequence in which tickets are addressed and triage team is accountable for that sequence. 
+    
+- If you're ever unsure about a ticket (if it's not clear, or doesn't seem appropriate) add a comment and add **triage** to the **Fix Version** field, which will trigger a review by the triage team in 1-2 working days.  
+
+    - It's the responsibility of the triage team to make sure tickets are clear before they're assigned a **Fix Version**.
+    
+- ONLY TRIAGE TEAM can close a ticket resolved as **Won't Fix** or **Won't do**
+
+    - These tickets resolved in such a way are reviewed by triage team. 
+    - Only resolve a ticket as **Won't Fix** or **Won't Do** if you're highly confident it's the correct decision, otherwise, add "triage" to Fix Version for review. In either case, include a comment with your reason.  
+
+Procedure: 
+
+1. (Chair): Just prior to meeting, post **Hangout** link in `Standup private group <https://pre-release.mattermost.com/core/channels/stand-up>`_ (Mattermost Inc. only) 
+
+2. (Attendees): Join the link 
+
+3. (Attendees): Review `query for tickets needing triage <https://mattermost.atlassian.net/browse/PLT-1203?filter=10105>`_ and assign owner and fix version 
+
+Leads Meeting
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Mattermost Inc-only** - (Leads - 1-3 hours/week) Monday, Wednesday, Friday after Triage Meeting (09:00 UTC-7)
+
+- Goal: Address leadership and process topics 
+- Attendees: (required) dev, PM and community/marketing leads from Mattermost Inc. (optional) other Mattermost Inc. colleagues welcome
+
+Note: 
+
+- Decisions should go to Leads meetings when there is lack of clarify or ownership
+
+    - When possible, decision-making should belong to the people closes to details
+    - Individual developers or PMs should make most decisions, and raise to developer or PM team if things are unclear, and go to Leads if lack of clarify persists.
+    
+- To queue an item for Leads ask the dev or PM lead
+
+- Leads is also used for cross-discipline Q&A
+
+    - Rather than randomize individual contributors, cross-discipline discussion (e.g. marketing to PM, community to dev, etc.) can happen in leads
+
+Procedure: 
+
+1. (PM & Dev Leads): Stay in **Hangout** after Triage meeting and message community/marketing lead to join. 
+
+2. (Attendees): Discuss agenda items in Leads private group
+
+3. (Attendees): Respond to respective colleagues on decisions from Leads meeting 
+
+Platform Meeting 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Mattermost Inc-only** - (Platform colleagues - 1-2 hours/week) Friday's at 10:10 UTC-7 after platform team standup.
+
+Regular team meeting for platform team at Mattermost Inc.
+
+- Goal: Increase team output by effectively informing and reviewing priority projects and next steps.
+- Scope: Mattermost Inc-only meeting given confidential customer issues discussed
+- Attendees: Mattermost Inc colleagues working on platform
+Procedure: 
+
+1. (Chair) 3-hours before standup, post reminders in `Platform private group <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only)
+
+:: 
+
+   #### @channel Platform Meeting Reminder
+   Everyone please: 
+   - **Prepare your demos**
+   - **Prepare your User Issue or Kaizen**
+  
+   @lindsay please:
+   - **Prepare your roadmap checkin**
+  
+   @[WHOEVER] are you ready for your "Something interesting about my town"?
+
+
+2. (Team) At time of meeting:
+
+   - Join the **Hangout** link in the header of the `Platform private group <https://pre-release.mattermost.com/core/channels/platform-discussion>`_
+   - Open the **Notes** link in the header to see the agenda
+
+3. (Vice-Chair) Post `"Standing Items" template <https://docs.google.com/document/d/1ImSgkF7T03wbKwz_t4-Dr4n3I8LixVbFb2Db_u0FmdM>`_ into Platform Meeting Notes
+
+    - Add **Follow-ups** from previous meeting 
+    - Add **New items** queued in `Platform private group <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only)
+
+Meeting Agenda: 
+
+- **Warm-up** - Currently: "Share something interesting about your home town."
+- **Release countdown** - Review release date, milestones and checklists.
+- **Roadmap check-in** - Review of roadmap status in current and next release
+- **Demos** - Team members show highlights of what's completed this week. Relevant follow-ups noted.
+- **Follow-ups** - Follow-ups from previous meeting are discussed
+- **New items** - New team-relevant items are discussed
+
+   - **Kaizen (odd sprints)** - Each colleague shares a potential process improvement. Follow-ups noted. 
+   - **User Issues (even sprints)** - Each colleage shares unaddressed external user issue of importance. Follow-ups noted. 
+- **Open Questions** - To find blindspots, meeting does not end until 3 open questions are asked and answered. 
+
+Post Meeting: 
+
+- Follow-up items are posted to the  `Platform private group <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only)
+
+Meeting Elements
+-----------------------
+
+Here we summarize meeting elements that can be re-used for meetings across teams. 
+
+Warm-ups
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- 2-3 minute exercises designed to learn more a colleagues at the start of a recurring meeting
+- Typically rotates alphabetically by first name, one colleague per meeting
+- Examples: 
+
+   - "Hobby talk" - sharing about an interesting hobby, past or present
+   - "My home town" - sharing something interesting about where you grew up
+   - "Two truths and a lie" - share two true facts about yourself and one lie, team guesses which is the lie. 
+
+Open Questions 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- Exercise to find blindspots in team thinking at the end of a meeting
+- Meeting does not end until 3 questions are asked and answered, typically at least one of the questions reveals a blindspot or opportunity to improve communication. 
+- Examples of questions: 
+
+    - "What's the status on X?" // often an important item that got forgotten
+    - "Who owns X?" // reveals need for more clarity or communication 
+    - "Why do we do X?" // let's us verify if a process is needed, and if we're handling it the right way
+
+
+
+-----------------------------
+Mindsets
+-----------------------------
+
+Mindsets are "tool sets for the mind" that help us find blindspots and increase performance in specific situations. They're a reflection of our shared learnings and culture in the Mattermost community and at Mattermost Inc. 
+
+To make the most out of mindsets, remember: 
+
+- **Mindsets are tools** - Use common sense to find the right mindset for your situation. Avoid using ones that don't fit. 
+- **Mindsets are temporary** - Try on a mindset the way you'd try a tool. You can always put it down if it doesn't work. 
+- **Mindsets are not laws** - Mindsets are situation-specific, not universal. Don't use them to debate. 
+
+When you read about great leaders, they share mindsets relevant to success in their specific situations, which differ from their peers. Remember that "advice is personal experience generalized" so be mindful about what you apply. 
+
+In this context, here are mindsets for Mattermost: 
+
+Learn, Master, Teach 
+---------------------------------------------
+
+**Learn** a new topic quickly, develop **mastery** (be the smartest person at the team/company/community on the topic), then **teach** it to someone who will start the cycle over. 
+
+If you're a strong teacher, their mastery should surpass yours. This mindset helps us constantly grow and rotate into new roles, while preventing "single-points of failure" where only one person is qualified for a certain task. 
+
+Slow is smooth, smooth is fast 
+---------------------------------------------
+
+When you rush to get something done quickly, it can actually increase the time and cost for the project. 
+
+Rushing means a higher chance of missing things that need to be done, and the cost of doing them later is significantly higher because you have to re-create your original setup to add on the work. 
+
+Emotion, Assumption, and Priority 
+---------------------------------------------
+
+Consider when two rational people disagree, the cause often comes from one of three areas: 
+
+1. **Emotion** - There could be an **emotion** biasing the discussion. Just asking if this might be the case can clear the issue. It's okay to have emotions. We are humans, not robots. 
+
+2. **Assumption** - People may have different underlying **assumptions** (including definitions). Try to understand each other's assumptions and get to agreement or facts when you can. 
+
+3. **Priorities** - Finally people can have different **priorities**. When everyone's priorities are shared and understood it's easier to find solutions that satisfy everyone's criteria. 
+
+While the emotions, assumptions, priority mindset won't work for everyone in every case, it's helped resolve complex decisions in our company's history. 
+
+
+Likes & Wishes 
+---------------------------------------------
+
+An easy way to check in with team members about how things are going. 
+
+- What do you *like* about how things are going? 
+- What do you *wish* we might change? 
+
+Use these one-on-one or in a group as a way to open conversations about what to keep and what to change in how we do things. 
+
+
+Mini-boss, End-boss
+---------------------------------------------
+
+When reviewing user interface design, pull requests, or marketing materials, there are ideally two reviewers: 
+
+- **Mini-boss**: Reviewer with less experience to do the first review
+- **End-boss**: More experienced reviewer to do the final review
+
+This system has several benefits: 
+
+1. The Mini-boss provides feedback on the most obvious issues, allowing the End-boss to focus on nuanced issues the Mini-boss didn't find.
+2. The Mini-boss learns from the End-boss feedback, understanding what was missed, and becoming a better reviewer.
+3. Eventually the Mini-boss will be as skilled at reviewing as the End-boss, who will have nothing futher to add after the Mini-boss review. At this point, the Mini-boss becomes an End-boss, ready to train a new Mini-boss.
+
+
+--------------------------
+Terminology 
+--------------------------
+
+Designing world-class software means bringing people together across disciplines and cultures. We want to create a limited amount of shared terminology to help us work better together, while being careful not to make it difficult for newcomers to follow our conversation. 
+
+Perhaps in future we'll have a bot that helps teach newcomers about the terminology in-context. Until then we have this guide. 
+
+Purpose
+---------------------------
+
+We use Mattermost terminology to achieve specific benefits: 
+
+1) Increase precision through unambiguous definitions of useful terms
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For example, "0/5" and "5/5" help convey the level of conviction behind an opinion. Also, a precise classification of tickets as "Bug" or "Improvement" is critical since it affects scheduling and decision making, and so forth. 
+
+2) Increase the speed of communication via a small number of frequently used acronyms 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+[LHS](http://docs.mattermost.com/process/terminology.html#lhs) and [RHS](http://docs.mattermost.com/process/terminology.html#rhs) are examples of a very limited number of acronyms to use to speed discussions, specifications, and ticket writing. 
+
+3) Reduce repeated mistakes by naming very specific undesirable behaviors
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Naming specific repeated mistake helps us find patterns, avoid repeated mistakes in future, and helps newcomers avoid making similar mistakes as they learn our organization's terminology. 
+
+List of Terms
+---------------------------
+
+0/5, 1/5, 2/5, 3/5, 4/5, 5/5 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We use "x/5" to concisely communicate conviction. 0/5 means you don't have a strong opinion, you are just sharing an idea or asking a question. 5/5 means you are highly confident and would stake your reputation on the opinion you're expressing. 
+
+APR
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Acronym for `Accepting Pull Request <http://docs.mattermost.com/process/accepting-pull-request.html>`_ tickets, which are vetted changes to the source code open for community contributions.  
+
+Bug
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+An obvious error in Mattermost software. Changes required to accommodate unsupported 3rd party software (such as browsers or operating systems) are not considered bugs, they are considered improvements. 
+
+Dead Tarzan 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Discarding an imperfect solution without a clearly thought out alternative. Based on idea of `Tarzan of the Jungle <https://en.wikipedia.org/wiki/Tarzan>`_ letting go of a vine without having a new vine to swing to. 
+
+Expert Mode
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When documentation or on-screen text is written for someone with considerable knowledge or expertise, instead of being designed for a new learner. In general, try to state things simply rather than speaking to just the "experts" reading the the text. 
+
+Decking 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A term for shipping something that is below quality standards. This term is used by mountain climbers to describe falling off the side of a mountain, which often involves a series of failures, not just one.
+
+Dev Mana
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A specific type of mana for developers similar to "points" or "jelly beans" in an Agile/Scrum methodology. On average, full time Mattermost developers each complete tickets adding up to approximately 28 mana per week. A "small" item is 2 mana, a "medium" is 4, a "large" is 8 and any project bigger needs to be broken down into smaller tickets. 
+
+Improvement 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A beneficial change to code that is not fixing a bug. 
+
+LHS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The "Left-Hand Sidebar" in the Mattermost team site, used for navigation.
+
+Mana
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+An estimate of total energy, attention and effort required for a task. 
+
+A one-line change to code can cost more mana than a 100-line change due to risk and the need for documentation, testing, support and all the other activities needed. 
+
+Every feature added has an initial and on-going mana cost, which is taken into account in feature decisions. 
+
+RHS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The "Right-Hand Sidebar" in the Mattermost team site, used for navigation.
+
+Windows Vista approach
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+An attempt to add functionality through a massive, complex one-time re-write hoping to improve the architecture, but which likely ends in repeated delays, wasted effort, buggy code and limited architectural improvement (compared to re-writing the architecture in phases). This tempting, high risk approach is named after Microsoft's "Windows Vista" operating system, one of its most famous examples.
+
+
+
+--------------------------
 Training 
---------
+--------------------------
 
 At Mattermost, Inc., "Learn, Master, Teach" cycles are core to our culture. 
 
@@ -10,12 +414,12 @@ Cross-training creates a culture of constant growth, protects against "single-po
 
 
 Roles
-=====
+--------------------------
 
 The "Learn, Master, Teach" cycle happens in the context of roles. Roles are sets of responsibility needed to achieve objectives. Roles aren't necessarily job titles, for small projects, a developer might take on a product manager role, or vice versa. Each team member has a "primary role" and training should move people to mastery and teaching in that role, before moving to the next role. 
 
 Developer
-^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Developers are responsible for architecting and delivering software improvements, and for technical leadership among the Mattermost community. 
 
@@ -29,7 +433,7 @@ Developers are responsible for architecting and delivering software improvements
    - As leading experts on Mattermost technology, developers support and engage constantly with the broader Mattermost community to accelerate adoption and to discover new ways to improve Mattermost software and processes. This includes investigating and  supporting issues from users and customers, reviewing and providing feedback on projects from contributors, and understanding priorities, trends and patterns across the community. 
 
 Product Managers
-^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Product managers are responsible for aligning teams to strategic priorities, leading and managing the product development process, and working effectively with marketing to bring the full benefits of Mattermost solutions to users and customers. 
 
@@ -44,16 +448,16 @@ Product managers are responsible for aligning teams to strategic priorities, lea
    - Delivering benefits to users and customers based on product features is a core responsibility of product managers, working in conjunction with marketing to shape messaging and positioning and delivering collateral, events, and user and customer discussions to support sales. 
    
 Resources 
-=========
+--------------------------
 
 The following is a list of recommended resources for developing skills "the Mattermost way" in different areas. For the ones that require purchase you can message @matterbot to request an order, whether as physical books, digital books, audiobooks or other formats. 
 
 
 Developers
-^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Books 
-^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. `Code Complete, Steve McConnell <https://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670>`_ - Best practices and guidelines for writing high quality code.
 2. `Design Patterns,  Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides (aka "Group of Four") <https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented-ebook/dp/B000SEIBB8>`_ - Fundamental reading on design patterns. Other design pattern books work too, this is one of the most popular. 
@@ -84,6 +488,10 @@ Books
 1. `High Output Management. Andy Grove <https://www.amazon.com/dp/B015VACHOK/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1>`_ - Potentially the most important book on management you'll ever read. From formoer CEO of Intel.
 2. `Creativity, Inc. Ed Catmull <https://www.amazon.com/Creativity-Inc-Overcoming-Unseen-Inspiration-ebook/dp/B00FUZQYBO/ref=sr_1_1?s=books&ie=UTF8&qid=1466393928&sr=1-1&keywords=creativity%2C+inc>`_ - Achieving high performance through process and culture. From CEO fo Pixar.
 3. `How to Win Friends and Influence People <https://www.amazon.com/How-Win-Friends-Influence-People-ebook/dp/B003WEAI4E/ref=sr_1_1?s=books&ie=UTF8&qid=1466394700&sr=1-1&keywords=how+to+win+friends+and+influence+people>`_ - How to build interpersonal skills to work more effectively in teams. 
+
+Articles
+
+1. `Fire & Motion. Joel Spolsky <http://www.joelonsoftware.com/articles/fog0000000339.html>`_ - How to get more things done in less time by doing a little every day. 
 
 Culture 
 ^^^^^^^
@@ -152,4 +560,5 @@ Books
 Blogs 
 
 1. `Nielsen Norman Group <https://www.nngroup.com/articles/>`_ - Many good articles and concepts on UX design.
+
 

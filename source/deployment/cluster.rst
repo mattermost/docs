@@ -67,7 +67,7 @@ Removing a Server from the Cluster
 -----
 
 Configuration and Compatibility
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Details on configuring your system for high availability.    
 
 Mattermost Server Configuration

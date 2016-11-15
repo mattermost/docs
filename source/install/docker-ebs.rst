@@ -17,7 +17,7 @@ be used in production.
     click **Next**.
 6.  On the Environment Type page,
 
-    a. Set Predefined Configuration to **Multi-Continer Docker** under the generic
+    a. Set Predefined Configuration to **Multi-Container Docker** under the generic
        heading in the drop-down list.
     b. Set Environment Type to **Single instance** in the drop-down
        list.

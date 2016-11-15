@@ -1,6 +1,8 @@
 Mattermost Integration Guide
 ----------------------------
 
+Detailed documentation on extending and integrating with the Mattermost server. 
+
 .. toctree::
    :maxdepth: 1
    :glob:

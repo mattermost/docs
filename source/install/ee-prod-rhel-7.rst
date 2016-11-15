@@ -1,15 +1,15 @@
 ..  _prod-rhel-7:
 
 Production Enterprise Install on RHEL 7.1+
-===============================
+==========================================
 
-Install Mattermost Enterprise Edition in production mode on one, two or three machines, using the following steps: 
+Install Mattermost Enterprise Edition in production mode on one, two or three machines, using the following steps:
 
-- `Install Red Hat Enterprise Linux (x64) 7.1 <#install-red-hat-enterprise-linux-x64-71>`_
-- `Set up Database Server <#set-up-database-server>`_
-- `Set up Mattermost Server <#set-up-mattermost-server>`_
-- `Set up NGINX Server <#set-up-nginx-server>`_
-- `Test setup and configure Mattermost Server <#test-setup-and-configure-mattermost-server>`_
+- `Install Red Hat Enterprise Linux (x64) 7.1+`_
+- `Set up Database Server`_
+- `Set up Mattermost Server`_
+- `Set up NGINX Server`_
+- `Test setup and configure Mattermost Server`_
 
 
 Install Red Hat Enterprise Linux (x64) 7.1+
@@ -19,16 +19,23 @@ Install Red Hat Enterprise Linux (x64) 7.1+
    be used for the Proxy, Mattermost (this must be x64 to use
    pre-built binaries), and Database.
 
-   -  **Optional:** You can also use a **1 machine setup** (Proxy, Mattermost and Database on one machine) or a **2 machine setup** (Proxy and Mattermost on one machine, Database on another) depending on your data center standards. 
+   -  **Optional:** You can also use a **1 machine setup** (Proxy, Mattermost and Database on one machine) or a **2 machine setup** (Proxy and Mattermost on one machine, Database on another) depending on your data center standards.
 
 2. Make sure the system is up to date with the most recent security
    patches.
 
-   -  ``sudo yum update``
-   -  ``sudo yum upgrade``
+   -  ``sudo dnf upgrade``
 
 Set up Database Server
 ----------------------
+
+**NOTE**: When Mattermost and postgresql are on the same machine,
+it is recommended to use unix socket mechanism for the connection between Mattermost and Postgresql,
+as it is more secure and faster.
+Below instructions are for a connection via the TCP/IP socket.
+
+Settings specific to the unix socket connection are detailed in the *Unix-domain socket connection*
+section.
 
 1.  For the purposes of this guide we will assume this server has an IP
     address of ``10.10.10.1``
@@ -37,11 +44,11 @@ Set up Database Server
 
 2.  Install PostgreSQL 9.4+ (or MySQL 5.6+)
 
-    -  ``sudo yum install http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/pgdg-redhat94-9.4-1.noarch.rpm``
-    -  ``sudo yum install postgresql94-server postgresql94-contrib``
+    -  ``sudo dnf install http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/pgdg-redhat94-9.4-1.noarch.rpm``
+    -  ``sudo dnf install postgresql94-server postgresql94-contrib``
     -  ``sudo /usr/pgsql-9.4/bin/postgresql94-setup initdb``
-    -  ``sudo systemctl enable postgresql-9.4.service``
-    -  ``sudo systemctl start postgresql-9.4.service``
+    -  ``sudo systemctl enable postgresql.service``
+    -  ``sudo systemctl start postgresql.service``
 
 3.  PostgreSQL created a user account called ``postgres``. You will need
     to log into that account with:
@@ -72,21 +79,20 @@ Set up Database Server
 
     -  ``exit``
 
-10. Allow Postgres to listen on all assigned IP Addresses:
+10. Alter ``/var/lib/pgsql/9.4/data/postgresql.conf`` to allow Postgres to listen
+on all assigned IP Addresses:
 
-    -  ``sudo vi /var/lib/pgsql/9.4/data/postgresql.conf``
     -  Uncomment ``listen_addresses`` and change ``localhost`` to ``\*``
 
-11. Alter ``pg_hba.conf`` to allow the Mattermost Server to talk to the
+11. Alter ``/var/lib/pgsql/9.4/data/pg_hba.conf`` to allow the Mattermost Server to talk to the
     Postgres database:
 
-    -  ``sudo vi /var/lib/pgsql/9.4/data/pg_hba.conf``
     -  Add the following line to the ``IPv4 local connections``:
     -  ``host all all 10.10.10.2/32 md5``
 
 12. Reload Postgres database:
 
-    -  ``sudo systemctl reload postgresql-9.4.service``
+    -  ``sudo systemctl reload postgresql.service``
 
 13. Attempt to connect with the new created user to verify everything
     looks good:
@@ -99,13 +105,14 @@ Set up Mattermost Server
 
 1. For the purposes of this guide we will assume this server has an IP
    address of ``10.10.10.2``
-   
+
    -  **Optional:** if installing on the same machine substitute ``10.10.10.2`` with ``127.0.0.1``
-       
+
 2. Download `any version of Mattermost Enterprise Edition <https://docs.mattermost.com/administration/upgrade.html#version-archive>`_ by typing:
 
    -  ``wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz``
-   -  Where ``vX.X.X`` is typically the latest Mattermost release version, which is currently ``v3.3.0``. 
+   -  Where ``vX.X.X`` is typically the latest Mattermost release version, which is currently ``v3.3.0``.
+
 3. Install Mattermost under ``/opt``
 
    -  Unzip the Mattermost Server by typing:
@@ -156,24 +163,22 @@ Set up Mattermost Server
    -  Stop the server for now by typing ``Ctrl-C``
 
 8. Set up Mattermost to use the systemd init daemon which handles
-   supervision of the Mattermost process:
+   supervision of the Mattermost process. 
 
-   -  ``sudo touch /etc/systemd/system/mattermost.service``
-   -  ``sudo vi /etc/systemd/system/mattermost.service``
-   -  Copy the following lines into
-      ``/etc/systemd/system/mattermost.service``
+   * Create and edit ``/etc/systemd/system/mattermost.service``
 
       ::
 
           [Unit]
-          Description=Mattermost
-          After=syslog.target network.target postgresql-9.4.service
+          Description=Mattermost server
+          After=network.target postgresql.service
 
           [Service]
-          Type=simple
-          WorkingDirectory=/opt/mattermost/bin
           User=mattermost
+          Group=mattermost
+          WorkingDirectory=/opt/mattermost
           ExecStart=/opt/mattermost/bin/platform
+          Restart=on-failures
           PIDFile=/var/spool/mattermost/pid/master.pid
           LimitNOFILE=49152
 
@@ -186,14 +191,48 @@ Set up Mattermost Server
    * ``sudo chkconfig mattermost on``
    * Start server on reboot ``sudo systemctl enable mattermost.service``
 
+Unix-domain socket connection
+-----------------------------
+
+Below are the instructions specific to a connection between Postgresql and Mattermost via an Unix-domain socket.
+Only changes from the original setup described above will be mentioned.
+
+**Set up database server**
+
+- Step 5: Name the database ``mattermost_db``
+
+- Step 6: Name the user ``mattermost``
+
+- Step 11: Add the following line instead:
+  ``local   mattermost_db       mattermost          peer       map=mattermap``
+
+- Append the following line to ``/var/lib/pgsql/9.4/data/pg_ident.conf``:
+
+  ``mattermap      mattermost              mattermost``
+
+  It maps unix user *mattermost* to psql user *mattermost*.
+
+- Step 13: Verify everything looks good::
+
+    $ su mattermost
+    $ psql --dbname=mattermost_db --username=mattermost
+    mattermost_db=> \q
+
+**Set up Mattermost server**
+
+- Step 6: Edit ``/opt/mattermost/config/config.json``
+
+   * Replace ``DriverName": "mysql"`` with ``DriverName": "postgres"``
+   * Replace  ``"DataSource": "mmuser:mostest@tcp(dockerhost:3306)/mattermost_test?charset=utf8mb4,utf8"`` with ``"DataSource": "postgres:///mattermost_db?host=/var/run/postgresql"``
+
 Set up NGINX Server
 -------------------
 
 1. For the purposes of this guide we will assume this server has an IP
    address of ``10.10.10.3``
-   
+
    -  **Optional:** if installing on the same machine substitute ``10.10.10.3`` with ``127.0.0.1``
-   
+
 2. We use NGINX for proxying request to the Mattermost Server. The main
    benefits are:
 
@@ -215,7 +254,7 @@ Set up NGINX Server
           gpgcheck=0
           enabled=1
 
-   -  ``sudo yum install nginx.x86_64``
+   -  ``sudo dnf install nginx.x86_64``
    -  ``sudo service nginx start``
    -  ``sudo chkconfig nginx on``
 
@@ -270,7 +309,7 @@ Set up NGINX with SSL (Recommended)
 1. You can use a free and an open certificate security like `Let's
    Encrypt <https://letsencrypt.org/>`_, this is how to proceed
 
--  ``sudo yum install git``
+-  ``sudo dnf install git``
 -  ``git clone https://github.com/letsencrypt/letsencrypt``
 -  ``cd letsencrypt``
 
@@ -291,7 +330,6 @@ Set up NGINX with SSL (Recommended)
       server {
          listen         80;
          server_name    mattermost.example.com;
-         return         301 https://$server_name$request_uri;
       }
 
       server {
@@ -324,11 +362,52 @@ Set up NGINX with SSL (Recommended)
 
 
 6. Be sure to restart nginx
-  * ``\ sudo service nginx start``
-7. Add the following line to cron so the cert will renew every month
-  * ``crontab -e``
-  * ``@monthly /home/YOURUSERNAME/letsencrypt/letsencrypt-auto certonly --reinstall -d yourdomainname && sudo service nginx reload``
 
+   ``sudo systemctl restart nginx``
+
+7. Check that your SSL certificate is set up correctly
+
+Test the SSL certificate by visiting a site such as `https://www.ssllabs.com/ssltest/index.html`.
+
+If there’s an error about the missing chain or certificate path, there is likely
+an intermediate certificate missing that needs to be included.
+
+8. Set up Letsencrypt cert automatic renewal
+
+- Check your Letsencrypt setup is correct by running the below command. It renew
+the certificate in a fake manner:
+
+``sudo certbot renew --dry-run``
+
+You should see a congratulation message if successful.
+
+Then, add a cron job or use systemd timer capability to run twice a day the renewal
+process.
+
+- write the ``/etc/systemd/system/letsencrypt.renewal.service`` file
+
+::
+
+     [Unit]
+     Description=Renew let's encrypt certificates
+
+     [Service]
+     ExecStart=/usr/bin/certbot renew --quiet
+
+- write the ``/etc/systemd/system/letsencrypt.timer`` file
+
+::
+
+     [Unit]
+     Description=start letsencrypt.renewal.service every 12 hours
+
+     [Timer]
+     OnUnitActiveSec=12hours
+
+     [Install]
+     WantedBy=timers.target
+
+- Start and enable these two systemd files.
 
 Test setup and configure Mattermost Server
 -------------------------------------------

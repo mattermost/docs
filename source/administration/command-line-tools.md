@@ -27,9 +27,18 @@ _Available in Enterprise Edition E10 and higher_
 - Migrating sign-in options 
 - Resetting multi-factor authentication for a user 
 
+#### Using the CLI tool
 
-Typing `platform -help` brings up the below documentation on usage. 
+Typing `platform -help` brings up documentation for the CLI tool.
 
+Notes:
+- Parameters in CLI commands are order-specific.
+- If special characters (`!`, `|`, `(`, `)`, `\`, \`, and `"` ) are used, the entire argument needs to be surrounded by single quotes (e.g. `-password 'mypassword!'`, or the individual characters need to be escaped out (e.g. `-password mypassword/!`).
+
+
+.. tip :: If you automate user creation through the CLI tool with SMTP enabled emails will be sent to all new users created. If you run such a load script, it is best to disable SMTP or to use test accounts so that new account creation emails aren't unintentionally set to people at your organization who aren't expecting them. 
+
+CLI Documentation:
 
 ```
 Mattermost commands to help configure the system

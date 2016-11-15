@@ -256,7 +256,7 @@ For any issues, Mattermost Enterprise Edition subscribers and trial license user
 Private cloud enterprise communications server. 
 
 - Free to use in "team mode" with same features as open source version.
-- Enterprise features unlock with a license key and purchase of a subscription. [See feature list and pricing](https://about.mattermost.com/pricing/).
+- Enterprise features unlock with a license key and purchase of a subscription. [See feature list and pricing](https://about.mattermost.com/pricing/) (including academic and non-profit options).
 
 -------
 

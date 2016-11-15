@@ -1,14 +1,14 @@
 Administrator Tasks 
-----
+-------------------
 This document provides instructions for common administrator tasks.
 
 **DO NOT manipulate the Mattermost database**
-====
+=============================================
   - In particular, DO NOT manually delete data from the database directly. Mattermost is designed as a continuous archive and cannot be supported after manual manipulation.
   - If you need to permanently delete a team or user please use the `Command Line Tool <http://docs.mattermost.com/administration/command-line-tools.html>`_.
 
 Migrating to AD/LDAP or SAML from email-based authentication  
-==== 
+============================================================
 
 If you've evaluated Mattermost using email authentication and decide to deploy broadly using Active Directory/LDAP or SAML Single-Sign-On, you can follow this procedure: 
 
@@ -19,7 +19,7 @@ If you've evaluated Mattermost using email authentication and decide to deploy b
 5. If someone attempts to sign-in with AD/LDAP or SAML with an email matching that of an existing account, they'll get an error message and will need to switch sign-in methods per procedure in 4. 
 
 Common Tasks
-====
+============
 
 Creating System Administrator account from commandline
   - If the System Administrator account becomes unavailable, a person leaving the organization for example, you can set a new system admin from the commandline using ``./platform -assign_role -team_name="yourteam" -email="you@example.com" -role="system_admin"``. 

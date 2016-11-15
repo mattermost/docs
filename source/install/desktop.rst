@@ -21,22 +21,22 @@ Below is a list of additional resources:
 
 You can `download the apps directly from our downloads page <https://about.mattermost.com/downloads/>`_. You may also use the following installation guides for Windows, Mac and Linux:
 
- Windows 10+, Windows 8.1+, Windows 7+
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Windows 10+, Windows 8.1+, Windows 7+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Download latest version of the Mattermost desktop app:
 
-   - `64-bit version of Windows <https://releases.mattermost.com/desktop/3.4.0/mattermost-setup-3.4.0-win64.exe>`_
-   - `32-bit version of Windows <https://releases.mattermost.com/desktop/3.4.0/mattermost-setup-3.4.0-win32.exe>`_
+   - `64-bit version of Windows <https://releases.mattermost.com/desktop/3.4.1/mattermost-setup-3.4.1-win64.exe>`_
+   - `32-bit version of Windows <https://releases.mattermost.com/desktop/3.4.1/mattermost-setup-3.4.1-win32.exe>`_
 
-2. From the ``\Downloads`` directory right-click on the file ``mattermost-setup-3.4.0...`` and select **Open**.
+2. From the ``\Downloads`` directory right-click on the file ``mattermost-setup-3.4.1...`` and select **Open**.
 
 This will start an installer for the app. Once finished, the Mattermost desktop app will open automatically.
 
-Mac OS X 10.9
+Mac OS X 10.9+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Download `latest version of the Mattermost desktop app <https://releases.mattermost.com/desktop/3.4.0/mattermost-desktop-3.4.0-osx.tar.gz>`_
+1. Download `latest version of the Mattermost desktop app <https://releases.mattermost.com/desktop/3.4.1/mattermost-desktop-3.4.1-osx.tar.gz>`_
 
 2. From the ``/Downloads`` directory, find ``/mattermost-desktop...`` folder.
 
@@ -51,9 +51,20 @@ Linux (Beta)
 
 1. Download latest version of the Mattermost desktop app:
 
-   - `x64.tar.gz <https://releases.mattermost.com/desktop/3.4.0/mattermost-desktop-3.4.0-linux-x64.tar.gz>`_
-   - `ia32.tar.gz <https://releases.mattermost.com/desktop/3.4.0/mattermost-desktop-3.4.0-linux-ia32.tar.gz>`_
+   - `x64.tar.gz <https://releases.mattermost.com/desktop/3.4.1/mattermost-desktop-3.4.1-linux-x64.tar.gz>`_
+   - `ia32.tar.gz <https://releases.mattermost.com/desktop/3.4.1/mattermost-desktop-3.4.1-linux-ia32.tar.gz>`_
 
 2. Extract the archive, then execute ``Mattermost`` which is located inside the extracted directory.
 
 3. If you need a Desktop Entry for the application to integrate into a desktop environment, please refer to https://wiki.archlinux.org/index.php/Desktop_entries
+
+To download the unofficial, community-driven .deb packages for the desktop application:
+
+1. Download latest version of the Mattermost desktop app:
+
+   - `amd64.deb <https://releases.mattermost.com/desktop/3.4.1/mattermost-desktop-3.4.1-linux-amd64.deb>`_
+   - `i386.deb <https://releases.mattermost.com/desktop/3.4.1/mattermost-desktop-3.4.1-linux-i386.deb>`_
+
+2. Open a terminal and execute the command ``sudo dpkg -i mattermost-desktop-<VERSION>-<ARCH>.deb``
+
+3. Open **Dash** (located at top left corner) and input ``mattermost``, then click the Mattermost icon. The Mattermost desktop should open automatically.

@@ -2,7 +2,7 @@
 Product Overview
 =====================
 
-Mattermost is a modern, self-hosted workplace messaging solution.
+Mattermost is a modern, self-hosted workplace messaging solution. It is installed by your IT team on your own servers and fully controlled by your organization. 
 
 **Mattermost Team Edition** is an open source, self-hosted alternative to propretiary SaaS messaging. Mattermost brings all your team communication into one place, making it searchable and accessible anywhere. Deploys as single Linux binary on MySQL or PostgreSQL under an MIT license from `mattermost.org/download <https://www.mattermost.org/download/>`_.
 
@@ -15,7 +15,7 @@ Review the `full feature list <https://about.mattermost.com/features/>`_.
 Release Schedule
 ---------------------------
 
-New Mattermost releases new major versions on the 16th of every month.
+Mattermost releases new major versions on the 16th of every other month.
 
 - Learn about the latest features in the `Mattermost Changelog <https://docs.mattermost.com/administration/changelog.html>`_
 

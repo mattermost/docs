@@ -1,6 +1,6 @@
 # Development Process Overview
 
-This document describes the process through which feedback and design discussions flow into community systems, then into tickets, then into pull requests, then into monthly releases based on product purpose. 
+This document describes the process through which feedback and design discussions flow into community systems, then into tickets, then into pull requests, then into bi-monthly releases based on product purpose. 
 
 ## Purpose
 
@@ -34,7 +34,7 @@ If someone feels an existing ticket should be re-examined, they can add "triage"
 
 ### Release Planning
 
-Release planning sets the "Fix Version" of tickets to one of the upcoming monthly releases. The Fix Version is an estimate of when a feature might ship, which may change as the planning process continues, until the ticket is scheduled for a Sprint.
+Release planning sets the "Fix Version" of tickets to one of the upcoming bi-monthly releases. The Fix Version is an estimate of when a feature might ship, which may change as the planning process continues, until the ticket is scheduled for a Sprint.
 
 ### Sprint Planning
 

@@ -1,6 +1,6 @@
 # Release Process
 
-Mattermost core team works on a monthly release process, with a new version shipping on the 16th of each month in [binary form](http://docs.mattermost.com/administration/upgrade.html#mattermost-team-edition). 
+Mattermost core team works on a bi-monthly release process, with a new version shipping on the 16th of each alternate month in [binary form](http://docs.mattermost.com/administration/upgrade.html#mattermost-team-edition). 
 
 This document outlines the development process for the Mattermost core team, which draws from what we find works best for us from Agile, Scrum and Software Development Lifecycle approaches.
 
@@ -185,7 +185,7 @@ The final release is cut. If an urgent and important issue needs to be addressed
     - Posts SHA key and md5 sum of the final build to release channel
 3. PM:
     - Post in Release Discussion with links to the EE and Team Edition bits
-    - Update the [Mattermost server download page](mattermost.org/download)
+    - Update the [Mattermost server download page](https://www.mattermost.org/download/)
     - Add the download links, SHA key and md5 sum to [upgrade guide](http://docs.mattermost.com/administration/upgrade.html#version-archive)
     - Contact owners of [community installers](http://www.mattermost.org/installation/) or submit [PRs](https://github.com/tommyvn/mattermost-heroku/commit/94f7c5c0c5d7d2672fb6d62b6a560b4b5c1b5131) to update install version number
     - Close GitHub meta ticket for the release

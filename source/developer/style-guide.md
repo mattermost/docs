@@ -115,7 +115,7 @@ if (something)
 ```javascript
 // Correct
 function getStr(stuff) {
-    return "This is the ${stuff} string";
+    return `This is the ${stuff} string`;
 }
 
 // Incorrect
@@ -126,7 +126,7 @@ function wrongGetStr(stuff) {
 
 ## React-JSX
 
-Part of the build process is running ESLint. ESLint is the final authority on all style issues. PRs will not be accepted unless there are no errors running ESLint. The ESLint configuration file can be found in: [web/react/.eslintrc](/web/react/.eslintrc)
+Part of the build process is running ESLint. ESLint is the final authority on all style issues. PRs will not be accepted unless there are no errors running ESLint. The ESLint configuration file can be found in: [webapp/.eslintrc](https://github.com/mattermost/platform/blob/master/webapp/.eslintrc.json)
 
 Instructions on how to use ESLint with your favourite editor can be found here: [http://eslint.org/docs/user-guide/integrations](http://eslint.org/docs/user-guide/integrations)
 
@@ -149,11 +149,11 @@ The following is a subset of what ESLint checks for. ESLint is always the author
     propertyOne="1"
     propertyTwo="2"
 >
-  <Child />
+  <Child/>
 </Tag>
 
 // Correct
-<Tag propertyOne="1" />
+<Tag propertyOne="1"/>
 ```
 
 ### Naming
@@ -164,5 +164,5 @@ The following is a subset of what ESLint checks for. ESLint is always the author
 
 ```xml
 // Correct
-<ReactComponent propertyOne="value" />
+<ReactComponent propertyOne="value"/>
 ```
