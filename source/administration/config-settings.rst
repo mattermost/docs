@@ -21,7 +21,7 @@ Quick Links:
 	`Email`_ - `Mobile Push`_
 
 `Integrations`_
-	`Custom Integrations`_ - `External Services`_
+	`Custom Integrations`_ - `WebRTC (Beta)`_ - `External Services`_
 
 `Files`_
 	`Storage`_ - `Images`_
@@ -143,6 +143,15 @@ Maximum number of users per team, including both active and inactive users.
 | This feature's ``config.json`` setting is ``"MaxUsersPerTeam": 50`` with whole number input.                                                                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Max Channels Per Team
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Maximum number of channels per team, including both active and deleted channels.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"MaxChannelsPerTeam": 2000`` with whole number input.                                                                    |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 Restrict account creation to specified email domains
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Teams and user accounts can only be created by a verified email from this list of comma-separated domains (e.g. "corp.mattermost.com, mattermost.org").
@@ -151,8 +160,11 @@ Teams and user accounts can only be created by a verified email from this list o
 | This feature's ``config.json`` setting is ``"RestrictCreationToDomains": ""`` with string input.                                                                     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Restrict Team Names
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Restrict Team Names 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+
+*Removed in November 16th, 2016 release*
+
 **True**: Newly created team names cannot contain the following restricted words: www, web, admin, support, notify, test, demo, mail, team, channel, internal, localhost, dockerhost, stag, post, cluster, api, oauth.
 
 **False**: Newly created team names are not restricted.
@@ -1420,6 +1432,78 @@ Enable integrations to override profile picture icons
 
 ________
 
+WebRTC (Beta)
+``````````````````````````
+Enable Mattermost WebRTC 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**True**: Mattermost will allow making one-on-one video calls on Chrome, Firefox and `Mattermost Desktop Apps <https://about.mattermost.com/download/#mattermostApps>`_ on a server running in SSL mode.
+
+**False**: Mattermost doesn't allow one-on-one video calls.
+
+Note: To enable the Mattermost WebRTC service, the System Administrator agrees to the `Terms of Service <https://about.mattermost.com/webrtc-terms/>`_ and `Privacy Policy <https://about.mattermost.com/webrtc-privacy/>`_.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                                   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Gateway Websocket URL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This is the websocket used to signal and establish communication between the peers. Enter ``wss://<mattermost-webrtc-gateway-url>:<port>``. Make sure you use WS or WSS in your URL depending on your server configuration.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"GatewayWebsocketUrl": ""`` with string input                                                                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Gateway Admin URL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Mattermost WebRTC uses this URL to obtain valid tokens for each peer to establish the connection. Enter ``https://<mattermost-webrtc-gateway-url>:<port>/admin``. Make sure you use HTTP or HTTPS in your URL depending on your server configuration. 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"GatewayAdminUrl": ""`` with string input                                                                                |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Gateway Admin Secret
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enter your admin secret password to access the Gateway Admin URL.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"GatewayAdminSecret": ""`` with string input                                                                             |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+STUN URI
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enter your STUN URI as ``stun:<your-stun-url>:<port>``. STUN is a standardized network protocol to allow an end host to assist devices to access its public IP address if it is located behind a NAT.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"StunURI": ""`` with string input                                                                                        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+TURN URI
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enter your TURN URI as ``turn:<your-turn-url>:<port>``. TURN is a standardized network protocol to allow an end host to assist devices to establish a connection by using a relay public IP address if it is located behind a symmetric NAT.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"TurnURI": ""`` with string input                                                                                        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+TURN Username
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enter your TURN Server Username.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"TurnUsername": ""`` with string input                                                                                   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+TURN Shared Key
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enter your TURN Server Shared Key. This is used to created dynamic passwords to establish the connection. Each password is valid for a short period of time.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"TurnSharedKey": ""`` with string input                                                                                  |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+________
+
 External Services
 ```````````````````````````
 Google API Key
@@ -1753,7 +1837,7 @@ Enable Rate Limiting
 **False**: APIs are not throttled.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableRateLimiter": true`` with options ``true`` and ``false`` for above settings respectively.                         |
+| This feature's ``config.json`` setting is ``"EnableRateLimiter": false`` with options ``true`` and ``false`` for above settings respectively.                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Maximum Queries per Second
@@ -1764,7 +1848,15 @@ Throttle API at this number of requests per second if rate limiting is enabled.
 | This feature's ``config.json`` setting is ``"PerSec": 10`` with whole number input.                                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Memory Store Size
+Maximum Burst Size 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Maximum number of requests allowed beyond the per second query limit.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"MaxBurst": 100`` with whole number input.                                                                               |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Memory Store Size  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Maximum number of user sessions connected to the system as determined by **VaryByRemoteAddr** and **VaryByHeader** variables.
 

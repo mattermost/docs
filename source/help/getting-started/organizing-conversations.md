@@ -40,3 +40,20 @@ Click the channel name at the top of the center pane to access the drop-down men
 Click the channel name at the top of the center pane to access the drop-down menu, then click **Delete Channel**. Anyone can delete the Public Channels or Private Groups they belong to, unless the System Administrator has [restricted the permissions](https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-management-permissions-for). 
 
 When a channel is deleted it is removed from the user interface, but an archived copy exists on the server in case it is needed for audit reasons later. Because of this, the URL of a newly created channel cannot be the same URL name as a deleted channel. 
+
+#### Favoriting a Channel
+
+Favorite channels are a great way to organize your sidebar by choosing which Channels, Private Groups and Direct Messages are most important to you.
+
+To mark a channel as a favorite, simply open the channel and then:
+
+**On desktop:** At the top of the page, click on the star next to the channel name
+
+<img src="../../_images/favorite_channels_desktop.png" style="width: 200px;"/>
+
+**On mobile:** Open the dropdown list by the channel name, and select "Add to Favorites"
+
+This will add the channel to a "Favorites" section in the top of the sidebar, so it's easy to access. To remove a channel from the "Favorites" section, click the star again on desktop or select "Remove from Favorites" on mobile.
+
+<img src="../../_images/favorite_channels_sidebar.png" style="width: 200px;"/>
+

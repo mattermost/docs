@@ -364,7 +364,21 @@ Set up NGINX with SSL (Recommended)
   * Test the SSL certificate by visiting a site such as `https://www.ssllabs.com/ssltest/index.html <https://www.ssllabs.com/ssltest/index.html>`_
   * If there’s an error about the missing chain or certificate path, there is likely an intermediate certificate missing that needs to be included
 
-Additional Mattermost Configuration
+Setup HTTP2
+------------
+
+It is recommended to enable HTTP2 for enhanced performance. 
+
+1. Modify your NGINX configuration as above. Then,
+
+  - Change the line ``listen 443 ssl;`` to ``listen 443 ssl http2;``
+  - Change the line ``proxy_pass http://10.10.10.2:8065;`` to ``proxy_pass https://10.10.10.2:8065;``
+  
+2. Restart NGINX
+
+3. Setup TLS on the Mattermost server by following `these instrucions. <https://docs.mattermost.com/install/setup-tls.html>`_
+
+Test setup and configure Mattermost Server
 ------------------------------------------
 
 1. Navigate to ``https://mattermost.example.com`` and create a team and
