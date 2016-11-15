@@ -22,6 +22,7 @@ To start, select one of the following guides:
       1. Run `platform -version` to check the current version of your Mattermost server
       2. Determine the appropriate next upgrade for your server:
           - Mattermost `v3.0.x` and later can upgrade directly to Mattermost `v3.5.x`
+              - Note: If public links are enabled, upgrading from `v3.3.x` and earlier to `v3.4.x` and later will invalidate existing public links due to a security upgrade allowing admins to invalidate links by resetting a public link salt from the System Console.
               - Note: RHEL6 and Ubuntu installations must verify the line `limit nofile 50000 50000` is included in `/etc/init/mattermost.conf` file. See the [installation guide](https://docs.mattermost.com/guides/administrator.html#install-guides) for your operating system for more details.
               - Note: RHEL7 and Debian installations must verify the line `LimitNOFILE=49152` is included in the `/etc/systemd/system/mattermost.service` file. See the [installation guide](https://docs.mattermost.com/guides/administrator.html#install-guides) for your operating system for more details.
           - Mattermost `v2.2.x` can upgrade directly to `v3.1.x` or `v3.2.x` but must follow the [extended upgrade guide for `v3.0.x`](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-3-0-x)   
@@ -145,6 +146,7 @@ For any issues, Mattermost Enterprise Edition subscribers and trial license user
       1. Run `platform -version` to check the current version of your Mattermost server
       2. Determine the appropriate next upgrade for your server:
           - Mattermost `v3.0.x` and later can upgrade directly to Mattermost `v3.5.x`
+              - Note: If public links are enabled, upgrading from `v3.3.x` and earlier to `v3.4.x` and later will invalidate existing public links due to a security upgrade allowing admins to invalidate links by resetting a public link salt from the System Console.
               - Note: RHEL6 and Ubuntu installations must verify the line `limit nofile 50000 50000` is included in `/etc/init/mattermost.conf` file. See the [installation guide](https://docs.mattermost.com/guides/administrator.html#install-guides) for your operating system for more details.
               - Note: RHEL7 and Debian installations must verify the line `LimitNOFILE=49152` is included in the `/etc/systemd/system/mattermost.service` file. See the [installation guide](https://docs.mattermost.com/guides/administrator.html#install-guides) for your operating system for more details.
           - Mattermost `v2.2.x` can upgrade directly to `v3.1` or `v3.2` but must follow the [extended upgrade guide for `v3.0.x`](https://docs.mattermost.com/administration/upgrade.html#upgrade-to-enterprise-edition-3-0-x)   
@@ -258,8 +260,8 @@ Private cloud enterprise communications server.
 
 -------
 
-- Mattermost Enterprise Edition v3.5.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-5-0) - [Download](https://releases.mattermost.com/3.5.0/mattermost-3.5.0-linux-amd64.tar.gz)
-  - `https://releases.mattermost.com/3.5.0/mattermost-3.5.0-linux-amd64.tar.gz`
+- Mattermost Enterprise Edition v3.5.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-5-0) - [Download](https://releases.mattermost.com/3.5.0/mattermost-enterprise-3.5.0-linux-amd64.tar.gz)
+  - `https://releases.mattermost.com/3.5.0/mattermost-enterprise-3.5.0-linux-amd64.tar.gz`
 - Mattermost Enterprise Edition v3.4.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-4-0) - [Download](https://releases.mattermost.com/3.4.0/mattermost-3.4.0-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/3.4.0/mattermost-3.4.0-linux-amd64.tar.gz`
 - Mattermost Enterprise Edition v3.3.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-3-0) - [Download](https://releases.mattermost.com/3.3.0/mattermost-3.3.0-linux-amd64.tar.gz)
