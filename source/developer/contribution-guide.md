@@ -22,6 +22,8 @@ Once you have a ticket:
 
 2. Create a branch with `<branch name>` set to the ID of the ticket you're working on, for example `PLT-394`, using command: `git checkout -b <branch name>`
 
+3. Take a look at the [developer flow](https://docs.mattermost.com/developer/developer-flow.html) to learn how to work with the Mattermost codebase
+
 ## Preparing a Pull Request 
 
 Before submitting a pull request (PR), check that:  

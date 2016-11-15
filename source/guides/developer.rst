@@ -9,6 +9,7 @@ Detailed information on contributing to the Mattermost open source project.
 
    /developer/contribution*
    /developer/developer-setup*
+   /developer/developer-flow*
    /developer/running-mattermost*
    /developer/style*
    /developer/fx*
