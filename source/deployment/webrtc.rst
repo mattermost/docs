@@ -26,11 +26,11 @@ After enabling the feature in the System Console by a System Administrator:
 
 Clicking the video icon on a user's profile popover, which appears after clicking their profile picture or name on the center channel or right hand sidebar
 
-![webrtc-popover](../../images/webrtc-popover.png)
+.. image:: ../images/webrtc-popover.png
 
 Clicking the video icon on the channel header of a direct message channel with that user
 
-![webrtc-header](../../images/webrtc-header.png)
+.. image:: ../images/webrtc-header.png
 
 Troubleshooting
 --------------------------
