@@ -14,15 +14,13 @@ Release date: 2016-11-16
 
 #### Languages
 - Added Russian translations for the user interface.
-- Promoted Chinese (both simplified and traditional) to release-quality translations.
+- Promoted Chinese (both simplified and traditional) to release-quality translations, removing beta tags.
 
-#### Performance
-
-Added significant improvements for large organizations running on a single server, including:
+#### Performance improvements for mobile and web experience 
 
  - Ability to download assets in parallel via HTTP2 support.
  - Reduced CPU bottlenecks and optimized SQL queries.
- - Improved support for 20,000 active users in the user interface through paging controls, server-side search and on-the-fly data loading that requests data as the client needs it.
+ - Reduced load times through paging controls, server-side search and on-the-fly data loading that requests data as the client needs it.
  - Added paging APIs for profiles, channels and user lists.
  - Added client-scaling for auto-complete and status indicators.
  - Added server-side in-memory caching to reduce DB reads/writes.
@@ -37,9 +35,10 @@ Added significant improvements for large organizations running on a single serve
 #### Favorite Channels
 - Added the ability to select Favorite Channels that appear at the top of the channels sidebar.
 
-#### Video and Audio Calling (Beta)
+#### Video and Audio Calling (early-preview)
 - Added early preview of video and audio calling option using self-hosted proxy.
 - Intended as working prototype for community development, not recommended for production.
+- Early preview does not include logging or detailed documentation. 
 
 #### Improved Slack Import
 - Added the ability to import files from Slack (CLI command also supported).
@@ -51,13 +50,13 @@ Added significant improvements for large organizations running on a single serve
 ### Improvements
 
 #### iOS Apps
-- Channel and account settings, and channel header are now full screen modals for better visibility
+- Channel settings, account settings, and channel header render are now full screen modals for better visibility
 - [...] menu options now displayed larger for better usability
 - Keyboard doesn't automatically close when sending a message, letting you quickly send several messages in succession
 - When the "Download" link is clicked on files, a "Back" button lets users get back to the app
 
 #### Android Apps
-- Channel and account settings, and channel header are now full screen modals for better visibility
+- Channel settings, account settings, and channel header render are now full screen modals for better visibility
 - [...] menu options now displayed larger for better usability
 - Disabled screen rotation
 - Fixed where clicking on download button for a file attachment did nothing
@@ -74,7 +73,7 @@ Added significant improvements for large organizations running on a single serve
 - On mobile devices, the keyboard now stays open after sending a message to make sending multiple messages easier
 
 #### Notifications
-- Notification sound settings are now honoured on the [Mattermost Desktop Apps](https://about.mattermost.com/download/#mattermostApps)
+- Notification sound settings are now honored on the [Mattermost Desktop Apps](https://about.mattermost.com/download/#mattermostApps)
 - Push notifications can now be received on more than one device
 
 #### Channel Shortlinking
