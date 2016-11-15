@@ -1446,9 +1446,7 @@ Storage system where files and image attachments are saved.
 
 **Local File System**: Files and images are stored in the specified local file directory.
 
-**Amazon S3**: Files and images are stored on Amazon S3 based on the provided access key, bucket and region fields.
-
-**Minio (Beta)**: Files and images can also be stored on Minio based on the provided access key, bucket and region fields. ``amazons3`` driver works fine with Minio.
+**Amazon S3**: Files and images are stored on Amazon S3 based on the provided access key, bucket and region fields. The ``amazons3`` driver is compatible with Minio (Beta) based on the provided access key, bucket and region fields. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DriverName": "local"`` with options ``local`` and ``amazons3`` for above settings respectively.                         |
@@ -1496,10 +1494,13 @@ AWS region you selected for creating your S3 bucket. Refer to `AWS Reference Doc
 
 Secure Amazon S3 Connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Enables secure Amazon S3 Connections. When set to false, allows insecure connections to Amazon S3. Defaults to secure connections only.
+
+**True**: Enables only secure Amazon S3 Connections. 
+
+**False**: Allows insecure connections to Amazon S3.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AmazonS3SSL": true`` with boolean input.                                                                                |
+| This feature's ``config.json`` setting is ``"AmazonS3SSL": true`` with options ``true`` and ``false`` for above settings respectively.                               |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Maximum File Size
