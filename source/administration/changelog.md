@@ -250,6 +250,15 @@ Routes used to get files and their metadata from the server have been changed su
 - Slack Import doesn't add merged members/e-mail accounts to imported channels
 - User can receive a video call from another browser tab while already on a call
 - Video calls do not work with Chrome v56 and later
+- Sequential messages from the same user appear as separate posts on mobile view
+- Slash commands do not work in newly created private channels until a hard refresh
+- Edge overlays desktop notification sound with system notification sound
+- Pressing escape to close autocomplete clears the textbox on IE11
+- Channel switcher doesn't work for users outside of your current team
+- Deleting a messages from a permalink view doesn't show delete until refresh
+- Channel dropdown selector no longer works in the Zapier App but the Channel ID can still be entered manually
+- Search autocomplete picker is broken on Android
+- Channel push notification preferences do not work for the inactive teams if you have multiple teams on a single server.
 
 ### Contributors
 
