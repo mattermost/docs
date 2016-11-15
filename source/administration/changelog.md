@@ -50,13 +50,13 @@ Release date: 2016-11-16
 ### Improvements
 
 #### iOS Apps
-- Channel settings, account settings, and channel header render are now full screen modals for better visibility
+- Channel settings, account settings, and channel header now render as full screen modals for better visibility
 - [...] menu options now displayed larger for better usability
 - Keyboard doesn't automatically close when sending a message, letting you quickly send several messages in succession
 - When the "Download" link is clicked on files, a "Back" button lets users get back to the app
 
 #### Android Apps
-- Channel settings, account settings, and channel header render are now full screen modals for better visibility
+- Channel settings, account settings, and channel header now render as full screen modals for better visibility
 - [...] menu options now displayed larger for better usability
 - Disabled screen rotation
 - Fixed where clicking on download button for a file attachment did nothing
