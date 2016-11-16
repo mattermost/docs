@@ -62,7 +62,7 @@ To mark a channel as a favorite, simply open the channel and then:
 **On desktop:** At the top of the page, click on the star next to the channel name
 
     .. image:: ../../images/favorite_channels_desktop.png
-       :scale: 50
+       :scale: 35
 
 
 **On mobile:** Open the dropdown list by the channel name, and select "Add to Favorites"
@@ -70,4 +70,4 @@ To mark a channel as a favorite, simply open the channel and then:
 This will add the channel to a "Favorites" section in the top of the sidebar, so it's easy to access. To remove a channel from the "Favorites" section, click the star again on desktop or select "Remove from Favorites" on mobile.
 
     .. image:: ../../images/favorite_channels_sidebar.png
-       :scale: 50
+       :scale: 35
