@@ -20,17 +20,17 @@ Starting a video call
 
 After enabling the feature in the System Console by a System Administrator:
 
-1 - Go to **Account Settings > Advanced > Preview pre-release features** and select **Enable the ability to make and receive one-on-one WebRTC calls**.
+1. Go to **Account Settings > Advanced > Preview pre-release features** and select **Enable the ability to make and receive one-on-one WebRTC calls**.
 
-2 - Initiate a call with another user by either 
+2. Initiate a call with another user by either:
 
-Clicking the video icon on a user's profile popover, which appears after clicking their profile picture or name on the center channel or right hand sidebar
+    Clicking the video icon on a user's profile popover, which appears after clicking their profile picture or name on the center channel or right hand sidebar
 
-.. image:: ../images/webrtc-popover.png
+    .. image:: ../images/webrtc-popover.png
 
-Clicking the video icon on the channel header of a direct message channel with that user
+    Clicking the video icon on the channel header of a direct message channel with that user
 
-.. image:: ../images/webrtc-header.png
+    .. image:: ../images/webrtc-header.png
 
 Troubleshooting
 --------------------------
