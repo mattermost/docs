@@ -55,9 +55,81 @@ If you choose a port of a lower level (called "system ports" or "well-known port
 
 On Linux you can use: ``sudo setcap cap_net_bind_service=+ep ./bin/platform`` to allow Mattermost to bind to well-known ports.
 
-+-------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ListenAddress": ":8065"``  |
-+-------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ListenAddress": ":8065"`` with string input  |
++-------------------------------------------------------------------------------------------+
+
+Connection Security
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+**None**: Mattermost will connect over an unsecure connection.
+
+**TLS**: Encrypts the communication between Mattermost and your server. See [documentation](https://docs.mattermost.com/install/setup-tls.html) for more details.
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ConnectionSecurity": ""`` with options ``""`` and ``tls`` for the above settings respectively  |
++---------------------------------------------------------------------------------------------------------------------------------------------+
+
+TLS Certificate File
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The path to the certificate file to use for TLS connection security.
+
++------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"TLSCertFile": ""`` with string input  |
++------------------------------------------------------------------------------------+
+
+
+TLS Key File
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The path to the TLS key file to use for TLS connection security.
+
++-----------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"TLSKeyFile": ""`` with string input  |
++-----------------------------------------------------------------------------------+
+
+Use Let's Encrypt
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**True**: Enable the automatic retreval of certificates from Let's Encrypt. The certificate will be retrieved when a client attempts to connect from a new domain. This will work with multiple domains. See [documentation](https://docs.mattermost.com/install/setup-tls.html#automatic-certificate-retrieval) for more details on setting up Let's Encrypt.
+
+**False**: Manual certificate specification based on the **TLS Certificate File** and **TLS Key File** specified above.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"UseLetsEncrypt": false`` with options ``true`` and ``false`` for above settings respectively.                        |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+Let's Encrypt Certificate Cache File
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The path to the file where certificates and other data about the Let's Encrypt service will be stored.
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LetsEncryptCertificateCacheFile": "./config/letsencrypt.cache"`` with string input.  |
++-----------------------------------------------------------------------------------------------------------------------------------+
+
+Forward port 80 to 443
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**True**: Forwards all insecure traffic from port 80 to secure port 443.
+
+**False**: When using a proxy such as NGINX in front of Mattermost this setting is unnecessary and should be set to `false`.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Forward80To443": false`` with options ``true`` and ``false`` for above settings respectively.                        |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Read Timeout
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Maximum time allowed from when the connection is accepted to when the request body is fully read.
+
++-------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ReadTimeout": 300`` with string input  |
++-------------------------------------------------------------------------------------+
+
+Write Timeout
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+If using HTTP (insecure), this is the maximum time allowed from the end of reading the request headers until the response is written. If using HTTPS, it is the total time from when the connection is accepted until the response is written.
+
++--------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"WriteTimeout": 300`` with string input  |
++--------------------------------------------------------------------------------------+
 
 Webserver Mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
