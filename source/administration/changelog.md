@@ -4,7 +4,7 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 ## Release v3.6.0  
 
-Release date:
+Release date: 2017-01-16
 
 ### Highlights
 
