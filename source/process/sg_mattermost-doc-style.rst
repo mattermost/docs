@@ -12,8 +12,5 @@ The Mattermost documentation must be of high quality. It must be accurate and cl
   :backlinks: top
 
 .. include:: sg_document-structure.rst
-  :start-line: 1
 .. include:: sg_grammar-spelling-mechanics.rst
-  :start-line: 1
 .. include:: sg_rest_markup.rst
-  :start-line: 1

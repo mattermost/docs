@@ -1,4 +1,3 @@
-=============================
 Using reStructuredText Markup
 =============================
 
@@ -13,15 +12,14 @@ Use the following markup conventions in Mattermost documentation:
 Page titles
 -----------
 
-For page titles, use an overline and an underline. Use the = character. For example:
+For page titles, use the = character for the title underline, with no overline. For example:
 
 .. code-block:: none
   
-  =============================
   Using reStructuredText Markup
   =============================
 
-Unlike Markdown, overlines and underlines in reStructuredText must be at least as long as the title text.
+Unlike Markdown, underlines in reStructuredText must be at least as long as the title text.
 
 Section titles
 --------------
