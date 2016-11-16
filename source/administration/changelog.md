@@ -2,6 +2,51 @@
 
 This changelog summarizes updates to [Mattermost Team Edition](http://www.mattermost.org/), an open source team messaging solution released bi-monthly under an MIT license, and [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/), a commercial upgrade offering enterprise messaging for large organizations.
 
+## Release v3.6.0  
+
+Release date:
+
+### Highlights
+
+
+### Improvements
+
+
+### Bug Fixes
+
+
+### Compatibility  
+Changes from v3.5 to v3.6:
+
+#### config.json   
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console. 
+
+**Changes to Team Edition and Enterprise Edition**:
+
+
+### Database Changes from v3.4 to v3.5
+
+### API Changes from v3.4 to v3.5
+
+**New routes:**
+
+
+**Moved routes:**
+
+
+**Removed routes:**
+
+
+**Modified Routes**
+
+
+### Known Issues
+
+
+### Contributors
+
+
 ## Release v3.5.0  
 
 Release date: 2016-11-16
