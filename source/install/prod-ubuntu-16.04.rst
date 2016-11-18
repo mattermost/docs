@@ -120,7 +120,7 @@ Set up Mattermost Server
 
        wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz
 
-   Where ``X.X.X`` is typically the latest Mattermost release version, which is currently ``3.4.0``.
+   Where ``X.X.X`` is typically the latest Mattermost release version.
 
 5. Unzip the Mattermost Server by typing::
 
