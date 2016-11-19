@@ -243,7 +243,7 @@ For the purposes of this guide we will assume this server has an IP address of `
 
    -  Set the *mattermost* account as the directory owner by typing::
 
-       sudo chown -R mattermost /mattermost
+       sudo chown -R mattermost: /mattermost
 
 
 Set up NGINX Server
