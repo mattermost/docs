@@ -3,7 +3,11 @@
 Chinese, Korean & Japanese Search
 =================================
 
-Search for Chinese, Korean and Japanese requires special configuration.
+Enabling search for Chinese, Korean and Japanese requires special configuration, since these languages do not contain spaces. 
+
+- See `database requirements documentation <https://docs.mattermost.com/install/requirements.html#database-software>`_ for how to setup search for these languages. 
+
+Below is additional information on how to configure the database for different languages. 
 
 日本語 / Japanese
 -----------------
