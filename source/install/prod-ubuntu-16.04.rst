@@ -109,13 +109,20 @@ Set up Database Server
 Set up Mattermost Server
 ------------------------
 
-1. For the purposes of this guide we will assume this server has an IP
-   address of ``10.10.10.2``
-2. For the sake of making this guide simple we located the files at
-   ``/home/ubuntu/mattermost``.
-3. We have also elected to run the Mattermost Server as the ``ubuntu``
-   account for simplicity. We recommend setting up and running the
-   service under a ``mattermost`` user account with limited permissions.
+For the purposes of this guide we will assume this server has an IP address of ``10.10.10.2``
+
+1. Create a user and group for running mattermost::
+
+       sudo useradd --create-home --user-group --system mattermost
+
+2. Change to the account of the new user::
+
+       sudo --user=mattermost --shell
+
+3. Change into the home of the new user::
+
+       cd
+
 4. Download `any version of the Mattermost Server <https://docs.mattermost.com/administration/upgrade.html#version-archive>`_ by typing::
 
        wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz
@@ -126,21 +133,8 @@ Set up Mattermost Server
 
        tar -xvzf mattermost-X.X.X-linux-amd64.tar.gz
 
-6. Create the storage directory for files. We assume you will have
-   attached a large drive for storage of images and files. For this
-   setup we will assume the directory is located at
-   ``/mattermost/data``.
-
-   -  Create the directory by typing::
-
-       sudo mkdir -p /mattermost/data
-
-   -  Set the ubuntu account as the directory owner by typing::
-
-       sudo chown -R ubuntu /mattermost
-
-7. Configure Mattermost Server by editing the config.json file at
-   ``/home/ubuntu/mattermost/config``:
+6. Configure Mattermost Server by editing the config.json file at
+   ``/home/mattermost/mattermost/config``:
 
    -  Change to the directory::
 
@@ -159,7 +153,7 @@ Set up Mattermost Server
       ``config.json`` or use the System Console described in a later
       section to finish the configuration.
 
-8. Test the Mattermost Server
+7. Test the Mattermost Server
 
    -  Change to the folder with the executable::
 
@@ -172,6 +166,10 @@ Set up Mattermost Server
    -  You should see a console log like ``Server is listening on :8065``
       letting you know the service is running.
    -  Stop the server for now by typing ``ctrl-c``
+
+8. Exit the *mattermost* account::
+
+       exit
 
 9. Create a systemd unit-file for service management.
 
@@ -231,6 +229,19 @@ Set up Mattermost Server
      If for some reason you want to stop mattermost the following command will do it::
 
         sudo systemctl stop mattermost.service
+
+10. Create the storage directory for files. We assume you will have
+   attached a large drive for storage of images and files. For this
+   setup we will assume the directory is located at
+   ``/mattermost/data``.
+
+   -  Create the directory by typing::
+
+       sudo mkdir -p /mattermost/data
+
+   -  Set the *mattermost* account as the directory owner by typing::
+
+       sudo chown -R mattermost /mattermost
 
 
 Set up NGINX Server
