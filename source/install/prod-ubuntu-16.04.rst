@@ -363,21 +363,25 @@ Set up NGINX Server
 Set up NGINX with SSL (Recommended)
 -----------------------------------
 
-1. You can use a free and an open certificate security like let's
-   encrypt, this is how to proceed::
+You can use a free and an open certificate security like let's encrypt.
+
+1. Install git::
 
        sudo apt install git
-       git clone https://github.com/letsencrypt/letsencrypt
-       cd letsencrypt
 
 2. Be sure that the port 80 is not use by stopping NGINX::
 
        sudo systemctl stop nginx.service
        netstat -na | grep ':80.*LISTEN'
-       ./letsencrypt-auto certonly --standalone
 
-3. This command will download packages and run the instance, after that
-   you will have to give your domain name
+3. Clone the letsencrypt repository, download packages and run the instance. After that you will have to give your domain name::
+
+       sudo --user=mattermost --shell
+       git clone https://github.com/letsencrypt/letsencrypt
+       cd letsencrypt
+       ./letsencrypt-auto certonly --standalone
+       exit
+
 4. You can find your certificate in ``/etc/letsencrypt/live``
 5. Modify the file at ``/etc/nginx/sites-available/mattermost`` and add
    the following lines:
@@ -457,7 +461,7 @@ Set up NGINX with SSL (Recommended)
 
   Insert this line::
 
-      @monthly /home/ubuntu/letsencrypt/letsencrypt-auto certonly --reinstall -d yourdomainname && sudo service nginx reload
+      @monthly /home/mattermost/letsencrypt/letsencrypt-auto certonly --reinstall -d yourdomainname && sudo service nginx reload
 
 8. Check that your SSL certificate is set up correctly
   * Test the SSL certificate by visiting a site such as `https://www.ssllabs.com/ssltest/index.html <https://www.ssllabs.com/ssltest/index.html>`_.
