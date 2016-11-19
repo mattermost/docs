@@ -56,6 +56,8 @@ Set up Database Server
 
         postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser_password';
 
+    - Use a password that is more secure than *mmuser_password*!
+
 7.  Grant the user access to the Mattermost database by typing::
 
         postgres=# GRANT ALL PRIVILEGES ON DATABASE mattermost to mmuser;
