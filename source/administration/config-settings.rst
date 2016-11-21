@@ -1930,7 +1930,9 @@ Maximum number of requests allowed beyond the per second query limit.
 
 Memory Store Size  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Maximum number of user sessions connected to the system as determined by **VaryByRemoteAddr** and **VaryByHeader** variables.
+Maximum number of user sessions connected to the system as determined by **VaryByRemoteAddr** and **VaryByHeader** variables. 
+
+Typically set to the number of users in the system
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MemoryStoreSize": 10000`` with whole number input.                                                                      |
@@ -1938,7 +1940,7 @@ Maximum number of user sessions connected to the system as determined by **VaryB
 
 Vary rate limit by remote address
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**True**: Rate limit API access by IP address.
+**True**: Rate limit API access by IP address. Recommended to set to ``true`` if you're using a proxy.
 
 **False**: Rate limiting does not vary by IP address.
 
@@ -1948,7 +1950,7 @@ Vary rate limit by remote address
 
 Vary rate limit by HTTP header
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Vary rate limiting by HTTP header field specified (e.g. when configuring Ngnix set to "X-Real-IP", when configuring AmazonELB set to "X-Forwarded-For").
+Vary rate limiting by HTTP header field specified (e.g. when configuring Ngnix set to "X-Real-IP", when configuring AmazonELB set to "X-Forwarded-For"). Recommended to be set if you're using a proxy.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"VaryByHeader": ""`` with string input.                                                                                  |
