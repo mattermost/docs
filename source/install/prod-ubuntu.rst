@@ -135,31 +135,30 @@ Set up MySQL Database Server
 Set up Mattermost Server
 ------------------------
 
-For the purposes of this guide we will assume this server has an IP
-   address of ``10.10.10.2``
+For the purposes of this guide we will assume this server has an IP address of ``10.10.10.2``
 
-2. Create a mattermost user and group
+1. Create a mattermost user and group
 
     - ``sudo adduser --system --group mattermost``
 
-3. Change to the mattermost home directory.
+2. Change to the mattermost home directory.
 
     ``cd /home/mattermost``
 
-4. Download `any version of the Mattermost Server <https://docs.mattermost.com/administration/upgrade.html#version-archive>`_ by typing:
+3. Download `the latest version of the Mattermost Server <https://docs.mattermost.com/administration/upgrade.html#version-archive>`_ by typing:
 
    -  ``wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz``
    -  Where ``vX.X.X`` is the latest version.
 
-5. Extract the Mattermost Server files by typing:
+4. Extract the Mattermost Server files by typing:
 
    -  ``sudo tar -xvzf *.gz``
 
-6. Change the user and group of the extracted files to mattermost
+5. Change the user and group of the extracted files to mattermost
 
    - ``sudo chown -R mattermost:mattermost mattermost/``
 
-7. Create the storage directory for files. We assume you will have
+6. Create the storage directory for files. We assume you will have
    attached a large drive for storage of images and files. For this
    setup we will assume the directory is located at
    ``/mattermost/data``.
@@ -175,12 +174,12 @@ For the purposes of this guide we will assume this server has an IP
    -  ``cd /home/mattermost/mattermost/config``
    -  Edit the file by typing:
    -  ``vi config.json``
-   - If you are using PostgreSQL:
-      1. Set ``DriverName":`` to ``"postgres"``
-      2. Set ``"DataSource:"`` to the following value: ``"postgres://mmuser:mmuser_password@10.10.10.1:5432/mattermost?sslmode=disable&connect_timeout=10"``
-   - If you are using MySQL:
-      1. Set ``DriverName":`` to ``"mysql"``
-      2. Set ``"DataSource":`` to the following value: ``"mmuser:mmuser_password@tcp(10.10.10.1:3306)/mattermost?charset=utf8"``
+   -  If you are using PostgreSQL:    
+     -  Set ``DriverName":`` to ``"postgres"``
+     -  Set ``"DataSource:"`` to the following value: ``"postgres://mmuser:mmuser_password@10.10.10.1:5432/mattermost?sslmode=disable&connect_timeout=10"``
+   -  If you are using MySQL:    
+     -  Set ``DriverName":`` to ``"mysql"``
+     -  Set ``"DataSource":`` to the following value: ``"mmuser:mmuser_password@tcp(10.10.10.1:3306)/mattermost?charset=utf8"``
    -  You can continue to edit configuration settings in
       ``config.json`` or use the System Console described in a later
       section to finish the configuration.
