@@ -20,6 +20,7 @@ This documentation provides a deployment guide, configuration and compatibility 
  - `Mattermost Server <https://docs.mattermost.com/deployment/cluster.html#mattermost-server-configuration>`_ - Configure the cluster settings for the Mattermost application server. 
  - `Proxy Server <https://docs.mattermost.com/deployment/cluster.html#proxy-server-configuration>`_ - Configure NGINX or another load balancer to proxy servers in the cluster.
  - `File Storage Location <https://docs.mattermost.com/deployment/cluster.html#file-storage-configuration>`_ - Configure the file storage location to be compatible with a high availability setup.
+ - `Rate Limiting <https://docs.mattermost.com/deployment/cluster.html#rate-limiting>`_ - Configure recommended rate limiting settings for a high availability setup.
  - `Database <https://docs.mattermost.com/deployment/cluster.html#database-configuration>`_ - Size and deploy a multi-database configuration for high availability and scaling.
 
 - `Troubleshooting <https://docs.mattermost.com/deployment/cluster.html#id14>`_ - **Advice on troubleshooting your high availability setup.**
@@ -145,6 +146,19 @@ File Storage Configuration
 If you’re using the Compliance Reports feature in Enterprise Edition E20, you will need to configure the  ``"ComplianceSettings":`` ``"Directory": "./data/",`` to share between all machines or the reports will only be available from the System Console on the local Mattermost server.
 
 Migrating to NAS or S3 from local storage is beyond the scope of this document.
+
+Rate Limiting Configuration
+----------------------------------------
+
+It is recommended to enable rate limiting with the following configuration settings:
+
+ - **Maximum Queries per Second**: 10
+ - **Maximum Burst Size**: 100
+ - **Memory Store Size**: Set to the number of users in the system
+ - **Vary rate limit by remote address**: Set to ``true`` if you're using a proxy
+ - **Vary rate limit by HTTP header**: Set to ``true`` if you're using a proxy
+
+Please refer to our `Configuration Settings documentation <https://docs.mattermost.com/administration/config-settings.html#rate-limiting>`_ for more details on these settings.
 
 Database Configuration
 ------------------------------------
