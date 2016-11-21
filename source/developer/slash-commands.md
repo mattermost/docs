@@ -44,10 +44,12 @@ Each Mattermost installation comes with some built-in slash commands that are re
 Custom slash commands are off by default, and can be enabled by the system administrator. If you are the system administrator you can enable them by doing the following:
 
 1. Login to your Mattermost team account that has the system administrator role.
-2. Enable slash commands from **System Console** > **Integrations** > **Webhooks and Commands**.
-3. (Optional) Configure the **Enable Overriding Usernames from Webhooks and Slash Commands** option to allow custom slash commands to post under any name. If not enabled, the username of the user who activated the command will be used
-4. (Optional) Configure the **Enable Overriding Icon from Webhooks and Slash Commands** option to allow custom slash commands to post using any icon. If not enabled, the icon of the user who activated the command will be used
-5. (Optional) Configure the **Enable Integrations for Admin Only** option to allow only system and team admins to create slash commands
+2. Navigate to **System Console** > **Integrations** > **Custom Integrations**
+3. Enable slash commands by setting the **Enable Custom Slash Commands** option to true
+3. (Optional) Configure the **Enable integrations to override usernames** option to allow custom slash commands to post under any name. If not enabled, the username of the user who activated the command will be used
+4. (Optional) Configure the **Enable integrations to override profile picture icons** option to allow custom slash commands to post using any icon. If not enabled, the icon of the user who activated the command will be used
+5. (Optional) Configure the **Restrict managing integrations to Admins** option to allow only system and team admins to create slash commands
+5. Save your changes
 
 ### Set Up a Custom Command
 Once slash commands are enabled, you will be able to set some up through the Mattermost UI. You can do so by following these steps:
