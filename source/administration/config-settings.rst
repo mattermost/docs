@@ -1909,7 +1909,7 @@ Enable Rate Limiting
 **False**: APIs are not throttled.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableRateLimiter": false`` with options ``true`` and ``false`` for above settings respectively.                        |
+| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Maximum Queries per Second
