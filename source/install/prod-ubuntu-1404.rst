@@ -256,6 +256,7 @@ Set up NGINX Server
    -  Below is a sample nginx configuration optimized for performance:
 
     ::
+    
         upstream backend {
             server 10.10.10.2:8065;
         }
