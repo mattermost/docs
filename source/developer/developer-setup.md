@@ -82,6 +82,10 @@ Any issues? Please let us know on our forums at: http://forum.mattermost.org
 
 ### Archlinux ###
 
+_TIP_: There is a package in the [Arch User Repository](https://aur.archlinux.org/) called [Mattermost](https://aur.archlinux.org/packages/mattermost/). Follow the [AUR instructions](https://wiki.archlinux.org/index.php/Arch_User_Repository) to build and install. 
+**AUR** is the recommanded way for building and installing packages not in the official repository.
+
+
 1. Install Docker
 	1. `pacman -S docker`
 	2. `gpasswd -a user docker`
