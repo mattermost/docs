@@ -15,7 +15,6 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
    - Fixed an issue where direct message channel headers would sometimes disappear.
    - "New Messages" indicator is fixed so it no longer remains visible after switching channels.
    - Fixed an issue where users could not join a public channel by navigating to the channel URL.
-   - Switching teams no longer causes user interface and console errors.
    - Email and push notifications are made asyncronous to fix a delay sending messages when HPNS was enabled.
    - Autocomplete timeout is decreased to make autocomplete more responsive to quick typing.
  - **v3.5.0, released 2016-11-16**
