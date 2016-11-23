@@ -2,13 +2,28 @@
 
 This changelog summarizes updates to [Mattermost Team Edition](http://www.mattermost.org/), an open source team messaging solution released bi-monthly under an MIT license, and [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/), a commercial upgrade offering enterprise messaging for large organizations.
 
-## Release v3.5.0  
+## Release v3.5.1  
 
-Release date: 2016-11-16
+### Notes on Patch Release
+
+ - **v3.5.1, released 2016-11-23**
+   - Security update to preventing cross-site scripting and remote code execution, thanks to Harrison Healey for [reporting responsibly](http://www.mattermost.org/responsible-disclosure-policy/).
+   - Fixed an issue where usernames would sometimes not appear beside posts and the reply arrow would throw an error. 
+   - The channel purpose is no longer cut off in the user interface of the **More...** channel menu. 
+   - Fix scroll issue where the center channel didn't always scroll to the bottom when switching channels.
+   - Fix wildcard searching using an asterisk.
+   - Fixed an issue where direct message channel headers would sometimes disappear.
+   - "New Messages" indicator is fixed so it no longer remains visible after switching channels.
+   - Fixed an issue where users could not join a public channel by navigating to the channel URL.
+   - Switching teams no longer causes user interface and console errors.
+   - Email and push notifications are made asyncronous to fix a delay sending messages when HPNS was enabled.
+   - Autocomplete timeout is decreased to make autocomplete more responsive to quick typing.
+ - **v3.5.0, released 2016-11-16**
+   - Original 3.5 release.
 
 ### Security Update
 
-- Mattermost v3.5.0 contains a [security update](http://about.mattermost.com/security-updates/). [Upgrading to Mattermost v3.5.0](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Thanks to Alyssa Milburn for contributing security reports through the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+- Mattermost v3.5.1 contains [security updates](http://about.mattermost.com/security-updates/). [Upgrading to Mattermost v3.5.1](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Thanks to Alyssa Milburn and Harrison Healey for contributing security reports through the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
 ### Highlights
 
