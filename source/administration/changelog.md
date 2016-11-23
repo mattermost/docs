@@ -10,8 +10,8 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
    - Security update to preventing cross-site scripting and remote code execution, thanks to Harrison Healey for [reporting responsibly](http://www.mattermost.org/responsible-disclosure-policy/).
    - Fixed an issue where usernames would sometimes not appear beside posts and the reply arrow would throw an error. 
    - The channel purpose is no longer cut off in the user interface of the **More...** channel menu. 
-   - Fix scroll issue where the center channel didn't always scroll to the bottom when switching channels.
-   - Fix wildcard searching using an asterisk.
+   - Fixed a scroll issue where the center channel didn't always scroll to the bottom when switching channels.
+   - Fixed a server error that occurred when searching for users using an asterisk.
    - Fixed an issue where direct message channel headers would sometimes disappear.
    - "New Messages" indicator is fixed so it no longer remains visible after switching channels.
    - Fixed an issue where users could not join a public channel by navigating to the channel URL.
