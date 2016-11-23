@@ -23,7 +23,7 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 ### Security Update
 
-- Mattermost v3.5.1 contains [security updates](http://about.mattermost.com/security-updates/). [Upgrading to Mattermost v3.5.1](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Thanks to Alyssa Milburn and Harrison Healey for contributing security reports through the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+- Mattermost v3.5.1 contains multiple [security updates](http://about.mattermost.com/security-updates/). [Upgrading to Mattermost v3.5.1](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Thanks to Alyssa Milburn and Harrison Healey for contributing security reports through the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
 ### Highlights
 
