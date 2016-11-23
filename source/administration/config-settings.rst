@@ -66,7 +66,7 @@ Connection Security
 **TLS**: Encrypts the communication between Mattermost and your server. See [documentation](https://docs.mattermost.com/install/setup-tls.html) for more details.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ConnectionSecurity": ""`` with options ``""`` and ``tls`` for the above settings respectively  |
+| This feature's ``config.json`` setting is ``"ConnectionSecurity": ""`` with options ``""`` and ``TLS`` for the above settings respectively  |
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 
 TLS Certificate File
