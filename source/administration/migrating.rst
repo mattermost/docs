@@ -28,7 +28,7 @@ Migrating from Slack
 
 .. note:: As a proprietary SaaS service, Slack is able to change its export format quickly and without notice. If you encounter issues not mentioned in the documentation below, please alert the product team by `filing an issue <https://github.com/mattermost/platform/issues>`_.
 
-The Slack Import feature in Mattermost is in "Beta" and focus is on supporting migration of teams of less than 100 registered users.
+The Slack Import feature in Mattermost is in "Beta" and focused on supporting migration of teams of less than 100 registered users.
 
 This feature can be accessed through the `Mattermost Web App </administration/migrating.html#migrating-from-slack-using-the-mattermost-web-app>`_ or using the `CLI </administration/migrating.html#migrating-from-slack-using-the-mattermost-cli>`_.
 
@@ -41,9 +41,9 @@ Supported Features
 
 The following key features are supported out of the box when importing from Slack:
 
-* User accounts with and email address set.
+* User accounts with an email address set.
 
-* Public channels and text messages posted in them by users.
+* Public channels and the text messages posted in them by users.
 
 * Channel topic and purpose.
 
@@ -62,7 +62,7 @@ The following limitations are present when importing from Slack:
 
 * The Markdown subset used by Slack's Posts 2.0 feature announced on September 28, 2015 is not yet supported.
 
-* Direct Message and Private Group history. Slack does not include these messages when generating the export archive.
+* Direct Message and Private Groups cannot be imported. Slack does not include these messages when generating the export archive.
 
 Migrating from Slack using the Mattermost Web App
 +++++++++++++++++++++++++++++++++++++++++++++++++
