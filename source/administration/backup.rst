@@ -59,10 +59,10 @@ A properly deployed high availability setup automatically switches over to a red
 
 A "complete" disaster recovery solution would protect against both real-time hardware failures using high availability, data corruption failures using automated, and failures of the primary data center by offering both offsite backup and offsite redundant infrastructure. Because the complexity of a full disaster recovery solution is high, it is common for customers to consider trade-offs in cost and complexity relative to the anticipated risks and target recovery times.
 
-Failover from single-sign-in outage 
+Failover from single sign-in outage 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When using single-sign-on with Mattermost Enterprise Edition an outage to your SSO provider can cause a partial outage on your Mattermost instance. 
+When using single sign-on with Mattermost Enterprise Edition an outage to your SSO provider can cause a partial outage on your Mattermost instance. 
 
 **What happens during an SSO outage?**
 
@@ -70,7 +70,7 @@ _Most people can still log in_ - By default, when a user logs in to Mattermost t
 
 _Some people can't log in_ - During an SSO outage, there are two situations under which a user cannot log in: 
 
-a) Users who's session token expires during the outage
+a) Users whose session token expires during the outage
 
 b) Users trying to log in to new devices 
 
@@ -78,23 +78,23 @@ In each case, the user cannot reach the SSO provider, and cannot log in. In this
 
 1) Configure your SSO provider for high availability 
 
-If you're using a self-hosted single-sign-on provider, several options are available for `high availability configurations that protect your system from unplanned outages. <https://docs.microsoft.com/en-us/microsoft-identity-manager/pam/high-availability-disaster-recovery-considerations-bastion-environment>`_
+If you're using a self-hosted single sign-on provider, several options are available for `high availability configurations that protect your system from unplanned outages. <https://docs.microsoft.com/en-us/microsoft-identity-manager/pam/high-availability-disaster-recovery-considerations-bastion-environment>`_
 
-For SaaS-based authentication providers, while you still have a dependency on service uptime, you can setup redundacy of source systems from which data is being pulled. For example, with the OneLogin SaaS-based authentication service, you can setup `high availabilty LDAP connectivity <https://support.onelogin.com/hc/en-us/articles/204262680-High-Availability-for-LDAP>`_ to further reduce the chances of an outage. 
+For SaaS-based authentication providers, while you still have a dependency on service uptime, you can set up redundancy in source systems from which data is being pulled. For example, with the OneLogin SaaS-based authentication service, you can set up `high availabilty LDAP connectivity <https://support.onelogin.com/hc/en-us/articles/204262680-High-Availability-for-LDAP>`_ to further reduce the chances of an outage. 
 
-2) Setup your own IDP to provide an automated or manual SSO failover option 
+2) Set up your own IDP to provide an automated or manual SSO failover option 
 
 Create a custom Identity Provider for SAML authentication that connects to both an active and a standby authentication option, that can be manually or automatically switched in case of an outage. 
 
-This configuration, security should be carefully reviewed to avoid the standby SSO option to weakening your authentication protections. 
+In this configuration, security should be carefully reviewed to prevent the standby SSO option from weakening your authentication protocols. 
 
-3) Setup a manual failover plan for SSO outages 
+3) Set up a manual failover plan for SSO outages 
 
 When users are unable to reach your organization's SSO provider during an outage, an error message informing the users to contact your support link (defined in your System Console settings) is displayed. 
 
 Once IT is contacted about an SSO outage issue, they can temporarily change a user's account from SSO to email-password using the System Console, and the end user can use password to claim the account, until the SSO outage is over and the account can be converted back to SSO. 
 
-If the administrator is unable to log into the System Console because of the SSO outage, they can switch their authentication method to email-password to gain access. 
+If the administrator is unable to log into the System Console because of the SSO outage, they can switch their authentication method to email-password to gain access using the `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`_.
 
 It is highly important after the outage to switch everyone back to SSO from email-password to maintain consistency and security.
 
