@@ -7,7 +7,7 @@ Install Guides
 ==============
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
    /install/requirements*
@@ -27,7 +27,7 @@ Deployment
 ==========
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
    /deployment/on-boarding*
@@ -46,7 +46,7 @@ Administration
 ==============
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
    /administration/command*
