@@ -1,20 +1,20 @@
 Mattermost Administrator's Guide
---------------------------------
+================================
 
 In-depth documentation on installation, deployment and administration of Mattermost system. 
 
-Install Guides
-==============
+Installing Mattermost
+---------------------
 
 .. toctree::
    :maxdepth: 1
    :glob:
 
-   /install/requirements*
+   /install/requirements.rst
+   Installing on Ubuntu 14.04 LTS </install/install-ubuntu-1404-overview.rst>
    /install/docker-local*
    /install/docker-ebs*
    /install/ee-install*
-   /install/prod-ubuntu*
    /install/prod-rhel*
    /install/prod*
    /install/setup-tls*
@@ -23,8 +23,18 @@ Install Guides
    /install/i18n*
    /install/desktop*
 
+Configuring Mattermost
+----------------------
+
+.. toctree::
+  :maxdepth: 1
+
+  /install/config-mattermost-server.rst
+  /install/config-tls-mattermost.rst
+  /install/config-ssl-http2-nginx.rst
+
 Deployment
-==========
+----------
 
 .. toctree::
    :maxdepth: 1
@@ -43,7 +53,7 @@ Deployment
    /deployment/webrtc*
 
 Administration
-==============
+--------------
 
 .. toctree::
    :maxdepth: 1
