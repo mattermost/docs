@@ -1,35 +1,37 @@
-Set up NGINX Server
-===================
+Installing NGINX Server
+=======================
 
-1. For the purposes of this guide we will assume this server has an IP
-   address of ``10.10.10.3``
-2. We use NGINX for proxying request to the Mattermost Server. The main
-   benefits are:
+In a production setting, use a proxy server for greater security and performance of Mattermost.
 
-   -  SSL termination
-   -  http to https redirect
-   -  Port mapping ``:80`` to ``:8065``
-   -  Standard request logs
+The main benefits of using a proxy are as follows:
 
+  -  SSL termination
+  -  HTTP to HTTPS redirect
+  -  Port mapping ``:80`` to ``:8065``
+  -  Standard request logs
 
-3. Install NGINX on Ubuntu with
+Assume that the IP address of the proxy server is 10.10.10.3.
+
+**To install NGINX on Ubuntu Server:**
+
+1.  Log into the server that will host the proxy and issue the following command:
 
    -  ``sudo apt-get install nginx``
 
-4. Verify NGINX is running
+2. Verify NGINX is running
 
    -  ``curl http://10.10.10.3``
    -  You should see a *Welcome to NGINX!* page
 
-5. You can manage NGINX with the following commands
+3. You can manage NGINX with the following commands
 
    -  ``sudo service nginx stop``
    -  ``sudo service nginx start``
    -  ``sudo service nginx restart``
 
-6. Map a FQDN (fully qualified domain name) like
+4. Map a FQDN (fully qualified domain name) like
    ``mattermost.example.com`` to point to the NGINX server.
-7. Configure NGINX to proxy connections from the internet to the
+5. Configure NGINX to proxy connections from the internet to the
    Mattermost Server
 
    -  Create a configuration for Mattermost

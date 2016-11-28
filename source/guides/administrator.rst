@@ -27,11 +27,9 @@ Configuring Mattermost
 ----------------------
 
 .. toctree::
-  :maxdepth: 1
+  :maxdepth: 2
 
-  /install/config-mattermost-server.rst
-  /install/config-tls-mattermost.rst
-  /install/config-ssl-http2-nginx.rst
+  /install/config-mattermost.rst
 
 Deployment
 ----------

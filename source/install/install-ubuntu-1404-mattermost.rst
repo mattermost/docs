@@ -1,30 +1,36 @@
-Set up Mattermost Server
-========================
+Installing Mattermost Server
+================================
 
-For the purposes of this guide we will assume this server has an IP address of ``10.10.10.2``
+Install Mattermost Server on a 64-bit machine.
 
-1. Create a mattermost user and group
+Assume that the IP address of this server is 10.10.10.2
+
+**To install Mattermost Server on Ubuntu**
+
+1. Log into the server that will host Mattermost Server and open a terminal window.
+
+2. Create a mattermost user and group
 
     - ``sudo adduser --system --group mattermost``
 
-2. Change to the mattermost home directory.
+3. Change to the mattermost home directory.
 
     ``cd /home/mattermost``
 
-3. Download `the latest version of the Mattermost Server <https://docs.mattermost.com/administration/upgrade.html#version-archive>`_ by typing:
+4. Download `the latest version of the Mattermost Server <https://docs.mattermost.com/administration/upgrade.html#version-archive>`_ by typing:
 
    -  ``wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz``
    -  Where ``vX.X.X`` is the latest version.
 
-4. Extract the Mattermost Server files by typing:
+5. Extract the Mattermost Server files by typing:
 
    -  ``sudo tar -xvzf *.gz``
 
-5. Change the user and group of the extracted files to mattermost
+6. Change the user and group of the extracted files to mattermost
 
    - ``sudo chown -R mattermost:mattermost mattermost/``
 
-6. Create the storage directory for files. We assume you will have
+7. Create the storage directory for files. We assume you will have
    attached a large drive for storage of images and files. For this
    setup we will assume the directory is located at
    ``/mattermost/data``.
@@ -34,7 +40,7 @@ For the purposes of this guide we will assume this server has an IP address of `
    -  Set the mattermost account as the directory owner by typing:
    -  ``sudo chown -R mattermost:mattermost /mattermost``
 
-7. Configure Mattermost Server by editing the config.json file at
+8. Configure Mattermost Server by editing the config.json file at
    ``/home/mattermost/config``
 
    -  ``cd /home/mattermost/mattermost/config``
@@ -50,7 +56,7 @@ For the purposes of this guide we will assume this server has an IP address of `
       ``config.json`` or use the System Console described in a later
       section to finish the configuration.
 
-8. Test the Mattermost Server
+9. Test the Mattermost Server
 
    -  ``cd ~/mattermost/bin``
    -  Run the Mattermost Server by typing:
@@ -59,7 +65,7 @@ For the purposes of this guide we will assume this server has an IP address of `
       letting you know the service is running.
    -  Stop the server for now by typing ``ctrl-c``
 
-9. Setup Mattermost to use the Upstart daemon which handles supervision
+10. Setup Mattermost to use the Upstart daemon which handles supervision
    of the Mattermost process.
 
    -  ``sudo touch /etc/init/mattermost.conf``

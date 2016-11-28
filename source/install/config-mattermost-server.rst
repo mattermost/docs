@@ -1,5 +1,5 @@
-Test setup and configure Mattermost Server
-==========================================
+Configuring Mattermost Server
+=============================
 
 1. Navigate to ``https://mattermost.example.com`` and create a team and
    user.

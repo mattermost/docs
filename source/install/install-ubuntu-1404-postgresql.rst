@@ -1,54 +1,58 @@
-Set up PostreSQL
-================
+Installing PostreSQL Database Server
+====================================
 
-1.  For the purposes of this guide we will assume this server has an IP
-    address of 10.10.10.1
-2.  Install PostgreSQL 9.3+
+Mattermost supports either PostgreSQL or MySQL.
+
+Assume that the IP address of this server is 10.10.10.1
+
+**To install PostgreSQL on Ubuntu Server:**
+
+1.  Log into the server that will host the database and issue the following command:
 
     -  ``sudo apt-get install postgresql postgresql-contrib``
 
-3.  PostgreSQL created a user account called ``postgres``. You will need
+2.  PostgreSQL created a user account called ``postgres``. You will need
     to log into that account with:
 
     -  ``sudo -i -u postgres``
 
-4.  You can get a PostgreSQL prompt by typing:
+3.  You can get a PostgreSQL prompt by typing:
 
     -  ``psql``
 
-5.  Create the Mattermost database by typing:
+4.  Create the Mattermost database by typing:
 
     -  ``postgres=# CREATE DATABASE mattermost;``
 
-6.  Create the Mattermost user by typing:
+5.  Create the Mattermost user by typing:
 
     -  ``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser_password';``
 
-7.  Grant the user access to the Mattermost database by typing:
+6.  Grant the user access to the Mattermost database by typing:
 
     -  ``postgres=# GRANT ALL PRIVILEGES ON DATABASE mattermost to mmuser;``
 
-8.  You can exit out of PostgreSQL by typing:
+7.  You can exit out of PostgreSQL by typing:
 
     -  ``postgre=# \q``
 
-9.  You can exit the postgres account by typing:
+8.  You can exit the postgres account by typing:
 
     -  ``exit``
 
-10. Allow Postgres to listen on all assigned IP Addresses
+9. Allow Postgres to listen on all assigned IP Addresses
 
     -  ``sudo vi /etc/postgresql/9.3/main/postgresql.conf``
     -  Uncomment ``listen_addresses`` and change ``localhost`` to ``*``
 
-11. Alter pg\_hba.conf to allow the mattermost server to talk to the
+10. Alter pg\_hba.conf to allow the mattermost server to talk to the
     postgres database
 
     -  ``sudo vi /etc/postgresql/9.3/main/pg_hba.conf``
     -  Add the following line to the ``IPv4 local connections``
     -  ``host all all 10.10.10.2/32 md5``
 
-12. Reload Postgres database
+11. Reload Postgres database
 
     -  ``sudo /etc/init.d/postgresql reload``
 
@@ -60,7 +64,7 @@ Set up PostreSQL
 
     - ``sudo service postgresql restart``
 
-13. Attempt to connect with the new created user to verify everything
+12. Attempt to connect with the new created user to verify everything
     looks good
 
     -  ``psql --host=10.10.10.1 --dbname=mattermost --username=mmuser --password``

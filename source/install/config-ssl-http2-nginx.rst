@@ -1,5 +1,5 @@
-Set up NGINX with SSL (Recommended)
-===================================
+Configuring NGINX with SSL and HTTP/2
+=====================================
 
 1. You can use a free and an open certificate security like let's
    encrypt, this is how to proceed
