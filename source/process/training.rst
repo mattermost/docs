@@ -48,7 +48,7 @@ Open Meetings
 Developer Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Open to the public** - (Developers - 1-2 hours/week) Wednesdays 10:00 (`San Francisco Time <https://www.timeanddate.com/worldclock/usa/san-francisco>`_)
+**Open to the public** - (Developers - 1-2 hours/week) Wednesdays 10:00 (`San Francisco Time <http://everytimezone.com/>`_)
 
 - Goal: Discuss developer issues across Mattermost Inc, key contributors and the contributor community.
 - Attendees: (required) Mattermost Inc developers, (optional) key contributors, contributors and anyone who would like to join.
@@ -72,7 +72,7 @@ For confidentiality of customers, internal process meetings are limited to Matte
 Sprint Planning 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost Inc-only** - (Developer - 5-10 minutes/week) Tuesdays between 10:00 and 11:00 (`San Francisco Time <https://www.timeanddate.com/worldclock/usa/san-francisco>`_)
+**Mattermost Inc-only** - (Developer - 5-10 minutes/week) Tuesdays between 10:00 and 11:00 (`San Francisco Time <http://everytimezone.com/>`_)
 
 - Goal: Review and discuss tickets selected by Developer for next sprint
 - Attendees: (required) Each developer in sequence, plus spint planngers (one dev, one PM) (optional) Mattermost Inc. colleagues welcome
@@ -94,7 +94,7 @@ Procedure:
 Triage Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost Inc-only** - (Triage team - 1-3 hours/week) Monday, Wednesday, Friday 09:00 (`San Francisco Time <https://www.timeanddate.com/worldclock/usa/san-francisco>`_)
+**Mattermost Inc-only** - (Triage team - 1-3 hours/week) Monday, Wednesday, Friday 09:00 (`San Francisco Time <http://everytimezone.com/>`_)
 
 - Goal: To provide consistent review, prioritization and ownership assignment of all tickets 
 - Attendees: (required) dev and PM from Mattermost Inc., typically leads (optional) other Mattermost Inc. colleagues welcome
@@ -126,7 +126,7 @@ Procedure:
 Leads Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost Inc-only** - (Leads - 1-3 hours/week) Monday, Wednesday, Friday after Triage Meeting (09:00 `San Francisco Time <https://www.timeanddate.com/worldclock/usa/san-francisco>`_)
+**Mattermost Inc-only** - (Leads - 1-3 hours/week) Monday, Wednesday, Friday after Triage Meeting (09:00 `San Francisco Time <http://everytimezone.com/>`_)
 
 - Goal: Address leadership and process topics 
 - Attendees: (required) dev, PM and community/marketing leads from Mattermost Inc. (optional) other Mattermost Inc. colleagues welcome
@@ -155,7 +155,7 @@ Procedure:
 Platform Meeting 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost Inc-only** - (Platform colleagues - 1-2 hours/week) Friday's at 10:10 (`San Francisco Time <https://www.timeanddate.com/worldclock/usa/san-francisco>`_) after platform team standup.
+**Mattermost Inc-only** - (Platform colleagues - 1-2 hours/week) Friday's at 10:10 (`San Francisco Time <http://everytimezone.com/>`_) after platform team standup.
 
 Regular team meeting for platform team at Mattermost Inc.
 
