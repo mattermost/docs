@@ -7,7 +7,7 @@ Development Process
 =========================
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
    /process/overview*
@@ -22,7 +22,7 @@ Joining the Team
 =========================
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
    /process/handbook*
