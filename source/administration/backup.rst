@@ -80,7 +80,7 @@ In each case, the user cannot reach the SSO provider, and cannot log in. In this
 
 If you're using a self-hosted single sign-on provider, several options are available for `high availability configurations that protect your system from unplanned outages. <https://docs.microsoft.com/en-us/microsoft-identity-manager/pam/high-availability-disaster-recovery-considerations-bastion-environment>`_
 
-For SaaS-based authentication providers, while you still have a dependency on service uptime, you can set up redundancy in source systems from which data is being pulled. For example, with the OneLogin SaaS-based authentication service, you can set up `high availabilty LDAP connectivity <https://support.onelogin.com/hc/en-us/articles/204262680-High-Availability-for-LDAP>`_ to further reduce the chances of an outage. 
+For SaaS-based authentication providers, while you still have a dependency on service uptime, you can set up redundancy in source systems from which data is being pulled. For example, with the OneLogin SaaS-based authentication service, you can set up `high availability LDAP connectivity <https://support.onelogin.com/hc/en-us/articles/204262680-High-Availability-for-LDAP>`_ to further reduce the chances of an outage. 
 
 2) Set up your own IDP to provide an automated or manual SSO failover option 
 
