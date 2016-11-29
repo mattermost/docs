@@ -1,26 +1,44 @@
+.. _config-ssl-http2-nginx:
+
 Configuring NGINX with SSL and HTTP/2
 =====================================
 
-1. You can use a free and an open certificate security like let's
-   encrypt, this is how to proceed
+Using SSL gives greater security by ensuring that communications between Mattermost clients and the Mattermost server are encrypted. It also allows you to configure NGINX to use the HTTP/2 protocol.
 
--  ``sudo apt-get install git``
--  ``git clone https://github.com/letsencrypt/letsencrypt``
--  ``cd letsencrypt``
+Although you can configure HTTP/2 without SSL, both Firefox and Chrome browsers support HTTP/2 on secure connections only.
 
-2. Be sure that the port 80 is not use by stopping NGINX
+You can use any certificate that you want, but these instructions show you how to download and install certificates from *Let's Encrypt*.
 
--  ``sudo service nginx stop``
--  ``netstat -na | grep ':80.*LISTEN'``
--  ``./letsencrypt-auto certonly --standalone``
+1. Log into the server that hosts NGINX and open a terminal window.
+2. Install git.
 
-3. This command will download packages and run the instance, after that
-   you will have to give your domain name
-4. You can find your certificate in ``/etc/letsencrypt/live``
-5. Modify the file at ``/etc/nginx/sites-available/mattermost`` and add
-   the following lines:
+  ``sudo apt-get install git``
 
-  ::
+3. Clone the Let's Encrypt repository on GitHub.
+
+  ``git clone https://github.com/letsencrypt/letsencrypt``
+
+4. Change to the ``letsencrypt`` directory.
+
+  ``cd letsencrypt``
+
+5. Stop NGINX.
+
+  ``sudo service nginx stop``
+
+6. Run ``netstat`` to make sure that nothing is listening on port 80.
+
+  ``netstat -na | grep ':80.*LISTEN'``
+
+7. Run the Let's Encrypt installer.
+
+  ``./letsencrypt-auto certonly --standalone``
+
+  When prompted, enter your domain name. The certificate is located in  ``/etc/letsencrypt/live``
+
+8. Open the file ``/etc/nginx/sites-available/mattermost`` as root and update it to incorporate the following lines. Make sure that you use your own values for the Mattermost server IP address and FQDN for *server_name*.
+
+  .. code-block:: none
 
     upstream backend {
         server 10.10.10.2:8065;
@@ -35,7 +53,7 @@ Configuring NGINX with SSL and HTTP/2
     proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=mattermost_cache:10m max_size=3g inactive=120m use_temp_path=off;
 
     server {
-       listen 443 ssl;
+       listen 443 ssl http2;
        server_name mattermost.example.com;
 
        ssl on;
@@ -85,23 +103,19 @@ Configuring NGINX with SSL and HTTP/2
     }
 
 
-6. Be sure to restart NGINX
-  * ``\ sudo service nginx start``
-7. Add the following line to cron so the cert will renew every month
-  * ``crontab -e``
-  * ``@monthly /home/ubuntu/letsencrypt/letsencrypt-auto certonly --reinstall --nginx -d yourdomainname && sudo service nginx reload``
-8. Check that your SSL certificate is set up correctly
-  * Test the SSL certificate by visiting a site such as `https://www.ssllabs.com/ssltest/index.html <https://www.ssllabs.com/ssltest/index.html>`_
-  * If there’s an error about the missing chain or certificate path, there is likely an intermediate certificate missing that needs to be included
+9. Restart NGINX
 
-Setup HTTP2
-------------
+  ``sudo service nginx start``
 
-It is recommended to enable HTTP2 for enhanced performance. 
+10. Check that your SSL certificate is set up correctly.
 
-1. Modify your NGINX configuration as above. Then,
+  * Test the SSL certificate by visiting a site such as https://www.ssllabs.com/ssltest/index.html
+  * If there’s an error about the missing chain or certificate path, there is likely an intermediate certificate missing that needs to be included.
 
-  - Change the line ``listen 443 ssl;`` to ``listen 443 ssl http2;``
-  - Change the line ``proxy_pass http://10.10.10.2:8065;`` to ``proxy_pass https://10.10.10.2:8065;``
+11. Configure ``cron`` so that the certificate will automatically renew every month.
+
+  ``crontab -e``
   
-2. Restart NGINX
+  In the following line, use your domain name in place of *<domain-name>*
+  
+  ``@monthly /home/ubuntu/letsencrypt/letsencrypt-auto certonly --reinstall --nginx -d <domain-name> && sudo service nginx reload``

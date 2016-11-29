@@ -15,3 +15,11 @@ You can use the 32-bit version on a machine that hosts the database and proxy se
 
    -  ``sudo apt-get update``
    -  ``sudo apt-get upgrade``
+
+**What to do next**
+
+Install a database. You can install either MySQL 5.6 or PostgreSQL version 9.3 or later.
+
+**Related links**
+  - :ref:`install-ubuntu-1404-mysql`
+  - :ref:`install-ubuntu-1404-postgresql`

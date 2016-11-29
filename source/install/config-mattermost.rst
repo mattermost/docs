@@ -1,3 +1,5 @@
+.. _config-mattermost:
+
 ======================
 Configuring Mattermost
 ======================
@@ -10,4 +12,5 @@ After installing the Mattermost components, you must create the first user and f
   
 .. include:: config-mattermost-server.rst
 .. include:: config-tls-mattermost.rst
+.. include:: config-proxy-nginx.rst
 .. include:: config-ssl-http2-nginx.rst

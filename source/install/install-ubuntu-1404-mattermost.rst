@@ -1,5 +1,7 @@
+.. _install-ubuntu-1404-mattermost:
+
 Installing Mattermost Server
-================================
+============================
 
 Install Mattermost Server on a 64-bit machine.
 

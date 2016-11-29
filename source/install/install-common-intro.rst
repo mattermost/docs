@@ -2,4 +2,4 @@ A complete Mattermost installation consists of 3 major components: a proxy serve
 
 The Mattermost server must be installed on a 64-bit machine, but the database and proxy can be on 32-bit machines. For the database, you can install either MySQL or ProstgreSQL. The proxy is NGINX.
 
-After all the components are installed, some configuration is required. You can set up email notifications, SSL, TSL, and HTTP/2. For more information about configuring, see   
+After all the components are installed, some configuration is required. You can set up email notifications, SSL, TSL, and HTTP/2. For more information about configuring, see :ref:`config-mattermost`.

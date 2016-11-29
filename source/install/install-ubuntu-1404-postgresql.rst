@@ -1,4 +1,6 @@
-Installing PostreSQL Database Server
+.. _install-ubuntu-1404-postgresql:
+
+Installing PostgreSQL Database Server
 ====================================
 
 Mattermost supports either PostgreSQL or MySQL.
@@ -69,3 +71,10 @@ Assume that the IP address of this server is 10.10.10.1
 
     -  ``psql --host=10.10.10.1 --dbname=mattermost --username=mmuser --password``
     -  ``mattermost=> \q``
+
+**What to do next**
+
+In a production environment, you should install NGINX. Using NGINX as a proxy server increases the security and performance of your Mattermost installation.
+
+**Related links**
+  - :ref:`install-nginx`
