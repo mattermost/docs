@@ -105,19 +105,25 @@ Please take off holidays relevant to your culture, resident country and preferen
 
 We're headquartered in the US and have a large Canadian contingent, so below are holidays we're expecting people from those countries to take off:
 
-US & Canadian Holidays for 2016: 
+US & Canadian Holidays remaining for 2016: 
 
-- US & Canadian New Year's (1/1/2016)
-- Canadian Family Day (2/15/2016)
-- US & Canadian Good Friday (3/25/2016) 
-- Canadian Victoria Day (5/23/2016)
-- Canada Day (7/1/2016)
-- US Independence Day (7/4/2016)
-- US Labor Day, Canadian Labour Day (9/5/2016)
-- Canadian Thanksgiving (10/10/2016)
-- US Thanksgiving (11/24/2016)
 - US & Canadian Christmas Day (12/25/2016)
 - Canadian Boxing Day (12/26/2016) 
+
+US & Canadian Holidays for 2017: 
+
+- US & Canadian New Year's (1/1/2017)
+- US & Canadian New Year's Day Holiday (1/2/2017)
+- Canadian Family Day (2/20/2017)
+- US & Canadian Good Friday (4/14/2017) 
+- Canadian Victoria Day (5/22/2017)
+- Canada Day (7/1/2017)
+- US Independence Day (7/4/2017)
+- US Labor Day, Canadian Labour Day (9/4/2017)
+- Canadian Thanksgiving (10/9/2017)
+- US Thanksgiving (11/23/2017)
+- US & Canadian Christmas Day (12/25/2017)
+- Canadian Boxing Day (12/26/2017)
 
 It's up to meeting chairs to decide whether to reschedule if few people can attend (e.g. if there are a lot of US or Canadians in the meeting). 
 
