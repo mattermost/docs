@@ -90,11 +90,11 @@ Any issues? Please let us know on our forums at: http://forum.mattermost.org
 
 ### Archlinux ###
 
-#### Build and install with AUR ####
+#### Build and install with Arch User Repository (Unofficial)
 
-Archlinux uses a specific feature called [Arch User Repository](https://wiki.archlinux.org/index.php/Arch_User_Repository) to manage extra packages which do not belong to the official repository. It allows you to compile a package from source and then install it via the Arch package manager [pacman](https://wiki.archlinux.org/index.php/Pacman#Additional_commands). This way you will be able to track easily upgrades or dependency issues. This is the recommended way to install extra packages.
+Archlinux uses a specific feature called [Arch User Repository](https://wiki.archlinux.org/index.php/Arch_User_Repository) to manage extra packages which do not belong to the official repository. It allows you to compile a package from source and then install it via the Arch package manager [pacman](https://wiki.archlinux.org/index.php/Pacman#Additional_commands). This way you will be able to easily track upgrades or dependency issues. This is the recommended way to install extra packages.
 
-There is an AUR package called [mattermost](https://aur.archlinux.org/packages/mattermost) maintained by [mtorromeo](https://github.com/mtorromeo/). Follow the [AUR instructions](https://wiki.archlinux.org/index.php/Arch_User_Repository) to build and install. Please go to the [AUR package page](https://aur.archlinux.org/packages/mattermost/) to leave a comment for sharing feedback or troubleshooting.
+There is an unofficial package in the [Arch User Repository](https://aur.archlinux.org/) maintained by [mtorromeo](https://github.com/mtorromeo/), called [Mattermost](https://aur.archlinux.org/packages/mattermost/). Follow the [AUR instructions](https://wiki.archlinux.org/index.php/Arch_User_Repository) to build and install. Please go to the [AUR package page](https://aur.archlinux.org/packages/mattermost/) to leave a comment for sharing feedback or troubleshooting.
 
 #### Build and install manually ####
 
