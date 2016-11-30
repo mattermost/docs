@@ -19,7 +19,7 @@ Notes:
 
 Pre-work for the current release begins at the code complete date of the previous release. See "Code Complete" section below for details.
 
-### B. (T-minus 17 working days) Cut-off for submitting major features 
+### B. (T-minus 15 working days) Cut-off for submitting major features 
 
 No pull requests for major features should be **submitted** to the current release after this date (except if release manager decides to add "release-exception" label to Jira ticket).
 
@@ -33,7 +33,7 @@ No pull requests for major features should be **submitted** to the current relea
 4. Marketing:
     - Confirm each Enterprise feature is in the correct [pricing SKU](https://about.mattermost.com/pricing/), if not alert the release manager
 
-### C. (T-minus 14 working days) Cut-off for merging major features
+### C. (T-minus 12 working days) Cut-off for merging major features
 
 No pull requests for major features should be **merged** to the current release after this date (except if release manager decides to add "release-exception" label to Jira ticket).
 
@@ -60,7 +60,7 @@ No pull requests for major features should be **merged** to the current release 
 4. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/platform/pulls) marked for the current release 
 
-### D. (T-minus 12 working days) Judgment Day
+### D. (T-minus 10 working days) Judgment Day
 
 Day when leads and PM area owners decide which major features are included in the release, and which are postponed. 
 
@@ -81,7 +81,7 @@ Day when leads and PM area owners decide which major features are included in th
 5. Marketing:
     - Begins to draft blog post, tweet, and email for the release announcement
  
-### E. (T-minus 10 working days) Code Complete and Release Candidate Cut
+### E. (T-minus 8 working days) Code Complete and Release Candidate Cut
 
 **Stablization** period begins when all features for release have been committed. During this period, only **bugs** can be committed to the release branch. Non-bug pull requests are tagged for next version.
 
@@ -245,6 +245,7 @@ Once final dot release build is ready to cut:
     - Merge the Changelog PR with notes on patch releases (see [example entry](https://docs.mattermost.com/administration/changelog.html#release-v3-5.1))
     - Update the version archive in the [upgrade guide](https://github.com/mattermost/docs/blob/master/source/administration/upgrade.md).
     - Sumbit GitLab MR to update the version number and MD5 hash to the dot release version. [See example](https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests/1127).
+      - [Test the upgrade](https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg) once the MR is merged and the package is released to the GitLab package server.
 3.  Logistics:  
     - Verifies each of the issues in the patch release are fixed  
 
