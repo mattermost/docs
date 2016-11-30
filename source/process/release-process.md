@@ -247,7 +247,7 @@ Once final dot release build is ready to cut:
     - Sumbit GitLab MR to update the version number and MD5 hash to the dot release version. [See example](https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests/1127).
       - [Test the upgrade](https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg) once the MR is merged and the package is released to the GitLab package server.
 3.  Logistics:  
-    - Verifies each of the issues in the patch release are fixed  
+    - Verifies each of the issues in the patch release are fixed
 
 ### I. (T-minus 0 working days) Release Day
 
@@ -302,7 +302,8 @@ Once final dot release build is ready to cut:
     - Verify all items in the last posted release checklist are complete, if not alert the release manager
 2. Leads:
     - Update [company roadmap at mattermost.com](https://about.mattermost.com/direction/)
-    - Post and review [Mattermost Security Updates](https://about.mattermost.com/security-updates/)
+    - Post [Mattermost Security Updates](https://about.mattermost.com/security-updates/) after reviewing with security lead.
+      - If a dot release is shipping with security fixes, do not post new details until T-plus 5 working days from the dot release ship date.
 3. PM:
     - Update Security Issues spreadsheet with issue number from posted update (e.g. v3.2.0.1)
     - Confirm the Security Researchers list on the [Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/) is up to date
