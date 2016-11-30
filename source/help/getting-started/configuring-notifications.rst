@@ -3,34 +3,32 @@ Configuring Notifications
 
 Notifications in Mattermost alert you to unread messages and mentions.
 
-Unreads indicated by Bold Channel Header
+Unreads and Mentions
 ----------------------------------------
+
+Unread Messages Indicator
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The name of a channel in the left-hand sidebar shows as **bold** when
 there are unread messages in the channel. Clicking on the channel
 removes the bold indicator, and brings you to the earliest unread
 message in the channel.
 
-Muting Unreads in a Channel
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 You can choose not to show unread indicators in a channel by clicking
 **Channel Menu** > **Notification Preferences** > **Mark Channel
-Unread** and selecting **Only for mentions**.
-
-This will only notify you if a mention is triggered on your name or a
+Unread** and selecting **Only for mentions**. This will only notify you if a mention is triggered on your name or a
 keyword for which you're listening.
 
-Mentions indicated by Mention Count
------------------------------------
+Mentions Indicator
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Unread mentions or `your name or selected
+Unread mentions or `your name and selected
 keywords <https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions>`__
 in a channel are indicated by bold text and a mention counter next to
-the channel name in the left-hand-sidebar.
+the channel name in the left-hand sidebar.
 
 Clicking the channel name removes the bolding and mention count. You can
-review your recent mentions by clicking \*\*@\*\* next to the search box
+review your recent mentions by clicking **@** next to the search box
 at the top of the screen.
 
 Learn more about `mentioning
