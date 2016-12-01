@@ -32,7 +32,7 @@ If you are trying to preview a media type that is not supported, the file previe
 - Images: BMP, GIF, JPG, JPEG, PNG    
 - Video: MP4    
 - Audio: MP3, M4A   
-- Files: PDF
+- Files: PDF, TXT
 
 Other document previews (Word, Excel, PPT) are not yet supported.
 

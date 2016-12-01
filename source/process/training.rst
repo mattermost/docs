@@ -1,13 +1,40 @@
 ==================================================
-Mattermost Norms 
+Onboarding 
 ==================================================
 
 This document in intended for new hires to summarize norms for working at Mattermost, Inc. including: 
 
+- `Getting Started Checklist`_ - Getting ready to work here 
 - `Meetings`_ - When we get together and why 
 - `Mindsets`_ - Shared toolsets we have for solving problems 
 - `Terminology`_- Shared vocabulary to convey ideas quickly
 - `Training`_ - Material available to help us ramp quickly in different areas 
+
+---------------------------------------------------------
+Getting Started Checklist 
+---------------------------------------------------------
+
+Hiring 
+
+- (People Ops & New Hire) Offer letter accepted via click-sign 
+- (Logistics) Mail t-shirt & track jacket 
+
+T-minus 1-3 weeks 
+
+- (People Ops & New Hire) Order laptop to be sent to New Hire's address or expensed. For non-developers, budget is cost of a Macbook in your local area, for developers budget is cost of a Macbook Pro. 
+- (New Hire) Read the entirety of Onboarding page for info on meetings, mindsets, terminology and training materials.
+
+T-minus 1 week
+
+- (People Ops) Send email invite to New Hire to set up an @mattermost.com email address. New Hire should use this email address on pre-release.mattermost.com (replace personal email with company email if already registered there) 
+
+- (People Ops & New Hire) Setup Payroll. Non-US Employee/Non-Canada Employee, complete bank info form for monthly wire transfer. 
+
+First Day 
+
+- (Manager) Posts welcome message in stand-up channel 
+- (Manager) Meets New Hire for first 1-1 meeting
+- (Buddy) Meets New Hire for first 1-1 meeting, 
 
 ---------------------------------------------------------
 Meetings 
@@ -21,7 +48,7 @@ Open Meetings
 Developer Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Open to the public** - (Developers - 1-2 hours/week) Wednesdays 10:00 UTC-7 
+**Open to the public** - (Developers - 1-2 hours/week) Wednesdays 10:00 (`San Francisco Time <http://everytimezone.com/>`_)
 
 - Goal: Discuss developer issues across Mattermost Inc, key contributors and the contributor community.
 - Attendees: (required) Mattermost Inc developers, (optional) key contributors, contributors and anyone who would like to join.
@@ -45,7 +72,7 @@ For confidentiality of customers, internal process meetings are limited to Matte
 Sprint Planning 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost Inc-only** - (Developer - 5-10 minutes/week) Tuesdays between 10:00 and 11:00 UTC-7 
+**Mattermost Inc-only** - (Developer - 5-10 minutes/week) Tuesdays between 10:00 and 11:00 (`San Francisco Time <http://everytimezone.com/>`_)
 
 - Goal: Review and discuss tickets selected by Developer for next sprint
 - Attendees: (required) Each developer in sequence, plus spint planngers (one dev, one PM) (optional) Mattermost Inc. colleagues welcome
@@ -67,7 +94,7 @@ Procedure:
 Triage Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost Inc-only** - (Triage team - 1-3 hours/week) Monday, Wednesday, Friday 09:00 UTC-7 
+**Mattermost Inc-only** - (Triage team - 1-3 hours/week) Monday, Wednesday, Friday 09:00 (`San Francisco Time <http://everytimezone.com/>`_)
 
 - Goal: To provide consistent review, prioritization and ownership assignment of all tickets 
 - Attendees: (required) dev and PM from Mattermost Inc., typically leads (optional) other Mattermost Inc. colleagues welcome
@@ -99,7 +126,7 @@ Procedure:
 Leads Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost Inc-only** - (Leads - 1-3 hours/week) Monday, Wednesday, Friday after Triage Meeting (09:00 UTC-7)
+**Mattermost Inc-only** - (Leads - 1-3 hours/week) Monday, Wednesday, Friday after Triage Meeting (09:00 `San Francisco Time <http://everytimezone.com/>`_)
 
 - Goal: Address leadership and process topics 
 - Attendees: (required) dev, PM and community/marketing leads from Mattermost Inc. (optional) other Mattermost Inc. colleagues welcome
@@ -128,7 +155,7 @@ Procedure:
 Platform Meeting 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost Inc-only** - (Platform colleagues - 1-2 hours/week) Friday's at 10:10 UTC-7 after platform team standup.
+**Mattermost Inc-only** - (Platform colleagues - 1-2 hours/week) Friday's at 10:10 (`San Francisco Time <http://everytimezone.com/>`_) after platform team standup.
 
 Regular team meeting for platform team at Mattermost Inc.
 
@@ -317,7 +344,7 @@ We use "x/5" to concisely communicate conviction. 0/5 means you don't have a str
 APR
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Acronym for [Accepting Pull Request](http://docs.mattermost.com/process/accepting-pull-request.html) tickets, which are vetted changes to the source code open for community contributions.  
+Acronym for `Accepting Pull Request <http://docs.mattermost.com/process/accepting-pull-request.html>`_ tickets, which are vetted changes to the source code open for community contributions.  
 
 Bug
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -327,7 +354,7 @@ An obvious error in Mattermost software. Changes required to accommodate unsuppo
 Dead Tarzan 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Discarding an imperfect solution without a clearly thought out alternative. Based on idea of [Tarzan of the Jungle](https://en.wikipedia.org/wiki/Tarzan) letting go of a vine without having a new vine to swing to. 
+Discarding an imperfect solution without a clearly thought out alternative. Based on idea of `Tarzan of the Jungle <https://en.wikipedia.org/wiki/Tarzan>`_ letting go of a vine without having a new vine to swing to. 
 
 Expert Mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

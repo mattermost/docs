@@ -7,7 +7,7 @@ Install Guides
 ==============
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
    /install/requirements*
@@ -17,6 +17,7 @@ Install Guides
    /install/prod-ubuntu*
    /install/prod-rhel*
    /install/prod*
+   /install/setup-tls*
    /install/smtp*
    /install/troubleshooting*
    /install/i18n*
@@ -26,7 +27,7 @@ Deployment
 ==========
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
    /deployment/on-boarding*
@@ -39,12 +40,13 @@ Deployment
    /deployment/sso-gitlab*
    /deployment/sso-google*
    /deployment/sso-office*
+   /deployment/webrtc*
 
 Administration
 ==============
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
    /administration/command*

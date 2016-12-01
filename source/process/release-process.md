@@ -12,7 +12,7 @@ Recommended pre-reading:
 ## Release Timeline
 
 Notes: 
-- All cut-off dates are based on 10am PST (UTC-07/08) on the day stated. 
+- All cut-off dates are based on 10am ([San Francisco Time](http://everytimezone.com/)) on the day stated.
 - T-minus counts are measured in "working days" (weekdays other than major holidays concurrent in US and Canada) prior to release day.
 
 ### A. (Code complete date of previous release) Beginning of release

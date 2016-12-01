@@ -105,19 +105,25 @@ Please take off holidays relevant to your culture, resident country and preferen
 
 We're headquartered in the US and have a large Canadian contingent, so below are holidays we're expecting people from those countries to take off:
 
-US & Canadian Holidays for 2016: 
+US & Canadian Holidays remaining for 2016: 
 
-- US & Canadian New Year's (1/1/2016)
-- Canadian Family Day (2/15/2016)
-- US & Canadian Good Friday (3/25/2016) 
-- Canadian Victoria Day (5/23/2016)
-- Canada Day (7/1/2016)
-- US Independence Day (7/4/2016)
-- US Labor Day, Canadian Labour Day (9/5/2016)
-- Canadian Thanksgiving (10/10/2016)
-- US Thanksgiving (11/24/2016)
 - US & Canadian Christmas Day (12/25/2016)
 - Canadian Boxing Day (12/26/2016) 
+
+US & Canadian Holidays for 2017: 
+
+- US & Canadian New Year's (1/1/2017)
+- US & Canadian New Year's Day Holiday (1/2/2017)
+- Canadian Family Day (2/20/2017)
+- US & Canadian Good Friday (4/14/2017) 
+- Canadian Victoria Day (5/22/2017)
+- Canada Day (7/1/2017)
+- US Independence Day (7/4/2017)
+- US Labor Day, Canadian Labour Day (9/4/2017)
+- Canadian Thanksgiving (10/9/2017)
+- US Thanksgiving (11/23/2017)
+- US & Canadian Christmas Day (12/25/2017)
+- Canadian Boxing Day (12/26/2017)
 
 It's up to meeting chairs to decide whether to reschedule if few people can attend (e.g. if there are a lot of US or Canadians in the meeting). 
 
@@ -147,56 +153,8 @@ The comfort of home, freedom to travel, no commute--learn more about our `remote
 
 Just as flexible as our working hours, learn more about our `paid time-off policies <https://docs.mattermost.com/process/working-at-mattermost.html#paid-time-off>`_.
 
+**4. Additional US and Canadian employee benefits**
 
-Specific to Canada-based employees
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Mattermost uses professional employement organizations in the United States and Canada and are able to offer additional `benefits to US employees <benefits-us.html>`_ and `benefits to Canadian employees <benefits-canada.html>`_. 
 
-Canada-based employees are employed through a Canadian co-employer, who offers payroll with direct deposit to Canadian accounts, T4 tax forms, and for employees with at least 3-months of tenure working 20 hours a week or more, additional benefits through Sun Life Financial, including: 
 
-- Extended Health Care
-- Dental Care
-- Vision Care
-- Life Insurance 
-- Long Term Disability 
-- Accidental Death and Dismemberment 
-- Emergency Travel Assistance 
-
-For full benefits information, please see mysunlife.ca portal and contact forms and numbers listed there. 
-
-Specific to US-based employees 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-US-based employees' payroll and benefits are arranged through TriNet. The most up to date information is available through the TriNet HRPassport portal and contact forms and numbers listed there. 
-
-This overview is a quick reference guide and does not replace the documentation in TriNet, please contact your TriNet representative for questions. 
-
-**Basic Life Insurance and AD&D** - TriNet offers company paid basic life and accidental death and dismemberment (AD&D) plans. The Company pays for basic life insurance coverage valued at $20,000, which includes an equal amount of AD&D coverage.
-
-**Medical** - TriNet partners with leading carriers, like Aetna, Florida Blue, Blue Shield of California and Kaiser, to offer a broad range of medical plans, including high deductible health plans, PPOs and HMOs. Medical plan options vary by state, and may also include regional carriers.
-
-**Dental** - TriNet's four dental carriers - Delta Dental, Aetna, Guardian Dental, and MetLife - offer a high and a low national dental PPO plan. Aetna and Delta Dental also will make available a DMO plan in many states.
-
-**Vision** - TriNet also offers a high and a low vision plan nationally through two different carriers: Aetna and Vision Service Plan (VSP). These plan options ensure that you can choose the best plan and carrier for your individual vision needs.
-
-The Company covers health insurance up the following contribution caps: 
-
-**Insurance & Company Contribution Cap**
-
-- Medical Employee Only: $362.00
-- Medical Employee + Spouse: $797.00
-- Medical Employee + Child(ren):	$544.50
-- Medical Employee + Spouse + Child(ren):	$724.50
- 
-- Group Dental Employee Only: $38.50
-- Group Dental Employee + Spouse: $78.82
-- Group Dental Employee + Child(ren): $58.64
-- Group Dental Employee + Spouse + Child(ren): $78.82
-
-- Group Vision Employee Only: $5.94
-- Group Vision Employee + Spouse: $11.86
-- Group Vision Employee + Child(ren): $9.31
-- Group Vision Employee + Spouse + Child(ren): $13.13
-
-Employees are responsible for the remainder of the premium cost, if any. A summary of plan options showing remainder of premium costs after employer contribution will be provided with your offer. 
-
-We're working on setting up a 401K plan for US employees.

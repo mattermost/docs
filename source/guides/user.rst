@@ -7,7 +7,7 @@ Getting Started
 ===============
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
    /help/getting-started/signing-in.md
@@ -23,7 +23,7 @@ Messaging
 =========
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
    /help/messaging/sending-messages.md
@@ -38,7 +38,7 @@ Settings
 ========
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :titlesonly:
    :glob:
 

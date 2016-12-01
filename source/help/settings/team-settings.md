@@ -15,7 +15,7 @@ General settings under the **Team Settings** > **General** configure how a team 
 
 Your **Team Name** is displayed on the sign-in page, and in the top of the left-hand sidebar for your team. 
 
-You can enter a name up to 22 characters in length. The length of team names is limited to ensure readability.
+You can enter a name up to 15 characters in length. The length of team names is limited to ensure readability.
 
 #### Allow anyone to join this team
 
@@ -50,6 +50,6 @@ The Slack Import feature in Mattermost is in "Beta" and focus is on supporting m
 #### Limitations 
 
 - Newly added markdown support in Slack's Posts 2.0 feature announced on September 28, 2015 is not yet supported.
-- Slack does not export files or images your team has stored in Slack's database. Mattermost will provide links to the location of your assets in Slack's web UI.
+- Slack does not export files or images your team has stored in Slack's database. Mattermost will provide links to the location of your assets in Slack's web UI. However, you can use [this tool](https://github.com/grundleborg/slack-advanced-exporter) to include files in the Slack export, and import them into Mattermost.
 - Slack does not export any content from private groups or direct messages that your team has stored in Slack's database. 
-- In Beta, Slack accounts with usernames or email addresses identical to existing Mattermost accounts will not import. No pre-check or roll-back is currently offered. 
+- In Beta, Slack accounts with usernames or email addresses identical to existing Mattermost accounts will be merged. No pre-check or roll-back is currently offered. 

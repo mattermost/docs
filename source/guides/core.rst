@@ -7,14 +7,15 @@ Development Process
 =========================
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
    /process/overview*
    /process/release-process*
    /process/accepting-pull-request*
    /process/community-systems*
-   /process/documentation-guidelines.md
+   /process/documentation-guidelines*
+   /process/marketing-guidelines*
 
 Documentation Style Guide
 =========================
@@ -28,7 +29,7 @@ Joining the Team
 =========================
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
    /process/handbook*

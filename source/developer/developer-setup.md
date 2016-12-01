@@ -216,34 +216,3 @@ Optionally, you can make that account a System Admin with the following command:
 ```
 go run mattermost.go -assign_role -email="user@example.com" -role="system_admin system_user"
 ```
-
-## Development Flow 
-
-A few tips to develop efficiently: 
-
-### Making quick user interface changes 
-
-Use `make run` to run locally. This starts a watcher process and you can change JavaScript files without restarting the server. Just wait a few seconds, refresh the page and you should see changes. 
-
-Connect to your server using `http://localhost:8065`
-
-### Debugging JavaScript 
-
-Use `make run-fullmap` to produce JavaScript that you can look at in a debugger. 
-
-### Restarting the server quickly 
-
-After `make run` you can restart the server while leaving the JavaScript running using `make restart-server`. This usually takes less than 10 seconds. 
-
-### Running only specific unit tests
-
-Since running every single unit test takes a lot of time while making changes, you can run a subset of the serverside unit tests by using the following:
-```
-go test -v -run='<test name or regex>' ./<package containing test>
-```
-For example, if you wanted to run `TestPostUpdate` in `api/post_test.go`, you would run the following:
-```
-go test -v -run='TestPostUpdate' ./api
-```
-
-Alternatively, if you're writing client-side code, you can run only the client-side unit tests by using `make test-client`.

@@ -2,17 +2,336 @@
 
 This changelog summarizes updates to [Mattermost Team Edition](http://www.mattermost.org/), an open source team messaging solution released bi-monthly under an MIT license, and [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/), a commercial upgrade offering enterprise messaging for large organizations.
 
-## Release v3.4.0
+## Release v3.5.1  
+
+### Notes on Patch Release
+
+ - **v3.5.1, released 2016-11-23**
+   - Security update to preventing cross-site scripting and remote code execution, thanks to Harrison Healey for [reporting responsibly](http://www.mattermost.org/responsible-disclosure-policy/).
+   - Fixed an issue where usernames would sometimes not appear beside posts and the reply arrow would throw an error. 
+   - The channel purpose is no longer cut off in the user interface of the **More...** channel menu. 
+   - Fixed a scroll issue where the center channel didn't always scroll to the bottom when switching channels.
+   - Fixed a server error that occurred when searching for users using an asterisk.
+   - Fixed an issue where direct message channel headers would sometimes disappear.
+   - "New Messages" indicator is fixed so it no longer remains visible after switching channels.
+   - Fixed an issue where users could not join a public channel by navigating to the channel URL.
+   - Email and push notifications are made asynchronous to fix a delay sending messages when HPNS was enabled.
+   - Autocomplete timeout is decreased to make autocomplete more responsive to quick typing.
+ - **v3.5.0, released 2016-11-16**
+   - Original 3.5 release.
+
+### Security Update
+
+- Mattermost v3.5.1 contains multiple [security updates](http://about.mattermost.com/security-updates/). [Upgrading to Mattermost v3.5.1](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Thanks to Alyssa Milburn and Harrison Healey for contributing security reports through the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+
+### Highlights
+
+#### Languages
+- Added Russian translations for the user interface.
+- Promoted Chinese (both simplified and traditional) to release-quality translations, removing beta tags.
+
+#### Performance improvements for mobile and web experience 
+
+ - Ability to download assets in parallel via HTTP2 support.
+ - Reduced CPU bottlenecks and optimized SQL queries.
+ - Reduced load times through paging controls, server-side search and on-the-fly data loading that requests data as the client needs it.
+ - Added paging APIs for profiles, channels and user lists.
+ - Added client-scaling for auto-complete and status indicators.
+ - Added server-side in-memory caching to reduce DB reads/writes.
+
+#### Connection Security
+- TLS is now supported directly on the Mattermost server. Learn more in our [documentation](https://docs.mattermost.com/install/setup-tls.html).
+- Support for automatically fetching certificates through Let's Encrypt.
+
+#### Minio File Storage
+- Minio fully manages S3 API requests with automatic bucket location management across S3 regions.
+
+#### Favorite Channels
+- Added the ability to select Favorite Channels that appear at the top of the channels sidebar.
+
+#### Video and Audio Calling (early-preview)
+- Added early preview of video and audio calling option using self-hosted proxy.
+- Intended as working prototype for community development, not recommended for production.
+- Early preview does not include logging or detailed documentation. 
+
+#### Improved Slack Import
+- Added the ability to import files from Slack (CLI command also supported).
+- Added the ability to import bot/integration messages, Join/Leave messages, and /me messages.
+- Duplicate users are now merged.
+- Channel topics, purpose, and users now import correctly.
+- Channel links now import correctly.
+
+### Improvements
+
+#### iOS Apps
+- Channel settings, account settings, and channel header now render as full screen modals for better visibility
+- [...] menu options now displayed larger for better usability
+- Keyboard doesn't automatically close when sending a message, letting you quickly send several messages in succession
+- When the "Download" link is clicked on files, a "Back" button lets users get back to the app
+
+#### Android Apps
+- Channel settings, account settings, and channel header now render as full screen modals for better visibility
+- [...] menu options now displayed larger for better usability
+- Disabled screen rotation
+- Fixed where clicking on download button for a file attachment did nothing
+- Keyboard doesn't automatically close when sending a message, letting you quickly send several messages in succession
+
+#### User Interface
+- Text (.txt) files now show a preview in the image previewer
+- Status indicators are now visible in compact view
+- Clicking on a profile picture in center channel or right hand sidebar brings up profile popover
+- The "@" and flag icons next to search bar now toggles results
+- [...] menu no longer displayed for system messages
+- Browser tab name now changes when switching to System Console or Integrations pages
+- A loading icon now shows on the team selection page
+- On mobile devices, the keyboard now stays open after sending a message to make sending multiple messages easier
+
+#### Notifications
+- Notification sound settings are now honored on the [Mattermost Desktop Apps](https://about.mattermost.com/download/#mattermostApps)
+- Push notifications can now be received on more than one device
+
+#### Channel Shortlinking
+- Channels can be shortlinked using the ~ character.
+- Auto-complete works with both the channel handle and name
+
+#### Integrations
+- If a webhook is sent to a direct message channel that has not been created yet, the channel is now automatically created
+
+#### Keyboard Shortcuts
+- `CTRL + SHIFT + M` now toggles recent mentions results
+
+#### Team Settings
+- Team names are now restricted to be a minimum of two characters long, instead of four, to support abbreviated team names
+
+#### System Console
+- Maximum number of channels per team is now configurable
+
+#### Enterprise Edition: 
+- Made the MFA secret key visible, so it's possible to set up Google Authenticator without scanning the QR code
+
+### Bug Fixes
+- Files can now be sent in Direct Messages across teams
+- Correct login method now shown in System Console user lists
+- Channel switcher (`CTRL + K`) no longer throws an error when switching to a user outside of your current team
+- Channel switcher (CTRL / CMD + K) now works for creating new Direct Message channels
+- Channels on the left hand side now sort numerically, alphabetically, and based on locale
+- Fixed incorrect error message when trying a team URL with one character
+- `/join` no longer throws an error for non-admin accounts
+- Added System Message when user joins Off-Topic channel
+- Added the "View Members" option to the channel menu on mobile
+- Send button is now visible on tablet sized screens
+
+### Compatibility  
+Changes from v3.4 to v3.5:
+
+#### config.json   
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console. 
+
+**Changes to Team Edition and Enterprise Edition**:
+
+- Under `ServiceSettings` in `config.json`:
+    - Added `"ConnectionSecurity": ""` to select the type of encryption between Mattermost and your server
+    - Added `"TLSCertFile": ""` to specify the certificate file to use.
+    - Added `"TLSKeyFile": ""` to specify the private key to use.
+    - Added `"UseLetsEncrypt": false` to enable automatic retreval of certificates from the Let's Encrypt.
+    - Added `"LetsEncryptCertificateCacheFile": "./config/letsencrypt.cache"` to specify the file to store certificates retrieved and other data about the Let's Encrypt service.
+    - Added `"Forward80To443": false` to enable forwarding of all insecure traffic from port 80 to secure port 443.
+    - Added `"ReadTimeout": 300` to specify the maximum time allowed from when the connection is accepted to when the request body is fully read.
+    - Added `"WriteTimeout": 300` to specify the maximum time allowed from the end of reading the request headers until the response is written.
+- Under `FileSettings` in `config.json`:
+    - Addded `AmazonS3SSL": true` to allow insecure connections to Amazon S3.
+- Under `RateLimitSettings` in `config.json`:
+    - Changed: `"Enable": false` to disable rate limiting by default
+    - Added `"MaxBurst": 100` to set the maximum number of requests allowed beyond the per second query limit
+- Under `TeamSettings` in `config.json`:
+    - Added `"MaxChannelsPerTeam": 2000` to set the maximum number of channels per team
+- Under `WebrtcSettings` in `config.json`
+    - Added `"Enable": false` to enable one-on-one video calls.
+    - Added `"GatewayWebsocketUrl": ""` to specify the websocket used to signal and establish communication between the peers.
+    - Added `"GatewayAdminUrl": ""` to specify the URl to obtain valid tokens for each peer to establish the connection.
+    - Added `"GatewayAdminSecret": ""` to specify your admin secret password to access the Gateway Admin URL.
+    - Added `"StunURI": ""` to specify your STUN URI.
+    - Added `"TurnURI": ""` to specify your TURN URI.
+    - Added `"TurnUsername": ""` to specify your TURN username
+    - Added `"TurnSharedKey": ""` to specify your TURN server shared key to created dynamic passwords to establish the connection. 
+
+### Database Changes from v3.4 to v3.5
+
+**FileInfo Table**
+
+- Added `FileInfo` table
+
+**Posts Table**
+
+- Added `FileIds` column
+- Added indexes for `DeleteAt`
+
+**Channels Table**, **Commands Table**, **Emoji Table**, **Teams Table**, **IncomingWebhooks Table**, **OutgoingWebhooks Table**
+
+- Added indexes for `CreateAt`
+- Added indexes for `UpdateAt`
+- Added indexes for `DeleteAt`
+
+**TeamMembers Table**
+
+- Added indexes for `DeleteAt`
+
+**Sessions Table**
+
+- Added indexes for `ExpiresAt`
+- Added indexes for `CreateAt`
+- Added indexes for `Last ActivityAt`
+
+**Users Table**
+
+- Added indexes for `CreateAt`
+- Added indexes for `UpdateAt`
+- Added indexes for `DeleteAt`
+- Added full text indexes for `idx_users_all_txt`: Username, FirstName, LastName, Nickname, Email
+- Added full text indexes for `idx_users_names_txt`:Username, FirstName, LastName, Nickname
+
+### API Changes from v3.4 to v3.5
+
+**New routes:**
+
+- Added `POST` at `/users/search`
+    - Search for user profiles based on username, full name and optionally team id.
+- Added `GET` at `/users/{offset}/{limit}`
+    - Retrieves a page of system-wide users
+- Added `POST` at `/teams/{team_id}/update_member_roles`
+    - Update a user's roles for the specified team.
+- Added `GET` at `/teams/{team_id}/channels/{channel_id}/members/{user_id}`
+    - Retrieves the channel member for the specified user. Useful for fetching the channel member after updates are made to it. If the channel member does not exist, then return an error.
+- Added `GET` at `/teams/{team_id}/stats`
+    - Returns stats for teams which includes total user count and total active user count.
+- Added `GET` at `/teams/{team_id}/members/{offset}/{limit}`
+    - To page through team members
+- Added `POST` at `/teams/{team_id}/members/ids`
+    - Retrieves a list of team members based on user ids
+- Added `GET` at `/teams/{team_id}/members/{user_id}`
+    - Retrieves a single team member
+- Added `GET` at `/teams/{team_id}/posts/{post_id}/get_file_infos`
+    - Retrieves file attachment info for a post
+- Added `GET` at `/channels/{channel_id}/users/{offset}/{limit}`
+    - Retrieves profiles for users in the channel
+- Added `GET` at `/channels/{channel_id}/users/not_in_channel/{offset}/{limit}`
+    - Retrieves profiles for users not in the channel
+- Added `POST` at `/webrtc/token`
+    - Retrieves a valid token and servers to establish a webrtc connection between the peers
+
+**Moved routes:**
+
+- Updated `GET` at `/channels/{channel_id}/extra_info` to `/channels/{channel_id}/stats`
+    - No longer returns a list of channel members and only returns the member count
+- Updated `POST` at `/users/profiles/{team_id}` to `/teams/{team_id}/users/{offset}/{limit}`
+    - Functionally performs the same, just moves it to match our other APIs that need a team ID. 
+- Updated `GET` at `/members/{team_id}` to `/teams/{team_id}/members/{offset}/{limit}`
+    - Allows paging through team members
+
+**Removed routes:**
+
+- Removed `GET` at `/users/direct_profiles`
+- Removed `GET` at `/users/profiles_for_dm_list/{team_id}/{offset}/{limit}`
+
+**Modified Routes**
+
+- Added `POST` at `/users/{user_id}/update_roles`
+    - Only allows updating of system wide roles. If you want to update team wide roles, please use the new route `/teams/{team_id}/update_member_roles`
+
+**Changes to File Routes:**
+
+Routes used to get files and their metadata from the server have been changed substantially in 3.5 so that each file will be given a unique identifier to make them easier to use through the API. In addition, the `Filenames` field of each post has been deprecated in favor of the new `FileIds` field.
+
+- The response type of `GET` at `/teams/{team_id}/files/upload` has been changed to return more information about the uploaded file. See [the documentation for this route on api.mattermost.com](https://api.mattermost.com/#tag/files%2Fpaths%2F~1teams~1%7Bteam_id%7D~1files~1upload%2Fpost) for more information
+- Split `GET` at `/teams/{team_id}/files/get/{channel_id}/{user_id}/{filename}` into:
+    - `GET` at `/files/{file_id}/get`
+        - Get a file
+    - `GET` at `/files/{file_id}/get_thumbnail`
+        - Get a small thumbnail for image files
+    - `GET` at `/files/{file_id}/get_preview`
+        - Get a medium-sized preview image for image files
+- Updated `GET` at `/teams/{team_id}/files/get_info/{channel_id}/{user_id}/{filename}` to `/files/{file_id}/get_info`
+- Updated `GET` at `/teams/{team_id}/files/get_public_link` to `/files/{file_id}/get_public_link`
+- Added `GET` at `/public/files/{file_id}/get`
+    - Get a file without logging in
+    - The previous route `GET` at `/public/files/get/{team_id}/{channel_id}/{user_id}/filename` has been deprecated, but will remain available for files that were uploaded prior to 3.5
+    
+### Known Issues
+
+- Channel autolinking with `~` only works if you are a member of the channel
+- Slack Import doesn't add merged members/e-mail accounts to imported channels
+- User can receive a video call from another browser tab while already on a call
+- Video calls do not work with Chrome v56 and later
+- Sequential messages from the same user appear as separate posts on mobile view
+- Slash commands do not work in newly created private channels until a hard refresh
+- Edge overlays desktop notification sound with system notification sound
+- Pressing escape to close autocomplete clears the textbox on IE11
+- Channel switcher doesn't work for users outside of your current team
+- Deleting a messages from a permalink view doesn't show delete until refresh
+- Channel dropdown selector no longer works in the Zapier App but the Channel ID can still be entered manually
+- Search autocomplete picker is broken on Android
+- Channel push notification preferences do not work for the inactive teams if you have multiple teams on a single server.
+
+### Contributors
+
+Many thanks to all our contributors. In alphabetical order:
+
+/platform
+
+- [alsma](https://github.com/alsma), [asaadmahmood](https://github.com/asaadmahmood), [coreyhulen](https://github.com/coreyhulen), [crspeller](https://github.com/crspeller), [DavidLu1997](https://github.com/DavidLu1997), [digitaltoad](https://github.com/digitaltoad), [dmeza](https://github.com/dmeza), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [grundleborg](https://github.com/grundleborg), [hmhealey](https://github.com/hmhealey), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [lfbrock](https://github.com/lfbrock), [npcode](https://github.com/npcode), [R-Wang97](https://github.com/R-Wang97), [Rudloff](https://github.com/Rudloff), [S4KH](https://github.com/S4KH), [shieldsjared](https://github.com/shieldsjared), [thomchop](https://github.com/thomchop), [usmanarif](https://github.com/usmanarif), [wget](https://github.com/wget), [yangchen1](https://github.com/yangchen1)
+
+/ios
+
+- [coreyhulen](https://github.com/coreyhulen), [lfbrock](https://github.com/lfbrock), [thomchop](https://github.com/thomchop)
+
+/desktop
+
+- [asaadmahmood](https://github.com/asaadmahmood), [itsmartin](https://github.com/itsmartin), [jasonblais](https://github.com/jasonblais), [jcomack](https://github.com/jcomack), [jnugh](https://github.com/jnugh), [magicmonty](https://github.com/magicmonty), [Razzeee](https://github.com/Razzeee), [yuya-oc](https://github.com/yuya-oc)
+
+/docs
+
+- [asaadmahmood](https://github.com/asaadmahmood), [chikei](https://github.com/chikei), [crspeller](https://github.com/crspeller), [erikthered](https://github.com/erikthered), [esethna](https://github.com/esethna), [gabx](https://github.com/gabx), [gmorel](https://github.com/gmorel), [grundleborg](https://github.com/grundleborg), [hannaparks](https://github.com/hannaparks), [hmhealey](https://github.com/hmhealey), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [kunthar](https://github.com/kunthar), [lfbrock](https://github.com/lfbrock), [lindy65](https://github.com/lindy65), [npcode](https://github.com/npcode), [reach3r](https://github.com/reach3r), [Rudloff](https://github.com/Rudloff), [rwillmer](https://github.com/rwillmer), [shieldsjared](https://github.com/shieldsjared), [StraylightSky](https://github.com/StraylightSky), [thiyagaraj](https://github.com/thiyagaraj), [yangchen1](https://github.com/yangchen1), [yumenohosi](https://github.com/yumenohosi), [yuya-oc](https://github.com/yuya-oc), [Zhouzi](https://github.com/Zhouzi)
+
+/mattermost-docker
+
+- [5ak3t](https://github.com/5ak3t), [npcode](https://github.com/npcode), [rothgar](https://github.com/rothgar)
+
+/android
+
+- [coreyhulen](https://github.com/coreyhulen), [DavidLu1997](https://github.com/DavidLu1997), [dmeza](https://github.com/dmeza), [it33](https://github.com/it33), [mattchue](https://github.com/mattchue)
+
+/mattermost-bot-sample-golang
+
+- [hmhealey](https://github.com/hmhealey), [pneisen](https://github.com/pneisen)
+
+/mattermost-load-test
+
+- [athingisathing](https://github.com/athingisathing), [coreyhulen](https://github.com/coreyhulen), [crspeller](https://github.com/crspeller), [csduarte](https://github.com/csduarte), [enahum](https://github.com/enahum), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais)
+
+/mattermost-driver-javascript
+
+- [crspeller](https://github.com/crspeller)
+
+/mattermost-api-reference
+
+- [coreyhulen](https://github.com/coreyhulen), [crspeller](https://github.com/crspeller), [hmhealey](https://github.com/hmhealey), [jwilander](https://github.com/jwilander)
+
+/mattermost-mobile
+
+- [dmeza](https://github.com/dmeza), [hmhealey](https://github.com/hmhealey), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [mfpiccolo](https://github.com/mfpiccolo), [thomchop](https://github.com/thomchop)
+
+## Release v3.4.0  
 
 Release date: 2016-09-16
 
 ### Highlights
 
 #### Zapier Integration
-- Integrate over [700 public cloud applications](https://zapier.com/zapbook/) using [Zapier](https://zapier.com), will full support for Markdown formatting. To start, [click here to accept an invitation to Zapier](https://zapier.com/developer/invite/47050/902cde1eb8e0b3eb1223a2cf05331abd/), then [follow the setup guide](https://docs.mattermost.com/integrations/zapier.html).
+- Integrate over [700 public cloud applications](https://zapier.com/zapbook/) using [Zapier](https://zapier.com), with full support for Markdown formatting. To start, [click here to accept an invitation to Zapier](https://zapier.com/developer/invite/47050/902cde1eb8e0b3eb1223a2cf05331abd/), then [follow the setup guide](https://docs.mattermost.com/integrations/zapier.html).
 
 #### OAuth 2.0 Service Provider
-- Users with an account on a Mattermost server can securely sign in to third-party application with an OAuth 2.0 protocol. See [documentation](https://docs.mattermost.com/developer/oauth-2-0-applications.html) to learn more.
+- Users with an account on a Mattermost server can securely sign in to third-party applications with an OAuth 2.0 protocol. See [documentation](https://docs.mattermost.com/developer/oauth-2-0-applications.html) to learn more.
 
 #### Improved Notifications and Status Indicators
 - Users can now control how often email notifications are sent
