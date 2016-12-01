@@ -4,7 +4,7 @@ Mattermost Developer's Guide
 Detailed information on contributing to the Mattermost open source project. 
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
    /developer/contribution*
