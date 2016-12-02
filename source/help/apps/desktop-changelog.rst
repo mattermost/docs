@@ -29,9 +29,9 @@ Windows
 -  Added an option to configure whether a red badge is shown on taskbar icon for unread messages
 -  Added new shortcuts:
 
-   -  ``CTRL + S``: sets focus on the Mattermost search box
-   -  ``ALT + Left Arrow``: go to previous page in history
-   -  ``ALT + Right Arrow``: go to next page in history
+   -  CTRL+S: sets focus on the Mattermost search box
+   -  ALT+Left Arrow: go to previous page in history
+   -  ALT+Right Arrow: go to next page in history
 
 -  Upgraded the Settings page user interface
 -  Added access to the settings menu from the system tray icon
@@ -47,9 +47,9 @@ OS X
 -  Added an option to configure whether a red badge is shown on taskbar icon for unread messages
 -  Added new shortcuts:
 
-   -  ``CMD + S``: sets focus on the Mattermost search box
-   -  ``CMD + [``: go to previous page in history
-   -  ``CMD + ]``: go to next page in history
+   -  CMD + S: sets focus on the Mattermost search box
+   -  CMD + [: go to previous page in history
+   -  CMD + ]: go to next page in history
 
 -  Upgraded the Settings page user interface
 -  The app now tries to reconnect periodically if a page fails to load
@@ -65,9 +65,9 @@ Linux (Beta)
 -  Added a script, ``create_desktop_file.sh``, to create ``Mattermost.desktop`` desktop entry to help `integrate the application into a desktop environment <https://wiki.archlinux.org/index.php/Desktop_entries>`__ more easily
 -  Added new shortcuts:
 
-   -  ``CTRL + S``: sets focus on the Mattermost search box
-   -  ``ALT + Left Arrow``: go to previous page in history
-   -  ``ALT + Right Arrow``: go to next page in history
+   -  CTRL + S: sets focus on the Mattermost search box
+   -  ALT + Left Arrow: go to previous page in history
+   -  ALT + Right Arrow: go to next page in history
 
 -  Upgraded the Settings page user interface
 -  Added access to the settings menu from the system tray icon
@@ -198,20 +198,20 @@ Menu Bar
 
    -  Adjust text size
 
-      -  Ctrl+0 (Menu Bar -> View -> Actual Size): Reset the zoom level.
-      -  Ctrl+Plus (Menu Bar -> View -> Zoom In): Increase text size
-      -  Ctrl+Minus (Menu Bar -> View -> Zoom Out): Decrease text size
+      -  CTRL+0 (Menu Bar -> View -> Actual Size): Reset the zoom level.
+      -  CTRL+PLUS (Menu Bar -> View -> Zoom In): Increase text size
+      -  CTRL+MINUS (Menu Bar -> View -> Zoom Out): Decrease text size
 
    -  Control window
 
-      -  Ctrl+W (Menu Bar -> Window -> Close): On Linux, this minimizes the main window.
-      -  Ctrl+M (Menu Bar -> Window -> Minimize)
+      -  CTRL+W (Menu Bar -> Window -> Close): On Linux, this minimizes the main window.
+      -  CTRL+M (Menu Bar -> Window -> Minimize)
 
    -  Switch teams (these shotcuts also reopen the main window)
 
-      -  Ctrl+{1-9} (Menu Bar -> Window -> *Team name*): Open the *n*-th tab.
-      -  Ctrl+Tab or Alt+Command+Right (Menu Bar -> Window -> Select Next Team): Switch to the next window.
-      -  Ctrl+Shift+Tab or Alt+Command+Left (Menu Bar -> Window -> Select Previous Team): Switch to the previous window.
+      -  CTRL+{1-9} (Menu Bar -> Window -> [Team name]): Open the *n*-th tab.
+      -  CTRL+TAB or ALT+CMD+Right Arrow (Menu Bar -> Window -> Select Next Team): Switch to the next window.
+      -  CTRL+SHIFT+TAB or ALT+CMD+Left Arrow (Menu Bar -> Window -> Select Previous Team): Switch to the previous window.
       -  Right click on the tray item, to see an overview of all your teams. You can also select one and jump right into it.
 
 -  Added **Help** to the Menu Bar, which includes
@@ -432,7 +432,7 @@ All platforms
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Basic authentication is not working and requires a command line.
--  Some keyboard shortcuts are missing (e.g. ``CTRL + W``, ``CMD + PLUS``).
+-  Some keyboard shortcuts are missing (e.g. CTRL+W, CMD+PLUS).
 
 Windows
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
