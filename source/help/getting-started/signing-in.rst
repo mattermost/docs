@@ -32,7 +32,7 @@ GitLab Single-Sign-On (SSO)
 When enabled by your System Admin, you can sign in using your GitLab
 account using a one-click sign in option.
 
-Google Single-Sign-On (`_Enterprise Edition`)
+Google Single-Sign-On (`Enterprise Edition`_)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When enabled by your System Admin, you can sign in using your Google
@@ -44,20 +44,20 @@ Office 365 Single-Sign-On (Beta) (`Enterprise Edition`_)
 When enabled by your System Admin, you can sign in using your Office 365
 account using a one-click sign in option.
 
-AD/LDAP Sign In (`_Enterprise Edition`)
+AD/LDAP Sign In (`Enterprise Edition`_)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When enabled by your System Admin, you can sign in with your AD/LDAP
 credentials. This lets you use the same username and password for
 Mattermost that you use for various other company services.
 
-SAML Single-Sign-On (SSO) (`_Enterprise Edition`)
+SAML Single-Sign-On (SSO) (`Enterprise Edition`_)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When enabled by your System Admin, you can sign in with your SAML
 credentials. This lets you use the same username and password for
 Mattermost that you use for various other company services. Mattermost
-officially supports `_Okta` and `_Microsoft ADFS` as an identity
+officially supports `Okta`_ and `Microsoft ADFS`_ as an identity
 provider (IDP) for SAML, but you may use other SAML IDPs as well. Please
 see `documentation` to learn more about configuring SAML for
 Mattermost.
@@ -103,7 +103,7 @@ Android Setup
 Your Mattermost teams can be accessed on Android mobile devices by
 downloading the Mattermost App.
 
-#. Open the `_Google Play Store` on your Android device.
+#. Open the `Google Play Store`_ on your Android device.
 #. Search for “Mattermost” and click **INSTALL** to download the App for
    free.
 #. Open Mattermost from your homescreen and input your team and account
