@@ -83,10 +83,39 @@ iOS Setup
 Your Mattermost teams can be accessed on iOS mobile devices by
 downloading the Mattermost App.
 
-#. Open the [App Store](\ https://geo.itunes.apple.com/us/app/ma
+#. Open the `App Store`_ on your Apple device running iOS 9.0 or later.
+#. Search for “Mattermost” and click **GET** to download the App for
+   free.
+#. Open Mattermost from your homescreen and input your team and account
+   information to login:
 
-.. _archived documentation: http://docs.mattermost.com/archives/docs-v2.2.html#signing-in
-.. _Enterprise Edition: https://about.mattermost.com/pricing/
-.. _Okta: http://developer.okta.com/docs/guides/saml_guidance.html
-.. _Microsoft ADFS: https://msdn.microsoft.com/en-us/library/bb897402.aspx
-.. _documentation: http://docs.mattermost.com/deployment/sso-saml.html
+   #. Enter Server URL: This is the web address you go to when you want
+      to access Mattermost. You can find the Server URL by asking your
+      System Admin or by looking at the address bar in a desktop browser
+      tab with Mattermost open. It is in the form
+      ``https://domain.com/``.
+   #. Sign in to Mattermost: This is your account login information as
+      decribed by one of the sign in methods above.
+
+Android Setup
+-------------
+
+Your Mattermost teams can be accessed on Android mobile devices by
+downloading the Mattermost App.
+
+#. Open the `Google Play Store`_ on your Android device.
+#. Search for “Mattermost” and click **INSTALL** to download the App for
+   free.
+#. Open Mattermost from your homescreen and input your team and account
+   information to login:
+
+   #. Enter Server URL: This is the web address you go to when you want
+      to access Mattermost. You can find the Server URL by asking your
+      System Admin or by looking at the address bar in a desktop browser
+      tab with Mattermost open. It is in the form
+      ``https://domain.com/``.
+   #. Sign in to Mattermost: This is your account login information as
+      decribed by one of the sign in methods above.
+
+.. _App Store: https://geo.itunes.apple.com/us/app/mattermost/id984966508?mt=8
+.. _Google Play Store: https://play.google.com/store/apps/details?id=com.mattermost.mattermost&hl=en
