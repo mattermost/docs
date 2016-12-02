@@ -3,6 +3,58 @@ Community Guidelines
 =======================================
 
 
+Speaking in the Voice of Mattermost 
+============================================================================
+
+Mattermost serves a global audience, who might not use English as their first language.
+
+To keep Mattermost “obvious” to users, please keep community discussion, documentation and on-screen help simple, effective and ready-to-translate.
+
+**Simple** 
+
+- Aim for the reading ability of an 11-year old. Use short sentences. Avoid large words.
+
+**Effective**
+
+- Start with what’s important, and leave less important details to the end, or omit them
+- Focus on achieving understanding in the reader, over total correctness or completeness.
+
+**Ready-to-translate**
+
+- Avoid slang
+- Avoid Western-centric, or culture-centric examples (example: instead of “fiddle with settings”, say “adjust settings”)
+
+If you’re not sure, try using machine translation to turn your content into a foreign language then back into English.
+
+Machine-Translation Example:
+------------------------------------------------
+
+Here’s an example of culture-specific content with the word “fiddle” (meaning “to adjust repeatedly”):
+
+  There are a few configuration settings you might want to fiddle with when setting up your instance of Mattermost.
+
+That documentation machine-translated into German and then back into English looks like this:
+
+  There are some configuration settings you could know if your instance Matter Most violin
+
+The sentence would be more ready-to-translate to say “There are a few configuration settings you can adjust when setting up your instance of Mattermost.”
+
+Testing our documentation:
+------------------------------------------------
+
+One “trick” to use to review content is to ask: “How would Agent Coulson explain this concept to Thor? [1]”
+
+Agent Coulson takes complex ideas and explains them simply and effectively. Thor isn’t from earth, so we have to filter out ideas that are culturally specific-–fiddles, baseball, wedding rings, etc.--and that makes things easy-to-translate.
+
+As a communications company, clarity matters. If you see content that doesn't speak in the "Voice of Mattermost", we’d gladly take bugs and pull requests.
+
+
+Best Practices 
+============================================================================
+
+Below is a list of best practices for community engagement 
+
+
 1. Don't offer advice on database modification without a clear warning
 ----------------------------------------------------------------------------
 
