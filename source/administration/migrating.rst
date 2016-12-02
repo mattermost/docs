@@ -40,7 +40,7 @@ This feature can be accessed through the `Mattermost Web App <https://docs.matte
 
        docker run --name mattermost-dev -d --publish 8065:80 mattermost/platform
 
-   If you don't use Docker, there are `step-by-step instructions <http://docs.mattermost.com/install/docker-local-machine.html>`_ to install Mattermost in preview mode in less than 5 minutes.
+   If you don't use Docker, there are `step-by-step instructions <https://docs.mattermost.com/install/docker-local-machine.html>`_ to install Mattermost in preview mode in less than 5 minutes.
 
 Supported Features
 ++++++++++++++++++
@@ -73,7 +73,7 @@ The following limitations are present when importing from Slack:
 Migrating from Slack using the Mattermost Web App
 +++++++++++++++++++++++++++++++++++++++++++++++++
 
-.. note:: For larger imports, particularly those where you have used the `slack-advanced-exporter tool` to add Slack post attachments to the archive, it is recommended to import the Slack data using the `CLI </administration/migrating.html#migrating-from-slack-using-the-mattermost-cli>`_.
+.. note:: For larger imports, particularly those where you have used the `slack-advanced-exporter tool` to add Slack post attachments to the archive, it is recommended to import the Slack data using the `CLI <https://docs.mattermost.com/administration/migrating.html#migrating-from-slack-using-the-mattermost-cli>`_.
 
 1. Generate a Slack "Export" file from **Slack > Team Settings > Import/Export Data > Export > Start Export**.
 
