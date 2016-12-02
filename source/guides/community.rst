@@ -3,6 +3,21 @@ Community Guidelines
 =======================================
 
 
+
+
+Best Practices 
+============================================================================
+
+Below is a list of best practices for community engagement 
+
+
+1. Don't offer advice on database modification without a clear warning
+----------------------------------------------------------------------------
+
+Never give DB advice without a warning similar to: `Manual database modification bypass checks in the code and could make a system unrecoverable. It's not recommended and if you do make a change, make sure to back up your DB, and verify changes carefully.`
+
+
+
 Speaking in the Voice of Mattermost 
 ============================================================================
 
@@ -47,15 +62,3 @@ One “trick” to use to review content is to ask: “How would Agent Coulson e
 Agent Coulson takes complex ideas and explains them simply and effectively. Thor isn’t from earth, so we have to filter out ideas that are culturally specific-–fiddles, baseball, wedding rings, etc.--and that makes things easy-to-translate.
 
 As a communications company, clarity matters. If you see content that doesn't speak in the "Voice of Mattermost", we’d gladly take bugs and pull requests.
-
-
-Best Practices 
-============================================================================
-
-Below is a list of best practices for community engagement 
-
-
-1. Don't offer advice on database modification without a clear warning
-----------------------------------------------------------------------------
-
-Never give DB advice without a warning similar to: `Manual database modification bypass checks in the code and could make a system unrecoverable. It's not recommended and if you do make a change, make sure to back up your DB, and verify changes carefully.`
