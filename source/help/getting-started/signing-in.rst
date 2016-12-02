@@ -32,32 +32,32 @@ GitLab Single-Sign-On (SSO)
 When enabled by your System Admin, you can sign in using your GitLab
 account using a one-click sign in option.
 
-Google Single-Sign-On (``Enterprise Edition``)
+Google Single-Sign-On (`_Enterprise Edition`)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When enabled by your System Admin, you can sign in using your Google
 account using a one-click sign in option.
 
-Office 365 Single-Sign-On (Beta) (``Enterprise Edition``)
+Office 365 Single-Sign-On (Beta) (`_Enterprise Edition`)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When enabled by your System Admin, you can sign in using your Office 365
 account using a one-click sign in option.
 
-AD/LDAP Sign In (`Enterprise Edition`)
+AD/LDAP Sign In (`_Enterprise Edition`)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When enabled by your System Admin, you can sign in with your AD/LDAP
 credentials. This lets you use the same username and password for
 Mattermost that you use for various other company services.
 
-SAML Single-Sign-On (SSO) (`Enterprise Edition`)
+SAML Single-Sign-On (SSO) (`_Enterprise Edition`)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When enabled by your System Admin, you can sign in with your SAML
 credentials. This lets you use the same username and password for
 Mattermost that you use for various other company services. Mattermost
-officially supports `Okta` and `Microsoft ADFS` as an identity
+officially supports `_Okta` and `_Microsoft ADFS` as an identity
 provider (IDP) for SAML, but you may use other SAML IDPs as well. Please
 see `documentation` to learn more about configuring SAML for
 Mattermost.
@@ -103,7 +103,7 @@ Android Setup
 Your Mattermost teams can be accessed on Android mobile devices by
 downloading the Mattermost App.
 
-#. Open the `Google Play Store`_ on your Android device.
+#. Open the `_Google Play Store` on your Android device.
 #. Search for “Mattermost” and click **INSTALL** to download the App for
    free.
 #. Open Mattermost from your homescreen and input your team and account
@@ -117,5 +117,10 @@ downloading the Mattermost App.
    #. Sign in to Mattermost: This is your account login information as
       decribed by one of the sign in methods above.
 
+.. _archived documentation: http://docs.mattermost.com/archives/docs-v2.2.html#signing-in
+.. _Enterprise Edition: https://about.mattermost.com/pricing/
+.. _Okta: http://developer.okta.com/docs/guides/saml_guidance.html
+.. _Microsoft ADFS: https://msdn.microsoft.com/en-us/library/bb897402.aspx
+.. _documentation: http://docs.mattermost.com/deployment/sso-saml.html
 .. _App Store: https://geo.itunes.apple.com/us/app/mattermost/id984966508?mt=8
 .. _Google Play Store: https://play.google.com/store/apps/details?id=com.mattermost.mattermost&hl=en
