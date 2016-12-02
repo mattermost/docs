@@ -38,7 +38,7 @@ Google Single-Sign-On (`_Enterprise Edition`)
 When enabled by your System Admin, you can sign in using your Google
 account using a one-click sign in option.
 
-Office 365 Single-Sign-On (Beta) (`_Enterprise Edition`)
+Office 365 Single-Sign-On (Beta) (`Enterprise Edition`_)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When enabled by your System Admin, you can sign in using your Office 365
