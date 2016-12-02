@@ -77,7 +77,7 @@ Migrating from Slack using the Mattermost Web App
 
 1. Generate a Slack "Export" file from **Slack > Team Settings > Import/Export Data > Export > Start Export**.
 
-2. In Mattermost go to **Team Settings > Import > Import from Slack**. "Team Admin" or "System Admin" role is required to access this menu option.
+2. In Mattermost go to **Team Settings > Import > Import from Slack**. Team Admin or System Admin role is required to access this menu option.
 
 3. Click **Select file** to upload Slack export file and click **Import**.
 
