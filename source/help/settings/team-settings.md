@@ -29,5 +29,5 @@ The **Invite Code** is used as part of the URL in the team invitation link retri
 
 #### Import from Slack (Beta)
 
-You can import channels and users from Slack into Mattermost from **Team Settings > Import**. Please review our documentation on [Slack Import](https://docs.mattermost.com/administration/migrating.html?highlight=slack#migrating-from-slack) for more details.
+You can import channels and users from Slack into Mattermost from **Team Settings > Import**. Please review our documentation on [Slack Import](https://docs.mattermost.com/administration/migrating.html#migrating-from-slack) for more details.
 

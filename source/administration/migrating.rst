@@ -26,32 +26,38 @@ The following instructions migrate Mattermost from one server to another by back
 Migrating from Slack
 ====================
 
-.. note:: As a proprietary SaaS service, Slack is able to change its export format quickly and without notice. If you encounter issues not mentioned in the documentation below, please alert the product team by `filing an issue <https://github.com/mattermost/platform/issues>`_.
+.. note:: As a proprietary SaaS service, Slack is able to change its export format quickly and without notice. If you encounter issues not mentioned in the documentation below, please alert the product team by `filing an issue <https://www.mattermost.org/filing-issues/>`_.
 
 The Slack Import feature in Mattermost is in "Beta" and focused on supporting migration of teams of less than 100 registered users.
 
-This feature can be accessed through the `Mattermost Web App </administration/migrating.html#migrating-from-slack-using-the-mattermost-web-app>`_ or using the `CLI </administration/migrating.html#migrating-from-slack-using-the-mattermost-cli>`_.
+This feature can be accessed through the `Mattermost Web App <https://docs.mattermost.com/administration/migrating.html#migrating-from-slack-using-the-mattermost-web-app>`_ or using the `CLI <https://docs.mattermost.com/administration/migrating.html#migrating-from-slack-using-the-mattermost-cli>`_.
 
 .. warning:: **It is highly recommended that you test Slack import before applying it to an instance intended for production.**
 
-   If you use Docker, you can spin up a test instance in one line (``docker run --name mattermost-dev -d --publish 8065:80 mattermost/platform``). If you don't use Docker, there are `step-by-step instructions <http://docs.mattermost.com/install/docker-local-machine.html>`_ to install Mattermost in preview mode in less than 5 minutes.
+   If you use Docker, you can spin up a test instance in one line:
+
+   .. code:: bash
+
+       docker run --name mattermost-dev -d --publish 8065:80 mattermost/platform
+
+   If you don't use Docker, there are `step-by-step instructions <http://docs.mattermost.com/install/docker-local-machine.html>`_ to install Mattermost in preview mode in less than 5 minutes.
 
 Supported Features
 ++++++++++++++++++
 
-The following key features are supported out of the box when importing from Slack:
+The following key features are supported when importing from Slack:
 
-* User accounts with an email address set.
+* User accounts with an email address set
 
-* Public channels and the text messages posted in them by users.
+* Public channels and the text messages posted in them
 
-* Channel topic and purpose.
+* Channel topic and purpose
 
-* Automatically adding imported users to their channels.
+* Imported users added automatically to their channels
 
 Messages with file attachments are imported as a message containing a link to Slack's servers by default. The file attachments themselves can be imported to Mattermost by using the `Slack Advanced Exporter <https://github.com/grundleborg/slack-advanced-exporter>`_ tool to add them to your archive before importing it.
 
-Bot and Integration messages are imported by default, but if you would like them to display with the appropriate username when imported, you should ensure that `Enable Integrations to Override Usernames </administration/config-settings.html#enable-integrations-to-override-usernames>`_ is set **before** doing the import.
+Bot and Integration messages are imported by default, but if you would like them to display with the appropriate username when imported, you should ensure that `Enable Integrations to Override Usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`_ is set in **System Console > Integrations > Custom Integrations** *before* doing the import.
 
 .. note:: Slack user accounts with the same email address as existing accounts on your Mattermost server will be merged into those accounts on import.
 
@@ -71,7 +77,7 @@ Migrating from Slack using the Mattermost Web App
 
 1. Generate a Slack "Export" file from **Slack > Team Settings > Import/Export Data > Export > Start Export**.
 
-2. In Mattermost go to **Team Settings > Import > Import from Slack**. *Team Administrator* or *System Administrator* role is required to access this menu option.
+2. In Mattermost go to **Team Settings > Import > Import from Slack**. "Team Admin" or "System Admin" role is required to access this menu option.
 
 3. Click **Select file** to upload Slack export file and click **Import**.
 
@@ -92,4 +98,4 @@ Using the Imported Team
 
 * Slack users can activate their new Mattermost accounts by using Mattermost's Password Reset screen with their email addresses from Slack to set new passwords for their Mattermost accounts.
 
-* Once logged in, the Mattermost users will have access to previous Slack messages in the public channels imported from Slack.
+* Once logged in, Mattermost users will have access to previous Slack messages in the public channels imported from Slack.
