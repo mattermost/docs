@@ -3,6 +3,9 @@ Mattermost Developer's Guide
 
 Detailed information on contributing to the Mattermost open source project. 
 
+Development Process
+===================
+
 .. toctree::
    :maxdepth: 2
    :glob:
@@ -17,7 +20,7 @@ Detailed information on contributing to the Mattermost open source project.
 
 
 Unofficial Enhancements
-----------------------------
+=======================
 
 Documentation on early previews and unofficial functionality
 
