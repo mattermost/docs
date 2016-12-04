@@ -22,7 +22,7 @@ Unofficial Enhancements
 Documentation on early previews and unofficial functionality
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
 
    /install/prod-windows-2012*
