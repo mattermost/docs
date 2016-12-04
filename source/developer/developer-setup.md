@@ -177,6 +177,8 @@ Any issues? Please let us know on our forums at: http://forum.mattermost.org
 
 ## Troubleshooting
 
+### Build errors 
+
 #### I get the following error when running `make run` on Mac OS X: "Cannot connect ot the Docker daemon"
 
 If you have Docker Tools installed (as opposed to Docker for Mac), you need make sure `docker-machine` is running with the following:
@@ -197,6 +199,8 @@ If not, running `make clean-docker` will remove all existing docker containers s
 There's likely another Mattermost instance already running. You can use `make stop` to stop it before running `make run` again.
 
 If there isn't another copy of Mattermost running and you need to change the port that Mattermost is running on, you can do so by changing the `ListenAddress` setting in the `ServiceSettings` section of `config/config.json`.
+
+### Other errors 
 
 #### I don't see any error messages, but I can't access `http://localhost:8065`
 
