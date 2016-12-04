@@ -7,10 +7,10 @@ Install Guides
 ==============
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
 
-   /install/requirements*
+   /install/requirements*                       
    /install/docker-local*
    /install/docker-ebs*
    /install/ee-install*
