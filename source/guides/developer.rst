@@ -1,4 +1,4 @@
-Developer's Guide
+Mattermost Developer's Guide
 ----------------------------
 
 Detailed information on contributing to the Mattermost open source project. 
