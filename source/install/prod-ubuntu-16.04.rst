@@ -3,14 +3,10 @@
 Production Install on Ubuntu 16.04 LTS
 ======================================
 
-Install Mattermost in production mode on one, two or three machines, using the following steps:
+Install Mattermost in production mode on one, two or three machines.
 
-- `Install Ubuntu Server (x64) 16.04 LTS`_
-- `Set up Database Server`_
-- `Set up Mattermost Server`_
-- `Set up NGINX Server`_
-- `Post-Installation Mattermost Configuration`_
-
+.. contents::
+    :backlinks: top
 
 Install Ubuntu Server (x64) 16.04 LTS
 -------------------------------------
