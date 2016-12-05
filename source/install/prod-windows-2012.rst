@@ -375,7 +375,7 @@ Finish Mattermost Server Setup
    
 4. Update **General** > **Configuration** settings to properly configure your reverse proxy by entering `https://mattermost.example.com` as the **Site URL**
 
-   .. attention:: Failure to properly set the Site URL properly __will__ result in unexpected behavior.  Do not include the trailing '/' on the URL.
+   .. attention:: Failure to properly set the Site URL properly __will__ result in unexpected behavior.
 
 5. Update **Notification** > **Email** settings to setup an SMTP email service. The example below assumes AmazonSES.
 
