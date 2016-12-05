@@ -2,7 +2,7 @@
 Desktop Application Install Guides
 ===================================
 
-Mattermost desktop applications are available for Windows, Mac and Linux operation systems. 
+Mattermost desktop applications are available for Windows, Mac and Linux operating systems. 
 
 .. contents::
     :backlinks: top
