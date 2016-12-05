@@ -12,6 +12,9 @@ Production Install on Windows Server
    instructions, we can update the text here. If you're installing on Windows anyway, please let 
    us know of any issues or suggest improvements? https://github.com/mattermost/docs/issues/360
 
+.. contents::
+  :backlinks: top
+
 Install Windows Server 2012+
 ----------------------------
 
