@@ -5,9 +5,9 @@ Review of pull requests to Mattermost documentation passes through the following
 
 1. Project Members and Approved Contributors submit PRs to the docs.mattermost.com repository. 
 2. Incoming PRs are assessed and assigned review requirements (e.g. technical PRs, PRs requiring Sphinx changes, etc.). 
-3. Reviewers with appropriate qualifications either approve and merge the changes, or leave feedback for the submitter to being the review cycle again. 
-4. Once merged, PRs are verified by a Project Member and the submitter's work acknowledged. 
-5. Reviewers with consistent performance are acknowledge with an increase in skill level. Reviewers with repeated inconsistency may have their level decreased (though this is rare). 
+3. Reviewers with appropriate qualifications either approve and merge the changes, or leave feedback for the submitter to begin the review cycle again. 
+4. Once merged, PRs are verified by a Project Member and the submitter's work is acknowledged. 
+5. Reviewers with consistent performance are acknowledged with an increase in `skill level <link to below>`_. Reviewers with repeated inconsistency may have their level decreased (though this is rare). 
 
 The following sections lay out the details for this process: 
 
