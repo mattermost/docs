@@ -14,7 +14,7 @@ If your update is small and an obvious improvement, you can skip this step and s
 
 2. **Become an Approved Contributor** - Please complete the `contributor license agreement <https://www.mattermost.org/mattermost-contributor-agreement/>`_ (a.k.a. "CLA"). This is a standard form for most open source projects and it adds your the `approved contributor's list <https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true>`_ for the Mattermost open source project. There are answers to frequently asked questions in the link above. 
 
-3. **Create your Pull Request** - Please create a pull request for the documentation change you would like to make. Make sure to review and follow the `Style Guide <https://docs.mattermost.com/process/sg_mattermost-doc-style.html>`_. Please include a link to the Help Wanted ticket if you have one. 
+3. **Create your Pull Request** - Please create a pull request for the documentation change you would like to make. Make sure to review and follow the `Style Guide XXX <https://docs.mattermost.com/process/sg_mattermost-doc-style.html>`_. Please include a link to the Help Wanted ticket if you have one. 
 
 4. **(Optional) Meet the Documentation Community** - You can join the `Mattermost Documentation channel <https://pre-release.mattermost.com/core/channels/documentation>`_ on the community server and introduce yourself to other contributors and project members. 
 
