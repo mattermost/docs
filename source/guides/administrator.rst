@@ -53,6 +53,18 @@ Administration
    /administration/config*
    /administration/team-settings.md
    /administration/statistics.md
+   /administration/compliance*
+   /administration/branding*
+   /administration/backup*
    /administration/upgrade.md
    /administration/migrating.md
-   /administration/[!_upgrade-guide]*
+   
+Changelog
+=========
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+
+   /administration/changelog*
+
