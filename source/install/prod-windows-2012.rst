@@ -1,17 +1,12 @@
 ..  _prod-windows:
 
-Production Install on Windows Server
-====================================
+Production Install on Windows Server (Unofficial   ) 
+=================================================
 
-.. attention:: This install guide has been contributed by the Mattermost community. 
-   It has not yet been tested by the core team. We have `an open ticket 
-   <https://github.com/mattermost/docs/issues/360>`__ requesting the community help test and 
-   improve this guide. 
-   
-   Once the community has confirmed we have multiple deployments on these 
-   instructions, we can update the text here. If you're installing on Windows anyway, please let 
-   us know of any issues or suggest improvements? https://github.com/mattermost/docs/issues/360
+This install guide shows how to deploy Mattermost on Windows Server 2012 with IIS.
 
+.. attention:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. `Community testing, feedback and improvements are welcome and greatly appreciated. <https://github.com/mattermost/docs/issues/360>`_
+ 
 .. contents::
   :backlinks: top
 
