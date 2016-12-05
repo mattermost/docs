@@ -3,12 +3,15 @@
 Software & Hardware Requirements
 ================================
 
---------------
+This guide outlines minimum software and hardware requirements for deploying Mattermost. Requirements may vary based on utilization and observing performance of pilot projects is recommended prior to scale out. 
+
+.. contents::
+    :backlinks: top
 
 Deployment Overview
 -------------------
 
-Please see `Mattermost Deployment Overview <http://docs.mattermost.com/deployment/deployment.html>`__ for a summary of components listed here.
+Please see `Mattermost Deployment Overview <http://docs.mattermost.com/deployment/deployment.html>`__ for a summary of software systems who's requirements are described in this document. 
 
 .. figure:: ../images/network.PNG
    :alt: image
