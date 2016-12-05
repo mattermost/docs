@@ -3,7 +3,12 @@
 Local Machine Setup using Docker 
 ================================
 
-The following instructions use Docker to install Mattermost in *Preview Mode* for exploring product functionality on a single machine using Docker. This configuration should not be used in production, as it's using a known password string and contains other non-production configuration settings, and it does not support upgrade. 
+The following instructions use Docker to install Mattermost in *Preview Mode* for exploring product functionality on a single machine using Docker. 
+
+.. attention:: This configuration should not be used in production, as it's using a known password string and contains other non-production configuration settings, and it does not support upgrade. 
+
+.. contents::
+  :backlinks: top
 
 If you're looking for a production installation with Docker, please see the `Mattermost Production Docker Deployment Guide <http://docs.mattermost.com/install/prod-docker.html>`_.
 
@@ -18,17 +23,31 @@ If you have Docker set up, Mattermost installs in one-line:
 
 Otherwise, see step-by-step instructions:
 
-Mac OS X and Windows 10
------------------------
+Mac OS X
+^^^^^^^^
 
-1. Install `Docker for Mac <http://docs.docker.com/installation/mac/>`_ or `Docker for Windows <http://docs.docker.com/installation/windows/>`_
+1. Install `Docker for Mac <http://docs.docker.com/installation/mac/>`_ 
+
 2. Run:
    ``docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview``
+
+3. When docker is done fetching the image, open ``http://localhost:8065/``
+   in your browser.
+
+
+Windows 10
+^^^^^^^^^^
+
+1. Install `Docker for Windows <http://docs.docker.com/installation/windows/>`_
+
+2. Run:
+   ``docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview``
+
 3. When docker is done fetching the image, open ``http://localhost:8065/``
    in your browser.
 
 Ubuntu
-------
+^^^^^^
 
 1. Follow the instructions at
    https://docs.docker.com/installation/ubuntulinux/ or use the summary
@@ -53,7 +72,7 @@ Ubuntu
    in your browser.
 
 Arch
-----
+^^^^
 
 1. Install Docker using the following commands:
 
@@ -74,32 +93,8 @@ Arch
 3. When Docker is done fetching the image, open ``http://localhost:8065/``
    in your browser.
 
-Additional Notes
-----------------
-
--  Instructions on how to update your Docker image are found below.
-
--  If you wish to remove mattermost-preview use:
-
-   .. code:: bash
-
-       docker stop mattermost-preview
-       docker rm -v mattermost-preview
-
--  If you wish to gain access to a shell on the container use:
-
-   .. code:: bash
-
-       docker exec -ti mattermost-preview /bin/bash
-
-Configuration Settings
-----------------------
-
-See `Configuration Settings <http://docs.mattermost.com/administration/config-settings.html>`__
-documentation to customize your deployment.
-
-(Recommended) Enable Email
---------------------------
+Setting up SMTP Email (Recommended) 
+-----------------------------------
 
 The default single-container Docker instance for Mattermost is designed
 for product evaluation, and sets ``SendEmailNotifications=false`` so the
@@ -108,3 +103,29 @@ functionality, enabling SMTP email is recommended.
 
 .. include:: smtp-email-setup.rst 
   :start-after: How to Enable Email
+
+Configuration Settings
+-----------------------------------
+
+See `Configuration Settings <http://docs.mattermost.com/administration/config-settings.html>`__
+documentation to customize your deployment.
+
+Updating Docker Preview
+-----------------------------------
+
+To delete your existing Docker preview and run a new version use: 
+
+   .. code:: bash
+
+       docker stop mattermost-preview
+       docker rm -v mattermost-preview
+
+Accessing Your Container
+-----------------------------------
+
+-  If you wish to gain access to a shell on the container use:
+
+   .. code:: bash
+
+       docker exec -ti mattermost-preview /bin/bash
+
