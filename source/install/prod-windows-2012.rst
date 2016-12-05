@@ -1,9 +1,9 @@
 ..  _prod-windows:
 
-Production Install on Windows Server (Unofficial   ) 
+Production Install on Windows Server (Unofficial) 
 =================================================
 
-This install guide shows how to deploy Mattermost on Windows Server 2012 with IIS.
+Install Mattermost in production mode on one, two or three machines.
 
 .. attention:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. `Community testing, feedback and improvements are welcome and greatly appreciated. <https://github.com/mattermost/docs/issues/360>`_
  
