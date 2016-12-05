@@ -5,7 +5,7 @@ Local Machine Setup using Docker
 
 The following instructions use Docker to install Mattermost in *Preview Mode* for exploring product functionality on a single machine using Docker. 
 
-.. attention:: This configuration should not be used in production, as it's using a known password string and contains other non-production configuration settings, and it does not support upgrade. 
+Note: This configuration should not be used in production, as it's using a known password string and contains other non-production configuration settings, and it does not support upgrade. 
 
 .. contents::
   :backlinks: top
