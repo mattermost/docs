@@ -3,15 +3,12 @@
 Production Install on Debian Jessie
 ===================================
 
-Note: This install guide has been generously contributed by the
-Mattermost community. It has not yet been tested by the core team. We
-have `an open
-ticket <https://github.com/mattermost/platform/issues/1185>`__
-requesting community help testing and improving this guide. Once the
-community has confirmed we have multiple deployments on these
-instructions, we can update the text here. If you're installing on
-Debian anyway, please let us know of any issues or suggest
-improvements? https://github.com/mattermost/platform/issues/1185
+Install Mattermost in production mode on one, two or three machines, using the following steps:
+
+.. attention:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. `Community testing, feedback and improvements are welcome and greatly appreciated. <https://github.com/mattermost/platform/issues/1185>`_
+ 
+.. contents::
+    :backlinks: top
 
 Install Debian Jessie (x64)
 ---------------------------
