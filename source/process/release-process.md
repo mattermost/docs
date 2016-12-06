@@ -24,12 +24,12 @@ Pre-work for the current release begins at the code complete date of the previou
 No pull requests for major features should be **submitted** to the current release after this date (except if release manager decides to add "release-exception" label to Jira ticket).
 
 1. Logistics:
-    - Post this checklist in Release channel 
+    - Post this checklist in Release channel
 2. PM:
     - Prioritize reviewing major features, ensuring any bugs and UX issues get fixed
     - Check that all major features are behind a feature flag
 3. Dev:
-    - Prioritize reviewing, updating, and merging of pull requests for major features 
+    - Prioritize reviewing, updating, and merging of pull requests for major features
 4. Marketing:
     - Confirm each Enterprise feature is in the correct [pricing SKU](https://about.mattermost.com/pricing/), if not alert the release manager
 
@@ -186,7 +186,8 @@ The final release is cut. If an urgent and important issue needs to be addressed
     - Posts SHA key and md5 sum of the final build to release channel
 3. PM:
     - Post in Release Discussion with links to the EE and Team Edition bits
-    - Update the [Mattermost server download page](https://www.mattermost.org/download/)
+    - Update the [Mattermost server download page](https://www.mattermost.org/download/) with the links to the EE and TE bits
+      - Test the download links before and after updating the page
     - Add the download links, SHA key and md5 sum to [upgrade guide](http://docs.mattermost.com/administration/upgrade.html#version-archive)
     - Contact owners of [community installers](http://www.mattermost.org/installation/) or submit [PRs](https://github.com/tommyvn/mattermost-heroku/commit/94f7c5c0c5d7d2672fb6d62b6a560b4b5c1b5131) to update install version number
     - Close GitHub meta ticket for the release
@@ -196,10 +197,10 @@ The final release is cut. If an urgent and important issue needs to be addressed
       - Submit a correction PR for any incorrect formatting or other errors missed during the intitial review
     - Update [MVP page](https://www.mattermost.org/mvp/) with the most valuable contributor of the release
     - Submit GitLab MR to take next Mattermost version in the Omnibus (see [example](https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests/998)):
-        - Include changes to Mattermost version number ([`default_version`](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/config/software/mattermost.rb#L20)) and md5 sum of the final TE build ([`source md5`](https://gitlab.com/jasonblais/omnibus-gitlab/blob/master/config/software/mattermost.rb#L23)) in  [`config/software/mattermost.rb`](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/config/software/mattermost.rb).
-        - Include a summary of updates in Team Edition that are relevant to GitLab.
+        - Include changes to Mattermost version number ([`default_version`](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/config/software/mattermost.rb#L20)) and md5 sum of the final TE build ([`source md5`](https://gitlab.com/jasonblais/omnibus-gitlab/blob/master/config/software/mattermost.rb#L23)) in  [`config/software/mattermost.rb`](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/config/software/mattermost.rb)
+        - Include a summary of updates in Team Edition that are relevant to GitLab
     - Update [Docker preview image to latest version](https://github.com/mattermost/mattermost-docker-preview/commit/1c34195d70b26bd4c82b5ef4fa0ebaf421096881)
-    - Submit PR to update [/mattermost-docker](https://github.com/mattermost/mattermost-docker/commit/782129450e9577a8966e5ddea18a1a4cdecdfd7f) image to latest release.
+    - Submit PR to update [/mattermost-docker](https://github.com/mattermost/mattermost-docker/commit/782129450e9577a8966e5ddea18a1a4cdecdfd7f) image to latest release
     - Check Security Issues spreadsheet and confirm disclosure text
     - Confirm link to security updates appears in blog post if there are security updates in this release 
 4. Marketing:
@@ -213,17 +214,17 @@ The final release is cut. If an urgent and important issue needs to be addressed
 If a bug fix release is required, run through the following steps: 
 
 1. PM:
-    - Post links to approved tickets for next dot release RC to the Release Discussion channel.
-    - Make a post in Town Square announcing the dot release. [See example](https://pre-release.mattermost.com/core/pl/4aippek8yp8a3nex9anen5rjoc).
+    - Post links to approved tickets for next dot release RC to the Release Discussion channel
+    - Make a post in Town Square announcing the dot release. [See example](https://pre-release.mattermost.com/core/pl/4aippek8yp8a3nex9anen5rjoc)
     - Update the GitHub meta issue:
-        - Change the title to "Mattermost vx.x.x - RCx", where `vx.x.x` is the version number of the dot release.
-        - Post a comment to the meta issue with approved fixes for the next RC of the dot release.
-        - Post download links and testing server links for the next RC when it's cut.
+        - Change the title to "Mattermost vx.x.x - RCx", where `vx.x.x` is the version number of the dot release
+        - Post a comment to the meta issue with approved fixes for the next RC of the dot release
+        - Post download links and testing server links for the next RC when it's cut
     - Update Changelog:
-        - Start a WIP PR for the dot release changelog and commit updates as new issues are fixed on the dot release RCs.
-        - Update “Known Issues” section with any significant issues that were found during RC testing and not fixed for the dot release.
-    - Push RC versions to acceptance and announce in Town Square with new RC link as they are cut.
-    - Test the new RC to verify fixes merged to the release branch work. Post in Release Discussion channel after testing. 
+        - Start a WIP PR for the dot release changelog and commit updates as new issues are fixed on the dot release RCs
+        - Update “Known Issues” section with any significant issues that were found during RC testing and not fixed for the dot release
+    - Push RC versions to acceptance and announce in Town Square with new RC link as they are cut
+    - Test the new RC to verify fixes merged to the release branch work. Post in Release Discussion channel after testing 
 2. Dev:
     - PRs for hotfixes are made to release branch
     - Review PRs made from release branch and merge changes into both the release branch and master
@@ -236,16 +237,17 @@ If a bug fix release is required, run through the following steps:
 Once final dot release build is ready to cut:
 
 1. Build:  
-    - Tag a new release (e.g. 1.1.1) and run an official build.
-    - Update CI servers, pre-release and GitLab Mattermost to the final version.  
-2. PM:  
-    - Update [Mattermost server download page](the https://mattermost.org/download)
-    - Update [Mattermost pricing page](https://about.mattermost.com/pricing/) if anything has changed.
+    - Tag a new release (e.g. 1.1.1) and run an official build  
+    - Update CI servers, pre-release and GitLab Mattermost to the final version    
+2. PM
+    - Update [Mattermost server download page](the https://mattermost.org/download) with the links to the EE and TE bits
+      - Test the download links before and after updating the page 
+    - Update [Mattermost pricing page](https://about.mattermost.com/pricing/) if anything has changed
     - Add the download links to http://docs.mattermost.com/administration/upgrade.html#version-archive  
     - Merge the Changelog PR with notes on patch releases (see [example entry](https://docs.mattermost.com/administration/changelog.html#release-v3-5.1))
-    - Update the version archive in the [upgrade guide](https://github.com/mattermost/docs/blob/master/source/administration/upgrade.md).
-    - Sumbit GitLab MR to update the version number and MD5 hash to the dot release version. [See example](https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests/1127).
-      - [Test the upgrade](https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg) once the MR is merged and the package is released to the GitLab package server.
+    - Update the version archive in the [upgrade guide](https://github.com/mattermost/docs/blob/master/source/administration/upgrade.md)
+    - Sumbit GitLab MR to update the version number and MD5 hash to the dot release version. [See example](https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests/1127)
+      - [Test the upgrade](https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg) once the MR is merged and the package is released to the GitLab package server
 3.  Logistics:  
     - Verifies each of the issues in the patch release are fixed
 
@@ -309,7 +311,7 @@ Once final dot release build is ready to cut:
     - Confirm the Security Researchers list on the [Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/) is up to date
     - Review "Community Installers" and update version numbers if there are any discrepencies https://www.mattermost.org/installation/ (move this to ops eventually)
 4. Build: 
-    - Put pre-release back on master.
+    - Put pre-release back on master
 
 
 ## Templates
