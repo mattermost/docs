@@ -22,9 +22,9 @@ keyword for which you're listening.
 Mentions Indicator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Unread mentions or `your name and selected
+Mentions are triggered by `selected
 keywords <https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions>`__
-in a channel are indicated by bold text and a mention counter next to
+in a channel. Unread mentions are indicated by bold text and a mention counter next to
 the channel name in the left-hand sidebar.
 
 Clicking the channel name removes the bolding and mention count. You can
@@ -43,7 +43,7 @@ closed or have not had any browser activity for a short time.
 -  Turn email notifications On or Off in **Account Settings** >
    **Notifications** > **Email Notifications**.
 -  Configure the email address where notifications are sent in **Account
-   Settings** > **General** > **Email**
+   Settings** > **General** > **Email**.
 
 Desktop Notifications
 -------------------------------------
@@ -95,11 +95,8 @@ being viewed on desktop.
 Browser Tab Notifications
 ----------------------------------------
 
-The browser tab favicon updates to inform you of unread messages and
-mentions if Mattermost is open in an inactive browser tab. Browser tab
-notifications are available on Firefox and Chrome.
+If Mattermost is open in a browser tab the favicon updates to inform you of unread messages and
+mentions. Browser tab notifications are available on Firefox and Chrome.
 
--  Unread messages are denoted by an asterisk (\*) next to a black
-   Mattermost icon.
--  Mentions are denoted by a red Mattermost icon with the number of
-   unread mentions shown in brackets.
+- Unread messages are denoted by an asterisk (\*) next to the Mattermost icon.
+- Unread mentions are counted in brackets.
