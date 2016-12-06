@@ -73,6 +73,18 @@ Desktop
 Design Guidelines
 *****************
 
+Minimum Display Requirements 
+************************
+
+Desktop 
+-----------------------------------
+
+- **Minimum screen resolution:** 1280 x 800
+
+- **Color Depth:** 16.7M colors 
+
+
+
 |
 Button States
 ---------------------------
