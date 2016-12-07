@@ -14,7 +14,7 @@ If you run into any issues getting your environment set up, please check the Tro
 	3. `brew install node`
 4. Set up your Go workspace
 	1. `mkdir ~/go`
-	2. Add the following to your `~/.bash_profile`  
+	2. Add the following to your `vi ~/.bash_profile`  
 		- `export GOPATH=$HOME/go`  
 		- `export PATH=$PATH:$GOPATH/bin`  
 		- `ulimit -n 8096`  
