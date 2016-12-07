@@ -1,5 +1,5 @@
 ============================================================
-Mattermost Marketing Content Guidelines
+Mattermost Community Content Guidelines
 ============================================================
 
 How to write purposefully and persuasively 
@@ -63,3 +63,10 @@ Guidelines: 12 tips for sparkling content
  10. **Edit ruthlessly**. Use the first draft to get your thoughts together. Then leave it for a few hours (or even days). Shorten, delete, and rewrite anything that does not add to the meaning. Run a spelling and grammar check.
  11. **Ask a colleague**. Still not 100% happy? A colleague should review the text and tell you if anything is unclear or if you could express yourself better. They might offer some useful fresh insights.
  12. **Now, relax**. If you are in the wrong frame of mind you will either get writer's block or your writing will be stiff and unnatural. Take your time. Remove any distractions. Keep things simple. 
+
+Content Guidelines 
+==============================================================
+
+Content that is deemed to be controversial, offensive, potentially defamatory or infringing content from material distributed, broadcast, posted on websites will be edited or removed. 
+
+We ask the community's help in reporting any such content to feedback@mattermost.com   
