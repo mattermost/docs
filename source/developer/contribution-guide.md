@@ -51,17 +51,17 @@ When submitting a PR, check that:
 After submitting a PR, before it is merged:  
 
 1. Automated build process must pass  
-    - If the build fails, check the error log to narrow down the reason  
+    - If the build fails, check the error log to narrow down the reason . 
     - Sometimes one of the multiple build tests will randomly fail due to issues in Travis CI. If you see just one build failure and no clear error message, it may be a random issue. Add a comment so the reviewer for your change can re-run the build for you, or close the PR and re-submit and that typically clears the issue. 
 2. PM review must pass
     - A Product Manager will review the pull request to make sure it:
-        - fits with our product roadmap
-        - works as expected
-        - meets [UX guidelines](https://docs.mattermost.com/developer/fx-guidelines.html)
+        - Fits with our product roadmap
+        - Works as expected
+        - Meets [UX guidelines](https://docs.mattermost.com/developer/fx-guidelines.html)
     - The Product Manager may come back with some bugs or UI improvements to fix before the pull request moves on to dev review.
 3. Dev review must pass
-    - Two developers will review the pull request and either give feedback or approve the PR
-    - Any comments will need to be addressed before the pull request is ready to merge
+    - Two developers will review the pull request and either give feedback or approve the PR.
+    - Any comments will need to be addressed before the pull request is ready to merge.
 
 If you've included your mailing address in the signed [Contributor License Agreement](https://www.mattermost.org/mattermost-contributor-agreement/), you may receive a [Limited Edition Mattermost Mug](https://forum.mattermost.org/t/limited-edition-mattermost-mugs/143) as a thank you gift after your first pull request is merged. 
 
@@ -70,6 +70,6 @@ If you've included your mailing address in the signed [Contributor License Agree
 _Please DO NOT @-mention reviewers if they haven't yet commented on your PR._
 _Pull requests are reviewed in sequence._
 
-**Approved reviewers include**: coreyhulen, crspeller, hmhealey, jwilander  
+**Approved reviewers include**: coreyhulen, crspeller, enahum, grundleborg, hmhealey, jwilander  
 
-**Approved seconders include**: coreyhulen, crspeller, hmhealey, jwilander
+**Approved seconders include**: coreyhulen, crspeller, enahum, grundleborg, hmhealey, jwilander
