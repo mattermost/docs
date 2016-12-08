@@ -31,14 +31,14 @@ Principles
 
 In order to achieve these goals, our writing must be:
 
- 1. Magnetic to IT. We need headlines and openings that draw in IT audiences (these include Linux admins, security experts, directors of end-user computing, CIOs). Bear in mind that, although they work in IT, these audiences are typically more interested in the business benefits of technology than technical features. 
- 2. Appealing to secondary audiences. These include open source and in-house developers and end users at highly regulated companies.
- 3. Part of our brand. Our style and message must be consistent over the long term. Therefore, all of our content, irrespective of purpose or subject-matter, must pull the reader in the same direction and reinforce our key messages. 
+ 1. **Magnetic to IT.** We need headlines and openings that draw in IT audiences (these include Linux admins, security experts, directors of end-user computing, CIOs). Bear in mind that, although they work in IT, these audiences are typically more interested in the business benefits of technology than technical features. 
+ 2. **Appealing to secondary audiences.** These include open source and in-house developers and end users at highly regulated companies.
+ 3. **Part of our brand.** Our style and message must be consistent over the long term. Therefore, all of our content, irrespective of purpose or subject-matter, must pull the reader in the same direction and reinforce our key messages. 
  4. High quality. Quality in writing reflects the professionalism of our organization. We pay attention to the rules of grammar and spelling.
- 5. Clear & transparent. We aim to communicate simply, using language that is familiar to our audiences. People don't buy what they don't understand!
- 6. International. Mattermost has customers around the world and in many cases English is their second language. Use standard American English but do not use metaphors or expressions that people outside of North America are unlikely to understand.
- 7. Avoiding unintentional controversy. We might want to stir up a bit of controversy now and again – but only on relevant technological and business topics. Avoid subjects or analogies that might provoke an emotional or hostile response: religion, politics, warfare, personal relationships etc. 
- 8. Fit for purpose. Is your content designed to persuade (e.g. an opinion piece), promote (e.g. a product description) or instruct (e.g. to guide a user through procedural steps)? Adjust your tone and your language accordingly.
+ 5. **Clear & transparent.** We aim to communicate simply, using language that is familiar to our audiences. People don't buy what they don't understand!
+ 6. **International.** Mattermost has customers around the world and in many cases English is their second language. Use standard American English but do not use metaphors or expressions that people outside of North America are unlikely to understand.
+ 7. **Avoiding unintentional controversy.** We might want to stir up a bit of controversy now and again – but only on relevant technological and business topics. Avoid subjects or analogies that might provoke an emotional or hostile response: religion, politics, warfare, personal relationships etc. 
+ 8. **Fit for purpose.** Is your content designed to persuade (e.g. an opinion piece), promote (e.g. a product description) or instruct (e.g. to guide a user through procedural steps)? Adjust your tone and your language accordingly.
 
 Clear? So now let's look at our 12 tips for brilliant writing. To win the reader's attention, and hold it, our content must be a pleasure to read. Our words must sparkle. Yet at the same time, it should all seem effortless; it can be a turnoff if it appears that the writer is trying too hard. 
 
@@ -64,8 +64,21 @@ Guidelines: 12 tips for sparkling content
  11. **Ask a colleague**. Still not 100% happy? A colleague should review the text and tell you if anything is unclear or if you could express yourself better. They might offer some useful fresh insights.
  12. **Now, relax**. If you are in the wrong frame of mind you will either get writer's block or your writing will be stiff and unnatural. Take your time. Remove any distractions. Keep things simple. 
 
-Content Guidelines 
+
+Twitter Guidelines 
 ==============================================================
+
+Composing Tweets: 
+
+1. **Avoid acronyms** - Avoid acronyms when possible. For example, say "pull request" instead of PR", since only a subset of Tweet readers will be active GitHub users. 
+2. **Use the active voice** - Avoid "has", "was", "have been" when possible. For example, instead of "Hackfest has started!" say "Hackfest starts now!" 
+3. **Include zero to one links, close to the end"** - Include no more than one link per tweet, and place it close to the end of the tweet. 
+
+
+Community Content Guidelines 
+==============================================================
+
+Content from community in GitHub, Forums, Feature Ideas, Community Mattermost site or any other community content site managed by Mattermost should follow Mattermost guidelines: 
 
 Content that is deemed to be controversial, offensive, potentially defamatory or infringing content from material distributed, broadcast, posted on websites will be edited or removed. 
 
