@@ -43,7 +43,7 @@ The commercial Mattermost Enterprise Edition extends the security and productivi
 
 #### Patch Management 
 * Critical updates are released for urgent, high priority security issues or critical losses of functionality that should not wait for the next bi-monthly release. 
-* Mattermost software has as mandatory upgrade policy and customers and users need to be on the latest release to receive critical updates. 
+* Mattermost software has a mandatory upgrade policy and customers and users need to be on the latest release to receive critical updates. 
 * Critical updates are delivered as dot releases, for example a critical update to release `3.1.0` would be named `3.1.1`.
 * Customers and subscribers to the Mattermost Insiders mailing list receive notification about all critical updates. 
 
@@ -170,7 +170,7 @@ In addition to checklists for quality and reliability, code changes receive mult
    - Yes. Security updates are announced via email to customers as well as mailing list subscribers. 
 
 1. Is there a specified response policy that includes the timeframe issues are to be addressed?
-   - Yes, please see: https://about.mattermost.com/support/
+   - Yes, please see: https://about.mattermost.com/support/ 
 
 
 ## Infrastructure Security Policies
@@ -243,7 +243,7 @@ Effect:
 - Reduced ability to continue sales operations
 
 Solution(s): 
-- While there is no current failover plan should our online CRM system become disrupted, we have SLAs with our CRM vendor--which is used by thousands of other organizations--and believe the probability out sustained outage is low. 
+- While there is no current failover plan should our online CRM system become disrupted, we have SLAs with our CRM vendor--which is used by thousands of other organizations--and believe the probability of sustained outage is low. 
 
 ### Priority 4: Outages greater than 10 days impacting business continuity 
 
@@ -253,6 +253,6 @@ Effect:
 - Reduced ability to continue HR and internal operations
 
 Solution(s): 
-- While there is no current failover plan should our online HR or intranet system become disrupted, we have SLAs with our  vendors--which is used by thousands of other organizations--and believe the probability out sustained outage is low. 
+- While there is no current failover plan should our online HR or intranet system become disrupted, we have SLAs with our  vendors--which is used by thousands of other organizations--and believe the probability of sustained outage is low. 
 
 
