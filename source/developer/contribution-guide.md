@@ -4,9 +4,9 @@ Thank you for your interest in contributing to Mattermost. Here's the process:
 
 ## Choose a Ticket
 
-1. Choose a ticket from the [Help Wanted GitHub Issues](https://github.com/mattermost/platform/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20%5BHelp%20Wanted%5D) or the [Accepting Pull Requests](https://mattermost.atlassian.net/issues/?filter=10101) (APR Tickets) list
+1. Choose a ticket from the [Help Wanted GitHub Issues](https://github.com/mattermost/platform/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20%5BHelp%20Wanted%5D) or the [Accepting Pull Requests](https://mattermost.atlassian.net/issues/?filter=10101) (APR Tickets) list.
     - Choose any ticket marked "Open", even if it's assigned, and comment to let people know you're working on it. 
-    - If you're looking for a quick ticket, pick something from the [Good First Contribution](https://mattermost.atlassian.net/issues/?filter=10206) list instead
+    - If you're looking for a quick ticket, pick something from the [Good First Contribution](https://mattermost.atlassian.net/issues/?filter=10206) list instead.
 
 2. If you have questions post in [Mattermost forum](http://forum.mattermost.org/) or join the [Contributors](https://pre-release.mattermost.com/core/channels/tickets) channel and announce the ticket you'd like to work on so it can be assigned to you. 
 
@@ -18,11 +18,11 @@ The best way to discuss opening an APR ticket with the core team is by [starting
 
 Once you have a ticket: 
 
-1. Follow [developer setup instructions](http://docs.mattermost.com/developer/developer-setup.html) to install Mattermost
+1. Follow the [developer setup instructions](http://docs.mattermost.com/developer/developer-setup.html) to install Mattermost.
 
-2. Create a branch with `<branch name>` set to the ID of the ticket you're working on, for example `PLT-394`, using command: `git checkout -b <branch name>`
+2. Create a branch with `<branch name>` set to the ID of the ticket you're working on, for example `PLT-394`, using the command: `git checkout -b <branch name>`
 
-3. Take a look at the [developer flow](https://docs.mattermost.com/developer/developer-flow.html) to learn how to work with the Mattermost codebase
+3. Take a look at the [developer flow](https://docs.mattermost.com/developer/developer-flow.html) to learn how to work with the Mattermost codebase.
 
 ## Preparing a Pull Request 
 
@@ -42,16 +42,16 @@ Before submitting a pull request (PR), check that:
 
 When submitting a PR, check that:  
 
-1. PR is submitted against `master`  
-2. PR title begins with the Jira Ticket ID (eg `PLT-394:`, [see examples](https://github.com/mattermost/platform/pulls?q=is%3Apr+is%3Aclosed))  
-3. PR comment describes the changes and how the feature is supposed to work  
+1. PR is submitted against `master`
+2. PR title begins with the Jira Ticket ID (eg `PLT-394:`, [see examples](https://github.com/mattermost/platform/pulls?q=is%3Apr+is%3Aclosed))
+3. PR comment describes the changes and how the feature is supposed to work
 
 ## Managing an Open Pull Request 
 
 After submitting a PR, before it is merged:  
 
 1. Automated build process must pass  
-    - If the build fails, check the error log to narrow down the reason . 
+    - If the build fails, check the error log to narrow down the reason. 
     - Sometimes one of the multiple build tests will randomly fail due to issues in Travis CI. If you see just one build failure and no clear error message, it may be a random issue. Add a comment so the reviewer for your change can re-run the build for you, or close the PR and re-submit and that typically clears the issue. 
 2. PM review must pass
     - A Product Manager will review the pull request to make sure it:
