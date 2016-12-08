@@ -26,6 +26,15 @@ When answering a common question, always include a link to the docs so the perso
 
 During the triage process, if the information missed should have obviously been included, assign the ticket to the earliest approver for the doc PR, otherwise assign to doc PR author. 
 
+3. Avoid speculation 
+----------------------------------------------------------------------------
+
+Circumstances change frequently. Don't set expectations for something that you're not 100% sure will happen. If it doesn't happen, people will be more upset than if you didn't say anything. 
+
+For example, if you haven't seen a feature merged into a specific product in a specific edition, don't tell people the feature will be in until you see it merged. 
+
+
+
 Speaking in the Voice of Mattermost 
 ============================================================================
 
