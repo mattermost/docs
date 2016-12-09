@@ -5,6 +5,8 @@ Basic formatting such as bold and italic can be included in the ``text`` field o
 
 For more advanced formatting, it is necessary to send an ``attachments`` array in the payload sent by an integration.
 
+There is no support for attachments in Slash commands [as of yet](https://github.com/mattermost/platform/issues/4238)
+
 ---------------------------
 
 |
