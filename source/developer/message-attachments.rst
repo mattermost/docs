@@ -1,11 +1,11 @@
 Message Attachments
 -------------------
 
-Basic formatting such as bold and italic can be included in the ``text`` field of an integration’s payload by using markdown.
+A wide range of rich text formatting options, including bold, italic, headings, in-line images, and tables, can be used in integrations using `Mattermost markdown support <https://docs.mattermost.com/help/messaging/formatting-text.html>`_.
 
-For more advanced formatting, it is necessary to send an ``attachments`` array in the payload sent by an integration.
+For additional formatting options, and for compatibility with Slack non-markdown integrations, an ``attachments`` array can be sent by integrations and rendered by Mattermost. 
 
-There is no support for attachments in Slash commands [as of yet](https://github.com/mattermost/platform/issues/4238)
+Note: Attachment support is available for webhook integrations and not yet available for slash commands. `There is a Help Wanted issue available for community to add attachment support for slash commands <https://github.com/mattermost/platform/issues/4238>`_
 
 ---------------------------
 
