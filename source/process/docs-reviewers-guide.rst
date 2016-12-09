@@ -60,9 +60,9 @@ The following lists roles involved in the PR review process:
 
 - **Approved Contributor** - Anyone who's completed the CLA. This is the minimum role to submit a PR for review. 
 - **Project Member** - Approved Contributor granted ability to apply labels. Often a staff member from Mattermost, Inc. 
-- **Project Member Reviewer on call** - Member assigned to review PRs in certain approval categories. 
-- **Project Member Verifier on call** - Member assigned to verify and acknowledge merged doc PRs. 
-- **Project Member Editor on call** - Member assigned to edit PRs with "Post-merge edit required".
+- **Project Member Reviewer on rotation** - Member assigned to review PRs in certain approval categories. If there is more than one person who can do a review, a rotation system is put in place so it's unambiguous who is responsible for a given review. 
+- **Project Member Verifier on rotation** - Member assigned to verify and acknowledge merged doc PRs. If there is more than one person who can do a review, a rotation system is put in place so it's unambiguous who is responsible for a given review. 
+- **Project Member Editor on rotation** - Member assigned to edit PRs with "Post-merge edit required". If there is more than one person who can do a review, a rotation system is put in place so it's unambiguous who is responsible for a given review. 
 
 Approved Contributors who are not Members can participate in the PR review process, and through consistent performance may be promoted to Members: 
 
@@ -75,13 +75,13 @@ Helping identify any items missed by Members is highly welcome and encouraged.
 PR Review Process for Reviewers 
 ---------------------------------------
 
-The following process is used determine how reviewers on-call leave feedback on doc PRs submitted: 
+The following process is used determine how reviewers on rotation leave feedback on doc PRs submitted: 
 
-1. **Reviewers** - Reviewers on call should `browse open doc PRs <https://github.com/mattermost/docs/pulls>`_ at least once daily while on-call, and leave feedback, approve or merge any open PRs.
-2. **Verifiers** - Verifier on call should `browse query of PRs needing verification XXX<linked_needed>`_ at least once daily while on-call and verify and acknowledge PRs as appropiate. If there's an issue, Verifier should message Reviewer to submit a PR to correct issues. 
-3. **Editors** - Editor on call should `browse query of PRs needing editing XXX<XXX>`_ daily and submit a PR with appropriate edits. 
+1. **Reviewers** - Reviewers on rotation should `browse open doc PRs <https://github.com/mattermost/docs/pulls>`_ at least once daily while on-call, and leave feedback, approve or merge any open PRs.
+2. **Verifiers** - Verifier on rotation should `browse query of PRs needing verification XXX<linked_needed>`_ at least once daily while on-call and verify and acknowledge PRs as appropiate. If there's an issue, Verifier should message Reviewer to submit a PR to correct issues. 
+3. **Editors** - Editor on rotation should `browse query of PRs needing editing XXX<XXX>`_ daily and submit a PR with appropriate edits to pages needing edits to meet the Style Guide. This can be done on production shortly after a merge, and ideally it will be done on staging after a staging server is made available. 
 
-XXX: The process for assigning on-call times is to-be-determined. 
+Rotation periods should be assigned on alternate weeks among people responsible for reviews and post-merge editing. 
 
 Reviewers 
 -------------
