@@ -1,8 +1,7 @@
 Statistics
 ================
 
-Statistics on users, posts and channels are tracked for each system and
-team. Enterprise Editions have access to advanced system statistics.
+Statistics on users, posts and channels are tracked for each system and team. Enterprise Editions have access to advanced system statistics.
 
 Site Statistics
 -----------------
@@ -39,7 +38,7 @@ Enterprise Edition includes additional system statistics.
 
 **Master DB Conns:** The number of active connections currently on your master database.
 
-**Replica DB Conns:** The number of active connections currently on one or more of `your read replica databases <https://docs.mattermost.com/deployment/cluster.html#database-configuration>`.
+**Replica DB Conns:** The number of active connections currently on one or more of `your read replica databases <https://docs.mattermost.com/deployment/cluster.html#database-configuration>`_.
 
 **Channel Types:** This chart displays the number of public channels and private groups in a visual format, including channels that may have been archived.
 
@@ -48,8 +47,7 @@ Enterprise Edition includes additional system statistics.
 Team Statistics
 ---------------
 
-Team Statistics are viewable under **System Console** > **Teams** >
-**Statistics**.
+Team Statistics are viewable under **System Console** > **Teams** > **Statistics**.
 
 **Total Users:** The total number of accounts created on your system, including both active and inactive accounts.
 
