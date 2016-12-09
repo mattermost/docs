@@ -74,12 +74,4 @@ Composing Tweets:
 2. **Use the active voice** - Avoid "has", "was", "have been" when possible. For example, instead of "Hackfest has started!" say "Hackfest starts now!" 
 3. **Include zero to one links, close to the end"** - Include no more than one link per tweet, and place it close to the end of the tweet. 
 
-
-Community Content Guidelines 
-==============================================================
-
-Content from community in GitHub, Forums, Feature Ideas, Community Mattermost site or any other community content site managed by Mattermost should follow Mattermost guidelines: 
-
-Content that is deemed to be controversial, offensive, potentially defamatory or infringing content from material distributed, broadcast, or posted on websites will be edited or removed. 
-
-We ask the community's help in reporting any such content to feedback@mattermost.com   
+   
