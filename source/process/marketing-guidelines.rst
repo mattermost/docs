@@ -72,6 +72,6 @@ Composing Tweets:
 
 1. **Avoid acronyms** - Avoid acronyms when possible. For example, say "pull request" instead of PR", since only a subset of Tweet readers will be active GitHub users. 
 2. **Use the active voice** - Avoid "has", "was", "have been" when possible. For example, instead of "Hackfest has started!" say "Hackfest starts now!" 
-3. **Include zero to one links, close to the end"** - Include no more than one link per tweet, and place it close to the end of the tweet. 
+3. **Include no more than one link"** - Include no more than one link per tweet, and place it close to the end of the tweet. 
 
    
