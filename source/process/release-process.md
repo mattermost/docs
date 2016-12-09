@@ -111,8 +111,9 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - (Logistics) Walk through each unfinished item of this checklist  
     - (Dev) Last check of tickets that need to be merged before RC1  
 5. Build:  
-    - Review all `XXX FIXME` notes 
-    - Master is tagged and branched and “Release Candidate 1″ is cut (e.g. 1.1.0-RC1) according to the Release Candidate Checklist in ``mattermost/process``
+    - Review all `TODO` notes 
+    - Master is tagged and branched and “Release Candidate 1″ is cut (e.g. 3.5.0-RC1) according to the Release Candidate Checklist in ``mattermost/process``
+    - After branching, the database version in sql_upgrade.go on master is set to the next scheduled release version (e.g. 3.6.0)
     - CI servers are updated to the release branch
     - Translation server is locked to the release branch
     - Directory structure is reviewed and large changes posted to the Release Discussion channel
