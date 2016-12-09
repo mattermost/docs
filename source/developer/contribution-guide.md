@@ -67,9 +67,6 @@ If you've included your mailing address in the signed [Contributor License Agree
 
 ### Approved Reviewers
 
-_Please DO NOT @-mention reviewers if they haven't yet commented on your PR._
-_Pull requests are reviewed in sequence._
+**Approved Dev reviewers include**: coreyhulen, crspeller, enahum, grundleborg, hmhealey, jwilander
 
-**Approved reviewers include**: coreyhulen, crspeller, enahum, grundleborg, hmhealey, jwilander  
-
-**Approved seconders include**: coreyhulen, crspeller, enahum, grundleborg, hmhealey, jwilander
+**Approved PM reviewers include**: asaadmahmood, esethna, it33, jasonblais, lfbrock, yangchen1
