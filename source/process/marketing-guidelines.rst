@@ -2,6 +2,8 @@
 Mattermost Community Content Guidelines
 ============================================================
 
+The following guidelines are designed to help community members contributing guest blog posts or proposing Twitter content, as well as for staff at Mattermost, Inc. engaging through community channels. 
+
 How to write purposefully and persuasively 
 ==============================================================
 
