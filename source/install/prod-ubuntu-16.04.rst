@@ -159,7 +159,7 @@ For the purposes of this guide we will assume this server has an IP address of `
 
    -  Run the Mattermost Server by typing::
 
-       ./platform
+       sudo -u mattermost ./platform
 
    -  You should see a console log like ``Server is listening on :8065``
       letting you know the service is running.

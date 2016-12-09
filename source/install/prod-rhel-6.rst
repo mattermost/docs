@@ -144,8 +144,7 @@ Set up Mattermost Server
 
    -  ``cd /opt/mattermost/bin``
    -  Run the Mattermost Server by typing:
-   -  ``sudo su mattermost``
-   -  ``./platform``
+   -  ``sudo -u mattermost ./platform``
    -  You should see a console log like ``Server is listening on :8065``
       letting you know the service is running.
    -  Stop the server for now by typing ``Ctrl-C``
