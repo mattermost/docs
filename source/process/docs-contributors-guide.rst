@@ -27,7 +27,7 @@ PR Review Process for Contributors
 
 2. **Triage** - Project Member assigned to triage reviews doc repo within 1-2 working days and applies the `appropriate "Needs ... Approval" labels to indicate required approvals XXX <XXX>`_. Use **Saved Reply** template linked to this page to let submitter know what to expect.
 
-3. **Reviews** - Within 5-10 working days, for each `"Needs ... Approval" XXX <link to labels explaination>`_ label, reviewers on call either a) leave feedback or b) mark PR "Approved" and remove the appropriate label. The reviewer requiring changes adds "Awaiting Submitter Action" label if it is not yet applied. After submitter addresses feedback, the 5-10 working day clock restarts.
+3. **Reviews** - Within 5-10 working days, for each `"Needs ... Approval" XXX <link to labels explaination>`_ label, reviewers on rotation either a) leave feedback or b) mark PR "Approved" and remove the appropriate label. The reviewer requiring changes adds "Awaiting Submitter Action" label if it is not yet applied. After submitter addresses feedback, the 5-10 working day clock restarts.
 
 4. **Merge** - When all "approval required" labels are removed, the last approver reviewing merges the PR.
 
