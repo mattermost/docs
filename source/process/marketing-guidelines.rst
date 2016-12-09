@@ -80,6 +80,6 @@ Community Content Guidelines
 
 Content from community in GitHub, Forums, Feature Ideas, Community Mattermost site or any other community content site managed by Mattermost should follow Mattermost guidelines: 
 
-Content that is deemed to be controversial, offensive, potentially defamatory or infringing content from material distributed, broadcast, posted on websites will be edited or removed. 
+Content that is deemed to be controversial, offensive, potentially defamatory or infringing content from material distributed, broadcast, or posted on websites will be edited or removed. 
 
 We ask the community's help in reporting any such content to feedback@mattermost.com   
