@@ -2,14 +2,10 @@
 Community Engagement Guidelines 
 =======================================
 
-
-
+Below is a list of guidelines for maintainers, key contributors and Mattermost, Inc. staff to use when engaging with the broader community in forums, GitHub issues, Twitter, our Mattermost servers and other places of online conversation. 
 
 Best Practices 
 ============================================================================
-
-Below is a list of best practices for community engagement 
-
 
 1. Don't offer advice on database modification without a clear warning
 ----------------------------------------------------------------------------
