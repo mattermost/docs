@@ -1,59 +1,62 @@
 Enterprise On-Boarding Overview
 ===============================
 
-This overview walks through best practices from Enterprise Edition customers on rolling out deployments for thousands of users. 
-
 Why Mattermost? 
 ---------------
 
-- Siloed communications 
-- Non-compliant storage of sensitive data
+- **Enterprise-scale messaging** as an alternative to team-limited solutions and siloed communications.
+- **Communications under IT control** meeting your specific security, privacy, compliance and reliability needs.
+- **Complete control** with deep white-labelling, extensions and integration with existing systems and processes. 
 
-Analysis 
---------
+Discovery 
+---------
 
-Look into different messaging solutions across organizations to estimate usage of an enterprise messaging solution. 
+**Requirements definition** is drafted after identifying stakeholders and priorities, including key requirements and scenarios. Development of high level solution design document and project plan to achieve priorities.
 
-- Average weekday users by timezone 
-- Peak hours  
+Design Planning 
+---------------
 
-Sizing & Planning 
------------------
+**Solution design plan** translating business requirements into specific plans, including: 
 
-- `Software and Hardware Requirements <https://docs.mattermost.com/install/requirements.html>`_
+- Infrastructure (hardware, software, and network resources) 
+- Staffing for rollout (project management, change management, technical operations, development staff for customziations)
+- Staffing for on-going support (help desk support and technical administration) 
+- Internal communications plan (announcements and materials for pilot, phased roll-out, training and resources) 
+- Customizations (plans for white-labelling, integrations, and micro-apps) 
+- Training (organizing and developing training content and delivery for end users, operations staff and developers)
 
-Pilot
+Pilot 
 -----
 
-- Feedback 
+**Pilot deployment** set up to evaluate solution prototype: 
 
-Scale Testing
--------------
+- Deploy Mattermost either manually using install guides or under your own orchestration framework using open source installers. 
+- Set up staging and production environments 
+- (Optional) Deploy Mattermost in high availability configuration.
+- (Optional) Deploy Mattermost Load Testing Framework (MLTF) to simulate production-level load. 
 
-- `Mattermost Load Testing <https://github.com/mattermost/mattermost-load-test#3-perform-the-following-optimizations-to-maximize-performance>`_
+**Verification and planning** for full-scale roll-out, including: 
 
-Import
-------
+- On-board pilot deployment users to evaluate the solution and to discuss and prioritize potential extensions and customizations. 
+- Monitor system load during pilot to project and prepare for production level deployment. 
+- Verification of security, privacy and compliance requirements 
 
-- ETL Process 
-- Slack Import
-- CLI Tool
-- AD/LDAP Groups Integration 
+Phased Roll-out 
+---------------
 
-Single-Sign-On
---------------
+Based on stakeholder priorities and pilot program feedback, customizations are developed prior to phrased roll-out: 
 
-Whitelabeling 
--------------
-
-- Login Screens 
-- Mobile Applications
-- Desktop Applications
-- Email Templates 
-- Web Experience 
+- Corporate directory integration 
+- Automated import of users and channels from other systems using CLI, APIs or drivers
+- Configuration of user accounts, default settings, roles and permissions  
+- Whitelabelling of login screens, email templates, and desktop and mobile applications 
 
 Rolling Invitations 
 -------------------
+
+- End users segmented and invitations email sent out in phases to ensure smooth on-boarding 
+- Feedback from user group meetings and surveys collected, analysized and incorporated into on-going plan 
+
 
 
 
