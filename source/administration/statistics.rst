@@ -3,7 +3,7 @@ Statistics
 
 Statistics on users, posts and channels are tracked for each system and team. Enterprise Editions have access to advanced system statistics.
 
-Site Statistics
+Site statistics
 -----------------
 
 System statistics are viewable under **System Console** > **Reporting** > **Site Statistics**. The data shown here is a cumulative sum
@@ -22,7 +22,7 @@ across all teams on the system.
 **Active Users With Posts (graph):** Users who logged in and made a post on a certain day in all the teams on your system, including system messages posted from the user's account.
 
 Advanced system statistics (Enterprise)
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Enterprise Edition includes additional system statistics.
 
@@ -44,7 +44,7 @@ Enterprise Edition includes additional system statistics.
 
 **Posts, Files and Hashtags:** This chart displays the number of posts containing files, hashtags or text-only. Posts containing both files and hashtags are counted in both categories.
 
-Team Statistics
+Team statistics
 ---------------
 
 Team Statistics are viewable under **System Console** > **Teams** > **Statistics**.
