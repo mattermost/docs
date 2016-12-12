@@ -114,7 +114,7 @@ downloading the Mattermost App.
       to access Mattermost. You can find the Server URL by asking your
       System Admin or by looking at the address bar in a desktop browser
       tab with Mattermost open. It is in the form
-      ``https://domain.com/``.
+      ``https://domain.com``.
    #. Sign in to Mattermost: This is your account login information as
       decribed by one of the sign in methods above.
 
