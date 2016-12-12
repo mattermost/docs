@@ -29,27 +29,31 @@ GitLab Single-Sign-On (SSO)
 When enabled by your System Admin, you can sign in using your GitLab
 account using a one-click sign in option.
 
-Google Single-Sign-On (`Enterprise Edition`_)
+Google Single-Sign-On
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E20*
 
 When enabled by your System Admin, you can sign in using your Google
 account using a one-click sign in option.
 
-Office 365 Single-Sign-On (Beta) (`Enterprise Edition`_)
+Office 365 Single-Sign-On (Beta)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E20*
 
 When enabled by your System Admin, you can sign in using your Office 365
 account using a one-click sign in option.
 
-AD/LDAP Sign In (`Enterprise Edition`_)
+AD/LDAP Sign In
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E10 & E20*
 
 When enabled by your System Admin, you can sign in with your AD/LDAP
 credentials. This lets you use the same username and password for
 Mattermost that you use for various other company services.
 
-SAML Single-Sign-On (SSO) (`Enterprise Edition`_)
+SAML Single-Sign-On (SSO)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E20*
 
 When enabled by your System Admin, you can sign in with your SAML
 credentials. This lets you use the same username and password for
@@ -114,7 +118,6 @@ downloading the Mattermost App.
    #. Sign in to Mattermost: This is your account login information as
       decribed by one of the sign in methods above.
 
-.. _Enterprise Edition: https://about.mattermost.com/pricing
 .. _Okta: http://developer.okta.com/docs/guides/saml_guidance.html
 .. _Microsoft ADFS: https://msdn.microsoft.com/en-us/library/bb897402.aspx
 .. _documentation: http://docs.mattermost.com/deployment/sso-saml.html
