@@ -3,9 +3,6 @@ Signing in
 
 --------------
 
-This documentation refers to Mattermost v3.0+. For v2.2, see `archived
-documentation`_.
-
 You can sign in to your team from the root page of your Mattermost site
 ``https://domain.com/``. After signing in, you will be able to view a
 list of your teams and select which one to open.
@@ -59,7 +56,7 @@ credentials. This lets you use the same username and password for
 Mattermost that you use for various other company services. Mattermost
 officially supports `Okta`_ and `Microsoft ADFS`_ as an identity
 provider (IDP) for SAML, but you may use other SAML IDPs as well. Please
-see `documentation` to learn more about configuring SAML for
+see `documentation`_ to learn more about configuring SAML for
 Mattermost.
 
 Switching Teams
@@ -93,7 +90,7 @@ downloading the Mattermost App.
       to access Mattermost. You can find the Server URL by asking your
       System Admin or by looking at the address bar in a desktop browser
       tab with Mattermost open. It is in the form
-      ``https://domain.com/``.
+      ``https://domain.com``.
    #. Sign in to Mattermost: This is your account login information as
       decribed by one of the sign in methods above.
 
@@ -117,7 +114,6 @@ downloading the Mattermost App.
    #. Sign in to Mattermost: This is your account login information as
       decribed by one of the sign in methods above.
 
-.. _archived documentation: http://docs.mattermost.com/archives/docs-v2.2.html#signing-in
 .. _Enterprise Edition: https://about.mattermost.com/pricing/
 .. _Okta: http://developer.okta.com/docs/guides/saml_guidance.html
 .. _Microsoft ADFS: https://msdn.microsoft.com/en-us/library/bb897402.aspx
