@@ -55,7 +55,7 @@ In addition to `Mattermost Account Settings <https://docs.mattermost.com/help/se
 
 The options appear in the Settings page, available from the `File` menu under `Settings`.
 
-Description of each setting is included below this table.
+A description of each setting is included below this table.
 
 +-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+
 | Setting                                                                       | Windows                   | Mac                       | Linux                     |
