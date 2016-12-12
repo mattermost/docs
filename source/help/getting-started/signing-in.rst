@@ -4,7 +4,7 @@ Signing in
 --------------
 
 You can sign in to your team from the root page of your Mattermost site
-``https://domain.com/``. After signing in, you will be able to view a
+``https://domain.com``. After signing in, you will be able to view a
 list of your teams and select which one to open.
 
 Sign In Methods
