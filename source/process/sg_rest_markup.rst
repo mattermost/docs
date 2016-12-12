@@ -31,15 +31,15 @@ If your document has more than one section, use the - character for the section 
   Section titles
   --------------
 
-If you do need subsections, use the the ^ character for the first subsection level, and the \` character for the second subsection level. For example:
+If you do need subsections, use the the ~ character for the first subsection level, and the ^ character for the second subsection level. For example:
 
 .. code-block:: none
   
   Subsection One
-  ^^^^^^^^^^^^^^
+  ~~~~~~~~~~~~~~
   
   Subsection Two
-  ``````````````
+  ^^^^^^^^^^^^^^
   
 Inline markup
 -------------
