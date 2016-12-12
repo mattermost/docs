@@ -9,17 +9,17 @@ Site statistics
 System statistics are viewable under **System Console** > **Reporting** > **Site Statistics**. The data shown here is a cumulative sum
 across all teams on the system.
 
-**Total Users:** The total number of accounts created on your system, including both active and inactive accounts.
+**Total Users:** The total number of active accounts created on your system. Excludes inactive accounts.
 
-**Total Teams:** The total number of teams created on your system, including deleted teams.
+**Total Teams:** The total number of teams created on your system.
 
 **Total Posts:** The total number of posts made in all the teams on your system, including deleted posts and posts made using automation.
 
-**Total Channels:** The total number of channels created in all the teams on your system, including deleted channels.
+**Total Channels:** The total number of public channels and private groups created in all the teams on your system, including deleted channels. Doesn't include direct message channels.
 
 **Total Posts (graph):** The total number of posts made on a certain day in all the teams on your system, including deleted posts and posts made using automation.
 
-**Active Users With Posts (graph):** Users who logged in and made a post on a certain day in all the teams on your system, including system messages posted from the user's account.
+**Active Users With Posts (graph):** Users who made a post on a certain day in all the teams on your system, including system messages posted from the user's account.
 
 Advanced system statistics (Enterprise)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -42,24 +42,24 @@ Enterprise Edition includes additional system statistics.
 
 **Channel Types:** This chart displays the number of public channels and private groups in a visual format, including channels that may have been archived.
 
-**Posts, Files and Hashtags:** This chart displays the number of posts containing files, hashtags or text-only. Posts containing both files and hashtags are counted in both categories.
+**Posts, Files and Hashtags:** This chart displays the number of posts containing files, hashtags or text-only. Posts containing both files and hashtags are counted in both categories, and deleted posts are included.
 
 Team statistics
 ---------------
 
 Team Statistics are viewable under **System Console** > **Teams** > **Statistics**.
 
-**Total Users:** The total number of accounts created on your system, including both active and inactive accounts.
+**Total Users:** The total number of active accounts who are members of this team. Excludes inactive accounts.
 
-**Public Channels:** The number of public channels created by your team, including channels that may have been archived.
+**Public Channels:** The number of public channels created in this team. Doesn't include archived channels.
 
-**Private Groups:** The number of private groups created by your team, including groups that may have been archived.
+**Private Groups:** The number of private groups created in this team. Doesn't include archived groups.
 
-**Total Posts:** The total number of posts made in all the teams on your system, including deleted posts and posts made using automation.
+**Total Posts:** The total number of posts made in this team, including deleted posts and posts made using automation.
 
-**Total Posts (graph):** The total number of posts made on a certain day in all the teams on your system, including deleted posts and posts made using automation.
+**Total Posts (graph):** The total number of posts made on a certain day in this team, including deleted posts and posts made using automation.
 
-**Active Users With Posts (graph):** Users who logged in and made a post on a certain day in all the teams on your system, including system messages posted from the user's account.
+**Active Users With Posts (graph):** Users who made a post on a certain day in this team, including system messages posted from the user's account.
 
 **Recent Active Users:** Users that have logged in and had recent browser activity in Mattermost.
 
