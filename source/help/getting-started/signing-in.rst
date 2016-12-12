@@ -114,7 +114,7 @@ downloading the Mattermost App.
    #. Sign in to Mattermost: This is your account login information as
       decribed by one of the sign in methods above.
 
-.. _Enterprise Edition: https://about.mattermost.com/pricing/
+.. _Enterprise Edition: https://about.mattermost.com/pricing
 .. _Okta: http://developer.okta.com/docs/guides/saml_guidance.html
 .. _Microsoft ADFS: https://msdn.microsoft.com/en-us/library/bb897402.aspx
 .. _documentation: http://docs.mattermost.com/deployment/sso-saml.html
