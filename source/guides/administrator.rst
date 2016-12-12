@@ -11,7 +11,7 @@ Installing Mattermost
    :glob:
 
    /install/requirements.rst
-   Installing on Ubuntu 14.04 LTS </install/install-ubuntu-1404-overview.rst>
+   Installing on Ubuntu 14.04 LTS </install/install-ubuntu-1404.rst>
    /install/docker-local*
    /install/docker-ebs*
    /install/ee-install*

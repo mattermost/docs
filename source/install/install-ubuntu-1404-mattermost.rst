@@ -91,3 +91,5 @@ Assume that the IP address of this server is 10.10.10.2
    -  You should see a page titles *Mattermost - Signup*
    -  You can also stop the process by running the command
       ``sudo stop mattermost``, but we will skip this step for now.
+
+In a production environment, you should install NGINX. Using NGINX as a proxy server increases the security and performance of your Mattermost installation. See :ref:`install-nginx`

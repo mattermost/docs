@@ -15,15 +15,12 @@ The main benefits of using a proxy are as follows:
 **To install NGINX on Ubuntu Server:**
 
 1. Log into the server that will host the proxy and open a terminal window.
-2. Make sure that your package index is up to date. 
 
-  ``sudo apt-get update``
-
-3. Install NGINX.
+2. Install NGINX.
 
   ``sudo apt-get install nginx``
 
-4. After the installation is complete, verify that NGINX is running.
+3. After the installation is complete, verify that NGINX is running.
 
   ``curl http://localhost``
   
@@ -56,6 +53,3 @@ The main benefits of using a proxy are as follows:
 
 1. Map a fully qualified domain name (FQDN) such as ``mattermost.example.com`` to point to the NGINX server.
 2. Configure NGINX to proxy connections from the internet to the Mattermost Server.
-
-**Related links**
-  - :ref:`config-proxy-nginx` 

@@ -1,25 +1,23 @@
-Installing Ubuntu Server 14.04 LTS
-==================================
+.. _install-ubuntu-1404:
 
-Install Ubuntu Server on each machine that hosts one or more of the components. In most cases you need the 64-bit version.
+=========================================
+Installing Mattermost on Ubuntu 14.04 LTS
+=========================================
 
-You can use the 32-bit version on a machine that hosts the database and proxy server, but the Mattermost server requires 64-bit.
+Install a production-ready Mattermost system on 1 to 3 machines.
 
-**To install Ubuntu Server:**
+.. include:: install-common-intro.rst
 
-1. Download the appropriate ISO image from http://releases.ubuntu.com/14.04.5/ and burn it to a CD-ROM.
-
-2. Boot the system from the CD-ROM drive and follow the on-screen prompts.
-
-3. After the system is installed, make sure that it's up to date with the most recent security patches. Open a terminal window and issue the following commands:
-
-   -  ``sudo apt-get update``
-   -  ``sudo apt-get upgrade``
-
-**What to do next**
-
-Install a database. You can install either MySQL 5.6 or PostgreSQL version 9.3 or later.
-
-**Related links**
-  - :ref:`install-ubuntu-1404-mysql`
-  - :ref:`install-ubuntu-1404-postgresql`
+.. contents:: Install and configure the components in the following order. Note that you need only one database, either MySQL or PostgrSQL.
+  :backlinks: top
+  :local:
+  
+.. include:: install-ubuntu-1404-server.rst
+.. include:: install-ubuntu-1404-mysql.rst
+.. include:: install-ubuntu-1404-postgresql.rst
+.. include:: install-ubuntu-1404-mattermost.rst
+.. include:: config-mattermost-server.rst
+.. include:: config-tls-mattermost.rst
+.. include:: install-nginx.rst
+.. include:: config-proxy-nginx.rst
+.. include:: config-ssl-http2-nginx.rst

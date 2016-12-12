@@ -80,6 +80,3 @@ Configuring NGINX as a proxy for Mattermost Server
 **What to do next**
 
 You can configure NGINX to use SSL. This will allow you to use HTTPS connections and the HTTP/2 protocol.
-
-**Related links**
-  - :ref:`config-ssl-http2-nginx`

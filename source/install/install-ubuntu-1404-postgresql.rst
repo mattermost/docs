@@ -3,7 +3,7 @@
 Installing PostgreSQL Database Server
 ====================================
 
-Mattermost supports either PostgreSQL or MySQL.
+You can install either PostgreSQL or MySQL. To install MySQL, see :ref:`install-ubuntu-1404-mysql`
 
 Assume that the IP address of this server is 10.10.10.1
 
@@ -47,8 +47,7 @@ Assume that the IP address of this server is 10.10.10.1
     -  ``sudo vi /etc/postgresql/9.3/main/postgresql.conf``
     -  Uncomment ``listen_addresses`` and change ``localhost`` to ``*``
 
-10. Alter pg\_hba.conf to allow the mattermost server to talk to the
-    postgres database
+10. Modify ``pg_hba.conf`` to allow the mattermost server to talk to the postgres database. Assume that the Mattermost server IP address is ``10.10.10.2``
 
     -  ``sudo vi /etc/postgresql/9.3/main/pg_hba.conf``
     -  Add the following line to the ``IPv4 local connections``
@@ -75,6 +74,3 @@ Assume that the IP address of this server is 10.10.10.1
 **What to do next**
 
 In a production environment, you should install NGINX. Using NGINX as a proxy server increases the security and performance of your Mattermost installation.
-
-**Related links**
-  - :ref:`install-nginx`
