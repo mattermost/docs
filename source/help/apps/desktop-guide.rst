@@ -1,5 +1,5 @@
 ===================================
-Desktop Application's User Guide
+Using Mattermost Desktop App
 ===================================
 
 Mattermost desktop applications are available for Windows, Mac and Linux operating systems. 

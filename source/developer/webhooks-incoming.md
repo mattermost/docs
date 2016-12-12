@@ -39,7 +39,7 @@ Incoming webhooks should be enabled on your Mattermost instance by default, but 
 1. Login to your Mattermost team account that has the system administrator role
 1. Enable incoming webhooks from **System Console** > **Integrations** > **Webhooks and Commands**
 1. (Optional) Configure the **Enable Overriding of Usernames from Webhooks** option to allow external applications to post messages under any name. If not enabled, the username of the creator of the webhook URL is used to post messages
-2. (Optional) Configure the **Enable Overriding of Icon from Webhooks** option to allow external applciations to change the icon of the account posting messages. If not enabled, the icon of the creator of the webhook URL is used to post messages
+2. (Optional) Configure the **Enable Overriding of Icon from Webhooks** option to allow external applications to change the icon of the account posting messages. If not enabled, the icon of the creator of the webhook URL is used to post messages
 
 ### Setting Up Existing Integrations
 If you've already found or built an integration and are just looking to hook it up, then you should just need to follow the specific instructions of that integration. If the integration is using Mattermost incoming webhooks, then at some point in the instructions it will ask for a webhook URL. You can get this URL by following the first step in the next section _Creating Integrations using Incoming Webhooks_.

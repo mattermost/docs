@@ -3,13 +3,10 @@
 Production Install on RHEL 6.6
 ==============================
 
-Install Mattermost in production mode on one, two or three machines, using the following steps: 
-
-- `Install Red Hat Enterprise Linux (x64) 6.6`_
-- `Set up Database Server`_
-- `Set up Mattermost Server`_
-- `Set up NGINX Server`_
-- `Test setup and configure Mattermost Server`_
+Install Mattermost in production mode on one, two or three machines.
+ 
+.. contents::
+  :backlinks: top
 
 Install Red Hat Enterprise Linux (x64) 6.6
 ------------------------------------------

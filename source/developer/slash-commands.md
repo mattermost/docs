@@ -107,7 +107,7 @@ Additional Notes:
 
 1. As mentioned previously, [markdown](http://docs.mattermost.com/help/messaging/formatting-text.html) can be used to create richly formatted responses, for example: ```{"text": "# A Header\nThe _text_ below **the** header."}``` creates a messages with a header, a carriage return, italicized text for "text" and bold text for "the"
 
-2. Including `@username` will trigger a mention notification for the person with the specified username, and channels can be mentioned by including `@channel` or `<!channel>`. For example:  ```{"text": "<!channel> this is a notification""}``` would create a message that mentions `@channel` 
+2. Including `@username` will trigger a mention notification for the person with the specified username, and channels can be mentioned by including `@channel` or `<!channel>`. For example:  ```{"text": "<!channel> this is a notification"}``` would create a message that mentions `@channel` 
 
 3. Just like regular posts, the text in a response will be limited to 4000 characters at maximum
 

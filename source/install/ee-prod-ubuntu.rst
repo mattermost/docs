@@ -3,14 +3,10 @@
 Production Enterprise Install on Ubuntu 14.04 LTS
 =================================================
 
-Install Mattermost Enterprise Edition in production mode on one, two or three machines, using the following steps: 
-
-- `Install Ubuntu Server (x64) 14.04 LTS`_
-- `Set up Database Server`_
-- `Set up Mattermost Server`_
-- `Set up NGINX Server`_
-- `Test setup and configure Mattermost Server`_
-
+Install Mattermost Enterprise Edition in production mode on one, two or three machines.
+ 
+.. contents::
+  :backlinks: top
 
 Install Ubuntu Server (x64) 14.04 LTS
 -------------------------------------

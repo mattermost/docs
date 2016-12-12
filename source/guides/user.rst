@@ -7,7 +7,7 @@ Getting Started
 ===============
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
    /help/getting-started/signing-in.md
@@ -18,12 +18,13 @@ Getting Started
    /help/getting-started/creating-teams.md
    /help/getting-started/managing-members.md
    /help/getting-started/organizing.rst
+   /help/apps/desktop-guide.rst
 
 Messaging
 =========
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
    /help/messaging/sending-messages.md
@@ -38,7 +39,7 @@ Settings
 ========
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :titlesonly:
    :glob:
 

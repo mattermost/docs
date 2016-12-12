@@ -16,7 +16,8 @@ Installing Mattermost
    /install/docker-ebs*
    /install/ee-install*
    /install/prod-rhel*
-   /install/prod*
+   /install/prod-debian*
+   /install/prod-docker*
    /install/setup-tls*
    /install/smtp*
    /install/troubleshooting*
@@ -35,7 +36,7 @@ Deployment
 ----------
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
    /deployment/on-boarding*
@@ -48,19 +49,29 @@ Deployment
    /deployment/sso-gitlab*
    /deployment/sso-google*
    /deployment/sso-office*
-   /deployment/webrtc*
 
 Administration
 --------------
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
    /administration/command*
    /administration/config*
    /administration/team-settings.md
    /administration/statistics.md
+   /administration/compliance*
+   /administration/branding*
+   /administration/backup*
    /administration/upgrade.md
    /administration/migrating.md
-   /administration/[!_upgrade-guide]*
+   
+Changelog
+=========
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+
+   /administration/changelog*

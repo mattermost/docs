@@ -7,7 +7,7 @@ Development Process
 =========================
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
    /process/overview*
@@ -17,12 +17,19 @@ Development Process
    /process/documentation-guidelines*
    /process/marketing-guidelines*
 
+Documentation Style Guide
+=========================
+
+.. toctree::
+   :maxdepth: 3
+
+   /process/sg_mattermost-doc-style.rst
 
 Joining the Team 
 =========================
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
    /process/handbook*
@@ -30,4 +37,3 @@ Joining the Team
    /process/security*
    /process/training*
    /process/people-ops*
-

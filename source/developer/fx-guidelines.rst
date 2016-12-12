@@ -418,6 +418,7 @@ Error message should not:
 - Say or have the term “Error”.
 - Be lengthy.
 - Be generic.
+- End in an exclamation point.
 
 **Examples:**
 
