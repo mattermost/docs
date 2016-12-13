@@ -45,7 +45,7 @@ To keep Mattermost “obvious” to users, please keep community discussion, doc
 **Effective**
 
 - Start with what’s important, and leave less important details to the end, or omit them
-- Focus on achieving understanding in the reader, over total correctness or completeness.
+- Focus on achieving understanding in the reader, over total correctness or completeness
 
 **Ready-to-translate**
 
@@ -70,8 +70,12 @@ The sentence would be more ready-to-translate to say “There are a few configur
 Testing our documentation:
 ------------------------------------------------
 
-One “trick” to use to review content is to ask: “How would Agent Coulson explain this concept to Thor? [1]”
+One technique to use to review content is to ask: “How would Agent Coulson explain this concept to Thor?” [1]
 
 Agent Coulson takes complex ideas and explains them simply and effectively. Thor isn’t from earth, so we have to filter out ideas that are culturally specific-–fiddles, baseball, wedding rings, etc.--and that makes things easy-to-translate.
 
-As a communications company, clarity matters. If you see content that doesn't speak in the "Voice of Mattermost", we’d gladly take bugs and pull requests.
+As a communications company, clarity matters. If you see content that doesn't speak in the "Voice of Mattermost", we’d gladly accept issue reports and pull requests.
+
+[1] This example relies on knowledge of the 2012 movie "Avengers", which we consider a "global" reference, not a culture-specific reference, since it achieved `record-breaking sales <https://en.wikipedia.org/wiki/The_Avengers_(2012_film)>`_ around the world--in the United States, Mexico, Brazil, Ecuador, Bolivia, Taiwan, the Philippines, Hong Kong, the United Arab Emirates, Argentina, Peru and Central America, among other regions. 
+
+
