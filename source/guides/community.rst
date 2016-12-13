@@ -18,7 +18,7 @@ Never give DB advice without a warning similar to: `Manual database modification
 When answering a common question, always include a link to the docs so the person asking--along with people in future who read your response. If no doc exists, do one of two things: 
 
 1. Add the  the documentation, then answer the question with a link to the information, or 
-2. Answer the question and open a ticket for the missing information to be added to docs
+2. Answer the question and open a ticket for the missing information to be added to docs.
 
 During the triage process, if the information missed should have obviously been included, assign the ticket to the earliest approver for the doc PR, otherwise assign to doc PR author. 
 
@@ -44,13 +44,13 @@ To keep Mattermost “obvious” to users, please keep community discussion, doc
 
 **Effective**
 
-- Start with what’s important, and leave less important details to the end, or omit them
-- Focus on achieving understanding in the reader, over total correctness or completeness
+- Start with what’s important, and leave less important details to the end, or omit them.
+- Focus on achieving understanding in the reader, over total correctness or completeness.
 
 **Ready-to-translate**
 
-- Avoid slang
-- Avoid Western-centric, or culture-centric examples (example: instead of “fiddle with settings”, say “adjust settings”)
+- Avoid slang.
+- Avoid Western-centric, or culture-centric examples (example: instead of “fiddle with settings”, say “adjust settings”).
 
 If you’re not sure, try using machine translation to turn your content into a foreign language then back into English.
 
@@ -63,7 +63,7 @@ Here’s an example of culture-specific content with the word “fiddle” (mean
 
 That documentation machine-translated into German and then back into English looks like this:
 
-  There are some configuration settings you could know if your instance Matter Most violin
+  There are some configuration settings you could know if your instance Matter Most violin.
 
 The sentence would be more ready-to-translate to say “There are a few configuration settings you can adjust when setting up your instance of Mattermost.”
 
