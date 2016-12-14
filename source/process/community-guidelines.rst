@@ -31,7 +31,7 @@ Before creating a help wanted issue in the `platform repository <https://github.
 - JIRA can be used to prioritize help wanted issues internally
 - each issue goes through `Triage meeting <https://docs.mattermost.com/process/training.html#triage-meeting>`_ to ensure the ticket is clear and is approved by at least one developer and product manager
 
-When creating a help wanted issue, please ensure it:
+When creating a help wanted issue, please ensure it contains the following (`see a sample help wanted issue here <https://github.com/mattermost/platform/issues/4755>`_):
 
 - is well-defined and unambiguous
  
