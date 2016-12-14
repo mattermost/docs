@@ -41,3 +41,9 @@ To install PostgreSQL, see :ref:`install-ubuntu-1404-postgresql`
 6. Grant access privileges to the user 'mmuser'
 
   ``mysql> grant all privileges on mattermost.* to 'mmuser'@'%';``
+
+7. Log out of MySQL.
+
+  ``mysql> exit``
+
+With the database installed and the initial setup complete, you can now install the Mattermost server.
