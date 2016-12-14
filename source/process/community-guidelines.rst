@@ -100,10 +100,10 @@ Response timeline
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Things only Mattermost knows: Respond right away (such as bugs in recent release)
-- Enterprise Edition issues: Respond right away, as these are customers or potential customers. CM posts to Key Contributors room.
+- Enterprise Edition issues: Respond right away, as these are customers or potential customers. CM posts to Community channel.
 - Places where community can help:
   - Wait 24 hours then CM nudges community or routes (feature idea, troubleshooting, etc.)
-  - If 48 hours go by without community response, CM nudges Contributors room (which includes core team) by asking for someone to help answer
+  - If 48 hours go by without community response, CM nudges Contributors channel (which includes core team) by asking for someone to help answer
   - If 72 hours go by and no one in Contributors room has stepped up, then CM (at)-mentions the PM who's managing community issues that week, who can take ownership of responding or routing to someone either in community or core team.
 - On holidays, let the community step up
 
@@ -137,5 +137,5 @@ Resolving issues
 Elevating the community
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- CM post questions and/or answers in Community room that s/he thinks are well-written
-- If a core team member agrees/confirms that the question or answer is good, then CM posts in Key Contributors room asking core team members and key contributors to go “Like” the answer
+- CM post questions and/or answers in Contributors room that s/he thinks are well-written
+- If a core team member agrees/confirms that the question or answer is good, then CM posts in Contributors room asking core team members and key contributors to go “Like” the answer
