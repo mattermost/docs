@@ -1,4 +1,4 @@
-Mattermost Desktop Application Changelog
+Desktop Application Changelog
 ========================================
 
 Release v3.5.0
@@ -118,28 +118,17 @@ Release v3.4.1
 
 Release date: September 30, 2016
 
-Bug Fixes
-~~~~~~~~~
+This release contains a security update and it is highly recommended that users upgrade to this version.
 
-Mac
-^^^
+Version number updated to 3.4 to make numbering consistent with Mattermost server and mobile app releases. This change will not imply bi-monthly releases.
 
--  Fixed an issue where the app window pops up second to foreground when
-   a new message is received
+-  v3.4.1, released 2016-09-30
 
---------------
+   -  (Mac) Fixed an issue where the app window pops up second to foreground when a new message is received
 
-Release v3.4.0
---------------
+-  v3.4.0, released 2016-09-22
 
-Release date: September 22, 2016
-
-This release contains a security update and it is highly recommended
-that users upgrade to this version.
-
-Version number updated to 3.4 to make numbering consistent with
-Mattermost server and mobile app releases. This change will not imply
-monthly releases.
+   -  Original v3.4 release
 
 Improvements
 ~~~~~~~~~~~~
@@ -240,8 +229,8 @@ Windows
 
 -  Copying a link address and pasting it inside the app doesn't work
 
-Linux
-^^^^^
+Linux (Beta)
+^^^^^^^^^^^^
 
 -  [Ubuntu - 64 bit] Right clicking taskbar icon and choosing **Quit**
    only minimizes the app
@@ -384,8 +373,8 @@ Mac
 Known Issues
 ~~~~~~~~~~~~
 
-Linux
-^^^^^
+Linux (Beta)
+^^^^^^^^^^^^^
 
 -  [Ubuntu - 64 bit] Right clicking taskbar icon and choosing **Quit**
    only minimizes the app
@@ -410,75 +399,64 @@ Many thanks to all our contributors. In alphabetical order:
 --------------
 
 Release v1.2.1 (Beta)
----------------------
+-----------------------------
 
-Fixes
-~~~~~
+Release date: 2016-05-24
 
--  Fixed issue to remove "Electron" from appearing in the title bar on
-   startup.
+This release contains a security update and it is highly recommended that users upgrade to this version.
+
+-  v1.2.1, released 2016-05-24
+
+   -  Fixed an issue where "Electron" appeared in the title bar on startup.
+   -  Added a dialog to confirm use of non-http(s) protocols prior to opening links. For example, clicking on a link to ``file://test`` will open a dialog to confirm the user intended to open a file.
+   -  (Windows and OS X) Added a right-click menu option for tray icon to open the Desktop application.
+
+-  v1.2.0, released 2016-05-13
+
+   -  Original v1.2 release
 
 Improvements
-~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Added a dialog to confirm use of non-http(s) protocols prior to
-   opening links. For example, clicking on a link to ``file://test``
-   will open a dialog to confirm the user intended to open a file.
+All Platforms
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Windows and Mac
-^^^^^^^^^^^^^^^
+-  Improved the style for tab badges.
+-  Added **Allow mixed content** option to render images with ``http://``.
+-  Added the login dialog for ``http`` authentication.
 
--  Added a right-click menu option for tray icon to open the Desktop
-   application on Windows and OS X.
+Mac
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Known issues
-~~~~~~~~~~~~
-
--  The shortcuts can't switch teams twice in a raw.
--  The team pages are not correctly rendered until the window is resized
-   when the zoom level is changed.
-
---------------
-
-Release v1.2.0 (Beta)
----------------------
-
--  **Released:** 2016-05-17
-
-This release contains a security update and it is highly recommended
-that users upgrade to this version.
-
-Fixes
-~~~~~
-
--  Node.js environment is enabled in the new window.
--  The link other than ``http://`` and ``https://`` is opened by
-   clicking.
+-  Added an option to show a black dot indicating unread messages on the team tab bar.
 
 Linux
-^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  Added **.deb** packages to support installation.
+
+Bug Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  Node.js environment is enabled in the new window.
+-  The link other than ``http://`` and ``https://`` is opened by clicking.
+
+Linux
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Desktop notification is shown as a dialog on Ubuntu 16.04.
 
-Improvements
-~~~~~~~~~~~~
+Known issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Improve the style for tab badges.
--  Add **Allow mixed content** option to render images with ``http://``.
--  Add the login dialog for http authentication.
-
-Mac
-^^^
-
--  Add the option to show the icon on menu bar.
-
-Linux
-^^^^^
-
--  Add **.deb** packages to support installation.
+-  The shortcuts can't switch teams twice in a row.
+-  The team pages are not correctly rendered until the window is resized when the zoom level is changed.
 
 Contributors
-~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Many thanks to all our contributors. In alphabetical order:
 
@@ -490,46 +468,32 @@ Many thanks to all our contributors. In alphabetical order:
    `lloeki <https://github.com/lloeki>`__,
    `yuya-oc <https://github.com/yuya-oc>`__
 
---------------
-
 Release v1.1.1 (Beta)
----------------------
+-----------------------------
 
--  **Released:** 2016-04-13
+Release date: 2016-04-13
 
-Fixes
-~~~~~
+This release contains a security update and it is highly recommended that users upgrade to this version.
 
-All platforms
-^^^^^^^^^^^^^
+-  v1.1.1, released 2016-04-13
 
--  **Settings** page doesn't return to the main page when the located
-   path contains a blank.
+   -  If the specified team URL on the **Settings** page contains an additional space, the app now properly redirects to the team page
+   -  ``Alt+Shift`` now opens the menu on Cinnamon desktop environment.
 
-Linux
-^^^^^
+-  v1.1.0, released 2016-03-30
 
--  Alt+Shift opens menu on Cinnamon desktop environment.
+   -  Original v1.1 release
 
---------------
-
-Release v1.1.0 (Beta)
----------------------
-
--  **Released:** 2016-03-30
-
-The ``electron-mattermost`` project is now the official desktop
-application for the Mattermost open source project.
+The ``electron-mattermost`` project is now the official desktop application for the Mattermost open source project.
 
 Changes
-~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 All platforms
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Rename project from ``electron-mattermost`` to ``desktop``
--  Rename the executable file from ``electron-mattermost`` to
-   ``Mattermost``
+-  Rename the executable file from ``electron-mattermost`` to ``Mattermost``
 -  The configuration directory is also different from previous versions.
 -  Should execute following command to take over ``config.json``.
 
@@ -541,56 +505,50 @@ All platforms
       ``mkdir -p ~/.config/Mattermost && cp ~/.config/electron-mattermost/config.json ~/.config/Mattermost/config.json``
 
 Improvements
-~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 All platforms
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Refine application icon.
--  Show error messages when the application failed in loading Mattermost
-   server.
--  Show confirmation dialog to continue connection when there is
-   certificate error.
--  Add validation to check whether both of **Name** and **URL** fields
-   are not blank.
--  Add simple basic HTTP authentication (requires a command line).
+-  Refined the application icon.
+-  Show error messages when the application fails to load the Mattermost server.
+-  Show confirmation dialog to continue connection when there is a certificate error.
+-  Added validation to check whether **Name** or **URL** are blank when adding or editing a team on the **Settings** page.
+-  Added simple basic HTTP authentication (requires a command line).
 
 Windows
-^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Show a small circle on the tray icon when there are new messages.
 
-Fixes
-~~~~~
+Bug Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Windows
-^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  **File** > **About** does not bring up version number dialog.
+-  **File** > **About** now shows the version number dialog.
 
 Linux
-^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  **File** > **About** does not bring up version number dialog.
--  Ubuntu: Notification is not showing up.
--  The view crashes when freetype 2.6.3 is used in system.
+-  **File** > **About** now shows the version number dialog.
+-  Ubuntu: Notifications now work properly.
+-  The view mp longer crashes when freetype 2.6.3 is used on the system.
 
 Known issues
-~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 All platforms
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Basic Authentication is not working.
--  Some keyboard shortcuts are missing. (e.g. Ctrl+W, Command+,)
--  Basic authentication requires a command line.
+-  Basic authentication is not working and requires a command line.
+-  Some keyboard shortcuts are missing (e.g. CTRL+W, CMD+PLUS).
 
 Windows
-^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Application does not appear properly in Windows volume mixer.
-
-
 
 **List of releases before the project was promoted as the official
 desktop application for Mattermost.**
