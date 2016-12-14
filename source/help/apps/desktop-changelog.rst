@@ -13,7 +13,6 @@ All Platforms
 ^^^^^^^^^^^^^
 
 -  URL address is shown when hovering over links with a mouse
--  Link addresses can now be copied and pasted inside the app
 -  Added CTRL+SHIFT+MINUS as a shortcut for decreasing font size
    (zooming out)
 -  Reduce upgrade issues by properly clearing cache when updating the
