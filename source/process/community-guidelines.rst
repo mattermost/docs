@@ -9,7 +9,7 @@ In this document we set out some easy-to-follow community guidelines, including:
 
 ----
 
-GitHub Help Wanted Issues
+GitHub Help Wanted Issues in Platform Repository
 ---------------------------------------------------------
 
 Goal
@@ -46,7 +46,7 @@ When creating a help wanted issue, please ensure it contains the following (`see
     
 - has a well-defined difficulty level, both in the description and with the corresponding label
  
- - Introduction: for someone new to the codebase. Guideline: 2-mana tickets are typically introductory
+ - Introductory: for someone new to the codebase. Guideline: 2-mana tickets are typically introductory
  - Intermediate: for someone with a general knowledge of the codebase. Guideline: 4-mana tickets are typically introductory
  - Advanced: for someone with a strong grasp of the codebase, e.g. implementing a major feature. Guideline: 8-mana tickets (or higher) are typically introductory     
     
@@ -54,14 +54,23 @@ When creating a help wanted issue, please ensure it contains the following (`see
  
  - helps contributors know what programming languages will be involved
  - motivates contributors to work on specific tickets, e.g. someone learning Go might be motivated to tackle introductory Go tickets
- - in general, for the `platform repository <https://github.com/mattermost/platform>`_, if the work is all UI (client-side), add a ReactJS label - if it's server side then add a Go label.
+ - in general, if the work is all UI (client side), add a ReactJS label - if it's server side then add a Go label.
 
-- has a link to the corresponding JIRA ticket
+- has a link to the corresponding JIRA ticket 
 
 - gets noted in the corresponding JIRA ticket
  
  - ensures core devs are aware a help wanted issue was created, and to check whether someone in the community already has it in progress
  - example text: ``GitHub Help Wanted issue here: [Link]. Before starting to work on this ticket, please check whether a community member has it in progress by checking the GitHub issue or by asking a PM.``
+
+Managing help wanted issues
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Once a help wanted issue is added, the creator is responsible for
+
+- answering questions from community members, which get automatically posted in the `Community Heartbeat channel <https://pre-release.mattermost.com/core/channels/community-heartbeat>`_
+- following up with a community member if there hasn't been a response for two weeks
+- being the first tester once a pull request has been submitted
 
 Closing help wanted issues
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -96,7 +105,6 @@ Response timeline
   - Wait 24 hours then CM nudges community or routes (feature idea, troubleshooting, etc.)
   - If 48 hours go by without community response, CM nudges Contributors room (which includes core team) by asking for someone to help answer
   - If 72 hours go by and no one in Contributors room has stepped up, then CM (at)-mentions the PM who's managing community issues that week, who can take ownership of responding or routing to someone either in community or core team.
-- For troll bait (sensitive questions or attacking questions), CM routes to designated anti-troll operator
 - On holidays, let the community step up
 
 Response writing tips
