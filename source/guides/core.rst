@@ -23,7 +23,7 @@ Documentation Style Guide
 .. toctree::
    :maxdepth: 3
 
-   /process/sg_mattermost-doc-style.rst
+   /process/mattermost-doc-style.rst
 
 Joining the Team 
 =========================
