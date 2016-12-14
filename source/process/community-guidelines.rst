@@ -4,7 +4,7 @@ Mattermost Community Guidelines
 
 In this document we set out some easy-to-follow community guidelines, including:
 
-- `GitHub Help Wanted Issues`_ - Guidelines for managing Help Wanted issues in GitHub
+- `GitHub Help Wanted Issues in Platform Repository`_ - Guidelines for managing Help Wanted issues in GitHub
 - `Community Forums`_ - Guidelines for responding to `Mattermost Forum posts <forum.mattermost.org>`_
 
 ----
