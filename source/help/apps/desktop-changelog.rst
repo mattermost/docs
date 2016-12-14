@@ -14,7 +14,7 @@ All Platforms
 
 -  URL address is shown when hovering over links with a mouse
 -  Link addresses can now be copied and pasted inside the app
--  Added ``CTRL+SHIFT+MINUS`` as a shortcut for decreasing font size
+-  Added`CTRL+SHIFT+MINUS as a shortcut for decreasing font size
    (zooming out)
 -  Reduce upgrade issues by properly clearing cache when updating the
    desktop app to a new version (the application cache will be purged
@@ -43,7 +43,7 @@ All Platforms
 Windows
 ^^^^^^^
 
--  The menu bar option for "Redo" is now properly shown as ``CTRL+Y``
+-  The menu bar option for "Redo" is now properly shown as CTRL+Y
 
 Mac
 ^^^
@@ -76,9 +76,9 @@ All Platforms
 Windows
 ^^^^^^^
 
--  [Windows 7] [Sometimes the app tries to render the page inside the
+-  [Windows 7] `Sometimes the app tries to render the page inside the
    app instead of in a new browser tab when clicking
-   links](https://github.com/mattermost/desktop/issues/369)
+   links <https://github.com/mattermost/desktop/issues/369>`_
 
 Mac
 ^^^
@@ -90,12 +90,12 @@ Mac
 Linux (Beta)
 ^^^^^^^^^^^^
 
--  [Ubuntu - 64 bit] [Right clicking taskbar icon and choosing **Quit**
+-  [Ubuntu - 64 bit] `Right clicking taskbar icon and choosing **Quit**
    only minimizes the
-   app](https://github.com/mattermost/desktop/issues/90#issuecomment-233712183)
--  [Ubuntu - 64 bit] [Direct message notification comes as a streak of
+   app <https://github.com/mattermost/desktop/issues/90#issuecomment-233712183>`_
+-  [Ubuntu - 64 bit] `Direct message notification comes as a streak of
    line instead of a pop
-   up](https://github.com/mattermost/platform/issues/3589)
+   up <https://github.com/mattermost/platform/issues/3589>`_
 
 Contributors
 ~~~~~~~~~~~~
@@ -152,11 +152,11 @@ All Platforms
    of unread mentions
 -  Added new shortcuts:
 
-   -  ``CTRL+S``; ``CMD+S`` on Mac: sets focus on the Mattermost search
+   -  CTRL+S; CMD+S on Mac: sets focus on the Mattermost search
       box
-   -  ``ALT+Left Arrow``; ``CMD+[`` on Mac: go to previous page in
+   -  ALT+Left Arrow; CMD+[ on Mac: go to previous page in
       history
-   -  ``ALT+Right Arrow``; ``CMD+]`` on Mac: go to next page in history
+   -  ALT+Right Arrow; CMD+] on Mac: go to next page in history
 
 -  Upgraded the Settings page user interface
 -  The app now tries to reconnect periodically if a page fails to load
@@ -245,9 +245,9 @@ Linux
 
 -  [Ubuntu - 64 bit] Right clicking taskbar icon and choosing **Quit**
    only minimizes the app
--  [Ubuntu - 64 bit] [Direct message notification comes as a streak of
+-  [Ubuntu - 64 bit] `Direct message notification comes as a streak of
    line instead of a pop
-   up](https://github.com/mattermost/platform/issues/3589)
+   up <https://github.com/mattermost/platform/issues/3589>`_
 
 Contributors
 ~~~~~~~~~~~~
@@ -290,30 +290,30 @@ Menu Bar
 -  New Keyboard Shortcuts
 -  Adjust text size
 
-   -  Ctrl+0 (Menu Bar -> View -> Actual Size): Reset the zoom level.
-   -  Ctrl+Plus (Menu Bar -> View -> Zoom In): Increase text size
-   -  Ctrl+Minus (Menu Bar -> View -> Zoom Out): Decrease text size
+   -  CTRL+0 (Menu Bar -> View -> Actual Size): Reset the zoom level.
+   -  CTRL+PLUS (Menu Bar -> View -> Zoom In): Increase text size
+   -  CTRL+MINUS (Menu Bar -> View -> Zoom Out): Decrease text size
 
 -  Control window
 
-   -  Ctrl+W (Menu Bar -> Window -> Close): On Linux, this minimizes the
+   -  CTRL+W (Menu Bar -> Window -> Close): On Linux, this minimizes the
       main window.
-   -  Ctrl+M (Menu Bar -> Window -> Minimize)
+   -  CTRL+M (Menu Bar -> Window -> Minimize)
 
 -  Switch teams (these shotcuts also reopen the main window)
 
-   -  Ctrl+{1-9} (Menu Bar -> Window -> *Team name*): Open the *n*-th
+   -  CTRL+{1-9} (Menu Bar -> Window -> [Team name]): Open the *n*-th
       tab.
-   -  Ctrl+Tab or Alt+Command+Right (Menu Bar -> Window -> Select Next
+   -  CTRL+TAB or ALT+CMD+Right (Menu Bar -> Window -> Select Next
       Team): Switch to the next window.
-   -  Ctrl+Shift+Tab or Alt+Command+Left (Menu Bar -> Window -> Select
+   -  CTRL+SHIFT+TAB or ALT+CMD+Left (Menu Bar -> Window -> Select
       Previous Team): Switch to the previous window.
    -  Right click on the tray item, to see an overview of all your
       teams. You can also select one and jump right into it.
 
 -  Added **Help** to the Menu Bar, which includes
 
-   -  Link to `**Mattermost Docs** <docs.mattermost.com>`__
+   -  Link to `Mattermost Docs <docs.mattermost.com>`__
    -  Field to indicate the application version number.
 
 Settings Page
@@ -389,9 +389,9 @@ Linux
 
 -  [Ubuntu - 64 bit] Right clicking taskbar icon and choosing **Quit**
    only minimizes the app
--  [Ubuntu - 64 bit] [Direct message notification comes as a streak of
+-  [Ubuntu - 64 bit] `Direct message notification comes as a streak of
    line instead of a pop
-   up](https://github.com/mattermost/platform/issues/3589)
+   up <https://github.com/mattermost/platform/issues/3589>`_
 
 Contributors
 ~~~~~~~~~~~~
