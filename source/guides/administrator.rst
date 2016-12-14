@@ -12,6 +12,7 @@ Installing Mattermost
 
    /install/requirements.rst
    Installing on Ubuntu 14.04 LTS </install/install-ubuntu-1404.rst>
+   Installing on RHEL 6.6 </install/install-rhel-66.rst>
    /install/docker-local*
    /install/docker-ebs*
    /install/ee-install*

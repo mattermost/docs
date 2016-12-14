@@ -12,7 +12,8 @@ You can use any certificate that you want, but these instructions show you how t
 1. Log into the server that hosts NGINX and open a terminal window.
 2. Install git.
 
-  ``sudo apt-get install git``
+  - If you are using Ubuntu or Debian:  ``sudo apt-get install git``
+  - If you are using RHEL: ``sudo yum install git``
 
 3. Clone the Let's Encrypt repository on GitHub.
 
