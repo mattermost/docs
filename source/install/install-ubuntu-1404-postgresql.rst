@@ -1,7 +1,7 @@
 .. _install-ubuntu-1404-postgresql:
 
 Installing PostgreSQL Database Server
-====================================
+=====================================
 
 You can install either PostgreSQL or MySQL. To install MySQL, see :ref:`install-ubuntu-1404-mysql`
 
