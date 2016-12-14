@@ -7,7 +7,7 @@ You can install either MySQL or PostgreSQL. To install PostgreSQL, see :ref:`ins
 
 **To install MySQL 5.6 on Ubuntu Server:**
 
-1. Log into the server that will host the database and open a terminal window.
+1. Log into the server that will host the database, and open a terminal window.
 
 2. Install MySQL version 5.6.
   
@@ -39,5 +39,3 @@ You can install either MySQL or PostgreSQL. To install PostgreSQL, see :ref:`ins
 6. Grant access privileges to the user 'mmuser'
 
   ``mysql> grant all privileges on mattermost.* to 'mmuser'@'%';``
-
-**What to do next**
