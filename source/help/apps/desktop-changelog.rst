@@ -14,7 +14,7 @@ All Platforms
 
 -  URL address is shown when hovering over links with a mouse
 -  Link addresses can now be copied and pasted inside the app
--  Added`CTRL+SHIFT+MINUS as a shortcut for decreasing font size
+-  Added CTRL+SHIFT+MINUS as a shortcut for decreasing font size
    (zooming out)
 -  Reduce upgrade issues by properly clearing cache when updating the
    desktop app to a new version (the application cache will be purged
@@ -90,7 +90,7 @@ Mac
 Linux (Beta)
 ^^^^^^^^^^^^
 
--  [Ubuntu - 64 bit] `Right clicking taskbar icon and choosing **Quit**
+-  [Ubuntu - 64 bit] `Right clicking taskbar icon and choosing Quit
    only minimizes the
    app <https://github.com/mattermost/desktop/issues/90#issuecomment-233712183>`_
 -  [Ubuntu - 64 bit] `Direct message notification comes as a streak of
@@ -277,33 +277,29 @@ Menu Bar
 ''''''''
 
 -  New Keyboard Shortcuts
--  Adjust text size
 
-   -  CTRL+0 (Menu Bar -> View -> Actual Size): Reset the zoom level.
-   -  CTRL+PLUS (Menu Bar -> View -> Zoom In): Increase text size
-   -  CTRL+MINUS (Menu Bar -> View -> Zoom Out): Decrease text size
+   -  Adjust text size
 
--  Control window
+      -  CTRL+0 (Menu Bar -> View -> Actual Size): Reset the zoom level.
+      -  CTRL+PLUS (Menu Bar -> View -> Zoom In): Increase text size
+      -  CTRL+MINUS (Menu Bar -> View -> Zoom Out): Decrease text size
 
-   -  CTRL+W (Menu Bar -> Window -> Close): On Linux, this minimizes the
-      main window.
-   -  CTRL+M (Menu Bar -> Window -> Minimize)
+   -  Control window
 
--  Switch teams (these shotcuts also reopen the main window)
+      -  CTRL+W (Menu Bar -> Window -> Close): On Linux, this minimizes the main window.
+      -  CTRL+M (Menu Bar -> Window -> Minimize)
 
-   -  CTRL+{1-9} (Menu Bar -> Window -> [Team name]): Open the *n*-th
-      tab.
-   -  CTRL+TAB or ALT+CMD+Right (Menu Bar -> Window -> Select Next
-      Team): Switch to the next window.
-   -  CTRL+SHIFT+TAB or ALT+CMD+Left (Menu Bar -> Window -> Select
-      Previous Team): Switch to the previous window.
-   -  Right click on the tray item, to see an overview of all your
-      teams. You can also select one and jump right into it.
+   -  Switch teams (these shotcuts also reopen the main window)
 
--  Added **Help** to the Menu Bar, which includes
+      -  CTRL+{1-9} (Menu Bar -> Window -> [Team name]): Open the *n*-th tab.
+      -  CTRL+TAB or ALT+CMD+Right (Menu Bar -> Window -> Select Next Team): Switch to the next window.
+      -  CTRL+SHIFT+TAB or ALT+CMD+Left (Menu Bar -> Window -> Select Previous Team): Switch to the previous window.
+      -  Right click on the tray item, to see an overview of all your teams. You can also select one and jump right into it.
 
-   -  Link to `Mattermost Docs <docs.mattermost.com>`__
-   -  Field to indicate the application version number.
+   -  Added **Help** to the Menu Bar, which includes
+
+      -  Link to `Mattermost Docs <docs.mattermost.com>`__
+      -  Field to indicate the application version number.
 
 Settings Page
 '''''''''''''
