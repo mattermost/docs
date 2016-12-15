@@ -31,15 +31,15 @@ If your document has more than one section, use the - character for the section 
   Section titles
   --------------
 
-If you do need subsections, use the the ^ character for the first subsection level, and the \` character for the second subsection level. For example:
+If you do need subsections, use the the ~ character for the first subsection level, and the ^ character for the second subsection level. For example:
 
 .. code-block:: none
   
   Subsection One
-  ^^^^^^^^^^^^^^
+  ~~~~~~~~~~~~~~
   
   Subsection Two
-  ``````````````
+  ^^^^^^^^^^^^^^
   
 Inline markup
 -------------
@@ -222,4 +222,4 @@ The example produces the following output:
 		return
 	}
 
-The highlighting is provided by Pygments Python syntax highlighter, which supports a large number of programming and markup languages. For a complete list, see `Available lexers <http://pygments.org/docs/lexers/>`_
+The highlighting is provided by Pygments Python syntax highlighter, which supports a large number of programming and markup languages. For a complete list, see `available lexers <http://pygments.org/docs/lexers/>`_.
