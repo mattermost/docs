@@ -1,11 +1,11 @@
+.. _install-ubuntu-1404-server:
+
 Installing Ubuntu Server 14.04 LTS
 ==================================
 
-Install Ubuntu Server on each machine that hosts one or more of the components. In most cases you need the 64-bit version.
+Install the 64-bit version of Ubuntu Server on each machine that hosts one or more of the components.
 
-You can use the 32-bit version on a machine that hosts the database and proxy server, but the Mattermost server requires 64-bit.
-
-**To install Ubuntu Server:**
+**To install Ubuntu Server 14.04:**
 
 1. Download the appropriate ISO image from http://releases.ubuntu.com/14.04.5/ and burn it to a CD-ROM.
 
@@ -16,4 +16,4 @@ You can use the 32-bit version on a machine that hosts the database and proxy se
    -  ``sudo apt-get update``
    -  ``sudo apt-get upgrade``
 
-Now that the system is up to date, you can install the database.
+Now that the system is up to date, you can start installing the components that make up a Mattermost system.

@@ -15,3 +15,5 @@ Install the 64-bit version of RHEL 7.1 on each machine that hosts one or more of
 
    -  ``sudo yum update``
    -  ``sudo yum upgrade``
+
+Now that the system is up to date, you can start installing the components that make up a Mattermost system.
