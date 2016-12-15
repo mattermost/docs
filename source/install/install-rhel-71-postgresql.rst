@@ -6,16 +6,15 @@ Installing PostgreSQL Database
 1.  For the purposes of this guide we will assume this server has an IP
     address of ``10.10.10.1``
 
-    -  **Optional:** if installing on the same machine substitute
-       ``10.10.10.1`` with ``127.0.0.1``
+    -  **Optional:** if installing on the same machine substitute ``10.10.10.1`` with ``127.0.0.1``
 
-2.  Install PostgreSQL 9.4+ (or MySQL 5.6+)
+2.  Install PostgreSQL 9.4+
 
-    -  ``sudo yum install     yum install http://yum.postgresql.org/9.4/redhat/rhel-7-x86_64/pgdg-redhat94-9.4-1.noarch.rpm``
+    -  ``sudo yum install http://yum.postgresql.org/9.4/redhat/rhel-7-x86_64/pgdg-redhat94-9.4-1.noarch.rpm``
     -  ``sudo yum install postgresql94-server postgresql94-contrib``
     -  ``sudo /usr/pgsql-9.4/bin/postgresql94-setup initdb``
-    -  ``sudo systemctl enable postgresql-9.4.service``
-    -  ``sudo systemctl start postgresql-9.4.service``
+    -  ``sudo systemctl enable postgresql-9.4``
+    -  ``sudo systemctl start postgresql-9.4``
 
 3.  PostgreSQL created a user account called ``postgres``. You will need
     to log into that account with:
@@ -60,7 +59,7 @@ Installing PostgreSQL Database
 
 12. Reload Postgres database:
 
-    -  ``sudo systemctl reload postgresql-9.4.service``
+    -  ``sudo systemctl reload postgresql-9.4``
 
 13. Attempt to connect with the new created user to verify everything
     looks good:
