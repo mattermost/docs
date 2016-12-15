@@ -13,7 +13,7 @@ Assume that the IP address of this server is 10.10.10.2
 
 2. Download `the latest version of the Mattermost Server <https://docs.mattermost.com/administration/upgrade.html#version-archive>`_. In the following command, replace ``X.X.X`` with the version that you want to download:
 
-``wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz``
+  ``wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz``
 
 5. Extract the Mattermost Server files.
 
@@ -57,17 +57,20 @@ Assume that the IP address of this server is 10.10.10.2
 
 8. Setup Mattermost to use the Upstart daemon which handles supervision of the Mattermost process.
 
-  a. Create the Mattermost configuration file:  ``sudo touch /etc/init/mattermost.conf``
+  a. Create the Mattermost configuration file:
+  
+    ``sudo touch /etc/init/mattermost.conf``
+  
   b. Open the configuration file in your favorite text editor, and copy the following lines into the file:
   
-  .. code-block:: none
-  
-    start on runlevel [2345]
-    stop on runlevel [016]
-    respawn
-    limit nofile 50000 50000
-    chdir /opt/mattermost
-    exec bin/platform
+    .. code-block:: none
+    
+      start on runlevel [2345]
+      stop on runlevel [016]
+      respawn
+      limit nofile 50000 50000
+      chdir /opt/mattermost
+      exec bin/platform
 
 9. Start the Mattermost server.
 
