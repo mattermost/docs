@@ -222,4 +222,4 @@ The example produces the following output:
 		return
 	}
 
-The highlighting is provided by Pygments Python syntax highlighter, which supports a large number of programming and markup languages. For a complete list, see `Available lexers <http://pygments.org/docs/lexers/>`_
+The highlighting is provided by Pygments Python syntax highlighter, which supports a large number of programming and markup languages. For a complete list, see `available lexers <http://pygments.org/docs/lexers/>`_.
