@@ -31,7 +31,7 @@ Messaging
    /help/messaging/reading-messages.md
    /help/messaging/mentioning-teammates.md
    /help/messaging/formatting-text.md
-   /help/messaging/attaching-files.md
+   /help/messaging/attaching-files.rst
    /help/messaging/executing-commands.md
    /help/messaging/*
 
