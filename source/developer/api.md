@@ -39,7 +39,7 @@ There are a wide range of [installation guides](http://www.mattermost.org/instal
 
 ## Mattermost Golang Bot Sample (Driver Example)
 
-Mattermost provides a [Golang Bot Sample](https://github.com/mattermost/mattermost-bot-sample-golang) to demonstration how Mattermost works with the Golang driver and the APIs.
+Mattermost provides a [Golang Bot Sample](https://github.com/mattermost/mattermost-bot-sample-golang) to demonstrate how Mattermost works with the Golang driver and the APIs.
 
 ## Community Apps and Integrations
 
