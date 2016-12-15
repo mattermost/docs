@@ -27,14 +27,6 @@ Installing Mattermost
    /install/i18n*
    /install/desktop*
 
-Configuring Mattermost
-----------------------
-
-.. toctree::
-  :maxdepth: 2
-
-  /install/config-mattermost.rst
-
 Deployment
 ----------
 
