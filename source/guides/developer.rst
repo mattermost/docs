@@ -12,6 +12,7 @@ Development Process
 
    /developer/contribution*
    /developer/developer-setup*
+   /developer/api*
    /developer/developer-flow*
    /developer/running-mattermost*
    /developer/style*
