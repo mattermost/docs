@@ -15,7 +15,7 @@ You can install either MySQL or PostgreSQL. To install PostgreSQL, see :ref:`ins
 
 3. Install the Yum repository from the file that you downloaded.
 
-  ``sudo yum localinstall mysql-community-release-el6-9.noarch.rpm``
+  ``sudo yum localinstall mysql57-community-release-el6-9.noarch.rpm``
 
 4. Install MySQL.
 
