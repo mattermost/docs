@@ -11,13 +11,15 @@ To view the latest updates, please see our `changelog <https://docs.mattermost.c
 Below are a few tips to get you started and configuring your experience on the desktop app:
 
  - `Team Management <https://docs.mattermost.com/help/apps/desktop-guide.html#id1>`_
- - `Settings <https://docs.mattermost.com/help/apps/desktop-guide.html#id2>`_
+ - `App Options <https://docs.mattermost.com/help/apps/desktop-guide.html#id2>`_
  - `Menu Bar <https://docs.mattermost.com/help/apps/desktop-guide.html#id3>`_
 
-Team management
+Team Management
 ---------------------------------------------------------------------
 
 You can connect to multiple Mattermost servers from a single interface on the desktop app.
+
+Team Management appears in the Settings page, available from the `File` menu under `Settings`.
 
 Adding servers and teams
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -46,14 +48,14 @@ Removing servers and teams
 
 To remove a server from your desktop app environment, click on **Remove** next to the server or a team you want removed.
 
-Settings
+App Options
 ---------------------------------------------------------------------
 
 In addition to `Mattermost Account Settings <https://docs.mattermost.com/help/settings/account-settings.html>`_ , the desktop app provides additional options to customize your experience. 
 
-The Settings Page is available from the `File` menu under `Settings`, and can be accessed with ``CTRL + COMMA`` on Windows and Linux, and with ``CMD + COMMA`` on Mac.
+The options appear in the Settings page, available from the `File` menu under `Settings`.
 
-Description of each setting is included below this table.
+A description of each setting is included below this table.
 
 +-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+
 | Setting                                                                       | Windows                   | Mac                       | Linux                     |
@@ -108,7 +110,7 @@ This setting is on by default.
 Hide menu bar (Windows, Linux only)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Hides the menu bar. When enabled, pressing ``ALT`` will toggle whether the menu bar is shown or hidden.
+Hides the menu bar. When enabled, pressing ALT will toggle whether the menu bar is shown or hidden.
 
 This setting is off by default.
 
@@ -138,49 +140,49 @@ Menu Bar
 
 The desktop app contains a menu bar with additional features and shortcuts to streamline your experience. 
 
-If the menu bar is hidden, you may use the ``ALT`` key to display the menu. To have the menu displayed at all times, go to the Settings page and uncheck the **Hide menu bar** setting.
+If the menu bar is hidden, you may use the ALT key to display the menu. To have the menu displayed at all times, go to the Settings page and uncheck the **Hide menu bar** setting.
 
-Below is a list of menu options with the corresponding keyboard shortcuts. For Mac, replace ``CTRL`` by ``CMD`` unless otherwise specified.
+Below is a list of menu options with the corresponding keyboard shortcuts. For Mac, replace CTRL by CMD unless otherwise specified.
 
 **File**
 
- - Settings (CTRL + COMMA): Opens app settings where you can manage your servers and configure desktop app settings
- - Exit (CTRL + Q): Closes the application. Labeled ``Quit`` on Mac
+ - Settings (CTRL+COMMA): Opens app settings where you can manage your servers and configure desktop app settings
+ - Exit (CTRL+Q): Closes the application. Labeled **Quit** on Mac
 
 **Edit**
 
- - Undo (CTRL + Z): Reverses previous action
- - Redo (CTRL + SHIFT + Z; CTRL + Y): Redoes the most recent action
- - Cut (CTRL + X): Cuts selected text
- - Copy (CTRL + C): Copies selected text
- - Paste (CTRL + V): Pastes text from the clipboard
- - Select All (CTRL + A): Selects all text in input box
- - Search in Team (CTRL + S): Sets focus on the Mattermost search box
+ - Undo (CTRL+Z): Reverses previous action
+ - Redo (CTRL+SHIFT+Z; CTRL+Y): Redoes the most recent action
+ - Cut (CTRL+X): Cuts selected text
+ - Copy (CTRL+C): Copies selected text
+ - Paste (CTRL+V): Pastes text from the clipboard
+ - Select All (CTRL+A): Selects all text in input box
+ - Search in Team (CTRL+S): Sets focus on the Mattermost search box
 
 **View**
 
- - Reload (CTRL + R): Reloads the current page
- - Clear Cache and Reload (CTRL + SHIFT + R): Clears cached content in application and reloads the current page
+ - Reload (CTRL+R): Reloads the current page
+ - Clear Cache and Reload (CTRL+SHIFT+R): Clears cached content in application and reloads the current page
  - Toggle Full Screen (F11): Toggles the application window full screen mode
- - Actual Size (CTRL + 0) - Resets zoom level to default
- - Zoom In (CTRL + =; CTRL + SHIFT + =) - Increase font size (zoom in)
- - Zoom In (CTRL + MINUS) - Decrease font size (zoom out)
- - Toggle Developer Tools (CTRL + SHIFT + I): Toggles sidebar showing developer tools
+ - Actual Size (CTRL+0) - Resets zoom level to default
+ - Zoom In (CTRL+=; CTRL+SHIFT+=) - Increase font size (zoom in)
+ - Zoom In (CTRL+MINUS) - Decrease font size (zoom out)
+ - Toggle Developer Tools (CTRL+SHIFT+I): Toggles sidebar showing developer tools
 
 **History**
 
- - Back (ALT + Left Arrow; CMD + [ on Mac): Go to previous page in history
- - Forward (ALT + Right Arrow; CMD + [ on Mac): Go to next page in history
+ - Back (ALT+Left Arrow; CMD+[ on Mac): Go to previous page in history
+ - Forward (ALT+Right Arrow; CMD+] on Mac): Go to next page in history
 
 **Window**
 
- - Close (CTRL + W) - Closes the application window
- - Minimize (CTRL + M) - Minimizes the application window to the taskbar
- - Team Name (CTRL + {1-9}) - Opens the n-th tab
- - Select Next Team (CTRL + TAB; ALT + CMD + Right Arrow on Mac) - Opens the next tab
- - Select Previous Team (CTRL+ SHIFT + TAB; ALT + CMD + Left Arrow on Mac) - Open the previous tab
+ - Close (CTRL+W) - Closes the application window
+ - Minimize (CTRL+M) - Minimizes the application window to the taskbar
+ - Team Name (CTRL+{1-9}) - Opens the n-th tab
+ - Select Next Team (CTRL+TAB; ALT+CMD+Right Arrow on Mac) - Opens the next tab
+ - Select Previous Team (CTRL+SHIFT+TAB; ALT+CMD+Left Arrow on Mac) - Open the previous tab
 
 **Help**
 
- - Mattermost Docs - Links to `Desktop Application’s User Guide <https://docs.mattermost.com/help/apps/desktop-guide.html>`_ .
+ - Learn More - Links to `Desktop Application’s User Guide <https://docs.mattermost.com/help/apps/desktop-guide.html>`_ .
  - Version - Indicates the desktop application version in use
