@@ -6,9 +6,7 @@ This document describes the process through which feedback and design discussion
 Purpose
 -------
 
-The core offer for users of Mattermost is:
-
--  **All your team communication in one place, searchable and accessible anywhere.**
+The core offer for users of Mattermost is: **All your team communication in one place, searchable and accessible anywhere.**
 
 The design is successful if 100% of team members use Mattermost for internal communications, and are largely off of email and proprietary SaaS products that lock-in user data as part of their business model.
 
@@ -27,7 +25,7 @@ Mattermost priorities are managed in Jira tickets, which are created by the core
 Triage
 ~~~~~~
 
-On non-holiday weekdays new tickets are reviewed in a process called "triage", and assigned a Fix Version of "backlog", indicating the ticket has enough specificity that it can be assigned to a developer to be completed.
+On non-holiday weekdays new tickets are reviewed in a process called "triage", and assigned a Fix Version of "backlog", indicating the ticket has enough specificity that it can be assigned to a developer to be completed. If the ticket is a bug or an improvement, it is assigned a Fix Version of the next release.
 
 By default, all tickets are created as public unless they contain sensitive information. The triage process reviews them for sufficient
 specificity. If the ticket is unclear, triage may reassign the ticket back to the original reporter to add more details.
@@ -65,7 +63,7 @@ Key contributors might also pick up tickets, or through conversations with the c
 Community Contributions
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Community members following the `Contribution Guidelines <http://docs.mattermost.com/developer/contribution-guide.html#code-contribution-guidelines>`__ might also submit pull requests. Pull requests should not disable existing functionality without a Jira ticket, which are opened `via the feature ideas process <http://www.mattermost.org/feature-requests/>`__.
+Community members following the `Contribution Guidelines <http://docs.mattermost.com/developer/contribution-guide.html#code-contribution-guidelines>`__ might also submit pull requests. Pull requests that significantly change the user experience are opened `via the feature ideas process <http://www.mattermost.org/feature-requests/>`__.
 
 Bug Fixes
 ^^^^^^^^^
@@ -82,7 +80,7 @@ Tickets Accepting Pull Requests
 
 If you'd like to improve the product beyond bug fixes, you can select from a list of tickets accepting pull requests prepared by the core team.
 
-`Help Wanted GitHub issues <https://github.com/mattermost/platform/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20%5BHelp%20Wanted%5D>`_ and `Accepting Pull Requests <https://mattermost.atlassian.net/issues/?filter=10101>`_ (APR) tickets) are intended to be unambiguous projects that could be reasonably completed by contributors outside the core team and are welcome contributions.
+`Help Wanted GitHub issues <https://github.com/mattermost/platform/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20%5BHelp%20Wanted%5D>`_ and `Accepting Pull Requests <https://mattermost.atlassian.net/issues/?filter=10101>`_ (APR) tickets are intended to be unambiguous projects that could be reasonably completed by contributors outside the core team and are welcome contributions.
 
 You can choose any ticket marked "Open", even if it's assigned, and comment to let people know you're working on it. If you have questions post in `Mattermost forum <http://forum.mattermost.org/>`_ or join the `Contributors <https://pre-release.mattermost.com/core/channels/tickets>`_ channel.
 
@@ -91,7 +89,7 @@ It's okay to submit PRs to fix obvious bugs or add small improvements, but anyth
 Documentation Improvements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Improvements to documentation on master is highly welcome.
+Improvements to documentation are highly welcome.
 
 Please see `documentation contribution guidelines <https://forum.mattermost.org/t/help-improve-mattermost-documentation/194>`__
 for more details.
@@ -118,6 +116,6 @@ Examples:
 Release
 -------
 
-Mattermost ships stable releases on the 16th of the month. Releases begin with a planning process reviewing internal designs and community feedback in the context of the product purpose. Feature development is done in weekly sprints, and releases end with feature complete, stabilization, code complete and release candidate milestones prior to final release.
+Mattermost ships stable releases on the 16th of every other month. Releases begin with a planning process reviewing internal designs and community feedback in the context of the product purpose. Feature development is done in weekly sprints, and releases end with feature complete, stabilization, code complete and release candidate milestones prior to final release.
 
 See `release process documentation <http://docs.mattermost.com/process/release-process.html#release-process>`__ for more details.
