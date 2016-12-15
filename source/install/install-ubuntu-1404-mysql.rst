@@ -7,7 +7,7 @@ You can install either MySQL or PostgreSQL. The MySQL version must be 5.6 or gre
 
 To install PostgreSQL, see :ref:`install-ubuntu-1404-postgresql`
 
-**To install MySQL 5.6 on Ubuntu Server:**
+**To install MySQL 5.6 on Ubuntu Server 14.04:**
 
 1. Log into the server that will host the database, and open a terminal window.
 

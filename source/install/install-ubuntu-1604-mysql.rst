@@ -5,7 +5,7 @@ Installing MySQL Database Server
 
 You can install either MySQL or PostgreSQL. To install PostgreSQL, see :ref:`install-ubuntu-1604-postgresql`
 
-**To install MySQL on Ubuntu Server:**
+**To install MySQL on Ubuntu Server 16.04:**
 
 1. Log into the server that will host the database, and open a terminal window.
 

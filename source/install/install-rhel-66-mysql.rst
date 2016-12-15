@@ -63,4 +63,4 @@ You can install either MySQL or PostgreSQL. To install PostgreSQL, see :ref:`ins
 
   ``mysql> grant all privileges on mattermost.* to 'mmuser'@'%';``
 
-After the database is set up, you can install Mattermost server.
+With the database installed and the initial setup complete, you can now install the Mattermost server.
