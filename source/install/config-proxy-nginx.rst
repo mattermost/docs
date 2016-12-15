@@ -69,9 +69,15 @@ Configuring NGINX as a proxy for Mattermost Server
 
 5. Restart NGINX.
 
+  On Ubuntu 14.04 and RHEL 6.6:
+  
   ``sudo service nginx restart``
+  
+  On Ubuntu 16.04 and RHEL 7.1:
+  
+  ``sudo systemctl restart nginx``
 
-6. Verify you can see Mattermost thru the proxy.
+6. Verify that you can see Mattermost thru the proxy.
 
   ``curl http://localhost``
   

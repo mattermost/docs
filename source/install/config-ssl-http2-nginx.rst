@@ -25,7 +25,13 @@ You can use any certificate that you want, but these instructions show you how t
 
 5. Stop NGINX.
 
+  On Ubuntu 14.04 and RHEL 6.6:
+  
   ``sudo service nginx stop``
+  
+  On Ubuntu 16.04 and RHEL 7.1:
+  
+  ``sudo systemctl stop nginx``
 
 6. Run ``netstat`` to make sure that nothing is listening on port 80.
 
@@ -37,7 +43,7 @@ You can use any certificate that you want, but these instructions show you how t
 
   When prompted, enter your domain name. The certificate is located in  ``/etc/letsencrypt/live``
 
-8. Open the file ``/etc/nginx/sites-available/mattermost`` as root and update it to incorporate the following lines. Make sure that you use your own values for the Mattermost server IP address and FQDN for *server_name*.
+8. Open the file ``/etc/nginx/sites-available/mattermost`` as root in a text editor and update it to incorporate the following lines. Make sure that you use your own values for the Mattermost server IP address and FQDN for *server_name*.
 
   .. code-block:: none
 
@@ -106,7 +112,13 @@ You can use any certificate that you want, but these instructions show you how t
 
 9. Restart NGINX
 
+  On Ubuntu 14.04 and RHEL 6.6:
+  
   ``sudo service nginx start``
+  
+  On Ubuntu 16.04 and RHEL 7.1:
+  
+    ``sudo systemctl start nginx``
 
 10. Check that your SSL certificate is set up correctly.
 

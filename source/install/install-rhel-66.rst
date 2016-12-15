@@ -18,6 +18,6 @@ Install a production-ready Mattermost system on 1 to 3 machines.
 .. include:: install-rhel-66-mattermost.rst
 .. include:: config-mattermost-server.rst
 .. include:: config-tls-mattermost.rst
-.. include:: install-rhel-66-nginx.rst
+.. include:: install-rhel-nginx.rst
 .. include:: config-proxy-nginx.rst
 .. include:: config-ssl-http2-nginx.rst
