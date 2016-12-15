@@ -71,6 +71,4 @@ Assume that the IP address of this server is 10.10.10.1
     -  ``psql --host=10.10.10.1 --dbname=mattermost --username=mmuser --password``
     -  ``mattermost=> \q``
 
-**What to do next**
-
-In a production environment, you should install NGINX. Using NGINX as a proxy server increases the security and performance of your Mattermost installation.
+With the database installed and the initial setup complete, you can now install the Mattermost server.
