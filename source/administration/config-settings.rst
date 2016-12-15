@@ -43,6 +43,8 @@ Site URL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The URL, including port number and protocol, from which users will access Mattermost. Leave blank to automatically configure based on incoming traffic.
 
+.. note:: Do not append a team name to the end of the site URL.
+
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SiteURL": ""`` with string input.                                                                     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
