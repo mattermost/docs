@@ -7,7 +7,7 @@ Mattermost desktop applications are available for Windows, Mac and Linux operati
 .. contents::
     :backlinks: top
 
-Desktop application support all the features of the web experience, plus: 
+Desktop applications support all the features of the web experience, plus: 
 
 - Connect to multiple Mattermost servers from a single interface, and switch with shortcut keys.
 - Auto-start Mattermost when a user logs into their machine
@@ -35,7 +35,7 @@ Windows 10+, Windows 8.1+, Windows 7+
 2. From the ``\Downloads`` directory right-click on the file ``mattermost-setup-3.5.0...`` and select **Open**.
 
 This will start an installer for the app. Once finished, the Mattermost desktop app will open automatically.
-
+ 
 Mac OS X 10.9+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
