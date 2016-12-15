@@ -2099,7 +2099,7 @@ Segment Write Key
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 For deployments seeking additional tracking of system behavior using Segment.com, you can enter a Segment WRITE_KEY using this field. This value works like a tracking code and is used in client-side Javascript and will send events to Segment.com attributed to the account you used to generate the WRITE_KEY.
 
-.. note:: This field will be removed from config.json in Mattermost 3.7, released on March 16th, 2017.
+.. note:: This field will be removed from config.json in Mattermost 3.7, releasing on March 16th, 2017.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SegmentDeveloperKey": ""`` with string input.                                                                           |
