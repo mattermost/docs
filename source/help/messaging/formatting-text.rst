@@ -235,3 +235,19 @@ Create a table by placing a dashed line under the header row and separating the 
 Renders as:
 
 .. image:: ../../images/markdownTable1.PNG
+
+
+Math Formulas
+=============
+
+Create formulas by using LaTeX in a ``latex`` `Code Block`_
+
+.. code::
+
+  ```latex
+  X_k = \sum_{n=0}^{2N-1} x_n \cos \left[\frac{\pi}{N} \left(n+\frac{1}{2}+\frac{N}{2}\right) \left(k+\frac{1}{2}\right) \right]
+  ```
+
+Renders as:
+
+.. image:: ../../images/markdownMath.PNG
