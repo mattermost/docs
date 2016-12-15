@@ -18,10 +18,7 @@ Installing Mattermost
    /install/docker-local*
    /install/docker-ebs*
    /install/ee-install*
-   /install/prod-rhel*
-   /install/prod-debian*
    /install/prod-docker*
-   /install/setup-tls*
    /install/smtp*
    /install/troubleshooting*
    /install/i18n*
