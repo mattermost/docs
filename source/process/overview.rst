@@ -93,8 +93,7 @@ Documentation Improvements
 
 Improvements to documentation on master is highly welcome.
 
-Please see `documentation contribution
-guidelines <https://forum.mattermost.org/t/help-improve-mattermost-documentation/194>`__
+Please see `documentation contribution guidelines <https://forum.mattermost.org/t/help-improve-mattermost-documentation/194>`__
 for more details.
 
 Examples: 
@@ -105,15 +104,11 @@ Examples:
 Minor Improvements
 ^^^^^^^^^^^^^^^^^^
 
-Minor improvements without an Accepting Pull Request ticket may be
-accepted if:
+Minor improvements without an Accepting Pull Request ticket may be accepted if:
 
 1. The contribution aligns with product scope
-2. The change is high quality, and does not impose a significant burden
-   for others to test, document and maintain your change.
-3. The change aligns with the `fast, obvious,
-   forgiving <http://www.mattermost.org/design-principles/>`__ design
-   principle.
+2. The change is high quality, and does not impose a significant burden    for others to test, document and maintain your change.
+3. The change aligns with the `fast, obvious,    forgiving <http://www.mattermost.org/design-principles/>`__ design principle.
 
 Examples: 
 
@@ -123,13 +118,6 @@ Examples:
 Release
 -------
 
-Mattermost ships stable releases on the 16th of the month. Releases
-begin with a planning process reviewing internal designs and community
-feedback in the context of the product purpose. Feature development is
-done in weekly sprints, and releases end with feature complete,
-stabilization, code complete and release candidate milestones prior to
-final release.
+Mattermost ships stable releases on the 16th of the month. Releases begin with a planning process reviewing internal designs and community feedback in the context of the product purpose. Feature development is done in weekly sprints, and releases end with feature complete, stabilization, code complete and release candidate milestones prior to final release.
 
-See `release process
-documentation <http://docs.mattermost.com/process/release-process.html#release-process>`__
-for more details.
+See `release process documentation <http://docs.mattermost.com/process/release-process.html#release-process>`__ for more details.
