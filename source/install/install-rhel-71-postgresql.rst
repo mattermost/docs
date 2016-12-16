@@ -3,66 +3,91 @@
 Installing PostgreSQL Database
 ==============================
 
-1.  For the purposes of this guide we will assume this server has an IP
-    address of ``10.10.10.1``
+1. Log into the server that will host the database, and open a terminal window.
 
-    -  **Optional:** if installing on the same machine substitute ``10.10.10.1`` with ``127.0.0.1``
+2. Download the PostgreSQL 9.4 Yum repository.
 
-2.  Install PostgreSQL 9.4+
+  ``wget https://download.postgresql.org/pub/repos/yum/9.4/redhat/rhel-7-x86_64/pgdg-redhat94-9.4-3.noarch.rpm``
 
-    -  ``sudo yum install http://yum.postgresql.org/9.4/redhat/rhel-7-x86_64/pgdg-redhat94-9.4-1.noarch.rpm``
-    -  ``sudo yum install postgresql94-server postgresql94-contrib``
-    -  ``sudo /usr/pgsql-9.4/bin/postgresql94-setup initdb``
-    -  ``sudo systemctl enable postgresql-9.4``
-    -  ``sudo systemctl start postgresql-9.4``
+3. Install the Yum repository from the file that you downloaded.
 
-3.  PostgreSQL created a user account called ``postgres``. You will need
-    to log into that account with:
+  ``sudo yum localinstall pgdg-redhat94-9.4-1.noarch.rpm``
 
-    -  ``sudo -i -u postgres``
+4. Install PostgreSQL.
 
-4.  You can get a PostgreSQL prompt by typing:
+  ``sudo yum install postgresql94-server postgresql94-contrib``
 
-    -  ``psql``
+5. Initialize the database.
 
-5.  Create the Mattermost database by typing:
+  ``sudo service postgresql initdb``
 
-    -  ``postgres=# CREATE DATABASE mattermost;``
+6. Set PostgreSQL to start on boot.
 
-6.  Create the Mattermost user by typing:
+  ``sudo systemctl enable postgresql``
 
-    -  ``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser_password';``
+7. Start the PostgreSQL server.
 
-7.  Grant the user access to the Mattermost database by typing:
+  ``sudo systemctl start postgresql``
 
-    -  ``postgres=# GRANT ALL PRIVILEGES ON DATABASE mattermost to mmuser;``
+8. Switch to the *postgres* Linux user account that was created during the installation.
 
-8.  You can exit out of PostgreSQL by typing:
+  ``sudo --login --user postgres``
 
-    -  ``postgres=# \q``
+9. Start the PostgreSQL interactive terminal.
 
-9.  You can exit the Postgres account by typing:
+  -  ``psql``
 
-    -  ``exit``
+10.  Create the Mattermost database.
 
-10. Allow Postgres to listen on all assigned IP Addresses:
+  ``postgres=# CREATE DATABASE mattermost;``
 
-    -  ``sudo vi /var/lib/pgsql/9.4/data/postgresql.conf``
-    -  Uncomment ``listen_addresses`` and change ``localhost`` to ``\*``
+11.  Create the Mattermost user 'mmuser'.
 
-11. Alter ``pg_hba.conf`` to allow the Mattermost Server to talk to the
-    Postgres database:
+  ``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser_password';``
+  
+  .. note::
+    Use a password that is more secure than 'mmuser-password'
 
-    -  ``sudo vi /var/lib/pgsql/9.4/data/pg_hba.conf``
-    -  Add the following line to the ``IPv4 local connections``:
-    -  ``host all all 10.10.10.2/32 md5``
+12.  Grant the user access to the Mattermost database.
 
-12. Reload Postgres database:
+  ``postgres=# GRANT ALL PRIVILEGES ON DATABASE mattermost to mmuser;``
 
-    -  ``sudo systemctl reload postgresql-9.4``
+13. Exit the PostgreSQL interactive terminal.
 
-13. Attempt to connect with the new created user to verify everything
-    looks good:
+  ``postgre=# \q``
 
-    -  ``psql --host=10.10.10.1 --dbname=mattermost --username=mmuser --password``
-    -  ``mattermost=> \q``
+14. Log out of the *postgres* account.
+
+  ``exit``
+
+15. Allow Postgres to listen on all assigned IP Addresses. Open ``/etc/postgresql/9.4/main/postgresql.conf`` as root in a text editor.
+
+  a. Find the following line:
+  
+    ``#listen_addresses = 'localhost'``
+    
+  b. Uncomment the line and change ``localhost`` to ``*``:
+  
+    ``listen_addresses = '*'``
+
+16. If the Mattermost server is on a separate machine, modify the file ``pg_hbe.conf`` to allow the Mattermost server to communicate with the database.
+
+  If the Mattermost server and the database are on the same machine, then you can skip this step.
+
+  a. Open ``/etc/postgresql/9.4/main/pg_hba.conf`` in a text editor.
+
+  b. Add the following line to the end of the file, where *<mm-server-IP>* is the IP address of the machine that contains the Mattermost server.
+
+    ``host all all <mm-server-IP>/32 md5``
+
+17. Reload Postgres database
+
+  ``sudo systemctl reload postgresql``
+
+18. Verify that you can connect with the user *mmuser*.
+  
+  ``psql --host=localhost --dbname=mattermost --username=mmuser --password``
+  
+  The PostgreSQL interactive terminal starts. To exit the PostgreSQL interactive terminal, type ``\q`` and press **Enter**.
+
+With the database installed and the initial setup complete, you can now install the Mattermost server.
