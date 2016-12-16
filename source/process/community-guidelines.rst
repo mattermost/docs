@@ -2,10 +2,10 @@
 Mattermost Community Guidelines
 ============================================================
 
-In this document we set out some easy-to-follow community guidelines, including:
+This document provides easy-to-follow community guidelines for:
 
-- `GitHub Help Wanted Issues in Platform Repository`_ - Guidelines for managing Help Wanted issues in GitHub
-- `Community Forums`_ - Guidelines for responding to `Mattermost Forum posts <forum.mattermost.org>`_
+- `GitHub Help Wanted Issues in Platform Repository`_
+- `Mattermost Community Forums`_
 
 ----
 
@@ -15,23 +15,23 @@ GitHub Help Wanted Issues in Platform Repository
 Goal
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Increase Mattermost usage through more numerous and larger deployments via vibrant open source community by contributing features that would not otherwise be offered
+Increase Mattermost usage through larger and more numerous deployments via a vibrant open source community that contributes features that would not otherwise be offered.
 
 Principles
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Contributors get a worthwhile benefit from their contributions from the feature directly, and/or from social recognition
+- Contributors get a worthwhile benefit from their contributions, from the feature directly and/or from social recognition
 - Help Wanted issues should have a low barrier to contribute
 
-Creating help wanted issues
+Creating Help Wanted issues
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Before creating a help wanted issue in the `platform repository <https://github.com/mattermost/platform>`_, confirm the issue you're planning to add has a JIRA ticket associated with it
+Before creating a Help Wanted issue in the `platform repository <https://github.com/mattermost/platform>`_, confirm the issue you're planning to add has a JIRA ticket associated with it:
 
-- JIRA can be used to prioritize help wanted issues internally
-- each issue goes through `Triage meeting <https://docs.mattermost.com/process/training.html#triage-meeting>`_ to ensure the ticket is clear and is approved by at least one developer and product manager
+- JIRA can be used to prioritize Help Wanted issues internally
+- Each issue goes through `Triage meeting <https://docs.mattermost.com/process/training.html#triage-meeting>`_ to ensure the ticket is clear and is approved by at least one developer and product manager
 
-When creating a help wanted issue, please ensure it contains the following (`see a sample help wanted issue here <https://github.com/mattermost/platform/issues/4755>`_):
+When creating a Help Wanted issue, please ensure it (`see a sample Help Wanted issue here <https://github.com/mattermost/platform/issues/4755>`_):
 
 - is well-defined and unambiguous
  
@@ -58,32 +58,34 @@ When creating a help wanted issue, please ensure it contains the following (`see
 
 - has a link to the corresponding JIRA ticket 
 
-- gets noted in the corresponding JIRA ticket
+- gets noted in the description of the corresponding JIRA ticket
  
- - ensures core devs are aware a help wanted issue was created, and to check whether someone in the community already has it in progress
+ - ensures core devs are aware a Help Wanted issue was created, and to check whether someone in the community already has it in progress
  - example text: ``GitHub Help Wanted issue here: [Link]. Before starting to work on this ticket, please check whether a community member has it in progress by checking the GitHub issue or by asking a PM.``
 
-Managing help wanted issues
+Managing Help Wanted issues
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Once a help wanted issue is added, the creator is responsible for
+Once a Help Wanted issue is added, the creator is responsible for:
 
 - answering questions from community members, which get automatically posted in the `Community Heartbeat channel <https://pre-release.mattermost.com/core/channels/community-heartbeat>`_
 - following up with a community member if there hasn't been a response for two weeks
 - being the first tester once a pull request has been submitted
 
-Closing help wanted issues
+Closing Help Wanted issues
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Once a pull request for an open GitHub help wanted issue is merged, please ensure:
+Once a pull request for an open GitHub Help Wanted issue is merged, please ensure:
 
-- the corresponding GitHub help wanted issue is closed, thanking the contributor
+- the corresponding GitHub Help Wanted issue is closed, thanking the contributor
 - the corresponding JIRA ticket is resolved
 
 ----
 
-Community Forums
+Mattermost Community Forums
 ---------------------------------------------------------
+
+Guidelines for `Mattermost community forums <forum.mattermost.org>`_.
 
 *CM = community manager*
 
@@ -128,7 +130,6 @@ Resolving issues
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - After responding to an issue, if the asker comes back and lets you know that the issue is solved, please add [Solved] to the beginning of the title of the question
-  - Don't be afraid to close GitHub issues if you think you've solved them
 - CM monitors for issues solved by community members
   - If a thread seems solved but it is not obvious, post to thread asking questioner if the issue is solved
   - If 24 hours go by without a response, ask a core team member if they can confirm if the issue is solved
