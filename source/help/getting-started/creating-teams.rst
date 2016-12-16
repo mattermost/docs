@@ -10,24 +10,16 @@ Teams can be created from the Team Selection page or Main Menu. The person who c
 
 Team Selection Page
 ~~~~~~~~~~~~~~~~~~~~
-Navigate to the web address of your system, ``https://domain.com/``.
-Sign in using your credentials. Click **Create a new team** to be guided
-through the rest of the set up steps. If this option is not visible on
-the web page, then the System Admin has disabled team creation. It is necessary to have an existing account on the system in
-order to create a team from the system home page, so if you do not have
-an account you will need to create one.
+Navigate to the web address of your system, ``https://domain.com/``. Sign in using your credentials. Click **Create a new team** to be guided through the rest of the set up steps. If this option is not visible on the web page, then the System Admin has disabled team creation. It is necessary to have an existing account on the system in order to create a team from the system home page, so if you do not have an account you will need to create one.
 
 Main Menu
 ~~~~~~~~~~
-From your current Mattermost team, click on the **Main Menu** > **Create a New
-Team**. If this option is not visible in the menu, then the System Admin
-has disabled team creation.
+From your current Mattermost team, click on the **Main Menu** > **Create a New Team**. If this option is not visible in the menu, then the System Admin has disabled team creation.
 
 Team Name and URL Selection
 ---------------------------
 
-There are a few details and restrictions to consider when selecting a
-team name and team URL.
+There are a few details and restrictions to consider when selecting a team name and team URL.
 
 Team Name
 ~~~~~~~~~~~~~
