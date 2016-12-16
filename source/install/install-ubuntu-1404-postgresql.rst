@@ -3,72 +3,77 @@
 Installing PostgreSQL Database Server
 =====================================
 
-You can install either PostgreSQL or MySQL. To install MySQL, see :ref:`install-ubuntu-1404-mysql`
+Install and set up the database for use by the Mattermost server. You can install either PostgreSQL or MySQL. To install MySQL, see :ref:`install-ubuntu-1404-mysql`
 
 Assume that the IP address of this server is 10.10.10.1
 
-**To install PostgreSQL on Ubuntu Server:**
+**To install PostgreSQL on Ubuntu Server 14.04:**
 
-1.  Log into the server that will host the database and issue the following command:
+1. Log into the server that will host the database and issue the following command:
 
-    -  ``sudo apt-get install postgresql postgresql-contrib``
+  ``sudo apt-get install postgresql postgresql-contrib``
+  
+  When the installation is complete, the PostgreSQL server is running, and a Linux user account called *postgres* has been created.
 
-2.  PostgreSQL created a user account called ``postgres``. You will need
-    to log into that account with:
+2. Log into the *postgres* account. 
 
-    -  ``sudo -i -u postgres``
+  ``sudo --login --user postgres``
 
-3.  You can get a PostgreSQL prompt by typing:
+3. Start the PostgreSQL interactive terminal.
 
-    -  ``psql``
+  ``psql``
 
-4.  Create the Mattermost database by typing:
+4.  Create the Mattermost database.
 
-    -  ``postgres=# CREATE DATABASE mattermost;``
+  ``postgres=# CREATE DATABASE mattermost;``
 
-5.  Create the Mattermost user by typing:
+5.  Create the Mattermost user 'mmuser'.
 
-    -  ``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser_password';``
+  ``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser_password';``
+  
+  .. note::
+    Use a password that is more secure than 'mmuser-password'
 
-6.  Grant the user access to the Mattermost database by typing:
+6.  Grant the user access to the Mattermost database.
 
-    -  ``postgres=# GRANT ALL PRIVILEGES ON DATABASE mattermost to mmuser;``
+  ``postgres=# GRANT ALL PRIVILEGES ON DATABASE mattermost to mmuser;``
 
-7.  You can exit out of PostgreSQL by typing:
+7. Exit the PostgreSQL interactive terminal.
 
-    -  ``postgre=# \q``
+  ``postgre=# \q``
 
-8.  You can exit the postgres account by typing:
+8. Log out of the *postgres* account.
 
-    -  ``exit``
+  ``exit``
 
-9. Allow Postgres to listen on all assigned IP Addresses
+9. Allow Postgres to listen on all assigned IP Addresses. Open ``/etc/postgresql/9.3/main/postgresql.conf`` as root in a text editor.
 
-    -  ``sudo vi /etc/postgresql/9.3/main/postgresql.conf``
-    -  Uncomment ``listen_addresses`` and change ``localhost`` to ``*``
+  a. Find the following line:
+  
+    ``#listen_addresses = 'localhost'``
+    
+  b. Uncomment the line and change ``localhost`` to ``*``:
+  
+    ``listen_addresses = '*'``
 
-10. Modify ``pg_hba.conf`` to allow the mattermost server to talk to the postgres database. Assume that the Mattermost server IP address is ``10.10.10.2``
+10. If the Mattermost server is on a separate machine, modify the file ``pg_hbe.conf`` to allow the Mattermost server to communicate with the database.
 
-    -  ``sudo vi /etc/postgresql/9.3/main/pg_hba.conf``
-    -  Add the following line to the ``IPv4 local connections``
-    -  ``host all all 10.10.10.2/32 md5``
+  If the Mattermost server and the database are on the same machine, then you can skip this step.
+
+  a. Open ``/etc/postgresql/9.3/main/pg_hba.conf`` in a text editor.
+
+  b. Add the following line to the end of the file, where *<mm-server-IP>* is the IP address of the machine that contains the Mattermost server.
+
+    ``host all all <mm-server-IP>/32 md5``
 
 11. Reload Postgres database
 
-    -  ``sudo /etc/init.d/postgresql reload``
+  ``sudo /etc/init.d/postgresql reload``
 
-    check with netstat command to see postgresql actually running on given ip and port
-
-    - ``sudo netstat -anp | grep 5432``
-
-    try restarting the postgresql service if reload won't work
-
-    - ``sudo service postgresql restart``
-
-12. Attempt to connect with the new created user to verify everything
-    looks good
-
-    -  ``psql --host=10.10.10.1 --dbname=mattermost --username=mmuser --password``
-    -  ``mattermost=> \q``
+12. Verify that you can connect with the user *mmuser*.
+  
+  ``psql --host=localhost --dbname=mattermost --username=mmuser --password``
+  
+  The PostgreSQL interactive terminal starts. To exit the PostgreSQL interactive terminal, type ``\q`` and press **Enter**.
 
 With the database installed and the initial setup complete, you can now install the Mattermost server.
