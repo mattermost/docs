@@ -45,6 +45,6 @@ Settings
 
    /help/settings/account-settings.md
    /help/settings/theme-colors.md
-   /help/settings/channel-settings.md
+   /help/settings/channel-settings.rst
    /help/settings/team-settings.md
    /help/settings/*
