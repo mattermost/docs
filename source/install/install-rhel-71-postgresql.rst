@@ -35,7 +35,7 @@ Installing PostgreSQL Database
 
 9. Start the PostgreSQL interactive terminal.
 
-  -  ``psql``
+  ``psql``
 
 10.  Create the Mattermost database.
 
@@ -60,13 +60,15 @@ Installing PostgreSQL Database
 
   ``exit``
 
-15. Allow Postgres to listen on all assigned IP Addresses. Open ``/etc/postgresql/9.4/main/postgresql.conf`` as root in a text editor.
+15. Allow Postgres to listen on all assigned IP Addresses.
 
-  a. Find the following line:
+  a. Open ``/etc/postgresql/9.4/main/postgresql.conf`` as root in a text editor.
+
+  b. Find the following line:
   
     ``#listen_addresses = 'localhost'``
-    
-  b. Uncomment the line and change ``localhost`` to ``*``:
+
+  c. Uncomment the line and change ``localhost`` to ``*``:
   
     ``listen_addresses = '*'``
 
