@@ -9,6 +9,8 @@ Although you can configure HTTP/2 without SSL, both Firefox and Chrome browsers 
 
 You can use any certificate that you want, but these instructions show you how to download and install certificates from *Let's Encrypt*.
 
+**To SSL and HTTP/2:**
+
 1. Log into the server that hosts NGINX and open a terminal window.
 2. Install git.
 
@@ -43,72 +45,31 @@ You can use any certificate that you want, but these instructions show you how t
 
   When prompted, enter your domain name. The certificate is located in  ``/etc/letsencrypt/live``
 
-8. Open the file ``/etc/nginx/sites-available/mattermost`` as root in a text editor and update it to incorporate the following lines. Make sure that you use your own values for the Mattermost server IP address and FQDN for *server_name*.
+8. Open the file ``/etc/nginx/sites-available/mattermost`` as root in a text editor and update the *server* section to incorporate the highlighted lines in the following sample. Make sure to replace {domain-name} with your own domain name, in 2 places.
 
   .. code-block:: none
+    :emphasize-lines: 5,9-16
 
-    upstream backend {
-        server 10.10.10.2:8065;
-    }
-
+    . 
+    .
+    .
     server {
-       listen         80;
-       server_name    mattermost.example.com;
-       return         301 https://$server_name$request_uri;
+      listen 443 ssl http2;
+    .
+    .
+    .
+      ssl on;
+      ssl_certificate /etc/letsencrypt/live/{domain-name}/fullchain.pem;
+      ssl_certificate_key /etc/letsencrypt/live/{domain-name}/privkey.pem;
+      ssl_session_timeout 5m;
+      ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+      ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
+      ssl_prefer_server_ciphers on;
+      ssl_session_cache shared:SSL:10m;
+    .
+    .
+    .
     }
-
-    proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=mattermost_cache:10m max_size=3g inactive=120m use_temp_path=off;
-
-    server {
-       listen 443 ssl http2;
-       server_name mattermost.example.com;
-
-       ssl on;
-       ssl_certificate /etc/letsencrypt/live/yourdomainname/fullchain.pem;
-       ssl_certificate_key /etc/letsencrypt/live/yourdomainname/privkey.pem;
-       ssl_session_timeout 5m;
-       ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-       ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
-       ssl_prefer_server_ciphers on;
-       ssl_session_cache shared:SSL:10m;
-
-       location /api/v3/users/websocket {
-          proxy_set_header Upgrade $http_upgrade;
-          proxy_set_header Connection "upgrade";
-          proxy_set_header X-Forwarded-Ssl on;
-          client_max_body_size 50M;
-          proxy_set_header Host $http_host;
-          proxy_set_header X-Real-IP $remote_addr;
-          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-          proxy_set_header X-Forwarded-Proto $scheme;
-          proxy_set_header X-Frame-Options SAMEORIGIN;
-          proxy_buffers 256 16k;
-          proxy_buffer_size 16k;
-          proxy_read_timeout 600s;
-          proxy_pass http://backend;
-       }
-
-       location / {
-          proxy_set_header X-Forwarded-Ssl on;
-          client_max_body_size 50M;
-          proxy_set_header Connection "";
-          proxy_set_header Host $http_host;
-          proxy_set_header X-Real-IP $remote_addr;
-          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-          proxy_set_header X-Forwarded-Proto $scheme;
-          proxy_set_header X-Frame-Options SAMEORIGIN;
-          proxy_buffers 256 16k;
-          proxy_buffer_size 16k;
-          proxy_read_timeout 600s;
-          proxy_cache mattermost_cache;
-          proxy_cache_revalidate on;
-          proxy_cache_min_uses 2;
-          proxy_cache_use_stale timeout;
-          proxy_cache_lock on;
-          proxy_pass http://backend;
-        }
-    }
-
 
 9. Restart NGINX
 
@@ -118,7 +79,7 @@ You can use any certificate that you want, but these instructions show you how t
   
   On Ubuntu 16.04 and RHEL 7.1:
   
-    ``sudo systemctl start nginx``
+  ``sudo systemctl start nginx``
 
 10. Check that your SSL certificate is set up correctly.
 
@@ -132,3 +93,5 @@ You can use any certificate that you want, but these instructions show you how t
   In the following line, use your domain name in place of *<domain-name>*
   
   ``@monthly /home/ubuntu/letsencrypt/letsencrypt-auto certonly --reinstall --nginx -d <domain-name> && sudo service nginx reload``
+
+8. Check that your SSL certificate is set up correctly. Test the SSL certificate by visiting a site such as https://www.ssllabs.com/ssltest/index.html. If there’s an error about the missing chain or certificate path, there is likely an intermediate certificate missing that needs to be included.
