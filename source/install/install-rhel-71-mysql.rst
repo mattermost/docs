@@ -3,7 +3,7 @@
 Installing MySQL Database Server
 ================================
 
-You can install either MySQL or PostgreSQL. To install PostgreSQL, see :ref:`install-rhel-71-postgresql`
+Install and set up the database for use by the Mattermost server. You can install either MySQL or PostgreSQL. To install PostgreSQL, see :ref:`install-rhel-71-postgresql`
 
 **To install MySQL 5.7 on RHEL 7.1:**
 
