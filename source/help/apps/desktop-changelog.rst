@@ -1,8 +1,99 @@
 Desktop Application Changelog
-=============================
+========================================
+
+Release v3.5.0
+--------------
+
+Release date: December 14, 2016
+
+Improvements
+~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+-  URL address is shown when hovering over links with a mouse
+-  Added CTRL+SHIFT+MINUS as a shortcut for decreasing font size (zooming out)
+-  Reduce upgrade issues by properly clearing cache when updating the desktop app to a new version (the application cache will be purged whenever the desktop app version changes)
+-  When launching the app from the command line interface, unnecessary warning messages are no longer sent if connecting to a trusted https connection without a ``certificate.json`` file
+
+Windows
+^^^^^^^
+
+-  Link addresses can now be copied and pasted inside the app
+
+Bug Fixes
+~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+-  YouTube previews now work, even if mixed content is allowed
+-  Fixed an incorrect cursor mode for "Edit" and "Remove" buttons on the Settings page
+-  Fixed an issue where "Zoom in/out" settings did not properly work
+-  When disconnected from Mattermost, the "Cannot connect to Mattermost" page is now properly aligned at the top of the window
+
+Windows
+^^^^^^^
+
+-  The menu bar option for "Redo" is now properly shown as CTRL+Y
+
+Mac
+^^^
+
+-  Fixed an issue where the default download folder was ``Macintosh HD``
+-  Removed an unexpected "Show Tab Bar" menu item on macOS 10.12
+
+Linux (Beta)
+^^^^^^^^^^^^
+
+-  Fixed an issue where the option "Leave app running in notification area when the window is closed" was never enabled.
+
+Known Issues
+~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+-  `If you click twice on the tab bar, and then attempt to use the "Zoom in/out" to change font size, the app window doesn't render properly <https://github.com/mattermost/desktop/issues/334>`__
+-  `Direct messages cause notification icons to appear on all team tabs, which don't clear until you click on each team <https://github.com/mattermost/desktop/issues/160>`__
+-  `After right-clicking an image or a link, the "Copy Link" option sometimes moves around when clicking different places afterwards <https://github.com/mattermost/desktop/issues/340>`__
+
+Windows
+^^^^^^^
+
+-  [Windows 7] `Sometimes the app tries to render clicked linked inside the app, instead of in a new browser tab <https://github.com/mattermost/desktop/issues/369>`_
+
+Mac
+^^^
+
+-  `After uploading a file with a keyboard shortcut, focus isn't set back to the message box <https://github.com/mattermost/desktop/issues/341>`__
+
+Linux (Beta)
+^^^^^^^^^^^^
+
+-  [Ubuntu - 64 bit] `Right clicking taskbar icon and choosing Quit only minimizes the
+   app <https://github.com/mattermost/desktop/issues/90#issuecomment-233712183>`_
+-  [Ubuntu - 64 bit] `Direct message notification pop ups do not properly render <https://github.com/mattermost/platform/issues/3589>`_
+
+Contributors
+~~~~~~~~~~~~
+
+Many thanks to all our contributors. In alphabetical order:
+
+-  `itsmartin <https://github.com/itsmartin>`__,
+   `jasonblais <https://github.com/jasonblais>`__,
+   `jcomack <https://github.com/jcomack>`__,
+   `jnugh <https://github.com/jnugh>`__,
+   `kytwb <https://github.com/kytwb>`__,
+   `magicmonty <https://github.com/magicmonty>`__,
+   `Razzeee <https://github.com/Razzeee>`__,
+   `yuya-oc <https://github.com/yuya-oc>`__
+
+--------------
 
 Release v3.4.1
------------------------------
+--------------
 
 Release date: September 30, 2016
 
@@ -12,132 +103,100 @@ Version number updated to 3.4 to make numbering consistent with Mattermost serve
 
 -  v3.4.1, released 2016-09-30
 
-   -  (OS X) Fixed an issue where the app window pops up second to foreground when a new message is received
+   -  (Mac) Fixed an issue where the app window pops up second to foreground when a new message is received
 
 -  v3.4.0, released 2016-09-22
 
    -  Original v3.4 release
 
 Improvements
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+-  Current team and channel name shown in window title bar
+-  Team tab is bolded for unread messages and has a red dot with a count of unread mentions
+-  Added new shortcuts:
+
+   -  CTRL+S; CMD+S on Mac: sets focus on the Mattermost search box
+   -  ALT+Left Arrow; CMD+[ on Mac: go to previous page in history
+   -  ALT+Right Arrow; CMD+] on Mac: go to next page in history
+
+-  Upgraded the Settings page user interface
+-  The app now tries to reconnect periodically if a page fails to load
+-  Added validation for name and URL when adding a new team on the Settings page
 
 Windows
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^
 
--  Current team and channel name shown in window title bar
--  Team tab is bolded for unread messages and has a red dot with a count of unread mentions
--  Added an option to configure whether a red badge is shown on taskbar icon for unread messages
--  Added new shortcuts:
-
-   -  CTRL+S: sets focus on the Mattermost search box
-   -  ALT+Left Arrow: go to previous page in history
-   -  ALT+Right Arrow: go to next page in history
-
--  Upgraded the Settings page user interface
 -  Added access to the settings menu from the system tray icon
--  Added validation for name and URL when adding a new team on the Settings page
--  The app now tries to reconnect periodically if a page fails to load
 -  Only one instance of the desktop application will now load at a time
-
-OS X
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
--  Current team and channel name shown in window title bar
--  Team tab is bolded for unread messages and has a red dot with a count of unread mentions
 -  Added an option to configure whether a red badge is shown on taskbar icon for unread messages
--  Added new shortcuts:
 
-   -  CMD + S: sets focus on the Mattermost search box
-   -  CMD + [: go to previous page in history
-   -  CMD + ]: go to next page in history
+Mac
+^^^
 
--  Upgraded the Settings page user interface
--  The app now tries to reconnect periodically if a page fails to load
--  Added validation for name and URL when adding a new team on the Settings page
+-  Added an option to configure whether a red badge is shown on taskbar icon for unread messages
 
 Linux (Beta)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^
 
--  Current team and channel name shown in window title bar
--  Team tab is bolded for unread messages and has a red dot with a count of unread mentions
 -  Added an option to flash taskbar icon when a new message is received
 -  Added a badge to count mentions on the taskbar icon (for Unity)
--  Added a script, ``create_desktop_file.sh``, to create ``Mattermost.desktop`` desktop entry to help `integrate the application into a desktop environment <https://wiki.archlinux.org/index.php/Desktop_entries>`__ more easily
--  Added new shortcuts:
-
-   -  CTRL + S: sets focus on the Mattermost search box
-   -  ALT + Left Arrow: go to previous page in history
-   -  ALT + Right Arrow: go to next page in history
-
--  Upgraded the Settings page user interface
+-  Added a script, ``create_desktop_file.sh`` to create ``Mattermost.desktop`` desktop entry to help `integrate the application into a desktop environment <https://wiki.archlinux.org/index.php/Desktop_entries>`__ more easily
 -  Added access to the settings menu from the system tray icon
--  The app now tries to reconnect periodically if a page fails to load
--  Added validation for name and URL when adding a new team on the Settings page
 -  Only one instance of the desktop application will now load at a time
 
 Bug Fixes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~
 
-Windows
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+All Platforms
+^^^^^^^^^^^^^
 
 -  Cut, copy and paste are shown in the user interface only when the commands are available
 -  Copying link addresses now work properly
 -  Saving images by right-clicking the image preview now works
 -  Refreshing the app page no longer takes you to the team selection page, but keeps you on the current channel
+-  Fixed an issue where the maximized state of the app window was lost in some cases
+-  Fixed an issue where shortcuts didn't work when switching applications or tabs in some cases
+
+Windows
+^^^^^^^
+
 -  Removed misleading shortcuts from the system tray menu
 -  Removed unclear desktop notifications when the application page fails to load
 -  Fixed the Mattermost icon for desktop notifications in Windows 10
--  Fixed an issue where the maximized state of the app window was lost in some cases
--  Fixed an issue where shortcuts didn't work when switching applications or tabs in some cases
 -  Fixed an issue where application icon at the top left of the window was pixelated
 -  Fixed an issue where the application kept focus after closing the app window
 
-OS X
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
--  Cut, copy and paste are shown in the user interface only when the commands are available
--  Copying link addresses now work properly
--  Saving images by right-clicking the image preview now works
--  Refreshing the app page no longer takes you to the team selection page, but keeps you on the current channel
--  Fixed an issue where the maximized state of the app window was lost in some cases
--  Fixed an issue where shortcuts didn't work when switching applications or tabs in some cases
-
 Linux (Beta)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^
 
--  Cut, copy and paste are shown in the user interface only when the commands are available
--  Copying link addresses now work properly
--  Saving images by right-clicking the image preview now works
--  Refreshing the app page no longer takes you to the team selection page, but keeps you on the current channel
 -  Removed misleading shortcuts from the system tray menu
 -  Removed unclear desktop notifications when the application page fails to load
--  Fixed an issue where the maximized state of the app window was lost in some cases
--  Fixed an issue where shortcuts didn't work when switching applications or tabs in some cases
 
 Known Issues
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+-  YouTube videos do not work if mixed content is enabled from app settings
 
 Windows
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^
 
 -  Copying a link address and pasting it inside the app doesn't work
--  YouTube videos do not work if mixed content is enabled from app settings
 
-OS X
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Linux (Beta)
+^^^^^^^^^^^^
 
--  YouTube videos do not work if mixed content is enabled from app settings
-
-Linux
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
--  YouTube videos do not work if mixed content is enabled from app settings
 -  [Ubuntu - 64 bit] Right clicking taskbar icon and choosing **Quit** only minimizes the app
--  [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/platform/issues/3589>`_ 
+-  [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/platform/issues/3589>`_
 
 Contributors
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
 
 Many thanks to all our contributors. In alphabetical order:
 
@@ -151,48 +210,26 @@ Many thanks to all our contributors. In alphabetical order:
    `timroes <https://github.com/timroes>`__,
    `yuya-oc <https://github.com/yuya-oc>`__
 
+--------------
+
 Release v1.3.0
------------------------------
+--------------
 
 Release date: 2016-07-18
 
-`Download the latest version
-here <https://about.mattermost.com/downloads/>`__.
+`Download the latest version here <https://about.mattermost.com/downloads/>`__.
 
 Improvements
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
 
-Windows
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+All Platforms
+^^^^^^^^^^^^^
 
--  Added an installer for better install experience.
--  The app now minimizes to the system tray when application window is closed.
--  Added an option to launch application on login.
--  Added an option to blink the taskbar icon when a new message has arrived.
--  Added tooltip text for the system tray icon in order to show count of unread channels/mentions.
--  Added an option to toggle the app to minimize/restore when clicking on the system tray icon.
--  Added auto-reloading when tab fails to load the team
--  Added the ability to access all of your teams by right clicking the system tray icon.
-
-OS X
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
--  Added colored badges to the menu icon when there are unread channels/mentions.
--  Added an option to minimize the app to the system tray when application window is closed.
--  Added auto-reloading when tab fails to load the team.
--  Added the ability to access all of your teams by right clicking the system tray icon.
-
-Linux (Beta)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
--  Added an option to show the icon on menu bar (requires libappindicator1 on Ubuntu).
--  Added an option to launch application on login.
--  Added an option to minimize the app to the system tray when application window is closed.
 -  Added auto-reloading when tab fails to load the team.
 -  Added the ability to access all of your teams by right clicking the system tray icon.
 
 Menu Bar
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+''''''''
 
 -  New Keyboard Shortcuts
 
@@ -210,57 +247,79 @@ Menu Bar
    -  Switch teams (these shotcuts also reopen the main window)
 
       -  CTRL+{1-9} (Menu Bar -> Window -> [Team name]): Open the *n*-th tab.
-      -  CTRL+TAB or ALT+CMD+Right Arrow (Menu Bar -> Window -> Select Next Team): Switch to the next window.
-      -  CTRL+SHIFT+TAB or ALT+CMD+Left Arrow (Menu Bar -> Window -> Select Previous Team): Switch to the previous window.
+      -  CTRL+TAB or ALT+CMD+Right (Menu Bar -> Window -> Select Next Team): Switch to the next window.
+      -  CTRL+SHIFT+TAB or ALT+CMD+Left (Menu Bar -> Window -> Select Previous Team): Switch to the previous window.
       -  Right click on the tray item, to see an overview of all your teams. You can also select one and jump right into it.
 
--  Added **Help** to the Menu Bar, which includes
+   -  Added **Help** to the Menu Bar, which includes
 
-   -  Link to `Mattermost Docs <https://docs.mattermost.com/>`__
-   -  Field to indicate the application version number.
+      -  Link to `Mattermost Docs <docs.mattermost.com>`__
+      -  Field to indicate the application version number.
 
 Settings Page
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'''''''''''''
 
 -  Added a "+" button next to the **Teams** label, which allows you to add more teams.
 -  Added the ability to edit team information by clicking on the pencil icon to the right of the team name.
 
+Windows
+^^^^^^^
+
+-  Added an installer for better install experience.
+-  The app now minimizes to the system tray when application window is closed.
+-  Added an option to launch application on login.
+-  Added an option to blink the taskbar icon when a new message has arrived.
+-  Added tooltip text for the system tray icon in order to show count of unread channels/mentions.
+-  Added an option to toggle the app to minimize/restore when clicking on the system tray icon.
+
+Mac
+^^^
+
+-  Added colored badges to the menu icon when there are unread channels/mentions.
+-  Added an option to minimize the app to the system tray when application window is closed.
+
+Linux (Beta)
+^^^^^^^^^^^^
+
+-  Added an option to show the icon on menu bar (requires libappindicator1 on Ubuntu).
+-  Added an option to launch application on login.
+-  Added an option to minimize the app to the system tray when application window is closed.
+
 Other Changes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
 
 -  Application license changed from MIT License to Apache License, Version 2.0.
 
 Bug Fixes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~
 
 All platforms
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 -  Fixed authentication dialog not working for proxy.
 
 Windows
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^
 
 -  Fixed the blurred system tray icon.
 -  Fixed a redundant description appearing in the pinned start menu on Windows 7.
 
-OS X
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mac
+^^^
 
 -  Fixed two icons appearing on a notification.
 
 Known Issues
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
 
-Linux
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Linux (Beta)
+^^^^^^^^^^^^^
 
 -  [Ubuntu - 64 bit] Right clicking taskbar icon and choosing **Quit** only minimizes the app
--  [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop
-   up <https://github.com/mattermost/platform/issues/3589>`_
+-  [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/platform/issues/3589>`_
 
 Contributors
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
 
 Many thanks to all our contributors. In alphabetical order:
 
@@ -272,6 +331,8 @@ Many thanks to all our contributors. In alphabetical order:
    `MetalCar <https://github.com/MetalCar>`__,
    `Razzeee <https://github.com/Razzeee>`__,
    `yuya-oc <https://github.com/yuya-oc>`__
+
+--------------
 
 Release v1.2.1 (Beta)
 -----------------------------
@@ -293,39 +354,27 @@ This release contains a security update and it is highly recommended that users 
 Improvements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Windows
+All Platforms
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Improved the style for tab badges.
 -  Added **Allow mixed content** option to render images with ``http://``.
 -  Added the login dialog for ``http`` authentication.
 
-OS X
+Mac
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Improved the style for tab badges.
--  Added **Allow mixed content** option to render images with ``http://``.
--  Added the login dialog for ``http`` authentication.
 -  Added an option to show a black dot indicating unread messages on the team tab bar.
 
 Linux
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Improved the style for tab badges.
--  Added an **Allow mixed content** option to render images with ``http://``.
--  Added a login dialog for ``http`` authentication.
 -  Added **.deb** packages to support installation.
 
 Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Windows
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
--  Node.js environment is enabled in the new window.
--  The link other than ``http://`` and ``https://`` is opened by clicking.
-
-OS X
+All Platforms
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Node.js environment is enabled in the new window.
@@ -334,8 +383,6 @@ OS X
 Linux
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Node.js environment is enabled in the new window.
--  The link other than ``http://`` and ``https://`` is opened by clicking.
 -  Desktop notification is shown as a dialog on Ubuntu 16.04.
 
 Known issues
