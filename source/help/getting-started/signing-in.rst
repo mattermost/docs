@@ -75,7 +75,7 @@ Logging Out
 
 You can log out from the **Main Menu**, which is accessed by clicking
 the three dots in the top header on the left side of the screen.
-Clicking “Logout” logs you out of all teams that are signed in and open
+Clicking **Logout** logs you out of all teams that are signed in and open
 in your browser.
 
 iOS Setup
@@ -96,7 +96,7 @@ downloading the Mattermost App.
       tab with Mattermost open. It is in the form
       ``https://domain.com``.
    #. Sign in to Mattermost: This is your account login information as
-      decribed by one of the sign in methods above.
+      described by one of the sign in methods above.
 
 Android Setup
 -------------
