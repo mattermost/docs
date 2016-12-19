@@ -14,7 +14,7 @@ There are several options for signing in to your team depending on how
 your System Admin has configured your server.
 
 Email Address or Username Sign In
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When enabled by your System Admin, you can sign in with the username or
 email address used to create your account.
@@ -24,27 +24,27 @@ forgot my password** on the sign in screen, or contact your System Admin
 for help resetting your password.
 
 GitLab Single-Sign-On (SSO)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When enabled by your System Admin, you can sign in using your GitLab
 account using a one-click sign in option.
 
 Google Single-Sign-On
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
 
 When enabled by your System Admin, you can sign in using your Google
 account using a one-click sign in option.
 
 Office 365 Single-Sign-On (Beta)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
 
 When enabled by your System Admin, you can sign in using your Office 365
 account using a one-click sign in option.
 
 AD/LDAP Sign In
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E10 & E20*
 
 When enabled by your System Admin, you can sign in with your AD/LDAP
@@ -52,7 +52,7 @@ credentials. This lets you use the same username and password for
 Mattermost that you use for various other company services.
 
 SAML Single-Sign-On (SSO)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
 
 When enabled by your System Admin, you can sign in with your SAML
@@ -75,8 +75,7 @@ Logging Out
 
 You can log out from the **Main Menu**, which is accessed by clicking
 the three dots in the top header on the left side of the screen.
-Clicking **Logout** logs you out of all teams that are signed in and open
-in your browser.
+Clicking **Logout** logs you out of all teams on the server.
 
 iOS Setup
 ---------
