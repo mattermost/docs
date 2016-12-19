@@ -115,7 +115,7 @@ downloading the Mattermost App.
       tab with Mattermost open. It is in the form
       ``https://domain.com``.
    #. Sign in to Mattermost: This is your account login information as
-      decribed by one of the sign in methods above.
+      described by one of the sign in methods above.
 
 .. _Okta: http://developer.okta.com/docs/guides/saml_guidance.html
 .. _Microsoft ADFS: https://msdn.microsoft.com/en-us/library/bb897402.aspx
