@@ -11,7 +11,7 @@ The following instructions migrate Mattermost from one server to another by back
 2. Upgrade your SOURCE Mattermost server to the latest major build version 
     1. See `Mattermost Upgrade Guide <upgrade.html>`_
 3. Install the latest major build of Mattermost server as your DESTINATION   
-    1. See docs.mattermost.com for install guides. Make sure your new instance is properly configured and tested. The database type and version of SOURCE and DESTINATION deployments need to match.  
+    1. See docs.mattermost.com for install guides. Make sure your new instance is properly configured and tested. The database type (MySQL or PostgreSQL) and version of SOURCE and DESTINATION deployments need to match.
     2. Stop the DESTINATION server using `sudo stop mattermost`, then backup the database and `config.json` file.
 4. Migrate database from SOURCE to DESTINATION  
     1. Backup the database from the SOURCE Mattermost server and restore it in place of the database to which the DESTINATION server is connected
@@ -22,7 +22,9 @@ The following instructions migrate Mattermost from one server to another by back
     2. Opening the **System Console** and saving a change will upgrade your ``config.json`` schema to the latest version using default values for any new settings added
 7. Test the system is working by going to the URL of an existing team.   
     1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade
- 
+
+Once your migration is complete and verified, you can optionally `upgrade the Team Edition of Mattermost to Enterprise Edition using the upgrade guide <https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition>`_. 
+
 Migrating from Slack
 ====================
 
