@@ -10,7 +10,7 @@ Getting Started
    :maxdepth: 2
    :glob:
 
-   /help/getting-started/signing-in.md
+   /help/getting-started/signing-in.rst
    /help/getting-started/messaging-basics.md
    /help/getting-started/configuring-notifications.md
    /help/getting-started/organizing-conversations.md
