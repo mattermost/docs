@@ -5,7 +5,7 @@ Channel Settings
 
 Notification preferences, channel header, channel purpose, and channel
 name are customizable for each channel. To access these settings, click
-the channel name at the top of the page to open the channel dropdown
+the channel name at the top of the page to open the channel drop-down
 menu.
 
 Channel Notification Preferences
