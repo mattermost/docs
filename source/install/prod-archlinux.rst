@@ -123,9 +123,9 @@ Follow the `AUR instructions <https://wiki.archlinux.org/index.php/Arch_User_Rep
 to build and install. Please go to the `AUR package page <https://aur.archlinux.org/packages/mattermost/>`_
 to leave a comment for sharing feedback or troubleshooting.
 
-Once the package has been built and install, follow this procedure.
+Once the package has been built and installed, follow the below procedure.
 
-For the purposes of this guide we will assume this server has an IP address of ``10.10.10.2``
+**NOTE**: For the purposes of this guide we will assume this server has an IP address of ``10.10.10.2``
 
 1. Configure Mattermost Server by editing the config.json file at
    ``/etc/webapps/mattermost/config.json``:
