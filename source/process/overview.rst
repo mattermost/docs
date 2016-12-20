@@ -25,7 +25,7 @@ Mattermost priorities are managed in Jira tickets, which are created by the core
 Triage
 ~~~~~~
 
-On non-holiday weekdays new tickets are reviewed in a process called "triage", and assigned a Fix Version of "backlog", indicating the ticket has enough specificity that it can be assigned to a developer to be completed. If the ticket is a bug or an improvement, it is assigned a Fix Version of the next release.
+On non-holiday weekdays new tickets are reviewed in a process called "triage", and assigned a Fix Version of "unscheduled", indicating the ticket has enough specificity that it can be assigned to a developer to be completed. If the ticket is a bug, it is assigned the Fix Version for the current release.
 
 By default, all tickets are created as public unless they contain sensitive information. The triage process reviews them for sufficient
 specificity. If the ticket is unclear, triage may reassign the ticket back to the original reporter to add more details.
@@ -46,7 +46,7 @@ feature might ship, which may change as the planning process continues, until th
 Sprint Planning
 ~~~~~~~~~~~~~~~
 
-Tickets to be completed in the upcoming two weeks are organized on Tuesdays, with input from developers.
+Tickets to be completed in the upcoming week are organized on Tuesdays, with input from developers.
 
 Pull Requests
 -------------
