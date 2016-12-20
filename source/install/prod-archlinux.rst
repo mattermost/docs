@@ -35,8 +35,8 @@ For the purposes of this guide we will assume this server has an IP address of `
     ``var/lib/postgres/data`` default directory, remove the ``.sample`` at the
     end of the file name and edit them according to your needs.
 
-    For more details, please refer to the `PostgreSQL Arch wiki
-    <https://wiki.archlinux.org/index.php/PostgreSQL> `_.
+    For more details, please refer to the `PostgreSQL Arch wiki <https://wiki.archlinux.org/index.php/PostgreSQL>`_.
+
 
 2.  Start and enable the systemd service::
 
@@ -80,7 +80,7 @@ For the purposes of this guide we will assume this server has an IP address of `
 11. Allow Postgres to listen on all assigned IP Addresses
 
     Edit the config file ``/var/lib/postgres/data/postgresql.conf``.
-    In the connections and authentications section, uncomment the ``listen_addresses ``
+    In the connections and authentications section, uncomment the ``listen_addresses``
     line and edit to your needs::
 
         listen_addresses = 'localhost,my_local_ip_address'
@@ -111,16 +111,16 @@ For the purposes of this guide we will assume this server has an IP address of `
 Set up Mattermost Server with Arch User Repository (unofficial)
 ---------------------------------------------------------------
 
-Archlinux uses a specific feature called `Arch User Repository<https://wiki.archlinux.org/index.php/Arch_User_Repository>`_.
+Archlinux uses a specific feature called `Arch User Repository <https://wiki.archlinux.org/index.php/Arch_User_Repository>`_.
 to manage extra packages which do not belong to the official repository. It allows
 you to compile a package from source and then install it via the Arch package manager
-`pacman<https://wiki.archlinux.org/index.php/Pacman#Additional_commands>`_. This way
+`pacman <https://wiki.archlinux.org/index.php/Pacman#Additional_commands>`_. This way
 you will be able to easily track upgrades or dependency issues. This is the recommended
 way to install extra packages.
 
-There is an AUR unofficial package called `mattermost<https://aur.archlinux.org/packages/mattermost>`_ .
-Follow the `AUR instructions<https://wiki.archlinux.org/index.php/Arch_User_Repository>`_
-to build and install. Please go to the `AUR package page<https://aur.archlinux.org/packages/mattermost/>`_
+There is an AUR unofficial package called `mattermost <https://aur.archlinux.org/packages/mattermost>`_ .
+Follow the `AUR instructions <https://wiki.archlinux.org/index.php/Arch_User_Repository>`_
+to build and install. Please go to the `AUR package page <https://aur.archlinux.org/packages/mattermost/>`_
 to leave a comment for sharing feedback or troubleshooting.
 
 Once the package has been built and install, follow this procedure.
