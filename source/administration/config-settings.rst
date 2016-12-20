@@ -41,7 +41,13 @@ Configuration
 
 Site URL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The URL, including port number and protocol, from which users will access Mattermost. Leave blank to automatically configure based on incoming traffic.
+The URL, including port number and protocol, that users will use to access Mattermost. This field can be left blank unless you are configuring email batching in Notifications > Email. When blank, the URL is automatically configured based on incoming traffic.
+
+.. note:: Do not append a team name to the end of the site URL.
+
+Correct example: ``https://mattermost.example.com:1234``
+
+Incorrect example: ``https://mattermost.example.com:1234/team_name``
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SiteURL": ""`` with string input.                                                                     |
