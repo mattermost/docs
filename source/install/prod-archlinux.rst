@@ -135,9 +135,6 @@ For the purposes of this guide we will assume this server has an IP address of `
 -  replace ``"DataSource": "mmuser:mostest@tcp(dockerhost:3306)/mattermost_test?charset=utf8mb4,utf8"`` with
    ``"DataSource": "postgres://mmuser:mmuser_password@10.10.10.1:5432/mattermost?sslmode=disable&connect_timeout=10"``
 
--  Optionally you may continue to edit configuration settings in
-``config.json`` or use the System Console described in a later section to finish the configuration.
-
 
 2. Start and enable mattermost service::
 
@@ -183,7 +180,7 @@ It maps unix user *mattermost* to psql user *mattermost*.
 
     $ su mattermost
     $ psql --dbname=mattermost_db --username=mattermost
-    mattermost_db=> \q
+    mattermost_db=>
 
 **Set up Mattermost server**
 
@@ -201,12 +198,11 @@ benefits are:
 
 -  SSL termination
 -  http to https redirect
--  Port mapping ``:80`` to ``:8065``
+-  Port mapping 80 to 8065
 -  Standard request logs
 
-
-1- Install the `nginx package<https://www.archlinux.org/packages/?name=nginx-mainline>`_
-from the extra repository. Please visit `Nginx Arch wiki<https://wiki.archlinux.org/index.php/Nginx>`_
+1- Install the `nginx package <https://www.archlinux.org/packages/?name=nginx-mainline>`_
+from the extra repository. Please visit `Nginx Arch wiki <https://wiki.archlinux.org/index.php/Nginx>`_
 for more explanations about settings.
 
 2- Enable and start the server::
@@ -227,11 +223,9 @@ to point to the NGINX server.
 
 4- Configure NGINX to proxy connections from the internet to the Mattermost Server.
 
--  Create and edit a configuration file ``/etc/nginx/servers-available/mattermost`` for Mattermost
+-  Create and edit a configuration file ``/etc/nginx/servers-available/mattermost`` for Mattermost.
 
--  Below is a sample nginx configuration optimized for performance::
-
-
+Below is a sample nginx configuration optimized for performance::
 
         upstream backend {
             server 127.0.0.1:8065;
@@ -279,7 +273,7 @@ to point to the NGINX server.
         }
 
 
-- Eanble the mattermost server::
+- Enable the mattermost server::
 
         # mkdir /etc/nginx/servers-enabled
         # ln -s /etc/nginx/servers-available/mattermost /etc/nginx/server-enabled/mattermost
@@ -298,22 +292,22 @@ You should see a page titled *Mattermost*
 Set up NGINX with SSL (Recommended)
 -----------------------------------
 
-There is now a free and an open certificate security called `let's encrypt<https://letsencrypt.org/>`_.
-As stated on the Let's Encrypt website, it is largely recommended to use the `Certbot<https://certbot.eff.org/>`_
-ACME client. Follow instructions for `Nginx on Arch Linux clien<https://certbot.eff.org/#arch-nginx>`_.
+There is now a free and an open certificate security called `let's encrypt <https://letsencrypt.org/>`_.
+As stated on the Let's Encrypt website, it is largely recommended to use the `Certbot <https://certbot.eff.org/>`_
+ACME client. Follow instructions for `Nginx on Arch Linux client <https://certbot.eff.org/#arch-nginx>`_.
 
 
 1.  Install the Certbot client::
 
       # pacman -Syu certbot
 
-2.  Obtain a cert using the `webroot plugin<https://certbot.eff.org/docs/using.html#webroot>`_::
+2.  Obtain a cert using the `webroot plugin <https://certbot.eff.org/docs/using.html#webroot>`_::
 
       # certbot certonly --webroot -w /var/www/example -d example.com -d www.example.com
 
 The above command will obtain a single cert for **example.com** and **www.example.com**, assuming
-the root of these servers is located at `/var/www/example`. Certbot will try to place a file in
-directory `/var/www/example/.well-known/acme-challenge` and then read it.
+the root of these servers is located at ``/var/www/example``. Certbot will try to place a file in
+directory ``/var/www/example/.well-known/acme-challenge`` and then read it.
 
 3.  Modify the file at ``/etc/nginx/sites-available/mattermost`` this way::
 
@@ -400,7 +394,7 @@ directory `/var/www/example/.well-known/acme-challenge` and then read it.
      [Service]
      ExecStart=/usr/bin/certbot renew --quiet
 
-- write the ``/etc/systemd/system/letsencrypt.timer`` file::
+- write the ``/etc/systemd/system/letsencrypt.renewal.timer`` file::
 
      [Unit]
      Description=start letsencrypt.renewal.service every 12 hours
@@ -416,7 +410,7 @@ directory `/var/www/example/.well-known/acme-challenge` and then read it.
 
 8. Check that your SSL certificate is set up correctly
 
-* Test the SSL certificate by visiting a site such as `https://www.ssllabs.com/ssltest/index.html <https://www.ssllabs.com/ssltest/index.html>`_.
+* Test the SSL certificate by visiting a site such as `ssllabs <https://www.ssllabs.com/ssltest/index.html>`_.
 
 * If there’s an error about the missing chain or certificate path, there is likely an intermediate certificate missing that needs to be included.
 
