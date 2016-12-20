@@ -5,19 +5,19 @@ Mattermost Community Content Guidelines
 The following guidelines are intended to help community members contribute guest blog posts or propose Twitter content, as well as for staff at Mattermost, Inc. interacting with the community. 
 
 How to write purposefully and persuasively 
-==============================================================
+------------------------------------------------------------
 
 In this document we set out some easy-to-follow guidelines about writing. Follow them, while also relying on your own judgment. Writing for blogs, newsletters, magazine articles and other forms of content can then become a joy rather than a chore. 
 
 Before we get into the guidelines themselves, let's consider the goal and objectives (why we think written communication is important in the first place) and a few principles (things to bear in mind when pursuing those goals).
 
 Goal
----------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Success in marketing means more people in our target audience discover, understand, and unlock the benefits of Mattermost for their organizations through faster, larger, more effective deployments.
 
 Objectives
----------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 In order to achieve this overriding goal, we must:
 
@@ -29,7 +29,7 @@ In order to achieve this overriding goal, we must:
 The biggest uplift to inbound marketing will come from being featured in online publications such as The Hacker News.
 
 Principles
----------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 In order to achieve these goals, our writing must be:
 
@@ -51,7 +51,7 @@ Remember, these are only guidelines, not hard and fast rules that you have to fo
 In general, if something sounds right the day after you wrote it, it is right. We'd like you to bear our tips in mind, but we also want you to trust your own judgment.
 
 Guidelines: 12 tips for sparkling content
----------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  1. **Have something to say**. Always ask yourself, what am I trying to communicate? When you have nothing of value to say, you will end up writing sentences that may sound meaningful but deliver nothing.
  2. **Think from the reader's perspective**. Then ask yourself, "What's in it for me [the reader]?" For example, you might be proud to announce an exciting new product feature, but unless you can quickly and concisely describe the benefit to the reader, the reader will lose interest. However, do not go to the other extreme and overstate benefits. That will also drive away the reader.
@@ -68,7 +68,7 @@ Guidelines: 12 tips for sparkling content
 
 
 Guidelines for Twitter accounts
-==============================================================
+---------------------------------------------------------
 
 Composing Tweets: 
 
