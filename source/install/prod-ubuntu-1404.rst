@@ -184,7 +184,7 @@ For the purposes of this guide we will assume this server has an IP address of `
 
    -  ``cd ~/mattermost/bin``
    -  Run the Mattermost Server by typing:
-   -  ``./platform``
+   -  ``sudo -u mattermost ./platform``
    -  You should see a console log like ``Server is listening on :8065``
       letting you know the service is running.
    -  Stop the server for now by typing ``ctrl-c``
