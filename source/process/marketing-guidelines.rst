@@ -2,7 +2,7 @@
 Mattermost Community Content Guidelines
 ============================================================
 
-The following guidelines are designed to help community members contributing guest blog posts or proposing Twitter content, as well as for staff at Mattermost, Inc. engaging through community channels. 
+The following guidelines are intended to help community members contribute guest blog posts or propose Twitter content, as well as for staff at Mattermost, Inc. interacting with the community. 
 
 How to write purposefully and persuasively 
 ==============================================================
@@ -36,7 +36,7 @@ In order to achieve these goals, our writing must be:
  1. **Magnetic to IT.** We need headlines and openings that draw in IT audiences (these include Linux admins, security experts, directors of end-user computing, CIOs). Bear in mind that, although they work in IT, these audiences are typically more interested in the business benefits of technology than technical features. 
  2. **Appealing to secondary audiences.** These include open source and in-house developers and end users at highly regulated companies.
  3. **Part of our brand.** Our style and message must be consistent over the long term. Therefore, all of our content, irrespective of purpose or subject-matter, must pull the reader in the same direction and reinforce our key messages. 
- 4. High quality. Quality in writing reflects the professionalism of our organization. We pay attention to the rules of grammar and spelling.
+ 4. **High quality.** Quality in writing reflects the professionalism of our organization. We pay attention to the rules of grammar and spelling.
  5. **Clear & transparent.** We aim to communicate simply, using language that is familiar to our audiences. People don't buy what they don't understand!
  6. **International.** Mattermost has customers around the world and in many cases English is their second language. Use standard American English but do not use metaphors or expressions that people outside of North America are unlikely to understand.
  7. **Avoiding unintentional controversy.** We might want to stir up a bit of controversy now and again – but only on relevant technological and business topics. Avoid subjects or analogies that might provoke an emotional or hostile response: religion, politics, warfare, personal relationships etc. 
@@ -67,13 +67,13 @@ Guidelines: 12 tips for sparkling content
  12. **Now, relax**. If you are in the wrong frame of mind you will either get writer's block or your writing will be stiff and unnatural. Take your time. Remove any distractions. Keep things simple. 
 
 
-Twitter Guidelines 
+Guidelines for Twitter accounts
 ==============================================================
 
 Composing Tweets: 
 
-1. **Avoid acronyms** - Avoid acronyms when possible. For example, say "pull request" instead of PR", since only a subset of Tweet readers will be active GitHub users. 
+1. **Avoid acronyms** - Avoid acronyms when possible. For example, say "pull request" instead of "PR", since only a subset of tweet readers are active GitHub users. 
 2. **Use the active voice** - Avoid "has", "was", "have been" when possible. For example, instead of "Hackfest has started!" say "Hackfest starts now!" 
-3. **Include no more than one link"** - Include no more than one link per tweet, and place it close to the end of the tweet. 
+3. **Include at most one link"** - To provide a clear call to action include at most one link per tweet, and place it close to the end of the tweet. 
 
    
