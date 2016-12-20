@@ -13,6 +13,7 @@ Below are a few tips to get you started and configuring your experience on the d
  - `Team Management <https://docs.mattermost.com/help/apps/desktop-guide.html#id1>`_
  - `App Options <https://docs.mattermost.com/help/apps/desktop-guide.html#id2>`_
  - `Menu Bar <https://docs.mattermost.com/help/apps/desktop-guide.html#id3>`_
+ - `Troubleshooting <https://docs.mattermost.com/help/apps/desktop-guide.html#id4>`_
 
 Team Management
 ---------------------------------------------------------------------
@@ -186,3 +187,16 @@ Below is a list of menu options with the corresponding keyboard shortcuts. For M
 
  - Learn More - Links to `Desktop Application’s User Guide <https://docs.mattermost.com/help/apps/desktop-guide.html>`_ .
  - Version - Indicates the desktop application version in use
+
+Troubleshooting
+---------------------------------------------------------------------
+
+Possible solutions to issues encountered when using the Desktop App.
+
+Desktop App window is black and doesn't load the page
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you are using a special video driver such as Optimus, try disabling it to see if the problem is resolved.
+
+Otherwise, try disabling GPU hardware acceleration by using the `--disable-gpu <http://peter.sh/experiments/chromium-command-line-switches/#disable-gpu>`_ Chromium command line switch.
+
