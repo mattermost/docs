@@ -10,17 +10,19 @@ Best Practices
 1. Don't offer advice on database modification without a clear warning
 ----------------------------------------------------------------------------
 
-Never give DB advice without a warning similar to: `Manual database modification bypass checks in the code and could make a system unrecoverable. It's not recommended and if you do make a change, make sure to back up your DB, and verify changes carefully.`
+Never give DB advice without a warning similar to: 
+
+``Manual database modification bypasses checks in the code and could make a system unrecoverable. It's not recommended and if you do make a change, make sure to back up your DB, and verify changes carefully.``
 
 2. Answer with docs
 ----------------------------------------------------------------------------
 
-When answering a common question, always include a link to the docs so the person asking--along with people in future who read your response. If no doc exists, do one of two things: 
+When answering a common question, always include a link to the docs so the person asking--along with people in future who read your response--has a reference. If no doc exists, do one of two things: 
 
-1. Add the  the documentation, then answer the question with a link to the information, or 
+1. Add the documentation, then answer the question with a link to the information, or 
 2. Answer the question and open a ticket for the missing information to be added to docs.
 
-During the triage process, if the information missed should have obviously been included, assign the ticket to the earliest approver for the doc PR, otherwise assign to doc PR author. 
+During the triage process, if the information missed should have obviously been included, assign the ticket to the last approver for the doc PR, otherwise assign to doc PR author. 
 
 3. Avoid speculation 
 ----------------------------------------------------------------------------
