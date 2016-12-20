@@ -12,7 +12,7 @@ Drag and Drop
 ~~~~~~~~~~~~~
 Upload a file or selection of files by dragging the files from your
 computer into the right-hand sidebar or center pane. Dragging and
-dropping attaches the files to the message input box, then you can
+dropping attaches the files to the message input box. After dropping files, can
 optionally type a message and press **ENTER** to post.
 
 Attachment Icon
