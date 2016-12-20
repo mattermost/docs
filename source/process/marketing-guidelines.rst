@@ -1,21 +1,23 @@
 ============================================================
-Mattermost Marketing Content Guidelines
+Mattermost Community Content Guidelines
 ============================================================
 
+The following guidelines are intended to help community members contribute guest blog posts or propose Twitter content, as well as for staff at Mattermost, Inc. interacting with the community. 
+
 How to write purposefully and persuasively 
-==============================================================
+------------------------------------------------------------
 
 In this document we set out some easy-to-follow guidelines about writing. Follow them, while also relying on your own judgment. Writing for blogs, newsletters, magazine articles and other forms of content can then become a joy rather than a chore. 
 
 Before we get into the guidelines themselves, let's consider the goal and objectives (why we think written communication is important in the first place) and a few principles (things to bear in mind when pursuing those goals).
 
 Goal
----------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Success in marketing means more people in our target audience discover, understand, and unlock the benefits of Mattermost for their organizations through faster, larger, more effective deployments.
 
 Objectives
----------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 In order to achieve this overriding goal, we must:
 
@@ -27,18 +29,18 @@ In order to achieve this overriding goal, we must:
 The biggest uplift to inbound marketing will come from being featured in online publications such as The Hacker News.
 
 Principles
----------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 In order to achieve these goals, our writing must be:
 
- 1. Magnetic to IT. We need headlines and openings that draw in IT audiences (these include Linux admins, security experts, directors of end-user computing, CIOs). Bear in mind that, although they work in IT, these audiences are typically more interested in the business benefits of technology than technical features. 
- 2. Appealing to secondary audiences. These include open source and in-house developers and end users at highly regulated companies.
- 3. Part of our brand. Our style and message must be consistent over the long term. Therefore, all of our content, irrespective of purpose or subject-matter, must pull the reader in the same direction and reinforce our key messages. 
- 4. High quality. Quality in writing reflects the professionalism of our organization. We pay attention to the rules of grammar and spelling.
- 5. Clear & transparent. We aim to communicate simply, using language that is familiar to our audiences. People don't buy what they don't understand!
- 6. International. Mattermost has customers around the world and in many cases English is their second language. Use standard American English but do not use metaphors or expressions that people outside of North America are unlikely to understand.
- 7. Avoiding unintentional controversy. We might want to stir up a bit of controversy now and again – but only on relevant technological and business topics. Avoid subjects or analogies that might provoke an emotional or hostile response: religion, politics, warfare, personal relationships etc. 
- 8. Fit for purpose. Is your content designed to persuade (e.g. an opinion piece), promote (e.g. a product description) or instruct (e.g. to guide a user through procedural steps)? Adjust your tone and your language accordingly.
+ 1. **Magnetic to IT.** We need headlines and openings that draw in IT audiences (these include Linux admins, security experts, directors of end-user computing, CIOs). Bear in mind that, although they work in IT, these audiences are typically more interested in the business benefits of technology than technical features. 
+ 2. **Appealing to secondary audiences.** These include open source and in-house developers and end users at highly regulated companies.
+ 3. **Part of our brand.** Our style and message must be consistent over the long term. Therefore, all of our content, irrespective of purpose or subject-matter, must pull the reader in the same direction and reinforce our key messages. 
+ 4. **High quality.** Quality in writing reflects the professionalism of our organization. We pay attention to the rules of grammar and spelling.
+ 5. **Clear & transparent.** We aim to communicate simply, using language that is familiar to our audiences. People don't buy what they don't understand!
+ 6. **International.** Mattermost has customers around the world and in many cases English is their second language. Use standard American English but do not use metaphors or expressions that people outside of North America are unlikely to understand.
+ 7. **Avoiding unintentional controversy.** We might want to stir up a bit of controversy now and again – but only on relevant technological and business topics. Avoid subjects or analogies that might provoke an emotional or hostile response: religion, politics, warfare, personal relationships etc. 
+ 8. **Fit for purpose.** Is your content designed to persuade (e.g. an opinion piece), promote (e.g. a product description) or instruct (e.g. to guide a user through procedural steps)? Adjust your tone and your language accordingly.
 
 Clear? So now let's look at our 12 tips for brilliant writing. To win the reader's attention, and hold it, our content must be a pleasure to read. Our words must sparkle. Yet at the same time, it should all seem effortless; it can be a turnoff if it appears that the writer is trying too hard. 
 
@@ -49,7 +51,7 @@ Remember, these are only guidelines, not hard and fast rules that you have to fo
 In general, if something sounds right the day after you wrote it, it is right. We'd like you to bear our tips in mind, but we also want you to trust your own judgment.
 
 Guidelines: 12 tips for sparkling content
----------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  1. **Have something to say**. Always ask yourself, what am I trying to communicate? When you have nothing of value to say, you will end up writing sentences that may sound meaningful but deliver nothing.
  2. **Think from the reader's perspective**. Then ask yourself, "What's in it for me [the reader]?" For example, you might be proud to announce an exciting new product feature, but unless you can quickly and concisely describe the benefit to the reader, the reader will lose interest. However, do not go to the other extreme and overstate benefits. That will also drive away the reader.
@@ -63,3 +65,15 @@ Guidelines: 12 tips for sparkling content
  10. **Edit ruthlessly**. Use the first draft to get your thoughts together. Then leave it for a few hours (or even days). Shorten, delete, and rewrite anything that does not add to the meaning. Run a spelling and grammar check.
  11. **Ask a colleague**. Still not 100% happy? A colleague should review the text and tell you if anything is unclear or if you could express yourself better. They might offer some useful fresh insights.
  12. **Now, relax**. If you are in the wrong frame of mind you will either get writer's block or your writing will be stiff and unnatural. Take your time. Remove any distractions. Keep things simple. 
+
+
+Guidelines for Twitter accounts
+---------------------------------------------------------
+
+Composing Tweets: 
+
+1. **Avoid acronyms** - Avoid acronyms when possible. For example, say "pull request" instead of "PR", since only a subset of tweet readers are active GitHub users. 
+2. **Use the active voice** - Avoid "has", "was", "have been" when possible. For example, instead of "Hackfest has started!" say "Hackfest starts now!" 
+3. **Include at most one link"** - To provide a clear call to action include at most one link per tweet, and place it close to the end of the tweet. 
+
+   
