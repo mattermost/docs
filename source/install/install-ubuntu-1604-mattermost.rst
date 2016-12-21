@@ -85,8 +85,8 @@ Assume that the IP address of this server is 10.10.10.2
     [Install]
     WantedBy=multi-user.target
 
-    .. note::
-      If you are using MySQL, replace ``postgresql.service`` with ``mysql.service`` in 2 places in the ``[Unit]`` section.
+  .. note::
+    If you are using MySQL, replace ``postgresql.service`` with ``mysql.service`` in 2 places in the ``[Unit]`` section.
     
   c. Make systemd load the new unit.
 
