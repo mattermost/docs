@@ -15,28 +15,28 @@ Assume that the IP address of this server is 10.10.10.2
 
   ``wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz``
 
-5. Extract the Mattermost Server files.
+3. Extract the Mattermost Server files.
 
   ``tar -xvzf *.gz``
 
-3. Move the extracted file to the ``/opt`` directory.
+4. Move the extracted file to the ``/opt`` directory.
 
   ``sudo mv mattermost /opt``
 
-4. Create the storage directory for files.
+5. Create the storage directory for files.
 
   ``sudo mkdir /opt/mattermost/data``
 
   .. note::
     The storage directory will contain all the files and images that your users post to Mattermost, so you need to make sure that the drive is large enough to hold the anticipated number of uploaded files and images.
 
-5. Set up a system user and group called ``mattermost`` that will run this service, and set the ownership and permissions.
+6. Set up a system user and group called ``mattermost`` that will run this service, and set the ownership and permissions.
 
   a. ``sudo useradd --system --user-group mattermost``
   b. ``sudo chown -R mattermost:mattermost /opt/mattermost``
   c. ``sudo chmod -R g+w /opt/mattermost``
 
-6. Set up the database driver in the file ``/opt/mattermost/config/config.json``. Open the file in your favorite text editor and make the following changes:
+7. Set up the database driver in the file ``/opt/mattermost/config/config.json``. Open the file as root in a text editor and make the following changes:
 
   -  If you are using PostgreSQL:    
     1.  Set ``"DriverName"`` to ``"postgres"``
@@ -47,7 +47,7 @@ Assume that the IP address of this server is 10.10.10.2
     2.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values:
       ``"mmuser:<mmuser-password>@tcp(<host-name-or-IP>:3306)/mattermost?charset=utf8"``
 
-7. Test the Mattermost server to make sure everything works.
+8. Test the Mattermost server to make sure everything works.
 
     a. Change to the ``bin`` directory:
       ``cd /opt/mattermost/bin``
@@ -56,7 +56,7 @@ Assume that the IP address of this server is 10.10.10.2
 
   When the server starts, it shows some log information and the text ``Server is listening on :8065``. You can stop the server by typing ``CTRL-C`` in the terminal window.
 
-8. Setup Mattermost to use the Upstart daemon which handles supervision of the Mattermost process.
+9. Setup Mattermost to use the Upstart daemon which handles supervision of the Mattermost process.
 
   a. Create the Mattermost configuration file:
   
@@ -73,11 +73,11 @@ Assume that the IP address of this server is 10.10.10.2
       chdir /opt/mattermost
       exec bin/platform
 
-9. Start the Mattermost server.
+10. Start the Mattermost server.
 
   ``sudo start mattermost``
 
-10. Verify that Mattermost is running.
+11. Verify that Mattermost is running.
 
   ``curl http://localhost:8065``
   
