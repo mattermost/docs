@@ -27,12 +27,12 @@ Assume that the IP address of this server is 10.10.10.1
 
   ``postgres=# CREATE DATABASE mattermost;``
 
-5.  Create the Mattermost user 'mmuser'.
+5.  Create the Mattermost user *mmuser*.
 
   ``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser_password';``
   
   .. note::
-    Use a password that is more secure than 'mmuser-password'
+    Use a password that is more secure than 'mmuser-password'.
 
 6.  Grant the user access to the Mattermost database.
 
@@ -52,7 +52,7 @@ Assume that the IP address of this server is 10.10.10.1
   
     ``#listen_addresses = 'localhost'``
     
-  b. Uncomment the line and change ``localhost`` to ``*``:
+  b. Uncomment the line and change ``localhost`` to ``*``.
   
     ``listen_addresses = '*'``
 
@@ -66,7 +66,7 @@ Assume that the IP address of this server is 10.10.10.1
 
     ``host all all <mm-server-IP>/32 md5``
 
-11. Reload Postgres database
+11. Reload Postgres database.
 
   ``sudo /etc/init.d/postgresql reload``
 
