@@ -9,7 +9,7 @@ Although you can configure HTTP/2 without SSL, both Firefox and Chrome browsers 
 
 You can use any certificate that you want, but these instructions show you how to download and install certificates from *Let's Encrypt*.
 
-**To SSL and HTTP/2:**
+**To configure SSL and HTTP/2:**
 
 1. Log into the server that hosts NGINX and open a terminal window.
 2. Install git.
@@ -90,8 +90,6 @@ You can use any certificate that you want, but these instructions show you how t
 
   ``crontab -e``
   
-  In the following line, use your domain name in place of *<domain-name>*
+  In the following line, use your domain name in place of *{domain-name}*
   
-  ``@monthly /home/ubuntu/letsencrypt/letsencrypt-auto certonly --reinstall --nginx -d <domain-name> && sudo service nginx reload``
-
-8. Check that your SSL certificate is set up correctly. Test the SSL certificate by visiting a site such as https://www.ssllabs.com/ssltest/index.html. If there’s an error about the missing chain or certificate path, there is likely an intermediate certificate missing that needs to be included.
+  ``@monthly /home/ubuntu/letsencrypt/letsencrypt-auto certonly --reinstall --nginx -d {domain-name} && sudo service nginx reload``
