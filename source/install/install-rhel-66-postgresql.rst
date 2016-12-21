@@ -11,7 +11,7 @@ Installing PostgreSQL Database
 
 3. Install the Yum repository from the file that you downloaded.
 
-  ``sudo yum localinstall pgdg-redhat94-9.4-1.noarch.rpm``
+  ``sudo yum localinstall pgdg-redhat94-9.4-3.noarch.rpm``
 
 4. Install PostgreSQL.
 
