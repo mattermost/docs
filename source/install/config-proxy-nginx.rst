@@ -77,7 +77,7 @@ Configuring NGINX as a proxy for Mattermost Server
   
   ``sudo systemctl restart nginx``
 
-6. Verify that you can see Mattermost thru the proxy.
+6. Verify that you can see Mattermost through the proxy.
 
   ``curl http://localhost``
   
@@ -85,4 +85,4 @@ Configuring NGINX as a proxy for Mattermost Server
 
 **What to do next**
 
-You can configure NGINX to use SSL. This will allow you to use HTTPS connections and the HTTP/2 protocol.
+You can configure NGINX to use SSL, which allows you to use HTTPS connections and the HTTP/2 protocol.
