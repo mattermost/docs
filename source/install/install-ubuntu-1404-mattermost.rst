@@ -11,85 +11,80 @@ Assume that the IP address of this server is 10.10.10.2
 
 1. Log into the server that will host Mattermost Server and open a terminal window.
 
-2. Create a mattermost user and group
+2. Download `the latest version of the Mattermost Server <https://docs.mattermost.com/administration/upgrade.html#version-archive>`_. In the following command, replace ``X.X.X`` with the version that you want to download:
 
-    - ``sudo adduser --system --group mattermost``
+  ``wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz``
 
-3. Change to the mattermost home directory.
+5. Extract the Mattermost Server files.
 
-    ``cd /home/mattermost``
+  ``tar -xvzf mattermost*.gz``
 
-4. Download `the latest version of the Mattermost Server <https://docs.mattermost.com/administration/upgrade.html#version-archive>`_ by typing:
+3. Move the extracted file to the ``/opt`` directory.
 
-   -  ``wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz``
-   -  Where ``vX.X.X`` is the latest version.
+  ``sudo mv mattermost /opt``
 
-5. Extract the Mattermost Server files by typing:
+4. Create the storage directory for files.
 
-   -  ``sudo tar -xvzf *.gz``
+  ``sudo mkdir /opt/mattermost/data``
 
-6. Change the user and group of the extracted files to mattermost
+  .. note::
+    The storage directory will contain all the files and images that your users post to Mattermost, so you need to make sure that the drive is large enough to hold the anticipated number of uploaded files and images.
 
-   - ``sudo chown -R mattermost:mattermost mattermost/``
+5. Set up a system user and group called ``mattermost`` that will run this service, and set the ownership and permissions.
 
-7. Create the storage directory for files. We assume you will have
-   attached a large drive for storage of images and files. For this
-   setup we will assume the directory is located at
-   ``/mattermost/data``.
+  a. Create the Mattermost user and group:
+    ``sudo useradd --system --user-group mattermost``
+  b. Set the user and group *mattermost* as the ownwer of the Mattermost files:
+    ``sudo chown -R mattermost:mattermost /opt/mattermost``
+  c. Give write permissions to the *mattermost* group:
+    ``sudo chmod -R g+w /opt/mattermost``
 
-   -  Create the directory by typing:
-   -  ``sudo mkdir -p /mattermost/data``
-   -  Set the mattermost account as the directory owner by typing:
-   -  ``sudo chown -R mattermost:mattermost /mattermost``
+6. Set up the database driver in the file ``/opt/mattermost/config/config.json``. Open the file in a text editor and make the following changes:
 
-8. Configure Mattermost Server by editing the config.json file at
-   ``/home/mattermost/config``
+  -  If you are using PostgreSQL:    
+    1.  Set ``"DriverName"`` to ``"postgres"``
+    2.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values:
+     ``"postgres://mmuser:<mmuser-password>@<host-name-or-IP>:5432/mattermost?sslmode=disable&connect_timeout=10"``.
+  -  If you are using MySQL:    
+    1.  Set ``DriverName"`` to ``"mysql"``
+    2.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values:
+      ``"mmuser:<mmuser-password>@tcp(<host-name-or-IP>:3306)/mattermost?charset=utf8"``
 
-   -  ``cd /home/mattermost/mattermost/config``
-   -  Edit the file by typing:
-   -  ``vi config.json``
-   -  If you are using PostgreSQL:    
-     -  Set ``DriverName":`` to ``"postgres"``
-     -  Set ``"DataSource:"`` to the following value: ``"postgres://mmuser:mmuser_password@10.10.10.1:5432/mattermost?sslmode=disable&connect_timeout=10"``
-   -  If you are using MySQL:    
-     -  Set ``DriverName":`` to ``"mysql"``
-     -  Set ``"DataSource":`` to the following value: ``"mmuser:mmuser_password@tcp(10.10.10.1:3306)/mattermost?charset=utf8"``
-   -  You can continue to edit configuration settings in
-      ``config.json`` or use the System Console described in a later
-      section to finish the configuration.
+7. Test the Mattermost server to make sure everything works.
 
-9. Test the Mattermost Server
+    a. Change to the ``bin`` directory:
+      ``cd /opt/mattermost/bin``
+    b. Start the Mattermost server as the user mattermost:
+      ``sudo -u mattermost /.platform``
+   
+  When the server starts, it shows some log information and the text ``Server is listening on :8065``. You can stop the server by typing ``CTRL-C`` in the terminal window.
+  
+8. Setup Mattermost to use the Upstart daemon which handles supervision of the Mattermost process.
 
-   -  ``cd ~/mattermost/bin``
-   -  Run the Mattermost Server by typing:
-   -  ``./platform``
-   -  You should see a console log like ``Server is listening on :8065``
-      letting you know the service is running.
-   -  Stop the server for now by typing ``ctrl-c``
+  a. Create the configuration file.
+  
+    ``sudo touch /etc/init/mattermost.conf``
+  
+  b. Open the config file as root in a text editor, and copy the following lines into the file:
 
-10. Setup Mattermost to use the Upstart daemon which handles supervision
-   of the Mattermost process.
+    .. code-block:: none
 
-   -  ``sudo touch /etc/init/mattermost.conf``
-   -  ``sudo vi /etc/init/mattermost.conf``
-   -  Copy the following lines into ``/etc/init/mattermost.conf``
+      start on runlevel [2345]
+      stop on runlevel [016]
+      respawn
+      limit nofile 50000 50000
+      chdir /home/mattermost/mattermost
+      setuid mattermost
+      exec bin/platform
 
-      ::
+  c. Start the Mattermost server.
+  
+    ``sudo start mattermost``
+  
+  d. Verify that the service is running.
+  
+    ``curl http://localhost:8065``
+  
+    You should see the HTML that's returned by the Mattermost server.
 
-          start on runlevel [2345]
-          stop on runlevel [016]
-          respawn
-          limit nofile 50000 50000
-          chdir /home/mattermost/mattermost
-          setuid mattermost
-          exec bin/platform
-
-   -  You can manage the process by typing:
-   -  ``sudo start mattermost``
-   -  Verify the service is running by typing:
-   -  ``curl http://10.10.10.2:8065``
-   -  You should see a page titles *Mattermost - Signup*
-   -  You can also stop the process by running the command
-      ``sudo stop mattermost``, but we will skip this step for now.
-
-In a production environment, you should install NGINX. Using NGINX as a proxy server increases the security and performance of your Mattermost installation. See :ref:`install-nginx`
+Now that the Mattermost server is up and running, you can do some initial configuration and setup.
