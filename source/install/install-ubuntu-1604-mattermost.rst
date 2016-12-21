@@ -61,7 +61,7 @@ Assume that the IP address of this server is 10.10.10.2
    
   When the server starts, it shows some log information and the text ``Server is listening on :8065``. You can stop the server by typing ``CTRL-C`` in the terminal window.
 
-9. Setup Mattermost to use *systemd* for starting and stopping.
+8. Setup Mattermost to use *systemd* for starting and stopping.
 
   a. Create a *systemd* unit file:
     ``sudo touch /lib/systemd/system/mattermost.service``
