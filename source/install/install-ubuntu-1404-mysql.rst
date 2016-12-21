@@ -32,7 +32,7 @@ To install PostgreSQL, see :ref:`install-ubuntu-1404-postgresql`
     1. Use a password that is more secure than 'mmuser-password'
     2. The '%' means that mmuser can connect from any machine on the network. However, it's more secure to use the IP address of the machine that hosts Mattermost. For example, if you install Mattermost on the machine with IP address 10.10.10.2, then use the following command:
 
-  ``mysql> create user 'mmuser'@'10.10.10.2' identified by 'mmuser-password';``
+      ``mysql> create user 'mmuser'@'10.10.10.2' identified by 'mmuser-password';``
 
 5. Create the Mattermost database.
 
@@ -46,4 +46,4 @@ To install PostgreSQL, see :ref:`install-ubuntu-1404-postgresql`
 
   ``mysql> exit``
 
-With the database installed and the initial setup complete, you can now install the Mattermost server.
+With the database installed and the initial setup complete, you can now install the Mattermost server. See :ref:`install-ubuntu-1404-mattermost`
