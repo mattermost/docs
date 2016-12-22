@@ -12,12 +12,12 @@ Install Mattermost in production mode on one, two or three machines.
 Set up Database Server
 ----------------------
 
-**NOTE**: When Mattermost and postgresql are on the same machine,
-it is recommended to use unix socket mechanism for the connection between Mattermost and Postgresql,
+**NOTE**: When Mattermost and postgreSQL are on the same machine,
+it is recommended to use the Unix socket mechanism for the connection between Mattermost and Postgresql,
 as it is more secure and faster.
 Below instructions are for a connection via the TCP/IP socket.
 
-Settings specific to the unix socket connection are detailed in the *Unix-domain socket connection*
+Settings specific to the Unix socket connection are detailed in the *Unix-domain socket connection*
 section.
 
 
@@ -33,7 +33,7 @@ For the purposes of this guide we will assume this server has an IP address of `
     pg_ident.conf``. After installation, you will find a sample of these files
     in the ``/usr/share/postgresql`` directory. Please copy these files in the
     ``var/lib/postgres/data`` default directory, remove the ``.sample`` at the
-    end of the file name and edit them according to your needs.
+    end of the file name, and edit them according to your needs.
 
     For more details, please refer to the `PostgreSQL Arch wiki <https://wiki.archlinux.org/index.php/PostgreSQL>`_.
 
@@ -86,7 +86,7 @@ For the purposes of this guide we will assume this server has an IP address of `
         listen_addresses = 'localhost,my_local_ip_address'
         #You can use '*' to listen on all local addresses
 
-12. Allow the mattermost server to talk to the postgres database
+12. Allow the mattermost server to talk to the Postgres database
 
     Edit the config file ``/var/lib/postgres/data/pg_hba.conf``.
     Add the following line to the ``IPv4 local connections``::
@@ -118,7 +118,7 @@ you to compile a package from source and then install it via the Arch package ma
 you will be able to easily track upgrades or dependency issues. This is the recommended
 way to install extra packages.
 
-There is an AUR unofficial package called `mattermost <https://aur.archlinux.org/packages/mattermost>`_ .
+There is an AUR unofficial package called `mattermost <https://aur.archlinux.org/packages/mattermost>`_.
 Follow the `AUR instructions <https://wiki.archlinux.org/index.php/Arch_User_Repository>`_
 to build and install. Please go to the `AUR package page <https://aur.archlinux.org/packages/mattermost/>`_
 to leave a comment for sharing feedback or troubleshooting.
