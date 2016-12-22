@@ -36,7 +36,7 @@ Assume that the IP address of this server is 10.10.10.2
   b. ``sudo chown -R mattermost:mattermost /opt/mattermost``
   c. ``sudo chmod -R g+w /opt/mattermost``
 
-6. Set up the database driver in the file ``/opt/mattermost/config/config.json``. Open the file in your favorite text editor and make the following changes:
+6. Set up the database driver in the file ``/opt/mattermost/config/config.json``. Open the file as root in a text editor and make the following changes:
 
   -  If you are using PostgreSQL:    
     1.  Set ``"DriverName"`` to ``"postgres"``
