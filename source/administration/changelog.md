@@ -8,12 +8,21 @@ Release date: 2017-01-16
 
 ### Highlights
 
+#### MFA Enforcement
+- Added support for MFA Enforcement, when set to true all users with email or LDAP authentication are required to set up MDA for their accounts
 
 ### Improvements
 
+#### Messaging 
+- Added support non-alphanumeric unicode characters in hashtags
+- Upload Custom Emojis larger than 64kB, and they will be resized to the appropriate size
+
+#### User Interface
+- Removed status indicators on posts by webhooks 
 
 ### Bug Fixes
-
+- Integrations that post to Direct Message channels now mark the channel as Unread
+- @mention autocomplete will now filter on Chinese, Japanese, Korean names
 
 ### Compatibility  
 Changes from v3.5 to v3.6:
