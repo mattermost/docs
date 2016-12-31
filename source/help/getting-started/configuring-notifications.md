@@ -27,7 +27,7 @@ Emails are sent for any mentions you receive if you have Mattermost closed or ha
 - Configure the email address where notifications are sent in **Account Settings** > **General** > **Email** 
 
 ## Desktop Notifications
-These are browser notifications that appear in the corner of your main monitor. By default, these notifications are sent for all activity while Mattermost is open. Desktop notifications are available on Firefox, Safari, and Chrome.
+These are browser notifications that appear in the corner of your main monitor for activity in channels you are not actively viewing. By default, these notifications are sent for all unread messages while Mattermost is open. Desktop notifications are available on Firefox, Safari, and Chrome.
 
 - Configure when desktop notifications are sent from **Account Settings** > **Notifications** > **Desktop Notifications** > **Send Desktop Notifications**.
 - Configure channel specific desktop notifications from **Channel Menu** > **Notification Preferences** > **Send Desktop Notifications**. By default, all channels use the global setting configured in *Account Settings*.
