@@ -36,6 +36,14 @@ Joining a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Click **More** at the bottom of the *Channels* list to view a list of Public Channels you can join. To join a Private Group you need to be added by a member of that group.
 
+Adding members to a channel
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Click the channel name at the top of the center pane to access the drop-down menu, then click **Add Members**. Any member of a channel can add new members by clicking **Add** next to a users name. Users already added to the channel will not appear in this modal.
+
+Removing members from a channel
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Click the channel name at the top of the center pane to access the drop-down menu, then click **Manage Members**. Any member of a channel can remove other members by clicking **Remove** next to a users name.
+
 Renaming a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Click the channel name at the top of the center pane to access the drop-down menu, then click **Rename Channel**. Anyone can rename the Public Channels or Private Groups they belong to, unless the System Administrator has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-management-permissions-for>`_. 
