@@ -13,6 +13,18 @@ Release date: 2017-01-16
 
 ### Improvements
 
+Notifications
+- Desktop notifications no longer appear for the channel you are actively viewing
+- Push and email notifications now follow the setting for Teammate Name Display
+- Notifications for mentions of your username can no longer be turned off
+
+System Console
+- Server logs now scroll to the bottom on page load
+- Ability to set maximum number of users in a channel that will disable @all and @channel notifications
+
+Team Settings
+- Team description can be set by a Team Admin and is visible to all users on the team selection screen and in the tool tip over the team name
+
 #### Messaging 
 - Added support non-alphanumeric unicode characters in hashtags
 - Upload Custom Emojis larger than 64kB, and they will be resized to the appropriate size
@@ -23,6 +35,14 @@ Release date: 2017-01-16
 ### Bug Fixes
 - Integrations that post to Direct Message channels now mark the channel as Unread
 - @mention autocomplete will now filter on Chinese, Japanese, Korean names
+- Text focus is now set on the text input area after channel creation
+- Editing old posts no longer causes them to repost for other members of the channel
+- Email invitation subject line no longer displays HTML characters in place of apostrophes in team name
+- Current user is no longer displayed in the direct message modal
+- Using the command line to invite users no longer sends an invalid join team link
+- Sleeping and waking your computer while logged into Mattermost no longer causes a console error
+- Searching for users in double in quotes in the direct message modal no longer throws an error
+
 
 ### Compatibility  
 Changes from v3.5 to v3.6:
