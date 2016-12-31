@@ -21,9 +21,14 @@ Notifications
 System Console
 - Server logs now scroll to the bottom on page load
 - Ability to set maximum number of users in a channel that will disable @all and @channel notifications
+- New option to purge all in-memory caches for sessions, accounts and channels.
 
 Team Settings
 - Team description can be set by a Team Admin and is visible to all users on the team selection screen and in the tool tip over the team name
+
+Channels
+- System message is now posted for all users when a channel or group is renamed
+- Any channel member can now remove other users from the channel
 
 #### Messaging 
 - Added support non-alphanumeric unicode characters in hashtags
