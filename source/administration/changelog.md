@@ -8,34 +8,49 @@ Release date: 2017-01-16
 
 ### Highlights
 
-#### MFA Enforcement
-- Added support for MFA Enforcement, when set to true all users with email or LDAP authentication are required to set up MDA for their accounts
+#### Team Sidebar
+- Added a new sidebar on left-hand side to improve cross-team notifications
+- New sidebar improves user experience on the [Mattermost Desktop Apps](https://about.mattermost.com/downloads/) when engaging with multiple teams
+
+#### MFA Enforcement ([Enterprise E10 & E20](https://about.mattermost.com/pricing/))
+- Added support for MFA Enforcement, when set to true all users with email or LDAP authentication are required to set up MFA for their accounts
+
+#### Performance Monitoring ([Enterprise E20](https://about.mattermost.com/pricing/))
+- Added support for performance monitoring in large-scale deployments to help optimize systems for maximum performance using integrations with [Prometheus](https://github.com/prometheus/prometheus) and [Grafana](http://grafana.org/)
+- Includes metrics for caching, database connections, processing, logins and messaging. See [documentation to learn more](https://docs.mattermost.com/deployment/metrics.html)
 
 ### Improvements
 
-Notifications
+#### Notifications
 - Desktop notifications no longer appear for the channel you are actively viewing
 - Push and email notifications now follow the setting for Teammate Name Display
 - Notifications for mentions of your username can no longer be turned off
 
-System Console
+#### System Console
 - Server logs now scroll to the bottom on page load
 - Ability to set maximum number of users in a channel that will disable @all and @channel notifications
-- New option to purge all in-memory caches for sessions, accounts and channels.
+- New option to purge all in-memory caches for sessions, accounts and channels
 
-Team Settings
+#### Team Settings
 - Team description can be set by a Team Admin and is visible to all users on the team selection screen and in the tool tip over the team name
 
-Channels
+#### Slash Commands
+- Existing slash commands can now be edited by the creator or by Team and System Admins
+- Slash commands now work on the right-hand sidebar
+- Added support for slash commands to set the username and icon directly from the reply payload
+
+#### Channels
 - System message is now posted for all users when a channel or group is renamed
 - Any channel member can now remove other users from the channel
 
 #### Messaging 
-- Added support non-alphanumeric unicode characters in hashtags
+- Added support for non-alphanumeric unicode characters in hashtags
 - Upload Custom Emojis larger than 64kB, and they will be resized to the appropriate size
 
 #### User Interface
+- Added an indicator to convey a new message is received when scrolled up in the center pane
 - Removed status indicators on posts by webhooks 
+- Channel switcher (CTRL+K) search results for direct messages now match message autocomplete
 
 ### Bug Fixes
 - Integrations that post to Direct Message channels now mark the channel as Unread
@@ -44,10 +59,16 @@ Channels
 - Editing old posts no longer causes them to repost for other members of the channel
 - Email invitation subject line no longer displays HTML characters in place of apostrophes in team name
 - Current user is no longer displayed in the direct message modal
+- Searching on direct message modal now happens on typing rather than after hitting ENTER
+- More Channels modal now resets search when opening and closing the dialog
+- Channel switcher (CTRL/CMD+K) now works for users outside of the team
 - Using the command line to invite users no longer sends an invalid join team link
 - Sleeping and waking your computer while logged into Mattermost no longer causes a console error
 - Searching for users in double in quotes in the direct message modal no longer throws an error
-
+- XML file preview no longer throws a JavaScript error
+- User autocomplete in message box no longer matches against email
+- Channel linking (with ~ shortcut) now works for channels you don't belong to
+- Fixed statistics for websockets and database connections in **System Console** > **Site Statistics** to work in [High Availability mode](https://docs.mattermost.com/deployment/cluster.html)
 
 ### Compatibility  
 Changes from v3.5 to v3.6:
