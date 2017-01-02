@@ -70,6 +70,8 @@ Switching Teams
 You can switch between teams you have joined using the team sidebar 
 that appears left of your channel list on the left-hand sidebar.
 
+.. image:: ../images/team-sidebar.png
+
 Logging Out
 -----------
 
