@@ -69,6 +69,7 @@ Release date: 2017-01-16
 - User autocomplete in message box no longer matches against email
 - Channel linking (with ~ shortcut) now works for channels you don't belong to
 - Fixed statistics for websockets and database connections in **System Console** > **Site Statistics** to work in [High Availability mode](https://docs.mattermost.com/deployment/cluster.html)
+- Autocomplete is now case insensitive for @-mentions, emojis, slash commands and channel linking
 
 ### Compatibility  
 Changes from v3.5 to v3.6:
