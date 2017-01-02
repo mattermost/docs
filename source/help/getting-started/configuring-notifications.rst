@@ -92,6 +92,17 @@ being viewed on desktop.
    from **Account Settings** > **Notifications** > **Mobile Push
    Notifications** > **Trigger push notifications when**.
 
+Team Sidebar Notifications
+----------------------------------------
+
+If Mattermost is open in a browser tab the favicon updates to inform you of unread messages and
+mentions. Browser tab notifications are available on Firefox and Chrome.
+
+- Unread messages are denoted by a small dot left of the team icon.
+- Unread mentions are displayed with a mention counter similar to channels and appears on the top right corner of the team icon.
+
+.. image:: ../images/team-sidebar-notifications.png
+
 Browser Tab Notifications
 ----------------------------------------
 
@@ -99,4 +110,4 @@ If Mattermost is open in a browser tab the favicon updates to inform you of unre
 mentions. Browser tab notifications are available on Firefox and Chrome.
 
 - Unread messages are denoted by an asterisk (\*) next to the Mattermost icon.
-- Unread mentions are counted in brackets.
+- Unread mentions are counted in brackets and incorporate mentions and direct messages from all of your teams.
