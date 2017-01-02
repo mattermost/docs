@@ -10,7 +10,9 @@ Teams can be created from the team sidebar or Main Menu. The person who creates 
 
 Team Sidebar
 ~~~~~~~~~~~~~~~~~~~~
-If you belong to more than one team, a team sidebar will appear left of your channel list on the left-hand sidebar. 
+If you belong to more than one team, a team sidebar will appear left of your channel list on the left-hand sidebar.
+
+.. image:: ../images/team-sidebar.png
 
 Click the "+" icon at the bottom of the team sidebar, then click **Create a new team** on the team selection page, which guides you through the rest of the set up steps. If this option is not visible on the web page, then the System Admin has disabled team creation.
 
