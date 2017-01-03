@@ -70,6 +70,8 @@ Release date: 2017-01-16
 - Channel linking (with ~ shortcut) now works for channels you don't belong to
 - Fixed statistics for websockets and database connections in **System Console** > **Site Statistics** to work in [High Availability mode](https://docs.mattermost.com/deployment/cluster.html)
 - Autocomplete is now case insensitive for @-mentions, emojis, slash commands and channel linking
+- Slash commands now work in newly created private channels without requiring a refresh
+- Zapier App channel dropdown selector works again
 
 ### Compatibility  
 Changes from v3.5 to v3.6:
@@ -78,27 +80,99 @@ Changes from v3.5 to v3.6:
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console. 
 
-**Changes to Team Edition and Enterprise Edition**:
+**Changes to Team Edition**:
+There are no config.json changes for Team Edition this release. 
 
+**Changes to Enterprise Edition**:
 
-### Database Changes from v3.4 to v3.5
+- Under `ServiceSettings` in `config.json`:
+    - Added `”EnforceMultifactorAuthentication": false` to control whether MFA in enforced
+- Under `TeamSettings` in `config.json`:
+    - Changed `RestrictPublicChannelManagement": "all”` to only control who can edit the channel header, purpose, and name of public channels (previously it also controlled creation and deletion)
+  - Changed `"RestrictPrivateChannelManagement": "all”` to only control who can edit the channel header, purpose, and name of private groups (previously it also controlled creation and deletion)
+  - Added `"RestrictPublicChannelCreation": "all”` to control who can create public channels
+  - Added `"RestrictPrivateChannelCreation": "all”` to control who can create private groups
+  - Added `"RestrictPublicChannelDeletion”: "all”` to control who can delete public channels
+  - Added `"RestrictPrivateChannelDeletion": "all”` to control who can delete private channels
+  - Added `"MaxNotificationsPerChannel": 1000` to set the maximum number of channel members `@all` and `@channel` notifications work for
+- Under `LdapSettings` in `config.json`:
+  - Added `"PositionAttribute": “”` to select an LDAP attribute to synchronize for the user position (job title) field
+- Under `SamlSettings` in `config.json`:
+  - Added `"PositionAttribute": “”` to select an LDAP attribute to synchronize for the user position (job title) field
+- Added `MetricsSettings` in `config.json` for performance monitoring settings: 
+  - Added `"Enable": false` to control whether performance monitoring is enabled
+  - Added `"BlockProfileRate": 0` to control the [fraction of goroutine blocking events that are reported in the blocking profile](https://golang.org/pkg/runtime/#SetBlockProfileRate)
+  - Added `"ListenAddress": ":8067”` to control the address the server will listen on to expose performance metrics
+- Added `AnalyticsSettings` in `config.json` for analytics settings:
+  - Added `"MaxUsersForStatistics": 2500` to set the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and active users with posts per day are no longer counted (use this setting to improve performance on large instances)
 
-### API Changes from v3.4 to v3.5
+### Database Changes from v3.5 to v3.6
+
+**Posts Table:** 
+- Added `HasReactions` column
+
+**Teams Table:**
+- Added `Description` column
+
+**Users Table:**
+- Added `Position` column
+
+**Status Table:**
+- Removed `ActiveChannel` column
+
+### API Changes from v3.5 to v3.6
 
 **New routes:**
+- Added `POST` at `/commands/update`
+  - Updates a slash command
+- Added `GET` at `users/name/{username}`
+  - Returns a user matching the given username
+- Added `GET` at `/users/email/{email}`
+  - Returns a user matching the given email 
+- Added `GET` at `/users/autocomplete`
+  - Returns a list of users on the system that have a username, full name, or nickname that match against the provided term
+- Added `GET` at `/teams/name/{team_name}`
+  - Returns team object for a given team name
+- Added `GET` at `/teams/{team_id}/channels/name/{channel_name}`
+  - Returns a channel for a given channel name
+- Added `POST` at `/teams/{team_id}/channels/{channel_id}/members/ids`
+  - Returns channel member objects for the channel and user IDs specified
+- Added `GET` at `/teams/members`
+  - Returns an array with the teams the current user belongs to
+- Added `GET` at `/teams/unread`
+  - Returns an array containing the amount of unread messages and mentions for the teams the current user belongs to
+- Added `POST` at `/teams/{team_id}/channels/view`
+  - Performs all actions related to viewing a channel, including marking channels as read, clearing push notifications, and updating the active channel
+- Added `POST` at `/teams/{team_id}/channels/{channel_id}/posts/{post_id}/reactions/save`
+  - Saves an emoji reaction for a post, returns the saved reaction if successful
+- Added `POST` at `/teams/{team_id}/channels/{channel_id}/posts/{post_id}/reactions/delete`
+  - Removes an emoji reaction for a post in the given channel, returns nil if successful
+- Added `GET` at `/teams/{team_id}/channels/{channel_id}/posts/{post_id}/reactions'`
+  - Returns a list of all emoji reactions for a post
+- Added `GET` at `/admin/invalidate_all_caches`
+  - Purge all the in-memory caches for things like sessions, accounts, channels; deployments using High Availability will attempt to purge all the servers in the cluster (this may adversely impact performance)
+- Added `GET` at `/channels/more/{offset}/{limit}`
+  - Returns a page of public channels the user is not in based on the provided offset and limit
+-  Added `POST` at `/channels/more/search`
+  - Returns a list of public channels the user is not in that match the search criteria
+- Added `GET` at `/channels/autocomplete`
+  - Returns a list of public channels that match the provided string
 
-
-**Moved routes:**
-
-
-**Removed routes:**
-
-
-**Modified Routes**
-
+**Deprecated routes:**
+- `GET` at `/channels/more` (replaced by /`channels/more/{offset}/{limit}`) to be removed in v3.7
+- `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`) to be removed in v3.8
+- `POST` at `/channels/set_last_viewed_at` (replaced by `/channels/view`) to be removed in v3.8
+- `POST` at `users/status/set_active_channel` (replaced by `/channels/view`) to be removed in v3.8
 
 ### Known Issues
 
+- Slack Import doesn't add merged members/e-mail accounts to imported channels
+- User can receive a video call from another browser tab while already on a call
+- Video calls do not work with Chrome v56 and later
+- Sequential messages from the same user appear as separate posts on mobile view
+- Edge overlays desktop notification sound with system notification sound
+- Deleting a message from a permalink view doesn't show delete until refresh
+- Search autocomplete picker is broken on Android
 
 ### Contributors
 
