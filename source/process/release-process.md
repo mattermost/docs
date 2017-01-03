@@ -252,8 +252,8 @@ Once final dot release build is ready to cut:
 3. Logistics:  
     - Verify each of the issues in the patch release are fixed
 4. Marketing:
-    - Prepare blog post for mattermost.com and set timer for 08:00 PST on the day after dot release
-    - Prepare MailChimp email blast and Twitter announcement and send for marketing lead to review. Once reviewed, schedule for 08:00 PST on the day after dot release
+    - Prepare blog post for mattermost.com, MailChimp email blast and Twitter announcement, and send for marketing lead to review. Once reviewed, schedule for 08:00 PST on the day after dot release
+      - Upgrade should be recommended if there are security fixes in the dot release version
 
 ### I. (T-minus 0 working days) Release Day
 
