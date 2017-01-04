@@ -48,6 +48,7 @@ Release date: 2017-01-16
 - Upload Custom Emojis larger than 64kB, and they will be resized to the appropriate size
 
 #### User Interface
+- Added a direct message link to the profile popover
 - Added an indicator to convey a new message is received when scrolled up in the center pane
 - Removed status indicators on posts by webhooks 
 - Channel switcher (CTRL+K) search results for direct messages now match message autocomplete
@@ -72,6 +73,8 @@ Release date: 2017-01-16
 - Autocomplete is now case insensitive for @-mentions, emojis, slash commands and channel linking
 - Slash commands now work in newly created private channels without requiring a refresh
 - Zapier App channel dropdown selector works again
+- Fixed sign in errors for non-admin when custom emojis are restricted to Team and System Admins only
+- Fixed encoding of file names when downloading attachments
 
 ### Compatibility  
 Changes from v3.5 to v3.6:
@@ -81,7 +84,7 @@ Changes from v3.5 to v3.6:
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console. 
 
 **Changes to Team Edition**:
-There are no config.json changes for Team Edition this release. 
+There are no config.json changes for Team Edition this release.
 
 **Changes to Enterprise Edition**:
 
