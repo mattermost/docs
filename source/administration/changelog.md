@@ -75,6 +75,9 @@ Release date: 2017-01-16
 - Zapier App channel dropdown selector works again
 - Fixed sign in errors for non-admin when custom emojis are restricted to Team and System Admins only
 - Fixed encoding of file names when downloading attachments
+- Unflagging or flagging a post in the right-hand sidebar no longer forces a scroll to the top of the flagged posts results 
+- User list in **System Console > Teams** is no longer blank on first load
+- Fixed a bug where sometimes the right-hand sidebar would not display properly when switching to view another channel
 
 ### Compatibility  
 Changes from v3.5 to v3.6:
