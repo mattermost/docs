@@ -3,19 +3,19 @@
 Installing PostgreSQL Database Server
 =====================================
 
-Install and set up the database for use by the Mattermost server. You can install either PostgreSQL or MySQL. To install MySQL, see :ref:`install-ubuntu-1404-mysql`
+Install and set up the database for use by the Mattermost server. You can install either PostgreSQL or MySQL. To install MySQL, see :ref:`install-ubuntu-1404-mysql`.
 
-Assume that the IP address of this server is 10.10.10.1
+Assume that the IP address of this server is 10.10.10.1.
 
 **To install PostgreSQL on Ubuntu Server 14.04:**
 
-1. Log into the server that will host the database and issue the following command:
+1. Log in to the server that will host the database and issue the following command:
 
   ``sudo apt-get install postgresql postgresql-contrib``
   
   When the installation is complete, the PostgreSQL server is running, and a Linux user account called *postgres* has been created.
 
-2. Log into the *postgres* account. 
+2. Log in to the *postgres* account. 
 
   ``sudo --login --user postgres``
 
