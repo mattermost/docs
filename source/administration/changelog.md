@@ -6,6 +6,10 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Release date: 2017-01-16
 
+### Security Update
+
+- Mattermost v3.6.0 contains a [security update](http://about.mattermost.com/security-updates/). [Upgrading to Mattermost v3.6.0](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Thanks to Julien Ahrens for contributing the security report through the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+
 ### Highlights
 
 #### Team Sidebar
@@ -19,20 +23,26 @@ Release date: 2017-01-16
 - Added support for performance monitoring in large-scale deployments to help optimize systems for maximum performance using integrations with [Prometheus](https://github.com/prometheus/prometheus) and [Grafana](http://grafana.org/)
 - Includes metrics for caching, database connections, processing, logins and messaging. See [documentation to learn more](https://docs.mattermost.com/deployment/metrics.html)
 
+#### Improved Command Line Interface
+- New version of CLI with a more intuitive interface, interactive help documentation, and some added functionality
+
 ### Improvements
 
 #### Notifications
 - Desktop notifications no longer appear for the channel you are actively viewing
 - Push and email notifications now follow the setting for Teammate Name Display
-- Notifications for mentions of your username can no longer be turned off
+- Notifications for @mentions of your username can no longer be turned off
 
 #### System Console
 - Server logs now scroll to the bottom on page load
-- Ability to set maximum number of users in a channel that will disable @all and @channel notifications
 - New option to purge all in-memory caches for sessions, accounts and channels
 
+#### Account Settings
+- Added a "Position" field, where users can add a job title to be shown in their profile popover
+
 #### Team Settings
-- Team description can be set by a Team Admin and is visible to all users on the team selection screen and in the tool tip over the team name
+- Team description can be set by a Team Admin and is visible to all users on the join teams screen and in the tool tip over the team name
+- Slack Import can now import integration messages
 
 #### Slash Commands
 - Existing slash commands can now be edited by the creator or by Team and System Admins
@@ -52,6 +62,11 @@ Release date: 2017-01-16
 - Added an indicator to convey a new message is received when scrolled up in the center pane
 - Removed status indicators on posts by webhooks 
 - Channel switcher (CTRL+K) search results for direct messages now match message autocomplete
+
+#### Enterprise Edition
+- Split out channel management permissions into separate settings for creation, deletion, and renaming a channel
+- Ability to set maximum number of users in a channel that will disable @all and @channel notifications
+- Added ability to set a user's Position field with LDAP sync or SAML
 
 ### Bug Fixes
 - Integrations that post to Direct Message channels now mark the channel as Unread
@@ -82,19 +97,23 @@ Release date: 2017-01-16
 ### Compatibility  
 Changes from v3.5 to v3.6:
 
+**Special Upgrade Note:** 
+(Enterprise Edition) If you previously had values set for `RestrictPublicChannelManagement` and `RestrictPrivateChannelManagement`, the new settings for  `RestrictPublicChannelCreation`, `RestrictPrivateChannelCreation`, `RestrictPublicChannelDeletion`, and `RestrictPrivateChannelDeletion` will take those settings as their default values.
+
 #### config.json   
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console. 
 
 **Changes to Team Edition**:
-There are no config.json changes for Team Edition this release.
+
+There are no `config.json` changes for Team Edition this release.
 
 **Changes to Enterprise Edition**:
 
 - Under `ServiceSettings` in `config.json`:
-    - Added `”EnforceMultifactorAuthentication": false` to control whether MFA in enforced
+   - Added `”EnforceMultifactorAuthentication": false` to control whether MFA in enforced
 - Under `TeamSettings` in `config.json`:
-    - Changed `RestrictPublicChannelManagement": "all”` to only control who can edit the channel header, purpose, and name of public channels (previously it also controlled creation and deletion)
+   - Changed `"RestrictPublicChannelManagement": "all”` to only control who can edit the channel header, purpose, and name of public channels (previously it also controlled creation and deletion)
   - Changed `"RestrictPrivateChannelManagement": "all”` to only control who can edit the channel header, purpose, and name of private groups (previously it also controlled creation and deletion)
   - Added `"RestrictPublicChannelCreation": "all”` to control who can create public channels
   - Added `"RestrictPrivateChannelCreation": "all”` to control who can create private groups
@@ -169,6 +188,13 @@ There are no config.json changes for Team Edition this release.
 - `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`) to be removed in v3.8
 - `POST` at `/channels/set_last_viewed_at` (replaced by `/channels/view`) to be removed in v3.8
 - `POST` at `users/status/set_active_channel` (replaced by `/channels/view`) to be removed in v3.8
+
+### Websocket Event Changes from v3.5 to v3.6
+
+**Added:**
+- `WEBSOCKET_EVENT_UPDATE_TEAM` that occurs each time the team info is updated
+- `WEBSOCKET_EVENT_REACTION_ADDED` that occurs when an emoji reaction is added to a post
+- `WEBSOCKET_EVENT_REACTION_REMOVED` that occurs when an emoji reaction is removed from a post
 
 ### Known Issues
 
