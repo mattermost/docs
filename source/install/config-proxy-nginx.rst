@@ -3,14 +3,16 @@
 Configuring NGINX as a proxy for Mattermost Server
 ==================================================
 
+NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory. You need to create the file and then enable it. When creating the file, you need the IP address of your Mattermost server and the fully qualified domain name (FQDN) of your Mattermost website.
+
 **To configure NGINX as a proxy**
 
-1. Log into the server that hosts NGINX and open a terminal window.
+1. Log in to the server that hosts NGINX and open a terminal window.
 2. Create a configuration file for Mattermost.
 
   ``sudo touch /etc/nginx/sites-available/mattermost``
 
-2. Open the file ``/etc/nginx/sites-available/mattermost`` as root in a text editor and replace its contents, if any, with the following lines. Make sure that you use your own values for the Mattermost server IP address and FQDN for *server_name*.
+3. Open the file ``/etc/nginx/sites-available/mattermost`` as root in a text editor and replace its contents, if any, with the following lines. Make sure that you use your own values for the Mattermost server IP address and FQDN for *server_name*.
   
   .. code-block:: none
   
@@ -59,15 +61,15 @@ Configuring NGINX as a proxy for Mattermost Server
        }
     }
 
-3. Remove the existing default sites-enabled file.
+4. Remove the existing default sites-enabled file.
 
   ``sudo rm /etc/nginx/sites-enabled/default``
 
-4. Enable the mattermost configuration.
+5. Enable the mattermost configuration.
 
   ``sudo ln -s /etc/nginx/sites-available/mattermost /etc/nginx/sites-enabled/mattermost``
 
-5. Restart NGINX.
+6. Restart NGINX.
 
   On Ubuntu 14.04 and RHEL 6.6:
   
@@ -77,7 +79,7 @@ Configuring NGINX as a proxy for Mattermost Server
   
   ``sudo systemctl restart nginx``
 
-6. Verify that you can see Mattermost through the proxy.
+7. Verify that you can see Mattermost through the proxy.
 
   ``curl http://localhost``
   
