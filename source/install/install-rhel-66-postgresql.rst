@@ -3,7 +3,7 @@
 Installing PostgreSQL Database
 ==============================
 
-1. Log into the server that will host the database, and open a terminal window.
+1. Log in to the server that will host the database, and open a terminal window.
 
 2. Download the PostgreSQL 9.4 Yum repository.
 

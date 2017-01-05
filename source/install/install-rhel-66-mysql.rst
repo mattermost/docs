@@ -3,11 +3,11 @@
 Installing MySQL Database Server
 ================================
 
-Install and set up the database for use by the Mattermost server. You can install either MySQL or PostgreSQL. To install PostgreSQL, see :ref:`install-rhel-66-postgresql`
+Install and set up the database for use by the Mattermost server. You can install either MySQL or PostgreSQL. To install PostgreSQL, see :ref:`install-rhel-66-postgresql`.
 
 **To install MySQL 5.7 on RHEL 6.6:**
 
-1. Log into the server that will host the database, and open a terminal window.
+1. Log in to the server that will host the database, and open a terminal window.
 
 2. Download the MySQL Yum repository from dev.mysql.com.
 
