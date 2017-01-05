@@ -9,9 +9,9 @@ Assume that the IP address of this server is 10.10.10.2
 
 **To install Mattermost Server on Ubuntu**
 
-1. Log into the server that will host Mattermost Server and open a terminal window.
+1. Log in to the server that will host Mattermost Server and open a terminal window.
 
-2. Download `the latest version of the Mattermost Server <https://docs.mattermost.com/administration/upgrade.html#version-archive>`_. In the following command, replace ``X.X.X`` with the version that you want to download:
+2. Download `the latest version of the Mattermost Server <https://about.mattermost.com/download/>`_. In the following command, replace ``X.X.X`` with the version that you want to download:
 
   ``wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz``
 
@@ -57,7 +57,7 @@ Assume that the IP address of this server is 10.10.10.2
     b. Start the Mattermost server as the user mattermost:
       ``sudo -u mattermost /.platform``
    
-  When the server starts, it shows some log information and the text ``Server is listening on :8065``. You can stop the server by typing ``CTRL-C`` in the terminal window.
+  When the server starts, it shows some log information and the text ``Server is listening on :8065``. You can stop the server by typing ``CTRL+C`` in the terminal window.
   
 8. Setup Mattermost to use the Upstart daemon which handles supervision of the Mattermost process.
 
