@@ -14,7 +14,7 @@ The main benefits of using a proxy are as follows:
 
 **To install NGINX on Ubuntu Server:**
 
-1. Log into the server that will host the proxy and open a terminal window.
+1. Log in to the server that will host the proxy and open a terminal window.
 
 2. Install NGINX.
 
