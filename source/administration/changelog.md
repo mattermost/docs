@@ -28,7 +28,7 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 #### Languages
 - Added Russian translations for the user interface.
-- Promoted Chinese (both simplified and traditional) to release-quality translations, removing beta tags.
+- Promoted Chinese (both simplified and traditional), German, French and Japanese to release-quality translations, removing beta tags.
 
 #### Performance improvements for mobile and web experience 
 
