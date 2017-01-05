@@ -7,14 +7,9 @@ Install the 64-bit version of Ubuntu Server on each machine that hosts one or mo
 
 **To install Ubuntu Server 16.04:**
 
-1. Download the appropriate ISO image from http://releases.ubuntu.com/16.04/ and burn it to a CD-ROM.
+1. To install Ubuntu Server 16.04, see the `Ubuntu Installation Guide. <https://help.ubuntu.com/16.04/installation-guide/amd64/index.html>`_
 
-2. Boot the system from the CD-ROM drive and follow the on-screen prompts.
-
-.. note::
-  If you need help with installing, see the `Ubuntu Installation Guide. <https://help.ubuntu.com/16.04/installation-guide/amd64/index.html>`_
-
-3. After the system is installed, make sure that it's up to date with the most recent security patches. Open a terminal window and issue the following commands:
+2. After the system is installed, make sure that it's up to date with the most recent security patches. Open a terminal window and issue the following commands:
 
   ``sudo apt-get update``
   

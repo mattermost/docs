@@ -7,14 +7,9 @@ Install the 64-bit version of RHEL 7.1 on each machine that hosts one or more of
 
 **To install RHEL 7.1 Server:**
 
-1. Download the appropriate ISO image from RedHat and burn it to a CD-ROM.
+1. To install RHEL 7.1, see the `RedHat Installation Instructions <https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/>`_
 
-2. Boot the system from the CD-ROM drive and follow the on-screen prompts.
-
-  .. note::
-    If you need help installing RHEL, see the `RedHat Installation Instructions <https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/>`_
-
-3. After the system is installed, make sure that it's up to date with the most recent security patches. Open a terminal window and issue the following commands:
+2. After the system is installed, make sure that it's up to date with the most recent security patches. Open a terminal window and issue the following commands:
 
   ``sudo yum update``
   
