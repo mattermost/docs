@@ -14,6 +14,9 @@ Usernames are unique identifers appearing next to all posts. Pick something easy
 #### Nickname
 Nicknames appear in the Direct Messages member list and team management modal. You will not receive mention notifications when someone types your nickname unless you add it to the *Words That Trigger Mentions* in **Account Settings > Notifications**.
 
+#### Position
+Position can be used to describe your role or job title. It appears in the profile popup that shows up when you click a user's name in the center channel.
+
 #### Email
 Email is used for sign-in, notifications, and password reset. Email requires verification if changed. If you are signing in using a single sign-on service, the email field is not editable and you will receive email notifications to the email you used to sign up to your SSO service.
 
@@ -27,7 +30,7 @@ Settings to configure your password, view access history, and view or logout of 
 You may change your password if you’ve logged in by email. If you are signing in using a single sign-on service, the password field is not editable, and you must access your SSO service’s account settings to update your password.
 
 #### Multi-Factor Authentication 
-When this option is available you can requires a phone-based passcode in addition your password for sign-in. 
+When this option is available you can require a phone-based passcode in addition your password for sign-in. 
 
 To enable, download Google Authenticator from [iTunes](https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8) or [Google Play](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en) for your phone, then: 
 
