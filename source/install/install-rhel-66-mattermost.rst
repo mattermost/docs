@@ -43,7 +43,7 @@ Assume that the IP address of this server is 10.10.10.2
     2.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values:
      ``"postgres://mmuser:<mmuser-password>@<host-name-or-IP>:5432/mattermost?sslmode=disable&connect_timeout=10"``.
   -  If you are using MySQL:    
-    1.  Set ``DriverName"`` to ``"mysql"``
+    1.  Set ``"DriverName"`` to ``"mysql"``
     2.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values:
       ``"mmuser:<mmuser-password>@tcp(<host-name-or-IP>:3306)/mattermost?charset=utf8"``
 
