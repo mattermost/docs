@@ -48,13 +48,13 @@ installed. If not, run - ``apt-get install libxmlsec1-openssl`` on
 Ubuntu - ``yum install xmlsec1-openssl`` on RHEL
 
 Troubleshooting
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 The following are troubleshooting suggestions on common error messages
 and issues.
 
 1. System Administrator locks themselves out of the system
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If the System Administrator is locked out of the system during SAML
 configuration process, they can set an existing account to System
@@ -62,7 +62,7 @@ Administrator using `a commandline
 tool <http://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline>`__.
 
 2. Received error message: ``An account with that username already exists. Please contact your Administrator.``
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This usually means an existing account has another authentication method
 enabled. If so, the user should sign in using that method (such as email
@@ -76,7 +76,7 @@ provider (for instance, back to the old value if it had been previously
 updated).
 
 3. Received error message: ``An account with that email already exists. Please contact your Administrator.``
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This usually means an existing account has another authentication method
 enabled. If so, the user should sign in using that method (such as email
@@ -90,14 +90,14 @@ identity provider (for instance, back to the old value if it had been
 previously updated).
 
 4. Received error message: ``SAML login was unsuccessful because one of the attributes is incorrect. Please contact your System Administrator.``
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Confirm all attributes, including ``Email Attribute`` and
 ``Username Attribute``, are correct in both the Identity Provider
 configuration and in **System Console > SAML**.
 
 5. Unable to switch to SAML authentication successfully
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 First, ensure you have installed the `XML Security
 Library <https://www.aleksey.com/xmlsec/download.html>`__ on your
