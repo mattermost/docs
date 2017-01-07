@@ -40,6 +40,7 @@ Deployment
    /deployment/sso-gitlab*
    /deployment/sso-google*
    /deployment/sso-office*
+   /deployment/metrics*
    /deployment/webrtc*
 
 Administration
