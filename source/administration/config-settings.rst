@@ -2260,3 +2260,19 @@ Standard setting for OAuth to determine the scope of information shared with OAu
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Scope": "User.Read"`` with string input                                                                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+________
+
+Metrics Settings
+```````````````````````````
+Block Profile Rate
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Value that controls the `fraction of goroutine blocking events reported in the blocking profile <https://golang.org/pkg/runtime/#SetBlockProfileRate>`_.
+
+The profiler aims to sample an average of one blocking event per rate nanoseconds spent blocked.
+
+To include every blocking event in the profile, set the rate to 1. To turn off profiling entirely, set the pass rate to 0.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"BlockProfileRate": "0"`` with number input between 0 and 1                                                              |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
