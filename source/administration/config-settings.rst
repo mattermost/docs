@@ -30,7 +30,7 @@ Quick Links:
 	`Custom Branding`_ - `Custom Emoji`_ - `Legal and Support`_ - `Mattermost App Links`_
 
 `Advanced`_
-	`Rate Limiting`_ - `Database`_ - `Developer`_ - `High Availability (Beta)`_
+	`Rate Limiting`_ - `Database`_ - `Developer`_ - `High Availability (Beta)`_ - `Performance Monitoring (Beta)`_
 
 General
 ---------------------------------
@@ -66,7 +66,7 @@ Connection Security
 **TLS**: Encrypts the communication between Mattermost and your server. See [documentation](https://docs.mattermost.com/install/setup-tls.html) for more details.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ConnectionSecurity": ""`` with options ``""`` and ``tls`` for the above settings respectively  |
+| This feature's ``config.json`` setting is ``"ConnectionSecurity": ""`` with options ``""`` and ``TLS`` for the above settings respectively  |
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 
 TLS Certificate File
@@ -588,7 +588,7 @@ Obtain this value by logging into your GitLab account. Go to Profile Settings > 
 
 User API Endpoint
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Enter ``https://<your-gitlab-url>/oauth/authorize`` (example: ``https://example.com:3000/api/v3/user``). Use HTTP or HTTPS depending on how your server is configured.
+Enter ``https://<your-gitlab-url>/api/v3/user`` (example: ``https://example.com:3000/api/v3/user``). Use HTTP or HTTPS depending on how your server is configured.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"UserApiEndpoint": ""`` with string input.                                                                               |
@@ -604,7 +604,7 @@ Enter ``https://<your-gitlab-url>/oauth/authorize`` (example: ``https://example.
 
 Token Endpoint
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Enter ``https://<your-gitlab-url>/oauth/authorize`` (example: ``https://example.com:3000/oauth/token``). Use HTTP or HTTPS depending on how your server is configured.
+Enter ``https://<your-gitlab-url>/oauth/token`` (example: ``https://example.com:3000/oauth/token``). Use HTTP or HTTPS depending on how your server is configured.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"TokenEndpoint": ""`` with string input.                                                                                 |
@@ -1909,7 +1909,7 @@ Enable Rate Limiting
 **False**: APIs are not throttled.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableRateLimiter": false`` with options ``true`` and ``false`` for above settings respectively.                        |
+| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Maximum Queries per Second
@@ -1930,7 +1930,9 @@ Maximum number of requests allowed beyond the per second query limit.
 
 Memory Store Size  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Maximum number of user sessions connected to the system as determined by **VaryByRemoteAddr** and **VaryByHeader** variables.
+Maximum number of user sessions connected to the system as determined by **VaryByRemoteAddr** and **VaryByHeader** variables. 
+
+Typically set to the number of users in the system.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MemoryStoreSize": 10000`` with whole number input.                                                                      |
@@ -1938,7 +1940,7 @@ Maximum number of user sessions connected to the system as determined by **VaryB
 
 Vary rate limit by remote address
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**True**: Rate limit API access by IP address.
+**True**: Rate limit API access by IP address. Recommended to set to ``true`` if you're using a proxy.
 
 **False**: Rate limiting does not vary by IP address.
 
@@ -1948,7 +1950,7 @@ Vary rate limit by remote address
 
 Vary rate limit by HTTP header
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Vary rate limiting by HTTP header field specified (e.g. when configuring Ngnix set to "X-Real-IP", when configuring AmazonELB set to "X-Forwarded-For").
+Vary rate limiting by HTTP header field specified (e.g. when configuring Ngnix set to "X-Real-IP", when configuring AmazonELB set to "X-Forwarded-For"). Recommended to be set if you're using a proxy.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"VaryByHeader": ""`` with string input.                                                                                  |
@@ -2081,6 +2083,31 @@ A list of all the machines in the cluster, separated by commas, for example, ``[
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"InterNodeUrls": []`` with string input.                                                                                        |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+________________________________________________________________________________________________________________________________________________________________________
+
+Performance Monitoring (Beta)
+```````````````````````````
+*Available in Enterprise Edition E20*
+
+Enable Performance Monitoring
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**True**: When true, Mattermost will enable performance monitoring collection and profiling. Please see `documentation <https://docs.mattermost.com/deployment/metrics.html>`_ to learn more about configuring performance monitoring for Mattermost.
+
+**False**: Mattemost performane monitoring is disabled.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                                             |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+Listen Address
+~~~~~~~~~~~~~~~~~~~~~~~~~
+The address the Mattermost server will listen on to expose performance metrics.
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"InterNodeListenAddress": ":8067"`` with string input.                                                                          |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ------
