@@ -28,14 +28,22 @@ Release date: 2017-01-16
 
 ### Improvements
 
+#### Performance
+- Added server-based channel autocomplete, search and paging
+- Reduced lag on channel switcher (CTRL+K) and at-mention autocomplete
+- Improved on-boarding performance by removing new user event handling on the client
+- Improved channel switching performance by combining API events and by only pulling user statuses the client doesn't yet have
+- Improved performance by adding session cache directly to web connections
+- Added caching for files, user profiles and for the last 60 posts in a channel
+- Added ETag for user profile pictures and modified ETag for posts to improve caching validation
+- Added caching to post and channel calls
+- Fixed channel cache not being sent to a cluster
+- Added a configuration setting to disable intensive System Console statistics queries for maximum performance ([Enterprise E10 & E20 only](https://about.mattermost.com/pricing/))
+
 #### Notifications
 - Desktop notifications no longer appear for the channel you are actively viewing
 - Push and email notifications now follow the setting for Teammate Name Display
 - Notifications for @mentions of your username can no longer be turned off
-
-#### System Console
-- Server logs now scroll to the bottom on page load
-- New option to purge all in-memory caches for sessions, accounts and channels
 
 #### Account Settings
 - Added a "Position" field, where users can add a job title to be shown in their profile popover
@@ -67,6 +75,7 @@ Release date: 2017-01-16
 - Split out channel management permissions into separate settings for creation, deletion, and renaming a channel
 - Ability to set maximum number of users in a channel that will disable @all and @channel notifications
 - Added ability to set a user's Position field with LDAP sync or SAML
+- New option to purge all in-memory caches for sessions, accounts and channels
 
 ### Bug Fixes
 - Integrations that post to Direct Message channels now mark the channel as Unread
