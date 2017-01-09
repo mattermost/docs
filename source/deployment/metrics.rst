@@ -97,12 +97,12 @@ The following is a list of custom Mattermost metrics that can be used to monitor
 
 Caching Metrics: // XXX These need to be confirmed with Chris
 
-    - ``mattermost_cache_etag_hit_total``: The total number of ETag cache hits for an API call
-    - ``mattermost_cache_etag_miss_total``: The total number of ETag cache misses for an API call, requiring re-fetching from the ETag header. 
-    - ``mattermost_cache_mem_hit_total``: The total number of cache hits for an API call
-    - ``mattermost_cache_mem_miss_total``: The total number of cache misses for an API call, requiring re-fetching from the memory. 
+    - ``mattermost_cache_etag_hit_total``: The total number of ETag cache hits for a specific cache.
+    - ``mattermost_cache_etag_miss_total``: The total number of ETag cache misses for an API call.
+    - ``mattermost_cache_mem_hit_total``: The total number of memory cache hits for a specific cache.
+    - ``mattermost_cache_mem_miss_total``: The total number of cache misses for a specific cache.
 
-The above metrics can be used to calculate ETag and Memory Caching hit rates over time and on average.
+The above metrics can be used to calculate ETag and memory cache hit rates over time.
 
 .. image:: ../../images/perf_monitoring_caching_metrics.png
 
