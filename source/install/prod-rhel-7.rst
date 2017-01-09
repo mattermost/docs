@@ -134,7 +134,7 @@ Set up Mattermost Server
    -  ``cd /opt/mattermost/config``
    -  Edit the file by typing:
    -  ``sudo vi config.json``
-   -  replace ``"DriverName": "mysql"`` with ``"DriverName": "postgres"`
+   -  replace ``"DriverName": "mysql"`` with ``"DriverName": "postgres"``
    -  replace
       ``"DataSource": "mmuser:mostest@tcp(dockerhost:3306)/mattermost_test?charset=utf8mb4,utf8"``
       with
