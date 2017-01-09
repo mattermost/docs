@@ -15,7 +15,7 @@ Usernames are unique identifers appearing next to all posts. Pick something easy
 Nicknames appear in the Direct Messages member list and team management modal. You will not receive mention notifications when someone types your nickname unless you add it to the *Words That Trigger Mentions* in **Account Settings > Notifications**.
 
 #### Position
-Position can be used to describe your role or job title. It appears in the profile popup that shows up when you click a user's name in the center channel.
+Position can be used to describe your role or job title. It appears in the profile popup that shows up when you click a user's name in the center channel or right-hand sidebar.
 
 #### Email
 Email is used for sign-in, notifications, and password reset. Email requires verification if changed. If you are signing in using a single sign-on service, the email field is not editable and you will receive email notifications to the email you used to sign up to your SSO service.
