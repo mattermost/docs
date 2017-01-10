@@ -19,6 +19,11 @@ To translate a language:
 
     - If it is, perhaps offer to help translate or review and make suggestions.
     - If not, ask to setup your language on the `Mattermost localization channel <https://pre-release.mattermost.com/core/channels/localization>`_, so you can start helping with the translation.
+    
+3 - Review translation rules written by localization leads, when applicable:
+
+    - `French (Règles) <https://gist.github.com/wget/0df2ce49e81b450990601914677fdceb>`_
+    - `German (Regeln zur Übersetzung von Mattermost) <https://gist.github.com/meilon/1317a9425988b3ab296c894a72270787>`_
 
 Translations Updates
 ====================
