@@ -14,7 +14,7 @@ If you belong to more than one team, a team sidebar will appear left of your cha
 
 .. image:: ../images/team-sidebar.png
 
-Click the "+" icon at the bottom of the team sidebar, then click **Create a new team** on the team selection page, which guides you through the rest of the set up steps. If this option is not visible on the web page, then the System Admin has disabled team creation.
+Click the "+" icon at the bottom of the team sidebar, then click **Create a new team** on the team selection page, which guides you through the rest of the setup steps. If this option is not visible on the web page, then the System Admin has disabled team creation.
 
 If you have no other teams to join, clicking the "+" icon brings you directly to the team creation page if team creation is enabled.
 
