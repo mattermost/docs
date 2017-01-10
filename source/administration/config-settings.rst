@@ -215,14 +215,6 @@ Maximum number of users per team, including both active and inactive users.
 | This feature's ``config.json`` setting is ``"MaxUsersPerTeam": 50`` with whole number input.                                                                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Max Notifications Per Channel
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-Maximum total number of users in a channel before messages containing @all, @here or @channel no longer send notifications to maximize performance.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MaxNotificationsPerChannel": 1000`` with whole number input.                                                            |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Max Channels Per Team
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 Maximum number of channels per team, including both active and deleted channels.
