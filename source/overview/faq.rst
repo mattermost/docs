@@ -5,15 +5,15 @@ General Questions
 -----------------
 
 Why was Mattermost created?
-    Mattermost was created to offer an alternative to propreitary SaaS services. For more info, please go to mattermost.org and click "Why we made Mattermost".
+    Mattermost was created to offer an alternative to propreitary SaaS services. For more information, please see the article `Why we made Mattermost <https://www.mattermost.org/why-we-made-mattermost-an-open-source-slack-alternative/>`_.
 
 Will the open source Team Edition offer more authentication add-ons?
     There are no current plans for auth add-ons for the following reasons: 
     1. Authentication is a critical path that needs to be tested, maintained and supported with each bi-monthly release and volunteers aren't prepared to bear the tax this change would impose on them, and
-    2. Such a change increases the difficulty of creating high quality apps and drivers, as developers would be taxed with requests for support, troubleshooting, and debug set ups that would be expensive to reproduce.
+    2. Such a change increases the difficulty of creating high quality apps and drivers, as developers would be taxed with requests for support, troubleshooting, and debug setups that would be expensive to reproduce.
 
 Why does the open source repo contain code specific to the commercial version of Mattermost?
-    The commercial versionw of Mattermost is designed to never lock-in your data. Portions of the commercial version are shared with the open source version to ensure upgrade and downgrade across editions happens without data loss. 
+    The commercial version of Mattermost is designed to never lock-in your data. Portions of the commercial version are shared with the open source version to ensure upgrade and downgrade across editions happens without data loss. 
 
 Enterprise Edition
 ------------------
@@ -34,4 +34,4 @@ How does Mattermost scale from teams to enterprises?
 
     **Functional Scaling** - Scaling from a team to an enterprise is like going from a "virtual office" to a "virtual campus". Advanced features like enterprise authentication, granular permissions, compliance and auditing, and advanced reporting become increasingly important as organizations grow beyond teams. Organizations needing this flexibility can easily upgrade from Mattermost Team Edition to Mattermost Enterprise Edition, as well as downgrade without data loss, should their needs change. 
 
-    For more information on how Mattermost scales, technically and functionality, please `contact the Enterprise team <https://about.mattermost.com/contact/>`_.
+    For more information on how Mattermost scales, technically and functionally, please `contact the Enterprise team <https://about.mattermost.com/contact/>`_ and `read about scaling for Enterprise <https://docs.mattermost.com/deployment/scaling.html>`_.
