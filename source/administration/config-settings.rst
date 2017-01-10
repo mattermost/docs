@@ -12,7 +12,7 @@ Quick Links:
 	`Configuration`_ - `Localization`_ - `Users and Teams`_ - `Privacy`_ - `Policy`_ - `Compliance`_ - `Logging`_
 
 `Authentication`_
-	`Email Auth`_ - `OAuth 2.0`_ - `GitLab`_ - `Google`_ - `Office 365`_ - `AD/LDAP`_ - `SAML`_ - `_MFA_`
+	`Email Auth`_ - `OAuth 2.0`_ - `GitLab`_ - `Google`_ - `Office 365`_ - `AD/LDAP`_ - `SAML`_ - `MFA`_
 
 `Security`_
 	`Sign Up`_ - `Password`_ - `Public Links`_ - `Sessions`_ - `Connections`_
