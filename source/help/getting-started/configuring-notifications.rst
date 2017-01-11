@@ -95,13 +95,12 @@ being viewed on desktop.
 Team Sidebar Notifications
 ----------------------------------------
 
-If Mattermost is open in a browser tab the favicon updates to inform you of unread messages and
-mentions. Browser tab notifications are available on Firefox and Chrome.
+If you belong to more than one team, a team sidebar appears to the left of your channel list. It will inform you of unread messages and mentions across teams.
 
 - Unread messages are denoted by a small dot left of the team icon.
-- Unread mentions are displayed with a mention counter similar to channels and appears on the top right corner of the team icon.
+- Unread mentions are displayed with a mention counter that appears on the top right corner of the team icon.
 
-.. image:: ../images/team-sidebar-notifications.png
+.. image:: ../../images/team-sidebar-notifications.png
 
 Browser Tab Notifications
 ----------------------------------------
