@@ -1076,7 +1076,7 @@ Enable Multi-factor Authentication
 | This feature's ``config.json`` setting is ``"EnableMultifactorAuthentication": false`` with options ``true`` and ``false`` for above settings respectively.           |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-nforce Multi-factor Authentication
+Enforce Multi-factor Authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: When true, `multi-factor authentication (MFA) <https://docs.mattermost.com/deployment/auth.html>`_ is required for login. New users will be required to configure MFA on sign-up. Logged in users without MFA configured are redirected to the MFA setup page until configuration is complete. If your system has users with login options other than AD/LDAP and email, MFA must be enforced with the authentication provider outside of Mattermost.
