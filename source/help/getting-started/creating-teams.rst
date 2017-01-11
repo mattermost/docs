@@ -6,13 +6,13 @@ New teams can be created if the System Admin has **Enable Team Creation** set to
 Methods to Create a Team
 ------------------------
 
-Teams can be created from the team sidebar or Main Menu. The person who creates a team will automatically be given the Team Admin role for that team.
+If team creation is enabled by the System Admin, teams can be created from the team sidebar or Main Menu. The person who creates a team will automatically be given the Team Admin role for that team.
 
 Team Sidebar
 ~~~~~~~~~~~~~~~~~~~~
 If you belong to more than one team, a team sidebar will appear left of your channel list on the left-hand sidebar.
 
-.. image:: ../images/team-sidebar.png
+.. image:: ../../images/team-sidebar.png
 
 Click the "+" icon at the bottom of the team sidebar, then click **Create a new team** on the team selection page, which guides you through the rest of the setup steps. If this option is not visible on the web page, then the System Admin has disabled team creation.
 
