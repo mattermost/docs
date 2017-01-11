@@ -32,7 +32,7 @@ Assume that the IP address of this server is 10.10.10.1
   ``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser_password';``
   
   .. note::
-    Use a password that is more secure than 'mmuser-password'
+    Use a password that is more secure than 'mmuser-password'.
 
 6.  Grant the user access to the Mattermost database.
 

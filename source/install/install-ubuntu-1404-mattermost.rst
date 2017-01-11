@@ -34,7 +34,7 @@ Assume that the IP address of this server is 10.10.10.2
 
   a. Create the Mattermost user and group:
     ``sudo useradd --system --user-group mattermost``
-  b. Set the user and group *mattermost* as the ownwer of the Mattermost files:
+  b. Set the user and group *mattermost* as the owner of the Mattermost files:
     ``sudo chown -R mattermost:mattermost /opt/mattermost``
   c. Give write permissions to the *mattermost* group:
     ``sudo chmod -R g+w /opt/mattermost``

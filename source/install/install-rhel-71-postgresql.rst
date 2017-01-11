@@ -46,7 +46,7 @@ Installing PostgreSQL Database
   ``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser_password';``
   
   .. note::
-    Use a password that is more secure than 'mmuser-password'
+    Use a password that is more secure than 'mmuser-password'.
 
 12.  Grant the user access to the Mattermost database.
 
