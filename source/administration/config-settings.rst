@@ -276,7 +276,7 @@ Policy
 
 Settings to configure the permission restrictions for sending team invite links and managing channels.
 
-Enable sending team invites from:
+Enable sending team invites from
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Set policy on who can invite others to a team using "Invite New Member" to invite new users by email, or the "Get Team Invite Link" options from the main menu. If "Get Team Invite Link" is used to share a link, you can expire the invite code from **Team Settings** > **Invite Code** after the desired users joined the team. Options include:
 
@@ -290,34 +290,89 @@ Set policy on who can invite others to a team using "Invite New Member" to invit
 | This feature's ``config.json`` setting is ``"RestrictTeamInvite": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively. |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable public channel management permissions for
+Enable public channel creation for
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Restrict the permission levels required to create, delete, rename, and set the header or purpose for public channels. The last member of a public channel has the ability to delete the channel regardless of their permission level.
+Restrict the permission level required to create public channels.
 
-**All team members**: Channel management permissions for public channels are enabled for all users.
+**All team members**: Allow all team members to create public channels.
 
-**Team and System Admins**: Channel management permissions for public channels are restricted to Team and System Admins.
+**Team and System Admins**: Restrict creating public channels to Team and System Admins.
 
-**System Admins**: Channel management permissions for public channels are restricted to System Admins.
+**System Admins**: Restrict creating public channels to System Admins.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RestrictPublicChannelManagement": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively. |
+| This feature's ``config.json`` setting is ``"RestrictPublicChannelCreation": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively.   |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable private channel management permissions for
+Enable public channel renaming for
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Restrict the permission levels required to to create, delete, rename, and set the header or purpose for private channels. The last member of a private channel has the ability to delete the channel regardless of their permission level.
+Restrict the permission level required to rename and set the header or purpose for public channels.
 
-**All team members**: Channel management permissions for private channels are enabled for all users.
+**All channel members**: Allow all channel members to rename public channels.
 
-**Team and System Admins**: Channel management permissions for private channels are restricted to Team and System Admins.
+**Team and System Admins**: Restrict renaming public channels to Team and System Admins that are members of the channel.
 
-**System Admins**: Channel management permissions for private channels are restricted to System Admins.
+**System Admins**: Restrict renaming public channels to System Admins that are members of the channel.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RestrictPublicChannelManagement": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively.   |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable public channel deletion for
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Restrict the permission level required to delete public channels. Deleted channels can be recovered from the database using a `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`_. The last member of a public channel has the ability to delete the channel regardless of their permission level.
+
+**All channel members**: Allow all channel members to delete public channels.
+
+**Team and System Admins**: Restrict deleting public channels to Team and System Admins that are members of the channel.
+
+**System Admins**: Restrict deleting public channels to System Admins that are members of the channel.
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RestrictPublicChannelDeletion": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively.   |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable private group creation for
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Restrict the permission level required to create private groups.
+
+**All team members**: Allow all team members to create private groups.
+
+**Team and System Admins**: Restrict creating private groups to Team and System Admins.
+
+**System Admins**: Restrict creating private groups to System Admins.
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RestrictPrivateChannelManagement": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively. |
+| This feature's ``config.json`` setting is ``"RestrictPrivateChannelCreation": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively.   |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable private group renaming for
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Restrict the permission level required to rename and set the header or purpose for private groups.
+
+**All channel members**: Allow all group members to rename private groups.
+
+**Team and System Admins**: Restrict renaming private groups to Team and System Admins that are members of the group.
+
+**System Admins**: Restrict renaming private groups to System Admins that are members of the group.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RestrictPrivateChannelManagement": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively.   |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable private group deletion for
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Restrict the permission level required to delete private groups. Deleted groups can be recovered from the database using a `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`_. The last member of a private group has the ability to delete the group regardless of their permission level.
+
+**All channel members**: Allow all group members to delete private groups.
+
+**Team and System Admins**: Restrict deleting private groups to Team and System Admins that are members of the group.
+
+**System Admins**: Restrict deleting private groups to System Admins that are members of the group.
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RestrictPrivateChannelDeletion": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively.   |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
 
