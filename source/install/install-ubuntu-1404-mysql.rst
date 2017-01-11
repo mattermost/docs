@@ -5,8 +5,6 @@ Installing MySQL Database Server
 
 Install and set up the database for use by the Mattermost server. You can install either MySQL or PostgreSQL. The MySQL version must be 5.6 or greater.
 
-To install PostgreSQL, see :ref:`install-ubuntu-1404-postgresql`.
-
 **To install MySQL 5.6 on Ubuntu Server 14.04:**
 
 1. Log in to the server that will host the database, and open a terminal window.

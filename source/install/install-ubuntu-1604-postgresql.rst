@@ -3,7 +3,7 @@
 Installing PostgreSQL Database Server
 =====================================
 
-Install and set up the database for use by the Mattermost server. You can install either PostgreSQL or MySQL. To install MySQL, see :ref:`install-ubuntu-1604-mysql`
+Install and set up the database for use by the Mattermost server. You can install either PostgreSQL or MySQL.
 
 Assume that the IP address of this server is 10.10.10.1
 
