@@ -292,7 +292,7 @@ Set policy on who can invite others to a team using "Invite New Member" to invit
 
 Enable public channel creation for
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Restrict the permission levels required to create public channels.
+Restrict the permission level required to create public channels.
 
 **All team members**: Allow all team members to create public channels.
 
@@ -306,7 +306,7 @@ Restrict the permission levels required to create public channels.
 
 Enable public channel renaming for
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Restrict the permission levels required to rename and set the header or purpose for public channels.
+Restrict the permission level required to rename and set the header or purpose for public channels.
 
 **All channel members**: Allow all channel members to rename public channels.
 
@@ -320,7 +320,7 @@ Restrict the permission levels required to rename and set the header or purpose 
 
 Enable public channel deletion for
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Restrict the permission levels required to delete public channels. Deleted channels can be recovered from the database using a `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`_. The last member of a public channel has the ability to delete the channel regardless of their permission level.
+Restrict the permission level required to delete public channels. Deleted channels can be recovered from the database using a `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`_. The last member of a public channel has the ability to delete the channel regardless of their permission level.
 
 **All channel members**: Allow all channel members to delete public channels.
 
@@ -334,7 +334,7 @@ Restrict the permission levels required to delete public channels. Deleted chann
 
 Enable private group creation for
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Restrict the permission levels required to create private groups.
+Restrict the permission level required to create private groups.
 
 **All team members**: Allow all team members to create private groups.
 
@@ -348,7 +348,7 @@ Restrict the permission levels required to create private groups.
 
 Enable private group renaming for
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Restrict the permission levels required to rename and set the header or purpose for private groups.
+Restrict the permission level required to rename and set the header or purpose for private groups.
 
 **All channel members**: Allow all group members to rename private groups.
 
@@ -362,7 +362,7 @@ Restrict the permission levels required to rename and set the header or purpose 
 
 Enable private group deletion for
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Restrict the permission levels required to delete private groups. Deleted groups can be recovered from the database using a `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`_. The last member of a private group has the ability to delete the group regardless of their permission level.
+Restrict the permission level required to delete private groups. Deleted groups can be recovered from the database using a `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`_. The last member of a private group has the ability to delete the group regardless of their permission level.
 
 **All channel members**: Allow all group members to delete private groups.
 
