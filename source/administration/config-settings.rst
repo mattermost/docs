@@ -1047,8 +1047,7 @@ Nickname Attribute
 
 Position Attribute
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-(Optional) The attribute in the SAML Assertion that will be used to populate the position field for users in Mattermost.
- (typically used to describe a person's job title or role at the company).
+(Optional) The attribute in the SAML Assertion that will be used to populate the position field for users in Mattermost (typically used to describe a person's job title or role at the company).
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PositionAttribute": ""`` with string input.                                                                             |
