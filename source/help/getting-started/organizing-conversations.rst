@@ -30,7 +30,7 @@ Creating a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Create a new Public Channel or Private Group by selecting the **+** symbol next to the *Channels* or *Private Groups* header on the left hand side. To start a direct message thread, click **More** at the bottom of the *Direct Messages* list to view a list of team members you can message.
 
-Anyone can create Public Channels or Private Groups, unless the System Administrator has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-management-permissions-for>`_. 
+Anyone can create Public Channels or Private Groups, unless the System Administrator has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-creation-for>`_. 
 
 Joining a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -38,7 +38,7 @@ Click **More** at the bottom of the *Channels* list to view a list of Public Cha
 
 Renaming a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Click the channel name at the top of the center pane to access the drop-down menu, then click **Rename Channel**. Anyone can rename the Public Channels or Private Groups they belong to, unless the System Administrator has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-management-permissions-for>`_. 
+Click the channel name at the top of the center pane to access the drop-down menu, then click **Rename Channel**. Anyone can rename the Public Channels or Private Groups they belong to, unless the System Administrator has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-renaming-for>`_. 
 
 You may also change the channel URL (also known as the channel handle) when renaming a channel. Changing channel URL may break existing links.
 
@@ -48,7 +48,7 @@ Click the channel name at the top of the center pane to access the drop-down men
 
 Deleting a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Click the channel name at the top of the center pane to access the drop-down menu, then click **Delete Channel**. Anyone can delete the Public Channels or Private Groups they belong to, unless the System Administrator has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-management-permissions-for>`_. 
+Click the channel name at the top of the center pane to access the drop-down menu, then click **Delete Channel**. Anyone can delete the Public Channels or Private Groups they belong to, unless the System Administrator has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-deletion-for>`_. 
 
 When a channel is deleted it is removed from the user interface, but an archived copy exists on the server in case it is needed for audit reasons later. Because of this, the URL of a newly created channel cannot be the same URL name as a deleted channel. 
 
