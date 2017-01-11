@@ -23,8 +23,11 @@ until their session expires and they need to log in again, or until
 `they are also deactivated in
 Mattermost <https://docs.mattermost.com/deployment/on-boarding.html#common-tasks>`__.
 
-Mattermost officially supports `Okta <http://docs.mattermost.com/deployment/sso-saml-okta.html>`_ and `Microsoft ADFS <http://docs.mattermost.com/deployment/sso-saml-adfs.html>`_ as the identity
-providers (IDPs), but you may also configure SAML for a custom IDP.
+Mattermost officially supports Okta and Microsoft ADFS as the identity providers (IDPs), 
+but you can also configure SAML for a custom IDP.
+
+- To set up SAML with Okta, see the `Okta guide <https://docs.mattermost.com/deployment/sso-saml-okta.html>`_
+- To set up SAML with Microsoft ADFS, see the `ADFS guide <https://docs.mattermost.com/deployment/sso-saml-adfs.html>`_
 
 Pre-installation
 ----------------
