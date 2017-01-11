@@ -30,7 +30,7 @@ Settings to configure your password, view access history, and view or logout of 
 You may change your password if you’ve logged in by email. If you are signing in using a single sign-on service, the password field is not editable, and you must access your SSO service’s account settings to update your password.
 
 #### Multi-Factor Authentication 
-When this option is available you can require a phone-based passcode in addition your password for sign-in. 
+When this option is available you can require a phone-based passcode in addition to your password for sign-in. 
 
 To enable, download Google Authenticator from [iTunes](https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8) or [Google Play](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en) for your phone, then: 
 
