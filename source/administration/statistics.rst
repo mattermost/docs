@@ -58,10 +58,10 @@ Replica DB Conns
     The number of active connections currently on one or more of `your read replica databases <https://docs.mattermost.com/deployment/cluster.html#database-configuration>`_.
 
 Channel Types
-    This chart displays the number of public channels and private groups in a visual format, including channels that may have been archived.
+    This chart displays the number of public channels and private groups in a visual format, including channels that may have been deleted.
 
 Posts, Files and Hashtags
-    This chart displays the number of posts containing files, hashtags or text-only. Posts containing both files and hashtags are counted in both categories, and deleted posts are included.
+    This chart displays the number of posts containing files, hashtags or only text. Posts containing both files and hashtags are counted in both categories, and deleted posts are included.
 
 Team statistics
 ---------------
@@ -72,10 +72,10 @@ Total Users
     The total number of active accounts who are members of this team. Excludes inactive accounts.
 
 Public Channels
-    The number of public channels created in this team. Doesn't include archived channels.
+    The number of public channels created in this team. Doesn't include deleted channels.
 
 Private Groups
-    The number of private groups created in this team. Doesn't include archived groups.
+    The number of private groups created in this team. Doesn't include deleted groups.
 
 Total Posts
     The total number of posts made in this team, including deleted posts and posts made using automation.
