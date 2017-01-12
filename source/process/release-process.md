@@ -247,10 +247,13 @@ Once final dot release build is ready to cut:
     - Add the download links to http://docs.mattermost.com/administration/upgrade.html#version-archive  
     - Merge the Changelog PR with notes on patch releases (see [example entry](https://docs.mattermost.com/administration/changelog.html#release-v3-5.1))
     - Update the version archive in the [upgrade guide](https://github.com/mattermost/docs/blob/master/source/administration/upgrade.md)
-    - Sumbit GitLab MR to update the version number and MD5 hash to the dot release version. [See example](https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests/1127)
+    - Submit GitLab MR to update the version number and MD5 hash to the dot release version. [See example](https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests/1127)
       - [Test the upgrade](https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg) once the MR is merged and the package is released to the GitLab package server
-3.  Logistics:  
-    - Verifies each of the issues in the patch release are fixed
+3. Logistics:  
+    - Verify each of the issues in the patch release are fixed
+4. Marketing:
+    - Prepare blog post for mattermost.com, MailChimp email blast and Twitter announcement, and send for marketing lead to review. Once reviewed, schedule for 08:00 PST on the day after dot release
+      - Upgrade should be recommended if there are security fixes in the dot release version
 
 ### I. (T-minus 0 working days) Release Day
 
