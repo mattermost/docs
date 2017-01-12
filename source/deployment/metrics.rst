@@ -56,7 +56,7 @@ For install instructions, see `Prometheus install guides <https://prometheus.io/
 
 3 - Enable performance monitoring in the Mattermost System Console and specify the listen address. See more detail in our `configuration settings documentation <https://docs.mattermost.com/administration/config-settings.html#performance-monitoring-beta>`_.
 
-.. image:: ../../images/perf_monitoring_system_console.png
+.. image:: ../images/perf_monitoring_system_console.png
 
 4 - To test the server is running, go to ``<ip>:<port>/metrics``.
 
@@ -95,7 +95,7 @@ Custom Mattermost Metrics
 
 The following is a list of custom Mattermost metrics that can be used to monitor your system's performance:
 
-Caching Metrics: // XXX These need to be confirmed with Chris
+Caching Metrics:
 
     - ``mattermost_cache_etag_hit_total``: The total number of ETag cache hits for a specific cache.
     - ``mattermost_cache_etag_miss_total``: The total number of ETag cache misses for an API call.
@@ -104,7 +104,7 @@ Caching Metrics: // XXX These need to be confirmed with Chris
 
 The above metrics can be used to calculate ETag and memory cache hit rates over time.
 
-.. image:: ../../images/perf_monitoring_caching_metrics.png
+.. image:: ../images/perf_monitoring_caching_metrics.png
 
 Database Metrics:
 
@@ -117,7 +117,7 @@ HTTP Metrics:
     - ``mattermost_http_request_duration_seconds``: The total duration in seconds of the http API requests.
     - ``mattermost_http_requests_total``: The total number of http API requests.
     
-.. image:: ../../images/perf_monitoring_http_metrics.png
+.. image:: ../images/perf_monitoring_http_metrics.png
 
 Login and Session Metrics:
 
@@ -133,7 +133,7 @@ Messaging Metrics:
     - ``mattermost_post_pushes_sent_total``: The total number of mobile push notifications sent beacuse a post was created.
     - ``mattermost_post_total``: The total number of posts created.
     
-.. image:: ../../images/perf_monitoring_messaging_metrics.png
+.. image:: ../images/perf_monitoring_messaging_metrics.png
 
 Process Metrics:
 
@@ -170,4 +170,4 @@ where you can replace ``localhost`` with the server name. The profiling reports 
     - ``/debug/pprof/threadcreate``/ for threads profiling
     - ``/debug/pprof/block``/ for block profiling
     
-.. image:: ../../images/perf_monitoring_go_metrics.png
+.. image:: ../images/perf_monitoring_go_metrics.png
