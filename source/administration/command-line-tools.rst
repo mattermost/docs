@@ -56,6 +56,7 @@ organization who aren't expecting them.
 
 platform
 ~~~~~~~~
+Commands for configuring and managing your Mattermost instance and users.
 
 **Options**
 
@@ -67,7 +68,7 @@ platform
 
 -  `platform channel`_ - Management of channels
 -  `platform gendocs`_ - Generate full documentation for the CLI
--  `platform import`_ - Import data.
+-  `platform import`_ - Import data
 -  `platform ldap`_ - LDAP related utilities
 -  `platform license`_ - Licensing commands
 -  `platform reset`_ - Reset the database to initial state
@@ -153,12 +154,9 @@ Create a channel.
 
 platform channel delete
 ^^^^^^^^^^^^^^^^^^^^^^^
-
-Delete channels
-
-Permanently deletes a channel along with all related information
+Permanently deletes a channel along with all related information,
 including posts from the database. Channels can be specified by
-[team]:[channel]. For example, ``myteam:mychannel`` or by channel ID.
+[team]:[channel] using the team and channel names or IDs.
 
 ::
 
@@ -179,8 +177,7 @@ including posts from the database. Channels can be specified by
 platform channel list
 ^^^^^^^^^^^^^^^^^^^^^
 
-List all channels on a specified team. Archived channels are appended
-with ' (archived)'.
+List all channels on a specified team. Archived channels are appended with `` (archived)``.
 
 ::
 
@@ -223,7 +220,7 @@ platform channel restore
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Restore a previously deleted channel. Channels can be specified by
-[team]:[channel]. For example, ``myteam:mychannel`` or by channel ID.
+[team]:[channel] using the team and channel names or IDs.
 
 ::
 
@@ -535,7 +532,7 @@ Create a team.
 platform team delete
 ^^^^^^^^^^^^^^^^^^^^
 
-Permanently deletes a team along with all related information including
+Permanently deletes a team along with all related information, including
 posts from the database.
 
 ::
@@ -688,7 +685,7 @@ sessions and are unable to log back in.
 platform user delete
 ^^^^^^^^^^^^^^^^^^^^
 
-Permanently delete user and all related information, including posts.
+Permanently deletes a user and all related information, including posts.
 
 ::
 
