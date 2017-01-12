@@ -6,19 +6,20 @@ Searching
 The search box in Mattermost returns search results from any channel of
 which you’re a member.
 
--  Searching multiple words returns results with any one of the words
+-  Searching multiple words returns results containing both of the words
    listed.
 -  When results appear, click the **Jump** link to view that post in the
    channel archive.
 -  You can expand the search results window by clicking the “Expand”
    button in the top right corner.
 -  Use search modifiers, like ``from:dave``, to return results only from
-   certain people or in certain channels (see below)
+   certain people or in certain channels (see below).
 
 Like many search engines, highly common words like ``the``, ``which``,
 ``are`` (known as “stop words”), as well as two-letter and one-letter
 search terms, are not shown in search because they typically return too
-may results.
+may results. See database documentation on `MySQL`_ and
+`Postgres`_ for a full list.
 
 Search Modifiers
 ----------------
@@ -38,8 +39,8 @@ posts in specific channels.
 Use quotation marks to return search results for exact terms.
 
 -  For example: Searching ``"Mattermost website"`` returns messages
-   containing the entire phrase ``Mattermost website`` and not messages
-   containing only ``Mattermost`` or ``website``.
+   containing the exact phrase ``Mattermost website`` and not messages
+   containing ``Mattermost`` and ``website`` separately.
 
 Wildcard\*
 ^^^^^^^^^^
@@ -65,7 +66,7 @@ Valid hashtags:
 - Are made up of alphanumeric or other unicode characters.
 - May contain dots, dashes or underscores.
 
-Examples: ``#bug``, ``#marketing``, ``#v2.1``, ``#user_testing``,
+Examples: ``#bug``, ``#marketing``, ``#user_testing``,
 ``#per.iod``, ``#check-in``, ``#마케팅``
 
 Hashtags do not link to channels. For example, if you have a channel
