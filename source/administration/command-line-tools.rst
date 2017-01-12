@@ -31,10 +31,13 @@ From the directory where the Mattermost platform is installed, a
 -  Migrating sign-in options
 -  Resetting multi-factor authentication for a user
 
+.. contents::
+    :backlinks: top
+
 CLI Commands
 ------------
 
-Typing ``platform gendocs`` returns documentation for the CLI tool.
+Typing ``platform help`` and ``platform help [command]`` returns help documentation for the CLI tool or any CLI command in particular.
 
 Notes:
 
@@ -67,7 +70,7 @@ Commands for configuring and managing your Mattermost instance and users.
 **Child Commands**
 
 -  `platform channel`_ - Management of channels
--  `platform gendocs`_ - Generate full documentation for the CLI
+-  `platform help`_ - Generate full documentation for the CLI
 -  `platform import`_ - Import data
 -  `platform ldap`_ - LDAP related utilities
 -  `platform license`_ - Licensing commands
@@ -82,12 +85,6 @@ platform channel
 ~~~~~~~~~~~~~~~~
 
 Commands for channel management.
-
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
 
 **Child Commands**
 
@@ -112,12 +109,6 @@ Add users to a channel.
 ::
 
       channel add mychannel user@example.com username
-
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
 
 platform channel create
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -146,12 +137,6 @@ Create a channel.
           --purpose string        Channel purpose
           --team string           Team name or ID
 
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
-
 platform channel delete
 ^^^^^^^^^^^^^^^^^^^^^^^
 Permanently deletes a channel along with all related information,
@@ -168,12 +153,6 @@ including posts from the database. Channels can be specified by
 
       channel delete myteam:mychannel
 
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
-
 platform channel list
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -189,12 +168,6 @@ List all channels on a specified team. Archived channels are appended with `` (a
 
       channel list myteam
 
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
-
 platform channel remove
 ^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -209,12 +182,6 @@ Remove users from a channel.
 ::
 
       channel remove mychannel user@example.com username
-
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
 
 platform channel restore
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -232,38 +199,19 @@ Restore a previously deleted channel. Channels can be specified by
 
       channel restore myteam:mychannel
 
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
-
-platform gendocs
+platform help
 ~~~~~~~~~~~~~~~~
 
-Generates full documentation in Markdown format for the Mattermost
-command line tools.
+Generates full documentation in Markdown format for the Mattermost command line tools.
 
 ::
 
-    platform gendocs [outputdir]
-
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
+    platform help [outputdir]
 
 platform import
 ~~~~~~~~~~~~~~~
 
 Import data into Mattermost.
-
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
 
 **Child Commands**
 
@@ -284,22 +232,10 @@ Import a team from a Slack export zip file.
 
       import slack myteam slack_export.zip
 
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
-
 platform ldap
 ~~~~~~~~~~~~~
 
 Commands to configure and syncronize LDAP.
-
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
 
 **Child Commands**
 
@@ -320,22 +256,10 @@ Synchronize all LDAP users now.
 
       ldap sync
 
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
-
 platform license
 ~~~~~~~~~~~~~~~~
 
 Commands to manage licensing.
-
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
 
 **Child Commands**
 
@@ -357,12 +281,6 @@ already uploaded.
 
       license upload /path/to/license/mylicensefile.mattermost-license
 
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
-
 platform reset
 ~~~~~~~~~~~~~~
 
@@ -379,22 +297,10 @@ Mattermost to its initial state.
 
           --confirm   Confirm you really want to delete everything and a DB backup has been performed.
 
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
-
 platform roles
 ~~~~~~~~~~~~~~
 
 Commands to manage user roles.
-
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
 
 **Child Commands**
 
@@ -417,12 +323,6 @@ Remove system admin privileges from a user.
 
       roles member user1
 
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
-
 platform roles system\_admin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -438,12 +338,6 @@ Promote a user to a System Admin.
 
       roles system_admin user1
 
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
-
 platform server
 ~~~~~~~~~~~~~~~
 
@@ -453,22 +347,10 @@ Runs the Mattermost server.
 
     platform server
 
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
-
 platform team
 ~~~~~~~~~~~~~
 
 Commands to manage teams.
-
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
 
 **Child Commands**
 
@@ -491,12 +373,6 @@ Add users to a team.
 ::
 
       team add myteam user@example.com username
-
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
 
 platform team create
 ^^^^^^^^^^^^^^^^^^^^
@@ -523,12 +399,6 @@ Create a team.
           --name string           Team Name
           --private               Create a private team.
 
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
-
 platform team delete
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -551,12 +421,6 @@ posts from the database.
 
           --confirm   Confirm you really want to delete the team and a DB backup has been performed.
 
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
-
 platform team remove
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -572,22 +436,10 @@ Remove users from a team.
 
       team remove myteam user@example.com username
 
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
-
 platform user
 ~~~~~~~~~~~~~
 
 Commands to manage users.
-
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
 
 **Child Commands**
 
@@ -618,12 +470,6 @@ Activate users that have been deactivated.
       user activate user@example.com
       user activate username
 
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
-
 platform user create
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -653,12 +499,6 @@ Create a user.
           --system_admin       Make the user a system administrator
           --username string    Username
 
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
-
 platform user deactivate
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -675,12 +515,6 @@ sessions and are unable to log back in.
 
       user deactivate user@example.com
       user deactivate username
-
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
 
 platform user delete
 ^^^^^^^^^^^^^^^^^^^^
@@ -702,12 +536,6 @@ Permanently deletes a user and all related information, including posts.
 ::
 
           --confirm   Confirm you really want to delete the user and a DB backup has been performed.
-
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
 
 platform user deleteall
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -731,12 +559,6 @@ posts.
 
           --confirm   Confirm you really want to delete the user and a DB backup has been performed.
 
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
-
 platform user invite
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -753,12 +575,6 @@ teams by listing the team names or team IDs.
 
       user invite user@example.com myteam
       user invite user@example.com myteam1 myteam2
-
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
 
 platform user migrate\_auth
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -788,12 +604,6 @@ successfully.
 
       user migrate_auth email ladp email
 
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
-
 platform user password
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -808,12 +618,6 @@ Set a user's password.
 ::
 
       user password user@example.com Password1
-
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
 
 platform user resetmfa
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -832,12 +636,6 @@ soon as they log in.
 
       user resetmfa user@example.com
 
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
-
 platform user verify
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -853,12 +651,6 @@ Verify the email address of a new user.
 
       user verify user1
 
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
-
 platform version
 ~~~~~~~~~~~~~~~~
 
@@ -867,9 +659,3 @@ Displays Mattermost version information.
 ::
 
     platform version
-
-**Options inherited from parent commands**
-
-::
-
-      -c, --config string   Configuration file to use. (default "config.json")
