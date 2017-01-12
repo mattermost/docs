@@ -113,11 +113,16 @@ Changes from v3.5 to v3.6:
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console. 
 
-**Changes to Team Edition**:
+**Changes to Team Edition and Enterprise Edition**:
 
-There are no `config.json` changes for Team Edition this release.
+Deprecated Settings:
+ 
+ - Under `ServiceSettings` in `config.json`:
+   - `"SegmentDeveloperKey"` to be removed in v3.7
 
-**Changes to Enterprise Edition**:
+**Additional Changes to Enterprise Edition**:
+
+The following config settings will only work on servers with an Enterprise License that has the feature enabled.
 
 - Under `ServiceSettings` in `config.json`:
    - Added `”EnforceMultifactorAuthentication": false` to control whether MFA in enforced
@@ -217,6 +222,9 @@ There are no `config.json` changes for Team Edition this release.
 
 ### Contributors
 
+Thanks also to those who reported bugs that benefited the release, in alphabetical order:
+
+ - [S6066](https://github.com/S6066) ([#5011](https://github.com/mattermost/platform/issues/5011))
 
 ## Release v3.5.0  
 
