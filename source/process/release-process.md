@@ -57,6 +57,7 @@ No pull requests for major features should be **merged** to the current release 
         - Post in Reception alerting community of upcoming release and to ask about top issues on master ([See example](https://pre-release.mattermost.com/core/pl/pfpzwpi7wj8zzpmeih87cdt77r))  
 3. **(Team) Major Feature Complete Meeting (10:15am PST)**:  
     - Discuss worst bug currently on master
+    - Discuss release highlights for marketing
     - Review status of last feature PRs to be merged
 4. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/platform/pulls) marked for the current release 
