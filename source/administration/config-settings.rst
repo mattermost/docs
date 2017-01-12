@@ -2337,3 +2337,19 @@ Standard setting for OAuth to determine the scope of information shared with OAu
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Scope": "User.Read"`` with string input                                                                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+________
+
+Analytics Settings
+```````````````````````````
+*Available in Enterprise Edition E10 and higher*
+
+Maximum Users for Statistics
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Sets the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and active users with posts per day are disabled.
+
+This setting is used to maximize performance for large Enterprise deployments.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"MaxUsersForStatistics": 2500`` with whole number input                                                                  |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
