@@ -121,7 +121,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - Directory structure is reviewed and large changes posted to the Release Discussion channel
 6. PM:  
     - Merge changelog PR after team review is complete, and update the GitHub meta issue to include a link to the changelog on the documention branch
-    - Tweet announcement that RC1 is ready (see [example](https://twitter.com/mattermosthq/status/664172166368264192))
+    - Tweet announcement that RC1 is ready (see [example](https://pre-release.mattermost.com/core/pl/tefx1ijyz7bs8mabuxmpq9f7pw))
  
 ### F. (T-minus 7 working days) Release Candidate Testing 
 
