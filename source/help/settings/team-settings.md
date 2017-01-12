@@ -19,7 +19,7 @@ You can enter a name up to 15 characters in length. The length of team names is 
 
 #### Team Description
 
-Your **Team Description** is displayed on the Team Selection page and in the tooltip when hovering over the team name in the team sidebar.
+Your **Team Description** is displayed when viewing the list of teams available to join and in the tooltip when hovering over the team name in the team sidebar.
 
 You can enter a description up to 50 characters in length.
 
