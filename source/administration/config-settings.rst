@@ -2093,7 +2093,7 @@ Enable Performance Monitoring
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **True**: When true, Mattermost will enable performance monitoring collection and profiling. Please see `documentation <https://docs.mattermost.com/deployment/metrics.html>`_ to learn more about configuring performance monitoring for Mattermost.
 
-**False**: Mattemost performane monitoring is disabled.
+**False**: Mattermost performane monitoring is disabled.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                                             |
@@ -2271,8 +2271,8 @@ Value that controls the `fraction of goroutine blocking events reported in the b
 
 The profiler aims to sample an average of one blocking event per rate nanoseconds spent blocked.
 
-To include every blocking event in the profile, set the rate to 1. To turn off profiling entirely, set the pass rate to 0.
+To include every blocking event in the profile, set the rate to 1. To turn off profiling entirely, set the rate to 0.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"BlockProfileRate": "0"`` with number input between 0 and 1                                                              |
+| This feature's ``config.json`` setting is ``"BlockProfileRate": "0"`` with number input between 0 and 1.                                                             |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
