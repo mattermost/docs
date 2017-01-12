@@ -70,7 +70,8 @@ Examples: ``#bug``, ``#marketing``, ``#v2.1``, ``#user_testing``,
 
 Hashtags do not link to channels. For example, if you have a channel
 named “Marketing”, clicking a ``#marketing`` hashtag does not redirect
-you to that channel.
+you to that channel. You can link to public channels using ``~`` followed 
+by the channel name, for example ``~marketing``. 
 
 Other notes:
 
