@@ -3,9 +3,10 @@ Signing in
 
 --------------
 
-You can sign in to your team from the root page of your Mattermost site
-``https://domain.com``. After signing in, you will be able to view a
-list of your teams and select which one to open.
+To sign in, navigate to the Mattermost sign-in page. You can get the URL of the sign-in page from your administrator. 
+
+After signing in, the team that appears first on your team sidebar will open.  If you have not joined a team, the Team Selection 
+page opens where you can view a list of teams that you can join.
 
 Sign In Methods
 ---------------
@@ -66,9 +67,10 @@ Mattermost.
 Switching Teams
 ---------------
 
-You can switch between teams you have joined using the **Main Menu**,
-accessed by clicking the three dots in the top header of any team site
-on the server.
+You can switch between teams you have joined using the team sidebar 
+that appears left of your channel list on the left-hand sidebar.
+
+.. image:: ../../images/team-sidebar.png
 
 Logging Out
 -----------
