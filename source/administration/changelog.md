@@ -13,18 +13,18 @@ Release date: 2017-01-16
 ### Highlights
 
 #### Team Sidebar
-- Added a new sidebar on left-hand side to improve cross-team notifications
+- Added a new sidebar on left-hand side to improve cross-team notifications and team switching
 - New sidebar improves user experience on the [Mattermost Desktop Apps](https://about.mattermost.com/downloads/) when engaging with multiple teams
 
 #### MFA Enforcement ([Enterprise E10 & E20](https://about.mattermost.com/pricing/))
-- Added support for MFA Enforcement, when set to true all users with email or LDAP authentication are required to set up MFA for their accounts
+- Added support for MFA Enforcement. When set to true, all users with email or LDAP authentication are required to set up MFA for their accounts
 
 #### Performance Monitoring ([Enterprise E20](https://about.mattermost.com/pricing/))
 - Added support for performance monitoring in large-scale deployments to help optimize systems for maximum performance using integrations with [Prometheus](https://github.com/prometheus/prometheus) and [Grafana](http://grafana.org/)
 - Includes metrics for caching, database connections, processing, logins and messaging. See [documentation to learn more](https://docs.mattermost.com/deployment/metrics.html)
 
 #### Improved Command Line Interface
-- New version of CLI with a more intuitive interface, interactive help documentation, and some added functionality. See [documentation](https://docs.mattermost.com/administration/command-line-tools.html) for more details.
+- New version of CLI with a more intuitive interface, interactive help documentation, and some added functionality. See [documentation to learn more](https://docs.mattermost.com/administration/command-line-tools.html)
 
 ### Improvements
 
