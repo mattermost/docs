@@ -34,9 +34,6 @@ From the directory where the Mattermost platform is installed, a
 .. contents::
     :backlinks: top
 
-CLI Commands
-------------
-
 Typing ``platform help`` and ``platform help {command}`` returns help documentation for the CLI tool or any CLI command in particular.
 
 Notes:
@@ -55,7 +52,7 @@ Notes:
    If you automate user creation through the CLI tool with SMTP enabled, emails will be sent to all new users created. If you run such a load script, it is best to disable SMTP or to use test accounts so that new account creation emails aren't unintentionally set to people at your organization who aren't expecting them.
 
 platform
-~~~~~~~~
+--------
 
   Description
     Commands for configuring and managing your Mattermost instance and users.
@@ -79,7 +76,7 @@ platform
     -  `platform version`_ - Display version information
 
 platform channel
-~~~~~~~~~~~~~~~~
+-----------------
 
   Description
     Commands for channel management.
@@ -93,7 +90,7 @@ platform channel
     -  `platform channel restore`_ - Restore a channels
 
 platform channel add
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
   Description
     Add users to a channel. If adding multiple users, use a space-separated list.
@@ -109,7 +106,7 @@ platform channel add
       platform channel add mychannel user@example.com username
 
 platform channel create
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Create a channel.
@@ -136,7 +133,7 @@ platform channel create
           --team string           Team name or ID
 
 platform channel delete
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Permanently deletes a channel along with all related information, including posts from the database. Channels can be specified by {team}:{channel} using the team and channel names or IDs.
@@ -152,7 +149,7 @@ platform channel delete
       platform channel delete myteam:mychannel
 
 platform channel list
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     List all channels on a specified team. Archived channels are appended with ``(archived)``.
@@ -168,7 +165,7 @@ platform channel list
       platform channel list myteam
 
 platform channel remove
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Remove users from a channel.
@@ -184,7 +181,7 @@ platform channel remove
       platform channel remove mychannel user@example.com username
 
 platform channel restore
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Restore a previously deleted channel. Channels can be specified by {team}:{channel} using the team and channel names or IDs.
@@ -200,7 +197,7 @@ platform channel restore
       platform channel restore myteam:mychannel
 
 platform help
-~~~~~~~~~~~~~~~~
+---------------
 
   Description
     Generates full documentation in Markdown format for the Mattermost command line tools.
@@ -211,7 +208,7 @@ platform help
       platform help {outputdir}
 
 platform import
-~~~~~~~~~~~~~~~
+----------------
 
   Description
     Import data into Mattermost.
@@ -220,7 +217,7 @@ platform import
     -  `platform import slack`_ - Import a team from Slack.
 
 platform import slack
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Import a team from a Slack export zip file.
@@ -236,7 +233,7 @@ platform import slack
       platform import slack myteam slack_export.zip
 
 platform ldap
-~~~~~~~~~~~~~
+-------------
 
   Description
     Commands to configure and syncronize LDAP.
@@ -245,7 +242,7 @@ platform ldap
     -  `platform ldap sync`_ - Synchronize now
 
 platform ldap sync
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Synchronize all LDAP users now.
@@ -261,7 +258,7 @@ platform ldap sync
       platform ldap sync
 
 platform license
-~~~~~~~~~~~~~~~~
+-----------------
 
   Description
     Commands to manage licensing.
@@ -270,7 +267,7 @@ platform license
     -  `platform license upload`_ - Upload a license.
 
 platform license upload
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Upload a license. This command replaces the current license if one is already uploaded.
@@ -286,7 +283,7 @@ platform license upload
       platform license upload /path/to/license/mylicensefile.mattermost-license
 
 platform reset
-~~~~~~~~~~~~~~
+---------------
 
   Description
     Completely erases the database causing the loss of all data. This resets Mattermost to its initial state.
@@ -302,7 +299,7 @@ platform reset
           --confirm   Confirm you really want to delete everything and a DB backup has been performed.
 
 platform roles
-~~~~~~~~~~~~~~
+---------------
 
   Description
     Commands to manage user roles.
@@ -312,7 +309,7 @@ platform roles
     -  `platform roles system_admin`_ - Make a user into a System Admin
 
 platform roles member
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Remove system admin privileges from a user.
@@ -328,7 +325,7 @@ platform roles member
       platform roles member user1
 
 platform roles system\_admin
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Promote a user to a System Admin.
@@ -344,7 +341,7 @@ platform roles system\_admin
       platform roles system_admin user1
 
 platform server
-~~~~~~~~~~~~~~~
+----------------
 
   Description
     Runs the Mattermost server.
@@ -355,7 +352,7 @@ platform server
       platform server
 
 platform team
-~~~~~~~~~~~~~
+----------------
 
   Description
     Commands to manage teams.
@@ -367,7 +364,7 @@ platform team
     -  `platform team remove`_ - Remove users from a team
 
 platform team add
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Add users to a team.
@@ -383,7 +380,7 @@ platform team add
       platform team add myteam user@example.com username
 
 platform team create
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Create a team.
@@ -408,7 +405,7 @@ platform team create
           --private               Create a private team.
 
 platform team delete
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Permanently deletes a team along with all related information, including posts from the database.
@@ -429,7 +426,7 @@ platform team delete
           --confirm   Confirm you really want to delete the team and a DB backup has been performed.
 
 platform team remove
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Remove users from a team.
@@ -445,7 +442,7 @@ platform team remove
       platform team remove myteam user@example.com username
 
 platform user
-~~~~~~~~~~~~~
+---------------
 
   Description
     Commands to manage users.
@@ -463,7 +460,7 @@ platform user
     -  `platform user verify`_ - Verify email address of a new user
 
 platform user activate
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Activate users that have been deactivated.
@@ -480,7 +477,7 @@ platform user activate
       platform user activate username
 
 platform user create
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Create a user.
@@ -509,7 +506,7 @@ platform user create
           --username string    Username
 
 platform user deactivate
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Deactivate a user. Deactivated users are immediately logged out of all sessions and are unable to log back in.
@@ -526,7 +523,7 @@ platform user deactivate
       platform user deactivate username
 
 platform user delete
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Permanently deletes a user and all related information, including posts.
@@ -547,7 +544,7 @@ platform user delete
           --confirm   Confirm you really want to delete the user and a DB backup has been performed.
 
 platform user deleteall
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Permanently delete all users and all related information, including posts.
@@ -568,7 +565,7 @@ platform user deleteall
           --confirm   Confirm you really want to delete the user and a DB backup has been performed.
 
 platform user invite
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Send a user an email invite to a team. You can invite a user to multiple teams by listing the team names or team IDs.
@@ -585,7 +582,7 @@ platform user invite
       platform user invite user@example.com myteam1 myteam2
 
 platform user migrate\_auth
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Migrates all user accounts from one authentication provider to another. For example, you can upgrade your authentication provider from email to ldap. Output will display any accounts that are not migrated successfully.
@@ -607,7 +604,7 @@ platform user migrate\_auth
       platform user migrate_auth email ladp email
 
 platform user password
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Set a user's password.
@@ -623,7 +620,7 @@ platform user password
       platform user password user@example.com Password1
 
 platform user resetmfa
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Turns off multi-factor authentication for a user. If MFA enforcement is enabled, the user will be forced to re-enable MFA with a new device as soon as they log in.
@@ -639,7 +636,7 @@ platform user resetmfa
       platform user resetmfa user@example.com
 
 platform user verify
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Verify the email address of a new user.
@@ -655,7 +652,7 @@ platform user verify
         platform user verify user1
 
 platform version
-~~~~~~~~~~~~~~~~
+------------------
 
   Description
     Displays Mattermost version information.
