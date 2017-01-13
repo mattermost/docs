@@ -30,7 +30,7 @@ Quick Links:
 	`Custom Branding`_ - `Custom Emoji`_ - `Legal and Support`_ - `Mattermost App Links`_
 
 `Advanced`_
-	`Rate Limiting`_ - `Database`_ - `Developer`_ - `High Availability (Beta)`_
+	`Rate Limiting`_ - `Database`_ - `Developer`_ - `High Availability (Beta)`_ - `Performance Monitoring (Beta)`_
 
 General
 ---------------------------------
@@ -2032,7 +2032,7 @@ Maximum number of requests allowed beyond the per second query limit.
 
 Memory Store Size  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Maximum number of user sessions connected to the system as determined by **VaryByRemoteAddr** and **VaryByHeader** variables.
+Maximum number of user sessions connected to the system as determined by **VaryByRemoteAddr** and **VaryByHeader** variables. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MemoryStoreSize": 10000`` with whole number input.                                                                      |
@@ -2183,6 +2183,31 @@ A list of all the machines in the cluster, separated by commas, for example, ``[
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"InterNodeUrls": []`` with string input.                                                                                        |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+________________________________________________________________________________________________________________________________________________________________________
+
+Performance Monitoring (Beta)
+```````````````````````````
+*Available in Enterprise Edition E20*
+
+Enable Performance Monitoring
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**True**: Mattermost enables performance monitoring collection and profiling. Please see `documentation <https://docs.mattermost.com/deployment/metrics.html>`_ to learn more about configuring performance monitoring for Mattermost.
+
+**False**: Mattermost performance monitoring is disabled.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                                             |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+Listen Address
+~~~~~~~~~~~~~~~~~~~~~~~~~
+The address the Mattermost server will listen on to expose performance metrics.
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"InterNodeListenAddress": ":8067"`` with string input.                                                                          |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ------
@@ -2339,6 +2364,20 @@ Standard setting for OAuth to determine the scope of information shared with OAu
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
+
+Metrics Settings
+```````````````````````````
+Block Profile Rate
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Value that controls the `fraction of goroutine blocking events reported in the blocking profile <https://golang.org/pkg/runtime/#SetBlockProfileRate>`_.
+
+The profiler aims to sample an average of one blocking event per rate nanoseconds spent blocked.
+
+To include every blocking event in the profile, set the rate to 1. To turn off profiling entirely, set the rate to 0.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"BlockProfileRate": "0"`` with decimal and whole number input between 0 and 1.                                           |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Analytics Settings
 ```````````````````````````
