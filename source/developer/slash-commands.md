@@ -94,11 +94,14 @@ If you'd like to build your own integration that uses slash commands, you can fo
         ```
         {
           "response_type": "in_channel",
-          "text": "This is some response text."
+          "text": "This is some response text.",
+          "username": "robot",
+          "icon_url": "https://www.mattermost.org/wp-content/uploads/2016/04/icon.png"
         }
         ```
         - Change `response_type` to "ephemeral" to have the message appear temporarily and only display to the user who activated the command
         - Use the field `goto_location` with a URL as the value to redirect the user of the command to a webpage
+        - Use the fields `username` and `icon_url` to set the username and icon for the message
 2. Set up your integration running on Heroku, an AWS server or a server of your own to start using your application from within Mattermost
 
 Additional Notes:

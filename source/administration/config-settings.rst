@@ -12,7 +12,7 @@ Quick Links:
 	`Configuration`_ - `Localization`_ - `Users and Teams`_ - `Privacy`_ - `Policy`_ - `Compliance`_ - `Logging`_
 
 `Authentication`_
-	`Email Auth`_ - `OAuth 2.0`_ - `GitLab`_ - `Google`_ - `Office 365`_ - `AD/LDAP`_ - `SAML`_
+	`Email Auth`_ - `OAuth 2.0`_ - `GitLab`_ - `Google`_ - `Office 365`_ - `AD/LDAP`_ - `SAML`_ - `MFA`_
 
 `Security`_
 	`Sign Up`_ - `Password`_ - `Public Links`_ - `Sessions`_ - `Connections`_
@@ -153,6 +153,10 @@ This button resets the configuration settings by reloading the settings from the
 
 The workflow for failover without downing the server is to change the database line in the config.json file, click **Reload Configuration from Disk** then click **Recycle Database Connections** in the Advanced > Database section.
 
+Purge All Caches
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This button purges all the in-memory caches for sessions, accounts and channels. Deployments using High Availability will attempt to purge all the servers in the cluster. Purging the caches may adversely impact performance.
+
 ________
 
 Localization
@@ -223,6 +227,13 @@ Maximum number of channels per team, including both active and deleted channels.
 | This feature's ``config.json`` setting is ``"MaxChannelsPerTeam": 2000`` with whole number input.                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Max Notifications Per Channel
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Maximum total number of users in a channel before @all, @here, and @channel no longer send notifications to maximize performance.
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"MaxNotificationsPerChannel": 1000`` with whole number input.                                                                    |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Restrict account creation to specified email domains
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -276,7 +287,7 @@ Policy
 
 Settings to configure the permission restrictions for sending team invite links and managing channels.
 
-Enable sending team invites from:
+Enable sending team invites from
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Set policy on who can invite others to a team using "Invite New Member" to invite new users by email, or the "Get Team Invite Link" options from the main menu. If "Get Team Invite Link" is used to share a link, you can expire the invite code from **Team Settings** > **Invite Code** after the desired users joined the team. Options include:
 
@@ -290,34 +301,89 @@ Set policy on who can invite others to a team using "Invite New Member" to invit
 | This feature's ``config.json`` setting is ``"RestrictTeamInvite": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively. |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable public channel management permissions for
+Enable public channel creation for
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Restrict the permission levels required to create, delete, rename, and set the header or purpose for public channels. The last member of a public channel has the ability to delete the channel regardless of their permission level.
+Restrict the permission level required to create public channels.
 
-**All team members**: Channel management permissions for public channels are enabled for all users.
+**All team members**: Allow all team members to create public channels.
 
-**Team and System Admins**: Channel management permissions for public channels are restricted to Team and System Admins.
+**Team and System Admins**: Restrict creating public channels to Team and System Admins.
 
-**System Admins**: Channel management permissions for public channels are restricted to System Admins.
+**System Admins**: Restrict creating public channels to System Admins.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RestrictPublicChannelManagement": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively. |
+| This feature's ``config.json`` setting is ``"RestrictPublicChannelCreation": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively.   |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable private channel management permissions for
+Enable public channel renaming for
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Restrict the permission levels required to to create, delete, rename, and set the header or purpose for private channels. The last member of a private channel has the ability to delete the channel regardless of their permission level.
+Restrict the permission level required to rename and set the header or purpose for public channels.
 
-**All team members**: Channel management permissions for private channels are enabled for all users.
+**All channel members**: Allow all channel members to rename public channels.
 
-**Team and System Admins**: Channel management permissions for private channels are restricted to Team and System Admins.
+**Team and System Admins**: Restrict renaming public channels to Team and System Admins that are members of the channel.
 
-**System Admins**: Channel management permissions for private channels are restricted to System Admins.
+**System Admins**: Restrict renaming public channels to System Admins that are members of the channel.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RestrictPublicChannelManagement": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively.   |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable public channel deletion for
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Restrict the permission level required to delete public channels. Deleted channels can be recovered from the database using a `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`_. The last member of a public channel has the ability to delete the channel regardless of their permission level.
+
+**All channel members**: Allow all channel members to delete public channels.
+
+**Team and System Admins**: Restrict deleting public channels to Team and System Admins that are members of the channel.
+
+**System Admins**: Restrict deleting public channels to System Admins that are members of the channel.
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RestrictPublicChannelDeletion": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively.   |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable private group creation for
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Restrict the permission level required to create private groups.
+
+**All team members**: Allow all team members to create private groups.
+
+**Team and System Admins**: Restrict creating private groups to Team and System Admins.
+
+**System Admins**: Restrict creating private groups to System Admins.
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RestrictPrivateChannelManagement": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively. |
+| This feature's ``config.json`` setting is ``"RestrictPrivateChannelCreation": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively.   |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable private group renaming for
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Restrict the permission level required to rename and set the header or purpose for private groups.
+
+**All channel members**: Allow all group members to rename private groups.
+
+**Team and System Admins**: Restrict renaming private groups to Team and System Admins that are members of the group.
+
+**System Admins**: Restrict renaming private groups to System Admins that are members of the group.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RestrictPrivateChannelManagement": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively.   |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable private group deletion for
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Restrict the permission level required to delete private groups. Deleted groups can be recovered from the database using a `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`_. The last member of a private group has the ability to delete the group regardless of their permission level.
+
+**All channel members**: Allow all group members to delete private groups.
+
+**Team and System Admins**: Restrict deleting private groups to Team and System Admins that are members of the group.
+
+**System Admins**: Restrict deleting private groups to System Admins that are members of the group.
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RestrictPrivateChannelDeletion": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively.   |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
 
@@ -826,7 +892,7 @@ First Name Attribute
 
 Last Name Attribute
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-(Optional) The attribute in the AD/LDAP server that will be used to populate the last name of users in Mattermost. When set, users will not be able to edit their Last Name, since it is synchronized with the LDAP server. When left blank, users can set their own Last Name in Account Settings.
+(Optional) The attribute in the AD/LDAP server that will be used to populate the last name of users in Mattermost. When set, users will not be able to edit their Last Name, since it is synchronized with the LDAP server. When blank, users can set their own Last Name in Account Settings.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LastNameAttribute": ""`` with string input.                                                                             |
@@ -834,11 +900,20 @@ Last Name Attribute
 
 Nickname Attribute
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-(Optional) The attribute in the AD/LDAP server that will be used to populate the nickname of users in Mattermost. When set, users will not be able to edit their Nickname, since it is synchronized with the LDAP server. When left blank, users can set their own Nickname in Account Settings.
+(Optional) The attribute in the AD/LDAP server that will be used to populate the nickname of users in Mattermost. When set, users will not be able to edit their Nickname, since it is synchronized with the LDAP server. When blank, users can set their own Nickname in Account Settings.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"NicknameAttribute": ""`` with string input.                                                                             |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Position Attribute
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+(Optional) The attribute in the AD/LDAP server that will be used to populate the position field in Mattermost (typically used to describe a person's job title or role at the company). When set, users will not be able to edit their position, since it is synchronized with the LDAP server. When blank, users can set their own Position in Account Settings.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"PositionAttribute": ""`` with string input.                                                                             |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 
 Email Attribute
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1036,6 +1111,14 @@ Nickname Attribute
 | This feature's ``config.json`` setting is ``"NicknameAttribute": ""`` with string input.                                                                             |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Position Attribute
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+(Optional) The attribute in the SAML Assertion that will be used to populate the position field for users in Mattermost (typically used to describe a person's job title or role at the company).
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"PositionAttribute": ""`` with string input.                                                                             |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Preferred Language Attribute
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 (Optional) The attribute in the SAML Assertion that will be used to populate the language of users in Mattermost.
@@ -1050,6 +1133,41 @@ Login Button Text
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonText": ""`` with string input.                                                                               |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+________
+
+
+MFA
+--------------------------------
+*Available in Enterprise Edition E10 and higher*
+
+Configure security settings for multi-factor authentication. 
+
+The default recommendation for secure deployment is to host Mattermost within your own private network, with VPN clients on mobile, so everything works under your existing security policies and authentication protocols, which may already include multi-factor authentication.
+
+If you choose to run Mattermost outside your private network, bypassing your existing security protocols, it is recommended you upgrade to Mattermost Enterprise Edition to set up a multi-factor authentication service specifically for accessing Mattermost.
+
+Enable Multi-factor Authentication
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**True**: When true, users with LDAP and email authentication will be given the option to require a phone-based passcode, in addition to their password-based authentication, to sign-in to the Mattermost server. Specifically, they will be asked to download the `Google Authenticator <https://en.wikipedia.org/wiki/Google_Authenticator>`_ app to their iOS or Android mobile device, connect the app with their account, and then enter a passcode generated by the app on their phone whenever they log in to the Mattermost server.
+
+**False**: Multi-factor authentication is disabled.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableMultifactorAuthentication": false`` with options ``true`` and ``false`` for above settings respectively.           |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enforce Multi-factor Authentication
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**True**: When true, `multi-factor authentication (MFA) <https://docs.mattermost.com/deployment/auth.html>`_ is required for login. New users will be required to configure MFA on sign-up. Logged in users without MFA configured are redirected to the MFA setup page until configuration is complete. If your system has users with login options other than AD/LDAP and email, MFA must be enforced with the authentication provider outside of Mattermost.
+
+**False**: Multi-factor authentication is optional.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnforceMultifactorAuthentication": false`` with options ``true`` and ``false`` for above settings respectively.           |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -1139,22 +1257,6 @@ Failed login attempts allowed before a user is locked out and required to reset 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaximumLoginAttempts": 10`` with whole number input.                                                                    |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Enable Multi-factor Authentication
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*Available in Enterprise Edition E10 and higher*
-
-The default recommendation for secure deployment is to host Mattermost within your own private network, with VPN clients on mobile, so everything works under your existing security policies and authentication protocols, which may already include multi-factor authentication.
-
-If you choose to run Mattermost outside your private network, bypassing your existing security protocols, it is recommended you upgrade to Mattermost Enterprise Edition to set up a multi-factor authentication service specifically for accessing Mattermost.
-
-**True**: When true, users will be given the option to require a phone-based passcode, in addition to their password-based authentication, to sign-in to the Mattermost server. Specifically, they will be asked to download the `Google Authenticator <https://en.wikipedia.org/wiki/Google_Authenticator>`_ app to their iOS or Android mobile device, connect the app with their account, and then enter a passcode generated by the app on their phone whenever they log in to the Mattermost server.
-
-**False**: Multi-factor authentication is disabled.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableMultifactorAuthentication": true`` with options ``true`` and ``false`` for above settings respectively.           |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -2275,4 +2377,18 @@ To include every blocking event in the profile, set the rate to 1. To turn off p
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"BlockProfileRate": "0"`` with decimal and whole number input between 0 and 1.                                           |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Analytics Settings
+```````````````````````````
+*Available in Enterprise Edition E10 and higher*
+
+Maximum Users for Statistics
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Sets the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and active users with posts per day are disabled.
+
+This setting is used to maximize performance for large Enterprise deployments.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"MaxUsersForStatistics": 2500`` with whole number input                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
