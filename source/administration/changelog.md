@@ -165,7 +165,7 @@ The following config settings will only work on servers with an Enterprise Licen
 **New routes:**
 - Added `POST` at `/commands/update`
   - Updates a slash command
-- Added `GET` at `users/name/{username}`
+- Added `GET` at `/users/name/{username}`
   - Returns a user matching the given username
 - Added `GET` at `/users/email/{email}`
   - Returns a user matching the given email 
@@ -202,14 +202,18 @@ The following config settings will only work on servers with an Enterprise Licen
 - `GET` at `/channels/more` (replaced by /`channels/more/{offset}/{limit}`) to be removed in v3.7
 - `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`) to be removed in v3.8
 - `POST` at `/channels/set_last_viewed_at` (replaced by `/channels/view`) to be removed in v3.8
-- `POST` at `users/status/set_active_channel` (replaced by `/channels/view`) to be removed in v3.8
+- `POST` at `/users/status/set_active_channel` (replaced by `/channels/view`) to be removed in v3.8
+
+**Removed routes:**
+- `` at `teams/create_from_signup`
+- `` at `/teams/signup`
 
 ### Websocket Event Changes from v3.5 to v3.6
 
 **Added:**
-- `WEBSOCKET_EVENT_UPDATE_TEAM` that occurs each time the team info is updated
-- `WEBSOCKET_EVENT_REACTION_ADDED` that occurs when an emoji reaction is added to a post
-- `WEBSOCKET_EVENT_REACTION_REMOVED` that occurs when an emoji reaction is removed from a post
+- `update_team` that occurs each time the team info is updated
+- `reaction_added` that occurs when an emoji reaction is added to a post
+- `reaction_removed` that occurs when an emoji reaction is removed from a post
 
 ### Known Issues
 
@@ -222,6 +226,60 @@ The following config settings will only work on servers with an Enterprise Licen
 - Search autocomplete picker is broken on Android
 
 ### Contributors
+
+Many thanks to all our contributors. In alphabetical order:
+
+/platform
+
+- [asaadmahmood](https://github.com/asaadmahmood), [bjoernr-de](https://github.com/bjoernr-de), [bolecki](https://github.com/bolecki), [brendanbowidas](https://github.com/brendanbowidas), [CometKim](https://github.com/CometKim), [coreyhulen](https://github.com/coreyhulen), [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [debanshuk](https://github.com/debanshuk), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [fraziern](https://github.com/fraziern), [grundleborg](https://github.com/grundleborg), [hmhealey](https://github.com/hmhealey), [it33](https://github.com/it33), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [khawerrind](https://github.com/khawerrind), [lfbrock](https://github.com/lfbrock), [maruTA-bis](https://github.com/maruTA-bis), [pepf](https://github.com/pepf), [raphael0202](https://github.com/raphael0202), [Rudloff](https://github.com/Rudloff), [Yangchen1](https://github.com/Yangchen1), [ZJvandeWeg](https://github.com/ZJvandeWeg)
+
+/docs
+
+- [aureliojargas](https://github.com/aureliojargas), [axilleas](https://github.com/axilleas), [esethna](https://github.com/esethna), [grundleborg](https://github.com/grundleborg), [hmhealey](https://github.com/hmhealey), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [lfbrock](https://github.com/lfbrock), [lindy65](https://github.com/lindy65), [nils-werner](https://github.com/nils-werner), [okin](https://github.com/okin), [quentinus95](https://github.com/quentinus95), [qyra](https://github.com/qyra), [shieldsjared](https://github.com/shieldsjared), [tejasbubane](https://github.com/tejasbubane), [Tethik](https://github.com/Tethik), [yangchen1](https://github.com/yangchen1), [yumenohosi](https://github.com/yumenohosi), [yuya-oc](https://github.com/yuya-oc), [ZJvandeWeg](https://github.com/ZJvandeWeg)
+
+/mattermost-docker-preview
+
+- [cpanato](https://github.com/cpanato), [hyeseongkim](https://github.com/hyeseongkim), [jasonblais](https://github.com/jasonblais), [mattermost-build](https://github.com/mattermost-build)
+
+/desktop
+
+- [jasonblais](https://github.com/jasonblais), [jnugh](https://github.com/jnugh), [yuya-oc](https://github.com/yuya-oc)
+
+/mattermost-mobile
+
+- [csduarte](https://github.com/csduarte), [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [it33](https://github.com/it33), [thomchop](https://github.com/thomchop)
+
+/mattermost-load-test
+
+- [crspeller](https://github.com/crspeller), [it33](https://github.com/it33)
+
+/mattermost-driver-javascript
+
+- [Mattermost-build](https://github.com/Mattermost-build)
+
+/android
+
+- [CometKim](https://github.com/CometKim), [coreyhulen](https://github.com/coreyhulen), [DavidLu1997](https://github.com/DavidLu1997), [dmeza](https://github.com/dmeza), [esethna](https://github.com/esethna)
+
+/mattermost-webrtc
+
+- [enahum](https://github.com/enahum)
+
+/mattermost-api-reference
+
+- [CometKim](https://github.com/CometKim), [cpanato](https://github.com/cpanato), [enahum](https://github.com/enahum), [grundleborg](https://github.com/grundleborg), [hmhealey](https://github.com/hmhealey), [jwilander](https://github.com/jwilander), [MartinDelille](https://github.com/MartinDelille), [trarbr](https://github.com/trarbr), [ZJvandeWeg](https://github.com/ZJvandeWeg)
+
+/mattermost-docker
+
+- [Andrey9kin](https://github.com/Andrey9kin), [esethna](https://github.com/esethna), [jasonblais](https://github.com/jasonblais)
+
+/ios
+
+- [esethna](https://github.com/esethna)
+
+/mattermost-push-proxy
+
+- [coreyhulen](https://github.com/coreyhulen)
 
 Thanks also to those who reported bugs that benefited the release, in alphabetical order:
 
