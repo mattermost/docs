@@ -2091,9 +2091,9 @@ Performance Monitoring (Beta)
 
 Enable Performance Monitoring
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**True**: When true, Mattermost will enable performance monitoring collection and profiling. Please see `documentation <https://docs.mattermost.com/deployment/metrics.html>`_ to learn more about configuring performance monitoring for Mattermost.
+**True**: Mattermost enables performance monitoring collection and profiling. Please see `documentation <https://docs.mattermost.com/deployment/metrics.html>`_ to learn more about configuring performance monitoring for Mattermost.
 
-**False**: Mattermost performane monitoring is disabled.
+**False**: Mattermost performance monitoring is disabled.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                                             |
@@ -2274,5 +2274,5 @@ The profiler aims to sample an average of one blocking event per rate nanosecond
 To include every blocking event in the profile, set the rate to 1. To turn off profiling entirely, set the rate to 0.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"BlockProfileRate": "0"`` with number input between 0 and 1.                                                             |
+| This feature's ``config.json`` setting is ``"BlockProfileRate": "0"`` with decimal and whole number input between 0 and 1.                                           |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
