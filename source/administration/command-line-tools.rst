@@ -9,7 +9,7 @@ From the directory where the Mattermost platform is installed, a
 -  Creating teams
 -  Creating users
 -  Assigning roles to users
--  Reseting user passwords
+-  Resetting user passwords
 -  Inviting users to teams
 
 **Advanced Administration**
@@ -130,7 +130,7 @@ platform channel delete
 ~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Permanently deletes a channel along with all related information, including posts from the database. Channels can be specified by {team}:{channel} using the team and channel names or IDs.
+    Permanently delete a channel along with all related information, including posts from the database. Channels can be specified by {team}:{channel} using the team and channel names or IDs.
 
   Format
     .. code-block:: none
@@ -194,7 +194,7 @@ platform help
 ---------------
 
   Description
-    Generates full documentation in Markdown format for the Mattermost command line tools.
+    Generate full documentation in Markdown format for the Mattermost command line tools.
 
   Format
     .. code-block:: none
@@ -280,7 +280,7 @@ platform reset
 ---------------
 
   Description
-    Completely erases the database causing the loss of all data. This resets Mattermost to its initial state.
+    Completely erase the database causing the loss of all data. This resets Mattermost to its initial state.
 
   Format
     .. code-block:: none
@@ -402,7 +402,7 @@ platform team delete
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Permanently deletes a team along with all related information, including posts from the database.
+    Permanently delete a team along with all related information, including posts from the database.
 
   Format
     .. code-block:: none
@@ -457,7 +457,7 @@ platform user activate
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Activate users that have been deactivated.
+    Activate users that have been deactivated. If activating multiple users, use a space-separated list.
 
   Format
     .. code-block:: none
@@ -468,7 +468,7 @@ platform user activate
     .. code-block:: none
 
       platform user activate user@example.com
-      platform user activate username
+      platform user activate username1 username2
 
 platform user create
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -520,7 +520,7 @@ platform user delete
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Permanently deletes a user and all related information, including posts.
+    Permanently delete a user and all related information, including posts.
 
   Format
     .. code-block:: none
@@ -581,11 +581,11 @@ platform user migrate\_auth
   Description
     Migrates all user accounts from one authentication provider to another. For example, you can upgrade your authentication provider from email to ldap. Output will display any accounts that are not migrated successfully.
 
-    -  ``from_auth``: The authentication service to migrate users accounts from. Supported options: ``email``, ``gitlab``, ``saml``.
+    -  ``from_auth``: The authentication service from which to migrate user accounts. Supported options: ``email``, ``gitlab``, ``saml``.
 
-    -  ``to_auth``: The authentication service to migrate users to. Supported options: ``ldap``.
+    -  ``to_auth``: The authentication service to which to migrate user accounts. Supported options: ``ldap``.
 
-    -  ``match_field``: The field that is guaranteed to be the same in both authentication services. For example, if the users emails are consistent set to email. Supported options: ``email``, ``username``.
+    -  ``match_field``: The field that is guaranteed to be the same in both authentication services. For example, if the user emails are consistent set to email. Supported options: ``email``, ``username``.
 
   Format
     .. code-block:: none
