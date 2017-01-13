@@ -37,7 +37,7 @@ From the directory where the Mattermost platform is installed, a
 CLI Commands
 ------------
 
-Typing ``platform help`` and ``platform help [command]`` returns help documentation for the CLI tool or any CLI command in particular.
+Typing ``platform help`` and ``platform help {command}`` returns help documentation for the CLI tool or any CLI command in particular.
 
 Notes:
 
@@ -51,11 +51,8 @@ Notes:
    ``https://pre-release.mattermost.com/core/channels/town-square`` team
    name would be ``core`` and channel name would be ``town-square``
 
-.. tip :: If you automate user creation through the CLI tool with SMTP
-enabled emails will be sent to all new users created. If you run such a
-load script, it is best to disable SMTP or to use test accounts so that
-new account creation emails aren't unintentionally set to people at your
-organization who aren't expecting them.
+.. tip:: 
+   If you automate user creation through the CLI tool with SMTP enabled, emails will be sent to all new users created. If you run such a load script, it is best to disable SMTP or to use test accounts so that new account creation emails aren't unintentionally set to people at your organization who aren't expecting them.
 
 platform
 ~~~~~~~~
@@ -63,9 +60,9 @@ Commands for configuring and managing your Mattermost instance and users.
 
 **Options**
 
-::
+.. code-block:: none
 
-      -c, --config string   Configuration file to use. (default "config.json")
+      -c, --config {string}   Configuration file to use. (default "config.json")
 
 **Child Commands**
 
@@ -98,15 +95,15 @@ Commands for channel management.
 platform channel add
 ^^^^^^^^^^^^^^^^^^^^
 
-Add users to a channel.
+Add users to a channel. If adding multiple users, use a space-separated list.
 
-::
+.. code-block:: none
 
-    platform channel add [channel] [users]
+    platform channel add {channel} {users}
 
-**Examples**
+**Example**
 
-::
+.. code-block:: none
 
       channel add mychannel user@example.com username
 
@@ -115,20 +112,20 @@ platform channel create
 
 Create a channel.
 
-::
+.. code-block:: none
 
     platform channel create
 
 **Examples**
 
-::
+.. code-block:: none
 
       channel create --team myteam --name mynewchannel --display_name "My New Channel"
       channel create --team myteam --name mynewprivatechannel --display_name "My New Private Channel" --private
 
 **Options**
 
-::
+.. code-block:: none
 
           --display_name string   Channel Display Name
           --header string         Channel header
@@ -141,30 +138,30 @@ platform channel delete
 ^^^^^^^^^^^^^^^^^^^^^^^
 Permanently deletes a channel along with all related information,
 including posts from the database. Channels can be specified by
-[team]:[channel] using the team and channel names or IDs.
+{team}:{channel} using the team and channel names or IDs.
 
-::
+.. code-block:: none
 
-    platform channel delete [channels]
+    platform channel delete {channels}
 
-**Examples**
+**Example**
 
-::
+.. code-block:: none
 
       channel delete myteam:mychannel
 
 platform channel list
 ^^^^^^^^^^^^^^^^^^^^^
 
-List all channels on a specified team. Archived channels are appended with `` (archived)``.
+List all channels on a specified team. Archived channels are appended with ``(archived)``.
 
-::
+.. code-block:: none
 
-    platform channel list [teams]
+    platform channel list {teams}
 
-**Examples**
+**Example**
 
-::
+.. code-block:: none
 
       channel list myteam
 
@@ -173,13 +170,13 @@ platform channel remove
 
 Remove users from a channel.
 
-::
+.. code-block:: none
 
-    platform channel remove [channel] [users]
+    platform channel remove {channel} {users}
 
-**Examples**
+**Example**
 
-::
+.. code-block:: none
 
       channel remove mychannel user@example.com username
 
@@ -187,15 +184,15 @@ platform channel restore
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Restore a previously deleted channel. Channels can be specified by
-[team]:[channel] using the team and channel names or IDs.
+{team}:{channel} using the team and channel names or IDs.
 
-::
+.. code-block:: none
 
-    platform channel restore [channels]
+    platform channel restore {channels}
 
-**Examples**
+**Example**
 
-::
+.. code-block:: none
 
       channel restore myteam:mychannel
 
@@ -204,16 +201,16 @@ platform help
 
 Generates full documentation in Markdown format for the Mattermost command line tools.
 
-::
+.. code-block:: none
 
-    platform help [outputdir]
+    platform help {outputdir}
 
 platform import
 ~~~~~~~~~~~~~~~
 
 Import data into Mattermost.
 
-**Child Commands**
+**Child Command**
 
 -  `platform import slack`_ - Import a team from Slack.
 
@@ -222,13 +219,13 @@ platform import slack
 
 Import a team from a Slack export zip file.
 
-::
+.. code-block:: none
 
-    platform import slack [team] [file]
+    platform import slack {team} {file}
 
-**Examples**
+**Example**
 
-::
+.. code-block:: none
 
       import slack myteam slack_export.zip
 
@@ -237,22 +234,22 @@ platform ldap
 
 Commands to configure and syncronize LDAP.
 
-**Child Commands**
+**Child Command**
 
--  ``platform ldap sync``\ \_ - Synchronize now
+-  `platform ldap sync`_ - Synchronize now
 
 platform ldap sync
 ^^^^^^^^^^^^^^^^^^
 
 Synchronize all LDAP users now.
 
-::
+.. code-block:: none
 
     platform ldap sync
 
-**Examples**
+**Example**
 
-::
+.. code-block:: none
 
       ldap sync
 
@@ -261,7 +258,7 @@ platform license
 
 Commands to manage licensing.
 
-**Child Commands**
+**Child Command**
 
 -  `platform license upload`_ - Upload a license.
 
@@ -271,13 +268,13 @@ platform license upload
 Upload a license. This command replaces the current license if one is
 already uploaded.
 
-::
+.. code-block:: none
 
-    platform license upload [license]
+    platform license upload {license}
 
-**Examples**
+**Example**
 
-::
+.. code-block:: none
 
       license upload /path/to/license/mylicensefile.mattermost-license
 
@@ -287,13 +284,13 @@ platform reset
 Completely erases the database causing the loss of all data. This resets
 Mattermost to its initial state.
 
-::
+.. code-block:: none
 
     platform reset
 
 **Options**
 
-::
+.. code-block:: none
 
           --confirm   Confirm you really want to delete everything and a DB backup has been performed.
 
@@ -313,13 +310,13 @@ platform roles member
 
 Remove system admin privileges from a user.
 
-::
+.. code-block:: none
 
-    platform roles member [users]
+    platform roles member {users}
 
-**Examples**
+**Example**
 
-::
+.. code-block:: none
 
       roles member user1
 
@@ -328,13 +325,13 @@ platform roles system\_admin
 
 Promote a user to a System Admin.
 
-::
+.. code-block:: none
 
-    platform roles system_admin [users]
+    platform roles system_admin {users}
 
-**Examples**
+**Example**
 
-::
+.. code-block:: none
 
       roles system_admin user1
 
@@ -343,7 +340,7 @@ platform server
 
 Runs the Mattermost server.
 
-::
+.. code-block:: none
 
     platform server
 
@@ -364,13 +361,13 @@ platform team add
 
 Add users to a team.
 
-::
+.. code-block:: none
 
-    platform team add [team] [users]
+    platform team add {team} {users}
 
-**Examples**
+**Example**
 
-::
+.. code-block:: none
 
       team add myteam user@example.com username
 
@@ -379,20 +376,20 @@ platform team create
 
 Create a team.
 
-::
+.. code-block:: none
 
     platform team create
 
 **Examples**
 
-::
+.. code-block:: none
 
       team create --name mynewteam --display_name "My New Team"
       teams create --name private --display_name "My New Private Team" --private
 
 **Options**
 
-::
+.. code-block:: none
 
           --display_name string   Team Display Name
           --email string          Administrator Email (anyone with this email is automatically a team admin)
@@ -405,19 +402,19 @@ platform team delete
 Permanently deletes a team along with all related information, including
 posts from the database.
 
-::
+.. code-block:: none
 
-    platform team delete [teams]
+    platform team delete {teams}
 
-**Examples**
+**Example**
 
-::
+.. code-block:: none
 
       team delete myteam
 
 **Options**
 
-::
+.. code-block:: none
 
           --confirm   Confirm you really want to delete the team and a DB backup has been performed.
 
@@ -426,13 +423,13 @@ platform team remove
 
 Remove users from a team.
 
-::
+.. code-block:: none
 
-    platform team remove [team] [users]
+    platform team remove {team} {users}
 
-**Examples**
+**Example**
 
-::
+.. code-block:: none
 
       team remove myteam user@example.com username
 
@@ -459,13 +456,13 @@ platform user activate
 
 Activate users that have been deactivated.
 
-::
+.. code-block:: none
 
-    platform user activate [emails, usernames, userIds]
+    platform user activate {emails, usernames, userIds}
 
 **Examples**
 
-::
+.. code-block:: none
 
       user activate user@example.com
       user activate username
@@ -475,20 +472,20 @@ platform user create
 
 Create a user.
 
-::
+.. code-block:: none
 
     platform user create
 
 **Examples**
 
-::
+.. code-block:: none
 
       user create --email user@example.com --username userexample --password Password1 
       user create --firstname Joe --system_admin --email joe@example.com --username joe --password Password1
 
 **Options**
 
-::
+.. code-block:: none
 
           --email string       Email
           --firstname string   First Name
@@ -505,13 +502,13 @@ platform user deactivate
 Deactivate a user. Deactivated users are immediately logged out of all
 sessions and are unable to log back in.
 
-::
+.. code-block:: none
 
-    platform user deactivate [emails, usernames, userIds]
+    platform user deactivate {emails, usernames, userIds}
 
 **Examples**
 
-::
+.. code-block:: none
 
       user deactivate user@example.com
       user deactivate username
@@ -521,19 +518,19 @@ platform user delete
 
 Permanently deletes a user and all related information, including posts.
 
-::
+.. code-block:: none
 
-    platform user delete [users]
+    platform user delete {users}
 
-**Examples**
+**Example**
 
-::
+.. code-block:: none
 
       user delete user@example.com
 
 **Options**
 
-::
+.. code-block:: none
 
           --confirm   Confirm you really want to delete the user and a DB backup has been performed.
 
@@ -543,19 +540,19 @@ platform user deleteall
 Permanently delete all users and all related information, including
 posts.
 
-::
+.. code-block:: none
 
     platform user deleteall
 
-**Examples**
+**Example**
 
-::
+.. code-block:: none
 
       user deleteall
 
 **Options**
 
-::
+.. code-block:: none
 
           --confirm   Confirm you really want to delete the user and a DB backup has been performed.
 
@@ -565,13 +562,13 @@ platform user invite
 Send a user an email invite to a team. You can invite a user to multiple
 teams by listing the team names or team IDs.
 
-::
+.. code-block:: none
 
-    platform user invite [email] [teams]
+    platform user invite {email} {teams}
 
 **Examples**
 
-::
+.. code-block:: none
 
       user invite user@example.com myteam
       user invite user@example.com myteam1 myteam2
@@ -594,13 +591,13 @@ successfully.
    authentication services. For example, if the users emails are
    consistent set to email. Supported options: ``email``, ``username``.
 
-::
+.. code-block:: none
 
-    platform user migrate_auth [from_auth] [to_auth] [match_field]
+    platform user migrate_auth {from_auth} {to_auth} {match_field}
 
-**Examples**
+**Example**
 
-::
+.. code-block:: none
 
       user migrate_auth email ladp email
 
@@ -609,13 +606,13 @@ platform user password
 
 Set a user's password.
 
-::
+.. code-block:: none
 
-    platform user password [user] [password]
+    platform user password {user} {password}
 
-**Examples**
+**Example**
 
-::
+.. code-block:: none
 
       user password user@example.com Password1
 
@@ -626,13 +623,13 @@ Turns off multi-factor authentication for a user. If MFA enforcement is
 enabled, the user will be forced to re-enable MFA with a new device as
 soon as they log in.
 
-::
+.. code-block:: none
 
-    platform user resetmfa [users]
+    platform user resetmfa {users}
 
-**Examples**
+**Example**
 
-::
+.. code-block:: none
 
       user resetmfa user@example.com
 
@@ -641,13 +638,13 @@ platform user verify
 
 Verify the email address of a new user.
 
-::
+.. code-block:: none
 
-    platform user verify [users]
+    platform user verify {users}
 
-**Examples**
+**Example**
 
-::
+.. code-block:: none
 
       user verify user1
 
@@ -656,6 +653,6 @@ platform version
 
 Displays Mattermost version information.
 
-::
+.. code-block:: none
 
     platform version
