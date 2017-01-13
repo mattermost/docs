@@ -4,19 +4,111 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 ## Release v3.6.0  
 
-Release date:
+Release date: 2017-01-16
+
+### Security Update
+
+- Mattermost v3.6.0 contains a [security update](http://about.mattermost.com/security-updates/). [Upgrading to Mattermost v3.6.0](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Thanks to Julien Ahrens for contributing the security report through the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
 ### Highlights
 
+#### Team Sidebar
+- Added a new sidebar on left-hand side to improve cross-team notifications and team switching
+- New sidebar improves user experience on the [Mattermost Desktop Apps](https://about.mattermost.com/downloads/) when engaging with multiple teams
+
+#### MFA Enforcement ([Enterprise E10 & E20](https://about.mattermost.com/pricing/))
+- Added support for MFA Enforcement. When set to true, all users with email or LDAP authentication are required to set up MFA for their accounts
+
+#### Performance Monitoring ([Enterprise E20](https://about.mattermost.com/pricing/))
+- Added support for performance monitoring in large-scale deployments to help optimize systems for maximum performance using integrations with [Prometheus](https://github.com/prometheus/prometheus) and [Grafana](http://grafana.org/)
+- Includes metrics for caching, database connections, processing, logins and messaging. See [documentation to learn more](https://docs.mattermost.com/deployment/metrics.html)
+
+#### Improved Command Line Interface
+- New version of CLI with a more intuitive interface, interactive help documentation, and some added functionality. See [documentation to learn more](https://docs.mattermost.com/administration/command-line-tools.html)
 
 ### Improvements
 
+#### Performance
+- Added server-based channel autocomplete, search and paging
+- Reduced lag on channel switcher (CTRL/CMD+K) and at-mention autocomplete
+- Improved on-boarding performance by removing new user event handling on the client
+- Improved channel switching performance by combining API events and only pulling user statuses the client doesn't yet have
+- Added session cache directly to web connections
+- Added caching for files, user profiles and for the last 60 posts in a channel
+- Added ETag for user profile pictures and modified ETag for posts to improve caching validation
+- Added caching to post and channel calls
+- Fixed channel cache not being sent to a cluster
+- Added a configuration setting to disable intensive System Console statistics queries for maximum performance ([Enterprise E10 & E20 only](https://about.mattermost.com/pricing/))
+
+#### Notifications
+- Desktop notifications no longer appear for the channel you are actively viewing
+- Push and email notifications now follow the setting for Teammate Name Display
+- Notifications for @mentions of your username can no longer be turned off
+
+#### Account Settings
+- Added a "Position" field, where users can add a job title to be shown in their profile popover
+
+#### Team Settings
+- Team description can be set by a Team Admin and is visible to all users on the join teams screen and in the tool tip over the team name
+- Slack Import can now import integration messages
+
+#### Slash Commands
+- Existing slash commands can now be edited by the creator or by Team and System Admins
+- Slash commands now work on the right-hand sidebar
+- Added support for slash commands to set the username and icon directly from the reply payload
+
+#### Channels
+- System message is now posted for all users when a channel or group is renamed
+- Any channel member can now remove other users from the channel
+
+#### Messaging 
+- Added support for non-alphanumeric unicode characters in hashtags
+- Custom Emojis larger than 64kB can now be uploaded and they will be appropriately resized
+
+#### User Interface
+- Added a direct message link to the profile popover
+- Added an indicator to convey a new message is received when scrolled up in the center pane
+- Removed status indicators on posts by webhooks 
+- Channel switcher (CTRL/CMD+K) search results for direct messages now match message autocomplete
+- Autocomplete is now case insensitive for @-mentions, emojis, slash commands and channel linking
+
+
+#### Enterprise Edition
+- Split out channel management permissions into separate settings for creation, deletion, and renaming a channel
+- Ability to set the maximum number of users in a channel that will disable @all and @channel notifications
+- Added ability to set a user's Position field with LDAP sync or SAML
+- New option to purge all in-memory caches for sessions, accounts and channels
 
 ### Bug Fixes
-
+- Integrations that post to Direct Message channels now mark the channel as Unread
+- @mention autocomplete will now filter on Chinese, Japanese, Korean names
+- Text focus is now set on the text input area after channel creation
+- Editing old posts no longer causes them to repost for other members of the channel
+- Email invitation subject line no longer displays HTML characters in place of apostrophes in the team name
+- Current user is no longer displayed in the direct messages modal
+- Searching on direct messages modal now happens on typing rather than after hitting ENTER
+- More Channels modal now resets search when opening and closing the dialog
+- Channel switcher (CTRL/CMD+K) now works for direct message channels of users outside the team
+- Using the command line to invite users no longer sends an invalid join team link
+- Sleeping and waking your computer while logged into Mattermost no longer causes a console error
+- Searching for users in double in quotes in the direct message modal no longer throws an error
+- XML file preview no longer throws a JavaScript error
+- User autocomplete in message box no longer matches against email
+- Channel linking (with ~ shortcut) now works for channels you don't belong to
+- Fixed statistics for websockets and database connections in **System Console** > **Site Statistics** to work in [High Availability mode](https://docs.mattermost.com/deployment/cluster.html)
+- Slash commands now work in newly created private channels without requiring a refresh
+- Zapier app channel dropdown selector works again
+- Fixed sign in errors for non-admin accounts when custom emojis are restricted to Team and System Admins
+- Fixed encoding of file names when downloading attachments
+- Unflagging or flagging a post in the right-hand sidebar no longer forces a scroll to the top of the flagged posts list 
+- User list in **System Console > Teams** is no longer blank on first load
+- Fixed a bug where sometimes the right-hand sidebar would not display properly when switching to view another channel
 
 ### Compatibility  
 Changes from v3.5 to v3.6:
+
+**Special Upgrade Note:** 
+(Enterprise Edition) If you previously had values set for `RestrictPublicChannelManagement` and `RestrictPrivateChannelManagement`, the new settings for  `RestrictPublicChannelCreation`, `RestrictPrivateChannelCreation`, `RestrictPublicChannelDeletion`, and `RestrictPrivateChannelDeletion` will take those settings as their default values.
 
 #### config.json   
 
@@ -24,28 +116,116 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 **Changes to Team Edition and Enterprise Edition**:
 
+Deprecated Settings:
+ 
+ - Under `ServiceSettings` in `config.json`:
+   - `"SegmentDeveloperKey"` to be removed in v3.7
 
-### Database Changes from v3.4 to v3.5
+**Additional Changes to Enterprise Edition**:
 
-### API Changes from v3.4 to v3.5
+The following config settings will only work on servers with an Enterprise License that has the feature enabled.
+
+- Under `ServiceSettings` in `config.json`:
+   - Added `”EnforceMultifactorAuthentication": false` to control whether MFA in enforced
+- Under `TeamSettings` in `config.json`:
+   - Changed `"RestrictPublicChannelManagement": "all”` to only control who can edit the channel header, purpose, and name of public channels (previously it also controlled creation and deletion)
+  - Changed `"RestrictPrivateChannelManagement": "all”` to only control who can edit the channel header, purpose, and name of private groups (previously it also controlled creation and deletion)
+  - Added `"RestrictPublicChannelCreation": "all”` to control who can create public channels
+  - Added `"RestrictPrivateChannelCreation": "all”` to control who can create private groups
+  - Added `"RestrictPublicChannelDeletion”: "all”` to control who can delete public channels
+  - Added `"RestrictPrivateChannelDeletion": "all”` to control who can delete private channels
+  - Added `"MaxNotificationsPerChannel": 1000` to set the maximum number of channel members for which `@all` and `@channel` notifications will be sent
+- Under `LdapSettings` in `config.json`:
+  - Added `"PositionAttribute": “”` to select an LDAP attribute to synchronize for the user position (job title) field
+- Under `SamlSettings` in `config.json`:
+  - Added `"PositionAttribute": “”` to select an LDAP attribute to synchronize for the user position (job title) field
+- Added `MetricsSettings` in `config.json` for performance monitoring settings: 
+  - Added `"Enable": false` to control whether performance monitoring is enabled
+  - Added `"BlockProfileRate": 0` to control the [fraction of goroutine blocking events that are reported in the blocking profile](https://golang.org/pkg/runtime/#SetBlockProfileRate)
+  - Added `"ListenAddress": ":8067”` to control the address the server will listen on to expose performance metrics
+- Added `AnalyticsSettings` in `config.json` for analytics settings:
+  - Added `"MaxUsersForStatistics": 2500` to set the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and active users with posts per day are no longer counted (use this setting to improve performance on large instances)
+
+### Database Changes from v3.5 to v3.6
+
+**Posts Table:** 
+- Added `HasReactions` column
+
+**Teams Table:**
+- Added `Description` column
+
+**Users Table:**
+- Added `Position` column
+
+**Status Table:**
+- Removed `ActiveChannel` column
+
+### API Changes from v3.5 to v3.6
 
 **New routes:**
+- Added `POST` at `/commands/update`
+  - Updates a slash command
+- Added `GET` at `users/name/{username}`
+  - Returns a user matching the given username
+- Added `GET` at `/users/email/{email}`
+  - Returns a user matching the given email 
+- Added `GET` at `/users/autocomplete`
+  - Returns a list of users on the system that have a username, full name, or nickname that match against the provided term
+- Added `GET` at `/teams/name/{team_name}`
+  - Returns team object for a given team name
+- Added `GET` at `/teams/{team_id}/channels/name/{channel_name}`
+  - Returns a channel for a given channel name
+- Added `POST` at `/teams/{team_id}/channels/{channel_id}/members/ids`
+  - Returns channel member objects for the channel and user IDs specified
+- Added `GET` at `/teams/members`
+  - Returns an array with the teams the current user belongs to
+- Added `GET` at `/teams/unread`
+  - Returns an array containing the amount of unread messages and mentions for the teams the current user belongs to
+- Added `POST` at `/teams/{team_id}/channels/view`
+  - Performs all actions related to viewing a channel, including marking channels as read, clearing push notifications, and updating the active channel
+- Added `POST` at `/teams/{team_id}/channels/{channel_id}/posts/{post_id}/reactions/save`
+  - Saves an emoji reaction for a post, returns the saved reaction if successful
+- Added `POST` at `/teams/{team_id}/channels/{channel_id}/posts/{post_id}/reactions/delete`
+  - Removes an emoji reaction for a post in the given channel, returns nil if successful
+- Added `GET` at `/teams/{team_id}/channels/{channel_id}/posts/{post_id}/reactions'`
+  - Returns a list of all emoji reactions for a post
+- Added `GET` at `/admin/invalidate_all_caches`
+  - Purge all the in-memory caches for things like sessions, accounts, channels; deployments using High Availability will attempt to purge all the servers in the cluster (this may adversely impact performance)
+- Added `GET` at `/channels/more/{offset}/{limit}`
+  - Returns a page of public channels the user is not in based on the provided offset and limit
+-  Added `POST` at `/channels/more/search`
+  - Returns a list of public channels the user is not in that match the search criteria
+- Added `GET` at `/channels/autocomplete`
+  - Returns a list of public channels that match the provided string
 
+**Deprecated routes:**
+- `GET` at `/channels/more` (replaced by /`channels/more/{offset}/{limit}`) to be removed in v3.7
+- `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`) to be removed in v3.8
+- `POST` at `/channels/set_last_viewed_at` (replaced by `/channels/view`) to be removed in v3.8
+- `POST` at `users/status/set_active_channel` (replaced by `/channels/view`) to be removed in v3.8
 
-**Moved routes:**
+### Websocket Event Changes from v3.5 to v3.6
 
-
-**Removed routes:**
-
-
-**Modified Routes**
-
+**Added:**
+- `WEBSOCKET_EVENT_UPDATE_TEAM` that occurs each time the team info is updated
+- `WEBSOCKET_EVENT_REACTION_ADDED` that occurs when an emoji reaction is added to a post
+- `WEBSOCKET_EVENT_REACTION_REMOVED` that occurs when an emoji reaction is removed from a post
 
 ### Known Issues
 
+- Slack Import doesn't add merged members/e-mail accounts to imported channels
+- User can receive a video call from another browser tab while already on a call
+- Video calls do not work with Chrome v56 and later
+- Sequential messages from the same user appear as separate posts on mobile view
+- Edge overlays desktop notification sound with system notification sound
+- Deleting a message from a permalink view doesn't show delete until refresh
+- Search autocomplete picker is broken on Android
 
 ### Contributors
 
+Thanks also to those who reported bugs that benefited the release, in alphabetical order:
+
+ - [S6066](https://github.com/S6066) ([#5011](https://github.com/mattermost/platform/issues/5011))
 
 ## Release v3.5.0  
 
