@@ -101,12 +101,12 @@ platform channel add
   Format
     .. code-block:: none
 
-      ./platform channel add {channel} {users}
+      platform channel add {channel} {users}
 
   Example
     .. code-block:: none
 
-      ./platform channel add mychannel user@example.com username
+      platform channel add mychannel user@example.com username
 
 platform channel create
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -117,13 +117,13 @@ platform channel create
   Format
     .. code-block:: none
 
-      ./platform channel create
+      platform channel create
 
   Examples
     .. code-block:: none
 
-      ./platform channel create --team myteam --name mynewchannel --display_name "My New Channel"
-      ./platform channel create --team myteam --name mynewprivatechannel --display_name "My New Private Channel" --private
+      platform channel create --team myteam --name mynewchannel --display_name "My New Channel"
+      platform channel create --team myteam --name mynewprivatechannel --display_name "My New Private Channel" --private
 
   Options
     .. code-block:: none
@@ -149,7 +149,7 @@ platform channel delete
   Example
     .. code-block:: none
 
-      channel delete myteam:mychannel
+      platform channel delete myteam:mychannel
 
 platform channel list
 ^^^^^^^^^^^^^^^^^^^^^
@@ -165,7 +165,7 @@ platform channel list
   Example
     .. code-block:: none
 
-      channel list myteam
+      platform channel list myteam
 
 platform channel remove
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -181,7 +181,7 @@ platform channel remove
   Example
     .. code-block:: none
 
-      channel remove mychannel user@example.com username
+      platform channel remove mychannel user@example.com username
 
 platform channel restore
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -197,7 +197,7 @@ platform channel restore
   Example
     .. code-block:: none
 
-      channel restore myteam:mychannel
+      platform channel restore myteam:mychannel
 
 platform help
 ~~~~~~~~~~~~~~~~
@@ -233,7 +233,7 @@ platform import slack
   Example
     .. code-block:: none
 
-      import slack myteam slack_export.zip
+      platform import slack myteam slack_export.zip
 
 platform ldap
 ~~~~~~~~~~~~~
@@ -258,7 +258,7 @@ platform ldap sync
   Example
     .. code-block:: none
 
-      ldap sync
+      platform ldap sync
 
 platform license
 ~~~~~~~~~~~~~~~~
@@ -283,7 +283,7 @@ platform license upload
   Example
     .. code-block:: none
 
-      license upload /path/to/license/mylicensefile.mattermost-license
+      platform license upload /path/to/license/mylicensefile.mattermost-license
 
 platform reset
 ~~~~~~~~~~~~~~
@@ -323,10 +323,9 @@ platform roles member
       platform roles member {users}
 
   Example
-
     .. code-block:: none
 
-      roles member user1
+      platform roles member user1
 
 platform roles system\_admin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -342,7 +341,7 @@ platform roles system\_admin
   Example
     .. code-block:: none
 
-      roles system_admin user1
+      platform roles system_admin user1
 
 platform server
 ~~~~~~~~~~~~~~~
@@ -381,7 +380,7 @@ platform team add
   Example
     .. code-block:: none
 
-      team add myteam user@example.com username
+      platform team add myteam user@example.com username
 
 platform team create
 ^^^^^^^^^^^^^^^^^^^^
@@ -397,8 +396,8 @@ platform team create
   Examples
     .. code-block:: none
 
-      team create --name mynewteam --display_name "My New Team"
-      teams create --name private --display_name "My New Private Team" --private
+      platform team create --name mynewteam --display_name "My New Team"
+      platform teams create --name private --display_name "My New Private Team" --private
 
   Options
     .. code-block:: none
@@ -422,7 +421,7 @@ platform team delete
   Example
     .. code-block:: none
 
-      team delete myteam
+      platform team delete myteam
 
   Options
     .. code-block:: none
@@ -443,7 +442,7 @@ platform team remove
   Example
     .. code-block:: none
 
-      team remove myteam user@example.com username
+      platform team remove myteam user@example.com username
 
 platform user
 ~~~~~~~~~~~~~
@@ -477,8 +476,8 @@ platform user activate
   Examples
     .. code-block:: none
 
-      user activate user@example.com
-      user activate username
+      platform user activate user@example.com
+      platform user activate username
 
 platform user create
 ^^^^^^^^^^^^^^^^^^^^
@@ -494,8 +493,8 @@ platform user create
   Examples
     .. code-block:: none
 
-      user create --email user@example.com --username userexample --password Password1 
-      user create --firstname Joe --system_admin --email joe@example.com --username joe --password Password1
+      platform user create --email user@example.com --username userexample --password Password1 
+      platform user create --firstname Joe --system_admin --email joe@example.com --username joe --password Password1
 
   Options
     .. code-block:: none
@@ -523,8 +522,8 @@ platform user deactivate
   Examples
     .. code-block:: none
 
-      user deactivate user@example.com
-      user deactivate username
+      platform user deactivate user@example.com
+      platform user deactivate username
 
 platform user delete
 ^^^^^^^^^^^^^^^^^^^^
@@ -540,7 +539,7 @@ platform user delete
   Example
     .. code-block:: none
 
-        user delete user@example.com
+        platform user delete user@example.com
 
   Options
     .. code-block:: none
@@ -561,7 +560,7 @@ platform user deleteall
   Example
     .. code-block:: none
 
-      user deleteall
+      platform user deleteall
 
   Options
     .. code-block:: none
@@ -582,8 +581,8 @@ platform user invite
   Examples
     .. code-block:: none
 
-      user invite user@example.com myteam
-      user invite user@example.com myteam1 myteam2
+      platform user invite user@example.com myteam
+      platform user invite user@example.com myteam1 myteam2
 
 platform user migrate\_auth
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -605,7 +604,7 @@ platform user migrate\_auth
   Example
     .. code-block:: none
 
-      user migrate_auth email ladp email
+      platform user migrate_auth email ladp email
 
 platform user password
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -621,7 +620,7 @@ platform user password
   Example
     .. code-block:: none
 
-      user password user@example.com Password1
+      platform user password user@example.com Password1
 
 platform user resetmfa
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -637,7 +636,7 @@ platform user resetmfa
   Example
     .. code-block:: none
 
-      user resetmfa user@example.com
+      platform user resetmfa user@example.com
 
 platform user verify
 ^^^^^^^^^^^^^^^^^^^^
@@ -653,7 +652,7 @@ platform user verify
   Example
     .. code-block:: none
 
-        user verify user1
+        platform user verify user1
 
 platform version
 ~~~~~~~~~~~~~~~~
