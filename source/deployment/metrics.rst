@@ -7,6 +7,9 @@ Performance monitoring support enables a Mattermost server to track system healt
 
 The integration supports data collection from several Mattermost servers, particularly useful if you're running Mattermost `in high availability mode <https://docs.mattermost.com/deployment/cluster.html>`_.
 
+.. contents::
+    :backlinks: top
+
 Deployment Guide
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Details on integrating your Mattermost server with Prometheus and Grafana.
@@ -16,7 +19,7 @@ Installing Prometheus
 
 1 - `Download a precompiled binary for Prometheus <https://prometheus.io/download/>`_. Binaries are provided for many popular distributions, including Darwin, Linux and Windows.
 
-For install instructions, see `Prometheus install guides <https://prometheus.io/docs/introduction/getting_started/>`_
+For install instructions, see `Prometheus install guides <https://prometheus.io/docs/introduction/getting_started/>`_.
 
 2 - The following settings are recommended in the Prometheus configuration file named ``prometheus.yml``:
  
@@ -52,12 +55,12 @@ For install instructions, see `Prometheus install guides <https://prometheus.io/
 
         static_configs:
           - targets: ["<hostname1>:<port>", "<hostname2>:<port>"]
-  }
 
 3 - Enable performance monitoring in the Mattermost System Console and specify the listen address. See more detail in our `configuration settings documentation <https://docs.mattermost.com/administration/config-settings.html#performance-monitoring-beta>`_.
 
 .. image:: ../images/perf_monitoring_system_console.png
-
+  :width: 50px
+  
 4 - To test the server is running, go to ``<ip>:<port>/metrics``.
 
 5 - Finally, run ``vi prometheus.yml`` to finish configuring Prometheus.
@@ -105,6 +108,8 @@ Caching Metrics:
 The above metrics can be used to calculate ETag and memory cache hit rates over time.
 
 .. image:: ../images/perf_monitoring_caching_metrics.png
+
+.. image:: ../images/perf_monitoring_caching_metrics_2.png
 
 Database Metrics:
 
@@ -160,7 +165,7 @@ If enabled, you can run the profiler by
 
     ``go tool pprof channel http://localhost:<port>/debug/pprof/profile``
 
-where you can replace ``localhost`` with the server name. The profiling reports are available at ``<ip>:<port>``, which include
+where you can replace ``localhost`` with the server name. The profiling reports are available at ``<ip>:<port>``, which include:
 
     - ``/debug/pprof``/ for CPU profiling
     - ``/debug/pprof/cmdline``/ for command line profiling
