@@ -24,16 +24,16 @@ Release date: 2017-01-16
 - Includes metrics for caching, database connections, processing, logins and messaging. See [documentation to learn more](https://docs.mattermost.com/deployment/metrics.html)
 
 #### Improved Command Line Interface
-- New version of CLI with a more intuitive interface, interactive help documentation, and some added functionality
+- New version of CLI with a more intuitive interface, interactive help documentation, and some added functionality. See [documentation](https://docs.mattermost.com/administration/command-line-tools.html) for more details.
 
 ### Improvements
 
 #### Performance
 - Added server-based channel autocomplete, search and paging
-- Reduced lag on channel switcher (CTRL+K) and at-mention autocomplete
+- Reduced lag on channel switcher (CTRL/CMD+K) and at-mention autocomplete
 - Improved on-boarding performance by removing new user event handling on the client
-- Improved channel switching performance by combining API events and by only pulling user statuses the client doesn't yet have
-- Improved performance by adding session cache directly to web connections
+- Improved channel switching performance by combining API events and only pulling user statuses the client doesn't yet have
+- Added session cache directly to web connections
 - Added caching for files, user profiles and for the last 60 posts in a channel
 - Added ETag for user profile pictures and modified ETag for posts to improve caching validation
 - Added caching to post and channel calls
@@ -63,17 +63,19 @@ Release date: 2017-01-16
 
 #### Messaging 
 - Added support for non-alphanumeric unicode characters in hashtags
-- Upload Custom Emojis larger than 64kB, and they will be resized to the appropriate size
+- Custom Emojis larger than 64kB can now be uploaded and they will be appropriately resized
 
 #### User Interface
 - Added a direct message link to the profile popover
 - Added an indicator to convey a new message is received when scrolled up in the center pane
 - Removed status indicators on posts by webhooks 
-- Channel switcher (CTRL+K) search results for direct messages now match message autocomplete
+- Channel switcher (CTRL/CMD+K) search results for direct messages now match message autocomplete
+- Autocomplete is now case insensitive for @-mentions, emojis, slash commands and channel linking
+
 
 #### Enterprise Edition
 - Split out channel management permissions into separate settings for creation, deletion, and renaming a channel
-- Ability to set maximum number of users in a channel that will disable @all and @channel notifications
+- Ability to set the maximum number of users in a channel that will disable @all and @channel notifications
 - Added ability to set a user's Position field with LDAP sync or SAML
 - New option to purge all in-memory caches for sessions, accounts and channels
 
@@ -82,11 +84,11 @@ Release date: 2017-01-16
 - @mention autocomplete will now filter on Chinese, Japanese, Korean names
 - Text focus is now set on the text input area after channel creation
 - Editing old posts no longer causes them to repost for other members of the channel
-- Email invitation subject line no longer displays HTML characters in place of apostrophes in team name
-- Current user is no longer displayed in the direct message modal
-- Searching on direct message modal now happens on typing rather than after hitting ENTER
+- Email invitation subject line no longer displays HTML characters in place of apostrophes in the team name
+- Current user is no longer displayed in the direct messages modal
+- Searching on direct messages modal now happens on typing rather than after hitting ENTER
 - More Channels modal now resets search when opening and closing the dialog
-- Channel switcher (CTRL/CMD+K) now works for users outside of the team
+- Channel switcher (CTRL/CMD+K) now works for direct message channels of users outside the team
 - Using the command line to invite users no longer sends an invalid join team link
 - Sleeping and waking your computer while logged into Mattermost no longer causes a console error
 - Searching for users in double in quotes in the direct message modal no longer throws an error
@@ -94,12 +96,11 @@ Release date: 2017-01-16
 - User autocomplete in message box no longer matches against email
 - Channel linking (with ~ shortcut) now works for channels you don't belong to
 - Fixed statistics for websockets and database connections in **System Console** > **Site Statistics** to work in [High Availability mode](https://docs.mattermost.com/deployment/cluster.html)
-- Autocomplete is now case insensitive for @-mentions, emojis, slash commands and channel linking
 - Slash commands now work in newly created private channels without requiring a refresh
-- Zapier App channel dropdown selector works again
-- Fixed sign in errors for non-admin when custom emojis are restricted to Team and System Admins only
+- Zapier app channel dropdown selector works again
+- Fixed sign in errors for non-admin accounts when custom emojis are restricted to Team and System Admins
 - Fixed encoding of file names when downloading attachments
-- Unflagging or flagging a post in the right-hand sidebar no longer forces a scroll to the top of the flagged posts results 
+- Unflagging or flagging a post in the right-hand sidebar no longer forces a scroll to the top of the flagged posts list 
 - User list in **System Console > Teams** is no longer blank on first load
 - Fixed a bug where sometimes the right-hand sidebar would not display properly when switching to view another channel
 
@@ -133,7 +134,7 @@ The following config settings will only work on servers with an Enterprise Licen
   - Added `"RestrictPrivateChannelCreation": "all”` to control who can create private groups
   - Added `"RestrictPublicChannelDeletion”: "all”` to control who can delete public channels
   - Added `"RestrictPrivateChannelDeletion": "all”` to control who can delete private channels
-  - Added `"MaxNotificationsPerChannel": 1000` to set the maximum number of channel members `@all` and `@channel` notifications work for
+  - Added `"MaxNotificationsPerChannel": 1000` to set the maximum number of channel members for which `@all` and `@channel` notifications will be sent
 - Under `LdapSettings` in `config.json`:
   - Added `"PositionAttribute": “”` to select an LDAP attribute to synchronize for the user position (job title) field
 - Under `SamlSettings` in `config.json`:
