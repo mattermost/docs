@@ -109,8 +109,6 @@ The above metrics can be used to calculate ETag and memory cache hit rates over 
 
 .. image:: ../images/perf_monitoring_caching_metrics.png
 
-.. image:: ../images/perf_monitoring_caching_metrics_2.png
-
 Database Metrics:
 
     - ``mattermost_db_master_connections_total``: The total number of connections to the master database.
