@@ -51,81 +51,82 @@ Notes:
    ``https://pre-release.mattermost.com/core/channels/town-square`` team
    name would be ``core`` and channel name would be ``town-square``
 
-.. tip:: 
+.. tip::
    If you automate user creation through the CLI tool with SMTP enabled, emails will be sent to all new users created. If you run such a load script, it is best to disable SMTP or to use test accounts so that new account creation emails aren't unintentionally set to people at your organization who aren't expecting them.
 
 platform
 ~~~~~~~~
-Commands for configuring and managing your Mattermost instance and users.
 
-**Options**
+  Description
+    Commands for configuring and managing your Mattermost instance and users.
 
-.. code-block:: none
+  Options
+    .. code-block:: none
 
       -c, --config {string}   Configuration file to use. (default "config.json")
 
-**Child Commands**
-
--  `platform channel`_ - Management of channels
--  `platform help`_ - Generate full documentation for the CLI
--  `platform import`_ - Import data
--  `platform ldap`_ - LDAP related utilities
--  `platform license`_ - Licensing commands
--  `platform reset`_ - Reset the database to initial state
--  `platform roles`_ - Management of user roles
--  `platform server`_ - Run the Mattermost server
--  `platform team`_ - Management of teams
--  `platform user`_ - Management of users
--  `platform version`_ - Display version information
+  Child Commands
+    -  `platform channel`_ - Management of channels
+    -  `platform help`_ - Generate full documentation for the CLI
+    -  `platform import`_ - Import data
+    -  `platform ldap`_ - LDAP related utilities
+    -  `platform license`_ - Licensing commands
+    -  `platform reset`_ - Reset the database to initial state
+    -  `platform roles`_ - Management of user roles
+    -  `platform server`_ - Run the Mattermost server
+    -  `platform team`_ - Management of teams
+    -  `platform user`_ - Management of users
+    -  `platform version`_ - Display version information
 
 platform channel
 ~~~~~~~~~~~~~~~~
 
-Commands for channel management.
+  Description
+    Commands for channel management.
 
-**Child Commands**
-
--  `platform channel add`_ - Add users to a channel
--  `platform channel create`_ - Create a channel
--  `platform channel delete`_ - Delete a channel
--  `platform channel list`_ - List all channels on specified teams
--  `platform channel remove`_ - Remove users from a channel
--  `platform channel restore`_ - Restore a channels
+  Child Commands
+    -  `platform channel add`_ - Add users to a channel
+    -  `platform channel create`_ - Create a channel
+    -  `platform channel delete`_ - Delete a channel
+    -  `platform channel list`_ - List all channels on specified teams
+    -  `platform channel remove`_ - Remove users from a channel
+    -  `platform channel restore`_ - Restore a channels
 
 platform channel add
 ^^^^^^^^^^^^^^^^^^^^
 
-Add users to a channel. If adding multiple users, use a space-separated list.
+  Description
+    Add users to a channel. If adding multiple users, use a space-separated list.
 
-.. code-block:: none
+  Format
+    .. code-block:: none
 
-    platform channel add {channel} {users}
+      ./platform channel add {channel} {users}
 
-**Example**
+  Example
+    .. code-block:: none
 
-.. code-block:: none
-
-      channel add mychannel user@example.com username
+      ./platform channel add mychannel user@example.com username
 
 platform channel create
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Create a channel.
+  Description
+    Create a channel.
 
-.. code-block:: none
+  Format
+    .. code-block:: none
 
-    platform channel create
+      ./platform channel create
 
-**Examples**
+  Examples
+    .. code-block:: none
 
-.. code-block:: none
+      ./platform channel create --team myteam --name mynewchannel --display_name "My New Channel"
+      ./platform channel create --team myteam --name mynewprivatechannel --display_name "My New Private Channel" --private
 
-      channel create --team myteam --name mynewchannel --display_name "My New Channel"
-      channel create --team myteam --name mynewprivatechannel --display_name "My New Private Channel" --private
-
-**Options**
-
-.. code-block:: none
+  Options
+    .. code-block:: none
 
           --display_name string   Channel Display Name
           --header string         Channel header
@@ -136,260 +137,271 @@ Create a channel.
 
 platform channel delete
 ^^^^^^^^^^^^^^^^^^^^^^^
-Permanently deletes a channel along with all related information,
-including posts from the database. Channels can be specified by
-{team}:{channel} using the team and channel names or IDs.
 
-.. code-block:: none
+  Description
+    Permanently deletes a channel along with all related information, including posts from the database. Channels can be specified by {team}:{channel} using the team and channel names or IDs.
 
-    platform channel delete {channels}
+  Format
+    .. code-block:: none
 
-**Example**
+      platform channel delete {channels}
 
-.. code-block:: none
+  Example
+    .. code-block:: none
 
       channel delete myteam:mychannel
 
 platform channel list
 ^^^^^^^^^^^^^^^^^^^^^
 
-List all channels on a specified team. Archived channels are appended with ``(archived)``.
+  Description
+    List all channels on a specified team. Archived channels are appended with ``(archived)``.
 
-.. code-block:: none
+  Format
+    .. code-block:: none
 
-    platform channel list {teams}
+      platform channel list {teams}
 
-**Example**
-
-.. code-block:: none
+  Example
+    .. code-block:: none
 
       channel list myteam
 
 platform channel remove
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Remove users from a channel.
+  Description
+    Remove users from a channel.
 
-.. code-block:: none
+  Format
+    .. code-block:: none
 
-    platform channel remove {channel} {users}
+      platform channel remove {channel} {users}
 
-**Example**
-
-.. code-block:: none
+  Example
+    .. code-block:: none
 
       channel remove mychannel user@example.com username
 
 platform channel restore
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Restore a previously deleted channel. Channels can be specified by
-{team}:{channel} using the team and channel names or IDs.
+  Description
+    Restore a previously deleted channel. Channels can be specified by {team}:{channel} using the team and channel names or IDs.
 
-.. code-block:: none
+  Format
+    .. code-block:: none
 
-    platform channel restore {channels}
+      platform channel restore {channels}
 
-**Example**
-
-.. code-block:: none
+  Example
+    .. code-block:: none
 
       channel restore myteam:mychannel
 
 platform help
 ~~~~~~~~~~~~~~~~
 
-Generates full documentation in Markdown format for the Mattermost command line tools.
+  Description
+    Generates full documentation in Markdown format for the Mattermost command line tools.
 
-.. code-block:: none
+  Format
+    .. code-block:: none
 
-    platform help {outputdir}
+      platform help {outputdir}
 
 platform import
 ~~~~~~~~~~~~~~~
 
-Import data into Mattermost.
+  Description
+    Import data into Mattermost.
 
-**Child Command**
-
--  `platform import slack`_ - Import a team from Slack.
+  Child Command
+    -  `platform import slack`_ - Import a team from Slack.
 
 platform import slack
 ^^^^^^^^^^^^^^^^^^^^^
 
-Import a team from a Slack export zip file.
+  Description
+    Import a team from a Slack export zip file.
 
-.. code-block:: none
+  Format
+    .. code-block:: none
 
-    platform import slack {team} {file}
+      platform import slack {team} {file}
 
-**Example**
-
-.. code-block:: none
+  Example
+    .. code-block:: none
 
       import slack myteam slack_export.zip
 
 platform ldap
 ~~~~~~~~~~~~~
 
-Commands to configure and syncronize LDAP.
+  Description
+    Commands to configure and syncronize LDAP.
 
-**Child Command**
-
--  `platform ldap sync`_ - Synchronize now
+  Child Command
+    -  `platform ldap sync`_ - Synchronize now
 
 platform ldap sync
 ^^^^^^^^^^^^^^^^^^
 
-Synchronize all LDAP users now.
+  Description
+    Synchronize all LDAP users now.
 
-.. code-block:: none
+  Format
+    .. code-block:: none
 
-    platform ldap sync
+      platform ldap sync
 
-**Example**
-
-.. code-block:: none
+  Example
+    .. code-block:: none
 
       ldap sync
 
 platform license
 ~~~~~~~~~~~~~~~~
 
-Commands to manage licensing.
+  Description
+    Commands to manage licensing.
 
-**Child Command**
-
--  `platform license upload`_ - Upload a license.
+  Child Command
+    -  `platform license upload`_ - Upload a license.
 
 platform license upload
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Upload a license. This command replaces the current license if one is
-already uploaded.
+  Description
+    Upload a license. This command replaces the current license if one is already uploaded.
 
-.. code-block:: none
+  Format
+    .. code-block:: none
 
-    platform license upload {license}
+      platform license upload {license}
 
-**Example**
-
-.. code-block:: none
+  Example
+    .. code-block:: none
 
       license upload /path/to/license/mylicensefile.mattermost-license
 
 platform reset
 ~~~~~~~~~~~~~~
 
-Completely erases the database causing the loss of all data. This resets
-Mattermost to its initial state.
+  Description
+    Completely erases the database causing the loss of all data. This resets Mattermost to its initial state.
 
-.. code-block:: none
+  Format
+    .. code-block:: none
 
-    platform reset
+      platform reset
 
-**Options**
-
-.. code-block:: none
+  Options
+    .. code-block:: none
 
           --confirm   Confirm you really want to delete everything and a DB backup has been performed.
 
 platform roles
 ~~~~~~~~~~~~~~
 
-Commands to manage user roles.
+  Description
+    Commands to manage user roles.
 
-**Child Commands**
-
--  `platform roles member`_ - Remove System Admin privileges from a
-   user
--  `platform roles system_admin`_ - Make a user into a System Admin
+  Child Commands
+    -  `platform roles member`_ - Remove System Admin privileges from a user
+    -  `platform roles system_admin`_ - Make a user into a System Admin
 
 platform roles member
 ^^^^^^^^^^^^^^^^^^^^^
 
-Remove system admin privileges from a user.
+  Description
+    Remove system admin privileges from a user.
 
-.. code-block:: none
+  Format
+    .. code-block:: none
 
-    platform roles member {users}
+      platform roles member {users}
 
-**Example**
+  Example
 
-.. code-block:: none
+    .. code-block:: none
 
       roles member user1
 
 platform roles system\_admin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Promote a user to a System Admin.
+  Description
+    Promote a user to a System Admin.
 
-.. code-block:: none
+  Format
+    .. code-block:: none
 
-    platform roles system_admin {users}
+      platform roles system_admin {users}
 
-**Example**
-
-.. code-block:: none
+  Example
+    .. code-block:: none
 
       roles system_admin user1
 
 platform server
 ~~~~~~~~~~~~~~~
 
-Runs the Mattermost server.
+  Description
+    Runs the Mattermost server.
 
-.. code-block:: none
+  Format
+    .. code-block:: none
 
-    platform server
+      platform server
 
 platform team
 ~~~~~~~~~~~~~
 
-Commands to manage teams.
+  Description
+    Commands to manage teams.
 
-**Child Commands**
-
--  `platform team add`_ - Add users to a team
--  `platform team create`_ - Create a team
--  `platform team delete`_ - Delete a team
--  `platform team remove`_ - Remove users from a team
+  Child Commands
+    -  `platform team add`_ - Add users to a team
+    -  `platform team create`_ - Create a team
+    -  `platform team delete`_ - Delete a team
+    -  `platform team remove`_ - Remove users from a team
 
 platform team add
 ^^^^^^^^^^^^^^^^^
 
-Add users to a team.
+  Description
+    Add users to a team.
 
-.. code-block:: none
+  Format
+    .. code-block:: none
 
-    platform team add {team} {users}
+      platform team add {team} {users}
 
-**Example**
-
-.. code-block:: none
+  Example
+    .. code-block:: none
 
       team add myteam user@example.com username
 
 platform team create
 ^^^^^^^^^^^^^^^^^^^^
 
-Create a team.
+  Description
+    Create a team.
 
-.. code-block:: none
+  Format
+    .. code-block:: none
 
-    platform team create
+      platform team create
 
-**Examples**
-
-.. code-block:: none
+  Examples
+    .. code-block:: none
 
       team create --name mynewteam --display_name "My New Team"
       teams create --name private --display_name "My New Private Team" --private
 
-**Options**
-
-.. code-block:: none
+  Options
+    .. code-block:: none
 
           --display_name string   Team Display Name
           --email string          Administrator Email (anyone with this email is automatically a team admin)
@@ -399,70 +411,71 @@ Create a team.
 platform team delete
 ^^^^^^^^^^^^^^^^^^^^
 
-Permanently deletes a team along with all related information, including
-posts from the database.
+  Description
+    Permanently deletes a team along with all related information, including posts from the database.
 
-.. code-block:: none
+  Format
+    .. code-block:: none
 
-    platform team delete {teams}
+      platform team delete {teams}
 
-**Example**
-
-.. code-block:: none
+  Example
+    .. code-block:: none
 
       team delete myteam
 
-**Options**
-
-.. code-block:: none
+  Options
+    .. code-block:: none
 
           --confirm   Confirm you really want to delete the team and a DB backup has been performed.
 
 platform team remove
 ^^^^^^^^^^^^^^^^^^^^
 
-Remove users from a team.
+  Description
+    Remove users from a team.
 
-.. code-block:: none
+  Format
+    .. code-block:: none
 
-    platform team remove {team} {users}
+      platform team remove {team} {users}
 
-**Example**
-
-.. code-block:: none
+  Example
+    .. code-block:: none
 
       team remove myteam user@example.com username
 
 platform user
 ~~~~~~~~~~~~~
 
-Commands to manage users.
+  Description
+    Commands to manage users.
 
-**Child Commands**
-
--  `platform user activate`_ - Activate a user
--  `platform user create`_ - Create a user
--  `platform user deactivate`_ - Deactivate a user
--  `platform user delete`_ - Delete a user and all posts
--  `platform user deleteall`_ - Delete all users and all posts
--  `platform user invite`_ - Send a user an email invitation to a team
--  `platform user migrate_auth`_ - Mass migrate all user accounts to a new authentication type
--  `platform user password`_ - Set a user's password
--  `platform user resetmfa`_ - Turn off MFA for a user
--  `platform user verify`_ - Verify email address of a new user
+  Child Commands
+    -  `platform user activate`_ - Activate a user
+    -  `platform user create`_ - Create a user
+    -  `platform user deactivate`_ - Deactivate a user
+    -  `platform user delete`_ - Delete a user and all posts
+    -  `platform user deleteall`_ - Delete all users and all posts
+    -  `platform user invite`_ - Send a user an email invitation to a team
+    -  `platform user migrate_auth`_ - Mass migrate all user accounts to a new authentication type
+    -  `platform user password`_ - Set a user's password
+    -  `platform user resetmfa`_ - Turn off MFA for a user
+    -  `platform user verify`_ - Verify email address of a new user
 
 platform user activate
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Activate users that have been deactivated.
+  Description
+    Activate users that have been deactivated.
 
-.. code-block:: none
+  Format
+    .. code-block:: none
 
-    platform user activate {emails, usernames, userIds}
+      platform user activate {emails, usernames, userIds}
 
-**Examples**
-
-.. code-block:: none
+  Examples
+    .. code-block:: none
 
       user activate user@example.com
       user activate username
@@ -470,22 +483,22 @@ Activate users that have been deactivated.
 platform user create
 ^^^^^^^^^^^^^^^^^^^^
 
-Create a user.
+  Description
+    Create a user.
 
-.. code-block:: none
+  Format
+    .. code-block:: none
 
-    platform user create
+      platform user create
 
-**Examples**
-
-.. code-block:: none
+  Examples
+    .. code-block:: none
 
       user create --email user@example.com --username userexample --password Password1 
       user create --firstname Joe --system_admin --email joe@example.com --username joe --password Password1
 
-**Options**
-
-.. code-block:: none
+  Options
+    .. code-block:: none
 
           --email string       Email
           --firstname string   First Name
@@ -499,16 +512,16 @@ Create a user.
 platform user deactivate
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Deactivate a user. Deactivated users are immediately logged out of all
-sessions and are unable to log back in.
+  Description
+    Deactivate a user. Deactivated users are immediately logged out of all sessions and are unable to log back in.
 
-.. code-block:: none
+  Format
+    .. code-block:: none
 
-    platform user deactivate {emails, usernames, userIds}
+      platform user deactivate {emails, usernames, userIds}
 
-**Examples**
-
-.. code-block:: none
+  Examples
+    .. code-block:: none
 
       user deactivate user@example.com
       user deactivate username
@@ -516,59 +529,58 @@ sessions and are unable to log back in.
 platform user delete
 ^^^^^^^^^^^^^^^^^^^^
 
-Permanently deletes a user and all related information, including posts.
+  Description
+    Permanently deletes a user and all related information, including posts.
 
-.. code-block:: none
+  Format
+    .. code-block:: none
 
-    platform user delete {users}
+      platform user delete {users}
 
-**Example**
+  Example
+    .. code-block:: none
 
-.. code-block:: none
+        user delete user@example.com
 
-      user delete user@example.com
-
-**Options**
-
-.. code-block:: none
+  Options
+    .. code-block:: none
 
           --confirm   Confirm you really want to delete the user and a DB backup has been performed.
 
 platform user deleteall
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Permanently delete all users and all related information, including
-posts.
+  Description
+    Permanently delete all users and all related information, including posts.
 
-.. code-block:: none
+  Format
+    .. code-block:: none
 
-    platform user deleteall
+      platform user deleteall
 
-**Example**
-
-.. code-block:: none
+  Example
+    .. code-block:: none
 
       user deleteall
 
-**Options**
-
-.. code-block:: none
+  Options
+    .. code-block:: none
 
           --confirm   Confirm you really want to delete the user and a DB backup has been performed.
 
 platform user invite
 ^^^^^^^^^^^^^^^^^^^^
 
-Send a user an email invite to a team. You can invite a user to multiple
-teams by listing the team names or team IDs.
+  Description
+    Send a user an email invite to a team. You can invite a user to multiple teams by listing the team names or team IDs.
 
-.. code-block:: none
+  Format
+    .. code-block:: none
 
-    platform user invite {email} {teams}
+      platform user invite {email} {teams}
 
-**Examples**
-
-.. code-block:: none
+  Examples
+    .. code-block:: none
 
       user invite user@example.com myteam
       user invite user@example.com myteam1 myteam2
@@ -576,83 +588,80 @@ teams by listing the team names or team IDs.
 platform user migrate\_auth
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Migrates all user accounts from one authentication provider to another.
-For example, you can upgrade your authentication provider from email to
-ldap. Output will display any accounts that are not migrated
-successfully.
+  Description
+    Migrates all user accounts from one authentication provider to another. For example, you can upgrade your authentication provider from email to ldap. Output will display any accounts that are not migrated successfully.
 
--  ``from_auth``: The authentication service to migrate users accounts
-   from. Supported options: ``email``, ``gitlab``, ``saml``.
+    -  ``from_auth``: The authentication service to migrate users accounts from. Supported options: ``email``, ``gitlab``, ``saml``.
 
--  ``to_auth``: The authentication service to migrate users to.
-   Supported options: ``ldap``.
+    -  ``to_auth``: The authentication service to migrate users to. Supported options: ``ldap``.
 
--  ``match_field``: The field that is guaranteed to be the same in both
-   authentication services. For example, if the users emails are
-   consistent set to email. Supported options: ``email``, ``username``.
+    -  ``match_field``: The field that is guaranteed to be the same in both authentication services. For example, if the users emails are consistent set to email. Supported options: ``email``, ``username``.
 
-.. code-block:: none
+  Format
+    .. code-block:: none
 
-    platform user migrate_auth {from_auth} {to_auth} {match_field}
+      platform user migrate_auth {from_auth} {to_auth} {match_field}
 
-**Example**
-
-.. code-block:: none
+  Example
+    .. code-block:: none
 
       user migrate_auth email ladp email
 
 platform user password
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Set a user's password.
+  Description
+    Set a user's password.
 
-.. code-block:: none
+  Format
+    .. code-block:: none
 
-    platform user password {user} {password}
+      platform user password {user} {password}
 
-**Example**
-
-.. code-block:: none
+  Example
+    .. code-block:: none
 
       user password user@example.com Password1
 
 platform user resetmfa
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Turns off multi-factor authentication for a user. If MFA enforcement is
-enabled, the user will be forced to re-enable MFA with a new device as
-soon as they log in.
+  Description
+    Turns off multi-factor authentication for a user. If MFA enforcement is enabled, the user will be forced to re-enable MFA with a new device as soon as they log in.
 
-.. code-block:: none
+  Format
+    .. code-block:: none
 
-    platform user resetmfa {users}
+      platform user resetmfa {users}
 
-**Example**
-
-.. code-block:: none
+  Example
+    .. code-block:: none
 
       user resetmfa user@example.com
 
 platform user verify
 ^^^^^^^^^^^^^^^^^^^^
 
-Verify the email address of a new user.
+  Description
+    Verify the email address of a new user.
 
-.. code-block:: none
+  Format
+    .. code-block:: none
 
-    platform user verify {users}
+      platform user verify {users}
 
-**Example**
+  Example
+    .. code-block:: none
 
-.. code-block:: none
-
-      user verify user1
+        user verify user1
 
 platform version
 ~~~~~~~~~~~~~~~~
 
-Displays Mattermost version information.
+  Description
+    Displays Mattermost version information.
 
-.. code-block:: none
+  Format
+    .. code-block:: none
 
-    platform version
+      platform version
