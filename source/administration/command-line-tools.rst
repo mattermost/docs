@@ -39,17 +39,11 @@ Typing ``platform help`` and ``platform help {command}`` returns help documentat
 Notes:
 
 -  Parameters in CLI commands are order-specific.
--  If special characters (``!``, ``|``, ``(``, ``)``, ``\``,
-   \`\`\`\ ``, and``"``) are used, the entire argument needs to be surrounded by single quotes (e.g.``-password
-   'mypassword!'``, or the individual characters need to be escaped out (e.g.``-password
-   mypassword/!\`\`).
--  Team name and channel name refer to the handles, not the display
-   names. So in the url
-   ``https://pre-release.mattermost.com/core/channels/town-square`` team
-   name would be ``core`` and channel name would be ``town-square``
+-  If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g.``-password mypassword/!``).
+-  Team name and channel name refer to the handles, not the display names. So in the url ``https://pre-release.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``
 
 .. tip::
-   If you automate user creation through the CLI tool with SMTP enabled, emails will be sent to all new users created. If you run such a load script, it is best to disable SMTP or to use test accounts so that new account creation emails aren't unintentionally set to people at your organization who aren't expecting them.
+   If you automate user creation through the CLI tool with SMTP enabled, emails will be sent to all new users created. If you run such a load script, it is best to disable SMTP or to use test accounts so that new account creation emails aren't unintentionally sent to people at your organization who aren't expecting them.
 
 platform
 --------
