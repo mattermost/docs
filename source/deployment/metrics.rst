@@ -59,7 +59,7 @@ For install instructions, see `Prometheus install guides <https://prometheus.io/
 3 - Enable performance monitoring in the Mattermost System Console and specify the listen address. See more detail in our `configuration settings documentation <https://docs.mattermost.com/administration/config-settings.html#performance-monitoring-beta>`_.
 
 .. image:: ../images/perf_monitoring_system_console.png
-  :width: 50px
+  :scale: 50
   
 4 - To test the server is running, go to ``<ip>:<port>/metrics``.
 
