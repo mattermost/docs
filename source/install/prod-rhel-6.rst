@@ -3,13 +3,10 @@
 Production Install on RHEL 6.6
 ==============================
 
-Install Mattermost in production mode on one, two or three machines, using the following steps: 
-
-- `Install Red Hat Enterprise Linux (x64) 6.6`_
-- `Set up Database Server`_
-- `Set up Mattermost Server`_
-- `Set up NGINX Server`_
-- `Test setup and configure Mattermost Server`_
+Install Mattermost in production mode on one, two or three machines.
+ 
+.. contents::
+  :backlinks: top
 
 Install Red Hat Enterprise Linux (x64) 6.6
 ------------------------------------------
@@ -147,8 +144,7 @@ Set up Mattermost Server
 
    -  ``cd /opt/mattermost/bin``
    -  Run the Mattermost Server by typing:
-   -  ``sudo su mattermost``
-   -  ``./platform``
+   -  ``sudo -u mattermost ./platform``
    -  You should see a console log like ``Server is listening on :8065``
       letting you know the service is running.
    -  Stop the server for now by typing ``Ctrl-C``

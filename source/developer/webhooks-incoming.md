@@ -5,7 +5,7 @@ Incoming webhooks allow external applications, written in the programming langua
 A couple key points:
 
 - **Mattermost incoming webhooks are Slack-compatible.** If you've used Slack's incoming webhooks to create integrations, you can copy and paste that code to create Mattermost integrations. Mattermost automatically translates Slack's proprietary JSON payload format into markdown to render in Mattermost messages
-- **Mattermost incoming webhooks support full markdown.** A rich range of formatting unavailable in Slack is made possible through [markdown support](../help/messaging/formatting-text.md) in Mattermost, including headings, formatted fonts, tables, inline images and other options supported by [Mattermost Markdown]
+- **Mattermost incoming webhooks support full markdown.** A rich range of formatting unavailable in Slack is made possible through [markdown support](../help/messaging/formatting-text.rst) in Mattermost, including headings, formatted fonts, tables, inline images and other options supported by Mattermost Markdown.
 
 _Example:_
 
@@ -39,7 +39,7 @@ Incoming webhooks should be enabled on your Mattermost instance by default, but 
 1. Login to your Mattermost team account that has the system administrator role
 1. Enable incoming webhooks from **System Console** > **Integrations** > **Webhooks and Commands**
 1. (Optional) Configure the **Enable Overriding of Usernames from Webhooks** option to allow external applications to post messages under any name. If not enabled, the username of the creator of the webhook URL is used to post messages
-2. (Optional) Configure the **Enable Overriding of Icon from Webhooks** option to allow external applciations to change the icon of the account posting messages. If not enabled, the icon of the creator of the webhook URL is used to post messages
+2. (Optional) Configure the **Enable Overriding of Icon from Webhooks** option to allow external applications to change the icon of the account posting messages. If not enabled, the icon of the creator of the webhook URL is used to post messages
 
 ### Setting Up Existing Integrations
 If you've already found or built an integration and are just looking to hook it up, then you should just need to follow the specific instructions of that integration. If the integration is using Mattermost incoming webhooks, then at some point in the instructions it will ask for a webhook URL. You can get this URL by following the first step in the next section _Creating Integrations using Incoming Webhooks_.
@@ -74,7 +74,7 @@ Additional Notes:
 
 4. With **Enable Overriding of Icon from Webhooks** turned on, you can similarly change the icon the message posts with by providing a link to an image in the `icon_url` parameter of your payload. For example, ```payload={"icon_url": "http://somewebsite.com/somecoolimage.jpg", "text": "Hello, this is some text."}``` will post using whatever image is located at `http://somewebsite.com/somecoolimage.jpg` as the icon for the post
 
-5. Also, as mentioned previously, [markdown](../help/messaging/formatting-text.md) can be used to create richly formatted payloads, for example: ```payload={"text": "# A Header\nThe _text_ below **the** header."}``` creates a messages with a header, a carriage return and bold text for "the"
+5. Also, as mentioned previously, [markdown](../help/messaging/formatting-text.rst) can be used to create richly formatted payloads, for example: ```payload={"text": "# A Header\nThe _text_ below **the** header."}``` creates a messages with a header, a carriage return and bold text for "the"
 
 6. Including `@username` in the JSON payload will trigger a mention notification for the person with the specified username. Channels can be mentioned by including `@channel` or `<!channel>`. For example:  ```payload={"text": "<!channel> this is a notification""}``` would create a message that mentions `@channel`
 

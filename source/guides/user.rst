@@ -7,10 +7,10 @@ Getting Started
 ===============
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
-   /help/getting-started/signing-in.md
+   /help/getting-started/signing-in.rst
    /help/getting-started/messaging-basics.md
    /help/getting-started/configuring-notifications.md
    /help/getting-started/organizing-conversations.md
@@ -18,19 +18,20 @@ Getting Started
    /help/getting-started/creating-teams.md
    /help/getting-started/managing-members.md
    /help/getting-started/organizing.rst
+   /help/apps/desktop-guide.rst
 
 Messaging
 =========
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
    /help/messaging/sending-messages.md
    /help/messaging/reading-messages.md
    /help/messaging/mentioning-teammates.md
    /help/messaging/formatting-text.md
-   /help/messaging/attaching-files.md
+   /help/messaging/attaching-files.rst
    /help/messaging/executing-commands.md
    /help/messaging/*
 
@@ -38,12 +39,12 @@ Settings
 ========
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :titlesonly:
    :glob:
 
    /help/settings/account-settings.md
    /help/settings/theme-colors.md
-   /help/settings/channel-settings.md
+   /help/settings/channel-settings.rst
    /help/settings/team-settings.md
    /help/settings/*

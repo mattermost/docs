@@ -19,6 +19,11 @@ To translate a language:
 
     - If it is, perhaps offer to help translate or review and make suggestions.
     - If not, ask to setup your language on the `Mattermost localization channel <https://pre-release.mattermost.com/core/channels/localization>`_, so you can start helping with the translation.
+    
+3 - Review translation rules written by localization leads, when applicable:
+
+    - `French (Règles) <https://gist.github.com/wget/0df2ce49e81b450990601914677fdceb>`_
+    - `German (Regeln zur Übersetzung von Mattermost) <https://gist.github.com/meilon/1317a9425988b3ab296c894a72270787>`_
 
 Translations Updates
 ====================
@@ -102,15 +107,15 @@ If you're interested in contributing to the process, please join the `Mattermost
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
 | Español - Spanish                        | `Elias Nahum <https://github.com/enahum>`_                                                                            |                                                                                                      |
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
-| Français - French                        | `Pierre-Julien Grizel <https://github.com/pjgrizel>`_ , `William Gathoye <https://github.com/wget>`_                  |                                                                                                      |
+| Français - French                        | `William Gathoye <https://github.com/wget>`_                                                                          | `Pierre-Julien Grizel <https://github.com/pjgrizel>`_                                                |
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
-| Nederlands - Dutch                       | `Ron Hartman <https://github.com/rononline>`_ , `Wai Yi Leung <https://github.com/wyleung>`_                          |                                                                                                      |
+| Nederlands - Dutch                       |                                                                                                                       | `Ron Hartman <https://github.com/rononline>`_ , `Wai Yi Leung <https://github.com/wyleung>`_         |
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
 | Português do Brasil - Portuguese         | `Rodrgio Corsi <https://github.com/rodrigocorsi2>`_                                                                   | `Carlos Tadeu Panato Junior <https://github.com/cpanato>`_                                           |
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
-| Pусский - Russian                        |                                                                                                                       |                                                                                                      |
+| Pусский - Russian                        |                                                                                                                       | `Archie Roller <https://github.com/archroller>`_ (primary)                                           |
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
-| 한국어 - Korean                          | `Hyeseong Kim <https://github.com/cometkim>`_                                                                         |                                                                                                      |
+| 한국어 - Korean                          |                                                                                                                       | `Hyeseong Kim <https://github.com/cometkim>`_                                                        |
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
 | 中文 (简体) - Simplified Chinese         | `aeomin <http://translate.mattermost.com/user/aeomin/>`_                                                              |                                                                                                      |
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+

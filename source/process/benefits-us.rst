@@ -36,4 +36,4 @@ The Company covers health insurance up the following contribution caps:
 
 Employees are responsible for the remainder of the premium cost, if any. A summary of plan options showing remainder of premium costs after employer contribution will be provided with your offer. 
 
-We're working on setting up a 401K plan for US employees.
+**401K** - Our 401K retirement savings program is available through `Ubquity <https://www.myubiquity.com/>`_. 

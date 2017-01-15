@@ -50,6 +50,15 @@ footer {
 	font-size: 105%;
 }
 
+.rst-content li > *:not(.first).admonition {
+	margin-top: 12px;
+	margin-bottom: 12px;
+}
+
+.rst-content li > img:not(.first) {
+	margin-bottom: 12px;
+}
+
 .wy-grid-for-nav {
 	padding-top: 70px;
 }
@@ -201,6 +210,15 @@ header .links__icon {
 	position: relative;
 }
 
+header .search__icon {
+	cursor: pointer;
+	display: none;
+	float: left;
+	font-size: 20px;
+	padding: 0 20px;
+	position: relative;
+}
+
 .wy-nav-top {
 	background: #F5F5F5;
 	padding: 0 10px;
@@ -270,10 +288,23 @@ header .header__links li a {
 	border-top: 3px solid transparent;
 }
 
+header .header__searchbar {
+	display: none;
+	float: left;
+	padding: 0 5px 0 0;
+}
+
 @media (max-width: 768px){
+<<<<<<< HEAD
 	header .links__icon {
 		display: block;
 	}
+	.wy-nav-top {
+		display: none;
+	}
+=======
+	
+>>>>>>> c8fd417... Added a search box to the nav header for the mobile view.
 	.wy-side-nav-search {
 		position: relative;
 	}
@@ -287,8 +318,40 @@ header .header__links li a {
 	.wy-nav-content-wrap.shift {
 		top: 70px;
 	}
+	header .header__container {
+		text-align:center;
+	}
+	header .links__icon {
+		display: block;
+	}
+	header .search__icon {
+		display: block;
+	}
+	header .header__logo {
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		float:none;
+	}
 	header .header__logo img {
 		width: 176px;
+	}
+	header .header__searchbar {
+		border-bottom: 1px solid #ccc;
+		display: none;
+		background: #fff;
+		line-height: 40px;
+		padding: 0 15px 5px;
+		width: 100%;
+	}
+	header .header__searchbar input[type="text"] {
+		width: 100%;
+		border-radius: 50px;
+		border: 1px solid #ddd;
+		padding: 6px 12px;
+	}
+	header .header__searchbar input:focus {
+		outline: none;
 	}
 	header .header__links {
 		border-bottom: 1px solid #ccc;
