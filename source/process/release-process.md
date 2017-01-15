@@ -54,13 +54,17 @@ No pull requests for major features should be **merged** to the current release 
         - Receive testing sign-off from feature area owners (i.e. PM/Dev either signs-off that their area is well tested, or flags potential quality issues that may exist)  
         - Prioritize updating the RC Testing Spreadsheet to cover any changes or new features, and confirm that known issues are listed in the relevant tests
         - Assign each area of the release testing spreadsheet to a team member and ensure core team has access permissions 
-        - Post in Reception alerting community of upcoming release and to ask about top issues on master ([See example](https://pre-release.mattermost.com/core/pl/pfpzwpi7wj8zzpmeih87cdt77r))  
+        - Post in Reception alerting community of upcoming release and to ask about top issues on master ([See example](https://pre-release.mattermost.com/core/pl/pfpzwpi7wj8zzpmeih87cdt77r))
 3. **(Team) Major Feature Complete Meeting (10:15am PST)**:  
     - Discuss worst bug currently on master
     - Discuss release highlights for marketing
     - Review status of last feature PRs to be merged
 4. Dev:
-    - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/platform/pulls) marked for the current release 
+    - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/platform/pulls) marked for the current release
+5. Marketing:
+    - Prepare bullet points for release announcement
+    - Propose list of key features included in the release GIF and send to marketing lead for review
+    - Draft release headline and send to marketing lead for review
 
 ### D. (T-minus 10 working days) Judgment Day
 
@@ -82,6 +86,7 @@ Day when leads and PM area owners decide which major features are included in th
     - Create meta issue for release in GitHub (see [example](https://github.com/mattermost/platform/issues/3702))
 5. Marketing:
     - Begins to draft blog post, tweet, and email for the release announcement
+    
  
 ### E. (T-minus 8 working days) Code Complete and Release Candidate Cut
 
@@ -173,7 +178,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - Check that known issues section of Changelog is updated
     - Check that the contributors section of Changelog is updated (including contributors from all repos)
 4. Marketing:
-    - Finish draft of blog post for mattermost.org and send for marketing lead to review
+    - Finish draft of blog post for mattermost.com and send for marketing lead to review
         - Upgrade should be recommended if there are security fixes in this version
     - Finish drafts of all art work (screenshots, GIFs and twitter banners) used for the blog post and send to marketing lead for review
 
