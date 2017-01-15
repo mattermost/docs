@@ -48,10 +48,7 @@ closed or have not had any browser activity for a short time.
 Desktop Notifications
 -------------------------------------
 
-These are browser notifications that appear in the corner of your main
-monitor. By default, these notifications are sent for all activity while
-Mattermost is open. Desktop notifications are available on Edge, Firefox,
-Safari, Chrome and `Mattermost Desktop Apps <https://about.mattermost.com/download/#mattermostApps>`_.
+These are browser notifications that appear in the corner of your main monitor for activity in channels you are not actively viewing. By default, these notifications are sent for all unread messages while Mattermost is open. Desktop notifications are available on Edge, Firefox, Safari, Chrome and `Mattermost Desktop Apps <https://about.mattermost.com/download/#mattermostApps>`_.
 
 -  Configure when desktop notifications are sent from **Account
    Settings** > **Notifications** > **Desktop Notifications** > **Send
