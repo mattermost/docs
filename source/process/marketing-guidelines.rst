@@ -66,14 +66,20 @@ Guidelines: 12 tips for sparkling content
  11. **Ask a colleague**. Still not 100% happy? A colleague should review the text and tell you if anything is unclear or if you could express yourself better. They might offer some useful fresh insights.
  12. **Now, relax**. If you are in the wrong frame of mind you will either get writer's block or your writing will be stiff and unnatural. Take your time. Remove any distractions. Keep things simple. 
 
-
 Guidelines for Twitter accounts
 ---------------------------------------------------------
 
 Composing Tweets: 
 
-1. **Avoid acronyms** - Avoid acronyms when possible. For example, say "pull request" instead of "PR", since only a subset of tweet readers are active GitHub users. 
-2. **Use the active voice** - Avoid "has", "was", "have been" when possible. For example, instead of "Hackfest has started!" say "Hackfest starts now!" 
-3. **Include at most one link"** - To provide a clear call to action include at most one link per tweet, and place it close to the end of the tweet. 
-
+1. **Avoid acronyms**. Avoid acronyms when possible. For example, say "pull request" instead of "PR", since only a subset of tweet readers are active GitHub users. 
+2. **Use the active voice**. Avoid "has", "was", "have been" when possible. For example, instead of "Hackfest has started!" say "Hackfest starts now!" 
+3. **Include at most one link**. To provide a clear call to action include at most one link per tweet, and place it near the end of the tweet.
    
+Guidelines for release announcements
+---------------------------------------------------------
+
+Composing blog posts: 
+
+1. **Include [RELEASE] [HEADLINE] in title**. Use titles that draw in IT audiences. For example "Mattermost 3.5 improves mobile and web performance, adds Minio support, Russian language".
+2. **Use Twitter banners for images**. Use Twitter banners to make visuals consistently high-quality throughout the release announcement. Also let's the marketing team use the images for tweets.
+3. **Emphasize benefit**. Emphasize benefit in text, screenshots and image captions. IT audiences are typically more interested in the business benefits of technology than technical features.
