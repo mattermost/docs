@@ -861,6 +861,6 @@ CLI Documentation:
           Example:
               platform -upgrade_db_30
 
-      -version                          Display the current of the Mattermost platform
+      -version                          Display the current version of the Mattermost platform
 
       -help                             Displays this help page
