@@ -22,7 +22,7 @@ in-line images.
 .. image:: ../../images/messagesTable1.PNG
    :alt: markdown
 
-**Quickly add emoji** by typing ":", which will open an emoji
+**Quickly add emoji** by typing ":" followed by two characters, which will open an emoji
 autocomplete. If the existing emoji don't cover what you want to
 express, you can also create your own `Custom
 Emoji <http://docs.mattermost.com/help/settings/custom-emoji.html>`__.
