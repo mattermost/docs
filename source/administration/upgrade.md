@@ -7,11 +7,9 @@ To start, select one of the following guides:
 - [Upgrade Team Edition](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition)
   - [Upgrade Team Edition to 3.1.x and later](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-3-1-x-and-later)
   - [Upgrade Team Edition to 3.0.x](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-3-0-x)
-  - [Upgrade Team Edition for 2.2.x and earlier](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-for-2-2-x-and-earlier)
 - [Upgrade Enterprise Edition](https://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition)
   - [Upgrade Enterprise Edition to 3.1.x and later](https://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition-to-3-1-x-and-later)
   - [Upgrade to Enterprise Edition 3.0.x](https://docs.mattermost.com/administration/upgrade.html#upgrade-to-enterprise-edition-3-0-x)
-  - [Upgrade Enterprise Edition to 2.2.x and earlier](https://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition-to-2-2-x-and-earlier)
 - [Upgrade Team Edition to Enterprise Edition](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition)  
 
 ### Upgrade Team Edition 
@@ -25,8 +23,8 @@ To start, select one of the following guides:
               - Note: If public links are enabled, upgrading from `v3.3.x` and earlier to `v3.4.x` and later will invalidate existing public links due to a security upgrade allowing admins to invalidate links by resetting a public link salt from the System Console.
               - Note: RHEL6 and Ubuntu installations must verify the line `limit nofile 50000 50000` is included in `/etc/init/mattermost.conf` file. See the [installation guide](https://docs.mattermost.com/guides/administrator.html#install-guides) for your operating system for more details.
               - Note: RHEL7 and Debian installations must verify the line `LimitNOFILE=49152` is included in the `/etc/systemd/system/mattermost.service` file. See the [installation guide](https://docs.mattermost.com/guides/administrator.html#install-guides) for your operating system for more details.
-          - Mattermost `v2.2.x` can upgrade directly to `v3.1.x` or `v3.2.x` but must follow the [extended upgrade guide for `v3.0.x`](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-3-0-x)   
-          - Mattermost `v2.1.x` and below must follow the process to [upgrade to `v3.0.x`](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-3-0-x) before upgrading further
+          - Mattermost `v2.2.x` can upgrade directly to `v3.1.x` or `v3.2.x` but must follow the [extended upgrade guide for `v3.1.x`](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-3-0-x)   
+          - Mattermost `v2.1.x` and below must follow the process to [upgrade to `v3.1.x`](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-3-0-x) before upgrading further
       3. Use the [Version Archive table](https://docs.mattermost.com/administration/upgrade.html#version-archive) to find the `[RELEASE URL]` for your desired version and enter `wget [RELEASE URL]` to download. For example, to download `vX.X.X`, use `wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz`.
       4. Review **Compatibility** section in [CHANGELOG](https://docs.mattermost.com/administration/changelog.html) for the version downloaded and make sure to follow any instructions.
 2. Stop the Mattermost Server
@@ -46,7 +44,7 @@ To start, select one of the following guides:
 8. Test the system is working by going to the URL of an existing team.
       You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 
-#### Upgrade Team Edition to 3.0.x 
+#### Upgrade Team Edition to 3.1.x 
 
 Mattermost 3.0 lets users maintain a single account across multiple teams on a Mattermost server. This means one set of credentials, one place to configure all account settings, and a more streamlined sign-up and team joining process.
 
@@ -54,7 +52,7 @@ Mattermost 3.0 lets users maintain a single account across multiple teams on a M
 
 If your Mattermost server has duplicate accounts (users with multiple accounts in multiple teams with the same email address or username), you need to understand the 3.0 upgrade process in detail and take special steps to upgrade successfully.
 
-1. Download Mattermost Team Edition 3.0.3
+1. Download Mattermost Team Edition 3.0.x
       1. Run `platform -version` to confirm the current version of your Mattermost server is `v2.2.0`, `v2.1.0`, or `v2.0.0`. If not, please [upgrade to `v2.0.0`](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-for-2-2-x-and-earlier).
       2. Run `wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz` to download the appropriate new version. 
 2. Stop the Mattermost Server
@@ -92,34 +90,7 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
       1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 9. After the Mattermost 3.0 upgrade users with duplicate accounts can follow instructions in the upgrade email they received to login to teams on which the duplicate accounts were created and add their primary account to the team and any private groups that are still actively used. Users can continue to access the direct message history of their duplicate accounts using their updated email addresses.
 
-#### Upgrade Team Edition for 2.2.x and earlier 
 
-1. Download the **appropriate next upgrade** of your Team Edition server and note any compatibility procedures
-      1. Run `platform -version` to check the current version of your Mattermost server
-      2. Determine the appropriate next upgrade for your server:
-          - Mattermost `v2.0.x` and `v2.1.x` can upgrade directly to Mattermost `v2.2.x`.
-          - Mattermost `v1.4.x` and `v2.0.x` can upgrade directly to Mattermost `v2.1.x`.
-          - Mattermost `v1.2.x` must upgrade to Mattermost `v1.3.x` before further upgrades.
-          - Mattermost `v1.1.x` must upgrade to Mattermost `v1.2.x` before further upgrades.
-          - Mattermost `v1.0.x` must upgrade to Mattermost `v1.1.x` before further upgrades.
-      3. Use the [Version Archive List](https://docs.mattermost.com/administration/upgrade.html#version-archive) to find the `[RELEASE URL]` for your desired version and enter `wget [RELEASE URL]` to download. For example, to download `vX.X.X`, use `wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz`.
-      4. Review **Compatibility** section in [CHANGELOG](https://docs.mattermost.com/administration/changelog.html) for the version downloaded and make sure to follow any instructions.
-2. Stop the Mattermost Server
-      1. Consider posting an announcement to active teams about stopping the Mattermost server for an upgrade.
-      2. To stop the server run `sudo stop mattermost`.
-3. Backup your data
-      1. Back up your `config.json` file, which contains your system configuration. This will be used to restore your current settings after the new version is installed.
-      2. Backup your database using your organization's standard procedures for backing up MySQL or PostgreSQL.
-      3. If you're using local file storage, back up the location where files are stored.
-5. Install new version
-      1. Run `tar -xvzf mattermost-team-X.X.X-linux-amd64.tar.gz` to decompress the upgraded version and replace the current version of Mattermost on disk, where `X.X.X` is the version number to which you are upgrading.  
-6. Restore the state of your server
-      1. Copy the backed up version of `config.json` in place of the default `config.json`.
-7. Start your server and address any setting changes relevant in the latest version of Mattermost
-      1. Run `sudo start mattermost`.
-      2. Opening the **System Console** and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added.
-8. Test the system is working by going to the URL of an existing team.
-      You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 
 ### Upgrade Team Edition to Enterprise Edition
 
@@ -219,37 +190,6 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
 
 For any issues, Mattermost Enterprise Edition subscribers and trial license users can email support@mattermost.com 
 
-#### Upgrade Enterprise Edition to 2.2.x and earlier
-
-1. Download the **appropriate next upgrade** of your Enterprise Edition server and note any compatibility procedures
-      1. Run `platform -version` to check the current version of your Mattermost server
-      2. Determine the appropriate next upgrade for your server:
-          - Mattermost `v2.0.x` and `v2.1.x` can upgrade directly to Mattermost `v2.2.x`.
-          - Mattermost `v1.4.x` and `v2.0.x` can upgrade directly to Mattermost `v2.1.x`.
-          - Mattermost `v1.2.x` must upgrade to Mattermost `v1.3.x` before further upgrades.
-          - Mattermost `v1.1.x` must upgrade to Mattermost `v1.2.x` before further upgrades.
-          - Mattermost `v1.0.x` must upgrade to Mattermost `v1.1.x` before further upgrades.
-      3. Use the [Version Archive List](https://docs.mattermost.com/administration/upgrade.html#version-archive) to find the `[RELEASE URL]` for your desired version and enter `wget [RELEASE URL]` to download. For example, to download `vX.X.X`, use `wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz`.
-      4. Review **Compatibility** section in [CHANGELOG](https://docs.mattermost.com/administration/changelog.html) for the version downloaded and make sure to follow any instructions.
-2. Stop the Mattermost Server
-      1. Consider posting an announcement to active teams about stopping the Mattermost server for an upgrade.
-      2. To stop the server run `sudo stop mattermost`.
-3. Backup your data
-      1. Back up your `config.json` file, which contains your system configuration. This will be used to restore your current settings after the new version is installed.
-      2. Backup your database using your organization's standard procedures for backing up MySQL or PostgreSQL.
-      3. If you're using local file storage, back up the location where files are stored.
-5. Install new version
-      1. Run `tar -xvzf mattermost-X.X.X-linux-amd64.tar.gz` to decompress the upgraded version and replace the current version of Mattermost on disk, where `X.X.X` is the version number to which you are upgrading.  
-6. Restore the state of your server
-      1. Copy the backed up version of `config.json` in place of the default `config.json`.
-7. Start your server and address any setting changes relevant in the latest version of Mattermost
-      1. Run `sudo start mattermost`.
-      2. Opening the **System Console** and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added.
-8. Test the system is working by going to the URL of an existing team.
-      You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
-
-For any issues, Mattermost Enterprise Edition subscribers and trial license users can email support@mattermost.com 
-
 ## Version Archive
 
 ### Mattermost Enterprise Edition Server
@@ -279,15 +219,6 @@ Private cloud enterprise communications server.
 - Mattermost Enterprise Edition v3.1.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-1-0) - [Download](https://releases.mattermost.com/3.1.0/mattermost-3.1.0-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/3.1.0/mattermost-3.1.0-linux-amd64.tar.gz`
   - Checksum: `9e29525199e25eca6b7fe6422b415f6371d21e22c344ca6febc5e64f69ec670b`
-- Mattermost Enterprise Edition v3.0.3 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-0-3) - [Download](https://releases.mattermost.com/3.0.3/mattermost-3.0.3-linux-amd64.tar.gz)
-  - `https://releases.mattermost.com/3.0.3/mattermost-3.0.3-linux-amd64.tar.gz`
-  - Checksum: `` XXXXXX
-- Mattermost Enterprise Edition v2.2.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v2-2-0) - [Download](https://releases.mattermost.com/2.2.0/mattermost-2.2.0-linux-amd64.tar.gz)
-  - `https://releases.mattermost.com/2.2.0/mattermost-2.2.0-linux-amd64.tar.gz`
-  - Checksum: `` XXXXXX
-- Mattermost Enterprise Edition v2.1.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v2-1-0) - [Download](https://releases.mattermost.com/2.1.0/mattermost-2.1.0-linux-amd64.tar.gz)
-  - `https://releases.mattermost.com/2.1.0/mattermost-2.1.0-linux-amd64.tar.gz`
-  - Checksum: `` XXXXXX
 
 
 ### Mattermost Team Edition Server
@@ -349,6 +280,3 @@ Open source self-hosted team communication server compiled by Mattermost, Inc, a
 - Mattermost Team Edition v0.6.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v0-6-0-alpha) - [Download](https://releases.mattermost.com/0.6.0/mattermost-team-0.6.0-linux-amd64.tar.gz)
    - `https://releases.mattermost.com/0.6.0/mattermost-team-0.6.0-linux-amd64.tar.gz`
    - Checksum: `9eb364f7f963af32d4a9efe3bbb5abb2a21ca5d1a213b50ca461dab047a123b6`
-- Mattermost Team Edition v0.5.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v0-5-0-preview) - [Download](https://releases.mattermost.com/0.5.0/mattermost-team-0.5.0-linux-amd64.tar.gz)
-  - `https://releases.mattermost.com/0.5.0/mattermost-team-0.5.0-linux-amd64.tar.gz`
-  - Checksum: `` XXXXXX
