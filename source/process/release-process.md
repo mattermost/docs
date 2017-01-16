@@ -283,11 +283,8 @@ Once final dot release build is ready to cut:
 2. PM:
     - Close the release in Jira
     - Prepare tickets for the next release,  with a corresponding vX.X prefix
-        - [Performance improvement ticket](https://mattermost.atlassian.net/browse/PLT-3363)
-        - [Update testing spreadsheet](https://mattermost.atlassian.net/browse/PLT-3044)
         - [Creating final release candidate](https://mattermost.atlassian.net/browse/PLT-2198)
         - [Test Gitlab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/PLT-2197) 
-        - [Push to private long-running feature branches](https://mattermost.atlassian.net/browse/PLT-2199)
         - [Test upgrade](https://mattermost.atlassian.net/browse/PLT-3940) to latest release based on [upgrade guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide)
         - Test upgrade from Team Edition to Enterprise Edition
         - [RC Build Testing for core team](https://mattermost.atlassian.net/browse/PLT-2208)
