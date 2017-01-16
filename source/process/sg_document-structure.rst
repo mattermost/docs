@@ -17,7 +17,17 @@ Use title case for document titles. For more information and an example of capit
 Introductory paragraph
 ----------------------
 
-Each page should have an introduction that acts as a short description of the document. The short description should be a single paragraph of no more than 3 sentences. Keep in mind that the description is displayed in the search results along with the page title. People read the description to help them decide if the document is the one that they want.
+Each page should have an introduction that acts as a short description of the document. The short description should be a single paragraph of no more than three sentences. Keep in mind that the description is displayed in the search results along with the page title. People read the description to help them decide if the document is the one that they want.
+
+Table of Contents
+------------------
+
+If the document contains more than four sections or subsections, add a table of contents to help the user navigate the document:
+
+.. code-block:: none 
+
+  .. contents::
+      :backlinks: top
 
 Document sections
 -----------------
@@ -25,5 +35,3 @@ Document sections
 To make pages easier for people to quickly scan for the content that they're looking for, break your document up into logical sections. Each section should have a title, and the title should relate to the content of the section.
 
 A section title is not required if you have only one section.
-
-Avoid subsections. If you find that you need subsections, quite often the document is too long, or too complex, and needs to be broken up into several pages.
