@@ -22,12 +22,7 @@ Each page should have an introduction that acts as a short description of the do
 Table of Contents
 ------------------
 
-If the document contains more than four sections or subsections, add a table of contents to help the user navigate the document:
-
-.. code-block:: none 
-
-  .. contents::
-      :backlinks: top
+If the document contains more than four sections or subsections, add a table of contents to help the user navigate the document, see :ref:`table-of-contents`.
 
 Document sections
 -----------------
