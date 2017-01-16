@@ -119,12 +119,12 @@ Keyboard buttons   Key1+Key2           "Press CTRL+U to upload a file."
 Placeholder field  {placeholder}       "Use the URL https://{domain}.mattermost.com/{team}."
 =================  ==================  =======================
 
-Bullet lists
-------------
+Bullet Lists
+-------------
 
 The list items in a bullet list can be either all complete sentences or all sentence fragments. Don't mix complete sentences and sentence fragments in a single list. Remember that a complete sentence begins with an upper case letter and ends with a punctuation mark.
 
-Numbered lists and procedures
+Numbered Lists and Procedures
 -----------------------------
 
 Create numbered lists and procedure steps using arabic numerals for the top-level list and lower case alpha characters for the first nested list. For example:
@@ -138,11 +138,11 @@ Create numbered lists and procedure steps using arabic numerals for the top-leve
   
 3. This is the third step.
 
-Linking to other documents
---------------------------
+Document Linking 
+------------------
 
-When creating a link to another document in the Mattermost documentation, create a link with a relative URL.
+When creating a link to another document in the Mattermost documentation, create a link with a relative URL. To create relative links in reStructuredText, see :ref:`relative-links-in-rst`.
 
 A link with an absolute URL is not as flexible as a relative URL. Relative URLs don't break when the documentation is moved to another host, or if the documentation is hosted on a server that's behind a firewall without access to the Internet.
 
-To create relative links in reStructuredText, see :ref:`relative-links-in-rst`.
+
