@@ -81,5 +81,5 @@ Guidelines for release announcements
 Composing blog posts: 
 
 1. **Include [RELEASE] [HEADLINE] in title**. Use titles that draw in IT audiences. For example "Mattermost 3.5 improves mobile and web performance, adds Minio support, Russian language".
-2. **Use Twitter banners for images**. Use Twitter banners to make visuals consistently high-quality throughout the release announcement. Also let's the marketing team use the images for tweets.
+2. **Use Twitter banners for images**. Use Twitter banners to make visuals consistently high-quality throughout the release announcement. Also allows the marketing team use the images for tweets.
 3. **Emphasize benefit**. Emphasize benefit in text, screenshots and image captions. IT audiences are typically more interested in the business benefits of technology than technical features.
