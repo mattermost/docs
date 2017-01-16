@@ -128,21 +128,21 @@ The following config settings will only work on servers with an Enterprise Licen
 - Under `ServiceSettings` in `config.json`:
    - Added `”EnforceMultifactorAuthentication": false` to control whether MFA in enforced
 - Under `TeamSettings` in `config.json`:
-   - Changed `"RestrictPublicChannelManagement": "all”` to only control who can edit the channel header, purpose, and name of public channels (previously it also controlled creation and deletion)
-  - Changed `"RestrictPrivateChannelManagement": "all”` to only control who can edit the channel header, purpose, and name of private groups (previously it also controlled creation and deletion)
-  - Added `"RestrictPublicChannelCreation": "all”` to control who can create public channels
-  - Added `"RestrictPrivateChannelCreation": "all”` to control who can create private groups
-  - Added `"RestrictPublicChannelDeletion”: "all”` to control who can delete public channels
-  - Added `"RestrictPrivateChannelDeletion": "all”` to control who can delete private channels
+   - Changed `"RestrictPublicChannelManagement": "all"` to only control who can edit the channel header, purpose, and name of public channels (previously it also controlled creation and deletion)
+  - Changed `"RestrictPrivateChannelManagement": "all"` to only control who can edit the channel header, purpose, and name of private groups (previously it also controlled creation and deletion)
+  - Added `"RestrictPublicChannelCreation": "all"` to control who can create public channels
+  - Added `"RestrictPrivateChannelCreation": "all"` to control who can create private groups
+  - Added `"RestrictPublicChannelDeletion”: "all"` to control who can delete public channels
+  - Added `"RestrictPrivateChannelDeletion": "all"` to control who can delete private channels
   - Added `"MaxNotificationsPerChannel": 1000` to set the maximum number of channel members for which `@all` and `@channel` notifications will be sent
 - Under `LdapSettings` in `config.json`:
-  - Added `"PositionAttribute": “”` to select an LDAP attribute to synchronize for the user position (job title) field
+  - Added `"PositionAttribute": ""` to select an LDAP attribute to synchronize for the user position (job title) field
 - Under `SamlSettings` in `config.json`:
-  - Added `"PositionAttribute": “”` to select an LDAP attribute to synchronize for the user position (job title) field
+  - Added `"PositionAttribute": ""` to select an LDAP attribute to synchronize for the user position (job title) field
 - Added `MetricsSettings` in `config.json` for performance monitoring settings: 
   - Added `"Enable": false` to control whether performance monitoring is enabled
   - Added `"BlockProfileRate": 0` to control the [fraction of goroutine blocking events that are reported in the blocking profile](https://golang.org/pkg/runtime/#SetBlockProfileRate)
-  - Added `"ListenAddress": ":8067”` to control the address the server will listen on to expose performance metrics
+  - Added `"ListenAddress": ":8067"` to control the address the server will listen on to expose performance metrics
 - Added `AnalyticsSettings` in `config.json` for analytics settings:
   - Added `"MaxUsersForStatistics": 2500` to set the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and active users with posts per day are no longer counted (use this setting to improve performance on large instances)
 
