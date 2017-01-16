@@ -22,10 +22,10 @@ Below is a list of additional resources:
  - Contributor’s guide (coming soon)
  - `Source code <https://github.com/mattermost/desktop>`_
 
-You can `download the apps directly from our downloads page <https://about.mattermost.com/downloads/>`_. You may also use the following installation guides for Windows, Mac and Linux:
+You can `download the apps directly from our downloads page <https://about.mattermost.com/downloads/>`_. You may also use the following installation guides for Windows, Mac and Linux
 
 Windows 10+, Windows 8.1+, Windows 7+
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------------------
 
 1. Download latest version of the Mattermost desktop app:
 
@@ -37,7 +37,7 @@ Windows 10+, Windows 8.1+, Windows 7+
 This will start an installer for the app. Once finished, the Mattermost desktop app will open automatically.
  
 Mac OS X 10.9+
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------------------
 
 1. Download `latest version of the Mattermost desktop app <https://releases.mattermost.com/desktop/3.5.0/mattermost-desktop-3.5.0-osx.tar.gz>`_
 
@@ -50,7 +50,7 @@ Mac OS X 10.9+
 The Mattermost desktop should open automatically.
 
 Linux (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------------------
 
 1. Download latest version of the Mattermost desktop app:
 
@@ -71,3 +71,20 @@ To download the unofficial, community-driven .deb packages for the desktop appli
 2. Open a terminal and execute the command ``sudo dpkg -i mattermost-desktop-<VERSION>-<ARCH>.deb``
 
 3. Open **Dash** (located at top left corner) and input ``mattermost``, then click the Mattermost icon. The Mattermost desktop should open automatically.
+
+Troubleshooting
+---------------------------------------------------
+
+Possible solutions to issues encountered when using the Desktop App.
+
+"Installation has failed" dialog
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The app data might be corrupted - remove all the files in `C:\Users...\AppData\Local\mattermost`, then try re-installing the app.
+
+Desktop App window is black and doesn't load the page
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you are using a special video driver such as Optimus, try disabling it to see if the problem is resolved.
+
+Otherwise, try disabling GPU hardware acceleration by using the `--disable-gpu <http://peter.sh/experiments/chromium-command-line-switches/#disable-gpu>`_ Chromium command line switch.
