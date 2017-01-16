@@ -205,8 +205,8 @@ The following config settings will only work on servers with an Enterprise Licen
 - `POST` at `/users/status/set_active_channel` (replaced by `/channels/view`) to be removed in v3.8
 
 **Removed routes:**
-- `` at `teams/create_from_signup`
-- `` at `/teams/signup`
+- `POST` at `/teams/create_from_signup`
+- `POST` at `/teams/signup`
 
 ### Websocket Event Changes from v3.5 to v3.6
 
