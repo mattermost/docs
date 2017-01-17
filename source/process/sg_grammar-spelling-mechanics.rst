@@ -101,9 +101,9 @@ Text Formatting
 
 Use highlighting of text to visually set off words and phrases that are important to readers. Content that should be highlighted includes file names, UI controls, and window titles. The following table has a comprehensive list with examples. 
 
-=================  ==================  =======================
+=================  ==================  =============================================================
 Text               Format              Example
-=================  ==================  =======================
+=================  ==================  =============================================================
 Code samples       ``monospace``       See :ref:`syntax-highlight` for an example.
 Commands           ``monospace``       "At the command line, type ``sudo apt-get install nginx``."
 Directory name     ``monospace``       ``/opt/mattermost``
@@ -116,8 +116,8 @@ Clickable control  **bold**            "Click **File > Save**."
 Citations          *italic*            "Read the book *Clean Code* by Robert Martin."
 Window titles      *italic*            "The *Account Settings* window opens."
 Keyboard buttons   Key1+Key2           "Press CTRL+U to upload a file."
-Placeholder field  {placeholder}       "Use the URL https://{domain}.mattermost.com/{team}."
-=================  ==================  =======================
+Placeholder field  {placeholder}       "Use the URL in the form of {domain}.mattermost.com/{team}."
+=================  ==================  =============================================================
 
 Bullet Lists
 -------------
