@@ -1,6 +1,6 @@
 # Upgrade Guide for v2.2.x and Earlier
 
-#### Upgrade Team Edition for 2.2.x and earlier 
+## Upgrade Team Edition for 2.2.x and earlier 
 
 1. Download the **appropriate next upgrade** of your Team Edition server and note any compatibility procedures
       1. Run `platform -version` to check the current version of your Mattermost server
@@ -29,7 +29,7 @@
 8. Test the system is working by going to the URL of an existing team.
       You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
       
-#### Upgrade Enterprise Edition to 2.2.x and earlier
+## Upgrade Enterprise Edition to 2.2.x and earlier
 
 1. Download the **appropriate next upgrade** of your Enterprise Edition server and note any compatibility procedures
       1. Run `platform -version` to check the current version of your Mattermost server
