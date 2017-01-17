@@ -60,7 +60,48 @@ In addition to `Mattermost Account Settings <https://docs.mattermost.com/help/se
 
 The options appear in the Settings page, available from the **File** > **Settings** or by CTRL/CMD+COMMA.
 
-A description of each setting is included below this table.
+Allow mixed content
+    If your server is hosted on ``https://``, insecure content, images and scripts with ``http://`` are not rendered by default. This option allows such content to be rendered. If you do enable it, please be mindful of potential security risks shared over ``http://`` protocols.
+    
+    This setting is on by default.
+
+Show red badge on taskbar icon to indicate unread messages (Windows, Mac only)
+    When enabled, a red badge is shown on the taskbar icon for unread messages with a number count indicating unread mentions. If disabled, a red badge is only shown for unread mentions (with a number count).
+
+    This setting is on by default.
+
+Flash taskbar icon when a new message is received (Windows, Linux only)
+    Configure whether the taskbar icon flashes when a new message is received on any of your active teams and servers.
+
+    This setting is off by default.
+
+Start app on login (Windows, Linux only)
+    When enabled, Mattermost application starts when you log in to your machine.
+
+    This setting is on by default.
+
+Hide menu bar (Windows, Linux only)
+    Hides the menu bar. When enabled, pressing ALT will toggle whether the menu bar is shown or hidden.
+
+    This setting is off by default.
+
+Toggle window visibility when clicking on the tray icon (Windows only)
+    When enabled, clicking on the system tray icon allows you to toggle the window open and minimized.
+
+    This setting is off by default.
+
+Show icon on Menu Bar (Mac, Linux only)
+    When enabled, a red dot with a count of unread mentions is displayed on the team tab bar.
+
+    This setting is off by default.
+
+Leave app running in notification center when application window is closed (Mac, Linux only)
+    When enabled, closing the application window will leave the Mattermost desktop app running in your notification center. This can be useful if you’d like to check for unread mentions while away from the app.
+
+    This setting is off by default.
+
+Option availability by platform
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+
 | Setting                                                                       | Windows                   | Mac                       | Linux                     |
@@ -81,64 +122,6 @@ A description of each setting is included below this table.
 +-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+
 | Leave app running in notification center when application window is closed    |                           | Yes                       | Yes                       |
 +-------------------------------------------------------------------------------+---------------------------+---------------------------+---------------------------+
-
-Allow mixed content
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If your server is hosted on ``https://``, insecure content, images and scripts with ``http://`` are not rendered by default. This option allows such content to be rendered. If you do enable it, please be mindful of potential security risks shared over ``http://`` protocols.
-
-This setting is on by default.
-
-Note: Enabling mixed content will disable YouTube video previews `due to an issue in the underlying technology <https://github.com/electron/electron/issues/2749>`_ used by the Mattermost Desktop app.
-
-Show red badge on taskbar icon to indicate unread messages (Windows, Mac only)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-When enabled, a red badge is shown on the taskbar icon for unread messages with a number count indicating unread mentions. If disabled, a red badge is only shown for unread mentions (with a number count).
-
-This setting is on by default.
-
-Flash taskbar icon when a new message is received (Windows, Linux only)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Configure whether the taskbar icon flashes when a new message is received on any of your active teams and servers.
-
-This setting is off by default.
-
-Start app on login (Windows, Linux only)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-When enabled, Mattermost application starts when you log in to your machine.
-
-This setting is on by default.
-
-Hide menu bar (Windows, Linux only)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Hides the menu bar. When enabled, pressing ALT will toggle whether the menu bar is shown or hidden.
-
-This setting is off by default.
-
-Toggle window visibility when clicking on the tray icon (Windows only)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-When enabled, clicking on the system tray icon allows you to toggle the window open and minimized.
-
-This setting is off by default.
-
-Show icon on Menu Bar (Mac, Linux only)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-When enabled, a red dot with a count of unread mentions is displayed on the team tab bar.
-
-This setting is off by default.
-
-Leave app running in notification center when application window is closed (Mac, Linux only)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-When enabled, closing the application window will leave the Mattermost desktop app running in your notification center. This can be useful if you’d like to check for unread mentions while away from the app.
-
-This setting is off by default.
 
 Menu Bar
 ---------------------------------------------------------------------
