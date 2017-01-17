@@ -13,7 +13,7 @@ Paragraphs and Sentences
 
 Paragraphs should express one idea or topic. Long paragraphs are sometimes difficult to read on screen, so try to keep them to five sentences or less. Short paragraphs are easier for people to scan quickly.
 
-Try to keep sentences to 25 words or less in length. Short, single-clause sentences are often easier to understand and easier to translate. Tools such as the [Hemingway writing app](http://www.hemingwayapp.com/) can be helpful in checking for readability.
+Try to keep sentences to 25 words or less in length. Short, single-clause sentences are often easier to understand and easier to translate. Tools such as the `Hemingway writing app <http://www.hemingwayapp.com/>`_ can be helpful in checking for readability.
 
 Tone
 ~~~~~
