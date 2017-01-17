@@ -219,6 +219,15 @@ Private cloud enterprise communications server.
 - Mattermost Enterprise Edition v3.1.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-1-0) - [Download](https://releases.mattermost.com/3.1.0/mattermost-3.1.0-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/3.1.0/mattermost-3.1.0-linux-amd64.tar.gz`
   - Checksum: `9e29525199e25eca6b7fe6422b415f6371d21e22c344ca6febc5e64f69ec670b`
+- Mattermost Enterprise Edition v3.0.3 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-0-3) - [Download](https://releases.mattermost.com/3.0.3/mattermost-enterprise-3.0.3-linux-amd64.tar.gz)
+  - `https://releases.mattermost.com/3.0.3/mattermost-enterprise-3.0.3-linux-amd64.tar.gz`
+  - Checksum: `3c692f8532b1858aefd2f0c2c22721e6b18734580a84a8ae5d6ce891f0e16f07`
+- Mattermost Enterprise Edition v2.2.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v2-2-0) - [Download](https://releases.mattermost.com/2.2.0/mattermost-enterprise-2.2.0-linux-amd64.tar.gz)
+  - `https://releases.mattermost.com/2.2.0/mattermost-enterprise-2.2.0-linux-amd64.tar.gz`
+  - Checksum: `a7e997526d9204eab70c74a31d51eea693cca0d4bf0f0f71760f14f797fa5477`
+- Mattermost Enterprise Edition v2.1.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v2-1-0) - [Download](https://releases.mattermost.com/2.1.0/mattermost-enterprise-2.1.0-linux-amd64.tar.gz)
+  - `https://releases.mattermost.com/2.1.0/mattermost-enterprise-2.1.0-linux-amd64.tar.gz`
+  - Checksum: `9454c3daacae602025b03950590e3f1ecd540b85a4bb7ad73bdca212ba85cf7a`
 
 
 ### Mattermost Team Edition Server
