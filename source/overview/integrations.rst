@@ -40,7 +40,7 @@ Mattermost webhooks are "Slack-compatible, not Slack limited". In applications s
 700 app integrations using Zapier (public cloud only)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost's Zapier support enablees you to connect to over 700 public cloud services, like Email, Gmail, GitHub, Jira, BitBucket and Confluence. 
+Mattermost's Zapier support enables you to connect to over 700 public cloud services, like Email, Gmail, GitHub, Jira, BitBucket and Confluence. 
 
 - Learn about `Mattermost-Zapier integration <https://docs.mattermost.com/integrations/zapier.html>`_
 
