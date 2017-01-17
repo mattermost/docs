@@ -2,12 +2,7 @@
 Desktop Application Install Guides
 ===================================
 
-Mattermost desktop applications are available for Windows, Mac and Linux operating systems. 
-
-.. contents::
-    :backlinks: top
-
-Desktop applications support all the features of the web experience, plus: 
+Mattermost desktop applications are available for Windows, Mac and Linux operating systems. They support all the features of the web experience, plus: 
 
 - Connect to multiple Mattermost servers from a single interface, and switch with shortcut keys.
 - Auto-start Mattermost when a user logs into their machine
@@ -22,7 +17,10 @@ Below is a list of additional resources:
  - Contributor’s guide (coming soon)
  - `Source code <https://github.com/mattermost/desktop>`_
 
-You can `download the apps directly from our downloads page <https://about.mattermost.com/downloads/>`_. You may also use the following installation guides for Windows, Mac and Linux:
+You can `download the apps directly from our downloads page <https://about.mattermost.com/downloads/>`_. You may also use the following installation guides for Windows, Mac and Linux.
+
+.. contents::
+    :backlinks: top
 
 Windows 10+, Windows 8.1+, Windows 7+
 --------------------------------------------------
