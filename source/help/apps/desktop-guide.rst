@@ -8,28 +8,28 @@ You can `download the apps directly from our download page <https://about.matter
 
 To view the latest updates, please see our `changelog <https://docs.mattermost.com/help/apps/desktop-changelog.html>`_.
 
-Below are a few tips to get you started and configuring your experience on the desktop app:
+Below are a few tips to get you started and to configure your experience on the desktop app:
 
  - `Team Management <https://docs.mattermost.com/help/apps/desktop-guide.html#id1>`_
  - `App Options <https://docs.mattermost.com/help/apps/desktop-guide.html#id2>`_
  - `Menu Bar <https://docs.mattermost.com/help/apps/desktop-guide.html#id3>`_
- - `Troubleshooting <https://docs.mattermost.com/help/apps/desktop-guide.html#id4>`_
 
 Team Management
 ---------------------------------------------------------------------
 
 You can connect to multiple Mattermost servers from a single interface on the desktop app.
 
-Team Management appears in the Settings page, available from the `File` menu under `Settings`.
+The Team Management section allows you to add, edit and remove servers and teams.
 
 Adding servers and teams
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To add a new server on the Mattermost instance, 
 
-1. Click **Add new team** next to the right of Team Management section.
-2. Enter **Name** and a valid **URL**, which begins with either ``http://`` or ``https://``.
-3. Click **Add**.
+1. Go to **File** > **Settings** or press CTRL/CMD+COMMA
+2. Click **Add new team** next to the right of Team Management section.
+3. Enter **Name** and a valid **URL**, which begins with either ``http://`` or ``https://``.
+4. Click **Add**.
 
 You can now access all teams you have joined in the server once you have saved the settings, and each will appear as a separate tab in the app. 
 
@@ -40,21 +40,25 @@ Editing servers and teams
 
 To edit a server, 
 
-1. To the right of the team or server you want update, click **Edit**.
-2. Edit **Name** and/or **URL**.
-3. Click **Save**.
+1. Go to **File** > **Settings** or press CTRL/CMD+COMMA
+2. To the right of the team or server you want update, click **Edit**.
+3. Edit **Name** and/or **URL**.
+4. Click **Save**.
 
 Removing servers and teams
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To remove a server from your desktop app environment, click on **Remove** next to the server or a team you want removed.
+To remove a server from your desktop app environment, 
+
+1. Go to **File** > **Settings** or press CTRL/CMD+COMMA
+2. Click **Save**.click on **Remove** next to the server or a team you want removed.
 
 App Options
 ---------------------------------------------------------------------
 
 In addition to `Mattermost Account Settings <https://docs.mattermost.com/help/settings/account-settings.html>`_ , the desktop app provides additional options to customize your experience. 
 
-The options appear in the Settings page, available from the `File` menu under `Settings`.
+The options appear in the Settings page, available from the **File** > **Settings** or by CTRL/CMD+COMMA.
 
 A description of each setting is included below this table.
 
@@ -141,7 +145,7 @@ Menu Bar
 
 The desktop app contains a menu bar with additional features and shortcuts to streamline your experience. 
 
-If the menu bar is hidden, you may use the ALT key to display the menu. To have the menu displayed at all times, go to the Settings page and uncheck the **Hide menu bar** setting.
+If the menu bar is hidden, you may use the ALT key to display the menu. To have the menu displayed at all times, go to the Settings page by pressing CTRL/CMD+COMMA and uncheck the **Hide menu bar** setting.
 
 Below is a list of menu options with the corresponding keyboard shortcuts. For Mac, replace CTRL by CMD unless otherwise specified.
 
