@@ -85,6 +85,10 @@ The app data might be corrupted - remove all the files in `C:\Users...\AppData\L
 Desktop App window is black and doesn't load the page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Firt try to clear cache and reload the app from **View** > **Clear Cache and Reload** or by pressing CTRL/CMD+SHIFT+R.
+
+Next, quit the app and re-start it to see if the issue clears.
+
 If you are using a special video driver such as Optimus, try disabling it to see if the problem is resolved.
 
 Otherwise, try disabling GPU hardware acceleration by using the `--disable-gpu <http://peter.sh/experiments/chromium-command-line-switches/#disable-gpu>`_ Chromium command line switch.
