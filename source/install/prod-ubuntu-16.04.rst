@@ -142,7 +142,7 @@ For the purposes of this guide we will assume this server has an IP address of `
 
        vi config.json
 
-   -  replace ``DriverName": "mysql"`` with ``DriverName": "postgres"``
+   -  replace ``"DriverName": "mysql"`` with ``"DriverName": "postgres"``
    -  replace
       ``"DataSource": "mmuser:mostest@tcp(dockerhost:3306)/mattermost_test?charset=utf8mb4,utf8"``
       with
