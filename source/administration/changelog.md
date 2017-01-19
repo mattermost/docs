@@ -7,8 +7,10 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 ### Notes on Patch Release
 
  - **v3.6.1, released 2017-01-17**
-   - Fixed a performance regression when sending many notifications at once
-   - Note: Upgrading to Mattermost v3.6.1 is only necessary if you notice a large delay when sending `@all` or `@channel` notifications in channels with a lot of users
+   - Fixed a performance regression when sending many notifications at once (for example, when `@all` or `@channel` is used in a channel with many users)
+   - Fixed an issue where the config flag for the CLI was not backwards compatible
+   - Fixed an upgrade issue for MySQL databases using certain character sets
+   - Fixed an issue with messages not showing up after computer wakes from sleep
  - **v3.6.0, released 2017-01-16**
    - Original 3.6 release.
 
