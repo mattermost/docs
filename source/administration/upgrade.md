@@ -261,8 +261,8 @@ Private cloud enterprise communications server.
 
 -------
 
-- Mattermost Enterprise Edition v3.6.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-6-0) - [Download](https://releases.mattermost.com/3.6.0/mattermost-3.6.0-linux-amd64.tar.gz)
-  - `https://releases.mattermost.com/3.6.0/mattermost-3.6.0-linux-amd64.tar.gz`
+- Mattermost Enterprise Edition v3.6.1 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-6-1) - [Download](https://releases.mattermost.com/3.6.1/mattermost-3.6.1-linux-amd64.tar.gz)
+  - `https://releases.mattermost.com/3.6.1/mattermost-3.6.1-linux-amd64.tar.gz`
 - Mattermost Enterprise Edition v3.5.1 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-5-1) - [Download](https://releases.mattermost.com/3.5.1/mattermost-3.5.1-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/3.5.1/mattermost-3.5.1-linux-amd64.tar.gz`
 - Mattermost Enterprise Edition v3.4.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-4-0) - [Download](https://releases.mattermost.com/3.4.0/mattermost-3.4.0-linux-amd64.tar.gz)
@@ -289,7 +289,7 @@ Open source self-hosted team communication server compiled by Mattermost, Inc, a
 
 -------
 
-- Mattermost Team Edition v3.6.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-6-0) - [Download](https://releases.mattermost.com/3.6.0/mattermost-team-3.6.0-linux-amd64.tar.gz)
+- Mattermost Team Edition v3.6.1 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-6-1) - [Download](https://releases.mattermost.com/3.6.1/mattermost-team-3.6.1-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/3.6.0/mattermost-team-3.6.0-linux-amd64.tar.gz`
 - Mattermost Team Edition v3.5.1 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-5-1) - [Download](https://releases.mattermost.com/3.5.1/mattermost-team-3.5.1-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/3.5.1/mattermost-team-3.5.1-linux-amd64.tar.gz`
