@@ -177,9 +177,10 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
 3. PM:
     - Check that known issues section of Changelog is updated
     - Check that the contributors section of Changelog is updated (including contributors from all repos)
+    - Check that if there is a security fix, the Changelog contains a note recommending upgrade and thanking the security researcher
 4. Marketing:
     - Finish draft of blog post for mattermost.com and send for marketing lead to review
-        - Upgrade should be recommended if there are security fixes in this version
+        - Upgrade should be recommended if there are security fixes in this version, with a note thanking the security researcher
     - Finish drafts of all art work (screenshots, GIFs and twitter banners) used for the blog post and send to marketing lead for review
 
 ### H. (T-minus 2 working days) Release Build Cut
@@ -214,7 +215,8 @@ The final release is cut. If an urgent and important issue needs to be addressed
     - Update [Docker preview image to latest version](https://github.com/mattermost/mattermost-docker-preview/commit/1c34195d70b26bd4c82b5ef4fa0ebaf421096881)
     - Submit PR to update [/mattermost-docker](https://github.com/mattermost/mattermost-docker/commit/782129450e9577a8966e5ddea18a1a4cdecdfd7f) image to latest release
     - Check Security Issues spreadsheet and confirm disclosure text
-    - Confirm link to security updates appears in blog post if there are security updates in this release 
+    - Check the security researcher was added to the [Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/) page
+    - Confirm link to security updates appears in blog post if there are security updates in this release, with a note thanking the security researcher 
 4. Marketing:
     - Finish draft of animated GIF (for Twitter announcement, MailChimp and blog post) made up of top announcements
     - Finish draft of MailChimp email blast and Twitter announcement and send for marketing lead to review. Once reviewed, schedule for 08:00 PST on the date of marketing announcement
