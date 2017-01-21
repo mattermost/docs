@@ -26,10 +26,11 @@ Adding servers and teams
 
 To add a new server on the Mattermost instance, 
 
-1. Go to **File** > **Settings** or press CTRL/CMD+COMMA
-2. Click **Add new team** next to the right of Team Management section.
-3. Enter **Name** and a valid **URL**, which begins with either ``http://`` or ``https://``.
-4. Click **Add**.
+1. On the menu bar, go to **File** > **Settings** or press CTRL/CMD+COMMA
+2. Click **Add new team** in the Team Management section.
+3. In the **Name** field, enter the name that you want for the tab. 
+4. In the **URL** field, enter the complete URL of the server that you want to connect to. Must begin with either ``http://`` or ``https://``.
+5. Click **Add**.
 
 You can now access all teams you have joined in the server once you have saved the settings, and each will appear as a separate tab in the app. 
 
@@ -40,8 +41,8 @@ Editing servers and teams
 
 To edit a server, 
 
-1. Go to **File** > **Settings** or press CTRL/CMD+COMMA
-2. To the right of the team or server you want update, click **Edit**.
+1. On the menu bar, go to **File** > **Settings** or press CTRL/CMD+COMMA
+2. Next to the team or server you want update, click **Edit**.
 3. Edit **Name** and/or **URL**.
 4. Click **Save**.
 
@@ -50,8 +51,8 @@ Removing servers and teams
 
 To remove a server from your desktop app environment, 
 
-1. Go to **File** > **Settings** or press CTRL/CMD+COMMA
-2. Click **Save**.click on **Remove** next to the server or a team you want removed.
+1. On the menu bar, go to **File** > **Settings** or press CTRL/CMD+COMMA
+2. Click **Save** click on **Remove** next to the server or a team you want removed.
 
 App Options
 ---------------------------------------------------------------------
