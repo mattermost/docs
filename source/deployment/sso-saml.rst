@@ -1,12 +1,12 @@
-SAML Single-Sign-On (E20)
+SAML Single Sign-On (E20)
 =========================
 
 Overview
 --------
 
-SAML Single-Sign-On integration offers the following benefits:
+SAML Single Sign-On integration offers the following benefits:
 
--  **Single-sign-on.** Users can sign-in to Mattermost with their SAML
+-  **Single sign-on.** Users can sign-in to Mattermost with their SAML
    credentials.
 -  **Centralized identity management.** Mattermost accounts can display
    user information from SAML, such as first and last name, email and
@@ -63,7 +63,7 @@ tool <http://docs.mattermost.com/deployment/on-boarding.html#creating-system-adm
 
 This usually means an existing account has another authentication method enabled. If the user wants to use the existing account for SAML authentication, they should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
      
-This error message can also be received if the ``Username Attribute`` of their SAML credentials doesn't match the username of their Mattermost account. If so, the user can update the attribute at their identity provider (for instance, back to the old value if it had been previously updated). 
+This error message can also be received if the ``Username Attribute`` of their SAML credentials doesn't match the username of their Mattermost account. If so, your System Administrator can update it at the identity provider (for instance, back to the old value if it had been previously updated). 
 
 For ADFS, if the user wants to use another account for SAML instead, they will first need to log out from the existing session, then re-enter credentials for the other account. To log out from the existing session, either:
 
@@ -80,7 +80,7 @@ Settings > Security > Sign-in method**.
 
 This error message can also be received if the ``Email Attribute`` of
 their SAML credentials doesn't match the email address of their
-Mattermost account. If so, the user can update the attribute at their
+Mattermost account. If so, your System Administrator can update it at the
 identity provider (for instance, back to the old value if it had been
 previously updated).
 
