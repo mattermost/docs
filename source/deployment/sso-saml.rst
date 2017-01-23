@@ -62,8 +62,6 @@ tool <http://docs.mattermost.com/deployment/on-boarding.html#creating-system-adm
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This usually means an existing account has another authentication method enabled. If the user wants to use the existing account for SAML authentication, they should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
-     
-This error message can also be received if the ``Username Attribute`` of their SAML credentials doesn't match the username of their Mattermost account. If so, your System Administrator can update it at the identity provider (for instance, back to the old value if it had been previously updated). 
 
 For ADFS, if the user wants to use another account for SAML instead, they will first need to log out from the existing session, then re-enter credentials for the other account. To log out from the existing session, either:
 
