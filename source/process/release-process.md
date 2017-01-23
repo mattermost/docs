@@ -320,14 +320,17 @@ Once final dot release build is ready to cut:
     - Verify all items in the last posted release checklist are complete, if not alert the release manager
 2. Leads:
     - Update [company roadmap at mattermost.com](https://about.mattermost.com/direction/)
-    - Post [Mattermost Security Updates](https://about.mattermost.com/security-updates/) after reviewing with security lead.
-      - If a dot release is shipping with security fixes, do not post new details until T-plus 5 working days from the dot release ship date.
 3. PM:
-    - Update Security Issues spreadsheet with issue number from posted update (e.g. v3.2.0.1)
-    - Confirm the Security Researchers list on the [Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/) is up to date
     - Review "Community Installers" and update version numbers if there are any discrepencies https://www.mattermost.org/installation/ (move this to ops eventually)
 4. Build: 
     - Put pre-release back on master
+    
+### J. (T-plus 14 working days) Security Updates
+3. PM:
+    - Post [Mattermost Security Updates](https://about.mattermost.com/security-updates/) after reviewing with security lead.
+      - If a dot release is shipping with security fixes, do not post new details until T-plus 5 working days from the dot release ship date.
+    - Update Security Issues spreadsheet with issue number from posted update (e.g. v3.2.0.1)
+    - Confirm the Security Researchers list on the [Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/) is up to date
 
 
 ## Templates
