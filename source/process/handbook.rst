@@ -13,8 +13,9 @@ Our mission is to give every organization the power to achieve their highest pri
 Our vision is a world more connected to what matters most. 
 
 
+------------------------------------------
 Values
----------------------
+------------------------------------------
 
 Values are deliberate choices defining our behavior. When facing complexity, uncertainty, or ambiguity (CUA) we determine our point of view and our actions through the lens of our values: 
 
