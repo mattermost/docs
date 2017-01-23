@@ -129,7 +129,7 @@ Menu Bar
 
 The desktop app contains a menu bar with additional features and shortcuts to streamline your experience. 
 
-If the menu bar is hidden, you may use the ALT key to display the menu. To have the menu displayed at all times, go to the Settings page by pressing CTRL/CMD+COMMA and uncheck the **Hide menu bar** setting.
+If the menu bar is hidden, use the ALT key to display the menu. To have the menu displayed at all times, go to the Settings page by pressing CTRL/CMD+COMMA and uncheck the **Hide menu bar** setting.
 
 Below is a list of menu options with the corresponding keyboard shortcuts. For Mac, replace CTRL by CMD unless otherwise specified.
 
@@ -173,5 +173,5 @@ Below is a list of menu options with the corresponding keyboard shortcuts. For M
 
 **Help**
 
- - Learn More - Links to `Desktop Application’s User Guide <https://docs.mattermost.com/help/apps/desktop-guide.html>`_ .
+ - Learn More - Links to `Desktop Application’s User Guide <https://docs.mattermost.com/help/apps/desktop-guide.html>`_
  - Version - Indicates the desktop application version in use
