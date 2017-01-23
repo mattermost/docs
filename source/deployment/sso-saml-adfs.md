@@ -211,8 +211,6 @@ If the user wants to use another ADFS account for SAML instead, they will first 
 
 This usually means an existing account has another authentication method enabled. If so, the user should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
 
-This error message can also be received if the `Email Attribute` of their SAML credentials doesn't match the email address of their Mattermost account. If so, your System Administrator can update it at the identity provider (for instance, back to the old value if it had been previously updated).
-
 ##### 4. Received error message: `SAML login was unsuccessful because one of the attributes is incorrect. Please contact your System Administrator.`
 
 Confirm all attributes, including `Email Attribute` and `Username Attribute`, are correct in both the ADFS configuration and in **System Console > SAML**.
