@@ -75,9 +75,9 @@ Mattermost install guides include setup instructions for the NGNIX software prox
 
 In a high availability configuration (Enteprise Edition only) the proxy would also balance network load across multiple Mattermost servers.
 
-### Microsoft Active Directory Single-Sign-On (Enterprise Edition) 
+### Microsoft Active Directory Single Sign-On (Enterprise Edition) 
 
-Mattermost Enterprise Edition supports Microsoft Active Directory and LDAP single-sign-on with secure transport over TLS or stunnel. 
+Mattermost Enterprise Edition supports Microsoft Active Directory and LDAP single sign-on with secure transport over TLS or stunnel. 
 
 ### On-Premises Integrations
 
@@ -101,7 +101,7 @@ The entirety of the Mattermost server is accessible through a RESTful Web Servic
 
 Authenticates users by email or username plus password.
 
-For customers of Enterprise Edition, single-sign-on via Microsoft Active Directory and LDAP is also available.
+For customers of Enterprise Edition, single sign-on via Microsoft Active Directory and LDAP is also available.
 
 #### Authentication Provider
 

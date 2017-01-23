@@ -39,7 +39,7 @@ AD/LDAP is the most popular corporate directory integration option for deploying
 
 For very large AD/LDAP instances you can also configure max page size to divide a Mattermost AD/LDAP query into several pieces to not over-tax the authentication server when synchronizing.
 
-For private network deployments in development teams using GitLab for source control, `GitLab single-sign-on <https://docs.mattermost.com/deployment/sso-gitlab.html>`_ is also available. 
+For private network deployments in development teams using GitLab for source control, `GitLab single sign-on <https://docs.mattermost.com/deployment/sso-gitlab.html>`_ is also available. 
 
 DMZ authentication options 
 --------------------------
