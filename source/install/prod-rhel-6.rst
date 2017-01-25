@@ -3,4 +3,4 @@
 Production Install on RHEL 6.6
 ==============================
 
-This document has been superceded by :doc:`install-rhel-66`.
+This document is superseded by :doc:`install-rhel-66`.
