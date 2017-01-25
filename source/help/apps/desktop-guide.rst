@@ -31,6 +31,7 @@ To add a new server on the Mattermost instance,
 3. In the **Name** field, enter the name that you want for the tab. 
 4. In the **URL** field, enter the complete URL of the server that you want to connect to. Must begin with either ``http://`` or ``https://``.
 5. Click **Add**.
+6. Click **Save**.
 
 You can now access all teams you have joined in the server once you have saved the settings, and each will appear as a separate tab in the app. 
 
@@ -52,7 +53,8 @@ Removing servers and teams
 To remove a server from your desktop app environment, 
 
 1. On the menu bar, go to **File** > **Settings** or press CTRL/CMD+COMMA
-2. Click **Save** click on **Remove** next to the server or a team you want removed.
+2. Click on **Remove** next to the server or a team you want removed.
+3. Click **Save**.
 
 App Options
 ---------------------------------------------------------------------
@@ -64,39 +66,39 @@ The options appear in the Settings page, available from the **File** > **Setting
 Allow mixed content
     If your server is hosted on ``https://``, insecure content, images and scripts with ``http://`` are not rendered by default. This option allows such content to be rendered. If you do enable it, please be mindful of potential security risks shared over ``http://`` protocols.
     
-    This setting is on by default.
+    This setting is enabled by default.
 
 Show red badge on taskbar icon to indicate unread messages (Windows, Mac only)
     When enabled, a red badge is shown on the taskbar icon for unread messages with a number count indicating unread mentions. If disabled, a red badge is only shown for unread mentions (with a number count).
 
-    This setting is on by default.
+    This setting is enabled by default.
 
 Flash taskbar icon when a new message is received (Windows, Linux only)
     Configure whether the taskbar icon flashes when a new message is received on any of your active teams and servers.
 
-    This setting is off by default.
+    This setting is disabled by default.
 
 Start app on login (Windows, Linux only)
     When enabled, Mattermost application starts when you log in to your machine.
 
-    This setting is on by default.
+    This setting is enabled by default.
 
 Hide menu bar (Windows, Linux only)
     Hides the menu bar. When enabled, pressing ALT will toggle whether the menu bar is shown or hidden.
 
-    This setting is off by default.
+    This setting is disabled by default.
 
 Toggle window visibility when clicking on the tray icon (Windows only)
     When enabled, clicking on the system tray icon allows you to toggle the window open and minimized.
 
-    This setting is off by default.
+    This setting is disabled by default.
 
 Show icon on Menu Bar (Mac, Linux only)
     When enabled, a red dot with a count of unread mentions is displayed on the team tab bar.
 
-    This setting is off by default.
+    This setting is disabled by default.
 
 Leave app running in notification center when application window is closed (Mac, Linux only)
     When enabled, closing the application window will leave the Mattermost desktop app running in your notification center. This can be useful if you’d like to check for unread mentions while away from the app.
 
-    This setting is off by default.
+    This setting is disabled by default.
