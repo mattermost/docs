@@ -120,9 +120,8 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
 7. Start your server and address any setting changes relevant in the latest version of Mattermost
       1. Run `sudo start mattermost`.
       2. Opening the **System Console** and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added.
-8. If you have TLS set up on your Mattermost server, run `sudo setcap cap_net_bind_service=+ep ./bin/platform` in your Mattermost directory to allow Mattermost to bind to low ports.
-9. Test the ststem is working by going to the URL of the server with an `https://` prefix.
-      1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
+8. Test the system is working by going to the URL of an existing team.
+      You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 
 ### Upgrade Team Edition to Enterprise Edition
 
@@ -250,9 +249,8 @@ For any issues, Mattermost Enterprise Edition subscribers and trial license user
 7. Start your server and address any setting changes relevant in the latest version of Mattermost
       1. Run `sudo start mattermost`.
       2. Opening the **System Console** and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added.
-8. If you have TLS set up on your Mattermost server, run `sudo setcap cap_net_bind_service=+ep ./bin/platform` in your Mattermost directory to allow Mattermost to bind to low ports.
-9. Test the ststem is working by going to the URL of the server with an `https://` prefix.
-      1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
+8. Test the system is working by going to the URL of an existing team.
+      You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 
 For any issues, Mattermost Enterprise Edition subscribers and trial license users can email support@mattermost.com 
 
