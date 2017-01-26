@@ -228,6 +228,7 @@ The final release is cut. If an urgent and important issue needs to be addressed
 If a bug fix release is required, run through the following steps: 
 
 1. PM:
+    - Schedule a team Release Update meeting every day until the dot release is complete
     - Post links to approved tickets for next dot release RC to the Release Discussion channel
     - Make a post in Town Square announcing the dot release. [See example](https://pre-release.mattermost.com/core/pl/4aippek8yp8a3nex9anen5rjoc)
     - Update the GitHub meta issue:
