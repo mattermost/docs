@@ -49,13 +49,12 @@ This is a rough guideline for drafting and reviewing specs. It’s meant to be u
 
     - Update based on feedback, including wireframes / mock ups
     
-6. **Review again.**
+6. **Additional reviews.**
 
     - Post updated draft in Spec Review channel, asking the people who previously commented for another review
-    - Share with interested customers for feedback
+    - Share with interested customers for feedback when the spec is at an appropriate point
+    - Repeat reviews / updates as needed until final draft is signed off on by UX Design, PM, Dev, Test
     
-7. **Repeat reviews/updates.**
+7. **Break into tickets.**
 
-    - Repeat as needed until final draft is signed off on by UX Design, PM, Dev, Test
-    
-8. **Break into tickets with dev.**
+    - Dev breaks the spec into tickets, and reviews with PM so everyone is on the same page about the plan
