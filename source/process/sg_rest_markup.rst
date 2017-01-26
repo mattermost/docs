@@ -158,7 +158,7 @@ You can also add the following image options: `alt`, `height`, `width`, `scale`,
     :align: left //left, right or middle
     :scale: 50 //number is a percentage
 
-Inserting an inline image is a bit more complicated. It's a two-part construct that consists of a label and the image directive. Surround the label text with vertical bars, the `|` character. For example:
+Inserting an inline image is a bit more complicated. It's a two-part construct that consists of a label and the image directive. Surround the label text with vertical bars, the ``|`` character. For example:
 
 .. code-block:: none
 
