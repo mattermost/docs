@@ -102,26 +102,6 @@ Create space between elements, such as buttons, text, line separators, headers a
                 :alt: Vertically justified
                 :width: 500 px
 
-**Instructions should be sentences, one-line links should be fragments.**
-
-Instructions, such as “A password reset link has been sent to ``you@email.com`` for your account. Please check your inbox.”, should be displayed as sentences ending in periods. One-line links, such as “Find it here”, should not end in periods or commas, but question marks are okay.
-
-    **Example:**
-
-        Incorrect:
-            Instruction “Please check your inbox”, didn't end with a period.
-
-            ..  image:: ../images/align4.png
-                :alt: Period Missing
-                :width: 300 px
-
-        Correct:
-            Instruction “Please check your inbox”, ended with a period.
-
-            ..  image:: ../images/align5.jpg
-                :alt: Period added
-                :width: 300 px
-
 ---------------------------
 
 Display: Button Placement
@@ -192,7 +172,36 @@ Display: Icons
     a. File a bug if the icon is difficult to understand or has cosmetic defects (size, blur, etc.)
     b. File a bug when an icon doesn’t obviously indicate the underlying feature
 
+|
 ---------------------------
+
+
+Display: Instructions
+--------------
+
+**Instructions should be sentences, one-line links should be fragments.**
+
+Instructions, such as “A password reset link has been sent to ``you@email.com`` for your account. Please check your inbox.”, should be displayed as sentences ending in periods. One-line links, such as “Find it here”, should not end in periods or commas, but question marks are okay.
+
+    **Example:**
+
+        Incorrect:
+            Instruction “Please check your inbox”, didn't end with a period.
+
+            ..  image:: ../images/align4.png
+                :alt: Period Missing
+                :width: 300 px
+
+        Correct:
+            Instruction “Please check your inbox”, ended with a period.
+
+            ..  image:: ../images/align5.jpg
+                :alt: Period added
+                :width: 300 px
+
+|
+---------------------------
+
 
 Display: Username display
 ---------------------------
