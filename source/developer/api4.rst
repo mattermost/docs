@@ -33,11 +33,6 @@ following checklist:
 -  `Submit your
    implementation! <https://docs.mattermost.com/developer/api4.html#submitting-your-pull-request>`__
 
-A full example can be found through these two pull requests:
-
--  `Documenting the ``POST /teams`` endpoint <>`__
--  `Implementing the ``POST /teams`` endpoint <>`__
-
 Selecting an Endpoint
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -67,13 +62,8 @@ repository. To document an endpoint, follow these steps:
    `/source/v4 <https://github.com/mattermost/mattermost-api-reference/tree/master/source/v4>`__
    directory that fits your endpoint.
 
-   -  For example, if you were adding the ``GET /users/{user_id}`` endpoint
-   you would be looking for
-   `users.yaml <https://github.com/mattermost/mattermost-api-reference/tree/master/source/v4/users.yaml>`__
-   -  If the file doesn't exist yet, you might need to create it and update
-   the
-   `Makefile <https://github.com/mattermost/mattermost-api-reference/tree/master/Makefile>`__
-   to include it
+   -  For example, if you were adding the ``GET /users/{user_id}`` endpoint you would be looking for `users.yaml <https://github.com/mattermost/mattermost-api-reference/tree/master/source/v4/users.yaml>`__
+   -  If the file doesn't exist yet, you might need to create it and update the `Makefile <https://github.com/mattermost/mattermost-api-reference/tree/master/Makefile>`__ to include it
 
 3. Copy an existing endpoint from the same or a different file.
 4. Update the documention you copied with the correct information for
@@ -103,8 +93,7 @@ environment <https://docs.mattermost.com/developer/developer-setup.html>`__, the
 
 1. Add the declaration for your endpoint.
 
-   -  For example, see
-   `/api4/user.go <https://github.com/mattermost/platform/tree/master/api4/user.go>`__
+   -  For an example, see `/api4/user.go <https://github.com/mattermost/platform/tree/master/api4/user.go>`__
 
 2. Implement the handler for your endpoint.
 
@@ -125,29 +114,26 @@ environment <https://docs.mattermost.com/developer/developer-setup.html>`__, the
        // 5. Format the response and write the response 
      }
 
-   - For examples, see the [updateUser()](https://github.com/mattermost/platform/tree/master/api4/user.go#L86) and the [getUser()](https://github.com/mattermost/platform/tree/master/api4/user.go#L58) handlers 
+   - For examples, see the `updateUser() <https://github.com/mattermost/platform/tree/master/api4/user.go#L86>`_ and the `getUser() <https://github.com/mattermost/platform/tree/master/api4/user.go#L58>`_ handlers.
 
 3. Run the server using ``make run-server`` to check for syntax errors. 
-4. (Optional) Use ``curl`` or `Postman <https://www.getpostman.com/>`__ to test the basics of your endpoint. 
-   - This step is optional since you can use the unit test you're going to write to test the endpoint
+4. (Optional) Use ``curl`` or `Postman <https://www.getpostman.com/>`__ to test the basics of your endpoint. The endpoint will also be tested `through a unit test <https://docs.mattermost.com/developer/api4.html#writing-a-unit-test>`_, so this step is optional.
 
 Updating the Go Driver
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The Go driver for APIv4 is in
-`/model/client4.go <https://github.com/mattermost/platform/tree/master/model/client4.go>`__.
+The Go driver for APIv4 is in `/model/client4.go <https://github.com/mattermost/platform/tree/master/model/client4.go>`__. 
+
 To add a function to support your new endpoint:
 
-1. Copy an existing driver function, such as
-   `CreateUser <https://github.com/mattermost/platform/tree/master/model/client4.go#L186>`__.
+1. Copy an existing driver function, such as `CreateUser <https://github.com/mattermost/platform/tree/master/model/client4.go#L186>`__.
 2. Paste the function into the section for your endpoint.
 
    -  For example, ``POST /teams`` would go in the Teams section
 
 3. Modify the function to correctly hit your endpoint.
 
-   -  Make sure to update the request method to match your endpoint's HTTP
-   method
+   -  Make sure to update the request method to match your endpoint's HTTP method
 
 That's it, you'll be able to test your function in the next section.
 
@@ -159,28 +145,20 @@ works correctly. Follow these steps to write a test:
 
 1. Open the test Go file related to your endpoint.
 
-   -  For example, if you put your handler in
-   `/api4/user.go <https://github.com/mattermost/platform/tree/master/api4/user.go>`__
-   your test will go in
-   `/api4/user\_test.go <https://github.com/mattermost/platform/tree/master/api4/user_test.go>`__
+   -  For example, if you put your handler in `/api4/user.go <https://github.com/mattermost/platform/tree/master/api4/user.go>`__ your test will go in `/api4/user\_test.go <https://github.com/mattermost/platform/tree/master/api4/user_test.go>`__
 
 2. Write your test based on the other tests in your file
 
-   -  There are several helper functions in
-   `/api4/apitestlib.go <https://github.com/mattermost/platform/tree/master/api4/apitestlib.go>`__
-   that you may use
+   -  There are several helper functions in `/api4/apitestlib.go <https://github.com/mattermost/platform/tree/master/api4/apitestlib.go>`__ that you may use
 
 3. Make sure your test covers the following:
 
    -  All combinations of correct inputs to your endpoint
    -  Etags for your endpoint, if applicable
    -  Incorrect URL or body parameters return a **400 Bad Request** status code
-   -  Requests without a token return a **401 Unauthorized** status code (for
-   endpoints requiring a session)
-   -  Requests with insufficent permissions return a **403 Forbidden** status
-   code (for endpoints requiring a permission)
-   -  Requests to non-existent resources or URLs return a **404 Not Found**
-   status code
+   -  Requests without a token return a **401 Unauthorized** status code (for endpoints requiring a session)
+   -  Requests with insufficent permissions return a **403 Forbidden** status code (for endpoints requiring a permission)
+   -  Requests to non-existent resources or URLs return a **404 Not Found** status code
 
 Returning the correct error code might require investigation in the
 `app <https://github.com/mattermost/platform/tree/master/app>`__ or
