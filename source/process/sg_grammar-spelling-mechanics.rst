@@ -13,7 +13,7 @@ Paragraphs and Sentences
 
 Paragraphs should express one idea or topic. Long paragraphs are sometimes difficult to read on screen, so try to keep them to five sentences or less. Short paragraphs are easier for people to scan quickly.
 
-Try to keep sentences to 25 words or less in length. Short, single-clause sentences are often easier to understand and easier to translate. Tools such as the `Hemingway writing app <http://www.hemingwayapp.com/>`_ can be helpful in checking for readability.
+Try to keep sentences to 25 words or less in length. Short, single-clause sentences are often easier to understand and easier to translate. Tools such as the `Hemingway writing app <http://www.hemingwayapp.com/>`_ can be helpful in evaluating readability. Target a readability level of Grade 6.
 
 Tone
 ~~~~~
@@ -21,7 +21,7 @@ Tone
 Use a direct, impartial tone. Mattermost documentation is written to answer questions and solve problems, not to entertain.
 
 Preferred
-  If login fails due to an invalid password, turn Caps Lock off and then attempt to re-enter your password. 
+  If login fails due to an invalid password, turn Caps Lock off and then re-enter your password. 
 
 Avoid
   Failed sign in? No problem! Simply enter the correct password and we'll let you in right away.
@@ -35,7 +35,7 @@ Preferred
   The system opens the *Status* pane.
 
 Avoid
-  The *Status* pane is will be opened by the system.
+  The *Status* pane will be opened by the system.
   
 Person
 ~~~~~~
@@ -62,7 +62,7 @@ Avoid
 Commas
 ------
 
-In general, Mattermost documentation will use the serial comma unless doing so decreases clarity and understanding of the sentence.
+Use the serial comma unless doing so decreases clarity and understanding of the sentence.
 
 Preferred
   The cows ran from wolves, coyotes, and mosquitoes.
@@ -116,7 +116,7 @@ Clickable control  **bold**            "Click **File > Save**."
 Citations          *italic*            "Read the book *Clean Code* by Robert Martin."
 Window titles      *italic*            "The *Account Settings* window opens."
 Keyboard buttons   Key1+Key2           "Press CTRL+U to upload a file."
-Placeholder field  {placeholder}       "Use the URL in the form of {domain}.mattermost.com/{team}."
+Placeholder field  {placeholder}       "Use the URL in the form of {hostname}.mattermost.com/{team}."
 =================  ==================  =============================================================
 
 Bullet Lists
