@@ -81,7 +81,7 @@ Display: Alignment
 
 Create space between elements, such as buttons, text, line separators, headers and backgrounds, by leaving even space around them (either equal space or at most 1 pixel difference).
 
-    **Example:**
+    **Examples:**
 
         Button positioned in the middle of the header.
             ..  image:: ../images/align1.jpg
@@ -127,7 +127,7 @@ Instructions, such as “A password reset link has been sent to ``you@email.com`
 Display: Button Placement
 -------------------------
 
-**Dialog BOTTOM RIGHT BUTTONS should be either “Close”, or “Cancel” and [ACTION_BUTTON].**
+**Button in the footer of the dialog should either be “Close”, or “Cancel” and [ACTION_BUTTON].**
 
 If there’s one button on the bottom right, it should be “Close”, if there are two, the one on the left should be “Cancel” and the one on the right should be an [ACTION_BUTTON], like “Save” or “Send Invitations”.
 
@@ -194,12 +194,12 @@ Display: Icons
 
 ---------------------------
 
-Display: Mentions(@) icon
+Display: Username display
 ---------------------------
 
-The username of any user should be preceded by the @ icon at all places except for the Direct messages list in the Left hand sidebar, and for any post or comment made by the user.
+The username of any user should be preceded by the @ icon at all places except for the Direct Messages list in the left-hand sidebar, and for any post or comment made by the user.
 
-Examples of some places where an @ icon should be preceeded before the username are as follows:
+Examples of where an @ icon should precede the username are as follow:
 
 - User list in the system console.
 - Autocomplete.
@@ -233,7 +233,7 @@ Example:
 Feedback: Error Messages
 ------------------------
 
-On occasion, Mattermost users may encounter a problem that prevents them or the Mattermost system from successfully completing a task. The unexpected user behaviour or system response should be communicated to the user through an error message, and should follow the design principles of forgiving and obvious.
+On occasion, Mattermost users may encounter a problem that prevents them or the Mattermost system from successfully completing a task. The unexpected user behavior or system response should be communicated to the user through an error message, and should follow the design principles of forgiving and obvious.
 
 Error messages should:
 
@@ -254,28 +254,29 @@ Error message should not:
 
 **Examples:**
 
-    This is an example of a good error message:
-
-    ..  image:: ../images/error1.png
-        :alt: Good Error Message
-
-    This is an example of a bad error message:
+    Incorrect:
+        This is an example of a bad error message:
 
     ..  image:: ../images/error2.png
         :alt: Bad Error Message
+
+    Correct:
+        This is an example of a good error message:
+
+    ..  image:: ../images/error1.png
+        :alt: Good Error Message
 
 -----
 
 Input: Fields
 -------------
 
-Users should enter information into fields without much thinking. ENTER button on last
-input field should trigger default dialog button. When last input field in a series has
-focus and user hits ENTER it should trigger the default button in the dialog.
+Users should enter information into fields without much thinking. Enter button on last
+input field should trigger default dialog button.
 
 **Example 1:**
 
-    If focus is on the last input field in dialog (“Miller”), hitting ENTER triggers the default dialog button (“Send Invitations”)
+    If focus is on the last input field in dialog (“Miller”), hitting Enter triggers the default dialog button (“Send Invitations”)
 
     ..  image:: ../images/inputField1.png
         :alt: Input Field Enter
@@ -354,7 +355,7 @@ Input: Hints
 Input: Input Patterns
 ---------------------
 
-All inputs such as textareas should behave consistently. If the default behaviour is to perform an action on "Enter", then all inputs of that type should be consistent and perform an action on "Enter".
+All inputs such as textareas should behave consistently. If the default behavio3r is to perform an action on "Enter", then all inputs of that type should be consistent and perform an action on "Enter".
 
 **Example 1:**
     If pressing "Enter" posts a message in the center channel post input.
@@ -382,7 +383,7 @@ Input: Validation
 
 **Feedback on action:**
 
-The user should be notified about the action he performed along with any implications associated with it.
+User should be notified about the action they perform along with any implications associated with them.
 
   Example 1:
     "Settings are saved but will be applied after a server restart"
@@ -411,7 +412,7 @@ A prompt should appears if a user makes changes to a setting and attempts to nav
 Menu items
 ----------
 
-Items in a menu should be grouped together based on the category they belong to. Items per category however should not exceed 5 for the app and 7 for system console.
+Items in a menu should be grouped together based on the category they belong to. Items per category however should not exceed five, with the execption of seven for the System Console.
 
 **Example:**
 
@@ -420,10 +421,17 @@ Items in a menu should be grouped together based on the category they belong to.
 
 -----
 
-Notifications: Header
+Notifications: Header Bar
 ---------------------
 
-Appears as an additional header at the top of the UI. May include an “x” button to dismiss. Limited to 60 characters. May include a time-out. Header notification should appear over the rest of the UI instead of pushing the UI down. Multiple headers can appear, with the earliest notification at the top and more recent notifications appearing underneath.
+The header bar appears as a dropdown bar from the top of the screen. The header bar:
+
+1. May include an "x" button to dismiss
+2. Be limited to 60 characters
+3. May include a time-out
+4. Appear over the rest of the UI instead of pushing the UI down
+
+Multiple headers can appear, with the earliest notification at the top and more recent notifications appearing underneath.
 
 **Desktop**
 
@@ -439,23 +447,28 @@ There are several modes for this element:
 
     **System-wide header notification:**
 
-        | Triggered on login. Includes “x” button to dismiss. No timeout. Removed when system admin cancels.
-        |
+        - Triggered on login
+        - Includes “x” button to dismiss
+        - No timeout
+        - Removed when system admin cancels
         | Examples:
         | “Try our new Windows App. Click here to download.”,
         | “Scheduled maintenance 2:00am to 2:30am starts in 20 minutes, 3 seconds.”
 
     **Action required header notification:**
 
-        | Triggered on login. No “x” button to dismiss. No timeout. Dismissed when action completed.
-        |
+        - Triggered on login.
+        - No “x” button to dismiss.
+        - No timeout.
+        - Dismissed when action completed.
         | Examples:
         | “We’re evolving. Please review and accept our new terms of service.”
 
     **Persistent issue header notification:**
 
-        | Triggered on issue. No “x” button to dismiss. Dismissed when issue no longer persists.
-        |
+        - Triggered on issue.
+        - No “x” button to dismiss.
+        - Dismissed when issue no longer persists.
         | Examples:
         | “You are not connected to the internet.”
 
