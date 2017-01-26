@@ -34,7 +34,7 @@ Set up Database Server
 
 2.  Install PostgreSQL 9.4+ (or MySQL 5.6+)
 
-    -  ``sudo yum install http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/pgdg-redhat94-9.4-1.noarch.rpm``
+    -  ``sudo yum install http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/pgdg-redhat94-9.4-3.noarch.rpm``
     -  ``sudo yum install postgresql94-server postgresql94-contrib``
     -  ``sudo /usr/pgsql-9.4/bin/postgresql94-setup initdb``
     -  ``sudo systemctl enable postgresql-9.4.service``
