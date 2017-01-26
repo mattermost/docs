@@ -1,5 +1,5 @@
-APIv4 Contribution Processes
-============================
+APIv4 Contribution Process
+==========================
 
 `Mattermost API version 4 <https://docs.google.com/document/d/197JwEBMnK8okFilTfGSpbsrXPY5RZOJ4gG2DXwcbwYE/edit>`_ is an active and on-going project. We're
 looking for contributors to code server endpoints, build drivers and
@@ -37,9 +37,9 @@ Selecting an Endpoint
 ~~~~~~~~~~~~~~~~~~~~~
 
 Select an endpoint `from the progress spreadsheet <https://docs.google.com/spreadsheets/d/1nPoLgwh_9zRFECpqRUZAKIWihCmX27pnDtFGLtG_WnY/edit#gid=0>`__ that you would
-like to implement and post in the `APIv4
+like to implement, then post in the `APIv4
 channel <https://pre-release.mattermost.com/core/channels/apiv4>`__,
-letting us know that you'd like to work on it. One of us will then
+and let us know that you'd like to work on it. One of the project leads will then
 update the spreadsheet so other contributors know you're implementing the
 endpoint.
 
@@ -175,5 +175,4 @@ Submitting your Pull Request
 You've done it! You've implemented an APIv4 endpoint and we really
 appreciate your help. You can now submit a pull request against the
 `mattermost/platform <https://github.com/mattermost/platform>`__
-repository by `following the instructions
-here <https://docs.mattermost.com/developer/contribution-guide.html#preparing-a-pull-request>`__.
+repository by `following these instructions <https://docs.mattermost.com/developer/contribution-guide.html#preparing-a-pull-request>`__.
