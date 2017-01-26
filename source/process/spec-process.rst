@@ -30,13 +30,13 @@ This is a rough guideline for drafting and reviewing specs. It’s meant to be u
     - Pair reviews
     
       - Iterate on designs as needed
-      - Early check in with developers to identify any potential issues
+      - Early meetings with developers to discuss the design, and identify any potential issues
       
 3. **Share with team.**
 
     - Post draft with @channel in Spec Review channel, asking to review and add comments
     
-4. **Spec review.**
+4. **Initial spec review.**
 
     - Schedule a meeting with interested people to discuss comments and any other questions about the spec, try to include at least one member from each of the following teams:
     
