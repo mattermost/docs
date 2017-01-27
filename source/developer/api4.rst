@@ -1,9 +1,9 @@
 APIv4 Contribution Process
 ==========================
 
-`Mattermost API version 4 <https://docs.google.com/document/d/197JwEBMnK8okFilTfGSpbsrXPY5RZOJ4gG2DXwcbwYE/edit>`_ is an active and on-going project. We're
+`Mattermost API version 4 <https://docs.google.com/document/d/197JwEBMnK8okFilTfGSpbsrXPY5RZOJ4gG2DXwcbwYE/edit>`_ is an active and ongoing project. We're
 looking for contributors to code server endpoints, build drivers and
-write documentation. If you're interested `please join our Mattermost
+write documentation. If you're interested `please sign up for our Mattermost
 instance <https://pre-release.mattermost.com/signup_user_complete/?id=f1924a8db44ff3bb41c96424cdc20676>`__
 and join the `APIv4
 channel <https://pre-release.mattermost.com/core/channels/apiv4>`__.
@@ -17,8 +17,7 @@ project leads are Joram Wilander (@joram) on development and Jason Blais
 Adding an Endpoint
 ------------------
 
-To add an endpoint to API version 4, each item must be completed on the
-following checklist:
+To add an endpoint to API version 4, each item on the following checklist must be completed:
 
 -  `Select an endpoint to
    implement <https://docs.mattermost.com/developer/api4.html#selecting-an-endpoint>`__
