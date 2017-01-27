@@ -86,8 +86,7 @@ Day when leads and PM area owners decide which major features are included in th
     - Create meta issue for release in GitHub (see [example](https://github.com/mattermost/platform/issues/3702))
 5. Marketing:
     - Begins to draft blog post, tweet, and email for the release announcement
-    
- 
+
 ### E. (T-minus 8 working days) Code Complete and Release Candidate Cut
 
 **Stablization** period begins when all features for release have been committed. During this period, only **bugs** can be committed to the release branch. Non-bug pull requests are tagged for next version.
