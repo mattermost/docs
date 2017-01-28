@@ -52,7 +52,7 @@ Assume that the IP address of this server is 10.10.10.2
     a. Change to the ``bin`` directory:
       ``cd /opt/mattermost/bin``
     b. Start the Mattermost server as the user mattermost:
-      ``sudo -u mattermost /.platform``
+      ``sudo -u mattermost ./platform``
    
   When the server starts, it shows some log information and the text ``Server is listening on :8065``. You can stop the server by typing ``CTRL+C`` in the terminal window.
 
