@@ -312,6 +312,7 @@ Once final dot release build is ready to cut:
     - Confirm gitlab.mattermost.com is updated to final build
 5. Marketing:
     - Confirm marketing has been posted (animated GIFs, screenshots, mail announcement, tweets, blog posts)
+    - Update @mattermosthq Twitter profile with the next release date
     - Prepare retweet of GitLab release tweet ([see example here](https://pre-release.mattermost.com/core/pl/k7wchwj5mtrhucj6don96yx3sc))
 
 ### J. (T-plus 5 working days) Release Updates
