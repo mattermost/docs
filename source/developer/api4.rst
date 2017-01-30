@@ -31,6 +31,11 @@ To add an endpoint to API version 4, each item on the following checklist must b
    test <https://docs.mattermost.com/developer/api4.html#writing-a-unit-test>`__
 -  `Submit your
    implementation! <https://docs.mattermost.com/developer/api4.html#submitting-your-pull-request>`__
+   
+A full example can be found through these two pull requests:
+
+- Documenting the ``POST /teams`` endpoint: `/mattermost-api-reference #72 <https://github.com/mattermost/mattermost-api-reference/pull/72>`_
+- Implementing the ``POST /teams`` endpoint: `/platform #5220 <https://github.com/mattermost/platform/pull/5220>`_
 
 Selecting an Endpoint
 ~~~~~~~~~~~~~~~~~~~~~
