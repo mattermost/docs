@@ -39,6 +39,7 @@ Before submitting a pull request (PR), check that:
     - Go to **System Console** > **Developer** and set **Enable Testing Commands** to true
     - Run `/loadtest url test-markdown-basics.md` and follow the instructions
     - Run `/loadtest url test-markdown-lists.md` and follow the instructions
+    - Run `/loadtest url test-tables.md` and follow the instructions
 9. Confirm you have [squashed your commits](http://git-scm.com/book/en/v2/Git-Tools-Rewriting-History#Squashing-Commits).
 
 ## Submitting a Pull Request 
