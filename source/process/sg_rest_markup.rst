@@ -96,7 +96,7 @@ Create numbered lists and procedure steps using numbers for the top-level list a
 External Links
 ---------------
 
-URLs will automatically be rendered as a hyperlink in Sphinx; however, where possible, it is preferred that links are embedded within the text of a sentence. Embed links into text using the following formatting:
+URLs will automatically be rendered as links in Sphinx; however, where possible, it is preferred that hyperlinks are created within the text of a sentence. Hyperlinks within a sentence can be created using the following formatting:
 
 ``Link display text <URL-of-website>`_``, for example:
 
