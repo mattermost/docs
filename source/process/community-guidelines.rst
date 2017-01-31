@@ -21,38 +21,41 @@ Principles
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Contributors get a worthwhile benefit from their contributions, from the feature directly and/or from social recognition
-- Help Wanted issues should have a low barrier to contribute
+- Community members should have a low barrier to contribute
+- Community development workflow should be clear, efficient and effective
 
 Creating Help Wanted issues
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To create a Help Wanted issue in the `platform repository <https://github.com/mattermost/platform>`_, follow these steps:
 
-1 - Create a ticket in Jira that is well defined and unambiguous. The issue should be written with the mindset that the contributor might have no or limited experience with the Mattermost code base and limited exposure to the Mattermost product
+1 - Create a ticket in Jira that is well-defined and unambiguous. 
 
-Below are a few reasons why Jira ticket for Help Wanted issues is recommended:
+The issue should be written with the mindset that the contributor might have no or limited experience with the Mattermost code base and limited exposure to the Mattermost product.
 
- - Jira can be used to prioritize Help Wanted issues internally and are easily searchable by Mattermost staff, community, and customers
- - Each Jira ticket goes through the  `triage meeting <https://docs.mattermost.com/process/training.html#triage-meeting>`_ for dev and PM approval
- - Zapier integration automatically creates GitHub Help Wanted issues from labelled Jira tickets, requiring no additional mana
- - resolved Jira tickets are automatically assigned to a QA, who tests them on the CI
+  .. note::
+    Below are a few reasons why Jira ticket for Help Wanted issues is recommended:
+    
+      1. Jira can be used to prioritize Help Wanted issues internally and are easily searchable by Mattermost staff, community, and customers
+      2. Each Jira ticket goes through the  `triage meeting <https://docs.mattermost.com/process/training.html#triage-meeting>`_ for dev and PM approval
+      3. Zapier integration automatically creates GitHub Help Wanted issues from labelled Jira tickets, requiring no additional mana
+      4. resolved Jira tickets are automatically assigned to a QA, who tests them on the CI
 
-2 - After creating the ticket, add "(Proposed APR)" to its title, so the triage team knows to consider it for a `help-wanted` label
+2 - After creating the ticket, add "(Proposed APR)" to its title, so the triage team knows to consider it for a ``help-wanted`` label.
 
-3 - If the Jira ticket is accepted as a help wanted issue during `triage <https://docs.mattermost.com/process/training.html#triage-meeting>`_, a `help-wanted` label is added. This action automatically triggers a zap that creates a Help Wanted issue in the `platform repository <https://github.com/mattermost/platform>`_.
+3 - If the Jira ticket is accepted as a Help Wanted issue during `triage <https://docs.mattermost.com/process/training.html#triage-meeting>`_, a ``help-wanted`` label is added. This action automatically triggers a zap that creates a new issue in the `platform repository <https://github.com/mattermost/platform>`_.
 
-4 - After triage, PM on community rotation reviews formatting of the GitHub issue and asks a developer to add appropriate labels for difficulty level (one of `Introductory`, `Intermediate` and `Advanced`) and programming language (`Go` and `ReactJS`
+4 - After triage, PM on community rotation reviews formatting of the GitHub issue and asks a developer to add appropriate labels for difficulty level (one of ``Introductory``, ``Intermediate`` and ``Advanced``) and programming language (``Go`` and ``ReactJS``).
 
 `See an example Help Wanted issue here <https://github.com/mattermost/platform/issues/4755>`_.
 
 Managing Help Wanted issues
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Once a Help Wanted issue is added, the creator is responsible for:
+Once a Help Wanted issue is added, the PM on community rotation is responsible for:
 
 - answering questions from community members, which get automatically posted in the `Community Heartbeat channel <https://pre-release.mattermost.com/core/channels/community-heartbeat>`_
-- following up with a community member if there hasn't been a response for two weeks
-- being the first tester once a pull request has been submitted
+- following up with a community member if there hasn't been a response for more than two weeks
 
 Closing Help Wanted issues
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
