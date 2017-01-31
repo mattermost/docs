@@ -39,35 +39,35 @@ To ensure your instance and configuration are compatible with high availability,
 
 .. note:: Backup your `Mattermost database <https://docs.mattermost.com/deployment/cluster.html#database-configuration>`_ and `file storage locations <https://docs.mattermost.com/deployment/cluster.html#file-storage-configuration>`_ before configuring high availability.
 
-1. Follow our `upgrade guide <https://docs.mattermost.com/administration/upgrade.html>`_ to upgrade your Mattermost server to v3.3 or later. 
-2. Setup a new Mattermost server with v3.3 or later following one of our **Install Guides**. This server must use an identical copy of the configuration file, ``config.json``. Verify the servers are functioning by hitting each independent server through it’s private IP address.
-3. Modify the ``config.json`` files on both servers to add the ``ClusterSettings`` as `described in this documentation <https://docs.mattermost.com/administration/config-settings.html#id58>`_. 
+1. Follow our :doc:`../administration/upgrade` to upgrade your Mattermost server to v3.3 or later. 
+2. Setup a new Mattermost server with v3.3 or later following one of our **Install Guides**. This server must use an identical copy of the configuration file, ``config.json``. Verify the servers are functioning by hitting each independent server through its private IP address.
+3. Modify the ``config.json`` files on both servers to add the ``ClusterSettings`` as described in the *High Availability (Beta)* section of :doc:`../administration/config-settings`.
 4. Verify the configuration files are identical on both servers then restart each machine in the cluster.
-5. Modify your NGINX setup as described in `Proxy Server Configuration`_  so that it proxies to both servers.
-6. Open the **System Console** > **Advanced** > **High Availability (Beta)** to verify all the machines in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
+5. Modify your NGINX setup  so that it proxies to both servers. For more information about this, see `Proxy Server Configuration`_
+6. Open **System Console > Advanced > High Availability (Beta)** to verify all the machines in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
 
 Adding a Server to the Cluster
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Backup your `Mattermost database <https://docs.mattermost.com/deployment/cluster.html#database-configuration>`_ and `file storage location <https://docs.mattermost.com/deployment/cluster.html#file-storage-configuration>`_.
-2. Setup a new Mattermost server following one of our **Install Guides**. This server must use an identical copy of the configuration file, ``config.json``. Verify the server is functioning by hitting the private IP address.
-3. Modify the ``config.json`` files on all servers with the ``ClusterSettings`` as `described in this documentation <https://docs.mattermost.com/administration/config-settings.html#high-availability-beta>`_. Be sure to add the new server URL to ``InterNodeUrls``. 
-4. Verify the configuration files are identical on all servers, then restart each machine in the cluster in sequence with 10 or more seconds between each restart.
-5. `Modify your NGINX setup <https://docs.mattermost.com/deployment/cluster.html#proxy-server-configuration>`_ to add the new server.
-6. Open the **System Console** > **Advanced** > **High Availability (Beta)** to verify all the machines in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
+1. Backup your Mattermost database and the file storage location.
+2. Setup a new Mattermost server. This server must use an identical copy of the configuration file, ``config.json``. Verify the server is functioning by hitting the private IP address.
+3. Modify the ``config.json`` files on all servers with the ``ClusterSettings`` as described in the *High Availability (Beta)* section of :doc:`../administration/config-settings`. Be sure to add the new server URL to ``InterNodeUrls``. 
+4. Verify that the configuration files are identical on all servers, then restart each machine in the cluster in sequence with 10 or more seconds between each restart.
+5. Modify your NGINX setup to add the new server. For information about this, see `Proxy Server Configuration`_.
+6. Open the **System Console > Advanced > High Availability (Beta)** to verify that all the machines in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
 
 Removing a Server from the Cluster
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Backup your `Mattermost database`_ and `file storage location <https://docs.mattermost.com/deployment/cluster.html#file-storage-configuration>`_.
-2. `Modify your NGINX setup <https://docs.mattermost.com/deployment/cluster.html#proxy-server-configuration>`_ to remove the server.
+1. Backup your Mattermost database and the file storage location.
+2. Modify your NGINX setup to remove the server. For information about this, see `Proxy Server Configuration`_.
 3. On all servers staying active in the cluster, modify the ``ClusterSettings`` in ``config.json`` to remove the server from ``InterNodeUrls`` 
-4. Verify the configuration files are identical on all servers, then restart each machine in the cluster in sequence with 10 or more seconds between each restart.
-5. Open the **System Console** > **Advanced** > **High Availability (Beta)** to verify all the machines in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
+4. Verify that the configuration files are identical on all servers, then restart each machine in the cluster in sequence with 10 or more seconds between each restart.
+5. Open the **System Console > Advanced > High Availability (Beta)** to verify that all the machines in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
 
 Configuration and Compatibility
 -------------------------------
-Details on configuring your system for high availability.    
+Details on configuring your system for high availability.
 
 Mattermost Server Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -77,7 +77,7 @@ Configuration Settings
 
 High availability is configured in the ``ClusterSettings`` section of ``config.json`` and the settings are viewable in the System Console. When high availability is enabled, the System Console is set to read-only mode to ensure all the ``config.json`` files on the Mattermost servers are identical.
  
-.. code::
+.. code-block:: none
 
   "ClusterSettings": {
         "Enable": false,
@@ -85,30 +85,29 @@ High availability is configured in the ``ClusterSettings`` section of ``config.j
         "InterNodeUrls": []
   }
 
-
-Please refer to our `Configuration Settings documentation <https://docs.mattermost.com/administration/config-settings.html#high-availability-beta>`_ for more details on these settings.
+For more details on these settings, see the **High Availability (Beta)** section of :doc:`../administration/config-settings`.
 
 State
 ^^^^^
 
-The Mattermost Server is designed to have very little state to allow for horizontal scaling.  The items in state considered for scaling Mattermost are listed below:
+The Mattermost Server is designed to have very little state to allow for horizontal scaling. The items in state considered for scaling Mattermost are listed below:
 
 - In memory session cache for quick validation and channel access,
 - In memory online/offline cache for quick response,
 - System configuration file that is loaded and stored in memory,
 - WebSocket connections from clients used to send messages.
 
-When the Mattermost Server is configured for high availability, the servers will use an inter-node communication protocol on a different listening address to keep the state in sync.  When a state changes it is written back to the database and an inter-node message is sent to notify the other servers of the state change.  The true state of the items can always be read from the database.  Mattermost also uses inter-node communication to forward WebSocket messages to the other servers in the cluster for real-time messages like “[User X] is typing.”
+When the Mattermost Server is configured for high availability, the servers  use an inter-node communication protocol on a different listening address to keep the state in sync. When a state changes it is written back to the database and an inter-node message is sent to notify the other servers of the state change. The true state of the items can always be read from the database. Mattermost also uses inter-node communication to forward WebSocket messages to the other servers in the cluster for real-time messages such as  “[User X] is typing.”
 
 
 Proxy Server Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The proxy server will expose the cluster of Mattermost servers to the outside world.  The Mattermost servers are designed for use with a proxy server like NGINX, hardware load balancer, or a cloud service like Amazon Elastic Load Balancer.
+The proxy server exposes the cluster of Mattermost servers to the outside world. The Mattermost servers are designed for use with a proxy server such as NGINX, a hardware load balancer, or a cloud service like Amazon Elastic Load Balancer.
 
-If you wish to monitor the server with a health check you can use ``http://10.10.10.2/api/v3/general/ping`` and check the response for ``Status 200``, indicating success.  Use this health check route to mark the server in-service or out-of-service.
+If you want to monitor the server with a health check you can use ``http://10.10.10.2/api/v3/general/ping`` and check the response for ``Status 200``, indicating success. Use this health check route to mark the server *in-service* or *out-of-service*.
 
-A sample configuration for NGINX is provided below.  It assumes you have two Mattermost servers running on private IP addresses of ``10.10.10.2`` and ``10.10.10.4``.
+A sample configuration for NGINX is provided below. It assumes that you have two Mattermost servers running on private IP addresses of ``10.10.10.2`` and ``10.10.10.4``.
 
 
 .. code-block:: none
@@ -135,67 +134,70 @@ A sample configuration for NGINX is provided below.  It assumes you have two Mat
     }
 
 
-A setup with multiple proxy servers can be utilized to limit a single point of failure, but is beyond the scope of this documentation.
-
+You can use multiple proxy servers to limit a single point of failure, but that is beyond the scope of this documentation.
 
 File Storage Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. note:: File storage is assumed to be shared between all the machines utilizing services such as NAS or Amazon S3. If ``"DriverName": "local"`` is used then the directory at ``"FileSettings":`` ``"Directory": "./data/"`` is expected to be a NAS location mapped as a local directory, otherwise high availability will not function correctly and may corrupt your file storage. If you’re using Amazon S3 for file storage then no other configuration is required.
+.. note::
+  1. File storage is assumed to be shared between all the machines that are using services such as NAS or Amazon S3.
+  2. If ``"DriverName": "local"`` is used then the directory at ``"FileSettings":`` ``"Directory": "./data/"`` is expected to be a NAS location mapped as a local directory, otherwise high availability will not function correctly and may corrupt your file storage.
+  3. If you’re using Amazon S3 for file storage then no other configuration is required.
 
-If you’re using the Compliance Reports feature in Enterprise Edition E20, you will need to configure the  ``"ComplianceSettings":`` ``"Directory": "./data/",`` to share between all machines or the reports will only be available from the System Console on the local Mattermost server.
+If you’re using the Compliance Reports feature in Enterprise Edition E20, you need to configure the  ``"ComplianceSettings":`` ``"Directory": "./data/",`` to share between all machines or the reports will only be available from the System Console on the local Mattermost server.
 
 Migrating to NAS or S3 from local storage is beyond the scope of this document.
 
 Database Configuration
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Scaling the database can be accomplished by utilizing the read-replica feature. The Mattermost server can be set up to use one "master" database and up to 8 read replica databases. Mattermost distributes read requests across all databases, and sends write requests to the master database, and those changes are then sent to update the read replicas. 
+Use the read-replica feature to scale the database. The Mattermost server can be set up to use one "master" database and up to 8 read replica databases. Mattermost distributes read requests across all databases, and sends write requests to the master database, and those changes are then sent to update the read replicas. 
 
 Sizing databases
 ````````````````
 
-Please see `documentation on sizing database servers <http://docs.mattermost.com/install/requirements.html#hardware-requirements>`_ for guidance to determine appropriate hardware. 
+For information about sizing database servers, see the *Hardware Sizing for Enterprise Deployments (Multi-Server)* section of :doc:`../install/requirements`.
 
 In a master/slave environment, make sure to size the slave machine to take 100% of the load in the event that the master machine goes down and you need to fail over.
-
 
 Deploying a multi-database configuration
 ````````````````````````````````````````
 
 To configure a multi-database Mattermost server: 
 
-1. Update the ``DataSource`` setting in ``config.json`` with a connection string to your master database server. The connection string is based on the database type set in ``DriverName``, either ``postgres`` or ``mysql``. 
+1. Update the ``DataSource`` setting in ``config.json`` with a connection string to your master database server. The connection string is based on the database type set in ``DriverName``, either ``postgres`` or ``mysql``.
 2. Update the ``DataSourceReplicas`` setting in ``config.json`` with a series of connection strings to your database read replica servers in the format ``["readreplica1", "readreplica2"]``. Each connection should also be compatible with the ``DriverName`` setting.
 
 The new settings can be applied by either stopping and starting the server, or by loading the configuration settings as described in the next section. 
 
-Once loaded, database write requests will be sent to the master database and read requests will be distributed among the other databases in the list.
+Once loaded, database write requests are sent to the master database and read requests are distributed among the other databases in the list.
 
 Loading a multi-database configuration onto an active server
 ````````````````````````````````````````````````````````````
 
-After a multi-database configuration has been defined in ``config.json`` the following procedure can be used to apply the settings without shutting down the Mattermost server: 
+After a multi-database configuration has been defined in ``config.json``, the following procedure can be used to apply the settings without shutting down the Mattermost server: 
 
-1. Go to **System Console** > **Configuration** and press **Reload Configuration from Disk** to reload configuration settings for the Mattermost server from ``config.json``. 
-2. Go to **System Console** > **Database** and press **Recycle Database Connections** to takedown existing database connections and set up new connections in the multi-database configuration. 
+1. Go to **System Console > Configuration** and click **Reload Configuration from Disk** to reload configuration settings for the Mattermost server from ``config.json``. 
+2. Go to **System Console > Database** and click **Recycle Database Connections** to take down existing database connections and set up new connections in the multi-database configuration.
 
-While connection settings are changing there may be a brief moment when writes to the master database will be unsuccessful. The process waits for all existing connections to finish and starts serving new requests with the new connections. End users attempting to send messages while the switch is happening will have an experience similar to losing connection to the Mattermost server.
+While the connection settings are changing, there might be a brief moment when writes to the master database are unsuccessful. The process waits for all existing connections to finish and starts serving new requests with the new connections. End users attempting to send messages while the switch is happening will have an experience similar to losing connection to the Mattermost server.
 
 Manual failover for master database
 ```````````````````````````````````
 
-If the need arises to switch from the current master database--for example, if it is running out of disk space, or requires maintenance updates, or for other reasons--the Mattermost server can switch to using one of its read replicas as a master database by updating ``DataSource`` in ``config.json``. The following procedure can be used to apply the settings without shutting down the Mattermost server: 
+If the need arises to switch from the current master database--for example, if it is running out of disk space, or requires maintenance updates, or for other reasons--you can switch Mattermost server to use one of its read replicas as a master database by updating ``DataSource`` in ``config.json``. 
 
-1. Go to **System Console** > **Configuration** and press **Reload Configuration from Disk** to reload configuration settings for the Mattermost server from ``config.json``. 
-2. Go to **System Console** > **Database** and press **Recycle Database Connections** to takedown existing database connections and set up new connections in the multi-database configuration. 
+To apply the settings without shutting down the Mattermost server: 
 
-While connection settings are changing there may be a brief moment when writes to the master database will be unsuccessful. The process waits for all existing connections to finish and starts serving new requests with the new connections. End users attempting to send messages while the switch is happening will have an experience similar to losing connection to the Mattermost server.
+1. Go to **System Console > Configuration** and click **Reload Configuration from Disk** to reload configuration settings for the Mattermost server from ``config.json``. 
+2. Go to **System Console > Database** and click **Recycle Database Connections** to take down existing database connections and set up new connections in the multi-database configuration. 
+
+While the connection settings are changing, there might be a brief moment when writes to the master database are unsuccessful. The process waits for all existing connections to finish and starts serving new requests with the new connections. End users attempting to send messages while the switch is happening will have an experience similar to losing connection to the Mattermost server.
 
 Transparent Failover
 ````````````````````
 
-The database can be configured for high availability and transparent failover utilizing the existing database technologies.  We recommend MySQL Clustering, Postgres Clustering, or Amazon Aoura.  Database transparent failover is beyond the scope of this documentation.
+The database can be configured for high availability and transparent failover use the existing database technologies. We recommend MySQL Clustering, Postgres Clustering, or Amazon Aoura. Database transparent failover is beyond the scope of this documentation.
 
 Update Guide
 ------------
@@ -221,7 +223,7 @@ A service interruption is not required for security patch dot releases of the Ma
 
 You can apply updates during a period of low load, but if your HA cluster is sized correctly, you can do it at any time. The system downtime is brief, and depends on the number of Mattermost servers in your cluster. Note that you are not restarting the machines, only the Mattermost server applications. A Mattermost server restart generally takes about 5 seconds.
 
-1. Review the upgrade procedure: `Upgrade Enterprise Edition <https://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition>`_.
+1. Review the upgrade procedure in the *Upgrade Enterprise Edition* section of :doc:`../administration/upgrade`.
 2. Make a backup of your existing ``config.json`` file.
 3. Set your proxy to move all new requests to a single server. If you are using NGINX and it's configured with an upstream backend section in ``/etc/nginx/sites-available/mattermost`` then comment out all but the one server that you intend to update first, and reload NGINX.
 4. Shut down Mattermost on each server except the one that you are updating first.
@@ -245,7 +247,7 @@ If the update includes a change to the database schema, the database is upgraded
 
 Apply updates during a period of low load. The system downtime is brief, and depends on the number of Mattermost servers in your cluster. Note that you are not restarting the machines, only the Mattermost server applications.
 
-1. Review the upgrade procedure: `Upgrade Enterprise Edition <https://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition>`_.
+1. Review the upgrade procedure in the *Upgrade Enterprise Edition* section of :doc:`../administration/upgrade`.
 2. Make a backup of your existing ``config.json`` file.
 3. Stop NGINX.
 4. Upgrade each Mattermost instance.
@@ -260,13 +262,15 @@ Troubleshooting
 Red Server Status
 ~~~~~~~~~~~~~~~~~
 
-When high availability is enabled, the System Console displays the server status as red or green, indicating if the servers are communicating correctly with the cluster. The servers use inter-node communication to ping the other machines in the cluster, and once a ping is established the servers exchange information, such as server version and configuration files. Red server status may display for the following reasons:
+When high availability is enabled, the System Console displays the server status as red or green, indicating if the servers are communicating correctly with the cluster. The servers use inter-node communication to ping the other machines in the cluster, and once a ping is established the servers exchange information, such as server version and configuration files.
+
+A server status of red can occur for the following reasons:
 
 - **Configuration file mismatch**: Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the high availability feature assumes the same configuration file to function properly.
-- **Server version mismatch**: Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the high availability feature assumes the same version of Mattermost is installed on each server in the cluster. It is recommended to use the `latest version of Mattermost <https://www.mattermost.org/download/>`_ on all servers. Follow the `upgrade procedure <https://docs.mattermost.com/administration/upgrade.html>`_ for any server that needs to be upgraded.
-- **Server is down**: If an inter-node communication fails to send a message it will attempt again in 15 seconds.  If the second attempt fails, the server is assumed to be down. An error message is written to the logs and the System Console will show a status of red for that server.
+- **Server version mismatch**: Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the high availability feature assumes the same version of Mattermost is installed on each server in the cluster. It is recommended to use the `latest version of Mattermost <https://www.mattermost.org/download/>`_ on all servers. Follow the upgrade procedure in :doc:`../administration/upgrade` for any server that needs to be upgraded.
+- **Server is down**: If an inter-node communication fails to send a message it will attempt again in 15 seconds. If the second attempt fails, the server is assumed to be down. An error message is written to the logs and the System Console will show a status of red for that server.
 
 WebSocket Disconnect
 ~~~~~~~~~~~~~~~~~~~~
 
-When a client WebSocket receives a disconnect it will automatically attempt to re-establish a connection every three seconds with a backoff.  Once the connection is established the client will attempt to receive any missing messages since it was disconnected.
+When a client WebSocket receives a disconnect it will automatically attempt to re-establish a connection every three seconds with a backoff. After the connection is established, the client attempts to receive any messages that were sent while it was disconnected.
