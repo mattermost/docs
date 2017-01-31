@@ -579,7 +579,7 @@ Enable account creation with email
 
 **True**: Allow team creation and account signup using email and password.
 
-**False**: Email signup is disabled and users are not able to invite new members. This limits signup to single-sign-on services like OAuth or AD/LDAP.
+**False**: Email signup is disabled and users are not able to invite new members. This limits signup to single sign-on services like OAuth or AD/LDAP.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableSignUpWithEmail": true`` with options ``true`` and ``false`` for above settings respectively.                     |

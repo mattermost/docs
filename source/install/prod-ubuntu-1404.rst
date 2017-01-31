@@ -171,10 +171,10 @@ For the purposes of this guide we will assume this server has an IP address of `
    -  Edit the file by typing:
    -  ``vi config.json``
    -  If you are using PostgreSQL:    
-     -  Set ``DriverName":`` to ``"postgres"``
+     -  Set ``"DriverName":`` to ``"postgres"``
      -  Set ``"DataSource:"`` to the following value: ``"postgres://mmuser:mmuser_password@10.10.10.1:5432/mattermost?sslmode=disable&connect_timeout=10"``
    -  If you are using MySQL:    
-     -  Set ``DriverName":`` to ``"mysql"``
+     -  Set ``"DriverName":`` to ``"mysql"``
      -  Set ``"DataSource":`` to the following value: ``"mmuser:mmuser_password@tcp(10.10.10.1:3306)/mattermost?charset=utf8"``
    -  You can continue to edit configuration settings in
       ``config.json`` or use the System Console described in a later

@@ -2,9 +2,17 @@
 
 This changelog summarizes updates to [Mattermost Team Edition](http://www.mattermost.org/), an open source team messaging solution released bi-monthly under an MIT license, and [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/), a commercial upgrade offering enterprise messaging for large organizations.
 
-## Release v3.6.0  
+## Release v3.6.1  
 
-Release date: 2017-01-16
+### Notes on Patch Release
+
+ - **v3.6.1, released 2017-01-19**
+   - Fixed a performance regression when sending many notifications at once (for example, when `@all` or `@channel` is used in a channel with many users)
+   - Fixed an issue where the config flag for the CLI was not backwards compatible
+   - Fixed an upgrade issue where for some databases, the Team Description index was not created properly
+   - Fixed an issue with messages not showing up after computer wakes from sleep
+ - **v3.6.0, released 2017-01-16**
+   - Original 3.6 release.
 
 ### Security Update
 
@@ -283,7 +291,7 @@ Many thanks to all our contributors. In alphabetical order:
 
 Thanks also to those who reported bugs that benefited the release, in alphabetical order:
 
- - [S6066](https://github.com/S6066) ([#5011](https://github.com/mattermost/platform/issues/5011))
+ - [bjoernr-de](https://github.com/bjoernr-de) ([#5079](https://github.com/mattermost/platform/issues/5079)), [S6066](https://github.com/S6066) ([#5011](https://github.com/mattermost/platform/issues/5011))
 
 ## Release v3.5.1  
 
@@ -1059,7 +1067,7 @@ Release date: 2016-07-16
 - Restrict the permission levels required to send team invitiations in **System Console** > **Policy**.
 - Restrict the permission levels required to manage public and private channels, including creating, deleting, renaming, and setting the channel header or purpose. 
 
-#### SAML Single-Sign-On ([Enterprise E20](https://about.mattermost.com/pricing/)):
+#### SAML Single Sign-On ([Enterprise E20](https://about.mattermost.com/pricing/)):
 
 - Users can sign in to Mattermost with their SAML credentials and new Mattermost user accounts are automatically created on first login. Mattermost pulls user information from SAML, including first and last name, email and username.
 - Mattermost officially supports Okta and Microsoft ADFS as the identity providers (IDPs), but you may also try configuring SAML for a custom IDP.
@@ -1854,8 +1862,8 @@ Expected Release date: 2016-02-16
 ##### Enhanced Support for Mobile Devices 
 
 - BREAKING CHANGE to APIs: New Android and updated iOS apps require `platform` 2.0 and higher
-- iOS added app support for GitLab single-sign-on
-- iOS added app support for AD/LDAP single-sign-on (Enterprise Edition only) 
+- iOS added app support for GitLab single sign-on
+- iOS added app support for AD/LDAP single sign-on (Enterprise Edition only) 
 
 ##### Upgrade and Deployment Improvements
 - Mattermost v2.0 now upgrades from up to two previous major builds (e.g. v1.4.x and v1.3.x)
@@ -1874,8 +1882,8 @@ Slash Commands
 
 iOS
 
-- [iOS app](https://github.com/mattermost/ios) added support for GitLab single-sign-on
-- [iOS app](https://github.com/mattermost/ios) added support for AD/LDAP single-sign-on (Enterprise Edition only) 
+- [iOS app](https://github.com/mattermost/ios) added support for GitLab single sign-on
+- [iOS app](https://github.com/mattermost/ios) added support for AD/LDAP single sign-on (Enterprise Edition only) 
 
 Android 
 
@@ -2760,7 +2768,7 @@ Released 2015-09-05
 
 #### Improved GitLab Mattermost support 
 
-Following the release of Mattermost v0.6.0 Alpha, GitLab 7.14 offered an automated install of Mattermost with GitLab Single-Sign-On (co-branded as "GitLab Mattermost") in its omnibus installer.
+Following the release of Mattermost v0.6.0 Alpha, GitLab 7.14 offered an automated install of Mattermost with GitLab Single Sign-On (co-branded as "GitLab Mattermost") in its omnibus installer.
 
 New features, improvements, and bug fixes recommended by the GitLab community were incorporated into Mattermost v0.7.0 Beta1--in particular, extending support of GitLab SSO to team creation, and restricting team creation to users with verified emails from a configurable list of domains.
 
@@ -2849,7 +2857,7 @@ Released 2015-08-07
 
 GitLab Mattermost 
 
-- OAuth2 support for GitLab Single-Sign-On
+- OAuth2 support for GitLab Single Sign-On
 - PostgreSQL support for GitLab Mattermost users
 - Support for Internet Explorer 10+ for GitLab Mattermost users
 

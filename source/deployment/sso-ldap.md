@@ -6,7 +6,7 @@ _Available in Enterprise Edition E10 & E20_
 
 Active Directory/LDAP integration offers the following benefits: 
 
-- **Single-sign-on.** Users can sign-in to Mattermost with their AD/LDAP credentials.
+- **Single sign-on.** Users can sign-in to Mattermost with their AD/LDAP credentials.
 - **Centralized identity management.** Mattermost accounts can display user information from AD/LDAP, such as first and last name, email and username.
 - **Automatic account provisioning.** New Mattermost user accounts are automatically created the first time a user signs in with their AD/LDAP credentials on the Mattermost server. 
 
@@ -35,7 +35,7 @@ After installing Mattermost:
 
 4. **Switch your System Administrator account from email to AD/LDAP authentication**. Go to **Account Settings** > **General** > **Sign-in Method** > **Switch to AD/LDAP** and sign-in with your AD/LDAP credentials to complete the switch. 
 
-5. **(Optional) Restrict authentication to AD/LDAP**. Go to **System Console** > **Authentication** > **Email** and set **Allow Sign Up With Email** to `false` and **Allow Sign In With Email** to `false`. This should leave Active Directory/LDAP as the only single-sign-in option. 
+5. **(Optional) Restrict authentication to AD/LDAP**. Go to **System Console** > **Authentication** > **Email** and set **Allow Sign Up With Email** to `false` and **Allow Sign In With Email** to `false`. This should leave Active Directory/LDAP as the only single sign-in option. 
 
 If you've made a mistake and lock yourself out of the system somehow, you can [set an existing account to System Administrator using the commandline tool](http://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline). 
 
