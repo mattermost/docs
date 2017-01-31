@@ -51,7 +51,7 @@ Insert a table of contents into a document using the following format:
   .. contents::
       :backlinks: top
 
-Inline markup
+Inline Markup
 -------------
 
 Bold
@@ -65,7 +65,7 @@ Monospace
 
 .. _arbitrary-text-label:
 
-Bullet lists
+Bullet Lists
 ------------
 
 For bullet lists and sublists, use `-` before the list item. For example:
@@ -78,7 +78,7 @@ For bullet lists and sublists, use `-` before the list item. For example:
     - sublist item two
   - list item three
 
-Numbered lists and procedure steps
+Numbered Lists and Procedure Steps
 ----------------------------------
 
 Create numbered lists and procedure steps using numbers for the top-level list and lower case alpha characters for the first nested list. For example:
@@ -93,10 +93,12 @@ Create numbered lists and procedure steps using numbers for the top-level list a
     
   3. This is item three.
   
-Links to external web pages
----------------------------
+External Links
+---------------
 
-Embed links into text using the following formatting, ```{text} <{url}>`_``, for example:
+URLs will automatically be rendered as a hyperlink in Sphinx; however, where possible, it is preferred that links are embedded within the text of a sentence. Embed links into text using the following formatting:
+
+``Link display text <URL-of-website>`_``, for example:
 
 .. code-block:: none
   
@@ -106,8 +108,9 @@ The link renders as: `Mattermost Manifesto <https://www.mattermost.org/manifesto
 
 .. _relative-links-in-rst:
 
-Links to targets within the Mattermost docs
--------------------------------------------
+
+Internal Links to Mattermost Docs
+----------------------------------
 
 The Sphinx processor extends reStructuredText to implement references to locations within a documentation set. The extensions are called `roles`, and the two roles that are relevant in Mattermost documentation are the ``:doc:`` role and the ``:ref:`` role.
 
@@ -127,7 +130,7 @@ The ``:ref:`` role is a two-part construct. One part is the link itself, and the
 
   .. _arbitrary-text-label:
   
-  Bullet lists
+  Bullet Lists
   ------------
 
 To generate a link to the section, use the ``:ref:`` role as follows:
@@ -174,7 +177,7 @@ Then insert the following image directive at the bottom of the document:
 
 .. _literal-blocks:
 
-Literal blocks
+Literal Blocks
 --------------
 
 To use a literal block with no syntax highlighting, use the Sphinx code-block directive with the language set to `none`. For example:
@@ -185,7 +188,7 @@ To use a literal block with no syntax highlighting, use the Sphinx code-block di
 
 .. _syntax-highlight:
 
-Code blocks with syntax highlighting
+Code Blocks with Syntax Highlighting
 ------------------------------------
 
 To create a code block with syntax highlighting, use the Sphinx code-block directive with the language set to the language that you want highlighted. `Many languages are available <http://pygments.org/docs/lexers/>`_, but in Mattermost documentation the most likely ones are as follows:
