@@ -6,6 +6,36 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 - Work in progress, expected release date: 2017-03-16
 
+### Highlights
+
+### Improvements
+
+#### User Interface
+
+- Improved display of website content for link previews when available
+- Show `(Edited)` indicator if a message has been edited
+- Added a link to Manage Members modal from channel members list
+- Added support for explicit image sizes in markdown, important for API usage
+- Added support for image previews if the URL contains a custom query
+
+#### On-Boarding
+
+- Clicking on email verification now automatically fills in your email on the sign in page
+
+#### System Console
+
+- Added active users statistics to Site Statistics page
+
+### Bug Fixes
+
+-  Outdated results in modal searches are now properly discarded
+
+### Compatibility
+
+### Known Issues
+
+### Contributors
+
 ## Release v3.6.1  
 
 ### Notes on Patch Release
