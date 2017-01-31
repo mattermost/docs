@@ -4,15 +4,11 @@ This guide explains how to upgrade your Mattermost deployment across versions an
 
 To start, select one of the following guides: 
 
-- [Upgrade Team Edition](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition)
-  - [Upgrade Team Edition to 3.1.x and later](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-3-1-x-and-later)
-- [Upgrade Enterprise Edition](https://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition)
-  - [Upgrade Enterprise Edition to 3.1.x and later](https://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition-to-3-1-x-and-later)
+- [Upgrade Team Edition to 3.1.x and later](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-3-1-x-and-later)
+- [Upgrade Enterprise Edition to 3.1.x and later](https://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition-to-3-1-x-and-later)
 - [Upgrade Team Edition to Enterprise Edition](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition)  
 
-### Upgrade Team Edition 
-
-#### Upgrade Team Edition to 3.1.x and later
+## Upgrade Team Edition to 3.1.x and later
 
 1. Download the **appropriate next upgrade** of your Team Edition server and note any compatibility procedures
       1. Run `platform -version` to check the current version of your Mattermost server
@@ -43,7 +39,7 @@ To start, select one of the following guides:
 9. Test the system is working by going to the URL of the server with an `https://` prefix.
       1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 
-#### Upgrade Enterprise Edition to 3.1.x and later
+## Upgrade Enterprise Edition to 3.1.x and later
 
 1. Download the **appropriate next upgrade** of your Team Edition server and note any compatibility procedures
       1. Run `platform -version` to check the current version of your Mattermost server
@@ -77,7 +73,7 @@ To start, select one of the following guides:
       1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
       
       
-### Upgrade Team Edition to Enterprise Edition
+## Upgrade Team Edition to Enterprise Edition
 
 1. Confirm you have the latest version of Mattermost Team Edition installed
    1. Run `platform -version` to check the current version of your Mattermost server and compare the version with the latest release listed on https://mattermost.org/download.
@@ -93,9 +89,6 @@ To start, select one of the following guides:
 The **Edition** and **License** sections on the page should update to confirm your system has been updated to the Enterprise Edition.
 
 For any issues, Mattermost Enterprise Edition subscribers and trial license users can email support@mattermost.com 
-
-### Upgrade Enterprise Edition 
-
 
 
 ## Version Archive
