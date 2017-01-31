@@ -39,7 +39,7 @@ The issue should be written with the mindset that the contributor might have no 
       1. Jira can be used to prioritize Help Wanted issues internally and are easily searchable by Mattermost staff, community, and customers
       2. Each Jira ticket goes through the  `triage meeting <https://docs.mattermost.com/process/training.html#triage-meeting>`_ for dev and PM approval
       3. Zapier integration automatically creates GitHub Help Wanted issues from labelled Jira tickets, requiring no additional mana
-      4. resolved Jira tickets are automatically assigned to a QA, who tests them on the CI
+      4. Resolved Jira tickets are automatically assigned to a QA, who tests them agains the ``master`` branch.
 
 2 - After creating the ticket, add "(Proposed APR)" to its title, so the triage team knows to consider it for a ``help-wanted`` label.
 
