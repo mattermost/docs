@@ -26,42 +26,24 @@ Principles
 Creating Help Wanted issues
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Before creating a Help Wanted issue in the `platform repository <https://github.com/mattermost/platform>`_, confirm the issue you're planning to add has a JIRA ticket associated with it:
+To create a Help Wanted issue in the `platform repository <https://github.com/mattermost/platform>`_, follow these steps:
 
-- JIRA can be used to prioritize Help Wanted issues internally
-- Each issue goes through `Triage meeting <https://docs.mattermost.com/process/training.html#triage-meeting>`_ to ensure the ticket is clear and is approved by at least one developer and product manager
+1 - Create a ticket in Jira that is well defined and unambiguous. The issue should be written with the mindset that the contributor might have no or limited experience with the Mattermost code base and limited exposure to the Mattermost product
 
-When creating a Help Wanted issue, please ensure it (`see a sample Help Wanted issue here <https://github.com/mattermost/platform/issues/4755>`_):
+Below are a few reasons why Jira ticket for Help Wanted issues is recommended:
 
-- is well-defined and unambiguous
- 
- - create the issue with the mindset that the contributor might have no or limited experience with the Mattermost code base and limited exposure to the Mattermost product
-    
-- has an introductory section, with
- 
- - an invitation to join the `Contributors channel <https://pre-release.mattermost.com/core/channels/tickets>`_
- - an invitation to join the `Developers channel <https://pre-release.mattermost.com/core/channels/developers>`_ for technical questions
- - a link to the `developer’s guide <https://docs.mattermost.com/guides/developer.html>`_ for `machine setup <https://docs.mattermost.com/developer/developer-setup.html>`_ and `developer workflow <https://docs.mattermost.com/developer/developer-flow.html>`_
- - a link to the `code contribution guidelines <https://docs.mattermost.com/developer/contribution-guide.html>`_
-    
-- has a well-defined difficulty level, both in the description and with the corresponding label
- 
- - Introductory: for someone new to the codebase. Guideline: 2-mana tickets are typically introductory
- - Intermediate: for someone with a general knowledge of the codebase. Guideline: 4-mana tickets are typically introductory
- - Advanced: for someone with a strong grasp of the codebase, e.g. implementing a major feature. Guideline: 8-mana tickets (or higher) are typically introductory     
-    
-- has a “Go” or “ReactJS” label
- 
- - helps contributors know what programming languages will be involved
- - motivates contributors to work on specific tickets, e.g. someone learning Go might be motivated to tackle introductory Go tickets
- - in general, if the work is all UI (client side), add a ReactJS label - if it's server side then add a Go label.
+ - Jira can be used to prioritize Help Wanted issues internally and are easily searchable by Mattermost staff, community, and customers
+ - Each Jira ticket goes through the  `triage meeting <https://docs.mattermost.com/process/training.html#triage-meeting>`_ for dev and PM approval
+ - Zapier integration automatically creates GitHub Help Wanted issues from labelled Jira tickets, requiring no additional mana
+ - resolved Jira tickets are automatically assigned to a QA, who tests them on the CI
 
-- has a link to the corresponding JIRA ticket 
+2 - After creating the ticket, add "(Proposed APR)" to its title, so the triage team knows to consider it for a `help-wanted` label
 
-- gets noted in the description of the corresponding JIRA ticket
- 
- - ensures core devs are aware a Help Wanted issue was created, and to check whether someone in the community already has it in progress
- - example text: ``GitHub Help Wanted issue here: [Link]. Before starting to work on this ticket, please check whether a community member has it in progress by checking the GitHub issue or by asking a PM.``
+3 - If the Jira ticket is accepted as a help wanted issue during `triage <https://docs.mattermost.com/process/training.html#triage-meeting>`_, a `help-wanted` label is added. This action automatically triggers a zap that creates a Help Wanted issue in the `platform repository <https://github.com/mattermost/platform>`_.
+
+4 - After triage, PM on community rotation reviews formatting of the GitHub issue and asks a developer to add appropriate labels for difficulty level (one of `Introductory`, `Intermediate` and `Advanced`) and programming language (`Go` and `ReactJS`
+
+`See an example Help Wanted issue here <https://github.com/mattermost/platform/issues/4755>`_.
 
 Managing Help Wanted issues
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
