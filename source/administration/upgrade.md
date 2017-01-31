@@ -88,11 +88,7 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
       2. Opening the **System Console** and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added. 
 8. Test the system is working by going to the URL of an existing team.
       1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
-9. After the Mattermost 3.0 upgrade, users with duplicate accounts must follow the instructions in the upgrade email to:
-      1. Login to teams on which duplicate accounts were created.
-      2. Add their primary account to the team and any private groups that are still actively used. 
-      
-   Users can continue to access the direct message history of their duplicate accounts using their updated email addresses.
+9. After the Mattermost 3.0 upgrade users with duplicate accounts can follow instructions in the upgrade email they received to login to teams on which the duplicate accounts were created and add their primary account to the team and any private groups that are still actively used. Users can continue to access the direct message history of their duplicate accounts using their updated email addresses.
 
 
 
@@ -190,11 +186,7 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
       2. Opening the **System Console** and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added. 
 8. Test the system is working by going to the URL of an existing team.
       1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
-9. After the Mattermost 3.0 upgrade, users with duplicate accounts must follow the instructions in the upgrade email to:
-      1. Login to teams on which duplicate accounts were created.
-      2. Add their primary account to the team and any private groups that are still actively used. 
-      
-   Users can continue to access the direct message history of their duplicate accounts using their updated email addresses.
+9. After the Mattermost 3.0 upgrade users with duplicate accounts can follow instructions in the upgrade email they received to login to teams on which the duplicate accounts were created and add their primary account to the team and any private groups that are still actively used. Users can continue to access the direct message history of their duplicate accounts using their updated email addresses.
 
 For any issues, Mattermost Enterprise Edition subscribers and trial license users can email support@mattermost.com 
 
