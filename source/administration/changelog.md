@@ -6,6 +6,9 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 ### Notes on Patch Release
 
+ - **v3.6.2, released 2017-01-31**
+   - Fixed a high severity security issue, [upgrade](http://docs.mattermost.com/administration/upgrade.html) is highly recommended (details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/))
+   - Improved performance of web sockets and typing messages
  - **v3.6.1, released 2017-01-19**
    - Fixed a performance regression when sending many notifications at once (for example, when `@all` or `@channel` is used in a channel with many users)
    - Fixed an issue where the config flag for the CLI was not backwards compatible
