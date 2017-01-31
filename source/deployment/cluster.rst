@@ -1,7 +1,9 @@
 High Availability Cluster (E20)
 ===============================
 
-The high availability cluster feature enables a Mattermost system to maintain service during outages and hardware failures through the use of redundant infrastructure. It is available only in Enterprise Edition E20. 
+*Available in Enterprise Edition E20.*
+
+The high availability cluster feature enables a Mattermost system to maintain service during outages and hardware failures through the use of redundant infrastructure.
 
 High availability in Mattermost consists of running redundant Mattermost application servers, redundant database servers, and redundant load balancers. The failure of any one of these components does not interrupt operation of the system.
 
@@ -12,16 +14,24 @@ High availability in Mattermost consists of running redundant Mattermost applica
 Continuous Operation During Server Updates
 ------------------------------------------
 
-To ensure uninterrupted service during updates, you must make sure that the components are properly sized and that you follow the correct sequence for updating the system components.
+To enable continuous operation during updates, you must make sure that the components are properly sized and that you follow the correct sequence for updating each of the system's components.
 
-Each application server, database, and load balancer must be sized and configured to carry the full load of the system. If this requirement is not met, an outage of one component can result in an overload of the remaining components, causing a complete system outage.
+Each component must be properly sized
+  Upon failure of one component, the remaining application servers, database servers, and load balancers must be sized and configured to carry the full load of the system. If this requirement is not met, an outage of one component can result in an overload of the remaining components, causing a complete system outage.
 
-You can apply most configuration changes and dot release security updates without interrupting service, provided that you update the system components in the correct sequence. Exceptions to this rule are changes to configuration settings that require a server restart, and updates that involve a change to the database schema. Downtime for a server restart is around 5 seconds, and for a database schema update, downtime is around 30 seconds.
+Most updates can be applied without service interruption
+  You can apply most configuration changes and dot release security updates without interrupting service, provided that you update the system components in the correct sequence.
 
-The following outline describes the procedure for updating a high availability system without a service interruption.
+In some cases, updates must be applied during a maintenance window
+  Changes to configuration settings that require a server restart, and updates that involve a change to the database schema require a short period of downtime. Downtime for a server restart is around 5 seconds, and for a database schema update, downtime can be up to 30 seconds.
 
-1. **Disconnect redundant servers** - Configure load balancers to consolidate requests to a single application server capable of supporting anticipated traffic during the update process. Depending on the resources available, you might choose to run updates during low traffic periods.
-2. **Apply single server update** - Apply the update to a single server by updating ``config.json`` and running a command to load the new configuration into the application server, which continues to operate without down time.
+Outline of the process
+~~~~~~~~~~~~~~~~~~~~~~
+
+The following outline describes the procedure for updating a high availability system while maintaining continuous operation of the service.
+
+1. **Disconnect redundant servers** - Configure load balancers to consolidate requests to a single application server capable of supporting anticipated traffic during the update process. You might choose to run updates during low traffic periods or during a scheduled maintenance window.
+2. **Apply single server update** - Apply the update to a single server by updating ``config.json`` and then loading the new configuration into the application server, which continues to operate without downtime.
 3. **Apply update to redundant servers** - Apply the same updates to the redundant servers.
 4. **Reconnect redundant servers** - Configure load balancers to once again balance traffic across all application servers.
 
@@ -142,7 +152,7 @@ File Storage Configuration
 .. note::
   1. File storage is assumed to be shared between all the machines that are using services such as NAS or Amazon S3.
   2. If ``"DriverName": "local"`` is used then the directory at ``"FileSettings":`` ``"Directory": "./data/"`` is expected to be a NAS location mapped as a local directory, otherwise high availability will not function correctly and may corrupt your file storage.
-  3. If you’re using Amazon S3 for file storage then no other configuration is required.
+  3. If you’re using Amazon S3 or Minio for file storage then no other configuration is required.
 
 If you’re using the Compliance Reports feature in Enterprise Edition E20, you need to configure the  ``"ComplianceSettings":`` ``"Directory": "./data/",`` to share between all machines or the reports will only be available from the System Console on the local Mattermost server.
 
@@ -151,7 +161,7 @@ Migrating to NAS or S3 from local storage is beyond the scope of this document.
 Database Configuration
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Use the read-replica feature to scale the database. The Mattermost server can be set up to use one "master" database and up to 8 read replica databases. Mattermost distributes read requests across all databases, and sends write requests to the master database, and those changes are then sent to update the read replicas. 
+Use the read-replica feature to scale the database. The Mattermost server can be set up to use one "master" database and multiple read replica databases. Mattermost distributes read requests across all databases, and sends write requests to the master database, and those changes are then sent to update the read replicas. 
 
 Sizing databases
 ````````````````
@@ -192,7 +202,7 @@ To apply the settings without shutting down the Mattermost server:
 1. Go to **System Console > Configuration** and click **Reload Configuration from Disk** to reload configuration settings for the Mattermost server from ``config.json``. 
 2. Go to **System Console > Database** and click **Recycle Database Connections** to take down existing database connections and set up new connections in the multi-database configuration. 
 
-While the connection settings are changing, there might be a brief moment when writes to the master database are unsuccessful. The process waits for all existing connections to finish and starts serving new requests with the new connections. End users attempting to send messages while the switch is happening will have an experience similar to losing connection to the Mattermost server.
+While the connection settings are changing, there might be a brief moment when writes to the master database are unsuccessful. The process waits for all existing connections to finish and starts serving new requests with the new connections. End users attempting to send messages while the switch is happening can have an experience similar to losing connection to the Mattermost server.
 
 Transparent Failover
 ````````````````````
@@ -202,10 +212,10 @@ The database can be configured for high availability and transparent failover us
 Update Guide
 ------------
 
-Updating configuration without service interruption
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Updating configuration changes while operating continuously
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A service interruption is not required for most configuration updates. See `Updating server with service interruption`_ for a list of configuration updates that require a service interruption.
+A service interruption is not required for most configuration updates. See `Updating server version while operating continuously`_ for a list of configuration updates that require a service interruption.
 
 You can apply updates during a period of low load, but if your HA cluster is sized correctly, you can do it at any time. The system downtime is brief, and depends on the number of Mattermost servers in your cluster. Note that you are not restarting the machines, only the Mattermost server applications. A Mattermost server restart generally takes about 5 seconds.
 
@@ -216,8 +226,8 @@ You can apply updates during a period of low load, but if your HA cluster is siz
 5. Reload the configuration file on the server that is still running. Go to **System Console > Configuration** and click **Reload Configuration from Disk**
 6. Start the other servers. 
 
-Updating server without service interruption
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Updating server version while operating continuously
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A service interruption is not required for security patch dot releases of the Mattermost server.
 
@@ -232,14 +242,14 @@ You can apply updates during a period of low load, but if your HA cluster is siz
 7. Start the Mattermost servers.
 8. Repeat the upgrade procedure for the server that was left running.
 
-Updating server with service interruption
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Updating during scheduled maintenance downtime
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A service interruption is required when the update includes a change to the database schema or when a change to ``config.json`` requires a server restart, such as when making the following changes:
 
   * Default Server Language
   * Rate Limiting
-  * Webserver Wode
+  * Webserver Mode
   * Database
   * High Availability
 
@@ -268,7 +278,7 @@ A server status of red can occur for the following reasons:
 
 - **Configuration file mismatch**: Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the high availability feature assumes the same configuration file to function properly.
 - **Server version mismatch**: Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the high availability feature assumes the same version of Mattermost is installed on each server in the cluster. It is recommended to use the `latest version of Mattermost <https://www.mattermost.org/download/>`_ on all servers. Follow the upgrade procedure in :doc:`../administration/upgrade` for any server that needs to be upgraded.
-- **Server is down**: If an inter-node communication fails to send a message it will attempt again in 15 seconds. If the second attempt fails, the server is assumed to be down. An error message is written to the logs and the System Console will show a status of red for that server.
+- **Server is down**: If an inter-node communication fails to send a message it makes another attempt in 15 seconds. If the second attempt fails, the server is assumed to be down. An error message is written to the logs and the System Console shows a status of red for that server. The inter-node communication continues to ping the down server in 15 second intervals. When the server comes back up, any new messages are sent to it.
 
 WebSocket Disconnect
 ~~~~~~~~~~~~~~~~~~~~
