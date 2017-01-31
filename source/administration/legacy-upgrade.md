@@ -6,9 +6,8 @@ This is a legacy upgrade guide for servers running Mattermost version v2.2.0 and
   - [Upgrade Team Edition to 3.0.x](https://docs.mattermost.com/administration/legacy-upgrade.html#upgrade-team-edition-to-3-0-x)
   - [Upgrade Team Edition to 2.2.x and earlier](https://docs.mattermost.com/administration/legacy-upgrade.html#upgrade-team-edition-to-2-2-x-and-earlier)
 - [Upgrade Enterprise Edition](https://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition)
-  - [Upgrade Enterprise Edition to 3.0.x](https://docs.mattermost.com/administration/legacy-upgrade.html#upgrade-enterprise-edition-to-2-2-x-and-earlier)
+  - [Upgrade Enterprise Edition to 3.0.x](https://docs.mattermost.com/administration/legacy-upgrade.html#upgrade-enterprise-edition-to-3-0-x)
   - [Upgrade Enterprise Edition to 2.2.x and earlier](https://docs.mattermost.com/administration/legacy-upgrade.html#upgrade-enterprise-edition-to-2-2-x-and-earlier)
-
 
 ## Upgrade Team Edition
 
@@ -93,7 +92,7 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
       
 ## Upgrade Enterprise Edition
 
-### Upgrade to Enterprise Edition 3.0.x 
+### Upgrade Enterprise Edition to 3.0.x 
 
 Mattermost 3.0 lets users maintain a single account across multiple teams on a Mattermost server. This means one set of credentials, one place to configure all account settings, and a more streamlined sign-up and team joining process.
 
