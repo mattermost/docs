@@ -111,7 +111,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
         - Submit all doc PRs for review
         - Confirm changes to config.json in compatibility section of Changelog are written back to [settings documentation](http://docs.mattermost.com/administration/config-settings.html#configuration-settings)
         - Prioritize any developer documentation tickets  
-        - Draft [Mattermost Security Updates](http://about.mattermost.com/security-updates/), but do not post until seven days after official release
+        - Draft [Mattermost Security Updates](http://about.mattermost.com/security-updates/), but do not post until 14 days after official release
 4. **(Team) Code Complete Meeting (10:15am PST)**:  
     - (PM) Leads team review of Changelog 
     - (Logistics) Walk through each unfinished item of this checklist  
@@ -176,7 +176,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
 3. PM:
     - Check that known issues section of Changelog is updated
     - Check that the contributors section of Changelog is updated (including contributors from all repos)
-    - Check that if there is a security fix, the Changelog contains a note recommending upgrade and thanking the security researcher
+    - Check that if there is a security fix, the Changelog contains a note mentioning the severity level of the issue, recommending upgrade, and thanking the security researcher (see security process doc for example)
 4. Marketing:
     - Finish draft of blog post for mattermost.com and send for marketing lead to review
         - Upgrade should be recommended if there are security fixes in this version, with a note thanking the security researcher
@@ -251,10 +251,10 @@ If a bug fix release is required, run through the following steps:
 Once final dot release build is ready to cut:
 
 1. Build:  
-    - Tag a new release (e.g. 1.1.1) and run an official build  
-    - Update CI servers, pre-release and GitLab Mattermost to the final version    
-2. PM
-    - Update [Mattermost server download page](the https://mattermost.org/download) with the links to the EE and TE bits
+    - Tag a new release (e.g. 1.1.1) and run an official build  
+    - Update CI servers, pre-release and GitLab Mattermost to the final version    
+2. PM:
+    - Update [Mattermost server download page](https://mattermost.org/download) with the links to the EE and TE bits
       - Test the download links before and after updating the page 
     - Update [Mattermost pricing page](https://about.mattermost.com/pricing/) if anything has changed
     - Add the download links to http://docs.mattermost.com/administration/upgrade.html#version-archive  
@@ -326,10 +326,10 @@ Once final dot release build is ready to cut:
 4. Build: 
     - Put pre-release back on master
     
-### J. (T-plus 14 working days) Security Updates
+### J. (T-plus 10 working days) Security Updates
 3. PM:
-    - Post [Mattermost Security Updates](https://about.mattermost.com/security-updates/) after reviewing with security lead.
-      - If a dot release is shipping with security fixes, do not post new details until T-plus 5 working days from the dot release ship date.
+    - Post [Mattermost Security Updates](https://about.mattermost.com/security-updates/) after reviewing with security lead
+      - If a dot release is shipping with security fixes, do not post new details until T-plus 10 working days from the dot release ship date
     - Update Security Issues spreadsheet with issue number from posted update (e.g. v3.2.0.1)
     - Confirm the Security Researchers list on the [Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/) is up to date
 
