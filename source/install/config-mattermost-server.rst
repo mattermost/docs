@@ -19,7 +19,7 @@ Configuring Mattermost Server
     h. Set **Connection Security** to ``TLS``
     i. Save the Settings
 
-4. Click **Files > Storage** and change **Local Storage Directory** from ``./data/`` to ``/mattermost/data``
+4. Click **Files > Storage** and change **Local Storage Directory** from ``./data/`` to ``/opt/mattermost/data``
 
 5. Click **General > Logging** and set **Output logs to console** to ``false``
 
