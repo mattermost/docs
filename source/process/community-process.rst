@@ -39,7 +39,7 @@ Community channels
 
 The various community channels are outlined below, along with the responsibilities of the Ops Team and the PM on community rotation. Generally the Ops Team helps with notifying team members about issues in need of a response, and the Community PM coordinates to make sure the responses are made. 
 
-1. Contributors Channel: Forum Issues / GitLab / Stack Overflow
+1. `Contributors Channel <https://pre-release.mattermost.com/core/channels/tickets>`_: Forum Issues / GitLab / Stack Overflow
 
   - Description:
 
@@ -55,7 +55,7 @@ The various community channels are outlined below, along with the responsibiliti
 
     - Review the list for posts that haven’t been answered, and either reply (with help from dev if needed) or route to the appropriate person, following up to make sure a response is posted
 
-2. Community Channel: GitHub Issues with Activity Older than 7 days
+2. `Community Channel <https://pre-release.mattermost.com/core/channels/community>`_: GitHub Issues with Activity Older than 7 days
 
   - Description:
 
@@ -84,7 +84,7 @@ The various community channels are outlined below, along with the responsibiliti
 
   - Community PM Responsibility:
 
-    - Review the [Mattermost public repos](https://github.com/mattermost) daily, and respond to all new issues:
+    - Review the `Mattermost public repos <https://github.com/mattermost>`_ daily, and respond to all new issues:
 
       - Bug Report: Try to reproduce, or ask another team member to reproduce
       - Troubleshooting: Request to move to forums
