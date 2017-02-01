@@ -185,6 +185,13 @@ Instructions, such as “A password reset link has been sent to ``you@email.com`
 
     **Example:**
 
+        Correct:
+            Instruction “Please check your inbox”, ended with a period.
+
+            ..  image:: ../images/align5.jpg
+                :alt: Period added
+                :width: 300 px
+        
         Incorrect:
             Instruction “Please check your inbox”, didn't end with a period.
 
@@ -192,14 +199,7 @@ Instructions, such as “A password reset link has been sent to ``you@email.com`
                 :alt: Period Missing
                 :width: 300 px
 
-        Correct:
-            Instruction “Please check your inbox”, ended with a period.
-
-            ..  image:: ../images/align5.jpg
-                :alt: Period added
-                :width: 300 px
-
-|
+        
 ---------------------------
 
 
@@ -309,28 +309,32 @@ Input: Hints
 
     The labels on input fields should be as obvious as possible for the intended user.
 
+    Correct:
+        Channel URL: The web address used to reach your channel.
+        
     Incorrect:
         Handle: The name of the subdirectory used to navigate to a channel using the site URL appended with the handle name. Must use only valid URL inputs
 
-    Correct:
-        Channel URL: The web address used to reach your channel.
+    
 
 
 
 
 **Help text:**
 
-    Text below an input field should clearly and concisely describe the PURPOSE of the input.
+    Text below an input field should clearly and concisely describe the purpose of the input.
 
     In general, avoid describing the technical requirements of the field in Help Text, and use Placeholder input text, field validation and error messages to convey requirements. The exception to this guideline is if requirements are non-obvious, such as passwords needing different numbers of characters, symbols, etc.
 
     For a setting involving a CONDITION and an ACTION, the help text should be written as "ACTION when/for CONDITION"
 
+    Correct:
+        Flash the taskbar icon when a new message is received.
+        
     Incorrect:
         When a new message is received, flash the taskbar icon.
 
-    Correct:
-        Flash the taskbar icon when a new message is received.
+    
 
 **Placeholder input text:**
 
@@ -364,7 +368,7 @@ Input: Hints
 Input: Input Patterns
 ---------------------
 
-All inputs such as textareas should behave consistently. If the default behavio3r is to perform an action on "Enter", then all inputs of that type should be consistent and perform an action on "Enter".
+All inputs such as textareas should behave consistently. If the default behavior is to perform an action on "Enter", then all inputs of that type should be consistent and perform an action on "Enter".
 
 **Example 1:**
     If pressing "Enter" posts a message in the center channel post input.
