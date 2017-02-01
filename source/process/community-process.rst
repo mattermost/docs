@@ -17,34 +17,36 @@ When responding to issues:
   - Bug
   - Developer/Product Question
 
-2. Ask questions to narrow down or understand the issue better
+2. Ask questions to narrow down or understand the issue better:
+
+  - Try to understand the issue yourself as much as possible first
+  - If appropriate, ask a developer for assistance on technical questions
 
 3. Respond:
 
-  - Look for related documentation, Jira ticket, feature request, etc.
-  - If there is no related documentation:
+  - Include a link to related documentation in your response (eg Jira ticket, feature request, etc.)
+  - If there is no related documentation, write the documentation and include the link in your response:
 
     - For reproducible bugs, create a Jira ticket
     - For product questions or troubleshooting, update docs.mattermost.com if appropriate
     - For feature requests, ask them to `create a feature request <https://www.mattermost.org/feature-ideas/>`_ and post the link back
 
-  - In your response, link to the documentation
   - If appropriate, ask if the community member would be interested in contributing the feature / bug fix
 
 
 Community channels
 ------------------
 
-The Ops Team helps out with monitoring the different channels outlined below, and notifying the PM on community rotation.
+The various community channels are outlined below, along with the responsibilities of the Ops Team and the PM on community rotation. Generally the Ops Team helps with notifying team members about issues in need of a response, and the Community PM coordinates to make sure the responses are made. 
 
 1. Contributors Channel: Forum Issues / GitLab / Stack Overflow
 
   - Description:
 
-    - Ops posts "[Help Wanted] #forum @here can anyone help with these forum questions? These forum posts are open to everyone in the community. If you find something you think you know the answer to or can help with, please help post a response and be part of creating a vibrant Mattermost community!" with a list that includes:
+    - Ops posts [Help Wanted] #forum @here can anyone help with these forum questions? These forum posts are open to everyone in the community. If you find something you think you know the answer to or can help with, please help post a response and be part of creating a vibrant Mattermost community!" with a list that includes:
 
       - Forum posts that are >=2 days old (this gives community members a chance to respond first)
-      - New forum posts referencing upgrade issues after a release, or Enterprise features
+      - New forum posts referencing Enterprise features or upgrade issues after a release
       - Forum posts with a new reply to questions asked by the core team
 
     - Everyone from the team/community can step in and answer forum posts
@@ -57,7 +59,7 @@ The Ops Team helps out with monitoring the different channels outlined below, an
 
   - Description:
 
-    - Lindy @mentions the community PM and posts a list of “GitHub issues with activity older than 7 days” from the following repos:
+    - Ops Team @mentions the Community PM and posts a list of “GitHub issues with activity older than 7 days” from the following repos:
 
       - https://github.com/mattermost/platform/issues
       - https://github.com/mattermost/docs/issues
