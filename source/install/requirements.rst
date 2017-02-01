@@ -90,6 +90,8 @@ Notes:
 3. Solid state drives (SSD) can be used in place of disk storage for higher concurrency.
 4. Team deployments assume registered users are divided into teams of 10-100.
 
+.. _hardware-sizing-for-enterprise:
+
 Hardware Sizing for Enterprise Deployments (Multi-Server)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

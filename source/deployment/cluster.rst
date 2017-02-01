@@ -28,28 +28,29 @@ In some cases, updates must be applied during a maintenance window
 Deployment Guide
 ----------------
 
-Deployment guide to setup and maintain high availability on your Mattermost servers.
+Deployment guide to set up and maintain high availability on your Mattermost servers.
 
 Initial Setup Guide for High Availability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To ensure your instance and configuration are compatible with high availability, please review the `Configuration and Compatibility`_  section.
 
-.. note:: Backup your `Mattermost database <https://docs.mattermost.com/deployment/cluster.html#database-configuration>`_ and `file storage locations <https://docs.mattermost.com/deployment/cluster.html#file-storage-configuration>`_ before configuring high availability.
+.. note:: 
+  Backup your Mattermost database and file storage locations before configuring high availability. For more information about backing up, see :doc:`../administration/backup`.
 
 1. Follow our :doc:`../administration/upgrade` to upgrade your Mattermost server to v3.3 or later. 
-2. Setup a new Mattermost server with v3.3 or later following one of our **Install Guides**. This server must use an identical copy of the configuration file, ``config.json``. Verify the servers are functioning by hitting each independent server through its private IP address.
-3. Modify the ``config.json`` files on both servers to add the ``ClusterSettings`` as described in the *High Availability (Beta)* section of :doc:`../administration/config-settings`.
+2. Set up a new Mattermost server with v3.3 or later following one of our **Install Guides**. This server must use an identical copy of the configuration file, ``config.json``. Verify the servers are functioning by hitting each independent server through its private IP address.
+3. Modify the ``config.json`` files on both servers to add the ``ClusterSettings`` as described in :ref:`high-availability`.
 4. Verify the configuration files are identical on both servers then restart each machine in the cluster.
-5. Modify your NGINX setup  so that it proxies to both servers. For more information about this, see `Proxy Server Configuration`_
+5. Modify your NGINX setup so that it proxies to both servers. For more information about this, see `Proxy Server Configuration`_.
 6. Open **System Console > Advanced > High Availability (Beta)** to verify all the machines in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
 
 Adding a Server to the Cluster
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Backup your Mattermost database and the file storage location.
-2. Setup a new Mattermost server. This server must use an identical copy of the configuration file, ``config.json``. Verify the server is functioning by hitting the private IP address.
-3. Modify the ``config.json`` files on all servers with the ``ClusterSettings`` as described in the *High Availability (Beta)* section of :doc:`../administration/config-settings`. Be sure to add the new server URL to ``InterNodeUrls``. 
+1. Backup your Mattermost database and the file storage location. For more information about backing up, see :doc:`../administration/backup`.
+2. Set up a new Mattermost server. This server must use an identical copy of the configuration file, ``config.json``. Verify the server is functioning by hitting the private IP address.
+3. Modify the ``config.json`` files on all servers with the ``ClusterSettings`` as described in :ref:`high-availability`. Be sure to add the new server URL to ``InterNodeUrls``. 
 4. Verify that the configuration files are identical on all servers, then restart each machine in the cluster in sequence with 10 or more seconds between each restart.
 5. Modify your NGINX setup to add the new server. For information about this, see `Proxy Server Configuration`_.
 6. Open the **System Console > Advanced > High Availability (Beta)** to verify that all the machines in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
@@ -57,7 +58,7 @@ Adding a Server to the Cluster
 Removing a Server from the Cluster
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Backup your Mattermost database and the file storage location.
+1. Backup your Mattermost database and the file storage location. For more information about backing up, see :doc:`../administration/backup`.
 2. Modify your NGINX setup to remove the server. For information about this, see `Proxy Server Configuration`_.
 3. On all servers staying active in the cluster, modify the ``ClusterSettings`` in ``config.json`` to remove the server from ``InterNodeUrls`` 
 4. Verify that the configuration files are identical on all servers, then restart each machine in the cluster in sequence with 10 or more seconds between each restart.
@@ -83,7 +84,7 @@ High availability is configured in the ``ClusterSettings`` section of ``config.j
         "InterNodeUrls": []
   }
 
-For more details on these settings, see the **High Availability (Beta)** section of :doc:`../administration/config-settings`.
+For more details on these settings, see :ref:`high-availability`.
 
 State
 ^^^^^
@@ -154,7 +155,7 @@ Use the read-replica feature to scale the database. The Mattermost server can be
 Sizing Databases
 ````````````````
 
-For information about sizing database servers, see the *Hardware Sizing for Enterprise Deployments (Multi-Server)* section of :doc:`../install/requirements`.
+For information about sizing database servers, see :ref:`hardware-sizing-for-enterprise`.
 
 In a master/slave environment, make sure to size the slave machine to take 100% of the load in the event that the master machine goes down and you need to fail over.
 
@@ -170,7 +171,7 @@ The new settings can be applied by either stopping and starting the server, or b
 
 Once loaded, database write requests are sent to the master database and read requests are distributed among the other databases in the list.
 
-Loading a Multi-database Configuration Onto an Active Server
+Loading a Multi-database Configuration onto an Active Server
 ````````````````````````````````````````````````````````````
 
 After a multi-database configuration has been defined in ``config.json``, the following procedure can be used to apply the settings without shutting down the Mattermost server: 
@@ -198,7 +199,7 @@ Transparent Failover
 The database can be configured for high availability and transparent failover use the existing database technologies. We recommend MySQL Clustering, Postgres Clustering, or Amazon Aoura. Database transparent failover is beyond the scope of this documentation.
 
 Upgrade Guide
-------------
+-------------
 
 An update is an incremental change to Mattermost server that fixes bugs or performance issues. An upgrade adds new or improved functionality to the server.
 
