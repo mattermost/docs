@@ -139,7 +139,7 @@ If there’s one button on the bottom right, it should be “Close”, if there 
 Display: Button States
 ---------------------------
 
-All buttons should have a visually distinct appearence for the following states (if applicable):
+All buttons should have a visually distinct appearance for the following states (if applicable):
 
 - default
 - on_hover / on_hover (w tooltip)
@@ -421,7 +421,7 @@ A prompt should appears if a user makes changes to a setting and attempts to nav
 Menu items
 ----------
 
-Items in a menu should be grouped together based on the category they belong to. Items per category however should not exceed five, with the execption of seven for the System Console.
+Items in a menu should be grouped together based on the category they belong to. Items per category however should not exceed five, with the exception of seven for the System Console.
 
 **Example:**
 
@@ -486,7 +486,7 @@ There are several modes for this element:
 Organization: Reduce Obvious Steps
 ----------------------------------
 
-If the action users need to perform is obvious, we should make concious decisions to reduce some of the steps involved in that process.
+If the action users need to perform is obvious, we should make conscious decisions to reduce some of the steps involved in that process.
 
     **Example 1:**
         Clicking on the search icon on mobile should focus the search bar when it slides in.
