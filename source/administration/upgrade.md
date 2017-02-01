@@ -21,7 +21,7 @@ To start, select one of the following guides:
 1. Download the **appropriate next upgrade** of your Team Edition server and note any compatibility procedures
       1. Run `platform -version` to check the current version of your Mattermost server
       2. Determine the appropriate next upgrade for your server:
-          - Mattermost `v3.0.x` and later can upgrade directly to Mattermost `v3.5.x`
+          - Mattermost `v3.0.x` and later can upgrade directly to Mattermost `v3.6.x`
               - Note: If public links are enabled, upgrading from `v3.3.x` and earlier to `v3.4.x` and later will invalidate existing public links due to a security upgrade allowing admins to invalidate links by resetting a public link salt from the System Console.
               - Note: RHEL6 and Ubuntu installations must verify the line `limit nofile 50000 50000` is included in `/etc/init/mattermost.conf` file. See the [installation guide](https://docs.mattermost.com/guides/administrator.html#install-guides) for your operating system for more details.
               - Note: RHEL7 and Debian installations must verify the line `LimitNOFILE=49152` is included in the `/etc/systemd/system/mattermost.service` file. See the [installation guide](https://docs.mattermost.com/guides/administrator.html#install-guides) for your operating system for more details.
@@ -43,8 +43,9 @@ To start, select one of the following guides:
 7. Start your server and address any setting changes relevant in the latest version of Mattermost
       1. Run `sudo start mattermost`.
       2. Opening the **System Console** and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added.
-8. Test the system is working by going to the URL of an existing team.
-      You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
+8. If you have TLS set up on your Mattermost server, run `sudo setcap cap_net_bind_service=+ep ./bin/platform` in your Mattermost directory to allow Mattermost to bind to low ports.
+9. Test the system is working by going to the URL of the server with an `https://` prefix.
+      1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 
 #### Upgrade Team Edition to 3.0.x 
 
@@ -88,9 +89,10 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
 7. Start your server and address any setting changes relevant in the latest version of Mattermost
       1. Run `sudo start mattermost`.
       2. Opening the **System Console** and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added. 
-8. Test the system is working by going to the URL of an existing team.
+8. If you have TLS set up on your Mattermost server, run `sudo setcap cap_net_bind_service=+ep ./bin/platform` in your Mattermost directory to allow Mattermost to bind to low ports.
+9. Test the system is working by going to the URL of the server with an `https://` prefix.
       1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
-9. After the Mattermost 3.0 upgrade users with duplicate accounts can follow instructions in the upgrade email they received to login to teams on which the duplicate accounts were created and add their primary account to the team and any private groups that are still actively used. Users can continue to access the direct message history of their duplicate accounts using their updated email addresses.
+10. After the Mattermost 3.0 upgrade, users with duplicate accounts can follow instructions in the upgrade email they received to login to teams on which the duplicate accounts were created and add their primary account to the team and any private groups that are still actively used. Users can continue to access the direct message history of their duplicate accounts using their updated email addresses.
 
 #### Upgrade Team Edition for 2.2.x and earlier 
 
@@ -145,7 +147,8 @@ For any issues, Mattermost Enterprise Edition subscribers and trial license user
 1. Download the **appropriate next upgrade** of your Team Edition server and note any compatibility procedures
       1. Run `platform -version` to check the current version of your Mattermost server
       2. Determine the appropriate next upgrade for your server:
-          - Mattermost `v3.0.x` and later can upgrade directly to Mattermost `v3.5.x`
+          - Mattermost `v3.0.x` and later can upgrade directly to Mattermost `v3.6.x`
+              - Note: If there is are config settings set for `"RestrictPublicChannelManagement"` and `"RestrictPrivateChannelManagement"`, they will be used as the default values for `"RestrictPublicChannelCreation"`, `"RestrictPrivateChannelCreation"`, `"RestrictPublicChannelDeletion"`, and `"RestrictPrivateChannelDeletion"` after upgrade
               - Note: If public links are enabled, upgrading from `v3.3.x` and earlier to `v3.4.x` and later will invalidate existing public links due to a security upgrade allowing admins to invalidate links by resetting a public link salt from the System Console.
               - Note: RHEL6 and Ubuntu installations must verify the line `limit nofile 50000 50000` is included in `/etc/init/mattermost.conf` file. See the [installation guide](https://docs.mattermost.com/guides/administrator.html#install-guides) for your operating system for more details.
               - Note: RHEL7 and Debian installations must verify the line `LimitNOFILE=49152` is included in the `/etc/systemd/system/mattermost.service` file. See the [installation guide](https://docs.mattermost.com/guides/administrator.html#install-guides) for your operating system for more details.
@@ -168,8 +171,9 @@ For any issues, Mattermost Enterprise Edition subscribers and trial license user
 7. Start your server and address any setting changes relevant in the latest version of Mattermost
       1. Run `sudo start mattermost`.
       2. Opening the **System Console** and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added.
-8. Test the system is working by going to the URL of an existing team.
-      You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
+8. If you have TLS set up on your Mattermost server, run `sudo setcap cap_net_bind_service=+ep ./bin/platform` in your Mattermost directory to allow Mattermost to bind to low ports.
+9. Test the system is working by going to the URL of the server with an `https://` prefix.
+      1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 
 #### Upgrade to Enterprise Edition 3.0.x 
 
@@ -212,9 +216,10 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
 7. Start your server and address any setting changes relevant in the latest version of Mattermost
       1. Run `sudo start mattermost`.
       2. Opening the **System Console** and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added. 
-8. Test the system is working by going to the URL of an existing team.
+8. If you have TLS set up on your Mattermost server, run `sudo setcap cap_net_bind_service=+ep ./bin/platform` in your Mattermost directory to allow Mattermost to bind to low ports.
+9. Test the system is working by going to the URL of the server with an `https://` prefix.
       1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
-9. After the Mattermost 3.0 upgrade users with duplicate accounts can follow instructions in the upgrade email they received to login to teams on which the duplicate accounts were created and add their primary account to the team and any private groups that are still actively used. Users can continue to access the direct message history of their duplicate accounts using their updated email addresses.
+10. After the Mattermost 3.0 upgrade, users with duplicate accounts can follow instructions in the upgrade email they received to login to teams on which the duplicate accounts were created and add their primary account to the team and any private groups that are still actively used. Users can continue to access the direct message history of their duplicate accounts using their updated email addresses.
 
 For any issues, Mattermost Enterprise Edition subscribers and trial license users can email support@mattermost.com 
 
@@ -260,6 +265,8 @@ Private cloud enterprise communications server.
 
 -------
 
+- Mattermost Enterprise Edition v3.6.2 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-6-2) - [Download](https://releases.mattermost.com/3.6.2/mattermost-3.6.2-linux-amd64.tar.gz)
+  - `https://releases.mattermost.com/3.6.2/mattermost-3.6.2-linux-amd64.tar.gz`
 - Mattermost Enterprise Edition v3.5.1 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-5-1) - [Download](https://releases.mattermost.com/3.5.1/mattermost-3.5.1-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/3.5.1/mattermost-3.5.1-linux-amd64.tar.gz`
 - Mattermost Enterprise Edition v3.4.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-4-0) - [Download](https://releases.mattermost.com/3.4.0/mattermost-3.4.0-linux-amd64.tar.gz)
@@ -286,6 +293,8 @@ Open source self-hosted team communication server compiled by Mattermost, Inc, a
 
 -------
 
+- Mattermost Team Edition v3.6.2 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-6-2) - [Download](https://releases.mattermost.com/3.6.2/mattermost-team-3.6.2-linux-amd64.tar.gz)
+  - `https://releases.mattermost.com/3.6.2/mattermost-team-3.6.2-linux-amd64.tar.gz`
 - Mattermost Team Edition v3.5.1 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-5-1) - [Download](https://releases.mattermost.com/3.5.1/mattermost-team-3.5.1-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/3.5.1/mattermost-team-3.5.1-linux-amd64.tar.gz`
 - Mattermost Team Edition v3.4.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-4-0) - [Download](https://releases.mattermost.com/3.4.0/mattermost-team-3.4.0-linux-amd64.tar.gz)

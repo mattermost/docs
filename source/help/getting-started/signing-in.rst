@@ -3,9 +3,10 @@ Signing in
 
 --------------
 
-You can sign in to your team from the root page of your Mattermost site
-``https://domain.com``. After signing in, you will be able to view a
-list of your teams and select which one to open.
+To sign in, navigate to the Mattermost sign-in page. You can get the URL of the sign-in page from your administrator. 
+
+After signing in, the team that appears first on your team sidebar will open.  If you have not joined a team, the Team Selection 
+page opens where you can view a list of teams that you can join.
 
 Sign In Methods
 ---------------
@@ -23,20 +24,20 @@ If you have forgotten your password, you can reset it by clicking **I
 forgot my password** on the sign in screen, or contact your System Admin
 for help resetting your password.
 
-GitLab Single-Sign-On (SSO)
+GitLab Single Sign-On (SSO)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When enabled by your System Admin, you can sign in using your GitLab
 account using a one-click sign in option.
 
-Google Single-Sign-On
+Google Single Sign-On
 ~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
 
 When enabled by your System Admin, you can sign in using your Google
 account using a one-click sign in option.
 
-Office 365 Single-Sign-On (Beta)
+Office 365 Single Sign-On (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
 
@@ -51,7 +52,7 @@ When enabled by your System Admin, you can sign in with your AD/LDAP
 credentials. This lets you use the same username and password for
 Mattermost that you use for various other company services.
 
-SAML Single-Sign-On (SSO)
+SAML Single Sign-On (SSO)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
 
@@ -66,9 +67,10 @@ Mattermost.
 Switching Teams
 ---------------
 
-You can switch between teams you have joined using the **Main Menu**,
-accessed by clicking the three dots in the top header of any team site
-on the server.
+You can switch between teams you have joined using the team sidebar 
+that appears left of your channel list on the left-hand sidebar.
+
+.. image:: ../../images/team-sidebar.png
 
 Logging Out
 -----------

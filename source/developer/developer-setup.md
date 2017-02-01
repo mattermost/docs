@@ -61,7 +61,7 @@ Any issues? Please let us know on our forums at: https://forum.mattermost.org/
 	4. Set GOROOT (optional) in your `~/.bash_profile`
 		- `export GOROOT=/usr/local/go/`
 6. Install Node.js  
-	- `curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -`  
+	- `curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -`
 	- `sudo apt-get install -y nodejs`
 7. Fork Mattermost on GitHub.com from [https://github.com/mattermost/platform](https://github.com/mattermost/platform), then:
 	1. `cd ~/go`  
@@ -214,9 +214,9 @@ You can enable console logging in the `LogSettings` section of your `config/conf
 
 You can create an account using the following command:
 ```
-go run mattermost.go -create_user -email="user@example.com" -password="mypassword"
+go run ./cmd/platform/*.go user create --email user@example.com --username test1 --password mypassword
 ```
 Optionally, you can make that account a System Admin with the following command:
 ```
-go run mattermost.go -assign_role -email="user@example.com" -role="system_admin system_user"
+go run ./cmd/platform/*.go user create --email user@example.com --username test1 --password mypassword --system_admin
 ```

@@ -48,10 +48,7 @@ closed or have not had any browser activity for a short time.
 Desktop Notifications
 -------------------------------------
 
-These are browser notifications that appear in the corner of your main
-monitor. By default, these notifications are sent for all activity while
-Mattermost is open. Desktop notifications are available on Edge, Firefox,
-Safari, Chrome and `Mattermost Desktop Apps <https://about.mattermost.com/download/#mattermostApps>`_.
+These are browser notifications that appear in the corner of your main monitor for activity in channels you are not actively viewing. By default, these notifications are sent for all unread messages while Mattermost is open. Desktop notifications are available on Edge, Firefox, Safari, Chrome and `Mattermost Desktop Apps <https://about.mattermost.com/download/#mattermostApps>`_.
 
 -  Configure when desktop notifications are sent from **Account
    Settings** > **Notifications** > **Desktop Notifications** > **Send
@@ -92,6 +89,16 @@ being viewed on desktop.
    from **Account Settings** > **Notifications** > **Mobile Push
    Notifications** > **Trigger push notifications when**.
 
+Team Sidebar Notifications
+----------------------------------------
+
+If you belong to more than one team, a team sidebar appears to the left of your channel list. It will inform you of unread messages and mentions across teams.
+
+- Unread messages are denoted by a small dot left of the team icon.
+- Unread mentions are displayed with a mention counter that appears on the top right corner of the team icon.
+
+.. image:: ../../images/team-sidebar-notifications.png
+
 Browser Tab Notifications
 ----------------------------------------
 
@@ -99,4 +106,4 @@ If Mattermost is open in a browser tab the favicon updates to inform you of unre
 mentions. Browser tab notifications are available on Firefox and Chrome.
 
 - Unread messages are denoted by an asterisk (\*) next to the Mattermost icon.
-- Unread mentions are counted in brackets.
+- Unread mentions are counted in brackets and incorporate mentions and direct messages from all of your teams.

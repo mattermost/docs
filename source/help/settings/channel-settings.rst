@@ -36,8 +36,7 @@ In the channel menu, select **Edit Channel Header** to change the text that appe
 the channel name at the top of the screen. It can be used to summarize
 the channel topic or provide links to frequently accessed documents. Any
 channel member can edit this setting, unless the System Administrator
-has `restricted the
-permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-management-permissions-for>`__.
+has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-renaming-for>`__.
 
 Channel Purpose
 ---------------
@@ -46,13 +45,11 @@ In the channel menu, select **Edit Channel Purpose** to change the text that app
 *More…* menu for channels. The channel purpose is usually a short
 description that helps others decide whether to join the channel. Any
 channel member can edit this setting, unless the System Administrator
-has `restricted the
-permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-management-permissions-for>`__.
+has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-renaming-for>`__.
 
 Channel Name
 ------------
 
 In the channel menu, select **Rename Channel** to change the channel name or handle. Changing the channel handle changes the channel URL. Any channel
 member can edit this setting, unless the System Administrator has
-`restricted the
-permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-management-permissions-for>`__.
+`restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-renaming-for>`__.
