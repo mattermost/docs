@@ -84,7 +84,7 @@ The various community channels are outlined below, along with the responsibiliti
 
   - Community PM Responsibility:
 
-    - Review the repos daily, and respond to all new issues:
+    - Review the [Mattermost public repos](https://github.com/mattermost) daily, and respond to all new issues:
 
       - Bug Report: Try to reproduce, or ask another team member to reproduce
       - Troubleshooting: Request to move to forums
