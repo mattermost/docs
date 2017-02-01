@@ -22,8 +22,8 @@ Redundancy at anticipated scale
 Continuous single-server update sequence
   You can apply most configuration changes and dot release security updates without interrupting service, provided that you update the system components in the correct sequence. See the `Upgrade Guide`_ for instructions on how to do this.
 
-In some cases, updates must be applied during a maintenance window
-  Changes to configuration settings that require a server restart, and updates that involve a change to the database schema require a short period of downtime. Downtime for a server restart is around 5 seconds, and for a database schema update, downtime can be up to 30 seconds.
+Exception: Some updates require maintenance downtime
+  Changes to configuration settings that require a server restart, and server version upgrades that involve a change to the database schema require a short period of downtime. Downtime for a server restart is around 5 seconds, and for a database schema update, downtime can be up to 30 seconds.
 
 Deployment Guide
 ----------------
@@ -206,7 +206,7 @@ An update is an incremental change to Mattermost server that fixes bugs or perfo
 Updating Configuration Changes While Operating Continuously
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A service interruption is not required for most configuration updates. See `Upgrading server version while operating continuously`_ for a list of configuration updates that require a service interruption.
+A service interruption is not required for most configuration updates. See `Server Upgrades Requiring Service Interruption`_ for a list of configuration updates that require a service interruption.
 
 You can apply updates during a period of low load, but if your HA cluster is sized correctly, you can do it at any time. The system downtime is brief, and depends on the number of Mattermost servers in your cluster. Note that you are not restarting the machines, only the Mattermost server applications. A Mattermost server restart generally takes about 5 seconds.
 
@@ -224,7 +224,7 @@ A service interruption is not required for security patch dot releases of the Ma
 
 You can apply updates during a period when the anticipated load is small enough that one server can carry the full load of the system during the update.
 
- Note that you are not restarting the machines, only the Mattermost server applications. A Mattermost server restart generally takes about 5 seconds.
+Note that you are not restarting the machines, only the Mattermost server applications. A Mattermost server restart generally takes about 5 seconds.
 
 1. Review the upgrade procedure in the *Upgrade Enterprise Edition* section of :doc:`../administration/upgrade`.
 2. Make a backup of your existing ``config.json`` file.
@@ -235,8 +235,8 @@ You can apply updates during a period when the anticipated load is small enough 
 7. Start the Mattermost servers.
 8. Repeat the update procedure for the server that was left running.
 
-Upgrading Server Version While Operating Continuously
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Server Upgrades Requiring Service Interruption
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A service interruption is required when the upgrade includes a change to the database schema or when a change to ``config.json`` requires a server restart, such as when making the following changes:
 
