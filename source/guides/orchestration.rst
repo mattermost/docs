@@ -8,9 +8,11 @@ Mattermost's **Deployment Solutions Programs** help IT administrators understand
 
 This is an optional program for third-party developers to increase awareness about their work and to enable Mattermost to refer its communities to different solutions. 
 
+Any person or any company interested in discussing deployment solutions with Mattermost can join the `Deployment Solutions discussion channel <https://pre-release.mattermost.com/core/channels/installers-and-images>`_ on the Mattermost community server to speak to peers and Mattermost community managers. 
+
 Deployment solutions are recognized by Mattermost at three-levels: 
 
-- **Community Deployment Solutions** - Basic orchestration solutions for Mattermost, typically from the open source community or hosting companies who let us know about their work. The work of partners is included in blog posts and on social media as a benefit to the user and customer communities. Community Orchestration Partners are invited to discuss their work in the Mattermost community site in the `Installers and Images channel <https://pre-release.mattermost.com/core/channels/installers-and-images>`_ 
+- **Community Deployment Solutions** - Basic orchestration solutions for Mattermost, typically from the open source community or hosting companies who let us know about their work. The work of partners is included in blog posts and on social media as a benefit to the user and customer communities. 
 
    Examples: 
 
