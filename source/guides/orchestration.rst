@@ -1,12 +1,14 @@
-========================================
-WIP: Deployment Solution Programs 
-========================================
+================================================
+Deployment Solution Programs (Work-in-progress) 
+================================================
 
-As an open source, private cloud messaging and file sharing solution under MIT license, Mattermost is commonly added to packaging and orchestration frameworks to make it even easier to deploy. 
+*This program is under development, please consider below a work-in-progress*
 
-We started the **Deployment Solutions Programs** as a way to help IT admins understand how Mattermost was being delivered in these frameworks. This is an optional program, currently under development, to help developers of frameworks increase awareness about their work. 
+Mattermost's **Deployment Solutions Programs** help IT administrators understand how Mattermost is being offered in third-party deployment solutions. 
 
-We recognize three levels of participation: 
+This is an optional program for third-party developers to increase awareness about their work and to enable Mattermost to refer its communities to different solutions. 
+
+Deployment solutions are recognized by Mattermost at three-levels: 
 
 - **Community Deployment Solutions** - Basic orchestration solutions for Mattermost, typically from the open source community or hosting companies who let us know about their work. The work of partners is included in blog posts and on social media as a benefit to the user and customer communities. Community Orchestration Partners are invited to discuss their work in the Mattermost community site in the `Installers and Images channel <https://pre-release.mattermost.com/core/channels/installers-and-images>`_ 
 
