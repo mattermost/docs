@@ -36,31 +36,34 @@ Branding                                      Yes         Yes
 Upgrade                                                   Yes
 ==================================  ========= =========== ===========
 
+Requirement details are outline below: 
 
+Deployment Solution Program Requirements 
+------------------------------------------
 
+Installation 
+~~~~~~~~~~~~~~~~~~~~~~~
 
-WIP: 
+1. **Installation is designed for officially supported operating systems and platforms**. EXCEPTION: RHEL equivalents (CentOS, Amazon Linux, Oracle Linux, Scientific Linux) are acceptable as long as the exception is noted in README or equivalent with ``This deployment uses [OPERATING_SYSTEM] as an equivalent to the officially supported version of Red Hat Enterprise Linux.``
 
-## How should I automate the install and upgrade of Mattermost when included in another application? 
+Security Updates 
+~~~~~~~~~~~~~~~~~~~~~~~
 
-Automating Mattermost installation within another application: 
+1. **Document commitment to providing security updates.** README or equivalent states `We highly recommend users subscribe to the Mattermost security updates email list. When notified of a security update, the maintainers of this deployment solution will make an effort to update to the secure version within 10 days.`
 
-1. Review the [Mattermost installation guides](https://docs.mattermost.com/guides/administrator.html#installing-mattermost) to understand configuration steps of the production deployment 
-2. Install Mattermost files to a dedicated `/opt/mattermost` directory by decompressing the `tar.gz` file of the latest release for your target platform (for example `linux-amd64`). 
-3. Review [Configuration Settings](http://docs.mattermost.com/administration/config-settings.html) in `config.json` and set your automation to customize your Mattermost deployment based on your requirements. 
-4. For directory locations defined in `config.json`, such as the location of the local file storage directory (`./data/`) or logs directory (`./logs`), you can redefine those locations in your `config.json` settings and move the directories.
-   - All other directories should remain as they are in `/mattermost` 
-5. Test that your Mattermost server is running with your new configuration.
-6. Also, from the commandline run `./bin/platform -version` to test that the commandline interface is functioning properly.
+2. **Commit to making an effort for your deployment to provide the latest security update within 10 days of announcement**. This is typically a one-line change. 
 
-Automating Mattermost upgrade within another application: 
+Documentation 
+~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Review the [upgrade guide](http://docs.mattermost.com/administration/upgrade.html) for an overview of the upgrade procedure. 
-2. Create automation to upgrade to the next Mattermost versions: 
-    - backup the `config.json` file to preserve any settings a user may have made.
-    - backup the `./data` directory if local storage is used for files.
-    - replace the contents of `/mattermost` directory with the decompressed contents of the latest release.
-    - restore `config.json` and `./data` to their previous locations (which may have been overwritten).
-    - if you need to overwrite any `config.json` parameters use a [`sed` command](http://stackoverflow.com/questions/20568515/how-to-use-sed-to-replace-a-config-files-variable) or similar tool to update `config.json`
-    - starting the Mattermost server to upgrade the database, `config.json` file, and `./data` as necessary. 
-3. Optionally the upgrade procedure can be chained so users can upgrade across an arbitrary number of Mattermost versions rather than to just the latest release. 
+1. **Include link to official Mattermost documentation**. README or equivalent contains statement ``Please see https://docs.mattermost.com for official documentation.``
+
+Branding 
+~~~~~~~~~~~~~~~~~~~~~~~
+
+1. **Support Mattermost branding and naming guidelines**. To ensure naming is clear across deployment solutions, README or equivalent should contain ``The name for this deployment solution in the context of [Mattermost branding guidelines](https://www.mattermost.org/brand-guidelines/) is `[NAME] for Mattermost by [CREATOR]`.`` For example, ``Multi-node Docker deployment solution for Mattermost by John Doe``. This is the name that will be used to refer to your work in Mattermost community materials. 
+
+Upgrade 
+~~~~~~~~~~~~~~~~~~~~~~~
+
+1. **Support upgrade of Mattermost**. Enable user interface or commandline upgrade of a Mattermost deployment to latest version based on upgrade guide instructions. 
