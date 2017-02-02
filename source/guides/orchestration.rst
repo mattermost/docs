@@ -4,20 +4,26 @@ WIP: Deployment Solution Programs
 
 As an open source, private cloud messaging and file sharing solution under MIT license, Mattermost is commonly added to packaging and orchestration frameworks to make it even easier to deploy. 
 
-We started the Deployment Solutions Programs as a way to help IT admins understand how Mattermost was being delivered in these frameworks. This is an optional program, currently under development, to help developers of frameworks increase awareness about their work. 
+We started the **Deployment Solutions Programs** as a way to help IT admins understand how Mattermost was being delivered in these frameworks. This is an optional program, currently under development, to help developers of frameworks increase awareness about their work. 
 
 We recognize three levels of participation: 
 
-- **Community Orchestration Solutions** - Basic orchestration solutions for Mattermost, typically from the open source community or hosting companies who let us know about their work. The work of partners is included in blog posts and on social media as a benefit to the user and customer communities. Community Orchestration Partners are invited to discuss their work in the Mattermost community site in the `Installers and Images channel <https://pre-release.mattermost.com/core/channels/installers-and-images>`_ 
+- **Community Deployment Solutions** - Basic orchestration solutions for Mattermost, typically from the open source community or hosting companies who let us know about their work. The work of partners is included in blog posts and on social media as a benefit to the user and customer communities. Community Orchestration Partners are invited to discuss their work in the Mattermost community site in the `Installers and Images channel <https://pre-release.mattermost.com/core/channels/installers-and-images>`_ 
 
-- **Registered Orchestration Solutions** - Orchestration solutions that follow detailed Mattermost guidelines on keeping up-to-date with the latest Mattermost version and security updates (typically a one-line change), linking to official documentation, supporting branding guidelines, and maintaining a changelog. This level of engagement allows Mattermost to more prominently promote the work, knowing that it's committed to meeting explicit standards.
+   Examples: 
 
-- **Certified Orchestration Solutions** - These solutions meet all the requirements of Registered Deployment Solutions, with the addition that they'll automate the version upgrade and security update processes (typically a one-line change). There is the added benefit that when Mattermost announces new versions and security updates, we can also announce the availability of updates to Certified Orchestration Solutions. 
+   - `Puppet deployment solution for Mattermost <https://forge.puppet.com/liger1978/mattermost>`_ by Richard Grainger
+   - `Heroku deployment solution for Mattermost <https://chrisdecairos.ca/deploying-mattermost-to-heroku/>`_ by Christopher De Cairos
+
+- **Registered Deployment Solutions** - Orchestration solutions that follow detailed Mattermost guidelines on keeping up-to-date with the latest Mattermost version and security updates (typically a one-line change), linking to official documentation, supporting branding guidelines, and maintaining a changelog. This level of engagement allows Mattermost to more prominently promote the work, knowing that it's committed to meeting explicit standards.
+
+
+- **Certified Deployment Solutions** - These solutions meet all the requirements of Registered Deployment Solutions, with the addition that they'll automate the version upgrade and security update processes (typically a one-line change). There is the added benefit that when Mattermost announces new versions and security updates, we can also announce the availability of updates to Certified Deployment Solutions. 
 
 To summarize the commitment level of different solutions: 
 
 ==================================  ========= =========== ===========
-Orchestration Partner Requirement   Community Registered  Certified 
+Deployment Solution Requirement     Community Registered  Certified 
 ==================================  ========= =========== ===========
 Installation                        Yes       Yes         Yes
 ----------------------------------  --------- ----------- -----------
@@ -29,6 +35,9 @@ Branding                                      Yes         Yes
 ----------------------------------  --------- ----------- -----------
 Upgrade                                                   Yes
 ==================================  ========= =========== ===========
+
+
+
 
 WIP: 
 
