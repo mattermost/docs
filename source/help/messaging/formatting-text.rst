@@ -197,31 +197,41 @@ Renders as: ``monospace``.
 In-line Images
 --------------
 
-Create in-line images using an ``!`` followed by the alt text in square brackets and the link in normal brackets. Add hover text by placing it in quotes after the link.
+Create in-line images using an exclamation mark followed by the alt text in square brackets then the URL of the image in round brackets. You can add hover text by placing it in quotes after the link.
 
-.. code-block:: none
+**Examples**:
 
+Markdown for an inline image
+  .. code-block:: none
 
-  ![alt text that shows when a link is broken](broken-link "hover text")
+    ![Github](https://assets-cdn.github.com/favicon.ico "GitHub Icon")
 
-  and
+  Renders as:
 
-  [![Build Status](https://travis-ci.org/mattermost/platform.svg?branch=master)](https://travis-ci.org/mattermost/platform) [![Github](https://assets-cdn.github.com/favicon.ico)](https://github.com/mattermost/platform)
+  .. image:: https://assets-cdn.github.com/favicon.ico
+    :alt: GitHub
 
-Renders as:
+Markdown for an inline image with link
+  .. code-block:: none
 
-.. image:: https://docs.mattermost.com
-  :alt: alt text that shows when a link is broken
+    [![Github](https://assets-cdn.github.com/favicon.ico)](https://github.com/mattermost/platform)
 
-and
+  Renders as:
 
-.. image:: https://travis-ci.org/mattermost/platform.svg?branch=master
-  :alt: Build Status
-  :target: https://travis-ci.org/mattermost/platform
+  .. image:: https://assets-cdn.github.com/favicon.ico
+    :alt: GitHub
+    :target: https://github.com/mattermost/platform
 
-.. image:: https://assets-cdn.github.com/favicon.ico
-  :alt: GitHub
-  :target: https://github.com/mattermost/platform
+Markdown for an inline image with link and hover text
+  .. code-block:: none
+
+    [![Github](https://assets-cdn.github.com/favicon.ico)](https://github.com/mattermost/platform "Mattermost code on GitHub")
+
+  Renders as:
+
+  .. raw:: html
+
+    <a href="https://github.com/mattermost/platform"> <img src="https://assets-cdn.github.com/favicon.ico" alt="GitHub" title="Mattermost code on GitHub"></a>
 
 Lines
 -----
