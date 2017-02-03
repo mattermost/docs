@@ -68,7 +68,7 @@ Monospace
 Bullet Lists
 ------------
 
-For bullet lists and sublists, use `-` before the list item. For example:
+For bullet lists and sublists, use ``-`` before the list item. For example:
 
 .. code-block:: none
   
@@ -112,7 +112,7 @@ The link renders as: `Mattermost Manifesto <https://www.mattermost.org/manifesto
 Internal Links to Mattermost Docs
 ----------------------------------
 
-The Sphinx processor extends reStructuredText to implement references to locations within a documentation set. The extensions are called `roles`, and the two roles that are relevant in Mattermost documentation are the ``:doc:`` role and the ``:ref:`` role.
+The Sphinx processor extends reStructuredText to implement references, called roles, to locations within a documentation set. The two roles that are relevant in Mattermost documentation are the ``:doc:`` role and the ``:ref:`` role.
 
 The ``:doc:`` role is used for creating relative links to other documents. The ``:ref:`` role is used for creating relative links to arbitrary locations within the documentation set, including within the same document. In both cases, the HTML output is a relative URL for the target location.
 
@@ -180,7 +180,7 @@ Then insert the following image directive at the bottom of the document:
 Literal Blocks
 --------------
 
-To use a literal block with no syntax highlighting, use the Sphinx code-block directive with the language set to `none`. For example:
+To use a literal block with no syntax highlighting, use the Sphinx code-block directive with the language set to ``none``. For example:
 
 .. code-block:: none
 
