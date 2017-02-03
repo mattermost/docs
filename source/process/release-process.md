@@ -258,6 +258,7 @@ Once final dot release build is ready to cut:
       - Test the download links before and after updating the page 
     - Update [Mattermost pricing page](https://about.mattermost.com/pricing/) if anything has changed
     - Add the download links to http://docs.mattermost.com/administration/upgrade.html#version-archive  
+    - Update [mattermost-docker](https://github.com/mattermost/mattermost-docker) version 
     - Merge the Changelog PR with notes on patch releases (see [example entry](https://docs.mattermost.com/administration/changelog.html#release-v3-5.1))
     - Update the version archive in the [upgrade guide](https://github.com/mattermost/docs/blob/master/source/administration/upgrade.md)
     - Submit GitLab MR to update the version number and MD5 hash to the dot release version. [See example](https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests/1127)
@@ -270,7 +271,7 @@ Once final dot release build is ready to cut:
 3.  Logistics:  
     - Verifies each of the issues in the patch release are fixed
 4. Marketing:
-    - Prepare blog post for mattermost.com, MailChimp email blast and Twitter announcement, and send for marketing lead to review. Once reviewed, schedule for 08:00 PST on the day after dot release
+    - Prepare [blog post](https://about.mattermost.com/mattermost-3-6-2/) for mattermost.com, MailChimp email blast to the [Security Bulletin list](http://eepurl.com/cAl5Rv) and [Twitter announcement](https://twitter.com/mattermosthq/status/827193482578112512), and send for marketing lead to review. Once reviewed, schedule for 08:00 PST on the day after dot release
       - Upgrade should be recommended if there are security fixes in the dot release version
 
 
