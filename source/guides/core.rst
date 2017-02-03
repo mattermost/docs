@@ -14,7 +14,6 @@ Development Process
    /process/release-process*
    /process/accepting-pull-request*
    /process/community-systems*
-   /process/documentation-guidelines*
    /process/marketing-guidelines*
 
 Documentation Style Guide
@@ -23,7 +22,7 @@ Documentation Style Guide
 .. toctree::
    :maxdepth: 3
 
-   /process/mattermost-doc-style.rst
+   /process/documentation-guidelines*
 
 Joining the Team 
 -------------------------
