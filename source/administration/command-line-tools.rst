@@ -230,7 +230,7 @@ platform ldap
 -------------
 
   Description
-    Commands to configure and syncronize LDAP.
+    Commands to configure and synchronize LDAP.
 
   Child Command
     -  `platform ldap sync`_ - Synchronize now
@@ -579,7 +579,7 @@ platform user migrate\_auth
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Migrates all user accounts from one authentication provider to another. For example, you can upgrade your authentication provider from email to ldap. Output will display any accounts that are not migrated successfully.
+    Migrates all user accounts from one authentication provider to another. For example, you can upgrade your authentication provider from email to LDAP. Output will display any accounts that are not migrated successfully.
 
     -  ``from_auth``: The authentication service from which to migrate user accounts. Supported options: ``email``, ``gitlab``, ``saml``.
 

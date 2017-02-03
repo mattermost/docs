@@ -469,6 +469,10 @@ Courses
 
 1. `Harvard Business School PM 101 <https://sites.google.com/site/hbspm101/home/2015-16-sessions/the-mrd-customer-discovery>`_
 
+Relevant Docs
+
+1. :doc:`/process/spec-review`
+
 System Security 
 ^^^^^^^^^^^^^^^
 
