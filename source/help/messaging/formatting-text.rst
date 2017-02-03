@@ -197,21 +197,31 @@ Renders as: ``monospace``.
 In-line Images
 --------------
 
-Create in-line images using an exclamation mark followed by the alt text in square brackets then the URL of the image in round brackets. You can add hover text by placing it in quotes after the link.
+Add in-line images by using an exclamation mark followed by the alt text in square brackets then the URL of the image in round brackets. You can add hover text by placing the text in quotes after the link.
+
+**![** *{alt text}* **](** *{URL of image}*  "*{Hover text}* " **)**
+
+If the height of the original image is more than 500 pixels, the system sets the height at 500 pixels and adjusts the width to maintain the original aspect ratio.
+
+You can set the width and height of the displayed image by using an equals sign and the width x height after the URL of the image. If you set only the width, the system adjusts the height to maintain the original aspect ratio.
+
 
 **Examples**:
 
-Markdown for an inline image
+Markdown for an inline image with hover text
   .. code-block:: none
 
     ![Github](https://assets-cdn.github.com/favicon.ico "GitHub Icon")
 
   Renders as:
 
-  .. image:: https://assets-cdn.github.com/favicon.ico
-    :alt: GitHub
+  .. raw:: html
+
+    <img src="https://assets-cdn.github.com/favicon.ico" alt="GitHub" title="GitHub Icon"></a>
 
 Markdown for an inline image with link
+  Note the extra set of square brackets.
+
   .. code-block:: none
 
     [![Github](https://assets-cdn.github.com/favicon.ico)](https://github.com/mattermost/platform)
@@ -222,16 +232,27 @@ Markdown for an inline image with link
     :alt: GitHub
     :target: https://github.com/mattermost/platform
 
-Markdown for an inline image with link and hover text
+Markdown for an inline image displayed at 20 pixels wide and 30 pixels high
   .. code-block:: none
 
-    [![Github](https://assets-cdn.github.com/favicon.ico)](https://github.com/mattermost/platform "Mattermost code on GitHub")
+    ![Github](https://assets-cdn.github.com/favicon.ico =20x30 "GitHub Icon")
+
+  Renders as:
+
+.. raw:: html
+
+  <img alt="GitHub" src="../../_images/github-icon-example.png" title="GitHub Icon">
+
+Markdown for an inline image displayed at 20 pixels wide and the height adjusted to suit
+  .. code-block:: none
+
+    ![Github](https://assets-cdn.github.com/favicon.ico =20 "GitHub Icon")
 
   Renders as:
 
   .. raw:: html
 
-    <a href="https://github.com/mattermost/platform"> <img src="https://assets-cdn.github.com/favicon.ico" alt="GitHub" title="Mattermost code on GitHub"></a>
+    <img src="https://assets-cdn.github.com/favicon.ico" alt="GitHub" width="20px" title="GitHub Icon"></a>
 
 Lines
 -----
