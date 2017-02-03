@@ -10,7 +10,7 @@ High availability in Mattermost consists of running redundant Mattermost applica
 .. contents::
   :backlinks: top
   :local:
-  
+
 Requirements for Continuous Operation
 -------------------------------------
 
@@ -19,11 +19,10 @@ To enable continuous operation at all times, including during server updates and
 Redundancy at anticipated scale
   Upon failure of one component, the remaining application servers, database servers, and load balancers must be sized and configured to carry the full load of the system. If this requirement is not met, an outage of one component can result in an overload of the remaining components, causing a complete system outage.
 
-Continuous single-server update sequence
+Update sequence for continuous operation
   You can apply most configuration changes and dot release security updates without interrupting service, provided that you update the system components in the correct sequence. See the `Upgrade Guide`_ for instructions on how to do this.
 
-Exception: Some updates require maintenance downtime
-  Changes to configuration settings that require a server restart, and server version upgrades that involve a change to the database schema require a short period of downtime. Downtime for a server restart is around 5 seconds, and for a database schema update, downtime can be up to 30 seconds.
+  **Exception:** Changes to configuration settings that require a server restart, and server version upgrades that involve a change to the database schema require a short period of downtime. Downtime for a server restart is around 5 seconds, and for a database schema update, downtime can be up to 30 seconds.
 
 Deployment Guide
 ----------------
@@ -35,10 +34,10 @@ Initial Setup Guide for High Availability
 
 To ensure your instance and configuration are compatible with high availability, please review the `Configuration and Compatibility`_  section.
 
-.. note:: 
+.. note::
   Backup your Mattermost database and file storage locations before configuring high availability. For more information about backing up, see :doc:`../administration/backup`.
 
-1. Follow our :doc:`../administration/upgrade` to upgrade your Mattermost server to v3.3 or later. 
+1. Follow our :doc:`../administration/upgrade` to upgrade your Mattermost server to v3.3 or later.
 2. Set up a new Mattermost server with v3.3 or later following one of our **Install Guides**. This server must use an identical copy of the configuration file, ``config.json``. Verify the servers are functioning by hitting each independent server through its private IP address.
 3. Modify the ``config.json`` files on both servers to add the ``ClusterSettings`` as described in :ref:`high-availability`.
 4. Verify the configuration files are identical on both servers then restart each machine in the cluster.
@@ -50,7 +49,7 @@ Adding a Server to the Cluster
 
 1. Backup your Mattermost database and the file storage location. For more information about backing up, see :doc:`../administration/backup`.
 2. Set up a new Mattermost server. This server must use an identical copy of the configuration file, ``config.json``. Verify the server is functioning by hitting the private IP address.
-3. Modify the ``config.json`` files on all servers with the ``ClusterSettings`` as described in :ref:`high-availability`. Be sure to add the new server URL to ``InterNodeUrls``. 
+3. Modify the ``config.json`` files on all servers with the ``ClusterSettings`` as described in :ref:`high-availability`. Be sure to add the new server URL to ``InterNodeUrls``.
 4. Verify that the configuration files are identical on all servers, then restart each machine in the cluster in sequence with 10 or more seconds between each restart.
 5. Modify your NGINX setup to add the new server. For information about this, see `Proxy Server Configuration`_.
 6. Open the **System Console > Advanced > High Availability (Beta)** to verify that all the machines in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
@@ -60,7 +59,7 @@ Removing a Server from the Cluster
 
 1. Backup your Mattermost database and the file storage location. For more information about backing up, see :doc:`../administration/backup`.
 2. Modify your NGINX setup to remove the server. For information about this, see `Proxy Server Configuration`_.
-3. On all servers staying active in the cluster, modify the ``ClusterSettings`` in ``config.json`` to remove the server from ``InterNodeUrls`` 
+3. On all servers staying active in the cluster, modify the ``ClusterSettings`` in ``config.json`` to remove the server from ``InterNodeUrls``
 4. Verify that the configuration files are identical on all servers, then restart each machine in the cluster in sequence with 10 or more seconds between each restart.
 5. Open the **System Console > Advanced > High Availability (Beta)** to verify that all the machines in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
 
@@ -75,7 +74,7 @@ Configuration Settings
 ^^^^^^^^^^^^^^^^^^^^^^
 
 High availability is configured in the ``ClusterSettings`` section of ``config.json`` and the settings are viewable in the System Console. When high availability is enabled, the System Console is set to read-only mode to ensure all the ``config.json`` files on the Mattermost servers are identical.
- 
+
 .. code-block:: none
 
   "ClusterSettings": {
@@ -150,7 +149,7 @@ Migrating to NAS or S3 from local storage is beyond the scope of this document.
 Database Configuration
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Use the read-replica feature to scale the database. The Mattermost server can be set up to use one "master" database and multiple read replica databases. Mattermost distributes read requests across all databases, and sends write requests to the master database, and those changes are then sent to update the read replicas. 
+Use the read-replica feature to scale the database. The Mattermost server can be set up to use one "master" database and multiple read replica databases. Mattermost distributes read requests across all databases, and sends write requests to the master database, and those changes are then sent to update the read replicas.
 
 Sizing Databases
 ````````````````
@@ -162,21 +161,21 @@ In a master/slave environment, make sure to size the slave machine to take 100% 
 Deploying a Multi-database Configuration
 ````````````````````````````````````````
 
-To configure a multi-database Mattermost server: 
+To configure a multi-database Mattermost server:
 
 1. Update the ``DataSource`` setting in ``config.json`` with a connection string to your master database server. The connection string is based on the database type set in ``DriverName``, either ``postgres`` or ``mysql``.
 2. Update the ``DataSourceReplicas`` setting in ``config.json`` with a series of connection strings to your database read replica servers in the format ``["readreplica1", "readreplica2"]``. Each connection should also be compatible with the ``DriverName`` setting.
 
-The new settings can be applied by either stopping and starting the server, or by loading the configuration settings as described in the next section. 
+The new settings can be applied by either stopping and starting the server, or by loading the configuration settings as described in the next section.
 
 Once loaded, database write requests are sent to the master database and read requests are distributed among the other databases in the list.
 
 Loading a Multi-database Configuration onto an Active Server
 ````````````````````````````````````````````````````````````
 
-After a multi-database configuration has been defined in ``config.json``, the following procedure can be used to apply the settings without shutting down the Mattermost server: 
+After a multi-database configuration has been defined in ``config.json``, the following procedure can be used to apply the settings without shutting down the Mattermost server:
 
-1. Go to **System Console > Configuration** and click **Reload Configuration from Disk** to reload configuration settings for the Mattermost server from ``config.json``. 
+1. Go to **System Console > Configuration** and click **Reload Configuration from Disk** to reload configuration settings for the Mattermost server from ``config.json``.
 2. Go to **System Console > Database** and click **Recycle Database Connections** to take down existing database connections and set up new connections in the multi-database configuration.
 
 While the connection settings are changing, there might be a brief moment when writes to the master database are unsuccessful. The process waits for all existing connections to finish and starts serving new requests with the new connections. End users attempting to send messages while the switch is happening will have an experience similar to losing connection to the Mattermost server.
@@ -184,12 +183,12 @@ While the connection settings are changing, there might be a brief moment when w
 Manual Failover for Master Database
 ```````````````````````````````````
 
-If the need arises to switch from the current master database--for example, if it is running out of disk space, or requires maintenance updates, or for other reasons--you can switch Mattermost server to use one of its read replicas as a master database by updating ``DataSource`` in ``config.json``. 
+If the need arises to switch from the current master database--for example, if it is running out of disk space, or requires maintenance updates, or for other reasons--you can switch Mattermost server to use one of its read replicas as a master database by updating ``DataSource`` in ``config.json``.
 
-To apply the settings without shutting down the Mattermost server: 
+To apply the settings without shutting down the Mattermost server:
 
-1. Go to **System Console > Configuration** and click **Reload Configuration from Disk** to reload configuration settings for the Mattermost server from ``config.json``. 
-2. Go to **System Console > Database** and click **Recycle Database Connections** to take down existing database connections and set up new connections in the multi-database configuration. 
+1. Go to **System Console > Configuration** and click **Reload Configuration from Disk** to reload configuration settings for the Mattermost server from ``config.json``.
+2. Go to **System Console > Database** and click **Recycle Database Connections** to take down existing database connections and set up new connections in the multi-database configuration.
 
 While the connection settings are changing, there might be a brief moment when writes to the master database are unsuccessful. The process waits for all existing connections to finish and starts serving new requests with the new connections. End users attempting to send messages while the switch is happening can have an experience similar to losing connection to the Mattermost server.
 
@@ -215,7 +214,7 @@ You can apply updates during a period of low load, but if your HA cluster is siz
 3. Copy the ``config.json`` file to the other servers.
 4. Shut down Mattermost on all but one server.
 5. Reload the configuration file on the server that is still running. Go to **System Console > Configuration** and click **Reload Configuration from Disk**
-6. Start the other servers. 
+6. Start the other servers.
 
 Updating Server Version While Operating Continuously
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
