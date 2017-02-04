@@ -1,6 +1,7 @@
 ..  _push_test:
-Push Notifications and Mobile Devices
-=====================================
+==============================================
+Mobile Applications and Push Notifications
+==============================================
 
 For Mattermost iOS apps and Android mobile apps to receive puch notifications the service sending notifications needs to be verified as an authorized sender. There are 3 options to provide this verification: 
 
