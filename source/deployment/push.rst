@@ -3,6 +3,18 @@
 Mobile Applications and Push Notifications
 ==============================================
 
+This guide explains how to set up Mattermost mobile applications and push notifications to work with the Mattermost deployment in your private cloud under your security and compliance policies. 
+
+There are two deployment options: 
+
+- **Public Mattermost mobile applications** - Mattermost mobile applications downloaded from iTunes or Google Play are provided by Mattermost, Inc. Push notifications are relayed to the mobile applications through a proxy server hosted by Mattermost, Inc. 
+
+
+- **Private Mattermost mobile applications** - An organization may choose to compile their own Mattermost mobile applications from source code in order to host them within a private network to customize their appearance and capabilities or to comply with internal IT policies. 
+
+Configuring push notifications
+----------------------------------
+
 For Mattermost iOS apps and Android mobile apps to receive puch notifications the service sending notifications needs to be verified as an authorized sender. There are 3 options to provide this verification: 
 
 1. Use the **Hosted Push Notification Service (HPNS)** from Mattermost.com that is trusted by Mattermost iOS and Android applications on iTunes and Google Play.
