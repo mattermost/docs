@@ -1,4 +1,5 @@
 ..  _push_test:
+
 ==============================================
 Mobile Applications and Push Notifications
 ==============================================
@@ -8,9 +9,26 @@ This guide explains how to set up Mattermost mobile applications and push notifi
 There are two deployment options: 
 
 - **Public Mattermost mobile applications** - Mattermost mobile applications downloaded from iTunes or Google Play are provided by Mattermost, Inc. Push notifications are relayed to the mobile applications through a proxy server hosted by Mattermost, Inc. 
+ 
+  Enterprise customers may choose to secure public mobile applications with single-sign-on, multi-factor authentication, proxy connection restrictions and encrypted channels to the Mattermost server and mobile push notifications proxy. 
 
+- **Private Mattermost mobile applications** - An organization may choose to compile their own Mattermost mobile applications and push notification service from source code in order to host them within a private network to customize their appearance and capabilities or to comply with internal IT policies.
 
-- **Private Mattermost mobile applications** - An organization may choose to compile their own Mattermost mobile applications from source code in order to host them within a private network to customize their appearance and capabilities or to comply with internal IT policies. 
+Public Mattermost mobile applications 
+--------------------------------------
+
+To use Mattermost mobile applications from iTunes or Google Play:
+
+1. Deploy the Mattermost server using standard install instructions
+2. Download either the iOS application from iTunes of the Android application from Google Play
+3. Open the mobile application and login to your server with your Mattermost credentials
+
+Private Mattermost mobile applications 
+--------------------------------------
+
+To use Mattermost mobile applications from iTunes or Google Play:
+
+// INSTRUCTIONS
 
 Configuring push notifications
 ----------------------------------
