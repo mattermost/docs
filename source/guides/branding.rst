@@ -39,13 +39,13 @@ The following guidelines are intended to help developers of Mattermost integrati
 
 We ask community projects might be named using “for Mattermost”, examples:
 
-- GitLab Integration Service for Mattermost
-- Giphy Integration Service for Mattermost 
+- `GitLab Integration Service for Mattermost <https://github.com/NotSqrt/mattermost-integration-gitlab>`_
+- `Giphy Integration Service for Mattermost <https://github.com/numberly/mattermost-integration-giphy>`_
 
 Alternatively, community projects may concatenate names containing Mattermost, for example:
 
-- Matterbridge – is a Mattermost bridge connecting with IRC
-- Mattersend – is a Mattermost integration for sending webhook events
+- `Matterbridge <https://github.com/42wim/matterbridge>`_ – is a Mattermost bridge connecting with IRC
+- `Mattersend <https://github.com/mtorromeo/mattersend>`_ – is a Mattermost integration for sending webhook events
 
 Exception: Please don’t use the name “matterbot”, as that is an internal service under development.
 
