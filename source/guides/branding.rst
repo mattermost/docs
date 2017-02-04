@@ -1,6 +1,26 @@
-====================================
-Mattermost Branding Guidelines 
-====================================
+============================================
+Mattermost Branding and Naming Guidelines 
+============================================
+
+The Mattermost branding and naming guidelines are intended to help keep users safe and to support the development of community integrations.
+
+.. contents::
+  :backlinks: top
+  :local:
+
+-------------------------------
+Mattermost Branding Principles 
+-------------------------------
+
+1. Keep users safe 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A key priority is making it clear to end users when they're installing software or following instructions from the official Mattermost open source project and from our 3rd party integration community. Guidelines are designed to make this process straight forward. 
+
+2. Support community developers 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Branding and naming guidelines are intended to help developers of Mattermost integrations by making it easier to distinguish among projects using similar technologies, making projects easier to clearly reference, and making it straight forward to recognize the creators of the work. 
 
 -------------------------------
 Mattermost Logo 
@@ -68,3 +88,8 @@ Mattermost Enterprise Edition is a secure, configurable, highly scalable enterpr
 
 Mattermost Enterprise Edition is free to use in "team mode" and is functionaly equivalent to the open source Mattermost Team Edition, with the added benefit of being able to enable advanced enterprise features with purchase of an annual subscription. 
 
+-------------------------------
+Mattermost Trademark Policy  
+-------------------------------
+
+Please see our full trademark policy at: https://www.mattermost.org/trademark-standards-of-use/
