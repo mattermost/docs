@@ -2,27 +2,13 @@
 Mattermost Branding and Naming Guidelines 
 ============================================
 
-The Mattermost branding and naming guidelines are intended to help keep users safe and to support the development of community integrations.
+The Mattermost branding and naming guidelines are intended to help keep users safe and to support the development of community integrations through a set of consistent guidelines for use of the Mattermost name and brand. 
 
 OVERVIEW: 
 
 .. contents::
   :backlinks: top
   :local:
-
--------------------------------
-Mattermost Branding Principles 
--------------------------------
-
-1) Keep users safe 
---------------------------------------------------------------
-
-A key priority is making it clear to end users when they're installing software or following instructions from the official Mattermost open source project and from our 3rd party integration community. Guidelines are designed to make this process straight forward. 
-
-2) Support community developers 
---------------------------------------------------------------
-
-Branding and naming guidelines are intended to help developers of Mattermost integrations by making it easier to distinguish among projects using similar technologies, making projects easier to clearly reference, and making it straight forward to recognize the creators of the work. 
 
 --------------------------------------
 Mattermost Visual Design Guidelines 
