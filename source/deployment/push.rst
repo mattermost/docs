@@ -1,10 +1,10 @@
 ..  _push_test:
 
 ==============================================
-Mobile Applications and Push Notifications
+Mobile Applications Guide
 ==============================================
 
-This guide summarizes the deployment options and considerations for using Mattermost mobile apps with push notifications. 
+This guide summarizes the deployment and security optoins for Mattermost mobile apps with push notifications. 
 
 OVERVIEW:
 
@@ -23,7 +23,7 @@ For a quick evaluation of mobile applications after the Mattermost server is dep
 
   - Go to **System Console > Notifications > Mobile Push > Send Push Notifications** and select **Use iOS and Android apps on iTunes and Google Play with TPNS**. 
 
-  - *Optional:* To show full messages snippets in mobile push notifications, set **System Console > Notifications > Mobile Push > Push Notification Contents** to **Send full message snippet**. Most deployments enable this unless they're under specific policies to not allow confidential information in push notifications, since the contents of push notifications may appear briefly on phones even when they're not locked by passcode. 
+  - *Optional:* To show full messages snippets in mobile push notifications, set **System Console > Notifications > Mobile Push > Push Notification Contents** to **Send full message snippet**. Most deployments enable this unless they're under specific policies to not allow confidential information in push notifications. 
 
 3. Download the mobile applications to your mobile device: 
 
@@ -43,7 +43,7 @@ There are two options for deploying Mattermost mobile applications with push not
  
   Enterprise customers may choose to secure these apps with a mobile VPN clients, single-sign-on, multi-factor authentication, proxy connection restrictions and encrypted transport.
 
-- **Deploying with privately-hosted mobile apps within your private network** - To customize the capabilities or appearance of mobile apps, or to secure their availability to a within a private network or to meet other security and compliance policies, an organization may choose to compile their own Mattermost mobile applications and push notification service from their open source repositories. 
+- **Deploying with privately-hosted mobile apps within your private network** - To customize the capabilities or appearance of mobile apps, to secure them within a private network or to meet other security and compliance policies, an organization may choose to compile their own Mattermost mobile applications and push notification service from their open source repositories. 
 
 The following sections detail setup of these two options: 
 
@@ -52,8 +52,9 @@ Deploying with publicly-hosted mobile apps by Mattermost, Inc.
 
 To deploy in production with publicly-hosted mobile apps compiled by Mattermost, Inc. and hosted in iTunes and Google Play: 
 
-1. Complete the Quick Installation procedure mentioned in the start of this guide to set up the mobile apps in a test environment. 
-2. Apply the **securing mobile deployment** options listed below to meet the security and compliance requirements of your organization. 
+1. Complete the `Quick install for mobile apps via iTunes and Google Play `_ in a test environment. 
+
+2. Review the `Securing mobile deployments`_ documentation and apply the options appropriate to meet the security and compliance requirements of your organization in your production environment. 
 
 Deploying with privately-hosted mobile apps within your private network
 `````````````````````````````````````````````````````````````````````````
@@ -70,7 +71,7 @@ To deploy in production with privately-hosted mobile apps compiled by your organ
 
   - Go to **System Console** > **Notifications** > **Mobile Push** > **Send Push Notifications** > **Manually enter Push Notification Service location** and enter the location of your Mattermost Push Notification Service in the **Push Notification Server** field.  
 
-3. Apply the **securing mobile deployment** options listed below to meet the security and compliance requirements of your organization. 
+3. Review the `Securing mobile deployments`_ documentation and apply the options appropriate to meet the security and compliance requirements of your organization. 
 
 Securing mobile deployments
 ---------------------------------
@@ -80,9 +81,9 @@ The following options for security mobile application deployments are available:
 Securing network connection to mobile apps 
 ``````````````````````````````````````````````````
 
-- Use of a mobile VPN client on mobile devices to establish secure connection to Mattermost server withing private network. 
-- Alternatively, deploying Mattermost behind your firewall with a web-visible proxy server with TLS encryption and specific ports allowing HTTPS and WSS access for mobile apps 
- 
+- Use HTTPS and WSS network connections to encrypt transport.
+- Use of a mobile VPN client on mobile devices to establish secure connection to Mattermost server within private network. 
+
 Configuring authentication options in mobile apps 
 ``````````````````````````````````````````````````
 
