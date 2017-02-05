@@ -4,16 +4,48 @@
 Mobile Applications and Push Notifications
 ==============================================
 
+This guide summarizes the deployment options and considerations for using Mattermost mobile apps with push notifications. 
+
+OVERVIEW:
+
+.. contents::
+  :backlinks: top
+  :local:
+
+Deployment Options 
+--------------------------------------------------
+
 There are two options for deploying Mattermost mobile applications with push notifications to work with the Mattermost server you deploy in your private cloud: 
 
-- **Use mobile apps from iTunes or Google Play** - End users download the Mattermost mobile applications from iTunes and Google Play and connect to an appropriate proxy to reach your internal Mattermost deployment, and your Mattermost server sends push notifications to a hosted proxy server, which relays them via mobile push notification services provided by Apple and Google. 
+- **Deploying mobile apps from iTunes or Google Play** - For quick and easy deployment, end users download the Mattermost mobile applications from iTunes and Google Play and connect to an appropriate proxy to reach your internal Mattermost deployment, and your Mattermost server sends push notifications to a hosted proxy server, which relays them via mobile push notification services provided by Apple and Google. 
  
   Enterprise customers may choose to secure these apps with a mobile VPN clients, single-sign-on, multi-factor authentication, proxy connection restrictions and encrypted transport.
 
-- **Compile your own version of Mattermost mobile apps** - An organization may choose to compile their own Mattermost mobile applications and push notification service from source code in order to host them within a private network to customize their appearance and capabilities or to comply with compliance and security policies in addition to what can be achieved with the iTunes and Google Play apps. 
+- **Compiling mobile apps from source code** - To customize the capabilities or appearance of mobile apps, or to secure their availability to a within a private network or to meet other security and compliance policies, an organization may choose to compile their own Mattermost mobile applications and push notification service from their open source repositories. 
 
-Configuring push notification
-----------------------------------
+The following sections detail setup of these two options: 
+
+Deploying mobile apps from iTunes or Google Play
+`````````````````````````````````````````````
+
+In your test environment, use the following instructions to connect your internal Mattermost instance to mobile apps on iTunes and Google Play, with push notifications: 
+
+1. Set up Mattermost server using any standard install guide
+2. Set up an external proxy, and optionally a mobile VPN client, to securely connect the mobile apps to your internal Mattermost instance.
+3. Go to **System Console > Notifications > Mobile Push > Send Push Notifications** and select **Use iOS and Android apps on iTunes and Google Play with TPNS** to enable push notifications. 
+4. *Optional:* To show full messages snippets in mobile push notifications, set **System Console > Notifications > Mobile Push > Push Notification Contents** to **Send full message snippet**.
+5. Download the mobile applications to your mobile device: - `Mattermost iOS App on iTunes <https://itunes.apple.com/us/app/mattermost/id984966508?mt=8>`_ or `Mattermost Android App on Google Play <https://play.google.com/store/apps/details?id=com.mattermost.mattermost&hl=en>`_.
+6. Open the mobile application and enter the address of your proxy and connect.
+
+After mobile apps are tested they can be further secured according to your internal compliance and security policies. 
+
+Compiling mobile apps from source code
+`````````````````````````````````````````````
+
+TBD
+
+Options for setting up push notifications
+`````````````````````````````````````````````
 
 For Mattermost iOS apps and Android mobile apps to receive puch notifications the service sending notifications needs to be verified as an authorized sender. There are 3 options to provide this verification: 
 
