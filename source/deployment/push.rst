@@ -51,13 +51,15 @@ Deploying with privately-hosted mobile apps within your private network
 
 To deploy in production with privately-hosted mobile apps compiled by your organization in an Enterprise App Store: 
 
-1. Compile your own iOS, Android mobile applications and Mattermost Push Notification Service (MPNS) via their open source repositories: 
+1. Compile your own iOS, Android mobile applications and Mattermost Push Notification Service (MPNS) via their open source repositories:
 
-  `Open source repository for the Mattermost Push Notification Service <https://github.com/mattermost/push-proxy>`_
-  `Open source repository for the Mattermost iOS application <https://github.com/mattermost/ios>`_
-  `Open source repository for the Mattermost Android application <https://github.com/mattermost/android>`_
+  - `Open source repository for the Mattermost Push Notification Service <https://github.com/mattermost/push-proxy>`_
+  - `Open source repository for the Mattermost iOS application <https://github.com/mattermost/ios>`_
+  - `Open source repository for the Mattermost Android application <https://github.com/mattermost/android>`_
 
-2. Connect your Mattermost server with the privately hosted MPNS service by going to **System Console** > **Notifications** > **Mobile Push** > **Send Push Notifications** > **Manually enter Push Notification Service location** and enter the location of your Mattermost Push Notification Service in the **Push Notification Server** field.  
+2. Connect your Mattermost server with your privately hosted MPNS service
+
+  - Go to **System Console** > **Notifications** > **Mobile Push** > **Send Push Notifications** > **Manually enter Push Notification Service location** and enter the location of your Mattermost Push Notification Service in the **Push Notification Server** field.  
 
 3. Apply the **securing mobile deployment** options listed below to meet the security and compliance requirements of your organization. 
 
@@ -79,15 +81,50 @@ Availability
 
 - To make access to installing mobile applications only available to users in an Enterprise App Store under your control, you can compile your own mobile applications and push notificiation service from their open source repositories.
 
-Information Disclosure 
+Push Notifications 
 
-- The system can be `configured to prevent the inclusion of message contents in push notifications <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_ and send only generic messages that an notification event took place. Push notifications can also be disabled all together. 
+- Please see `Securing Mattermost Push Notification Service`_ for an explantion of how push notifications work across iOS and Android followed by options for securing the system. 
+
+Securing Mattermost Push Notification Service 
+``````````````````````````````````````````````````
+
+To explain the options for securing the Mattermost Push Notification Service we begin with an overview of how push notifications are delivered. 
+
+HOW PUSH NOTIFICATIONS ARE DELIVERED: 
+
+To ensure push notifications are coming from a trusted source, mobile applications hosted in iTunes and Google Play can only receive push notifications sent from a service using a key or signature corresponding to a secret compiled into the mobile application itself. 
+
+Therefore, the following process is used: 
+
+1. An action triggering a push notification is detected in the Mattermost server running in your private network. 
+
+2. Your Mattermost server sends a push notification message to a Mattermost Push Notification Service (MPNS), either self-hosted in your private network, or publicly hosted by Mattermost, Inc. 
+
+3. MPNS sends a push notification message to either Apple Push Notification Service (APNS) or to the Google Cloud Messaging (GCM) service over a TLS connection depending on whether you're sending to an iOS or Android device. 
+
+  - If sent to Apple, the message has a signature corresponding to a secret compiled in the iOS app.
+  - If sent to Google, the message uses a key corresponding to a secret compiled in the Android app. 
+  
+  Regardless of whether you're using iOS or Android, the MPNS used needs to have access to the appropriate secret compiled into the mobile app. 
+  
+  - If you use the publicly hosted mobile apps in iTunes or Google Play, you need to use the publicly hosted MPNS from Mattermost, Inc., which uses the corresponding secret. 
+  - If you use a privately-hosted mobile app in an Enterprise App Store by compiling your own app, you need to also compile and use your own MPNS with the corresponding secret.  
+
+4. Either APNS or GCM receives the push notification message from MPNS over TLS, and then relays the message to the user's iOS or Android mobile app to be displayed.  
+
+.. Note: 
+
+   The use of push notifications with either iOS or Android mobile applications will require a moment where the contents of push notifications are visible unencrypted by a server controlled by either Apple or Google. This is standard for any iOS or Android app. For this reasons, there is an option to omit the contents of Mattermost messages from push notifications in order to meet certain compliance requrements. 
+
+SECURING YOUR MATTERMOST PUSH NOTIFICATION SERVICE: 
+
+The following options are available for securing your push notification service: 
+
+- The system can be `configured to prevent the inclusion of message contents in push notifications <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_ and send only generic messages that a notification event took place. Default server settings have message contents turned off. 
+- Push notifications can also be disabled entirely depending on security requirements. Default server settings have push notifications disabled. 
+- When using a privately-hosted MPNS, use encrypted TLS connections between MNPS and APNS, MPNS and GCM, MPNS and your Mattermost server.
 
 
-
-
-Options for setting up push notifications
-`````````````````````````````````````````````
 
 For Mattermost iOS apps and Android mobile apps to receive puch notifications the service sending notifications needs to be verified as an authorized sender. There are 3 options to provide this verification: 
 
@@ -159,18 +196,6 @@ You can connect to the TPNS by going to **System Console** > **Notifications** >
 
 Note: TPNS is a test service that does not encrypt push notifications and does not offer production-quality uptime. 
 
-What happens when a Mattermost push notification is sent? 
-`````````````````````````````````````````````````````````
-
-To ensure only push notifications from authorized senders are processed by iOS and Android mobile application, each push notifications need to come from a trusted source.  
-
-Here is the full process: 
-
-1. When triggered, a push notification is sent from the Mattermost server to the Mattermost Push Notification Service over TLS
-
-2. The Mattermost Push Notification Service forwards the message to either Apple Push Notification Service (APNS) or to the Google Cloud Messaging (GCM) service depending on whether you're sending to an iOS or Android device. The message from the Mattermost Push Notification Service is signed with a key that's registered with the recieving service, corresponding to the target mobile app, so its authenticity is verified. 
- 
-3. The APNS or GCM service confirms that the message from the Mattermost Push Notification Service is authorized for the target mobile application and forwards the message to the app to be displayed. 
 
 Confirming HPNS push notifications are properly configured
 ``````````````````````````````````````````````````````````
