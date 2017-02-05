@@ -18,10 +18,19 @@ Quick install for mobile apps via iTunes and Google Play
 For a quick evaluation of mobile applications after the Mattermost server is deployed in a test environment: 
 
 1. Set up an external proxy with encrypted transport, and optionally a mobile VPN client, to securely connect the mobile apps to your internal Mattermost instance.
-2. Enable mobile push notifications by going to **System Console > Notifications > Mobile Push > Send Push Notifications** and select **Use iOS and Android apps on iTunes and Google Play with TPNS**. 
-3. *Optional:* To show full messages snippets in mobile push notifications, set **System Console > Notifications > Mobile Push > Push Notification Contents** to **Send full message snippet**. Most deployments enable this unless they're under specific policies to not allow confidential information in push notifications (contents of push notifications may appear briefly on phones even when they're not locked by passcode). 
-4. Download the mobile applications to your mobile device: - `Mattermost iOS App on iTunes <https://itunes.apple.com/us/app/mattermost/id984966508?mt=8>`_ or `Mattermost Android App on Google Play <https://play.google.com/store/apps/details?id=com.mattermost.mattermost&hl=en>`_.
-5. Open the mobile application and enter the address of your proxy and connect.
+
+2. Enable mobile push notifications:
+
+  - Go to **System Console > Notifications > Mobile Push > Send Push Notifications** and select **Use iOS and Android apps on iTunes and Google Play with TPNS**. 
+
+  - *Optional:* To show full messages snippets in mobile push notifications, set **System Console > Notifications > Mobile Push > Push Notification Contents** to **Send full message snippet**. Most deployments enable this unless they're under specific policies to not allow confidential information in push notifications, since the contents of push notifications may appear briefly on phones even when they're not locked by passcode. 
+
+3. Download the mobile applications to your mobile device: 
+
+  - `Mattermost iOS App on iTunes <https://itunes.apple.com/us/app/mattermost/id984966508?mt=8>`_ or
+  - `Mattermost Android App on Google Play <https://play.google.com/store/apps/details?id=com.mattermost.mattermost&hl=en>`_.
+
+4. Open the mobile application and enter the address of your proxy and connect.
 
 After mobile apps are tested they can be further secured according to your internal compliance and security policies. 
 
