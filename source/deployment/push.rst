@@ -12,7 +12,20 @@ OVERVIEW:
   :backlinks: top
   :local:
 
-Deployment Options 
+Quick setup via iTunes and Google Play 
+--------------------------------------------------
+
+For a quick evaluation of mobile applications after the Mattermost server is deployed in a test environment: 
+
+1. Set up an external proxy with encrypted transport, and optionally a mobile VPN client, to securely connect the mobile apps to your internal Mattermost instance.
+2. Enable mobile push notifications by going to **System Console > Notifications > Mobile Push > Send Push Notifications** and select **Use iOS and Android apps on iTunes and Google Play with TPNS**. 
+3. *Optional:* To show full messages snippets in mobile push notifications, set **System Console > Notifications > Mobile Push > Push Notification Contents** to **Send full message snippet**. Most deployments enable this unless they're under specific policies to not allow confidential information in push notifications (contents of push notifications may appear briefly on phones even when they're not locked by passcode). 
+4. Download the mobile applications to your mobile device: - `Mattermost iOS App on iTunes <https://itunes.apple.com/us/app/mattermost/id984966508?mt=8>`_ or `Mattermost Android App on Google Play <https://play.google.com/store/apps/details?id=com.mattermost.mattermost&hl=en>`_.
+5. Open the mobile application and enter the address of your proxy and connect.
+
+After mobile apps are tested they can be further secured according to your internal compliance and security policies. 
+
+Production deployment options  
 --------------------------------------------------
 
 There are two options for deploying Mattermost mobile applications with push notifications to work with the Mattermost server you deploy in your private cloud: 
@@ -25,22 +38,13 @@ There are two options for deploying Mattermost mobile applications with push not
 
 The following sections detail setup of these two options: 
 
-Deploying mobile apps from iTunes or Google Play
-`````````````````````````````````````````````
+Deploying with publicly-hosted mobile apps by Mattermost, Inc. 
+`````````````````````````````````````````````````````````````````
 
-In your test environment, use the following instructions to connect your internal Mattermost instance to mobile apps on iTunes and Google Play, with push notifications: 
+TBD
 
-1. Set up Mattermost server using any standard install guide
-2. Set up an external proxy, and optionally a mobile VPN client, to securely connect the mobile apps to your internal Mattermost instance.
-3. Go to **System Console > Notifications > Mobile Push > Send Push Notifications** and select **Use iOS and Android apps on iTunes and Google Play with TPNS** to enable push notifications. 
-4. *Optional:* To show full messages snippets in mobile push notifications, set **System Console > Notifications > Mobile Push > Push Notification Contents** to **Send full message snippet**.
-5. Download the mobile applications to your mobile device: - `Mattermost iOS App on iTunes <https://itunes.apple.com/us/app/mattermost/id984966508?mt=8>`_ or `Mattermost Android App on Google Play <https://play.google.com/store/apps/details?id=com.mattermost.mattermost&hl=en>`_.
-6. Open the mobile application and enter the address of your proxy and connect.
-
-After mobile apps are tested they can be further secured according to your internal compliance and security policies. 
-
-Compiling mobile apps from source code
-`````````````````````````````````````````````
+Deploying with privately-hosted mobile apps within your private network
+`````````````````````````````````````````````````````````````````````````
 
 TBD
 
