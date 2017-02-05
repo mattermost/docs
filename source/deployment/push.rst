@@ -30,26 +30,39 @@ Production deployment options
 
 There are two options for deploying Mattermost mobile applications with push notifications to work with the Mattermost server you deploy in your private cloud: 
 
-- **Deploying mobile apps from iTunes or Google Play** - For quick and easy deployment, end users download the Mattermost mobile applications from iTunes and Google Play and connect to an appropriate proxy to reach your internal Mattermost deployment, and your Mattermost server sends push notifications to a hosted proxy server, which relays them via mobile push notification services provided by Apple and Google. 
+- **Deploying with publicly-hosted mobile apps by Mattermost, Inc.** - For quick and easy deployment, end users download the Mattermost mobile applications from iTunes and Google Play and connect to an appropriate proxy to reach your internal Mattermost deployment, and your Mattermost server sends push notifications to a hosted proxy server, which relays them via mobile push notification services provided by Apple and Google. 
  
   Enterprise customers may choose to secure these apps with a mobile VPN clients, single-sign-on, multi-factor authentication, proxy connection restrictions and encrypted transport.
 
-- **Compiling mobile apps from source code** - To customize the capabilities or appearance of mobile apps, or to secure their availability to a within a private network or to meet other security and compliance policies, an organization may choose to compile their own Mattermost mobile applications and push notification service from their open source repositories. 
+- **Deploying with privately-hosted mobile apps within your private network** - To customize the capabilities or appearance of mobile apps, or to secure their availability to a within a private network or to meet other security and compliance policies, an organization may choose to compile their own Mattermost mobile applications and push notification service from their open source repositories. 
 
 The following sections detail setup of these two options: 
 
 Deploying with publicly-hosted mobile apps by Mattermost, Inc. 
 `````````````````````````````````````````````````````````````````
 
-TBD
+To deploy in production with publicly-hosted mobile apps compiled by Mattermost, Inc. and hosted in iTunes and Google Play: 
+
+1. Complete the Quick Installation procedure mentioned in the start of this guide to set up the mobile apps in a test environment. 
+2. Apply the **securing mobile deployment** options listed below to meet the security and compliance requirements of your organization. 
 
 Deploying with privately-hosted mobile apps within your private network
 `````````````````````````````````````````````````````````````````````````
 
-TBD
+To deploy in production with privately-hosted mobile apps compiled by your organization in an Enterprise App Store: 
+
+1. Compile your own iOS, Android mobile applications and Mattermost Push Notification Service (MPNS) via their open source repositories: 
+
+  `Open source repository for the Mattermost Push Notification Service <https://github.com/mattermost/push-proxy>`_
+  `Open source repository for the Mattermost iOS application <https://github.com/mattermost/ios>`_
+  `Open source repository for the Mattermost Android application <https://github.com/mattermost/android>`_
+
+2. Connect your Mattermost server with the privately hosted MPNS service by going to **System Console** > **Notifications** > **Mobile Push** > **Send Push Notifications** > **Manually enter Push Notification Service location** and enter the location of your Mattermost Push Notification Service in the **Push Notification Server** field.  
+
+3. Apply the **securing mobile deployment** options listed below to meet the security and compliance requirements of your organization. 
 
 Securing mobile deployments
-`````````````````````````````````````````````````````````````````
+---------------------------------
 
 The following options for security mobile application deployments are available: 
 
@@ -64,7 +77,13 @@ Authentication
 
 Availability 
 
-- Optionally, Mattermost mobile applications and push notificiation service can be compiled from their open source repositories and deployed as part of an Enterprise App Store within your private network to prevent external access to the apps.
+- To make access to installing mobile applications only available to users in an Enterprise App Store under your control, you can compile your own mobile applications and push notificiation service from their open source repositories.
+
+Information Disclosure 
+
+- The system can be `configured to prevent the inclusion of message contents in push notifications <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_ and send only generic messages that an notification event took place. Push notifications can also be disabled all together. 
+
+
 
 
 Options for setting up push notifications
@@ -124,13 +143,7 @@ After purchasing and installing a license key, you can turn on HPNS using **Syst
 Enterprise App Store (EAS)
 `````````````````````````````````````````````````````````
 
-To set up an Enterprise App Store, teams can set up verified relationships by compiling, deploying, securing and maintaining the following open source repositories: 
 
-- `Open source repository for the Mattermost Push Notification Service <https://github.com/mattermost/push-proxy>`_
-- `Open source repository for the Mattermost iOS application <https://github.com/mattermost/ios>`_
-- `Open source repository for the Mattermost Android application <https://github.com/mattermost/android>`_
-
-After deploying the mobile applications and push notification service, go to **System Console** > **Notifications** > **Mobile Push** > **Send Push Notifications** > **Manually enter Push Notification Service location** and enter the location of your Push Notification Service in the **Push Notification Server** field. 
 
 Test Push Notifications Service (TPNS) 
 `````````````````````````````````````````````````````````
