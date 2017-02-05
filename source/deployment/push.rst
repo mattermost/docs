@@ -12,8 +12,8 @@ OVERVIEW:
   :backlinks: top
   :local:
 
-Quick setup via iTunes and Google Play 
---------------------------------------------------
+Quick install for mobile apps via iTunes and Google Play 
+-----------------------------------------------------------
 
 For a quick evaluation of mobile applications after the Mattermost server is deployed in a test environment: 
 
@@ -47,6 +47,25 @@ Deploying with privately-hosted mobile apps within your private network
 `````````````````````````````````````````````````````````````````````````
 
 TBD
+
+Securing mobile deployments
+`````````````````````````````````````````````````````````````````
+
+The following options for security mobile application deployments are available: 
+
+Connection Security 
+
+- Use of a mobile VPN client on mobile devices to establish secure connection to Mattermost server withing private network. 
+- Alternatively, deploying Mattermost behind your firewall with a web-visible proxy server with TLS encryption and specific ports allowing HTTPS and WSS access for mobile apps 
+ 
+Authentication 
+
+- If VPN client is not used, it's highly recommended that a multi-factor authentication requirement is enabled, either within Mattermost for users authenticating with username-password or AD/LDAP or via single-sign-on options requiring MFA.
+
+Availability 
+
+- Optionally, Mattermost mobile applications and push notificiation service can be compiled from their open source repositories and deployed as part of an Enterprise App Store within your private network to prevent external access to the apps.
+
 
 Options for setting up push notifications
 `````````````````````````````````````````````
@@ -89,7 +108,7 @@ The below explains each option in detail.
 
 
 Hosted Push Notifications Service (HPNS)
-----------------------------------------
+`````````````````````````````````````````````````````````
 
 Mattermost.com offers a Hosted Push Notification Service (HPNS) via commercial subscription for organizations who want encrypted push notifications sent from behind their firewall, with production-quality uptime and commercial support, as an alternative to compiling, deploying and securing their own service from source code provided (see "Enterprise App Store" in next section). 
 
@@ -103,7 +122,7 @@ A license key to activate HPNS is available with a `subscription to Mattermost E
 After purchasing and installing a license key, you can turn on HPNS using **System Console** > **Notifications** > **Mobile Push** > **Send Push Notifications** > **Use encrypted, production-quality HPNS connection to iOS and Android apps**.
 
 Enterprise App Store (EAS)
---------------------------
+`````````````````````````````````````````````````````````
 
 To set up an Enterprise App Store, teams can set up verified relationships by compiling, deploying, securing and maintaining the following open source repositories: 
 
@@ -114,7 +133,7 @@ To set up an Enterprise App Store, teams can set up verified relationships by co
 After deploying the mobile applications and push notification service, go to **System Console** > **Notifications** > **Mobile Push** > **Send Push Notifications** > **Manually enter Push Notification Service location** and enter the location of your Push Notification Service in the **Push Notification Server** field. 
 
 Test Push Notifications Service (TPNS) 
---------------------------------------
+`````````````````````````````````````````````````````````
 
 Mattermost.com also offers a free, unencrypted push notification service for trying out the Mattermost mobile applications prior to deciding whether to use the EAS or HPNS option. 
 
