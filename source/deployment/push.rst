@@ -68,26 +68,26 @@ Securing mobile deployments
 
 The following options for security mobile application deployments are available: 
 
-Mobile network connection security 
+Securing network connection to mobile apps 
 ``````````````````````````````````````````````````
 
 - Use of a mobile VPN client on mobile devices to establish secure connection to Mattermost server withing private network. 
 - Alternatively, deploying Mattermost behind your firewall with a web-visible proxy server with TLS encryption and specific ports allowing HTTPS and WSS access for mobile apps 
  
-Mobile authentication 
+Configuring authentication options in mobile apps 
 ``````````````````````````````````````````````````
 
-- If VPN client is not used, it's highly recommended that a multi-factor authentication requirement is enabled, either within Mattermost for users authenticating with username-password or AD/LDAP or via single-sign-on options requiring MFA.
+- If VPN client with multi-factor authentication is not used, it's highly recommended that MFA is required on authenticating into Mattermost, either within Mattermost itself or via single-sign-on options requiring MFA.
 
 Securing availability of mobile applications 
 ``````````````````````````````````````````````````
 
-- To make access to installing mobile applications only available to users in an Enterprise App Store under your control, you can compile your own mobile applications and push notificiation service from their open source repositories.
+- To limit access to mobile applications to a privately hosted Enterprise App Store, you can compile your own mobile applications and push notificiation service from their open source repositories.
 
 Securing push notifications 
 ``````````````````````````````````````````````````
 
-To explain the options for securing the Mattermost Push Notification Service we begin with an overview of how push notifications are delivered. 
+To describe options for securing mobile push notifications we begin with an overview of how push notifications are delivered, then the security options in the context of that process. 
 
 How push notifications are delivered
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -135,7 +135,7 @@ The following options are available for securing your push notification service:
   Note: Mattermost, Inc. also offers a free basic hosted service for testing setups, Test Push Notification Service (TPNS), which is referenced in the `Quick install for mobile apps via iTunes and Google Play`_ instructions. It does not offer a production-level uptime expectation, nor does it offer encrypted transport. 
 
 Setting up HPNS push notifications in Enterprise Edition 
-``````````````````````````````````````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To setup HPNS please follow the following steps: 
 
