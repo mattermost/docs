@@ -129,11 +129,11 @@ The following options are available for securing your push notification service:
   - Encrypted TLS connections between the hosted HPNS and APNS, HPNS and GCM, HPNS and your Mattermost server. 
   - Production-level uptime expectations.
   
-  After purchasing a subscription to Mattermost E10 or higher from Mattermost, Inc. and applying the license key, go to **System Console** > **Notifications** > **Mobile Push** > **Send Push Notifications** > **Use encrypted, production-quality HPNS connection to iOS and Android apps** 
+  After purchasing a subscription to Mattermost E10 or higher from Mattermost, Inc. follow the `Setting up HPNS push notifications in Enterprise Edition`_ instructions to set up and test your system.
 
   Note: Mattermost, Inc. also offers a free basic hosted service for testing setups, Test Push Notification Service (TPNS), which is referenced in the `Quick install for mobile apps via iTunes and Google Play`_ instructions. It does not offer a production-level uptime expectation, nor does it offer encrypted transport. 
 
-Confirming HPNS push notifications are properly configured
+Setting up HPNS push notifications in Enterprise Edition 
 ``````````````````````````````````````````````````````````
 
 To setup HPNS please follow the following steps: 
@@ -168,17 +168,6 @@ To setup HPNS please follow the following steps:
          - If the log message does not appear, it means no mobile push notification was sent to "Account A". Please repeat step 2 and double check each step. 
          
 4. After your issue is resolved, go to **System Console** > **General** > **Logging** > **File Log Level** and select **ERROR** to switch your logging detail level to Errors Only, instead of DEBUG, in order to conserve disk space. 
-
-Confirming TPNS push notifications are properly configured
-``````````````````````````````````````````````````````````
-
-To setup TPNS please `follow the instructions to confirm HPNS is correctly configured <http://docs.mattermost.com/deployment/push.html#confirming-hpns-push-notifications-are-properly-configured>`_ with the following changes: 
-
-1. Omit step 1.1, as there is no need to install Enterprise Edition.
-2. In step 1.2, select "User iOS and Android apps on iTunes and Google Play with TPNS"
-
-The same instructions should then verify the functionality of TPNS.
-
 
 Confirming Performance of Mobile Applications 
 `````````````````````````````````````````````
