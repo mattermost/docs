@@ -68,29 +68,29 @@ Securing mobile deployments
 
 The following options for security mobile application deployments are available: 
 
-Connection Security 
+Mobile network connection security 
+``````````````````````````````````````````````````
 
 - Use of a mobile VPN client on mobile devices to establish secure connection to Mattermost server withing private network. 
 - Alternatively, deploying Mattermost behind your firewall with a web-visible proxy server with TLS encryption and specific ports allowing HTTPS and WSS access for mobile apps 
  
-Authentication 
+Mobile authentication 
+``````````````````````````````````````````````````
 
 - If VPN client is not used, it's highly recommended that a multi-factor authentication requirement is enabled, either within Mattermost for users authenticating with username-password or AD/LDAP or via single-sign-on options requiring MFA.
 
-Availability 
+Securing availability of mobile applications 
+``````````````````````````````````````````````````
 
 - To make access to installing mobile applications only available to users in an Enterprise App Store under your control, you can compile your own mobile applications and push notificiation service from their open source repositories.
 
-Push Notifications 
-
-- Please see `Securing Mattermost Push Notification Service`_ for an explantion of how push notifications work across iOS and Android followed by options for securing the system. 
-
-Securing Mattermost Push Notification Service 
+Securing push notifications 
 ``````````````````````````````````````````````````
 
 To explain the options for securing the Mattermost Push Notification Service we begin with an overview of how push notifications are delivered. 
 
-HOW PUSH NOTIFICATIONS ARE DELIVERED: 
+How push notifications are delivered
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To ensure push notifications are coming from a trusted source, mobile applications hosted in iTunes and Google Play can only receive push notifications sent from a service using a key or signature corresponding to a secret compiled into the mobile application itself. 
 
@@ -115,8 +115,9 @@ Therefore, the following process is used:
 .. Note: 
 
    The use of push notifications with either iOS or Android mobile applications will require a moment where the contents of push notifications are visible unencrypted by a server controlled by either Apple or Google. This is standard for any iOS or Android app. For this reasons, there is an option to omit the contents of Mattermost messages from push notifications in order to meet certain compliance requrements. 
-
-SECURING YOUR MATTERMOST PUSH NOTIFICATION SERVICE: 
+ 
+Securing your Mattermost Push Notification Service 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following options are available for securing your push notification service: 
 
