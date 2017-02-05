@@ -163,19 +163,26 @@ To setup HPNS please follow the following steps:
      3. Repeat the "Trigger a push notification" procedure above and if you still don't receive a push notification, go to **System Console** > **Logs** click **Reload** and scroll to the bottom and look for a message similar to: ```[2016/04/21 03:16:44 UTC] [DEBG] Sending push notification to 63c06ca8e3949ca7e5996c31fcf07ecb36c658a3e7c2c227a4af949cc4777a87 wi msg of '@accountb: Hello'```
      
          - If the log message appears, it means a message was sent to the HPNS server and was not received by your mobile application. Please contact support@mattermost.com with the subject "HPNS issue on Step 8" for help from the commercial support team. 
-         
-         
+           
          - If the log message does not appear, it means no mobile push notification was sent to "Account A". Please repeat step 2 and double check each step. 
          
 4. After your issue is resolved, go to **System Console** > **General** > **Logging** > **File Log Level** and select **ERROR** to switch your logging detail level to Errors Only, instead of DEBUG, in order to conserve disk space. 
 
-Confirming Performance of Mobile Applications 
-`````````````````````````````````````````````
+Confirming performance of mobile applications 
+----------------------------------------------------
 
 The response times of Mattermost mobile apps should perform to standard benchmarks, provided device model, connection speed and server configuration are comparable to benchmark setups.
 
-Mobile Performance Benchmarks
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. Note: 
+
+   A 2nd generation of open source iOS and Android apps are under development with a beta release planned at the end of March 2017. They are developed using "React Native", a high performance mobile application framework created by Facebook and used in Facebook mobile applications. 
+
+   The current 1st generation Mattermost mobile apps in iTunes and Android are in "maintenance mode", meaning serious bugs found will be fixed, but no new improvements are being added, since the apps will be replaced by the 2nd generation apps. 
+
+   Performance benchmarks below are for 1st generation apps.
+
+Mobile performance benchmarks
+`````````````````````````````````````````````````````````
 
 Properly configured mobile applications on 4G/LTE or wifi should perform as follows: 
 
@@ -214,7 +221,7 @@ Samsung Galaxy S6 on wifi connection (23 ms ping time, 138 Mb/s download, 12 Mb/
 Note: While Mattermost mobile applications may be used on 3G (and lower) connections, this configuration is not recommended.
 
 Removing bottlenecks to mobile app performance 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+`````````````````````````````````````````````````````````
 
 If your mobile app is not performing to these sample benchmarks, you can identify bottlenecks using the following process: 
 
@@ -247,14 +254,13 @@ These procedures summarize all potential bottlenecks in a system for mobile app 
 
 - If you're not a subscriber, please `open a thread in the Mattermost Troubleshooting forum <http://www.mattermost.org/troubleshoot/>`_ with a summary of the performance you're seeing, details on the model of your mobile device, connection speed and server sizing. 
 
-
 Troubleshooting mobile applications 
-```````````````````````````````````
+--------------------------------------------
 
 Here are solutions to common troubleshooting requests: 
 
 Internal proxy configuration needed for outbound requests to HPNS 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``````````````````````````````````````````````````````````````````````
 
 1. Make sure your proxy server is properly configured to support SSL. Confirm it works by checking the URL at `https://www.digicert.com/help/`. 
 
@@ -265,7 +271,7 @@ Internal proxy configuration needed for outbound requests to HPNS
 Depending on how your proxy is configured you may need to add a port number and create a URL like `https://push.internalproxy.com:8000` mapped to `https://push.mattermost.com`
 
 Error message: “We would not connect to the Mattermost server or the server is running an incompatible version”
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``````````````````````````````````````````````````````````````````````
 
 This error message, whether on iOS or Android, typically results from a typo in the server URL or an SSL configuration issue. To troubleshoot: 
 
