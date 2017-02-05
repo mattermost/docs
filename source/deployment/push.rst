@@ -123,79 +123,15 @@ The following options are available for securing your push notification service:
 - The system can be `configured to prevent the inclusion of message contents in push notifications <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_ and send only generic messages that a notification event took place. Default server settings have message contents turned off. 
 - Push notifications can also be disabled entirely depending on security requirements. Default server settings have push notifications disabled. 
 - When using a privately-hosted MPNS, use encrypted TLS connections between MNPS and APNS, MPNS and GCM, MPNS and your Mattermost server.
+- When using Mattermost mobile apps in iTunes and Google Play, purchase an annual subcription to Mattermost Enterprise Edition E10 or higher, which offers a Hosted Push Notification Service (HPNS), offering: 
 
+  - Access to a publicly-hosted MPNS service offering an explicit privacy policy where the contents of unencrypted messages are not examined or stored. 
+  - Encrypted TLS connections between the hosted HPNS and APNS, HPNS and GCM, HPNS and your Mattermost server. 
+  - Production-level uptime expectations.
+  
+  After purchasing a subscription to Mattermost E10 or higher from Mattermost, Inc. and applying the license key, go to **System Console** > **Notifications** > **Mobile Push** > **Send Push Notifications** > **Use encrypted, production-quality HPNS connection to iOS and Android apps** 
 
-
-For Mattermost iOS apps and Android mobile apps to receive puch notifications the service sending notifications needs to be verified as an authorized sender. There are 3 options to provide this verification: 
-
-1. Use the **Hosted Push Notification Service (HPNS)** from Mattermost.com that is trusted by Mattermost iOS and Android applications on iTunes and Google Play.
-
-    - Pros: 
-        - Push notifications are encrypted.
-        - Saves time over deploying to an Enterprise App Store. 
-        - Production quality uptime offered via commercial subscription. 		  
-        - Commercial support from Mattermost.com included with subscription.
-    - Cons: 
-        - Some IT policies only allow mobile apps via Enteprise App Store.
-
-2. Use an **Enterprise App Store (EAS)** by compiling your own push notification service and mobile applications from source code to manually establish verification.
-
-    - Pros: 
-        - Push notifications are encrypted.
-        - Enterprise App Store provides the highest level of mobile apps security. 
-        
-    - Cons: 
-        - Requires developer time to compile, secure, deploy and maintain components.
-
-    EAS is most convenient when an organization has access to developers experienced in iOS mobile development, Android mobile development, Golang programming, Enterprise App Store administration and system security. 
-
-3. Use the **Test Push Notification Service (TPNS)** and pre-compiled applications with unencrypted push notifications prior to selecting one of the above options.
-
-    - Pros:
-        - Easy and free solution to setting up and evaluating mobile apps.
-    - Cons: 
-        - Does not offer encrypted push notifications.
-        - Not intended as a production quality service.
-        - No commercial support from Mattermost.com
-
-The below explains each option in detail. 
-
-.. note::  By default, push notifications do not contain specific message contents. They use generic messages like "@frank was mentioned in Town Square" but DO NOT display the contents of messages until System Admins configure the option to include them. 
-
-
-Hosted Push Notifications Service (HPNS)
-`````````````````````````````````````````````````````````
-
-Mattermost.com offers a Hosted Push Notification Service (HPNS) via commercial subscription for organizations who want encrypted push notifications sent from behind their firewall, with production-quality uptime and commercial support, as an alternative to compiling, deploying and securing their own service from source code provided (see "Enterprise App Store" in next section). 
-
-With HPNS, end users can use publicly available iOS and Android mobile applications on iTunes and Google Play over encrypted connections: 
-
-- `Mattermost iOS App on iTunes with encrypted push notifications <https://itunes.apple.com/us/app/mattermost/id984966508?mt=8>`_
-- `Mattermost Android App on Google Play with encrypted push notifications <https://play.google.com/store/apps/details?id=com.mattermost.mattermost&hl=en>`_
-
-A license key to activate HPNS is available with a `subscription to Mattermost Enterprise Edition <https://about.mattermost.com/pricing/>`_. 
-
-After purchasing and installing a license key, you can turn on HPNS using **System Console** > **Notifications** > **Mobile Push** > **Send Push Notifications** > **Use encrypted, production-quality HPNS connection to iOS and Android apps**.
-
-Enterprise App Store (EAS)
-`````````````````````````````````````````````````````````
-
-
-
-Test Push Notifications Service (TPNS) 
-`````````````````````````````````````````````````````````
-
-Mattermost.com also offers a free, unencrypted push notification service for trying out the Mattermost mobile applications prior to deciding whether to use the EAS or HPNS option. 
-
-End users of TPNS can use the publicly available iOS and Android mobile applications on iTunes and Google Play, with unencrypted push notifications: 
-
-- `Mattermost iOS App on iTunes <https://itunes.apple.com/us/app/mattermost/id984966508?mt=8>`_
-- `Mattermost Android App on Google Play <https://play.google.com/store/apps/details?id=com.mattermost.mattermost&hl=en>`_
-
-You can connect to the TPNS by going to **System Console** > **Notifications** > **Mobile Push** > **Send Push Notifications** > **Use iOS and Android apps on iTunes and Google Play with TPNS.**
-
-Note: TPNS is a test service that does not encrypt push notifications and does not offer production-quality uptime. 
-
+  Note: Mattermost, Inc. also offers a free basic hosted service for testing setups, Test Push Notification Service (TPNS), which is referenced in the `Quick install for mobile apps via iTunes and Google Play`_ instructions. It does not offer a production-level uptime expectation, nor does it offer encrypted transport. 
 
 Confirming HPNS push notifications are properly configured
 ``````````````````````````````````````````````````````````
