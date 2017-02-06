@@ -1,35 +1,35 @@
-Migration Guide 
----------------
+Migration Guide
+===============
 
-Migrating the Mattermost Server  
-===============================
+Migrating the Mattermost Server
+-------------------------------
 
-The following instructions migrate Mattermost from one server to another by backing up and restoring the Mattermost database and ``config.json`` file. For these instructions **SOURCE** refers to the Mattermost server *from which* your system will be migrated and **DESTINATION** refers to the Mattermost server *to which* your system will be migrated. 
+The following instructions migrate Mattermost from one server to another by backing up and restoring the Mattermost database and ``config.json`` file. For these instructions **SOURCE** refers to the Mattermost server *from which* your system will be migrated and **DESTINATION** refers to the Mattermost server *to which* your system will be migrated.
 
-1. Backup your SOURCE Mattermost server 
+1. Backup your SOURCE Mattermost server
     1. See `Backup Guide <https://docs.mattermost.com/administration/backup.html>`_
-2. Upgrade your SOURCE Mattermost server to the latest major build version 
+2. Upgrade your SOURCE Mattermost server to the latest major build version
     1. See `Mattermost Upgrade Guide <upgrade.html>`_
-3. Install the latest major build of Mattermost server as your DESTINATION   
+3. Install the latest major build of Mattermost server as your DESTINATION
     1. See docs.mattermost.com for install guides. Make sure your new instance is properly configured and tested. The database type (MySQL or PostgreSQL) and version of SOURCE and DESTINATION deployments need to match.
     2. Stop the DESTINATION server using `sudo stop mattermost`, then backup the database and `config.json` file.
-4. Migrate database from SOURCE to DESTINATION  
+4. Migrate database from SOURCE to DESTINATION
     1. Backup the database from the SOURCE Mattermost server and restore it in place of the database to which the DESTINATION server is connected
-5. Migrate ``config.json`` from SOURCE to DESTINATION  
-    1. Copy of ``config.json`` file from SOURCE deployment to DESTINATION 
-6. If you use local storage (``FileSettings.DriverName`` is set to ``local``), migrate ``./data`` from SOURCE to DESTINATION  
+5. Migrate ``config.json`` from SOURCE to DESTINATION
+    1. Copy of ``config.json`` file from SOURCE deployment to DESTINATION
+6. If you use local storage (``FileSettings.DriverName`` is set to ``local``), migrate ``./data`` from SOURCE to DESTINATION
     1. Copy the ``./data`` directory from SOURCE deployment to DESTINATION
     2. If you use a directory other than ``./data``, copy that directory instead
-7. Start the DESTINATION deployment  
+7. Start the DESTINATION deployment
     1. Run ``sudo start mattermost``
     2. Opening the **System Console** and saving a change will upgrade your ``config.json`` schema to the latest version using default values for any new settings added
-8. Test the system is working by going to the URL of an existing team.   
+8. Test the system is working by going to the URL of an existing team.
     1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade
 
-Once your migration is complete and verified, you can optionally `upgrade the Team Edition of Mattermost to Enterprise Edition using the upgrade guide <https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition>`_. 
+Once your migration is complete and verified, you can optionally `upgrade the Team Edition of Mattermost to Enterprise Edition using the upgrade guide <https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition>`_.
 
 Migrating from Slack
-====================
+--------------------
 
 .. note:: As a proprietary SaaS service, Slack is able to change its export format quickly and without notice. If you encounter issues not mentioned in the documentation below, please alert the product team by `filing an issue <https://www.mattermost.org/filing-issues/>`_.
 
@@ -48,7 +48,7 @@ This feature can be accessed through the `Mattermost Web App <https://docs.matte
    If you don't use Docker, there are `step-by-step instructions <https://docs.mattermost.com/install/docker-local-machine.html>`_ to install Mattermost in preview mode in less than 5 minutes.
 
 Supported Features
-++++++++++++++++++
+~~~~~~~~~~~~~~~~~~
 
 The following key features are supported when importing from Slack:
 
@@ -67,7 +67,7 @@ Bot and Integration messages are imported by default, but if you would like them
 .. note:: Slack user accounts with the same email address as existing accounts on your Mattermost server will be merged into those accounts on import.
 
 Limitations
-+++++++++++
+~~~~~~~~~~~
 
 The following limitations are present when importing from Slack:
 
@@ -76,7 +76,7 @@ The following limitations are present when importing from Slack:
 * Direct Message and Private Groups cannot be imported. Slack does not include these messages when generating the export archive.
 
 Migrating from Slack using the Mattermost Web App
-+++++++++++++++++++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note:: For larger imports, particularly those where you have used the `slack-advanced-exporter tool` to add Slack post attachments to the archive, it is recommended to import the Slack data using the `CLI <https://docs.mattermost.com/administration/migrating.html#migrating-from-slack-using-the-mattermost-cli>`_.
 
@@ -88,7 +88,7 @@ Migrating from Slack using the Mattermost Web App
 
 
 Migrating from Slack using the Mattermost CLI
-+++++++++++++++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Generate a Slack "Export" file from **Slack > Team Settings > Import/Export Data > Export > Start Export**.
 
@@ -97,7 +97,7 @@ Migrating from Slack using the Mattermost CLI
    ``$ platform -slack_import -team_name="your-team" -import_archive /path/to/your-slack-export.zip``
 
 Using the Imported Team
-+++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~
 
 * During the import process, the emails and usernames from Slack are used to create new Mattermost accounts.
 
