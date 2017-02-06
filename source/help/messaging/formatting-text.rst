@@ -208,7 +208,7 @@ You can set the width and height of the displayed image by using an equals sign 
 
 **Examples**:
 
-Markdown for an inline image with hover text
+Inline image with hover text
   .. code-block:: none
 
     ![Github](https://assets-cdn.github.com/favicon.ico "GitHub Icon")
@@ -219,7 +219,7 @@ Markdown for an inline image with hover text
 
     <img src="https://assets-cdn.github.com/favicon.ico" alt="GitHub" title="GitHub Icon"></a>
 
-Markdown for an inline image with link
+Inline image with link
   Note the extra set of square brackets.
 
   .. code-block:: none
@@ -232,18 +232,20 @@ Markdown for an inline image with link
     :alt: GitHub
     :target: https://github.com/mattermost/platform
 
-Markdown for an inline image displayed at 20 pixels wide and 30 pixels high
+Inline image displayed at 20 pixels wide and 30 pixels high
   .. code-block:: none
 
     ![Github](https://assets-cdn.github.com/favicon.ico =20x30 "GitHub Icon")
 
   Renders as:
 
-.. raw:: html
+  .. |github-icon-example| image:: ../../images/github-icon-example.png
 
-  <img alt="GitHub" src="../../_images/github-icon-example.png" title="GitHub Icon">
+  .. raw:: html
 
-Markdown for an inline image displayed at 20 pixels wide and the height adjusted to suit
+    <img alt="GitHub" src="../../_images/github-icon-example.png" title="GitHub Icon">
+
+Inline image displayed at 20 pixels wide and the height adjusted to suit
   .. code-block:: none
 
     ![Github](https://assets-cdn.github.com/favicon.ico =20 "GitHub Icon")
