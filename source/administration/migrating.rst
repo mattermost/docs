@@ -54,7 +54,7 @@ The following key features are supported when importing from Slack:
 
 * User accounts with an email address set
 
-* Public channels and the text messages posted in them
+* Public channels and the text messages posted in them, with formatting
 
 * Channel topic and purpose
 
