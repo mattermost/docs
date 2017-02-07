@@ -75,6 +75,8 @@ The following limitations are present when importing from Slack:
 
 * Direct Message and Private Groups cannot be imported. Slack does not include these messages when generating the export archive.
 
+* If the handle of an imported Slack channel is the same handle as a deleted Mattermost channel, then a random handle is generated for the imported Slack channel.
+
 Migrating from Slack using the Mattermost Web App
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
