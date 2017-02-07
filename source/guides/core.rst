@@ -21,8 +21,9 @@ Documentation Style Guide
 
 .. toctree::
    :maxdepth: 3
-
-   /process/documentation-guidelines*
+   :glob:
+   
+   /process/documentation-guidelines*
 
 Joining the Team 
 -------------------------
