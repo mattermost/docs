@@ -45,7 +45,7 @@ The commercial Mattermost Enterprise Edition extends the security and productivi
 * Critical updates are released for urgent, high priority security issues or critical losses of functionality that should not wait for the next bi-monthly release. 
 * Mattermost software has a mandatory upgrade policy and customers and users need to be on the latest release to receive critical updates. 
 * Critical updates are delivered as dot releases, for example a critical update to release `3.1.0` would be named `3.1.1`.
-* Customers and subscribers to the Mattermost Insiders mailing list receive notifications about all critical updates. 
+* Customers and subscribers to the Security Bulletin [mailing list](http://eepurl.com/cAl5Rv) receive notifications about all critical updates. 
 
 ### Security Review Checklist 
 In addition to checklists for quality and reliability, code changes receive multiple reviews for the following system security design principles: 
