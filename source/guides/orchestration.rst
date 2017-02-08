@@ -48,7 +48,12 @@ Installation
 
 1. **Installation is designed for officially supported operating systems and platforms**. EXCEPTION: RHEL equivalents (CentOS, Amazon Linux, Oracle Linux, Scientific Linux) are acceptable as long as the exception is noted in README or equivalent with ``This deployment uses [OPERATING_SYSTEM] as an equivalent to the officially supported version of Red Hat Enterprise Linux.``
 
-2. **Automated installation passes basic testing**. After installation 1) create a new user account and use that account to create a new team and post to Town Square channel, 2) create a second user account and join the newly created team and reply to first user's post in Town Square, 3) go back to first user account and post reply with an image attached, 4) confirm there are no errors and no blue bar at the top of the screen with "Mattermost unreachable error" (which would indicate websocket configuration error). 
+2. **Automated installation passes basic testing**. After installation run the following manual tests: 
+
+  1) Create a new user account and use that account to create a new team and post to Town Square channel. 
+  2) Create a second user account and join the newly created team and reply to first user's post in Town Square.
+  3) Go back to first user account and post reply with an image attached.
+  4) Confirm there are no errors and no blue bar at the top of the screen with "Mattermost unreachable error" (which would indicate websocket configuration error). 
 
 Documentation 
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -59,8 +64,8 @@ Documentation
  
       To deploy Mattermost in production you need to configure SSL and SMTP email according to official documentation.
       
-      - [Configure SSL for Mattermost](need link, https://pre-release.mattermost.com/core/pl/98oazydsq7dc8mkz5xmsbmfd3y) 
-      - [Configure SMTP email for Mattermost](need link, https://pre-release.mattermost.com/core/pl/98oazydsq7dc8mkz5xmsbmfd3y)
+      - [Configure SSL for Mattermost](https://about.mattermost.com/ssl-configuration/) 
+      - [Configure SMTP email for Mattermost](https://about.mattermost.com/smtp-configuration/)
 
 2. **Unofficial deployment options should be documented**. Unofficial deployment configurations, such as use of Linux operating systems that are not officially supported, should be documented in the README.
 
