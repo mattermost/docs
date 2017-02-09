@@ -177,7 +177,7 @@ Display: Icons
 
 
 Display: Instructions
---------------
+---------------------
 
 **Instructions should be sentences, one-line links should be fragments.**
 
@@ -186,14 +186,14 @@ Instructions, such as “A password reset link has been sent to ``you@email.com`
     **Example:**
 
         Correct:
-            Instruction “Please check your inbox”, ended with a period.
+            Instruction “Please check your inbox”, ending with a period.
 
             ..  image:: ../images/align5.jpg
                 :alt: Period added
                 :width: 300 px
         
         Incorrect:
-            Instruction “Please check your inbox”, didn't end with a period.
+            Instruction “Please check your inbox”, ending without a period.
 
             ..  image:: ../images/align4.png
                 :alt: Period Missing
@@ -206,9 +206,9 @@ Instructions, such as “A password reset link has been sent to ``you@email.com`
 Display: Username display
 ---------------------------
 
-The username of any user should be preceded by the @ icon at all places except for the Direct Messages list in the left-hand sidebar, and for any post or comment made by the user.
+Usernames should be preceded by the @ icon in all places except for the Direct Messages list in the left-hand sidebar, and for any post or comment made by the user.
 
-Examples of where an @ icon should precede the username are as follow:
+Examples of where an @ icon should precede the username are as follows:
 
 - User list in the system console.
 - Autocomplete.
@@ -253,7 +253,7 @@ Error messages should:
 - Be consistent with the Mattermost voice and look professional.
 - Be avoided when possible (by avoiding the error condition).
 
-Error message should not:
+Error messages should not:
 
 - Be in red or in capital letters.
 - Say or have the term “Error”.
@@ -399,13 +399,13 @@ Input: Validation
 User should be notified about the action they perform along with any implications associated with them.
 
   Example 1:
-    "Settings are saved but will be applied after a server restart"
+    "Settings are saved but will be applied after a server restart."
 
       ..  image:: ../images/confirm2.jpg
           :alt: Settings saved
 
   Example 2:
-    "Link copied to clipboard"
+    "Link copied to clipboard."
 
       ..  image:: ../images/confirm1.jpg
           :alt: Confirmation message
@@ -439,10 +439,10 @@ Notifications: Header Bar
 
 The header bar appears as a dropdown bar from the top of the screen. The header bar:
 
-1. May include an "x" button to dismiss
-2. Be limited to 60 characters
-3. May include a time-out
-4. Appear over the rest of the UI instead of pushing the UI down
+1. May include an "x" button to dismiss.
+2. Is limited to 60 characters.
+3. May include a time-out.
+4. Appears over the rest of the UI instead of pushing the UI down.
 
 Multiple headers can appear, with the earliest notification at the top and more recent notifications appearing underneath.
 
@@ -460,10 +460,10 @@ There are several modes for this element:
 
     **System-wide header notification:**
 
-        - Triggered on login
-        - Includes “x” button to dismiss
-        - No timeout
-        - Removed when system admin cancels
+        - Triggered on login.
+        - Includes “x” button to dismiss.
+        - No timeout.
+        - Removed when system admin cancels.
         | Examples:
         | “Try our new Windows App. Click here to download.”,
         | “Scheduled maintenance 2:00am to 2:30am starts in 20 minutes, 3 seconds.”
