@@ -1,5 +1,5 @@
 ================================================
-Deployment Solution Programs (Work-in-progress) 
+Deployment Solution Programs 
 ================================================
 
 *This program is under development, please consider below a work-in-progress*
@@ -16,6 +16,7 @@ Deployment solutions are recognized by Mattermost at three-levels:
 
    - `Puppet deployment solution for Mattermost <https://forge.puppet.com/liger1978/mattermost>`_ by Richard Grainger
    - `Heroku deployment solution for Mattermost <https://chrisdecairos.ca/deploying-mattermost-to-heroku/>`_ by Christopher De Cairos
+
 
 - **Registered Deployment Solutions** - Orchestration solutions that follow detailed Mattermost guidelines on keeping up-to-date with the latest Mattermost version and security updates (typically a one-line change), linking to official documentation, supporting branding guidelines, and maintaining a changelog. This level of engagement allows Mattermost to more prominently promote the work, knowing that it's committed to meeting explicit standards.
 
@@ -60,12 +61,15 @@ Documentation
 
 1. **Include link to official Mattermost documentation**. README or equivalent contains statement ``Please see https://docs.mattermost.com for official documentation.``
 
-  Include the following:
+  Include the following information in text, markdown, HTML or other format. Square brackets [] indicate optional statements depending on the configuration of your solution:
  
-      To deploy Mattermost in production you need to configure SSL and SMTP email according to official documentation.
+      This deployment solution installs [and upgrades] a Mattermost server to provide secure, private cloud messaging for teams and enterprises. More information is available at: https://about.mattermost.com  
+ 
+      Following automated deployment, the following steps are required to make your system production-ready: 
       
       - [Configure SSL for Mattermost](https://about.mattermost.com/ssl-configuration/) 
       - [Configure SMTP email for Mattermost](https://about.mattermost.com/smtp-configuration/)
+
 
 2. **Unofficial deployment options should be documented**. Unofficial deployment configurations, such as use of Linux operating systems that are not officially supported, should be documented in the README.
 
@@ -86,3 +90,4 @@ Upgrade
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 1. **Support upgrade of Mattermost**. Enable user interface or commandline upgrade of a Mattermost deployment to latest version based on upgrade guide instructions. 
+
