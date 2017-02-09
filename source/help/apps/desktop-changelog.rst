@@ -400,7 +400,7 @@ Contributors
 
 Many thanks to all our contributors. In alphabetical order:
 
--  `asaadmahmoodspin <https://github.com/asaadmahmoodspin>`__,
+-  `asaadmahmood <https://github.com/asaadmahmood>`__,
    `jeremycook <https://github.com/jeremycook>`__,
    `jnugh <https://github.com/jnugh>`__,
    `jwilander <https://github.com/jwilander>`__,
