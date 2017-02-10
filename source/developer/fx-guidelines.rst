@@ -37,7 +37,7 @@ Given `Hick’s Law <https://en.wikipedia.org/wiki/Hick%27s_law>`_, core functio
 Forgiving
 ---------
 
-There will be unavoidable product failures, whether through technically issues like loss of connectivity or through our inability to make the user aware of correct usage. Being forgiving means reducing the negative impact users encounter during failures--not losing their data, not deleting, updating or sending something they didn't intend to send, and so forth.  
+There will be unavoidable product failures, whether through technical issues like loss of connectivity or through our inability to make the user aware of correct usage. Being forgiving means reducing the negative impact users encounter during failures--not losing their data, not deleting, updating or sending something they didn't intend to send, and so forth.  
 
 Features like confirmation dialogs on critical actions or temporarily saving user input in case of disconnect are examples of forgiveness. 
 
