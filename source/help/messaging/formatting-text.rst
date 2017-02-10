@@ -1,10 +1,10 @@
 Formatting Text
-----------------
+===============
 
 Markdown makes it easy to format messages. Type a message as you normally would, and use these rules to render it with special formatting.
 
 Emojis
-=======
+------
 
 Open the emoji autocomplete by typing ``:`` followed by two characters. A full list of emojis can be found `here <http://www.emoji-cheat-sheet.com/>`_. It is also possible to create your own `Custom Emoji <http://docs.mattermost.com/help/settings/custom-emoji.html>`_ if the emoji you want to use doesn't exist.
 
@@ -15,7 +15,7 @@ Renders as:
 .. image:: ../../images/Emoji1.PNG
 
 Text Style
-==========
+----------
 
 You can use either ``_`` or ``*`` around a word to make it italic. Use two to make it bold.
 
@@ -29,7 +29,7 @@ You can use either ``_`` or ``*`` around a word to make it italic. Use two to ma
   :width: 100px
 
 Links
-======
+-----
 
 Create labeled links by putting the desired text in square brackets and the associated link in normal brackets.
 
@@ -38,11 +38,11 @@ Create labeled links by putting the desired text in square brackets and the asso
 Renders as: `Check out Mattermost! <https://about.mattermost.com/>`_
 
 Headings
-========
+--------
 
 Make a heading by typing # and a space before your title. For smaller headings, use more #’s.
 
-.. code::
+.. code-block:: none
 
   ## Large Heading
   ### Smaller Heading
@@ -54,7 +54,7 @@ Renders as:
 
 Alternatively, you can underline the text using ``===`` or ``---`` to create headings.
 
-.. code::
+.. code-block:: none
 
   Large Heading
   -------------
@@ -64,11 +64,11 @@ Renders as:
 .. image:: ../../images/Headings2.PNG
 
 Lists
-=====
+-----
 
 Create a list by using ``*`` or ``-`` as bullets. Indent a bullet point by adding two spaces in front of it.
 
-.. code::
+.. code-block:: none
 
   * item one
   * item two
@@ -83,19 +83,36 @@ Renders as:
 
 Make it an ordered list by using numbers instead:
 
-.. code::
+.. code-block:: none
 
   1. Item one
-  2. Item two
+  1. Item two
+  1. item three
 
 Renders as:
 
 #. Item one
 #. Item two
+#. Item three
+
+You can also start a list at any number:
+
+.. code-block:: none
+
+  4. The first list number is 4.
+  1. The second list number is 5.
+  1. The third list number is 6.
+
+Renders as:
+
+4. The first list number is 4.
+5. The second list number is 5.
+6. The third list number is 6.
+
 
 Make a task list by including square brackets:
 
-.. code::
+.. code-block:: none
 
   - [ ] Item one
   - [ ] Item two
@@ -106,13 +123,14 @@ Renders as:
 .. image:: ../../images/checklist.PNG
 
 Code Block
-==========
+----------
 
 Create a code block by indenting each line by four spaces, or by placing ``````` on the line above and below your code.
 
 Example:
 
-.. code::
+.. code-block:: none
+
 
   ```
   code block
@@ -120,7 +138,8 @@ Example:
 
 Renders as:
 
-.. code::
+.. code-block:: none
+
 
   code block
 
@@ -133,7 +152,8 @@ Supported languages are:
 
 Example:
 
-.. code::
+.. code-block:: none
+
 
   ``` go
   package main
@@ -163,55 +183,93 @@ Renders as:
 
 
 In-line Code
-============
+------------
 
 Create in-line monospaced font by surrounding it with backticks.
 
-.. code::
+.. code-block:: none
+
 
   `monospace`
 
 Renders as: ``monospace``.
 
 In-line Images
-==============
+--------------
 
-Create in-line images using an ``!`` followed by the alt text in square brackets and the link in normal brackets. Add hover text by placing it in quotes after the link.
+Add in-line images by using an exclamation mark followed by the alt text in square brackets then the URL of the image in round brackets. You can add hover text by placing the text in quotes after the link.
 
-.. code::
+**![** *{alt text}* **](** *{URL of image}*  "*{Hover text}* " **)**
 
-  ![alt text that shows when a link is broken](broken-link "hover text")
+If the height of the original image is more than 500 pixels, the system sets the height at 500 pixels and adjusts the width to maintain the original aspect ratio.
 
-  and
+You can set the width and height of the displayed image by using an equals sign and the width x height after the URL of the image. If you set only the width, the system adjusts the height to maintain the original aspect ratio.
 
-  [![Build Status](https://travis-ci.org/mattermost/platform.svg?branch=master)](https://travis-ci.org/mattermost/platform) [![Github](https://assets-cdn.github.com/favicon.ico)](https://github.com/mattermost/platform)
 
-Renders as:
+**Examples**:
 
-.. image:: https://docs.mattermost.com
-  :alt: alt text that shows when a link is broken
+.. |mattermost-icon-76x76| image:: ../../images/icon-76x76.png
+.. |mattermost-icon-50x76| image:: ../../images/icon-50x76.png
 
-and
+Inline image with hover text
+  .. code-block:: none
 
-.. image:: https://travis-ci.org/mattermost/platform.svg?branch=master
-  :alt: Build Status
-  :target: https://travis-ci.org/mattermost/platform
+    ![Mattermost](../../images/icon-76x76.png "Mattermost Icon")
 
-.. image:: https://assets-cdn.github.com/favicon.ico
-  :alt: GitHub
-  :target: https://github.com/mattermost/platform
+  Renders as:
+
+  .. raw:: html
+
+    <img src="../../_images/icon-76x76.png" alt="Mattermost" title="Mattermost Icon"></a>
+
+Inline image with link
+  Note the extra set of square brackets.
+
+  .. code-block:: none
+
+    [![Mattermost](../../images/icon-76x76.png)](https://github.com/mattermost/platform)
+
+  Renders as:
+
+  .. image:: ../../images/icon-76x76.png
+    :alt: Mattermost
+    :target: https://github.com/mattermost/platform
+
+Inline image displayed at 50 pixels wide and 76 pixels high
+  .. code-block:: none
+
+    ![Mattermost](../../images/icon-76x76.png =50x76 "Mattermost Icon")
+
+  Renders as:
+
+  .. raw:: html
+
+    <img alt="Mattermost" src="../../_images/icon-50x76.png" title="Mattermost Icon">
+
+Inline image displayed at 50 pixels wide and the height adjusted to suit
+  .. code-block:: none
+
+    ![Mattermost](../../images/icon-76x76.png =50 "Mattermost Icon")
+
+  Renders as:
+
+  .. raw:: html
+
+    <img src="../../_images/icon-76x76.png" alt="Mattermost" width="50px" title="Mattermost Icon"></a>
 
 Lines
-=====
+-----
 
 Create a line by using three ``*``, ``_``, or ``-``.
 
-``***`` renders as:
+``***``
+
+renders as:
 
 ---------------------------------------------------------------------------
 
 Block quotes
-============
+------------
 
 Create block quotes using ``>``.
 
@@ -220,11 +278,12 @@ Create block quotes using ``>``.
 .. image:: ../../images/blockQuotes.PNG
 
 Tables
-======
+------
 
 Create a table by placing a dashed line under the header row and separating the columns with a pipe ``|``. (The columns don’t need to line up exactly for it to work). Choose how to align table columns by including colons ``:`` within the header row.
 
-.. code::
+.. code-block:: none
+
 
   | Left-Aligned  | Center Aligned  | Right Aligned |
   | :------------ |:---------------:| -----:|
@@ -238,11 +297,12 @@ Renders as:
 
 
 Math Formulas
-=============
+-------------
 
 Create formulas by using LaTeX in a ``latex`` `Code Block`_
 
-.. code::
+.. code-block:: none
+
 
   ```latex
   X_k = \sum_{n=0}^{2N-1} x_n \cos \left[\frac{\pi}{N} \left(n+\frac{1}{2}+\frac{N}{2}\right) \left(k+\frac{1}{2}\right) \right]
