@@ -1,8 +1,13 @@
 .. _definitions:
 
-Definitions
-===========
+Levels of Feature Quality, Development, and Support
+===================================================
 
+This document defines the terminology that is used when communicating status of features to the Mattermost community. The terminology applies to all editions of Mattermost platform and to Mattermost apps.
+
+.. contents::
+  :local:
+  :backlinks: top
 
 Feature Quality Levels
 ----------------------
@@ -22,7 +27,7 @@ Beta Level Quality
 Experimental Level Quality
   - Not recommended for use in production
   - Unknown level of stability, and might cause data loss
-  - Minimal feature that is not yet complete
+  - Minimal feature set that is not yet complete
   - Little or no documentation available
   - Disabled by default and must be turned on with a run-time feature flag
 
@@ -31,7 +36,7 @@ Feature Development Levels
 
 Initial Development
   - Experimental or Beta quality
-  - Improved, minimal features not yet complete
+  - Minimal feature set that is not yet complete
 Active Development
   - Production Level quality
   - Tested and released in one or more Mattermost products
@@ -52,7 +57,8 @@ Not to be confused with paid product support available for Enterprise Editions.
 Official Support
   - Production level quality
   - In Active Development or in Maintenance Mode
-  - GitHub Pull Requests are accepted for bug fixes and security fixes
+  - GitHub pull requests are accepted for bug fixes and security fixes
 Casual Support
-  - Peer-to-peer support on forum.mattermost.org and at pre-release.mattermost.org
-  -
+  - Peer-to-peer end-user support on forum.mattermost.org
+  - Support for contributors of code and documentation on pre-release.mattermost.org
+  - GitHub pull requests are accepted for security fixes
