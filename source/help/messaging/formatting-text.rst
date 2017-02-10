@@ -227,35 +227,35 @@ Inline image with link
 
   .. code-block:: none
 
-    [![Github](../../images/icon-76x76.png)](https://github.com/mattermost/platform)
+    [![Mattermost](../../images/icon-76x76.png)](https://github.com/mattermost/platform)
 
   Renders as:
 
   .. image:: ../../images/icon-76x76.png
-    :alt: GitHub
+    :alt: Mattermost
     :target: https://github.com/mattermost/platform
 
 Inline image displayed at 50 pixels wide and 76 pixels high
   .. code-block:: none
 
-    ![Github](../../images/icon-76x76.png =50x76 "Mattermost Icon")
+    ![Mattermost](../../images/icon-76x76.png =50x76 "Mattermost Icon")
 
   Renders as:
 
   .. raw:: html
 
-    <img alt="GitHub" src="../../_images/icon-50x76.png" title="GitHub Icon">
+    <img alt="Mattermost" src="../../_images/icon-50x76.png" title="Mattermost Icon">
 
 Inline image displayed at 50 pixels wide and the height adjusted to suit
   .. code-block:: none
 
-    ![Github](../../images/icon-76x76.png =50 "Mattermost Icon")
+    ![Mattermost](../../images/icon-76x76.png =50 "Mattermost Icon")
 
   Renders as:
 
   .. raw:: html
 
-    <img src="../../_images/icon-76x76.png" alt="GitHub" width="50px" title="GitHub Icon"></a>
+    <img src="../../_images/icon-76x76.png" alt="Mattermost" width="50px" title="Mattermost Icon"></a>
 
 Lines
 -----
