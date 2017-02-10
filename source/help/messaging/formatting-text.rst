@@ -209,7 +209,7 @@ You can set the width and height of the displayed image by using an equals sign 
 **Examples**:
 
 .. |mattermost-icon-76x76| image:: ../../images/icon-76x76.png
-.. |github-icon-example| image:: ../../images/icon-50x76.png
+.. |mattermost-icon-50x76| image:: ../../images/icon-50x76.png
 
 Inline image with hover text
   .. code-block:: none
@@ -238,7 +238,7 @@ Inline image with link
 Inline image displayed at 50 pixels wide and 76 pixels high
   .. code-block:: none
 
-    ![Github](../../images/icon-76x76.png =50x76 "GitHub Icon")
+    ![Github](../../images/icon-76x76.png =50x76 "Mattermost Icon")
 
   Renders as:
 
@@ -249,7 +249,7 @@ Inline image displayed at 50 pixels wide and 76 pixels high
 Inline image displayed at 50 pixels wide and the height adjusted to suit
   .. code-block:: none
 
-    ![Github](../../images/icon-76x76.png =50 "GitHub Icon")
+    ![Github](../../images/icon-76x76.png =50 "Mattermost Icon")
 
   Renders as:
 
