@@ -208,60 +208,63 @@ You can set the width and height of the displayed image by using an equals sign 
 
 **Examples**:
 
+.. |mattermost-icon-76x76| image:: ../../images/icon-76x76.png
+.. |github-icon-example| image:: ../../images/icon-50x76.png
+
 Inline image with hover text
   .. code-block:: none
 
-    ![Github](https://assets-cdn.github.com/favicon.ico "GitHub Icon")
+    ![Mattermost](../../images/icon-76x76.png "Mattermost Icon")
 
   Renders as:
 
   .. raw:: html
 
-    <img src="https://assets-cdn.github.com/favicon.ico" alt="GitHub" title="GitHub Icon"></a>
+    <img src="../../_images/icon-76x76.png" alt="Mattermost" title="Mattermost Icon"></a>
 
 Inline image with link
   Note the extra set of square brackets.
 
   .. code-block:: none
 
-    [![Github](https://assets-cdn.github.com/favicon.ico)](https://github.com/mattermost/platform)
+    [![Github](../../images/icon-76x76.png)](https://github.com/mattermost/platform)
 
   Renders as:
 
-  .. image:: https://assets-cdn.github.com/favicon.ico
+  .. image:: ../../images/icon-76x76.png
     :alt: GitHub
     :target: https://github.com/mattermost/platform
 
-Inline image displayed at 20 pixels wide and 30 pixels high
+Inline image displayed at 50 pixels wide and 76 pixels high
   .. code-block:: none
 
-    ![Github](https://assets-cdn.github.com/favicon.ico =20x30 "GitHub Icon")
-
-  Renders as:
-
-  .. |github-icon-example| image:: ../../images/github-icon-example.png
-
-  .. raw:: html
-
-    <img alt="GitHub" src="../../_images/github-icon-example.png" title="GitHub Icon">
-
-Inline image displayed at 20 pixels wide and the height adjusted to suit
-  .. code-block:: none
-
-    ![Github](https://assets-cdn.github.com/favicon.ico =20 "GitHub Icon")
+    ![Github](../../images/icon-76x76.png =50x76 "GitHub Icon")
 
   Renders as:
 
   .. raw:: html
 
-    <img src="https://assets-cdn.github.com/favicon.ico" alt="GitHub" width="20px" title="GitHub Icon"></a>
+    <img alt="GitHub" src="../../_images/icon-50x76.png" title="GitHub Icon">
+
+Inline image displayed at 50 pixels wide and the height adjusted to suit
+  .. code-block:: none
+
+    ![Github](../../images/icon-76x76.png =50 "GitHub Icon")
+
+  Renders as:
+
+  .. raw:: html
+
+    <img src="../../_images/icon-76x76.png" alt="GitHub" width="50px" title="GitHub Icon"></a>
 
 Lines
 -----
 
 Create a line by using three ``*``, ``_``, or ``-``.
 
-``***`` renders as:
+``***``
+
+renders as:
 
 ---------------------------------------------------------------------------
 
