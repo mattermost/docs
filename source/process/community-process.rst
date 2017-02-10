@@ -13,7 +13,7 @@ When responding to issues:
 1. Identify what type of post it is:
 
   - Troubleshooting
-  - Feature Request
+  - Feature Proposal
   - Bug
   - Developer/Product Question
 
@@ -24,12 +24,12 @@ When responding to issues:
 
 3. Respond:
 
-  - Include a link to related documentation in your response (eg Jira ticket, feature request, etc.)
+  - Include a link to related documentation in your response (eg Jira ticket, feature proposal, etc.)
   - If there is no related documentation, write the documentation and include the link in your response:
 
     - For reproducible bugs, create a Jira ticket
     - For product questions or troubleshooting, update docs.mattermost.com if appropriate
-    - For feature requests, ask them to `create a feature request <https://www.mattermost.org/feature-ideas/>`_ and post the link back
+    - For feature proposals, ask them to `create a feature proposal <https://www.mattermost.org/feature-ideas/>`_ and post the link back
 
   - If appropriate, ask if the community member would be interested in contributing the feature / bug fix
 
@@ -88,7 +88,7 @@ The various community channels are outlined below, along with the responsibiliti
 
       - Bug Report: Try to reproduce, or ask another team member to reproduce
       - Troubleshooting: Request to move to forums
-      - Feature Request: Request to move to feature idea forums
+      - Feature Proposal: Request to move to feature idea forums
 
 4. Customer Zendesk Issues:
 
