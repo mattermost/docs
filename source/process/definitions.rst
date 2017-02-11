@@ -1,7 +1,7 @@
 .. _definitions:
 
-Levels of Feature Quality, Development, and Support
-===================================================
+Levels of Feature Quality, Development, and Support Eligibility
+===============================================================
 
 This document defines the terminology that is used when communicating status of features to the Mattermost community. The terminology applies to all editions of Mattermost platform and to Mattermost apps.
 
@@ -12,10 +12,12 @@ This document defines the terminology that is used when communicating status of 
 Feature Quality Levels
 ----------------------
 
+This list describes the quality levels of Mattermost features, and what can be expected at each level.
+
 Production Level Quality
   - Recommended for use in production environments
-  - Supported in Mattermost, Inc. SLA
-  - Documented
+  - Eligible for commercial support by `Mattermost, Inc. <https://about.mattermost.com/support/>`_
+  - Documentation is complete
   - Included in security reviews
   - Tested on several platforms
 Beta Level Quality
@@ -26,13 +28,15 @@ Beta Level Quality
   - Tested thoroughly on a small set of platforms, with tickets and work items drafted, and made available for testing and feedback on additional platforms
 Experimental Level Quality
   - Not recommended for use in production
-  - Unknown level of stability, and might cause data loss
+  - Unknown level of stability
   - Minimal feature set that is not yet complete
   - Little or no documentation available
   - Disabled by default and must be turned on with a run-time feature flag
 
 Feature Development Levels
 --------------------------
+
+This list describes what can be expected at the various states of development of Mattermost products and features.
 
 Initial Development
   - Experimental or Beta quality
@@ -49,16 +53,21 @@ Deprecated Feature
   - Will be discontinued
   - Exists only for backwards compatibility with released and supported features
 
-Feature Support Levels
-----------------------
+Support Eligibility Levels
+----------------------------
 
-Not to be confused with paid product support available for Enterprise Editions.
+The following list describes the support levels that are available. Not all features and configurations are eligible for paid support.
 
-Official Support
-  - Production level quality
-  - In Active Development or in Maintenance Mode
-  - GitHub pull requests are accepted for bug fixes and security fixes
-Casual Support
-  - Peer-to-peer end-user support on forum.mattermost.org
-  - Support for contributors of code and documentation on pre-release.mattermost.org
-  - GitHub pull requests are accepted for security fixes
+Eligible for official support
+- Feature is production quality and in either Active Development or Maintenance Mode
+- Commercial `Enterprise Edition support <https://about.mattermost.com/support/>`_ is able to cover this feature area
+- Community pull requests for fixes are tested and merged
+
+Eligible for Premier Support only
+- Early or custom features developed for a specific enterprise (Experimental quality?)
+- Beta Level Quality
+- Not eligible for standard `Enterprise Edition support <https://about.mattermost.com/support/>`_, only supported via Premier Support agreement
+
+Eligible for peer-to-peer support
+- Configuration is unofficial, for example, deployment to an operating system that is not officially supported.
+- `Enterprise Edition support <https://about.mattermost.com/support/>`_ will not support the configuration.
