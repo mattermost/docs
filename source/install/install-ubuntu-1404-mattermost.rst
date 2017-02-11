@@ -73,7 +73,7 @@ Assume that the IP address of this server is 10.10.10.2
       stop on runlevel [016]
       respawn
       limit nofile 50000 50000
-      chdir /home/mattermost/mattermost
+      chdir /opt/mattermost
       setuid mattermost
       exec bin/platform
 
