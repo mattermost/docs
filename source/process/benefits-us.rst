@@ -36,4 +36,4 @@ The Company pays 100% of premiums for medical, 100% of premiums for dental and 1
 
 Employees are responsible for the remainder of the premium cost, if any. A summary of plan options showing remainder of premium costs after employer contribution will be provided with your offer. 
 
-**401K** - Our 401K retirement savings program is available through `Ubquity <https://www.myubiquity.com/>`_ after 3-months of fulltime employment. 
+**401K** - Our 401K retirement savings program is available through `Ubquity <https://www.myubiquity.com/>`_ after 3-months of full-time employment. 
