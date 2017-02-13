@@ -29,3 +29,9 @@ Each business day SDRs work through MQLs to qualify leads and develop them into 
 4. Understand buying criteria and timeline 
 5. Understand competition (Mattermost Team Edition, or proprietary products) 
 6. Confirm budget 
+
+
+Discovery call
+
+- Tag any features requests needed a) within 3 months with #soon, b) within 3-6 months #roadmap
+
