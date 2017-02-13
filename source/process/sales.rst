@@ -18,3 +18,14 @@ Quality:
 - 2-star (subset of 5-star) 
 - 1-star (subset of 5-star) 
 - 0-star (subset of 5-star) 
+
+`Marketing Qualified Leads <https://na30.salesforce.com/00Q?fcf=00B36000007ahIv>`_ (MQLs) - These are leads manually qualified for follow-up based on Rating and Quality and any warm or hot lead with a quality score of 3-stars or higher is assigned to a Sales Development Representative (SDR) 
+
+Each business day SDRs work through MQLs to qualify leads and develop them into opportunities that are then passed on to Account Executives. Before a lead can be designated an opportunity the following criteria needs to be met: 
+
+1. Determine decision maker 
+2. Obtain decision maker’s contact info 
+3. Confirm existence of need and official project 
+4. Understand buying criteria and timeline 
+5. Understand competition (Mattermost Team Edition, or proprietary products) 
+6. Confirm budget 
