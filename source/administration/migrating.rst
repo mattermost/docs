@@ -64,7 +64,7 @@ Messages with file attachments are imported as a message containing a link to Sl
 
 Bot and Integration messages are imported by default, but if you would like them to display with the appropriate username when imported, you should ensure that `Enable Integrations to Override Usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`_ is set in **System Console > Integrations > Custom Integrations** *before* doing the import.
 
-When Slack messages that are topic change messages, purpose change messages, and channel name change messages are imported, they appear in Mattermost as posts from the System user.
+When topic-change messages, purpose-change messages, and channel name-change messages are imported from Slack, they appear in Mattermost as posts from the System user.
 
 .. note:: Slack user accounts with the same email address as existing accounts on your Mattermost server will be merged into those accounts on import.
 
