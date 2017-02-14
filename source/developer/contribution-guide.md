@@ -71,6 +71,10 @@ If you've included your mailing address in the signed [Contributor License Agree
 
 ### Approved Reviewers
 
-**Approved Dev reviewers include**: coreyhulen, crspeller, csduarte, enahum, grundleborg, hmhealey, jwilander
+Approved reviewers on official Mattermost repositories consistent of vetted core team members, including both community contributors as well as paid staff from Mattermost, Inc. 
 
+https://github.com/mattermost/platform
+
+**Approved Dev reviewers include**: coreyhulen, crspeller, csduarte, enahum, grundleborg, hmhealey, jwilander
 **Approved PM reviewers include**: asaadmahmood, esethna, it33, jasonblais, lfbrock
+
