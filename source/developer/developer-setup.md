@@ -200,6 +200,17 @@ There's likely another Mattermost instance already running. You can use `make st
 
 If there isn't another copy of Mattermost running and you need to change the port that Mattermost is running on, you can do so by changing the `ListenAddress` setting in the `ServiceSettings` section of `config/config.json`.
 
+#### I get the following error or something similar when running `make run` on Mac OS X: "Module build failed: Error: dyld: Library not loaded: /usr/local/opt/libpng/lib/libpng16.16.dylib"
+
+libpng needs to be updated because it is used by one of our dependencies. If you do not have libpng installed through Homebrew, run
+```
+brew install libpng
+```
+If you already have libpng installed through Homebrew, you can update it using
+```
+brew update && brew upgrade libpng
+```
+
 ### Other errors 
 
 #### I don't see any error messages, but I can't access `http://localhost:8065`
