@@ -219,6 +219,9 @@ The following config settings will only work on servers with an Enterprise Licen
 - `POST` at `/teams/create_from_signup`
 - `POST` at `/teams/signup`
 
+**Changed routes:**
+ - Updated `teams/{team_id}/commands/execute` endpoint request body field from `channelId` to `channel_id`
+
 ### Websocket Event Changes from v3.5 to v3.6
 
 **Added:**
