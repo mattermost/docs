@@ -60,6 +60,15 @@ Locked out of System Administrator account
 
 If email sign-in was turned off before the System Administrator switched sign-in methods, sign up for a new account and promote it to System Administrator from the command line.
 
+Youtube Videos show a "Video not found" preview
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+First, make sure the YouTube video exists by pasting a link to the video on your browser.
+
+If you are using the Mattermost Desktop Apps, please ensure you have installed version 3.5.0 or later.
+
+If you have specified `a Google API key <https://docs.mattermost.com/administration/config-settings.html#google-api-key>`_ to enable the display of titles for embedded YouTube video previews, re-generate the key.
+
 Mattermost Error Messages
 -------------------------
 
