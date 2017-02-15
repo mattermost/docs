@@ -26,20 +26,22 @@ Fast has two parts: being *responsive* and being *quick*.
 Obvious
 -------
 
-Obvious means users are never confused. Across product features, interface layout, labeling, help text, and documentation, it is critical that everything we offer makes sense in the mind of the user, even if it means oversimplifying how things technically work.
+There is no such thing as "user error"--it’s always our fault as product designers. We stop problems from incorrect usage by making users aware of correct usage. Fixes could be through user interface improvements, adjustments to help text, or helping users recover when things go wrong–adding undelete, undo and rolling back for example.
+
+When our product is correct, users are never confused. Everything we do--features, interface layout, labeling, help text, and documentation--needs to make sense in the mind of the user, even if it means occassionally oversimplifying how things technically work.
 
 If a user doesn’t understand how to use a feature, all the underlying effort and code is wasted. The “Obvious” design principle also flows through to our `Documentation Guidelines <http://www.mattermost.org/documentation-guidelines/>`_.
 
-Given `Hick’s Law <https://en.wikipedia.org/wiki/Hick%27s_law>`_, core functionality should be apparent, and advanced functionality should be possible via sub-menus and well documented and tested.
-
-Functionality that is not fundamental to the product purpose should be ruthlessly omitted.
+Given `Hick’s Law <https://en.wikipedia.org/wiki/Hick%27s_law>`_, core functionality should be apparent, and advanced functionality should be possible via sub-menus and well documented and tested. Functionality that is not fundamental to the product purpose should be ruthlessly omitted.
 
 Forgiving
 ---------
 
-Forgiving means there’s no such thing as user error–-it’s always the fault of the product. This mindset means we can fix problems coming from users making unexpected decisions. Fixes could be through user interface improvements, adjustments to help text, or helping users recover when things go wrong–adding undelete, undo and rolling back for example.
+There will be unavoidable product failures, whether through technical issues like loss of connectivity or through our inability to make the user aware of correct usage. Being forgiving means reducing the negative impact users encounter during failures--not losing their data, not deleting, updating or sending something they didn't intend to send, and so forth.  
 
-Forgiving extends to compatibility as well, and whether you’re working from a PC, phone or tablet, Mattermost should adjust to reasonably serve your device, screen size, and major browser type.
+Features like confirmation dialogs on critical actions or temporarily saving user input in case of disconnect are examples of forgiveness. 
+
+That said, forgiving does not mean allowing the product to be used incorrectly, and breaking the obvious principle. As an analogy, if someone kicks a football and misses the goal, being forgiving means giving them a chance to kick again, it does not mean counting the miss as a goal. 
 
 -----
 
