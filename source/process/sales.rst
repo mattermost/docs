@@ -2,6 +2,8 @@
 WIP: Sales Handbook
 =====================
 
+LEADS
+
 `Priority Leads <https://na30.salesforce.com/00Q?fcf=00B36000007ahIv>`_ - These are inboud leads from webfrom and email automatically filtered for incomplete information and spam. List reviewed on business days and assessed for: 
 
 Rating: 
@@ -30,8 +32,15 @@ Each business day SDRs work through MQLs to qualify leads and develop them into 
 5. Understand competition (Mattermost Team Edition, or proprietary products) 
 6. Confirm budget 
 
+This qualification process may require a discovery call. 
 
-Discovery call
+Discovery call notes should include: 
 
 - Tag any features requests needed a) within 3 months with #soon, b) within 3-6 months #roadmap
+
+OPPORTUNITIES 
+
+Opportunities should be named based on commercial interest: 
+
+- E10, E20, Academic, Non-profit, Certified Reseller Partnership, Authorized Reseller Partnership
 
