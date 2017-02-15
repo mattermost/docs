@@ -44,3 +44,6 @@ Opportunities should be named based on commercial interest:
 
 - E10, E20, Academic, Non-profit, Certified Reseller Partnership, Authorized Reseller Partnership
 
+DEVELOPMENT 
+
+- Important emails to and from opportunity should be logged to the Opportunity Record in Salesforce
