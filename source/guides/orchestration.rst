@@ -2,9 +2,7 @@
 Deployment Solution Programs 
 ================================================
 
-*This program is under development, please consider below a work-in-progress*
-
-Mattermost's **Deployment Solutions Programs** help IT administrators understand how Mattermost is being offered in third-party deployment solutions. 
+Mattermost's **Deployment Solutions Programs** help IT administrators understand how Mattermost is being offered in third-party deployment solutions, including other open source projects as well as in commercial solutions. 
 
 This is an optional program for third-party developers to increase awareness about their work and to enable Mattermost to refer its communities to different solutions. 
 
@@ -20,7 +18,7 @@ Deployment solutions are recognized by Mattermost at three-levels:
    - `Heroku deployment solution for Mattermost <https://chrisdecairos.ca/deploying-mattermost-to-heroku/>`_ by Christopher De Cairos
 
 
-- **Registered Deployment Solutions** - Orchestration solutions that follow detailed Mattermost guidelines on keeping up-to-date with the latest Mattermost version and security updates (typically a one-line change), linking to official documentation, supporting branding guidelines, and maintaining a changelog. This level of engagement allows Mattermost to more prominently promote the work, knowing that it's committed to meeting explicit standards.
+- **Registered Deployment Solutions** - Orchestration solutions that follow detailed Mattermost guidelines on keeping up-to-date with the latest Mattermost version and security updates (typically a one-line change), linking to official documentation, supporting branding guidelines, and maintaining a changelog. This level of engagement allows Mattermost to more prominently promote the work, knowing that it's committed to meeting explicit standards. 
 
 
 - **Certified Deployment Solutions** - These solutions meet all the requirements of Registered Deployment Solutions, with the addition that they'll automate the version upgrade and security update processes (typically a one-line change). There is the added benefit that when Mattermost announces new versions and security updates, we can also announce the availability of updates to Certified Deployment Solutions. 
