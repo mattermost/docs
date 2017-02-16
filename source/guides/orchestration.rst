@@ -91,5 +91,5 @@ Branding
 Upgrade 
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-1. **Support upgrade of Mattermost**. Enable user interface or commandline upgrade of a Mattermost deployment to latest version based on upgrade guide instructions. 
+1. **Support upgrade of Mattermost**. Enable user interface or commandline upgrade of a Mattermost deployment to latest version based on `upgrade procedure when Mattermost is embedded <https://docs.mattermost.com/developer/integration-faq.html#how-should-i-automate-the-install-and-upgrade-of-mattermost-when-included-in-another-application>`_
 
