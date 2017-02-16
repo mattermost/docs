@@ -20,5 +20,5 @@ Jira tickets nominating a feature for Help Wanted status should include:
 2. Description is unambiguous and includes UI description and help text so feature can be implemented and tested by any contributor
 3. If related to a community discussion, include link to ticket in discussion and link to discussion in ticket
 
-Tickets meeting HW criteria receive an `help-wanted` label by triage team and appear in `Help Wanted list <https://github.com/mattermost/platform/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20%5BHelp%20Wanted%5D>`_ list. 
+Tickets meeting HW criteria receive a `help-wanted` label by triage team and appear in `Help Wanted list <https://github.com/mattermost/platform/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20%5BHelp%20Wanted%5D>`_. 
 
