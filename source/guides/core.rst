@@ -12,7 +12,7 @@ Development Process
 
    /process/overview*
    /process/release-process*
-   /process/accepting-pull-request*
+   /process/help-wanted*
    /process/community-systems*
    /process/documentation-guidelines*
    /process/marketing-guidelines*
