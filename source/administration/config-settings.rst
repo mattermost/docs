@@ -6,7 +6,10 @@ The first user added to a new Mattermost install is assigned the System Admin ro
 
 Note: For any setting not explicitly set in ``config.json`` the Mattermost server will use the default value as documented here, which can be observed in the default ``config/config.json`` file included in each Mattermost release.
 
-.. contents:: :depth: 3
+.. contents::
+  :depth: 2
+  :local:
+  :backlinks: entry
 
 General
 -------
@@ -389,15 +392,13 @@ Set the time limit that users have to edit their messages after posting.
 
 **Never**: Do not allow users to edit their messages.
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AllowEditPost": "always"`` with options ``always`` and ``never`` for above settings respectively.|
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-
 **nnn seconds after posting**: Users can edit their messages within the specified time limit after posting.
 
-+--------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PostEditTimeLimit ": 300`` with whole number input. |
-+--------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature has two settings in ``config.json``. The first setting is ``"AllowEditPost": "always"`` with options ``always``, ``never``, and ``time_limit``.  |
+|                                                                                                                                                               |
+| The second setting is ``"PostEditTimeLimit": 300`` with whole number input. To enable ``PostEditTimeLimit``, set ``AllowEditPost`` to ``time_limit``.         |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
 
