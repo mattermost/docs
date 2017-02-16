@@ -54,8 +54,31 @@ The various community channels are outlined below, along with the responsibiliti
   - Community PM Responsibility:
 
     - Review the list for posts that haven’t been answered, and either reply (with help from dev if needed) or route to the appropriate person, following up to make sure a response is posted
+    
+2. `Contributors Channel <https://pre-release.mattermost.com/core/channels/tickets>`_: UserVoice Issues
 
-2. `Community Channel <https://pre-release.mattermost.com/core/channels/community>`_: GitHub Issues with Activity Older than 7 days
+  - Description:
+
+    - Ops posts at-mentioning the Community PM with a list that includes issues:
+
+      - where status requires updating (Under Review, Planned, Started, etc.)
+      - where a PM might want to ask a question for clarification or ideas on how to design something
+      - where the requester specifies they want to work on the feature
+      - that are completed
+      
+    - Community PM Responsibility - Team Edition:
+    
+      - The PM who is release manager for the current release cycle will update the issues after release date.
+
+        - Thank you [NAME] for nominating the feature! It is available in Mattermost [X.Y]. Would anyone like to help re-tweet the announcement? [LINK TO TWEET]
+
+    - Sales Responsibility - Enterprise Edition:
+    
+      - Responds to the issues and close them off after release date.
+        
+      - `Spreadsheet <https://docs.google.com/spreadsheets/d/1nljd4cFh-9MXF4DxlUnC8b6bdqijkvi8KHquOmK8M6E/edit#gid=0>`_ to track UserVoice issues to be announced in upcoming releases.
+
+3. `Community Channel <https://pre-release.mattermost.com/core/channels/community>`_: GitHub Issues with Activity Older than 7 days that have not been created by Mattermost staff
 
   - Description:
 
@@ -76,7 +99,7 @@ The various community channels are outlined below, along with the responsibiliti
 
     - Review the list and either reply (with help from dev if needed) or route to the appropriate person, following up to make sure a response is posted
 
-3. New GitHub Issues:
+4. New GitHub Issues:
 
   - Description:
 
@@ -90,7 +113,7 @@ The various community channels are outlined below, along with the responsibiliti
       - Troubleshooting: Request to move to forums
       - Feature Proposal: Request to move to feature idea forums
 
-4. Customer Zendesk Issues:
+5. Customer Zendesk Issues:
 
   - Description:
 
