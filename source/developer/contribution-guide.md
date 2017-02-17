@@ -64,17 +64,18 @@ After submitting a PR, before it is merged:
         - Meets [UX guidelines](https://docs.mattermost.com/developer/fx-guidelines.html)
     - The Product Manager may come back with some bugs or UI improvements to fix before the pull request moves on to dev review.
 3. Dev review must pass
-    - Two developers will review the pull request and either give feedback or approve the PR.
+    - Two core committers will review the pull request and either give feedback or approve the PR.
     - Any comments will need to be addressed before the pull request is ready to merge.
 
 If you've included your mailing address in the signed [Contributor License Agreement](https://www.mattermost.org/mattermost-contributor-agreement/), you may receive a [Limited Edition Mattermost Mug](https://forum.mattermost.org/t/limited-edition-mattermost-mugs/143) as a thank you gift after your first pull request is merged. 
 
-### Official Reviewers
+### Core Committers
 
-Official reviewers on official Mattermost repositories consist of vetted core team members, including both community contributors as well as paid staff from Mattermost, Inc. 
+Core committers on Mattermost repositories consist of vetted core team members, including both community contributors as well as staff from Mattermost, Inc., who are trusted to review and merge PRs.
 
 Repository: https://github.com/mattermost/platform
 
-- **Official Dev reviewers include**: coreyhulen, crspeller, csduarte, enahum, grundleborg, hmhealey, jwilander
-- **Official PM reviewers include**: asaadmahmood, esethna, it33, jasonblais, lfbrock
+- **Core committers include**: coreyhulen, crspeller, csduarte, enahum, grundleborg, hmhealey, jwilander
+
+- **Product managers include**: asaadmahmood, esethna, it33, jasonblais, lfbrock
 
