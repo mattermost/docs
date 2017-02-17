@@ -69,8 +69,12 @@ After submitting a PR, before it is merged:
 
 If you've included your mailing address in the signed [Contributor License Agreement](https://www.mattermost.org/mattermost-contributor-agreement/), you may receive a [Limited Edition Mattermost Mug](https://forum.mattermost.org/t/limited-edition-mattermost-mugs/143) as a thank you gift after your first pull request is merged. 
 
-### Approved Reviewers
+### Official Reviewers
 
-**Approved Dev reviewers include**: coreyhulen, crspeller, enahum, grundleborg, hmhealey, jwilander
+Official reviewers on official Mattermost repositories consist of vetted core team members, including both community contributors as well as paid staff from Mattermost, Inc. 
 
-**Approved PM reviewers include**: asaadmahmood, esethna, it33, jasonblais, lfbrock, yangchen1
+Repository: https://github.com/mattermost/platform
+
+- **Official Dev reviewers include**: coreyhulen, crspeller, csduarte, enahum, grundleborg, hmhealey, jwilander
+- **Official PM reviewers include**: asaadmahmood, esethna, it33, jasonblais, lfbrock
+
