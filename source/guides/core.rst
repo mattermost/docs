@@ -3,7 +3,7 @@ Core Team Handbook
 
 This handbook is a guide to serving on the core team of the Mattermost open source project, which includes making contributions both as a volunteer contributor from the community and as a paid staff member of Mattermost, Inc. 
 
-Please consider this work--along with all our documentation--as a work-in-progress and constantly updating to best achieve our shared mission. 
+Please consider this handbook--along with all our documentation--as a work-in-progress and constantly updating to best achieve our shared mission. 
 
 Development Process
 -------------------
