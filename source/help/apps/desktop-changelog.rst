@@ -1,6 +1,98 @@
 Desktop Application Changelog
 ========================================
 
+Release 3.6.0
+--------------
+
+Release date: February 28, 2017
+
+Upgrading to Mattermost server 3.6 or later is recommended, as new features for the desktop app have been added following the release of the team sidebar.
+
+Improvements
+~~~~~~~~~~~~
+
+ - Added support for unread indicators following the release of team sidebar in Mattermost server 3.6
+ - Removed a confusing `CTRL/CMD+S` shortcut for searching within a Mattermost team
+ - Added support for SAML OneLogin and Google authentication for Enterprise users
+ - Streamlined desktop server management:
+
+   - "Team Management" changed to "Server Management" following the release of team sidebar in Mattermost server 3.6
+   - Added a "+" icon to the desktop server tab bar to more easily sign into a new Mattermost server
+   - Clicking "Add new server" on the Settings page opens a dialog instead of a new row
+   - Clicking "Remove" next to a server now requires a confirmation to prevent a user from removing the server by accident
+   - Clicking "Edit" next to a server on the Settings page opens a dialog
+   - Clicking on a server on the Settings page opens the corresponding server tab
+
+ - Simplified desktop app options:
+
+   - App options now auto-save when chaged
+   - Added supporting help text for each option
+   - Removed "Leave app running in menu bar when application window is closed" setting for Mac, which is not applicable for that platform
+   - Removed "Toggle window visibility when clicking on the tray icon" setting for Windows, given the behaviour is inconsistent with typical Windows app behaviour
+   - Removed "Hide menu bar" setting to avoid users not being able to use the menu bar and the Settings page.
+ 
+Bug Fixes
+~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Mattermost window no longer opens on a display screen that has been disconnected
+- Mention badges no longer persist after logging out of a Mattermost server
+- After right-clicking an image or a link, the "Copy Link" option no longer moves around when clicking different places afterwards
+- Fixed an issue where minimum window size is not set
+- Changed target resolution size to 1000x700 to prevent unintended issues on the user interface
+- Fixed an issue where the application menu is not updated when the config file is saved in the Settings page
+- Fixed login issues with local development environment
+- Removed a white screen which was momentarily displayed on startup
+
+Windows
+^^^^^^^^^^^^^
+
+- Fixed an issue where an unexpected window appears while installing or uninstalling
+- Fixed an issue where the maximized state of the application window was not restored on re-launch if "Start app on Login" setting is enabled
+
+Linux (Beta)
+^^^^^^^^^^^^^
+
+- Fixed an issue where tray icon wasn't shown by default
+- Fixed an issue where the maximized state of the application window was not restored on re-launch if "Start app on Login" setting is enabled
+
+Known Issues
+~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+ - `If you click twice on the tab bar, and then attempt to use the "Zoom in/out" to change font size, the app window doesn't render properly <https://github.com/mattermost/desktop/issues/334>`_
+ - `After using CTRL+K, an added row appears in the message box <https://github.com/mattermost/desktop/issues/426>`_
+ - `Holding down CTRL, SHIFT or ALT buttons and clicking a channel opens a new application window <https://github.com/mattermost/desktop/issues/406>`_
+
+Windows
+^^^^^^^^^^^^^
+
+ - [Windows 7] `Sometimes the app tries to render the page inside the app instead of in a new browser tab when clicking links <https://github.com/mattermost/desktop/issues/369>`_
+
+Mac
+^^^^^^^^^^^^^
+
+ - `After uploading a file with a keyboard shortcut, focus isn't set back to the message box <https://github.com/mattermost/desktop/issues/341>`_
+
+Linux (Beta)
+^^^^^^^^^^^^^
+
+ - [Ubuntu - 64 bit] `Right clicking taskbar icon and choosing **Quit** only minimizes the app <https://github.com/mattermost/desktop/issues/90#issuecomment-233712183>`_
+ - [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/platform/issues/3589>`_
+
+Contributors
+~~~~~~~~~~~~
+
+Many thanks to all our contributors. In alphabetical order:
+
+ - `asaadmahmood <https://github.com/asaadmahmood>`_, `jasonblais <https://github.com/jasonblais>`_, `jnugh <https://github.com/jnugh>`_, `yuya-oc <https://github.com/yuya-oc>`_
+
+----
+
 Release v3.5.0
 --------------
 
