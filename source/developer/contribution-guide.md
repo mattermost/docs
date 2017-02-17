@@ -71,7 +71,7 @@ If you've included your mailing address in the signed [Contributor License Agree
 
 ### Official Reviewers
 
-Official reviewers on official Mattermost repositories consistent of vetted core team members, including both community contributors as well as paid staff from Mattermost, Inc. 
+Official reviewers on official Mattermost repositories consist of vetted core team members, including both community contributors as well as paid staff from Mattermost, Inc. 
 
 Repository: https://github.com/mattermost/platform
 
