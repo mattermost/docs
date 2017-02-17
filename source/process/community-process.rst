@@ -59,7 +59,7 @@ The various community channels are outlined below, along with the responsibiliti
 
   - Description:
 
-    - Ops posts at-mentioning the Community PM with a list that includes issues:
+    - Ops Team @mentions the Community PM with a list that includes issues:
 
       - where status requires updating (Under Review, Planned, Started, etc.)
       - where a PM might want to ask a question for clarification or ideas on how to design something
@@ -74,11 +74,11 @@ The various community channels are outlined below, along with the responsibiliti
 
     - Sales Responsibility - Enterprise Edition:
     
-      - Responds to the issues and close them off after release date.
+      - Responds to the issues and closes them after release date.
         
-      - `Spreadsheet <https://docs.google.com/spreadsheets/d/1nljd4cFh-9MXF4DxlUnC8b6bdqijkvi8KHquOmK8M6E/edit#gid=0>`_ to track UserVoice issues to be announced in upcoming releases.
+      - Updates `Spreadsheet <https://docs.google.com/spreadsheets/d/1nljd4cFh-9MXF4DxlUnC8b6bdqijkvi8KHquOmK8M6E/edit#gid=0>`_ to track UserVoice issues to be announced in upcoming releases.
 
-3. `Community Channel <https://pre-release.mattermost.com/core/channels/community>`_: GitHub Issues with Activity Older than 7 days that have not been created by Mattermost staff
+3. `Contributors Channel <https://pre-release.mattermost.com/core/channels/tickets>`_: GitHub Issues with Activity Older than 7 days that have not been created by Mattermost staff
 
   - Description:
 
