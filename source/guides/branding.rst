@@ -22,7 +22,7 @@ For details on Mattermost logo usage guidelines please visit: https://www.matter
 Mattermost User Experience 
 -------------------------------
 
-For details on the visual design of the Mattermost user experience, please see: https://docs.mattermost.com/developer/fx-guidelines.html
+For details on the visual design of the Mattermost user experience, please see: https://docs.mattermost.com/developer/fx-guidelines.html.
 
 -------------------------------
 Naming Usage Guidelines
@@ -35,9 +35,9 @@ Naming Integrations
 
 The following guidelines are intended to help developers of Mattermost integrations offer clear, consistent naming across the broader community. 
 
-- IMPORTANT: Please do not name your integrations or apps starting with, or only using, the name “Mattermost”, as this may confuse end users as to where to find support
+- IMPORTANT: Please do not start with or use the name "Mattermost" for your integration as this may confuse  users on where to find support.
 
-We ask community projects might be named using “for Mattermost”, examples:
+Community projects may be named using “for Mattermost”, for example:
 
 - `GitLab Integration Service for Mattermost <https://github.com/NotSqrt/mattermost-integration-gitlab>`_
 - `Giphy Integration Service for Mattermost <https://github.com/numberly/mattermost-integration-giphy>`_
@@ -49,7 +49,7 @@ Alternatively, community projects may concatenate names containing Mattermost, f
 
 Exception: Please don’t use the name “matterbot”, as that is an internal service under development.
 
-As the Mattermost project grows, when there are multiple open source projects for similar Mattermost integrations we ask our community to include the owner of the repro, for example: 
+When there are multiple open source projects for similar Mattermost integrations we ask our community to include the owner of the repo, for example: 
 
 - `Hubot Adapter for Mattermost by Heitor Lessa <https://www.npmjs.com/package/hubot-mattermost>`_
 - `Hubot Adapter for Mattermost by Andy Lo-A-Foe <https://github.com/loafoe/hubot-matteruser>`_
@@ -71,7 +71,7 @@ Mattermost Team Edition description
 
 When redistributing the open source Mattermost Team Edition binary, the following description may be used: 
 
-  Mattermost Team Edition is an open source, self-hosted alternative to propretiary SaaS messaging. Mattermost brings all your team communication into one place, making it searchable and accessible anywhere. Deploys as single Linux binary on MySQL or PostgreSQL under an MIT license from mattermost.org/download.
+  Mattermost Team Edition is an open source, self-hosted alternative to propretiary SaaS messaging. Mattermost brings all your team communication into one place, making it searchable and accessible anywhere. Deploys as single Linux binary on MySQL or PostgreSQL under an MIT license from `mattermost.com/download <https://about.mattermost.com/download>`_.
 
 
 Mattermost Enterprise Edition description 
@@ -81,7 +81,7 @@ When redistributing the commercial Mattermost Enterprise Edition binary, the fol
 
   Mattermost Enterprise Edition is a secure, configurable, highly scalable enterprise messaging for private clouds offering corporate directory integration, advanced access control, performance monitoring, multi-factor authentication, compliance and auditing support, and sophisticated configurations for horizontal scaling and high availability deployments. 
 
-  Mattermost Enterprise Edition is free to use in "team mode" and is functionaly equivalent to the open source Mattermost Team Edition, with the added benefit of being able to enable advanced enterprise features with purchase of an annual subscription. 
+  Mattermost Enterprise Edition is free to use in "team mode" and is functionally equivalent to the open source Mattermost Team Edition, with the added benefit of being able to enable advanced enterprise features with purchase of an annual subscription. 
 
 -------------------------------
 Mattermost Trademark Policy  
