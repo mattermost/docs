@@ -51,7 +51,7 @@ Exception: Please don’t use the name “matterbot”, as that is an internal s
 
 When there are multiple open source projects for similar Mattermost integrations we ask our community to include the owner of the repo, for example: 
 
-- `Hubot Adapter for Mattermost by Heitor Lessa <https://www.npmjs.com/package/hubot-mattermost>`_
+- `Hubot Adapter for Mattermost by Heitor Lessa <https://github.com/renanvicente/hubot-mattermost>`_
 - `Hubot Adapter for Mattermost by Andy Lo-A-Foe <https://github.com/loafoe/hubot-matteruser>`_
 
 Product Description
