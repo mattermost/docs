@@ -8,29 +8,36 @@ This document in intended for new hires to summarize norms for working at Matter
 - `Meetings`_ - When we get together and why 
 - `Mindsets`_ - Shared toolsets we have for solving problems 
 - `Terminology`_- Shared vocabulary to convey ideas quickly
-- `Training`_ - Material available to help us ramp quickly in different areas 
+- `Training`_ - Material available to help us ramp quickly in different areas. 
+
+.. contents::
+    :backlinks: top
 
 ---------------------------------------------------------
 Getting Started Checklist 
 ---------------------------------------------------------
 
 Hiring 
+---------------------------------------------------------
 
 - (People Ops & New Hire) Offer letter accepted via click-sign 
 - (Logistics) Mail t-shirt & track jacket 
 
 T-minus 1-3 weeks 
+---------------------------------------------------------
 
-- (People Ops & New Hire) Order laptop to be sent to New Hire's address or expensed. For non-developers, budget is cost of a Macbook in your local area, for developers budget is cost of a Macbook Pro. 
+- (People Ops & New Hire) People Ops should find out new hire's preference for laptop, either to be purchased or taken from stock and shipped by People Ops or purchased locally by new hire and expensed. Windows laptops generally cost less than Macs so budget is based on Macs. For non-developers, budget is cost of a Macbook in your local area, for developers budget is cost of a Macbook Pro. 
 - (New Hire) Read the entirety of Onboarding page for info on meetings, mindsets, terminology and training materials.
 
 T-minus 1 week
+---------------------------------------------------------
 
-- (People Ops) Send email invite to New Hire to set up an @mattermost.com email address. New Hire should use this email address on pre-release.mattermost.com (replace personal email with company email if already registered there) 
+- (People Ops) Send email invite to New Hire to set up an @mattermost.com email address. New Hire should use this email address on pre-release.mattermost.com (replace personal email with company email if already registered there). `FIRST_NAME@mattermost.com` is the standard naming convention.   
 
-- (People Ops & New Hire) Setup Payroll. Non-US Employee/Non-Canada Employee, complete bank info form for monthly wire transfer. 
+- (People Ops & New Hire) Set up payroll. Non-US Employee/Non-Canada Employee, complete bank info form for monthly wire transfer. 
 
 First Day 
+---------------------------------------------------------
 
 - (Manager) Posts welcome message in stand-up channel 
 - (Manager) Meets New Hire for first 1-1 meeting
