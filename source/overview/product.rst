@@ -2,7 +2,7 @@
 Mattermost Product Overview
 ============================
 
-**Mattermost** empowers organizations to achieve their highest priorities through enterprise-grade messaging. Our private cloud solutions offer secure, configurable, scalable communication on an open source platform under IT control, across web, mobile and PC with continuous archiving, instant search, integration with hundreds of third party applications. Thousands of organizations use Mattermost around the world in 11 languages for its unmatched benefits: 
+**Mattermost** empowers organizations to achieve their highest priorities through enterprise-grade messaging. Enjoy all the productivity benefits of workplace messaging across web, mobile and PC, with unlimited archiving, search and integrations on a private cloud solution until IT control. Thousands of organizations use Mattermost around the world in 11 languages for its unmatched benefits: 
 
 - **Security** - Keep vital communications behind your firewall under your existing IT policies. Make use of `dozens of security features <https://docs.mattermost.com/overview/security.html>`_ vetted by top security researchers. Advanced organizations can even deploy mobile apps to private networks using our open source repositories. 
 
@@ -40,9 +40,9 @@ Details of each offering are as follows:
 - Extensive integration support via `webhooks, APIs, drivers <https://docs.mattermost.com/guides/integration.html>`_ and `third party extensions <https://about.mattermost.com/community-applications/>`_
 - Easily scalable from dozens to hundreds of users
 - New improvements released every two months 
-- Languages include U.S. English, Chinese (Simplified & Traditional), Dutch, French, German, Japanese, Korean, Portuguese, Russian, Spanish
+- Languages include U.S. English, Chinese (Simplified & Traditional), Dutch, French, German, Japanese, Korean, Brazilian Portuguese, Russian, Spanish
 
-`Download it today to get started. <https://about.mattermost.com/download>`_
+`Download it today to get started. <https://about.mattermost.com/download>`_ 
 
 **Mattermost Enterprise Edition E10** is a commercial enterprise messaging solution for teams, groups and departments working on multiple projects scaling from hundreds to thousands of users. E10 is your "virtual campus", offering security, configuration and access control options for larger organizations, including: 
 
