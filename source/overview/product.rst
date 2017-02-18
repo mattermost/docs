@@ -10,7 +10,7 @@ Mattermost is highly extensible, and integrates with any system using webhooks, 
 About the Mattermost open source project 
 ----------------------------------------------
 
-At its core, Mattermost is an open source, private cloud alternative to proprietary SaaS messaging for teams. Our software--developed with over 500 contributors from around the world--rivals the productivity of SaaS solutions while offering organizations superior control, data sovereignty, configurability, freedom from lock-in, and enhanced security by keeping vital communications behind your firewall.
+At its core, Mattermost is an open source, private cloud alternative to proprietary SaaS messaging for teams. The software--developed with over 500 contributors from around the world--rivals the productivity of SaaS solutions while offering organizations superior control, data sovereignty, configurability, freedom from lock-in, single-tenancy, and enhanced security by keeping vital communications behind your firewall.
 
 Core committers, including both community contributors and paid staff at Mattermost, Inc., determine the project roadmap. For enterprises with needs beyond the scope of the open source project, commercial "Enterprise Edition" extensions are available from Mattermost, Inc. Revenue from Enterprise Edition sales ensures the continual improvement of all editions. 
 
