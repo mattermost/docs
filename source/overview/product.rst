@@ -2,7 +2,7 @@
 Mattermost Product Overview
 ============================
 
-**Mattermost** empowers organizations to achieve their highest priorities through secure, modern communication: an open source, workplace messaging solution across web, mobile and PC with continuous archiving, instant search and integration with hundreds of third party applications. Thousands of organizations use Mattermost around the world in 11 languages.
+**Mattermost** empowers organizations to achieve their highest priorities through secure, configurable, scalable communication: an open source, workplace messaging solution across web, mobile and PC with continuous archiving, instant search, integration with hundreds of third party applications. Thousands of organizations use Mattermost around the world in 11 languages.
 
 Mattermost is highly extensible, and integrates with any system using webhooks, RESTful APIs and language-specific drivers. There's also a rich community of `3rd party integrations <https://about.mattermost.com/community-applications/#publicApps>`_ for `private cloud <https://about.mattermost.com/community-applications/#privateApps>`_ and `public cloud <https://about.mattermost.com/community-applications/#publicApps>`_ applications, including over 700 integrations via Zapier. 
 
