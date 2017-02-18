@@ -41,7 +41,7 @@ Details of each offering are as follows:
 - New improvements released every two months 
 - Languages include U.S. English, Chinese (Simplified & Traditional), Dutch, French, German, Japanese, Korean, Brazilian Portuguese, Russian, Spanish
 
-To get started, `download the Mattermost Team Edition server. <https://about.mattermost.com/download>`_ 
+To get started, `download the open source Mattermost Team Edition server <https://about.mattermost.com/download>`_ under an MIT license. 
 
 **Mattermost Enterprise Edition E10** is a commercial enterprise messaging solution for teams, groups and departments working on multiple projects scaling from hundreds to thousands of users. E10 is your "virtual campus", offering security, configuration and access control options for larger organizations, including: 
 
