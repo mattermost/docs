@@ -2,10 +2,13 @@
 Mattermost Product Overview
 ============================
 
-**Mattermost** empowers organizations to achieve their highest priorities through secure, configurable, scalable communication: an open source, workplace messaging solution across web, mobile and PC with continuous archiving, instant search, integration with hundreds of third party applications. Thousands of organizations use Mattermost around the world in 11 languages.
+**Mattermost** empowers organizations to achieve their highest priorities through enterprise-grade messaging. Our private cloud solutions offer secure, configurable, scalable communication on an open source platform under IT control, across web, mobile and PC with continuous archiving, instant search, integration with hundreds of third party applications. Thousands of organizations use Mattermost around the world in 11 languages for its unmatched benefits: 
 
-Mattermost is highly extensible, and integrates with any system using webhooks, RESTful APIs and language-specific drivers. There's also a rich community of `3rd party integrations <https://about.mattermost.com/community-applications/#publicApps>`_ for `private cloud <https://about.mattermost.com/community-applications/#privateApps>`_ and `public cloud <https://about.mattermost.com/community-applications/#publicApps>`_ applications, including over 700 integrations via Zapier. 
+- **Security** - Keep vital communications behind your firewall under your existing security and IT policies. Open source mobile and desktop apps allow you to run within your own private network. 
 
+- **Configurability** - Adapt your deployment to your preferences, policies and existing systems. Our open source platform enables advanced whitelabelling and customization with complete access to RESTful server APIs, drivers, webhooks and hundreds of 3rd party extensions. 
+
+- **Scalability** - Grow from dozens of users to tens of thousands on the same platform. Built on an open source, high performance, single-tenant infrastructure, Mattermost Enterprise Edition E20 offers cluster-based high availability deployments with horizontal scaling and advanced performance monitoring.
 
 About the Mattermost open source project 
 ----------------------------------------------
@@ -19,24 +22,27 @@ Mattermost Editions
 
 Mattermost is offered in three editions: 
 
-- **Mattermost Team Edition** - A "virtual office" for your team, where you get things done day-to-day. Includes open source native mobile and desktop apps, continous archiving, unlimited search, threaded messaging, custom emoji and full access to webhooks, APIs, drivers and third party integrations. You can find the download and install guides at https://about.mattermost.com/download 
+- **Mattermost Team Edition** - An open source "virtual office" for your team under MIT license, where you get things done day-to-day. Includes open source native mobile and desktop apps, continous archiving, unlimited search, threaded messaging, custom emoji and full access to webhooks, APIs, drivers and third party integrations. `Download it today to get started. <https://about.mattermost.com/download >`_
 
-- **Mattermost Enterprise Edition E10** - A "virtual campus" for your teams, groups and departments working on multiple projects, scaling to thousands of users. This is a commercial extension to the open source Team Edition with commercial support, corporate directory integration via AD/LDAP, advanced access controls, security, and custom branding options. To try it out, you can start with a 30-day free trial license key at: https://about.mattermost.com/trial/ (no credit card required) 
+- **Mattermost Enterprise Edition E10** - A commercial "virtual campus" for your teams, groups and departments working on multiple projects, scaling to thousands of users. This is a commercial extension to the open source Team Edition with commercial support, corporate directory integration via AD/LDAP, advanced access controls, security, and custom branding options. Try it today with `a 30-day free trial license <https://about.mattermost.com/trial/>`_ (no credit card required).
 
-- **Mattermost Enterprise Edition E20** - A "virtual city" for your whole enterprise, scaling to tens of thousands of users. This commercial version includes all the features of Team Edition and E10 and adds advanced compliance, monitoring and scalability support, plus additional support benefits, including the option to purchase Premier Support with our highest-level support service level agreements. To try it out, you can start with a 30-day free trial license key at: https://about.mattermost.com/trial/ (no credit card required)
+- **Mattermost Enterprise Edition E20** - A "virtual city" for your whole enterprise, scaling to tens of thousands of users. This commercial version includes all the features of Team Edition and E10 and adds advanced compliance, monitoring and scalability support, plus additional support benefits, including the option to purchase Premier Support with our highest-level support service level agreements. Try it today with `a 30-day free trial license <https://about.mattermost.com/trial/>`_ (no credit card required).
+
 
 Details of each offering are as follows: 
 
-**Mattermost Team Edition** a free-to-use open source, self-hosted alternative to proprietary SaaS messaging. Team Edition is your open source "virtual office", offering all the core productivity benefits of competing SaaS solutions. It deploys as single Linux binary with MySQL or PostgreSQL under an MIT license from https://about.mattermost.com/download. Features include:
+**Mattermost Team Edition** a free-to-use open source, self-hosted alternative to proprietary SaaS messaging. Team Edition is your open source "virtual office", offering all the core productivity benefits of competing SaaS solutions. It deploys as single Linux binary with MySQL or PostgreSQL under an MIT license. Features include:
 
 - One-to-one and group messaging, file sharing and unlimited search history
 - Native apps for iOS, Android, Windows, Mac, Linux	
 - Threaded messaging, emoji and custom emoji
-- Highly customizable third party bots, integrations and command line tools	
-- Integration support via webhooks, APIs, drivers and third party extensions 
+- Highly customizable `third party bots, integrations <https://about.mattermost.com/community-applications/#publicApps>`_ and `command line tools <https://docs.mattermost.com/administration/command-line-tools.html>`_
+- Extensive integration support via `webhooks, APIs, drivers <https://docs.mattermost.com/guides/integration.html>`_ and `third party extensions <https://about.mattermost.com/community-applications/>`_
 - Easily scalable from dozens to hundreds of users
 - New improvements released every two months 
 - Languages include U.S. English, Chinese (Simplified & Traditional), Dutch, French, German, Japanese, Korean, Portuguese, Russian, Spanish
+
+`Download it today to get started. <https://about.mattermost.com/download >`_
 
 **Mattermost Enterprise Edition E10** is a commercial enterprise messaging solution for teams, groups and departments working on multiple projects scaling from hundreds to thousands of users. E10 is your "virtual campus", offering security, configuration and access control options for larger organizations, including: 
 
