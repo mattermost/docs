@@ -6,7 +6,16 @@ Mattermost Product Overview
 
 Mattermost is highly extensible, and integrates with any system using webhooks, RESTful APIs and language-specific drivers. There's also a rich community of `3rd party integrations <https://about.mattermost.com/community-applications/#publicApps>`_ for `private cloud <https://about.mattermost.com/community-applications/#privateApps>`_ and `public cloud <https://about.mattermost.com/community-applications/#publicApps>`_ applications, including over 700 integrations via Zapier. 
 
-At its core, Mattermost is an open source, private cloud alternative to proprietary SaaS messaging. Our open source software--collaboratively developed with over 500 contributors from around the world--rivals the productivity of SaaS solutions while offering organizations superior control, configurability, data sovereignty, freedom from lock-in, and enhanced security by keeping vital data behind your firewall. 
+
+About the Mattermost open source project 
+----------------------------------------------
+
+At its core, Mattermost is an open source, private cloud alternative to proprietary SaaS messaging for teams. Our software--developed with over 500 contributors from around the world--rivals the productivity of SaaS solutions while offering organizations superior control, data sovereignty, configurability, freedom from lock-in, and enhanced security by keeping vital communications behind your firewall.
+
+Core committers, including both community contributors and paid staff at Mattermost, Inc., determine the project roadmap. For enterprises with needs beyond the scope of the open source project, commercial "Enterprise Edition" extensions are available from Mattermost, Inc. Revenue from Enterprise Edition sales ensures the continual improvement of all editions. 
+
+Mattermost Editions 
+-----------------------
 
 Mattermost is offered in three editions: 
 
