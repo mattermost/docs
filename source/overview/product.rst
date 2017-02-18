@@ -22,11 +22,11 @@ Mattermost Editions
 
 Mattermost is offered in three editions: 
 
-- **Mattermost Team Edition** - An open source "virtual office" for your team under MIT license, where you get things done day-to-day. Includes open source native mobile and desktop apps, continous archiving, unlimited search, threaded messaging, custom emoji and full access to webhooks, APIs, drivers and third party integrations. Get started by `downloading the open source server<https://about.mattermost.com/download>`_
+- **Mattermost Team Edition** - An open source "virtual office" for your team under MIT license, where you get things done day-to-day. Includes open source native mobile and desktop apps, continous archiving, unlimited search, threaded messaging, custom emoji and full access to webhooks, APIs, drivers and third party integrations. Get started by `downloading the open source server <https://about.mattermost.com/download>`_
 
-- **Mattermost Enterprise Edition E10** - A commercial "virtual campus" for your teams, groups and departments working on multiple projects, scaling to thousands of users. This is a commercial extension to the open source Team Edition with commercial support, corporate directory integration via AD/LDAP, advanced access controls, security, and custom branding options. Get started with a `free trial license<https://about.mattermost.com/trial/>`_.
+- **Mattermost Enterprise Edition E10** - A commercial "virtual campus" for your teams, groups and departments working on multiple projects, scaling to thousands of users. This is a commercial extension to the open source Team Edition with commercial support, corporate directory integration via AD/LDAP, advanced access controls, security, and custom branding options. Get started with a `free trial license <https://about.mattermost.com/trial/>`_.
 
-- **Mattermost Enterprise Edition E20** - A "virtual city" for your whole enterprise, scaling to tens of thousands of users. This commercial version includes all the features of Team Edition and E10 and adds advanced compliance, monitoring and scalability support, plus additional support benefits, including the option to purchase Premier Support with our highest-level support service level agreements. Get started with a `free trial license<https://about.mattermost.com/trial/>`_.
+- **Mattermost Enterprise Edition E20** - A "virtual city" for your whole enterprise, scaling to tens of thousands of users. This commercial version includes all the features of Team Edition and E10 and adds advanced compliance, monitoring and scalability support, plus additional support benefits, including the option to purchase Premier Support with our highest-level support service level agreements. Get started with a `free trial license <https://about.mattermost.com/trial/>`_.
 
 Details of each offering are as follows: 
 
@@ -66,4 +66,4 @@ Get started with a `free trial license <https://about.mattermost.com/trial/>`_. 
 
 Get started with a `free trial license <https://about.mattermost.com/trial/>`_. You can later purchase online with a `credit card <https://about.mattermost.com/pricing/>`_ or by `bank transfer <https://about.mattermost.com/quotation/>`_. 
 
-For purchases above 3,000 seats, please contact our `sales department <https://about.mattermost.com/contact/>`_.
+For purchases above 3,000 seats, please contact our `enterprise sales team <https://about.mattermost.com/contact/>`_.
