@@ -2,7 +2,7 @@
 Mattermost Product Overview
 ============================
 
-**Mattermost** empowers organizations to achieve their highest priorities through enterprise-grade messaging. Enjoy all the productivity benefits of workplace messaging across web, mobile and PC, with unlimited archiving, search and integrations on a private cloud solution until IT control. Thousands of organizations use Mattermost around the world in 11 languages for its unmatched benefits: 
+**Mattermost** empowers organizations to achieve their highest priorities through enterprise-grade messaging. Enjoy all the productivity benefits of workplace messaging across web, mobile and PC, with unlimited archiving, search and integrations on a private cloud solution under IT control. Thousands of organizations use Mattermost around the world in 11 languages for its unmatched benefits: 
 
 - **Security** - Keep vital communications behind your firewall under your existing IT policies. Make use of `dozens of security features <https://docs.mattermost.com/overview/security.html>`_ vetted by top security researchers. Advanced organizations can even deploy mobile apps to private networks using our open source repositories. 
 
