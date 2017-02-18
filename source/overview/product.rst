@@ -4,7 +4,7 @@ Mattermost Product Overview
 
 **Mattermost** empowers organizations to achieve their highest priorities through enterprise-grade messaging. Our private cloud solutions offer secure, configurable, scalable communication on an open source platform under IT control, across web, mobile and PC with continuous archiving, instant search, integration with hundreds of third party applications. Thousands of organizations use Mattermost around the world in 11 languages for its unmatched benefits: 
 
-- **Security** - Keep vital communications behind your firewall under your existing security and IT policies. Open source mobile and desktop apps allow you to run within your own private network. 
+- **Security** - Keep vital communications behind your firewall under your existing IT policies. Make use of `dozens of security features <https://docs.mattermost.com/overview/security.html>`_ vetted by top security researchers. Advanced organizations can even deploy mobile apps to private networks using our open source repositories. 
 
 - **Configurability** - Adapt your deployment to your preferences, policies and existing systems. Our open source platform enables advanced whitelabelling and customization with complete access to RESTful server APIs, drivers, webhooks and hundreds of 3rd party extensions. 
 
@@ -42,7 +42,7 @@ Details of each offering are as follows:
 - New improvements released every two months 
 - Languages include U.S. English, Chinese (Simplified & Traditional), Dutch, French, German, Japanese, Korean, Portuguese, Russian, Spanish
 
-`Download it today to get started. <https://about.mattermost.com/download >`_
+`Download it today to get started. <https://about.mattermost.com/download>`_
 
 **Mattermost Enterprise Edition E10** is a commercial enterprise messaging solution for teams, groups and departments working on multiple projects scaling from hundreds to thousands of users. E10 is your "virtual campus", offering security, configuration and access control options for larger organizations, including: 
 
