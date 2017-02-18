@@ -2,7 +2,7 @@
 Mattermost Product Overview
 ============================
 
-**Mattermost** empowers organizations to achieve their highest priorities through secure, modern communication: an open source, workplace messaging solution across web, mobile and PC with continuous archiving, instant search and integration with hundreds of third party applications. Thousands of organizations use Mattermost around the world in 11 languages: Chinese (Simplified and Traditional), Dutch, English, French, German, Japanese, Korean, Portuguese (Brazilian), Russian, and Spanish.
+**Mattermost** empowers organizations to achieve their highest priorities through secure, modern communication: an open source, workplace messaging solution across web, mobile and PC with continuous archiving, instant search and integration with hundreds of third party applications. Thousands of organizations use Mattermost around the world in 11 languages.
 
 Mattermost is highly extensible, and integrates with any system using webhooks, RESTful APIs and language-specific drivers. There's also a rich community of `3rd party integrations <https://about.mattermost.com/community-applications/#publicApps>`_ for `private cloud <https://about.mattermost.com/community-applications/#privateApps>`_ and `public cloud <https://about.mattermost.com/community-applications/#publicApps>`_ applications, including over 700 integrations via Zapier. 
 
@@ -34,9 +34,9 @@ Details of each offering are as follows:
 - Threaded messaging, emoji and custom emoji
 - Highly customizable third party bots, integrations and command line tools	
 - Integration support via webhooks, APIs, drivers and third party extensions 
-- Languages: English, Chinese (Simplified & Traditional), Dutch, French, German, Japanese, Korean, Portuguese, Russian, Spanish
 - Easily scalable from dozens to hundreds of users
-- New bi-monthly improvements 
+- New improvements released every two months 
+- Languages include U.S. English, Chinese (Simplified & Traditional), Dutch, French, German, Japanese, Korean, Portuguese, Russian, Spanish
 
 **Mattermost Enterprise Edition E10** is a commercial enterprise messaging solution for teams, groups and departments working on multiple projects scaling from hundreds to thousands of users. E10 is your "virtual campus", offering security, configuration and access control options for larger organizations, including: 
 
