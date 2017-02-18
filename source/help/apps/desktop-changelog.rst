@@ -18,6 +18,7 @@ Improvements
 
    - "Team Management" changed to "Server Management" following the release of team sidebar in Mattermost server 3.6
    - Added a "+" icon to the desktop server tab bar to more easily sign into a new Mattermost server
+   - Added an option to sign into another Mattermost server from **File > Sign in to Another Server**
    - Clicking "Add new server" on the Settings page opens a dialog instead of a new row
    - Clicking "Remove" next to a server now requires a confirmation to prevent a user from removing the server by accident
    - Clicking "Edit" next to a server on the Settings page opens a dialog
@@ -25,12 +26,12 @@ Improvements
 
  - Simplified desktop app options:
 
-   - App options now auto-save when chaged
+   - App options now auto-save when changed
    - Added supporting help text for each option
    - Removed "Leave app running in menu bar when application window is closed" setting for Mac, which is not applicable for that platform
-   - Removed "Toggle window visibility when clicking on the tray icon" setting for Windows, given the behaviour is inconsistent with typical Windows app behaviour
+   - Removed "Toggle window visibility when clicking on the tray icon" setting for Windows, given the behavior is inconsistent with typical Windows app behavior
    - Removed "Hide menu bar" setting to avoid users not being able to use the menu bar and the Settings page.
- 
+
 Bug Fixes
 ~~~~~~~~~~~~
 
@@ -55,8 +56,8 @@ Windows
 Linux (Beta)
 ^^^^^^^^^^^^^
 
-- Fixed an issue where tray icon wasn't shown by default
-- Fixed an issue where the maximized state of the application window was not restored on re-launch if "Start app on Login" setting is enabled
+- Fixed an issue where tray icon wasn't shown by default even when "Show icon in the notification area" setting is enabled
+- Fixed an issue where the maximized state of the application window was not restored on re-launch if "Start app on login" setting is enabled
 
 Known Issues
 ~~~~~~~~~~~~
