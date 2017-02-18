@@ -66,7 +66,7 @@ This usually means an existing account has another authentication method enabled
 For ADFS, if the user wants to use another account for SAML instead, they will first need to log out from the existing session, then re-enter credentials for the other account. To log out from the existing session, either:
 
   - Go to the ADFS provider and log out from the account
-  - Delete the existing session cookie by `invoking a passive sign out <https://social.technet.microsoft.com/wiki/contents/articles/1439.ad-fs-how-to-invoke-a-ws-federation-sign-out.aspx>`_ via `https://{DNS_name_of_RP_STS}/adfs/ls/?wa=wsignout1.0` where `RP_STS is the relying party security token service <https://msdn.microsoft.com/en-us/library/ee748489.aspx>`_.
+  - Delete the existing session cookie by `invoking a passive sign out <https://social.technet.microsoft.com/wiki/contents/articles/1439.ad-fs-how-to-invoke-a-ws-federation-sign-out.aspx>`_ via ``https://{DNS_name_of_RP_STS}/adfs/ls/?wa=wsignout1.0`` where `RP_STS is the relying party security token service <https://msdn.microsoft.com/en-us/library/ee748489.aspx>`_.
 
 3. Received error message: ``An account with that email already exists. Please contact your Administrator.``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
