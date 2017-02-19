@@ -6,7 +6,7 @@ Product Overview
 
 Thousands of organizations use Mattermost around the world in 11 languages for its unmatched benefits: 
 
-- **Security** - Keep vital communications behind your firewall under your existing IT policies. Make use of `dozens of security features <https://docs.mattermost.com/overview/security.html>`_ vetted by top security researchers. Advanced organizations can even deploy mobile apps to private networks using our open source repositories. 
+- **Security** - Keep vital communications, including access to mobile and desktop apps, behind your firewall. Deploy using `dozens of security features <https://docs.mattermost.com/overview/security.html>`_ vetted by top security researchers. Data stays on servers you control, encrypted using keys you control. 
 
 - **Configurability** - Adapt your deployment to your preferences, policies and existing systems. Our open source platform enables advanced whitelabelling and customization with complete access to RESTful server APIs, drivers, webhooks and hundreds of 3rd party extensions. 
 
