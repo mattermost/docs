@@ -21,6 +21,16 @@ Responsibilities
 Requirements 
 -------------------------
 
+- You can effectively reason and discuss software, algorithms, and performance at a high level
+- You have a passion for creating open source software 
+- You have previously played a vital role in production-level applications 
+- You've made at least one `Help Wanted <https://github.com/search?utf8=%E2%9C%93&q=org%3Amattermost+state%3Aopen+Help+Wanted&type=Issues&ref=searchresults?>`_ pull request to confirm setting up a Mattermost developer environment and using GitHub aren't an issue (easy PRs are fine, it's just a check). 
+- You have strong written communication skills.
+- You're self-motivated with strong organizational skills.
+- You share our values, and work in accordance with those values.
+- You're ready to complete our technical interview process.
+- Ideal, but not required: Experience working in online communities, working on other Golang, React or React Native apps) 
+
 Junior Staff Developers
 -------------------------
 
