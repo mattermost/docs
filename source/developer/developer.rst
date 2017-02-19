@@ -6,6 +6,8 @@ At Mattermost, developers are thoughtful, highly independent engineers who work 
 
 All Mattermost staff developers are also `core committers <https://docs.mattermost.com/developer/contribution-guide.html#core-committers>`_ on one or more official Mattermost repositories. They work closely with product management to envision, design, plan, develop, coordinate, review and merge improvements per our `contribution guidelines <https://docs.mattermost.com/developer/contribution-guide.html>`_ on a regular basis. 
 
+Ideally, developers are "full stack", and comfortable moving across backend and frontend projects. As part of our `learn, master, teach <https://docs.mattermost.com/process/training.html#learn-master-teach>`_ mindset, our environment has people consistently cross-training, becoming experts and passing on knowledge to new team members rotating into new areas of responsibility. That said, we also welcome engineers who prefer to specialize in backend and frontend, since there's ample projects to find in both areas.  
+
 Responsibilities
 -------------------------
 
