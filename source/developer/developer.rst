@@ -33,11 +33,24 @@ Requirements
 - You're ready to complete our technical interview process.
 - Ideal, but not required: Experience working in online communities, working on other Golang, React or React Native apps) 
 
-Junior Staff Developers
+Internships 
 -------------------------
 
-Intermedate Staff Developers
+While we no longer offer internships for developers, if you get a couple of pull requests accepted, we'll interview you for one. This will be a remote internship without supervision; you'll only get feedback on your merge requests. If you want to work on open source and qualify please submit an application. In the cover letter field, please note that you want an internship and link to the accepted pull requests. The pull requests should be of significant value and difficulty, which is at the discretion of the hiring manager. For example, fixing 10 typos isn't as valuable as shipping 2 new features.
+
+Hiring Process
 -------------------------
 
-Senior Staff Developers
--------------------------
+Applicants for this position can expect the hiring process to follow the order below. Please keep in mind that applicants can be declined from the position at any stage of the process. 
+
+Both declined and accepted candidates will be invited to share feedback on their hiring experience so we can continually improve our process. 
+
+- **Application/Email - Review of code samples** - In your application you can include a link to any public open source work you've done, including GitHub, GitLab or BitBucket profiles. If you'd like to share privately we can send you our ID for GitHub, GitLab or BitBucket, or we can review code you send in via email. 
+- **Email - General questions** - If your code samples look good, we'll email you some questions specific to the role. 
+- **30m - Screening interview** - Selected candidates will be invited for a 30 minute screening call with a recruiter. 
+- **15m - Soft-skills discussion** - Next, candidates will be invited to schedule a 15-minute interview with a staff developer to assess soft skills. 
+- **60m - Technical interview** - The next step is a technical interview with a staff developer. 
+- **60m - CTO interview** - Candidates are invited to an interview with our CTO and co-creator of the Mattermost open source project. 
+- **50m - CEO interview** - Finally, candidates will have a 50-minute interview with our CEO.
+- **Email - Offer** - Successful candidates will receive an offer via email. 
+
