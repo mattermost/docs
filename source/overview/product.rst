@@ -2,20 +2,22 @@
 Product Overview
 ============================
 
-**Mattermost** empowers organizations to achieve their highest priorities through secure, modern, enterprise-grade communication. Enjoy all the productivity benefits of workplace messaging across web, mobile and PC, with unlimited archiving, search and integrations in a private cloud solution under IT control. Thousands of organizations use Mattermost around the world in 11 languages for its unmatched benefits: 
+**Mattermost** empowers organizations to achieve their highest priorities through modern, enterprise-grade communication. Enjoy all the productivity benefits of workplace messaging across web, mobile and PC, with unlimited archiving, search and integrations in a single-tenant, private cloud solution under IT control. 
 
-- **Security** - Keep vital communications behind your firewall under your existing IT policies. Make use of `dozens of security features <https://docs.mattermost.com/overview/security.html>`_ vetted by top security researchers. Advanced organizations can even deploy mobile apps to private networks using our open source repositories. 
+Thousands of organizations use Mattermost around the world in 11 languages for its unmatched benefits: 
 
-- **Configurability** - Adapt your deployment to your preferences, policies and existing systems. Our open source platform enables advanced whitelabelling and customization with complete access to RESTful server APIs, drivers, webhooks and hundreds of 3rd party extensions. 
+- **Security** - Keep vital communications, including access to mobile and desktop apps, behind your firewall. Deploy using `dozens of security features <https://docs.mattermost.com/overview/security.html>`_ vetted by top security researchers. Data stays on servers you control, encrypted using keys you control. 
 
-- **Scalability** - Grow from dozens of users to tens of thousands on the same platform. Built on an open source, high performance, single-tenant infrastructure, Mattermost Enterprise Edition E20 offers cluster-based high availability deployments with horizontal scaling and advanced performance monitoring.
+- **Configurability** - Adapt your deployment to your needs, preferences, and existing systems. The open source Mattermost platform enables advanced whitelabelling and customization with complete access to RESTful server APIs, drivers, webhooks and hundreds of 3rd party extensions. 
+
+- **Scalability** - Grow from dozens of users to tens of thousands on the same platform. Built on a high performance, single-tenant infrastructure, Mattermost E20 offers cluster-based high availability deployments with horizontal scaling and advanced performance monitoring.
 
 About the Mattermost open source project 
 ----------------------------------------------
 
-At its core, Mattermost is an open source, private cloud alternative to proprietary SaaS messaging for teams. The software--developed with over 500 contributors from around the world--rivals the productivity of SaaS solutions while offering organizations superior control, data sovereignty, configurability, freedom from lock-in, single-tenancy, and enhanced security by keeping vital communications behind your firewall.
+At its core, Mattermost is an open source, private cloud alternative to proprietary SaaS messaging for teams. The software, developed in partnership with over 500 contributors from around the world, rivals the productivity of SaaS solutions. We achieve this while offering organizations superior control, data sovereignty, configurability, freedom from lock-in, and enhanced security by keeping vital communications behind your firewall.
 
-Core committers, including both community contributors and paid staff at Mattermost, Inc., determine the project roadmap. For enterprises with needs beyond the scope of the open source project, commercial "Enterprise Edition" extensions are available from Mattermost, Inc. Revenue from Enterprise Edition sales ensures the continual improvement of all editions. 
+Core committers, including both community contributors and paid staff at Mattermost, Inc., determine the project roadmap. For enterprises with needs beyond the scope of the open source project, commercial "Enterprise Edition" extensions are available from Mattermost, Inc. Partnership with our core committer community, along with revenue from Enterprise Edition, ensures the continued improvement of all editions. 
 
 Mattermost Editions 
 -----------------------
