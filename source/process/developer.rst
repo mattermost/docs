@@ -30,7 +30,7 @@ Requirements
 - You're self-motivated with strong organizational skills.
 - You share our values, and work in accordance with those values.
 - You're proficient in Golang, React and/or React Native, or are able to ramp quickly into those languages. 
-- You're ready to complete our technical interview process.
+- You're ready to complete our `technical interview`_ process.
 - Ideal, but not required: Experience working in online communities, having made at least one `Help Wanted <https://github.com/search?utf8=%E2%9C%93&q=org%3Amattermost+state%3Aopen+Help+Wanted&type=Issues&ref=searchresults?>`_ pull request to a Mattermost repository, working on other Golang, React or React Native apps. 
 
 Internships 
@@ -54,3 +54,22 @@ Both declined and accepted candidates will be invited to share feedback on their
 - **50m - CEO interview** - Finally, candidates will have a 50-minute interview with our CEO.
 - **Email - Offer** - Successful candidates will receive an offer via email. 
 
+
+Technical Interview
+----------------------------
+
+For some positions, the hiring process includes a technical interview in order for you and the interviewer to understand what our work here is really like, and how you think, code and collaborate. 
+
+In the technical interview, you will work on an issue in our `Help Wanted <https://github.com/search?utf8=%E2%9C%93&q=org%3Amattermost+state%3Aopen+Help+Wanted&type=Issues&ref=searchresults?>`_  list in a 1-hour screen sharing session with the interviewer, and code "live", with them there to talk and collaborate with.
+
+After the interview, you will be asked to spend some time to finish the work, get it as close to done as your time allows, and submit a pull request with the changes to the Mattermost open source project. The interviewer will then review it, leave feedback, and ask you to look at the feedback and potentially make changes to address it. After at most 2 cycles of review by the interviewer and changes by you, the interviewer will let you know whether Mattermost will move forward with your candidacy, or not.
+
+The work after the screen sharing session, before submitting the pull request for the first review cycle, is expected to take around one hour. But as mentioned above, feel free to extend this time according to your availability, there is no time constraint.
+
+The time taken on the review cycles should normally take around two hours. While you are welcome to spend more time on this if you choose to, we will never ask you to do so. If you do not have time to do everything you'd like to, please mention those extra items in the pull request description.
+
+You are encouraged to let the interviewer know when you feel like you are getting close to having spent more time on the merge request than is reasonable. In this case, they will make a decision on your candidacy then, based on the information gathered during the technical interview and the work on the pull request up to that point. We do need at least one review cycle before evaluating your candidacy, so please bear that in mind if you're spending more than one hour before submitting the initial merge request.
+
+Once the pull request is finished, the code you have written will go into Mattermost Team Edition to the benefit of thousands of organizations using this free, open-source product, but will also go into the proprietary Mattermost Enterprise Edition, which is a commercial extension of the open source project. When contributing code, you should follow the `code contribution guidelines <https://docs.mattermost.com/developer/contribution-guide.html>`_, and complete the individual contributor license agreement.
+
+If you prefer not to do the above, please let us know and we'll give you an assignment that does not relate to Mattermost but does test the relevant skills.
