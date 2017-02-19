@@ -31,7 +31,7 @@ Requirements
 - You share our values, and work in accordance with those values.
 - You're proficient in Golang, React and/or React Native, or are able to ramp quickly into those languages. 
 - You're ready to complete our technical interview process.
-- Ideal, but not required: Experience working in online communities, having made at least one `Help Wanted <https://github.com/search?utf8=%E2%9C%93&q=org%3Amattermost+state%3Aopen+Help+Wanted&type=Issues&ref=searchresults?>`_ pull request to a Mattermost repository, working on other Golang, React or React Native apps) 
+- Ideal, but not required: Experience working in online communities, having made at least one `Help Wanted <https://github.com/search?utf8=%E2%9C%93&q=org%3Amattermost+state%3Aopen+Help+Wanted&type=Issues&ref=searchresults?>`_ pull request to a Mattermost repository, working on other Golang, React or React Native apps. 
 
 Internships 
 -------------------------
