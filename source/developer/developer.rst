@@ -1,8 +1,8 @@
 ====================================
-WIP: Developers
+Developers
 ====================================
 
-At Mattermost, developers are thoughtful, highly independent engineers who work with both our open source contributor community and paid Mattermost staff to improve Mattermost software on a regular basis.
+At Mattermost, staff developers are thoughtful, highly independent engineers who work with both our open source contributor community and other Mattermost staff to improve our software on a regular basis.
 
 All Mattermost staff developers are also `core committers <https://docs.mattermost.com/developer/contribution-guide.html#core-committers>`_ on one or more official Mattermost repositories. They work closely with product management to envision, design, plan, develop, coordinate, review and merge improvements per our `contribution guidelines <https://docs.mattermost.com/developer/contribution-guide.html>`_ on a regular basis. 
 
