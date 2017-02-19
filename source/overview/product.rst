@@ -2,7 +2,7 @@
 Product Overview
 ============================
 
-**Mattermost** empowers organizations to achieve their highest priorities through modern, enterprise-grade communication. Enjoy all the productivity benefits of workplace messaging across web, mobile and PC, with unlimited archiving, search and integrations in a highly secure, configurable, scalable private cloud solution under IT control. 
+**Mattermost** empowers organizations to achieve their highest priorities through modern, enterprise-grade communication. Enjoy all the productivity benefits of workplace messaging across web, mobile and PC, with unlimited archiving, search and integrations in a single-tenant private cloud solution under IT control. 
 
 Thousands of organizations use Mattermost around the world in 11 languages for its unmatched benefits: 
 
