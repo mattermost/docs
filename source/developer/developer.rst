@@ -36,7 +36,7 @@ Requirements
 Internships 
 -------------------------
 
-While we no longer offer internships for developers, if you get a couple of `Help Wanted <https://github.com/search?utf8=%E2%9C%93&q=org%3Amattermost+state%3Aopen+Help+Wanted&type=Issues&ref=searchresults?>`_ pull requests accepted, we'll interview you for one. This will be a remote internship without supervision; you'll only get feedback on your merge requests. If you want to work on open source and qualify please submit an application. In the cover letter field, please note that you want an internship and link to the accepted pull requests. The pull requests should be of significant value and difficulty, which is at the discretion of the hiring manager. For example, fixing 10 typos isn't as valuable as shipping 2 new features.
+While we no longer offer internships for developers, if you get a couple of `Help Wanted <https://github.com/search?utf8=%E2%9C%93&q=org%3Amattermost+state%3Aopen+Help+Wanted&type=Issues&ref=searchresults?>`_ pull requests accepted, we'll interview you for one. This will be a remote internship without supervision; you'll only get feedback on your merge requests. If you want to work on open source and qualify `please submit an application <https://jobs.lever.co/mattermost/>`_. In the cover letter field, please note that you want an internship and link to the accepted pull requests. The pull requests should be of significant value and difficulty, which is at the discretion of the hiring manager. For example, fixing 10 typos isn't as valuable as shipping 2 new features.
 
 Hiring Process
 -------------------------
