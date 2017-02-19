@@ -46,12 +46,12 @@ Applicants for this position can expect the hiring process to follow the order b
 Both declined and accepted candidates will be invited to share feedback on their hiring experience so we can continually improve our process. 
 
 - **Application/Email - Review of code samples** - In your application you can include a link to any public open source work you've done, including GitHub, GitLab or BitBucket profiles. If you'd like to share privately we can send you our ID for GitHub, GitLab or BitBucket, or we can review code you send in via email. 
-- **Email - General questions** - If your code samples look good, we'll email you some questions specific to the role. 
-- **30m - Screening interview** - Selected candidates will be invited for a 30 minute screening call with a recruiter. 
-- **15m - Soft-skills discussion** - Next, candidates will be invited to schedule a 15-minute interview with a staff developer to assess soft skills. 
-- **60m - Technical interview** - The next step is a technical interview with a staff developer. 
-- **60m - CTO interview** - Candidates are invited to an interview with our CTO and co-creator of the Mattermost open source project. 
-- **50m - CEO interview** - Finally, candidates will have a 50-minute interview with our CEO.
+- **Email - Follow-up questions** - If your code samples look good, we'll email you some questions specific to the role. 
+- **Video call - Screening interview** - Selected candidates will be invited for a 30-minute screening call with a recruiter. 
+- **Video call - Soft-skills discussion** - Next, candidates will be invited to schedule a 15-minute interview with a staff developer to assess soft skills. 
+- **Video call - Technical interview** - The next step is a technical interview with a staff developer. 
+- **Video call - CTO interview** - Candidates are invited to an interview with our CTO and co-creator of the Mattermost open source project. 
+- **Video call - CEO interview** - Finally, candidates will have a 50-minute interview with our CEO.
 - **Email - Offer** - Successful candidates will receive an offer via email. 
 
 
@@ -66,7 +66,7 @@ After the interview, you will be asked to spend some time to finish the work, ge
 
 The work after the screen sharing session, before submitting the pull request for the first review cycle, is expected to take around one hour. But as mentioned above, feel free to extend this time according to your availability, there is no time constraint.
 
-The time taken on the review cycles should normally take around two hours. While you are welcome to spend more time on this if you choose to, we will never ask you to do so. If you do not have time to do everything you'd like to, please mention those extra items in the pull request description.
+The time taken on the review cycles should normally take around two hours. While you are welcome to spend more time on this if you choose to, we will not ask you to do so. If you do not have time to do everything you'd like to, please mention those extra items in the pull request description.
 
 You are encouraged to let the interviewer know when you feel like you are getting close to having spent more time on the merge request than is reasonable. In this case, they will make a decision on your candidacy then, based on the information gathered during the technical interview and the work on the pull request up to that point. We do need at least one review cycle before evaluating your candidacy, so please bear that in mind if you're spending more than one hour before submitting the initial merge request.
 
