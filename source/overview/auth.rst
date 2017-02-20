@@ -44,13 +44,15 @@ For private network deployments in development teams using GitLab for source con
 DMZ authentication options 
 --------------------------
 
-When deploying Mattermost to a DMZ location outside a private network, a range of additional authentication options are available: 
+When deploying Mattermost to a DMZ location outside the security of a private network, additional authentication options include: 
 
 - `Okta integration via SAML <https://docs.mattermost.com/deployment/sso-saml-okta.html>`_
--  `Active Directory Federation Services via SAML <https://docs.mattermost.com/deployment/sso-saml-adfs.html>`_
+- `Active Directory Federation Services via SAML <https://docs.mattermost.com/deployment/sso-saml-adfs.html>`_
 - `SAML 2.0 authentication <https://docs.mattermost.com/deployment/sso-saml.html>`_
 - `Google Apps <https://docs.mattermost.com/deployment/sso-google.html>`_
 - `Office 365 <https://docs.mattermost.com/deployment/sso-office.html>`_
+
+Generic OAuth and OpenID are not currently supported. 
 
 Future authentication methods 
 -----------------------------
