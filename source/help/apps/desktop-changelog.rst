@@ -30,7 +30,7 @@ Improvements
    - Added supporting help text for each option
    - Removed "Leave app running in menu bar when application window is closed" setting for Mac, which is not applicable for that platform
    - Removed "Toggle window visibility when clicking on the tray icon" setting for Windows, given the behavior is inconsistent with typical Windows app behavior
-   - Removed "Hide menu bar" setting to avoid users not being able to use the menu bar and the Settings page.
+   - Removed "Hide menu bar" setting to avoid users not being able to use the menu bar and the Settings page
 
 Bug Fixes
 ~~~~~~~~~~~~
