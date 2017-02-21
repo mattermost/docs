@@ -41,6 +41,13 @@ How does Mattermost scale from teams to enterprises?
 
     For more information on how Mattermost scales, technically and functionally, please `contact the Enterprise team <https://about.mattermost.com/contact/>`_ and `read about scaling for Enterprise <https://docs.mattermost.com/deployment/scaling.html>`_.
 
+Can I use Mattermost Enterprise Edition as a means for customer service? 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost Enterprise Edition is designed for self-hosted, enterprise-grade communication. It is not recommended for primarily providing customer service or customer support, and does not offer a licensing model nor technical advice for this use case. 
+
+You are welcome to use the open source Mattermost Team Edition and its extensive API library to build your own solution. 
+
 
 Integration
 ------------------
