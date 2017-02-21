@@ -1,6 +1,5 @@
 ..  _mobile-developer-setup:
 
-==================================
 Mobile Developer Machine Setup
 ==================================
 
