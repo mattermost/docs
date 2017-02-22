@@ -556,7 +556,7 @@ Enable Webhook Debugging
 
 Enable Diagnostics and Error Reporting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**True**: To improve the quality and performance of Mattermost, you may send error reporting and diagnostic information to Mattermost, Inc. Read our `privacy policy <https://about.mattermost.com/default-privacy-policy>`_ to learn more.
+**True**: To improve the quality and performance of future Mattermost updates, this option sends error reporting and diagnostic information to Mattermost, Inc. Learn more about `telemetry <https://docs.mattermost.com/administration/diagnostics.html>`_.
 
 **False**: Diagnostics and error reporting are disabled.
 
@@ -1451,7 +1451,7 @@ Connection Security
 
 Enable Security Alerts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**True**: System Admins are notified by email if a relevant security fix alert has been announced in the last 12 hours. Requires email to be enabled.
+**True**: Enable System Admins to be notified by email if a relevant security fix alert is announced. Requires email to be enabled. Learn more about `telemetry <https://docs.mattermost.com/administration/diagnostics.html>`_ used to deliver this feature.
 
 **False**: Security alerts are disabled.
 
