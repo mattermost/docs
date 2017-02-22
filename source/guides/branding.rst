@@ -59,22 +59,22 @@ Product Description
 
 Below are optional product descriptions that can be used when referring to Mattermost from other open source projects or commercial 3rd party integrations. 
 
-General Mattermost description 
+General Mattermost Description 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When developing a Mattermost integration, the following description can be used to describe Mattermost: 
 
   Mattermost is an open source Slack-alternative built for enterprise. Thousands of companies use Mattermost for secure, compliant workplace messaging across web, PC and phones with archiving, search and integration with hundreds of third party applications. Available under MIT license in 11 languages, Mattermost offers peace-of-mind, value, control, and freedom from lock-in for organizations around the world. Learn more at https://mattermost.com/
 
-Mattermost Team Edition description 
+Mattermost Team Edition Description 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When redistributing the open source Mattermost Team Edition binary, the following description may be used: 
 
-  Mattermost Team Edition is an open source, self-hosted alternative to propretiary SaaS messaging. Mattermost brings all your team communication into one place, making it searchable and accessible anywhere. Deploys as single Linux binary on MySQL or PostgreSQL under an MIT license from `mattermost.com/download <https://about.mattermost.com/download>`_.
+  Mattermost Team Edition is an open source, self-hosted alternative to proprietary SaaS messaging. Mattermost brings all your team communication into one place, making it searchable and accessible anywhere. Deploys as single Linux binary on MySQL or PostgreSQL under an MIT license from `mattermost.com/download <https://about.mattermost.com/download>`_.
 
 
-Mattermost Enterprise Edition description 
+Mattermost Enterprise Edition Description 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When redistributing the commercial Mattermost Enterprise Edition binary, the following description may be used: 
