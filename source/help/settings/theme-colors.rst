@@ -5,7 +5,7 @@ Theme Colors
 
 The colors of the Mattermost user interface are customizable in **Account Settings > Display > Theme**. You can import your theme colors from Slack, customize the colors yourself, or choose from four standard themes designed by the Mattermost team.
 
-In Enterprise Edition, if you belong to multiple teams, you can choose to apply any changes across teams by selecting "Apply New Theme to All Teams" before saving. If this is not selected, any changes are only applied to the current team.
+Any changes you make are applied to all teams that you belong to. In Enterprise Edition, you can choose to apply the theme to the current team only, allowing you to have a different theme for each team.
 
 Standard Themes
 ---------------
