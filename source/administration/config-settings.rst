@@ -372,9 +372,9 @@ Restrict the permission level required to delete private groups. Deleted groups 
 
 Allow which users to delete messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Restrict the permission level required to delete messages.
+Restrict the permission level required to delete messages. Team Admins and System Admins can delete messages only in channels where they are members. Messages can be deleted anytime.
 
-**Message authors can delete their own messages, and Administrators can delete any message**: Allow authors to delete their own messages, and allow Administrators to delete any message.
+**Message authors can delete their own messages, and Administrators can delete any message**: Allow authors to delete their own messages, and allow Team Admins and System Admins to delete any message.
 
 **Team Admins and System Admins**: Allow only Team Admins and System Admins to delete messages.
 
@@ -392,7 +392,7 @@ Set the time limit that users have to edit their messages after posting.
 
 **Never**: Do not allow users to edit their messages.
 
-**nnn seconds after posting**: Users can edit their messages within the specified time limit after posting.
+**{n} seconds after posting**: Users can edit their messages within the specified time limit after posting.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature has two settings in ``config.json``. The first setting is ``"AllowEditPost": "always"`` with options ``always``, ``never``, and ``time_limit``.  |
