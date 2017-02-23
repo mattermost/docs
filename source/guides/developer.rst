@@ -12,6 +12,7 @@ Development Process
 
    /developer/contribution*
    /developer/developer-setup*
+   /developer/mobile-developer-setup.rst
    /developer/api*
    /developer/developer-flow*
    /developer/running-mattermost*
