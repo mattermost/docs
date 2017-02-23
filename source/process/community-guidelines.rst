@@ -24,7 +24,7 @@ Principles
 - Community members should have a low barrier to contribute
 - Community development workflow should be clear, efficient and effective
 
-Creating Help Wanted issues
+Creating Help Wanted Issues
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To create a Help Wanted issue in the `platform repository <https://github.com/mattermost/platform>`_, follow these steps:
@@ -34,7 +34,7 @@ To create a Help Wanted issue in the `platform repository <https://github.com/ma
 The issue should be written with the mindset that the contributor might have no or limited experience with the Mattermost code base and limited exposure to the Mattermost product.
 
   .. note::
-    Below are a few reasons why Jira ticket for Help Wanted issues is recommended:
+    Below are a few reasons why Jira tickets for Help Wanted issues are recommended:
     
       1. Jira tickets can be used to prioritize Help Wanted issues internally and are easily searchable by Mattermost staff, community, and customers
       2. Each Jira ticket goes through the  `triage meeting <https://docs.mattermost.com/process/training.html#triage-meeting>`_ for dev and PM approval
@@ -48,11 +48,11 @@ The issue should be written with the mindset that the contributor might have no 
     - To accept a ticket as a Help Wanted issue, the description should be unambiguous, and include UI description and help text so the change can be implemented and tested by any contributor
     - The triage team also adds the appropriate difficulty level (one of ``Introductory``, ``Intermediate`` and ``Advanced``) and programming language (``Go`` and ``ReactJS``) to the description of the Jira ticket
 
-4 - After triage, PM on community rotation reviews formatting of the GitHub issue and adds appropriate labels for difficulty level and programming language as defined by the triage team above.
+4 - After triage, PM on community rotation reviews formatting of the GitHub issue and adds appropriate labels for difficulty level and programming language as defined by the triage team.
 
 `See an example Help Wanted issue here <https://github.com/mattermost/platform/issues/4755>`_.
 
-Managing Help Wanted issues
+Managing Help Wanted Issues
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Once a Help Wanted issue is added, the PM on community rotation is responsible for:
@@ -60,7 +60,7 @@ Once a Help Wanted issue is added, the PM on community rotation is responsible f
 - answering questions from community members, which get automatically posted in the `Community Heartbeat channel <https://pre-release.mattermost.com/core/channels/community-heartbeat>`_
 - following up with a community member if there hasn't been a response for more than two weeks
 
-Closing Help Wanted issues
+Closing Help Wanted Issues
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Once a pull request for an open GitHub Help Wanted issue is merged, please ensure:
@@ -86,7 +86,7 @@ Principles
 - Elevate (thank, recognize and approve their work)
 - Grow (invite people to help as experts, promote people)
 
-Response writing tips
+Response Writing Tips
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - **Don't answer if unsure**
