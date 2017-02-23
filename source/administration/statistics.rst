@@ -7,11 +7,10 @@ To maximize performance for large Enterprise deployments, statistics for total p
 
 For advanced metrics for Enterprise deployments, `see performance monitoring documentation to learn more <http://docs.mattermost.com/deployment/metrics.html>`_.
 
-Site statistics
+Site Statistics
 -----------------
 
-System statistics are viewable under **System Console** > **Reporting** > **Site Statistics**. The data shown here is a cumulative sum
-across all teams on the system.
+System statistics are viewable under **System Console > Reporting > Site Statistics**. The data shown here is a cumulative sum across all teams on the system.
 
 Total Users
     The total number of active accounts created on your system. Excludes inactive accounts.
@@ -19,11 +18,17 @@ Total Users
 Total Teams
     The total number of teams created on your system.
 
+Total Channels
+    The total number of public channels and private groups created in all the teams on your system, including deleted channels. Doesn't include direct message channels.
+
 Total Posts
     The total number of posts made in all the teams on your system, including deleted posts and posts made using automation.
 
-Total Channels
-    The total number of public channels and private groups created in all the teams on your system, including deleted channels. Doesn't include direct message channels.
+Daily Active Users
+  The number of users who viewed the Mattermost site in the last 24 hours.
+
+Monthly Active Users
+  The number of users who viewed the Mattermost site in the last 30 days.
 
 Total Posts (graph)
     The total number of posts made on a certain day in all the teams on your system, including deleted posts and posts made using automation.
@@ -48,7 +53,7 @@ Incoming Webhooks
 Outgoing Webhooks
     The number of active Outgoing Webhooks currently setup on your system. Outgoing webhooks that are created and then removed in the Integrations menu are not counted.
 
-Websocket Conns
+WebSocket Conns
     The number of active WebSocket connections currently on your server.
 
 Master DB Conns
@@ -63,10 +68,10 @@ Channel Types
 Posts, Files and Hashtags
     This chart displays the number of posts containing files, hashtags or only text. Posts containing both files and hashtags are counted in both categories, and deleted posts are included.
 
-Team statistics
+Team Statistics
 ---------------
 
-Team Statistics are viewable under **System Console** > **Teams** > **Statistics**.
+Team Statistics are viewable under **System Console > Teams > Statistics**.
 
 Total Users
     The total number of active accounts who are members of this team. Excludes inactive accounts.
