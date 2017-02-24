@@ -14,9 +14,10 @@ Development Process
 
    /process/overview*
    /process/release-process*
-   /process/accepting-pull-request*
+   /process/help-wanted*
    /process/community-systems*
    /process/marketing-guidelines*
+   /process/community-guidelines*
 
 Documentation Style Guide
 -------------------------
