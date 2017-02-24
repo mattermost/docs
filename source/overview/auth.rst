@@ -41,8 +41,8 @@ For very large AD/LDAP instances you can also configure max page size to divide 
 
 For private network deployments in development teams using GitLab for source control, `GitLab single sign-on <https://docs.mattermost.com/deployment/sso-gitlab.html>`_ is also available. 
 
-DMZ authentication options 
---------------------------
+Authentication options outside of a private network 
+----------------------------------------------------
 
 When deploying Mattermost to a DMZ location outside the security of a private network, additional authentication options include: 
 
