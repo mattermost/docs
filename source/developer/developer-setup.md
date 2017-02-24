@@ -61,7 +61,7 @@ Any issues? Please let us know on our forums at: https://forum.mattermost.org/
 	4. Set GOROOT (optional) in your `~/.bash_profile`
 		- `export GOROOT=/usr/local/go/`
 6. Install Node.js  
-	- `curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -`  
+	- `curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -`
 	- `sudo apt-get install -y nodejs`
 7. Fork Mattermost on GitHub.com from [https://github.com/mattermost/platform](https://github.com/mattermost/platform), then:
 	1. `cd ~/go`  
@@ -200,6 +200,17 @@ There's likely another Mattermost instance already running. You can use `make st
 
 If there isn't another copy of Mattermost running and you need to change the port that Mattermost is running on, you can do so by changing the `ListenAddress` setting in the `ServiceSettings` section of `config/config.json`.
 
+#### I get the following error or something similar when running `make run` on Mac OS X: "Module build failed: Error: dyld: Library not loaded: /usr/local/opt/libpng/lib/libpng16.16.dylib"
+
+libpng needs to be updated because it is used by one of our dependencies. If you do not have libpng installed through Homebrew, run
+```
+brew install libpng
+```
+If you already have libpng installed through Homebrew, you can update it using
+```
+brew update && brew upgrade libpng
+```
+
 ### Other errors 
 
 #### I don't see any error messages, but I can't access `http://localhost:8065`
@@ -214,9 +225,9 @@ You can enable console logging in the `LogSettings` section of your `config/conf
 
 You can create an account using the following command:
 ```
-go run mattermost.go -create_user -email="user@example.com" -password="mypassword"
+go run ./cmd/platform/*.go user create --email user@example.com --username test1 --password mypassword
 ```
 Optionally, you can make that account a System Admin with the following command:
 ```
-go run mattermost.go -assign_role -email="user@example.com" -role="system_admin system_user"
+go run ./cmd/platform/*.go user create --email user@example.com --username test1 --password mypassword --system_admin
 ```

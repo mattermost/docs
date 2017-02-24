@@ -1,6 +1,4 @@
-..  _setup-tls:
-
-TLS Setup on Mattermost Server
+Configuring TLS on the Mattermost Server
 ========================================
 
 1. Go to the **General** > **Configuration** section of the System Console.
@@ -12,7 +10,7 @@ TLS Setup on Mattermost Server
 At this point you have two options: automatic certificate retrieval though Let's Encrypt or manually specifying a certificate.
 
 Automatic Certificate Retrieval
--------------------------------------------
+-------------------------------
 
 In this mode a certificate will be automatically retrieved the first time a client tries to connect to the Mattermost server. Certificates will be retrieved for any hostname a client tries to reach the server at. Setting this up is only one step:
 
@@ -21,7 +19,7 @@ In this mode a certificate will be automatically retrieved the first time a clie
 
 
 Manual Certificate Specification
-----------------------------------------------
+--------------------------------
 
 1. Change the **Use Let's Encrypt** setting to ``false``.
 2. Change the **TLS Certificate File** setting to the location of the certificate file.

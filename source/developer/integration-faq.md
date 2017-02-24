@@ -49,7 +49,7 @@ When self-hosting restrictions are less strict, AWS, Heroku and other public clo
 
 Automating Mattermost installation within another application: 
 
-1. Review the Mattermost installation guide to understand configuration steps of the production deployment 
+1. Review the [Mattermost installation guides](https://docs.mattermost.com/guides/administrator.html#installing-mattermost) to understand configuration steps of the production deployment 
 2. Install Mattermost files to a dedicated `/opt/mattermost` directory by decompressing the `tar.gz` file of the latest release for your target platform (for example `linux-amd64`). 
 3. Review [Configuration Settings](http://docs.mattermost.com/administration/config-settings.html) in `config.json` and set your automation to customize your Mattermost deployment based on your requirements. 
 4. For directory locations defined in `config.json`, such as the location of the local file storage directory (`./data/`) or logs directory (`./logs`), you can redefine those locations in your `config.json` settings and move the directories.
@@ -65,5 +65,6 @@ Automating Mattermost upgrade within another application:
     - backup the `./data` directory if local storage is used for files.
     - replace the contents of `/mattermost` directory with the decompressed contents of the latest release.
     - restore `config.json` and `./data` to their previous locations (which may have been overwritten).
+    - if you need to overwrite any `config.json` parameters use a [`sed` command](http://stackoverflow.com/questions/20568515/how-to-use-sed-to-replace-a-config-files-variable) or similar tool to update `config.json`
     - starting the Mattermost server to upgrade the database, `config.json` file, and `./data` as necessary. 
 3. Optionally the upgrade procedure can be chained so users can upgrade across an arbitrary number of Mattermost versions rather than to just the latest release. 

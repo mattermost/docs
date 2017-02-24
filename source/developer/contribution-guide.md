@@ -35,7 +35,11 @@ Before submitting a pull request (PR), check that:
 5. Strings in user interface are included in [.../i18n/en.json](https://github.com/mattermost/platform/blob/master/i18n/en.json) and [.../webapp/i18n/en.json](https://github.com/mattermost/platform/tree/master/webapp/i18n/en.json) localization files. Files for other languages will automatically be updated through the [Mattermost Translation Server](http://translate.mattermost.com) and do not need to be included in the pull request.
 6. Change meets UX Guidelines of [Fast, Obvious, Forgiving](http://www.mattermost.org/design-principles/).
 7. If change requires user to understand a new concept or make a decision, PR for help documentation is submitted to [mattermost/docs](https://github.com/mattermost/docs).
-8. Change is thoroughly tested. If your change involves text processing, make sure to run tests in [`/tests`](https://github.com/mattermost/platform/tree/master/tests).
+8. Change is thoroughly tested. If your change involves text processing, make sure to at least run markdown loadtests in [`/tests`](https://github.com/mattermost/platform/tree/master/tests) before submitting the PR. To run the loadtests:
+    - Go to **System Console** > **Developer** and set **Enable Testing Commands** to true
+    - Run `/loadtest url test-markdown-basics.md` and follow the instructions
+    - Run `/loadtest url test-markdown-lists.md` and follow the instructions
+    - Run `/loadtest url test-tables.md` and follow the instructions
 9. Confirm you have [squashed your commits](http://git-scm.com/book/en/v2/Git-Tools-Rewriting-History#Squashing-Commits).
 
 ## Submitting a Pull Request 
@@ -60,13 +64,18 @@ After submitting a PR, before it is merged:
         - Meets [UX guidelines](https://docs.mattermost.com/developer/fx-guidelines.html)
     - The Product Manager may come back with some bugs or UI improvements to fix before the pull request moves on to dev review.
 3. Dev review must pass
-    - Two developers will review the pull request and either give feedback or approve the PR.
+    - Two core committers will review the pull request and either give feedback or approve the PR.
     - Any comments will need to be addressed before the pull request is ready to merge.
 
 If you've included your mailing address in the signed [Contributor License Agreement](https://www.mattermost.org/mattermost-contributor-agreement/), you may receive a [Limited Edition Mattermost Mug](https://forum.mattermost.org/t/limited-edition-mattermost-mugs/143) as a thank you gift after your first pull request is merged. 
 
-### Approved Reviewers
+### Core Committers
 
-**Approved Dev reviewers include**: coreyhulen, crspeller, enahum, grundleborg, hmhealey, jwilander
+Core committers on Mattermost repositories consist of vetted core team members, including both community contributors as well as staff from Mattermost, Inc., who are trusted to review and merge PRs.
 
-**Approved PM reviewers include**: asaadmahmood, esethna, it33, jasonblais, lfbrock, yangchen1
+Repository: https://github.com/mattermost/platform
+
+- **Core committers include**: coreyhulen, crspeller, csduarte, enahum, grundleborg, hmhealey, jwilander
+
+- **Product managers include**: asaadmahmood, esethna, it33, jasonblais, lfbrock
+

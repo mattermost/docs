@@ -1,31 +1,31 @@
-Mattermost Administrator's Guide
---------------------------------
+Administrator's Guide
+=====================
 
 In-depth documentation on installation, deployment and administration of Mattermost system. 
 
-Install Guides
-==============
+Installing Mattermost
+---------------------
 
 .. toctree::
    :maxdepth: 1
    :glob:
 
-   /install/requirements*                       
+   /install/requirements.rst
+   Installing on Ubuntu 14.04 LTS </install/install-ubuntu-1404.rst>
+   Installing on Ubuntu 16.04 LTS </install/install-ubuntu-1604.rst>
+   Installing on RHEL 6.6 </install/install-rhel-66.rst>
+   Installing on RHEL 7.1 </install/install-rhel-71.rst>
    /install/docker-local*
    /install/docker-ebs*
    /install/ee-install*
-   /install/prod-ubuntu*
-   /install/prod-rhel*
-   /install/prod-debian*
    /install/prod-docker*
-   /install/setup-tls*
    /install/smtp*
    /install/troubleshooting*
    /install/i18n*
    /install/desktop*
 
 Deployment
-==========
+----------
 
 .. toctree::
    :maxdepth: 2
@@ -41,9 +41,10 @@ Deployment
    /deployment/sso-gitlab*
    /deployment/sso-google*
    /deployment/sso-office*
+   /deployment/metrics*
 
 Administration
-==============
+--------------
 
 .. toctree::
    :maxdepth: 2
@@ -67,4 +68,3 @@ Changelog
    :glob:
 
    /administration/changelog*
-

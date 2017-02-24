@@ -136,4 +136,4 @@ Compliance query results stored in ``posts.csv`` file
 Global Relay Support 
 ====================
 
-Mattermost daily compliance reports are compatible with Global Relay compliance solutions through the conversion of Mattermost ``.CSV`` exports into Global Relay ``EML`` files. Contact your Global Relay account manager about enabling `Secure, Compliant Internal Instant Messenger <https://www.globalrelay.com/uploads/resources/files/GlobalRelay-Services-Guide.pdf>`_ support in Global Relay. 
+Mattermost daily compliance reports are compatible with Global Relay compliance solutions through the conversion of Mattermost ``.CSV`` exports into Global Relay ``EML`` files. Contact your Global Relay account manager about enabling `Secure, Compliant Internal Instant Messenger <https://www.google.com/url?q=http://info.globalrelay.com/hs-fs/hub/461136/file-2416734572-pdf/PDFs/globalrelay_services_complete_services_guide_overview.pdf&sa=U&ved=0ahUKEwjqra2vx4LSAhVFtxoKHUImC6kQFggEMAA&client=internal-uds-cse&usg=AFQjCNH2PW7JAUD1cX17_a4lIcoXmkD-Ag>`_ support in Global Relay. 

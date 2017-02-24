@@ -1,5 +1,5 @@
-Using reStructuredText Markup
-=============================
+ReStructuredText Markup
+=======================
 
 The reStructuredText specification allows for a certain degree of flexibility in markup to achieve your goals. For example, you can use any one of more than a dozen characters for section title underlines, and you have the option of using an overline in addition to an underline.
 
@@ -9,39 +9,49 @@ For more information about reStructuredText markup, see the `reStructuredText Ma
 
 Use the following markup conventions in Mattermost documentation:
 
-Page titles
+Page Titles
 -----------
 
-For page titles, use the = character for the title underline, with no overline. For example:
+Underline page titles using `=`, with no overline. Underlines should be as long as the title text. For example:
 
 .. code-block:: none
   
-  Using reStructuredText Markup
-  =============================
+  Document Title
+  ==============
 
-Unlike Markdown, underlines in reStructuredText must be at least as long as the title text.
-
-Section titles
+Section Titles
 --------------
 
-If your document has more than one section, use the - character for the section title underline. For example:
+Underline using `-` for section titles. For example:
 
 .. code-block:: none
   
-  Section titles
-  --------------
-
-If you do need subsections, use the the ^ character for the first subsection level, and the \` character for the second subsection level. For example:
+  Section Title
+  -------------
+ 
+Underline subsections using `~` for the first subsection level, and `^` for the second subsection level. For example:
 
 .. code-block:: none
   
   Subsection One
-  ^^^^^^^^^^^^^^
+  ~~~~~~~~~~~~~~
   
   Subsection Two
-  ``````````````
-  
-Inline markup
+  ^^^^^^^^^^^^^^
+
+.. _table-of-contents:
+
+Table of Contents
+-----------------
+
+Insert a table of contents into a document using the following format:
+
+.. code-block:: none 
+
+  .. contents::
+      :backlinks: top
+
+Inline Markup
 -------------
 
 Bold
@@ -55,10 +65,10 @@ Monospace
 
 .. _arbitrary-text-label:
 
-Bullet lists
+Bullet Lists
 ------------
 
-For bullet lists and sublists, use only the - character. For example:
+For bullet lists and sublists, use ``-`` before the list item. For example:
 
 .. code-block:: none
   
@@ -68,10 +78,10 @@ For bullet lists and sublists, use only the - character. For example:
     - sublist item two
   - list item three
 
-Numbered lists and procedure steps
+Numbered Lists and Procedure Steps
 ----------------------------------
 
-Create numbered lists and procedure steps using arabic numerals for the top-level list and lower case alpha characters for the first nested list. For example:
+Create numbered lists and procedure steps using numbers for the top-level list and lower case alpha characters for the first nested list. For example:
 
 .. code-block:: none
   
@@ -83,33 +93,26 @@ Create numbered lists and procedure steps using arabic numerals for the top-leve
     
   3. This is item three.
   
-Links to external web pages
----------------------------
+External Links
+---------------
 
-The quickest and easiest way to create a link in reStructuredText is to use the URL without any extra markup. For example:
+URLs will automatically be rendered as links in Sphinx; however, where possible, it is preferred that hyperlinks are created within the text of a sentence. Hyperlinks within a sentence can be created using the following formatting:
 
-.. code-block:: none
-  
-  https://www.mattermost.org/manifesto/
-
-On output to HTML, the link looks like this: https://www.mattermost.org/manifesto/.
-
-You can also create a link that has link text. For example:
+``Link display text <URL-of-website>`_``, for example:
 
 .. code-block:: none
   
   `Mattermost Manifesto <https://www.mattermost.org/manifesto/>`_
 
-On output to HTML, the link looks like this: `Mattermost Manifesto <https://www.mattermost.org/manifesto/>`_
-
-Pay close attention to the syntax. The link starts with a backquote character, followed by the text that you want to see in the document, a final space, the < character, the URL, the > character, a closing backquote, and finally an underscore.
+The link renders as: `Mattermost Manifesto <https://www.mattermost.org/manifesto/>`_
 
 .. _relative-links-in-rst:
 
-Links to targets within the Mattermost docs
--------------------------------------------
 
-The Sphinx processor extends reStructuredText to implement references to locations within a documentation set. The extensions are called `roles`, and the two roles that are relevant in Mattermost documentation are the ``:doc:`` role and the ``:ref:`` role.
+Internal Links to Mattermost Docs
+----------------------------------
+
+The Sphinx processor extends reStructuredText to implement references, called roles, to locations within a documentation set. The two roles that are relevant in Mattermost documentation are the ``:doc:`` role and the ``:ref:`` role.
 
 The ``:doc:`` role is used for creating relative links to other documents. The ``:ref:`` role is used for creating relative links to arbitrary locations within the documentation set, including within the same document. In both cases, the HTML output is a relative URL for the target location.
 
@@ -127,7 +130,7 @@ The ``:ref:`` role is a two-part construct. One part is the link itself, and the
 
   .. _arbitrary-text-label:
   
-  Bullet lists
+  Bullet Lists
   ------------
 
 To generate a link to the section, use the ``:ref:`` role as follows:
@@ -153,17 +156,18 @@ You can also add the following image options: `alt`, `height`, `width`, `scale`,
 
   .. image:: ../images/choices.png
     :alt: The choices that you can make.
-    :height: 100px
-    :width: 200px
-    :align: left
+    :height: 100px //number refers to pixels
+    :width: 200px //number refers to pixels
+    :align: left //left, right or middle
+    :scale: 50 //number is a percentage
 
-Inserting an inline image is a bit more complicated. It's a two-part construct that consists of a label and the image directive. Surround the label text with vertical bars, the `|` character. For example:
+Inserting an inline image is a bit more complicated. It's a two-part construct that consists of a label and the image directive. Surround the label text with vertical bars, the ``|`` character. For example:
 
 .. code-block:: none
 
   Some of the emoji that you can use are |emoji|.
 
-Later on in the document, perhaps at the end of the paragraph that contains the label, insert the following image directive:
+Then insert the following image directive at the bottom of the document:
 
 .. code-block:: none
 
@@ -173,12 +177,10 @@ Later on in the document, perhaps at the end of the paragraph that contains the 
 
 .. _literal-blocks:
 
-Literal blocks
+Literal Blocks
 --------------
 
-In reStructuredText markup, the double colon marks the start of a section of literal text that corresponds to the HTML <pre> tag. However, the Sphinx processor applies syntax highlighting for Python to literal blocks, which is not always desired in Mattermost documentation.
-
-To use a literal block as originally intended in the reStructuredText specification, you must cheat a little, and use the Sphinx code-block directive with the language set to `none`. For example:
+To use a literal block with no syntax highlighting, use the Sphinx code-block directive with the language set to ``none``. For example:
 
 .. code-block:: none
 
@@ -186,10 +188,10 @@ To use a literal block as originally intended in the reStructuredText specificat
 
 .. _syntax-highlight:
 
-Code blocks with syntax highlighting
+Code Blocks with Syntax Highlighting
 ------------------------------------
 
-To create a code block with syntax highlighting, use the Sphinx code-block directive with the language set to the language that you want highlighted. Many languages are available, but in Mattermost documentation the most likely ones are as follows:
+To create a code block with syntax highlighting, use the Sphinx code-block directive with the language set to the language that you want highlighted. `Many languages are available <http://pygments.org/docs/lexers/>`_, but in Mattermost documentation the most likely ones are as follows:
 
 - go
 - rest
@@ -222,4 +224,3 @@ The example produces the following output:
 		return
 	}
 
-The highlighting is provided by Pygments Python syntax highlighter, which supports a large number of programming and markup languages. For a complete list, see `Available lexers <http://pygments.org/docs/lexers/>`_
