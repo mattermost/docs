@@ -4,7 +4,7 @@
 Mobile Applications Guide
 ==============================================
 
-This guide summarizes the deployment and security optoins for Mattermost mobile apps with push notifications. 
+This guide summarizes the deployment and security options for Mattermost mobile apps with push notifications. 
 
 OVERVIEW:
 
