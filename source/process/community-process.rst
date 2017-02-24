@@ -113,6 +113,18 @@ The various community channels are outlined below, along with the responsibiliti
       - Troubleshooting: Request to move to forums
       - Feature Proposal: Request to move to feature idea forums
 
+4. Help Wanted GitHub Issues:
+
+ - Description:
+
+   - New GitHub Help Wanted issues are automatically created from JIRA tickets and are open for community contributions
+
+ - Community PM Responsibility:
+
+   - Review newly created Help Wanted issues for formatting and apply difficulty and language labels defined in the issue description by the triage team
+   - Respond to questions from community members, which get automatically posted in the `Community Heartbeat channel <https://pre-release.mattermost.com/core/channels/community-heartbeat>`_
+   - Follow up with a community member if there hasn't been a response for more than two weeks
+
 5. Customer Zendesk Issues:
 
   - Description:
