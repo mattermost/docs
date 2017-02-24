@@ -94,13 +94,13 @@ The various community channels are outlined below, along with the responsibiliti
 
  - Description:
 
-    - New GitHub Help Wanted issues open for community contributions
+   - New GitHub Help Wanted issues are automatically created from JIRA tickets and are open for community contributions
 
-  - Community PM Responsibility:
+ - Community PM Responsibility:
 
-    - After a Help Wanted issue is created, review its formatting and apply difficulty and language labels defined in the issue description by the triage team
-    - Respond to questions from community members, which get automatically posted in the `Community Heartbeat channel <https://pre-release.mattermost.com/core/channels/community-heartbeat>`_
-    - Follow up with a community member if there hasn't been a response for more than two weeks
+   - Review newly created Help Wanted issues for formatting and apply difficulty and language labels defined in the issue description by the triage team
+   - Respond to questions from community members, which get automatically posted in the `Community Heartbeat channel <https://pre-release.mattermost.com/core/channels/community-heartbeat>`_
+   - Follow up with a community member if there hasn't been a response for more than two weeks
 
 5. Customer Zendesk Issues:
 
