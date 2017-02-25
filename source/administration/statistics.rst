@@ -33,7 +33,7 @@ Monthly Active Users
 Total Posts (graph)
     The total number of posts made on a certain day in all the teams on your system, including deleted posts and posts made using automation.
 
-Active Users With Posts (graph)
+Active Users with Posts (graph)
     Users who made a post on a certain day in all the teams on your system, including system messages posted from the user's account.
 
 Advanced system statistics (Enterprise)
@@ -74,13 +74,13 @@ Team Statistics
 Team Statistics are viewable under **System Console > Teams > Statistics**.
 
 Total Users
-    The total number of active accounts who are members of this team. Excludes inactive accounts.
+    The total number of active accounts on this team. Excludes inactive accounts.
 
 Public Channels
-    The number of public channels created in this team. Doesn't include deleted channels.
+    The number of public channels created in this team. Excludes deleted channels.
 
 Private Groups
-    The number of private groups created in this team. Doesn't include deleted groups.
+    The number of private groups created in this team. Excludes deleted groups.
 
 Total Posts
     The total number of posts made in this team, including deleted posts and posts made using automation.
@@ -88,11 +88,11 @@ Total Posts
 Total Posts (graph)
     The total number of posts made on a certain day in this team, including deleted posts and posts made using automation.
 
-Active Users With Posts (graph)
+Active Users with Posts (graph)
     Users who made a post on a certain day in this team, including system messages posted from the user's account.
 
 Recent Active Users
-    Twenty most recent users that have logged in and had recent browser activity in Mattermost.
+    Twenty most recent users who have logged in and had recent browser activity in Mattermost.
 
 Newly Created Users
-    Most recent users that have joined the team.
+    Most recent users who have joined the team.
