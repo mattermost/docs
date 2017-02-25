@@ -53,11 +53,11 @@ Incorrect example: ``https://mattermost.example.com:1234/team_name``
 | This feature's ``config.json`` setting is ``"SiteURL": ""`` with string input.                                                                     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Listen Address  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-The address and port to which to bind and listen. Specifying ":8065" will bind to all network interfaces. Specifying ``127.0.0.1:8065`` will only bind to the network interface having that IP address. 
+Listen Address
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The address and port to which to bind and listen. Specifying ":8065" will bind to all network interfaces. Specifying ``127.0.0.1:8065`` will only bind to the network interface having that IP address.
 
-If you choose a port of a lower level (called "system ports" or "well-known ports", in the range of 0-1023), you must have permissions to bind to that port. 
+If you choose a port of a lower level (called "system ports" or "well-known ports", in the range of 0-1023), you must have permissions to bind to that port.
 
 On Linux you can use: ``sudo setcap cap_net_bind_service=+ep ./bin/platform`` to allow Mattermost to bind to well-known ports.
 
@@ -66,7 +66,7 @@ On Linux you can use: ``sudo setcap cap_net_bind_service=+ep ./bin/platform`` to
 +-------------------------------------------------------------------------------------------+
 
 Connection Security
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **None**: Mattermost will connect over an unsecure connection.
 
 **TLS**: Encrypts the communication between Mattermost and your server. See [documentation](https://docs.mattermost.com/install/setup-tls.html) for more details.
@@ -226,7 +226,7 @@ Maximum number of users per team, including both active and inactive users.
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Max Channels Per Team
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Maximum number of channels per team, including both active and deleted channels.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -234,7 +234,7 @@ Maximum number of channels per team, including both active and deleted channels.
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Max Notifications Per Channel
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Maximum total number of users in a channel before @all, @here, and @channel no longer send notifications to maximize performance.
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -249,8 +249,8 @@ Teams and user accounts can only be created by a verified email from this list o
 | This feature's ``config.json`` setting is ``"RestrictCreationToDomains": ""`` with string input.                                                                     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Restrict Team Names 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+Restrict Team Names
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in November 16th, 2016 release*
 
@@ -556,7 +556,7 @@ Enable Webhook Debugging
 
 Enable Diagnostics and Error Reporting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**True**: To improve the quality and performance of future Mattermost updates, this option sends error reporting and diagnostic information to Mattermost, Inc. Learn more about `telemetry <https://docs.mattermost.com/administration/diagnostics.html>`_.
+**True**: To improve the quality and performance of future Mattermost updates, this option sends error reporting and diagnostic information to Mattermost, Inc. To learn more about this feature, see :doc:`telemetry`.
 
 **False**: Diagnostics and error reporting are disabled.
 
@@ -1148,7 +1148,7 @@ MFA
 --------------------------------
 *Available in Enterprise Edition E10 and higher*
 
-Configure security settings for multi-factor authentication. 
+Configure security settings for multi-factor authentication.
 
 The default recommendation for secure deployment is to host Mattermost within your own private network, with VPN clients on mobile, so everything works under your existing security policies and authentication protocols, which may already include multi-factor authentication.
 
@@ -1451,7 +1451,7 @@ Connection Security
 
 Enable Security Alerts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**True**: Enable System Admins to be notified by email if a relevant security fix alert is announced. Requires email to be enabled. Learn more about `telemetry <https://docs.mattermost.com/administration/diagnostics.html>`_ used to deliver this feature.
+**True**: Enable System Admins to be notified by email if a relevant security fix alert is announced. Requires email to be enabled. To learn more about this feature, see :doc:`telemetry`.
 
 **False**: Security alerts are disabled.
 
@@ -1614,7 +1614,7 @@ ________
 
 WebRTC (Beta)
 ``````````````````````````
-Enable Mattermost WebRTC 
+Enable Mattermost WebRTC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **True**: Mattermost will allow making one-on-one video calls on Chrome, Firefox and `Mattermost Desktop Apps <https://about.mattermost.com/download/#mattermostApps>`_ on a server running in SSL mode.
 
@@ -1636,7 +1636,7 @@ This is the websocket used to signal and establish communication between the pee
 
 Gateway Admin URL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Mattermost WebRTC uses this URL to obtain valid tokens for each peer to establish the connection. Enter ``https://<mattermost-webrtc-gateway-url>:<port>/admin``. Make sure you use HTTP or HTTPS in your URL depending on your server configuration. 
+Mattermost WebRTC uses this URL to obtain valid tokens for each peer to establish the connection. Enter ``https://<mattermost-webrtc-gateway-url>:<port>/admin``. Make sure you use HTTP or HTTPS in your URL depending on your server configuration.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"GatewayAdminUrl": ""`` with string input                                                                                |
@@ -1710,7 +1710,7 @@ Storage system where files and image attachments are saved.
 
 **Local File System**: Files and images are stored in the specified local file directory.
 
-**Amazon S3**: Files and images are stored on Amazon S3 based on the provided access key, bucket and region fields. The ``amazons3`` driver is compatible with Minio (Beta) based on the provided access key, bucket and region fields. 
+**Amazon S3**: Files and images are stored on Amazon S3 based on the provided access key, bucket and region fields. The ``amazons3`` driver is compatible with Minio (Beta) based on the provided access key, bucket and region fields.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DriverName": "local"`` with options ``local`` and ``amazons3`` for above settings respectively.                         |
@@ -1759,7 +1759,7 @@ AWS region you selected for creating your S3 bucket. Refer to `AWS Reference Doc
 Secure Amazon S3 Connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Enables only secure Amazon S3 Connections. 
+**True**: Enables only secure Amazon S3 Connections.
 
 **False**: Allows insecure connections to Amazon S3.
 
@@ -2028,7 +2028,7 @@ Throttle API at this number of requests per second if rate limiting is enabled.
 | This feature's ``config.json`` setting is ``"PerSec": 10`` with whole number input.                                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Maximum Burst Size 
+Maximum Burst Size
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Maximum number of requests allowed beyond the per second query limit.
 
@@ -2036,9 +2036,9 @@ Maximum number of requests allowed beyond the per second query limit.
 | This feature's ``config.json`` setting is ``"MaxBurst": 100`` with whole number input.                                                                               |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Memory Store Size  
+Memory Store Size
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Maximum number of user sessions connected to the system as determined by **VaryByRemoteAddr** and **VaryByHeader** variables. 
+Maximum number of user sessions connected to the system as determined by **VaryByRemoteAddr** and **VaryByHeader** variables.
 
 Typically set to the number of users in the system.
 
