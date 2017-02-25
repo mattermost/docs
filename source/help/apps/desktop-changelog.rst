@@ -512,7 +512,7 @@ This release contains a security update and it is highly recommended that users 
 -  v1.1.1, released 2016-04-13
 
    -  If the specified team URL on the **Settings** page contains an additional space, the app now properly redirects to the team page
-   -  ``Alt+Shift`` now opens the menu on Cinnamon desktop environment.
+   -  ALT+SHIFT now opens the menu on Cinnamon desktop environment.
 
 -  v1.1.0, released 2016-03-30
 
