@@ -152,7 +152,7 @@ Set up Mattermost Server
 
       .. image:: ../images/windows_2_platform_exe_test.png
 
-   d. Stop the server by pressing CTRL+C
+   d. Stop the server by typing ``CTRL+C`` in the terminal window.
 
 Configure the Firewall
 ^^^^^^^^^^^^^^^^^^^^^^
