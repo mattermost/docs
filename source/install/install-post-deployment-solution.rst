@@ -1,6 +1,6 @@
 .. _config-proxy-nginx:
 
-Customizing your Mattermost install
+Customizing your Mattermost Install
 ========================================================================
 
 After completing your Mattermost install with a deployment solution provider, such as Bitnamni, you can customize the SSL security, email notifications and core server options via the following procedures: 
