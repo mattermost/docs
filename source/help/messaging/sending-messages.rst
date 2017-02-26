@@ -8,7 +8,7 @@ After a message has been sent, you or others can reply to it and link to it. Dep
 Message Types
 -------------
 
-Mattermost has two types of messages: posts, and replies.
+Mattermost has two types of messages: posts and replies.
 
 Posts
   Posts can be considered parent messages. They are the messages that often start a thread of replies. Posts can be written and sent from the text input box at the bottom of the center pane.
@@ -49,12 +49,12 @@ Team Edition
 Enterprise Edition
   System Admins can restrict access to the delete feature, preventing you from deleting your messages. System Admins can also prevent your Team Admin from deleting messages.
 
-Delete a message by clicking the **[...]** icon next to any message that you've sent, then click **Delete**. If you don't see the **Delete** option, then the delete feature was turned of by the System Admin.
+Delete a message by clicking the **[...]** icon next to any message that you've sent, then click **Delete**. If you don't see the **Delete** option, then the delete feature was turned off by the System Admin.
 
 Linking to a message
 --------------------
 
-The permalink feature creates a link to any message. Get the permalink to any message by clicking the **[...]** icon next to the a message, then click **Permalink > Copy Link**. Sharing this link lets other users view the linked message in the Message Archives. If the link is to a message in a Public Channel, any user of the team can see the message. If the link is to a message in a Private Group, only other users in the group can see the message.
+The permalink feature creates a link to any message. Get the permalink to any message by clicking the **[...]** icon next to a message, then click **Permalink > Copy Link**. Sharing this link lets other users view the linked message in the Message Archives. If the link is to a message in a Public Channel, any user of the team can see the message. If the link is to a message in a Private Group, only other users in the group can see the message.
 
 .. tip::
   The timestamp that appears beside the username of any message is also a permalink.
