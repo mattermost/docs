@@ -12,9 +12,9 @@ Improvements
 ~~~~~~~~~~~~
 
  - Added support for unread indicators following the release of team sidebar in Mattermost server 3.6
- - Removed a confusing `CTRL/CMD+S` shortcut for searching within a Mattermost team
+ - Removed a confusing CTRL/CMD+S shortcut for searching within a Mattermost team
  - Added support for SAML OneLogin and Google authentication for Enterprise users
- - Switching to a server from the system tray icon, from "Window" menu bar item, or through `CTRL/CMD+{n}` shortcut now works while viewing the Settings page
+ - Switching to a server from the system tray icon, from "Window" menu bar item, or through CTRL/CMD+{n} shortcut now works while viewing the Settings page
  - Streamlined desktop server management:
 
    - "Team Management" changed to "Server Management" following the release of team sidebar in Mattermost server 3.6
