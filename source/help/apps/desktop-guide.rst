@@ -18,7 +18,7 @@ Server Management
 
 You can connect to multiple Mattermost servers from a single interface on the desktop app.
 
-The server Management section allows you to add, edit and remove servers.
+The server Management section allows you to add, edit, and remove servers.
 
 Adding servers
 ~~~~~~~~~~~~~~
