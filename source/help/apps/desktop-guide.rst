@@ -16,14 +16,14 @@ Below are a few tips to get you started and to configure your experience on the 
 Server Management
 -----------------
 
-You can connect to multiple Mattermost servers from a single interface on the desktop app.
+You can connect to multiple Mattermost servers from a single interface on the desktop app. Servers appears as separate tabs while you are using the app.
 
-The server Management section allows you to add, edit, and remove servers.
+The Server Management section allows you to add, edit, and remove servers. 
 
-Adding servers
+Adding Servers
 ~~~~~~~~~~~~~~
 
-To add a new server on the Mattermost instance:
+To access a new server from your desktop app environment:
 
 1. On the menu bar, go to **File > Settings**.
 2. In the *Server Management* section, click **Add new server**.
@@ -33,17 +33,17 @@ To add a new server on the Mattermost instance:
 
 To access all teams that you have joined, click the name on the Server Management section. Each server appears as a separate tab in the app.
 
-Editing servers
+Editing Servers
 ~~~~~~~~~~~~~~~
 
-To edit a server:
+To edit a server in your desktop app environment:
 
 1. On the menu bar, go to **File > Settings**.
 2. Next to the server you want to update, click **Edit**.
 3. Edit **Name** and/or **URL**.
 4. Click **Save**.
 
-Removing servers
+Removing Servers
 ~~~~~~~~~~~~~~~~
 
 To remove a server from your desktop app environment:
@@ -70,7 +70,7 @@ Display secure content
     This setting is enabled by default.
 
 Show red badge on taskbar icon to indicate unread messages (Windows, Mac only)
-    When enabled, a red badge is shown on the taskbar icon for unread messages with a number count indicating unread mentions. If disabled, a red badge is only shown for unread mentions (with a number count).
+    When enabled, a red badge is shown on the taskbar icon for unread messages with a number count indicating unread mentions or direct messages. If disabled, a red badge is only shown for unread mentions (with a number count).
 
     This setting is enabled by default.
 
