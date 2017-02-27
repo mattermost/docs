@@ -31,8 +31,6 @@ To access a new server from your desktop app environment:
 4. In the **URL** field, enter the complete URL of the server that you want to connect to. Must begin with either ``http://`` or ``https://``.
 5. Click **Add**.
 
-To access all teams that you have joined, click the name on the Server Management section. Each server appears as a separate tab in the app.
-
 Editing Servers
 ~~~~~~~~~~~~~~~
 
