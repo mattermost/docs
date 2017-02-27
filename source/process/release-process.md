@@ -120,7 +120,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - Prioritize any developer documentation tickets  
 6. **(Team) Code Complete Meeting (10:00am San Francisco time)**:  
     - (PM) Leads team review of Changelog 
-    - (PM) Walk through each unfinished item of this checklist  
+    - (Release Manager) Walk through each unfinished item of this checklist  
     - (Dev) Last check of tickets that need to be merged before RC1  
 7. Build:  
     - Review all `TODO` notes 
