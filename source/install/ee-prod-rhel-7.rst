@@ -156,7 +156,7 @@ Set up Mattermost Server
    -  ``./platform``
    -  You should see a console log like ``Server is listening on :8065``
       letting you know the service is running.
-   -  Stop the server for now by typing ``Ctrl-C``
+   -  Stop the server for now by pressing CTRL+C
 
 8. Set up Mattermost to use the systemd init daemon which handles
    supervision of the Mattermost process. 

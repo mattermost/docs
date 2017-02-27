@@ -396,7 +396,7 @@ Thanks also to those who reported bugs that benefited the release, in alphabetic
 - If a webhook is sent to a direct message channel that has not been created yet, the channel is now automatically created
 
 #### Keyboard Shortcuts
-- `CTRL + SHIFT + M` now toggles recent mentions results
+- CTRL/CMD+SHIFT+M now toggles recent mentions results
 
 #### Team Settings
 - Team names are now restricted to be a minimum of two characters long, instead of four, to support abbreviated team names
@@ -410,8 +410,8 @@ Thanks also to those who reported bugs that benefited the release, in alphabetic
 ### Bug Fixes
 - Files can now be sent in Direct Messages across teams
 - Correct login method now shown in System Console user lists
-- Channel switcher (`CTRL + K`) no longer throws an error when switching to a user outside of your current team
-- Channel switcher (CTRL / CMD + K) now works for creating new Direct Message channels
+- Channel switcher (CTRL/CMD+K) no longer throws an error when switching to a user outside of your current team
+- Channel switcher (CTRL/CMD+K) now works for creating new Direct Message channels
 - Channels on the left hand side now sort numerically, alphabetically, and based on locale
 - Fixed incorrect error message when trying a team URL with one character
 - `/join` no longer throws an error for non-admin accounts
@@ -675,7 +675,7 @@ Release date: 2016-09-16
 - Messages can now be flagged from the search results list
 - Count of unread mentions are no longer mixed when switching between multiple teams.
 - Recent Mentions search on mobile no longer contains `@all`
-- For those using the mobile view on desktop, Ctrl+Enter now sends messages on mobile web view 
+- For those using the mobile view on desktop, CTRL+ENTER now sends messages on mobile web view 
 - User removed from team now shows up in DM list under "Outside this team"
 - Mentions update properly when team is switched
 
@@ -744,7 +744,7 @@ The following config settings will only work on servers with an Enterprise Licen
 - Files sent in private chat to members in a different team are not accessible.
 - YouTube video links show as “Video not found” on Desktop App if "Allow mixed content" is turned on.
 - “More” option under Direct Message list no longer shows count of team members not in your direct message list.
-- On Firefox, CTRL/CMD + U keyboard shortcut to upload a file doesn’t work.
+- On Firefox, CTRL/CMD+U keyboard shortcut to upload a file doesn’t work.
 - Webhook attachments don’t show up in search results.
 - Messages sometimes don't appear deleted until the page is refreshed.
 - When joining a channel from a public link, the page sometimes loads for a long time and requires a refresh.
@@ -839,8 +839,8 @@ Expected release date: 2016-08-16
 - Mention notifications can be turned on for any new messages in comment threads that you participate in.
 
 #### Keyboard Shortcuts
-- Added icons next to channel names and improved sorting in the channel switcher (`CTRL/CMD+K`).
-- Keyboard shortcuts that open modals can now toggle them open and closed (`CTRL/CMD+SHIFT+A`, `CTRL/CMD+K`).
+- Added icons next to channel names and improved sorting in the channel switcher (CTRL/CMD+K).
+- Keyboard shortcuts that open modals can now toggle them open and closed (CTRL/CMD+SHIFT+A, CTRL/CMD+K).
 
 #### Integrations
 - Added an option to trigger outgoing webhook if the first word starts with the specified trigger word.
@@ -998,7 +998,7 @@ The following config settings will only work on servers with an Enterprise Licen
 - YouTube videos show as “Video not found” on Desktop App.
 - “More” option under Direct Message list no longer shows count of team members not in your direct message list.
 - /join sometimes throws an error.
-- On Firefox, CTRL/CMD + U keyboard shortcut doesn’t work.
+- On Firefox, CTRL/CMD+U keyboard shortcut doesn’t work.
 - Sometimes only the last character typed in the channel switcher appears.
 - Webhook attachments don’t show up in search results.
 - Count of unread mentions are sometimes mixed when switching between multiple teams.
@@ -1149,7 +1149,7 @@ Release date: 2016-07-16
 - Direct Messages modal loads faster since it is no longer cleared from memory each time it closes.
 - Graphs in the **System Console > Site Statistics** now have the same start date for comparison.
 - Fixed an issue where new languages are not added by default. Any server which is upgraded to Mattermost v3.1 will need to manually set **System Console > Localization > Available Languages** blank to have new languages added by default.
-- Previously, a few shortcuts that used `CTRL` were overwriting existing messaging shortcuts in Mac. This has been changed so they only work with `CMD`. See [documentation](http://docs.mattermost.com/help/messaging/keyboard-shortcuts.html) for more details.
+- Previously, a few shortcuts that used CTRL were overwriting existing messaging shortcuts in Mac. This has been changed so they only work with CMD. See [documentation](http://docs.mattermost.com/help/messaging/keyboard-shortcuts.html) for more details.
 - Email body now contains the `siteURL` when inviting a user by email via CLI (command line interface)
 - YouTube videos now stop playing when collapsed.
 - Fixed error when adding an incoming webhook to a public channel the user is currently not in.
@@ -1226,7 +1226,7 @@ The following config settings will only work on servers with an Enterprise Licen
 - “More” option under Direct Message list no longer shows count of team members not in your direct message list.
 - Webhook attachments don't show up in search results.
 - On Firefox, System Console sidebar completely disappears when an AD/LDAP setting is saved.
-- On Firefox, `CTRL/CMD + U` keyboard shortcut doesn't work.
+- On Firefox, CTRL/CMD+U keyboard shortcut doesn't work.
 - `/join` sometimes throws an error.
 - Sometimes only the last character typed in the channel switcher appears.
 - Formatting of multiple lists in a row breaks markdown.
@@ -1401,7 +1401,7 @@ The following config settings will only work on servers with an Enterprise Licen
 - Clicking on a desktop notification from another team doesn’t open the team.
 - Webhook attachments don't show up in search results.
 - On Firefox, System Console sidebar completely disappears when an AD/LDAP setting is saved
-- On Firefox, `CTRL/CMD + U` keyboard shortcut doesn't work
+- On Firefox, CTRL/CMD+U keyboard shortcut doesn't work
 - Copying and pasting an image from a browser doesn't work
 - Youtube videos continue playing when collapsed
 - Code theme under Account Settings > Display > Theme doesn't save unless entered in vectorized form

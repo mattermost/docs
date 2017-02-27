@@ -149,8 +149,8 @@ Select what language Mattermost displays in the user interface. Options include:
 ## Advanced
 Setting to configure when messages are sent.
 
-#### Send Messages on Ctrl+Enter
-If enabled, press **Enter** to insert a new line and **Ctrl + Enter** posts the message. If disabled, **Shift + Enter** inserts a new line and **Enter** posts the message.
+#### Send Messages on CTRL+ENTER
+If enabled, press ENTER to insert a new line and CTRL+ENTER posts the message. If disabled, SHIFT+ENTER inserts a new line and ENTER posts the message.
 
 #### Enable Post Formatting
 This setting controls whether post formatting is rendered. When "On", posts will be rendered with [markdown formatting](http://docs.mattermost.com/help/messaging/formatting-text.html), emoji, autolinked URLs, and line breaks. When "Off", the raw text will be shown. 
