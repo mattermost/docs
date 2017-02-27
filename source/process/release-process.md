@@ -50,7 +50,7 @@ No pull requests for major features should be **merged** to the current release 
     - PM feature owners post draft section for the blog post in the Marketing Channel (including screenshots and a hashtag #mattermostXX where XX is the version number, see [example thread](https://pre-release.mattermost.com/core/pl/o611i4wz3pfafb6fpha9ggxxnh)) and [queue a tweet](https://pre-release.mattermost.com/core/pl/f3wsbwkgzfdr9nf9amtcwfpo6h)
 4. Docs:
     - Update [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) for any steps needed to upgrade to new version
-    - Submit NOTICE.txt PR for any new libraries added from dev, if not added already. The following two files contain a list of dependancies:
+    - Submit NOTICE.txt PR for any new libraries added from dev, if not added already. The following two files contain a list of dependencies:
         - https://github.com/mattermost/platform/blob/master/webapp/package.json
         - https://github.com/mattermost/platform/blob/master/glide.yaml
 5. QA:
@@ -93,7 +93,7 @@ Day when leads and PM area owners decide which major features are included in th
 
 ### E. (T-minus 8 working days) Code Complete and Release Candidate Cut
 
-**Stablization** period begins when all features for release have been committed. During this period, only **bugs** can be committed to the release branch. Non-bug pull requests are tagged for next version.
+**Stabilization** period begins when all features for release have been committed. During this period, only **bugs** can be committed to the release branch. Non-bug pull requests are tagged for next version.
 
 Exceptions can be made by the release manager setting priority to "Highest" and adding a "release-exception" label to the Jira ticket. This will add the ticket to the [hotfix list for release candidate](https://mattermost.atlassian.net/issues/?filter=10204).
 
@@ -130,7 +130,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - Translation server is locked to the release branch
     - Directory structure is reviewed and large changes posted to the Release Discussion channel
 8. PM:  
-    - Merge changelog PR after team review is complete, and update the GitHub meta issue to include a link to the changelog on the documention branch
+    - Merge changelog PR after team review is complete, and update the GitHub meta issue to include a link to the changelog on the documentation branch
     - Tweet announcement that RC1 is ready (see [example](https://pre-release.mattermost.com/core/pl/tefx1ijyz7bs8mabuxmpq9f7pw))
  
 ### F. (T-minus 7 working days) Release Candidate Testing 
@@ -223,7 +223,7 @@ The final release is cut. If an urgent and important issue needs to be addressed
     - Finalize docs
       - If reviews are not complete, hold a 30 minute doc review meeting with PMs and anyone else who has changed or reviewed docs this release and wants to join
       - Merge the docs release branch to master and verify all changes on docs.mattermost.com once the build is up
-      - Submit a correction PR for any incorrect formatting or other errors missed during the intitial review
+      - Submit a correction PR for any incorrect formatting or other errors missed during the initial review
 6. Marketing:
     - Finish draft of animated GIF (for Twitter announcement, MailChimp and blog post) made up of top announcements
     - Finish draft of MailChimp email blast and Twitter announcement and send for marketing lead to review. Once reviewed, schedule for 08:00 PST on the date of marketing announcement
@@ -339,13 +339,13 @@ Once final dot release build is ready to cut:
     - Verify all items in the last posted release checklist are complete, if not alert the release manager
 2. Logistics: 
     - Confirm the Security Researchers list on the [Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/) is up to date
-    - Review "Community Installers" and update version numbers if there are any discrepencies https://www.mattermost.org/installation/ (move this to ops eventually)
+    - Review "Community Installers" and update version numbers if there are any discrepancies https://www.mattermost.org/installation/ (move this to ops eventually)
 3. Leads:
     - Update [company roadmap at mattermost.com](https://about.mattermost.com/direction/)
 4. Build: 
     - Put pre-release back on master
     
-### J. (T-plus 10 working days) Security Updates
+### K. (T-plus 10 working days) Security Updates
 1. PM:
     - Post [Mattermost Security Updates](https://about.mattermost.com/security-updates/) after reviewing with security lead
       - If a dot release is shipping with security fixes, do not post new details until T-plus 10 working days from the dot release ship date
