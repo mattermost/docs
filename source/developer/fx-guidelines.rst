@@ -494,12 +494,12 @@ Markdown Rendering
 
 Markdown rendering in Mattermost is designed to be a fast, obvious, forgiving formatting standard for a messaging application. To achieve this goal, it has variations from markdown in GitHub (the most wildly used implementation), including: 
 
-- Bullets directly below a line of text render as a bullet, not as a continued line of text. 
-- Other variations to be concisely listed here, one line each. 
+- Bullets directly below a line of text render as a bullet, not as a continued line of text 
+- {Other variations to be concisely listed here, one line each}
 
 While we intend to eventually document all the variations from GitHub markdown, until that is complete we consider any variation in rendering from the current release of Mattermost to be a regression that should either be fixed prior to the next release, or documented here. 
 
-Currently the `/loadtest tool <https://github.com/mattermost/docs/issues/918>`_ can be used for testing Mattermost markdown versus GitHub markdown, and we have `a ticket to update the tests for Mattermost markdown specifically <https://mattermost.atlassian.net/browse/PLT-5648>`_
+Currently the `/loadtest tool <https://github.com/mattermost/docs/issues/918>`_ can be used for testing Mattermost markdown versus GitHub markdown, and we have `a ticket to update the tests for Mattermost markdown specifically <https://mattermost.atlassian.net/browse/PLT-5648>`_.
 
 -----
 
