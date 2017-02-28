@@ -1,6 +1,6 @@
 .. _sending-messages:
 
-Messaging Basics
+Sending Messages
 ================
 
 After a message has been sent, you or others can reply to it and link to it. Depending on which edition of Mattermost you have and how it's configured by the System Admin, you can also edit and delete your own messages.
@@ -28,30 +28,17 @@ Write a message by typing into the text input box, then press **ENTER** to send 
 Editing a Message
 -----------------
 
-The ability to edit a message after it is sent depends on which edition you are using.
+Edit a message by clicking the **[...]** icon next to any message that you’ve sent, then click **Edit**. If you don't see the **Edit** option, then the edit feature was turned off by your System Admin. Also, your System Admin can set time limit after which the message cannot be edited.
 
-Team Edition
-  You can always edit a sent message.
+.. note::
+  Message edits do not trigger new @mention notifications, desktop notifications, or notification sounds.
 
-Enterprise Edition
-  System Admins can turn editing off, or they can set a time limit. If a time limit is set, you can edit a message only if the time limit has not been reached. The default time limit is 300 seconds, but System Admins can change it.
-
-Edit a message by clicking the **[...]** icon next to any message that you’ve sent, then click **Edit**. When you're done editing, press **ENTER** to save the changes. Message edits do not trigger new @mention notifications, desktop notifications, or notification sounds.
-
-Deleting a message
+Deleting a Message
 ------------------
 
-The ability to delete a message after it is sent depends on which edition you are using.
+Delete a message by clicking the **[...]** icon next to any message that you've sent, then click **Delete**. If you don't see the **Delete** option, then the delete feature was turned off by your System Admin.
 
-Team Edition
-  You can always delete a sent message, and Team Admins and System Admins can delete messages.
-
-Enterprise Edition
-  System Admins can restrict access to the delete feature, preventing you from deleting your messages. System Admins can also prevent your Team Admin from deleting messages.
-
-Delete a message by clicking the **[...]** icon next to any message that you've sent, then click **Delete**. If you don't see the **Delete** option, then the delete feature was turned off by the System Admin.
-
-Linking to a message
+Linking to a Message
 --------------------
 
 The permalink feature creates a link to any message. Get the permalink to any message by clicking the **[...]** icon next to a message, then click **Permalink > Copy Link**. Sharing this link lets other users view the linked message in the Message Archives. If the link is to a message in a Public Channel, any user of the team can see the message. If the link is to a message in a Private Group, only other users in the group can see the message.
