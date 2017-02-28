@@ -16,7 +16,7 @@ Below are a few tips to get you started and to configure your experience on the 
 Server Management
 -----------------
 
-You can connect to multiple Mattermost servers from a single interface on the desktop app. Servers appears as separate tabs while you are using the app.
+You can connect to multiple Mattermost servers from a single interface on the desktop app. Servers appear as separate tabs while you are using the app.
 
 The Server Management section allows you to add, edit, and remove servers. 
 
