@@ -3,32 +3,29 @@
 Sending Messages
 ================
 
-After a message has been sent, you or others can reply to it and link to it. Depending on which edition of Mattermost you have and how it's configured by the System Admin, you can also edit and delete your own messages.
+Messages are composed in the center pane and replies are composed in the right-hand sidebar. Messages and replies offer the following functions, depending on your system configuration, by clicking the **[...]** icon:
 
-Message Types
--------------
-
-Mattermost has two types of messages: posts and replies.
-
-Posts
-  Posts can be considered parent messages. They are the messages that often start a thread of replies. Posts can be written and sent from the text input box at the bottom of the center pane.
-
-Replies
-  Reply to posts to keep conversations organized in threads.
-
-  Reply to a post by clicking the reply icon next to any message text. This action opens the right-hand sidebar (RHS) where you can see the message thread, then compose and send your reply. Replies are indented slightly in the center pane to indicate that they are child messages of a parent post.
-
-  When composing a reply in the right-hand sidebar, click the expand/collapse icon with two arrows at the top of the sidebar to make things easier to read.
+- Reply 
+- Edit
+- Delete
+- Permalink
 
 Sending a Message
 -----------------
 
 Write a message by typing into the text input box, then press **ENTER** to send it. Use **SHIFT+ENTER** to create a new line without sending a message. To send messages by pressing **CTRL+ENTER**, go to **Main Menu > Account Settings > Send messages on Ctrl + Enter**.
 
+Replying to a Message
+---------------------
+
+Reply to posts to keep conversations organized in threads. Click the reply icon next to any message text to open the right-hand sidebar where you can compose and send your reply. Replies are indented slightly in the center pane to indicate that they are child messages of a parent message.
+
+When composing a reply in the right-hand sidebar, click the expand/collapse icon with two arrows at the top of the sidebar to make things easier to read.
+
 Editing a Message
 -----------------
 
-Edit a message by clicking the **[...]** icon next to any message that you’ve sent, then click **Edit**. If you don't see the **Edit** option, then the edit feature was turned off by your System Admin. Also, your System Admin can set time limit after which the message cannot be edited.
+Edit a message by clicking the **[...]** icon next to any message that you’ve sent, then click **Edit**. Your System Admin may disable the **Edit** feature or set a time limit before messages become uneditable.
 
 .. note::
   Message edits do not trigger new @mention notifications, desktop notifications, or notification sounds.
@@ -36,7 +33,7 @@ Edit a message by clicking the **[...]** icon next to any message that you’ve 
 Deleting a Message
 ------------------
 
-Delete a message by clicking the **[...]** icon next to any message that you've sent, then click **Delete**. If you don't see the **Delete** option, then the delete feature was turned off by your System Admin.
+Delete a message by clicking the **[...]** icon next to any message that you've sent, then click **Delete**. The **Delete** option may be disabled by your System Admin.
 
 Linking to a Message
 --------------------
