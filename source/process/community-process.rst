@@ -61,7 +61,15 @@ The various community channels are outlined below, along with the responsibiliti
 
     - Ops Team @mentions the Community PM with a list that includes issues:
 
-      - where status requires updating (Under Review, Planned, Started, etc.)
+      - where status requires updating
+      
+        - Under Review: Before a ticket is made (spec is needed)
+        - Planned: Jira ticket with a plan on how to build the feature
+        - Started: When it’s added to current sprint
+        - Accepting Pull Requests: Ticket that is accepting pull request
+        - Completed: When ticket is resolved
+        - Declined: When the suggestion does not fit with the product
+        
       - where a PM might want to ask a question for clarification or ideas on how to design something
       - where the requester specifies they want to work on the feature
       - that are completed
