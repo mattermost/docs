@@ -8,15 +8,17 @@ SAML Single-Sign-On integration offers the following benefits:
 - **Centralized identity management.** Mattermost accounts can display user information from SAML, such as first and last name, email and username.
 - **Automatic account provisioning.** New Mattermost user accounts are automatically created the first time a user signs in with their SAML credentials on the Mattermost server. 
 
-Mattermost officially supports Okta and Microsoft ADFS as the identity providers (IDPs), please see links below for more details on how to configure SAML with Okta and Microsoft ADFS. If you'd like, you may also try configuring SAML for a custom IDP.
+Mattermost officially supports Okta, OneLogin and Microsoft ADFS as the identity providers (IDPs), please see links below for more details on how to configure SAML with these providers. If you'd like, you may also try configuring SAML for a custom IDP.
 
 ##### [Configure SAML with Okta](http://docs.mattermost.com/deployment/sso-saml-okta.html) 
+
+##### [Configure SAML with OneLogin](http://docs.mattermost.com/deployment/sso-saml-onelogin.html) 
 
 ##### [Configure SAML with Microsoft ADFS](http://docs.mattermost.com/deployment/sso-saml-adfs.html) 
 
 #### Pre-installation
 
-Before configuring SAML with Okta or Microsoft ADFS, make sure you have the [XML Security Library](https://www.aleksey.com/xmlsec/download.html) installed on your Mattermost instance. The XML Security Library is usually included as part of Debian GNU/Linux.
+Before configuring SAML with Okta, OneLogin or Microsoft ADFS, make sure you have the [XML Security Library](https://www.aleksey.com/xmlsec/download.html) installed on your Mattermost instance. The XML Security Library is usually included as part of Debian GNU/Linux.
 
 Also confirm if the `xmlsec1-openssl` library was successfully installed. If not, run
  - `apt-get install libxmlsec1-openssl` on Ubuntu
@@ -50,6 +52,6 @@ Confirm all attributes, including `Email Attribute` and `Username Attribute`, ar
 
 First, ensure you have installed the [XML Security Library](https://www.aleksey.com/xmlsec/download.html) on your Mattermost instance and that **it is available in your** `PATH`.
 
-Second, ensure you have completed each step in our guides for [configuring SAML with Okta](http://docs.mattermost.com/deployment/sso-saml-okta.html) or for [configuring SAML with Microsoft ADFS](http://docs.mattermost.com/deployment/sso-saml-adfs.html).
+Second, ensure you have completed each step in our guides for configuring SAML with Okta](http://docs.mattermost.com/deployment/sso-saml-okta.html), [OneLogin](http://docs.mattermost.com/deployment/sso-saml-onelogin.html) or [Microsoft ADFS](http://docs.mattermost.com/deployment/sso-saml-adfs.html).
 
 Lastly, if you are still having trouble with configuration, feel free to post in our [Troubleshooting forum](http://www.mattermost.org/troubleshoot/) and we'll be happy to help with issues during setup.
