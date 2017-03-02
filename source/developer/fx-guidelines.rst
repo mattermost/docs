@@ -95,7 +95,7 @@ Example 1: Well intentioned suggestion that does not consider pros and cons (cha
 
    Why not change channel length from 22 characters to 50 characters?
 
-Example 2: Attempt to help provide "input" in a design discussion, but instead of using objective criteria such as audience, community, customers, examples, research, or principles, expresses a political "vote" that may bias and confuse the objective criteria of a design discussion, whether intentionally or unintentionally.  
+Example 2: Attempt to help provide "input" in a design discussion, but instead of using objective criteria such as audience, community, customers, examples, research, or principles, expresses a political "vote" that may bias or confuse a design discussion, whether intentionally or unintentionally.  
 
    +1, that is my personal preference!
 
