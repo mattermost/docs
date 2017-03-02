@@ -88,9 +88,11 @@ Desktop
 UX Feedback Guidelines 
 ****************************
 
-User experience design is discipline drawing from ergonomics, ethnography, human factors research, and cognitive psychology. It's measured qualitatively with tools like heuristic evaluation and cognitive walkthroughs, and quantitatively through telemetry, anonymous usage data and other automated diagonistics. 
+User experience design is a discipline drawing from ergonomics, ethnography, human factors research, and cognitive psychology. It's evaluated qualitatively with tools like heuristic evaluation and cognitive walkthroughs, and quantitatively through telemetry, anonymous usage data and other automated diagonistics. 
 
-Sharing feedback on UX design can come at different levels: 
+As with any design process, iteration, prototyping, informed critique and evaluation is vital to doing our best work. Developing the skill of informed critique in our community increases the quality of our designs and of our product. 
+
+This guide outlines the levels of UX feedback in order of positive impact in order to guide contributors towards the behaviors that best  advances a fast-moving, asychronously-developed open source product.
 
 **Entry-level UX feedback:** Authentic questions or suggestions for design changes, presented with good intentions, coming from personal preferences with less than 2 minutes spent thinking about the pros and cons of the changes the feedback suggests.
 
@@ -114,7 +116,7 @@ Example: Thoughtful suggestion listing trade-offs that reference principles.
 
 UX feedback at intermediate level or higher is highly appreciated. It should be encouraged and recognized as a substantial contribution to the design process.
 
-**Senior UX feedback:** - Constructive feedback that enlightens a design discussion, shares fact-based heuristics, helps clear blindspots and inconsistencies, and significantly improves a design, and potentially design guidelines. 
+**Advanced UX feedback:** - Constructive feedback that enlightens a design discussion, shares fact-based heuristics, helps clear blindspots and inconsistencies, and significantly improves a design, and potentially design guidelines. 
 
 Example: Noticing a design issue and influencing a change in UX guidelines to correct things system-wide. 
 
