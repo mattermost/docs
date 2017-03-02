@@ -8,29 +8,132 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 ### Highlights
 
+#### Group Messaging
+
+#### Bulk User Import Tool
+
+#### Channel Admins?
+
+#### SAML OneLogin ([Enterprise E20](https://about.mattermost.com/pricing/))
+
+- Added support for OneLogin authentication and account creation via SAML 2.0.
+
 ### Improvements
 
-#### User Interface
+#### Web User Interface
 
 - Improved display of website content for link previews when available
 - Show `(Edited)` indicator if a message has been edited
+- `(message deleted)` placeholder is no longer shown to the user that deleted the message
 - Added a link to Manage Members modal from channel members list
-- Added support for explicit image sizes in markdown, important for API usage
 - Added support for image previews if the URL contains a custom query
+- Added support for all timecode formats for YouTube previews
+- System message is now posted after changing channel purpose
+- Reinstated the delete option on system messages
+- Clicking on timestamps on messages now open a permalink view
+- Removed new lines for system messages posted after updating channel header
+- Focus is set back to message box after uploading a file
 
-#### On-Boarding
+#### Mobile
 
-- Clicking on email verification now automatically fills in your email on the sign in page
+- New push proxy server supports multiple apps (in preparation for the second generation mobile apps)
+- New push proxy server is backwards compatible with the old iOS and Android apps
+- Unread channels on the channel view are indicated with a red dot, and unread mentions with a red dot and mention count
+- Added floating timestamp to mobile right hand side
+- Send icon is disabled until a valid message is typed
+- Removed redundant search hint popover
+- Updated search buttons
+
+#### Performance
+
+- Optimized SQL queries by adding index for PostId, removing ParentId from delete post queries, and fixing blank post queries
+- Increased performance for "user typing..." messages by moving check for channel limits from server to client
+- Increased performance for direct message channels by removing `MakeDirectChannelVisible` call and adding client handling 
+- Moved channel permission checks back to using cache
+- Added caching for emoji, file info, profile images and website link previews
+- Increased performance when receiving messages by 
+    - removing the `viewChannel` requests when receiving a new post and only marking the channel as read when switching into it, out of it or when closing the app
+    - removing the `view_channel` websocket event from the server
+    - removing the `getChannel` and `getTeamUnreads` requests when receiving a new post
+    - adding client handling for marking channels and teams unread
+    - adding `getMyChannelMembers` request to web app when window becomes active after ten seconds
+- Increased time between database recycles
+- Improved mobile push proxy connections by disabling keep-alives
+- Fixed Minio not properly closing read objects
+- Fixed file info caching and emoji reaction issues on Aurora read replicas
+
+#### Text Formatting
+
+- Added support for explicit image sizes in markdown
+- Terms such as `_AAA_BBB_` now italicize correctly
+- First backslash is now truncated when posting file paths that start with `\\`
+- Markdown isn't rendered for system messages posted after renaming a channel
+- Messages beginning with `[some_text]: some_text` now longer post as blank space
+- Pipe characters (`|`) in a Markdown table now work
+
+#### Integrations
+
+- Added edit screens for incoming and outgoing webhooks
+
+#### Localization
+
+- System messages are now localized based on language set in the Account Settings
+
+#### 
+
+- Clicking on email verification link now automatically fills in your email address on the sign in page
+- On login with GitLab SSO, Mattermost username and email are now synced with GitLab username and email
+
+#### Slack Import
+
+- Added support for Slack's Markdown-like post formatting
+- Added support for topic & purpose system messages
+- Channels imported from Slack with the same name as a deleted channel now import successfully
 
 #### System Console
 
 - Added active users statistics to Site Statistics page
+- Focus is set to server log control in **System Console > Reporting > Logs** when loading the panel
+
+#### Enterprise Edition
+
+-  Added WebSocket events, webhook events and cluster request time logging for Performance Monitoring
 
 ### Bug Fixes
 
--  Outdated results in modal searches are now properly discarded
+- Outdated results in modal searches are now properly discarded
+- Fixed order of channels on the sidebar
+- Fixed search highlighting for wildcard searches and hashtags
+- Clicking "Send message" link in profile popover in a comment thread, now properly opens the direct message channel
+- Fixed channels missing from "More Channels" modal after leaving them
+- Fixed webhook messages not appearing in channels the creator wasn't in
+- Angled brackets around mailto links now longer autolink
+- Fixed an issue where "New messages below" bubble didn't disappear properly on mobile view
+- Fixed CLI panic on `platform channel create` command if team does not exist
+- Team invite link now directs user to a private team after account creation with LDAP
+- `Create a New Team` menu option is now in the Main Menu for System Admins when team creation is disabled
 
-### Compatibility
+### Compatibility  
+Changes from v3.5 to v3.6:
+
+#### config.json   
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console. 
+
+**Changes to Team Edition and Enterprise Edition**:
+
+ - Under `ServiceSettings` in `config.json`:
+   - Added `"TimeBetweenUserTypingUpdatesMilliseconds": 5000` to control how frequently the "user is typing..." messages are updated
+   - Added `"EnableUserTypingMessages": true` to control whether "user is typing..." messages are displayed below the message box
+   - Removed deprecated `"SegmentDeveloperKey"` setting
+   
+**Additional Changes to Enterprise Edition**:
+
+ - Under `ServiceSettings` in `config.json`:
+   - Added `"RestrictPostDelete": all` to set who can delete messages
+   - Added `"AllowEditPost": always` to set whether messages can be edited
+   - Added `"PostEditTimeLimit: 300` to set how long messages can be edited, if `"AllowEditPost": time_limit` is specified
+   - Added `"ClusterLogTimeoutMilliseconds": 2000` to control frequency of cluster request time logging for [performance monitoring](https://docs.mattermost.com/deployment/metrics.html)
 
 ### Known Issues
 
@@ -113,7 +216,6 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 - Removed status indicators on posts by webhooks 
 - Channel switcher (CTRL/CMD+K) search results for direct messages now match message autocomplete
 - Autocomplete is now case insensitive for @-mentions, emojis, slash commands and channel linking
-
 
 #### Enterprise Edition
 - Split out channel management permissions into separate settings for creation, deletion, and renaming a channel
