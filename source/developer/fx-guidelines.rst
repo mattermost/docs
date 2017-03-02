@@ -85,7 +85,7 @@ Desktop
 UX Feedback Guidelines 
 ****************************
 
-User experience design is discipline drawing from ergonomics, ethnography, human factors research, and cognitive psychology. It's measured qualitatively with tools like heuristic evaluation and cognitive walkthroughs, and quantitatively through telemetry, click tracking and other automated diagonistics. 
+User experience design is discipline drawing from ergonomics, ethnography, human factors research, and cognitive psychology. It's measured qualitatively with tools like heuristic evaluation and cognitive walkthroughs, and quantitatively through telemetry, anonymous usage data and other automated diagonistics. 
 
 Sharing feedback on UX design can come at different levels: 
 
