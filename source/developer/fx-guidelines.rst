@@ -14,7 +14,7 @@ Design Principles
 
 These principles define the standard we’re setting for the Mattermost experience. 
 
-“Fast, Obvious, Forgiving” 
+1) “Fast, Obvious, Forgiving” 
 --------------------------------
 
 **Fast** 
@@ -43,7 +43,7 @@ Features like confirmation dialogs on critical actions or temporarily saving use
 
 That said, forgiving does not mean allowing the product to be used incorrectly, and breaking the obvious principle. As an analogy, if someone kicks a football and misses the goal, being forgiving means giving them a chance to kick again, it does not mean counting the miss as a goal. 
 
-“Familiar, Compatible, International” 
+2) Familiar, Compatible, International
 --------------------------------------
 
 **Familiar** - Use design patterns familiar to our audience--general non-technical users for the core messaging experience, IT administrators for configuration experience, developers for the developer experience. Mattermost UX should be drawn from patterns and derivations of other experiences in a mix of familiar approaches. Remember: Software is an invention--there's nothing "intuitive" about it, there is only what is familiar.
@@ -78,6 +78,41 @@ Desktop
 - **Minimum screen resolution:** 1280 x 800
 
 - **Color Depth:** 16.7M colors
+
+-----
+
+
+UX Feedback Guidelines 
+****************************
+
+User experience design is discipline drawing from ergonomics, ethnography, human factors research, and cognitive psychology. It's measured qualitatively with tools like heuristic evaluation and cognitive walkthroughs, and quantitatively through telemetry, click tracking and other automated diagonistics. 
+
+Sharing feedback on UX design can come at different levels: 
+
+**Junior UX feedback:** Authentic questions or suggestions for design changes, presented with good intentions, coming from personal preferences with less than 2 minutes spent thinking about the pros and cons of the changes the feedback suggests.
+
+Example 1: Well intentioned suggestion that does not consider pros and cons (channel names greater than 22 characters would be truncated in sidebar): 
+
+   Why not change channel length from 22 characters to 50 characters?
+
+Example 2: Attempt to help provide "input" in a design discussion, but instead of using objective criteria such as audience, community, customers, examples, research, or principles, expresses a political "vote" that may bias and confuse the objective criteria of a design discussion, whether intentionally or unintentionally.  
+
+   +1, that is my personal preference!
+
+**Intermediate UX feedback:** - Comments, critique or questions about design with thoughtful consideration--including trade-offs--of the goal and principles of a design, along with UX principles of the project, and patterns from other products. 
+
+Feedback speaks for itself, with relevant references to principles, audience, research and other objective criteria. May include descriptions of experience using the feature or similar features that can be generalized to the intended audience, 
+
+Example: Thoughtful suggestion listing trade-offs that reference principles). 
+
+   What if we used a reply icon, similar to replies in email, for the comment function? Screenshots below. Pros: a) More familiar to email users. b) More distinct than the word ballon icon typically used for "Comment", which is too easily confused for "Message".  Cons: i) We use the symbol of "Reply" for "Comment" (the UI has an "Add Comment" button in the UI), which could be confusing. ii) When we add a "Forward" icon later to move a message to a different channel, the "Reply" and "Forward" metaphors may get muddled".
+
+**Senior UX feedback:** - Constructive feedback that enlightens a design discussion, shares fact-based heuristics, helps clear blindspots and inconsistencies, and significantly improves a design, and potentially design guidelines. 
+
+Example: Noticing a design issue and influencing a change in UX guidelines to correct things system-wide. 
+
+   A menu with 10 items without groupings seems too long. Both Apple and Windows user interface guidelines suggest fewer than 7 options before grouping. I'd propose we use fewer than 5. There's research showing 5 items as an amount most people can comfortably store mentally (link), and looking through other products I don't see situations where we wouldn't be able to group by 5. I've added a PR on UX guidelines where we can discuss this as well. 
+
 
 -----
 
