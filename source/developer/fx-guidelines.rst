@@ -96,15 +96,17 @@ This guide outlines the levels of UX feedback in order of positive impact in ord
 
 **Entry-level UX feedback:** Authentic questions or suggestions for design changes, presented with good intentions, coming from personal preferences with less than 2 minutes spent thinking about the pros and cons of the changes the feedback suggests.
 
-Example 1: Well intentioned suggestion that does not consider pros and cons (channel names greater than 22 characters would be truncated in sidebar): 
+Example 1: Well intentioned suggestion that does not consider pros and cons. 
 
    Why not change channel length from 22 characters to 50 characters?
+
+
 
 Example 2: Attempt to help provide "input" in a design discussion, but instead of using objective criteria such as audience, community, customers, examples, research, or principles, expresses a political "vote" that may bias or confuse a design discussion.  
 
    +1, that is my personal preference!
 
-While it's important to be kind to people sharing entry-level feedback, and to extract from it useful ideas where possible, if entry-level feedback begins to unintentionally shut out more constructive feedback, a private note might be sent to the contributor with something like: "Highly appreciate your good intentions to share UX feedback. May I ask your help to review Mattermost's UX Feedback Guidelines (link)?"
+While it's important to welcome people sharing entry-level feedback, and to extract from it useful ideas where possible, if entry-level feedback begins to unintentionally shut out more constructive feedback, a private note might be sent to the contributor with something like: "Highly appreciate your good intentions to share UX feedback. May I ask your help to review Mattermost's UX Feedback Guidelines (link)?"
 
 **Intermediate UX feedback:** - Comments, critique or questions about design with thoughtful consideration--including trade-offs--of the goal and principles of a design, along with UX principles of the project, and patterns from other products. 
 
