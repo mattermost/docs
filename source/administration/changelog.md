@@ -22,6 +22,7 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 #### Web User Interface
 
+- Update status indicators shown in post view
 - Improved display of website content for link previews when available
 - Show `(Edited)` indicator if a message has been edited
 - `(message deleted)` placeholder is no longer shown to the user that deleted the message
@@ -33,6 +34,7 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 - Clicking on timestamps on messages now open a permalink view
 - Removed new lines for system messages posted after updating channel header
 - Focus is set back to message box after uploading a file
+- Added machine-readable date and time to timestamps
 
 #### Mobile
 
@@ -75,6 +77,7 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 #### Integrations
 
 - Added edit screens for incoming and outgoing webhooks
+- When no username is set for a slash command response, the username of the person is now used instead of "webhook"
 
 #### Localization
 
@@ -115,6 +118,7 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 - `Create a New Team` menu option is now in the Main Menu for System Admins when team creation is disabled
 - Fixed the response for malformed command execute request
 - New message indicator no longer appears for ephemeral posts
+- Fixed emoji aliases not showing up in autocomplete 
 
 ### Compatibility  
 Changes from v3.5 to v3.6:
