@@ -89,15 +89,17 @@ User experience design is discipline drawing from ergonomics, ethnography, human
 
 Sharing feedback on UX design can come at different levels: 
 
-**Junior UX feedback:** Authentic questions or suggestions for design changes, presented with good intentions, coming from personal preferences with less than 2 minutes spent thinking about the pros and cons of the changes the feedback suggests.
+**Entry-level UX feedback:** Authentic questions or suggestions for design changes, presented with good intentions, coming from personal preferences with less than 2 minutes spent thinking about the pros and cons of the changes the feedback suggests.
 
 Example 1: Well intentioned suggestion that does not consider pros and cons (channel names greater than 22 characters would be truncated in sidebar): 
 
    Why not change channel length from 22 characters to 50 characters?
 
-Example 2: Attempt to help provide "input" in a design discussion, but instead of using objective criteria such as audience, community, customers, examples, research, or principles, expresses a political "vote" that may bias or confuse a design discussion, whether intentionally or unintentionally.  
+Example 2: Attempt to help provide "input" in a design discussion, but instead of using objective criteria such as audience, community, customers, examples, research, or principles, expresses a political "vote" that may bias or confuse a design discussion.  
 
    +1, that is my personal preference!
+
+While it's important to be kind to people sharing entry-level feedback, and to extract from it useful ideas where possible, if entry-level feedback begins to unintentionally shut out more constructive feedback, a private note might be sent to the contributor with something like: "Highly appreciate your good intentions to share UX feedback. May I ask your help to review Mattermost's UX Feedback Guidelines (link)?"
 
 **Intermediate UX feedback:** - Comments, critique or questions about design with thoughtful consideration--including trade-offs--of the goal and principles of a design, along with UX principles of the project, and patterns from other products. 
 
@@ -106,6 +108,8 @@ Feedback speaks for itself, with relevant references to principles, audience, re
 Example: Thoughtful suggestion listing trade-offs that reference principles). 
 
    What if we used a reply icon, similar to replies in email, for the comment function? Screenshots below. Pros: a) More familiar to email users. b) More distinct than the word ballon icon typically used for "Comment", which is too easily confused for "Message".  Cons: i) We use the symbol of "Reply" for "Comment" (the UI has an "Add Comment" button in the UI), which could be confusing. ii) When we add a "Forward" icon later to move a message to a different channel, the "Reply" and "Forward" metaphors may get muddled".
+
+UX feedback at intermediate level or higher is highly appreciated. It should be encouraged and recognized as a substantial contribution to the design process.
 
 **Senior UX feedback:** - Constructive feedback that enlightens a design discussion, shares fact-based heuristics, helps clear blindspots and inconsistencies, and significantly improves a design, and potentially design guidelines. 
 
