@@ -16,13 +16,13 @@ You can mention a teammate by using the *@* symbol plus their username to send t
 
 Type *@* to bring up a list of team members who can be mentioned. To filter the list, type the first few letters of any username, first name, last name, or nickname. Use the UP and DOWN arrow keys to scroll through entries in the list, and then press ENTER to select the person to mention. When selected, the username replaces the full name or nickname.
 
-The following example sends a special mention notification to **alice** that alerts her of the channel and message where she was mentioned. If **alice** is away from Mattermost and has email notifications turned on, then she receives an email alert of her mention along with the message text.
+The following example sends a special mention notification to Alice, whose username is **alice**. The notification alerts her of the channel and message where she was mentioned. If Alice is away from Mattermost and has email notifications turned on, then she receives an email alert of her mention along with the message text.
 
 .. code-block:: none
 
   @alice how did your interview go with the new candidate?
 
-If the person you mentioned does not belong to the channel, a System Message is posted to let you know. This is a temporary message, and is only seen by you. To add the mentioned person to the channel, go to the dropdown menu beside the channel name and select **Add Members**.
+If the person you mentioned does not belong to the channel, a System Message is posted to let you know. This is a temporary message, and you are the only one who can see it. To add the mentioned person to the channel, go to the dropdown menu beside the channel name and select **Add Members**.
 
 @channel and @all
 ~~~~~~~~~~~~~~~~~
