@@ -12,19 +12,20 @@ The purpose of the Mattermost User Experience Guidelines ("UX Guidelines") is to
 Design Principles
 *****************
 
-“Fast, Obvious, and Forgiving” – These principles define the standard we’re setting for the Mattermost experience:
+These principles define the standard we’re setting for the Mattermost experience. 
 
-Fast
-----
+“Fast, Obvious, Forgiving” 
+--------------------------------
 
-Fast has two parts: being *responsive* and being *quick*.
+**Fast** 
 
-**Responsive** means when a user clicks, taps, types or otherwise enters input we give immediate feedback that the input is received and something is happening. It could be a spinner animation, or just some text saying “Loading”, but something always responds to the user.
+Fast has two parts: being "responsive" and being "quick". 
 
-**Quick** means things happen as soon as they can. Loading pages, sending messages, receiving notifications and other vital actions should be automatically benchmarked for performance. Bugs should be opened on performance regressions.
+*Responsive* means when a user clicks, taps, types or otherwise enters input we give immediate feedback that the input is received and something is happening. It could be a spinner animation, or just some text saying “Loading”, but something always responds to the user. 
 
-Obvious
--------
+*Quick* means things happen as soon as they can. Loading pages, sending messages, receiving notifications and other vital actions should be automatically benchmarked for performance. Bugs should be opened on performance regressions.
+
+**Obvious**
 
 There is no such thing as "user error"--it’s always our fault as product designers. We stop problems from incorrect usage by making users aware of correct usage. Fixes could be through user interface improvements, adjustments to help text, or helping users recover when things go wrong–adding undelete, undo and rolling back for example.
 
@@ -34,14 +35,22 @@ If a user doesn’t understand how to use a feature, all the underlying effort a
 
 Given `Hick’s Law <https://en.wikipedia.org/wiki/Hick%27s_law>`_, core functionality should be apparent, and advanced functionality should be possible via sub-menus and well documented and tested. Functionality that is not fundamental to the product purpose should be ruthlessly omitted.
 
-Forgiving
----------
+**Forgiving**
 
 There will be unavoidable product failures, whether through technical issues like loss of connectivity or through our inability to make the user aware of correct usage. Being forgiving means reducing the negative impact users encounter during failures--not losing their data, not deleting, updating or sending something they didn't intend to send, and so forth.  
 
 Features like confirmation dialogs on critical actions or temporarily saving user input in case of disconnect are examples of forgiveness. 
 
 That said, forgiving does not mean allowing the product to be used incorrectly, and breaking the obvious principle. As an analogy, if someone kicks a football and misses the goal, being forgiving means giving them a chance to kick again, it does not mean counting the miss as a goal. 
+
+“Familiar, Compatible, International” 
+--------------------------------------
+
+**Familiar** - Use design patterns familiar to our audience--general non-technical users for the core messaging experience, IT administrators for configuration experience, developers for the developer experience. Mattermost UX should be drawn from patterns and derivations of other experiences in a mix of familiar approaches. Remember: Software is an invention--there's nothing "intuitive" about it, there is only what is familiar.
+
+**Compatible** - When it doesn't conflict with our other design principles, we should support the UX and integration patterns from the other products for which we support the import of teams and users. 
+
+**International** - Design with an international, multi-lingual audience in mind. Use patterns and language without US, Western or culture-specific references when possible. 
 
 -----
 
