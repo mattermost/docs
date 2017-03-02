@@ -35,6 +35,8 @@ If a user doesn’t understand how to use a feature, all the underlying effort a
 
 Given `Hick’s Law <https://en.wikipedia.org/wiki/Hick%27s_law>`_, core functionality should be apparent, and advanced functionality should be possible via sub-menus and well documented and tested. Functionality that is not fundamental to the product purpose should be ruthlessly omitted.
 
+Use design patterns familiar to our audience--general non-technical users for the core messaging experience, IT administrators for configuration experience, developers for the developer experience. Mattermost UX should be drawn from patterns and derivations of other experiences in a mix of familiar approaches. Remember: Software is an invention--there's nothing "intuitive" about it, there is only what is familiar.
+
 **Forgiving**
 
 There will be unavoidable product failures, whether through technical issues like loss of connectivity or through our inability to make the user aware of correct usage. Being forgiving means reducing the negative impact users encounter during failures--not losing their data, not deleting, updating or sending something they didn't intend to send, and so forth.  
@@ -43,14 +45,15 @@ Features like confirmation dialogs on critical actions or temporarily saving use
 
 That said, forgiving does not mean allowing the product to be used incorrectly, and breaking the obvious principle. As an analogy, if someone kicks a football and misses the goal, being forgiving means giving them a chance to kick again, it does not mean counting the miss as a goal. 
 
-2) Familiar, Compatible, International
---------------------------------------
-
-**Familiar** - Use design patterns familiar to our audience--general non-technical users for the core messaging experience, IT administrators for configuration experience, developers for the developer experience. Mattermost UX should be drawn from patterns and derivations of other experiences in a mix of familiar approaches. Remember: Software is an invention--there's nothing "intuitive" about it, there is only what is familiar.
-
-**Compatible** - When it doesn't conflict with our other design principles, we should support the UX and integration patterns from the other products for which we support the import of teams and users. 
+2) International, Compatible, Priority-focused 
+-------------------------------------------------
 
 **International** - Design with an international, multi-lingual audience in mind. Use patterns and language without US, Western or culture-specific references when possible. 
+
+**Compatible** - When aligned with our other design principles, we should deploy UX and integration patterns from the other products for which we support the import of teams and users. 
+
+**Priority-focused** - Communication is a starting point towards the end goal of helping users within an enterprise achieve their highest priorities through modern communication. We prefer term "messaging" to convey the sending of thoughtful communications that moves ideas forward, to the term "chat", which doesn't imply progress. 
+
 
 -----
 
