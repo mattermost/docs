@@ -292,7 +292,7 @@ Restrict the permission level required to create public channels.
 
 **All team members**: Allow all team members to create public channels.
 
-**Team and System Admins**: Restrict creating public channels to Team and System Admins.
+**Team Admins and System Admins**: Restrict creating public channels to Team Admins and System Admins.
 
 **System Admins**: Restrict creating public channels to System Admins.
 
@@ -306,13 +306,15 @@ Restrict the permission level required to rename and set the header or purpose f
 
 **All channel members**: Allow all channel members to rename public channels.
 
-**Team and System Admins**: Restrict renaming public channels to Team and System Admins that are members of the channel.
+**Channel Admins, Team Admins, and System Admins**: Restrict renaming public channels to Channel Admins, Team Admins, and System Admins that are members of the channel.
+
+**Team Admins and System Admins**: Restrict renaming public channels to Team Admins and System Admins that are members of the channel.
 
 **System Admins**: Restrict renaming public channels to System Admins that are members of the channel.
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RestrictPublicChannelManagement": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively.   |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RestrictPublicChannelManagement": "all"`` with options ``all``, ``channel_admin``, ``team_admin``, and ``system_admin`` for above settings respectively.   |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable public channel deletion for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -320,13 +322,15 @@ Restrict the permission level required to delete public channels. Deleted channe
 
 **All channel members**: Allow all channel members to delete public channels.
 
-**Team and System Admins**: Restrict deleting public channels to Team and System Admins that are members of the channel.
+**Channel Admins, Team Admins, and System Admins**: Restrict deleting public channels to Channel Admins, Team Admins, and System Admins that are members of the channel.
+
+**Team Admins and System Admins**: Restrict deleting public channels to Team Admins and System Admins that are members of the channel.
 
 **System Admins**: Restrict deleting public channels to System Admins that are members of the channel.
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RestrictPublicChannelDeletion": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively.   |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RestrictPublicChannelDeletion": "all"`` with options ``all``, ``channel_admin``, ``team_admin``, and ``system_admin`` for above settings respectively.   |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable private group creation for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -334,7 +338,7 @@ Restrict the permission level required to create private groups.
 
 **All team members**: Allow all team members to create private groups.
 
-**Team and System Admins**: Restrict creating private groups to Team and System Admins.
+**Team Admins and System Admins**: Restrict creating private groups to Team Admins and System Admins.
 
 **System Admins**: Restrict creating private groups to System Admins.
 
@@ -348,13 +352,15 @@ Restrict the permission level required to rename and set the header or purpose f
 
 **All channel members**: Allow all group members to rename private groups.
 
-**Team and System Admins**: Restrict renaming private groups to Team and System Admins that are members of the group.
+**Channel Admins, Team Admins, and System Admins**: Restrict renaming private groups to Channel Admins, Team Admins, and System Admins that are members of the group.
+
+**Team Admins and System Admins**: Restrict renaming private groups to Team Admins and System Admins that are members of the group.
 
 **System Admins**: Restrict renaming private groups to System Admins that are members of the group.
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RestrictPrivateChannelManagement": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively.   |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RestrictPrivateChannelManagement": "all"`` with options ``all``, ``channel_admin``, ``team_admin``, and ``system_admin`` for above settings respectively.   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable private group deletion for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -362,13 +368,15 @@ Restrict the permission level required to delete private groups. Deleted groups 
 
 **All channel members**: Allow all group members to delete private groups.
 
-**Team and System Admins**: Restrict deleting private groups to Team and System Admins that are members of the group.
+**Channel Admins, Team Admins, and System Admins**: Restrict deleting private groups to Channel Admins, Team Admins, and System Admins that are members of the group.
+
+**Team Admins and System Admins**: Restrict deleting private groups to Team Admins and System Admins that are members of the group.
 
 **System Admins**: Restrict deleting private groups to System Admins that are members of the group.
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RestrictPrivateChannelDeletion": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively.   |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RestrictPrivateChannelDeletion": "all"`` with options ``all``, ``channel_admin``, ``team_admin``, and ``system_admin`` for above settings respectively.   |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Allow which users to delete messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
