@@ -77,7 +77,7 @@ Day when leads and PM area owners decide which major features are included in th
     - Post this checklist in Release channel
     - Verify all items in the last posted release checklist are complete, if not alert the release manager
 2. Logistics:
-    - Confirm date of marketing announcement for the release and update release channel header if needed
+    - Confirm, in Judgement Day meeting, date of marketing announcement for the release and update release channel header if needed
 3. Leads:
     - Finalize roadmap for next release, and identify planned marketing bullet points  
 4. **(Team) Judgment Day Meeting (10:00am San Francisco time)**:  
