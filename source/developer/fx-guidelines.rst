@@ -116,11 +116,11 @@ Example: Thoughtful suggestion listing trade-offs that reference principles.
 
 UX feedback at intermediate level or higher is highly appreciated. It should be encouraged and recognized as a substantial contribution to the design process.
 
-**Advanced UX feedback:** - Constructive feedback that enlightens a design discussion, shares fact-based heuristics, helps clear blindspots and inconsistencies, and significantly improves a design, and potentially design guidelines. 
+**Advanced UX feedback:** - Constructive feedback that enlightens a design discussion, shares fact-based heuristics, helps clear blindspots and inconsistencies, and significantly improves a design, and potentially design guidelines. Analysis naturally considers variations needed across web, PC and mobile experiences. 
 
 Example: Noticing a design issue and influencing a change in UX guidelines to correct things system-wide. 
 
-   A menu with 10 items without groupings seems too long. Both Apple and Windows user interface guidelines suggest fewer than 7 options before grouping. I'd propose we use fewer than 5. There's research showing 5 items as an amount most people can comfortably store mentally (link), and looking through other products I don't see situations where we wouldn't be able to group by 5. I've added a PR on UX guidelines where we can discuss this as well. 
+   A menu with 10 items without groupings seems too long. Both Apple (link) and Windows (link) user interface guidelines suggest fewer than 7 options before grouping. I'd propose we use fewer than 5. There's research showing 5 items as an amount most people can comfortably store mentally (link), and looking through other products I don't see situations where we wouldn't be able to group by 5. Also, fewer menu items, perhaps through sub-menus, should also help mobile, where ungrouped 10 item menus just look messy. I've added a PR on UX guidelines where we can discuss this as well. 
 
 
 -----
