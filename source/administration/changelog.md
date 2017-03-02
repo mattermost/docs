@@ -61,6 +61,7 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 - Improved mobile push proxy connections by disabling keep-alives
 - Fixed Minio not properly closing read objects
 - Fixed file info caching and emoji reaction issues on Aurora read replicas
+- Added reloading, removing and uploading of Enterprise license key to cache purge
 
 #### Text Formatting
 
@@ -112,6 +113,8 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 - Fixed CLI panic on `platform channel create` command if team does not exist
 - Team invite link now directs user to a private team after account creation with LDAP
 - `Create a New Team` menu option is now in the Main Menu for System Admins when team creation is disabled
+- Fixed the response for malformed command execute request
+- New message indicator no longer appears for ephemeral posts
 
 ### Compatibility  
 Changes from v3.5 to v3.6:
@@ -134,6 +137,11 @@ Multiple setting options were added to `config.json`. Below is a list of the add
    - Added `"AllowEditPost": always` to set whether messages can be edited
    - Added `"PostEditTimeLimit: 300` to set how long messages can be edited, if `"AllowEditPost": time_limit` is specified
    - Added `"ClusterLogTimeoutMilliseconds": 2000` to control frequency of cluster request time logging for [performance monitoring](https://docs.mattermost.com/deployment/metrics.html)
+
+### Database Changes from v3.6 to v3.7
+
+**Posts Table:** 
+- Added `EditAt` column
 
 ### Known Issues
 
