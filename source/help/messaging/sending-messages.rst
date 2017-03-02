@@ -3,12 +3,7 @@
 Sending Messages
 ================
 
-Messages are composed in the center pane and replies are composed in the right-hand sidebar. Messages and replies offer the following functions, depending on your system configuration, by clicking the **[...]** icon:
-
-- Reply 
-- Edit
-- Delete
-- Permalink
+Messages are composed in the center pane and reply messages are composed in the right-hand sidebar. Depending on your system configuration, you can edit and delete messages after they are sent. You can also generate and share links to any message in Mattermost.
 
 Sending a Message
 -----------------
@@ -18,7 +13,7 @@ Write a message by typing into the text input box, then press **ENTER** to send 
 Replying to a Message
 ---------------------
 
-Reply to posts to keep conversations organized in threads. Click the reply icon next to any message text to open the right-hand sidebar where you can compose and send your reply. Replies are indented slightly in the center pane to indicate that they are child messages of a parent message.
+Reply to messages to keep conversations organized in threads. Click the reply icon next to any message text to open the right-hand sidebar where you can compose and send your reply. Replies are indented slightly in the center pane to indicate that they are child messages of a parent message.
 
 When composing a reply in the right-hand sidebar, click the expand/collapse icon with two arrows at the top of the sidebar to make things easier to read.
 
