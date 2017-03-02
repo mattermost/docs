@@ -14,7 +14,7 @@ Design Principles
 
 These principles define the standard we’re setting for the Mattermost experience. 
 
-1) “Fast, Obvious, Forgiving” 
+1) Fast, Obvious, Forgiving 
 --------------------------------
 
 **Fast** 
