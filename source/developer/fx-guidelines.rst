@@ -105,7 +105,7 @@ While it's important to be kind to people sharing entry-level feedback, and to e
 
 Feedback speaks for itself, with relevant references to principles, audience, research and other objective criteria. May include descriptions of experience using the feature or similar features that can be generalized to the intended audience, 
 
-Example: Thoughtful suggestion listing trade-offs that reference principles). 
+Example: Thoughtful suggestion listing trade-offs that reference principles. 
 
    What if we used a reply icon, similar to replies in email, for the comment function? Screenshots below. Pros: a) More familiar to email users. b) More distinct than the word ballon icon typically used for "Comment", which is too easily confused for "Message".  Cons: i) We use the symbol of "Reply" for "Comment" (the UI has an "Add Comment" button in the UI), which could be confusing. ii) When we add a "Forward" icon later to move a message to a different channel, the "Reply" and "Forward" metaphors may get muddled".
 
