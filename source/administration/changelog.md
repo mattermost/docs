@@ -10,7 +10,11 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 #### Group Messaging
 
+- Added support for multi-party direct messages, you can now quickly create conversations with a small group of people directly from the Direct Message list
+
 #### Bulk User Import Tool
+
+- Convert your existing data into our new import format, and use this tool to import teams, channels, users and posts from other systems
 
 #### Channel Admins?
 
