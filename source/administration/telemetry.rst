@@ -3,7 +3,7 @@
 Telemetry
 =========
 
-Mattermost servers are configured to share anonymous usage and deployment information with Mattermost, Inc. Participation is optional and you can opt out at any time. The data is collected, encrypted, and transmitted in accordance with our `privacy policy <https://about.mattermost.com/default-privacy-policy/>`_. No personally identifiable information is transmitted, and the contents of messages are not transmitted.
+Mattermost servers are configured to share anonymous usage and deployment information with Mattermost, Inc. Non-personally identifiable information is collected, encrypted, and transmitted in accordance with our `privacy policy <https://about.mattermost.com/default-privacy-policy/>`_. The contents of messages are not transmitted. 
 
 We use the data for the following purposes:
 
@@ -12,32 +12,21 @@ We use the data for the following purposes:
   - to help improve the quality of Mattermost software and related services
   - to make design decisions for future releases
 
+Participation is optional and you can opt out at any time.
+
 Security Fix Alert Feature
 --------------------------
 
 New threats to system security constantly arise. To alert you of relevant, high priority security updates, Mattermost servers are configured to share anonymous deployment information with Mattermost Inc. so that we can provide appropriate alerts.
 
+The following data is collected once every 24 hours: Mattermost server version, server operating system and database type, number of teams, number of user logins in the last 24 hours, and the ID of the Amazon Cloudfront server used for telemetry data.
+
 To opt out, disable the feature in **System Console > Notifications > Email > Enable Security Alerts**. When the feature is disabled, you will not receive any security alerts.
-
-The following data is collected once every 24 hours:
-
- - Mattermost server version
- - server operating system and database type
- - number of teams
- - number of user logins in the last 24 hours
- - the ID of the Amazon Cloudfront server used for telemetry data
 
 Error and Diagnostics Reporting Feature
 ---------------------------------------
 
-Error and diagnostic data is collected for the following purposes:
-
-  - to add improvements to Mattermost software that are specific to your usage and deployment patterns, including identifying security and reliability issues
-  - to analyze and fix software problems
-  - to help improve the quality of Mattermost software and related services
-  - to make design decisions for future releases
-
-To opt out, disable the feature in **System Console > General > Logging > Enable Error and Diagnostics Reporting**.
+Error and diagnostic data is collected for the following purposes: to add improvements to Mattermost software that are specific to your usage and deployment patterns, including identifying security and reliability issues;  to analyze and fix software problems; to help improve the quality of Mattermost software and related services; and to make design decisions for future releases.
 
 The following data is collected after an error event:
 
@@ -46,6 +35,7 @@ Deployment Configuration Information
 
 Server Configuration Settings
   Non-personally identifiable data from configuration settings file (``config.json``) in the form of type ("enumerated integer" or "enumerated boolean") values, true/false ("boolean"), and count ("integer"). Specifically these include:
+
 
   **Type values (enumerated integer and enumerated boolean)**
 
@@ -78,3 +68,5 @@ Non-personally Identifiable Diagnostic Information
   - *Advanced Feature Discovery Diagnostics:* Reacted to a message; favorited or un-favorited a channel; flagged or un-flagged a message; replied to a message; expanded the right-hand sidebar; started or finished a WebRTC video call
   - *Integration Discovery Diagnostics:* Created or triggered a webhook or slash command; created, authroized or deleted an OAuth 2.0 app; created, posted or deleted a custom emoji
   - *Commercial License Diagnostics (Enterprise Edition Only):* Uploaded an Enterprise license key to the server
+
+  To opt out of error and diagnostic reporting, disable the feature in **System Console > General > Logging > Enable Error and Diagnostics Reporting**.
