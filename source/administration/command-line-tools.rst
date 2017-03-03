@@ -664,9 +664,6 @@ platform version
 Mattermost 3.5 and earlier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Using the CLI tool
--------------------
-
 Typing ``platform -help`` brings up documentation for the CLI tool.
 
 Notes:
