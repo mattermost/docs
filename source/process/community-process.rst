@@ -63,10 +63,10 @@ The various community channels are outlined below, along with the responsibiliti
 
       - where status requires updating
       
-        - Under Review: Before a ticket is made (spec is needed)
+        - Under Review: After a ticket is created but the spec is not yet complete
         - Planned: Jira ticket with a plan on how to build the feature
         - Started: When it’s added to current sprint
-        - Accepting Pull Requests: Ticket that is accepting pull request
+        - Help Wanted: Ticket that is open to any contributor wanting to work on the issue
         - Completed: When ticket is resolved
         - Declined: When the suggestion does not fit with the product
         
