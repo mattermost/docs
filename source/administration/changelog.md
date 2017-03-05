@@ -303,6 +303,16 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Known Issues
 
+- Slack import doesn't add merged members/e-mail accounts to imported channels
+- User can receive a video call from another browser tab while already on a call
+- Sequential messages from the same user appear as separate posts on mobile view
+- Edge overlays desktop notification sound with system notification sound
+- Search autocomplete picker is broken on Android
+- Jump link in search results does not always jump to display the expected post
+- Running CLI without access to logs causes panic
+- Switching channels with CTRL/CMD+K doesn't work properly when using the mouse
+- Reacting to a deleted message in the right-hand sidebar throws an error
+
 ### Contributors
 
 ## Release v3.6.1  
