@@ -151,6 +151,156 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 **Posts Table:** 
 - Added `EditAt` column
 
+### API Changes from v3.6 to v3.7
+
+**New routes (APIv3):**
+- `POST` at `/channels/create_group`
+  - Creates a new group message channel
+- `POST` at `/hooks/incoming/update`
+  - Updates an incoming webhook
+- `POST` at `/hooks/outgoing/update`
+  - Updates an outgoing webhook
+- `GET` at `/teams/{team_id}/...` // XXX check with developer
+  - Returns a post list, based on the provided channel and post ID.
+- `POST` at `/channels/{channel_id}/update_member_roles` // XXX check with developer
+  - Updates the user's roles in a channel
+
+**Modified routes (APIv3):**
+- Corrected `/users/claim/email_to_sso` to `/users/claim/email_to_oauth` when changing sign-in method from email to OAuth
+
+**Removed routes (APIv3):**
+- `GET` at `/channels/more` (replaced by /`channels/more/{offset}/{limit}`)
+
+**Deprecated routes (APIv3):**
+- `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`) to be removed in v3.8
+- `POST` at `/channels/set_last_viewed_at` (replaced by `/channels/view`) to be removed in v3.8
+- `POST` at `/users/status/set_active_channel` (replaced by `/channels/view`) to be removed in v3.8
+
+**New routes (APIv4):**
+- `POST` at `/users` 
+  - Creates a user
+- `PUT` `/users/{user_id}`
+  - Updates a user
+- `PUT` `/users/{user_id}/patch`
+  - Partially updates a user
+- `PUT` `/users/{user_id}/roles`
+  - Updates a user's roles
+- `PUT` `/users/{user_id}/password`
+  - Updates a user's password
+- `POST` `/users/password/reset`
+  - Resets a user's password
+- `POST` `/users/password/reset/send`
+  - Sends a reset password email to a user
+- `GET` `/users`
+  - Gets a page of users as an array
+- `GET` `/users/{user_id}`
+  - Gets a single user
+- `GET` `/users/username/{username}`
+  - Gets a user by username
+- `GET` `/users/email/{email}`
+  - Gets a user by email
+- `POST` `/users/ids`
+  - Gets a list of users matching the provided ids
+- `POST` `/users/{user_id}/email/verify`
+  - Verifies a user's email address
+- `POST` `/users/{user_id}/image`
+  - Uploads a profile image for a user
+- `GET` `/users/{user_id}/image`
+  - Gets a user's profile image
+- `POST` `/users/login`
+  - Logs a user in
+- `POST` `/users/logout`
+  - Logs a user out
+- `GET` `/users/{user_id}/sessions`
+  - Gets a list of sessions for a user
+- `POST` `/users/{user_id}/sessions/revoke`
+  - Revokes a session for a user
+- `GET` `/users/{user_id}/audits`
+  - Gets a list of audits for a user
+- `DELETE` `/users/{user_id}`
+  - Deactivates a user account
+- `POST` `/teams`
+  - Creates a team
+- `GET` `/teams`
+  - Gets a list of all teams
+- `GET` `/users/{user_id}/teams`
+  - Gets the teams a user is on
+- `GET` `/teams/{team_id}`
+  - Gets a single team
+- `GET` `/teams/name/{name}`
+  - Gets a team by name
+- `GET` `/users/{user_id}/teams/unread`
+  - Gets unread totals for all the teams a user is on
+- `GET` `/teams/{team_id}/stats`
+  - Gets statistics for a team
+- `GET` `/teams/{team_id}/members`
+  - Gets a page of team members for a team
+- `GET` `/teams/{team_id}/members/{user_id}`
+  - Gets a team member
+- `PUT` `/teams/{team_id}/members/{user_id}/roles`
+  - Updates a team member's roles
+- `POST` `/channels`
+  - Creates a channel
+- `GET` `/channels/{channel_id}`
+  - Gets a channel by id
+- `GET` `/teams/{team_id}/channels/name/{name}`
+  - Gets a channel by name and team id
+- `GET` `/teams/name/{team_name}/channels/name/{channel_name}`
+  - Gets a channel by team name and channel name
+- `POST` `/channels/direct`
+  - Creates a direct message channel
+- `GET` `/channels/{channel_id}/members`
+  - Gets a page of channel members
+- `GET` `/users/{user_id}/teams/{team_id}/channels/members`
+  - Gets channel members for a user on a team
+- `GET` `/channels/{channel_id}/members/{user_id}`
+  - Gets a channel member
+- `POST` `/channels/members/{user_id}/view`
+  - Performs a view action
+- `PUT` `/channels/{channel_id}/members/{user_id}/roles`
+  - Updates a channel member's roles
+- `DELETE` `/channels/{channel_id}/members/{user_id}`
+  - Deletes a channel member object. Equivalent to removing a user a from a channel
+- `POST` `/posts`
+  - Creates a post in a channel
+- `PUT` `/posts/{post_id}`
+  - Updates a post
+- `GET` `/channels/{channel_id}/posts`
+  - Gets a page of posts in a channel
+- `DELETE` `/posts/{post_id}`
+  - Deletes a post
+- `POST` `/posts/search`
+  - Gets a list of posts based on the search criteria provided in the request body
+- `GET` `/posts/{post_id}/files/info`
+  - Gets a list of file infos for the post
+- `GET` `/posts/{post_id}`
+  - Gets a single post
+- `GET` `/posts/{post_id}/thread`
+  - Gets a list of posts containing the selected post and any other posts in the same thread
+- `POST` `/team/{team_id}/posts/search`
+  - Searches posts in the team and from the provided terms string
+- `POST` `/files`
+  - Creates and uploads files
+- `GET` `/files/{file_id}`
+  - Gets a file
+- `GET` `/files/{file_id}/thumbnail`
+  - Gets the thumbnail for a file
+- `POST` `/hooks/incoming`
+  - Creates an incoming webhook
+- `GET` `/hooks/incoming`
+  - Gets a page of incoming webhooks
+- `GET` `/system/ping`
+  - Pings the server
+
+### Websocket Event Changes from v3.6 to v3.7
+
+**Added:**
+- `channel_create` that occurs each time a channel is created
+- `group_added` that occures when a new group message channel is created
+
+**Removed:**
+- `view_channel` that occurred when a new message was received
+
 ### Known Issues
 
 ### Contributors
