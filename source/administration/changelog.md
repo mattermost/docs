@@ -12,6 +12,14 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 - Added support for multi-party direct messages, you can now quickly create conversations with a small group of people directly from the Direct Message list
 
+#### Channel Push Notification Preferences
+
+- Added channel notification preferences for mobile push to customize your notification settings
+
+#### New Website Link Previews
+
+- Improved display of link previews for website content when available, replacing the previous preview feature that handled only a subset of links
+
 #### Bulk User Import Tool
 
 - Convert your existing data into our new import format, and use this tool to import teams, channels, users and posts from other systems
@@ -47,7 +55,6 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 #### Web User Interface
 
-- Improved display of link previews for website content when available
 - Update status indicators shown in post view
 - Show `(Edited)` indicator if a message has been edited
 - `(message deleted)` placeholder is no longer shown to the user that deleted the message
@@ -88,10 +95,6 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 - Added edit screens for incoming and outgoing webhooks
 - When no username is set for a slash command response, the username of the person is now used instead of "webhook"
 - Added a confirmation dialog to prevent accidentally deleting an integration or a custom emoji
-
-#### Notifications
-
-- Added channel notification preferences for mobile push notifications
 
 #### Localization
 
