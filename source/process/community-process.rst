@@ -61,7 +61,15 @@ The various community channels are outlined below, along with the responsibiliti
 
     - Ops Team @mentions the Community PM with a list that includes issues:
 
-      - where status requires updating (Under Review, Planned, Started, etc.)
+      - where status requires updating
+      
+        - Under Review: After a ticket is created but the spec is not yet complete
+        - Planned: Jira ticket with a plan on how to build the feature
+        - Started: When it’s added to current sprint
+        - Help Wanted: Ticket that is open to any contributor wanting to work on the issue
+        - Completed: When ticket is resolved
+        - Declined: When the suggestion does not fit with the `product vision <https://www.mattermost.org/manifesto/>`_
+        
       - where a PM might want to ask a question for clarification or ideas on how to design something
       - where the requester specifies they want to work on the feature
       - that are completed
