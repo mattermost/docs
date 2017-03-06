@@ -16,7 +16,9 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 - Convert your existing data into our new import format, and use this tool to import teams, channels, users and posts from other systems
 
-#### Channel Admins?
+#### Channel Admins ([Enterprise E10 & E20](https://about.mattermost.com/pricing/))
+
+- Added a new "Channel Admin" role to grant permissions for renaming and deleting a channel
 
 #### SAML OneLogin ([Enterprise E20](https://about.mattermost.com/pricing/))
 
@@ -59,6 +61,8 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 - Focus is set back to message box after uploading a file
 - Added machine-readable date and time to timestamps
 - Adjusted tablet view so the browser URL bar doesn't overlap the message box
+- Channel header can now be up to 1024 characters long
+- Changed custom theme vector to a list of name value pairs to more easily add new theme colours
 
 #### Mobile
 
@@ -66,7 +70,7 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 - New push proxy server is backwards compatible with the old iOS and Android apps
 - Unread channels on the channel view are indicated with a red dot, and unread mentions with a red dot and mention count
 - Added floating timestamp to mobile right hand side
-- Send icon is disabled until a valid message is typed
+- Send icon is disabled for messages and comments until a valid message is typed
 - Removed redundant search hint popover and updated search buttons
 - Removed "@"-symbol preceeding usernames and full names in push notifications
 
@@ -85,6 +89,10 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 - When no username is set for a slash command response, the username of the person is now used instead of "webhook"
 - Added a confirmation dialog to prevent accidentally deleting an integration or a custom emoji
 
+#### Notifications
+
+- Added channel notification preferences for mobile push notifications
+
 #### Localization
 
 - System messages are now localized based on language set in the Account Settings
@@ -99,6 +107,7 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 - Added support for Slack's Markdown-like post formatting
 - Added support for topic & purpose system messages
 - Channels imported from Slack with the same name as a deleted channel now import successfully
+- Added support for users who don't have a non-empty email address in Slack
 
 #### System Console
 
@@ -107,7 +116,10 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 #### Enterprise Edition
 
--  Added WebSocket events, webhook events and cluster request time logging for Performance Monitoring
+- Added WebSocket events, webhook events and cluster request time logging for Performance Monitoring
+- Added new policy settings to **System Console > General > Policy** to
+   - restrict who can delete messages
+   - restrict whether messages can be edited and for how long
 
 ### Bug Fixes
 
