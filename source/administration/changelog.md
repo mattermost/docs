@@ -4,7 +4,7 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 ## Release v3.7.0
 
-- Work in progress, expected release date: 2017-03-16
+- Release date: 2017-03-16
 
 ### Highlights
 
