@@ -351,7 +351,7 @@ Many thanks to all our contributors. In alphabetical order:
 
 /selenium
 
-- [coreyhulen](https://github.com/coreyhulen), [esethna]https://github.com/esethna), [lindalumitchell](https://github.com/lindalumitchell)
+- [coreyhulen](https://github.com/coreyhulen), [esethna](https://github.com/esethna), [lindalumitchell](https://github.com/lindalumitchell)
 
 /push-proxy
 
