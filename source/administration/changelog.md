@@ -8,7 +8,7 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 ### Highlights
 
-#### Group Messaging
+#### Multi-Party Direct Messaging
 
 - Added support for multi-party direct messages, you can now quickly create conversations with a small group of people directly from the Direct Message list
 
@@ -47,13 +47,13 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 - Unread channels on the channel view are indicated with a red dot, and unread mentions with a red dot and mention count
 - Added floating timestamp to mobile right hand side
 - Send icon is disabled until a valid message is typed
-- Removed redundant search hint popover
-- Updated search buttons
+- Removed redundant search hint popover and updated search buttons
+- Removed "@"-symbol preceeding usernames and full names in push notifications
 
 #### Performance
 
 - Optimized SQL queries by adding index for PostId, removing ParentId from delete post queries, and fixing blank post queries
-- Increased performance for "user typing..." messages by moving check for channel limits from server to client
+- Increased performance for "user typing..." messages by moving the check from server to client
 - Increased performance for direct message channels by removing `MakeDirectChannelVisible` call and adding client handling 
 - Moved channel permission checks back to using cache
 - Added caching for emoji, file info, profile images and website link previews
@@ -82,12 +82,13 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 - Added edit screens for incoming and outgoing webhooks
 - When no username is set for a slash command response, the username of the person is now used instead of "webhook"
+- Added a confirmation dialog to prevent accidentally deleting an integration or a custom emoji
 
 #### Localization
 
 - System messages are now localized based on language set in the Account Settings
 
-#### 
+#### Onboarding
 
 - Clicking on email verification link now automatically fills in your email address on the sign in page
 - On login with GitLab SSO, Mattermost username and email are now synced with GitLab username and email
@@ -123,6 +124,10 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 - Fixed the response for malformed command execute request
 - New message indicator no longer appears for ephemeral posts
 - Fixed emoji aliases not showing up in autocomplete 
+- Mention badge now properly updates on the team sidebar when switching teams
+- (at)-mention preceeded by a "#"-symbol now displays correctly
+- Don't allow APIs to create user accounts that start with a number preventing them from signing in
+- Using a mouse to choose an emoji from the autocomplete now works
 
 ### Compatibility  
 Changes from v3.5 to v3.6:
