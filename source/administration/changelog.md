@@ -24,32 +24,6 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 ### Improvements
 
-#### Web User Interface
-
-- Update status indicators shown in post view
-- Improved display of website content for link previews when available
-- Show `(Edited)` indicator if a message has been edited
-- `(message deleted)` placeholder is no longer shown to the user that deleted the message
-- Added a link to Manage Members modal from channel members list
-- Added support for image previews if the URL contains a custom query
-- Added support for all timecode formats for YouTube previews
-- System message is now posted after changing channel purpose
-- Reinstated the delete option on system messages
-- Clicking on timestamps on messages now open a permalink view
-- Removed new lines for system messages posted after updating channel header
-- Focus is set back to message box after uploading a file
-- Added machine-readable date and time to timestamps
-
-#### Mobile
-
-- New push proxy server supports multiple apps (in preparation for the second generation mobile apps)
-- New push proxy server is backwards compatible with the old iOS and Android apps
-- Unread channels on the channel view are indicated with a red dot, and unread mentions with a red dot and mention count
-- Added floating timestamp to mobile right hand side
-- Send icon is disabled until a valid message is typed
-- Removed redundant search hint popover and updated search buttons
-- Removed "@"-symbol preceeding usernames and full names in push notifications
-
 #### Performance
 
 - Optimized SQL queries by adding index for PostId, removing ParentId from delete post queries, and fixing blank post queries
@@ -68,6 +42,33 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 - Fixed Minio not properly closing read objects
 - Fixed file info caching and emoji reaction issues on Aurora read replicas
 - Added reloading, removing and uploading of Enterprise license key to cache purge
+
+#### Web User Interface
+
+- Improved display of link previews for website content when available
+- Update status indicators shown in post view
+- Show `(Edited)` indicator if a message has been edited
+- `(message deleted)` placeholder is no longer shown to the user that deleted the message
+- Added a link to Manage Members modal from channel members list
+- Added support for image previews if the URL contains a custom query
+- Added support for all timecode formats for YouTube previews
+- System message is now posted after changing channel purpose
+- Reinstated the delete option on system messages
+- Clicking on timestamps on messages now open a permalink view
+- Removed new lines for system messages posted after updating channel header
+- Focus is set back to message box after uploading a file
+- Added machine-readable date and time to timestamps
+- Adjusted tablet view so the browser URL bar doesn't overlap the message box
+
+#### Mobile
+
+- New push proxy server supports multiple apps (in preparation for the second generation mobile apps)
+- New push proxy server is backwards compatible with the old iOS and Android apps
+- Unread channels on the channel view are indicated with a red dot, and unread mentions with a red dot and mention count
+- Added floating timestamp to mobile right hand side
+- Send icon is disabled until a valid message is typed
+- Removed redundant search hint popover and updated search buttons
+- Removed "@"-symbol preceeding usernames and full names in push notifications
 
 #### Text Formatting
 
@@ -128,6 +129,8 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 - (at)-mention preceeded by a "#"-symbol now displays correctly
 - Don't allow APIs to create user accounts that start with a number preventing them from signing in
 - Using a mouse to choose an emoji from the autocomplete now works
+- Fixed syntax highlighting on mobile
+- Fixed inconsistent styling of file uploads between mobile and desktop
 
 ### Compatibility  
 Changes from v3.5 to v3.6:
