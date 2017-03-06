@@ -41,7 +41,7 @@ has `restricted the permissions <https://docs.mattermost.com/administration/conf
 Adding links to the Channel Header
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Add links to the channel header using markdown.
+Use markdown to add links to the channel header.
 
 Example: [This is an example link](www.example.com)
 
