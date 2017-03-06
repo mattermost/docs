@@ -94,7 +94,7 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 - Added edit screens for incoming and outgoing webhooks
 - When no username is set for a slash command response, the username of the person is now used instead of "webhook"
-- Added a confirmation dialog to prevent accidentally deleting an integration or a custom emoji
+- Added a confirmation dialog to prevent accidentally deleting an integration
 
 #### Localization
 
