@@ -25,5 +25,5 @@ Example Uses
 ------------
 
 Some examples of the things we will use the plugin architecture for are: 
-1. Building common integrations such as Jira, GitHub, etc and including them by default in Mattermost
+1. Building common integrations such as Jira, GitHub, etc and including them as default integrations for Mattermost
 2. Redesigning the current video and audio calling to use the plugin architecture, and offering it as one of many video and audio calling solutions
