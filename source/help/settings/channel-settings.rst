@@ -41,9 +41,9 @@ has `restricted the permissions <https://docs.mattermost.com/administration/conf
 Adding links to the Channel Header
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use markdown to add links to the channel header.
+Frequently used document, website or Google Hangouts links can be added to the channel header using markdown.
 
-Example: [This is an example link](www.example.com)
+Example: [Google Hangout](https://plus.google.com/hangouts/_/store.com/shipping)
 
 
 Channel Purpose
