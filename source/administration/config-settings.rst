@@ -1898,6 +1898,20 @@ Description of service shown in login screens and UI. When not specified, "All t
 
 ________
 
+Link Previews
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable Link Previews
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**True**: Enables users to display a preview of website content below the message, if available. When true, website previews can be enabled from Account Settings > Advanced > Preview pre-release features.
+
+**False**: Website link previews are disabled.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableLinkPreviews": false`` with options ``true`` and ``false`` for above settings respectively.                       |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+________
+
 Custom Emoji
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Enable Custom Emoji
