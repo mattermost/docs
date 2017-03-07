@@ -41,6 +41,7 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 - Increased performance for direct message channels by removing `MakeDirectChannelVisible` call and adding client handling 
 - Moved channel permission checks back to using cache
 - Added caching for emoji, file info, profile images and website link previews
+- Adding index and caching to reactions
 - Increased performance when receiving messages by 
     - removing the `viewChannel` requests when receiving a new post and only marking the channel as read when switching into it, out of it or when closing the app
     - removing the `view_channel` websocket event from the server
@@ -126,6 +127,7 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 ### Bug Fixes
 
+- Fixed an error where a channel would no longer load after using a GitLab built-in Mattermost slash command `/project issue show <number>`
 - Outdated results in modal searches are now properly discarded
 - Fixed order of channels on the sidebar
 - Fixed search highlighting for wildcard searches and hashtags
@@ -146,6 +148,7 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 - Using a mouse to choose an emoji from the autocomplete now works
 - Fixed syntax highlighting on mobile
 - Fixed inconsistent styling of file uploads between mobile and desktop
+- Push notifications are no longer missing username when preferences set to "For all activity"
 
 ### Compatibility  
 Changes from v3.5 to v3.6:
@@ -159,6 +162,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under `ServiceSettings` in `config.json`:
    - Added `"TimeBetweenUserTypingUpdatesMilliseconds": 5000` to control how frequently the "user is typing..." messages are updated
    - Added `"EnableUserTypingMessages": true` to control whether "user is typing..." messages are displayed below the message box
+   - Added `"EnableLinkPreviews": false` to control whether a preview of website content is displayed below the message
    - Removed deprecated `"SegmentDeveloperKey"` setting
    
 **Additional Changes to Enterprise Edition**:
