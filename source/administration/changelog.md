@@ -6,6 +6,8 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 - Release date: 2017-03-16
 
+Mattermost v3.7.0 contains a [security update](http://about.mattermost.com/security-updates/). [Upgrading to Mattermost v3.7.0](http://docs.mattermost.com/administration/upgrade.html) is highly recommended.
+
 ### Highlights
 
 #### Multi-Party Direct Messaging
