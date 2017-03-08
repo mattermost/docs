@@ -36,10 +36,10 @@ Enabling Outgoing Webhooks
 Outgoing webhooks are off by default, and can be enabled by the system administrator. If you are the system administrator you can enable them by doing the following:
 
 1. Login to your Mattermost team account that has the system administrator role.
-2. Enable outgoing webhooks from **System Console > Integrations > Webhooks and Commands**.
-3. (Optional) Configure the **Enable Overriding Usernames from Webhooks and Slash Commands** option to allow external applications to post messages under any name. If not enabled, the username of the creator of the webhook URL is used to post messages.
-4. (Optional) Configure the **Enable Overriding Icon from Webhooks and Slash Commands** option to allow external applications to change the icon of the account posting messages. If not enabled, the icon of the creator of the webhook URL is used to post messages.
-5. (Optional) Configure the **Enable Integrations for Admin Only** option to allow only system and team admins to create outgoing webhooks.
+2. Enable outgoing webhooks from **System Console > Integrations > Custom Integrations**.
+3. (Optional) Configure the **Enable integrations to override usernames** option to allow external applications to post messages under any name. If not enabled, the username is set to "webhook".
+4. (Optional) Configure the **Enable integrations to override profile picture icons** option to allow external applications to change the icon of the account posting messages. If not enabled, the icon of the creator of the webhook URL is used to post messages.
+5. (Optional) Configure the **Restrict managing integrations to Admins** option to allow only system and team admins to create outgoing webhooks.
 
 Set Up an Outgoing Webhook
 --------------------------
@@ -102,9 +102,9 @@ If you'd like to build your own integration that uses outgoing webhooks, you can
 
 Additional Notes:
 
-1. With **Enable Overriding of Usernames from Webhooks** turned on,  you can also override the username the message posts as by providing a *username* parameter in your JSON payload. For example, you might want your message looking like it came from a robot so you can use the JSON response ``{"username": "robot", "text": "Hello, this is some text."}`` to change the username of the post to robot. Note, to combat any malicious users from trying to use this to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`_ a *BOT* indicator appears next to posts coming from webhooks.
+1. With **Enable integrations to override usernames** turned on,  you can also override the username the message posts as by providing a *username* parameter in your JSON payload. For example, you might want your message looking like it came from a robot so you can use the JSON response ``{"username": "robot", "text": "Hello, this is some text."}`` to change the username of the post to robot. Note, to combat any malicious users from trying to use this to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`_ a *BOT* indicator appears next to posts coming from webhooks.
 
-2. With **Enable Overriding of Icon from Webhooks** turned on, you can similarly change the icon the message posts with by providing a link to an image in the *icon_url* parameter of your JSON response. For example, ``{"icon_url": "http://example.com/somecoolimage.jpg", "text": "Hello, this is some text."}`` will post using whatever image is located at *http://example.com/somecoolimage.jpg* as the icon for the post.
+2. With **Enable integrations to override profile picture icons** turned on, you can similarly change the icon the message posts with by providing a link to an image in the *icon_url* parameter of your JSON response. For example, ``{"icon_url": "http://example.com/somecoolimage.jpg", "text": "Hello, this is some text."}`` will post using whatever image is located at *http://example.com/somecoolimage.jpg* as the icon for the post.
 
 3. Also, as mentioned previously, markdown can be used to create richly formatted payloads, for example: ``payload={"text": "# A Header\nThe _text_ below **the** header."}`` creates a message with a header, a carriage return, italicized text for "text" and bold text for "the".
 
