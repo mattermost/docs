@@ -16,6 +16,21 @@ User
 Post
   Optional. If present, Post objects must occur after all other objects in the file. Each Post object defines the team, the channel, and the username of the user who posted the message. If the corresponding team, channel, or user are not in the data file, then they must exist in the Mattermost database.
 
+With the exception of the Version object, each object has a field or a combination of fields that is used as the unique identifier of that object. The bulk loader uses the unique identifier to determine if the object being imported is a new object or an update to an existing object.
+
+The identifiers for each object are listed in the following table:
+
+.. csv-table:: Objects and their unique identifiers
+  :header: Object, Unique Identifier
+
+  Version, Not Applicable
+  Team, *name*
+  Channel, "*name*, *team*"
+  User, *username*
+  UserTeamMembership, "*team*, *username*"
+  UserChannelMembership, "*team*, *channel*, *username*"
+  Post, "*channel*, *message*, *create_at*"
+
 The following fragment is from a file that imports two teams, each with two channels, many users, and many posts.
 
 .. code-block:: javascript

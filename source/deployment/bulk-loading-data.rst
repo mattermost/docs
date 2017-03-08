@@ -23,3 +23,5 @@ Before running the bulk loading command, you must first create a JSON file that 
 4. Run the bulk load command in apply mode:
 
   ``sudo ./platform import bulk data.json --apply``
+
+5. When the bulk load command completes, clear all caches. Open the System Console, and click **General > Configuration > Purge All Caches**.
