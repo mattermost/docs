@@ -8,7 +8,7 @@ Incoming webhooks allow external applications, written in the programming langua
 A couple key points:
 
 - **Mattermost incoming webhooks are Slack-compatible.** If you've used Slack's incoming webhooks to create integrations, you can copy and paste that code to create Mattermost integrations. Mattermost automatically translates Slack's proprietary JSON payload format into markdown to render in Mattermost messages
-- **Mattermost incoming webhooks support full markdown.** A rich range of formatting unavailable in Slack is made possible through [markdown support](../help/messaging/formatting-text.rst) in Mattermost, including headings, formatted fonts, tables, inline images and other options supported by Mattermost Markdown.
+- **Mattermost incoming webhooks support full markdown.** A rich range of formatting unavailable in Slack is made possible through :doc:`markdown support <../help/messaging/formatting-text>` in Mattermost, including headings, formatted fonts, tables, inline images and other options supported by Mattermost Markdown.
 
 **Example:**
 
@@ -83,7 +83,7 @@ You can create a webhook integration to post into any Mattermost public channels
 
 7. Just like regular posts, the text will be limited to 4000 characters at maximum.
 
-8. Posts with advanced formatting can be created by including an :doc:`attachment array <message-attachments.html>` in the JSON payload.
+8. Posts with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` in the JSON payload.
 
 Slack Compatibility
 -------------------
