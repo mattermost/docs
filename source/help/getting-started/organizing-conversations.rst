@@ -8,7 +8,7 @@ Channels are used to organize conversations across different topics. There are t
 
 Public Channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Public Channels are open to everyone on a team. New team members are automatically a part of two Public Channels: Town Square and Off-Topic.
+Public Channels are open to everyone on a team. New team members are automatically added to two Public Channels when they sign up: Town Square and Off-Topic.
 
 Private Groups
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
