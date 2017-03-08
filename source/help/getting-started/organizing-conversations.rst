@@ -20,7 +20,7 @@ Direct Messages are for conversations between two people. Group Messages are Dir
 
 Use a Direct Message when you want a private conversation with one other person. Use a Group Message when you want to quickly set up a conversation with up to seven other participants. If you want more than that, you must create a Private Group.
 
-If your System Administrator has allowed it, you can start a Direct Message or a Group Message with anyone from another team. When you open a Direct Message with someone who is not on your current team, they show up in the bottom section of the Direct Messages list under the "Outside this team" indicator. When you switch between teams, the list is updated to reflect whether or not users belong to the current team.
+If your System Administrator has allowed it, you can start a Direct Message or a Group Message with people on other teams, not just your own.
 
 There is also an online status indicator next to the names in the Direct Message list, and beside the name at the top of a Direct Message channel. It displays: online (active browser), away (no browser activity for 5 minutes), and offline (browser closed).
 
