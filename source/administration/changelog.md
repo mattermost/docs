@@ -10,7 +10,7 @@ Mattermost v3.7.0 contains a [security update](http://about.mattermost.com/secur
 
 ### Highlights
 
-#### Multi-Party Direct Messaging
+#### Group Messaging
 
 - Added support for multi-party direct messages, you can now quickly create conversations with a small group of people directly from the Direct Message list
 
