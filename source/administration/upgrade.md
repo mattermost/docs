@@ -14,7 +14,7 @@ To start, select one of the following guides:
 1. Download the **appropriate next upgrade** of your Team Edition server and note any compatibility procedures
       1. Run `platform -version` to check the current version of your Mattermost server
       2. Determine the appropriate next upgrade for your server:
-          - Mattermost `v3.0.x` and later can upgrade directly to Mattermost `v3.6.x`
+          - Mattermost `v3.0.x` and later can upgrade directly to the latest version of Mattermost.
               - Note: If public links are enabled, upgrading from `v3.3.x` and earlier to `v3.4.x` and later will invalidate existing public links due to a security upgrade allowing admins to invalidate links by resetting a public link salt from the System Console.
               - Note: RHEL6 and Ubuntu installations must verify the line `limit nofile 50000 50000` is included in `/etc/init/mattermost.conf` file. See the [installation guide](https://docs.mattermost.com/guides/administrator.html#install-guides) for your operating system for more details.
               - Note: RHEL7 and Debian installations must verify the line `LimitNOFILE=49152` is included in the `/etc/systemd/system/mattermost.service` file. See the [installation guide](https://docs.mattermost.com/guides/administrator.html#install-guides) for your operating system for more details.
@@ -103,6 +103,9 @@ Private cloud enterprise communications server.
 
 -------
 
+- Mattermost Enterprise Edition v3.7.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-7-0) - [Download](https://releases.mattermost.com/3.7.0/mattermost-3.7.0-linux-amd64.tar.gz)
+  - `https://releases.mattermost.com/3.7.0/mattermost-3.7.0-linux-amd64.tar.gz`
+  - SHA-256 Checksum: `TBD`
 - Mattermost Enterprise Edition v3.6.2 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-6-2) - [Download](https://releases.mattermost.com/3.6.2/mattermost-3.6.2-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/3.6.2/mattermost-3.6.2-linux-amd64.tar.gz`
   - SHA-256 Checksum: `f337f0eea50225de16a160af26dac94331c900c50ea6a72ecc5e7a890729b12a`
@@ -141,6 +144,9 @@ Open source self-hosted team communication server compiled by Mattermost, Inc, a
 -------
 
 
+- Mattermost Team Edition v3.7.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-7-0) - [Download](https://releases.mattermost.com/3.7.0/mattermost-team-3.7.0-linux-amd64.tar.gz)
+  - `https://releases.mattermost.com/3.7.0/mattermost-team-3.7.0-linux-amd64.tar.gz`
+  - SHA-256 Checksum: `TBD`
 - Mattermost Team Edition v3.6.2 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-6-2) - [Download](https://releases.mattermost.com/3.6.2/mattermost-team-3.6.2-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/3.6.2/mattermost-team-3.6.2-linux-amd64.tar.gz`
   - SHA-256 Checksum: `4b3fb74f81e56764d8d91e6ec67a79ff39c85b354ff15648f5b04a8bfceec8f1`
