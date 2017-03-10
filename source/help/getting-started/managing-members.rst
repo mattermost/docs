@@ -43,6 +43,8 @@ The person who creates a channel is assigned the Channel Admin role for that cha
 - Ability to remove the Channel Admin role from other holders of the Channel Admin role.
 - Ability to remove members from the channel.
 
+Depending on your system configuration, Channel Admins can be granted special permissions by the System Admin to rename and delete channels.
+
 Team Admin
 ~~~~~~~~~~
 
@@ -67,7 +69,7 @@ The System Admin is typically a member of the IT staff and has all the privilege
 Inactive
 ~~~~~~~~
 
-A System Administrator has the ability to make a user account Inactive by going to **System Console > Teams**, and selecting a team to manage. From there they can go to the **User** page for the team, and manage a user's role.
+A System Admin has the ability to make a user account Inactive by going to **System Console > Teams**, and selecting a team to manage. From there they can go to the **User** page for the team, and manage a user's role.
 
 When "Inactive" is selected, the user is logged out of the system, and receives an error message if they try to log back in. The user no longer appears in the channel members list. They are removed from the Direct Message "More" menu, but the Direct Message channel remains open for all users with it in the sidebar until it is closed. In the "Manage Members" list and the users list in the System Console, the user shows as "Inactive".
 
