@@ -151,6 +151,7 @@ Mattermost v3.7.0 contains a [security update](http://about.mattermost.com/secur
 - Fixed syntax highlighting on mobile
 - Fixed inconsistent styling of file uploads between mobile and desktop
 - Push notifications are no longer missing username when preferences set to "For all activity"
+- Fixed a bug where the Go driver was using a wrong URL for `/users/claim/email_to_oauth` route
 
 ### Compatibility  
 Changes from v3.5 to v3.6:
@@ -193,9 +194,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
   - Returns a post list, based on the provided channel and post ID.
 - `POST` at `/channels/{channel_id}/update_member_roles` // XXX check with developer
   - Updates the user's roles in a channel
-
-**Modified routes (APIv3):**
-- Corrected `/users/claim/email_to_sso` to `/users/claim/email_to_oauth` when changing sign-in method from email to OAuth
 
 **Removed routes (APIv3):**
 - `GET` at `/channels/more` (replaced by /`channels/more/{offset}/{limit}`)
