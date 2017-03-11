@@ -38,6 +38,7 @@ Mattermost v3.7.0 contains a [security update](http://about.mattermost.com/secur
 
 #### Performance
 
+- Loading new users can now be run on a live system without a major impact on performance through the new bulk user import tool
 - Optimized SQL queries by adding index for PostId, removing ParentId from delete post queries, and fixing blank post queries
 - Increased performance for "user typing..." messages by moving the check from server to client
 - Increased performance for direct message channels by removing `MakeDirectChannelVisible` call and adding client handling 
