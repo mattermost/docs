@@ -224,6 +224,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Running CLI without access to logs causes panic
 - Switching channels with CTRL/CMD+K doesn't work properly when using the mouse
 - Reacting to a deleted message in the right-hand sidebar throws an error
+- Sometimes no email verification is sent to the new email address after changing your email in Account Settings. A workaround is to sign in with the new email address and hitting "Resend Email" on the "Email not verified" page.
 
 ### Contributors
 
@@ -264,24 +265,6 @@ Many thanks to all our contributors. In alphabetical order:
 /load-test
 
 - [coreyhulen](https://github.com/coreyhulen), [crspeller](https://github.com/crspeller)
-
-/bot-sample-golang
-
-- [it33](https://github.com/it33)
-
-/log4go
-
-- [coreyhulen](https://github.com/coreyhulen)
-
-/marked
-
-- [hmhealey](https://github.com/hmhealey)
-
-
-
-
-
-
 
 ## Release v3.6.1  
 
