@@ -33,18 +33,21 @@ From the directory where the Mattermost platform is installed, a
 
 .. contents::
     :backlinks: top
+    :local:
 
 Mattermost 3.6 and later
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 The new CLI tool is supported in Mattermost 3.6 and later. To see available commands in the old CLI tool, see `Mattermost 3.5 and earlier`_.
 
-Typing ``platform help`` and ``platform help {command}`` returns help documentation for the CLI tool or any CLI command in particular.
+Typing ``sudo ./platform help`` and ``sudo ./platform help {command}`` returns help documentation for the CLI tool or any CLI command in particular.
+
+To return the help documentation in GitLab omnibus, type ``sudo -u mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json help``
 
 Notes:
 
 -  Parameters in CLI commands are order-specific.
--  If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``-password mypassword/!``).
+-  If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``-password mypassword\!``).
 -  Team name and channel name refer to the handles, not the display names. So in the url ``https://pre-release.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``
 
 .. tip::
@@ -97,12 +100,12 @@ platform channel add
   Format
     .. code-block:: none
 
-      platform channel add {channel} {users}
+      sudo ./platform channel add {channel} {users}
 
   Example
     .. code-block:: none
 
-      platform channel add mychannel user@example.com username
+      sudo ./platform channel add mychannel user@example.com username
 
 platform channel create
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -113,13 +116,13 @@ platform channel create
   Format
     .. code-block:: none
 
-      platform channel create
+      sudo ./platform channel create
 
   Examples
     .. code-block:: none
 
-      platform channel create --team myteam --name mynewchannel --display_name "My New Channel"
-      platform channel create --team myteam --name mynewprivatechannel --display_name "My New Private Channel" --private
+      sudo ./platform channel create --team myteam --name mynewchannel --display_name "My New Channel"
+      sudo ./platform channel create --team myteam --name mynewprivatechannel --display_name "My New Private Channel" --private
 
   Options
     .. code-block:: none
@@ -140,12 +143,12 @@ platform channel delete
   Format
     .. code-block:: none
 
-      platform channel delete {channels}
+      sudo ./platform channel delete {channels}
 
   Example
     .. code-block:: none
 
-      platform channel delete myteam:mychannel
+      sudo ./platform channel delete myteam:mychannel
 
 platform channel list
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -156,12 +159,12 @@ platform channel list
   Format
     .. code-block:: none
 
-      platform channel list {teams}
+      sudo ./platform channel list {teams}
 
   Example
     .. code-block:: none
 
-      platform channel list myteam
+      sudo ./platform channel list myteam
 
 platform channel remove
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -172,12 +175,12 @@ platform channel remove
   Format
     .. code-block:: none
 
-      platform channel remove {channel} {users}
+      sudo ./platform channel remove {channel} {users}
 
   Example
     .. code-block:: none
 
-      platform channel remove mychannel user@example.com username
+      sudo ./platform channel remove mychannel user@example.com username
 
 platform channel restore
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -188,12 +191,12 @@ platform channel restore
   Format
     .. code-block:: none
 
-      platform channel restore {channels}
+      sudo ./platform channel restore {channels}
 
   Example
     .. code-block:: none
 
-      platform channel restore myteam:mychannel
+      sudo ./platform channel restore myteam:mychannel
 
 platform help
 ---------------
@@ -204,7 +207,7 @@ platform help
   Format
     .. code-block:: none
 
-      platform help {outputdir}
+      sudo ./platform help {outputdir}
 
 platform import
 ----------------
@@ -224,12 +227,12 @@ platform import slack
   Format
     .. code-block:: none
 
-      platform import slack {team} {file}
+      sudo ./platform import slack {team} {file}
 
   Example
     .. code-block:: none
 
-      platform import slack myteam slack_export.zip
+      sudo ./platform import slack myteam slack_export.zip
 
 platform ldap
 -------------
@@ -249,12 +252,12 @@ platform ldap sync
   Format
     .. code-block:: none
 
-      platform ldap sync
+      sudo ./platform ldap sync
 
   Example
     .. code-block:: none
 
-      platform ldap sync
+      sudo ./platform ldap sync
 
 platform license
 -----------------
@@ -274,12 +277,12 @@ platform license upload
   Format
     .. code-block:: none
 
-      platform license upload {license}
+      sudo ./platform license upload {license}
 
   Example
     .. code-block:: none
 
-      platform license upload /path/to/license/mylicensefile.mattermost-license
+      sudo ./platform license upload /path/to/license/mylicensefile.mattermost-license
 
 platform reset
 ---------------
@@ -290,7 +293,7 @@ platform reset
   Format
     .. code-block:: none
 
-      platform reset
+      sudo ./platform reset
 
   Options
     .. code-block:: none
@@ -316,12 +319,12 @@ platform roles member
   Format
     .. code-block:: none
 
-      platform roles member {users}
+      sudo ./platform roles member {users}
 
   Example
     .. code-block:: none
 
-      platform roles member user1
+      sudo ./platform roles member user1
 
 platform roles system\_admin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -332,12 +335,12 @@ platform roles system\_admin
   Format
     .. code-block:: none
 
-      platform roles system_admin {users}
+      sudo ./platform roles system_admin {users}
 
   Example
     .. code-block:: none
 
-      platform roles system_admin user1
+      sudo ./platform roles system_admin user1
 
 platform server
 ----------------
@@ -348,7 +351,7 @@ platform server
   Format
     .. code-block:: none
 
-      platform server
+      sudo ./platform server
 
 platform team
 ----------------
@@ -371,12 +374,12 @@ platform team add
   Format
     .. code-block:: none
 
-      platform team add {team} {users}
+      sudo ./platform team add {team} {users}
 
   Example
     .. code-block:: none
 
-      platform team add myteam user@example.com username
+      sudo ./platform team add myteam user@example.com username
 
 platform team create
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -387,13 +390,13 @@ platform team create
   Format
     .. code-block:: none
 
-      platform team create
+      sudo ./platform team create
 
   Examples
     .. code-block:: none
 
-      platform team create --name mynewteam --display_name "My New Team"
-      platform teams create --name private --display_name "My New Private Team" --private
+      sudo ./platform team create --name mynewteam --display_name "My New Team"
+      sudo ./platform teams create --name private --display_name "My New Private Team" --private
 
   Options
     .. code-block:: none
@@ -412,12 +415,12 @@ platform team delete
   Format
     .. code-block:: none
 
-      platform team delete {teams}
+      sudo ./platform team delete {teams}
 
   Example
     .. code-block:: none
 
-      platform team delete myteam
+      sudo ./platform team delete myteam
 
   Options
     .. code-block:: none
@@ -433,12 +436,12 @@ platform team remove
   Format
     .. code-block:: none
 
-      platform team remove {team} {users}
+      sudo ./platform team remove {team} {users}
 
   Example
     .. code-block:: none
 
-      platform team remove myteam user@example.com username
+      sudo ./platform team remove myteam user@example.com username
 
 platform user
 ---------------
@@ -467,13 +470,13 @@ platform user activate
   Format
     .. code-block:: none
 
-      platform user activate {emails, usernames, userIds}
+      sudo ./platform user activate {emails, usernames, userIds}
 
   Examples
     .. code-block:: none
 
-      platform user activate user@example.com
-      platform user activate username1 username2
+      sudo ./platform user activate user@example.com
+      sudo ./platform user activate username1 username2
 
 platform user create
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -484,13 +487,13 @@ platform user create
   Format
     .. code-block:: none
 
-      platform user create
+      sudo ./platform user create
 
   Examples
     .. code-block:: none
 
-      platform user create --email user@example.com --username userexample --password Password1 
-      platform user create --firstname Joe --system_admin --email joe@example.com --username joe --password Password1
+      sudo ./platform user create --email user@example.com --username userexample --password Password1 
+      sudo ./platform user create --firstname Joe --system_admin --email joe@example.com --username joe --password Password1
 
   Options
     .. code-block:: none
@@ -513,13 +516,13 @@ platform user deactivate
   Format
     .. code-block:: none
 
-      platform user deactivate {emails, usernames, userIds}
+      sudo ./platform user deactivate {emails, usernames, userIds}
 
   Examples
     .. code-block:: none
 
-      platform user deactivate user@example.com
-      platform user deactivate username
+      sudo ./platform user deactivate user@example.com
+      sudo ./platform user deactivate username
 
 platform user delete
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -530,12 +533,12 @@ platform user delete
   Format
     .. code-block:: none
 
-      platform user delete {users}
+      sudo ./platform user delete {users}
 
   Example
     .. code-block:: none
 
-        platform user delete user@example.com
+      sudo ./platform user delete user@example.com
 
   Options
     .. code-block:: none
@@ -551,12 +554,12 @@ platform user deleteall
   Format
     .. code-block:: none
 
-      platform user deleteall
+      sudo ./platform user deleteall
 
   Example
     .. code-block:: none
 
-      platform user deleteall
+      sudo ./platform user deleteall
 
   Options
     .. code-block:: none
@@ -572,13 +575,13 @@ platform user invite
   Format
     .. code-block:: none
 
-      platform user invite {email} {teams}
+      sudo ./platform user invite {email} {teams}
 
   Examples
     .. code-block:: none
 
-      platform user invite user@example.com myteam
-      platform user invite user@example.com myteam1 myteam2
+      sudo ./platform user invite user@example.com myteam
+      sudo ./platform user invite user@example.com myteam1 myteam2
 
 platform user migrate\_auth
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -595,12 +598,12 @@ platform user migrate\_auth
   Format
     .. code-block:: none
 
-      platform user migrate_auth {from_auth} {to_auth} {match_field}
+      sudo ./platform user migrate_auth {from_auth} {to_auth} {match_field}
 
   Example
     .. code-block:: none
 
-      platform user migrate_auth email ladp email
+      sudo ./platform user migrate_auth email ladp email
 
 platform user password
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -611,12 +614,12 @@ platform user password
   Format
     .. code-block:: none
 
-      platform user password {user} {password}
+      sudo ./platform user password {user} {password}
 
   Example
     .. code-block:: none
 
-      platform user password user@example.com Password1
+      sudo ./platform user password user@example.com Password1
 
 platform user resetmfa
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -627,12 +630,12 @@ platform user resetmfa
   Format
     .. code-block:: none
 
-      platform user resetmfa {users}
+      sudo ./platform user resetmfa {users}
 
   Example
     .. code-block:: none
 
-      platform user resetmfa user@example.com
+      sudo ./platform user resetmfa user@example.com
 
 platform user verify
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -643,12 +646,12 @@ platform user verify
   Format
     .. code-block:: none
 
-      platform user verify {users}
+      sudo ./platform user verify {users}
 
   Example
     .. code-block:: none
 
-        platform user verify user1
+      sudo ./platform user verify user1
 
 platform version
 ------------------
@@ -659,17 +662,17 @@ platform version
   Format
     .. code-block:: none
 
-      platform version
+      sudo ./platform version
 
 Mattermost 3.5 and earlier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Typing ``platform -help`` brings up documentation for the CLI tool.
+Typing ``sudo ./platform -help`` brings up documentation for the CLI tool. To return the help documentation in GitLab omnibus, type ``sudo -u mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json -help``.
 
 Notes:
 
 - Parameters in CLI commands are order-specific.
-- If special characters (``!``, ``|``, ``(``, ``)``, ``\``, `````, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``-password mypassword/!``).
+- If special characters (``!``, ``|``, ``(``, ``)``, ``\``, `````, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``-password mypassword\!``).
 - Team name and channel name refer to the handles, not the display names. So in the url ``https://pre-release.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``
 
 
