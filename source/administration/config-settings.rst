@@ -2239,10 +2239,10 @@ Service Settings
 
 Cluster Log Timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This setting defines the frequency of cluster request time logging for [performance monitoring](https://docs.mattermost.com/deployment/metrics.html), measured in milliseconds.
+This setting defines the frequency of cluster request time logging for :doc:`../deployment/metrics`, measured in milliseconds.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ClusterLogTimeoutMilliseconds": "2000"`` with whole number input.                                                       |
+| This feature's ``config.json`` setting is ``"ClusterLogTimeoutMilliseconds": 2000`` with whole number input.                                                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable User Typing Messages
@@ -2258,7 +2258,7 @@ Time Between User Typing Updates
 This setting defines how frequently "user is typing..." messages are updated, measured in milliseconds.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"TimeBetweenUserTypingUpdatesMilliseconds": "5000"`` with string input.                                                  |
+| This feature's ``config.json`` setting is ``"TimeBetweenUserTypingUpdatesMilliseconds": 5000`` with whole number input.                                              |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Segment Write Key
