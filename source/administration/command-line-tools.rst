@@ -42,7 +42,11 @@ The new CLI tool is supported in Mattermost 3.6 and later. To see available comm
 
 Typing ``sudo ./platform help`` and ``sudo ./platform help {command}`` returns help documentation for the CLI tool or any CLI command in particular.
 
-To return the help documentation in GitLab omnibus, type ``sudo -u mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json help``
+To return the help documentation in GitLab omnibus, type
+
+    .. code-block:: none
+
+      sudo -u mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json help
 
 Notes:
 
@@ -100,7 +104,7 @@ platform channel add
   Format
     .. code-block:: none
 
-      sudo ./platform channel add {channel} {users}
+      platform channel add {channel} {users}
 
   Example
     .. code-block:: none
@@ -116,7 +120,7 @@ platform channel create
   Format
     .. code-block:: none
 
-      sudo ./platform channel create
+     platform channel create
 
   Examples
     .. code-block:: none
@@ -143,7 +147,7 @@ platform channel delete
   Format
     .. code-block:: none
 
-      sudo ./platform channel delete {channels}
+      platform channel delete {channels}
 
   Example
     .. code-block:: none
@@ -159,7 +163,7 @@ platform channel list
   Format
     .. code-block:: none
 
-      sudo ./platform channel list {teams}
+      platform channel list {teams}
 
   Example
     .. code-block:: none
@@ -175,7 +179,7 @@ platform channel remove
   Format
     .. code-block:: none
 
-      sudo ./platform channel remove {channel} {users}
+      platform channel remove {channel} {users}
 
   Example
     .. code-block:: none
@@ -191,7 +195,7 @@ platform channel restore
   Format
     .. code-block:: none
 
-      sudo ./platform channel restore {channels}
+      platform channel restore {channels}
 
   Example
     .. code-block:: none
@@ -207,7 +211,7 @@ platform help
   Format
     .. code-block:: none
 
-      sudo ./platform help {outputdir}
+      platform help {outputdir}
 
 platform import
 ----------------
@@ -227,7 +231,7 @@ platform import slack
   Format
     .. code-block:: none
 
-      sudo ./platform import slack {team} {file}
+      platform import slack {team} {file}
 
   Example
     .. code-block:: none
@@ -252,7 +256,7 @@ platform ldap sync
   Format
     .. code-block:: none
 
-      sudo ./platform ldap sync
+      platform ldap sync
 
   Example
     .. code-block:: none
@@ -277,7 +281,7 @@ platform license upload
   Format
     .. code-block:: none
 
-      sudo ./platform license upload {license}
+      platform license upload {license}
 
   Example
     .. code-block:: none
@@ -293,7 +297,7 @@ platform reset
   Format
     .. code-block:: none
 
-      sudo ./platform reset
+      platform reset
 
   Options
     .. code-block:: none
@@ -319,7 +323,7 @@ platform roles member
   Format
     .. code-block:: none
 
-      sudo ./platform roles member {users}
+      platform roles member {users}
 
   Example
     .. code-block:: none
@@ -335,7 +339,7 @@ platform roles system\_admin
   Format
     .. code-block:: none
 
-      sudo ./platform roles system_admin {users}
+      platform roles system_admin {users}
 
   Example
     .. code-block:: none
@@ -351,7 +355,7 @@ platform server
   Format
     .. code-block:: none
 
-      sudo ./platform server
+      platform server
 
 platform team
 ----------------
@@ -374,7 +378,7 @@ platform team add
   Format
     .. code-block:: none
 
-      sudo ./platform team add {team} {users}
+      platform team add {team} {users}
 
   Example
     .. code-block:: none
@@ -390,7 +394,7 @@ platform team create
   Format
     .. code-block:: none
 
-      sudo ./platform team create
+      platform team create
 
   Examples
     .. code-block:: none
@@ -415,7 +419,7 @@ platform team delete
   Format
     .. code-block:: none
 
-      sudo ./platform team delete {teams}
+      platform team delete {teams}
 
   Example
     .. code-block:: none
@@ -436,7 +440,7 @@ platform team remove
   Format
     .. code-block:: none
 
-      sudo ./platform team remove {team} {users}
+      platform team remove {team} {users}
 
   Example
     .. code-block:: none
@@ -470,7 +474,7 @@ platform user activate
   Format
     .. code-block:: none
 
-      sudo ./platform user activate {emails, usernames, userIds}
+      platform user activate {emails, usernames, userIds}
 
   Examples
     .. code-block:: none
@@ -487,7 +491,7 @@ platform user create
   Format
     .. code-block:: none
 
-      sudo ./platform user create
+      platform user create
 
   Examples
     .. code-block:: none
@@ -516,7 +520,7 @@ platform user deactivate
   Format
     .. code-block:: none
 
-      sudo ./platform user deactivate {emails, usernames, userIds}
+      platform user deactivate {emails, usernames, userIds}
 
   Examples
     .. code-block:: none
@@ -533,7 +537,7 @@ platform user delete
   Format
     .. code-block:: none
 
-      sudo ./platform user delete {users}
+      platform user delete {users}
 
   Example
     .. code-block:: none
@@ -554,7 +558,7 @@ platform user deleteall
   Format
     .. code-block:: none
 
-      sudo ./platform user deleteall
+      platform user deleteall
 
   Example
     .. code-block:: none
@@ -575,7 +579,7 @@ platform user invite
   Format
     .. code-block:: none
 
-      sudo ./platform user invite {email} {teams}
+      platform user invite {email} {teams}
 
   Examples
     .. code-block:: none
@@ -598,7 +602,7 @@ platform user migrate\_auth
   Format
     .. code-block:: none
 
-      sudo ./platform user migrate_auth {from_auth} {to_auth} {match_field}
+      platform user migrate_auth {from_auth} {to_auth} {match_field}
 
   Example
     .. code-block:: none
@@ -614,7 +618,7 @@ platform user password
   Format
     .. code-block:: none
 
-      sudo ./platform user password {user} {password}
+      platform user password {user} {password}
 
   Example
     .. code-block:: none
@@ -630,7 +634,7 @@ platform user resetmfa
   Format
     .. code-block:: none
 
-      sudo ./platform user resetmfa {users}
+      platform user resetmfa {users}
 
   Example
     .. code-block:: none
@@ -646,7 +650,7 @@ platform user verify
   Format
     .. code-block:: none
 
-      sudo ./platform user verify {users}
+      platform user verify {users}
 
   Example
     .. code-block:: none
@@ -662,12 +666,16 @@ platform version
   Format
     .. code-block:: none
 
-      sudo ./platform version
+      platform version
 
 Mattermost 3.5 and earlier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Typing ``sudo ./platform -help`` brings up documentation for the CLI tool. To return the help documentation in GitLab omnibus, type ``sudo -u mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json -help``.
+Typing ``sudo ./platform -help`` brings up documentation for the CLI tool. To return the help documentation in GitLab omnibus, type 
+
+    .. code-block:: none
+
+      sudo -u mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json -help
 
 Notes:
 
