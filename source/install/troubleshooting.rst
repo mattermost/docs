@@ -60,7 +60,12 @@ Locked out of System Administrator account
 
 If email sign-in was turned off before the System Administrator switched sign-in methods, sign up for a new account and promote it to System Administrator from the command line.
 
-YouTube Videos show a "Video not found" preview
+Unable to play audio or video files on browser
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Your server may be mis-configured where the `MIME type <https://golang.org/pkg/mime/#TypeByExtension>`_ isn't set correctly. Try installing a media player or read the `related documentation <https://golang.org/pkg/mime/#TypeByExtension>`_ to add the missing mime types.
+
+YouTube videos show a "Video not found" preview
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. First, make sure the YouTube video exists by pasting a link to the video into your browser's address bar.
