@@ -31,7 +31,7 @@ If you find a new integration or installer in the `Mattermost Facebook page <htt
       
       Is this something Mattermost would like to promote?
 
-2. If the proposal is accepted, Ops reaches out to the integration creator by opening a Github issue with the following text:
+2. If the proposal is accepted, Ops reaches out to the integration creator by opening a GitHub issue with the following text:
 
     .. code-block:: none
 
@@ -202,7 +202,7 @@ Step-by-Step Asset Review Guide for Ops
 ----------------------------------------
 
 1. Upload the artists "work in progress" files to the `Archive Dropbox sub-folder <https://www.dropbox.com/home/marketing/Twitter/archive>`_ in `Twitter Marketing <https://www.dropbox.com/sh/13h55hakbvm7iva/AAARooC0rV8JCKBI_8VUj_tga?dl=0>`_
-2. In the `Contributors team <https://pre-release.mattermost.com/core/channels/i18n-japanese>`_, find the appropriate conversation thread for the queued project, and add a comment mentioning @jason with the following:
+2. In the `Contributors team <https://pre-release.mattermost.com/core/channels/integrations>`_, find the appropriate conversation thread for the queued project, and add a comment mentioning @jason with the following:
 
   - Link to the image in Dropbox
   - Proposed tweet text with a note to specify whether or not the mention in the text is the Twitter handle of the user. 
