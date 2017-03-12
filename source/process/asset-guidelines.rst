@@ -2,12 +2,12 @@
 Mattermost Asset Guidelines
 ============================================================
 
-The following guidelines are intended to help queue and prepare marketing assets for community projects, and can be followed by both Mattermost core committers and the Mattermost community.
+The following guidelines are intended to help queue and prepare marketing assets for community projects by the Mattermost core committers and the Mattermost community.
 
 .. contents::
     :backlinks: top
 
-Queuing assets for new community projects
+Queuing Assets for New Community Projects
 ------------------------------------------
 
 Follow these steps to queue an asset for a new community project.
@@ -15,9 +15,9 @@ Follow these steps to queue an asset for a new community project.
 Integrations and Installers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you find a new integration or installer in the `Mattermost Facebook page <https://www.facebook.com/MattermostHQ/?fref=ts>`_, `Mattermost Twitter page <https://twitter.com/mattermosthq>`_ or in `GitHub <https://github.com/search?utf8=%E2%9C%93&q=mattermost>`_ you feel Mattermost should promote:
+If you find a new integration or installer in the `Mattermost Facebook page <https://www.facebook.com/MattermostHQ/?fref=ts>`_, `Mattermost Twitter page <https://twitter.com/mattermosthq>`_, `GitHub <https://github.com/search?utf8=%E2%9C%93&q=mattermost>`_ or elsewhere you feel Mattermost should promote:
 
-1. Post a request to the `Core team "Integrations and Apps" channel <https://pre-release.mattermost.com/core/channels/integrations> with:
+1. Post a request to the `Contributors team "Integrations and Apps" channel <https://pre-release.mattermost.com/core/channels/integrations>`_ with:
 
   - mention to @jason
   - link to suggested integration
@@ -45,15 +45,17 @@ If you find a new integration or installer in the `Mattermost Facebook page <htt
 
       We came across your work and we'd love to help share it with the Mattermost community.
 
-      If this might be interesting for you, we wondered if you'd help complete a form to tell us more about your work so we can promote it? 
-
+      If this interests you, we wondered if you'd help complete a form to tell us more about your work so we can promote it? 
+      
       Here's the form: https://spinpunch.wufoo.com/forms/mattermost-integrations-and-installers/
+      
+      We'd also like to welcome you to join our public integrations community channel on our nightly build server: https://pre-release.mattermost.com/core/channels/integrations
 
       Thanks for being a valued member of the Mattermost Community!
 
       - The Mattermost Team
 
-3. When a contributor submits an integration or installer via the `Wufoo form <https://spinpunch.wufoo.com/forms/mattermost-integrations-and-installers/>`_, a Zapier webhook posts relevant information into the `Integrations and Apps channel <https://pre-release.mattermost.com/core/channels/integrations>`_.
+3. When a contributor submits an integration via the `Wufoo form <https://spinpunch.wufoo.com/forms/mattermost-integrations-and-installers/>`_, a Zapier webhook posts relevant information into the `Integrations and Apps channel <https://pre-release.mattermost.com/core/channels/integrations>`_.
 
 4. Ops replies to each new Wufoo post with a numbered project title and project status. Example:
 
@@ -75,10 +77,10 @@ Integration or Feature Promotion
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Use this `template <https://www.dropbox.com/s/9o6c331u815mflp/20160118_spanish.tif?dl=0>`_ as a starting point
-2. Change text in the "title" layer following the guidelines in `Asset Elements: Feature Title`_ // XXX Need to add a relative link
-3. Change text in the "by cburns" layer to replace the name with appropriate creator name following the guidelines in `Asset Elements: Feature Creator`_ // XXX Need to add a relative link
-4. Change the contents in the "right image" layer to update representative logo(s) following the guidelines in `Asset Elements: Mattermost and Representative Logos`_ // XXX Need to add a relative link
-5. Change the contents of the "Left Image" layer to update representative art following the guidelines in `Asset Elements: Representative Art for Feature`_ // XXX Need to add a relative link
+2. Change text in the "title" layer following the guidelines in `Feature Title`_
+3. Change text in the "by cburns" layer to replace the name with appropriate creator name following the guidelines in `Feature Creator`_
+4. Change the contents of the "Left Image" layer to update representative art following the guidelines in `Representative Art for Feature`_
+5. Change the contents in the "right image" layer to update representative logo(s) following the guidelines in `Mattermost and Representative Logos`_
 6. Save the finished asset draft in both .TIF and .PNG format, and upload to your "Dropbox Share" folder
 
 Integration Blog
@@ -127,56 +129,28 @@ Feature Creator
 2. Displays who created the integration (Twitter or GitHub account of the creator)
 3. If text doesn’t blend well with left pane representative art, adjust the outer glow effect
 
-Mattermost and Representative Logos
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-1. Mattermost logo appears in the bottom left corner of the asset
-2. Representative logo appears in the right pane
-
-- If we're promoting a Mattermost feature, not an integration, use Mattermost white logo on blue background
-- If representative logo is from a product, find a logo with the product name, not just the image when possible. Example:
-
-  Correct: 
-  
-  .. image:: ../images/asset-guidelines-gitter-correct.png
-
-  Incorrect: 
-  
-  .. image:: ../images/asset-guidelines-gitter-incorrect.png
-
-- Ensure representative logo is similar in size to other logos shown in `Twitter ad examples <https://www.dropbox.com/sh/13h55hakbvm7iva/AAARooC0rV8JCKBI_8VUj_tga?dl=0>`_
-- If no representative logo exists, use `this template <https://www.dropbox.com/s/9ck2ldoaizb8hvr/20170118_trax.tif?dl=0>`_ as a starting point to create a new custom one:
-
-  - Change the size of font so the name fits within the guides shown in reference screenshot below
-
-  .. image:: ../images/asset-guidelines-no-logo.png
-
-  - Text of name should be at least as wide as "for Mattermost"
-  - The space between the bottom of the integration name and "for Mattermost" should be the same distance as in the reference screenshot above
-  - Vertically center the combined image of the integration name and the text "for Mattermost"
-
-Representative Art For Feature
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Feature Representative Art
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Representative art appears in the left pane of the asset
 2. Screenshot of a feature in action is most preferred (see guidelines for Feature Screenshot here) // XXX Needs relative link
 3. If no feature screenshot is available, take a screenshot of a well-formatted "README" file or of feature code with the word "Mattermost"
 
-- If using a "README" file, ensure the screenshot doesn't highlight spelling or capitalization errors
+  - If using a "README" file, ensure the screenshot doesn't highlight spelling or capitalization errors
 
 4. If necessary, consider using a two-image, half-and-half combination of the README and feature code to provide a visually appealing color inversion. See `example <https://www.dropbox.com/s/bqh564rpkshf08n/20160122_github_integration.png?dl=0>`_
 
-- When creating a two-image representative art piece, ensure that the top section is continuous and flat to avoid a triangular blank space
+  - When creating a two-image representative art piece, ensure that the top section is continuous and flat to avoid a triangular blank space
 
-5. Place and size representative art in a way that it doesn’t clash with the Feature Creator layer // XXX Needs relative link
+5. Place and size representative art in a way that it doesn’t clash with the `Feature Creator`_ layer
 6. Leave a 17px border of white space in between representative art and banner edge
 7. Have equal margins on the left side and above the image
 8. Leave equal whitespace between all like objects
-9. Avoid wavy lines when rotating an image as shown in the sample below. 
+9. Avoid wavy lines when rotating an image as shown in the sample below
 
   .. image:: ../images/asset-guidelines-wavy-lines.png
 
-- To avoid them, increase the size of the original layer, rotate it, then reduce the size of the image
+  - To avoid them, increase the size of the original layer, rotate it, then reduce the size of the image
 
 10. If you use a rotated image, avoid visible gaps between the edge of the banner and the image as shown in the sample below
 
@@ -195,20 +169,49 @@ When taking a screenshot of a feature, follow these guidelines:
 3. **Oversized**: Provide screenshots that are at least 20-30% larger than needed, so that there's room to rotate and crop the image as needed
 4. **Illustrative**: Try to find screenshots that are representative of the feature
 
+Mattermost and Representative Logos
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. Mattermost logo appears in the bottom left corner of the asset
+2. Representative logo appears in the right pane
+
+  - If we're promoting a Mattermost feature, not an integration, use Mattermost white logo on blue background
+  - If representative logo is from a product, find a logo with the product name, not just the image when possible. Example:
+
+  Correct: 
+  
+  .. image:: ../images/asset-guidelines-gitter-correct.png
+
+  Incorrect: 
+  
+  .. image:: ../images/asset-guidelines-gitter-incorrect.png
+
+  - Ensure representative logo is similar in size to other logos shown in `Twitter ad examples <https://www.dropbox.com/sh/13h55hakbvm7iva/AAARooC0rV8JCKBI_8VUj_tga?dl=0>`_
+
+3. If no representative logo exists, use `this template <https://www.dropbox.com/s/9ck2ldoaizb8hvr/20170118_trax.tif?dl=0>`_ as a starting point to create a new custom one:
+
+  - Change the size of font so the name fits within the guides shown in reference screenshot below
+
+  .. image:: ../images/asset-guidelines-no-logo.png
+
+  - Text of name should be at least as wide as "for Mattermost"
+  - The space between the bottom of the integration name and "for Mattermost" should be the same distance as in the reference screenshot above
+  - Vertically center the combined image of the integration name and the text "for Mattermost"
+
 Step-by-Step Asset Review Guide for Ops
 ----------------------------------------
 
 1. Upload the artists "work in progress" files to the `Archive Dropbox sub-folder <https://www.dropbox.com/home/marketing/Twitter/archive>`_ in `Twitter Marketing <https://www.dropbox.com/sh/13h55hakbvm7iva/AAARooC0rV8JCKBI_8VUj_tga?dl=0>`_
 2. In the `Contributors team <https://pre-release.mattermost.com/core/channels/i18n-japanese>`_, find the appropriate conversation thread for the queued project, and add a comment mentioning @jason with the following:
 
-- Link to the image in Dropbox
-- Proposed tweet text with a note to specify whether or not the mention in the text is the Twitter handle of the user. 
+  - Link to the image in Dropbox
+  - Proposed tweet text with a note to specify whether or not the mention in the text is the Twitter handle of the user. 
 
-  - `@username is the Twitter account of the GitHub user` if the text uses a Twitter username, or
-  - `@username is NOT the Twitter account of GitHub user` if the text doesn't use a Twitter username
+    - `@username is the Twitter account of the GitHub user` if the text uses a Twitter username, or
+    - `@username is NOT the Twitter account of GitHub user` if the text doesn't use a Twitter username
 
-- Proposed scheduled tweet date
+  - Proposed scheduled tweet date
 
-  - Never schedule a tweet for the 16th or 22nd of any given month as these days are reserved for Mattermost and GitLab release announcements, respectively
+    - Never schedule a tweet for the 16th or 22nd of any given month as these days are reserved for Mattermost and GitLab release announcements, respectively
 
-- .png version of the file for a quick preview
+  - .png version of the file for a quick preview
