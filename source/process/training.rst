@@ -373,7 +373,7 @@ Expert Mode (and Crimson Force Field)
 
 When documentation or on-screen text is written for someone with considerable knowledge or expertise, instead of being designed for a new learner. In general, try to state things simply rather than speaking to just the "experts" reading the the text. 
 
-If something is extremely difficult to understand, and yet still justified in the mind of the designer, we call it "Crimson Force Field", as a way to illustrate how arbitrary and confusing the term is to the person sharing feedback. 
+If something is extremely difficult to understand, and yet still justified in the mind of the designer, we call it "Crimson Force Field" as a way to illustrate how arbitrary and confusing the term appears to the person sharing feedback. 
 
 Help Wanted
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
