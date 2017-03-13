@@ -224,7 +224,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Running CLI without access to logs causes panic
 - Switching channels with CTRL/CMD+K doesn't work properly when using the mouse
 - Reacting to a deleted message in the right-hand sidebar throws an error
-- Sometimes no email verification is sent to the new email address after changing your email in Account Settings. A workaround is to sign in with the new email address and hitting "Resend Email" on the "Email not verified" page.
+- Sometimes no email verification is sent to the new email address after changing your email in Account Settings. A workaround is to sign in with the new email address and hitting "Resend Email" on the "Email not verified" page
+- Clicking "Load more messages" sometimes brings you to the bottom of the page
+- Switching to a channel with unreads sometimes doesn't jump to the correct scrolling position
 
 ### Contributors
 
