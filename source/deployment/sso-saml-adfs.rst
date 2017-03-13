@@ -13,7 +13,7 @@ The following are basic requirements to use ADFS for Mattermost:
  - An Active Directory instance where all users have a specified email and username attributes. For Mattermost servers running 3.3 and earlier, users must also have their first name and last name attributes specified.
  - A Microsoft Server running. The screenshots used in this guide are from Microsoft Server 2012R2, but similar steps should work for other versions.
  - An SSL certificate to sign your ADFS login page.
- - ADFS installed on your Microsoft Server. You can find a detailed guide for deploying and configuring ADFS in [this article](https://msdn.microsoft.com/en-us/library/gg188612.aspx).
+ - ADFS installed on your Microsoft Server. You can find a detailed guide for deploying and configuring ADFS in `this article <https://msdn.microsoft.com/en-us/library/gg188612.aspx>`_.
 
 
 On your ADFS installation, note down the value of the **SAML 2.0/W-Federation URL** in ADFS Endpoints section, also known as the **SAML SSO URL Endpoint** in this guide. If you chose the defaults for the installation, this will be ``/adfs/ls/``.
@@ -45,7 +45,7 @@ Add a Relying Party Trust
 
 	.. image:: ../../source/images/adfs_6_configure_certificate_default.PNG
 
-However, if you would like to set up encryption for your SAML connection, click the **Browse…** button and upload your Service Provider Public Certificate.
+However, if you would like to set up encryption for your SAML connection, click the **Browse** button and upload your Service Provider Public Certificate.
 
 	.. image:: ../../source/images/adfs_7_configure_certificate_encryption.PNG
 
@@ -87,8 +87,8 @@ Create Claim Rules
 3. In the **Configure Claim Rule** screen, enter a **Claim Rule Name** of your choice, select **Active Directory** as the **Attribute Store** and do the following:
   - From the **LDAP Attribute column**, select ``E-Mail-Addresses``. From the **Outgoing Claim Type**, type ``Email``
   - From the **LDAP Attribute column**, select ``Given-Name``. From the **Outgoing Claim Type**, type ``FirstName``
-  - From the **LDAP Attribute column**, select `Surname`. From the **Outgoing Claim Type**, type `LastName`
-  - From the **LDAP Attribute column**, select `SAM-Account-Name`. From the **Outgoing Claim Type**, type `Username`
+  - From the **LDAP Attribute column**, select ``Surname``. From the **Outgoing Claim Type**, type ``LastName``
+  - From the **LDAP Attribute column**, select ``SAM-Account-Name``. From the **Outgoing Claim Type**, type ``Username``
 
 For Mattermost 3.4 and later, the *FirstName* and *LastName* attributes are optional.
 
@@ -119,20 +119,20 @@ Moreover, select the **Pass through all claim values** option. Then click **Fini
 
   ``Set-ADFSRelyingPartyTrust -TargetName <display-name> -SamlResponseSignature "MessageAndAssertion"``
 
-  where <display-name> is the name you specified in step 7. In our example it would be ``mattermost``.
+where <display-name> is the name you specified in step 7. In our example it would be ``mattermost``.
 
-  This action will add the signature to SAML messages, making verification successful.
+This action will add the signature to SAML messages, making verification successful.
 
 Export Identity Provider Certificate
 -------------------------------------
 
 Next, we export the identity provider certificate, which will be later uploaded to Mattermost to finish SAML configuration.
 
-1. In ADFS management sidebar, go to **AD FS > Service > Certificates** and double click on the certificate under **Token-signing**. You may alternatively right-click the field, then click **View Certificate...*
+1. In ADFS management sidebar, go to **AD FS > Service > Certificates** and double click on the certificate under **Token-signing**. You may alternatively right-click the field, then click **View Certificate**
 
 	.. image:: ../../source/images/adfs_19_export_idp_cert_start.PNG
 
-2. In the **Certificate** screen, go to the **Details** tab and click **Copy to File…**, then **OK**. This opens a **Certificate Export Wizard**.
+2. In the **Certificate** screen, go to the **Details** tab and click **Copy to File**, then **OK**. This opens a **Certificate Export Wizard**.
 
 	.. image:: ../../source/images/adfs_20_export_idp_cert_copy.PNG
 
@@ -162,7 +162,7 @@ Configure SAML for Mattermost
 
 	.. image:: ../../source/images/adfs_22_mattermost_basics.PNG
 
-2. (Optional) Configure Mattermost to verify the signature. The *Service Provider Login URL` is the `SAML 2.0 SSO service URL* you specified in ADFS earlier.
+2. (Optional) Configure Mattermost to verify the signature. The *Service Provider Login URL* is the *SAML 2.0 SSO service URL* you specified in ADFS earlier.
 
 	.. image:: ../../source/images/adfs_23_mattermost_verification.PNG
 
