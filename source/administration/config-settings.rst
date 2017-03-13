@@ -1004,6 +1004,8 @@ This button can be used to test the connection to the AD/LDAP server. If the tes
 
 ________
 
+.. _saml-enterprise:
+
 SAML
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*

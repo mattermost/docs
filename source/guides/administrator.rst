@@ -36,7 +36,7 @@ Deployment
    /deployment/push*
    /deployment/sso-ldap*
    /deployment/auth*
-   /deployment/sso-saml.md
+   /deployment/sso-saml.rst
    /deployment/scaling*
    /deployment/cluster*
    /deployment/sso-gitlab*
