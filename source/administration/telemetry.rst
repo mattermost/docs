@@ -3,7 +3,9 @@
 Telemetry
 =========
 
-Mattermost servers are configured to share anonymous usage and deployment information with Mattermost, Inc. Non-personally identifiable information is collected, encrypted, and transmitted in accordance with our `privacy policy <https://about.mattermost.com/default-privacy-policy/>`_. The contents of messages are not transmitted. 
+As described in the privacy policy in each Mattermost server, telemetry data optionally shared from your Mattermost servers is used to identify security and reliability issues, to analyze and fix software problems, to help improve the quality of Mattermost software and related services, and to make design decisions for future releases.
+
+Telemetry data is encrypted in transit, does not include personally identifiable information or message contents, and details of how the information is used and processed is available in our `Privacy Policy <https://about.mattermost.com/default-privacy-policy/>`_.
 
 We use the data for the following purposes:
 
@@ -14,12 +16,12 @@ We use the data for the following purposes:
 
 Participation is optional and you can opt out at any time.
 
-Security Fix Alert Feature
---------------------------
+Security Update Check Feature
+-----------------------------
 
-New threats to system security constantly arise. To alert you of relevant, high priority security updates, Mattermost servers are configured to share anonymous deployment information with Mattermost Inc. so that we can provide appropriate alerts.
+New threats to system security constantly arise. To alert you of relevant, high priority security updates, Mattermost servers are configured to share diagnostic information with Mattermost Inc. so that we can provide appropriate alerts.
 
-The following data is collected once every 24 hours: Mattermost server version, server operating system and database type, number of teams, number of user logins in the last 24 hours, and the ID of the Amazon Cloudfront server used for telemetry data.
+The following data is collected once every 24 hours: Mattermost server build number and version, type of build (Enterprise or Team), server operating system, the server diagnostic ID (same as the ID accessing the push notification proxy, and is used to prevent double-counting of telemetry data), database type, number of teams, number of users, number of active users, whether or not the unit tests have been run, date and time of the last check for security updates, and the ID of the Amazon Cloudfront server used for telemetry data.
 
 To opt out, disable the feature in **System Console > Notifications > Email > Enable Security Alerts**. When the feature is disabled, you will not receive any security alerts.
 
@@ -28,7 +30,8 @@ Error and Diagnostics Reporting Feature
 
 Error and diagnostic data is collected for the following purposes: to add improvements to Mattermost software that are specific to your usage and deployment patterns, including identifying security and reliability issues;  to analyze and fix software problems; to help improve the quality of Mattermost software and related services; and to make design decisions for future releases.
 
-The following data is collected after an error event:
+The following data is sent once every 24 hours:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Deployment Configuration Information
   Basic information including Mattermost server version, database and operating system type and version, and count of System Administrator accounts
@@ -50,10 +53,13 @@ Server Configuration Settings
      **ServiceSettings**: bool SiteURL, bool TLSCertFile, bool TLSKeyFile, bool ReadTimeout, bool WriteTimeout, bool GoogleDeveloperKey, bool AllowCorsFrom; **TeamSettings**: bool SiteName, bool CustomBrandText, bool CustomDescriptionText, bool UserStatusAwayTimeout; **LogSettings**: bool FileFormat, bool FileLocation; **EmailSettings**: bool FeedbackName, bool FeedbackEmail, bool FeedbackOrganization; **RateLimitSettings**: bool VaryByHeader; **SupportSettings**: bool TermsOfServiceLink, bool PrivacyPolicyLink, bool AboutLink, bool HelpLink, bool ReportAProblemLink, bool SupportEmail; **LdapSettings**: bool FirstNameAttribute, bool LastNameAttribute, bool EmailAttribute, bool UserNameAttribute, bool NicknameAttribute, bool IdAttribute, bool PositionAttribute, bool LoginFieldName; **SamlSettings**: bool FirstNameAttribute, bool LastNameAttribute, bool EmailAttribute, bool UserNameAttribute, bool NicknameAttribute, bool LocaleAttribute, bool PositionAttribute, bool LoginButtonText; **NativeAppSettings**: bool AppDownloadLink, bool  AndroidAppDownloadLink, bool IosAppDownloadLink; **WebrtcSettings**: bool StunURI, bool TurnURI; **MetricsSettings**: bool BlockProfileRate; **AnalyticsSettings**: bool MaxUsersForStatistics
 
 Commercial License Information (Enterprise Edition Only)
-  Information about commercial license key purchased or trial license key used for Enterprise Edition servers: Company name, full name, license issue date, license start date, license expiry date, number of licensed users, list of unlocked Enterprise features
+  Information about commercial license key purchased or trial license key used for Enterprise Edition servers: Company ID, license ID, license issue date, license start date, license expiry date, number of licensed users, list of unlocked Enterprise features.
 
 Aggregated Usage Statistics
   Non-personally identifiable summations of basic usage statistics: Number of enabled and disabled accounts, number of user logins in the last 24 hours, number of posts, channels and teams
+
+The following information is sent when the specified event occurs:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Non-personally Identifiable Error Information
   Boolean when the following events occur: Email login error, AD/LDAP login error, SAML login error
