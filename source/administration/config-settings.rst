@@ -2247,7 +2247,7 @@ This setting defines the frequency of cluster request time logging for :doc:`../
 
 Enable User Typing Messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This setting determines wheter "user is typing..." messages are displayed below the message box. Disabling the setting in larger deplyoments may be improve server performance.
+This setting determines wheter "user is typing..." messages are displayed below the message box. Disabling the setting in larger deplyoments may improve server performance.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableUserTypingMessages": "true"`` with string input.                                                                  |
