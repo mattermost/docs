@@ -93,7 +93,7 @@ Android (Device)
 
   - Android 5.1.1 > Google APIs 22
 
-  - Extras > Android Support Repository
+  - Extras > Android Support Repository and/or Androud Support Library
   
   - Extras > Google Play Services
   
