@@ -33,13 +33,25 @@ From the directory where the Mattermost platform is installed, a
 
 .. contents::
     :backlinks: top
+    :local:
 
-Typing ``platform help`` and ``platform help {command}`` returns help documentation for the CLI tool or any CLI command in particular.
+Mattermost 3.6 and later
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+The new CLI tool is supported in Mattermost 3.6 and later. To see available commands in the old CLI tool, see `Mattermost 3.5 and earlier`_.
+
+Typing ``sudo ./platform help`` and ``sudo ./platform help {command}`` returns help documentation for the CLI tool or any CLI command in particular.
+
+To return the help documentation in GitLab omnibus, type
+
+    .. code-block:: none
+
+      sudo -u mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json help
 
 Notes:
 
 -  Parameters in CLI commands are order-specific.
--  If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``-password mypassword/!``).
+-  If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``-password mypassword\!``).
 -  Team name and channel name refer to the handles, not the display names. So in the url ``https://pre-release.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``
 
 .. tip::
@@ -97,7 +109,7 @@ platform channel add
   Example
     .. code-block:: none
 
-      platform channel add mychannel user@example.com username
+      sudo ./platform channel add mychannel user@example.com username
 
 platform channel create
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -108,13 +120,13 @@ platform channel create
   Format
     .. code-block:: none
 
-      platform channel create
+     platform channel create
 
   Examples
     .. code-block:: none
 
-      platform channel create --team myteam --name mynewchannel --display_name "My New Channel"
-      platform channel create --team myteam --name mynewprivatechannel --display_name "My New Private Channel" --private
+      sudo ./platform channel create --team myteam --name mynewchannel --display_name "My New Channel"
+      sudo ./platform channel create --team myteam --name mynewprivatechannel --display_name "My New Private Channel" --private
 
   Options
     .. code-block:: none
@@ -140,7 +152,7 @@ platform channel delete
   Example
     .. code-block:: none
 
-      platform channel delete myteam:mychannel
+      sudo ./platform channel delete myteam:mychannel
 
 platform channel list
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -156,7 +168,7 @@ platform channel list
   Example
     .. code-block:: none
 
-      platform channel list myteam
+      sudo ./platform channel list myteam
 
 platform channel remove
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -172,7 +184,7 @@ platform channel remove
   Example
     .. code-block:: none
 
-      platform channel remove mychannel user@example.com username
+      sudo ./platform channel remove mychannel user@example.com username
 
 platform channel restore
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -188,7 +200,7 @@ platform channel restore
   Example
     .. code-block:: none
 
-      platform channel restore myteam:mychannel
+      sudo ./platform channel restore myteam:mychannel
 
 platform help
 ---------------
@@ -224,7 +236,7 @@ platform import slack
   Example
     .. code-block:: none
 
-      platform import slack myteam slack_export.zip
+      sudo ./platform import slack myteam slack_export.zip
 
 platform ldap
 -------------
@@ -249,7 +261,7 @@ platform ldap sync
   Example
     .. code-block:: none
 
-      platform ldap sync
+      sudo ./platform ldap sync
 
 platform license
 -----------------
@@ -274,7 +286,7 @@ platform license upload
   Example
     .. code-block:: none
 
-      platform license upload /path/to/license/mylicensefile.mattermost-license
+      sudo ./platform license upload /path/to/license/mylicensefile.mattermost-license
 
 platform reset
 ---------------
@@ -316,7 +328,7 @@ platform roles member
   Example
     .. code-block:: none
 
-      platform roles member user1
+      sudo ./platform roles member user1
 
 platform roles system\_admin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -332,7 +344,7 @@ platform roles system\_admin
   Example
     .. code-block:: none
 
-      platform roles system_admin user1
+      sudo ./platform roles system_admin user1
 
 platform server
 ----------------
@@ -371,7 +383,7 @@ platform team add
   Example
     .. code-block:: none
 
-      platform team add myteam user@example.com username
+      sudo ./platform team add myteam user@example.com username
 
 platform team create
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -387,8 +399,8 @@ platform team create
   Examples
     .. code-block:: none
 
-      platform team create --name mynewteam --display_name "My New Team"
-      platform teams create --name private --display_name "My New Private Team" --private
+      sudo ./platform team create --name mynewteam --display_name "My New Team"
+      sudo ./platform teams create --name private --display_name "My New Private Team" --private
 
   Options
     .. code-block:: none
@@ -412,7 +424,7 @@ platform team delete
   Example
     .. code-block:: none
 
-      platform team delete myteam
+      sudo ./platform team delete myteam
 
   Options
     .. code-block:: none
@@ -433,7 +445,7 @@ platform team remove
   Example
     .. code-block:: none
 
-      platform team remove myteam user@example.com username
+      sudo ./platform team remove myteam user@example.com username
 
 platform user
 ---------------
@@ -467,8 +479,8 @@ platform user activate
   Examples
     .. code-block:: none
 
-      platform user activate user@example.com
-      platform user activate username1 username2
+      sudo ./platform user activate user@example.com
+      sudo ./platform user activate username1 username2
 
 platform user create
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -484,8 +496,8 @@ platform user create
   Examples
     .. code-block:: none
 
-      platform user create --email user@example.com --username userexample --password Password1 
-      platform user create --firstname Joe --system_admin --email joe@example.com --username joe --password Password1
+      sudo ./platform user create --email user@example.com --username userexample --password Password1 
+      sudo ./platform user create --firstname Joe --system_admin --email joe@example.com --username joe --password Password1
 
   Options
     .. code-block:: none
@@ -513,8 +525,8 @@ platform user deactivate
   Examples
     .. code-block:: none
 
-      platform user deactivate user@example.com
-      platform user deactivate username
+      sudo ./platform user deactivate user@example.com
+      sudo ./platform user deactivate username
 
 platform user delete
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -530,7 +542,7 @@ platform user delete
   Example
     .. code-block:: none
 
-        platform user delete user@example.com
+      sudo ./platform user delete user@example.com
 
   Options
     .. code-block:: none
@@ -551,7 +563,7 @@ platform user deleteall
   Example
     .. code-block:: none
 
-      platform user deleteall
+      sudo ./platform user deleteall
 
   Options
     .. code-block:: none
@@ -572,8 +584,8 @@ platform user invite
   Examples
     .. code-block:: none
 
-      platform user invite user@example.com myteam
-      platform user invite user@example.com myteam1 myteam2
+      sudo ./platform user invite user@example.com myteam
+      sudo ./platform user invite user@example.com myteam1 myteam2
 
 platform user migrate\_auth
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -595,7 +607,7 @@ platform user migrate\_auth
   Example
     .. code-block:: none
 
-      platform user migrate_auth email ladp email
+      sudo ./platform user migrate_auth email ladp email
 
 platform user password
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -611,7 +623,7 @@ platform user password
   Example
     .. code-block:: none
 
-      platform user password user@example.com Password1
+      sudo ./platform user password user@example.com Password1
 
 platform user resetmfa
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -627,7 +639,7 @@ platform user resetmfa
   Example
     .. code-block:: none
 
-      platform user resetmfa user@example.com
+      sudo ./platform user resetmfa user@example.com
 
 platform user verify
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -643,7 +655,7 @@ platform user verify
   Example
     .. code-block:: none
 
-        platform user verify user1
+      sudo ./platform user verify user1
 
 platform version
 ------------------
@@ -655,3 +667,185 @@ platform version
     .. code-block:: none
 
       platform version
+
+Mattermost 3.5 and earlier
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Typing ``sudo ./platform -help`` brings up documentation for the CLI tool. To return the help documentation in GitLab omnibus, type 
+
+    .. code-block:: none
+
+      sudo -u mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json -help
+
+Notes:
+
+- Parameters in CLI commands are order-specific.
+- If special characters (``!``, ``|``, ``(``, ``)``, ``\``, `````, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``-password mypassword\!``).
+- Team name and channel name refer to the handles, not the display names. So in the url ``https://pre-release.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``
+
+
+.. tip :: If you automate user creation through the CLI tool with SMTP enabled emails will be sent to all new users created. If you run such a load script, it is best to disable SMTP or to use test accounts so that new account creation emails aren't unintentionally set to people at your organization who aren't expecting them.
+CLI Documentation:
+
+::
+
+  Mattermost commands to help configure the system
+
+  NAME:
+      platform -- platform configuration tool
+
+  USAGE:
+      platform [options]
+
+  FLAGS:
+      -config="config.json"             Path to the config file
+
+      -username="someuser"              Username used in other commands
+
+      -license="ex.mattermost-license"  Path to your license file
+
+      -email="user@example.com"         Email address used in other commands
+
+      -password="mypassword"            Password used in other commands
+
+      -team_name="name"                 The team name used in other commands
+
+      -channel_name="name"	        The channel name used in other commands
+
+      -channel_header="string"	        The channel header used in other commands
+
+      -channel_purpose="string"	        The channel purpose used in other commands
+
+      -channel_type="type"	        The channel type used in other commands
+                                        valid values are
+                                          "O" - public channel
+                                          "P" - private group
+
+      -role="system_admin"               The role used in other commands
+                                         valid values are
+                                           "" - The empty role is basic user
+                                              permissions
+                                           "system_admin" - Represents a system
+                                              admin who has access to all teams
+                                              and configuration settings.
+  COMMANDS:
+      -create_team                      Creates a team.  It requires the -team_name
+                                        and -email flag to create a team.
+          Example:
+              platform -create_team -team_name="name" -email="user@example.com"
+
+      -create_user                      Creates a user.  It requires the -email and -password flag,
+                                         and -team_name and -username are optional to create a user.
+          Example:
+              platform -create_user -team_name="name" -email="user@example.com" -password="mypassword" -username="user"
+
+      -invite_user                      Invites a user to a team by email. It requires the -team_name
+                                          and -email flags.
+          Example:
+              platform -invite_user -team_name="name" -email="user@example.com"
+
+      -join_team                        Joins a user to the team.  It requires the -email and
+                                         -team_name flags.  You may need to logout of your current session
+                                         for the new team to be applied.
+          Example:
+              platform -join_team -email="user@example.com" -team_name="name"
+
+      -assign_role                      Assigns role to a user.  It requires the -role and
+                                        -email flag.  You may need to log out
+                                        of your current sessions for the new role to be
+                                        applied.
+          Example:
+              platform -assign_role -email="user@example.com" -role="system_admin"
+
+      -create_channel		        Create a new channel in the specified team. It requires the -email,
+                                        -team_name, -channel_name, -channel_type flags. Optional you can set
+                                        the -channel_header and -channel_purpose.
+          Example:
+              platform -create_channel -email="user@example.com" -team_name="name" -channel_name="channel_name" -channel_type="O"
+
+      -join_channel                     Joins a user to the channel.  It requires the -email, -channel_name and
+                                        -team_name flags.  You may need to logout of your current session
+                                        for the new channel to be applied.  Requires an enterprise license.
+          Example:
+              platform -join_channel -email="user@example.com" -team_name="name" -channel_name="channel_name"
+
+      -leave_channel                     Removes a user from the channel.  It requires the -email, -channel_name and
+                                         -team_name flags.  You may need to logout of your current session
+                                         for the channel to be removed.  Requires an enterprise license.
+          Example:
+              platform -leave_channel -email="user@example.com" -team_name="name" -channel_name="channel_name"
+
+      -list_channels                     Lists all public channels and private groups for a given team.
+                                         It will append ' (archived)' to the channel name if archived.  It requires the
+                                         -team_name flag.  Requires an enterprise license.
+          Example:
+              platform -list_channels -team_name="name"
+
+      -restore_channel                  Restores a previously deleted channel.
+                                        It requires the -channel_name flag and
+                                        -team_name flag.  Requires an enterprise license.
+          Example:
+              platform -restore_channel -team_name="name" -channel_name="channel_name"
+
+      -reset_password                   Resets the password for a user.  It requires the
+                                        -email and -password flag.
+          Example:
+              platform -reset_password -email="user@example.com" -password="newpassword"
+
+      -reset_mfa                        Turns off multi-factor authentication for a user.  It requires the
+                                        -email or -username flag.
+          Example:
+              platform -reset_mfa -username="someuser"
+
+      -reset_database                   Completely erases the database causing the loss of all data. This
+                                        will reset Mattermost to it's initial state. (note this will not
+                                        erase your configuration.)
+
+          Example:
+              platform -reset_database
+
+      -permanent_delete_user            Permanently deletes a user and all related information
+                                        including posts from the database.  It requires the
+                                        -email flag.  You may need to restart the
+                                        server to invalidate the cache
+          Example:
+              platform -permanent_delete_user -email="user@example.com"
+
+      -permanent_delete_all_users       Permanently deletes all users and all related information
+                                        including posts from the database.  It requires the
+                                        -team_name, and -email flag.  You may need to restart the
+                                        server to invalidate the cache
+          Example:
+              platform -permanent_delete_all_users -team_name="name" -email="user@example.com"
+
+      -permanent_delete_team            Permanently deletes a team along with
+                                        all related information including posts from the database.
+                                        It requires the -team_name flag.  You may need to restart
+                                        the server to invalidate the cache.
+          Example:
+              platform -permanent_delete_team -team_name="name"
+
+      -upload_license                   Uploads a license to the server. Requires the -license flag.
+
+          Example:
+              platform -upload_license -license="/path/to/license/example.mattermost-license"
+
+      -migrate_accounts                 Migrates accounts from one authentication provider to another.
+                                        Requires -from_auth -to_auth and -match_field flags. Supported
+                                        options for -from_auth: email, gitlab, saml. Supported options
+                                        for -to_auth: ldap. Supported options for -match_field: email,
+                                        username. Output will display any accounts that are not migrated
+                                        successfully.
+
+          Example:
+              platform -migrate_accounts -from_auth email -to_auth ldap -match_field username
+
+      -upgrade_db_30                   Upgrades the database from a version 2.x schema to version 3 see
+                                        http://www.mattermost.org/upgrading-to-mattermost-3-0/
+
+          Example:
+              platform -upgrade_db_30
+
+      -version                          Display the current of the Mattermost platform
+
+      -help                             Displays this help page
