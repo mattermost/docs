@@ -3,7 +3,7 @@ Performance Monitoring (E20)
 
 *Available in Enterprise Edition E20*.
 
-Performance monitoring support enables a Mattermost server to track system health for large Enterprise deployments through integrations with `Prometheus <https://prometheus.io/>`_ and `Grafana <http://grafana.org/>`_. 
+Performance monitoring support enables a Mattermost server to track system health for large Enterprise deployments through integrations with `Prometheus <https://prometheus.io/>`_ and `Grafana <http://grafana.org/>`_.
 
 The integration supports data collection from several Mattermost servers, particularly useful if you're running Mattermost `in high availability mode <https://docs.mattermost.com/deployment/cluster.html>`_.
 
@@ -22,7 +22,7 @@ Installing Prometheus
 For install instructions, see `Prometheus install guides <https://prometheus.io/docs/introduction/getting_started/>`_.
 
 2 - The following settings are recommended in the Prometheus configuration file named ``prometheus.yml``:
- 
+
 .. code:: yaml
 
     # my global config
@@ -60,14 +60,14 @@ For install instructions, see `Prometheus install guides <https://prometheus.io/
 
 .. image:: ../images/perf_monitoring_system_console.png
   :scale: 70
-  
+
 4 - To test the server is running, go to ``<ip>:<port>/metrics``.
 
 5 - Finally, run ``vi prometheus.yml`` to finish configuring Prometheus.
 
 For starting the Prometheus service, read the `comprehensive guides provided by Prometheus <https://prometheus.io/docs/introduction/getting_started/#starting-prometheus>`_.
 
-6 - Once the service has started, you can access the data in ``<localhost>:<port>/graph``. 
+6 - Once the service has started, you can access the data in ``<localhost>:<port>/graph``.
 
 While you can use the Prometheus service to create graphs, we'll focus on creating metric and analytics dashboards in Grafana.
 
@@ -109,6 +109,11 @@ The above metrics can be used to calculate ETag and memory cache hit rates over 
 
 .. image:: ../images/perf_monitoring_caching_metrics.png
 
+Cluster Metrics:
+
+    - ``mattermost_cluster_cluster_request_duration_seconds``:  The total duration in seconds of the inter-node cluster requests.
+    - ``mattermost_cluster_cluster_requests_total``: The total number of inter-node requests.
+
 Database Metrics:
 
     - ``mattermost_db_master_connections_total``: The total number of connections to the master database.
@@ -119,23 +124,24 @@ HTTP Metrics:
     - ``mattermost_http_errors_total``: The total number of http API errors.
     - ``mattermost_http_request_duration_seconds``: The total duration in seconds of the http API requests.
     - ``mattermost_http_requests_total``: The total number of http API requests.
-    
+
 .. image:: ../images/perf_monitoring_http_metrics.png
 
 Login and Session Metrics:
 
-    - ``mattermost_http_websockets_total`` The total number of websocket connections to the server.
+    - ``mattermost_http_websockets_total`` The total number of WebSocket connections to the server.
     - ``mattermost_login_logins_fail_total``: The total number of failed logins.
     - ``mattermost_login_logins_total``: The total number of successful logins.
 
 Messaging Metrics:
 
-    - ``mattermost_post_broadcasts_total``: The total number of websocket broadcasts sent beacuse a post was created.
-    - ``mattermost_post_emails_sent_total``: The total number of emails sent beacuse a post was created.
+    - ``mattermost_post_broadcasts_total``: The total number of WebSocket broadcasts sent because a post was created.
+    - ``mattermost_post_emails_sent_total``: The total number of emails sent because a post was created.
     - ``mattermost_post_file_attachments_total``: The total number of file attachments created because a post was created.
-    - ``mattermost_post_pushes_sent_total``: The total number of mobile push notifications sent beacuse a post was created.
+    - ``mattermost_post_pushes_sent_total``: The total number of mobile push notifications sent because a post was created.
     - ``mattermost_post_total``: The total number of posts created.
-    
+    - ``mattermost_post_webhooks_totals``: The total number of webhook posts created.
+
 .. image:: ../images/perf_monitoring_messaging_metrics.png
 
 Process Metrics:
@@ -147,19 +153,23 @@ Process Metrics:
     - ``mattermost_process_start_time_seconds``: Start time of the process since unix epoch in seconds.
     - ``mattermost_process_virtual_memory_bytes``: Virtual memory size in bytes.
 
+WebSocket Metrics:
+
+    - ``mattermost_websocket_event_total``: The total number of WebSocket events.
+
 Standard GO Metrics
 ------------------------------------------------
 
 The Prometheus integration also provides standard GO metrics for HTTP server runtime profiling data and system monitoring, such as:
-    
+
     - ``go_memstats_alloc_bytes`` for memory usage
     - ``go_goroutines`` for GO routines
     - ``go_gc_duration_seconds`` for garbage collection duration
     - ``go_memstats_heap_objects`` for object tracking on the heap
-    
+
 To learn how to set up runtime profiling, see the `pprof package GO documentation <https://golang.org/pkg/net/http/pprof/>`_.  You can also visit the ``ip:port/metrics`` page for a complete list of metrics with descriptions.
 
-If enabled, you can run the profiler by 
+If enabled, you can run the profiler by
 
     ``go tool pprof channel http://localhost:<port>/debug/pprof/profile``
 
@@ -172,5 +182,5 @@ where you can replace ``localhost`` with the server name. The profiling reports 
     - ``/debug/pprof/heap``/ for heap profiling
     - ``/debug/pprof/threadcreate``/ for threads profiling
     - ``/debug/pprof/block``/ for block profiling
-    
+
 .. image:: ../images/perf_monitoring_go_metrics.png

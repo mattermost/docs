@@ -1,8 +1,6 @@
 Channel Settings
 ================
 
---------------
-
 Notification preferences, channel header, channel purpose, and channel
 name are customizable for each channel. To access these settings, click
 the channel name at the top of the page to open the channel menu.
@@ -21,13 +19,17 @@ notification preference for each channel, click the channel name at the
 top of the page to access the channel menu, then click
 **Notification Preferences > Send Desktop Notifications**.
 
+Send Mobile Push Notifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+By default, the mobile push notification preference assigned in *Account Settings* is used for all channels. To customize the mobile push notification for each channel, click the channel name at the top of the page to access the channel menu, then click **Notification Preferences > Send mobile push notifications**.
+
 Mark Channel Unread
 ~~~~~~~~~~~~~~~~~~~
 
 By default, channel names are bolded for all new messages in a channel. 
-To only bold the channel name when you are mentioned, open the channel menu and click 
+To only bold the channel name when you are mentioned, open the channel menu and click
 **Notification Preferences > Mark Channel Unread > Only for mentions**.
-
 
 Channel Header
 --------------
