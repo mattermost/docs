@@ -14,14 +14,12 @@ We use the data for the following purposes:
   - to help improve the quality of Mattermost software and related services
   - to make design decisions for future releases
 
-Participation is optional and you can opt out at any time.
-
 Security Update Check Feature
 -----------------------------
 
 New threats to system security constantly arise. To alert you of relevant, high priority security updates, Mattermost servers are configured to share diagnostic information with Mattermost Inc. so that we can provide appropriate alerts.
 
-The following data is collected once every 24 hours: Mattermost server build number and version, type of build (Enterprise or Team), server operating system, the server diagnostic ID (same as the ID accessing the push notification proxy, and is used to prevent double-counting of telemetry data), database type, number of teams, number of users, number of active users, whether or not the unit tests have been run, date and time of the last check for security updates, and the ID of the Amazon Cloudfront server used for telemetry data.
+The following data is collected once every 24 hours: Mattermost server build number and version, type of build (Enterprise or Team), server operating system, the server diagnostic ID (same as the ID accessing the push notification proxy, and is used to prevent double-counting of telemetry data), database type, number of teams, number of users, number of active users, whether or not the unit tests have been run, date and time of the last check for security updates, and the location of the Amazon Cloudfront server used for telemetry data.
 
 To opt out, disable the feature in **System Console > Notifications > Email > Enable Security Alerts**. When the feature is disabled, you will not receive any security alerts.
 
