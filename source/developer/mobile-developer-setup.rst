@@ -83,7 +83,7 @@ Android (Device)
 
   - Tools > Android SDK Platform-tools 25.0.3
 
-  - Tools > Android SDK Build-tools 23.0.1
+  - Tools > Android SDK Build-tools 25.0.2
 
   - Android 6.0 > SDK Platform 23
 
@@ -94,6 +94,10 @@ Android (Device)
   - Android 5.1.1 > Google APIs 22
 
   - Extras > Android Support Repository
+  
+  - Extras > Google Play Services
+  
+  - Extras > Google Repository
 
 3. Connect your Android device to your computer.
 
