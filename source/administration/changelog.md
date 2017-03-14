@@ -155,6 +155,9 @@ Mattermost v3.7.0 contains a [security update](http://about.mattermost.com/secur
 - Fixed a bug where the Go driver was using a wrong URL for `/users/claim/email_to_oauth` route
 
 ### Compatibility  
+
+Backwards compatibility with the old CLI tool will be removed in v3.8. See [documentation to learn more about the new CLI tool](https://docs.mattermost.com/administration/command-line-tools.html).
+
 Changes from v3.5 to v3.6:
 
 #### config.json   
