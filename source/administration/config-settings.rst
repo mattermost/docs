@@ -1611,9 +1611,9 @@ Note: OAuth 2.0 applications can be authorized by all users if they have the **C
 
 Enable integrations to override usernames
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: Webhooks, slash commands and other integrations, such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`_, will be allowed to change the username they are posting as.
+**True**: Webhooks, slash commands, OAuth 2.0 apps, and other integrations such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`_, will be allowed to change the username they are posting as. If no username is present, the username for the post is the same as it would be for a setting of **False**.
 
-**False**: Webhooks, slash commands and OAuth 2.0 apps can only post as the username of the account they were set up with. See http://mattermost.org/webhooks for more details.
+**False**: Custom slash commands can only post as the username of the user who used the slash command. OAuth 2.0 apps can only post as the username of the user who set up the integration. For incoming webhooks and outgoing webhooks, the username is "webhook". See http://mattermost.org/webhooks for more details.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnablePostUsernameOverride": false`` with options ``true`` and ``false`` for above settings respectively.               |
