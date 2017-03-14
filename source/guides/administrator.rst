@@ -1,7 +1,7 @@
 Mattermost Administrator's Guide
 --------------------------------
 
-In-depth documentation on installation, deployment and administration of Mattermost system. 
+In-depth documentation on installation, deployment and administration of Mattermost system.
 
 Install Guides
 ==============
@@ -10,7 +10,7 @@ Install Guides
    :maxdepth: 1
    :glob:
 
-   /install/requirements*                       
+   /install/requirements*
    /install/docker-local*
    /install/docker-ebs*
    /install/ee-install*
@@ -32,10 +32,11 @@ Deployment
    :glob:
 
    /deployment/on-boarding*
+   /deployment/bulk-loading.rst
    /deployment/push*
    /deployment/sso-ldap*
    /deployment/auth*
-   /deployment/sso-saml.md
+   /deployment/sso-saml.rst
    /deployment/scaling*
    /deployment/cluster*
    /deployment/sso-gitlab*
@@ -59,7 +60,7 @@ Administration
    /administration/backup*
    /administration/upgrade.md
    /administration/migrating.md
-   
+
 Changelog
 =========
 
@@ -68,4 +69,3 @@ Changelog
    :glob:
 
    /administration/changelog*
-

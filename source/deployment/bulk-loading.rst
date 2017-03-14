@@ -1,0 +1,27 @@
+.. _bulk-loading:
+
+=================
+Bulk Loading Data
+=================
+
+Large quantities of data can be imported from a JSON file into Mattermost at the command line using the bulk loading feature. This feature is most suitable for migrating data from an existing messaging system, or for pre-populating a new installation with data.
+
+You can import the following data types:
+
+- Teams
+- Channels (Public & Private)
+- Users
+- Users' Team memberships
+- Users' Channel memberships
+- Posts (regular, non-reply posts)
+
+Importing Direct Message channels and importing additional types of posts are not yet supported.
+
+.. contents:: Contents
+  :backlinks: top
+  :local:
+  :depth: 2
+
+.. include:: bulk-loading-about.rst
+.. include:: bulk-loading-data.rst
+.. include:: bulk-loading-data-format.rst
