@@ -128,7 +128,6 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - After branching, the database version in sql_upgrade.go on master is set to the next scheduled release version (e.g. 3.6.0)
     - CI servers are updated to the release branch
     - Translation server is locked to the release branch
-    - Directory structure is reviewed and large changes posted to the Release Discussion channel
 8. PM:  
     - Merge changelog PR after team review is complete, and update the GitHub meta issue to include a link to the changelog on the documentation branch
     - Tweet announcement that RC1 is ready (see [example](https://pre-release.mattermost.com/core/pl/tefx1ijyz7bs8mabuxmpq9f7pw))
@@ -197,7 +196,7 @@ The final release is cut. If an urgent and important issue needs to be addressed
     - Verify all items in the last posted release checklist are complete, if not alert the release manager
 2. Build:
     - Tags a new release (e.g. 1.1.0) and runs an official build which should be essentially identical to the last RC 
-    - Posts SHA key and md5 sum of the final build to release channel
+    - Posts SHA key, md5 sum and GPG signatures of the final build to release channel
     - Post in Release Discussion with links to the EE and Team Edition bits
 3. PM:
     - Close GitHub meta ticket for the release
@@ -323,6 +322,7 @@ Once final dot release build is ready to cut:
         - Submit a PR to change version number in `docs/source/conf.py` against the `vX.X-documentation` branch
 5. Build
     - Put CI servers and translation server back onto master
+    - Update [ci-linux-mysql-prev](https://ci-linux-mysql-prev.mattermost.com) to the final release version
 6. Dev:
     - Delete RCs after final version is shipped    
     - Check if any libraries need to be updated for the next release, and if so bring up in weekly team meeting
