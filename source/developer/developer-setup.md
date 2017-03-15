@@ -8,7 +8,7 @@ If you run into any issues getting your environment set up, please check the Tro
 1. Install [Docker for Mac](https://docs.docker.com/docker-for-mac/)
 2. Add the following line to `/etc/hosts` 
   - `127.0.0.1 dockerhost`
-3. [Download Go 1.6](http://golang.org/dl/) (Go 1.5 and earlier is not supported) and Node.js using Homebrew.
+3. [Download Go 1.7](http://golang.org/dl/) and Node.js using Homebrew.
 	1. Download Homebrew from [http://brew.sh/](http://brew.sh/)
 	2. `brew install go`
 	3. `brew install node`
@@ -48,7 +48,7 @@ Any issues? Please let us know on our forums at: https://forum.mattermost.org/
 		- `127.0.0.1 dockerhost`
 3. Install build essentials
 	1. `apt-get install build-essential`
-4.  [Download Go 1.6](http://golang.org/dl/) (Go 1.5 and earlier is not supported).
+4. [Download Go 1.7](http://golang.org/dl/).
 5. Set up your Go workspace and add Go to the PATH
 	1. `mkdir ~/go`
 	2. Add the following to your `~/.bashrc`
@@ -91,7 +91,7 @@ Any issues? Please let us know on our forums at: http://forum.mattermost.org
 2. Set up your dockerhost address
 	1. Edit your /etc/hosts file to include the following line
 		`127.0.0.1 dockerhost`
-3. Install Go
+3. Install Go 1.7
 	1. `pacman -S go`
 4. Set up your Go workspace and add Go to the PATH
 	1. `mkdir ~/go`
@@ -142,7 +142,7 @@ Any issues? Please let us know on our forums at: http://forum.mattermost.org
         3. Run `docker-machine ip default` in the terminal to get `default` IP
         4. Add the line `<Docker-IP> dockerhost` to `C:\Windows\System32\drivers\etc\hosts` using a text editor with administrator privileges
 2. Download and install Node.js from [https://nodejs.org/](https://nodejs.org/)
-3. Download and install Go from [https://golang.org/dl/](https://golang.org/dl/) 
+3. Download and install Go 1.7 from [https://golang.org/dl/](https://golang.org/dl/)
 4. Fork Mattermost on GitHub.com from [https://github.com/mattermost/platform](https://github.com/mattermost/platform), then:
     1. `cd ~/go`  
     2. `mkdir -p src/github.com/mattermost`  
@@ -210,6 +210,12 @@ If you already have libpng installed through Homebrew, you can update it using
 ```
 brew update && brew upgrade libpng
 ```
+
+### Testing errors
+
+#### I get the following error when running `make test`: `t.Run undefined (type *testing.T has no field or method Run)`
+
+You need to upgrade to Go 1.7. We don't support earlier versions than that.
 
 ### Other errors 
 
