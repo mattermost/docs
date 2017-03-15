@@ -52,7 +52,7 @@ Working remote means it may take time before a person reads your message and res
 
 Communicate relevant information in the first message: 
 
-- Avoid "Are you free to talk?", instead use "Catch up on ulimit issue Customer X is having?"
+- Avoid "Are you free to talk?" and "`Can we talk about something at 3pm? <https://www.nytimes.com/2015/08/16/jobs/when-youre-in-charge-your-whisper-may-feel-like-a-shout.html?_r=0>`_", instead use "Can we speak about ulimit issue Customer X is having?"
 
 Write unambiguously: 
 
