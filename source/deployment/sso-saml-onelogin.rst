@@ -91,20 +91,20 @@ Configure SAML for Mattermost
   b. In the **Identity Provider Issuer URL** field, paste the value for the OneLogin *Issuer URL* that you copied earlier.
   c. In the **Identity Provider Public Certificate** field, upload the OneLogin X.509 PEM certificate file that you downloaded earlier.
 
-  .. image:: ../../source/images/okta_10_mattermost_basics.png
+  .. image:: ../../source/images/okta_10_mattermost_basics.PNG
 
 3. (Optional) Configure Mattermost to verify the signature.
   a. In the **Verify Signature** field, click **True**.
   b. In the **Service Provider Login URL**, enter ``https//<your-mattermost-url>/login/sso/saml``
 
-  .. image:: ../../source/images/okta_11_mattermost_verification.png
+  .. image:: ../../source/images/okta_11_mattermost_verification.PNG
 
 4. Enable encryption.
   a. In the **Enable Encryption** field, click **True**.
   b. In the **Service Provider Private Key** field, upload the private key that you generated earlier.
   c. In the **Service Provider Public Certificate** field, upload the public key that you generated earlier.
 
-  .. image:: ../../source/images/okta_12_mattermost_encryption.png
+  .. image:: ../../source/images/okta_12_mattermost_encryption.PNG
 
 5. Set attributes for the SAML Assertions, which are used for updating user information in Mattermost.
 
@@ -112,7 +112,7 @@ Configure SAML for Mattermost
 
   For Mattermost servers running version 3.3 and earlier, *FirstName* and *LastName* attributes are also required.
 
-  .. image:: ../../source/images/okta_13_mattermost_attributes.png
+  .. image:: ../../source/images/okta_13_mattermost_attributes.PNG
 
 6. (Optional) Customize the login button text.
 
