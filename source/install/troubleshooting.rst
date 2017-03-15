@@ -63,7 +63,7 @@ If email sign-in was turned off before the System Administrator switched sign-in
 Unable to play audio or video files on browser
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Your server may be mis-configured where the `MIME type <https://golang.org/pkg/mime/#TypeByExtension>`_ isn't set correctly. Try installing a media player or read the `related documentation <https://golang.org/pkg/mime/#TypeByExtension>`_ to add the missing mime types.
+Your server may be misconfigured where the MIME type isn't set correctly. Try installing a media player or read the `related documentation <https://golang.org/pkg/mime/#TypeByExtension>`_ to add the missing MIME types.
 
 YouTube videos show a "Video not found" preview
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
