@@ -177,7 +177,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under `ServiceSettings` in `config.json`:
    - Added `"RestrictPostDelete": all` to set who can delete messages
    - Added `"AllowEditPost": always` to set whether messages can be edited
-   - Added `"PostEditTimeLimit: 300` to set how long messages can be edited, if `"AllowEditPost": time_limit` is specified
+   - Added `"PostEditTimeLimit": 300` to set how long messages can be edited, if `"AllowEditPost": time_limit` is specified
    - Added `"ClusterLogTimeoutMilliseconds": 2000` to control frequency of cluster request time logging for [performance monitoring](https://docs.mattermost.com/deployment/metrics.html)
 
 ### Database Changes from v3.6 to v3.7
