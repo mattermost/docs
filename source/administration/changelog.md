@@ -2,10 +2,12 @@
 
 This changelog summarizes updates to [Mattermost Team Edition](http://www.mattermost.org/), an open source team messaging solution released bi-monthly under an MIT license, and [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/), a commercial upgrade offering enterprise messaging for large organizations.
 
-## Release v3.7.1
+## Release v3.7.2
 
 ### Notes on Patch Release
 
+ - **v3.7.2, release date TBD**
+   - Fixed an issue where the minimum username length on the server side was changed from 1 to 3, affecting accounts on LDAP, SAML and OAuth (GitLab, Google, Office365).
  - **v3.7.1, released 2017-03-16**
    - Fixed an issue where some [System Console > Policy settings](https://docs.mattermost.com/administration/config-settings.html#policy) were incorrectly applied to Team Edition, breaking the System Console UI
  - **v3.7.0, released 2017-03-16**
