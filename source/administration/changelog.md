@@ -6,12 +6,12 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 ### Notes on Patch Release
 
- - **v3.7.2, release date TBD**
-   - Fixed an issue where the minimum username length on the server side was changed from 1 to 3, affecting accounts on LDAP, SAML and OAuth (GitLab, Google, Office365).
+ - **v3.7.2, released 2017-03-17**
+   - Fixed an issue with LDAP, SAML, and OAuth logins where 1 and 2 character usernames displayed incorrectly
  - **v3.7.1, released 2017-03-16**
    - Fixed an issue where some [System Console > Policy settings](https://docs.mattermost.com/administration/config-settings.html#policy) were incorrectly applied to Team Edition, breaking the System Console UI
  - **v3.7.0, released 2017-03-16**
-   - Original 3.7 release.
+   - Original 3.7 release
 
 ### Security Update
 
