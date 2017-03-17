@@ -12,7 +12,7 @@ Install a production-ready Mattermost system on 1 to 3 machines.
   :backlinks: top
   :local:
   
-.. note:: If you have any issues with these installation instructions, `please see consult our troubleshooting forum. <https://www.mattermost.org/troubleshoot/>`_ 
+.. attention:: If you have any issues with these installation instructions, `please see consult our troubleshooting forum. <https://www.mattermost.org/troubleshoot/>`_ To submit and improvement or correction, use the "Edit" button at the top of this page. 
  
 .. include:: install-ubuntu-1404-server.rst
 .. include:: install-ubuntu-1404-mysql.rst
