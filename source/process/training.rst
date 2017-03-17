@@ -478,7 +478,7 @@ Courses
 
 Relevant Docs
 
-1. :doc:`/process/spec-review`
+1. :doc:`/design-process`
 
 System Security
 ^^^^^^^^^^^^^^^
