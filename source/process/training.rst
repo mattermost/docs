@@ -21,7 +21,7 @@ Hiring
 ---------------------------------------------------------
 
 - (People Ops & New Hire) Offer letter accepted via click-sign
-- (Logistics) Mail t-shirt & track jacket
+- (Logistics) Mail track jacket & socks 
 
 T-minus 1-3 weeks
 ---------------------------------------------------------
@@ -34,14 +34,24 @@ T-minus 1 week
 
 - (People Ops) Send email invite to New Hire to set up an @mattermost.com email address. New Hire should use this email address on pre-release.mattermost.com (replace personal email with company email if already registered there). `FIRST_NAME@mattermost.com` is the standard naming convention.
 
-- (People Ops & New Hire) Set up payroll. Non-US Employee/Non-Canada Employee, complete bank info form for monthly wire transfer.
+- (People Ops & New Hire) Set up payroll. 
+  - US FTE - Receive email to complete TriNet sign-up, payroll, benefits enrollment, I-9 form, banking information, personal information, tax forms.  
+  - Non-US Employee/Non-Canada Employee, complete bank info form for monthly wire transfer 
+  - Non-US Resident Contractor, complete W8-BEN form
+  - US Contractor, complete W-9 form
 
 First Day
 ---------------------------------------------------------
 
-- (Manager) Posts welcome message in stand-up channel
-- (Manager) Meets New Hire for first 1-1 meeting
-- (Buddy) Meets New Hire for first 1-1 meeting,
+- (Manager) Posts welcome message in stand-up channel.
+- (Manager) Meets New Hire for first 1-1 meeting.
+- (Buddy) Meets New Hire for first 1-1 meeting.
+- (People Ops) US FTE - Contact New Hire to verify work authorization and I-9.
+
+3 months 
+---------------------------------------------------------
+
+- (People Ops) US FTE - Email regarding 401K account set up.  
 
 ---------------------------------------------------------
 Meetings
