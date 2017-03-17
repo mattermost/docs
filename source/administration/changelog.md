@@ -206,10 +206,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - `POST` at `/channels/{channel_id}/update_member_roles` // XXX check with developer
   - Updates the user's roles in a channel
 
-**Removed routes (APIv3):**
-- `GET` at `/channels/more` (replaced by /`channels/more/{offset}/{limit}`)
-
 **Deprecated routes (APIv3):**
+- `GET` at `/channels/more` (replaced by /`channels/more/{offset}/{limit}`) to be removed in v3.8
 - `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`) to be removed in v3.8
 - `POST` at `/channels/set_last_viewed_at` (replaced by `/channels/view`) to be removed in v3.8
 - `POST` at `/users/status/set_active_channel` (replaced by `/channels/view`) to be removed in v3.8
