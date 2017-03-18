@@ -2,15 +2,15 @@
 Deployment Solution Programs 
 ================================================
 
-*This program is under development, please consider below a work-in-progress*
-
-Mattermost's **Deployment Solutions Programs** help IT administrators understand how Mattermost is being offered in third-party deployment solutions. 
+Mattermost's **Deployment Solutions Programs** help IT administrators understand how Mattermost is being offered in third-party deployment solutions, including other open source projects as well as in commercial solutions. 
 
 This is an optional program for third-party developers to increase awareness about their work and to enable Mattermost to refer its communities to different solutions. 
 
+Any person or any company interested in discussing deployment solutions with Mattermost can join the `Deployment Solutions discussion channel <https://pre-release.mattermost.com/core/channels/installers-and-images>`_ on the Mattermost community server to speak to peers and Mattermost community managers. 
+
 Deployment solutions are recognized by Mattermost at three-levels: 
 
-- **Community Deployment Solutions** - Basic orchestration solutions for Mattermost, typically from the open source community or hosting companies who let us know about their work. The work of partners is included in blog posts and on social media as a benefit to the user and customer communities. Community Orchestration Partners are invited to discuss their work in the Mattermost community site in the `Installers and Images channel <https://pre-release.mattermost.com/core/channels/installers-and-images>`_ 
+- **Community Deployment Solutions** - Basic orchestration solutions for Mattermost, typically from the open source community or hosting companies who let us know about their work. The work of partners is included in blog posts and on social media as a benefit to the user and customer communities. 
 
    Examples: 
 
@@ -18,7 +18,7 @@ Deployment solutions are recognized by Mattermost at three-levels:
    - `Heroku deployment solution for Mattermost <https://chrisdecairos.ca/deploying-mattermost-to-heroku/>`_ by Christopher De Cairos
 
 
-- **Registered Deployment Solutions** - Orchestration solutions that follow detailed Mattermost guidelines on keeping up-to-date with the latest Mattermost version and security updates (typically a one-line change), linking to official documentation, supporting branding guidelines, and maintaining a changelog. This level of engagement allows Mattermost to more prominently promote the work, knowing that it's committed to meeting explicit standards.
+- **Registered Deployment Solutions** - Orchestration solutions that follow detailed Mattermost guidelines on keeping up-to-date with the latest Mattermost version and security updates (typically a one-line change), linking to official documentation, supporting branding guidelines, and maintaining a changelog. This level of engagement allows Mattermost to more prominently promote the work, knowing that it's committed to meeting explicit standards. 
 
 
 - **Certified Deployment Solutions** - These solutions meet all the requirements of Registered Deployment Solutions, with the addition that they'll automate the version upgrade and security update processes (typically a one-line change). There is the added benefit that when Mattermost announces new versions and security updates, we can also announce the availability of updates to Certified Deployment Solutions. 
@@ -89,5 +89,5 @@ Branding
 Upgrade 
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-1. **Support upgrade of Mattermost**. Enable user interface or commandline upgrade of a Mattermost deployment to latest version based on upgrade guide instructions. 
+1. **Support upgrade of Mattermost**. Enable user interface or commandline upgrade of a Mattermost deployment to latest version based on `upgrade procedure when Mattermost is embedded <https://docs.mattermost.com/developer/integration-faq.html#how-should-i-automate-the-install-and-upgrade-of-mattermost-when-included-in-another-application>`_
 

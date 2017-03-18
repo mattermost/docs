@@ -3,7 +3,7 @@
 Here's how to engage with the Mattermost community: 
 
 - **Bugs** - [Search for existing bugs and file a GitHub issue if your bug is new](http://www.mattermost.org/filing-issues/). 
-- **Feature Ideas** - [Add a feature idea to be discussed or upvoted](http://www.mattermost.org/feature-requests/).
+- **Feature Ideas** - [Add a feature idea to be discussed or upvoted](https://www.mattermost.org/feature-ideas/).
 - **Troubleshoot** - [Search articles and add topic if issue is new](https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150).
 - **General discussion** - [Join the Mattermost Forum](https://forum.mattermost.org/t/welcome-to-the-mattermost-general-forum/8). 
 - **Contribute code** - Select tickets marked [Accepting Pull Requests](https://mattermost.atlassian.net/browse/PLT-2244?filter=10101) (APR) and follow [guidelines to contribute](http://docs.mattermost.com/developer/contribution-guide.html). Join the [APR channel](https://pre-release.mattermost.com/core/channels/tickets) to ask questions and discuss your work. 

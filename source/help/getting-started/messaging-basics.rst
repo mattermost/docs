@@ -4,7 +4,7 @@ Messaging Basics
 --------------
 
 **Write messages** using the text input box at the bottom of Mattermost.
-Press **ENTER** to send a message. Use **SHIFT+ENTER** to create a new
+Press ENTER to send a message. Use SHIFT+ENTER to create a new
 line without sending a message.
 
 **Reply to messages** by clicking the reply arrow next to the message

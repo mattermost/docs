@@ -49,11 +49,11 @@ Navigating to channels using the keyboard
 
 Another reason why channel names in Mattermost are limited to 22 characters is the common use of keyboard shortcuts to jump quickly to channels. 
 
-User use ``CTRL+K`` to bring up a dialog where they can quickly type in the first few letters of a channel, which triggers auto-complete, and hitting ``ENTER`` to jump to the channel directly. 
+User use CTRL+K to bring up a dialog where they can quickly type in the first few letters of a channel, which triggers auto-complete, and hitting ENTER to jump to the channel directly. 
 
 Keeping names clear and short lets users navigate large collections of channels quickly. 
 
-.. tip :: Use ``SHIFT+ALT+UP`` and ``SHIFT+ALT+DOWN`` to move up and down to the next channel with an unread message. 
+.. tip :: Use ALT+SHIFT+UP and ALT+SHIFT+DOWN to move up and down to the next channel with an unread message. 
 	
 ---------------------------------------------------
 How to organize channels

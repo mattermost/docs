@@ -57,7 +57,7 @@ Assume that the IP address of this server is 10.10.10.2
     b. Start the Mattermost server as the user mattermost:
       ``sudo -u mattermost ./platform``
    
-  When the server starts, it shows some log information and the text ``Server is listening on :8065``. You can stop the server by typing ``CTRL+C`` in the terminal window.
+  When the server starts, it shows some log information and the text ``Server is listening on :8065``. You can stop the server by pressing CTRL+C in the terminal window.
   
 8. Setup Mattermost to use the Upstart daemon which handles supervision of the Mattermost process.
 
@@ -73,7 +73,7 @@ Assume that the IP address of this server is 10.10.10.2
       stop on runlevel [016]
       respawn
       limit nofile 50000 50000
-      chdir /home/mattermost/mattermost
+      chdir /opt/mattermost
       setuid mattermost
       exec bin/platform
 

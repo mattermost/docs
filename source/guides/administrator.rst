@@ -1,7 +1,7 @@
 Administrator's Guide
 =====================
 
-In-depth documentation on installation, deployment and administration of Mattermost system. 
+In-depth documentation on installation, deployment and administration of Mattermost system.
 
 Installing Mattermost
 ---------------------
@@ -32,10 +32,11 @@ Deployment
    :glob:
 
    /deployment/on-boarding*
+   /deployment/bulk-loading.rst
    /deployment/push*
    /deployment/sso-ldap*
    /deployment/auth*
-   /deployment/sso-saml.md
+   /deployment/sso-saml.rst
    /deployment/scaling*
    /deployment/cluster*
    /deployment/sso-gitlab*
@@ -59,7 +60,7 @@ Administration
    /administration/backup*
    /administration/upgrade.md
    /administration/migrating.md
-   
+
 Changelog
 =========
 

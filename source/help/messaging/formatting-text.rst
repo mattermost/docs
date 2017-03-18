@@ -197,38 +197,76 @@ Renders as: ``monospace``.
 In-line Images
 --------------
 
-Create in-line images using an ``!`` followed by the alt text in square brackets and the link in normal brackets. Add hover text by placing it in quotes after the link.
+Add in-line images by using an exclamation mark followed by the alt text in square brackets then the URL of the image in round brackets. You can add hover text by placing the text in quotes after the link.
 
 .. code-block:: none
 
+**![** *{alt text}* **](** *{URL of image}*  "*{Hover text}* " **)**
 
-  ![alt text that shows when a link is broken](broken-link "hover text")
+If the height of the original image is more than 500 pixels, the system sets the height at 500 pixels and adjusts the width to maintain the original aspect ratio.
 
-  and
+You can set the width and height of the displayed image by using an equals sign and the width x height after the URL of the image. If you set only the width, the system adjusts the height to maintain the original aspect ratio.
 
-  [![Build Status](https://travis-ci.org/mattermost/platform.svg?branch=master)](https://travis-ci.org/mattermost/platform) [![Github](https://assets-cdn.github.com/favicon.ico)](https://github.com/mattermost/platform)
 
-Renders as:
+**Examples**:
 
-.. image:: https://docs.mattermost.com
-  :alt: alt text that shows when a link is broken
+.. |mattermost-icon-76x76| image:: ../../images/icon-76x76.png
+.. |mattermost-icon-50x76| image:: ../../images/icon-50x76.png
 
-and
+Inline image with hover text
+  .. code-block:: none
 
-.. image:: https://travis-ci.org/mattermost/platform.svg?branch=master
-  :alt: Build Status
-  :target: https://travis-ci.org/mattermost/platform
+    ![Mattermost](../../images/icon-76x76.png "Mattermost Icon")
 
-.. image:: https://assets-cdn.github.com/favicon.ico
-  :alt: GitHub
-  :target: https://github.com/mattermost/platform
+  Renders as:
+
+  .. raw:: html
+
+    <img src="../../_images/icon-76x76.png" alt="Mattermost" title="Mattermost Icon"></a>
+
+Inline image with link
+  Note the extra set of square brackets.
+
+  .. code-block:: none
+
+    [![Mattermost](../../images/icon-76x76.png)](https://github.com/mattermost/platform)
+
+  Renders as:
+
+  .. image:: ../../images/icon-76x76.png
+    :alt: Mattermost
+    :target: https://github.com/mattermost/platform
+
+Inline image displayed at 50 pixels wide and 76 pixels high
+  .. code-block:: none
+
+    ![Mattermost](../../images/icon-76x76.png =50x76 "Mattermost Icon")
+
+  Renders as:
+
+  .. raw:: html
+
+    <img alt="Mattermost" src="../../_images/icon-50x76.png" title="Mattermost Icon">
+
+Inline image displayed at 50 pixels wide and the height adjusted to suit
+  .. code-block:: none
+
+    ![Mattermost](../../images/icon-76x76.png =50 "Mattermost Icon")
+
+  Renders as:
+
+  .. raw:: html
+
+    <img src="../../_images/icon-76x76.png" alt="Mattermost" width="50px" title="Mattermost Icon"></a>
 
 Lines
 -----
 
 Create a line by using three ``*``, ``_``, or ``-``.
 
-``***`` renders as:
+``***``
+
+renders as:
 
 ---------------------------------------------------------------------------
 

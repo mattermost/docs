@@ -1,10 +1,10 @@
 Mattermost Developer's Guide
-----------------------------
+============================
 
-Detailed information on contributing to the Mattermost open source project. 
+Detailed information on contributing to the Mattermost open source project.
 
 Development Process
-===================
+-------------------
 
 .. toctree::
    :maxdepth: 2
@@ -12,6 +12,7 @@ Development Process
 
    /developer/contribution*
    /developer/developer-setup*
+   /developer/mobile-developer-setup.rst
    /developer/api*
    /developer/developer-flow*
    /developer/running-mattermost*
@@ -19,9 +20,16 @@ Development Process
    /developer/fx*
    /developer/localization-process.rst
 
+Definitions
+-----------
+
+.. toctree::
+
+  /process/definitions.rst
+
 
 Unofficial Enhancements
-=======================
+-----------------------
 
 Documentation on early previews and unofficial functionality
 

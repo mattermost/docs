@@ -13,7 +13,7 @@ When responding to issues:
 1. Identify what type of post it is:
 
   - Troubleshooting
-  - Feature Request
+  - Feature Proposal
   - Bug
   - Developer/Product Question
 
@@ -24,12 +24,12 @@ When responding to issues:
 
 3. Respond:
 
-  - Include a link to related documentation in your response (eg Jira ticket, feature request, etc.)
+  - Include a link to related documentation in your response (eg Jira ticket, feature proposal, etc.)
   - If there is no related documentation, write the documentation and include the link in your response:
 
     - For reproducible bugs, create a Jira ticket
     - For product questions or troubleshooting, update docs.mattermost.com if appropriate
-    - For feature requests, ask them to `create a feature request <https://www.mattermost.org/feature-ideas/>`_ and post the link back
+    - For feature proposals, ask them to `create a feature proposal <https://www.mattermost.org/feature-ideas/>`_ and post the link back
 
   - If appropriate, ask if the community member would be interested in contributing the feature / bug fix
 
@@ -54,8 +54,39 @@ The various community channels are outlined below, along with the responsibiliti
   - Community PM Responsibility:
 
     - Review the list for posts that haven’t been answered, and either reply (with help from dev if needed) or route to the appropriate person, following up to make sure a response is posted
+    
+2. `Contributors Channel <https://pre-release.mattermost.com/core/channels/tickets>`_: UserVoice Issues
 
-2. `Community Channel <https://pre-release.mattermost.com/core/channels/community>`_: GitHub Issues with Activity Older than 7 days
+  - Description:
+
+    - Ops Team @mentions the Community PM with a list that includes issues:
+
+      - where status requires updating
+      
+        - Under Review: After a ticket is created but the spec is not yet complete
+        - Planned: Jira ticket with a plan on how to build the feature
+        - Started: When it’s added to current sprint
+        - Help Wanted: Ticket that is open to any contributor wanting to work on the issue
+        - Completed: When ticket is resolved
+        - Declined: When the suggestion does not fit with the `product vision <https://www.mattermost.org/manifesto/>`_
+        
+      - where a PM might want to ask a question for clarification or ideas on how to design something
+      - where the requester specifies they want to work on the feature
+      - that are completed
+      
+    - Community PM Responsibility - Team Edition:
+    
+      - The PM who is release manager for the current release cycle will update the issues after release date.
+
+        - Thank you [NAME] for nominating the feature! It is available in Mattermost [X.Y]. Would anyone like to help re-tweet the announcement? [LINK TO TWEET]
+
+    - Sales Responsibility - Enterprise Edition:
+    
+      - Responds to the issues and closes them after release date.
+        
+      - Updates `Spreadsheet <https://docs.google.com/spreadsheets/d/1nljd4cFh-9MXF4DxlUnC8b6bdqijkvi8KHquOmK8M6E/edit#gid=0>`_ to track UserVoice issues to be announced in upcoming releases.
+
+3. `Contributors Channel <https://pre-release.mattermost.com/core/channels/tickets>`_: GitHub Issues with Activity Older than 7 days that have not been created by Mattermost staff
 
   - Description:
 
@@ -76,7 +107,7 @@ The various community channels are outlined below, along with the responsibiliti
 
     - Review the list and either reply (with help from dev if needed) or route to the appropriate person, following up to make sure a response is posted
 
-3. New GitHub Issues:
+4. New GitHub Issues:
 
   - Description:
 
@@ -88,9 +119,21 @@ The various community channels are outlined below, along with the responsibiliti
 
       - Bug Report: Try to reproduce, or ask another team member to reproduce
       - Troubleshooting: Request to move to forums
-      - Feature Request: Request to move to feature idea forums
+      - Feature Proposal: Request to move to feature idea forums
 
-4. Customer Zendesk Issues:
+4. Help Wanted GitHub Issues:
+
+ - Description:
+
+   - New GitHub Help Wanted issues are automatically created from JIRA tickets and are open for community contributions
+
+ - Community PM Responsibility:
+
+   - Review newly created Help Wanted issues for formatting and apply difficulty and language labels defined in the issue description by the triage team
+   - Respond to questions from community members, which get automatically posted in the `Community Heartbeat channel <https://pre-release.mattermost.com/core/channels/community-heartbeat>`_
+   - Follow up with a community member if there hasn't been a response for more than two weeks
+
+5. Customer Zendesk Issues:
 
   - Description:
 

@@ -4,15 +4,15 @@ Thank you for your interest in contributing to Mattermost. Here's the process:
 
 ## Choose a Ticket
 
-1. Choose a ticket from the [Help Wanted GitHub Issues](https://github.com/mattermost/platform/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20%5BHelp%20Wanted%5D) or the [Accepting Pull Requests](https://mattermost.atlassian.net/issues/?filter=10101) (APR Tickets) list.
+1. Choose a ticket from the [Help Wanted GitHub Issues](https://github.com/mattermost/platform/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20%5BHelp%20Wanted%5D) list.
     - Choose any ticket marked "Open", even if it's assigned, and comment to let people know you're working on it. 
     - If you're looking for a quick ticket, pick something from the [Good First Contribution](https://mattermost.atlassian.net/issues/?filter=10206) list instead.
 
 2. If you have questions post in [Mattermost forum](http://forum.mattermost.org/) or join the [Contributors](https://pre-release.mattermost.com/core/channels/tickets) channel and announce the ticket you'd like to work on so it can be assigned to you. 
 
-It's okay to submit PRs to fix obvious bugs or add small improvements, but anything that significantly changes behavior or user expectations [requires an APR ticket opened by the core team](http://docs.mattermost.com/process/accepting-pull-request.html) so that the change can be tested, documented and supported. 
+It's okay to submit PRs to fix obvious bugs or add small improvements, but anything that significantly changes behavior or user expectations [requires a Help Wanted issue opened by the core team](http://docs.mattermost.com/process/help-wanted.html) so that the change can be tested, documented and supported. 
 
-The best way to discuss opening an APR ticket with the core team is by [starting a conversation in the feature idea forum](http://www.mattermost.org/feature-requests/).
+The best way to discuss opening a Help Wanted ticket with the core team is by [starting a conversation in the feature idea forum](https://www.mattermost.org/feature-ideas/).
 
 ## Install Mattermost and set up a Fork
 
@@ -29,7 +29,7 @@ Once you have a ticket:
 Before submitting a pull request (PR), check that:  
 
 1. You’ve signed the [Contributor License Agreement](http://www.mattermost.org/mattermost-contributor-agreement/), so you can be added to the Mattermost [Approved Contributor List](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true).  
-2. Your change has an [APR Ticket](http://docs.mattermost.com/process/accepting-pull-request.html).
+2. Your change has a [Help Wanted ticket](http://docs.mattermost.com/process/help-wanted.html).
 3. Your code follows the [Mattermost Style Guide](http://docs.mattermost.com/developer/style-guide.html).  
 4. Unit tests are included for new server side functionality. 
 5. Strings in user interface are included in [.../i18n/en.json](https://github.com/mattermost/platform/blob/master/i18n/en.json) and [.../webapp/i18n/en.json](https://github.com/mattermost/platform/tree/master/webapp/i18n/en.json) localization files. Files for other languages will automatically be updated through the [Mattermost Translation Server](http://translate.mattermost.com) and do not need to be included in the pull request.
@@ -64,13 +64,18 @@ After submitting a PR, before it is merged:
         - Meets [UX guidelines](https://docs.mattermost.com/developer/fx-guidelines.html)
     - The Product Manager may come back with some bugs or UI improvements to fix before the pull request moves on to dev review.
 3. Dev review must pass
-    - Two developers will review the pull request and either give feedback or approve the PR.
+    - Two core committers will review the pull request and either give feedback or approve the PR.
     - Any comments will need to be addressed before the pull request is ready to merge.
 
 If you've included your mailing address in the signed [Contributor License Agreement](https://www.mattermost.org/mattermost-contributor-agreement/), you may receive a [Limited Edition Mattermost Mug](https://forum.mattermost.org/t/limited-edition-mattermost-mugs/143) as a thank you gift after your first pull request is merged. 
 
-### Approved Reviewers
+### Core Committers
 
-**Approved Dev reviewers include**: coreyhulen, crspeller, enahum, grundleborg, hmhealey, jwilander
+Core committers on Mattermost repositories consist of vetted core team members, including both community contributors as well as staff from Mattermost, Inc., who are trusted to review and merge PRs.
 
-**Approved PM reviewers include**: asaadmahmood, esethna, it33, jasonblais, lfbrock, yangchen1
+Repository: https://github.com/mattermost/platform
+
+- **Core committers include**: coreyhulen, crspeller, csduarte, enahum, grundleborg, hmhealey, jwilander
+
+- **Product managers include**: asaadmahmood, esethna, it33, jasonblais, lfbrock
+
