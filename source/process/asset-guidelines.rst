@@ -121,6 +121,7 @@ Feature Title
   - Sometimes the title needs to be non-standard, like "Gitter integration for Mattermost via Matterbridge"
 
 3. Title should be sentence case
+4. Short titles are better than longer titles
 
 Feature Creator
 ^^^^^^^^^^^^^^^^
@@ -158,6 +159,7 @@ Feature Representative Art
 
 11. Colored shading on the left pane should match the primary colors of the logo in the right pane
 12. Adjacent areas of light and dark should always have a separator, or have a shading so that the areas don't bleed into the background
+13. If a logo is used, ensure it follows the same guidelines from `Mattermost and Representative Logos`_ section
 
 Feature Screenshot
 ^^^^^^^^^^^^^^^^^^^
