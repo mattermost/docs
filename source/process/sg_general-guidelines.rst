@@ -3,7 +3,7 @@
 General Guidelines
 ==================
 
-The Mattermost documentation must be of high quality. It must be accurate and clear, and be presented with a style and tone that is appropriate for technical content. People who use Mattermost rely on the documentation to get their jobs done. We don't want to see an installation of Mattermost delayed because the documentation has an error or is difficult to understand.
+The Mattermost documentation must be of high quality. It must be accurate and clear, and be presented with a style and tone that is appropriate for technical content.
 
 Style Guide Applicability
 -------------------------
@@ -16,7 +16,7 @@ Apply the style guide in the following situations:
 - when you convert a document from Markdown to reStructuredText
 - when you revise a document
 
-When you revise a document, apply the style guide rules to the part that you changed. If you have time to update the rest of the document, then do so. If updating the style for an entire document impacts a release, or if the scope is significantly greater than you originally anticipated, then do what you can and what makes sense, and then create an `issue in GitHub <https://github.com/mattermost/docs/issues>`_. Give the issue an appropriate title, such as *File XXX converted to .rst, but needs updating for style guide*.
+When you revise a document, apply the style guide rules to the part that you changed. If you have time to update the rest of the document, then do so. If the scope is significantly greater than you originally anticipated, then do what you can and what makes sense, and then create an `issue in GitHub <https://github.com/mattermost/docs/issues>`_. Give the issue an appropriate title, such as *File XXX converted to .rst, but needs updating for style guide*.
 
 Write in the Context of Achievement
 -----------------------------------
@@ -31,7 +31,7 @@ Write to Facilitate Scanning
 
 Readers need to find information quickly. People don't read documentation as much as they scan it for solutions to their immediate problem. Writing and presentation styles that seem redundant in essays or other texts are often helpful to people scanning for information.
 
-Use headings, lists, and emphasis
+Use Headings, Lists, and Emphasis
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Format text to give a visual hierarchy that allows readers to see the overall content of the page by scanning it. Use headings, lists, and emphasis to signal importance. Headings should summarize the topic of the underlying information so that when readers scan a page, they can get an accurate picture of the contents.
@@ -61,14 +61,14 @@ Word Usage Guidelines
 
 To promote consistency and clarity, follow the word usage and spelling guidelines in the following list.
 
-login, log in
-  Use *login* as a noun or adjective, and *log in* as a verb. For example: *Use the login credentials that you received to log in to Mattermost.*
+login, log in, log into
+  Use *login* as a noun or adjective, and *log in* and *log into* as verbs. For example: *Log into the Mattermost server using your System Admin login credentials.*
 
 setup, set up
   Use *setup* as a noun or adjective, and *set up* as a verb. For example: *Set up your operating system as described in the Ubuntu documentation.*
 
-sign-in, sign in
-  Use *sign-in* as a noun or adjective, and *sign in* as a verb.
+sign-in, sign in, and sign into
+  Use *sign-in* as a noun or adjective, and *sign in* and *sign into* as verbs. For example: *Sign into your Mattermost account using the sign-in credentials that were sent to you.*
 
 single sign-on
   Single sign-on is abbreviated as SSO. When using the long form in a heading with title case, it's *Single Sign-on*.
