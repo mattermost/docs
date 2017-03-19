@@ -27,7 +27,11 @@ Top 10 reasons to work for Mattermost:
 Working Remotely 
 ----------------------------------------------------------
 
-We're headquartered in Palo Alto, California, and like many open source companies a large portion of Mattermost, Inc. works remotely from around the world. 
+  "Commutes are horrible. The number one correlator to job satisfaction is commute time."
+
+  --`Marc Andreessen <https://youtu.be/P-T2VAcHRoE?t=28m20s>`_ 
+
+Mattermost, Inc. is headquartered in Palo Alto, California, and like many open source companies a large portion of Mattermost, Inc. works remotely from around the world.
 
 This gives us tremendous advantages: 
 
