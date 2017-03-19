@@ -47,9 +47,7 @@ We run as a distributed, high performance team using a few principles:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Working from anywhere means more time with loved ones, no commute, and controlling everything about your workspace. 
 
-The one requirement is having a strong internet connection for occassional video or audio conferences. Ethernet connections are preferred over Wifi, since Wifi can have interference. 
-
-The `CRS Video Conference Bandwidth Speed Tool <http://speed.conferenceroomsystems.com/>`_ can be used to check your internet speed. 
+The one requirement is having a strong internet connection for occassional video or audio conferences. Ethernet connections are preferred over Wifi, since Wifi can have interference. Recommended download/upload speeds should be 8 Mbps/512 kbps for smooth group calling and screensharing, with a bare minimum of 4 Mbps / 128 kbps. The `CRS Video Conference Bandwidth Speed Tool <http://speed.conferenceroomsystems.com/>`_ can be used to check your internet speed. 
 
 2) Be explicit 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
