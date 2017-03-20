@@ -215,7 +215,6 @@ The final release is cut. If an urgent and important issue needs to be addressed
         - For Yunohost, open a new pull request to update the version. See [example](https://github.com/kemenaran/mattermost_ynh/pull/11).
         - For OpenShift, open a new pull request to update the version. See [example](https://github.com/goern/mattermost-openshift/pull/13).
     - Update [MVP page](https://www.mattermost.org/mvp/) with the most valuable contributor of the release
-    - Update [Docker preview image to latest version](https://github.com/mattermost/mattermost-docker-preview/commit/1c34195d70b26bd4c82b5ef4fa0ebaf421096881)
     - Submit PR to update [/mattermost-docker](https://github.com/mattermost/mattermost-docker/commit/782129450e9577a8966e5ddea18a1a4cdecdfd7f) image to latest release
 5. Docs:
     - Add the download links, SHA key and md5 sum to [upgrade guide](http://docs.mattermost.com/administration/upgrade.html#version-archive)
