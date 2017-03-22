@@ -79,7 +79,7 @@ Integration or Feature Promotion
 1. Use this `template <https://www.dropbox.com/s/9o6c331u815mflp/20160118_spanish.tif?dl=0>`_ as a starting point
 2. Change text in the "title" layer following the guidelines in `Feature Title`_
 3. Change text in the "by cburns" layer to replace the name with appropriate creator name following the guidelines in `Feature Creator`_
-4. Change the contents of the "Left Image" layer to update representative art following the guidelines in `Representative Art for Feature`_
+4. Change the contents of the "Left Image" layer to update representative art following the guidelines in `Feature Representative Art`_
 5. Change the contents in the "right image" layer to update representative logo(s) following the guidelines in `Mattermost and Representative Logos`_
 6. Save the finished asset draft in both .TIF and .PNG format, and upload to your "Dropbox Share" folder
 
@@ -134,7 +134,7 @@ Feature Representative Art
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Representative art appears in the left pane of the asset
-2. Screenshot of a feature in action is most preferred (see guidelines for Feature Screenshot here) // XXX Needs relative link
+2. Screenshot of a feature in action is most preferred (see guidelines for `Feature Screenshot`_ here)
 3. If no feature screenshot is available, take a screenshot of a well-formatted "README" file or of feature code with the word "Mattermost"
 
   - If using a "README" file, ensure the screenshot doesn't highlight spelling or capitalization errors
