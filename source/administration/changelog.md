@@ -2,7 +2,7 @@
 
 This changelog summarizes updates to [Mattermost Team Edition](http://www.mattermost.org/), an open source team messaging solution released bi-monthly under an MIT license, and [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/), a commercial upgrade offering enterprise messaging for large organizations.
 
-## Release v3.7.2
+## Release v3.7.3
 
 ### Notes on Patch Release
 
