@@ -101,12 +101,12 @@ Private cloud enterprise communications server.
 
 -------
 
-- Mattermost Enterprise Edition v3.7.2 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-7-2) - [Download](https://releases.mattermost.com/3.7.2/mattermost-3.7.2-linux-amd64.tar.gz)
-  - `https://releases.mattermost.com/3.7.2/mattermost-3.7.2-linux-amd64.tar.gz`
-  - SHA-256 Checksum: `75a651ac3e30482673c9a7bc8d9e1c09c6defa68647446f7cc59abffd44744ef`
-- Mattermost Enterprise Edition v3.6.2 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-6-2) - [Download](https://releases.mattermost.com/3.6.2/mattermost-3.6.2-linux-amd64.tar.gz)
-  - `https://releases.mattermost.com/3.6.2/mattermost-3.6.2-linux-amd64.tar.gz`
-  - SHA-256 Checksum: `f337f0eea50225de16a160af26dac94331c900c50ea6a72ecc5e7a890729b12a`
+- Mattermost Enterprise Edition v3.7.3 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-7-3) - [Download](https://releases.mattermost.com/3.7.3/mattermost-3.7.3-linux-amd64.tar.gz)
+  - `https://releases.mattermost.com/3.7.3/mattermost-3.7.3-linux-amd64.tar.gz`
+  - SHA-256 Checksum: `484bb9eea7be5059e923782e56e23e719136c74fe56817f8200bc1dbf79ad273`
+- Mattermost Enterprise Edition v3.6.5 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-6-5) - [Download](https://releases.mattermost.com/3.6.5/mattermost-3.6.5-linux-amd64.tar.gz)
+  - `https://releases.mattermost.com/3.6.5/mattermost-3.6.5-linux-amd64.tar.gz`
+  - SHA-256 Checksum: `9fe0fe552eda7e6cb0ba87fea45945ff1193a54618ced32cce107212b6057534`
 - Mattermost Enterprise Edition v3.5.1 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-5-1) - [Download](https://releases.mattermost.com/3.5.1/mattermost-3.5.1-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/3.5.1/mattermost-3.5.1-linux-amd64.tar.gz`
   - SHA-256 Checksum: `b972ac6f38f8b4c4f364e40a7c0e7819511315a81cb38c8a51c0622d7c5b14a1`
@@ -141,12 +141,12 @@ Open source self-hosted team communication server compiled by Mattermost, Inc, a
 
 -------
 
-- Mattermost Team Edition v3.7.2 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-7-2) - [Download](https://releases.mattermost.com/3.7.2/mattermost-team-3.7.2-linux-amd64.tar.gz)
-  - `https://releases.mattermost.com/3.7.2/mattermost-team-3.7.2-linux-amd64.tar.gz`
-  - SHA-256 Checksum: `9d6eb161834af25d2902d1184ef2d56b43454fc78378c304b9d5e868fa6a6c20`
-- Mattermost Team Edition v3.6.2 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-6-2) - [Download](https://releases.mattermost.com/3.6.2/mattermost-team-3.6.2-linux-amd64.tar.gz)
-  - `https://releases.mattermost.com/3.6.2/mattermost-team-3.6.2-linux-amd64.tar.gz`
-  - SHA-256 Checksum: `4b3fb74f81e56764d8d91e6ec67a79ff39c85b354ff15648f5b04a8bfceec8f1`
+- Mattermost Team Edition v3.7.3 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-7-3) - [Download](https://releases.mattermost.com/3.7.3/mattermost-team-3.7.3-linux-amd64.tar.gz)
+  - `https://releases.mattermost.com/3.7.3/mattermost-team-3.7.3-linux-amd64.tar.gz`
+  - SHA-256 Checksum: `c1a2585a1c4742070e71d94220b70cdfc72fd77e53cc693c0c47e283727f83ff`
+- Mattermost Team Edition v3.6.5 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-6-5) - [Download](https://releases.mattermost.com/3.6.5/mattermost-team-3.6.5-linux-amd64.tar.gz)
+  - `https://releases.mattermost.com/3.6.5/mattermost-team-3.6.5-linux-amd64.tar.gz`
+  - SHA-256 Checksum: `62ceb2a097013a80113096e8df36c3bb8986561dc7929ad4dac72e3c582dfed9`
 - Mattermost Team Edition v3.5.1 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-5-1) - [Download](https://releases.mattermost.com/3.5.1/mattermost-team-3.5.1-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/3.5.1/mattermost-team-3.5.1-linux-amd64.tar.gz`
   - SHA-256 Checksum: `2c6bc8b1c25e48d1ac887cd6cbef77df1f80542127b4d98c4d7c0dfbfade04d5`

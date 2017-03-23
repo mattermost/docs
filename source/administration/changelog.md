@@ -2,7 +2,7 @@
 
 This changelog summarizes updates to [Mattermost Team Edition](http://www.mattermost.org/), an open source team messaging solution released bi-monthly under an MIT license, and [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/), a commercial upgrade offering enterprise messaging for large organizations.
 
-## Release v3.7.2
+## Release v3.7.3
 
 ### Notes on Patch Release
 
@@ -281,12 +281,18 @@ Many thanks to all our contributors. In alphabetical order:
 
 - [coreyhulen](https://github.com/coreyhulen), [crspeller](https://github.com/crspeller)
 
-## Release v3.6.2
+## Release v3.6.5
 
 ### Notes on Patch Release
 
+ - **v3.6.5, released 2017-03-23**
+   - Fixed a high severity security issue, and [upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/)
+ - **v3.6.4, released 2017-03-16**
+   - Fixed an issue where some [System Console > Policy settings](https://docs.mattermost.com/administration/config-settings.html#policy) were incorrectly applied to Team Edition, breaking the System Console UI
+ - **v3.6.3, released 2017-03-16**
+   - Fixed a security issue, and [upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/)
  - **v3.6.2, released 2017-01-31**
-   - Fixed a high severity security issue, [upgrade](http://docs.mattermost.com/administration/upgrade.html) is highly recommended (details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/))
+   - Fixed a high severity security issue, and [upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/)
    - Improved performance of web sockets and typing messages
    - Note: Some deployments using multiple URLs to reach Mattermost via proxy forwarding are reporting issues with the security fix in 3.6.2. [The issue is being tracked in our ticketing system](https://mattermost.atlassian.net/browse/PLT-5635).
  - **v3.6.1, released 2017-01-19**
