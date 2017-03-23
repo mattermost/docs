@@ -6,6 +6,9 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 ### Notes on Patch Release
 
+ - **v3.7.3, released 2017-03-23**
+   - Fixed a high severity security issue, and [upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/)
+   - Fixed an issue with telemetry data collection
  - **v3.7.2, released 2017-03-17**
    - Fixed an issue with LDAP, SAML, and OAuth logins where 1 and 2 character usernames displayed incorrectly
  - **v3.7.1, released 2017-03-16**
