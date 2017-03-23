@@ -37,14 +37,14 @@ Examples of uses for the plugin architecture include:
 
 1. Building common integrations such as Jira and Github, and including them as default integrations for Mattermost
 
-	.. image:: ../../source/images/developer-toolkit-jira.PNG
+	.. image:: ../../source/images/developer-toolkit-jira.png
 
 2. Providing tools to interact with user posts
 
-	.. image:: ../../source/images/developer-toolkit-map.PNG
+	.. image:: ../../source/images/developer-toolkit-map.png
 
 3. Redesigning the current video and audio calling to use the plugin architecture, and offering it as one of many video and audio calling solutions
 
 4. Incorporating other third-party applications such as annual performance reviews right from the Mattermost interface
 
-	.. image:: ../../source/images/developer-toolkit-appcenter.PNG
+	.. image:: ../../source/images/developer-toolkit-appcenter.png
