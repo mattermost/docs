@@ -60,11 +60,6 @@ Locked out of System Administrator account
 
 If email sign-in was turned off before the System Administrator switched sign-in methods, sign up for a new account and promote it to System Administrator from the command line.
 
-Unable to play audio or video files on browser
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Your server may be misconfigured where the MIME type isn't set correctly. Try installing a media player or read the `related documentation <https://golang.org/pkg/mime/#TypeByExtension>`_ to add the missing MIME types.
-
 YouTube videos show a "Video not found" preview
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
