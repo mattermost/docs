@@ -31,3 +31,5 @@ Documentation on early previews and unofficial functionality
 
    /install/prod-windows-2012*
    /deployment/webrtc*
+   /developer/toolkit*
+   
