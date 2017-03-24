@@ -85,9 +85,11 @@ NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory
 
   By default, the Mattermost server accepts connections on port 8065 from every machine on the network. You should make sure that Mattermost accepts connections on port 8065 only from the machine that hosts NGINX.
 
+  If you are setting up a high availability cluster, you might prefer to use a solution other than the one described here. Using either routing tables, security groups, or IPsec allows you to access the System Console on port 8065 when `Updating Configuration Changes While Operating Continuously <../deployment/cluster.html#updating-configuration-changes-while-operating-continuously>`_.
+
   a. On the Mattermost server, open ``config.json`` as root in a text editor. The default location of ``config.json`` is ``/opt/mattermost/config/config.json``.
 
-  b. Locate the line ``"ListenAddress": ":8065",`` and change it to ``"ListenAddress": "{IP-address}:8065",`` where *{IP-address}* is the address or domain name of the machine that hosts NGINX. For example, if NGINX and Mattermost are on the same machine, change the line to ``"ListenAddress": "localhost:8065",``
+  b. Locate the line ``"ListenAddress": ":8065",`` and change it to ``"ListenAddress": "{IP-or-domain}:8065",`` where *{IP-or-domain}* is the IP address or the domain name of the machine that hosts NGINX. For example, if NGINX and Mattermost are on the same machine, change the line to ``"ListenAddress": "localhost:8065",``
 
   c. Restart the Mattermost server for the changes to take effect.
 
