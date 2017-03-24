@@ -71,13 +71,9 @@ NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory
 
 6. Restart NGINX.
 
-  On Ubuntu 14.04 and RHEL 6.6:
+  On Ubuntu 14.04 and RHEL 6.6: ``sudo service nginx restart``
 
-  ``sudo service nginx restart``
-
-  On Ubuntu 16.04 and RHEL 7.1:
-
-  ``sudo systemctl restart nginx``
+  On Ubuntu 16.04 and RHEL 7.1: ``sudo systemctl restart nginx``
 
 7. Verify that you can see Mattermost through the proxy.
 
@@ -94,6 +90,9 @@ NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory
   b. Locate the line ``"ListenAddress": ":8065",`` and change it to ``"ListenAddress": "{IP-address}:8065",`` where *{IP-address}* is the address or domain name of the machine that hosts NGINX. For example, if NGINX and Mattermost are on the same machine, change the line to ``"ListenAddress": "localhost:8065",``
 
   c. Restart the Mattermost server for the changes to take effect.
-    ``sudo systemctl restart mattermost``
+
+    On Ubuntu 14.04 and RHEL 6.6: ``sudo service mattermost restart``
+
+    On Ubuntu 16.04 and RHEL 7.1: ``sudo systemctl restart mattermost``
 
 Now that NGINX is installed and running, you can configure it to use SSL, which allows you to use HTTPS connections and the HTTP/2 protocol.
