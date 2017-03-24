@@ -13,9 +13,9 @@ NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory
   ``sudo touch /etc/nginx/sites-available/mattermost``
 
 3. Open the file ``/etc/nginx/sites-available/mattermost`` as root in a text editor and replace its contents, if any, with the following lines. Make sure that you use your own values for the Mattermost server IP address and FQDN for *server_name*.
-  
+
   .. code-block:: none
-  
+
     upstream backend {
        server 10.10.10.2:8065;
     }
@@ -72,19 +72,28 @@ NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory
 6. Restart NGINX.
 
   On Ubuntu 14.04 and RHEL 6.6:
-  
+
   ``sudo service nginx restart``
-  
+
   On Ubuntu 16.04 and RHEL 7.1:
-  
+
   ``sudo systemctl restart nginx``
 
 7. Verify that you can see Mattermost through the proxy.
 
   ``curl http://localhost``
-  
+
   If everything is working, you will see the HTML for the Mattermost signup page.
 
-**What to do next**
+8. Make sure that Mattermost accepts connections only from the proxy.
 
-You can configure NGINX to use SSL, which allows you to use HTTPS connections and the HTTP/2 protocol.
+  By default, the Mattermost server accepts connections on port 8065 from every machine on the network. You should make sure that Mattermost accepts connections on port 8065 only from the machine that hosts NGINX.
+
+  a. On the Mattermost server, open ``config.json`` as root in a text editor. The default location of ``config.json`` is ``/opt/mattermost/config/config.json``.
+
+  b. Locate the line ``"ListenAddress": ":8065",`` and change it to ``"ListenAddress": "{IP-address}:8065",`` where *{IP-address}* is the address or domain name of the machine that hosts NGINX. For example, if NGINX and Mattermost are on the same machine, change the line to ``"ListenAddress": "localhost:8065",``
+
+  c. Restart the Mattermost server for the changes to take effect.
+    ``sudo systemctl restart mattermost``
+
+Now that NGINX is installed and running, you can configure it to use SSL, which allows you to use HTTPS connections and the HTTP/2 protocol.
