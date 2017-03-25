@@ -26,3 +26,25 @@ The work of the Mattermost open source project is governed by key principles:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 "Anywhere office" means team members should be able to access the software across web, mobile and PC from wherever you are (eventually offline as well). "Empowering trusted team" means enabling people to achieve what the team needs without limits or monitoring. Features needed to enforce corporate policy (e.g. sophisticated permissions, etc.), degrade the team experience and aren't included. 
+
+2. Primary, not secondary
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The purpose of Mattermost is to become the primary way a team communicates. It's for vital conversations that "matter most". Deployment as a secondary system, where not everyone in a team can be reached, fails to achieve the software's purpose. Because of this we don't offer email as a Mattermost interface (impoverished experience). Also, while you can use your Mattermost account to sign-in to other apps via features like OAuth2 provider support, we don't offer SSO into Mattermost from another account [1]. 
+
+[1] There is an exception with GitLab SSO, which is a legacy feature from an early partnership. 
+
+3. Private cloud alternative
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Your vital communications stay behind your firewall, on infrastructure you control. We should constantly invest in simplifying install and maintenance to eventually create a fully-automated "private SaaS" deployment model that is extremely easy to administer and 100% under your control. 
+
+Mattermost Team Edition is focused on private cloud deployment over public web because we believe: a) public web security threats are constantly escalating, b) admins don't always have time to apply security updates, c) Mattermost contains your most important communications. 
+
+4. Minimalist
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Minimalism is providing just the right amount of functionality and not more and not less. Make decisions instead of providing options. Every time you present an option, you force the user to make a decision which can lead to frustration if it's not for the majority of users. Great design is about doing important things extremely well, and not many things poorly. 
+
+That said, Mattermost should offer APIs, drivers, and a plug-in architecture that enables a wide range of add-on functionality aligned with Mattermost design principles. 
+
