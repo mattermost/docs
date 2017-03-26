@@ -17,10 +17,12 @@ Lesson learned, the company started using messaging software they'd developed fo
 
 Because of how we started, we're committed to never allowing commercial versions of Mattermost to lock in user's data--organizations using Mattermost must always have full access to their information and be able to downgrade to the open source version to continue accessing their information. 
 
-Design Principles 
-------------------
+Stewardship Principles for the Mattermost Open Source Project  
+------------------------------------------------------------------
 
-The work of the Mattermost open source project is governed by key principles: 
+Mattermost, Inc. is for-profit company that balances the need to improve the open source `Mattermost Team Edition <https://docs.mattermost.com/overview/product.html#mattermost-editions>`_ for teams with the need to add improvements to our commercial `Mattermost Enterprise Edition <https://docs.mattermost.com/overview/product.html#mattermost-editions>`_ to generate income through subscriptions. 
+
+We want both products to be outrageously successful for teams and enterprises respectively. The following stewardship principles for our open source work helps keep our intent and purpose clear: 
 
 1. Anywhere office empowering trusted teams
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -37,9 +39,9 @@ The purpose of Mattermost is to become the primary way a team communicates. It's
 3. Private cloud alternative
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Your vital communications stay behind your firewall, on infrastructure you control. We should constantly invest in simplifying install and maintenance to eventually create a fully-automated "private SaaS" deployment model that is extremely easy to administer and 100% under your control. 
+Your vital communications stay behind your firewall, on infrastructure you control in single-tenant deployment. We are an alternative to multi-tenant, public SaaS models requiring organizations to give up control, privacy and visibility. As a solution we should continually invest in simplifying install and maintenance to eventually create a fully-automated "private SaaS" deployment model that is extremely easy to administer. 
 
-Mattermost Team Edition is focused on private cloud deployment over public web because we believe: a) public web security threats are constantly escalating, b) admins don't always have time to apply security updates, c) Mattermost contains your most important communications. 
+Mattermost Team Edition is focused on private cloud deployment over public web because we believe: a) public web security threats are constantly escalating, and b) it's difficult for admins to apply security updates immediately, and firewalls help keep infrastructure safe.
 
 4. Minimalist
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -47,4 +49,23 @@ Mattermost Team Edition is focused on private cloud deployment over public web b
 Minimalism is providing just the right amount of functionality and not more and not less. Make decisions instead of providing options. Every time you present an option, you force the user to make a decision which can lead to frustration if it's not for the majority of users. Great design is about doing important things extremely well, and not many things poorly. 
 
 That said, Mattermost should offer APIs, drivers, and a plug-in architecture that enables a wide range of add-on functionality aligned with Mattermost design principles. 
+
+5. Quick Time-to-Value 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Great software works quickly. Ideally, a novice IT admin should be able to setup Mattermost and roll it out to their team in just a few minutes. We should automate as much as possible in a standard install, ask as few technical questions as possible, and provide full explanations for any decisions an IT admin or end user needs to make. 
+
+6. No surprises 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Users should never run into anything unexpected with Mattermost. We ship on time and document our features and product changes. Users should be able to know well in advance what is included, not included and changed in upcoming versions. 
+
+7. Never locked-in 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost software, whether open source or commercial, should never withhold an organization's data from the organization. Commercial versions of Mattermost should always offer the ability to downgrade to open source version without loss of access to data. 
+
+-----
+
+These principles were inspired by Wordpress Philosophy and GitLab's - https://wordpress.org/about/philosophy/
 
