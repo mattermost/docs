@@ -14,6 +14,20 @@ Why does the open source repository contain code specific to the commercial vers
 
     The commercial version of Mattermost is designed to never lock-in your data. Portions of the commercial version are shared with the open source version to ensure upgrade and downgrade across editions happens without data loss. 
 
+
+Mobile Applications
+-------------------
+
+Are push notifications free? 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Yes, push notifications are free if you compile your own push-proxy service. Push notifications are also free if you use the hosted Test Push Notification Service (TPNS) provided by Mattermost, Inc. 
+
+TPNS doesn't offer transport-level encryption, so if you choose this option we recommend you configure your system to not include message contents in push notifications. 
+
+If you need encrypted transport for push notifications, you can either compile your own push-proxy service, with your own key, or you can become a Mattermost Enterprise Edition E10 subscriber, where you can use a production-level Hosted Push Notification Service offering transport-level encryption. 
+
+Learn more about `our mobile apps and push notification service <https://docs.mattermost.com/deployment/push.html>`_. 
+
 Enterprise Edition
 ------------------
 
