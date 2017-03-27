@@ -1,5 +1,5 @@
-Frequently Asked Questions 
-==========================
+Frequently Asked Questions (FAQ) 
+=================================
 
 General Questions 
 -----------------
@@ -91,10 +91,10 @@ Not yet. You can `upvote the feature proposal online <https://mattermost.uservoi
 Business Questions 
 ------------------
 
-How can I build my own commercial solution using Mattermost? 
+How can I create a derivative work of Mattermost as my own commercial solution? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is broad question with many topics: 
+This is broad question with many topics, here are a few: 
 
 Security
 
@@ -102,11 +102,11 @@ Security
 
 Enterprise Edition partnership 
 
-- To build your own commercial solution reselling Mattermost Enterprise Edition please `contact us <https://about.mattermost.com/contact/>`_ and let us know what you're considering. 
+- To build your own commercial solution reselling Mattermost Enterprise Edition please `contact us <https://about.mattermost.com/contact/>`_ and let us know what you're considering. Strategic partnerships that won't confuse customers are the most favored. 
 
 Re-branding 
 
-- When you create a derivative version of Mattermost and share it with others, you need to replace the Mattermost name and logo from the system per the `Mattermost trademark policy. <https://www.mattermost.org/trademark-standards-of-use/>`_ 
+- When you create a derivative version of Mattermost and share it with others, you need to replace the Mattermost name and logo from the system, among other requirements, per the `Mattermost trademark policy. <https://www.mattermost.org/trademark-standards-of-use/>`_ 
 - In Enterprise Edition you can re-brand your system using convenience tools for `custom branding <https://docs.mattermost.com/administration/config-settings.html#customization>`_. 
 - For advanced whitelabelling, and to whitelabel in Team Edition under MIT license without Enterprise Edition branding tools, you can manually update files on the Mattermost server `per product documentation. <https://github.com/mattermost/docs/issues/1006>`_  
 
@@ -114,4 +114,8 @@ Using /platform open source code
 
 - Creating a solution using the open source Mattermost /platform repo requires a) compliance with licenses in the repo, including `NOTICE.txt <https://github.com/mattermost/platform/blob/master/NOTICE.txt>`_, and b) the solution remain open source, `per our licensing policy <https://www.mattermost.org/licensing/>`_.
 
+Other considerations: 
 
+- Mattermost has a default `Conditions of Use <https://docs.mattermost.com/administration/config-settings.html#terms-of-service-link>`_ agreement for the Terms of Service link at the bottom of login screen that should be incorporated into any additional Terms of Use you may add. 
+- The Mattermost copyright notice on the user interface should remain. 
+- There may be additional legal and regulatory issues to consider and we recommend you employ legal council to fully understand what's involved in creating and selling a derivative work. 
