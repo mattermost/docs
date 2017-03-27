@@ -117,5 +117,5 @@ Using /platform open source code
 Other considerations: 
 
 - Mattermost has a default `Conditions of Use <https://docs.mattermost.com/administration/config-settings.html#terms-of-service-link>`_ agreement for the Terms of Service link at the bottom of login screen that should be incorporated into any additional Terms of Use you may add. 
-- The Mattermost copyright notice on the user interface should remain. 
+- The Mattermost copyright notices on the user interface should remain. 
 - There may be additional legal and regulatory issues to consider and we recommend you employ legal council to fully understand what's involved in creating and selling a derivative work. 
