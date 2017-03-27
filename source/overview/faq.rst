@@ -55,13 +55,12 @@ How does Mattermost scale from teams to enterprises?
 
     For more information on how Mattermost scales, technically and functionally, please `contact the Enterprise team <https://about.mattermost.com/contact/>`_ and `read about scaling for Enterprise <https://docs.mattermost.com/deployment/scaling.html>`_.
 
-Can I use Mattermost Enterprise Edition as a means for customer service? 
+Can I use Mattermost for customer service? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Mattermost Enterprise Edition is designed for self-hosted, enterprise-grade communication. It is not recommended for primarily providing customer service or customer support, and does not offer a licensing model nor technical advice for this use case. 
 
 You are welcome to use the open source Mattermost Team Edition and its extensive API library to build your own solution. 
 
+Mattermost Enterprise Edition is designed for self-hosted, enterprise-grade communication. It is not recommended for primarily providing customer service or customer support, and does not currently offer a licensing model nor technical advice for this use case. 
 
 Integration
 ------------------
@@ -87,3 +86,32 @@ Does Mattermost have an official website-based plug-in to offer annonymous chat 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Not yet. You can `upvote the feature proposal online <https://mattermost.uservoice.com/forums/306457-general/suggestions/8810731-implement-a-site-chat-feature>`_ to add your support. This would likely be an external extension that would work with all versions of Mattermost. 
+
+
+Business Questions 
+------------------
+
+How can I build my own commercial solution using Mattermost? 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This is broad question with many topics: 
+
+Security
+
+- If you offer Mattermost as a commercial solution we highly recommend you promptly provide customers any `security updates <http://about.mattermost.com/security-updates/>`_ that may be released. 
+
+Enterprise Edition partnership 
+
+- To build your own commercial solution reselling Mattermost Enterprise Edition please `contact us <https://about.mattermost.com/contact/>`_ and let us know what you're considering. 
+
+Re-branding 
+
+- When you create a derivative version of Mattermost and share it with others, you need to replace the Mattermost name and logo from the system per the `Mattermost trademark policy. <https://www.mattermost.org/trademark-standards-of-use/>`_ 
+- In Enterprise Edition you can re-brand your system using convenience tools for `custom branding <https://docs.mattermost.com/administration/config-settings.html#customization>`_. 
+- For advanced whitelabelling, and to whitelabel in Team Edition under MIT license without Enterprise Edition branding tools, you can manually update files on the Mattermost server `per product documentation. <https://github.com/mattermost/docs/issues/1006>`_  
+
+Using /platform open source code 
+
+- Creating a solution using the open source Mattermost /platform repo requires a) compliance with licenses in the repo, including `NOTICE.txt <https://github.com/mattermost/platform/blob/master/NOTICE.txt>`_, and b) the solution remain open source, `per our licensing policy <https://www.mattermost.org/licensing/>`_.
+
+
