@@ -85,7 +85,7 @@ Not yet. Guest accounts are a feature planned for Enterprise Edition.
 Does Mattermost have an official website-based plug-in to offer annonymous chat to visitors? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Not yet. You can `upvote the feature proposal online <https://mattermost.uservoice.com/forums/306457-general/suggestions/8810731-implement-a-site-chat-feature>`_ to add your support. This would likely be an external extension that would work with all versions of Mattermost. 
+Not yet. You can `upvote the feature proposal online <https://mattermost.uservoice.com/forums/306457-general/suggestions/8810731-implement-a-site-chat-feature>`_ to add your support. 
 
 
 Business Questions 
