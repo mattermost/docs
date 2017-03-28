@@ -39,7 +39,7 @@ Community channels
 
 The various community channels are outlined below, along with the responsibilities of the Ops Team and the PM on community rotation. Generally the Ops Team helps with notifying team members about issues in need of a response, and the Community PM coordinates to make sure the responses are made. 
 
-1. `Contributors Channel <https://pre-release.mattermost.com/core/channels/tickets>`_: Forum Issues / GitLab / Stack Overflow
+1. `Peer-to-peer Help Channel <https://pre-release.mattermost.com/core/channels/peer-to-peer-help>`_: Forum Issues / GitLab / Stack Overflow
 
   - Description:
 
@@ -55,7 +55,7 @@ The various community channels are outlined below, along with the responsibiliti
 
     - Review the list for posts that haven’t been answered, and either reply (with help from dev if needed) or route to the appropriate person, following up to make sure a response is posted
     
-2. `Contributors Channel <https://pre-release.mattermost.com/core/channels/tickets>`_: UserVoice Issues
+2. `Peer-to-peer Help Channel <https://pre-release.mattermost.com/core/channels/peer-to-peer-help>`_: UserVoice Issues
 
   - Description:
 
@@ -86,7 +86,7 @@ The various community channels are outlined below, along with the responsibiliti
         
       - Updates `Spreadsheet <https://docs.google.com/spreadsheets/d/1nljd4cFh-9MXF4DxlUnC8b6bdqijkvi8KHquOmK8M6E/edit#gid=0>`_ to track UserVoice issues to be announced in upcoming releases.
 
-3. `Contributors Channel <https://pre-release.mattermost.com/core/channels/tickets>`_: GitHub Issues with Activity Older than 7 days that have not been created by Mattermost staff
+3. `Peer-to-peer Help Channel <https://pre-release.mattermost.com/core/channels/peer-to-peer-help>`_: GitHub Issues with Activity Older than 7 days that have not been created by Mattermost staff
 
   - Description:
 
