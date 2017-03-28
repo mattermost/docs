@@ -81,20 +81,7 @@ NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory
 
   If everything is working, you will see the HTML for the Mattermost signup page.
 
-8. Make sure that Mattermost accepts connections only from the proxy.
-
-  By default, the Mattermost server accepts connections on port 8065 from every machine on the network. You should make sure that Mattermost accepts connections on port 8065 only from the machine that hosts NGINX.
-
-  If you are setting up a high availability cluster, you might prefer to use a solution other than the one described here. Using either routing tables, security groups, or IPsec allows you to access the System Console on port 8065 when `Updating Configuration Changes While Operating Continuously <../deployment/cluster.html#updating-configuration-changes-while-operating-continuously>`_.
-
-  a. On the Mattermost server, open ``config.json`` as root in a text editor. The default location of ``config.json`` is ``/opt/mattermost/config/config.json``.
-
-  b. Locate the line ``"ListenAddress": ":8065",`` and change it to ``"ListenAddress": "{IP-or-domain}:8065",`` where *{IP-or-domain}* is the IP address or the domain name of the machine that hosts NGINX. For example, if NGINX and Mattermost are on the same machine, change the line to ``"ListenAddress": "localhost:8065",``
-
-  c. Restart the Mattermost server for the changes to take effect.
-
-    On Ubuntu 14.04 and RHEL 6.6: ``sudo service mattermost restart``
-
-    On Ubuntu 16.04 and RHEL 7.1: ``sudo systemctl restart mattermost``
+8. Restrict access to port 8065.
+  By default, the Mattermost server accepts connections on port 8065 from every machine on the network. Use your firewall to deny connections on port 8065 to all machines except the machine that hosts NGINX and the machine that you use to administer Mattermost server. If you're installing on Amazon Web Services, you can use security groups to restrict access.
 
 Now that NGINX is installed and running, you can configure it to use SSL, which allows you to use HTTPS connections and the HTTP/2 protocol.
