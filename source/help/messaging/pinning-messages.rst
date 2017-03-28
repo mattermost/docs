@@ -12,7 +12,7 @@ Pinned messages are marked with the pinned icon, |pinned-icon|. For example:
 
 **To view the list of pinned messages:**
 
-To view the complete list of pinned messages, click the pin icon |pin-icon|, located at the top of the channel. The right hand sidebar opens to show the list of pinned messages. For example:
+To view the complete list of pinned messages, click the pin icon |pin-icon|, located at the top of the channel. The Right-Hand Sidebar opens to show the list of pinned messages. For example:
 
 .. image:: ../../images/pinned-example-rhs.png
 
