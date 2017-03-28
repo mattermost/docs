@@ -67,5 +67,5 @@ Mattermost software, whether open source or commercial, should never withhold an
 
 -----
 
-These principles were inspired by Wordpress Philosophy and GitLab's - https://wordpress.org/about/philosophy/
+These principles were inspired by WordPress Philosophy and GitLab's - https://wordpress.org/about/philosophy/
 
