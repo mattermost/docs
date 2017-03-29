@@ -20,11 +20,12 @@ Mobile Applications
 
 Are push notifications free? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Yes, push notifications are free if you compile your own push-proxy service. Push notifications are also free if you use the hosted Test Push Notification Service (TPNS) provided by Mattermost, Inc. 
 
-TPNS doesn't offer transport-level encryption, so if you choose this option we recommend you configure your system to not include message contents in push notifications. 
+Yes, push notifications are free if you compile your own `push-proxy service <https://github.com/mattermost/mattermost-push-proxy>`_. Push notifications are also free if you use the hosted Test Push Notification Service (TPNS) provided by Mattermost, Inc.
 
-If you need encrypted transport for push notifications, you can either compile your own push-proxy service, with your own key, or you can become a Mattermost Enterprise Edition E10 subscriber, where you can use a production-level Hosted Push Notification Service offering transport-level encryption. 
+TPNS, hosted at ``http://push.mattermost.com``, doesn't offer transport-level encryption or production-level service level agreements (SLAs), so if you choose this option we recommend you configure your system to not include message contents in push notifications and not reply on the service for vital functions.
+
+If you need encrypted transport or production-level SLAs for push notifications, you can either compile your own push-proxy service, with your own key, or you can use a paid option and become a Mattermost Enterprise Edition E10 subscriber `agreeing to our Conditions of Use <https://about.mattermost.com/default-terms/>`_, which enables you to use a production-level Hosted Push Notification Service (HPNS) at ``https://push.mattermost.com``, offering transport-level encryption. 
 
 Learn more about `our mobile apps and push notification service <https://docs.mattermost.com/deployment/push.html>`_. 
 
@@ -111,6 +112,8 @@ Does Mattermost have an official website-based plug-in to offer annonymous chat 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Not yet. You can `upvote the feature proposal online <https://mattermost.uservoice.com/forums/306457-general/suggestions/8810731-implement-a-site-chat-feature>`_ to add your support. 
+
+
 
 
 Business Questions 
