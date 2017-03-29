@@ -13,9 +13,9 @@ NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory
   ``sudo touch /etc/nginx/sites-available/mattermost``
 
 3. Open the file ``/etc/nginx/sites-available/mattermost`` as root in a text editor and replace its contents, if any, with the following lines. Make sure that you use your own values for the Mattermost server IP address and FQDN for *server_name*.
-  
+
   .. code-block:: none
-  
+
     upstream backend {
        server 10.10.10.2:8065;
     }
@@ -71,20 +71,17 @@ NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory
 
 6. Restart NGINX.
 
-  On Ubuntu 14.04 and RHEL 6.6:
-  
-  ``sudo service nginx restart``
-  
-  On Ubuntu 16.04 and RHEL 7.1:
-  
-  ``sudo systemctl restart nginx``
+  On Ubuntu 14.04 and RHEL 6.6: ``sudo service nginx restart``
+
+  On Ubuntu 16.04 and RHEL 7.1: ``sudo systemctl restart nginx``
 
 7. Verify that you can see Mattermost through the proxy.
 
   ``curl http://localhost``
-  
+
   If everything is working, you will see the HTML for the Mattermost signup page.
 
-**What to do next**
+8. Restrict access to port 8065.
+  By default, the Mattermost server accepts connections on port 8065 from every machine on the network. Use your firewall to deny connections on port 8065 to all machines except the machine that hosts NGINX and the machine that you use to administer Mattermost server. If you're installing on Amazon Web Services, you can use security groups to restrict access.
 
-You can configure NGINX to use SSL, which allows you to use HTTPS connections and the HTTP/2 protocol.
+Now that NGINX is installed and running, you can configure it to use SSL, which allows you to use HTTPS connections and the HTTP/2 protocol.
