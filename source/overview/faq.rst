@@ -28,6 +28,31 @@ If you need encrypted transport for push notifications, you can either compile y
 
 Learn more about `our mobile apps and push notification service <https://docs.mattermost.com/deployment/push.html>`_. 
 
+
+Video, Audio and Screensharing 
+----------------------------------------
+
+What support is available for video and audio calling and screensharing?  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In all editions, open source `one-on-one video and audio calling is currently available in beta <https://docs.mattermost.com/deployment/webrtc.html>`_ using the WebRTC standard.  
+
+After many conversations with users and customers we realized: 
+
+1. Most people using Mattermost need top quality video/audio/screensharing solutions, which are predominantly propreitary.   
+2. Integrating an organization's choice of video/audio/screensharing solution is paramount. 
+
+Today, you can neatly link video/audio/screensharing solutions, like Zoom and Skype for Business, to channels by using markdown formatting the header (Example: ``[Click for video call](https://link_to_solution)``). 
+
+In future, we plan to add: 
+
+- A plug-in option for user profiles to connect directly to a person using 3rd party video/audio/screensharing products, including custom and phone-based solutions. 
+- A plug-in option for linking channels and teams to on-demand video/audio/screensharing solutions 
+- A default, open source one-on-one video and audio calling plug-in based on WebRTC 
+- A directory of 3rd party video/audio/screensharing solutions that plug-in to Mattermost 
+
+The timeline for these additions would not be before the second half of 2017. 
+
 Enterprise Edition
 ------------------
 
