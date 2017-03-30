@@ -11,7 +11,7 @@ Development Process
    :glob:
 
    /developer/contribution*
-   /developer/developer-setup*
+   /developer/dev-setup.rst
    /developer/mobile-developer-setup.rst
    /developer/api*
    /developer/developer-flow*
