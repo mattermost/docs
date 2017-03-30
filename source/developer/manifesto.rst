@@ -45,7 +45,7 @@ That said, Mattermost should offer APIs, drivers, and a plug-in architecture tha
 4. No surprises 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Users should never run into anything unexpected with Mattermost. We ship on time and document our features and product changes. Users should be able to know well in advance what is included, not included and changed in upcoming versions. 
+Users should never run into anything unexpected with Mattermost. We ship on time and document our features and product changes. Users should be able to know well in advance what is included, not included, and changed in upcoming versions. 
 
 5. Anywhere office empowering trusted teams
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
