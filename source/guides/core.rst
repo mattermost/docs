@@ -17,6 +17,7 @@ Development Process
    /process/help-wanted*
    /process/community-systems*
    /process/marketing-guidelines*
+   /process/asset-guidelines*
    /process/community-guidelines*
 
 Documentation Style Guide

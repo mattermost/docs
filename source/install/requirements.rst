@@ -85,12 +85,22 @@ Most small to medium Mattermost team deployments can be supported on a single se
 
 Notes:
 
-1. Larger deployments should estimate utilization based on pilots representative of full scale usage.
-2. Storage recommendation is based on storing 3 years of archives with moderate file sharing.
-3. Solid state drives (SSD) can be used in place of disk storage for higher concurrency.
-4. Team deployments assume registered users are divided into teams of 10-100.
+1. Memory requirements are largely driven by peak file sharing activity. Recommendation is based on defaul 50 MB max file size, which can be adjusted from the System Console. Changing this number may change memory requirements.   
+2. Larger deployments should estimate utilization based on pilots representative of full scale usage. 
+3. Storage recommendation is based on storing 3 years of archives with moderate file sharing.
+4. Solid state drives (SSD) can be used in place of disk storage for higher concurrency.
+5. Team Edition deployments assume registered users are divided into teams of 10-100.
 
 .. _hardware-sizing-for-enterprise:
+
+Mattermost Load Test Framework
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For Mattermost Enterprise Edition deployments, an open source load testing framework is available to simulate usage: https://github.com/mattermost/mattermost-load-test
+
+The system can be used to place a deployment under estimated user activity load and to log in and inspect the running system to ensure sizing and installation is correct. 
+
+Mattermost's `performance monitoring <https://docs.mattermost.com/deployment/metrics.html>`_ tools can be used to look into detailed behavior. 
 
 Hardware Sizing for Enterprise Deployments (Multi-Server)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -27,6 +27,6 @@ If the document contains more than four sections or subsections, add a table of 
 Document Sections
 -----------------
 
-To make pages easier for people to quickly scan for the content that they're looking for, break your document up into logical sections. Each section should have a title, and the title should relate to the content of the section.
+To make pages easier for people to quickly scan for the content that they're looking for, break your document up into logical sections. Each section should have a title, and the title should relate to the content of the section. Use title case for the section title.
 
 A section title is not required if you have only one section.
