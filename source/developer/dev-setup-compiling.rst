@@ -3,17 +3,21 @@
 Compiling Mattermost
 ====================
 
-Server
-Client - desktop client for Windows, Mac, and Linux
+Before compiling Mattermost, make sure to set up your developer machine according to the instructions for your platform.
 
-make sure you set up your machine according to the instructions for your platform:
+Instructions are available for the following platforms:
 
-note that after you type make run, you won't have a command prompt. To get a command prompt, type CTRL+C
+  - :doc:`Ubuntu 16.04 <dev-setup-ubuntu-1604>`
+  - :doc:`Mac OS X <dev-setup-osx>`
+  - :doc:`Archlinux <dev-setup-archlinux>`
+  - :doc:`Windows <dev-setup-windows>`
 
-``cd ~/go/src/github.com/mattermost/platform``
+Mattermost uses `GNU Make <https://www.gnu.org/software/make/>`_ to control the generation of builds, to run the test suite, and to manage the build environment. You must run the ``make`` command from within the source directory. If you set up your developer machine according to the instructions, you can change to the source directory with the following command:
 
-Useful Commands
----------------
+  ``cd ~/go/src/github.com/mattermost/platform``
+
+Useful Make Commands
+--------------------
 
 make run
   Starts the Docker container, compiles the server and client code, and makes Mattermost available at http://localhost:8065 on the machine that you ran this command on.
@@ -30,7 +34,13 @@ make start-docker
 make stop-docker
   Stops the Docker container.
 make clean-docker
-  Removes all content from the databases in the Docker container.
+  Removes all content from the databases in the Docker container and resets them to their original state.
+make build-linux, make build-osx, and make build-windows
+  Builds the server for the specified platform. See the `make package` command for instructions on how to set up for cross-compiling.
+make build
+  Builds the server for Linux, OS X, and Windows platforms. See the `make package` command for instructions on how to set up for cross-compiling.
+make build-client
+  Builds the web client, which is the HTML, Javascript, and CSS code that gets downloaded to the browser.
 make package
   Creates packages for distributing your builds and puts them in the ``~/go/src/github.com/mattermost/platform/dist`` directory. If you want to make packages for targets other than your build machine, you must run the following commands first:
 
@@ -38,15 +48,15 @@ make package
 
      ``sudo chown -R {user}.{group} /usr/local/go``
 
-  2. Set up your environment to compile Apple OS X binaries:
+  2. If your are not developing on OS X, set up your environment to cross-compile Apple OS X binaries:
 
      ``env GOOS=darwin GOARCH=amd64 go install std``
 
-  3. Set up your environment to compile Windows binaries:
+  3. If you are not developing on Windows, set up your environment to cross-compile Windows binaries:
 
      a. ``env GOOS=windows GOARCH=amd64 go install std``
      b. ``sudo apt-get install zip``
 
-  4. Set up your environment to compile Linux binaries:
+  4. If you are not developing on Linux, set up your environment to cross-compile Linux binaries:
 
     ``env GOOS=linux GOARCH=amd64 go install std``

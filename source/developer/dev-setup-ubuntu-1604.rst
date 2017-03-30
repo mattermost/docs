@@ -3,7 +3,7 @@
 Installing Developer Components on Ubuntu 16.04
 ===============================================
 
-
+Set up your development environment for building, running, and testing Mattermost.
 
 1. If you are developing with the Docker container, install and configure Docker CE:
 
@@ -82,4 +82,4 @@ Installing Developer Components on Ubuntu 16.04
 
     ``git clone https://github.com/{username}/platform.git``
 
-Now that everything is set up, you are ready to compile and run Mattermost. See :doc:`dev-compiling`.
+Now that everything is set up, you are ready to compile and run Mattermost. See :doc:`dev-setup-compiling`.

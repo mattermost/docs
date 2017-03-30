@@ -35,4 +35,4 @@ Installing Developer Components on Windows
     export PATH="/c/Program Files/Docker Toolbox":$PATH #change the path accordingly if you are using Docker for Windows
     eval $(docker-machine env default) #skip this line if you are using Docker for Windows
 
-Now that everything is set up, you are ready to compile and run Mattermost. See :doc:`dev-compiling`.
+Now that everything is set up, you are ready to compile and run Mattermost. See :doc:`dev-setup-compiling`.

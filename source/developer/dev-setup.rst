@@ -1,14 +1,11 @@
 .. _dev-setup:
 
-=======================
 Developer Machine Setup
 =======================
 
-For developing and contributing to Mattermost, make sure that you install and use the Docker container. The container has an Inbucket email server and both MySQL and PostgreSQL databases. Both databases are pre-populated with teams, channels, and users, and are required for running the built-in unit tests.
+Setup your developer machine for building and testing the Mattermost server and web client. You can choose to not install the Docker container but you must use it for developing and contributing to Mattermost. The container has an Inbucket email server and both MySQL and PostgreSQL databases, all of which are required for running unit tests.
 
 If you don't plan on contributing code to the Mattermost open source project, then you don't need to install Docker. If you're not installing Docker, you can safely skip the Docker installation parts of the setup instructions. However, the ``make run`` and ``make test`` commands won't work.
-
-Set up instructions are available for the following operating systems:
 
   .. toctree::
 
