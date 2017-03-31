@@ -85,3 +85,6 @@ Desktop App window is black and doesn't load the page
     - Finally, try disabling GPU hardware acceleration by using the `--disable-gpu <http://peter.sh/experiments/chromium-command-line-switches/#disable-gpu>`_ Chromium command line switch.
 
     If none of the above steps resolve the issue, please open a new ticket in the `Mattermost Troubleshooting Forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`_. 
+
+Desktop app appears off-screen after disconnecting from a secondary screen
+    Quit the app and delete the following file: ``USERPROFILE%\AppData\Roaming\Mattermost\bounds-info.json``
