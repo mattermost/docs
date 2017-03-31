@@ -51,19 +51,19 @@ Users should never run into anything unexpected with Mattermost. We ship on time
 
 Enable people to achieve what the team needs simply. Focus on building trust and education within a team and control via social norms instead of features to force a policy decision on a team. 
 
-For large or regulated organizations that have no choice but to govern using strict corporate policies, Enterprise Edition can be used to support those policies. 
+For large or regulated organizations that have no choice but to govern using strict corporate policies, Enterprise Edition can be used to support those policies. XXXXX needs work
 
 6. Primary, not secondary
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The purpose of Mattermost is to become the primary way a team communicates. It's for vital conversations that "matter most". Deployment as a secondary system, where not everyone in a team can be reached, fails to achieve the software's purpose. Because of this we don't offer email as a Mattermost interface (impoverished experience). Also, while you can use your Mattermost account to sign-in to other apps via features like OAuth2 provider support, we don't offer SSO into Mattermost from another account [1]. 
+The purpose of Mattermost is to be the primary way a team communicates. It's for vital conversations that "matter most". Deployment as a secondary system, where not everyone in a team can be reached, fails to achieve the software's purpose. Because of this we don't offer features such as using email as a Mattermost interface (impoverished experience). Also, while you can use your Mattermost account to sign-in to other apps via features like OAuth2 provider support, we generally don't offer SSO into Mattermost from another account (exception being legacy support for GitLab SSO). 
 
-[1] There is an exception with GitLab SSO, which is a legacy feature from an early partnership. 
+XXXXX needs work
 
-7. Private cloud alternative
+7. Private Network Focused 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Your vital communications stay behind your firewall, on infrastructure you control in single-tenant deployment. We are an alternative to multi-tenant, public SaaS models requiring organizations to give up control, privacy and visibility. As a solution we should continually invest in simplifying install and maintenance to eventually create a fully-automated "private SaaS" deployment model that is extremely easy to administer. 
+Your team's vital communications stay behind your firewall, on infrastructure you control. We are an alternative to multi-tenant, public SaaS models requiring organizations to give up control, privacy and visibility. As a solution we should continually invest in simplifying install and maintenance to eventually create a fully-automated "private SaaS" deployment model that is extremely easy to administer. 
 
 Mattermost Team Edition is focused on private cloud deployment over public web because we believe: a) public web security threats are constantly escalating, and b) it's difficult for admins to apply security updates immediately, and firewalls help keep infrastructure safe.
 
