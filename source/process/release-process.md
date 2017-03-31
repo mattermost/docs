@@ -205,7 +205,8 @@ The final release is cut. If an urgent and important issue needs to be addressed
         - Include a summary of updates in Team Edition that are relevant to GitLab
     - Check Security Issues spreadsheet and confirm disclosure text
     - Check the security researcher was added to the [Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/) page
-    - Confirm link to security updates appears in blog post if there are security updates in this release, with a note thanking the security researcher 
+    - Confirm link to security updates appears in blog post if there are security updates in this release, with a note thanking the security researcher
+    - Update [deprecated feature list](https://about.mattermost.com/deprecated-features/) in mattermost.com with new and scheduled deprecations
 4. Logistics:
     - Update the [Mattermost server download page](https://www.mattermost.org/download/) with the links to the EE and TE bits
       - Test the download links before and after updating the page
