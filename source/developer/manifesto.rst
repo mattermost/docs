@@ -27,13 +27,12 @@ We want both products to be outrageously successful for teams and enterprises re
 1. Never locked-in 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost software, whether open source or commercial, should never withhold an organization's data from the organization. Commercial versions of Mattermost should always offer the ability to downgrade to open source version without loss of access to data. 
+Mattermost software, whether open source or commercial, should never withhold an organization's data from the organization. Commercial versions of Mattermost should always have a path to downgrade to open source version without loss of access to data. 
 
 2. Quick Time-to-Value 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Great software works quickly. Ideally, a novice IT admin should be able to setup Mattermost and roll it out to their team in just a few minutes. We should automate as much as possible in a standard install, ask as few technical questions as possible, and provide full explanations for any decisions an IT admin or end user needs to make. 
-
+Great software works quickly. Ideally, a novice IT admin should be able to set up Mattermost and roll it out to their team in just a few minutes. We should automate as much as possible in a standard install, ask as few technical questions as possible, and provide full explanations for any decisions an IT admin or end user needs to make. 
 
 3. Minimalist
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -47,10 +46,12 @@ That said, Mattermost should offer APIs, drivers, and a plug-in architecture tha
 
 Users should never run into anything unexpected with Mattermost. We ship on time and document our features and product changes. Users should be able to know well in advance what is included, not included, and changed in upcoming versions. 
 
-5. Anywhere office empowering trusted teams
+5. Empower trusted teams
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-"Anywhere office" means team members should be able to access the software across web, mobile and PC from wherever you are (eventually offline as well). "Empowering trusted team" means enabling people to achieve what the team needs without limits or monitoring. Features needed to enforce corporate policy (e.g. sophisticated permissions, etc.), degrade the team experience and aren't included. 
+Enable people to achieve what the team needs simply. Focus on building trust and education within a team and control via social norms instead of features to force a policy decision on a team. 
+
+For large or regulated organizations that have no choice but to govern using strict corporate policies, Enterprise Edition can be used to support those policies. 
 
 6. Primary, not secondary
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
