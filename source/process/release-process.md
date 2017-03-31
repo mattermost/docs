@@ -66,6 +66,7 @@ No pull requests for major features should be **merged** to the current release 
     - Review status of last feature PRs to be merged
 7. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/platform/pulls) marked for the current release
+    - After the cut-off, any PRs that include significant code changes require approval of the release manager before merging.
 8. Marketing:
     - Prepare bullet points for release announcement
     - Propose list of key features included in the release GIF and send to marketing lead for review
@@ -80,7 +81,6 @@ Day when leads and PM area owners decide which major features are included in th
     - Verify all items in the last posted release checklist are complete, if not alert the release manager
 2. Logistics:
     - Confirm, in Judgement Day meeting, date of marketing announcement for the release and update release channel header if needed
-    - Confirm link to remaining tickets posted in Release Discussion channel
 3. Leads:
     - Finalize roadmap for next release, and identify planned marketing bullet points  
 4. **(Team) Judgment Day Meeting (10:00am San Francisco time)**:  
@@ -89,6 +89,7 @@ Day when leads and PM area owners decide which major features are included in th
     - Based on discussion, create tickets for features that need to be turned on or off for the release
     - Update Changelog PR based on what's in/out of the release 
     - Create meta issue for release in GitHub (see [example](https://github.com/mattermost/platform/issues/3702))
+    - Review the JIRA tickets remaining in the current release fix version and push those that won't make it to the next fix version.
 6. Marketing:
     - Begins to draft blog post, tweet, and email for the release announcement
 
