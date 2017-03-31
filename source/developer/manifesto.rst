@@ -41,29 +41,29 @@ Minimalism is providing just the right amount of functionality and not more and 
 
 That said, Mattermost should offer APIs, drivers, and a plug-in architecture that enables a wide range of add-on functionality aligned with Mattermost design principles. 
 
-4. No surprises 
+4. Built for teams on private clouds
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost is built for teams who work on private clouds who prefer open source software and need a modern communication experience. 
+
+5. No surprises 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Users should never run into anything unexpected with Mattermost. We ship on time and document our features and product changes. Users should be able to know well in advance what is included, not included, and changed in upcoming versions. 
 
-5. Empower trusted teams
+6. Empower trusted teams
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Enable people to achieve what the team needs simply. Focus on building trust and education within a team and control via social norms instead of features to force a policy decision on a team. 
 
 For large or regulated organizations that have no choice but to govern using strict corporate policies, Enterprise Edition can be used to support those policies. XXXXX needs work
 
-6. Primary, not secondary
+7. Primary, not secondary
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The purpose of Mattermost is to be the primary way a team communicates. It's for vital conversations that "matter most". Deployment as a secondary system, where not everyone in a team can be reached, fails to achieve the software's purpose. Because of this we don't offer features such as using email as a Mattermost interface (impoverished experience). Also, while you can use your Mattermost account to sign-in to other apps via features like OAuth2 provider support, we generally don't offer SSO into Mattermost from another account (exception being legacy support for GitLab SSO). 
 
 XXXXX needs work
-
-7. Built for teams on private clouds
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Mattermost is built for teams who work on private clouds who prefer open source software and need a modern communication experience. 
 
 -----
 
