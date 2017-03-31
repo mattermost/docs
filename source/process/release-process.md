@@ -266,6 +266,7 @@ Once final dot release build is ready to cut:
     - Verifies each of the issues in the patch release are fixed
 4. Docs:
     - Update the version archive in the [upgrade guide](https://github.com/mattermost/docs/blob/master/source/administration/upgrade.md)
+    - Submit an MR to update [GitLab Mattermost documentation](https://docs.gitlab.com/omnibus/gitlab-mattermost/README.html)
 5. Logistics:
     - Update [Mattermost server download page](https://mattermost.org/download) with the links to the EE and TE bits
       - Test the download links before and after updating the page
