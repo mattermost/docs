@@ -45,7 +45,7 @@ Other errors
 ------------
 
 I don't see any error messages, but I can't access http://localhost:8065
-  It's possible that the server reported an error, but it was missed because of all of the output from the Javascript compiler. Try running ``make run-server`` by itself to see its output. If you still don't see any error messages, continue to the next section.
+  It's possible that the server reported an error, but it was missed because of all of the output from the JavaScript compiler. Try running ``make run-server`` by itself to see its output. If you still don't see any error messages, continue to the next section.
 
 I don't see anything logged to the console when Mattermost is running
   You can enable console logging in the *LogSettings* section of your ``config/config.json`` by setting *EnableConsole* to ``true``.

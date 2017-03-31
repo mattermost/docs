@@ -16,11 +16,13 @@ Mattermost uses `GNU Make <https://www.gnu.org/software/make/>`_ to control the 
 
   ``cd ~/go/src/github.com/mattermost/platform``
 
+The first time that you use the ``make run`` command can take a substantial amount of time depending on your machine's processor speed and memory size, and on the speed of your network. If you are developing in a VM, make sure that the VM has at least 2G of memory assigned to it.
+
 Useful Make Commands
 --------------------
 
 make run
-  Starts the Docker container, compiles the server and client code, and makes Mattermost available at http://localhost:8065 on the machine that you ran this command on.
+  Starts the Docker container, compiles the server and client code, and makes Mattermost available at http://localhost:8065 on the machine that you ran this command on. The first time that you use this command, the MySQL, PostgreSQL, and Inbucket Docker images are downloaded and installed.
 make test
   Runs the unit tests for server and client.
 make test-server
@@ -40,7 +42,7 @@ make build-linux, make build-osx, and make build-windows
 make build
   Builds the server for Linux, OS X, and Windows platforms. See the `make package` command for instructions on how to set up for cross-compiling.
 make build-client
-  Builds the web client, which is the HTML, Javascript, and CSS code that gets downloaded to the browser.
+  Builds the web client, which is the HTML, JavaScript, and CSS code that gets downloaded to the browser.
 make package
   Creates packages for distributing your builds and puts them in the ``~/go/src/github.com/mattermost/platform/dist`` directory. If you want to make packages for targets other than your build machine, you must run the following commands first:
 
@@ -48,7 +50,7 @@ make package
 
      ``sudo chown -R {user}.{group} /usr/local/go``
 
-  2. If your are not developing on OS X, set up your environment to cross-compile Apple OS X binaries:
+  2. If you are not developing on OS X, set up your environment to cross-compile Apple OS X binaries:
 
      ``env GOOS=darwin GOARCH=amd64 go install std``
 
