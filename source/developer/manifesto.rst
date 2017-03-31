@@ -1,5 +1,5 @@
 ==============================================
-About the Mattermost Open Source Project 
+WIP: About the Mattermost Open Source Project 
 ==============================================
 
 Mattermost is an open source, private cloud alternative to proprietary communication services. Hundreds of contributors around the world help develop the software in 11 languages. 
@@ -60,13 +60,10 @@ The purpose of Mattermost is to be the primary way a team communicates. It's for
 
 XXXXX needs work
 
-7. Private Network Focused 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+7. Built for teams on private clouds
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Your team's vital communications stay behind your firewall, on infrastructure you control. We are an alternative to multi-tenant, public SaaS models requiring organizations to give up control, privacy and visibility. As a solution we should continually invest in simplifying install and maintenance to eventually create a fully-automated "private SaaS" deployment model that is extremely easy to administer. 
-
-Mattermost Team Edition is focused on private cloud deployment over public web because we believe: a) public web security threats are constantly escalating, and b) it's difficult for admins to apply security updates immediately, and firewalls help keep infrastructure safe.
-
+Mattermost is built for teams who work on private clouds who prefer open source software and need a modern communication experience. 
 
 -----
 
