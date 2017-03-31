@@ -178,6 +178,8 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
    - `POST` at `/channels/set_last_viewed_at` (replaced by `/channels/view`)
    - `POST` at `/users/status/set_active_channel` (replaced by `/channels/view`)
 
+For a list of past and upcoming deprecations, [see our website](https://about.mattermost.com/deprecated-features/).
+
 #### config.json   
 
 Changes from v3.6 to v3.7:
