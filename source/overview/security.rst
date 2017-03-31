@@ -36,7 +36,7 @@ Transmission Security
 
    - Mattermost supports TLS encryption using AES-256 with 2048-bit RSA on all data transmissions across both LAN and internet. 
    - Connections to Active Directory/LDAP can be optionally secured with TLS or stunnel (E10).
-   - Encryption-at-rest is available through hardware and software disk encryption solutions applied to the Mattermost database, which can reside on its own server within your infrastructure. To enable end user search and compliance reporting of message histories, Mattermost does not offer encryption within the database.
+   - Encryption-at-rest is available through hardware and software disk encryption solutions applied to the Mattermost database, which reside on its own server within your infrastructure. To support end user search and compliance reporting of message histories, Mattermost does not offer encryption within the database. 
    - Option to `exclude message contents from push notifications <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_ to comply with strict compliance policies, such as US HIPAA standards.
    - Ability to exclude or include the `contents of messages in push notifications <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_ to avoid disclosure on locked mobile screens, and via relay servers from Apple and Google when sending notifications to iOS or Android mobile apps (relevant to compliance standards such as HIPAA) 
 
