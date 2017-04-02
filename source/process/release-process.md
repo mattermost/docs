@@ -174,6 +174,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
 1. Release Manager:
     - Post this checklist in Release channel
     - Verify all items in the last posted release checklist are complete, if not alert the release manager
+    - Verify that the final translations PR for the release is submitted
 2. Team:
     - Finish assigned areas of the Release Candidate Testing Spreadsheet
     - Continue triaging hotfix candidates and decide on whether and when to cut next RC or final
