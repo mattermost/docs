@@ -14,6 +14,8 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 #### config.json environment variables
 
+Once this is merged config.json settings can be overridden with environment variables. They must be proceeded by MM_ and be in all caps. For example to override the json property .ServiceSetting.ListenAddress you would set an environment var of MM_SERVICESETTINGS_LISTENADDRESS
+
 #### Emoji Picker and Improved Emoji Reactions
 
 #### System Users List
@@ -32,9 +34,9 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 - Non-square profile pictures are now cropped in the middle rather than being stretched 
 - The "Add Members" modal now autofocuses on the search box when opened from the "Manage Members" modal
 - Post timestamps now have an expanded date tooltip
-- Favorite channels are now sorted alphabetically regardless of channel type
-- There is now a confirmation dialog before deleting a custom emoji
+- Reduced the margins and line height in compact view
 
+- There is now a confirmation dialog before deleting a custom emoji
 
 #### Messaging
 
@@ -48,13 +50,19 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 - File attachments thumbnails are now shown in search results
 
+#### Channels
 
+- Favorite channels are now sorted alphabetically regardless of channel type
+- Town Square now has a default channel purpose
 
 #### Integrations
 
 - The integrations confirmation page can now be dismissed with the ENTER key
 
-#### Localization
+#### Notifications
+
+- Users can no longer configure email notification settings if the notifications are disabled for the system
+
 
 
 #### Onboarding
@@ -80,7 +88,11 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 - Fixed line wrapping of the timestamp in Account Settings > Security > View Access History 
 - Fixed an inconsistent error message when creating a channel with two or less characters
 - Saving a team name without making changes no longer throws an error message
-- 
+- Group messages are now sorted alphabetically with direct messages
+- The "Create Channel" button will no only appear in the "More Channels" modal when the user has the permission to create channels
+- The Town Square channel menu no longer has redundant dividers with certain combinations of System Console > Policy settings
+- Fixed an issue where some conversations would not trigger the channel to appear unread in the left-hand sidebar
+- Removed emoji reactions no longer appear as a blank space
 
 ### Compatibility  
 
