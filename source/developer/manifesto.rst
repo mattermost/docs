@@ -54,9 +54,7 @@ Users should never run into anything unexpected with Mattermost. We ship on time
 6. Empower trusted teams
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Enable people to achieve what the team needs simply. Focus on building trust and education within a team and control via social norms instead of features to force a policy decision on a team. 
-
-For large or regulated organizations that have no choice but to govern using strict corporate policies, Enterprise Edition can be used to support those policies. XXXXX needs work
+Enable people to achieve what the team needs simply. Focus on building trust and education within a team and control via social norms instead of features to force a policy decision on a team. For large or regulated organizations that won't allow a team to operate on trusted relationships, and which therefore require enforcing strict corporate policies, Enterprise Edition can be used. 
 
 7. Primary, not secondary
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
