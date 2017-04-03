@@ -179,7 +179,7 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
    - `POST` at `/users/status/set_active_channel` (replaced by `/channels/view`)
  - All APIv3 endpoints to be removed in September/2017 release (replaced by APIv4 endpoints)
 
-For a list of past and upcoming deprecations, [see our website](https://about.mattermost.com/deprecated-features/).
+For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
 
 #### config.json   
 
