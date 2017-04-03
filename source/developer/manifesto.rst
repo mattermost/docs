@@ -61,9 +61,7 @@ For large or regulated organizations that have no choice but to govern using str
 7. Primary, not secondary
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The purpose of Mattermost is to be the primary way a team communicates. It's for vital conversations that "matter most". Deployment as a secondary system, where not everyone in a team can be reached, fails to achieve the software's purpose. Because of this we don't offer features such as using email as a Mattermost interface (impoverished experience). Also, while you can use your Mattermost account to sign-in to other apps via features like OAuth2 provider support, we generally don't offer SSO into Mattermost from another account (exception being legacy support for GitLab SSO). 
-
-XXXXX needs work
+The purpose of Mattermost is to be the primary way a team communicates. Deployment as a secondary system, where not everyone in a team can be reached, fails to achieve the software's purpose. Because of this we don't offer features such as using email as a Mattermost interface (impoverished experience). Also, while you can use your Mattermost account to sign-in to other apps via features like OAuth2 provider support, we generally don't offer SSO into Mattermost from another account. 
 
 -----
 
