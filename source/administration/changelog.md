@@ -4,6 +4,124 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 ## Release v3.8.0
 
+### Security Updates
+
+- Mattermost v3.8.0 contains multiple [security updates](http://about.mattermost.com/security-updates/). [Upgrading to Mattermost v3.8.0](http://docs.mattermost.com/administration/upgrade.html) is highly recommended.
+
+### Highlights
+
+
+
+### Improvements
+
+#### Performance
+
+#### Web User Interface
+
+- 
+
+#### Mobile
+
+- 
+
+#### Text Formatting
+
+- 
+
+#### Integrations
+
+- 
+
+#### Localization
+
+
+#### Onboarding
+
+- 
+
+#### Slack Import
+
+- 
+
+#### System Console
+
+- 
+
+#### Enterprise Edition
+
+- 
+
+### Bug Fixes
+
+- 
+
+### Compatibility  
+
+Backwards compatibility with the old CLI tool will be removed in v3.8. See [documentation to learn more about the new CLI tool](https://docs.mattermost.com/administration/command-line-tools.html).
+
+Changes from v3.7 to v3.8:
+
+#### config.json   
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console.
+
+**Changes to Team Edition and Enterprise Edition**:
+
+ - Under `ServiceSettings` in `config.json`:
+   - Added `"TimeBetweenUserTypingUpdatesMilliseconds": 5000` to control how frequently the "user is typing..." messages are updated XXXXXX
+
+**Additional Changes to Enterprise Edition**:
+
+ - Under `ServiceSettings` in `config.json`:
+   - Added `"RestrictPostDelete": all` to set who can delete messages XXXXXX
+
+### Database Changes from v3.7 to v3.8
+
+**Posts Table:**
+- Added `EditAt` column
+
+### API Changes from v3.7 to v3.8
+
+**New routes (APIv3):**
+- `POST` at `/channels/create_group`
+  - Creates a new group message channel XXXXXX
+
+**Removed routes (APIv3):**
+- `GET` at `/channels/more` (replaced by /`channels/more/{offset}/{limit}`)
+
+**Deprecated routes (APIv3):**
+- `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`) is removed in v3.8
+- `POST` at `/channels/set_last_viewed_at` (replaced by `/channels/view`) is removed in v3.8
+- `POST` at `/users/status/set_active_channel` (replaced by `/channels/view`) is removed in v3.8
+
+### Websocket Event Changes from v3.7 to v3.8
+
+**Added:**
+- `channel_create` that occurs each time a channel is created XXXXXX
+
+**Removed:**
+
+### Known Issues
+
+- Slack import doesn't add merged members/e-mail accounts to imported channels
+- User can receive a video call from another browser tab while already on a call
+- Sequential messages from the same user appear as separate posts on mobile view
+- Edge overlays desktop notification sound with system notification sound
+- Search autocomplete picker is broken on Android
+- Jump link in search results does not always jump to display the expected post
+- Running CLI without access to logs causes panic
+- Switching channels with CTRL/CMD+K doesn't work properly when using the mouse
+- Reacting to a deleted message in the right-hand sidebar throws an error
+- Sometimes no email verification is sent to the new email address after changing your email in Account Settings. A workaround is to sign in with the new email address and hitting "Resend Email" on the "Email not verified" page
+- Clicking "Load more messages" sometimes brings you to the bottom of the page
+- Switching to a channel with unreads sometimes doesn't jump to the correct scrolling position
+
+### Contributors
+
+Many thanks to all our contributors. In alphabetical order:
+
+/platform
+
 ## Release v3.7.1
 
 ### Notes on Patch Release
