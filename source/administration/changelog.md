@@ -10,6 +10,16 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 ### Highlights
 
+#### Pinned Posts
+
+#### config.json environment variables
+
+#### Emoji Picker and Improved Emoji Reactions
+
+#### System Users List
+- The System Console now consolidates all users into a system-wide list that can be filtered by team. The users list can be used to manage team membership and team roles for any user on the system.
+
+
 
 
 ### Improvements
@@ -18,26 +28,38 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 #### Web User Interface
 
-- 
+- Date separators now appear between posts in the right-hand sidebar
+- Non-square profile pictures are now cropped in the middle rather than being stretched 
+- The "Add Members" modal now autofocuses on the search box when opened from the "Manage Members" modal
+- Post timestamps now have an expanded date tooltip
+- Favorite channels are now sorted alphabetically regardless of channel type
+- There is now a confirmation dialog before deleting a custom emoji
+
+
+#### Messaging
+
+- Flagged posts from other teams are no longer displayed 
 
 #### Mobile
 
-- 
+- Executing a search now closes the keyboard and removes the keyboard focus from the text box
 
-#### Text Formatting
+#### Search
 
-- 
+- File attachments thumbnails are now shown in search results
+
+
 
 #### Integrations
 
-- 
+- The integrations confirmation page can now be dismissed with the ENTER key
 
 #### Localization
 
 
 #### Onboarding
 
-- 
+
 
 #### Slack Import
 
@@ -53,11 +75,16 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 ### Bug Fixes
 
+- Removed the duplicate "Back" button on the Team Creation page
+- The AltGR key no longer triggers keyboard shortcuts
+- Fixed line wrapping of the timestamp in Account Settings > Security > View Access History 
+- Fixed an inconsistent error message when creating a channel with two or less characters
+- Saving a team name without making changes no longer throws an error message
 - 
 
 ### Compatibility  
 
-Backwards compatibility with the old CLI tool will be removed in v3.8. See [documentation to learn more about the new CLI tool](https://docs.mattermost.com/administration/command-line-tools.html).
+Backwards compatibility with the old CLI tool is removed in v3.8. See [documentation to learn more about the new CLI tool](https://docs.mattermost.com/administration/command-line-tools.html).
 
 Changes from v3.7 to v3.8:
 
