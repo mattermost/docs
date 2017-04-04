@@ -2,29 +2,32 @@
 WIP: Voluntary Product Accessibility Template (VPAT) 
 =================================================================
 
+The following Voluntary Product Accessiblity Template for 508 Compliance is completed per `online guidelines from the United States Department of State <https://www.state.gov/m/irm/impact/126343.htm>`_.
+
 Product Name: Mattermost Enterprise Edition (including E10, E20 and all variants) 
 Product Version Number: Assessment applies to release 3.7 and later 
 Vendor Company Name: Mattermost, Inc. 
 Vendor Contact Name: Steve Green
 Vendor Contact Telephone: Please `contact Mattermost, Inc. <https://about.mattermost.com/contact/>`_ for telephone access. 
 
-Summary Table
+Summary 
 ----------------------------
 
-To be added 
+.. contents::
+    :backlinks: top
 
 Section 1194.21 Software Applications and Operating Systems 
 ---------------------------------------------------------------------------------
 
 (a) When software is designed to run on a system that has a keyboard, product functions shall be executable from a keyboard where the function itself or the result of performing a function can be discerned textually.
 
-- Level of Support & Supporting Features: Full support 
+- Level of Support & Supporting Features: SUPPORTS 
 
 - Remarks and explanations: Web-based application has extensive keyboard shortcut controls along with support for tabbed interface allowing operating using keyboard only. `Definitions of keyboard shortcuts are available in product documentation <https://docs.mattermost.com/help/messaging/keyboard-shortcuts.html>`_. Keyboard functionality is under continually review for opportunities for improvement. 
 
 (b) Applications shall not disrupt or disable activated features of other products that are identified as accessibility features, where those features are developed and documented according to industry standards. Applications also shall not disrupt or disable activated features of any operating system that are identified as accessibility features where the application programming interface for those accessibility features has been documented by the manufacturer of the operating system and is available to the product developer.
 
-- Level of Support & Supporting Features: Full support 
+- Level of Support & Supporting Features: SUPPORTS 
 
 - Remarks and explanations: Nothing to add. 
 
@@ -42,7 +45,7 @@ Section 1194.21 Software Applications and Operating Systems
 
 (e) When bitmap images are used to identify controls, status indicators, or other programmatic elements, the meaning assigned to those images shall be consistent throughout an application's performance.
 
-- Level of Support & Supporting Features: Full support 
+- Level of Support & Supporting Features: SUPPORTS 
 
 - Remarks and explanations: Nothing to add. 
 
@@ -54,31 +57,31 @@ Section 1194.21 Software Applications and Operating Systems
 
 (g) Applications shall not override user selected contrast and color selections and other individual display attributes.
 
-- Level of Support & Supporting Features: Application can re-create user's contrast and color selections
+- Level of Support & Supporting Features: SUPPORTS THROUGH EQUIVALENT FACILITATION
 
 - Remarks and explanations: Mattermost web application can be used in high contrast mode with support for use selected colors and contrast options. 
 
 (h) When animation is displayed, the information shall be displayable in at least one non-animated presentation mode at the option of the user.
 
-- Level of Support & Supporting Features: Full support 
+- Level of Support & Supporting Features: NOT APPLICABLE  
 
 - Remarks and explanations: No core functionality in the product relies on animations. While some loading indicators are animated, failure to load is documented in text with error messages. 
 
 (i) Color coding shall not be used as the only means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.
 
-- Level of Support & Supporting Features: Full support 
+- Level of Support & Supporting Features: SUPPORTS
 
 - Remarks and explanations: No indicators rely on color alone. 
 
 (j) When a product permits a user to adjust color and contrast settings, a variety of color selections capable of producing a range of contrast levels shall be provided.
 
-- Level of Support & Supporting Features: Full support 
+- Level of Support & Supporting Features: SUPPORTS
 
-- Remarks and explanations: Nothing to add. 
+- Remarks and explanations: See `full documentation <https://docs.mattermost.com/help/settings/theme-colors.html>`_.
 
 (k) Software shall not use flashing or blinking text, objects, or other elements having a flash or blink frequency greater than 2 Hz and lower than 55 Hz.
 
-- Level of Support & Supporting Features: Full support 
+- Level of Support & Supporting Features: SUPPORTS 
 
 - Remarks and explanations: Nothing to add. 
 
@@ -88,10 +91,8 @@ Section 1194.21 Software Applications and Operating Systems
 
 - Remarks and explanations: TBD
 
-
-
-Section 1194.22 Web-based Intranet and Internet information and Applications - Detail
-Voluntary Product Accessibility Template
+Section 1194.22 Web-based Intranet and Internet information and Applications 
+----------------------------------------------------------------------------------
 
 Criteria
 (a) A text equivalent for every non-text element shall be provided (e.g., via "alt", "longdesc", or in element content).
