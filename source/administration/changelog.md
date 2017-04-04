@@ -171,8 +171,8 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 #### Removed and deprecated features
 
  - Removed `ServiceSettings: "SegmentDeveloperKey"` setting in `config.json`
- - Backwards compatibility with the old CLI tool will be removed in April/2017 release. See [documentation to learn more about the new CLI tool](https://docs.mattermost.com/administration/command-line-tools.html).
- - Deprecated APIv3 routes to be removed in April/2017 release:
+ - Backwards compatibility with the old CLI tool will be removed in Mattermost v3.8 April/2017 release. See [documentation to learn more about the new CLI tool](https://docs.mattermost.com/administration/command-line-tools.html).
+ - Deprecated APIv3 routes to be removed in Mattermost v3.8 April/2017 release:
    - `GET` at `/channels/more` (replaced by /`channels/more/{offset}/{limit}`)
    - `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`)
    - `POST` at `/channels/set_last_viewed_at` (replaced by `/channels/view`)
