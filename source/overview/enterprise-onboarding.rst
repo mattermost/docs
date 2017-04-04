@@ -1,17 +1,50 @@
 Enterprise On-Boarding Overview
 ===============================
 
-Why Mattermost? 
----------------
+Project planning and definition 
+- Success Metrics // reduction of email, MAU, DAU 
+- Project Plan // development, testing, pilot, roll out 
+- Network Diagram - https://docs.mattermost.com/_images/network.PNG
+- Hardware Sizing 
+- Site Reliability Engineering Plan  
 
-- **Enterprise-scale messaging** as an alternative to team-limited solutions and siloed communications.
-- **Communications under IT control** meeting your specific security, privacy, compliance and reliability needs.
-- **Complete control** with deep white-labelling, extensions and integration with existing systems and processes. 
+Pilot with staging and production 
+- Procure trial license 
+- Set up staging server 
+- On-board users to staging server 
+- Set up initial set of integrations to get comfortable with API
+- Set up process for pushing configuration changes to production 
+- (Optional) Set up Mattermost Load Test to vet hardware sizing 
+
+
+
+Internal branding for web, PC & mobile 
+- Apply custom branding options to user login screen and across the site 
+- (Optional) Customize user experience through open source web, mobile and desktop apps 
+
+
+Integrations with custom systems 
+Corporate directory synchronization 
+Role & permissions configuration 
+
+Securing and deploying mobile apps
+- (Optional) Compile mobile apps to internal enterprise app store 
+- (Optional) Deploy with EMM solutions using SDKs or AppDome 
+
+Scale, security & penetration testing 
+Help desk & end user training
+Roll out announce & phased onboarding 
+
 
 Discovery 
 ---------
 
 **Requirements definition** is drafted after identifying stakeholders and priorities, including key requirements and scenarios. Development of high level solution design document and project plan to achieve priorities.
+
+- Example of
+https://docs.mattermost.com/_images/network.PNG
+
+
 
 Design Planning 
 ---------------
