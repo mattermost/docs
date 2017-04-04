@@ -12,6 +12,9 @@ Release Date: April 17, 2017
 
 ### Highlights
 
+#### Native iOS and Android Apps (Beta)
+- Second generation mobile apps, built using React Native, are available for beta testing on [iOS](https://mattermost-fastlane.herokuapp.com/) and [Android](https://play.google.com/apps/testing/com.mattermost.react.native).
+
 #### Pinned Posts
 - Important messages can be pinned to the channel for easy reference. Pinned posts are visible to all channel members.
 
