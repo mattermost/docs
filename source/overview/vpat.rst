@@ -33,15 +33,15 @@ Section 1194.21 Software Applications and Operating Systems - Detail
 
 (c) A well-defined on-screen indication of the current focus shall be provided that moves among interactive interface elements as the input focus changes. The focus shall be programmatically exposed so that Assistive Technology can track focus and focus changes.
 
-- **Level of Support & Supporting Features**: TBD 
+- **Level of Support & Supporting Features**: SUPPORTS 
 
-- **Remarks and Explanations**: TBD
+- **Remarks and Explanations**: Nothing to add. 
 
 (d) Sufficient information about a user interface element including the identity, operation and state of the element shall be available to Assistive Technology. When an image represents a program element, the information conveyed by the image must also be available in text.
 
-- **Level of Support & Supporting Features**: TBD 
+- **Level of Support & Supporting Features**: SUPPORTS 
 
-- **Remarks and Explanations**: TBD
+- **Remarks and Explanations**: Nothing to add. 
 
 (e) When bitmap images are used to identify controls, status indicators, or other programmatic elements, the meaning assigned to those images shall be consistent throughout an application's performance.
 
@@ -51,9 +51,9 @@ Section 1194.21 Software Applications and Operating Systems - Detail
 
 (f) Textual information shall be provided through operating system functions for displaying text. The minimum information that shall be made available is text content, text input caret location, and text attributes.
 
-- **Level of Support & Supporting Features**: TBD 
+- **Level of Support & Supporting Features**: SUPPORTS 
 
-- **Remarks and Explanations**: TBD
+- **Remarks and Explanations**: Nothing to add. 
 
 (g) Applications shall not override user selected contrast and color selections and other individual display attributes.
 
@@ -87,18 +87,18 @@ Section 1194.21 Software Applications and Operating Systems - Detail
 
 (l) When electronic forms are used, the form shall allow people using Assistive Technology to access the information, field elements, and functionality required for completion and submission of the form, including all directions and cues.
 
-- **Level of Support & Supporting Features**: TBD 
+- **Level of Support & Supporting Features**: SUPPORTS 
 
-- **Remarks and Explanations**: TBD
+- **Remarks and Explanations**: Nothing to add. 
 
 Section 1194.22 Web-based Intranet and Internet information and Applications - Detail 
 ----------------------------------------------------------------------------------------
 
 (a) A text equivalent for every non-text element shall be provided (e.g., via "alt", "longdesc", or in element content).
 
-- **Level of Support & Supporting Features**: TBD 
+- **Level of Support & Supporting Features**: SUPPORTS WITH EXCEPTION  
 
-- **Remarks and Explanations**: TBD
+- **Remarks and Explanations**: 80-90% supported, full supported expected in 2018 release. 
 
 (b) Equivalent alternatives for any multimedia presentation shall be synchronized with the presentation.
 
@@ -156,15 +156,15 @@ Section 1194.22 Web-based Intranet and Internet information and Applications - D
 
 (k) A text-only page, with equivalent information or functionality, shall be provided to make a web site comply with the provisions of this part, when compliance cannot be accomplished in any other way. The content of the text-only page shall be updated whenever the primary page changes.
 
-- **Level of Support & Supporting Features**: TBD
+- **Level of Support & Supporting Features**: NOT APPLICABLE 
 
-- **Remarks and Explanations**: TBD
+- **Remarks and Explanations**: Compliance criteria is supported, therefore text-only page is not provided. 
 
 (l) When pages utilize scripting languages to display content, or to create interface elements, the information provided by the script shall be identified with functional text that can be read by Assistive Technology.
 
-- **Level of Support & Supporting Features**: TBD
+- **Level of Support & Supporting Features**: SUPPORTS 
 
-- **Remarks and Explanations**: TBD
+- **Remarks and Explanations**: Nothing to add. 
 
 (m) When a web page requires that an applet, plug-in or other application be present on the client system to interpret page content, the page must provide a link to a plug-in or applet that complies with 1194.21(a) through (l).
 
@@ -174,9 +174,9 @@ Section 1194.22 Web-based Intranet and Internet information and Applications - D
 
 (n) When electronic forms are designed to be completed on-line, the form shall allow people using Assistive Technology to access the information, field elements, and functionality required for completion and submission of the form, including all directions and cues.
 
-- **Level of Support & Supporting Features**: TBD
+- **Level of Support & Supporting Features**: SUPPORTS 
 
-- **Remarks and Explanations**: TBD
+- **Remarks and Explanations**: Nothing to add. 
 
 (o) A method shall be provided that permits users to skip repetitive navigation links.
 
