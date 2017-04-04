@@ -39,11 +39,9 @@ For more information about using channels, groups, and direct messages, see `Org
 Instructions for System Administrator
 -------------------------------------
 
-replace the login instructions with ones that are specific to your organization. The login experience varies depending on whether you have set up SSO, SAML, or LDAP.
+Add new user login instructions that are specific to your organization. The login experience varies depending on whether you set up SSO, SAML, LDAP, or some other method.
 
-Because the login experience varies widely depending on whether or not you're using the vanilla Mattermost login or have some type of SSO where users have a user login id and password that is different from their internal access cre
-
-The following client apps are available for users to download and install:
+Users can access Mattermost via their browsers, or they can download and install one or more of the following client apps:
 
 Windows PC Desktop App
   Download: https://releases.mattermost.com/desktop/3.6.0/mattermost-setup-3.6.0-win64.exe
