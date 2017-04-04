@@ -4,7 +4,7 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 ## Release v3.8.0
 
-Release Date: April 17, 2017
+Release Date: April 16, 2017
 
 ### Security Updates
 
