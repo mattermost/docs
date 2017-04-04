@@ -101,7 +101,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Database Changes from v3.7 to v3.8
 
-XXXXXX check with dev
+**Posts Table:**
+- Added `IsPinned` column
 
 ### API Changes from v3.7 to v3.8
 
@@ -118,6 +119,14 @@ XXXXXX check with dev
 - `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`)
 - `POST` at `/channels/set_last_viewed_at` (replaced by `/channels/view`)
 - `POST` at `/users/status/set_active_channel` (replaced by `/channels/view`)
+
+### Websocket Event Changes from v3.6 to v3.7
+
+**Added:**
+- `added_to_team` that occurs each a user is added to a team by another user
+
+**Modified**
+- Added a `seq` field to websocket events that increments with each event sent to the client
 
 ### Known Issues
 
