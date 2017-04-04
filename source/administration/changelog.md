@@ -13,7 +13,7 @@ Release Date: April 17, 2017
 ### Highlights
 
 #### Native iOS and Android Apps (Beta)
-- Second generation mobile apps, built using React Native, are available for beta testing on [iOS](https://mattermost-fastlane.herokuapp.com/) and [Android](https://play.google.com/apps/testing/com.mattermost.react.native).
+- Second generation mobile apps, built using React Native, are [available for beta testing](https://about.mattermost.com/a-native-mobile-experience-second-generation-mobile-apps-released-in-beta/) on [iOS](https://mattermost-fastlane.herokuapp.com/) and [Android](https://play.google.com/apps/testing/com.mattermost.react.native).
 
 #### Pinned Posts
 - Important messages can be pinned to the channel for easy reference. Pinned posts are visible to all channel members.
@@ -73,11 +73,8 @@ Release Date: April 17, 2017
 - The "Create Channel" button will no only appear in the "More Channels" modal when the user has the permission to create channels
 - The Town Square channel menu no longer has redundant dividers with certain combinations of System Console > Policy settings
 - Fixed an issue where some conversations would not trigger the channel to appear unread in the left-hand sidebar
-- Removed emoji reactions no longer appear as a blank space
 - Fixed an issue where usernames sometimes did not appear when hovering over reactions
 - Fixed missing search results when using the "in:" or "from:" modifiers
-- Editing a custom theme no longer causes the user interface to freeze
-- The date of the root post in the right-hand sidebar now accurately displays the date
 - Fixed an issue where link previews would sometimes cause a horizontal scroll bar to appear
 - iOS code blocks no longer wrap to the next line
 
