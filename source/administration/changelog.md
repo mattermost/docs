@@ -80,15 +80,20 @@ Release Date: April 16, 2017
 
 ### Compatibility  
 
-#### Breaking changes from v3.7 to v3.8:
+#### Breaking changes:
 - The **System Console > Configuration > [Site URL](https://docs.mattermost.com/administration/config-settings.html#site-url)** field is now mandatory. Please set the Site URL in the System Console or in the `gitlab.rb` file if you are using GitLab Mattermost.
 - Server logs will now be written to the `mattermost.log` file located at the path specified in **System Console > Logging > [File Log Directory](https://docs.mattermost.com/administration/config-settings.html#file-log-directory)**. Please set the file path in the System Console or in the `gitlab.rb` file if you are using GitLab Mattermost.
+
+#### Removed and deprecated features
 - Backwards compatibility with the old CLI tool is removed in v3.8. See [documentation to learn more about the new CLI tool](https://docs.mattermost.com/administration/command-line-tools.html).
-- The following APIv3 routes have been removed:
-    - `GET` at `/channels/more` (replaced by /`channels/more/{offset}/{limit}`)
-    - `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`)
-    - `POST` at `/channels/set_last_viewed_at` (replaced by `/channels/view`)
-    - `POST` at `/users/status/set_active_channel` (replaced by `/channels/view`)
+- Deprecated APIv3 routes removed in v3.8:
+   - `GET` at `/channels/more` (replaced by /`channels/more/{offset}/{limit}`)
+   - `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`)
+   - `POST` at `/channels/set_last_viewed_at` (replaced by `/channels/view`)
+   - `POST` at `/users/status/set_active_channel` (replaced by `/channels/view`)
+- All APIv3 endpoints to be removed in September/2017 release (replaced by APIv4 endpoints)
+
+For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
 
 #### config.json   
 
@@ -104,12 +109,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under `TeamSettings` in `config.json`:
    - Added `"RestrictPrivateChannelManageMembers": all` to set who can add and remove members from private groups.
 
-### Database Changes from v3.7 to v3.8
+### Database Changes
 
 **Posts Table:**
 - Added `IsPinned` column
 
-### API Changes from v3.7 to v3.8
+### API Changes
 
 **New routes (APIv3):**
 - `GET` at `/channels/{channel_id}/pinned`
@@ -125,7 +130,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - `POST` at `/channels/set_last_viewed_at` (replaced by `/channels/view`)
 - `POST` at `/users/status/set_active_channel` (replaced by `/channels/view`)
 
-### Websocket Event Changes from v3.6 to v3.7
+### Websocket Event Changes
 
 **Added:**
 - `added_to_team` that occurs when the current user is added to a team by another user
