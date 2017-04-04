@@ -16,15 +16,21 @@ Pilot with staging and production
 - Set up process for pushing configuration changes to production 
 - (Optional) Set up Mattermost Load Test to vet hardware sizing 
 
-
-
 Internal branding for web, PC & mobile 
-- Apply custom branding options to user login screen and across the site 
+- Apply custom branding options to user login screen and across the site
+- (Optional) Compile mobile apps with specific server URL as default, deployed internally 
+- (Optional) Compile desktop apps with specific server URL as default, deployed internally  
 - (Optional) Customize user experience through open source web, mobile and desktop apps 
 
-
 Integrations with custom systems 
+- Set up integrations server to interact with customer systems using Mattermost webhooks, drivers, bots and APIs
+- (Optional) Build off of open source templates 
+- (Optional) Configure integrations with redundancy (link) 
+
 Corporate directory synchronization 
+- 
+
+
 Role & permissions configuration 
 
 Securing and deploying mobile apps
