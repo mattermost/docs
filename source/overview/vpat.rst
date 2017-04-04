@@ -16,7 +16,7 @@ Summary
 .. contents::
     :backlinks: top
 
-Section 1194.21 Software Applications and Operating Systems 
+Section 1194.21 Software Applications and Operating Systems - Detail 
 ---------------------------------------------------------------------------------
 
 (a) When software is designed to run on a system that has a keyboard, product functions shall be executable from a keyboard where the function itself or the result of performing a function can be discerned textually.
@@ -91,8 +91,8 @@ Section 1194.21 Software Applications and Operating Systems
 
 - Remarks and explanations: TBD
 
-Section 1194.22 Web-based Intranet and Internet information and Applications 
-----------------------------------------------------------------------------------
+Section 1194.22 Web-based Intranet and Internet information and Applications - Detail 
+----------------------------------------------------------------------------------------
 
 (a) A text equivalent for every non-text element shall be provided (e.g., via "alt", "longdesc", or in element content).
 
@@ -155,45 +155,144 @@ Section 1194.22 Web-based Intranet and Internet information and Applications
 - Remarks and explanations: Nothing to add. 
 
 (k) A text-only page, with equivalent information or functionality, shall be provided to make a web site comply with the provisions of this part, when compliance cannot be accomplished in any other way. The content of the text-only page shall be updated whenever the primary page changes.
+
+- Level of Support & Supporting Features: TBD
+
+- Remarks and explanations: TBD
+
 (l) When pages utilize scripting languages to display content, or to create interface elements, the information provided by the script shall be identified with functional text that can be read by Assistive Technology.
+
+- Level of Support & Supporting Features: TBD
+
+- Remarks and explanations: TBD
+
 (m) When a web page requires that an applet, plug-in or other application be present on the client system to interpret page content, the page must provide a link to a plug-in or applet that complies with 1194.21(a) through (l).
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product. 
+
 (n) When electronic forms are designed to be completed on-line, the form shall allow people using Assistive Technology to access the information, field elements, and functionality required for completion and submission of the form, including all directions and cues.
+
+- Level of Support & Supporting Features: TBD
+
+- Remarks and explanations: TBD
+
 (o) A method shall be provided that permits users to skip repetitive navigation links.
+
+- Level of Support & Supporting Features: TBD
+
+- Remarks and explanations: TBD
+
 (p) When a timed response is required, the user shall be alerted and given sufficient time to indicate more time is required.
 
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product. There are no timed responses used in the system. 
 
 Section 1194.23 Telecommunications Products - Detail
-Voluntary Product Accessibility Template
-Criteria
+--------------------------------------------------------------
+
 (a) Telecommunications products or systems which provide a function allowing voice communication and which do not themselves provide a TTY functionality shall provide a standard non-acoustic connection point for TTYs. Microphones shall be capable of being turned on and off to allow the user to intermix speech with TTY use.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
 (b) Telecommunications products which include voice communication functionality shall support all commonly used cross-manufacturer non-proprietary standard TTY signal protocols.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
 (c) Voice mail, auto-attendant, and interactive voice response telecommunications systems shall be usable by TTY users with their TTYs.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
 (d) Voice mail, messaging, auto-attendant, and interactive voice response telecommunications systems that require a response from a user within a time interval, shall give an alert when the time interval is about to run out, and shall provide sufficient time for the user to indicate more time is required.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
 (e) Where provided, caller identification and similar telecommunications functions shall also be available for users of TTYs, and for users who cannot see displays.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
 (f) For transmitted voice signals, telecommunications products shall provide a gain adjustable up to a minimum of 20 dB. For incremental volume control, at least one intermediate step of 12 dB of gain shall be provided.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
 (g) If the telecommunications product allows a user to adjust the receive volume, a function shall be provided to automatically reset the volume to the default level after every use.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
 (h) Where a telecommunications product delivers output by an audio transducer which is normally held up to the ear, a means for effective magnetic wireless coupling to hearing technologies shall be provided.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
 (i) Interference to hearing technologies (including hearing aids, cochlear implants, and assistive listening devices) shall be reduced to the lowest possible level that allows a user of hearing technologies to utilize the telecommunications product.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
 (j) Products that transmit or conduct information or communication, shall pass through cross-manufacturer, non-proprietary, industry-standard codes, translation protocols, formats or other information necessary to provide the information or communication in a usable format. Technologies which use encoding, signal compression, format transformation, or similar techniques shall not remove information needed for access or shall restore it upon delivery.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
 (k)(1) Products which have mechanically operated controls or keys shall comply with the following: Controls and Keys shall be tactilely discernible without activating the controls or keys.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
 (k)(2) Products which have mechanically operated controls or keys shall comply with the following: Controls and Keys shall be operable with one hand and shall not require tight grasping, pinching, twisting of the wrist. The force required to activate controls and keys shall be 5 lbs. (22.2N) maximum.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
 (k)(3) Products which have mechanically operated controls or keys shall comply with the following: If key repeat is supported, the delay before repeat shall be adjustable to at least 2 seconds. Key repeat rate shall be adjustable to 2 seconds per character.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
 (k)(4) Products which have mechanically operated controls or keys shall comply with the following: The status of all locking or toggle controls or keys shall be visually discernible, and discernible either through touch or sound.
 
+- Level of Support & Supporting Features: NOT APPLICABLE 
 
-Section 1194.24 Video and Multi-media Products – Detail
-Voluntary Product Accessibility Template
-Criteria
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
+Section 1194.24 Video and Multi-media Products - Detail  
+-------------------------------------------------------------
+
 a) All analog television displays 13 inches and larger, and computer equipment that includes analog television receiver or display circuitry, shall be equipped with caption decoder circuitry which appropriately receives, decodes, and displays closed captions from broadcast, cable, videotape, and DVD signals. As soon as practicable, but not later than July 1, 2002, widescreen digital television (DTV) displays measuring at least 7.8 inches vertically, DTV sets with conventional displays measuring at least 13 inches vertically, and stand-alone DTV tuners, whether or not they are marketed with display screens, and computer equipment that includes DTV receiver or display circuitry, shall be equipped with caption decoder circuitry which appropriately receives, decodes, and displays closed captions from broadcast, cable, videotape, and DVD signals.
+
 (b) Television tuners, including tuner cards for use in computers, shall be equipped with secondary audio program playback circuitry.
+
 (c) All training and informational video and multimedia productions which support the agency's mission, regardless of format, that contain speech or other audio information necessary for the comprehension of the content, shall be open or closed captioned.
+
 (d) All training and informational video and multimedia productions which support the agency's mission, regardless of format, that contain visual information necessary for the comprehension of the content, shall be audio described.
+
 (e) Display or presentation of alternate text presentation or audio descriptions shall be user-selectable unless permanent.
 
 
-Section 1194.25 Self-Contained, Closed Products – Detail
-Voluntary Product Accessibility Template
-Criteria
+Section 1194.25 Self-Contained, Closed Products - Detail 
+--------------------------------------------------------------
 (a) Self contained products shall be usable by people with disabilities without requiring an end-user to attach Assistive Technology to the product. Personal headsets for private listening are not Assistive Technology.
 (b) When a timed response is required, the user shall be alerted and given sufficient time to indicate more time is required.
 (c) Where a product utilizes touchscreens or contact-sensitive controls, an input method shall be provided that complies with 1194.23 (k) (1) through (4).
