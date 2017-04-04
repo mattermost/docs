@@ -2,7 +2,7 @@ Core Developer Handbook
 -----------------------------
 
 This handbook contains documentation useful for Mattermost core developers. A core developer is 
-a maintainer on the Mattermost project that has merge access to the Mattermost repositories. They are responsible for reviewing pull requests, cultivating the Mattermost developer community and guiding the technical vision of Mattermost.
+a maintainer on the [Mattermost project](https://github.com/mattermost) that has merge access to the Mattermost repositories. They are responsible for reviewing pull requests, cultivating the Mattermost developer community and guiding the technical vision of Mattermost.
 
 ### Current Core Developers ###
 
@@ -18,7 +18,7 @@ Below is the list of core developers working on Mattermost:
 
 Core developers are expected to code review pull requests submitted to the Mattermost repositories. Below are some guidelines for reviewing code:
 
-* Responsibility for the submitted code relies on that of the submitter, it is their responsibility to test and implement any changes at high quality. As a result, code reviewers are not required to do a full audit of code changes but should read through the code to:
+* Responsibility for the submitted code relies on the submitter, it is their responsibility to test and implement any changes at high quality. As a result, code reviewers are not required to do a full audit of code changes but should read through the code to:
  * Make sure the implementation matches the description of the ticket being completed
  * Ask questions about anything that is not clear
  * To request changes when the code looks incorrect or doesn't match the correct design patterns
