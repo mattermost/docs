@@ -12,7 +12,7 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 #### Pinned Posts
 
-#### config.json environment variables
+#### Configure Using Environment Variables
 
 Once this is merged config.json settings can be overridden with environment variables. They must be proceeded by MM_ and be in all caps. For example to override the json property .ServiceSetting.ListenAddress you would set an environment var of MM_SERVICESETTINGS_LISTENADDRESS
 
@@ -54,6 +54,7 @@ Once this is merged config.json settings can be overridden with environment vari
 
 - Favorite channels are now sorted alphabetically regardless of channel type
 - Town Square now has a default channel purpose
+- User added to a group message are now removed from the Direct Messages search list 
 
 #### Integrations
 
@@ -75,11 +76,12 @@ Once this is merged config.json settings can be overridden with environment vari
 
 #### System Console
 
-- 
+
 
 #### Enterprise Edition
 
-- 
+- Policy controls for restricting permissions to add and remove members from private channels
+- Added the ability to read the license file from the disk
 
 ### Bug Fixes
 
@@ -93,6 +95,9 @@ Once this is merged config.json settings can be overridden with environment vari
 - The Town Square channel menu no longer has redundant dividers with certain combinations of System Console > Policy settings
 - Fixed an issue where some conversations would not trigger the channel to appear unread in the left-hand sidebar
 - Removed emoji reactions no longer appear as a blank space
+- Fixed an issue where usernames sometimes did not appear when hovering over reactions
+- Fixed missing search results when using the "in:" or "from:" modifiers
+- Editing a custom theme no longer causes the user interface to freeze
 
 ### Compatibility  
 
@@ -128,6 +133,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 **Removed routes (APIv3):**
 - `GET` at `/channels/more` (replaced by /`channels/more/{offset}/{limit}`)
 
+**Removed routes (APIv3):**
+
 **Deprecated routes (APIv3):**
 - `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`) is removed in v3.8
 - `POST` at `/channels/set_last_viewed_at` (replaced by `/channels/view`) is removed in v3.8
@@ -154,6 +161,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Sometimes no email verification is sent to the new email address after changing your email in Account Settings. A workaround is to sign in with the new email address and hitting "Resend Email" on the "Email not verified" page
 - Clicking "Load more messages" sometimes brings you to the bottom of the page
 - Switching to a channel with unreads sometimes doesn't jump to the correct scrolling position
+
 
 ### Contributors
 
