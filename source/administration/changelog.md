@@ -101,34 +101,27 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Database Changes from v3.7 to v3.8
 
-**Posts Table:**
-- Added `EditAt` column
+XXXXXX check with dev
 
 ### API Changes from v3.7 to v3.8
 
 **New routes (APIv3):**
-- `POST` at `/channels/create_group`
-  - Creates a new group message channel XXXXXX
+- `GET` at `/channels/{channel_id}/pinned`
+  - Returns the pinned posts in a channel
+- `POST` at `/channels/{channel_id}/posts/{post_id}/pin`
+  - Pins a post to a channel
+- `POST` at `/channels/{channel_id}/posts/{post_id}/unpin`
+  - Unpins a post from a channel
 
 **Removed routes (APIv3):**
 - `GET` at `/channels/more` (replaced by /`channels/more/{offset}/{limit}`)
-
-**Removed routes (APIv3):**
-
-**Deprecated routes (APIv3):**
-- `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`) is removed in v3.8
-- `POST` at `/channels/set_last_viewed_at` (replaced by `/channels/view`) is removed in v3.8
-- `POST` at `/users/status/set_active_channel` (replaced by `/channels/view`) is removed in v3.8
-
-### Websocket Event Changes from v3.7 to v3.8
-
-**Added:**
-- `channel_create` that occurs each time a channel is created XXXXXX
-
-**Removed:**
+- `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`)
+- `POST` at `/channels/set_last_viewed_at` (replaced by `/channels/view`)
+- `POST` at `/users/status/set_active_channel` (replaced by `/channels/view`)
 
 ### Known Issues
 
+XXXXXX verify known issues
 - Slack import doesn't add merged members/e-mail accounts to imported channels
 - User can receive a video call from another browser tab while already on a call
 - Sequential messages from the same user appear as separate posts on mobile view
@@ -142,12 +135,16 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Clicking "Load more messages" sometimes brings you to the bottom of the page
 - Switching to a channel with unreads sometimes doesn't jump to the correct scrolling position
 
-
 ### Contributors
 
 Many thanks to all our contributors. In alphabetical order:
 
 /platform
+XXXXXX LI working on list
+
+
+
+
 
 ## Release v3.7.1
 
