@@ -282,54 +282,200 @@ Section 1194.24 Video and Multi-media Products - Detail
 
 a) All analog television displays 13 inches and larger, and computer equipment that includes analog television receiver or display circuitry, shall be equipped with caption decoder circuitry which appropriately receives, decodes, and displays closed captions from broadcast, cable, videotape, and DVD signals. As soon as practicable, but not later than July 1, 2002, widescreen digital television (DTV) displays measuring at least 7.8 inches vertically, DTV sets with conventional displays measuring at least 13 inches vertically, and stand-alone DTV tuners, whether or not they are marketed with display screens, and computer equipment that includes DTV receiver or display circuitry, shall be equipped with caption decoder circuitry which appropriately receives, decodes, and displays closed captions from broadcast, cable, videotape, and DVD signals.
 
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
 (b) Television tuners, including tuner cards for use in computers, shall be equipped with secondary audio program playback circuitry.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
 
 (c) All training and informational video and multimedia productions which support the agency's mission, regardless of format, that contain speech or other audio information necessary for the comprehension of the content, shall be open or closed captioned.
 
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
 (d) All training and informational video and multimedia productions which support the agency's mission, regardless of format, that contain visual information necessary for the comprehension of the content, shall be audio described.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
 
 (e) Display or presentation of alternate text presentation or audio descriptions shall be user-selectable unless permanent.
 
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
 
 Section 1194.25 Self-Contained, Closed Products - Detail 
 --------------------------------------------------------------
+
 (a) Self contained products shall be usable by people with disabilities without requiring an end-user to attach Assistive Technology to the product. Personal headsets for private listening are not Assistive Technology.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
 (b) When a timed response is required, the user shall be alerted and given sufficient time to indicate more time is required.
-(c) Where a product utilizes touchscreens or contact-sensitive controls, an input method shall be provided that complies with 1194.23 (k) (1) through (4).
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
+(c) Where a product utilizes touchscreens or contact-sensitive controls, an input method shall be provided that complies with 1194.23 
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
 (d) When biometric forms of user identification or control are used, an alternative form of identification or activation, which does not require the user to possess particular biological characteristics, shall also be provided.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
 (e) When products provide auditory output, the audio signal shall be provided at a standard signal level through an industry standard connector that will allow for private listening. The product must provide the ability to interrupt, pause, and restart the audio at anytime.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
 (f) When products deliver voice output in a public area, incremental volume control shall be provided with output amplification up to a level of at least 65 dB. Where the ambient noise level of the environment is above 45 dB, a volume gain of at least 20 dB above the ambient level shall be user selectable. A function shall be provided to automatically reset the volume to the default level after every use.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
 (g) Color coding shall not be used as the only means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
 (h) When a product permits a user to adjust color and contrast settings, a range of color selections capable of producing a variety of contrast levels shall be provided.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
 (i) Products shall be designed to avoid causing the screen to flicker with a frequency greater than 2 Hz and lower than 55 Hz.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
 (j) (1) Products which are freestanding, non-portable, and intended to be used in one location and which have operable controls shall comply with the following: The position of any operable control shall be determined with respect to a vertical plane, which is 48 inches in length, centered on the operable control, and at the maximum protrusion of the product within the 48 inch length on products which are freestanding, non-portable, and intended to be used in one location and which have operable controls.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
 (j)(2) Products which are freestanding, non-portable, and intended to be used in one location and which have operable controls shall comply with the following: Where any operable control is 10 inches or less behind the reference plane, the height shall be 54 inches maximum and 15 inches minimum above the floor.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
 (j)(3) Products which are freestanding, non-portable, and intended to be used in one location and which have operable controls shall comply with the following: Where any operable control is more than 10 inches and not more than 24 inches behind the reference plane, the height shall be 46 inches maximum and 15 inches minimum above the floor.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
 (j)(4) Products which are freestanding, non-portable, and intended to be used in one location and which have operable controls shall comply with the following: Operable controls shall not be more than 24 inches behind the reference plane.
 
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
 
 
-Section 1194.26 Desktop and Portable Computers
-Criteria
+Section 1194.26 Desktop and Portable Computers - Detail 
+-----------------------------------------------------------------
+
 (a) All mechanically operated controls and keys shall comply with 1194.23 (k) (1) through (4).
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
 (b) If a product utilizes touchscreens or touch-operated controls, an input method shall be provided that complies with 1194.23 (k) (1) through (4).
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
 (c) When biometric forms of user identification or control are used, an alternative form of identification or activation, which does not require the user to possess particular biological characteristics, shall also be provided.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
+
 (d) Where provided, at least one of each type of expansion slots, ports and connectors shall comply with publicly available industry standards
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product.
 
 
 Section 1194.31 Functional Performance Criteria – Detail
-Voluntary Product Accessibility Template
-Criteria
+-----------------------------------------------------------------
+
 (a) At least one mode of operation and information retrieval that does not require user vision shall be provided, or support for Assistive Technology used by people who are blind or visually impaired shall be provided.
+
+- Level of Support & Supporting Features: TBD
+
+- Remarks and explanations: TBD
+
 (b) At least one mode of operation and information retrieval that does not require visual acuity greater than 20/70 shall be provided in audio and enlarged print output working together or independently, or support for Assistive Technology used by people who are visually impaired shall be provided.
+
+- Level of Support & Supporting Features: SUPPORTED 
+
+- Remarks and explanations: Increasing Zoom level in Mattermost web app can be used to fulfill this requirement. 
+
 (c) At least one mode of operation and information retrieval that does not require user hearing shall be provided, or support for Assistive Technology used by people who are deaf or hard of hearing shall be provided
+
+- Level of Support & Supporting Features: TBD
+
+- Remarks and explanations: TBD
+
 (d) Where audio information is important for the use of a product, at least one mode of operation and information retrieval shall be provided in an enhanced auditory fashion, or support for assistive hearing devices shall be provided.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: There is no functionality relying on audio only. 
+
 (e) At least one mode of operation and information retrieval that does not require user speech shall be provided, or support for Assistive Technology used by people with disabilities shall be provided.
+
+- Level of Support & Supporting Features: SUPPORTED 
+
+- Remarks and explanations: No speech-only interfaces in Mattermost. 
+
 (f) At least one mode of operation and information retrieval that does not require fine motor control or simultaneous actions and that is operable with limited reach and strength shall be provided.
 
+- Level of Support & Supporting Features: SUPPORTED 
+
+- Remarks and explanations: System can be operated with computer keyboard only, which can meet stated requirements when in accessibility mode. 
+
 Section 1194.41 Information, Documentation and Support – Detail
-Voluntary Product Accessibility Template
-Criteria
+------------------------------------------------------------------------------
+
 (a) Product support documentation provided to end-users shall be made available in alternate formats upon request, at no additional charge
+
+- Level of Support & Supporting Features: SUPPORTED 
+
+- Remarks and explanations: Full documentation publicly available at https://docs.mattermost.com 
+
 (b) End-users shall have access to a description of the accessibility and compatibility features of products in alternate formats or alternate methods upon request, at no additional charge.
+
+- Level of Support & Supporting Features: SUPPORTED 
+
+- Remarks and explanations: This documentation include links to all relevant accessibility and compatibility options, including theme colors and keyboard shortcuts. 
+
 (c) Support services for products shall accommodate the communication needs of end-users with disabilities.
+
+- Level of Support & Supporting Features: TBD
+
+- Remarks and explanations: TBD
