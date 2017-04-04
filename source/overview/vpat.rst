@@ -94,17 +94,66 @@ Section 1194.21 Software Applications and Operating Systems
 Section 1194.22 Web-based Intranet and Internet information and Applications 
 ----------------------------------------------------------------------------------
 
-Criteria
 (a) A text equivalent for every non-text element shall be provided (e.g., via "alt", "longdesc", or in element content).
+
+- Level of Support & Supporting Features: TBD 
+
+- Remarks and explanations: TBD
+
 (b) Equivalent alternatives for any multimedia presentation shall be synchronized with the presentation.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product. 
+
 (c) Web pages shall be designed so that all information conveyed with color is also available without color, for example from context or markup.
+
+- Level of Support & Supporting Features: SUPPORTS 
+
+- Remarks and explanations: Nothing to add. 
+
 (d) Documents shall be organized so they are readable without requiring an associated style sheet.
+
+- Level of Support & Supporting Features: DOES NOT SUPPORT 
+
+- Remarks and explanations: This functionality is planned for 2018 release. 
+
 (e) Redundant text links shall be provided for each active region of a server-side image map.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product. 
+
 (f) Client-side image maps shall be provided instead of server-side image maps except where the regions cannot be defined with an available geometric shape.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product. 
+
 (g) Row and column headers shall be identified for data tables.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product. 
+
 (h) Markup shall be used to associate data cells and header cells for data tables that have two or more logical levels of row or column headers.
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product. 
+
 (i) Frames shall be titled with text that facilitates frame identification and navigation
+
+- Level of Support & Supporting Features: NOT APPLICABLE 
+
+- Remarks and explanations: Functionality described in this requirement is not included in the product. 
+
 (j) Pages shall be designed to avoid causing the screen to flicker with a frequency greater than 2 Hz and lower than 55 Hz.
+
+- Level of Support & Supporting Features: SUPPORTS 
+
+- Remarks and explanations: Nothing to add. 
+
 (k) A text-only page, with equivalent information or functionality, shall be provided to make a web site comply with the provisions of this part, when compliance cannot be accomplished in any other way. The content of the text-only page shall be updated whenever the primary page changes.
 (l) When pages utilize scripting languages to display content, or to create interface elements, the information provided by the script shall be identified with functional text that can be read by Assistive Technology.
 (m) When a web page requires that an applet, plug-in or other application be present on the client system to interpret page content, the page must provide a link to a plug-in or applet that complies with 1194.21(a) through (l).
