@@ -4,6 +4,8 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 ## Release v3.8.0
 
+Release Date: April 17, 2017
+
 ### Security Updates
 
 - Mattermost v3.8.0 contains multiple [security updates](http://about.mattermost.com/security-updates/). [Upgrading to Mattermost v3.8.0](http://docs.mattermost.com/administration/upgrade.html) is highly recommended.
@@ -11,84 +13,58 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 ### Highlights
 
 #### Pinned Posts
-
-#### Configure Using Environment Variables
-
-Once this is merged config.json settings can be overridden with environment variables. They must be proceeded by MM_ and be in all caps. For example to override the json property .ServiceSetting.ListenAddress you would set an environment var of MM_SERVICESETTINGS_LISTENADDRESS
+- Important messages can be pinned to the channel for easy reference. Pinned posts are visible to all channel members.
 
 #### Emoji Picker and Improved Emoji Reactions
+- The picker offers quick access to emoji when composing messages or adding reactions.
 
 #### System Users List
 - The System Console now consolidates all users into a system-wide list that can be filtered by team. The users list can be used to manage team membership and team roles for any user on the system.
 
-
-
+#### Configure Using Environment Variables
+- Override `config.json` settings using environment variables. XXXXXX link to docs
 
 ### Improvements
 
-#### Performance
-
 #### Web User Interface
-
 - Date separators now appear between posts in the right-hand sidebar
-- Non-square profile pictures are now cropped in the middle rather than being stretched 
-- The "Add Members" modal now autofocuses on the search box when opened from the "Manage Members" modal
+- Non-square profile pictures are now cropped in the middle rather than being stretched
 - Post timestamps now have an expanded date tooltip
+- The "Add Members" modal now autofocuses on the search box when opened from the "Manage Members" modal
 - Reduced the margins and line height in compact view
-
 - There is now a confirmation dialog before deleting a custom emoji
 
-#### Messaging
-
+#### Search
+- File attachments thumbnails are now shown in search results
 - Flagged posts from other teams are no longer displayed 
 
-#### Mobile
-
-- Executing a search now closes the keyboard and removes the keyboard focus from the text box
-
-#### Search
-
-- File attachments thumbnails are now shown in search results
-
 #### Channels
-
 - Favorite channels are now sorted alphabetically regardless of channel type
 - Town Square now has a default channel purpose
-- User added to a group message are now removed from the Direct Messages search list 
+- User added to a group message are now removed from the Direct Messages search list
+- "Private groups" have been re-named to "Private Channels"
+
+#### Mobile
+- Executing a search now closes the keyboard and removes the keyboard focus from the text box
 
 #### Integrations
-
 - The integrations confirmation page can now be dismissed with the ENTER key
 
 #### Notifications
-
 - Users can no longer configure email notification settings if the notifications are disabled for the system
 
-
-
 #### Onboarding
-
-
-
-#### Slack Import
-
-- 
-
-#### System Console
-
-
+- Existing users on the server can now easily be added to a team via the Main Menu
 
 #### Enterprise Edition
-
 - Policy controls for restricting permissions to add and remove members from private channels
 - Added the ability to read the license file from the disk
 
 ### Bug Fixes
-
+- Fixed line wrapping of the timestamp in Account Settings > Security > View Access History 
+- Fixed an inconsistent error message when creating a channel with a display name of two or less characters
 - Removed the duplicate "Back" button on the Team Creation page
 - The AltGR key no longer triggers keyboard shortcuts
-- Fixed line wrapping of the timestamp in Account Settings > Security > View Access History 
-- Fixed an inconsistent error message when creating a channel with two or less characters
 - Saving a team name without making changes no longer throws an error message
 - Group messages are now sorted alphabetically with direct messages
 - The "Create Channel" button will no only appear in the "More Channels" modal when the user has the permission to create channels
@@ -98,12 +74,16 @@ Once this is merged config.json settings can be overridden with environment vari
 - Fixed an issue where usernames sometimes did not appear when hovering over reactions
 - Fixed missing search results when using the "in:" or "from:" modifiers
 - Editing a custom theme no longer causes the user interface to freeze
+- The date of the root post in the right-hand sidebar now accurately displays the date
+- Fixed an issue where link previews would sometimes cause a horizontal scroll bar to appear
+- iOS code blocks no longer wrap to the next line
 
 ### Compatibility  
 
-Backwards compatibility with the old CLI tool is removed in v3.8. See [documentation to learn more about the new CLI tool](https://docs.mattermost.com/administration/command-line-tools.html).
-
 Changes from v3.7 to v3.8:
+- The **System Console > Configuration > [Site URL](https://docs.mattermost.com/administration/config-settings.html#site-url)** field is now mandatory. Please set the Site URL in the System Console or in the `gitlab.rb` file if you are using GitLab Mattermost.
+- Server logs will now be written to the `mattermost.log` file located at the path specified in **System Console > Logging > [File Log Directory](https://docs.mattermost.com/administration/config-settings.html#file-log-directory)**. Please set the file path in the System Console or in the `gitlab.rb` file if you are using GitLab Mattermost.
+- Backwards compatibility with the old CLI tool is removed in v3.8. See [documentation to learn more about the new CLI tool](https://docs.mattermost.com/administration/command-line-tools.html).
 
 #### config.json   
 
@@ -111,13 +91,13 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 **Changes to Team Edition and Enterprise Edition**:
 
- - Under `ServiceSettings` in `config.json`:
-   - Added `"TimeBetweenUserTypingUpdatesMilliseconds": 5000` to control how frequently the "user is typing..." messages are updated XXXXXX
+ - Under `EmailSettings` in `config.json`:
+   - Added `"SkipServerCertificateVerification": false` to skip verification of smtp server certificates.
 
 **Additional Changes to Enterprise Edition**:
 
- - Under `ServiceSettings` in `config.json`:
-   - Added `"RestrictPostDelete": all` to set who can delete messages XXXXXX
+ - Under `TeamSettings` in `config.json`:
+   - Added `"RestrictPrivateChannelManageMembers": all` to set who can add and remove members from private groups.
 
 ### Database Changes from v3.7 to v3.8
 
