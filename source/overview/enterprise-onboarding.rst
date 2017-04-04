@@ -10,7 +10,7 @@ Project planning and definition
 
 Pilot with staging and production 
 - Procure trial license 
-- Set up staging server 
+- Set up staging server in high availability and verify proper redundancy is in place. 
 - On-board users to staging server 
 - Set up initial set of integrations to get comfortable with API
 - Set up process for pushing configuration changes to production 
@@ -28,19 +28,36 @@ Integrations with custom systems
 - (Optional) Configure integrations with redundancy (link) 
 
 Corporate directory synchronization 
-- 
-
+- Organize Mattermost users in AD/LDAP so they can be referenced in a single group (Note: nested SGs not supported). 
+- (Optional) Combine multiple AD/LDAP instances using a forrest 
+- Bulk load users into channels and roles based on AD/LDAP groups and other user meta-data
+- (Optional) Synchronize specific channels with membership in AD/LDAP groups (roadmap). 
+- Deploy & test AD/LDAP synchronization and activation and deactivation of users 
 
 Role & permissions configuration 
+- Define roles and permissions for system admin, team admin, and channel admins 
+- (Optional) Define custom roles for administering Mattermost teams and channels (roadmap) 
 
 Securing and deploying mobile apps
 - (Optional) Compile mobile apps to internal enterprise app store 
 - (Optional) Deploy with EMM solutions using SDKs or AppDome 
 
 Scale, security & penetration testing 
-Help desk & end user training
-Roll out announce & phased onboarding 
+- Conduct internal penetration test 
+- Validate hardware is properly configured by running Mattermost Load Test  
+- Finalize plan for security updates 
+- Upgrade plan 
+- Disaster Recover Plan 
+- Standby Plan - Blue/Green set up for application servers and read databases. 
 
+Help desk & end user training
+- Finalize help desk plan and common escalations
+- Prepare end user announcement with links to help resources 
+- (Optional) Create your own copy of Mattermost end user help documentation  
+
+Roll out announce & phased onboarding 
+- Bulk load users by phase and configure user Account Settings 
+- Mass email newly loaded users to let them know how to use the system, including how to set up mobile app
 
 Discovery 
 ---------
