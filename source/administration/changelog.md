@@ -18,14 +18,14 @@ Release Date: April 16, 2017
 #### Pinned Posts
 - Important messages can be pinned to the channel for easy reference. Pinned posts are visible to all channel members.
 
-#### Emoji Picker and Improved Emoji Reactions
-- The picker offers quick access to emoji when composing messages or adding reactions.
+#### Emoji Picker and Improved Emoji Reactions (Beta)
+- The picker offers quick access to emoji when composing messages or adding reactions. Enable the emoji picker in **Account Settings > Advanced > Preview pre-release features**.
 
 #### System Users List
 - The System Console now consolidates all users into a system-wide list that can be filtered by team. The users list can be used to manage team membership and team roles for any user on the system.
 
 #### Configure Using Environment Variables
-- Override `config.json` settings using environment variables. XXXXXX link to docs
+- Override `config.json` settings using environment variables.
 
 ### Improvements
 
@@ -45,7 +45,7 @@ Release Date: April 16, 2017
 - Favorite channels are now sorted alphabetically regardless of channel type
 - Town Square now has a default channel purpose
 - User added to a group message are now removed from the Direct Messages search list
-- "Private groups" have been re-named to "Private Channels"
+- "Private Groups" have been renamed to "Private Channels"
 
 #### Mobile
 - Executing a search now closes the keyboard and removes the keyboard focus from the text box
@@ -80,10 +80,15 @@ Release Date: April 16, 2017
 
 ### Compatibility  
 
-Changes from v3.7 to v3.8:
+#### Breaking changes from v3.7 to v3.8:
 - The **System Console > Configuration > [Site URL](https://docs.mattermost.com/administration/config-settings.html#site-url)** field is now mandatory. Please set the Site URL in the System Console or in the `gitlab.rb` file if you are using GitLab Mattermost.
 - Server logs will now be written to the `mattermost.log` file located at the path specified in **System Console > Logging > [File Log Directory](https://docs.mattermost.com/administration/config-settings.html#file-log-directory)**. Please set the file path in the System Console or in the `gitlab.rb` file if you are using GitLab Mattermost.
 - Backwards compatibility with the old CLI tool is removed in v3.8. See [documentation to learn more about the new CLI tool](https://docs.mattermost.com/administration/command-line-tools.html).
+- The following APIv3 routes have been removed:
+    - `GET` at `/channels/more` (replaced by /`channels/more/{offset}/{limit}`)
+    - `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`)
+    - `POST` at `/channels/set_last_viewed_at` (replaced by `/channels/view`)
+    - `POST` at `/users/status/set_active_channel` (replaced by `/channels/view`)
 
 #### config.json   
 
@@ -113,7 +118,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
   - Pins a post to a channel
 - `POST` at `/channels/{channel_id}/posts/{post_id}/unpin`
   - Unpins a post from a channel
-
+  
 **Removed routes (APIv3):**
 - `GET` at `/channels/more` (replaced by /`channels/more/{offset}/{limit}`)
 - `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`)
@@ -123,7 +128,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Websocket Event Changes from v3.6 to v3.7
 
 **Added:**
-- `added_to_team` that occurs each a user is added to a team by another user
+- `added_to_team` that occurs when the current user is added to a team by another user
 
 **Modified**
 - Added a `seq` field to websocket events that increments with each event sent to the client
@@ -144,7 +149,7 @@ XXXXXX Known issues will be updated closer to release
 Many thanks to all our contributors. In alphabetical order:
 
 /platform
-XXXXXX LI working on list
+
 
 
 
