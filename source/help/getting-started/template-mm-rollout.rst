@@ -3,7 +3,7 @@
 Mattermost Rollout Template
 ===========================
 
-provides sample text and links for internal distribution. used by organizations to help their users get started with Mattermost. Assumes that the users are not familiar with other messaging systems.
+This template provides sample text and links for internal distribution. It can be used by organizations to help their users get started with Mattermost, and assumes that the users are not familiar with other messaging systems.
 
 Announcement Template
 ---------------------
@@ -12,7 +12,7 @@ Welcome to Mattermost at {name-of-organization}.
 
 To get started, go to http://{web-address} and log in. The login depends on how your organization has set up Mattermost.
 
-When you log in for the first time, page through the brief tutorial. When done, you're at the Mattermost interface, where you can start chatting with colleagues.
+When you log in for the first time, page through the brief tutorial. When done, you're at the Mattermost interface where you can start chatting with colleagues.
 
 Every time you log in, you end up in the Town Square channel in a team that you are a member of. Within a team, conversations take place in channels, private groups, and direct messages. For more information about writing messages, see `Messaging Basics <https://docs.mattermost.com/help/getting-started/messaging-basics.html>`_
 
@@ -39,6 +39,8 @@ For more information about using channels, groups, and direct messages, see `Org
 Instructions for System Administrator
 -------------------------------------
 
+Replace {name-of-organization} and {web-address} with appropriate values.
+
 Add new user login instructions that are specific to your organization. The login experience varies depending on whether you set up SSO, SAML, LDAP, or some other method.
 
 Users can access Mattermost via their browsers, or they can download and install one or more of the following client apps:
@@ -52,7 +54,7 @@ Apple Mac Desktop App
 Linux Desktop App (beta)
   Download: https://releases.mattermost.com/desktop/3.6.0/mattermost-desktop-3.6.0-linux-x64.tar.gz
   Installation Instructions: https://docs.mattermost.com/install/desktop.html#linux-beta
-iOs App
+iOS App
   Download and install from the Apple App Store: https://itunes.apple.com/us/app/mattermost/id984966508?ls=1&mt=8
 Android App
   Download and install from Google Play: https://play.google.com/store/apps/details?id=com.mattermost.mattermost&hl=en
