@@ -1,5 +1,5 @@
 =================================================================
-WIP: Voluntary Product Accessibility Template (VPAT) 
+Voluntary Product Accessibility Template (VPAT) 
 =================================================================
 
 The following Voluntary Product Accessiblity Template for 508 Compliance is completed per `online guidelines from the United States Department of State <https://www.state.gov/m/irm/impact/126343.htm>`_.
@@ -16,6 +16,7 @@ The following Voluntary Product Accessiblity Template for 508 Compliance is comp
 Summary 
 ----------------------------
 
+A summary of Mattermost's support of 508 compliance standards is as follows:
 
 Section 1194.21 Software Applications and Operating Systems                     
 
@@ -474,13 +475,13 @@ Section 1194.31 Functional Performance Criteria – Detail
 
 (a) At least one mode of operation and information retrieval that does not require user vision shall be provided, or support for Assistive Technology used by people who are blind or visually impaired shall be provided.
 
-- **Level of Support & Supporting Features**: SUPPORTED
+- **Level of Support & Supporting Features**: SUPPORTS
 
 - **Remarks and Explanations**: Made available via browser.
 
 (b) At least one mode of operation and information retrieval that does not require visual acuity greater than 20/70 shall be provided in audio and enlarged print output working together or independently, or support for Assistive Technology used by people who are visually impaired shall be provided.
 
-- **Level of Support & Supporting Features**: SUPPORTED 
+- **Level of Support & Supporting Features**: SUPPORTS 
 
 - **Remarks and Explanations**: Increasing Zoom level in Mattermost web app can be used to fulfill this requirement. 
 
@@ -498,13 +499,13 @@ Section 1194.31 Functional Performance Criteria – Detail
 
 (e) At least one mode of operation and information retrieval that does not require user speech shall be provided, or support for Assistive Technology used by people with disabilities shall be provided.
 
-- **Level of Support & Supporting Features**: SUPPORTED 
+- **Level of Support & Supporting Features**: SUPPORTS 
 
 - **Remarks and Explanations**: No speech-only interfaces in Mattermost. 
 
 (f) At least one mode of operation and information retrieval that does not require fine motor control or simultaneous actions and that is operable with limited reach and strength shall be provided.
 
-- **Level of Support & Supporting Features**: SUPPORTED 
+- **Level of Support & Supporting Features**: SUPPORTS 
 
 - **Remarks and Explanations**: System can be operated with computer keyboard only, which can meet stated requirements when in accessibility mode. 
 
@@ -513,18 +514,18 @@ Section 1194.41 Information, Documentation and Support – Detail
 
 (a) Product support documentation provided to end-users shall be made available in alternate formats upon request, at no additional charge
 
-- **Level of Support & Supporting Features**: SUPPORTED 
+- **Level of Support & Supporting Features**: SUPPORTS 
 
 - **Remarks and Explanations**: Full documentation publicly available at https://docs.mattermost.com 
 
 (b) End-users shall have access to a description of the accessibility and compatibility features of products in alternate formats or alternate methods upon request, at no additional charge.
 
-- **Level of Support & Supporting Features**: SUPPORTED 
+- **Level of Support & Supporting Features**: SUPPORTS 
 
 - **Remarks and Explanations**: This documentation include links to all relevant accessibility and compatibility options, including theme colors and keyboard shortcuts. 
 
 (c) Support services for products shall accommodate the communication needs of end-users with disabilities.
 
-- **Level of Support & Supporting Features**: SUPPORTED
+- **Level of Support & Supporting Features**: SUPPORTS
 
 - **Remarks and Explanations**: Mattermost Enterprise Edition support available via email. 
