@@ -90,8 +90,6 @@ You can import a theme by pasting a "Theme Code" into the Custom Theme menu.
 
 Go to **Account Settings > Display > Custom Theme > Copy and paste to share theme colors** and paste a theme code to import it, then click **Save**.
 
-You can find sample themes below. You can also find `theme codes shared by the community from the Mattermost community forum. <https://forum.mattermost.org/t/share-your-favorite-mattermost-theme-colors/1330>`_
-
 Custom Theme Examples
 ~~~~~~~~~~~~~~~~~~~~~
 
