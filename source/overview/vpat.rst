@@ -10,11 +10,60 @@ The following Voluntary Product Accessiblity Template for 508 Compliance is comp
 - **Vendor Contact Name**: Steve Green
 - **Vendor Contact Telephone**: Please `contact Mattermost, Inc. <https://about.mattermost.com/contact/>`_ for telephone access. 
 
+.. contents::
+    :backlinks: top
+
 Summary 
 ----------------------------
 
-.. contents::
-    :backlinks: top
+
+Section 1194.21 Software Applications and Operating Systems                     
+
+- **Level of Support & Supporting Features**: SUPPORTS for 10 criteria, NOT APPLICABLE for 1 criteria, SUPPORTS THROUGH EQUIVALENT FACILITATION for 1 criteria.  
+
+- **Remarks and Explanations**: NOT APPLICABLE criteria references requirements for animations, which are not used in the product. SUPPORTS THROUGH EQUIVALENT FACILITATION references the use of a user's contrast and color settings at as an equivalent Mattermost can reproduce contrast and color settings in its web interface, though--like any web application--it does not draw them from a user's PC settings. 
+
+Section 1194.22 Web-based Intranet and Internet information and Applications 
+
+- **Level of Support & Supporting Features**: SUPPORTS for 5 criteria, NOT APPLICABLE for 9 criteria, SUPPORTS WITH EXCEPTION for 1 criteria, DOES NOT SUPPORT for 1 criteria. 
+
+- **Remarks and Explanations**: SUPPORTS WITH EXCEPTION refers to having 80-90% coverage of text equivalents for every non-text element, with plans to increase coverage in 2018 release. DOES NOT SUPPORT refers to readability without associated style sheet with plan to address this issue in 2018 release. 
+
+Section 1194.23 Telecommunications Products 
+
+- **Level of Support & Supporting Features**: NOT APPLICABLE for 14 criteria.
+
+- **Remarks and Explanations**: Mattermost is not a telecommunications product. 
+
+Section 1194.24 Video and Multi-media Products 
+
+- **Level of Support & Supporting Features**: NOT APPLICABLE for 5 criteria.
+
+- **Remarks and Explanations**: Mattermost is not a video or multi-media product. 
+
+Section 1194.25 Self-Contained, Closed Products 
+
+- **Level of Support & Supporting Features**: NOT APPLICABLE for 14 criteria.
+
+- **Remarks and Explanations**: Mattermost is not a closed prduct. 
+
+Section 1194.26 Desktop and Portable Computers 
+
+- **Level of Support & Supporting Features**: NOT APPLICABLE for 4 criteria.
+
+- **Remarks and Explanations**: Mattermost is not a desktop or portable computer. 
+
+Section 1194.31 Functional Performance Criteria 
+
+- **Level of Support & Supporting Features**: SUPPORTS for 4 criteria, NOT APPLICABLE for 2 criteria.
+
+- **Remarks and Explanations**: NOT APPLICABLE due to no audio-entry for Mattermost.
+
+Section 1194.41 Information, Documentation and Support 
+
+- **Level of Support & Supporting Features**: SUPPORTS for 3 criteria.
+
+- **Remarks and Explanations**: No additional comments. 
 
 Section 1194.21 Software Applications and Operating Systems - Detail 
 ---------------------------------------------------------------------------------
@@ -180,7 +229,7 @@ Section 1194.22 Web-based Intranet and Internet information and Applications - D
 
 (o) A method shall be provided that permits users to skip repetitive navigation links.
 
-- **Level of Support & Supporting Features**: SUPPORTED
+- **Level of Support & Supporting Features**: SUPPORTS
 
 - **Remarks and Explanations**: Keyboard shortcuts can skip repetitive navigation links.
 
