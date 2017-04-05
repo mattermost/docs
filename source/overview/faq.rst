@@ -30,27 +30,27 @@ If you need encrypted transport or production-level SLAs for push notifications,
 Learn more about `our mobile apps and push notification service <https://docs.mattermost.com/deployment/push.html>`_.
 
 
-Video, Audio and Screensharing
+Video, Audio, and Screen Sharing
 ----------------------------------------
 
-What support is available for video and audio calling and screensharing?
+What support is available for video and audio calling and screen sharing?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In all editions, open source `one-on-one video and audio calling is currently available in beta <https://docs.mattermost.com/deployment/webrtc.html>`_ using the WebRTC standard.
 
 After many conversations with users and customers we realized:
 
-1. Most people using Mattermost need top quality video/audio/screensharing solutions, which are predominantly propreitary.
-2. Integrating an organization's choice of video/audio/screensharing solution is paramount.
+1. Most people using Mattermost need top quality video/audio/screen sharing solutions, which are predominantly proprietary.
+2. Integrating an organization's choice of video/audio/screen sharing solution is paramount.
 
-Today, you can neatly link video/audio/screensharing solutions, like Zoom and Skype for Business, to channels by using markdown formatting the header (Example: ``[Click for video call](https://link_to_solution)``).
+Today, you can neatly link video/audio/screen sharing solutions, like Zoom and Skype for Business, to channels by using markdown formatting the header (Example: ``[Click for video call](https://link_to_solution)``).
 
 In future, we plan to add:
 
-- A plug-in option for user profiles to connect directly to a person using 3rd party video/audio/screensharing products, including custom and phone-based solutions.
-- A plug-in option for linking channels and teams to on-demand video/audio/screensharing solutions
+- A plug-in option for user profiles to connect directly to a person using 3rd party video/audio/screen sharing products, including custom and phone-based solutions.
+- A plug-in option for linking channels and teams to on-demand video/audio/screen sharing solutions
 - A default, open source one-on-one video and audio calling plug-in based on WebRTC
-- A directory of 3rd party video/audio/screensharing solutions that plug-in to Mattermost
+- A directory of 3rd party video/audio/screen sharing solutions that plug-in to Mattermost
 
 The timeline for these additions would not be before the second half of 2017.
 
@@ -146,7 +146,7 @@ Other considerations:
 
 - Mattermost has a default `Conditions of Use <https://docs.mattermost.com/administration/config-settings.html#terms-of-service-link>`_ agreement for the Terms of Service link at the bottom of login screen that should be incorporated into any additional Terms of Use you may add.
 - The Mattermost copyright notices on the user interface should remain.
-- There may be additional legal and regulatory issues to consider and we recommend you employ legal council to fully understand what's involved in creating and selling a derivative work.
+- There may be additional legal and regulatory issues to consider and we recommend you employ legal counsel to fully understand what's involved in creating and selling a derivative work.
 
 
 Will Mattermost complete questionnaires requiring confidential data without an NDA?
@@ -157,6 +157,6 @@ No, Mattermost will not complete questionnaires requiring confidential data with
 Why does Mattermost have a discount for certain kinds of non-profits but not for others?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-While we welcome anyone to use the open source version of Mattermost Team Edition free of charge, Mattermost, Inc., like any software company, has specific discounting programs for its commercial Mattermost Enterprise Edition based on business objectives. Objectives of the discounting programs include the suitability of potential case studies, references, word-of-mouth promotion as well as public promotion of solutions, among many other factors. 
+While we welcome anyone to use the open source version of Mattermost Team Edition free of charge, Mattermost, Inc., like any software company, has specific discounting programs for its commercial Mattermost Enterprise Edition based on business objectives. Objectives of the discounting programs include the suitability of potential case studies, references, word-of-mouth promotion as well as public promotion of solutions, among many other factors.
 
 Learn more about our non-profit discount program at https://about.mattermost.com/mattermost-mondays/
