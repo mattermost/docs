@@ -47,7 +47,9 @@ First Day
 Meetings
 ---------------------------------------------------------
 
-This section summarizes norms for public and private meetings for the Mattermost community and for Mattermost Inc. Where possible,
+This section summarizes norms for public and private meetings for the Mattermost community and for Mattermost Inc.
+
+When proposing meetings in different time zones use major cities as references for time, since it's clear and `easy to web search <https://www.google.com/search?q=time+in+new+york&oq=time+in+new+&aqs=chrome.1.0l2j69i57j0l3.3135j0j7&sourceid=chrome&ie=UTF-8>`_, Avoid using "UTC", as it has been shown to causes confusion.
 
 Open Meetings
 ---------------------------------------------------------
@@ -162,7 +164,7 @@ Procedure:
 Platform Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost Inc-only** - (Platform colleagues - 1-2 hours/week) Friday's at 10:10 (`San Francisco Time <http://everytimezone.com/>`_) after platform team standup.
+**Mattermost Inc-only** - (Platform colleagues - 1 hour/week) Thursday's at 10:00 (`San Francisco Time <http://everytimezone.com/>`_). 
 
 Regular team meeting for platform team at Mattermost Inc.
 
@@ -180,7 +182,7 @@ Procedure:
    - **Prepare your demos**
    - **Prepare your User Issue or Kaizen**
 
-   @lindsay please:
+   @[RELEASE MANAGER] please:
    - **Prepare your roadmap checkin**
 
    @[WHOEVER] are you ready for your "Something interesting about my town"?
@@ -198,15 +200,13 @@ Procedure:
 
 Meeting Agenda:
 
-- **Warm-up** - Currently: "Share something interesting about your home town."
-- **Release countdown** - Review release date, milestones and checklists.
+- **Warm-up** - Currently: "Something interesting I've done recently / Somewhere interesting I've been"
 - **Roadmap check-in** - Review of roadmap status in current and next release
 - **Demos** - Team members show highlights of what's completed this week. Relevant follow-ups noted.
 - **Follow-ups** - Follow-ups from previous meeting are discussed
 - **New items** - New team-relevant items are discussed
 
-   - **Kaizen (odd sprints)** - Each colleague shares a potential process improvement. Follow-ups noted.
-   - **User Issues (even sprints)** - Each colleage shares unaddressed external user issue of importance. Follow-ups noted.
+   - **Kaizen / User Issues / Customer Issues** - Each colleague shares a potential process improvement, an unaddressed external user issue of importance or an issue reported by a customer. Follow-ups noted.
 - **Open Questions** - To find blindspots, meeting does not end until 3 open questions are asked and answered.
 
 Post Meeting:
