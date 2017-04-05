@@ -153,11 +153,48 @@ XXXXXX Known issues will be updated closer to release
 
 Many thanks to all our contributors. In alphabetical order:
 
-/platform
+/platform:
 
+[aautio](https://github.com/aautio), [asaadmahmood](https://github.com/asaadmahmood), [bonespiked](https://github.com/bonespiked), [bradhowes](https://github.com/bradhowes), [coreyhulen](https://github.com/coreyhulen), [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [doh5](https://github.com/doh5), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [grundleborg](https://github.com/grundleborg), [hmhealey](https://github.com/hmhealey), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [jostyee](https://github.com/jostyee), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [lindalumitchell](https://github.com/lindalumitchell), [prixone](https://github.com/prixone), [R-Wang97](https://github.com/R-Wang97), [saturninoabril](https://github.com/saturninoabril), [VeraLyu](https://github.com/VeraLyu)
 
+/docs:
 
+[coreyhulen](https://github.com/coreyhulen), [esethna](https://github.com/esethna), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [jwilander](https://github.com/jwilander), [lindy65](https://github.com/lindy65), [Rohlik](https://github.com/Rohlik)
 
+mattermost-redux:
+
+[enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [jarredwitt](https://github.com/jarredwitt), [jwilander](https://github.com/jwilander)
+
+/mattermost-api-reference:
+
+[cpanato](https://github.com/cpanato), [grundleborg](https://github.com/grundleborg), [hmhealey](https://github.com/hmhealey), [jwilander](https://github.com/jwilander), [saturninoabril](https://github.com/saturninoabril), [senk](https://github.com/senk)
+
+/mattermost-mobile:
+
+[csduarte](https://github.com/csduarte), [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [lfbrock](https://github.com/lfbrock), [saturninoabril](https://github.com/saturninoabril)
+
+/mattermost-selenium:
+
+[coreyhulen](https://github.com/coreyhulen)
+[lindalumitchell](https://github.com/lindalumitchell)
+
+/desktop:
+
+[jasonblais](https://github.com/jasonblais)
+[yuya-oc](https://github.com/yuya-oc)
+
+/mattermost-docker:
+
+[xcompass](https://github.com/xcompass)
+
+/mattermost-kubernetes:
+
+[coreyhulen](https://github.com/coreyhulen)
+
+/mattermost-load-test:
+
+[crspeller](https://github.com/crspeller)
+[csduarte](https://github.com/csduarte)
 
 
 ## Release v3.7.1
