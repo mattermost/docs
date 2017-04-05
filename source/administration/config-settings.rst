@@ -347,47 +347,47 @@ Restrict the permission level required to delete public channels. Deleted channe
 | This feature's ``config.json`` setting is ``"RestrictPublicChannelDeletion": "all"`` with options ``all``, ``channel_admin``, ``team_admin``, and ``system_admin`` for above settings respectively.   |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable private group creation for
+Enable private channel creation for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Restrict the permission level required to create private groups.
+Restrict the permission level required to create private channels.
 
-**All team members**: Allow all team members to create private groups.
+**All team members**: Allow all team members to create private channels.
 
-**Team Admins and System Admins**: Restrict creating private groups to Team Admins and System Admins.
+**Team Admins and System Admins**: Restrict creating private channels to Team Admins and System Admins.
 
-**System Admins**: Restrict creating private groups to System Admins.
+**System Admins**: Restrict creating private channels to System Admins.
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictPrivateChannelCreation": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively.   |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable private group renaming for
+Enable private channel renaming for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Restrict the permission level required to rename and set the header or purpose for private groups.
+Restrict the permission level required to rename and set the header or purpose for private channels.
 
-**All channel members**: Allow all group members to rename private groups.
+**All channel members**: Allow all channel members to rename private channels.
 
-**Channel Admins, Team Admins, and System Admins**: Restrict renaming private groups to Channel Admins, Team Admins, and System Admins that are members of the group.
+**Channel Admins, Team Admins, and System Admins**: Restrict renaming private channels to Channel Admins, Team Admins, and System Admins that are members of the private channel.
 
-**Team Admins and System Admins**: Restrict renaming private groups to Team Admins and System Admins that are members of the group.
+**Team Admins and System Admins**: Restrict renaming private channels to Team Admins and System Admins that are members of the private channel.
 
-**System Admins**: Restrict renaming private groups to System Admins that are members of the group.
+**System Admins**: Restrict renaming private channels to System Admins that are members of the private channel.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictPrivateChannelManagement": "all"`` with options ``all``, ``channel_admin``, ``team_admin``, and ``system_admin`` for above settings respectively.   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable private group deletion for
+Enable private channel deletion for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Restrict the permission level required to delete private groups. Deleted groups can be recovered from the database using a `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`_. The last member of a private group has the ability to delete the group regardless of their permission level.
+Restrict the permission level required to delete private channels. Deleted channels can be recovered from the database using a `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`_. The last member of a private channel has the ability to delete the channel regardless of their permission level.
 
-**All channel members**: Allow all group members to delete private groups.
+**All channel members**: Allow all channel members to delete private channels.
 
-**Channel Admins, Team Admins, and System Admins**: Restrict deleting private groups to Channel Admins, Team Admins, and System Admins that are members of the group.
+**Channel Admins, Team Admins, and System Admins**: Restrict deleting private channels to Channel Admins, Team Admins, and System Admins that are members of the private channel.
 
-**Team Admins and System Admins**: Restrict deleting private groups to Team Admins and System Admins that are members of the group.
+**Team Admins and System Admins**: Restrict deleting private channels to Team Admins and System Admins that are members of the private channel.
 
-**System Admins**: Restrict deleting private groups to System Admins that are members of the group.
+**System Admins**: Restrict deleting private channels to System Admins that are members of the private channel.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictPrivateChannelDeletion": "all"`` with options ``all``, ``channel_admin``, ``team_admin``, and ``system_admin`` for above settings respectively.   |
@@ -1566,9 +1566,9 @@ Custom Integrations
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Enable Incoming Webhooks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Developers building integrations can create webhook URLs for channels and private groups. Please see our `documentation page <http://docs.mattermost.com/developer/webhooks-incoming.html>`_ to learn about creating webhooks, view samples, and to let the community know about integrations you have built.
+Developers building integrations can create webhook URLs for public channels and private channels. Please see our `documentation page <http://docs.mattermost.com/developer/webhooks-incoming.html>`_ to learn about creating webhooks, view samples, and to let the community know about integrations you have built.
 
-**True**: Incoming webhooks will be allowed. To manage incoming webhooks, go to **Account Settings > Integrations**. The webhook URLs created in Account Settings can be used by external applications to create posts in any channels or private groups that you have access to.
+**True**: Incoming webhooks will be allowed. To manage incoming webhooks, go to **Account Settings > Integrations**. The webhook URLs created in Account Settings can be used by external applications to create posts in any public or private channels that you have access to.
 
 **False**: The Integrations > Incoming Webhooks section of Account Settings is hidden and all incoming webhooks are disabled.
 
