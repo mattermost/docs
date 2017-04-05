@@ -66,6 +66,8 @@ After submitting a PR, before it is merged:
 3. Dev review must pass
     - Two core committers will review the pull request and either give feedback or approve the PR.
     - Any comments will need to be addressed before the pull request is ready to merge.
+4. CSS review must pass
+    - Any pull request containing CSS changes should be reviewed by the UX and HTML/CSS dev.
 
 If you've included your mailing address in the signed [Contributor License Agreement](https://www.mattermost.org/mattermost-contributor-agreement/), you may receive a [Limited Edition Mattermost Mug](https://forum.mattermost.org/t/limited-edition-mattermost-mugs/143) as a thank you gift after your first pull request is merged. 
 
