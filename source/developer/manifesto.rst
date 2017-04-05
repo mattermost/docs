@@ -39,8 +39,6 @@ Great software creates value quickly. Ideally, a novice IT admin should be able 
 
 Minimalism is providing just the right amount of functionality and not more and not less. Make decisions instead of providing options. Every time you present an option, you force the user to make a decision which can lead to frustration if it's not for the majority of users. Great design is about doing important things extremely well, and not many things poorly. 
 
-That said, Mattermost should enable options for extending team communication benefits through high quality plug-ins
-
 4. Built for teams on private clouds
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
