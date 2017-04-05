@@ -180,9 +180,9 @@ Section 1194.22 Web-based Intranet and Internet information and Applications - D
 
 (o) A method shall be provided that permits users to skip repetitive navigation links.
 
-- **Level of Support & Supporting Features**: TBD
+- **Level of Support & Supporting Features**: SUPPORTED
 
-- **Remarks and Explanations**: TBD
+- **Remarks and Explanations**: Keyboard shortcuts can skip repetitive navigation links.
 
 (p) When a timed response is required, the user shall be alerted and given sufficient time to indicate more time is required.
 
@@ -425,9 +425,9 @@ Section 1194.31 Functional Performance Criteria – Detail
 
 (a) At least one mode of operation and information retrieval that does not require user vision shall be provided, or support for Assistive Technology used by people who are blind or visually impaired shall be provided.
 
-- **Level of Support & Supporting Features**: TBD
+- **Level of Support & Supporting Features**: SUPPORTED
 
-- **Remarks and Explanations**: TBD
+- **Remarks and Explanations**: Made available via browser.
 
 (b) At least one mode of operation and information retrieval that does not require visual acuity greater than 20/70 shall be provided in audio and enlarged print output working together or independently, or support for Assistive Technology used by people who are visually impaired shall be provided.
 
@@ -437,9 +437,9 @@ Section 1194.31 Functional Performance Criteria – Detail
 
 (c) At least one mode of operation and information retrieval that does not require user hearing shall be provided, or support for Assistive Technology used by people who are deaf or hard of hearing shall be provided
 
-- **Level of Support & Supporting Features**: TBD
+- **Level of Support & Supporting Features**: NOT APPLICABLE 
 
-- **Remarks and Explanations**: TBD
+- **Remarks and Explanations**: There is no functionality relying on audio only. 
 
 (d) Where audio information is important for the use of a product, at least one mode of operation and information retrieval shall be provided in an enhanced auditory fashion, or support for assistive hearing devices shall be provided.
 
@@ -476,6 +476,6 @@ Section 1194.41 Information, Documentation and Support – Detail
 
 (c) Support services for products shall accommodate the communication needs of end-users with disabilities.
 
-- **Level of Support & Supporting Features**: TBD
+- **Level of Support & Supporting Features**: SUPPORTED
 
-- **Remarks and Explanations**: TBD
+- **Remarks and Explanations**: Mattermost Enterprise Edition support available via email. 
