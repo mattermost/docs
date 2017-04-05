@@ -32,14 +32,14 @@ Mattermost software, whether open source or commercial, should never withhold an
 2. Quick Time-to-Value 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Great software works quickly. Ideally, a novice IT admin should be able to set up Mattermost and roll it out to their team in just a few minutes. We should automate as much as possible in a standard install, ask few technical questions, and provide full explanations for any decisions an IT admin or end user needs to make. 
+Great software creates value quickly. Ideally, a novice IT admin should be able to set up Mattermost and roll it out to their team in just a few minutes and it should increase everyone's productivity. We should automate as much as possible in a standard install, ask few technical questions, and provide full explanations for any decisions an IT admin or end user needs to make. 
 
 3. Minimalist
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Minimalism is providing just the right amount of functionality and not more and not less. Make decisions instead of providing options. Every time you present an option, you force the user to make a decision which can lead to frustration if it's not for the majority of users. Great design is about doing important things extremely well, and not many things poorly. 
 
-That said, Mattermost should offer APIs, drivers, and a plug-in architecture that enables a wide range of add-on functionality aligned with Mattermost design principles. 
+That said, Mattermost should enable options for extending team communication benefits through high quality plug-ins
 
 4. Built for teams on private clouds
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
