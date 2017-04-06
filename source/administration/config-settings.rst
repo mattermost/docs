@@ -1,10 +1,21 @@
 Configuration Settings
 ======================
-Configuration settings let System Admins manage their Mattermost server and multiple teams. System Admins can modify configuration settings directly in the ``config.json`` file or by using the web-based System Console user interface. Setting changes in the System Console are stored in ``config/config.json``.
 
-The first user added to a new Mattermost install is assigned the System Admin role and can access the System Console from the Main Menu of any team.
+Mattermost configuration settings are maintained in the configuration file ``config.json``, located in the ``mattermost/config`` directory. You can modify the configuration file using the System Console, or by using a text editor to modify it directly.
 
-Note: For any setting not explicitly set in ``config.json`` the Mattermost server will use the default value as documented here, which can be observed in the default ``config/config.json`` file included in each Mattermost release.
+The default location of ``config.json`` is in the ``mattermost/config`` directory. Mattermost must have write permissions to ``config.json``, otherwise changes made in the System Console will have no effect.
+
+Starting in Mattermost version 3.8, you can use environment variables to manage the configuration. Environment variables override settings in ``config.json``. If a change to a setting in ``config.json`` requires a restart for it to take effect, then changes to the corresponding environment variable also require a server restart.
+
+The name of the environment variable for any setting can be derived from the name of that setting in ``config.json``.
+
+For example, to derive the name of the Site URL setting:
+
+1. Find the setting in ``config.json``. In this case, *ServiceSettings.SiteURL*.
+2. Add ``MM_`` to the beginning and convert all characters to uppercase and replace the ``.`` with ``_``. For example, *MM_SERVICESETTINGS_SITEURL*.
+3. The setting becomes ``export MM_SERVICESETTINGS_SITEURL="http://example.com"``
+
+For any setting that is not set in ``config.json`` or in environment variables, the Mattermost server uses the default value as documented here.
 
 .. contents::
   :depth: 2
