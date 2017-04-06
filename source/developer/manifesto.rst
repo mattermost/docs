@@ -37,29 +37,32 @@ Great software creates value quickly. Ideally, a novice IT admin should be able 
 3. Minimalist
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Minimalism is providing just the right amount of functionality and not more and not less. Make decisions instead of providing options. Every time you present an option, you force the user to make a decision which can lead to frustration if it's not for the majority of users. Great design is about doing important things extremely well, and not many things poorly. 
+Minimalism is providing the correct amount of functionality and not more and not less. Great design is about doing important things extremely well, and not many things poorly. Make features work well for its intended purpose before adding new features. 
 
-4. Built for teams on private clouds
+4. Decisions not Options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Make decisions instead of providing options. Every time you present an option, you force the user to make a decision which can lead to frustration if it's not for the majority of users. 
+
+5. Built for teams on private clouds
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost is built for teams who work on private clouds who prefer open source software and need a modern communication experience secured behind a firewall. 
 
-5. No surprises 
+6. No surprises 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Users should never run into anything unexpected with Mattermost. We ship on time and document our features and product changes. Users should be able to know well in advance what is included, not included, and changed in upcoming versions. 
+Users should never run into anything unexpected with Mattermost. We ship on time and document our features and product changes. Users should be able to know well in advance what is being considered for inclusion and changed in upcoming versions. 
 
-6. Empower trusted teams
+7. Empower trusted teams
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Enable people to achieve what the team needs simply. Focus on building trust and education within a team and control via social norms instead of features to force a policy decisions. For large or regulated organizations that require enforcing strict corporate policies, Enterprise Edition can be used. 
 
-7. Primary, not secondary
+8. Primary, not secondary
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-XXXX needs work 
-
-The purpose of Mattermost is to be the primary way a team communicates. Deployment as a secondary system, where not everyone in a team can be reached, fails to achieve the software's purpose. Because of this we don't offer features such as using email as a Mattermost interface (impoverished experience). Also, while you can use your Mattermost account to sign-in to other apps via features like OAuth2 provider support, we generally don't offer SSO into Mattermost from another account. 
+Mattermost is designed to be the primary way a team communicates. Deployment as a secondary system, where not everyone in a team can be reached, fails to achieve our purpose. Because of this we don't offer features such as using email as a Mattermost interface (impoverished experience). Also, while you can use your Mattermost account to sign-in to other apps via features like OAuth2 provider support, we generally don't offer SSO into Mattermost from another account. 
 
 -----
 
