@@ -31,7 +31,7 @@ Configuration
 
 Site URL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The URL, including port number and protocol, that users will use to access Mattermost. This field can be left blank unless you are configuring email batching in Notifications > Email. When blank, the URL is automatically configured based on incoming traffic.
+The URL, including port number and protocol, that users will use to access Mattermost. This field must have a value.
 
 .. note:: Do not append a team name to the end of the site URL.
 
