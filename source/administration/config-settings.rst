@@ -2286,6 +2286,15 @@ There are a number of settings customizable in ``config.json`` unavailable in th
 Service Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+License File Location
+^^^^^^^^^^^^^^^^^^^^^
+
+Path and filename of the license file on disk. On startup, if Mattermost cannot find a valid license in the file ``config/mattermost.mattermost-license``, it looks here. It can be an absolute path, or a path relative to the ``mattermost`` directory.
+
++---------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LicenseFileLocation": ""`` with string input.  |
++---------------------------------------------------------------------------------------------+
+
 Cluster Log Timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 This setting defines the frequency of cluster request time logging for :doc:`../deployment/metrics`, measured in milliseconds.
