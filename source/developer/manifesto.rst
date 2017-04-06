@@ -1,5 +1,5 @@
 ==============================================
-WIP: About the Mattermost Open Source Project 
+About the Mattermost Open Source Project 
 ==============================================
 
 Mattermost is an open source, private cloud alternative to proprietary communication services. Hundreds of contributors around the world help develop the software in over 10 languages. 
