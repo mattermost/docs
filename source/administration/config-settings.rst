@@ -2419,6 +2419,16 @@ Specify the maximum frequency, in seconds, which the batching job checks for new
 | This feature's ``config.json`` setting is ``EmailBatchingInterval": 30`` with whole number input                      |
 +-----------------------------------------------------------------------------------------------------------------------+
 
+Skip Server Certificate Verification
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**True**: Do not validate SMTP servers when connecting to them.
+
+**False**: Validate SMTP servers when connecting to them.
+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SkipServerCertificateVerification": false`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------------------------+
 
 GitLab Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
