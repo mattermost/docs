@@ -49,7 +49,7 @@ Meetings
 
 This section summarizes norms for public and private meetings for the Mattermost community and for Mattermost Inc.
 
-When proposing meetings in different time zones use major cities as references for time, since it's clear and `easy to web search <https://www.google.com/search?q=time+in+new+york&oq=time+in+new+&aqs=chrome.1.0l2j69i57j0l3.3135j0j7&sourceid=chrome&ie=UTF-8>`_, Avoid using "UTC", as it has been shown to causes confusion.
+When proposing meetings in different time zones use major cities as references for time, since it's clear and `easy to web search <https://www.google.com/search?q=time+in+new+york&oq=time+in+new+&aqs=chrome.1.0l2j69i57j0l3.3135j0j7&sourceid=chrome&ie=UTF-8>`_, Avoid using "UTC", as it has been shown to cause confusion.
 
 Open Meetings
 ---------------------------------------------------------
