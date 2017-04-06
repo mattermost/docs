@@ -4,9 +4,9 @@ WIP: About the Mattermost Open Source Project
 
 Mattermost is an open source, private cloud alternative to proprietary communication services. Hundreds of contributors around the world help develop the software in over 10 languages. 
 
-Mattermost Team Edition is an open source workplace messaging solution. Combined with native Mattermost apps on mobile and desktop, it brings all your team communication to one place, with web, mobile and PC interfaces, continuous archiving, instant search and a host of 3rd party integrations. It deploys as a single Linux binary under MIT license, with either MySQL or PostgreSQL as a database. 
+- **Mattermost Team Edition** is an open source workplace messaging solution. Combined with native Mattermost apps on mobile and desktop, it brings all your team communication to one place, with web, mobile and PC interfaces, continuous archiving, instant search and a host of 3rd party integrations. It deploys as a single Linux binary under MIT license, with either MySQL or PostgreSQL as a database. 
 
-Mattermost Enterprise Edition is a commercial extension of Mattermost offering enterprise-grade messaging and advanced security, configurability and scalability benefits beyond the scope of team communication. 
+- **Mattermost Enterprise Edition** is a commercial extension of Mattermost offering enterprise-grade messaging and advanced security, configurability and scalability benefits beyond the scope of team communication. 
 
 History 
 ---------------
@@ -20,9 +20,9 @@ Because of how we started, we're committed to never allowing commercial versions
 Stewardship Principles for the Mattermost Open Source Project  
 ------------------------------------------------------------------
 
-Mattermost, Inc. is for-profit company that balances the need to improve the open source `Mattermost Team Edition <https://docs.mattermost.com/overview/product.html#mattermost-editions>`_ for teams with the need to add improvements to our commercial `Mattermost Enterprise Edition <https://docs.mattermost.com/overview/product.html#mattermost-editions>`_ to generate income through subscriptions. 
+Mattermost, Inc. is for-profit company focused on making the open source `Mattermost Team Edition <https://docs.mattermost.com/overview/product.html#mattermost-editions>`_ highly successful and popular for teams, while also generating revenue for our commercial `Mattermost Enterprise Edition <https://docs.mattermost.com/overview/product.html#mattermost-editions>`_ for large and sophisticated organizations. 
 
-We want both products to be outrageously successful for teams and enterprises respectively. The following stewardship principles for our open source work helps keep our intent and purpose clear: 
+The following stewardship principles for our open source work helps keep our intent and purpose clear: 
 
 1. Never locked-in 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -62,7 +62,7 @@ Enable people to achieve what the team needs simply. Focus on building trust and
 8. Primary, not secondary
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost is designed to be the primary way a team communicates. Deployment as a secondary system, where not everyone in a team can be reached, fails to achieve our purpose. Because of this we avoid features such as using email as a Mattermost interface (impoverished experience). Also, while you can use your Mattermost account to securely sign-in to other apps we don't offer sign-in to Mattermost using other accounts. 
+Mattermost is designed to be the primary way a team communicates. Deployment as a secondary system, where not everyone in a team can be reached, does not achieve our purpose. We don't include features such as using email as a Mattermost interface (impoverished experience). Also, while you can use your Mattermost account to securely sign-in to other apps there are no plans to add sign-in to Mattermost using other accounts. 
 
 -----
 
