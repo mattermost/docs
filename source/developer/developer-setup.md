@@ -217,6 +217,10 @@ brew update && brew upgrade libpng
 
 You need to upgrade to Go 1.8. We don't support earlier versions than that.
 
+#### Some tests in the `api4` package are failing, such as `TestGetPostsForChannel` and `TestGetChannelMembers`
+
+You need to upgrade to Go 1.8, there seems to be bug in a library we use that causes some tests to fail if you're on Go 1.7 or earlier.
+
 ### Other errors 
 
 #### I don't see any error messages, but I can't access `http://localhost:8065`
