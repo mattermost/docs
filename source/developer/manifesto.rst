@@ -22,7 +22,7 @@ Stewardship Principles for the Mattermost Open Source Project
 
 Mattermost, Inc. is for-profit company that balances the need to improve the open source `Mattermost Team Edition <https://docs.mattermost.com/overview/product.html#mattermost-editions>`_ for teams with the need to add improvements to our commercial `Mattermost Enterprise Edition <https://docs.mattermost.com/overview/product.html#mattermost-editions>`_ to generate income through subscriptions. 
 
-We want both products to be outrageously successful for teams and enterprises respectively. The following stewardship principles (XXX is this the right word?) for our open source work helps keep our intent and purpose clear: 
+We want both products to be outrageously successful for teams and enterprises respectively. The following stewardship principles for our open source work helps keep our intent and purpose clear: 
 
 1. Never locked-in 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -32,7 +32,7 @@ Mattermost software, whether open source or commercial, should never withhold an
 2. Quick Time-to-Value 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Great software creates value quickly. Ideally, a novice IT admin should be able to set up Mattermost and roll it out to their team in just a few minutes and it should increase everyone's productivity. We should automate as much as possible in a standard install, ask few technical questions, and provide full explanations for any decisions an IT admin or end user needs to make. 
+Great software creates value quickly. Ideally, a novice IT admin should be able to set up Mattermost and roll it out to their team in just a few minutes to increase team productivity. We should automate as much as possible in a standard install, ask few technical questions, and provide full explanations for any decisions an IT admin or end user needs to make. 
 
 3. Minimalist
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -52,17 +52,17 @@ Mattermost is built for teams who work on private clouds who prefer open source 
 6. No surprises 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Users should never run into anything unexpected with Mattermost. We ship on time and document our features and product changes. Users should be able to know well in advance what is being considered for inclusion and changed in upcoming versions. 
+Users should never run into anything unexpected with Mattermost. We ship on time and document our features and product changes. Users should be able to know well in advance what is being considered for inclusion and change in upcoming versions. 
 
 7. Empower trusted teams
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Enable people to achieve what the team needs simply. Focus on building trust and education within a team and control via social norms instead of features to force a policy decisions. For large or regulated organizations that require enforcing strict corporate policies, Enterprise Edition can be used. 
+Enable people to achieve what the team needs simply. Focus on building trust and education within a team and control via social norms instead of hard limits on what someone in the system can do. 
 
 8. Primary, not secondary
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost is designed to be the primary way a team communicates. Deployment as a secondary system, where not everyone in a team can be reached, fails to achieve our purpose. Because of this we don't offer features such as using email as a Mattermost interface (impoverished experience). Also, while you can use your Mattermost account to sign-in to other apps via features like OAuth2 provider support, we generally don't offer SSO into Mattermost from another account. 
+Mattermost is designed to be the primary way a team communicates. Deployment as a secondary system, where not everyone in a team can be reached, fails to achieve our purpose. Because of this we avoid features such as using email as a Mattermost interface (impoverished experience). Also, while you can use your Mattermost account to securely sign-in to other apps we don't offer sign-in to Mattermost using other accounts. 
 
 -----
 
