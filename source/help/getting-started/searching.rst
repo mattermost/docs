@@ -11,7 +11,7 @@ Use the search box to find messages and replies that match the search terms that
 
 Like many search engines, common words such as ``the``, ``which``, and ``are`` (known as "stop words"), as well as two-letter and one-letter
 search terms, are not shown in search because they typically return too
-may results. See database documentation on `MySQL`_ and
+many results. See database documentation on `MySQL`_ and
 `Postgres`_ for a full list.
 
 Search Modifiers
