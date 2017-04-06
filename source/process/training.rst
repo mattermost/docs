@@ -162,13 +162,20 @@ Procedure:
 Platform Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost Inc-only** - (Platform colleagues - 1-2 hours/week) Friday's at 10:10 (`San Francisco Time <http://everytimezone.com/>`_) after platform team standup.
+**Mattermost Inc-only** - (Platform colleagues - 1 hour/week) Thursday's at 10am (`San Francisco Time <http://everytimezone.com/>`_).
 
 Regular team meeting for platform team at Mattermost Inc.
 
-- Goal: Increase team output by effectively informing and reviewing priority projects and next steps.
+- Goal: Increase team output by effectively informing priorities and finding blindspots
 - Scope: Mattermost Inc-only meeting given confidential customer issues discussed
 - Attendees: Mattermost Inc colleagues working on platform
+
+Platform meeting consists of two parts, Team Operation Review Meeting and Product Staff Meeting.
+
+All Mattermost staff attends the Team Operation Review Meeting. It provides an opportunity to teach and learn between people who don’t otherwise deal with each other much. Includes presentations and demos.
+
+Only the product team attends the Product Staff Meeting, others' attendance is optional. The meeting consists of people who work closely together. Includes controlled agenda items (e.g. queued items) with an "open session" where staff can bring up anything they want. Staff should arrive at decisions during the meeting or schedule further discussion for the next meeting.
+
 Procedure:
 
 1. (Chair) 3-hours before standup, post reminders in `Platform private group <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only)
@@ -178,12 +185,12 @@ Procedure:
    #### @channel Platform Meeting Reminder
    Everyone please:
    - **Prepare your demos**
-   - **Prepare your User Issue or Kaizen**
+   - **Prepare your roundtable open discussion**
 
-   @lindsay please:
+   @[RELEASE MANAGER] please:
    - **Prepare your roadmap checkin**
 
-   @[WHOEVER] are you ready for your "Something interesting about my town"?
+   @[WHOEVER] are you ready for your "Ice-breaker"?
 
 
 2. (Team) At time of meeting:
@@ -198,16 +205,19 @@ Procedure:
 
 Meeting Agenda:
 
-- **Warm-up** - Currently: "Share something interesting about your home town."
-- **Release countdown** - Review release date, milestones and checklists.
-- **Roadmap check-in** - Review of roadmap status in current and next release
-- **Demos** - Team members show highlights of what's completed this week. Relevant follow-ups noted.
-- **Follow-ups** - Follow-ups from previous meeting are discussed
-- **New items** - New team-relevant items are discussed
+Team Operation Review Meeting
 
-   - **Kaizen (odd sprints)** - Each colleague shares a potential process improvement. Follow-ups noted.
-   - **User Issues (even sprints)** - Each colleage shares unaddressed external user issue of importance. Follow-ups noted.
-- **Open Questions** - To find blindspots, meeting does not end until 3 open questions are asked and answered.
+- **Warm-up** - Currently: "Share something interesting about your weekend."
+- **Roadmap check-in** - Review of roadmap status in current and next release
+- **Demos (optional)** - Team members show highlights of what's completed this week. Relevant follow-ups noted.
+- **New items** - New team relevant items are discussed
+ 
+Product Staff Meeting
+
+- **Roundtable Open Discussion** - Each colleague shares something important to discuss with the team. Examples: external customer or user issue, potential process improvement. Follow-ups noted.
+- **New items** - New product staff relevant items are discussed
+- **Follow-ups** - Follow-ups from previous meeting are discussed
+- **Questions** - To find blindspots, meeting does not end until 3 open questions are asked and answered.
 
 Post Meeting:
 
