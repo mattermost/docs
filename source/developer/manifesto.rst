@@ -27,27 +27,27 @@ The following stewardship principles for our open source work helps keep our int
 1. Never locked-in 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost software, whether open source or commercial, should never withhold an organization's data from the organization. Commercial versions of Mattermost should always have a path to downgrade to open source version without loss of access to data. 
+Mattermost software, whether open source or commercial, should never withhold an organization's data from the organization. Commercial versions of Mattermost should always have a path to downgrade to the open source version without loss of access to data. 
 
 2. Quick Time-to-Value 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Great software creates value quickly. Ideally, a novice IT admin should be able to set up Mattermost and roll it out to their team in just a few minutes to increase team productivity. We should automate as much as possible in a standard install, ask few technical questions, and provide full explanations for any decisions an IT admin or end user needs to make. 
+Great software creates value quickly. A novice IT admin should be able to set up Mattermost and roll it out to their team in just a few minutes to increase team productivity. We should automate as much as possible in a standard install, ask few technical questions, and provide full explanations for any decisions an IT admin or end user needs to make. 
 
 3. Minimalist
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Minimalism is providing the correct amount of functionality and not more and not less. Great design is about doing important things extremely well, and not many things poorly. Make features work well for its intended purpose before adding new features. 
+Minimalism is providing the correct amount of functionality and not more and not less. Great design is about doing important things extremely well, and not many things poorly. Make features work well for their intended purpose before adding new features. 
 
 4. Decisions not Options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Make decisions instead of providing options. Every time you present an option, you force the user to make a decision which can lead to frustration if it's not for the majority of users. 
 
-5. Built for teams on private clouds
+5. Built for teams behind firewalls
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost is built for teams who work on private clouds who prefer open source software and need a modern communication experience secured behind a firewall. 
+Mattermost is built for teams needing a modern communication experience secured behind a firewall. 
 
 6. No surprises 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
