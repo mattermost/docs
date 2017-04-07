@@ -166,7 +166,7 @@ Platform Meeting
 
 Regular team meeting for platform team at Mattermost Inc.
 
-- Goal: Increase team output by effectively informing priorities and finding blindspots
+- Goal: Increase team output by effectively reviewing priorities and finding blindspots
 - Scope: Mattermost Inc-only meeting given confidential customer issues discussed
 - Attendees: Mattermost Inc colleagues working on platform
 
@@ -209,7 +209,7 @@ Team Operation Review Meeting
 
 - **Warm-up** - Currently: "Share something interesting about your weekend."
 - **Roadmap check-in** - Review of roadmap status in current and next release
-- **Demos (optional)** - Team members show highlights of what's completed this week. Relevant follow-ups noted.
+- **Demos (optional)** - Team members show highlights of what's been completed this week. Relevant follow-ups noted.
 - **New items** - New team relevant items are discussed
  
 Product Staff Meeting
