@@ -2305,7 +2305,7 @@ Service Settings
 License File Location
 ^^^^^^^^^^^^^^^^^^^^^
 
-Path and filename of the license file on disk. On startup, if Mattermost cannot find a valid license in the file ``config/mattermost.mattermost-license``, it looks here. It can be an absolute path, or a path relative to the ``mattermost`` directory.
+Path and filename of the license file on disk. On startup, if Mattermost cannot find a valid license in the database from a previous upload, it looks here. It can be an absolute path, or a path relative to the ``mattermost`` directory.
 
 +---------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LicenseFileLocation": ""`` with string input.  |
