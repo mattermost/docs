@@ -393,6 +393,22 @@ Restrict the permission level required to delete private channels. Deleted chann
 | This feature's ``config.json`` setting is ``"RestrictPrivateChannelDeletion": "all"`` with options ``all``, ``channel_admin``, ``team_admin``, and ``system_admin`` for above settings respectively.   |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable managing of private group members for
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Set policy on who can add and remove members from private groups.
+
+**All team members**: Allow all team members to add and remove members.
+
+**Team Admins, Channel Admins, and System Admins**: Allow only Team Admins, Channel Admins, and System Admins to add and remove members.
+
+**Team Admins, and System Admins**: Allow only Team Admins and System Admins to add and remove members.
+
+**System Admins**: Allow only System Admins to add and remove members.
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RestrictPrivateChannelManageMembers": "all"`` with options ``all``, ``channel_admin``, ``team_admin``, and ``system_admin`` for above settings respectively. |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Allow which users to delete messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Restrict the permission level required to delete messages. Team Admins and System Admins can delete messages only in channels where they are members. Messages can be deleted anytime.
