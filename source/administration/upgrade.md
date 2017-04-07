@@ -11,10 +11,19 @@ To start, select one of the following guides:
 
 ## Upgrade Team Edition to 3.1.x and later
 
-1. Download the **appropriate next upgrade** of your Team Edition server and note any compatibility procedures
+**Important Note:** Security-related changes were made in 3.8 that require you to verify a couple of settings in the System Console before upgrading from version 3.7.x and earlier to any version greater than 3.8.0.
+
+**To prepare your system when upgrading from 3.7.x and earlier**:
+
+  1. In the System Console, go to **General > Settings** and make sure that the **Site URL** field has a valid value. It must not be empty.
+  2. In the System Console, go to **General > Logging** and make sure that the **File Log Directory** Field is either empty or has a directory path only. It must not have a filename as part of the path.
+
+**To upgrade your system**:
+
+1. Download the **appropriate next upgrade** of your Team Edition server and note any compatibility procedures:
       1. Run `platform -version` to check the current version of your Mattermost server
       2. Determine the appropriate next upgrade for your server:
-          - Mattermost `v3.0.x` and later can upgrade directly to the [latest release of Mattermost](https://about.mattermost.com/download/).
+          - Mattermost `v3.0.x` and later can upgrade directly to the [latest release of Mattermost](https://about.mattermost.com/download/), but see the previous note about upgrading from 3.7.x and earlier.
               - Note: If public links are enabled, upgrading from `v3.3.x` and earlier to `v3.4.x` and later will invalidate existing public links due to a security upgrade allowing admins to invalidate links by resetting a public link salt from the System Console.
               - Note: RHEL6 and Ubuntu installations must verify the line `limit nofile 50000 50000` is included in `/etc/init/mattermost.conf` file. See the [installation guide](https://docs.mattermost.com/guides/administrator.html#install-guides) for your operating system for more details.
               - Note: RHEL7 and Debian installations must verify the line `LimitNOFILE=49152` is included in the `/etc/systemd/system/mattermost.service` file. See the [installation guide](https://docs.mattermost.com/guides/administrator.html#install-guides) for your operating system for more details.
@@ -29,18 +38,27 @@ To start, select one of the following guides:
       1. Back up your `config.json` file, which contains your system configuration. This will be used to restore your current settings after the new version is installed.
       2. Backup your database using your organization's standard procedures for backing up MySQL or PostgreSQL.
       3. If you're using local file storage, back up the location where files are stored.
-5. Install new version
+4. Install new version
       1. Run `tar -xvzf mattermost-team-X.X.X-linux-amd64.tar.gz` to decompress the upgraded version and replace the current version of Mattermost on disk, where `X.X.X` is the version number to which you are upgrading.  
-6. Restore the state of your server
+5. Restore the state of your server
       1. Copy the backed up version of `config.json` in place of the default `config.json`.
-7. Start your server and address any setting changes relevant in the latest version of Mattermost
+6. Start your server and address any setting changes relevant in the latest version of Mattermost
       1. Run `sudo start mattermost`.
       2. Opening the **System Console** and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added.
-8. If you have TLS set up on your Mattermost server, run `sudo setcap cap_net_bind_service=+ep ./bin/platform` in your Mattermost directory to allow Mattermost to bind to low ports.
-9. Test the system is working by going to the URL of the server with an `https://` prefix.
+7. If you have TLS set up on your Mattermost server, run `sudo setcap cap_net_bind_service=+ep ./bin/platform` in your Mattermost directory to allow Mattermost to bind to low ports.
+8. Test the system is working by going to the URL of the server with an `https://` prefix.
       1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 
 ## Upgrade Enterprise Edition to 3.1.x and later
+
+**Important Note:** Security-related changes were made in 3.8 that require you to verify a couple of settings in the System Console before upgrading from version 3.7.x and earlier to any version greater than 3.8.0.
+
+**To prepare your system when upgrading from 3.7.x and earlier**:
+
+  1. In the System Console, go to **General > Settings** and make sure that the **Site URL** field has a valid value. It must not be empty.
+  2. In the System Console, go to **General > Logging** and make sure that the **File Log Directory** Field is either empty or has a directory path only. It must not have a filename as part of the path.
+
+**To upgrade your system**:
 
 1. Download the **appropriate next upgrade** of your Team Edition server and note any compatibility procedures
       1. Run `platform -version` to check the current version of your Mattermost server
@@ -62,15 +80,15 @@ To start, select one of the following guides:
       1. Back up your `config.json` file, which contains your system configuration. This will be used to restore your current settings after the new version is installed.
       2. Backup your database using your organization's standard procedures for backing up MySQL or PostgreSQL.
       3. If you're using local file storage, back up the location where files are stored.
-5. Install new version
+4. Install new version
       1. Run `tar -xvzf mattermost-X.X.X-linux-amd64.tar.gz` to decompress the upgraded version and replace the current version of Mattermost on disk, where `X.X.X` is the version number to which you are upgrading.  
-6. Restore the state of your server
+5. Restore the state of your server
       1. Copy the backed up version of `config.json` in place of the default `config.json`.
-7. Start your server and address any setting changes relevant in the latest version of Mattermost
+6. Start your server and address any setting changes relevant in the latest version of Mattermost
       1. Run `sudo start mattermost`.
       2. Opening the **System Console** and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added.
-8. If you have TLS set up on your Mattermost server, run `sudo setcap cap_net_bind_service=+ep ./bin/platform` in your Mattermost directory to allow Mattermost to bind to low ports.
-9. Test the system is working by going to the URL of the server with an `https://` prefix.
+7. If you have TLS set up on your Mattermost server, run `sudo setcap cap_net_bind_service=+ep ./bin/platform` in your Mattermost directory to allow Mattermost to bind to low ports.
+8. Test the system is working by going to the URL of the server with an `https://` prefix.
       1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 
 ## Upgrade Team Edition to Enterprise Edition
