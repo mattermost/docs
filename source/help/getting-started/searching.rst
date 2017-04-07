@@ -1,10 +1,10 @@
 Searching
 =========
 
-Use the search box to find messages and replies that match the search terms that you enter. All channels that you are a member of are searched.
+Use the search box to find messages and replies that match the search terms that you enter. All channels that you are a member of in the current team are searched.
 
--  Multiple-word search terms return results that contain all of the terms.
--  When results appear, click the **Jump** link to view that post in the
+- Multiple-word search terms return results that contain all of the terms.
+- When results appear, click the **Jump** link to view that post in the
    channel archive.
 - File attachments and their filenames are not searched. If file attachments show up in the search results, it's because they are attached to messages that match the search query.
 -  You can use search modifiers such as ``from:dave`` to return results only from certain people or in certain channels. For more information about this, see the `Search Modifiers`_ section.
