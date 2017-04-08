@@ -62,7 +62,7 @@ Enable people to achieve what the team needs simply. Focus on building trust and
 8. Primary, not secondary
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost is designed to be the primary way a team communicates. Deployment as a secondary system, where not everyone in a team can be reached, does not achieve our purpose. We don't include features such as using email as a Mattermost interface (impoverished experience). Also, while there may be options to use your Mattermost account to sign-in to other apps there are no plans to add sign-in to Mattermost using other accounts. 
+Mattermost is designed to be the primary way a team communicates. Deployment as a secondary system, where not everyone in a team can be reached, does not achieve our purpose. We don't include features such as using email as a Mattermost interface (impoverished experience). Also, while there could potentially be options to use your Mattermost account to sign-in to other apps there are no plans to add sign-in to Mattermost using other accounts. 
 
 -----
 
