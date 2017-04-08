@@ -60,7 +60,7 @@ Users should never run into anything unexpected with Mattermost. We ship on time
 
 Enable people to achieve what the team needs simply. Focus on building trust and education within a team and control via social norms instead of hard limits on what someone in the system can do.
 
-7. Primary, not secondary
+8. Primary, not secondary
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost is designed to be the primary way a team communicates. Deployment as a secondary system, where not everyone in a team can be reached, does not achieve our purpose. 
