@@ -44,7 +44,6 @@ Minimalism is providing the correct amount of functionality and not more and not
 
 Make decisions instead of providing options. Every time you present an option, you force the user to make a decision which can lead to frustration if it's not for the majority of users. 
 
-Enable people to achieve what the team needs simply. Focus on building trust and education within a team and control via social norms instead of hard limits on what someone in the system can do. 
 
 5. Built for teams behind firewalls
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -56,10 +55,17 @@ Mattermost is built for teams needing a modern communication experience secured 
 
 Users should never run into anything unexpected with Mattermost. We ship on time and document our features and product changes. Users should be able to know well in advance what is being considered for inclusion and change in upcoming versions. 
 
+7. Empower the users 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Enable people to achieve what the team needs simply. Focus on building trust and education within a team and control via social norms instead of hard limits on what someone in the system can do.
+
 7. Primary, not secondary
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost is designed to be the primary way a team communicates. Deployment as a secondary system, where not everyone in a team can be reached, does not achieve our purpose. We don't include features such as using email as a Mattermost interface (impoverished experience). Also, while there could potentially be options to use your Mattermost account to sign-in to other apps there are no plans to add sign-in to Mattermost using other accounts. 
+Mattermost is designed to be the primary way a team communicates. Deployment as a secondary system, where not everyone in a team can be reached, does not achieve our purpose. 
+
+Avoid features such as using email as a Mattermost interface (impoverished experience). Also, while there could potentially be options to use your Mattermost account to sign-in to other apps there are no plans to add sign-in to Mattermost using other accounts. 
 
 -----
 
