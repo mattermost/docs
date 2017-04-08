@@ -13,7 +13,7 @@ History
 
 The project was `created by a video game company <https://www.mattermost.org/why-we-made-mattermost-an-open-source-slack-alternative/>`_ who previously used a proprietary, SaaS-based messenger which was bought by a big company and neglected. The SaaS messenger started having outages, it crashed, it lost files, and export didn't work. When they stopped their subscription, the SaaS messenger paywalled them from their own data. 
 
-Lesson learned, the company started using messaging software they'd developed for their video game players, and eventually open sourced the software in 2015. The software because surprisingly popular and eventually the company left the video game business, renamed itself "Mattermost, Inc." and shifted focus to expanding the open source project, funded by creating commercial Enterprise Edition extensions. 
+Lesson learned, the company started using messaging software they'd developed for their video game players, and eventually open sourced the software in 2015. The software became surprisingly popular and eventually the company left the video game business, renamed itself "Mattermost, Inc." and shifted focus to expanding the open source project, funded by creating commercial Enterprise Edition extensions. 
 
 Because of how we started, we're committed to never allowing commercial versions of Mattermost to lock in a user's data--organizations using Mattermost must always have full access to their information and be able to downgrade to the open source version.
 
