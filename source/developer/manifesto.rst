@@ -54,17 +54,12 @@ Mattermost is built for teams needing a modern communication experience secured 
 
 Users should never run into anything unexpected with Mattermost. We ship on time and document our features and product changes. Users should be able to know well in advance what is being considered for inclusion and change in upcoming versions. 
 
-7. Empower users 
+7. Empower trusted users 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Enable people to achieve what the team needs simply. Focus on building trust and education within a team and control via social norms instead of hard limits on what someone in the system can do.
+Enable people to achieve what the team needs simply. Focus on emplowering "trusted users" through education and social norms to guide behavior instead of hard limits or outside control on what someone in the system can do.
 
-8. Primary, not secondary
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Mattermost is designed to be the primary way a team communicates. Deployment as a secondary system, where not everyone in a team can be reached, does not achieve our purpose. 
-
-Avoid features such as using email as a Mattermost interface (impoverished experience). Also, while there could potentially be options to use your Mattermost account to sign-in to other apps there are no plans to add sign-in to Mattermost using other accounts. 
+When organizations need more complex solutions, with the enforcement of "policies" such as granular permissions, corporate directory integration, high availability deployment, compliance reporting and other advanced features, commerical add-ons for Mattermost Enterprise Edition should be available and easily incorporated. 
 
 -----
 
