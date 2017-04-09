@@ -57,7 +57,10 @@ Users should never run into anything unexpected with Mattermost. We ship on time
 7. Empower trusted users 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Enable people to achieve what the team needs simply. Focus on emplowering "trusted users" through education and social norms to guide behavior instead of hard limits or outside control on what someone in the system can do.
+Enable people to work simply. Focus on empowering "trusted users" through education and social norms to guide behavior instead of hard limits or outside control on what someone in the system can do.
+
+8. Upgradable to enterprise  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When organizations need enterprise-level solutions, such as granular permissions, corporate directory integration, high availability deployment, compliance reporting and other advanced features, commerical Enterprise Edition upgrades should be available and easily incorporated. 
 
