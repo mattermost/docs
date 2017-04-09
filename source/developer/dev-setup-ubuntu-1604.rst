@@ -39,6 +39,10 @@ Set up your development environment for building, running, and testing Mattermos
 
        ``sudo tar -C /usr/local -xzf go1.8.linux-amd64.tar.gz``
 
+    c. Modify permissions on ``/usr/local/go``. Replace *{user}* and *{group}* with the user and group that you are logged in with.
+
+      ``sudo chown -R {user}.{group} /usr/local/go``
+
 4. Set up your Go workspace:
 
   a. ``mkdir ~/go``
