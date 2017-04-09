@@ -59,10 +59,10 @@ Users should never run into anything unexpected with Mattermost. We ship on time
 
 Enable people to work simply. Focus on empowering "trusted users" through education and social norms to guide behavior instead of hard limits or outside control on what someone in the system can do.
 
-8. Upgradable to enterprise  
+8. Transitions to enterprise  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When organizations need enterprise-level solutions, such as granular permissions, corporate directory integration, high availability deployment, compliance reporting and other advanced features, commerical Enterprise Edition upgrades should be available and easily incorporated. 
+When organizations need enterprise features, such as granular permissions, corporate directory integration, high availability deployment, compliance reporting and other advanced capabilities, commerical Enterprise Edition upgrades should be available and easily incorporated. Revenue from enterprise add-ons supports improvements, quality assurance and upkeep of Team Edition. 
 
 -----
 
