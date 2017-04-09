@@ -59,7 +59,7 @@ Users should never run into anything unexpected with Mattermost. We ship on time
 
 Enable people to achieve what the team needs simply. Focus on emplowering "trusted users" through education and social norms to guide behavior instead of hard limits or outside control on what someone in the system can do.
 
-When organizations need more complex solutions, with the enforcement of "policies" such as granular permissions, corporate directory integration, high availability deployment, compliance reporting and other advanced features, commerical add-ons for Mattermost Enterprise Edition should be available and easily incorporated. 
+When organizations need enterprise-level solutions, such as granular permissions, corporate directory integration, high availability deployment, compliance reporting and other advanced features, commerical Enterprise Edition upgrades should be available and easily incorporated. 
 
 -----
 
