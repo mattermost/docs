@@ -206,9 +206,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
   - Updates an incoming webhook
 - `POST` at `/hooks/outgoing/update`
   - Updates an outgoing webhook
-- `GET` at `/teams/{team_id}/...` // XXX check with developer
+- `GET` at `/teams/{team_id}/...`
   - Returns a post list, based on the provided channel and post ID.
-- `POST` at `/channels/{channel_id}/update_member_roles` // XXX check with developer
+- `POST` at `/channels/{channel_id}/update_member_roles`
   - Updates the user's roles in a channel
 
 **Deprecated routes (APIv3):**
