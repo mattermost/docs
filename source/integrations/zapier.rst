@@ -58,20 +58,20 @@ Create a Zap
   b. **Select the Action Event**. Select **Post a Message**. The Mattermost team plans to expand the actions available here.
   c. **Connect the Action Account**. Click **Connect a New Account** and enter the following fields:
     1. **Mattermost URL**: This is the URL you use to access your Mattermost site. Do not include a slash at the end of the URL and do not append a team to the end of the server URL. For example, ``https://pre-release.mattermost.com/core`` is the entire URL to the Contributors team on our pre-release server. The **Mattermost URL** entered here would be ``https://pre-release.mattermost.com``.
-    2. **Client ID/Secret**: If Zapier has been enabled as an OAuth application as per the steps above, then these values can be found by navigating to one of your Mattermost teams, then **Main Menu** > **Integrations** > **OAuth 2.0 Applications**. Click **Show Secret** next to the Zapier app, then obtain the Client ID and Client Secret. 
-    3. **Login to Mattermost**. After completing the above fields you will be prompted to login to your Mattermost account if you are not logged in already. If you’re having trouble connecting then please read our `troubleshooting guide <https://docs.mattermost.com/integrations/zapier.html#id6>`_. 
+    2. **Client ID/Secret**: If Zapier has been enabled as an OAuth application as per the steps above, then these values can be found by navigating to one of your Mattermost teams, then **Main Menu** > **Integrations** > **OAuth 2.0 Applications**. Click **Show Secret** next to the Zapier app, then obtain the Client ID and Client Secret.
+    3. **Login to Mattermost**. After completing the above fields you will be prompted to login to your Mattermost account if you are not logged in already. If you’re having trouble connecting then please read our `troubleshooting guide <https://docs.mattermost.com/integrations/zapier.html#id6>`_.
     4. You'll then be prompted to allow Zapier to access your Mattermost account. Click **Allow**.
   d. **Message Post Details**: Specify the formatting of the messages and the team/channel where messages will post.
     1. **Team**: Choose the team where new messages will post. The dropdown should contain all teams you have access to on Mattermost.
-    2. **Channel**: Choose the channel where new messages will post. The dropdown will contain all Public Channels and Private Groups that you belong to. Zapier cannot post into Direct Message channels.
+    2. **Channel**: Choose the channel where new messages will post. The dropdown contains all Public Channels and Private Channels that you belong to. Zapier cannot post into Direct Message channels.
     3. **Message Text**: Enter the message text that will post to Mattermost. This text can be formatted using `Markdown <https://docs.mattermost.com/help/messaging/formatting-text.html>`_ and include the dynamic fields offered by your selected trigger app. Read our `message formatting tips <https://docs.mattermost.com/integrations/zapier.html#id4>`_ below.
-    
-      .. image:: ../images/zapier-dynamic-fields.png    
-    
+
+      .. image:: ../images/zapier-dynamic-fields.png
+
     4. **Username**: This is the username that Zapier will post as. Zapier integrations will always appear with a ``BOT`` tag next to the username. In order for bots to override the username of the authorized user, your System Admin must set `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`_ to **True**.
     5. **Icon URL**: This is the profile picture of the bot that Zapier will post as. In order for bots to override the profile picture of the authorized user, your System Admin must set `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-iconss>`_ to **True**.
-  e. **Test the Zap**: You may want to test your zap formatting in a Private Group before posting in a channel that is visible to your entire team.
- 
+  e. **Test the Zap**: You may want to test your zap formatting in a Private Channel before posting in a channel that is visible to your entire team.
+
 -----------
 
 Message Formatting Tips
@@ -79,7 +79,7 @@ Message Formatting Tips
 
 Here are some useful tips we recommend to get the most out of Zapier integration:
 
-- **Markdown**: Mattermost supports the use of `Markdown. <https://docs.mattermost.com/help/messaging/formatting-text.html>`_ in Zapier integrations. For example, use `heading markdown <https://docs.mattermost.com/help/messaging/formatting-text.html#headings>`_ for JIRA issue titles. 
+- **Markdown**: Mattermost supports the use of `Markdown. <https://docs.mattermost.com/help/messaging/formatting-text.html>`_ in Zapier integrations. For example, use `heading markdown <https://docs.mattermost.com/help/messaging/formatting-text.html#headings>`_ for JIRA issue titles.
 - **Custom Icons**: Use different icons for different services and Zapier integrations.
 - **Hashtags**: Use hashtags to make your Zapier posts searchable. Use different hashtags for different services and Zapier integrations. For example, use the dynamic fields available in Zapier to include ticket a JIRA ticket number in hashtags. This makes all conversation on a specific ticket instantly searchable by clicking the hashtag.
 - **Quick Links**: Link back to the service that fired the zap through the use of Markdown `embedded links <https://docs.mattermost.com/help/messaging/formatting-text.html#links>`_. For example, in our zaps we embed a link back to the service within the timestamp so it’s easy to take action on any zap.
@@ -90,12 +90,12 @@ Examples
 The Mattermost team has over 50 zaps integrated on our `Pre-Release Contributors team <https://pre-release.mattermost.com/core/>`_ used for internal communication and interacting with contributors. The `Community Heartbeat channel <https://pre-release.mattermost.com/core/channels/community-heartbeat>`_ integrates all our community services in one accessible location. These zaps are formatted in two ways depending on the service:
 
 **GitHub Issues and Comments, UserVoice Suggestions and Comments, GitLab MM Issues, GitLab Omnibus MM Issues:**
- 
+
 .. code::
 
-    #### [Title of issue]  
+    #### [Title of issue]
 
-    #[searchable-hashtag] in [external service](link to service) by [author](link to author profile) on [time-stamp](link to specific issue or comment) 
+    #[searchable-hashtag] in [external service](link to service) by [author](link to author profile) on [time-stamp](link to specific issue or comment)
 
     [Body of issue or comment]
 
@@ -106,7 +106,7 @@ The Mattermost team has over 50 zaps integrated on our `Pre-Release Contributors
 
 .. code::
 
-     > [forum post, media mention, or tweet]  
+     > [forum post, media mention, or tweet]
 
      #[searchable-hashtag] in [external service](link to service) by [author](link to author profile) on [time-stamp](link to specific forum post, media mention or tweet)
 
@@ -125,9 +125,9 @@ Cannot connect a Mattermost account
   a. Possible Solution: Try removing any trailing ``/``'s on the end of your **Mattermost URL**.
     - Correct: ``https://pre-release.mattermost.com``
     - Incorrect: ``https://pre-release.mattermost.com/``
-  
+
     .. image:: ../images/zapier-error1.png
-  
+
 2. **"[Server URL] returned (404)"**
   a. Possible Solution: The **Mattermost URL** cannot have a team appended to the end of the server URL.
     - Correct: ``https://pre-release.mattermost.com``
@@ -137,7 +137,7 @@ Cannot connect a Mattermost account
 
 3. **"[Server URL] returned (500) Internal Server Error"**
   a. Possible Solution: The **Client Secret** might be incorrect. Verify this value in **Main Menu** > **Integrations** > **OAuth 2.0 Applications**, or check with your System Admin.
-  
+
   .. image:: ../images/zapier-error4.png
 
 4. **"Mattermost needs your help: We couldn't find the requested app"**
@@ -150,7 +150,7 @@ Post Error
 
 1. **"We hit an error creating a post message."**
   a. Possible Solution: Ensure your **Message Text** is less than 4000 characters, since that is the maximum character limit for any single message in Mattermost.
-  
+
   .. image:: ../images/zapier-error5.png
 
 Deauthorize the Zapier App
