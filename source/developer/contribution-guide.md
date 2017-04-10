@@ -63,7 +63,9 @@ After submitting a PR, before it is merged:
         - Works as expected
         - Meets [UX guidelines](https://docs.mattermost.com/developer/fx-guidelines.html)
     - The Product Manager may come back with some bugs or UI improvements to fix before the pull request moves on to dev review.
-3. Dev review must pass
+3. CSS review must pass
+    - Any pull request containing CSS changes should be reviewed by the UX and HTML/CSS dev.
+4. Dev review must pass
     - Two core committers will review the pull request and either give feedback or approve the PR.
     - Any comments will need to be addressed before the pull request is ready to merge.
 
