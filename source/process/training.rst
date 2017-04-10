@@ -47,7 +47,9 @@ First Day
 Meetings
 ---------------------------------------------------------
 
-This section summarizes norms for public and private meetings for the Mattermost community and for Mattermost Inc. Where possible,
+This section summarizes norms for public and private meetings for the Mattermost community and for Mattermost Inc.
+
+When proposing meetings use major cities as references for time (eg 9AM New York time), since it's clear and `easy to web search <https://www.google.com/search?q=time+in+new+york&oq=time+in+new+&aqs=chrome.1.0l2j69i57j0l3.3135j0j7&sourceid=chrome&ie=UTF-8>`_. Avoid using "UTC", as it has been shown to cause confusion.
 
 Open Meetings
 ---------------------------------------------------------
@@ -162,7 +164,7 @@ Procedure:
 Platform Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost Inc-only** - (Platform colleagues - 1 hour/week) Thursday's at 10am (`San Francisco Time <http://everytimezone.com/>`_).
+**Mattermost Inc-only** - (Platform colleagues - 1 hour/week) Thursday's at 10:00 (`San Francisco Time <http://everytimezone.com/>`_). 
 
 Regular team meeting for platform team at Mattermost Inc.
 

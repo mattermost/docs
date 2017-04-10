@@ -14,6 +14,10 @@ Below is the list of core developers working on Mattermost:
 - Elias Nahum - @elias on [pre-release.mattermost.com](https://pre-release.mattermost.com/) and [@enahum](https://github.com/enahum) on GitHub
 - George Goldberg - @george on [pre-release.mattermost.com](https://pre-release.mattermost.com/) and [@grundleborg](https://github.com/grundleborg) on GitHub
 
+Below is the list of core developers working on individual Mattermost repositories:
+- Pan Luo - [mattermost-docker](https://github.com/mattermost/mattermost-docker) - @compass on [pre-release.mattermost.com](https://pre-release.mattermost.com/) and [@xcompass](https://github.com/xcompass) on GitHub
+- Yuya Ochiai - [mattermost-desktop](https://github.com/mattermost/mattermost-desktop) - @yuya-oc on [pre-release.mattermost.com](https://pre-release.mattermost.com/) and [@yuya-oc](https://github.com/yuya-oc) on GitHub
+
 ### Reviewing & Merging Pull Requests ###
 
 Core developers are expected to code review pull requests submitted to the Mattermost repositories. Below are some guidelines for reviewing code:
