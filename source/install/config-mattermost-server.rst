@@ -7,7 +7,7 @@ Configuring Mattermost Server
 
 2. Open the System Console. Click your username at the top left of navigation panel. In the menu that opens, click **System Console**.
 
-3. You must set the URL for your site.
+3. You must set the `Site URL <https://docs.mattermost.com/administration/config-settings.html#site-url>`_:
   a. In the System Console, click **General > Configuration**.
   b. In the **Site URL** field, set the URL that users point their browsers at. For example, ``https://example.com``.
 
