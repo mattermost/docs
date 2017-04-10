@@ -19,6 +19,7 @@ Development Process
    /developer/style*
    /developer/fx*
    /developer/localization-process.rst
+   /developer/core-developer-handbook*
 
 Definitions
 -----------

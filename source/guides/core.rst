@@ -5,6 +5,7 @@ This handbook is a guide to serving on the core team of the Mattermost open sour
 
 Please consider this handbook - along with all our documentation - as a work-in-progress and constantly updating to best achieve our shared mission. 
 
+
 Development Process
 -------------------
 
@@ -19,6 +20,14 @@ Development Process
    /process/marketing-guidelines*
    /process/asset-guidelines*
    /process/community-guidelines*
+
+Core Developer Handbook
+-------------------
+.. toctree::
+   :maxdepth: 2
+   :glob:
+
+   /developer/core-developer-handbook*
 
 Documentation Style Guide
 -------------------------

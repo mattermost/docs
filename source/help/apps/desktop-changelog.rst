@@ -197,7 +197,7 @@ Release date: September 30, 2016
 
 This release contains a security update and it is highly recommended that users upgrade to this version.
 
-Version number updated to 3.4 to make numbering consistent with Mattermost server and mobile app releases. This change will not imply bi-monthly releases.
+Version number updated to 3.4 to make numbering consistent with Mattermost server and mobile app releases. This change will not imply monthly releases.
 
 -  v3.4.1, released 2016-09-30
 

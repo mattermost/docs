@@ -24,6 +24,7 @@ Private Cloud Deployment with Secure Mobile Apps
    - Mattermost mobile apps can be deployed to an `internal Enterprise App Store <https://docs.mattermost.com/deployment/push.html#enterprise-app-store-eas>`_ by using source code available for Mattermost mobile apps and push notification service. Optionally `VPN clients on PC and mobile devices <https://docs.mattermost.com/deployment/deployment.html#vpn-setup>`_ can be used outside your private network.
    - Optionally, Mattermost mobile apps can run without a VPN by opening standard ports on your Mattermost server, such as 80 or 443. In this configuration, you have the option of using compiled `iOS and Android applications in iTunes and Google Play provided by Mattermost, Inc. <https://docs.mattermost.com/deployment/push.html#hosted-push-notifications-service-hpns>`_ (E10, E20), as well as enabling `multi-factor authentication <https://docs.mattermost.com/administration/config-settings.html#enable-multi-factor-authentication-enterprise>`_ (E10, E20).
    - User sessions across web, PC and mobile can be `remotely revoked through account settings <https://docs.mattermost.com/help/settings/account-settings.html#view-and-logout-of-active-sessions>`_, or via the System Console by deactivating accounts. 
+   - Mattermost apps can be packaged into leading Enterprise Mobility Management solutions including AirWatch and Blackberry through `AppDome <https://www.appdome.com/>`_.
 
 Centralized Security and Administration 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -35,10 +36,10 @@ Transmission Security
 
    - Mattermost supports TLS encryption using AES-256 with 2048-bit RSA on all data transmissions across both LAN and internet. 
    - Connections to Active Directory/LDAP can be optionally secured with TLS or stunnel (E10).
-   - Encryption-at-rest is available through hardware and software disk encryption solutions applied to the Mattermost database, which can reside on its own server within your infrastructure.  
+   - Encryption-at-rest is available through hardware and software disk encryption solutions applied to the Mattermost database, which reside on its own server within your infrastructure. To support end user search and compliance reporting of message histories, Mattermost does not offer encryption within the database. 
    - Option to `exclude message contents from push notifications <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_ to comply with strict compliance policies, such as US HIPAA standards.
    - Ability to exclude or include the `contents of messages in push notifications <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_ to avoid disclosure on locked mobile screens, and via relay servers from Apple and Google when sending notifications to iOS or Android mobile apps (relevant to compliance standards such as HIPAA) 
-   
+
 Integrity & Audit Controls
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

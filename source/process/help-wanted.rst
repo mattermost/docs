@@ -6,7 +6,7 @@ Per the `Code Contribution Guidelines <http://docs.mattermost.com/developer/cont
 
 1. Proposed changes have been unambiguously specified 
 2. The change meets the `fast, obvious, forgiving <http://www.mattermost.org/design-principles/>`_ design principle for the project
-3. Volunteers are willing to test, document, support and maintain changes (authentication options are critical paths that need manual testing with each bi-monthly release in perpetuity)
+3. Volunteers are willing to test, document, support and maintain changes (authentication options are critical paths that need manual testing with each monthly release in perpetuity)
 4. The change `aligns to the stated purpose of the project <http://www.mattermost.org/vision/#mattermost-teams-v1>`_
 
 Key contributors and core team members nominate changes for Help Wanted issues by opening a Jira ticket. 
