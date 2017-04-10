@@ -168,11 +168,22 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 ### Compatibility  
 
-Backwards compatibility with the old CLI tool will be removed in v3.8. See [documentation to learn more about the new CLI tool](https://docs.mattermost.com/administration/command-line-tools.html).
+#### Removed and deprecated features
 
-Changes from v3.6 to v3.7:
+ - Removed `ServiceSettings: "SegmentDeveloperKey"` setting in `config.json`
+ - Backwards compatibility with the old CLI tool will be removed in Mattermost v3.8 April/2017 release. See [documentation to learn more about the new CLI tool](https://docs.mattermost.com/administration/command-line-tools.html).
+ - Deprecated APIv3 routes to be removed in Mattermost v3.8 April/2017 release:
+   - `GET` at `/channels/more` (replaced by /`channels/more/{offset}/{limit}`)
+   - `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`)
+   - `POST` at `/channels/set_last_viewed_at` (replaced by `/channels/view`)
+   - `POST` at `/users/status/set_active_channel` (replaced by `/channels/view`)
+ - All APIv3 endpoints to be removed in September/2017 release (replaced by APIv4 endpoints)
+
+For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
 
 #### config.json   
+
+Changes from v3.6 to v3.7:
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console.
 
@@ -182,7 +193,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
    - Added `"TimeBetweenUserTypingUpdatesMilliseconds": 5000` to control how frequently the "user is typing..." messages are updated
    - Added `"EnableUserTypingMessages": true` to control whether "user is typing..." messages are displayed below the message box
    - Added `"EnableLinkPreviews": false` to control whether a preview of website content is displayed below the message
-   - Removed deprecated `"SegmentDeveloperKey"` setting
 
 **Additional Changes to Enterprise Edition**:
 
@@ -210,12 +220,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
   - Returns a post list, based on the provided channel and post ID.
 - `POST` at `/channels/{channel_id}/update_member_roles`
   - Updates the user's roles in a channel
-
-**Deprecated routes (APIv3):**
-- `GET` at `/channels/more` (replaced by /`channels/more/{offset}/{limit}`) to be removed in v3.8
-- `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`) to be removed in v3.8
-- `POST` at `/channels/set_last_viewed_at` (replaced by `/channels/view`) to be removed in v3.8
-- `POST` at `/users/status/set_active_channel` (replaced by `/channels/view`) to be removed in v3.8
 
 ### Websocket Event Changes from v3.6 to v3.7
 
