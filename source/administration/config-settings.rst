@@ -32,7 +32,7 @@ Configuration
 
 Site URL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The URL, including port number and protocol, that users will use to access Mattermost. This field is required if you are using `OAuth <https://docs.mattermost.com/administration/config-settings.html#enable-oauth-2-0-service-provider>`_ or `Email Notifications`<https://docs.mattermost.com/administration/config-settings.html#email>`_.
+The URL, including port number and protocol, that users will use to access Mattermost. This field is required in Mattermost v3.8 and later.
 
 .. note:: Do not append a team name to the end of the site URL.
 
