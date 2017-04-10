@@ -5,11 +5,11 @@ Thank you for your interest in contributing to Mattermost. Here's the process:
 ## Choose a Ticket
 
 1. Choose a ticket from the [Help Wanted GitHub Issues](https://github.com/mattermost/platform/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20%5BHelp%20Wanted%5D) list.
-    - Check it doesn't have an [open pull request](https://github.com/mattermost/platform/pulls) for it.
+    - Make sure that it doesn't have an [open pull request](https://github.com/mattermost/platform/pulls) for it.
 
 2. Before starting to work on the ticket, comment to let people know you're working on it.
 
-3. If you have questions post in [Mattermost forum](http://forum.mattermost.org/) or join the [Contributors](https://pre-release.mattermost.com/core/channels/tickets) channel and announce the ticket you'd like to work on so it can be assigned to you. 
+3. If you have questions, post them in [Mattermost forum](http://forum.mattermost.org/) or join the [Contributors](https://pre-release.mattermost.com/core/channels/tickets) channel and announce the ticket you'd like to work on so it can be assigned to you. 
 
 It's okay to submit PRs to fix obvious bugs or add small improvements, but anything that significantly changes behavior or user expectations [requires a Help Wanted issue opened by the core team](http://docs.mattermost.com/process/help-wanted.html) so that the change can be tested, documented and supported. 
 
