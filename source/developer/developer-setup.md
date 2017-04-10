@@ -46,8 +46,8 @@ Any issues? Please let us know on our forums at: https://forum.mattermost.org/
 2. Set up your dockerhost address
 	1. Edit your `/etc/hosts` file to include the following line  
 		- `127.0.0.1 dockerhost`
-3. Install build essentials
-	1. `apt-get install build-essential`
+3. Install build dependencies
+	1. `apt-get install build-essential nasm`
 4. [Download Go 1.8](http://golang.org/dl/).
 5. Set up your Go workspace and add Go to the PATH
 	1. `mkdir ~/go`
