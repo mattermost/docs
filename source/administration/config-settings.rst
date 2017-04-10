@@ -5,6 +5,7 @@ Mattermost configuration settings are maintained in the configuration file ``con
 
 The default location of ``config.json`` is in the ``mattermost/config`` directory. Mattermost must have write permissions to ``config.json``, otherwise changes made in the System Console will have no effect.
 
+**Environment Variables**
 Starting in Mattermost version 3.8, you can use environment variables to manage the configuration. Environment variables override settings in ``config.json``. If a change to a setting in ``config.json`` requires a restart for it to take effect, then changes to the corresponding environment variable also require a server restart.
 
 The name of the environment variable for any setting can be derived from the name of that setting in ``config.json``.
@@ -31,7 +32,7 @@ Configuration
 
 Site URL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The URL, including port number and protocol, that users will use to access Mattermost. This field must have a value.
+The URL, including port number and protocol, that users will use to access Mattermost. This field is required if you are using `OAuth <https://docs.mattermost.com/administration/config-settings.html#enable-oauth-2-0-service-provider>`_ or `Email Notifications`<https://docs.mattermost.com/administration/config-settings.html#email>`_.
 
 .. note:: Do not append a team name to the end of the site URL.
 
@@ -393,9 +394,9 @@ Restrict the permission level required to delete private channels. Deleted chann
 | This feature's ``config.json`` setting is ``"RestrictPrivateChannelDeletion": "all"`` with options ``all``, ``channel_admin``, ``team_admin``, and ``system_admin`` for above settings respectively.   |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable managing of private group members for
+Enable managing of private channel members for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Set policy on who can add and remove members from private groups.
+Set policy on who can add and remove members from private channels.
 
 **All team members**: Allow all team members to add and remove members.
 
