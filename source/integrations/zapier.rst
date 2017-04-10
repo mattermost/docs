@@ -63,7 +63,7 @@ Create a Zap
     4. You'll then be prompted to allow Zapier to access your Mattermost account. Click **Allow**.
   d. **Message Post Details**: Specify the formatting of the messages and the team/channel where messages will post.
     1. **Team**: Choose the team where new messages will post. The dropdown should contain all teams you have access to on Mattermost.
-    2. **Channel**: Choose the channel where new messages will post. The dropdown contains all Public Channels and Private Channels that you belong to. Zapier cannot post into Direct Message channels.
+    2. **Channel**: Choose the channel where new messages will post. The dropdown contains all channels that you belong to. Zapier cannot post into Direct Message channels.
     3. **Message Text**: Enter the message text that will post to Mattermost. This text can be formatted using `Markdown <https://docs.mattermost.com/help/messaging/formatting-text.html>`_ and include the dynamic fields offered by your selected trigger app. Read our `message formatting tips <https://docs.mattermost.com/integrations/zapier.html#id4>`_ below.
 
       .. image:: ../images/zapier-dynamic-fields.png

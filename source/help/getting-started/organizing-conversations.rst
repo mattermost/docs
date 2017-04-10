@@ -48,13 +48,13 @@ Click the channel name at the top of the center pane to access the drop-down men
 
 Renaming a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Click the channel name at the top of the center pane to access the drop-down menu, then click **Rename Channel**. Anyone can rename the Public Channels or Private Channels they belong to, unless the System Administrator has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-renaming-for>`_.
+Click the channel name at the top of the center pane to access the drop-down menu, then click **Rename Channel**. Anyone can rename the channels they belong to, unless the System Administrator has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-renaming-for>`_.
 
 You may also change the channel URL (also known as the channel handle) when renaming a channel. Changing channel URL may break existing links.
 
 Leaving a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Click the channel name at the top of the center pane to access the drop-down menu, then click **Leave Channel**. Any team member who leaves a Private Channel must be added back by a channel member if they wish to rejoin. Team members will not receive mention notifications from channels of which they are not members.
+Click the channel name at the top of the center pane to access the drop-down menu, then click **Leave Channel**. Any team member who leaves a Private Channel must be re-added by a channel member if they wish to rejoin. Team members will not receive mention notifications from channels of which they are not members.
 
 Deleting a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -65,7 +65,7 @@ When a channel is deleted it is removed from the user interface, but an archived
 Favoriting a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Favorite channels are a great way to organize your sidebar by choosing which Channels, Private Channels and Direct Messages are most important to you.
+Favorite channels are a great way to organize your sidebar by choosing which Channels, Private Channels, and Direct Messages are most important to you.
 
 To mark a channel as a favorite, simply open the channel and then:
 

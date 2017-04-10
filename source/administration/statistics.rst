@@ -63,7 +63,7 @@ Replica DB Conns
     The number of active connections currently on one or more of `your read replica databases <https://docs.mattermost.com/deployment/cluster.html#database-configuration>`_.
 
 Channel Types
-    This chart displays the number of public channels and private channels in a visual format, including channels that may have been deleted.
+    This chart displays the number of public channels in a visual format, including channels that might have been deleted.
 
 Posts, Files and Hashtags
     This chart displays the number of posts containing files, hashtags or only text. Posts containing both files and hashtags are counted in both categories, and deleted posts are included.

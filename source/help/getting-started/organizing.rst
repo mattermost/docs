@@ -14,9 +14,9 @@ This document shares some best practices from various Mattermost deployments. We
 The importance of channel names
 ---------------------------------------------------
 
-Channels organize communication in Mattermost. Naming channels effectively makes it easier for people to join the right teams and get things done more smoothly.
+Channels organize communication in Mattermost.
 
-When naming, or renaming channels consider:
+When naming or renaming channels consider:
 
 - Channel names appear in menus where users select which conversations to join.
 - Channel names are unique, and limited to 22 characters to ensure readability on both desktop and mobile devices.
@@ -49,7 +49,7 @@ Navigating to channels using the keyboard
 
 Another reason why channel names in Mattermost are limited to 22 characters is the common use of keyboard shortcuts to jump quickly to channels.
 
-User use CTRL+K to bring up a dialog where they can quickly type in the first few letters of a channel, which triggers auto-complete, and hitting ENTER to jump to the channel directly.
+Users can use CTRL+K to bring up a dialog where they can quickly type in the first few letters of a channel, which triggers auto-complete. Pressing ENTER jumps to the channel directly.
 
 Keeping names clear and short lets users navigate large collections of channels quickly.
 
@@ -136,7 +136,7 @@ This helps share announcements and discussions relevant to only those locations.
 Data Channels
 ~~~~~~~~~~~~~~~~~~
 
-Sometimes you want to setup integrations to automatically bring data into certain channels. Information like Twitter updates, new or updated support tickets or bug reports, or mentions of your company name in the news can all be made available in channels your team choose to monitor. Some people might use these channels like a daily newspaper, reading about everything that's happened since the last day.
+Sometimes you want to set up integrations to automatically bring data into certain channels. Information like Twitter updates, new or updated support tickets or bug reports, or mentions of your company name in the news can all be made available in channels your team chooses to monitor. Some people might use these channels like a daily newspaper, reading about everything that's happened in the last day.
 
 Others may configure their notifications to only get their attention when their username, or certain key words are mentioned. There's a wide array of options::
 

@@ -75,7 +75,7 @@ The following limitations are present when importing from Slack:
 
 * The Markdown subset used by Slack's Posts 2.0 feature announced on September 28, 2015 is not yet supported.
 
-* Direct Message and Private Channels cannot be imported. Slack does not include these messages when generating the export archive.
+* Direct Messages and Private Channels cannot be imported. Slack does not include these messages when generating the export archive.
 
 * If the handle of an imported Slack channel is the same handle as a deleted Mattermost channel, then a random handle is generated for the imported Slack channel.
 
