@@ -94,7 +94,7 @@ If you'd like to review and verify translations prior to achieving Beta-quality 
 Translation Maintenance
 =======================
 
-Translations require updates on a bi-monthly basis as features are added and changed. The formal process for updates has yet to be determined.
+Translations require updates on a monthly basis as features are added and changed. The formal process for updates has yet to be determined.
 
 Below are current official reviewers and maintainers for languages that have reached at least Beta-quality. Official reviewers submit final translations for languages; maintainers suggest translations and step in when official reviewers aren't able to help in a certain release. 
 
