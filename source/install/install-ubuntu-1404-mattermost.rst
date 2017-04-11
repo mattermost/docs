@@ -41,14 +41,14 @@ Assume that the IP address of this server is 10.10.10.2
 
 6. Set up the database driver in the file ``/opt/mattermost/config/config.json``. Open the file in a text editor and make the following changes:
 
-  -  If you are using PostgreSQL:    
+  -  If you are using PostgreSQL:
     1.  Set ``"DriverName"`` to ``"postgres"``
     2.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values:
      ``"postgres://mmuser:<mmuser-password>@<host-name-or-IP>:5432/mattermost?sslmode=disable&connect_timeout=10"``.
-  -  If you are using MySQL:    
+  -  If you are using MySQL:
     1.  Set ``"DriverName"`` to ``"mysql"``
     2.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values:
-      ``"mmuser:<mmuser-password>@tcp(<host-name-or-IP>:3306)/mattermost?charset=utf8"``
+      ``"mmuser:<mmuser-password>@tcp(<host-name-or-IP>:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=20s&writeTimeout=20s"``
 
 7. Test the Mattermost server to make sure everything works.
 
@@ -56,15 +56,15 @@ Assume that the IP address of this server is 10.10.10.2
       ``cd /opt/mattermost/bin``
     b. Start the Mattermost server as the user mattermost:
       ``sudo -u mattermost ./platform``
-   
+
   When the server starts, it shows some log information and the text ``Server is listening on :8065``. You can stop the server by pressing CTRL+C in the terminal window.
-  
+
 8. Setup Mattermost to use the Upstart daemon which handles supervision of the Mattermost process.
 
   a. Create the configuration file.
-  
+
     ``sudo touch /etc/init/mattermost.conf``
-  
+
   b. Open the config file as root in a text editor, and copy the following lines into the file:
 
     .. code-block:: none
@@ -78,13 +78,13 @@ Assume that the IP address of this server is 10.10.10.2
       exec bin/platform
 
   c. Start the Mattermost server.
-  
+
     ``sudo start mattermost``
-  
+
   d. Verify that the service is running.
-  
+
     ``curl http://localhost:8065``
-  
+
     You should see the HTML that's returned by the Mattermost server.
 
 Now that the Mattermost server is up and running, you can do some initial configuration and setup.
