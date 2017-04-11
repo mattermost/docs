@@ -10,7 +10,7 @@ For advanced metrics for Enterprise deployments, `see performance monitoring doc
 Site Statistics
 -----------------
 
-System statistics are viewable under **System Console > Reporting > Site Statistics**. The data shown here is a cumulative sum across all teams on the system.
+System statistics are viewable under **System Console > Site Statistics**. The data shown here is a cumulative sum across all teams on the system.
 
 Total Users
     The total number of active accounts created on your system. Excludes inactive accounts.
@@ -63,7 +63,7 @@ Replica DB Conns
     The number of active connections currently on one or more of `your read replica databases <https://docs.mattermost.com/deployment/cluster.html#database-configuration>`_.
 
 Channel Types
-    This chart displays the number of public channels and private groups in a visual format, including channels that may have been deleted.
+    This chart displays the number of public channels and private channels in a visual format, including channels that might have been deleted.
 
 Posts, Files and Hashtags
     This chart displays the number of posts containing files, hashtags or only text. Posts containing both files and hashtags are counted in both categories, and deleted posts are included.
@@ -71,7 +71,7 @@ Posts, Files and Hashtags
 Team Statistics
 ---------------
 
-Team Statistics are viewable under **System Console > Teams > Statistics**.
+Team Statistics are viewable under **System Console > Team Statistics**.
 
 Total Users
     The total number of active accounts on this team. Excludes inactive accounts.
@@ -79,8 +79,8 @@ Total Users
 Public Channels
     The number of public channels created in this team. Excludes deleted channels.
 
-Private Groups
-    The number of private groups created in this team. Excludes deleted groups.
+Private Channels
+    The number of private channels created in this team. Excludes deleted channels.
 
 Total Posts
     The total number of posts made in this team, including deleted posts and posts made using automation.

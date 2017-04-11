@@ -87,7 +87,7 @@ The System Admin is typically a member of the IT staff and has all the privilege
 Inactive
 ~~~~~~~~
 
-A System Admin has the ability to make a user account Inactive by going to **System Console > Teams**, and selecting a team to manage. From there they can go to the **User** page for the team, and manage a user's role.
+A System Admin has the ability to make a user account Inactive by going to **System Console > Users** for a list of all users on the server. The list can be searched and filtered to make finding the user easier. Click the user's role and in the menu that opens, click **Make Inactive**.
 
 When "Inactive" is selected, the user is logged out of the system, and receives an error message if they try to log back in. The user no longer appears in the channel members list. They are removed from the Direct Message "More" menu, but the Direct Message channel remains open for all users with it in the sidebar until it is closed. In the "Manage Members" list and the users list in the System Console, the user shows as "Inactive".
 
@@ -107,7 +107,7 @@ When a user is removed from a team, the team will no longer show up in their tea
 
 Removing a user from the team does not make the account Inactive. The user will still be able to sign in to the site, and join other teams. They will also be able to rejoin the team they were removed from if they receive another invite, or if the team is set to ["Allow any user with an account on this server to join this team"](http://docs.mattermost.com/help/settings/team-settings.html#allow-anyone-to-join-this-team). If the user does rejoin the team, they will no longer belong to the channels they were previously a part of, and they will lose all Admin privileges if they had them previously.
 
-A System Administrator can also remove users from teams by going to **System Console > Teams**, and selecting a team to manage. From there, they can go to the **User** page for the team and select **Remove From Team** in the dropdown beside a user entry.
+A System Administrator can also remove users from teams by going to **System Console > Users**, and selecting the dropdown beside a user entry and clicking **Manage Teams**.
 
 Leaving a Team
 ~~~~~~~~~~~~~~
