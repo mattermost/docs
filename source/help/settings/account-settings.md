@@ -160,6 +160,8 @@ This setting controls whether system messages about users joining or leaving a c
 
 #### Preview pre-release features
 Turn on preview features to view them early, ahead of their official release:
-- **Show markdown preview option in message input box:** Turning this on will show a "Preview" option when typing in the text input box. Pressing "Preview" shows what the Markdown formatting in the message looks like before the message is sent.
-- **Show preview snippet of links below message:** Turning this on will show a preview snippet posted below links from select websites.
-- **Enable the ability to make and receive one-on-one WebRTC calls:** Turning this on will allow user to make one-on-one video calls on Chrome, Firefox and Mattermost Desktop Apps inside Mattermost. This feature is only available if WebRTC is enabled on the server. See [documentation](https://docs.mattermost.com/deployment/webrtc.html) to learn more.
+
+- **Show markdown preview option in message input box** Turning this on will show a "Preview" option when typing in the text input box. Pressing "Preview" shows what the Markdown formatting in the message looks like before the message is sent.
+- **For the first web link in a message, display a preview of website content below the message, if available** Turning this on will show a preview snippet posted below links from select websites.
+- **Enable the ability to make and receive one-on-one WebRTC calls** Turning this on will allow users to make one-on-one video calls on Chrome, Firefox and Mattermost Desktop Apps inside Mattermost. This feature is only available if WebRTC is enabled on the server. See [documentation](https://docs.mattermost.com/deployment/webrtc.html) to learn more.
+- **Enable emoji picker for reactions and message input box** Turning this on enables the emoji picker icon in the message input box and in existing messages. To add one or more emoji to a message that you are writing, click the emoji picker icon in the message input box. To add an emoji as a reaction to an existing message, click the emoji picker icon in the message.
