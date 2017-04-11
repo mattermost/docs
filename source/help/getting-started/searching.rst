@@ -1,24 +1,17 @@
 Searching
 =========
 
---------------
+Use the search box to find messages and replies that match the search terms that you enter. All channels that you are a member of in the current team are searched.
 
-The search box in Mattermost returns search results from any channel of
-which you’re a member.
-
--  Searching multiple words returns results containing both of the words
-   listed.
--  When results appear, click the **Jump** link to view that post in the
+- Multiple-word search terms return results that contain all of the terms.
+- When results appear, click the **Jump** link to view that post in the
    channel archive.
--  You can expand the search results window by clicking the “Expand”
-   button in the top right corner.
--  Use search modifiers, like ``from:dave``, to return results only from
-   certain people or in certain channels (see below).
+- File attachments and their filenames are not searched. If file attachments show up in the search results, it's because they are attached to messages that match the search query.
+-  You can use search modifiers such as ``from:dave`` to return results only from certain people or in certain channels. For more information about this, see the `Search Modifiers`_ section.
 
-Like many search engines, highly common words like ``the``, ``which``,
-``are`` (known as “stop words”), as well as two-letter and one-letter
+Like many search engines, common words such as ``the``, ``which``, and ``are`` (known as "stop words"), as well as two-letter and one-letter
 search terms, are not shown in search because they typically return too
-may results. See database documentation on `MySQL`_ and
+many results. See database documentation on `MySQL`_ and
 `Postgres`_ for a full list.
 
 Search Modifiers
@@ -33,17 +26,17 @@ posts in specific channels.
 -  For example: Searching ``Mattermost in:town-square`` only returns
    messages in Town Square that contain ``Mattermost``.
 
-“Quotation Marks”
+Quotation Marks
 ^^^^^^^^^^^^^^^^^
 
 Use quotation marks to return search results for exact terms.
 
 -  For example: Searching ``"Mattermost website"`` returns messages
-   containing the exact phrase ``Mattermost website`` and not messages
+   containing the exact phrase ``Mattermost website``, but not messages
    containing ``Mattermost`` and ``website`` separately.
 
-Wildcard\*
-^^^^^^^^^^
+Wildcard
+^^^^^^^^^
 
 Use the ``*`` character for wildcard searches that match within words.
 
@@ -71,8 +64,8 @@ Examples: ``#bug``, ``#marketing``, ``#user_testing``,
 
 Hashtags do not link to channels. For example, if you have a channel
 named “Marketing”, clicking a ``#marketing`` hashtag does not redirect
-you to that channel. You can link to public channels using ``~`` followed 
-by the channel name, for example ``~marketing``. 
+you to that channel. You can link to public channels using ``~`` followed
+by the channel name, for example ``~marketing``.
 
 Other notes:
 
