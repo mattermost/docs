@@ -156,10 +156,11 @@ If enabled, press ENTER to insert a new line and CTRL+ENTER posts the message. I
 This setting controls whether post formatting is rendered. When "On", posts will be rendered with [markdown formatting](http://docs.mattermost.com/help/messaging/formatting-text.html), emoji, autolinked URLs, and line breaks. When "Off", the raw text will be shown.
 
 #### Enable Join/Leave Messages (Enterprise Edition)
-This setting controls whether system messages about users joining or leaving a channel are visible. When **On** these messages will appear. When **Off**, these messages will be hidden. If any users are added to or removed from a channel or group, a system message will still be shown even if this setting is **Off**.
+This setting controls whether system messages about users joining or leaving a channel are visible. When **On** these messages will appear. When **Off**, these messages will be hidden. If any users are added to or removed from a channel, a system message will still be shown even if this setting is **Off**.
 
 #### Preview pre-release features
 Turn on preview features to view them early, ahead of their official release:
+
 - **Show markdown preview option in message input box** Turning this on will show a "Preview" option when typing in the text input box. Pressing "Preview" shows what the Markdown formatting in the message looks like before the message is sent.
 - **For the first web link in a message, display a preview of website content below the message, if available** Turning this on will show a preview snippet posted below links from select websites.
 - **Enable the ability to make and receive one-on-one WebRTC calls** Turning this on will allow users to make one-on-one video calls on Chrome, Firefox and Mattermost Desktop Apps inside Mattermost. This feature is only available if WebRTC is enabled on the server. See [documentation](https://docs.mattermost.com/deployment/webrtc.html) to learn more.

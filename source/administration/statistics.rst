@@ -19,7 +19,7 @@ Total Teams
     The total number of teams created on your system.
 
 Total Channels
-    The total number of public channels and private groups created in all the teams on your system, including deleted channels. Doesn't include direct message channels.
+    The total number of public channels and private channels created in all the teams on your system, including deleted channels. Doesn't include direct message channels.
 
 Total Posts
     The total number of posts made in all the teams on your system, including deleted posts and posts made using automation.

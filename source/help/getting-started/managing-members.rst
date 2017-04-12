@@ -93,7 +93,7 @@ When "Inactive" is selected, the user is logged out of the system, and receives 
 
 Because Mattermost is designed as a system-of-record, there is not an option to delete users from the Mattermost system, as such an operation could compromise the integrity of message archives.
 
-An Inactive account can also be reactivated from the System Console. When reactivated, the Inactive Account rejoins the public channels and private groups that it previously belonged to.
+An Inactive account can also be reactivated from the System Console. When reactivated, the Inactive Account rejoins the channels that it previously belonged to.
 
 Removing a User from a Team or Leaving a Team
 ---------------------------------------------
@@ -112,6 +112,6 @@ A System Administrator can also remove users from teams by going to **System Con
 Leaving a Team
 ~~~~~~~~~~~~~~
 
-Users can also choose to remove themselves from a team, by going to the three dot **Main Menu > Leave Team**. This will remove the user from the team, and from all public channels and private groups on the team.
+Users can also choose to remove themselves from a team, by going to the three dot **Main Menu > Leave Team**. This will remove the user from the team, and from all public channels and private channels on the team.
 
-They will only be able to rejoin the team if it is set to ["Allow any user with an account on this server to join this team"](http://docs.mattermost.com/help/settings/team-settings.html#allow-anyone-to-join-this-team) team, or if they receive a new invite. If they do rejoin, they will no longer be a part of their old public channels and private groups.
+They will only be able to rejoin the team if it is set to ["Allow any user with an account on this server to join this team"](http://docs.mattermost.com/help/settings/team-settings.html#allow-anyone-to-join-this-team) team, or if they receive a new invite. If they do rejoin, they will no longer be a part of their old channels.
