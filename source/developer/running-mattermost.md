@@ -49,8 +49,10 @@ To run a test SMTP server:
 	sudo python -m smtpd -n -c DebuggingServer localhost:25
 ```
 
-Also you can use the docker image called [inbucket](https://github.com/jhillyerd/inbucket) to test the emails. To access that open your browser and go to:
+Also you can use the docker image called [inbucket](https://github.com/jhillyerd/inbucket) to test the emails. To access the web interface, open your browser and go to:
 
 ```
-  http://localhost:9000
+  http://localhost:9000 or your docker host ip
 ```
+
+To send emails using the `SMTP` the port is `2500` no user and passwords are required
