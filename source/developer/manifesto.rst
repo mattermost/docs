@@ -32,7 +32,7 @@ Mattermost software, whether open source or commercial, should never withhold an
 2. Quick Time-to-Value 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Great software creates value quickly. A novice IT admin should be able to set up Mattermost and roll it out to their team in just a few minutes to increase team productivity. We should automate as much as possible in a standard install, ask few technical questions, and provide full explanations for any decisions an IT admin or end user needs to make. 
+Great software creates value quickly. A business user with basic IT skills should be able to set up Mattermost and roll it out to their team in just a few minutes to increase team productivity. We should automate as much as possible in a standard install, ask few technical questions, and provide full explanations for any decisions an IT admin or end user needs to make. 
 
 3. Minimalist
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
