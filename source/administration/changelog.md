@@ -24,6 +24,7 @@ Release Date: April 16, 2017
 
 #### Emoji Picker and Improved Emoji Reactions (Beta)
 - The picker offers quick access to emoji when composing messages or adding reactions. Enable the emoji picker in **Account Settings > Advanced > Preview pre-release features**.
+- The picker is "Beta" while speed of the first load with lots of custom emoji is improved.
 
 #### System Users List
 - The System Console now consolidates all users into a system-wide list that can be filtered by team. The users list can be used to manage team membership and team roles for any user on the system.
@@ -69,7 +70,7 @@ Release Date: April 16, 2017
 
 ### Bug Fixes
 - Fixed line wrapping of the timestamp in Account Settings > Security > View Access History 
-- Fixed an inconsistent error message when creating a channel with a display name of two or less characters
+- Fixed an inconsistent error message when creating a channel with a display name of one or two characters
 - Removed the duplicate "Back" button on the Team Creation page
 - The AltGR key no longer triggers keyboard shortcuts
 - Saving a team name without making changes no longer throws an error message
@@ -78,7 +79,6 @@ Release Date: April 16, 2017
 - The Town Square channel menu no longer has redundant dividers with certain combinations of System Console > Policy settings
 - Fixed an issue where some conversations would not trigger the channel to appear unread in the left-hand sidebar
 - Fixed an issue where usernames sometimes did not appear when hovering over reactions
-- Fixed missing search results when using the "in:" or "from:" modifiers
 - Fixed an issue where link previews would sometimes cause a horizontal scroll bar to appear
 - iOS code blocks no longer wrap to the next line
 
@@ -155,6 +155,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Jump link in search results does not always jump to display the expected post
 - Blue bar "Preview Mode" header message sometimes does not disappear after enabling email notifications
 - Removing an expired license may not remove the blue bar header message until a refresh
+- First load of the emoji picker is slow at low connections
+- Emoji picker for reactions doesn't always position correctly
 - Deleted custom emoji stay in "recently used" section of the emoji picker
 - Scrollbar is sometimes not visible in the left-hand sidebar after switching teams
 
@@ -164,46 +166,43 @@ Many thanks to all our contributors. In alphabetical order:
 
 /platform:
 
-[aautio](https://github.com/aautio), [asaadmahmood](https://github.com/asaadmahmood), [bonespiked](https://github.com/bonespiked), [bradhowes](https://github.com/bradhowes), [coreyhulen](https://github.com/coreyhulen), [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [doh5](https://github.com/doh5), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [grundleborg](https://github.com/grundleborg), [hmhealey](https://github.com/hmhealey), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [jostyee](https://github.com/jostyee), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [lindalumitchell](https://github.com/lindalumitchell), [prixone](https://github.com/prixone), [R-Wang97](https://github.com/R-Wang97), [saturninoabril](https://github.com/saturninoabril), [VeraLyu](https://github.com/VeraLyu)
+- [aautio](https://github.com/aautio), [asaadmahmood](https://github.com/asaadmahmood), [bonespiked](https://github.com/bonespiked), [bradhowes](https://github.com/bradhowes), [coreyhulen](https://github.com/coreyhulen), [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [doh5](https://github.com/doh5), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [grundleborg](https://github.com/grundleborg), [hmhealey](https://github.com/hmhealey), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [jostyee](https://github.com/jostyee), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [lindalumitchell](https://github.com/lindalumitchell), [prixone](https://github.com/prixone), [R-Wang97](https://github.com/R-Wang97), [saturninoabril](https://github.com/saturninoabril), [VeraLyu](https://github.com/VeraLyu)
 
 /docs:
 
-[coreyhulen](https://github.com/coreyhulen), [esethna](https://github.com/esethna), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [jwilander](https://github.com/jwilander), [lindy65](https://github.com/lindy65), [Rohlik](https://github.com/Rohlik)
+- [coreyhulen](https://github.com/coreyhulen), [esethna](https://github.com/esethna), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [jwilander](https://github.com/jwilander), [lindy65](https://github.com/lindy65), [Rohlik](https://github.com/Rohlik)
 
 mattermost-redux:
 
-[enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [jarredwitt](https://github.com/jarredwitt), [jwilander](https://github.com/jwilander)
+- [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [jarredwitt](https://github.com/jarredwitt), [jwilander](https://github.com/jwilander)
 
 /mattermost-api-reference:
 
-[cpanato](https://github.com/cpanato), [grundleborg](https://github.com/grundleborg), [hmhealey](https://github.com/hmhealey), [jwilander](https://github.com/jwilander), [saturninoabril](https://github.com/saturninoabril), [senk](https://github.com/senk)
+- [cpanato](https://github.com/cpanato), [grundleborg](https://github.com/grundleborg), [hmhealey](https://github.com/hmhealey), [jwilander](https://github.com/jwilander), [saturninoabril](https://github.com/saturninoabril), [senk](https://github.com/senk)
 
 /mattermost-mobile:
 
-[csduarte](https://github.com/csduarte), [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [lfbrock](https://github.com/lfbrock), [saturninoabril](https://github.com/saturninoabril)
+- [csduarte](https://github.com/csduarte), [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [lfbrock](https://github.com/lfbrock), [saturninoabril](https://github.com/saturninoabril)
 
 /mattermost-selenium:
 
-[coreyhulen](https://github.com/coreyhulen)
-[lindalumitchell](https://github.com/lindalumitchell)
+- [coreyhulen](https://github.com/coreyhulen), [lindalumitchell](https://github.com/lindalumitchell)
 
 /desktop:
 
-[jasonblais](https://github.com/jasonblais)
-[yuya-oc](https://github.com/yuya-oc)
+- [jasonblais](https://github.com/jasonblais), [yuya-oc](https://github.com/yuya-oc)
 
 /mattermost-docker:
 
-[xcompass](https://github.com/xcompass)
+- [xcompass](https://github.com/xcompass)
 
 /mattermost-kubernetes:
 
-[coreyhulen](https://github.com/coreyhulen)
+- [coreyhulen](https://github.com/coreyhulen)
 
 /mattermost-load-test:
 
-[crspeller](https://github.com/crspeller)
-[csduarte](https://github.com/csduarte)
+- [crspeller](https://github.com/crspeller), [csduarte](https://github.com/csduarte)
 
 
 ## Release v3.7.1
