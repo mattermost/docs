@@ -62,7 +62,7 @@ Let people work simply. Team Edition is for teams needing a "virtual office" whe
 8. Open source alternative  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For non-technical, private cloud users with basic IT skills, Team Edition aspires to be an ideal workplace messaging solution, emphasizing simplicity and fast time-to-value. For sophisticated organizations with advanced security, configurability and scalability needs, the commercial Enterprise Edition add-on strives to be an ideal solution. 
+For non-technical users with basic IT skills, Team Edition aspires to be an ideal workplace messaging solution deployed on a private network, emphasizing simplicity and fast time-to-value. For sophisticated organizations with advanced security, configurability and scalability needs, the commercial Enterprise Edition add-on strives to be an ideal solution. 
 
 For organizations who seek other options, full source code of the platform for creating Team Edition should be available for the development of open source variants, including commercial variants, `provided the Mattermost trademark is not used and other protocols are respected. <https://docs.mattermost.com/overview/faq.html#how-can-i-create-a-derivative-work-of-mattermost-as-my-own-commercial-solution>`_ 
 
