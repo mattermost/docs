@@ -11,7 +11,7 @@ To start, select one of the following guides:
 
 ## Upgrade Team Edition to 3.1.x and later
 
-**Important Note:** Security-related changes were made in 3.8 that require you to verify a couple of settings in the System Console before upgrading from version 3.7.x and earlier to any version greater than 3.8.0.
+**Important Note:** Security-related changes were made in 3.8 that require you to verify settings in the System Console before upgrading from version 3.7.x and earlier to any version greater than 3.8.0.
 
 **To prepare your system when upgrading from 3.7.x and earlier**:
 
@@ -51,7 +51,7 @@ To start, select one of the following guides:
 
 ## Upgrade Enterprise Edition to 3.1.x and later
 
-**Important Note:** Security-related changes were made in 3.8 that require you to verify a couple of settings in the System Console before upgrading from version 3.7.x and earlier to any version greater than 3.8.0.
+**Important Note:** Security-related changes were made in 3.8 that require you to verify settings in the System Console before upgrading from version 3.7.x and earlier to any version greater than 3.8.0.
 
 **To prepare your system when upgrading from 3.7.x and earlier**:
 
