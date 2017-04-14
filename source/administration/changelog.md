@@ -10,6 +10,8 @@ Release Date: April 16, 2017
 
 - Mattermost v3.8.0 contains multiple [security updates](http://about.mattermost.com/security-updates/). [Upgrading to Mattermost v3.8.0](http://docs.mattermost.com/administration/upgrade.html) is highly recommended.
 
+- Note: v3.8.1 is in the process of being cut to address a recently reported security issue. 
+
 ### Highlights
 
 #### Native iOS and Android Apps (Beta)
@@ -140,14 +142,16 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Known Issues
 
+- Users are unable to sign up or login using GitLab. This issue is currently and will be released with v3.8.1
+- "Pinned" icon sometimes overlaps image posts
+- Full name is not editable in Account Settings if the first and last name attributes are removed from **System Console > Authentication > LDAP**
+- Usernames with dots do not get mention notifications when followed by a comma
 - Slack import doesn't add merged members/e-mail accounts to imported channels
 - User can receive a video call from another browser tab while already on a call
 - Sequential messages from the same user appear as separate posts on mobile view
 - Search autocomplete picker is broken on Android
 - Jump link in search results does not always jump to display the expected post
-- Reacting to a deleted message in the right-hand sidebar throws an error
 - Sometimes no email verification is sent to the new email address after changing your email in Account Settings. A workaround is to sign in with the new email address and hitting "Resend Email" on the "Email not verified" page
-XXXXXX Known issues will be updated closer to release
 
 ### Contributors
 
