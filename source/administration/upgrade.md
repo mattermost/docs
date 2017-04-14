@@ -15,8 +15,8 @@ To start, select one of the following guides:
 
 **To prepare your system when upgrading from 3.7.x and earlier**:
 
-  1. In the System Console, go to **General > Settings** and make sure that the **Site URL** field has a valid value. It must not be empty.
-  2. In the System Console, go to **General > Logging** and make sure that the **File Log Directory** Field is either empty or has a directory path only. It must not have a filename as part of the path.
+  1. In the System Console, go to **General > Configuration** and make sure that the **Site URL** is specified. It must not be empty.
+  2. In the System Console, go to **General > Logging** and make sure that the **File Log Directory** field is either empty or has a directory path only. It must not have a filename as part of the path.
 
 **To upgrade your system**:
 
@@ -55,8 +55,8 @@ To start, select one of the following guides:
 
 **To prepare your system when upgrading from 3.7.x and earlier**:
 
-  1. In the System Console, go to **General > Settings** and make sure that the **Site URL** field has a valid value. It must not be empty.
-  2. In the System Console, go to **General > Logging** and make sure that the **File Log Directory** Field is either empty or has a directory path only. It must not have a filename as part of the path.
+  1. In the System Console, go to **General > Configuration** and make sure that the **Site URL** is specified. It must not be empty.
+  2. In the System Console, go to **General > Logging** and make sure that the **File Log Directory** field is either empty or has a directory path only. It must not have a filename as part of the path.
 
 **To upgrade your system**:
 
