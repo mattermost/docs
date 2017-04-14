@@ -35,67 +35,67 @@ Release Date: April 16, 2017
 ### Improvements
 
 #### Web User Interface
-- Date separators now appear between posts in the right-hand sidebar
-- Non-square profile pictures are now cropped in the middle rather than being stretched
-- Post timestamps now have an expanded date tooltip
-- The "Add Members" modal now autofocuses on the search box when opened from the "Manage Members" modal
-- Reduced the margins and line height in compact view
-- There is now a confirmation dialog before deleting a custom emoji
+- Date separators now appear between posts in the right-hand sidebar.
+- Non-square profile pictures are now cropped in the middle rather than being stretched.
+- Post timestamps now have an expanded date tooltip.
+- The "Add Members" modal now autofocuses on the search box when opened from the "Manage Members" modal.
+- Reduced the margins and line height in compact view.
+- There is now a confirmation dialog before deleting a custom emoji.
 
 #### Search
-- File attachments thumbnails are now shown in search results
-- Flagged posts from other teams are no longer displayed 
+- File attachments thumbnails are now shown in search results.
+- Flagged posts from other teams are no longer displayed.
 
 #### Channels
-- Favorite channels are now sorted alphabetically regardless of channel type
-- Town Square now has a default channel purpose
-- User added to a group message are now removed from the Direct Messages search list
-- "Private Groups" have been renamed to "Private Channels"
+- Favorite channels are now sorted alphabetically regardless of channel type.
+- Town Square now has a default channel purpose.
+- Users added to a group message are now removed from the Direct Messages search list.
+- "Private Groups" have been renamed to "Private Channels".
 
 #### Mobile
-- Executing a search now closes the keyboard and removes the keyboard focus from the text box
+- Executing a search now closes the keyboard and removes the keyboard focus from the text box.
 
 #### Integrations
-- The integrations confirmation page can now be dismissed with the ENTER key
+- The integrations confirmation page can now be dismissed with the ENTER key.
 
 #### Notifications
-- Users can no longer configure email notification settings if the notifications are disabled for the system
+- Users can no longer configure email notification settings if the notifications are disabled for the system.
 
 #### Onboarding
-- Existing users on the server can now easily be added to a team via the Main Menu
+- Existing users on the server can now easily be added to a team via the Main Menu.
 
 #### Enterprise Edition
-- Policy controls for restricting permissions to add and remove members from private channels
-- Added the ability to read the license file from the disk
+- Policy controls for restricting permissions to add and remove members from private channels.
+- Added the ability to read the license file from the disk.
 
 ### Bug Fixes
-- Fixed line wrapping of the timestamp in Account Settings > Security > View Access History 
-- Fixed an inconsistent error message when creating a channel with a display name of one or two characters
-- Removed the duplicate "Back" button on the Team Creation page
-- The AltGR key no longer triggers keyboard shortcuts
-- Saving a team name without making changes no longer throws an error message
-- Group messages are now sorted alphabetically with direct messages
-- The "Create Channel" button will no only appear in the "More Channels" modal when the user has the permission to create channels
-- The Town Square channel menu no longer has redundant dividers with certain combinations of System Console > Policy settings
-- Fixed an issue where some conversations would not trigger the channel to appear unread in the left-hand sidebar
-- Fixed an issue where usernames sometimes did not appear when hovering over reactions
-- Fixed an issue where link previews would sometimes cause a horizontal scroll bar to appear
-- iOS code blocks no longer wrap to the next line
+- Fixed line wrapping of the timestamp in Account Settings > Security > View Access History.
+- Fixed an inconsistent error message when creating a channel with a display name of one or two characters.
+- Removed the duplicate "Back" button on the Team Creation page.
+- The AltGR key no longer triggers keyboard shortcuts.
+- Saving a team name without making changes no longer throws an error message.
+- Group messages are now sorted alphabetically with direct messages.
+- The "Create Channel" button will now only appear in the "More Channels" modal when the user has the permission to create channels.
+- The Town Square channel menu no longer has redundant dividers with certain combinations of System Console > Policy settings.
+- Fixed an issue where some conversations would not trigger the channel to appear unread in the left-hand sidebar.
+- Fixed an issue where usernames sometimes did not appear when hovering over reactions.
+- Fixed an issue where link previews would sometimes cause a horizontal scroll bar to appear.
+- iOS code blocks no longer wrap to the next line.
 
 ### Compatibility  
 
 #### Breaking changes:
-- The **System Console > Configuration > [Site URL](https://docs.mattermost.com/administration/config-settings.html#site-url)** field is now mandatory. Please set the Site URL in the System Console or in the `gitlab.rb` file if you are using GitLab Mattermost.
-- Server logs will now be written to the `mattermost.log` file located at the path specified in **System Console > Logging > [File Log Directory](https://docs.mattermost.com/administration/config-settings.html#file-log-directory)**. Please set the file path in the System Console or in the `gitlab.rb` file if you are using GitLab Mattermost.
+- The **System Console > Configuration > [Site URL](../../administration/config-settings.html#site-url)** field is now mandatory. Set the Site URL in the System Console, or in the `gitlab.rb` file if you are using GitLab Mattermost.
+- Server logs are now written to the `mattermost.log` file located in the directory specified in **System Console > Logging > [File Log Directory](../../administration/config-settings.html#file-log-directory)**. Set the directory name in the System Console, or in the `gitlab.rb` file if you are using GitLab Mattermost.
 
 #### Removed and deprecated features
-- Backwards compatibility with the old CLI tool is removed in v3.8. See [documentation to learn more about the new CLI tool](https://docs.mattermost.com/administration/command-line-tools.html).
+- Backwards compatibility with the old CLI tool is removed in v3.8. See [documentation to learn more about the new CLI tool](../../administration/command-line-tools.html).
 - Deprecated APIv3 routes removed in v3.8:
    - `GET` at `/channels/more` (replaced by /`channels/more/{offset}/{limit}`)
    - `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`)
    - `POST` at `/channels/set_last_viewed_at` (replaced by `/channels/view`)
    - `POST` at `/users/status/set_active_channel` (replaced by `/channels/view`)
-- All APIv3 endpoints to be removed in September/2017 release (replaced by APIv4 endpoints)
+- All APIv3 endpoints to be removed in September/2017 release (replaced by APIv4 endpoints).
 
 For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
 
@@ -127,7 +127,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
   - Pins a post to a channel
 - `POST` at `/channels/{channel_id}/posts/{post_id}/unpin`
   - Unpins a post from a channel
-  
+
 **Removed routes (APIv3):**
 - `GET` at `/channels/more` (replaced by /`channels/more/{offset}/{limit}`)
 - `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`)
@@ -137,27 +137,27 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Websocket Event Changes
 
 **Added:**
-- `added_to_team` that occurs when the current user is added to a team by another user
+- `added_to_team` that occurs when the current user is added to a team by another user.
 
 **Modified**
-- Added a `seq` field to websocket events that increments with each event sent to the client
+- Added a `seq` field to websocket events that increments with each event sent to the client.
 
 ### Known Issues
 
-- "Pinned" icon sometimes overlaps image posts
-- Full name is not editable in Account Settings if the first and last name attributes are removed from **System Console > Authentication > LDAP**
-- Usernames with dots do not get mention notifications when followed by a comma
-- Slack import doesn't add merged members/e-mail accounts to imported channels
-- User can receive a video call from another browser tab while already on a call
-- Sequential messages from the same user appear as separate posts on mobile view
-- Search autocomplete picker is broken on Android
-- Jump link in search results does not always jump to display the expected post
-- Blue bar "Preview Mode" header message sometimes does not disappear after enabling email notifications
-- Removing an expired license may not remove the blue bar header message until a refresh
-- First load of the emoji picker is slow at low connections
-- Emoji picker for reactions doesn't always position correctly
-- Deleted custom emoji stay in "recently used" section of the emoji picker
-- Scrollbar is sometimes not visible in the left-hand sidebar after switching teams
+- "Pinned" icon sometimes overlaps image posts.
+- Full name is not editable in Account Settings if the first and last name attributes are removed from **System Console > Authentication > LDAP**.
+- Usernames with dots do not get mention notifications when followed by a comma.
+- Slack import doesn't add merged members/e-mail accounts to imported channels.
+- User can receive a video call from another browser tab while already on a call.
+- Sequential messages from the same user appear as separate posts on mobile view.
+- Search autocomplete picker is broken on Android.
+- Jump link in search results does not always jump to display the expected post.
+- Blue bar "Preview Mode" header message sometimes does not disappear after enabling email notifications.
+- Removing an expired license may not remove the blue bar header message until a refresh.
+- First load of the emoji picker is slow at low connections.
+- Emoji picker for reactions doesn't always position correctly.
+- Deleted custom emoji stay in "recently used" section of the emoji picker.
+- Scrollbar is sometimes not visible in the left-hand sidebar after switching teams.
 
 ### Contributors
 
