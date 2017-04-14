@@ -12,7 +12,7 @@ Release Date: April 16, 2017
 
 - Mattermost v3.8.0 contains multiple [security updates](http://about.mattermost.com/security-updates/). [Upgrading to Mattermost v3.8.0](http://docs.mattermost.com/administration/upgrade.html) is highly recommended.
 
-- Note: v3.8.1 is in the process of being cut to address a recently reported security fix and an issue where users are unable to sign up or login using GitLab.
+- Note: v3.8.1 is in the process of being cut to address a security update and an issue where users are unable to sign up or login using GitLab.
 
 ### Highlights
 
