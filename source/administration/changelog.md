@@ -151,7 +151,10 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Sequential messages from the same user appear as separate posts on mobile view
 - Search autocomplete picker is broken on Android
 - Jump link in search results does not always jump to display the expected post
-- Sometimes no email verification is sent to the new email address after changing your email in Account Settings. A workaround is to sign in with the new email address and hitting "Resend Email" on the "Email not verified" page
+- Blue bar "Preview Mode" header message sometimes does not disappear after enabling email notifications
+- Removing an expired license may not remove the blue bar header message until a refresh
+- Deleted custom emoji stay in "recently used" section of the emoji picker
+- Scrollbar is sometimes not visible in the left-hand sidebar after switching teams
 
 ### Contributors
 
