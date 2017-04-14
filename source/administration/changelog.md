@@ -12,7 +12,7 @@ Release Date: April 16, 2017
 
 - Mattermost v3.8.0 contains multiple [security updates](http://about.mattermost.com/security-updates/). [Upgrading to Mattermost v3.8.0](http://docs.mattermost.com/administration/upgrade.html) is highly recommended.
 
-- Note: v3.8.1 is in the process of being cut to address a recently reported security issue. 
+- Note: v3.8.1 is in the process of being cut to address a recently reported security fix and an issue where users are unable to sign up or login using GitLab.
 
 ### Highlights
 
@@ -144,7 +144,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Known Issues
 
-- Users are unable to sign up or login using GitLab. This issue is currently and will be released with v3.8.1
 - "Pinned" icon sometimes overlaps image posts
 - Full name is not editable in Account Settings if the first and last name attributes are removed from **System Console > Authentication > LDAP**
 - Usernames with dots do not get mention notifications when followed by a comma
