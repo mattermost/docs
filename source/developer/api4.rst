@@ -31,7 +31,7 @@ To add an endpoint to API version 4, each item on the following checklist must b
    test <https://docs.mattermost.com/developer/api4.html#writing-a-unit-test>`__
 -  `Submit your
    implementation! <https://docs.mattermost.com/developer/api4.html#submitting-your-pull-request>`__
-   
+
 A full example can be found through these two pull requests:
 
 - Documenting the ``POST /teams`` endpoint: `/mattermost-api-reference #72 <https://github.com/mattermost/mattermost-api-reference/pull/72>`_
@@ -63,10 +63,10 @@ repository. To document an endpoint, follow these steps:
    `mattermost-api-reference <https://github.com/mattermost/mattermost-api-reference>`__
    and create a branch for your changes.
 2. Find the ``.yaml`` file in the
-   `/source/v4 <https://github.com/mattermost/mattermost-api-reference/tree/master/source/v4>`__
+   `/source/v4 <https://github.com/mattermost/mattermost-api-reference/tree/master/v4/source>`__
    directory that fits your endpoint.
 
-   -  For example, if you were adding the ``GET /users/{user_id}`` endpoint you would be looking for `users.yaml <https://github.com/mattermost/mattermost-api-reference/tree/master/source/v4/users.yaml>`__
+   -  For example, if you were adding the ``GET /users/{user_id}`` endpoint you would be looking for `users.yaml <https://github.com/mattermost/mattermost-api-reference/blob/master/v4/source/users.yaml>`__
    -  If the file doesn't exist yet, you might need to create it and update the `Makefile <https://github.com/mattermost/mattermost-api-reference/tree/master/Makefile>`__ to include it
 
 3. Copy an existing endpoint from the same or a different file.
@@ -101,12 +101,12 @@ environment <https://docs.mattermost.com/developer/developer-setup.html>`__, the
 
 2. Implement the handler for your endpoint.
 
-   -  The general pattern for handlers is 
-   
+   -  The general pattern for handlers is
+
    .. code-block::
-   
-     func handlerName(c *Context, w http.ResponseWriter, r *\ http.Request) { 
-     
+
+     func handlerName(c *Context, w http.ResponseWriter, r *\ http.Request) {
+
        // 1. Parsing of request URL and body
 
        // 2. Permissions check if required
@@ -115,18 +115,18 @@ environment <https://docs.mattermost.com/developer/developer-setup.html>`__, the
 
        // 4. (Optional) Check the Etag
 
-       // 5. Format the response and write the response 
+       // 5. Format the response and write the response
      }
 
    - For examples, see the `updateUser() <https://github.com/mattermost/platform/tree/master/api4/user.go#L86>`_ and the `getUser() <https://github.com/mattermost/platform/tree/master/api4/user.go#L58>`_ handlers.
 
-3. Run the server using ``make run-server`` to check for syntax errors. 
+3. Run the server using ``make run-server`` to check for syntax errors.
 4. (Optional) Use ``curl`` or `Postman <https://www.getpostman.com/>`__ to test the basics of your endpoint. The endpoint will also be tested `through a unit test <https://docs.mattermost.com/developer/api4.html#writing-a-unit-test>`_, so this step is optional.
 
 Updating the Go Driver
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The Go driver for APIv4 is in `/model/client4.go <https://github.com/mattermost/platform/tree/master/model/client4.go>`__. 
+The Go driver for APIv4 is in `/model/client4.go <https://github.com/mattermost/platform/tree/master/model/client4.go>`__.
 
 To add a function to support your new endpoint:
 
@@ -168,7 +168,7 @@ Returning the correct error code might require investigation in the
 `app <https://github.com/mattermost/platform/tree/master/app>`__ or
 `store <https://github.com/mattermost/platform/tree/master/store>`__
 packages to find the source of errors. Status codes on errors should be
-set at the creation of the error. 
+set at the creation of the error.
 
 When completing this step, please make sure to
 use the new ``model.NewAppError()`` function (`see example <https://github.com/mattermost/platform/tree/master/store/sql_user_store.go#L112>`__).

@@ -31,6 +31,7 @@ To start, select one of the following guides:
           - Mattermost `v2.1.x` and below must follow the process to [upgrade to `v3.0.x`](https://docs.mattermost.com/administration/legacy-upgrade.html#upgrade-team-edition-to-3-0-x) before upgrading further
       3. Use the [Version Archive table](https://docs.mattermost.com/administration/upgrade.html#version-archive) to find the `[RELEASE URL]` for your desired version and enter `wget [RELEASE URL]` to download. For example, to download `vX.X.X`, use `wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz`.
       4. Review **Compatibility** section in [CHANGELOG](https://docs.mattermost.com/administration/changelog.html) for the version downloaded and make sure to follow any instructions.
+      5. Review past and upcoming deprecation notices [listed on our website](https://about.mattermost.com/deprecated-features/).
 2. Stop the Mattermost Server
       1. Consider posting an announcement to active teams about stopping the Mattermost server for an upgrade.
       2. To stop the server run `sudo stop mattermost`.
@@ -73,6 +74,7 @@ To start, select one of the following guides:
           - Mattermost `v2.1.x` and below must follow the process to [upgrade to `v3.0.x`](https://docs.mattermost.com/administration/legacy-upgrade.html#upgrade-enterprise-edition-to-3-0-x) before upgrading further
       3. Use the [Version Archive List](https://docs.mattermost.com/administration/upgrade.html#version-archive) to find the `[RELEASE URL]` for your desired version and enter `wget [RELEASE URL]` to download. For example, to download `vX.X.X`, use `wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz`.
       4. Review **Compatibility** section in [CHANGELOG](https://docs.mattermost.com/administration/changelog.html) for the version downloaded and make sure to follow any instructions.
+      5. Review past and upcoming deprecation notices [listed on our website](https://about.mattermost.com/deprecated-features/).
 2. Stop the Mattermost Server
       1. Consider posting an announcement to active teams about stopping the Mattermost server for an upgrade.
       2. To stop the server run `sudo stop mattermost`.
@@ -118,6 +120,7 @@ Private cloud enterprise communications server.
 - Enterprise features unlock with a license key and purchase of a subscription. [See feature list and pricing](https://about.mattermost.com/pricing/) (including academic and non-profit options).
 
 -------
+
 
 - Mattermost Enterprise Edition v3.8.0 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-8-0) - [Download](https://releases.mattermost.com/3.8.0/mattermost-3.8.0-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/3.8.0/mattermost-3.8.0-linux-amd64.tar.gz`

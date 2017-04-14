@@ -47,7 +47,9 @@ First Day
 Meetings
 ---------------------------------------------------------
 
-This section summarizes norms for public and private meetings for the Mattermost community and for Mattermost Inc. Where possible,
+This section summarizes norms for public and private meetings for the Mattermost community and for Mattermost Inc.
+
+When proposing meetings use major cities as references for time (eg 9AM New York time), since it's clear and `easy to web search <https://www.google.com/search?q=time+in+new+york&oq=time+in+new+&aqs=chrome.1.0l2j69i57j0l3.3135j0j7&sourceid=chrome&ie=UTF-8>`_. Avoid using "UTC", as it has been shown to cause confusion.
 
 Open Meetings
 ---------------------------------------------------------
@@ -162,13 +164,20 @@ Procedure:
 Platform Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost Inc-only** - (Platform colleagues - 1-2 hours/week) Friday's at 10:10 (`San Francisco Time <http://everytimezone.com/>`_) after platform team standup.
+**Mattermost Inc-only** - (Platform colleagues - 1 hour/week) Thursday's at 10:00 (`San Francisco Time <http://everytimezone.com/>`_). 
 
 Regular team meeting for platform team at Mattermost Inc.
 
-- Goal: Increase team output by effectively informing and reviewing priority projects and next steps.
+- Goal: Increase team output by effectively reviewing priorities and finding blindspots
 - Scope: Mattermost Inc-only meeting given confidential customer issues discussed
 - Attendees: Mattermost Inc colleagues working on platform
+
+Platform meeting consists of two parts, Team Operation Review Meeting and Product Staff Meeting.
+
+All Mattermost staff attends the Team Operation Review Meeting. It provides an opportunity to teach and learn between people who don’t otherwise deal with each other much. Includes presentations and demos.
+
+Only the product team attends the Product Staff Meeting, others' attendance is optional. The meeting consists of people who work closely together. Includes controlled agenda items (e.g. queued items) with an "open session" where staff can bring up anything they want. Staff should arrive at decisions during the meeting or schedule further discussion for the next meeting.
+
 Procedure:
 
 1. (Chair) 3-hours before standup, post reminders in `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only)
@@ -178,12 +187,12 @@ Procedure:
    #### @channel Platform Meeting Reminder
    Everyone please:
    - **Prepare your demos**
-   - **Prepare your User Issue or Kaizen**
+   - **Prepare your roundtable open discussion**
 
-   @lindsay please:
+   @[RELEASE MANAGER] please:
    - **Prepare your roadmap checkin**
 
-   @[WHOEVER] are you ready for your "Something interesting about my town"?
+   @[WHOEVER] are you ready for your "Ice-breaker"?
 
 
 2. (Team) At time of meeting:
@@ -198,16 +207,19 @@ Procedure:
 
 Meeting Agenda:
 
-- **Warm-up** - Currently: "Share something interesting about your home town."
-- **Release countdown** - Review release date, milestones and checklists.
-- **Roadmap check-in** - Review of roadmap status in current and next release
-- **Demos** - Team members show highlights of what's completed this week. Relevant follow-ups noted.
-- **Follow-ups** - Follow-ups from previous meeting are discussed
-- **New items** - New team-relevant items are discussed
+Team Operation Review Meeting
 
-   - **Kaizen (odd sprints)** - Each colleague shares a potential process improvement. Follow-ups noted.
-   - **User Issues (even sprints)** - Each colleage shares unaddressed external user issue of importance. Follow-ups noted.
-- **Open Questions** - To find blindspots, meeting does not end until 3 open questions are asked and answered.
+- **Warm-up** - Currently: "Share something interesting about your weekend."
+- **Roadmap check-in** - Review of roadmap status in current and next release
+- **Demos (optional)** - Team members show highlights of what's been completed this week. Relevant follow-ups noted.
+- **New items** - New team relevant items are discussed
+ 
+Product Staff Meeting
+
+- **Roundtable Open Discussion** - Each colleague shares something important to discuss with the team. Examples: external customer or user issue, potential process improvement. Follow-ups noted.
+- **New items** - New product staff relevant items are discussed
+- **Follow-ups** - Follow-ups from previous meeting are discussed
+- **Questions** - To find blindspots, meeting does not end until 3 open questions are asked and answered.
 
 Post Meeting:
 
@@ -368,10 +380,12 @@ Dev Mana
 
 A specific type of mana for developers similar to "points" or "jelly beans" in an Agile/Scrum methodology. On average, full time Mattermost developers each complete tickets adding up to approximately 28 mana per week. A "small" item is 2 mana, a "medium" is 4, a "large" is 8 and any project bigger needs to be broken down into smaller tickets.
 
-Expert Mode
+Expert Mode (and Crimson Force Field)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When documentation or on-screen text is written for someone with considerable knowledge or expertise, instead of being designed for a new learner. In general, try to state things simply rather than speaking to just the "experts" reading the the text.
+
+If something is extremely difficult to understand, and yet still justified in the mind of the writer, we call it "Crimson Force Field". This term is intended to evoke the emotional response of coming across something that is difficult to understand, so writers of Crimson Force Field material can empathize with the readers. Crimson Force Field is drawn from an esoteric episode of Star Trek and it is unlikely anyone but the originator of the term understands its complete meaning. Crimson Force Field is itself Crimson Force Field.  
 
 Help Wanted
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -478,7 +492,7 @@ Courses
 
 Relevant Docs
 
-1. :doc:`/process/spec-review`
+1. :doc:`design-process`
 
 System Security
 ^^^^^^^^^^^^^^^

@@ -87,7 +87,7 @@ The path to the TLS key file to use for TLS connection security.
 
 Use Let's Encrypt
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: Enable the automatic retrieval of certificates from Let's Encrypt. The certificate will be retrieved when a client attempts to connect from a new domain. This will work with multiple domains. See [documentation](https://docs.mattermost.com/install/setup-tls.html#automatic-certificate-retrieval) for more details on setting up Let's Encrypt.
+**True**: Enable the automatic retrieval of certificates from Let's Encrypt. The certificate will be retrieved when a client attempts to connect from a new domain. This will work with multiple domains. See :doc:`../install/config-tls-mattermost` for more details on setting up Let's Encrypt.
 
 **False**: Manual certificate specification based on the **TLS Certificate File** and **TLS Key File** specified above.
 

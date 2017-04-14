@@ -85,3 +85,13 @@ Desktop App window is black and doesn't load the page
     - Finally, try disabling GPU hardware acceleration by using the `--disable-gpu <http://peter.sh/experiments/chromium-command-line-switches/#disable-gpu>`_ Chromium command line switch.
 
     If none of the above steps resolve the issue, please open a new ticket in the `Mattermost Troubleshooting Forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`_. 
+
+Desktop App is not visible, but you can see the Mattermost icon in the Task Bar
+  This issue can occur on Windows in a multiple-monitor setup. When you disconnect the monitor that Mattermost is displayed on, Mattermost continues to display at screen coordinates that no longer exist.
+
+  To resolve this issue, you can reset the Desktop App screen location by deleting the screen location file. When the file is not present, the Desktop App displays on the primary monitor by default. 
+  
+  **To reset the Desktop App screen location**:
+    1. If the Desktop App is running, right-click the Mattermost icon in the task bar and click **Close Window**.
+    2. Open Windows File Explorer, and navigate to the ``%USERPROFILE%\AppData\Roaming\Mattermost`` folder.
+    3. Delete the file ``bounds-info.json``

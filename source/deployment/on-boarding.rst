@@ -21,9 +21,9 @@ If you've evaluated Mattermost using email authentication and decide to deploy b
 Common Tasks
 ============
 
-Creating System Administrator account from commandline
-  - If the System Administrator account becomes unavailable, a person leaving the organization for example, you can set a new system admin from the commandline using ``./platform -assign_role -team_name="yourteam" -email="you@example.com" -role="system_admin"``.
-  - After assigning the role the user needs to log out and log back in before the System Administrator role is applied.
+Creating System Admin account from the command line
+  - If the System Admin leaves the organization or is otherwise unavailable, you can use the command line interface to assign the *system_admin* role to an existing user. In the ``mattermost/bin`` directory, type ``sudo ./platform roles system_admin {user-name}``, where *{user-name}* is the username of the person with the new role. For more information about using the command line interface, see :doc:`../administration/command-line-tools` .
+  - After assigning the role the user needs to log out and log back in before the *system_admin* role is applied.
 
 Deactivating a user
   - System Admins can go to **System Console > Users** for a list of all users on the server. The list can be searched and filtered to make finding the user easier. Click the user's role and in the menu that opens, click **Make Inactive**.

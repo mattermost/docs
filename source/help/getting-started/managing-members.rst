@@ -105,7 +105,7 @@ Any Team Administrator has the ability to remove a user from a team by going to 
 
 When a user is removed from a team, the team will no longer show up in their team sidebar. If they currently have the team open, they are redirected to the first team that appears on their team sidebar. If they didn't belong to any other teams, the user is sent to the team selection page.
 
-Removing a user from the team does not make the account Inactive. The user will still be able to sign in to the site, and join other teams. They will also be able to rejoin the team they were removed from if they receive another invite, or if the team is set to ["Allow any user with an account on this server to join this team"](http://docs.mattermost.com/help/settings/team-settings.html#allow-anyone-to-join-this-team). If the user does rejoin the team, they will no longer belong to the channels they were previously a part of, and they will lose all Admin privileges if they had them previously.
+Removing a user from the team does not make the account Inactive. The user will still be able to sign in to the site, and join other teams. They will also be able to rejoin the team they were removed from if they receive another invite, or if the team is set to `"Allow any user with an account on this server to join this team" <http://docs.mattermost.com/help/settings/team-settings.html#allow-anyone-to-join-this-team>`_. If the user does rejoin the team, they will no longer belong to the channels they were previously a part of, and they will lose all Admin privileges if they had them previously.
 
 A System Administrator can also remove users from teams by going to **System Console > Users**, and selecting the dropdown beside a user entry and clicking **Manage Teams**.
 

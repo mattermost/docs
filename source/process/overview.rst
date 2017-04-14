@@ -1,7 +1,7 @@
 Development Process Overview
 ============================
 
-This document describes the process through which feedback and design discussions flow into community systems, then into tickets, then into pull requests, then into bi-monthly releases based on product purpose.
+This document describes the process through which feedback and design discussions flow into community systems, then into tickets, then into pull requests, then into monthly releases based on product purpose.
 
 Purpose
 -------
@@ -40,7 +40,7 @@ If someone feels an existing ticket should be re-examined, they can add "triage"
 Release Planning
 ~~~~~~~~~~~~~~~~
 
-Release planning sets the "Fix Version" of tickets to one of the upcoming bi-monthly releases. The Fix Version is an estimate of when a
+Release planning sets the "Fix Version" of tickets to one of the upcoming monthly releases. The Fix Version is an estimate of when a
 feature might ship, which may change as the planning process continues, until the ticket is scheduled for a Sprint.
 
 Sprint Planning
@@ -116,6 +116,6 @@ Examples:
 Release
 -------
 
-Mattermost ships stable releases on the 16th of every other month. Releases begin with a planning process reviewing internal designs and community feedback in the context of the product purpose. Feature development is done in weekly sprints, and releases end with feature complete, stabilization, code complete and release candidate milestones prior to final release.
+Mattermost ships stable releases on the 16th of every month. Releases begin with a planning process reviewing internal designs and community feedback in the context of the product purpose. Feature development is done in weekly sprints, and releases end with feature complete, stabilization, code complete and release candidate milestones prior to final release.
 
 See `release process documentation <http://docs.mattermost.com/process/release-process.html#release-process>`__ for more details.

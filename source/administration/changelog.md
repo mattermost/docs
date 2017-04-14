@@ -1,6 +1,6 @@
 # Mattermost Changelog
 
-This changelog summarizes updates to [Mattermost Team Edition](http://www.mattermost.org/), an open source team messaging solution released bi-monthly under an MIT license, and [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/), a commercial upgrade offering enterprise messaging for large organizations.
+This changelog summarizes updates to [Mattermost Team Edition](http://www.mattermost.org/), an open source team messaging solution released monthly under an MIT license, and [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/), a commercial upgrade offering enterprise messaging for large organizations.
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
@@ -204,14 +204,19 @@ mattermost-redux:
 - [crspeller](https://github.com/crspeller), [csduarte](https://github.com/csduarte)
 
 
-## Release v3.7.1
+## Release v3.7.3
 
 ### Notes on Patch Release
 
+ - **v3.7.3, released 2017-03-23**
+   - Fixed a high severity security issue, and [upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/)
+   - Fixed an issue with telemetry data collection
+ - **v3.7.2, released 2017-03-17**
+   - Fixed an issue with LDAP, SAML, and OAuth logins where 1 and 2 character usernames displayed incorrectly
  - **v3.7.1, released 2017-03-16**
    - Fixed an issue where some [System Console > Policy settings](https://docs.mattermost.com/administration/config-settings.html#policy) were incorrectly applied to Team Edition, breaking the System Console UI
  - **v3.7.0, released 2017-03-16**
-   - Original 3.7 release.
+   - Original 3.7 release
 
 ### Security Update
 
@@ -365,11 +370,22 @@ mattermost-redux:
 
 ### Compatibility  
 
-Backwards compatibility with the old CLI tool will be removed in v3.8. See [documentation to learn more about the new CLI tool](https://docs.mattermost.com/administration/command-line-tools.html).
+#### Removed and deprecated features
 
-Changes from v3.6 to v3.7:
+ - Removed `ServiceSettings: "SegmentDeveloperKey"` setting in `config.json`
+ - Backwards compatibility with the old CLI tool will be removed in Mattermost v3.8 April/2017 release. See [documentation to learn more about the new CLI tool](https://docs.mattermost.com/administration/command-line-tools.html).
+ - Deprecated APIv3 routes to be removed in Mattermost v3.8 April/2017 release:
+   - `GET` at `/channels/more` (replaced by /`channels/more/{offset}/{limit}`)
+   - `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`)
+   - `POST` at `/channels/set_last_viewed_at` (replaced by `/channels/view`)
+   - `POST` at `/users/status/set_active_channel` (replaced by `/channels/view`)
+ - All APIv3 endpoints to be removed in September/2017 release (replaced by APIv4 endpoints)
+
+For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
 
 #### config.json   
+
+Changes from v3.6 to v3.7:
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console.
 
@@ -379,7 +395,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
    - Added `"TimeBetweenUserTypingUpdatesMilliseconds": 5000` to control how frequently the "user is typing..." messages are updated
    - Added `"EnableUserTypingMessages": true` to control whether "user is typing..." messages are displayed below the message box
    - Added `"EnableLinkPreviews": false` to control whether a preview of website content is displayed below the message
-   - Removed deprecated `"SegmentDeveloperKey"` setting
 
 **Additional Changes to Enterprise Edition**:
 
@@ -403,18 +418,10 @@ Multiple setting options were added to `config.json`. Below is a list of the add
   - Updates an incoming webhook
 - `POST` at `/hooks/outgoing/update`
   - Updates an outgoing webhook
-- `GET` at `/teams/{team_id}/...` // XXX check with developer
+- `GET` at `/teams/{team_id}/...`
   - Returns a post list, based on the provided channel and post ID.
-- `POST` at `/channels/{channel_id}/update_member_roles` // XXX check with developer
+- `POST` at `/channels/{channel_id}/update_member_roles`
   - Updates the user's roles in a channel
-
-**Removed routes (APIv3):**
-- `GET` at `/channels/more` (replaced by /`channels/more/{offset}/{limit}`)
-
-**Deprecated routes (APIv3):**
-- `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`) to be removed in v3.8
-- `POST` at `/channels/set_last_viewed_at` (replaced by `/channels/view`) to be removed in v3.8
-- `POST` at `/users/status/set_active_channel` (replaced by `/channels/view`) to be removed in v3.8
 
 ### Websocket Event Changes from v3.6 to v3.7
 
@@ -480,12 +487,18 @@ Many thanks to all our contributors. In alphabetical order:
 
 - [coreyhulen](https://github.com/coreyhulen), [crspeller](https://github.com/crspeller)
 
-## Release v3.6.2
+## Release v3.6.5
 
 ### Notes on Patch Release
 
+ - **v3.6.5, released 2017-03-23**
+   - Fixed a high severity security issue, and [upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/)
+ - **v3.6.4, released 2017-03-16**
+   - Fixed an issue where some [System Console > Policy settings](https://docs.mattermost.com/administration/config-settings.html#policy) were incorrectly applied to Team Edition, breaking the System Console UI
+ - **v3.6.3, released 2017-03-16**
+   - Fixed a security issue, and [upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/)
  - **v3.6.2, released 2017-01-31**
-   - Fixed a high severity security issue, [upgrade](http://docs.mattermost.com/administration/upgrade.html) is highly recommended (details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/))
+   - Fixed a high severity security issue, and [upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/)
    - Improved performance of web sockets and typing messages
    - Note: Some deployments using multiple URLs to reach Mattermost via proxy forwarding are reporting issues with the security fix in 3.6.2. [The issue is being tracked in our ticketing system](https://mattermost.atlassian.net/browse/PLT-5635).
  - **v3.6.1, released 2017-01-19**

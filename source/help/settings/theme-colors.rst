@@ -90,8 +90,6 @@ You can import a theme by pasting a "Theme Code" into the Custom Theme menu.
 
 Go to **Account Settings > Display > Custom Theme > Copy and paste to share theme colors** and paste a theme code to import it, then click **Save**.
 
-You can find sample themes below. You can also find `theme codes shared by the community from the Mattermost community forum. <https://forum.mattermost.org/t/share-your-favorite-mattermost-theme-colors/1330>`_
-
 Custom Theme Examples
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -105,7 +103,7 @@ GitHub theme
 
 .. code-block:: none
 
-  Sidebar BG: #2071A7, Sidebar Text: #FFFFFF, Sidebar Header BG: #2F81B7, Sidebar Header Text: #FFFFFF, Sidebar Unread Text: #FFFFFF, Sidebar Text Hover BG: #136197, Sidebar Text Active Border: #7AB0D6, Sidebar Text Active Color: #FFFFFF, Online Indicator: #7DBE00, Away Indicator: #DCBD4E, Mention Jewel BG: #FBFBFB, Mention Jewel Text: #2071A7, Center Channel BG: #F2F4F8, Center Channel Text: #333333, New Message Separator: #FF8800, Mention Highlight BG: #FFF2BB, Link Color: #2F81B7, Mention Highlight Link: #2F81B7, Button BG: #1DACFC, Button Text: #FFFFFF, Code Theme: github
+  {"awayIndicator":"#D4B579","buttonBg":"#66CCCC","buttonColor":"#FFFFFF","centerChannelBg":"#FFFFFF","centerChannelColor":"#444444","codeTheme":"github","linkColor":"#3DADAD","mentionBg":"#66CCCC","mentionColor":"#FFFFFF","mentionHighlightBg":"#3DADAD","mentionHighlightLink":"#FFFFFF","newMessageSeparator":"#F2777A","onlineIndicator":"#52ADAD","sidebarBg":"#F2F0EC","sidebarHeaderBg":"#E8E6DF","sidebarHeaderTextColor":"#424242","sidebarText":"#2E2E2E","sidebarTextActiveBorder":"#66CCCC","sidebarTextActiveColor":"#594545","sidebarTextHoverBg":"#E0E0E0","sidebarUnreadText":"#515151"}
 
 Monokai theme
 ^^^^^^^^^^^^^
@@ -115,7 +113,7 @@ Monokai theme
 
 .. code-block:: none
 
-  Sidebar BG: #262626, Sidebar Text: #FFFFFF, Sidebar Header BG: #363636, Sidebar Header Text: #FFFFFF, Sidebar Unread Text: #CCCCCC, Sidebar Text Hover BG: #525252, Sidebar Text Active Border: #7E9949, Sidebar Text Active Color: #FFFFFF, Online Indicator: #99CB3F, Away Indicator: #B8B884, Mention Jewel BG: #7E9949, Mention Jewel Text: #FFFFFF, Center Channel BG: #FFFFFF, Center Channel Text: #444444, New Message Separator: #90AD58, Mention Highlight BG: #54850C, Link Color: #90AD58, Mention Highlight Link: #FFFFFF, Button BG: #90AD58, Button Text: #FFFFFF, Code Theme: monokai
+  {"awayIndicator":"#B8B884","buttonBg":"#90AD58","buttonColor":"#FFFFFF","centerChannelBg":"#FFFFFF","centerChannelColor":"#444444","codeTheme":"monokai","linkColor":"#90AD58","mentionBg":"#7E9949","mentionColor":"#FFFFFF","mentionHighlightBg":"#54850C","mentionHighlightLink":"#FFFFFF","newMessageSeparator":"#90AD58","onlineIndicator":"#99CB3F","sidebarBg":"#262626","sidebarHeaderBg":"#363636","sidebarHeaderTextColor":"#FFFFFF","sidebarText":"#FFFFFF","sidebarTextActiveBorder":"#7E9949","sidebarTextActiveColor":"#FFFFFF","sidebarTextHoverBg":"#525252","sidebarUnreadText":"#CCCCCC"}
 
 Solarized Dark theme
 ^^^^^^^^^^^^^^^^^^^^
@@ -125,7 +123,7 @@ Solarized Dark theme
 
 .. code-block:: none
 
-  Sidebar BG: #4F2F4C, Sidebar Text: #FFFFFF, Sidebar Header BG: #452842, Sidebar Header Text: #FFFFFF, Sidebar Unread Text: #E5E5E5, Sidebar Text Hover BG: #452842, Sidebar Text Active Border: #A65EA0, Sidebar Text Active Color: #FFFFFF, Online Indicator: #52ADAD, Away Indicator: #D4B579, Mention Jewel BG: #F2777A, Mention Jewel Text: #FFFFFF, Center Channel BG: #FFFFFF, Center Channel Text: #444444, New Message Separator: #F2777A, Mention Highlight BG: #F2777A, Link Color: #F2777A, Mention Highlight Link: #FFFFFF, Button BG: #E08D8F, Button Text: #FFFFFF, Code Theme: solarized_dark
+  {"awayIndicator":"#D4B579","buttonBg":"#E08D8F","buttonColor":"#FFFFFF","centerChannelBg":"#FFFFFF","centerChannelColor":"#444444","codeTheme":"solarized_dark","linkColor":"#F2777A","mentionBg":"#F2777A","mentionColor":"#FFFFFF","mentionHighlightBg":"#F2777A","mentionHighlightLink":"#FFFFFF","newMessageSeparator":"#F2777A","onlineIndicator":"#52ADAD","sidebarBg":"#4F2F4C","sidebarHeaderBg":"#452842","sidebarHeaderTextColor":"#FFFFFF","sidebarText":"#FFFFFF","sidebarTextActiveBorder":"#A65EA0","sidebarTextActiveColor":"#FFFFFF","sidebarTextHoverBg":"#452842","sidebarUnreadText":"#E5E5E5"}
 
 Solarized Light theme
 ^^^^^^^^^^^^^^^^^^^^^
@@ -135,4 +133,4 @@ Solarized Light theme
 
 .. code-block:: none
 
-  Sidebar BG: #DE718E, Sidebar Text: #FFFFFF, Sidebar Header BG: #DE6785, Sidebar Header Text: #FFFFFF, Sidebar Unread Text: #FFFFFF, Sidebar Text Hover BG: #CC6983, Sidebar Text Active Border: #43E8D4, Sidebar Text Active Color: #FFFFFF, Online Indicator: #88E0E5, Away Indicator: #CCDB91, Mention Jewel BG: #55A3A8, Mention Jewel Text: #FFFFFF, Center Channel BG: #FFFFFF, Center Channel Text: #444444, New Message Separator: #55A3A8, Mention Highlight BG: #55A3A8, Link Color: #55A3A8, Mention Highlight Link: #FFFFFF, Button BG: #55A3A8, Button Text: #FFFFFF, Code Theme: solarized_light
+  {"awayIndicator":"#CCDB91","buttonBg":"#55A3A8","buttonColor":"#FFFFFF","centerChannelBg":"#FFFFFF","centerChannelColor":"#444444","codeTheme":"solarized_light","linkColor":"#55A3A8","mentionBg":"#55A3A8","mentionColor":"#FFFFFF","mentionHighlightBg":"#55A3A8","mentionHighlightLink":"#FFFFFF","newMessageSeparator":"#55A3A8","onlineIndicator":"#88E0E5","sidebarBg":"#DE718E","sidebarHeaderBg":"#DE6785","sidebarHeaderTextColor":"#FFFFFF","sidebarText":"#FFFFFF","sidebarTextActiveBorder":"#43E8D4","sidebarTextActiveColor":"#FFFFFF","sidebarTextHoverBg":"#CC6983","sidebarUnreadText":"#FFFFFF"}

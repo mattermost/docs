@@ -11,7 +11,7 @@ Development Process
    :glob:
 
    /developer/contribution*
-   /developer/developer-setup*
+   /developer/dev-setup.rst
    /developer/mobile-developer-setup.rst
    /developer/api*
    /developer/developer-flow*
@@ -19,6 +19,7 @@ Development Process
    /developer/style*
    /developer/fx*
    /developer/localization-process.rst
+   /developer/core-developer-handbook*
 
 Definitions
 -----------
@@ -39,3 +40,5 @@ Documentation on early previews and unofficial functionality
 
    /install/prod-windows-2012*
    /deployment/webrtc*
+   /developer/toolkit*
+   

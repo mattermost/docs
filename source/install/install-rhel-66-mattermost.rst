@@ -38,14 +38,14 @@ Assume that the IP address of this server is 10.10.10.2
 
 7. Set up the database driver in the file ``/opt/mattermost/config/config.json``. Open the file as root in a text editor and make the following changes:
 
-  -  If you are using PostgreSQL:    
+  -  If you are using PostgreSQL:
     1.  Set ``"DriverName"`` to ``"postgres"``
     2.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values:
      ``"postgres://mmuser:<mmuser-password>@<host-name-or-IP>:5432/mattermost?sslmode=disable&connect_timeout=10"``.
-  -  If you are using MySQL:    
+  -  If you are using MySQL:
     1.  Set ``"DriverName"`` to ``"mysql"``
     2.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values:
-      ``"mmuser:<mmuser-password>@tcp(<host-name-or-IP>:3306)/mattermost?charset=utf8"``
+      ``"mmuser:<mmuser-password>@tcp(<host-name-or-IP>:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=20s&writeTimeout=20s"``
 
 8. Test the Mattermost server to make sure everything works.
 
@@ -59,13 +59,13 @@ Assume that the IP address of this server is 10.10.10.2
 9. Setup Mattermost to use the Upstart daemon which handles supervision of the Mattermost process.
 
   a. Create the Mattermost configuration file:
-  
+
     ``sudo touch /etc/init/mattermost.conf``
-  
+
   b. Open the configuration file in your favorite text editor, and copy the following lines into the file:
-  
+
     .. code-block:: none
-    
+
       start on runlevel [2345]
       stop on runlevel [016]
       respawn
@@ -80,7 +80,7 @@ Assume that the IP address of this server is 10.10.10.2
 11. Verify that Mattermost is running.
 
   ``curl http://localhost:8065``
-  
+
   You should see the HTML that's returned by the Mattermost server.
 
 Now that Mattermost is installed and running, it's time to create the admin user and configure Mattermost for use.

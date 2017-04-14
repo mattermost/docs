@@ -11,7 +11,7 @@ Install a production-ready Mattermost system on 1 to 3 machines.
 .. contents:: Install and configure the components in the following order. Note that you need only one database, either MySQL or PostgreSQL.
   :backlinks: top
   :local:
-  
+
 .. include:: install-ubuntu-1404-server.rst
 .. include:: install-ubuntu-1404-mysql.rst
 .. include:: install-ubuntu-1404-postgresql.rst
