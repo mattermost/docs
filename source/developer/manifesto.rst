@@ -57,7 +57,7 @@ Users should never run into anything unexpected with Mattermost. We ship on time
 7. Minimize administration 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Let people work simply. Team Edition is for teams working in an "virtual office" where everyone knows each other and is trusted to get things done appropriately, without hard limits and policies getting in the way of work. 
+Let people work simply. Team Edition is for teams working in an "virtual office" where everyone knows each other and is trusted to get things done appropriately, without hard limits and policies getting in the way of work. As the product continues to progress, the non-technical user who deployed Team Edition should spend zero time on any IT maintenance tasks. 
 
 8. Open source alternative  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
