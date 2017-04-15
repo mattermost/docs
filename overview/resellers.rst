@@ -13,7 +13,7 @@ Certified resellers are qualified partners entering agreements to resell Matterm
 
 2. **Register a deal** when you have a qualified opportunity using our `deal registration page <https://about.mattermost.com/reseller-deal-registration/>`_ to confirm the customer is not already in contact with Mattermost, Inc. or another reseller. 
 
-3. **Request a quotation** from your reseller manager after receiving a customer order. 
+3. **Request a quotation** from your reseller manager after receiving a customer order.
 
 4. **Sign the quotation** and send it to your reseller manager at Mattermost, Inc. who will issue an invoice to your firm and send the customer instructions to complete the `customer registration process <https://about.mattermost.com/customer-registration/>`_ in order to receive a license key. 
 
