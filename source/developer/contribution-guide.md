@@ -11,7 +11,15 @@ Thank you for your interest in contributing to Mattermost. Here's the process:
 
 3. If you have questions, post them in [Mattermost forum](http://forum.mattermost.org/) or join the [Contributors](https://pre-release.mattermost.com/core/channels/tickets) channel and announce the ticket you'd like to work on so it can be assigned to you. 
 
-It's okay to submit PRs to fix obvious bugs or add small improvements, but anything that significantly changes behavior or user expectations [requires a Help Wanted issue opened by the core team](http://docs.mattermost.com/process/help-wanted.html) so that the change can be tested, documented and supported. 
+It is fine to submit a PR for a bug or an incremental improvement with less than 20 lines of code change without a Help Wanted issue if core committers reviewing the PR agree the change is small. Some examples include
+
+ - [Fix a formatting error in help text](https://github.com/mattermost/platform/pull/5640)
+ - [Fix success typo in Makefile](https://github.com/mattermost/platform/pull/5809)
+ - [Fix broken Cancel button in Edit Webhooks screen](https://github.com/mattermost/platform/pull/5612)
+ - [Fix Android app crashing when saving user notification settings](https://github.com/mattermost/mattermost-mobile/pull/364)
+ - [Fix recent mentions search not working](https://github.com/mattermost/platform/pull/5878)
+
+Anything that significantly changes behavior or user expectations [requires a Help Wanted issue opened by the core team](http://docs.mattermost.com/process/help-wanted.html) so that the change can be tested, documented and supported. 
 
 The best way to discuss opening a Help Wanted ticket with the core team is by [starting a conversation in the feature idea forum](https://www.mattermost.org/feature-ideas/).
 
