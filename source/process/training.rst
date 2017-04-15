@@ -494,6 +494,11 @@ Relevant Docs
 
 1. :doc:`design-process`
 
+Software Strategy 
+^^^^^^^^^^^^^^^^^^^
+
+1. `Monetizing Open Source (Or, All Enterprise Software) <http://a16z.com/2017/04/10/monetizing-open-source-enterprise-software/>`_ - Required reading for business roles 
+
 System Security
 ^^^^^^^^^^^^^^^
 
