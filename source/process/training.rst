@@ -596,3 +596,12 @@ To advanced the skills of senior and functional leaders beyond standard material
 Many thought leaders and conference speakers are open to consulting projects with the right clients, and Mattermost is an excellent client. There's no travel involved, we meet over video conference, we're easy to work with, and we take advising seriously. Advising is a critical part of growing our people and our company. 
 
 We are also open to bringing in a leader's personal mentors as consultants and company advisers when skill sets are appropriate. 
+
+Additional Training Resources 
+------------------------------------
+
+.. raw:: html
+
+    <embed>
+        <iframe class="airtable-embed" src="https://airtable.com/embed/shrbjzgakQoNaXhYt?backgroundColor=gray&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+    </embed>
