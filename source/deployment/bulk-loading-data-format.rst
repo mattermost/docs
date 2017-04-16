@@ -295,11 +295,11 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
       teams: [
         {
           name: "team-name",
-          roles: "team_member team_admin",
+          roles: "team_user team_admin",
           channels: [
             {
               name: "channel-name",
-              roles: "channel_member",
+              roles: "channel_user",
               notify_props: {
                 desktop: "default",
                 mark_unread: "all"
