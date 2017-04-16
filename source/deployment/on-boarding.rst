@@ -26,5 +26,5 @@ Creating System Admin account from the command line
   - After assigning the role the user needs to log out and log back in before the *system_admin* role is applied.
 
 Deactivating a user
-  - System Admins can go to **System Console** > **Teams**, and select a team to manage. From there they can go to the **Users** page for a team and manage roles.
+  - System Admins can go to **System Console > Users** for a list of all users on the server. The list can be searched and filtered to make finding the user easier. Click the user's role and in the menu that opens, click **Make Inactive**.
   - To preserve audit history, users are never deleted from the system. It is highly recommended that System Administrators do not attempt to delete users manually from the database, as this may compromise system integrity and ability to upgrade in the future.

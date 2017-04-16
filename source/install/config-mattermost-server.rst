@@ -7,7 +7,11 @@ Configuring Mattermost Server
 
 2. Open the System Console. Click your username at the top left of navigation panel. In the menu that opens, click **System Console**.
 
-3. Setup an SMTP email service. Click **Notifications > Email** and make the following changes. The example below assumes AmazonSES.
+3. You must set the `Site URL <https://docs.mattermost.com/administration/config-settings.html#site-url>`_:
+  a. In the System Console, click **General > Configuration**.
+  b. In the **Site URL** field, set the URL that users point their browsers at. For example, ``https://example.com``.
+
+4. Setup an SMTP email service. Click **Notifications > Email** and make the following changes. The example below assumes AmazonSES.
 
     a. Set **Enable Email Notifications** to ``true``
     b. Set **Notification Display Name** to ``No-Reply``
@@ -19,11 +23,11 @@ Configuring Mattermost Server
     h. Set **Connection Security** to ``TLS``
     i. Save the Settings
 
-4. Click **Files > Storage** and change **Local Storage Directory** from ``./data/`` to ``/opt/mattermost/data``
+5. Click **Files > Storage** and change **Local Storage Directory** from ``./data/`` to ``/opt/mattermost/data``
 
-5. Click **General > Logging** and set **Output logs to console** to ``false``
+6. Click **General > Logging** and set **Output logs to console** to ``false``
 
-6. Feel free to modify other settings.
-7. Restart the Mattermost Service.
-  
+7. Feel free to modify other settings.
+8. Restart the Mattermost Service.
+
   ``sudo restart mattermost``

@@ -1,10 +1,22 @@
 Configuration Settings
 ======================
-Configuration settings let System Admins manage their Mattermost server and multiple teams. System Admins can modify configuration settings directly in the ``config.json`` file or by using the web-based System Console user interface. Setting changes in the System Console are stored in ``config/config.json``.
 
-The first user added to a new Mattermost install is assigned the System Admin role and can access the System Console from the Main Menu of any team.
+Mattermost configuration settings are maintained in the configuration file ``config.json``, located in the ``mattermost/config`` directory. You can modify the configuration file using the System Console, or by using a text editor to modify it directly.
 
-Note: For any setting not explicitly set in ``config.json`` the Mattermost server will use the default value as documented here, which can be observed in the default ``config/config.json`` file included in each Mattermost release.
+The default location of ``config.json`` is in the ``mattermost/config`` directory. Mattermost must have write permissions to ``config.json``, otherwise changes made in the System Console will have no effect.
+
+**Environment Variables**
+Starting in Mattermost version 3.8, you can use environment variables to manage the configuration. Environment variables override settings in ``config.json``. If a change to a setting in ``config.json`` requires a restart for it to take effect, then changes to the corresponding environment variable also require a server restart.
+
+The name of the environment variable for any setting can be derived from the name of that setting in ``config.json``.
+
+For example, to derive the name of the Site URL setting:
+
+1. Find the setting in ``config.json``. In this case, *ServiceSettings.SiteURL*.
+2. Add ``MM_`` to the beginning and convert all characters to uppercase and replace the ``.`` with ``_``. For example, *MM_SERVICESETTINGS_SITEURL*.
+3. The setting becomes ``export MM_SERVICESETTINGS_SITEURL="http://example.com"``
+
+For any setting that is not set in ``config.json`` or in environment variables, the Mattermost server uses the default value as documented here.
 
 .. contents::
   :depth: 2
@@ -20,7 +32,7 @@ Configuration
 
 Site URL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The URL, including port number and protocol, that users will use to access Mattermost. This field can be left blank unless you are configuring email batching in Notifications > Email. When blank, the URL is automatically configured based on incoming traffic.
+The URL, including port number and protocol, that users will use to access Mattermost. This field is required in Mattermost v3.8 and later.
 
 .. note:: Do not append a team name to the end of the site URL.
 
@@ -278,7 +290,7 @@ Settings to configure the permission restrictions for sending team invite links 
 
 Enable sending team invites from
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Set policy on who can invite others to a team using "Invite New Member" to invite new users by email, or the "Get Team Invite Link" options from the main menu. If "Get Team Invite Link" is used to share a link, you can expire the invite code from **Team Settings** > **Invite Code** after the desired users joined the team. Options include:
+Set policy on who can invite others to a team using the **Send Email Invite**, **Get Team Invite Link**, and **Add Members to Team** options on the main menu. If **Get Team Invite Link** is used to share a link, you can expire the invite code from **Team Settings > Invite Code** after the desired users have joined the team. Options include:
 
 **All team members**: Allows any team member to invite others using an email invitation or team invite link.
 
@@ -336,51 +348,67 @@ Restrict the permission level required to delete public channels. Deleted channe
 | This feature's ``config.json`` setting is ``"RestrictPublicChannelDeletion": "all"`` with options ``all``, ``channel_admin``, ``team_admin``, and ``system_admin`` for above settings respectively.   |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable private group creation for
+Enable private channel creation for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Restrict the permission level required to create private groups.
+Restrict the permission level required to create private channels.
 
-**All team members**: Allow all team members to create private groups.
+**All team members**: Allow all team members to create private channels.
 
-**Team Admins and System Admins**: Restrict creating private groups to Team Admins and System Admins.
+**Team Admins and System Admins**: Restrict creating private channels to Team Admins and System Admins.
 
-**System Admins**: Restrict creating private groups to System Admins.
+**System Admins**: Restrict creating private channels to System Admins.
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictPrivateChannelCreation": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively.   |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable private group renaming for
+Enable private channel renaming for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Restrict the permission level required to rename and set the header or purpose for private groups.
+Restrict the permission level required to rename and set the header or purpose for private channels.
 
-**All channel members**: Allow all group members to rename private groups.
+**All channel members**: Allow all channel members to rename private channels.
 
-**Channel Admins, Team Admins, and System Admins**: Restrict renaming private groups to Channel Admins, Team Admins, and System Admins that are members of the group.
+**Channel Admins, Team Admins, and System Admins**: Restrict renaming private channels to Channel Admins, Team Admins, and System Admins that are members of the private channel.
 
-**Team Admins and System Admins**: Restrict renaming private groups to Team Admins and System Admins that are members of the group.
+**Team Admins and System Admins**: Restrict renaming private channels to Team Admins and System Admins that are members of the private channel.
 
-**System Admins**: Restrict renaming private groups to System Admins that are members of the group.
+**System Admins**: Restrict renaming private channels to System Admins that are members of the private channel.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictPrivateChannelManagement": "all"`` with options ``all``, ``channel_admin``, ``team_admin``, and ``system_admin`` for above settings respectively.   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable private group deletion for
+Enable private channel deletion for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Restrict the permission level required to delete private groups. Deleted groups can be recovered from the database using a `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`_. The last member of a private group has the ability to delete the group regardless of their permission level.
+Restrict the permission level required to delete private channels. Deleted channels can be recovered from the database using a `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`_. The last member of a private channel has the ability to delete the channel regardless of their permission level.
 
-**All channel members**: Allow all group members to delete private groups.
+**All channel members**: Allow all channel members to delete private channels.
 
-**Channel Admins, Team Admins, and System Admins**: Restrict deleting private groups to Channel Admins, Team Admins, and System Admins that are members of the group.
+**Channel Admins, Team Admins, and System Admins**: Restrict deleting private channels to Channel Admins, Team Admins, and System Admins that are members of the private channel.
 
-**Team Admins and System Admins**: Restrict deleting private groups to Team Admins and System Admins that are members of the group.
+**Team Admins and System Admins**: Restrict deleting private channels to Team Admins and System Admins that are members of the private channel.
 
-**System Admins**: Restrict deleting private groups to System Admins that are members of the group.
+**System Admins**: Restrict deleting private channels to System Admins that are members of the private channel.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictPrivateChannelDeletion": "all"`` with options ``all``, ``channel_admin``, ``team_admin``, and ``system_admin`` for above settings respectively.   |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable managing of private channel members for
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Set policy on who can add and remove members from private channels.
+
+**All team members**: Allow all team members to add and remove members.
+
+**Team Admins, Channel Admins, and System Admins**: Allow only Team Admins, Channel Admins, and System Admins to add and remove members.
+
+**Team Admins, and System Admins**: Allow only Team Admins and System Admins to add and remove members.
+
+**System Admins**: Allow only System Admins to add and remove members.
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RestrictPrivateChannelManageMembers": "all"`` with options ``all``, ``channel_admin``, ``team_admin``, and ``system_admin`` for above settings respectively. |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Allow which users to delete messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -505,13 +533,15 @@ Level of detail at which log events are written to the console when **EnableCons
 
 Output logs to file
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Typically set to true in production. When true, logged events are written to the ``mattermost.log`` file in the directory specified by the **FileLocation** setting. The logs are rotated at 10,000 lines and archived to a file in the same directory, and given a name with a datestamp and serial number. For example, ``mattermost.2017-03-31.001``.
+
 **True**:  Log files are written to files specified in **FileLocation**.
 
 **False**: Log files are not written.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableFile": true`` with options ``true`` and ``false`` for above settings respectively.                                |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableFile": true`` with options ``true`` and ``false`` for above settings respectively.  |
++----------------------------------------------------------------------------------------------------------------------------------------+
 
 File Log Level
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -529,7 +559,7 @@ Level of detail at which log events are written to log files when **EnableFile**
 
 File Log Directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Directory to which log files are written. If blank, log files write to ./logs/mattermost/mattermost.log. Log rotation is enabled and every 10,000 lines of log information is written to new files stored in the same directory, for example mattermost.2015-09-23.001, mattermost.2015-09-23.002, and so forth.
+The location of the log files. If blank, they are stored in the ``./logs`` directory. The path that you set must exist and Mattermost must have write permissions in it.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileLocation": ""`` with string input.                                                                                  |
@@ -1555,9 +1585,9 @@ Custom Integrations
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Enable Incoming Webhooks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Developers building integrations can create webhook URLs for channels and private groups. Please see our `documentation page <http://docs.mattermost.com/developer/webhooks-incoming.html>`_ to learn about creating webhooks, view samples, and to let the community know about integrations you have built.
+Developers building integrations can create webhook URLs for public channels and private channels. Please see our `documentation page <http://docs.mattermost.com/developer/webhooks-incoming.html>`_ to learn about creating webhooks, view samples, and to let the community know about integrations you have built.
 
-**True**: Incoming webhooks will be allowed. To manage incoming webhooks, go to **Account Settings > Integrations**. The webhook URLs created in Account Settings can be used by external applications to create posts in any channels or private groups that you have access to.
+**True**: Incoming webhooks will be allowed. To manage incoming webhooks, go to **Account Settings > Integrations**. The webhook URLs created in Account Settings can be used by external applications to create posts in any public or private channels that you have access to.
 
 **False**: The Integrations > Incoming Webhooks section of Account Settings is hidden and all incoming webhooks are disabled.
 
@@ -2273,6 +2303,15 @@ There are a number of settings customizable in ``config.json`` unavailable in th
 Service Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+License File Location
+^^^^^^^^^^^^^^^^^^^^^
+
+Path and filename of the license file on disk. On startup, if Mattermost cannot find a valid license in the database from a previous upload, it looks here. It can be an absolute path, or a path relative to the ``mattermost`` directory.
+
++---------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LicenseFileLocation": ""`` with string input.  |
++---------------------------------------------------------------------------------------------+
+
 Cluster Log Timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 This setting defines the frequency of cluster request time logging for :doc:`../deployment/metrics`, measured in milliseconds.
@@ -2408,6 +2447,16 @@ Specify the maximum frequency, in seconds, which the batching job checks for new
 | This feature's ``config.json`` setting is ``EmailBatchingInterval": 30`` with whole number input                      |
 +-----------------------------------------------------------------------------------------------------------------------+
 
+Skip Server Certificate Verification
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**True**: Do not validate SMTP servers when connecting to them.
+
+**False**: Validate SMTP servers when connecting to them.
+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SkipServerCertificateVerification": false`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------------------------+
 
 GitLab Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~

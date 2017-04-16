@@ -2,6 +2,208 @@
 
 This changelog summarizes updates to [Mattermost Team Edition](http://www.mattermost.org/), an open source team messaging solution released monthly under an MIT license, and [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/), a commercial upgrade offering enterprise messaging for large organizations.
 
+Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
+
+## Release v3.8.0
+
+Release Date: April 16, 2017
+
+### Security Updates
+
+- Mattermost v3.8.0 contains multiple [security updates](http://about.mattermost.com/security-updates/). [Upgrading to Mattermost v3.8.0](http://docs.mattermost.com/administration/upgrade.html) is highly recommended.
+
+- Note: v3.8.1 is in the process of being cut to address a security update and an issue where users are unable to sign up or login using GitLab.
+
+### Highlights
+
+#### Native iOS and Android Apps (Beta)
+- Second generation mobile apps, built using React Native, are [available for beta testing](https://about.mattermost.com/a-native-mobile-experience-second-generation-mobile-apps-released-in-beta/) on [iOS](https://mattermost-fastlane.herokuapp.com/) and [Android](https://play.google.com/apps/testing/com.mattermost.react.native).
+
+#### Pinned Posts
+- Important messages can be pinned to the channel for easy reference. Pinned posts are visible to all channel members.
+
+#### Emoji Picker and Improved Emoji Reactions (Beta)
+- The picker offers quick access to emoji when composing messages or adding reactions. Enable the emoji picker in **Account Settings > Advanced > Preview pre-release features**.
+- The picker is "Beta" while speed of the first load with lots of custom emoji is improved.
+
+#### System Users List
+- The System Console now consolidates all users into a system-wide list that can be filtered by team. The users list can be used to manage team membership and team roles for any user on the system.
+
+#### Configure Using Environment Variables
+- Override `config.json` settings using environment variables.
+
+### Improvements
+
+#### Web User Interface
+- Date separators now appear between posts in the right-hand sidebar.
+- Non-square profile pictures are now cropped in the middle rather than being stretched.
+- Post timestamps now have an expanded date tooltip.
+- The "Add Members" modal now autofocuses on the search box when opened from the "Manage Members" modal.
+- Reduced the margins and line height in compact view.
+- There is now a confirmation dialog before deleting a custom emoji.
+
+#### Search
+- File attachments thumbnails are now shown in search results.
+- Flagged posts from other teams are no longer displayed.
+
+#### Channels
+- Favorite channels are now sorted alphabetically regardless of channel type.
+- Town Square now has a default channel purpose.
+- Users added to a group message are now removed from the Direct Messages search list.
+- "Private Groups" have been renamed to "Private Channels".
+
+#### Mobile
+- Executing a search now closes the keyboard and removes the keyboard focus from the text box.
+
+#### Integrations
+- The integrations confirmation page can now be dismissed with the ENTER key.
+
+#### Notifications
+- Users can no longer configure email notification settings if the notifications are disabled for the system.
+
+#### Onboarding
+- Existing users on the server can now easily be added to a team via the Main Menu.
+
+#### Enterprise Edition
+- Policy controls for restricting permissions to add and remove members from private channels.
+- Added the ability to read the license file from the disk.
+
+### Bug Fixes
+- Fixed line wrapping of the timestamp in Account Settings > Security > View Access History.
+- Fixed an inconsistent error message when creating a channel with a display name of one or two characters.
+- Removed the duplicate "Back" button on the Team Creation page.
+- The AltGR key no longer triggers keyboard shortcuts.
+- Saving a team name without making changes no longer throws an error message.
+- Group messages are now sorted alphabetically with direct messages.
+- The "Create Channel" button will now only appear in the "More Channels" modal when the user has the permission to create channels.
+- The Town Square channel menu no longer has redundant dividers with certain combinations of System Console > Policy settings.
+- Fixed an issue where some conversations would not trigger the channel to appear unread in the left-hand sidebar.
+- Fixed an issue where usernames sometimes did not appear when hovering over reactions.
+- Fixed an issue where link previews would sometimes cause a horizontal scroll bar to appear.
+- iOS code blocks no longer wrap to the next line.
+
+### Compatibility  
+
+#### Breaking changes:
+- The **System Console > Configuration > [Site URL](../../administration/config-settings.html#site-url)** field is now mandatory. Set the Site URL in the System Console, or in the `gitlab.rb` file if you are using GitLab Mattermost.
+- Server logs are now written to the `mattermost.log` file located in the directory specified in **System Console > Logging > [File Log Directory](../../administration/config-settings.html#file-log-directory)**. Set the directory name in the System Console, or in the `gitlab.rb` file if you are using GitLab Mattermost.
+
+#### Removed and deprecated features
+- Backwards compatibility with the old CLI tool is removed in v3.8. See [documentation to learn more about the new CLI tool](../../administration/command-line-tools.html).
+- Deprecated APIv3 routes removed in v3.8:
+   - `GET` at `/channels/more` (replaced by /`channels/more/{offset}/{limit}`)
+   - `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`)
+   - `POST` at `/channels/set_last_viewed_at` (replaced by `/channels/view`)
+   - `POST` at `/users/status/set_active_channel` (replaced by `/channels/view`)
+- All APIv3 endpoints to be removed in September/2017 release (replaced by APIv4 endpoints).
+
+For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
+
+#### config.json   
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console.
+
+**Changes to Team Edition and Enterprise Edition**:
+
+ - Under `EmailSettings` in `config.json`:
+   - Added `"SkipServerCertificateVerification": false` to skip verification of smtp server certificates.
+
+**Additional Changes to Enterprise Edition**:
+
+ - Under `TeamSettings` in `config.json`:
+   - Added `"RestrictPrivateChannelManageMembers": all` to set who can add and remove members from private groups.
+
+### Database Changes
+
+**Posts Table:**
+- Added `IsPinned` column
+
+### API Changes
+
+**New routes (APIv3):**
+- `GET` at `/channels/{channel_id}/pinned`
+  - Returns the pinned posts in a channel
+- `POST` at `/channels/{channel_id}/posts/{post_id}/pin`
+  - Pins a post to a channel
+- `POST` at `/channels/{channel_id}/posts/{post_id}/unpin`
+  - Unpins a post from a channel
+
+**Removed routes (APIv3):**
+- `GET` at `/channels/more` (replaced by /`channels/more/{offset}/{limit}`)
+- `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`)
+- `POST` at `/channels/set_last_viewed_at` (replaced by `/channels/view`)
+- `POST` at `/users/status/set_active_channel` (replaced by `/channels/view`)
+
+### Websocket Event Changes
+
+**Added:**
+- `added_to_team` that occurs when the current user is added to a team by another user.
+
+**Modified**
+- Added a `seq` field to websocket events that increments with each event sent to the client.
+
+### Known Issues
+
+- "Pinned" icon sometimes overlaps image posts.
+- Full name is not editable in Account Settings if the first and last name attributes are removed from **System Console > Authentication > LDAP**.
+- Usernames with dots do not get mention notifications when followed by a comma.
+- Slack import doesn't add merged members/e-mail accounts to imported channels.
+- User can receive a video call from another browser tab while already on a call.
+- Sequential messages from the same user appear as separate posts on mobile view.
+- Search autocomplete picker is broken on Android.
+- Jump link in search results does not always jump to display the expected post.
+- Blue bar "Preview Mode" header message sometimes does not disappear after enabling email notifications.
+- Removing an expired license may not remove the blue bar header message until a refresh.
+- First load of the emoji picker is slow at low connections.
+- Emoji picker for reactions doesn't always position correctly.
+- Deleted custom emoji stay in "recently used" section of the emoji picker.
+- Scrollbar is sometimes not visible in the left-hand sidebar after switching teams.
+
+### Contributors
+
+Many thanks to all our contributors. In alphabetical order:
+
+/platform:
+
+- [aautio](https://github.com/aautio), [asaadmahmood](https://github.com/asaadmahmood), [bonespiked](https://github.com/bonespiked), [bradhowes](https://github.com/bradhowes), [coreyhulen](https://github.com/coreyhulen), [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [doh5](https://github.com/doh5), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [grundleborg](https://github.com/grundleborg), [hmhealey](https://github.com/hmhealey), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [jostyee](https://github.com/jostyee), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [lindalumitchell](https://github.com/lindalumitchell), [prixone](https://github.com/prixone), [R-Wang97](https://github.com/R-Wang97), [saturninoabril](https://github.com/saturninoabril), [VeraLyu](https://github.com/VeraLyu)
+
+/docs:
+
+- [coreyhulen](https://github.com/coreyhulen), [esethna](https://github.com/esethna), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [jwilander](https://github.com/jwilander), [lindy65](https://github.com/lindy65), [Rohlik](https://github.com/Rohlik)
+
+mattermost-redux:
+
+- [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [jarredwitt](https://github.com/jarredwitt), [jwilander](https://github.com/jwilander)
+
+/mattermost-api-reference:
+
+- [cpanato](https://github.com/cpanato), [grundleborg](https://github.com/grundleborg), [hmhealey](https://github.com/hmhealey), [jwilander](https://github.com/jwilander), [saturninoabril](https://github.com/saturninoabril), [senk](https://github.com/senk)
+
+/mattermost-mobile:
+
+- [csduarte](https://github.com/csduarte), [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [lfbrock](https://github.com/lfbrock), [saturninoabril](https://github.com/saturninoabril)
+
+/mattermost-selenium:
+
+- [coreyhulen](https://github.com/coreyhulen), [lindalumitchell](https://github.com/lindalumitchell)
+
+/desktop:
+
+- [jasonblais](https://github.com/jasonblais), [yuya-oc](https://github.com/yuya-oc)
+
+/mattermost-docker:
+
+- [xcompass](https://github.com/xcompass)
+
+/mattermost-kubernetes:
+
+- [coreyhulen](https://github.com/coreyhulen)
+
+/mattermost-load-test:
+
+- [crspeller](https://github.com/crspeller), [csduarte](https://github.com/csduarte)
+
+
 ## Release v3.7.3
 
 ### Notes on Patch Release

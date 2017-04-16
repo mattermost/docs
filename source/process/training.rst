@@ -96,8 +96,8 @@ Note:
 
 Procedure:
 
-1. (Chair): Just prior to meeting, post **Hangout** link in `Standup private group <https://pre-release.mattermost.com/core/channels/stand-up>`_
-2. (Developer): Replies in Standup private group when sprint is ready for review
+1. (Chair): Just prior to meeting, post **Hangout** link in `Standup private channel <https://pre-release.mattermost.com/core/channels/stand-up>`_
+2. (Developer): Replies in Standup private channel when sprint is ready for review
 3. (Chair): Will (at)mention next developer to join **Hangout** to review tickets. Developer joins, tickets are discussed and finalized for next sprint. Developer leaves **Hangout** and next developer rotates in.
 
 Triage Meeting
@@ -126,7 +126,7 @@ Note:
 
 Procedure:
 
-1. (Chair): Just prior to meeting, post **Hangout** link in `Standup private group <https://pre-release.mattermost.com/core/channels/stand-up>`_ (Mattermost Inc. only)
+1. (Chair): Just prior to meeting, post **Hangout** link in `Standup private channel <https://pre-release.mattermost.com/core/channels/stand-up>`_ (Mattermost Inc. only)
 
 2. (Attendees): Join the link
 
@@ -157,7 +157,7 @@ Procedure:
 
 1. (PM & Dev Leads): Stay in **Hangout** after Triage meeting and message community/marketing lead to join.
 
-2. (Attendees): Discuss agenda items in Leads private group
+2. (Attendees): Discuss agenda items in Leads private channel
 
 3. (Attendees): Respond to respective colleagues on decisions from Leads meeting
 
@@ -180,7 +180,7 @@ Only the product team attends the Product Staff Meeting, others' attendance is o
 
 Procedure:
 
-1. (Chair) 3-hours before standup, post reminders in `Platform private group <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only)
+1. (Chair) 3-hours before standup, post reminders in `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only)
 
 ::
 
@@ -197,13 +197,13 @@ Procedure:
 
 2. (Team) At time of meeting:
 
-   - Join the **Hangout** link in the header of the `Platform private group <https://pre-release.mattermost.com/core/channels/platform-discussion>`_
+   - Join the **Hangout** link in the header of the `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`_
    - Open the **Notes** link in the header to see the agenda
 
 3. (Vice-Chair) Post `"Standing Items" template <https://docs.google.com/document/d/1ImSgkF7T03wbKwz_t4-Dr4n3I8LixVbFb2Db_u0FmdM>`_ into Platform Meeting Notes
 
     - Add **Follow-ups** from previous meeting
-    - Add **New items** queued in `Platform private group <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only)
+    - Add **New items** queued in `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only)
 
 Meeting Agenda:
 
@@ -223,7 +223,7 @@ Product Staff Meeting
 
 Post Meeting:
 
-- Follow-up items are posted to the  `Platform private group <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only)
+- Follow-up items are posted to the  `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only)
 
 Meeting Elements
 -----------------------
@@ -358,7 +358,7 @@ List of Terms
 0/5, 1/5, 2/5, 3/5, 4/5, 5/5
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We use "x/5" to concisely communicate conviction. 0/5 means you don't have a strong opinion, you are just sharing an idea or asking a question. 5/5 means you are highly confident and would stake your reputation on the opinion you're expressing.  
+We use "x/5" to concisely communicate conviction. 0/5 means you don't have a strong opinion, you are just sharing an idea or asking a question. 5/5 means you are highly confident and would stake your reputation on the opinion you're expressing.
 
 Bug
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -370,7 +370,7 @@ Dead Tarzan
 
 Discarding an imperfect solution without a clearly thought out alternative. Based on idea of `Tarzan of the Jungle <https://en.wikipedia.org/wiki/Tarzan>`_ letting go of a vine without having a new vine to swing to.
 
-Decking 
+Decking
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A term for shipping something that is below quality standards. This term is used by mountain climbers to describe falling off the side of a mountain, which often involves a series of failures, not just one.
@@ -383,16 +383,16 @@ A specific type of mana for developers similar to "points" or "jelly beans" in a
 Expert Mode (and Crimson Force Field)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When documentation or on-screen text is written for someone with considerable knowledge or expertise, instead of being designed for a new learner. In general, try to state things simply rather than speaking to just the "experts" reading the the text. 
+When documentation or on-screen text is written for someone with considerable knowledge or expertise, instead of being designed for a new learner. In general, try to state things simply rather than speaking to just the "experts" reading the the text.
 
 If something is extremely difficult to understand, and yet still justified in the mind of the writer, we call it "Crimson Force Field". This term is intended to evoke the emotional response of coming across something that is difficult to understand, so writers of Crimson Force Field material can empathize with the readers. Crimson Force Field is drawn from an esoteric episode of Star Trek and it is unlikely anyone but the originator of the term understands its complete meaning. Crimson Force Field is itself Crimson Force Field.  
 
 Help Wanted
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-`Help Wanted tickets <http://docs.mattermost.com/process/help-wanted.html>`_, which are vetted changes to the source code open for community contributions. 
+`Help Wanted tickets <http://docs.mattermost.com/process/help-wanted.html>`_, which are vetted changes to the source code open for community contributions.
 
-Improvement 
+Improvement
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A beneficial change to code that is not fixing a bug.
@@ -529,14 +529,14 @@ The following table summarizes abbreviations used in the above table:
     </embed>
 
 
-Leadership Coaching 
+Leadership Coaching
 --------------------------
 
-To advanced the skills of senior and functional leaders beyond standard materials and processes, we bring in leading experts to advise our leaders and the company on key functions, including sales, operations, strategy and general management. 
+To advanced the skills of senior and functional leaders beyond standard materials and processes, we bring in leading experts to advise our leaders and the company on key functions, including sales, operations, strategy and general management.
 
-- As an example, `Jono Bacon <http://www.jonobacon.org/about/>`_--a leading author, speaker and consultant on open source community advocacy--meets with our community team regularly to refine our processes and understanding. There's a range of similiarly adept company advisers that help advance our thinking and capabilities in critical ways. 
+- As an example, `Jono Bacon <http://www.jonobacon.org/about/>`_--a leading author, speaker and consultant on open source community advocacy--meets with our community team regularly to refine our processes and understanding. There's a range of similiarly adept company advisers that help advance our thinking and capabilities in critical ways.
 
-Many thought leaders and conference speakers are open to consulting projects with the right clients, and Mattermost is an excellent client. There's no travel involved, we meet over video conference, we're easy to work with, and we take advising seriously. Advising is a critical part of growing our people and our company. 
+Many thought leaders and conference speakers are open to consulting projects with the right clients, and Mattermost is an excellent client. There's no travel involved, we meet over video conference, we're easy to work with, and we take advising seriously. Advising is a critical part of growing our people and our company.
 
-We are also open to bringing in a leader's personal mentors as consultants and company advisers when skill sets are appropriate. 
+We are also open to bringing in a leader's personal mentors as consultants and company advisers when skill sets are appropriate.
 
