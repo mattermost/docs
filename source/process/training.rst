@@ -517,7 +517,8 @@ The following chart outlines training materials by category, with notes on which
 .. raw:: html
 
     <embed>
-        <iframe class="airtable-embed" src="https://airtable.com/embed/shrbjzgakQoNaXhYt?backgroundColor=gray&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="1533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+        <iframe class="airtable-embed" src="https://airtable.com/embed/shrbjzgakQoNaXhYt?backgroundColor=gray&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="1233" style="background: transparent; border: 1px solid #ccc;"></iframe>
+        <p>&nbsp;</p>
     </embed>
 
 The following table summarizes abbreviations used in the above table: 
@@ -525,7 +526,8 @@ The following table summarizes abbreviations used in the above table:
 .. raw:: html
 
     <embed>
-        <iframe class="airtable-embed" src="https://airtable.com/embed/shrlwbsr0Y9telZn8?backgroundColor=gray&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+        <iframe class="airtable-embed" src="https://airtable.com/embed/shrlwbsr0Y9telZn8?backgroundColor=gray&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="433" style="background: transparent; border: 1px solid #ccc;"></iframe>
+        <p>&nbsp;</p>
     </embed>
 
 
