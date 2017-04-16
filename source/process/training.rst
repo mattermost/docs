@@ -427,11 +427,9 @@ An attempt to add functionality through a massive, complex one-time re-write hop
 Training
 --------------------------
 
-At Mattermost, Inc., "Learn, Master, Teach" cycles are core to our culture.
+At Mattermost, "Learn, Master, Teach" cycles are core to our culture. You should be constantly growing and cross-training into new skills and responsibilities, developing expertise, and then training your replacement as you prepare to take on new challenges.
 
-We want you to constantly grow and cross-train into new skills and responsibilities, develop effective expertise, and then train your replacement as you prepare to take on new challenges.
-
-Cross-training creates a culture of constant growth, protects against "single-points of failure", and challenges each of us to rise to our fullest potential.
+Cross-training creates a culture of constant growth, protects against single-points of failure, and challenges each of us to rise to our fullest potential.
 
 
 Roles
@@ -517,7 +515,7 @@ The following chart outlines training materials by category, with notes on which
 .. raw:: html
 
     <embed>
-        <iframe class="airtable-embed" src="https://airtable.com/embed/shrbjzgakQoNaXhYt?backgroundColor=gray&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="1233" style="background: transparent; border: 1px solid #ccc;"></iframe>
+        <iframe class="airtable-embed" src="https://airtable.com/embed/shrbjzgakQoNaXhYt?backgroundColor=gray&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="1320" style="background: transparent; border: 1px solid #ccc;"></iframe>
         <p>&nbsp;</p>
     </embed>
 
@@ -526,7 +524,7 @@ The following table summarizes abbreviations used in the above table:
 .. raw:: html
 
     <embed>
-        <iframe class="airtable-embed" src="https://airtable.com/embed/shrlwbsr0Y9telZn8?backgroundColor=gray&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="433" style="background: transparent; border: 1px solid #ccc;"></iframe>
+        <iframe class="airtable-embed" src="https://airtable.com/embed/shrlwbsr0Y9telZn8?backgroundColor=gray&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="395" style="background: transparent; border: 1px solid #ccc;"></iframe>
         <p>&nbsp;</p>
     </embed>
 
