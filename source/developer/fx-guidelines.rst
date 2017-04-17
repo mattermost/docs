@@ -362,7 +362,7 @@ input field should trigger default dialog button.
 Input: Hints
 ------------
 
-Mattermost voice for documentation and help text follows this simple guideline: explain something to an alien in simple terms without jargon or complexity.
+Mattermost voice for documentation and help text follows this simple guideline: explain something to a user with basic computer skills in simple terms without jargon or complexity.
 
 **Fieldname:**
 
@@ -384,7 +384,7 @@ Mattermost voice for documentation and help text follows this simple guideline: 
 
 **Help text:**
 
-    Text below an input field should clearly and concisely describe the purpose of the input in active tense.
+    Text below an input field should clearly and concisely describe the purpose of the input in active voice.
 
     In general, avoid describing the technical requirements of the field in Help Text, and use Placeholder input text, field validation and error messages to convey requirements. The exception to this guideline is if requirements are non-obvious, such as passwords needing different numbers of characters, symbols, etc.
 
@@ -399,7 +399,7 @@ Mattermost voice for documentation and help text follows this simple guideline: 
     Ensure plural interpretations work when applicable and test help text with machine translation to reduce non-obvious, English-specific jardon:
     
     Correct:
-        There are a few configuration settings you can adjust when setting up your instance of Mattermost.
+        You can adjust a few configuration settings when setting up your instance of Mattermost.
         
     Incorrect:
         There are a few configuration settings you might want to fiddle with when setting up your instance of Mattermost.
