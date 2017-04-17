@@ -95,7 +95,7 @@ Release Date: April 16, 2017
    - `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`)
    - `POST` at `/channels/set_last_viewed_at` (replaced by `/channels/view`)
    - `POST` at `/users/status/set_active_channel` (replaced by `/channels/view`)
-- All APIv3 endpoints to be removed in September/2017 release (replaced by APIv4 endpoints).
+- All APIv3 endpoints to be removed six months after APIv4 goes stable (replaced by APIv4 endpoints).
 
 For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
 
@@ -379,7 +379,7 @@ mattermost-redux:
    - `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`)
    - `POST` at `/channels/set_last_viewed_at` (replaced by `/channels/view`)
    - `POST` at `/users/status/set_active_channel` (replaced by `/channels/view`)
- - All APIv3 endpoints to be removed in September/2017 release (replaced by APIv4 endpoints)
+ - All APIv3 endpoints to be removed six months after APIv4 goes stable (replaced by APIv4 endpoints).)
 
 For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
 
