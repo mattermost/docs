@@ -11,7 +11,7 @@ Thank you for your interest in contributing to Mattermost. Here's the process:
 
 3. If you have questions, post them in [Mattermost forum](http://forum.mattermost.org/) or join the [Contributors](https://pre-release.mattermost.com/core/channels/tickets) channel and announce the ticket you'd like to work on so it can be assigned to you. 
 
-It is fine to submit a PR for a bug or an incremental improvement with less than 20 lines of code change without a Help Wanted issue if core committers reviewing the PR agree the change is small. Some examples include
+It is fine to submit a PR for a bug or an incremental improvement with less than 20 lines of code change without a Help Wanted issue if the core committers who review the PR agree that the change is small. Some examples include
 
  - [Fix a formatting error in help text](https://github.com/mattermost/platform/pull/5640)
  - [Fix success typo in Makefile](https://github.com/mattermost/platform/pull/5809)
