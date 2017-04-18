@@ -42,7 +42,7 @@ Release Date: April 16, 2017
 - Reduced the margins and line height in compact view.
 - There is now a confirmation dialog before deleting a custom emoji.
 - Updated error page for invalid permalinks.
-- Updated error page for "Private browsing not supported" page in Safari.
+- Updated error page for "Private browsing not supported" in Safari.
 
 #### Performance
 - Added index and cache to reactions store
@@ -65,7 +65,6 @@ Release Date: April 16, 2017
 
 #### Link Previews
 - Updated UI for link previews by removing an extra blue vertical bar.
-- Link preview image no longer appears outside of the preview container.
 - Added support for link preview requests through a separate proxy.
 
 #### Notifications
@@ -96,6 +95,7 @@ Release Date: April 16, 2017
 - Usernames on channel member list are now properly aligned.
 - Fixed a console error thrown when switching teams.
 - Fixed channel autocomplete sometimes flickering.
+- Link preview image no longer appears outside of the preview container.
 
 ### Compatibility  
 
