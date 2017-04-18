@@ -20,15 +20,31 @@ Consequently this will save time for system administrators as well as developers
 Features of the Developer Toolkit
 ---------------------------------
 
-1. The ability to build Go 1.8 server plugins to hook directly into server events (think new post events, user update events, etc.), have some form of database access (possibly access to certain tables, and the ability to create new tables) and to add custom endpoints to extend the Mattermost REST API
-2. The ability to build webapp client plugins to override existing UI components (replace posts with your custom components, use your own video services etc.), modify/extend client drivers to interact with custom server API endpoints, and add whole new UI views in predetermined places
-3. The ability to build plugins similar to the webapp but for React Native apps for iOS and Android
-4. A system or architecture to combine the above plugins into one easy-to-share and easy-to-install package
-5. A market or directory to find official and/or certified by Mattermost plugins and a process to get your plugin certified
-6. A guide or system to enable the embedding of Mattermost into other apps as a chat service
-7. Mattermost HTTP REST APIv4 allowing for much more powerful server interaction
-8. Webhooks and slash commands to allow easy, low-effort extension and integration
-9. All of the documentation required to support the use and building of all of the above
+Below is a list of planned features of the developer toolkit with estimated time of delivery.
+
+1. Q2/2017:
+
+ - Mattermost HTTP REST APIv4 allowing for much more powerful server interaction.
+ - Mattermost Webapp moved over to Redux infrustructure.
+ 
+2. Q3/2017:
+
+ - Mattermost Webapp UI components moved over to be Redux compatible.
+ - The ability to build webapp client plugins to override existing UI components (replace posts with your custom components, use your own video services etc.), modify/extend client drivers to interact with custom server API endpoints, and add whole new UI views in predetermined places.
+
+3. Q4/2017:
+ - The ability to build Go 1.8 server plugins to hook directly into server events (think new post events, user update events, etc.), have some form of database access (possibly access to certain tables, and the ability to create new tables) and to add custom endpoints to extend the Mattermost REST API.
+
+4. Q1/2018:
+ - The ability to build plugins similar to the webapp but for React Native apps for iOS and Android.
+ - A system or architecture to combine the above plugins into one easy-to-share and easy-to-install package.
+
+5. Q2/2018:
+ - A market or directory to find official and/or certified by Mattermost plugins and a process to get your plugin certified.
+ - A guide or system to enable the embedding of Mattermost into other apps as a chat service.
+ - Webhooks and slash commands to allow easy, low-effort extension and integration.
+
+All of the documentation required to support the use and building of the toolkit will be done as we work through the above systems.
 
 Example Uses
 ------------
