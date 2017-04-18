@@ -41,6 +41,11 @@ Release Date: April 16, 2017
 - The "Add Members" modal now autofocuses on the search box when opened from the "Manage Members" modal.
 - Reduced the margins and line height in compact view.
 - There is now a confirmation dialog before deleting a custom emoji.
+- Updated the error page for invalid permalinks.
+- Updated the error page for "Private browsing not supported" in Safari.
+
+#### Performance
+- Added index and cache to reactions store
 
 #### Search
 - File attachments thumbnails are now shown in search results.
@@ -58,6 +63,10 @@ Release Date: April 16, 2017
 #### Integrations
 - The integrations confirmation page can now be dismissed with the ENTER key.
 
+#### Link Previews
+- Updated the UI for link previews by removing an extra blue vertical bar.
+- Added support for link preview requests through a separate proxy.
+
 #### Notifications
 - Users can no longer configure email notification settings if the notifications are disabled for the system.
 
@@ -67,6 +76,7 @@ Release Date: April 16, 2017
 #### Enterprise Edition
 - Policy controls for restricting permissions to add and remove members from private channels.
 - Added the ability to read the license file from the disk.
+- The configuration file is now reloaded after applying an Enterprise Edition license on startup.
 
 ### Bug Fixes
 - Fixed line wrapping of the timestamp in Account Settings > Security > View Access History.
@@ -81,6 +91,11 @@ Release Date: April 16, 2017
 - Fixed an issue where usernames sometimes did not appear when hovering over reactions.
 - Fixed an issue where link previews would sometimes cause a horizontal scroll bar to appear.
 - iOS code blocks no longer wrap to the next line.
+- Removed an extra border in Markdown tables on iOS.
+- Usernames in the channel member list are now properly aligned.
+- Fixed a console error that was thrown when switching teams.
+- Fixed occasionial flickering of channel autocomplete.
+- Link preview images no longer appear outside of the preview container.
 
 ### Compatibility  
 
