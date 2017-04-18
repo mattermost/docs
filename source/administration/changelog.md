@@ -8,6 +8,86 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 Release Date: May 16, 2017
 
+### Highlights
+
+### Improvements
+
+#### Web User Interface
+- Lower and upper vertical margins for posts are now equal.
+- Comments only containing a file attachment have a reduced vertical spacing in the center channel.
+- First line of message text is now aligned with username.
+- Added padding between timestamp and pinned posts badge in comment threads in compact view.
+
+#### Files
+- SVG files now render in file preview.
+
+#### CLI Tool
+- Added new CLI commands:
+    - `platform check` for validating the `config.json` file.
+    - `platform search` for searching users based on username, email or user ID.
+
+### Bug Fixes
+- The maximum length of field "Position" increased to 64 characters. The previous limit caused problems with LDAP synchronization.
+- Pinning a post in center channel no longer changes pinned posts list in the right-hand sidebar.
+- Pinning a post in center now adds the badge to search results.
+- Fixed error message text for **Edit URL** field in channel creation modal.
+- Disabled config file watcher while running from makefile.
+- Long custom emoji names no longer float out of the emoji picker.
+- Fixed Go client's `GetTeamByName()` function.
+- Recent mentions search now properly includes `@[username]` in the search.
+- Updated error Message when entering a password longer than 46 characters.
+- Prevent multiple clicks on post retry.
+
+### Compatibility  
+
+#### Breaking changes:
+
+#### Removed and deprecated features
+
+#### config.json   
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console.
+
+**Changes to Team Edition and Enterprise Edition**:
+
+ - 
+
+**Additional Changes to Enterprise Edition**:
+
+ - 
+
+### Database Changes
+
+### API Changes
+
+### Websocket Event Changes
+
+### Known Issues
+
+This list has not been udpated and is a carryover from v3.8 changelog:
+
+- "Pinned" icon sometimes overlaps image posts.
+- Full name is not editable in Account Settings if the first and last name attributes are removed from **System Console > Authentication > LDAP**.
+- Usernames with dots do not get mention notifications when followed by a comma.
+- Slack import doesn't add merged members/e-mail accounts to imported channels.
+- User can receive a video call from another browser tab while already on a call.
+- Sequential messages from the same user appear as separate posts on mobile view.
+- Search autocomplete picker is broken on Android.
+- Jump link in search results does not always jump to display the expected post.
+- Blue bar "Preview Mode" header message sometimes does not disappear after enabling email notifications.
+- Removing an expired license may not remove the blue bar header message until a refresh.
+- First load of the emoji picker is slow at low connections.
+- Emoji picker for reactions doesn't always position correctly.
+- Deleted custom emoji stay in "recently used" section of the emoji picker.
+- Scrollbar is sometimes not visible in the left-hand sidebar after switching teams.
+
+### Contributors
+
+Many thanks to all our contributors. In alphabetical order:
+
+/platform:
+
+
 ## Release v3.8.0
 
 Release Date: April 16, 2017
