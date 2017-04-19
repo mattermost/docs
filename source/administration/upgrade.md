@@ -43,11 +43,15 @@ To start, select one of the following guides:
       1. Run `tar -xvzf mattermost-team-X.X.X-linux-amd64.tar.gz` to decompress the upgraded version and replace the current version of Mattermost on disk, where `X.X.X` is the version number to which you are upgrading.  
 5. Restore the state of your server
       1. Copy the backed up version of `config.json` in place of the default `config.json`.
-6. Start your server and address any setting changes relevant in the latest version of Mattermost
+6.  Set the user and group mattermost as the owner of the Mattermost files:
+    sudo chown -R mattermost:mattermost /opt/mattermost
+7.  Give write permissions to the mattermost group:
+    sudo chmod -R g+w /opt/mattermost
+8. Start your server and address any setting changes relevant in the latest version of Mattermost
       1. Run `sudo start mattermost`.
       2. Opening the **System Console** and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added.
-7. If you have TLS set up on your Mattermost server, run `sudo setcap cap_net_bind_service=+ep ./bin/platform` in your Mattermost directory to allow Mattermost to bind to low ports.
-8. Test the system is working by going to the URL of the server with an `https://` prefix.
+9. If you have TLS set up on your Mattermost server, run `sudo setcap cap_net_bind_service=+ep ./bin/platform` in your Mattermost directory to allow Mattermost to bind to low ports.
+10. Test the system is working by going to the URL of the server with an `https://` prefix.
       1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 
 ## Upgrade Enterprise Edition to 3.1.x and later
