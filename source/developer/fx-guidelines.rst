@@ -384,7 +384,7 @@ Mattermost voice for documentation and help text follows this simple guideline: 
 
 **Help text:**
 
-    Text below an input field should clearly and concisely describe the purpose of the input in active voice.
+    Text below an input field should clearly and concisely describe the purpose of the input in an active voice.
 
     In general, avoid describing the technical requirements of the field in Help Text, and use Placeholder input text, field validation and error messages to convey requirements. The exception to this guideline is if requirements are non-obvious, such as passwords needing different numbers of characters, symbols, etc.
 
