@@ -3,12 +3,15 @@
 Software & Hardware Requirements
 ================================
 
---------------
+This guide outlines minimum software and hardware requirements for deploying Mattermost. Requirements may vary based on utilization and observing performance of pilot projects is recommended prior to scale out. 
+
+.. contents::
+    :backlinks: top
 
 Deployment Overview
 -------------------
 
-Please see `Mattermost Deployment Overview <http://docs.mattermost.com/deployment/deployment.html>`__ for a summary of components listed here.
+Please see `Mattermost Deployment Overview <http://docs.mattermost.com/deployment/deployment.html>`__ for a summary of software systems who's requirements are described in this document. 
 
 .. figure:: ../images/network.PNG
    :alt: image
@@ -54,7 +57,7 @@ Server Software
 Mattermost Server Operating System
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Ubuntu 14.04, Debian Jessie, CentOS 6.6+, CentOS 7.1+, RedHat Enterprise Linux 6.6+, RedHat Enterprise Linux 7.1+, Oracle Linux 6.6+, Oracle Linux 7.1+
+-  Ubuntu 14.04, Ubuntu 16.04, Debian Jessie, CentOS 6.6+, CentOS 7.1+, RedHat Enterprise Linux 6.6+, RedHat Enterprise Linux 7.1+, Oracle Linux 6.6+, Oracle Linux 7.1+
 
 The Mattermost roadmap does not currently include production support for Fedora, FreeBSD or Arch Linux.
 
@@ -64,7 +67,7 @@ Database Software
 -  MySQL 5.6+
 -  PostgreSQL 9.4+
 
-Deployments requiring searching in Chinese, Japanese and Korean languages require MySQL 5.7.6+ and the configuration of `ngram Full-Text parser <https://dev.mysql.com/doc/refman/5.7/en/fulltext-search-ngram.html>`__. See `CJK discussion <https://github.com/mattermost/platform/issues/2033#issuecomment-183872616>`__ for details.
+Deployments requiring searching in Chinese, Japanese and Korean languages require MySQL 5.7.6+ and the configuration of `ngram Full-Text parser <https://dev.mysql.com/doc/refman/5.7/en/fulltext-search-ngram.html>`__. For searching two characters, you will also need to set ``ft_min_word_len`` and ``innodb_ft_min_token_size`` to ``2`` and restart MySQL. See `CJK discussion <https://github.com/mattermost/platform/issues/2033#issuecomment-183872616>`__ for details.
 
 Hardware Requirements
 ---------------------
@@ -82,10 +85,22 @@ Most small to medium Mattermost team deployments can be supported on a single se
 
 Notes:
 
-1. Larger deployments should estimate utilization based on pilots representative of full scale usage.
-2. Storage recommendation is based on storing 3 years of archives with moderate file sharing.
-3. Solid state drives (SSD) can be used in place of disk storage for higher concurrency.
-4. Team deployments assume registered users are divided into teams of 10-100.
+1. Memory requirements are largely driven by peak file sharing activity. Recommendation is based on defaul 50 MB max file size, which can be adjusted from the System Console. Changing this number may change memory requirements.   
+2. Larger deployments should estimate utilization based on pilots representative of full scale usage. 
+3. Storage recommendation is based on storing 3 years of archives with moderate file sharing.
+4. Solid state drives (SSD) can be used in place of disk storage for higher concurrency.
+5. Team Edition deployments assume registered users are divided into teams of 10-100.
+
+.. _hardware-sizing-for-enterprise:
+
+Mattermost Load Test Framework
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For Mattermost Enterprise Edition deployments, an open source load testing framework is available to simulate usage: https://github.com/mattermost/mattermost-load-test
+
+The system can be used to place a deployment under estimated user activity load and to log in and inspect the running system to ensure sizing and installation is correct. 
+
+Mattermost's `performance monitoring <https://docs.mattermost.com/deployment/metrics.html>`_ tools can be used to look into detailed behavior. 
 
 Hardware Sizing for Enterprise Deployments (Multi-Server)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

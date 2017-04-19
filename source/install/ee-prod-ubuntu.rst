@@ -3,14 +3,10 @@
 Production Enterprise Install on Ubuntu 14.04 LTS
 =================================================
 
-Install Mattermost Enterprise Edition in production mode on one, two or three machines, using the following steps: 
-
-- `Install Ubuntu Server (x64) 14.04 LTS`_
-- `Set up Database Server`_
-- `Set up Mattermost Server`_
-- `Set up NGINX Server`_
-- `Test setup and configure Mattermost Server`_
-
+Install Mattermost Enterprise Edition in production mode on one, two or three machines.
+ 
+.. contents::
+  :backlinks: top
 
 Install Ubuntu Server (x64) 14.04 LTS
 -------------------------------------
@@ -139,7 +135,7 @@ Set up Mattermost Server
    -  ``./platform``
    -  You should see a console log like ``Server is listening on :8065``
       letting you know the service is running.
-   -  Stop the server for now by typing ``ctrl-c``
+   -  Stop the server for now by pressing CTRL+C
 
 9. Setup Mattermost to use the Upstart daemon which handles supervision
    of the Mattermost process.

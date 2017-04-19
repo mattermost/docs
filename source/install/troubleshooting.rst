@@ -3,6 +3,11 @@
 Troubleshooting
 ===============
 
+This document summarizes common troubleshooting issues and techinques.
+
+.. contents::
+    :backlinks: top
+
 Important notes
 ---------------
 
@@ -55,6 +60,13 @@ Locked out of System Administrator account
 
 If email sign-in was turned off before the System Administrator switched sign-in methods, sign up for a new account and promote it to System Administrator from the command line.
 
+YouTube videos show a "Video not found" preview
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. First, make sure the YouTube video exists by pasting a link to the video into your browser's address bar.
+2. If you are using the Mattermost Desktop App, please ensure you have installed version 3.5.0 or later.
+3. If you have specified `a Google API key <https://docs.mattermost.com/administration/config-settings.html#google-api-key>`_ to enable the display of titles for embedded YouTube video previews, regenerate the key.
+
 Mattermost Error Messages
 -------------------------
 
@@ -74,7 +86,7 @@ The following is a list of common error messages and solutions:
 
 **Solution:**
 
-      1. Follow the `installation guide to set up your WebSocket port properly <http://docs.mattermost.com/install/prod-ubuntu.html#set-up-nginx-server>`__.
+      1. Follow the `installation guide to set up your WebSocket port properly <https://docs.mattermost.com/install/install-ubuntu-1604.html#installing-nginx-server>`__.
       2. Speak with the owner of any other proxies between your device and the Mattermost server to ensure ``wss`` connections are passing through without issue.
 
 If this issue is reported rarely, in some cases the issue comes from *intermittent* internet connectivity, where the initial load works, but the device then becomes disconnected from the internet and real time updates over the ``wss`` connection fail repeatedly and the error is displayed to check if the ``wss`` connection were misconfigured.
@@ -86,7 +98,7 @@ If only a small number of users have this issue, it could be from intermittent i
 
 This error may appear in server logs when attempting to sign-up when using self-signed certificates to setup SSL, which is not yet supported by Mattermost.
 
-**Solution:** Set up a load balancer like NGINX `per production install guide <http://docs.mattermost.com/install/prod-debian.html#set-up-nginx-with-ssl-recommended>`__. The core team is looking into allowing self-signed certificates in the future. 
+**Solution:** Set up a load balancer like NGINX `per production install guide <https://docs.mattermost.com/install/install-ubuntu-1604.html#configuring-nginx-with-ssl-and-http-2>`__. The core team is looking into allowing self-signed certificates in the future. 
 
 As a work around, in **System Console** > **Security** > **Connections** set ``Enable Insecure Outgoing Connections`` to ``true``.
    
@@ -133,50 +145,13 @@ Click the link at the bottom of the sign-in page that says “Don't have an acco
          2. Asking the user to switch sign-in methods before turning the
             sign-in option back off.
 
-GitLab Mattermost Error Messages
---------------------------------
+``Failed to upgrade websocket connection``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``We received an unexpected status code from the server (200)``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This error can occur if you're using multiple URLs to reach Mattermost via proxy forwarding.
 
-If you have upgraded from a pre-released version of GitLab Mattermost or if an unforseen issue has arrisen during the `upgrade procedure <http://docs.mattermost.com/administration/upgrade.html>`__, you may be able to restore Mattermost using the following procedure:
+**Solution:**
 
-   1. ``sudo stop mattermost``, so DB can be dropped
-   2. ``sudo gitlab-ctl reconfigure``
-   3. ``sudo -u gitlab-psql /opt/gitlab/embedded/bin/dropdb -h /var/opt/gitlab/postgresql mattermost_production``
-   4. ``sudo start mattermost``
-   5. ``sudo gitlab-ctl reconfigure``
-   6. `Manually set up GitLab SSO <http://docs.mattermost.com/deployment/sso-gitlab.html>`__ by copying Secret and ID into ``/var/opt/gitlab/mattermost/config.json``
-   7. ``sudo gitlab-ctl restart``
-
-``Token request failed``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This error can appear in the web browser after attempting to create a new team with GitLab SSO enabled
-   
-Solutions:
-
-   1. Check that your SSL settings for the SSO provider match the ``http://`` or ``https://`` choice selected in ``config.json`` under ``GitLabSettings``
-   2. Follow steps 1 to 3 of the manual `GitLab SSO configuration procedure <http://docs.mattermost.com/deployment/sso-gitlab.html>`__ to confirm your ``Secret`` and ``Id`` settings in ``config.json`` match your GitLab settings, and if they don't, manually update ``config.json`` to the correct settings and see if this clears the issue.
-
-``The redirect URI included is not valid.``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This error may be related to SSL configurations in your proxy after a GitLab omnibus upgrade from 8.0, which contained the Mattermost beta version.
-
-Please check that each step of `the procedure for upgrading Mattermost in GitLab 8.0 to GitLab 8.1 was completed <http://docs.mattermost.com/integrations/gitlab.html#upgrading-from-gitlab-mattermost-beta>`__. Then check upgrades to successive major versions were completed using the procedure in the `Upgrade Guide <http://docs.mattermost.com/administration/upgrade.html>`__.
-
-``panic: The database schema version of 1.1.0 cannot be upgraded. You must not skip a version``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This error may appear in your ``/var/log/gitlab/mattermost/current`` if you're attempting to skip major versions when upgrading GitLab Mattermost (e.g. running an upgrade from GitLab 8.2.x to 8.4.x, instead of running from 8.2.x to 8.3.x to 8.4.x which is required for GitLab Mattermost). 
-
-To address this:
-   1. Run ``platform -version`` to check your version of Mattermost
-   2. If your version of the Mattermost binary doesn't match the version listed in the database error message, downgrade the version of the Mattermost binary you are using by `following the manual upgrade steps for Mattermost <http://docs.mattermost.com/administration/upgrade.html>`__ and using the database schema version listed in the error messages for the version you select in Step 1) iv).
-   3. Once Mattermost is working again, you can use the same upgrade procedure to upgrade Mattermost version by version to your current GitLab version. After this is done, GitLab automation should continue to work for future upgrades, so long as you don't skip versions.
-
-``panic: Error decoding config file=/opt/mattermost/config/config.json, err=invalid character '"' after object key:value pair``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Your ``config.json`` is not a well-formed ``.json`` file. Try using a `json validator <https://jsonformatter.curiousconcept.com/>`__ to find the error.
+1. Upgrade to a Mattermost server v3.8.0 or later, which adds `WebSocket CORS support <https://github.com/mattermost/platform/pull/5667>`_.
+2. Follow the installation guide to configure `NGINX as a proxy for Mattermost server <https://docs.mattermost.com/install/install-ubuntu-1604.html#configuring-nginx-as-a-proxy-for-mattermost-server>`_.
+3. If you're doing reverse proxy with IIS, upgrade to IIS 8.0 or later and enable WebSockets. For more information, see `IIS 8.0 WebSocket Protocol Support <https://www.iis.net/learn/get-started/whats-new-in-iis-8/iis-80-websocket-protocol-support>`_.

@@ -3,7 +3,7 @@ Keyboard Shortcuts
 
 Keyboard shortcuts perform operations in Mattermost to help you navigate through channels and make a more efficient use of your keyboard. See also `slash commands <http://docs.mattermost.com/help/messaging/executing-commands.html>`_ for alternate ways to help carry out actions with a keyboard instead of a mouse.
 
-To display a list of available keyboard shortcuts, type ``CTRL/CMD + /``, or ``/shortcuts``.
+To display a list of available keyboard shortcuts, type CTRL+/ (CMD+/ on Mac), or ``/shortcuts``.
 
 Navigation
 ==========

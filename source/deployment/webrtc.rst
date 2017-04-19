@@ -1,12 +1,14 @@
 Video and Audio Calling (Beta)
 =====================================
 
-Mattermost supports an early preview of video and audio calling option using a self-hosted proxy. The implementation is based on WebRTC integration enabling one-on-one video and audio chat without plugins.
+Mattermost supports an early preview of video and audio calling option using a self-hosted proxy. The implementation is based on WebRTC integration enabling one-on-one video and audio calling within a browser without needing additional software to be installed.
 
-The feature is currently intended as a working prototype for community development and not recommended for production. It is supported on Chrome, Firefox and the Mattermost Desktop Apps on a server running in SSL mode.
+The feature is a working prototype for community development and not recommended for production. It has been tested on Chrome and Firefox running on Mac and Windows and the Mattermost Mac and Windows Apps using a Mattermost server running in SSL mode.
+
+.. note:: This feature will be replaced by a plug-in architecture allowing multiple video and audio calling providers to connect into Mattermost, and features described in this section will be re-written as a plug-in. 
 
 Configuring video and audio calls
---------------------------
+------------------------------------------
 
 This option can be enabled by the System Administrator in the System Console under **Integrations > WebRTC (Beta)** - `see configuration settings documentation to learn more <https://docs.mattermost.com/administration/config-settings.html#webrtc-beta>`_.
 

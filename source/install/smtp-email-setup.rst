@@ -3,7 +3,7 @@
 SMTP Email Setup
 ================
 
-To run in production, Mattermost requires SMTP email to be enabled for email notifications and password reset for systems usign email-based authentication. 
+To run in production, Mattermost requires SMTP email to be enabled for email notifications and password reset for systems using email-based authentication.
 
 How to Enable Email
 ~~~~~~~~~~~~~~~~~~~
@@ -114,14 +114,14 @@ Hotmail
 Troubleshooting SMTP
 ~~~~~~~~~~~~~~~~~~~~
 
-Tip 1
-^^^^^
+TLS/STARTTLS Requirements 
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you fill in **SMTP Username** and **SMTP Password** then you must set
 **Connection Security** to **TLS** or to **STARTTLS**
 
-Tip 2
-^^^^^
+Troubleshooting using Logs
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you have issues with your SMTP install, from your Mattermost team
 site go to the main menu and open **System Console -> Logs** to look for
@@ -138,8 +138,8 @@ For example, if **System Console -> Logs** has an error code reading:
 Search for ``554 5.7.1 error`` and
 ``Client host rejected: Access denied``.
 
-Tip 3
-^^^^^
+Checking your SMTP server is reachable 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Attempt to telnet to the email service to make sure the server is
    reachable.

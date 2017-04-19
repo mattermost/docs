@@ -1,10 +1,10 @@
-# GitLab Single-Sign-On 
+# GitLab Single Sign-On 
 ___
-Single-Sign-On can be configured with the following services.
+Single Sign-On can be configured with the following services.
 
 ## GitLab 
 
-Follow these steps to configure Mattermost to use GitLab as a single-sign-on (SSO) service for team creation, account creation and sign-in.
+Follow these steps to configure Mattermost to use GitLab as a single sign-on (SSO) service for team creation, account creation and sign-in.
 
 1. Login to your GitLab account and under **Profile Settings** go to **Applications**.
 2. Add a new application called "Mattermost" with the following as Redirect URIs:
