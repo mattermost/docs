@@ -4,15 +4,21 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
-## Release v3.8.0
+## Release v3.8.1
 
-Release Date: April 16, 2017
+### Notes on Patch Release
+
+ - **v3.8.1, released 2017-04-19**
+   - Mattermost v3.8.1 contains a security update and [upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+   - Fixed an issue with Site URL sometimes breaking the OAuth2 login flow, including login using GitLab.
+   - Reverted a change preventing LDAP usernames from beginning with a number.
+   - Fixed a permission issue with group message channel creation.
+ - **v3.8.0, released 2017-04-16**
+   - Original 3.8 release
 
 ### Security Updates
 
 - Mattermost v3.8.0 contains multiple [security updates](http://about.mattermost.com/security-updates/). [Upgrading to Mattermost v3.8.0](http://docs.mattermost.com/administration/upgrade.html) is highly recommended.
-
-- Note: v3.8.1 is in the process of being cut to address a security update and an issue where users are unable to sign up or login using GitLab.
 
 ### Highlights
 
