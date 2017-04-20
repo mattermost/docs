@@ -284,6 +284,7 @@ Once final dot release build is ready to cut:
     - Post this checklist in Release channel
     - Verify all items in the last posted release checklist are complete, if not alert the release manager
 2. Logistics: 
+    - Check for any [UserVoice](https://docs.google.com/spreadsheets/d/1nljd4cFh-9MXF4DxlUnC8b6bdqijkvi8KHquOmK8M6E/edit#gid=0) feature suggestions that were completed in the current release.  Find the [release tweet](https://twitter.com/mattermosthq/status/854781715914555393) and insert a link to the tweet next to the feature that shipped with the release.
     - Post key dates for the next release in the header of the Release Discussion channel and remove links to RC candidates and testing spreadsheet
     - For the next release, create the following team meetings. If they conflict with existing meetings, check with meeting owner to reschedule or reschedule the release meeting
         - PM Release Update meeting on T-15 at 7:30am San Francisco time
@@ -297,6 +298,11 @@ Once final dot release build is ready to cut:
         - Release Process
         - Testing Process
     - Close the release in Jira
+        - Go to [releases page](https://mattermost.atlassian.net/projects/PLT?selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased) in Jira
+        - Find the release, and select release
+        - Check how many unresolved tickets are left, and review them
+        - If there's only a few, and they all correctly belong to the release, then release it
+        - If there's a lot, ask the release manager to review to see if any tickets have the wrong fix version and should be moved
     - Prepare tickets for the next release,  with a corresponding vX.X prefix
         - [Creating final release candidate](https://mattermost.atlassian.net/browse/PLT-2198)
         - [Test Gitlab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/PLT-2197) 
