@@ -54,7 +54,7 @@ Team Edition is built for teams needing a modern communication experience secure
 
 Users should never run into anything unexpected with Mattermost. We ship on time and document our features and product changes. Users should be able to know well in advance what is being considered for inclusion and change in upcoming versions. 
 
-7. Minimize administration 
+7. Near zero administration 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Let people work simply. Team Edition is for teams needing a "virtual office" where everyone knows each other and is trusted to get things done appropriately, without hard limits and policies. The non-technical user who deployed Team Edition should spend zero time on any administration tasks. 
