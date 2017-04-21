@@ -122,9 +122,9 @@ Private cloud enterprise communications server.
 -------
 
 
-- Mattermost Enterprise Edition v3.8.1 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-8-1) - [Download](https://releases.mattermost.com/3.8.1/mattermost-3.8.1-linux-amd64.tar.gz)
-  - `https://releases.mattermost.com/3.8.1/mattermost-3.8.1-linux-amd64.tar.gz`
-  - SHA-256 Checksum: `c64b06fbeb252e2ad459b5642ffeb3d39c14bfbc02e8813c176b9abcaa0d76c0`
+- Mattermost Enterprise Edition v3.8.2 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-8-2) - [Download](https://releases.mattermost.com/3.8.2/mattermost-3.8.2-linux-amd64.tar.gz)
+  - `https://releases.mattermost.com/3.8.2/mattermost-3.8.2-linux-amd64.tar.gz`
+  - SHA-256 Checksum: `b99c86a2667f636eaee26331aa61a71a51b2d3d412eaa83fdebf8b53cddc6aeb`
 - Mattermost Enterprise Edition v3.7.4 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-7-4) - [Download](https://releases.mattermost.com/3.7.4/mattermost-3.7.4-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/3.7.4/mattermost-3.7.4-linux-amd64.tar.gz`
   - SHA-256 Checksum: `adc84d61e14812ff5bfd788be7e49f2e8b8d7803909fa83ce7e6b0f27cee2394`
@@ -165,9 +165,9 @@ Open source self-hosted team communication server compiled by Mattermost, Inc, a
 
 -------
 
-- Mattermost Team Edition v3.8.1 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-8-1) - [Download](https://releases.mattermost.com/3.8.1/mattermost-team-3.8.1-linux-amd64.tar.gz)
-  - `https://releases.mattermost.com/3.8.1/mattermost-team-3.8.1-linux-amd64.tar.gz`
-  - SHA-256 Checksum: `4cb42e26ded1ef37308f1fdbc19d56c579b39b9b439b11c9406a12c6f9e8f07c`
+- Mattermost Team Edition v3.8.2 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-8-2) - [Download](https://releases.mattermost.com/3.8.2/mattermost-team-3.8.2-linux-amd64.tar.gz)
+  - `https://releases.mattermost.com/3.8.2/mattermost-team-3.8.2-linux-amd64.tar.gz`
+  - SHA-256 Checksum: `82cc85557dc21b3871ec89326769c11d3a89c9c41362fb3945247f8fba562ce7`
 - Mattermost Team Edition v3.7.4 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-7-4) - [Download](https://releases.mattermost.com/3.7.4/mattermost-team-3.7.4-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/3.7.4/mattermost-team-3.7.4-linux-amd64.tar.gz`
   - SHA-256 Checksum: `17ec3c85d7c210aa4d856aea437e7a23bb9e7c3e68031ba458a029d032730d01`
