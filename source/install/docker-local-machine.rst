@@ -68,6 +68,32 @@ Ubuntu
 3. When docker is done fetching the image, open ``http://localhost:8065/``
    in your browser.
 
+Fedora
+^^^^^^
+
+1. Install and run the image in Docker using the following commands or use the full documentation here for extensive 
+   installation instructions https://docs.docker.com/engine/installation/linux/fedora/
+
+   ..  code:: bash
+      
+        sudo dnf -y install dnf-plugins-core
+        sudo dnf config-manager \
+        --add-repo \
+        https://download.docker.com/linux/fedora/docker-ce.repo
+        sudo dnf install docker-ce docker-compose git # Accepting the new docker repository key
+        sudo usermod -aG docker <username>
+        sudo systemctl start docker
+        cd mattermost-docker
+        sudo docker-compose build
+ 
+ 2. Start the container: 
+
+   .. code:: bash
+      
+       sudo docker-compose up -d
+       
+ 3. When the startup is complete, visit https://localhost/ in your browser.  
+
 Arch
 ^^^^
 
