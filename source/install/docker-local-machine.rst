@@ -82,16 +82,14 @@ Fedora
         sudo dnf install docker-ce docker-compose git # Accepting the new docker repository key
         sudo usermod -aG docker <username>
         sudo systemctl start docker
-        cd mattermost-docker
-        sudo docker-compose build
  
 2. Start the container: 
 
    .. code:: bash
       
-       sudo docker-compose up -d
+        docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview
        
-3. When the startup is complete, visit ``https://localhost/`` in your browser.  
+3. When Docker is done fetching the image, open http://localhost:8065/ in your browser.
 
 Arch
 ^^^^
