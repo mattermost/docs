@@ -71,8 +71,7 @@ Ubuntu
 Fedora
 ^^^^^^
 
-1. Install and run the image in Docker using the following commands or use the full documentation here for extensive 
-   installation instructions https://docs.docker.com/engine/installation/linux/fedora/
+1. Follow the instructions at https://docs.docker.com/engine/installation/linux/fedora/ or use the summary below:
 
    ..  code:: bash
       
@@ -92,7 +91,7 @@ Fedora
       
        sudo docker-compose up -d
        
-3. When the startup is complete, visit https://localhost/ in your browser.  
+3. When the startup is complete, visit ``https://localhost/`` in your browser.  
 
 Arch
 ^^^^
