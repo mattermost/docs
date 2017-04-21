@@ -2754,7 +2754,7 @@ User Interface
 
 #### Config.json Changes from v1.2 to v1.3
 
-Multiple settings were added to [`config.json`](./config/config.json). These options can be modified in the System Console, or manually updated in the existing config.json file. This is a list of changes and their new default values in a fresh install:
+Multiple settings were added to `config.json`. These options can be modified in the System Console, or manually updated in the existing config.json file. This is a list of changes and their new default values in a fresh install:
 - Under `EmailSettings` in `config.json`:
   - Removed: `"ApplePushServer": ""` which is replaced with `SendPushNotifications` and `PushNotificationServer`
   - Removed: `"ApplePushCertPublic": ""`  which is replaced with `SendPushNotifications` and `PushNotificationServer`
@@ -2879,7 +2879,7 @@ System Console
 
 #### Config.json Changes from v1.1 to v1.2
 
-Multiple settings were added to [`config.json`](./config/config.json). These options can be modified in the System Console, or manually updated in the existing config.json file. This is a list of changes and their new default values in a fresh install:
+Multiple settings were added to `config.json`. These options can be modified in the System Console, or manually updated in the existing config.json file. This is a list of changes and their new default values in a fresh install:
 - Under `TeamSettings` in `config.json`:
   - Added: `"RestrictTeamNames": true` to control whether team names can contain reserved words like www, admin, support, test, etc.
   - Added: `"EnableTeamListing": false` to control whether teams can be listed on the root page of the site
@@ -3009,7 +3009,7 @@ Messaging and Notifications
 
 ##### Service Settings
 
-Multiple settings were added to [`config.json`](./config/config.json) and System Console UI. Prior to upgrading the Mattermost binaries from the previous versions, these options would need to be manually updated in existing config.json file. This is a list of changes and their new default values in a fresh install:
+Multiple settings were added to `config.json` and System Console UI. Prior to upgrading the Mattermost binaries from the previous versions, these options would need to be manually updated in existing config.json file. This is a list of changes and their new default values in a fresh install:
 - Under `ServiceSettings` in `config.json`:
   - Added: `"EnablePostIconOverride": false` to control whether webhooks can override profile pictures
   - Added: `"EnablePostUsernameOverride": false` to control whether webhooks can override profile pictures
@@ -3139,7 +3139,7 @@ Prior to upgrading the Mattermost binaries from the previous versions, the below
 
 ##### Service Settings
 
-- Under `ServiceSettings` in [`config.json`](./config/config.json):
+- Under `ServiceSettings` in `config.json`:
   - Moved: `"SiteName": "Mattermost"` which was added to `TeamSettings`
   - Removed: `"Mode" : "dev"` which deprecates a high level dev mode, now replaced by granular controls
   - Renamed: `"AllowTesting" : false` to `"EnableTesting": false` which allows the use of `/loadtest` slash commands during development
@@ -3160,7 +3160,7 @@ Prior to upgrading the Mattermost binaries from the previous versions, the below
 
 ##### Team Settings
 
-- Under `TeamSettings` in [`config.json`](./config/config.json):
+- Under `TeamSettings` in `config.json`:
   - Renamed: `"AllowPublicLink": true` renamed to `"EnablePublicLink": true` and moved to `FileSettings`
   - Removed: `AllowValetDefault` which was a guest account feature that is deprecated
   - Removed: `"TermsLink": "/static/help/configure_links.html"` removed since option didn't need configuration
@@ -3175,13 +3175,13 @@ Prior to upgrading the Mattermost binaries from the previous versions, the below
 
 ##### SSO Settings
 
-- Under `SSOSettings` in [`config.json`](./config/config.json):
+- Under `SSOSettings` in `config.json`:
   - Renamed Category: `SSOSettings` to `GitLabSettings`
   - Renamed: `"Allow": false` to `"Enable": false` to enable GitLab SSO
 
 ##### AWS Settings
 
-- Under `AWSSettings` in [`config.json`](./config/config.json):
+- Under `AWSSettings` in `config.json`:
   - This section was removed and settings moved to `FileSettings`
   - Renamed and Moved: `"S3AccessKeyId": ""` renamed `"AmazonS3AccessKeyId": "",` and moved to `FileSettings`
   - Renamed and Moved: `"S3SecretAccessKey": ""` renamed `"AmazonS3SecretAccessKey": "",` and moved to `FileSettings`
@@ -3190,13 +3190,13 @@ Prior to upgrading the Mattermost binaries from the previous versions, the below
 
 ##### Image Settings
 
-- Under `ImageSettings` in [`config.json`](./config/config.json):
+- Under `ImageSettings` in `config.json`:
   - Renamed: `"ImageSettings"` section to `"FileSettings"`
   - Added: `"DriverName" : "local"` to specify the file storage method, `amazons3` can also be used to setup S3
 
 ##### EmailSettings
 
-- Under `EmailSettings` in [`config.json`](./config/config.json):
+- Under `EmailSettings` in `config.json`:
   - Removed: `"ByPassEmail": "true"` which is replaced with `SendEmailNotifications` and `RequireEmailVerification`
   - Added: `"SendEmailNotifications" : "false"` to control whether email notifications are sent
   - Added: `"RequireEmailVerification" : "false"` to control if users need to verify their emails
@@ -3205,7 +3205,7 @@ Prior to upgrading the Mattermost binaries from the previous versions, the below
 
 ##### Privacy Settings
 
-- Under `PrivacySettings` in [`config.json`](./config/config.json):
+- Under `PrivacySettings` in `config.json`:
   - Removed: `"ShowPhoneNumber": "true"` which was not used
   - Removed: `"ShowSkypeId" : "true"` which was not used
 

@@ -62,7 +62,7 @@ Connection Security
 
 **None**: Mattermost will connect over an unsecure connection.
 
-**TLS**: Encrypts the communication between Mattermost and your server. See [documentation](https://docs.mattermost.com/install/setup-tls.html) for more details.
+**TLS**: Encrypts the communication between Mattermost and your server. See `documentation <https://docs.mattermost.com/install/config-tls-mattermost.html>`_ for more details.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ConnectionSecurity": ""`` with options ``""`` and ``TLS`` for the above settings respectively  |
