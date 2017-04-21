@@ -86,13 +86,13 @@ Fedora
         cd mattermost-docker
         sudo docker-compose build
  
- 2. Start the container: 
+2. Start the container: 
 
    .. code:: bash
       
        sudo docker-compose up -d
        
- 3. When the startup is complete, visit https://localhost/ in your browser.  
+3. When the startup is complete, visit https://localhost/ in your browser.  
 
 Arch
 ^^^^
