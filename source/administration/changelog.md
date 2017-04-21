@@ -17,6 +17,11 @@ Release Date: May 16, 2017
 - Comments only containing a file attachment have a reduced vertical spacing in the center channel.
 - First line of message text is now aligned with username.
 - Added padding between timestamp and pinned posts badge in comment threads in compact view.
+- Added "View Members" option to Town Square.
+- Moved "Start Video Call" option to the bottom of the profile popover.
+
+#### 
+- User preferences such as display settings now sync between browser tabs, between different browsers, and across devices.
 
 #### Files
 - SVG files now render in file preview.
@@ -35,8 +40,11 @@ Release Date: May 16, 2017
 - Long custom emoji names no longer float out of the emoji picker.
 - Fixed Go client's `GetTeamByName()` function.
 - Recent mentions search now properly includes `@[username]` in the search.
-- Updated error Message when entering a password longer than 46 characters.
-- Prevent multiple clicks on post retry.
+- Updated error message when entering a password longer than maximum number of characters.
+- Don't send the same message multiple times when hitting "Retry" on a failed post.
+- Deleting your own pinned post in a direct message channel now properly disappear from the pinned posts list.
+- Fixed channel purpose help text for private channels.
+- When ability to change the header is restricted, "Set a Header" option is no longer shown in the channel intro.
 
 ### Compatibility  
 
