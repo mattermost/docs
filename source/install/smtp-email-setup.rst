@@ -5,6 +5,8 @@ SMTP Email Setup
 
 To run in production, Mattermost requires SMTP email to be enabled for email notifications and password reset for systems using email-based authentication.
 
+If you have any problems installing, see the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`__. To submit an improvement or correction, click Edit at the top of this page.
+
 How to Enable Email
 ~~~~~~~~~~~~~~~~~~~
 
