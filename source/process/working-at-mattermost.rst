@@ -4,9 +4,9 @@ Working at Mattermost
 
 The mission of Mattermost, Inc. is to give all organizations the power to achieve their highest priorities through modern communication. Our vision is a world more connected to what matters most.
 
-Our company maintains the Mattermost open source project, providing powerful, easy-to-use, self-hosted team communication across web, PC and phones. 
+- Our company maintains the Mattermost open source project, providing powerful, easy-to-use, self-hosted team communication across web, PC and phones. 
 
-We also provide Mattermost Enterprise Edition, a secure, modern, enterprise messaging solution as a fully supported commercial extension of our open source software. 
+- We also provide Mattermost Enterprise Edition, a secure, modern, enterprise messaging solution as a fully supported commercial extension of our open source software. 
 
 While our headquarters is in Palo Alto, California, we use Mattermost software to work as a distributed organization around the world in partnership with our community. 
 
@@ -14,7 +14,7 @@ Top 10 reasons to work for Mattermost:
 
 1. **Join an outstanding team:** Work with thoughtful, talented, high performance people who care about results. 
 2. **Build on the cutting edge:** Develop in Golang, React, React Native and other technologies changing the world.
-3. **Work from anywhere:** No commute, freedom to travel, complete control of your environment.
+3. **Work anywhere:** No commute, freedom to travel, complete control of your environment.
 4. **Be recognized:** Working in open source, your contributions are public and echo on throughout your career. 
 5. **Growth:** Join a growing open source project, a growing business, and a growing company.
 6. **Do good:** Build open source software benefiting thousands of companies, institutions, schools and non-profits.
