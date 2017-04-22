@@ -27,6 +27,9 @@ autocomplete. If the existing emoji don't cover what you want to
 express, you can also create your own `Custom
 Emoji <http://docs.mattermost.com/help/settings/custom-emoji.html>`__.
 
+**Quickly link to channels** by typing "~", which will open an autocomplete
+containing all public channels.
+
 **Attach files** by dragging and dropping into Mattermost or clicking
 the attachment icon in the text input box.
 
