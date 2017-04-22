@@ -7,6 +7,8 @@ Deploy Mattermost using a multi-node production configuration using `Docker Comp
 
 For a single-node preview of Mattermost (without email) see `Local Machine Setup using Docker <http://docs.mattermost.com/install/docker-local-machine.html>`_.
 
+If you have any problems installing, see the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`_. To submit an improvement or correction, click Edit at the top of this page.
+
 Production Docker Setup on Ubuntu
 ----------------------------------------------------
 
