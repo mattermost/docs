@@ -8,13 +8,13 @@ Our company maintains the Mattermost open source project, providing powerful, ea
 
 We also provide Mattermost Enterprise Edition, a secure, modern, enterprise messaging solution as a fully supported commercial extension of our open source software. 
 
-While our headquarters is in Palo Alto, California, we use Mattermost software to work remotely around the world in partnership with our community. 
+While our headquarters is in Palo Alto, California, we use Mattermost software to work as a distributed organization around the world in partnership with our community. 
 
 Top 10 reasons to work for Mattermost: 
 
 1. **Join an outstanding team:** Work with thoughtful, talented, high performance people who care about results. 
 2. **Build on the cutting edge:** Develop in Golang, React, React Native and other technologies changing the world.
-3. **Work remote:** No commute, freedom to travel, complete control of your environment.
+3. **Work from anywhere:** No commute, freedom to travel, complete control of your environment.
 4. **Be recognized:** Working in open source, your contributions are public and echo on throughout your career. 
 5. **Growth:** Join a growing open source project, a growing business, and a growing company.
 6. **Do good:** Build open source software benefiting thousands of companies, institutions, schools and non-profits.
@@ -24,10 +24,10 @@ Top 10 reasons to work for Mattermost:
 10. **Friends around the world:** Build relationships with staff and contributors in dozens of countries. 
 
 ----------------------------------------------------------
-Working Remotely 
+Work Anywhere 
 ----------------------------------------------------------
 
-We're headquartered in Palo Alto, California, and like many open source companies a large portion of Mattermost, Inc. works remotely from around the world. 
+We're headquartered in Palo Alto, California, and like many open source companies a large portion of Mattermost, Inc. works from anywhere in the world. 
 
 This gives us tremendous advantages: 
 
@@ -39,16 +39,18 @@ This gives us tremendous advantages:
 
 We run as a distributed, high performance team using a few principles: 
 
-1) Work from anywhere with good Internet
+1) Work anywhere with good Internet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Working from anywhere means more time with loved ones, no commute, and controlling everything about your workspace. 
 
-The one requirement is having a strong internet connection for occassional video or audio conferences. Ethernet connections are preferred over Wifi, since Wifi can have interference. 
+The one requirement is having the ability to occassionally `join video calls using Zoom <https://support.zoom.us/hc/en-us/articles/201362023-System-Requirements-for-PC-Mac-and-Linux>`_ between 8am and 1pm California time, which requires a good enough internet connection and a quiet space from which to take calls. 
+
+There are exceptions to this requirement, for example: part time roles that don't need to take meetings, or roles providing support outside core meeting hours. 
 
 2) Be explicit 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Working remote means it may take time before a person reads your message and responds, so make sure you are clear. 
+Working in a distributed organization means it may take time before a person reads your message and responds, so make sure you are clear. 
 
 Communicate relevant information in the first message: 
 
@@ -145,9 +147,11 @@ Results matter more far more than hours in an office. Your time at Mattermost is
 
 If there's something urgent going on at work, just let teammates know your status. 
 
-**2. Work from anywhere with a strong internet connection** 
+For most roles, we require the ability to join meetings between 8am and 1pm California time. The exception is people who are dedicated to support in other timezones, or team members that don't need to be in real-time discussions. 
 
-The comfort of home, freedom to travel, no commute--learn more about our `remote work policies <https://docs.mattermost.com/process/working-at-mattermost.html#working-remotely>`_. 
+**2. Work from anywhere (with good internet)** 
+
+The comfort of home, freedom to travel, no commute--learn more about our `work anywhere policies <https://docs.mattermost.com/process/working-at-mattermost.html#working-remotely>`_. 
 
 **3. Paid time-off**
 
