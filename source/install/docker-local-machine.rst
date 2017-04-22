@@ -40,7 +40,7 @@ Windows 10
 2. Run:
    ``docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview``
 
-3. When docker is done fetching the image, open ``http://localhost:8065/``
+3. When Docker is done fetching the image, open ``http://localhost:8065/``
    in your browser.
 
 Ubuntu
@@ -59,13 +59,13 @@ Ubuntu
        sudo service docker start
        newgrp docker
 
-2. Start docker container:
+2. Start Docker container:
 
    .. code:: bash
 
        docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview
 
-3. When docker is done fetching the image, open ``http://localhost:8065/``
+3. When Docker is done fetching the image, open ``http://localhost:8065/``
    in your browser.
 
 Fedora
