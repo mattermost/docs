@@ -1,15 +1,92 @@
 # Legacy Upgrade Guide
 
-This is a legacy upgrade guide for servers running Mattermost version v2.2.0 and earlier. If you are upgrading a server running Mattermost v3.0.x or later, please refer to our most [current upgrade guide](https://docs.mattermost.com/administration/upgrade.html).
+If you are upgrading a server running Mattermost v3.0.x or later, please refer to our most [current upgrade guide](../../administration/upgrade.html).
 
-- [Upgrade Team Edition](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition)
-  - [Upgrade Team Edition to 3.0.x](https://docs.mattermost.com/administration/legacy-upgrade.html#upgrade-team-edition-to-3-0-x)
-  - [Upgrade Team Edition to 2.2.x and earlier](https://docs.mattermost.com/administration/legacy-upgrade.html#upgrade-team-edition-to-2-2-x-and-earlier)
-- [Upgrade Enterprise Edition](https://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition)
-  - [Upgrade Enterprise Edition to 3.0.x](https://docs.mattermost.com/administration/legacy-upgrade.html#upgrade-enterprise-edition-to-3-0-x)
-  - [Upgrade Enterprise Edition to 2.2.x and earlier](https://docs.mattermost.com/administration/legacy-upgrade.html#upgrade-enterprise-edition-to-2-2-x-and-earlier)
+- [Upgrade Team Edition from 3.0 and later](../../administration/legacy-upgrade.html#upgrade-team-edition-from-3-0-x-and-later)
+- [Upgrade Team Edition to 2.2.x and earlier](../../administration/legacy-upgrade.html#upgrade-team-edition-to-2-2-x-and-earlier)
+- [Upgrade Enterprise Edition from 3.0 and later](../../administration/legacy-upgrade.html#upgrade-enterprise-edition-from-3-0-x-and-later)
+- [Upgrade Enterprise Edition to 2.2.x and earlier](../../administration/legacy-upgrade.html#upgrade-enterprise-edition-to-2-2-x-and-earlier)
 
 ## Upgrade Team Edition
+
+## Upgrade Team Edition from 3.0 and later
+
+**Important Note:** Security-related changes were made in 3.8 that require you to verify settings in the System Console before upgrading from version 3.7.x and earlier to any version greater than 3.8.0.
+
+**To prepare your system when upgrading from 3.7.x and earlier**:
+
+  1. In the System Console, go to **General > Configuration** and make sure that the **Site URL** is specified. It must not be empty.
+  2. In the System Console, go to **General > Logging** and make sure that the **File Log Directory** field is either empty or has a directory path only. It must not have a filename as part of the path.
+
+**To upgrade your system from 3.0.x and later**:
+
+1. Download the latest version of Team Edition server and note any compatibility procedures:
+      - Note: If public links are enabled, upgrading from `v3.3.x` and earlier will invalidate existing public links due to a security upgrade allowing admins to invalidate links by resetting a public link salt from the System Console.
+      - Note: RHEL6 and Ubuntu installations must verify the line `limit nofile 50000 50000` is included in `/etc/init/mattermost.conf` file. See the [installation guide](../../guides/administrator.html#install-guides) for your operating system for more details.
+      - Note: RHEL7 and Ubuntu installations must verify the line `LimitNOFILE=49152` is included in the `/etc/systemd/system/mattermost.service` file. See the [installation guide](../../guides/administrator.html#install-guides) for your operating system for more details.
+      1. Download [the latest version of the Mattermost Server](https://about.mattermost.com/download/). In the following command, replace `X.X.X` with the version that you want to download:
+          - **Team Edition**: `wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz`
+      2. Review past and upcoming deprecation notices [listed on our website](https://about.mattermost.com/deprecated-features/).
+2. Stop the Mattermost Server
+      1. Consider posting an announcement to active teams about stopping the Mattermost server for an upgrade.
+      2. To stop the server run `sudo stop mattermost`.
+3. Backup your data
+      1. Back up your `config.json` file, which contains your system configuration. This will be used to restore your current settings after the new version is installed.
+      2. Backup your database using your organization's standard procedures for backing up MySQL or PostgreSQL.
+      3. If you're using local file storage, back up the location where files are stored.
+4. Install new version
+      1. Run `tar -xvzf mattermost-team-X.X.X-linux-amd64.tar.gz` to decompress the upgraded version and replace the current version of Mattermost on disk, where `X.X.X` is the version number to which you are upgrading.  
+5. Restore the state of your server
+      1. Copy the backed up version of `config.json` in place of the default `config.json`.
+6. Start your server and address any setting changes relevant in the latest version of Mattermost
+      1. Run `sudo start mattermost`.
+      2. Opening the **System Console** and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added.
+7. If you have TLS set up on your Mattermost server, you must activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports.
+
+      1. `cd {install-path}`
+      2. `sudo setcap CAP_NET_BIND_SERVICE=+ep ./bin/platform`
+
+After the server is upgraded, users might need to refresh their browsers to experience any new features.
+
+## Upgrade Enterprise Edition from 3.0.x and later
+
+**Important Note:** Security-related changes were made in 3.8 that require you to verify settings in the System Console before upgrading from version 3.7.x and earlier to any version greater than 3.8.0.
+
+**To prepare your system when upgrading from 3.7.x and earlier**:
+
+  1. In the System Console, go to **General > Configuration** and make sure that the **Site URL** is specified. It must not be empty.
+  2. In the System Console, go to **General > Logging** and make sure that the **File Log Directory** field is either empty or has a directory path only. It must not have a filename as part of the path.
+
+**To upgrade your system**:
+
+1. Download the latest version of Enterprise Edition server and note any compatibility procedures:
+      - Note: If there are config settings set for `"RestrictPublicChannelManagement"` and `"RestrictPrivateChannelManagement"`, they will be used as the default values for `"RestrictPublicChannelCreation"`, `"RestrictPrivateChannelCreation"`, `"RestrictPublicChannelDeletion"`, and `"RestrictPrivateChannelDeletion"` after upgrade.
+      - Note: If public links are enabled, upgrading from `v3.3.x` and earlier to `v3.4.x` and later will invalidate existing public links due to a security upgrade allowing admins to invalidate links by resetting a public link salt from the System Console.
+      - Note: RHEL6 and Ubuntu installations must verify the line `limit nofile 50000 50000` is included in `/etc/init/mattermost.conf` file. See the [installation guide](https://docs.mattermost.com/guides/administrator.html#install-guides) for your operating system for more details.
+      - Note: RHEL7 and Ubuntu installations must verify the line `LimitNOFILE=49152` is included in the `/etc/systemd/system/mattermost.service` file. See the [installation guide](https://docs.mattermost.com/guides/administrator.html#install-guides) for your operating system for more details.
+      1. Download [the latest version of the Mattermost Server](https://about.mattermost.com/download/). In the following command, replace `X.X.X` with the version that you want to download:
+          - **Enterprise Edition**: `wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz`
+      2. Review past and upcoming deprecation notices [listed on our website](https://about.mattermost.com/deprecated-features/).
+2. Stop the Mattermost Server
+      1. Consider posting an announcement to active teams about stopping the Mattermost server for an upgrade.
+      2. To stop the server run `sudo stop mattermost`.
+3. Backup your data
+      1. Back up your `config.json` file, which contains your system configuration. This will be used to restore your current settings after the new version is installed.
+      2. Backup your database using your organization's standard procedures for backing up MySQL or PostgreSQL.
+      3. If you're using local file storage, back up the location where files are stored.
+4. Install new version
+      1. Run `tar -xvzf mattermost-X.X.X-linux-amd64.tar.gz` to decompress the upgraded version and replace the current version of Mattermost on disk, where `X.X.X` is the version number to which you are upgrading.  
+5. Restore the state of your server
+      1. Copy the backed up version of `config.json` in place of the default `config.json`.
+6. Start your server and address any setting changes relevant in the latest version of Mattermost
+      1. Run `sudo start mattermost`.
+      2. Opening the **System Console** and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added.
+7. If you have TLS set up on your Mattermost server, you must activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports.
+
+      1. ``cd {install-path}``
+      2. ``sudo setcap CAP_NET_BIND_SERVICE=+ep ./bin/platform``
+
+After the server is upgraded, users might need to refresh their browsers to experience any new features.
 
 ### Upgrade Team Edition to 3.0.x
 
@@ -136,7 +213,7 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
       1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 10. After the Mattermost 3.0 upgrade, users with duplicate accounts must follow the instructions in the upgrade email to:
       1. Login to teams on which duplicate accounts were created.
-      2. Add their primary account to the team and any private channels that are still actively used. 
+      2. Add their primary account to the team and any private channels that are still actively used.
 
    Users can continue to access the direct message history of their duplicate accounts using their updated email addresses.
 
