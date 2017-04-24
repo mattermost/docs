@@ -83,7 +83,7 @@ Fedora
         sudo usermod -aG docker <username>
         sudo systemctl start docker
  
-2. Start the container: 
+2. Start Docker container: 
 
    .. code:: bash
       
