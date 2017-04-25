@@ -17,7 +17,9 @@ Below is a list of additional resources:
  - Contributor’s guide (coming soon)
  - `Source code <https://github.com/mattermost/desktop>`_
  
-If you have any problems installing Mattermost, see the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`_. To submit an improvement or correction, click Edit at the top of this page.
+.. note::
+  If you have any problems installing the desktop app, see
+  the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`_. To submit an improvement or correction, click  **Edit** at the top of this page.
 
 You can `download the apps directly from our downloads page <https://about.mattermost.com/downloads/>`_. You may also use the following installation guides for Windows, Mac and Linux.
 
