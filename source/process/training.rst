@@ -545,3 +545,20 @@ Many thought leaders and conference speakers are open to consulting projects wit
 
 We are also open to bringing in a leader's personal mentors as consultants and company advisers when skill sets are appropriate.
 
+
+---------------------------------------------------------
+Mattermost Avatar
+---------------------------------------------------------
+
+When becoming a core committer to the Mattermost project we create a "Mattermost Avatar" for you as a fun way to recognize your new level of contribution. 
+
+Mattermost avatars at cartoons of a core committer in the costume of a pop culture character (e.g. Spiderman, Wonder Woman, Luke Skywalker, etc.). 
+
+You'll be invited to create a Mattermost avatar via email and asked to provide the following: 
+
+1. The name of your character from popular culture (e.g. Spiderman, Wonder Woman, Luke Skywalker, etc.) 
+2. A clear image at least 600 pixels high and 600 pixels wide showing your character 
+3. Send a clear photo of your face at least 600 pixels high and 600 pixels wide pointing in the same direction as your character image 
+
+Your Mattermost avatar should be available for you in 6-8 weeks. 
+
