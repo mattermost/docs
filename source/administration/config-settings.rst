@@ -2224,7 +2224,7 @@ Enable Testing Commands
 
 Enable Developer Mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: Javascript errors are shown in a red bar at the top of the user interface. Not recommended for use in production.
+**True**: Javascript errors are shown in a purple bar at the top of the user interface. Not recommended for use in production.
 
 **False**: Users are not alerted to Javascript errors.
 
