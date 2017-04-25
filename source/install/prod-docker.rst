@@ -70,19 +70,7 @@ Production Docker Setup on Fedora
        docker-compose build
        docker-compose up -d
 
-3. **Configure TLS** by following `the instructions <https://github.com/mattermost/mattermost-docker#install-with-ssl-certificate>`_
-
-4. **Configure Email** by following the `SMTP email setup guide <http://docs.mattermost.com/install/smtp-email-setup.html>`_
-
-5. (Optional) to enable enterprise features under **System Console** > **Edition and License** upload your `trial license <https://about.mattermost.com/trial/>`_ or `subscription license file <https://about.mattermost.com/pricing/>`_ received via email.
-
-6. **Configure your server** based on `configuration settings documentation <http://docs.mattermost.com/administration/config-settings.html>`_
-
-Additional Guides:
-
-- **Start, stop and remove containers** using `management instructions. <https://github.com/mattermost/mattermost-docker/#startingstopping>`_
-
-- **Setup Database Backup** following the `database backup instructions. <https://github.com/mattermost/mattermost-docker/#database-backup>`_
+3. Follow the steps 3-6 from the Ubuntu instructions for further configuration information. 
 
 Production Docker Setup on Mac OS X
 ------------------------------------------------------------
