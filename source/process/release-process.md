@@ -39,7 +39,7 @@ No pull requests for major features should be **merged** to the current release 
 
 1. Release Manager:
     - Post this checklist in Release channel
-    - Verify all items in the last posted release checklist are complete, if not alert the release manager
+    - Verify all items in the last posted release checklist are complete
 2. Logistics:
     - Confirm the following were posted:
         - Zero Bug Balance query
@@ -77,7 +77,7 @@ Day when leads and PM area owners decide which major features are included in th
 
 1. Release Manager:
     - Post this checklist in Release channel
-    - Verify all items in the last posted release checklist are complete, if not alert the release manager
+    - Verify all items in the last posted release checklist are complete
 2. Logistics:
     - Confirm, in Judgement Day meeting, date of marketing announcement for the release and update release channel header if needed
     - Confirm link to remaining tickets posted in Release Discussion channel
@@ -102,7 +102,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
 
 1. Release Manager:
     - Post this checklist in Release channel
-    - Verify all items in the last posted release checklist are complete, if not alert the release manager
+    - Verify all items in the last posted release checklist are complete
 2. Logistics:
     - Mail out mugs to any new contributors
     - Update [Team](http://www.mattermost.org/team/) page with new contributors
@@ -136,7 +136,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
 
 1. Release Manager:
     - Post this checklist in Release channel
-    - Verify all items in the last posted release checklist are complete, if not alert the release manager
+    - Verify all items in the last posted release checklist are complete
 2. Dev:
     - Test upgrade from previous version to current version, following the [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) with database upgrades on both MySQL and Postgres
     - Test upgrade from Team Edition to Enterprise edition based on the [Upgrade Guide](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition)
@@ -174,7 +174,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
 
 1. Release Manager:
     - Post this checklist in Release channel
-    - Verify all items in the last posted release checklist are complete, if not alert the release manager
+    - Verify all items in the last posted release checklist are complete
 2. Team:
     - Finish assigned areas of the Release Candidate Testing Spreadsheet
     - Continue triaging hotfix candidates and decide on whether and when to cut next RC or final
@@ -194,7 +194,7 @@ The final release is cut. If an urgent and important issue needs to be addressed
 
 1. Release Manager:
     - Post this checklist in Release channel
-    - Verify all items in the last posted release checklist are complete, if not alert the release manager
+    - Verify all items in the last posted release checklist are complete
 2. Build:
     - Tags a new release (e.g. 1.1.0) and runs an official build which should be essentially identical to the last RC 
     - Posts SHA key, md5 sum and GPG signatures of the final build to release channel
@@ -289,7 +289,7 @@ Once final dot release build is ready to cut:
 
 1. Release Manager:
     - Post this checklist in Release channel
-    - Verify all items in the last posted release checklist are complete, if not alert the release manager
+    - Verify all items in the last posted release checklist are complete
 2. Logistics:
     - Post key dates for the next release in the header of the Release Discussion channel and remove links to RC candidates and testing spreadsheet
     - For the next release, create the following team meetings. If they conflict with existing meetings, check with meeting owner to reschedule or reschedule the release meeting
@@ -333,7 +333,7 @@ Once final dot release build is ready to cut:
 ### J. (T-plus 5 working days) Release Updates
 1. Release Manager:
     - Post this checklist in Release channel
-    - Verify all items in the last posted release checklist are complete, if not alert the release manager
+    - Verify all items in the last posted release checklist are complete
 2. Logistics:
     - Confirm the Security Researchers list on the [Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/) is up to date
     - Review "Community Installers" and update version numbers if there are any discrepancies https://www.mattermost.org/installation/ (move this to ops eventually)
