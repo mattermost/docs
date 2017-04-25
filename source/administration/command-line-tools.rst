@@ -463,6 +463,7 @@ platform user
     -  `platform user migrate_auth`_ - Mass migrate all user accounts to a new authentication type
     -  `platform user password`_ - Set a user's password
     -  `platform user resetmfa`_ - Turn off MFA for a user
+    -  `platform user search`_ - Search for users based on username, email, or user ID
     -  `platform user verify`_ - Verify email address of a new user
 
 platform user activate
@@ -640,6 +641,22 @@ platform user resetmfa
     .. code-block:: none
 
       sudo ./platform user resetmfa user@example.com
+
+platform user search
+~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Search for users based on username, email, or user ID.
+
+  Format
+    .. code-block:: none
+
+      platform user search {users}
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform user search user1@example.com user2@example.com
 
 platform user verify
 ~~~~~~~~~~~~~~~~~~~~~~~~
