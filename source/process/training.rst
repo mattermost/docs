@@ -554,7 +554,11 @@ When becoming a core committer to the Mattermost project we create a "Mattermost
 
 Mattermost avatars at cartoons of a core committer in the costume of a pop culture character (e.g. Spiderman, Wonder Woman, Luke Skywalker, etc.). 
 
-You'll be invited to create a Mattermost avatar via email and asked to provide the following: 
+Example of full avatar (you'll also get an image of just the face, to use for profile pictures on different Mattermost systems if you'd like): 
+
+![image](https://cloud.githubusercontent.com/assets/177788/25364270/0425b738-2916-11e7-9a23-5ced2d9dfc8f.png)
+
+To have a Mattermost avatar created, you'll be invited to create a Mattermost avatar via email and asked to provide the following: 
 
 1. The name of your character from popular culture (e.g. Spiderman, Wonder Woman, Luke Skywalker, etc.) 
 2. A clear image at least 600 pixels high and 600 pixels wide showing your character 
@@ -562,3 +566,4 @@ You'll be invited to create a Mattermost avatar via email and asked to provide t
 
 Your Mattermost avatar should be available for you in 6-8 weeks. 
 
+In special cases, a Mattermost avatar may be created for someone from the Mattermost community who has made an extraordinary contribution to the open source project. 
