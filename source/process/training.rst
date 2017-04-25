@@ -544,3 +544,30 @@ To advanced the skills of senior and functional leaders beyond standard material
 Many thought leaders and conference speakers are open to consulting projects with the right clients, and Mattermost is an excellent client. There's no travel involved, we meet over video conference, we're easy to work with, and we take advising seriously. Advising is a critical part of growing our people and our company.
 
 We are also open to bringing in a leader's personal mentors as consultants and company advisers when skill sets are appropriate.
+
+---------------------------------------------------------
+Mattermost Avatar
+---------------------------------------------------------
+
+When becoming a core committer to the Mattermost project we create a "Mattermost Avatar" for you as a fun way to recognize your new level of contribution. 
+
+Mattermost avatars are caricatures of core committers in the costume of a popular culture character (e.g. Spiderman, Wonder Woman, Luke Skywalker, etc.) created for personal use. 
+
+To have a Mattermost avatar created, you'll be invited to create a Mattermost avatar via email and asked to provide the following: 
+
+1. The name of your character from popular culture (e.g. Spiderman, Wonder Woman, Luke Skywalker, etc.) 
+2. A clear image at least 600 pixels high and 600 pixels wide showing your character 
+3. Send a clear photo of your face at least 600 pixels high and 600 pixels wide pointing in the same direction as your character image 
+
+You should receive your digital Mattermost avatars by email in 6-8 weeks. 
+
+In special cases, a Mattermost avatar may be created for someone from the Mattermost community who has made an extraordinary contribution to the open source project. 
+
+- Example of photo from core committer: `Corey Hulen, co-creator of the Mattermost open source project <https://cloud.githubusercontent.com/assets/177788/25364362/c2fee10c-2916-11e7-9de3-2947987a9dce.png>`_  
+
+- Example of reference image for popular culture character: `Han Solo from the movie Star Wars  <https://cloud.githubusercontent.com/assets/177788/25364375/e49415bc-2916-11e7-94ae-038a120743b3.png>`_ 
+
+Example of finished Mattermost Avatar: 
+
+.. image:: https://cloud.githubusercontent.com/assets/177788/25364270/0425b738-2916-11e7-9a23-5ced2d9dfc8f.png
+

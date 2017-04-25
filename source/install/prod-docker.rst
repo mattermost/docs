@@ -7,6 +7,8 @@ Deploy Mattermost using a multi-node production configuration using `Docker Comp
 
 For a single-node preview of Mattermost (without email) see `Local Machine Setup using Docker <http://docs.mattermost.com/install/docker-local-machine.html>`_.
 
+If you have any problems installing, see the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`_. To submit an improvement or correction, click Edit at the top of this page.
+
 Production Docker Setup on Ubuntu
 ----------------------------------------------------
 
@@ -47,6 +49,6 @@ Additional Guides:
 Production Docker Setup on Mac OS X
 ------------------------------------------------------------
 
-You can run a test deployment on Mac OS X by `installing Docker Compose using the online guide <http://docs.docker.com/installation/mac/>`_ then following the above instructions.
+You can run a production deployment on Mac OS X by `installing Docker Compose using the online guide <http://docs.docker.com/installation/mac/>`_ then following the above instructions.
 
 **Other options:** To install a feature-equivalent version of Mattermost that does not upgrade to enterprise features using a license key, Mattermost Team Edition, repeat steps above excluding ``-b enterprise`` from ``git clone`` command.

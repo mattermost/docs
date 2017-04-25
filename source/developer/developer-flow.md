@@ -21,7 +21,7 @@ Here's a general workflow a Mattermost developer working on our [platform reposi
 Some other `make` commands that might be useful in addition to the ones mentioned above:
 
 * `make run-server` will run only the server and not the client
-* `make clean-docker` stops and removes your docker images and is a good way to wipe your database
+* `make clean-docker` stops and removes your Docker images and is a good way to wipe your database
 * `make run-fullmap` will run the server and build the client with the full source map for easier debugging
 * `make clean` cleans your local environment of temporary files
 * `make nuke` wipes your local envrionment back to a completely fresh start
