@@ -46,6 +46,52 @@ Additional Guides:
 
 - **Setup Database Backup** following the `database backup instructions. <https://github.com/mattermost/mattermost-docker/#database-backup>`_
 
+Production Docker Setup on Fedora
+----------------------------------------------------
+
+1. **Install Docker Compose** using `the Fedora online guide <https://fedoraproject.org/wiki/Docker>`_ or these instructions:
+
+   .. code:: bash
+
+       sudo dnf -y install dnf-plugins-core
+       sudo dnf config-manager \
+       --add-repo \
+       https://download.docker.com/linux/fedora/docker-ce.repo
+       sudo dnf install docker-ce docker-compose git # Accepting the new docker repository key
+       sudo usermod -aG docker <username>
+       sudo docker start
+
+2. **Deploy the Mattermost Production Docker** setup by running:
+
+   .. code:: bash
+
+       git clone https://github.com/mattermost/mattermost-docker.git
+       cd mattermost-docker
+       docker-compose build
+       docker-compose up -d
+
+3. **Configure TLS** by following `the instructions <https://github.com/mattermost/mattermost-docker#install-with-ssl-certificate>`_
+
+4. **Configure Email** by following the `SMTP email setup guide <http://docs.mattermost.com/install/smtp-email-setup.html>`_
+
+5. (Optional) to enable enterprise features under **System Console** > **Edition and License** upload your `trial license <https://about.mattermost.com/trial/>`_ or `subscription license file <https://about.mattermost.com/pricing/>`_ received via email.
+
+6. **Configure your server** based on `configuration settings documentation <http://docs.mattermost.com/administration/config-settings.html>`_
+
+Additional Guides:
+
+- **Start, stop and remove containers** using `management instructions. <https://github.com/mattermost/mattermost-docker/#startingstopping>`_
+
+- **Setup Database Backup** following the `database backup instructions. <https://github.com/mattermost/mattermost-docker/#database-backup>`_
+
+Production Docker Setup on Mac OS X
+------------------------------------------------------------
+
+You can run a production deployment on Mac OS X by `installing Docker Compose using the online guide <http://docs.docker.com/installation/mac/>`_ then following the above instructions.
+
+**Other options:** To install a feature-equivalent version of Mattermost that does not upgrade to enterprise features using a license key, Mattermost Team Edition, repeat steps above excluding ``-b enterprise`` from ``git clone`` command.
+
+
 Production Docker Setup on Mac OS X
 ------------------------------------------------------------
 
