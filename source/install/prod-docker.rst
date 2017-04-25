@@ -59,7 +59,7 @@ Production Docker Setup on Fedora
        https://download.docker.com/linux/fedora/docker-ce.repo
        sudo dnf install docker-ce docker-compose git # Accepting the new docker repository key
        sudo usermod -aG docker <username>
-       sudo docker start
+       sudo systemctl start docker
 
 2. **Deploy the Mattermost Production Docker** setup by running:
 
