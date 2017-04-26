@@ -27,7 +27,11 @@ Top 10 reasons to work for Mattermost:
 Working Remotely 
 ----------------------------------------------------------
 
-We're headquartered in Palo Alto, California, and like many open source companies a large portion of Mattermost, Inc. works remotely from around the world. 
+  "Commutes are horrible. The number one correlator to job satisfaction is commute time."
+
+  --`Marc Andreessen <https://youtu.be/P-T2VAcHRoE?t=28m20s>`_ 
+
+Mattermost, Inc. is headquartered in Palo Alto, California, and like many open source companies a large portion of our team works remotely from around the world.
 
 This gives us tremendous advantages: 
 
@@ -43,7 +47,7 @@ We run as a distributed, high performance team using a few principles:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Working from anywhere means more time with loved ones, no commute, and controlling everything about your workspace. 
 
-The one requirement is having a strong internet connection for occassional video or audio conferences. Ethernet connections are preferred over Wifi, since Wifi can have interference. 
+The one requirement is having a strong internet connection for occassional video or audio conferences. Ethernet connections are preferred over Wifi, since Wifi can have interference. Recommended download/upload speeds should be 8 Mbps/512 kbps for smooth group calling and screensharing, with a bare minimum of 4 Mbps / 128 kbps. The `CRS Video Conference Bandwidth Speed Tool <http://speed.conferenceroomsystems.com/>`_ can be used to check your internet speed. 
 
 2) Be explicit 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
