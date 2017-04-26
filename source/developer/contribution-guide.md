@@ -1,6 +1,6 @@
 # Code Contribution Guidelines
 
-Thank you for your interest in contributing to Mattermost. Here's the process:  
+Thank you for your interest in contributing to Mattermost. To help with translations, [see the localization process](https://docs.mattermost.com/developer/localization.html). For code contributions, here's the process:  
 
 ## Choose a Ticket
 
