@@ -45,7 +45,7 @@ Assume that the IP address of this server is 10.10.10.2
   -  If you are using MySQL:
     1.  Set ``"DriverName"`` to ``"mysql"``
     2.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values:
-      ``"mmuser:<mmuser-password>@tcp(<host-name-or-IP>:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=20s&writeTimeout=20s"``
+      ``"mmuser:<mmuser-password>@tcp(<host-name-or-IP>:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s"``
 
 8. Test the Mattermost server to make sure everything works.
 
