@@ -37,9 +37,9 @@ Mac OS X
 
    ``brew install yarn`` or ``npm install -g yarn``
 
-6. Fork `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_ on GitHub.
+7. Fork `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_ on GitHub.
 
-7. Clone your fork locally.
+8. Clone your fork locally.
 
   ``cd`` into the folder that you want to store the local copy of your code
 
@@ -47,11 +47,11 @@ Mac OS X
 
   ``cd mattermost-mobile``
 
-8. Using npm, download any other dependencies.
+9. Using npm, download any other dependencies.
 
   ``make pre-run``
 
-9. *Optional:* Install Mattermost locally so that you can run unit tests and connect to the server while doing development.
+10. *Optional:* Install Mattermost locally so that you can run unit tests and connect to the server while doing development.
 
   a. Follow the steps in the `Developer Machine Setup <developer-setup.html>`_ to install Mattermost.
 
