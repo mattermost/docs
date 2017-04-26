@@ -1,7 +1,7 @@
 Core Developer Handbook
 -----------------------------
 
-This handbook contains documentation useful for Mattermost core developers. A core developer is 
+This handbook contains documentation useful for Mattermost core developers. A core developer is
 a maintainer on the [Mattermost project](https://github.com/mattermost) that has merge access to the Mattermost repositories. They are responsible for reviewing pull requests, cultivating the Mattermost developer community and guiding the technical vision of Mattermost.
 
 ### Current Core Developers ###
@@ -16,7 +16,7 @@ Below is the list of core developers working on Mattermost:
 
 Below is the list of core developers working on individual Mattermost repositories:
 - Pan Luo - [mattermost-docker](https://github.com/mattermost/mattermost-docker) - @compass on [pre-release.mattermost.com](https://pre-release.mattermost.com/) and [@xcompass](https://github.com/xcompass) on GitHub
-- Yuya Ochiai - [mattermost-desktop](https://github.com/mattermost/mattermost-desktop) - @yuya-oc on [pre-release.mattermost.com](https://pre-release.mattermost.com/) and [@yuya-oc](https://github.com/yuya-oc) on GitHub
+- Yuya Ochiai - [desktop](https://github.com/mattermost/desktop) - @yuya-oc on [pre-release.mattermost.com](https://pre-release.mattermost.com/) and [@yuya-oc](https://github.com/yuya-oc) on GitHub
 
 ### Reviewing & Merging Pull Requests ###
 

@@ -87,7 +87,7 @@ repository. To document an endpoint, follow these steps:
    `mattermost-api-reference <https://github.com/mattermost/mattermost-api-reference>`__.
 
 If you're looking for examples, see
-`users.yaml <https://github.com/mattermost/mattermost-api-reference/tree/master/source/v4/users.yaml>`__.
+`users.yaml <https://github.com/mattermost/mattermost-api-reference/blob/master/v4/source/users.yaml>`__.
 
 Implementing the API Handler
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

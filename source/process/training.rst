@@ -164,7 +164,7 @@ Procedure:
 Platform Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost Inc-only** - (Platform colleagues - 1 hour/week) Thursday's at 10:00 (`San Francisco Time <http://everytimezone.com/>`_). 
+**Mattermost Inc-only** - (Platform colleagues - 1 hour/week) Thursday's at 10:00 (`San Francisco Time <http://everytimezone.com/>`_).
 
 Regular team meeting for platform team at Mattermost Inc.
 
@@ -213,7 +213,7 @@ Team Operation Review Meeting
 - **Roadmap check-in** - Review of roadmap status in current and next release
 - **Demos (optional)** - Team members show highlights of what's been completed this week. Relevant follow-ups noted.
 - **New items** - New team relevant items are discussed
- 
+
 Product Staff Meeting
 
 - **Roundtable Open Discussion** - Each colleague shares something important to discuss with the team. Examples: external customer or user issue, potential process improvement. Follow-ups noted.
@@ -345,7 +345,7 @@ For example, "0/5" and "5/5" help convey the level of conviction behind an opini
 2) Increase the speed of communication via a small number of frequently used acronyms
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-[LHS](http://docs.mattermost.com/process/terminology.html#lhs) and [RHS](http://docs.mattermost.com/process/terminology.html#rhs) are examples of a very limited number of acronyms to use to speed discussions, specifications, and ticket writing.
+`LHS`_ and `RHS`_ are examples of a very limited number of acronyms to use to speed discussions, specifications, and ticket writing.
 
 3) Reduce repeated mistakes by naming very specific undesirable behaviors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -385,7 +385,7 @@ Expert Mode (and Crimson Force Field)
 
 When documentation or on-screen text is written for someone with considerable knowledge or expertise, instead of being designed for a new learner. In general, try to state things simply rather than speaking to just the "experts" reading the the text.
 
-If something is extremely difficult to understand, and yet still justified in the mind of the writer, we call it "Crimson Force Field". This term is intended to evoke the emotional response of coming across something that is difficult to understand, so writers of Crimson Force Field material can empathize with the readers. Crimson Force Field is drawn from an esoteric episode of Star Trek and it is unlikely anyone but the originator of the term understands its complete meaning. Crimson Force Field is itself Crimson Force Field.  
+If something is extremely difficult to understand, and yet still justified in the mind of the writer, we call it "Crimson Force Field". This term is intended to evoke the emotional response of coming across something that is difficult to understand, so writers of Crimson Force Field material can empathize with the readers. Crimson Force Field is drawn from an esoteric episode of Star Trek and it is unlikely anyone but the originator of the term understands its complete meaning. Crimson Force Field is itself Crimson Force Field.
 
 Help Wanted
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -492,10 +492,10 @@ Relevant Docs
 
 1. :doc:`design-process`
 
-Software Strategy 
+Software Strategy
 ^^^^^^^^^^^^^^^^^^^
 
-1. `Monetizing Open Source (Or, All Enterprise Software) <http://a16z.com/2017/04/10/monetizing-open-source-enterprise-software/>`_ - Required reading for business roles 
+1. `Monetizing Open Source (Or, All Enterprise Software) <http://a16z.com/2017/04/10/monetizing-open-source-enterprise-software/>`_ - Required reading for business roles
 
 System Security
 ^^^^^^^^^^^^^^^
@@ -506,16 +506,16 @@ Papers & Course Materials
 2. `Computer Security in the Real World. Butler Lampson <http://research.microsoft.com/en-us/um/people/blampson/69-SecurityRealIEEE/69-SecurityRealIEEE.pdf>`_ - Fundamental challenges with system security.
 3. `Course notes from CS513: System Security (Cornell University). Fred B. Schneider <http://www.cs.cornell.edu/courses/cs513/2007fa/02.outline.html>`_ - Well written introduction to system security from one of the leaders in the field.
 
-Additional Training Resources 
+Additional Training Resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Recommended training materials are recommended by role at three different levels of priority: 
+Recommended training materials are recommended by role at three different levels of priority:
 
-1. P1 - Required - Complete within 30 days of starting in role. 
+1. P1 - Required - Complete within 30 days of starting in role.
 2. P2 - Priority - Complete within 30-90 days of starting.
-3. P3 - Supplementry - Complete within 180 days. 
+3. P3 - Supplementry - Complete within 180 days.
 
-The following chart outlines training materials by category, with notes on which materials are relevant to which disciplines by P1, P2, P3 priority: 
+The following chart outlines training materials by category, with notes on which materials are relevant to which disciplines by P1, P2, P3 priority:
 
 .. raw:: html
 
@@ -524,7 +524,7 @@ The following chart outlines training materials by category, with notes on which
         <p>&nbsp;</p>
     </embed>
 
-The following table summarizes abbreviations used in the above table: 
+The following table summarizes abbreviations used in the above table:
 
 .. raw:: html
 
@@ -544,7 +544,6 @@ To advanced the skills of senior and functional leaders beyond standard material
 Many thought leaders and conference speakers are open to consulting projects with the right clients, and Mattermost is an excellent client. There's no travel involved, we meet over video conference, we're easy to work with, and we take advising seriously. Advising is a critical part of growing our people and our company.
 
 We are also open to bringing in a leader's personal mentors as consultants and company advisers when skill sets are appropriate.
-
 
 ---------------------------------------------------------
 Mattermost Avatar
@@ -571,3 +570,4 @@ In special cases, a Mattermost avatar may be created for someone from the Matter
 Example of finished Mattermost Avatar: 
 
 .. image:: https://cloud.githubusercontent.com/assets/177788/25364270/0425b738-2916-11e7-9a23-5ced2d9dfc8f.png
+
