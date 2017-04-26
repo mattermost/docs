@@ -17,7 +17,7 @@ Development Environment Setup
 Mac OS X
 ~~~~~~~~~~~~
 
-1. Install `XCode 8.1 <https://developer.apple.com/download/>`_.
+1. Install `XCode 8.3 <https://developer.apple.com/download/>`_.
 
 2. Install `Homebrew <http://brew.sh/>`_.
 
@@ -32,6 +32,10 @@ Mac OS X
 5. Using npm, install the React Native CLI tools globally.
 
   ``npm install -g react-native-cli``
+
+6. Using Homebrew or npm install `Yarn <https://yarnpkg.com>`_.
+
+   ``brew install yarn`` or ``npm install -g yarn``
 
 6. Fork `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_ on GitHub.
 
@@ -84,6 +88,8 @@ Android (Device)
   - Tools > Android SDK Platform-tools 25.0.3
 
   - Tools > Android SDK Build-tools 25.0.2
+
+  - Tools > Android SDK Build-tools 25.0.1
 
   - Android 6.0 > SDK Platform 23
 
