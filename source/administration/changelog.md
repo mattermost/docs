@@ -517,7 +517,7 @@ Many thanks to all our contributors. In alphabetical order:
 
 - [coreyhulen](https://github.com/coreyhulen), [crspeller](https://github.com/crspeller)
 
-## Release v3.6.5
+## Release v3.6.7
 
 ### Notes on Patch Release
 
