@@ -59,6 +59,10 @@ Linux (Beta)
 
 3. If you need a Desktop Entry for the application to integrate into a desktop environment, please refer to https://wiki.archlinux.org/index.php/Desktop_entries
 
+To install the snap on [snap supported](https://snapcraft.io/docs/core/install) systems from the store.
+
+    snap install mattermost-desktop --beta
+
 To download the unofficial, community-driven .deb packages for the desktop application:
 
 1. Download latest version of the Mattermost desktop app:
