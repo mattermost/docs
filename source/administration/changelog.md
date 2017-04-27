@@ -19,9 +19,20 @@ Release Date: May 16, 2017
 - Added padding between timestamp and pinned posts badge in comment threads in compact view.
 - Added "View Members" option to Town Square.
 - Moved "Start Video Call" option to the bottom of the profile popover.
+- Added a confirmation dialog when leaving a private channel.
 
-#### 
+#### Performance
+- Added the ability to disable full text search queries via `config.json` for higher performance.
+- Added default read and write timeouts for MySQL datasource for ... // XXX check with engineers
+
+#### Keyboard Shortcuts
+- Pressing ENTER once in the channel switcher (CTRL/CMD+K) now switches the channel.
+
+#### User Preferences
 - User preferences such as display settings now sync between browser tabs, between different browsers, and across devices.
+
+#### On-boarding
+- Added "Already have an account? Click here to sign in" link to the sign up page.
 
 #### Files
 - SVG files now render in file preview.
@@ -30,6 +41,13 @@ Release Date: May 16, 2017
 - Added new CLI commands:
     - `platform check` for validating the `config.json` file.
     - `platform search` for searching users based on username, email or user ID.
+
+#### OAuth 2.0 Service Provider
+- OAuth 2.0 service provider now always returns the refresh token.
+- New refresh token now issued when granting a new access token.
+
+#### System Console
+ - Added a confirmation dialog when deactivating a user
 
 ### Bug Fixes
 - The maximum length of field "Position" increased to 64 characters. The previous limit caused problems with LDAP synchronization.
@@ -45,6 +63,13 @@ Release Date: May 16, 2017
 - Deleting your own pinned post in a direct message channel now properly disappear from the pinned posts list.
 - Fixed channel purpose help text for private channels.
 - When ability to change the header is restricted, "Set a Header" option is no longer shown in the channel intro.
+- Custom emoji now maintains the correct aspect ratio in the emoji picker.
+- Mention notifications now trigger if the word is formatted in bold, italic or strikethrough.
+- Mention notifications now longer trigger if the word is inside a code block.
+- In mobile view, Manage Members menu option now longer reads "View Members" for channel admins.
+- Fixed vertical space between posts in the right-hand sidebar.
+- Fixed flagged posts and recent mentions icon sizing in the header.
+- Fixed vertical space below link previews.
 
 ### Compatibility  
 
@@ -58,11 +83,13 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 **Changes to Team Edition and Enterprise Edition**:
 
- - 
+ - Under `ServiceSettings` in `config.json`:
+   - Added `"EnablePostSearch": true` to control whether full text search queries are enabled. Disabling can lead to higher performance in large deployments.
 
 **Additional Changes to Enterprise Edition**:
 
- - 
+ - Under `ServiceSettings` in `config.json`:
+   - Added `"LicenseFileLocation": ""` to specify the path and filename of the Enterprise license file on disk. On startup, if Mattermost cannot find a valid license in the database from a previous upload, it will look for the file specified here.
 
 ### Database Changes
 
