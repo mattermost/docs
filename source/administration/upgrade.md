@@ -11,7 +11,7 @@ To start, select one of the following guides:
 
 ## Upgrade Team Edition to 3.1.x and later
 
-**Important Note:** Security-related changes were made in `v3.6.x` and later that require you to specify the Site URL setting in the System Console before upgrading from version `v3.5.x` and earlier to any version greater than `v3.6.x`. In the System Console, go to **General > Configuration** and make sure that the **Site URL** is specified. It must not be empty.
+**Important Note:** Security-related changes require you to specify the Site URL setting when upgrading to `v3.6.x` and later. The Site URL can be set in the `config.json` or in **System Console** > **General > Configuration** > [**Site URL**](https://docs.mattermost.com/administration/config-settings.html#site-url). If you are using GitLab Mattermost, you must set the Site URL in the `gitlab.rb` file.
 
 **To upgrade your system**:
 
@@ -19,8 +19,8 @@ To start, select one of the following guides:
       1. Run `platform -version` to check the current version of your Mattermost server
       2. Determine the appropriate next upgrade for your server:
           - Mattermost `v3.0.x` and later can upgrade directly to the [latest release of Mattermost](https://about.mattermost.com/download/) considering the conditions below:
-              - Note: Upgrading from `v3.7.x` and earlier to `v3.8.x` and later, you must ensure that the **System Console** > **General > Logging** > **File Log Directory** field is either empty or has a directory path only. It must not have a filename as part of the path. 
-              - Note: Upgrading from `v3.5.x` and earlier to `v3.6.x` and later will invalidate existing team invite links and email verifications.
+              - Note: Upgrading to `v3.8.x` and later, you must ensure that the **System Console** > **General > Logging** > [**File Log Directory**](https://docs.mattermost.com/administration/config-settings.html#file-log-directory) field is either empty or contains a directory path. It must not have a filename as part of the path. 
+              - Note: Upgrading to `v3.7.x` and later will invalidate existing team invite links and email verifications.
               - Note: If public links are enabled, upgrading from `v3.3.x` and earlier to `v3.4.x` and later will invalidate existing public links due to a security upgrade allowing admins to invalidate links by resetting a public link salt from the System Console.
               - Note: RHEL6 and Ubuntu installations must verify the line `limit nofile 50000 50000` is included in `/etc/init/mattermost.conf` file. See the [installation guide](https://docs.mattermost.com/guides/administrator.html#install-guides) for your operating system for more details.
               - Note: RHEL7 and Debian installations must verify the line `LimitNOFILE=49152` is included in the `/etc/systemd/system/mattermost.service` file. See the [installation guide](https://docs.mattermost.com/guides/administrator.html#install-guides) for your operating system for more details.
