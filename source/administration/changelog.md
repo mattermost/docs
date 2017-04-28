@@ -10,6 +10,14 @@ Release Date: May 16, 2017
 
 ### Highlights
 
+#### Redux
+
+// XXX
+
+#### APIv4 Stable Release
+
+// XXX
+
 ### Improvements
 
 #### Web User Interface
@@ -20,6 +28,7 @@ Release Date: May 16, 2017
 - Added "View Members" option to Town Square.
 - Moved "Start Video Call" option to the bottom of the profile popover.
 - Added a confirmation dialog when leaving a private channel.
+- Added a margin for inline images.
 
 #### Performance
 - Added the ability to disable full text search queries via `config.json` for higher performance.
@@ -27,6 +36,7 @@ Release Date: May 16, 2017
 
 #### Keyboard Shortcuts
 - Pressing ENTER once in the channel switcher (CTRL/CMD+K) now switches the channel.
+- Using a mouse to select a channel in the channel switcher (CTRL/CMD+K) now switches to the correct channel.
 
 #### User Preferences
 - User preferences such as display settings now sync between browser tabs, between different browsers, and across devices.
@@ -47,7 +57,8 @@ Release Date: May 16, 2017
 - New refresh token now issued when granting a new access token.
 
 #### System Console
- - Added a confirmation dialog when deactivating a user
+ - Added a confirmation dialog when deactivating a user.
+ - Server logs are now always printed in English regardless of Default Server Language, for easier troubelshooting.
 
 ### Bug Fixes
 - The maximum length of field "Position" increased to 64 characters. The previous limit caused problems with LDAP synchronization.
@@ -70,12 +81,21 @@ Release Date: May 16, 2017
 - Fixed vertical space between posts in the right-hand sidebar.
 - Fixed flagged posts and recent mentions icon sizing in the header.
 - Fixed vertical space below link previews.
+- Usernames with dots now get mention notifications when followed by a comma or other symbol.
+- Deactivated users are now longer listed in the "Manage Members" modal.
+- Collapsable Account Setting menus now properly open in iOS Safari and Chrome browsers.
+- Removing an expired license now removes the blue bar header message.
+- Deleted custom emoji no longer stay in "recently used" section of the emoji picker.
+  "Next" button in More Channels list now takes you to the top of the next page, instead of the bottom.
 
 ### Compatibility  
 
 #### Breaking changes:
 
 #### Removed and deprecated features
+- All APIv3 endpoints to be removed in November/2017 release (six months after APIv4 endpoints have gone stable).
+
+For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
 
 #### config.json   
 
@@ -85,6 +105,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
  - Under `ServiceSettings` in `config.json`:
    - Added `"EnablePostSearch": true` to control whether full text search queries are enabled. Disabling can lead to higher performance in large deployments.
+   - Added `"EnableUserStatuses": true` to control whether user statuses are shown in the web user interface. Disabling can lead to higher performance in large deployments.
 
 **Additional Changes to Enterprise Edition**:
 
@@ -93,27 +114,35 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Database Changes
 
+**OAuthAccessData Table:**
+- Added `Scope` column
+
+**PasswordRecovery Table:**
+- Removed `PasswordRecovery` table and moved entries to a common token store
+
 ### API Changes
 
+- APIv4 stable release // XXX
+
 ### Websocket Event Changes
+
+**Added:**
+- `preferences_changed` and `preferences_deleted` to sync preferences between browser tabs, between different browsers, and across devices when a preference is changed or deleted.
 
 ### Known Issues
 
 This list has not been udpated and is a carryover from v3.8 changelog:
 
 - "Pinned" icon sometimes overlaps image posts.
-- Full name is not editable in Account Settings if the first and last name attributes are removed from **System Console > Authentication > LDAP**.
-- Usernames with dots do not get mention notifications when followed by a comma.
+- Full name is not editable in Account Settings if the first and last name attributes are removed from **System Console > Authentication > LDAP**. // XXX
 - Slack import doesn't add merged members/e-mail accounts to imported channels.
 - User can receive a video call from another browser tab while already on a call.
 - Sequential messages from the same user appear as separate posts on mobile view.
 - Search autocomplete picker is broken on Android.
 - Jump link in search results does not always jump to display the expected post.
-- Blue bar "Preview Mode" header message sometimes does not disappear after enabling email notifications.
-- Removing an expired license may not remove the blue bar header message until a refresh.
+- Blue bar "Preview Mode" header message sometimes does not disappear after enabling email notifications. // XXX
 - First load of the emoji picker is slow at low connections.
 - Emoji picker for reactions doesn't always position correctly.
-- Deleted custom emoji stay in "recently used" section of the emoji picker.
 - Scrollbar is sometimes not visible in the left-hand sidebar after switching teams.
 
 ### Contributors
