@@ -89,7 +89,8 @@ Day when leads and PM area owners decide which major features are included in th
     - Based on discussion, create tickets for features that need to be turned on or off for the release
     - Update Changelog PR based on what's in/out of the release 
     - Create meta issue for release in GitHub (see [example](https://github.com/mattermost/platform/issues/3702))
-    - Review the JIRA tickets remaining in the current release fix version and push those that won't make it to the next fix version.
+    - Review the JIRA tickets remaining in the current release fix version and push those that won't make it to the next fix version
+    - Review any features that are currently in Beta and confirm with leads if there are any to be promoted
 6. Marketing:
     - Begins to draft blog post, tweet, and email for the release announcement
 
