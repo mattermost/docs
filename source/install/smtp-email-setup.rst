@@ -165,3 +165,7 @@ Checking your SMTP server is reachable
        250-STARTTLS
        250-PIPELINING
        250 8BITMIME
+
+.. note::
+  For additional troubleshooting tips, see
+  the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`_. To submit an improvement or correction, click  **Edit** at the top of this page.
