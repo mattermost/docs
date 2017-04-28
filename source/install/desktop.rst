@@ -96,6 +96,6 @@ Desktop App is not visible, but you can see the Mattermost icon in the Task Bar
     2. Open Windows File Explorer, and navigate to the ``%USERPROFILE%\AppData\Roaming\Mattermost`` folder.
     3. Delete the file ``bounds-info.json``
     
-If these troubleshooting tips are of no help, see the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`_. 
+For additional troubleshooting tips, see the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`_. 
 
 To submit an improvement or correction, click  **Edit** at the top of this page.
