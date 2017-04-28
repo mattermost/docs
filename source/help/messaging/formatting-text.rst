@@ -199,8 +199,6 @@ In-line Images
 
 Add in-line images by using an exclamation mark followed by the alt text in square brackets then the URL of the image in round brackets. You can add hover text by placing the text in quotes after the link.
 
-.. code-block:: none
-
 **![** *{alt text}* **](** *{URL of image}*  "*{Hover text}* " **)**
 
 If the height of the original image is more than 500 pixels, the system sets the height at 500 pixels and adjusts the width to maintain the original aspect ratio.

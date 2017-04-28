@@ -35,11 +35,15 @@ AD/LDAP is the most popular corporate directory integration option for deploying
 - AD/LDAP user filters to define which users get access to Mattermost in the form of a query
 - Ability to use a low-privileged AD/LDAP account to run queries over a secure TLS or STARTTLS connection
 - Attribute mapping to place First Name, Last Name, Nickname and other attributes from AD/LDAP into Mattermost 
+- Customization of login screen to specify whether users are logging in with email, username or other attribute
 - Sychronization with AD/LDAP to disable, enable and update Mattermost users based on AD/LDAP 
 
-For very large AD/LDAP instances you can also configure max page size to divide a Mattermost AD/LDAP query into several pieces to not over-tax the authentication server when synchronizing.
+Note: 
 
-For private network deployments in development teams using GitLab for source control, `GitLab single sign-on <https://docs.mattermost.com/deployment/sso-gitlab.html>`_ is also available. 
+- New user accounts are created when new users sign-in with their AD/LDAP credentials. You can optionally pre-create user accounts using the `bulk loading <https://docs.mattermost.com/deployment/bulk-loading.html>`_ tool.
+- If you're using email or username and password authentication `users can switch to AD/LDAP manually <https://docs.mattermost.com/deployment/sso-ldap.html#configure-ad-ldap-using-the-system-console-user-interface>`_, and the `conversion to AD/LDAP can also be done using the command line interface <https://docs.mattermost.com/administration/command-line-tools.html?highlight=cli#platform-user-migrate-auth>`_ by an IT admin. 
+
+For very large AD/LDAP instances you can also configure max page size to divide a Mattermost AD/LDAP query into several pieces to not over-tax the authentication server when synchronizing.
 
 Authentication options outside of a private network 
 ----------------------------------------------------
@@ -57,7 +61,7 @@ Generic OAuth and OpenID are not currently supported.
 Future authentication methods 
 -----------------------------
 
-Mattermost Enterprise Edition releases new improvements bi-monthly. Several additional authentication methods are planned, but not yet scheduled. If you're an enterprise interested in deploying with one of the following options, or another option not yet listed, please contact sales@mattermost.com to start a discussion. 
+Mattermost Enterprise Edition releases new improvements monthly. Several additional authentication methods are planned, but not yet scheduled. If you're an enterprise interested in deploying with one of the following options, or another option not yet listed, please contact sales@mattermost.com to start a discussion. 
 
 - Certificate-based authentication
 - Authentication via reverse proxy

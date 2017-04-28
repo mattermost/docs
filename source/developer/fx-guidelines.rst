@@ -362,9 +362,11 @@ input field should trigger default dialog button.
 Input: Hints
 ------------
 
+Mattermost voice for documentation and help text follows this simple guideline: explain something to a user with basic computer skills in simple terms without jargon or complexity.
+
 **Fieldname:**
 
-    The labels on input fields should be as obvious as possible for the intended user.
+    The labels on input fields should be clear and concise for the intended user. Consider the surrounding UI for consistent naming of input fields with similar actions.
 
     Correct:
         Channel URL: The web address used to reach your channel.
@@ -372,14 +374,17 @@ Input: Hints
     Incorrect:
         Handle: The name of the subdirectory used to navigate to a channel using the site URL appended with the handle name. Must use only valid URL inputs
 
+    The fieldname of a setting should explicitly describe what a setting affects.
     
-
-
-
+    Correct:
+        Automatically expand link previews
+        
+    Incorrect:
+        Link previews
 
 **Help text:**
 
-    Text below an input field should clearly and concisely describe the purpose of the input.
+    Text below an input field should clearly and concisely describe the purpose of the input in an active voice.
 
     In general, avoid describing the technical requirements of the field in Help Text, and use Placeholder input text, field validation and error messages to convey requirements. The exception to this guideline is if requirements are non-obvious, such as passwords needing different numbers of characters, symbols, etc.
 
@@ -391,18 +396,25 @@ Input: Hints
     Incorrect:
         When a new message is received, flash the taskbar icon.
 
+    Ensure plural interpretations work when applicable and test help text with machine translation to reduce non-obvious, English-specific jardon:
     
+    Correct:
+        You can adjust a few configuration settings when setting up your instance of Mattermost.
+        
+    Incorrect:
+        There are a few configuration settings you might want to fiddle with when setting up your instance of Mattermost.
+        
+    Note: The incorrect string above machine-translated into German and then back into English becomes: "There are some configuration settings you could know if your instance Matter Most violin".
 
 **Placeholder input text:**
 
-    Show examples of valid input, such as ``name@example.com`` for email addresses, as well as examples of functionality that is not obviously supported. For example, for a channel name field the placeholder input text could be “Example: Marketing, John’s Room, 中国业务”.
-
+    Show examples of valid input, such as ``name@example.com`` for email addresses, as well as examples of functionality that is not obviously supported. For example, for a channel name field the placeholder input text could be ``Example: Marketing, John’s Room, 中国业务``.
 
 **Field validation:**
 
-    Use field validation to help “prevent or correct” any mistakes a user might make.
+    Use field validation to help prevent or correct any mistakes a user might make.
 
-        For **textfields**, restrict users from making entries that are too long by limiting characters via the maxlength attribute.
+        For **textfields**, restrict users from making entries that are too long by limiting characters via the ``maxlength`` attribute.
 
         For **textareas**, show a character counter and then a helpful message if the user exceeds the maximum number of characters.
 

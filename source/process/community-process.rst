@@ -43,9 +43,15 @@ The various community channels are outlined below, along with the responsibiliti
 
   - Description:
 
+    - Ops reviews new `GitHub mattermost/platform <https://github.com/mattermost/platform>`_ issues daily, and responds to all new issues:
+
+        - Bug Report: Try to reproduce, or ask another team member to reproduce
+        - Troubleshooting: Request to move to forums
+        - Feature Proposal: Request to move to feature idea forums
+
     - Ops posts [Help Wanted] #forum @here can anyone help with these forum questions? These forum posts are open to everyone in the community. If you find something you think you know the answer to or can help with, please help post a response and be part of creating a vibrant Mattermost community!" with a list that includes:
 
-      - Forum posts that are >=2 days old (this gives community members a chance to respond first)
+      - Forum and `GitHub mattermost/platform <https://github.com/mattermost/platform>`_ posts that are >=2 days old (this gives community members a chance to respond first)
       - New forum posts referencing Enterprise features or upgrade issues after a release
       - Forum posts with a new reply to questions asked by the core team
 
@@ -106,20 +112,6 @@ The various community channels are outlined below, along with the responsibiliti
   - Community PM Responsibility:
 
     - Review the list and either reply (with help from dev if needed) or route to the appropriate person, following up to make sure a response is posted
-
-4. New GitHub Issues:
-
-  - Description:
-
-    - New GitHub issues are submitted by community members to Mattermost repos
-
-  - Community PM Responsibility:
-
-    - Review the `Mattermost public repos <https://github.com/mattermost>`_ daily, and respond to all new issues:
-
-      - Bug Report: Try to reproduce, or ask another team member to reproduce
-      - Troubleshooting: Request to move to forums
-      - Feature Proposal: Request to move to feature idea forums
 
 4. Help Wanted GitHub Issues:
 

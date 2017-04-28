@@ -183,7 +183,7 @@ Many thanks to all our contributors. In alphabetical order:
    `magicmonty <https://github.com/magicmonty>`__,
    `Razzeee <https://github.com/Razzeee>`__,
    `yuya-oc <https://github.com/yuya-oc>`__
-   
+
 Thanks also to those who reported bugs that benefited the release, in alphabetical order:
 
 - ellisd (`#383 <https://github.com/mattermost/desktop/issues/383>`_), `it33 <https://github.com/it33>`_ (`#384 <https://github.com/mattermost/desktop/issues/384>`_), `jnugh <https://github.com/jnugh>`_ (`#392 <https://github.com/mattermost/desktop/issues/392>`_), `lfbrock <https://github.com/lfbrock>`_ (`#382 <https://github.com/mattermost/desktop/issues/382>`_), `yuya-oc <https://github.com/yuya-oc>`_ (`#391 <https://github.com/mattermost/desktop/issues/391>`_)
@@ -197,7 +197,7 @@ Release date: September 30, 2016
 
 This release contains a security update and it is highly recommended that users upgrade to this version.
 
-Version number updated to 3.4 to make numbering consistent with Mattermost server and mobile app releases. This change will not imply bi-monthly releases.
+Version number updated to 3.4 to make numbering consistent with Mattermost server and mobile app releases. This change will not imply monthly releases.
 
 -  v3.4.1, released 2016-09-30
 
@@ -351,7 +351,7 @@ Menu Bar
 
    -  Added **Help** to the Menu Bar, which includes
 
-      -  Link to `Mattermost Docs <docs.mattermost.com>`__
+      -  Link to `Mattermost Docs <https://docs.mattermost.com>`__
       -  Field to indicate the application version number.
 
 Settings Page

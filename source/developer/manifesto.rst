@@ -2,72 +2,71 @@
 About the Mattermost Open Source Project 
 ==============================================
 
-Mattermost is an open source, private cloud alternative to proprietary communication services. Hundreds of contributors around the world help develop the software in 11 languages. 
+Mattermost is an open source, private cloud alternative to proprietary communication services. Hundreds of contributors around the world help develop the software in over 10 languages. 
 
-Mattermost Team Edition is an open source workplace messaging solution. Combined with native Mattermost apps on mobile and desktop, it brings all your team communication to one place, with web, mobile and PC interfaces, continuous archiving, instant search and a host of 3rd party integrations. It deploys as a single Linux binary under MIT license, with either MySQL or PostgreSQL as a database. 
+- **Mattermost Team Edition** is an open source, private cloud workplace messaging solution designed for deployment by non-technical users with basic IT skills. Combined with native Mattermost apps on mobile and desktop, it brings all your team communication to one place, with web, mobile and PC interfaces, continuous archiving, instant search and a host of 3rd party integrations. It deploys as a single Linux binary under MIT license, with either MySQL or PostgreSQL as a database, with a host of simple, automated deployment options created by our community. 
 
-Mattermost Enterprise Edition is a commercial extension of the Mattermost software offering enterprise-grade messaging and advanced security, configurability and scalability benefits beyond the scope of team communication. 
+- **Mattermost Enterprise Edition** is a commercial extension of Mattermost offering enterprise-grade messaging and advanced security, configurability and scalability benefits for sophisticated organizations and users. 
 
 History 
 ---------------
 
 The project was `created by a video game company <https://www.mattermost.org/why-we-made-mattermost-an-open-source-slack-alternative/>`_ who previously used a proprietary, SaaS-based messenger which was bought by a big company and neglected. The SaaS messenger started having outages, it crashed, it lost files, and export didn't work. When they stopped their subscription, the SaaS messenger paywalled them from their own data. 
 
-Lesson learned, the company started using messaging software they'd developed for their video game players, and eventually open sourced the software in 2015. The software because surprisingly popular and eventually the company left the video game business, renamed itself "Mattermost, Inc." and shifted focus to expanding the open source project, funded by creating commercial Enterprise Edition extensions. 
+Lesson learned, the company started using messaging software they'd developed for their video game players, and eventually open sourced the software in 2015. The software became surprisingly popular and eventually the company left the video game business, renamed itself "Mattermost, Inc." and shifted focus to expanding the open source project, funded by creating commercial Enterprise Edition extensions. 
 
-Because of how we started, we're committed to never allowing commercial versions of Mattermost to lock in user's data--organizations using Mattermost must always have full access to their information and be able to downgrade to the open source version to continue accessing their information. 
+Because of how we started, we're committed to never allowing commercial versions of Mattermost to lock in a user's data--organizations using Mattermost must always have full access to their information and be able to downgrade to the open source version.
 
 Stewardship Principles for the Mattermost Open Source Project  
 ------------------------------------------------------------------
 
-Mattermost, Inc. is for-profit company that balances the need to improve the open source `Mattermost Team Edition <https://docs.mattermost.com/overview/product.html#mattermost-editions>`_ for teams with the need to add improvements to our commercial `Mattermost Enterprise Edition <https://docs.mattermost.com/overview/product.html#mattermost-editions>`_ to generate income through subscriptions. 
+Mattermost, Inc. is for-profit company focused on making the open source `Mattermost Team Edition <https://docs.mattermost.com/overview/product.html#mattermost-editions>`_ highly successful and popular for teams, while also generating revenue for our commercial `Mattermost Enterprise Edition <https://docs.mattermost.com/overview/product.html#mattermost-editions>`_ for large and sophisticated organizations. 
 
-We want both products to be outrageously successful for teams and enterprises respectively. The following stewardship principles for our open source work helps keep our intent and purpose clear: 
+The following stewardship principles for our open source work helps keep our intent and purpose clear: 
 
 1. Never locked-in 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost software, whether open source or commercial, should never withhold an organization's data from the organization. Commercial versions of Mattermost should always offer the ability to downgrade to open source version without loss of access to data. 
+Mattermost software, whether open source or commercial, should never withhold an organization's data from the organization. Commercial versions of Mattermost should always have a path to downgrade to the open source version without loss of access to data. 
 
 2. Quick Time-to-Value 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Great software works quickly. Ideally, a novice IT admin should be able to setup Mattermost and roll it out to their team in just a few minutes. We should automate as much as possible in a standard install, ask as few technical questions as possible, and provide full explanations for any decisions an IT admin or end user needs to make. 
-
+Great software creates value quickly. A non-technical user with basic IT skills should be able to set up Team Edition, understand every feature in the UI, and roll out the product and increase team productivity in just a few minutes. We should automate as much as possible in a standard install, ask few technical questions, and provide full explanations for any decisions that need to be made.  
 
 3. Minimalist
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Minimalism is providing just the right amount of functionality and not more and not less. Make decisions instead of providing options. Every time you present an option, you force the user to make a decision which can lead to frustration if it's not for the majority of users. Great design is about doing important things extremely well, and not many things poorly. 
+Minimalism is providing the correct amount of functionality and not more and not less. Great design is about doing important things extremely well, and not many things poorly. Make features work well for their intended purpose before adding new features. 
 
-That said, Mattermost should offer APIs, drivers, and a plug-in architecture that enables a wide range of add-on functionality aligned with Mattermost design principles. 
-
-4. No surprises 
+4. Decisions not options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Users should never run into anything unexpected with Mattermost. We ship on time and document our features and product changes. Users should be able to know well in advance what is included, not included, and changed in upcoming versions. 
+Make decisions instead of providing options. Every time you present an option, you force the user to make a decision which can lead to frustration if it's not for the majority of users. 
 
-5. Anywhere office empowering trusted teams
+5. Built for teams behind firewalls
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-"Anywhere office" means team members should be able to access the software across web, mobile and PC from wherever you are (eventually offline as well). "Empowering trusted team" means enabling people to achieve what the team needs without limits or monitoring. Features needed to enforce corporate policy (e.g. sophisticated permissions, etc.), degrade the team experience and aren't included. 
+Team Edition is built for teams needing a modern communication experience secured behind a firewall. For our target audience, we should be by far the best solution in the world. 
 
-6. Primary, not secondary
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The purpose of Mattermost is to become the primary way a team communicates. It's for vital conversations that "matter most". Deployment as a secondary system, where not everyone in a team can be reached, fails to achieve the software's purpose. Because of this we don't offer email as a Mattermost interface (impoverished experience). Also, while you can use your Mattermost account to sign-in to other apps via features like OAuth2 provider support, we don't offer SSO into Mattermost from another account [1]. 
-
-[1] There is an exception with GitLab SSO, which is a legacy feature from an early partnership. 
-
-7. Private cloud alternative
+6. No surprises 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Your vital communications stay behind your firewall, on infrastructure you control in single-tenant deployment. We are an alternative to multi-tenant, public SaaS models requiring organizations to give up control, privacy and visibility. As a solution we should continually invest in simplifying install and maintenance to eventually create a fully-automated "private SaaS" deployment model that is extremely easy to administer. 
+Users should never run into anything unexpected with Mattermost. We ship on time and document our features and product changes. Users should be able to know well in advance what is being considered for inclusion and change in upcoming versions. 
 
-Mattermost Team Edition is focused on private cloud deployment over public web because we believe: a) public web security threats are constantly escalating, and b) it's difficult for admins to apply security updates immediately, and firewalls help keep infrastructure safe.
+7. Near zero administration 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Let people work simply. Team Edition is for teams needing a "virtual office" where everyone knows each other and is trusted to get things done appropriately, without hard limits and policies. The non-technical user who deployed Team Edition should spend zero time on any administration tasks. 
+
+8. Open source alternative  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For non-technical users with basic IT skills, Team Edition aspires to be an ideal workplace messaging solution deployed on a private network, emphasizing simplicity and fast time-to-value. For sophisticated organizations with advanced security, configurability and scalability needs, the commercial Enterprise Edition extension strives to be an ideal solution. 
+
+For organizations who seek other options, full source code of the platform for creating Team Edition should be available for the development of open source variants, including commercial variants, `provided the Mattermost trademark is not used and other protocols are respected. <https://docs.mattermost.com/overview/faq.html#how-can-i-create-a-derivative-work-of-mattermost-as-my-own-commercial-solution>`_ 
 
 -----
 
-These principles were inspired by WordPress Philosophy and GitLab's - https://wordpress.org/about/philosophy/
+These principles were inspired by WordPress Philosophy: https://wordpress.org/about/philosophy/
 

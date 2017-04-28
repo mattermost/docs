@@ -1,11 +1,243 @@
 # Mattermost Changelog
 
-This changelog summarizes updates to [Mattermost Team Edition](http://www.mattermost.org/), an open source team messaging solution released bi-monthly under an MIT license, and [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/), a commercial upgrade offering enterprise messaging for large organizations.
+This changelog summarizes updates to [Mattermost Team Edition](http://www.mattermost.org/), an open source team messaging solution released monthly under an MIT license, and [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/), a commercial upgrade offering enterprise messaging for large organizations.
 
-## Release v3.7.3
+Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
+
+## Release v3.8.2
 
 ### Notes on Patch Release
 
+ - **v3.8.2, released 2017-04-21**
+   - Changed the client to use `window.location.origin` instead of siteURL, fixing WebSocket connection issues with Mattermost 3.8 upgrade.
+   - Fixed a few APIv4 endpoints in support of the next [React Native mobile app](https://github.com/mattermost/mattermost-mobile) release.
+ - **v3.8.1, released 2017-04-19**
+   - Mattermost v3.8.1 contains a security update and [upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+   - Fixed an issue with Site URL sometimes breaking the OAuth2 login flow, including login using GitLab.
+   - Reverted a change preventing LDAP usernames from beginning with a number.
+   - Fixed a permission issue with group message channel creation.
+ - **v3.8.0, released 2017-04-16**
+   - Original 3.8 release
+
+### Security Updates
+
+- Mattermost v3.8.0 contains multiple [security updates](http://about.mattermost.com/security-updates/). [Upgrading to Mattermost v3.8.0](http://docs.mattermost.com/administration/upgrade.html) is highly recommended.
+
+### Highlights
+
+#### Native iOS and Android Apps (Beta)
+- Second generation mobile apps, built using React Native, are [available for beta testing](https://about.mattermost.com/a-native-mobile-experience-second-generation-mobile-apps-released-in-beta/) on [iOS](https://mattermost-fastlane.herokuapp.com/) and [Android](https://play.google.com/apps/testing/com.mattermost.react.native).
+
+#### Pinned Posts
+- Important messages can be pinned to the channel for easy reference. Pinned posts are visible to all channel members.
+
+#### Emoji Picker and Improved Emoji Reactions (Beta)
+- The picker offers quick access to emoji when composing messages or adding reactions. Enable the emoji picker in **Account Settings > Advanced > Preview pre-release features**.
+- The picker is "Beta" while speed of the first load with lots of custom emoji is improved.
+
+#### System Users List
+- The System Console now consolidates all users into a system-wide list that can be filtered by team. The users list can be used to manage team membership and team roles for any user on the system.
+
+#### Configure Using Environment Variables
+- Override `config.json` settings using environment variables.
+
+### Improvements
+
+#### Web User Interface
+- Date separators now appear between posts in the right-hand sidebar.
+- Non-square profile pictures are now cropped in the middle rather than being stretched.
+- Post timestamps now have an expanded date tooltip.
+- The "Add Members" modal now autofocuses on the search box when opened from the "Manage Members" modal.
+- Reduced the margins and line height in compact view.
+- There is now a confirmation dialog before deleting a custom emoji.
+- Updated the error page for invalid permalinks.
+- Updated the error page for "Private browsing not supported" in Safari.
+
+#### Performance
+- Added index and cache to reactions store
+
+#### Search
+- File attachments thumbnails are now shown in search results.
+- Flagged posts from other teams are no longer displayed.
+
+#### Channels
+- Favorite channels are now sorted alphabetically regardless of channel type.
+- Town Square now has a default channel purpose.
+- Users added to a group message are now removed from the Direct Messages search list.
+- "Private Groups" have been renamed to "Private Channels".
+
+#### Mobile
+- Executing a search now closes the keyboard and removes the keyboard focus from the text box.
+
+#### Integrations
+- The integrations confirmation page can now be dismissed with the ENTER key.
+
+#### Link Previews
+- Updated the UI for link previews by removing an extra blue vertical bar.
+- Added support for link preview requests through a separate proxy.
+
+#### Notifications
+- Users can no longer configure email notification settings if the notifications are disabled for the system.
+
+#### Onboarding
+- Existing users on the server can now easily be added to a team via the Main Menu.
+
+#### Enterprise Edition
+- Policy controls for restricting permissions to add and remove members from private channels.
+- Added the ability to read the license file from the disk.
+- The configuration file is now reloaded after applying an Enterprise Edition license on startup.
+
+### Bug Fixes
+- Fixed line wrapping of the timestamp in Account Settings > Security > View Access History.
+- Fixed an inconsistent error message when creating a channel with a display name of one or two characters.
+- Removed the duplicate "Back" button on the Team Creation page.
+- The AltGR key no longer triggers keyboard shortcuts.
+- Saving a team name without making changes no longer throws an error message.
+- Group messages are now sorted alphabetically with direct messages.
+- The "Create Channel" button will now only appear in the "More Channels" modal when the user has the permission to create channels.
+- The Town Square channel menu no longer has redundant dividers with certain combinations of System Console > Policy settings.
+- Fixed an issue where some conversations would not trigger the channel to appear unread in the left-hand sidebar.
+- Fixed an issue where usernames sometimes did not appear when hovering over reactions.
+- Fixed an issue where link previews would sometimes cause a horizontal scroll bar to appear.
+- iOS code blocks no longer wrap to the next line.
+- Removed an extra border in Markdown tables on iOS.
+- Usernames in the channel member list are now properly aligned.
+- Fixed a console error that was thrown when switching teams.
+- Fixed occasionial flickering of channel autocomplete.
+- Link preview images no longer appear outside of the preview container.
+
+### Compatibility  
+
+#### Breaking changes:
+- The **System Console > Configuration > [Site URL](../../administration/config-settings.html#site-url)** field is now mandatory. Set the Site URL in the System Console, or in the `gitlab.rb` file if you are using GitLab Mattermost.
+- Server logs are now written to the `mattermost.log` file located in the directory specified in **System Console > Logging > [File Log Directory](../../administration/config-settings.html#file-log-directory)**. Set the directory name in the System Console, or in the `gitlab.rb` file if you are using GitLab Mattermost.
+
+#### Removed and deprecated features
+- Backwards compatibility with the old CLI tool is removed in v3.8. See [documentation to learn more about the new CLI tool](../../administration/command-line-tools.html).
+- Deprecated APIv3 routes removed in v3.8:
+   - `GET` at `/channels/more` (replaced by /`channels/more/{offset}/{limit}`)
+   - `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`)
+   - `POST` at `/channels/set_last_viewed_at` (replaced by `/channels/view`)
+   - `POST` at `/users/status/set_active_channel` (replaced by `/channels/view`)
+- All APIv3 endpoints to be removed six months after APIv4 goes stable (replaced by APIv4 endpoints).
+
+For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
+
+#### config.json   
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console.
+
+**Changes to Team Edition and Enterprise Edition**:
+
+ - Under `EmailSettings` in `config.json`:
+   - Added `"SkipServerCertificateVerification": false` to skip verification of smtp server certificates.
+
+**Additional Changes to Enterprise Edition**:
+
+ - Under `TeamSettings` in `config.json`:
+   - Added `"RestrictPrivateChannelManageMembers": all` to set who can add and remove members from private groups.
+
+### Database Changes
+
+**Posts Table:**
+- Added `IsPinned` column
+
+### API Changes
+
+**New routes (APIv3):**
+- `GET` at `/channels/{channel_id}/pinned`
+  - Returns the pinned posts in a channel
+- `POST` at `/channels/{channel_id}/posts/{post_id}/pin`
+  - Pins a post to a channel
+- `POST` at `/channels/{channel_id}/posts/{post_id}/unpin`
+  - Unpins a post from a channel
+
+**Removed routes (APIv3):**
+- `GET` at `/channels/more` (replaced by /`channels/more/{offset}/{limit}`)
+- `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`)
+- `POST` at `/channels/set_last_viewed_at` (replaced by `/channels/view`)
+- `POST` at `/users/status/set_active_channel` (replaced by `/channels/view`)
+
+### Websocket Event Changes
+
+**Added:**
+- `added_to_team` that occurs when the current user is added to a team by another user.
+
+**Modified**
+- Added a `seq` field to websocket events that increments with each event sent to the client.
+
+### Known Issues
+
+- "Pinned" icon sometimes overlaps image posts.
+- Full name is not editable in Account Settings if the first and last name attributes are removed from **System Console > Authentication > LDAP**.
+- Usernames with dots do not get mention notifications when followed by a comma.
+- Slack import doesn't add merged members/e-mail accounts to imported channels.
+- User can receive a video call from another browser tab while already on a call.
+- Sequential messages from the same user appear as separate posts on mobile view.
+- Search autocomplete picker is broken on Android.
+- Jump link in search results does not always jump to display the expected post.
+- Blue bar "Preview Mode" header message sometimes does not disappear after enabling email notifications.
+- Removing an expired license may not remove the blue bar header message until a refresh.
+- First load of the emoji picker is slow at low connections.
+- Emoji picker for reactions doesn't always position correctly.
+- Deleted custom emoji stay in "recently used" section of the emoji picker.
+- Scrollbar is sometimes not visible in the left-hand sidebar after switching teams.
+
+### Contributors
+
+Many thanks to all our contributors. In alphabetical order:
+
+/platform:
+
+- [aautio](https://github.com/aautio), [asaadmahmood](https://github.com/asaadmahmood), [bonespiked](https://github.com/bonespiked), [bradhowes](https://github.com/bradhowes), [coreyhulen](https://github.com/coreyhulen), [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [doh5](https://github.com/doh5), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [grundleborg](https://github.com/grundleborg), [hmhealey](https://github.com/hmhealey), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [jostyee](https://github.com/jostyee), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [lindalumitchell](https://github.com/lindalumitchell), [prixone](https://github.com/prixone), [R-Wang97](https://github.com/R-Wang97), [saturninoabril](https://github.com/saturninoabril), [VeraLyu](https://github.com/VeraLyu)
+
+/docs:
+
+- [coreyhulen](https://github.com/coreyhulen), [esethna](https://github.com/esethna), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [jwilander](https://github.com/jwilander), [lindy65](https://github.com/lindy65), [Rohlik](https://github.com/Rohlik)
+
+mattermost-redux:
+
+- [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [jarredwitt](https://github.com/jarredwitt), [jwilander](https://github.com/jwilander)
+
+/mattermost-api-reference:
+
+- [cpanato](https://github.com/cpanato), [grundleborg](https://github.com/grundleborg), [hmhealey](https://github.com/hmhealey), [jwilander](https://github.com/jwilander), [saturninoabril](https://github.com/saturninoabril), [senk](https://github.com/senk)
+
+/mattermost-mobile:
+
+- [csduarte](https://github.com/csduarte), [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [lfbrock](https://github.com/lfbrock), [saturninoabril](https://github.com/saturninoabril)
+
+/mattermost-selenium:
+
+- [coreyhulen](https://github.com/coreyhulen), [lindalumitchell](https://github.com/lindalumitchell)
+
+/desktop:
+
+- [jasonblais](https://github.com/jasonblais), [yuya-oc](https://github.com/yuya-oc)
+
+/mattermost-docker:
+
+- [xcompass](https://github.com/xcompass)
+
+/mattermost-kubernetes:
+
+- [coreyhulen](https://github.com/coreyhulen)
+
+/mattermost-load-test:
+
+- [crspeller](https://github.com/crspeller), [csduarte](https://github.com/csduarte)
+
+
+## Release v3.7.5
+
+### Notes on Patch Release
+
+ - **v3.7.5, released 2017-04-27**
+   - Fixed a number of low to moderate severity security issues, and [upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/)
+     - Note: The **System Console > Configuration > [Site URL](../../administration/config-settings.html#site-url)** field is now mandatory. Set the Site URL in the System Console, or in the `gitlab.rb` file if you are using GitLab Mattermost.
+     - Note: Upgrading will invalidate existing team invite links and email verifications.
+ - **v3.7.4, released 2017-04-13**
+   - Fixed a number of low to high severity security issues, and [upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/)
  - **v3.7.3, released 2017-03-23**
    - Fixed a high severity security issue, and [upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/)
    - Fixed an issue with telemetry data collection
@@ -168,11 +400,22 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 ### Compatibility  
 
-Backwards compatibility with the old CLI tool will be removed in v3.8. See [documentation to learn more about the new CLI tool](https://docs.mattermost.com/administration/command-line-tools.html).
+#### Removed and deprecated features
 
-Changes from v3.6 to v3.7:
+ - Removed `ServiceSettings: "SegmentDeveloperKey"` setting in `config.json`
+ - Backwards compatibility with the old CLI tool will be removed in Mattermost v3.8 April/2017 release. See [documentation to learn more about the new CLI tool](https://docs.mattermost.com/administration/command-line-tools.html).
+ - Deprecated APIv3 routes to be removed in Mattermost v3.8 April/2017 release:
+   - `GET` at `/channels/more` (replaced by /`channels/more/{offset}/{limit}`)
+   - `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`)
+   - `POST` at `/channels/set_last_viewed_at` (replaced by `/channels/view`)
+   - `POST` at `/users/status/set_active_channel` (replaced by `/channels/view`)
+ - All APIv3 endpoints to be removed six months after APIv4 goes stable (replaced by APIv4 endpoints).)
+
+For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
 
 #### config.json   
+
+Changes from v3.6 to v3.7:
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console.
 
@@ -182,7 +425,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
    - Added `"TimeBetweenUserTypingUpdatesMilliseconds": 5000` to control how frequently the "user is typing..." messages are updated
    - Added `"EnableUserTypingMessages": true` to control whether "user is typing..." messages are displayed below the message box
    - Added `"EnableLinkPreviews": false` to control whether a preview of website content is displayed below the message
-   - Removed deprecated `"SegmentDeveloperKey"` setting
 
 **Additional Changes to Enterprise Edition**:
 
@@ -206,16 +448,10 @@ Multiple setting options were added to `config.json`. Below is a list of the add
   - Updates an incoming webhook
 - `POST` at `/hooks/outgoing/update`
   - Updates an outgoing webhook
-- `GET` at `/teams/{team_id}/...` // XXX check with developer
+- `GET` at `/teams/{team_id}/...`
   - Returns a post list, based on the provided channel and post ID.
-- `POST` at `/channels/{channel_id}/update_member_roles` // XXX check with developer
+- `POST` at `/channels/{channel_id}/update_member_roles`
   - Updates the user's roles in a channel
-
-**Deprecated routes (APIv3):**
-- `GET` at `/channels/more` (replaced by /`channels/more/{offset}/{limit}`) to be removed in v3.8
-- `POST` at `/channels/update_last_viewed_at` (replaced by `/channels/view`) to be removed in v3.8
-- `POST` at `/channels/set_last_viewed_at` (replaced by `/channels/view`) to be removed in v3.8
-- `POST` at `/users/status/set_active_channel` (replaced by `/channels/view`) to be removed in v3.8
 
 ### Websocket Event Changes from v3.6 to v3.7
 
@@ -281,10 +517,17 @@ Many thanks to all our contributors. In alphabetical order:
 
 - [coreyhulen](https://github.com/coreyhulen), [crspeller](https://github.com/crspeller)
 
-## Release v3.6.5
+## Release v3.6.7
 
 ### Notes on Patch Release
 
+ - **v3.6.7, released 2017-04-27**
+   - Fixed a number of low to moderate severity security issues, and [upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/)
+     - Note: The **System Console > Configuration > [Site URL](../../administration/config-settings.html#site-url)** field is now mandatory. Set the Site URL in the System Console, or in the `gitlab.rb` file if you are using GitLab Mattermost.
+ - **v3.6.6, released 2017-04-13**
+   - Fixed a number of low to high severity security issues, and [upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/)
+   - Fixed an issue where Direct Messages list didn't always properly update in the left-hand sidebar
+   - Upgraded MySQL driver for better performance
  - **v3.6.5, released 2017-03-23**
    - Fixed a high severity security issue, and [upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/)
  - **v3.6.4, released 2017-03-16**
@@ -2527,7 +2770,7 @@ User Interface
 
 #### Config.json Changes from v1.2 to v1.3
 
-Multiple settings were added to [`config.json`](./config/config.json). These options can be modified in the System Console, or manually updated in the existing config.json file. This is a list of changes and their new default values in a fresh install:
+Multiple settings were added to `config.json`. These options can be modified in the System Console, or manually updated in the existing config.json file. This is a list of changes and their new default values in a fresh install:
 - Under `EmailSettings` in `config.json`:
   - Removed: `"ApplePushServer": ""` which is replaced with `SendPushNotifications` and `PushNotificationServer`
   - Removed: `"ApplePushCertPublic": ""`  which is replaced with `SendPushNotifications` and `PushNotificationServer`
@@ -2652,7 +2895,7 @@ System Console
 
 #### Config.json Changes from v1.1 to v1.2
 
-Multiple settings were added to [`config.json`](./config/config.json). These options can be modified in the System Console, or manually updated in the existing config.json file. This is a list of changes and their new default values in a fresh install:
+Multiple settings were added to `config.json`. These options can be modified in the System Console, or manually updated in the existing config.json file. This is a list of changes and their new default values in a fresh install:
 - Under `TeamSettings` in `config.json`:
   - Added: `"RestrictTeamNames": true` to control whether team names can contain reserved words like www, admin, support, test, etc.
   - Added: `"EnableTeamListing": false` to control whether teams can be listed on the root page of the site
@@ -2782,7 +3025,7 @@ Messaging and Notifications
 
 ##### Service Settings
 
-Multiple settings were added to [`config.json`](./config/config.json) and System Console UI. Prior to upgrading the Mattermost binaries from the previous versions, these options would need to be manually updated in existing config.json file. This is a list of changes and their new default values in a fresh install:
+Multiple settings were added to `config.json` and System Console UI. Prior to upgrading the Mattermost binaries from the previous versions, these options would need to be manually updated in existing config.json file. This is a list of changes and their new default values in a fresh install:
 - Under `ServiceSettings` in `config.json`:
   - Added: `"EnablePostIconOverride": false` to control whether webhooks can override profile pictures
   - Added: `"EnablePostUsernameOverride": false` to control whether webhooks can override profile pictures
@@ -2912,7 +3155,7 @@ Prior to upgrading the Mattermost binaries from the previous versions, the below
 
 ##### Service Settings
 
-- Under `ServiceSettings` in [`config.json`](./config/config.json):
+- Under `ServiceSettings` in `config.json`:
   - Moved: `"SiteName": "Mattermost"` which was added to `TeamSettings`
   - Removed: `"Mode" : "dev"` which deprecates a high level dev mode, now replaced by granular controls
   - Renamed: `"AllowTesting" : false` to `"EnableTesting": false` which allows the use of `/loadtest` slash commands during development
@@ -2933,7 +3176,7 @@ Prior to upgrading the Mattermost binaries from the previous versions, the below
 
 ##### Team Settings
 
-- Under `TeamSettings` in [`config.json`](./config/config.json):
+- Under `TeamSettings` in `config.json`:
   - Renamed: `"AllowPublicLink": true` renamed to `"EnablePublicLink": true` and moved to `FileSettings`
   - Removed: `AllowValetDefault` which was a guest account feature that is deprecated
   - Removed: `"TermsLink": "/static/help/configure_links.html"` removed since option didn't need configuration
@@ -2948,13 +3191,13 @@ Prior to upgrading the Mattermost binaries from the previous versions, the below
 
 ##### SSO Settings
 
-- Under `SSOSettings` in [`config.json`](./config/config.json):
+- Under `SSOSettings` in `config.json`:
   - Renamed Category: `SSOSettings` to `GitLabSettings`
   - Renamed: `"Allow": false` to `"Enable": false` to enable GitLab SSO
 
 ##### AWS Settings
 
-- Under `AWSSettings` in [`config.json`](./config/config.json):
+- Under `AWSSettings` in `config.json`:
   - This section was removed and settings moved to `FileSettings`
   - Renamed and Moved: `"S3AccessKeyId": ""` renamed `"AmazonS3AccessKeyId": "",` and moved to `FileSettings`
   - Renamed and Moved: `"S3SecretAccessKey": ""` renamed `"AmazonS3SecretAccessKey": "",` and moved to `FileSettings`
@@ -2963,13 +3206,13 @@ Prior to upgrading the Mattermost binaries from the previous versions, the below
 
 ##### Image Settings
 
-- Under `ImageSettings` in [`config.json`](./config/config.json):
+- Under `ImageSettings` in `config.json`:
   - Renamed: `"ImageSettings"` section to `"FileSettings"`
   - Added: `"DriverName" : "local"` to specify the file storage method, `amazons3` can also be used to setup S3
 
 ##### EmailSettings
 
-- Under `EmailSettings` in [`config.json`](./config/config.json):
+- Under `EmailSettings` in `config.json`:
   - Removed: `"ByPassEmail": "true"` which is replaced with `SendEmailNotifications` and `RequireEmailVerification`
   - Added: `"SendEmailNotifications" : "false"` to control whether email notifications are sent
   - Added: `"RequireEmailVerification" : "false"` to control if users need to verify their emails
@@ -2978,7 +3221,7 @@ Prior to upgrading the Mattermost binaries from the previous versions, the below
 
 ##### Privacy Settings
 
-- Under `PrivacySettings` in [`config.json`](./config/config.json):
+- Under `PrivacySettings` in `config.json`:
   - Removed: `"ShowPhoneNumber": "true"` which was not used
   - Removed: `"ShowSkypeId" : "true"` which was not used
 

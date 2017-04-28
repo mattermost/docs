@@ -86,7 +86,7 @@ The following is a list of common error messages and solutions:
 
 **Solution:**
 
-      1. Follow the `installation guide to set up your WebSocket port properly <http://docs.mattermost.com/install/prod-ubuntu.html#set-up-nginx-server>`__.
+      1. Follow the `installation guide to set up your WebSocket port properly <https://docs.mattermost.com/install/install-ubuntu-1604.html#installing-nginx-server>`__.
       2. Speak with the owner of any other proxies between your device and the Mattermost server to ensure ``wss`` connections are passing through without issue.
 
 If this issue is reported rarely, in some cases the issue comes from *intermittent* internet connectivity, where the initial load works, but the device then becomes disconnected from the internet and real time updates over the ``wss`` connection fail repeatedly and the error is displayed to check if the ``wss`` connection were misconfigured.
@@ -98,7 +98,7 @@ If only a small number of users have this issue, it could be from intermittent i
 
 This error may appear in server logs when attempting to sign-up when using self-signed certificates to setup SSL, which is not yet supported by Mattermost.
 
-**Solution:** Set up a load balancer like NGINX `per production install guide <http://docs.mattermost.com/install/prod-debian.html#set-up-nginx-with-ssl-recommended>`__. The core team is looking into allowing self-signed certificates in the future. 
+**Solution:** Set up a load balancer like NGINX `per production install guide <https://docs.mattermost.com/install/install-ubuntu-1604.html#configuring-nginx-with-ssl-and-http-2>`__. The core team is looking into allowing self-signed certificates in the future. 
 
 As a work around, in **System Console** > **Security** > **Connections** set ``Enable Insecure Outgoing Connections`` to ``true``.
    
@@ -144,3 +144,14 @@ Click the link at the bottom of the sign-in page that says “Don't have an acco
          1. Turning the sign-in option back on.
          2. Asking the user to switch sign-in methods before turning the
             sign-in option back off.
+
+``Failed to upgrade websocket connection``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This error can occur if you're using multiple URLs to reach Mattermost via proxy forwarding.
+
+**Solution:**
+
+1. Upgrade to a Mattermost server v3.8.0 or later, which adds `WebSocket CORS support <https://github.com/mattermost/platform/pull/5667>`_.
+2. Follow the installation guide to configure `NGINX as a proxy for Mattermost server <https://docs.mattermost.com/install/install-ubuntu-1604.html#configuring-nginx-as-a-proxy-for-mattermost-server>`_.
+3. If you're doing reverse proxy with IIS, upgrade to IIS 8.0 or later and enable WebSockets. For more information, see `IIS 8.0 WebSocket Protocol Support <https://www.iis.net/learn/get-started/whats-new-in-iis-8/iis-80-websocket-protocol-support>`_.

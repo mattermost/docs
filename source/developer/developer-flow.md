@@ -21,7 +21,7 @@ Here's a general workflow a Mattermost developer working on our [platform reposi
 Some other `make` commands that might be useful in addition to the ones mentioned above:
 
 * `make run-server` will run only the server and not the client
-* `make clean-docker` stops and removes your docker images and is a good way to wipe your database
+* `make clean-docker` stops and removes your Docker images and is a good way to wipe your database
 * `make run-fullmap` will run the server and build the client with the full source map for easier debugging
 * `make clean` cleans your local environment of temporary files
 * `make nuke` wipes your local envrionment back to a completely fresh start
@@ -50,7 +50,7 @@ For server work, all the directories you'll need are at the root of the reposito
 
 For client work, you'll mostly be working in [./webapp/](https://github.com/mattermost/platform/tree/master/webapp).
  * [./webapp/components/](https://github.com/mattermost/platform/tree/master/webapp/components) holds all the [React](https://facebook.github.io/react/) UI components and views
- * [./webapp/actions/](https://github.com/mattermost/platform/tree/master/webapp/actions) holds all [Flux actions](https://facebook.github.io/flux/docs/actions-and-the-dispatcher.html#content) where the majority of the logic of the webapp takes place
+ * [./webapp/actions/](https://github.com/mattermost/platform/tree/master/webapp/actions) holds all [Flux actions](https://facebook.github.io/flux/docs/in-depth-overview.html#content) where the majority of the logic of the webapp takes place
  * [./webapp/stores/](https://github.com/mattermost/platform/tree/master/webapp/stores) holds the stores responsible for storing and providing the views with data
  * [./webapp/routes/](https://github.com/mattermost/platform/tree/master/webapp/routes) holds the definitions for all the [React-Router](https://github.com/ReactTraining/react-router) routes
  * [./webapp/i18n/](https://github.com/mattermost/platform/tree/master/webapp/i18n) holds the localization files for the client

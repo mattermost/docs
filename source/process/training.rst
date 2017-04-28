@@ -47,7 +47,9 @@ First Day
 Meetings
 ---------------------------------------------------------
 
-This section summarizes norms for public and private meetings for the Mattermost community and for Mattermost Inc. Where possible,
+This section summarizes norms for public and private meetings for the Mattermost community and for Mattermost Inc.
+
+When proposing meetings use major cities as references for time (eg 9AM New York time), since it's clear and `easy to web search <https://www.google.com/search?q=time+in+new+york&oq=time+in+new+&aqs=chrome.1.0l2j69i57j0l3.3135j0j7&sourceid=chrome&ie=UTF-8>`_. Avoid using "UTC", as it has been shown to cause confusion.
 
 Open Meetings
 ---------------------------------------------------------
@@ -94,8 +96,8 @@ Note:
 
 Procedure:
 
-1. (Chair): Just prior to meeting, post **Hangout** link in `Standup private group <https://pre-release.mattermost.com/core/channels/stand-up>`_
-2. (Developer): Replies in Standup private group when sprint is ready for review
+1. (Chair): Just prior to meeting, post **Hangout** link in `Standup private channel <https://pre-release.mattermost.com/core/channels/stand-up>`_
+2. (Developer): Replies in Standup private channel when sprint is ready for review
 3. (Chair): Will (at)mention next developer to join **Hangout** to review tickets. Developer joins, tickets are discussed and finalized for next sprint. Developer leaves **Hangout** and next developer rotates in.
 
 Triage Meeting
@@ -124,7 +126,7 @@ Note:
 
 Procedure:
 
-1. (Chair): Just prior to meeting, post **Hangout** link in `Standup private group <https://pre-release.mattermost.com/core/channels/stand-up>`_ (Mattermost Inc. only)
+1. (Chair): Just prior to meeting, post **Hangout** link in `Standup private channel <https://pre-release.mattermost.com/core/channels/stand-up>`_ (Mattermost Inc. only)
 
 2. (Attendees): Join the link
 
@@ -155,63 +157,73 @@ Procedure:
 
 1. (PM & Dev Leads): Stay in **Hangout** after Triage meeting and message community/marketing lead to join.
 
-2. (Attendees): Discuss agenda items in Leads private group
+2. (Attendees): Discuss agenda items in Leads private channel
 
 3. (Attendees): Respond to respective colleagues on decisions from Leads meeting
 
 Platform Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost Inc-only** - (Platform colleagues - 1-2 hours/week) Friday's at 10:10 (`San Francisco Time <http://everytimezone.com/>`_) after platform team standup.
+**Mattermost Inc-only** - (Platform colleagues - 1 hour/week) Thursday's at 10:00 (`San Francisco Time <http://everytimezone.com/>`_).
 
 Regular team meeting for platform team at Mattermost Inc.
 
-- Goal: Increase team output by effectively informing and reviewing priority projects and next steps.
+- Goal: Increase team output by effectively reviewing priorities and finding blindspots
 - Scope: Mattermost Inc-only meeting given confidential customer issues discussed
 - Attendees: Mattermost Inc colleagues working on platform
+
+Platform meeting consists of two parts, Team Operation Review Meeting and Product Staff Meeting.
+
+All Mattermost staff attends the Team Operation Review Meeting. It provides an opportunity to teach and learn between people who don’t otherwise deal with each other much. Includes presentations and demos.
+
+Only the product team attends the Product Staff Meeting, others' attendance is optional. The meeting consists of people who work closely together. Includes controlled agenda items (e.g. queued items) with an "open session" where staff can bring up anything they want. Staff should arrive at decisions during the meeting or schedule further discussion for the next meeting.
+
 Procedure:
 
-1. (Chair) 3-hours before standup, post reminders in `Platform private group <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only)
+1. (Chair) 3-hours before standup, post reminders in `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only)
 
 ::
 
    #### @channel Platform Meeting Reminder
    Everyone please:
    - **Prepare your demos**
-   - **Prepare your User Issue or Kaizen**
+   - **Prepare your roundtable open discussion**
 
-   @lindsay please:
+   @[RELEASE MANAGER] please:
    - **Prepare your roadmap checkin**
 
-   @[WHOEVER] are you ready for your "Something interesting about my town"?
+   @[WHOEVER] are you ready for your "Ice-breaker"?
 
 
 2. (Team) At time of meeting:
 
-   - Join the **Hangout** link in the header of the `Platform private group <https://pre-release.mattermost.com/core/channels/platform-discussion>`_
+   - Join the **Hangout** link in the header of the `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`_
    - Open the **Notes** link in the header to see the agenda
 
 3. (Vice-Chair) Post `"Standing Items" template <https://docs.google.com/document/d/1ImSgkF7T03wbKwz_t4-Dr4n3I8LixVbFb2Db_u0FmdM>`_ into Platform Meeting Notes
 
     - Add **Follow-ups** from previous meeting
-    - Add **New items** queued in `Platform private group <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only)
+    - Add **New items** queued in `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only)
 
 Meeting Agenda:
 
-- **Warm-up** - Currently: "Share something interesting about your home town."
-- **Release countdown** - Review release date, milestones and checklists.
-- **Roadmap check-in** - Review of roadmap status in current and next release
-- **Demos** - Team members show highlights of what's completed this week. Relevant follow-ups noted.
-- **Follow-ups** - Follow-ups from previous meeting are discussed
-- **New items** - New team-relevant items are discussed
+Team Operation Review Meeting
 
-   - **Kaizen (odd sprints)** - Each colleague shares a potential process improvement. Follow-ups noted.
-   - **User Issues (even sprints)** - Each colleage shares unaddressed external user issue of importance. Follow-ups noted.
-- **Open Questions** - To find blindspots, meeting does not end until 3 open questions are asked and answered.
+- **Warm-up** - Currently: "Share something interesting about your weekend."
+- **Roadmap check-in** - Review of roadmap status in current and next release
+- **Demos (optional)** - Team members show highlights of what's been completed this week. Relevant follow-ups noted.
+- **New items** - New team relevant items are discussed
+
+Product Staff Meeting
+
+- **Roundtable Open Discussion** - Each colleague shares something important to discuss with the team. Examples: external customer or user issue, potential process improvement. Follow-ups noted.
+- **New items** - New product staff relevant items are discussed
+- **Follow-ups** - Follow-ups from previous meeting are discussed
+- **Questions** - To find blindspots, meeting does not end until 3 open questions are asked and answered.
 
 Post Meeting:
 
-- Follow-up items are posted to the  `Platform private group <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only)
+- Follow-up items are posted to the  `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only)
 
 Meeting Elements
 -----------------------
@@ -333,7 +345,7 @@ For example, "0/5" and "5/5" help convey the level of conviction behind an opini
 2) Increase the speed of communication via a small number of frequently used acronyms
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-[LHS](http://docs.mattermost.com/process/terminology.html#lhs) and [RHS](http://docs.mattermost.com/process/terminology.html#rhs) are examples of a very limited number of acronyms to use to speed discussions, specifications, and ticket writing.
+`LHS`_ and `RHS`_ are examples of a very limited number of acronyms to use to speed discussions, specifications, and ticket writing.
 
 3) Reduce repeated mistakes by naming very specific undesirable behaviors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -346,7 +358,7 @@ List of Terms
 0/5, 1/5, 2/5, 3/5, 4/5, 5/5
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We use "x/5" to concisely communicate conviction. 0/5 means you don't have a strong opinion, you are just sharing an idea or asking a question. 5/5 means you are highly confident and would stake your reputation on the opinion you're expressing.  
+We use "x/5" to concisely communicate conviction. 0/5 means you don't have a strong opinion, you are just sharing an idea or asking a question. 5/5 means you are highly confident and would stake your reputation on the opinion you're expressing.
 
 Bug
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -358,7 +370,7 @@ Dead Tarzan
 
 Discarding an imperfect solution without a clearly thought out alternative. Based on idea of `Tarzan of the Jungle <https://en.wikipedia.org/wiki/Tarzan>`_ letting go of a vine without having a new vine to swing to.
 
-Decking 
+Decking
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A term for shipping something that is below quality standards. This term is used by mountain climbers to describe falling off the side of a mountain, which often involves a series of failures, not just one.
@@ -371,16 +383,16 @@ A specific type of mana for developers similar to "points" or "jelly beans" in a
 Expert Mode (and Crimson Force Field)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When documentation or on-screen text is written for someone with considerable knowledge or expertise, instead of being designed for a new learner. In general, try to state things simply rather than speaking to just the "experts" reading the the text. 
+When documentation or on-screen text is written for someone with considerable knowledge or expertise, instead of being designed for a new learner. In general, try to state things simply rather than speaking to just the "experts" reading the the text.
 
-If something is extremely difficult to understand, and yet still justified in the mind of the writer, we call it "Crimson Force Field". This term is intended to evoke the emotional response of coming across something that is difficult to understand, so writers of Crimson Force Field material can empathize with the readers. Crimson Force Field is drawn from an esoteric episode of Star Trek and it is unlikely anyone but the originator of the term understands its complete meaning. Crimson Force Field is itself Crimson Force Field.  
+If something is extremely difficult to understand, and yet still justified in the mind of the writer, we call it "Crimson Force Field". This term is intended to evoke the emotional response of coming across something that is difficult to understand, so writers of Crimson Force Field material can empathize with the readers. Crimson Force Field is drawn from an esoteric episode of Star Trek and it is unlikely anyone but the originator of the term understands its complete meaning. Crimson Force Field is itself Crimson Force Field.
 
 Help Wanted
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-`Help Wanted tickets <http://docs.mattermost.com/process/help-wanted.html>`_, which are vetted changes to the source code open for community contributions. 
+`Help Wanted tickets <http://docs.mattermost.com/process/help-wanted.html>`_, which are vetted changes to the source code open for community contributions.
 
-Improvement 
+Improvement
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A beneficial change to code that is not fixing a bug.
@@ -415,11 +427,9 @@ An attempt to add functionality through a massive, complex one-time re-write hop
 Training
 --------------------------
 
-At Mattermost, Inc., "Learn, Master, Teach" cycles are core to our culture.
+At Mattermost, "Learn, Master, Teach" cycles are core to our culture. You should be constantly growing and cross-training into new skills and responsibilities, developing expertise, and then training your replacement as you prepare to take on new challenges.
 
-We want you to constantly grow and cross-train into new skills and responsibilities, develop effective expertise, and then train your replacement as you prepare to take on new challenges.
-
-Cross-training creates a culture of constant growth, protects against "single-points of failure", and challenges each of us to rise to our fullest potential.
+Cross-training creates a culture of constant growth, protects against single-points of failure, and challenges each of us to rise to our fullest potential.
 
 
 Roles
@@ -482,6 +492,11 @@ Relevant Docs
 
 1. :doc:`design-process`
 
+Software Strategy
+^^^^^^^^^^^^^^^^^^^
+
+1. `Monetizing Open Source (Or, All Enterprise Software) <http://a16z.com/2017/04/10/monetizing-open-source-enterprise-software/>`_ - Required reading for business roles
+
 System Security
 ^^^^^^^^^^^^^^^
 
@@ -491,96 +506,68 @@ Papers & Course Materials
 2. `Computer Security in the Real World. Butler Lampson <http://research.microsoft.com/en-us/um/people/blampson/69-SecurityRealIEEE/69-SecurityRealIEEE.pdf>`_ - Fundamental challenges with system security.
 3. `Course notes from CS513: System Security (Cornell University). Fred B. Schneider <http://www.cs.cornell.edu/courses/cs513/2007fa/02.outline.html>`_ - Well written introduction to system security from one of the leaders in the field.
 
+Additional Training Resources
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Recommended training materials are recommended by role at three different levels of priority:
+
+1. P1 - Required - Complete within 30 days of starting in role.
+2. P2 - Priority - Complete within 30-90 days of starting.
+3. P3 - Supplementry - Complete within 180 days.
+
+The following chart outlines training materials by category, with notes on which materials are relevant to which disciplines by P1, P2, P3 priority:
+
+.. raw:: html
+
+    <embed>
+        <iframe class="airtable-embed" src="https://airtable.com/embed/shrbjzgakQoNaXhYt?backgroundColor=gray&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="1320" style="background: transparent; border: 1px solid #ccc;"></iframe>
+        <p>&nbsp;</p>
+    </embed>
+
+The following table summarizes abbreviations used in the above table:
+
+.. raw:: html
+
+    <embed>
+        <iframe class="airtable-embed" src="https://airtable.com/embed/shrlwbsr0Y9telZn8?backgroundColor=gray&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="395" style="background: transparent; border: 1px solid #ccc;"></iframe>
+        <p>&nbsp;</p>
+    </embed>
 
 
-High Performance Teams
-^^^^^^^^^^^^^^^^^^^^^^
-
-Books
-
-1. `High Output Management. Andy Grove <https://www.amazon.com/dp/B015VACHOK/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1>`_ - Potentially the most important book on management you'll ever read. From formoer CEO of Intel.
-2. `Creativity, Inc. Ed Catmull <https://www.amazon.com/Creativity-Inc-Overcoming-Unseen-Inspiration-ebook/dp/B00FUZQYBO/ref=sr_1_1?s=books&ie=UTF8&qid=1466393928&sr=1-1&keywords=creativity%2C+inc>`_ - Achieving high performance through process and culture. From CEO fo Pixar.
-3. `How to Win Friends and Influence People <https://www.amazon.com/How-Win-Friends-Influence-People-ebook/dp/B003WEAI4E/ref=sr_1_1?s=books&ie=UTF8&qid=1466394700&sr=1-1&keywords=how+to+win+friends+and+influence+people>`_ - How to build interpersonal skills to work more effectively in teams.
-
-Articles
-
-1. `Fire & Motion. Joel Spolsky <http://www.joelonsoftware.com/articles/fog0000000339.html>`_ - How to get more things done in less time by doing a little every day.
-
-Culture
-^^^^^^^
-
-Video
-
-1. `Tribes. Seth Godin at TED <https://www.ted.com/talks/seth_godin_on_the_tribes_we_lead>`_  (17m) Creating effective teams through bottoms-up culture.
-
-Books
-
-1. `Tribes. Seth Godin <https://www.amazon.com/Tribes-We-Need-You-Lead/dp/1591842336?ie=UTF8&ref_=asap_bc>`_ - Creating effective teams through bottoms-up culture.
-2. `Inside Apple. Adam Lashinsky <https://www.amazon.com/Inside-Apple-Americas-Admired---Secretive--Company-ebook/dp/B005LH4Y3G/ref=sr_1_1?s=books&ie=UTF8&qid=1466393946&sr=1-1&keywords=inside+apple>`_ - Achieving high performance in top-down culture.
-
-
-Marketing
-^^^^^^^^^
-
-Video
-
-- `Getting Ideas to Spread. Seth Godin. TED. <https://www.ted.com/talks/seth_godin_on_sliced_bread#t-631421>`_ (17m) - Focus your messaging on a clear target market, not the "average".
-
-Books
-
-1. `Marketing Principles (1-2h read) <http://www.barcharts.com/9781423215042-details.aspx#.V2dn3vkrJ1M>`_ - Crash course on marketing terminology and concepts.
-2. `All Marketers Tell Stories, Seth Godin <https://www.amazon.com/All-Marketers-Are-Liars-Works---ebook/dp/B00315QK8M/ref=sr_1_1?s=books&ie=UTF8&qid=1466393785&sr=1-1&keywords=%22all+marketers+are+liars%22>`_ - Ideas for creating compelling messages.
-
-High Performance Mindsets
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Books
-
-1. `Checklist Manifesto. Atul Gawande <https://www.amazon.com/dp/B0030V0PEW/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1>`_ - How to reduce errors by reducing complexity using checklists.
-2. `Getting Things Done. David Allen <https://www.amazon.com/Getting-Things-Done-Stress-Free-Productivity/dp/0142000280>`_ - How to do more in less time.
-
-Software Development Process
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-1. `Scrum. Jeff Sutherland <https://www.amazon.com/Scrum-Doing-Twice-Work-Half/dp/038534645X/ref=sr_1_1?ie=UTF8&qid=1466396699&sr=8-1&keywords=scrum>`_ (256 pages) - One point of view on agile software development, with examples.
-
-2. `ISTQB Certification Study Guide <http://istqbexamcertification.com/>`_ - Common terminology & process in software development.
-
-Quality
-^^^^^^^
-
-Video
-
-1. `This is broken. Seth Godin <https://www.ted.com/talks/seth_godin_this_is_broken_1>`_ (~20m) - Why bad design happens.
-
-
-Interaction Design
-^^^^^^^^^^^^^^^^^^
-
-Primer
-
-1. `Stanford Design School "bootcamp bootleg" <https://dschool.stanford.edu/wp-content/uploads/2011/03/BootcampBootleg2010v2SLIM.pdf>`_ (47 pages) - Crash course in "design thinking".
-
-Video
-
-1. `IDEO shopping cart project <https://www.youtube.com/watch?v=taJOV-YCieI>`_ (22m) - Illustration of design thinking
-
-Books
-
-1. `Don't Make Me Think, Revisited. Steven Krug <https://www.amazon.com/Dont-Make-Think-Revisited-Usability/dp/0321965515/ref=sr_1_1?s=books&ie=UTF8&qid=1466393824&sr=1-1&keywords=don%27t+make+me+think>`_ - Principles of effective UX design.
-2. `Evil by Design. Chris Nodder <https://www.amazon.com/Evil-Design-Interaction-Lead-Temptation/dp/1118422147/ref=sr_1_1?s=books&ie=UTF8&qid=1466393849&sr=1-1&keywords=evil+by+design>`_ - Pitfalls of effective UX design.
-
-Blogs
-
-1. `Nielsen Norman Group <https://www.nngroup.com/articles/>`_ - Many good articles and concepts on UX design.
-
-Leadership Coaching 
+Leadership Coaching
 --------------------------
 
-To advanced the skills of senior and functional leaders beyond standard materials and processes, we bring in leading experts to advise our leaders and the company on key functions, including sales, operations, strategy and general management. 
+To advanced the skills of senior and functional leaders beyond standard materials and processes, we bring in leading experts to advise our leaders and the company on key functions, including sales, operations, strategy and general management.
 
-- As an example, `Jono Bacon <http://www.jonobacon.org/about/>`_--a leading author, speaker and consultant on open source community advocacy--meets with our community team regularly to refine our processes and understanding. There's a range of similiarly adept company advisers that help advance our thinking and capabilities in critical ways. 
+- As an example, `Jono Bacon <http://www.jonobacon.org/about/>`_--a leading author, speaker and consultant on open source community advocacy--meets with our community team regularly to refine our processes and understanding. There's a range of similiarly adept company advisers that help advance our thinking and capabilities in critical ways.
 
-Many thought leaders and conference speakers are open to consulting projects with the right clients, and Mattermost is an excellent client. There's no travel involved, we meet over video conference, we're easy to work with, and we take advising seriously. Advising is a critical part of growing our people and our company. 
+Many thought leaders and conference speakers are open to consulting projects with the right clients, and Mattermost is an excellent client. There's no travel involved, we meet over video conference, we're easy to work with, and we take advising seriously. Advising is a critical part of growing our people and our company.
 
-We are also open to bringing in a leader's personal mentors as consultants and company advisers when skill sets are appropriate. 
+We are also open to bringing in a leader's personal mentors as consultants and company advisers when skill sets are appropriate.
+
+---------------------------------------------------------
+Mattermost Avatar
+---------------------------------------------------------
+
+When becoming a core committer to the Mattermost project we create a "Mattermost Avatar" for you as a fun way to recognize your new level of contribution. 
+
+Mattermost avatars are caricatures of core committers in the costume of a popular culture character (e.g. Spiderman, Wonder Woman, Luke Skywalker, etc.) created for personal use. 
+
+To have a Mattermost avatar created, you'll be invited to create a Mattermost avatar via email and asked to provide the following: 
+
+1. The name of your character from popular culture (e.g. Spiderman, Wonder Woman, Luke Skywalker, etc.) 
+2. A clear image at least 600 pixels high and 600 pixels wide showing your character 
+3. Send a clear photo of your face at least 600 pixels high and 600 pixels wide pointing in the same direction as your character image 
+
+You should receive your digital Mattermost avatars by email in 6-8 weeks. 
+
+In special cases, a Mattermost avatar may be created for someone from the Mattermost community who has made an extraordinary contribution to the open source project. 
+
+- Example of photo from core committer: `Corey Hulen, co-creator of the Mattermost open source project <https://cloud.githubusercontent.com/assets/177788/25364362/c2fee10c-2916-11e7-9de3-2947987a9dce.png>`_  
+
+- Example of reference image for popular culture character: `Han Solo from the movie Star Wars  <https://cloud.githubusercontent.com/assets/177788/25364375/e49415bc-2916-11e7-94ae-038a120743b3.png>`_ 
+
+Example of finished Mattermost Avatar: 
+
+.. image:: https://cloud.githubusercontent.com/assets/177788/25364270/0425b738-2916-11e7-9a23-5ced2d9dfc8f.png
+

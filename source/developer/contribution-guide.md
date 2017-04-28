@@ -1,16 +1,25 @@
 # Code Contribution Guidelines
 
-Thank you for your interest in contributing to Mattermost. Here's the process:  
+Thank you for your interest in contributing to Mattermost. To help with translations, [see the localization process](https://docs.mattermost.com/developer/localization.html). For code contributions, here's the process:  
 
 ## Choose a Ticket
 
 1. Choose a ticket from the [Help Wanted GitHub Issues](https://github.com/mattermost/platform/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20%5BHelp%20Wanted%5D) list.
-    - Choose any ticket marked "Open", even if it's assigned, and comment to let people know you're working on it. 
-    - If you're looking for a quick ticket, pick something from the [Good First Contribution](https://mattermost.atlassian.net/issues/?filter=10206) list instead.
+    - Make sure that it doesn't have an [open pull request](https://github.com/mattermost/platform/pulls) for it.
 
-2. If you have questions post in [Mattermost forum](http://forum.mattermost.org/) or join the [Contributors](https://pre-release.mattermost.com/core/channels/tickets) channel and announce the ticket you'd like to work on so it can be assigned to you. 
+2. Before starting to work on the ticket, comment to let people know you're working on it.
 
-It's okay to submit PRs to fix obvious bugs or add small improvements, but anything that significantly changes behavior or user expectations [requires a Help Wanted issue opened by the core team](http://docs.mattermost.com/process/help-wanted.html) so that the change can be tested, documented and supported. 
+3. If you have questions, post them in [Mattermost forum](http://forum.mattermost.org/) or join the [Contributors](https://pre-release.mattermost.com/core/channels/tickets) channel and announce the ticket you'd like to work on so it can be assigned to you. 
+
+It is fine to submit a PR for a bug or an incremental improvement with less than 20 lines of code change without a Help Wanted issue if the change to existing behaviour is small. Some examples include
+
+ - [Fix a formatting error in help text](https://github.com/mattermost/platform/pull/5640)
+ - [Fix success typo in Makefile](https://github.com/mattermost/platform/pull/5809)
+ - [Fix broken Cancel button in Edit Webhooks screen](https://github.com/mattermost/platform/pull/5612)
+ - [Fix Android app crashing when saving user notification settings](https://github.com/mattermost/mattermost-mobile/pull/364)
+ - [Fix recent mentions search not working](https://github.com/mattermost/platform/pull/5878)
+
+Core committers who review the PR are entitled to reject the PR if it significantly changes behavior or user expectations, which [requires a Help Wanted issue opened by the core team](http://docs.mattermost.com/process/help-wanted.html) so that the change can be tested, documented and supported.
 
 The best way to discuss opening a Help Wanted ticket with the core team is by [starting a conversation in the feature idea forum](https://www.mattermost.org/feature-ideas/).
 
@@ -29,7 +38,7 @@ Once you have a ticket:
 Before submitting a pull request (PR), check that:  
 
 1. You’ve signed the [Contributor License Agreement](http://www.mattermost.org/mattermost-contributor-agreement/), so you can be added to the Mattermost [Approved Contributor List](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true).  
-2. Your change has a [Help Wanted ticket](http://docs.mattermost.com/process/help-wanted.html).
+2. Your change has a [Help Wanted ticket](http://docs.mattermost.com/process/help-wanted.html)
 3. Your code follows the [Mattermost Style Guide](http://docs.mattermost.com/developer/style-guide.html).  
 4. Unit tests are included for new server side functionality. 
 5. Strings in user interface are included in [.../i18n/en.json](https://github.com/mattermost/platform/blob/master/i18n/en.json) and [.../webapp/i18n/en.json](https://github.com/mattermost/platform/tree/master/webapp/i18n/en.json) localization files. Files for other languages will automatically be updated through the [Mattermost Translation Server](http://translate.mattermost.com) and do not need to be included in the pull request.
@@ -63,7 +72,9 @@ After submitting a PR, before it is merged:
         - Works as expected
         - Meets [UX guidelines](https://docs.mattermost.com/developer/fx-guidelines.html)
     - The Product Manager may come back with some bugs or UI improvements to fix before the pull request moves on to dev review.
-3. Dev review must pass
+3. CSS review must pass
+    - Any pull request containing CSS changes should be reviewed by the UX and HTML/CSS dev.
+4. Dev review must pass
     - Two core committers will review the pull request and either give feedback or approve the PR.
     - Any comments will need to be addressed before the pull request is ready to merge.
 

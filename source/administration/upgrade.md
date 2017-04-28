@@ -11,10 +11,16 @@ To start, select one of the following guides:
 
 ## Upgrade Team Edition to 3.1.x and later
 
-1. Download the **appropriate next upgrade** of your Team Edition server and note any compatibility procedures
+**Important Note:** Security-related changes require you to specify the Site URL setting when upgrading to `v3.6.x` and later. The Site URL can be set in the `config.json` or in **System Console** > **General > Configuration** > [**Site URL**](https://docs.mattermost.com/administration/config-settings.html#site-url). If you are using GitLab Mattermost, you must set the Site URL in the `gitlab.rb` file.
+
+**To upgrade your system**:
+
+1. Download the **appropriate next upgrade** of your Team Edition server and note any compatibility procedures:
       1. Run `platform -version` to check the current version of your Mattermost server
       2. Determine the appropriate next upgrade for your server:
-          - Mattermost `v3.0.x` and later can upgrade directly to the [latest release of Mattermost](https://about.mattermost.com/download/).
+          - Mattermost `v3.0.x` and later can upgrade directly to the [latest release of Mattermost](https://about.mattermost.com/download/) considering the conditions below:
+              - Note: Upgrading to `v3.8.x` and later, you must ensure that the **System Console** > **General > Logging** > [**File Log Directory**](https://docs.mattermost.com/administration/config-settings.html#file-log-directory) field is either empty or contains a directory path. It must not have a filename as part of the path. 
+              - Note: Upgrading to `v3.7.x` and later will invalidate existing team invite links and email verifications.
               - Note: If public links are enabled, upgrading from `v3.3.x` and earlier to `v3.4.x` and later will invalidate existing public links due to a security upgrade allowing admins to invalidate links by resetting a public link salt from the System Console.
               - Note: RHEL6 and Ubuntu installations must verify the line `limit nofile 50000 50000` is included in `/etc/init/mattermost.conf` file. See the [installation guide](https://docs.mattermost.com/guides/administrator.html#install-guides) for your operating system for more details.
               - Note: RHEL7 and Debian installations must verify the line `LimitNOFILE=49152` is included in the `/etc/systemd/system/mattermost.service` file. See the [installation guide](https://docs.mattermost.com/guides/administrator.html#install-guides) for your operating system for more details.
@@ -22,6 +28,7 @@ To start, select one of the following guides:
           - Mattermost `v2.1.x` and below must follow the process to [upgrade to `v3.0.x`](https://docs.mattermost.com/administration/legacy-upgrade.html#upgrade-team-edition-to-3-0-x) before upgrading further
       3. Use the [Version Archive table](https://docs.mattermost.com/administration/upgrade.html#version-archive) to find the `[RELEASE URL]` for your desired version and enter `wget [RELEASE URL]` to download. For example, to download `vX.X.X`, use `wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz`.
       4. Review **Compatibility** section in [CHANGELOG](https://docs.mattermost.com/administration/changelog.html) for the version downloaded and make sure to follow any instructions.
+      5. Review past and upcoming deprecation notices [listed on our website](https://about.mattermost.com/deprecated-features/).
 2. Stop the Mattermost Server
       1. Consider posting an announcement to active teams about stopping the Mattermost server for an upgrade.
       2. To stop the server run `sudo stop mattermost`.
@@ -29,18 +36,27 @@ To start, select one of the following guides:
       1. Back up your `config.json` file, which contains your system configuration. This will be used to restore your current settings after the new version is installed.
       2. Backup your database using your organization's standard procedures for backing up MySQL or PostgreSQL.
       3. If you're using local file storage, back up the location where files are stored.
-5. Install new version
+4. Install new version
       1. Run `tar -xvzf mattermost-team-X.X.X-linux-amd64.tar.gz` to decompress the upgraded version and replace the current version of Mattermost on disk, where `X.X.X` is the version number to which you are upgrading.  
-6. Restore the state of your server
+5. Restore the state of your server
       1. Copy the backed up version of `config.json` in place of the default `config.json`.
-7. Start your server and address any setting changes relevant in the latest version of Mattermost
+6. Start your server and address any setting changes relevant in the latest version of Mattermost
       1. Run `sudo start mattermost`.
       2. Opening the **System Console** and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added.
-8. If you have TLS set up on your Mattermost server, run `sudo setcap cap_net_bind_service=+ep ./bin/platform` in your Mattermost directory to allow Mattermost to bind to low ports.
-9. Test the system is working by going to the URL of the server with an `https://` prefix.
+7. If you have TLS set up on your Mattermost server, run `sudo setcap cap_net_bind_service=+ep ./bin/platform` in your Mattermost directory to allow Mattermost to bind to low ports.
+8. Test the system is working by going to the URL of the server with an `https://` prefix.
       1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 
 ## Upgrade Enterprise Edition to 3.1.x and later
+
+**Important Note:** Security-related changes were made in 3.8 that require you to verify settings in the System Console before upgrading from version 3.7.x and earlier to any version greater than 3.8.0.
+
+**To prepare your system when upgrading from 3.7.x and earlier**:
+
+  1. In the System Console, go to **General > Configuration** and make sure that the **Site URL** is specified. It must not be empty.
+  2. In the System Console, go to **General > Logging** and make sure that the **File Log Directory** field is either empty or has a directory path only. It must not have a filename as part of the path.
+
+**To upgrade your system**:
 
 1. Download the **appropriate next upgrade** of your Team Edition server and note any compatibility procedures
       1. Run `platform -version` to check the current version of your Mattermost server
@@ -55,6 +71,7 @@ To start, select one of the following guides:
           - Mattermost `v2.1.x` and below must follow the process to [upgrade to `v3.0.x`](https://docs.mattermost.com/administration/legacy-upgrade.html#upgrade-enterprise-edition-to-3-0-x) before upgrading further
       3. Use the [Version Archive List](https://docs.mattermost.com/administration/upgrade.html#version-archive) to find the `[RELEASE URL]` for your desired version and enter `wget [RELEASE URL]` to download. For example, to download `vX.X.X`, use `wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz`.
       4. Review **Compatibility** section in [CHANGELOG](https://docs.mattermost.com/administration/changelog.html) for the version downloaded and make sure to follow any instructions.
+      5. Review past and upcoming deprecation notices [listed on our website](https://about.mattermost.com/deprecated-features/).
 2. Stop the Mattermost Server
       1. Consider posting an announcement to active teams about stopping the Mattermost server for an upgrade.
       2. To stop the server run `sudo stop mattermost`.
@@ -62,15 +79,15 @@ To start, select one of the following guides:
       1. Back up your `config.json` file, which contains your system configuration. This will be used to restore your current settings after the new version is installed.
       2. Backup your database using your organization's standard procedures for backing up MySQL or PostgreSQL.
       3. If you're using local file storage, back up the location where files are stored.
-5. Install new version
+4. Install new version
       1. Run `tar -xvzf mattermost-X.X.X-linux-amd64.tar.gz` to decompress the upgraded version and replace the current version of Mattermost on disk, where `X.X.X` is the version number to which you are upgrading.  
-6. Restore the state of your server
+5. Restore the state of your server
       1. Copy the backed up version of `config.json` in place of the default `config.json`.
-7. Start your server and address any setting changes relevant in the latest version of Mattermost
+6. Start your server and address any setting changes relevant in the latest version of Mattermost
       1. Run `sudo start mattermost`.
       2. Opening the **System Console** and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added.
-8. If you have TLS set up on your Mattermost server, run `sudo setcap cap_net_bind_service=+ep ./bin/platform` in your Mattermost directory to allow Mattermost to bind to low ports.
-9. Test the system is working by going to the URL of the server with an `https://` prefix.
+7. If you have TLS set up on your Mattermost server, run `sudo setcap cap_net_bind_service=+ep ./bin/platform` in your Mattermost directory to allow Mattermost to bind to low ports.
+8. Test the system is working by going to the URL of the server with an `https://` prefix.
       1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 
 ## Upgrade Team Edition to Enterprise Edition
@@ -101,12 +118,16 @@ Private cloud enterprise communications server.
 
 -------
 
-- Mattermost Enterprise Edition v3.7.3 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-7-3) - [Download](https://releases.mattermost.com/3.7.3/mattermost-3.7.3-linux-amd64.tar.gz)
-  - `https://releases.mattermost.com/3.7.3/mattermost-3.7.3-linux-amd64.tar.gz`
-  - SHA-256 Checksum: `484bb9eea7be5059e923782e56e23e719136c74fe56817f8200bc1dbf79ad273`
-- Mattermost Enterprise Edition v3.6.5 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-6-5) - [Download](https://releases.mattermost.com/3.6.5/mattermost-3.6.5-linux-amd64.tar.gz)
-  - `https://releases.mattermost.com/3.6.5/mattermost-3.6.5-linux-amd64.tar.gz`
-  - SHA-256 Checksum: `9fe0fe552eda7e6cb0ba87fea45945ff1193a54618ced32cce107212b6057534`
+
+- Mattermost Enterprise Edition v3.8.2 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-8-2) - [Download](https://releases.mattermost.com/3.8.2/mattermost-3.8.2-linux-amd64.tar.gz)
+  - `https://releases.mattermost.com/3.8.2/mattermost-3.8.2-linux-amd64.tar.gz`
+  - SHA-256 Checksum: `b99c86a2667f636eaee26331aa61a71a51b2d3d412eaa83fdebf8b53cddc6aeb`
+- Mattermost Enterprise Edition v3.7.5 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-7-5) - [Download](https://releases.mattermost.com/3.7.5/mattermost-3.7.5-linux-amd64.tar.gz)
+  - `https://releases.mattermost.com/3.7.5/mattermost-3.7.5-linux-amd64.tar.gz`
+  - SHA-256 Checksum: `65e65da661edbc7b7b2b02411f13dbe498fd704d5ae1289789feca79fe00b58a`
+- Mattermost Enterprise Edition v3.6.7 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-6-7) - [Download](https://releases.mattermost.com/3.6.7/mattermost-3.6.7-linux-amd64.tar.gz)
+  - `https://releases.mattermost.com/3.6.7/mattermost-3.6.7-linux-amd64.tar.gz`
+  - SHA-256 Checksum: `8e666708fead5fbfcf1f20617b07fda21cc8cbc85f9690321cbf4a41bfc1dd89`
 - Mattermost Enterprise Edition v3.5.1 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-5-1) - [Download](https://releases.mattermost.com/3.5.1/mattermost-3.5.1-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/3.5.1/mattermost-3.5.1-linux-amd64.tar.gz`
   - SHA-256 Checksum: `b972ac6f38f8b4c4f364e40a7c0e7819511315a81cb38c8a51c0622d7c5b14a1`
@@ -141,12 +162,15 @@ Open source self-hosted team communication server compiled by Mattermost, Inc, a
 
 -------
 
-- Mattermost Team Edition v3.7.3 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-7-3) - [Download](https://releases.mattermost.com/3.7.3/mattermost-team-3.7.3-linux-amd64.tar.gz)
-  - `https://releases.mattermost.com/3.7.3/mattermost-team-3.7.3-linux-amd64.tar.gz`
-  - SHA-256 Checksum: `c1a2585a1c4742070e71d94220b70cdfc72fd77e53cc693c0c47e283727f83ff`
-- Mattermost Team Edition v3.6.5 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-6-5) - [Download](https://releases.mattermost.com/3.6.5/mattermost-team-3.6.5-linux-amd64.tar.gz)
-  - `https://releases.mattermost.com/3.6.5/mattermost-team-3.6.5-linux-amd64.tar.gz`
-  - SHA-256 Checksum: `62ceb2a097013a80113096e8df36c3bb8986561dc7929ad4dac72e3c582dfed9`
+- Mattermost Team Edition v3.8.2 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-8-2) - [Download](https://releases.mattermost.com/3.8.2/mattermost-team-3.8.2-linux-amd64.tar.gz)
+  - `https://releases.mattermost.com/3.8.2/mattermost-team-3.8.2-linux-amd64.tar.gz`
+  - SHA-256 Checksum: `82cc85557dc21b3871ec89326769c11d3a89c9c41362fb3945247f8fba562ce7`
+- Mattermost Team Edition v3.7.5 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-7-5) - [Download](https://releases.mattermost.com/3.7.5/mattermost-team-3.7.5-linux-amd64.tar.gz)
+  - `https://releases.mattermost.com/3.7.5/mattermost-team-3.7.5-linux-amd64.tar.gz`
+  - SHA-256 Checksum: `eaee6a57ab9e2924f71853cbebf465d63f7dbf1112716c0e4768984de39f83a2`
+- Mattermost Team Edition v3.6.7 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-6-7) - [Download](https://releases.mattermost.com/3.6.7/mattermost-team-3.6.7-linux-amd64.tar.gz)
+  - `https://releases.mattermost.com/3.6.7/mattermost-team-3.6.7-linux-amd64.tar.gz`
+  - SHA-256 Checksum: `8378f15a6bd070386077798f36d8e521b63844bc838f6553915c6fd4fba3b01d`
 - Mattermost Team Edition v3.5.1 - [View Changelog](https://docs.mattermost.com/administration/changelog.html#release-v3-5-1) - [Download](https://releases.mattermost.com/3.5.1/mattermost-team-3.5.1-linux-amd64.tar.gz)
   - `https://releases.mattermost.com/3.5.1/mattermost-team-3.5.1-linux-amd64.tar.gz`
   - SHA-256 Checksum: `2c6bc8b1c25e48d1ac887cd6cbef77df1f80542127b4d98c4d7c0dfbfade04d5`

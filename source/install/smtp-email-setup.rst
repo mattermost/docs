@@ -145,7 +145,7 @@ Checking your SMTP server is reachable
    reachable.
 -  You must run the following commands from the same machine or virtual
    instance where ``mattermost/bin/platform`` is located. So if you're
-   running Mattermost from docker you need to
+   running Mattermost from Docker you need to
    ``docker exec -ti mattermost-dev /bin/bash``
 -  Telnet to the email server with ``telnet mail.example.com 25``. If
    the command works you should see something like
@@ -165,3 +165,7 @@ Checking your SMTP server is reachable
        250-STARTTLS
        250-PIPELINING
        250 8BITMIME
+
+.. note::
+  For additional troubleshooting tips, see
+  the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`_. To submit an improvement or correction, click  **Edit** at the top of this page.

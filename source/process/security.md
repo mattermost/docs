@@ -38,11 +38,11 @@ The commercial Mattermost Enterprise Edition extends the security and productivi
 
 #### Reporting 
 
-* Mattermost uses a [responsible disclosure policy](https://www.mattermost.org/responsible-disclosure-policy/) to accept confidential reports of new threats, so they can be addressed either immediately through a dot release, or by the next bi-monthly release depending on potential impact. 
+* Mattermost uses a [responsible disclosure policy](https://www.mattermost.org/responsible-disclosure-policy/) to accept confidential reports of new threats, so they can be addressed either immediately through a dot release, or by the next monthly release depending on potential impact. 
 * When Mattermost software undergoes security and penetration testing at customer sites security updates are added to the core software and [publicly documented by release](https://about.mattermost.com/security-updates/). 
 
 #### Patch Management 
-* Critical updates are released for urgent, high priority security issues or critical losses of functionality that should not wait for the next bi-monthly release. 
+* Critical updates are released for urgent, high priority security issues or critical losses of functionality that should not wait for the next monthly release. 
 * Mattermost software has a mandatory upgrade policy and customers and users need to be on the latest release to receive critical updates. 
 * Critical updates are delivered as dot releases, for example a critical update to release `3.1.0` would be named `3.1.1`.
 * Customers and subscribers to the Security Bulletin [mailing list](http://eepurl.com/cAl5Rv) receive notifications about all critical updates. 

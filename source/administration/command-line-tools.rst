@@ -26,7 +26,7 @@ From the directory where the Mattermost platform is installed, a
 -  Creating channels
 -  Inviting users to channels
 -  Removing users from channels
--  Listing all public channels and private groups for a team
+-  Listing all channels for a team
 -  Restoring previously deleted channels
 -  Migrating sign-in options
 -  Resetting multi-factor authentication for a user
@@ -496,7 +496,7 @@ platform user create
   Examples
     .. code-block:: none
 
-      sudo ./platform user create --email user@example.com --username userexample --password Password1 
+      sudo ./platform user create --email user@example.com --username userexample --password Password1
       sudo ./platform user create --firstname Joe --system_admin --email joe@example.com --username joe --password Password1
 
   Options
@@ -671,7 +671,7 @@ platform version
 Mattermost 3.5 and earlier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Typing ``sudo ./platform -help`` brings up documentation for the CLI tool. To return the help documentation in GitLab omnibus, type 
+Typing ``sudo ./platform -help`` brings up documentation for the CLI tool. To return the help documentation in GitLab omnibus, type
 
     .. code-block:: none
 
@@ -719,7 +719,7 @@ CLI Documentation:
       -channel_type="type"	        The channel type used in other commands
                                         valid values are
                                           "O" - public channel
-                                          "P" - private group
+                                          "P" - private channel
 
       -role="system_admin"               The role used in other commands
                                          valid values are
@@ -775,7 +775,7 @@ CLI Documentation:
           Example:
               platform -leave_channel -email="user@example.com" -team_name="name" -channel_name="channel_name"
 
-      -list_channels                     Lists all public channels and private groups for a given team.
+      -list_channels                     Lists all channels for a given team.
                                          It will append ' (archived)' to the channel name if archived.  It requires the
                                          -team_name flag.  Requires an enterprise license.
           Example:

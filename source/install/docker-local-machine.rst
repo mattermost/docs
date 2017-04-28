@@ -9,6 +9,10 @@ Note: This configuration should not be used in production, as it's using a known
 
 If you're looking for a production installation with Docker, please see the `Mattermost Production Docker Deployment Guide <http://docs.mattermost.com/install/prod-docker.html>`_.
 
+.. note::
+  If you have any problems installing Mattermost, see
+  the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`_. To submit an improvement or correction, click  **Edit** at the top of this page.
+  
 One-line Docker Install
 -----------------------
 
@@ -40,7 +44,7 @@ Windows 10
 2. Run:
    ``docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview``
 
-3. When docker is done fetching the image, open ``http://localhost:8065/``
+3. When Docker is done fetching the image, open ``http://localhost:8065/``
    in your browser.
 
 Ubuntu
@@ -59,14 +63,37 @@ Ubuntu
        sudo service docker start
        newgrp docker
 
-2. Start docker container:
+2. Start Docker container:
 
    .. code:: bash
 
        docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview
 
-3. When docker is done fetching the image, open ``http://localhost:8065/``
+3. When Docker is done fetching the image, open ``http://localhost:8065/``
    in your browser.
+
+Fedora
+^^^^^^
+
+1. Follow the instructions at https://docs.docker.com/engine/installation/linux/fedora/ or use the summary below:
+
+   ..  code:: bash
+      
+        sudo dnf -y install dnf-plugins-core
+        sudo dnf config-manager \
+        --add-repo \
+        https://download.docker.com/linux/fedora/docker-ce.repo
+        sudo dnf install docker-ce docker-compose git # Accepting the new docker repository key
+        sudo usermod -aG docker <username>
+        sudo systemctl start docker
+ 
+2. Start Docker container: 
+
+   .. code:: bash
+      
+        docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview
+       
+3. When Docker is done fetching the image, open http://localhost:8065/ in your browser.
 
 Arch
 ^^^^
