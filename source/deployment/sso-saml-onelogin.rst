@@ -93,7 +93,7 @@ Configure SAML for Mattermost
 
   .. image:: ../../source/images/okta_10_mattermost_basics.PNG
 
-3. (Optional) Configure Mattermost to verify the signature.
+3. (Recommended) Configure Mattermost to verify the signature.
   a. In the **Verify Signature** field, click **True**.
   b. In the **Service Provider Login URL**, enter ``https//<your-mattermost-url>/login/sso/saml``
 
