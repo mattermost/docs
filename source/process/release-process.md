@@ -307,12 +307,9 @@ Once final dot release build is ready to cut:
         - Release Quality
         - Release Process
         - Testing Process
-    - Close the release in Jira
-        - Go to [releases page](https://mattermost.atlassian.net/projects/PLT?selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased) in Jira
-        - Find the release, and select release
-        - Check how many unresolved tickets are left, and review them
-        - If there's only a few, and they all correctly belong to the release, then release it
-        - If there's a lot, ask the release manager to review to see if any tickets have the wrong fix version and should be moved
+    - Close the [release in Jira]([releases page](https://mattermost.atlassian.net/projects/PLT?selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased))
+        - If there are many unresolved tickets in the current release, ask the release manager to review the ticket queue
+        - Otherwise, release the fix version (Actions > [...] > Release)
     - Prepare tickets for the next release,  with a corresponding vX.X prefix
         - [Creating final release candidate](https://mattermost.atlassian.net/browse/PLT-2198)
         - [Test Gitlab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/PLT-2197)
