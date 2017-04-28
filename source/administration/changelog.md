@@ -86,7 +86,8 @@ Release Date: May 16, 2017
 - Collapsable Account Setting menus now properly open in iOS Safari and Chrome browsers.
 - Removing an expired license now removes the blue bar header message.
 - Deleted custom emoji no longer stay in "recently used" section of the emoji picker.
-  "Next" button in More Channels list now takes you to the top of the next page, instead of the bottom.
+- "Next" button in More Channels list now takes you to the top of the next page, instead of the bottom.
+- Blue bar "Preview Mode" header message now disappears after enabling email notifications.
 
 ### Compatibility  
 
@@ -140,7 +141,6 @@ This list has not been udpated and is a carryover from v3.8 changelog:
 - Sequential messages from the same user appear as separate posts on mobile view.
 - Search autocomplete picker is broken on Android.
 - Jump link in search results does not always jump to display the expected post.
-- Blue bar "Preview Mode" header message sometimes does not disappear after enabling email notifications. // XXX
 - First load of the emoji picker is slow at low connections.
 - Emoji picker for reactions doesn't always position correctly.
 - Scrollbar is sometimes not visible in the left-hand sidebar after switching teams.
