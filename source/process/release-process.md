@@ -114,6 +114,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - Update documentation:  
         - Submit Changelog PR
         - Draft [Mattermost Security Updates](http://about.mattermost.com/security-updates/), but do not post until 14 days after official release
+    - If there are any breaking compatibility changes in the release, open an issue in the [GitLab Omnibus](https://gitlab.com/gitlab-org/omnibus-gitlab) to make sure GitLab is aware. Post a link to the issue in the Release Discussion channel. 
 5. Docs:
     - Submit all doc PRs for review
     - Confirm changes to config.json in compatibility section of Changelog are written back to [settings documentation](http://docs.mattermost.com/administration/config-settings.html#configuration-settings)
@@ -205,6 +206,7 @@ The final release is cut. If an urgent and important issue needs to be addressed
     - Submit GitLab MR to take next Mattermost version in the Omnibus (see [example](https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests/998)):
         - Include changes to Mattermost version number ([`default_version`](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/config/software/mattermost.rb#L20)) and md5 sum of the final TE build ([`source md5`](https://gitlab.com/jasonblais/omnibus-gitlab/blob/master/config/software/mattermost.rb#L23)) in  [`config/software/mattermost.rb`](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/config/software/mattermost.rb)
         - Include a summary of updates in Team Edition that are relevant to GitLab
+        - Post a link to the MR in the Release Discussion channel 
     - Check Security Issues spreadsheet and confirm disclosure text
     - Check the security researcher was added to the [Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/) page
     - Confirm link to security updates appears in blog post if there are security updates in this release, with a note thanking the security researcher
@@ -240,6 +242,7 @@ If a bug fix release is required, run through the following steps:
     - Schedule a team Release Update meeting every day until the dot release is complete
     - Post links to approved tickets for next dot release RC to the Release Discussion channel
     - Make a post in Town Square announcing the dot release. [See example](https://pre-release.mattermost.com/core/pl/4aippek8yp8a3nex9anen5rjoc)
+    - Open an issue in the [GitLab Omnibus](https://gitlab.com/gitlab-org/omnibus-gitlab) mentioning a dot release is coming 
     - Update the GitHub meta issue:
         - Change the title to "Mattermost vx.x.x - RCx", where `vx.x.x` is the version number of the dot release
         - Post a comment to the meta issue with approved fixes for the next RC of the dot release
