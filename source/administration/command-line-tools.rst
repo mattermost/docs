@@ -80,6 +80,7 @@ platform
     -  `platform team`_ - Management of teams
     -  `platform user`_ - Management of users
     -  `platform version`_ - Display version information
+    -  `platform config`_ - Work with the configuration file
 
 platform channel
 -----------------
@@ -684,6 +685,35 @@ platform version
     .. code-block:: none
 
       platform version
+
+platform config
+---------------
+
+  Description
+    Commands for managing the configuration file.
+
+  Child Command
+    - `platform config validate`_ - Validate the configuration file.
+
+platform config validate
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Makes sure the configuration file has the following properties:
+
+    - Is valid JSON.
+    - Has attributes of the correct type, such as *bool*, *int*, and *str*.
+    - All entries are valid. For example, checks that entries are below the maximum length.
+
+    Format
+      .. code-block:: none
+
+        platform config validate
+
+    Example
+      .. code-block:: none
+
+        sudo ./platform config validate
 
 Mattermost 3.5 and earlier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
