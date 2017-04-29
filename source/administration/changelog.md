@@ -8,15 +8,20 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 Release Date: May 16, 2017
 
+### Security Update
+
+- Mattermost v3.9.0 contains a low severity [security update](http://about.mattermost.com/security-updates/). [Upgrading to Mattermost v3.9.0](http://docs.mattermost.com/administration/upgrade.html) is highly recommended.
+
 ### Highlights
 
 #### Redux
 
-// XXX
+- Mattermost Webapp moved over to Redux for increased performance and more stable infrustructure.
 
 #### APIv4 Stable Release
 
-// XXX
+- Mattermost HTTP REST APIs moved to v4 endpoints allowing for much more powerful server interaction.
+- To learn more about the available APIv4 endpoints, [see our documentation](https://api.mattermost.com/v4/).
 
 ### Improvements
 
@@ -93,6 +98,8 @@ Release Date: May 16, 2017
 
 #### Breaking changes:
 
+- If you're using NGINX as a proxy for the Mattermost Server, replace the `location /api/v3/users/websocket {` line with `location ~ /api/v[0-9]+/(users/)?websocket$ {` in the `/etc/nginx/sites-available/mattermost` NGINX configuration file. [See documentation to learn more](https://docs.mattermost.com/install/install-ubuntu-1404.html#configuring-nginx-as-a-proxy-for-mattermost-server).
+
 #### Removed and deprecated features
 - All APIv3 endpoints to be removed in November/2017 release (six months after APIv4 endpoints have gone stable).
 
@@ -123,7 +130,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### API Changes
 
-- APIv4 stable release // XXX
+- Mattermost 3.9 has a stable release of APIv4 endpoints. To see the complete list of available endpoints, see [https://api.mattermost.com/v4/](https://api.mattermost.com/v4/).
+- All APIv3 endpoints are scheduled for removal in November/2017 release (six months after APIv4 endpoints have gone stable).
 
 ### Websocket Event Changes
 
@@ -151,12 +159,11 @@ Many thanks to all our contributors. In alphabetical order:
 
 /platform:
 
-
 ## Release v3.8.0
 
 Release Date: April 16, 2017
 
-### Security Updates
+### Security Update
 
 - Mattermost v3.8.0 contains multiple [security updates](http://about.mattermost.com/security-updates/). [Upgrading to Mattermost v3.8.0](http://docs.mattermost.com/administration/upgrade.html) is highly recommended.
 
