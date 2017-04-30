@@ -551,7 +551,7 @@ Mattermost Avatar
 
 When becoming a core committer to the Mattermost project we create a "Mattermost Avatar" for you as a fun way to recognize your new level of contribution. 
 
-Mattermost avatars are caricatures of core committers in the costume of a popular culture character (e.g. Spiderman, Wonder Woman, Luke Skywalker, etc.) created for personal use. 
+Mattermost avatars are caricatures of core committers in the costume of a popular culture character (e.g. Spiderman, Wonder Woman, Luke Skywalker, etc.) created for personal use, and which may be potentially used in team rosters, demonstration sites, "group photos" where avatar images from the team are collected in one image of all the characters together, and other public uses. 
 
 To have a Mattermost avatar created, you'll be invited to create a Mattermost avatar via email and asked to provide the following: 
 
