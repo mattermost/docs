@@ -19,7 +19,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - **v3.8.0, released 2017-04-16**
    - Original 3.8 release
 
-### Security Updates
+### Security Update
 
 - Mattermost v3.8.0 contains multiple [security updates](http://about.mattermost.com/security-updates/). [Upgrading to Mattermost v3.8.0](http://docs.mattermost.com/administration/upgrade.html) is highly recommended.
 
