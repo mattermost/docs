@@ -1,6 +1,9 @@
 Configuring TLS on the Mattermost Server
 ========================================
 
+. Note::
+  You can skip this section if you will be using NGINX to specify the certificates in use and configure the TLS/SSL settings.
+
 1. Go to the **General** > **Configuration** section of the System Console.
 2. Change the **Listen Address** setting to ``:443``
 3. Change the **Connection Security** setting to ``TLS``
