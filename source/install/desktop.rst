@@ -50,29 +50,52 @@ The Mattermost desktop should open automatically.
 Linux (Beta)
 --------------------------------------------------
 
-1. Download latest version of the Mattermost desktop app:
+Ubuntu and Debian-based systems
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   - `x64.tar.gz <https://releases.mattermost.com/desktop/3.6.0/mattermost-desktop-3.6.0-linux-x64.tar.gz>`_
-   - `ia32.tar.gz <https://releases.mattermost.com/desktop/3.6.0/mattermost-desktop-3.6.0-linux-ia32.tar.gz>`_
-
-2. Extract the archive, then execute ``Mattermost`` which is located inside the extracted directory.
-
-3. If you need a Desktop Entry for the application to integrate into a desktop environment, please refer to https://wiki.archlinux.org/index.php/Desktop_entries
-
-To install the snap on [snap supported](https://snapcraft.io/docs/core/install) systems from the store.
-
-    snap install mattermost-desktop --beta
-
-To download the unofficial, community-driven .deb packages for the desktop application:
+Unofficial, community-driven .deb packages are available.
 
 1. Download latest version of the Mattermost desktop app:
 
-   - `amd64.deb <https://releases.mattermost.com/desktop/3.6.0/mattermost-desktop-3.6.0-linux-amd64.deb>`_
-   - `i386.deb <https://releases.mattermost.com/desktop/3.6.0/mattermost-desktop-3.6.0-linux-i386.deb>`_
+    64-bit systems
+     `mattermost-desktop-3.6.0-linux-amd64.deb <https://releases.mattermost.com/desktop/3.6.0/mattermost-desktop-3.6.0-linux-amd64.deb>`_
+    32-bit systems
+     `mattermost-desktop-3.6.0-linux-i386.deb <https://releases.mattermost.com/desktop/3.6.0/mattermost-desktop-3.6.0-linux-i386.deb>`_
 
-2. Open a terminal and execute the command ``sudo dpkg -i mattermost-desktop-<VERSION>-<ARCH>.deb``
+2. At the command line, execute one of the following commands depending on the package that you downloaded:
 
-3. Open **Dash** (located at top left corner) and input ``mattermost``, then click the Mattermost icon. The Mattermost desktop should open automatically.
+    64-bit systems
+      ``sudo dpkg -i mattermost-desktop-3.6.0-linux-amd64.deb``
+    32-bit systems
+      ``sudo dpkg -i mattermost-desktop-3.6.0-linux-i386.deb``
+
+3. To run Mattermost, open **Dash** (located at top left corner) and input ``mattermost``, then click the Mattermost icon.
+
+Generic Linux package
+~~~~~~~~~~~~~~~~~~~~~
+
+1. Download latest version of the Mattermost desktop app:
+
+  64-bit systems:
+   `mattermost-desktop-3.6.0-linux-x64.tar.gz <https://releases.mattermost.com/desktop/3.6.0/mattermost-desktop-3.6.0-linux-x64.tar.gz>`_
+  32-bit systems:
+   `mattermost-desktop-3.6.0-linux-ia32.tar.gz <https://releases.mattermost.com/desktop/3.6.0/mattermost-desktop-3.6.0-linux-ia32.tar.gz>`_
+
+2. Extract the archive to a convenient location. You can then execute ``mattermost-desktop``, which is located inside the extracted directory.
+
+3. To create a Desktop launcher, open the file ``README.md`` and follow the instructions in the *Desktop launcher* section.
+
+Snapcraft package
+~~~~~~~~~~~~~~~~~
+
+A snap is available for systems that have Snapcraft installed. Snapcraft is installed by default on Ubuntu 16.04 and later, but for most other Linux distributions you can install it manually. To install Snapcraft, see `Install snapd <https://snapcraft.io/docs/core/install>`_ on the Snapcraft website.
+
+1. At the command line, execute the following command:
+
+  ``sudo snap install mattermost-desktop --beta``
+
+2. To run Mattermost, open **Dash** (located at top left corner) and input ``mattermost``, then click the Mattermost icon.
+
 
 Troubleshooting
 --------------------------------------------------
