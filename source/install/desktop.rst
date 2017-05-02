@@ -88,11 +88,11 @@ Generic Linux package
 Snapcraft package
 ~~~~~~~~~~~~~~~~~
 
-A snap is available for systems that have Snapcraft installed. Snapcraft is installed by default on Ubuntu 16.04 and later, but for most other Linux distributions you can install it manually. To install Snapcraft, see `Install snapd <https://snapcraft.io/docs/core/install>`_ on the Snapcraft website.
+A snap is available for systems that have snapd installed. snapd is installed by default on Ubuntu 16.04 and later, but for most other Linux distributions you can install it manually. To install snapd, see `Install snapd <https://snapcraft.io/docs/core/install>`_ on the Snapcraft website.
 
 1. At the command line, execute the following command:
 
-  ``sudo snap install mattermost-desktop --beta``
+  ``snap install mattermost-desktop --beta``
 
 2. To run Mattermost, open **Dash** (located at top left corner) and input ``mattermost``, then click the Mattermost icon.
 
