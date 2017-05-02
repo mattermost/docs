@@ -70,6 +70,17 @@ To download the unofficial, community-driven .deb packages for the desktop appli
 
 3. Open **Dash** (located at top left corner) and input ``mattermost``, then click the Mattermost icon. The Mattermost desktop should open automatically.
 
+Frequently Asked Questions (FAQ)
+--------------------------------------------------
+
+How do I deploy the app to other users with a pre-configured server address?
+    1. Create a batch file to run the EXE from a shared directory. Other ways to share the package/executable are fine too (such as `Lansweeper <https://www.lansweeper.com/automated-software-deployment.aspx>`_ or `Microsoft SCCM <https://www.manageengine.com/sccm-third-party-patch-management/?gclid=CJyK7Ya2jdMCFQQOaQodv3UGEw>`_).
+    2. Ensure you have the desktop app closed (from File > Quit) and not running in the background. If the app is running, it will overwrite changes you make to config.json in step 3.
+    3. Update the config.json in that shared user directory to enter server URLs. You may also configure other app options on that file.
+    4. Save the file.
+    
+    Now when someone runs the app from the shared folder, it should launch it using the pre-configured settings (including server URLs).
+
 Troubleshooting
 --------------------------------------------------
 
