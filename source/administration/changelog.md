@@ -33,21 +33,22 @@ Release Date: May 16, 2017
 - Added "View Members" option to Town Square.
 - Moved "Start Video Call" option to the bottom of the profile popover.
 - Added a confirmation dialog when leaving a private channel.
-- Added a margin for inline images.
+- User preferences such as display settings now sync between browser tabs, between different browsers, and across devices.
+- Added "Already have an account? Click here to sign in" link to the sign up page.
 
 #### Performance
-- Added the ability to disable full text search queries via `config.json` for higher performance.
+- Added the ability to isolate searches to specific read-replicas for full text search queries for higher performance.
 - Added default read and write timeouts for MySQL datasource for ... // XXX check with engineers
+- Added password field to the [bulk import tool](https://docs.mattermost.com/deployment/bulk-loading.html).
+- Added the ability to disable full text search queries and statuses via `config.json` for higher performance.
 
 #### Keyboard Shortcuts
 - Pressing ENTER once in the channel switcher (CTRL/CMD+K) now switches the channel.
 - Using a mouse to select a channel in the channel switcher (CTRL/CMD+K) now switches to the correct channel.
 
-#### User Preferences
-- User preferences such as display settings now sync between browser tabs, between different browsers, and across devices.
-
-#### On-boarding
-- Added "Already have an account? Click here to sign in" link to the sign up page.
+#### Markdown Text Formatting
+- Added a margin for Markdown inline images.
+- Improved Markdown heading sizes in the desktop view.
 
 #### Files
 - SVG files now render in file preview.
@@ -93,6 +94,7 @@ Release Date: May 16, 2017
 - Deleted custom emoji no longer stay in "recently used" section of the emoji picker.
 - "Next" button in More Channels list now takes you to the top of the next page, instead of the bottom.
 - Blue bar "Preview Mode" header message now disappears after enabling email notifications.
+- Full name is now editable in Account Settings if the first and last name attributes are not specified in **System Console > Authentication > LDAP**.
 
 ### Compatibility  
 
@@ -114,6 +116,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under `ServiceSettings` in `config.json`:
    - Added `"EnablePostSearch": true` to control whether full text search queries are enabled. Disabling can lead to higher performance in large deployments.
    - Added `"EnableUserStatuses": true` to control whether user statuses are shown in the web user interface. Disabling can lead to higher performance in large deployments.
+
+ - Under `SqlSettings` in `config.json`:
+   - Added `"DataSourceSearchReplicas": []` to to isolate searches to specific read-replicas for full text search queries for higher performance.
 
 **Additional Changes to Enterprise Edition**:
 
@@ -143,7 +148,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 This list has not been udpated and is a carryover from v3.8 changelog:
 
 - "Pinned" icon sometimes overlaps image posts.
-- Full name is not editable in Account Settings if the first and last name attributes are removed from **System Console > Authentication > LDAP**. // XXX
 - Slack import doesn't add merged members/e-mail accounts to imported channels.
 - User can receive a video call from another browser tab while already on a call.
 - Sequential messages from the same user appear as separate posts on mobile view.
@@ -152,6 +156,8 @@ This list has not been udpated and is a carryover from v3.8 changelog:
 - First load of the emoji picker is slow at low connections.
 - Emoji picker for reactions doesn't always position correctly.
 - Scrollbar is sometimes not visible in the left-hand sidebar after switching teams.
+- Emoji picker is sometimes cut off on comment threads on the right-hand sidebar.
+- User status can get stuck online after quitting the desktop app or closing the browser window.
 
 ### Contributors
 
