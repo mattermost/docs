@@ -118,6 +118,7 @@ Database Metrics:
 
     - ``mattermost_db_master_connections_total``: The total number of connections to the master database.
     - ``mattermost_db_read_replica_connections_total``: The total number of connections to all the read replica databases.
+    - ``mattermost_db_search_replica_connections_total``: The total number of connections to all the search replica databases.
 
 HTTP Metrics:
 
@@ -155,7 +156,8 @@ Process Metrics:
 
 WebSocket Metrics:
 
-    - ``mattermost_websocket_event_total``: The total number of WebSocket events.
+    - ``mattermost_websocket_broadcasts_total``: The total number of WebSocket broadcasts sent by type.
+    - ``mattermost_websocket_event_total``: The total number of WebSocket events sent by type.
 
 Standard GO Metrics
 ------------------------------------------------
