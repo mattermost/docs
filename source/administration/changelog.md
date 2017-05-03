@@ -14,13 +14,17 @@ Release Date: May 16, 2017
 
 ### Highlights
 
+#### Languages
+
+- Added Polish translations for the user interface.
+
 #### Redux
 
 - Mattermost Webapp moved over to Redux for increased performance and more stable infrustructure.
 
 #### APIv4 Stable Release
 
-- Mattermost HTTP REST APIs moved to v4 endpoints allowing for much more powerful server interaction.
+- Mattermost HTTP REST APIs moved to v4 endpoints allowing for more powerful integrations and server interaction.
 - To learn more about the available APIv4 endpoints, [see our documentation](https://api.mattermost.com/v4/).
 
 ### Improvements
@@ -34,13 +38,19 @@ Release Date: May 16, 2017
 - Moved "Start Video Call" option to the bottom of the profile popover.
 - Added a confirmation dialog when leaving a private channel.
 - User preferences such as display settings now sync between browser tabs, between different browsers, and across devices.
-- Added "Already have an account? Click here to sign in" link to the sign up page.
 
 #### Performance
 - Added the ability to isolate searches to specific read-replicas for full text search queries for higher performance.
 - Added default read and write timeouts for MySQL datasource for ... // XXX check with engineers
 - Added password field to the [bulk import tool](https://docs.mattermost.com/deployment/bulk-loading.html).
 - Added the ability to disable full text search queries and statuses via `config.json` for higher performance.
+
+#### Emoji Picker (Beta)
+- Enable the emoji picker in **Account Settings > Advanced > Preview pre-release features**. 
+- Long custom emoji names no longer float out of the emoji picker.
+- Custom emoji now maintains aspect ratio in the emoji picker.
+- Deleted custom emoji no longer stay in "recently used" section of the emoji picker.
+- Improved user experience for closing the Emoji picker after reacting to a message.
 
 #### Keyboard Shortcuts
 - Pressing ENTER once in the channel switcher (CTRL/CMD+K) now switches the channel.
@@ -49,6 +59,10 @@ Release Date: May 16, 2017
 #### Markdown Text Formatting
 - Added a margin for Markdown inline images.
 - Improved Markdown heading sizes in the desktop view.
+
+#### On-Boarding
+- Added "Already have an account? Click here to sign in" link to the sign up page.
+- Joining a team using invite link now updates all open sessions.
 
 #### Files
 - SVG files now render in file preview.
@@ -66,13 +80,17 @@ Release Date: May 16, 2017
  - Added a confirmation dialog when deactivating a user.
  - Server logs are now always printed in English regardless of Default Server Language, for easier troubelshooting.
 
+#### Enterprise Edition
+ - Added new [performance monitoring metrics](https://docs.mattermost.com/deployment/metrics.html) for
+     - The total number of connections to all the search replica databases
+     - The total number of WebSocket broadcasts sent
+
 ### Bug Fixes
 - The maximum length of field "Position" increased to 64 characters. The previous limit caused problems with LDAP synchronization.
 - Pinning a post in center channel no longer changes pinned posts list in the right-hand sidebar.
 - Pinning a post in center now adds the badge to search results.
 - Fixed error message text for **Edit URL** field in channel creation modal.
 - Disabled config file watcher while running from makefile.
-- Long custom emoji names no longer float out of the emoji picker.
 - Fixed Go client's `GetTeamByName()` function.
 - Recent mentions search now properly includes `@[username]` in the search.
 - Updated error message when entering a password longer than maximum number of characters.
@@ -80,21 +98,23 @@ Release Date: May 16, 2017
 - Deleting your own pinned post in a direct message channel now properly disappear from the pinned posts list.
 - Fixed channel purpose help text for private channels.
 - When ability to change the header is restricted, "Set a Header" option is no longer shown in the channel intro.
-- Custom emoji now maintains the correct aspect ratio in the emoji picker.
 - Mention notifications now trigger if the word is formatted in bold, italic or strikethrough.
 - Mention notifications now longer trigger if the word is inside a code block.
-- In mobile view, Manage Members menu option now longer reads "View Members" for channel admins.
+- In mobile view, Manage Members menu option no longer reads "View Members" for channel admins.
 - Fixed vertical space between posts in the right-hand sidebar.
 - Fixed flagged posts and recent mentions icon sizing in the header.
 - Fixed vertical space below link previews.
 - Usernames with dots now get mention notifications when followed by a comma or other symbol.
-- Deactivated users are now longer listed in the "Manage Members" modal.
+- Deactivated users are no longer listed in the "Manage Members" modal.
 - Collapsable Account Setting menus now properly open in iOS Safari and Chrome browsers.
 - Removing an expired license now removes the blue bar header message.
-- Deleted custom emoji no longer stay in "recently used" section of the emoji picker.
 - "Next" button in More Channels list now takes you to the top of the next page, instead of the bottom.
 - Blue bar "Preview Mode" header message now disappears after enabling email notifications.
 - Full name is now editable in Account Settings if the first and last name attributes are not specified in **System Console > Authentication > LDAP**.
+- Added a back button to pinned posts list on the right-hand sidebar.
+- "Pinned" icon no longer overlaps text on consecutive posts or replies that hvae Markdown headings.
+- Uploading a profile picture on iOS no longer throws an error.
+- Fixed group message names in channel switcher (CTRL/CMD+K) for group messages not in your sidebar.
 
 ### Compatibility  
 
@@ -142,6 +162,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 **Added:**
 - `preferences_changed` and `preferences_deleted` to sync preferences between browser tabs, between different browsers, and across devices when a preference is changed or deleted.
+- `response` to // XXX confirm with engineers
 
 ### Known Issues
 
