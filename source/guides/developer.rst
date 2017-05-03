@@ -15,6 +15,7 @@ Development Process
    /developer/mobile-developer-setup.rst
    /developer/api*
    /developer/developer-flow*
+   /developer/webapp-component.rst
    /developer/running-mattermost*
    /developer/style*
    /developer/fx*
