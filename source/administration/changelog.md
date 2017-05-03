@@ -8,10 +8,6 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 Release Date: May 16, 2017
 
-### Security Update
-
-- Mattermost v3.9.0 contains a low severity [security update](http://about.mattermost.com/security-updates/). [Upgrading to Mattermost v3.9.0](http://docs.mattermost.com/administration/upgrade.html) is highly recommended.
-
 ### Highlights
 
 #### Languages
