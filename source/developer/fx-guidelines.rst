@@ -203,6 +203,8 @@ All buttons should have a visually distinct appearance for the following states 
 - active
 - disabled (greyed out or hidden)
 
+The color of the on_hover state should be the same as in active state, with opacity = 0.7.
+
 **Example:**
 
     ..  image:: ../images/buttonDesign.png
