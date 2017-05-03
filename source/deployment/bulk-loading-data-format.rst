@@ -284,8 +284,9 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
     user: {
       username: "username",
       email: "email@example.com",
-      auth_service: "password"
-      auth_data: "ldap_id"
+      auth_service: "password",
+      auth_data: "ldap_id",
+      password: "passw0rd",
       nickname: "bobuser",
       first_name: "Bob",
       last_name: "User",
@@ -363,6 +364,13 @@ Fields of the User object
         <kbd>"google"</kbd> - The value of the OAuth Id attribute.<br>
         <kbd>"office365"</kbd> - The value of the OAuth Id attribute.</td>
       <td align="center" valign="middle">No</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">password</td>
+      <td valign="middle">string</td>
+      <td>A password for the user. If not present, the bulk loader generates a password.</td>
+      <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">No</td>
     </tr>
     <tr class="row-odd">
