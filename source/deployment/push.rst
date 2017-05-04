@@ -12,7 +12,7 @@ OVERVIEW:
   :backlinks: top
   :local:
 
-Quick install for mobile apps via iTunes and Google Play 
+Quick install for mobile apps via iTunes and Google Play
 -----------------------------------------------------------
 
 For a quick evaluation of mobile applications after the Mattermost server is deployed in a test environment: 
@@ -52,7 +52,7 @@ Deploying with publicly-hosted mobile apps by Mattermost, Inc.
 
 To deploy in production with publicly-hosted mobile apps compiled by Mattermost, Inc. and hosted in iTunes and Google Play: 
 
-1. Complete the `Quick install for mobile apps via iTunes and Google Play `_ in a test environment. 
+1. Complete the `Quick install for mobile apps via iTunes and Google Play`_ in a test environment. 
 
 2. Review the `Securing mobile deployments`_ documentation and apply the options appropriate to meet the security and compliance requirements of your organization in your production environment. 
 
