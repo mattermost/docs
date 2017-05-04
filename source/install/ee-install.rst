@@ -54,6 +54,6 @@ Make sure that the new license is for a number of users that is greater than or 
 
 1. In the OTHER section of the System Console, click **Edition and License**. The *Edition and License* page opens.
 2. Click **Remove Enterprise License and Downgrade Server**. This clears the license from the server and refreshes the System Console.
-3. Return to the *Edition and License* page and upload the new license key file.
+3. Upload the new license key file.
 
 After the key is uploaded and installed, the **Edition** and **License** sections on the page show the capabilities of your new license key.
