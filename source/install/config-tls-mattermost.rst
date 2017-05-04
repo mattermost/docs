@@ -1,22 +1,27 @@
 Configuring TLS on Mattermost Server
 ====================================
 
-If you want users to connect with HTTPS, you have two options. One option is to set up TLS on Mattermost Server. Another option is to install a proxy such as NGINX and set up TLS on the proxy. The easiest option is to set up TLS on Mattermost Server, but if you expect to have more than 200 users, use a proxy for better performance. A proxy server also provides standard HTTP request logs.
+You have two options if you want users to connect with HTTPS: 
 
-**To configure TLS on Mattermost Server**:
+  1. Set up TLS on Mattermost Server. 
+  2. Install a proxy such as NGINX and set up TLS on the proxy. 
 
-1. In the GENERAL section of the System Console, click **Configuration**.
-2. Change the **Listen Address** setting to ``:443``.
-3. Change the **Connection Security** setting to ``TLS``.
-4. Change the **Forward port 80 to 443** setting to ``true``.
-5. Activate the CAP_NET_BIND_SERVICE capability to allow Mattermost to bind to low ports.
+The easiest option is to set up TLS on the Mattermost Server, but if you expect to have more than 200 users, use a proxy for better performance. A proxy server also provides standard HTTP request logs.
+
+**Configure TLS on the Mattermost Server**:
+
+1. In the **System Console** > **General** > **Configuration**.
+  a. Change the **Listen Address** setting to ``:443``.
+  b. Change the **Connection Security** setting to ``TLS``.
+  c. Change the **Forward port 80 to 443** setting to ``true``.
+2. Activate the ``CAP_NET_BIND_SERVICE`` capability to allow Mattermost to bind to low ports.
 
   a. Open a terminal window and change to the Mattermost ``bin`` directory.
     ``cd /opt/mattermost/bin``
   b. Run the following command:
     ``sudo setcap cap_net_bind_service=+ep ./platform``
 
-6. Install the security certificate. You can use `Let's Encrypt <https://letsencrypt.org/>`_ to automatically install and setup the certificate, or you can specify your own certificate.
+3. Install the security certificate. You can use `Let's Encrypt <https://letsencrypt.org/>`_ to automatically install and setup the certificate, or you can specify your own certificate.
 
   **To use a Let's Encrypt certificate**:
 
