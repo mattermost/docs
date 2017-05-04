@@ -71,17 +71,17 @@ Unofficial, community-driven .deb packages are available.
 
 1. Download the latest version of the Mattermost desktop app:
 
-    64-bit systems
-     `mattermost-desktop-3.6.0-linux-amd64.deb <https://releases.mattermost.com/desktop/3.6.0/mattermost-desktop-3.6.0-linux-amd64.deb>`_
-    32-bit systems
-     `mattermost-desktop-3.6.0-linux-i386.deb <https://releases.mattermost.com/desktop/3.6.0/mattermost-desktop-3.6.0-linux-i386.deb>`_
+  64-bit systems
+   `mattermost-desktop-3.6.0-linux-amd64.deb <https://releases.mattermost.com/desktop/3.6.0/mattermost-desktop-3.6.0-linux-amd64.deb>`_
+  32-bit systems
+   `mattermost-desktop-3.6.0-linux-i386.deb <https://releases.mattermost.com/desktop/3.6.0/mattermost-desktop-3.6.0-linux-i386.deb>`_
 
 2. At the command line, execute one of the following commands depending on the package that you downloaded:
 
-    64-bit systems
-      ``sudo dpkg -i mattermost-desktop-3.6.0-linux-amd64.deb``
-    32-bit systems
-      ``sudo dpkg -i mattermost-desktop-3.6.0-linux-i386.deb``
+  64-bit systems
+    ``sudo dpkg -i mattermost-desktop-3.6.0-linux-amd64.deb``
+  32-bit systems
+    ``sudo dpkg -i mattermost-desktop-3.6.0-linux-i386.deb``
 
 3. To run Mattermost, open **Dash** (located at top left corner) and input ``mattermost``, then click the Mattermost icon.
 
