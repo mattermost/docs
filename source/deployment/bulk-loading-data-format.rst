@@ -284,8 +284,8 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
     user: {
       username: "username",
       email: "email@example.com",
-      auth_service: "password",
-      auth_data: "ldap_id",
+      auth_service: "",
+      auth_data: "",
       password: "passw0rd",
       nickname: "bobuser",
       first_name: "Bob",
@@ -342,8 +342,8 @@ Fields of the User object
     <tr class="row-odd">
       <td valign="middle">auth_service</td>
       <td valign="middle">string</td>
-      <td>The authentication service to use for this user account. If not provided, it will default to password&#8209based authentication. Must be one of the following values:<br>
-        <kbd>""</kbd> - password authentication.<br>
+      <td>The authentication service to use for this user account. If not provided, it defaults to password-based authentication. Must be one of the following values:<br>
+        <kbd>""</kbd> or not provided - password authentication.<br>
         <kbd>"gitlab"</kbd> - GitLab authentication.<br>
         <kbd>"ldap"</kbd> - LDAP authentication (E10 and E20)<br>
         <kbd>"saml"</kbd> - Generic SAML based authentication (E20)<br>
@@ -357,7 +357,7 @@ Fields of the User object
       <td valign="middle">string</td>
       <td>The authentication data if <kbd>auth_service</kbd> is used. The value depends on the <kbd>auth_service</kbd> that is specified.<br>
         The data comes from the following fields for the respective auth_services:<br>
-        <kbd>""</kbd> or left out - must be left out.<br>
+        <kbd>""</kbd> or not provided - must be left out.<br>
         <kbd>"gitlab"</kbd> - The value of the Id attribute provided in the Gitlab auth data.<br>
         <kbd>"ldap"</kbd> - The value of the LDAP attribute specified as the "ID Attribute" in the Mattermost LDAP configuration.<br>
         <kbd>"saml"</kbd> - The value of the SAML Email address attribute.<br>
@@ -369,7 +369,7 @@ Fields of the User object
     <tr class="row-odd">
       <td valign="middle">password</td>
       <td valign="middle">string</td>
-      <td>A password for the user. If not present, the bulk loader generates a password.</td>
+      <td>A password for the user. Can be present only when password-based authentication is used. When password-based authentication is used and the password is not present, the bulk loader generates a password.</td>
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">No</td>
     </tr>
