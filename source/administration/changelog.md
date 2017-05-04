@@ -111,6 +111,7 @@ Release Date: May 16, 2017
 - "Pinned" icon no longer overlaps text on consecutive posts or replies that hvae Markdown headings.
 - Uploading a profile picture on iOS no longer throws an error.
 - Fixed group message names in channel switcher (CTRL/CMD+K) for group messages not in your sidebar.
+- Channel notification preferences no longer appear saved when clicking Cancel.
 
 ### Compatibility  
 
