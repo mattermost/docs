@@ -357,7 +357,7 @@ Fields of the User object
       <td valign="middle">string</td>
       <td>The authentication data if <kbd>auth_service</kbd> is used. The value depends on the <kbd>auth_service</kbd> that is specified.<br>
         The data comes from the following fields for the respective auth_services:<br>
-        <kbd>""</kbd> or not provided - must be left out.<br>
+        <kbd>""</kbd> or not provided - must be omitted.<br>
         <kbd>"gitlab"</kbd> - The value of the Id attribute provided in the Gitlab auth data.<br>
         <kbd>"ldap"</kbd> - The value of the LDAP attribute specified as the "ID Attribute" in the Mattermost LDAP configuration.<br>
         <kbd>"saml"</kbd> - The value of the SAML Email address attribute.<br>
