@@ -22,6 +22,7 @@ Release Date: May 16, 2017
 
 - Mattermost HTTP REST APIs moved to v4 endpoints allowing for more powerful integrations and server interaction.
 - To learn more about the available APIv4 endpoints, [see our documentation](https://api.mattermost.com/v4/).
+- APIv3 endpoints are supported until November/2017 release (six months after APIv4 endpoints have gone stable).
 
 ### Improvements
 
@@ -43,12 +44,10 @@ Release Date: May 16, 2017
 
 #### Emoji Picker (Beta)
 - Enable the emoji picker in **Account Settings > Advanced > Preview pre-release features**. 
-- Long custom emoji names no longer float out of the emoji picker.
 - Custom emoji now maintains aspect ratio in the emoji picker.
-- Deleted custom emoji no longer stay in "recently used" section of the emoji picker.
 - Improved user experience for closing the Emoji picker after reacting to a message.
 
-#### Keyboard Shortcuts
+#### Channel Switcher (CTRL/CMD+K)
 - Pressing ENTER once in the channel switcher (CTRL/CMD+K) now switches the channel.
 - Using a mouse to select a channel in the channel switcher (CTRL/CMD+K) now switches to the correct channel.
 
@@ -58,7 +57,7 @@ Release Date: May 16, 2017
 
 #### On-Boarding
 - Added "Already have an account? Click here to sign in" link to the sign up page.
-- Joining a team using invite link now updates all open sessions.
+- Improved experience of joining a team using an invite link.
 
 #### Files
 - SVG files now render in file preview.
@@ -82,6 +81,8 @@ Release Date: May 16, 2017
      - The total number of WebSocket broadcasts sent
 
 ### Bug Fixes
+- Long custom emoji names no longer float out of the emoji picker.
+- Deleted custom emoji no longer stay in "recently used" section of the emoji picker.
 - The maximum length of field "Position" increased to 64 characters. The previous limit caused problems with LDAP synchronization.
 - Pinning a post in center channel no longer changes pinned posts list in the right-hand sidebar.
 - Pinning a post in center now adds the badge to search results.
