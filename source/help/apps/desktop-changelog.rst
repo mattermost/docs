@@ -1,6 +1,97 @@
 Desktop Application Changelog
 ========================================
 
+Release 3.7.0
+--------------
+
+Release date: May 9th, 2017
+
+Improvements
+~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Added an inline spell checker for English, French, German, Spanish, and Dutch.
+- Removed an obsolete "Display secure content only" option, following an `upgrade of the Electron app to Chrome v56 <https://github.com/electron/electron/commit/2e0780308c7ef2258422efd34c968091d7cd5b65>`_.
+- Reset app window position when restoring it off-screen from a minimized state.
+- Improved page loading and app view rendering.
+
+Windows
+^^^^^^^^^^^^^
+
+- [Windows 7/8] Added support for sound when a desktop notification is received.
+- Removed obsolete support for Japanese fonts.
+- The application window now respects 125% display resolution.
+
+Bug Fixes
+~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- An extra row is no longer added after switching channels with CTRL/CMD+K shortcut.
+- Fixed an issue where an unexpected extra app window opened after clicking a public link of an uploaded file.
+- Fixed JavaScript errors when refreshing the page.
+- Fixed vertical alignment of the Add Server "+" button in the server tab bar.
+
+Windows
+^^^^^^^^^^^^^
+
+- Focus is now set to the next top-level window after closing the main app window.
+- Fixed an issue where the app remained in the `"classic" ALT+TAB window switcher <http://www.askvg.com/how-to-get-windows-xp-styled-classic-alttab-screen-in-windows-vista-and-7/>`_ after closing the main app window.
+
+Mac
+^^^^^^^^^^^^^
+
+- Fixed an issue where the application was not available on the Dock after a computer reboot.
+- Fixed an issue where Quick Look couldn't be closed after opening the file upload dialog.
+
+Linux (Beta)
+^^^^^^^^^^^^^
+
+- Fixed an issue where the setting was not saved after changing the tray icon theme.
+
+Known Issues
+~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- `If you click twice on the tab bar, and then attempt to use the "Zoom in/out" to change font size, the app window doesn't render properly <https://github.com/mattermost/desktop/issues/334>`__
+- `Holding down CTRL, SHIFT or ALT buttons and clicking a channel opens a new application window <https://github.com/mattermost/desktop/issues/406>`_
+- `Unable to upload a SAML certificate file from the file upload dialog <https://github.com/mattermost/desktop/issues/497>`_
+
+Windows
+^^^^^^^^^^^^^
+
+- [Windows 7] `Sometimes the app tries to render the page inside the app instead of in a new browser tab when clicking links <https://github.com/mattermost/desktop/issues/369>`_
+
+Mac
+^^^^^^^^^^^^^
+
+- `After uploading a file with a keyboard shortcut, focus isn't set back to the message box <https://github.com/mattermost/desktop/issues/341>`_
+- The application crashes when a file upload dialog is canceled without closing Quick Look.
+
+Linux (Beta)
+^^^^^^^^^^^^^
+
+- [Ubuntu - 64 bit] `Right clicking taskbar icon and choosing **Quit** only minimizes the app <https://github.com/mattermost/desktop/issues/90#issuecomment-233712183>`_
+- [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/platform/issues/3589>`_
+
+Contributors
+~~~~~~~~~~~~
+
+Many thanks to all our contributors. In alphabetical order:
+
+- `jasonblais <https://github.com/jasonblais>`_, `jnugh <https://github.com/jnugh>`_, `yuya-oc <https://github.com/yuya-oc>`_
+
+Thanks also to those who reported bugs that benefited the release, in alphabetical order:
+
+- `esethna <https://github.com/esethna>`_ (`#524 <https://github.com/mattermost/desktop/issues/524>`_)
+
+----
+
 Release 3.6.0
 --------------
 
