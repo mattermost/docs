@@ -46,6 +46,32 @@ Additional Guides:
 
 - **Setup Database Backup** following the `database backup instructions. <https://github.com/mattermost/mattermost-docker/#database-backup>`_
 
+Production Docker Setup on Fedora
+----------------------------------------------------
+
+1. **Install Docker Compose** using `the Fedora online guide <https://fedoraproject.org/wiki/Docker>`_ or these instructions:
+
+   .. code:: bash
+
+       sudo dnf -y install dnf-plugins-core
+       sudo dnf config-manager \
+       --add-repo \
+       https://download.docker.com/linux/fedora/docker-ce.repo
+       sudo dnf install docker-ce docker-compose git # Accepting the new docker repository key
+       sudo usermod -aG docker <username>
+       sudo systemctl start docker
+
+2. **Deploy the Mattermost Production Docker** setup by running:
+
+   .. code:: bash
+
+       git clone https://github.com/mattermost/mattermost-docker.git
+       cd mattermost-docker
+       docker-compose build
+       docker-compose up -d
+
+3. Follow the steps 3-6 from the Ubuntu instructions on this page for further configuration information. 
+
 Production Docker Setup on Mac OS X
 ------------------------------------------------------------
 
