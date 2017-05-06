@@ -122,6 +122,14 @@ Desktop App is not visible, but you can see the Mattermost icon in the Task Bar
     2. Open Windows File Explorer, and navigate to the ``%USERPROFILE%\AppData\Roaming\Mattermost`` folder.
     3. Delete the file ``bounds-info.json``
 
+Desktop App constantly refreshes the page
+  This issue can occur when localStorage accidentally has unexenpected state.
+
+  To resolve this issue, you can remove the localStorage by deleting a folder.
+    - Windows: ``%USERPROFILE%\AppData\Roaming\Mattermost\Local Storage``
+    - Mac: ``~/Library/Application Support/Mattermost/Local Storage``
+    - Linux: ``~/.config/Mattermost/Local Storage``
+
 For additional troubleshooting tips, see the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`_.
 
 To submit an improvement or correction, click  **Edit** at the top of this page.
