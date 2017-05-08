@@ -2320,9 +2320,18 @@ This setting defines the frequency of cluster request time logging for :doc:`../
 | This feature's ``config.json`` setting is ``"ClusterLogTimeoutMilliseconds": 2000`` with whole number input.                                                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable Searching of Posts
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This setting enables the ability for users to search messages. If not enabled, when users attempt to use the search box they get an error message.
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnablePostSearch": true`` with options ``true`` and ``false`` for above settings respectively. |
++---------------------------------------------------------------------------------------------------------------------------------------------+
+
 Enable User Typing Messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This setting determines wheter "user is typing..." messages are displayed below the message box. Disabling the setting in larger deplyoments may improve server performance.
+This setting determines whether "user is typing..." messages are displayed below the message box. Disabling the setting in larger deployments may improve server performance.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableUserTypingMessages": "true"`` with string input.                                                                  |
