@@ -8,6 +8,10 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 Release Date: May 16, 2017
 
+### Security Update
+
+- Mattermost v3.9.0 contains a low severity [security update](http://about.mattermost.com/security-updates/). [Upgrading to Mattermost v3.9.0](http://docs.mattermost.com/administration/upgrade.html) is highly recommended.
+
 ### Highlights
 
 #### Languages
@@ -18,11 +22,11 @@ Release Date: May 16, 2017
 
 - Mattermost Webapp moved over to Redux for increased performance and more stable infrustructure.
 
-#### APIv4 Stable Release
+#### APIv4 Beta Release
 
 - Mattermost HTTP REST APIs moved to v4 endpoints allowing for more powerful integrations and server interaction.
 - To learn more about the available APIv4 endpoints, [see our documentation](https://api.mattermost.com/v4/).
-- APIv3 endpoints are supported until November/2017 release (six months after APIv4 endpoints have gone stable).
+- APIv3 endpoints are supported until stable release of APIv4 endpoints in Q3 of 2017.
 
 ### Improvements
 
@@ -38,7 +42,7 @@ Release Date: May 16, 2017
 
 #### Performance
 - Added the ability to isolate searches to specific read-replicas for full text search queries for higher performance.
-- Added default read and write timeouts for MySQL datasource for ... // XXX check with engineers
+- Added default read and write timeouts for MySQL datasource to prevent hub processing deadlock.
 - Added password field to the [bulk import tool](https://docs.mattermost.com/deployment/bulk-loading.html).
 - Added the ability to disable full text search queries and statuses via `config.json` for higher performance.
 
@@ -64,8 +68,8 @@ Release Date: May 16, 2017
 
 #### CLI Tool
 - Added new CLI commands:
-    - `platform check` for validating the `config.json` file.
-    - `platform search` for searching users based on username, email or user ID.
+    - `platform config validate` for validating the `config.json` file.
+    - `platform user search` for searching users based on username, email, or user ID.
 
 #### OAuth 2.0 Service Provider
 - OAuth 2.0 service provider now always returns the refresh token.
@@ -82,18 +86,18 @@ Release Date: May 16, 2017
 
 ### Bug Fixes
 - Long custom emoji names no longer float out of the emoji picker.
-- Deleted custom emoji no longer stay in "recently used" section of the emoji picker.
-- The maximum length of field "Position" increased to 64 characters. The previous limit caused problems with LDAP synchronization.
+- Deleted custom emojis no longer stay in "recently used" section of the emoji picker.
+- The maximum length of the "Position" field increased to 64 characters in the database. The previous limit caused problems with LDAP synchronization.
 - Pinning a post in center channel no longer changes pinned posts list in the right-hand sidebar.
-- Pinning a post in center now adds the badge to search results.
-- Fixed error message text for **Edit URL** field in channel creation modal.
+- Pinning a post in center channel now adds the pinned post badge to search results.
+- Fixed error message text for **Edit URL** field in channel creation dialog.
 - Disabled config file watcher while running from makefile.
 - Fixed Go client's `GetTeamByName()` function.
 - Recent mentions search now properly includes `@[username]` in the search.
 - Updated error message when entering a password longer than maximum number of characters.
 - Don't send the same message multiple times when hitting "Retry" on a failed post.
-- Deleting your own pinned post in a direct message channel now properly disappear from the pinned posts list.
-- Fixed channel purpose help text for private channels.
+- Deleting your own post in a direct message channel now properly disappear from the pinned posts list.
+- Fixed the help text for the channel purpose in private channels.
 - When ability to change the header is restricted, "Set a Header" option is no longer shown in the channel intro.
 - Mention notifications now trigger if the word is formatted in bold, italic or strikethrough.
 - Mention notifications now longer trigger if the word is inside a code block.
@@ -121,7 +125,7 @@ Release Date: May 16, 2017
 - If you're using NGINX as a proxy for the Mattermost Server, replace the `location /api/v3/users/websocket {` line with `location ~ /api/v[0-9]+/(users/)?websocket$ {` in the `/etc/nginx/sites-available/mattermost` NGINX configuration file. [See documentation to learn more](https://docs.mattermost.com/install/install-ubuntu-1404.html#configuring-nginx-as-a-proxy-for-mattermost-server).
 
 #### Removed and deprecated features
-- All APIv3 endpoints to be removed in November/2017 release (six months after APIv4 endpoints have gone stable).
+- All APIv3 endpoints to be removed in September/2017 release.
 
 For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
 
@@ -153,8 +157,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### API Changes
 
-- Mattermost 3.9 has a stable release of APIv4 endpoints. To see the complete list of available endpoints, see [https://api.mattermost.com/v4/](https://api.mattermost.com/v4/).
-- All APIv3 endpoints are scheduled for removal in November/2017 release (six months after APIv4 endpoints have gone stable).
+- Mattermost 3.9 has a beta release of APIv4 endpoints. To see the complete list of available endpoints, see [https://api.mattermost.com/v4/](https://api.mattermost.com/v4/).
+- All APIv3 endpoints are scheduled for removal in September/2017 release (replaced by APIv4 endpoints).
 
 ### Websocket Event Changes
 
