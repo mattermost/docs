@@ -2323,7 +2323,7 @@ This setting defines the frequency of cluster request time logging for :doc:`../
 Enable Searching of Posts
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This setting enables the ability for users to search messages. If not enabled, when users attempt to use the search box they get an error message.
+If this setting is enabled, users can search messages. If it's disabled, users get an error message when they attempt to use the search box.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnablePostSearch": true`` with options ``true`` and ``false`` for above settings respectively. |
