@@ -13,7 +13,7 @@ Site Statistics
 System statistics are viewable under **System Console > Site Statistics**. The data shown here is a cumulative sum across all teams on the system.
 
 Total Users
-    The total number of active accounts created on your system. Excludes inactive accounts.
+    The total number of active accounts created on your system. Excludes deactivated accounts.
 
 Total Teams
     The total number of teams created on your system.
@@ -74,7 +74,7 @@ Team Statistics
 Team Statistics are viewable under **System Console > Team Statistics**.
 
 Total Users
-    The total number of active accounts on this team. Excludes inactive accounts.
+    The total number of active accounts on this team. Excludes deactivated accounts.
 
 Public Channels
     The number of public channels created in this team. Excludes deleted channels.

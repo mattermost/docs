@@ -82,18 +82,18 @@ The System Admin is typically a member of the IT staff and has all the privilege
 - Access to the System Console from the main menu in any team site
 - Ability to change any setting on the Mattermost server available in the System Console
 - Ability to promote and demote other users to and from the System Admin role
-- Ability to make a user account Inactive and to reactivate an Inactive account
+- Ability to deactivate user accounts and to reactivate them
 
-Inactive
-~~~~~~~~
+Deactivating Users
+~~~~~~~~~~~~~~~~~~
 
-A System Admin has the ability to make a user account Inactive by going to **System Console > Users** for a list of all users on the server. The list can be searched and filtered to make finding the user easier. Click the user's role and in the menu that opens, click **Make Inactive**.
+A System Admin can deactivate user accounts by going to **System Console > Users** for a list of all users on the server. The list can be searched and filtered to make finding users easier. Click the user's role and in the menu that opens, click **Deactivate**.
 
-When "Inactive" is selected, the user is logged out of the system, and receives an error message if they try to log back in. The user no longer appears in the channel members list. They are removed from the Direct Message "More" menu, but the Direct Message channel remains open for all users with it in the sidebar until it is closed. In the "Manage Members" list and the users list in the System Console, the user shows as "Inactive".
+When "Deactivate" is selected, the user is logged out of the system, and receives an error message if they try to log back in. The user no longer appears in the channel members list, and they are removed from the "Manage Members" list. They are also removed from the Direct Message "More" menu, but the Direct Message channel remains open for all users with it in the sidebar until it is closed. In the users list in the System Console, the user shows as "Inactive".
 
 Because Mattermost is designed as a system-of-record, there is not an option to delete users from the Mattermost system, as such an operation could compromise the integrity of message archives.
 
-An Inactive account can also be reactivated from the System Console. When reactivated, the Inactive Account rejoins the channels that it previously belonged to.
+A deactivated account can also be reactivated from the System Console. When reactivated, the user rejoins the channels that they previously belonged to.
 
 Removing a User from a Team or Leaving a Team
 ---------------------------------------------
@@ -105,7 +105,7 @@ Any Team Administrator has the ability to remove a user from a team by going to 
 
 When a user is removed from a team, the team will no longer show up in their team sidebar. If they currently have the team open, they are redirected to the first team that appears on their team sidebar. If they didn't belong to any other teams, the user is sent to the team selection page.
 
-Removing a user from the team does not make the account Inactive. The user will still be able to sign in to the site, and join other teams. They will also be able to rejoin the team they were removed from if they receive another invite, or if the team is set to `"Allow any user with an account on this server to join this team" <http://docs.mattermost.com/help/settings/team-settings.html#allow-anyone-to-join-this-team>`_. If the user does rejoin the team, they will no longer belong to the channels they were previously a part of, and they will lose all Admin privileges if they had them previously.
+Removing a user from the team does not deactivate the account. The user will still be able to sign in to the site, and join other teams. They will also be able to rejoin the team they were removed from if they receive another invite, or if the team is set to `"Allow any user with an account on this server to join this team" <http://docs.mattermost.com/help/settings/team-settings.html#allow-anyone-to-join-this-team>`_. If the user does rejoin the team, they will no longer belong to the channels they were previously a part of, and they will lose all Admin privileges if they had them previously.
 
 A System Administrator can also remove users from teams by going to **System Console > Users**, and selecting the dropdown beside a user entry and clicking **Manage Teams**.
 
