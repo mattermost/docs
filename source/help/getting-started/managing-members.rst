@@ -83,6 +83,7 @@ The System Admin is typically a member of the IT staff and has all the privilege
 - Ability to change any setting on the Mattermost server available in the System Console
 - Ability to promote and demote other users to and from the System Admin role
 - Ability to make a user account Inactive and to reactivate an Inactive account
+- Access to private channels, but only if given the link to the private channel
 
 Inactive
 ~~~~~~~~
