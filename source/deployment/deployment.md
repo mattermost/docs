@@ -6,7 +6,7 @@ The below diagram illustrates an on-premises deployment of Mattermost with optio
 
 [View Mattermost Network Diagram](http://docs.mattermost.com/_images/network.PNG)
 
-Notes: 
+Notes:
 - Mattermost Enterprise Edition server in High Availability configuration available Q3, 2016.
 - GitLab Mattermost deployment is [documented separately](http://doc.gitlab.com/omnibus/gitlab-mattermost/) and not included below.
 
@@ -16,19 +16,19 @@ Mattermost supports workplace messaging for teams using one to three servers wit
 
 ## User Experience
 
-### PC Web Experience 
+### PC Web Experience
 
 End users can securely share messages and files using a web-based Mattermost experience in IE, Chrome and Firefox. Please see [Software and Hardware Requirements](http://docs.mattermost.com/install/requirements.html) documentation for full details.
 
 ### Mobile App Experience
 
-Native applications for iOS and Android are available for interacting with the Mattermost server and receiving encrypted push notifications from your private cloud. Organizations can use [a Hosted Push Notification Service](http://docs.mattermost.com/deployment/push.html#hosted-push-notifications-service-hpns) with encrypted communications to mobile apps on iTunes and Google Play, or deploy to an [Enterprise App Store](http://docs.mattermost.com/deployment/push.html#enterprise-app-store-eas) on your organization's private network. A [Test Push Notification Service](http://docs.mattermost.com/deployment/push.html#test-push-notifications-service-tpns) is available for use while evaluating options. 
+Native applications for iOS and Android are available for interacting with the Mattermost server and receiving encrypted push notifications from your private cloud. Organizations can use [a Hosted Push Notification Service](http://docs.mattermost.com/deployment/push.html#hosted-push-notifications-service-hpns) with encrypted communications to mobile apps on iTunes and Google Play, or deploy to an [Enterprise App Store](http://docs.mattermost.com/deployment/push.html#enterprise-app-store-eas) on your organization's private network. A [Test Push Notification Service](http://docs.mattermost.com/deployment/push.html#test-push-notifications-service-tpns) is available for use while evaluating options.
 
-### Mobile Web Experience 
+### Mobile Web Experience
 
 End users can securely share messages and files using a web-mobiled-based Mattermost experience on iOS and Android devices. Please see [Software and Hardware Requirements](http://docs.mattermost.com/install/requirements.html) documentation for full details.
 
-### Email Client 
+### Email Client
 
 Receive emails on desktop and mobile from the Mattermost server.
 
@@ -52,20 +52,20 @@ WSS is a secure, encrypted connection and is highly recommended. An unencrypted 
 
 Mattermost is designed to be deployed behind a firewall on your private network, with optional access from the outside over a Virtual Private Network (VPN). This means running a VPN client on PC and mobile devices accessing Mattermost.
 
-An alternative option is to run Mattermost from outside your private network by opening standard ports, such as 80 or 443. If this option is taken it is recommended that desktop and mobile clients accessing Mattermost without a VPN use at least the multi-factor authentication feature included in Mattermost Enterprise Edition. 
+An alternative option is to run Mattermost from outside your private network by opening standard ports, such as 80 or 443. If this option is taken it is recommended that desktop and mobile clients accessing Mattermost without a VPN use at least the multi-factor authentication feature included in Mattermost Enterprise Edition.
 
 ## Data Center Infrastructure
 
 ### Push Notification Service
 
-The [Mattermost Push Notification Service (MPNS)](http://docs.mattermost.com/deployment/push.html) routes push notifications to: 
+The [Mattermost Push Notification Service (MPNS)](http://docs.mattermost.com/deployment/push.html) routes push notifications to:
 
-1. Apple Push Notification Service to send notifications to the Mattermost iOS app. 
+1. Apple Push Notification Service to send notifications to the Mattermost iOS app.
 2. Google Push Notification Service to send notifications to the Mattermost Android app.
 
-If you're deploying mobile applications to an Enterprise App Store, your MPNS should be behind your firewall on your private network. If you're using mobile apps in iTunes and Google Play, you can relay notifications to mobile apps using the [Hosted Push Notification Service (HPNS)](http://docs.mattermost.com/deployment/push.html#hosted-push-notifications-service-hpns) included with Mattermost Enterprise Edition. 
+If you're deploying mobile applications to an Enterprise App Store, your MPNS should be behind your firewall on your private network. If you're using mobile apps in iTunes and Google Play, you can relay notifications to mobile apps using the [Hosted Push Notification Service (HPNS)](http://docs.mattermost.com/deployment/push.html#hosted-push-notifications-service-hpns) included with Mattermost Enterprise Edition.
 
-HPNS does not connect to your mobile apps directly, it sends messages over an encrypted channel to Apple or Google which are relayed to the app users download from iTunes or Google Play. 
+HPNS does not connect to your mobile apps directly, it sends messages over an encrypted channel to Apple or Google which are relayed to the app users download from iTunes or Google Play.
 
 ### Proxy
 
@@ -73,11 +73,11 @@ The proxy manages Secure Socket Layer encryption and sets the policy on how netw
 
 Mattermost install guides include setup instructions for the NGNIX software proxy by default. For large scale deployments, a hardware proxy with dedicated devices for processing SSL encryption and decryption could potentially increase efficiencies.
 
-In a high availability configuration (Enteprise Edition only) the proxy would also balance network load across multiple Mattermost servers.
+In a high availability configuration (Enterprise Edition only) the proxy would also balance network load across multiple Mattermost servers.
 
-### Microsoft Active Directory Single Sign-On (Enterprise Edition) 
+### Microsoft Active Directory Single Sign-On (Enterprise Edition)
 
-Mattermost Enterprise Edition supports Microsoft Active Directory and LDAP single sign-on with secure transport over TLS or stunnel. 
+Mattermost Enterprise Edition supports Microsoft Active Directory and LDAP single sign-on with secure transport over TLS or stunnel.
 
 ### On-Premises Integrations
 
@@ -123,13 +123,17 @@ Large organizations needing sophisticated, high scale, high availability configu
 
 ### Databases
 
-Mattermost uses a MySQL or Postgres database to store and retrieve system data and to execute full text search. Solid State Drives can be used for faster read times to increase performance. 
+Mattermost uses a MySQL or Postgres database to store and retrieve system data and to execute full text search. Solid State Drives can be used for faster read times to increase performance.
 
-See [Database requirements](http://docs.mattermost.com/install/requirements.html#database-software) for full details. 
+See [Database requirements](http://docs.mattermost.com/install/requirements.html#database-software) for full details.
 
-#### Multiple Read Replicas (Enterprise Edition) 
+#### Multiple Read Replicas (Enterprise Edition)
 
 For enterprise deployments the Mattermost database can be configured with a master and multiple read replicas. The read replicas can be configured as a redundant backup to the active server, so that during hardware failures operation can be diverted to the read replica server without interrupting service. The safest configuration is to size the disk space on the read replica used for failover two to three times larger than storage available on master, so that if the master fails because it runs out of disk space it will fail over to a read replica with enough extra space to run smoothly until the master is corrected.
+
+#### Search Replicas (Enterprise Edition)
+
+You can configure one or more search replicas to isolate search queries. A search replica is similar to a read replica, but is used only for handling search queries.
 
 #### Global Deployments (Enterprise Edition, available 2016)
 
@@ -142,25 +146,25 @@ Enterprise customers with deployments spanning many time zones can contact the [
 ### File Store
 
 Images and files shared by users are stored and retrieved in one of three options.
-    
+
 1. For teams sharing only modest amounts of file data, local storage on the same physical machine as the Mattermost server may be sufficient.    
 2. For enterprises sharing very large amounts of data, a Network-Attached Storage server may be used, which can scale to peta-bytes if necessary.    
 3. Alternatively, for both ease-of-use and scale, Amazon's S3 file storage service is another option as well.
 
-## Deployment Options 
+## Deployment Options
 
-Mattermost Enterprise Edition customers can contact Mattermost, Inc. for advisory on deployment options for their specific environments. The following section describes common deployment configurations. 
+Mattermost Enterprise Edition customers can contact Mattermost, Inc. for advisory on deployment options for their specific environments. The following section describes common deployment configurations.
 
-### Mobile devices with VPN clients (recommended) 
+### Mobile devices with VPN clients (recommended)
 
-Mattermost can be deployed behind your company firewall on a private network with access from the outside via a Virtual Private Network (VPN). This means running a VPN client on the mobile devices and desktop computers that need to access Mattermost. 
+Mattermost can be deployed behind your company firewall on a private network with access from the outside via a Virtual Private Network (VPN). This means running a VPN client on the mobile devices and desktop computers that need to access Mattermost.
 
-The [Mattermost Push Notification Service](http://docs.mattermost.com/deployment/deployment.html#push-notification-service) (MPNS) should be behind your firewall on your private network. MPNS does not connect with mobile apps directly, it forwards push notifications from the Mattermost server to a relay service for iTunes or Google Play, or to mobile apps within an Enterprise App Store. 
+The [Mattermost Push Notification Service](http://docs.mattermost.com/deployment/deployment.html#push-notification-service) (MPNS) should be behind your firewall on your private network. MPNS does not connect with mobile apps directly, it forwards push notifications from the Mattermost server to a relay service for iTunes or Google Play, or to mobile apps within an Enterprise App Store.
 
-### Mobile devices without VPN clients 
+### Mobile devices without VPN clients
 
-Mattermost can be deployed outside your private network by opening standard ports like 80 or 443. With this option, mobile clients and desktop computers access the Mattermost server without a VPN client, and it is recommended that users sign in with multi-factor authentication, available in Mattermost E10 and higher. 
+Mattermost can be deployed outside your private network by opening standard ports like 80 or 443. With this option, mobile clients and desktop computers access the Mattermost server without a VPN client, and it is recommended that users sign in with multi-factor authentication, available in Mattermost E10 and higher.
 
-The [Mattermost Push Notification Service](http://docs.mattermost.com/deployment/deployment.html#push-notification-service) (MPNS) should be behind your firewall inside your private network. MPNS does not connect with mobile apps directly, it forwards push notifications from the Mattermost server to a relay service for iTunes or Google Play, or directly to mobile apps within an Enterprise App Store behind your firewall. 
+The [Mattermost Push Notification Service](http://docs.mattermost.com/deployment/deployment.html#push-notification-service) (MPNS) should be behind your firewall inside your private network. MPNS does not connect with mobile apps directly, it forwards push notifications from the Mattermost server to a relay service for iTunes or Google Play, or directly to mobile apps within an Enterprise App Store behind your firewall.
 
 Certificate-based authentication for mobile devices is planned for Mattermost E20, [contact the Enterprise Sales Team for more information](https://about.mattermost.com/contact/).

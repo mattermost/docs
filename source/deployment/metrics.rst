@@ -1,4 +1,4 @@
-Performance Monitoring (E20) 
+Performance Monitoring (E20)
 ===============================
 
 *Available in Enterprise Edition E20*.
@@ -118,7 +118,7 @@ Database Metrics:
 
     - ``mattermost_db_master_connections_total``: The total number of connections to the master database.
     - ``mattermost_db_read_replica_connections_total``: The total number of connections to all the read replica databases.
-    - ``mattermost_db_search_replica_connections_total``: The total number of connections to all the search replica databases.
+    - ``search_replica_connections_total``: The total number of connections to all the search replica databases.
 
 HTTP Metrics:
 
