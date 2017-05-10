@@ -19,7 +19,7 @@ To start, select one of the following guides:
       1. Run `platform -version` to check the current version of your Mattermost server
       2. Determine the appropriate next upgrade for your server:
           - Mattermost `v3.0.x` and later can upgrade directly to the [latest release of Mattermost](https://about.mattermost.com/download/) considering the conditions below:
-              - Note: Upgrading to `v3.9.x` and later will invalidate existing team invite links, password reset links and email verifications.
+              - Note: Upgrading to `v3.9.x` and later will invalidate existing team invite links, password reset links, and email verification links.
               - Note: Upgrading to `v3.8.x` and later, if you're using NGINX as a proxy for the Mattermost Server, replace the `location /api/v3/users/websocket {` line with `location ~ /api/v[0-9]+/(users/)?websocket$ {` in the `/etc/nginx/sites-available/mattermost` NGINX configuration file. [See documentation to learn more](https://docs.mattermost.com/install/install-ubuntu-1404.html#configuring-nginx-as-a-proxy-for-mattermost-server).
               - Note: Upgrading to `v3.8.x` and later, you must ensure that the **System Console** > **General > Logging** > [**File Log Directory**](https://docs.mattermost.com/administration/config-settings.html#file-log-directory) field is either empty or contains a directory path. It must not have a filename as part of the path. 
               - Note: If public links are enabled, upgrading from `v3.3.x` and earlier to `v3.4.x` and later will invalidate existing public links due to a security upgrade allowing admins to invalidate links by resetting a public link salt from the System Console.
@@ -63,7 +63,7 @@ To start, select one of the following guides:
       1. Run `platform -version` to check the current version of your Mattermost server
       2. Determine the appropriate next upgrade for your server:
           - Mattermost `v3.0.x` and later can upgrade directly to the [latest release of Mattermost](https://about.mattermost.com/download/).
-              - Note: Upgrading to `v3.9.x` and later will invalidate existing team invite links, password reset links and email verifications.
+              - Note: Upgrading to `v3.9.x` and later will invalidate existing team invite links, password reset links, and email verification links.
               - Note: Upgrading to `v3.8.x` and later, if you're using NGINX as a proxy for the Mattermost Server, replace the `location /api/v3/users/websocket {` line with `location ~ /api/v[0-9]+/(users/)?websocket$ {` in the `/etc/nginx/sites-available/mattermost` NGINX configuration file. [See documentation to learn more](https://docs.mattermost.com/install/install-ubuntu-1404.html#configuring-nginx-as-a-proxy-for-mattermost-server).
               - Note: If there is are config settings set for `"RestrictPublicChannelManagement"` and `"RestrictPrivateChannelManagement"`, they will be used as the default values for `"RestrictPublicChannelCreation"`, `"RestrictPrivateChannelCreation"`, `"RestrictPublicChannelDeletion"`, and `"RestrictPrivateChannelDeletion"` after upgrade
               - Note: If public links are enabled, upgrading from `v3.3.x` and earlier to `v3.4.x` and later will invalidate existing public links due to a security upgrade allowing admins to invalidate links by resetting a public link salt from the System Console.
