@@ -22,7 +22,7 @@ Release Date: May 16, 2017
 
 - Mattermost Webapp moved over to Redux for increased performance and more stable infrustructure.
 
-#### APIv4 Beta Release
+#### APIv4 Release Candidate
 
 - Mattermost HTTP REST APIs moved to v4 endpoints allowing for more powerful integrations and server interaction.
 - To learn more about the available APIv4 endpoints, [see our documentation](https://api.mattermost.com/v4/).
@@ -51,7 +51,8 @@ Release Date: May 16, 2017
 - Custom emoji now maintains aspect ratio in the emoji picker.
 - Improved user experience for closing the Emoji picker after reacting to a message.
 
-#### Channel Switcher (CTRL/CMD+K)
+#### Keyboard Shortcuts
+- Added a link to keyboard shortcuts documentation via the team Main Menu.
 - Pressing ENTER once in the channel switcher (CTRL/CMD+K) now switches the channel.
 - Using a mouse to select a channel in the channel switcher (CTRL/CMD+K) now switches to the correct channel.
 
@@ -78,6 +79,8 @@ Release Date: May 16, 2017
 #### System Console
  - Added a confirmation dialog when deactivating a user.
  - Server logs are now always printed in English regardless of Default Server Language, for easier troubelshooting.
+ - The `AllowCorsFrom` config setting (in **System Console > Connections > Enable cross-origin requests from**( now supports multiple domain names.
+ - Added a setting to disable file and image uploads on messages.
 
 #### Enterprise Edition
  - Added new [performance monitoring metrics](https://docs.mattermost.com/deployment/metrics.html) for
@@ -96,33 +99,32 @@ Release Date: May 16, 2017
 - Recent mentions search now properly includes `@[username]` in the search.
 - Updated error message when entering a password longer than maximum number of characters.
 - Don't send the same message multiple times when hitting "Retry" on a failed post.
-- Deleting your own post in a direct message channel now properly disappear from the pinned posts list.
 - Fixed the help text for the channel purpose in private channels.
 - When ability to change the header is restricted, "Set a Header" option is no longer shown in the channel intro.
 - Mention notifications now trigger if the word is formatted in bold, italic or strikethrough.
 - Mention notifications now longer trigger if the word is inside a code block.
 - In mobile view, Manage Members menu option no longer reads "View Members" for channel admins.
-- Fixed vertical space between posts in the right-hand sidebar.
-- Fixed flagged posts and recent mentions icon sizing in the header.
-- Fixed vertical space below link previews.
 - Usernames with dots now get mention notifications when followed by a comma or other symbol.
 - Deactivated users are no longer listed in the "Manage Members" modal.
-- Collapsable Account Setting menus now properly open in iOS Safari and Chrome browsers.
+- Collapsible Account Setting menus now open properly in iOS Safari and Chrome browsers.
 - Removing an expired license now removes the blue bar header message.
 - "Next" button in More Channels list now takes you to the top of the next page, instead of the bottom.
 - Blue bar "Preview Mode" header message now disappears after enabling email notifications.
 - Full name is now editable in Account Settings if the first and last name attributes are not specified in **System Console > Authentication > LDAP**.
 - Added a back button to pinned posts list on the right-hand sidebar.
-- "Pinned" icon no longer overlaps text on consecutive posts or replies that hvae Markdown headings.
+- "Pinned" icon no longer overlaps text on consecutive posts or replies that have Markdown headings.
 - Uploading a profile picture on iOS no longer throws an error.
-- Fixed group message names in channel switcher (CTRL/CMD+K) for group messages not in your sidebar.
+- Fixed group message names in channel switcher (CTRL/CMD+K) for group messages that are not in your sidebar.
 - Channel notification preferences no longer appear saved when clicking Cancel.
+- Channel creation permissions aren't set to channel admins when it doesn't exist.
+- `AllowCorsFrom` config setting now supports multiple domain names.
 
 ### Compatibility  
 
 #### Breaking changes:
 
 - If you're using NGINX as a proxy for the Mattermost Server, replace the `location /api/v3/users/websocket {` line with `location ~ /api/v[0-9]+/(users/)?websocket$ {` in the `/etc/nginx/sites-available/mattermost` NGINX configuration file. [See documentation to learn more](https://docs.mattermost.com/install/install-ubuntu-1404.html#configuring-nginx-as-a-proxy-for-mattermost-server).
+- Existing team invite links, password reset links and email verification links will be invalidated after upgrading to v3.9.0.
 
 #### Removed and deprecated features
 - All APIv3 endpoints to be removed in September/2017 release.
@@ -131,21 +133,26 @@ For a list of past and upcoming deprecated features, [see our website](https://a
 
 #### config.json   
 
-Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json` or the System Console.
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
 **Changes to Team Edition and Enterprise Edition**:
 
  - Under `ServiceSettings` in `config.json`:
-   - Added `"EnablePostSearch": true` to control whether full text search queries are enabled. Disabling can lead to higher performance in large deployments.
+   - Added `"EnablePostSearch": true` to control whether users can search messages. Disabling can lead to higher performance in large deployments.
    - Added `"EnableUserStatuses": true` to control whether user statuses are shown in the web user interface. Disabling can lead to higher performance in large deployments.
+ - Under `FileSettings` in `config.json`:
+   - Added `"EnableFileAttachments": true` to control whether users acn upload files and images on messages.
+
+ - Under `EmailSettings` in `config.json`:
+   - Removed `"PasswordResetSalt": ""` given tokens are now used for signing of password reset emails.
 
  - Under `SqlSettings` in `config.json`:
-   - Added `"DataSourceSearchReplicas": []` to to isolate searches to specific read-replicas for full text search queries for higher performance.
+   - Added `"DataSourceSearchReplicas": []` to specify the connection strings for search replica databases for handling search queries.
 
 **Additional Changes to Enterprise Edition**:
 
  - Under `ServiceSettings` in `config.json`:
-   - Added `"LicenseFileLocation": ""` to specify the path and filename of the Enterprise license file on disk. On startup, if Mattermost cannot find a valid license in the database from a previous upload, it will look for the file specified here.
+   - Added `"LicenseFileLocation": ""` to specify the path and filename of the Enterprise license file on disk. On startup, if Mattermost cannot find a valid license in the database from a previous upload, it will look for the file specified here.//XXX see note
 
 ### Database Changes
 
@@ -157,20 +164,18 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### API Changes
 
-- Mattermost 3.9 has a beta release of APIv4 endpoints. To see the complete list of available endpoints, see [https://api.mattermost.com/v4/](https://api.mattermost.com/v4/).
+- Mattermost 3.9 has a release candidate of APIv4 endpoints. To see the complete list of available endpoints, see [https://api.mattermost.com/v4/](https://api.mattermost.com/v4/).
 - All APIv3 endpoints are scheduled for removal in September/2017 release (replaced by APIv4 endpoints).
 
 ### Websocket Event Changes
 
-**Added:**
-- `preferences_changed` and `preferences_deleted` to sync preferences between browser tabs, between different browsers, and across devices when a preference is changed or deleted.
-- `response` to // XXX confirm with engineers
+- Added `preferences_changed` and `preferences_deleted` to sync preferences between browser tabs, between different browsers, and across devices when a preference is changed or deleted.
 
 ### Known Issues
 
 This list has not been udpated and is a carryover from v3.8 changelog:
 
-- "Pinned" icon sometimes overlaps image posts.
+- Google login fails on the mobile apps.
 - Slack import doesn't add merged members/e-mail accounts to imported channels.
 - User can receive a video call from another browser tab while already on a call.
 - Sequential messages from the same user appear as separate posts on mobile view.
@@ -181,6 +186,11 @@ This list has not been udpated and is a carryover from v3.8 changelog:
 - Scrollbar is sometimes not visible in the left-hand sidebar after switching teams.
 - Emoji picker is sometimes cut off on comment threads on the right-hand sidebar.
 - User status can get stuck online after quitting the desktop app or closing the browser window.
+- New direct messages received while in no teams do not show as unread after joining a team.
+- Profile picture uploaded from mobile appears rotated.
+- User is not logged out immediately when logging self out from Active Sessions list.
+- Certain code block labels don't appear while scrolling on iOS mobile web.
+- System Console user list filter does not show accurate results if applied after entering a search query.
 
 ### Contributors
 
