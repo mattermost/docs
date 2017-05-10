@@ -1302,15 +1302,6 @@ This feature's ``config.json`` settings are, respectively:
     * - ``"Uppercase": false`` with options ``true`` and ``false``
     * - ``"Symbol": false`` with options ``true`` and ``false``
 
-
-Password Reset Salt
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-32-character (to be randomly generated via Admin Console) salt added to signing of password reset emails. Click **Regenerate** to create new salt.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PasswordResetSalt": ""``  with string input.                                                                            |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Maximum Login Attempts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Failed login attempts allowed before a user is locked out and required to reset their password via email.
