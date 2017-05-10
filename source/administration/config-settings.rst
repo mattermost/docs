@@ -1094,7 +1094,7 @@ Verify Signature
 **False**: Verification is disabled. Not recommended for production environments. For testing only.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Verify": true`` with string input.                                                                                      |
+| This feature's ``config.json`` setting is ``"Verify": true`` with options ``true`` and ``false`` for above settings respectively.                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Service Provider Login URL
@@ -1109,7 +1109,7 @@ Enable Encryption
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 **True**: Mattermost will decrypt SAML Assertions encrypted with your Service Provider Public Certificate.
 
-**False**: Encyption is disabled. Not recommended for production environments. For testing only.
+**False**: Encryption is disabled. Not recommended for production environments. For testing only.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Encrypt": true`` with options ``true`` and ``false`` for above settings respectively.                                   |
