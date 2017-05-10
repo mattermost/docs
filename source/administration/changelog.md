@@ -127,6 +127,10 @@ Release Date: May 16, 2017
 - Existing team invite links, password reset links and email verification links will be invalidated after upgrading to v3.9.0.
 
 #### Removed and deprecated features
+- System Console settings in **Files > Images** scheduled for removal in July/2017 release. This includes
+  - Image preview height and width
+  - Profile picture height and width
+  - Image thumbnail height and width
 - All APIv3 endpoints to be removed in September/2017 release.
 
 For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
