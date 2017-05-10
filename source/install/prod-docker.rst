@@ -46,6 +46,13 @@ Additional Guides:
 
 - **Setup Database Backup** following the `database backup instructions. <https://github.com/mattermost/mattermost-docker/#database-backup>`_
 
+
+Production Docker Setup on Arch Linux
+------------------------------------------------------------
+
+To install on Arch Linux, see the `installation guide <https://wiki.archlinux.org/index.php/Mattermost>`_ on the Arch Linux wiki.
+
+
 Production Docker Setup on Mac OS X
 ------------------------------------------------------------
 

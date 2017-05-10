@@ -85,6 +85,11 @@ Unofficial, community-driven .deb packages are available.
 
 3. To run Mattermost, open **Dash** (located at top left corner) and input ``mattermost``, then click the Mattermost icon.
 
+Arch Linux-based systems
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+To install the desktop client on Arch Linux, see the `Mattermost page <https://wiki.archlinux.org/index.php/Mattermost>`_ on the Arch Linux wiki.
+
 Snapcraft package
 ~~~~~~~~~~~~~~~~~
 
