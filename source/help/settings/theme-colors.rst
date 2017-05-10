@@ -118,19 +118,20 @@ Monokai theme
 Solarized Dark theme
 ^^^^^^^^^^^^^^^^^^^^
 
-.. image:: ../../images/theme1.PNG
-  :alt: theme1
+.. image:: ../../images/themeSolarizedDark.PNG
+  :alt: themeSolarizedDark
 
 .. code-block:: none
 
-  {"awayIndicator":"#D4B579","buttonBg":"#E08D8F","buttonColor":"#FFFFFF","centerChannelBg":"#FFFFFF","centerChannelColor":"#444444","codeTheme":"solarized_dark","linkColor":"#F2777A","mentionBg":"#F2777A","mentionColor":"#FFFFFF","mentionHighlightBg":"#F2777A","mentionHighlightLink":"#FFFFFF","newMessageSeparator":"#F2777A","onlineIndicator":"#52ADAD","sidebarBg":"#4F2F4C","sidebarHeaderBg":"#452842","sidebarHeaderTextColor":"#FFFFFF","sidebarText":"#FFFFFF","sidebarTextActiveBorder":"#A65EA0","sidebarTextActiveColor":"#FFFFFF","sidebarTextHoverBg":"#452842","sidebarUnreadText":"#E5E5E5"}
+  {"awayIndicator":"#E0B333","buttonBg":"#859900","buttonColor":"#fdf6e3","centerChannelBg":"#073642","centerChannelColor":"#93a1a1","codeTheme":"solarized-dark","linkColor":"#268bd2","mentionBj":"#dc322f","mentionColor":"#ffffff","mentionHighlightBg":"#d33682","mentionHighlightLink":"#268bd2","newMessageSeparator":"#cb4b16","onlineIndicator":"#2AA198","sidebarBg":"#073642","sidebarHeaderBg":"#002B36","sidebarHeaderTextColor":"#FDF6E3","sidebarText":"#FDF6E3","sidebarTextActiveBorder":"#d33682","sidebarTextActiveColor":"#FDF6E3","sidebarTextHoverBg":"#CB4B16","sidebarUnreadText":"#FDF6E3","errorTextColor":"#dc322f"}
 
-Solarized Light theme
-^^^^^^^^^^^^^^^^^^^^^
+Gruvbox Dark theme
+^^^^^^^^^^^^^^^^^^
 
-.. image:: ../../images/theme4.PNG
-  :alt: theme4
+.. image:: ../../images/themeGruvboxDark.PNG
+  :alt: themeGruvboxDark
 
 .. code-block:: none
 
-  {"awayIndicator":"#CCDB91","buttonBg":"#55A3A8","buttonColor":"#FFFFFF","centerChannelBg":"#FFFFFF","centerChannelColor":"#444444","codeTheme":"solarized_light","linkColor":"#55A3A8","mentionBg":"#55A3A8","mentionColor":"#FFFFFF","mentionHighlightBg":"#55A3A8","mentionHighlightLink":"#FFFFFF","newMessageSeparator":"#55A3A8","onlineIndicator":"#88E0E5","sidebarBg":"#DE718E","sidebarHeaderBg":"#DE6785","sidebarHeaderTextColor":"#FFFFFF","sidebarText":"#FFFFFF","sidebarTextActiveBorder":"#43E8D4","sidebarTextActiveColor":"#FFFFFF","sidebarTextHoverBg":"#CC6983","sidebarUnreadText":"#FFFFFF"}
+  {"awayIndicator":"#fabd2f","buttonBg":"#689d6a","buttonColor":"#ebdbb2","centerChannelBg":"#3c3836","centerChannelColor":"#ebdbb2","codeTheme":"monokai","errorTextColor":"#fb4934","linkColor":"#83a598","mentionBj":"#b16286","mentionColor":"#fbf1c7","mentionHighlightBg":"#d65d0e","mentionHighlightLink":"#fbf1c7","newMessageSeparator":"#d65d0e","onlineIndicator":"#b8bb26","sidebarBg":"#282828","sidebarHeaderBg":"#1d2021","sidebarHeaderTextColor":"#ebdbb2","sidebarText":"#ebdbb2","sidebarTextActiveBorder":"#d65d0e","sidebarTextActiveColor":"#fbf1c7","sidebarTextHoverBg":"#d65d0e","sidebarUnreadText":"#fe8019"}
+
