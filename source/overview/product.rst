@@ -41,7 +41,7 @@ Details of each offering are as follows:
 - Extensive integration support via `webhooks, APIs, drivers <https://docs.mattermost.com/guides/integration.html>`_ and `third party extensions <https://about.mattermost.com/community-applications/>`_
 - Easily scalable from dozens to hundreds of users
 - New improvements released every two months 
-- Languages include U.S. English, Chinese (Simplified & Traditional), Dutch, French, German, Japanese, Korean, Polish, Brazilian Portuguese, Russian, Spanish
+- Languages include U.S. English, Chinese (Simplified & Traditional), Dutch, French, German, Japanese, Korean, Polish, Brazilian Portuguese, Russian, and Spanish
 
 To get started, `download the open source Mattermost Team Edition server <https://about.mattermost.com/download>`_ under an MIT license. 
 
