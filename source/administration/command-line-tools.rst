@@ -369,16 +369,26 @@ platform team
     -  `platform team delete`_ - Delete a team
     -  `platform team remove`_ - Remove users from a team
 
+.. _team-value-note:
+
+.. note::
+    **{team-name} value**
+
+    For the *add*, *delete*, and *remove* commands, the *{team-name}* value comes from the *Name*  column in the *Teams* database, and is not the name that is displayed in the UI.
+
+    You can usually derive the *{team-name}* from the display name by converting the display name to all lowercase letters and replacing spaces with dashes. For example, *My Team* becomes *my-team*. This works for teams that were created using the UI, but won't work if a custom value for the team name was specified when using the `platform team create`_ command. In that case, you must examine the database to find out the team name.
+
+
 platform team add
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Add users to a team.
+    Add users to a team. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
 
   Format
     .. code-block:: none
 
-      platform team add {team} {users}
+      platform team add {team-name} {users}
 
   Example
     .. code-block:: none
@@ -414,12 +424,12 @@ platform team delete
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Permanently delete a team along with all related information, including posts from the database.
+    Permanently delete a team along with all related information, including posts from the database. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
 
   Format
     .. code-block:: none
 
-      platform team delete {teams}
+      platform team delete {team-name}
 
   Example
     .. code-block:: none
@@ -435,12 +445,12 @@ platform team remove
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Remove users from a team.
+    Remove users from a team. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
 
   Format
     .. code-block:: none
 
-      platform team remove {team} {users}
+      platform team remove {team-name} {users}
 
   Example
     .. code-block:: none
