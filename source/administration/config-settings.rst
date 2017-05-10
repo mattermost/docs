@@ -1089,10 +1089,12 @@ The public authentication certificate issued by your Identity Provider.
 
 Verify Signature
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-``true``: When true, Mattermost verifies that the signature sent from the SAML Response matches the Service Provider Login URL.
+**True**: Mattermost verifies that the signature sent from the SAML Response matches the Service Provider Login URL.
+
+**False**: Verification is disabled. Not recommended for production environments. For testing only.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Verify": false`` with string input.                                                                                     |
+| This feature's ``config.json`` setting is ``"Verify": true`` with string input.                                                                                      |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Service Provider Login URL
@@ -1107,10 +1109,10 @@ Enable Encryption
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 **True**: Mattermost will decrypt SAML Assertions encrypted with your Service Provider Public Certificate.
 
-**False**: Encyption is disabled.
+**False**: Encyption is disabled. Not recommended for production environments. For testing only.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Encrypt": false`` with options ``true`` and ``false`` for above settings respectively.                                  |
+| This feature's ``config.json`` setting is ``"Encrypt": true`` with options ``true`` and ``false`` for above settings respectively.                                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Service Provider Private Key
