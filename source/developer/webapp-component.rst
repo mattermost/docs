@@ -7,6 +7,7 @@ This page describes how to build a new React component in the webapp. All new co
 2. Have no direct store interaction, use an index.js to wrap the component if needed
 3. Have component tests
 4. Be generic and re-usable when possible
+5. Have documented prop types
 
 These requirements will be talked about in more detail in the following sections.
 
@@ -32,11 +33,20 @@ As an example, let's imagine we're building an ItemList component with the purpo
   :linenos:
 
   static propTypes = {
+      /**
+       * Sets the title of the list
+       */
       title: PropTypes.string,
+
+      /**
+       * An array of item components to display
+       */
       items: PropTypes.arrayOf(PropTypes.object).isRequired
   }
 
 The ``title`` prop would control the string to display for the title, while ``items`` would be an array of the item objects we would like to display. Note that ``items`` has ``.isRequired`` appended while ``title`` does not. This means that to render our component must have the ``items`` prop set, while it can still render if we don't set ``title``. Use this to provide optional props.
+
+Make sure you add brief but clear comments to each prop type as shown in the example.
 
 Our ItemList component would live in a file named ``item_list.js``.
 
@@ -54,9 +64,20 @@ Continuing the ItemList example above, maybe our parent component doesn't care a
   :linenos:
 
   static propTypes = {
+      /**
+       * Sets the title of the list
+       */
       title: PropTypes.string,
-      items: PropTypes.arrayOf(PropTypes.object).isRequired,
+
+      /**
+       * An array of item components to display
+       */
+      items: PropTypes.arrayOf(PropTypes.object).isRequired
+
       actions: PropTypes.shape({
+          /**
+           * An action to remove an item from the list
+           */
           removeItem: React.PropTypes.func.isRequired
       }).isRequired
   }
@@ -90,7 +111,7 @@ The container will then need to import selectors and actions from Redux and the 
 
   export default connect(mapStateToProps, mapDispatchToProps)(ItemList);
 
-If the selectors and/or actions you need don't yet exist in Redux then you should go add those first by following the `guide to adding actions and selectors <./redux>`.
+If the selectors and/or actions you need don't yet exist in Redux then you should go add those first by following the `guide to adding actions and selectors <./redux>`__.
 
 Your ``index.js`` and ``item_list.js`` files will live together in an ``item_list/`` directory.
 
@@ -110,9 +131,20 @@ Our ItemList example might look something like this:
 
   export default class ItemList extends React.PureComponent {
       static propTypes = {
+          /**
+           * Sets the title of the list
+           */
           title: PropTypes.string,
-          items: PropTypes.arrayOf(PropTypes.object).isRequired,
+
+          /**
+           * An array of item components to display
+           */
+          items: PropTypes.arrayOf(PropTypes.object).isRequired
+
           actions: PropTypes.shape({
+              /**
+               * An action to remove an item from the list
+               */
               removeItem: React.PropTypes.func.isRequired
           }).isRequired
       }
