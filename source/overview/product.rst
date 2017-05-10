@@ -4,7 +4,7 @@ Product Overview
 
 **Mattermost** empowers organizations to achieve their highest priorities through modern, enterprise-grade communication. Enjoy all the productivity benefits of workplace messaging across web, mobile and PC, with unlimited archiving, search and integrations in a single-tenant, private cloud solution under IT control. 
 
-Thousands of organizations use Mattermost around the world in 11 languages for its unmatched benefits: 
+Thousands of organizations use Mattermost around the world in 12 languages for its unmatched benefits: 
 
 - **Security** - Keep vital communications, including access to mobile and desktop apps, behind your firewall. Deploy using `dozens of security features <https://docs.mattermost.com/overview/security.html>`_ vetted by top security researchers. Data stays on servers you control, encrypted using keys you control. 
 
@@ -41,7 +41,7 @@ Details of each offering are as follows:
 - Extensive integration support via `webhooks, APIs, drivers <https://docs.mattermost.com/guides/integration.html>`_ and `third party extensions <https://about.mattermost.com/community-applications/>`_
 - Easily scalable from dozens to hundreds of users
 - New improvements released every two months 
-- Languages include U.S. English, Chinese (Simplified & Traditional), Dutch, French, German, Japanese, Korean, Brazilian Portuguese, Russian, Spanish
+- Languages include U.S. English, Chinese (Simplified & Traditional), Dutch, French, German, Japanese, Korean, Polish, Brazilian Portuguese, Russian, Spanish
 
 To get started, `download the open source Mattermost Team Edition server <https://about.mattermost.com/download>`_ under an MIT license. 
 
