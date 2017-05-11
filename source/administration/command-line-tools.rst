@@ -374,10 +374,9 @@ platform team
 .. note::
     **{team-name} value**
 
-    For the *add*, *delete*, and *remove* commands, the *{team-name}* value comes from the *Name*  column in the *Teams* database, and is not the name that is displayed in the UI.
+    For the *add*, *delete*, and *remove* commands, you can determine the *{team-name}* value from the URLs that you use to access your instance of Mattermost. For example, in the following URL the *{team-name}* value is *myteam*:
 
-    You can usually derive the *{team-name}* from the display name by converting the display name to all lowercase letters and replacing spaces with dashes. For example, *My Team* becomes *my-team*. This works for teams that were created using the UI, but won't work if a custom value for the team name was specified when using the `platform team create`_ command. In that case, you must examine the database to find out the team name.
-
+    ``https://example.com/myteam/channels/mychannel``
 
 platform team add
 ~~~~~~~~~~~~~~~~~~~~~~~~
