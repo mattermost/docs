@@ -1829,7 +1829,7 @@ Enable File Attachments
 When false, disables file and image uploads on messages.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableFileAttachments": true`` with options ``true`` and ``false``                                                      |
+| This feature's ``config.json`` setting is ``"EnableFileAttachments": true`` with options ``true`` and ``false``.                                                      |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Maximum File Size
