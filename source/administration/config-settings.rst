@@ -2364,7 +2364,24 @@ WebSocket Port
 | This feature’s ``config.json`` setting is ``WebsocketPort": 80`` with whole number input.                                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-________
+SQL Settings
+~~~~~~~~~~~~
+
+Read Replicas (Enterprise Edition)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Specifies the connection strings for the read replica databases. Each string must be in the same form as used for the `Data Source`_ setting. A server restart is required for changes to this setting to take effect.
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DataSourceReplicas": []`` with a comma-separated list of database connection strings as input. |
++---------------------------------------------------------------------------------------------------------------------------------------------+
+
+Search Replicas (Enteprise Edition)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Specifies the connection strings for the search replica databases. A search replica is similar to a read replica, but is used only for handling search queries. Each string must be in the same form as used for the `Data Source`_ setting. A server restart is required for changes to this setting to take effect.
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DataSourceSearchReplicas": []`` with a comma-separated list of database connection strings as input. |
++---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Team Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~

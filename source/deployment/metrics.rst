@@ -1,4 +1,4 @@
-Performance Monitoring (E20) 
+Performance Monitoring (E20)
 ===============================
 
 *Available in Enterprise Edition E20*.
