@@ -1826,7 +1826,7 @@ Secure Amazon S3 Connections
 
 Enable File Attachments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-When false, disables file and image uploads on messages.
+When false, users cannot upload files and images by attaching them to messages.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableFileAttachments": true`` with options ``true`` and ``false``.                                                      |
