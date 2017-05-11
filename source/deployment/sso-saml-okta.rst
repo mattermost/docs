@@ -34,7 +34,7 @@ Set up a connection app for Mattermost SSO
 
 	.. image:: ../../source/images/okta_3_initial_saml_settings.PNG
 
-6. (Optional) Set up encryption for your SAML connection. First, click **Show Advanced Settings**.
+6. Set up encryption for your SAML connection. First, click **Show Advanced Settings**.
 
 	.. image:: ../../source/images/okta_4_initial_saml_settings.PNG
 
@@ -72,11 +72,11 @@ Configure SAML for Mattermost
 
 	.. image:: ../../source/images/okta_10_mattermost_basics.PNG
 
-2. (Optional) Configure Mattermost to verify the signature. The **Service Provider Login URL** is the ``Single sign on URL`` you specified in Okta earlier.
+2. Configure Mattermost to verify the signature. The **Service Provider Login URL** is the ``Single sign on URL`` you specified in Okta earlier.
 
 	.. image:: ../../source/images/okta_11_mattermost_verification.PNG
 
-3. (Optional) Enable encryption based on the parameters provided earlier.
+3. Enable encryption based on the parameters provided earlier.
 
 	.. image:: ../../source/images/okta_12_mattermost_encryption.PNG
 
