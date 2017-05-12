@@ -139,4 +139,4 @@ Mattermost daily compliance reports are compatible with Global Relay compliance 
 
 - This conversion can be done by in-house developers who have previously written scripts to convert other communication systems into Global Relay format based on your organization's specific needs.
 
-- You can also contact your Global Relay account manager about a services project to enable the conversion. 
+- You can also contact your Global Relay account manager about a services project to establish this conversion. 
