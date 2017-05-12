@@ -79,7 +79,7 @@ Release Date: May 16, 2017
 #### System Console
  - Added a confirmation dialog when deactivating a user.
  - Server logs are now always printed in English regardless of Default Server Language, for easier troubelshooting.
- - The `AllowCorsFrom` config setting (in **System Console > Connections > Enable cross-origin requests from**( now supports multiple domain names.
+ - The `AllowCorsFrom` config setting (in **System Console > Connections > Enable cross-origin requests from**) now supports multiple domain names.
  - Added a setting to disable file and image uploads on messages.
 
 #### Enterprise Edition
@@ -101,8 +101,7 @@ Release Date: May 16, 2017
 - Don't send the same message multiple times when hitting "Retry" on a failed post.
 - Fixed the help text for the channel purpose in private channels.
 - When ability to change the header is restricted, "Set a Header" option is no longer shown in the channel intro.
-- Mention notifications now trigger if the word is formatted in bold, italic or strikethrough.
-- Mention notifications now longer trigger if the word is inside a code block.
+- Mention notifications now trigger if the word is formatted in bold, italic, strikethrough, or inside a code block.
 - In mobile view, Manage Members menu option no longer reads "View Members" for channel admins.
 - Usernames with dots now get mention notifications when followed by a comma or other symbol.
 - Deactivated users are no longer listed in the "Manage Members" modal.
@@ -117,7 +116,6 @@ Release Date: May 16, 2017
 - Fixed group message names in channel switcher (CTRL/CMD+K) for group messages that are not in your sidebar.
 - Channel notification preferences no longer appear saved when clicking Cancel.
 - Channel creation permissions aren't set to channel admins when it doesn't exist.
-- `AllowCorsFrom` config setting now supports multiple domain names.
 
 ### Compatibility  
 
@@ -127,11 +125,11 @@ Release Date: May 16, 2017
 - Existing team invite links, password reset links and email verification links will be invalidated after upgrading to v3.9.0.
 
 #### Removed and deprecated features
-- System Console settings in **Files > Images** scheduled for removal in July/2017 release. This includes
+- System Console settings in **Files > Images** scheduled for removal in July 2017 release. This includes:
   - Image preview height and width
   - Profile picture height and width
   - Image thumbnail height and width
-- All APIv3 endpoints to be removed in September/2017 release.
+- All APIv3 endpoints to be removed in September 2017 release.
 
 For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
 
@@ -145,7 +143,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
    - Added `"EnablePostSearch": true` to control whether users can search messages. Disabling can lead to higher performance in large deployments.
    - Added `"EnableUserStatuses": true` to control whether user statuses are shown in the web user interface. Disabling can lead to higher performance in large deployments.
  - Under `FileSettings` in `config.json`:
-   - Added `"EnableFileAttachments": true` to control whether users acn upload files and images on messages.
+   - Added `"EnableFileAttachments": true` to control whether users can upload files and images on messages.
 
  - Under `EmailSettings` in `config.json`:
    - Removed `"PasswordResetSalt": ""` given tokens are now used for signing of password reset emails.
@@ -156,7 +154,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 **Additional Changes to Enterprise Edition**:
 
  - Under `ServiceSettings` in `config.json`:
-   - Added `"LicenseFileLocation": ""` to specify the path and filename of the Enterprise license file on disk. On startup, if Mattermost cannot find a valid license in the database from a previous upload, it will look for the file specified here.//XXX see note
+   - Added `"LicenseFileLocation": ""` to specify the path and filename of the Enterprise license file on disk. On startup, if Mattermost cannot find a valid license in the database from a previous upload, it will look for the file specified here.
 
 ### Database Changes
 
@@ -169,15 +167,13 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### API Changes
 
 - Mattermost 3.9 has a release candidate of APIv4 endpoints. To see the complete list of available endpoints, see [https://api.mattermost.com/v4/](https://api.mattermost.com/v4/).
-- All APIv3 endpoints are scheduled for removal in September/2017 release (replaced by APIv4 endpoints).
+- All APIv3 endpoints are scheduled for removal in September 2017 release (replaced by APIv4 endpoints).
 
 ### Websocket Event Changes
 
 - Added `preferences_changed` and `preferences_deleted` to sync preferences between browser tabs, between different browsers, and across devices when a preference is changed or deleted.
 
 ### Known Issues
-
-This list has not been udpated and is a carryover from v3.8 changelog:
 
 - Google login fails on the mobile apps.
 - Slack import doesn't add merged members/e-mail accounts to imported channels.
@@ -222,7 +218,7 @@ Many thanks to all our contributors. In alphabetical order:
 
 /mattermost-mobile
 
-- [asaadmahmood](https://github.com/asaadmahmood), [cpanato](https://github.com/cpanato), [csduarte])https://github.com/csduarte), [enahum](https://github.com/enahum), [jasonblais](https://github.com/jasonblais), [lfbrock](https://github.com/lfbrock)
+- [asaadmahmood](https://github.com/asaadmahmood), [cpanato](https://github.com/cpanato), [csduarte](https://github.com/csduarte), [enahum](https://github.com/enahum), [jasonblais](https://github.com/jasonblais), [lfbrock](https://github.com/lfbrock)
 
 /mattermost-docker
 
