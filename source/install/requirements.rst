@@ -59,7 +59,7 @@ Mattermost Server Operating System
 
 -  Ubuntu 14.04, Ubuntu 16.04, Debian Jessie, CentOS 6.6+, CentOS 7.1+, RedHat Enterprise Linux 6.6+, RedHat Enterprise Linux 7.1+, Oracle Linux 6.6+, Oracle Linux 7.1+
 
-While community support exists for Fedora, FreeBSD and Arch Linux, Mattermost Inc does not currently include production support for these platforms.
+While community support exists for Fedora, FreeBSD and Arch Linux, Mattermost does not currently include production support for these platforms.
 
 Database Software
 ^^^^^^^^^^^^^^^^^
