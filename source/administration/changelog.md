@@ -101,7 +101,7 @@ Release Date: May 16, 2017
 - Don't send the same message multiple times when hitting "Retry" on a failed post.
 - Fixed the help text for the channel purpose in private channels.
 - When ability to change the header is restricted, "Set a Header" option is no longer shown in the channel intro.
-- Mention notifications now trigger if the word is formatted in bold, italic, strikethrough, or inside a code block.
+- Mention notifications now trigger if the word is formatted in bold, italic or strikethrough, and won't if it's inside a code block.
 - In mobile view, Manage Members menu option no longer reads "View Members" for channel admins.
 - Usernames with dots now get mention notifications when followed by a comma or other symbol.
 - Deactivated users are no longer listed in the "Manage Members" modal.
