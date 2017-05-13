@@ -61,7 +61,7 @@ Assume that the IP address of this server is 10.10.10.2
 
   a. Create the Mattermost configuration file:
 
-    ``sudo touch /etc/systemd/system/mattermost.service``
+    ``sudo touch /usr/lib/systemd/system/mattermost.service``
 
   b. Open the configuration file in your favorite text editor, and copy the following lines into the file:
 
@@ -84,17 +84,13 @@ Assume that the IP address of this server is 10.10.10.2
 
   c. Make the service executable.
 
-    ``sudo chmod 664 /etc/systemd/system/mattermost.service``
+    ``sudo chmod 664 /usr/lib/systemd/system/mattermost.service``
 
   d. Reload the systemd services.
 
     ``sudo systemctl daemon-reload``
 
   f. Enable the Mattermost service.
-
-    ``sudo chkconfig mattermost on``
-
-  g. Set Mattermost to start on boot.
 
     ``sudo systemctl enable mattermost``
 

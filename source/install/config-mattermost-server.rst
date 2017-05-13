@@ -30,4 +30,6 @@ Configuring Mattermost Server
 7. Feel free to modify other settings.
 8. Restart the Mattermost Service.
 
-  ``sudo restart mattermost``
+  On Ubuntu 14.04 and RHEL 6.6: ``sudo service mattermost restart``
+  
+  On Ubuntu 16.04 and RHEL 7.1: ``sudo systemctl restart mattermost``
