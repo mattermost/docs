@@ -44,6 +44,7 @@ Deployment
    /deployment/sso-google*
    /deployment/sso-office*
    /deployment/metrics*
+   /deployment/client-side-data.rst
 
 Administration
 --------------
