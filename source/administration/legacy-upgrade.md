@@ -10,28 +10,28 @@ If you are upgrading a server that is already running a supported version, See [
 
 1. Security related changes were made in 3.9.0 that cause any previously created team invite links, password reset links, and email verification links to no longer work. You must update any place where you have published these links.
 
-1. Security-related changes were made in 3.8.0 that require you to verify settings in the System Console before upgrading from version 3.7.0 and earlier to any version greater than 3.8.0
+2. Security-related changes were made in 3.8.0 that require you to verify settings in the System Console before upgrading from version 3.5.3 and earlier to any version greater than 3.8.0
 
     1. In the GENERAL section of the System Console, click **Configuration** and make sure that the **Site URL** is specified. It must not be empty. For more information about SiteURL, see `Configuration Settings <config-settings.html#site-url>`_
     2. In the GENERAL section of the System Console, click **Logging** and make sure that the **File Log Directory** field is either empty or has a directory path only. It must not have a filename as part of the path.
 
-1. Changes were made in 3.8.0 that require a change in the proxy configuration. If you're using NGINX:
+3. Changes were made in 3.8.0 that require a change in the proxy configuration. If you're using NGINX:
     1. Open the NGINX configuration file as root. The file is usually ``/etc/nginx/sites-available/mattermost`` but might be different on your system.
     2. Locate the following line:
      `location /api/v3/users/websocket {`
     3. Replace the  line with ``location ~ /api/v[0-9]+/(users/)?websocket$ {``.
 
-  If you are using a proxy other than NGINX, make the equivalent change to that proxy's configuration.
+    If you are using a proxy other than NGINX, make the equivalent change to that proxy's configuration.
+
+4. RHEL6 and Ubuntu installations must verify the line `limit nofile 50000 50000` is included in `/etc/init/mattermost.conf` file. See the [installation guide](../../guides/administrator.html#install-guides) for your operating system for more details.
+5. RHEL7 and Ubuntu installations must verify the line `LimitNOFILE=49152` is included in the `/etc/systemd/system/mattermost.service` file. See the [installation guide](../../guides/administrator.html#install-guides) for your operating system for more details.
 
 **To upgrade your system from 3.0.0 and later**:
 
 1. Download the latest version of Team Edition server and note any compatibility procedures:
-      - Note: If public links are enabled, upgrading from `v3.3.x` and earlier will invalidate existing public links due to a security upgrade allowing admins to invalidate links by resetting a public link salt from the System Console.
-      - Note: RHEL6 and Ubuntu installations must verify the line `limit nofile 50000 50000` is included in `/etc/init/mattermost.conf` file. See the [installation guide](../../guides/administrator.html#install-guides) for your operating system for more details.
-      - Note: RHEL7 and Ubuntu installations must verify the line `LimitNOFILE=49152` is included in the `/etc/systemd/system/mattermost.service` file. See the [installation guide](../../guides/administrator.html#install-guides) for your operating system for more details.
-      1. Download [the latest version of the Mattermost Server](https://about.mattermost.com/download/). In the following command, replace `X.X.X` with the version that you want to download:
+      1. Review past and upcoming deprecation notices [listed on our website](https://about.mattermost.com/deprecated-features/).
+      2. Download [the latest version of the Mattermost Server](https://about.mattermost.com/download/). In the following command, replace `X.X.X` with the version that you want to download:
           - **Team Edition**: `wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz`
-      2. Review past and upcoming deprecation notices [listed on our website](https://about.mattermost.com/deprecated-features/).
 2. Stop the Mattermost Server
       1. Consider posting an announcement to active teams about stopping the Mattermost server for an upgrade.
       2. To stop the server run `sudo stop mattermost`.
@@ -59,29 +59,30 @@ After the server is upgraded, users might need to refresh their browsers to expe
 
 1. Security related changes were made in 3.9.0 that cause any previously created team invite links, password reset links, and email verification links to no longer work. You must update any place where you have published these links.
 
-2. Security-related changes were made in 3.8.0 that require you to verify settings in the System Console before upgrading from version 3.7.0 and earlier to any version greater than 3.8.0
+2. Security-related changes were made in 3.8.0 that require you to verify settings in the System Console before upgrading from version 3.5.3 and earlier to any version greater than 3.8.0
 
-  1. In the GENERAL section of the System Console, click **Configuration** and make sure that the **Site URL** is specified. It must not be empty. For more information about SiteURL, see `Configuration Settings <config-settings.html#site-url>`_
-  2. In the GENERAL section of the System Console, click **Logging** and make sure that the **File Log Directory** field is either empty or has a directory path only. It must not have a filename as part of the path.
+    1. In the GENERAL section of the System Console, click **Configuration** and make sure that the **Site URL** is specified. It must not be empty. For more information about SiteURL, see `Configuration Settings <config-settings.html#site-url>`_
+    2. In the GENERAL section of the System Console, click **Logging** and make sure that the **File Log Directory** field is either empty or has a directory path only. It must not have a filename as part of the path.
 
 3. Changes were made in 3.8.0 that require a change in the proxy configuration. If you're using NGINX:
-  1. Open the NGINX configuration file as root. The file is usually ``/etc/nginx/sites-available/mattermost`` but might be different on your system.
-  2. Locate the following line:
+    1. Open the NGINX configuration file as root. The file is usually ``/etc/nginx/sites-available/mattermost`` but might be different on your system.
+    2. Locate the following line:
      `location /api/v3/users/websocket {`
-  3. Replace the  line with ``location ~ /api/v[0-9]+/(users/)?websocket$ {``.
+    3. Replace the  line with ``location ~ /api/v[0-9]+/(users/)?websocket$ {``.
 
-  If you are using a proxy other than NGINX, make the equivalent change to that proxy's configuration.
+      If you are using a proxy other than NGINX, make the equivalent change to that proxy's configuration.
+
+4. If there are config settings set for `"RestrictPublicChannelManagement"` and `"RestrictPrivateChannelManagement"`, they will be used as the default values for `"RestrictPublicChannelCreation"`, `"RestrictPrivateChannelCreation"`, `"RestrictPublicChannelDeletion"`, and `"RestrictPrivateChannelDeletion"` after upgrade.
+5. If public links are enabled, upgrading from `v3.3.x` and earlier to `v3.4.x` and later will invalidate existing public links due to a security upgrade allowing admins to invalidate links by resetting a public link salt from the System Console.
+6. RHEL6 and Ubuntu installations must verify the line `limit nofile 50000 50000` is included in `/etc/init/mattermost.conf` file. See the [installation guide](https://docs.mattermost.com/guides/administrator.html#install-guides) for your operating system for more details.
+7. RHEL7 and Ubuntu installations must verify the line `LimitNOFILE=49152` is included in the `/etc/systemd/system/mattermost.service` file. See the [installation guide](https://docs.mattermost.com/guides/administrator.html#install-guides) for your operating system for more details.
 
 **To upgrade your system from 3.0.0 and later**:
 
 1. Download the latest version of Enterprise Edition server and note any compatibility procedures:
-      - Note: If there are config settings set for `"RestrictPublicChannelManagement"` and `"RestrictPrivateChannelManagement"`, they will be used as the default values for `"RestrictPublicChannelCreation"`, `"RestrictPrivateChannelCreation"`, `"RestrictPublicChannelDeletion"`, and `"RestrictPrivateChannelDeletion"` after upgrade.
-      - Note: If public links are enabled, upgrading from `v3.3.x` and earlier to `v3.4.x` and later will invalidate existing public links due to a security upgrade allowing admins to invalidate links by resetting a public link salt from the System Console.
-      - Note: RHEL6 and Ubuntu installations must verify the line `limit nofile 50000 50000` is included in `/etc/init/mattermost.conf` file. See the [installation guide](https://docs.mattermost.com/guides/administrator.html#install-guides) for your operating system for more details.
-      - Note: RHEL7 and Ubuntu installations must verify the line `LimitNOFILE=49152` is included in the `/etc/systemd/system/mattermost.service` file. See the [installation guide](https://docs.mattermost.com/guides/administrator.html#install-guides) for your operating system for more details.
-      1. Download [the latest version of the Mattermost Server](https://about.mattermost.com/download/). In the following command, replace `X.X.X` with the version that you want to download:
+      1. Review past and upcoming deprecation notices [listed on our website](https://about.mattermost.com/deprecated-features/).
+      2. Download [the latest version of the Mattermost Server](https://about.mattermost.com/download/). In the following command, replace `X.X.X` with the version that you want to download:
           - **Enterprise Edition**: `wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz`
-      2. Review past and upcoming deprecation notices [listed on our website](https://about.mattermost.com/deprecated-features/).
 2. Stop the Mattermost Server
       1. Consider posting an announcement to active teams about stopping the Mattermost server for an upgrade.
       2. To stop the server run `sudo stop mattermost`.

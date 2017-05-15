@@ -59,7 +59,6 @@ Administration
    /administration/branding*
    /administration/backup*
    /administration/upgrade.rst
-   /administration/legacy-upgrade.md
    /administration/migrating.md
 
 Changelog
