@@ -5,7 +5,7 @@ Mattermost supports an early preview of video and audio calling option using a s
 
 The feature is a working prototype for community development and not recommended for production. It has been tested on Chrome and Firefox running on Mac and Windows and the Mattermost Mac and Windows Apps using a Mattermost server running in SSL mode.
 
-.. note:: This feature will be replaced by a plug-in architecture allowing multiple video and audio calling providers to connect into Mattermost, and features described in this section will be re-written as a plug-in. 
+.. note:: This feature will be replaced by a plug-in architecture allowing multiple video and audio calling providers to connect into Mattermost, and features described in this section will be re-written as a plug-in.
 
 Configuring video and audio calls
 ------------------------------------------
@@ -26,11 +26,11 @@ After enabling the feature in the System Console by a System Administrator:
 
 2. Initiate a call with another user by either:
 
-    Clicking the video icon on a user's profile popover, which appears after clicking their profile picture or name on the center channel or right hand sidebar
+    Clicking **Start Video Call** on a user's profile popover, which appears after clicking their profile picture or name on the center channel or right hand sidebar.
 
     .. image:: ../images/webrtc-popover.png
 
-    Clicking the video icon on the channel header of a direct message channel with that user
+    Clicking the video icon on the channel header of a direct message channel with that user.
 
     .. image:: ../images/webrtc-header.png
 

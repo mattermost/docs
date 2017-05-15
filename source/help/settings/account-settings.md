@@ -21,7 +21,7 @@ Position can be used to describe your role or job title. It appears in the profi
 Email is used for sign-in, notifications, and password reset. Email requires verification if changed. If you are signing in using a single sign-on service, the email field is not editable and you will receive email notifications to the email you used to sign up to your SSO service.
 
 #### Profile Picture
-Profile pictures appear next to all posts and in the top of the channels pane next to your name. All users have a generic profile picture when they sign up for an account. Edit your profile picture by clicking **Select** and then choosing a picture in either JPG or PNG format that’s at least 128px wide and 128px high. For best results, choose an image that is square with the subject of interest centered. If you edit your profile picture, all past posts will appear with the new picture.
+Profile pictures appear next to all posts and in the top of the channels pane next to your name. Change your profile picture by clicking **Select** and then choosing a picture. For best results, choose an image that is at least 128 x 128 pixels in size. The GIF format is not supported.
 
 ## Security
 Settings to configure your password, view access history, and view or logout of active sessions.
@@ -139,6 +139,7 @@ Select what language Mattermost displays in the user interface. Options include:
 - Español - Spanish
 - Français - French
 - Nederlands - Dutch
+- Polski - Polish
 - Português (Brasil) - Portuguese
 - Pусский - Russian
 - 한국어 - Korean

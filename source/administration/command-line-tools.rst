@@ -80,6 +80,7 @@ platform
     -  `platform team`_ - Management of teams
     -  `platform user`_ - Management of users
     -  `platform version`_ - Display version information
+    -  `platform config`_ - Work with the configuration file
 
 platform channel
 -----------------
@@ -472,6 +473,7 @@ platform user
     -  `platform user migrate_auth`_ - Mass migrate all user accounts to a new authentication type
     -  `platform user password`_ - Set a user's password
     -  `platform user resetmfa`_ - Turn off MFA for a user
+    -  `platform user search`_ - Search for users based on username, email, or user ID
     -  `platform user verify`_ - Verify email address of a new user
 
 platform user activate
@@ -650,6 +652,22 @@ platform user resetmfa
 
       sudo ./platform user resetmfa user@example.com
 
+platform user search
+~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Search for users based on username, email, or user ID.
+
+  Format
+    .. code-block:: none
+
+      platform user search {users}
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform user search user1@example.com user2@example.com
+
 platform user verify
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -676,6 +694,35 @@ platform version
     .. code-block:: none
 
       platform version
+
+platform config
+---------------
+
+  Description
+    Commands for managing the configuration file.
+
+  Child Command
+    - `platform config validate`_ - Validate the configuration file.
+
+platform config validate
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Makes sure the configuration file has the following properties:
+
+    - Is valid JSON.
+    - Has attributes of the correct type, such as *bool*, *int*, and *str*.
+    - All entries are valid. For example, checks that entries are below the maximum length.
+
+    Format
+      .. code-block:: none
+
+        platform config validate
+
+    Example
+      .. code-block:: none
+
+        sudo ./platform config validate
 
 Mattermost 3.5 and earlier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^

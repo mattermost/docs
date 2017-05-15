@@ -4,7 +4,245 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
+
+## Release v3.9.0
+
+Release Date: May 16, 2017
+
+### Security Update
+
+- Mattermost v3.9.0 contains a low severity [security update](http://about.mattermost.com/security-updates/). [Upgrading to Mattermost v3.9.0](http://docs.mattermost.com/administration/upgrade.html) is highly recommended.
+
+### Highlights
+
+#### Languages
+
+- Added Polish translations for the user interface.
+
+#### Redux
+
+- Mattermost Webapp moved over to Redux for increased performance and more stable infrustructure.
+
+#### APIv4 Release Candidate
+
+- Mattermost HTTP REST APIs moved to v4 endpoints allowing for more powerful integrations and server interaction.
+- To learn more about the available APIv4 endpoints, [see our documentation](https://api.mattermost.com/v4/).
+- APIv3 endpoints are supported until stable release of APIv4 endpoints in Q3 of 2017.
+
+### Improvements
+
+#### Web User Interface
+- Lower and upper vertical margins for posts are now equal.
+- Comments only containing a file attachment have a reduced vertical spacing in the center channel.
+- First line of message text is now aligned with username.
+- Added padding between timestamp and pinned posts badge in comment threads in compact view.
+- Added "View Members" option to Town Square.
+- Moved "Start Video Call" option to the bottom of the profile popover.
+- Added a confirmation dialog when leaving a private channel.
+- User preferences such as display settings now sync between browser tabs, between different browsers, and across devices.
+
+#### Performance
+- Added the ability to isolate searches to specific read-replicas for full text search queries for higher performance.
+- Added default read and write timeouts for MySQL datasource to prevent hub processing deadlock.
+- Added password field to the [bulk import tool](https://docs.mattermost.com/deployment/bulk-loading.html).
+- Added the ability to disable full text search queries and statuses via `config.json` for higher performance.
+
+#### Emoji Picker (Beta)
+- Enable the emoji picker in **Account Settings > Advanced > Preview pre-release features**. 
+- Custom emoji now maintains aspect ratio in the emoji picker.
+- Improved user experience for closing the Emoji picker after reacting to a message.
+
+#### Keyboard Shortcuts
+- Added a link to keyboard shortcuts documentation via the team Main Menu.
+- Pressing ENTER once in the channel switcher (CTRL/CMD+K) now switches the channel.
+- Using a mouse to select a channel in the channel switcher (CTRL/CMD+K) now switches to the correct channel.
+
+#### Markdown Text Formatting
+- Added a margin for Markdown inline images.
+- Improved Markdown heading sizes in the desktop view.
+
+#### On-Boarding
+- Added "Already have an account? Click here to sign in" link to the sign up page.
+- Improved experience of joining a team using an invite link.
+
+#### Files
+- SVG files now render in file preview.
+
+#### CLI Tool
+- Added new CLI commands:
+    - `platform config validate` for validating the `config.json` file.
+    - `platform user search` for searching users based on username, email, or user ID.
+
+#### OAuth 2.0 Service Provider
+- OAuth 2.0 service provider now always returns the refresh token.
+- New refresh token now issued when granting a new access token.
+
+#### System Console
+ - Added a confirmation dialog when deactivating a user.
+ - Server logs are now always printed in English regardless of Default Server Language, for easier troubelshooting.
+ - The `AllowCorsFrom` config setting (in **System Console > Connections > Enable cross-origin requests from**) now supports multiple domain names.
+ - Added a setting to disable file and image uploads on messages.
+
+#### Enterprise Edition
+ - Added new [performance monitoring metrics](https://docs.mattermost.com/deployment/metrics.html) for
+     - The total number of connections to all the search replica databases
+     - The total number of WebSocket broadcasts sent
+
+### Bug Fixes
+- Long custom emoji names no longer float out of the emoji picker.
+- Deleted custom emojis no longer stay in "recently used" section of the emoji picker.
+- The maximum length of the "Position" field increased to 64 characters in the database. The previous limit caused problems with LDAP synchronization.
+- Pinning a post in center channel no longer changes pinned posts list in the right-hand sidebar.
+- Pinning a post in center channel now adds the pinned post badge to search results.
+- Fixed error message text for **Edit URL** field in channel creation dialog.
+- Disabled config file watcher while running from makefile.
+- Fixed Go client's `GetTeamByName()` function.
+- Recent mentions search now properly includes `@[username]` in the search.
+- Updated error message when entering a password longer than maximum number of characters.
+- Don't send the same message multiple times when hitting "Retry" on a failed post.
+- Fixed the help text for the channel purpose in private channels.
+- When ability to change the header is restricted, "Set a Header" option is no longer shown in the channel intro.
+- Mention notifications now trigger if the word is formatted in bold, italic or strikethrough, and won't if it's inside a code block.
+- In mobile view, Manage Members menu option no longer reads "View Members" for channel admins.
+- Usernames with dots now get mention notifications when followed by a comma or other symbol.
+- Deactivated users are no longer listed in the "Manage Members" modal.
+- Collapsible Account Setting menus now open properly in iOS Safari and Chrome browsers.
+- Removing an expired license now removes the blue bar header message.
+- "Next" button in More Channels list now takes you to the top of the next page, instead of the bottom.
+- Blue bar "Preview Mode" header message now disappears after enabling email notifications.
+- Full name is now editable in Account Settings if the first and last name attributes are not specified in **System Console > Authentication > LDAP**.
+- Added a back button to pinned posts list on the right-hand sidebar.
+- "Pinned" icon no longer overlaps text on consecutive posts or replies that have Markdown headings.
+- Uploading a profile picture on iOS no longer throws an error.
+- Fixed group message names in channel switcher (CTRL/CMD+K) for group messages that are not in your sidebar.
+- Channel notification preferences no longer appear saved when clicking Cancel.
+- Channel creation permissions aren't set to channel admins when it doesn't exist.
+
+### Compatibility  
+
+#### Breaking changes:
+
+- If you're using NGINX as a proxy for the Mattermost Server, replace the `location /api/v3/users/websocket {` line with `location ~ /api/v[0-9]+/(users/)?websocket$ {` in the `/etc/nginx/sites-available/mattermost` NGINX configuration file. [See documentation to learn more](https://docs.mattermost.com/install/install-ubuntu-1404.html#configuring-nginx-as-a-proxy-for-mattermost-server).
+- Existing team invite links, password reset links and email verification links will be invalidated after upgrading to v3.9.0.
+
+#### Removed and deprecated features
+- System Console settings in **Files > Images** scheduled for removal in July 2017 release. This includes:
+  - Image preview height and width
+  - Profile picture height and width
+  - Image thumbnail height and width
+- All APIv3 endpoints to be removed in September 2017 release.
+
+For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
+
+#### config.json   
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+**Changes to Team Edition and Enterprise Edition**:
+
+ - Under `ServiceSettings` in `config.json`:
+   - Added `"EnablePostSearch": true` to control whether users can search messages. Disabling can lead to higher performance in large deployments.
+   - Added `"EnableUserStatuses": true` to control whether user statuses are shown in the web user interface. Disabling can lead to higher performance in large deployments.
+ - Under `FileSettings` in `config.json`:
+   - Added `"EnableFileAttachments": true` to control whether users can upload files and images on messages.
+
+ - Under `EmailSettings` in `config.json`:
+   - Removed `"PasswordResetSalt": ""` given tokens are now used for signing of password reset emails.
+
+ - Under `SqlSettings` in `config.json`:
+   - Added `"DataSourceSearchReplicas": []` to specify the connection strings for search replica databases for handling search queries.
+
+**Additional Changes to Enterprise Edition**:
+
+ - Under `ServiceSettings` in `config.json`:
+   - Added `"LicenseFileLocation": ""` to specify the path and filename of the Enterprise license file on disk. On startup, if Mattermost cannot find a valid license in the database from a previous upload, it will look for the file specified here.
+
+### Database Changes
+
+**OAuthAccessData Table:**
+- Added `Scope` column
+
+**PasswordRecovery Table:**
+- Removed `PasswordRecovery` table and moved entries to a common token store
+
+### API Changes
+
+- Mattermost 3.9 has a release candidate of APIv4 endpoints. To see the complete list of available endpoints, see [https://api.mattermost.com/v4/](https://api.mattermost.com/v4/).
+- All APIv3 endpoints are scheduled for removal in September 2017 release (replaced by APIv4 endpoints).
+
+### Websocket Event Changes
+
+- Added `preferences_changed` and `preferences_deleted` to sync preferences between browser tabs, between different browsers, and across devices when a preference is changed or deleted.
+
+### Known Issues
+
+- Google login fails on the mobile apps.
+- Slack import doesn't add merged members/e-mail accounts to imported channels.
+- User can receive a video call from another browser tab while already on a call.
+- Sequential messages from the same user appear as separate posts on mobile view.
+- Search autocomplete picker is broken on Android.
+- Jump link in search results does not always jump to display the expected post.
+- First load of the emoji picker is slow at low connections.
+- Emoji picker for reactions doesn't always position correctly.
+- Scrollbar is sometimes not visible in the left-hand sidebar after switching teams.
+- Emoji picker is sometimes cut off on comment threads on the right-hand sidebar.
+- User status can get stuck online after quitting the desktop app or closing the browser window.
+- New direct messages received while in no teams do not show as unread after joining a team.
+- Profile picture uploaded from mobile appears rotated.
+- User is not logged out immediately when logging self out from Active Sessions list.
+- Certain code block labels don't appear while scrolling on iOS mobile web.
+- System Console user list filter does not show accurate results if applied after entering a search query.
+
+### Contributors
+
+Many thanks to all our contributors. In alphabetical order:
+
+/platform
+
+- [asaadmahmood](https://github.com/asaadmahmood), [coreyhulen](https://github.com/coreyhulen), [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [doh5](https://github.com/doh5), [enahum](https://github.com/enahum), [grundleborg](https://github.com/grundleborg), [gstraube](https://github.com/gstraube) , [hmhealey](https://github.com/hmhealey), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [justinwyer](https://github.com/justinwyer), [jwilander](https://github.com/jwilander), [lindalumitchell](https://github.com/lindalumitchell), [prixone](https://github.com/prixone), [Rudloff](https://github.com/Rudloff), [R-Wang97](https://github.com/R-Wang97), [saturninoabril](https://github.com/saturninoabril), [simon0191](https://github.com/simon0191), [VeraLyu](https://github.com/VeraLyu)
+
+/docs
+
+- [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [fjarlq](https://github.com/fjarlq), [it33](https://github.com/it33), [ivernus](https://github.com/ivernus), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [justinwyer](https://github.com/justinwyer), [lindy65](https://github.com/lindy65), [senk](https://github.com/senk) 
+
+/mattermost-api-reference
+
+- [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [dagit](https://github.com/dagit), [hmhealey](https://github.com/hmhealey), [jwilander](https://github.com/jwilander), [saturninoabril](https://github.com/saturninoabril)
+
+/mattermost-redux
+
+- [enahum](https://github.com/enahum), [jarredwitt](https://github.com/jarredwitt), [jwilander](https://github.com/jwilander)
+
+/desktop
+
+- [jasonblais](https://github.com/jasonblais), [jnugh](https://github.com/jnugh), [yuya-oc](https://github.com/yuya-oc)
+
+/mattermost-mobile
+
+- [asaadmahmood](https://github.com/asaadmahmood), [cpanato](https://github.com/cpanato), [csduarte](https://github.com/csduarte), [enahum](https://github.com/enahum), [jasonblais](https://github.com/jasonblais), [lfbrock](https://github.com/lfbrock)
+
+/mattermost-docker
+
+- [esethna](https://github.com/esethna), [pichouk](https://github.com/pichouk), [xcompass](https://github.com/xcompass)
+
+/mattermost-push-proxy
+
+- [coreyhulen](https://github.com/coreyhulen)
+
+/mattermost-selenium
+
+- [doh5](https://github.com/doh5), [lindalumitchell](https://github.com/lindalumitchell), [coreyhulen](https://github.com/)
+
+/mattermost-kubernetes
+
+- [coreyhulen](https://github.com/coreyhulen)
+
+/gcm
+
+- [coreyhulen](https://github.com/coreyhulen), [csduarte](https://github.com/csduarte)
+
 ## Release v3.8.2
+
 
 ### Notes on Patch Release
 
@@ -195,7 +433,7 @@ Many thanks to all our contributors. In alphabetical order:
 
 - [coreyhulen](https://github.com/coreyhulen), [esethna](https://github.com/esethna), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [jwilander](https://github.com/jwilander), [lindy65](https://github.com/lindy65), [Rohlik](https://github.com/Rohlik)
 
-mattermost-redux:
+/mattermost-redux:
 
 - [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [jarredwitt](https://github.com/jarredwitt), [jwilander](https://github.com/jwilander)
 

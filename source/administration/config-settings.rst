@@ -1304,15 +1304,6 @@ This feature's ``config.json`` settings are, respectively:
     * - ``"Uppercase": false`` with options ``true`` and ``false``
     * - ``"Symbol": false`` with options ``true`` and ``false``
 
-
-Password Reset Salt
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-32-character (to be randomly generated via Admin Console) salt added to signing of password reset emails. Click **Regenerate** to create new salt.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PasswordResetSalt": ""``  with string input.                                                                            |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Maximum Login Attempts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Failed login attempts allowed before a user is locked out and required to reset their password via email.
@@ -1826,6 +1817,14 @@ Secure Amazon S3 Connections
 | This feature's ``config.json`` setting is ``"AmazonS3SSL": true`` with options ``true`` and ``false`` for above settings respectively.                               |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable File Attachments
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+When false, users cannot upload files and images by attaching them to messages.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableFileAttachments": true`` with options ``true`` and ``false``.                                                      |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Maximum File Size
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Maximum file size for message attachments entered in megabytes in the System Console UI. Converted to bytes in ``config.json`` at 1048576 bytes per megabyte.
@@ -2226,7 +2225,7 @@ Enable Testing Commands
 
 Enable Developer Mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: Javascript errors are shown in a red bar at the top of the user interface. Not recommended for use in production.
+**True**: Javascript errors are shown in a purple bar at the top of the user interface. Not recommended for use in production.
 
 **False**: Users are not alerted to Javascript errors.
 
@@ -2322,9 +2321,18 @@ This setting defines the frequency of cluster request time logging for :doc:`../
 | This feature's ``config.json`` setting is ``"ClusterLogTimeoutMilliseconds": 2000`` with whole number input.                                                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable Searching of Posts
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If this setting is enabled, users can search messages. Disabling search can result in a performance increase, but users get an error message when they attempt to use the search box.
+
++-------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnablePostSearch": true`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------+
+
 Enable User Typing Messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This setting determines wheter "user is typing..." messages are displayed below the message box. Disabling the setting in larger deplyoments may improve server performance.
+This setting determines whether "user is typing..." messages are displayed below the message box. Disabling the setting in larger deployments may improve server performance.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableUserTypingMessages": "true"`` with string input.                                                                  |
@@ -2337,6 +2345,14 @@ This setting defines how frequently "user is typing..." messages are updated, me
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"TimeBetweenUserTypingUpdatesMilliseconds": 5000`` with whole number input.                                              |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable User Status Updates
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Turn status updates off to improve performance. When status updates are off, users appear online only for brief periods when posting a message, and only to members of the channel in which the message is posted.
+
++---------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableUserStatuses": true`` with options ``true`` and ``false``. |
++---------------------------------------------------------------------------------------------------------------+
 
 Segment Write Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2367,7 +2383,24 @@ WebSocket Port
 | This feature’s ``config.json`` setting is ``WebsocketPort": 80`` with whole number input.                                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-________
+SQL Settings
+~~~~~~~~~~~~
+
+Read Replicas (Enterprise Edition)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Specifies the connection strings for the read replica databases. Each string must be in the same form as used for the `Data Source`_ setting. A server restart is required for changes to this setting to take effect.
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DataSourceReplicas": []`` with a comma-separated list of database connection strings as input. |
++---------------------------------------------------------------------------------------------------------------------------------------------+
+
+Search Replicas (Enteprise Edition)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Specifies the connection strings for the search replica databases. A search replica is similar to a read replica, but is used only for handling search queries. Each string must be in the same form as used for the `Data Source`_ setting. A server restart is required for changes to this setting to take effect.
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DataSourceSearchReplicas": []`` with a comma-separated list of database connection strings as input. |
++---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Team Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
