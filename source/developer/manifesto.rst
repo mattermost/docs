@@ -4,9 +4,9 @@ About the Mattermost Open Source Project
 
 Mattermost is an open source, private cloud alternative to proprietary communication services. Hundreds of contributors around the world help develop the software in over 10 languages. 
 
-- **Mattermost Team Edition** is an open source workplace messaging solution. Combined with native Mattermost apps on mobile and desktop, it brings all your team communication to one place, with web, mobile and PC interfaces, continuous archiving, instant search and a host of 3rd party integrations. It deploys as a single Linux binary under MIT license, with either MySQL or PostgreSQL as a database. 
+- **Mattermost Team Edition** is an open source, private cloud workplace messaging solution designed for deployment by non-technical users with basic IT skills. Combined with native Mattermost apps on mobile and desktop, it brings all your team communication to one place, with web, mobile and PC interfaces, continuous archiving, instant search and a host of 3rd party integrations. It deploys as a single Linux binary under MIT license, with either MySQL or PostgreSQL as a database, with a host of simple, automated deployment options created by our community. 
 
-- **Mattermost Enterprise Edition** is a commercial extension of Mattermost offering enterprise-grade messaging and advanced security, configurability and scalability benefits beyond the scope of team communication. 
+- **Mattermost Enterprise Edition** is a commercial extension of Mattermost offering enterprise-grade messaging and advanced security, configurability and scalability benefits for sophisticated organizations and users. 
 
 History 
 ---------------
@@ -32,14 +32,14 @@ Mattermost software, whether open source or commercial, should never withhold an
 2. Quick Time-to-Value 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Great software creates value quickly. A novice IT admin should be able to set up Mattermost and roll it out to their team in just a few minutes to increase team productivity. We should automate as much as possible in a standard install, ask few technical questions, and provide full explanations for any decisions an IT admin or end user needs to make. 
+Great software creates value quickly. A non-technical user with basic IT skills should be able to set up Team Edition, understand every feature in the UI, and roll out the product and increase team productivity in just a few minutes. We should automate as much as possible in a standard install, ask few technical questions, and provide full explanations for any decisions that need to be made.  
 
 3. Minimalist
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Minimalism is providing the correct amount of functionality and not more and not less. Great design is about doing important things extremely well, and not many things poorly. Make features work well for their intended purpose before adding new features. 
 
-4. Decisions not Options
+4. Decisions not options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Make decisions instead of providing options. Every time you present an option, you force the user to make a decision which can lead to frustration if it's not for the majority of users. 
@@ -47,22 +47,24 @@ Make decisions instead of providing options. Every time you present an option, y
 5. Built for teams behind firewalls
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost is built for teams needing a modern communication experience secured behind a firewall. 
+Team Edition is built for teams needing a modern communication experience secured behind a firewall. For our target audience, we should be by far the best solution in the world. 
 
 6. No surprises 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Users should never run into anything unexpected with Mattermost. We ship on time and document our features and product changes. Users should be able to know well in advance what is being considered for inclusion and change in upcoming versions. 
 
-7. Empower trusted teams
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+7. Near zero administration 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Enable people to achieve what the team needs simply. Focus on building trust and education within a team and control via social norms instead of hard limits on what someone in the system can do. 
+Let people work simply. Team Edition is for teams needing a "virtual office" where everyone knows each other and is trusted to get things done appropriately, without hard limits and policies. The non-technical user who deployed Team Edition should spend zero time on any administration tasks. 
 
-8. Primary, not secondary
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+8. Open source alternative  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost is designed to be the primary way a team communicates. Deployment as a secondary system, where not everyone in a team can be reached, does not achieve our purpose. We don't include features such as using email as a Mattermost interface (impoverished experience). Also, while you can use your Mattermost account to securely sign-in to other apps there are no plans to add sign-in to Mattermost using other accounts. 
+For non-technical users with basic IT skills, Team Edition aspires to be an ideal workplace messaging solution deployed on a private network, emphasizing simplicity and fast time-to-value. For sophisticated organizations with advanced security, configurability and scalability needs, the commercial Enterprise Edition extension strives to be an ideal solution. 
+
+For organizations who seek other options, full source code of the platform for creating Team Edition should be available for the development of open source variants, including commercial variants, `provided the Mattermost trademark is not used and other protocols are respected. <https://docs.mattermost.com/overview/faq.html#how-can-i-create-a-derivative-work-of-mattermost-as-my-own-commercial-solution>`_ 
 
 -----
 

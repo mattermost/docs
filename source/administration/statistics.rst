@@ -83,7 +83,7 @@ Private Channels
     The number of private channels created in this team. Excludes deleted channels.
 
 Total Posts
-    The total number of posts made in this team, including deleted posts and posts made using automation.
+    The total number of posts made in this team, including deleted posts and posts made using automation. Excludes posts made in direct message channels, which are not tied to a team.
 
 Total Posts (graph)
     The total number of posts made on a certain day in this team, including deleted posts and posts made using automation.

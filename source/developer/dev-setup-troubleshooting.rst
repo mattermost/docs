@@ -27,7 +27,7 @@ I get the following error when running ``make run``: "Failed to ping db err:dial
 
     ecb17c10973d    mysql:5.7  "/entrypoint.sh mysql"   2 weeks ago    Up 24 hours  0.0.0.0:3306->3306/tcp     mattermost-mysql
 
-  If not, running ``make clean-docker`` will remove all existing docker containers so that they'll be recreated next time you call ``make run``.
+  If not, running ``make clean-docker`` will remove all existing Docker containers so that they'll be recreated next time you call ``make run``.
 
 I get the following error when running ``make run``: "Error starting server, err:listen tcp :8065: bind: address already in use"
   There's likely another Mattermost instance already running. You can use ``make stop`` to stop it before running ``make run`` again.

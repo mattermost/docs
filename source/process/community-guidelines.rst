@@ -29,13 +29,13 @@ Creating Help Wanted Issues
 
 To create a Help Wanted issue in the `platform repository <https://github.com/mattermost/platform>`_, follow these steps:
 
-1 - Create a ticket in Jira that is well-defined and unambiguous. 
+1 - Create a ticket in Jira that is well-defined and unambiguous.
 
 The issue should be written with the mindset that the contributor might have no or limited experience with the Mattermost code base and limited exposure to the Mattermost product.
 
   .. note::
     Below are a few reasons why Jira tickets for Help Wanted issues are recommended:
-    
+
       1. Jira tickets can be used to prioritize Help Wanted issues internally and are easily searchable by Mattermost staff, community, and customers
       2. Each Jira ticket goes through the  `triage meeting <https://docs.mattermost.com/process/training.html#triage-meeting>`_ for dev and PM approval
       3. Zapier integration automatically creates GitHub Help Wanted issues from labelled Jira tickets, requiring no additional mana
@@ -68,12 +68,10 @@ Once a pull request for an open GitHub Help Wanted issue is merged, please ensur
 - the corresponding GitHub Help Wanted issue is closed, thanking the contributor
 - the corresponding JIRA ticket is resolved
 
-----
-
 Mattermost Community Forums
 ---------------------------------------------------------
 
-Guidelines for `Mattermost community forums <forum.mattermost.org>`_.
+Guidelines for Mattermost `community forums <https://forum.mattermost.org>`_.
 
 *CM = community manager*
 

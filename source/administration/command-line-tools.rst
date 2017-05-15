@@ -370,16 +370,25 @@ platform team
     -  `platform team delete`_ - Delete a team
     -  `platform team remove`_ - Remove users from a team
 
+.. _team-value-note:
+
+.. note::
+    **{team-name} value**
+
+    For the *add*, *delete*, and *remove* commands, you can determine the *{team-name}* value from the URLs that you use to access your instance of Mattermost. For example, in the following URL the *{team-name}* value is *myteam*:
+
+    ``https://example.com/myteam/channels/mychannel``
+
 platform team add
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Add users to a team.
+    Add users to a team. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
 
   Format
     .. code-block:: none
 
-      platform team add {team} {users}
+      platform team add {team-name} {users}
 
   Example
     .. code-block:: none
@@ -415,12 +424,12 @@ platform team delete
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Permanently delete a team along with all related information, including posts from the database.
+    Permanently delete a team along with all related information, including posts from the database. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
 
   Format
     .. code-block:: none
 
-      platform team delete {teams}
+      platform team delete {team-name}
 
   Example
     .. code-block:: none
@@ -436,12 +445,12 @@ platform team remove
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Remove users from a team.
+    Remove users from a team. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
 
   Format
     .. code-block:: none
 
-      platform team remove {team} {users}
+      platform team remove {team-name} {users}
 
   Example
     .. code-block:: none

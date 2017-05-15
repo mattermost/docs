@@ -14,7 +14,7 @@ This option can be enabled by the System Administrator in the System Console und
 
 To set up the WebRTC server, you may either
 
- - use a `Mattermost docker container created for testing WebRTC <https://hub.docker.com/r/mattermost/webrtc/>`_
+ - use a `Mattermost Docker container created for testing WebRTC <https://hub.docker.com/r/mattermost/webrtc/>`_
  - set up a `Janus server <https://github.com/meetecho/janus-gateway>`_ to act as the WebRTC gateway and `Coturn <https://github.com/coturn/coturn/wiki>`_ for STUN and TURN servers for your Mattermost installation.
 
 Starting a video call
