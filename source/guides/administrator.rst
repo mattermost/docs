@@ -60,7 +60,7 @@ Administration
    /administration/compliance*
    /administration/branding*
    /administration/backup*
-   /administration/upgrade.md
+   /administration/upgrade.rst
    /administration/migrating.md
 
 Changelog
