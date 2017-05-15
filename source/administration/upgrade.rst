@@ -33,7 +33,7 @@ Important Notices
 
 1. Security related changes were made in 3.9.0 that cause any previously created team invite links, password reset links, and email verification links to no longer work. You must update any place where you have published these links.
 
-2. Security-related changes were made in 3.8.0 that require you to verify settings in the System Console before upgrading from version 3.5.3 and earlier to any version greater than 3.8.0
+2. Security-related changes were made in 3.7.5 and 3.8.0 that require you to verify settings in the System Console before upgrading from version 3.7.4 and earlier.
 
   1. In the GENERAL section of the System Console, click **Configuration** and make sure that the **Site URL** is specified. It must not be empty. For more information about SiteURL, see `Configuration Settings <config-settings.html#site-url>`_
   2. In the GENERAL section of the System Console, click **Logging** and make sure that the **File Log Directory** field is either empty or has a directory path only. It must not have a filename as part of the path.
