@@ -3,11 +3,11 @@ Building a Webapp React Component
 
 This page describes how to build a new React component in the webapp. All new components must meet the following requirements:
 
-1. Be pure, meaning that all information required to render are passed in by props
-2. Have no direct store interaction, use an index.js to wrap the component if needed
+1. Be pure, meaning that all information required to render is passed in by props
+2. Have no direct store interaction, use a container to wrap the component if needed
 3. Have component tests
 4. Be generic and re-usable when possible
-5. Have documented prop types
+5. Have documented props
 
 These requirements will be talked about in more detail in the following sections.
 
@@ -21,7 +21,7 @@ The components for the webapp currently live in the ``webapp/components/`` direc
 Designing your Component
 ------------------
 
-The most important part of designing your component is decidiing on what the props will be. Props are very much the API for your component, think of them as a contract between your component and the users of it.
+The most important part of designing your component is deciding on what the props will be. Props are very much the API for your component, think of them as a contract between your component and the users of it.
 
 Props are read-only variables that get passed down to your component either directly from a parent component or from an `index.js` container that pulls some data from the Redux store. More on that later, for now you can see all the different prop types here: https://facebook.github.io/react/docs/typechecking-with-proptypes.html#proptypes.
 

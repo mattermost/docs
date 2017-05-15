@@ -19,9 +19,10 @@ Adding an Action
 Actions are any sort of logic that will result in the manipulation of store state. The means by which actions manipulate the store is through dispatches. Dispatches will take an object with an action type and some data, and pass it along to the reducers to be transformed into the correct format and placed in the state of the store. An example action might be getting a user, which would use the web client utility to fetch the user and then dispatch that user to the store.
 
 Actions must:
-- Return `asynch functions <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function>`__ so the caller can `await <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await>`__ on them
+- Return `async functions <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function>`__ so the caller can `await <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await>`__ on them
 - The async function must return ``null`` on error, while dispatching an error to store state
 - The async function must return the data result or return ``true`` if there is no data to return, while dispatching the data
+- May be chained to return the results of other actions
 - Be unit tested
 
 Actions live in the ``src/actions/`` directory.
@@ -60,11 +61,11 @@ If your action is a one-to-one mapping of a web client function, all you need to
 
   export function getUser(userId) {
       return bindClientFunc(
-          Client4.getUser,
-          UserTypes.USER_REQUEST,
-          [UserTypes.RECEIVED_USER, UserTypes.USER_SUCCESS],
-          UserTypes.USER_FAILURE,
-          userId
+          Client4.getUser, // The client method
+          UserTypes.USER_REQUEST, // The type of action dispatched when the request is started
+          [UserTypes.RECEIVED_USER, UserTypes.USER_SUCCESS], // One or more types of actions dispatched when the request is completed
+          UserTypes.USER_FAILURE, // The type of action dispatched when the request fails
+          userId // Any other arguments to the action that will be passed to the client call
       );
   }
 
@@ -170,10 +171,10 @@ Make sure to read the `README <https://github.com/mattermost/mattermost-redux/bl
 Adding a Selector
 ------------------
 
-Selectors are the method used to retrieving data from the state of the store. We use `reselect <https://github.com/reactjs/reselect>`__. If you'd like to know more about reselect and how we use it at Mattermost, `check out this developer talk given by core developer Harrison Healey <https://www.youtube.com/watch?v=6N2X7gEwmaQ>`__.
+Selectors are the method used to retrieve data from the state of the store. We use `reselect <https://github.com/reactjs/reselect>`__. If you'd like to know more about reselect and how we use it at Mattermost, `check out this developer talk given by core developer Harrison Healey <https://www.youtube.com/watch?v=6N2X7gEwmaQ>`__.
 
 Selectors must:
-- Receive ``state`` as the first argument and data returned must be solely based on what's in the state
+- Receive ``state`` as the first argument and return data based solely on what's in the state
 - Be created with ``createSelector`` whenever the data is manipulated or formatted before return
 - Be unit tested
 
@@ -182,7 +183,7 @@ Selectors live in the ``src/selectors/`` directory.
 Implementing the Selector
 ~~~~~~~~~~~~~~~~~~
 
-If your selector is just pulling data directly from the state without any manipulation, simply just return the data you need.
+If your selector is just pulling data directly from the state without any manipulation, simply return the data you need.
 
 
 .. code-block:: javascript
@@ -196,7 +197,7 @@ The above example is just simply pulling a user out of the profiles entity and r
 
 If your selector needs to select based on some more advanced requirements or needs the result in a specific format then you'll need to make use of the ``createSelector`` function from `reselect <reselect <https://github.com/reactjs/reselect>`__. If you're not sure what this is good for, `check out the previously mentioned developer talk <https://www.youtube.com/watch?v=6N2X7gEwmaQ>`__. The short form reason is using reselect allows for memoization and only runs the computation of selectors when the state affecting that selector has actually changed.
 
-The basic usage for ``createSelector`` is pass it all the selector functions needed as inputs to your computation. The last argument will then be a function that takes in the results of each selector you specified and performs your computation on that data before returning it.
+The basic usage for ``createSelector`` is to pass it all the selector functions needed as inputs to your computation. The last argument should then be a function that takes in the results of each previous selector, performs some computations, and then returns the result.
 
 .. code-block:: javascript
   :linenos:
@@ -219,7 +220,7 @@ The basic usage for ``createSelector`` is pass it all the selector functions nee
 
 Here we're using the ``getUsers`` selector to feed users into our function that builds a map of users with username as the key.
 
-So far that's pretty straight forward but what if you want to select some data based on an argument but also need to do some computation? That is a little more tricky if you haven't wrapped your head around the purpose of reselect and how createSelector works, so if you haven't watched the developer talk linked above I would strongly suggest it.
+So far that's pretty straightforward, but what if you want to select some data based on an argument? That is a little more tricky if you haven't wrapped your head around the purpose of reselect and how createSelector works, so if you haven't watched the developer talk linked above, I would strongly suggest it.
 
 To accomplish this we need to create factory function that will create the selector, instead of just creating the selector directly.
 
@@ -249,9 +250,9 @@ To accomplish this we need to create factory function that will create the selec
   const getFilesForPost = makeGetFilesForPost();
   const files = getFilesForPost(state, 'somepostid');
 
-This can look a bit confusing but there is little happening here we haven't seen before. All that we're doing is using three selectors with ``createSelector``, the third selector just happens to be returning an argument so that our final function has access to it. Remember that every selector always takes state in as the first argument.
+This can look a bit confusing, but there is little happening here we haven't seen before. All that we're doing is using three selectors with ``createSelector``, the third selector just happens to be returning its second argument so that our final function has access to it. Remember that every selector always takes state in as the first argument.
 
-If you're thinking, I don't get it why can't we just create the selector normally? Then think about how selectors work and remember that if the state changes then the computation happens again. In this case if our ``postId`` changes that counts as a state change since one of our selectors is returning it. This means every time we provide a different ``postId`` to our selector we lose all the benefits of memoization, which is the whole reason for using reselect. So instead we create a new selector for every post id that we want to select for. That may seem a little crazy at first, but think about how componentized React is and it's not that crazy. All you really need to do is use the factory function to create your selector in the constructor or container of your component and use it solely for that component.
+If you're thinking, "I don't get it. Why can't we just create the selector normally?" then think about how selectors work and remember that if the state changes then the computation happens again. When the postId changes, that counts as a state change, so every time we provide a different ``postId`` to our selector we lose all the benefits of memoization, which is the whole reason for using reselect. Instead, we create copies of our selector everywhere we know the post id shouldn't change frequently. That may seem a little crazy at first, but if you think about how componentized React is, it's not that bad. All you really need to do is use the factory function to create an instance of your selector for each component and use it solely for that component.
 
 Testing the Selector
 ~~~~~~~~~~~~~~~~~~
