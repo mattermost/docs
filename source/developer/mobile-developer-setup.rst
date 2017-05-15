@@ -17,7 +17,7 @@ Development Environment Setup
 Mac OS X
 ~~~~~~~~~~~~
 
-1. Install `XCode 8.1 <https://developer.apple.com/download/>`_.
+1. Install `XCode 8.3 <https://developer.apple.com/download/>`_.
 
 2. Install `Homebrew <http://brew.sh/>`_.
 
@@ -33,9 +33,13 @@ Mac OS X
 
   ``npm install -g react-native-cli``
 
-6. Fork `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_ on GitHub.
+6. Using Homebrew or npm install `Yarn <https://yarnpkg.com>`_.
 
-7. Clone your fork locally.
+   ``brew install yarn`` or ``npm install -g yarn``
+
+7. Fork `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_ on GitHub.
+
+8. Clone your fork locally.
 
   ``cd`` into the folder that you want to store the local copy of your code
 
@@ -43,11 +47,11 @@ Mac OS X
 
   ``cd mattermost-mobile``
 
-8. Using npm, download any other dependencies.
+9. Using npm, download any other dependencies.
 
   ``make pre-run``
 
-9. *Optional:* Install Mattermost locally so that you can run unit tests and connect to the server while doing development.
+10. *Optional:* Install Mattermost locally so that you can run unit tests and connect to the server while doing development.
 
   a. Follow the steps in the `Developer Machine Setup <developer-setup.html>`_ to install Mattermost.
 
@@ -84,6 +88,8 @@ Android (Device)
   - Tools > Android SDK Platform-tools 25.0.3
 
   - Tools > Android SDK Build-tools 25.0.2
+
+  - Tools > Android SDK Build-tools 25.0.1
 
   - Android 6.0 > SDK Platform 23
 

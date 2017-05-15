@@ -18,6 +18,8 @@ Mattermost uses `GNU Make <https://www.gnu.org/software/make/>`_ to control the 
 
 The first time that you use the ``make run`` command can take a substantial amount of time depending on your machine's processor speed and memory size, and on the speed of your network. If you are developing in a VM, make sure that the VM has at least 2G of memory assigned to it.
 
+To start contributing to Mattermost, see :doc:`Developer Flow <developer-flow>`.
+
 Useful Make Commands
 --------------------
 
