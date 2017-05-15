@@ -38,7 +38,10 @@ AD/LDAP is the most popular corporate directory integration option for deploying
 - Customization of login screen to specify whether users are logging in with email, username or other attribute
 - Sychronization with AD/LDAP to disable, enable and update Mattermost users based on AD/LDAP 
 
-New user accounts are created when new users login with their AD/LDAP credentials. If you're using email or username and password authentication `users can switch to AD/LDAP manually <https://docs.mattermost.com/deployment/sso-ldap.html#configure-ad-ldap-using-the-system-console-user-interface>`_, and the `conversion to AD/LDAP can also be done using the command line interface <https://docs.mattermost.com/administration/command-line-tools.html?highlight=cli#platform-user-migrate-auth>`_ by an IT admin. 
+Note: 
+
+- New user accounts are created when new users sign-in with their AD/LDAP credentials. You can optionally pre-create user accounts using the `bulk loading <https://docs.mattermost.com/deployment/bulk-loading.html>`_ tool.
+- If you're using email or username and password authentication `users can switch to AD/LDAP manually <https://docs.mattermost.com/deployment/sso-ldap.html#configure-ad-ldap-using-the-system-console-user-interface>`_, and the `conversion to AD/LDAP can also be done using the command line interface <https://docs.mattermost.com/administration/command-line-tools.html?highlight=cli#platform-user-migrate-auth>`_ by an IT admin. 
 
 For very large AD/LDAP instances you can also configure max page size to divide a Mattermost AD/LDAP query into several pieces to not over-tax the authentication server when synchronizing.
 

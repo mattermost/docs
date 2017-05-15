@@ -162,11 +162,11 @@ Configure SAML for Mattermost
 
 	.. image:: ../../source/images/adfs_22_mattermost_basics.PNG
 
-2. (Optional) Configure Mattermost to verify the signature. The *Service Provider Login URL* is the *SAML 2.0 SSO service URL* you specified in ADFS earlier.
+2. Configure Mattermost to verify the signature. The *Service Provider Login URL* is the *SAML 2.0 SSO service URL* you specified in ADFS earlier.
 
 	.. image:: ../../source/images/adfs_23_mattermost_verification.PNG
 
-3. (Optional) Enable encryption by uploading the Service Provider Private Key and Service Provider Public Certificate you generated earlier.
+3. Enable encryption by uploading the Service Provider Private Key and Service Provider Public Certificate you generated earlier.
 
 	.. image:: ../../source/images/adfs_24_mattermost_encryption.PNG
 
