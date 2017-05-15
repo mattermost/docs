@@ -1,24 +1,29 @@
-# Legacy Upgrade Guide
+# Upgrading from an Unsupported Version
 
-If you are upgrading a server running Mattermost v3.0.x or later, please refer to our most [current upgrade guide](../../administration/upgrade.html).
+These instructions apply only if you are upgrading from an unsupported version of Mattermost to the latest version. Only the current released version and the two previous versions are supported.
 
-- [Upgrade Team Edition from 3.0 and later](../../administration/legacy-upgrade.html#upgrade-team-edition-from-3-0-x-and-later)
-- [Upgrade Team Edition to 2.2.x and earlier](../../administration/legacy-upgrade.html#upgrade-team-edition-to-2-2-x-and-earlier)
-- [Upgrade Enterprise Edition from 3.0 and later](../../administration/legacy-upgrade.html#upgrade-enterprise-edition-from-3-0-x-and-later)
-- [Upgrade Enterprise Edition to 2.2.x and earlier](../../administration/legacy-upgrade.html#upgrade-enterprise-edition-to-2-2-x-and-earlier)
+If you are upgrading a server that is already running a supported version, See [Upgrading Mattermost Server](../../administration/upgrade.html).
 
-## Upgrade Team Edition
+## Upgrade Team Edition from 3.0.0 and later
 
-## Upgrade Team Edition from 3.0 and later
+### Important Notices
 
-**Important Note:** Security-related changes were made in 3.8 that require you to verify settings in the System Console before upgrading from version 3.7.x and earlier to any version greater than 3.8.0.
+1. Security related changes were made in 3.9.0 that cause any previously created team invite links, password reset links, and email verification links to no longer work. You must update any place where you have published these links.
 
-**To prepare your system when upgrading from 3.7.x and earlier**:
+1. Security-related changes were made in 3.8.0 that require you to verify settings in the System Console before upgrading from version 3.7.0 and earlier to any version greater than 3.8.0
 
-  1. In the System Console, go to **General > Configuration** and make sure that the **Site URL** is specified. It must not be empty.
-  2. In the System Console, go to **General > Logging** and make sure that the **File Log Directory** field is either empty or has a directory path only. It must not have a filename as part of the path.
+    1. In the GENERAL section of the System Console, click **Configuration** and make sure that the **Site URL** is specified. It must not be empty. For more information about SiteURL, see `Configuration Settings <config-settings.html#site-url>`_
+    2. In the GENERAL section of the System Console, click **Logging** and make sure that the **File Log Directory** field is either empty or has a directory path only. It must not have a filename as part of the path.
 
-**To upgrade your system from 3.0.x and later**:
+1. Changes were made in 3.8.0 that require a change in the proxy configuration. If you're using NGINX:
+    1. Open the NGINX configuration file as root. The file is usually ``/etc/nginx/sites-available/mattermost`` but might be different on your system.
+    2. Locate the following line:
+     `location /api/v3/users/websocket {`
+    3. Replace the  line with ``location ~ /api/v[0-9]+/(users/)?websocket$ {``.
+
+  If you are using a proxy other than NGINX, make the equivalent change to that proxy's configuration.
+
+**To upgrade your system from 3.0.0 and later**:
 
 1. Download the latest version of Team Edition server and note any compatibility procedures:
       - Note: If public links are enabled, upgrading from `v3.3.x` and earlier will invalidate existing public links due to a security upgrade allowing admins to invalidate links by resetting a public link salt from the System Console.
@@ -48,16 +53,26 @@ If you are upgrading a server running Mattermost v3.0.x or later, please refer t
 
 After the server is upgraded, users might need to refresh their browsers to experience any new features.
 
-## Upgrade Enterprise Edition from 3.0.x and later
+## Upgrade Enterprise Edition from 3.0.0 and later
 
-**Important Note:** Security-related changes were made in 3.8 that require you to verify settings in the System Console before upgrading from version 3.7.x and earlier to any version greater than 3.8.0.
+### Important Notices
 
-**To prepare your system when upgrading from 3.7.x and earlier**:
+1. Security related changes were made in 3.9.0 that cause any previously created team invite links, password reset links, and email verification links to no longer work. You must update any place where you have published these links.
 
-  1. In the System Console, go to **General > Configuration** and make sure that the **Site URL** is specified. It must not be empty.
-  2. In the System Console, go to **General > Logging** and make sure that the **File Log Directory** field is either empty or has a directory path only. It must not have a filename as part of the path.
+2. Security-related changes were made in 3.8.0 that require you to verify settings in the System Console before upgrading from version 3.7.0 and earlier to any version greater than 3.8.0
 
-**To upgrade your system**:
+  1. In the GENERAL section of the System Console, click **Configuration** and make sure that the **Site URL** is specified. It must not be empty. For more information about SiteURL, see `Configuration Settings <config-settings.html#site-url>`_
+  2. In the GENERAL section of the System Console, click **Logging** and make sure that the **File Log Directory** field is either empty or has a directory path only. It must not have a filename as part of the path.
+
+3. Changes were made in 3.8.0 that require a change in the proxy configuration. If you're using NGINX:
+  1. Open the NGINX configuration file as root. The file is usually ``/etc/nginx/sites-available/mattermost`` but might be different on your system.
+  2. Locate the following line:
+     `location /api/v3/users/websocket {`
+  3. Replace the  line with ``location ~ /api/v[0-9]+/(users/)?websocket$ {``.
+
+  If you are using a proxy other than NGINX, make the equivalent change to that proxy's configuration.
+
+**To upgrade your system from 3.0.0 and later**:
 
 1. Download the latest version of Enterprise Edition server and note any compatibility procedures:
       - Note: If there are config settings set for `"RestrictPublicChannelManagement"` and `"RestrictPrivateChannelManagement"`, they will be used as the default values for `"RestrictPublicChannelCreation"`, `"RestrictPrivateChannelCreation"`, `"RestrictPublicChannelDeletion"`, and `"RestrictPrivateChannelDeletion"` after upgrade.
@@ -88,7 +103,7 @@ After the server is upgraded, users might need to refresh their browsers to expe
 
 After the server is upgraded, users might need to refresh their browsers to experience any new features.
 
-### Upgrade Team Edition to 3.0.x
+## Upgrade Team Edition to 3.0.3
 
 Mattermost 3.0 lets users maintain a single account across multiple teams on a Mattermost server. This means one set of credentials, one place to configure all account settings, and a more streamlined sign-up and team joining process.
 
@@ -137,7 +152,7 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
 
    Users can continue to access the direct message history of their duplicate accounts using their updated email addresses.
 
-### Upgrade Team Edition to 2.2.x and earlier
+## Upgrade Team Edition to 2.2.0 and earlier
 
 1. Download the **appropriate next upgrade** of your Team Edition server and note any compatibility procedures
       1. Run `platform -version` to check the current version of your Mattermost server
@@ -167,9 +182,7 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
 9. Test the system is working by going to the URL of the server with an `https://` prefix.
       1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 
-## Upgrade Enterprise Edition
-
-### Upgrade Enterprise Edition to 3.0.x
+## Upgrade Enterprise Edition to 3.0.3
 
 Mattermost 3.0 lets users maintain a single account across multiple teams on a Mattermost server. This means one set of credentials, one place to configure all account settings, and a more streamlined sign-up and team joining process.
 
@@ -217,17 +230,15 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
 
    Users can continue to access the direct message history of their duplicate accounts using their updated email addresses.
 
-
 For any issues, Mattermost Enterprise Edition subscribers and trial license users can email support@mattermost.com
 
-
-### Upgrade Enterprise Edition to 2.2.x and earlier
+## Upgrade Enterprise Edition to 2.2.0 and earlier
 
 1. Download the **appropriate next upgrade** of your Enterprise Edition server and note any compatibility procedures
       1. Run `platform -version` to check the current version of your Mattermost server
       2. Determine the appropriate next upgrade for your server:
-          - Mattermost `v2.0.x` and `v2.1.x` can upgrade directly to Mattermost `v2.2.x`.
-          - Mattermost `v1.4.x` and `v2.0.x` can upgrade directly to Mattermost `v2.1.x`.
+          - Mattermost `v2.0.x` and `v2.1.x` can upgrade directly to Mattermost `v2.2.0`.
+          - Mattermost `v1.4.x` and `v2.0.x` can upgrade directly to Mattermost `v2.1.0`.
           - Mattermost `v1.2.x` must upgrade to Mattermost `v1.3.x` before further upgrades.
           - Mattermost `v1.1.x` must upgrade to Mattermost `v1.2.x` before further upgrades.
           - Mattermost `v1.0.x` must upgrade to Mattermost `v1.1.x` before further upgrades.

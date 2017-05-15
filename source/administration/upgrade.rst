@@ -1,14 +1,17 @@
 Upgrading Mattermost Server
 ===========================
 
-In most cases, you can upgrade Mattermost Server in a few minutes, depending on how long it takes for you to back up the database and the file storage directory.
+In most cases, you can upgrade Mattermost Server in a few minutes, depending on how long it takes for you to back up both the database and the file storage directory.
 
-If you are upgrading from version 3.6.0 or greater
+Which Upgrade Instructions to Use
+---------------------------------
+
+If you are upgrading from version 3.7.0 or greater
   This guide applies to you. Skip to :ref:`Before you begin <before-you-begin>`.
-If you are upgrading from a version earlier than 2.3.0
-  You must first upgrade to `Team Edition 3.0.3 <../administration/legacy-upgrade.html#upgrade-team-edition-to-3-0-x>`_ or if you have Enterprise Edition, upgrade to `Enterprise Edition 3.0.3 <../administration/legacy-upgrade.html#upgrade-enterprise-edition-to-3-0-x>`_.
-If you are upgrading from a version greater than 3.0.3
+If you are upgrading from version 3.0.3 or greater and 3.6.6 or lower
   Upgrade `Team Edition <../administration/legacy-upgrade.html#upgrade-team-edition-from-3-0-x-and-later>`_ or upgrade `Enterprise Edition <../administration/legacy-upgrade.html#upgrade-enterprise-edition-from-3-0-x-and-later>`_ to the latest version.
+If you are upgrading from version 2.2.0 or earlier
+  You must first upgrade to `Team Edition 3.0.3 <../administration/legacy-upgrade.html#upgrade-team-edition-to-3-0-x>`_ or if you have Enterprise Edition, upgrade to `Enterprise Edition 3.0.3 <../administration/legacy-upgrade.html#upgrade-enterprise-edition-to-3-0-x>`_.
 
 .. _before-you-begin:
 
@@ -25,11 +28,23 @@ Location of your local storage directory
 Owner and group of the install directory - *{owner}* and *{group}*
   Use the ``ls -l {install-path}/mattermost/bin/platform`` command to get the owner and group.
 
-.. important::
-  Security-related changes were made in 3.8.0 that require you to verify settings in the System Console before upgrading from version 3.7.0 and earlier to any version greater than 3.8.0
+Important Notices
+-----------------
 
-  1. In the System Console, go to **General > Configuration** and make sure that the **Site URL** is specified. It must not be empty.
-  2. In the System Console, go to **General > Logging** and make sure that the **File Log Directory** field is either empty or has a directory path only. It must not have a filename as part of the path.
+1. Security related changes were made in 3.9.0 that cause any previously created team invite links, password reset links, and email verification links to no longer work. You must update any place where you have published these links.
+
+2. Security-related changes were made in 3.8.0 that require you to verify settings in the System Console before upgrading from version 3.7.0 and earlier to any version greater than 3.8.0
+
+  1. In the GENERAL section of the System Console, click **Configuration** and make sure that the **Site URL** is specified. It must not be empty. For more information about SiteURL, see `Configuration Settings <config-settings.html#site-url>`_
+  2. In the GENERAL section of the System Console, click **Logging** and make sure that the **File Log Directory** field is either empty or has a directory path only. It must not have a filename as part of the path.
+
+3. Changes were made in 3.8.0 that require a change in the proxy configuration. If you're using NGINX:
+  1. Open the NGINX configuration file as root. The file is usually ``/etc/nginx/sites-available/mattermost`` but might be different on your system.
+  2. Locate the following line:
+     `location /api/v3/users/websocket {`
+  3. Replace the  line with ``location ~ /api/v[0-9]+/(users/)?websocket$ {``.
+
+  If you are using a proxy other than NGINX, make the equivalent change to that proxy's configuration.
 
 **To upgrade Mattermost Server**:
 
@@ -90,12 +105,12 @@ Owner and group of the install directory - *{owner}* and *{group}*
 12. If you have TLS set up on your Mattermost server, you must activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports.
 
   1. ``cd {install-path}``
-  2. ``sudo setcap CAP_NET_BIND_SERVICE=+ep ./bin/platform``
+  2. ``sudo setcap cap_net_bind_service=+ep ./bin/platform``
 
 After the server is upgraded, users might need to refresh their browsers to experience any new features.
 
-Upgrade Team Edition to Enterprise Edition
-------------------------------------------
+Upgrading Team Edition to Enterprise Edition
+--------------------------------------------
 
 To upgrade from the Team Edition to the Enterprise Edition, follow the normal upgrade instructions above, but make sure that you download the Enterprise Edition in Step 3.
 
@@ -107,19 +122,22 @@ Version Archive
 Mattermost Enterprise Edition - Supported Versions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Mattermost Enterprise Edition v3.9.0 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v3-9-0>`_ - `Download <https://releases.mattermost.com/3.9.0/mattermost-3.9.0-linux-amd64.tar.gz>`_
+  - ``https://releases.mattermost.com/3.8.2/mattermost-3.8.2-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``b99c86a2667f636eaee26331aa61a71a51b2d3d412eaa83fdebf8b53cddc6aeb``
 Mattermost Enterprise Edition v3.8.2 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v3-8-2>`_ - `Download <https://releases.mattermost.com/3.8.2/mattermost-3.8.2-linux-amd64.tar.gz>`_
   - ``https://releases.mattermost.com/3.8.2/mattermost-3.8.2-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``b99c86a2667f636eaee26331aa61a71a51b2d3d412eaa83fdebf8b53cddc6aeb``
 Mattermost Enterprise Edition v3.7.4 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v3-7-4>`_ - `Download <https://releases.mattermost.com/3.7.4/mattermost-3.7.4-linux-amd64.tar.gz>`_
   - ``https://releases.mattermost.com/3.7.4/mattermost-3.7.4-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``adc84d61e14812ff5bfd788be7e49f2e8b8d7803909fa83ce7e6b0f27cee2394``
-Mattermost Enterprise Edition v3.6.6 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v3-6-6>`_ - `Download <https://releases.mattermost.com/3.6.6/mattermost-3.6.6-linux-amd64.tar.gz>`_
-  - ``https://releases.mattermost.com/3.6.6/mattermost-3.6.6-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``257400926c3a20212a210fdeec2b0ef60f6845ed4075598b374c64e224a08b9f``
 
 Mattermost Enterprise Edition - Unsupported Versions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Mattermost Enterprise Edition v3.6.6 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v3-6-6>`_ - `Download <https://releases.mattermost.com/3.6.6/mattermost-3.6.6-linux-amd64.tar.gz>`_
+  - ``https://releases.mattermost.com/3.6.6/mattermost-3.6.6-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``257400926c3a20212a210fdeec2b0ef60f6845ed4075598b374c64e224a08b9f``
 Mattermost Enterprise Edition v3.5.1 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v3-5-1>`_ - `Download <https://releases.mattermost.com/3.5.1/mattermost-3.5.1-linux-amd64.tar.gz>`_
   - ``https://releases.mattermost.com/3.5.1/mattermost-3.5.1-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``b972ac6f38f8b4c4f364e40a7c0e7819511315a81cb38c8a51c0622d7c5b14a1``
@@ -148,19 +166,22 @@ Mattermost Enterprise Edition v2.1.0 - `View Changelog <https://docs.mattermost.
 Mattermost Team Edition Server Archive - Supported Versions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Mattermost Team Edition v3.9.0 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v3-9-0>`_ - `Download <https://releases.mattermost.com/3.9.0/mattermost-team-3.9.0-linux-amd64.tar.gz>`_
+  - ``https://releases.mattermost.com/3.9.0/mattermost-team-3.9.0-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``TBA``
 Mattermost Team Edition v3.8.2 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v3-8-2>`_ - `Download <https://releases.mattermost.com/3.8.2/mattermost-team-3.8.2-linux-amd64.tar.gz>`_
   - ``https://releases.mattermost.com/3.8.2/mattermost-team-3.8.2-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``82cc85557dc21b3871ec89326769c11d3a89c9c41362fb3945247f8fba562ce7``
 Mattermost Team Edition v3.7.4 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v3-7-4>`_ - `Download <https://releases.mattermost.com/3.7.4/mattermost-team-3.7.4-linux-amd64.tar.gz>`_
   - ``https://releases.mattermost.com/3.7.4/mattermost-team-3.7.4-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``17ec3c85d7c210aa4d856aea437e7a23bb9e7c3e68031ba458a029d032730d01``
-Mattermost Team Edition v3.6.6 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v3-6-6>`_ - `Download <https://releases.mattermost.com/3.6.6/mattermost-team-3.6.6-linux-amd64.tar.gz>`_
-  - ``https://releases.mattermost.com/3.6.6/mattermost-team-3.6.6-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``6e501390c11f74b88d0992f9fd25d53dd7e30016c692cefb6f4bcdde29575dd7``
 
 Mattermost Team Edition Server Archive - Unsupported Versions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Mattermost Team Edition v3.6.6 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v3-6-6>`_ - `Download <https://releases.mattermost.com/3.6.6/mattermost-team-3.6.6-linux-amd64.tar.gz>`_
+  - ``https://releases.mattermost.com/3.6.6/mattermost-team-3.6.6-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``6e501390c11f74b88d0992f9fd25d53dd7e30016c692cefb6f4bcdde29575dd7``
 Mattermost Team Edition v3.5.1 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v3-5-1>`_ - `Download <https://releases.mattermost.com/3.5.1/mattermost-team-3.5.1-linux-amd64.tar.gz>`_
   - ``https://releases.mattermost.com/3.5.1/mattermost-team-3.5.1-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``2c6bc8b1c25e48d1ac887cd6cbef77df1f80542127b4d98c4d7c0dfbfade04d5``
