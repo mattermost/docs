@@ -231,9 +231,9 @@ The final release is cut. If an urgent and important issue needs to be addressed
     - Submit an MR to update [GitLab Mattermost documentation](https://docs.gitlab.com/omnibus/gitlab-mattermost/README.html)
 7. Marketing:
     - Finish draft of animated GIF (for Twitter announcement, MailChimp and blog post) made up of top announcements
-    - Finish draft of MailChimp email blast and Twitter announcement and send for marketing lead to review. Once reviewed, schedule for 08:00 PST on the date of marketing announcement
+    - Finish draft of MailChimp email blast and Twitter announcement and send for marketing lead to review. Once reviewed, schedule for 06:00 PST on the date of marketing announcement
     - **Note:** If the release contains a security update, also draft a Mailchimp email blast for the [Security Bulletin mailing list](http://eepurl.com/cAl5Rv)
-    - Finalize blog post for mattermost.com and set timer for 08:00 PST on the day of release
+    - Finalize blog post for mattermost.com and set timer for 05:00 PST on the day of release
     - Turn on CrazyEgg for blog post page
     - Update [feature list](https://about.mattermost.com/pricing/) on mattermost.com with relevant new features
 
