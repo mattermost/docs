@@ -145,28 +145,30 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - Update Release Discussion header with links to RC instances and testing spreadsheet
     - Post release testing instructions to Release Discussion channel ([example](https://pre-release.mattermost.com/core/pl/8z1tazpmm3ycbrehju36brd5nh))
     - Post "Known Issues" to Release Discussion channel
-3. Logistics:
+3. Dev:
+    - Run loadtests against the release candidate to find potential performance issues
+4. Logistics:
     - Confirm community testers are directed to the Release Discussion channel
-4. Team:
+5. Team:
     - Test assigned areas of the Release Candidate Testing Spreadsheet and file any bugs found in Jira
     - Post a link to any "Blocking" issue that may need a hotfix to the RC in the Release room, with the **#blocking** tag. If the issue is security related or contains confidential information, post the link in the Confidential Bugs private channel. Blocking issues are considered to be security issues, data loss issues, and issues that break core functionality or significantly impact aesthetics.
     - Daily triage of hotfix candidates and decide on whether and when to cut next RC or final
-5. PM:
+6. PM:
     - Queue an item for Release Update meeting to discuss worst bug
     - Update the meta issue:
         - Post comments to the meta issue with approved fixes for the next RCs
         - Download links and testing server links to the RCs
     - Post screenshot and links to final tickets for next RC to the Release Discussion room
     - Update Changelog “Known Issues” section with any significant issues that were found and not fixed for the final release
-6. Dev:
+7. Dev:
     - PRs for hotfixes made to release branch
     - Review PRs made from release branch and merge changes into both the release branch and master
-7. QA:
+8. QA:
     - Test RC fixes as they come in on CI servers
-8. Build: 
+9. Build: 
     - Verify with Release Manager before cutting any new RCs (approved fixes should be merged)
     - Push next RC to acceptance and announce in Town Square with new RC link
-9. PM:
+10. PM:
     - Test the new RC to verify fixes merged to the release branch work
     - Post in Release Channel after testing
 
@@ -215,6 +217,7 @@ The final release is cut. If an urgent and important issue needs to be addressed
     - Test upgrade from previous version to current version, following the [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) with database upgrades on both MySQL and Postgres
     - Test upgrade from Team Edition to Enterprise edition based on the [Upgrade Guide](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition)
     - Review any changes made to install guides, and test if necessary
+    - Run loadtests against the final release build to confirm there are no performance issues
 5. Logistics:
     - Update the [Mattermost server download page](https://www.mattermost.org/download/) with the links to the EE and TE bits
       - Test the download links before and after updating the page
