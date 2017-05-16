@@ -39,3 +39,11 @@ Technical direction resolutions are any decisions made by the team affecting the
 3. As of server 3.8, all new API endpoints should be made in API version 4. API version 3 should only be modified for bug fixes, security and/or performance issues. ([https://pre-release.mattermost.com/core/pl/xcyqqdpkgtb4mcexxxu7mpfssh](https://pre-release.mattermost.com/core/pl/xcyqqdpkgtb4mcexxxu7mpfssh))
 4. Moving the webapp over to share a service layer built on top of Redux. ([https://pre-release.mattermost.com/core/pl/x49ra6zk9frq7yccpo753a377o](https://pre-release.mattermost.com/core/pl/x49ra6zk9frq7yccpo753a377o))
 5. Removing localization of the server logs. We haven't found it beneficial to localize these messages, and in some cases it has made it more difficult for us to help troubleshoot issues for non-English users. This will also reduce some of the work required when translating Mattermost. ([https://pre-release.mattermost.com/core/pl/13xdrfnw5bb5mnagth5kt48kyr](https://pre-release.mattermost.com/core/pl/13xdrfnw5bb5mnagth5kt48kyr))
+
+### Useful Guides and Documentation ###
+- [Adding a webapp component](https://docs.mattermost.com/developer/webapp-component.html)
+- [Adding actions and selectors to Redux](https://docs.mattermost.com/developer/redux.html)
+- [Adding an endpoint to APIv4](https://docs.mattermost.com/html/developer/api4.html)
+- [Developer workflow](https://docs.mattermost.com/developer/developer-flow.html)
+- [Code style guide](https://docs.mattermost.com/developer/style-guide.html)
+
