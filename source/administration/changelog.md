@@ -4,6 +4,10 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
+## Release v3.10.0
+
+Release Date: June 16, 2017
+
 
 ## Release v3.9.0
 
@@ -48,7 +52,7 @@ Release Date: May 16, 2017
 - Added the ability to disable full text search queries and statuses via `config.json` for higher performance.
 
 #### Emoji Picker (Beta)
-- Enable the emoji picker in **Account Settings > Advanced > Preview pre-release features**. 
+- Enable the emoji picker in **Account Settings > Advanced > Preview pre-release features**.
 - Custom emoji now maintains aspect ratio in the emoji picker.
 - Improved user experience for closing the Emoji picker after reacting to a message.
 
@@ -203,7 +207,7 @@ Many thanks to all our contributors. In alphabetical order:
 
 /docs
 
-- [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [fjarlq](https://github.com/fjarlq), [it33](https://github.com/it33), [ivernus](https://github.com/ivernus), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [justinwyer](https://github.com/justinwyer), [lindy65](https://github.com/lindy65), [senk](https://github.com/senk) 
+- [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [fjarlq](https://github.com/fjarlq), [it33](https://github.com/it33), [ivernus](https://github.com/ivernus), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [justinwyer](https://github.com/justinwyer), [lindy65](https://github.com/lindy65), [senk](https://github.com/senk)
 
 /mattermost-api-reference
 
