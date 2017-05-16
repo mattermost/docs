@@ -72,7 +72,7 @@ Installing PostgreSQL Database
   
     ``listen_addresses = '*'``
 
-16. If the Mattermost server is on a separate machine, modify the file ``pg_hbe.conf`` to allow the Mattermost server to communicate with the database.
+16. If the Mattermost server is on a separate machine, modify the file ``pg_hba.conf`` to allow the Mattermost server to communicate with the database.
 
   If the Mattermost server and the database are on the same machine, then you can skip this step.
 
