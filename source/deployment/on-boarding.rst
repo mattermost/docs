@@ -1,30 +1,28 @@
 Administrator Tasks
--------------------
+===================
+
 This document provides instructions for common administrator tasks.
 
-**DO NOT manipulate the Mattermost database**
-=============================================
+DO NOT manipulate the Mattermost database
+-----------------------------------------
+
   - In particular, DO NOT manually delete data from the database directly. Mattermost is designed as a continuous archive and cannot be supported after manual manipulation.
-  - If you need to permanently delete a team or user please use the `Command Line Tool <http://docs.mattermost.com/administration/command-line-tools.html>`_.
+  - If you need to permanently delete a team or user, use the `Command Line Tool <../administration/command-line-tools.html>`_.
 
 Migrating to AD/LDAP or SAML from email-based authentication
-============================================================
+------------------------------------------------------------
 
-If you've evaluated Mattermost using email authentication and decide to deploy broadly using Active Directory/LDAP or SAML Single Sign-On, you can follow this procedure:
+If you have Enterprise Edition, you can migrate from email authentication to Active Directory/LDAP or to SAML Single Sign-on. To set up Active Directory/LDAP, see :doc:`sso-ldap`. To set up SAML Single Sign-on, see :doc:`sso-saml`.
 
-1. `Set up Active Directory/LDAP <http://docs.mattermost.com/deployment/sso-ldap.html>`_ or `SAML Single Sign-On <http://docs.mattermost.com/deployment/sso-saml.html>`_ for all users who would optionally have access to the system.
-2. Post an announcement about how the migration will work to users.
-3. Users who do not yet have an account on Mattermost will have a new account created when they sign in using their AD/LDAP or SAML credentials after the authentication method is enabled.
-4. Users who use email-based authentication can change their sign-in method to AD/LDAP or SAML via **Account Settings** > **Security** > **Sign-in method**.
-5. If someone attempts to sign-in with AD/LDAP or SAML with an email matching that of an existing account, they'll get an error message and will need to switch sign-in methods per procedure in 4.
+After the new authentication method is enabled, existing users cannot use the new method until they go to **Account Settings > Security > Sign-in method** and click **Switch to using AD/LDAP** or **Switch to using SAML Single Sign-on**. After they have switched, they can no longer use their email and password to sign in.
 
 Common Tasks
-============
+------------
 
 Creating System Admin account from the command line
-  - If the System Admin leaves the organization or is otherwise unavailable, you can use the command line interface to assign the *system_admin* role to an existing user. In the ``mattermost/bin`` directory, type ``sudo ./platform roles system_admin {user-name}``, where *{user-name}* is the username of the person with the new role. For more information about using the command line interface, see :doc:`../administration/command-line-tools` .
-  - After assigning the role the user needs to log out and log back in before the *system_admin* role is applied.
+  - If the System Admin leaves the organization or is otherwise unavailable, you can use the command line interface to assign the *system_admin* role to an existing user. In the ``mattermost/bin`` directory, type ``sudo ./platform roles system_admin {user-name}``, where *{user-name}* is the username of the person with the new role. For more information about using the command line interface, see :doc:`../administration/command-line-tools`.
+  - The user needs to log out and log back in before the *system_admin* role is applied.
 
 Deactivating a user
-  - System Admins can go to **System Console > Users** for a list of all users on the server. The list can be searched and filtered to make finding the user easier. Click the user's role and in the menu that opens, click **Make Inactive**.
-  - To preserve audit history, users are never deleted from the system. It is highly recommended that System Administrators do not attempt to delete users manually from the database, as this may compromise system integrity and ability to upgrade in the future.
+  - System Admins can go to **System Console > Users** for a list of all users on the server. The list can be searched and filtered to make finding the user easier. Click the user's role and in the menu that opens, click **Deactivate**.
+  - To preserve audit history, users are never deleted from the system. It is highly recommended that System Admins do not attempt to delete users manually from the database, as this may compromise system integrity and the ability to upgrade in the future.
