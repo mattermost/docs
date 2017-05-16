@@ -23,11 +23,11 @@ Installing PostgreSQL Database
 
 6. Set PostgreSQL to start on boot.
 
-  ``sudo systemctl enable postgresql``
+  ``sudo systemctl enable postgresql-9.4``
 
 7. Start the PostgreSQL server.
 
-  ``sudo systemctl start postgresql``
+  ``sudo systemctl start postgresql-9.4``
 
 8. Switch to the *postgres* Linux user account that was created during the installation.
 
@@ -84,7 +84,7 @@ Installing PostgreSQL Database
 
 17. Reload Postgres database
 
-  ``sudo systemctl reload postgresql``
+  ``sudo systemctl reload postgresql-9.4``
 
 18. Verify that you can connect with the user *mmuser*.
   
