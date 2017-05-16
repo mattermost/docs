@@ -19,7 +19,7 @@ Installing PostgreSQL Database
 
 5. Initialize the database.
 
-  ``sudo service postgresql initdb``
+  ``sudo /usr/pgsql-9.4/bin/postgresql94-setup initdb``
 
 6. Set PostgreSQL to start on boot.
 
