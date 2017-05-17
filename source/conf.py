@@ -38,7 +38,7 @@ def setup(app):
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinxcontrib.googleanalytics']
+extensions = []
 
 googleanalytics_id = 'UA-67846571-2'
 googleanalytics_enabled = True
@@ -132,7 +132,8 @@ html_context = {
     # Format Template: https://{{ github_host|default("github.com") }}/{{ github_user }}/{{ github_repo }}/blob/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ suffix }}
     'github_user': 'mattermost',
     'github_repo': 'docs',
-    'github_version': 'master/source/'
+    'github_version': 'master/source/',
+    'css_files': []
 }
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for

@@ -1,10 +1,9 @@
 language: python
 python:
-- 2.7
+- 3.6
 install:
 - pip install sphinx sphinx-autobuild sphinx_rtd_theme
 - pip install recommonmark
-- pip install sphinxcontrib-googleanalytics
 - pip install awscli
 script:
 - make html
@@ -24,4 +23,4 @@ deploy:
     on:
       repo: mattermost/docs
       branch: master
-      python: 2.7 
+      python: 3.6
