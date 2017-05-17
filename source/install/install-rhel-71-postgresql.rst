@@ -31,7 +31,7 @@ Installing PostgreSQL Database
 
 8. Switch to the *postgres* Linux user account that was created during the installation.
 
-  ``sudo su postgres``
+  ``sudo -ui postgres``
 
 9. Start the PostgreSQL interactive terminal.
 
