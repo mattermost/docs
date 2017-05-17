@@ -168,7 +168,7 @@ Mattermost Team Edition Server Archive - Supported Versions
 
 Mattermost Team Edition v3.9.0 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v3-9-0>`_ - `Download <https://releases.mattermost.com/3.9.0/mattermost-team-3.9.0-linux-amd64.tar.gz>`_
   - ``https://releases.mattermost.com/3.9.0/mattermost-team-3.9.0-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``8a23b6c048b2a3d179e87ff63870b237a4c200ff6305aafcf45656f92492c48d``
+  - SHA-256 Checksum: ``c6179f7b2282cfbc8f0a691a90b41b554b62726f1dfb036fc59eed635556c8d9``
 Mattermost Team Edition v3.8.2 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v3-8-2>`_ - `Download <https://releases.mattermost.com/3.8.2/mattermost-team-3.8.2-linux-amd64.tar.gz>`_
   - ``https://releases.mattermost.com/3.8.2/mattermost-team-3.8.2-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``82cc85557dc21b3871ec89326769c11d3a89c9c41362fb3945247f8fba562ce7``
