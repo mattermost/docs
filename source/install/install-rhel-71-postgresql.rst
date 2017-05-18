@@ -7,7 +7,14 @@ Installing PostgreSQL Database
 
 2. Download the PostgreSQL 9.4 Yum repository.
 
-  ``curl -O https://download.postgresql.org/pub/repos/yum/9.4/redhat/rhel-7-x86_64/pgdg-redhat94-9.4-3.noarch.rpm``
+  For RHEL 7
+    ``curl -O https://download.postgresql.org/pub/repos/yum/9.4/redhat/rhel-7-x86_64/pgdg-redhat94-9.4-3.noarch.rpm``
+  For CentOS 7
+    ``curl -O https://download.postgresql.org/pub/repos/yum/9.4/redhat/rhel-7-x86_64/pgdg-centos94-9.4-3.noarch.rpm``
+  For Scientific Linux
+    ``curl -O https://download.postgresql.org/pub/repos/yum/9.4/redhat/rhel-7-x86_64/pgdg-sl94-9.4-3.noarch.rpm``
+  For Oracle
+    ``curl -O https://download.postgresql.org/pub/repos/yum/9.4/redhat/rhel-7-x86_64/pgdg-oraclelinux-9.4-3.noarch.rpm``
 
 3. Install the Yum repository from the file that you downloaded.
 
