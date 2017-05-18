@@ -1,5 +1,5 @@
 Migrating the Webapp to Redux
-==========================
+=============================
 
 The Mattermost webapp is going through a big restructuring effort to move from using Flux and Redux. When we first started building the webapp, React was still new to the world, and so were the frameworks and design patterns. As a result, the webapp has had a lot of organic growth over the last couple of years, and is using an assortment of different design patterns. 
 
@@ -19,7 +19,7 @@ If you're interested in contributing please join the `Redux channel on pre-relea
 For guidance on migrating a webapp component to Redux, read the next section.
 
 Component Migration Steps
-------------------
+-------------------------
 
 There are a few steps involved with migrating a component to use Redux. Some of them may not apply to every component and they may change slightly based on the component you're working on. In general, you can these steps as a checklist for work that needs to be done on each component.
 
