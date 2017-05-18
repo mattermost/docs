@@ -352,4 +352,4 @@ Test setup and configure Mattermost Server
 8. Feel free to modify other settings.
 9. Restart the Mattermost Service by typing:
 
-   -  ``sudo restart mattermost``
+   -  ``sudo service mattermost restart``

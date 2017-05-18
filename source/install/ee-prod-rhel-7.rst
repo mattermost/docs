@@ -161,7 +161,7 @@ Set up Mattermost Server
 8. Set up Mattermost to use the systemd init daemon which handles
    supervision of the Mattermost process. 
 
-   * Create and edit ``/etc/systemd/system/mattermost.service``
+   * Create and edit ``/usr/lib/systemd/system/mattermost.service``
 
       ::
 
@@ -181,11 +181,10 @@ Set up Mattermost Server
           [Install]
           WantedBy=multi-user.target
 
-   - Make sure the service is executable with ``sudo chmod 664 /etc/systemd/system/mattermost.service``
+   - Make sure the service is executable with ``sudo chmod 664 /usr/lib/systemd/system/mattermost.service``
    * Reload the services with ``sudo systemctl daemon-reload``
-   * Start Mattermost service with``\ sudo systemctl start mattermost.service``
-   * ``sudo chkconfig mattermost on``
    * Start server on reboot ``sudo systemctl enable mattermost.service``
+   * Start Mattermost service with``sudo systemctl start mattermost.service``
 
 Unix-domain socket connection
 -----------------------------
@@ -380,7 +379,7 @@ You should see a congratulation message if successful.
 Then, add a cron job or use systemd timer capability to run twice a day the renewal
 process.
 
-- write the ``/etc/systemd/system/letsencrypt.renewal.service`` file
+- write the ``/usr/lib/systemd/system/letsencrypt.renewal.service`` file
 
 ::
 
@@ -390,7 +389,7 @@ process.
      [Service]
      ExecStart=/usr/bin/certbot renew --quiet
 
-- write the ``/etc/systemd/system/letsencrypt.timer`` file
+- write the ``/usr/lib/systemd/system/letsencrypt.timer`` file
 
 ::
 
@@ -444,4 +443,4 @@ Test setup and configure Mattermost Server
 8. Feel free to modify other settings
 9. Restart the Mattermost Service by typing:
 
-   -  ``sudo restart mattermost``
+   -  ``sudo systemctl restart mattermost``
