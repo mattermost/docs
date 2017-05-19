@@ -224,7 +224,7 @@ The final release is cut. If an urgent and important issue needs to be addressed
       - Test the download links before and after updating the page
     - Update [MVP page](https://www.mattermost.org/mvp/) with the most valuable contributor of the release
 6. Docs:
-    - Add the download links, SHA key and md5 sum to [upgrade guide](http://docs.mattermost.com/administration/upgrade.html#version-archive)
+    - Add the download links and SHA-256 hash [upgrade guide](http://docs.mattermost.com/administration/upgrade.html#version-archive)
     - Finalize docs
       - If reviews are not complete, hold a 30 minute doc review meeting with PMs and anyone else who has changed or reviewed docs this release and wants to join
       - Merge the docs release branch to master and verify all changes on docs.mattermost.com once the build is up
