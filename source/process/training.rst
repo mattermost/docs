@@ -555,10 +555,10 @@ Mattermost avatars are caricatures of core committers in the costume of a popula
 
 To have a Mattermost avatar created, you'll be invited to create a Mattermost avatar via email and asked to provide the following: 
 
-1. The name of your character from popular culture (e.g. Spiderman, Wonder Woman, Luke Skywalker, etc.) 
-2. A clear image at least 600 pixels high and 600 pixels wide showing your character 
-3. Send a clear photo of your face at least 600 pixels high and 600 pixels wide pointing in the same direction as your character image 
-
+1. Please use the email subject "[YOUR_FULL_NAME] as [CHARACTER_NAME]", for example "Corey Hulen as Han Solo". 
+2. Attach a clear image at least 600 pixels high and 600 pixels wide showing your character's full body in a standing pose. 
+3. Send a clear photo of your face at least 600 pixels high and 600 pixels wide pointing in the same direction as your character image.
+ 
 You should receive your digital Mattermost avatars by email in 6-8 weeks. 
 
 In special cases, a Mattermost avatar may be created for someone from the Mattermost community who has made an extraordinary contribution to the open source project. 
