@@ -303,11 +303,11 @@ Once final dot release build is ready to cut:
         - Code Complete Meeting on T-8 at 10:00am San Francisco time
         - Team-wide Triage each weekday starting at T-8 and ending at T-2 at 9:00am San Francisco time, with optional attendance
         - Release Update each weekday starting at T-7 and ending at T-2 at 10:00am San Francisco time
-    - Add “Release Retrospective” item to next team meeting in place of Kaizen/User Issues, asking each core team member to give a letter grade (and brief explanation) for:
+    - Add “Release Retrospective” item to next team meeting, asking each core team member to give a letter grade (and brief explanation) for:
         - Release Quality
         - Release Process
         - Testing Process
-    - Close the [release in Jira]([releases page](https://mattermost.atlassian.net/projects/PLT?selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased))
+    - Close the release in Jira ([releases page](https://mattermost.atlassian.net/projects/PLT?selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased))
         - If there are many unresolved tickets in the current release, ask the release manager to review the ticket queue
         - Otherwise, release the fix version (Actions > [...] > Release)
     - Prepare tickets for the next release,  with a corresponding vX.X prefix
