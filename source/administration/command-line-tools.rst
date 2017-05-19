@@ -143,7 +143,7 @@ platform channel delete
 ~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Permanently delete a channel along with all related information, including posts from the database. Channels can be specified by {team}:{channel} using the team and channel names or IDs.
+    Archives a channel with all related information, including posts. The channels are not deleted from the database. Channels can be specified by {team}:{channel} using the team and channel names or IDs.
 
   Format
     .. code-block:: none
