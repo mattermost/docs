@@ -54,7 +54,7 @@ Timezones
 
 When proposing meetings use famous cities as references for time (e.g. 9am New York time), since it's clear and `easy to web search <https://www.google.com/search?q=time+in+new+york&oq=time+in+new+&aqs=chrome.1.0l2j69i57j0l3.3135j0j7&sourceid=chrome&ie=UTF-8>`_. Avoid using "UTC", as it has been shown to cause confusion.
 
-When selecting a timezone city, use the most well-known city in a country where at least one team member is located. Exception: Because our headquarters is in Palo Alto, when referencing the California timezone, please use Palo Alto instead of San Francisco.  
+When selecting a timezone city, use the most well-known city in a country where at least one team member is located. Exception: When possible, use a city where we have an official mailing address, e.g. In Western Americas use Palo Alto, instead of San Francisco. In Eastern Americas use Toronto, instead of New York. 
 
 Open Meetings
 ---------------------------------------------------------
