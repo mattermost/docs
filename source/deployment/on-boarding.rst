@@ -26,3 +26,10 @@ Creating System Admin account from the command line
 Deactivating a user
   - System Admins can go to **System Console > Users** for a list of all users on the server. The list can be searched and filtered to make finding the user easier. Click the user's role and in the menu that opens, click **Deactivate**.
   - To preserve audit history, users are never deleted from the system. It is highly recommended that System Admins do not attempt to delete users manually from the database, as this may compromise system integrity and the ability to upgrade in the future.
+
+Checking for a valid license in Enterprise Edition without logging in
+  - Open the log file ``mattermost.log``. It's usually in the ``mattermost/logs/`` directory but might be elsewhere on your system. Find the last occurrence of a log entry that starts with the text ``[INFO] License key``. If the license key is valid, the complete line should be similar to the following example:
+
+    .. code-block:: text
+
+      [2017/05/19 16:51:40 UTC] [INFO] License key valid unlocking enterprise features.
