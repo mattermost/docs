@@ -24,7 +24,7 @@ Create the System Admin user and set up Mattermost for general use.
     - Set **SMTP Server Password** to *{SMTP-password}*
     - Set **SMTP Server** to *{SMTP-server}* For example, *mail.example.com*
     - Set **SMTP Server Port** to *465*
-    - Set **Connection Security** to *TLS* or *STARTTLS*, depending on the what the SMTP server accepts.
+    - Set **Connection Security** to *TLS* or *STARTTLS*, depending on what the SMTP server accepts.
 
   b. Click **Test Connection**.
 
