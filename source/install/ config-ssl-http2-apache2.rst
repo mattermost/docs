@@ -1,6 +1,6 @@
 .. _config-ssl-http2-apache2:
 
-Configuring Apache2 with SSL and HTTP/2
+Configuring Apache2 with SSL and HTTP/2 (Unofficial) 
 =====================================
 
 Once you've configured Apache2 as a proxy for your Mattermost Server, the easiest way to enable SSL on Apache2 is via Let's Encrypt and [Certbot](https://certbot.eff.org/#ubuntuxenial-apache). Once installed, simply run:
