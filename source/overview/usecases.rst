@@ -1,15 +1,22 @@
 ============================================================
-Benefits and Use Cases for Workplace Messaging 
+Benefits and Use Cases 
 ============================================================
 
-Thousands of organizations around the world deploy Mattermost to increase the performance of end users and organizations. 
+Thousands of organizations around the world deploy Mattermost to increase the performance of end users and organizations while meeting enterprise-grade scalability, extensibility and legal compliance requirements. 
 
-Workplace messaging enables **teams** to work in topic-based **discussions** integrated with **tools** and **processes**. At the enterprise level, the productivity benefits are achieved while meeting an organization's advanced needs for control, scalability, extensibility, and legal complicance. 
+Broad uses of Mattermost include: 
+
+- **DevOps** - Supporting process and environment to enable software developers and IT operations professionals to work closely together in deliverying software and infrastructure changes with ever more rapid, frequent and reliabile updates. 
+
+- **Workplace Messaging** - Enabling teams to work rapidly and dynamically in topic-based discussions accessible from any device and integrated with existing tools, content and processes, largely replacing email for internal communication. 
+
+- **Integrated Messaging** - Embedding messaging in line-of-business solutions using Mattermost's open source platform to offer the benefits of real time communication.
+
+Below we outline examples of use cases across categories: 
 
 DevOps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
+   
 Social Coding  
 ```````````````````````````````````````````````
 aka Conversational Development 
@@ -27,16 +34,15 @@ When developers need to work uninterrupted they can close or mute discussions an
 
 **Benefit:** Software projects delivered in less time, with fewer defects, more consistency, and higher developer satisfaction. 
 
-Exception Handling    
+Chat Ops    
 ```````````````````````````````````````````````
-aka Integrated Error Reporting, No Ops 
+aka Exception Handling, Integrated Error Reporting, No Ops 
 
 **Challenge:** As DevOps teams release updates across development, staging, and production environments, exceptions, including errors and component failures, can go undetected, leading to degraded system health, degraded performance and even outages. 
 
 **Solution:** DevOps teams can update their systems to send alerts to Mattermost on specific types of exceptions with mentions of specific individuals to draw their attention. Exceptions can be analyzed to solve undetected issues in the product code or deployment configuration. In the case of failures, light-weight, user visible automation can be created using bots to automatically restart services. The automated resolution of issues using bots on a messaging platform is sometimes called "going from ChatOps to NoOps".
 
 **Benefits:** Fewer outages, higher system health, higher performance systems from faster detection and resolution of exception in software and deployment configuration. 
-
 
 Integrated Incident Response with Legacy Systems 
 `````````````````````````````````````````````````
@@ -57,3 +63,18 @@ aka Outage Response, Rapid Incident Response, Crisis Response
 **Solution:** Backend systems push alerts into channels to bring key staff into an “operations theater” to work on rapid issue resolution in a channel, sharing messages, files and audio-video feeds until the incident is resolved. Meanwhile, stakeholders can monitor the situation in real time and a full record of events and communications can be provided for the incident report and analyzed for future process improvement and training. 
 
 **Benefit:** Fewer, shorter and less impactful system outages.
+
+Workplace Messaging 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Focus
+Agility 
+Speed
+Time 
+
+Integrated Messaging 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
