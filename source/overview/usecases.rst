@@ -19,21 +19,11 @@ aka Outage Response, Rapid Incident Response, Crisis Response
 
 **Benefit:** Fewer, shorter and less impactful system outages.
 
-Consolidated Incident Response Notifications 
-```````````````````````````````````````````````
-aka Notifications Hub
-
-**Challenge:** Legacy systems across the enterprise have alerting functions through SMS gateways that are difficult to use, maintain and update when ownership changes. 
-
-**Solution:** Integrate legacy systems and workflow with channels that send alerts to key staff through email as well as mobile push notifications, with links back to channels where incident response workflow can be launched in real time across web, PC and mobile interfaces. 
-
-**Benefit:** Faster incident response times, reduced complexity and management costs for backend systems.
-
 Social Coding  
 ```````````````````````````````````````````````
 aka Conversational Development 
 
-**Challenge:** Developers working in isolation often take longer to develop software, and the resulting solutions may have less consistency and more defects than software developed in teams. At the same time, co-locating developers removes their ability to moderate distraction and interruption, making it difficult to spend the extended lengths of time needed to properly design complex systems. 
+**Challenge:** Developers working in isolation often take longer to develop software, and the resulting solutions may have less consistency and more defects than software developed in effective teams. At the same time, co-locating developers removes their ability to moderate distraction and interruption, making it difficult to spend the extended lengths of time needed to properly design complex systems, and in many cases reducing job satisfaction. 
 
 **Solution:** Offer developers a workplace messaging environment where they can join topic-based discussions from any device, with history and search, to: 
 
@@ -44,4 +34,24 @@ aka Conversational Development
 
 When developers need to work uninterrupted they can close or mute discussions and return to read their history later. 
 
-**Benefit:** Software projects delivered in less time, with fewer defects, more consistency. 
+**Benefit:** Software projects delivered in less time, with fewer defects, more consistency, and higher developer satisfaction. 
+
+Exception Handling    
+```````````````````````````````````````````````
+aka Integrated Error Reporting, No Ops 
+
+**Challenge:** As DevOps teams release updates across development, staging, and production environments, exceptions, including errors and component failures, can go undetected, leading to degraded system health, degraded performance and even outages. 
+
+**Solution:** DevOps teams can update their systems to send alerts to Mattermost on specific types of exceptions with mentions of specific individuals to draw their attention. Exceptions can be analyzed to solve undetected issues in the product code or deployment configuration. In the case of failures, light-weight, user visible automation can be created using bots to automatically restart services. The automated resolution of issues using bots on a messaging platform is sometimes called "going from ChatOps to NoOps".
+
+**Benefits:** Fewer outages, higher system health, higher performance systems from faster detection and resolution of exception in software and deployment configuration. 
+
+Integrated Incident Response with Legacy Systems 
+`````````````````````````````````````````````````
+aka Notifications Hub
+
+**Challenge:** Legacy systems across the enterprise have alerting functions through SMS gateways that are difficult to use, maintain and update when ownership changes. 
+
+**Solution:** Integrate legacy systems and workflow with channels that send alerts to key staff through email as well as mobile push notifications, with links back to channels where incident response workflow can be launched in real time across web, PC and mobile interfaces. 
+
+**Benefit:** Faster incident response times, reduced complexity and management costs for backend systems.
