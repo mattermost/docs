@@ -1,14 +1,16 @@
-==============================
-Enterprise Use Cases 
-==============================
+============================================================
+Benefits and Use Cases for Enterprise Messaging 
+============================================================
 
-Below are use cases from some of the thousands of organizations deploying Mattermost. 
+Enterprise-grade messaging increases productivity by enabling **teams** to work in topic-based **discussions** integrated with **tools** and **processes**. The deeper the integration among the core elements--teams, discussions, tools and process--the greater the benefits. 
+
+Here we outline benefits and use cases identified by some of thousands of organizations deploying Mattermost around the world. 
 
 DevOps
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Ops Theater 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+````````````````````````````````````
 aka Outage Response, Rapid Incident Response, Crisis Response 
 
 
@@ -18,8 +20,8 @@ aka Outage Response, Rapid Incident Response, Crisis Response
 
 **Benefit:** Fewer, shorter and less impactful system outages.
 
-Consolidate Incident Response Notifications 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Consolidated Incident Response Notifications 
+```````````````````````````````````````````````
 aka Notifications Hub
 
 **Challenge:** Legacy systems across the enterprise have alerting functions through SMS gateways that are difficult to use, maintain and update when ownership changes. 
