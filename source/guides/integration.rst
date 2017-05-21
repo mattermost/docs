@@ -14,3 +14,4 @@ Detailed documentation on extending and integrating with the Mattermost server.
    /developer/oauth*
    /integrations/zapier*
    /developer/integration*
+   /integrations/embedding*
