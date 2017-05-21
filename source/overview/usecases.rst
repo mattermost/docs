@@ -9,15 +9,6 @@ Workplace messaging enables **teams** to work in topic-based **discussions** int
 DevOps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Ops Theater 
-````````````````````````````````````
-aka Outage Response, Rapid Incident Response, Crisis Response 
-
-**Challenge:** When critical systems experience outages or a security breach the process for responding to and monitoring resolutions can be slow, chaotic, and opaque. 
-
-**Solution:** Backend systems push alerts into channels to bring key staff into an “operations theater” to work on rapid issue resolution in a channel, sharing messages, files and audio-video feeds until the incident is resolved. Meanwhile, stakeholders can monitor the situation in real time and a full record of events and communications can be provided for the incident report and analyzed for future process improvement and training. 
-
-**Benefit:** Fewer, shorter and less impactful system outages.
 
 Social Coding  
 ```````````````````````````````````````````````
@@ -46,6 +37,7 @@ aka Integrated Error Reporting, No Ops
 
 **Benefits:** Fewer outages, higher system health, higher performance systems from faster detection and resolution of exception in software and deployment configuration. 
 
+
 Integrated Incident Response with Legacy Systems 
 `````````````````````````````````````````````````
 aka Notifications Hub
@@ -55,3 +47,13 @@ aka Notifications Hub
 **Solution:** Integrate legacy systems and workflow with channels that send alerts to key staff through email as well as mobile push notifications, with links back to channels where incident response workflow can be launched in real time across web, PC and mobile interfaces. 
 
 **Benefit:** Faster incident response times, reduced complexity and management costs for backend systems.
+
+Ops Theater 
+````````````````````````````````````
+aka Outage Response, Rapid Incident Response, Crisis Response 
+
+**Challenge:** When critical systems experience outages or a security breach the process for responding to and monitoring resolutions can be slow, chaotic, and opaque. 
+
+**Solution:** Backend systems push alerts into channels to bring key staff into an “operations theater” to work on rapid issue resolution in a channel, sharing messages, files and audio-video feeds until the incident is resolved. Meanwhile, stakeholders can monitor the situation in real time and a full record of events and communications can be provided for the incident report and analyzed for future process improvement and training. 
+
+**Benefit:** Fewer, shorter and less impactful system outages.
