@@ -8,7 +8,8 @@ Each of these componenents plays a vital role:
 
 - Teams - In enterprise, team composition is generally matrixed by discipline, project, group and other factors. Teams are dynamic, forming and re-forming with the changing needs of the organization, and end users are often have responsibilities on multiple teams at the same time. 
 
-- Discussions - 
+- Discussions - For large organizations where team members are inevitable in other buildings or cities, the best discussions are made up of text, links, documents and files. They're ideally topic-based, archived, searchable and can be shared via links.
+ 
 - Tools
 - Processes
 
