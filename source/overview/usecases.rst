@@ -1,17 +1,10 @@
 ============================================================
-Benefits and Use Cases for Enterprise Messaging 
+Benefits and Use Cases for Workplace Messaging 
 ============================================================
 
-Thousands of organizations around the world deploy Mattermost to increase the performance of end users and organizations. Enterprise messaging works best when it enables **teams** to work in topic-based **discussions** integrated with **tools** and **processes**. 
+Thousands of organizations around the world deploy Mattermost to increase the performance of end users and organizations. 
 
-Each of these componenents plays a vital role: 
-
-- Teams - In enterprise, team composition is generally matrixed by discipline, project, group and other factors. Teams are dynamic, forming and re-forming with the changing needs of the organization, and end users are often have responsibilities on multiple teams at the same time. 
-
-- Discussions - For large organizations where team members are inevitable in other buildings or cities, the best discussions are made up of text, links, documents and files. They're ideally topic-based, archived, searchable and can be shared via links.
- 
-- Tools
-- Processes
+Workplace messaging enables **teams** to work in topic-based **discussions** integrated with **tools** and **processes**. At the enterprise level, the productivity benefits are achieved while meeting an organization's advanced needs for control, scalability, extensibility, and legal complicance. 
 
 DevOps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -19,7 +12,6 @@ DevOps
 Ops Theater 
 ````````````````````````````````````
 aka Outage Response, Rapid Incident Response, Crisis Response 
-
 
 **Challenge:** When critical systems experience outages or a security breach the process for responding to and monitoring resolutions can be slow, chaotic, and opaque. 
 
@@ -36,3 +28,20 @@ aka Notifications Hub
 **Solution:** Integrate legacy systems and workflow with channels that send alerts to key staff through email as well as mobile push notifications, with links back to channels where incident response workflow can be launched in real time across web, PC and mobile interfaces. 
 
 **Benefit:** Faster incident response times, reduced complexity and management costs for backend systems.
+
+Social Coding  
+```````````````````````````````````````````````
+aka Conversational Development 
+
+**Challenge:** Developers working in isolation often take longer to develop software, and the resulting solutions may have less consistency and more defects than software developed in teams. At the same time, co-locating developers removes their ability to moderate distraction and interruption, making it difficult to spend the extended lengths of time needed to properly design complex systems. 
+
+**Solution:** Offer developers a workplace messaging environment where they can join topic-based discussions from any device, with history and search, to: 
+
+- Ask questions and get answers, as well as search for answers in previous discussions. 
+- Learn about tools, dependencies, best practices, and changing business needs.
+- Request code review and ad hoc testing, and group ad hoc testing for work-in-progress (Especially useful when working on complex designs).
+- Discuss the feature requirements prior to opening tickets for implementation.
+
+When developers need to work uninterrupted they can close or mute discussions and return to read their history later. 
+
+**Benefit:** Software projects delivered in less time, with fewer defects, more consistency. 
