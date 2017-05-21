@@ -59,11 +59,12 @@ To embed Mattermost in an iframe by overriding Mattermost security features:
 
 1. On your Mattermost server, change the HTML template to remove the anti-Clickjacking security feature 
 
-Find the file /mattermost/mattermost/web/templates/head.html and comment out the security feature by changing <style id="antiClickjack">body{display:none !important;}</style> to <!-- <style id="antiClickjack">body{display:none !important;}</style> --> 
+    a. Find the file ``/mattermost/mattermost/web/templates/head.html``
+    b. Comment out the security feature by changing ``<style id="antiClickjack">body{display:none !important;}</style>`` to ``<!-- <style id="antiClickjack">body{display:none !important;}</style> -->`` 
 
 2. Update your NGINX configuration to strip out the security policy settings in the HTTP header.
 
-See `community example <https://forum.mattermost.org/t/how-can-we-load-mattermost-in-iframe/165/6>`_ for details.
+    - See `community example <https://forum.mattermost.org/t/how-can-we-load-mattermost-in-iframe/165/6>`_ for details.
 
 Embedding Mattermost in mobile applications 
 -------------------------------------------------------
