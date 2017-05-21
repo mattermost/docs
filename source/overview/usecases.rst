@@ -2,9 +2,15 @@
 Benefits and Use Cases for Enterprise Messaging 
 ============================================================
 
-Enterprise-grade messaging increases productivity by enabling **teams** to work in topic-based **discussions** integrated with **tools** and **processes**. The deeper the integration among the core elements--teams, discussions, tools and process--the greater the benefits. 
+Thousands of organizations around the world deploy Mattermost to increase the performance of end users and organizations. Enterprise messaging works best when it enables **teams** to work in topic-based **discussions** integrated with **tools** and **processes**. 
 
-Here we outline benefits and use cases identified by some of thousands of organizations deploying Mattermost around the world. 
+Each of these componenents plays a vital role: 
+
+- Teams - In enterprise, team composition is generally matrixed by discipline, project, group and other factors. Teams are dynamic, forming and re-forming with the changing needs of the organization, and end users are often have responsibilities on multiple teams at the same time. 
+
+- Discussions - 
+- Tools
+- Processes
 
 DevOps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
