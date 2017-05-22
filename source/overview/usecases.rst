@@ -2,24 +2,26 @@
 Benefits and Use Cases 
 ============================================================
 
-Thousands of organizations around the world deploy Mattermost to increase the performance of end users and organizations while meeting enterprise-grade scalability, extensibility and legal compliance requirements. 
+Thousands of organizations around the world use Mattermost to increase the productivity while meeting enterprise-grade scalability, extensibility and legal compliance needs. 
 
-Broad uses of Mattermost include: 
+The most popular categories of use cases include: 
 
 - **DevOps** - Supporting process and environment to enable software developers and IT operations professionals to work closely together in deliverying software and infrastructure changes with ever more rapid, frequent and reliabile updates. 
 
-- **Workplace Messaging** - Enabling teams to work rapidly and dynamically in topic-based discussions accessible from any device and integrated with existing tools, content and processes, largely replacing email for internal communication. 
+- **Workplace Messaging** - Enabling teams to work rapidly and dynamically in topic-based discussions accessible from any device and integrated with existing tools, content and processes, dramatically reducing internal emails. 
 
-- **Integrated Messaging** - Embedding messaging in line-of-business solutions using Mattermost's open source platform to offer the benefits of real time communication.
+- **Integrated Messaging** - Embedding messaging in line-of-business solutions using Mattermost's extensive open source platform to offer the benefits of real time communication. 
 
 Below we outline examples of use cases across categories: 
 
 DevOps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   
+
+In a DevOps deployment, Mattermost provides the real-time messaging, presence  and integration layer across tool chain for Coding, Building, Testing, Packaging, Releasing, Configuring and Monitoring. 
+
 Social Coding  
 ```````````````````````````````````````````````
-aka Conversational Development 
+aka Conversational Development, ChatOps
 
 **Challenge:** Developers working in isolation often take longer to develop software, and the resulting solutions may have less consistency and more defects than software developed in effective teams. At the same time, co-locating developers removes their ability to moderate distraction and interruption, making it difficult to spend the extended lengths of time needed to properly design complex systems, and in many cases reducing job satisfaction. 
 
@@ -66,6 +68,9 @@ aka Outage Response, Rapid Incident Response, Crisis Response
 
 Workplace Messaging 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost enables internal teams to work rapidly and dynamically in topic-based discussions accessible from any device and integrated with existing tools, content and processes. 
+
 
 Focus
 Agility 
