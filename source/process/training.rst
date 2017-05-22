@@ -556,6 +556,7 @@ To have a Mattermost avatar created, you'll be invited to create a Mattermost av
 
 1. Please use the email subject "[YOUR_FULL_NAME] as [CHARACTER_NAME]", for example "Corey Hulen as Han Solo". 
 2. Attach a clear image at least 600 pixels high and 600 pixels wide showing your character's full body in a standing pose. 
+   - Note: Character should be human-sized (no giant characters).
 3. Send a clear photo of your face at least 600 pixels high and 600 pixels wide pointing in the same direction as your character image.
  
 You should receive your digital Mattermost avatars by email in 6-8 weeks. 
