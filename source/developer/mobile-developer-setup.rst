@@ -77,7 +77,7 @@ Android (Device)
 
 2. Configure the following environment variables:
 
-  - Set ``ANDROID_HOME`` to where Android SDK is located (likely ``/Users/<username>/Lobrary/Android/sdk``)
+  - Set ``ANDROID_HOME`` to where Android SDK is located (likely ``/Users/<username>/Library/Android/sdk``)
 
   - Add ``ANDROID_HOME/tools`` and ``ANDROID_HOME/platform-tools`` to the ``PATH``.
 
