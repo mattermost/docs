@@ -1,34 +1,58 @@
-# GitLab Single Sign-On 
-___
-Single Sign-On can be configured with the following services.
+GitLab Single Sign-On
+=====================
 
-## GitLab 
+Configure Mattermost to use GitLab as a single sign-on (SSO) service for team creation, account creation, and user sign-in.
 
-Follow these steps to configure Mattermost to use GitLab as a single sign-on (SSO) service for team creation, account creation and sign-in.
+These instructions assume that you are using https://gitlab.com as your OAuth provider, but you can use your own installation of GitLab instead.
 
-1. Login to your GitLab account and under **Profile Settings** go to **Applications**.
-2. Add a new application called "Mattermost" with the following as Redirect URIs:
-    * `<your-mattermost-url>/login/gitlab/complete` (example: http://localhost:8065/login/gitlab/complete)
-    * `<your-mattermost-url>/signup/gitlab/complete`
-  
-    Note: If your GitLab instance is set up to use SSL, your URIs must begin with `https://`. Otherwise, use `http://`.
+Step 1: Add an OAuth application to your GitLab account
+-------------------------------------------------------
 
-3. Submit the application and copy the given _Id_ and _Secret_ into the appropriate _GitLabSettings_ fields in `config/config.json`
+1. Sign in to your GitLab account and go to https://gitlab.com/profile/applications.
+2. Add a new application:
 
-4. Also in `config/config.json`, set _Enable_ to `true` for the _gitlab_ section, leave _Scope_ blank and use the following for the endpoints:
-    * _AuthEndpoint_: `https://<your-gitlab-url>/oauth/authorize` (example https://example.com/oauth/authorize)  
-    * _TokenEndpoint_: `https://<your-gitlab-url>/oauth/token`  
-    * _UserApiEndpoint_: `https://<your-gitlab-url>/api/v3/user`  
-  
-    Note: Make sure your `HTTPS` or `HTTP` prefix for endpoint URLs matches your server configuration. 
+  a. In the **Name** field, type *Mattermost*.
+  b. In the **Redirect URI** field add the following two lines, using your own value for *{mattermost-site-name}*.
 
-5. (Optional) If you would like to force all users to sign-up with GitLab only, in the _ServiceSettings_ section of `config/config.json` set _DisableEmailSignUp_ to `true`.
+    .. code-block:: text
 
-6. Restart your Mattermost server to see the changes take effect.
+      https://{mattermost-site-name}/login/gitlab/complete
+      https://{mattermost-site-name}/signup/gitlab/complete
 
-#### Notes: 
-- Only the default GitLab SSO is officially supported. "Double SSO", chaining GitLab SSO to other SSO solutions, is not supported. 
-   - It may be possible to connect to use GitLab SSO in some cases with AD, LDAP, SAML, or MFA add-ons, but because of the special logic required they're not officially supported and are known not to work on some experiences.
-   - If having official AD, LDAP, SAML or MFA support is critical to your enterprise, please consider purchasing [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/). Given all the features of Mattermost, it's quite affordable. 
-- See [GitLab section of Mattermost forum for troubleshooting help](https://forum.mattermost.org/c/general/gitlab).
-- See [GitLab Omnibus documentation for installing GitLab Mattermost](http://doc.gitlab.com/omnibus/gitlab-mattermost/).   
+  c. In the *Scopes* section, select **api**.
+
+3. Click **Save application**.
+
+Keep the GitLab window open because you'll need the *Application Id* and *Secret* when you configure Mattermost.
+
+Step 2: Configure Mattermost for GitLab SSO
+-------------------------------------------
+
+1. On your Mattermost server, add the *Application Id* and the *Secret* to the *GitLab* settings section in the ``config.json`` file.
+
+  a. Open ``config.json`` as root in a text editor. It's usually in ``/opt/mattermost/config`` but might be elsewhere on your system.
+  b. Locate the *GitLabSettings* section and add the following information:
+
+    .. code-block:: javascript
+
+      "GitLabSettings": {
+          "Enable": true,
+          "Secret": "{mattermost-app-secret-from-gitlab}",
+          "Id": "{mattermost-app-application-id-from-gitlab}",
+          "Scope": "",
+          "AuthEndpoint": "https://{gitlab-site-name}/oauth/authorize",
+          "TokenEndpoint": "https://{gitlab-site-name}/oauth/token",
+          "UserApiEndpoint": "https://{gitlab-site-name}/api/v3/user"
+      }
+
+    For *{gitlab-site-name}* use the name of your GitLab instance. If you are using GitLab itself as your OAuth provider, use *gitlab.com*.
+
+2. [Optional] To force all users to sign-up with SSO only, in the *ServiceSettings* section of ``config.json`` set *DisableEmailSignUp* to ``true``.
+
+3. Restart your Mattermost server.
+
+  On Ubuntu 14.04 and RHEL 6: ``sudo restart mattermost``
+
+  On Ubuntu 16.04 and RHEL 7: ``sudo systemctl restart mattermost``
+
+After the server restarts, users must change their sign-in method before they can sign in with GitLab.
