@@ -13,7 +13,8 @@ Installing Developer Components on Windows
   d. Add the line ``{Docker-IP} dockerhost`` to ``C:\Windows\System32\drivers\etc\hosts`` using a text editor with administrator privileges.
 3. Download and install Node.js from https://nodejs.org/.
 4. Download and install Go 1.8 from https://golang.org/dl/.
-5. Fork Mattermost on GitHub.com from https://github.com/mattermost/platform, then:
+5. Install Yarn. Go to https://yarnpkg.com/en/docs/install#windows-tab and follow the installation instructions.
+6. Fork Mattermost on GitHub.com from https://github.com/mattermost/platform, then:
   a. ``cd ~/go``
   b. ``mkdir -p src/github.com/mattermost``
   c. ``cd src/github.com/mattermost``
@@ -22,8 +23,8 @@ Installing Developer Components on Windows
   f. ``git config core.eol lf``
   g. ``git config core.autocrlf input``
   h. ``git reset --hard HEAD``
-5. Install and setup babun from http://babun.github.io/.
-6. Setup the following environment variables (change the path accordingly):
+7. Install and setup babun from http://babun.github.io/.
+8. Setup the following environment variables (change the path accordingly):
 
   .. code-block:: batch
 
