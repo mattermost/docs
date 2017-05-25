@@ -35,6 +35,7 @@ Deployment
    /deployment/on-boarding*
    /deployment/bulk-loading.rst
    /deployment/push*
+   /deployment/desktop-app-deployment*
    /deployment/sso-ldap*
    /deployment/auth*
    /deployment/sso-saml.rst
