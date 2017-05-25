@@ -3,12 +3,10 @@ GitLab Single Sign-On
 
 Configure Mattermost to use GitLab as a single sign-on (SSO) service for team creation, account creation, and user sign-in.
 
-These instructions assume that you are using https://gitlab.com as your OAuth provider, but you can use your own installation of GitLab instead.
-
 Step 1: Add an OAuth application to your GitLab account
 -------------------------------------------------------
 
-1. Sign in to your GitLab account and go to https://gitlab.com/profile/applications.
+1. Sign in to your GitLab account and go to https://{gitlab-site-name}/profile/applications. For *{gitlab-site-name}* use the name of your GitLab instance. If you are using GitLab itself as your OAuth provider, use *gitlab.com*.
 2. Add a new application:
 
   a. In the **Name** field, type *Mattermost*.
@@ -28,7 +26,7 @@ Keep the GitLab window open because you'll need the *Application Id* and *Secret
 Step 2: Configure Mattermost for GitLab SSO
 -------------------------------------------
 
-1. On your Mattermost server, add the *Application Id* and the *Secret* to the *GitLab* settings section in the ``config.json`` file.
+1. On your Mattermost server, add the *Application Id* and the *Secret* to the *GitLab* settings section in the ``config.json`` file:
 
   a. Open ``config.json`` as root in a text editor. It's usually in ``/opt/mattermost/config`` but might be elsewhere on your system.
   b. Locate the *GitLabSettings* section and add the following information:
