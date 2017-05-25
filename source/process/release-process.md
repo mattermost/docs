@@ -354,7 +354,7 @@ Once final dot release build is ready to cut:
 4. Build:
     - Put pre-release back on master
 
-### K. (T-plus 10 working days) Security Updates
+### K. (T-plus 10 working days) Update Mattermost Security Page
 1. PM:
     - Post [Mattermost Security Updates](https://about.mattermost.com/security-updates/) after reviewing with security lead
       - If a dot release is shipping with security fixes, do not post new details until T-plus 10 working days from the dot release ship date
