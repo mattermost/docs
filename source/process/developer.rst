@@ -33,6 +33,35 @@ Requirements
 - You're ready to complete our `technical interview`_ process.
 - Ideal, but not required: Experience working in online communities, having made at least one `Help Wanted <https://github.com/search?utf8=%E2%9C%93&q=org%3Amattermost+state%3Aopen+Help+Wanted&type=Issues&ref=searchresults?>`_ pull request to a Mattermost repository, working on other Golang, React or React Native apps. 
 
+Levels
+-------------------------
+
+The below level descriptions are used to categorize core committers based on their capabilities. Regardless of level, all core committers are expected to fulfill the following: 
+
+- Deliver high quality code that represents the best thinking of the open source project and is ready to be scrutinized by hundreds of community members, including commercial customers. 
+- Write complete code that meets all specifications and criteria, has thorough unit tests and typically no defects.
+- Work collaboratively in a high trust, asynchronous environment with strong written communication skills and comfort working with fellow developers, product managers, designers, testers, technical writers, support engineers and other product and business staff. 
+
+Software Design Engineer I
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Influences and executes defined tasks and features across engineering and test automation. Works effectively in teams to aligning priorities and manage execution. Learns new skills and establishes goals and context quickly by asking precise questions. Engages, guides and enables open source community to deliver high quality contributions. 
+
+Software Design Engineer II
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Responsibilities of SDE I plus: Designs, leads and delivers high impact features and changes across the product stack and test automation infrastructure. Sets thoughtful, technical vision for areas of ownership, balancing functional and technical trade-offs, while working effectively with PM and UX. Drops fluidly into different projects, ramps quickly and leads features to successful outcomes. Inspires, organizes and enables groups of open source community members to contribute to development campaigns in building significant new functionality. 
+
+Senior Software Design Engineer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Responsibilities of SDE II plus: Sets and delivers architectural vision for high impact features and changes across multiple products, working in sync with PM, UX, and customer teams. Highly respected by colleagues and community as technical authority, influencing discussions and behavior with input and suggestions. Drops fluidly into customer and community discussions, aligns efforts, and develops superior solutions through discussion and analysis. Attracts, motivates and trains open source community members to lead the coordination and management of development campaigns to create new features and products. 
+
+Architect
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Responsibilities of Senior SDE plus: Sets and delivers architectural vision for entire products and systems spanning multiple products. Engages with peers in customer and partner organizations to shape joint development plans. Works fluidly with PM, UX and sales leads and managers to set organizational objectives and direction. Sought out as a technical authority in industry in developing, disseminating, reviewing, evaluating key patterns and reference architectures. Influences, shapes and can redirect customer and community technical discussions, rapidly understanding disparate viewpoints and leading discussions that align thinking and efforts to influence the direction of large scale technical projects. 
+
+
 Internships 
 -------------------------
 
