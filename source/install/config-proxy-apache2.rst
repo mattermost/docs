@@ -3,7 +3,9 @@
 Configuring Apache2 as a proxy for Mattermost Server (Unofficial) 
 ==================================================================
 
-The Apache2 proxy configuration is done through the ``/etc/apache2/sites-available`` directory. If you're setting up Mattermost on a subdomain you'll want to create a new configuration along the lines of ``mysubdomain.mydomain.com.conf``. To make your life easy you could start by copying the `default` configuration file found in the same directory.
+The Apache2 proxy configuration is done through the ``/etc/apache2/sites-available`` directory. If you're setting up Mattermost on a subdomain you'll want to create a new configuration along the lines of ``mysubdomain.mydomain.com.conf``.
+
+To make your life easy you could start by copying the `default` configuration file found in the same directory.
 
 **To configure Apache2 as a proxy**
 
@@ -45,16 +47,14 @@ The Apache2 proxy configuration is done through the ``/etc/apache2/sites-availab
 			Require all granted
 			ProxyPass ws://127.0.0.1:8065/api/v3/users/websocket
 			ProxyPassReverse ws://127.0.0.1:8065/api/v3/users/websocket
-			ProxyPassReverseCookieDomain 127.0.0.1
-			mysubdomain.mydomain.com
+			ProxyPassReverseCookieDomain 127.0.0.1 mysubdomain.mydomain.com
 		  </Location>
 
 		  <Location />
 			Require all granted
 			ProxyPass http://127.0.0.1:8065/
 			ProxyPassReverse http://127.0.0.1:8065/
-			ProxyPassReverseCookieDomain 127.0.0.1
-			mysubdomain.mydomain.com
+			ProxyPassReverseCookieDomain 127.0.0.1 mysubdomain.mydomain.com
 		  </Location>
 
 		</VirtualHost>
