@@ -49,17 +49,17 @@ Influences and executes defined tasks and features across engineering and test a
 Software Design Engineer II
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Responsibilities of SDE I plus: Designs, leads and delivers high impact features and changes across the product stack and test automation infrastructure. Sets thoughtful, technical vision for areas of ownership, balancing functional and technical trade-offs, while working effectively with PM and UX. Drops fluidly into different projects, ramps quickly and leads features to successful outcomes. Inspires, organizes and enables groups of open source community members to contribute to development campaigns in building significant new functionality. 
+Capabilities of SDE I plus: Designs, leads and delivers high impact features and changes across the product stack and test automation infrastructure. Sets thoughtful, technical vision for areas of ownership, balancing functional and technical trade-offs, while working effectively with PM and UX. Drops fluidly into different projects, ramps quickly and leads features to successful outcomes. Inspires, organizes and enables groups of open source community members to contribute to development campaigns in building significant new functionality. 
 
 Senior Software Design Engineer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Responsibilities of SDE II plus: Sets and delivers architectural vision for high impact features and changes across multiple products, working in sync with PM, UX, and customer teams. Highly respected by colleagues and community as technical authority, influencing discussions and behavior with input and suggestions. Drops fluidly into customer and community discussions, aligns efforts, and develops superior solutions through discussion and analysis. Attracts, motivates and trains open source community members to lead the coordination and management of development campaigns to create new features and products. 
+Capabilities of SDE II plus: Sets and delivers architectural vision for high impact features and changes across multiple products, working in sync with PM, UX, and customer teams. Highly respected by colleagues and community as technical authority, influencing discussions and behavior with input and suggestions. Drops fluidly into customer and community discussions, aligns efforts, and develops superior solutions through discussion and analysis. Attracts, motivates and trains open source community members to lead the coordination and management of development campaigns to create new features and products. 
 
 Architect
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Responsibilities of Senior SDE plus: Sets and delivers architectural vision for entire products and systems spanning multiple products. Engages with peers in customer and partner organizations to shape joint development plans. Works fluidly with PM, UX and sales leads and managers to set organizational objectives and direction. Sought out as a technical authority in industry in developing, disseminating, reviewing, evaluating key patterns and reference architectures. Influences, shapes and can redirect customer and community technical discussions, rapidly understanding disparate viewpoints and leading discussions that align thinking and efforts to influence the direction of large scale technical projects. 
+Capabilities of Senior SDE plus: Sets and delivers architectural vision for entire products and systems spanning multiple products. Engages with peers in customer and partner organizations to shape joint development plans. Works fluidly with PM, UX and sales leads and managers to set organizational objectives and direction. Sought out as a technical authority in industry in developing, disseminating, reviewing, evaluating key patterns and reference architectures. Influences, shapes and can redirect customer and community technical discussions, rapidly understanding disparate viewpoints and leading discussions that align thinking and efforts to influence the direction of large scale technical projects. 
 
 Hiring Process
 -------------------------
@@ -72,19 +72,21 @@ Both declined and accepted candidates will be invited to share feedback on their
 - **Email - Follow-up questions** - If your code samples look good, we'll email you some questions specific to the role. 
 - **Video call - Screening interview** - Selected candidates will be invited for a 25-minute screening call with a recruiter. 
 - **Video call - Soft-skills discussion** - Next, candidates will be invited to schedule a 25-minute interview with a core committer to assess soft skills and for the candidate to learn more about the role. 
-- **Paid Simulation.** - Successful candidates are offered a paid project to simulate the experience of working as a core committer on the Mattermost open source project. See below for description for Paid Simulation for more details. 
-- **Video call - CTO interview** - Candidates are invited to a 45-minute interview with our CTO and co-creator of the Mattermost open source project. The interview will discuss the simulation results, the candidate's interests, their career aspirations, and how being a core committer at Mattermost could align with those interests and aspirations. 
+- **Paid Simulation.** - Successful candidates are offered a paid project to simulate the experience of working as a core committer. See below for description for *Paid Simulation* for more details. 
+- **Video call - CTO interview** - Candidates are invited to a 45-minute interview with our CTO and co-creator of the Mattermost open source project. The interview may include technical questions along with a discussion of the simulation results, the candidate's interests, their career aspirations, and how being a core committer at Mattermost could align with those interests and aspirations. 
 - **Video call - CEO interview** - Finally, candidates will have a 45-minute interview with our CEO.
 - **Email - Offer** - Successful candidates will receive an offer via email. Mattermost offers compensation competitive with a candidate's local market opportunities. 
 
 Paid Simulation 
 ----------------------------
 
+The purpose of a paid simulation project is to provide the candidate with a clear understanding of what it would be like to work at Mattermost before making a career change. 
+
 A paid simulation project consist of a collection of challenging `Help Wanted tickets <https://github.com/mattermost/platform/issues?q=is%3Aissue+%5BHelp+Wanted%5D+is%3Aopen>`_ that when successfully completed via the `Mattermost contribution guidelines <https://docs.mattermost.com/developer/contribution-guide.html>`_ would become a permanent part of the project's code base and reflect approximately a week's worth of contributions from a core committer at the same skill level as the candidate (approximately 30-40 hours of development time). 
 
-A flat rate of $500 USD is offered to attempt the simulation project. This amount is a standard fee for simulations and not an indicator of the final offer that would be extended to a successful candidate. A `standard click-sign services agreement <https://drive.google.com/file/d/0BzcHV4lxsJexQWpndVMwNGlqTnc/view>`_ is used for the project. 
+A flat rate of $500 USD is offered to attempt the simulation project. This amount is a standard fee for simulations and not an indicator of the final offer that would be extended to a successful candidate. A `standard click-sign services agreement <https://drive.google.com/file/d/0BzcHV4lxsJexQWpndVMwNGlqTnc/view>`_ is used to accept the fee. 
 
-This project reflects an investment from the core committers to work with the candidate through a series of significant contributions, answering questions, providing input and reviewing code as needed, as well as an investment from the candidate to explore the experience of working at Mattermost. 
+The simulation project reflects an investment from the core committers to work with the candidate through a series of significant contributions, answering questions, providing input and reviewing code as needed. It also reflects an investment from the candidate to explore the experience of working at Mattermost. 
 
 Frequently Asked Questions 
 --------------------------------------------------
