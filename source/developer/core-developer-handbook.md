@@ -45,7 +45,6 @@ Technical direction resolutions are any decisions made by the team affecting the
 - [Adding a webapp component](https://docs.mattermost.com/developer/webapp-component.html)
 - [Adding actions and selectors to Redux](https://docs.mattermost.com/developer/redux.html)
 - [Migrating a webapp component to Redux](https://docs.mattermost.com/developer/webapp-to-redux.html)
-- [Adding an endpoint to APIv4](https://docs.mattermost.com/html/developer/api4.html)
+- [Adding an endpoint to APIv4](https://docs.mattermost.com/developer/api4.html)
 - [Developer workflow](https://docs.mattermost.com/developer/developer-flow.html)
 - [Code style guide](https://docs.mattermost.com/developer/style-guide.html)
-

@@ -48,7 +48,7 @@ Release Date: May 16, 2017
 - Added the ability to disable full text search queries and statuses via `config.json` for higher performance.
 
 #### Emoji Picker (Beta)
-- Enable the emoji picker in **Account Settings > Advanced > Preview pre-release features**. 
+- Enable the emoji picker in **Account Settings > Advanced > Preview pre-release features**.
 - Custom emoji now maintains aspect ratio in the emoji picker.
 - Improved user experience for closing the Emoji picker after reacting to a message.
 
@@ -203,7 +203,7 @@ Many thanks to all our contributors. In alphabetical order:
 
 /docs
 
-- [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [fjarlq](https://github.com/fjarlq), [it33](https://github.com/it33), [ivernus](https://github.com/ivernus), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [justinwyer](https://github.com/justinwyer), [lindy65](https://github.com/lindy65), [senk](https://github.com/senk) 
+- [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [fjarlq](https://github.com/fjarlq), [it33](https://github.com/it33), [ivernus](https://github.com/ivernus), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [justinwyer](https://github.com/justinwyer), [lindy65](https://github.com/lindy65), [senk](https://github.com/senk)
 
 /mattermost-api-reference
 
@@ -1102,7 +1102,7 @@ Thanks also to those who reported bugs that benefited the release, in alphabetic
  - Added server-side in-memory caching to reduce DB reads/writes.
 
 #### Connection Security
-- TLS is now supported directly on the Mattermost server. Learn more in our [documentation](https://docs.mattermost.com/install/setup-tls.html).
+- TLS is now supported directly on the Mattermost server. Learn more in our [documentation](https://docs.mattermost.com/install/config-tls-mattermost.html).
 - Support for automatically fetching certificates through Let's Encrypt.
 
 #### Minio File Storage
