@@ -33,10 +33,33 @@ Requirements
 - You're ready to complete our `technical interview`_ process.
 - Ideal, but not required: Experience working in online communities, having made at least one `Help Wanted <https://github.com/search?utf8=%E2%9C%93&q=org%3Amattermost+state%3Aopen+Help+Wanted&type=Issues&ref=searchresults?>`_ pull request to a Mattermost repository, working on other Golang, React or React Native apps. 
 
-Internships 
+Levels
 -------------------------
 
-While we no longer offer internships for developers, if you get a couple of `Help Wanted <https://github.com/search?utf8=%E2%9C%93&q=org%3Amattermost+state%3Aopen+Help+Wanted&type=Issues&ref=searchresults?>`_ pull requests accepted, we'll interview you for one. This will be a remote internship without supervision; you'll only get feedback on your merge requests. If you want to work on open source and qualify `please submit an application <https://jobs.lever.co/mattermost/>`_. In the cover letter field, please note that you want an internship and link to the accepted pull requests. The pull requests should be of significant value and difficulty, which is at the discretion of the hiring manager. For example, fixing 10 typos isn't as valuable as shipping 2 new features.
+The below level descriptions are used to categorize core committers based on their capabilities. Regardless of level, all core committers are expected to fulfill the following: 
+
+- Deliver high quality code that represents the best thinking of the open source project and is ready to be scrutinized by hundreds of community members, including commercial customers. 
+- Write complete code that meets all specifications and criteria, has thorough unit tests and typically no defects.
+- Work collaboratively in a high trust, asynchronous environment with strong written communication skills and comfort working with fellow developers, product managers, designers, testers, technical writers, support engineers and other product and business staff. 
+
+Software Design Engineer I
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Influences and executes defined tasks and features across engineering and test automation. Works effectively in teams to aligning priorities and manage execution. Learns new skills and establishes goals and context quickly by asking precise questions. Engages, guides and enables open source community to deliver high quality contributions. 
+
+Software Design Engineer II
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Capabilities of SDE I plus: Designs, leads and delivers high impact features and changes across the product stack and test automation infrastructure. Sets thoughtful, technical vision for areas of ownership, balancing functional and technical trade-offs, while working effectively with PM and UX. Drops fluidly into different projects, ramps quickly and leads features to successful outcomes. Inspires, organizes and enables groups of open source community members to contribute to development campaigns in building significant new functionality. 
+
+Senior Software Design Engineer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Capabilities of SDE II plus: Sets and delivers architectural vision for high impact features and changes across multiple products, working in sync with PM, UX, and customer teams. Highly respected by colleagues and community as technical authority, influencing discussions and behavior with input and suggestions. Drops fluidly into customer and community discussions, aligns efforts, and develops superior solutions through discussion and analysis. Attracts, motivates and trains open source community members to lead the coordination and management of development campaigns to create new features and products. 
+
+Architect
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Capabilities of Senior SDE plus: Sets and delivers architectural vision for entire products and systems spanning multiple products. Engages with peers in customer and partner organizations to shape joint development plans. Works fluidly with PM, UX and sales leads and managers to set organizational objectives and direction. Sought out as a technical authority in industry in developing, disseminating, reviewing, evaluating key patterns and reference architectures. Influences, shapes and can redirect customer and community technical discussions, rapidly understanding disparate viewpoints and leading discussions that align thinking and efforts to influence the direction of large scale technical projects. 
 
 Hiring Process
 -------------------------
@@ -47,29 +70,28 @@ Both declined and accepted candidates will be invited to share feedback on their
 
 - **Application/Email - Review of code samples** - In your application you can include a link to any public open source work you've done, including GitHub, GitLab or BitBucket profiles. If you'd like to share privately we can send you our ID for GitHub, GitLab or BitBucket, or we can review code you send in via email. 
 - **Email - Follow-up questions** - If your code samples look good, we'll email you some questions specific to the role. 
-- **Video call - Screening interview** - Selected candidates will be invited for a 30-minute screening call with a recruiter. 
-- **Video call - Soft-skills discussion** - Next, candidates will be invited to schedule a 15-minute interview with a staff developer to assess soft skills. 
-- **Video call - Technical interview** - The next step is a technical interview with a staff developer. 
-- **Video call - CTO interview** - Candidates are invited to an interview with our CTO and co-creator of the Mattermost open source project. 
-- **Video call - CEO interview** - Finally, candidates will have a 50-minute interview with our CEO.
-- **Email - Offer** - Successful candidates will receive an offer via email. 
+- **Video call - Screening interview** - Selected candidates will be invited for a 25-minute screening call with a recruiter. 
+- **Video call - Soft-skills discussion** - Next, candidates will be invited to schedule a 25-minute interview with a core committer to assess soft skills and for the candidate to learn more about the role. 
+- **Paid Simulation.** - Successful candidates are offered a paid project to simulate the experience of working as a core committer. See below for description for *Paid Simulation* for more details. 
+- **Video call - CTO interview** - Candidates are invited to a 45-minute interview with our CTO and co-creator of the Mattermost open source project. The interview may include technical questions along with a discussion of the simulation results, the candidate's interests, their career aspirations, and how being a core committer at Mattermost could align with those interests and aspirations. 
+- **Video call - CEO interview** - Finally, candidates will have a 45-minute interview with our CEO.
+- **Email - Offer** - Successful candidates will receive an offer via email. Mattermost offers compensation competitive with a candidate's local market opportunities. 
 
-
-Technical Interview
+Paid Simulation 
 ----------------------------
 
-For some positions, the hiring process includes a technical interview in order for you and the interviewer to understand what our work here is really like, and how you think, code and collaborate. 
+The purpose of a paid simulation project is to provide the candidate with a clear understanding of what it would be like to work at Mattermost before making a career change. 
 
-In the technical interview, you will work on an issue in our `Help Wanted <https://github.com/search?utf8=%E2%9C%93&q=org%3Amattermost+state%3Aopen+Help+Wanted&type=Issues&ref=searchresults?>`_  list in a 1-hour screen sharing session with the interviewer, and code "live", with them there to talk and collaborate with.
+A paid simulation project consist of a collection of challenging `Help Wanted tickets <https://github.com/mattermost/platform/issues?q=is%3Aissue+%5BHelp+Wanted%5D+is%3Aopen>`_ that when successfully completed via the `Mattermost contribution guidelines <https://docs.mattermost.com/developer/contribution-guide.html>`_ would become a permanent part of the project's code base and reflect approximately a week's worth of contributions from a core committer at the same skill level as the candidate (approximately 30-40 hours of development time). 
 
-After the interview, you will be asked to spend some time to finish the work, get it as close to done as your time allows, and submit a pull request with the changes to the Mattermost open source project. The interviewer will then review it, leave feedback, and ask you to look at the feedback and potentially make changes to address it. After at most 2 cycles of review by the interviewer and changes by you, the interviewer will let you know whether Mattermost will move forward with your candidacy, or not.
+A flat rate of $500 USD is offered to attempt the simulation project. This amount is a standard fee for simulations and not an indicator of the final offer that would be extended to a successful candidate. A `standard click-sign services agreement <https://drive.google.com/file/d/0BzcHV4lxsJexQWpndVMwNGlqTnc/view>`_ is used to accept the fee. 
 
-The work after the screen sharing session, before submitting the pull request for the first review cycle, is expected to take around one hour. But as mentioned above, feel free to extend this time according to your availability, there is no time constraint.
+The simulation project reflects an investment from the core committers to work with the candidate through a series of significant contributions, answering questions, providing input and reviewing code as needed. It also reflects an investment from the candidate to explore the experience of working at Mattermost. 
 
-The time taken on the review cycles should normally take around two hours. While you are welcome to spend more time on this if you choose to, we will not ask you to do so. If you do not have time to do everything you'd like to, please mention those extra items in the pull request description.
+Frequently Asked Questions 
+--------------------------------------------------
 
-You are encouraged to let the interviewer know when you feel like you are getting close to having spent more time on the merge request than is reasonable. In this case, they will make a decision on your candidacy then, based on the information gathered during the technical interview and the work on the pull request up to that point. We do need at least one review cycle before evaluating your candidacy, so please bear that in mind if you're spending more than one hour before submitting the initial merge request.
+Do you have internships? 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Once the pull request is finished, the code you have written will go into Mattermost Team Edition to the benefit of thousands of organizations using this free, open-source product, but will also go into the proprietary Mattermost Enterprise Edition, which is a commercial extension of the open source project. When contributing code, you should follow the `code contribution guidelines <https://docs.mattermost.com/developer/contribution-guide.html>`_, and complete the individual contributor license agreement.
-
-If you prefer not to do the above, please let us know and we'll give you an assignment that does not relate to Mattermost but does test the relevant skills.
+While we no longer offer internships for developers, if you get a couple of `Help Wanted <https://github.com/search?utf8=%E2%9C%93&q=org%3Amattermost+state%3Aopen+Help+Wanted&type=Issues&ref=searchresults?>`_ pull requests accepted, we'll interview you for one. This will be a remote internship without supervision; you'll only get feedback on your merge requests. If you want to work on open source and qualify `please submit an application <https://jobs.lever.co/mattermost/>`_. In the cover letter field, please note that you want an internship and link to the accepted pull requests. The pull requests should be of significant value and difficulty, which is at the discretion of the hiring manager. For example, fixing 10 typos isn't as valuable as shipping 2 new features.
