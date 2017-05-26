@@ -631,7 +631,7 @@ Enable account creation with email
 
 **True**: Allow team creation and account signup using email and password.
 
-**False**: Email signup is disabled and users are not able to invite new members. This limits signup to single sign-on services like OAuth or AD/LDAP.
+**False**: Email signup is disabled. This limits signup to single sign-on services like OAuth or AD/LDAP.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableSignUpWithEmail": true`` with options ``true`` and ``false`` for above settings respectively.                     |
@@ -642,7 +642,7 @@ Enable sign-in with email
 
 **True**: Mattermost allows users to sign in using their email and password.
 
-**False**: sign in with email is disabled and does not appear on the login screen.
+**False**: Sign in with email is disabled and does not appear on the login screen.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableSignInWithEmail": true`` with options ``true`` and ``false`` for above settings respectively.                     |
