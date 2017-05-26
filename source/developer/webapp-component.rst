@@ -111,7 +111,7 @@ The container will then need to import selectors and actions from Redux and the 
 
   export default connect(mapStateToProps, mapDispatchToProps)(ItemList);
 
-If the selectors and/or actions you need don't yet exist in Redux then you should go add those first by following the `guide to adding actions and selectors <./redux>`__.
+If the selectors and/or actions you need don't yet exist in Redux then you should go add those first by following the `guide to adding actions and selectors <./redux.html>`__.
 
 Your ``index.js`` and ``item_list.js`` files will live together in an ``item_list/`` directory.
 

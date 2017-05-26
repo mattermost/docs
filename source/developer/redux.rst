@@ -3,7 +3,7 @@ Working with Redux
 
 This page describes how to add actions and selectors to the client service and storage layer built on Redux. This Redux service layer is what drives the majority of actions, storage and server interaction for both the Mattermost webapp and the React Native mobile apps.
 
-As of Mattermost version 3.9, the webapp has begun moving to replace Flux with Redux. If you're interested in contributing to this campaign, please see `migrating webapp components to Redux <./migrating-to-redux>`__ and join the `Redux channel on pre-release.mattermost.com <https://pre-release.mattermost.com/core/channels/redux>`__.
+As of Mattermost version 3.9, the webapp has begun moving to replace Flux with Redux. If you're interested in contributing to this campaign, please see `migrating webapp components to Redux <./webapp-to-redux.html>`__ and join the `Redux channel on pre-release.mattermost.com <https://pre-release.mattermost.com/core/channels/redux>`__.
 
 The respository for the Redux service layer is here: https://github.com/mattermost/mattermost-redux
 
