@@ -41,10 +41,9 @@ No pull requests for major features should be **merged** to the current release 
     - Post this checklist in Release channel
     - Verify all items in the last posted release checklist are complete
 2. Logistics:
-    - Confirm the following were posted:
-        - Zero Bug Balance query
-        - Item queued for UX meeting to discuss worst UX bug
-        - Community notified about upcoming release in Reception
+    - Start posting a daily Zero Bug Balance query
+    - Queue an item for UX meeting to discuss worst UX bug and to do a 10-minute UI/UX bug bash
+    - Notify community about upcoming release in Reception
 3. PM:
     - PM area owners complete draft of Changelog in a WIP PR with updates for highlights, feature additions, known issues, compatibility updates for deprecated features, config.json, [database changes](https://github.com/mattermost/platform/blob/master/store/sql_upgrade.go#L181), [API changes](https://github.com/mattermost/platform/commits/master/model/client.go) (search `#api-proposal` and confirm with Dev) and WebSocket event changes; [see example](http://docs.mattermost.com/administration/changelog.html#compatibility)
     - Review and update [company roadmap](https://about.mattermost.com/direction/) with which major features made it into the release
@@ -149,6 +148,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - Run loadtests against the release candidate to find potential performance issues
 4. Logistics:
     - Confirm community testers are directed to the Release Discussion channel
+    - Queue an item for UX meeting to do a 10-minute UI/UX bug bash
 5. Team:
     - Test assigned areas of the Release Candidate Testing Spreadsheet and file any bugs found in Jira
     - Post a link to any "Blocking" issue that may need a hotfix to the RC in the Release room, with the **#blocking** tag. If the issue is security related or contains confidential information, post the link in the Confidential Bugs private channel. Blocking issues are considered to be security issues, data loss issues, and issues that break core functionality or significantly impact aesthetics.
