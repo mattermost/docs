@@ -61,8 +61,6 @@ Architect
 
 Responsibilities of Senior SDE plus: Sets and delivers architectural vision for entire products and systems spanning multiple products. Engages with peers in customer and partner organizations to shape joint development plans. Works fluidly with PM, UX and sales leads and managers to set organizational objectives and direction. Sought out as a technical authority in industry in developing, disseminating, reviewing, evaluating key patterns and reference architectures. Influences, shapes and can redirect customer and community technical discussions, rapidly understanding disparate viewpoints and leading discussions that align thinking and efforts to influence the direction of large scale technical projects. 
 
-
-
 Hiring Process
 -------------------------
 
@@ -77,14 +75,16 @@ Both declined and accepted candidates will be invited to share feedback on their
 - **Paid Simulation.** - Successful candidates are offered a paid project to simulate the experience of working as a core committer on the Mattermost open source project. See below for description for Paid Simulation for more details. 
 - **Video call - CTO interview** - Candidates are invited to a 45-minute interview with our CTO and co-creator of the Mattermost open source project. The interview will discuss the simulation results, the candidate's interests, their career aspirations, and how being a core committer at Mattermost could align with those interests and aspirations. 
 - **Video call - CEO interview** - Finally, candidates will have a 45-minute interview with our CEO.
-- **Email - Offer** - Successful candidates will receive an offer via email. 
-
+- **Email - Offer** - Successful candidates will receive an offer via email. Mattermost offers compensation competitive with a candidate's local market opportunities. 
 
 Paid Simulation 
 ----------------------------
 
-A paid simulation project consist of a collection of challenging `Help Wanted tickets <https://github.com/mattermost/platform/issues?q=is%3Aissue+%5BHelp+Wanted%5D+is%3Aopen>`_ that when successfully completed would become a permanent part of the project's code base and reflect approximately a week's worth of contributions from a core committer at the same skill level as the candidate (approximately 30-40 hours of development time). A flat rate of $500 USD in `a standard services contract <https://drive.google.com/file/d/0BzcHV4lxsJexQWpndVMwNGlqTnc/view>`_ is offered to attempt the simulation. This amount is standard and not an indicator of the final offer that would be extended to a successful candidate.
+A paid simulation project consist of a collection of challenging `Help Wanted tickets <https://github.com/mattermost/platform/issues?q=is%3Aissue+%5BHelp+Wanted%5D+is%3Aopen>`_ that when successfully completed via the `Mattermost contribution guidelines <https://docs.mattermost.com/developer/contribution-guide.html>`_ would become a permanent part of the project's code base and reflect approximately a week's worth of contributions from a core committer at the same skill level as the candidate (approximately 30-40 hours of development time). 
 
+A flat rate of $500 USD is offered to attempt the simulation project. This amount is a standard fee for simulations and not an indicator of the final offer that would be extended to a successful candidate. A `standard click-sign services agreement <https://drive.google.com/file/d/0BzcHV4lxsJexQWpndVMwNGlqTnc/view>`_ is used for the project. 
+
+This project reflects an investment from the core committers to work with the candidate through a series of significant contributions, answering questions, providing input and reviewing code as needed, as well as an investment from the candidate to explore the experience of working at Mattermost. 
 
 Frequently Asked Questions 
 --------------------------------------------------
