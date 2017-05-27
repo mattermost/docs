@@ -2,7 +2,7 @@
 Developers
 ====================================
 
-At Mattermost, staff developers are thoughtful, highly independent engineers who work with both our open source contributor community and other Mattermost staff to improve our software on a regular basis.
+At Mattermost, staff developers are thoughtful, highly independent engineers who work with both our open source contributor community and other Mattermost staff to improve and evolve our software for thousands of organizations around the world. 
 
 All Mattermost staff developers are also `core committers <https://docs.mattermost.com/developer/contribution-guide.html#core-committers>`_ on one or more official Mattermost repositories. They work closely with product management to envision, design, plan, develop, coordinate, review and merge improvements per our `contribution guidelines <https://docs.mattermost.com/developer/contribution-guide.html>`_ on a regular basis. 
 
@@ -44,7 +44,7 @@ The below level descriptions are used to categorize core committers based on the
 
 Software Design Engineer I
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Influences and executes defined tasks and features across engineering and test automation. Works effectively in teams to aligning priorities and manage execution. Learns new skills and establishes goals and context quickly by asking precise questions. Engages, guides and enables open source community to deliver high quality contributions. 
+Influences and executes defined tasks and features across engineering and test automation. Works effectively in teams to align priorities and manage execution. Learns new skills and establishes goals and context quickly by asking precise questions. Engages, guides and enables open source contributors to deliver high quality pull requests. 
 
 Software Design Engineer II
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -59,34 +59,39 @@ Capabilities of SDE II plus: Sets and delivers architectural vision for high imp
 Architect
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Capabilities of Senior SDE plus: Sets and delivers architectural vision for entire products and systems spanning multiple products. Engages with peers in customer and partner organizations to shape joint development plans. Works fluidly with PM, UX and sales leads and managers to set organizational objectives and direction. Sought out as a technical authority in industry in developing, disseminating, reviewing, evaluating key patterns and reference architectures. Influences, shapes and can redirect customer and community technical discussions, rapidly understanding disparate viewpoints and leading discussions that align thinking and efforts to influence the direction of large scale technical projects. 
+Capabilities of Senior SDE plus: Sets and delivers architectural vision for entire products and systems spanning multiple products. Engages with peers in customer and partner organizations to shape joint development plans. Works fluidly with PM, UX and sales leadership to set organizational objectives and direction. Sought out as a technical authority in industry in developing, disseminating, reviewing, evaluating key patterns and reference architectures. Influences, shapes and can redirect customer and community technical discussions, rapidly understanding disparate viewpoints and leading discussions that align thinking and efforts to influence the direction of large scale technical projects. 
 
 Hiring Process
 -------------------------
 
-Applicants for this position can expect the hiring process to follow the order below. Please keep in mind that applicants can be declined from the position at any stage of the process. 
+Candidates for developer roles on the Mattermost staff can expect the hiring process to follow the order below. Please keep in mind that applicants can be declined from the position at any stage of the process. 
 
 Both declined and accepted candidates will be invited to share feedback on their hiring experience so we can continually improve our process. 
 
-- **Application/Email - Review of code samples** - In your application you can include a link to any public open source work you've done, including GitHub, GitLab or BitBucket profiles. If you'd like to share privately we can send you our ID for GitHub, GitLab or BitBucket, or we can review code you send in via email. 
+- **Application/Email - Review of code samples** - In `your application <https://jobs.lever.co/mattermost/>`_ we welcome you to include links to any public open source work you've done, including GitHub, GitLab or BitBucket profiles. If you'd like to share privately we can send you our ID for GitHub, GitLab or BitBucket, or we can review code you send in via email. 
 - **Email - Follow-up questions** - If your code samples look good, we'll email you some questions specific to the role. 
 - **Video call - Screening interview** - Selected candidates will be invited for a 25-minute screening call with a recruiter. 
 - **Video call - Soft-skills discussion** - Next, candidates will be invited to schedule a 25-minute interview with a core committer to assess soft skills and for the candidate to learn more about the role. 
-- **Paid Simulation.** - Successful candidates are offered a paid project to simulate the experience of working as a core committer. See below for description for *Paid Simulation* for more details. 
-- **Video call - CTO interview** - Candidates are invited to a 45-minute interview with our CTO and co-creator of the Mattermost open source project. The interview may include technical questions along with a discussion of the simulation results, the candidate's interests, their career aspirations, and how being a core committer at Mattermost could align with those interests and aspirations. 
+- **Paid Simulation.** - Successful candidates with limited experience contributing to Mattermost are offered a paid project to simulate the experience of working as a core committer. See below for description for *Paid Simulation* for details. 
+- **Video call - CTO interview** - Candidates are invited to a 45-minute interview with our CTO and co-creator of the Mattermost open source project. The interview may include technical questions along with a discussion of either past work or results of the simulation, the candidate's interests, their career aspirations, and how being a core committer at Mattermost could align with those interests and aspirations. 
 - **Video call - CEO interview** - Finally, candidates will have a 45-minute interview with our CEO.
 - **Email - Offer** - Successful candidates will receive an offer via email. Mattermost offers compensation competitive with a candidate's local market opportunities. 
 
 Paid Simulation 
 ----------------------------
 
-The purpose of a paid simulation project is to provide the candidate with a clear understanding of what it would be like to work at Mattermost before making a career change. 
+For candidates who successfully complete technical and soft-skills reviews, and who have limited experience contributing to Mattermost, will be offered a paid simulation. 
 
-A paid simulation project consist of a collection of challenging `Help Wanted tickets <https://github.com/mattermost/platform/issues?q=is%3Aissue+%5BHelp+Wanted%5D+is%3Aopen>`_ that when successfully completed via the `Mattermost contribution guidelines <https://docs.mattermost.com/developer/contribution-guide.html>`_ would become a permanent part of the project's code base and reflect approximately a week's worth of contributions from a core committer at the same skill level as the candidate (approximately 30-40 hours of development time). 
+The simulation provides the candidate a clear understanding of working on one of the world's largest open source projects. Your code will be reviewed and used by hundreds of other contributing developers. After an extended vetting process successful projects will be merged and your contribution will be deployed by thousands of companies around in the world, typically within weeks of the code being merged. 
 
-A flat rate of $500 USD is offered to attempt the simulation project. This amount is a standard fee for simulations and not an indicator of the final offer that would be extended to a successful candidate. A `standard click-sign services agreement <https://drive.google.com/file/d/0BzcHV4lxsJexQWpndVMwNGlqTnc/view>`_ is used to accept the fee. 
+Your work will be come a permanent part of the open source project that you can reference for the rest of your career. You're also eligible to receive a `Mattermost Mug <https://twitter.com/search?q=%23mattermug&src=typd>`_. 
 
 The simulation project reflects an investment from the core committers to work with the candidate through a series of significant contributions, answering questions, providing input and reviewing code as needed. It also reflects an investment from the candidate to explore the experience of working at Mattermost. 
+
+The paid simulation project typically consists of a collection of challenging `Help Wanted tickets <https://github.com/mattermost/platform/issues?q=is%3Aissue+%5BHelp+Wanted%5D+is%3Aopen>`_ to be completed per the `Mattermost contribution guidelines <https://docs.mattermost.com/developer/contribution-guide.html>`_ in a mutually agreed timeline to complete approximately 30-40 hours of development at the estimated skill level of the candidate. 
+
+A flat rate of $750 USD is offered to attempt the simulation project. This amount is a standard fee for simulations and not an indicator of the final offer that would be extended to a successful candidate. A `standard click-sign services agreement <https://drive.google.com/file/d/0BzcHV4lxsJexQWpndVMwNGlqTnc/view>`_ is used to accept the fee. 
+
 
 Frequently Asked Questions 
 --------------------------------------------------
