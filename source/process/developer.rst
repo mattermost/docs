@@ -30,7 +30,7 @@ Requirements
 - You're self-motivated with strong organizational skills.
 - You share our values, and work in accordance with those values.
 - You're proficient in Golang, React and/or React Native, or are able to ramp quickly into those languages. 
-- You're ready to complete our `technical interview`_ process.
+- You've either made substantial contributions to the Mattermost open source project or are open to completing a `paid simulation <https://docs.mattermost.com/process/developer.html#paid-simulation>`_ to assess your comfort in working in open source.
 - Ideal, but not required: Experience working in online communities, having made at least one `Help Wanted <https://github.com/search?utf8=%E2%9C%93&q=org%3Amattermost+state%3Aopen+Help+Wanted&type=Issues&ref=searchresults?>`_ pull request to a Mattermost repository, working on other Golang, React or React Native apps. 
 
 Levels
@@ -91,6 +91,8 @@ The simulation project reflects an investment from the core committers to work w
 The paid simulation project typically consists of a collection of challenging `Help Wanted tickets <https://github.com/mattermost/platform/issues?q=is%3Aissue+%5BHelp+Wanted%5D+is%3Aopen>`_ to be completed per the `Mattermost contribution guidelines <https://docs.mattermost.com/developer/contribution-guide.html>`_ in a mutually agreed timeline to complete approximately 30-40 hours of development at the estimated skill level of the candidate. 
 
 A flat rate of $750 USD is offered to attempt the simulation project. This amount is a standard fee for simulations and not an indicator of the final offer that would be extended to a successful candidate. A `standard click-sign services agreement <https://drive.google.com/file/d/0BzcHV4lxsJexQWpndVMwNGlqTnc/view>`_ is used to accept the fee. 
+
+
 
 
 Frequently Asked Questions 
