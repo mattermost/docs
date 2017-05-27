@@ -72,7 +72,8 @@ Both declined and accepted candidates will be invited to share feedback on their
 - **Email - Follow-up questions** - If your code samples look good, we'll email you some questions specific to the role. 
 - **Video call - Screening interview** - Selected candidates will be invited for a 25-minute screening call with a recruiter. 
 - **Video call - Soft-skills discussion** - Next, candidates will be invited to schedule a 25-minute interview with a core committer to assess soft skills and for the candidate to learn more about the role. 
-- **Paid Simulation.** - Successful candidates with limited experience contributing to Mattermost are offered a paid project to simulate the experience of working as a core committer. See below for description for *Paid Simulation* for details. 
+- **Paid Simulation** - Successful candidates with limited experience contributing to Mattermost are offered a paid project to simulate the experience of working as a core committer. See below for description for *Paid Simulation* for details. 
+- **Reference Checks** - You'll be sent an email request by `SkillSurvey <http://www.skillsurvey.com/>`_ to list 3 references who can verify your past achievements.  
 - **Video call - CTO interview** - Candidates are invited to a 45-minute interview with our CTO and co-creator of the Mattermost open source project. The interview may include technical questions along with a discussion of either past work or results of the simulation, the candidate's interests, their career aspirations, and how being a core committer at Mattermost could align with those interests and aspirations. 
 - **Video call - CEO interview** - Finally, candidates will have a 45-minute interview with our CEO.
 - **Email - Offer** - Successful candidates will receive an offer via email. Mattermost offers compensation competitive with a candidate's local market opportunities. 
