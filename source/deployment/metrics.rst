@@ -186,3 +186,13 @@ where you can replace ``localhost`` with the server name. The profiling reports 
     - ``/debug/pprof/block``/ for block profiling
 
 .. image:: ../images/perf_monitoring_go_metrics.png
+
+Best Practices
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Below we provide a few best practices for setting up performance monitoring dashboards.
+
+- importing sample dashboards
+ - what each of them are
+- setting up alerts
+
