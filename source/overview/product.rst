@@ -59,7 +59,7 @@ Get started with a `free trial license <https://about.mattermost.com/trial/>`_. 
 
 **Mattermost Enterprise Edition E20** is commercial enterprise-grade messaging system that scales to hundreds to tens of thousands of users. E20 is your "virtual city", with cluster-based horizontal scaling, high availability deployment, performance monitoring systems and compliance reporting plus advanced corporate directory integration. It offers the following advanced features **in addition to** E10:
 
-- Advanced SAML 2.0 authentication with Okta and Active Directory Federation Services 
+- Advanced SAML 2.0 authentication with Okta, OneLogin, and Active Directory Federation Services 
 - Compliance exports of message histories with oversight protection 
 - High availability support with multi-node database deployment
 - Horizontal scaling through cluster-based deployment 
