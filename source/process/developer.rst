@@ -1,10 +1,14 @@
 ====================================
-Developers
+Staff Developers
 ====================================
 
-At Mattermost, staff developers are thoughtful, highly independent engineers who work with both our open source contributor community and other Mattermost staff to improve and evolve our software for thousands of organizations around the world. 
+As a core committer at Mattermost you are responsible for one of the world's largest and most popular open source projects. Your work impacts thousands of organizations who depend on Mattermost for daily operations, from high tech (Intel, Samsung, Micron), to healthcare (Medtronic, Epic, Bristol-Myers Squibb) to public sector (U.S. Department of Defense, U.S. Department of Energy), to education (University of California, National University of Singapore), and consumer brands (Urban Outfitters, Wargaming.net). 
 
-All Mattermost staff developers are also `core committers <https://docs.mattermost.com/developer/contribution-guide.html#core-committers>`_ on one or more official Mattermost repositories. They work closely with product management to envision, design, plan, develop, coordinate, review and merge improvements per our `contribution guidelines <https://docs.mattermost.com/developer/contribution-guide.html>`_ on a regular basis. 
+Working in open source means your work is publicly visible. Your code will receive both credit and critique from the community and with the right mindset and support that can lead to you making the best engineering decisions of your career. 
+
+Core committers include volunteer developers from the community, staff by organizations deploying and investing in Mattermost, as well as staff paid by Mattermost, Inc.
+
+This document summarizes the resposibilities and requirements of core committers employed by Mattermost, Inc., skill level requirements and hiring process. Staff developers work closely with Mattermost product management to envision, design, plan, develop, coordinate, review and merge improvements per our `contribution guidelines <https://docs.mattermost.com/developer/contribution-guide.html>`_ on a regular basis. 
 
 Ideally, developers are "full stack", and comfortable moving across backend and frontend projects. As part of our `learn, master, teach <https://docs.mattermost.com/process/training.html#learn-master-teach>`_ mindset, our environment has people consistently cross-training, becoming experts and passing on knowledge to new team members rotating into new areas of responsibility. That said, we also welcome engineers who prefer to specialize in backend and frontend, since there's ample projects to find in both areas.  
 
@@ -81,9 +85,9 @@ Both declined and accepted candidates will be invited to share feedback on their
 Paid Simulation 
 ----------------------------
 
-For candidates who successfully complete technical and soft-skills reviews, and who have limited experience contributing to Mattermost, we offer a paid simulation project. 
+For candidates who successfully complete technical and soft-skills reviews, and who have limited experience contributing to Mattermost, we offer a paid simulation. 
 
-The simulation helps candidates understand the experience of working on one of the world's largest open source projects. Your code will be reviewed and used by hundreds of other contributing developers. After an extended vetting process, successful projects are merged and the results of your simulation will be deployed by thousands of companies around in the world.
+The simulation helps candidates experience working on one of the world's largest open source projects to understand how they'd enjoy such a role. Your code will be reviewed and used by hundreds of other contributing developers. After an extended vetting process, successful projects are merged and the results of your simulation will be deployed by thousands of companies around in the world.
 
 Your work will become a permanent part of the open source project that you can reference for the rest of your career. You're also eligible to receive a `Mattermost Mug <https://twitter.com/search?q=%23mattermug&src=typd>`_. 
 
@@ -92,8 +96,6 @@ The simulation project reflects an investment from the core committers to work w
 The paid simulation project typically consists of a collection of challenging `Help Wanted tickets <https://github.com/mattermost/platform/issues?q=is%3Aissue+%5BHelp+Wanted%5D+is%3Aopen>`_ to be completed per the `Mattermost contribution guidelines <https://docs.mattermost.com/developer/contribution-guide.html>`_ in a mutually agreed timeline reflecting 30-40 hours of development at the estimated skill level of the candidate. 
 
 A flat rate of $750 USD is offered to attempt the simulation project. This amount is a standard fee for simulations and not an indicator of the final offer that would be extended to a successful candidate. A `standard click-sign services agreement <https://drive.google.com/file/d/0BzcHV4lxsJexQWpndVMwNGlqTnc/view>`_ is used to accept the fee. 
-
-
 
 
 Frequently Asked Questions 
