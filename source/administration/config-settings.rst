@@ -38,7 +38,7 @@ The URL that users will use to access Mattermost. This field is required in Matt
 
 Correct example: ``https://mattermost.example.com``
 
-Incorrect example: ``https://mattermost.example.com:1234/team_name``
+Incorrect example: ``https://mattermost.example.com/team_name``
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SiteURL": ""`` with string input.                                                                     |
