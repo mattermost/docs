@@ -17,6 +17,8 @@ Step 1: Add an OAuth application to your GitLab account
       https://{mattermost-site-name}/login/gitlab/complete
       https://{mattermost-site-name}/signup/gitlab/complete
 
+    If your GitLab instance is not set up to use SSL, your URIs must begin with ``http://`` instead of ``https://``.
+
   c. In the *Scopes* section, select **api**.
 
 3. Click **Save application**.
@@ -43,9 +45,9 @@ Step 2: Configure Mattermost for GitLab SSO
           "UserApiEndpoint": "https://{gitlab-site-name}/api/v3/user"
       }
 
-    For *{gitlab-site-name}* use the name of your GitLab instance. If you are using GitLab itself as your OAuth provider, use *gitlab.com*.
+    For *{gitlab-site-name}* use the name of your GitLab instance. If your GitLab instance is not set up to use SSL, the endpoints must begin with ``http://`` instead of ``https://``. If you are using GitLab itself as your OAuth provider, use *gitlab.com*.
 
-2. [Optional] To force all users to sign-up with SSO only, in the *ServiceSettings* section of ``config.json`` set *DisableEmailSignUp* to ``true``.
+2. [Optional] To force all users to sign-up with SSO only, in the *EmailSettings* section of ``config.json`` set *EnableSignUpWithEmail* to ``false``.
 
 3. Restart your Mattermost server.
 
