@@ -122,6 +122,61 @@ And here is how it renders in Mattermost:
 
 .. image:: ../images/attachments-example.png
 
+Attachments with Posts created through the API
+------------
+To use message attachments when creating posts through an API endpoint, simply attach the attachment as a field in the props field of the post. An example can be seen below:
+
+.. code-block:: JSON
+  :linenos:
+
+    {
+       "channel_id":"somechannelid",
+       "message":"",
+       "props":{
+          "attachments":[
+             {
+                "author_icon":"http://www.mattermost.org/wp-content/uploads/2016/04/icon_WS.png",
+                "author_link":"http://www.mattermost.org/",
+                "author_name":"Mattermost",
+                "color":"#FF8000",
+                "fallback":"test",
+                "fields":[
+                   {
+                      "short":false,
+                      "title":"Long Field",
+                      "value":"Testing with a very long piece of text that will take up the whole width of the table. And then some more text to make it extra long."
+                   },
+                   {
+                      "short":true,
+                      "title":"Column One",
+                      "value":"Testing"
+                   },
+                   {
+                      "short":true,
+                      "title":"Column Two",
+                      "value":"Testing"
+                   },
+                   {
+                      "short":false,
+                      "title":"Another Field",
+                      "value":"Testing"
+                   }
+                ],
+                "footer":"",
+                "footer_icon":"",
+                "id":0,
+                "image_url":"http://www.mattermost.org/wp-content/uploads/2016/03/logoHorizontal_WS.png",
+                "pretext":"This is optional pretext that shows above the attachment.",
+                "text":"This is the text of the attachment. It should appear just above an image of the Mattermost logo. The left border of the attachment should be colored orange, and below the image it should include additional fields that are formatted in columns. At the top of the attachment, there should be an author name followed by a bolded title. Both the author name and the title should be hyperlinks.",
+                "thumb_url":"",
+                "title":"Example Attachment",
+                "title_link":"http://docs.mattermost.com/developer/message-attachments.html",
+                "ts":null
+             }
+          ]
+       }
+    }
+
 
 Known Issues
 ------------
