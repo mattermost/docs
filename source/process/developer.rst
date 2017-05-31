@@ -82,6 +82,12 @@ Both declined and accepted candidates will be invited to share feedback on their
 - **Video call - CEO interview** - Finally, candidates will have a 45-minute interview with our CEO.
 - **Email - Offer** - Successful candidates will receive an offer via email. Mattermost offers compensation competitive with a candidate's local market opportunities. 
 
+Notes:
+ 
+- Staff developers in Canada are typically offered full-time employment through a Canadian co-employer, with local payroll via ADP, benefits and T4 tax reporting. 
+- Staff developers in the US are typically offered full-time employment through a U.S. co-employer, with local payroll via TriNet, benefits and W2 tax reporting. 
+- Staff developers outside the U.S. and Canada are offered full-time consulting paperwork very similar to the click-sign agreement for the paid simulation.
+
 Paid Simulation 
 ----------------------------
 
@@ -96,7 +102,6 @@ The simulation project reflects an investment from the core committers to work w
 The paid simulation project typically consists of a collection of challenging `Help Wanted tickets <https://github.com/mattermost/platform/issues?q=is%3Aissue+%5BHelp+Wanted%5D+is%3Aopen>`_ to be completed per the `Mattermost contribution guidelines <https://docs.mattermost.com/developer/contribution-guide.html>`_ in a mutually agreed timeline reflecting 30-40 hours of development at the estimated skill level of the candidate. 
 
 A flat rate of $750 USD is offered to attempt the simulation project. This amount is a standard fee for simulations and not an indicator of the final offer that would be extended to a successful candidate. A `standard click-sign services agreement <https://drive.google.com/file/d/0BzcHV4lxsJexQWpndVMwNGlqTnc/view>`_ is used to accept the fee. 
-
 
 Frequently Asked Questions 
 --------------------------------------------------
