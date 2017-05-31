@@ -16,7 +16,7 @@ To start, select one of the following guides:
 **To upgrade your system**:
 
 1. Download the **appropriate next upgrade** of your Team Edition server and note any compatibility procedures:
-      1. Run `platform -version` to check the current version of your Mattermost server
+      1. Run `platform version` in the /opt/mattermost/bin directory to check the current version of your Mattermost server
       2. Determine the appropriate next upgrade for your server:
           - Mattermost `v3.0.x` and later can upgrade directly to the [latest release of Mattermost](https://about.mattermost.com/download/) considering the conditions below:
               - Note: Upgrading to `v3.9.x` and later will invalidate existing team invite links, password reset links, and email verification links.
