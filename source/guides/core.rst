@@ -25,7 +25,6 @@ Community Process
    :glob:
 
    /process/community-overview*
-   /process/community-playbook*
    /process/community-systems*
    /process/help-wanted*
    /process/marketing-guidelines*
