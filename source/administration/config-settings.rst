@@ -32,11 +32,13 @@ Configuration
 
 Site URL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The URL that users will use to access Mattermost. This field is required in Mattermost v3.8 and later.
+The URL that users will use to access Mattermost. The port number is required if it's not a standard port such as 80 or 443.
+
+This field is required in Mattermost v3.8 and later.
 
 .. note:: Do not append a team name to the end of the site URL.
 
-Correct example: ``https://mattermost.example.com``
+Correct example: ``https://mattermost.example.com:8065``
 
 Incorrect example: ``https://mattermost.example.com/team_name``
 
