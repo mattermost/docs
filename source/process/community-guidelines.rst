@@ -103,7 +103,7 @@ Once a pull request for an open GitHub Help Wanted issue is merged, please ensur
 Mattermost Community Forums
 ---------------------------------------------------------
 
-Guidelines for Mattermost `community forums <https://forum.mattermost.org>`_ and pubblic Mattermost `GitHub repositories <https://github.com/mattermost>`_.
+Guidelines for Mattermost `community forums <https://forum.mattermost.org>`_ and public Mattermost `GitHub repositories <https://github.com/mattermost>`_.
 
 Principles
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
