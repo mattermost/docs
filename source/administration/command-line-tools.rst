@@ -107,10 +107,11 @@ platform channel add
 
       platform channel add {channel} {users}
 
-  Example
+  Examples
     .. code-block:: none
 
-      sudo ./platform channel add mychannel user@example.com username
+      sudo ./platform channel add 8soyabwthjnf9qibfztje5a36h user@example.com username
+      sudo ./platform channel add myteam:mychannel user@example.com username
 
 platform channel create
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -150,9 +151,10 @@ platform channel delete
 
       platform channel delete {channels}
 
-  Example
+  Examples
     .. code-block:: none
 
+      sudo ./platform channel delete 8soyabwthjnf9qibfztje5a36h
       sudo ./platform channel delete myteam:mychannel
 
 platform channel list
@@ -182,10 +184,11 @@ platform channel remove
 
       platform channel remove {channel} {users}
 
-  Example
+  Examples
     .. code-block:: none
 
-      sudo ./platform channel remove mychannel user@example.com username
+      sudo ./platform channel remove 8soyabwthjnf9qibfztje5a36h user@example.com username
+      sudo ./platform channel remove myteam:mychannel user@example.com username
 
 platform channel restore
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -198,9 +201,10 @@ platform channel restore
 
       platform channel restore {channels}
 
-  Example
+  Examples
     .. code-block:: none
 
+      sudo ./platform channel restore 8soyabwthjnf9qibfztje5a36h
       sudo ./platform channel restore myteam:mychannel
 
 platform help
