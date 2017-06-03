@@ -86,22 +86,21 @@ For confidentiality of customers, internal process meetings are limited to Matte
 Sprint Planning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost Inc-only** - (Developer - 5-10 minutes/week) Tuesdays between 10:00 and 11:00 (`San Francisco Time <http://everytimezone.com/>`_)
+**Mattermost Staff Only** - (Developer - 5-10 minutes/week) Tuesdays between 10:00 and 11:00 (`San Francisco Time <http://everytimezone.com/>`_)
 
-- Goal: Review and discuss tickets selected by Developer for next sprint
-- Attendees: (required) Each developer in sequence, plus spint planngers (one dev, one PM) (optional) Mattermost Inc. colleagues welcome
+- Goal: Review and discuss tickets selected by developer for next sprint
+- Attendees: (required) Each developer in sequence, plus spint planners (one dev, one PM), (optional) Mattermost staff colleagues welcome
 
 Note:
 
-- This meeting uses a special `Mattermost Inc only BACKLOG query <https://mattermost.atlassian.net/secure/RapidBoard.jspa?rapidView=1&view=planning.nodetail&quickFilter=7>`_ showing tickets by sprint, with tabs across the top for each developer.
+- This meeting uses a special `Mattermost staff-only BACKLOG query <https://mattermost.atlassian.net/secure/RapidBoard.jspa?rapidView=1&view=planning.nodetail&quickFilter=7>`_ showing tickets by sprint, with tabs across the top for each developer
 - Prior to meeting, developers drag and drop tickets from their backlog to next sprint based on team priorities
-
-     - Developers are welcome at any time to discuss reassigning tickets with colleagues using common sense (if both are okay with the change, add "triage" tag to fix version with comment and triage team will review to make the change)
+- Developers are welcome at any time to discuss reassigning tickets with colleagues using common sense (if both are okay with the change, add "triage" tag to fix version with comment and triage team will review to make the change)
 - During the meeting, developer's next sprint is reviewed, discussed, possibly adjusted and locked
 
 Procedure:
 
-1. (Chair): Just prior to meeting, post **Hangout** link in `Standup private channel <https://pre-release.mattermost.com/core/channels/stand-up>`_
+1. (Chair): Just prior to meeting, post **Hangout** link in `Standup private channel <https://pre-release.mattermost.com/private-core/channels/stand-up>`_
 2. (Developer): Replies in Standup private channel when sprint is ready for review
 3. (Chair): Will (at)mention next developer to join **Hangout** to review tickets. Developer joins, tickets are discussed and finalized for next sprint. Developer leaves **Hangout** and next developer rotates in.
 
