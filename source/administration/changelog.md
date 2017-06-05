@@ -8,6 +8,130 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 Release Date: June 16, 2017
 
+### Highlights
+
+#### Languages
+
+- Added Polish translations for the user interface.
+
+#### New and Improved Keyboard Shortcuts
+
+- Redesigned channel and team switcher (CTRL/CMD+K)
+- Browse direct and group message channels (CTRL/CMD+SHIFT+K) and reply to the most recent message (SHIFT+UP) with new shortcuts.
+
+### Improvements
+
+#### Web User Interface
+
+
+
+
+
+
+
+
+#### Enterprise Edition
+
+### Bug Fixes
+
+### Compatibility  
+
+#### Breaking changes:
+
+#### Removed and deprecated features
+
+
+**Changes to Team Edition and Enterprise Edition**:
+
+
+
+**Additional Changes to Enterprise Edition**:
+
+
+
+### Database Changes
+
+
+### API Changes
+
+- All APIv3 endpoints are scheduled for removal in September 2017 release (replaced by APIv4 endpoints).
+
+### Websocket Event Changes
+
+
+### Known Issues
+
+
+XXXXXX Need to be updated:
+- Google login fails on the mobile apps.
+- Slack import doesn't add merged members/e-mail accounts to imported channels.
+- User can receive a video call from another browser tab while already on a call.
+- Sequential messages from the same user appear as separate posts on mobile view.
+- Search autocomplete picker is broken on Android.
+- Jump link in search results does not always jump to display the expected post.
+- First load of the emoji picker is slow at low connections.
+- Emoji picker for reactions doesn't always position correctly.
+- Scrollbar is sometimes not visible in the left-hand sidebar after switching teams.
+- Emoji picker is sometimes cut off on comment threads on the right-hand sidebar.
+- User status can get stuck online after quitting the desktop app or closing the browser window.
+- New direct messages received while in no teams do not show as unread after joining a team.
+- Profile picture uploaded from mobile appears rotated.
+- User is not logged out immediately when logging self out from Active Sessions list.
+- Certain code block labels don't appear while scrolling on iOS mobile web.
+- System Console user list filter does not show accurate results if applied after entering a search query.
+
+### Contributors
+
+Many thanks to all our contributors. In alphabetical order:
+
+/platform
+
+- [asaadmahmood](https://github.com/asaadmahmood), [coreyhulen](https://github.com/coreyhulen), [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [dmeza](https://github.com/dmeza), [doh5](https://github.com/doh5), [enahum](https://github.com/enahum), [grundleborg](https://github.com/grundleborg), [harshavardhana](https://github.com/harshavardhana), [hmhealey](https://github.com/hmhealey), [jasonblais](https://github.com/jasonblais), [jwilander](https://github.com/jwilander), [kulak-at](https://github.com/kulak-at), [saturninoabril](https://github.com/saturninoabril), [tjuerge](https://github.com/tjuerge)
+
+/docs
+
+- [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [esethna](https://github.com/esethna), [hmhealey](https://github.com/hmhealey),  [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [jwilander](https://github.com/jwilander), [kjkeane](https://github.com/kjkeane), [lindy65](https://github.com/lindy65)
+
+/mattermost-api-reference
+
+- [94117nl](https://github.com/94117nl), [cpanato](https://github.com/cpanato),  [hmhealey](https://github.com/hmhealey), [jwilander](https://github.com/jwilander), [senk](https://github.com/senk)
+
+/mattermost-redux
+
+- [94117nl](https://github.com/94117nl), [cpanato](https://github.com/cpanato), [enahum](https://github.com/enahum), [jarredwitt](https://github.com/jarredwitt), [jwilander](https://github.com/jwilander) 
+
+/mattermost-mobile
+
+-  [asaadmahmood](https://github.com/asaadmahmood), [cpanato](https://github.com/cpanato), [csduarte](https://github.com/csduarte), [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [lfbrock](https://github.com/lfbrock), [rthill](https://github.com/rthill) 
+
+/desktop
+
+- [yuya-oc](https://github.com/yuya-oc)
+
+/mattermost-docker
+
+- [carlosasj](https://github.com/carlosasj), [FingerLiu](https://github.com/FingerLiu), [mkdbns](https://github.com/mkdbns),  [pichouk](https://github.com/pichouk), [xcompass](https://github.com/xcompass)
+
+/android
+
+- [coreyhulen](https://github.com/coreyhulen), [der-test](https://github.com/der-test),  [lfbrock](https://github.com/lfbrock) 
+
+/mattermost-selenium
+
+- [doh5](https://github.com/doh5),  [lindalumitchell](https://github.com/lindalumitchell) 
+
+/gorp
+
+- [jwilander](https://github.com/jwilander)
+
+/ios
+
+- [coreyhulen](https://github.com/coreyhulen), [PrestonL](https://github.com/PrestonL) 
+
+/mattermost-kubernetes
+
+- [coreyhulen](https://github.com/coreyhulen) 
+
 
 ## Release v3.9.0
 
