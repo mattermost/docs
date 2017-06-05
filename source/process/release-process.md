@@ -44,6 +44,7 @@ No pull requests for major features should be **merged** to the current release 
     - Start posting a daily Zero Bug Balance query
     - Queue an item for UX meeting to discuss worst UX bug and to do a 10-minute UI/UX bug bash
     - Notify community about upcoming release in Reception
+    - Schedule daily triage from T-10 (Judgement Day) to T-5 (Release Candidate Testing Finished)
 3. PM:
     - PM area owners complete draft of Changelog in a WIP PR with updates for highlights, feature additions, known issues, compatibility updates for deprecated features, config.json, [database changes](https://github.com/mattermost/platform/blob/master/store/sql_upgrade.go#L181), [API changes](https://github.com/mattermost/platform/commits/master/model/client.go) (search `#api-proposal` and confirm with Dev) and WebSocket event changes; [see example](http://docs.mattermost.com/administration/changelog.html#compatibility)
     - Review and update [company roadmap](https://about.mattermost.com/direction/) with which major features made it into the release
@@ -80,6 +81,7 @@ Day when leads and PM area owners decide which major features are included in th
     - Verify all items in the last posted release checklist are complete
 2. Logistics:
     - Confirm, in Judgement Day meeting, date of marketing announcement for the release and update release channel header if needed
+    - Post an reminder to devs in the Release Discussion room of the the code complete date with the ZBB count
 3. Leads:
     - Finalize roadmap for next release, and identify planned marketing bullet points  
 4. **(Team) Judgment Day Meeting (10:00am San Francisco time)**:  
