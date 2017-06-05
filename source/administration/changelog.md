@@ -12,7 +12,7 @@ Release Date: June 16, 2017
 
 #### Languages
 
-- Added Polish translations for the user interface.
+- Added Turkish translations for the user interface.
 
 #### New and Improved Keyboard Shortcuts
 
