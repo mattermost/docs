@@ -2181,6 +2181,14 @@ Maximum number of open connections held open to the database.
 | This feature's ``config.json`` setting is ``"MaxOpenConns": 10`` with whole number input.                                                                             |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+SQL Query Timeout
+^^^^^^^^^^^^^^^^^
+The number of seconds to wait for a response from the database after opening a connection and sending the query. Errors that you see in the UI or in the logs as a result of a query timeout can vary depending on the type of query. This setting has no effect on PostgreSQL databases.
+
++-------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"QueryTimeout": 30`` with whole number input, in the *SqlSettings* section. |
++-------------------------------------------------------------------------------------------------------------------------+
+
 At Rest Encrypt Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 32-character (to be randomly generated via Admin Console) salt available to encrypt and decrypt sensitive fields in database.
@@ -2394,7 +2402,7 @@ Specifies the connection strings for the read replica databases. Each string mus
 | This feature's ``config.json`` setting is ``"DataSourceReplicas": []`` with a comma-separated list of database connection strings as input. |
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 
-Search Replicas (Enteprise Edition)
+Search Replicas (Enterprise Edition)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Specifies the connection strings for the search replica databases. A search replica is similar to a read replica, but is used only for handling search queries. Each string must be in the same form as used for the `Data Source`_ setting. A server restart is required for changes to this setting to take effect.
 
