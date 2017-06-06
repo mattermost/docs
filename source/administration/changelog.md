@@ -21,11 +21,6 @@ Release Date: June 16, 2017
 
 ### Improvements
 
-
-#### Bulk Import
-
-- Reduced unnecessary database reads and writes when bulk importing users
-
 #### Web User Interface
 
 - Enter key now confirms deletion on the screens to delete a custom emoji and delete a channel
@@ -36,29 +31,26 @@ Release Date: June 16, 2017
 - Profile popover now opens when clicking a username in mobile browser view
 - Updated the "Mattermost" theme to look better in the team sidebar
 - /join now allows switching to a private channel that is already joined
-- Fixed the positioning of the pin icon and channel header
 - Improved the formatting of Mattermost content when copying and pasting to other apps
-- Corrected the formatting of the "Edited" indicator in the right-habd sidebar
-- Messages for others being added to a channel no longer trigger channels to be unread
-- Fixed an issue where the System Console users list ignored the search term after selecting a team from the filter
-- Channel header messages are no longer appear cut-off if using a slash
-
-#### System Console
-
-- System Console main dropdown menu now has links to the Admin Guide, Troubleshooting Forum, Commercial Support Page and the About Mattermost dialog
-- Added the ability to enable Legacy Signature (AWS Signature V2) with S3 compatible servers
 
 #### Notifications
 - Added "@here" to the list of channel-wide mentions in Account Settings
 - Added the ability to set your online status from your profile picture in the header
 - Added a reminder when your Mattermost window is refreshed if a status override slash command in used to set yourself as /away or /offline 
 - Users will see a confimation dialog when attempting to use @all or @channel in a channel with over 10 users
+- Messages for others being added to a channel no longer trigger channels to be unread
 
 #### Administration
 - Added CLI tool for permanently deleting channels
 - Channel Admins can now delete users messages within their channel if permitted in the System Console.
 - Errors are now logged when failing to load config through the command line
+- Reduced unnecessary database reads and writes when bulk importing users
 - Added an announcement banner for Admins to make maintenance announcements across the entire system configurable in the System Console
+
+#### System Console
+
+- System Console main dropdown menu now has links to the Admin Guide, Troubleshooting Forum, Commercial Support Page and the About Mattermost dialog
+- Added the ability to enable Legacy Signature (AWS Signature V2) with S3 compatible servers
 
 #### Authentication
 - Added a redirect to the appropriate team or channel if navigating to a Mattermost URL when logged out
@@ -70,12 +62,8 @@ Release Date: June 16, 2017
 #### Integrations
 - Posts from webhooks that are greater than 4000 characters are now broken into multiple posts
 
-
-#### Enterprise Edition
-
 ### Bug Fixes
 
-XXXXXX
 - Dragging and dropping a file onto the left-hand sidebar no longer navigates away from Mattermost to open the file in the browser
 - Textbox will no longer overlap the center pane message area as it expands when typing
 - Fixed an issue where statuses could get stuck online after quitting the desktop app or closing the browser window
@@ -85,12 +73,18 @@ XXXXXX
 - Updated error text when uploading a profile picture that is in an unsupported image format
 - Joined channels no longer appear in the "More..." channels list
 - Fixed theme styling for button active states
+- Fixed an issue where channels sometimes did not appear read if the channel was in focus when a new message was received
 - Fixed an issue where the autocomplete list would not close after using a slash command
 - Removed the system warning message that appears if mentioning a user that is not a member of a group message
 - Fixed an issue where wide embedded images produce horizontal scroll
 - Fixed a Javascript error that would occur when opening the System Console > SAML page
+- Removed the Channel Admin user interface in Team Edition since the policy restrictions are only available in Enterprise Edition
 - Adding a reaction to an ephemeral message no longer throws a Javascript error
-
+- Fixed an issue where clicking autocomplete suggestions would not populate the search box with the appropriate text
+- Fixed an issue where the System Console users list ignored the search term after selecting a team from the filter
+- Channel header messages are no longer appear cut-off if using a slash
+- Corrected the formatting of the "Edited" indicator in the right-hand sidebar
+- Fixed the positioning of the pin icon and channel header on Edge
 
 ### Compatibility  
 
@@ -135,10 +129,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
    - Added `"EnableSearching": false,`
    - Added `"Sniff": true`
 
-
 ### Database Changes
-
-
 
 ### API Changes
 
@@ -148,7 +139,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 
 ### Known Issues
-
 
 XXXXXX Need to be updated:
 - Google login fails on the mobile apps.
