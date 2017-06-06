@@ -26,13 +26,12 @@ Release Date: June 16, 2017
 - Empty rows are now ignored in the Send Email Invite modal
 - Enter key now confirms leaving a team from the Leave Team modal
 - Profile popover now opens when clicking a username in mobile browser view
-- Updated the "Mattermost" theme to look better in the team sidebar
-- /join now allows switching to a private channel that is already joined
+- /join now allows switching to a private channel to which the user has access
 - Improved the formatting of Mattermost content when copying and pasting to other apps
+- Added the ability for users to view and modify their online status from their profile picture in the header
 
 #### Notifications
 - Added "@here" to the list of channel-wide mentions in Account Settings
-- Added the ability to set your online status from your profile picture in the header
 - Added a reminder when your Mattermost window is refreshed if a status override slash command in used to set yourself as /away or /offline 
 - Users will see a confimation dialog when attempting to use @all or @channel in a channel with over 10 users
 - Messages for others being added to a channel no longer trigger channels to be unread
@@ -42,7 +41,6 @@ Release Date: June 16, 2017
 - Channel Admins can now delete users messages within their channel if permitted in the System Console.
 - Errors are now logged when failing to load config through the command line
 - Reduced unnecessary database reads and writes when bulk importing users
-- Added an announcement banner for Admins to make maintenance announcements across the entire system configurable in the System Console
 
 #### System Console
 - System Console main dropdown menu now has links to the Admin Guide, Troubleshooting Forum, Commercial Support Page and the About Mattermost dialog
@@ -53,10 +51,13 @@ Release Date: June 16, 2017
 - Team Invite links now open in the current tab
 
 #### Performance
-- Upgraded GORP to support connection timeouts and missing database columns
+- Upgraded GORP to support connection timeouts on MySQL and missing database columns on MySQL and Postgres
 
 #### Integrations
 - Posts from webhooks that are greater than 4000 characters are now broken into multiple posts
+
+#### Enterprise Edition
+- Added an announcement banner for Admins to make maintenance announcements across the entire system configurable in the System Console
 
 ### Bug Fixes
 - Dragging and dropping a file onto the left-hand sidebar no longer navigates away from Mattermost to open the file in the browser
@@ -88,7 +89,8 @@ Release Date: June 16, 2017
   - Image preview height and width
   - Profile picture height and width
   - Image thumbnail height and width
-- All APIv3 endpoints to be removed in September 2017 release.
+- Account Settings options for **Display** > ** Display Font** and **Display** > **Teammate Name Display** are scheduled for removal in July 2017 release.
+- All APIv3 endpoints to be removed in September 2017 release. XXXXXX https://pre-release.mattermost.com/core/pl/mewi4cngr784pmw6emkmtsxach 
 
 For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
 
@@ -98,7 +100,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 **Changes to Team Edition and Enterprise Edition**:
  - Under `ServiceSettings` in `config.json`:
-   - Added `"GoroutineHealthThreshold": -1,` XXXXXX add descriptions
+   - Added `"GoroutineHealthThreshold": -1,` to set a threshold for number of goroutines
 - Under `SqlSettings` in `config.json`:
    - Added `"QueryTimeout": 30`
 - Under `FileSettings` in `config.json`:
@@ -106,25 +108,17 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 **Additional Changes to Enterprise Edition**:
  - Under `AnnoucementSettings` in `config.json`:
-   - Added `"EnableBanner": false,`
-   - Added `"BannerText": "",`
-   - Added `"BannerColor": "#f2a93b",`
-   - Added `"BannerTextColor": "#333333",`
-   - Added `"AllowBannerDismissal": true`
- - Under `DataRetentionSettings` in `config.json`:
-   - Added `"Enable": false`
- - Under `ElasticSearchSettings` in `config.json`:
-   - Added `"ConnectionUrl": "http://dockerhost:9200",`
-   - Added `"Username": "elastic",`
-   - Added `"Password": "changeme",`
-   - Added `"EnableIndexing": false,`
-   - Added `"EnableSearching": false,`
-   - Added `"Sniff": true`
+   - Added `"EnableBanner": false,` to set whether the announcement banner is visible for system users
+   - Added `"BannerText": "",` to specify the text shown in the banner
+   - Added `"BannerColor": "#f2a93b",` to set the banner background color
+   - Added `"BannerTextColor": "#333333",` to set the banner text color
+   - Added `"AllowBannerDismissal": true` to set whether the banner can be dismissed by users
 
 ### API Changes
-- All APIv3 endpoints are scheduled for removal in September 2017 release (replaced by APIv4 endpoints).
+- Mattermost 3.10 has a release candidate of APIv4 endpoints. To see the complete list of available endpoints, see [https://api.mattermost.com/v4/](https://api.mattermost.com/v4/).
+- All APIv3 endpoints are scheduled for removal in September 2017 release (replaced by APIv4 endpoints). XXXXXX
 
-**Modified routes**
+**Modified routes (APIv4)**
 - `/system/ping` updated to return `500 Internal Server Error` with `{"status": "unhealthy"}` in the response body when `GoroutineHealthThreshold` is set in config.json and the number of goroutines on the server exceeds that threshold. If the number of goroutines is below the threshold or `GoroutineHealthThreshold` is not set in config.json, `200 OK` is returned with no response body.
 
 
