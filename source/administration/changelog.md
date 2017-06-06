@@ -21,13 +21,54 @@ Release Date: June 16, 2017
 
 ### Improvements
 
+
+#### Bulk Import
+
+- Reduced unnecessary database reads and writes when bulk importing users
+
 #### Web User Interface
 
+- Enter key now confirms deletion on the screens to delete a custom emoji and delete a channel
+- Team and channel URLs now replace accented characters with their ASCII equivalents
+- Recent menitons and flagged posts icons in the header are now highlighted when they are active in the right-hand sidebar
+- Empty rows are now ignored in the Send Email Invite modal
+- Enter key now confirms leaving a team from the Leave Team modal
+- Profile popover now opens when clicking a username in mobile browser view
+- Updated the "Mattermost" theme to look better in the team sidebar
+- /join now allows switching to a private channel that is already joined
+- Fixed the positioning of the pin icon and channel header
+- Improved the formatting of Mattermost content when copying and pasting to other apps
+- Corrected the formatting of the "Edited" indicator in the right-habd sidebar
+- Messages for others being added to a channel no longer trigger channels to be unread
+- Fixed an issue where the System Console users list ignored the search term after selecting a team from the filter
+- Channel header messages are no longer appear cut-off if using a slash
 
+#### System Console
 
+- System Console main dropdown menu now has links to the Admin Guide, Troubleshooting Forum, Commercial Support Page and the About Mattermost dialog
+- Added the ability to enable Legacy Signature (AWS Signature V2) with S3 compatible servers
 
+#### Notifications
+- Added "@here" to the list of channel-wide mentions in Account Settings
+- Added the ability to set your online status from your profile picture in the header
+- Added a reminder when your Mattermost window is refreshed if a status override slash command in used to set yourself as /away or /offline 
+- Users will see a confimation dialog when attempting to use @all or @channel in a channel with over 10 users
 
+#### Administration
+- Added CLI tool for permanently deleting channels
+- Channel Admins can now delete users messages within their channel if permitted in the System Console.
+- Errors are now logged when failing to load config through the command line
+- Added an announcement banner for Admins to make maintenance announcements across the entire system configurable in the System Console
 
+#### Authentication
+- Added a redirect to the appropriate team or channel if navigating to a Mattermost URL when logged out
+- Team Invite links now open in the current tab
+
+#### Performance
+- Upgraded GORP to support connection timeouts and missing database columns
+
+#### Integrations
+- Posts from webhooks that are greater than 4000 characters are now broken into multiple posts
 
 
 #### Enterprise Edition
@@ -35,6 +76,21 @@ Release Date: June 16, 2017
 ### Bug Fixes
 
 XXXXXX
+- Dragging and dropping a file onto the left-hand sidebar no longer navigates away from Mattermost to open the file in the browser
+- Textbox will no longer overlap the center pane message area as it expands when typing
+- Fixed an issue where statuses could get stuck online after quitting the desktop app or closing the browser window
+- Profile pictures uploaded on mobile are now rotated in their correct orientation
+- The System Console help text for Minimum Password Length no longer dynamically updates as the input is changed
+- Fixed an issue where the autocomplete list may appear underneath a modal overlay
+- Updated error text when uploading a profile picture that is in an unsupported image format
+- Joined channels no longer appear in the "More..." channels list
+- Fixed theme styling for button active states
+- Fixed an issue where the autocomplete list would not close after using a slash command
+- Removed the system warning message that appears if mentioning a user that is not a member of a group message
+- Fixed an issue where wide embedded images produce horizontal scroll
+- Fixed a Javascript error that would occur when opening the System Console > SAML page
+- Adding a reaction to an ephemeral message no longer throws a Javascript error
+
 
 ### Compatibility  
 
@@ -327,12 +383,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### API Changes
 
-- Mattermost 3.9 has a release candidate of APIv4 endpoints. To see the complete list of available endpoints, see [https://api.mattermost.com/v4/](https://api.mattermost.com/v4/).
+- Mattermost 3.10 has a release candidate of APIv4 endpoints. To see the complete list of available endpoints, see [https://api.mattermost.com/v4/](https://api.mattermost.com/v4/).
 - All APIv3 endpoints are scheduled for removal in September 2017 release (replaced by APIv4 endpoints).
-
-### Websocket Event Changes
-
-- Added `preferences_changed` and `preferences_deleted` to sync preferences between browser tabs, between different browsers, and across devices when a preference is changed or deleted.
 
 ### Known Issues
 
