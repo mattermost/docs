@@ -17,6 +17,11 @@ This document in intended for new hires to summarize norms for working at Matter
 Getting Started Checklist
 ---------------------------------------------------------
 
+Important things to know
+---------------------------------------------------------
+
+- Never sign any agreement on behalf of the company. The CEO is the only person authorized to sign an agreement on behalf of Mattermost, Inc. The only exception is that you are authorized to sign a non-disclosure agreement to enter a physical space. If you have questions, please check with your manager. 
+
 Hiring
 ---------------------------------------------------------
 
@@ -28,7 +33,8 @@ T-minus 1-3 weeks
 
 - (People Ops & New Hire) People Ops should find out new hire's preference for laptop, either to be purchased or taken from stock and shipped by People Ops or purchased locally by new hire and expensed. Windows laptops generally cost less than Macs so budget is based on Macs. For non-developers, budget is cost of a Macbook in your local area, for developers budget is cost of a Macbook Pro.
 - (New Hire) Read the entirety of Onboarding page for info on meetings, mindsets, terminology and training materials.
-
+- (New Hire) Ask your manager for a link to the CEO's calendar to schedule a 45 minute meeting on your first day 
+ 
 T-minus 1 week
 ---------------------------------------------------------
 
@@ -41,7 +47,8 @@ First Day
 
 - (Manager) Posts welcome message in stand-up channel
 - (Manager) Meets New Hire for first 1-1 meeting
-- (Buddy) Meets New Hire for first 1-1 meeting,
+- (Buddy) Meets New Hire for first 1-1 meeting
+- (CEO) Meets New Hire for welcome meeting 
 
 ---------------------------------------------------------
 Meetings
