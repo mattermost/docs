@@ -34,22 +34,54 @@ Release Date: June 16, 2017
 
 ### Bug Fixes
 
-### Compatibility  
+XXXXXX
 
-#### Breaking changes:
+### Compatibility  
 
 #### Removed and deprecated features
 
+- System Console settings in **Files > Images** scheduled for removal in July 2017 release. This includes:
+  - Image preview height and width
+  - Profile picture height and width
+  - Image thumbnail height and width
+- All APIv3 endpoints to be removed in September 2017 release.
+
+For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
+
+#### config.json   
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
 **Changes to Team Edition and Enterprise Edition**:
 
-
+ - Under `ServiceSettings` in `config.json`:
+   - Added `"GoroutineHealthThreshold": -1,`
+- Under `SqlSettings` in `config.json`:
+   - Added `"QueryTimeout": 30`
+- Under `FileSettings` in `config.json`:
+   - Added `"AmazonS3SignV2": false`
 
 **Additional Changes to Enterprise Edition**:
 
+ - Under `AnnoucementSettings` in `config.json`:
+   - Added `"EnableBanner": false,`
+   - Added `"BannerText": "",`
+   - Added `"BannerColor": "#f2a93b",`
+   - Added `"BannerTextColor": "#333333",`
+   - Added `"AllowBannerDismissal": true`
+ - Under `DataRetentionSettings` in `config.json`:
+   - Added `"Enable": false`
+ - Under `ElasticSearchSettings` in `config.json`:
+   - Added `"ConnectionUrl": "http://dockerhost:9200",`
+   - Added `"Username": "elastic",`
+   - Added `"Password": "changeme",`
+   - Added `"EnableIndexing": false,`
+   - Added `"EnableSearching": false,`
+   - Added `"Sniff": true`
 
 
 ### Database Changes
+
 
 
 ### API Changes
