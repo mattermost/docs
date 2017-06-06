@@ -8,7 +8,7 @@ This document in intended for new hires to summarize norms for working at Matter
 - `Meetings`_ - When we get together and why
 - `Mindsets`_ - Shared toolsets we have for solving problems
 - `Terminology`_- Shared vocabulary to convey ideas quickly
-- `Training`_ - Material available to help us ramp quickly in different areas.
+- `Training`_ - Material available to help us ramp quickly in different areas
 
 .. contents::
     :backlinks: top
