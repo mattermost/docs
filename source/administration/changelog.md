@@ -90,7 +90,7 @@ Release Date: June 16, 2017
   - Profile picture height and width
   - Image thumbnail height and width
 - Account Settings options for **Display** > ** Display Font** and **Display** > **Teammate Name Display** are scheduled for removal in July 2017 release.
-- All APIv3 endpoints to be removed in September 2017 release. XXXXXX https://pre-release.mattermost.com/core/pl/mewi4cngr784pmw6emkmtsxach 
+- All APIv3 endpoints are scheduled for removal six months after APIv4 is stable.
 
 For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
 
@@ -102,13 +102,13 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under `ServiceSettings` in `config.json`:
    - Added `"GoroutineHealthThreshold": -1,` to set a threshold for number of goroutines
 - Under `SqlSettings` in `config.json`:
-   - Added `"QueryTimeout": 30`
+   - Added `"QueryTimeout": 30` to set the number of seconds to wait for a response from the database after opening a connection and sending the query
 - Under `FileSettings` in `config.json`:
-   - Added `"AmazonS3SignV2": false`
+   - Added `"AmazonS3SignV2": false` to enable Legacy Signature (AWS Signature V2) with S3 compatible servers
 
 **Additional Changes to Enterprise Edition**:
  - Under `AnnoucementSettings` in `config.json`:
-   - Added `"EnableBanner": false,` to set whether the announcement banner is visible for system users
+   - Added `"EnableBanner": false,` to enable an announcement banner visible for all users
    - Added `"BannerText": "",` to specify the text shown in the banner
    - Added `"BannerColor": "#f2a93b",` to set the banner background color
    - Added `"BannerTextColor": "#333333",` to set the banner text color
@@ -116,7 +116,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### API Changes
 - Mattermost 3.10 has a release candidate of APIv4 endpoints. To see the complete list of available endpoints, see [https://api.mattermost.com/v4/](https://api.mattermost.com/v4/).
-- All APIv3 endpoints are scheduled for removal in September 2017 release (replaced by APIv4 endpoints). XXXXXX
+- All APIv3 endpoints are scheduled for removal six months after APIv4 is stable.
 
 **Modified routes (APIv4)**
 - `/system/ping` updated to return `500 Internal Server Error` with `{"status": "unhealthy"}` in the response body when `GoroutineHealthThreshold` is set in config.json and the number of goroutines on the server exceeds that threshold. If the number of goroutines is below the threshold or `GoroutineHealthThreshold` is not set in config.json, `200 OK` is returned with no response body.
