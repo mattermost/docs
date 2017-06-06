@@ -19,7 +19,7 @@ Below is the list of core developers working on Mattermost:
 Below is the list of core developers working on individual Mattermost repositories:
 - Yuya Ochiai - [desktop](https://github.com/mattermost/desktop) - @yuya-oc on [pre-release.mattermost.com](https://pre-release.mattermost.com/) and [@yuya-oc](https://github.com/yuya-oc) on GitHub
 - Pan Luo - [mattermost-docker](https://github.com/mattermost/mattermost-docker) - @compass on [pre-release.mattermost.com](https://pre-release.mattermost.com/) and [@xcompass](https://github.com/xcompass) on GitHub
-- Pichou Kyâne - [mattermost-docker](https://github.com/mattermost/mattermost-docker) - @pichouk on [pre-release.mattermost.com](https://pre-release.mattermost.com/) and [@pichouk](https://github.com/pichouk) on GitHub
+- Kyâne Pichou - [mattermost-docker](https://github.com/mattermost/mattermost-docker) - @pichouk on [pre-release.mattermost.com](https://pre-release.mattermost.com/) and [@pichouk](https://github.com/pichouk) on GitHub
 
 ### Technical Development Goals ###
 
