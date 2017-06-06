@@ -129,13 +129,13 @@ Multiple setting options were added to `config.json`. Below is a list of the add
    - Added `"EnableSearching": false,`
    - Added `"Sniff": true`
 
-### Database Changes
-
 ### API Changes
 
 - All APIv3 endpoints are scheduled for removal in September 2017 release (replaced by APIv4 endpoints).
 
-### Websocket Event Changes
+**Modified routes**
+
+- `/system/ping` updated to return `500 Internal Server Error` with `{"status": "unhealthy"}` in the response body when `GoroutineHealthThreshold` is set in config.json and the number of goroutines on the server exceeds that threshold. If the number of goroutines is below the threshold or `GoroutineHealthThreshold` is not set in config.json, `200 OK` is returned with no response body.
 
 
 ### Known Issues
