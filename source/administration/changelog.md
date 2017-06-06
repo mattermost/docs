@@ -11,18 +11,15 @@ Release Date: June 16, 2017
 ### Highlights
 
 #### Languages
-
 - Added Turkish translations for the user interface.
 
 #### New and Improved Keyboard Shortcuts
-
 - Redesigned channel and team switcher (CTRL/CMD+K)
 - Browse direct and group message channels (CTRL/CMD+SHIFT+K) and reply to the most recent message (SHIFT+UP) with new shortcuts.
 
 ### Improvements
 
 #### Web User Interface
-
 - Enter key now confirms deletion on the screens to delete a custom emoji and delete a channel
 - Team and channel URLs now replace accented characters with their ASCII equivalents
 - Recent menitons and flagged posts icons in the header are now highlighted when they are active in the right-hand sidebar
@@ -48,7 +45,6 @@ Release Date: June 16, 2017
 - Added an announcement banner for Admins to make maintenance announcements across the entire system configurable in the System Console
 
 #### System Console
-
 - System Console main dropdown menu now has links to the Admin Guide, Troubleshooting Forum, Commercial Support Page and the About Mattermost dialog
 - Added the ability to enable Legacy Signature (AWS Signature V2) with S3 compatible servers
 
@@ -63,7 +59,6 @@ Release Date: June 16, 2017
 - Posts from webhooks that are greater than 4000 characters are now broken into multiple posts
 
 ### Bug Fixes
-
 - Dragging and dropping a file onto the left-hand sidebar no longer navigates away from Mattermost to open the file in the browser
 - Textbox will no longer overlap the center pane message area as it expands when typing
 - Fixed an issue where statuses could get stuck online after quitting the desktop app or closing the browser window
@@ -89,7 +84,6 @@ Release Date: June 16, 2017
 ### Compatibility  
 
 #### Removed and deprecated features
-
 - System Console settings in **Files > Images** scheduled for removal in July 2017 release. This includes:
   - Image preview height and width
   - Profile picture height and width
@@ -103,16 +97,14 @@ For a list of past and upcoming deprecated features, [see our website](https://a
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
 **Changes to Team Edition and Enterprise Edition**:
-
  - Under `ServiceSettings` in `config.json`:
-   - Added `"GoroutineHealthThreshold": -1,`
+   - Added `"GoroutineHealthThreshold": -1,` XXXXXX add descriptions
 - Under `SqlSettings` in `config.json`:
    - Added `"QueryTimeout": 30`
 - Under `FileSettings` in `config.json`:
    - Added `"AmazonS3SignV2": false`
 
 **Additional Changes to Enterprise Edition**:
-
  - Under `AnnoucementSettings` in `config.json`:
    - Added `"EnableBanner": false,`
    - Added `"BannerText": "",`
@@ -130,16 +122,13 @@ Multiple setting options were added to `config.json`. Below is a list of the add
    - Added `"Sniff": true`
 
 ### API Changes
-
 - All APIv3 endpoints are scheduled for removal in September 2017 release (replaced by APIv4 endpoints).
 
 **Modified routes**
-
 - `/system/ping` updated to return `500 Internal Server Error` with `{"status": "unhealthy"}` in the response body when `GoroutineHealthThreshold` is set in config.json and the number of goroutines on the server exceeds that threshold. If the number of goroutines is below the threshold or `GoroutineHealthThreshold` is not set in config.json, `200 OK` is returned with no response body.
 
 
 ### Known Issues
-
 XXXXXX Need to be updated:
 - Google login fails on the mobile apps.
 - Slack import doesn't add merged members/e-mail accounts to imported channels.
@@ -373,7 +362,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### API Changes
 
-- Mattermost 3.10 has a release candidate of APIv4 endpoints. To see the complete list of available endpoints, see [https://api.mattermost.com/v4/](https://api.mattermost.com/v4/).
+- Mattermost 3.9 has a release candidate of APIv4 endpoints. To see the complete list of available endpoints, see [https://api.mattermost.com/v4/](https://api.mattermost.com/v4/).
 - All APIv3 endpoints are scheduled for removal in September 2017 release (replaced by APIv4 endpoints).
 
 ### Known Issues
