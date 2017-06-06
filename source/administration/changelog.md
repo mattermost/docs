@@ -359,6 +359,10 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Mattermost 3.9 has a release candidate of APIv4 endpoints. To see the complete list of available endpoints, see [https://api.mattermost.com/v4/](https://api.mattermost.com/v4/).
 - All APIv3 endpoints are scheduled for removal in September 2017 release (replaced by APIv4 endpoints).
 
+### Websocket Event Changes
+
+- Added `preferences_changed` and `preferences_deleted` to sync preferences between browser tabs, between different browsers, and across devices when a preference is changed or deleted.
+
 ### Known Issues
 
 - Google login fails on the mobile apps.
