@@ -123,23 +123,19 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 
 ### Known Issues
-XXXXXX Need to be updated:
+XXXXXX Will be updated again after release testing
+
 - Google login fails on the mobile apps.
 - Slack import doesn't add merged members/e-mail accounts to imported channels.
 - User can receive a video call from another browser tab while already on a call.
-- Sequential messages from the same user appear as separate posts on mobile view.
 - Search autocomplete picker is broken on Android.
 - Jump link in search results does not always jump to display the expected post.
 - First load of the emoji picker is slow at low connections.
 - Emoji picker for reactions doesn't always position correctly.
 - Scrollbar is sometimes not visible in the left-hand sidebar after switching teams.
-- Emoji picker is sometimes cut off on comment threads on the right-hand sidebar.
-- User status can get stuck online after quitting the desktop app or closing the browser window.
 - New direct messages received while in no teams do not show as unread after joining a team.
-- Profile picture uploaded from mobile appears rotated.
 - User is not logged out immediately when logging self out from Active Sessions list.
 - Certain code block labels don't appear while scrolling on iOS mobile web.
-- System Console user list filter does not show accurate results if applied after entering a search query.
 
 ### Contributors
 
