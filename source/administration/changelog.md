@@ -136,6 +136,11 @@ XXXXXX Will be updated again after release testing
 - New direct messages received while in no teams do not show as unread after joining a team.
 - User is not logged out immediately when logging self out from Active Sessions list.
 - Certain code block labels don't appear while scrolling on iOS mobile web.
+- Reactions are displayed on messages deleted by other users.
+- CTRL+SHIFT+K doesn't toggle modal open and closed
+- With channel switcher open, CTRL+ALT+K closes the modal instead of switching to teams tab
+- Deactivated users do not appear in the Direct Message and Group Message sidebar channel list
+- Outgoing webhooks do not fire when posts have no text content
 
 ### Contributors
 
