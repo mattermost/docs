@@ -93,7 +93,7 @@ If you are actively viewing a channel (public, private, or direct message) on de
 You can also choose when to send push notifications depending on your status. By default, push notifications are sent if your status is "Online, away or offline". If "Send Mobile Push Notifications" is set as "Never", this setting is hidden. If your System Administrator has not set up push notifications, this setting will be disabled.
 
 #### Words That Trigger Mentions
-By default, you will receive mention notifications from your non-case sensitive username, mentioned @username and @channel. Customize the words that trigger mentions by typing them in the input box. This is useful if you want to be notified of all posts on a certain topic, for example, “marketing”.
+By default, you receive notifications when someone posts a message that contains your non-case sensitive username or @username. You also receive notifications when someone uses the @channel, @all, and @here mentions. You can customize the words that trigger mentions by typing them into the input box. This is useful if you want to be notified of all posts on a certain topic, for example, "marketing".
 
 #### Reply Notifications
 In addition to **Words that Trigger Mentions**, this setting allows you to receive mention notifications when someone replies to a thread that you started or participated in. You are considered to start a thread when you post a message to which other members of your team reply. You are considered to participate in a thread when you post a message using the [reply button](https://docs.mattermost.com/help/getting-started/messaging-basics.html#messaging-basics) in an already existing thread.
