@@ -90,11 +90,12 @@ platform channel
 
   Child Commands
     -  `platform channel add`_ - Add users to a channel
+    -  `platform channel archive`_ - Archive a channel
     -  `platform channel create`_ - Create a channel
     -  `platform channel delete`_ - Delete a channel
     -  `platform channel list`_ - List all channels on specified teams
     -  `platform channel remove`_ - Remove users from a channel
-    -  `platform channel restore`_ - Restore a channels
+    -  `platform channel restore`_ - Restore a channel from the archive
 
 platform channel add
 ~~~~~~~~~~~~~~~~~~~~
@@ -111,6 +112,23 @@ platform channel add
     .. code-block:: none
 
       sudo ./platform channel add mychannel user@example.com username
+
+platform channel archive
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Archive a channel. To restore a channel from the archive, see `platform channel restore`_.
+
+  Format
+    .. code-block:: none
+
+      platform channel archive
+
+  Examples
+    .. code-block:: none
+
+      sudo ./platform channel archive 8soyabwthjnf9qibfztje5a36h
+      sudo ./platform channel archive myteam:mychannel
 
 platform channel create
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -191,7 +209,7 @@ platform channel restore
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Restore a previously deleted channel. Channels can be specified by {team}:{channel} using the team and channel names or IDs.
+    Restore a channel from the archive. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs.
 
   Format
     .. code-block:: none
