@@ -27,7 +27,7 @@ Release Date: May 16, 2017
 
 - Mattermost HTTP REST APIs moved to v4 endpoints allowing for more powerful integrations and server interaction.
 - To learn more about the available APIv4 endpoints, [see our documentation](https://api.mattermost.com/v4/).
-- APIv3 endpoints are supported until stable release of APIv4 endpoints in Q3 of 2017.
+- APIv3 endpoints are supported until six months after the stable release of APIv4 endpoints in Q3 of 2017.
 
 ### Improvements
 
@@ -168,7 +168,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### API Changes
 
 - Mattermost 3.9 has a release candidate of APIv4 endpoints. To see the complete list of available endpoints, see [https://api.mattermost.com/v4/](https://api.mattermost.com/v4/).
-- All APIv3 endpoints are scheduled for removal in September 2017 release (replaced by APIv4 endpoints).
+- All APIv3 endpoints to be removed six months after APIv4 endpoints are stable.
 
 ### Websocket Event Changes
 
