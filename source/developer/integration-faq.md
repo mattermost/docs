@@ -39,6 +39,10 @@ If you're interested in Mattermost automatically splitting up integration posts 
 
 If you would like to suggest alternative solutions, please [discuss here](https://forum.mattermost.org/t/recommendations-for-handling-automation-that-wants-to-post-messages-longer-than-4000-characters-per-message/1393).
 
+## Where can I find existing integrations?
+
+[Visit our integrations directory](https://about.mattermost.com/community-applications#privateApps) for dozens of open source integrations to common tools like Jira, Jenkins, GitLab, Trac, Redmine, and Bitbucket, along with interactive bot applications (Hubot, mattermost-bot), and other communication tools (Email, IRC, XMPP, Threema) that are freely available for use and customization.
+
 ## Where should I install my integrations? 
 
 For self-hosted deployments in small setups you might host integrations on the same server on which Mattermost is installed. For larger deployments you can setup a separate server for integrations, or add them to the server on which the external application is hosted--for example, if you're self-hosting a Jira server you could deploy a Jira integration on the Jira server itself. 
