@@ -31,7 +31,7 @@ Every month, the Mattermost community plans, builds, tests, documents, releases 
     
 3. If a feature idea is not within the scope of either Team Edition or Enterprise Edition, you might consider: 
 
-    1. Building an integration using Mattermost webhooks or Slash commands. There are [dozens of open source examples](http://www.mattermost.org/community-applications/) to help you start. Example: Suppose you want a link preview for an esoteric file type that Mattermost isn't able to support, you can create an outgoing webhook to reply with an image that offers a preview. 
+    1. Building an integration using Mattermost webhooks or Slash commands. There are [dozens of open source examples](https://about.mattermost.com/community-applications/#privateApps) to help you start. Example: Suppose you want a link preview for an esoteric file type that Mattermost isn't able to support, you can create an outgoing webhook to reply with an image that offers a preview. 
     
     2. Building a client application using the Mattermost Web Service API. This is useful if you want to customize the user experience to your specific needs. Example: You can re-create the Mattermost web interface using Windows controls to define front end logic, similar to the [MattermostWPF project](https://github.com/limey98/MattermostWPF). 
     
