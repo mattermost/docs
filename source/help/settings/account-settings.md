@@ -9,7 +9,7 @@ Settings to configure name, username, nickname, email and profile picture.
 Full names appear in the Direct Messages member list and team management modal. By default, you will receive mention notifications when someone types your first name. Entering a full name is optional.
 
 #### Username
-Usernames are unique identifers appearing next to all posts. Pick something easy for teammates to recognize and recall. By default, you will receive mention notifications when someone types your username. In order to maintain message integrity, changing your username does not update @mentions in messages already posted.  
+Usernames are unique identifiers appearing next to all posts. Pick something easy for teammates to recognize and recall. By default, you will receive mention notifications when someone types your username. In order to maintain message integrity, changing your username does not update @mentions in messages already posted.  
 
 #### Nickname
 Nicknames appear in the Direct Messages member list and team management modal. You will not receive mention notifications when someone types your nickname unless you add it to the *Words That Trigger Mentions* in **Account Settings > Notifications**.
@@ -142,6 +142,7 @@ Select what language Mattermost displays in the user interface. Options include:
 - Polski - Polish
 - Português (Brasil) - Portuguese
 - Pусский - Russian
+- Türkçe - Turkish
 - 한국어 - Korean
 - 中文 (简体) - Simplified Chinese
 - 中文 (繁體) - Traditional Chinese
