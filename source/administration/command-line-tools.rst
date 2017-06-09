@@ -50,14 +50,14 @@ To run the CLI commands, you must be in the directory that contains the Mattermo
 Using the CLI on GitLab Omnibus
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-On GitLab Omnibus, you must be in the following directory: ``/opt/gitlab/embedded/service``. The name of the executable is ``mattermost``. Also, you must run the commands as the user *mattermost* and specify the location of the configuration file.
+On GitLab Omnibus, you must be in the following directory when you run CLI commands: ``/opt/gitlab/embedded/service/mattermost``. Also, you must run the commands as the user *mattermost* and specify the location of the configuration file. The executable is ``/opt/gitlab/embedded/bin/mattermost``.
 
 **For example, to get the Mattermost version on GitLab Omnibus:**
 
   .. code-block:: bash
 
     cd /opt/gitlab/embedded/service
-    sudo -u mattermost opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json version
+    sudo -u mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json version
 
 .. note::
   The example commands in the documentation are for a default installation of Mattermost. You must modify the commands so that they work on GitLab Omnibus.
