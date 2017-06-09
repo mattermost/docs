@@ -2470,7 +2470,18 @@ Amazon S3 Lowercase Bucket
 | This feature's ``config.json`` setting is ``"AmazonS3LowercaseBucket": false`` with options ``true`` and ``false`` for above settings respectively.                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-________
+Amazon S3 Signature V2
+^^^^^^^^^^^^^^^^^^^^^^
+
+By default, Mattermost uses Signature V4 to sign API calls to AWS, but under some circumstances, V2 is required. For more information about when to use V2, see http://docs.aws.amazon.com/general/latest/gr/signature-version-2.html
+
+**True**: Use Signature Version 2 Signing Process
+
+**False**: Use Signature Version 4 Signing Process
+
++------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AmazonS3SignV2": false`` with options ``true`` and ``false``. |
++------------------------------------------------------------------------------------------------------------+
 
 Email Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
