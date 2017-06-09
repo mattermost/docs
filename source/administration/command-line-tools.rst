@@ -56,7 +56,7 @@ On GitLab Omnibus, you must be in the following directory when you run CLI comma
 
   .. code-block:: bash
 
-    cd /opt/gitlab/embedded/service
+    cd /opt/gitlab/embedded/service/mattermost
     sudo -u mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json version
 
 .. note::
