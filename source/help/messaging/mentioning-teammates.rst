@@ -33,6 +33,7 @@ You can mention an entire channel by typing ``@channel`` or ``@all``. All member
 
   @channel great work on interviews this week. I think we found some excellent potential candidates!
 
+If a channel has five or more members, you are prompted to confirm that you want notifications sent to everyone in the channel.
 
 @here
 ~~~~~
