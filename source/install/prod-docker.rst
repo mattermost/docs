@@ -54,7 +54,7 @@ You can run a production deployment on Mac OS X by `installing Docker Compose us
 Other options:
 --------------
 
-To install a feature-equivalent version of Mattermost that does not upgrade to enterprise features using a license key, Mattermost Team Edition, open ``docker-compose.yaml`` and comment out the following line:
+To install Mattermost Team Edition instead of Mattermost Enterprise Edition, open ``docker-compose.yaml`` and comment out the following line:
 
   .. code-block:: text
 
