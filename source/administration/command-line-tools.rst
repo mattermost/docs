@@ -117,7 +117,7 @@ platform channel archive
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Archive a channel. To restore a channel from the archive, see `platform channel restore`_.
+    Archive a channel. Archived channels are not accessible to users, but remain in the database. To restore a channel from the archive, see `platform channel restore`_.
 
   Format
     .. code-block:: none
