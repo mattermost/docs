@@ -35,18 +35,37 @@ From the directory where the Mattermost platform is installed, a
     :backlinks: top
     :local:
 
+Using the CLI
+^^^^^^^^^^^^^
+
+To run the CLI commands, you must be in the directory that contains the Mattermost executable. On a default install of Mattermost, the directory is ``/opt/mattermost/bin``. The name of the executable is ``platform``.
+
+**For example, to get the Mattermost version on a default installation of Mattermost:**
+
+  .. code-block:: bash
+
+    cd /opt/mattermost/bin
+    sudo ./platform version
+
+Using the CLI on GitLab Omnibus
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+On GitLab Omnibus, you must be in the following directory: ``/opt/gitlab/embedded/service``. The name of the executable is ``mattermost``. Also, you must run the commands as the user *mattermost* and specify the location of the configuration file.
+
+**For example, to get the Mattermost version on GitLab Omnibus:**
+
+  .. code-block:: bash
+
+    cd /opt/gitlab/embedded/service
+    sudo -u mattermost opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json version
+
+.. note::
+  The example commands in the documentation are for a default installation of Mattermost. You must modify the commands so that they work on GitLab Omnibus.
+
 Mattermost 3.6 and later
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 The new CLI tool is supported in Mattermost 3.6 and later. To see available commands in the old CLI tool, see `Mattermost 3.5 and earlier`_.
-
-Typing ``sudo ./platform help`` and ``sudo ./platform help {command}`` returns help documentation for the CLI tool or any CLI command in particular.
-
-To return the help documentation in GitLab omnibus, type
-
-    .. code-block:: none
-
-      sudo -u mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json help
 
 Notes:
 
