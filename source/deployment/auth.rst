@@ -2,7 +2,7 @@
 Multi-Factor Authentication (E10)
 =================================
 
-For organizations who require multi-factor authentication ("MFA") as part of their IT security policy, and who choose not to secure Mattermost behind a firewall with their existing MFA infrastructure, Mattermost Enterprise Edition offers a smartphone-based MFA check in addition to email-password or Active Directory/LDAP authentication, to sign in to the Mattermost server. 
+For organizations who require multi-factor authentication ("MFA") as part of their IT security policy, and who choose not to secure Mattermost behind a firewall with their existing MFA infrastructure, Mattermost Enterprise Edition offers a smartphone-based MFA check, in addition to email-password or Active Directory/LDAP authentication, to sign in to the Mattermost server. 
 
 Supported smartphones include iOS, Android, Blackberry and Windows Phone devices that are able to install `Google Authenticator <https://support.google.com/accounts/answer/1066447?hl=en>`_. Other than requiring internet access to download and install Google Authenticator, the phone used for Mattermost MFA does not require internet access.
 
