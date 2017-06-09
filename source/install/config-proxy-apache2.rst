@@ -7,7 +7,7 @@ Configuring Apache2 as a proxy for Mattermost Server (Unofficial)
 
 The Apache2 proxy configuration is done through the ``/etc/apache2/sites-available`` directory. If you're setting up Mattermost on a subdomain you'll want to create a new configuration along the lines of ``mysubdomain.mydomain.com.conf``.
 
-To make your life easy you could start by copying the `default` configuration file found in the same directory.
+Copy the `default` configuration file found in the same directory.
 
 **To configure Apache2 as a proxy**
 
@@ -61,10 +61,11 @@ To make your life easy you could start by copying the `default` configuration fi
 
 		</VirtualHost>
 
-4. Because you'll likely have not set up the subdomain before now on Apache2, run: ``a2ensite mysubdomain.mydomain.com`` (NOTE: No ``.conf``). This will enable the site.
+4. Because you'll likely have not set up the subdomain before now on Apache2, run ``a2ensite mysubdomain.mydomain.com`` to enable the site (do not run ``a2ensite mysubdomain.mydomain.com.conf``)
+
 5. Restart Apache2
 
 	- On Ubuntu 14.04 and RHEL 6: ``sudo service apache2 restart``
 	- On Ubuntu 16.04 and RHEL 7: ``sudo systemctl restart apache2``
 
-That should be all set! Ensure that your Mattermost config file is pointing to the correct URL and then ensure that once deployed your socket connection is not dropping.
+You should be all set! Ensure that your Mattermost config file is pointing to the correct URL and then ensure that once deployed your socket connection is not dropping.
