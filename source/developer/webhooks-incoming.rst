@@ -110,7 +110,7 @@ The following describes the automatic translations Mattermost performance to pro
 3. Like Slack, by overriding the channel name with a *@username*, such as ```payload={"text": "Hi", channel: "@jim"}``, you can send the message to a user through your direct message chat.
 4. Channel names can be prepended with a *#*, like they are in Slack incoming webhooks, and the message will still be sent to the correct channel.
 
-To see samples and community contributions, please visit `our integrations directory <https://about.mattermost.com/community-applications/#privateApps>`_.
+To see samples and community contributions, please visit `our integrations directory <https://about.mattermost.com/default-app-directory/>`_.
 
 Known Slack Compatibility Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
