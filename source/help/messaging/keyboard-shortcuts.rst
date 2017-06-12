@@ -47,6 +47,8 @@ Messages
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------------------+
 | CTRL+DOWN (in empty input field)       | CMD+DOWN (in empty input field)        | Reprint next message or slash command you entered                          |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------------------+
+| SHIFT+UP (in empty input field)        | SHIFT+UP (in empty input field)        | Reply to the most recent message in the current channel                    |
++----------------------------------------+----------------------------------------+----------------------------------------------------------------------------+
 | UP (in empty input field)              | UP (in empty input field)              | Edit your last message in the current channel                              |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------------------+
 | @[character]+TAB                       | @[character]+TAB                       | Autocomplete @username beginning with [character]                          |
