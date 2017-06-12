@@ -57,6 +57,7 @@ Administration
    /administration/config*
    /administration/team-settings.md
    /administration/statistics.md
+   /administration/announcement-banner.rst
    /administration/compliance*
    /administration/branding*
    /administration/backup*

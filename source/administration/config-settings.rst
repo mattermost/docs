@@ -441,7 +441,57 @@ Set the time limit that users have to edit their messages after posting.
 | The second setting is ``"PostEditTimeLimit": 300`` with whole number input. To enable ``PostEditTimeLimit``, set ``AllowEditPost`` to ``time_limit``.         |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-________
+Enable Announcement Banner
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Enable an announcement banner across all teams. The banner is displayed at the top of the screen and is the entire width of the screen. By default, users can dismiss the banner until you either change the text of the banner or until you re-activate the banner. You can prevent users from dismissing the banner, and you can control the text color and the background color.
+
+**True**: Enable the announcement banner. The banner is displayed only if ``BannerText`` has a value.
+
+**False**: Disable the announcement banner.
+
++-----------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableBanner": false`` with options ``true`` and ``false``.  |
++-----------------------------------------------------------------------------------------------------------+
+
+Banner Text
+^^^^^^^^^^^
+
+The text of the announcement banner.
+
++------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"BannerText": ""`` with string input.  |
++------------------------------------------------------------------------------------+
+
+Banner Color
+^^^^^^^^^^^^
+
+The background color of the announcement banner.
+
++---------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``""BannerColor": "#f2a93b"`` with string input.  |
++---------------------------------------------------------------------------------------------+
+
+Banner Text Color
+^^^^^^^^^^^^^^^^^
+
+The color of the text in the announcement banner.
+
++-------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``""BannerTextColor": "#333333"`` with string input.  |
++-------------------------------------------------------------------------------------------------+
+
+Allow Banner Dismissal
+^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Users can dismiss the banner until its next update.
+
+**False**: The banner is permanently visible until it is turned off by the System Admin.
+
++-------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``""AllowBannerDismissal": true`` with options ``true`` and ``false``.  |
++-------------------------------------------------------------------------------------------------------------------+
+
 
 Privacy
 ~~~~~~~~~~~~~~~~~~~~~~~~~
