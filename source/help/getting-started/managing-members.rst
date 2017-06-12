@@ -52,8 +52,8 @@ Member
 
 This is the default role given to users when they join a team. Members have basic permissions on the Mattermost team.
 
-Channel Admin
-~~~~~~~~~~~~~
+Channel Admin (Enterprise Edition only)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The person who creates a channel is assigned the Channel Admin role for that channel. People with the Channel Admin role have the following privileges:
 
