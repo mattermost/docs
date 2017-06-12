@@ -14,7 +14,7 @@ Release Date: June 16, 2017
 - Added Turkish translations for the user interface.
 
 #### New and Improved Keyboard Shortcuts
-- Redesigned channel and team switcher (CTRL/CMD+K)
+- Redesigned channel switcher (CTRL/CMD+K)
 - Browse direct and group message channels (CTRL/CMD+SHIFT+K) and reply to the most recent message (SHIFT+UP) with new shortcuts.
 
 ### Improvements
@@ -123,10 +123,14 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 
 ### Known Issues
-XXXXXX Will be updated again after release testing
 
 - Google login fails on the mobile apps.
-- Slack import doesn't add merged members/e-mail accounts to imported channels.
+- Edge overlays desktop notification sound and system notification sound
+- Status appears offline briefly after joining a new team
+- User popover can get cropped in the center channel on iOS
+- Clicking on a channel during the tutorial makes the tutorial disappear
+- Custom emoji search results filter by the creator's first/last name in addition to the emoji name
+- Reactions are displayed on messages deleted by other users
 - User can receive a video call from another browser tab while already on a call.
 - Search autocomplete picker is broken on Android.
 - Jump link in search results does not always jump to display the expected post.
@@ -136,9 +140,7 @@ XXXXXX Will be updated again after release testing
 - New direct messages received while in no teams do not show as unread after joining a team.
 - User is not logged out immediately when logging self out from Active Sessions list.
 - Certain code block labels don't appear while scrolling on iOS mobile web.
-- Reactions are displayed on messages deleted by other users.
 - CTRL+SHIFT+K doesn't toggle modal open and closed
-- With channel switcher open, CTRL+ALT+K closes the modal instead of switching to teams tab
 - Deactivated users do not appear in the Direct Message and Group Message sidebar channel list
 - Outgoing webhooks do not fire when posts have no text content
 
