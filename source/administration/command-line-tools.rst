@@ -122,7 +122,7 @@ platform channel archive
   Format
     .. code-block:: none
 
-      platform channel archive
+      platform channel archive {channels}
 
   Examples
     .. code-block:: none
