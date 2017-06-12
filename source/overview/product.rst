@@ -38,7 +38,7 @@ Details of each offering are as follows:
 - Native apps for iOS, Android, Windows, Mac, Linux	
 - Threaded messaging, emoji and custom emoji
 - Highly customizable `third party bots, integrations <https://about.mattermost.com/community-applications/#publicApps>`_ and `command line tools <https://docs.mattermost.com/administration/command-line-tools.html>`_
-- Extensive integration support via `webhooks, APIs, drivers <https://docs.mattermost.com/guides/integration.html>`_ and `third party extensions <https://about.mattermost.com/community-applications/>`_
+- Extensive integration support via `webhooks, APIs, drivers <https://docs.mattermost.com/guides/integration.html>`_ and `third party extensions <https://about.mattermost.com/default-app-directory/>`_
 - Easily scalable from dozens to hundreds of users
 - New improvements released every two months 
 - Languages include U.S. English, Chinese (Simplified & Traditional), Dutch, French, German, Japanese, Korean, Polish, Brazilian Portuguese, Russian, and Spanish
