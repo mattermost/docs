@@ -117,7 +117,7 @@ platform channel archive
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Archive a channel. Archived channels are not accessible to users, but remain in the database. To restore a channel from the archive, see `platform channel restore`_.
+    Archive a channel. Archived channels are not accessible to users, but remain in the database. To restore a channel from the archive, see `platform channel restore`_. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs.
 
   Format
     .. code-block:: none
@@ -161,7 +161,7 @@ platform channel delete
 ~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Permanently delete a channel along with all related information, including posts from the database. Channels can be specified by {team}:{channel} using the team and channel names or IDs.
+    Permanently delete a channel along with all related information, including posts from the database. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs.
 
   Format
     .. code-block:: none
