@@ -123,18 +123,20 @@ Not yet. You can `upvote the feature proposal online <https://mattermost.uservoi
 Business Questions
 ------------------
 
-How can I create a derivative work of Mattermost as my own commercial solution?
+How can I create a derivative work of Mattermost?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is broad question with many topics, here are a few:
+If you're looking to customize the look and feel of Mattermost, see `documentation on customization <https://github.com/mattermost/docs/issues/1006>`_. 
+
+If you're looking to change the Mattermost ``/platform`` source code and compile your own version of Mattermost, here are some considerations: 
 
 Security
 
-- If you offer Mattermost as a commercial solution we highly recommend you promptly provide customers any `security updates <http://about.mattermost.com/security-updates/>`_ that may be released.
+- If you run a fork of Mattermost we highly recommend you only deploy the system securely behind a firewall and to pay close attention to `Mattermost security updates <http://about.mattermost.com/security-updates/>`_. Mattermost Team Edition and Mattermost Enterprise Edition release security update patches when reports of new attacks are received and verified. Mattermost waits until 14 days after a security patch is released before publicly detailing its nature, so that users and customers can upgrade before the security vulnerability is widely known. A malicous user can potentially make use of Mattermost security disclosures to exploit a fork of Mattermost if the security upgrade is not promptly incorporated into the forked version. 
 
 Enterprise Edition partnership
 
-- To build your own commercial solution reselling Mattermost Enterprise Edition please `contact us <https://about.mattermost.com/contact/>`_ and let us know what you're considering. Strategic partnerships that won't confuse customers are the most favored.
+- To build your own commercial solution reselling Mattermost Enterprise Edition please `contact our commercial team <https://about.mattermost.com/contact/>`_ and let us know what you're considering. Strategic partnerships that won't confuse customers are the most favored.
 
 Re-branding
 
@@ -144,7 +146,7 @@ Re-branding
 
 Using /platform open source code
 
-- Creating a solution using the open source Mattermost /platform repo requires a) compliance with licenses in the repo, including `NOTICE.txt <https://github.com/mattermost/platform/blob/master/NOTICE.txt>`_, and b) the solution remain open source, `per our licensing policy <https://www.mattermost.org/licensing/>`_.
+- Creating a solution using the open source Mattermost ``/platform`` repo requires a) compliance with licenses in the repo, including `NOTICE.txt <https://github.com/mattermost/platform/blob/master/NOTICE.txt>`_, and b) the compiled version of the ``/platform`` source code should have the same open source license as the source code, `per our licensing policy <https://www.mattermost.org/licensing/>`_.
 
 Other considerations:
 
