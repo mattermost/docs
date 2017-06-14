@@ -8,7 +8,7 @@ Which Upgrade Instructions to Use
 
 If you are upgrading from version 3.8.0 or greater
   This guide applies to you. Skip to :ref:`Before you begin <before-you-begin>`.
-If you are upgrading from version 3.0.3 or greater and 3.6.6 or lower
+If you are upgrading from version 3.0.3 or greater and 3.7.5 or lower
   Upgrade `Team Edition <../administration/legacy-upgrade.html#upgrade-team-edition-from-3-0-x-and-later>`_ or upgrade `Enterprise Edition <../administration/legacy-upgrade.html#upgrade-enterprise-edition-from-3-0-x-and-later>`_ to the latest version.
 If you are upgrading from version 2.2.0 or earlier
   You must first upgrade to `Team Edition 3.0.3 <../administration/legacy-upgrade.html#upgrade-team-edition-to-3-0-x>`_ or if you have Enterprise Edition, upgrade to `Enterprise Edition 3.0.3 <../administration/legacy-upgrade.html#upgrade-enterprise-edition-to-3-0-x>`_.
