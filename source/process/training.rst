@@ -146,14 +146,14 @@ Procedure:
 Leads Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost Inc-only** - (Leads - 1-3 hours/week) Monday, Wednesday, Friday after Triage Meeting (09:00 `San Francisco Time <http://everytimezone.com/>`_)
+**Mattermost Inc-only** - (Leads - 1-3 hours/week) Monday and Wednesday (9:00 `San Francisco Time <http://everytimezone.com/>`_)
 
 - Goal: Address leadership and process topics
-- Attendees: (required) dev, PM and community/marketing leads from Mattermost Inc. (optional) other Mattermost Inc. colleagues welcome
+- Attendees: (Required) Dev, PM, community/marketing leads from Mattermost Inc., with sales lead and other Mattermost staff optional. 
 
 Note:
 
-- Decisions should go to Leads meetings when there is lack of clarify or ownership
+- Decisions should go to Leads meetings when there is lack of clarity or ownership, or to discuss special case topics where process is not well defined. 
 
     - When possible, decision-making should belong to the people closes to details
     - Individual developers or PMs should make most decisions, and raise to developer or PM team if things are unclear, and go to Leads if lack of clarify persists.
@@ -166,11 +166,9 @@ Note:
 
 Procedure:
 
-1. (PM & Dev Leads): Stay in **Hangout** after Triage meeting and message community/marketing lead to join.
+1. (Leads): Queue items in Leads channel for discussion. 
 
-2. (Attendees): Discuss agenda items in Leads private channel
-
-3. (Attendees): Respond to respective colleagues on decisions from Leads meeting
+2. (Leads): During meeting discuss agenda items in sequence. 
 
 Platform Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
