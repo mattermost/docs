@@ -94,7 +94,7 @@ Release Date: June 16, 2017
   - Image preview height and width
   - Profile picture height and width
   - Image thumbnail height and width
-- Account Settings options for **Display** > ** Display Font** and **Display** > **Teammate Name Display** are scheduled for removal in July 2017 release.
+- Account Settings options for **Display** > **Display Font** and **Display** > **Teammate Name Display** are scheduled for removal in July 2017 release.
 - All APIv3 endpoints are scheduled for removal six months after APIv4 is stable.
 
 For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
