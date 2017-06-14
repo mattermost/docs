@@ -2224,9 +2224,9 @@ Developer
 
 Enable Testing Commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: `/loadtest` slash command is enabled to load test accounts and test data.
+**True**: `/test` slash command is enabled to load test accounts and test data.
 
-**False**: `/loadtest` slash command is disabled.
+**False**: `/test` slash command is disabled.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableTesting": false`` with options ``true`` and ``false`` for above settings respectively.                            |
