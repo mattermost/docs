@@ -22,7 +22,7 @@ Release Date: June 16, 2017
 #### Web User Interface
 - Enter key now confirms deletion on the screens to delete a custom emoji and delete a channel
 - Team and channel URLs now replace accented characters with their ASCII equivalents
-- Recent menitons and flagged posts icons in the header are now highlighted when they are active in the right-hand sidebar
+- Recent mentions and flagged posts icons in the header are now highlighted when they are active in the right-hand sidebar
 - Empty rows are now ignored in the Send Email Invite modal
 - Enter key now confirms leaving a team from the Leave Team modal
 - Profile popover now opens when clicking a username in mobile browser view
@@ -37,7 +37,7 @@ Release Date: June 16, 2017
 #### Notifications
 - Added "@here" to the list of channel-wide mentions in Account Settings
 - Added a reminder when your Mattermost window is refreshed if a status override slash command in used to set yourself as /away or /offline 
-- Users will see a confimation dialog when attempting to use @all or @channel in a channel with over 10 users
+- Users will see a confimation dialog when attempting to use @all or @channel in a channel with over 5 users
 - Messages for others being added to a channel no longer trigger channels to be unread
 
 #### Administration
@@ -51,8 +51,8 @@ Release Date: June 16, 2017
 - Added the ability to enable Legacy Signature (AWS Signature V2) with S3 compatible servers
 
 #### Authentication
-- Added a redirect to the appropriate team or channel if navigating to a Mattermost URL when logged out
-- Team Invite links now open in the current tab
+- Added a redirect to the appropriate team, channel or post if navigating to a Mattermost URL when logged out
+- Clicking a team invite link now joins the team in all active sessions
 
 #### Performance
 - Upgraded GORP to support connection timeouts on MySQL and missing database columns on MySQL and Postgres
@@ -61,12 +61,12 @@ Release Date: June 16, 2017
 - Posts from webhooks that are greater than 4000 characters are now broken into multiple posts
 
 #### Enterprise Edition
-- Added an announcement banner for Admins to make maintenance announcements across the entire system configurable in the System Console
+- Added an announcement banner visible to all end users to make maintenance announcements across the system
 
 ### Bug Fixes
 - Dragging and dropping a file onto the left-hand sidebar no longer navigates away from Mattermost to open the file in the browser
 - Textbox will no longer overlap the center pane message area as it expands when typing
-- Fixed an issue where statuses could get stuck online after quitting the desktop app or closing the browser window
+- Fixed an issue where statuses could get stuck online after quitting the desktop app or closing the browser window in some cases
 - Profile pictures uploaded on mobile are now rotated in their correct orientation
 - The System Console help text for Minimum Password Length no longer dynamically updates as the input is changed
 - Fixed an issue where the autocomplete list may appear underneath a modal overlay
@@ -159,7 +159,7 @@ Many thanks to all our contributors. In alphabetical order:
 
 /docs
 
-- [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [esethna](https://github.com/esethna), [hmhealey](https://github.com/hmhealey),  [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [jwilander](https://github.com/jwilander), [kjkeane](https://github.com/kjkeane), [lindy65](https://github.com/lindy65)
+- [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [esethna](https://github.com/esethna), [hmhealey](https://github.com/hmhealey),  [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [jwilander](https://github.com/jwilander), [kjkeane](https://github.com/kjkeane), [lindy65](https://github.com/lindy65), [mikedaniel18](https://github.com/MikeDaniel18)
 
 /mattermost-api-reference
 
