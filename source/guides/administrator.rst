@@ -43,8 +43,6 @@ Deployment
    /deployment/scaling*
    /deployment/cluster*
    /deployment/sso-gitlab*
-   /deployment/sso-google*
-   /deployment/sso-office*
    /deployment/metrics*
    /deployment/client-side-data.rst
 
