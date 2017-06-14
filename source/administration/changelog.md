@@ -29,6 +29,10 @@ Release Date: June 16, 2017
 - /join now allows switching to a private channel to which the user has access
 - Improved the formatting of Mattermost content when copying and pasting to other apps
 - Added the ability for users to view and modify their online status from their profile picture in the header
+- /loadtest command changed to /test
+- Ephemeral messages are removed from the right-hand sidebar after it is reopened
+- Added a markdown preview option to the message editing modal
+- Status indicators are now shown in the Direct Massages list
 
 #### Notifications
 - Added "@here" to the list of channel-wide mentions in Account Settings
@@ -68,6 +72,7 @@ Release Date: June 16, 2017
 - Fixed an issue where the autocomplete list may appear underneath a modal overlay
 - Updated error text when uploading a profile picture that is in an unsupported image format
 - Joined channels no longer appear in the "More..." channels list
+- Wide markdown images no longer cause horizontal scrolling in the center pane
 - Fixed theme styling for button active states
 - Fixed an issue where channels sometimes did not appear read if the channel was in focus when a new message was received
 - Fixed an issue where the autocomplete list would not close after using a slash command
