@@ -181,21 +181,6 @@ Respond to the issue with the following note
 
   You get **10** votes in the feature idea forum, and each one influences the future of the project.
 
-Licence Questions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Sample reponse for the following question: Is it okay to implement an Enterprise policy feature in a custom Team Edition fork?
-
-.. code-block:: text
-
-  Thanks @{username} for the response,
-
-  You're welcome to use the software per the open source license in the source code, just two things to keep in mind: 
-
-  1. Per the [trademark guidelines](https://www.mattermost.org/trademark-standards-of-use/) when you're offering a fork for use by others, please remove Mattermost branding (name and logos). This is standard in open source.
-
-  2. We'd encourage you to merge in [security updates](http://about.mattermost.com/security-updates/) as they're released.
-
 Hard Questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
