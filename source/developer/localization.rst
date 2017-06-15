@@ -28,9 +28,9 @@ To translate a language:
 Translations Updates
 ====================
 
-1 - New and updated strings are imported to the `Mattermost Translation Server <http://translate.mattermost.com>`_ each day at 00:00 GMT
+1 - New and updated strings are imported to the `Mattermost Translation Server <http://translate.mattermost.com>`_ each day at 00:00 GMT. Strings with a ``mobile`` prefix are imported from the `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_ project, others are from `platform <https://github.com/mattermost/platform>`_.
 
-2 - A new pull request with latest translations that reach at least Beta Quality is submitted to the `Mattermost Platform Repo <https://github.com/mattermost/platform>`_ each Monday at 22:00 GMT.
+2 - A new pull request with latest translations that reach at least Beta Quality is submitted to both the `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_ and `platform <https://github.com/mattermost/platform>`_ repos each Monday at 22:00 GMT.
 
     - A pull request will also be submitted on the day of major feature complete and code complete to ensure latest translations are included in the release. 
     - A pull request may also be submitted for a release candidate.
