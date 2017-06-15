@@ -36,13 +36,13 @@ Release Date: June 16, 2017
 
 #### Notifications
 - Added "@here" to the list of channel-wide mentions in Account Settings.
-- Added a reminder when your Mattermost window is refreshed if a status override slash command in used to set yourself as /away or /offline.
-- Users will see a confimation dialog when attempting to use @all or @channel in a channel with over 5 users.
+- Added a reminder when your Mattermost window is refreshed if a status override slash command is used to set yourself as /away or /offline.
+- Users will see a confirmation dialog when attempting to use @all or @channel in a channel with over 5 users.
 - Messages for others being added to a channel no longer trigger channels to be unread.
 
 #### Administration
 - Added CLI tool for permanently deleting channels.
-- Channel Admins can now delete users messages within their channel if permitted in the System Console.
+- Channel Admins can now delete user's messages within their channel if permitted in the System Console.
 - Errors are now logged when failing to load config through the command line.
 - Reduced unnecessary database reads and writes when bulk importing users.
 
@@ -83,7 +83,7 @@ Release Date: June 16, 2017
 - Adding a reaction to an ephemeral message no longer throws a Javascript error.
 - Fixed an issue where clicking autocomplete suggestions would not populate the search box with the appropriate text.
 - Fixed an issue where the System Console users list ignored the search term after selecting a team from the filter.
-- Channel header messages are no longer appear cut-off if using a slash.
+- Channel header messages no longer appear cut-off if using a slash.
 - Corrected the formatting of the "Edited" indicator in the right-hand sidebar.
 - Fixed the positioning of the pin icon and channel header on Edge.
 
@@ -139,7 +139,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - User can receive a video call from another browser tab while already on a call.
 - Search autocomplete picker is broken on Android.
 - Jump link in search results does not always jump to display the expected post.
-- First load of the emoji picker is slow at low connections.
+- First load of the emoji picker is slow on low-speed connections.
 - Emoji picker for reactions doesn't always position correctly.
 - Scrollbar is sometimes not visible in the left-hand sidebar after switching teams.
 - New direct messages received while in no teams do not show as unread after joining a team.
