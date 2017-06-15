@@ -214,7 +214,9 @@ Enable Team Creation
 
 Max Users Per Team
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Maximum number of users per team, including both active and inactive users.
+Maximum number of users per team, including both active and inactive users. 
+
+While a single Mattermost server can technically `scale to hundreds and thousands of users <https://docs.mattermost.com/install/requirements.html>`_, the default maximum size of a team is 50 users. When an administrator increases the default beyond 50 users for one team, we recommend an analysis of `channel organization <https://docs.mattermost.com/help/getting-started/organizing.html>`_ and social norms used to manage the team up until that size will continue to scale with the team, or if the administrator would want to enable `enterprise policy <https://docs.mattermost.com/administration/config-settings.html#policy>`_ features for managing larger organizations within a team. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxUsersPerTeam": 50`` with whole number input.                                                                         |
