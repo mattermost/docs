@@ -1,4 +1,4 @@
-.. _install-ubuntu-1604-postgresql:
+PostgreSQL.. _install-ubuntu-1604-postgresql:
 
 Installing PostgreSQL Database Server
 =====================================
@@ -12,10 +12,10 @@ Assume that the IP address of this server is 10.10.10.1
 1. Log in to the server that will host the database and issue the following command:
 
   ``sudo apt-get install postgresql postgresql-contrib``
-  
+
   When the installation is complete, the PostgreSQL server is running, and a Linux user account called *postgres* has been created.
 
-2. Log in to the *postgres* account. 
+2. Log in to the *postgres* account.
 
   ``sudo --login --user postgres``
 
@@ -30,7 +30,7 @@ Assume that the IP address of this server is 10.10.10.1
 5.  Create the Mattermost user 'mmuser'.
 
   ``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser_password';``
-  
+
   .. note::
     Use a password that is more secure than 'mmuser-password'.
 
@@ -46,34 +46,59 @@ Assume that the IP address of this server is 10.10.10.1
 
   ``exit``
 
-9. Allow Postgres to listen on all assigned IP Addresses. Open ``/etc/postgresql/9.3/main/postgresql.conf`` as root in a text editor.
+9. Allow PostgreSQL to listen on all assigned IP Addresses. Open ``/etc/postgresql/9.5/main/postgresql.conf`` as root in a text editor.
 
   a. Find the following line:
-  
+
     ``#listen_addresses = 'localhost'``
-    
+
   b. Uncomment the line and change ``localhost`` to ``*``:
-  
+
     ``listen_addresses = '*'``
 
-10. If the Mattermost server is on a separate machine, modify the file ``pg_hbe.conf`` to allow the Mattermost server to communicate with the database.
+  d. Restart PostgreSQL for the change to take effect:
 
-  If the Mattermost server and the database are on the same machine, then you can skip this step.
+    ``sudo systemctl restart postgresql``
 
-  a. Open ``/etc/postgresql/9.3/main/pg_hba.conf`` in a text editor.
+10. Modify the file ``pg_hba.conf`` to allow the Mattermost server to communicate with the database.
 
-  b. Add the following line to the end of the file, where *<mm-server-IP>* is the IP address of the machine that contains the Mattermost server.
+  **If the Mattermost server and the database are on the same machine**:
 
-    ``host all all <mm-server-IP>/32 md5``
+    a. Open ``/etc/postgresql/9.5/main/pg_hba.conf`` as root in a text editor.
 
-11. Reload Postgres database.
+    b. Find the following line:
+
+      ``local   all             all                        peer``
+
+    c. Change ``peer`` to ``trust``:
+
+      ``local   all             all                        trust``
+
+  **If the Mattermost server and the database are on different machines**:
+
+    a. Open ``/etc/postgresql/9.5/main/pg_hba.conf`` as root in a text editor.
+
+    b. Add the following line to the end of the file, where *{mattermost-server-IP}* is the IP address of the machine that contains the Mattermost server.
+
+      ``host all all {mattermost-server-IP}/32 md5``
+
+11. Reload PostgreSQL:
 
   ``sudo systemctl reload postgresql``
 
 12. Verify that you can connect with the user *mmuser*.
-  
-  ``psql --host=localhost --dbname=mattermost --username=mmuser --password``
-  
+
+  a. If the Mattermost server and the database are on the same machine, use the following command:
+
+    ``psql --dbname=mattermost --username=mmuser --password``
+
+  b. If the Mattermost server is on a different machine, log into that machine and use the following command:
+
+    ``psql --host={postgres-server-IP} --dbname=mattermost --username=mmuser --password``
+
+    .. note::
+      You might have to install the PostgreSQL client software to use the command.
+
   The PostgreSQL interactive terminal starts. To exit the PostgreSQL interactive terminal, type ``\q`` and press **Enter**.
 
 With the database installed and the initial setup complete, you can now install the Mattermost server.

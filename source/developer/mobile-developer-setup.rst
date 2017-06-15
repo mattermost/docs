@@ -75,13 +75,13 @@ Android (Device)
 
   b. Unzip the SDK to somewhere on your hard drive. For example, ``/Users/<username>/Library/Android/sdk`` on Mac OS X.
 
-  c. Configure the following environment variables:
+2. Configure the following environment variables:
 
-    - Set ``ANDROID_HOME`` to the location that you unzipped the SDK to.
+  - Set ``ANDROID_HOME`` to where Android SDK is located (likely ``/Users/<username>/Library/Android/sdk``)
 
-    - Add ``ANDROID_HOME/tools`` and ``ANDROID_HOME/platform-tools`` to the ``PATH``.
+  - Add ``ANDROID_HOME/tools`` and ``ANDROID_HOME/platform-tools`` to the ``PATH``.
 
-2. Run ``android`` to open the Android SDK Manager and install the following packages:
+3. Run ``android`` to open the Android SDK Manager and install the following packages:
 
   - Tools > Android SDK Tools 25.2.5 or higher
 
@@ -105,17 +105,17 @@ Android (Device)
   
   - Extras > Google Repository
 
-3. Connect your Android device to your computer.
+4. Connect your Android device to your computer.
 
-4. Enable USB Debugging on your device.
+5. Enable USB Debugging on your device.
 
-5. Ensure that your device is listed in the output of ``adb devices``.
+6. Ensure that your device is listed in the output of ``adb devices``.
 
-6. Start the React Native packager to deploy the APK to your device.
+7. Start the React Native packager to deploy the APK to your device.
 
   ``make run-android``
 
-7. The installed APK may not be opened automatically. You may need to manually open the Mattermost app on your device.
+8. The installed APK may not be opened automatically. You may need to manually open the Mattermost app on your device.
 
 Troubleshooting
 ------------------

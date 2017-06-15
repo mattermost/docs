@@ -22,7 +22,9 @@ Values are deliberate choices defining our behavior. When facing complexity, unc
 
 - **High Impact** - Figure out what matters most, and focus on those priorities. When deciding to work on low impact or high impact projects, choose high impact.
 
-- **Be proud of what you build** - Insist on high standards. Ensure that you're building the highest quality products, services, and processes possible, and constantly raising the bar.
+- **Self-Awareness** - We understand and seek to understand our strengths and growth opportunities, as individuals and organizations. We are open to critique and share critique constructively and respectfully. 
+
+- **Be proud of what you build** - Insist on high standards. Ensure that you're building the highest quality products, services, and processes possible, and constantly raising the bar. 
 
 Products
 ------------------------------------------

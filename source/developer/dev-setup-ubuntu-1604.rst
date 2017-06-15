@@ -70,9 +70,11 @@ Set up your development environment for building, running, and testing Mattermos
 
       ``sudo apt-get install -y nodejs``
 
-6. Fork Mattermost on GitHub from https://github.com/mattermost/platform.
+6. Install Yarn. Go to https://yarnpkg.com/en/docs/install and follow the installation instructions.
 
-7. Download the Mattermost code from your forked repository:
+7. Fork Mattermost on GitHub from https://github.com/mattermost/platform.
+
+8. Download the Mattermost code from your forked repository:
 
   a. Create the directory for the code.
 

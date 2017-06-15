@@ -8,7 +8,7 @@ This document in intended for new hires to summarize norms for working at Matter
 - `Meetings`_ - When we get together and why
 - `Mindsets`_ - Shared toolsets we have for solving problems
 - `Terminology`_- Shared vocabulary to convey ideas quickly
-- `Training`_ - Material available to help us ramp quickly in different areas.
+- `Training`_ - Material available to help us ramp quickly in different areas
 
 .. contents::
     :backlinks: top
@@ -16,6 +16,11 @@ This document in intended for new hires to summarize norms for working at Matter
 ---------------------------------------------------------
 Getting Started Checklist
 ---------------------------------------------------------
+
+Important things to know
+---------------------------------------------------------
+
+- Never sign any agreement on behalf of the company. The CEO is the only person authorized to sign an agreement on behalf of Mattermost, Inc. The only exception is that you are authorized to sign a non-disclosure agreement to enter a physical space. If you have questions, please check with your manager. 
 
 Hiring
 ---------------------------------------------------------
@@ -28,7 +33,8 @@ T-minus 1-3 weeks
 
 - (People Ops & New Hire) People Ops should find out new hire's preference for laptop, either to be purchased or taken from stock and shipped by People Ops or purchased locally by new hire and expensed. Windows laptops generally cost less than Macs so budget is based on Macs. For non-developers, budget is cost of a Macbook in your local area, for developers budget is cost of a Macbook Pro.
 - (New Hire) Read the entirety of Onboarding page for info on meetings, mindsets, terminology and training materials.
-
+- (New Hire) Ask your manager for a link to the CEO's calendar to schedule a 45 minute meeting on your first day 
+ 
 T-minus 1 week
 ---------------------------------------------------------
 
@@ -41,7 +47,8 @@ First Day
 
 - (Manager) Posts welcome message in stand-up channel
 - (Manager) Meets New Hire for first 1-1 meeting
-- (Buddy) Meets New Hire for first 1-1 meeting,
+- (Buddy) Meets New Hire for first 1-1 meeting
+- (CEO) Meets New Hire for welcome meeting 
 
 ---------------------------------------------------------
 Meetings
@@ -49,7 +56,12 @@ Meetings
 
 This section summarizes norms for public and private meetings for the Mattermost community and for Mattermost Inc.
 
-When proposing meetings use major cities as references for time (eg 9AM New York time), since it's clear and `easy to web search <https://www.google.com/search?q=time+in+new+york&oq=time+in+new+&aqs=chrome.1.0l2j69i57j0l3.3135j0j7&sourceid=chrome&ie=UTF-8>`_. Avoid using "UTC", as it has been shown to cause confusion.
+Timezones 
+---------------------------------------------------------
+
+When proposing meetings use famous cities as references for time (e.g. 9am New York time), since it's clear and `easy to web search <https://www.google.com/search?q=time+in+new+york&oq=time+in+new+&aqs=chrome.1.0l2j69i57j0l3.3135j0j7&sourceid=chrome&ie=UTF-8>`_. Avoid using "UTC", as it has been shown to cause confusion.
+
+When selecting a timezone city, use the most well-known city in a country where at least one team member is located. Exception: When possible, use a city where we have an official mailing address, e.g. In Western Americas use Palo Alto, instead of San Francisco. In Eastern Americas use Toronto, instead of New York. 
 
 Open Meetings
 ---------------------------------------------------------
@@ -81,22 +93,21 @@ For confidentiality of customers, internal process meetings are limited to Matte
 Sprint Planning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost Inc-only** - (Developer - 5-10 minutes/week) Tuesdays between 10:00 and 11:00 (`San Francisco Time <http://everytimezone.com/>`_)
+**Mattermost Staff Only** - (Developer - 5-10 minutes/week) Tuesdays between 10:00 and 11:00 (`San Francisco Time <http://everytimezone.com/>`_)
 
-- Goal: Review and discuss tickets selected by Developer for next sprint
-- Attendees: (required) Each developer in sequence, plus spint planngers (one dev, one PM) (optional) Mattermost Inc. colleagues welcome
+- Goal: Review and discuss tickets selected by developer for next sprint
+- Attendees: (required) Each developer in sequence, plus spint planners (one dev, one PM), (optional) Mattermost staff colleagues welcome
 
 Note:
 
-- This meeting uses a special `Mattermost Inc only BACKLOG query <https://mattermost.atlassian.net/secure/RapidBoard.jspa?rapidView=1&view=planning.nodetail&quickFilter=7>`_ showing tickets by sprint, with tabs across the top for each developer.
+- This meeting uses a special `Mattermost staff-only BACKLOG query <https://mattermost.atlassian.net/secure/RapidBoard.jspa?rapidView=1&view=planning.nodetail&quickFilter=7>`_ showing tickets by sprint, with tabs across the top for each developer
 - Prior to meeting, developers drag and drop tickets from their backlog to next sprint based on team priorities
-
-     - Developers are welcome at any time to discuss reassigning tickets with colleagues using common sense (if both are okay with the change, add "triage" tag to fix version with comment and triage team will review to make the change)
+- Developers are welcome at any time to discuss reassigning tickets with colleagues using common sense (if both are okay with the change, add "triage" tag to fix version with comment and triage team will review to make the change)
 - During the meeting, developer's next sprint is reviewed, discussed, possibly adjusted and locked
 
 Procedure:
 
-1. (Chair): Just prior to meeting, post **Hangout** link in `Standup private channel <https://pre-release.mattermost.com/core/channels/stand-up>`_
+1. (Chair): Just prior to meeting, post **Hangout** link in `Standup private channel <https://pre-release.mattermost.com/private-core/channels/stand-up>`_
 2. (Developer): Replies in Standup private channel when sprint is ready for review
 3. (Chair): Will (at)mention next developer to join **Hangout** to review tickets. Developer joins, tickets are discussed and finalized for next sprint. Developer leaves **Hangout** and next developer rotates in.
 
@@ -135,14 +146,14 @@ Procedure:
 Leads Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost Inc-only** - (Leads - 1-3 hours/week) Monday, Wednesday, Friday after Triage Meeting (09:00 `San Francisco Time <http://everytimezone.com/>`_)
+**Mattermost Inc-only** - (Leads - 1-3 hours/week) Monday and Wednesday (9:00 `San Francisco Time <http://everytimezone.com/>`_)
 
 - Goal: Address leadership and process topics
-- Attendees: (required) dev, PM and community/marketing leads from Mattermost Inc. (optional) other Mattermost Inc. colleagues welcome
+- Attendees: (Required) Dev, PM, community/marketing leads from Mattermost Inc., with sales lead and other Mattermost staff optional. 
 
 Note:
 
-- Decisions should go to Leads meetings when there is lack of clarify or ownership
+- Decisions should go to Leads meetings when there is lack of clarity or ownership, or to discuss special case topics where process is not well defined. 
 
     - When possible, decision-making should belong to the people closes to details
     - Individual developers or PMs should make most decisions, and raise to developer or PM team if things are unclear, and go to Leads if lack of clarify persists.
@@ -155,11 +166,9 @@ Note:
 
 Procedure:
 
-1. (PM & Dev Leads): Stay in **Hangout** after Triage meeting and message community/marketing lead to join.
+1. (Leads): Queue items in Leads channel for discussion. 
 
-2. (Attendees): Discuss agenda items in Leads private channel
-
-3. (Attendees): Respond to respective colleagues on decisions from Leads meeting
+2. (Leads): During meeting discuss agenda items in sequence. 
 
 Platform Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -533,17 +542,16 @@ The following table summarizes abbreviations used in the above table:
         <p>&nbsp;</p>
     </embed>
 
-
 Leadership Coaching
 --------------------------
 
-To advanced the skills of senior and functional leaders beyond standard materials and processes, we bring in leading experts to advise our leaders and the company on key functions, including sales, operations, strategy and general management.
+To advanced the skills of senior and functional leaders we bring in experts to advise on key functions, including sales, operations, product, marketing, strategy, general management and other specialized topics. 
 
 - As an example, `Jono Bacon <http://www.jonobacon.org/about/>`_--a leading author, speaker and consultant on open source community advocacy--meets with our community team regularly to refine our processes and understanding. There's a range of similiarly adept company advisers that help advance our thinking and capabilities in critical ways.
 
-Many thought leaders and conference speakers are open to consulting projects with the right clients, and Mattermost is an excellent client. There's no travel involved, we meet over video conference, we're easy to work with, and we take advising seriously. Advising is a critical part of growing our people and our company.
+Many thought leaders and conference speakers are open to consulting projects with the right clients, and Mattermost is a flexible client. There's no travel involved, we meet over video conference, `our consulting process is straight forward <https://docs.google.com/document/d/1G4wFLq_wHHEDJ-hrv5Kmu022mFJgh3rJ4-glM0W6riI/edit#heading=h.pwxwwq4ezzfx>`_, we're easy to work with, and we take advising seriously. 
 
-We are also open to bringing in a leader's personal mentors as consultants and company advisers when skill sets are appropriate.
+When hiring, we are also open to bringing in a leader's personal mentors as consultants and company advisers when skill sets are appropriate.
 
 ---------------------------------------------------------
 Mattermost Avatar
@@ -555,10 +563,12 @@ Mattermost avatars are caricatures of core committers in the costume of a popula
 
 To have a Mattermost avatar created, you'll be invited to create a Mattermost avatar via email and asked to provide the following: 
 
-1. The name of your character from popular culture (e.g. Spiderman, Wonder Woman, Luke Skywalker, etc.) 
-2. A clear image at least 600 pixels high and 600 pixels wide showing your character 
-3. Send a clear photo of your face at least 600 pixels high and 600 pixels wide pointing in the same direction as your character image 
+1. Please use the email subject "[YOUR_FULL_NAME] as [CHARACTER_NAME]", for example "Corey Hulen as Han Solo". 
+2. Attach a clear image at least 600 pixels high and 600 pixels wide showing your character's full body in a standing pose. 
 
+   Note: Character should be human-sized (no giant characters).
+3. Send a clear photo of your face at least 600 pixels high and 600 pixels wide pointing in the same direction as your character image.
+ 
 You should receive your digital Mattermost avatars by email in 6-8 weeks. 
 
 In special cases, a Mattermost avatar may be created for someone from the Mattermost community who has made an extraordinary contribution to the open source project. 

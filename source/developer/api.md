@@ -43,4 +43,4 @@ Mattermost provides a [Golang Bot Sample](https://github.com/mattermost/mattermo
 
 ## Community Apps and Integrations
 
-The Mattermost community has shared back dozens of open source integrations showing how to use webhooks, drivers and APIs in different ways. See the [Community Applications Directory](https://www.mattermost.org/community-applications/) to learn more.
+The Mattermost community has shared back dozens of open source integrations showing how to use webhooks, drivers and APIs in different ways. See the [community app directory](https://about.mattermost.com/default-app-directory/) to learn more.

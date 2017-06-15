@@ -35,18 +35,37 @@ From the directory where the Mattermost platform is installed, a
     :backlinks: top
     :local:
 
+Using the CLI
+^^^^^^^^^^^^^
+
+To run the CLI commands, you must be in the directory that contains the Mattermost executable. On a default install of Mattermost, the directory is ``/opt/mattermost/bin``. The name of the executable is ``platform``.
+
+**For example, to get the Mattermost version on a default installation of Mattermost:**
+
+  .. code-block:: bash
+
+    cd /opt/mattermost/bin
+    sudo ./platform version
+
+Using the CLI on GitLab Omnibus
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+On GitLab Omnibus, you must be in the following directory when you run CLI commands: ``/opt/gitlab/embedded/service/mattermost``. Also, you must run the commands as the user *mattermost* and specify the location of the configuration file. The executable is ``/opt/gitlab/embedded/bin/mattermost``.
+
+**For example, to get the Mattermost version on GitLab Omnibus:**
+
+  .. code-block:: bash
+
+    cd /opt/gitlab/embedded/service/mattermost
+    sudo -u mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json version
+
+.. note::
+  The example commands in the documentation are for a default installation of Mattermost. You must modify the commands so that they work on GitLab Omnibus.
+
 Mattermost 3.6 and later
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 The new CLI tool is supported in Mattermost 3.6 and later. To see available commands in the old CLI tool, see `Mattermost 3.5 and earlier`_.
-
-Typing ``sudo ./platform help`` and ``sudo ./platform help {command}`` returns help documentation for the CLI tool or any CLI command in particular.
-
-To return the help documentation in GitLab omnibus, type
-
-    .. code-block:: none
-
-      sudo -u mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json help
 
 Notes:
 
@@ -108,10 +127,11 @@ platform channel add
 
       platform channel add {channel} {users}
 
-  Example
+  Examples
     .. code-block:: none
 
-      sudo ./platform channel add mychannel user@example.com username
+      sudo ./platform channel add 8soyabwthjnf9qibfztje5a36h user@example.com username
+      sudo ./platform channel add myteam:mychannel user@example.com username
 
 platform channel archive
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -168,9 +188,10 @@ platform channel delete
 
       platform channel delete {channels}
 
-  Example
+  Examples
     .. code-block:: none
 
+      sudo ./platform channel delete 8soyabwthjnf9qibfztje5a36h
       sudo ./platform channel delete myteam:mychannel
 
 platform channel list
@@ -200,10 +221,11 @@ platform channel remove
 
       platform channel remove {channel} {users}
 
-  Example
+  Examples
     .. code-block:: none
 
-      sudo ./platform channel remove mychannel user@example.com username
+      sudo ./platform channel remove 8soyabwthjnf9qibfztje5a36h user@example.com username
+      sudo ./platform channel remove myteam:mychannel user@example.com username
 
 platform channel restore
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -216,9 +238,10 @@ platform channel restore
 
       platform channel restore {channels}
 
-  Example
+  Examples
     .. code-block:: none
 
+      sudo ./platform channel restore 8soyabwthjnf9qibfztje5a36h
       sudo ./platform channel restore myteam:mychannel
 
 platform help
