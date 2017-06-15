@@ -619,6 +619,10 @@ platform user migrate\_auth
     .. code-block:: none
 
       sudo ./platform user migrate_auth email ladp email
+  Options
+    .. code-block:: none
+
+      --force  Ignore duplicate entries on the LDAP server.
 
 platform user password
 ~~~~~~~~~~~~~~~~~~~~~~~~
