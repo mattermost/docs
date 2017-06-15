@@ -444,7 +444,7 @@ Set the time limit that users have to edit their messages after posting.
 Enable Announcement Banner
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Enable an announcement banner across all teams. The banner is displayed at the top of the screen and is the entire width of the screen. By default, users can dismiss the banner until you either change the text of the banner or until you re-activate the banner. You can prevent users from dismissing the banner, and you can control the text color and the background color.
+Enable an announcement banner across all teams. The banner is displayed at the top of the screen and is the entire width of the screen. By default, users can dismiss the banner until you either change the text of the banner or until you re-enable the banner after it has been disabled. You can prevent users from dismissing the banner, and you can control the text color and the background color.
 
 **True**: Enable the announcement banner. The banner is displayed only if ``BannerText`` has a value.
 
@@ -484,7 +484,7 @@ The color of the text in the announcement banner.
 Allow Banner Dismissal
 ^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Users can dismiss the banner until its next update.
+**True**: Users can dismiss the banner until the next time they log in or the banner is updated.
 
 **False**: The banner is permanently visible until it is turned off by the System Admin.
 
