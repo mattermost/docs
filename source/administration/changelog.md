@@ -4,6 +4,11 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
+## Release v4.0.0
+
+Release Date: July 17, 2017
+
+
 ## Release v3.10.0
 
 Release Date: June 16, 2017
@@ -167,11 +172,11 @@ Many thanks to all our contributors. In alphabetical order:
 
 /mattermost-redux
 
-- [94117nl](https://github.com/94117nl), [cpanato](https://github.com/cpanato), [enahum](https://github.com/enahum), [jarredwitt](https://github.com/jarredwitt), [jwilander](https://github.com/jwilander) 
+- [94117nl](https://github.com/94117nl), [cpanato](https://github.com/cpanato), [enahum](https://github.com/enahum), [jarredwitt](https://github.com/jarredwitt), [jwilander](https://github.com/jwilander)
 
 /mattermost-mobile
 
--  [asaadmahmood](https://github.com/asaadmahmood), [cpanato](https://github.com/cpanato), [csduarte](https://github.com/csduarte), [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [lfbrock](https://github.com/lfbrock), [rthill](https://github.com/rthill) 
+-  [asaadmahmood](https://github.com/asaadmahmood), [cpanato](https://github.com/cpanato), [csduarte](https://github.com/csduarte), [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [lfbrock](https://github.com/lfbrock), [rthill](https://github.com/rthill)
 
 /desktop
 
@@ -183,11 +188,11 @@ Many thanks to all our contributors. In alphabetical order:
 
 /android
 
-- [coreyhulen](https://github.com/coreyhulen), [der-test](https://github.com/der-test),  [lfbrock](https://github.com/lfbrock) 
+- [coreyhulen](https://github.com/coreyhulen), [der-test](https://github.com/der-test),  [lfbrock](https://github.com/lfbrock)
 
 /mattermost-selenium
 
-- [doh5](https://github.com/doh5),  [lindalumitchell](https://github.com/lindalumitchell) 
+- [doh5](https://github.com/doh5),  [lindalumitchell](https://github.com/lindalumitchell)
 
 /gorp
 
@@ -195,11 +200,11 @@ Many thanks to all our contributors. In alphabetical order:
 
 /ios
 
-- [coreyhulen](https://github.com/coreyhulen), [PrestonL](https://github.com/PrestonL) 
+- [coreyhulen](https://github.com/coreyhulen), [PrestonL](https://github.com/PrestonL)
 
 /mattermost-kubernetes
 
-- [coreyhulen](https://github.com/coreyhulen) 
+- [coreyhulen](https://github.com/coreyhulen)
 
 
 ## Release v3.9.0
