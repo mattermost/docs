@@ -132,7 +132,7 @@ Additional Notes:
 
 2. Including ``@username`` will trigger a mention notification for the person with the specified username, and channels can be mentioned by including *@channel* or *<!channel>*. For example:  ``{"text": "<!channel> this is a notification"}`` would create a message that mentions *@channel*
 
-3. Just like regular posts, the text in a response will be limited to 4000 characters at maximum
+3. If the text in a response is longer than 4000 characters, the message is split into multiple consecutive posts, each within the 4000 character limit.
 
 Slack Compatibility
 -------------------

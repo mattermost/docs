@@ -109,11 +109,12 @@ platform channel
 
   Child Commands
     -  `platform channel add`_ - Add users to a channel
+    -  `platform channel archive`_ - Archive a channel
     -  `platform channel create`_ - Create a channel
     -  `platform channel delete`_ - Delete a channel
     -  `platform channel list`_ - List all channels on specified teams
     -  `platform channel remove`_ - Remove users from a channel
-    -  `platform channel restore`_ - Restore a channels
+    -  `platform channel restore`_ - Restore a channel from the archive
 
 platform channel add
 ~~~~~~~~~~~~~~~~~~~~
@@ -131,6 +132,23 @@ platform channel add
 
       sudo ./platform channel add 8soyabwthjnf9qibfztje5a36h user@example.com username
       sudo ./platform channel add myteam:mychannel user@example.com username
+
+platform channel archive
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Archive a channel. Archived channels are not accessible to users, but remain in the database. To restore a channel from the archive, see `platform channel restore`_. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs.
+
+  Format
+    .. code-block:: none
+
+      platform channel archive {channels}
+
+  Examples
+    .. code-block:: none
+
+      sudo ./platform channel archive 8soyabwthjnf9qibfztje5a36h
+      sudo ./platform channel archive myteam:mychannel
 
 platform channel create
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -163,7 +181,7 @@ platform channel delete
 ~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Archives a channel with all related information, including posts. The channels are not deleted from the database. Channels can be specified by {team}:{channel} using the team and channel names or IDs.
+    Permanently delete a channel along with all related information, including posts from the database. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs.
 
   Format
     .. code-block:: none
@@ -213,7 +231,7 @@ platform channel restore
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Restore a previously deleted channel. Channels can be specified by {team}:{channel} using the team and channel names or IDs.
+    Restore a channel from the archive. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs.
 
   Format
     .. code-block:: none
@@ -642,6 +660,10 @@ platform user migrate\_auth
     .. code-block:: none
 
       sudo ./platform user migrate_auth email ladp email
+  Options
+    .. code-block:: none
+
+      --force  Ignore duplicate entries on the LDAP server.
 
 platform user password
 ~~~~~~~~~~~~~~~~~~~~~~~~

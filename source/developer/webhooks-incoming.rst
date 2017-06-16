@@ -81,7 +81,7 @@ You can create a webhook integration to post into any Mattermost public channels
 
 6. Including *@username* in the JSON payload will trigger a mention notification for the person with the specified username. Channels can be mentioned by including *@channel* or *<!channel>*. For example:  ``payload={"text": "<!channel> this is a notification""}`` would create a message that mentions *@channel*.
 
-7. Just like regular posts, the text will be limited to 4000 characters at maximum.
+7. If the text is longer than 4000 characters, the message is split into multiple consecutive posts, each within the 4000 character limit.
 
 8. Posts with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` in the JSON payload.
 

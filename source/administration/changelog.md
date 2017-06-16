@@ -4,6 +4,203 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
+## Release v3.10.0
+
+Release Date: June 16, 2017
+
+### Highlights
+
+#### Languages
+- Added Turkish translations for the user interface.
+
+#### New and Improved Keyboard Shortcuts
+- Redesigned the channel switcher (CTRL/CMD+K) for increased productivity.
+- Browse direct and group message channels (CTRL/CMD+SHIFT+K) and reply to the most recent message (SHIFT+UP) with new shortcuts.
+
+### Improvements
+
+#### Web User Interface
+- Enter key now confirms deletion on the screens to delete a custom emoji and delete a channel.
+- Team and channel URLs now replace accented characters with their ASCII equivalents.
+- Recent mentions and flagged posts icons in the header are now highlighted when they are active in the right-hand sidebar.
+- Empty rows are now ignored in the Send Email Invite modal.
+- Enter key now confirms leaving a team from the Leave Team modal.
+- Profile popover now opens when clicking a username in mobile browser view.
+- /join now allows switching to a private channel to which the user has access.
+- Improved the formatting of Mattermost content when copying and pasting to other apps.
+- Added the ability for users to view and modify their online status from their profile picture in the header.
+- /loadtest command changed to /test.
+- Ephemeral messages are removed from the right-hand sidebar after it is reopened.
+- Added a markdown preview option to the message editing modal.
+- Status indicators are now shown in the Direct Massages list.
+
+#### Notifications
+- Added "@here" to the list of channel-wide mentions in Account Settings.
+- Added a reminder when your Mattermost window is refreshed if a status override slash command is used to set yourself as /away or /offline.
+- Users will see a confirmation dialog when attempting to use @all or @channel in a channel with over 5 users.
+- Messages for others being added to a channel no longer trigger channels to be unread.
+
+#### Administration
+- Added CLI tool for permanently deleting channels.
+- Channel Admins can now delete user's messages within their channel if permitted in the System Console.
+- Errors are now logged when failing to load config through the command line.
+- Reduced unnecessary database reads and writes when bulk importing users.
+
+#### System Console
+- System Console main dropdown menu now has links to the Admin Guide, Troubleshooting Forum, Commercial Support Page and the About Mattermost dialog.
+- Added the ability to enable Legacy Signature (AWS Signature V2) with S3 compatible servers.
+
+#### Authentication
+- Added a redirect to the appropriate team, channel or post if navigating to a Mattermost URL when logged out.
+- Clicking a team invite link now joins the team in all active sessions.
+
+#### Performance
+- Upgraded GORP to support connection timeouts on MySQL and missing database columns on MySQL and Postgres.
+
+#### Integrations
+- Posts from webhooks that are greater than 4000 characters are now broken into multiple posts.
+
+#### Enterprise Edition
+- Added an announcement banner visible to all end users to make maintenance announcements across the system.
+
+### Bug Fixes
+- Dragging and dropping a file onto the left-hand sidebar no longer navigates away from Mattermost to open the file in the browser.
+- Textbox will no longer overlap the center pane message area as it expands when typing.
+- Fixed an issue where statuses could get stuck online after quitting the desktop app or closing the browser window in some cases.
+- Profile pictures uploaded on mobile are now rotated in their correct orientation.
+- The System Console help text for Minimum Password Length no longer dynamically updates as the input is changed.
+- Fixed an issue where the autocomplete list may appear underneath a modal overlay.
+- Updated error text when uploading a profile picture that is in an unsupported image format.
+- Joined channels no longer appear in the "More..." channels list.
+- Wide markdown images no longer cause horizontal scrolling in the center pane.
+- Fixed theme styling for button active states.
+- Fixed an issue where channels sometimes did not appear read if the channel was in focus when a new message was received.
+- Fixed an issue where the autocomplete list would not close after using a slash command.
+- Removed the system warning message that appears if mentioning a user that is not a member of a group message.
+- Fixed an issue where wide embedded images produce horizontal scroll.
+- Fixed a Javascript error that would occur when opening the System Console > SAML page.
+- Removed the Channel Admin user interface in Team Edition since the policy restrictions are only available in Enterprise Edition.
+- Adding a reaction to an ephemeral message no longer throws a Javascript error.
+- Fixed an issue where clicking autocomplete suggestions would not populate the search box with the appropriate text.
+- Fixed an issue where the System Console users list ignored the search term after selecting a team from the filter.
+- Channel header messages no longer appear cut-off if using a slash.
+- Corrected the formatting of the "Edited" indicator in the right-hand sidebar.
+- Fixed the positioning of the pin icon and channel header on Edge.
+
+### Compatibility  
+
+#### Removed and deprecated features
+- System Console settings in **Files > Images** scheduled for removal in July 2017 release. This includes:
+  - Image preview height and width
+  - Profile picture height and width
+  - Image thumbnail height and width
+- Account Settings options for **Display** > **Display Font** and **Display** > **Teammate Name Display** are scheduled for removal in July 2017 release.
+- All APIv3 endpoints are scheduled for removal six months after APIv4 is stable.
+
+For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
+
+#### config.json   
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+**Changes to Team Edition and Enterprise Edition**:
+ - Under `ServiceSettings` in `config.json`:
+   - Added `"GoroutineHealthThreshold": -1,` to set a threshold for number of goroutines.
+- Under `SqlSettings` in `config.json`:
+   - Added `"QueryTimeout": 30` to set the number of seconds to wait for a response from the database after opening a connection and sending the query.
+- Under `FileSettings` in `config.json`:
+   - Added `"AmazonS3SignV2": false` to enable Legacy Signature (AWS Signature V2) with S3 compatible servers.
+
+**Additional Changes to Enterprise Edition**:
+ - Under `AnnoucementSettings` in `config.json`:
+   - Added `"EnableBanner": false,` to enable an announcement banner visible for all users.
+   - Added `"BannerText": "",` to specify the text shown in the banner.
+   - Added `"BannerColor": "#f2a93b",` to set the banner background color.
+   - Added `"BannerTextColor": "#333333",` to set the banner text color.
+   - Added `"AllowBannerDismissal": true` to set whether the banner can be dismissed by users.
+
+### API Changes
+- Mattermost 3.10 has a release candidate of APIv4 endpoints. To see the complete list of available endpoints, see [https://api.mattermost.com/v4/](https://api.mattermost.com/v4/).
+- All APIv3 endpoints are scheduled for removal six months after APIv4 is stable.
+
+**Modified routes (APIv4)**
+- `/system/ping` updated to return `500 Internal Server Error` with `{"status": "unhealthy"}` in the response body when `GoroutineHealthThreshold` is set in config.json and the number of goroutines on the server exceeds that threshold. If the number of goroutines is below the threshold or `GoroutineHealthThreshold` is not set in config.json, `200 OK` is returned with no response body.
+
+
+### Known Issues
+
+- Google login fails on the mobile apps.
+- Edge overlays desktop notification sound and system notification sound.
+- Status appears offline briefly after joining a new team.
+- User popover can get cropped in the center channel on iOS.
+- Clicking on a channel during the tutorial makes the tutorial disappear.
+- Custom emoji search results filter by the creator's first/last name in addition to the emoji name.
+- Reactions are displayed on messages deleted by other users.
+- User can receive a video call from another browser tab while already on a call.
+- Search autocomplete picker is broken on Android.
+- Jump link in search results does not always jump to display the expected post.
+- First load of the emoji picker is slow on low-speed connections.
+- Emoji picker for reactions doesn't always position correctly.
+- Scrollbar is sometimes not visible in the left-hand sidebar after switching teams.
+- New direct messages received while in no teams do not show as unread after joining a team.
+- User is not logged out immediately when logging self out from Active Sessions list.
+- Certain code block labels don't appear while scrolling on iOS mobile web.
+- CTRL+SHIFT+K doesn't toggle modal open and closed.
+- Deactivated users do not appear in the Direct Message and Group Message sidebar channel list.
+- Outgoing webhooks do not fire when posts have no text content.
+
+### Contributors
+
+Many thanks to all our contributors. In alphabetical order:
+
+/platform
+
+- [asaadmahmood](https://github.com/asaadmahmood), [coreyhulen](https://github.com/coreyhulen), [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [dmeza](https://github.com/dmeza), [doh5](https://github.com/doh5), [enahum](https://github.com/enahum), [grundleborg](https://github.com/grundleborg), [harshavardhana](https://github.com/harshavardhana), [hmhealey](https://github.com/hmhealey), [jasonblais](https://github.com/jasonblais), [jwilander](https://github.com/jwilander), [kulak-at](https://github.com/kulak-at), [saturninoabril](https://github.com/saturninoabril), [tjuerge](https://github.com/tjuerge)
+
+/docs
+
+- [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [esethna](https://github.com/esethna), [hmhealey](https://github.com/hmhealey),  [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [jwilander](https://github.com/jwilander), [kjkeane](https://github.com/kjkeane), [lindy65](https://github.com/lindy65), [mikedaniel18](https://github.com/MikeDaniel18)
+
+/mattermost-api-reference
+
+- [94117nl](https://github.com/94117nl), [cpanato](https://github.com/cpanato),  [hmhealey](https://github.com/hmhealey), [jwilander](https://github.com/jwilander), [senk](https://github.com/senk)
+
+/mattermost-redux
+
+- [94117nl](https://github.com/94117nl), [cpanato](https://github.com/cpanato), [enahum](https://github.com/enahum), [jarredwitt](https://github.com/jarredwitt), [jwilander](https://github.com/jwilander) 
+
+/mattermost-mobile
+
+-  [asaadmahmood](https://github.com/asaadmahmood), [cpanato](https://github.com/cpanato), [csduarte](https://github.com/csduarte), [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [lfbrock](https://github.com/lfbrock), [rthill](https://github.com/rthill) 
+
+/desktop
+
+- [yuya-oc](https://github.com/yuya-oc)
+
+/mattermost-docker
+
+- [carlosasj](https://github.com/carlosasj), [FingerLiu](https://github.com/FingerLiu), [mkdbns](https://github.com/mkdbns),  [pichouk](https://github.com/pichouk), [xcompass](https://github.com/xcompass)
+
+/android
+
+- [coreyhulen](https://github.com/coreyhulen), [der-test](https://github.com/der-test),  [lfbrock](https://github.com/lfbrock) 
+
+/mattermost-selenium
+
+- [doh5](https://github.com/doh5),  [lindalumitchell](https://github.com/lindalumitchell) 
+
+/gorp
+
+- [jwilander](https://github.com/jwilander)
+
+/ios
+
+- [coreyhulen](https://github.com/coreyhulen), [PrestonL](https://github.com/PrestonL) 
+
+/mattermost-kubernetes
+
+- [coreyhulen](https://github.com/coreyhulen) 
+
 
 ## Release v3.9.0
 
