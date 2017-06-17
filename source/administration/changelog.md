@@ -6,8 +6,93 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v4.0.0
 
-Release Date: July 17, 2017
+Release Date: July 16, 2017
 
+### Highlights
+
+- // Stable release of next-generation RN mobile apps
+- // Updated UI
+- // APIv4 and Redux: Web app moved to APIv4 [stable release of APIv4]; API developer key?
+- // Performance [refactor caching code; gossip APIs]
+- // Emoji picker our of beta
+- // Website previews out of beta?
+- // EE: Kubernetes orchestration for cluster environments, with loadtesting framework
+- // E20: Elastic search (Beta?)
+
+### Improvements
+
+#### Web User Interface
+- On hover colour for pin and channel member icons now consistent with flag and recent mentions icons.
+- Emojis are now vertically aligned in post view.
+
+#### Mobile Web UI
+- Added "Create Team" option to Main Menu.
+- User profile popover no longer gets cropped in the center channel on iOS.
+- Link preview image now resizes correctly on iOS.
+
+#### Link Previews
+- After posting a message containing an image link, a preview is loaded only if one is available.
+
+### Bug Fixes
+- Emoji picker now closes in Firefox when clicking outside of it.
+- Clicking on emoji icon to react to a post near the top of the channel or the right-hand side comment thread now positions the picker correctly.
+- [...] menu no longer disappears in the comment thread when hovering over another post.
+- New direct messages received while in no teams do not show as unread after rejoining a team.
+- Fixed JavaScript errors when receiving messages when not belonging to a team.
+- An empty push notification now longer sent for messages only containing file attachments.
+- Custom emoji search results no longer filter by creator's first and last name.
+
+### Compatibility  
+
+#### Removed and deprecated features
+- System Console settings in **Files > Images** removed. This includes:
+  - Image preview height and width
+  - Profile picture height and width
+  - Image thumbnail height and width
+- Font setting in Account Settings > Display removed.
+- Account Settings options for **Display** > **Display Font** and **Display** > **Teammate Name Display** moved to the System Console.
+- All APIv3 endpoints are scheduled for removal six months after APIv4 is stable (January 16, 2018).
+
+For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
+
+#### config.json   
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+**Changes to Team Edition and Enterprise Edition**:
+
+**Additional Changes to Enterprise Edition**:
+// Elastic Search
+// Data Retention
+
+### API v4 Changes
+- Stable release
+- All APIv3 endpoints are scheduled for removal six months after APIv4 is stable (January 16, 2018).
+
+**Modified routes**
+- `DELETE` at `/teams/{team_id}`
+  - Added an optional query parameter, `permanent`, to permanently delete a team for complience reasons.
+
+### Known Issues
+
+- Google login fails on the mobile apps.
+- Edge overlays desktop notification sound and system notification sound.
+- Status appears offline briefly after joining a new team.
+- Clicking on a channel during the tutorial makes the tutorial disappear.
+- Custom emoji search results filter by the creator's first/last name in addition to the emoji name.
+- Reactions are displayed on messages deleted by other users.
+- User can receive a video call from another browser tab while already on a call.
+- Search autocomplete picker is broken on Android.
+- Jump link in search results does not always jump to display the expected post.
+- First load of the emoji picker is slow on low-speed connections.
+- Scrollbar is sometimes not visible in the left-hand sidebar after switching teams.
+- User is not logged out immediately when logging self out from Active Sessions list.
+- Certain code block labels don't appear while scrolling on iOS mobile web.
+- CTRL+SHIFT+K doesn't toggle modal open and closed.
+- Deactivated users do not appear in the Direct Message and Group Message sidebar channel list.
+- Outgoing webhooks do not fire when posts have no text content.
+
+### Contributors
 
 ## Release v3.10.0
 
