@@ -103,6 +103,18 @@ The paid simulation project typically consists of a collection of challenging `H
 
 A flat rate of $750 USD is offered to attempt the simulation project. This amount is a standard fee for simulations and not an indicator of the final offer that would be extended to a successful candidate. A `standard click-sign services agreement <https://docs.google.com/document/d/1G4wFLq_wHHEDJ-hrv5Kmu022mFJgh3rJ4-glM0W6riI/edit#heading=h.u3m8fmn6xapr>`_ is used to accept the fee. The fee is paid regardless of whether the project is completed. 
 
+While you're working on the project, you can join the Mattermost community site at https://pre-release.mattermost.com/core/. 
+
+Once signed-in, the following channels are recommended for observing how the core committers work with the community to ship new releases: 
+
+- https://pre-release.mattermost.com/core/channels/developers
+- https://pre-release.mattermost.com/core/channels/bugs
+- https://pre-release.mattermost.com/core/channels/release-checklist
+- https://pre-release.mattermost.com/core/channels/release-discussion
+- https://pre-release.mattermost.com/core/channels/peer-to-peer-help
+
+Observing these public channels as you work will give you a good sense of what it is like to work at Mattermost in a full time capacity to ensure joining the company aligns to your interests and desired career direction. 
+
 Frequently Asked Questions 
 --------------------------------------------------
 
