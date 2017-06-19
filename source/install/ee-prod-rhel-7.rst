@@ -20,7 +20,7 @@ Install Red Hat Enterprise Linux (x64) 7.1+
 2. Make sure the system is up to date with the most recent security
    patches.
 
-   -  ``sudo dnf upgrade``
+   -  ``sudo yum upgrade``
 
 Set up Database Server
 ----------------------
@@ -40,8 +40,8 @@ section.
 
 2.  Install PostgreSQL 9.4+ (or MySQL 5.6+)
 
-    -  ``sudo dnf install http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/pgdg-redhat94-9.4-1.noarch.rpm``
-    -  ``sudo dnf install postgresql94-server postgresql94-contrib``
+    -  ``sudo yum install http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/pgdg-redhat94-9.4-1.noarch.rpm``
+    -  ``sudo yum install postgresql94-server postgresql94-contrib``
     -  ``sudo /usr/pgsql-9.4/bin/postgresql94-setup initdb``
     -  ``sudo systemctl enable postgresql.service``
     -  ``sudo systemctl start postgresql.service``
@@ -250,7 +250,7 @@ Set up NGINX Server
           gpgcheck=0
           enabled=1
 
-   -  ``sudo dnf install nginx.x86_64``
+   -  ``sudo yum install nginx.x86_64``
    -  ``sudo service nginx start``
    -  ``sudo chkconfig nginx on``
 
@@ -305,7 +305,7 @@ Set up NGINX with SSL (Recommended)
 1. You can use a free and an open certificate security like `Let's
    Encrypt <https://letsencrypt.org/>`_, this is how to proceed
 
--  ``sudo dnf install git``
+-  ``sudo yum install git``
 -  ``git clone https://github.com/letsencrypt/letsencrypt``
 -  ``cd letsencrypt``
 
