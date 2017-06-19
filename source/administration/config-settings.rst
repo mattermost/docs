@@ -681,7 +681,7 @@ ________
 
 Authentication
 -------------------------------
-Authentication settings to enable account creation and sign in with email, GitLab, Google or Office 365 OAuth, AD/LDAP, or SAML.
+Authentication settings to enable account creation and sign in with email, username, GitLab, AD/LDAP (E10), or SAML (E20).
 
 Email Auth
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -722,7 +722,7 @@ ________
 
 OAuth 2.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-*Available in Enterprise Edition E10 and higher*
+*Available in Enterprise Edition E20 and higher*
 
 Settings to configure OAuth login for account creation and login.
 
@@ -732,8 +732,8 @@ Choose whether OAuth can be used for account creation and login. Options include
 
     - **Do not allow sign-in via an OAuth 2.0 provider**
     - **GitLab** (see `GitLab Settings <http://docs.mattermost.com/administration/config-settings.html#id14>`_ for more detail)
-    - **Google Apps** (see `Google Settings <http://docs.mattermost.com/administration/config-settings.html#google-enterprise>`_ for more detail)
-    - **Office 365 (Beta)** (see `Office 365 Settings <http://docs.mattermost.com/administration/config-settings.html#office-365-enterprise>`_ for more detail)
+    - **(Deprecated) Google Apps** (see `Google Settings <http://docs.mattermost.com/administration/config-settings.html#google-enterprise>`_ for more detail)
+    - **(Deprecated) Office 365** (see `Office 365 Settings <http://docs.mattermost.com/administration/config-settings.html#office-365-enterprise>`_ for more detail)
 
 This feature's setting does not appear in ``config.json``.
 
@@ -795,7 +795,7 @@ Enter ``https://<your-gitlab-url>/oauth/token`` (example: ``https://example.com:
 
 ________
 
-Google
+(Deprecated) Google
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
 
@@ -851,7 +851,7 @@ It is recommended to use `https://www.googleapis.com/oauth2/v4/token` as the Tok
 
 ________
 
-Office 365
+(Deprecated) Office 365
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
 
