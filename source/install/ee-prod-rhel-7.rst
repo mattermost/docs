@@ -82,7 +82,7 @@ section.
   
   b. Find the following line:
   
-    ``#listen_addresses = 'localhost'``Uncomment ``
+    ``#listen_addresses = 'localhost'``
     
   c. Uncomment the line and change ``localhost`` to ``*``:
   
