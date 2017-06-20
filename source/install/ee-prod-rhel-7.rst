@@ -20,6 +20,7 @@ Install Red Hat Enterprise Linux (x64) 7.1+
 2. Make sure the system is up to date with the most recent security
    patches.
 
+   -  ``sudo yum update``
    -  ``sudo yum upgrade``
 
 Set up Database Server
@@ -40,11 +41,11 @@ section.
 
 2.  Install PostgreSQL 9.4+ (or MySQL 5.6+)
 
-    -  ``sudo yum install http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/pgdg-redhat94-9.4-1.noarch.rpm``
+    -  ``sudo yum install http://yum.postgresql.org/9.4/redhat/rhel-7-x86_64/pgdg-redhat94-9.4-3.noarch.rpm``
     -  ``sudo yum install postgresql94-server postgresql94-contrib``
     -  ``sudo /usr/pgsql-9.4/bin/postgresql94-setup initdb``
-    -  ``sudo systemctl enable postgresql.service``
-    -  ``sudo systemctl start postgresql.service``
+    -  ``sudo systemctl enable postgresql-9.4.service``
+    -  ``sudo systemctl start postgresql-9.4.service``
 
 3.  PostgreSQL created a user account called ``postgres``. You will need
     to log into that account with:
@@ -75,17 +76,39 @@ section.
 
     -  ``exit``
 
-10. Alter ``/var/lib/pgsql/9.4/data/postgresql.conf`` to allow Postgres to listen
-on all assigned IP Addresses:
+10. Allow Postgres to listen on all assigned IP Addresses:
 
-    -  Uncomment ``listen_addresses`` and change ``localhost`` to ``\*``
+  a. Open ``/var/lib/pgsql/9.4/data/postgresql.conf`` as root in a text editor
+  
+  b. Find the following line:
+  
+    ``#listen_addresses = 'localhost'``Uncomment ``
+    
+  c. Uncomment the line and change ``localhost`` to ``*``:
+  
+    ``listen_addresses = '*'``
 
-11. Alter ``/var/lib/pgsql/9.4/data/pg_hba.conf`` to allow the Mattermost Server to talk to the
-    Postgres database:
+11. Modify the file ``pg_hba.conf`` to allow the Mattermost server to communicate with the database.
 
-    -  Add the following line to the ``IPv4 local connections``:
-    -  ``host all all 10.10.10.2/32 md5``
+  **If the Mattermost server and the database are on the same machine**:
 
+    a. Open ``/var/lib/pgsql/9.4/data/pg_hba.conf`` as root in a text editor.
+
+    b. Find the following line:
+
+      ``local   all             all                        peer``
+
+    c. Change ``peer`` to ``trust``:
+
+      ``local   all             all                        trust``
+
+  **If the Mattermost server and the database are on different machines**:
+
+    a. Open ``/var/lib/pgsql/9.4/data/pg_hba.conf`` as root in a text editor.
+
+    b. Add the following line to the end of the file, where *{mattermost-server-IP}* is the IP address of the machine that contains the Mattermost server.
+
+      ``host all all {mattermost-server-IP}/32 md5``
 12. Reload Postgres database:
 
     -  ``sudo systemctl reload postgresql.service``
