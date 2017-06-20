@@ -111,7 +111,7 @@ section.
       ``host all all {mattermost-server-IP}/32 md5``
 12. Reload Postgres database:
 
-    -  ``sudo systemctl reload postgresql.service``
+    -  ``sudo systemctl reload postgresql-9.4.service``
 
 13. Attempt to connect with the new created user to verify everything
     looks good:
@@ -130,7 +130,7 @@ Set up Mattermost Server
 2. Download `any version of Mattermost Enterprise Edition <https://docs.mattermost.com/administration/upgrade.html#version-archive>`_ by typing:
 
    -  ``wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz``
-   -  Where ``vX.X.X`` is typically the latest Mattermost release version, which is currently ``v3.3.0``.
+   -  Where ``vX.X.X`` is typically the latest Mattermost release version, which is currently ``v3.10.0``.
 
 3. Install Mattermost under ``/opt``
 
@@ -190,7 +190,7 @@ Set up Mattermost Server
 
           [Unit]
           Description=Mattermost server
-          After=network.target postgresql.service
+          After=network.target postgresql-9.4.service
 
           [Service]
           User=mattermost
