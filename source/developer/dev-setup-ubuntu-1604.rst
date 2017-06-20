@@ -88,4 +88,8 @@ Set up your development environment for building, running, and testing Mattermos
 
     ``git clone https://github.com/{username}/platform.git``
 
+9. Install zip. 
+
+    ``sudo apt-get install zip``
+
 Now that everything is set up, you are ready to compile and run Mattermost. See :doc:`dev-setup-compiling`.
