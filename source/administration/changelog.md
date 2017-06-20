@@ -32,7 +32,7 @@ Release Date: June 16, 2017
 - /loadtest command changed to /test.
 - Ephemeral messages are removed from the right-hand sidebar after it is reopened.
 - Added a markdown preview option to the message editing modal.
-- Status indicators are now shown in the Direct Massages list.
+- Status indicators are now shown in the Direct Messages list.
 
 #### Notifications
 - Added "@here" to the list of channel-wide mentions in Account Settings.
