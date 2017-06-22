@@ -43,10 +43,10 @@ Transmission Security
 Integrity & Audit Controls
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   - By default, Mattermost stores a complete history of messages, including edits and deletes, along with all files uploaded. User interface actions for "deleting" messages and channels remove the data only from the user interface; the data is retained within your database.
+   - By default, Mattermost stores a complete history of messages, including edits and deletes, along with all files uploaded. User interface actions for "deleting" messages and channels remove the data only from the user interface; the data is retained within your database. If your compliance guidelines require it, you can turn off users' ability to edit and delete their messages after they are posted.
    - The `output and archives of server logs <https://docs.mattermost.com/administration/config-settings.html#file-log-directory>`_ can be saved to a directory of your choice. Mattermost server logs plus logs from your web proxy can provide an end-to-end history of system usage.
    - `Ad hoc compliance reports of messaging by user, date range, and keyword, including edited and deleted messages <https://docs.mattermost.com/administration/compliance.html>`_ are available (E20). To protect against unauthorized use, all ad hoc report requests are logged.
-   - Daily compliance reports compatible with 3rd compliance solutions such as `Global Relay <https://docs.mattermost.com/administration/compliance.html#global-relay-support>`_ are also available (E20).
+   - Daily compliance reports compatible with 3rd party compliance solutions such as `Global Relay <https://docs.mattermost.com/administration/compliance.html#global-relay-support>`_ are also available (E20).
 
 Authentication Safeguards
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
