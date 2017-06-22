@@ -130,7 +130,7 @@ Set up Mattermost Server
 2. Download `any version of Mattermost Enterprise Edition <https://docs.mattermost.com/administration/upgrade.html#version-archive>`_ by typing:
 
    -  ``wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz``
-   -  Where ``vX.X.X`` is typically the latest Mattermost release version, which is currently ``v3.10.0``.
+   -  Where ``vX.X.X`` is typically the latest Mattermost release version, which you can find out from the `download page <https://about.mattermost.com/download/>`_.
 
 3. Install Mattermost under ``/opt``
 
