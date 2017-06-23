@@ -21,7 +21,7 @@ You can create a webhook integration to post into any Mattermost public channels
 
     curl -i -X POST -d 'payload={"text": "Hello, this is some text.\nThis is more text."}' http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
 
-You should see the result in the channel for which the webhook was created. 
+  e. You should see the result in the channel for which the webhook was created. 
 
 More about Webhooks
 ---------------------------------------------
