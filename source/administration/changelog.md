@@ -24,9 +24,14 @@ Release Date: July 16, 2017
 #### Web User Interface
 - On hover colour for pin and channel member icons now consistent with flag and recent mentions icons.
 - Emojis are now vertically aligned in post view.
+- Channel name, header and purpose now update real time for all users.
+- For reply threads in the center channel, the "Commented on" phrase now respects the teammate name display setting.
+- Code block language tag is no longer selectable making it easier to copy the code.
+- Aligned the search box with right-hand side reply thread.
 
 #### Mobile Web UI
-- Added "Create Team" option to Main Menu.
+- Added "Create Team" and "Leave Team" options to the Main Menu.
+- Updated the look of Account Settings pages on mobile.
 - User profile popover no longer gets cropped in the center channel on iOS.
 - Link preview image now resizes correctly on iOS.
 
@@ -36,11 +41,18 @@ Release Date: July 16, 2017
 ### Bug Fixes
 - Emoji picker now closes in Firefox when clicking outside of it.
 - Clicking on emoji icon to react to a post near the top of the channel or the right-hand side comment thread now positions the picker correctly.
+- Emoji picker is no longer cut off on the right-hand side comment thread.
 - [...] menu no longer disappears in the comment thread when hovering over another post.
 - New direct messages received while in no teams do not show as unread after rejoining a team.
 - Fixed JavaScript errors when receiving messages when not belonging to a team.
-- An empty push notification now longer sent for messages only containing file attachments.
+- An empty push notification no longer sent for messages only containing file attachments.
 - Custom emoji search results no longer filter by creator's first and last name.
+- New user profile pictures now update for other users upon refresh.
+- `/expand` and `/collapse` slash commands now properly collapse images in website link previews.
+- Group Message channels that are favorited can now be closed.
+- CTRL+SHIFT+K shortcut now toggles the Direct Message dialog open and closed.
+- Deactivated users now properly listed in Direct and Group Message channels in the left-hand sidebar.
+- Fixed search in team and channel Manage Members dialog.
 
 ### Compatibility  
 
@@ -84,11 +96,10 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - User can receive a video call from another browser tab while already on a call.
 - Search autocomplete picker is broken on Android.
 - Jump link in search results does not always jump to display the expected post.
-- First load of the emoji picker is slow on low-speed connections.
+- First load of the emoji picker is slow on low-speed connections or on deployments with hundreds of custom emoji.
 - Scrollbar is sometimes not visible in the left-hand sidebar after switching teams.
 - User is not logged out immediately when logging self out from Active Sessions list.
 - Certain code block labels don't appear while scrolling on iOS mobile web.
-- CTRL+SHIFT+K doesn't toggle modal open and closed.
 - Deactivated users do not appear in the Direct Message and Group Message sidebar channel list.
 - Outgoing webhooks do not fire when posts have no text content.
 
