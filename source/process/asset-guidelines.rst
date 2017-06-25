@@ -73,30 +73,36 @@ Step-by-Step Asset Creation Guide for Artists
 
 Follow these steps to create an asset for integration or feature promotion, integration blog tweet, or user award tweet.
 
+You can find sample templates for integration promotions, guest blog posts and feature promotion `in this Google drive <https://drive.google.com/drive/folders/0Bx-9w8QDFlfcdEdXM3N3Z1hsY2c>`_.
+
 Integration or Feature Promotion
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Use this `template <https://drive.google.com/file/d/0Bx-9w8QDFlfcTXZzNklfYU1xOXM/view>`_ as a starting point
-2. Change text in the "copy - title" layer following the guidelines in `Feature Title`_
-3. Change text in the "by Galois, Inc." layer to replace the name with appropriate creator name following the guidelines in `Feature Creator`_
-4. Change the contents of the "featured image" folder to update representative art following the guidelines in `Feature Representative Art`_
-5. Replace the "logo - matterhorn" layer to update representative logo(s) following the guidelines in `Mattermost and Representative Logos`_
-6. Save the finished asset draft in both .TIF and .PNG format, and upload to your "Dropbox Share" folder
+1. Use this `template <https://drive.google.com/file/d/0Bx-9w8QDFlfcVDZuOFduV2RKaXM/view?usp=sharing>`_ as a starting point.
+2. Change text in the "copy - title" layer following the guidelines in `Feature Title`_.
+3. Change text in the "by Galois, Inc." layer to replace the name with appropriate creator name following the guidelines in `Feature Creator`_.
+4. Change the contents of the "featured image" folder to update representative art following the guidelines in `Feature Representative Art`_.
+5. Replace the "logo - matterhorn" layer to update representative logo(s) following the guidelines in `Mattermost and Representative Logos`_.
+6. Save the finished asset draft in both .TIF and .PNG format, and upload to your "Dropbox Share" folder.
 
 Integration Blog
 ^^^^^^^^^^^^^^^^^
 
+**These guidelines are out of date and should be updated for the new banner design**
+
 Occasionally a blog post will be written to further promote an integration. Follow these steps to create a marketing asset promoting said blog entry:
 
-1. Use this `template <https://www.dropbox.com/s/w832mo3tgxjreb5/20160207_blog_puppet.tif?dl=0>`_ as a starting point
-2. Change text in the "title" layer to read “Meet the Creator:”, followed by the proper integration name
-3. Change text in the "by liger1978" layer to the integration creator's name
-4. Change the contents in the "right image" layer to include proper representative logo, followed by a split with the blue Mattermost logo. This helps create the message that it’s the representative and Mattermost together
-5. Obtain a photo of the integration creator, apply a Wall Street Journal “Hedcut” effect, and update the "Left Image" layer. A helpful tutorial for how to achieve the "Hedcut" effect can be found `here <http://www.alleba.com/blog/2006/12/20/photoshop-tutorial-the-hedcut-effect/>`_
-6. Save the finished asset draft in both .TIF and .PNG format, and upload to your "Dropbox Share" folder
+1. Use this `template <https://drive.google.com/file/d/0Bx-9w8QDFlfcQURoRnF1YllZWWc/view?usp=sharing>`_ as a starting point.
+2. Change text in the "title" layer to read “Meet the Creator:”, followed by the proper integration name.
+3. Change text in the "by liger1978" layer to the integration creator's name.
+4. Change the contents in the "right image" layer to include proper representative logo, followed by a split with the blue Mattermost logo. This helps create the message that it’s the representative and Mattermost together.
+5. Obtain a photo of the integration creator, apply a Wall Street Journal “Hedcut” effect, and update the "Left Image" layer. A helpful tutorial for how to achieve the "Hedcut" effect can be found `here <http://www.alleba.com/blog/2006/12/20/photoshop-tutorial-the-hedcut-effect/>`_.
+6. Save the finished asset draft in both .TIF and .PNG format, and upload to your "Dropbox Share" folder.
 
 User Award
 ^^^^^^^^^^^
+
+**These guidelines are out of date and should be updated for the new banner design**
 
 Occasionally a blog post will be written to recognize a member for their contributions to Mattermost. Follow these steps to create a marketing asset promoting said blog entry:
 
@@ -127,7 +133,7 @@ Feature Creator
 ^^^^^^^^^^^^^^^^
 
 1. Appears in the bottom right corner of the asset footer
-2. Text in footer should be in ALL lower case i.e. “by matterhorn-chat”
+2. Text in footer should use GitHub username in lowercase, or company/person name in capital case i.e. ``by matterhorn-chat`` or ``by Galois, Inc.``
 3. When the background is blue, the footer should be black. When the background is white, the footer should be blue.
 4. Displays who created the integration (Twitter or GitHub account of the creator)
 5. If text doesn’t blend well with left pane representative art, adjust the outer glow effect
