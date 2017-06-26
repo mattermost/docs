@@ -12,12 +12,10 @@ Release Date: July 16, 2017
 
 - // Stable release of next-generation RN mobile apps
 - // Updated UI
-- // APIv4 and Redux: Web app moved to APIv4 [stable release of APIv4]; API developer key?
+- // APIv4 and Redux: Web app moved to APIv4 [stable release of APIv4]
 - // Performance [refactor caching code; gossip APIs]
-- // Emoji picker our of beta
-- // Website previews out of beta?
+- // Emoji picker our of beta?
 - // EE: Kubernetes orchestration for cluster environments, with loadtesting framework
-- // E20: Elastic search (Beta?)
 
 ### Improvements
 
