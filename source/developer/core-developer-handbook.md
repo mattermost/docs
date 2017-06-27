@@ -64,7 +64,7 @@ Core developers are expected to code review pull requests submitted to the Matte
 On code complete day, work with the PM on rotation to get all the pull requests for the current release merged into `master`. Once that is done and you've confirmed with the PM, cut the first release candidate by following these steps:
 
 1. Submit a PR to uncomment the upgrade code for the release version and add it to the version array. Use these PRs as examples, [https://github.com/mattermost/platform/pull/6336/files](https://github.com/mattermost/platform/pull/6336/files) and [https://github.com/mattermost/platform/pull/6600/files](https://github.com/mattermost/platform/pull/6600/files).
-2. Once the above PR is merged, post `/mb cut X.X.X-rc1` into a private channel. Replace `X.X.X` with the release version, ex: `3.10.0`. This will begin cutting the build and make an automatic post to the Release Disucssion channel.
+2. Once the above PR is merged, post `/mb cut X.X.X-rc1` into a private channel. Replace `X.X.X` with the release version, ex: `3.10.0`. This will begin cutting the build and make an automatic post to the Release Discussion channel.
 3. Wait approximately 40 minutes for the build to finish. If the build fails, you will need to delete the version tags from the platform and enterprise repositories by running `git push origin :vX.X.X-rc1` in both of them. Then simply repeat step 2. You can monitor build status from https://build.mattermost.com.
 4. Once the build finishes, submit a PR to `master` to add the upgrade code for the next release. For example, [https://github.com/mattermost/platform/pull/6337/files](https://github.com/mattermost/platform/pull/6337/files) and [https://github.com/mattermost/platform/pull/6616/files](https://github.com/mattermost/platform/pull/6616/files).
 
@@ -87,7 +87,7 @@ When it's time to cut the final build, confirm with the PM that no more changes 
 1. Post `/mb cut X.X.X` into a private channel, replacing `X.X.X` with the release version.
 2. Just like before, if the build fails you can delete the tags and re-run it.
 
-The links to download the final build will be posted in the Release Discussion channel. Congratualations you've cut a release!
+The links to download the final build will be posted in the Release Discussion channel. Congratulations you've cut a release!
 
 After a couple days pass you will need to set the CI servers to point back to `master`. To do this:
 
