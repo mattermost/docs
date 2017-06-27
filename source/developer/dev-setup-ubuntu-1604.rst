@@ -64,7 +64,7 @@ Set up your development environment for building, running, and testing Mattermos
 
     a. Add the Node.js repository to your repository list.
 
-      ``curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -``
+      ``curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -``
 
     b. Install Node.js
 
