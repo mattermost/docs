@@ -1,9 +1,9 @@
 ..  _prod-debian:
 
-Production Install on Debian Jessie
-===================================
+Production Install on Debian Jessie (Unofficial)
+================================================
 
-Install Mattermost in production mode on one, two or three machines, using the following steps:
+Install Mattermost in production mode on one, two, or three machines, using the following steps:
 
 .. important:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. `Community testing, feedback and improvements are welcome and greatly appreciated. <https://github.com/mattermost/platform/issues/1185>`_
 
