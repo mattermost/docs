@@ -3,6 +3,9 @@ Attaching Files
 
 --------------
 
+Sharing project plans, new designs, and images can make your messages more 
+effective and clear.
+
 Attachment Methods
 ------------------
 Attach a file by drag and drop or by clicking the attachment icon in the
@@ -12,16 +15,16 @@ Drag and Drop
 ~~~~~~~~~~~~~
 Upload a file or selection of files by dragging the files from your
 computer into the right-hand sidebar or center pane. Dragging and
-dropping attaches the files to the message input box. After dropping files, can
-optionally type a message and press **ENTER** to post.
+dropping attaches the files to the message input box. After dropping files,
+you can optionally type a message and press **ENTER** to post.
 
 Attachment Icon
 ~~~~~~~~~~~~~~~
-Alternatively, upload files by clicking the grey paperclip icon inside
-the message input box. This opens up your system file viewer where you
-can navigate to the desired files and then click **Open** to upload the
-files to the message input box. Optionally type a message and then press
-**ENTER** to post.
+Alternatively, you can upload files by clicking the grey paperclip icon
+inside the message input box. This opens up your system file viewer where
+you can navigate to the desired files and then click **Open** to upload
+the files to the message input box. Optionally type a message and then
+press **ENTER** to post.
 
 Pasting Images
 ~~~~~~~~~~~~~~
@@ -71,4 +74,4 @@ File Size Limitations
 ---------------------
 Mattermost supports a maximum of five attached files per post.
 
-The default maximum file size is 50 MB, but this can be changed by the System Adminstrator.
+The default maximum file size is 50 MB, but this can be changed by the System Administrator.
