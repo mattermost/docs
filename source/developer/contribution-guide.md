@@ -46,9 +46,9 @@ Before submitting a pull request (PR), check that:
 7. If change requires user to understand a new concept or make a decision, PR for help documentation is submitted to [mattermost/docs](https://github.com/mattermost/docs).
 8. Change is thoroughly tested. If your change involves text processing, make sure to at least run markdown loadtests in [`/tests`](https://github.com/mattermost/platform/tree/master/tests) before submitting the PR. To run the loadtests:
     - Go to **System Console** > **Developer** and set **Enable Testing Commands** to true
-    - Run `/loadtest url test-markdown-basics.md` and follow the instructions
-    - Run `/loadtest url test-markdown-lists.md` and follow the instructions
-    - Run `/loadtest url test-tables.md` and follow the instructions
+    - Run `/test url test-markdown-basics.md` and follow the instructions
+    - Run `/test url test-markdown-lists.md` and follow the instructions
+    - Run `/test url test-tables.md` and follow the instructions
 9. Confirm you have [squashed your commits](http://git-scm.com/book/en/v2/Git-Tools-Rewriting-History#Squashing-Commits).
 
 ## Submitting a Pull Request 
