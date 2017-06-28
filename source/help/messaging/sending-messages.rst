@@ -1,5 +1,7 @@
 .. _sending-messages:
 
+Sending messages is an effective way to keep conversation active with your team.
+
 Sending Messages
 ================
 
