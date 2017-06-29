@@ -73,17 +73,37 @@ Mattermost Server Configuration
 Configuration Settings
 ^^^^^^^^^^^^^^^^^^^^^^
 
-High availability is configured in the ``ClusterSettings`` section of ``config.json`` and the settings are viewable in the System Console. When high availability is enabled, the System Console is set to read-only mode to ensure all the ``config.json`` files on the Mattermost servers are identical.
+1. High availability is configured in the ``ClusterSettings`` section of ``config.json`` and the settings are viewable in the System Console. When high availability is enabled, the System Console is set to read-only mode to ensure all the ``config.json`` files on the Mattermost servers are identical.
 
-.. code-block:: none
+  .. code-block:: none
 
-  "ClusterSettings": {
-        "Enable": false,
-        "InterNodeListenAddress": ":8075",
-        "InterNodeUrls": []
-  }
+    "ClusterSettings": {
+          "Enable": false,
+          "InterNodeListenAddress": ":8075",
+          "InterNodeUrls": []
+    }
 
-For more details on these settings, see :ref:`high-availability`.
+  For more details on these settings, see :ref:`high-availability`.
+
+2. Change the process limit to 8192 and the maximum number of open files to 65536.
+
+  Modify ``/etc/security/limits.conf`` on each machine that hosts a Mattermost server by adding the following lines:
+
+  .. code-block:: none
+
+    soft nofile 65536
+    hard nofile 65536
+    soft nproc 8192
+    hard nproc 8192
+
+3. Increase the number of websocket connections
+
+  Modify ``/etc/sysctl.conf`` on each machine that hosts a Mattermost server by adding the following lines:
+
+  .. code-block:: none
+
+    net.ipv4.ip_local_port_range="1024 65000"
+    net.ipv4.tcp_fin_timeout=30
 
 State
 ^^^^^
