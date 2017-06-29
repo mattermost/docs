@@ -1,12 +1,12 @@
 ..  _prod-debian:
 
-Production Install on Debian Jessie
-===================================
+Production Install on Debian Jessie (Unofficial)
+================================================
 
-Install Mattermost in production mode on one, two or three machines, using the following steps:
+Install Mattermost in production mode on one, two, or three machines, using the following steps:
 
-.. attention:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. `Community testing, feedback and improvements are welcome and greatly appreciated. <https://github.com/mattermost/platform/issues/1185>`_
- 
+.. important:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. `Community testing, feedback and improvements are welcome and greatly appreciated. <https://github.com/mattermost/platform/issues/1185>`_
+
 .. contents::
     :backlinks: top
 
@@ -139,7 +139,7 @@ Set up Mattermost Server
       ``"DataSource": "postgres://mmuser:mmuser_password@10.10.10.1:5432/mattermost?sslmode=disable&connect_timeout=10"``
 
       -  Assuming a default IP address of 10.10.10.1
-   
+
    -  ``config.json`` contains some configuration options that are relevant to the security of your mattermost instance.
       Therefore you should make sure you changed all those options from the default configuration to something different.
       This includes, but is not limited to, the following configuration options:
@@ -160,9 +160,9 @@ Set up Mattermost Server
 
 8. Setup Mattermost to use the systemd init daemon which handles
    supervision of the Mattermost process
-   
+
    **Set up systemd with a unit file**
-   
+
    -  ``sudo touch /etc/systemd/system/mattermost.service``
    -  ``sudo vi /etc/systemd/system/mattermost.service``
    -  Copy the following lines into ``/etc/systemd/system/mattermost.service``
@@ -172,7 +172,7 @@ Set up Mattermost Server
          [Unit]
          Description=Mattermost is an open source, self-hosted Slack-alternative
          After=syslog.target network.target
-         
+
          [Service]
          Type=simple
          User=mattermost
@@ -183,14 +183,14 @@ Set up Mattermost Server
          Restart=always
          RestartSec=30
          LimitNOFILE=49152
-         
+
          [Install]
          WantedBy=multi-user.target
-   
+
    - ``systemctl daemon-reload``
    - ``systemctl enable mattermost``
    - ``systemctl start mattermost``
-   
+
    **Set up systemd with a legacy init script** (applies to Debian installations that are not using systemd)
 
    -  ``sudo touch /etc/init.d/mattermost``
@@ -209,7 +209,7 @@ Set up Mattermost Server
          # Short-Description: Mattermost Group Chat
          # Description:       Mattermost: An open-source Slack
          ### END INIT INFO
-         
+
          PATH=/sbin:/usr/sbin:/bin:/usr/bin
          DESC="Mattermost"
          NAME=mattermost
@@ -219,9 +219,9 @@ Set up Mattermost Server
          DAEMON="$MATTERMOST_ROOT/bin/platform"
          PIDFILE=/var/run/$NAME.pid
          SCRIPTNAME=/etc/init.d/$NAME
-         
+
          . /lib/lsb/init-functions
-         
+
          do_start() {
              # Return
              #   0 if daemon has been started
@@ -236,7 +236,7 @@ Set up Mattermost Server
                  --make-pidfile --pidfile $PIDFILE --exec $DAEMON \
                  || return 2
          }
-         
+
          #
          # Function that stops the daemon/service
          #
@@ -263,7 +263,7 @@ Set up Mattermost Server
              rm -f $PIDFILE
              return "$RETVAL"
          }
-         
+
          case "$1" in
          start)
              [ "$VERBOSE" != no ] && log_daemon_msg "Starting $DESC" "$NAME"
@@ -311,13 +311,13 @@ Set up Mattermost Server
              exit 3
              ;;
          esac
-         
+
          exit 0
 
    -  Make sure that /etc/init.d/mattermost is executable
 
       -  ``sudo chmod +x /etc/init.d/mattermost``
-   
+
    - ``systemctl daemon-reload``
    - ``systemctl enable mattermost``
    - ``systemctl start mattermost``
