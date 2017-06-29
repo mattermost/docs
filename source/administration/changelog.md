@@ -113,7 +113,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 **Modified routes**
 - `DELETE` at `/teams/{team_id}`
-  - Added an optional query parameter, `permanent`, to permanently delete a team for complience reasons.
+  - Added an optional query parameter, `permanent`, to permanently delete a team for compliance reasons.
+
+### Websocket Event Changes from v3.10 to v4.0
+
+**Added:**
+- `channel_updated` that occurs each time a channel information is updated (such as name or header), so that the changes are propagated across clients.
 
 ### Known Issues
 
@@ -258,7 +263,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 **Modified routes (APIv4)**
 - `/system/ping` updated to return `500 Internal Server Error` with `{"status": "unhealthy"}` in the response body when `GoroutineHealthThreshold` is set in config.json and the number of goroutines on the server exceeds that threshold. If the number of goroutines is below the threshold or `GoroutineHealthThreshold` is not set in config.json, `200 OK` is returned with no response body.
 
-
 ### Known Issues
 
 - Google login fails on the mobile apps.
@@ -332,7 +336,6 @@ Many thanks to all our contributors. In alphabetical order:
 /mattermost-kubernetes
 
 - [coreyhulen](https://github.com/coreyhulen)
-
 
 ## Release v3.9.1
 
@@ -464,7 +467,7 @@ Many thanks to all our contributors. In alphabetical order:
   - Image preview height and width
   - Profile picture height and width
   - Image thumbnail height and width
-- All APIv3 endpoints to be removed in September 2017 release.
+- All APIv3 endpoints are scheduled for removal six months after APIv4 is stable.
 
 For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
 
