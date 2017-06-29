@@ -8,14 +8,18 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 Release Date: July 16, 2017
 
+### Security Update
+
+- Mattermost v4.0.0 contains a low severity [security update](http://about.mattermost.com/security-updates/). [Upgrading to Mattermost v4.0.0](http://docs.mattermost.com/administration/upgrade.html) is highly recommended.
+
 ### Highlights
 
 - // Stable release of next-generation RN mobile apps
 - // Updated UI
-- // APIv4 and Redux: Web app moved to APIv4 [stable release of APIv4]
-- // Performance [refactor caching code; gossip APIs]
+- // APIv4 and Redux [stable release of APIv4; webapp moved to APIv4]
+- // Performance [gossip APIs]
 - // Emoji picker our of beta?
-- // EE: Kubernetes orchestration for cluster environments, with loadtesting framework
+- // EE: Kubernetes orchestration for cluster environments, with loadtesting framework?
 
 ### Improvements
 
@@ -26,6 +30,7 @@ Release Date: July 16, 2017
 - For reply threads in the center channel, the "Commented on" phrase now respects the teammate name display setting.
 - Code block language tag is no longer selectable making it easier to copy the code.
 - Aligned the search box with right-hand side reply thread.
+- Improved rendering of at-mention highlighting in message view.
 
 #### Mobile Web UI
 - Added "Create Team" and "Leave Team" options to the Main Menu.
@@ -33,13 +38,35 @@ Release Date: July 16, 2017
 - User profile popover no longer gets cropped in the center channel on iOS.
 - Link preview image now resizes correctly on iOS.
 
+#### Notifications
+- Unread messages and mentions now sync across browser tabs and devices.
+- Improved desktop notification for webhook attachments.
+
+#### Emoji Picker (Beta) & Custom Emoji
+- Newly created custom emoji display to all users without requiring a refresh.
+- Improved position of the emoji picker near the top of the channel or the right-hand side comment thread.
+
+#### Keyboard Shortcuts
+- CTRL+SHIFT+K shortcut now toggles the Direct Message dialog open and closed.
+- SHIFT+UP now opens a reply thread for the most recent message posted by a user, skipping system messages.
+
+#### Slash Commands
+- Added `/header` command to set the channel header.
+- Added `/help` command to open Mattermost help page in a browser tab.
+- Added `/open` command to switch or join a channel.
+- Added `/settings` command to open Account Settings dialog.
+- `/invite_people` slash command disabled when account creation is set to false.
+- If a message starts with a / but fails to send (either due to timeout or invalid command), the message is put back to the input box.
+
+#### Authentication
+- User creation via OAuth (GitLab/Google/Office365) properly restrict to accepted domains, [if specified](https://docs.mattermost.com/administration/config-settings.html#restrict-account-creation-to-specified-email-domains).
+- **Invite New Member** dialog validates email address against accepted domains, if set.
+
 #### Link Previews
 - After posting a message containing an image link, a preview is loaded only if one is available.
 
 ### Bug Fixes
 - Emoji picker now closes in Firefox when clicking outside of it.
-- Clicking on emoji icon to react to a post near the top of the channel or the right-hand side comment thread now positions the picker correctly.
-- Emoji picker is no longer cut off on the right-hand side comment thread.
 - [...] menu no longer disappears in the comment thread when hovering over another post.
 - New direct messages received while in no teams do not show as unread after rejoining a team.
 - Fixed JavaScript errors when receiving messages when not belonging to a team.
@@ -48,11 +75,18 @@ Release Date: July 16, 2017
 - New user profile pictures now update for other users upon refresh.
 - `/expand` and `/collapse` slash commands now properly collapse images in website link previews.
 - Group Message channels that are favorited can now be closed.
-- CTRL+SHIFT+K shortcut now toggles the Direct Message dialog open and closed.
 - Deactivated users now properly listed in Direct and Group Message channels in the left-hand sidebar.
 - Fixed search in team and channel Manage Members dialog.
+- File upload cancelled if you click "x" on thumbnail while file is uploading in your message draft.
+- Status no longer appears offline after joining a new team.
+- An empty push notification is no longer sent for messages only containing file attachments.
 
-### Compatibility  
+### Compatibility
+
+#### Breaking Changes
+
+- // HA
+- If you're using NGINX as a proxy for the Mattermost Server, replace the `location /api/v3/users/websocket {` line with `location ~ /api/v[0-9]+/(users/)?websocket$ {` in the `/etc/nginx/sites-available/mattermost` NGINX configuration file. [See documentation to learn more](https://docs.mattermost.com/install/install-ubuntu-1404.html#configuring-nginx-as-a-proxy-for-mattermost-server).
 
 #### Removed and deprecated features
 - System Console settings in **Files > Images** removed. This includes:
@@ -72,8 +106,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 **Changes to Team Edition and Enterprise Edition**:
 
 **Additional Changes to Enterprise Edition**:
-// Elastic Search
-// Data Retention
 
 ### API v4 Changes
 - Stable release
@@ -87,9 +119,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 - Google login fails on the mobile apps.
 - Edge overlays desktop notification sound and system notification sound.
-- Status appears offline briefly after joining a new team.
 - Clicking on a channel during the tutorial makes the tutorial disappear.
-- Custom emoji search results filter by the creator's first/last name in addition to the emoji name.
 - Reactions are displayed on messages deleted by other users.
 - User can receive a video call from another browser tab while already on a call.
 - Search autocomplete picker is broken on Android.
@@ -103,9 +133,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Contributors
 
-## Release v3.10.0
+## Release v3.10.1
 
-Release Date: June 16, 2017
+ - **v3.10.1, released 2017-07-16**
+   - Mattermost v3.10.1 contains a low severity security update and [upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+ - **v3.10.0, released 2017-06-16**
+   - Original 3.10 release
 
 ### Highlights
 
@@ -301,9 +334,14 @@ Many thanks to all our contributors. In alphabetical order:
 - [coreyhulen](https://github.com/coreyhulen)
 
 
-## Release v3.9.0
+## Release v3.9.1
 
-Release Date: May 16, 2017
+### Notes on Patch Release
+
+ - **v3.9.1, released 2017-07-16**
+   - Mattermost v3.9.1 contains a low severity security update and [upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+ - **v3.9.0, released 2017-05-16**
+   - Original 3.9 release
 
 ### Security Update
 
