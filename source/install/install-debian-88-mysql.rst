@@ -52,8 +52,8 @@ Install and set up the database for use by the Mattermost server. You can instal
 
   ``mysql> grant all privileges on mattermost.* to 'mmuser'@'%';``
 
-9. Log out of MySQL.
+10. Log out of MySQL.
 
-   ``mysql> exit``
+  ``mysql> exit``
 
 With the database installed and the initial setup complete, you can now install the Mattermost server.
