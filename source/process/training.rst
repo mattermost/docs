@@ -333,6 +333,33 @@ This system has several benefits:
 3. Eventually the Mini-boss will be as skilled at reviewing as the End-boss, who will have nothing futher to add after the Mini-boss review. At this point, the Mini-boss becomes an End-boss, ready to train a new Mini-boss.
 
 
+Medic, Field Surgeon, Plastic Surgeon
+---------------------------------------------
+
+When making project investment decisions we optimize for high impact in the context of customer obsession, empowered by ownership, while being constrained by "be proud of what you build". 
+
+The failure case is over-investing in processes and infrastructure, stealing mana from higher priority work, reducing speed and agility for the company, and unnecessarily increasing cost and bureacracy. 
+
+In making these trade-offs, consider the following mindsets:
+
+- **Medic** 
+
+   Fix something that's important, broken and dangerous as fast as possible. Speed is critical, do not care about "leaving a scar" in our architecture or business process, just own it and get it done. Solve the problem, DO NOT OVER BUILD.
+ 
+   *Example:* Something incorrect on our public website with more than 100 page views a month should be fixed immediately and not put on a queue tied to a longer term project. 
+
+- **Field Surgeon** 
+
+   Triage things that are important, broken but not dangerous, and fix the most important things with a minimum of time and cost. Scarring should be a low-priority consideration--it's is fine to leave scars and it is fine to spend a little energy to avoid big ones.  Solve the problem for the next stage of growth, but don't solve if to two to three stages ahead. 
+
+   *Example:* In Mattermost, spend 2 mana to enable automated messages over 4000 characters to be broken into multiple posts instead of being rejected, which is a problem every developer hits when they attempt to output log information via curl commands.
+
+- **Plastic Surgeon** 
+
+   Fix and optimize critical, high volume flows in our customer experience and product with heavy investment if needed to make high impact changes. Scars can be avoided and removed to produce a high impact result.  
+
+   *Example:* Click-tracking traffic on Mattermost.com and optimizing flows to direct visitors to convert into contact and purchase actions. 
+
 --------------------------
 Terminology
 --------------------------
