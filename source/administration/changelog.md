@@ -17,19 +17,21 @@ Release Date: July 16, 2017
 - // Stable release of next-generation RN mobile apps
 - // Updated UI
 - // APIv4 and Redux [stable release of APIv4; webapp moved to APIv4]
-- // Performance [gossip APIs]
 - // Emoji picker our of beta?
-- // EE: Kubernetes orchestration for cluster environments, with loadtesting framework?
+- // Italian
+- // E20: HA/performance [gossip APIs]
 
 ### Improvements
 
 #### Web User Interface
+- Adjusted post spacing to be consistent across Markdown formatting, replies and consecutive posts.
 - On hover colour for pin and channel member icons now consistent with flag and recent mentions icons.
 - Emojis are now vertically aligned in post view.
 - Channel name, header and purpose now update real time for all users.
 - For reply threads in the center channel, the "Commented on" phrase now respects the teammate name display setting.
 - Code block language tag is no longer selectable making it easier to copy the code.
 - Aligned the search box with right-hand side reply thread.
+- New user profile pictures now update for other users upon refresh.
 - Improved rendering of at-mention highlighting in message view.
 
 #### Mobile Web UI
@@ -42,7 +44,7 @@ Release Date: July 16, 2017
 - Unread messages and mentions now sync across browser tabs and devices.
 - Improved desktop notification for webhook attachments.
 
-#### Emoji Picker (Beta) & Custom Emoji
+#### Emoji Picker & Custom Emoji
 - Newly created custom emoji display to all users without requiring a refresh.
 - Improved position of the emoji picker near the top of the channel or the right-hand side comment thread.
 
@@ -52,15 +54,24 @@ Release Date: July 16, 2017
 
 #### Slash Commands
 - Added `/header` command to set the channel header.
-- Added `/help` command to open Mattermost help page in a browser tab.
+- Added `/help` command to open Mattermost help page in a new browser tab.
 - Added `/open` command to switch or join a channel.
-- Added `/settings` command to open Account Settings dialog.
-- `/invite_people` slash command disabled when account creation is set to false.
+- Added `/settings` command to open the Account Settings dialog.
+- `/invite_people` slash command is now disabled when account creation is set to false.
 - If a message starts with a / but fails to send (either due to timeout or invalid command), the message is put back to the input box.
 
 #### Authentication
 - User creation via OAuth (GitLab/Google/Office365) properly restrict to accepted domains, [if specified](https://docs.mattermost.com/administration/config-settings.html#restrict-account-creation-to-specified-email-domains).
 - **Invite New Member** dialog validates email address against accepted domains, if set.
+
+#### Routes // XXX Need better name and description of benefit
+- New routes for direct message channels: 
+  - `.../teamname/messages/@username`
+  - `.../teamname/messages/email`
+  - `.../teamname/messages/user_id` (redirects to `...teamname/messages/@username`)
+  - `.../teamname/messages/id1_id2` (redirects to `...teamname/messages/@username`)
+- New route for group message channels: 
+  - `.../teamname/messages/generated_id`
 
 #### Link Previews
 - After posting a message containing an image link, a preview is loaded only if one is available.
@@ -72,7 +83,6 @@ Release Date: July 16, 2017
 - Fixed JavaScript errors when receiving messages when not belonging to a team.
 - An empty push notification no longer sent for messages only containing file attachments.
 - Custom emoji search results no longer filter by creator's first and last name.
-- New user profile pictures now update for other users upon refresh.
 - `/expand` and `/collapse` slash commands now properly collapse images in website link previews.
 - Group Message channels that are favorited can now be closed.
 - Deactivated users now properly listed in Direct and Group Message channels in the left-hand sidebar.
@@ -105,15 +115,24 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 **Changes to Team Edition and Enterprise Edition**:
 
+- Under `SqlSettings` in `config.json`:
+   - Modified `"QueryTimeout": 30` to also support query timeouts on PostgreSQL, not just MySQL.
+
 **Additional Changes to Enterprise Edition**:
 
 ### API v4 Changes
 - Stable release
 - All APIv3 endpoints are scheduled for removal six months after APIv4 is stable (January 16, 2018).
 
-**Modified routes**
+**Added routes (APIv4)**
+- `GET` at `/teams/invite/{invite_id}`
+  - To retrieve information about a team (including the name and id) corresponding to an invite_id.
+
+**Modified routes (APIv4)**
 - `DELETE` at `/teams/{team_id}`
   - Added an optional query parameter, `permanent`, to permanently delete a team for compliance reasons.
+- `GET` at `/users`
+  - Added the `sort` query parameter to add basic sorting when selecting users on a team.
 
 ### Websocket Event Changes from v3.10 to v4.0
 
