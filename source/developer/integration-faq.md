@@ -41,6 +41,48 @@ For self-hosted deployments in small setups you might host integrations on the s
 
 When self-hosting restrictions are less strict, AWS, Heroku and other public cloud options could also be used.
 
+## How to create a bot account without using webhooks
+
+Deployments that cannot create bot accounts via webhooks due to security reasons can use the following approach:
+
+1. Create a bot account using a secure email and strong password.
+2. Manually add the account to all teams and channels it needs access to. If your deployment has a lot of teams or channels, you may create a CLI script to automate the process.
+   - In a testing environment, you may also make the bot account a System Admin, giving the bot permissions to post to any channel. Not recommended in production due to potential security vulnerabilities.
+3. Provide the email and password to your integration, and store it in a secure location with restricted access.
+4. Have your integration use the email and password with an [`/api/v4/login`](https://api.mattermost.com/v4/#tag/authentication) endpoint to retrieve a session token. The session token is used to authenticate to the Mattermost system.
+   - Make an HTTP POST to `your-mattermost-url.com/api/v4/users/login` with a JSON body indicating the bot's email and password.
+  
+     ```
+     curl -i -d '{"login_id":"someone@nowhere.com","password":"thisisabadpassword"}' http://localhost:8065/api/v4/users/login
+     ```
+  
+     where we assume there is a Mattermost instance running at http://localhost:8065.
+   - If successful, the response will contain a `Token` header and a user object in the body:
+   
+     ```
+     HTTP/1.1 200 OK
+     Set-Cookie: MMSID=hyr5dmb1mbb49c44qmx4whniso; Path=/; Max-Age=2592000; HttpOnly
+     Token: hyr5dmb1mbb49c44qmx4whniso
+     X-Ratelimit-Limit: 10
+     X-Ratelimit-Remaining: 9
+     X-Ratelimit-Reset: 1
+     X-Request-Id: smda55ckcfy89b6tia58shk5fh
+     X-Version-Id: developer
+     Date: Fri, 11 Sep 2015 13:21:14 GMT
+     Content-Length: 657
+     Content-Type: application/json; charset=utf-8
+     
+     {{user object as json}}
+     ```
+   - Note: Use retry logic for the `/login` endpoint. If a 401 error is received, the bot account will log in, get another session token and retry the failed API request.
+4. Include the `Token` as part of the `Authorization` header on API requests from your integration.
+   - To confirm the setup, make a `GET` request at `/api/v4/users/me`. If it returns a 200 with your user object in the response, the API request was made successfully.
+     ```
+     curl -i -H 'Authorization: Bearer hyr5dmb1mbb49c44qmx4whniso' http://localhost:8065/api/v4/users/me
+     ```
+
+Note: The Mattermost development team is also working on an API developer token, which allows you to authenticate the bot account via the API token rather than retrieving a session token from a user account.
+
 ## How should I automate the install and upgrade of Mattermost when included in another application?
 
 Automating Mattermost installation within another application:
