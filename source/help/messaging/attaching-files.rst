@@ -5,7 +5,7 @@ Attaching Files
 
 With attachments, you can share additional information that will help your 
 team to visually understand your ideas. Sharing videos, voice recordings,
-screenshots, and images can make your messages more effective and clear.
+screenshots, and photos can make your messages more effective and clear.
 
 How to Attach Files
 ------------------
@@ -19,8 +19,8 @@ Attachment Icon
 ~~~~~~~~~~~~~~~
 You can upload files by clicking the paperclip icon inside the message
 input box. This opens up your system file viewer where you can navigate
-to the desired files. Double-click the file or click Open to upload the
-chosen files to the message input box. Then, press ENTER to post.
+to the desired files. Double-click the file or click **Open** to upload 
+the chosen files to the message input box. Then, press ENTER to post.
 
 [screenshot of paperclip icon]
 
@@ -51,7 +51,7 @@ Downloading Files
 You can download an attached file in two ways:
 
 -  click the download icon next to the file thumbnail
--  open the file previewer and click Download
+-  open the file previewer and click **Download**
 
 [screenshots of download methods]
 
@@ -59,14 +59,14 @@ Sharing Public Links
 ~~~~~~~~~~~~~~~~~~~~
 Public links allow you to share attachments with people outside your 
 Mattermost team. Open the file previewer by clicking on the thumbnail of
-an attachment, then click Get Public Link. This opens a dialog box with 
+an attachment, then click **Get Public Link**. This opens a dialog box with 
 a link to copy. When the link is shared and opened by another user, the 
 file will automatically download.
 
-Change to a Tip: If Get Public Link is not visible in the file previewer
+Change to a Tip: If **Get Public Link** is not visible in the file previewer
 and you prefer that the feature is enabled, you can request your System 
 Administrator to enable the feature from the System Console under 
-Security > Public Links.
+**Security** > **Public Links**.
 
 Viewing Media:
 ~~~~~~~~~~~~~~~~~~~~~
