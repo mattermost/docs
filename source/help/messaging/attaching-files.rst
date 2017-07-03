@@ -10,6 +10,7 @@ screenshots, and images can make your messages more effective and clear.
 How to Attach Files
 ------------------
 You can attach a file in three simple ways:
+
 -  Click the attachment icon
 -  Drag and Drop
 -  Paste from the clipboard
