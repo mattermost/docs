@@ -1,16 +1,25 @@
 .. _sending-messages:
 
-Sending messages is an effective way to keep conversation active with your team.
+Sending messages is an effective way to keep conversation active with your team. [Add more benefits]
 
-Sending Messages
+Messages
 ================
 
-Messages are composed in the center pane and reply messages are composed in the right-hand sidebar. Depending on your system configuration, you can edit and delete messages after they are sent. You can also generate and share links to any message in Mattermost.
+Messages and replies to messages can be composed in two places:
+ 
+-  the center pane
+-  the right-hand sidebar 
+ 
+Depending on your system configuration, you can edit and delete messages after you have sent them. You can also generate and share links to any message in Mattermost.
 
-Sending a Message
+Sending Messages
 -----------------
 
-Write a message by typing into the text input box, then press **ENTER** to send it. Use **SHIFT+ENTER** to create a new line without sending a message. To send messages by pressing **CTRL+ENTER**, go to **Main Menu > Account Settings > Send messages on Ctrl + Enter**.
+Type into the text input box to write a message, then press Enter to send it. If you want to use paragraphs, press **Shift + Enter** to create a new line. 
+
+[A Tip:] If you are accustomed to create a new line when pressing **Enter**, you might sometimes accidentally send a message too early since the settings are configured to send a message with the Enter button. If you want to, you can change the settings to send messages with **Ctrl + Enter**:
+
+-  **Main Menu > Account Settings > Send messages on Ctrl + Enter**
 
 Replying to a Message
 ---------------------
@@ -22,7 +31,7 @@ When composing a reply in the right-hand sidebar, click the expand/collapse icon
 Editing a Message
 -----------------
 
-Edit a message by clicking the **[...]** icon next to any message that you’ve sent, then click **Edit**. Your System Admin may disable the **Edit** feature or set a time limit before messages become uneditable.
+Edit a message by clicking the **[...]** icon next to a message that you have sent, then click **Edit**. Your System Administrator may disable the **Edit** feature or set a time limit before messages become uneditable.
 
 .. note::
   Message edits do not trigger new @mention notifications, desktop notifications, or notification sounds.
@@ -30,7 +39,7 @@ Edit a message by clicking the **[...]** icon next to any message that you’ve 
 Deleting a Message
 ------------------
 
-Delete a message by clicking the **[...]** icon next to any message that you've sent, then click **Delete**. The **Delete** option may be disabled by your System Admin.
+Delete a message by clicking the **[...]** icon next to a message that you have sent, then click **Delete**. Your System Administrator may disable the **Delete** feature.
 
 Linking to a Message
 --------------------
