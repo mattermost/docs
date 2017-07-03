@@ -181,6 +181,19 @@ In addition to checklists for quality and reliability, code changes receive mult
 
 ## Business Continuity Plan
 
+This document outlines Mattermost, Inc.'s **Disaster Recovery and Business Continuity Plan (DRBCP)** informed by the Federal Financial Institutions Examination Council guidelines on Business Continuity Planning in the context of Mattermost, Inc. being a vendor providing self-hosted software and consulting services to financial institutions. 
+
+Because Mattermost software runs within a customer's data center, behind a customer's firewall and existing layers of security, without dependency to services hosted by Mattermost, the disruption of the business continuity of Mattermost, Inc. does not immediately impact the operating continuity of its customers. It does affect Mattermost's ability to answer support requests, provide consulting services and provide new improvements or patches to Mattermost software. 
+
+At a high level, precautions include: 
+
+- DRBCP is tested, evaluated and refined annually to ensure our processes are working and up-to-date
+- As support is the most critical service offered, multiple channels for support engagement are available and monitored, including email, a Mattermost community server available on web, desktop and mobile, online forums, online forms, social media channels (Twitter and Facebook), and for Premier Support customers, we offer a telephone-based call center. 
+- Subject Matter Experts for escalations are available in at least three centers in different timezones to provide redundant coverage should communication with one or multiple centers be disrupted. Mattermost staff use a diverse set of operating systems, including Mac, Windows and different distributions of Linux, and a diverse set of global internet service providers, to reduce the potential damage of a single strain of malware, single desktop computing exploit or single telecommunications outage. 
+- As further redundancy, we have a network of [partners](https://about.mattermost.com/partners/) around the world skilled in Mattermost technologies to be contacted for assistance for critical customer issues.  
+- As further redundancy, we have a community of several hundred engineers around the world and over a thousands contributors to our online forums, who have sufficient access and expertise in Mattermost's open source technologies that could be contact in the highly unlikely event both Mattermost, Inc. and our partner networks are unable to service our customers. 
+- As further redundancy, Mattermost provides open source code for its core server technology, mobile applications, desktop applications and a wide array of extensions which allows customers to have transparancy into the functionality of the software and solve the issue with their internal technical teams should a massive worldwide failure of Mattermost, Inc., its partners and its community arrise. 
+
 Mattermost, Inc. is headquartered in Palo Alto, California with a distributed organization across three timezones, and is therefore not easily affected by typical causes of business disruption, such as local failures of equipment, power, telecommunications, social unrest, fire, or natural disasters. Even so, threats considered in the context of business continuity are categorized by impact of the disruption.
 
 ### Priority 1: Outages that would have immediate impact on a Mattermost customer 
