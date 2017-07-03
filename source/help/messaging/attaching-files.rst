@@ -3,65 +3,76 @@ Attaching Files
 
 --------------
 
-Sharing project plans, new designs, and images can make your messages more 
-effective and clear.
+With attachments, you can share additional information that will help your 
+team to visually understand your ideas. Sharing videos, voice recordings,
+screenshots, and images can make your messages more effective and clear.
 
-Attachment Methods
+How to Attach Files
 ------------------
-Attach a file by drag and drop or by clicking the attachment icon in the
-message input box.
-
-Drag and Drop
-~~~~~~~~~~~~~
-Upload a file or selection of files by dragging the files from your
-computer into the right-hand sidebar or center pane. Dragging and
-dropping attaches the files to the message input box. After dropping files,
-you can optionally type a message and press **ENTER** to post.
+You can attach a file in three simple ways:
+-  Click the attachment icon
+-  Drag and Drop
+-  Paste from the clipboard
 
 Attachment Icon
 ~~~~~~~~~~~~~~~
-Alternatively, you can upload files by clicking the grey paperclip icon
-inside the message input box. This opens up your system file viewer where
-you can navigate to the desired files and then click **Open** to upload
-the files to the message input box. Optionally type a message and then
-press **ENTER** to post.
+You can upload files by clicking the paperclip icon inside the message
+input box. This opens up your system file viewer where you can navigate
+to the desired files. Double-click the file or click Open to upload the
+chosen files to the message input box. Then, press ENTER to post.
 
-Pasting Images
+[screenshot of paperclip icon]
+
+Drag and Drop
+~~~~~~~~~~~~~
+You can attach files by dragging them from your computer into the 
+message input box either on the right-hand sidebar or the center pane.
+After dropping the files, press ENTER to post.
+
+Paste from the Clipboard
 ~~~~~~~~~~~~~~
-On Chrome and Edge browsers, it is also possible to upload files by
-pasting them from the clipboard. This is not yet supported on other
-browsers.
+If you use Chrome or Edge browsers, you can also upload files by 
+pasting them from the clipboard. This feature is not yet supported on 
+other browsers.
 
 File Previewer
 --------------
-Mattermost has a built in file previewer that is used to view media,
-download files and share public links. Click the thumbnail of an
-attached file to open it in the file previewer.
+Mattermost has a built in file previewer that you can use to:
 
-Sharing Public Links
-~~~~~~~~~~~~~~~~~~~~
-Public links allow you to share file attachments with people outside
-your Mattermost team. Open the file previewer by clicking on the
-thumbnail of an attachment, then click **Get Public Link**. This opens a
-dialog box with a link to copy. When the link is shared and opened by
-another user, the file will automatically download.
+-  Download files
+-  Share public links
+-  View media
 
-If **Get Public Link** is not visible in the file previewer and you
-prefer the feature enabled, you can request that your System Admin
-enable the feature from the System Console under **Security** > **Public
-Links**.
+Click the thumbnail of an attached file to open it in the file previewer.
 
 Downloading Files
 ~~~~~~~~~~~~~~~~~
-Download an attached file by clicking the download icon next to the file
-thumbnail or by opening the file previewer and clicking **Download**.
+You can download an attached file in two ways:
 
-Supported Media Types
+-  click the download icon next to the file thumbnail
+-  open the file previewer and click Download
+
+[screenshots of download methods]
+
+Sharing Public Links
+~~~~~~~~~~~~~~~~~~~~
+Public links allow you to share attachments with people outside your 
+Mattermost team. Open the file previewer by clicking on the thumbnail of
+an attachment, then click Get Public Link. This opens a dialog box with 
+a link to copy. When the link is shared and opened by another user, the 
+file will automatically download.
+
+Change to a Tip: If Get Public Link is not visible in the file previewer
+and you prefer that the feature is enabled, you can request your System 
+Administrator to enable the feature from the System Console under 
+Security > Public Links.
+
+Viewing Media:
 ~~~~~~~~~~~~~~~~~~~~~
-If you are trying to preview a media type that is not supported, the
-file previewer will open a standard media attachment icon. Supported
-media formats depend heavily on your browser and operating system, but
-the following formats are supported by Mattermost on most browsers:
+If you are trying to preview a media type that is not supported, the 
+file previewer will open a standard media attachment icon. Supported 
+media formats depend on your browser and operating system, but the 
+following formats are supported on most browsers:
 
 -  Images: BMP, GIF, JPG, JPEG, PNG, SVG
 -  Video: MP4
@@ -70,8 +81,10 @@ the following formats are supported by Mattermost on most browsers:
 
 Other document previews (Word, Excel, PPT) are not yet supported.
 
-File Size Limitations
+Attachment Limits and Sizes
 ---------------------
-Mattermost supports a maximum of five attached files per post.
+Please note that Mattermost supports a maximum of five (5) attached 
+files per post.
 
-The default maximum file size is 50 MB, but this can be changed by the System Administrator.
+The default maximum file size is 50MB, but this can be changed by the 
+System Administrator.
