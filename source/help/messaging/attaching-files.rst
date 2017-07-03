@@ -63,7 +63,7 @@ an attachment, then click **Get Public Link**. This opens a dialog box with
 a link to copy. When the link is shared and opened by another user, the 
 file will automatically download.
 
-Change to a Tip: If **Get Public Link** is not visible in the file previewer
+[Change to a Tip:] If **Get Public Link** is not visible in the file previewer
 and you prefer that the feature is enabled, you can request your System 
 Administrator to enable the feature from the System Console under 
 **Security** > **Public Links**.
