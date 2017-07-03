@@ -50,10 +50,15 @@ Deployments that cannot create bot accounts via webhooks due to security reasons
    - In a testing environment, you may also make the bot account a System Admin, giving the bot permissions to post to any channel. Not recommended in production due to potential security vulnerabilities.
 3. Provide the email and password to your integration, and store it in a secure location with restricted access.
 4. Have your integration use the email and password with an [`/api/v4/login`](https://api.mattermost.com/v4/#tag/authentication) endpoint to retrieve a session token. The session token is used to authenticate to the Mattermost system.
-   - Make an HTTP POST to `your-mattermost-url.com/api/v4/users/login` with a JSON body indicating the bot's email and password.
+   - Set up your bot to make an HTTP POST to `your-mattermost-url.com/api/v4/users/login` with a JSON body, including the bot account's email and password.
   
      ```
-     curl -i -d '{"login_id":"someone@nowhere.com","password":"thisisabadpassword"}' http://localhost:8065/api/v4/users/login
+     POST /api/v4/users/login HTTP/1.1
+     Host: your-mattermost-url.com
+     Content-Length: 66
+     Content-Type: application/json
+     
+     {"login_id":"someone@nowhere.com","password":"thisisabadpassword"}
      ```
   
      where we assume there is a Mattermost instance running at http://localhost:8065.
@@ -74,14 +79,18 @@ Deployments that cannot create bot accounts via webhooks due to security reasons
      
      {{user object as json}}
      ```
-   - Note: Use retry logic for the `/login` endpoint. If a 401 error is received, the bot account will log in, get another session token and retry the failed API request.
+     
+     The bot should retrieve the session token from the `Token` header and store it in memory for use with future requests.
+   - Note: Each session token has an expiry time, set depending on the server's configuration. If the session token your bot is using expires, it will receive a 401 Unauthorized response from requests using that token. When your bot receives this response, it should re-apply the login logic (using the above steps) to get another session token. Then re-send the request that received the 401 status code.
 4. Include the `Token` as part of the `Authorization` header on API requests from your integration.
-   - To confirm the setup, make a `GET` request at `/api/v4/users/me`. If it returns a 200 with your user object in the response, the API request was made successfully.
+   - To confirm the token works, you can have your bot make a simple `GET` request to `/api/v4/users/me` with the `Authorization: bearer <yourtokenhere>` in the header. If it returns a 200 with the bot's user object in the response, the API request was made successfully.
      ```
-     curl -i -H 'Authorization: Bearer hyr5dmb1mbb49c44qmx4whniso' http://localhost:8065/api/v4/users/me
+     GET /api/v4/users/me HTTP/1.1
+     Authorization: bearer <yourtokenhere>
+     Host: your-mattermost-url.com
      ```
 
-Note: The Mattermost development team is also working on an API developer token, which allows you to authenticate the bot account via the API token rather than retrieving a session token from a user account.
+Note: The Mattermost development team is also working on an [API developer token](https://docs.google.com/document/d/1ey4eNQmwK410pNTvlnmMWTa1fqtj8MV4d9XkCumI384), which allows you to authenticate the bot account via the API token rather than retrieving a session token from a user account.
 
 ## How should I automate the install and upgrade of Mattermost when included in another application?
 
