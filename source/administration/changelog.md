@@ -15,20 +15,21 @@ Release Date: July 16, 2017
 ### Highlights
 
 #### Native iOS and Android Apps
-- Second generation mobile apps release for iOS and Android // XXX Link to blog post
+- Second generation mobile apps released for iOS and Android. // XXX Link to blog post
 
 #### New Web UI
-- Updated the channel header and channel sidebar in the web user interface.
-- Added a new default theme, "Mattermost".
+- Updated the look of channel header and channel sidebar in the web user interface.
+- Added a new default theme, "Mattermost". To try it, go to **Account Settings > Display > Theme**.
 
 #### Emoji Picker
 - The emoji picker offers quick access to emoji when composing messages or adding reactions.
+- Promoted from Beta, and enabled to all users by default.
 
 #### Languages
-- Added Italian translations for the user interface.
+- Added Italian translations to the user interface.
 
 #### APIv4 (Stable Release)
-- Mattermost webapp moved to v4 endpoints, which allow more powerful integrations and server interaction.
+- Mattermost webapp moved to API v4 endpoints, which allow for more powerful integrations and server interaction.
 - APIv3 endpoints are supported until January 16, 2018. To learn more about migrating to APIv4 endpoints, [see https://api.mattermost.com/](https://api.mattermost.com/).
 
 #### High Availability ([Enterprise Edition E20](https://about.mattermost.com/pricing/))
@@ -50,15 +51,15 @@ Release Date: July 16, 2017
 #### Mobile Web UI
 - Added "Create Team" and "Leave Team" options to the Main Menu.
 - Updated the look of Account Settings pages on mobile.
-- User profile popover no longer gets cropped in the center channel on iOS.
-- Link preview image now resizes correctly on iOS.
+- User profile popover no longer gets cropped in the center channel on iOS browser.
+- Link preview image now resizes correctly on iOS browser.
 
 #### Notifications
 - Unread messages and mentions now sync across browser tabs and devices.
-- Improved desktop notification for webhook attachments.
+- Improved desktop notifications for webhook attachments.
 
 #### Emoji Picker & Custom Emoji
-- Newly created custom emoji display to all users without requiring a refresh.
+- Newly created custom emoji immediately display to all users without requiring a refresh.
 - Improved position of the emoji picker near the top of the channel or the right-hand side comment thread.
 
 #### Keyboard Shortcuts
@@ -67,14 +68,14 @@ Release Date: July 16, 2017
 
 #### Slash Commands
 - Added `/header` command to set the channel header.
-- Added `/help` command to open Mattermost help page in a new browser tab.
+- Added `/help` command to open the Mattermost help page in a new browser tab.
 - Added `/open` command to switch or join a channel.
 - Added `/settings` command to open the Account Settings dialog.
 - `/invite_people` slash command is now disabled when account creation is set to false.
 - If a message starts with a / but fails to send (either due to timeout or invalid command), the message is put back to the input box.
 
 #### Authentication
-- User creation via OAuth (GitLab/Google/Office365) properly restrict to accepted domains, [if specified](https://docs.mattermost.com/administration/config-settings.html#restrict-account-creation-to-specified-email-domains).
+- User creation via OAuth (GitLab/Google/Office365) properly restricted to accepted domains, [if specified](https://docs.mattermost.com/administration/config-settings.html#restrict-account-creation-to-specified-email-domains).
 - **Invite New Member** dialog validates email address against accepted domains, if set.
 
 #### Routes // XXX Need better name and description of benefit
@@ -118,7 +119,7 @@ Release Date: July 16, 2017
   - Image thumbnail height and width
 - Font setting in Account Settings > Display removed.
 - Account Settings options for **Display** > **Display Font** and **Display** > **Teammate Name Display** moved to the System Console.
-- All APIv3 endpoints are scheduled for removal six months after APIv4 is stable (January 16, 2018).
+- All APIv3 endpoints are scheduled for removal on January 16, 2018.
 
 For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
 
@@ -148,20 +149,22 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - // XXX HA/clustering changes
 
 ### API v4 Changes
-- Stable release
-- All APIv3 endpoints are scheduled for removal six months after APIv4 is stable (January 16, 2018).
+- Mattermost 4.0 has a stable release of API v4 endpoints. It is recommended that any new integrations use the v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
+- All APIv3 endpoints are scheduled for removal on January 16, 2018.
 
-**Added routes (APIv4)**
+**Added routes (API v4)**
 - `GET` at `/teams/invite/{invite_id}`
   - To retrieve information about a team (including the name and id) corresponding to an invite_id.
 
-**Modified routes (APIv4)**
+**Modified routes (API v4)**
 - `DELETE` at `/teams/{team_id}`
   - Added an optional query parameter, `permanent`, to permanently delete a team for compliance reasons.
 - `GET` at `/users`
   - Added the `sort` query parameter to add basic sorting when selecting users on a team.
+- `GET` at `/emoji`
+  - Added paging to the `/emoji` call for increased performance.
 
-### Websocket Event Changes from v3.10 to v4.0
+### Websocket Event Changes
 
 **Added:**
 - `channel_updated` that occurs each time a channel information is updated (such as name or header), so that the changes are propagated across clients.
