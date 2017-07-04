@@ -3,73 +3,110 @@ Upgrading Mattermost Server
 
 In most cases you can upgrade Mattermost Server in a few minutes, but the upgrade can take longer depending on several factors, including the size and complexity of your installation, and the version that you're upgrading from.
 
-.. _upgrade-table:
+Upgrading to the Latest Version
+-------------------------------
 
-In the following table, look up your current version, review the applicable Important Notices, then click the link to the upgrade instructions.
+If you are upgrading from version 3.0 or later, these instructions apply to you.
 
-.. csv-table::
-  :header: "If your current version is:", "Read these Important Notices:", "Use these instructions:"
-  :widths: auto
+If you are upgrading from a version earlier than 3.0.0 but later than 2.0.0, you must first `upgrade to version 3.0.3 <../administration/upgrading-to-3.0.html>`_.
 
-  "3.9.0", "Not Applicable", "`Upgrading to the latest version <../administration/upgrading-to-latest.html>`_"
-  "3.8.x", "See `Important Notices`_ 7", "`Upgrading to the latest version <../administration/upgrading-to-latest.html>`_"
-  "3.7.x", "See `Important Notices`_ 4 to 7", "`Upgrading to the latest version <../administration/upgrading-to-latest.html>`_"
-  "3.6.x", "See `Important Notices`_ 4 to 7","`Upgrading to the latest version <../administration/upgrading-to-latest.html>`_"
-  "3.5.x", "See `Important Notices`_ 2 to 7","`Upgrading to the latest version <../administration/upgrading-to-latest.html>`_"
-  "3.4.0", "See `Important Notices`_ 2 to 7","`Upgrading to the latest version <../administration/upgrading-to-latest.html>`_"
-  "3.3.0", "See `Important Notices`_ 1 to 7","`Upgrading to the latest version <../administration/upgrading-to-latest.html>`_"
-  "3.2.0", "See `Important Notices`_ 1 to 7","`Upgrading to the latest version <../administration/upgrading-to-latest.html>`_"
-  "3.1.0", "See `Important Notices`_ 1 to 7","`Upgrading to the latest version <../administration/upgrading-to-latest.html>`_"
-  "3.0.3", "See `Important Notices`_ 1 to 7","`Upgrading to the latest version <../administration/upgrading-to-latest.html>`_"
-  "2.2.0", "Not Applicable", "`Upgrading to version 3.0 <../administration/upgrading-to-3.0.html>`_"
-  "2.1.0", "Not Applicable", "`Upgrading to version 3.0 <../administration/upgrading-to-3.0.html>`_"
-  "2.0.0", "Not Applicable", "`Upgrading to version 3.0 <../administration/upgrading-to-3.0.html>`_"
-  "1.4.0", "Not Applicable", "`Upgrading to version 2.0 <../administration/upgrading-to-2.0.html>`_"
-  "1.3.0", "Not Applicable", "`Upgrading to version 2.0 <../administration/upgrading-to-2.0.html>`_"
-  "1.2.1", "Not Applicable", "`Upgrading to version 2.0 <../administration/upgrading-to-2.0.html>`_"
-  "1.2.0", "Not Applicable", "`Upgrading to version 2.0 <../administration/upgrading-to-2.0.html>`_"
-  "1.1.1", "Not Applicable", "`Upgrading to version 2.0 <../administration/upgrading-to-2.0.html>`_"
-  "1.1.0", "Not Applicable", "`Upgrading to version 2.0 <../administration/upgrading-to-2.0.html>`_"
-  "1.0.0", "Not Applicable", "`Upgrading to version 2.0 <../administration/upgrading-to-2.0.html>`_"
+If you are upgrading from a version earlier than 2.0.0, you must first `upgrade to version 2.0 <../administration/upgrading-to-2.0.html>`_.
 
-.. toctree::
-   :maxdepth: 1
+.. _before-you-begin:
 
-   /administration/upgrading-to-latest.rst
-   /administration/upgrading-to-3.0.rst
-   /administration/upgrading-to-2.0.rst
+**Before you begin**
 
-Important Notices
------------------
+Read these instructions carefully from start to finish. Make sure that you understand each step before starting the upgrade. If you have questions or concerns, you can ask on the Mattermost forum at https://forum.mattermost.org/ or in the Mattermost *Peer-to-peer Help* channel at https://pre-release.mattermost.com/core/channels/peer-to-peer-help.
 
-1. After upgrading to version 3.4: If public links are enabled, existing public links will no longer be valid. This is because in earlier versions, existing public links were not invalidated when the Public Link Salt was regenerated. You must update any place where you have published these links.
+.. important::
+  Review the :doc:`important-upgrade-notes` to make sure you are aware of any actions you need to take before or after upgrading from your particular version.
 
-2. Enterprise Edition only: After upgrading to version 3.6.0, if you previously had values set for *RestrictPublicChannelManagement* and *RestrictPrivateChannelManagement*, the new settings for *RestrictPublicChannelCreation*, *RestrictPrivateChannelCreation*, *RestrictPublicChannelDeletion*, and *RestrictPrivateChannelDeletion* will take those settings as their default values.
+You should gather the following information before starting the upgrade:
 
-3. In version 3.6, update the maximum number of files that can be open:
+Existing install directory - *{install-path}*
+  If you don't know where Mattermost Server is installed, use the ``whereis platform`` command. The output should be similar to */opt/mattermost/bin/platform*. The install directory is everything before the last occurrence of the string */mattermost*. In this example, the *{install-path}* is ``/opt``.
+Location of your local storage directory
+  The local storage directory contains all the files that users have attached to their messages. If you don't know its location, open the System Console and go to **Files > Storage** and read the value in **Local Storage Directory**. Relative paths are relative to the ``mattermost`` directory. For example, if the local storage directory is ``./data/`` then the absolute path is ``{install-path}/mattermost/data``.
+Owner and group of the install directory - *{owner}* and *{group}*
+  Use the ``ls -l {install-path}/mattermost/bin/platform`` command to get the owner and group.
 
-  On RHEL6 and Ubuntu 14.04
-    Verify that the line ``limit nofile 50000 50000`` is included in the ``/etc/init/mattermost.conf`` file.
-  On RHEL7 and Ubuntu 16.04
-    Verify that the line ``LimitNOFILE=49152`` is included in the ``/etc/systemd/system/mattermost.service`` file.
+**To upgrade Mattermost Server**:
 
-4. In version 3.8, backwards compatibility with the old CLI tool was removed. If you have any scripts that rely on the old CLI, they must be revised to use the new CLI. For more information about the new CLI tool, see `Command Line Tools <../administration/command-line-tools.html>`_
+1. In a terminal window on the server that hosts Mattermost Server, change to your home directory.
 
-5. Changes were made in 3.8.0 that require a change in the proxy configuration. If you're using NGINX:
-  1. Open the NGINX configuration file as root. The file is usually ``/etc/nginx/sites-available/mattermost`` but might be different on your system.
-  2. Locate the following line:
-     `location /api/v3/users/websocket {`
-  3. Replace the  line with ``location ~ /api/v[0-9]+/(users/)?websocket$ {``.
+  ``cd ~``
 
-  If you are using a proxy other than NGINX, make the equivalent change to that proxy's configuration.
+2. Delete any files and directories that might still exist from a previous download.
 
-6. Security-related changes were made in 3.7.5 and 3.8.0 that require you to verify settings in the System Console before upgrading from version 3.7.4 and earlier.
+  .. code-block:: text
 
-  1. In the GENERAL section of the System Console, click **Configuration** and make sure that the **Site URL** is specified. It must not be empty. For more information about SiteURL, see `Configuration Settings <config-settings.html#site-url>`_
-  2. In the GENERAL section of the System Console, click **Logging** and make sure that the **File Log Directory** field is either empty or has a directory path only. It must not have a filename as part of the path.
+    rm mattermost*.gz
+    rm -r mattermost
 
-7. Security related changes were made in version 3.9.0 that cause any previously created team invite links, password reset links, and email verification links to no longer work. You must update any place where you have published these links.
+3. Download the latest version of Mattermost Server.
 
+  Enterprise Edition
+    ``wget https://releases.mattermost.com/3.10.0/mattermost-3.10.0-linux-amd64.tar.gz``
+  Team Edition
+    ``wget https://releases.mattermost.com/3.10.0/mattermost-team-3.10.0-linux-amd64.tar.gz``
+
+4. Extract the Mattermost Server files.
+
+  ``tar -xzf mattermost*.gz``
+
+5. Make a copy of your configuration file. The existing file is overwritten during the upgrade, so it's important that you don't forget this step.
+
+  ``cp {install-path}/mattermost/config/config.json config.json``
+
+6. Stop Mattermost Server.
+
+  On Ubuntu 14.04 and RHEL 6.6: ``sudo service mattermost stop``
+
+  On Ubuntu 16.04 and RHEL 7.1: ``sudo systemctl stop mattermost``
+
+7. Back up your data.
+  a. Back up your database using your organization’s standard procedures for backing up MySQL or PostgreSQL.
+  b. If you’re using local file storage, back up the location where files are stored.
+
+8. Copy the files that you extracted earlier to the install directory.
+
+  ``sudo cp -r mattermost {install-path}``
+
+9. Restore your configuration file.
+
+  ``sudo cp config.json {install-path}/mattermost/config``
+
+10. Change ownership of the new files.
+
+  ``sudo chown -R {owner}:{group} {install-path}/mattermost``
+
+11. Start Mattermost server.
+
+  On Ubuntu 14.04 and RHEL 6.6: ``sudo service mattermost start``
+
+  On Ubuntu 16.04 and RHEL 7.1: ``sudo systemctl start mattermost``
+
+12. If you have TLS set up on your Mattermost server, you must activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports.
+
+  1. ``cd {install-path}``
+  2. ``sudo setcap cap_net_bind_service=+ep ./bin/platform``
+
+13. Upgrade your ``config.json`` schema:
+
+  a. Open the System Console and a change a setting, then revert it. This should enable the Save button for that page.
+  b. Click **Save**.
+  c. Refresh the page.
+
+  Your current settings are preserved, and new settings are added with default values.
+
+After the server is upgraded, users might need to refresh their browsers to experience any new features.
+
+Upgrading Team Edition to Enterprise Edition
+--------------------------------------------
+
+To upgrade from the Team Edition to the Enterprise Edition, follow the normal upgrade instructions above, but make sure that you download the Enterprise Edition in Step 3.
+
+After the Enterprise Edition is running, open the *System Console* and go to **OTHER > Edition and License > License Key** and upload your license key file.
 
 Version Archive
 ---------------
