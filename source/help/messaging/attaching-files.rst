@@ -38,7 +38,7 @@ other browsers.
 
 File Previewer
 --------------
-Mattermost has a built in file previewer that you can use to:
+Mattermost has a built-in file previewer that you can use to:
 
 -  Download files
 -  Share public links
