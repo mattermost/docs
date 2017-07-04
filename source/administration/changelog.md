@@ -14,12 +14,25 @@ Release Date: July 16, 2017
 
 ### Highlights
 
-- // Stable release of next-generation RN mobile apps
-- // Updated UI
-- // APIv4 and Redux [stable release of APIv4; webapp moved to APIv4]
-- // Emoji picker our of beta?
-- // Italian
-- // E20: HA/performance [gossip APIs]
+#### Native iOS and Android Apps
+- Second generation mobile apps release for iOS and Android // XXX Link to blog post
+
+#### New Web UI
+- Updated the channel header and channel sidebar in the web user interface.
+- Added a new default theme, "Mattermost".
+
+#### Emoji Picker
+- The emoji picker offers quick access to emoji when composing messages or adding reactions.
+
+#### Languages
+- Added Italian translations for the user interface.
+
+#### APIv4 (Stable Release)
+- Mattermost webapp moved to v4 endpoints, which allow more powerful integrations and server interaction.
+- APIv3 endpoints are supported until January 16, 2018. To learn more about migrating to APIv4 endpoints, [see https://api.mattermost.com/](https://api.mattermost.com/).
+
+#### High Availability ([Enterprise Edition E20](https://about.mattermost.com/pricing/))
+- Added support for dynamically adding and removing nodes from the cluster.
 
 ### Improvements
 
@@ -95,7 +108,7 @@ Release Date: July 16, 2017
 
 #### Breaking Changes
 
-- // HA
+- // XXX HA
 - If you're using NGINX as a proxy for the Mattermost Server, replace the `location /api/v3/users/websocket {` line with `location ~ /api/v[0-9]+/(users/)?websocket$ {` in the `/etc/nginx/sites-available/mattermost` NGINX configuration file. [See documentation to learn more](https://docs.mattermost.com/install/install-ubuntu-1404.html#configuring-nginx-as-a-proxy-for-mattermost-server).
 
 #### Removed and deprecated features
@@ -109,16 +122,30 @@ Release Date: July 16, 2017
 
 For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
 
-#### config.json   
+#### config.json
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
 **Changes to Team Edition and Enterprise Edition**:
 
-- Under `SqlSettings` in `config.json`:
+- Under `ServiceSettings` in `config.json`:
+   - Added `"EnableChannelViewedMessages: true` to control whether `channel_viewed` WebSocket event is sent, which syncs unreads across clients and devices. Setting to false can lead to higher performance in large deployments.
+   - Added `"TeammateNameDisplay": "full_name"` to set how to display users' names in posts and the Direct Messages list.
+   - Added `"EnableAPIv3": "true"` to control whether version 3 endpoints of the REST API are allowed on the server. If the setting is disabled, integrations that rely on API v3 will fail and can then be identified for migration to API v4.
+- Under `FileSettings` in `config.json`:
+   - Removed System Console settings in **Files > Images**, including:
+    - `"ThumbnailWidth": 120`
+    - `"ThumbnailHeight": 100`
+    - `"PreviewWidth": 1024`
+    - `"PreviewHeight": 0`
+    - `"ProfileWidth": 128`
+    - `"ProfileHeight": 128`
+- Under `SqlSettings` in `config.json`: 
    - Modified `"QueryTimeout": 30` to also support query timeouts on PostgreSQL, not just MySQL.
 
 **Additional Changes to Enterprise Edition**:
+
+- // XXX HA/clustering changes
 
 ### API v4 Changes
 - Stable release
