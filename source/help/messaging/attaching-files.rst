@@ -1,7 +1,5 @@
-Attaching Files
+Sharing Files
 ===============
-
---------------
 
 With attachments, you can share additional information that will help your 
 team to visually understand your ideas. Sharing videos, voice recordings,
@@ -9,32 +7,13 @@ screenshots, and photos can make your messages more effective and clear.
 
 How to Attach Files
 ------------------
-You can attach a file in three simple ways:
+You can attach files in one of the following ways:
 
--  Click the attachment icon
--  Drag and Drop
--  Paste from the clipboard
+-  **Use the attachment icon** - click the paperclip icon inside the message input box
+-  **Drag and Drop**
+-  **Paste from the clipboard** - this feature is supported in Chrome and Edge browsers
 
-Attachment Icon
-~~~~~~~~~~~~~~~
-You can upload files by clicking the paperclip icon inside the message
-input box. This opens up your system file viewer where you can navigate
-to the desired files. Double-click the file or click **Open** to upload 
-the chosen files to the message input box. Then, press ENTER to post.
-
-[screenshot of paperclip icon]
-
-Drag and Drop
-~~~~~~~~~~~~~
-You can attach files by dragging them from your computer into the 
-message input box either on the right-hand sidebar or the center pane.
-After dropping the files, press ENTER to post.
-
-Paste from the Clipboard
-~~~~~~~~~~~~~~
-If you use Chrome or Edge browsers, you can also upload files by 
-pasting them from the clipboard. This feature is not yet supported on 
-other browsers.
+[Add screenshots of each method]
 
 File Previewer
 --------------
@@ -48,12 +27,11 @@ Click the thumbnail of an attached file to open it in the file previewer.
 
 Downloading Files
 ~~~~~~~~~~~~~~~~~
-You can download an attached file in two ways:
+You can download an attached file by:
 
--  click the download icon next to the file thumbnail
--  open the file previewer and click **Download**
+-  clicking the download icon next to the file thumbnail
 
-[screenshots of download methods]
+[Add screenshot of download method]
 
 Sharing Public Links
 ~~~~~~~~~~~~~~~~~~~~
@@ -70,10 +48,7 @@ Administrator to enable the feature from the System Console under
 
 Viewing Media:
 ~~~~~~~~~~~~~~~~~~~~~
-If you are trying to preview a media type that is not supported, the 
-file previewer will open a standard media attachment icon. Supported 
-media formats depend on your browser and operating system, but the 
-following formats are supported on most browsers:
+The following media formats are supported on most browsers:
 
 -  Images: BMP, GIF, JPG, JPEG, PNG, SVG
 -  Video: MP4
