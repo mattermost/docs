@@ -16,6 +16,7 @@ Release Date: July 16, 2017
 
 #### Native iOS and Android Apps
 - Second generation mobile apps released for iOS and Android. // XXX Link to blog post
+- // XXX Note about supporting BlackBerry Dynamics
 
 #### New Web UI
 - Updated the look of channel header and channel sidebar in the web user interface.
@@ -33,7 +34,8 @@ Release Date: July 16, 2017
 - APIv3 endpoints are supported until January 16, 2018. To learn more about migrating to APIv4 endpoints, [see https://api.mattermost.com/](https://api.mattermost.com/).
 
 #### High Availability ([Enterprise Edition E20](https://about.mattermost.com/pricing/))
-- Added support for dynamically adding and removing nodes from the cluster.
+- Mattermost servers are dynamically added and removed based on discovery and their cluster name using the hashicorp memberlist. 
+- Added support for experimental gossip protocol, where the server will attempt to communicate via the gossip protocol over the gossip port.
 
 ### Improvements
 
@@ -67,10 +69,12 @@ Release Date: July 16, 2017
 - SHIFT+UP now opens a reply thread for the most recent message posted by a user, skipping system messages.
 
 #### Slash Commands
-- Added `/header` command to set the channel header.
-- Added `/help` command to open the Mattermost help page in a new browser tab.
-- Added `/open` command to switch or join a channel.
-- Added `/settings` command to open the Account Settings dialog.
+- Added the following built-in slash commands:
+  - `/header` command to set the channel header.
+  - `/help` command to open the Mattermost help page in a new browser tab.
+  - `/open` command to switch or join a channel.
+  - `/search` command to search text in messages.
+  - `/settings` command to open the Account Settings dialog.
 - `/invite_people` slash command is now disabled when account creation is set to false.
 - If a message starts with a / but fails to send (either due to timeout or invalid command), the message is put back to the input box.
 
@@ -90,6 +94,10 @@ Release Date: July 16, 2017
 #### Link Previews
 - After posting a message containing an image link, a preview is loaded only if one is available.
 
+#### Enterprise Edition
+- // XXX HA changes
+- When a SAML user uses a non-supported locale, the language now defaults to English preventing login issues.
+
 ### Bug Fixes
 - Emoji picker now closes in Firefox when clicking outside of it.
 - [...] menu no longer disappears in the comment thread when hovering over another post.
@@ -104,6 +112,7 @@ Release Date: July 16, 2017
 - File upload cancelled if you click "x" on thumbnail while file is uploading in your message draft.
 - Status no longer appears offline after joining a new team.
 - An empty push notification is no longer sent for messages only containing file attachments.
+- If you're at the top of a channel when a new post is received, the view no longer shifts and removes the oldest post that was in your view.
 
 ### Compatibility
 
