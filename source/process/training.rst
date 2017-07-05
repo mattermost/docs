@@ -2,7 +2,7 @@
 Onboarding
 ==================================================
 
-This document in intended for new hires to summarize norms for working at Mattermost, Inc. including:
+This document is intended for new hires to summarize norms for working at Mattermost, Inc. including:
 
 - `Getting Started Checklist`_ - Getting ready to work here
 - `Meetings`_ - When we get together and why
@@ -350,7 +350,7 @@ In making these trade-offs, consider the following mindsets:
 
 - **Field Surgeon** 
 
-   Triage things that are important, broken but not dangerous, and fix the most important things with a minimum of time and cost. Scarring should be a low-priority consideration--it's is fine to leave scars and it is fine to spend a little energy to avoid big ones.  Solve the problem for the next stage of growth, but don't solve if to two to three stages ahead. 
+   Triage things that are important, broken but not dangerous, and fix the most important things with a minimum of time and cost. Scarring should be a low-priority consideration--it is fine to leave scars and it is fine to spend a little energy to avoid big ones.  Solve the problem for the next stage of growth, but don't solve if to two to three stages ahead. 
 
    *Example:* In Mattermost, spend 2 mana to enable automated messages over 4000 characters to be broken into multiple posts instead of being rejected, which is a problem every developer hits when they attempt to output log information via curl commands.
 
