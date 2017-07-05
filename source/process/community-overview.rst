@@ -47,23 +47,23 @@ Audiences
   - Some might build drivers to more easily integrate Mattermost into different programming languages
   - Examples: Popular third-party software (e.g. Jira, Jenkins), Slack-compatible integrations (e.g. Slackbot), Custom Mattermost integrations (e.g. Matterbridge, Mattermail), Plug-ins (to come)
 
-2. Orchestration solution maintainers (Owner: Lindsay)
-
-  - They create deployment solution programs to more easily install and deploy Mattermost
-  - Examples: Modules (e.g. Puppet, Heroku), Installers (e.g. Yunohost, Chef Cookbook) and Package managers (Bitnami, HPE Gold)
-
-3. Code contributors (Owner: Eric)
+2. Code contributors (Owner: Eric)
 
   - They contribute features, small improvements and bug fixes to platform, mobile and desktop app repos
 
-4. End users (Owner: Lindy)
+3. End users (Owner: Lindy)
 
   - They ask for help troubleshooting issues, report bugs, share UX feedback and propose new features
   - Examples: forum.mattermost.org, GitHub repos, uservoice
 
-5. Localization (Owner: Jason)
+4. Localization (Owner: Jason)
 
   - They help translate and maintain languages in Pootle translation server
+
+5. Orchestration solution maintainers (Owner: TBD)
+
+  - They create deployment solution programs to more easily install and deploy Mattermost
+  - Examples: Modules (e.g. Puppet, Heroku), Installers (e.g. Yunohost, Chef Cookbook) and Package managers (Bitnami, HPE Gold)
 
 6. Writers (Owner: TBD)
 
@@ -71,15 +71,4 @@ Audiences
 
 7. Designers (Owner: TBD)
 
-  - They help with feature design and review processes 
-
-Next Steps
----------------------------------------------------------
-
-See a summary here: `https://docs.google.com/spreadsheets/d/1kCzxeU1GQKM4WsiOD-0hhGOIhIdAOu2Ah8kG8eGtN2Q/edit#gid=0 <https://docs.google.com/spreadsheets/d/1kCzxeU1GQKM4WsiOD-0hhGOIhIdAOu2Ah8kG8eGtN2Q/edit#gid=0 >`_
-
-Highest impact: Integrations community; End users (through efficient bug and feature reporting system)
-
-Path for recruitment: Code contributors
-
-Long term: Orchestration; Localization; Writers & Designers
+  - They help with feature design and review processes
