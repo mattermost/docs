@@ -18,7 +18,7 @@ Release Date: July 16, 2017
 - Second generation mobile apps released for iOS and Android. // XXX Link to blog post
 - // XXX Note about supporting BlackBerry Dynamics
 
-#### New Web UI
+#### New Web UI // XXX Different wording on this
 - Updated the look of channel header and channel sidebar in the web user interface.
 - Added a new default theme, "Mattermost". To try it, go to **Account Settings > Display > Theme**.
 
@@ -29,9 +29,9 @@ Release Date: July 16, 2017
 #### Languages
 - Added Italian translations to the user interface.
 
-#### APIv4 (Stable Release)
+#### API v4 (Stable Release)
 - Mattermost webapp moved to API v4 endpoints, which allow for more powerful integrations and server interaction.
-- APIv3 endpoints are supported until January 16, 2018. To learn more about migrating to APIv4 endpoints, [see https://api.mattermost.com/](https://api.mattermost.com/).
+- API v3 endpoints are supported until January 16, 2018. To learn more about migrating to APIv4 endpoints, [see https://api.mattermost.com/](https://api.mattermost.com/).
 
 #### High Availability ([Enterprise Edition E20](https://about.mattermost.com/pricing/))
 - Mattermost servers are dynamically added and removed based on discovery and their cluster name using the hashicorp memberlist. 
@@ -50,7 +50,7 @@ Release Date: July 16, 2017
 - New user profile pictures now update for other users upon refresh.
 - Improved rendering of at-mention highlighting in message view.
 
-#### Mobile Web UI
+#### Mobile Web
 - Added "Create Team" and "Leave Team" options to the Main Menu.
 - Updated the look of Account Settings pages on mobile.
 - User profile popover no longer gets cropped in the center channel on iOS browser.
@@ -127,7 +127,7 @@ Release Date: July 16, 2017
   - Profile picture height and width
   - Image thumbnail height and width
 - Font setting in Account Settings > Display removed.
-- Account Settings options for **Display** > **Display Font** and **Display** > **Teammate Name Display** moved to the System Console.
+- Account Settings option **Display** > **Teammate Name Display** moved to the System Console.
 - All APIv3 endpoints are scheduled for removal on January 16, 2018.
 
 For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
@@ -144,14 +144,14 @@ Multiple setting options were added to `config.json`. Below is a list of the add
    - Added `"EnableAPIv3": "true"` to control whether version 3 endpoints of the REST API are allowed on the server. If the setting is disabled, integrations that rely on API v3 will fail and can then be identified for migration to API v4.
 - Under `FileSettings` in `config.json`:
    - Removed System Console settings in **Files > Images**, including:
-    - `"ThumbnailWidth": 120`
-    - `"ThumbnailHeight": 100`
-    - `"PreviewWidth": 1024`
-    - `"PreviewHeight": 0`
-    - `"ProfileWidth": 128`
-    - `"ProfileHeight": 128`
+     - `"ThumbnailWidth": 120`
+     - `"ThumbnailHeight": 100`
+     - `"PreviewWidth": 1024`
+     - `"PreviewHeight": 0`
+     - `"ProfileWidth": 128`
+     - `"ProfileHeight": 128`
 - Under `SqlSettings` in `config.json`: 
-   - Modified `"QueryTimeout": 30` to also support query timeouts on PostgreSQL, not just MySQL.
+   - Modified `"QueryTimeout": 30` to also support query timeouts on PostgreSQL, in addition to MySQL.
 
 **Additional Changes to Enterprise Edition**:
 
@@ -177,6 +177,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 **Added:**
 - `channel_updated` that occurs each time a channel information is updated (such as name or header), so that the changes are propagated across clients.
+- `channel_viewed` that // XXX
 
 ### Known Issues
 
@@ -222,14 +223,6 @@ Many thanks to all our contributors. In alphabetical order:
 
 - [yuya-oc](https://github.com/yuya-oc)
 
-/mattermost-selenium
-
-- [lindalumitchell](https://github.com/lindalumitchell)
-
-/mattermost-bot-sample-golang
-
-- [coreyhulen](https://github.com/coreyhulen)
-
 /mattermost-kubernetes
 
 - [coreyhulen](https://github.com/coreyhulen)
@@ -245,14 +238,6 @@ Many thanks to all our contributors. In alphabetical order:
 /mattermost-load-test
 
 - [crspeller](https://github.com/crspeller), [JeffSchering](https://github.com/JeffSchering)
-
-/gorp
-
-- [jwilander](https://github.com/jwilander)
-
-/matterbuild
-
-- [crspeller](https://github.com/crspeller)
 
 ## Release v3.10.1
 
