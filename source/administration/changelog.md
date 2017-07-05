@@ -187,6 +187,64 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Contributors
 
+Many thanks to all our contributors. In alphabetical order:
+
+/platform
+
+- [94117nl](https://github.com/94117nl), [abustany](https://github.com/abustany), [alexrford](https://github.com/alexrford), [asaadmahmood](https://github.com/asaadmahmood), [ccbrown](https://github.com/ccbrown), [coreyhulen](https://github.com/coreyhulen), [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [dmeza](https://github.com/dmeza), [enahum](https://github.com/enahum), [ftKnox](https://github.com/ftKnox), [grundleborg](https://github.com/grundleborg), [hmhealey](https://github.com/hmhealey), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [jwilander](https://github.com/jwilander), [kkamdooong](https://github.com/kkamdooong), [lindalumitchell](https://github.com/lindalumitchell), [megos](https://github.com/megos), [meilon](https://github.com/meilon), [moonmeister](https://github.com/moonmeister), [pieterlexis](https://github.com/pieterlexis), [saturninoabril](https://github.com/saturninoabril), [VeraLyu](https://github.com/VeraLyu), [ZJvandeWeg](https://github.com/ZJvandeWeg)
+
+/mattermost-mobile
+
+- [asaadmahmood](https://github.com/asaadmahmood), [csduarte](https://github.com/csduarte), [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [lfbrock](https://github.com/lfbrock), [omar-dev](https://github.com/omar-dev)
+
+/mattermost-redux
+
+- [94117nl](https://github.com/94117nl), [csduarte](https://github.com/csduarte), [enahum](https://github.com/enahum), [grundleborg](https://github.com/grundleborg), [hmhealey](https://github.com/hmhealey), [jarredwitt](https://github.com/jarredwitt), [jwilander](https://github.com/jwilander), [saturninoabril](https://github.com/saturninoabril)
+
+/mattermost-api-reference
+
+- [cpanato](https://github.com/cpanato), [grundleborg](https://github.com/grundleborg), [hmhealey](https://github.com/hmhealey), [jasonblais](https://github.com/jasonblais), [jwilander](https://github.com/jwilander), [Vaelor](https://github.com/Vaelor), [ZJvandeWeg](https://github.com/ZJvandeWeg)
+
+/docs
+
+- [94117nl](https://github.com/94117nl), [acgustafson](https://github.com/acgustafson), [amyblais](https://github.com/amyblais), [ccbrown](https://github.com/ccbrown), [crspeller](https://github.com/crspeller), [esethna](https://github.com/esethna), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [jwilander](https://github.com/jwilander), [kjkeane](https://github.com/kjkeane), [megos](https://github.com/megos), [pieterlexis](https://github.com/pieterlexis)
+
+/desktop
+
+- [yuya-oc](https://github.com/yuya-oc)
+
+/mattermost-selenium
+
+- [lindalumitchell](https://github.com/lindalumitchell)
+
+/mattermost-bot-sample-golang
+
+- [coreyhulen](https://github.com/coreyhulen)
+
+/mattermost-kubernetes
+
+- [coreyhulen](https://github.com/coreyhulen)
+
+/mattermost-push-proxy
+
+- [coreyhulen](https://github.com/coreyhulen), [ftKnox](https://github.com/ftKnox)
+
+/mattermost-docker
+
+- [pichouk](https://github.com/pichouk), [tejasbubane](https://github.com/tejasbubane)
+
+/mattermost-load-test
+
+- [crspeller](https://github.com/crspeller), [JeffSchering](https://github.com/JeffSchering)
+
+/gorp
+
+- [jwilander](https://github.com/jwilander)
+
+/matterbuild
+
+- [crspeller](https://github.com/crspeller)
+
 ## Release v3.10.1
 
  - **v3.10.1, released 2017-07-16**
