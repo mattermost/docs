@@ -58,6 +58,20 @@ In addition to checklists for quality and reliability, code changes receive mult
 - Preventing cross-site forgery 
 - Preventing remote code execution 
 
+### Security Update Monitoring 
+
+The following resources are monitoring for information about new security threats and attack vectors. 
+
+- https://www.iacr.org/
+- http://www.acm.org/
+- https://www.usenix.org/
+- https://www.exploit-db.com/
+- https://security.googleblog.com/
+- https://groups.google.com/forum/#!forum/golang-announce
+- http://www.cert.org/
+- https://www.reddit.com/r/netsec/
+
+
 ## Common Security Related Questions for Enterprises
 
 ### Governance
