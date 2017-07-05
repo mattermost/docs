@@ -41,7 +41,7 @@ For self-hosted deployments in small setups you might host integrations on the s
 
 When self-hosting restrictions are less strict, AWS, Heroku and other public cloud options could also be used.
 
-## How to create a bot account without using webhooks
+## How do I create a bot account without using webhooks?
 
 Deployments that cannot create bot accounts via webhooks due to security reasons can use the following approach:
 
