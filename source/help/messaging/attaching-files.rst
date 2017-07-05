@@ -36,10 +36,9 @@ You can download an attached file by:
 Sharing Public Links
 ~~~~~~~~~~~~~~~~~~~~
 Public links allow you to share attachments with people outside your 
-Mattermost team. Open the file previewer by clicking on the thumbnail of
-an attachment, then click **Get Public Link**. This opens a dialog box with 
-a link to copy. When the link is shared and opened by another user, the 
-file will automatically download.
+Mattermost team.
+
+-  Click the thumbnail of an attachment > click **Get Public Link**
 
 [Change to a Tip:] If **Get Public Link** is not visible in the file previewer
 and you prefer that the feature is enabled, you can request your System 
