@@ -142,6 +142,7 @@ Select what language Mattermost displays in the user interface. Options include:
 - English
 - Español - Spanish
 - Français - French
+- Italiano - Italian
 - Nederlands - Dutch
 - Polski - Polish
 - Português (Brasil) - Portuguese
