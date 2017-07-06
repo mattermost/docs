@@ -1,6 +1,6 @@
 .. _incoming_webhooks:
 
-Incoming Webhooks
+Incoming Webhooks 
 =================
 
 Incoming webhooks allow external applications, written in the programming language of your choice--to post messages into Mattermost public channels, private channels, and direct messages by sending a specifically formatted JSON payload via HTTP POST request to a secret Mattermost URL generated specifically for each application.
