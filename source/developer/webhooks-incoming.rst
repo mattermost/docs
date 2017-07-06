@@ -5,7 +5,7 @@ Incoming Webhooks
 
 Incoming webhooks are a simple way to post messages from external applications into Mattermost public channels, private channels, and direct messages. They use a JSON payload that contains the message and send it via HTTP POST request to a Mattermost URL generated for each application.
 
-.. image:: ../images/incoming_webhoks_sample.png
+.. image:: ../images/incoming_webhooks_sample.png
 *An example of a GitHub integration that posts updates to a Developers channel*
 
 Creating a simple incoming webhook
@@ -13,7 +13,7 @@ Creating a simple incoming webhook
 
 Let's learn how to create a simple incoming webhook that posts the following message to Mattermost.
 
-.. image:: ../images/incoming_webhoks_create_simple.png
+.. image:: ../images/incoming_webhooks_create_simple.png
   :width: 50 px
   
 1. First, go to **Main Menu > Integrations > Incoming Webhook**. If you don't have the **Integrations** option in your Main Menu, incoming webhooks may not be enabled on your Mattermost server. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator.
@@ -22,12 +22,13 @@ Let's learn how to create a simple incoming webhook that posts the following mes
 4. Use a curl command from your terminal or commandline to send the following JSON payload in a HTTP POST request:
 
   .. code-block::
-  curl -i -X POST -d 'payload={"text": "Hello, this is some text\nThis is more text. :tada:"}' http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
 
-Advanced options and formatting
---------------------------------
+    curl -i -X POST -d 'payload={"text": "Hello, this is some text\nThis is more text. :tada:"}' http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
 
-Below are advanced options to customize the message posted to Mattermost.
+Additional options and formatting
+----------------------------------
+
+Below are additional options to customize the message posted to Mattermost.
 
 Override the channel
 ~~~~~~~~~~~~~~~~~~~~~
@@ -37,12 +38,14 @@ You can override the channel the webhook posts to by specifying a `channel` para
 For example, if you have a webhook created for *Town Square*, you can send a message to the *Off-Topic* channel via the same webhook URL by using the following payload.
 
   .. code-block::
-  payload={"channel": "off-topic", "text": "Hello, this is some text\nThis is more text. :tada:"}
+
+    payload={"channel": "off-topic", "text": "Hello, this is some text\nThis is more text. :tada:"}
 
 To send a message to a direct message channel, add an "@" symbol followed by the username to the `channel` parameter.
 
   .. code-block::
-  payload={"channel": "@username", "text": "Hello, this is some text\nThis is more text. :tada:"}
+
+    payload={"channel": "@username", "text": "Hello, this is some text\nThis is more text. :tada:"}
 
 Override the username
 ~~~~~~~~~~~~~~~~~~~~~
@@ -52,10 +55,11 @@ You can override the username the messages posts as by specifying a `username` p
 For example, to send the message as a `webhook-bot`, use the following payload.
 
   .. code-block::
-  payload={"username": "webhook-bot", "text": "Hello, this is some text\nThis is more text. :tada:"}
+
+    payload={"username": "webhook-bot", "text": "Hello, this is some text\nThis is more text. :tada:"}
   
 
-.. image:: ../images/incoming_webhoks_override_username.png
+.. image:: ../images/incoming_webhooks_override_username.png
   :width: 50 px
 
 To prevent malicious users from trying to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`_ a *BOT* indicator appears next to posts coming from webhooks regardless of what username is specified.
@@ -66,20 +70,42 @@ To prevent malicious users from trying to perform `phishing attacks <https://en.
 Override the profile picture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can also override the profile picture the messages posts with by specifying an `icon_url` parameter in your JSON payload.
+You can also override the profile picture the messages post with by specifying an `icon_url` parameter in your JSON payload.
 
 For example, you can use the following payload to override the profile picture to use the image located at http://example.com/somecoolimage.jpg.
 
   .. code-block::
-  payload={"icon_url": "http://example.com/somecoolimage.jpg", "text": "Hello, this is some text\nThis is more text. :tada:"}
+
+    payload={"icon_url": "http://example.com/somecoolimage.jpg", "text": "Hello, this is some text\nThis is more text. :tada:"}
 
   .. note::
     `Enableintegrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`_ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator. If not enabled, the icon of the creator of the webhook URL is used to post messages.
 
+Format the webhook message
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can apply :doc:`Markdown formatting <../help/messaging/formatting-text>` to create richly formatted payloads.
+
+For example, to create a message with a heading, and an italicized text on the next line, use the following payload. 
+
+  .. code-block::
+
+    payload={"text": "# This is a heading\n_This text is italicized._"}
+
+.. image:: ../images/incoming_webhooks_markdown_formatting.png
+
+Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` in the JSON payload.
+
+
 
 Full example / best practices?
+-------------------
+
 Built-in stuff
+-------------------
+
 Share your integration
+-------------------
 
 
 
@@ -155,25 +181,6 @@ A couple key points:
 - **Mattermost incoming webhooks are Slack-compatible.** If you've used Slack's incoming webhooks to create integrations, you can copy and paste that code to create Mattermost integrations. Mattermost automatically translates Slack's proprietary JSON payload format into markdown to render in Mattermost messages
 - **Mattermost incoming webhooks support full markdown.** A rich range of formatting unavailable in Slack is made possible through :doc:`markdown support <../help/messaging/formatting-text>` in Mattermost, including headings, formatted fonts, tables, inline images and other options supported by Mattermost Markdown.
 
-**Example:**
-
-Suppose you wanted to create a notification of the status of a daily build, with a table of total tests run and total tests failed by component category, with links to failed tests by category. You could create the following JSON payload to post to a Mattermost channel using webhooks:
-
-.. code-block:: text
-
-  payload={"text": "
-  | Component  | Tests Run   | Tests Failed                                   |
-  |:-----------|:------------|:-----------------------------------------------|
-  | Server     | 948         | :white_check_mark: 0                           |
-  | Web Client | 123         | :warning: [2 (see details)](http://linktologs) |
-  | iOS Client | 78          | :warning: [3 (see details)](http://linktologs) |
-  "}
-
-Which would render in a Mattermost message as follows:
-
-.. image:: ../images/webhooksTable.PNG
-  :alt: Shows what the output of the JSON payload renders as in Mattermost
-
 Setting Up Existing Integrations
 --------------------------------
 
@@ -193,10 +200,6 @@ You can create a webhook integration to post into any Mattermost public channels
 
 1. For the HTTP request body, if `Content-Type` is specified as `application/json` in the headers of the HTTP request then the body of the request can be direct JSON. For example, ``{"text": "Hello, this is some text."}``
 
-5. Also, as mentioned previously, :doc:`markdown <../help/messaging/formatting-text>` can be used to create richly formatted payloads, for example: ``payload={"text": "# A Header\nThe _text_ below **the** header."}`` creates a message with a header, a carriage return, and bold text for "the".
-
 6. Including *@username* in the JSON payload will trigger a mention notification for the person with the specified username. Channels can be mentioned by including *@channel* or *<!channel>*. For example:  ``payload={"text": "<!channel> this is a notification""}`` would create a message that mentions *@channel*.
 
 7. If the text is longer than 4000 characters, the message is split into multiple consecutive posts, each within the 4000 character limit.
-
-8. Posts with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` in the JSON payload.
