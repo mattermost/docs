@@ -2254,7 +2254,7 @@ Maximum number of open connections held open to the database.
 
 SQL Query Timeout
 ^^^^^^^^^^^^^^^^^
-The number of seconds to wait for a response from the database after opening a connection and sending the query. Errors that you see in the UI or in the logs as a result of a query timeout can vary depending on the type of query. This setting has no effect on PostgreSQL databases.
+The number of seconds to wait for a response from the database after opening a connection and sending the query. Errors that you see in the UI or in the logs as a result of a query timeout can vary depending on the type of query.
 
 +-------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"QueryTimeout": 30`` with whole number input, in the *SqlSettings* section. |
