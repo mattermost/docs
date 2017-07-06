@@ -3,6 +3,31 @@
 Outgoing Webhooks
 =================
 
+
+
+
+
+
+What is X?
+When to use X?
+Built-in stuff
+Creating your own
+How to create something simple ("hello world")
+Advanced options / formatting
+Full example / best practices?
+Share your integration
+Slack compatibility stuff
+Known issues
+Troubleshooting
+
+
+
+
+
+
+
+
+
 Outgoing webhooks allow external applications, written in the programming language of your choice--to receive HTTP POST requests whenever a user posts to a certain channel, with a trigger word at the beginning of the message, or a combination of both. If the external application responds appropriately to the HTTP request, as response post can be made in the channel where the original post occurred.
 
 A couple key points:
