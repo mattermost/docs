@@ -125,23 +125,46 @@ Renders as:
 Code Block
 ----------
 
-Create a code block by indenting each line by four spaces, or by placing ``````` on the line above and below your code.
-
-Example:
-
-.. code-block:: none
-
-
-  ```
-  code block
-  ```
+Creating a fixed width code block is recommended for pasting multi-line blocks of code or other text output that is easier to read with fixed width font alignment. Examples include block text snippets, ASCII tables, log files, etc.
 
 Renders as:
 
 .. code-block:: none
 
+  this is my code
+  123 alignment
+  alignment 456
+  fixed width!
 
+This can be accomplished in one of two ways:
+ 1. Indenting each line by four spaces
+
+Example:
+
+.. code-block:: none
+
+      this is my
+      code block
+
+  ^^^^ 4x spaces
+
+
+or,
+
+ 2. Placing 3x backtics (\`\`\`) on the line directly above and directly below your code
+
+
+Example:
+
+.. code-block:: none
+
+  ```
+  this is my
   code block
+  ```
+
+
+* **TIP**! - If you're having trouble as a first-timer, assuming default keyboard shortcuts for most clients, this can be accomplished by entering: 3x backticks <\`\`\`>, <SHIFT>+<ENTER>, <type_your_code>, <SHIFT>+<ENTER>, and finally 3x backtacs <\`\`\`>.
 
 **Syntax Highlighting**
 
