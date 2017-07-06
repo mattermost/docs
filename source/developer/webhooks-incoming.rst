@@ -3,7 +3,9 @@
 Incoming Webhooks
 =================
 
-Incoming webhooks are a simple way to post messages from external applications into Mattermost public channels, private channels, and direct messages. They use a JSON payload that contains the message and send it via HTTP POST request to a Mattermost URL generated for each application.
+Mattermost supports webhooks to easily integrate external applications into the platform.
+
+Use incoming webhooks to post messages to Mattermost public channels, private channels, and direct messages. Messages are sent via an HTTP POST request to a Mattermost URL generated for each application and contain a specifically formatted JSON payload.
 
 .. image:: ../images/incoming_webhooks_sample.png
 *An example of a GitHub integration that posts updates to a Developers channel*
@@ -25,15 +27,15 @@ Let's learn how to create a simple incoming webhook that posts the following mes
 
     curl -i -X POST -d 'payload={"text": "Hello, this is some text\nThis is more text. :tada:"}' http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
 
-Additional options and formatting
-----------------------------------
+Options and formatting
+-----------------------
 
 Below are additional options to customize the message posted to Mattermost.
 
 Override the channel
 ~~~~~~~~~~~~~~~~~~~~~
 
-You can override the channel the webhook posts to by specifying a `channel` parameter in your JSON payload.
+You can override the channel the webhook posts to by specifying a ``channel`` parameter in your JSON payload.
 
 For example, if you have a webhook created for *Town Square*, you can send a message to the *Off-Topic* channel via the same webhook URL by using the following payload.
 
@@ -41,7 +43,7 @@ For example, if you have a webhook created for *Town Square*, you can send a mes
 
     payload={"channel": "off-topic", "text": "Hello, this is some text\nThis is more text. :tada:"}
 
-To send a message to a direct message channel, add an "@" symbol followed by the username to the `channel` parameter.
+To send a message to a direct message channel, add an "@" symbol followed by the username to the ``channel`` parameter.
 
   .. code-block::
 
@@ -50,7 +52,7 @@ To send a message to a direct message channel, add an "@" symbol followed by the
 Override the username
 ~~~~~~~~~~~~~~~~~~~~~
 
-You can override the username the messages posts as by specifying a `username` parameter in your JSON payload.
+You can override the username the messages posts as by specifying a ``username`` parameter in your JSON payload.
 
 For example, to send the message as a `webhook-bot`, use the following payload.
 
@@ -70,7 +72,7 @@ To prevent malicious users from trying to perform `phishing attacks <https://en.
 Override the profile picture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can also override the profile picture the messages post with by specifying an `icon_url` parameter in your JSON payload.
+You can also override the profile picture the messages post with by specifying an ``icon_url`` parameter in your JSON payload.
 
 For example, you can use the following payload to override the profile picture to use the image located at http://example.com/somecoolimage.jpg.
 
@@ -81,10 +83,10 @@ For example, you can use the following payload to override the profile picture t
   .. note::
     `Enableintegrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`_ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator. If not enabled, the icon of the creator of the webhook URL is used to post messages.
 
-Format the webhook message
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Markdown formatting
+~~~~~~~~~~~~~~~~~~~~
 
-You can apply :doc:`Markdown formatting <../help/messaging/formatting-text>` to create richly formatted payloads.
+A rich range of formatting unavailable in Slack is made possible through :doc:`markdown support <../help/messaging/formatting-text>` in Mattermost, including headings, formatted fonts, tables, inline images and other options supported by Mattermost Markdown. All of these options are also supported by incoming webhooks.
 
 For example, to create a message with a heading, and an italicized text on the next line, use the following payload. 
 
@@ -96,6 +98,14 @@ For example, to create a message with a heading, and an italicized text on the n
 
 Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` in the JSON payload.
 
+Tips and best practices
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. The external application may be written in any programming language as long as it support sending an HTTP POST request in the required JSON format to a specified Mattermost URL.
+
+2. Webhooks are designed to post messages. For more other actions such as channel creation, use the `Mattermost APIs <../developer/webhooks-incoming>`_.
+
+3. Mattermost incoming webhooks are Slack-compatible. You can copy-and-paste code from a Slack incoming webhook to create Mattermost integrations. Mattermost :doc:`automatically translates the Slack's proprietary JSON payload format.
 
 
 Full example / best practices?
@@ -175,11 +185,11 @@ To debug incoming webhooks, set **System Console > Logging > Enable Webhook Debu
 
 
 
-
 A couple key points:
 
 - **Mattermost incoming webhooks are Slack-compatible.** If you've used Slack's incoming webhooks to create integrations, you can copy and paste that code to create Mattermost integrations. Mattermost automatically translates Slack's proprietary JSON payload format into markdown to render in Mattermost messages
-- **Mattermost incoming webhooks support full markdown.** A rich range of formatting unavailable in Slack is made possible through :doc:`markdown support <../help/messaging/formatting-text>` in Mattermost, including headings, formatted fonts, tables, inline images and other options supported by Mattermost Markdown.
+
+ +- **Mattermost incoming webhooks are Slack-compatible.** If you've used Slack's incoming webhooks previously, you can copy and paste that code to create Mattermost integrations. Mattermost automatically translates Slack's proprietary JSON payload format.
 
 Setting Up Existing Integrations
 --------------------------------
