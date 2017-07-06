@@ -5,26 +5,76 @@ Incoming Webhooks
 
 Incoming webhooks are a simple way to post messages from external applications into Mattermost public channels, private channels, and direct messages. They use a JSON payload that contains the message and send it via HTTP POST request to a Mattermost URL generated for each application.
 
-[screenshot of a DevOps integration posting to Mattermost]
+.. image:: ../images/incoming_webhoks_sample.png
+*An example of a GitHub integration that posts updates to a Developers channel*
 
 Creating a simple incoming webhook
 -----------------------------------
 
 Let's learn how to create a simple incoming webhook that posts the following message to Mattermost.
 
-[screenshot]
-
+.. image:: ../images/incoming_webhoks_create_simple.png
+  :width: 50 px
+  
 1. First, go to **Main Menu > Integrations > Incoming Webhook**. If you don't have the **Integrations** option in your Main Menu, incoming webhooks may not be enabled on your Mattermost server. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator.
 2. Click **Add Incoming Webhook** and add name and description for the webhook.
 3. Select the channel to receive webhook payloads, then click **Add** to create the webhook.
 4. Use a curl command from your terminal or commandline to send the following JSON payload in a HTTP POST request:
 
   .. code-block::
-  curl -i -X POST -d 'payload={"text": "Hello, this is some text.\nThis is more text."}' http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
+  curl -i -X POST -d 'payload={"text": "Hello, this is some text\nThis is more text. :tada:"}' http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
 
 Advanced options and formatting
 --------------------------------
 
+Below are advanced options to customize the message posted to Mattermost.
+
+Override the channel
+~~~~~~~~~~~~~~~~~~~~~
+
+You can override the channel the webhook posts to by specifying a `channel` parameter in your JSON payload.
+
+For example, if you have a webhook created for *Town Square*, you can send a message to the *Off-Topic* channel via the same webhook URL by using the following payload.
+
+  .. code-block::
+  payload={"channel": "off-topic", "text": "Hello, this is some text\nThis is more text. :tada:"}
+
+To send a message to a direct message channel, add an "@" symbol followed by the username to the `channel` parameter.
+
+  .. code-block::
+  payload={"channel": "@username", "text": "Hello, this is some text\nThis is more text. :tada:"}
+
+Override the username
+~~~~~~~~~~~~~~~~~~~~~
+
+You can override the username the messages posts as by specifying a `username` parameter in your JSON payload.
+
+For example, to send the message as a `webhook-bot`, use the following payload.
+
+  .. code-block::
+  payload={"username": "webhook-bot", "text": "Hello, this is some text\nThis is more text. :tada:"}
+  
+
+.. image:: ../images/incoming_webhoks_override_username.png
+  :width: 50 px
+
+To prevent malicious users from trying to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`_ a *BOT* indicator appears next to posts coming from webhooks regardless of what username is specified.
+
+  .. note::
+    `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`_ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator. If not enabled, the username is set to `webhook`.
+
+Override the profile picture
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can also override the profile picture the messages posts with by specifying an `icon_url` parameter in your JSON payload.
+
+For example, you can use the following payload to override the profile picture to use the image located at http://example.com/somecoolimage.jpg.
+
+  .. code-block::
+  payload={"icon_url": "http://example.com/somecoolimage.jpg", "text": "Hello, this is some text\nThis is more text. :tada:"}
+
+  .. note::
+    `Enableintegrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`_ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator. If not enabled, the icon of the creator of the webhook URL is used to post messages.
 
 
 Full example / best practices?
@@ -124,16 +174,6 @@ Which would render in a Mattermost message as follows:
 .. image:: ../images/webhooksTable.PNG
   :alt: Shows what the output of the JSON payload renders as in Mattermost
 
-Enabling Incoming Webhooks
---------------------------
-
-Incoming webhooks should be enabled on your Mattermost instance by default, but if they are not you'll need to get your system administrator to enable them. If you are the system administrator you can enable them by doing the following:
-
-1. Login to your Mattermost team account that has the system administrator role.
-2. Enable incoming webhooks from **System Console > Integrations > Custom Integrations**.
-3. (Optional) Configure the **Enable integrations to override usernames** option to allow external applications to post messages under any name. If not enabled, the username is set to "webhook".
-4. (Optional) Configure the **Enable integrations to override profile picture icons** option to allow external applications to change the icon of the account posting messages. If not enabled, the icon of the creator of the webhook URL is used to post messages.
-
 Setting Up Existing Integrations
 --------------------------------
 
@@ -144,19 +184,6 @@ Creating Integrations using Incoming Webhooks
 
 You can create a webhook integration to post into any Mattermost public channels and into private channels you have permission to by using these steps:
 
-.. Note::
-  Incoming webhooks must be enabled. Only your Mattermost system administrator can enable incoming webhooks if they are currently disabled.
-
-1. Create a Mattermost Incoming Webhook URL.
-  a. Login to your Mattermost team site and go to **Main Menu > Integrations > Incoming Webhooks**.
-  b. Click **Add incoming webhook**.
-  c. Select the channel to receive webhook payloads, then click **Add** to create the webhook.
-  d. To see your new webhook in action, try a curl command from your terminal or command-line to send a JSON string as the `payload` parameter in a HTTP POST request. For example:
-
-  .. code-block:: text
-
-    curl -i -X POST -d 'payload={"text": "Hello, this is some text.\nThis is more text."}' http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
-
 2. Build your integration in the programming language of your choice.
   a. Most integrations will be used to translate some sort of output from another system to an appropriately formatted input that will be passed into the Mattermost webhook URL. For example, an integration could take events generated by `GitLab outgoing webhooks <http://doc.gitlab.com/ee/web_hooks/web_hooks.html>`_ and parse them into a JSON body to post into Mattermost.
   b. To get the message posted into Mattermost, your integration will need to create an HTTP POST request that will submit to the incoming webhook URL you created before. The body of the request must have a *payload* that contains a JSON object that specifies a *text* parameter. For example, ``payload={"text": "Hello, this is some text."}``` is a valid body for a request.
@@ -165,12 +192,6 @@ You can create a webhook integration to post into any Mattermost public channels
 **Additional Notes:**
 
 1. For the HTTP request body, if `Content-Type` is specified as `application/json` in the headers of the HTTP request then the body of the request can be direct JSON. For example, ``{"text": "Hello, this is some text."}``
-
-2. You can override the channel specified in the webhook definition by specifying a `channel` parameter in your payload. For example, you might have a single webhook created for *Town Square*, but you can use ``payload={"channel": "off-topic", "text": "Hello, this is some text."}`` to send a message to the *Off-Topic* channel using the same webhook URL. If an *@* symbol followed by a username is specified, then the message will be sent to that user's direct message channel.
-
-3. In addition, with **Enable integrations to override usernames** turned on,  you can also override the username the message posts as by providing a *username* parameter in your JSON payload. For example, you might want your message looking like it came from a robot so you can use ``payload={"username": "robot", "text": "Hello, this is some text."}`` to change the username of the post to "robot". Note, to combat any malicious users from trying to use this to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`_ a *BOT* indicator appears next to posts coming from webhooks.
-
-4. With **Enable integrations to override profile picture icons** turned on, you can similarly change the icon the message posts with by providing a link to an image in the *icon_url* parameter of your payload. For example, ``payload={"icon_url": "http://example.com/somecoolimage.jpg", "text": "Hello, this is some text."}`` will post using whatever image is located at *http://example.com/somecoolimage.jpg* as the icon for the post.
 
 5. Also, as mentioned previously, :doc:`markdown <../help/messaging/formatting-text>` can be used to create richly formatted payloads, for example: ``payload={"text": "# A Header\nThe _text_ below **the** header."}`` creates a message with a header, a carriage return, and bold text for "the".
 
