@@ -13,8 +13,6 @@ You can attach files in one of the following ways:
 -  **Drag and Drop**
 -  **Paste from the clipboard** - this feature is supported in Chrome and Edge browsers
 
-[Add screenshots of each method]
-
 File Previewer
 --------------
 Mattermost has a built-in file previewer that you can use to:
@@ -30,8 +28,6 @@ Downloading Files
 You can download an attached file by:
 
 -  clicking the download icon next to the file thumbnail
-
-[Add screenshot of download method]
 
 Sharing Public Links
 ~~~~~~~~~~~~~~~~~~~~
