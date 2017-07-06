@@ -190,7 +190,7 @@ Set up Mattermost Server
 
           [Unit]
           Description=Mattermost server
-          After=network.target postgresql-9.4.service
+          After=network.target postgresql-9.4.service mysqld.service
 
           [Service]
           User=mattermost
