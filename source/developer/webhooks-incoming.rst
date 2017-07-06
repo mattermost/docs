@@ -1,9 +1,104 @@
 .. _incoming_webhooks:
 
-Incoming Webhooks 
+Incoming Webhooks
 =================
 
-Incoming webhooks allow external applications, written in the programming language of your choice--to post messages into Mattermost public channels, private channels, and direct messages by sending a specifically formatted JSON payload via HTTP POST request to a secret Mattermost URL generated specifically for each application.
+Incoming webhooks are a simple way to post messages from external applications into Mattermost public channels, private channels, and direct messages. They use a JSON payload that contains the message and send it via HTTP POST request to a Mattermost URL generated for each application.
+
+[screenshot of a DevOps integration posting to Mattermost]
+
+Creating a simple incoming webhook
+-----------------------------------
+
+Let's learn how to create a simple incoming webhook that posts the following message to Mattermost.
+
+[screenshot]
+
+1. First, go to **Main Menu > Integrations > Incoming Webhook**. If you don't have the **Integrations** option in your Main Menu, incoming webhooks may not be enabled on your Mattermost server. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator.
+2. Click **Add Incoming Webhook** and add name and description for the webhook.
+3. Select the channel to receive webhook payloads, then click **Add** to create the webhook.
+4. Use a curl command from your terminal or commandline to send the following JSON payload in a HTTP POST request:
+
+  .. code-block::
+  curl -i -X POST -d 'payload={"text": "Hello, this is some text.\nThis is more text."}' http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
+
+Advanced options and formatting
+--------------------------------
+
+
+
+Full example / best practices?
+Built-in stuff
+Share your integration
+
+
+
+
+
+
+
+
+
+
+
+Slack Compatibility
+-------------------
+
+Mattermost makes it easy to migrate integrations written for Slack to Mattermost. 
+
+Translate Slack's proprietary data format to Mattermost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost automatically translates the data coming from Slack:
+
+1. JSON payloads written for Slack that contain the following are translated to Mattermost markdown and rendered equivalently to Slack:
+   
+   - *<>* to denote a URL link, such as ``payload={"text": "<http://www.mattermost.com/>"}``
+   - *|* within a *<>* to define linked text, such as ``payload={"text": "Click <http://www.mattermost.com/|here> for a link."}``
+
+2. You can override the channel name with a *@username*, such as ```payload={"text": "Hi", channel: "@jim"}`` to send a direct message like in Slack.
+3. You can prepend a channel name with *#* and the message will still be sent to the correct channel like in Slack.
+
+Mattermost webhooks in GitLab using Slack UI
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+GitLab is the leading open-source alternative to GitHub and offers built-in integrations with Slack. You can use the Slack interface in GitLab to add Mattermost webhooks directly without changing code:
+
+1. In GitLab, go to **Settings > Services** and select **Slack**.
+2. Paste the incoming webhook URL provided by Mattermost from **Main Menu > Integrations > Incoming Webhooks**.
+3. Optionally set the **Username** you'd like displayed when the notification is made. Leave the **Channel** field blank.
+4. Click **Save** then test the settings to confirm messages are sent successfully to Mattermost.
+
+Known Slack Compatibility Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Using ``icon_emoji`` to override the username is not supported.
+2. Referencing  channels using <#CHANNEL_ID> does not link to the channel.
+3. ``<!here>``, ``<!everyone>``, and ``<!group>`` are not supported.
+4. Parameters "mrkdwn", "parse", and "link_names" are not supported. Mattermost converts Markdown by default and automatically links @mentions.
+5. Bold formatting as ``*bold*`` is not supported (must be done as ``**bold**``).
+6. Webhooks cannot direct message the user who created the webhook.
+
+Troubleshooting
+---------------
+
+To debug incoming webhooks, set **System Console > Logging > Enable Webhook Debugging** to ``true`` and set **System Console > Logging > Console Log Level** to ``DEBUG``.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 A couple key points:
 
@@ -84,47 +179,3 @@ You can create a webhook integration to post into any Mattermost public channels
 7. If the text is longer than 4000 characters, the message is split into multiple consecutive posts, each within the 4000 character limit.
 
 8. Posts with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` in the JSON payload.
-
-Slack Compatibility
--------------------
-
-Mattermost makes it easy to take integrations written for Slack's proprietary JSON payload format and repurpose them to become Mattermost integrations. For example:
-
-Connecting Mattermost to GitLab using Slack UI
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-GitLab is the leading open-source alternative to GitHub and offers built-in integrations with Slack. Rather than having to change code to support Mattermost, users can add Mattermost webhooks directly into the interface for Slack.
-
-1. In GitLab, go to **Settings > Services** and select **Slack**.
-2. Paste in the incoming webhook URL provided by Mattermost from under **Main Menu > Integration > Incoming Webhooks**.
-3. Optionally set the **Username** you'd like displayed when the notification is made. Leave the **Channel** field blank.
-4. Click **Save** then test the settings to confirm posts will be made to Mattermost.
-
-Translating Slack's proprietary data format to Mattermost
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The following describes the automatic translations Mattermost performance to process data coming from Slack:
-
-1. Payloads designed for Slack using *<>* to note the need to hyperlink a URL, such as ``payload={"text": "<http://www.mattermost.com/>"}``, are translated to the equivalent markdown in Mattermost and rendered the same as you would see in Slack.
-2. Similiarly, payloads designed for Slack using *|* within a *<>* to define linked text, such as ``payload={"text": "Click <http://www.mattermost.com/|here> for a link."}``, are also translated to the equivalent markdown in Mattermost and rendered the same as you would see in Slack.
-3. Like Slack, by overriding the channel name with a *@username*, such as ```payload={"text": "Hi", channel: "@jim"}``, you can send the message to a user through your direct message chat.
-4. Channel names can be prepended with a *#*, like they are in Slack incoming webhooks, and the message will still be sent to the correct channel.
-
-To see samples and community contributions, please visit `our app directory <https://about.mattermost.com/default-app-directory/>`_.
-
-Known Slack Compatibility Issues
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-1. Using icon_emoji to override the username is not supported.
-2. Referencing  channels using <#CHANNEL_ID> does not link to the channel.
-3. ``<!here>``, ``<!everyone>``, and ``<!group>`` are not supported.
-4. Parameters "mrkdwn", "parse", and "link_names" are not supported (Mattermost always converts markdown and automatically links @mentions).
-5. Bold formatting as ``*bold*`` is not supported (must be done as ``**bold**``).
-6. Webhooks cannot direct message the user who created the webhook.
-
-Troubleshooting
----------------
-
-Debugging Incoming Webhooks
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-To debug, set **System Console > Logging > Enable Webhook Debugging** to ``true`` and set **System Console > Logging > Console Log Level** to ``DEBUG``.
