@@ -125,7 +125,9 @@ Renders as:
 Code Block
 ----------
 
-Create a code block by indenting each line by four spaces, or by placing ``````` on the line above and below your code.
+Create a fixed width code block by indenting each line by four spaces, or by placing ``````` on the line above and below your code.
+ - This is best described as: three backticks, shift-enter, type stuff, shift-enter, three backticks, enter
+ - Or by key code structures: 3x<`>, <SHIFT>+<ENTER>, **TYPE_OR_PASTE_CODE_AND_STUFF**, <SHIFT>+<ENTER>, 3x<`>, <ENTER>
 
 Example:
 
