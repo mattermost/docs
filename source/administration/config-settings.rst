@@ -1900,6 +1900,8 @@ Images
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Attachment Thumbnail Width
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Removed in July 16th, 2017 release*
+
 Width of thumbnails generated from uploaded images. Updating this value changes how thumbnail images render in future, but does not change images created in the past.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1908,6 +1910,8 @@ Width of thumbnails generated from uploaded images. Updating this value changes 
 
 Attachment Thumbnail Height
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Removed in July 16th, 2017 release*
+
 Height of thumbnails generated from uploaded images. Updating this value changes how thumbnail images render in future, but does not change images created in the past.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1916,6 +1920,8 @@ Height of thumbnails generated from uploaded images. Updating this value changes
 
 Image Preview Width
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Removed in July 16th, 2017 release*
+
 Maximum width of preview image. Updating this value changes how preview images render in future, but does not change images created in the past.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1924,6 +1930,8 @@ Maximum width of preview image. Updating this value changes how preview images r
 
 Image Preview Height
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Removed in July 16th, 2017 release*
+
 Maximum height of preview image ("0": Sets to auto-size). Updating this value changes how preview images render in future, but does not change images created in the past.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1932,6 +1940,8 @@ Maximum height of preview image ("0": Sets to auto-size). Updating this value ch
 
 Profile Picture Width
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Removed in July 16th, 2017 release*
+
 The width to which profile pictures are resized after being uploaded via Account Settings.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1940,6 +1950,8 @@ The width to which profile pictures are resized after being uploaded via Account
 
 Profile Picture Height
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Removed in July 16th, 2017 release*
+
 The height to which profile pictures are resized after being uploaded via Account Settings.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
