@@ -184,7 +184,7 @@ Set up Mattermost Server
 8. Set up Mattermost to use the systemd init daemon which handles
    supervision of the Mattermost process. 
 
-   * In case you use postgresql create and edit ``/etc/systemd/system/mattermost.service``
+   * In case you use postgresql, create and edit ``/etc/systemd/system/mattermost.service``
 
       ::
 
@@ -204,7 +204,7 @@ Set up Mattermost Server
           [Install]
           WantedBy=multi-user.target
 
-   * In case you use mysqld create and edit ``/etc/systemd/system/mattermost.service``
+   * In case you use mysqld, create and edit ``/etc/systemd/system/mattermost.service``
 
       ::
 
