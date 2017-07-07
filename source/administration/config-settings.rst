@@ -2303,8 +2303,8 @@ ________________________________________________________________________________
 
 .. _high-availability:
 
-High Availability (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~
+High Availability
+~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
 
 Changing properties in this section will require a server restart before taking effect. When High Availability mode is enabled, the System Console is set to read-only and can only be changed from the configuration file. Learn more about configuring high availability in our `documentation <https://docs.mattermost.com/deployment/cluster.html>`_.
@@ -2338,7 +2338,7 @@ A list of all the machines in the cluster, separated by commas, for example, ``[
 
 ________________________________________________________________________________________________________________________________________________________________________
 
-Performance Monitoring (Beta)
+Performance Monitoring
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
 
