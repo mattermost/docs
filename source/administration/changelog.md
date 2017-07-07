@@ -32,7 +32,7 @@ Release Date: June 16, 2017
 - /loadtest command changed to /test.
 - Ephemeral messages are removed from the right-hand sidebar after it is reopened.
 - Added a markdown preview option to the message editing modal.
-- Status indicators are now shown in the Direct Massages list.
+- Status indicators are now shown in the Direct Messages list.
 
 #### Notifications
 - Added "@here" to the list of channel-wide mentions in Account Settings.
@@ -94,6 +94,7 @@ Release Date: June 16, 2017
   - Image preview height and width
   - Profile picture height and width
   - Image thumbnail height and width
+- Font setting in Account Settings > Display scheduled for removal in July 2017 release.
 - Account Settings options for **Display** > **Display Font** and **Display** > **Teammate Name Display** are scheduled for removal in July 2017 release.
 - All APIv3 endpoints are scheduled for removal six months after APIv4 is stable.
 
@@ -321,6 +322,7 @@ Release Date: May 16, 2017
 
 - If you're using NGINX as a proxy for the Mattermost Server, replace the `location /api/v3/users/websocket {` line with `location ~ /api/v[0-9]+/(users/)?websocket$ {` in the `/etc/nginx/sites-available/mattermost` NGINX configuration file. [See documentation to learn more](https://docs.mattermost.com/install/install-ubuntu-1404.html#configuring-nginx-as-a-proxy-for-mattermost-server).
 - Existing team invite links, password reset links and email verification links will be invalidated after upgrading to v3.9.0.
+- Firefox ESR 45 has an [end-of-life scheduled for June 13](https://en.wikipedia.org/wiki/Firefox_version_history) and is therefore no longer supported. We recommend upgrading to [Firefox ESR 52](https://www.mozilla.org/en-US/firefox/organizations/all/).
 
 #### Removed and deprecated features
 - System Console settings in **Files > Images** scheduled for removal in July 2017 release. This includes:

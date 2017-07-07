@@ -16,6 +16,7 @@ Installing Mattermost
    Installing on RHEL 6.6 </install/install-rhel-66.rst>
    Installing on RHEL 7.1 </install/install-rhel-71.rst>
    Installing on CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific.rst>
+   Installing on Debian Jessie (Unofficial) </install/prod-debian.rst>
    /install/docker-local*
    /install/docker-ebs*
    /install/ee-install*
@@ -24,8 +25,7 @@ Installing Mattermost
    /install/troubleshooting*
    /install/i18n*
    /install/desktop*
-   Configuring Apache2 as a proxy </install/config-proxy-apache2.rst>
-   /install/config-ssl-http2-apache2.rst
+   /install/config-apache2.rst
 
 Deployment
 ----------

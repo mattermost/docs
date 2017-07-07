@@ -29,7 +29,7 @@ After installing Mattermost:
 
 1. **Create a System Administrator account using email authentication**. On a new server create an account using email and password, which is automatically assigned the **System Administrator** role since it is the first account created. You may also assign the role to another account.    
 
-2. **Configure AD/LDAP**. Select **System Console** from the main screen, go to **AD/LDAP** and fill in AD/LDAP settings based on [configuration settings documentation](http://docs.mattermost.com/administration/config-settings.html#ldap-settings-enterprise)    
+2. **Configure AD/LDAP**. Select **System Console** from the main screen, go to **AD/LDAP** and fill in AD/LDAP settings based on [configuration settings documentation](http://docs.mattermost.com/administration/config-settings.html#ad-ldap)    
 
 3. **Confirm AD/LDAP sign-on is enabled**.  After AD/LDAP has been enabled, confirm that users can sign in using AD/LDAP credentials. 
 

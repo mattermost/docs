@@ -3,17 +3,19 @@
 Outgoing Webhooks
 =================
 
-Outgoing webhooks allow external applications, written in the programming language of your choice--to receive HTTP POST requests whenever a user posts to a certain channel, with a trigger word at the beginning of the message, or a combination of both. If the external application responds appropriately to the HTTP request, as response post can be made in the channel where the original post occurred.
+In addition to :doc:`Incoming Webhooks <../developer/webhooks-incoming/>` Mattermost also supports outgoing webhooks. This allows Mattermost to send a request to a web service and process the response. The outgoing webhook is triggered whenever a user posts to a certain channel, with a trigger word at the beginning of a message, or a combination of both. If the application responds appropriately to the HTTP request, a response message can be posted in the channel where the original post occurred.
 
-A couple key points:
+A couple of key points:
 
-- **Mattermost outgoing webhooks are Slack-compatible.** If you've used Slack's outgoing webhooks to create integrations, you can copy and paste that code to create Mattermost integrations. Mattermost automatically translates Slack's proprietary JSON payload format into markdown to render in Mattermost messages
-- **Mattermost outgoing webhooks support full markdown.** When an integration responds with a message to post, it will have access to a rich range of formatting unavailable in Slack that is made possible through :doc:`markdown support <../help/messaging/formatting-text>` in Mattermost, including headings, formatted fonts, tables, inline images and other options supported by Mattermost Markdown.
-- **Outgoing webhooks are only supported in public channels.** If you need something that works in a private channel, consider using a :doc:`Slash Command <slash-commands>`.
+- **The outgoing webhook is similar to the incoming webhook.** As described in the chapter :doc:`Incoming Webhooks <../developer/webhooks-incoming/>` the application may be written in the programming language of your choice. It needs to provide a URL which reacts to the request send by your Mattermost instance, and may be able to send a HTTP POST in the required JSON format as a response.
+- **Mattermost outgoing webhooks are Slack-compatible.** If you've used Slack's outgoing webhooks before, than you can copy and paste that code to create Mattermost integrations. Mattermost automatically translates Slack's proprietary JSON payload format.
+- **Outgoing webhooks are supported in public channels only.** If you need a trigger that works in a private channel, consider using a :doc:`Slash Command <slash-commands>` instead.
 
 **Example:**
 
-Suppose you had an external application that received a post event whenever a message started with *#build*. If a user posted the message *#build Let's see the status*, then the external application would receive an HTTP POST with data about that message. The application could then respond with a table of total tests run and total tests failed by component category, with links to failed tests by category. An example response might be:
+Suppose you have an external application that should be triggered whenever a message in Mattermost starts with *#build*. If a user posted the message *#build Let's see the status*, then the external application would receive an HTTP POST with data about that message. The application could then calculate all necessary data, such as a statistic of executed software tests. The application then builds the required JSON payload format and sends it as response to Mattermost. Mattermost reads the response and posts a new message.
+
+An example response of such an application might be:
 
 .. code-block:: text
 
@@ -33,7 +35,7 @@ Which would render in a Mattermost message as follows:
 Enabling Outgoing Webhooks
 --------------------------
 
-Outgoing webhooks are off by default, and can be enabled by the system administrator. If you are the system administrator you can enable them by doing the following:
+Outgoing webhooks are off by default. They need to be enabled by the system administrator. If you are the system administrator you can enable them by doing the following:
 
 1. Login to your Mattermost team account that has the system administrator role.
 2. Enable outgoing webhooks from **System Console > Integrations > Custom Integrations**.
@@ -44,13 +46,13 @@ Outgoing webhooks are off by default, and can be enabled by the system administr
 Set Up an Outgoing Webhook
 --------------------------
 
-Once outgoing webhooks are enabled, you will be able to set one up through the Mattermost UI. You will need to know the following
+Once outgoing webhooks are enabled in general, you will be able to set individual webhooks through the Mattermost UI. You will need to know the following:
 
 1. The channel you want to listen to post events from (you can leave the channel field blank if you would like to set up the webhook for all channels).
 2. The trigger words (if any) that will trigger a post event if they are the **first word** of the post.
 3. The URL you want Mattermost to report the events to.
 
-Once you have those, you can follow these steps to set up your webhook:
+Once you have this information, you can follow these steps to set up your new webhook:
 
 1. Login to your Mattermost team site and go to **Main Menu > Integrations > Outgoing Webhooks**.
 2. Click **Add outgoing webhook**, and select your options.
@@ -64,9 +66,9 @@ Once you have those, you can follow these steps to set up your webhook:
 Creating Integrations using Outgoing Webhooks
 ---------------------------------------------
 
-If you'd like to build your own integration that uses outgoing webhooks, you can follow these general guidelines:
+If you'd like to build your own application that uses outgoing webhooks, you can follow these general guidelines:
 
-1. In the programming language of your choice, write your integration to perform what you had in mind.
+1. In the programming language of your choice, write your application to perform what you had in mind.
   1. Your integration should have a function for receiving HTTP POSTs from Mattermost that look like this example:
 
     .. code-block:: text
