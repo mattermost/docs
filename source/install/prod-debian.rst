@@ -199,7 +199,7 @@ Set up Mattermost Server
 
       ::
 
-          #! /bin/sh
+         #! /bin/sh
          ### BEGIN INIT INFO
          # Provides:          mattermost
          # Required-Start:    $network $syslog
@@ -228,11 +228,11 @@ Set up Mattermost Server
              #   1 if daemon was already running
              #   2 if daemon could not be started
              start-stop-daemon --start --quiet \
-                 --chuid $MATTERMOST_USER:$MATTERMOST_GROUP --chdir $MATTERMOST_ROOT --background \
+                 --chuid $MATTERMOST_USER --group $MATTERMOST_GROUP --chdir $MATTERMOST_ROOT --background \
                  --pidfile $PIDFILE --exec $DAEMON --test > /dev/null \
                  || return 1
              start-stop-daemon --start --quiet \
-                 --chuid $MATTERMOST_USER:$MATTERMOST_GROUP --chdir $MATTERMOST_ROOT --background \
+                 --chuid $MATTERMOST_USER --group $MATTERMOST_GROUP --chdir $MATTERMOST_ROOT --background \
                  --make-pidfile --pidfile $PIDFILE --exec $DAEMON \
                  || return 2
          }
