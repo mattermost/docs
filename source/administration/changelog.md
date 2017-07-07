@@ -168,11 +168,11 @@ Many thanks to all our contributors. In alphabetical order:
 
 /mattermost-redux
 
-- [94117nl](https://github.com/94117nl), [cpanato](https://github.com/cpanato), [enahum](https://github.com/enahum), [jarredwitt](https://github.com/jarredwitt), [jwilander](https://github.com/jwilander) 
+- [94117nl](https://github.com/94117nl), [cpanato](https://github.com/cpanato), [enahum](https://github.com/enahum), [jarredwitt](https://github.com/jarredwitt), [jwilander](https://github.com/jwilander)
 
 /mattermost-mobile
 
--  [asaadmahmood](https://github.com/asaadmahmood), [cpanato](https://github.com/cpanato), [csduarte](https://github.com/csduarte), [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [lfbrock](https://github.com/lfbrock), [rthill](https://github.com/rthill) 
+-  [asaadmahmood](https://github.com/asaadmahmood), [cpanato](https://github.com/cpanato), [csduarte](https://github.com/csduarte), [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [lfbrock](https://github.com/lfbrock), [rthill](https://github.com/rthill)
 
 /desktop
 
@@ -184,11 +184,11 @@ Many thanks to all our contributors. In alphabetical order:
 
 /android
 
-- [coreyhulen](https://github.com/coreyhulen), [der-test](https://github.com/der-test),  [lfbrock](https://github.com/lfbrock) 
+- [coreyhulen](https://github.com/coreyhulen), [der-test](https://github.com/der-test),  [lfbrock](https://github.com/lfbrock)
 
 /mattermost-selenium
 
-- [doh5](https://github.com/doh5),  [lindalumitchell](https://github.com/lindalumitchell) 
+- [doh5](https://github.com/doh5),  [lindalumitchell](https://github.com/lindalumitchell)
 
 /gorp
 
@@ -196,11 +196,11 @@ Many thanks to all our contributors. In alphabetical order:
 
 /ios
 
-- [coreyhulen](https://github.com/coreyhulen), [PrestonL](https://github.com/PrestonL) 
+- [coreyhulen](https://github.com/coreyhulen), [PrestonL](https://github.com/PrestonL)
 
 /mattermost-kubernetes
 
-- [coreyhulen](https://github.com/coreyhulen) 
+- [coreyhulen](https://github.com/coreyhulen)
 
 
 ## Release v3.9.0
@@ -321,7 +321,7 @@ Release Date: May 16, 2017
 #### Breaking changes:
 
 - If you're using NGINX as a proxy for the Mattermost Server, replace the `location /api/v3/users/websocket {` line with `location ~ /api/v[0-9]+/(users/)?websocket$ {` in the `/etc/nginx/sites-available/mattermost` NGINX configuration file. [See documentation to learn more](https://docs.mattermost.com/install/install-ubuntu-1404.html#configuring-nginx-as-a-proxy-for-mattermost-server).
-- Existing team invite links, password reset links and email verification links will be invalidated after upgrading to v3.9.0.
+- Existing email invite links, password reset links, and email verification links will be invalidated after upgrading to v3.9.0.
 - Firefox ESR 45 has an [end-of-life scheduled for June 13](https://en.wikipedia.org/wiki/Firefox_version_history) and is therefore no longer supported. We recommend upgrading to [Firefox ESR 52](https://www.mozilla.org/en-US/firefox/organizations/all/).
 
 #### Removed and deprecated features
