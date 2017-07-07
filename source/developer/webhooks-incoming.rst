@@ -10,6 +10,8 @@ Use incoming webhooks to post messages to Mattermost public channels, private ch
 .. image:: ../images/incoming_webhooks_sample.png
 *An example of a GitHub integration that posts updates to a Developers channel*
 
+Use `curl <https://curl.haxx.se/>`_, a simple command line tool for sending HTTP requests in the examples that follow.
+
 Creating a simple incoming webhook
 -----------------------------------
 
@@ -200,4 +202,10 @@ Known Slack Compatibility Issues
 Troubleshooting
 ---------------
 
-To debug incoming webhooks, set **System Console > Logging > Enable Webhook Debugging** to ``true`` and set **System Console > Logging > Console Log Level** to ``DEBUG``.
+To debug incoming webhooks in **System Console > Logs**, set **System Console > Logging > Enable Webhook Debugging** to ``true`` and set **System Console > Logging > Console Log Level** to ``DEBUG``.
+
+Some common error messages include:
+
+1. ``Couldn't find the channel``: Indicates that the channel doesn't exist or is invalid. Please modify the ``channel`` parameter before sending another request.
+2. ``Couldn't find the user``: Indicates that the user doesn't exist or is invalid. Please modify the ``channel`` parameter before sending another request.
+3. ``Unable to parse incoming data``: Indicates that the request received is malformed. Try reviewing that the JSON payload is in a correct format and doesn't have typos such as extra `"`.
