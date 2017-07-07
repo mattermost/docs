@@ -169,10 +169,11 @@ Feature Screenshot
 
 When taking a screenshot of a feature, follow these guidelines:
 
-1. **Complete**: Profile pictures and real people names should be filled out. Use either in-house art, free or purchased clip art
-2. **Authentic**: Try to model a real world interaction. If you're modifying the image such as changing username and profile picture, make sure to do it throughout the image
+1. **Complete**: Profile pictures and real people names should be filled out. Use either in-house art, free or purchased clip art. If you're modifying the image such as changing username and profile picture, make sure to do it throughout the image. Don't show any bugs or UX defects in the product and use the "Mattermost" theme when appropriate.
+2. **Authentic**: Try to model a real world interaction. When possible, highlight DevOps use cases since they are familiar to the majority of our users.
 3. **Oversized**: Provide screenshots that are at least 20-30% larger than needed, so that there's room to rotate and crop the image as needed
 4. **Illustrative**: Try to find screenshots that are representative of the feature
+5. **Easy to follow**: The screenshot should be easy to understand at a glance. Avoid using short forms or acronyms in conversations, and choose images that are clear
 
 Mattermost and Representative Logos
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
