@@ -201,7 +201,7 @@ While the connection settings are changing, there might be a brief moment when w
 Transparent Failover
 ````````````````````
 
-The database can be configured for high availability and transparent failover use the existing database technologies. We recommend MySQL Clustering, Postgres Clustering, or Amazon Aoura. Database transparent failover is beyond the scope of this documentation.
+The database can be configured for high availability and transparent failover use the existing database technologies. We recommend MySQL Clustering, Postgres Clustering, or Amazon Aurora. Database transparent failover is beyond the scope of this documentation.
 
 Upgrade Guide
 -------------
