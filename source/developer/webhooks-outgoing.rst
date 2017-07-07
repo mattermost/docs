@@ -3,25 +3,37 @@
 Outgoing Webhooks
 =================
 
+Intro 
 
+.. toctree::
+	:maxdepth: 2
 
+Creating a simple outgoing webhook
+-----------------------------------
 
+Parameters and formatting
+--------------------------
 
+Subheading
+~~~~~~~~~~~~~~~~~~~~~
 
-What is X?
-When to use X?
-Built-in stuff
-Creating your own
-How to create something simple ("hello world")
-Advanced options / formatting
-Full example / best practices?
+Complete incoming webhook example
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Tips and best practices
+------------------------
+
 Share your integration
-Slack compatibility stuff
-Known issues
+-----------------------
+
+Slack Compatibility
+-------------------
+
+Known Slack Compatibility Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Troubleshooting
-
-
-
+---------------
 
 
 
