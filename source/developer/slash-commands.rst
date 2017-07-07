@@ -3,23 +3,37 @@
 Slash Commands
 ==============
 
+Intro 
 
+.. toctree::
+	:maxdepth: 2
 
+Creating a simple slash command
+-----------------------------------
 
+Parameters and formatting
+--------------------------
 
+Subheading
+~~~~~~~~~~~~~~~~~~~~~
 
+Complete slash command example
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-What is X?
-When to use X?
-Built-in stuff
-Creating your own
-How to create something simple ("hello world")
-Advanced options / formatting
-Full example / best practices?
+Tips and best practices
+------------------------
+
 Share your integration
-Slack compatibility stuff
-Known issues
+-----------------------
+
+Slack Compatibility
+-------------------
+
+Known Slack Compatibility Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Troubleshooting
+---------------
 
 
 
