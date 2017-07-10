@@ -36,7 +36,7 @@ Mattermost team.
 
 -  Click the thumbnail of an attachment > click **Get Public Link**
 
-[Change to a Tip:] If **Get Public Link** is not visible in the file previewer
+Tip: If **Get Public Link** is not visible in the file previewer
 and you prefer that the feature is enabled, you can request your System 
 Administrator to enable the feature from the System Console under 
 **Security** > **Public Links**.
