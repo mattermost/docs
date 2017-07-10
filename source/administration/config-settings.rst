@@ -166,17 +166,17 @@ Default Server Language
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Default language for system messages and logs. Changing this will require a server restart before taking effect.
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DefaultServerLocale": "en"`` with options ``de``, ``en``, ``es``, ``fr``, ``ja``, ``ko``, ``nl``, ``pl``, ``pt-br``, ``ru``, ``tr``, ``zh_CN`` and ``zh_TW``   |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DefaultServerLocale": "en"`` with options ``de``, ``en``, ``es``, ``fr``, ``it``, ``ja``, ``ko``, ``nl``, ``pl``, ``pt-br``, ``ru``, ``tr``, ``zh_CN`` and ``zh_TW``   |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Default Client Language
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Default language for newly created users and pages where the user hasn't logged in.
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DefaultClientLocale": "en"`` with options ``de``, ``en``, ``es``, ``fr``, ``ja``, ``ko``, ``nl``, ``pl``, ``pt-br``, ``ru``, ``tr``, ``zh_CN`` and ``zh_TW``   |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DefaultClientLocale": "en"`` with options ``de``, ``en``, ``es``, ``fr``, ``it``, ``ja``, ``ko``, ``nl``, ``pl``, ``pt-br``, ``ru``, ``tr``, ``zh_CN`` and ``zh_TW``   |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Available Languages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -184,9 +184,9 @@ Sets which languages are available for users in **Account Settings** > **Display
 
 Note: Servers which upgraded to v3.1 need to manually set this field blank to have new languages added by default.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AvailableLocales": ""`` with options ``""``, ``de``, ``en``, ``es``, ``fr``, ``ja``, ``ko``, ``nl``, ``pl``, ``pt-br``, ``ru``, ``tr``, ``zh_CN`` and ``zh_TW``   |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AvailableLocales": ""`` with options ``""``, ``de``, ``en``, ``es``, ``fr``, ``it``, ``ja``, ``ko``, ``nl``, ``pl``, ``pt-br``, ``ru``, ``tr``, ``zh_CN`` and ``zh_TW``   |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
 
@@ -1900,6 +1900,8 @@ Images
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Attachment Thumbnail Width
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Removed in July 16th, 2017 release*
+
 Width of thumbnails generated from uploaded images. Updating this value changes how thumbnail images render in future, but does not change images created in the past.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1908,6 +1910,8 @@ Width of thumbnails generated from uploaded images. Updating this value changes 
 
 Attachment Thumbnail Height
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Removed in July 16th, 2017 release*
+
 Height of thumbnails generated from uploaded images. Updating this value changes how thumbnail images render in future, but does not change images created in the past.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1916,6 +1920,8 @@ Height of thumbnails generated from uploaded images. Updating this value changes
 
 Image Preview Width
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Removed in July 16th, 2017 release*
+
 Maximum width of preview image. Updating this value changes how preview images render in future, but does not change images created in the past.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1924,6 +1930,8 @@ Maximum width of preview image. Updating this value changes how preview images r
 
 Image Preview Height
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Removed in July 16th, 2017 release*
+
 Maximum height of preview image ("0": Sets to auto-size). Updating this value changes how preview images render in future, but does not change images created in the past.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1932,6 +1940,8 @@ Maximum height of preview image ("0": Sets to auto-size). Updating this value ch
 
 Profile Picture Width
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Removed in July 16th, 2017 release*
+
 The width to which profile pictures are resized after being uploaded via Account Settings.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1940,6 +1950,8 @@ The width to which profile pictures are resized after being uploaded via Account
 
 Profile Picture Height
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Removed in July 16th, 2017 release*
+
 The height to which profile pictures are resized after being uploaded via Account Settings.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2242,7 +2254,7 @@ Maximum number of open connections held open to the database.
 
 SQL Query Timeout
 ^^^^^^^^^^^^^^^^^
-The number of seconds to wait for a response from the database after opening a connection and sending the query. Errors that you see in the UI or in the logs as a result of a query timeout can vary depending on the type of query. This setting has no effect on PostgreSQL databases.
+The number of seconds to wait for a response from the database after opening a connection and sending the query. Errors that you see in the UI or in the logs as a result of a query timeout can vary depending on the type of query.
 
 +-------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"QueryTimeout": 30`` with whole number input, in the *SqlSettings* section. |

@@ -64,7 +64,7 @@ General Mattermost Description
 
 When developing a Mattermost integration, the following description can be used to describe Mattermost:
 
-  Mattermost is an open source Slack-alternative built for enterprise. Thousands of companies use Mattermost for secure, compliant workplace messaging across web, PC and phones with archiving, search and integration with hundreds of third party applications. Available under MIT license in 13 languages, Mattermost offers peace-of-mind, value, control, and freedom from lock-in for organizations around the world. Learn more at https://mattermost.com/
+  Mattermost is an open source Slack-alternative built for enterprise. Thousands of companies use Mattermost for secure, compliant workplace messaging across web, PC and phones with archiving, search and integration with hundreds of third party applications. Available under MIT license in 14 languages, Mattermost offers peace-of-mind, value, control, and freedom from lock-in for organizations around the world. Learn more at https://mattermost.com/
 
 Mattermost Team Edition Description
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
