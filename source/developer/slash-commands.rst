@@ -3,46 +3,6 @@
 Slash Commands
 ==============
 
-Intro 
-
-.. toctree::
-	:maxdepth: 2
-
-Creating a simple slash command
------------------------------------
-
-Parameters and formatting
---------------------------
-
-Subheading
-~~~~~~~~~~~~~~~~~~~~~
-
-Complete slash command example
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Tips and best practices
-------------------------
-
-Share your integration
------------------------
-
-Slack Compatibility
--------------------
-
-Known Slack Compatibility Issues
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Troubleshooting
----------------
-
-
-
-
-
-
-
-
-
 Slash commands, like outgoing webhooks, allow users to interact with external applications right from within Mattermost. The user will enter a ``/`` followed by a command, and optionally some arguments, then an HTTP request will be sent to an external application. What occurs next is decided by how the application responds to the HTTP request.
 
 A couple key points:
