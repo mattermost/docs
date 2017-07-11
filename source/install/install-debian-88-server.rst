@@ -15,7 +15,7 @@ Install the 64-bit version of Debian on each machine that hosts one or more of t
 
   ``apt-get upgrade``
 
-3. Debian does not come with sudo or curl which is used later in this install so let's install that with the following commands:
+3. Let's install *sudo* and *curl* for use later in the installation:
 
   ``apt-get install sudo curl``
 
