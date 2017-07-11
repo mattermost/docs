@@ -19,8 +19,8 @@ Install the 64-bit version of Debian on each machine that hosts one or more of t
 
   ``apt-get install sudo curl``
 
-4. Let's add our non-root user to the sudo group so we don't have to be logged in as the root user.
+4. Add your username to the sudo group. In the following command, replate {username} with your own username.
 
-  ``usermod -a -G sudo myuser``
+  ``usermod -a -G sudo {username}``
 
 Now that the system is up to date and our user is in the sudo group, you can start installing the components that make up a Mattermost system.
