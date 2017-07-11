@@ -15,11 +15,11 @@ Install the 64-bit version of Debian on each machine that hosts one or more of t
 
   ``apt-get upgrade``
 
-3. Let's install *sudo* and *curl* for use later in the installation:
+3. Install *sudo* and *curl* for use later in the installation:
 
   ``apt-get install sudo curl``
 
-4. Add your username to the sudo group. In the following command, replate {username} with your own username.
+4. Add your username to the sudo group. In the following command, replace {username} with your own username.
 
   ``usermod -a -G sudo {username}``
 
