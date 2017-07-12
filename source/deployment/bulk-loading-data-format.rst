@@ -726,6 +726,12 @@ Fields of the DirectChannel object
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
+    <tfoot>
+      <tr>
+        <td colspan="5">[1] Not validated, but an error occurs if one or more of the users don't exist when running in apply mode.
+        </td>
+      </tr>
+    </tfoot>
     <tr class="row-odd">
       <th class="head">Field name</th>
       <th class="head">Type</th>
@@ -736,8 +742,8 @@ Fields of the DirectChannel object
     <tr class="row-odd">
       <td valign="middle">members</td>
       <td valign="middle">array</td>
-      <td>Must contain a list of members, with a minumum of two usernames and a maximum of eight usernames.</td>
-      <td align="center" valign="middle">Yes</td>
+      <td>Must contain a list of members, with a minimum of two usernames and a maximum of eight usernames.</td>
+      <td align="center" valign="middle">No [1]</td>
       <td align="center" valign="middle">Yes</td>
     </tr>
     <tr class="row-odd">
@@ -797,7 +803,7 @@ Fields of the DirectPost object
     <tr class="row-odd">
       <td valign="middle">channel_members</td>
       <td valign="middle">array</td>
-      <td>Must contain a list of members, with a minumum of two usernames and a maximum of eight usernames.</td>
+      <td>Must contain a list of members, with a minimum of two usernames and a maximum of eight usernames.</td>
       <td align="center" valign="middle">No [1]</td>
       <td align="center" valign="middle">Yes</td>
     </tr>
