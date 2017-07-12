@@ -572,7 +572,7 @@ The following table summarizes abbreviations used in the above table:
 Leadership Coaching
 --------------------------
 
-To advanced the skills of senior and functional leaders we bring in experts to advise on key functions, including sales, operations, product, marketing, strategy, general management and other specialized topics. 
+To advance the skills of senior and functional leaders, we bring in experts to advise on key functions, including sales, operations, product, marketing, strategy, general management, and other specialized topics. 
 
 - As an example, `Jono Bacon <http://www.jonobacon.org/about/>`_--a leading author, speaker and consultant on open source community advocacy--meets with our community team regularly to refine our processes and understanding. There's a range of similiarly adept company advisers that help advance our thinking and capabilities in critical ways.
 
