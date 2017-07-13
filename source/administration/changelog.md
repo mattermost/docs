@@ -10,7 +10,7 @@ Release Date: July 16, 2017
 
 ### Security Update
 
-- Mattermost v4.0.0 contains a low severity [security update](http://about.mattermost.com/security-updates/). [Upgrading to Mattermost v4.0.0](http://docs.mattermost.com/administration/upgrade.html) is highly recommended.
+- Mattermost v4.0.0 contains multiple security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
 ### Highlights
 
@@ -196,19 +196,22 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Known Issues
 
-- Google login fails on the mobile apps.
+- Google login fails on the Classic mobile apps.
 - Edge overlays desktop notification sound and system notification sound.
 - Clicking on a channel during the tutorial makes the tutorial disappear.
-- Reactions are displayed on messages deleted by other users.
 - User can receive a video call from another browser tab while already on a call.
-- Search autocomplete picker is broken on Android.
+- Search autocomplete picker is broken on Classic Android app.
 - Jump link in search results does not always jump to display the expected post.
 - First load of the emoji picker is slow on low-speed connections or on deployments with hundreds of custom emoji.
 - Scrollbar is sometimes not visible in the left-hand sidebar after switching teams.
-- User is not logged out immediately when logging self out from Active Sessions list.
 - Certain code block labels don't appear while scrolling on iOS mobile web.
-- Deactivated users do not appear in the Direct Message and Group Message sidebar channel list.
 - Outgoing webhooks do not fire when posts have no text content.
+- A public channel doesn't always show up in another browser tab or client until after refresh.
+- Null values in Slack attachments cause a 500 error for incoming webhooks.
+- Keyboard shortcut CTRL/CMD+SHIFT+A does not close Account Settings.
+- Deleted message doesn't clear unreads or unread mentions.
+- Changing the search term in the More Direct Messages modal doesn't reset the page.
+- Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
 
 ### Contributors
 
