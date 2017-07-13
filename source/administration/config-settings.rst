@@ -132,6 +132,14 @@ If using HTTP (insecure), this is the maximum time allowed from the end of readi
 | This feature's ``config.json`` setting is ``"WriteTimeout": 300`` with string input  |
 +--------------------------------------------------------------------------------------+
 
+Allow use of API v3 endpoints
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Set to false to disable all version 3 endpoints of the REST API. Integrations that rely on API v3 will fail and can then be identified for migration to API v4. API v3 is deprecated and will be removed in the near future. See https://api.mattermost.com for details.
+
++---------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableAPIv3": true`` with options ``true`` and ``false``.  |
++---------------------------------------------------------------------------------------------------------+
+
 Webserver Mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 gzip compression applies to the HTML, CSS, Javascript, and other static content files that make up the Mattermost web client. It is recommended to enable gzip to improve performance unless your environment has specific restrictions, such as a web proxy that distributes gzip files poorly. This setting requires a server restart to take effect.
