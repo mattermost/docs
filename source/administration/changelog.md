@@ -113,6 +113,7 @@ Release Date: July 16, 2017
 - Status no longer appears offline after joining a new team.
 - An empty push notification is no longer sent for messages only containing file attachments.
 - If you're at the top of a channel when a new post is received, the view no longer shifts and removes the oldest post that was in your view.
+- Deleting the focused post in permalink view now sends user to normal channel view.
 
 ### Compatibility
 
@@ -140,7 +141,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 - Under `ServiceSettings` in `config.json`:
    - Added `"EnableChannelViewedMessages: true` to control whether `channel_viewed` WebSocket event is sent, which syncs unreads across clients and devices. Setting to false can lead to higher performance in large deployments.
-   - Added `"TeammateNameDisplay": "full_name"` to set how to display users' names in posts and the Direct Messages list.
+   - Added `"TeammateNameDisplay": "username"` to set how to display users' names in posts and the Direct Messages list. // XXX Add a note about "full_name" in LDAP/SAML setups
    - Added `"EnableAPIv3": "true"` to control whether version 3 endpoints of the REST API are allowed on the server. If the setting is disabled, integrations that rely on API v3 will fail and can then be identified for migration to API v4.
 - Under `FileSettings` in `config.json`:
    - Removed System Console settings in **Files > Images**, including:
@@ -152,6 +153,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
      - `"ProfileHeight": 128`
 - Under `SqlSettings` in `config.json`: 
    - Modified `"QueryTimeout": 30` to also support query timeouts on PostgreSQL, in addition to MySQL.
+   
+Emoji picker config setting // XXX
 
 **Additional Changes to Enterprise Edition**:
 
