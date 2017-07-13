@@ -215,7 +215,7 @@ Enable Team Creation
 
 Max Users Per Team
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Maximum number of users per team, including both active and inactive users. 
+Maximum number of users per team, not including inactive users. 
 
 The **Max Users Per Team** refers to the size of the "team site" which is workspace a "team of people" inhabits. A team of people is considered a small organization where people work closely together towards a specific shared goal and share the same etiquette. In the physical world, a team of people could typically be seated around a single table to have a meal and discuss their project. 
 
@@ -2032,8 +2032,19 @@ Enable Link Previews
 
 ________
 
-Custom Emoji
+Emoji
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable Emoji Picker
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**True**: Enables an emoji picker that allows users to select emoji to add as reactions or use in messages. Enabling the emoji picker with a large number of custom emoji may slow down performance.
+
+**False**: Emoji picker is disabled.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableCustomEmoji": true`` with options ``true`` and ``false`` for above settings respectively.                         |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 Enable Custom Emoji
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **True**: Enables a Custom Emoji option in the Main Menu, where users can go to create customized emoji.
