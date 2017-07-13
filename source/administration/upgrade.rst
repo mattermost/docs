@@ -59,7 +59,7 @@ Important Notices
 
   ``tar -xzf mattermost*.gz``
 
-  5. Make a copy of your configuration file. The existing file is overwritten during the upgrade, so it's important that you don't forget this step
+5. Make a copy of your configuration file. The existing file is overwritten during the upgrade, so it's important that you don't forget this step
 
     ``cp {install-path}/mattermost/config/config.json config.json``
 
