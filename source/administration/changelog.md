@@ -15,10 +15,10 @@ Release Date: July 16, 2017
 ### Highlights
 
 #### Native iOS and Android Apps
-- Second generation mobile apps released for iOS and Android. // XXX Link to blog post
-- // XXX Note about supporting BlackBerry Dynamics
+- Second generation mobile apps released for iOS and Android.
+- The apps are [EMM compatible starting with BlackBerry Dynamics](https://about.mattermost.com/mattermost-2nd-gen-mobile-apps-released-emm-compatible-starting-with-blackberry-dynamics/).
 
-#### New Web UI // XXX Different wording on this
+#### Updated Web UI
 - Updated the look of channel header and channel sidebar in the web user interface.
 - Added a new default theme, "Mattermost". To try it, go to **Account Settings > Display > Theme**.
 
@@ -78,24 +78,26 @@ Release Date: July 16, 2017
 - `/invite_people` slash command is now disabled when account creation is set to false.
 - If a message starts with a / but fails to send (either due to timeout or invalid command), the message is put back to the input box.
 
+#### Bulk Import Tool
+- Added support for direct message channels and posts to the [bulk import tool](https://docs.mattermost.com/deployment/bulk-loading.html).
+
 #### Authentication
 - User creation via OAuth (GitLab/Google/Office365) properly restricted to accepted domains, [if specified](https://docs.mattermost.com/administration/config-settings.html#restrict-account-creation-to-specified-email-domains).
 - **Invite New Member** dialog validates email address against accepted domains, if set.
 
-#### Routes // XXX Need better name and description of benefit
-- New routes for direct message channels: 
+#### New URL Routes // XXX Need better name and description of benefit
+- Added the ability to direct message by email or username with the following new routes for direct message channels: 
   - `.../teamname/messages/@username`
   - `.../teamname/messages/email`
   - `.../teamname/messages/user_id` (redirects to `...teamname/messages/@username`)
   - `.../teamname/messages/id1_id2` (redirects to `...teamname/messages/@username`)
-- New route for group message channels: 
+- Also added a new route for group message channels: 
   - `.../teamname/messages/generated_id`
 
 #### Link Previews
 - After posting a message containing an image link, a preview is loaded only if one is available.
 
 #### Enterprise Edition
-- // XXX HA changes
 - When a SAML user uses a non-supported locale, the language now defaults to English preventing login issues.
 
 ### Bug Fixes
@@ -114,6 +116,7 @@ Release Date: July 16, 2017
 - An empty push notification is no longer sent for messages only containing file attachments.
 - If you're at the top of a channel when a new post is received, the view no longer shifts and removes the oldest post that was in your view.
 - Deleting the focused post in permalink view now sends user to normal channel view.
+- Max Users per Team setting in **System Console > Users and Teams** no longer includes inactive users.
 
 ### Compatibility
 
@@ -121,6 +124,7 @@ Release Date: July 16, 2017
 
 - // XXX HA
 - If you're using NGINX as a proxy for the Mattermost Server, replace the `location /api/v3/users/websocket {` line with `location ~ /api/v[0-9]+/(users/)?websocket$ {` in the `/etc/nginx/sites-available/mattermost` NGINX configuration file. [See documentation to learn more](https://docs.mattermost.com/install/install-ubuntu-1404.html#configuring-nginx-as-a-proxy-for-mattermost-server).
+ - Microsoft Edge v39 and earlier (EdgeHTML v14 and earlier) has [an issue](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/8546263/) that may case errors during account creation, login and if MFA is enforced. We recommend upgrading to Edge v40 (or EdgeHTML v15).
 
 #### Removed and deprecated features
 - System Console settings in **Files > Images** removed. This includes:
@@ -140,8 +144,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 **Changes to Team Edition and Enterprise Edition**:
 
 - Under `ServiceSettings` in `config.json`:
-   - Added `"EnableChannelViewedMessages: true` to control whether `channel_viewed` WebSocket event is sent, which syncs unreads across clients and devices. Setting to false can lead to higher performance in large deployments.
-   - Added `"TeammateNameDisplay": "username"` to set how to display users' names in posts and the Direct Messages list. // XXX Add a note about "full_name" in LDAP/SAML setups
+   - Added `"EnableEmojiPicker": true` to control whether emoji picker is enabled on the server. Enabling the emoji picker with a large number of custom emoji may slow down performance.
+   - Added `"EnableChannelViewedMessages": true` to control whether `channel_viewed` WebSocket event is sent, which syncs unreads across clients and devices. Setting to false can lead to higher performance in large deployments.
+   - Added `"TeammateNameDisplay": "username"` to set how to display users' names in posts and the Direct Messages list. Deployments with LDAP or SAML enabled will have this set to `full_name` by default for better experience.
    - Added `"EnableAPIv3": "true"` to control whether version 3 endpoints of the REST API are allowed on the server. If the setting is disabled, integrations that rely on API v3 will fail and can then be identified for migration to API v4.
 - Under `FileSettings` in `config.json`:
    - Removed System Console settings in **Files > Images**, including:
@@ -151,14 +156,21 @@ Multiple setting options were added to `config.json`. Below is a list of the add
      - `"PreviewHeight": 0`
      - `"ProfileWidth": 128`
      - `"ProfileHeight": 128`
-- Under `SqlSettings` in `config.json`: 
+- Under `SqlSettings` in `config.json`:
    - Modified `"QueryTimeout": 30` to also support query timeouts on PostgreSQL, in addition to MySQL.
-   
-Emoji picker config setting // XXX
 
 **Additional Changes to Enterprise Edition**:
 
-- // XXX HA/clustering changes
+- Under `ClusterSettings` in `config.json`:
+   - Added `"ClusterName": ""` to set the cluster to join by name. Only nodes with the same cluster name will join together. This is to support Blue-Green deployments or staging pointing to the same database.
+   - Added `"OverrideHostname": ""` to override the hostname of this server with this property. It is not recommended to override the Hostname unless needed.
+   - Added `"UseIpAddress": true` to control whether the cluster attempts to communicate using the IP Address.
+   - Added `"UseExperimentalGossip": false` to control whether the server attempts to communicate via the gossip protocol over the gossip port.
+   - Added `"ReadOnlyConfig": true` to control whether changes made to settings in the System Console are ignored. When running in production it is recommended to set this value to true.
+   - Added `"GossipPort": 8074` to set the port used for the gossip protocol. Both UDP and TCP should be allowed on this port.
+   - Added `"StreamingPort": 8075` to set the port used for streaming data between servers.
+   - Removed ``"InterNodeListenAddress": ":8075"`` as this setting is no longer used.
+   - Removed ``"InterNodeUrls": []`` as this setting is no longer used.
 
 ### API v4 Changes
 - Mattermost 4.0 has a stable release of API v4 endpoints. It is recommended that any new integrations use the v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
@@ -180,7 +192,7 @@ Emoji picker config setting // XXX
 
 **Added:**
 - `channel_updated` that occurs each time a channel information is updated (such as name or header), so that the changes are propagated across clients.
-- `channel_viewed` that // XXX
+- `channel_viewed` that occurs each time you view a channel, propagatings the event to all clients and devices and syncing unreads.
 
 ### Known Issues
 
