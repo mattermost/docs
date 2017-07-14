@@ -187,6 +187,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
   - Added the `sort` query parameter to add basic sorting when selecting users on a team.
 - `GET` at `/emoji`
   - Added paging to the `/emoji` call for increased performance.
+- `POST` at `/teams/{team_id}/import`
+   - Updated to return a JSON body with the import results under a `results` JSON field to allow more data to be returned in the future without breaking changes.
 
 ### Websocket Event Changes
 
