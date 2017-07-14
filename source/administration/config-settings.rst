@@ -229,7 +229,7 @@ The **Max Users Per Team** refers to the size of the "team site" which is worksp
 
 The default maximum of 50 people, is at the extreme high end of a single team of people. At this point organizations are more often "multiple teams of people" and investments in explicitly defining etiquette, such as `channel organization <https://docs.mattermost.com/help/getting-started/organizing.html>`_ or turning on `policy features <https://docs.mattermost.com/administration/config-settings.html#policy>`_ in Enterprise Edition, are often used to scale the high levels of productivity found in a team of people using Mattermost to multiple teams of people.
 
-In terms of technical performance, `with appropriate hardware, Mattermost can easily scale to hundreds and even thousands of users <https://docs.mattermost.com/install/requirements.html>`_ and provided the administrator believes the appropriate etiquette is in place, they should free to increase the default value.
+In terms of technical performance, `with appropriate hardware, Mattermost can easily scale to hundreds and even thousands of users <https://docs.mattermost.com/install/requirements.html>`_, and provided the administrator believes the appropriate etiquette is in place, they should feel free to increase the default value.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxUsersPerTeam": 50`` with whole number input.                                                                         |
@@ -296,6 +296,20 @@ Enable Team Directory
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableTeamListing": false`` with options ``true`` and ``false`` for above settings respectively.                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Teammate Name Display
+^^^^^^^^^^^^^^^^^^^^^
+Specifies how names are displayed in the user interface.
+
+**Show username**: Displays the user's username.
+
+**Show nickname if one exists**: Displays the user's nickname. If the user does not have a nickname, their full name is displayed. If the user does not have a full name, their username is displayed.
+
+**Show first and last name**: Displays the user's full name. If the user does not have a full name, their username is displayed. Recommended when using SAML or LDAP if first name and last name attributes are configured.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"TeammateNameDisplay": "username"`` with options ``username``, ``nickname_full_name``, and ``full_name``. |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
 
