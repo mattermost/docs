@@ -10,7 +10,7 @@ Release Date: July 16, 2017
 
 ### Security Update
 
-- Mattermost v4.0.0 contains multiple security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+- Mattermost v4.0.0 contains multiple security fixes ranging from low to high severity. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
 ### Highlights
 
@@ -44,7 +44,7 @@ Release Date: July 16, 2017
 - On hover colour for pin and channel member icons now consistent with flag and recent mentions icons.
 - Emojis are now vertically aligned in post view.
 - Channel name, header and purpose now update in real time for all users.
-- For reply threads in the center channel, the "Commented on" phrase now respects the teammate name display setting.
+- For reply threads in the center channel, the "Commented on" phrase now respects the teammate name display config setting.
 - Code block language tag is no longer selectable making it easier to copy the code.
 - Aligned the search box with right-hand side reply thread.
 - New user profile pictures now update for other users upon refresh.
@@ -85,7 +85,7 @@ Release Date: July 16, 2017
 - User creation via OAuth (GitLab/Google/Office365) properly restricted to accepted domains, [if specified](https://docs.mattermost.com/administration/config-settings.html#restrict-account-creation-to-specified-email-domains).
 - **Invite New Member** dialog validates email addresses against accepted domains, if set.
 
-#### New URL Routes // XXX Need better name and description of benefit
+#### New URL Routes
 - Added the ability to Direct Message by email or username with the following new routes for Direct Message channels: 
   - `.../teamname/messages/@username`
   - `.../teamname/messages/email`
@@ -114,7 +114,7 @@ Release Date: July 16, 2017
 - File upload cancelled if you click "x" on thumbnail while file is uploading in your message draft.
 - Status no longer appears offline after joining a new team.
 - An empty push notification is no longer sent for messages only containing file attachments.
-- If you're at the top of a channel when a new post is received, the view no longer shifts and removes the oldest post that was in your view.
+- Center channel maintains scroll position when new messages are received in the channel.
 - Deleting the focused post in permalink view now sends user to normal channel view.
 - Max Users per Team setting in **System Console > Users and Teams** no longer includes inactive users.
 
@@ -262,7 +262,7 @@ Many thanks to all our contributors. In alphabetical order:
 ## Release v3.10.2
 
  - **v3.10.2, released 2017-07-16**
-   - Mattermost v3.10.2 contains a low severity security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v3.10.2 contains low severity security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **v3.10.1, released 2017-07-13**
    - Mattermost v3.10.1 contains a high severity security fix for an OAuth SSO vulnerability and two additional fixes for low severity security issues. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **v3.10.0, released 2017-06-16**
@@ -463,7 +463,7 @@ Many thanks to all our contributors. In alphabetical order:
 ## Release v3.9.2
 
  - **v3.9.2, released 2017-07-16**
-   - Mattermost v3.10.2 contains a low severity security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v3.9.2 contains low severity security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **v3.9.1, released 2017-07-13**
    - Mattermost v3.10.1 contains a high severity security fix for an OAuth SSO vulnerability and two additional fixes for low severity security issues. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **v3.9.0, released 2017-05-16**
