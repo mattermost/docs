@@ -20,7 +20,7 @@ Release Date: July 16, 2017
 
 #### Updated Web User Interface
 - Updated the appearance of channel header and channel sidebar in the web user interface.
-- Added a new default theme, "Mattermost". To try it, go to **Account Settings > Display > Theme**.
+- Updated the default theme, "Mattermost". To try it, go to **Account Settings > Display > Theme**.
 
 #### Emoji Picker
 - The emoji picker offers quick access to emoji when composing messages or adding reactions.
