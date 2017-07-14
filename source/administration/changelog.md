@@ -15,11 +15,11 @@ Release Date: July 16, 2017
 ### Highlights
 
 #### Native iOS and Android Apps
-- Second generation mobile apps released for iOS and Android.
+- Second generation mobile apps released for [iOS](https://itunes.apple.com/us/app/mattermost/id1257222717?mt=8) and [Android](https://play.google.com/store/apps/details?id=com.mattermost.rn).
 - The apps are [EMM compatible starting with BlackBerry Dynamics](https://about.mattermost.com/mattermost-2nd-gen-mobile-apps-released-emm-compatible-starting-with-blackberry-dynamics/).
 
-#### Updated Web UI
-- Updated the look of channel header and channel sidebar in the web user interface.
+#### Updated Web User Interface
+- Updated the appearance of channel header and channel sidebar in the web user interface.
 - Added a new default theme, "Mattermost". To try it, go to **Account Settings > Display > Theme**.
 
 #### Emoji Picker
@@ -43,12 +43,12 @@ Release Date: July 16, 2017
 - Adjusted post spacing to be consistent across Markdown formatting, replies and consecutive posts.
 - On hover colour for pin and channel member icons now consistent with flag and recent mentions icons.
 - Emojis are now vertically aligned in post view.
-- Channel name, header and purpose now update real time for all users.
+- Channel name, header and purpose now update in real time for all users.
 - For reply threads in the center channel, the "Commented on" phrase now respects the teammate name display setting.
 - Code block language tag is no longer selectable making it easier to copy the code.
 - Aligned the search box with right-hand side reply thread.
 - New user profile pictures now update for other users upon refresh.
-- Improved rendering of at-mention highlighting in message view.
+- Improved rendering of @mention highlighting in message view.
 
 #### Mobile Web
 - Added "Create Team" and "Leave Team" options to the Main Menu.
@@ -79,19 +79,19 @@ Release Date: July 16, 2017
 - If a message starts with a / but fails to send (either due to timeout or invalid command), the message is put back to the input box.
 
 #### Bulk Import Tool
-- Added support for direct message channels and posts to the [bulk import tool](https://docs.mattermost.com/deployment/bulk-loading.html).
+- Added support for Direct Message channels and posts to the [bulk import tool](https://docs.mattermost.com/deployment/bulk-loading.html).
 
 #### Authentication
 - User creation via OAuth (GitLab/Google/Office365) properly restricted to accepted domains, [if specified](https://docs.mattermost.com/administration/config-settings.html#restrict-account-creation-to-specified-email-domains).
-- **Invite New Member** dialog validates email address against accepted domains, if set.
+- **Invite New Member** dialog validates email addresses against accepted domains, if set.
 
 #### New URL Routes // XXX Need better name and description of benefit
-- Added the ability to direct message by email or username with the following new routes for direct message channels: 
+- Added the ability to Direct Message by email or username with the following new routes for Direct Message channels: 
   - `.../teamname/messages/@username`
   - `.../teamname/messages/email`
   - `.../teamname/messages/user_id` (redirects to `...teamname/messages/@username`)
   - `.../teamname/messages/id1_id2` (redirects to `...teamname/messages/@username`)
-- Also added a new route for group message channels: 
+- Also added a new route for Group Message channels: 
   - `.../teamname/messages/generated_id`
 
 #### Link Previews
@@ -193,8 +193,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Websocket Event Changes
 
 **Added:**
-- `channel_updated` that occurs each time a channel information is updated (such as name or header), so that the changes are propagated across clients.
-- `channel_viewed` that occurs each time you view a channel, propagatings the event to all clients and devices and syncing unreads.
+- `channel_updated` that occurs each time channel information is updated (such as name or header), so that the changes are propagated across clients.
+- `channel_viewed` that occurs each time you view a channel, propagating the event to all clients and devices and syncing unreads.
 
 ### Known Issues
 
