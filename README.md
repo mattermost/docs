@@ -13,18 +13,21 @@ To generate the HTML files from markdown in the `/source` directory:
 
 ## Contributing
 
-How to create Pull Requests (by community members):
+**How to create Pull Requests for documentation (by community members):
 
-1. Sign the Contributor License Agreement (see instructions in the next section)
-2. To contribute to the documentation please fork this repository and create a pull request.
-3.
-4.
+1. Sign the Contributor License Agreement (see instructions in the next section).
+2. To contribute to the documentation please click the link above to access Mattermost Documentation.
+3. On the page that you want to edit, click the GitHub icon on the upper right corner that says "Edit".
+4. Click "Edit this file" (pencil icon).
+5. After making changes, check the "Create a new branch for this commit and start a pull request".
+6. Make sure that the Pull Request has a descriptive title.
+7. Click "Create a Pull Request".
 
-Signing CLA:
+**Signing CLA:
 
 Please complete the [Mattermost Contributor Agreement](http://www.mattermost.org/mattermost-contributor-agreement/), so you can be added to the Mattermost [Approved Contributor List](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true).
 
-Additional process for Core Committers on Repositions:
+**Additional process for Core Committers on Repositions:
 
 1. “Needs Editorial Review” label should be processed AFTER MERGE.
 2. IMPORTANT: Person conducting editoral review needs to have their suggestions MERGED BY AUTHOR. Do this by mentioning the pre-release.mattermost.com user name in the GitHub Pull Request.
