@@ -86,11 +86,13 @@ For Mattermost servers running 3.3 and earlier, the first name and last name att
 
 	.. image:: ../../source/images/okta_13_mattermost_attributes.PNG
 
-5. (Optional) Lastly, customize the login button text.
+5. (Optional) Customize the login button text.
 
 	.. image:: ../../source/images/okta_14_mattermost_login_button.PNG
 
 6. Click **Save**.
+
+7. (Optional) If you configured First Name Attribute and Last Name Attribute, go to **System Console > General > Users and Teams** and set **Teammate Name Display** to *Show first and last name*. This is recommended for a better user experience.
 
 You’re done! If you’d like to confirm SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication via **Account Settings > General > Sign-in Method > Switch to SAML SSO** and sign in with your SAML credentials to complete the switch.
 

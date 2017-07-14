@@ -4,9 +4,269 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
-## Release v3.10.0
+## Release v4.0.0
 
-Release Date: June 16, 2017
+Release Date: July 16, 2017
+
+### Security Update
+
+- Mattermost v4.0.0 contains multiple security fixes ranging from low to high severity. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+
+### Highlights
+
+#### Native iOS and Android Apps
+- Second generation mobile apps released for [iOS](https://itunes.apple.com/us/app/mattermost/id1257222717?mt=8) and [Android](https://play.google.com/store/apps/details?id=com.mattermost.rn).
+- The apps are [EMM compatible starting with BlackBerry Dynamics](https://about.mattermost.com/mattermost-2nd-gen-mobile-apps-released-emm-compatible-starting-with-blackberry-dynamics/).
+
+#### Updated Web User Interface
+- Updated the appearance of channel header and channel sidebar in the web user interface.
+- Updated the default theme, "Mattermost". To try it, go to **Account Settings > Display > Theme**.
+
+#### Emoji Picker
+- The emoji picker offers quick access to emoji when composing messages or adding reactions.
+- Promoted from Beta, and enabled to all users by default.
+
+#### Languages
+- Added Italian translations to the user interface.
+
+#### API v4 (Stable Release)
+- Mattermost webapp moved to API v4 endpoints, which allow for more powerful integrations and server interaction.
+- API v3 endpoints are supported until January 16, 2018. To learn more about migrating to APIv4 endpoints, [see https://api.mattermost.com/](https://api.mattermost.com/).
+
+#### High Availability ([Enterprise Edition E20](https://about.mattermost.com/pricing/))
+- Mattermost servers are dynamically added and removed based on discovery and their cluster name using the hashicorp memberlist.
+- Added support for experimental gossip protocol, where the server will attempt to communicate via the gossip protocol over the gossip port.
+
+### Improvements
+
+#### Web User Interface
+- Adjusted post spacing to be consistent across Markdown formatting, replies and consecutive posts.
+- On hover colour for pin and channel member icons now consistent with flag and recent mentions icons.
+- Emojis are now vertically aligned in post view.
+- Channel name, header and purpose now update in real time for all users.
+- For reply threads in the center channel, the "Commented on" phrase now respects the teammate name display config setting.
+- Code block language tag is no longer selectable making it easier to copy the code.
+- Aligned the search box with right-hand side reply thread.
+- New user profile pictures now update for other users upon refresh.
+- Improved rendering of @mention highlighting in message view.
+
+#### Mobile Web
+- Added "Create Team" and "Leave Team" options to the Main Menu.
+- Updated the look of Account Settings pages on mobile.
+- User profile popover no longer gets cropped in the center channel on iOS browser.
+- Link preview image now resizes correctly on iOS browser.
+
+#### Notifications
+- Unread messages and mentions now sync across browser tabs and devices.
+- Improved desktop notifications for webhook attachments.
+
+#### Emoji Picker & Custom Emoji
+- Newly created custom emoji immediately display to all users without requiring a refresh.
+- Improved position of the emoji picker near the top of the channel or the right-hand side comment thread.
+
+#### Keyboard Shortcuts
+- CTRL+SHIFT+K shortcut now toggles the Direct Message dialog open and closed.
+- SHIFT+UP now opens a reply thread for the most recent message posted by a user, skipping system messages.
+
+#### Slash Commands
+- Added the following built-in slash commands:
+  - `/header` command to set the channel header.
+  - `/help` command to open the Mattermost help page in a new browser tab.
+  - `/open` command to switch or join a channel.
+  - `/search` command to search text in messages.
+  - `/settings` command to open the Account Settings dialog.
+- `/invite_people` slash command is now disabled when account creation is set to false.
+- If a message starts with a / but fails to send (either due to timeout or invalid command), the message is put back to the input box.
+
+#### Bulk Import Tool
+- Added support for Direct Message channels and posts to the [bulk import tool](https://docs.mattermost.com/deployment/bulk-loading.html).
+
+#### Authentication
+- User creation via OAuth (GitLab/Google/Office365) properly restricted to accepted domains, [if specified](https://docs.mattermost.com/administration/config-settings.html#restrict-account-creation-to-specified-email-domains).
+- **Invite New Member** dialog validates email addresses against accepted domains, if set.
+
+#### New URL Routes
+- Added the ability to Direct Message by email or username with the following new routes for Direct Message channels:
+  - `.../teamname/messages/@username`
+  - `.../teamname/messages/email`
+  - `.../teamname/messages/user_id` (redirects to `...teamname/messages/@username`)
+  - `.../teamname/messages/id1_id2` (redirects to `...teamname/messages/@username`)
+- Also added a new route for Group Message channels:
+  - `.../teamname/messages/generated_id`
+
+#### Link Previews
+- After posting a message containing an image link, a preview is loaded only if one is available.
+
+#### Enterprise Edition
+- When a SAML user uses a non-supported locale, the language now defaults to English, preventing login issues.
+
+### Bug Fixes
+- Emoji picker now closes in Firefox when clicking outside of it.
+- [...] menu no longer disappears in the comment thread when hovering over another post.
+- New direct messages received while in no teams do not show as unread after rejoining a team.
+- Fixed JavaScript errors when receiving messages when not belonging to a team.
+- An empty push notification no longer sent for messages only containing file attachments.
+- Custom emoji search results no longer filter by creator's first and last name.
+- `/expand` and `/collapse` slash commands now properly collapse images in website link previews.
+- Group Message channels that are favorited can now be closed.
+- Deactivated users now properly listed in Direct and Group Message channels in the left-hand sidebar.
+- Fixed search in team and channel Manage Members dialog.
+- File upload cancelled if you click "x" on thumbnail while file is uploading in your message draft.
+- Status no longer appears offline after joining a new team.
+- An empty push notification is no longer sent for messages only containing file attachments.
+- Center channel maintains scroll position when new messages are received in the channel.
+- Deleting the focused post in permalink view now sends user to normal channel view.
+- Max Users per Team setting in **System Console > Users and Teams** no longer includes inactive users.
+
+### Compatibility
+
+#### Breaking Changes
+
+- If you are using NGINX as a proxy for the Mattermost Server, replace the `location /api/v3/users/websocket {` line with `location ~ /api/v[0-9]+/(users/)?websocket$ {` in the `/etc/nginx/sites-available/mattermost` NGINX configuration file. [See documentation to learn more](https://docs.mattermost.com/install/install-ubuntu-1404.html#configuring-nginx-as-a-proxy-for-mattermost-server).
+- If you are upgrading a High Availability Cluster: When upgrading from 3.10 or earlier to 4.0 or later, you must manually add new items to the *ClusterSettings* section of your existing ``config.json``. For more information about this, see the *Upgrading to Version 4.0 and Later* section of :doc:`../deployment/cluster`.
+ - Microsoft Edge v39 and earlier (EdgeHTML v14 and earlier) has [an issue](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/8546263/) that may case errors during account creation, login and if MFA is enforced. We recommend upgrading to Edge v40 (or EdgeHTML v15).
+
+#### Removed and deprecated features
+- System Console settings in **Files > Images** removed. This includes:
+  - Image preview height and width
+  - Profile picture height and width
+  - Image thumbnail height and width
+- Font setting in Account Settings > Display removed.
+- Account Settings option **Display** > **Teammate Name Display** moved to the System Console.
+- All APIv3 endpoints are scheduled for removal on January 16, 2018.
+
+For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
+
+#### config.json
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+**Changes to Team Edition and Enterprise Edition**:
+
+- Under `ServiceSettings` in `config.json`:
+   - Added `"EnableEmojiPicker": true` to control whether emoji picker is enabled on the server. Enabling the emoji picker with a large number of custom emoji may slow down performance.
+   - Added `"EnableChannelViewedMessages": true` to control whether `channel_viewed` WebSocket event is sent, which syncs unreads across clients and devices. Setting to false can lead to higher performance in large deployments.
+   - Added `"TeammateNameDisplay": "username"` to set how to display users' names in posts and the Direct Messages list. Deployments with LDAP or SAML enabled will have this set to `full_name` by default for better experience.
+   - Added `"EnableAPIv3": "true"` to control whether version 3 endpoints of the REST API are allowed on the server. If the setting is disabled, integrations that rely on API v3 will fail and can then be identified for migration to API v4.
+- Under `FileSettings` in `config.json`:
+   - Removed System Console settings in **Files > Images**, including:
+     - `"ThumbnailWidth": 120`
+     - `"ThumbnailHeight": 100`
+     - `"PreviewWidth": 1024`
+     - `"PreviewHeight": 0`
+     - `"ProfileWidth": 128`
+     - `"ProfileHeight": 128`
+- Under `SqlSettings` in `config.json`:
+   - Modified `"QueryTimeout": 30` to also support query timeouts on PostgreSQL, in addition to MySQL.
+
+**Additional Changes to Enterprise Edition**:
+
+- Under `ClusterSettings` in `config.json`:
+   - Added `"ClusterName": ""` to set the cluster to join by name. Only nodes with the same cluster name will join together. This is to support Blue-Green deployments or staging pointing to the same database.
+   - Added `"OverrideHostname": ""` to override the hostname of this server with this property. It is not recommended to override the Hostname unless needed.
+   - Added `"UseIpAddress": true` to control whether the cluster attempts to communicate using the IP Address.
+   - Added `"UseExperimentalGossip": false` to control whether the server attempts to communicate via the gossip protocol over the gossip port.
+   - Added `"ReadOnlyConfig": true` to control whether changes made to settings in the System Console are ignored. When running in production it is recommended to set this value to true.
+   - Added `"GossipPort": 8074` to set the port used for the gossip protocol. Both UDP and TCP should be allowed on this port.
+   - Added `"StreamingPort": 8075` to set the port used for streaming data between servers.
+   - Removed ``"InterNodeListenAddress": ":8075"`` as this setting is no longer used.
+   - Removed ``"InterNodeUrls": []`` as this setting is no longer used.
+
+### API v4 Changes
+- Mattermost 4.0 has a stable release of API v4 endpoints. It is recommended that any new integrations use the v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
+- All APIv3 endpoints are scheduled for removal on January 16, 2018.
+
+**Added routes (API v4)**
+- `GET` at `/teams/invite/{invite_id}`
+  - To retrieve information about a team (including the name and id) corresponding to an invite_id.
+
+**Modified routes (API v4)**
+- `DELETE` at `/teams/{team_id}`
+  - Added an optional query parameter, `permanent`, to permanently delete a team for compliance reasons.
+- `GET` at `/users`
+  - Added the `sort` query parameter to add basic sorting when selecting users on a team.
+- `GET` at `/emoji`
+  - Added paging to the `/emoji` call for increased performance.
+- `POST` at `/teams/{team_id}/import`
+   - Updated to return a JSON body with the import results under a `results` JSON field to allow more data to be returned in the future without breaking changes.
+
+### Websocket Event Changes
+
+**Added:**
+- `channel_updated` that occurs each time channel information is updated (such as name or header), so that the changes are propagated across clients.
+- `channel_viewed` that occurs each time you view a channel, propagating the event to all clients and devices and syncing unreads.
+
+### Known Issues
+
+- Google login fails on the Classic mobile apps.
+- Edge overlays desktop notification sound and system notification sound.
+- Clicking on a channel during the tutorial makes the tutorial disappear.
+- User can receive a video call from another browser tab while already on a call.
+- Search autocomplete picker is broken on Classic Android app.
+- Jump link in search results does not always jump to display the expected post.
+- First load of the emoji picker is slow on low-speed connections or on deployments with hundreds of custom emoji.
+- Scrollbar is sometimes not visible in the left-hand sidebar after switching teams.
+- Certain code block labels don't appear while scrolling on iOS mobile web.
+- Outgoing webhooks do not fire when posts have no text content.
+- A public channel doesn't always show up in another browser tab or client until after refresh.
+- Null values in Slack attachments cause a 500 error for incoming webhooks.
+- Keyboard shortcut CTRL/CMD+SHIFT+A does not close Account Settings.
+- Deleted message doesn't clear unreads or unread mentions.
+- Changing the search term in the More Direct Messages modal doesn't reset the page.
+- Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+
+### Contributors
+
+Many thanks to all our contributors. In alphabetical order:
+
+/platform
+
+- [94117nl](https://github.com/94117nl), [abustany](https://github.com/abustany), [alexrford](https://github.com/alexrford), [asaadmahmood](https://github.com/asaadmahmood), [ccbrown](https://github.com/ccbrown), [coreyhulen](https://github.com/coreyhulen), [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [dmeza](https://github.com/dmeza), [enahum](https://github.com/enahum), [ftKnox](https://github.com/ftKnox), [grundleborg](https://github.com/grundleborg), [hmhealey](https://github.com/hmhealey), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [jwilander](https://github.com/jwilander), [kkamdooong](https://github.com/kkamdooong), [lindalumitchell](https://github.com/lindalumitchell), [megos](https://github.com/megos), [meilon](https://github.com/meilon), [moonmeister](https://github.com/moonmeister), [pieterlexis](https://github.com/pieterlexis), [saturninoabril](https://github.com/saturninoabril), [VeraLyu](https://github.com/VeraLyu), [ZJvandeWeg](https://github.com/ZJvandeWeg)
+
+/mattermost-mobile
+
+- [asaadmahmood](https://github.com/asaadmahmood), [csduarte](https://github.com/csduarte), [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [lfbrock](https://github.com/lfbrock), [omar-dev](https://github.com/omar-dev)
+
+/mattermost-redux
+
+- [94117nl](https://github.com/94117nl), [csduarte](https://github.com/csduarte), [enahum](https://github.com/enahum), [grundleborg](https://github.com/grundleborg), [hmhealey](https://github.com/hmhealey), [jarredwitt](https://github.com/jarredwitt), [jwilander](https://github.com/jwilander), [saturninoabril](https://github.com/saturninoabril)
+
+/mattermost-api-reference
+
+- [cpanato](https://github.com/cpanato), [grundleborg](https://github.com/grundleborg), [hmhealey](https://github.com/hmhealey), [jasonblais](https://github.com/jasonblais), [jwilander](https://github.com/jwilander), [Vaelor](https://github.com/Vaelor), [ZJvandeWeg](https://github.com/ZJvandeWeg)
+
+/docs
+
+- [94117nl](https://github.com/94117nl), [acgustafson](https://github.com/acgustafson), [amyblais](https://github.com/amyblais), [ccbrown](https://github.com/ccbrown), [crspeller](https://github.com/crspeller), [esethna](https://github.com/esethna), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [jwilander](https://github.com/jwilander), [kjkeane](https://github.com/kjkeane), [megos](https://github.com/megos), [pieterlexis](https://github.com/pieterlexis)
+
+/desktop
+
+- [yuya-oc](https://github.com/yuya-oc)
+
+/mattermost-kubernetes
+
+- [coreyhulen](https://github.com/coreyhulen)
+
+/mattermost-push-proxy
+
+- [coreyhulen](https://github.com/coreyhulen), [ftKnox](https://github.com/ftKnox)
+
+/mattermost-docker
+
+- [pichouk](https://github.com/pichouk), [tejasbubane](https://github.com/tejasbubane)
+
+/mattermost-load-test
+
+- [crspeller](https://github.com/crspeller), [JeffSchering](https://github.com/JeffSchering)
+
+## Release v3.10.2
+
+ - **v3.10.2, released 2017-07-16**
+   - Mattermost v3.10.2 contains low severity security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+ - **v3.10.1, released 2017-07-13**
+   - Mattermost v3.10.1 contains a high severity security fix for an OAuth SSO vulnerability and two additional fixes for low severity security issues. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+ - **v3.10.0, released 2017-06-16**
+   - Original 3.10 release
 
 ### Highlights
 
@@ -127,7 +387,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 **Modified routes (APIv4)**
 - `/system/ping` updated to return `500 Internal Server Error` with `{"status": "unhealthy"}` in the response body when `GoroutineHealthThreshold` is set in config.json and the number of goroutines on the server exceeds that threshold. If the number of goroutines is below the threshold or `GoroutineHealthThreshold` is not set in config.json, `200 OK` is returned with no response body.
 
-
 ### Known Issues
 
 - Google login fails on the mobile apps.
@@ -202,10 +461,14 @@ Many thanks to all our contributors. In alphabetical order:
 
 - [coreyhulen](https://github.com/coreyhulen)
 
+## Release v3.9.2
 
-## Release v3.9.0
-
-Release Date: May 16, 2017
+ - **v3.9.2, released 2017-07-16**
+   - Mattermost v3.9.2 contains low severity security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+ - **v3.9.1, released 2017-07-13**
+   - Mattermost v3.10.1 contains a high severity security fix for an OAuth SSO vulnerability and two additional fixes for low severity security issues. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+ - **v3.9.0, released 2017-05-16**
+   - Original 3.10 release
 
 ### Security Update
 
@@ -329,7 +592,7 @@ Release Date: May 16, 2017
   - Image preview height and width
   - Profile picture height and width
   - Image thumbnail height and width
-- All APIv3 endpoints to be removed in September 2017 release.
+- All APIv3 endpoints are scheduled for removal six months after APIv4 is stable.
 
 For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
 
@@ -440,11 +703,12 @@ Many thanks to all our contributors. In alphabetical order:
 
 - [coreyhulen](https://github.com/coreyhulen), [csduarte](https://github.com/csduarte)
 
-## Release v3.8.2
-
+## Release v3.8.3
 
 ### Notes on Patch Release
 
+ - **v3.8.3, released 2017-07-13**
+   - Mattermost v3.8.3 contains a high severity security fix for an OAuth SSO vulnerability and two additional fixes for low severity security issues. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **v3.8.2, released 2017-04-21**
    - Changed the client to use `window.location.origin` instead of siteURL, fixing WebSocket connection issues with Mattermost 3.8 upgrade.
    - Fixed a few APIv4 endpoints in support of the next [React Native mobile app](https://github.com/mattermost/mattermost-mobile) release.

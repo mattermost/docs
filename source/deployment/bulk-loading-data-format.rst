@@ -14,7 +14,11 @@ Channel
 User
   Optional. If present, User objects must occur after the Team and Channel objects in the file and before any Post objects. Each User object defines the teams and channels that the user is a member of. If the corresponding teams and channels are not in the data file, then they must exist in the Mattermost database.
 Post
-  Optional. If present, Post objects must occur after all other objects in the file. Each Post object defines the team, the channel, and the username of the user who posted the message. If the corresponding team, channel, or user are not in the data file, then they must exist in the Mattermost database.
+  Optional. If present, Post objects must occur after the last User object but before any DirectChannel objects. Each Post object defines the team, the channel, and the username of the user who posted the message. If the corresponding team, channel, or user are not in the data file, then they must exist in the Mattermost database.
+DirectChannel
+  Optional. If present, DirectChannel objects must occur after all Post objects in the file and before any DirectPost objects.
+DirectPost
+  Optional. If present, DirectPost objects must occur after all other objects in the file. Each DirectPost object defines the usernames of the channel members and the username of the user who posted the message. If the corresponding usernames are not in the data file, then they must exist in the Mattermost database.
 
 With the exception of the Version object, each object has a field or a combination of fields that is used as the unique identifier of that object. The bulk loader uses the unique identifier to determine if the object being imported is a new object or an update to an existing object.
 
@@ -30,6 +34,8 @@ The identifiers for each object are listed in the following table:
   UserTeamMembership, "*team*, *username*"
   UserChannelMembership, "*team*, *channel*, *username*"
   Post, "*channel*, *message*, *create_at*"
+  DirectChannel, *members*
+  DirectPost,  "*channel_members*, *user*, *message*, *create_at* "
 
 The following fragment is from a file that imports two teams, each with two channels, many users, and many posts.
 
@@ -611,7 +617,7 @@ This object is a member of the ChannelMembership object.
 Post object
 -----------
 
-Post objects must occur after all other objects in the file.
+ If present, Post objects must occur after the last User object in the file, but before any DirectChannel objects.
 
 Example Post object
 ~~~~~~~~~~~~~~~~~~~
@@ -672,6 +678,140 @@ Fields of the Post object
       <td valign="middle">string</td>
       <td>The username of the user for this post.</td>
       <td align="center" valign="middle">No [3]</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">message</td>
+      <td valign="middle">string</td>
+      <td>The message that the post contains.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">create_at</td>
+      <td valign="middle">int</td>
+      <td>The timestamp for the post, in milliseconds since the Unix epoch.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+  </table>
+
+DirectChannel object
+---------------------
+
+A direct channel can have from two to eight users as members of the channel. If there are only two members, Mattermost treats it as a Direct Message channel. If there are three or more members, Mattermost treats it as a Group Message channel.
+
+Example DirectChannel object
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For clarity, the object is shown using regular JSON formatting, but in the data file it cannot be spread across several lines. It must be all on one line.
+
+.. code-block:: javascript
+
+  {
+    "type": "direct_channel",
+    "direct_channel": {
+      "members": [
+        "username1",
+        "username2",
+        "username3"
+      ],
+      "header": "The Channel Header",
+    }
+  }
+
+Fields of the DirectChannel object
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. raw:: html
+
+  <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
+    <tfoot>
+      <tr>
+        <td colspan="5">[1] Not validated, but an error occurs if one or more of the users don't exist when running in apply mode.
+        </td>
+      </tr>
+    </tfoot>
+    <tr class="row-odd">
+      <th class="head">Field name</th>
+      <th class="head">Type</th>
+      <th class="head">Description</th>
+      <th class="head">Validated</th>
+      <th class="head">Mandatory</th>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">members</td>
+      <td valign="middle">array</td>
+      <td>Must contain a list of members, with a minimum of two usernames and a maximum of eight usernames.</td>
+      <td align="center" valign="middle">No [1]</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">header</td>
+      <td valign="middle">string</td>
+      <td>The channel header.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+  </table>
+
+DirectPost object
+-----------------
+
+DirectPost objects must occur after all other objects in the file.
+
+Example DirectPost object
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For clarity, the object is shown using regular JSON formatting, but in the data file it cannot be spread across several lines. It must be all on one line.
+
+.. code-block:: javascript
+
+  {
+    "type": "direct_post",
+    "direct_post": {
+      "channel_members": [
+        "username1",
+        "username2",
+        "username3",
+      ],
+      "user": "username2",
+      "message": "Hello Group Channel",
+      "create_at": 140012340013
+    }
+  }
+
+Fields of the DirectPost object
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. raw:: html
+
+  <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
+    <tfoot>
+      <tr>
+        <td colspan="5">[1] Not validated, but an error occurs if no channels contain an identical list when running in apply mode.<br>[2] Not validated, but an error occurs if the user does not exist when running in apply mode.
+        </td>
+      </tr>
+    </tfoot>
+    <tr class="row-odd">
+      <th class="head">Field name</th>
+      <th class="head">Type</th>
+      <th class="head">Description</th>
+      <th class="head">Validated</th>
+      <th class="head">Mandatory</th>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">channel_members</td>
+      <td valign="middle">array</td>
+      <td>Must contain a list of members, with a minimum of two usernames and a maximum of eight usernames.</td>
+      <td align="center" valign="middle">No [1]</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">user</td>
+      <td valign="middle">string</td>
+      <td>The username of the user for this post.</td>
+      <td align="center" valign="middle">No [2]</td>
       <td align="center" valign="middle">Yes</td>
     </tr>
     <tr class="row-odd">
