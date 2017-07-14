@@ -98,7 +98,7 @@ Release Date: July 16, 2017
 - After posting a message containing an image link, a preview is loaded only if one is available.
 
 #### Enterprise Edition
-- When a SAML user uses a non-supported locale, the language now defaults to English preventing login issues.
+- When a SAML user uses a non-supported locale, the language now defaults to English, preventing login issues.
 
 ### Bug Fixes
 - Emoji picker now closes in Firefox when clicking outside of it.
