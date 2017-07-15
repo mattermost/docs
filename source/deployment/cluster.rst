@@ -9,7 +9,7 @@ High availability in Mattermost consists of running redundant Mattermost applica
 
 .. note::
 
-  This document applies to Mattermost Server version 4.0 and later. For previous versions, see :doc:`cluster-archive`.
+  This document applies to Mattermost Server version 4.0 and later. For previous versions, see :doc:`cluster-310`.
 
 
 .. contents::
