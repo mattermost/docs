@@ -33,8 +33,6 @@ Migrating from Slack
 
 .. note:: As a proprietary SaaS service, Slack is able to change its export format quickly and without notice. If you encounter issues not mentioned in the documentation below, please alert the product team by `filing an issue <https://www.mattermost.org/filing-issues/>`_.
 
-The Slack Import feature in Mattermost is in "Beta" and focused on supporting migration of teams of less than 100 registered users.
-
 This feature can be accessed through the `Mattermost Web App <https://docs.mattermost.com/administration/migrating.html#migrating-from-slack-using-the-mattermost-web-app>`_ or using the `CLI <https://docs.mattermost.com/administration/migrating.html#migrating-from-slack-using-the-mattermost-cli>`_.
 
 .. warning:: **It is highly recommended that you test Slack import before applying it to an instance intended for production.**
