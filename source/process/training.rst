@@ -317,14 +317,29 @@ An easy way to check in with team members about how things are going.
 
 Use these one-on-one or in a group as a way to open conversations about what to keep and what to change in how we do things.
 
+Shoulder Check 
+---------------------------------------------
+
+When new owners is taking over a process or project from a previous owner there are a finite number of "blindspots" of which the original owner is aware and the new owner will need to understand. 
+
+Using the analogy of changing lanes while driving a vehicle and learning to do a "shoulder check" for information that is not visible from standard controls, we have a process for the new owner and previous owner to jointly review processes until the transfer is complete. 
+
+This process is similar to mini-boss, end-boss, except that the mini-boss is also the new owners of a process, and not only a reviewer. Shoulder checks should be requested by new owners to avoid "crashing": 
+
+- Making changes to systems that break existing processes and may lose data and hurt the productivity of others downstream without notice and without a replacement system in place (behavior known as "Dead Tarzan"). 
+- Repeatedly investing in mis-prioritized projects due to a misunderstanding of requirements from project stakeholders and insufficient confirmation of intended outcomes. 
+
+Even when not crashing, as part of our Self Awareness value, top team members will constantly be seeking feedback and review from people around the company. 
 
 Mini-boss, End-boss
 ---------------------------------------------
 
-When reviewing user interface design, pull requests, or marketing materials, there are ideally two reviewers:
+After completing the initial draft of a project, there may often be more than one reviewer to approve changes. This may be for different disciplines to review the work (for example, both development and design teams reviewing code changes to the user experience) and it may also be for reviewers with different levels of experience to share feedback. 
 
-- **Mini-boss**: Reviewer with less experience to do the first review
-- **End-boss**: More experienced reviewer to do the final review
+When reviewing significant user interface changes, code changes, responses to community or customers, changes to systems or marketing material changes, it is ideal to have at least two reviewers:
+
+- **Mini-boss**: Reviewer less experienced in domain or Mattermost standards for the first review
+- **End-boss**: Reviewer less experienced in domain or Mattermost standards for the final review for the discipline (e.g. development, design, documentation, etc.) 
 
 This system has several benefits:
 
@@ -332,6 +347,7 @@ This system has several benefits:
 2. The Mini-boss learns from the End-boss feedback, understanding what was missed, and becoming a better reviewer.
 3. Eventually the Mini-boss will be as skilled at reviewing as the End-boss, who will have nothing futher to add after the Mini-boss review. At this point, the Mini-boss becomes an End-boss, ready to train a new Mini-boss.
 
+The naming of this term comes from video games, where a person submitting material for review must pass a "mini-boss" challenge before a "final-boss" challenge for different disciplines. 
 
 Medic, Field Surgeon, Plastic Surgeon
 ---------------------------------------------
