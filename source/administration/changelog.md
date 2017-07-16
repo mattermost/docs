@@ -6,7 +6,14 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v4.0.0
 
-Release Date: July 16, 2017
+ - **v4.0.1, TBD**
+   - Release date planned for 2017-07-18 with the following fixes:
+     -  If `AllowTimeLimit` config setting is set to `Never`, pinning and un-pinning messages fails.
+     - If you upload or remove the **Service Provider Public Certificate** file in **System Console > SAML**, the page refreshes and clears changed settings.
+     - Deactivated users are listed in channel member lists.
+     - If you remove Site URL in High Availability mode, your Mattermost instance might refresh repeatedly.
+ - **v4.0.0, released 2017-07-16**
+   - Original 4.0.0 release
 
 ### Security Update
 
@@ -261,9 +268,9 @@ Many thanks to all our contributors. In alphabetical order:
 
 ## Release v3.10.2
 
- - **v3.10.2, released 2017-07-16**
+ - **v3.10.2, released 2017-07-18**
    - Mattermost v3.10.2 contains low severity security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
- - **v3.10.1, released 2017-07-13**
+ - **v3.10.1, released 2017-07-16**
    - Mattermost v3.10.1 contains a high severity security fix for an OAuth SSO vulnerability and two additional fixes for low severity security issues. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **v3.10.0, released 2017-06-16**
    - Original 3.10 release
@@ -463,9 +470,9 @@ Many thanks to all our contributors. In alphabetical order:
 
 ## Release v3.9.2
 
- - **v3.9.2, released 2017-07-16**
+ - **v3.9.2, released 2017-07-18**
    - Mattermost v3.9.2 contains low severity security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
- - **v3.9.1, released 2017-07-13**
+ - **v3.9.1, released 2017-07-16**
    - Mattermost v3.10.1 contains a high severity security fix for an OAuth SSO vulnerability and two additional fixes for low severity security issues. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **v3.9.0, released 2017-05-16**
    - Original 3.10 release
@@ -707,7 +714,7 @@ Many thanks to all our contributors. In alphabetical order:
 
 ### Notes on Patch Release
 
- - **v3.8.3, released 2017-07-13**
+ - **v3.8.3, released 2017-07-16**
    - Mattermost v3.8.3 contains a high severity security fix for an OAuth SSO vulnerability and two additional fixes for low severity security issues. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **v3.8.2, released 2017-04-21**
    - Changed the client to use `window.location.origin` instead of siteURL, fixing WebSocket connection issues with Mattermost 3.8 upgrade.
