@@ -8,8 +8,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
  - **v4.0.1, TBD**
    - Release date planned for 2017-07-18 with the following fixes:
-     -  If `AllowTimeLimit` config setting is set to `Never`, pinning and un-pinning messages fails.
-     - If you upload or remove the **Service Provider Public Certificate** file in **System Console > SAML**, the page refreshes and clears changed settings.
+     - If `AllowTimeLimit` config setting is set to `Never`, pinning and un-pinning messages fails.
+     - If you upload or remove the **Service Provider Public Certificate** file in **System Console > SAML**, the page might refresh if you have NGINX enabled. 
      - Deactivated users are listed in channel member lists.
  - **v4.0.0, released 2017-07-16**
    - Original 4.0.0 release
