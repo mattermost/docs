@@ -15,7 +15,7 @@ To generate the HTML files from markdown in the `/source` directory:
 
 ## Contributing
 
-**How to create Pull Requests for documentation (by community members):**
+**How to create Pull Requests to edit or create Mattermost documentation (by community members):**
 
 1. Sign the Contributor License Agreement (see instructions in the next section).
 3. On the Mattermost Documentation page that you want to edit, click the GitHub icon on the upper right corner that says "Edit".
@@ -26,7 +26,7 @@ To generate the HTML files from markdown in the `/source` directory:
 
 **Signing CLA:**
 
-Please complete the [Mattermost Contributor Agreement](http://www.mattermost.org/mattermost-contributor-agreement/), so you can be added to the Mattermost [Approved Contributor List](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true).
+Please read the [Mattermost Contributor Agreement](http://www.mattermost.org/mattermost-contributor-agreement/) and sign it (at the bottom of the page), so you can be added to the Mattermost [Approved Contributor List](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true).
 
 **Additional process for Core Committers on Repositions:**
 
