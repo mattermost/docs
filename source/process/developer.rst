@@ -40,7 +40,7 @@ Requirements
 Levels
 -------------------------
 
-The below level descriptions are used to categorize core committers based on their capabilities. Regardless of level, all core committers are expected to fulfill the following:
+The level descriptions below are used to categorize core committers based on their capabilities. Regardless of level, all core committers are expected to fulfill the following:
 
 - Deliver high quality code that represents the best thinking of the open source project and is ready to be scrutinized by hundreds of community members, including commercial customers.
 - Write complete code that meets all specifications and criteria, has thorough unit tests and typically no defects.
