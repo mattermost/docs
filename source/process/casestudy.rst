@@ -2,7 +2,16 @@
 Case Studies
 =====================
 
-This document outlines some of the procedures and materials in developing an effective case study for Mattermost software. This template can be used both to describe deployments of the open source Mattermost Team Edition or commercial deployments with Mattermost Enterprise Edition. We're delighted to hear everyone's story and to share it with the community. 
+This document outlines some of the procedures and materials in developing an effective case study for Mattermost software. This template can be used both to describe deployments of the open source Mattermost Team Edition or commercial deployments with Mattermost Enterprise Edition. We're delighted to hear everyone's story and to share it with the community.
+
+Guest Article Announcements for Mattermost Apps and Services
+----------------------------------------------------------------------------
+
+- Request a photo and a short biography from the guest blogger. Multiple photos and multiple guest bloggers are also encouraged.
+- Create a banner which includes the author's photo (using a gray-scale effect), the company logo, and a heading. Use this example as a template: https://about.mattermost.com/sourced-group-offers-mattermost-as-a-service-for-enterprises/.
+- Start with a short bio and introduction of the guest blogger. Include a link to the company website the first time the company name is mentioned in the text.
+- Include links to relevant websites throughout the post as applicable.
+- At the end of the post, include a short descprition of the company as well as a call for readers to share feedback on the company. 
 
 Customer Questionaire
 ----------------------------
