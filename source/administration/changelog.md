@@ -11,7 +11,6 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
      -  If `AllowTimeLimit` config setting is set to `Never`, pinning and un-pinning messages fails.
      - If you upload or remove the **Service Provider Public Certificate** file in **System Console > SAML**, the page refreshes and clears changed settings.
      - Deactivated users are listed in channel member lists.
-     - If you remove Site URL in High Availability mode, your Mattermost instance might refresh repeatedly.
  - **v4.0.0, released 2017-07-16**
    - Original 4.0.0 release
 
