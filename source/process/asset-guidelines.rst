@@ -126,8 +126,9 @@ Feature Title
   - Sometimes the title is a straightforward description of an app that can now connect to Mattermost, like "Jira integration for Mattermost"
   - Sometimes the title needs to be non-standard, like "Gitter integration for Mattermost via Matterbridge"
 
-3. Title should always be title case
-4. Short titles are better than longer titles
+3. Text should fit on 2 lines. If title is too long, move Feature Representative Art more to the right of the banner to ensure that there is still at least 64px of width between Feature Title and Feature Representative Art.
+4. Title should always be title case
+5. Short titles are better than longer titles
 
 Feature Creator
 ^^^^^^^^^^^^^^^^
