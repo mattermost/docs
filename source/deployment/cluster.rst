@@ -111,6 +111,11 @@ Configuration Settings
     net.ipv4.ip_local_port_range="1024 65000"
     net.ipv4.tcp_fin_timeout=30
 
+Time Synchronization
+^^^^^^^^^^^^^^^^^^^^
+
+Each server in the cluster must have the Network Time Protocol daemon ``ntpd`` running so that messages are posted in the correct order.
+
 State
 ^^^^^
 
