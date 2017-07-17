@@ -8,10 +8,11 @@ Guest Article Announcements for Mattermost Apps and Services
 ----------------------------------------------------------------------------
 
 - Request a photo and a short biography from the guest blogger. Multiple photos and guest bloggers are also encouraged.
-- Create a banner which includes the author's photo (using a gray-scale effect), the company logo, and a heading. Use this example as a template: https://about.mattermost.com/sourced-group-offers-mattermost-as-a-service-for-enterprises/.
+- Create a banner which includes the author's photo (using a gray-scale effect), the guest company logo, and a heading. Use this example as a template: https://about.mattermost.com/sourced-group-offers-mattermost-as-a-service-for-enterprises/.
 - Start with a short bio and introduction of the guest blogger. Include a link to the guest company website the first time the company name is mentioned in the text.
 - Include links to relevant websites throughout the post as applicable.
-- At the end of the post, include a short descprition of the company as well as a call for readers to share feedback on the company. 
+- Include also a picture of the guest company's logo in the post.
+- At the end of the post, include a short summary of the guest company as well as a call for readers to share feedback on the company. 
 
 Customer Questionaire
 ----------------------------
