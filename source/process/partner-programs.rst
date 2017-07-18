@@ -4,9 +4,9 @@ Mattermost Partner Programs
 
 Mattermost offers multiple partner programs: 
 
-- `Mattermost Authorized Partner Program`_
-- `Mattermost Value-Added Reseller Program`_
-- `Mattermost Deployment Solutions Partner Program`_
+- `Mattermost Authorized Partner Program`_ for one-time resale transactions fulfilling customer request to reseller. 
+- `Mattermost Value-Added Reseller Program`_ for on-going resellers providing first and second tier support in local language and local timezone.
+- `Mattermost Deployment Solutions Partner Program`_ - for co-marketing relationships with both commercial and open source partners automating the deployment of Mattermost. 
 
 Mattermost Authorized Partner Program
 ------------------------------------------------
@@ -28,7 +28,6 @@ Purchasing as a Mattermost Authorized Reseller
    - Issue you an invoice (payment due within 30 days)
    - Send the customer contact a request to complete a `customer registration form <https://about.mattermost.com/customer-registration/>`_, which includes an agreement to accept `Enterprise Edition Subscription Terms for Purchase by Resale <https://about.mattermost.com/customer-terms-and-conditions/>`_.
    - After the customer registration form is complete, it will be reviewed within one business day and a license key issued via email
-Certified Reseller Developer License
 
 Mattermost Value-Added Reseller Program
 ------------------------------------------------
