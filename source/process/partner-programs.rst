@@ -20,11 +20,13 @@ Purchasing as a Mattermost Authorized Reseller
 
 - Complete a `contact form <https://about.mattermost.com/contact/>`_ with Mattermost requesting an authorized reseller discussion, including the name of the customer to which you would like to resell. 
 - You'll work with a partner manager over email, or possibly phone, to understand the details of your business and the resale transaction. 
-- Once the resale is approved internally, you will be provided a one-time click-sign authorized reseller agreement to complete, along with purchase order information for your customer. Note: Mattermost does not accept customer purchase orders or custom terms. 
+- Once the resale is approved internally, you will be provided a one-time click-sign authorized reseller agreement to complete, along with purchase order information for your customer. 
+
+   - Note: Mattermost does not accept customer purchase orders or custom terms. 
 - Mattermost, Inc. will then: 
 
    - Issue you an invoice (payment due within 30 days)
-   - Send the customer contact a request to complete a customer registration form, which includes an agreement to accept `Enterprise Edition Subscription Terms for Purchase by Resale <https://about.mattermost.com/customer-terms-and-conditions/>`_.
+   - Send the customer contact a request to complete a `customer registration form <https://about.mattermost.com/customer-registration/>`_, which includes an agreement to accept `Enterprise Edition Subscription Terms for Purchase by Resale <https://about.mattermost.com/customer-terms-and-conditions/>`_.
    - After the customer registration form is complete, it will be reviewed within one business day and a license key issued via email
 Certified Reseller Developer License
 
@@ -56,7 +58,7 @@ Order Processing
 - Mattermost, Inc. will then: 
 
    - Issue you an invoice (payment due within 30 days)
-   - Send the customer contact a request to complete a customer registration form, which includes an agreement to accept `Enterprise Edition Subscription Terms for Purchase by Resale <https://about.mattermost.com/customer-terms-and-conditions/>`_.
+   - Send the customer contact a request to complete a `customer registration form <https://about.mattermost.com/customer-registration/>`_, which includes an agreement to accept `Enterprise Edition Subscription Terms for Purchase by Resale <https://about.mattermost.com/customer-terms-and-conditions/>`_.
    - After the customer registration form is complete, it will be reviewed within one business day and a license key issued via email
 Certified Reseller Developer License
 
