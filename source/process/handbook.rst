@@ -2,7 +2,7 @@
 About Mattermost
 ##################################################
 
-Mattermost, Inc. is a company based on the Mattermost open source project. Mattermost software is used by thousands of organizations around the world in 13 languages.
+Mattermost, Inc. is a company based on the Mattermost open source project. Mattermost software is used by thousands of organizations around the world in 14 languages.
 
 Mission
 ------------------------------------------

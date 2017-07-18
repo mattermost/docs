@@ -3,20 +3,24 @@
 Incoming Webhooks
 =================
 
-Incoming webhooks allow external applications, written in the programming language of your choice--to post messages into Mattermost public channels, private channels, and direct messages by sending a specifically formatted JSON payload via HTTP POST request to a secret Mattermost URL generated specifically for each application.
+Mattermost supports Webhooks to integrate external applications into the platform easily. Webhooks are simple event-notifications via HTTP POST. Incoming Webhooks may post a message to a Mattermost instance into public channels, private channels, and direct messages. The HTTP POST contains a specifically formatted JSON payload and is sent to Mattermost URL generated specifically for each application.
 
-A couple key points:
+A couple of key points:
 
-- **Mattermost incoming webhooks are Slack-compatible.** If you've used Slack's incoming webhooks to create integrations, you can copy and paste that code to create Mattermost integrations. Mattermost automatically translates Slack's proprietary JSON payload format into markdown to render in Mattermost messages
-- **Mattermost incoming webhooks support full markdown.** A rich range of formatting unavailable in Slack is made possible through :doc:`markdown support <../help/messaging/formatting-text>` in Mattermost, including headings, formatted fonts, tables, inline images and other options supported by Mattermost Markdown.
+- **The external application may be written in the programming language of your choice.** It only needs to support sending a HTTP POST in the required JSON format to the specific URL.
+- **Webhooks are designed to post a message only.** It is not possible to trigger any other event, like »create new channel« with a Webhook. Use the :doc:`API <../developer/api>`_ for this task.
+- **Mattermost incoming webhooks are Slack-compatible.** If you've used Slack's incoming webhooks previously, you can copy and paste that code to create Mattermost integrations. Mattermost automatically translates Slack's proprietary JSON payload format.
+- **Mattermost incoming webhooks support full markdown.** Unlike in Slack a rich range of formatting is made possible through :doc:`markdown support <../help/messaging/formatting-text>` in Mattermost, including headings, formatted fonts, tables, inline images and other options supported by Mattermost Markdown.
 
 **Example:**
 
-Suppose you wanted to create a notification of the status of a daily build, with a table of total tests run and total tests failed by component category, with links to failed tests by category. You could create the following JSON payload to post to a Mattermost channel using webhooks:
+Suppose you have an external application which sends notifications, and these notifications should be posted into a Mattermost channel as well. The application may publish a statistic of executed software tests once a day. The application then just needs to send a HTTP request with a defined JSON format to Mattermost.
+
+The JSON payload for this example might be:
 
 .. code-block:: text
 
-  payload={"text": "
+  {"text": "
   | Component  | Tests Run   | Tests Failed                                   |
   |:-----------|:------------|:-----------------------------------------------|
   | Server     | 948         | :white_check_mark: 0                           |

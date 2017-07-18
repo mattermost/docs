@@ -13,19 +13,13 @@ Set up your development environment for building, running, and testing Mattermos
 
     ``127.0.0.1     dockerhost``
 
-2. Download and install Brew, which you'll use for installing Node.js and Go. Follow the Brew installation instructions at https://brew.sh/
+2. Download and install Brew, which you'll use for installing dependencies. Follow the Brew installation instructions at https://brew.sh/
 
-3. Install Node.js.
+3. Install Node.js, Yarn, libpng, and Go:
 
-  ``brew install node``
+  ``brew install node yarn libpng go``
 
-4. Install Yarn. Go to https://yarnpkg.com/en/docs/install#mac-tab and follow the installation instructions.
-
-5. Install Go.
-
-  ``brew install go``
-
-6. Set up your Go workspace:
+4. Set up your Go workspace:
 
   a. ``mkdir ~/go``
 
@@ -42,9 +36,9 @@ Set up your development environment for building, running, and testing Mattermos
 
     ``source ~/.bashprofile``
 
-7. Fork Mattermost on GitHub from https://github.com/mattermost/platform.
+5. Fork Mattermost on GitHub from https://github.com/mattermost/platform.
 
-8. Download the Mattermost code from your forked repository:
+6. Download the Mattermost code from your forked repository:
 
   a. Create the directory for the code.
 

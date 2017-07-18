@@ -58,7 +58,7 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
 6. Make a copy of your configuration file. The existing file is overwritten during the upgrade, so it's important that you don't forget this step.
 
-  ``cp {install-path}/mattermost/config/config.json config.json``
+    ``cp {install-path}/mattermost/config/config.json config.json``
 
 7. Stop Mattermost Server.
 
@@ -182,6 +182,9 @@ Mattermost Team Edition Server Archive - Unsupported Versions
 Mattermost Team Edition v3.8.3 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v3-8-3>`_ - `Download <https://releases.mattermost.com/3.8.3/mattermost-team-3.8.3-linux-amd64.tar.gz>`_
   - ``https://releases.mattermost.com/3.8.3/mattermost-team-3.8.3-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``1a5de4052c007c54fce6cd844ab3e89aabc8d1a05b8bac72ef58f6896760c4e1``
+Mattermost Team Edition v3.7.5 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v3-7-5>`_ - `Download <https://releases.mattermost.com/3.7.5/mattermost-team-3.7.5-linux-amd64.tar.gz>`_
+  - ``https://releases.mattermost.com/3.7.5/mattermost-team-3.7.5-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``eaee6a57ab9e2924f71853cbebf465d63f7dbf1112716c0e4768984de39f83a2``
 Mattermost Team Edition v3.6.7 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v3-6-7>`_ - `Download <https://releases.mattermost.com/3.6.7/mattermost-team-3.6.7-linux-amd64.tar.gz>`_
   - ``https://releases.mattermost.com/3.6.7/mattermost-team-3.6.7-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``8378f15a6bd070386077798f36d8e521b63844bc838f6553915c6fd4fba3b01d``

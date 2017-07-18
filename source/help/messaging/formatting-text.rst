@@ -185,7 +185,7 @@ Renders as:
 In-line Code
 ------------
 
-Create in-line monospaced font by surrounding it with backticks.
+Create in-line monospaced font by surrounding it with backticks (`), not with single quotes (').
 
 .. code-block:: none
 

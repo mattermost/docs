@@ -3,16 +3,17 @@
 Slash Commands
 ==============
 
-Slash commands, like outgoing webhooks, allow users to interact with external applications right from within Mattermost. The user will enter a ``/`` followed by a command, and optionally some arguments, then an HTTP request will be sent to an external application. What occurs next is decided by how the application responds to the HTTP request.
+Slash commands, like :doc:`Outgoing Webhooks <../developer/webhooks-outgoing/>`, allow users to interact with external applications right from within Mattermost. The user will enter a ``/`` followed by a command, and optionally some arguments, then an HTTP request will be sent to an external application. What occurs next is decided by how the application responds to the HTTP request.
 
-A couple key points:
+A couple of key points:
 
-- **Mattermost slash commands are Slack-compatible.** If you've used Slack's slash commands to interact with external applications, you can reuse those same applications with Mattermost. Mattermost will automatically translate Slack's proprietary JSON payload format into markdown to render in Mattermost messages
-- **Custom commands support auto-complete.** When you a create a custom command for your teammates, you have the option to fill in information about how auto-complete should work with that command. This gives your teammates quick and easy access to use your custom slash command
+- **The general concept is the same as for outgoing webhooks.** Read about :doc:`Outgoing Webhooks <../developer/webhooks-outgoing/>` first to understand the basic concept.
+- **Mattermost slash commands are Slack-compatible.** If you have used Slack's slash commands previously to interact with external applications, you can reuse those same applications with Mattermost. Mattermost will automatically translate Slack's proprietary JSON payload format.
+- **Custom commands support auto-complete.** When you create a custom command for your teammates, you have the option to fill in information about how auto-complete should work with that command. This gives your teammates quick and easy access to use your custom slash command.
 
 **Example:**
 
-Suppose you had an external application that had the ability to check the weather for certain cities. By creating a custom slash command, and setting up the application to handle the HTTP POST or GET from the command, you could allow your users to check the weather in their city using your command. For example, a user might be able to type:
+Suppose you have an external application that is able to check the weather for certain cities. By creating a custom slash command, and setting up the application to handle the HTTP POST or GET from the command, you could allow your users to check the weather in their city using your command. For example, a user might be able to type:
 
 ``/weather toronto week``
 
@@ -52,7 +53,7 @@ Each Mattermost installation comes with some built-in slash commands that are re
 Enabling Custom Commands
 ------------------------
 
-Custom slash commands are off by default, and can be enabled by the system administrator. If you are the system administrator you can enable them by doing the following:
+Custom slash commands are off by default. The feature can be enabled by the system administrator only. If you are the system administrator you can enable them by doing the following:
 
 1. Login to your Mattermost team account that has the system administrator role.
 2. Navigate to **System Console > Integrations > Custom Integrations**.

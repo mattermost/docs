@@ -2,7 +2,7 @@
 Onboarding
 ==================================================
 
-This document in intended for new hires to summarize norms for working at Mattermost, Inc. including:
+This document is intended for new hires to summarize norms for working at Mattermost, Inc. including:
 
 - `Getting Started Checklist`_ - Getting ready to work here
 - `Meetings`_ - When we get together and why
@@ -31,7 +31,7 @@ Hiring
 T-minus 1-3 weeks
 ---------------------------------------------------------
 
-- (People Ops & New Hire) People Ops should find out new hire's preference for laptop, either to be purchased or taken from stock and shipped by People Ops or purchased locally by new hire and expensed. Windows laptops generally cost less than Macs so budget is based on Macs. For non-developers, budget is cost of a Macbook in your local area, for developers budget is cost of a Macbook Pro.
+- (People Ops & New Hire) People Ops should find out new hire's preference for laptop, either to be purchased or taken from stock and shipped by People Ops or purchased locally by new hire and expensed. Windows laptops generally cost less than Macs so budget is based on Macs. For non-developers, budget is cost of a Macbook in your local area, for developers budget is cost of a Macbook Pro. Since these items are company property, you do not need to buy insurance or extended warranties for them, but you do need to report any loss or damage to People@mattermost.com as soon as it occurs.
 - (New Hire) Read the entirety of Onboarding page for info on meetings, mindsets, terminology and training materials.
 - (New Hire) Ask your manager for a link to the CEO's calendar to schedule a 45 minute meeting on your first day 
  
@@ -333,6 +333,33 @@ This system has several benefits:
 3. Eventually the Mini-boss will be as skilled at reviewing as the End-boss, who will have nothing futher to add after the Mini-boss review. At this point, the Mini-boss becomes an End-boss, ready to train a new Mini-boss.
 
 
+Medic, Field Surgeon, Plastic Surgeon
+---------------------------------------------
+
+When making project investment decisions we optimize for high impact in the context of customer obsession, empowered by ownership, while being constrained by "be proud of what you build". 
+
+The failure case is over-investing in processes and infrastructure, stealing mana from higher priority work, reducing speed and agility for the company, and unnecessarily increasing cost and bureacracy. 
+
+In making these trade-offs, consider the following mindsets:
+
+- **Medic** 
+
+   Fix something that's important, broken and dangerous as fast as possible. Speed is critical, do not care about "leaving a scar" in our architecture or business process, just own it and get it done. Solve the problem, DO NOT OVER BUILD.
+ 
+   *Example:* Something incorrect on our public website with more than 100 page views a month should be fixed immediately and not put on a queue tied to a longer term project. 
+
+- **Field Surgeon** 
+
+   Triage things that are important, broken but not dangerous, and fix the most important things with a minimum of time and cost. Scarring should be a low-priority consideration--it is fine to leave scars and it is fine to spend a little energy to avoid big ones.  Solve the problem for the next stage of growth, but don't solve if to two to three stages ahead. 
+
+   *Example:* In Mattermost, spend 2 mana to enable automated messages over 4000 characters to be broken into multiple posts instead of being rejected, which is a problem every developer hits when they attempt to output log information via curl commands.
+
+- **Plastic Surgeon** 
+
+   Fix and optimize critical, high volume flows in our customer experience and product with heavy investment if needed to make high impact changes. Scars can be avoided and removed to produce a high impact result.  
+
+   *Example:* Click-tracking traffic on Mattermost.com and optimizing flows to direct visitors to convert into contact and purchase actions. 
+
 --------------------------
 Terminology
 --------------------------
@@ -377,7 +404,7 @@ An obvious error in Mattermost software. Changes required to accommodate unsuppo
 Dead Tarzan
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Discarding an imperfect solution without a clearly thought out alternative. Based on idea of `Tarzan of the Jungle <https://en.wikipedia.org/wiki/Tarzan>`_ letting go of a vine without having a new vine to swing to.
+Discarding an imperfect solution without a clearly thought out and working alternative. Based on idea of `Tarzan of the Jungle <https://en.wikipedia.org/wiki/Tarzan>`_ letting go of a vine without having a new vine to swing to.
 
 Decking
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -545,7 +572,7 @@ The following table summarizes abbreviations used in the above table:
 Leadership Coaching
 --------------------------
 
-To advanced the skills of senior and functional leaders we bring in experts to advise on key functions, including sales, operations, product, marketing, strategy, general management and other specialized topics. 
+To advance the skills of senior and functional leaders, we bring in experts to advise on key functions, including sales, operations, product, marketing, strategy, general management, and other specialized topics. 
 
 - As an example, `Jono Bacon <http://www.jonobacon.org/about/>`_--a leading author, speaker and consultant on open source community advocacy--meets with our community team regularly to refine our processes and understanding. There's a range of similiarly adept company advisers that help advance our thinking and capabilities in critical ways.
 
