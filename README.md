@@ -28,7 +28,9 @@ To generate the HTML files from markdown in the `/source` directory:
 
 Please read the [Mattermost Contributor Agreement](http://www.mattermost.org/mattermost-contributor-agreement/) and sign it (at the bottom of the page), so you can be added to the Mattermost [Approved Contributor List](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true).
 
-**Additional process for Core Committers on Repositions:**
+**Additional process for Core Committers for Doc Repo:**
+
+These steps are to be followed only in situations of urgency or in situations where it is necessary to check that there aren't any high confidentiality issues. Otherwise the standard approval process should be followed.
 
 1. “Needs Editorial Review” label should be processed **after merge**.
 2. IMPORTANT: Person conducting editoral review needs to have their suggestions **merged by author**. Do this by mentioning the pre-release.mattermost.com user name in the GitHub Pull Request.
