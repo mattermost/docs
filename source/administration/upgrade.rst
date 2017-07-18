@@ -32,66 +32,68 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
 **To upgrade Mattermost Server**:
 
-1. In a terminal window on the server that hosts Mattermost Server, change to your home directory.
+1. Review the :doc:`important-upgrade-notes` to make sure you are aware of any actions you need to take before or after upgrading from your particular version.
+
+2. In a terminal window on the server that hosts Mattermost Server, change to your home directory.
 
   ``cd ~``
 
-2. Delete any files and directories that might still exist from a previous download.
+3. Delete any files and directories that might still exist from a previous download.
 
   .. code-block:: text
 
     rm mattermost*.gz
     rm -r mattermost
 
-3. Download the latest version of Mattermost Server.
+4. Download the latest version of Mattermost Server.
 
   Enterprise Edition
-    ``wget https://releases.mattermost.com/3.10.0/mattermost-3.10.0-linux-amd64.tar.gz``
+    ``wget https://releases.mattermost.com/4.0.0/mattermost-4.0.0-linux-amd64.tar.gz``
   Team Edition
-    ``wget https://releases.mattermost.com/3.10.0/mattermost-team-3.10.0-linux-amd64.tar.gz``
+    ``wget https://releases.mattermost.com/4.0.0/mattermost-team-4.0.0-linux-amd64.tar.gz``
 
-4. Extract the Mattermost Server files.
+5. Extract the Mattermost Server files.
 
   ``tar -xzf mattermost*.gz``
 
-5. Make a copy of your configuration file. The existing file is overwritten during the upgrade, so it's important that you don't forget this step.
+6. Make a copy of your configuration file. The existing file is overwritten during the upgrade, so it's important that you don't forget this step.
 
   ``cp {install-path}/mattermost/config/config.json config.json``
 
-6. Stop Mattermost Server.
+7. Stop Mattermost Server.
 
   On Ubuntu 14.04 and RHEL 6.6: ``sudo service mattermost stop``
 
   On Ubuntu 16.04 and RHEL 7.1: ``sudo systemctl stop mattermost``
 
-7. Back up your data.
+8. Back up your data.
   a. Back up your database using your organization’s standard procedures for backing up MySQL or PostgreSQL.
   b. If you’re using local file storage, back up the location where files are stored.
 
-8. Copy the files that you extracted earlier to the install directory.
+9. Copy the files that you extracted earlier to the install directory.
 
   ``sudo cp -r mattermost {install-path}``
 
-9. Restore your configuration file.
+10. Restore your configuration file.
 
   ``sudo cp config.json {install-path}/mattermost/config``
 
-10. Change ownership of the new files.
+11. Change ownership of the new files.
 
   ``sudo chown -R {owner}:{group} {install-path}/mattermost``
 
-11. Start Mattermost server.
+12. Start Mattermost server.
 
   On Ubuntu 14.04 and RHEL 6.6: ``sudo service mattermost start``
 
   On Ubuntu 16.04 and RHEL 7.1: ``sudo systemctl start mattermost``
 
-12. If you have TLS set up on your Mattermost server, you must activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports.
+13. If you have TLS set up on your Mattermost server, you must activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports.
 
   1. ``cd {install-path}``
   2. ``sudo setcap cap_net_bind_service=+ep ./bin/platform``
 
-13. Upgrade your ``config.json`` schema:
+14. Upgrade your ``config.json`` schema:
 
   a. Open the System Console and a change a setting, then revert it. This should enable the Save button for that page.
   b. Click **Save**.
@@ -114,19 +116,22 @@ Version Archive
 Mattermost Enterprise Edition - Supported Versions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost Enterprise Edition v3.10.0 - `View Changelog <./changelog.html#release-v3-10-0>`_ - `Download <https://releases.mattermost.com/3.10.0/mattermost-3.10.0-linux-amd64.tar.gz>`_
-  - ``https://releases.mattermost.com/3.10.0/mattermost-3.10.0-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``3977cb70b88a6def7009176bf23880fe5ad864cead05a1f2cae7792c8ac9148c``
-Mattermost Enterprise Edition v3.9.0 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v3-9-0>`_ - `Download <https://releases.mattermost.com/3.9.0/mattermost-3.9.0-linux-amd64.tar.gz>`_
-  - ``https://releases.mattermost.com/3.9.0/mattermost-3.9.0-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``6e88c8a89c1320804960d215b8d5e6914075ad156f4590bbcd763252597e506c``
-Mattermost Enterprise Edition v3.8.2 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v3-8-2>`_ - `Download <https://releases.mattermost.com/3.8.2/mattermost-3.8.2-linux-amd64.tar.gz>`_
-  - ``https://releases.mattermost.com/3.8.2/mattermost-3.8.2-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``b99c86a2667f636eaee26331aa61a71a51b2d3d412eaa83fdebf8b53cddc6aeb``
+Mattermost Enterprise Edition v4.0.0 - `View Changelog <./changelog.html#release-v4-0-0>`_ - `Download <https://releases.mattermost.com/4.0.0/mattermost-4.0.0-linux-amd64.tar.gz>`_
+  - ``https://releases.mattermost.com/4.0.0/mattermost-4.0.0-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``ff81595ac82679f208709cd0a4367396f0f49fbb4bb2c439a3fced8ab020731e``
+Mattermost Enterprise Edition v3.10.1 - `View Changelog <./changelog.html#release-v3-10-1>`_ - `Download <https://releases.mattermost.com/3.10.1/mattermost-3.10.1-linux-amd64.tar.gz>`_
+  - ``https://releases.mattermost.com/3.10.1/mattermost-3.10.1-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``1cef548b916972a2a932bc9c819a3928162e3a6aaee8762259174d8cdc003b00``
+Mattermost Enterprise Edition v3.9.1 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v3-9-1>`_ - `Download <https://releases.mattermost.com/3.9.1/mattermost-3.9.1-linux-amd64.tar.gz>`_
+  - ``https://releases.mattermost.com/3.9.1/mattermost-3.9.1-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``2c7419a768ac0ae1eb58fd4c578849670ecc226568efc3f76ac21f7f9147470a``
 
 Mattermost Enterprise Edition - Unsupported Versions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Mattermost Enterprise Edition v3.8.3 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v3-8-3>`_ - `Download <https://releases.mattermost.com/3.8.3/mattermost-3.8.3-linux-amd64.tar.gz>`_
+  - ``https://releases.mattermost.com/3.8.3/mattermost-3.8.3-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``c223320a82222ebff002071633c6331dce0da6ff6ac8e22d0ab0d7055356ff9c``
 Mattermost Enterprise Edition v3.7.5 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v3-7-5>`_ - `Download <https://releases.mattermost.com/3.7.5/mattermost-3.7.5-linux-amd64.tar.gz>`_
   - ``https://releases.mattermost.com/3.7.5/mattermost-3.7.5-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``65e65da661edbc7b7b2b02411f13dbe498fd704d5ae1289789feca79fe00b58a``
@@ -161,22 +166,22 @@ Mattermost Enterprise Edition v2.1.0 - `View Changelog <https://docs.mattermost.
 Mattermost Team Edition Server Archive - Supported Versions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost Team Edition v3.10.0 - `View Changelog <./changelog.html#release-v3-10-0>`_ - `Download <https://releases.mattermost.com/3.10.0/mattermost-team-3.10.0-linux-amd64.tar.gz>`_
-  - ``https://releases.mattermost.com/3.10.0/mattermost-team-3.10.0-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``ed64cb5357a8a3669386fd73b9a3f4934a10f0a9da02dc4be085e3d2e36886ed``
-Mattermost Team Edition v3.9.0 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v3-9-0>`_ - `Download <https://releases.mattermost.com/3.9.0/mattermost-team-3.9.0-linux-amd64.tar.gz>`_
-  - ``https://releases.mattermost.com/3.9.0/mattermost-team-3.9.0-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``c6179f7b2282cfbc8f0a691a90b41b554b62726f1dfb036fc59eed635556c8d9``
-Mattermost Team Edition v3.8.2 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v3-8-2>`_ - `Download <https://releases.mattermost.com/3.8.2/mattermost-team-3.8.2-linux-amd64.tar.gz>`_
-  - ``https://releases.mattermost.com/3.8.2/mattermost-team-3.8.2-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``82cc85557dc21b3871ec89326769c11d3a89c9c41362fb3945247f8fba562ce7``
+Mattermost Team Edition v4.0.0 - `View Changelog <./changelog.html#release-v4-0-0>`_ - `Download <https://releases.mattermost.com/4.0.0/mattermost-team-4.0.0-linux-amd64.tar.gz>`_
+  - ``https://releases.mattermost.com/4.0.0/mattermost-team-4.0.0-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``23cd9b44af336443260016dfbd6d6dfd95226cb0aaedbfef0681183150ad5996``
+Mattermost Team Edition v3.10.1 - `View Changelog <./changelog.html#release-v3-10-1>`_ - `Download <https://releases.mattermost.com/3.10.1/mattermost-team-3.10.1-linux-amd64.tar.gz>`_
+  - ``https://releases.mattermost.com/3.10.1/mattermost-team-3.10.1-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``6e4976e500e9e31358256a8a169378fb99bed643c8ad10005f3695cfb3041de4``
+Mattermost Team Edition v3.9.1 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v3-9-1>`_ - `Download <https://releases.mattermost.com/3.9.1/mattermost-team-3.9.1-linux-amd64.tar.gz>`_
+  - ``https://releases.mattermost.com/3.9.1/mattermost-team-3.9.1-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``f7f878c7d195e1f336b7025fbb4063c1796fa16296ac2d7437d2a5067750966e``
 
 Mattermost Team Edition Server Archive - Unsupported Versions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost Team Edition v3.7.5 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v3-7-5>`_ - `Download <https://releases.mattermost.com/3.7.5/mattermost-team-3.7.5-linux-amd64.tar.gz>`_
-  - ``https://releases.mattermost.com/3.7.5/mattermost-team-3.7.5-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``eaee6a57ab9e2924f71853cbebf465d63f7dbf1112716c0e4768984de39f83a2``
+Mattermost Team Edition v3.8.3 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v3-8-3>`_ - `Download <https://releases.mattermost.com/3.8.3/mattermost-team-3.8.3-linux-amd64.tar.gz>`_
+  - ``https://releases.mattermost.com/3.8.3/mattermost-team-3.8.3-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``1a5de4052c007c54fce6cd844ab3e89aabc8d1a05b8bac72ef58f6896760c4e1``
 Mattermost Team Edition v3.6.7 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v3-6-7>`_ - `Download <https://releases.mattermost.com/3.6.7/mattermost-team-3.6.7-linux-amd64.tar.gz>`_
   - ``https://releases.mattermost.com/3.6.7/mattermost-team-3.6.7-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``8378f15a6bd070386077798f36d8e521b63844bc838f6553915c6fd4fba3b01d``
