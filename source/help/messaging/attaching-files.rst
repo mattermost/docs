@@ -3,11 +3,11 @@ Sharing Files
 
 With attachments, you can share additional information that will help your 
 team to visually understand your ideas. Sharing videos, voice recordings,
-screenshots, and photos can make your messages more effective and clear.
+screenshots, and photos will make your messages more effective and clear.
 
 How to Attach Files
 ------------------
-You can attach files in one of the following ways:
+You can attach files in the following ways:
 
 -  **Use the attachment icon** - click the paperclip icon inside the message input box
 -  **Drag and Drop**
@@ -27,7 +27,7 @@ Downloading Files
 ~~~~~~~~~~~~~~~~~
 You can download an attached file by:
 
--  clicking the download icon next to the file thumbnail
+-  Clicking the download icon next to the file thumbnail
 
 Sharing Public Links
 ~~~~~~~~~~~~~~~~~~~~
@@ -58,5 +58,5 @@ Attachment Limits and Sizes
 Please note that Mattermost supports a maximum of five (5) attached 
 files per post.
 
-The default maximum file size is 50MB, but this can be changed by the 
+The default maximum file size is 50 MB, but this can be changed by the 
 System Administrator.
