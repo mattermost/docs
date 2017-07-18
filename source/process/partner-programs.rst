@@ -47,10 +47,10 @@ Becoming a Mattermost Value-Added Reseller ("VAR")
    - Provided partnership discussion meets expectations, a non-exclusive reseller agreement is offered to the reseller specific to geography and industry.
 - Reseller works with Strategic Alliance Manager on Mattermost Enterprise Edition opportunities.
 
-Order Process
+Order Processing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- For each customer opportunity, `complete a deal registration form <https://about.mattermost.com/reseller-deal-registration/>` to be eligible for a reseller discount after the opportunity is confirmed as not in discussions about Mattermost via another company or person.
+- For each customer opportunity, `complete a deal registration form <https://about.mattermost.com/reseller-deal-registration/>`_ to be eligible for a reseller discount after the opportunity is confirmed as not in discussions about Mattermost via another company or person.
 - Request a quotation from your Mattermost Strategic Alliance Manager for customer purchase, including email address of customer contact who will receive the license key.
 - Sign quotation to issue a purchase order.
 - Mattermost, Inc. will then: 
@@ -63,7 +63,12 @@ Certified Reseller Developer License
 Mattermost Deployment Solutions Partner Program
 ------------------------------------------------------------
 
-Commercial and open source organizations who demonstrate the ability to automate the deployment and maintenance of Mattermost systems per our `Deployment Solution Program guidelines <https://docs.mattermost.com/guides/orchestration.html>`_ are offered a co-marketing partnership that may include listings in the Mattermost partner directory, guest writer opportunities on the Mattermost blog, webinar collaboration and other mutually beneficial marketing support and activities. 
+Commercial and open source organizations who demonstrate the ability to automate the deployment and maintenance of Mattermost systems per our `Deployment Solution Program guidelines <https://docs.mattermost.com/guides/orchestration.html>`_ are offered a co-marketing partnership, which may include: 
+
+- Listings in the Mattermost partner directory
+- Guest writer opportunities on the Mattermost blog
+- Joint-webinar opportunties 
+- Promotion on Mattermost social media accounts 
 
 
 Partner Directory 
@@ -82,10 +87,20 @@ To get started, please email the following to: partner-directory@mattermost.com
 
 If you have joined the Value-Added Reseller program, your reseller territory will appear in the listing as well. 
 
+Location Listings 
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+In the partner listing, city locations follow a "concise clarity" principle:  
+
+- Cities that are not well-known, or which have very similiarly named cities in the same country, are displayed as CITY, STATE/PROVINCE, COUNTRY
+- Otherwise for well-known and uniquely named cities, display is CITY, COUNTRY. For example: A well-known city with a unique name like 
+
+Johanesberg would be displayed as "Johannesburg, South Africa" and not "Johannesburg, Gauteng, South Africa", which is unnecessarily long. Similiarly a not well-known city, like "Arvada" is referenced as "Arvada, Colorado, USA".
+
 Partner Evaluation License 
 ----------------------------------
 
-- As a Value-Added Reseller you can request a renewable 1-year E20 license for up to 20 users.
+As a Value-Added Reseller you can request a renewable 1-year E20 license for up to 20 users.
+
 - Go to https://about.mattermost.com/trial/ to complete a trial form, enter [RESELLER] after your organization name.
-- In the “Tell us more” section enter “1 Year Certified Reseller License Request” so your application can be reviewed and matched against our certified reseller database.
+- In the “Tell us more” section enter “1 Year Reseller License Request” so your application can be reviewed and matched against our certified reseller database.
 - Please expect delivery in 2-3 business days
