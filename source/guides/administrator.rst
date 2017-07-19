@@ -41,7 +41,7 @@ Deployment
    /deployment/auth*
    /deployment/sso-saml.rst
    /deployment/scaling*
-   /deployment/cluster*
+   /deployment/cluster.rst
    /deployment/sso-gitlab*
    /deployment/sso-google*
    /deployment/sso-office*

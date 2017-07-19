@@ -114,12 +114,16 @@ Learn more about the custom theme color selectors [here](http://docs.mattermost.
 Select **Import theme colors from Slack** to import a Slack theme. In Slack, go to **Preferences > Sidebar Theme** and open the custom theme option. From there, copy the theme color vector and then paste it into the *Input Slack Theme* input box in Mattermost. Any theme settings that are not customizable in Slack will default to the “Mattermost” standard theme settings.
 
 #### Display Font
+*Removed in July 16th, 2017 release*
+
 Select what font is used.
 
 #### Clock Display
 Choose a 12-hour or 24-hour time preference that appears on the time stamp for all posts.
 
 #### Teammate Name Display
+*Removed in July 16th, 2017 release*
+
 Configure how names are displayed in Mattermost: nickname, username or full name.
 
 #### Link Previews
@@ -138,6 +142,7 @@ Select what language Mattermost displays in the user interface. Options include:
 - English
 - Español - Spanish
 - Français - French
+- Italiano - Italian
 - Nederlands - Dutch
 - Polski - Polish
 - Português (Brasil) - Portuguese
