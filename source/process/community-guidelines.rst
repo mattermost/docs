@@ -34,7 +34,7 @@ Retention
 1. Identify active contributors and thank them personally for their work
 2. For work in progress tickets or submitted pull requests, follow up with contributor once a week for status updates and questions. If there hasn't been activity in more than two weeks, ask if you can help them in some way
 3. Recognize everyone’s contributions (either intrinsic rewards like having their name listed on a contributor’s page or tangible like swag or gift cards)
-4. If applicable, assign roles to top contributors (such as team lead, code reviewer, tester) to give a sense of ownership for the contributor
+4. If applicable, assign roles to top contributors (such as team lead, code reviewer, tester) to give a sense of ownership to the contributor
 
 Off-boarding
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -187,7 +187,7 @@ Hard Questions
 To respond to tough questions, use the `SCIPAB method <https://www.mandel.com/top-ten-reasons/tools-methodology/scipab>`_ to help formulate a response and send for community lead to review. 
 
 Situation:
-  State what you know about your listeners' circumstances that is relevant to your discussion or presentation, e.g., current state of their business, technology, industry, or plans. 
+  State what you know about your listeners' circumstances that are relevant to your discussion or presentation, e.g., current state of their business, technology, industry, or plans. 
 
 Complication:
   Identify the critical issues (changes, pressures, demands, etc.) that are impacting the Situation and creating problems, challenges, or opportunities. 
