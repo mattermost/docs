@@ -4,7 +4,7 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
-## Release v4.0.0
+## Release v4.0.1
 
  - **v4.0.1, released 2017-07-18**
    - If `AllowTimeLimit` config setting is set to `Never`, pinning and un-pinning messages now work.
