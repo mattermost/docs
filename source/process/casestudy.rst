@@ -2,28 +2,31 @@
 Case Studies
 =====================
 
-This document outlines some of the procedures and materials in developing an effective case study for Mattermost software. This template can be used both to describe deployments of the open source Mattermost Team Edition or commercial deployments with Mattermost Enterprise Edition. We're delighted to hear everyone's story and to share it with the community.
+This document outlines some of the procedures and materials in developing an effective case study for Mattermost software. This template can be used both to describe deployments of the open source Mattermost Team Edition or commercial deployments with Mattermost Enterprise Edition. We are delighted to hear everyone's story and to share it with the community.
 
 Guest Article Announcements for Mattermost Apps and Services
 ----------------------------------------------------------------------------
 
 Guest Blogger
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Provide a photo and a short bio about yourself through email. Photos and bios of each of the guest company creators are more than welcome. The size of the photo should not be too small so that it can be easily included in a banner or as a screenshot in the blog post. The bio should be as short as one to two sentences.
+
+Please email the following to Mattermost:
+
+- Please proivde a photo and a short bio about yourself. Photos and bios of each of the guest company creators are more than welcome. The size of the photo should not be too small so that it can be easily included in a banner or as a screenshot in our blog post. The bio should be as short as one to two sentences.
+- When we have prepared a draft of the blog post, we will send it to you through email and will ask you to review it and provide any feedback and recommendations that you want to share.
 
 Blog Writer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Include a banner which includes the guest blogger's photo (using a gray-scale effect), the guest company logo, and a heading. Use this example as a template: https://about.mattermost.com/sourced-group-offers-mattermost-as-a-service-for-enterprises/.
-- Start the blog post with a short bio and introduction of the guest blogger. Include a link to the guest company website the first time the company name is mentioned in the text.
-- Include links to relevant websites throughout the post as applicable.
-- Include also a picture of the guest company's logo in the post.
+- Commission a banner which includes the guest blogger's photo (using a gray-scale effect), the guest company's logo, and a heading. Use this example as a template: https://about.mattermost.com/sourced-group-offers-mattermost-as-a-service-for-enterprises/.
+- Start the blog post with a short bio and introduction of the guest blogger. Include a link to the guest company's website the first time the company name is mentioned in the text.
+- Include a screenshot of the guest company's logo in the post. Include also links to relevant websites throughout the post as applicable.
 - At the end of the post, include a short summary of the guest company as well as a call for readers to share feedback on the company. 
 
-Customer Questionaire
+Customer Questionnaire
 ----------------------------
 
-The below customer questionaire template helps us gather information to share with the Mattermost community on your business, your needs, and how Mattermost can help serve your organization.  
+The below customer questionnaire template helps us gather information to share with the Mattermost community on your business, your needs, and how Mattermost can help serve your organization.  
 
 We'd love your help answering some of these questions, either in email or over a phone call or video conference, to prepare a Case Study draft for your organization's review and approval. 
 
