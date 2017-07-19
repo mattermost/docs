@@ -9,7 +9,7 @@ Guest Article Announcements for Mattermost Apps and Services
 
 Guest Blogger
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Provide a photo and a short bio about yourself through email. Photos and bios of each guest company creator is more than welcome. The size of the photo should not be too small so that it can be easily included in a banner or as a screenshot in the blog post. The bio can be as short as one to two sentences.
+Provide a photo and a short bio about yourself through email. Photos and bios of each of the guest company creators are more than welcome. The size of the photo should not be too small so that it can be easily included in a banner or as a screenshot in the blog post. The bio should be as short as one to two sentences.
 
 Blog Writer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
