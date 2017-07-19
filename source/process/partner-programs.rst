@@ -89,7 +89,7 @@ To get started, please email the following to: partner-directory@mattermost.com
 If you have joined the Value-Added Reseller program, your reseller territory will appear in the listing as well. 
 
 Listing Location of Key Office
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In the partner listing, city locations follow a "concise clarity" principle:  
 
 - Cities that are not well-known, or which have very similiarly named cities in the same country, are displayed as CITY, STATE/PROVINCE, COUNTRY
