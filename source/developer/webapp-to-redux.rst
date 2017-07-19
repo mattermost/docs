@@ -16,6 +16,11 @@ Contributing
 
 If you're interested in contributing please join the `Redux channel on pre-release.mattermost.com <https://pre-release.mattermost.com/core/channels/redux>`__. Progress on moving individual components over to use Redux is `tracked on this spreadsheet <https://docs.google.com/spreadsheets/d/1AlFS2F4H74JsONxIS_VNZBxrVJolZxFh7yN46RNCwyg/edit#gid=0>`__. If you want to work on one of the components let us know in the Redux channel or by making a comment on the spreadsheet.
 
+List of contributors, in alphabetical order:
+
+ - Joram Wilander (`@jwilander <https://github.com/jwilander>`_)
+ - Nazar Laba (`@94117nl <https://github.com/94117nl>`_)
+
 For guidance on migrating a webapp component to Redux, read the next section.
 
 Component Migration Steps

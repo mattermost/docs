@@ -26,8 +26,7 @@ Installing Mattermost
    /install/troubleshooting*
    /install/i18n*
    /install/desktop*
-   Configuring Apache2 as a proxy </install/config-proxy-apache2.rst>
-   /install/config-ssl-http2-apache2.rst
+   /install/config-apache2.rst
 
 Deployment
 ----------
@@ -43,7 +42,7 @@ Deployment
    /deployment/auth*
    /deployment/sso-saml.rst
    /deployment/scaling*
-   /deployment/cluster*
+   /deployment/cluster.rst
    /deployment/sso-gitlab*
    /deployment/sso-google*
    /deployment/sso-office*

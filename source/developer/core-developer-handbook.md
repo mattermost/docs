@@ -16,6 +16,8 @@ Below is the list of core developers working on Mattermost:
 - Saturnino Abril - @saturnino on [pre-release.mattermost.com](https://pre-release.mattermost.com/) and [@saturninoabril](https://github.com/saturninoabril) on GitHub
 - Chris Duarte - @uberchris on [pre-release.mattermost.com](https://pre-release.mattermost.com/) and [@csduarte](https://github.com/csduarte) on GitHub
 - Carlos Panato - @cpanato on [pre-release.mattermost.com](https://pre-release.mattermost.com/) and [@cpanato](https://github.com/cpanato) on GitHub
+- Chris Brown - @ccbrown on [pre-release.mattermost.com](https://pre-release.mattermost.com/) and [@ccbrown](https://github.com/ccbrown) on GitHub
+- Jonathan Fritz - @jonathan on [pre-release.mattermost.com](https://pre-release.mattermost.com/) and [@MusikPolice](https://github.com/MusikPolice) on GitHub
 
 Below is the list of core developers working on individual Mattermost repositories:
 - Yuya Ochiai - [desktop](https://github.com/mattermost/desktop) - @yuya-oc on [pre-release.mattermost.com](https://pre-release.mattermost.com/) and [@yuya-oc](https://github.com/yuya-oc) on GitHub

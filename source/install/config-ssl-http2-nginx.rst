@@ -80,7 +80,7 @@ You can use any certificate that you want, but these instructions show you how t
       ssl_session_cache shared:SSL:10m;
     }
 
-    location /api/v3/users/websocket {
+    location ~ /api/v[0-9]+/(users/)?websocket$ {
         proxy_set_header Upgrade $http_upgrade;
         .
         .
