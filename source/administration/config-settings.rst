@@ -223,7 +223,7 @@ Enable Team Creation
 
 Max Users Per Team
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Maximum number of users per team, excluding inactive users. 
+Maximum number of users per team, excluding inactive users.
 
 
 The **Max Users Per Team** refers to the size of the "team site" which is workspace a "team of people" inhabits. A team of people is considered a small organization where people work closely together towards a specific shared goal and share the same etiquette. In the physical world, a team of people could typically be seated around a single table to have a meal and discuss their project.
@@ -1634,21 +1634,19 @@ Push Notification Contents
 
 To confirm push notifications are working:
 
-1. Set **System Console** > **Email Settings** > **Send Push Notifications** to `true`.
-2. Set **System Console** > **Email Settings** > **Send Push Notifications** to `true` (if using Mattermost 1.4 or earlier).
-3. Set **System Console** > **Email Settings** > **Push Notification Server** to ``http://push.mattermost.com`` if using Enterprise Edition or if using Team Edition, set the value to `http://push-test.mattermost.com`.
-4. Download and install `the Mattermost iOS app from iTunes <https://itunes.apple.com/us/app/mattermost/id984966508?mt=8>`_ on your iPhone or iPad and log in to your team site.
-5. Close the app on your device, and close any other connections to your team site.
-6. Wait 5 minutes and have another team member send you a direct messages, which should trigger a push notification to the Mattermost app on your mobile device.
-7. You should receive a push notification on your device alerting you of the direct message.
+1. Go to **System Console > Notifications > Mobile Push > Send Push Notifications** and select **Use iOS and Android apps on iTunes and Google Play with TPNS**.
+2. Set **Push Notification Server** to *http://push.mattermost.com* if using Enterprise Edition. If using Team Edition, set the value to *http://push-test.mattermost.com*.
+3. To confirm push notifications are working, connect to the `Mattermost iOS App on iTunes <https://about.mattermost.com/mattermost-ios-app>`_ or the `Mattermost Android App on Google Play <https://about.mattermost.com/mattermost-android-app>`_ and log in to your team site.
+4. Close the app on your device, and close any other connections to your team site.
+5. Wait 5 minutes and have another team member send you a direct messages, which should trigger a push notification to the Mattermost app on your mobile device.
+6. You should receive a push notification on your device alerting you of the direct message.
 
 If you did not receive an alert:
 
-1. Set **System Console** > **Log Settings** > **File Log Level** to `DEBUG` (make sure to set this back to `INFO` after troubleshooting to save disk space).
-2. Repeat the above steps
-3. Go to **System Console** > **OTHER** > **Logs** and copy the log output into a file
+1. Set **System Console > General > Logging > File Log Level** to *DEBUG* (make sure to set this back to *INFO* after troubleshooting to save disk space).
+2. Repeat the above steps.
+3. Go to **System Console > Logs** and copy the log output into a file.
 4. For Enterprise Edition customers, `submit a support request with the file attached <https://mattermost.zendesk.com/hc/en-us/requests/new>`_. For Team Edition users, please start a thread in the `Troubleshooting forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`_ for peer-to-peer support.
-
 
 ________
 
