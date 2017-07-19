@@ -33,5 +33,5 @@ Please read the [Mattermost Contributor Agreement](http://www.mattermost.org/mat
 These steps are to be followed only in situations of urgency or in situations where it is necessary to check that there aren't any high confidentiality issues. Otherwise the standard approval process should be followed.
 
 1. “Needs Editorial Review” label should be processed **after merge**.
-2. IMPORTANT: Person conducting editoral review needs to have their suggestions **merged by author**. Do this by mentioning the pre-release.mattermost.com user name in the GitHub Pull Request.
-3. Check weekly or bi-weekly that there are no “Needs Editoral Review” labels on closed Pull Requests.
+2. IMPORTANT: Person conducting editorial review needs to have their suggestions **merged by author**. Do this by mentioning the pre-release.mattermost.com user name in the GitHub Pull Request.
+3. Check weekly or bi-weekly that there are no “Needs Editorial Review” labels on closed Pull Requests.
