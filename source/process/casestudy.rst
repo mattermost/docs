@@ -7,7 +7,13 @@ This document outlines some of the procedures and materials in developing an eff
 Guest Article Announcements for Mattermost Apps and Services
 ----------------------------------------------------------------------------
 
-- Request a photo and a short bio from the guest blogger. Multiple photos and guest bloggers are also encouraged. The size of the photo should not be too small so that it can be easily included in a banner. The bio can be as short as one to two sentences.
+Guest Blogger
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Provide a photo and a short bio about yourself through email. Photos and bios of each guest company creator is more than welcome. The size of the photo should not be too small so that it can be easily included in a banner or as a screenshot in the blog post. The bio can be as short as one to two sentences.
+
+Blog Writer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 - Include a banner which includes the guest blogger's photo (using a gray-scale effect), the guest company logo, and a heading. Use this example as a template: https://about.mattermost.com/sourced-group-offers-mattermost-as-a-service-for-enterprises/.
 - Start the blog post with a short bio and introduction of the guest blogger. Include a link to the guest company website the first time the company name is mentioned in the text.
 - Include links to relevant websites throughout the post as applicable.
