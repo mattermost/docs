@@ -32,11 +32,11 @@ Reality Check
 
   - Majority of contributors will not be experts. Also, contributing to open source is typically a hobby / side job.
 
-3. There's thousands of other open source projects so it's very easy to leave to another project.
+3. There are thousands of other open source projects so it's very easy to leave to another project.
 
 4. Community building is mana intensive.
 
-  - You need to train contributors, dev and PM review PRs, and create recognition programs with specific roles to people.
+  - You need to train contributors, developers and PMs to review PRs and create recognition programs that give specific roles to people.
 
 Audiences
 ---------------------------------------------------------
@@ -54,7 +54,7 @@ Audiences
 3. End users (Owner: Lindy)
 
   - They ask for help troubleshooting issues, report bugs, share UX feedback and propose new features
-  - Examples: forum.mattermost.org, GitHub repos, uservoice
+  - Examples: forum.mattermost.org, GitHub repos, Uservoice
 
 4. Localization (Owner: Jason)
 
