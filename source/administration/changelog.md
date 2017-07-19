@@ -8,7 +8,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
  - **v4.0.1, released 2017-07-18**
    - If `AllowTimeLimit` config setting is set to `Never`, pinning and un-pinning messages now work.
-   - If you upload or remove the **Service Provider Public Certificate** file in **System Console > SAML**, the page no longer refreshes losing all unchanges settings.
+   - If you upload or remove the **Service Provider Public Certificate** file in **System Console > SAML**, the page no longer refreshes losing all unchanged settings.
    - Deactivated users no longer appear in channel member, team member or direct message lists.
    - PDF previews now load properly.
  - **v4.0.0, released 2017-07-16**
