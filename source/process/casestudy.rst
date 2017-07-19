@@ -13,7 +13,7 @@ Guest Blogger
 Please email the following to Mattermost:
 
 - Please proivde a photo and a short bio about yourself. Photos and bios of each of the guest company creators are more than welcome. The size of the photo should not be too small so that it can be easily included in a banner or as a screenshot in our blog post. The bio should be as short as one to two sentences.
-- When we have prepared a draft of the blog post, we will send it to you through email and will ask you to review it and provide any feedback and recommendations that you want to share.
+- When we have prepared a draft of the blog post, we will send it to you by email and will ask you to review it and provide any feedback and recommendations that you may want to share.
 
 Blog Writer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -82,11 +82,11 @@ Results
 
 Please share the most impressive measurable outcomes you can think of--the more numbers, the better.
 
-- How is the product or service helping you save time and increase productivity?
+- How is the product or service helping you to save time and to increase productivity?
 - In what ways does that enhance your competitive advantage?
-- How much have you increased key metrics, like reducing response time, time-to-resolution and reducing time spent in meetings? 
+- How much have you increased key metrics, such as reducing response time, time-to-resolution, and time spent in meetings? 
 
-If you're completing the questionaire by email, please send a copy of the questions completed above to your Mattermost marketing contact for next steps. 
+If you're completing the questionnaire by email, please send a copy of the questions completed above to your Mattermost marketing contact for next steps. 
 
 Thank you so much for being part of our community! 
 
