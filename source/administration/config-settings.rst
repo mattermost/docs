@@ -1607,7 +1607,7 @@ Push Notification Server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Location of Mattermost Push Notification Service (MPNS), which re-sends push notifications from Mattermost to services like Apple Push Notification Service (APNS) and Google Cloud Messaging (GCM).
 
-To confirm push notifications are working, connect to the `Mattermost iOS App on iTunes <https://itunes.apple.com/us/app/mattermost/id984966508?mt=8>`_ or the `Mattermost Android App on Google Play <https://play.google.com/store/apps/details?id=com.mattermost.mattermost&hl=en>`_:
+To confirm push notifications are working, connect to the `Mattermost iOS App on iTunes <https://about.mattermost.com/mattermost-ios-app>`_ or the `Mattermost Android App on Google Play <https://about.mattermost.com/mattermost-android-app>`_:
 
 - For Enterprise Edition, enter ``http://push.mattermost.com``
 - For Team Edition, enter ``http://push-test.mattermost.com``
@@ -1637,7 +1637,7 @@ To confirm push notifications are working:
 1. Set **System Console** > **Email Settings** > **Send Push Notifications** to `true`.
 2. Set **System Console** > **Email Settings** > **Send Push Notifications** to `true` (if using Mattermost 1.4 or earlier).
 3. Set **System Console** > **Email Settings** > **Push Notification Server** to ``http://push.mattermost.com`` if using Enterprise Edition or if using Team Edition, set the value to `http://push-test.mattermost.com`.
-4. Download and install `the Mattermost iOS app from iTunes <https://itunes.apple.com/us/app/mattermost/id984966508?mt=8>`_ on your iPhone or iPad and log in to your team site.
+4. Download and install `the Mattermost iOS app from iTunes <https://about.mattermost.com/mattermost-ios-app>`_ on your iPhone or iPad and log in to your team site.
 5. Close the app on your device, and close any other connections to your team site.
 6. Wait 5 minutes and have another team member send you a direct messages, which should trigger a push notification to the Mattermost app on your mobile device.
 7. You should receive a push notification on your device alerting you of the direct message.
