@@ -3,7 +3,7 @@
 Messages
 ================
  
-Sending messages and replying to messages are important ways to keep conversation active with your team. You can edit and delete messages after you have sent them. You can also generate and share links to any message in Mattermost.
+Sending messages and replying to messages are important ways to keep conversations active with your team. You can edit and delete messages after you have sent them. You can also generate and share links to any message in Mattermost.
 
 Sending Messages
 -----------------
