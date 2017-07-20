@@ -25,7 +25,7 @@ Editing Messages
 
 -  Click the **[...]** link next to a message that you have sent, then click **Edit**.
 
-Your System Administrator may disable the **Edit** feature or set a time limit before messages become uneditable.
+Your System Admin can disable the **Edit** feature or set a time limit before messages become uneditable.
 
 .. note::
   Message edits do not trigger new @mention notifications, desktop notifications, or notification sounds.
@@ -35,14 +35,14 @@ Deleting Messages
 
 -  Click the **[...]** link next to a message that you have sent, then click **Delete**.
 
-Your System Administrator may disable the **Delete** feature.
+Your System Admin can disable the **Delete** feature.
 
 Linking to Messages
 --------------------
 
 -  Click the **[...]** link next to a message, then click **Permalink > Copy Link**.
 
-If the link is to a message in a Public Channel, any user of the team can see the message. If the link is to a message in a Private Group, only users in that group can see the message.
+If the link is to a message in a Public Channel, any member of the team can see the message. If the link is to a message in a Private Group, only members in that group can see the message.
 
 .. tip::
   The timestamp that appears beside the username of any message is also a permalink.
