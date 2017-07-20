@@ -17,9 +17,9 @@ File Previewer
 --------------
 Mattermost has a built-in file previewer that you can use to:
 
--  Download files
--  Share public links
--  View media
+-  **Download files**
+-  **Share public links**
+-  **View media**
 
 Click the thumbnail of an attached file to open it in the file previewer.
 
@@ -30,10 +30,9 @@ thumbnail.
 
 Sharing Public Links
 ~~~~~~~~~~~~~~~~~~~~
-Public links allow you to share attachments with people outside your 
-Mattermost team.
-
--  Click the thumbnail of an attachment, then click **Get Public Link**
+Public URL's allow you to share attachments with anyone outside the Mattermost 
+system. To share an attachment, click the thumbnail of an attachment, then click
+**Get Public Link**.
 
 .. Tip::
 If **Get Public Link** is not visible in the file previewer
