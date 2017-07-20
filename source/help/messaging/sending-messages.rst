@@ -8,9 +8,7 @@ Sending messages and replying to messages are important ways to keep conversatio
 Sending Messages
 -----------------
 
-Press **Enter** to send a message. To use paragraphs, press **Shift + Enter** to create a new line. If you want to, you can change the settings to send messages with **Ctrl + Enter** instead:
-
--  **Main Menu > Account Settings > Advanced > Send messages on Ctrl + Enter > Edit**
+Write a message by typing into the text input box, then press ENTER to send it. Use SHIFT+ENTER to create a new line without sending a message. To send messages by pressing CTRL+ENTER, go to **Main Menu > Account Settings > Advanced > Send messages on Ctrl + Enter > Edit**.
 
 Replying to Messages
 ---------------------
