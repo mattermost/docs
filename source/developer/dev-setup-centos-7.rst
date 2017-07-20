@@ -29,7 +29,7 @@ Set up your development environment for building, running, and testing Mattermos
 
     a. ``sudo yum group install "Development Tools"``
 
-    b. ``yum install -y libpng12``
+    b. ``sudo yum install -y libpng12``
 
 3. Download and install Go 1.8 for Linux:
 
