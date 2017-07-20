@@ -10,7 +10,7 @@ Sending Messages
 
 Press **Enter** to send a message. To use paragraphs, press **Shift + Enter** to create a new line. If you want to, you can change the settings to send messages with **Ctrl + Enter** instead:
 
--  **Main Menu > Account Settings > Send messages on Ctrl + Enter**
+-  **Main Menu > Account Settings > Advanced > Send messages on Ctrl + Enter > Edit**
 
 Replying to Messages
 ---------------------
