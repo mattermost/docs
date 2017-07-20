@@ -25,21 +25,20 @@ Click the thumbnail of an attached file to open it in the file previewer.
 
 Downloading Files
 ~~~~~~~~~~~~~~~~~
-You can download an attached file by:
-
--  Clicking the download icon next to the file thumbnail
+You can download an attached file by clicking the download icon next to the file 
+thumbnail.
 
 Sharing Public Links
 ~~~~~~~~~~~~~~~~~~~~
 Public links allow you to share attachments with people outside your 
 Mattermost team.
 
--  Click the thumbnail of an attachment > click **Get Public Link**
+-  Click the thumbnail of an attachment, then click **Get Public Link**
 
 .. Tip::
 If **Get Public Link** is not visible in the file previewer
 and you prefer that the feature is enabled, you can request your System 
-Administrator to enable the feature from the System Console under 
+Admin to enable the feature from the System Console under 
 **Security** > **Public Links**.
 
 Viewing Media:
@@ -59,4 +58,4 @@ Please note that Mattermost supports a maximum of five (5) attached
 files per post.
 
 The default maximum file size is 50 MB, but this can be changed by the 
-System Administrator.
+System Admin.
