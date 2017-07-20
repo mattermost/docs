@@ -9,17 +9,17 @@ How to Attach Files
 ------------------
 You can attach files in the following ways:
 
--  **Use the attachment icon** - click the paperclip icon inside the message input box
--  **Drag and Drop**
--  **Paste from the clipboard** - this feature is supported in Chrome and Edge browsers
+-  Use the attachment icon - click the paperclip icon inside the message input box
+-  Drag and Drop
+-  Paste from the clipboard - this feature is supported in Chrome and Edge browsers
 
 File Previewer
 --------------
 Mattermost has a built-in file previewer that you can use to:
 
--  **Download files**
--  **Share public links**
--  **View media**
+-  Download files
+-  Share public links
+-  View media
 
 Click the thumbnail of an attached file to open it in the file previewer.
 
@@ -38,7 +38,7 @@ system. To share an attachment, click the thumbnail of an attachment, then click
 If **Get Public Link** is not visible in the file previewer
 and you prefer that the feature is enabled, you can request your System 
 Admin to enable the feature from the System Console under 
-**Security** > **Public Links**.
+**Security > Public Links**.
 
 Viewing Media:
 ~~~~~~~~~~~~~~~~~~~~~
