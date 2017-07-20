@@ -15,7 +15,7 @@ Press **Enter** to send a message. To use paragraphs, press **Shift + Enter** to
 Replying to Messages
 ---------------------
 
--  Click the **[...]** icon next to a message > click **Edit**. This keeps conversations organized in threads.
+-  Click the **[...]** link next to a message, then click **Edit**. This keeps conversations organized in threads.
 
 To adjust the width of the right-hand sidebar, click the expand/shrink icon with two arrows at the top of the sidebar.
 Replies are indented slightly in the center pane to indicate that they are child messages of a parent message.
@@ -23,7 +23,7 @@ Replies are indented slightly in the center pane to indicate that they are child
 Editing Messages
 -----------------
 
--  Click the **[...]** icon next to a message that you have sent > click **Edit**.
+-  Click the **[...]** link next to a message that you have sent, then click **Edit**.
 
 Your System Administrator may disable the **Edit** feature or set a time limit before messages become uneditable.
 
@@ -33,14 +33,14 @@ Your System Administrator may disable the **Edit** feature or set a time limit b
 Deleting Messages
 ------------------
 
--  Click the **[...]** icon next to a message that you have sent > click **Delete**.
+-  Click the **[...]** link next to a message that you have sent, then click **Delete**.
 
 Your System Administrator may disable the **Delete** feature.
 
 Linking to Messages
 --------------------
 
--  Click the **[...]** icon next to a message > click **Permalink > Copy Link**.
+-  Click the **[...]** link next to a message, then click **Permalink > Copy Link**.
 
 If the link is to a message in a Public Channel, any user of the team can see the message. If the link is to a message in a Private Group, only users in that group can see the message.
 
