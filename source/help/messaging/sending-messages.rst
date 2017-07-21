@@ -13,7 +13,7 @@ Write a message by typing into the text input box, then press ENTER to send it. 
 Replying to Messages
 ---------------------
 
-Click the **[...]** link next to a message, then click **Edit**. This keeps conversations organized in threads.
+Click the **[...]** link next to a message, then click **Reply**. This keeps conversations organized in threads.
 
 To adjust the width of the right-hand sidebar, click the expand/shrink icon with two arrows at the top of the sidebar.
 Replies are indented slightly in the center pane to indicate that they are child messages of a parent message.
