@@ -1607,7 +1607,7 @@ Push Notification Server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Location of Mattermost Push Notification Service (MPNS), which re-sends push notifications from Mattermost to services like Apple Push Notification Service (APNS) and Google Cloud Messaging (GCM).
 
-To confirm push notifications are working, connect to the `Mattermost iOS App on iTunes <https://itunes.apple.com/us/app/mattermost/id984966508?mt=8>`_ or the `Mattermost Android App on Google Play <https://play.google.com/store/apps/details?id=com.mattermost.mattermost&hl=en>`_:
+To confirm push notifications are working, connect to the `Mattermost iOS App on iTunes <https://about.mattermost.com/mattermost-ios-app>`_ or the `Mattermost Android App on Google Play <https://about.mattermost.com/mattermost-android-app>`_:
 
 - For Enterprise Edition, enter ``http://push.mattermost.com``
 - For Team Edition, enter ``http://push-test.mattermost.com``
