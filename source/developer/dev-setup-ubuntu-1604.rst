@@ -39,14 +39,6 @@ Set up your development environment for building, running, and testing Mattermos
 
        ``sudo tar -C /usr/local -xzf go1.8.linux-amd64.tar.gz``
 
-    c. Ensure the binary file of golang have the right permission, by running:
-
-      ``sudo ls -la /usr/local/go/bin/go``
-
-    d. If the permission is not ``-rwxr-xr-x``, run the following command to change it:
-
-      ``sudo chmod 755 /usr/local/go/bin/go``
-
 4. Set up your Go workspace:
 
   a. ``mkdir ~/go``
