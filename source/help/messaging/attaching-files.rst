@@ -30,7 +30,7 @@ thumbnail.
 
 Sharing Public Links
 ~~~~~~~~~~~~~~~~~~~~
-Public URL's allow you to share attachments with anyone outside the Mattermost 
+Public URLs allow you to share attachments with anyone outside the Mattermost 
 system. To share an attachment, click the thumbnail of an attachment, then click
 **Get Public Link**.
 
