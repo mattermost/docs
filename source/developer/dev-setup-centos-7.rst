@@ -19,17 +19,17 @@ Set up your development environment for building, running, and testing Mattermos
 
   d. Restart the Docker daemon.
 
-    ``sudo service docker restart``
+    ``sudo systemctl restart docker``
 
   e. Change your current group ID to the *docker* group.
 
     ``newgrp docker``
 
-2. Install the development tools package and libpng12 required by pngquant(a library used by Mattermost).
+2. Install the development tools package, wget and libpng12 required by pngquant(a library used by Mattermost).
 
     a. ``sudo yum group install "Development Tools"``
 
-    b. ``sudo yum install -y libpng12``
+    b. ``sudo yum install -y wget libpng12``
 
 3. Download and install Go 1.8 for Linux:
 
