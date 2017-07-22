@@ -18,6 +18,7 @@ Installing Mattermost
    Installing on RHEL 7.1 </install/install-rhel-71.rst>
    Installing on CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific.rst>
    Installing on Debian Jessie (Unofficial) </install/prod-debian.rst>
+   /install/deploy-bitnami*
    /install/docker-local*
    /install/docker-ebs*
    /install/ee-install*
