@@ -1878,12 +1878,12 @@ Name you selected for your S3 bucket in AWS.
 | This feature's ``config.json`` setting is ``"AmazonS3Bucket": ""`` with string input.                                                                                |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Amazon S3 Region
+Amazon S3 Endpoint
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AWS region you selected for creating your S3 bucket. Refer to `AWS Reference Documentation <http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region>`_ and choose this variable from the Region column.
+Hostname of your S3 Compatible Storage provider. Defaults to ``s3.amazonaws.com``.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AmazonS3Region": ""`` with string input.                                                                                |
+| This feature's ``config.json`` setting is ``"AmazonS3Endpoint": "s3.amazonaws.com"`` with string input.                                                              |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Secure Amazon S3 Connections
@@ -2618,17 +2618,19 @@ Font used in auto-generated profile pics with colored backgrounds.
 | This feature's ``config.json`` setting is ``"InitialFont": "luximbi.ttf"`` with string input.                                                                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Amazon S3 Endpoint
+Amazon S3 Region
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Set an endpoint URL for an Amazon S3 instance.
+AWS region you selected for creating your S3 bucket. Refer to `AWS Reference Documentation <http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region>`_ and choose this variable from the Region column.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AmazonS3Endpoint": ""`` with string input.                                                                              |
+| This feature's ``config.json`` setting is ``"AmazonS3Region": ""`` with string input.                                                                                |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Amazon S3 Bucket Endpoint
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Set an endpoint URL for Amazon S3 buckets.
+
+*Removed in November 16th, 2016 release*
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AmazonS3BucketEndpoint": ""`` with string input.                                                                         |
@@ -2640,6 +2642,8 @@ Amazon S3 Location Constraint
 
 **False**: S3 region is not location constrained.
 
+*Removed in November 16th, 2016 release*
+
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AmazonS3LocationConstraint": false`` with options ``true`` and ``false`` for above settings respectively.               |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2649,6 +2653,8 @@ Amazon S3 Lowercase Bucket
 **True**: S3 bucket names are fully lowercase.
 
 **False**: S3 bucket names may contain uppercase and lowercase letters.
+
+*Removed in November 16th, 2016 release*
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AmazonS3LowercaseBucket": false`` with options ``true`` and ``false`` for above settings respectively.                  |
