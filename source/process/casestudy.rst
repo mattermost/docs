@@ -1,8 +1,8 @@
-=====================
-Case Studies
-=====================
+===============================================================
+Guest Article Announcements and Case Studies
+===============================================================
 
-This document outlines some of the procedures and materials in developing an effective case study for Mattermost software. This template can be used both to describe deployments of the open source Mattermost Team Edition or commercial deployments with Mattermost Enterprise Edition. We are delighted to hear everyone's story and to share it with the community.
+This document outlines some of the procedures and materials in developing an effective guest article announcement and case study for Mattermost software. The case study template can be used both to describe deployments of the open source Mattermost Team Edition or commercial deployments with Mattermost Enterprise Edition. We are delighted to hear everyone's story and to share it with the community.
 
 Guest Article Announcements for Mattermost Apps and Services
 -----------------------------------------------------------------------------
