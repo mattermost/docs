@@ -127,6 +127,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - (Dev) Last check of tickets that need to be merged before RC1  
 8. Build:  
     - Review all `TODO` notes, including one for uncommenting upgrade code
+    - Confirm all PRs in [`/enterprise`](https://github.com/mattermost/enterprise/pulls) repo have been merged.
     - Master is tagged and branched and “Release Candidate 1″ is cut (e.g. 3.5.0-RC1) according to the Release Candidate Checklist in ``mattermost/process``
     - After branching, the database version in sql_upgrade.go on master is set to the next scheduled release version (e.g. 3.6.0)
     - CI servers are updated to the release branch
@@ -163,12 +164,10 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
 7. Dev:
     - PRs for hotfixes made to release branch
     - Review PRs made from release branch and merge changes into both the release branch and master
-8. QA:
-    - Test RC fixes as they come in on CI servers
-9. Build: 
+8. Build: 
     - Verify with Release Manager before cutting any new RCs (approved fixes should be merged)
     - Push next RC to acceptance and announce in Town Square with new RC link
-10. PM:
+9. QA:
     - Test the new RC to verify fixes merged to the release branch work
     - Post in Release Channel after testing
 
@@ -191,6 +190,8 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
         - Upgrade should be recommended if there are security fixes in this version, with a note thanking the security researcher
     - Finish drafts of all art work (screenshots, GIFs and twitter banners) used for the blog post and send to marketing lead for review
     - Find [www-gitlab-com merge request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests?scope=all&utf8=%E2%9C%93&state=opened&label_name%5B%5D=blog%20post&label_name%5B%5D=release) for latest GitLab release blog post and make request for adding GitLab Mattermost update (see [example request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests/2910#note_14096885), [example update](https://about.gitlab.com/2016/07/22/gitlab-8-10-released/#gitlab-mattermost-32)). Post to Release Discussion channel with link to request.
+5. QA:
+    - Organize a mini-release testing spreadsheet for team members to carry out before final version is cut.
 
 ### H. (T-minus 2 working days) Release Build Cut
 
@@ -208,6 +209,7 @@ The final release is cut. If an urgent and important issue needs to be addressed
     - Submit GitLab MR to take next Mattermost version in the Omnibus (see [example](https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests/998)):
         - Include changes to Mattermost version number ([`default_version`](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/config/software/mattermost.rb#L20)) and md5 sum of the final TE build ([`source md5`](https://gitlab.com/jasonblais/omnibus-gitlab/blob/master/config/software/mattermost.rb#L23)) in  [`config/software/mattermost.rb`](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/config/software/mattermost.rb)
         - Include a summary of updates in Team Edition that are relevant to GitLab
+        - Include an update to the [GitLab changelog](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/CHANGELOG.md)
         - Post a link to the MR in the Release Discussion channel 
     - Check Security Issues spreadsheet and confirm disclosure text
     - Check the security researcher was added to the [Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/) page

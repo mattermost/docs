@@ -4,13 +4,13 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
-## Release v4.0.0
+## Release v4.0.1
 
- - **v4.0.1, TBD**
-   - Release date planned for 2017-07-18 with the following fixes:
-     - If `AllowTimeLimit` config setting is set to `Never`, pinning and un-pinning messages fails.
-     - If you upload or remove the **Service Provider Public Certificate** file in **System Console > SAML**, the page might refresh if you have NGINX enabled. 
-     - Deactivated users are listed in channel member lists.
+ - **v4.0.1, released 2017-07-18**
+   - If `AllowTimeLimit` config setting is set to `Never`, pinning and un-pinning messages now work.
+   - If you upload or remove the **Service Provider Public Certificate** file in **System Console > SAML**, the page no longer refreshes losing all unchanged settings.
+   - Deactivated users no longer appear in channel member, team member or direct message lists.
+   - PDF previews now load properly.
  - **v4.0.0, released 2017-07-16**
    - Original 4.0.0 release
 
@@ -220,6 +220,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Deleted message doesn't clear unreads or unread mentions.
 - Changing the search term in the More Direct Messages modal doesn't reset the page.
 - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+- Cannot delete or edit parent posts in right-hand side reply threads.
+- Empty cells in Markdown tables render incorrectly.
+- `platform user deleteall` CLI command expects a user as an argument.
 
 ### Contributors
 

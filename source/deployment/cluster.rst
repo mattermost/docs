@@ -321,6 +321,14 @@ Starting with Mattermost Server version 4.0, when a server starts up it can auto
 8. When the server is running, start the other servers.
 9. Restart NGINX.
 
+Frequently Asked Questions (FAQ)
+---------------------------------
+
+Does Mattermost support multi-region high availability deployment?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes. Although not officially tested, you can set up a cluster across AWS regions, for example, and it should work without issues.
+
 Troubleshooting
 ---------------
 
