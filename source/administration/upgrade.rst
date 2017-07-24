@@ -48,9 +48,9 @@ Owner and group of the install directory - *{owner}* and *{group}*
 4. Download the latest version of Mattermost Server.
 
   Enterprise Edition
-    ``wget https://releases.mattermost.com/4.0.0/mattermost-4.0.0-linux-amd64.tar.gz``
+    ``wget https://releases.mattermost.com/4.0.1/mattermost-4.0.1-linux-amd64.tar.gz``
   Team Edition
-    ``wget https://releases.mattermost.com/4.0.0/mattermost-team-4.0.0-linux-amd64.tar.gz``
+    ``wget https://releases.mattermost.com/4.0.1/mattermost-team-4.0.1-linux-amd64.tar.gz``
 
 5. Extract the Mattermost Server files.
 
