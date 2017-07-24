@@ -32,14 +32,14 @@ Retention
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Identify active contributors and thank them personally for their work
-2. For work in progress tickets or submitted pull requests, follow up with contributor once a week for status updates and questions. If there hasn't been activity in more than two weeks, ask if you can help them in some way
+2. For work in progress tickets or submitted pull requests, follow up with contributor once a week for status updates and questions to make sure contributors aren't blocked and feel more comfortable to ask questions. If there hasn't been activity in more than two weeks, ask if you can help them in some way.
 3. Recognize everyone’s contributions (either intrinsic rewards like having their name listed on a contributor’s page or tangible like swag or gift cards)
 4. If applicable, assign roles to top contributors (such as team lead, code reviewer, tester) to give a sense of ownership to the contributor
 
 Off-boarding
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. When a campaign is finished, try to pull them to another campaign or project to work on
+1. When a campaign is finished, offer suggestions for other campaigns or projects they might be interested in.
 
 GitHub Help Wanted Issues in Platform Repository
 ---------------------------------------------------------
