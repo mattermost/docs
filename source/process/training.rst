@@ -333,6 +333,19 @@ This system has several benefits:
 3. Eventually the Mini-boss will be as skilled at reviewing as the End-boss, who will have nothing futher to add after the Mini-boss review. At this point, the Mini-boss becomes an End-boss, ready to train a new Mini-boss.
 
 
+Brown M&Ms
+---------------------------------------------
+
+A "brown M&M" is a mistake that could either signal dangerous oversights in the execution of a project, or be a completely innocuous, and unimportant error. When a brown M&M is found, aim to rule out a dangerous error as quickly as possible. Do fast drilldowns and systematic checks to see if more brown M&Ms are found, and if so, an entire project may need to be reviewed. 
+
+Examples of brown M&Ms may include: 
+
+a) significant mistakes in process, consistency or documentation suggesting lack of review or lack of understanding the pre-existing system, 
+b) ambiguous definitions that would make completion of a procedure difficult or unpredictable. 
+
+The name brown M&M comes from a safety technique used by the American music band Van Halen, who had to set up large, complex concert stages in third tier cities, where few local workers had experience with the safety standards vital to construction. In the `contract rider <https://en.wikipedia.org/wiki/Van_Halen#Contract_riders>`_ with each venue, Van Halen requires a bowl of M&M candies with all brown M&Ms removed. Failure to provide the bowl was grounds for Van Halen's stage crew to inspect all of the local vendor's work for safety issues, because it meant the vendor had not paid attention to detail, and safety could be at risk. 
+
+
 Correct Minimums 
 ---------------------------------------------
 
