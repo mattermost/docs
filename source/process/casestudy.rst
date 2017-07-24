@@ -1,6 +1,11 @@
-====================================================================================
+=====================
+Case Studies
+=====================
+
+This document outlines some of the procedures and materials in developing an effective case study for Mattermost software. This template can be used both to describe deployments of the open source Mattermost Team Edition or commercial deployments with Mattermost Enterprise Edition. We are delighted to hear everyone's story and to share it with the community.
+
 Guest Article Announcements for Mattermost Apps and Services
-====================================================================================
+-----------------------------------------------------------------------------
 
 Guest Blogger
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -18,12 +23,6 @@ Blog Writer
 - Include a screenshot of the guest company's logo in the post.
 - At the end of the post, include a short summary of the guest company as well as a call for readers to share feedback on the company. 
 
-=====================
-Case Studies
-=====================
-
-This document outlines some of the procedures and materials in developing an effective case study for Mattermost software. This template can be used both to describe deployments of the open source Mattermost Team Edition or commercial deployments with Mattermost Enterprise Edition. We are delighted to hear everyone's story and to share it with the community.
-
 Customer Questionnaire
 ----------------------------
 
@@ -31,7 +30,7 @@ The below customer questionnaire template helps us gather information to share w
 
 We'd love your help answering some of these questions, either in email or over a phone call or video conference, to prepare a Case Study draft for your organization's review and approval. 
 
-Please contact your Mattermost marketing contact to get started. 
+Please contact your Mattermost marketing contact to get started.
 
 Business Information 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
