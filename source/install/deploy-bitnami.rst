@@ -3,7 +3,9 @@
 Deploy Mattermost on Bitnami
 =============================
 
-Through our partnership with Bitnami you can automatically deploy Mattermost Team Edition to a demonstration server for up to 1 hour, up to 10 times per platform, including: 
+Deploy your Mattermost Team Edition server in the cloud with one simple click using one of `several Bitnami cloud images <https://bitnami.com/stack/mattermost/cloud>`_.
+
+Deployment options include:
 
 - `Amazon Web Services <https://about.mattermost.com/deploy-aws>`_
 - `Oracle Cloud Platform <https://about.mattermost.com/deploy-oracle>`_ 
@@ -12,4 +14,4 @@ Through our partnership with Bitnami you can automatically deploy Mattermost Tea
 
 Alternatively, you may also deploy to `Debian 8 VMware or Oracle VirtualBox virtual machines <https://about.mattermost.com/deploy-debianvirtualmachine>`_.
 
-If you have an existing account, or choose to create a new account, you can run your auto-deployed Mattermost instance as long as you would like.
+If you migrate from Bitnami to a self-hosted installation with MySQL database, read these notes in our migration guide [add link]
