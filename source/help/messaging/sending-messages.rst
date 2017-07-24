@@ -3,7 +3,7 @@
 Messages
 ================
  
-Sending messages and replying to messages are important ways to keep conversations active with your team. You can edit and delete messages after you have sent them. You can also generate and share links to any message in Mattermost.
+Sending messages and replying to messages are important ways to keep conversations active with your team. You can edit and delete messages after you have sent them. You can also share links to any message in Mattermost.
 
 Sending Messages
 -----------------
@@ -13,10 +13,9 @@ Write a message by typing into the text input box, then press ENTER to send it. 
 Replying to Messages
 ---------------------
 
-Click the **[...]** link next to a message, then click **Reply**. This keeps conversations organized in threads.
+Click the reply link (arrow icon) next to any message. This keeps conversations organized in threads. Replies are indented slightly in the center pane to indicate that they are child messages of a parent message.
 
-To adjust the width of the right-hand sidebar, click the expand/shrink icon with two arrows at the top of the sidebar.
-Replies are indented slightly in the center pane to indicate that they are child messages of a parent message.
+Clicking the reply link will open a sidebar on the right-hand side. To expand the right-hand sidebar to its full width, click the expand/shrink icon with two arrows at the top of the sidebar. To shrink the right-hand sidebar to its original width, click the same expand/shrink icon.
 
 Editing Messages
 -----------------
