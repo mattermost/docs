@@ -45,41 +45,41 @@ Important Notices
 
 **To upgrade Mattermost Server**:
 
-1. In a terminal window on the server that hosts Mattermost Server, change to your home directory.
+1. Stop Mattermost Server.
+
+  On Ubuntu 14.04 and RHEL 6.6: ``sudo service mattermost stop``
+
+  On Ubuntu 16.04 and RHEL 7.1: ``sudo systemctl stop mattermost``
+
+2. Make a copy of your configuration file. The existing file is overwritten during the upgrade, so it's important that you don't forget this step
+
+    ``cp {install-path}/mattermost/config/config.json config.json``
+
+3. Back up your data.
+  a. Back up your database using your organization’s standard procedures for backing up MySQL or PostgreSQL.
+  b. If you’re using local file storage, back up the location where files are stored.
+
+4. In a terminal window on the server that hosts Mattermost Server, change to your home directory.
 
   ``cd ~``
 
-2. Delete any files and directories that might still exist from a previous download.
+5. Delete any files and directories that might still exist from a previous download.
 
   .. code-block:: text
 
     rm mattermost*.gz
     rm -r mattermost
 
-3. Download `the latest version of the Mattermost Server <https://about.mattermost.com/download/>`_. In the following command, replace ``X.X.X`` with the version that you want to download:
+6. Download `the latest version of the Mattermost Server <https://about.mattermost.com/download/>`_. In the following command, replace ``X.X.X`` with the version that you want to download:
 
   Enterprise Edition
     ``wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz``
   Team Edition
     ``wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz``
 
-4. Extract the Mattermost Server files.
+7. Extract the Mattermost Server files.
 
   ``tar -xzf mattermost*.gz``
-
-5. Make a copy of your configuration file. The existing file is overwritten during the upgrade, so it's important that you don't forget this step
-
-    ``cp {install-path}/mattermost/config/config.json config.json``
-
-6. Stop Mattermost Server.
-
-  On Ubuntu 14.04 and RHEL 6.6: ``sudo service mattermost stop``
-
-  On Ubuntu 16.04 and RHEL 7.1: ``sudo systemctl stop mattermost``
-
-7. Back up your data.
-  a. Back up your database using your organization’s standard procedures for backing up MySQL or PostgreSQL.
-  b. If you’re using local file storage, back up the location where files are stored.
 
 8. Copy the files that you extracted earlier to the install directory.
 
