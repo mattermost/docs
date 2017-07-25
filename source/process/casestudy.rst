@@ -1,17 +1,36 @@
-=====================
-Case Studies
-=====================
+===============================================================
+Guest Article Announcements and Case Studies
+===============================================================
 
-This document outlines some of the procedures and materials in developing an effective case study for Mattermost software. This template can be used both to describe deployments of the open source Mattermost Team Edition or commercial deployments with Mattermost Enterprise Edition. We're delighted to hear everyone's story and to share it with the community. 
+This document outlines some of the procedures and materials in developing an effective guest article announcement and case study for Mattermost software. The case study template can be used both to describe deployments of the open source Mattermost Team Edition or commercial deployments with Mattermost Enterprise Edition. We are delighted to hear everyone's story and to share it with the community.
 
-Customer Questionaire
+Guest Article Announcements for Mattermost Apps and Services
+-----------------------------------------------------------------------------
+
+Guest Blogger
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You will be asked to provide the following for Mattermost by email:
+
+- Please provide a photo and a short bio of yourself. Photos and bios of each of the guest company creators are more than welcome. The size of the photo should not be too small so that it can be easily included in a banner or as a screenshot in our blog post. The bio should be as short as one to two sentences.
+- When we have prepared a draft of the blog post, we will send it to you by email and will ask you to review it and provide any feedback and recommendations on it.
+
+Blog Writer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Commission a banner which includes the guest blogger's photo (using a grayscale effect), the guest company's logo, and a heading. Use this example as a template: https://about.mattermost.com/sourced-group-offers-mattermost-as-a-service-for-enterprises/.
+- Start the blog post with a short bio and introduction of the guest blogger. Include a link to the guest company's website the first time the company name is mentioned in the text.
+- Include a screenshot of the guest company's logo in the post.
+- At the end of the post, include a short summary of the guest company as well as a call for readers to share feedback on the company. 
+
+Customer Questionnaire
 ----------------------------
 
-The below customer questionaire template helps us gather information to share with the Mattermost community on your business, your needs, and how Mattermost can help serve your organization.  
+The below customer questionnaire template helps us gather information to share with the Mattermost community on your business, your needs, and how Mattermost can help serve your organization.  
 
 We'd love your help answering some of these questions, either in email or over a phone call or video conference, to prepare a Case Study draft for your organization's review and approval. 
 
-Please contact your Mattermost marketing contact to get started. 
+Please contact your Mattermost marketing contact to get started.
 
 Business Information 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -63,11 +82,11 @@ Results
 
 Please share the most impressive measurable outcomes you can think of--the more numbers, the better.
 
-- How is the product or service helping you save time and increase productivity?
+- How is the product or service helping you to save time and to increase productivity?
 - In what ways does that enhance your competitive advantage?
-- How much have you increased key metrics, like reducing response time, time-to-resolution and reducing time spent in meetings? 
+- How much have you increased key metrics, such as reducing response time, time-to-resolution, and time spent in meetings? 
 
-If you're completing the questionaire by email, please send a copy of the questions completed above to your Mattermost marketing contact for next steps. 
+If you're completing the questionnaire by email, please send a copy of the questions completed above to your Mattermost marketing contact for next steps. 
 
 Thank you so much for being part of our community! 
 
