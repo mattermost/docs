@@ -4,6 +4,20 @@ Case Studies
 
 This document outlines some of the procedures and materials in developing an effective case study for Mattermost software. This template can be used both to describe deployments of the open source Mattermost Team Edition or commercial deployments with Mattermost Enterprise Edition. We're delighted to hear everyone's story and to share it with the community. 
 
+
+Case Study Process 
+----------------------------
+
+For Mattermost Enterprise Edition customers, Mattermost, Inc. is excited to bring attention to your company and how it's benefiting from using Mattermost. 
+
+The process is approximately as follows: 
+
+1. Customer has completed a deployment of Mattermost and is open to a case study. 
+2. Customer case study contact is introduced to a Mattermost case study coordinator over email and completes a questionaire (below). 
+3. Mattermost case study coordinator arranges a 30-minute phone or video call with the customer for a discussion around the questionaire and deployment. 
+4. One to two weeks later a draft case study is sent to the customer for review and approval. 
+5. After customer approval, the case study is published to the Mattermost blog and may be used in other marketing materials to share with other potential customers the benefits of a Mattermost solution.
+
 Customer Questionaire
 ----------------------------
 
