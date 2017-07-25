@@ -47,8 +47,27 @@ Built-in Commands
 
 Each Mattermost installation comes with some built-in slash commands that are ready to use. These commands are listed below:
 
-.. image:: ../images/slashCommandsTable.PNG
-  :alt: Summary of the built-in slash commands
+.. csv-table::
+    :header: "Command", "Description", "Example"
+
+    "/away", "Set your status to away", "/away"
+    "/collapse", "Turn on auto-collapsing of image previews", "/collapse"
+    "/echo *{message}* *{delay in seconds}*", "Echo back text from your account", "/echo Hello World 5"
+    "/expand", "Turn off auto-collapsing of image previews", "/expand"
+    "/header *{text}*", "Edit the channel header", "/header File bugs here"
+    "/help", "Open the Mattermost help page", "/help"
+    "/invite_people *{email address}*", "Send an email invite to your Mattermost team","/invite_people john@example.com"
+    "/join *{channel name}*", "Join the open channel", "/join off-topic"
+    "/logout", "Log out of Mattermost", "/logout"
+    "/me", "Do an action", "/me Hello World"
+    "/msg *{@username}* *{message}*", "Send a Direct Message to a user", "/msg @alice hello"
+    "/offline", "Set your status to offline", "/offline"
+    "/online", "Set your status to online", "/online"
+    "/open *{channel name}*", "Join the open channel", "/open off-topic"
+    "/search *{text}*", "Search text in messages", "/search meeting"
+    "/settings", "Open the Account Settings dialog", "/settings"
+    "/shortcuts", "Display a list of keyboard shortcuts", "shortcuts"
+    "/shrug *{message}*", "Add ``¯\_(ツ)_/¯`` to your message", "/shrug oh well"
 
 Enabling Custom Commands
 ------------------------
