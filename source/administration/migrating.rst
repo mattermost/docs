@@ -73,7 +73,7 @@ Limitations
 
 The following limitations are present when importing from Slack:
 
-* The import is not idempotent, which means that duplicate entries are created if you import the same data more than once.
+* The import is not idempotent, which means that duplicate posts are created if you import the same data more than once.
 
 * The Markdown subset used by Slack's Posts 2.0 feature announced on September 28, 2015 is not yet supported.
 
