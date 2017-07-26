@@ -16,7 +16,7 @@ The process is approximately as follows:
 3. Mattermost case study coordinator arranges a 30-minute phone or video call with the customer for a discussion around the questionnaire and deployment. 
 4. One to two weeks later a draft case study is sent to the customer for review and approval.
 5. Mattermost case study coordinator politely checks in with the customer every 2 business days for an estimate of the draft case study review time.
-6. The case study coordinator also queues a graphic with a nice image and a clear heading to be used for a banner in the case study blog post. This example is used as a template: https://drive.google.com/drive/folders/0Bx-9w8QDFlfcNHExbzFfbUhONWc
+6. The case study coordinator also queues a graphic with a nice image and a clear heading to be used for a banner in the case study blog post. A language banner is used as a template: https://drive.google.com/drive/folders/0Bx-9w8QDFlfcNHExbzFfbUhONWc
 7. The case study coordinator creates a draft blog post (i.e. unpublished) on the staging server in the Marketing: Website channel. The draft will then be reviewed for formatting, grammar, and so on.
 8. When the customer has completed a review of the draft case study, the draft blog post can be updated to be published. 
 9. After customer approval, the case study is published to the Mattermost blog and may be used in other marketing materials to share with other potential customers the benefits of a Mattermost solution.
