@@ -4,8 +4,13 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
-## Release v4.0.1
+## Release v4.0.2
 
+ - **v4.0.2, TBD**
+   - Release date tentatively planned for 2017-07-27 with the following fixes:
+     - GitLab single sign-on fails if non-English language set in Mattermost Account Settings ([ticket link](https://mattermost.atlassian.net/browse/PLT-7231)). Other single sign-on methods are being investigated.
+     - Custom slash commands don't work in direct message channels ([ticket link](https://mattermost.atlassian.net/browse/PLT-7193)).
+     - `AmazonS3Region` config setting is ignored in Minio file storage setup ([ticket link](https://mattermost.atlassian.net/browse/PLT-7208))
  - **v4.0.1, released 2017-07-18**
    - If `AllowTimeLimit` config setting is set to `Never`, pinning and un-pinning messages now work.
    - If you upload or remove the **Service Provider Public Certificate** file in **System Console > SAML**, the page no longer refreshes losing all unchanged settings.
