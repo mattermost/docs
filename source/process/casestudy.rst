@@ -4,7 +4,6 @@ Case Studies
 
 This document outlines some of the procedures and materials in developing an effective case study for Mattermost software. This template can be used both to describe deployments of the open source Mattermost Team Edition or commercial deployments with Mattermost Enterprise Edition. We're delighted to hear everyone's story and to share it with the community. 
 
-
 Case Study Process 
 ----------------------------
 
@@ -13,15 +12,15 @@ For Mattermost Enterprise Edition customers, Mattermost, Inc. is excited to brin
 The process is approximately as follows: 
 
 1. Customer has completed a deployment of Mattermost and is open to a case study. 
-2. Customer case study contact is introduced to a Mattermost case study coordinator over email and completes a questionaire (below). 
-3. Mattermost case study coordinator arranges a 30-minute phone or video call with the customer for a discussion around the questionaire and deployment. 
+2. Customer case study contact is introduced to a Mattermost case study coordinator over email and completes a questionnaire (below). 
+3. Mattermost case study coordinator arranges a 30-minute phone or video call with the customer for a discussion around the questionnaire and deployment. 
 4. One to two weeks later a draft case study is sent to the customer for review and approval. 
 5. After customer approval, the case study is published to the Mattermost blog and may be used in other marketing materials to share with other potential customers the benefits of a Mattermost solution.
 
-Customer Questionaire
+Customer Questionnaire
 ----------------------------
 
-The below customer questionaire template helps us gather information to share with the Mattermost community on your business, your needs, and how Mattermost can help serve your organization.  
+The below customer questionnaire template helps us gather information to share with the Mattermost community on your business, your needs, and how Mattermost can help serve your organization.  
 
 We'd love your help answering some of these questions, either in email or over a phone call or video conference, to prepare a Case Study draft for your organization's review and approval. 
 
@@ -48,7 +47,7 @@ Please help share some context on the need for a solution.
 Decision Process
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Help us understand how you arrived at a decision to use Mattermost (this will help other potenial customers through their own process).
+Help us understand how you arrived at a decision to use Mattermost (this will help other potential customers through their own process).
 
 - How did you hear about our product or service?
 - Who was involved in the selection process?
@@ -79,9 +78,9 @@ Please share the most impressive measurable outcomes you can think of--the more 
 
 - How is the product or service helping you save time and increase productivity?
 - In what ways does that enhance your competitive advantage?
-- How much have you increased key metrics, like reducing response time, time-to-resolution and reducing time spent in meetings? 
+- How much have you increased key metrics, such as reducing response time, time-to-resolution, and reducing time spent in meetings? 
 
-If you're completing the questionaire by email, please send a copy of the questions completed above to your Mattermost marketing contact for next steps. 
+If you're completing the questionnaire by email, please send a copy of the questions completed above to your Mattermost marketing contact for next steps. 
 
 Thank you so much for being part of our community! 
 
