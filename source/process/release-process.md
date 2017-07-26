@@ -82,7 +82,7 @@ Day when leads and PM area owners decide which major features are included in th
     - Confirm, in Judgement Day meeting, date of marketing announcement for the release and update release channel header if needed
 3. Leads:
     - Finalize roadmap for next release, and identify planned marketing bullet points  
-       - If any features are planned to be deprecated, make a post to the [Design Feedback Request](https://forum.mattermost.org/c/feature-ideas/specifications) section of the forum to explain why and to hear feedback
+       - If any features are planned to be deprecated, make a post to the [Design Feedback Request](https://forum.mattermost.org/c/feature-ideas/specifications) section of the forum to explain why and to hear feedback. Include pros and cons of the decision to focus community feedback on finding blindspots in our thinking, rather than voicing concerns we have already anticipated. [See example](https://forum.mattermost.org/t/changing-release-cycle-to-bi-monthly-from-monthly/2295)
        - In the changelog for the next release, link to the forum post to share reasoning and any community discussion
        - Our objective is to reduce the number of users [who first learn about deprecated features in our release announcements.](https://about.mattermost.com/mattermost-4-0/#comment-3436068337).  
 4. **(Team) Judgment Day Meeting (10:00am San Francisco time)**:  
