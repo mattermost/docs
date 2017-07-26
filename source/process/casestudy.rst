@@ -14,12 +14,13 @@ The process is approximately as follows:
 1. Customer has completed a deployment of Mattermost and is open to a case study. 
 2. Customer case study contact is introduced to a Mattermost case study coordinator over email and completes a questionnaire (below). 
 3. Mattermost case study coordinator arranges a 30-minute phone or video call with the customer for a discussion around the questionnaire and deployment. 
-4. One to two weeks later a draft case study (in a shared Google document) is sent to the customer for review and approval.
-5. Mattermost case study coordinator politely checks in with the customer every 2 business days for an estimate of the draft case study review time.
-6. The case study coordinator also commissions a banner to be included in the case study blog post.
-7. The case study coordinator creates a draft blog post (in WordPress). The draft will then be reviewed for formatting, grammar, and so on by following the Community Content Guidelines https://docs.mattermost.com/process/marketing-guidelines.html
-8. When the customer has completed a review of the draft case study and approved it, the draft blog post can be updated. 
-9. The blog post is published and may be used in other marketing materials to share with other potential customers the benefits of a Mattermost solution.
+4. One to two weeks later a draft case study is sent to the customer for review and approval (in a shared Google document).
+5. Mattermost case study coordinator 
+     - politely checks in with the customer every 2 business days for an estimate of the draft case study review time
+     - commissions a banner to be featured in the case study blog post
+     - creates a draft blog post in WordPress. The draft is then reviewed for formatting, grammar, and other style guidelines <https://docs.mattermost.com/process/marketing-guidelines.html>
+6. When the customer has completed a review of the draft case study and approved it, the draft blog post is updated. 
+7. The blog post is then published and may be used in other marketing materials to share the benefits of a Mattermost solution with other potential customers.
 
 Customer Questionnaire
 ----------------------------
