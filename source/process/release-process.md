@@ -46,7 +46,7 @@ No pull requests for major features should be **merged** to the current release 
     - Notify community about upcoming release in Reception
 3. PM:
     - PM area owners complete draft of Changelog in a WIP PR with updates for highlights, feature additions, known issues, compatibility updates for deprecated features, config.json, [database changes](https://github.com/mattermost/platform/blob/master/store/sql_upgrade.go#L181), [API changes](https://github.com/mattermost/platform/commits/master/model/client.go) (search `#api-proposal` and confirm with Dev) and WebSocket event changes; [see example](http://docs.mattermost.com/administration/changelog.html#compatibility)
-    - Review and update [company roadmap](https://about.mattermost.com/direction/) with which major features made it into the release
+    - Review and update [product roadmap](https://about.mattermost.com/direction/) with which major features made it into the release
     - PM feature owners post draft section for the blog post in the Marketing Channel (including screenshots and a hashtag #mattermostXX where XX is the version number, see [example thread](https://pre-release.mattermost.com/core/pl/o611i4wz3pfafb6fpha9ggxxnh)) and [queue a tweet](https://pre-release.mattermost.com/core/pl/f3wsbwkgzfdr9nf9amtcwfpo6h)
     - Backlog is reviewed and tickets that won’t make it are moved to next release
 4. Docs:
@@ -82,13 +82,16 @@ Day when leads and PM area owners decide which major features are included in th
     - Confirm, in Judgement Day meeting, date of marketing announcement for the release and update release channel header if needed
 3. Leads:
     - Finalize roadmap for next release, and identify planned marketing bullet points  
+       - If any features are planned to be deprecated, make a post to the [Design Feedback Request](https://forum.mattermost.org/c/feature-ideas/specifications) section of the forum to explain why and to hear feedback
+       - In the changelog for the next release, link to the forum post to share reasoning and any community discussion
+       - Our objective is to reduce the number of users [who first learn about deprecated features in our release announcements.](https://about.mattermost.com/mattermost-4-0/#comment-3436068337).  
 4. **(Team) Judgment Day Meeting (10:00am San Francisco time)**:  
     - Meet to discuss release update and finalize which major features will be in or out for the release
 5. PM:
     - Based on discussion, create tickets for features that need to be turned on or off for the release
     - Backlog is reviewed and tickets that won’t make it are moved to next release
     - Post a link to Release Discussion room for query of [remaining tickets in this release](https://mattermost.atlassian.net/issues/?filter=11102)
-    - Update Changelog PR based on what's in/out of the release
+    - Update Changelog PR based on what's in/out of the release. Remember to link to forum discussions for any deprecated features. 
     - Create meta issue for release in GitHub (see [example](https://github.com/mattermost/platform/issues/3702))
     - Review the JIRA tickets remaining in the current release fix version and push those that won't make it to the next fix version
     - Review any features that are currently in Beta and confirm with leads if there are any to be promoted
