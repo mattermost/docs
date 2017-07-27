@@ -1,1 +1,13 @@
+Instructions on how to create and edit “Mattermost User’s Guide” documents:
 
+1. First, describe the benefits of the future for end users.
+2. Proceed to explain how to carry out the future (such as attaching files) by using short bullet points as well as screenshots as
+applicable.
+3. Include useful tips as applicable.
+
+If a document includes multiple features that are related to each other, order them based on what functionality is used 
+the most (e.g. How to attach files > File previewer > Sharing public links).
+
+**Additional instructions if editing an existing document:**
+1.	Write a draft first - start fresh
+2.	Compare to the original document to add any important missing information
