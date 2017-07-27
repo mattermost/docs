@@ -7,7 +7,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ## Release v4.0.2
 
  - **v4.0.2, TBD**
-   - Release date tentatively planned for 2017-07-27 with the following fixes:
+   - Release planned with the following fixes:
      - GitLab single sign-on fails if non-English language set in Mattermost Account Settings ([ticket link](https://mattermost.atlassian.net/browse/PLT-7231)). Other single sign-on methods are being investigated.
      - Custom slash commands don't work in direct message channels ([ticket link](https://mattermost.atlassian.net/browse/PLT-7193)).
      - `AmazonS3Region` config setting is ignored in Minio file storage setup ([ticket link](https://mattermost.atlassian.net/browse/PLT-7208)).
