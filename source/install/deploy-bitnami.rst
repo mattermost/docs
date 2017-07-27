@@ -8,10 +8,10 @@ Deploy your Mattermost Team Edition server in the cloud with one simple click us
 Deployment options include:
 
 - `Amazon Web Services <https://about.mattermost.com/deploy-aws>`_
-- `Oracle Cloud Platform <https://about.mattermost.com/deploy-oracle>`_ 
+- `Oracle Cloud Platform <https://about.mattermost.com/deploy-oracle>`_
 - `Microsoft Azure <https://about.mattermost.com/deploy-azure>`_
 - `Google Cloud Platform <https://about.mattermost.com/deploy-googlecloud>`_
 
 Alternatively, you may also deploy to `Debian 8 VMware or Oracle VirtualBox virtual machines <https://about.mattermost.com/deploy-debianvirtualmachine>`_.
 
-If you migrate from Bitnami to a self-hosted installation with MySQL database, read these notes in our migration guide [add link]
+If you migrate from Bitnami to a self-hosted installation with MySQL database, read these notes in our migration guide: `Migrating from Bitnami <../administration/migrating.html#migrating-from-bitnami>`_
