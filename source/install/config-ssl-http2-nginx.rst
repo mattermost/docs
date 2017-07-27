@@ -50,7 +50,7 @@ You can use any certificate that you want, but these instructions show you how t
 
   When prompted, enter your domain name. After the installation is complete, you can find the certificate in the   ``/etc/letsencrypt/live`` directory.
 
-8. Open the file ``/etc/nginx/sites-available/mattermost`` as root in a text editor and update the *server* section to incorporate the highlighted lines in the following sample. Make sure to replace *{domain-name}* with your own domain name, in 3 places.
+8. Open the file ``/etc/nginx/sites-available/mattermost`` as root in a text editor and update the *server* section to incorporate the highlighted lines in the following sample. Make sure to replace *{domain-name}* with your own domain name, in 4 places.
 
   .. code-block:: none
     :emphasize-lines: 6-10, 13, 16-23
@@ -68,7 +68,7 @@ You can use any certificate that you want, but these instructions show you how t
 
     server {
       listen 443 ssl http2;
-      server_name    . . . ;
+      server_name    {domain-name} ;
 
       ssl on;
       ssl_certificate /etc/letsencrypt/live/{domain-name}/fullchain.pem;
@@ -78,9 +78,9 @@ You can use any certificate that you want, but these instructions show you how t
       ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
       ssl_prefer_server_ciphers on;
       ssl_session_cache shared:SSL:10m;
-    }
 
-    location ~ /api/v[0-9]+/(users/)?websocket$ {
+
+      location ~ /api/v[0-9]+/(users/)?websocket$ {
         proxy_set_header Upgrade $http_upgrade;
         .
         .
