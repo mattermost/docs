@@ -17,9 +17,9 @@ The process is approximately as follows:
 4. One to two weeks later a draft case study is sent to the customer for review and approval (in a shared Google document).
 5. Mattermost case study coordinator:
 
-   -  Politely follows up with the customer either the day before the customer has stated that the review will be ready in order to confirm that the review is coming, or approximately every 2 business days if an estimate of the draft case study review time is not known
-   -  Commissions a banner to be featured in the case study blog post
-   -  Creates a draft blog post in WordPress. The draft is then reviewed for formatting, grammar, and other `style guidelines <https://docs.mattermost.com/process/marketing-guidelines.html>`_
+   -  Politely follows up with the customer either the day before the customer has stated that the review will be ready in order to confirm that the review is coming, or approximately every 2 business days if an estimate of the draft case study review time is not known.
+   -  Commissions a banner to be featured in the case study blog post. Please see "Marketing: Graphics" channel for examples on how to commission banners.
+   -  Creates a draft blog post in WordPress. The draft is then reviewed for formatting, grammar, and other `style guidelines <https://docs.mattermost.com/process/marketing-guidelines.html>`_.
 
 6. When the customer has completed a review of the draft case study and approved it, the customer feedback is incorporated into the draft blog post (in Wordpress).
 7. A link to the final draft of the blog post is sent to the customer prior to publishing it (using preview mode in WordPress).
