@@ -7,10 +7,11 @@ This document outlines some of the procedures in developing guest articles. Matt
 
 Follow these guidelines to develop a clear and concise guest article:
 
--	Commission a banner which includes the guest company creator's photo (using a grayscale effect), the guest company's logo, and a heading. Use this example as a template: https://about.mattermost.com/sourced-group-offers-mattermost-as-a-service-for-enterprises/. Visit "Marketing: Graphics" channel for examples on how to commission a banner.
+-	Commission a banner which includes the guest company creator's photo (using a grayscale effect), the guest company's logo, and a heading. Use this `example as a template <https://about.mattermost.com/sourced-group-offers-mattermost-as-a-service-for-enterprises/>`_. Visit "Marketing: Graphics" channel for examples on how to commission a banner.
 -	Begin the article with a short bio and introduction of the company creator(s). Include a link to the guest company's website the first time the company name is mentioned in the text.
 -	Include a screenshot of the guest company's logo in the post.
 -	At the end of the post, include a short summary of the guest company as well as a call for readers to share feedback on the company.
+- Also, refer to `style guidelines <https://docs.mattermost.com/process/marketing-guidelines.html>`_ while writing the article.
 
 **Guest Company Creators:**
 
