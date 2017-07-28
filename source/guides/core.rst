@@ -69,6 +69,9 @@ Marketing
    :glob:
 
    /process/casestudy*
+   /process/guest-article*
+   /process/additional-asset-guidelines*
+   /process/end-user-documentation*
    
 Partners
 -------------------------
