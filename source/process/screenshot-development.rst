@@ -1,7 +1,11 @@
-Guidelines for screenshot development of Mattermost user interface
+===================================
+Additional Asset Guidelines
+===================================
 
-Purpose:
-To highlight and illustrate the best features of Mattermost.
+Guidelines for screenshot development of Mattermost user interface
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The purpose is to highlight and illustrate the best features of Mattermost user interface.
 
 Instructions:
 
@@ -22,6 +26,7 @@ Instructions:
 8. One easy way to create demo screenshots is to have a secondary pre-release account. Use [first.last]+blah@mattermost.com to create a second account. This will make triggering notifications for yourself easier (for the screenshot). You can also use a second browser to login to the second account while taking the screenshot.
 
 
-Guidelines for Animated GIFs
+Guidelines for animated GIFs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--We should not do animated GIFs with two images that look very similar, since visually it will look like a mistake.
+We should not do animated GIFs with two images that look very similar, since visually it will look like a mistake.
