@@ -95,27 +95,10 @@ Fedora
        
 3. When Docker is done fetching the image, open http://localhost:8065/ in your browser.
 
-Arch
-^^^^
+Arch Linux
+^^^^^^^^^^
 
-1. Install Docker using the following commands:
-
-   .. code:: bash
-
-       pacman -S docker
-       systemctl enable docker.service
-       systemctl start docker.service
-       gpasswd -a <username> docker
-       newgrp docker
-
-2. Start Docker container:
-
-   .. code:: bash
-
-       docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview
-
-3. When Docker is done fetching the image, open ``http://localhost:8065/``
-   in your browser.
+To install the preview on Arch Linux, see the `installation guide <https://wiki.archlinux.org/index.php/Mattermost#With_Docker>`_ on the Arch Linux wiki.
 
 Setting up SMTP Email (Recommended) 
 -----------------------------------

@@ -93,7 +93,7 @@ Configure SAML for Mattermost
 
   .. image:: ../../source/images/okta_10_mattermost_basics.PNG
 
-3. (Optional) Configure Mattermost to verify the signature.
+3. Configure Mattermost to verify the signature.
   a. In the **Verify Signature** field, click **True**.
   b. In the **Service Provider Login URL**, enter ``https//<your-mattermost-url>/login/sso/saml``
 
@@ -117,6 +117,8 @@ Configure SAML for Mattermost
 6. (Optional) Customize the login button text.
 
 7. Click **Save**.
+
+8. (Optional) If you configured First Name Attribute and Last Name Attribute, go to **System Console > General > Users and Teams** and set **Teammate Name Display** to *Show first and last name*. This is recommended for a better user experience.
 
 To confirm that SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication via **Account Settings > General > Sign-in Method > Switch to SAML SSO** and sign in with your SAML credentials to complete the switch.
 

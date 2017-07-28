@@ -73,30 +73,36 @@ Step-by-Step Asset Creation Guide for Artists
 
 Follow these steps to create an asset for integration or feature promotion, integration blog tweet, or user award tweet.
 
+You can find sample templates for integration promotions, guest blog posts and feature promotion `in this Google drive <https://drive.google.com/drive/folders/0Bx-9w8QDFlfcdEdXM3N3Z1hsY2c>`_.
+
 Integration or Feature Promotion
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Use this `template <https://www.dropbox.com/s/9o6c331u815mflp/20160118_spanish.tif?dl=0>`_ as a starting point
-2. Change text in the "title" layer following the guidelines in `Feature Title`_
-3. Change text in the "by cburns" layer to replace the name with appropriate creator name following the guidelines in `Feature Creator`_
-4. Change the contents of the "Left Image" layer to update representative art following the guidelines in `Feature Representative Art`_
-5. Change the contents in the "right image" layer to update representative logo(s) following the guidelines in `Mattermost and Representative Logos`_
-6. Save the finished asset draft in both .TIF and .PNG format, and upload to your "Dropbox Share" folder
+1. Use this `template <https://drive.google.com/file/d/0Bx-9w8QDFlfcVDZuOFduV2RKaXM/view?usp=sharing>`_ as a starting point.
+2. Change text in the "copy - title" layer following the guidelines in `Feature Title`_.
+3. Change text in the "by Galois, Inc." layer to replace the name with appropriate creator name following the guidelines in `Feature Creator`_.
+4. Change the contents of the "featured image" folder to update representative art following the guidelines in `Feature Representative Art`_.
+5. Replace the "logo - matterhorn" layer to update representative logo(s) following the guidelines in `Mattermost and Representative Logos`_.
+6. Save the finished asset draft in both .TIF and .PNG format, and upload to your "Dropbox Share" folder.
 
 Integration Blog
 ^^^^^^^^^^^^^^^^^
 
+**These guidelines are out of date and should be updated for the new banner design**
+
 Occasionally a blog post will be written to further promote an integration. Follow these steps to create a marketing asset promoting said blog entry:
 
-1. Use this `template <https://www.dropbox.com/s/w832mo3tgxjreb5/20160207_blog_puppet.tif?dl=0>`_ as a starting point
-2. Change text in the "title" layer to read “Meet the Creator:”, followed by the proper integration name
-3. Change text in the "by liger1978" layer to the integration creator's name
-4. Change the contents in the "right image" layer to include proper representative logo, followed by a split with the blue Mattermost logo. This helps create the message that it’s the representative and Mattermost together
-5. Obtain a photo of the integration creator, apply a Wall Street Journal “Hedcut” effect, and update the "Left Image" layer. A helpful tutorial for how to achieve the "Hedcut" effect can be found `here <http://www.alleba.com/blog/2006/12/20/photoshop-tutorial-the-hedcut-effect/>`_
-6. Save the finished asset draft in both .TIF and .PNG format, and upload to your "Dropbox Share" folder
+1. Use this `template <https://drive.google.com/file/d/0Bx-9w8QDFlfcQURoRnF1YllZWWc/view?usp=sharing>`_ as a starting point.
+2. Change text in the "title" layer to read “Meet the Creator:”, followed by the proper integration name.
+3. Change text in the "by liger1978" layer to the integration creator's name.
+4. Change the contents in the "right image" layer to include proper representative logo, followed by a split with the blue Mattermost logo. This helps create the message that it’s the representative and Mattermost together.
+5. Obtain a photo of the integration creator, apply a Wall Street Journal “Hedcut” effect, and update the "Left Image" layer. A helpful tutorial for how to achieve the "Hedcut" effect can be found `here <http://www.alleba.com/blog/2006/12/20/photoshop-tutorial-the-hedcut-effect/>`_.
+6. Save the finished asset draft in both .TIF and .PNG format, and upload to your "Dropbox Share" folder.
 
 User Award
 ^^^^^^^^^^^
+
+**These guidelines are out of date and should be updated for the new banner design**
 
 Occasionally a blog post will be written to recognize a member for their contributions to Mattermost. Follow these steps to create a marketing asset promoting said blog entry:
 
@@ -114,91 +120,68 @@ The following include guidelines for specific elements of an asset.
 Feature Title
 ^^^^^^^^^^^^^^
 
-1. Appears in the bottom right corner of the asset
+1. Appears in the top left corner of the asset
 2. Title should "communicate the benefit" of the work, while referencing its name, followed by "for Mattermost"
   
   - Sometimes the title is a straightforward description of an app that can now connect to Mattermost, like "Jira integration for Mattermost"
   - Sometimes the title needs to be non-standard, like "Gitter integration for Mattermost via Matterbridge"
 
-3. Title should be sentence case
+3. Title should always be title case
 4. Short titles are better than longer titles
 
 Feature Creator
 ^^^^^^^^^^^^^^^^
 
-1. Appears in the bottom left corner of the left "representative art" pane
-2. Displays who created the integration (Twitter or GitHub account of the creator)
-3. If text doesn’t blend well with left pane representative art, adjust the outer glow effect
+1. Appears in the bottom right corner of the asset footer
+2. Text in footer should use GitHub username in lowercase, or company/person name in capital case i.e. ``by matterhorn-chat`` or ``by Galois, Inc.``
+3. When the background is blue, the footer should be black. When the background is white, the footer should be blue.
+4. Displays who created the integration (Twitter or GitHub account of the creator)
+5. If text doesn’t blend well with left pane representative art, adjust the outer glow effect
 
 Feature Representative Art
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Representative art appears in the left pane of the asset
+1. Representative art appears in the right side of the asset
 2. Screenshot of a feature in action is most preferred (see guidelines for `Feature Screenshot`_ here)
 3. If no feature screenshot is available, take a screenshot of a well-formatted "README" file or of feature code with the word "Mattermost"
 
   - If using a "README" file, ensure the screenshot doesn't highlight spelling or capitalization errors
+  
+4. Change the color of the background based on the color of the screenshot. If the screenshot is light, use a dark background. If screengrab is dark, use a light background.
+5. Screenshot should not take up more than 40% of the banner width.
 
-4. If necessary, consider using a two-image, half-and-half combination of the README and feature code to provide a visually appealing color inversion. See `example <https://www.dropbox.com/s/bqh564rpkshf08n/20160122_github_integration.png?dl=0>`_
+  - Ensure there is around 31px of “white space” between the content of the screengrab and the edge of the screengrab. (This can be adjusted by resizing the rectangle layer below the screengrab in Photoshop)
+  - Ensure there is at least 64px of width between the copy title and the edge of the screengrab.
+  - There should be around 60px of space between the top edge of the screengrab and top edge of the banner. (Give or take 10px considering the diagonal of the screengrab)
 
-  - When creating a two-image representative art piece, ensure that the top section is continuous and flat to avoid a triangular blank space
-
-5. Place and size representative art in a way that it doesn’t clash with the `Feature Creator`_ layer
-6. Leave a 17px border of white space in between representative art and banner edge
-7. Have equal margins on the left side and above the image
-8. Leave equal whitespace between all like objects
-9. Avoid wavy lines when rotating an image as shown in the sample below
+6. Leave equal whitespace between all like objects
+7. Avoid wavy lines when rotating an image as shown in the sample below
 
   .. image:: ../images/asset-guidelines-wavy-lines.png
 
   - To avoid them, increase the size of the original layer, rotate it, then reduce the size of the image
 
-10. If you use a rotated image, avoid visible gaps between the edge of the banner and the image as shown in the sample below
-
-  .. image:: ../images/asset-guidelines-visible-gaps.png
-
-11. Colored shading on the left pane should match the primary colors of the logo in the right pane
-12. Adjacent areas of light and dark should always have a separator, or have a shading so that the areas don't bleed into the background
-13. If a logo is used, ensure it follows the same guidelines from `Mattermost and Representative Logos`_ section
+8. Adjacent areas of light and dark should always have a separator, or have a shading so that the areas don't bleed into the background
+9. If a logo is used, ensure it follows the same guidelines from `Mattermost and Representative Logos`_ section
 
 Feature Screenshot
 ^^^^^^^^^^^^^^^^^^^
 
 When taking a screenshot of a feature, follow these guidelines:
 
-1. **Complete**: Profile pictures and real people names should be filled out. Use either in-house art, free or purchased clip art
-2. **Authentic**: Try to model a real world interaction. If you're modifying the image such as changing username and profile picture, make sure to do it throughout the image
+1. **Complete**: Profile pictures and real people names should be filled out. Use either in-house art, free or purchased clip art. If you're modifying the image such as changing username and profile picture, make sure to do it throughout the image. Don't show any bugs or UX defects in the product and use the "Mattermost" theme when appropriate.
+2. **Authentic**: Try to model a real world interaction. When possible, highlight DevOps use cases since they are familiar to the majority of our users.
 3. **Oversized**: Provide screenshots that are at least 20-30% larger than needed, so that there's room to rotate and crop the image as needed
 4. **Illustrative**: Try to find screenshots that are representative of the feature
+5. **Easy to follow**: The screenshot should be easy to understand at a glance. Avoid using short forms or acronyms in conversations, and choose images that are clear
 
 Mattermost and Representative Logos
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Mattermost logo appears in the bottom left corner of the asset
-2. Representative logo appears in the right pane
-
-  - If we're promoting a Mattermost feature, not an integration, use Mattermost white logo on blue background
-  - If representative logo is from a product, find a logo with the product name, not just the image when possible. Example:
-
-  Correct: 
-  
-  .. image:: ../images/asset-guidelines-gitter-correct.png
-
-  Incorrect: 
-  
-  .. image:: ../images/asset-guidelines-gitter-incorrect.png
-
-  - Ensure representative logo is similar in size to other logos shown in `Twitter ad examples <https://www.dropbox.com/sh/13h55hakbvm7iva/AAARooC0rV8JCKBI_8VUj_tga?dl=0>`_
-
-3. If no representative logo exists, use `this template <https://www.dropbox.com/s/9ck2ldoaizb8hvr/20170118_trax.tif?dl=0>`_ as a starting point to create a new custom one:
-
-  - Change the size of font so the name fits within the guides shown in reference screenshot below
-
-  .. image:: ../images/asset-guidelines-no-logo.png
-
-  - Text of name should be at least as wide as "for Mattermost"
-  - The space between the bottom of the integration name and "for Mattermost" should be the same distance as in the reference screenshot above
-  - Vertically center the combined image of the integration name and the text "for Mattermost"
+2. Use white Mattermost logo on dark backgrounds and black Mattermost logo on light backgrounds.
+3. Representative logo appears on the left side of the asset below the feature title
+4. When the background color is dark, use the white/inverted version of company logo. When the background color is light, use the dark/primary version of company logo.
 
 Step-by-Step Asset Review Guide for Ops
 ----------------------------------------

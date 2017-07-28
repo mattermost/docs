@@ -12,16 +12,16 @@ The purpose of the Mattermost User Experience Guidelines ("UX Guidelines") is to
 Design Principles
 *****************
 
-These principles define the standard we’re setting for the Mattermost experience. 
+These principles define the standard we’re setting for the Mattermost experience.
 
-1) Fast, Obvious, Forgiving 
+1) Fast, Obvious, Forgiving
 --------------------------------
 
-**Fast** 
+**Fast**
 
-Fast has two parts: being "responsive" and being "quick". 
+Fast has two parts: being "responsive" and being "quick".
 
-*Responsive* means when a user clicks, taps, types or otherwise enters input we give immediate feedback that the input is received and something is happening. It could be a spinner animation, or just some text saying “Loading”, but something always responds to the user. 
+*Responsive* means when a user clicks, taps, types or otherwise enters input we give immediate feedback that the input is received and something is happening. It could be a spinner animation, or just some text saying “Loading”, but something always responds to the user.
 
 *Quick* means things happen as soon as they can. Loading pages, sending messages, receiving notifications and other vital actions should be automatically benchmarked for performance. Bugs should be opened on performance regressions.
 
@@ -39,20 +39,20 @@ Use design patterns familiar to our audience--general non-technical users for th
 
 **Forgiving**
 
-There will be unavoidable product failures, whether through technical issues like loss of connectivity or through our inability to make the user aware of correct usage. Being forgiving means reducing the negative impact users encounter during failures--not losing their data, not deleting, updating or sending something they didn't intend to send, and so forth.  
+There will be unavoidable product failures, whether through technical issues like loss of connectivity or through our inability to make the user aware of correct usage. Being forgiving means reducing the negative impact users encounter during failures--not losing their data, not deleting, updating or sending something they didn't intend to send, and so forth.
 
-Features like confirmation dialogs on critical actions or temporarily saving user input in case of disconnect are examples of forgiveness. 
+Features like confirmation dialogs on critical actions or temporarily saving user input in case of disconnect are examples of forgiveness.
 
-That said, forgiving does not mean allowing the product to be used incorrectly, and breaking the obvious principle. As an analogy, if someone kicks a football and misses the goal, being forgiving means giving them a chance to kick again, it does not mean counting the miss as a goal. 
+That said, forgiving does not mean allowing the product to be used incorrectly, and breaking the obvious principle. As an analogy, if someone kicks a football and misses the goal, being forgiving means giving them a chance to kick again, it does not mean counting the miss as a goal.
 
-2) International, Compatible, Priority-focused 
+2) International, Compatible, Priority-focused
 -------------------------------------------------
 
-**International** - Design with an international, multi-lingual audience in mind. Use patterns and language without US, Western or culture-specific references when possible. 
+**International** - Design with an international, multi-lingual audience in mind. Use patterns and language without US, Western or culture-specific references when possible.
 
-**Compatible** - When aligned with our other design principles, we should deploy UX and integration patterns from the other products for which we support the import of teams and users. 
+**Compatible** - When aligned with our other design principles, we should deploy UX and integration patterns from the other products for which we support the import of teams and users.
 
-**Priority-focused** - Communication is a starting point towards the end goal of helping users within an enterprise achieve their highest priorities through modern communication. We prefer term "messaging" to convey the sending of thoughtful communications that moves ideas forward, to the term "chat", which doesn't imply progress. 
+**Priority-focused** - Communication is a starting point towards the end goal of helping users within an enterprise achieve their highest priorities through modern communication. We prefer term "messaging" to convey the sending of thoughtful communications that moves ideas forward, to the term "chat", which doesn't imply progress.
 
 
 -----
@@ -85,44 +85,44 @@ Desktop
 -----
 
 
-UX Feedback Guidelines 
+UX Feedback Guidelines
 ****************************
 
-User experience design is a discipline drawing from ergonomics, ethnography, human factors research, and cognitive psychology. It's evaluated qualitatively with tools like heuristic evaluation and cognitive walkthroughs, and quantitatively through telemetry, anonymous usage data and other automated diagonistics. 
+User experience design is a discipline drawing from ergonomics, ethnography, human factors research, and cognitive psychology. It's evaluated qualitatively with tools like heuristic evaluation and cognitive walkthroughs, and quantitatively through telemetry, anonymous usage data and other automated diagonistics.
 
-As with any design process, iteration, prototyping, informed critique and evaluation is vital to doing our best work. Developing the skill of informed critique in our community increases the quality of our designs and of our product. 
+As with any design process, iteration, prototyping, informed critique and evaluation is vital to doing our best work. Developing the skill of informed critique in our community increases the quality of our designs and of our product.
 
 This guide outlines the levels of UX feedback in order of positive impact in order to guide contributors towards the behaviors that best  advances a fast-moving, asychronously-developed open source product.
 
 **Entry-level UX feedback:** Authentic questions or suggestions for design changes, presented with good intentions, coming from personal preferences with less than 2 minutes spent thinking about the pros and cons of the changes the feedback suggests.
 
-Example 1: Well intentioned suggestion that does not consider pros and cons. 
+Example 1: Well intentioned suggestion that does not consider pros and cons.
 
    Why not change channel length from 22 characters to 50 characters?
 
 
 
-Example 2: Attempt to help provide "input" in a design discussion, but instead of using objective criteria such as audience, community, customers, examples, research, or principles, expresses a political "vote" that may bias or confuse a design discussion.  
+Example 2: Attempt to help provide "input" in a design discussion, but instead of using objective criteria such as audience, community, customers, examples, research, or principles, expresses a political "vote" that may bias or confuse a design discussion.
 
    +1, that is my personal preference!
 
 While it's important to welcome people sharing entry-level feedback, and to extract from it useful ideas where possible, if entry-level feedback begins to unintentionally shut out more constructive feedback, a private note might be sent to the contributor with something like: "Highly appreciate your good intentions to share UX feedback. May I ask your help to review Mattermost's UX Feedback Guidelines (link)?"
 
-**Intermediate UX feedback:** - Comments, critique or questions about design with thoughtful consideration--including trade-offs--of the goal and principles of a design, along with UX principles of the project, and patterns from other products. 
+**Intermediate UX feedback:** - Comments, critique or questions about design with thoughtful consideration--including trade-offs--of the goal and principles of a design, along with UX principles of the project, and patterns from other products.
 
-Feedback speaks for itself, with relevant references to principles, audience, research and other objective criteria. May include descriptions of experience using the feature or similar features that can be generalized to the intended audience, 
+Feedback speaks for itself, with relevant references to principles, audience, research and other objective criteria. May include descriptions of experience using the feature or similar features that can be generalized to the intended audience,
 
-Example: Thoughtful suggestion listing trade-offs that reference principles. 
+Example: Thoughtful suggestion listing trade-offs that reference principles.
 
    What if we used a reply icon, similar to replies in email, for the comment function? Screenshots below. Pros: a) More familiar to email users. b) More distinct than the word ballon icon typically used for "Comment", which is too easily confused for "Message".  Cons: i) We use the symbol of "Reply" for "Comment" (the UI has an "Add Comment" button in the UI), which could be confusing. ii) When we add a "Forward" icon later to move a message to a different channel, the "Reply" and "Forward" metaphors may get muddled".
 
 UX feedback at intermediate level or higher is highly appreciated. It should be encouraged and recognized as a substantial contribution to the design process.
 
-**Advanced UX feedback:** - Constructive feedback that enlightens a design discussion, shares fact-based heuristics, helps clear blindspots and inconsistencies, and significantly improves a design, and potentially design guidelines. Analysis naturally considers variations needed across web, PC and mobile experiences. 
+**Advanced UX feedback:** - Constructive feedback that enlightens a design discussion, shares fact-based heuristics, helps clear blindspots and inconsistencies, and significantly improves a design, and potentially design guidelines. Analysis naturally considers variations needed across web, PC and mobile experiences.
 
-Example: Noticing a design issue and influencing a change in UX guidelines to correct things system-wide. 
+Example: Noticing a design issue and influencing a change in UX guidelines to correct things system-wide.
 
-   A menu with 10 items without groupings seems too long. Both Apple (link) and Windows (link) user interface guidelines suggest fewer than 7 options before grouping. I'd propose we use fewer than 5. There's research showing 5 items as an amount most people can comfortably store mentally (link), and looking through other products I don't see situations where we wouldn't be able to group by 5. Also, fewer menu items, perhaps through sub-menus, should also help mobile, where ungrouped 10 item menus just look messy. I've added a PR on UX guidelines where we can discuss this as well. 
+   A menu with 10 items without groupings seems too long. Both Apple (link) and Windows (link) user interface guidelines suggest fewer than 7 options before grouping. I'd propose we use fewer than 5. There's research showing 5 items as an amount most people can comfortably store mentally (link), and looking through other products I don't see situations where we wouldn't be able to group by 5. Also, fewer menu items, perhaps through sub-menus, should also help mobile, where ungrouped 10 item menus just look messy. I've added a PR on UX guidelines where we can discuss this as well.
 
 
 -----
@@ -250,7 +250,7 @@ Instructions, such as “A password reset link has been sent to ``you@email.com`
             ..  image:: ../images/align5.jpg
                 :alt: Period added
                 :width: 300 px
-        
+
         Incorrect:
             Instruction “Please check your inbox”, ending without a period.
 
@@ -258,7 +258,7 @@ Instructions, such as “A password reset link has been sent to ``you@email.com`
                 :alt: Period Missing
                 :width: 300 px
 
-        
+
 ---------------------------
 
 
@@ -372,15 +372,15 @@ Mattermost voice for documentation and help text follows this simple guideline: 
 
     Correct:
         Channel URL: The web address used to reach your channel.
-        
+
     Incorrect:
         Handle: The name of the subdirectory used to navigate to a channel using the site URL appended with the handle name. Must use only valid URL inputs
 
     The fieldname of a setting should explicitly describe what a setting affects.
-    
+
     Correct:
         Automatically expand link previews
-        
+
     Incorrect:
         Link previews
 
@@ -394,18 +394,18 @@ Mattermost voice for documentation and help text follows this simple guideline: 
 
     Correct:
         Flash the taskbar icon when a new message is received.
-        
+
     Incorrect:
         When a new message is received, flash the taskbar icon.
 
     Ensure plural interpretations work when applicable and test help text with machine translation to reduce non-obvious, English-specific jardon:
-    
+
     Correct:
         You can adjust a few configuration settings when setting up your instance of Mattermost.
-        
+
     Incorrect:
         There are a few configuration settings you might want to fiddle with when setting up your instance of Mattermost.
-        
+
     Note: The incorrect string above machine-translated into German and then back into English becomes: "There are some configuration settings you could know if your instance Matter Most violin".
 
 **Placeholder input text:**
@@ -558,17 +558,17 @@ There are several modes for this element:
 
 -----
 
-Markdown Rendering 
+Markdown Rendering
 ---------------------
 
-Markdown rendering in Mattermost is designed to be a fast, obvious, forgiving formatting standard for a messaging application. To achieve this goal, it has variations from markdown in GitHub (the most wildly used implementation), including: 
+Markdown rendering in Mattermost is designed to be a fast, obvious, forgiving formatting standard for a messaging application. To achieve this goal, it has variations from markdown in GitHub (the most wildly used implementation), including:
 
-- Bullets directly below a line of text render as a bullet, not as a continued line of text 
+- Bullets directly below a line of text render as a bullet, not as a continued line of text
 - {Other variations to be concisely listed here, one line each}
 
-While we intend to eventually document all the variations from GitHub markdown, until that is complete we consider any variation in rendering from the current release of Mattermost to be a regression that should either be fixed prior to the next release, or documented here. 
+While we intend to eventually document all the variations from GitHub markdown, until that is complete we consider any variation in rendering from the current release of Mattermost to be a regression that should either be fixed prior to the next release, or documented here.
 
-Currently the `/loadtest tool <https://github.com/mattermost/docs/issues/918>`_ can be used for testing Mattermost markdown versus GitHub markdown, and we have `a ticket to update the tests for Mattermost markdown specifically <https://mattermost.atlassian.net/browse/PLT-5648>`_.
+Currently the `/test tool <https://github.com/mattermost/platform/tree/master/tests>`_ can be used for testing Mattermost markdown versus GitHub markdown, and we have `a ticket to update the tests for Mattermost markdown specifically <https://mattermost.atlassian.net/browse/PLT-5648>`_.
 
 -----
 

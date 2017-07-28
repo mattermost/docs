@@ -3,16 +3,17 @@
 Slash Commands
 ==============
 
-Slash commands, like outgoing webhooks, allow users to interact with external applications right from within Mattermost. The user will enter a ``/`` followed by a command, and optionally some arguments, then an HTTP request will be sent to an external application. What occurs next is decided by how the application responds to the HTTP request.
+Slash commands, like :doc:`Outgoing Webhooks <../developer/webhooks-outgoing/>`, allow users to interact with external applications right from within Mattermost. The user will enter a ``/`` followed by a command, and optionally some arguments, then an HTTP request will be sent to an external application. What occurs next is decided by how the application responds to the HTTP request.
 
-A couple key points:
+A couple of key points:
 
-- **Mattermost slash commands are Slack-compatible.** If you've used Slack's slash commands to interact with external applications, you can reuse those same applications with Mattermost. Mattermost will automatically translate Slack's proprietary JSON payload format into markdown to render in Mattermost messages
-- **Custom commands support auto-complete.** When you a create a custom command for your teammates, you have the option to fill in information about how auto-complete should work with that command. This gives your teammates quick and easy access to use your custom slash command
+- **The general concept is the same as for outgoing webhooks.** Read about :doc:`Outgoing Webhooks <../developer/webhooks-outgoing/>` first to understand the basic concept.
+- **Mattermost slash commands are Slack-compatible.** If you have used Slack's slash commands previously to interact with external applications, you can reuse those same applications with Mattermost. Mattermost will automatically translate Slack's proprietary JSON payload format.
+- **Custom commands support auto-complete.** When you create a custom command for your teammates, you have the option to fill in information about how auto-complete should work with that command. This gives your teammates quick and easy access to use your custom slash command.
 
 **Example:**
 
-Suppose you had an external application that had the ability to check the weather for certain cities. By creating a custom slash command, and setting up the application to handle the HTTP POST or GET from the command, you could allow your users to check the weather in their city using your command. For example, a user might be able to type:
+Suppose you have an external application that is able to check the weather for certain cities. By creating a custom slash command, and setting up the application to handle the HTTP POST or GET from the command, you could allow your users to check the weather in their city using your command. For example, a user might be able to type:
 
 ``/weather toronto week``
 
@@ -46,13 +47,32 @@ Built-in Commands
 
 Each Mattermost installation comes with some built-in slash commands that are ready to use. These commands are listed below:
 
-.. image:: ../images/slashCommandsTable.PNG
-  :alt: Summary of the built-in slash commands
+.. csv-table::
+    :header: "Command", "Description", "Example"
+
+    "/away", "Set your status to away", "/away"
+    "/collapse", "Turn on auto-collapsing of image previews", "/collapse"
+    "/echo *{message}* *{delay in seconds}*", "Echo back text from your account", "/echo Hello World 5"
+    "/expand", "Turn off auto-collapsing of image previews", "/expand"
+    "/header *{text}*", "Edit the channel header", "/header File bugs here"
+    "/help", "Open the Mattermost help page", "/help"
+    "/invite_people *{email address}*", "Send an email invite to your Mattermost team","/invite_people john@example.com"
+    "/join *{channel name}*", "Join the open channel", "/join off-topic"
+    "/logout", "Log out of Mattermost", "/logout"
+    "/me", "Do an action", "/me Hello World"
+    "/msg *{@username}* *{message}*", "Send a Direct Message to a user", "/msg @alice hello"
+    "/offline", "Set your status to offline", "/offline"
+    "/online", "Set your status to online", "/online"
+    "/open *{channel name}*", "Join the open channel", "/open off-topic"
+    "/search *{text}*", "Search text in messages", "/search meeting"
+    "/settings", "Open the Account Settings dialog", "/settings"
+    "/shortcuts", "Display a list of keyboard shortcuts", "shortcuts"
+    "/shrug *{message}*", "Add ``¯\_(ツ)_/¯`` to your message", "/shrug oh well"
 
 Enabling Custom Commands
 ------------------------
 
-Custom slash commands are off by default, and can be enabled by the system administrator. If you are the system administrator you can enable them by doing the following:
+Custom slash commands are off by default. The feature can be enabled by the system administrator only. If you are the system administrator you can enable them by doing the following:
 
 1. Login to your Mattermost team account that has the system administrator role.
 2. Navigate to **System Console > Integrations > Custom Integrations**.
@@ -132,7 +152,7 @@ Additional Notes:
 
 2. Including ``@username`` will trigger a mention notification for the person with the specified username, and channels can be mentioned by including *@channel* or *<!channel>*. For example:  ``{"text": "<!channel> this is a notification"}`` would create a message that mentions *@channel*
 
-3. Just like regular posts, the text in a response will be limited to 4000 characters at maximum
+3. If the text in a response is longer than 4000 characters, the message is split into multiple consecutive posts, each within the 4000 character limit.
 
 Slack Compatibility
 -------------------

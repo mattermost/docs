@@ -162,11 +162,11 @@ Configure SAML for Mattermost
 
 	.. image:: ../../source/images/adfs_22_mattermost_basics.PNG
 
-2. (Optional) Configure Mattermost to verify the signature. The *Service Provider Login URL* is the *SAML 2.0 SSO service URL* you specified in ADFS earlier.
+2. Configure Mattermost to verify the signature. The *Service Provider Login URL* is the *SAML 2.0 SSO service URL* you specified in ADFS earlier.
 
 	.. image:: ../../source/images/adfs_23_mattermost_verification.PNG
 
-3. (Optional) Enable encryption by uploading the Service Provider Private Key and Service Provider Public Certificate you generated earlier.
+3. Enable encryption by uploading the Service Provider Private Key and Service Provider Public Certificate you generated earlier.
 
 	.. image:: ../../source/images/adfs_24_mattermost_encryption.PNG
 
@@ -176,11 +176,14 @@ For Mattermost servers running 3.3 and earlier, the first name and last name att
 
 	.. image:: ../../source/images/adfs_25_mattermost_attributes.PNG
 
-5. (Optional) Lastly, customize the login button text.
+5. (Optional) Customize the login button text.
 
   .. image:: ../../source/images/adfs_26_mattermost_login_button.PNG
 
 6. Click **Save**.
+
+7. (Optional) If you configured First Name Attribute and Last Name Attribute, go to **System Console > General > Users and Teams** and set **Teammate Name Display** to *Show first and last name*. This is recommended for a better user experience.
+
 
 You’re done! If you’d like to confirm SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication via **Account Settings > General > Sign-in Method > Switch to SAML SSO** and sign in with your SAML credentials to complete the switch.
 

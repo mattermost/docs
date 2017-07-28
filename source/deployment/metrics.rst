@@ -1,4 +1,4 @@
-Performance Monitoring (E20) 
+Performance Monitoring (E20)
 ===============================
 
 *Available in Enterprise Edition E20*.
@@ -88,6 +88,17 @@ For install instructions, see `Grafana install guides <http://docs.grafana.org/i
 
 For user guides and tutorials, check the `Grafana documentation to learn more <http://docs.grafana.org/guides/basic_concepts/>`_.
 
+Getting Started
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To help you get started, you can download three sample dashboards shared in Grafana:
+
+ - `Mattermost Performance KPI Metrics <https://grafana.com/dashboards/2539>`_, which contains key metrics for monitoring performance and system health.
+ - `Mattermost Performance Monitoring <https://grafana.com/dashboards/2542>`_, which contains detailed charts for performance monitoring.
+ - `Mattermost Performance Monitoring (Bonus Metrics) <https://grafana.com/dashboards/2545>`_, which contains additional metrics such as emails sent or files uploaded, which may be important to monitor in some deployments.
+
+See `this guide <http://docs.grafana.org/reference/export_import/>`_ to learn how to import Grafana dashboards either from the UI or from the HTTP API.
+
 Statistics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -118,6 +129,7 @@ Database Metrics:
 
     - ``mattermost_db_master_connections_total``: The total number of connections to the master database.
     - ``mattermost_db_read_replica_connections_total``: The total number of connections to all the read replica databases.
+    - ``mattermost_db_search_replica_connections_total``: The total number of connections to all the search replica databases.
 
 HTTP Metrics:
 
@@ -155,7 +167,8 @@ Process Metrics:
 
 WebSocket Metrics:
 
-    - ``mattermost_websocket_event_total``: The total number of WebSocket events.
+    - ``mattermost_websocket_broadcasts_total``: The total number of WebSocket broadcasts sent by type.
+    - ``mattermost_websocket_event_total``: The total number of WebSocket events sent by type.
 
 Standard GO Metrics
 ------------------------------------------------
@@ -184,3 +197,4 @@ where you can replace ``localhost`` with the server name. The profiling reports 
     - ``/debug/pprof/block``/ for block profiling
 
 .. image:: ../images/perf_monitoring_go_metrics.png
+

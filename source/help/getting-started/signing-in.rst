@@ -3,9 +3,9 @@ Signing in
 
 --------------
 
-To sign in, navigate to the Mattermost sign-in page. You can get the URL of the sign-in page from your administrator. 
+To sign in, navigate to the Mattermost sign-in page. You can get the URL of the sign-in page from your administrator.
 
-After signing in, the team that appears first on your team sidebar will open.  If you have not joined a team, the Team Selection 
+After signing in, the team that appears first on your team sidebar will open.  If you have not joined a team, the Team Selection
 page opens where you can view a list of teams that you can join.
 
 Sign In Methods
@@ -67,10 +67,19 @@ Mattermost.
 Switching Teams
 ---------------
 
-You can switch between teams you have joined using the team sidebar 
+You can switch between teams you have joined using the team sidebar
 that appears left of your channel list on the left-hand sidebar.
 
 .. image:: ../../images/team-sidebar.png
+
+Setting Your Status
+-------------------
+You can set your status as online, away, or offline by selecting a status from the menu that appears when you click your avatar at the top of the channel list.
+
+.. image:: ../../images/avatar-online-status-218x247.png
+  :width: 218px
+  :height: 247px
+  :alt: Image of avatar showing the status selection menu with the options online, away, and offline
 
 Logging Out
 -----------

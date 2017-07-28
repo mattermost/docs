@@ -46,9 +46,23 @@ Additional Guides:
 
 - **Setup Database Backup** following the `database backup instructions. <https://github.com/mattermost/mattermost-docker/#database-backup>`_
 
+
+Production Docker Setup on Arch Linux
+------------------------------------------------------------
+
+To install on Arch Linux, see the `installation guide <https://wiki.archlinux.org/index.php/Mattermost>`_ on the Arch Linux wiki.
+
+
 Production Docker Setup on Mac OS X
 ------------------------------------------------------------
 
 You can run a production deployment on Mac OS X by `installing Docker Compose using the online guide <http://docs.docker.com/installation/mac/>`_ then following the above instructions.
 
-**Other options:** To install a feature-equivalent version of Mattermost that does not upgrade to enterprise features using a license key, Mattermost Team Edition, repeat steps above excluding ``-b enterprise`` from ``git clone`` command.
+Other options:
+--------------
+
+To install Mattermost Team Edition instead of Mattermost Enterprise Edition, open ``docker-compose.yaml`` and comment out the following line:
+
+  .. code-block:: text
+
+    dockerfile: Dockerfile-enterprise

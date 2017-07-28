@@ -39,10 +39,6 @@ Set up your development environment for building, running, and testing Mattermos
 
        ``sudo tar -C /usr/local -xzf go1.8.linux-amd64.tar.gz``
 
-    c. Modify permissions on ``/usr/local/go``. Replace *{user}* and *{group}* with the user and group that you are logged in with.
-
-      ``sudo chown -R {user}.{group} /usr/local/go``
-
 4. Set up your Go workspace:
 
   a. ``mkdir ~/go``
@@ -64,15 +60,17 @@ Set up your development environment for building, running, and testing Mattermos
 
     a. Add the Node.js repository to your repository list.
 
-      ``curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -``
+      ``curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -``
 
     b. Install Node.js
 
       ``sudo apt-get install -y nodejs``
 
-6. Fork Mattermost on GitHub from https://github.com/mattermost/platform.
+6. Install Yarn. Go to https://yarnpkg.com/en/docs/install and follow the installation instructions.
 
-7. Download the Mattermost code from your forked repository:
+7. Fork Mattermost on GitHub from https://github.com/mattermost/platform.
+
+8. Download the Mattermost code from your forked repository:
 
   a. Create the directory for the code.
 

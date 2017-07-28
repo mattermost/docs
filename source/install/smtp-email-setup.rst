@@ -100,7 +100,7 @@ Gmail
 -  Set **SMTP Password** to **your\_password**
 -  Set **SMTP Server** to **smtp.gmail.com**
 -  Set **SMTP Port** to **587**
--  Set **Connection Security** to **TLS**
+-  Set **Connection Security** to **STARTTLS**
 
 Hotmail
 ^^^^^^^

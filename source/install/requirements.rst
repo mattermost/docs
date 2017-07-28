@@ -26,7 +26,7 @@ Client Software
 PC Web Experience
 ^^^^^^^^^^^^^^^^^
 
--  PC: Windows 7, Windows 8, Windows 10 with (IE 11*, Chrome 43+, Firefox 38+, and Edge)
+-  PC: Windows 7, Windows 8, Windows 10 with IE 11*, Chrome 43+, Firefox 52+, and Edge 40+ (or EdgeHTML v15+)
 -  Mac: OS 10 (Safari 9, Chrome 43+)
 -  Linux: Arch 4.0.0 (Chrome 43+)
 
@@ -59,7 +59,7 @@ Mattermost Server Operating System
 
 -  Ubuntu 14.04, Ubuntu 16.04, Debian Jessie, CentOS 6.6+, CentOS 7.1+, RedHat Enterprise Linux 6.6+, RedHat Enterprise Linux 7.1+, Oracle Linux 6.6+, Oracle Linux 7.1+
 
-The Mattermost roadmap does not currently include production support for Fedora, FreeBSD or Arch Linux.
+While community support exists for Fedora, FreeBSD and Arch Linux, Mattermost does not currently include production support for these platforms.
 
 Database Software
 ^^^^^^^^^^^^^^^^^

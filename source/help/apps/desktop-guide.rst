@@ -62,8 +62,8 @@ Start app on login (Windows, Linux only)
 
     This setting is enabled by default.
 
-Display secure content
-    If your server is hosted on ``https://``, insecure content, images and scripts with ``http://`` are not rendered by default. This option allows such content to be rendered. If you disable it, please be mindful of potential security risks shared over ``http://`` protocols.
+Check spelling
+    Highlight misspelled words in your messages. Available for English, French, German, Spanish, and Dutch. To change the spelling language, right-click inside a message box and navigate to **Spelling Languages** in the context menu.
 
     This setting is enabled by default.
 

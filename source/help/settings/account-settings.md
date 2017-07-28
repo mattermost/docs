@@ -9,7 +9,7 @@ Settings to configure name, username, nickname, email and profile picture.
 Full names appear in the Direct Messages member list and team management modal. By default, you will receive mention notifications when someone types your first name. Entering a full name is optional.
 
 #### Username
-Usernames are unique identifers appearing next to all posts. Pick something easy for teammates to recognize and recall. By default, you will receive mention notifications when someone types your username. In order to maintain message integrity, changing your username does not update @mentions in messages already posted.  
+Usernames are unique identifiers appearing next to all posts. Pick something easy for teammates to recognize and recall. By default, you will receive mention notifications when someone types your username. In order to maintain message integrity, changing your username does not update @mentions in messages already posted.  
 
 #### Nickname
 Nicknames appear in the Direct Messages member list and team management modal. You will not receive mention notifications when someone types your nickname unless you add it to the *Words That Trigger Mentions* in **Account Settings > Notifications**.
@@ -21,7 +21,7 @@ Position can be used to describe your role or job title. It appears in the profi
 Email is used for sign-in, notifications, and password reset. Email requires verification if changed. If you are signing in using a single sign-on service, the email field is not editable and you will receive email notifications to the email you used to sign up to your SSO service.
 
 #### Profile Picture
-Profile pictures appear next to all posts and in the top of the channels pane next to your name. All users have a generic profile picture when they sign up for an account. Edit your profile picture by clicking **Select** and then choosing a picture in either JPG or PNG format that’s at least 128px wide and 128px high. For best results, choose an image that is square with the subject of interest centered. If you edit your profile picture, all past posts will appear with the new picture.
+Profile pictures appear next to all posts and in the top of the channels pane next to your name. Change your profile picture by clicking **Select** and then choosing a picture. For best results, choose an image that is at least 128 x 128 pixels in size. The GIF format is not supported.
 
 ## Security
 Settings to configure your password, view access history, and view or logout of active sessions.
@@ -93,7 +93,7 @@ If you are actively viewing a channel (public, private, or direct message) on de
 You can also choose when to send push notifications depending on your status. By default, push notifications are sent if your status is "Online, away or offline". If "Send Mobile Push Notifications" is set as "Never", this setting is hidden. If your System Administrator has not set up push notifications, this setting will be disabled.
 
 #### Words That Trigger Mentions
-By default, you will receive mention notifications from your non-case sensitive username, mentioned @username and @channel. Customize the words that trigger mentions by typing them in the input box. This is useful if you want to be notified of all posts on a certain topic, for example, “marketing”.
+By default, you receive notifications when someone posts a message that contains your non-case sensitive username or @username. You also receive notifications when someone uses the @channel, @all, and @here mentions. You can customize the words that trigger mentions by typing them into the input box. This is useful if you want to be notified of all posts on a certain topic, for example, "marketing".
 
 #### Reply Notifications
 In addition to **Words that Trigger Mentions**, this setting allows you to receive mention notifications when someone replies to a thread that you started or participated in. You are considered to start a thread when you post a message to which other members of your team reply. You are considered to participate in a thread when you post a message using the [reply button](https://docs.mattermost.com/help/getting-started/messaging-basics.html#messaging-basics) in an already existing thread.
@@ -114,12 +114,16 @@ Learn more about the custom theme color selectors [here](http://docs.mattermost.
 Select **Import theme colors from Slack** to import a Slack theme. In Slack, go to **Preferences > Sidebar Theme** and open the custom theme option. From there, copy the theme color vector and then paste it into the *Input Slack Theme* input box in Mattermost. Any theme settings that are not customizable in Slack will default to the “Mattermost” standard theme settings.
 
 #### Display Font
+*Removed in July 16th, 2017 release*
+
 Select what font is used.
 
 #### Clock Display
 Choose a 12-hour or 24-hour time preference that appears on the time stamp for all posts.
 
 #### Teammate Name Display
+*Removed in July 16th, 2017 release*
+
 Configure how names are displayed in Mattermost: nickname, username or full name.
 
 #### Link Previews
@@ -138,9 +142,12 @@ Select what language Mattermost displays in the user interface. Options include:
 - English
 - Español - Spanish
 - Français - French
+- Italiano - Italian
 - Nederlands - Dutch
+- Polski - Polish
 - Português (Brasil) - Portuguese
 - Pусский - Russian
+- Türkçe - Turkish
 - 한국어 - Korean
 - 中文 (简体) - Simplified Chinese
 - 中文 (繁體) - Traditional Chinese

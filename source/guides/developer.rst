@@ -15,10 +15,13 @@ Development Process
    /developer/mobile-developer-setup.rst
    /developer/api*
    /developer/developer-flow*
+   /developer/webapp-to-redux.rst
+   /developer/webapp-component.rst
+   /developer/redux.rst
    /developer/running-mattermost*
    /developer/style*
    /developer/fx*
-   /developer/localization-process.rst
+   /developer/localization.rst
    /developer/core-developer-handbook*
 
 Definitions
@@ -41,4 +44,3 @@ Documentation on early previews and unofficial functionality
    /install/prod-windows-2012*
    /deployment/webrtc*
    /developer/toolkit*
-   

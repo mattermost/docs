@@ -35,18 +35,37 @@ From the directory where the Mattermost platform is installed, a
     :backlinks: top
     :local:
 
+Using the CLI
+^^^^^^^^^^^^^
+
+To run the CLI commands, you must be in the directory that contains the Mattermost executable. On a default install of Mattermost, the directory is ``/opt/mattermost/bin``. The name of the executable is ``platform``.
+
+**For example, to get the Mattermost version on a default installation of Mattermost:**
+
+  .. code-block:: bash
+
+    cd /opt/mattermost/bin
+    sudo ./platform version
+
+Using the CLI on GitLab Omnibus
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+On GitLab Omnibus, you must be in the following directory when you run CLI commands: ``/opt/gitlab/embedded/service/mattermost``. Also, you must run the commands as the user *mattermost* and specify the location of the configuration file. The executable is ``/opt/gitlab/embedded/bin/mattermost``.
+
+**For example, to get the Mattermost version on GitLab Omnibus:**
+
+  .. code-block:: bash
+
+    cd /opt/gitlab/embedded/service/mattermost
+    sudo -u mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json version
+
+.. note::
+  The example commands in the documentation are for a default installation of Mattermost. You must modify the commands so that they work on GitLab Omnibus.
+
 Mattermost 3.6 and later
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 The new CLI tool is supported in Mattermost 3.6 and later. To see available commands in the old CLI tool, see `Mattermost 3.5 and earlier`_.
-
-Typing ``sudo ./platform help`` and ``sudo ./platform help {command}`` returns help documentation for the CLI tool or any CLI command in particular.
-
-To return the help documentation in GitLab omnibus, type
-
-    .. code-block:: none
-
-      sudo -u mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json help
 
 Notes:
 
@@ -80,6 +99,7 @@ platform
     -  `platform team`_ - Management of teams
     -  `platform user`_ - Management of users
     -  `platform version`_ - Display version information
+    -  `platform config`_ - Work with the configuration file
 
 platform channel
 -----------------
@@ -89,11 +109,12 @@ platform channel
 
   Child Commands
     -  `platform channel add`_ - Add users to a channel
+    -  `platform channel archive`_ - Archive a channel
     -  `platform channel create`_ - Create a channel
     -  `platform channel delete`_ - Delete a channel
     -  `platform channel list`_ - List all channels on specified teams
     -  `platform channel remove`_ - Remove users from a channel
-    -  `platform channel restore`_ - Restore a channels
+    -  `platform channel restore`_ - Restore a channel from the archive
 
 platform channel add
 ~~~~~~~~~~~~~~~~~~~~
@@ -106,10 +127,28 @@ platform channel add
 
       platform channel add {channel} {users}
 
-  Example
+  Examples
     .. code-block:: none
 
-      sudo ./platform channel add mychannel user@example.com username
+      sudo ./platform channel add 8soyabwthjnf9qibfztje5a36h user@example.com username
+      sudo ./platform channel add myteam:mychannel user@example.com username
+
+platform channel archive
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Archive a channel. Archived channels are not accessible to users, but remain in the database. To restore a channel from the archive, see `platform channel restore`_. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs.
+
+  Format
+    .. code-block:: none
+
+      platform channel archive {channels}
+
+  Examples
+    .. code-block:: none
+
+      sudo ./platform channel archive 8soyabwthjnf9qibfztje5a36h
+      sudo ./platform channel archive myteam:mychannel
 
 platform channel create
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -142,16 +181,17 @@ platform channel delete
 ~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Permanently delete a channel along with all related information, including posts from the database. Channels can be specified by {team}:{channel} using the team and channel names or IDs.
+    Permanently delete a channel along with all related information, including posts from the database. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs.
 
   Format
     .. code-block:: none
 
       platform channel delete {channels}
 
-  Example
+  Examples
     .. code-block:: none
 
+      sudo ./platform channel delete 8soyabwthjnf9qibfztje5a36h
       sudo ./platform channel delete myteam:mychannel
 
 platform channel list
@@ -181,25 +221,27 @@ platform channel remove
 
       platform channel remove {channel} {users}
 
-  Example
+  Examples
     .. code-block:: none
 
-      sudo ./platform channel remove mychannel user@example.com username
+      sudo ./platform channel remove 8soyabwthjnf9qibfztje5a36h user@example.com username
+      sudo ./platform channel remove myteam:mychannel user@example.com username
 
 platform channel restore
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Restore a previously deleted channel. Channels can be specified by {team}:{channel} using the team and channel names or IDs.
+    Restore a channel from the archive. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs.
 
   Format
     .. code-block:: none
 
       platform channel restore {channels}
 
-  Example
+  Examples
     .. code-block:: none
 
+      sudo ./platform channel restore 8soyabwthjnf9qibfztje5a36h
       sudo ./platform channel restore myteam:mychannel
 
 platform help
@@ -369,16 +411,25 @@ platform team
     -  `platform team delete`_ - Delete a team
     -  `platform team remove`_ - Remove users from a team
 
+.. _team-value-note:
+
+.. note::
+    **{team-name} value**
+
+    For the *add*, *delete*, and *remove* commands, you can determine the *{team-name}* value from the URLs that you use to access your instance of Mattermost. For example, in the following URL the *{team-name}* value is *myteam*:
+
+    ``https://example.com/myteam/channels/mychannel``
+
 platform team add
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Add users to a team.
+    Add users to a team. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
 
   Format
     .. code-block:: none
 
-      platform team add {team} {users}
+      platform team add {team-name} {users}
 
   Example
     .. code-block:: none
@@ -414,12 +465,12 @@ platform team delete
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Permanently delete a team along with all related information, including posts from the database.
+    Permanently delete a team along with all related information, including posts from the database. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
 
   Format
     .. code-block:: none
 
-      platform team delete {teams}
+      platform team delete {team-name}
 
   Example
     .. code-block:: none
@@ -435,12 +486,12 @@ platform team remove
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Remove users from a team.
+    Remove users from a team. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
 
   Format
     .. code-block:: none
 
-      platform team remove {team} {users}
+      platform team remove {team-name} {users}
 
   Example
     .. code-block:: none
@@ -463,6 +514,7 @@ platform user
     -  `platform user migrate_auth`_ - Mass migrate all user accounts to a new authentication type
     -  `platform user password`_ - Set a user's password
     -  `platform user resetmfa`_ - Turn off MFA for a user
+    -  `platform user search`_ - Search for users based on username, email, or user ID
     -  `platform user verify`_ - Verify email address of a new user
 
 platform user activate
@@ -608,6 +660,10 @@ platform user migrate\_auth
     .. code-block:: none
 
       sudo ./platform user migrate_auth email ladp email
+  Options
+    .. code-block:: none
+
+      --force  Ignore duplicate entries on the LDAP server.
 
 platform user password
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -641,6 +697,22 @@ platform user resetmfa
 
       sudo ./platform user resetmfa user@example.com
 
+platform user search
+~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Search for users based on username, email, or user ID.
+
+  Format
+    .. code-block:: none
+
+      platform user search {users}
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform user search user1@example.com user2@example.com
+
 platform user verify
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -667,6 +739,35 @@ platform version
     .. code-block:: none
 
       platform version
+
+platform config
+---------------
+
+  Description
+    Commands for managing the configuration file.
+
+  Child Command
+    - `platform config validate`_ - Validate the configuration file.
+
+platform config validate
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Makes sure the configuration file has the following properties:
+
+    - Is valid JSON.
+    - Has attributes of the correct type, such as *bool*, *int*, and *str*.
+    - All entries are valid. For example, checks that entries are below the maximum length.
+
+    Format
+      .. code-block:: none
+
+        platform config validate
+
+    Example
+      .. code-block:: none
+
+        sudo ./platform config validate
 
 Mattermost 3.5 and earlier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
