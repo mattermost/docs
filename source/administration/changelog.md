@@ -7,7 +7,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ## Release v4.0.2
 
  - **v4.0.2, released 2017-07-31**
-   - Fixed a login issue when non-English language is set in Mattermost Account Settings. Only affects accounts with GitLab, SAML, Office365 or G Suite single sign-on.
+   - Fixed issue when using single-sign-on with GitLab (and in Enterprise Edition with SAML, Office365 and G Suite), where using a non-English language option in Account Settings may result in a login failure.
    - Fixed issue with custom slash commands not working in direct message channels.
    - Fixed issue with GitLab and SAML single sign-on in Mattermost mobile apps redirecting to a browser page.
  - **v4.0.1, released 2017-07-18**
