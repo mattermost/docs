@@ -49,6 +49,7 @@ First Day
 - (Manager) Meets New Hire for first 1-1 meeting
 - (Buddy) Meets New Hire for first 1-1 meeting
 - (CEO) Meets New Hire for welcome meeting 
+- (New Hire) Confirm with Manager all HR paperwork is completed by end of first day (should have been sent in advance). 
 
 ---------------------------------------------------------
 Meetings
