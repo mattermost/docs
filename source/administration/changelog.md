@@ -6,16 +6,15 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v4.0.2
 
- - **v4.0.2, TBD**
-   - Release planned with the following fixes:
-     - GitLab single sign-on fails if non-English language set in Mattermost Account Settings ([ticket link](https://mattermost.atlassian.net/browse/PLT-7231)). Other single sign-on methods are being investigated.
-     - Custom slash commands don't work in direct message channels ([ticket link](https://mattermost.atlassian.net/browse/PLT-7193)).
-     - `AmazonS3Region` config setting is ignored in Minio file storage setup ([ticket link](https://mattermost.atlassian.net/browse/PLT-7208)).
+ - **v4.0.2, released 2017-07-31**
+   - Fixed issue when using single-sign-on with GitLab (and in Enterprise Edition with SAML, Office365 and G Suite), where using a non-English language option in Account Settings resulted in a login failure.
+   - Fixed issue with custom slash commands not working in direct message channels.
+   - Fixed issue with GitLab and SAML single sign-on in Mattermost mobile apps redirecting to a browser page.
  - **v4.0.1, released 2017-07-18**
-   - If `AllowTimeLimit` config setting is set to `Never`, pinning and un-pinning messages now work.
-   - If you upload or remove the **Service Provider Public Certificate** file in **System Console > SAML**, the page no longer refreshes losing all unchanged settings.
-   - Deactivated users no longer appear in channel member, team member or direct message lists.
-   - PDF previews now load properly.
+   - Fixed issue where pinning or un-pinning messages didn't work if `AllowTimeLimit` config setting is set to `Never`.
+   - Fixed issue where uploading or removing the **Service Provider Public Certificate** file in **System Console > SAML** refreshed the page, losing all unchanged settings.
+   - Fixed deactivated users appearing in channel member, team member and direct message lists.
+   - Fixed PDF previews not loading.
  - **v4.0.0, released 2017-07-16**
    - Original 4.0.0 release
 
