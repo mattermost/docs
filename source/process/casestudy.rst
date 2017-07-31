@@ -97,11 +97,11 @@ Written Case Study Lay Out
 
 Follow these steps to write a case study that is clear and concise:
 
-1. Title: Focus on highlighting the most compelling accomplishment.
-2. Executive Summary: Begin the case study with a section that includes a powerful hook and a summary of the most important points of the entire story.
-3. About: Introduce the customer company.
-4. Challenges: Add a description of the challenges that the customer faced prior to using Mattermost. This section should also include the goals that the customer set out to achieve.
-5. Solutions: Add a section that describes how Mattermost provided a solution to the customer company's problem.
-6. Results: Add a testimonial that proves how Mattermost specifically helped achieve the customer company's goals. Include specific examples and quotations.
+1. Title: Highlight the most compelling accomplishment.
+2. Executive Summary: Begin the case study with a section that includes a powerful statement that catches the reader's attention and a summary of the most important points of the entire story.
+3. About: Introduce the customer.
+4. Challenges: Add a description of the challenges that the customer faced prior to using Mattermost. This section should also include goals the customer set out to achieve.
+5. Solutions: Add a section that describes how Mattermost provided a solution to the customer's challenges.
+6. Results: Add a testimonial that shows how Mattermost helped achieve the customer's goals. Include specific examples and quotations.
 
 These Case Study procedures draw heavily from Hubspot's `How to Write a Case Study <https://blog.hubspot.com/blog/tabid/6307/bid/33282/the-ultimate-guide-to-creating-compelling-case-studies.aspx>`_ article. 
