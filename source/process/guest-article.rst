@@ -8,10 +8,10 @@ Guest Company:
 
 Please provide the following for Mattermost by email:
 
--	Please provide a photo and a short bio of yourself. Photos and bios of each of the guest company members are more than welcome. The size of the photo should be large enough so that it can be easily included in a banner or as a screenshot in an article. The bio should be one to two sentences.
+-	Please provide a photo and a short bio of yourself. Photos and bios of each of the guest company members are more than welcome. The size of the photo should be at least 400 x 400 px so that it can be easily included in a banner or as a screenshot in an article. The bio should be one to two sentences.
 -	When a draft of the blog post has been prepared, it will be sent to you by email and you will be asked to review it and provide any feedback and recommendations on it.
 
-Mattermost Guest Post Coordinator:
+Mattermost Guest Blog Post Coordinator:
 --------------------------------------------------------
 
 Follow these guidelines to develop a clear and concise guest blog post:
