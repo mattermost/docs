@@ -125,13 +125,13 @@ platform channel add
   Format
     .. code-block:: none
 
-      platform channel add {channel} {users}
+      platform channel_name add {channel} {users}
 
   Examples
     .. code-block:: none
 
-      sudo ./platform channel add 8soyabwthjnf9qibfztje5a36h user@example.com username
-      sudo ./platform channel add myteam:mychannel user@example.com username
+      sudo ./platform channel_name add 8soyabwthjnf9qibfztje5a36h user@example.com username
+      sudo ./platform channel_name add myteam:mychannel user@example.com username
 
 platform channel archive
 ~~~~~~~~~~~~~~~~~~~~~~~~
