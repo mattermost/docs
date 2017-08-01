@@ -1,0 +1,46 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+    app: {{ template "fullname" . }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: {{ template "fullname" . }}
+    spec:
+      containers:
+      - name: registry
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ default "" .Values.image.pullPolicy | quote }}
+        env:
+        - name: REGISTRY_HTTP_ADDR
+          valueFrom:
+            configMapKeyRef:
+              name: {{ template "fullname" . }}
+              key: http.addr
+        - name: REGISTRY_HTTP_SECRET
+          valueFrom:
+            configMapKeyRef:
+              name: {{ template "fullname" . }}
+              key: http.secret
+        - name: REGISTRY_AUTH_TOKEN_REALM
+          valueFrom:
+            configMapKeyRef:
+              name: {{ template "fullname" . }}
+              key:  auth.token.realm
+        - name: REGISTRY_AUTH_TOKEN_SERVICE
+          valueFrom:
+            configMapKeyRef:
+              name: {{ template "fullname" . }}
+              key:  auth.token.service
+        - name: REGISTRY_AUTH_TOKEN_ISSUER
+          valueFrom:
+            configMapKeyRef:
+              name: {{ template "fullname" . }}
+              key:  auth.token.issuer

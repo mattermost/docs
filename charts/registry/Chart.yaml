@@ -1,0 +1,16 @@
+apiVersion: v1
+name: registry
+version: 0.0.1
+description: "Helm chart for Container Registry"
+keywords:
+- registry
+- container
+- docker
+home: https://github.com/docker/distribution
+sources:
+- https://github.com/docker/distribution
+maintainers:
+- name: GitLab Inc.
+  email: support@gitlab.com
+- name: The Build Team
+details: "Container Registry used as part of GitLab deployment."

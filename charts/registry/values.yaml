@@ -1,0 +1,17 @@
+image:
+  repository: registry
+  tag: '2.6.1'
+  pullPolicy: 'IfNotPresent'
+service:
+  name: registry
+  type: ClusterIP
+  externalPort: 5000
+  internalPort: 5000
+  clusterIP: '0.0.0.0'
+registry:
+  httpSecretName: 'secret'
+  httpSecretKeyName: 'secret-key'
+  storage: {}
+  authEndpoint: 'https://gitlab.example.com'
+  tokenService: 'container_registry'
+  tokenIssuer: 'gitlab-registry-issuer'
