@@ -8,9 +8,10 @@ Guest Company
 
 Please provide the following for Mattermost by email:
 
+- A draft of the blog post describing your experience developing an app or service for Mattermost.
 - A photo and a short bio of the author. Photos and bios of each member participating in the guest blog post are more than welcome. The size of the photo should be at least 400 x 400 px so that it can be easily included in a banner or as a screenshot in an article. The bio should be one to two sentences.
-- A draft of the blog post will be sent to you by email, so that you can offer feedback and recommendations on it.
-- A link to the final draft of the blog post is sent to the author prior to publishing it (using preview mode in WordPress).
+
+A link to the final draft of the blog post will be sent to you by email, so that you can offer feedback and recommendations on it.
 
 Mattermost Guest Blog Post Coordinator
 --------------------------------------------------------
