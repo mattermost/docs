@@ -78,7 +78,7 @@ You can find sample templates for integration promotions, guest blog posts and f
 Integration or Feature Promotion
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Use this `template <https://drive.google.com/file/d/0Bx-9w8QDFlfcVDZuOFduV2RKaXM/view?usp=sharing>`_ as a starting point.
+1. Use this `template (dark background) <https://www.dropbox.com/s/a8tbqxiik1m9i8u/20170717_template_dark.tif?dl=0>`_ or this `template (light background) <https://www.dropbox.com/s/codoct7np20fx3l/20170717_template_light.tif?dl=0>`_ as a starting point.
 2. Change text in the "copy - title" layer following the guidelines in `Feature Title`_.
 3. Change text in the "by Galois, Inc." layer to replace the name with appropriate creator name following the guidelines in `Feature Creator`_.
 4. Change the contents of the "featured image" folder to update representative art following the guidelines in `Feature Representative Art`_.
