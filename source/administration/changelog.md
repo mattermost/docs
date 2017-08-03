@@ -23,9 +23,20 @@ Scheduled release date: 2017-08-16
 
 ### Improvements
 
+
 #### Web User Interface
+- Ephemeral messages now note that they are "(Only visible to you)" 
+- Navigating to an invalid team invite link will now redirect to an error page
+- Users are now prompted from Account Settings to set Edge notification sounds in their browser settings
+
+#### Integrations
+- Null values are now ignored in webhook attachements
 
 ### Bug Fixes
+- Fixed incorrectly rotated image thumbnails that were uploaded from mobile devices
+- Adding or removing reactions from a post with an image preview no longer causes the preview to expand/collapse
+
+
 
 ### Compatibility
 
