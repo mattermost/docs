@@ -7,6 +7,106 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ## Release v4.1.0
 Scheduled release date: 2017-08-16
 
+### Security Update
+
+- Mattermost v4.1.0 contains multiple security fixes ranging from XXXXXX. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+
+### Highlights
+
+#### Built-in JIRA Integration
+
+#### Personal Access Tokens
+
+#### Updated iOS and Android Apps
+
+#### Elasticsearch Beta ([Enterprise Edition E10 & E20](https://about.mattermost.com/pricing/))
+
+### Improvements
+
+#### Web User Interface
+
+### Bug Fixes
+
+### Compatibility
+
+#### Breaking Changes
+
+#### Removed and deprecated features
+- All APIv3 endpoints are scheduled for removal on January 16, 2018.
+
+For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
+
+#### config.json
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+**Changes to Team Edition and Enterprise Edition**:
+
+**Additional Changes to Enterprise Edition**:
+
+### API v4 Changes
+- Mattermost 4.0 has a stable release of API v4 endpoints. It is recommended that any new integrations use the v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
+- All APIv3 endpoints are scheduled for removal on January 16, 2018.
+
+**Added routes (API v4)**
+
+**Modified routes (API v4)**
+
+### Websocket Event Changes
+
+**Added:**
+
+### Known Issues
+XXXXXX Update
+
+- Google login fails on the Classic mobile apps.
+- Edge overlays desktop notification sound and system notification sound.
+- Clicking on a channel during the tutorial makes the tutorial disappear.
+- User can receive a video call from another browser tab while already on a call.
+- Search autocomplete picker is broken on Classic Android app.
+- Jump link in search results does not always jump to display the expected post.
+- First load of the emoji picker is slow on low-speed connections or on deployments with hundreds of custom emoji.
+- Scrollbar is sometimes not visible in the left-hand sidebar after switching teams.
+- Certain code block labels don't appear while scrolling on iOS mobile web.
+- Outgoing webhooks do not fire when posts have no text content.
+- A public channel doesn't always show up in another browser tab or client until after refresh.
+- Null values in Slack attachments cause a 500 error for incoming webhooks.
+- Keyboard shortcut CTRL/CMD+SHIFT+A does not close Account Settings.
+- Deleted message doesn't clear unreads or unread mentions.
+- Changing the search term in the More Direct Messages modal doesn't reset the page.
+- Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+
+### Contributors
+
+Many thanks to all our contributors. In alphabetical order:
+
+/platform
+
+
+/mattermost-mobile
+
+
+/mattermost-redux
+
+
+/mattermost-api-reference
+
+
+/docs
+
+/desktop
+
+/mattermost-kubernetes
+
+
+
+/mattermost-push-proxy
+
+
+/mattermost-docker
+
+
+/mattermost-load-test
 
 
 
