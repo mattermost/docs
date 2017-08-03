@@ -83,7 +83,8 @@ Integration or Feature Promotion
 3. Change text in the "by Galois, Inc." layer to replace the name with appropriate creator name following the guidelines in `Feature Creator`_.
 4. Change the contents of the "featured image" folder to update representative art following the guidelines in `Feature Representative Art`_.
 5. Replace the "logo - matterhorn" layer to update representative logo(s) following the guidelines in `Mattermost and Representative Logos`_.
-6. Save the finished asset draft in both .TIF and .PNG format, and upload to your "Dropbox Share" folder.
+6. Add a 1 pixel grey stroke border around the rectangular boundary of the banner.
+7. Save the finished asset draft in both .TIF and .PNG format, and upload to your "Dropbox Share" folder.
 
 Integration Blog
 ^^^^^^^^^^^^^^^^^
