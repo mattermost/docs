@@ -23,11 +23,11 @@ Production Docker Setup on Ubuntu
        sudo service docker start
        newgrp docker
 
-2. **Install Docker Compose** using `the online guide <https://docs.docker.com/compose/install/>`_ or these instructions:
+2. **Install Docker Compose** using `the online guide <https://docs.docker.com/compose/install/>`_. You have to download the latest release from `Docker Compose Github's page <https://github.com/docker/compose/releases/>`_ and put the binary on your :code:`/usr/local/bin` folder. Usually, you can use the following command, replacing :code:`$dockerComposeVersion` by the Docker Compose version to install :
 
    .. code:: bash
    
-      curl -L https://github.com/docker/compose/releases/download/1.14.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+      curl -L https://github.com/docker/compose/releases/download/$dockerComposeVersion/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
       sudo chmod +x /usr/local/bin/docker-compose
 
 3. **Deploy the Mattermost Production Docker** setup by running:
