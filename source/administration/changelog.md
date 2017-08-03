@@ -29,17 +29,31 @@ Scheduled release date: 2017-08-16
 - Navigating to an invalid team invite link will now redirect to an error page
 - Users are now prompted from Account Settings to set Edge notification sounds in their browser settings
 - Cropping of image thumbnails now looks the same before and after posting 
-- 
+- Clicking on @mentions will now open the contact card for the user
+
+#### Notifications
+- Updated 
+
+
+#### Administration
+- No longer require a refresh after a user is promoted to a Team Admin 
+- Announcement banner now supports URLs
 
 #### Integrations
 - Null values are now ignored in webhook attachements
 - Outgoing webhooks can now fire if the post contains only an attachment
 - Added /code built-in slash command to create a code block
+- Updated the desktop notification text for incoming webhooks to more accurately reflect the payload
 
 ### Bug Fixes
 - Fixed incorrectly rotated image thumbnails that were uploaded from mobile devices
 - Adding or removing reactions from a post with an image preview no longer causes the preview to expand/collapse
 - Javascript error no longer thrown file upload fails due to network interuption 
+- Error messages in Account Setting fields no longer stack
+- Fixed Slack Import of non-ascii channel names
+- Changing the search term in the More... Direct Message member list now resets the search
+- Help text for the Channel Switcher is now shown on small desktop windows
+- Keyboard shortcut for Account Settings now toggles
 
 
 ### Compatibility
