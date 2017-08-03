@@ -155,3 +155,15 @@ This error can occur if you're using multiple URLs to reach Mattermost via proxy
 1. Upgrade to a Mattermost server v3.8.0 or later, which adds `WebSocket CORS support <https://github.com/mattermost/platform/pull/5667>`_.
 2. Follow the installation guide to configure `NGINX as a proxy for Mattermost server <https://docs.mattermost.com/install/install-ubuntu-1604.html#configuring-nginx-as-a-proxy-for-mattermost-server>`_.
 3. If you're doing reverse proxy with IIS, upgrade to IIS 8.0 or later and enable WebSockets. For more information, see `IIS 8.0 WebSocket Protocol Support <https://www.iis.net/learn/get-started/whats-new-in-iis-8/iis-80-websocket-protocol-support>`_.
+
+``Websocke closed`` or ``websocket re-established connecion``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This alert can appear every few seconds in the Desktop application or web browser connected to Mattermost.
+
+**Solution:**
+
+If you are using an Amazon ELB check that ``Idle Timeout`` is set to ``120s``, if it's significantly power it will cause undesireable websocket disconnections. 
+
+If you are using NGINX, the `Mattermost configuration instructions <https://docs.mattermost.com/install/config-proxy-nginx.html>`__ inlude setting  `proxy_read_timeout <http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_read_timeout>`__. 
+
