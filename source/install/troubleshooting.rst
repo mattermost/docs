@@ -165,5 +165,5 @@ This alert can appear every few seconds in the Desktop application or web browse
 
 If you are using an Amazon ELB check that ``Idle Timeout`` is set to ``120s``, if it's significantly lower it will cause undesireable websocket disconnections. 
 
-If you are using NGINX, the `Mattermost configuration instructions <https://docs.mattermost.com/install/config-proxy-nginx.html>`__ inlude setting  `proxy_read_timeout <http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_read_timeout>`__. 
+If you are using NGINX, make sure you follow the `Mattermost configuration instructions <https://docs.mattermost.com/install/config-proxy-nginx.html>`__ for setting the  ``proxy_read_timeout``. 
 
