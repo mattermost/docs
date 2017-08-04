@@ -32,6 +32,8 @@ Scheduled release date: 2017-08-16
 - Clicking on @mentions will now open the contact card for the user
 - User lists now display full name and nickname
 - Added over 500 new emoji
+- Searching on slow connections now shows a loading spinner in the right-hand side
+- Added a close button next to link previews
 
 #### Notifications
 - Updated 
@@ -40,13 +42,16 @@ Scheduled release date: 2017-08-16
 #### Administration
 - No longer require a refresh after a user is promoted to a Team Admin 
 - Announcement banner now supports URLs
-- Bulk importer now supports user preferences, including favorite channels and flagged posts
+- Bulk importer now supports user preferences, including favorite channels, flagged posts and notification preferences
+- Changed username to be the default name display setting in the System Console
+
 
 #### Integrations
 - Null values are now ignored in webhook attachements
 - Outgoing webhooks can now fire if the post contains only an attachment
 - Added /code built-in slash command to create a code block
 - Updated the desktop notification text for incoming webhooks to more accurately reflect the payload
+
 
 ### Bug Fixes
 - Fixed incorrectly rotated image thumbnails that were uploaded from mobile devices
@@ -60,8 +65,13 @@ Scheduled release date: 2017-08-16
 - Fixed the Preview button in the text input box and message edit modal
 - Fixed a Javascript error when switching teams while uploading a file
 - CLI tool to delete all users no longer requires a user argument
+- CLI tool now deletes webhooks and slash commands when deleting teams and channels
 - Custom slash commands no longer throw an error if used in a Direct Message channel
 - System Console now reads and honors the Amazon S3 Region setting
+- Keyboard shortcut text on the Channel Switcher is now removed on mobile
+- Fixed whitespace and trimming on code blocks and empty table cells
+- Disabled the "Create Account" button after the first click so the system does not attempt to create the account twice
+
 
 ### Compatibility
 
