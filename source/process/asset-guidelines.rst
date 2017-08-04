@@ -186,7 +186,7 @@ Mattermost and Representative Logos
 3. Representative logo appears on the left side of the asset below the feature title
 4. When the background color is dark, use the white/inverted version of company logo. When the background color is light, use the dark/primary version of company logo.
 
-Guidelines for Screenshot Development of Mattermost User Interface
+Screenshot Development of Mattermost User Interface
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The purpose is to highlight and illustrate the best features of Mattermost user interface.
@@ -211,7 +211,7 @@ The purpose is to highlight and illustrate the best features of Mattermost user 
 
 - Clarity: Do not include an "unread posts" indicator, but you can have a few mentions. Also, avoid showing any text with acronyms and abbreviations. Do not show any bugs or defects.
 
-Guidelines for Animated GIFs
+Animated GIFs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Animated GIFs with two images that look very similar should not be created since visually it looks like a mistake.
