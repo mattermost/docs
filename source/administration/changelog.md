@@ -23,7 +23,6 @@ Scheduled release date: 2017-08-16
 
 ### Improvements
 
-
 #### Web User Interface
 - Ephemeral messages now note that they are "(Only visible to you)" 
 - Navigating to an invalid team invite link will now redirect to an error page
@@ -40,8 +39,6 @@ Scheduled release date: 2017-08-16
 - Users are now prompted from Account Settings to set Edge notification sounds in their browser settings
 - Updated the desktop notification text for incoming webhooks to more accurately reflect the payload
 
-
-
 #### Administration
 - No longer require a refresh after a user is promoted to a Team Admin 
 - Announcement banner now supports URLs
@@ -52,12 +49,10 @@ Scheduled release date: 2017-08-16
 - Added a new System Console push notification content setting to only display sender name
 - Added a System Console setting to disable file uploads/downloads on mobile
 
-
 #### Integrations
 - Null values are now ignored in webhook attachements
 - Outgoing webhooks can now fire if the post contains only an attachment
 - Added /code built-in slash command to create a code block
-
 
 ### Bug Fixes
 - Fixed incorrectly rotated image thumbnails that were uploaded from mobile devices
@@ -85,10 +80,7 @@ Scheduled release date: 2017-08-16
 - Fixed Javascript error thrown when viewing a channel containing an invalid emoji reaction
 - Periods after URLs are no longer added to the link
 
-
 ### Compatibility
-
-#### Breaking Changes
 
 #### Removed and deprecated features
 - All APIv3 endpoints are scheduled for removal on January 16, 2018.
@@ -101,22 +93,47 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 **Changes to Team Edition and Enterprise Edition**:
 
+- `FileSettings.EnableMobileUpload: true`
+- `FileSettings.EnableMobileDownload": true`
+- `PluginSettings.Plugins`
+- `ServiceSettings.EnableUserAccessTokens: false`
+- `EmailSettings.EnableSMTPAuth: false`
+
 **Additional Changes to Enterprise Edition**:
+
+- `ElasticsearchSettings.PostIndexReplicas: 2`
+- `ElasticsearchSettings.PostIndexShards: 1`
+XXXXXX Add the rest of Elasticsearch settings that went in for 4.0
+
+### Database Changes
+
+**UserAccessToken Table:**
+- Added table
+
+**JobStatuses Table**
+- Removed table
+
+** Jobs Table**
+- Added table
 
 ### API v4 Changes
 - Mattermost 4.0 has a stable release of API v4 endpoints. It is recommended that any new integrations use the v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
 - All APIv3 endpoints are scheduled for removal on January 16, 2018.
 
 **Added routes (API v4)**
-
-**Modified routes (API v4)**
-
-### Websocket Event Changes
-
-**Added:**
+- `GET api/v4/jobs`
+- `POST api/v4/jobs`
+- `GET api/v4/jobs/{job_id:[A-Za-z0-9]+}`
+- `POST api/v4/jobs/{job_id:[A-Za-z0-9]+}/cancel`
+- `GET api/v4/jobs/type/{job_type:[A-Za-z0-9_-]+}`
+- `POST api/v4/elasticsearch/purge_indexes`
+- `POST api/v4/users/{user_id:[A-Za-z0-9]+}/tokens`
+- `GET api/v4/users/{user_id:[A-Za-z0-9]+}/tokens`
+- `GET api/v4/users/{user_id:[A-Za-z0-9]+}/tokens/{token_id:[A-Za-z0-9]+}`
+- `POST api/v4/users/{user_id:[A-Za-z0-9]+}/tokens/revoke`
 
 ### Known Issues
-XXXXXX Update
+XXXXXX Update after RC testing
 
 - Google login fails on the Classic mobile apps.
 - Edge overlays desktop notification sound and system notification sound.
