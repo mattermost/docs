@@ -191,8 +191,7 @@ Guidelines for Screenshot Development of Mattermost User Interface
 
 The purpose is to highlight and illustrate the best features of Mattermost user interface.
 
-Setup
-------------
+**Setup**
 
 - Please take the screenshot from the Mattermost Desktop app (it has a nicer border).
 
@@ -200,8 +199,7 @@ Setup
 
 - One easy way to create demo screenshots is to have a secondary pre-release account. Use [first.last]+blah@mattermost.com to create a second account. This will make triggering notifications for yourself easier (for the screenshot). You can also use a second browser to login to the second account while taking the screenshot.
 
-Checklist
-------------
+**Checklist**
 
 - Left-hand side: Include Favorite, Public, and Private channels on the left-hand side. Make sure that you scroll all the way to the top in the channel list on the left-hand side for the screenshot.
 
