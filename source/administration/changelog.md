@@ -27,7 +27,6 @@ Scheduled release date: 2017-08-16
 #### Web User Interface
 - Ephemeral messages now note that they are "(Only visible to you)" 
 - Navigating to an invalid team invite link will now redirect to an error page
-- Users are now prompted from Account Settings to set Edge notification sounds in their browser settings
 - Cropping of image thumbnails now looks the same before and after posting 
 - Clicking on @mentions will now open the contact card for the user
 - User lists now display full name and nickname
@@ -36,7 +35,10 @@ Scheduled release date: 2017-08-16
 - Added a close button next to link previews
 
 #### Notifications
-- Updated 
+- Updated the default email frequency to 15 minutes if email batching is enabled by the System Admin
+- Users are now prompted from Account Settings to set Edge notification sounds in their browser settings
+- Updated the desktop notification text for incoming webhooks to more accurately reflect the payload
+
 
 
 #### Administration
@@ -44,13 +46,15 @@ Scheduled release date: 2017-08-16
 - Announcement banner now supports URLs
 - Bulk importer now supports user preferences, including favorite channels, flagged posts and notification preferences
 - Changed username to be the default name display setting in the System Console
+- Added more debugging info to server logs for failed OAuth requests
+- Added a new System Console push notification content setting to only display sender name
+- Added a System Console setting to disable file uploads/downloads on mobile
 
 
 #### Integrations
 - Null values are now ignored in webhook attachements
 - Outgoing webhooks can now fire if the post contains only an attachment
 - Added /code built-in slash command to create a code block
-- Updated the desktop notification text for incoming webhooks to more accurately reflect the payload
 
 
 ### Bug Fixes
@@ -71,6 +75,12 @@ Scheduled release date: 2017-08-16
 - Keyboard shortcut text on the Channel Switcher is now removed on mobile
 - Fixed whitespace and trimming on code blocks and empty table cells
 - Disabled the "Create Account" button after the first click so the system does not attempt to create the account twice
+- More Channels modal no longer stops paging after the first two pages
+- Editing channel names now correctly limits character count to 22
+- Fixed broken links on the System Console > Mobile Push page
+- /away /offline ephemeral messages can no longer contain extra text posted with the slash command
+- Fix teams being incorrectly marked unread across tabs
+
 
 
 ### Compatibility
