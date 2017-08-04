@@ -33,6 +33,7 @@ Scheduled release date: 2017-08-16
 - Added over 500 new emoji
 - Searching on slow connections now shows a loading spinner in the right-hand side
 - Added a close button next to link previews
+- Ephemeral messages will now always appear as parent posts
 
 #### Notifications
 - Updated the default email frequency to 15 minutes if email batching is enabled by the System Admin
@@ -46,6 +47,7 @@ Scheduled release date: 2017-08-16
 - Announcement banner now supports URLs
 - Bulk importer now supports user preferences, including favorite channels, flagged posts and notification preferences
 - Changed username to be the default name display setting in the System Console
+- Channel member list now follows the Teammate name display configuration setting 
 - Added more debugging info to server logs for failed OAuth requests
 - Added a new System Console push notification content setting to only display sender name
 - Added a System Console setting to disable file uploads/downloads on mobile
@@ -80,7 +82,8 @@ Scheduled release date: 2017-08-16
 - Fixed broken links on the System Console > Mobile Push page
 - /away /offline ephemeral messages can no longer contain extra text posted with the slash command
 - Fix teams being incorrectly marked unread across tabs
-
+- Fixed Javascript error thrown when viewing a channel containing an invalid emoji reaction
+- Periods after URLs are no longer added to the link
 
 
 ### Compatibility
