@@ -116,6 +116,9 @@ XXXXXX Add the rest of Elasticsearch settings that went in for 4.0
 ** Jobs Table**
 - Added table
 
+**Users Table**
+- Modified maximum size from 64 to 256 characters 
+
 ### API v4 Changes
 - Mattermost 4.0 has a stable release of API v4 endpoints. It is recommended that any new integrations use the v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
 - All APIv3 endpoints are scheduled for removal on January 16, 2018.
