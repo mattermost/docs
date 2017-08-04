@@ -30,6 +30,8 @@ Scheduled release date: 2017-08-16
 - Users are now prompted from Account Settings to set Edge notification sounds in their browser settings
 - Cropping of image thumbnails now looks the same before and after posting 
 - Clicking on @mentions will now open the contact card for the user
+- User lists now display full name and nickname
+- Added over 500 new emoji
 
 #### Notifications
 - Updated 
@@ -38,6 +40,7 @@ Scheduled release date: 2017-08-16
 #### Administration
 - No longer require a refresh after a user is promoted to a Team Admin 
 - Announcement banner now supports URLs
+- Bulk importer now supports user preferences, including favorite channels and flagged posts
 
 #### Integrations
 - Null values are now ignored in webhook attachements
@@ -54,7 +57,11 @@ Scheduled release date: 2017-08-16
 - Changing the search term in the More... Direct Message member list now resets the search
 - Help text for the Channel Switcher is now shown on small desktop windows
 - Keyboard shortcut for Account Settings now toggles
-
+- Fixed the Preview button in the text input box and message edit modal
+- Fixed a Javascript error when switching teams while uploading a file
+- CLI tool to delete all users no longer requires a user argument
+- Custom slash commands no longer throw an error if used in a Direct Message channel
+- System Console now reads and honors the Amazon S3 Region setting
 
 ### Compatibility
 
