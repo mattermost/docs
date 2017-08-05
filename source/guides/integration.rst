@@ -11,6 +11,7 @@ Detailed documentation on extending and integrating with the Mattermost server.
    /developer/webhooks*
    /developer/slash*
    /developer/message-attachments*
+   /developer/personal-access-tokens*
    /developer/oauth*
    /integrations/zapier*
    /developer/integration*
