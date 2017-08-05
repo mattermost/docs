@@ -8,14 +8,6 @@ Personal access tokens function similar to session tokens and can be used by int
 .. toctree::
 	:maxdepth: 2
 
-Use Cases
-~~~~~~~~~~
-
-
- (which include the benefits)
-
-
-
 Creating a Personal Access Token
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
