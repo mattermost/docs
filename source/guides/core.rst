@@ -15,7 +15,6 @@ Development Process
 
    /process/overview*
    /process/release-process*
-   /process/asset-guidelines*
 
 Community Process
 -------------------
@@ -27,7 +26,6 @@ Community Process
    /process/community-overview*
    /process/community-systems*
    /process/help-wanted*
-   /process/marketing-guidelines*
    /process/community-guidelines*
 
 Core Developer Handbook
@@ -70,7 +68,8 @@ Marketing
 
    /process/casestudy*
    /process/guest-article*
-   /process/additional-asset-guidelines*
+   /process/marketing-guidelines*
+   /process/asset-guidelines*
    /process/end-user-documentation*
    
 Partners
