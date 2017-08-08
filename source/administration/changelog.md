@@ -180,31 +180,59 @@ Many thanks to all our contributors. In alphabetical order:
 
 /platform
 
-
-/mattermost-mobile
-
-
-/mattermost-redux
-
-
-/mattermost-api-reference
-
+- [94117nl](https://github.com/94117nl), [asaadmahmood](https://github.com/asaadmahmood), [ccbrown](https://github.com/ccbrown), [coreyhulen](https://github.com/coreyhulen), [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [csduarte](https://github.com/csduarte), [debanshuk](https://github.com/debanshuk), [dmeza](https://github.com/dmeza), [enahum](https://github.com/enahum), [fraziern](https://github.com/fraziern), [grundelborg](https://github.com/grundelborg), [harshavardhana](https://github.com/harshavardhana), [hmhealey](https://github.com/hmhealey), [jasonblais](https://github.com/jasonblais), [jwilander](https://github.com/jwilander), [lindalumitchell](https://github.com/lindalumitchell), [megos](https://github.com/megos), [moonmeister](https://github.com/moonmeister), [MusikPolice](https://github.com/MusikPolice), [Ppjet6](https://github.com/Ppjet6), [saturninoabril](https://github.com/saturninoabril), [Whiteaj36](https://github.com/Whiteaj36)
 
 /docs
 
-/desktop
+- [amyblais](https://github.com/amyblais), [bkmgit](https://github.com/bkmgit), [esethna](https://github.com/esethna), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [JeffSchering](https://github.com/JeffSchering), [john-combs](https://github.com/john-combs), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [lindy65](https://github.com/lindy65), [pichouk](https://github.com/pichouk), [prixone](https://github.com/prixone), [Samiksha416](https://github.com/Samiksha416)
 
-/mattermost-kubernetes
+/mattermost-mobile
 
-
+- [csduarte](https://github.com/csduarte), [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [lfbrock](https://github.com/lfbrock)
 
 /mattermost-push-proxy
 
+- [coreyhulen](https://github.com/coreyhulen)
+
+/mattermost-redux
+
+- [94117nl](https://github.com/94117nl), [csduarte](https://github.com/csduarte), [enahum](https://github.com/enahum), [grundelborg](https://github.com/grundelborg), [hmhealey](https://github.com/hmhealey), [jwilander](https://github.com/jwilander), [saturninoabril](https://github.com/saturninoabril)
+
+/mattermost-api-reference
+
+- [ccbrown](https://github.com/ccbrown), [grundelborg](https://github.com/grundelborg), [jwilander](https://github.com/jwilander), [thePanz](https://github.com/thePanz)
+
+/marked
+
+- [hmhealey](https://github.com/hmhealey)
+
+/mattermost-selenium
+
+- [lindalumitchell](https://github.com/lindalumitchell)
+
+/mattermost-kubernetes
+
+- [crspeller](https://github.com/crspeller)
 
 /mattermost-docker
 
+- [jminardi](https://github.com/jminardi), [jnbt](https://github.com/jnbt), [pichouk](https://github.com/pichouk)
+
+/matterbuild
+
+- [crspeller](https://github.com/mattermost/crspeller)
 
 /mattermost-load-test
+
+- [crspeller](https://github.com/mattermost/crspeller)
+
+/mattermost-bot-sample-golang
+
+- [fkr](https://github.com/fkr), [hmhealey](https://github.com/hmhealey)
+
+/mattermost-heroku
+
+- [it33](https://github.com/it33), [jwilander](https://github.com/jwilander)
 
 
 
