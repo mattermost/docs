@@ -13,13 +13,18 @@ Scheduled release date: 2017-08-16
 
 ### Highlights
 
-#### Built-in JIRA Integration
+#### JIRA Integration
+- Built-in JIRA integration that can post to multiple channels using one webhook. [See documentation](https://about.mattermost.com/default-jira-plugin) 
 
 #### Personal Access Tokens
+- Enables integrations to authenticate against the REST API
 
 #### Updated iOS and Android Apps
+- v1.1 of the Native [iOS](https://itunes.apple.com/us/app/mattermost/id1257222717?mt=8) and [Android]() Apps are released with support for search, group messaging, viewing emoji reactions and improved performance on poor connections
 
-#### Elasticsearch Beta ([Enterprise Edition E10 & E20](https://about.mattermost.com/pricing/))
+#### Elasticsearch Beta ([Enterprise Edition E20](https://about.mattermost.com/pricing/))
+- Connect your Elasticsearch server to Mattermost, then build and manage your post index via the System Console interface
+- Elasticsearch offers a more versatile search platform to overcome existing search issues
 
 ### Improvements
 
@@ -93,17 +98,33 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 **Changes to Team Edition and Enterprise Edition**:
 
-- `FileSettings.EnableMobileUpload: true`
-- `FileSettings.EnableMobileDownload": true`
-- `PluginSettings.Plugins`
-- `ServiceSettings.EnableUserAccessTokens: false`
-- `EmailSettings.EnableSMTPAuth: false`
+- Under `ServiceSettings` in `config.json`:
+  - `"EnableUserAccessTokens": false` to enable user access tokens for integrations to authenticate against the REST API
+- Under `EmailSettings` in `config.json`:
+  - Added `"EnableSMTPAuth": false` to support SMTP servers requiring no authentication
+  - Added `"PushNotificationContents": "generic"` to specify the amount of detail sent in push notification contents
+- Under `SupportSettings` in `config.json`:
+  - Added `"AdministratorsGuideLink": "https://about.mattermost.com/administrators-guide/"` to link to the Administrators Guide from the System Console
+  - Added `"TroubleshootingForumLink": "https://about.mattermost.com/troubleshooting-forum/"` to link to the Troubleshooting Forum from the System Console
+  - Added `"CommercialSupportLink": "https://about.mattermost.com/commercial-support/"` to link to Commercial Support from the System Console
 
 **Additional Changes to Enterprise Edition**:
 
-- `ElasticsearchSettings.PostIndexReplicas: 2`
-- `ElasticsearchSettings.PostIndexShards: 1`
-XXXXXX Add the rest of Elasticsearch settings that went in for 4.0
+- Under `FileSettings` in `config.json`:
+  - Added `"EnableMobileUpload": true` to enable file uploads on mobile devices
+  - Added `"EnableMobileDownload": true` to enable file downloads on mobile devices
+- Under `JobSettings` in `config.json`:
+  - Added `"RunJobs": true` to enable running jobs on the jobs server
+  - Added `"RunScheduler": true` to enable scheduling jobs on the job server
+- Under `ElasticsearchSettings` in `config.json`:
+  - Added `"ConnectionUrl": "http://dockerhost:9200"` to set the URL of the Elasticsearch server
+  - Added `"Username": ""` to specify the username to access the Elasticsearch server
+  - Added `"Password": ""` to specify the password to access the Elasticsearch server
+  - Added `"EnableIndexing": false` to enable Elasticsearch indexing
+  - Added `"EnableSearching": false` to enable searching using Elasticsearch
+  - Added `"Sniff": true` to enable sniffing on the Elasticsearch server
+  - Added `"PostIndexReplicas": 1` to specify how many replicas to use for each post index
+  - Added `"PostIndexShards": 1` to specify how many shards to use for each post index
 
 ### Database Changes
 
@@ -124,36 +145,34 @@ XXXXXX Add the rest of Elasticsearch settings that went in for 4.0
 - All APIv3 endpoints are scheduled for removal on January 16, 2018.
 
 **Added routes (API v4)**
-- `GET api/v4/jobs`
-- `POST api/v4/jobs`
-- `GET api/v4/jobs/{job_id:[A-Za-z0-9]+}`
-- `POST api/v4/jobs/{job_id:[A-Za-z0-9]+}/cancel`
-- `GET api/v4/jobs/type/{job_type:[A-Za-z0-9_-]+}`
-- `POST api/v4/elasticsearch/purge_indexes`
-- `POST api/v4/users/{user_id:[A-Za-z0-9]+}/tokens`
-- `GET api/v4/users/{user_id:[A-Za-z0-9]+}/tokens`
-- `GET api/v4/users/{user_id:[A-Za-z0-9]+}/tokens/{token_id:[A-Za-z0-9]+}`
-- `POST api/v4/users/{user_id:[A-Za-z0-9]+}/tokens/revoke`
+See [api.mattermost.com](https://api.mattermost.com/) for more details:
+- `GET` at `api/v4/jobs`
+- `POST` at `api/v4/jobs` 
+- `GET` at `api/v4/jobs/{job_id:[A-Za-z0-9]+}`
+- `POST` at `api/v4/jobs/{job_id:[A-Za-z0-9]+}/cancel`
+- `GET` at `api/v4/jobs/type/{job_type:[A-Za-z0-9_-]+}`
+- `POST` at `api/v4/elasticsearch/purge_indexes`
+- `POST` at `api/v4/users/{user_id:[A-Za-z0-9]+}/tokens`
+- `GET` at `api/v4/users/{user_id:[A-Za-z0-9]+}/tokens`
+- `GET` at `api/v4/users/{user_id:[A-Za-z0-9]+}/tokens/{token_id:[A-Za-z0-9]+}`
+- `POST` at `api/v4/users/{user_id:[A-Za-z0-9]+}/tokens/revoke`
 
 ### Known Issues
-XXXXXX Update after RC testing
 
 - Google login fails on the Classic mobile apps.
-- Edge overlays desktop notification sound and system notification sound.
 - Clicking on a channel during the tutorial makes the tutorial disappear.
 - User can receive a video call from another browser tab while already on a call.
-- Search autocomplete picker is broken on Classic Android app.
 - Jump link in search results does not always jump to display the expected post.
 - First load of the emoji picker is slow on low-speed connections or on deployments with hundreds of custom emoji.
 - Scrollbar is sometimes not visible in the left-hand sidebar after switching teams.
 - Certain code block labels don't appear while scrolling on iOS mobile web.
-- Outgoing webhooks do not fire when posts have no text content.
 - A public channel doesn't always show up in another browser tab or client until after refresh.
-- Null values in Slack attachments cause a 500 error for incoming webhooks.
-- Keyboard shortcut CTRL/CMD+SHIFT+A does not close Account Settings.
 - Deleted message doesn't clear unreads or unread mentions.
 - Changing the search term in the More Direct Messages modal doesn't reset the page.
 - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+- Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms
+- Searching with Elasticsearch enabled may not always highlight the searched terms
+- Channels links to channels that the current user does not belong to may not render correctly
 
 ### Contributors
 
