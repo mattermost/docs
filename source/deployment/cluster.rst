@@ -244,7 +244,7 @@ You can apply updates during a period of low load, but if your HA cluster is siz
 
 .. note::
 
-  Do not modify configuration settings through the System Console. Otherwise you will have two servers with different `config.json` files in a HA cluster causing a refresh every time a user connects to a different app server.
+  Do not modify configuration settings through the System Console. Otherwise you will have two servers with different `config.json` files in an HA cluster causing a refresh every time a user connects to a different app server.
 
 1. Make a backup of your existing ``config.json`` file.
 2. For one of the Mattermost servers, make the configuration changes to ``config.json`` and save the file. Do not reload the file yet.
@@ -355,6 +355,6 @@ When a client WebSocket receives a disconnect it will automatically attempt to r
 App Refreshes Continuously
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When configuration settings are modified through the System Console, the client refreshes every time a user connects to a different app server. This occurs because the servers have different `config.json` files in a HA cluster.
+When configuration settings are modified through the System Console, the client refreshes every time a user connects to a different app server. This occurs because the servers have different `config.json` files in an HA cluster.
 
 Modify configuration settings directly through ``config.json`` `following these steps <https://docs.mattermost.com/deployment/cluster.html#updating-configuration-changes-while-operating-continuously>`_.
