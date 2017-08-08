@@ -75,7 +75,7 @@ How do personal access tokens differ from regular session tokens?
 
 Personal access tokens last forever. As a result, you can more easily integrate with Mattermost, bypassing the `session length limits set in the System Console <https://docs.mattermost.com/administration/config-settings.html#sessions>`_.
 
-Moreover, you can optionally assign additional roles for the account creating personal access tokens, letting the account to post to any channel in Mattermost, including direct message.
+Moreover, you can optionally assign additional roles for the account creating personal access tokens, letting the account post to any channel in Mattermost, including direct message.
 
 Should I be worried the personal access tokens last forever?
 .............................................................
