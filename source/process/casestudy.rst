@@ -92,6 +92,14 @@ If you're completing the questionnaire by email, please send a copy of the quest
 
 Thank you so much for being part of our community!
 
+Case Study Interview Process
+---------------------------------------------
+
+- The call will take place after the customer case study contact has completed the above questionnaire.
+- The case study writer should also be on the call.
+- At the beginning of the call, the customer is asked if it is okay that the interview will be recorded to ensure accurate note-taking. Once agreed, the interview is then recorded via Zoom and the recording is transcribed after the call.
+- A draft of the case study in appropriate format is sent to the customer for review in 1-2 weeks after the call.
+
 Written Case Study Lay Out
 ----------------------------
 
