@@ -17,11 +17,11 @@ Creating a Personal Access Token
 
 3 - To create an access token with a non-admin account, you must first give it the appropriate permissions. Go to **System Console > Users**, search for the user account, and select **Manage Roles** from the dropdown.
 
-	.. image:: ../source/images/access_token_manage_roles.png
+	.. image:: ../../source/images/access_token_manage_roles.png
 
 4 - Select **Allow this account to generate user access tokens.**
 
-	.. image:: ../source/images/access_tokens_additional_roles.png
+	.. image:: ../../source/images/access_tokens_additional_roles.png
   
   // XXX This image needs UI tweaks from Asaad
 
