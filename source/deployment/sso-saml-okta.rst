@@ -1,7 +1,7 @@
 Configure SAML with Okta
 ========================
 
-The following process provides steps to configure SAML with Okta for Mattermost.
+The following process provides steps to configure SAML 2.0 with Okta for Mattermost.
 
 .. contents::
   :backlinks: top
