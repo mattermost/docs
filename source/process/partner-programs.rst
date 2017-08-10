@@ -67,8 +67,6 @@ Order Processing
    - Send the customer contact a request to complete a `customer registration form <https://about.mattermost.com/customer-registration/>`_ (password provided after PO is sent), which includes an agreement to accept `Enterprise Edition Subscription Terms for Purchase by Resale <https://about.mattermost.com/customer-terms-and-conditions/>`_.
    - After the customer registration form is complete, it will be reviewed within one business day and a license key issued via email
    - Issue you an invoice (payment due within 30 days)
-   
-Certified Reseller Developer License
 
 Mattermost Deployment Solutions Partner Program
 ------------------------------------------------------------
