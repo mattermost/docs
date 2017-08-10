@@ -22,8 +22,6 @@ Creating a Personal Access Token
 4 - Select **Allow this account to generate user access tokens.**
 
 	.. image:: ../../source/images/access_tokens_additional_roles.png
-  
-  // XXX This image needs UI tweaks from Asaad
 
 You may optionally allow the account to post to any channel in your Mattermost server, including direct messages by choosing the **post:all** role. **post:channels** role allows the account to post to any public channel in the Mattermost server.
 
@@ -32,8 +30,6 @@ Then hit **Save**.
 5 - Sign in to the user account to create a personal access token.
 
 6 - Go to **Account Settings > Security > Personal Access Tokens** and click **Create New Token**.
-
-  // XXX Take a screenshot
 
 7 - Enter a description for the token, so you remember what it's used for. Then hit **Save**.
 
@@ -45,6 +41,8 @@ Then hit **Save**.
 8 - Copy the access token now for your integration and store it in a secure location. You won't be able to see it again!
 
 9 - You're all set! You can now use the personal access token for integrations to interact with your Mattermost server and `authenticate against the Mattermost REST API <https://about.mattermost.com/default-api-authentication>`_.
+
+	.. image:: ../../source/images/access_token_settings.png
 
 Revoking a Personal Access Token
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
