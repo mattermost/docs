@@ -36,7 +36,29 @@ Let's learn how to create a simple incoming webhook that posts the following mes
 Parameters and formatting
 --------------------------
 
-Below are additional parameters to customize the message posted to Mattermost.
+The following payload gives an example webhook that uses additional parameters and formatting options.
+
+  .. code-block::
+
+    payload={
+      "channel": "town-square",
+      "username": "test-automation",
+      "icon_url": "https://www.mattermost.org/wp-content/uploads/2016/04/icon.png",
+      "text": "#### Test results for July 27th, 2017\n<!channel> please review failed tests.\n
+      | Component  | Tests Run   | Tests Failed                                   |
+      |:-----------|:-----------:|:-----------------------------------------------|
+      | Server     | 948         | :white_check_mark: 0                           |
+      | Web Client | 123         | :warning: 2 [(see details)](http://linktologs) |
+      | iOS Client | 78          | :warning: 3 [(see details)](http://linktologs) |
+      "
+      }
+
+This will be displayed in the Town Square channel.
+
+.. image:: ../images/incoming_webhooks_full_example.png
+  :width: 50 px
+
+Below we give a brief description of each parameter to help you customize the webhook post in Mattermost.
 
 Override the channel
 ~~~~~~~~~~~~~~~~~~~~~
@@ -114,31 +136,6 @@ For example, to create a message with a heading, and an italicized text on the n
 
 Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` in the JSON payload.
 
-Complete incoming webhook example
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The following payload gives an example webhook that uses the attributes mentioned above.
-
-  .. code-block::
-
-    payload={
-      "channel": "town-square",
-      "username": "test-automation",
-      "icon_url": "https://www.mattermost.org/wp-content/uploads/2016/04/icon.png",
-      "text": "#### Test results for July 27th, 2017\n<!channel> please review failed tests.\n
-      | Component  | Tests Run   | Tests Failed                                   |
-      |:-----------|:-----------:|:-----------------------------------------------|
-      | Server     | 948         | :white_check_mark: 0                           |
-      | Web Client | 123         | :warning: 2 [(see details)](http://linktologs) |
-      | iOS Client | 78          | :warning: 3 [(see details)](http://linktologs) |
-      "
-      }
-
-This will be displayed in the Town Square channel.
-
-.. image:: ../images/incoming_webhooks_full_example.png
-  :width: 50 px
-
 Tips and best practices
 ------------------------
 
@@ -155,8 +152,6 @@ Tips and best practices
   .. code-block::
 
     {"text": "Hello, this is some text."}
-
-6. It is often best to set up your integration running on Heroku, an AWS server or a server of your own before to test sending messages to Mattermost channels.
 
 Share your integration
 -----------------------
