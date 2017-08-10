@@ -50,7 +50,7 @@ Configure the webhook in your JIRA project
   - Issue: Updated - when an issue is closed or reopened.
   - Issue: Deleted - when an open issue is deleted. If the issue was already closed, deleting it won't send a message to Mattermost.
 
-	.. image:: ../../source/images/jira_webhook_configuration.png
+	.. image:: ../../source/images/jira_webhook-configuration.png
 
 8 - You're all set! JIRA issue events are now sent to your Mattermost channels. To create a second webhook integration, simply replace the team URL and channel URL in step 3.
 
