@@ -43,8 +43,6 @@ When self-hosting restrictions are less strict, AWS, Heroku and other public clo
 
 ## How do I create a bot account with personal access tokens?
 
-You can use the following approach to create a bot account with personal access tokens:
-
 1. Create a bot account using any authentication method, including email and password, AD/LDAP, or SAML.
 2. Create a personal access token for the account [using the steps here](https://docs.mattermost.com/developer/personal-access-tokens.html#creating-a-personal-access-token).
    - The steps also outline how to give the account permissions to post to any channel in your Mattermost server, including direct messages, or to any public channel.
@@ -58,7 +56,7 @@ You can use the following approach to create a bot account with personal access 
 
 ## How do I create a bot account without personal access tokens or webhooks?
 
-Deployments that cannot create bot accounts via webhooks due to security reasons and do not want to use [personal access tokens](https://docs.mattermost.com/developer/personal-access-tokens.html) due to their infinite lifetime, can use the following approach:
+Deployments that cannot create bot accounts via webhooks due to security reasons and do not want to use [personal access tokens](https://docs.mattermost.com/developer/personal-access-tokens.html) with no expiry time, can use the following approach:
 
 1. Create a bot account using a secure email and strong password.
 2. Manually add the account to all teams and channels it needs access to. If your deployment has a lot of teams or channels, you may create a CLI script to automate the process.
