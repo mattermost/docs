@@ -4,8 +4,12 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
-## Release v4.0.2
+## Release v4.0.3
 
+ - **v4.0.3, released 2017-08-10**
+   - Fixed issue when using single-sign-on with GitLab where using a non-English language option in **System Console > Localization** sometimes resulted in a login failure.
+   - Fixed issue with `AmazonS3Region` config setting being ignored in Minio file storage setup.
+   - Fixed issue when using high availability mode in Enteprise Edition E20 where the bind address wasn't set correctly for the hashicorp memberlist.
  - **v4.0.2, released 2017-07-31**
    - Fixed issue when using single-sign-on with GitLab (and in Enterprise Edition with SAML, Office365 and G Suite), where using a non-English language option in Account Settings resulted in a login failure.
    - Fixed issue with custom slash commands not working in direct message channels.
