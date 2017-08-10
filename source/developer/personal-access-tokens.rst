@@ -38,7 +38,7 @@ Then hit **Save**.
 7 - Enter a description for the token, so you remember what it's used for. Then hit **Save**.
 
 .. note::
-  If you create a personal access token for a System Admin account, be careful who you share it with. The token enables a user to have full access to the account, including System Admin privileges.
+  If you create a personal access token for a System Admin account, be extra careful who you share it with. The token enables a user to have full access to the account, including System Admin privileges.
   
   It is recommended to create a personal access token for non-admin accounts.
   
@@ -49,9 +49,9 @@ Then hit **Save**.
 Revoking a Personal Access Token
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A personal access token can be revoked by deleting the token from either user's account settings or from the System Console.
+A personal access token can be revoked by deleting the token from either the user's account settings or from the System Console.
 
-Once deleted, all sessions using the token are deleted and any attempts to interact with the Mattermost server are blocked.
+Once deleted, all sessions using the token are deleted and any attempts using the token to interact with the Mattermost server are blocked.
 
 Account Settings
 .................
@@ -73,7 +73,7 @@ Frequently Asked Questions (FAQ)
 How do personal access tokens differ from regular session tokens?
 ..................................................................
 
-Personal access tokens last forever. As a result, you can more easily integrate with Mattermost, bypassing the `session length limits set in the System Console <https://docs.mattermost.com/administration/config-settings.html#sessions>`_.
+Personal access tokens do not expire. As a result, you can more easily integrate with Mattermost, bypassing the `session length limits set in the System Console <https://docs.mattermost.com/administration/config-settings.html#sessions>`_.
 
 Moreover, you can optionally assign additional roles for the account creating personal access tokens, letting the account post to any channel in Mattermost, including direct message.
 
