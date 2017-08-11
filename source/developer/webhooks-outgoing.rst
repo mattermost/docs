@@ -138,7 +138,7 @@ Mention notifications
 
 You can trigger mention notifications with your incoming webhook message. To trigger a mention, include *@username* in the `text` parameter of the JSON payload.
 
-Channels can mentioned by including *@channel* or *<!channel>*. For example:
+Channels can be mentioned by including *@channel* or *<!channel>*. For example:
 
  .. code-block::
 
