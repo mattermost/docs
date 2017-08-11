@@ -82,7 +82,7 @@ Override the username
 
 You can override the username the messages posts as by specifying a ``username`` parameter in your JSON payload.
 
-For example, to send the message as a `webhook-bot`, use the following payload.
+For example, to send the message as a ``webhook-bot``, use the following payload.
 
   .. code-block::
 
