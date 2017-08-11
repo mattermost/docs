@@ -189,7 +189,7 @@ Translate Slack's proprietary data format to Mattermost
 
 Mattermost automatically translates the data coming from Slack:
 
-1. JSON payloads written for Slack that contain the following are translated to Mattermost markdown and rendered equivalently to Slack:
+1. JSON payloads written for Slack, that contain the following, are translated to Mattermost markdown and rendered equivalently to Slack:
    
    - *<>* to denote a URL link, such as ``payload={"text": "<http://www.mattermost.com/>"}``
    - *|* within a *<>* to define linked text, such as ``payload={"text": "Click <http://www.mattermost.com/|here> for a link."}``
