@@ -70,7 +70,7 @@ Each Mattermost installation comes with some built-in slash commands that are re
     "/msg *{@username}* *{message}*", "Send a Direct Message to a user", "/msg @alice hello"
     "/search *{text}*", "Search text in messages", "/search meeting"
     "/settings", "Open the Account Settings dialog", "/settings"
-    "/shortcuts", "Display a list of keyboard shortcuts", "shortcuts"
+    "/shortcuts", "Display a list of keyboard shortcuts", "/shortcuts"
     "/shrug *{message}*", "Add ``¯\_(ツ)_/¯`` to your message", "/shrug oh well"
 
 Enabling Custom Commands
