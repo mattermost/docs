@@ -24,7 +24,9 @@ Suppose you want to write an external application, which executes software tests
 You can follow these general guidelines to set up a Mattermost outgoing webhook for your application.
 
 1 - First, go to **Main Menu > Integrations > Outgoing Webhook**. If you don't have the **Integrations** option in your Main Menu, outgoing webhooks may not be enabled on your Mattermost server. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator.
+
 2 - Click **Add Outgoing Webhook** and add name and description for the webhook.
+
 3 - Choose the content type by which the response will be sent.
 
  - If ``application/x-www-form-urlencoded`` is chosen, the Mattermost server assumes you will be encoding the parameters in a URL format.
@@ -91,8 +93,6 @@ which would render in Mattermost as:
 
 .. image:: ../images/webhooksTable.PNG
 
-For information on what format is supported in the JSON payload, as well as the 
-
 11 - You're all set! See below for message formatting options for the JSON payload, as well as tips and best practices for setting up your outgoing webhook.
 
 Parameters and formatting
@@ -105,7 +105,7 @@ Override the username
 
 You can override the username the messages posts as by specifying a ``username`` parameter in your JSON payload.
 
-For example, to send the message as a `webhook-bot`, use the following payload.
+For example, to send the message as a ``webhook-bot``, use the following payload.
 
   .. code-block::
 
