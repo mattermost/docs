@@ -47,17 +47,22 @@ Typically a "Mattermost unreachable" error message will be displayed warning use
 
 WSS is a secure, encrypted connection and is highly recommended. An unencrypted WS connection may be used in initial testing and configuration but it is not recommended for production.
 
-## Network Access 
+## Network Access and Multi-Factor Authentication 
 
-While Mattermost is focused on private cloud deployment, there are a range of options for configuring network access for Team Edition (TE) and Enterprise Edition (EE): 
+While Mattermost is focused on private cloud deployment, there are a range of options for configuring network access for Team Edition (TE) and Enterprise Edition (EE). 
+
+- In general, Mattermost recommends at least three-factor authentication ("3FA"), with access via Virtual Private Network client (1) using at least a secondary authentication option (2), plus Mattermost authentication (3). 
+- For deployments accessible from the open internet without 3FA, it is highly recommended to have dedicated staff managing system security and maintaining security updates in addition to enabling 2FA features in Mattermost Enterprise Edition. For non-enterprise deployments 3FA is recommended. 
+
+While there are a multitude of different deployment configurations, the following outline popular configurations: 
 
 - **1. Private Network only with MFA (TE & EE)** - Access to Mattermost only available on private network. Multi-factor authentication includes securing access to computing devices along with physical security within buildings. Mobile web view used in place of Native Mobile Applications. 
-- **2. Private Network or VPN with MFA (TE & EE)** - Private network deployment in 1) plus the option of accessing Mattermost using a virtual private network ("VPN") client supporting multi-factor authentication. 
-- **3. Private Network or VPN with MFA including private Mobile Apps (TE & EE)** - Deployment in 2) with deployment of private mobile solution including both mobile applications and mobile push notification services compiled by the organization with organization-controlled certificates or shared keys to connect push notifications sent by internal service to mobile applications. 
-- **4. Private Network or VPN with MFA, plus private Mobile Apps with EMM (TE & EE)** - Deployment in 3) with the additon of an enterprise mobility management solution such as Mobile Iron, Blackberry Dynamics or AirWatch. 
-- **5. Private Network or VPN with MFA, plus public Mobile Apps with 2FA (EE-only)** - Deployment in 2) plus use of publicly available mobile apps in iTunes or Google Play with the additional of two-factor authentication available in Enterprise Edition via single-sign-on providers like Okta, OneLogin, and SAML-based options, or user credentials with the addition of Google Authenticator. 
-- **6. No VPN with 2FA (EE recommended)** - Similar to 5) with web, desktop and mobile experiences available outside private cloud with 2FA enabled via Mattermost Enterprise Edition. For non-Enterprise Edition deployments, 3FA is recommended ("three factor authentication" with VPN using MFA in addition to Mattermost account authentication). 
-- **7. No VPN, no 2FA (TE & EE)** - Recommended only for non-confidential, unimportant conversations. 
+- **2. Private Network or VPN with 3FA (TE & EE)** - Private network deployment in 1) plus the option of accessing Mattermost using a minimum of three-factor authentication, consisting of a Virtual Private Network ("VPN") client (1) supporting a secondary authentication method (2), plus Mattermost's own authentication (3).  
+- **3. Private Network or VPN, including private Mobile Apps, with 3FA (TE & EE)** - Deployment in 2) with privately-compiled mobile solution including both mobile applications and mobile push notification services compiled by the organization with organization-controlled keys or certificates (versus using public Mobile Apps, which use keys and certificates controlled by Mattermost, Inc.). 
+- **4. Private Network or VPN with 3FA plus private Mobile Apps with EMM (TE & EE)** - Deployment in 3) with the additon of an enterprise mobility management solution such as Mobile Iron, Blackberry Dynamics or AirWatch for access to mobile apps in place of VPN clients. 
+- **5. Private Network or VPN with 3FA, plus public Mobile Apps with 2FA (EE-only)** - Deployment in 2) plus use of publicly available mobile apps in iTunes or Google Play with the additional of two-factor authentication available in Enterprise Edition via single-sign-on providers like Okta, OneLogin, and SAML-based options, or user credentials with the addition of Google Authenticator. 
+- **6. No VPN with 2FA (EE-only)** - Similar to 5) with web, desktop and mobile experiences available outside private cloud with 2FA enabled via Mattermost Enterprise Edition, recommended only for enterprises appropriately resourced to provide appropriate network security and monitoring for systems exposed to open internet. For non-enterprise deployments, 3FA is recommended (see above). 
+- **7. No VPN, no 2FA (TE & EE)** - Recommended only for non-confidential, unimportant conversations where impact of a compromised system is not material. 
 
 ### VPN Setup
 
