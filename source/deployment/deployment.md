@@ -51,7 +51,7 @@ WSS is a secure, encrypted connection and is highly recommended. An unencrypted 
 
 While Mattermost is focused on private cloud deployment, there are a range of options for configuring network access for Team Edition (TE) and Enterprise Edition (EE). 
 
-- In general, Mattermost recommends at least three-factor authentication ("3FA"), with access via Virtual Private Network client (1) using at least a secondary authentication option (2), plus Mattermost authentication (3). 
+- In general, Mattermost recommends at least three-factor authentication ("3FA"), with access via Virtual Private Network client (1) using at least a secondary authentication option (2), plus Mattermost authentication (3). [OpenVPN](https://openvpn.net/) is a popular solution for 3FA. 
 - For deployments accessible from the open internet without 3FA, it is highly recommended to have dedicated staff managing system security and maintaining security updates in addition to enabling 2FA features in Mattermost Enterprise Edition. For non-enterprise deployments 3FA is recommended. 
 
 While there are a multitude of different deployment configurations, the following outline popular configurations: 
