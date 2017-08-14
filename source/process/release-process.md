@@ -302,8 +302,7 @@ Once final dot release build is ready to cut:
         - Major Feature Complete Meeting on T-12 at 10:00am San Francisco time
         - Judgment Day Meeting on T-10 at 10:00am San Francisco time
         - Code Complete Meeting on T-8 at 10:00am San Francisco time
-        - Team-wide Triage each weekday starting at T-8 and ending at T-2 at 9:00am San Francisco time, with optional attendance
-        - Release Update each weekday starting at T-7 and ending at T-2 at 10:00am San Francisco time
+        - Release Triage and Update Meeting each weekday starting at T-8 and ending at T-2 at 9:00am San Francisco time for PM, QA and release dev.
     - Add “Release Retrospective” item to next team meeting, asking each core team member to give a letter grade (and brief explanation) for:
         - Release Quality
         - Release Process
