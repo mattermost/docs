@@ -16,8 +16,8 @@ Use outgoing webhooks to post automated responses to posts made by your users. O
 .. toctree::
 	:maxdepth: 2
 
-Creating integrations using outgoing webhooks
-----------------------------------------------
+Create an Outgoing Webhook
+----------------------------
 
 Suppose you want to write an external application, which executes software tests after someone posts a message starting with the word ``#build`` in the ``town-square`` channel.
 
@@ -95,7 +95,7 @@ which would render in Mattermost as:
 
 11 - You're all set! See below for message formatting options for the JSON payload, as well as tips and best practices for setting up your outgoing webhook.
 
-Parameters and formatting
+Parameters and Formatting
 --------------------------
 
 Below we give a brief description of additional parameters that help you customize the webhook post in Mattermost.
@@ -159,7 +159,7 @@ For example, to create a message with a heading, and an italicized text on the n
 
 Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` in the JSON payload.
 
-Tips and best practices
+Tips and Best Practices
 ------------------------
 
 1. Webhooks are designed to post messages. For other actions such as channel creation, use the `Mattermost APIs <../developer/api.html>`_.
@@ -172,7 +172,7 @@ Tips and best practices
 
 5. The external application may be written in any programming language. It needs to provide a URL which reacts to the request sent by your Mattermost server, and send an HTTP POST in the required JSON format as a response.
  
-Share your integration
+Share Your Integration
 -----------------------
 
 If you've built an integration for Mattermost, please consider `sharing your work <https://www.mattermost.org/share-your-mattermost-projects/>`_ in our `app directory <https://about.mattermost.com/default-app-directory/>`_.
@@ -196,7 +196,7 @@ Mattermost automatically translates the data coming from Slack:
 
 2. The HTTP POST request body sent to a web service is formatted the same as Slack's. This means your Slack integration's receiving function does not need change to be compatible with Mattermost.
   
-Known Slack Compatibility Issues
+Known Slack compatibility issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Using ``icon_emoji`` to override the username is not supported.
