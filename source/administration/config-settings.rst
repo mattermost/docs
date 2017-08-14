@@ -1622,13 +1622,15 @@ Note: The ``http://push-test.mattermost.com`` provided for testing push notifica
 
 Push Notification Contents
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Send generic description with user and channel names**: Selecting "Send generic description with user and channel names" provides push notifications with generic messages, including names of users and channels but no specific details from the message text.
+**Send generic description with only sender name**: Push notifications include only the name of the person who sent the message but no information about channel name or message text.
+
+**Send generic description with user and channel names**: Push notifications include names of users and channels but no specific details from the message text.
 
 **Send full message snippet**: Selecting "Send full message snippet" sends excerpts from messages triggering notifications with specifics and may include confidential information sent in messages. If your Push Notification Service is outside your firewall, it is HIGHLY RECOMMENDED this option only be used with an "https" protocol to encrypt the connection.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PushNotificationContents": "generic"`` with options ``generic`` and ``full`` for above settings respectively.           |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"PushNotificationContents": "generic"`` with options ``generic_no_channel``, ``generic`` and ``full`` for above settings respectively.           |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 **Troubleshooting Push Notifications**
 
