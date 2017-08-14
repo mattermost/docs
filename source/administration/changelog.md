@@ -40,6 +40,8 @@ Scheduled release date: 2017-08-16
 - Ephemeral messages will now always appear as parent posts
 
 #### Notifications
+- Added an option to Push Notification Contents to send no channel name or message text
+- Added a new Email Notification Content setting to specify the amount of detail sent in email notification
 - Updated the default email frequency to 15 minutes if email batching is enabled by the System Admin
 - Users are now prompted from Account Settings to set Edge notification sounds in their browser settings
 - Updated the desktop notification text for incoming webhooks to more accurately reflect the payload
@@ -102,7 +104,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
   - `"EnableUserAccessTokens": false` to enable user access tokens for integrations to authenticate against the REST API
 - Under `EmailSettings` in `config.json`:
   - Added `"EnableSMTPAuth": false` to support SMTP servers requiring no authentication
-  - Added `"PushNotificationContents": "generic"` to specify the amount of detail sent in push notification contents
+  - Added `"EmailNotificationContentType": "full"` to specify the amount of detail sent in email notification contents
 - Under `SupportSettings` in `config.json`:
   - Added `"AdministratorsGuideLink": "https://about.mattermost.com/administrators-guide/"` to link to the Administrators Guide from the System Console
   - Added `"TroubleshootingForumLink": "https://about.mattermost.com/troubleshooting-forum/"` to link to the Troubleshooting Forum from the System Console
