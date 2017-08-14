@@ -1911,7 +1911,7 @@ Allow File Uploads on Mobile
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E20*
 
-When false, disables file sharing on the server. All file and image uploads on messages are forbidden across clients and devices, including mobile.
+When false, disables file uploads on mobile apps. All file and image uploads on messages are forbidden across clients and devices, including mobile.
 
 +---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableMobileUpload": true`` with options ``true`` and ``false``.       |
