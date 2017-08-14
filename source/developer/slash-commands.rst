@@ -44,8 +44,6 @@ Each Mattermost installation comes with some built-in slash commands that are re
 Custom Slash Command
 ------------------------------
 
-Suppose you want to write an external application, which executes software tests after someone posts a message with /build in the town-square channel. // XXX Some other example
-
 Suppose you want to write an external application that is able to check the weather for certain cities. By creating a custom slash command, and setting up the application to handle the HTTP POST or GET from the command, you can let your users to check the weather in their city using your command, say ``/weather toronto week``.
 
 You can follow these general guidelines to set up a custom Mattermost slash command for your application.
