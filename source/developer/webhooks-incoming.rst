@@ -143,11 +143,13 @@ Tips and Best Practices
 
 2. If the text is longer than 4000 characters, the message is split into multiple consecutive posts, each within the 4000 character limit.
 
-3. Mattermost incoming webhooks are Slack-compatible. You can copy-and-paste code used for a Slack incoming webhook to create Mattermost integrations. Mattermost `automatically translates the Slack's proprietary JSON payload format <../developer/webhooks-incoming#translate-slacks-proprietary-data-format-to-mattermost>`_.
+3. You can restrict who can create incoming webhooks in `System Console > Integrations > Custom Integrations <https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins>`_.
 
-4. The external application may be written in any programming language as long as it supports sending an HTTP POST request in the required JSON format to a specified Mattermost URL.
+4. Mattermost incoming webhooks are Slack-compatible. You can copy-and-paste code used for a Slack incoming webhook to create Mattermost integrations. Mattermost `automatically translates the Slack's proprietary JSON payload format <../developer/webhooks-incoming#translate-slacks-proprietary-data-format-to-mattermost>`_.
 
-5. For the HTTP request body, if `Content-Type` is specified as `application/json` in the header of the HTTP request, then the body can be direct JSON. For example,
+5. The external application may be written in any programming language as long as it supports sending an HTTP POST request in the required JSON format to a specified Mattermost URL.
+
+6. For the HTTP request body, if `Content-Type` is specified as `application/json` in the header of the HTTP request, then the body can be direct JSON. For example,
 
   .. code-block::
 
