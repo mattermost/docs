@@ -16,7 +16,7 @@ Use `curl <https://curl.haxx.se/>`_, a simple command line tool for sending HTTP
 .. toctree::
 	:maxdepth: 2
 
-Creating a simple incoming webhook
+Simple Incoming Webhook
 -----------------------------------
 
 Let's learn how to create a simple incoming webhook that posts the following message to Mattermost.
@@ -33,7 +33,7 @@ Let's learn how to create a simple incoming webhook that posts the following mes
 
     curl -i -X POST -d 'payload={"text": "Hello, this is some text\nThis is more text. :tada:"}' http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
 
-Parameters and formatting
+Parameters and Formatting
 --------------------------
 
 The following payload gives an example webhook that uses additional parameters and formatting options.
@@ -136,7 +136,7 @@ For example, to create a message with a heading, and an italicized text on the n
 
 Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` in the JSON payload.
 
-Tips and best practices
+Tips and Best Practices
 ------------------------
 
 1. Webhooks are designed to post messages. For other actions such as channel creation, use the `Mattermost APIs <../developer/api.html>`_.
@@ -153,7 +153,7 @@ Tips and best practices
 
     {"text": "Hello, this is some text."}
 
-Share your integration
+Share Your Integration
 -----------------------
 
 If you've built an integration for Mattermost, please consider `sharing your work <https://www.mattermost.org/share-your-mattermost-projects/>`_ in our `app directory <https://about.mattermost.com/default-app-directory/>`_.
@@ -188,7 +188,7 @@ GitLab is the leading open-source alternative to GitHub and offers built-in inte
 3. Optionally set the **Username** you'd like displayed when the notification is made. Leave the **Channel** field blank.
 4. Click **Save** then test the settings to confirm messages are sent successfully to Mattermost.
 
-Known Slack Compatibility Issues
+Known Slack compatibility issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Using ``icon_emoji`` to override the username is not supported.
