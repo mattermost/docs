@@ -23,7 +23,7 @@ For a quick evaluation of mobile applications after the Mattermost server is dep
 
   - Go to **System Console > Notifications > Mobile Push > Send Push Notifications** and select **Use iOS and Android apps on iTunes and Google Play with TPNS**. 
 
-  - *Optional:* To show full messages snippets in mobile push notifications, set **System Console > Notifications > Mobile Push > Push Notification Contents** to **Send full message snippet**. Most deployments enable this unless they're under specific policies to not allow confidential information in push notifications. 
+  - *Optional:* To show full messages snippets in mobile push notifications, set **System Console > Notifications > Mobile Push > Push Notification Contents** to **Send full message snippet**. Most deployments enable this unless they're under specific policies to not allow confidential information, such as message contents and channel name, in push notifications. 
 
 3. Download the mobile applications to your mobile device: 
 
@@ -131,7 +131,7 @@ Securing your Mattermost Push Notification Service
 
 The following options are available for securing your push notification service: 
 
-- The system can be `configured to prevent the inclusion of message contents in push notifications <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_ and send only generic messages that a notification event took place. Default server settings have message contents turned off. 
+- The system can be `configured to prevent the inclusion of message contents and channel name in push notifications <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_ and send only generic messages that a notification event took place. Default server settings have message contents turned off. 
 - Push notifications can also be disabled entirely depending on security requirements. Default server settings have push notifications disabled. 
 - When using a privately-hosted MPNS, use encrypted TLS connections between MNPS and APNS, MPNS and GCM, MPNS and your Mattermost server.
 - When using Mattermost mobile apps in iTunes and Google Play, purchase an annual subcription to Mattermost Enterprise Edition E10 or higher, which offers a Hosted Push Notification Service (HPNS), offering: 
