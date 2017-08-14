@@ -181,6 +181,29 @@ Respond to the issue with the following note
 
   You get **10** votes in the feature idea forum, and each one influences the future of the project.
 
+Licensing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To ask someone to add a license to a GitHub repo, open an issue with the following note, titled ``Add an open source license?``:
+
+.. code-block:: text
+
+  Thanks for sharing this project! We'd love to use it as part of the Mattermost open source project (https://www.mattermost.org/) in our [React Native mobile app](https://github.com/mattermost/mattermost-mobile) (which users an [Apache 2.0 license](https://github.com/mattermost/mattermost-mobile/blob/master/LICENSE.txt)). 
+
+  Would you consider adding either an MIT or an Apache 2.0 license? 
+
+  To do so, in GitHub you can hit "Create new file" and name a file `LICENSE.txt`
+
+  ![image](https://cloud.githubusercontent.com/assets/177788/19657017/36238482-99d7-11e6-9fd0-f507970891c7.png)
+
+  This will prompt GitHub to offer a license template: 
+
+  ![image](https://cloud.githubusercontent.com/assets/177788/19657044/5a2d8b66-99d7-11e6-8164-ac7f90b10646.png)
+
+  If you use either an MIT license or an Apache 2.0 license it would make it easy to add your work to other open source projects, and we'd love to include your work in ours. 
+
+  Thanks kindly for your consideration.
+
 Hard Questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
