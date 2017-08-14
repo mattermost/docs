@@ -41,9 +41,22 @@ For self-hosted deployments in small setups you might host integrations on the s
 
 When self-hosting restrictions are less strict, AWS, Heroku and other public cloud options could also be used.
 
-## How do I create a bot account without using webhooks?
+## How do I create a bot account with personal access tokens?
 
-Deployments that cannot create bot accounts via webhooks due to security reasons can use the following approach:
+1. Create a bot account using any authentication method, including email and password, AD/LDAP, or SAML.
+2. Create a personal access token for the account [using the steps here](https://docs.mattermost.com/developer/personal-access-tokens.html#creating-a-personal-access-token).
+   - The steps also outline how to give the account permissions to post to any channel in your Mattermost server, including direct messages, or to any public channel.
+3. Include the personal access token from step 2 as part of the `Authorization` header on API requests from your integration.
+   - To confirm the token works, you can have your bot make a simple `GET` request to `/api/v4/users/me` with the `Authorization: bearer <yourtokenhere>` in the header. If it returns a 200 with the bot's user object in the response, the API request was made successfully.
+     ```
+     GET /api/v4/users/me HTTP/1.1
+     Authorization: bearer <yourtokenhere>
+     Host: your-mattermost-url.com
+     ```
+
+## How do I create a bot account without personal access tokens or webhooks?
+
+Deployments that cannot create bot accounts via webhooks due to security reasons and do not want to use [personal access tokens](https://docs.mattermost.com/developer/personal-access-tokens.html) with no expiry time, can use the following approach:
 
 1. Create a bot account using a secure email and strong password.
 2. Manually add the account to all teams and channels it needs access to. If your deployment has a lot of teams or channels, you may create a CLI script to automate the process.
