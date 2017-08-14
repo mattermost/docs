@@ -3,11 +3,99 @@
 Slash Commands
 ==============
 
-Slash commands, like :doc:`Outgoing Webhooks <../developer/webhooks-outgoing/>`, allow users to interact with external applications right from within Mattermost. The user will enter a ``/`` followed by a command, and optionally some arguments, then an HTTP request will be sent to an external application. What occurs next is decided by how the application responds to the HTTP request.
+Mattermost supports slash commands to easily integrate external applications into the platform. They function similarly to :doc:`outgoing webhooks <../developer/webhooks-outgoing/>`, except they can be used in any channel, including private channels and direct messages.
+
+Messages that being with ``/`` are interpreted as slash commands. The commands will send an HTTP POST request to a web service, and process a response back to Mattermost. Mattermost supports both built-in and custom slash commands // XXX Add hyperlinks.
+
+Built-in slash commands
+------------------------
+
+Each Mattermost installation comes with some built-in slash commands that are ready to use. These commands are available in the `latest Mattermost release <https://about.mattermost.com/download/>`_:
+
+.. csv-table::
+    :header: "Command", "Description", "Example"
+
+    "/away", "Set your status away", "/away"
+    "/offline", "Set your status offline", "/offline"
+    "/online", "Set your status online", "/online"
+    "/code *{text}*", "Display text as a code block", "/code File bugs"
+    "/collapse", "Turn on auto-collapsing of image previews", "/collapse"
+    "/expand", "Turn off auto-collapsing of image previews", "/expand"
+    "/echo *{message}* *{delay in seconds}*", "Echo back text from your account", "/echo Hello World 5"
+    "/header *{text}*", "Edit the channel header", "/header File bugs here"
+    "/purpose *{text}*", "Edit the channel purpose", "/purpose A channel to discuss bugs"
+    "/rename *{text}*", "Rename the channel", "/rename Developers"
+    "/help", "Open the Mattermost help page", "/help"
+    "/invite_people *{name@domain.com ...}*", "Send an email invite to your Mattermost team","/invite_people john@example.com"
+    "/join *{channel-name}*", "Join the open channel", "/join off-topic"
+    "/open *{channel-name}*", "Join the open channel", "/open off-topic"
+    "/leave", "Leave the current channel", "/leave"
+    "/logout", "Log out of Mattermost", "/logout"
+    "/me *{message}*", "Do an action", "/me Hello World"
+    "/msg *{@username}* *{message}*", "Send a Direct Message to a user", "/msg @alice hello"
+    "/search *{text}*", "Search text in messages", "/search meeting"
+    "/settings", "Open the Account Settings dialog", "/settings"
+    "/shortcuts", "Display a list of keyboard shortcuts", "/shortcuts"
+    "/shrug *{message}*", "Add ``¯\_(ツ)_/¯`` to your message", "/shrug oh well"
+
+Creating integrations using slash commands
+----------------------------------------------
+
+Share your integration
+-----------------------
+
+If you've built an integration for Mattermost, please consider `sharing your work <https://www.mattermost.org/share-your-mattermost-projects/>`_ in our `app directory <https://about.mattermost.com/default-app-directory/>`_.
+
+The `app directory <https://about.mattermost.com/default-app-directory/>`_ lists open source integrations developed by the Mattermost community and are available for download, customization and deployment to your private cloud or on-prem infrastructure.
+
+Slack Compatibility
+-------------------
+
+Mattermost makes it easy to migrate integrations written for Slack to Mattermost. 
+
+Translate Slack's proprietary data format to Mattermost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost automatically translates the data coming from Slack:
+
+1. JSON payloads written for Slack, that contain the following, are translated to Mattermost markdown and rendered equivalently to Slack:
+   
+   - *<>* to denote a URL link, such as ``payload={"text": "<http://www.mattermost.com/>"}``
+   - *|* within a *<>* to define linked text, such as ``payload={"text": "Click <http://www.mattermost.com/|here> for a link."}``
+
+2. Both the HTTP POST and GET request bodies sent to a web service are formatted the same as Slack's. This means your Slack integration's receiving function does not need change to be compatible with Mattermost.
+  
+Known Slack Compatibility Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Using ``icon_emoji`` to override the username is not supported.
+2. Referencing  channels using ``<#CHANNEL_ID>`` does not link to the channel.
+3. ``<!here>``, ``<!everyone>``, and ``<!group>`` are not supported.
+4. Parameters "mrkdwn", "parse", and "link_names" are not supported (Mattermost always converts markdown and automatically links @mentions).
+5. Bold formatting supplied as ``*bold*`` is not supported (must be done as ``**bold**``).
+6. Slack assumes default values for some fields if they are not specified by the integration, while Mattermost does not.
+
+Troubleshooting
+---------------
+
+To debug slash commands in **System Console > Logs**, set **System Console > Logging > Enable Webhook Debugging** to ``true`` and set **System Console > Logging > Console Log Level** to ``DEBUG``.
+
+Command with a trigger of 'trigger_word' returned an empty response
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you are using a slash command that previously worked in Slack, try specifying the ``response_type`` for the slash command. 
+
+Slack assumes the ``response_type`` is ``ephemeral`` while Mattermost does not, so the "response_type" must be specified before the command will work.
+^^ // XXX Update
+
+
+
+
+
+
 
 A couple of key points:
 
-- **The general concept is the same as for outgoing webhooks.** Read about :doc:`Outgoing Webhooks <../developer/webhooks-outgoing/>` first to understand the basic concept.
 - **Mattermost slash commands are Slack-compatible.** If you have used Slack's slash commands previously to interact with external applications, you can reuse those same applications with Mattermost. Mattermost will automatically translate Slack's proprietary JSON payload format.
 - **Custom commands support auto-complete.** When you create a custom command for your teammates, you have the option to fill in information about how auto-complete should work with that command. This gives your teammates quick and easy access to use your custom slash command.
 
@@ -41,33 +129,6 @@ Which would render in a Mattermost message as follows:
 
 .. image:: ../images/weatherBot.PNG
   :alt: Shows what the JSON payload renders as in Mattermost
-
-Built-in Commands
------------------
-
-Each Mattermost installation comes with some built-in slash commands that are ready to use. These commands are listed below:
-
-.. csv-table::
-    :header: "Command", "Description", "Example"
-
-    "/away", "Set your status to away", "/away"
-    "/collapse", "Turn on auto-collapsing of image previews", "/collapse"
-    "/echo *{message}* *{delay in seconds}*", "Echo back text from your account", "/echo Hello World 5"
-    "/expand", "Turn off auto-collapsing of image previews", "/expand"
-    "/header *{text}*", "Edit the channel header", "/header File bugs here"
-    "/help", "Open the Mattermost help page", "/help"
-    "/invite_people *{email address}*", "Send an email invite to your Mattermost team","/invite_people john@example.com"
-    "/join *{channel name}*", "Join the open channel", "/join off-topic"
-    "/logout", "Log out of Mattermost", "/logout"
-    "/me", "Do an action", "/me Hello World"
-    "/msg *{@username}* *{message}*", "Send a Direct Message to a user", "/msg @alice hello"
-    "/offline", "Set your status to offline", "/offline"
-    "/online", "Set your status to online", "/online"
-    "/open *{channel name}*", "Join the open channel", "/open off-topic"
-    "/search *{text}*", "Search text in messages", "/search meeting"
-    "/settings", "Open the Account Settings dialog", "/settings"
-    "/shortcuts", "Display a list of keyboard shortcuts", "shortcuts"
-    "/shrug *{message}*", "Add ``¯\_(ツ)_/¯`` to your message", "/shrug oh well"
 
 Enabling Custom Commands
 ------------------------
@@ -153,29 +214,3 @@ Additional Notes:
 2. Including ``@username`` will trigger a mention notification for the person with the specified username, and channels can be mentioned by including *@channel* or *<!channel>*. For example:  ``{"text": "<!channel> this is a notification"}`` would create a message that mentions *@channel*
 
 3. If the text in a response is longer than 4000 characters, the message is split into multiple consecutive posts, each within the 4000 character limit.
-
-Slack Compatibility
--------------------
-
-As mentioned above, Mattermost makes it easy to take integrations written for Slack's proprietary JSON payload format and repurpose them to become Mattermost integrations. The following automatic translations are supported:
-
-1. The HTTP POST and GET request body is formatted the same as Slack's, which means your Slack integration's receiving function should not need to change at all to be compatible with Mattermost
-2. JSON responses designed for Slack using `<>` to note the need to hyperlink a URL, such as ``{"text": "<http://www.mattermost.com/>"}``, are translated to the equivalent markdown in Mattermost and rendered the same as you would see in Slack
-3. Similarly, responses designed for Slack using ``|`` within a ``<>`` to define linked text, such as ``{"text": "Click <http://www.mattermost.com/|here> for a link."}``, are also translated to the equivalent markdown in Mattermost and rendered the same as you would see in Slack
-
-Known Slack Compatibility Issues
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-1. Using icon_emoji to override the username is not supported
-2. Referencing  channels using <#CHANNEL_ID> does not link to the channel
-3. ``<!here>``, ``<!everyone>``, and ``<!group>`` are not supported
-4. Parameters "mrkdwn", "parse", and "link_names" are not supported (Mattermost always converts markdown and automatically links @mentions)
-5. Bold formatting as ``*bold*`` is not supported (must be done as ``**bold**``)
-6. Slack assumes default values for some fields if they are not specified by the integration, while Mattermost does not
-
-Troubleshooting
-~~~~~~~~~~~~~~~
-
-**Command with a trigger of 'trigger_word' returned an empty response**
-
-If you are using a slash command that previously worked in Slack, try specifying the "response_type" for the slash command. Slack assumes the "response_type" is "ephemeral" while Mattermost does not, so the "response_type" must be specified before the command will work.
