@@ -50,9 +50,12 @@ WSS is a secure, encrypted connection and is highly recommended. An unencrypted 
 
 ## VPN Setup
 
-Mattermost is designed to be deployed behind a firewall on your private network, with optional access from the outside over a Virtual Private Network (VPN). This means running a VPN client on PC and mobile devices accessing Mattermost.
+Mattermost offers "modern communication behind your firewall" and is designed deploy on your private network, with optional access from the outside over a Virtual Private Network (VPN) with multi-factor authentication enabled. This means running a VPN client on PC and mobile devices accessing Mattermost.
 
-An alternative option is to run Mattermost from outside your private network by opening standard ports, such as 80 or 443. If this option is taken it is recommended that desktop and mobile clients accessing Mattermost without a VPN use at least the multi-factor authentication feature included in Mattermost Enterprise Edition.
+To deploy a system outside your firewall, by opening standard ports such as 80 and 443, we recommend: 
+
+1. Ensuring that an IT admin is subscribed to the [Mattermost security bulletin](https://about.mattermost.com/security-bulletin/) and able to apply any new security updates. 
+2. Upgrading to Mattermost Enterprise Edition for the ability to use multi-factor authentication without the MFA-enabled VPN client required for Team Edition deployments.
 
 ## Data Center Infrastructure
 

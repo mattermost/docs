@@ -116,6 +116,15 @@ platform channel
     -  `platform channel remove`_ - Remove users from a channel
     -  `platform channel restore`_ - Restore a channel from the archive
 
+.. _channel-value-note:
+
+.. note::
+    **{channel} value**
+
+    For the *add*, *archive*, *delete*, *remove* and *restore* commands, you can specfiy the *{channels}* value by {team}:{channel} using the team and channel URLs, or by using channel IDs. For example, in the following URL the *{channels}* value is *myteam:mychannel*:
+
+    ``https://example.com/myteam/channels/mychannel``
+
 platform channel add
 ~~~~~~~~~~~~~~~~~~~~
 

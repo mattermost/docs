@@ -10,8 +10,8 @@ Use incoming webhooks to post messages to Mattermost public channels, private ch
 .. image:: ../images/incoming_webhooks_sample.png
 *An example of a GitHub integration that posts updates to a Developers channel*
 
-Use `curl <https://curl.haxx.se/>`_, a simple command line tool for sending HTTP requests in the examples that follow.
 
+Use `curl <https://curl.haxx.se/>`_, a simple command line tool for sending HTTP requests in the examples that follow.
 
 .. toctree::
 	:maxdepth: 2

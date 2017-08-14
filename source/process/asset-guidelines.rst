@@ -78,12 +78,13 @@ You can find sample templates for integration promotions, guest blog posts and f
 Integration or Feature Promotion
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Use this `template <https://drive.google.com/file/d/0Bx-9w8QDFlfcVDZuOFduV2RKaXM/view?usp=sharing>`_ as a starting point.
+1. Use this `template (dark background) <https://www.dropbox.com/s/a8tbqxiik1m9i8u/20170717_template_dark.tif?dl=0>`_ or this `template (light background) <https://www.dropbox.com/s/codoct7np20fx3l/20170717_template_light.tif?dl=0>`_ as a starting point.
 2. Change text in the "copy - title" layer following the guidelines in `Feature Title`_.
 3. Change text in the "by Galois, Inc." layer to replace the name with appropriate creator name following the guidelines in `Feature Creator`_.
 4. Change the contents of the "featured image" folder to update representative art following the guidelines in `Feature Representative Art`_.
 5. Replace the "logo - matterhorn" layer to update representative logo(s) following the guidelines in `Mattermost and Representative Logos`_.
-6. Save the finished asset draft in both .TIF and .PNG format, and upload to your "Dropbox Share" folder.
+6. Add a 1 pixel grey stroke border around the rectangular boundary of the banner.
+7. Save the finished asset draft in both .TIF and .PNG format, and upload to your "Dropbox Share" folder.
 
 Integration Blog
 ^^^^^^^^^^^^^^^^^
@@ -126,8 +127,9 @@ Feature Title
   - Sometimes the title is a straightforward description of an app that can now connect to Mattermost, like "Jira integration for Mattermost"
   - Sometimes the title needs to be non-standard, like "Gitter integration for Mattermost via Matterbridge"
 
-3. Title should always be title case
-4. Short titles are better than longer titles
+3. Aim to fit title on two lines. If title is too long, move Feature Representative Art more to the right of the banner to ensure that there is still at least 64px of width between Feature Title and Feature Representative Art.
+4. Title should always be title case
+5. Short titles are better than longer titles
 
 Feature Creator
 ^^^^^^^^^^^^^^^^
@@ -169,10 +171,11 @@ Feature Screenshot
 
 When taking a screenshot of a feature, follow these guidelines:
 
-1. **Complete**: Profile pictures and real people names should be filled out. Use either in-house art, free or purchased clip art
-2. **Authentic**: Try to model a real world interaction. If you're modifying the image such as changing username and profile picture, make sure to do it throughout the image
+1. **Complete**: Profile pictures and real people names should be filled out. Use either in-house art, free or purchased clip art. If you're modifying the image such as changing username and profile picture, make sure to do it throughout the image. Don't show any bugs or UX defects in the product and use the "Mattermost" theme when appropriate.
+2. **Authentic**: Try to model a real world interaction. When possible, highlight DevOps use cases since they are familiar to the majority of our users.
 3. **Oversized**: Provide screenshots that are at least 20-30% larger than needed, so that there's room to rotate and crop the image as needed
-4. **Illustrative**: Try to find screenshots that are representative of the feature
+4. **Illustrative**: Try to find screenshots that are representative of the feature.
+5. **Easy to follow**: The screenshot should be easy to understand at a glance. Avoid using short forms or acronyms in conversations, and choose images that are clear.
 
 Mattermost and Representative Logos
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -181,6 +184,32 @@ Mattermost and Representative Logos
 2. Use white Mattermost logo on dark backgrounds and black Mattermost logo on light backgrounds.
 3. Representative logo appears on the left side of the asset below the feature title
 4. When the background color is dark, use the white/inverted version of company logo. When the background color is light, use the dark/primary version of company logo.
+
+Screenshot Development of Mattermost User Interface
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The purpose is to highlight and illustrate the best features of Mattermost user interface.
+
+To choose the best screenshot image, follow this order: an end-user screenshot that best illustrates the feature > screenshot of System Console or other settings help text > screenshot of documentation > screenshot of a code mentioning the feature and/or Mattermost.
+
+**Setup**
+
+- Use the Mattermost Desktop app, which has a nicer border.
+- Create a secondary account with [first.last]+blah@mattermost.com email address. This makes triggering notifications for yourself easier (for the screenshot). You can also use a second browser to login to the second account while taking the screenshot.
+
+**Checklist**
+
+- Screen size: Provide screenshots that are 20-30% larger than needed - this will make it easier for the screenshot to be included in banners. To do this, close the right-hand sidebar and shrink your screen horizontally to make it narrower, leaving the screen wide enough until the "mobile send button" no longer appears in the bottom-right corner. Make sure not to cut off any sides of the page in the screenshot.
+- Left-hand side: Include Favorite, Public, and Private channels on the left-hand side. Make sure that you scroll all the way to the top in the channel list on the left-hand side for the screenshot.
+- Favorites channel list: Include one Public channel, a Direct Message channel with someone who is online, as well as a Group Direct Message channel using people with short names to avoid truncation.
+- Center pane: Make the center pane one of the Favorited channels. Make sure that the heading of the center pane is fully visible to avoid truncation. Also, make the first message in the center pane fully visible right below the channel header.
+- Profiles: Profile pictures and real people's names should be filled out throughout the screenshot. For the profile picture, use either normal-looking Avatars or stock photography.
+- Clarity: Do not include an "unread posts" indicator in the left-hand side, but you can have a few mentions. Also, avoid showing any text with acronyms and abbreviations. Do not show any bugs or defects.
+
+Animated GIFs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Animated GIFs with two images that look very similar should not be created since visually it looks like a mistake.
 
 Step-by-Step Asset Review Guide for Ops
 ----------------------------------------

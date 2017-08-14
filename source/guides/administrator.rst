@@ -13,10 +13,12 @@ Installing Mattermost
    /install/requirements.rst
    Installing on Ubuntu 14.04 LTS </install/install-ubuntu-1404.rst>
    Installing on Ubuntu 16.04 LTS </install/install-ubuntu-1604.rst>
+   Installing on Debian Jessie </install/install-debian-88.rst>
    Installing on RHEL 6.6 </install/install-rhel-66.rst>
    Installing on RHEL 7.1 </install/install-rhel-71.rst>
    Installing on CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific.rst>
    Installing on Debian Jessie (Unofficial) </install/prod-debian.rst>
+   /install/deploy-bitnami*
    /install/docker-local*
    /install/docker-ebs*
    /install/ee-install*
@@ -41,7 +43,7 @@ Deployment
    /deployment/auth*
    /deployment/sso-saml.rst
    /deployment/scaling*
-   /deployment/cluster*
+   /deployment/cluster.rst
    /deployment/sso-gitlab*
    /deployment/sso-google*
    /deployment/sso-office*

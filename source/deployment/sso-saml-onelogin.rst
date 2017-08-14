@@ -1,7 +1,7 @@
 Configure SAML with OneLogin
 =============================
 
-The following process provides steps to configure SAML with OneLogin for Mattermost.
+The following process provides steps to configure SAML 2.0 with OneLogin for Mattermost.
 
 .. contents::
   :backlinks: top
@@ -117,6 +117,8 @@ Configure SAML for Mattermost
 6. (Optional) Customize the login button text.
 
 7. Click **Save**.
+
+8. (Optional) If you configured First Name Attribute and Last Name Attribute, go to **System Console > General > Users and Teams** and set **Teammate Name Display** to *Show first and last name*. This is recommended for a better user experience.
 
 To confirm that SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication via **Account Settings > General > Sign-in Method > Switch to SAML SSO** and sign in with your SAML credentials to complete the switch.
 

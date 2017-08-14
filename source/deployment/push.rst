@@ -64,8 +64,9 @@ To deploy in production with privately-hosted mobile apps compiled by your organ
 1. Compile your own iOS, Android mobile applications and Mattermost Push Notification Service (MPNS) via their open source repositories:
 
   - `Open source repository for the Mattermost Push Notification Service <https://github.com/mattermost/push-proxy>`_
-  - `Open source repository for the Mattermost iOS application <https://github.com/mattermost/ios>`_
-  - `Open source repository for the Mattermost Android application <https://github.com/mattermost/android>`_
+  - `Open source repository for the Mattermost iOS and Android applications <https://github.com/mattermost/mattermost-mobile>`_
+  - `Open source repository for the Mattermost Classic iOS application <https://github.com/mattermost/mattermost-ios-classic>`_
+  - `Open source repository for the Mattermost Classic Android application <https://github.com/mattermost/mattermost-android-classic>`_
 
 2. Connect your Mattermost server with your privately hosted MPNS service
 
