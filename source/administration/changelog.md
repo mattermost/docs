@@ -140,7 +140,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Added table
 
 **Users Table**
-Modified ``Roles`` column maximum size from 64 to 256 characters
+- Modified ``Roles`` column maximum size from 64 to 256 characters
 
 ### API v4 Changes
 - Mattermost 4.0 has a stable release of API v4 endpoints. It is recommended that any new integrations use the v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
