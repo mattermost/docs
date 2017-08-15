@@ -18,15 +18,10 @@ Elasticsearch allows you to search large volumes of data quickly, and in near re
 
 Setting up an Elasticsearch Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The setup process for the Elasticsearch server is documented in the `official Elasticsearch documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html>`_. 
+The setup process for the Elasticsearch server is documented in the `official Elasticsearch documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html>`_.
 
-XXXXXX George: Any special steps specific to Mattermost implementation not mentioned in the offical docs? 
-
-Hardware Requirements
-`````````````````````
-Elasticsearch should run alone on a server and use all of the resources available to it.
-
-XXXXXX George: hardware requirements or recommendations for the elasticsearch server?
+.. note::
+  You must install the `ICU Analyzer Plugin <https://www.elastic.co/guide/en/elasticsearch/plugins/current/analysis-icu.html>`_ when setting up Elasticsearch for Mattermost.
 
 Configuring Elasticsearch in Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
