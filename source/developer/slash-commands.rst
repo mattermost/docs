@@ -52,23 +52,23 @@ You can follow these general guidelines to set up a custom Mattermost slash comm
 
 2 - Click **Add Slash Command** and add name and description for the command.
 
-3 - Set the **Command Trigger Word**. The trigger word must be unique, and cannot begin with a slash or contain any spaces. It also cannot be one of the `built-in commands <https://docs.mattermost.com/help/messaging/executing-commands.html#built-in-commands>`_.
+3 - Set the **Command Trigger Word**. The trigger word must be unique and cannot begin with a slash or contain any spaces. It also cannot be one of the `built-in commands <https://docs.mattermost.com/help/messaging/executing-commands.html#built-in-commands>`_.
 
-4 - Set the **Request URL** and **Request Method**. The request method is either POST or GET, and specifies the type of request sent to the request URL, the endpoint Mattermost hits to reach your external application.
+4 - Set the **Request URL** and **Request Method**. The request URL is the endpoint that Mattermost hits to reach your application, and the request method is either POST or GET and specifies the type of request sent to the request URL.
 
 5 - (Optional) Set the response username and icon the command will post messages as in Mattermost. If not set, the command will use your username and profile picture.
 
   .. note::
     `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`_ must be set to `true` in `config.json` to override usernames, and `similarly for profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`_. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator.
 
-6 - (Optional) Include the slash command in the command autocomplete list, displayed when typing ``/`` in an empty input box. Use it to make your command easier to discover by your teammates. You can also provide a hint listing the arguments of your command, and a short description displayed in the autocomplete list.
+6 - (Optional) Include the slash command in the command autocomplete list, displayed when typing ``/`` in an empty input box. Use it to make your command easier to discover by your teammates. You can also provide a hint listing the arguments of your command and a short description displayed in the autocomplete list.
 
 7 - Hit **Save**. On the next page, copy the **Token** value. This will be used in a later step.
 
 .. image:: ../images/slash_commands_token.png
   :width: 50 px
 
-8 - Next, write your external application. Include a function, which receives HTTP POST or HTTP GET requests from Mattermost. The function should look something like this:
+8 - Next, write your external application. Include a function which receives HTTP POST or HTTP GET requests from Mattermost. The request will look something like this:
 
     .. code-block:: text
 
@@ -126,7 +126,7 @@ Below we give a brief description of additional parameters that help you customi
 Message type
 ~~~~~~~~~~~~~~~~~~~~
 
-You can use the ``response_type`` parameter to set whether the command posts a regular message, or an ephemeral message. Ephemeral messages are only displayed temporarily to the user who activated the command.
+You can use the ``response_type`` parameter to set whether the command posts a regular message or an ephemeral message. Ephemeral messages are only displayed temporarily to the user who activated the command.
 
 For example, to send an ephemeral message, use the following payload.
 
@@ -156,9 +156,9 @@ The parameter supports any custom protocol including ``http://``, ``https://``, 
 Markdown formatting
 ~~~~~~~~~~~~~~~~~~~~
 
-A rich range of formatting unavailable in Slack is made possible through :doc:`markdown support <../help/messaging/formatting-text>` in Mattermost, including headings, formatted fonts, tables, inline images and other options supported by Mattermost Markdown. All of these options are also supported by slash commands.
+A rich range of formatting unavailable in Slack is made possible through :doc:`Markdown support <../help/messaging/formatting-text>` in Mattermost, including headings, formatted fonts, tables, inline images and other options supported by Mattermost Markdown. All of these options are also supported by slash commands.
 
-For example, to create a message with a heading, and an italicized text on the next line, use the following payload. 
+For example, to create a message with a heading and an italicized text on the next line, use the following payload. 
 
   .. code-block::
 
@@ -193,7 +193,7 @@ For example, to send the message as a ``webhook-bot``, use the following payload
 .. image:: ../images/incoming_webhooks_override_username.png
   :width: 50 px
 
-To prevent malicious users from trying to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`_ a *BOT* indicator appears next to posts coming from webhooks regardless of what username is specified.
+To prevent malicious users from trying to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`_, a *BOT* indicator appears next to posts coming from webhooks regardless of what username is specified.
 
   .. note::
     `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`_ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator. If not enabled, the username is set to `webhook`.
@@ -221,9 +221,9 @@ Tips and Best Practices
 
 3. You can restrict who can create slash commands in `System Console > Integrations > Custom Integrations <https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins>`_.
 
-4. Mattermost outgoing webhooks are Slack-compatible. You can copy-and-paste code used for a Slack outgoing webhook to create Mattermost integrations. Mattermost `automatically translates the Slack's proprietary JSON payload format <../developer/slash-commands#translate-slacks-proprietary-data-format-to-mattermost>`_.
+4. Mattermost outgoing webhooks are Slack-compatible. You can copy-and-paste code used for a Slack outgoing webhook to create Mattermost integrations. Mattermost `automatically translates Slack's proprietary JSON payload format <../developer/slash-commands#translate-slacks-proprietary-data-format-to-mattermost>`_.
 
-5. The external application may be written in any programming language. It needs to provide a URL which reacts to the request sent by your Mattermost server, and send an HTTP POST in the required JSON format as a response.
+5. The external application may be written in any programming language. It needs to provide a URL which receives the request sent by your Mattermost server and responds with in the required JSON format.
 
 Share Your Integration
 -----------------------
@@ -242,7 +242,7 @@ Translate Slack's proprietary data format to Mattermost
 
 Mattermost automatically translates the data coming from Slack:
 
-1. JSON payloads written for Slack, that contain the following, are translated to Mattermost markdown and rendered equivalently to Slack:
+1. JSON payloads written for Slack, that contain the following, are translated to Mattermost Markdown and rendered equivalently to Slack:
    
    - *<>* to denote a URL link, such as ``payload={"text": "<http://www.mattermost.com/>"}``
    - *|* within a *<>* to define linked text, such as ``payload={"text": "Click <http://www.mattermost.com/|here> for a link."}``
