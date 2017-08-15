@@ -13,12 +13,13 @@ Notes:
 
 1. PM:
   - Submit pull request for changelog
-  - Check the minimum version number and submit pull request to update 
+  - Check the minimum server version required and submit pull request to update in fastlane files
 2. Dev:
   - Finish review of last pull requests for the current release and merge
 3. QA:
   - Confirm all pull requests merged into the current release have been tested
 4. Build:
+  - Create release branch for mattermost-mobile and mattermost-redux
   - Cut release candidate build
 
 
@@ -31,7 +32,7 @@ Notes:
   - Daily triage of hotfix candidates and decide on whether and when to cut next RC or final
 3. Dev:
   - Make pull requests for hotfixes to the release branch
-  - Review PRs made to release branch and merge changes into both the release branch and master
+  - Review PRs made to release branch and merge changes into the release branch
 4. Build:
   - Verify with Release Manager before cutting any new RCs (approved fixes should be merged)
   - Push next RC to acceptance and announce in Native Mobile Apps channel
@@ -43,19 +44,22 @@ Notes:
 ### C. (T-minus 0 working days) Release Build Cut and Submitted to App Store 
 
 1. Build: 
-  - Cut final build 
+  - Tag the release and cut the final build
+  - Upload the .ipa and .apk files to GitHub
+  - Merge the release branch back in to master
+  - Review and update project dependencies as needed
 2. PM:
   - Final changelog updates to known issues and contributors section
   - Submit final build to App Store and Google Play Store
-  - Confirm that minimum version number is clear in update notes 
+  - Confirm that minimum server version required is clear in update notes 
   - Create release in GitHub 
   - Close the release in Jira 
-3. Marketing
+3. Marketing:
   - Finish draft of blog post and marketing images and send to marketing lead for review
 4. Logistics:
   - Make a pinned posts in Native Mobile Apps channel with the dates for next release
 
-D. (T-plus X days) Release Marketing
+### D. (T-plus X days) Release Marketing
 
-1. Marketing
+1. Marketing:
   - After the apps are approved and on the App Store (number of days may vary), send out release marketing
