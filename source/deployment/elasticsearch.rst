@@ -32,9 +32,9 @@ Configuring Elasticsearch in Mattermost
 
 Follow these steps to connect your Elasticsearch server to Mattermost and generate the post index.
 
-1 - Open the **System Console** > **ADVANCED** > **Elasticsearch (Beta)** section.
-2 - Set **Enable Elasticsearch Indexing** to `true` to enable the other the settings on the page. Once the configuration is saved, new posts made to the database will be automatically indexed on the Elasticsearch server.
-3 - Set the Elasticsearch server connection details:
+1. Open the **System Console** > **ADVANCED** > **Elasticsearch (Beta)** section.
+2. Set **Enable Elasticsearch Indexing** to `true` to enable the other the settings on the page. Once the configuration is saved, new posts made to the database will be automatically indexed on the Elasticsearch server.
+3. Set the Elasticsearch server connection details:
   a) Enter **Server Connection Address**
   b) Enter **Server Username** used to access the Elasticsearch server (Optional)
     - Note: For AWS Elasticsearch leave this field blank
@@ -42,38 +42,37 @@ Follow these steps to connect your Elasticsearch server to Mattermost and genera
     - Note: For AWS Elasticsearch leave this field blank
   d) Set **Enable Cluster Sniffing**. Sniffing finds and connects to all data nodes in your cluster automatically.
     - Note: For AWS Elasticsearch this field should be set to `false`
-4 - Click **Test Connection** and **Save** the configuration.
+4. Click **Test Connection** and **Save** the configuration.
   - If the server connection is unsuccessful you will not be able to save the configuration or enable searching with Elasticsearch
-5 - Build the post index of existing posts by clicking **Build Index**
+5. Build the post index of existing posts by clicking **Build Index**
   - This process can take up to a few hours depending on the size of the post database and number of messages. The progress percentage can be seen as the index is created.
-6 - Enable Elasticsearch by setting **Enable Elasticsearch for search queries** to `true`
+6. Enable Elasticsearch by setting **Enable Elasticsearch for search queries** to `true`
   - Note: It is recommended that bulk indexing be completed before enabling Elasticsearch, otherwise search results will be incomplete.
-7 - Restart the Mattermost server
+7. Restart the Mattermost server
 
 
-Limitations
------------
+Beta Limitations
+-----------------
 
+1. Elasticsearch uses a standard selection of "stop words" that are filtered out of search results: "a", "an", "and", "are", "as", "at", "be", "but", "by", "for", "if", "in", "into", "is", "it", "no", "not", "of", "on", "or", "such", "that", "the", "their", "then", "there", "these", "they", "this", "to", "was", "will", "with"  
 
+2. Known Issues in Beta:
 
-XXXXXX Eric: supports all current search features with limitations (list important known Elasticsearch issues) 
-
-XXXXXX George: Can you please link to the list of stop words we are using. Anything else important you'd like to note here?
-
+  - Searching stop words in quotes returns more results than just the searched terms (`ticket <https://mattermost.atlassian.net/browse/PLT-7314>`_)
+  - Pressing ESC in the search box clears the search text (`ticket <https://mattermost.atlassian.net/browse/PLT-7368>`_)
+  - AWS Elasticsearch implementations have a limit of 1000 days of post history that is searchable in Beta.
+  - Highlighting of search terms is sometimes missing from the results list
 
 Frequently Asked Questions (FAQ)
 --------------------------------
 
 Why do I need to use Elasticsearch?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Due to the limitations of scaling with database search, Enterprise deployments with more than 5,000,000 messages will require Elasticsearch
+Due to the limitations of scaling with database search, Enterprise deployments with more than 5,000,000 messages require Elasticsearch in order to execute performant search queries.
 
-What search features are offered with Elasticsearch?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The Beta implementation of Elasticsearch matches the search features currently available with database search. The Mattermost team plans to add 
-
-
-XXXXXX George: Anything you'd like to note here (common mistakes people might make during the deployment process?)
+Are there any new search features are offered with Elasticsearch Beta?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The Beta implementation of Elasticsearch matches the search features currently available with database search. The Mattermost team is working on Elasticsearch features such as file name and content search, date filters, and operators and modifiers.
 
 
 
