@@ -100,9 +100,10 @@ Deploying Mattermost as part of a HIPAA-compliant IT infrastructure requires a d
 
 - HIPAA-compliant deployments commonly consider the following:
 
-     - Omitting the contents of messages from mobile push notifications:
+     - Omitting the contents of messages from mobile push and email notifications:
 
-        - If your `Push Notifications Contents <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_ option is set to ``Send full message snippet`` there is a chance Personal Health Information (PHI) contained in messages could be displayed on a user's locked phone as a notification. To avoid this, set the option to ``Send generic description with user and channel names``.
+        - If your `Push Notifications Contents <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_ option is set to ``Send full message snippet`` there is a chance Personal Health Information (PHI) contained in messages could be displayed on a user's locked phone as a notification. To avoid this, set the option to ``Send generic description with user and channel names`` or ``Send generic description with only sender name``.
+        - Similarly, setting `Email Notifications Contents <https://docs.mattermost.com/administration/config-settings.html#email-notification-contents>`_ to ``Send generic description with only sender name`` will only send the team name and name of the person who sent the message, with no information about channel name or message contents included in email notifications.
 
 - Beyond Technical Safeguards, HIPAA compliance deployments also require:
 
