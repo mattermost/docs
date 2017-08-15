@@ -1,7 +1,9 @@
 Upgrading to version 3.0
 ========================
 
-Use these instructions if you are upgrading from 2.0.0, 2.1.0, or 2.2.0. You must upgrade to 3.0 before upgrading to the latest version of Mattermost.
+Use these instructions if you are upgrading from 2.0.0, 2.1.0, or 2.2.0. If you are upgrading from a version earlier than 2.0.0, you must first `upgrade to version 2.0 <../upgrading-to-2.0.html>`_. 
+
+You must upgrade to 3.0 before upgrading to the latest version of Mattermost.
 
 Introduction
 ------------
@@ -25,7 +27,7 @@ Users with accounts containing duplicate emails or usernames will receive a noti
 
 **Before you begin**
 
-Read these instructions carefully from start to finish. Make sure that you understand each step before starting the upgrade. If you have questions or concerns, you can ask on the Mattermost forum at https://forum.mattermost.org/ or in the Mattermost *Peer-to-peer Help* channel at https://pre-release.mattermost.com/core/channels/peer-to-peer-help.
+Read these instructions carefully from start to finish. Make sure that you understand each step before starting the upgrade. If you have questions or concerns, you can ask on the Mattermost forum at https://forum.mattermost.org/.
 
 You should gather the following information before starting the upgrade:
 
