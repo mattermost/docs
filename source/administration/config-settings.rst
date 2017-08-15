@@ -2836,3 +2836,22 @@ This setting is used to maximize performance for large Enterprise deployments.
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxUsersForStatistics": 2500`` with whole number input                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Elasticsearch Settings
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Post Index Replicas
+^^^^^^^^^^^^^^^^^^^^^
+The number of replicas to use for each post index. If this setting is changed, it only applies to newly created indexes. To apply the change to existing indexes, purge and rebuild the index after changing this setting.
+
++---------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"PostIndexReplicas": 2`` with whole number input      |
++---------------------------------------------------------------------------------------------------+
+
+Post Index Shards
+^^^^^^^^^^^^^^^^^^^^^
+The number of shards to use for each post index. If this setting is changed, it only applies to newly created indexes. To apply the change to existing indexes, purge and rebuild the index after changing this setting.
+
++-------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"PostIndexShards": 1`` with whole number input      |
++-------------------------------------------------------------------------------------------------+
