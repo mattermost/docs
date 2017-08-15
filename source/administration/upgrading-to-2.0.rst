@@ -3,7 +3,7 @@ Upgrading to version 2.0
 
 To upgrade an early edition of Mattermost to the latest edition, you must first upgrade in a specific sequence until you get to version 2.0.0. After that, you must upgrade to version 3.0.3, and from there you can upgrade directly to the latest Mattermost version.
 
-Read these instructions carefully from start to finish. Make sure that you understand each step before starting the upgrade. If you have questions or concerns, you can ask on the Mattermost forum at https://forum.mattermost.org/ or in the Mattermost *Peer-to-peer Help* channel at https://pre-release.mattermost.com/core/channels/peer-to-peer-help.
+Read these instructions carefully from start to finish. Make sure that you understand each step before starting the upgrade. If you have questions or concerns, you can ask on the Mattermost forum at https://forum.mattermost.org/.
 
 You should gather the following information before starting the upgrade:
 
