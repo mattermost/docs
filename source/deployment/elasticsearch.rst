@@ -68,6 +68,6 @@ Why do I need to use Elasticsearch?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Due to the limitations of scaling with database search, Enterprise deployments with more than 5,000,000 messages require Elasticsearch in order to execute performant search queries.
 
-Are there any new search features are offered with Elasticsearch Beta?
+Are there any new search features offered with Elasticsearch Beta?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The Beta implementation of Elasticsearch matches the search features currently available with database search. The Mattermost team is working on extending the Elasticsearch feature set with file name and content search, date filters, and operators and modifiers.
