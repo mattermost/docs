@@ -80,7 +80,7 @@ To send a message to a direct message channel, add an "@" symbol followed by the
 Override the username
 ~~~~~~~~~~~~~~~~~~~~~
 
-You can override the username the messages posts as by specifying a ``username`` parameter in your JSON payload.
+You can override the username the messages post as by specifying a ``username`` parameter in your JSON payload.
 
 For example, to send the message as a ``webhook-bot``, use the following payload.
 
