@@ -508,7 +508,7 @@ This object is a member of the User object.
       <kbd>"all"</kbd> - For all activity.<br>
       <kbd>"mention"</kbd> - Only for mentions.<br>
       <kbd>"none"</kbd> - Never.</td>
-      <td align="center" valign="middle">No</td>
+      <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">No</td>
     </tr>
     <tr class="row-odd">
@@ -518,7 +518,7 @@ This object is a member of the User object.
       <kbd>"3"</kbd> - 3 seconds.<br>
       <kbd>"5"</kbd> - 5 seconds.<br>
       <kbd>"10"</kbd> - 10 seconds.<br>
-      <kbd>"unlimited"</kbd> - Unlimited.</td>
+      <kbd>"0"</kbd> - Unlimited.</td>
       <td align="center" valign="middle">No</td>
       <td align="center" valign="middle">No</td>
     </tr>
@@ -526,19 +526,17 @@ This object is a member of the User object.
       <td valign="middle">desktop_sound</td>
       <td valign="middle">string</td>
       <td>Preference for whether desktop notification sound is played. Must be one of the following values:<br>
-      <kbd>"on"</kbd> - Sound is played.<br>
-      <kbd>"off"</kbd> - Sound is not played.</td>
-      <td align="center" valign="middle">No</td>
+      <kbd>"true"</kbd> - Sound is played.<br>
+      <kbd>"false"</kbd> - Sound is not played.</td>
+      <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">No</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">email</td>
       <td valign="middle">string</td>
       <td>Preference for email notifications. Must be one of the following values:<br>
-      <kbd>"immediately"</kbd> - Email notifications are sent immediately.<br>
-      <kbd>"15"</kbd> - Email notifications are grouped and sent every 15 minutes. Requires email batching to be enabled.<br>
-      <kbd>"60"</kbd> - Email notifications are grouped and sent every 1 hour. Requires email batching to be enabled.<br>
-      <kbd>"never"</kbd> - Email notifications are not sent.</td>
+      <kbd>"true"</kbd> - Email notifications are sent immediately.<br>
+      <kbd>"false"</kbd> - Email notifications are not sent.</td>
       <td align="center" valign="middle">No</td>
       <td align="center" valign="middle">No</td>
     </tr>
@@ -549,7 +547,7 @@ This object is a member of the User object.
       <kbd>"all"</kbd> - For all activity.<br>
       <kbd>"mention"</kbd> - Only for mentions.<br>
       <kbd>"none"</kbd> - Never.</td>
-      <td align="center" valign="middle">No</td>
+      <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">No</td>
     </tr>
     <tr class="row-odd">
@@ -559,31 +557,35 @@ This object is a member of the User object.
       <kbd>"online"</kbd> - When online, away or offline.<br>
       <kbd>"away"</kbd> - When away or offline.<br>
       <kbd>"offline"</kbd> - When offline.</td>
-      <td align="center" valign="middle">No</td>
+      <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">No</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">channel</td>
       <td valign="middle">string</td>
-      <td>Whether @all, @channel and @here trigger mention notifications???/td>
-      <td align="center" valign="middle">No</td>
+      <td>Whether @all, @channel and @here trigger mentions. Must be one of the following values:<br>
+      <kbd>"true"</kbd> - Mentions are triggered.<br>
+      <kbd>"false"</kbd> - Mentions are not triggered.</td>
+      <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">No</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">comments</td>
       <td valign="middle">string</td>
-      <td>Is this for reply notification mentions???/td>
-      <td align="center" valign="middle">No</td>
+      <td>Preference for reply mention notifications. Must be one of the following values:<br>
+      <kbd>"any"</kbd> - Trigger notifications on messages in reply threads that the user starts or participates in.<br>
+      <kbd>"root"</kbd> - Trigger notifications on messages in threads that the user starts.<br>
+      <kbd>"never"</kbd> - Do not trigger notifications on messages in reply threads unless the user is mentioned.</td>
+      <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">No</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">mention_keys</td>
       <td valign="middle">string</td>
-      <td>Is this for the custom words that trigger mentions???/td>
+      <td>Preference for custom non-case sensitive words that trigger mentions. Words must be separated by commas./td>
       <td align="center" valign="middle">No</td>
       <td align="center" valign="middle">No</td>
     </tr>
-
   </table>
 
 Fields of the UserTeamMembership object
