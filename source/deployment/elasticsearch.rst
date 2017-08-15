@@ -3,7 +3,7 @@ Elasticsearch Beta (E20)
 
 *Available in Enterprise Edition E20.*
 
-_`Elasticsearch <https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html>`_ is a distributed, RESTful search engine capable of supporting search in large scale enterprise deployments with millions of messages. 
+`Elasticsearch <https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html>`_ is a distributed, RESTful search engine capable of supporting search in large scale enterprise deployments with millions of messages. 
 
 .. toctree::
     :maxdepth: 2
@@ -18,7 +18,7 @@ Elasticsearch allows you to search large volumes of data quickly, and in near re
 
 Setting up an Elasticsearch Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The setup process for the Elasticsearch server is documented in the _`official Elasticsearch documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html>`_. 
+The setup process for the Elasticsearch server is documented in the `official Elasticsearch documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html>`_. 
 
 
 Hardware Requirements
@@ -30,12 +30,30 @@ XXXXXX George: hardware requirements for the elasticsearch server?
 Configuring Elasticsearch in Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-XXXXXX Eric: Setup steps in the system console for creating the first index and turning on elasticsearch
+Follow these steps to connect your Elasticsearch server to Mattermost and generate the post index.
 
-If Elasticsearch is enabled before the bulk indexing of posts is complete
+1 - Open the **System Console** > **ADVANCED** > **Elasticsearch (Beta)** section.
+2 - Set **Enable Elasticsearch Indexing** to `true` to enable the other the settings on the page. Once the configuration is saved, new posts made to the database will be automatically indexed on the Elasticsearch server.
+3 - Set the Elasticsearch server connection details:
+  a) Enter **Server Connection Address**
+  b) Enter **Server Username** used to access the Elasticsearch server (Optional)
+    - Note: For AWS Elasticsearch leave this field blank
+  c) Enter **Server Password** associated with the username (Optional)
+    - Note: For AWS Elasticsearch leave this field blank
+  d) Set **Enable Cluster Sniffing**. Sniffing finds and connects to all data nodes in your cluster automatically.
+    - Note: For AWS Elasticsearch this field should be set to `false`
+4 - Click **Test Connection** and **Save** the configuration.
+  - If the server connection is unsuccessful you will not be able to save the configuration or enable searching with Elasticsearch
+5 - Build the post index of existing posts by clicking **Build Index**
+  - This process can take up to a few hours depending on the size of the post database and number of messages. The progress percentage can be seen as the index is created.
+6 - Enable Elasticsearch by setting **Enable Elasticsearch for search queries** to `true`
+  - Note: It is recommended that bulk indexing be completed before enabling Elasticsearch, otherwise search results will be incomplete.
+7 - Restart the Mattermost server
+
 
 Limitations
 -----------
+
 
 
 XXXXXX Eric: supports all current search features with limitations (list important known Elasticsearch issues) 
@@ -51,6 +69,7 @@ Why do I need to use Elasticsearch?
 Due to the limitations of scaling with database search, Enterprise deployments with more than 5,000,000 messages will require Elasticsearch
 
 What search features are offered with Elasticsearch?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The Beta implementation of Elasticsearch matches the search features currently available with database search. The Mattermost team plans to add 
 
 
