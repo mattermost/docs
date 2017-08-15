@@ -1,7 +1,7 @@
 Configure SAML with Microsoft ADFS
 ==================================
 
-The following process provides steps to configure SAML with Microsoft ADFS for Mattermost.
+The following process provides steps to configure SAML 2.0 with Microsoft ADFS for Mattermost.
 
 .. contents::
   :backlinks: top

@@ -4,10 +4,42 @@ Mattermost Community Guidelines
 
 This document provides easy-to-follow community guidelines for:
 
-- `GitHub Help Wanted Issues in Platform Repository`_
-- `Mattermost Community Forums`_
+.. contents::
+  :backlinks: top
+  :local:
+  :depth: 2
 
 ----
+
+Mattermost Community Playbook
+---------------------------------------------------------
+
+How to get community involved in a campaign?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Examples include React Native Apps, Redux and APIv4 campaigns.
+
+On-boarding
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Create a forum post letting developers know about the campaign and ways to contribute
+2. Create a contribution guide including developer machine set up
+3. Create help wanted tickets that a community member could work on
+ 
+ - For a high priority Help Wanted ticket, reach out to contributors directly in the GitHub repository for best engagement
+
+Retention
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Identify active contributors and thank them personally for their work
+2. For work in progress tickets or submitted pull requests, follow up with contributor once a week for status updates and questions to make sure contributors aren't blocked and feel more comfortable to ask questions. If there hasn't been activity in more than two weeks, ask if you can help them in some way.
+3. Recognize everyone’s contributions (either intrinsic rewards like having their name listed on a contributor’s page or tangible like swag or gift cards)
+4. If applicable, assign roles to top contributors (such as team lead, code reviewer, tester) to give a sense of ownership to the contributor
+
+Off-boarding
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. When a campaign is finished, offer suggestions for other campaigns or projects they might be interested in.
 
 GitHub Help Wanted Issues in Platform Repository
 ---------------------------------------------------------
@@ -71,9 +103,7 @@ Once a pull request for an open GitHub Help Wanted issue is merged, please ensur
 Mattermost Community Forums
 ---------------------------------------------------------
 
-Guidelines for Mattermost `community forums <https://forum.mattermost.org>`_.
-
-*CM = community manager*
+Guidelines for Mattermost `community forums <https://forum.mattermost.org>`_ and public Mattermost `GitHub repositories <https://github.com/mattermost>`_.
 
 Principles
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -100,3 +130,99 @@ Response Writing Tips
   - Any questions that should be answered in docs that aren’t should turn into tickets to create that documentation (and post ticket in response)
 - **Be thankful**
   - Communities really respond well to being praised and thanked for their work
+  
+Sample Responses
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+General Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. If an issue has a PR submitted by community, but no associated Jira ticket, leave it open until the PR is merged
+
+2. If an issue has a Jira ticket with a ``help-wanted`` label, there is a Help Wanted ticket in GitHub. It can be closed with the following note:
+
+.. code-block:: text
+  Hi @username
+
+  Thanks for the report! We have created a [Help Wanted issue here](link to GitHub issue) and are looking for community's help. Would you be interested helping with a pull request?
+
+3. If an issue has a Jira ticket without a ``help-wanted`` label and assigned to the current release fix version for a developer to fix, it can be closed with the following note
+
+.. code-block:: text
+
+  Hi @username
+
+  Thanks for the report! We have created a [Jira ticket](link to Jira ticket) to track it. If you're interested helping with a pull request, please let us know.
+
+4. If an issue has a Jira ticket without a ``help-wanted`` label but not assigned to the current release fix version, queue Jira ticket back to triage to ask if a help wanted issue could be created for it.
+
+5. If the reporter doesn’t respond in two weeks, close the issue with the following note:
+
+.. code-block:: text
+
+  Hi @username, we haven't received an update so we'll assume that the problem is fixed or is no longer valid. 
+
+  If you still experience the same problem, try upgrading to the latest version. 
+
+  If the issue persists, reopen this issue with the relevant information and we'd be glad to help you where we can.
+
+Feature Requests
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Respond to the issue with the following note
+
+.. code-block:: text
+
+  Thanks, appreciate your feedback @{username}.  
+
+  Would you like to [contribute this in the feature idea forum](https://mattermost.uservoice.com/forums/306457-general/) so it can be discussed, upvoted and considered for a [help wanted ticket](https://docs.mattermost.com/process/help-wanted.html)?
+
+  Please include a link back to this GitHub issue. If you're interested in implementing, please say so and we'll prioritize the review. 
+
+  You get **10** votes in the feature idea forum, and each one influences the future of the project.
+
+Licensing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To ask someone to add a license to a GitHub repo, open an issue with the following note, titled ``Add an open source license?``:
+
+.. code-block:: text
+
+  Thanks for sharing this project! We'd love to use it as part of the Mattermost open source project (https://www.mattermost.org/) in our [React Native mobile app](https://github.com/mattermost/mattermost-mobile) (which users an [Apache 2.0 license](https://github.com/mattermost/mattermost-mobile/blob/master/LICENSE.txt)). 
+
+  Would you consider adding either an MIT or an Apache 2.0 license? 
+
+  To do so, in GitHub you can hit "Create new file" and name a file `LICENSE.txt`
+
+  ![image](https://cloud.githubusercontent.com/assets/177788/19657017/36238482-99d7-11e6-9fd0-f507970891c7.png)
+
+  This will prompt GitHub to offer a license template: 
+
+  ![image](https://cloud.githubusercontent.com/assets/177788/19657044/5a2d8b66-99d7-11e6-8164-ac7f90b10646.png)
+
+  If you use either an MIT license or an Apache 2.0 license it would make it easy to add your work to other open source projects, and we'd love to include your work in ours. 
+
+  Thanks kindly for your consideration.
+
+Hard Questions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To respond to tough questions, use the `SCIPAB method <https://www.mandel.com/top-ten-reasons/tools-methodology/scipab>`_ to help formulate a response and send for community lead to review. 
+
+Situation:
+  State what you know about your listeners' circumstances that are relevant to your discussion or presentation, e.g., current state of their business, technology, industry, or plans. 
+
+Complication:
+  Identify the critical issues (changes, pressures, demands, etc.) that are impacting the Situation and creating problems, challenges, or opportunities. 
+
+Implication:
+  Show the personal or business consequences of failing to act on the problems or opportunities described in the Complication. 
+
+Position:
+  State clearly and confidently your opinion about what needs to be done to solve your listeners' problem. 
+
+Action:
+  Help listeners understand the role you want them to play, or the questions you'd like them to consider, during your presentation or conversation. 
+
+Benefit:
+  Describe how your recommended Position and Action will address listeners' specific needs. State the results clearly and quantifiably. 

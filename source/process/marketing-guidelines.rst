@@ -74,6 +74,7 @@ Composing Tweets:
 1. **Avoid acronyms**. Avoid acronyms when possible. For example, say "pull request" instead of "PR", since only a subset of tweet readers are active GitHub users. 
 2. **Use the active voice**. Avoid "has", "was", "have been" when possible. For example, instead of "Hackfest has started!" say "Hackfest starts now!" 
 3. **Include at most one link**. To provide a clear call to action include at most one link per tweet, and place it near the end of the tweet.
+4. **Use exclamation marks only for exciting announcements**. An exclamation mark can be used when the announcement is exciting, but using an exclamation mark should be avoided when it can be confused with a signal for community to panic, e.g. "Security update released!".
    
 Guidelines for release announcements
 ---------------------------------------------------------

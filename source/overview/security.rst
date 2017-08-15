@@ -4,11 +4,10 @@ Security Overview
 
 Security in Mattermost software is continually reviewed by developers, IT administrators and security researchers accountable for deploying the software in their organizations.
 
-Multiple rounds of penetration testing and security analysis, in addition to internal reviews, have produced a long list of safeguards, processes and policies. Please see:
+Multiple rounds of penetration testing and security analysis, in addition to internal reviews, have produced a long list of safeguards, processes, policies, and compliance features, please see: 
 
-- `Security Features <https://docs.mattermost.com/overview/security.html#security-features>`_ - Recommended features to enhance security on the Mattermost platform.
-- `Security Updates <https://docs.mattermost.com/overview/security.html#security-updates>`_ - Upgrades addressing newly discovered attacks `confidentially disclosed to Mattermost, Inc. <https://www.mattermost.org/responsible-disclosure-policy/>`_
-- `Security Policies <https://docs.mattermost.com/process/security.html>`_ - Internal security policies, development guidelines, business continuity plans and common security-related questions from enterprises.
+.. contents::
+    :backlinks: top
 
 To expand on each:
 

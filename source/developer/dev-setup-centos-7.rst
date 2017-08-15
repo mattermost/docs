@@ -1,13 +1,13 @@
-.. _dev-setup-ubuntu-1604:
+.. _dev-setup-centos-7:
 
-Installing Developer Components on Ubuntu 16.04
-===============================================
+Installing Developer Components on CentOS 7
+===========================================
 
 Set up your development environment for building, running, and testing Mattermost.
 
 1. If you are developing with the Docker container, install and configure Docker CE:
 
-  a. Follow the Docker installation instructions at https://docs.docker.com/engine/installation/linux/ubuntu/#install-using-the-repository.
+  a. Follow the Docker installation instructions at https://docs.docker.com/engine/installation/linux/docker-ce/centos/.
 
   b. Edit your ``/etc/hosts`` file to include the following line:
 
@@ -19,15 +19,17 @@ Set up your development environment for building, running, and testing Mattermos
 
   d. Restart the Docker daemon.
 
-    ``sudo service docker restart``
+    ``sudo systemctl restart docker``
 
   e. Change your current group ID to the *docker* group.
 
     ``newgrp docker``
 
-2. Install the build-essential package.
+2. Install the development tools package, wget and libpng12 required by pngquant(a library used by Mattermost).
 
-  ``sudo apt-get install build-essential``
+    a. ``sudo yum group install "Development Tools"``
+
+    b. ``sudo yum install -y wget libpng12``
 
 3. Download and install Go 1.8 for Linux:
 
@@ -50,21 +52,30 @@ Set up your development environment for building, running, and testing Mattermos
       export GOPATH=$HOME/go
       export PATH=$PATH:$GOPATH/bin
       export PATH=$PATH:/usr/local/go/bin
-      ulimit -n 8096
 
   c. Reload your bash configuration.
 
-    ``source ~/.bashrc``
+      source ~/.bashrc
+
+  d. Since you cannot run ``ulimit -n 8096`` with a regular user, we have to edit the file ``sudo nano /etc/security/limits.conf`` to include the following 2 lines at the end of it:
+
+    .. code-block:: bash
+    
+      {username} soft nofile 8096
+      {username} hard nofile 10000
+
+  e. After doing the above simple logout then log back in and it should accept the changes.
+
 
 5. Install Node.js:
 
     a. Add the Node.js repository to your repository list.
 
-      ``curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -``
+      ``curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -``
 
     b. Install Node.js
 
-      ``sudo apt-get install -y nodejs``
+      ``sudo yum install -y nodejs``
 
 6. Install Yarn. Go to https://yarnpkg.com/en/docs/install and follow the installation instructions.
 

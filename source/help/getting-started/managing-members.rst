@@ -98,6 +98,8 @@ Because Mattermost is designed as a system-of-record, there is not an option to 
 
 A deactivated account can also be reactivated from the System Console. When reactivated, the user rejoins the channels that they previously belonged to.
 
+Note that AD/LDAP user accounts cannot be deactivated from Mattermost; they must be deactivated from your Active Directory.
+
 Removing a User from a Team or Leaving a Team
 ---------------------------------------------
 

@@ -242,6 +242,22 @@ Many thanks to all our contributors. In alphabetical order:
      - If `AllowTimeLimit` config setting is set to `Never`, pinning and un-pinning messages fails.
      - If you upload or remove the **Service Provider Public Certificate** file in **System Console > SAML**, the page might refresh if you have NGINX enabled. 
      - Deactivated users are listed in channel member lists.
+
+## Release v4.0.3
+
+ - **v4.0.3, released 2017-08-10**
+   - Fixed issue when using single-sign-on with GitLab where using a non-English language option in **System Console > Localization** sometimes resulted in a login failure.
+   - Fixed issue with `AmazonS3Region` config setting being ignored in Minio file storage setup.
+   - Fixed issue when using high availability mode in Enteprise Edition E20 where the bind address wasn't set correctly for the hashicorp memberlist.
+ - **v4.0.2, released 2017-07-31**
+   - Fixed issue when using single-sign-on with GitLab (and in Enterprise Edition with SAML, Office365 and G Suite), where using a non-English language option in Account Settings resulted in a login failure.
+   - Fixed issue with custom slash commands not working in direct message channels.
+   - Fixed issue with GitLab and SAML single sign-on in Mattermost mobile apps redirecting to a browser page.
+ - **v4.0.1, released 2017-07-18**
+   - Fixed issue where pinning or un-pinning messages didn't work if `AllowTimeLimit` config setting is set to `Never`.
+   - Fixed issue where uploading or removing the **Service Provider Public Certificate** file in **System Console > SAML** refreshed the page, losing all unchanged settings.
+   - Fixed deactivated users appearing in channel member, team member and direct message lists.
+   - Fixed PDF previews not loading.
  - **v4.0.0, released 2017-07-16**
    - Original 4.0.0 release
 
@@ -383,8 +399,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Under `ServiceSettings` in `config.json`:
    - Added `"EnableEmojiPicker": true` to control whether emoji picker is enabled on the server. Enabling the emoji picker with a large number of custom emoji may slow down performance.
    - Added `"EnableChannelViewedMessages": true` to control whether `channel_viewed` WebSocket event is sent, which syncs unreads across clients and devices. Setting to false can lead to higher performance in large deployments.
+   - Added `"EnableAPIv3": true` to control whether version 3 endpoints of the REST API are allowed on the server. If the setting is disabled, integrations that rely on API v3 will fail and can then be identified for migration to API v4.
+- Under `TeamSettings` in `config.json`:
    - Added `"TeammateNameDisplay": "username"` to set how to display users' names in posts and the Direct Messages list. Deployments with LDAP or SAML enabled will have this set to `full_name` by default for better experience.
-   - Added `"EnableAPIv3": "true"` to control whether version 3 endpoints of the REST API are allowed on the server. If the setting is disabled, integrations that rely on API v3 will fail and can then be identified for migration to API v4.
 - Under `FileSettings` in `config.json`:
    - Removed System Console settings in **Files > Images**, including:
      - `"ThumbnailWidth": 120`
@@ -451,6 +468,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Deleted message doesn't clear unreads or unread mentions.
 - Changing the search term in the More Direct Messages modal doesn't reset the page.
 - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+- Cannot delete or edit parent posts in right-hand side reply threads.
+- Empty cells in Markdown tables render incorrectly.
+- `platform user deleteall` CLI command expects a user as an argument.
 
 ### Contributors
 
@@ -703,9 +723,9 @@ Many thanks to all our contributors. In alphabetical order:
  - **v3.9.2, released 2017-07-18**
    - Mattermost v3.9.2 contains low severity security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **v3.9.1, released 2017-07-16**
-   - Mattermost v3.10.1 contains a high severity security fix for an OAuth SSO vulnerability and two additional fixes for low severity security issues. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+   - Mattermost v3.9.1 contains a high severity security fix for an OAuth SSO vulnerability and two additional fixes for low severity security issues. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **v3.9.0, released 2017-05-16**
-   - Original 3.10 release
+   - Original 3.9 release
 
 ### Security Update
 
