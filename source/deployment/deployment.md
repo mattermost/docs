@@ -57,7 +57,7 @@ While Mattermost is focused on private cloud deployment, there are a range of op
 While there are a multitude of different deployment configurations, the following outline popular configurations: 
 
 - **1. Private Network only with MFA (TE & EE)** - Access to Mattermost only available on private network. Multi-factor authentication includes securing access to computing devices along with physical security within buildings. Mobile web view used in place of Native Mobile Applications. Used in very high security, on-premises deployments. 
-- **2. Private Network or VPN with MFA (TE & EE)** - Private network deployment in 1) plus the option of accessing Mattermost using Virtual Private Network ("VPN") client supporting a secondary authentication method plus Mattermost's own authentication.  
+- **2. Private Network or VPN with MFA (TE & EE)** - Private network deployment in 1) plus the option of accessing Mattermost using a Virtual Private Network ("VPN") client supporting a secondary authentication method plus Mattermost's own authentication.  
 - **3. Private Network or VPN, including private Mobile Apps, with MFA (TE & EE)** - Deployment in 2) with privately-compiled mobile solution including both mobile applications and mobile push notification services compiled by the organization with organization-controlled keys or certificates (versus using public Mobile Apps, which use keys and certificates controlled by Mattermost, Inc.). 
 - **4. Private Network or VPN with MFA plus private Mobile Apps with EMM (TE & EE)** - Deployment in 3) with the addition of an enterprise mobility management solution such as Mobile Iron, Blackberry Dynamics or AirWatch for access to mobile apps in place of VPN clients. 
 - **5. Private Network or VPN with MFA, plus public Mobile Apps with 2FA (EE-only)** - Deployment in 2) plus use of publicly available mobile apps in iTunes or Google Play with the additional of MFA available in Enterprise Edition via single-sign-on providers like Okta, OneLogin, and SAML-based options, or user credentials with the addition of Google Authenticator. Recommended only for enterprises resourced to provide appropriate network security and monitoring for systems exposed to open internet. For non-enterprise deployments, VPN with MFA is recommended (see above).
@@ -68,13 +68,13 @@ While there are a multitude of different deployment configurations, the followin
 
 Mattermost is designed to offer "modern communication behind your firewall". The standard setup intended to be installed within a private network which can offer multiple factors of authentication, including the securing of access to computing devices as well as the ability to secure physical locations. 
 
-If outside access is required a virtual private network client (VPN), such as [OpenVPN](https://openvpn.net/), with an additional factor of authentication should be used to connect to Mattermost for web, desktop and mobile experiences. 
+If outside access is required, a virtual private network client (VPN), such as [OpenVPN](https://openvpn.net/), with additional authentication used to connect to Mattermost for web, desktop and mobile experiences. 
 
 ### Non-VPN Setup 
 
 If a business owner decides Mattermost should be accessible from the open internet, by allowing unauthenticated access to ports such 80 and 443, the following is recommended: 
 
-1. An IT admin be assigned to set up appropriate network security, subscribe to [the Mattermost security bulletin](https://about.mattermost.com/security-bulletin/), and [apply new security updates](https://docs.mattermost.com/administration/upgrade.html). 
+1. An IT admin should be assigned to set up appropriate network security, subscribe to [the Mattermost security bulletin](https://about.mattermost.com/security-bulletin/) and [apply new security updates](https://docs.mattermost.com/administration/upgrade.html). 
 2. The organization upgrades to [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/) to enable Google Authenticator, OneLogin, Okta, SAML SSO or similar for at least a two-factor authentication system when three-factor is not appropriate. 
 
 Note: Not-for-profit and academic institutions are eligible for special [not-for-profit](http://mattermost.staging.wpengine.com/mattermost-mondays/) and [academic pricing](http://mattermost.staging.wpengine.com/modern-learning/) for Mattermost Enterprise Edition.
