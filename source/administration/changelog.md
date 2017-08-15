@@ -9,7 +9,7 @@ Scheduled release date: 2017-08-16
 
 ### Security Update
 
-- Mattermost v4.1.0 contains multiple security fixes ranging from XXXXXX. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+- Mattermost v4.1.0 contains multiple security fixes ranging from low to high severity. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
 ### Highlights
 
@@ -136,11 +136,11 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 **JobStatuses Table**
 - Removed table
 
-** Jobs Table**
+**Jobs Table**
 - Added table
 
 **Users Table**
-- Modified maximum size from 64 to 256 characters 
+Modified ``Roles`` column maximum size from 64 to 256 characters
 
 ### API v4 Changes
 - Mattermost 4.0 has a stable release of API v4 endpoints. It is recommended that any new integrations use the v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
