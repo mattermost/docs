@@ -2323,6 +2323,75 @@ The workflow for failover without downing the server is to change the database l
 ________
 
 
+Elasticsearch (Beta)
+~~~~~~~~~~~~~~~~~~~~~
+*Available in Enterprise Edition E20*
+
+Changing properties in this section will require a server restart before taking effect.
+
+Enable Elasticsearch Indexing
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True:** indexing of new posts occurs automatically. Search queries will use database search until "Enable Elasticsearch for search queries" is enabled. `Learn more about Elasticsearch in our documentation.<https://about.mattermost.com/default-elasticsearch-documentation/>`_
+
+**False:** Elasticsearch indexing is disabled and new posts are not indexed. If indexing is disabled and re-enabled after an index is created, it is recommended to purge and rebuild the index to ensure complete search results. 
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableIndexing": false`` with options ``true`` and ``false`` for above settings respectively.                                    |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Server Connection Address
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The address of the Elasticsearch server. `Learn more about Elasticsearch in our documentation.<https://about.mattermost.com/default-elasticsearch-documentation/>`_
+
++------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ConnectionUrl": ""`` with string input.                                   |
++------------------------------------------------------------------------------------------------------------------------+
+
+Server Username
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(Optional) The username to authenticate to the Elasticsearch server.
+
++-------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Username": ""`` with string input.                                   |
++-------------------------------------------------------------------------------------------------------------------+
+
+Server Password
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(Optional) The password to authenticate to the Elasticsearch server.
+
++-------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Password": ""`` with string input.                                   |
++-------------------------------------------------------------------------------------------------------------------+
+
+Enable Cluster Sniffing
+^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: Sniffing finds and connects to all data nodes in your cluster automatically.
+**False**: Sniffing is disabled.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Sniff": false`` with options ``true`` and ``false`` for above settings respectively.                                    |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Bulk Indexing
+^^^^^^^^^^^^^^^^^^^^^^^^
+This button starts a bulk index of all existing posts in the database. If the indexing process is cancelled the index and search results will be incomplete. 
+
+Purge Indexes
+^^^^^^^^^^^^^^^^^^^^^^^^
+This button purges the entire Elasticsearch index. Typically only used if the index has corrupted and search is not behaving as expected. After purging the index a new index can be created with the **Bulk Index** button.
+
+Enable Elasticsearch for search queries
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: Elasticsearch will be used for all search queries using the latest index. Search results may be incomplete until a bulk index of the existing post database is finished.
+**False**: Database search is used for search queries.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableSearching": false`` with options ``true`` and ``false`` for above settings respectively.                                    |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+________
+
+
 Developer
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
