@@ -115,7 +115,8 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - Update documentation:  
         - Submit Changelog PR
         - Draft [Mattermost Security Updates](http://about.mattermost.com/security-updates/), but do not post until 14 days after official release
-    - If there are any breaking compatibility changes in the release, open an issue in the [GitLab Omnibus](https://gitlab.com/gitlab-org/omnibus-gitlab) to make sure GitLab is aware. Post a link to the issue in the Release Discussion channel. 
+    - If there are any breaking compatibility changes in the release, open an issue in the [GitLab Omnibus](https://gitlab.com/gitlab-org/omnibus-gitlab) to make sure GitLab is aware. Post a link to the issue in the Release Discussion channel.
+    - PM owner of System Admin features should review changes to `config.json` and confirm they're included in the correct Mattermost Edition.
 5. Docs:
     - Submit all doc PRs for review
     - Confirm changes to config.json in compatibility section of Changelog are written back to [settings documentation](http://docs.mattermost.com/administration/config-settings.html#configuration-settings)
