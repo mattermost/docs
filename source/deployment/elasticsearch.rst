@@ -20,12 +20,13 @@ Setting up an Elasticsearch Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The setup process for the Elasticsearch server is documented in the `official Elasticsearch documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html>`_. 
 
+XXXXXX George: Any special steps specific to Mattermost implementation not mentioned in the offical docs? 
 
 Hardware Requirements
 `````````````````````
 Elasticsearch should run alone on a server and use all of the resources available to it.
 
-XXXXXX George: hardware requirements for the elasticsearch server?
+XXXXXX George: hardware requirements or recommendations for the elasticsearch server?
 
 Configuring Elasticsearch in Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -54,7 +55,9 @@ Follow these steps to connect your Elasticsearch server to Mattermost and genera
 Beta Limitations
 -----------------
 
-1. Elasticsearch uses a standard selection of "stop words" that are filtered out of search results: "a", "an", "and", "are", "as", "at", "be", "but", "by", "for", "if", "in", "into", "is", "it", "no", "not", "of", "on", "or", "such", "that", "the", "their", "then", "there", "these", "they", "this", "to", "was", "will", "with"  
+1. Elasticsearch uses a standard selection of "stop words" that are filtered out of search results: 
+
+  - "a", "an", "and", "are", "as", "at", "be", "but", "by", "for", "if", "in", "into", "is", "it", "no", "not", "of", "on", "or", "such", "that", "the", "their", "then", "there", "these", "they", "this", "to", "was", "will", "with"  
 
 2. Known Issues in Beta:
 
@@ -72,7 +75,4 @@ Due to the limitations of scaling with database search, Enterprise deployments w
 
 Are there any new search features are offered with Elasticsearch Beta?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The Beta implementation of Elasticsearch matches the search features currently available with database search. The Mattermost team is working on Elasticsearch features such as file name and content search, date filters, and operators and modifiers.
-
-
-
+The Beta implementation of Elasticsearch matches the search features currently available with database search. The Mattermost team is working on extending the Elasticsearch feature set with file name and content search, date filters, and operators and modifiers.
