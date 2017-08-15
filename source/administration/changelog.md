@@ -105,10 +105,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Under `EmailSettings` in `config.json`:
   - Added `"EnableSMTPAuth": false` to support SMTP servers requiring no authentication
   - Added `"EmailNotificationContentType": "full"` to specify the amount of detail sent in email notification contents
-- Under `SupportSettings` in `config.json`:
-  - Added `"AdministratorsGuideLink": "https://about.mattermost.com/administrators-guide/"` to link to the Administrators Guide from the System Console
-  - Added `"TroubleshootingForumLink": "https://about.mattermost.com/troubleshooting-forum/"` to link to the Troubleshooting Forum from the System Console
-  - Added `"CommercialSupportLink": "https://about.mattermost.com/commercial-support/"` to link to Commercial Support from the System Console
 
 **Additional Changes to Enterprise Edition**:
 
