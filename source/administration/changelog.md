@@ -57,21 +57,21 @@ Scheduled release date: 2017-08-16
 - Added a System Console setting to disable file uploads/downloads on mobile
 
 #### Integrations
-- Null values are now ignored in webhook attachements
+- Null values are now ignored in webhook attachments
 - Outgoing webhooks can now fire if the post contains only an attachment
 - Added /code built-in slash command to create a code block
 
 ### Bug Fixes
 - Fixed incorrectly rotated image thumbnails that were uploaded from mobile devices
 - Adding or removing reactions from a post with an image preview no longer causes the preview to expand/collapse
-- Javascript error no longer thrown file upload fails due to network interuption 
+- JavaScript error no longer thrown file upload fails due to network interruption 
 - Error messages in Account Setting fields no longer stack
 - Fixed Slack Import of non-ascii channel names
 - Changing the search term in the More... Direct Message member list now resets the search
 - Help text for the Channel Switcher is now shown on small desktop windows
 - Keyboard shortcut for Account Settings now toggles
 - Fixed the Preview button in the text input box and message edit modal
-- Fixed a Javascript error when switching teams while uploading a file
+- Fixed a JavaScript error when switching teams while uploading a file
 - CLI tool to delete all users no longer requires a user argument
 - CLI tool now deletes webhooks and slash commands when deleting teams and channels
 - Custom slash commands no longer throw an error if used in a Direct Message channel
@@ -84,7 +84,7 @@ Scheduled release date: 2017-08-16
 - Fixed broken links on the System Console > Mobile Push page
 - /away /offline ephemeral messages can no longer contain extra text posted with the slash command
 - Fix teams being incorrectly marked unread across tabs
-- Fixed Javascript error thrown when viewing a channel containing an invalid emoji reaction
+- Fixed JavaScript error thrown when viewing a channel containing an invalid emoji reaction
 - Periods after URLs are no longer added to the link
 
 ### Compatibility
