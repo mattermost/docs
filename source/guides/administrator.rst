@@ -65,6 +65,7 @@ Administration
    /administration/branding*
    /administration/backup*
    /administration/upgrade.rst
+   /administration/version-archive*
    /administration/migrating.md
 
 Changelog
