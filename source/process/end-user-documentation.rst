@@ -5,7 +5,7 @@ This document describes the best practices for creating `Mattermost documentatio
 
 Follow these steps:
 
-1. Start the document by describing the benefits of the feature for end users (`please see this example <https://docs.mattermost.com/help/messaging/attaching-files.html>`_.
+1. Start the document by describing the benefits of the feature for end users (`please see this example <https://docs.mattermost.com/help/messaging/attaching-files.html>`_).
 
 2. Proceed to explain how to use the feature - use short bullet points as well as screenshots as applicable.
 
@@ -14,7 +14,7 @@ Follow these steps:
 If a document includes multiple features that are related to each other, order them based on which functionality is used 
 the most, e.g.: how to attach files > file previewer > sharing public links.
 
-Additional instructions if editing an existing document:
+Additional Instructions if Editing an Existing Document:
 ------------------------------------------------------------------------------------
 
 1.	Start fresh - begin by writing a draft in a Google document from scratch.
