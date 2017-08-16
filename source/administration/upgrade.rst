@@ -28,6 +28,9 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
 **To upgrade Mattermost Server**:
 
+.. note::
+  If you are upgrading an HA cluster, `review these upgrade notes instead <https://docs.mattermost.com/deployment/cluster.html#upgrade-guide>`_.
+
 1. Review the :doc:`important-upgrade-notes` to make sure you are aware of any actions you need to take before or after upgrading from your particular version.
 
 2. In a terminal window on the server that hosts Mattermost Server, change to your home directory.
