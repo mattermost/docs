@@ -13,79 +13,82 @@ Scheduled release date: 2017-08-16
 
 ### Highlights
 
-#### JIRA Integration
-- Built-in JIRA integration that can post to multiple channels using one webhook. [See documentation](https://about.mattermost.com/default-jira-plugin) 
+#### JIRA App
+- Built-in JIRA integration that can post to multiple channels using a single webhook. [See documentation](https://about.mattermost.com/default-jira-plugin) 
 
 #### Personal Access Tokens
-- Enables integrations to authenticate against the REST API
+- Enables easier and more flexible integrations by authenticating against the REST API. See [documentation](https://about.mattermost.com/default-user-access-tokens/)
 
 #### Updated iOS and Android Apps
-- v1.1 of the Native [iOS](https://itunes.apple.com/us/app/mattermost/id1257222717?mt=8) and [Android]() Apps are released with support for search, group messaging, viewing emoji reactions and improved performance on poor connections
+- v1.1 of the Native [iOS](https://itunes.apple.com/us/app/mattermost/id1257222717?mt=8) and [Android]() Apps are released with support for search, group messaging, viewing emoji reactions and improved performance on poor connections.
 
 #### Elasticsearch Beta ([Enterprise Edition E20](https://about.mattermost.com/pricing/))
-- Connect your Elasticsearch server to Mattermost, then build and manage your post index via the System Console interface
-- Elasticsearch offers a more versatile search platform to overcome existing search issues
+- Connect your Elasticsearch server to Mattermost, then build and manage your post index via the System Console interface.
+- [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html) is a distributed, RESTful search engine supporting highly efficient database searches in a [cluster environment](https://docs.mattermost.com/deployment/cluster.html).
 
 ### Improvements
 
 #### Web User Interface
-- Ephemeral messages now note that they are "(Only visible to you)" 
-- Navigating to an invalid team invite link will now redirect to an error page
-- Cropping of image thumbnails now looks the same before and after posting 
-- Clicking on @mentions will now open the contact card for the user
-- User lists now display full name and nickname
-- Added over 500 new emoji
-- Searching on slow connections now shows a loading spinner in the right-hand side
-- Added a close button next to link previews
-- Ephemeral messages will now always appear as parent posts
+- Ephemeral messages now note that they are "(Only visible to you)" .
+- Navigating to an invalid team invite link will now redirect to an error page.
+- Cropping of image thumbnails now looks the same before and after posting.
+- Clicking on @mentions will now open the contact card for the user.
+- User lists now display full name and nickname.
+- Added over 500 new emoji.
+- Searching on slow connections now shows a loading spinner in the right-hand side.
+- Added a close button next to link previews.
+- Ephemeral messages will now always appear as parent posts.
 
 #### Notifications
 - Added an option to Push Notification Contents to send no channel name or message text
-- Added a new Email Notification Content setting to specify the amount of detail sent in email notification
-- Updated the default email frequency to 15 minutes if email batching is enabled by the System Admin
-- Users are now prompted from Account Settings to set Edge notification sounds in their browser settings
-- Updated the desktop notification text for incoming webhooks to more accurately reflect the payload
+- Updated the default email frequency to 15 minutes if email batching is enabled by the System Admin.
+- Users are now prompted from Account Settings to set Edge notification sounds in their browser settings.
+- Updated the desktop notification text for incoming webhooks to more accurately reflect the payload.
 
 #### Administration
-- No longer require a refresh after a user is promoted to a Team Admin 
-- Announcement banner now supports URLs
-- Bulk importer now supports user preferences, including favorite channels, flagged posts and notification preferences
-- Changed username to be the default name display setting in the System Console
-- Channel member list now follows the Teammate name display configuration setting 
-- Added more debugging info to server logs for failed OAuth requests
-- Added a new System Console push notification content setting to only display sender name
-- Added a System Console setting to disable file uploads/downloads on mobile
+- No longer require a refresh after a user is promoted to a Team Admin.
+- Announcement banner now supports URLs.
+- Bulk importer now supports user preferences, including favorite channels, flagged posts and notification preferences.
+- Changed username to be the default name display setting in the System Console.
+- Channel member list now follows the Teammate name display configuration setting.
+- Added more debugging info to server logs for failed OAuth requests.
+- Added a new System Console push notification content setting to only display sender name.
 
 #### Integrations
-- Null values are now ignored in webhook attachments
-- Outgoing webhooks can now fire if the post contains only an attachment
-- Added /code built-in slash command to create a code block
+- Null values are now ignored in webhook attachments.
+- Outgoing webhooks can now fire if the post contains only an attachment.
+- Added ``/code`` built-in slash command to create a code block.
+- Added ``/purpose`` built-in slash command to set the channel purpose.
+- Added ``/rename`` built-in slash command to rename the channel.
+
+#### Enterprise Edition E20
+- Added a System Console setting to disable file uploads and downloads on mobile.
+- Added a new Email Notification Content setting to specify the amount of detail sent in email notification
 
 ### Bug Fixes
-- Fixed incorrectly rotated image thumbnails that were uploaded from mobile devices
-- Adding or removing reactions from a post with an image preview no longer causes the preview to expand/collapse
-- JavaScript error no longer thrown file upload fails due to network interruption 
-- Error messages in Account Setting fields no longer stack
-- Fixed Slack Import of non-ascii channel names
-- Changing the search term in the More... Direct Message member list now resets the search
-- Help text for the Channel Switcher is now shown on small desktop windows
-- Keyboard shortcut for Account Settings now toggles
-- Fixed the Preview button in the text input box and message edit modal
-- Fixed a JavaScript error when switching teams while uploading a file
-- CLI tool to delete all users no longer requires a user argument
-- CLI tool now deletes webhooks and slash commands when deleting teams and channels
-- Custom slash commands no longer throw an error if used in a Direct Message channel
-- System Console now reads and honors the Amazon S3 Region setting
-- Keyboard shortcut text on the Channel Switcher is now removed on mobile
-- Fixed whitespace and trimming on code blocks and empty table cells
-- Disabled the "Create Account" button after the first click so the system does not attempt to create the account twice
-- More Channels modal no longer stops paging after the first two pages
-- Editing channel names now correctly limits character count to 22
-- Fixed broken links on the System Console > Mobile Push page
-- /away /offline ephemeral messages can no longer contain extra text posted with the slash command
-- Fix teams being incorrectly marked unread across tabs
-- Fixed JavaScript error thrown when viewing a channel containing an invalid emoji reaction
-- Periods after URLs are no longer added to the link
+- Fixed incorrectly rotated image thumbnails that were uploaded from mobile devices.
+- Adding or removing reactions from a post with an image preview no longer causes the preview to expand or collapse.
+- JavaScript error no longer thrown when file upload fails due to network interruption.
+- Error messages in Account Setting fields no longer stack.
+- Fixed Slack Import of non-ascii channel names.
+- Changing the search term in the More Direct Messages member list now resets the search.
+- Help text for the Channel Switcher (CTRL/CMD+K) is now shown on small desktop windows, and removed on mobile.
+- Keyboard shortcut for Account Settings (CTR/CMD+SHIFT+A) now toggles.
+- Fixed the Preview button in the text input box and message edit modal.
+- Fixed a JavaScript error when switching teams while uploading a file.
+- CLI tool to delete all users no longer requires a user argument.
+- CLI tool now deletes webhooks and slash commands when deleting teams and channels.
+- Custom slash commands no longer throw an error if used in a Direct Message channel.
+- System Console now reads and honors the Amazon S3 Region setting.
+- Fixed whitespace and trimming on code blocks and empty table cells.
+- Disabled the "Create Account" button after the first click so the system does not attempt to create the account twice.
+- More Channels modal no longer stops paging after the first two pages.
+- Editing channel names now correctly limits character count to 22.
+- Fixed broken links on the **System Console > Mobile Push** page.
+- `/away` and `/offline` ephemeral messages can no longer contain extra text posted with the slash command.
+- Fixed teams being sometimes incorrectly marked unread across tabs.
+- Fixed JavaScript error thrown when viewing a channel containing an invalid emoji reaction.
+- Periods after URLs are no longer added to the link.
 
 ### Compatibility
 
@@ -101,7 +104,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 **Changes to Team Edition and Enterprise Edition**:
 
 - Under `ServiceSettings` in `config.json`:
-  - `"EnableUserAccessTokens": false` to enable user access tokens for integrations to authenticate against the REST API
+  - `"EnableUserAccessTokens": false` to enable personal access tokens for integrations to authenticate against the REST API
 - Under `EmailSettings` in `config.json`:
   - Added `"EnableSMTPAuth": false` to support SMTP servers requiring no authentication
   - Added `"EmailNotificationContentType": "full"` to specify the amount of detail sent in email notification contents
@@ -129,13 +132,13 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 **UserAccessToken Table:**
 - Added table
 
-**JobStatuses Table**
+**JobStatuses Table:**
 - Removed table
 
-**Jobs Table**
+**Jobs Table:**
 - Added table
 
-**Users Table**
+**Users Table:**
 - Modified ``Roles`` column maximum size from 64 to 256 characters
 
 ### API v4 Changes
@@ -200,14 +203,6 @@ Many thanks to all our contributors. In alphabetical order:
 
 - [ccbrown](https://github.com/ccbrown), [grundelborg](https://github.com/grundelborg), [jwilander](https://github.com/jwilander), [thePanz](https://github.com/thePanz)
 
-/marked
-
-- [hmhealey](https://github.com/hmhealey)
-
-/mattermost-selenium
-
-- [lindalumitchell](https://github.com/lindalumitchell)
-
 /mattermost-kubernetes
 
 - [crspeller](https://github.com/crspeller)
@@ -216,10 +211,6 @@ Many thanks to all our contributors. In alphabetical order:
 
 - [jminardi](https://github.com/jminardi), [jnbt](https://github.com/jnbt), [pichouk](https://github.com/pichouk)
 
-/matterbuild
-
-- [crspeller](https://github.com/mattermost/crspeller)
-
 /mattermost-load-test
 
 - [crspeller](https://github.com/mattermost/crspeller)
@@ -227,14 +218,6 @@ Many thanks to all our contributors. In alphabetical order:
 /mattermost-bot-sample-golang
 
 - [fkr](https://github.com/fkr), [hmhealey](https://github.com/hmhealey)
-
-/mattermost-heroku
-
-- [it33](https://github.com/it33), [jwilander](https://github.com/jwilander)
-
-
-
-
 ## Release v4.0.0
 
  - **v4.0.1, TBD**
