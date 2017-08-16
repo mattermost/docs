@@ -15,6 +15,7 @@ Development Process
 
    /process/overview*
    /process/release-process*
+   /process/mobile-release*
 
 Community Process
 -------------------
