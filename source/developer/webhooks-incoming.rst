@@ -24,7 +24,7 @@ Let's learn how to create a simple incoming webhook that posts the following mes
 .. image:: ../images/incoming_webhooks_create_simple.png
   :width: 50 px
   
-1. First, go to **Main Menu > Integrations > Incoming Webhook**. If you don't have the **Integrations** option in your Main Menu, incoming webhooks may not be enabled on your Mattermost server. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator to do so.
+1. First, go to **Main Menu > Integrations > Incoming Webhook**. If you don't have the **Integrations** option in your Main Menu, incoming webhooks may not be enabled on your Mattermost server or may be disabled for non-admins. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator to do so.
 2. Click **Add Incoming Webhook** and add name and description for the webhook.
 3. Select the channel to receive webhook payloads, then click **Add** to create the webhook.
 4. Use a curl command from your terminal or commandline to send the following JSON payload in a HTTP POST request:
@@ -139,7 +139,7 @@ Messages with advanced formatting can be created by including an :doc:`attachmen
 Tips and Best Practices
 ------------------------
 
-1. Webhooks are designed to post messages. For other actions such as channel creation, use the `Mattermost APIs <../developer/api.html>`_.
+1. Webhooks are designed to easily allow you to post messages. For other actions such as channel creation, you must also use the `Mattermost APIs <../developer/api.html>`_.
 
 2. If the text is longer than 4000 characters, the message is split into multiple consecutive posts, each within the 4000 character limit.
 
