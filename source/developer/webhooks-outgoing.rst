@@ -23,7 +23,7 @@ Suppose you want to write an external application, which executes software tests
 
 You can follow these general guidelines to set up a Mattermost outgoing webhook for your application.
 
-1 - First, go to **Main Menu > Integrations > Outgoing Webhook**. If you don't have the **Integrations** option in your Main Menu, outgoing webhooks may not be enabled on your Mattermost server. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator to do so.
+1 - First, go to **Main Menu > Integrations > Outgoing Webhook**. If you don't have the **Integrations** option in your Main Menu, outgoing webhooks may not be enabled on your Mattermost server or may be disabled for non-admins. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator to do so.
 
 2 - Click **Add Outgoing Webhook** and add name and description for the webhook.
 
@@ -162,7 +162,7 @@ Messages with advanced formatting can be created by including an :doc:`attachmen
 Tips and Best Practices
 ------------------------
 
-1. Webhooks are designed to post messages. For other actions such as channel creation, use the `Mattermost APIs <../developer/api.html>`_.
+1. Webhooks are designed to easily allow you to post messages. For other actions such as channel creation, you must also use the `Mattermost APIs <../developer/api.html>`_.
 
 2. If the text in the JSON payload is longer than 4000 characters, the message is split into multiple consecutive posts, each within the 4000 character limit.
 
