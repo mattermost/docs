@@ -1,7 +1,7 @@
 Creating and Editing Mattermost User’s Guide:
 ====================================================================================
 
-This document describes the best practices for creating `Mattermost documentation for end users <https://docs.mattermost.com/guides/user.html>`_
+This document describes the best practices for creating `Mattermost documentation for end users <https://docs.mattermost.com/guides/user.html>`_.
 
 Follow these steps:
 
