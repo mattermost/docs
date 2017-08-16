@@ -63,7 +63,8 @@ Scheduled release date: 2017-08-16
 
 #### Enterprise Edition E20
 - Added a System Console setting to disable file uploads and downloads on mobile.
-- Added a new Email Notification Content setting to specify the amount of detail sent in email notification
+- Added a new Email Notification Content setting to specify the amount of detail sent in email notification.
+- Added support for server-side encryption of files in Amazon S3, using Amazon S3-managed keys.
 
 ### Bug Fixes
 - Fixed incorrectly rotated image thumbnails that were uploaded from mobile devices.
@@ -112,6 +113,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 **Additional Changes to Enterprise Edition**:
 
 - Under `FileSettings` in `config.json`:
+  - Added `"AmazonS3SSE": false` to enable server-side encryption for files in Amazon S3.
   - Added `"EnableMobileUpload": true` to enable file uploads on mobile devices
   - Added `"EnableMobileDownload": true` to enable file downloads on mobile devices
 - Under `JobSettings` in `config.json`:
