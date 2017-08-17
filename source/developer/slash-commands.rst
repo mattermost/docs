@@ -8,7 +8,7 @@ Mattermost supports slash commands to easily integrate external applications int
 Messages that begin with ``/`` are interpreted as slash commands. The commands will send an HTTP POST request to a web service, and process a response back to Mattermost. Mattermost supports both `built-in <https://docs.mattermost.com/developer/slash-commands.html#built-in-commands>`_ and `custom slash commands <https://docs.mattermost.com/developer/slash-commands.html#custom-slash-command>`_.
 
 .. toctree::
-  :maxdepth: 2
+   :maxdepth: 2
 
 Built-in Commands
 ------------------------
@@ -93,7 +93,7 @@ You can follow these general guidelines to set up a custom Mattermost slash comm
 
 10 - To have your application post a message back to ``town-square``, it can respond to the HTTP POST request with a JSON response payload such as:
 
-.. code-block:: Text
+.. code-block:: text
 
    {"response_type": "in_channel", "text": "
    ---
@@ -130,15 +130,15 @@ You can use the ``response_type`` parameter to set whether the command posts a r
 
 For example, to send an ephemeral message, use the following payload.
 
-.. code-block::
+.. code-block:: text
 
-   payload={"response_type": "ephemeral", "text": "Hello, this is some text\nThis is more text. :tada:"}
+  payload={"response_type": "ephemeral", "text": "Hello, this is some text\nThis is more text. :tada:"}
 
 To send the response as a regular message, use the following payload.
 
-.. code-block::
+.. code-block:: text
 
-   payload={"response_type": "in_channel", "text": "Hello, this is some text\nThis is more text. :tada:"}
+  payload={"response_type": "in_channel", "text": "Hello, this is some text\nThis is more text. :tada:"}
 
 Redirect to an external webpage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -147,9 +147,9 @@ You can use the ``goto_location`` parameter to redirect the user of your command
 
 If the parameter is present, the user is redirected to the specified URL in a new browser tab. For instance, to redirect the user to `https://about.mattermost.com <https://about.mattermost.com>`_, use the following payload.
 
-.. code-block::
+.. code-block:: text
 
-   payload={"response_type": "ephemeral", "goto_location": "https://about.mattermost.com", "text": "Hello, this is some text\nThis is more text. :tada:"}
+  payload={"response_type": "ephemeral", "goto_location": "https://about.mattermost.com", "text": "Hello, this is some text\nThis is more text. :tada:"}
 
 The parameter supports any custom protocol including ``http://``, ``https://``, ``ftp://``, ``ssh://`` and ``mailto://``.
 
@@ -160,12 +160,12 @@ A rich range of formatting unavailable in Slack is made possible through :doc:`M
 
 For example, to create a message with a heading and an italicized text on the next line, use the following payload. 
 
-.. code-block::
+.. code-block:: text
 
-   payload={"text": "# This is a heading\n_This text is italicized._"}
+  payload={"text": "# This is a heading\n_This text is italicized._"}
 
 .. image:: ../images/incoming_webhooks_markdown_formatting.png
-  :width: 500 px
+  :width: 300 px
   
 Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` in the JSON payload.
 
@@ -176,9 +176,9 @@ You can trigger mention notifications with your message. To trigger a mention, i
 
 Channels can be mentioned by including *@channel* or *<!channel>*. For example:
 
-.. code-block::
+.. code-block:: text
 
-   payload={"text": "<!channel> this is a notification."}
+  payload={"text": "<!channel> this is a notification."}
 
 Override the username
 ~~~~~~~~~~~~~~~~~~~~~
@@ -187,12 +187,12 @@ In addition to specifying the response username when setting up your slash comma
 
 For example, to send the message as a ``webhook-bot``, use the following payload.
 
-.. code-block::
+.. code-block:: text
 
-   payload={"username": "webhook-bot", "text": "Hello, this is some text\nThis is more text. :tada:"}
+  payload={"username": "webhook-bot", "text": "Hello, this is some text\nThis is more text. :tada:"}
   
 .. image:: ../images/incoming_webhooks_override_username.png
-  :width: 500 px
+  :width: 400 px
 
 To prevent malicious users from trying to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`_, a *BOT* indicator appears next to posts coming from webhooks regardless of what username is specified.
 
@@ -206,9 +206,9 @@ Similary to the username, you can also override the profile picture by specifyin
 
 For example, you can use the following payload to override the profile picture to use the image located at http://example.com/somecoolimage.jpg.
 
-.. code-block::
+.. code-block:: text
 
-   payload={"icon_url": "http://example.com/somecoolimage.jpg", "text": "Hello, this is some text\nThis is more text. :tada:"}
+  payload={"icon_url": "http://example.com/somecoolimage.jpg", "text": "Hello, this is some text\nThis is more text. :tada:"}
 
   .. note::
     `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`_ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator. If not enabled, the icon of the creator of the webhook URL is used to post messages.
