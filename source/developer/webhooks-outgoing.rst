@@ -14,7 +14,7 @@ Use outgoing webhooks to post automated responses to posts made by your users. O
     Outgoing webhooks are supported in public channels only. If you need a trigger that works in a private channel or a direct message, consider using a `slash command <https://docs.mattermost.com/developer/slash-commands.html>`_ instead.
 
 .. toctree::
-  :maxdepth: 2
+   :maxdepth: 2
 
 Create an Outgoing Webhook
 ----------------------------
@@ -51,7 +51,7 @@ In our example, we would set the channel to ``town-square`` and specify ``#build
 7 - On the next page, copy the **Token** value. This will be used in a later step.
 
 .. image:: ../images/outgoing_webhooks_token.png
-  :width: 50 px
+  :width: 500 px
 
 8 - Next, write your external application. Include a function, which receives HTTP POST requests from Mattermost. The function should look something like this:
 
@@ -107,12 +107,12 @@ You can override the username the messages posts as by specifying a ``username``
 
 For example, to send the message as a ``webhook-bot``, use the following payload.
 
-  .. code-block::
+.. code-block:: text
 
-    payload={"username": "webhook-bot", "text": "Hello, this is some text\nThis is more text. :tada:"}
+  payload={"username": "webhook-bot", "text": "Hello, this is some text\nThis is more text. :tada:"}
   
 .. image:: ../images/incoming_webhooks_override_username.png
-  :width: 50 px
+  :width: 400 px
 
 To prevent malicious users from trying to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`_ a *BOT* indicator appears next to posts coming from webhooks regardless of what username is specified.
 
@@ -126,9 +126,9 @@ You can also override the profile picture the messages post with by specifying a
 
 For example, you can use the following payload to override the profile picture to use the image located at http://example.com/somecoolimage.jpg.
 
-  .. code-block::
+.. code-block:: text
 
-    payload={"icon_url": "http://example.com/somecoolimage.jpg", "text": "Hello, this is some text\nThis is more text. :tada:"}
+  payload={"icon_url": "http://example.com/somecoolimage.jpg", "text": "Hello, this is some text\nThis is more text. :tada:"}
 
   .. note::
     `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`_ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator. If not enabled, the icon of the creator of the webhook URL is used to post messages.
@@ -140,9 +140,9 @@ You can trigger mention notifications with your outgoing webhook message. To tri
 
 Channels can be mentioned by including *@channel* or *<!channel>*. For example:
 
- .. code-block::
+.. code-block:: text
 
-    payload={"text": "<!channel> this is a notification."}
+  payload={"text": "<!channel> this is a notification."}
 
 Markdown formatting
 ~~~~~~~~~~~~~~~~~~~~
@@ -151,11 +151,12 @@ A rich range of formatting unavailable in Slack is made possible through :doc:`m
 
 For example, to create a message with a heading, and an italicized text on the next line, use the following payload. 
 
-  .. code-block::
+.. code-block:: text
 
-    payload={"text": "# This is a heading\n_This text is italicized._"}
+  payload={"text": "# This is a heading\n_This text is italicized._"}
 
 .. image:: ../images/incoming_webhooks_markdown_formatting.png
+  :width: 300 px
 
 Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` in the JSON payload.
 
