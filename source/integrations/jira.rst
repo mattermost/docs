@@ -31,9 +31,9 @@ Enable JIRA on your Mattermost instance
    
    For instance, if the team URL is ``contributors`` and channel URL is ``town-square``, then the final webhook URL on the above screenshot would be 
    
-   .. code-block::
+.. code-block:: text
      
-      https://ci-linux-postgres.mattermost.com/plugins/jira/webhook?secret=5JlVk56KPxX629ujeU3MOuxaiwsPzLwh&team=contributors&channel=town-square
+  https://ci-linux-postgres.mattermost.com/plugins/jira/webhook?secret=5JlVk56KPxX629ujeU3MOuxaiwsPzLwh&team=contributors&channel=town-square
 
 Configure the webhook in your JIRA project
 ............................................
@@ -41,7 +41,7 @@ Configure the webhook in your JIRA project
 4 - Log in to your JIRA project as an administrator. Then click on **System** in the **Administration** menu.
 
 .. image:: ../../source/images/jira_administration_menu.png
-  :width: 500 px
+  :width: 300 px
 
 5 - On the left-hand sidebar, go to **Advanced > WebHooks. Then click the **Create a Webhook** button to display the webhook creation form. Choose a unique name and add the JIRA webhook URL from step 3 as the URL. 
 
@@ -54,7 +54,6 @@ Configure the webhook in your JIRA project
   - Issue: Deleted - when an open issue is deleted. If the issue was already closed, deleting it won't send a message to Mattermost.
 
 .. image:: ../../source/images/jira_webhook-configuration.png
-  :width: 500 px
 
 8 - You're all set! JIRA issue events are now sent to your Mattermost channels. To create a second webhook integration, simply replace the team URL and channel URL in step 3.
 
@@ -78,9 +77,9 @@ Why do I get an error ``WebHooks can only use standard http and https ports (80 
 
 JIRA only allows webhooks to connect to the standard ports 80 and 443. If you are using a non-standard port, you will need to set up a proxy for the webhook URL, such as
 
-.. code-block::
+.. code-block:: text
 
-   https://32zanxm6u6.execute-api.us-east-1.amazonaws.com/dev/proxy?url=https%3A%2F%2F<your-mattermost-url>%3A<your-port>%2Fplugins%2Fjira%2Fwebhook%3Fsecret%3DWb6w15YWJ9WeBooebLHslgr2KN1AajI_%26team%3D<your-team-url>%26channel%3D<your-channel-url>
+  https://32zanxm6u6.execute-api.us-east-1.amazonaws.com/dev/proxy?url=https%3A%2F%2F<your-mattermost-url>%3A<your-port>%2Fplugins%2Fjira%2Fwebhook%3Fsecret%3DWb6w15YWJ9WeBooebLHslgr2KN1AajI_%26team%3D<your-team-url>%26channel%3D<your-channel-url>
     
 where ``<your-mattermost-url>``, ``<your-port>``, ``<your-team-url>`` and ``<your-channel-url>`` depend on your setup from the above steps.
 
