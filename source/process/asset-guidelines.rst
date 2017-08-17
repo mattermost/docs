@@ -142,7 +142,7 @@ Feature Creator
 ^^^^^^^^^^^^^^^^
 
 1. Appears in the bottom right corner of the asset footer.
-2. Text in footer should use GitHub username in lowercase, or company/person name in capital case i.e. ``by matterhorn-chat`` or ``by Galois, Inc.``
+2. Text in footer should use GitHub username in lowercase, or company/person name in capital case i.e. ``by matterhorn-chat`` or ``by Galois, Inc.``.
 
 Feature Representative Art
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -175,6 +175,7 @@ Mattermost and Representative Logos
 3. Representative logo appears on the left side of the asset below the feature title.
 4. For representative logos, always confirm you are using the official version of the company’s logo. If you’re unsure, ask.
 5. When the background color is dark, use the white/inverted version of representative logo. When the background color is light, use the dark/primary version of representative logo.
+6. If the color of the logo is the same as the color of the title, make sure to make them distinctive from each other by slightly reducing the size of the logo.
 
 Feature Screenshot
 ^^^^^^^^^^^^^^^^^^^
