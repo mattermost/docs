@@ -8,7 +8,7 @@ Mattermost supports slash commands to easily integrate external applications int
 Messages that begin with ``/`` are interpreted as slash commands. The commands will send an HTTP POST request to a web service, and process a response back to Mattermost. Mattermost supports both `built-in <https://docs.mattermost.com/developer/slash-commands.html#built-in-commands>`_ and `custom slash commands <https://docs.mattermost.com/developer/slash-commands.html#custom-slash-command>`_.
 
 .. toctree::
-	:maxdepth: 2
+  :maxdepth: 2
 
 Built-in Commands
 ------------------------
@@ -66,28 +66,28 @@ You can follow these general guidelines to set up a custom Mattermost slash comm
 7 - Hit **Save**. On the next page, copy the **Token** value. This will be used in a later step.
 
 .. image:: ../images/slash_commands_token.png
-  :width: 50 px
+  :width: 500 px
 
 8 - Next, write your external application. Include a function which receives HTTP POST or HTTP GET requests from Mattermost. The request will look something like this:
 
-    .. code-block:: text
+.. code-block:: text
 
-      Content-Length: 244
-      User-Agent: Go 1.1 package http
-      Host: localhost:5000
-      Accept: application/json
-      Content-Type: application/x-www-form-urlencoded
+   Content-Length: 244
+   User-Agent: Go 1.1 package http
+   Host: localhost:5000
+   Accept: application/json
+   Content-Type: application/x-www-form-urlencoded
 
-      channel_id=cniah6qa73bjjjan6mzn11f4ie&
-      channel_name=town-square&
-      command=/somecommand&
-      response_url=not+supported+yet&
-      team_domain=someteam&
-      team_id=rdc9bgriktyx9p4kowh3dmgqyc&
-      text=hello+world&
-      token=xr3j5x3p4pfk7kk6ck7b4e6ghh&
-      user_id=c3a4cqe3dfy6dgopqt8ai3hydh&
-      user_name=somename
+   channel_id=cniah6qa73bjjjan6mzn11f4ie&
+   channel_name=town-square&
+   command=/somecommand&
+   response_url=not+supported+yet&
+   team_domain=someteam&
+   team_id=rdc9bgriktyx9p4kowh3dmgqyc&
+   text=hello+world&
+   token=xr3j5x3p4pfk7kk6ck7b4e6ghh&
+   user_id=c3a4cqe3dfy6dgopqt8ai3hydh&
+   user_name=somename
 
 9 - Add a configurable *MATTERMOST_TOKEN* variable to your application and set it to the **Token** value from step 7. This value will be used by your application to confirm the HTTP POST or GET request came from Mattermost.
 
@@ -95,21 +95,21 @@ You can follow these general guidelines to set up a custom Mattermost slash comm
 
 .. code-block:: Text
 
-  {"response_type": "in_channel", "text": "
-  ---
-  #### Weather in Toronto, Ontario for the Week of February 16th, 2016
+   {"response_type": "in_channel", "text": "
+   ---
+   #### Weather in Toronto, Ontario for the Week of February 16th, 2016
 
-  | Day                 | Description                      | High   | Low    |
-  |:--------------------|:---------------------------------|:-------|:-------|
-  | Monday, Feb. 15     | Cloudy with a chance of flurries | 3 °C   | -12 °C |
-  | Tuesday, Feb. 16    | Sunny                            | 4 °C   | -8 °C  |
-  | Wednesday, Feb. 17  | Partly cloudly                   | 4 °C   | -14 °C |
-  | Thursday, Feb. 18   | Cloudy with a chance of rain     | 2 °C   | -13 °C |
-  | Friday, Feb. 19     | Overcast                         | 5 °C   | -7 °C  |
-  | Saturday, Feb. 20   | Sunny with cloudy patches        | 7 °C   | -4 °C  |
-  | Sunday, Feb. 21     | Partly cloudy                    | 6 °C   | -9 °C  |
-  ---
-  "}
+   | Day                 | Description                      | High   | Low    |
+   |:--------------------|:---------------------------------|:-------|:-------|
+   | Monday, Feb. 15     | Cloudy with a chance of flurries | 3 °C   | -12 °C |
+   | Tuesday, Feb. 16    | Sunny                            | 4 °C   | -8 °C  |
+   | Wednesday, Feb. 17  | Partly cloudly                   | 4 °C   | -14 °C |
+   | Thursday, Feb. 18   | Cloudy with a chance of rain     | 2 °C   | -13 °C |
+   | Friday, Feb. 19     | Overcast                         | 5 °C   | -7 °C  |
+   | Saturday, Feb. 20   | Sunny with cloudy patches        | 7 °C   | -4 °C  |
+   | Sunday, Feb. 21     | Partly cloudy                    | 6 °C   | -9 °C  |
+   ---
+   "}
 
 Which would render in Mattermost as
 
@@ -130,15 +130,15 @@ You can use the ``response_type`` parameter to set whether the command posts a r
 
 For example, to send an ephemeral message, use the following payload.
 
-  .. code-block::
+.. code-block::
 
-    payload={"response_type": "ephemeral", "text": "Hello, this is some text\nThis is more text. :tada:"}
+   payload={"response_type": "ephemeral", "text": "Hello, this is some text\nThis is more text. :tada:"}
 
 To send the response as a regular message, use the following payload.
 
-  .. code-block::
+.. code-block::
 
-    payload={"response_type": "in_channel", "text": "Hello, this is some text\nThis is more text. :tada:"}
+   payload={"response_type": "in_channel", "text": "Hello, this is some text\nThis is more text. :tada:"}
 
 Redirect to an external webpage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -147,9 +147,9 @@ You can use the ``goto_location`` parameter to redirect the user of your command
 
 If the parameter is present, the user is redirected to the specified URL in a new browser tab. For instance, to redirect the user to `https://about.mattermost.com <https://about.mattermost.com>`_, use the following payload.
 
-  .. code-block::
+.. code-block::
 
-    payload={"response_type": "ephemeral", "goto_location": "https://about.mattermost.com", "text": "Hello, this is some text\nThis is more text. :tada:"}
+   payload={"response_type": "ephemeral", "goto_location": "https://about.mattermost.com", "text": "Hello, this is some text\nThis is more text. :tada:"}
 
 The parameter supports any custom protocol including ``http://``, ``https://``, ``ftp://``, ``ssh://`` and ``mailto://``.
 
@@ -160,12 +160,13 @@ A rich range of formatting unavailable in Slack is made possible through :doc:`M
 
 For example, to create a message with a heading and an italicized text on the next line, use the following payload. 
 
-  .. code-block::
+.. code-block::
 
-    payload={"text": "# This is a heading\n_This text is italicized._"}
+   payload={"text": "# This is a heading\n_This text is italicized._"}
 
 .. image:: ../images/incoming_webhooks_markdown_formatting.png
-
+  :width: 500 px
+  
 Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` in the JSON payload.
 
 Mention notifications
@@ -175,9 +176,9 @@ You can trigger mention notifications with your message. To trigger a mention, i
 
 Channels can be mentioned by including *@channel* or *<!channel>*. For example:
 
- .. code-block::
+.. code-block::
 
-    payload={"text": "<!channel> this is a notification."}
+   payload={"text": "<!channel> this is a notification."}
 
 Override the username
 ~~~~~~~~~~~~~~~~~~~~~
@@ -186,12 +187,12 @@ In addition to specifying the response username when setting up your slash comma
 
 For example, to send the message as a ``webhook-bot``, use the following payload.
 
-  .. code-block::
+.. code-block::
 
-    payload={"username": "webhook-bot", "text": "Hello, this is some text\nThis is more text. :tada:"}
+   payload={"username": "webhook-bot", "text": "Hello, this is some text\nThis is more text. :tada:"}
   
 .. image:: ../images/incoming_webhooks_override_username.png
-  :width: 50 px
+  :width: 500 px
 
 To prevent malicious users from trying to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`_, a *BOT* indicator appears next to posts coming from webhooks regardless of what username is specified.
 
@@ -205,9 +206,9 @@ Similary to the username, you can also override the profile picture by specifyin
 
 For example, you can use the following payload to override the profile picture to use the image located at http://example.com/somecoolimage.jpg.
 
-  .. code-block::
+.. code-block::
 
-    payload={"icon_url": "http://example.com/somecoolimage.jpg", "text": "Hello, this is some text\nThis is more text. :tada:"}
+   payload={"icon_url": "http://example.com/somecoolimage.jpg", "text": "Hello, this is some text\nThis is more text. :tada:"}
 
   .. note::
     `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`_ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator. If not enabled, the icon of the creator of the webhook URL is used to post messages.
