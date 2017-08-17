@@ -1898,7 +1898,7 @@ Hostname of your S3 Compatible Storage provider. Defaults to ``s3.amazonaws.com`
 | This feature's ``config.json`` setting is ``"AmazonS3Endpoint": "s3.amazonaws.com"`` with string input.                                                              |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Secure Amazon S3 Connections
+Enable Secure Amazon S3 Connections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **True**: Enables only secure Amazon S3 Connections.
@@ -1907,6 +1907,19 @@ Secure Amazon S3 Connections
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AmazonS3SSL": true`` with options ``true`` and ``false`` for above settings respectively.                               |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable Server-Side Encryption for Amazon S3
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*Available in Enterprise Edition E20*
+
+**True**: Encrypts files in Amazon S3 using server-side encryption with `Amazon S3-managed keys <http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html>`.
+
+**False**: Doesn't encrypt files in Amazon S3.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AmazonS3SSE": true`` with options ``true`` and ``false`` for above settings respectively.                               |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Allow File Sharing
