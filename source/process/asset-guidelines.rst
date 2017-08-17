@@ -71,7 +71,7 @@ When a relevant article on Mattermost is found in the news, add a new entry into
 Step-by-Step Asset Creation Guide for Artists
 ----------------------------------------------
 
-Follow these steps to create an asset for integration or feature promotion, integration blog tweet, or user award tweet.
+Follow these steps to create an asset for integration or feature promotion or for guest blog posts.
 
 You can find sample templates `in this Google drive <https://drive.google.com/open?id=0Bx-9w8QDFlfcbUh2bGdkRElJaWs>`_.
 
@@ -86,32 +86,15 @@ Integration or Feature Promotion
 6. Add a 1 pixel grey stroke border around the rectangular boundary of the banner.
 7. Save the finished asset draft in both .TIF and .PNG format, and upload to your "Dropbox Share" folder.
 
-Integration Blog
+Guest Blog Posts
 ^^^^^^^^^^^^^^^^^
 
-**These guidelines are out of date and should be updated for the new banner design**
-
-Occasionally a blog post will be written to further promote an integration. Follow these steps to create a marketing asset promoting said blog entry:
-
 1. Use this `template <https://drive.google.com/file/d/0Bx-9w8QDFlfcQURoRnF1YllZWWc/view?usp=sharing>`_ as a starting point.
-2. Change text in the "title" layer to read “Meet the Creator:”, followed by the proper integration name.
-3. Change text in the "by liger1978" layer to the integration creator's name.
-4. Change the contents in the "right image" layer to include proper representative logo, followed by a split with the blue Mattermost logo. This helps create the message that it’s the representative and Mattermost together.
-5. Obtain a photo of the integration creator, apply a Wall Street Journal “Hedcut” effect, and update the "Left Image" layer. A helpful tutorial for how to achieve the "Hedcut" effect can be found `here <http://www.alleba.com/blog/2006/12/20/photoshop-tutorial-the-hedcut-effect/>`_.
+2. Update the title following the guidelines in `Feature Title`_.
+3. Update representative logo following the guidelines in `Mattermost and Representative Logos`_.
+4. Obtain a photo of the guest company member and apply a gray-scale effect. You can also consider applying a `Puppet Module effect <https://www.mattermost.org/puppet-module-for-mattermost/>`_.
+5. Add a 1 pixel grey stroke border around the rectangular boundary of the banner.
 6. Save the finished asset draft in both .TIF and .PNG format, and upload to your "Dropbox Share" folder.
-
-User Award
-^^^^^^^^^^^
-
-**These guidelines are out of date and should be updated for the new banner design**
-
-Occasionally a blog post will be written to recognize a member for their contributions to Mattermost. Follow these steps to create a marketing asset promoting said blog entry:
-
-1. Use this `template <https://www.dropbox.com/s/311qq6d17zvyhtj/20161118_minio_hackertoberfest.tif?dl=0>`_ as a starting point
-2. Change text in the "title" layer to update the user being recognized, the event, and contribution or integration made
-3. Change the contents in the "right image" layer to include proper representative logo and/or a picture of the user being recognized
-4. Change the contents of the "Left Image" layer to update text with proper event name and match color to logo in the right pane
-5. Save the finished asset draft in both .TIF and .PNG format, and upload to your "Dropbox Share" folder
 
 Asset Elements
 ---------------
@@ -148,7 +131,7 @@ Feature Representative Art
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Representative art appears in the right side of the asset.
-2. Screenshot of a feature in action is most preferred (see guidelines for `Feature Screenshot`_ here).
+2. Screenshot of a feature in action is most preferred (see guidelines for `Feature Screenshot`_ and `Screenshot Development of Mattermost User Interface`_.
 3. If no feature screenshot is available, take a screenshot of a well-formatted "README" file or of feature code with the word "Mattermost". If using a "README" file, ensure the screenshot doesn't highlight spelling or capitalization errors.
 4. Change the color of the background based on the color of the screenshot. If the screenshot is light, use a dark background. If the screenshot is dark, use a light background.
 5. Screenshot should not take up more than 40% of the banner width.
@@ -168,14 +151,14 @@ Feature Representative Art
 8. Adjacent areas of light and dark should always have a separator, or have a shading so that the areas don't bleed into the background.
 
 Mattermost and Representative Logos
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Mattermost logo appears in the bottom left corner of the asset.
 2. Use white Mattermost logo on dark backgrounds and black Mattermost logo on light backgrounds.
 3. Representative logo appears on the left side of the asset below the feature title.
 4. For representative logos, always confirm you are using the official version of the company’s logo. If you’re unsure, ask.
 5. When the background color is dark, use the white/inverted version of representative logo. When the background color is light, use the dark/primary version of representative logo.
-6. If the color of the logo is the same as the color of the title, make sure to make them distinctive from each other by slightly reducing the size of the logo.
+6. If the color of the representative logo is the same as the color of the title, make sure to make them distinctive from each other by slightly reducing the size of the logo.
 
 Feature Screenshot
 ^^^^^^^^^^^^^^^^^^^
