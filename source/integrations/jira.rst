@@ -31,9 +31,9 @@ Enable JIRA on your Mattermost instance
    
    For instance, if the team URL is ``contributors`` and channel URL is ``town-square``, then the final webhook URL on the above screenshot would be 
    
-.. code-block:: text
+  .. code-block:: text
      
-  https://ci-linux-postgres.mattermost.com/plugins/jira/webhook?secret=5JlVk56KPxX629ujeU3MOuxaiwsPzLwh&team=contributors&channel=town-square
+    https://ci-linux-postgres.mattermost.com/plugins/jira/webhook?secret=5JlVk56KPxX629ujeU3MOuxaiwsPzLwh&team=contributors&channel=town-square
 
 Configure the webhook in your JIRA project
 ............................................
