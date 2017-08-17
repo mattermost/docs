@@ -137,9 +137,9 @@ Feature Representative Art
 5. Screenshot should not take up more than 40% of the banner width.
 6. Follow these guidelines on spacing:
 
-- Ensure there is around 31px of “white space” between the contents of the screenshot and the edge of the screengrab. (This can be adjusted by resizing the rectangle layer below the screengrab in Photoshop).
-- Ensure there is at least 64px of width between the copy title and the edge of the screengrab.
-- There should be around 60px of space between the top edge of the screengrab and top edge of the banner. (Give or take 10px considering the diagonal of the screengrab).
+  - Ensure there is around 31px of “white space” between the contents of the screenshot and the edge of the screengrab. (This can be adjusted by resizing the rectangle layer below the screengrab in Photoshop).
+  - Ensure there is at least 64px of width between the copy title and the edge of the screengrab.
+  - There should be around 60px of space between the top edge of the screengrab and top edge of the banner. (Give or take 10px considering the diagonal of the screengrab).
 
 6. Leave equal whitespace between all like objects.
 7. Avoid wavy lines when rotating an image. To avoid them, increase the size of the original layer, rotate it, then reduce the size of the image.
