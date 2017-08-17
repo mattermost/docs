@@ -56,3 +56,9 @@ For client work, you'll mostly be working in [./webapp/](https://github.com/matt
  * [./webapp/i18n/](https://github.com/mattermost/platform/tree/master/webapp/i18n) holds the localization files for the client
  * [./webapp/utils/](https://github.com/mattermost/platform/tree/master/webapp/utils) holds all widely-used utilities
  * [./webapp/tests/](https://github.com/mattermost/platform/tree/master/webapp/tests) holds all the client unit tests
+
+### Testing with GitLab Omnibus ###
+
+To test a locally compiled version of Mattermost with GitLab Omnibus, replace the following GitLab files:
+ * The compiled `platform` binary in `/opt/gitlab/embedded/bin/plattermost`
+ * The assets (templates, i18n, fonts, webapp`) in `/opt/gitlab/embedded/service/mattermost`
