@@ -23,7 +23,7 @@ Simple Incoming Webhook
 Let's learn how to create a simple incoming webhook that posts the following message to Mattermost.
 
 .. image:: ../images/incoming_webhooks_create_simple.png
-  :width: 500 px
+  :width: 400 px
   
 1. First, go to **Main Menu > Integrations > Incoming Webhook**. If you don't have the **Integrations** option in your Main Menu, incoming webhooks may not be enabled on your Mattermost server or may be disabled for non-admins. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator to do so.
 2. Click **Add Incoming Webhook** and add name and description for the webhook.
@@ -32,7 +32,7 @@ Let's learn how to create a simple incoming webhook that posts the following mes
 
 .. code-block::
 
-   curl -i -X POST -d 'payload={"text": "Hello, this is some text\nThis is more text. :tada:"}' http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
+                curl -i -X POST -d 'payload={"text": "Hello, this is some text\nThis is more text. :tada:"}' http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
 
 Parameters and Formatting
 --------------------------
@@ -90,7 +90,7 @@ For example, to send the message as a ``webhook-bot``, use the following payload
    payload={"username": "webhook-bot", "text": "Hello, this is some text\nThis is more text. :tada:"}
   
 .. image:: ../images/incoming_webhooks_override_username.png
-  :width: 500 px
+  :width: 400 px
 
 To prevent malicious users from trying to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`_ a *BOT* indicator appears next to posts coming from webhooks regardless of what username is specified.
 
@@ -134,7 +134,7 @@ For example, to create a message with a heading, and an italicized text on the n
    payload={"text": "# This is a heading\n_This text is italicized._"}
 
 .. image:: ../images/incoming_webhooks_markdown_formatting.png
-  :width: 500 px
+  :width: 300 px
 
 Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` in the JSON payload.
 
