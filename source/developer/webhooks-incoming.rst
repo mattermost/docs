@@ -105,6 +105,7 @@ You can also override the profile picture the messages post with by specifying a
 For example, you can use the following payload to override the profile picture to use the image located at http://example.com/somecoolimage.jpg.
 
 .. code-block:: text
+
   payload={"icon_url": "http://example.com/somecoolimage.jpg", "text": "Hello, this is some text\nThis is more text. :tada:"}
 
   .. note::
