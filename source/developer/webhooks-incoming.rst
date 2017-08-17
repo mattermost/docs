@@ -32,7 +32,7 @@ Let's learn how to create a simple incoming webhook that posts the following mes
 
 .. code-block::
 
-                curl -i -X POST -d 'payload={"text": "Hello, this is some text\nThis is more text. :tada:"}' http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
+  curl -i -X POST -d 'payload={"text": "Hello, this is some text\nThis is more text. :tada:"}' http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
 
 Parameters and Formatting
 --------------------------
@@ -70,13 +70,13 @@ For example, if you have a webhook created for *Town Square*, you can send a mes
 
 .. code-block::
 
-   payload={"channel": "off-topic", "text": "Hello, this is some text\nThis is more text. :tada:"}
+    payload={"channel": "off-topic", "text": "Hello, this is some text\nThis is more text. :tada:"}
 
 To send a message to a direct message channel, add an "@" symbol followed by the username to the ``channel`` parameter.
 
 .. code-block::
 
-   payload={"channel": "@username", "text": "Hello, this is some text\nThis is more text. :tada:"}
+     payload={"channel": "@username", "text": "Hello, this is some text\nThis is more text. :tada:"}
 
 Override the username
 ~~~~~~~~~~~~~~~~~~~~~
@@ -87,7 +87,7 @@ For example, to send the message as a ``webhook-bot``, use the following payload
 
 .. code-block::
 
-   payload={"username": "webhook-bot", "text": "Hello, this is some text\nThis is more text. :tada:"}
+      payload={"username": "webhook-bot", "text": "Hello, this is some text\nThis is more text. :tada:"}
   
 .. image:: ../images/incoming_webhooks_override_username.png
   :width: 400 px
@@ -106,7 +106,7 @@ For example, you can use the following payload to override the profile picture t
 
 .. code-block::
 
-   payload={"icon_url": "http://example.com/somecoolimage.jpg", "text": "Hello, this is some text\nThis is more text. :tada:"}
+       payload={"icon_url": "http://example.com/somecoolimage.jpg", "text": "Hello, this is some text\nThis is more text. :tada:"}
 
   .. note::
     `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`_ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator to do so. If not enabled, the icon of the creator of the webhook URL is used to post messages.
@@ -120,7 +120,7 @@ Channels can be mentioned by including *@channel* or *<!channel>*. For example:
 
 .. code-block::
 
-   payload={"text": "<!channel> this is a notification."}
+        payload={"text": "<!channel> this is a notification."}
 
 Markdown formatting
 ~~~~~~~~~~~~~~~~~~~~
@@ -131,7 +131,7 @@ For example, to create a message with a heading, and an italicized text on the n
 
 .. code-block::
 
-   payload={"text": "# This is a heading\n_This text is italicized._"}
+         payload={"text": "# This is a heading\n_This text is italicized._"}
 
 .. image:: ../images/incoming_webhooks_markdown_formatting.png
   :width: 300 px
