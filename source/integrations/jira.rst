@@ -22,7 +22,7 @@ Enable JIRA on your Mattermost instance
 
 
 .. image:: ../images/jira_system_console.png
-  :width: 50px
+  :width: 500 px
 
 3 - Next, copy the webhook URL above the **Save** button, which is used to configure the integration in your JIRA project.
 
@@ -40,7 +40,8 @@ Configure the webhook in your JIRA project
 
 4 - Log in to your JIRA project as an administrator. Then click on **System** in the **Administration** menu.
 
-	.. image:: ../../source/images/jira_administration_menu.png
+.. image:: ../../source/images/jira_administration_menu.png
+  :width: 500 px
 
 5 - On the left-hand sidebar, go to **Advanced > WebHooks. Then click the **Create a Webhook** button to display the webhook creation form. Choose a unique name and add the JIRA webhook URL from step 3 as the URL. 
 
@@ -52,7 +53,8 @@ Configure the webhook in your JIRA project
   - Issue: Updated - when an issue is closed or reopened.
   - Issue: Deleted - when an open issue is deleted. If the issue was already closed, deleting it won't send a message to Mattermost.
 
-	.. image:: ../../source/images/jira_webhook-configuration.png
+.. image:: ../../source/images/jira_webhook-configuration.png
+  :width: 500 px
 
 8 - You're all set! JIRA issue events are now sent to your Mattermost channels. To create a second webhook integration, simply replace the team URL and channel URL in step 3.
 
