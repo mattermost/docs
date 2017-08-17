@@ -14,7 +14,7 @@ Use outgoing webhooks to post automated responses to posts made by your users. O
     Outgoing webhooks are supported in public channels only. If you need a trigger that works in a private channel or a direct message, consider using a `slash command <https://docs.mattermost.com/developer/slash-commands.html>`_ instead.
 
 .. toctree::
-	:maxdepth: 2
+  :maxdepth: 2
 
 Create an Outgoing Webhook
 ----------------------------
