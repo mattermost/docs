@@ -15,7 +15,7 @@ Use incoming webhooks to post messages to Mattermost public channels, private ch
 Use `curl <https://curl.haxx.se/>`_, a simple command line tool for sending HTTP requests in the examples that follow.
 
 .. toctree::
-	:maxdepth: 2
+  :maxdepth: 2
 
 Simple Incoming Webhook
 -----------------------------------
