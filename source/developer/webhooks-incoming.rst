@@ -30,7 +30,7 @@ Let's learn how to create a simple incoming webhook that posts the following mes
 3. Select the channel to receive webhook payloads, then click **Add** to create the webhook.
 4. Use a curl command from your terminal or commandline to send the following JSON payload in a HTTP POST request:
 
-.. code-block::
+.. code-block:: text
 
   curl -i -X POST -d 'payload={"text": "Hello, this is some text\nThis is more text. :tada:"}' http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
 
