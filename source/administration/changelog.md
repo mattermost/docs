@@ -7,6 +7,21 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ## Release v4.2.0
 Scheduled release date: 2017-09-16
 
+### Security Update
+
+### Highlights
+
+### Improvements
+
+### Bug Fixes
+
+### Compatibility
+
+### Known Issues
+
+### Contributors
+
+
 ## Release v4.1.0
 Scheduled release date: 2017-08-16
 
