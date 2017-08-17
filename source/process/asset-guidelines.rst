@@ -142,12 +142,7 @@ Feature Representative Art
 - There should be around 60px of space between the top edge of the screengrab and top edge of the banner. (Give or take 10px considering the diagonal of the screengrab).
 
 6. Leave equal whitespace between all like objects.
-7. Avoid wavy lines when rotating an image as shown in the sample below:
-
-  .. image:: ../images/asset-guidelines-wavy-lines.png
-
-  - To avoid them, increase the size of the original layer, rotate it, then reduce the size of the image.
-
+7. Avoid wavy lines when rotating an image. To avoid them, increase the size of the original layer, rotate it, then reduce the size of the image.
 8. Adjacent areas of light and dark should always have a separator, or have a shading so that the areas don't bleed into the background.
 
 Mattermost and Representative Logos
