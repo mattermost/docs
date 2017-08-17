@@ -20,7 +20,9 @@ Enable JIRA on your Mattermost instance
 
 2 - Enable JIRA in **System Console > Integrations > JIRA (Beta)**. Then select the username that this integration is attached to. If you created an account in step 1, choose that username. Then hit **Save**.
 
-	.. image:: ../../source/images/jira_system_console.png
+
+.. image:: ../images/jira_system_console.png
+  :width: 50px
 
 3 - Next, copy the webhook URL above the **Save** button, which is used to configure the integration in your JIRA project.
 
@@ -31,7 +33,7 @@ Enable JIRA on your Mattermost instance
    
    .. code-block::
      
-     https://ci-linux-postgres.mattermost.com/plugins/jira/webhook?secret=5JlVk56KPxX629ujeU3MOuxaiwsPzLwh&team=contributors&channel=town-square
+      https://ci-linux-postgres.mattermost.com/plugins/jira/webhook?secret=5JlVk56KPxX629ujeU3MOuxaiwsPzLwh&team=contributors&channel=town-square
 
 Configure the webhook in your JIRA project
 ............................................
@@ -76,7 +78,7 @@ JIRA only allows webhooks to connect to the standard ports 80 and 443. If you ar
 
 .. code-block::
 
-    https://32zanxm6u6.execute-api.us-east-1.amazonaws.com/dev/proxy?url=https%3A%2F%2F<your-mattermost-url>%3A<your-port>%2Fplugins%2Fjira%2Fwebhook%3Fsecret%3DWb6w15YWJ9WeBooebLHslgr2KN1AajI_%26team%3D<your-team-url>%26channel%3D<your-channel-url>
+   https://32zanxm6u6.execute-api.us-east-1.amazonaws.com/dev/proxy?url=https%3A%2F%2F<your-mattermost-url>%3A<your-port>%2Fplugins%2Fjira%2Fwebhook%3Fsecret%3DWb6w15YWJ9WeBooebLHslgr2KN1AajI_%26team%3D<your-team-url>%26channel%3D<your-channel-url>
     
 where ``<your-mattermost-url>``, ``<your-port>``, ``<your-team-url>`` and ``<your-channel-url>`` depend on your setup from the above steps.
 
