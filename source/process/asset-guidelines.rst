@@ -121,20 +121,20 @@ The following include guidelines for specific elements of an asset.
 Feature Title
 ^^^^^^^^^^^^^^
 
-1. Appears in the top left corner of the asset
-2. Title should "communicate the benefit" of the work, while referencing its name, followed by "for Mattermost"
+1. Appears in the top left corner of the asset.
+2. Title should "communicate the benefit" of the work, while referencing its name, followed by "for Mattermost".
   
-  - Sometimes the title is a straightforward description of an app that can now connect to Mattermost, like "Jira integration for Mattermost"
-  - Sometimes the title needs to be non-standard, like "Gitter integration for Mattermost via Matterbridge"
+  - Sometimes the title is a straightforward description of an app that can now connect to Mattermost, like "Jira integration for Mattermost".
+  - Sometimes the title needs to be non-standard, like "Gitter integration for Mattermost via Matterbridge".
 
 3. Aim to fit title on two lines. If title is too long, move Feature Representative Art more to the right of the banner to ensure that there is still at least 64px of width between Feature Title and Feature Representative Art.
-4. Title should always be title case
-5. Short titles are better than longer titles
+4. Title should always be in title case.
+5. Short titles are better than longer titles.
 
 Feature Creator
 ^^^^^^^^^^^^^^^^
 
-1. Appears in the bottom right corner of the asset footer
+1. Appears in the bottom right corner of the asset footer.
 2. Text in footer should use GitHub username in lowercase, or company/person name in capital case i.e. ``by matterhorn-chat`` or ``by Galois, Inc.``
 3. When the background is blue, the footer should be black. When the background is white, the footer should be blue.
 4. Displays who created the integration (Twitter or GitHub account of the creator)
@@ -180,10 +180,11 @@ When taking a screenshot of a feature, follow these guidelines:
 Mattermost and Representative Logos
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Mattermost logo appears in the bottom left corner of the asset
+1. Mattermost logo appears in the bottom left corner of the asset.
 2. Use white Mattermost logo on dark backgrounds and black Mattermost logo on light backgrounds.
-3. Representative logo appears on the left side of the asset below the feature title
-4. When the background color is dark, use the white/inverted version of company logo. When the background color is light, use the dark/primary version of company logo.
+3. Representative logo appears on the left side of the asset below the feature title.
+4. For representative logos, always confirm you are using the official version of the company’s logo. If you’re unsure, ask.
+5. When the background color is dark, use the white/inverted version of company logo. When the background color is light, use the dark/primary version of company logo.
 
 Screenshot Development of Mattermost User Interface
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
