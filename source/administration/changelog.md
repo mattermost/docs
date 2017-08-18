@@ -220,18 +220,13 @@ Many thanks to all our contributors. In alphabetical order:
 /mattermost-bot-sample-golang
 
 - [fkr](https://github.com/fkr), [hmhealey](https://github.com/hmhealey)
-## Release v4.0.0
 
- - **v4.0.1, TBD**
-   - Release date planned for 2017-07-18 with the following fixes:
-     - If `AllowTimeLimit` config setting is set to `Never`, pinning and un-pinning messages fails.
-     - If you upload or remove the **Service Provider Public Certificate** file in **System Console > SAML**, the page might refresh if you have NGINX enabled. 
-     - Deactivated users are listed in channel member lists.
+## Release v4.0.4
 
-## Release v4.0.3
-
- - **v4.0.3, released 2017-08-10**
+ - **v4.0.4, released 2017-08-18**
+   - Mattermost v4.0.4 contains multiple security fixes ranging from low to high severity. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
    - Fixed issue when using single-sign-on with GitLab where using a non-English language option in **System Console > Localization** sometimes resulted in a login failure.
+ - **v4.0.3, released 2017-08-10**
    - Fixed issue with `AmazonS3Region` config setting being ignored in Minio file storage setup.
    - Fixed issue when using high availability mode in Enteprise Edition E20 where the bind address wasn't set correctly for the hashicorp memberlist.
  - **v4.0.2, released 2017-07-31**
@@ -501,8 +496,11 @@ Many thanks to all our contributors. In alphabetical order:
 
 - [crspeller](https://github.com/crspeller), [JeffSchering](https://github.com/JeffSchering)
 
-## Release v3.10.2
+## Release v3.10.3
 
+ - **v3.10.3, released 2017-08-18**
+   - Mattermost v3.10.3 contains multiple security fixes ranging from low to high severity. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+   - Fixed issue when using single-sign-on with GitLab where using a non-English language option in **System Console > Localization** sometimes resulted in a login failure.
  - **v3.10.2, released 2017-07-18**
    - Mattermost v3.10.2 contains low severity security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **v3.10.1, released 2017-07-16**
