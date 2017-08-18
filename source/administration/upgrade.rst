@@ -124,10 +124,10 @@ Mattermost Enterprise Edition v4.1.0 - `View Changelog <https://docs.mattermost.
   - SHA-256 Checksum: ``a70a120a5bc32365bc39aae79e221615ea5d569319423ff179bd4ea7b163309f``
 Mattermost Enterprise Edition v4.0.4 - `View Changelog <./changelog.html#release-v4-0-4>`_ - `Download <https://releases.mattermost.com/4.0.4/mattermost-4.0.4-linux-amd64.tar.gz>`_
   - ``https://releases.mattermost.com/4.0.4/mattermost-4.0.4-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``68db15547d39bd97de337e162854e07e8073f2ac74e0916fdd91b57400d04815``
+  - SHA-256 Checksum: ``e8ac217ae2ac19e5cdc8e1446d581806faa3996ae222edd5bbae5395bfa40a22``
 Mattermost Enterprise Edition v3.10.3 - `View Changelog <./changelog.html#release-v3-10-3>`_ - `Download <https://releases.mattermost.com/3.10.3/mattermost-3.10.3-linux-amd64.tar.gz>`_
   - ``https://releases.mattermost.com/3.10.3/mattermost-3.10.3-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``6c5c994358eb7fd40b6eb6c9edddb92ab99d8bf9fccf1c8cd60cc4c22b5597f8``
+  - SHA-256 Checksum: ``a70a29986f62fdced9195eeb6d26dd3f6dad2bb9fe8badef708f779043e6d438``
 
 Mattermost Enterprise Edition - Unsupported Versions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -177,10 +177,10 @@ Mattermost Team Edition v4.1.0 - `View Changelog <https://docs.mattermost.com/ad
   - SHA-256 Checksum: ``0e76d2b331a5f31aaf3598f124181d0873d4c66f30f8ce35c3ba5f044234e52e``
 Mattermost Team Edition v4.0.4 - `View Changelog <./changelog.html#release-v4-0-4>`_ - `Download <https://releases.mattermost.com/4.0.4/mattermost-team-4.0.4-linux-amd64.tar.gz>`_
   - ``https://releases.mattermost.com/4.0.4/mattermost-team-4.0.4-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``14b4fea45a201a75895575d3a66ebeac7211bc77f26227b3ee5aa5510f8adb1d``
+  - SHA-256 Checksum: ``4422d8a630d30f1bf86d78b6be4a1ef24fdf071c7d42ed82b1db75b6cc083d3a``
 Mattermost Team Edition v3.10.3 - `View Changelog <./changelog.html#release-v3-10-3>`_ - `Download <https://releases.mattermost.com/3.10.3/mattermost-team-3.10.3-linux-amd64.tar.gz>`_
   - ``https://releases.mattermost.com/3.10.3/mattermost-team-3.10.3-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``b3bfe61ed26538d0c779883ef0b30bc5a7e5d5eada7ea0e2acef815a290a7f54``
+  - SHA-256 Checksum: ``cdc8c706ccc169c143be87167077171bfcf4bec8d85cc42e2e78c45d483bf0a1``
 
 
 Mattermost Team Edition Server Archive - Unsupported Versions
