@@ -706,7 +706,7 @@ Authentication
 -------------------------------
 Authentication settings to enable account creation and sign in with email, GitLab, Google or Office 365 OAuth, AD/LDAP, or SAML.
 
-Email Auth
+Email Authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Enable account creation with email
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -722,9 +722,9 @@ Enable account creation with email
 Enable sign-in with email
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Mattermost allows users to sign in using their email and password.
+**True**: Mattermost allows account creation using email and password.
 
-**False**: Sign in with email is disabled and does not appear on the login screen.
+**False**: Sign in with email is disabled and does not appear on the login screen. Use this value when you want to limit sign up to a single sign-on service like AD/LDAP, SAML or GitLab.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableSignInWithEmail": true`` with options ``true`` and ``false`` for above settings respectively.                     |
@@ -733,9 +733,9 @@ Enable sign-in with email
 Enable sign-in with username
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Mattermost allows users to sign in using their username and password. This setting is typically only used when email verification is disabled.
+**True**: Mattermost allows users with email login to sign in using their username and password. This setting does not affect AD/LDAP login.
 
-**False**: sign in with username is disabled and does not appear on the login screen.
+**False**: Sign in with username is disabled and does not appear on the login screen.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``EnableSignInWithUsername": false`` with options ``true`` and ``false`` for above settings respectively.                  |
@@ -1542,22 +1542,6 @@ Organization name and mailing address displayed in the footer of email notificat
 | This feature's ``config.json`` setting is ``"FeedbackOrganization": ""`` with string input.                                                                          |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-SMTP Server Username
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Obtain this credential from the administrator setting up your email server.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SMTPUsername": ""`` with string input.                                                                                  |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-SMTP Server Password
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Obtain this credential from the administrator setting up your email server.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SMTPPassword": ""`` with string input.                                                                                  |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 SMTP Server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Location of SMTP email server.
@@ -1574,18 +1558,43 @@ Port of SMTP email server.
 | This feature's ``config.json`` setting is ``"SMTPPort": ""`` with string input.                                                                                      |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable SMTP Authentication
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: SMTP username and password are used for authenticating to the SMTP server.
+
+**False**: Mattermost doesn't attempt to autehenticate to the SMTP server.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableSMTPAuth": false`` with options ``true`` and ``false`` for above settings respectively.                           |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+SMTP Server Username
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The username for authenticating to the SMTP server.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SMTPUsername": ""`` with string input.                                                                                  |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+SMTP Server Password
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The password associated with the SMTP username.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SMTPPassword": ""`` with string input.                                                                                  |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Connection Security
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-``""``: Send email over an unsecure connection.
-
-``PLAIN``: Mattermost will connect and authenticate over an unsecure connection.
+``None``: Send email over an unsecure connection.
 
 ``TLS``: Communication between Mattermost and your email server is encrypted.
 
 ``STARTTLS``: Attempts to upgrade an existing insecure connection to a secure connection using TLS.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ConnectionSecurity": ""`` with options ``""``, ``PLAIN``, ``TLS`` and ``STARTTLS`` for above settings respectively.                |
+| This feature's ``config.json`` setting is ``"ConnectionSecurity": ""`` with options ``""``, ``TLS`` and ``STARTTLS`` for above settings respectively.                           |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Security Alerts
