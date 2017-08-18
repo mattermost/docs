@@ -100,6 +100,13 @@ For a list of past and upcoming deprecated features, [see our website](https://a
 
 #### config.json
 
+The following settings were unintentionally added to ``config.json`` and will be removed in Mattermost 4.2, released on September 16th.
+
+- Under `SupportSettings` in `config.json`:
+  - `"AdministratorsGuideLink": "https://about.mattermost.com/administrators-guide/"`
+  - `"TroubleshootingForumLink": "https://about.mattermost.com/troubleshooting-forum/"`
+  - `"CommercialSupportLink": "https://about.mattermost.com/commercial-support/"`
+
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
 **Changes to Team Edition and Enterprise Edition**:
