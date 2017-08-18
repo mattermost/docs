@@ -38,12 +38,17 @@ Scheduled release date: 2017-08-16
 - Searching on slow connections now shows a loading spinner in the right-hand side.
 - Added a close button next to link previews.
 - Ephemeral messages will now always appear as parent posts.
+- Added [...] menu to search results, pinned posts and flagged posts lists.
+- Clicking the username in a profile popover inserts the username to the message box.
 
 #### Notifications
 - Added an option to Push Notification Contents to send no channel name or message text
 - Updated the default email frequency to 15 minutes if email batching is enabled by the System Admin.
 - Users are now prompted from Account Settings to set Edge notification sounds in their browser settings.
 - Updated the desktop notification text for incoming webhooks to more accurately reflect the payload.
+
+#### Files
+- File uploads in a single message are ordered based on time of upload. When multiple files are selected, files are ordered in alphabetical order based on file name.
 
 #### Administration
 - No longer require a refresh after a user is promoted to a Team Admin.
@@ -53,6 +58,7 @@ Scheduled release date: 2017-08-16
 - Channel member list now follows the Teammate name display configuration setting.
 - Added more debugging info to server logs for failed OAuth requests.
 - Added a new System Console push notification content setting to only display sender name.
+- Added support for unauthenticated, but encrypted SMTP connection.
 
 #### Integrations
 - Null values are now ignored in webhook attachments.
@@ -60,6 +66,7 @@ Scheduled release date: 2017-08-16
 - Added ``/code`` built-in slash command to create a code block.
 - Added ``/purpose`` built-in slash command to set the channel purpose.
 - Added ``/rename`` built-in slash command to rename the channel.
+- Added ``/leave`` built-in slash command to leave a channel.
 
 #### Enterprise Edition E20
 - Added a System Console setting to disable file uploads and downloads on mobile.
@@ -90,6 +97,10 @@ Scheduled release date: 2017-08-16
 - Fixed teams being sometimes incorrectly marked unread across tabs.
 - Fixed JavaScript error thrown when viewing a channel containing an invalid emoji reaction.
 - Periods after URLs are no longer added to the link.
+- Recent emoji in emoji picker no longer shows deleted custom emoji.
+- Fixed image thumbnails and previews on IE11.
+- Fixed message attachments in incoming webhooks and slash commands not always truncating properly.
+- Non-admins can now view their previously created integrations.
 
 ### Compatibility
 
