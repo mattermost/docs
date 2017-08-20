@@ -41,18 +41,18 @@ Non-Engineering Recruitment Process:
 -----------------------------------
 
 1. Applicant Review 
-   ~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 Recruiter(s) will review inbound and network referral applications for all assigned requisitions and will archive/screen as is appropriate
 Hiring manager to review shortlist of candidates to further qualify the candidates that should be screened by recruiter
 
 2. Recruiter Screen 
-   ~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 Conduct requisition specific phone screen to identify skill sets and experience relevant to Mattermost’s needs, values and compensation expectations.
 
 3. Hiring Manager Screen (Non-engineering)
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    a. Schedule 1st Hiring Manager screen
    b. Review past conversations/notes and resume to prepare for your conversation
@@ -66,7 +66,7 @@ Conduct requisition specific phone screen to identify skill sets and experience 
       5. Advise on next steps and additional competencies subsequent interviewer(s) should evaluate
 
 4. Support Manager Screen (Non-Engineering)
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    a. Review past conversations/notes and resume to prepare for your conversation
    b. At the beginning of the interview, introduce yourself, your role and how this role impacts your department
@@ -77,17 +77,17 @@ Conduct requisition specific phone screen to identify skill sets and experience 
       4. Advise on next steps
 
 5. Case study project (Optional - to be decided by Hiring Manager)
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Depending on the role the Hiring Manager may request a Case Study as part of the recruitment process. You will be asked to prepare a real life example of one of the requirements of the role.
 
 6. 3rd Screen & Case Study Presentation (Optional)
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Presentation to Hiring Manager, Support Manager and CEO 
 
 7. Offer 
-   ~~~~~
+~~~~~~~~
 
 Send note to People Ops to create the Offer Letter. Provide the following information for the Offer Letter:
 - Current address (if not on resume in Lever)
@@ -101,7 +101,7 @@ Send note to People Ops to create the Offer Letter. Provide the following inform
 Once Offer Letter is drafted in Google Doc, Operations will send to CEO for final approval before sending out for electronic signature.  
 
 8. Hire
-   ~~~~
+~~~~~~~
 
 Archive candidate in ATS once signed offer is received
 Continue to Welcome Email for new hires Workflow
@@ -110,18 +110,18 @@ Engineering Recruitment Process:
 --------------------------------
 
 1. Applicant Review
-   ~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 Recruiter(s) will review inbound and network referral applications for all assigned requisitions and will archive/screen as is appropriate
 Hiring manager to review shortlist of candidates to further qualify the candidates that should be screened by recruiter
 
 2. Recruiter Screen 
-   ~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 Conduct requisition specific phone screen to identify skill sets and experience relevant to Mattermost’s needs, values and compensation expectations.
 
 3. Hiring Manager Screen (Engineering)
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    a. Schedule 1st HM screen
    b. At the beginning of the interview, introduce yourself, your role and why this position is available
    c. Review past conversations/notes and resume to prepare for your conversation
@@ -134,7 +134,7 @@ Conduct requisition specific phone screen to identify skill sets and experience 
       5. Advise on next steps and additional competencies subsequent interviewer(s) should evaluate
 
 4. Paid Simulation 
-   ~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 - Paperwork sent
 - Paperwork completed
@@ -143,17 +143,17 @@ Conduct requisition specific phone screen to identify skill sets and experience 
 - Final interview/follow-up
 
 5. Roundtable (RT) - CEO Meeting
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Upon completion of paid simulation, HMs and recruiter will discuss final steps.
 
 6. Reference Checks (RC)
-   ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Hiring Manager will send/collect reference check using SkillSurvey
 
 7. Offer 
-   ~~~~~
+~~~~~~~~
 
 Send note to People Ops to create the offer letter. Provide the following information for the Offer letter:
 - Current address (if not on resume in Lever)
@@ -166,12 +166,12 @@ Send note to People Ops to create the offer letter. Provide the following inform
 Once Offer letter is drafted in Google Doc, Operations will send to CEO for final approval before sending out for electronic signature.  
 
 8. Hire 
-   ~~~~
+~~~~~~~
 
 Archive candidate in ATS once signed offer received
 Continue to “Welcome email for new hires” Workflow
 
 9. Keeping Warm
-   ~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 Send pre-boarding email regarding laptop preference
