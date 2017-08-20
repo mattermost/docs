@@ -59,6 +59,7 @@ Conduct requisition specific phone screen to identify skill sets and experience 
    c. At the beginning of the interview, introduce yourself, your role and why this position is available
    d. In conversation with candidate, make sure to “clear sell” the opportunity
    e. Make notes on the following:
+   
       1. PROs / CONs of skill sets and experience
       2. Culture fit evaluation
       3. List of potential projects they will support
@@ -71,6 +72,7 @@ Conduct requisition specific phone screen to identify skill sets and experience 
    a. Review past conversations/notes and resume to prepare for your conversation
    b. At the beginning of the interview, introduce yourself, your role and how this role impacts your department
    c. Make notes on the following:
+   
       1. PROs / CONs of skill sets and experience
       2. Culture fit evaluation
       3. Who he/she will interact with your department/team
@@ -127,6 +129,7 @@ Conduct requisition specific phone screen to identify skill sets and experience 
    c. Review past conversations/notes and resume to prepare for your conversation
    d. In conversation with candidate, make sure to “clear sell” the opportunity
    e. Make notes on the following:
+   
       1. PROs / CONs of skill sets and experience
       2. Culture fit evaluation
       3. List of potential projects they will support
