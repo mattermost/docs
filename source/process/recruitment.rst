@@ -78,7 +78,7 @@ Conduct requisition specific phone screen to identify skill sets and experience 
    b. At the beginning of the interview, introduce yourself, your role and how this role impacts your department
    c. Make notes on the following:
    
-      1. PROs / CONs of skill sets and experience
+      1. Pros/cons of skill sets and experience
       2. Culture fit evaluation
       3. Who he/she will interact with your department/team
       4. Advise on next steps
