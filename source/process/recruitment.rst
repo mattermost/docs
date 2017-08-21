@@ -18,27 +18,9 @@ To become the leading enterprise-grade messaging solution. We’ll achieve this 
 
 Our Values
 ----------
-Values are deliberate choices defining our behavior. When facing complexity, uncertainty, or ambiguity (CUA) we determine our point of view and our actions through the lens of our values:
+Values are deliberate choices defining our behavior. When facing complexity, uncertainty, or ambiguity (CUA) we determine our point of view and our actions through the lens of our values.  
 
-Customer Obsession
-~~~~~~~~~~~~~~~~~~
-We exist to make customers successful. In everything we do, start with customer perspective and work backwards. Earn and keep their trust.
-
-Ownership
-~~~~~~~~~
-Own the outcomes of your activity. Don’t drop the ball. When we see a vacuum on something important, we jump in – we never say “it’s not my job.”
-
-High Impact
-~~~~~~~~~~~
-Figure out what matters most, and focus on those priorities. When deciding to work on low impact or high impact projects, choose high impact.
-
-Self-Awareness
-~~~~~~~~~~~~~~
-We understand and seek to understand our strengths and growth opportunities, as individuals and as an organization. We are open to critique and share critique constructively and respectfully.
-
-Be proud of what you build
-~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-Insist on high standards. Ensure that you’re building the highest quality products, services, and processes possible, and constantly raising the bar.
+Read more about Mattermost's values `here. <https://docs.mattermost.com/process/handbook.html#values>`_
 
 Recruiting Process
 ------------------
