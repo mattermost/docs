@@ -3,7 +3,9 @@ Recruitment Process
 
 Our Mission
 -----------
-To be the primary way people communicate within enterprises and applications. 
+Our mission is to empower every organization to achieve their highest priorities through modern communication.
+
+Our vision is a world more connected to what matters most.
 
 Our Goal
 --------
