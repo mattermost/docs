@@ -303,7 +303,7 @@ header .header__searchbar {
 		display: none;
 	}
 =======
-	
+
 >>>>>>> c8fd417... Added a search box to the nav header for the mobile view.
 	.wy-side-nav-search {
 		position: relative;
@@ -378,4 +378,19 @@ header .header__searchbar {
 	.wy-nav-content-wrap {
     	background: #fcfcfc; /* gets rid of the wony gray bottom of the page when viewed on a wide screen */
 	}
+}
+
+
+/* override table width restrictions */
+@media screen and (min-width: 767px) {
+
+   .wy-table-responsive table td {
+      /* !important prevents the common CSS stylesheets from overriding
+         this as on RTD they are loaded after this stylesheet */
+      white-space: normal !important;
+   }
+
+   .wy-table-responsive {
+      overflow: visible !important;
+   }
 }
