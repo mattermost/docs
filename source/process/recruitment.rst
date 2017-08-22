@@ -3,30 +3,47 @@ Recruitment Process
 
 Our Mission
 -----------
+
 Our mission is to empower every organization to achieve their highest priorities through modern communication.
 
 Our vision is a world more connected to what matters most.
 
-Our Goal
---------
-To become the leading enterprise-grade messaging solution. We’ll achieve this by becoming the number one: 
+Our Goals 
+--------------
 
-- Private cloud solution by deployments (12-18 months)
-- Private cloud solution by revenue
-- Solution by deployments (private cloud & SaaS)
-- Solution by revenue (private cloud & SaaS)
+To become the leading solution we focus on four sequential goals: 
+
+- Become the leading private cloud enterprise collaboration solution by number of deployments 
+- Become the leading private cloud enterprise collaboration solution by revenue 
+- Become the leading enterprise collaboration solution by number of deployments (SaaS, private cloud & on-prem) 
+- Become the leading enterprise collaboration solution by revenue 
 
 Our Values
 ----------
-Values are deliberate choices defining our behavior. When facing complexity, uncertainty, or ambiguity (CUA) we determine our point of view and our actions through the lens of our values.  
 
-Read more about Mattermost's values `here. <https://docs.mattermost.com/process/handbook.html#values>`_
+Values are deliberate choices defining our behavior. When facing complexity, uncertainty, or ambiguity (CUA) we determine our point of view and our actions through the lens of our values:
 
-Recruiting Process
-------------------
+- **Customer Obsession** - We exist to make customers successful. In everything we do, start with customer perspective and work backwards. Earn and keep their trust.
 
-At Mattermost we hire the best of the best to help us attain our mission while portraying our values.  Our recruitment process follows 8-9 steps depending on the role.  
- 
+- **Ownership** - Own the outcomes of your activity. Don't drop the ball. When we see a vacuum on something important, we jump in--we never say "it's not my job."
+
+- **High Impact** - Figure out what matters most, and focus on those priorities. When deciding to work on low impact or high impact projects, choose high impact.
+
+- **Self-Awareness** - We understand and seek to understand our strengths and growth opportunities, as individuals and organizations. We are open to critique and share critique constructively and respectfully. 
+
+- **Be proud of what you build** - Insist on high standards. Ensure that you're building the highest quality products, services, and processes possible, and constantly raising the bar. 
+
+Recruiting Priorities 
+---------------------
+
+We aim to hire outstanding team members based on the following priorities: 
+
+1. Alignment to our values
+2. Aptitude
+3. Domain expertise. 
+
+XXXX: (IT) Reading the below, I don't know if it makes sense to have separate recruiting processes for engineering and "non-engineering". 
+
 Non-Engineering Recruitment Process: 
 -----------------------------------
 
