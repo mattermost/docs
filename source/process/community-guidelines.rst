@@ -129,7 +129,7 @@ Response Writing Tips
   - Allows answers to be easily updated dynamically as documentation is updated
   - Any questions that should be answered in docs that aren’t should turn into tickets to create that documentation (and post ticket in response)
 - **Keep community end-user information secure**
-  - If you come across a post that includes the person's IP address, domain name, or any other information you think should not be divulged publicly, edit the post to remove this information and then click on the "hide revision" button so your edits won't be visible to anyone else on the forum.
+  - If you come across a post that includes the person's IP address, domain name, or other information you think should not be disclosed publicly, edit the post to remove this information. Then click the **hide revision** button so that your edits won't be visible to others on the forum.
 - **Be thankful**
   - Communities really respond well to being praised and thanked for their work
   
