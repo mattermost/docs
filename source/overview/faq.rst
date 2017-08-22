@@ -141,7 +141,7 @@ Do you have discounted licenses for academic institutions?
 
 See our `frequently asked questions about licensing <https://about.mattermost.com/pricing/#frequently-asked-questions-about-licensing>`_.
 
-Where can I find the license agreement for Mattermost Enterprise Edtition?
+Where can I find the license agreement for Mattermost Enterprise Edition?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 See our `frequently asked questions about licensing <https://about.mattermost.com/pricing/#frequently-asked-questions-about-licensing>`_.
