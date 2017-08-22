@@ -10,7 +10,7 @@ We aim to hire outstanding team members based on the following priorities:
 
 1. Alignment to our values
 2. Aptitude
-3. Domain expertise. 
+3. Domain expertise
 
 XXXX: (IT) Reading the below, I don't know if it makes sense to have separate recruiting processes for engineering and "non-engineering". 
 
