@@ -50,7 +50,7 @@ Configure the webhook in your JIRA project
 .. image:: ../../source/images/jira_administration_menu.png
   :width: 300 px
 
-6 - On the left-hand sidebar, go to **Advanced > WebHooks. Then click the **Create a Webhook** button to display the webhook creation form. Choose a unique name and add the JIRA webhook URL from step 3 as the URL. 
+6 - On the left-hand sidebar, go to **Advanced > WebHooks**. Then click the **Create a Webhook** button to display the webhook creation form. Choose a unique name and add the JIRA webhook URL from step 3 as the URL. 
 
 7 - (Optional) Set a description and a custom JQL query to determine which types of tickets trigger events. For more information on JQL queries, refer to the `Atlassian help documentation <https://confluence.atlassian.com/jirasoftwarecloud/advanced-searching-764478330.html>`_.
 
@@ -84,7 +84,7 @@ Why doesn't my JIRA webhook post any messages?
 
 Try the following troubleshooting steps:
 
-1. Confirm ``user`` field is set in **System Console > JIRA (Beta)**. The integration needs to be attached to a user account for the webhook to post messages.
+1. Confirm **User** field is set in **System Console > JIRA (Beta)**. The integration needs to be attached to a user account for the webhook to post messages.
 2. Confirm the team URL and channel URL you specified in the JIRA webhook URL is in lower case.
 3. For issue updated events, only status changes when the ticket is reopened, or when resolved/closed are supported. If you'd like to see support for additional events, `let us know <https://mattermost.uservoice.com/forums/306457-general>`_.
 4. If you specified a JQL query in your JIRA webhook page, paste the JQL to JIRA issue search and make sure it returns results. If it doesn't, the query may be incorrect. Refer to the `Atlassian documentation <https://confluence.atlassian.com/jirasoftwarecloud/advanced-searching-764478330.html>`_ for help.
@@ -94,7 +94,7 @@ If you are still having trouble with configuration, feel free to post in our `Tr
 How do I disable the plugin quickly in an emergency?
 .....................................................
 
-You can disable the JIRA integration any time from **System Console > JIRA (Beta)**. Requests will stop immediately with an error code in **System Console > Logs**. No posts are created until the integration is re-enabled.
+Set **Enable JIRA** to ``false`` any time from **System Console > JIRA (Beta)**. Requests will stop immediately with an error code in **System Console > Logs**. No posts are created until the integration is re-enabled.
 
 Why do I get an error ``WebHooks can only use standard http and https ports (80 or 443).``?
 ............................................................................................
