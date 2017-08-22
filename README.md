@@ -30,7 +30,7 @@ The main method customers would use to install would be the [Helm Charts]() in t
 At some point in the future, we may also offer other deployment methods like
 Amazon CloudFormation or Docker Swarm.
 
-### Docker Container Images
+## Docker Container Images
 
 As a foundation, we will be creating a Docker container for each service.
 This will allow easier horizontal scaling with reduced image size and complexity.
@@ -62,7 +62,7 @@ underlying services:
 * Nginx
 * kube-lego
 
-### Scheduler
+## Scheduler
 
 We will launch with support for Kubernetes, which is mature and widely supported
 across the industry. As part of our design however, we will try to avoid decisions
@@ -82,7 +82,7 @@ Docker containers
 
 Since we are also bundling Consul, this may be utilized instead for consistency with other installation methods.
 
-### Helm Charts
+## Helm Charts
 
 A Helm chart will be created to manage the deployment of each GitLab specific container/service. We will then also include bundled charts to make the overall deployment easier. This is particularly
 important for this effort, as there will be significantly more complexity in
@@ -95,7 +95,7 @@ We plan to offer a three tiered set of Helm Charts
 
 ![Helm Chart Structure](images/charts.png)
 
-#### The GitLab Chart
+### The GitLab Chart
 
 This is the top level `gitlab` chart, which configures all necessary resources
 for a complete configuration of GitLab. This includes GitLab, PostgreSQL, Redis,
@@ -110,7 +110,7 @@ database like Aamzon RDS for Postgres.
 
 Customers who would like to get started quickly and easily should begin with this chart.
 
-#### The GitLab-Services Chart
+### The GitLab-Services Chart
 
 This chart is dedicated to core GitLab services that make up the Idea to
 Production workflow: code repository, issue tracking, CI/CD, monitoring, container
@@ -119,7 +119,23 @@ registry, etc.
 This chart would also include options to configure exactly how these services
 should work, whether all of them should be available, etc.
 
-#### Redis and Postgres Charts
+Included in this chart are the Helm Charts for each service:
+* [registry](#registry-chart)
+* sidekiq
+* unicorn-api
+* unicorn-web
+* workhorse
+* gitaly
+* pages
+* mattermost
+* prometheus
+* gitlab-shell
+
+#### Registry Chart
+
+This chart is based on the official Docker Registry, but includes the configuration and settings required to integrate with GitLab. For more information, consult the [documentation](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/registry).
+
+### Redis and Postgres Charts
 
 We will also likely need to create specific charts for Redis and Postgres.
 One reason is that there is a bug with variable handling between parent and
