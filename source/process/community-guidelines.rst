@@ -128,6 +128,8 @@ Response Writing Tips
 - **Do your best to link documentation as answers**
   - Allows answers to be easily updated dynamically as documentation is updated
   - Any questions that should be answered in docs that aren’t should turn into tickets to create that documentation (and post ticket in response)
+- **Keep community end-user information secure**
+  - If you come across a post that includes the person's IP address, domain name, or other information you think should not be disclosed publicly, edit the post to remove this information. Then click the **hide revision** button so that your edits won't be visible to others on the forum.
 - **Be thankful**
   - Communities really respond well to being praised and thanked for their work
   
@@ -204,7 +206,7 @@ To ask someone to add a license to a GitHub repo, open an issue with the followi
 
   Thanks kindly for your consideration.
 
-Hard Questions
+Difficult Questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To respond to tough questions, use the `SCIPAB method <https://www.mandel.com/top-ten-reasons/tools-methodology/scipab>`_ to help formulate a response and send for community lead to review. 
