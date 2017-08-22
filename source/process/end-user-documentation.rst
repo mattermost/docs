@@ -14,7 +14,7 @@ Follow these steps:
 If a document includes multiple features that are related to each other, order them based on which functionality is used 
 the most, e.g.: how to attach files > file previewer > sharing public links.
 
-Additional Instructions if Editing an Existing Document:
+Additional Instructions if Editing an Existing Document
 ------------------------------------------------------------------------------------
 
 1.	Start fresh - begin by writing a draft in a Google document from scratch.
