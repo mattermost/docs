@@ -7,15 +7,64 @@ The feature is a working prototype for community development and not recommended
 
 .. note:: This feature will be replaced by a plug-in architecture allowing multiple video and audio calling providers to connect into Mattermost, and features described in this section will be re-written as a plug-in.
 
-Configuring video and audio calls
-------------------------------------------
+Configuring video and audio calls with WebRTC
+----------------------------------------------
 
-This option can be enabled by the System Administrator in the System Console under **Integrations > WebRTC (Beta)** - `see configuration settings documentation to learn more <https://docs.mattermost.com/administration/config-settings.html#webrtc-beta>`_.
+This guide is aimed to set up Mattermost WebRTC with a Docker image, `available here <https://hub.docker.com/r/mattermost/webrtc/>`_  and a Janus server to act as the WebRTC gateway. 
 
-To set up the WebRTC server, you may either
+If you want to use a full `Janus Gateway <https://janus.conf.meetecho.com/>`_, please visit their `GitHub repo <https://github.com/meetecho/janus-gateway>`_ for detailed instructions. You may also optionally set up `Coturn <https://github.com/coturn/coturn/wiki>`_ for STUN and TURN servers for your Mattermost installation.
 
- - use a `Mattermost Docker container created for testing WebRTC <https://hub.docker.com/r/mattermost/webrtc/>`_
- - set up a `Janus server <https://github.com/meetecho/janus-gateway>`_ to act as the WebRTC gateway and `Coturn <https://github.com/coturn/coturn/wiki>`_ for STUN and TURN servers for your Mattermost installation.
+Pre-requisites
+~~~~~~~~~~~~~~~
+
+- Install Docker using the `Ubuntu online guide <https://docs.docker.com/installation/ubuntulinux/`_. Docker installation, configuration and management are out of scope for this guide.
+- Install a Mattermost server using the `official install guides <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`_. Mattermost server installation, configuration and management are out of scope for this guide.
+- Install Janus server version 0.2.2.
+- Add an SSL certificate for host **dockerhost**, valid until January 2, 2018.
+- Ability to connect using SSL or plain WebSocket and HTTP // XXX Is this for WebRTC connection?
+
+STUN and TURN servers are not required for this setup.
+
+Deploy Mattermost WebRTC Docker container
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+After installing Docker, run the following command in a terminal to install the Mattermost WebRTC Docker image.
+
+   .. code:: bash
+
+       docker run --name mattermost-webrtc -p 7088:7088 -p 7089:7089 -p 8188:8188 -p 8189:8189 -d mattermost/webrtc:latest
+
+The command downloads, installs and runs your ``mattermost-webrtc`` container with the Janus Gateway pre-configured to use WebRTC on Chrome, Firefox or the Mattermost Destkop Apps.
+
+.. note::
+  Make sure your Mattermost server can reach the running Mattermost WebRTC Docker container. // XXX How can they verify this?
+
+Configure Mattermost to enable WebRTC
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1 - (Optional) If you want to establish the connection to the Mattermost WebRTC Docker container running the Janus Gateway
+
+First you need to decide whether to establish the connections to the Mattermost WebRTC Docker container running the Janus Gateway with or without SSL.  this is particularly important in this case because the SSL certificate used to run the Janus Gateway is not being signed by a trusted CA, that means that you will need to make some additional configuration changes in your Mattermost Server.
+
+In case you decide to go ahead with SSL then you need to go to System Console -> Security -> Connections and Enable Insecure Outgoing Connections
+
+The reason for this is that Mattermost will make a http request to the Janus Gateway service to get a Token that is used to identify the user and so on and if you configure Mattermost to make requests to that service with SSL then the certificate won't be valid thus returns a status code of 500.
+
+// XXX
+
+2 - Go to **System Console > Integrations > WebRTC (Beta)** and set the following values:
+
+.. image:: ../images/webrtc_full_settings.png
+
+- **Enable Mattermost WebRTC** - ``true``.
+- **Gateway WebSocket URL** - example: ``wss://dockerhost:8189``. This is the WebSocket route for the Janus Gateway service, inside the Mattermost WebRTC container, used to connect peers on a video call. For SSL connections, set the protocol to ``wss://`` and the port to ``8189``. For non-SSL connections, set the protocol to ``ws://`` and port to ``8188``.
+- **Gateway Admin URL** - example: ``
+- **Gateway Admin Secret** - example: ``https://
+- **STUN URI**
+- **TURN URI**
+- **TURN Username**
+- **TURN Shared Key**
+
 
 Starting a video call
 --------------------------
