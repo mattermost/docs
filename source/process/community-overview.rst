@@ -9,28 +9,28 @@ Mattermost Community
 
 ----
 
-Vision
+Vision for Mattermost Community 
 ---------------------------------------------------------
 
-Increase popularity of Mattermost by empowering the community to have an impact by contributing features and extensions that would not otherwise be offered
+Increase popularity of Mattermost by increasing brand advocacy and meaningful product benefits that would otherwise not be offered through an engaged and empowered community contributing best practices, troubleshooting guidance, feature proposals, documentation, language translations, extensions, features and low priority bug fixes.
 
 Principles
 ---------------------------------------------------------
 
-1. Focus on areas with high impact-to-mana ratio.
+1. Focus on areas with high impact-to-`mana <https://docs.mattermost.com/process/training.html#mana>`_ ratio.
 2. It should be easy and straightforward to start contributing.
 3. Community building should be directed towards 3R’s: Recognition, Retention and Recruitment
 
-Reality Check
+Context 
 ---------------------------------------------------------
 
-1. You cannot attract contributors without attracting users.
-  
-  - For every 1000 users, 100 file bugs, 10 submit a patch, 1 reads the contribution guidelines
+1. You need a community of users to attract a community of contributors. 
+ 
+  - For every 10,000 users, 100 might file bugs or request features, 10 might read the contribution guidelines, 1 might submit a patch.
 
-2. Set realistic expectations to contributors.
+2. Expectations for contributors need to be realistic.
 
-  - Majority of contributors will not be experts. Also, contributing to open source is typically a hobby / side job.
+  - Contributing to open source is often a hobby or side job. Expect the majority of contributors not to be experts. 
 
 3. There are thousands of other open source projects so it's very easy to leave to another project.
 
