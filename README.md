@@ -6,7 +6,7 @@ looking to deploy into container schedulers like Kubernetes.
 While this is possible today using our all-in-one Docker image and [corresponding Helm charts](https://gitlab.com/charts/charts.gitlab.io), there are challenges.
 For example, a "fat container" becomes a challenge to configure and operate at large scale.
 
-To address this need we are working on the Helm charts in this repository along with a new set of Docker containers that are specific to each component of GitLab.
+To address this need we are working on the [Helm charts in this repository](#helm-charts) along with a new set of Docker containers that are specific to each component of GitLab.
 
 ## Goals
 
