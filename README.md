@@ -120,7 +120,7 @@ This chart would also include options to configure exactly how these services
 should work, whether all of them should be available, etc.
 
 Included in this chart are the Helm Charts for each service:
-* [registry](#registry-chart)
+* [registry](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/registry)
 * sidekiq
 * unicorn-api
 * unicorn-web
@@ -130,10 +130,6 @@ Included in this chart are the Helm Charts for each service:
 * mattermost
 * prometheus
 * gitlab-shell
-
-#### Registry Chart
-
-This chart is based on the official Docker Registry, but includes the configuration and settings required to integrate with GitLab. For more information, consult the [documentation](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/registry).
 
 ### Redis and Postgres Charts
 
