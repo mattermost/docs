@@ -1,4 +1,4 @@
-# Cloud Native Installation
+# GitLab Cloud Native Helm Charts
 
 We are working on a new method of installing GitLab for customers who are
 looking to deploy into container schedulers like Kubernetes.
