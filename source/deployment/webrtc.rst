@@ -65,7 +65,7 @@ If you prefer to establish the connection to the Mattermost WebRTC Docker contai
 
 3 - Hit **Save**. You are now ready to start video and audio calls within Mattermost.
 
-Starting a video call
+Start a video call
 --------------------------
 
 After enabling the feature in the System Console by a System Administrator:
