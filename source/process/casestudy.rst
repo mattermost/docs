@@ -15,7 +15,7 @@ The process is approximately as follows:
 2. Customer case study contact is introduced to a Mattermost case study coordinator over email and completes a questionnaire (below). 
 3. Mattermost case study coordinator arranges a 30-minute phone or video call with the customer for a discussion around the questionnaire and deployment. 
 4. One to two weeks later a draft case study is sent to the customer for review and approval (in a shared Google document).
-5. Mattermost case study coordinator and case study owner take turns to politely follow up with the customer either the day before the customer has stated that the review will be ready in order to confirm that the review is coming, or approximately every 2 business days if an estimate of the draft case study review time is not known.
+5. Mattermost case study coordinator and case study owner take turns to politely follow up with the customer either the day before the customer has stated that the review will be ready, in order to confirm that the review is coming, or approximately every 2 business days if an estimate of the draft case study review time is not known.
 
    -  In follow-up emails, it is important to take into consideration what can be done for the customer, rather than what the customer can do for us, e.g. "Circling back to see if there is anything I can do to help the case study review proceed more smoothly? Happy to help, just let me know."
    
