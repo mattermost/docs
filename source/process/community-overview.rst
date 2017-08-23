@@ -12,7 +12,7 @@ Mattermost Community
 Vision for Mattermost Community 
 ---------------------------------------------------------
 
-Increase popularity of Mattermost by increasing brand advocacy and meaningful product benefits that would otherwise not be offered through an engaged and empowered community contributing best practices, troubleshooting guidance, feature proposals, documentation, language translations, extensions, features and low priority bug fixes.
+Increase the popularity of Mattermost by increasing brand advocacy and meaningful product benefits that would otherwise not be offered, through an engaged and empowered community contributing best practices, troubleshooting guidance, feature proposals, documentation, language translations, extensions, features and low priority bug fixes.
 
 Principles
 ---------------------------------------------------------
