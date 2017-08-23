@@ -43,7 +43,7 @@ Correct example: ``https://mattermost.example.com:8065``
 Incorrect example: ``https://mattermost.example.com/team_name``
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SiteURL": "http://localhost:8065"`` with string input.                                                |
+| This feature's ``config.json`` setting is ``"SiteURL": ""`` with string input.                                                                     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Listen Address
