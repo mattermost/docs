@@ -43,7 +43,7 @@ Correct example: ``https://mattermost.example.com:8065``
 Incorrect example: ``https://mattermost.example.com/team_name``
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SiteURL": ""`` with string input.                                                                     |
+| This feature's ``config.json`` setting is ``"SiteURL": "http://localhost:8065"`` with string input.                                                |
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Listen Address
@@ -738,7 +738,7 @@ Enable sign-in with username
 **False**: Sign in with username is disabled and does not appear on the login screen.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``EnableSignInWithUsername": false`` with options ``true`` and ``false`` for above settings respectively.                  |
+| This feature's ``config.json`` setting is ``EnableSignInWithUsername": true`` with options ``true`` and ``false`` for above settings respectively.                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
