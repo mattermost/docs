@@ -10,20 +10,21 @@ The feature is a working prototype for community development and not recommended
 Configuring video and audio calls with WebRTC
 ----------------------------------------------
 
-This guide is aimed to set up Mattermost WebRTC with a Docker image, `available here <https://hub.docker.com/r/mattermost/webrtc/>`_  and a Janus server to act as the WebRTC gateway. 
+This guide is aimed to set up `Mattermost WebRTC with a Docker image and Janus Gateway server <https://hub.docker.com/r/mattermost/webrtc/>`_. 
 
-If you want to use a full `Janus Gateway <https://janus.conf.meetecho.com/>`_, please visit their `GitHub repo <https://github.com/meetecho/janus-gateway>`_ for detailed instructions. You may also optionally set up `Coturn <https://github.com/coturn/coturn/wiki>`_ for STUN and TURN servers for your Mattermost installation.
+If you want to use a full `Janus Gateway <https://janus.conf.meetecho.com/>`_, please visit their `GitHub repo <https://github.com/meetecho/janus-gateway>`_ for detailed instructions. You may also optionally set up `Coturn <https://github.com/coturn/coturn/wiki>`_ for TURN servers for your Mattermost installation.
 
 Pre-requisites
 ~~~~~~~~~~~~~~~
 
 - Install Docker using the `Ubuntu online guide <https://docs.docker.com/installation/ubuntulinux/`_. Docker installation, configuration and management are out of scope for this guide.
 - Install a Mattermost server using the `official install guides <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`_. Mattermost server installation, configuration and management are out of scope for this guide.
-- Install Janus server version 0.2.2.
-- Add an SSL certificate for host **dockerhost**, valid until January 2, 2018.
-- Ability to connect using SSL or plain WebSocket and HTTP // XXX Is this for WebRTC connection?
+- Ability to connect using SSL or plain WebSocket and HTTP.
+- At least one STUN server. You can use the public Google STUN server address, ``stun:stun.l.google.com:19302``, or deploy your own.
 
-STUN and TURN servers are not required for this setup.
+The Docker image includes a Janus Gateway server v0.2.2 and an SSL certificate for host **dockerhost**, valid until January 2, 2018.
+
+TURN servers are not required for this setup.
 
 Deploy Mattermost WebRTC Docker container
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -37,14 +38,14 @@ After installing Docker, run the following command in a terminal to install the 
 The command downloads, installs and runs your ``mattermost-webrtc`` container with the Janus Gateway pre-configured to use WebRTC on Chrome, Firefox or the Mattermost Destkop Apps.
 
 .. note::
-  Make sure your Mattermost server can reach the running Mattermost WebRTC Docker container. // XXX How can they verify this?
+  Make sure your Mattermost server can reach the running Mattermost WebRTC Docker container. For instance, you can issue a Telnet to one of these ports (7088, 7089, 8188, 8189).
 
 Configure Mattermost to enable WebRTC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1 - (Optional) Only required if you want to establish the connection to the Mattermost WebRTC Docker container, running the Janus Gateway, with SSL.
 
-Mattermost makes an HTTP request to the Janus Gateway service to get a ``Token``, which is used to identify a user and establish a connection between peers. If you configure Mattermost to make requests to that service with SSL, the SSL certificate used to run the Janus Gateway will not be considered signed by a trusted CA.
+Mattermost makes an HTTP request to the Janus Gateway service to get a ``Token``, which is used to identify a user and establish a connection between peers. If you configure Mattermost to make requests to that service with SSL, the SSL certificate included in the Docker image and used to run the Janus Gateway will not be considered signed by a trusted CA.
 
 To make the successful connection via SSL, go to **System Console > Security > Connections** and set **Enable Insecure Outgoing Connections** to ``true``. This change is not recommended in production given it allows any outgoing HTTPS requests to accept unverified, self-signed certificates and makes these connections susceptible to man-in-the-middle attacks. For example, outgoing webhooks to a server with a self-signed TLS certificate, using any domain, will be allowed.
 
