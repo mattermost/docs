@@ -35,7 +35,7 @@ After installing Docker, run the following command in a terminal to install the 
 
        docker run --name mattermost-webrtc -p 7088:7088 -p 7089:7089 -p 8188:8188 -p 8189:8189 -d mattermost/webrtc:latest
 
-The command downloads, installs and runs your ``mattermost-webrtc`` container with the Janus Gateway pre-configured to use WebRTC on Chrome, Firefox or the Mattermost Destkop Apps.
+The command downloads, installs and runs your ``mattermost-webrtc`` container with the Janus Gateway pre-configured to use WebRTC on Chrome, Firefox or the Mattermost Desktop Apps.
 
 .. note::
   Make sure your Mattermost server can reach the running Mattermost WebRTC Docker container. For instance, you can issue a Telnet to one of these ports (7088, 7089, 8188, 8189).
@@ -59,7 +59,7 @@ If you prefer to establish the connection to the Mattermost WebRTC Docker contai
 - **Gateway WebSocket URL** - example: ``wss://dockerhost:8189``. WebSocket route for the Janus Gateway service, inside the Mattermost WebRTC container, used to connect peers on a video call. For SSL connections, set the protocol to ``wss://`` and the port to ``8189``. For non-SSL connections, set the protocol to ``ws://`` and port to ``8188``.
 - **Gateway Admin URL** - example: ``https://dockerhost:7089/admin``.  Admin route for the Janus Gateway service inside the Mattermost WebRTC container, used to fetch a valid ``Token``. For SSL connections, set the protocol to ``https://`` and the port to ``7089``. For non-SSL connections, set the protocol to ``http://`` and port to ``7088``.
 - **Gateway Admin Secret** - example: ``janusoverload``: The secret that validates the request made to fetch the ``Token``. For any Janus Gateway installation the default value is ``janusoverlord``. Change it by editing the ``janus.cfg`` file under the ``/opt/janus/etc/janus`` directory, and modifying the value for ``admin_secret``.
-- **STUN URI** (Optional) - example: ``stun:stun.l.google.com:19302``: This is the STUN server to use for estabilishing a connection. You can use the public Google STUN server address, ``stun:stun.l.google.com:19302``, or deploy your own.
+- **STUN URI** (Optional) - example: ``stun:stun.l.google.com:19302``: This is the STUN server to use for establishing a connection. You can use the public Google STUN server address, ``stun:stun.l.google.com:19302``, or deploy your own.
 - **TURN URI** (Optional): If you need an NAT Traversal, you'll need to configure a TURN server such as a `Coturn <https://github.com/coturn/coturn/wiki>`_ server. Configuring the TURN server is out of scope for this guide.
 - **TURN Username** (Optional): The username of your TURN server if you have one.
 - **TURN Shared Key** (Optional): The password of your TURN server if you have one.
