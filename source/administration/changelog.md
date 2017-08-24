@@ -13,7 +13,37 @@ Scheduled release date: 2017-09-16
 
 ### Improvements
 
+#### Web User Interface
+- Redesigned the channel member list.
+- Redesigned the keyboard shortcuts dialog (CTRL/CMD+/).
+- Added an on hover effect for team icons in the team sidebar, and the channel name and favorite button in channel header.
+- Added an active state for the channel member icon in channel header.
+- Added a "+" icon next to the Direct Messages header on channel sidebar to open a new direct or group message.
+- Added a tooltip for Main Menu next to user profile picture.
+- Mouse cursor now changes to a "hand selector" when hovering over the paperclip icon to upload a file.
+
+#### Mobile View
+- Made hover effects consistent across all header icons.
+
+#### Notifications
+- Added support for plain text version of email notifications.
+
+#### Administration
+- Added a CLI command to convert a public channel to private, and vice versa.
+- Allow the CLI command `platform team delete` to delete teams with no channels.
+
 ### Bug Fixes
+- Fixed an issue where a System Admin couldn't scroll to the bottom of the System Console sidebar in Firefox.
+- Flag icon and the "x" icon to close website previews now properly aligned for replies in compact view.
+- Fixed expand/collapse arrows not being visible for YouTube videos when image links are expanded by default.
+- Fixed an issue where reacting to a post in the right-hand sidebar via emoji picker didn't add the emoji to "Recently Used" section.
+- Pressing the ESC key no longer clears search box contents.
+- Fixed an issue where turning off email batching in the System Console resulted in no email notification option selected in Account Settings.
+- Fixed an issue where a user wasn't able to scroll down in message preview mode when using Markdown headings.
+- Fixed an issue on Safari browsers where file thumbnails were sometimes blank.
+- Fixed an issue where quotes weren't working inside URL links.
+- Fixed an error when the language set in **Account Settings > Display** was removed from available languages in **System Console > Localization**.
+- Fixed out-of-channel mentions for usernames with dashes and periods.
 
 ### Compatibility
 
