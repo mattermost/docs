@@ -183,7 +183,7 @@ Configure how names are displayed in Mattermost: nickname, username or full name
 Link Previews
 ~~~~~~~~~~~~~
 
-Select whether links posted on Mattermost show a preview below them. When "On", a preview will be shown below links to Youtube Videos and GIF, PNG, JPEG, and BMP files. When "Off", no preview will be shown. This setting can also be controlled using the slash commands ``/expand`` and ``/collapse``.
+Select whether links posted in Mattermost show a preview below them. When "On", a preview will be shown below links to Youtube Videos and GIF, PNG, JPEG, and BMP files. When "Off", no preview will be shown. This setting can also be controlled using the slash commands ``/expand`` and ``/collapse``.
 
 Message Display
 ~~~~~~~~~~~~~~~
