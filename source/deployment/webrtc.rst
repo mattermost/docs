@@ -7,17 +7,64 @@ The feature is a working prototype for community development and not recommended
 
 .. note:: This feature will be replaced by a plug-in architecture allowing multiple video and audio calling providers to connect into Mattermost, and features described in this section will be re-written as a plug-in.
 
-Configuring video and audio calls
-------------------------------------------
+Configuring video and audio calls with WebRTC
+----------------------------------------------
 
-This option can be enabled by the System Administrator in the System Console under **Integrations > WebRTC (Beta)** - `see configuration settings documentation to learn more <https://docs.mattermost.com/administration/config-settings.html#webrtc-beta>`_.
+This guide is aimed to set up `Mattermost WebRTC with a Docker image and Janus Gateway server <https://hub.docker.com/r/mattermost/webrtc/>`_. 
 
-To set up the WebRTC server, you may either
+If you want to use a full `Janus Gateway <https://janus.conf.meetecho.com/>`_, please visit their `GitHub repo <https://github.com/meetecho/janus-gateway>`_ for detailed instructions. You may also optionally set up `Coturn <https://github.com/coturn/coturn/wiki>`_ for TURN servers for your Mattermost installation.
 
- - use a `Mattermost Docker container created for testing WebRTC <https://hub.docker.com/r/mattermost/webrtc/>`_
- - set up a `Janus server <https://github.com/meetecho/janus-gateway>`_ to act as the WebRTC gateway and `Coturn <https://github.com/coturn/coturn/wiki>`_ for STUN and TURN servers for your Mattermost installation.
+Pre-requisites
+~~~~~~~~~~~~~~~
 
-Starting a video call
+- Install Docker using the `Ubuntu online guide <https://docs.docker.com/installation/ubuntulinux/`_. Docker installation, configuration and management are out of scope for this guide.
+- Install a Mattermost server using the `official install guides <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`_. Mattermost server installation, configuration and management are out of scope for this guide.
+- Ability to connect using SSL or plain WebSocket and HTTP.
+- At least one STUN server. You can use the public Google STUN server address, ``stun:stun.l.google.com:19302``, or deploy your own.
+
+The Docker image includes a Janus Gateway server v0.2.2 and an SSL certificate for host **dockerhost**, valid until January 2, 2018.
+
+TURN servers are not required for this setup.
+
+Deploy Mattermost WebRTC Docker container
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+After installing Docker, run the following command in a terminal to install the Mattermost WebRTC Docker image.
+
+   .. code:: bash
+
+       docker run --name mattermost-webrtc -p 7088:7088 -p 7089:7089 -p 8188:8188 -p 8189:8189 -d mattermost/webrtc:latest
+
+The command downloads, installs and runs your ``mattermost-webrtc`` container with the Janus Gateway pre-configured to use WebRTC on Chrome, Firefox or the Mattermost Desktop Apps.
+
+.. note::
+  Make sure your Mattermost server can reach the running Mattermost WebRTC Docker container. For instance, you can issue a Telnet to one of these ports (7088, 7089, 8188, 8189).
+
+Configure Mattermost to enable WebRTC
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1 - (Optional) Only required if you want to establish the connection to the Mattermost WebRTC Docker container, running the Janus Gateway, with SSL. If you prefer to establish the connection to the Mattermost WebRTC Docker container without SSL, proceed to the following step.
+
+Mattermost makes an HTTP request to the Janus Gateway service to get a ``Token``, which is used to identify a user and establish a connection between peers. If you configure Mattermost to make requests to that service with SSL, the SSL certificate included in the Docker image and used to run the Janus Gateway will not be considered signed by a trusted CA.
+
+To make the successful connection via SSL, go to **System Console > Security > Connections** and set **Enable Insecure Outgoing Connections** to ``true``. This change is not recommended in production given it allows any outgoing HTTPS requests to accept unverified, self-signed certificates and makes these connections susceptible to man-in-the-middle attacks. For example, outgoing webhooks to a server with a self-signed TLS certificate, using any domain, will be allowed.
+
+2 - Go to **System Console > Integrations > WebRTC (Beta)** and set the following values:
+
+.. image:: ../images/webrtc_full_settings.png
+
+- **Enable Mattermost WebRTC** - ``true``.
+- **Gateway WebSocket URL** - example: ``wss://dockerhost:8189``. WebSocket route for the Janus Gateway service, inside the Mattermost WebRTC container, used to connect peers on a video call. For SSL connections, set the protocol to ``wss://`` and the port to ``8189``. For non-SSL connections, set the protocol to ``ws://`` and port to ``8188``.
+- **Gateway Admin URL** - example: ``https://dockerhost:7089/admin``.  Admin route for the Janus Gateway service inside the Mattermost WebRTC container, used to fetch a valid ``Token``. For SSL connections, set the protocol to ``https://`` and the port to ``7089``. For non-SSL connections, set the protocol to ``http://`` and port to ``7088``.
+- **Gateway Admin Secret** - example: ``janusoverlord``: The secret that validates the request made to fetch the ``Token``. For any Janus Gateway installation the default value is ``janusoverlord``. Change it by editing the ``janus.cfg`` file under the ``/opt/janus/etc/janus`` directory, and modifying the value for ``admin_secret``.
+- **STUN URI** (Optional) - example: ``stun:stun.l.google.com:19302``: This is the STUN server to use for establishing a connection. You can use the public Google STUN server address, ``stun:stun.l.google.com:19302``, or deploy your own.
+- **TURN URI** (Optional): If you need an NAT Traversal, you'll need to configure a TURN server such as a `Coturn <https://github.com/coturn/coturn/wiki>`_ server. Configuring the TURN server is out of scope for this guide.
+- **TURN Username** (Optional): The username of your TURN server if you have one.
+- **TURN Shared Key** (Optional): The password of your TURN server if you have one.
+
+3 - Hit **Save**. You are now ready to start video and audio calls within Mattermost.
+
+Start a video call
 --------------------------
 
 After enabling the feature in the System Console by a System Administrator:
