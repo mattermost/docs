@@ -3,7 +3,7 @@ Liveness and Readiness Check
 
 This page describes how to configure liveness and readiness probes for a Mattermost server.
 
-Before you begin, you should have a running Mattermost server. If you don't, you can `install Mattermost on various distributions <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`_ or deploy a `Kubernetes cluster with Minikube <https://github.com/mattermost/mattermost-kubernetes>`_.  Note that `highly available Mattermost cluster <https://docs.mattermost.com/deployment/cluster.html>`_ is available on `Enterprise Edition E20 <https://about.mattermost.com/pricing/>`_.
+Before you begin, you should have a running Mattermost server. If you don't, you can `install Mattermost on various distributions <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`_ or deploy a `Kubernetes cluster with Minikube <https://github.com/mattermost/mattermost-kubernetes>`_.  Note that `highly available Mattermost cluster <https://docs.mattermost.com/deployment/cluster.html>`_ is available in `Enterprise Edition E20 <https://about.mattermost.com/pricing/>`_.
 
 You can perform a liveness and readiness check with two methods:
 
@@ -36,4 +36,4 @@ The `Mattermost Probe <https://github.com/csduarte/mattermost-probe>`_ constantl
 
 These probes can be configured to verify core features, including sending and receiving messages, joining channels, pinging a login page, and searching of users and channels.
 
-The project is contributed by the Mattermost open-source community. Suggestions and contributions for the project are welcome.
+The project is contributed by the Mattermost open source community. Suggestions and contributions for the project are welcome.
