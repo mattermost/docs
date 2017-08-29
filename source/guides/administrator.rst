@@ -63,6 +63,7 @@ Administration
    /administration/team-settings.md
    /administration/statistics.md
    /administration/announcement-banner.rst
+   /administration/liveness-check*
    /administration/compliance*
    /administration/branding*
    /administration/backup*
