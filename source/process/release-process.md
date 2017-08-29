@@ -54,19 +54,14 @@ No pull requests for major features should be **merged** to the current release 
     - Submit NOTICE.txt PR for any new libraries added from dev, if not added already. The following two files contain a list of dependencies:
         - https://github.com/mattermost/platform/blob/master/webapp/package.json
         - https://github.com/mattermost/platform/blob/master/glide.yaml
-5. QA:
-    - Coordinate testing:
-        - Receive testing sign-off from feature area owners (i.e. PM/Dev either signs-off that their area is well tested, or flags potential quality issues that may exist)  
-        - Prioritize updating the RC Testing Spreadsheet to cover any changes or new features, and confirm that known issues are listed in the relevant tests
-        - Assign each area of the release testing spreadsheet to a team member and ensure core team has access permissions
-6. **(Team) Major Feature Complete Meeting (10:00am San Francisco time)**:  
+5. **(Team) Major Feature Complete Meeting (10:00am San Francisco time)**:  
     - Discuss worst bug currently on master
     - Discuss release highlights for marketing
     - Review status of last feature PRs to be merged
-7. Dev:
+6. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/platform/pulls) marked for the current release
     - After the cut-off, any PRs that include significant code changes require approval of the release manager before merging.
-8. Marketing:
+7. Marketing:
     - Prepare bullet points for release announcement
     - Propose list of key features included in the release GIF and send to marketing lead for review
     - Draft release headline and send to marketing lead for review
@@ -122,6 +117,10 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - Confirm changes to config.json in compatibility section of Changelog are written back to [settings documentation](http://docs.mattermost.com/administration/config-settings.html#configuration-settings)
 6. QA:
     - Confirm all PRs merged into the current release have been tested
+    - Coordinate testing:
+        - Receive testing sign-off from feature area owners (i.e. PM/Dev either signs-off that their area is well tested, or flags potential quality issues that may exist)  
+        - Prioritize updating the RC Testing Spreadsheet to cover any changes or new features, and confirm that known issues are listed in the relevant tests
+        - Assign each area of the release testing spreadsheet to a team member and ensure core team has access permissions
 7. **(Team) Code Complete Meeting (10:00am San Francisco time)**:  
     - (PM) Leads team review of Changelog
     - (Release Manager) Walk through each unfinished item of this checklist  
