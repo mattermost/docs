@@ -66,6 +66,7 @@ Administration
    /administration/compliance*
    /administration/branding*
    /administration/backup*
+   /administration/liveness-check*
    /administration/upgrade.rst
    /administration/migrating.md
 
