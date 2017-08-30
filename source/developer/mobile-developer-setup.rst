@@ -3,7 +3,7 @@
 Mobile Developer Machine Setup
 ==================================
 
-The following instructions apply to new unreleased mobile apps for iOS and Android built in React Native. They are intended to release in Beta at the end of March 2017. Source code can be found at: https://github.com/mattermost/mattermost-mobile
+The following instructions apply to the beta mobile apps for iOS and Android built in React Native. Download the iOS version `here <http://about.mattermost.com/mattermost-ios-app/>`_ and the Android version `here <http://about.mattermost.com/mattermost-android-app/>`_. Source code can be found at: https://github.com/mattermost/mattermost-mobile
 
 .. contents:: Contents:
   :backlinks: top
