@@ -11,11 +11,19 @@ Scheduled release date: 2017-09-16
 
 ### Highlights
 
+#### Interactive Message Buttons
+- Added message buttons to support user interactiong with posts made by incoming webhooks and custom slash commands.
+
+#### Mobile Support for AppConfig
+- iOS and Android mobile apps now support Enterprise Mobility Management (EMM) solutions, including MobileIron and BlackBerry Dynamics, through integration with [App Config](https://www.appconfig.org/).
+
 ### Improvements
 
 #### Web User Interface
 - Redesigned the channel member list.
+- Redesigned the message input box.
 - Redesigned the keyboard shortcuts dialog (CTRL/CMD+/).
+- Added a loading indicator when selecting a team on team selection page.
 - Added an on hover effect for team icons in the team sidebar, and the channel name and favorite button in channel header.
 - Added an active state for the channel member icon in channel header.
 - Added a "+" icon next to the Direct Messages header on channel sidebar to open a new direct or group message.
@@ -24,15 +32,27 @@ Scheduled release date: 2017-09-16
 
 #### Mobile View
 - Made hover effects consistent across all header icons.
+- Removed transparency of the [...] menu in the right-hand sidebar.
+- Reduced opacity in channel info dialog.
+- Updated background colour of search bar.
 
 #### Notifications
 - Added support for plain text version of email notifications.
+- Added "Joined the channel" system message for the person who created the channel.
+
+#### Link Previews
+- Collapse and expand arrows no longer shown for image links when no image is available.
+- A single collapsed link preview now stays collapsed after page refresh.
 
 #### Administration
 - Added a CLI command to convert a public channel to private, and vice versa.
 - Allow the CLI command `platform team delete` to delete teams with no channels.
 
+#### Enterprise Edition
+- Removed the "Delete Channel" option for private channels, if you're the last channel member and policy setting restricts channel deletion to admins only.
+
 ### Bug Fixes
+- Fixed permalinks not always loading in the channel.
 - Fixed an issue where a System Admin couldn't scroll to the bottom of the System Console sidebar in Firefox.
 - Flag icon and the "x" icon to close website previews now properly aligned for replies in compact view.
 - Fixed expand/collapse arrows not being visible for YouTube videos when image links are expanded by default.
@@ -44,8 +64,24 @@ Scheduled release date: 2017-09-16
 - Fixed an issue where quotes weren't working inside URL links.
 - Fixed an error when the language set in **Account Settings > Display** was removed from available languages in **System Console > Localization**.
 - Fixed out-of-channel mentions for usernames with dashes and periods.
+- Fixed an issue where a missing config setting sometimes caused server panic.
+- Jumping to a group message channel from a flagged message list now adds the channel to the channel list.
+- Character limits are no enforced when renaming a channel via `/rename`.
+- Fixed channel header icons when WebRTC call is on-going.
+- Fixed webhook message attachments not appearing in search results or flagged messages list.
+- Timestamp on deleted, ephemeral, or pending posts is no longer a permalink, causing a blank page.
+- Fixed focus issues on iPad Classic app.
 
 ### Compatibility
+
+#### Removed and deprecated features
+- All APIv3 endpoints are scheduled for removal on January 16, 2018.
+
+For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
+
+#### config.json
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
 ### Known Issues
 
@@ -147,6 +183,13 @@ Scheduled release date: 2017-08-16
 For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
 
 #### config.json
+
+The following settings were unintentionally added to ``config.json`` and are removed in Mattermost 4.2.
+
+- Under `SupportSettings` in `config.json`:
+  - `"AdministratorsGuideLink": "https://about.mattermost.com/administrators-guide/"`
+  - `"TroubleshootingForumLink": "https://about.mattermost.com/troubleshooting-forum/"`
+  - `"CommercialSupportLink": "https://about.mattermost.com/commercial-support/"`
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
