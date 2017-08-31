@@ -55,7 +55,7 @@ This is the default role given to users when they join a team. Members have basi
 Channel Admin
 ~~~~~~~~~~~~~
 
-*Available in Enterprise Edition E10 and higher*
+*Available in Enterprise Edition Standard and higher*
 
 The person who creates a channel is assigned the Channel Admin role for that channel. People with the Channel Admin role have the following privileges:
 
