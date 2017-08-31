@@ -32,21 +32,21 @@ account using a one-click sign in option.
 
 Google Single Sign-On
 ~~~~~~~~~~~~~~~~~~~~~
-*Available in Enterprise Edition E20*
+*Available in Enterprise Edition Plus*
 
 When enabled by your System Admin, you can sign in using your Google
 account using a one-click sign in option.
 
 Office 365 Single Sign-On (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*Available in Enterprise Edition E20*
+*Available in Enterprise Edition Plus*
 
 When enabled by your System Admin, you can sign in using your Office 365
 account using a one-click sign in option.
 
 AD/LDAP Sign In
 ~~~~~~~~~~~~~~~
-*Available in Enterprise Edition E10 & E20*
+*Available in Enterprise Edition Standard & Plus*
 
 When enabled by your System Admin, you can sign in with your AD/LDAP
 credentials. This lets you use the same username and password for
@@ -54,7 +54,7 @@ Mattermost that you use for various other company services.
 
 SAML Single Sign-On (SSO)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-*Available in Enterprise Edition E20*
+*Available in Enterprise Edition Plus*
 
 When enabled by your System Admin, you can sign in with your SAML
 credentials. This lets you use the same username and password for
