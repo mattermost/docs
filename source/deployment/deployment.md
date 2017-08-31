@@ -166,8 +166,8 @@ The [Mattermost Push Notification Service](http://docs.mattermost.com/deployment
 
 ### Mobile devices without VPN clients
 
-Mattermost can be deployed outside your private network by opening standard ports like 80 or 443. With this option, mobile clients and desktop computers access the Mattermost server without a VPN client, and it is recommended that users sign in with multi-factor authentication, available in Mattermost E10 and higher.
+Mattermost can be deployed outside your private network by opening standard ports like 80 or 443. With this option, mobile clients and desktop computers access the Mattermost server without a VPN client, and it is recommended that users sign in with multi-factor authentication, available in Mattermost Enterprise Edition Standard and higher.
 
 The [Mattermost Push Notification Service](http://docs.mattermost.com/deployment/deployment.html#push-notification-service) (MPNS) should be behind your firewall inside your private network. MPNS does not connect with mobile apps directly, it forwards push notifications from the Mattermost server to a relay service for iTunes or Google Play, or directly to mobile apps within an Enterprise App Store behind your firewall.
 
-Certificate-based authentication for mobile devices is planned for Mattermost E20, [contact the Enterprise Sales Team for more information](https://about.mattermost.com/contact/).
+Certificate-based authentication for mobile devices is planned for Mattermost Enterprise Edition Plus, [contact the Enterprise Sales Team for more information](https://about.mattermost.com/contact/).
