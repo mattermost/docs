@@ -221,6 +221,7 @@ The final release is cut. If an urgent and important issue needs to be addressed
     - Test upgrade from Team Edition to Enterprise edition based on the [Upgrade Guide](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition)
     - Review any changes made to install guides, and test if necessary
     - Run loadtests against the final release build to confirm there are no performance issues
+    - Review [Security Policies](https://docs.mattermost.com/process/security.html) page is updated
 5. Logistics:
     - Update the [Mattermost server download page](https://www.mattermost.org/download/) with the links to the EE and TE bits
       - Test the download links before and after updating the page
