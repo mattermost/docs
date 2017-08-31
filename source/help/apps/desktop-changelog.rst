@@ -1,6 +1,23 @@
 Desktop Application Changelog
 ========================================
 
+Release 3.7.1
+--------------
+
+Release date: August 30, 2017
+
+This release contains a security update for Windows, Mac and Linux, and it is highly recommended that users upgrade to this version.
+
+Improvements and Bug Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Windows
+^^^^^^^^^^^^^
+
+ - Client no longer freezes intermittently, such as when receiving desktop notifications.
+ - [Windows 8.1/10] Added support for running the desktop app across monitors of different DPI.
+ - [Windows 7/8] Clicking on a desktop notification now opens the message.
+
 Release 3.7.0
 --------------
 
