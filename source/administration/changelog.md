@@ -5,9 +5,7 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v4.2.0
-Scheduled release date: 2017-09-16
-
-### Security Update
+Release date: 2017-09-16
 
 ### Highlights
 
@@ -81,15 +79,58 @@ For a list of past and upcoming deprecated features, [see our website](https://a
 
 #### config.json
 
+The following settings were unintentionally added to ``config.json`` and are removed in Mattermost 4.2.
+
+- Under `SupportSettings` in `config.json`:
+  - `"AdministratorsGuideLink": "https://about.mattermost.com/administrators-guide/"`
+  - `"TroubleshootingForumLink": "https://about.mattermost.com/troubleshooting-forum/"`
+  - `"CommercialSupportLink": "https://about.mattermost.com/commercial-support/"`
+
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
+**Changes to Team Edition and Enterprise Edition**:
+
+- Under `ClientRequirements` in `config.json`: // XXX Do we want to release note these since they're experiemental?
+  - Added `"AndroidLatestVersion": ""` to
+  - Added `"AndroidMinVersion": ""` to
+  - Added `"DesktopLatestVersion": ""` to
+  - Added `"DesktopMinVersion": ""` to
+  - Added `"IosLatestVersion": ""` to
+  - Added `"IosMinVersion": ""` to
+- Under `ServiceSettings` in `config.json`:
+  - Added `AllowedUntrustedInternalConnections": ""` to // XXX
+
+**Additional Changes to Enterprise Edition**:
+
+### Database Changes
+
+### API v4 Changes
+- Mattermost 4.0 has a stable release of API v4 endpoints. It is recommended that any new integrations use the v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
+- All APIv3 endpoints are scheduled for removal on January 16, 2018.
+
+**Added routes (API v4)**
+- `POST` at `/posts/{post_id}/actions/{action_id}`
+  - To perform a post action, which allows users to interact with integrations through messages.
+
 ### Known Issues
+- Google login fails on the Classic mobile apps.
+- Clicking on a channel during the tutorial makes the tutorial disappear.
+- User can receive a video call from another browser tab while already on a call.
+- Jump link in search results does not always jump to display the expected post.
+- First load of the emoji picker is slow on low-speed connections or on deployments with hundreds of custom emoji.
+- Scrollbar is sometimes not visible in the left-hand sidebar after switching teams.
+- Certain code block labels don't appear while scrolling on iOS mobile web.
+- Deleted message doesn't clear unreads or unread mentions.
+- Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+- Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+- Searching with Elasticsearch enabled may not always highlight the searched terms.
+- Channels links to channels that the current user does not belong to may not render correctly.
 
 ### Contributors
 
 
 ## Release v4.1.0
-Scheduled release date: 2017-08-16
+Release date: 2017-08-16
 
 ### Security Update
 
