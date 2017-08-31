@@ -152,8 +152,9 @@ Mattermost and Representative Logos
 2. Use white Mattermost logo on dark backgrounds and black Mattermost logo on light backgrounds.
 3. Representative logo appears on the left side of the asset below the feature title.
 4. For representative logos, always confirm you are using the official version of the company’s logo. If you’re unsure, ask.
-5. When the background color is dark, use the white/inverted version of representative logo. When the background color is light, use the dark/primary version of representative logo.
-6. If the color of the representative logo is the same as the color of the title, make sure to make them distinctive from each other by slightly reducing the size of the logo.
+5. The space between the feature title and the representative logo should be 35px.
+6. When the background color is dark, use the white/inverted version of representative logo. When the background color is light, use the dark/primary version of representative logo.
+7. If the color of the representative logo is the same as the color of the title, make sure to make them distinctive from each other by slightly reducing the size of the logo.
 
 Feature Screenshot
 ^^^^^^^^^^^^^^^^^^^
