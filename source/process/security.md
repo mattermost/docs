@@ -100,6 +100,12 @@ The following resources are monitoring for information about new security threat
 1. For all IT systems including but not limited to servers, routers, switches, firewalls, databases are privileged accounts (e.g., system or security administrator) logged at all times and reviewed on at least a quarterly basis?
    - Yes.
 
+1. Are unique user IDs required for all IT systems including but not limited to servers, routers, switches, firewalls, databases are privileged accounts (e.g., system or security administrator)?
+   - Yes.
+
+1. Are passwords required to access all IT systems including but not limited to servers, routers, switches, firewalls, databases are privileged accounts (e.g., system or security administrator)?
+   - Yes.
+
 1. Are passwords prevented from being displayed in clear text during user authentication or in electronic/printed reports?
    - Yes.
 
@@ -108,6 +114,56 @@ The following resources are monitoring for information about new security threat
 
 1. If user accounts are assigned to non-permanent personnel (e.g., contractors, consultants)  for troubleshooting purposes, are the accounts disabled or removed after each use?
    - Yes
+
+1. Are information assets classified?
+   - Yes.
+
+1. Are security roles and responsibilities of constituents defined and documented in accordance with the organization’s information security policy?
+   - Yes.
+
+1. Is a background screening performed prior to allowing constituent access to Scoped Systems and Data?
+   - Yes.
+
+1. Are new hires required to sign any agreements upon hire?
+   - Yes.
+
+1. Is there a disciplinarily process for non-compliance with information security policies?
+   - Yes, disclosure of confidential information or egregious disregard for documented security policies is grounds for termination. 
+
+1. Is there a constituent termination or change of status process?
+   - Yes.
+
+### Operational Security
+
+1. Is there a risk assessment program that has been approved by management, communicated to appropriate constituents and an owner to maintain and review the program?
+   - Yes.
+
+1. Is there an information security policy that has been approved by management, communicated to appropriate constituents and an owner to maintain and review the policy?
+   - Yes.
+
+1. Is there a vendor management program?
+   - Yes.
+
+1. Is there a respondent information security function responsible for security initiatives?
+   - Yes.
+
+1. Is there an asset management policy or program that has been approved by management, communicated to appropriate constituents and an owner to maintain and review the policy?
+   - Yes.
+
+1. Are Management approved operating procedures utilized?
+   - Yes.
+
+1. Is there an operational change management / change control policy or program that has been approved by management, communicated to appropriate constituents and an owner to maintain and review the policy?
+   - Yes.
+
+1. Are system backups of Scoped Systems and Data performed?
+   - Yes.
+
+1. Are firewalls in use for both internal and external connections?
+   - Yes.
+
+1. Are vulnerability assessments, scans or penetration tests performed on internal or external networks?
+   - Yes.
 
 ### Software Development Life Cycle (SDLC)
 
@@ -184,8 +240,64 @@ The following resources are monitoring for information about new security threat
    - Yes. Security updates are announced via email to customers as well as mailing list subscribers. 
 
 1. Is there a specified response policy that includes the timeframe issues are to be addressed?
-   - Yes, please see: https://about.mattermost.com/support/ 
+   - Yes, please see: [https://about.mattermost.com/support/](https://about.mattermost.com/support/)
 
+### Business Resiliency
+
+For more information on Business Resiliency, see the [Mattermost Business Continuity Plan](https://docs.mattermost.com/process/security.html#business-continuity-plan).
+
+1. Is there an established Business Resiliency program that has been approved by management and communicated to appropriate constituents?
+   - Yes.
+
+1. Has a Business Impact Analysis been conducted?
+   - Yes.
+
+1. Is there a formal process focused on identifying and addressing risks of disruptive incidents to the organization?
+   - Yes.
+
+1. Is there an established Business Resiliency program that has been approved by management and communicated to appropriate constituents?
+   - Yes.
+
+1. Are specific response and recovery strategies defined for the prioritized activities?
+   - Yes.
+
+1. Are formal business continuity procedures developed and documented?
+   - Yes.
+
+1. Has senior management assigned the responsibility for the overall management of the response and recovery efforts?
+   - Yes.
+
+1. Is there a periodic review of your Business Resiliency Program?
+   - Yes, annually.
+
+1. Is there an Influenza Pandemic/Infectious Disease Outbreak Plan?
+   - Yes.
+
+1. Is there insurance coverage for business interruptions or general services interruption?
+   - Yes.
+
+### Compliance
+
+1. Is there an internal audit, risk management or compliance department with responsibility for identifying and tracking resolution of outstanding regulatory issues?
+   - Yes.
+
+1. Are there policies and procedures to ensure compliance with applicable legislative, regulatory and contractual requirements to address intellectual property rights on business processes or information technology software products?
+   - Yes.
+
+1. Is there a records retention policy covering paper & electronic records, including email in support of applicable regulations, standards and contractual requirements?
+   - Yes. For example, records of customers with NDAs are retained in the event when an NDA is terminated and requires destruction of records.
+
+1. Is licensing maintained in all jurisdictions where the business is or where licensing is required?
+   - Yes.
+
+1. Is there an internal compliance and ethics program to ensure professional ethics and business practices are implemented?
+   - Yes.
+
+1. Are policies and procedures maintained for enabling compliance with applicable legal, regulatory, statutory, or contractual obligations related to any information security requirements?
+   - Yes.
+
+1. Is there a formalized governance process to identify and assess changes that could significantly affect the system of internal controls for security, confidentiality and availability?
+   - Yes.
 
 ## Infrastructure Security Policies
 
