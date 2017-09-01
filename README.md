@@ -137,3 +137,8 @@ We will also likely need to create specific charts for Redis and Postgres.
 One reason is that there is a bug with variable handling between parent and
 child charts, but also because we will need to include the respective exporters
 as well.
+
+
+## Contributing
+
+Please see the [contribution guidelines](CONTRIBUTING.md)
