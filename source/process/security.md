@@ -94,7 +94,7 @@ The following resources are monitoring for information about new security threat
 1. For all IT systems including but not limited to servers, routers, switches, firewalls, databases, and external social spaces, is management approval required prior to creating all user and privileged accounts (e.g., system or security administrator)?
    - Yes.
 
-1. For all IT systems including but not limited to servers, routers, switches, firewalls, databases are privileged accounts (e.g., system or security administrator) logged at all times and reviewed on at least a quarterly basis?
+1. For all IT systems including but not limited to servers, routers, switches, firewalls and databases, are privileged accounts (e.g., system or security administrator) logged at all times and reviewed on at least a quarterly basis?
    - Yes.
 
 1. Are all system, application and device password files encrypted using an industry standard encryption algorithm where technically feasible?
@@ -118,7 +118,7 @@ The following resources are monitoring for information about new security threat
 1. Are new hires required to sign any agreements upon hire?
    - Yes.
 
-1. Is there a disciplinarily process for non-compliance with information security policies?
+1. Is there a disciplinary process for non-compliance with information security policies?
    - Yes, disclosure of confidential information or egregious disregard for documented security policies is grounds for termination. 
 
 1. Is there a constituent termination or change of status process?
@@ -152,10 +152,10 @@ The following resources are monitoring for information about new security threat
 
 ### Operational Security
 
-1. Is there a risk assessment program that has been approved by management, communicated to appropriate constituents and an owner to maintain and review the program?
+1. Is there a risk assessment program that has been approved by management, communicated to appropriate constituents and has an owner to maintain and review the program?
    - Yes.
 
-1. Is there an information security policy that has been approved by management, communicated to appropriate constituents and an owner to maintain and review the policy?
+1. Is there an information security policy that has been approved by management, communicated to appropriate constituents and has an owner to maintain and review the policy?
    - Yes.
 
 1. Is there a vendor management program?
@@ -164,13 +164,13 @@ The following resources are monitoring for information about new security threat
 1. Is there a respondent information security function responsible for security initiatives?
    - Yes.
 
-1. Is there an asset management policy or program that has been approved by management, communicated to appropriate constituents and an owner to maintain and review the policy?
+1. Is there an asset management policy or program that has been approved by management, communicated to appropriate constituents and has an owner to maintain and review the policy?
    - Yes.
 
-1. Are Management approved operating procedures utilized?
+1. Are management approved operating procedures utilized?
    - Yes.
 
-1. Is there an operational change management / change control policy or program that has been approved by management, communicated to appropriate constituents and an owner to maintain and review the policy?
+1. Is there an operational change management / change control policy or program that has been approved by management, communicated to appropriate constituents and has an owner to maintain and review the policy?
    - Yes.
 
 1. Are system backups performed?
@@ -188,10 +188,10 @@ The following resources are monitoring for information about new security threat
 1. Are incoming e-mails scanned for questionable file attachments?
    - Yes.
 
-1. Does the company use spam filtering software to reduce the amount of unsolicited e-mails?
+1. Does the company use spam filtering software to reduce the number of unsolicited e-mails?
    - Yes.
 
-1. Are e-mail attachments scanned by the anti-virus?
+1. Are e-mail attachments scanned by anti-virus software?
    - Yes.
 
 ### Business Resiliency
@@ -236,10 +236,10 @@ For more information on Business Resiliency, see the [Mattermost Business Contin
 1. Are there policies and procedures to ensure compliance with applicable legislative, regulatory and contractual requirements to address intellectual property rights on business processes or information technology software products?
    - Yes.
 
-1. Is there a records retention policy covering paper & electronic records, including email in support of applicable regulations, standards and contractual requirements?
-   - Yes. For example, records of customers with NDAs are retained in the event when an NDA is terminated and requires destruction of records.
+1. Is there a records retention policy covering paper and electronic records, including email in support of applicable regulations, standards and contractual requirements?
+   - Yes. For example, records of customers with NDAs are retained in the event an NDA is terminated and requires destruction of records.
 
-1. Is licensing maintained in all jurisdictions where the business is or where licensing is required?
+1. Is licensing maintained in all jurisdictions where the business operates or where licensing is required?
    - Yes.
 
 1. Is there an internal compliance and ethics program to ensure professional ethics and business practices are implemented?
@@ -409,7 +409,7 @@ Effect:
 - Reduced capacity to continue business operations
 
 Solution(s): 
-- Mattermost, Inc. employs staff and engineers in multiple timezones and geographic areas, reducing the risk of an influenza pandemic or infectious disease outbreak to cause a significant disruption to business operations.
+- Mattermost, Inc. employs staff and engineers in multiple timezones and geographic areas, reducing the risk of significant disruption that an influenza pandemic or infectious disease outbreak would cause to business operations.
 
 ### Priority 3: Outages greater than 72 hours impacting business continuity 
 
