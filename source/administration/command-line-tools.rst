@@ -113,6 +113,7 @@ platform channel
     -  `platform channel create`_ - Create a channel
     -  `platform channel delete`_ - Delete a channel
     -  `platform channel list`_ - List all channels on specified teams
+    -  `platform channel modify`_ - Modify a channel's public/private type
     -  `platform channel remove`_ - Remove users from a channel
     -  `platform channel restore`_ - Restore a channel from the archive
 
@@ -218,6 +219,28 @@ platform channel list
     .. code-block:: none
 
       sudo ./platform channel list myteam
+
+platform channel modify
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Modify a channel's public/private type.
+
+  Format
+    .. code-block:: none
+
+      platform channel modify
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform channel modify myteam:mychannel --private
+
+  Options
+    .. code-block:: none
+
+          --public   Change a private channel to be public.
+          --private  Change a public channel to be private.
 
 platform channel remove
 ~~~~~~~~~~~~~~~~~~~~~~~~
