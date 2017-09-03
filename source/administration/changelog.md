@@ -46,7 +46,7 @@ Release date: 2017-09-16
 - A single collapsed link preview now stays collapsed after page refresh.
 
 #### Administration
-- Added a CLI command to convert a public channel to private, and vice versa.
+- Added a CLI command `platform channel modify` to convert a public channel to private, and vice versa.
 - CLI command `platform team delete` now lets you delete teams with no channels.
 
 #### Enterprise Edition
