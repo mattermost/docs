@@ -34,6 +34,9 @@ Release date: 2017-09-16
 - Reduced opacity in channel info dialog.
 - Updated background colour of search bar.
 
+#### Integrations
+- Added support for Slack-compatible delayed slash commands through the `response_url` parameter.
+
 #### Notifications
 - Added support for plain text version of email notifications.
 - Added "Joined the channel" system message for the person who created the channel.
@@ -44,10 +47,11 @@ Release date: 2017-09-16
 
 #### Administration
 - Added a CLI command to convert a public channel to private, and vice versa.
-- Allow the CLI command `platform team delete` to delete teams with no channels.
+- CLI command `platform team delete` now lets you delete teams with no channels.
 
 #### Enterprise Edition
 - Removed the "Delete Channel" option for private channels, if you're the last channel member and policy setting restricts channel deletion to admins only.
+- In multi-node cluster environment, scheduled tasks such as LDAP sync will only happen on a single node for increased performance.
 
 ### Bug Fixes
 - Fixed permalinks not always loading in the channel.
@@ -69,6 +73,7 @@ Release date: 2017-09-16
 - Fixed webhook message attachments not appearing in search results or flagged messages list.
 - Timestamp on deleted, ephemeral, or pending posts is no longer a permalink, causing a blank page.
 - Fixed focus issues on iPad Classic app.
+- Fixed an issue where changing other user's profile image as a System Admin via the API didn't work.
 
 ### Compatibility
 
@@ -90,15 +95,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 **Changes to Team Edition and Enterprise Edition**:
 
-- Under `ClientRequirements` in `config.json`: // XXX Do we want to release note these since they're experiemental?
-  - Added `"AndroidLatestVersion": ""` to
-  - Added `"AndroidMinVersion": ""` to
-  - Added `"DesktopLatestVersion": ""` to
-  - Added `"DesktopMinVersion": ""` to
-  - Added `"IosLatestVersion": ""` to
-  - Added `"IosMinVersion": ""` to
 - Under `ServiceSettings` in `config.json`:
-  - Added `AllowedUntrustedInternalConnections": ""` to // XXX
+  - Added `AllowedUntrustedInternalConnections": ""` to specify domains, IP address or CIDR notations to allow internal connections for testing environments when developing integrations locally on a development machine. Not recommended for use in production.
 
 **Additional Changes to Enterprise Edition**:
 
