@@ -77,7 +77,17 @@ Release date: 2017-09-16
 
 ### Compatibility
 
-#### Removed and deprecated features
+#### Breaking Changes
+
+By default, user-supplied URLs such as those used for Open Graph metadata, webhooks, or slash commands will no longer be allowed to connect to reserved IP addresses including loopback or link-local addresses used for internal networks. 
+
+This change may cause private integrations to break in testing environments, which may point to a URL such as http://127.0.0.1:1021/my-command.
+
+If you point private integrations to such URLs, you may whitelist such domains, IP addresses, or CIDR notations via the [AllowedUntrustedInternalConnections config setting](https://docs.mattermost.com/administration/config-settings.html#allow-untrusted-internal-connections-to) in your local environment. Although not recommended, you may also whitelist the addresses in your production environments. See [documentation to learn more](https://docs.mattermost.com/administration/config-settings.html#allow-untrusted-internal-connections-to).
+
+Push notification, OAuth 2.0 and WebRTC server URLs are trusted and not affected by this setting.
+
+#### Removed and Deprecated Features
 - All APIv3 endpoints are scheduled for removal on January 16, 2018.
 
 For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
