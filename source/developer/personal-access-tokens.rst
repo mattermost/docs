@@ -20,7 +20,7 @@ Creating a Personal Access Token
 .. image:: ../../source/images/access_token_manage_roles.png
   :width: 500 px
 
-4 - Select **Allow this account to generate user access tokens.**
+4 - Select **Allow this account to generate personal access tokens.**
 
 .. image:: ../../source/images/access_tokens_additional_roles.png
   :width: 500 px
