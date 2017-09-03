@@ -34,7 +34,7 @@ Enable JIRA on your Mattermost instance
 4 - Next, copy the webhook URL above the **Save** button, which is used to configure the integration in your JIRA project.
 
 .. note::
-   Before pasting the webhook URL into JIRA, make sure to replace ``teamname`` and ``channelname`` with the Mattermost team URL and channel URL you want the JIRA events to post to. The values should be in lower case.
+   Before pasting the webhook URL into JIRA, make sure to replace ``teamurl`` and ``channelurl`` with the Mattermost team URL and channel URL you want the JIRA events to post to. The values should be in lower case.
    
    For instance, if the team URL is ``contributors`` and channel URL is ``town-square``, then the final webhook URL on the above screenshot would be 
    
