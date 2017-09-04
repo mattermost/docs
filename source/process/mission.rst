@@ -15,10 +15,10 @@ As a company dedicated to meeting the unique collaboration needs of the world's 
 3. Number 1 overall solution by number of deployments (SaaS, private cloud & on-prem) 
 4. Number 1 overall solution by revenue 
 
-Our Values
-----------
+Our Leadership Principles
+-------------------------
 
-Values are deliberate choices defining our behavior. When facing complexity, uncertainty, or ambiguity (CUA) we determine our point of view and our actions through the lens of our values:
+Leadership principles are deliberate choices defining our behavior. When facing complexity, uncertainty, or ambiguity (CUA) we determine our point of view and our actions through the lens of our principles:
 
 - **Customer Obsession** - We exist to make customers successful. In everything we do, start with customer perspective and work backwards. Earn and keep their trust.
 
