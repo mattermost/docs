@@ -100,7 +100,7 @@ The following resources are monitoring for information about new security threat
 1. Are all system, application and device password files encrypted using an industry standard encryption algorithm where technically feasible?
    - Yes
 
-1. Do IT systems including but not limited to servers, routers, switches, firewalls, databases are privileged accounts (e.g., system or security administrator) that communicate directly with the Internet contain any personally identifiable information (PII) such as: social security numbers, credit card numbers, patient health record information, or other confidential records?
+1. For all IT systems including but not limited to servers, routers, switches, firewalls and databases, do privileged accounts (e.g., system or security administrator) that communicate directly with the Internet, contain any personally identifiable information (PII) such as: social security numbers, credit card numbers, patient health record information, or other confidential records?
    - Yes
 
 1. Is all sensitive, protected health information (PHI) and personally identifiable information (PII) protected using an industry standard encryption algorithm where technically feasible?
