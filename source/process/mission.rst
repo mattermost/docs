@@ -8,13 +8,12 @@ Our vision is a world more connected to what matters most.
 Our Goals
 ---------
 
-To become the leading solution we focus on four sequential goals: 
+As a company dedicated to meeting the unique collaboration needs of the world's most advanced and sophisticated companies, we intend to become the leading solution via four sequential objectives: 
 
-- Become the leading private cloud enterprise collaboration solution by number of deployments 
-- Become the leading private cloud enterprise collaboration solution by revenue 
-- Become the leading enterprise collaboration solution by number of deployments (SaaS, private cloud & on-prem) 
-- Become the leading enterprise collaboration solution by revenue 
-
+1. Number 1 private cloud solution by number of deployments 
+2. Number 1 private cloud solution by revenue 
+3. Number 1 overall solution by number of deployments (SaaS, private cloud & on-prem) 
+4. Number 1 overall solution by revenue 
 
 Our Values
 ----------
