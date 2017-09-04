@@ -158,7 +158,7 @@ Delayed and multiple responses
 
 You can use the ``response_url`` parameter to supply multiple responses or a delayed response to a slash command. Response URLs can be used to send five additional messages within a 30-minute time period from the original command invocation. 
 
-Delayed respones are useful when the action takes more than three seconds to perform, for instance:
+Delayed responses are useful when the action takes more than three seconds to perform, for instance:
 - Retrieval of data from external third-party services, where the response time may take longer than three seconds.
 - Report generation, batch processing or other long-running processes that take longer than three seconds to respond.
 
