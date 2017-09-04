@@ -8,9 +8,9 @@ Recruiting Priorities
 
 We aim to hire outstanding team members based on the following priorities: 
 
-1. Alignment to our values
-2. Aptitude
-3. Domain expertise
+1. Alignment to our culture and leadership principles  
+2. Aptitude to grow wildly fast  
+3. Domain expertise and ability to execute hands-on independently and in a team
 
 XXXX: (IT) Reading the below, I don't know if it makes sense to have separate recruiting processes for engineering and "non-engineering". 
 
