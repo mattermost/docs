@@ -2,7 +2,9 @@
 About Mattermost
 ##################################################
 
-Mattermost, Inc. is a company based on the Mattermost open source project. Mattermost software is used by thousands of organizations around the world in 14 languages.
+Mattermost, Inc. provides enterprise-grade messaging solutions for the world’s leading organizations on a vibrant open source platform. Our private and hybrid cloud solutions offer secure, configurable, highly-scalable messaging across web, phone and PC with archiving, search, and deep integration across in-house systems. Our diverse range of enterprise customers includes Uber, NASA, Intel, Samsung, McKinsey & Company, Medtronic, Wargaming and the United States Department of Energy.
+
+Headquartered in Palo Alto, California, our company serves customers around the world with a distributed organization spanning 7 time zones.
 
 .. include:: mission.rst
 
