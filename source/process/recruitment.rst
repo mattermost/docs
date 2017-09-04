@@ -6,13 +6,20 @@ Recruitment Process
 Recruiting Priorities 
 ---------------------
 
-We aim to hire outstanding team members based on the following priorities: 
+As one of the world's largest open source projects, hundreds of volunteer contributors around the world aid in the development and expansion of Mattermost software. Mattermost, Inc. is a company dedicated to working with its community to continually improve and evolve Mattermost software and is accepting of anyone who follows our `public contribution guidelines and code of conduct. <https://docs.mattermost.com/developer/contribution-guide.html>`_  
 
+For hiring of paid Mattermost staff we focus on three specific recruitment priorities:
+ 
 1. Alignment to our culture and leadership principles  
 2. Aptitude to grow wildly fast  
 3. Domain expertise and ability to execute hands-on independently and in a team
 
-XXXX: (IT) Reading the below, I don't know if it makes sense to have separate recruiting processes for engineering and "non-engineering". 
+This document outlines our recruiting process for new staff at Mattermost, Inc. and is intended to set expectations for both candidates and Mattermost staff. 
+
+Distributed Culture 
+-------------------
+
+XXX Need to add something here on distributed culture. 
 
 Non-Engineering Recruitment Process: 
 -----------------------------------
