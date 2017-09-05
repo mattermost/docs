@@ -113,6 +113,7 @@ platform channel
     -  `platform channel create`_ - Create a channel
     -  `platform channel delete`_ - Delete a channel
     -  `platform channel list`_ - List all channels on specified teams
+    -  `platform channel move`_ - Move a channel to another team
     -  `platform channel remove`_ - Remove users from a channel
     -  `platform channel restore`_ - Restore a channel from the archive
 
@@ -218,6 +219,23 @@ platform channel list
     .. code-block:: none
 
       sudo ./platform channel list myteam
+
+platform channel move
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Move channels to another team. The command validates that all users in the channel belong to the target team. Incoming/Outgoing webhooks are moved along with the channel. Channels can be specified by ``[team]:[channel]`` or by channel ID.
+
+  Format
+    .. code-block:: none
+
+      platform channel move
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform channel move 8soyabwthjnf9qibfztje5a36h
+      sudo ./platform channel move myteam:mychannel
 
 platform channel remove
 ~~~~~~~~~~~~~~~~~~~~~~~~
