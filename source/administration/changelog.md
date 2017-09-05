@@ -7,6 +7,10 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ## Release v4.2.0
 Release date: 2017-09-16
 
+### Security Update
+
+- Mattermost v4.2.0 contains multiple security fixes ranging from XXX to YYY severity. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+
 ### Highlights
 
 #### Interactive Message Buttons
@@ -47,11 +51,13 @@ Release date: 2017-09-16
 
 #### Administration
 - Added a CLI command `platform channel modify` to convert a public channel to private, and vice versa.
+- Added a CLI command `platform channel move` to move a channel to another team.
 - CLI command `platform team delete` now lets you delete teams with no channels.
 
 #### Enterprise Edition
 - Removed the "Delete Channel" option for private channels, if you're the last channel member and policy setting restricts channel deletion to admins only.
 - In multi-node cluster environment, scheduled tasks such as LDAP sync will only happen on a single node for increased performance.
+- Added direct message channels to compliance exports.
 
 ### Bug Fixes
 - Fixed permalinks not always loading in the channel.
@@ -74,6 +80,7 @@ Release date: 2017-09-16
 - Timestamp on deleted, ephemeral, or pending posts is no longer a permalink, causing a blank page.
 - Fixed focus issues on iPad Classic app.
 - Fixed an issue where changing other user's profile image as a System Admin via the API didn't work.
+- Fixed mention notifications firing for mentions inside triple backticks.
 
 ### Compatibility
 
@@ -107,8 +114,15 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 - Under `ServiceSettings` in `config.json`:
   - Added `AllowedUntrustedInternalConnections": ""` to specify domains, IP address or CIDR notations to allow internal connections for testing environments when developing integrations locally on a development machine. Not recommended for use in production.
+- Added `EnableXToLeaveChannelsFromLHS: false` to set if a user can leave a channel by clicking "X" next toa channel in the channel sidebar. This setting is Beta and may be replaced or removed in a future release.
 
 **Additional Changes to Enterprise Edition**:
+
+- Under `ElasticsearchSettings` in `config.json`:
+  - Added `AggregatePostsAfterDays": ""` to // XXX
+  - Added `PostsAggregatorJobStartTime": ""` to // XXX
+- Under `TeamSettings` in `config.json`:
+  - Added `ExperimentalTownSquareIsReadOnly: false` to set if Town Square is a read-only channel. Applies to all teams in the Mattermost server. This setting is Beta and may be replaced or removed in a future release.
 
 ### Database Changes
 
