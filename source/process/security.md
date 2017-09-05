@@ -132,10 +132,10 @@ The following resources are monitoring for information about new security threat
 1. Is access to and maintenance of applications, systems, network components (including routers, databases, firewalls, voice communications servers, voice recording servers, voice response units (VRU) etc), operating systems, virtualization components, hypervisors, or other information objects granted based upon need-to-know job function?
    - Yes.
 
-1. Are unique user IDs required for all IT systems including but not limited to servers, routers, switches, firewalls, databases are privileged accounts (e.g., system or security administrator)?
+1. Are unique user IDs required for all user and privileged accounts (e.g., system or security administrator) to access all IT systems including but not limited to servers, routers, switches, firewalls and databases?
    - Yes.
 
-1. Are passwords required to access all IT systems including but not limited to servers, routers, switches, firewalls, databases are privileged accounts (e.g., system or security administrator)?
+1. Are passwords required for all user and privileged accounts (e.g., system or security administrator) to access all IT systems including but not limited to servers, routers, switches, firewalls and databases?
    - Yes.
 
 1. Are there written network password policies and/or procedures?
@@ -210,7 +210,7 @@ For more information on Business Resiliency, see the [Mattermost Business Contin
 1. Is there an established Business Resiliency program that has been approved by management and communicated to appropriate constituents?
    - Yes.
 
-1. Are specific response and recovery strategies defined for the prioritized activities?
+1. Are specific response and recovery strategies defined for addressing risks of disruptive incidents to the organization?
    - Yes.
 
 1. Are formal business continuity procedures developed and documented?
