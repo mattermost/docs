@@ -334,7 +334,7 @@ Once final dot release build is ready to cut:
     - Update [ci-linux-mysql-prev](https://ci-linux-mysql-prev.mattermost.com) to the final release version
 5. Dev:
     - Delete RCs after final version is shipped    
-    - Check if any libraries need to be updated for the next release, and if so bring up in weekly team meeting
+    - Check if any libraries need to be updated in all repositories, including `platform`, `desktop`, `mattermost-mobile` and `mattermost-redux`
     - Test the GitLab RC containing the Mattermost final bits
     - Confirm gitlab.mattermost.com is updated to final build
     - Merge changes made to release branch into `master`
