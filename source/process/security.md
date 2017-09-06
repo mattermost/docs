@@ -109,10 +109,10 @@ The following resources are monitoring for information about new security threat
 1. Are information assets classified?
    - Yes.
 
-1. Are security roles and responsibilities of constituents defined and documented in accordance with the organization’s information security policy?
+1. Are security roles and responsibilities of personnel defined and documented in accordance with the organization’s information security policy?
    - Yes.
 
-1. Is a background screening performed prior to allowing constituent access to Scoped Systems and Data?
+1. Is a background screening performed prior to allowing personnel access to Scoped Systems and Data?
    - Yes.
 
 1. Are new hires required to sign any agreements upon hire?
@@ -121,7 +121,7 @@ The following resources are monitoring for information about new security threat
 1. Is there a disciplinary process for non-compliance with information security policies?
    - Yes, disclosure of confidential information or egregious disregard for documented security policies is grounds for termination. 
 
-1. Is there a constituent termination or change of status process?
+1. Is there a personnel termination or change of status process?
    - Yes.
 
 ### Access Control
@@ -152,10 +152,10 @@ The following resources are monitoring for information about new security threat
 
 ### Operational Security
 
-1. Is there a risk assessment program that has been approved by management, communicated to appropriate constituents and has an owner to maintain and review the program?
+1. Is there a risk assessment program that has been approved by management, communicated to appropriate personnel and has an owner to maintain and review the program?
    - Yes.
 
-1. Is there an information security policy that has been approved by management, communicated to appropriate constituents and has an owner to maintain and review the policy?
+1. Is there an information security policy that has been approved by management, communicated to appropriate personnel and has an owner to maintain and review the policy?
    - Yes.
 
 1. Is there a vendor management program?
@@ -164,13 +164,13 @@ The following resources are monitoring for information about new security threat
 1. Is there a respondent information security function responsible for security initiatives?
    - Yes.
 
-1. Is there an asset management policy or program that has been approved by management, communicated to appropriate constituents and has an owner to maintain and review the policy?
+1. Is there an asset management policy or program that has been approved by management, communicated to appropriate personnel and has an owner to maintain and review the policy?
    - Yes.
 
 1. Are management approved operating procedures utilized?
    - Yes.
 
-1. Is there an operational change management / change control policy or program that has been approved by management, communicated to appropriate constituents and has an owner to maintain and review the policy?
+1. Is there an operational change management / change control policy or program that has been approved by management, communicated to appropriate personnel and has an owner to maintain and review the policy?
    - Yes.
 
 1. Are system backups performed?
@@ -198,7 +198,7 @@ The following resources are monitoring for information about new security threat
 
 For more information on Business Resiliency, see the [Mattermost Business Continuity Plan](https://docs.mattermost.com/process/security.html#business-continuity-plan).
 
-1. Is there an established Business Resiliency program that has been approved by management and communicated to appropriate constituents?
+1. Is there an established Business Resiliency program that has been approved by management and communicated to appropriate personnel?
    - Yes.
 
 1. Has a Business Impact Analysis been conducted?
@@ -207,7 +207,7 @@ For more information on Business Resiliency, see the [Mattermost Business Contin
 1. Is there a formal process focused on identifying and addressing risks of disruptive incidents to the organization?
    - Yes.
 
-1. Is there an established Business Resiliency program that has been approved by management and communicated to appropriate constituents?
+1. Is there an established Business Resiliency program that has been approved by management and communicated to appropriate personnel?
    - Yes.
 
 1. Are specific response and recovery strategies defined for addressing risks of disruptive incidents to the organization?
