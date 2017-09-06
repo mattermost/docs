@@ -38,6 +38,7 @@ Deployment
 
    /deployment/on-boarding*
    /deployment/bulk-loading.rst
+   AppConfig for EMM Solutions </deployment/mobile-appconfig.rst>
    /deployment/push*
    /deployment/sso-ldap*
    /deployment/auth*
