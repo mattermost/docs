@@ -76,4 +76,4 @@ Owner and group of the install directory - *{owner}* and *{group}*
     cd {install-path}
     sudo setcap cap_net_bind_service=+ep ./bin/platform
 
-11. Make sure the system is working, then repeat the steps 1 to 11 until version 2.0 is installed and running.
+11. Make sure the system is working, then repeat the steps 1 to 10 until version 2.0 is installed and running.
