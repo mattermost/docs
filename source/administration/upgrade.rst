@@ -33,68 +33,65 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
 1. Review the :doc:`important-upgrade-notes` to make sure you are aware of any actions you need to take before or after upgrading from your particular version.
 
-2. In a terminal window on the server that hosts Mattermost Server, change to your home directory.
+2. In a terminal window on the server that hosts Mattermost Server, change to your home directory. If any, delete files and directories that might still exist from a previous download.
 
   ``cd ~``
 
-3. Delete any files and directories that might still exist from a previous download.
-
-  .. code-block:: text
-
-    rm mattermost*.gz
-    rm -r mattermost
-
-4. Download the latest version of Mattermost Server.
+3. Download the latest version of Mattermost Server.
 
   Enterprise Edition
     ``wget https://releases.mattermost.com/4.0.1/mattermost-4.0.1-linux-amd64.tar.gz``
   Team Edition
     ``wget https://releases.mattermost.com/4.0.1/mattermost-team-4.0.1-linux-amd64.tar.gz``
 
-5. Extract the Mattermost Server files.
+4. Extract the Mattermost Server files.
 
   ``tar -xzf mattermost*.gz``
 
-6. Make a copy of your configuration file. The existing file is overwritten during the upgrade, so it's important that you don't forget this step.
-
-    ``cp {install-path}/mattermost/config/config.json config.json``
-
-7. Stop Mattermost Server.
+5. Stop Mattermost Server.
 
   On Ubuntu 14.04 and RHEL 6.6: ``sudo service mattermost stop``
 
   On Ubuntu 16.04 and RHEL 7.1: ``sudo systemctl stop mattermost``
 
-8. Back up your data.
+6. Back up your data and application.
   a. Back up your database using your organization’s standard procedures for backing up MySQL or PostgreSQL.
-  b. If you’re using local file storage, back up the location where files are stored.
+  b. Back up your application by moving into your archive folder (e.g. ``mattermost-back-YYYY-MM-DD``).
 
-9. Copy the files that you extracted earlier to the install directory.
+    ``mv {install-path}/mattermost {install-path}/{mattermost-back-YYYY-MM-DD}``
+
+7. Copy the files that you extracted earlier to the install directory.
 
   ``sudo cp -r mattermost {install-path}``
 
-10. Restore your configuration file.
+8. Restore your configuration, local file storage and logs.
 
-  ``sudo cp config.json {install-path}/mattermost/config``
+  .. code-block:: text
 
-11. Change ownership of the new files.
+    sudo cp -r {install-path}/{mattermost-back-YYYY-MM-DD}/config {install-path}/mattermost
+    sudo cp -r {install-path}/{mattermost-back-YYYY-MM-DD}/data {install-path}/mattermost
+    sudo cp -r {install-path}/{mattermost-back-YYYY-MM-DD}/logs {install-path}/mattermost
+
+9. Change ownership of the new files.
 
   ``sudo chown -R {owner}:{group} {install-path}/mattermost``
 
-12. Start Mattermost server.
+10. Start Mattermost server.
 
   On Ubuntu 14.04 and RHEL 6.6: ``sudo service mattermost start``
 
   On Ubuntu 16.04 and RHEL 7.1: ``sudo systemctl start mattermost``
 
-13. If you have TLS set up on your Mattermost server, you must activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports.
+11. If you have TLS set up on your Mattermost server, you must activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports.
 
-  1. ``cd {install-path}``
-  2. ``sudo setcap cap_net_bind_service=+ep ./bin/platform``
+  .. code-block:: text
 
-14. Upgrade your ``config.json`` schema:
+    cd {install-path}
+    sudo setcap cap_net_bind_service=+ep ./bin/platform
 
-  a. Open the System Console and a change a setting, then revert it. This should enable the Save button for that page.
+12. Upgrade your ``config.json`` schema:
+
+  a. Open the System Console and change a setting, then revert it. This should enable the Save button for that page.
   b. Click **Save**.
   c. Refresh the page.
 

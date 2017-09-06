@@ -42,55 +42,50 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
 1. Read the following post in the Mattermost forum which describes the steps that were taken to ensure success when upgrading to version 3.0. `Mattermost 3.0 upgrade example <https://forum.mattermost.org/t/mattermost-3-0-upgrade-example/1541>`_
 
-2. In a terminal window on the server that hosts Mattermost Server, change to your home directory.
+2. In a terminal window on the server that hosts Mattermost Server, change to your home directory. If any, delete files and directories that might still exist from a previous download.
 
   ``cd ~``
 
-3. Delete any files and directories that might still exist from a previous download.
-
-  .. code-block:: text
-
-    rm mattermost*.gz
-    rm -r mattermost
-
-4. Download version 3.0.3.
+3. Download version 3.0.3.
 
   Enterprise Edition
     ``wget https://releases.mattermost.com/3.0.3/mattermost-enterprise-3.0.3-linux-amd64.tar.gz``
   Team Edition
     ``wget https://releases.mattermost.com/3.0.3/mattermost-team-3.0.3-linux-amd64.tar.gz``
 
-5. Extract the Mattermost Server files.
+4. Extract the Mattermost Server files.
 
   ``tar -xzf mattermost*.gz``
 
-6. Make a copy of your configuration file. The existing file is overwritten during the upgrade, so it's important that you don't forget this step.
-
-  ``cp {install-path}/mattermost/config/config.json config.json``
-
-7. Stop Mattermost Server.
+5. Stop Mattermost Server.
 
   On Ubuntu 14.04 and RHEL 6.6: ``sudo service mattermost stop``
 
   On Ubuntu 16.04 and RHEL 7.1: ``sudo systemctl stop mattermost``
 
-8. Back up your data.
+6. Back up your data and application.
   a. Back up your database using your organization’s standard procedures for backing up MySQL or PostgreSQL.
-  b. If you’re using local file storage, back up the location where files are stored.
+  b. Back up your application by moving into your archive folder (e.g. ``mattermost-back-YYYY-MM-DD``).
 
-9. Copy the files that you extracted earlier to the install directory.
+    ``mv {install-path}/mattermost {install-path}/{mattermost-back-YYYY-MM-DD}``
+
+7. Copy the files that you extracted earlier to the install directory.
 
   ``sudo cp -r mattermost {install-path}``
 
-10. Restore your configuration file.
+8. Restore your configuration, local file storage and logs.
 
-  ``sudo cp config.json {install-path}/mattermost/config``
+  .. code-block:: text
 
-11. Change ownership of the new files.
+    sudo cp -r {install-path}/{mattermost-back-YYYY-MM-DD}/config {install-path}/mattermost
+    sudo cp -r {install-path}/{mattermost-back-YYYY-MM-DD}/data {install-path}/mattermost
+    sudo cp -r {install-path}/{mattermost-back-YYYY-MM-DD}/logs {install-path}/mattermost
+
+9. Change ownership of the new files.
 
   ``sudo chown -R {owner}:{group} {install-path}/mattermost``
 
-12. Upgrade the database.
+10. Upgrade the database.
   a. Change to the Mattermost bin directory
 
     ``cd {install-path}/mattermost/bin``
@@ -101,15 +96,17 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
   c. When prompted, enter the name of the team that you want to use as the primary team.
 
-13. Start Mattermost server.
+11. Start Mattermost server.
 
   On Ubuntu 14.04 and RHEL 6.6: ``sudo service mattermost start``
 
   On Ubuntu 16.04 and RHEL 7.1: ``sudo systemctl start mattermost``
 
-14. Upgrade your ``config.json`` schema: Open the System Console and make a change and then save the change. Your current settings are preserved, and new settings are added with default values.
+12. Upgrade your ``config.json`` schema: Open the System Console and make a change and then save the change. Your current settings are preserved, and new settings are added with default values.
 
-15. If you have TLS set up on your Mattermost server, you must activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports.
+13. If you have TLS set up on your Mattermost server, you must activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports.
 
-  1. ``cd {install-path}``
-  2. ``sudo setcap cap_net_bind_service=+ep ./bin/platform``
+  .. code-block:: text
+
+    cd {install-path}
+    sudo setcap cap_net_bind_service=+ep ./bin/platform
