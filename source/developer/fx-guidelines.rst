@@ -568,7 +568,7 @@ Markdown rendering in Mattermost is designed to be a fast, obvious, forgiving fo
 
 While we intend to eventually document all the variations from GitHub markdown, until that is complete we consider any variation in rendering from the current release of Mattermost to be a regression that should either be fixed prior to the next release, or documented here.
 
-Currently the `/test tool <https://github.com/mattermost/platform/tree/master/tests>`_ can be used for testing Mattermost markdown versus GitHub markdown, and we have `a ticket to update the tests for Mattermost markdown specifically <https://mattermost.atlassian.net/browse/PLT-5648>`_.
+Currently the `/test tool <https://github.com/mattermost/mattermost-server/tree/master/tests>`_ can be used for testing Mattermost markdown versus GitHub markdown, and we have `a ticket to update the tests for Mattermost markdown specifically <https://mattermost.atlassian.net/browse/PLT-5648>`_.
 
 -----
 
