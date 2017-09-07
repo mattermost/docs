@@ -10,10 +10,7 @@ It provides an easy way to configure enterprise mobile applications with any of 
 
 Mattermost mobile apps can be configured in your EMM solution using AppConfig with the apps on the public app stores (Google Play and Apple App Store), or as an "in-house app" you compile yourself.
 
-For example set up instructions, see our documentation on :doc:`MobileIron <mobileiron>` and :doc:`Blackberry UEM <blackberry>`.
-
-.. _MobileIron:
-.. _`Blackberry UEM`:
+For example set up instructions, see our documentation on :doc:`MobileIron <mobile-mobileiron>` and :doc:`Blackberry UEM <mobile-blackberry>`.
 
 .. _mobile-appconfig:
 Mattermost AppConfig Values
