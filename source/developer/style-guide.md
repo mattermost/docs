@@ -16,7 +16,7 @@ In addition all code must be run though the official go formatter tool [gofmt](h
 
 Part of the build process is running ESLint. ESLint is the final authority on all style issues. PRs will not be accepted unless there are no errors running ESLint. 
 
-See [ESLint configuration file](https://github.com/mattermost/platform/blob/master/webapp/.eslintrc.json) and also [instructions on how to use ESLint with different editors](http://eslint.org/docs/user-guide/integrations).
+See [ESLint configuration file](https://github.com/mattermost/mattermost-webapp/blob/master/.eslintrc.json) and also [instructions on how to use ESLint with different editors](http://eslint.org/docs/user-guide/integrations).
 
 The following is a subset of what ESLint checks. ESLint is always the authority. 
 
@@ -126,7 +126,7 @@ function wrongGetStr(stuff) {
 
 ## React-JSX
 
-Part of the build process is running ESLint. ESLint is the final authority on all style issues. PRs will not be accepted unless there are no errors running ESLint. The ESLint configuration file can be found in: [webapp/.eslintrc](https://github.com/mattermost/platform/blob/master/webapp/.eslintrc.json)
+Part of the build process is running ESLint. ESLint is the final authority on all style issues. PRs will not be accepted unless there are no errors running ESLint. The ESLint configuration file can be found in: [webapp/.eslintrc](https://github.com/mattermost/mattermost-webapp/blob/master/.eslintrc.json)
 
 Instructions on how to use ESLint with your favourite editor can be found here: [http://eslint.org/docs/user-guide/integrations](http://eslint.org/docs/user-guide/integrations)
 
