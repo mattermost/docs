@@ -12,7 +12,8 @@ Mattermost mobile apps can be configured in your EMM solution using AppConfig wi
 
 For example set up instructions, see our documentation on :doc:`MobileIron <mobile-mobileiron>` and :doc:`Blackberry UEM <mobile-blackberry>`.
 
-.. _mobile-appconfig:
+.. _appconfig-table:
+
 Mattermost AppConfig Values
 ---------------------------
 
