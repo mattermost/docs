@@ -19,7 +19,8 @@ If you're interested in contributing please join the `Redux channel on pre-relea
 List of contributors, in alphabetical order:
 
  - Joram Wilander (`@jwilander <https://github.com/jwilander>`_)
- - Nazar Laba (`@94117nl <https://github.com/94117nl>`_)
+ - Nazar Laba (`@n1aba <https://github.com/n1aba>`_)
+ - Carlos Panato (`@cpanato <https://github.com/cpanato>`_)
 
 For guidance on migrating a webapp component to Redux, read the next section.
 
@@ -46,10 +47,10 @@ There are a few steps involved with migrating a component to use Redux. Some of 
  3. Replace each action call to use the actions in the props (ex. ``this.props.actions.someAction()``).
  4. Remove all action imports from the component.
 5. Move any other variables holding store state into props fed from Redux or parent components.
-6. Add component tests `as described by this blog post <https://grundleborg.github.io/posts/react-component-testing-in-mattermost/>`__ and by following the `example of other tests <https://github.com/mattermost/platform/tree/master/webapp/tests/components>`__.
+6. Add component tests `as described by this blog post <https://grundleborg.github.io/posts/react-component-testing-in-mattermost/>`__ and by following the `example of other tests <https://github.com/mattermost/mattermost-webapp/tree/master/tests/components>`__.
 
 Examples
 ------------------
 You can see some example pull requests here:
 
-- https://github.com/mattermost/platform/pull/6416
+- https://github.com/mattermost/mattermost-server/pull/6416
