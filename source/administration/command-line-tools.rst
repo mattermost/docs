@@ -1,7 +1,7 @@
 Command Line Tools
 ==================
 
-From the directory where the Mattermost platform is installed, a
+From the directory where the Mattermost server is installed, a
 ``platform`` command is available for configuring the system, including:
 
 **General Administration**
