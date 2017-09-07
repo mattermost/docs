@@ -29,7 +29,7 @@ To add an endpoint to API version 4, each item on the following checklist must b
 A full example can be found through these two pull requests:
 
 - Documenting the ``POST /teams`` endpoint: `/mattermost-api-reference #72 <https://github.com/mattermost/mattermost-api-reference/pull/72>`_
-- Implementing the ``POST /teams`` endpoint: `/platform #5220 <https://github.com/mattermost/platform/pull/5220>`_
+- Implementing the ``POST /teams`` endpoint: `/mattermost-server #5220 <https://github.com/mattermost/mattermost-server/pull/5220>`_
 
 Documenting the Endpoint
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -78,7 +78,7 @@ environment <https://docs.mattermost.com/developer/developer-setup.html>`__, the
 
 1. Add the declaration for your endpoint.
 
-   -  For an example, see `/api4/user.go <https://github.com/mattermost/platform/tree/master/api4/user.go>`__
+   -  For an example, see `/api4/user.go <https://github.com/mattermost/mattermost-server/tree/master/api4/user.go>`__
 
 2. Implement the handler for your endpoint.
 
@@ -99,7 +99,7 @@ environment <https://docs.mattermost.com/developer/developer-setup.html>`__, the
        // 5. Format the response and write the response
      }
 
-   - For examples, see the `updateUser() <https://github.com/mattermost/platform/tree/master/api4/user.go#L86>`_ and the `getUser() <https://github.com/mattermost/platform/tree/master/api4/user.go#L58>`_ handlers.
+   - For examples, see the `updateUser() <https://github.com/mattermost/mattermost-server/tree/master/api4/user.go#L86>`_ and the `getUser() <https://github.com/mattermost/mattermost-server/tree/master/api4/user.go#L58>`_ handlers.
 
 3. Run the server using ``make run-server`` to check for syntax errors.
 4. (Optional) Use ``curl`` or `Postman <https://www.getpostman.com/>`__ to test the basics of your endpoint. The endpoint will also be tested `through a unit test <https://docs.mattermost.com/developer/api4.html#writing-a-unit-test>`_, so this step is optional.
@@ -107,11 +107,11 @@ environment <https://docs.mattermost.com/developer/developer-setup.html>`__, the
 Updating the Go Driver
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The Go driver for APIv4 is in `/model/client4.go <https://github.com/mattermost/platform/tree/master/model/client4.go>`__.
+The Go driver for APIv4 is in `/model/client4.go <https://github.com/mattermost/mattermost-server/tree/master/model/client4.go>`__.
 
 To add a function to support your new endpoint:
 
-1. Copy an existing driver function, such as `CreateUser <https://github.com/mattermost/platform/tree/master/model/client4.go#L186>`__.
+1. Copy an existing driver function, such as `CreateUser <https://github.com/mattermost/mattermost-server/tree/master/model/client4.go#L186>`__.
 2. Paste the function into the section for your endpoint.
 
    -  For example, ``POST /teams`` would go in the Teams section
@@ -130,11 +130,11 @@ works correctly. Follow these steps to write a test:
 
 1. Open the test Go file related to your endpoint.
 
-   -  For example, if you put your handler in `/api4/user.go <https://github.com/mattermost/platform/tree/master/api4/user.go>`__ your test will go in `/api4/user\_test.go <https://github.com/mattermost/platform/tree/master/api4/user_test.go>`__
+   -  For example, if you put your handler in `/api4/user.go <https://github.com/mattermost/mattermost-server/tree/master/api4/user.go>`__ your test will go in `/api4/user\_test.go <https://github.com/mattermost/mattermost-server/tree/master/api4/user_test.go>`__
 
 2. Write your test based on the other tests in your file
 
-   -  There are several helper functions in `/api4/apitestlib.go <https://github.com/mattermost/platform/tree/master/api4/apitestlib.go>`__ that you may use
+   -  There are several helper functions in `/api4/apitestlib.go <https://github.com/mattermost/mattermost-server/tree/master/api4/apitestlib.go>`__ that you may use
 
 3. Make sure your test covers the following:
 
@@ -146,17 +146,17 @@ works correctly. Follow these steps to write a test:
    -  Requests to non-existent resources or URLs return a **404 Not Found** status code
 
 Returning the correct error code might require investigation in the
-`app <https://github.com/mattermost/platform/tree/master/app>`__ or
-`store <https://github.com/mattermost/platform/tree/master/store>`__
+`app <https://github.com/mattermost/mattermost-server/tree/master/app>`__ or
+`store <https://github.com/mattermost/mattermost-server/tree/master/store>`__
 packages to find the source of errors. Status codes on errors should be
 set at the creation of the error.
 
 When completing this step, please make sure to
-use the new ``model.NewAppError()`` function (`see example <https://github.com/mattermost/platform/tree/master/store/sql_user_store.go#L112>`__).
+use the new ``model.NewAppError()`` function (`see example <https://github.com/mattermost/mattermost-server/tree/master/store/sql_user_store.go#L112>`__).
 
 Submitting your Pull Request
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Please submit a pull request against the
-`mattermost/platform <https://github.com/mattermost/platform>`__
+`mattermost/mattermost-server <https://github.com/mattermost/mattermost-server>`__
 repository by `following these instructions <https://docs.mattermost.com/developer/contribution-guide.html#preparing-a-pull-request>`__.
