@@ -1,5 +1,3 @@
-.. _blackberry:
-
 Set Up Mattermost with Blackberry EMM
 =====================================
 
@@ -17,7 +15,7 @@ Set Up Mattermost with Blackberry EMM
 
 .. image:: ../../source/images/blackberry_step4.png
 
-5. In the same screen look for **App configuration**. You can either upload this xml file as the template, or add the configuration manually with the keys and values described in the :ref:`mobile-appconfig`.
+5. In the same screen look for **App configuration**. You can either upload this xml file as the template, or add the configuration manually with the keys and values described in the :ref:`appconfig-table`.
 
   A. Using the template:
 
@@ -35,7 +33,7 @@ Set Up Mattermost with Blackberry EMM
 
     .. image:: ../../source/images/blackberry_step5b1.png
 
-    - Enter a name for the app configuration, and then add the key value pairs found in the :ref:`mobile-appconfig`.
+    - Enter a name for the app configuration, and then add the key value pairs found in the :ref:`appconfig-table`.
 
     .. image:: ../../source/images/blackberry_step5b2.png
 
