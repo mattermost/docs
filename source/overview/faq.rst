@@ -81,7 +81,7 @@ How does Mattermost scale from teams to enterprises?
     1. Technical scaling - maintaining system responsiveness as large quantities of new users are added
     2. Functional scaling - adding advanced features to support the increased complexity of large organizations
 
-    **Technical Scaling** - Whether used for teams or enterprises, the Mattermost platform is designed to support tens of thousands of users on a single server with appropriate hardware. The platform is built using Golang, the language developed by Google to create internet-scale applications, and supports highly scalable databases like MySQL, which is `used extensively by Facebook <https://www.facebook.com/notes/facebook-engineering/mysql-and-database-engineering-mark-callaghan/10150599729938920/>`_. Beyond tens of thousands of users,  Mattermost Enterprise Edition can offer high availability/horizontal scaling configurations using multiple servers to support even larger organizations.
+    **Technical Scaling** - Whether used for teams or enterprises, the Mattermost server is designed to support tens of thousands of users on a single server with appropriate hardware. The server is built using Golang, the language developed by Google to create internet-scale applications, and supports highly scalable databases like MySQL, which is `used extensively by Facebook <https://www.facebook.com/notes/facebook-engineering/mysql-and-database-engineering-mark-callaghan/10150599729938920/>`_. Beyond tens of thousands of users,  Mattermost Enterprise Edition can offer high availability/horizontal scaling configurations using multiple servers to support even larger organizations.
 
     **Functional Scaling** - Scaling from a team to an enterprise is like going from a "virtual office" to a "virtual campus". Advanced features like enterprise authentication, granular permissions, compliance and auditing, and advanced reporting become increasingly important as organizations grow beyond teams. Organizations needing this flexibility can easily upgrade from Mattermost Team Edition to Mattermost Enterprise Edition, as well as downgrade without data loss, should their needs change.
 
@@ -180,7 +180,7 @@ You are welcome to use the open source Mattermost Team Edition and its extensive
 
 Mattermost Enterprise Edition is designed for self-hosted, enterprise-grade communication. It is not recommended for primarily providing customer service or customer support, and does not currently offer a licensing model nor technical advice for this use case.
 
-If you'd like to create an open source derivative version of Mattermost using the ``/platform`` source code to support your use case please see below. 
+If you'd like to create an open source derivative version of Mattermost using the ``/mattermost-server`` source code to support your use case please see below. 
 
 Does Mattermost have an official website-based plug-in to offer anonymous chat to visitors?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -195,7 +195,7 @@ How can I create an open source derivative work of Mattermost?
 
 If you're looking to customize the look and feel of Mattermost, see `documentation on customization <https://github.com/mattermost/docs/issues/1006>`_. 
 
-If you're looking to change the Mattermost ``/platform`` source code and compile your own version of Mattermost, here are some considerations: 
+If you're looking to change the Mattermost ``/mattermost-server`` source code and compile your own version of Mattermost, here are some considerations: 
 
 Security
 
@@ -207,9 +207,9 @@ Re-branding
 - In Enterprise Edition you can re-brand your system using convenience tools for `custom branding <https://docs.mattermost.com/administration/config-settings.html#customization>`_, which can be done without forking. 
 - For advanced whitelabelling, and to whitelabel in Team Edition under MIT license without Enterprise Edition branding tools, you can manually update files on the Mattermost server `per product documentation. <https://github.com/mattermost/docs/issues/1006>`_ This can also be done without forking. 
 
-Using /platform open source code
+Using /mattermost-server open source code
 
-- Creating a solution using the open source Mattermost ``/platform`` repo requires a) compliance with licenses in the repo, including `NOTICE.txt <https://github.com/mattermost/platform/blob/master/NOTICE.txt>`_, and b) the compiled version of the ``/platform`` source code should have the same open source license as the source code, `per our licensing policy <https://www.mattermost.org/licensing/>`_.
+- Creating a solution using the open source Mattermost ``/mattermost-server`` repo requires a) compliance with licenses in the repo, including `NOTICE.txt <https://github.com/mattermost/mattermost-server/blob/master/NOTICE.txt>`_, and b) the compiled version of the ``/mattermost-server`` source code should have the same open source license as the source code, `per our licensing policy <https://www.mattermost.org/licensing/>`_.
 
 Other considerations:
 
@@ -229,14 +229,14 @@ While we welcome anyone to use the open source version of Mattermost Team Editio
 
 Learn more about our non-profit discount program at https://about.mattermost.com/mattermost-mondays/
 
-Can I create a derivative work of the Mattermost /platform repository that is not open source? 
+Can I create a derivative work of the Mattermost /mattermost-server repository that is not open source? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Mattermost open source project was created by `a group of developers who had their data paywalled by a proprietary online messaging service <https://www.mattermost.org/why-we-made-mattermost-an-open-source-slack-alternative/>`_ and felt it was unfair. 
 
-Because of this, the Mattermost /platform repository uses an open source license that requires derivative works to use the same open source license. This prevents the creation of derivative works that are not open source, and the situation where end users would not have access to the source code of the systems they use, and hence be at risk of "lock in". 
+Because of this, the Mattermost /mattermost-server repository uses an open source license that requires derivative works to use the same open source license. This prevents the creation of derivative works that are not open source, and the situation where end users would not have access to the source code of the systems they use, and hence be at risk of "lock in". 
 
-For companies purchasing Enterprise Edition subscriptions for use by internal staff, who need to modify /platform, and who also have legal departments that won't allow their staff to work under an open source software license, a special "Advanced Licensing Option" can be purchased to modify /platform for internal use under a commercial software license. This option is not available for companies that would offer a modified, non-open source version of Mattermost to external parties. 
+For companies purchasing Enterprise Edition subscriptions for use by internal staff, who need to modify /mattermost-server, and who also have legal departments that won't allow their staff to work under an open source software license, a special "Advanced Licensing Option" can be purchased to modify /mattermost-server for internal use under a commercial software license. This option is not available for companies that would offer a modified, non-open source version of Mattermost to external parties. 
 
 Will Mattermost, Inc. offer the ability to resell Mattermost software without a reseller agreement?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
