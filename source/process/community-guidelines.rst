@@ -41,8 +41,8 @@ Off-boarding
 
 1. When a campaign is finished, offer suggestions for other campaigns or projects they might be interested in.
 
-GitHub Help Wanted Issues in Platform Repository
----------------------------------------------------------
+GitHub Help Wanted Issues in Mattermost-Server Repository
+-----------------------------------------------------------
 
 Goal
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -59,7 +59,7 @@ Principles
 Creating Help Wanted Issues
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To create a Help Wanted issue in the `platform repository <https://github.com/mattermost/platform>`_, follow these steps:
+To create a Help Wanted issue in the `mattermost-server repository <https://github.com/mattermost/mattermost-server>`_, follow these steps:
 
 1 - Create a ticket in Jira that is well-defined and unambiguous.
 
@@ -75,14 +75,14 @@ The issue should be written with the mindset that the contributor might have no 
 
 2 - After creating the ticket, add "(Proposed APR)" to its title, so the triage team knows to consider it for a ``help-wanted`` label.
 
-3 - If the Jira ticket is accepted as a Help Wanted issue during `triage <https://docs.mattermost.com/process/training.html#triage-meeting>`_, a ``help-wanted`` label is added. This action automatically triggers a zap that creates a new issue in the `platform repository <https://github.com/mattermost/platform>`_.
+3 - If the Jira ticket is accepted as a Help Wanted issue during `triage <https://docs.mattermost.com/process/training.html#triage-meeting>`_, a ``help-wanted`` label is added. This action automatically triggers a zap that creates a new issue in the `mattermost-server repository <https://github.com/mattermost/mattermost-server>`_.
 
     - To accept a ticket as a Help Wanted issue, the description should be unambiguous, and include UI description and help text so the change can be implemented and tested by any contributor
     - The triage team also adds the appropriate difficulty level (one of ``Introductory``, ``Intermediate`` and ``Advanced``) and programming language (``Go`` and ``ReactJS``) to the description of the Jira ticket
 
 4 - After triage, PM on community rotation reviews formatting of the GitHub issue and adds appropriate labels for difficulty level and programming language as defined by the triage team.
 
-`See an example Help Wanted issue here <https://github.com/mattermost/platform/issues/4755>`_.
+`See an example Help Wanted issue here <https://github.com/mattermost/mattermost-server/issues/4755>`_.
 
 Managing Help Wanted Issues
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
