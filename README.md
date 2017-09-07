@@ -3,10 +3,12 @@
 We are working on a new method of installing GitLab for customers who are
 looking to deploy into container schedulers like Kubernetes.
 
-While this is possible today using our all-in-one Docker image and [corresponding Helm charts](https://gitlab.com/charts/charts.gitlab.io), there are challenges.
-For example, a "fat container" becomes a challenge to configure and operate at large scale.
+While this is possible today using our [Omnibus GitLab based Docker image](https://docs.gitlab.com/omnibus/docker/README.html) and [corresponding Helm charts](https://gitlab.com/charts/charts.gitlab.io), there are challenges.
+One key example is that an "all-in-one container" becomes a challenge to configure and operate at large scale.
 
 To address this need we are working on the [Helm charts in this repository](#helm-charts) along with a new set of Docker containers that are specific to each component of GitLab.
+
+For more information on all of GitLab's Helm Charts, please consult our [documentation](http://docs.gitlab.com/ce/install/kubernetes/). 
 
 ## Goals
 
