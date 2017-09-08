@@ -45,19 +45,17 @@ Release date: 2017-09-16
 - Added support for plain text version of email notifications.
 - Added "Joined the channel" system message for the person who created the channel.
 
-#### Link Previews
-- Collapse and expand arrows no longer shown for image links when no image is available.
-- A single collapsed link preview now stays collapsed after page refresh.
-
 #### Administration
 - Added a CLI command `platform channel modify` to convert a public channel to private, and vice versa.
 - Added a CLI command `platform channel move` to move a channel to another team.
 - CLI command `platform team delete` now lets you delete teams with no channels.
+- Structured logging // XXX??
 
 #### Enterprise Edition
 - Removed the "Delete Channel" option for private channels, if you're the last channel member and policy setting restricts channel deletion to admins only.
-- In multi-node cluster environment, scheduled tasks such as LDAP sync will only happen on a single node for increased performance.
+- In multi-node cluster environment, scheduled tasks such as LDAP sync will only happen on a single node through leader election for increased performance.
 - Added direct message channels to compliance exports.
+- Elasticsearch indexes aggregated over a certain age. //XXX ??
 
 ### Bug Fixes
 - Fixed permalinks not always loading in the channel.
@@ -81,6 +79,13 @@ Release date: 2017-09-16
 - Fixed focus issues on iPad Classic app.
 - Fixed an issue where changing other user's profile image as a System Admin via the API didn't work.
 - Fixed mention notifications firing for mentions inside triple backticks.
+- Collapse and expand arrows no longer shown for image links when no image is available.
+- A single collapsed link preview now stays collapsed after page refresh.
+- With email batching enabled, if there is activity in Mattermost before email batch is sent, the email notification is not sent.
+- Fixed an issue where copying and pasting SVG files into message draft never finish uploading.
+- Autocomplete is no longer cut on the channel header modal.
+- Fixed email notifications settings appearing saved despite cancelling the change.
+- Notification confirmation message no longer appears when sending channel wide @-all and @-channel mentions in code blocks.
 
 ### Compatibility
 
@@ -114,7 +119,10 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 - Under `ServiceSettings` in `config.json`:
   - Added `AllowedUntrustedInternalConnections": ""` to specify domains, IP address or CIDR notations to allow internal connections for testing environments when developing integrations locally on a development machine. Not recommended for use in production.
-- Added `EnableXToLeaveChannelsFromLHS: false` to set if a user can leave a channel by clicking "X" next toa channel in the channel sidebar. This setting is Beta and may be replaced or removed in a future release.
+- Under `TeamSettings` in `config.json`:
+  - Added `EnableXToLeaveChannelsFromLHS: false` to set if a user can leave a channel by clicking "X" next toa channel in the channel sidebar. This setting is Beta and may be replaced or removed in a future release.
+- Under `FileSettings` in `config.json`:
+  - Added `AmazonS3Trace: false` to enable additional debugging for Amazon S3.
 
 **Additional Changes to Enterprise Edition**:
 
@@ -123,6 +131,11 @@ Multiple setting options were added to `config.json`. Below is a list of the add
   - Added `PostsAggregatorJobStartTime": ""` to // XXX
 - Under `TeamSettings` in `config.json`:
   - Added `ExperimentalTownSquareIsReadOnly: false` to set if Town Square is a read-only channel. Applies to all teams in the Mattermost server. This setting is Beta and may be replaced or removed in a future release.
+- Added `ThemeSettings` in `config.json`. These settings are Beta and may be replaced or removed in a future release.
+  - Added `"EnableThemeSelection": true` to set whether end users can change their Mattermost theme.
+  - Added `"DefaultTheme": "default"` to set default theme for new users.
+  - Added `"AllowCustomThemes": true` to set whether end users can set a custom theme.
+  - Added `"AllowedThemes": []` to list which built-in Mattermost themese are available to users.
 
 ### Database Changes
 
