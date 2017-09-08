@@ -50,7 +50,6 @@ Release date: 2017-09-16
 - Added a CLI command `platform channel modify` to convert a public channel to private, and vice versa.
 - Added a CLI command `platform channel move` to move a channel to another team.
 - CLI command `platform team delete` now lets you delete teams with no channels.
-- Structured logging // XXX??
 
 #### Enterprise Edition
 - Removed the "Delete Channel" option for private channels, if you're the last channel member and policy setting restricts channel deletion to admins only.
