@@ -40,6 +40,7 @@ Release date: 2017-09-16
 
 #### Integrations
 - Added support for Slack-compatible delayed slash commands through the `response_url` parameter.
+- Improved handling of content-types for integrations.
 
 #### Notifications
 - Added support for plain text version of email notifications.
@@ -91,13 +92,17 @@ Release date: 2017-09-16
 
 #### Breaking Changes
 
-By default, user-supplied URLs such as those used for Open Graph metadata, webhooks, or slash commands will no longer be allowed to connect to reserved IP addresses including loopback or link-local addresses used for internal networks. 
+1) By default, user-supplied URLs such as those used for Open Graph metadata, webhooks, or slash commands will no longer be allowed to connect to reserved IP addresses including loopback or link-local addresses used for internal networks. 
 
 This change may cause private integrations to break in testing environments, which may point to a URL such as http://127.0.0.1:1021/my-command.
 
 If you point private integrations to such URLs, you may whitelist such domains, IP addresses, or CIDR notations via the [AllowedUntrustedInternalConnections config setting](https://docs.mattermost.com/administration/config-settings.html#allow-untrusted-internal-connections-to) in your local environment. Although not recommended, you may also whitelist the addresses in your production environments. See [documentation to learn more](https://docs.mattermost.com/administration/config-settings.html#allow-untrusted-internal-connections-to).
 
 Push notification, OAuth 2.0 and WebRTC server URLs are trusted and not affected by this setting.
+
+2) Mattermost now handles multiple content-types for integrations. Make sure your integrations have been set to use the appropriate content-type.
+
+3) Mattermost `/platform` repo has been separated to `/mattermost-webapp` and `/mattermost-server`. This may affect you if you have a private fork of the `/platform` repo. [More details here](https://forum.mattermost.org/t/mattermost-separating-platform-into-two-repositories-on-september-6th/3708).
 
 #### Removed and Deprecated Features
 - All APIv3 endpoints are scheduled for removal on January 16, 2018.
@@ -118,9 +123,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 **Changes to Team Edition and Enterprise Edition**:
 
 - Under `ServiceSettings` in `config.json`:
-  - Added `AllowedUntrustedInternalConnections": ""` to specify domains, IP address or CIDR notations to allow internal connections for testing environments when developing integrations locally on a development machine. Not recommended for use in production.
+  - Added `AllowedUntrustedInternalConnections": ""` to specify domains, IP address or CIDR notations for internal connections. Used in testing environments when developing integrations locally on a development machine. Not recommended for use in production.
 - Under `TeamSettings` in `config.json`:
-  - Added `EnableXToLeaveChannelsFromLHS: false` to set if a user can leave a channel by clicking "X" next toa channel in the channel sidebar. This setting is Beta and may be replaced or removed in a future release.
+  - Added `EnableXToLeaveChannelsFromLHS: false` to set if a user can leave a channel by clicking "X" next to a channel in the channel sidebar. This setting is Beta and may be replaced or removed in a future release.
 - Under `FileSettings` in `config.json`:
   - Added `AmazonS3Trace: false` to enable additional debugging for Amazon S3.
 
@@ -135,12 +140,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
   - Added `"EnableThemeSelection": true` to set whether end users can change their Mattermost theme.
   - Added `"DefaultTheme": "default"` to set default theme for new users.
   - Added `"AllowCustomThemes": true` to set whether end users can set a custom theme.
-  - Added `"AllowedThemes": []` to list which built-in Mattermost themese are available to users.
+  - Added `"AllowedThemes": []` to list which built-in Mattermost themes are available to users.
 
 ### Database Changes
 
 ### API v4 Changes
-- Mattermost 4.0 has a stable release of API v4 endpoints. It is recommended that any new integrations use the v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
+- It is recommended that any new integrations use APIv4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
 - All APIv3 endpoints are scheduled for removal on January 16, 2018.
 
 **Added routes (API v4)**
@@ -159,7 +164,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
 - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
 - Searching with Elasticsearch enabled may not always highlight the searched terms.
-- Channels links to channels that the current user does not belong to may not render correctly.
+- Channel links to channels that the current user does not belong to may not render correctly.
 
 ### Contributors
 
@@ -169,7 +174,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 /docs
 
-- [amyblais](https://github.com/amyblais), [Balasankar C](https://github.com/Balasankar C), [esethna](https://github.com/esethna), [hmhealey](https://github.com/hmhealey), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [jwilander](https://github.com/jwilander), [lfbrock](https://github.com/lfbrock), [lindy65](https://github.com/lindy65)
+- [amyblais](https://github.com/amyblais), [balasankarc](https://github.com/balasankarc), [esethna](https://github.com/esethna), [hmhealey](https://github.com/hmhealey), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [jwilander](https://github.com/jwilander), [lfbrock](https://github.com/lfbrock), [lindy65](https://github.com/lindy65)
 
 /mattermost-redux
 
