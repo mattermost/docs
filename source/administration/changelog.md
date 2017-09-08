@@ -438,6 +438,7 @@ Many thanks to all our contributors. In alphabetical order:
 /mattermost-bot-sample-golang
 
 - [fkr](https://github.com/fkr), [hmhealey](https://github.com/hmhealey)
+
 ## Release v4.0.0
 
  - **v4.0.1, TBD**
