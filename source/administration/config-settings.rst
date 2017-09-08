@@ -366,7 +366,7 @@ Restrict the permission level required to rename and set the header or purpose f
 
 Enable public channel deletion for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Restrict the permission level required to delete public channels. Deleted channels can be recovered from the database using a `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`_. The last member of a public channel has the ability to delete the channel regardless of their permission level.
+Restrict the permission level required to delete public channels. Deleted channels can be recovered from the database using a `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`_.
 
 **All channel members**: Allow all channel members to delete public channels.
 
@@ -412,7 +412,7 @@ Restrict the permission level required to rename and set the header or purpose f
 
 Enable private channel deletion for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Restrict the permission level required to delete private channels. Deleted channels can be recovered from the database using a `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`_. The last member of a private channel has the ability to delete the channel regardless of their permission level.
+Restrict the permission level required to delete private channels. Deleted channels can be recovered from the database using a `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`_.
 
 **All channel members**: Allow all channel members to delete private channels.
 
@@ -2731,6 +2731,26 @@ This setting defines the number of seconds after which the user's status indicat
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"UserStatusAwayTimeout": 300`` with whole number input.                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable X to Leave Channels from Left-Hand Sidebar
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: Users can leave Public and Private Channels by clicking the "x" beside the channel name.
+
+**False**: Users must use the **Leave Channel** option from the channel menu to leave channels.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableXToLeaveChannelsFromLHS": false`` with options ``true`` and ``false`` for above settings respectively.               |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Town Square is Read-Only (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: Only Administrators can post in Town Square.
+
+**False**: Anyone can post in Town Square.
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``""ExperimentalTownSquareIsReadOnly"": false`` with options ``true`` and ``false`` for above settings respectively.               |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
 
