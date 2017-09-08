@@ -165,6 +165,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
 - Searching with Elasticsearch enabled may not always highlight the searched terms.
 - Channel links to channels that the current user does not belong to may not render correctly.
+- Pinned posts list header sometimes shows an incorrect channel name.
+- Missing an indication if a message is pending but not yet sent.
+- Searching for users with one or two-letter names doesn't work.
 
 ### Contributors
 
