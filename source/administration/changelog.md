@@ -36,7 +36,7 @@ Release date: 2017-09-16
 - Made hover effects consistent across all header icons.
 - Removed transparency of the [...] menu in the right-hand sidebar.
 - Reduced opacity in channel info dialog.
-- Updated background colour of search bar.
+- Updated background color of search bar.
 
 #### Integrations
 - Added support for Slack-compatible delayed slash commands through the `response_url` parameter.
