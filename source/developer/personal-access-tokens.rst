@@ -78,12 +78,12 @@ How do personal access tokens differ from regular session tokens?
 - Personal access tokens can be used to authenticate against the API more easily, including with AD/LDAP and SAML accounts.
 - You can optionally assign additional roles for the account creating personal access tokens. This lets the account post to any channel in Mattermost, including direct messages.
 
-Besides the above differences, personal access tokens are exactly the same as regular session tokens. They are cryptic random IDs and are not different from user's regular session token created after logging in to Mattermost.
+Besides the above differences, personal access tokens are exactly the same as regular session tokens. They are cryptic random IDs and are not different from a user's regular session token created after logging in to Mattermost.
 
-Can I have expiring personal access tokens?
+Can I set personal access tokens to expire?
 ............................................
 
-Yes. You can set up your integration to self-rotate the personal access tokens via `available API calls <https://api.mattermost.com/#tag/users%2Fpaths%2F~1users~1%7Buser_id%7D~1tokens%2Fpost>`_.
+Not in Mattermost, but you can automate your integration to cycle its token `through the REST API <https://api.mattermost.com/#tag/users%2Fpaths%2F~1users~1%7Buser_id%7D~1tokens%2Fpost>`_.
 
 How do I identify a badly behaving personal access token?
 ..........................................................
