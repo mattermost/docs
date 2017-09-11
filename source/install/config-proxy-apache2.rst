@@ -50,7 +50,7 @@ Copy the `default` configuration file found in the same directory.
 			ProxyPass ws://127.0.0.1:8065/api/v%{env:MATCH_APIVERSION}/%{env:MATCH_APIUSERS}websocket
 			ProxyPassReverse ws://127.0.0.1:8065/api/v%{env:MATCH_APIVERSION}/%{env:MATCH_APIUSERS}websocket
 			ProxyPassReverseCookieDomain 127.0.0.1 mysubdomain.mydomain.com
-		  </Location>
+		  </LocationMatch>
 
 		  <Location />
 			Require all granted
