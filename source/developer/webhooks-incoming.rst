@@ -136,7 +136,7 @@ For example, to create a message with a heading, and an italicized text on the n
 .. image:: ../images/incoming_webhooks_markdown_formatting.png
   :width: 300 px
 
-Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` in the JSON payload.
+Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` in the JSON payload. including :doc:`interactive message buttons <interactive-message-buttons>`.
 
 Tips and Best Practices
 ------------------------
