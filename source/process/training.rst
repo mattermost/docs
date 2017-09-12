@@ -181,7 +181,7 @@ Procedure:
 
 2. (Leads): During meeting discuss agenda items in sequence. 
 
-Product Staff Meeting
+Platform Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Mattermost Inc-only** - (Product Staff - 1 hour/week) Thursday's at 10:00 (`San Francisco Time <http://everytimezone.com/>`_).
@@ -192,7 +192,7 @@ Regular team meeting for product staff team at Mattermost Inc.
 - Scope: Mattermost Inc-only meeting given confidential customer issues discussed
 - Attendees: Mattermost Inc colleagues working on mattermost-server and mattermost-webapp
 
-Product staff meeting consists of two parts, Team Operation Review Meeting and Product Staff Meeting.
+Platform meeting consists of two parts, Team Operation Review Meeting and Product Staff Meeting.
 
 All Mattermost staff attends the Team Operation Review Meeting. It provides an opportunity to teach and learn between people who don’t otherwise deal with each other much. Includes presentations and demos.
 
@@ -200,7 +200,7 @@ Only the product team attends the Product Staff Meeting, others' attendance is o
 
 Procedure:
 
-1. (Chair) 3-hours before standup, post reminders in `Platform Meeting private channel <https://pre-release.mattermost.com/core/channels/platform-meetingn>`_ (Mattermost Inc only)
+1. (Chair) 3-hours before standup, post reminders in `Platform Meeting private channel <https://pre-release.mattermost.com/core/channels/platform-meeting>`_ (Mattermost Inc only)
 
 ::
 
