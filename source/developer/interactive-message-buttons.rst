@@ -3,7 +3,7 @@
 Interactive Message Buttons (Beta)
 ===================================
 
-Mattermost supports interactive message buttons for `incoming <https://docs.mattermost.com/developer/webhooks-incoming.html>`_ and `outgoing webhooks <https://docs.mattermost.com/developer/webhooks-outgoing.html>`_, and for `custom slash commands <https://docs.mattermost.com/developer/slash-commands.html>`_ via actions. They help make your integrations richer by completing common tasks inside Mattermost covnersations, increasing user engagement and productivity.
+Mattermost supports interactive message buttons for `incoming <https://docs.mattermost.com/developer/webhooks-incoming.html>`_ and `outgoing webhooks <https://docs.mattermost.com/developer/webhooks-outgoing.html>`_, and for `custom slash commands <https://docs.mattermost.com/developer/slash-commands.html>`_ via actions. They help make your integrations richer by completing common tasks inside Mattermost conversations, increasing user engagement and productivity.
 
 Use these buttons to simplify complex workflows by allowing users to take quick actions directly through your integration post. For example, the buttons enable your integration to:
 
@@ -66,7 +66,7 @@ The integration can respond with an update to the original post, or with an ephe
     "ephemeral_text": "You updated the post!"
   }
 
-// XXX Insert an image here
+.. image:: ../../source/images/interactive_message.png
 
 Below we give a brief description of each parameter to help you customize the webhook post in Mattermost. For more information on message attachments, `see our documentation <https://docs.mattermost.com/developer/message-attachments.html>`_.
 
@@ -74,7 +74,7 @@ Name
   Give your action a descriptive name.
 
 URL
-  The actions are backed by an integration that handles HTTP POST requests when users clicks the message button. The URL parameter determines where this action is sent to. The request contains an ``application/x-www-form-urlencoded`` JSON string. // XXX @ccbrown is this correct?
+  The actions are backed by an integration that handles HTTP POST requests when users clicks the message button. The URL parameter determines where this action is sent to. The request contains an ``application/json`` JSON string.
 
 Context // XXX @ccbrown Need a bit of help to more specifically explain this parameter.
   The requests sent to the specified URL contain the user id and any context that was provided in the action definition as follows:
