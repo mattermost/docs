@@ -103,7 +103,7 @@ Context
         }
       }
       
-      When the message button is clicked, your integration sends a request to the specified URL with the intention to merge the pull request identified by the context.
+  When the message button is clicked, your integration sends a request to the specified URL with the intention to merge the pull request identified by the context.
 
   2. **Authenticating the server**. An important property of the context parameter is that it's kept confidential. Hence, if your integration is not behind a firewall, you could add a token to your context without users ever being able to see it:
 
@@ -119,9 +119,9 @@ Context
         }
       }
    
-      Then, when your integration receives the request, it can verify that the token matches one that you previously generated and know that the request is legitimately coming from the Mattermost server and not forged.
+  Then, when your integration receives the request, it can verify that the token matches one that you previously generated and know that the request is legitimately coming from the Mattermost server and not forged.
 
-      Depending on the application, integrations can also perform authentication statelessly with cryptographic signatures such as:
+  Depending on the application, integrations can also perform authentication statelessly with cryptographic signatures such as:
 
     .. code-block:: text
 
@@ -135,7 +135,7 @@ Context
         }
       }
 
-      It's also possible for integrations to do both of these things with a single token and use something like this as context:
+  It's also possible for integrations to do both of these things with a single token and use something like this as context:
 
     .. code-block:: text
 
@@ -146,7 +146,7 @@ Context
         }
       }
 
-      Then, when the integration receives the request, it can act based on the action id.
+  Then, when the integration receives the request, it can act based on the action id.
 
 Tips and Best Practices
 ------------------------
