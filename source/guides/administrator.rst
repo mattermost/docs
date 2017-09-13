@@ -69,6 +69,7 @@ Administration
    /administration/backup*
    /administration/liveness-check*
    /administration/upgrade.rst
+   /administration/version-archive*
    /administration/migrating.md
 
 Changelog
