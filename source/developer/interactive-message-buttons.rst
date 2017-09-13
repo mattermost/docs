@@ -11,6 +11,8 @@ Use these buttons to simplify complex workflows by allowing users to take quick 
 - conduct a customer survey or a poll
 - file a report on market trends
 
+To try the message buttons out, you can use this `demo integration <https://github.com/mattermost/mattermost-interactive-post-demo>`_ to add polling to Mattermost channels via a `/poll` slash command.
+
 Interactive message buttons are not yet supported on Mattermost mobile apps.
 
 // XXX Add GIF image (AB preparing one for marketing)
@@ -21,7 +23,7 @@ Interactive message buttons are not yet supported on Mattermost mobile apps.
 Button Options
 ---------------
 
-Add message buttons as ``actions`` in your integration `message attachments <https://docs.mattermost.com/developer/message-attachments.html>`_. Each attachment can contain up to XXX actions. // XXX @ccbrown how many?
+Add message buttons as ``actions`` in your integration `message attachments <https://docs.mattermost.com/developer/message-attachments.html>`_.
 
 The following payload gives an example webhook that uses message buttons.
 
@@ -151,12 +153,9 @@ Context
 Tips and Best Practices
 ------------------------
 
-// XXX @ccbrown Do we want to clean up the polling integration demo and provide it as an example? https://github.com/ccbrown/interactive-post-demo
-
 1. The external application may be written in any programming language. It needs to provide a URL which receives the request sent by your Mattermost server and responds with in the required JSON format.
 2. Message attachments allow for rich formatting, but don't go overboard. Use the least amount of formatting and number of action buttons required for your integration post.
-
-// XXX @ccbrown
+3. To get started, you can use this `demo integration <https://github.com/mattermost/mattermost-interactive-post-demo>`_ to add polling to Mattermost channels via a `/poll` slash command.
 
 Share Your Integration
 -----------------------
@@ -169,8 +168,3 @@ Slack Compatibility
 --------------------
 
 // XXX @ccbrown, please help with how one can turn a Slack-type message button into a Mattermost one? It was just a few tweaks if I remember correctly?
-
-Troubleshooting
---------------------
-
-// XXX @ccbrown, any here that we should add?
