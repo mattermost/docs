@@ -87,6 +87,16 @@ The System Admin is typically a member of the IT staff and has all the privilege
 - Ability to deactivate user accounts and to reactivate them
 - Access to private channels, but only if given the link to the private channel
 
+User With Personal Access Token Permission
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A System Admin can enable `personal access tokens <https://docs.mattermost.com/developer/personal-access-tokens.html>`_ and give permissions for that account to create personal access tokens in **System Console > Users**.
+
+In addition, the System Admin can optionally set the following permissions for the account, useful for integrations and bot accounts:
+
+ - **post:all**: Allows the account to post to all Mattermost channels including direct messages. 
+ - **post:channels**: Allows the account to post to all Mattermost public channels.
+
 Deactivating Users
 ~~~~~~~~~~~~~~~~~~
 

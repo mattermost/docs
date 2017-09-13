@@ -49,12 +49,13 @@ First Day
 - (Manager) Meets New Hire for first 1-1 meeting
 - (Buddy) Meets New Hire for first 1-1 meeting
 - (CEO) Meets New Hire for welcome meeting 
+- (New Hire) Confirm with Manager all HR paperwork is completed by end of first day (should have been sent in advance). 
 
 ---------------------------------------------------------
 Meetings
 ---------------------------------------------------------
 
-This section summarizes norms for public and private meetings for the Mattermost community and for Mattermost Inc.
+This section summarizes norms for public and private meetings for the Mattermost community and for Mattermost staff (people paid by Mattermost, Inc.).
 
 Timezones 
 ---------------------------------------------------------
@@ -62,6 +63,16 @@ Timezones
 When proposing meetings use famous cities as references for time (e.g. 9am New York time), since it's clear and `easy to web search <https://www.google.com/search?q=time+in+new+york&oq=time+in+new+&aqs=chrome.1.0l2j69i57j0l3.3135j0j7&sourceid=chrome&ie=UTF-8>`_. Avoid using "UTC", as it has been shown to cause confusion.
 
 When selecting a timezone city, use the most well-known city in a country where at least one team member is located. Exception: When possible, use a city where we have an official mailing address, e.g. In Western Americas use Palo Alto, instead of San Francisco. In Eastern Americas use Toronto, instead of New York. 
+
+Scheduling Recurring Group Meetings
+---------------------------------------------------------
+
+Recurring meetings with more than two people should have one or more regular slots on the calendar reserved so that meetings can be coordinated in a straight-forward way. 
+
+1. Meetings with internal colleagues should be coordinated by checking everyone's availability in G Suite Calendar. 
+2. Meetings with external colleagues should be coordinated manually with one internal person coordinating everyone's G Suite Calendars 
+
+For efficiency, when Mattermost works with advisors and consultants who engage with 2 or more internal team members, we aim to schedule meetings in regular slots (or a collection of regular slots) 2-4 weeks apart. 
 
 Open Meetings
 ---------------------------------------------------------
@@ -71,8 +82,8 @@ Developer Meeting
 
 **Open to the public** - (Developers - 1-2 hours/week) Wednesdays 10:00 (`San Francisco Time <http://everytimezone.com/>`_)
 
-- Goal: Discuss developer issues across Mattermost Inc, key contributors and the contributor community.
-- Attendees: (required) Mattermost Inc developers, (optional) key contributors, contributors and anyone who would like to join.
+- Goal: Discuss developer issues across Mattermost staff, key contributors and the contributor community.
+- Attendees: (required) Mattermost staff developers, (optional) key contributors, contributors and anyone who would like to join.
 
 Procedure:
 
@@ -84,16 +95,16 @@ Procedure:
 To review past agendas for the Developer meeting in the `Developers channel <https://pre-release.mattermost.com/core/channels/developers>`_ click on the ``#devmeeting`` hashtag in any of the meeting notes, or search for it directly.
 
 
-Mattermost Inc-only Meetings
+Mattermost Staff Meetings
 ----------------------------------------------------
 
-For confidentiality of customers, internal process meetings are limited to Mattermost Inc. only.
+For confidentiality of customers, internal process meetings are limited to Mattermost staff only.
 
 
 Sprint Planning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost Staff Only** - (Developer - 5-10 minutes/week) Tuesdays between 10:00 and 11:00 (`San Francisco Time <http://everytimezone.com/>`_)
+**Mattermost staff only** - (Developer - 5-10 minutes/week) Tuesdays between 10:00 and 11:00 (`San Francisco Time <http://everytimezone.com/>`_)
 
 - Goal: Review and discuss tickets selected by developer for next sprint
 - Attendees: (required) Each developer in sequence, plus spint planners (one dev, one PM), (optional) Mattermost staff colleagues welcome
@@ -114,10 +125,10 @@ Procedure:
 Triage Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost Inc-only** - (Triage team - 1-3 hours/week) Monday, Wednesday, Friday 09:00 (`San Francisco Time <http://everytimezone.com/>`_)
+**Mattermost staff-only** - (Triage team - 1-3 hours/week) Monday, Wednesday, Friday 09:00 (`San Francisco Time <http://everytimezone.com/>`_)
 
 - Goal: To provide consistent review, prioritization and ownership assignment of all tickets
-- Attendees: (required) dev and PM from Mattermost Inc., typically leads (optional) other Mattermost Inc. colleagues welcome
+- Attendees: (required) dev and PM from Mattermost staff, typically leads (optional) other Mattermost staff welcome
 
 Note:
 
@@ -137,7 +148,7 @@ Note:
 
 Procedure:
 
-1. (Chair): Just prior to meeting, post **Hangout** link in `Standup private channel <https://pre-release.mattermost.com/core/channels/stand-up>`_ (Mattermost Inc. only)
+1. (Chair): Just prior to meeting, post **Hangout** link in `Standup private channel <https://pre-release.mattermost.com/core/channels/stand-up>`_ (Mattermost staff only)
 
 2. (Attendees): Join the link
 
@@ -146,10 +157,10 @@ Procedure:
 Leads Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost Inc-only** - (Leads - 1-3 hours/week) Monday and Wednesday (9:00 `San Francisco Time <http://everytimezone.com/>`_)
+**Mattermost staff-only** - (Leads - 1-3 hours/week) Monday and Wednesday (9:00 `San Francisco Time <http://everytimezone.com/>`_)
 
 - Goal: Address leadership and process topics
-- Attendees: (Required) Dev, PM, community/marketing leads from Mattermost Inc., with sales lead and other Mattermost staff optional. 
+- Attendees: (Required) Dev, PM, community/marketing leads from Mattermost staff, with sales lead and other Mattermost staff optional. 
 
 Note:
 

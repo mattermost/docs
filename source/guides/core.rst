@@ -15,10 +15,18 @@ Development Process
 
    /process/overview*
    /process/release-process*
-   /process/help-wanted*
+   /process/mobile-release*
+
+Community Process
+-------------------
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+
+   /process/community-overview*
    /process/community-systems*
-   /process/marketing-guidelines*
-   /process/asset-guidelines*
+   /process/help-wanted*
    /process/community-guidelines*
 
 Core Developer Handbook
@@ -60,6 +68,10 @@ Marketing
    :glob:
 
    /process/casestudy*
+   /process/guest-article*
+   /process/marketing-guidelines*
+   /process/asset-guidelines*
+   /process/end-user-documentation*
    
 Partners
 -------------------------

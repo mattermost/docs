@@ -119,6 +119,7 @@ US & Canadian Holidays for 2017:
 - Canadian Victoria Day (5/22/2017)
 - Canada Day (7/1/2017)
 - US Independence Day (7/4/2017)
+- Canadian Civic / Provincial Day (8/7/2017)
 - US Labor Day, Canadian Labour Day (9/4/2017)
 - Canadian Thanksgiving (10/9/2017)
 - US Thanksgiving (11/23/2017)

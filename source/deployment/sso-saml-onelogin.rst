@@ -1,7 +1,7 @@
 Configure SAML with OneLogin
 =============================
 
-The following process provides steps to configure SAML with OneLogin for Mattermost.
+The following process provides steps to configure SAML 2.0 with OneLogin for Mattermost.
 
 .. contents::
   :backlinks: top
