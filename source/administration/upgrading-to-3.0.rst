@@ -1,7 +1,7 @@
 Upgrading to version 3.0
 ========================
 
-Use these instructions if you are upgrading from 2.0.0, 2.1.0, or 2.2.0. If you are upgrading from a version earlier than 2.0.0, you must first `upgrade to version 2.0 <../upgrading-to-2.0.html>`_. 
+Use these instructions if you are upgrading from 2.0.0, 2.1.0, or 2.2.0. If you are upgrading from a version earlier than 2.0.0, you must first `upgrade to version 2.0 <../administration/upgrading-to-2.0.html>`_. 
 
 You must upgrade to 3.0 before upgrading to the latest version of Mattermost.
 
