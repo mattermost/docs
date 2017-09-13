@@ -66,7 +66,7 @@ The integration can respond with an update to the original post, or with an ephe
     "ephemeral_text": "You updated the post!"
   }
 
-.. image:: ../../source/images/interactive_message.png
+.. image:: ../../source/images/interactive_message.gif
 
 Below we give a brief description of each parameter to help you customize the webhook post in Mattermost. For more information on message attachments, `see our documentation <https://docs.mattermost.com/developer/message-attachments.html>`_.
 
@@ -76,8 +76,8 @@ Name
 URL
   The actions are backed by an integration that handles HTTP POST requests when users clicks the message button. The URL parameter determines where this action is sent to. The request contains an ``application/json`` JSON string.
 
-Context // XXX @ccbrown Need a bit of help to more specifically explain this parameter.
-  The requests sent to the specified URL contain the user id and any context that was provided in the action definition as follows:
+Context
+  The requests sent to the specified URL contain the user id and any context that was provided in the action definition. A simple example is given below:
   
   .. code-block:: text
 
@@ -87,6 +87,66 @@ Context // XXX @ccbrown Need a bit of help to more specifically explain this par
       "action": "ephemeral"
       }
     }
+
+  In most cases, your integration will do one or both of these things:
+  
+  1. **Identifying which action was triggered**. For example, a GitHub integration might store something like this in the context:
+
+    .. code-block:: text
+
+      {
+      "user_id": "rd49ehbqyjytddasoownkuqrxe",
+      "context": {
+        "repo": "mattermost/mattermost-server"
+        "pr": 1234,
+        "action": "merge"
+        }
+      }
+      
+      When the message button is clicked, your integration sends a request to the specified URL with the intention to merge the pull request identified by the context.
+
+  2. **Authenticating the server**. An important property of the context parameter is that it's kept confidential. Hence, if your integration is not behind a firewall, you could add a token to your context without users ever being able to see it:
+
+    .. code-block:: text
+
+      {
+      "user_id": "rd49ehbqyjytddasoownkuqrxe",
+      "context": {
+        "repo": "mattermost/mattermost-server"
+        "pr": 1234,
+        "action": "merge",
+        "token": "somerandomlygeneratedsecret"
+        }
+      }
+   
+      Then, when your integration receives the request, it can verify that the token matches one that you previously generated and know that the request is legitimately coming from the Mattermost server and not forged.
+
+      Depending on the application, integrations can also perform authentication statelessly with cryptographic signatures such as:
+
+    .. code-block:: text
+
+      {
+      "user_id": "rd49ehbqyjytddasoownkuqrxe",
+      "context": {
+        "repo": "mattermost/mattermost-server"
+        "pr": 1234,
+        "action": "merge",
+        "signature": "mycryptographicsignature"
+        }
+      }
+
+      It's also possible for integrations to do both of these things with a single token and use something like this as context:
+
+    .. code-block:: text
+
+      {
+      "user_id": "rd49ehbqyjytddasoownkuqrxe",
+      "context": {
+        "action_id": "someunguessableactionid"
+        }
+      }
+
+      Then, when the integration receives the request, it can act based on the action id.
 
 Tips and Best Practices
 ------------------------
