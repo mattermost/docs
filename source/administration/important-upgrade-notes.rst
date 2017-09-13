@@ -7,7 +7,7 @@ Important Upgrade Notes
 +----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                      |
 +====================================================+==============================================================================================================================================================+
-| v3.10.0                                            | (High Availability Only)                                                                                                                                     |
+| v4.0.0                                             | (High Availability Only)                                                                                                                                     |
 |                                                    |                                                                                                                                                              |
 |                                                    | You must manually add new items to the *ClusterSettings* section of your existing ``config.json``.                                                           |
 |                                                    | See the *Upgrading to Version 4.0 and Later* section of :doc:`../deployment/cluster` for details.                                                            |
