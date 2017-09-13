@@ -295,16 +295,12 @@ header .header__searchbar {
 }
 
 @media (max-width: 768px){
-<<<<<<< HEAD
 	header .links__icon {
 		display: block;
 	}
 	.wy-nav-top {
 		display: none;
 	}
-=======
-
->>>>>>> c8fd417... Added a search box to the nav header for the mobile view.
 	.wy-side-nav-search {
 		position: relative;
 	}
