@@ -366,7 +366,7 @@ Restrict the permission level required to rename and set the header or purpose f
 
 Enable public channel deletion for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Restrict the permission level required to delete public channels. Deleted channels can be recovered from the database using a `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`_. The last member of a public channel has the ability to delete the channel regardless of their permission level.
+Restrict the permission level required to delete public channels. Deleted channels can be recovered from the database using a `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`_.
 
 **All channel members**: Allow all channel members to delete public channels.
 
@@ -412,7 +412,7 @@ Restrict the permission level required to rename and set the header or purpose f
 
 Enable private channel deletion for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Restrict the permission level required to delete private channels. Deleted channels can be recovered from the database using a `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`_. The last member of a private channel has the ability to delete the channel regardless of their permission level.
+Restrict the permission level required to delete private channels. Deleted channels can be recovered from the database using a `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`_.
 
 **All channel members**: Allow all channel members to delete private channels.
 
@@ -1989,6 +1989,16 @@ Enable Server-Side Encryption for Amazon S3
 | This feature's ``config.json`` setting is ``"AmazonS3SSE": true`` with options ``true`` and ``false`` for above settings respectively.                               |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable Amazon S3 Debugging
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: Additional debugging information is included in the system logs. Typically set to `false` in production.
+
+**False**: No Amazon S3 debugging information is included in the system logs.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AmazonS3Trace": false`` with options ``true`` and ``false`` for above settings respectively.                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Allow File Sharing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 When false, disables file sharing on the server. All file and image uploads on messages are forbidden across clients and devices, including mobile.
@@ -2798,6 +2808,28 @@ This setting defines the number of seconds after which the user's status indicat
 | This feature’s ``config.json`` setting is ``"UserStatusAwayTimeout": 300`` with whole number input.                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable X to Leave Channels from Left-Hand Sidebar (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: Users can leave Public and Private Channels by clicking the "x" beside the channel name.
+
+**False**: Users must use the **Leave Channel** option from the channel menu to leave channels.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableXToLeaveChannelsFromLHS": false`` with options ``true`` and ``false`` for above settings respectively.               |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Town Square is Read-Only (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E10 and higher*
+
+**True**: Only Administrators can post in Town Square.
+
+**False**: Anyone can post in Town Square.
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``""ExperimentalTownSquareIsReadOnly"": false`` with options ``true`` and ``false`` for above settings respectively.               |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 ________
 
 File Settings
@@ -2958,8 +2990,8 @@ This setting is used to maximize performance for large Enterprise deployments.
 | This feature's ``config.json`` setting is ``"MaxUsersForStatistics": 2500`` with whole number input                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Elasticsearch Settings
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Elasticsearch Settings (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Post Index Replicas
 ^^^^^^^^^^^^^^^^^^^^^
@@ -2976,3 +3008,117 @@ The number of shards to use for each post index. If this setting is changed, it 
 +-------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PostIndexShards": 1`` with whole number input      |
 +-------------------------------------------------------------------------------------------------+
+
+Aggregate Search Indexes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Elasticsearch indexes over the age specified by this setting will be aggregated during the daily scheduled job.
+
++-----------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AggregatePostsAfterDays": 365`` with whole number input      |
++-----------------------------------------------------------------------------------------------------------+
+
+Post Aggregator Start Time
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The start time of the daily scheduled aggregator job.
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"PostsAggregatorJobStartTime": 03:00`` with 24-hour time stamp input in the form HH:MM      |
++-----------------------------------------------------------------------------------------------------------------------------------------+
+
+Client Requirement Settings (Experimental)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Latest Android Version
+^^^^^^^^^^^^^^^^^^^^^^^^^
+The latest version of the Android React Native app that is recommended for use.
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AndroidLatestVersion": ""`` with whole number and decimal input. For example, `1.2.0`        |
++-----------------------------------------------------------------------------------------------------------------------------------------+
+
+Minimum Android Version
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The minimum version of the Android React Native app that is required to be used.
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AndroidMinVersion": ""`` with whole number and decimal input. For example, `1.2.0`        |
++----------------------------------------------------------------------------------------------------------------------------------------+
+
+Latest Desktop Version
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+The latest version of the desktop app that is recommended for use.
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DesktopLatestVersion": ""`` with whole number and decimal input. For example, `1.2.0`        |
++-------------------------------------------------------------------------------------------------------------------------------------------+
+
+Minimum Destop Version
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The minimum version of the desktop app that is required to be used.
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DesktopMinVersion": ""`` with whole number and decimal input. For example, `1.2.0`        |
++----------------------------------------------------------------------------------------------------------------------------------------+
+
+Latest iOS Version
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The latest version of the iOS app that is recommended for use.
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"IosLatestVersion": ""`` with whole number and decimal input. For example, `1.2.0`        |
++---------------------------------------------------------------------------------------------------------------------------------------+
+
+Minimum iOS Version
+^^^^^^^^^^^^^^^^^^^^^
+The minimum version of the iOS React Native app that is required to be used.
+
++------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"IosMinVersion": ""`` with whole number and decimal input. For example, `1.2.0`        |
++------------------------------------------------------------------------------------------------------------------------------------+
+
+Theme Settings  (Experimental)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Enable Theme Selection
+^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E10 and higher*
+
+**True:** Enables the **Display** > **Theme** tab in Account Settings so users can select their theme.
+
+**False:** Users cannot select a different theme. The **Display** > **Theme** tab is hidden in Account Settings.
+
++-----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableThemeSelection": true`` with options ``true`` and ``false``. |
++-----------------------------------------------------------------------------------------------------------------+
+
+Default Theme
+^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E10 and higher*
+
+Set a default theme that applies to all new users on the system.
+
++-----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DefaultTheme": "default"`` with options ``default``, ``organization``, ``mattermostDark`` and ``windows10``. |
++-----------------------------------------------------------------------------------------------------------------+
+
+Allow Custom Themes
+^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E10 and higher*
+
+**True:** Enables the **Display** > **Theme** > **Custom Theme** section in Account Settings.
+
+**False:** Users cannot use a custom theme. The **Display** > **Theme** > **Custom Theme** section is hidden in Account Settings.
+
++--------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AllowCustomThemes": true`` with options ``true`` and ``false``. |
++--------------------------------------------------------------------------------------------------------------+
+
+Allowed Themes
+^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E10 and higher*
+
+Select the themes that can be chosen by users when ``"EnableThemeSelection"`` is set to ``true``.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AllowedThemes": "default"`` with options ``default``, ``organization``, ``mattermostDark`` and ``windows10`` optionally separated by commas. For example, ``["mattermostDark", "windows10"]`` |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

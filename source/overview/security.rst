@@ -35,7 +35,9 @@ Transmission Security
 
    - Mattermost supports TLS encryption using AES-256 with 2048-bit RSA on all data transmissions between Mattermost client applications and the Mattermost server across both LAN and internet.
    - Connections to Active Directory/LDAP can be optionally secured with TLS or stunnel (E10).
-   - Encryption-at-rest is available through hardware and software disk encryption solutions applied to the Mattermost database, which resides on its own server within your infrastructure. To support end user search and compliance reporting of message histories, Mattermost does not offer encryption within the database.
+   - Encryption-at-rest is available for messages via hardware and software disk encryption solutions applied to the Mattermost database, which resides on its own server within your infrastructure. To enable end user search and compliance reporting of message histories, Mattermost does not offer encryption within the database.
+   - Encryption-at-rest is available for files stored via hardware and software disk encryption solutions applied to the server used for local storage or storage via Minio.
+   - Encryption-at-rest is available for files stored in Amazon's proprietary S3 system using server-side encryption with Amazon S3-managed keys <https://docs.mattermost.com/administration/config-settings.html#enable-server-side-encryption-for-amazon-s3>_ (E20) when users choose not to use open source options.<https://docs.mattermost.com/administration/config-settings.html#enable-server-side-encryption-for-amazon-s3>`_ (E20). 
    - Option to `exclude message contents from push notifications <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_ to comply with strict compliance policies, such as US HIPAA standards.
    - Ability to exclude or include the `contents of messages in push notifications <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_ to avoid disclosure on locked mobile screens, and via relay servers from Apple and Google when sending notifications to iOS or Android mobile apps (relevant to compliance standards such as HIPAA)
 
@@ -51,10 +53,11 @@ Authentication Safeguards
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    - To protect against brute force attacks, you can set `rate limiting on APIs <https://docs.mattermost.com/administration/config-settings.html#id55>`_, varied by query frequency, memory store size, remote address and headers.
-   - Session length and session cache can be `configured according to your internal policies <https://docs.mattermost.com/administration/config-settings.html#id33>`_.
+   - Session length and session cache can be `configured according to your internal policies <https://docs.mattermost.com/administration/config-settings.html#id33>`_, automatically forcing a user to re-login after a specified period of time.
    - Remotely `revoke user sessions <https://docs.mattermost.com/help/settings/account-settings.html#view-and-logout-of-active-sessions>`_ across web, mobile devices and native desktop apps.
-   - Mattermost supports integrated authentication with `Active Directory and LDAP <https://docs.mattermost.com/deployment/sso-ldap.html>`_ (E10) as well as `Active Directory Federation Services <https://docs.mattermost.com/deployment/sso-saml-adfs.html>`_ and `Okta <https://docs.mattermost.com/deployment/sso-saml-okta.html>`_ via SAML 2.0 (E20)
-   - The ability to require `multi-factor authentication <https://docs.mattermost.com/deployment/auth.html>`_ is also available (E10)
+   - Remotely reset user passwords via the System Console or via the `command line <https://docs.mattermost.com/administration/command-line-tools.html#platform-user-password>`_.
+   - Mattermost supports integrated authentication with `Active Directory and LDAP <https://docs.mattermost.com/deployment/sso-ldap.html>`_ (E10) as well as `SAML 2.0 SSO integration <https://docs.mattermost.com/deployment/sso-saml.html>`_ with providers including `Active Directory Federation Services <https://docs.mattermost.com/deployment/sso-saml-adfs.html>`_,  `Okta <https://docs.mattermost.com/deployment/sso-saml-okta.html>`_, among others (E20).
+   - The ability to require `multi-factor authentication <https://docs.mattermost.com/deployment/auth.html>`_ is also available (E10).
 
 Access Control Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

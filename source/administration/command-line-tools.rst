@@ -114,6 +114,7 @@ platform channel
     -  `platform channel delete`_ - Delete a channel
     -  `platform channel list`_ - List all channels on specified teams
     -  `platform channel modify`_ - Modify a channel's public/private type
+    -  `platform channel move`_ - Move a channel to another team
     -  `platform channel remove`_ - Remove users from a channel
     -  `platform channel restore`_ - Restore a channel from the archive
 
@@ -241,6 +242,23 @@ platform channel modify
 
           --public   Change a private channel to be public.
           --private  Change a public channel to be private.
+
+platform channel move
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Move channels to another team. The command validates that all users in the channel belong to the target team. Incoming/Outgoing webhooks are moved along with the channel. Channels can be specified by ``[team]:[channel]`` or by channel ID.
+
+  Format
+    .. code-block:: none
+
+      platform channel move
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform channel move 8soyabwthjnf9qibfztje5a36h
+      sudo ./platform channel move myteam:mychannel
 
 platform channel remove
 ~~~~~~~~~~~~~~~~~~~~~~~~

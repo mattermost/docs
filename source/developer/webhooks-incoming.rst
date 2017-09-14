@@ -34,6 +34,12 @@ Let's learn how to create a simple incoming webhook that posts the following mes
 
   curl -i -X POST -d 'payload={"text": "Hello, this is some text\nThis is more text. :tada:"}' http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
 
+If you're running cURL on Windows, you need to wrap the payload with double quotes (``"``) instead of single quotes (``'``). Moreover, ensure inner double quotes are escaped with a backslash and that colons have no spaces. Here's an example payload on Windows:
+
+.. code-block:: text
+
+  curl -i -X POST -d "payload={\"text\":\"Hello, this is some text\nThis is more text. :tada:\"}" http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
+
 Parameters and Formatting
 --------------------------
 
@@ -136,7 +142,7 @@ For example, to create a message with a heading, and an italicized text on the n
 .. image:: ../images/incoming_webhooks_markdown_formatting.png
   :width: 300 px
 
-Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` in the JSON payload.
+Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` and :doc:`interactive message buttons <interactive-message-buttons>` in the JSON payload.
 
 Tips and Best Practices
 ------------------------
@@ -212,3 +218,6 @@ Some common error messages include:
 1. ``Couldn't find the channel``: Indicates that the channel doesn't exist or is invalid. Please modify the ``channel`` parameter before sending another request.
 2. ``Couldn't find the user``: Indicates that the user doesn't exist or is invalid. Please modify the ``channel`` parameter before sending another request.
 3. ``Unable to parse incoming data``: Indicates that the request received is malformed. Try reviewing that the JSON payload is in a correct format and doesn't have typos such as extra `"`.
+4. ``curl: (3) [globbing] unmatched close brace/bracket in column N``: Typically an error when using cURL on Windows, when:
+  1. You have space around JSON separator colons, ``payload={"Hello" : "test"}`` or  
+  2. You are using single quotes to wrap the ``-d`` data, ``-d 'payload={"Hello":"test"}'``

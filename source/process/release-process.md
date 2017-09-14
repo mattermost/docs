@@ -210,6 +210,7 @@ The final release is cut. If an urgent and important issue needs to be addressed
         - Include changes to Mattermost version number ([`default_version`](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/config/software/mattermost.rb#L20)) and md5 sum of the final TE build ([`source md5`](https://gitlab.com/jasonblais/omnibus-gitlab/blob/master/config/software/mattermost.rb#L23)) in  [`config/software/mattermost.rb`](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/config/software/mattermost.rb)
         - Include a summary of updates in Team Edition that are relevant to GitLab
         - Include an update to the [GitLab changelog](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/CHANGELOG.md)
+        - Include updates to [gitlab.rb](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-config-template/gitlab.rb.template#L1008-1171), [attributes default.rb](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-cookbooks/gitlab/attributes/default.rb#L667-829) and [config.json.erb](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-cookbooks/gitlab/templates/default/config.json.erb) with new TE config settings ([Example](https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests/1855))
         - Post a link to the MR in the Release Discussion channel 
     - Check Security Issues spreadsheet and confirm disclosure text
     - Check the security researcher was added to the [Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/) page
@@ -334,7 +335,7 @@ Once final dot release build is ready to cut:
     - Update [ci-linux-mysql-prev](https://ci-linux-mysql-prev.mattermost.com) to the final release version
 5. Dev:
     - Delete RCs after final version is shipped    
-    - Check if any libraries need to be updated for the next release, and if so bring up in weekly team meeting
+    - Check if any libraries need to be updated in all repositories, including `platform`, `desktop`, `mattermost-mobile` and `mattermost-redux`
     - Test the GitLab RC containing the Mattermost final bits
     - Confirm gitlab.mattermost.com is updated to final build
     - Merge changes made to release branch into `master`
