@@ -128,7 +128,6 @@ The Mattermost Server is designed to have very little state to allow for horizon
 
 When the Mattermost Server is configured for high availability, the servers  use an inter-node communication protocol on a different listening address to keep the state in sync. When a state changes it is written back to the database and an inter-node message is sent to notify the other servers of the state change. The true state of the items can always be read from the database. Mattermost also uses inter-node communication to forward WebSocket messages to the other servers in the cluster for real-time messages such as  “[User X] is typing.”
 
-
 Proxy Server Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -161,7 +160,6 @@ A sample configuration for NGINX is provided below. It assumes that you have two
                 proxy_pass http://backend;
           }
     }
-
 
 You can use multiple proxy servers to limit a single point of failure, but that is beyond the scope of this documentation.
 
@@ -229,6 +227,13 @@ Transparent Failover
 ````````````````````
 
 The database can be configured for high availability and transparent failover use the existing database technologies. We recommend MySQL Clustering, Postgres Clustering, or Amazon Aurora. Database transparent failover is beyond the scope of this documentation.
+
+Leader Election
+^^^^^^^^^^^^^^^^
+
+In Mattermost v4.2 and later, a cluster leader election process assigns any scheduled task such as LDAP sync to run on a single node in a multi-node cluster environment.
+
+The process is based on a widely used `bully leader election algorithm <https://en.wikipedia.org/wiki/Bully_algorithm>`_ where the process with the lowest node ID number from amongst the non-failed processes is selected as the "leader". 
 
 Upgrade Guide
 -------------
