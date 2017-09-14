@@ -7,7 +7,7 @@ Important Upgrade Notes
 +----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                         |
 +====================================================+=================================================================================================================================================================+
-| v4.1.0                                             | By default, user-supplied URLs such as those used for Open Graph metadata, webhooks, or slash commands will no longer be allowed to connect to reserved IP      |
+| v4.2.0                                             | By default, user-supplied URLs such as those used for Open Graph metadata, webhooks, or slash commands will no longer be allowed to connect to reserved IP      |
 |                                                    | addresses including loopback or link-local addresses used for internal networks.                                                                                |
 |                                                    |                                                                                                                                                                 |
 |                                                    | This change may cause private integrations to break in testing environments, which may point to a URL such as http://127.0.0.1:1021/my-command.                 |
