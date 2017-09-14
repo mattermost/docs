@@ -2744,6 +2744,8 @@ Enable X to Leave Channels from Left-Hand Sidebar
 
 Town Square is Read-Only (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E10 and higher*
+
 **True**: Only Administrators can post in Town Square.
 
 **False**: Anyone can post in Town Square.
@@ -3003,6 +3005,8 @@ Theme Settings
 
 Enable Theme Selection
 ^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E10 and higher*
+
 **True:** Enables the **Display** > **Theme** tab in Account Settings so users can select their theme.
 
 **False:** Users cannot select a different theme. The **Display** > **Theme** tab is hidden in Account Settings.
@@ -3013,6 +3017,8 @@ Enable Theme Selection
 
 Default Theme
 ^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E10 and higher*
+
 Set a default theme that applies to all new users on the system.
 
 +-----------------------------------------------------------------------------------------------------------------+
@@ -3021,6 +3027,8 @@ Set a default theme that applies to all new users on the system.
 
 Allow Custom Themes
 ^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E10 and higher*
+
 **True:** Enables the **Display** > **Theme** > **Custom Theme** section in Account Settings.
 
 **False:** Users cannot use a custom theme. The **Display** > **Theme** > **Custom Theme** section is hidden in Account Settings.
@@ -3031,6 +3039,8 @@ Allow Custom Themes
 
 Allowed Themes
 ^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E10 and higher*
+
 Select the themes that can be chosen by users when ``"EnableThemeSelection"`` is set to ``true``.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
