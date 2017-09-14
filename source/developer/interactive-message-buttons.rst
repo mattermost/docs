@@ -15,7 +15,7 @@ To try the message buttons out, you can use this `demo integration <https://gith
 
 Interactive message buttons are not yet supported on Mattermost mobile apps.
 
-// XXX Add GIF image (AB preparing one for marketing)
+.. image:: ../../source/images/poll.gif
 
 .. toctree::
    :maxdepth: 2
