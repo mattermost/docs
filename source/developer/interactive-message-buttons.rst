@@ -40,7 +40,7 @@ The following payload gives an example webhook that uses message buttons.
             "integration": {
               "url": "http://127.0.0.1:7357",
               "context": {
-                "action": "ephemeral"
+                "action": "do_something_ephemeral"
               }
             }
           }, {
@@ -48,7 +48,7 @@ The following payload gives an example webhook that uses message buttons.
             "integration": {
               "url": "http://127.0.0.1:7357",
               "context": {
-                "action": "update"
+                "action": "do_something_update"
               }
             }
           }
@@ -86,7 +86,7 @@ Context
     {
     "user_id": "rd49ehbqyjytddasoownkuqrxe",
     "context": {
-      "action": "ephemeral"
+      "action": "do_something"
       }
     }
 
@@ -167,4 +167,8 @@ The `app directory <https://about.mattermost.com/default-app-directory/>`_ lists
 Slack Compatibility
 --------------------
 
-// XXX @ccbrown, please help with how one can turn a Slack-type message button into a Mattermost one? It was just a few tweaks if I remember correctly?
+Like Slack, actions are specified in an "actions" list within the message attachment. Moreover, your integrations can react with ephemeral messages or message updates similar to Slack.
+
+However, the schema for these objects is different and Mattermost interactive message buttons are not intended to be Slack compatible:
+ - Slack requires a Slack App and action URL to be pre-configured beforehand. Mattermost instead allows any webhook or slash command to create an interactive message without pre-configuration.
+ - With Slack, when a user performs an action, the request made to your integration contains information such as channel and team ids. With Mattermost, the request only contains the user id and additional information you specified in your context, which might include team and channel ids if these values are needed by your integration.
