@@ -49,7 +49,7 @@ Official
 - 100% of translation verified by someone deeply knowledgeable in target language.
 - No translation may be out-of-date due to changes to English-language text since the last translation and review cycle.
 - Language must have at least one official reviewer who maintains the language with updated strings imported to the `Translation Server <http://translate.mattermost.com>`_ over time.
-- Language must have been in use for **at least 2 full release cycles** where end users in target language can share feedback and corrections.
+- Language must have been in use for **at least 3 full release cycles** where end users in target language can share feedback and corrections.
 
 Language option is listed as an option in **Account Settings > Display > Language**.
 
@@ -57,8 +57,7 @@ Language option is listed as an option in **Account Settings > Display > Languag
 Beta
 ~~~~
 
-- 100% of translation verified by someone deeply knowledgeable in Mattermost functionality.
-- 100% of translation verified by someone deeply knowledgeable in target language.
+- 90% of translation verified by someone deeply knowledgeable in Mattermost functionality and in the target language.
 - Up to 10% of translation may be out-of-date due to changes to English-language text since the last translation and review cycle.
 
 Language option is listed as an option in **Account Settings > Display > Language** prefixed with **(Beta)**.

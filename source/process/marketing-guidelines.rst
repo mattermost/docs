@@ -81,7 +81,9 @@ Guidelines for release announcements
 
 Composing blog posts: 
 
-1. **Include [RELEASE] [HEADLINE] in title**. Use titles that draw in IT audiences. For example "Mattermost 3.5 improves mobile and web performance, adds Minio support, Russian language".
+1. **Include [RELEASE] [HEADLINE] in title**. Use titles that draw in IT audiences. E.g. "Mattermost 4.1: Integration enhancements with personal access tokens and streamlined apps, starting with JIRA". Focus the title on 1 to 2 key features of the release.
 2. **Use Twitter banners for images**. Use Twitter banners to make visuals consistently high-quality throughout the release announcement. Also allows the marketing team use the images for tweets.
-3. **Emphasize benefit**. Emphasize benefit in text, screenshots and image captions. IT audiences are typically more interested in the business benefits of technology than technical features.
-4. **Test on mobile**. Before you publish a blog post, make sure that it is mobile-friendly by testing it on smartphone and tablet platforms.
+3. **Include a clear theme**. Decide what theme to focus on throughout the release announcement. E.g. in `4.1 release announcement the focus was placed on integrations <https://about.mattermost.com/mattermost-4-1/>`_.
+4. **Emphasize benefit**. Always start each section with the benefit - the benefit should be clear in the first 1 or 2 sentences. IT audiences are typically more interested in the business benefits of technology than technical features. Emphasize benefit also in screenshots and image captions. 
+5. **Know your audience**. Consider the audience you are writing this announcement for. E.g. admins who upgrade the Mattermost server, customers making a decision about purchasing the Enterprise Edition, end-users, or other.
+6. **Test on mobile**. Before you publish a blog post, make sure that it is mobile-friendly by testing it on smartphone and tablet platforms.

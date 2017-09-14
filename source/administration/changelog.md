@@ -248,12 +248,17 @@ Release date: 2017-08-16
 - Searching on slow connections now shows a loading spinner in the right-hand side.
 - Added a close button next to link previews.
 - Ephemeral messages will now always appear as parent posts.
+- Added [...] menu to search results, pinned posts and flagged posts lists.
+- Clicking the username in a profile popover inserts the username to the message box.
 
 #### Notifications
 - Added an option to Push Notification Contents to send no channel name or message text
 - Updated the default email frequency to 15 minutes if email batching is enabled by the System Admin.
 - Users are now prompted from Account Settings to set Edge notification sounds in their browser settings.
 - Updated the desktop notification text for incoming webhooks to more accurately reflect the payload.
+
+#### Files
+- File uploads in a single message are ordered based on time of upload. When multiple files are selected, files are ordered in alphabetical order based on file name.
 
 #### Administration
 - No longer require a refresh after a user is promoted to a Team Admin.
@@ -263,6 +268,7 @@ Release date: 2017-08-16
 - Channel member list now follows the Teammate name display configuration setting.
 - Added more debugging info to server logs for failed OAuth requests.
 - Added a new System Console push notification content setting to only display sender name.
+- Added support for unauthenticated, but encrypted SMTP connection.
 
 #### Integrations
 - Null values are now ignored in webhook attachments.
@@ -270,6 +276,7 @@ Release date: 2017-08-16
 - Added ``/code`` built-in slash command to create a code block.
 - Added ``/purpose`` built-in slash command to set the channel purpose.
 - Added ``/rename`` built-in slash command to rename the channel.
+- Added ``/leave`` built-in slash command to leave a channel.
 
 #### Enterprise Edition E20
 - Added a System Console setting to disable file uploads and downloads on mobile.
@@ -300,6 +307,10 @@ Release date: 2017-08-16
 - Fixed teams being sometimes incorrectly marked unread across tabs.
 - Fixed JavaScript error thrown when viewing a channel containing an invalid emoji reaction.
 - Periods after URLs are no longer added to the link.
+- Recent emoji in emoji picker no longer shows deleted custom emoji.
+- Fixed image thumbnails and previews on IE11.
+- Fixed message attachments in incoming webhooks and slash commands not always truncating properly.
+- Non-admins can now view their previously created integrations.
 
 ### Compatibility
 
@@ -310,7 +321,7 @@ For a list of past and upcoming deprecated features, [see our website](https://a
 
 #### config.json
 
-The following settings were unintentionally added to ``config.json`` and are removed in Mattermost 4.2.
+The following settings were unintentionally added to ``config.json`` and will be removed in Mattermost 4.2, released on September 16th.
 
 - Under `SupportSettings` in `config.json`:
   - `"AdministratorsGuideLink": "https://about.mattermost.com/administrators-guide/"`
@@ -438,18 +449,12 @@ Many thanks to all our contributors. In alphabetical order:
 
 - [fkr](https://github.com/fkr), [hmhealey](https://github.com/hmhealey)
 
-## Release v4.0.0
+## Release v4.0.4
 
- - **v4.0.1, TBD**
-   - Release date planned for 2017-07-18 with the following fixes:
-     - If `AllowTimeLimit` config setting is set to `Never`, pinning and un-pinning messages fails.
-     - If you upload or remove the **Service Provider Public Certificate** file in **System Console > SAML**, the page might refresh if you have NGINX enabled. 
-     - Deactivated users are listed in channel member lists.
-
-## Release v4.0.3
-
- - **v4.0.3, released 2017-08-10**
+ - **v4.0.4, released 2017-08-18**
+   - Mattermost v4.0.4 contains multiple security fixes ranging from low to high severity. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
    - Fixed issue when using single-sign-on with GitLab where using a non-English language option in **System Console > Localization** sometimes resulted in a login failure.
+ - **v4.0.3, released 2017-08-10**
    - Fixed issue with `AmazonS3Region` config setting being ignored in Minio file storage setup.
    - Fixed issue when using high availability mode in Enteprise Edition E20 where the bind address wasn't set correctly for the hashicorp memberlist.
  - **v4.0.2, released 2017-07-31**
@@ -719,8 +724,11 @@ Many thanks to all our contributors. In alphabetical order:
 
 - [crspeller](https://github.com/crspeller), [JeffSchering](https://github.com/JeffSchering)
 
-## Release v3.10.2
+## Release v3.10.3
 
+ - **v3.10.3, released 2017-08-18**
+   - Mattermost v3.10.3 contains multiple security fixes ranging from low to high severity. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+   - Fixed issue when using single-sign-on with GitLab where using a non-English language option in **System Console > Localization** sometimes resulted in a login failure.
  - **v3.10.2, released 2017-07-18**
    - Mattermost v3.10.2 contains low severity security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **v3.10.1, released 2017-07-16**

@@ -22,7 +22,7 @@ When sending an attachment, you can use any of the following to format how you w
 
 .. image:: ../images/attachments-pretext.png
 
-``text``: The text to be included in the attachment. It can be formatted using :doc:`Markdown <../help/messaging/formatting-text>`. If it includes more than 700 characters or more than 5 line breaks, the message will be collapsed and a “Show More” link will be added to expand the message.
+``text``: The text to be included in the attachment. It can be formatted using :doc:`Markdown <../help/messaging/formatting-text>`. If it includes more than 300 characters or more than 5 line breaks, the message will be collapsed and a “Show More” link will be added to expand the message.
 
 .. image:: ../images/attachments-text.png
 
