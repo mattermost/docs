@@ -5,7 +5,7 @@ A wide range of rich text formatting options, including bold, italic, headings, 
 
 For additional formatting options, and for compatibility with Slack non-markdown integrations, an ``attachments`` array can be sent by integrations and rendered by Mattermost.
 
-You can also add interactive message buttons as part of attachments. They help make your integrations richer by completing common tasks inside Mattermost covnersations, increasing user engagement and productivity. For more information, see :doc:`documentation <interactive-message-buttons>`.
+You can also add interactive message buttons as part of attachments. They help make your integrations richer by completing common tasks inside Mattermost conversations, increasing user engagement and productivity. For more information, see :doc:`documentation <interactive-message-buttons>`.
 
 Attachment Options
 ------------------
