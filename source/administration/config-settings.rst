@@ -2732,8 +2732,8 @@ This setting defines the number of seconds after which the user's status indicat
 | This feature’s ``config.json`` setting is ``"UserStatusAwayTimeout": 300`` with whole number input.                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable X to Leave Channels from Left-Hand Sidebar
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Enable X to Leave Channels from Left-Hand Sidebar (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 **True**: Users can leave Public and Private Channels by clicking the "x" beside the channel name.
 
 **False**: Users must use the **Leave Channel** option from the channel menu to leave channels.
@@ -2743,7 +2743,7 @@ Enable X to Leave Channels from Left-Hand Sidebar
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Town Square is Read-Only (Experimental)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E10 and higher*
 
 **True**: Only Administrators can post in Town Square.
@@ -2914,8 +2914,8 @@ This setting is used to maximize performance for large Enterprise deployments.
 | This feature's ``config.json`` setting is ``"MaxUsersForStatistics": 2500`` with whole number input                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Elasticsearch Settings
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Elasticsearch Settings (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Post Index Replicas
 ^^^^^^^^^^^^^^^^^^^^^
@@ -2949,8 +2949,8 @@ The start time of the daily scheduled aggregator job.
 | This feature's ``config.json`` setting is ``"PostsAggregatorJobStartTime": 03:00`` with 24-hour time stamp input in the form HH:MM      |
 +-----------------------------------------------------------------------------------------------------------------------------------------+
 
-Client Requirement Settings
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Client Requirement Settings (Experimental)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Latest Android Version
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -3000,8 +3000,8 @@ The minimum version of the iOS React Native app that is required to be used.
 | This feature's ``config.json`` setting is ``"IosMinVersion": ""`` with whole number and decimal input. For example, `1.2.0`        |
 +------------------------------------------------------------------------------------------------------------------------------------+
 
-Theme Settings
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Theme Settings  (Experimental)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Enable Theme Selection
 ^^^^^^^^^^^^^^^^^^^^^^^^^
