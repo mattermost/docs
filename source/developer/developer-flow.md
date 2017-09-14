@@ -5,7 +5,7 @@ If you haven't [set up your developer environment](https://docs.mattermost.com/d
 
 ### Workflow ###
 
-Here's a general workflow a Mattermost developer working on our [platform repository](https://github.com/mattermost/platform) follows:
+Here's a general workflow a Mattermost developer working on our [mattermost-server](https://github.com/mattermost/mattermost-server) and [mattermost-webapp](https://github.com/mattermost/mattermost-webapp) repositories follows:
 
 1. Take a look at the [Repository structure](https://docs.mattermost.com/developer/developer-flow.html#repository-structure) to find out where to look for what you're working on.
 2. On your fork, create a branch `PLT-####` where #### is the ticket number if it is a [Jira](https://mattermost.atlassian.net) ticket, or `GH-####` if it is a GitHub Issue without a Jira ticket.
@@ -42,20 +42,20 @@ Alternatively, if you're writing client-side code, you can run only the client-s
 ### Repository structure ###
 
 For server work, all the directories you'll need are at the root of the repository.
- * [./api/](https://github.com/mattermost/platform/tree/master/api) holds all API and application related code
- * [./model/](https://github.com/mattermost/platform/tree/master/model) holds all data model definitions and the Go driver
- * [./store/](https://github.com/mattermost/platform/tree/master/store) holds all database querying code
- * [./utils/](https://github.com/mattermost/platform/tree/master/utils) holds all utilities, such as the mail utility
- * [./i18n/](https://github.com/mattermost/platform/tree/master/i18n) holds all localization files for the server
+ * [./api/](https://github.com/mattermost/mattermost-server/tree/master/api) holds all API and application related code
+ * [./model/](https://github.com/mattermost/mattermost-server/tree/master/model) holds all data model definitions and the Go driver
+ * [./store/](https://github.com/mattermost/mattermost-server/tree/master/store) holds all database querying code
+ * [./utils/](https://github.com/mattermost/mattermost-server/tree/master/utils) holds all utilities, such as the mail utility
+ * [./i18n/](https://github.com/mattermost/mattermost-server/tree/master/i18n) holds all localization files for the server
 
-For client work, you'll mostly be working in [./webapp/](https://github.com/mattermost/platform/tree/master/webapp).
- * [./webapp/components/](https://github.com/mattermost/platform/tree/master/webapp/components) holds all the [React](https://facebook.github.io/react/) UI components and views
- * [./webapp/actions/](https://github.com/mattermost/platform/tree/master/webapp/actions) holds all [Flux actions](https://facebook.github.io/flux/docs/in-depth-overview.html#content) where the majority of the logic of the webapp takes place
- * [./webapp/stores/](https://github.com/mattermost/platform/tree/master/webapp/stores) holds the stores responsible for storing and providing the views with data
- * [./webapp/routes/](https://github.com/mattermost/platform/tree/master/webapp/routes) holds the definitions for all the [React-Router](https://github.com/ReactTraining/react-router) routes
- * [./webapp/i18n/](https://github.com/mattermost/platform/tree/master/webapp/i18n) holds the localization files for the client
- * [./webapp/utils/](https://github.com/mattermost/platform/tree/master/webapp/utils) holds all widely-used utilities
- * [./webapp/tests/](https://github.com/mattermost/platform/tree/master/webapp/tests) holds all the client unit tests
+For client work, you'll mostly be working in [/mattermost-webapp](https://github.com/mattermost/mattermost-webapp) repo.
+ * [./components/](https://github.com/mattermost/mattermost-webapp/tree/master/components) holds all the [React](https://facebook.github.io/react/) UI components and views
+ * [./actions/](https://github.com/mattermost/mattermost-webapp/tree/master/actions) holds all [Flux actions](https://facebook.github.io/flux/docs/in-depth-overview.html#content) where the majority of the logic of the webapp takes place
+ * [./stores/](https://github.com/mattermost/mattermost-webapp/tree/master/stores) holds the stores responsible for storing and providing the views with data
+ * [./routes/](https://github.com/mattermost/mattermost-webapp/tree/master/routes) holds the definitions for all the [React-Router](https://github.com/ReactTraining/react-router) routes
+ * [./i18n/](https://github.com/mattermost/mattermost-webapp/tree/master/i18n) holds the localization files for the client
+ * [./utils/](https://github.com/mattermost/mattermost-webapp/tree/master/utils) holds all widely-used utilities
+ * [./tests/](https://github.com/mattermost/mattermost-webapp/tree/master/tests) holds all the client unit tests
 
 ### Testing with GitLab Omnibus ###
 
