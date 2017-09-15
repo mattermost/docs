@@ -91,7 +91,9 @@ Release date: 2017-09-16
 
 #### Breaking Changes
 
-1) By default, user-supplied URLs such as those used for Open Graph metadata, webhooks, or slash commands will no longer be allowed to connect to reserved IP addresses including loopback or link-local addresses used for internal networks. 
+1 - Mattermost now handles multiple content types for integrations, including plaintext content type. If your integration suddenly prints the JSON payload data instead of rendering the generated message, make sure your integration is returning the `application/json` content-type to retain previous behavior.
+
+2 - By default, user-supplied URLs such as those used for Open Graph metadata, webhooks, or slash commands will no longer be allowed to connect to reserved IP addresses including loopback or link-local addresses used for internal networks. 
 
 This change may cause private integrations to break in testing environments, which may point to a URL such as http://127.0.0.1:1021/my-command.
 
@@ -99,9 +101,7 @@ If you point private integrations to such URLs, you may whitelist such domains, 
 
 Push notification, OAuth 2.0 and WebRTC server URLs are trusted and not affected by this setting.
 
-2) Mattermost now handles multiple content-types for integrations. Make sure your integrations have been set to use the appropriate content-type.
-
-3) Mattermost `/platform` repo has been separated to `/mattermost-webapp` and `/mattermost-server`. This may affect you if you have a private fork of the `/platform` repo. [More details here](https://forum.mattermost.org/t/mattermost-separating-platform-into-two-repositories-on-september-6th/3708).
+3 - Mattermost `/platform` repo has been separated to `/mattermost-webapp` and `/mattermost-server`. This may affect you if you have a private fork of the `/platform` repo. [More details here](https://forum.mattermost.org/t/mattermost-separating-platform-into-two-repositories-on-september-6th/3708).
 
 #### Removed and Deprecated Features
 - All APIv3 endpoints are scheduled for removal on January 16, 2018.
