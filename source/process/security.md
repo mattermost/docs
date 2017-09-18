@@ -75,7 +75,7 @@ The following resources are monitored for information about new security threats
 - http://www.cert.org/
 - https://www.reddit.com/r/netsec/
 
-Moreover, all third-party dependancies are reviewed and updated for potential security issues. These reviews include, but are not limited to, the following repositories: [/mattermost-server](https://github.com/mattermost/mattermost-server), [/mattermost-webapp](https://github.com/mattermost/mattermost-webapp), [/desktop](https://github.com/mattermost/desktop), [/mattermost-mobile](https://github.com/mattermost/mattermost-mobile) and [/mattermost-redux](https://github.com/mattermost/mattermost-redux).
+Moreover, all third-party dependancies are updated for potential security issues. These reviews include, but are not limited to, the following repositories: [/mattermost-server](https://github.com/mattermost/mattermost-server), [/mattermost-webapp](https://github.com/mattermost/mattermost-webapp), [/desktop](https://github.com/mattermost/desktop), [/mattermost-mobile](https://github.com/mattermost/mattermost-mobile) and [/mattermost-redux](https://github.com/mattermost/mattermost-redux).
 
 ## Common Security Related Questions for Enterprises
 
