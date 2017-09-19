@@ -78,7 +78,7 @@ Commercial and open source organizations who demonstrate the ability to automate
 - Joint-webinar opportunties 
 - Promotion on Mattermost social media accounts 
 
-To become a deployment solutions partner, complete the [contact form](https://about.mattermost.com/contact/) with Mattermost requesting a deployment solutions partner discussion.
+To apply for the program, complete the [contact form](https://about.mattermost.com/contact/) with Mattermost requesting a deployment solutions partner discussion.
 
 Partner Directory 
 ------------------------------
