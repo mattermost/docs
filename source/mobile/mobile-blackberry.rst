@@ -15,7 +15,7 @@ Set Up Mattermost with Blackberry EMM
 
 .. image:: ../../source/images/blackberry_step4.png
 
-5. In the same screen look for **App configuration**. You can either upload this `xml file <mattermost-specfile.xml>` as the template, or add the configuration manually with the keys and values described in the :ref:`appconfig-table`.
+5. In the same screen look for **App configuration**. You can either upload this :download:`xml file <mattermost-specfile.xml>` as the template, or add the configuration manually with the keys and values described in the :ref:`appconfig-table`.
 
   A. Using the template:
 
