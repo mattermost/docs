@@ -170,5 +170,16 @@ Slack Compatibility
 Like Slack, actions are specified in an "actions" list within the message attachment. Moreover, your integrations can react with ephemeral messages or message updates similar to Slack.
 
 However, the schema for these objects is different and Mattermost interactive message buttons are not intended to be Slack compatible:
- - Slack requires a Slack App and action URL to be pre-configured beforehand. Mattermost instead allows any webhook or slash command to create an interactive message without pre-configuration.
+
+- Slack requires a Slack App and action URL to be pre-configured beforehand. Mattermost instead allows any webhook or slash command to create an interactive message without pre-configuration.
  - With Slack, when a user performs an action, the request made to your integration contains information such as channel and team ids. With Mattermost, the request only contains the user id and additional information you specified in your context, which might include team and channel ids if these values are needed by your integration.
+
+Troubleshooting
+--------------------
+
+Message buttons don't show up for slash commands
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Make sure the `response type <https://docs.mattermost.com/developer/slash-commands.html#message-type>`_ of your slash command is set to ``in_channel``, not ``ephemeral``.
+
+Ephemeral messages do not have a state, and therefore do not support interactive message buttons at this time.
