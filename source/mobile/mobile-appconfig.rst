@@ -17,7 +17,7 @@ For example set up instructions, see our documentation on :doc:`MobileIron <mobi
 Mattermost AppConfig Values
 ---------------------------
 
-The following table shows all the configuration options that can be sent from the EMM provider of your choice to the Mattermost mobile apps.
+The following table shows all the configuration options that can be sent from the EMM provider of your choice to the Mattermost mobile apps. You can also :download:`download an XML template <mattermost-specfile.xml>` of the configuration file for use with your EMM provider. 
 
 +------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+------------------+-------------+--------------------------+
 | Key                    | Description                                                                                                                                                                                                     | Type   | Default Value | Valid Values     | iOS Support | Android for Work Support |
