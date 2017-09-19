@@ -171,7 +171,7 @@ Like Slack, actions are specified in an "actions" list within the message attach
 
 However, the schema for these objects is different and Mattermost interactive message buttons are not intended to be Slack compatible:
 
-- Slack requires a Slack App and action URL to be pre-configured beforehand. Mattermost instead allows any webhook or slash command to create an interactive message without pre-configuration.
+ - Slack requires a Slack App and action URL to be pre-configured beforehand. Mattermost instead allows any webhook or slash command to create an interactive message without pre-configuration.
  - With Slack, when a user performs an action, the request made to your integration contains information such as channel and team ids. With Mattermost, the request only contains the user id and additional information you specified in your context, which might include team and channel ids if these values are needed by your integration.
 
 Troubleshooting
