@@ -8,9 +8,9 @@ Thousands of organizations use Mattermost around the world in 14 languages for i
 
 - **Security** - Keep vital communications, including access to mobile and desktop apps, behind your firewall. Deploy using `dozens of security features <https://docs.mattermost.com/overview/security.html>`_ vetted by top security researchers. Data stays on servers you control, encrypted using keys you control.
 
-- **Configurability** - Adapt your deployment to your needs, preferences, and existing systems. The open source Mattermost platform enables advanced white labelling and customization with complete access to RESTful server APIs, drivers, webhooks and hundreds of 3rd party extensions.
+- **Configurability** - Adapt your deployment to your needs, preferences, and existing systems. The open source Mattermost server enables advanced white labelling and customization with complete access to RESTful server APIs, drivers, webhooks and hundreds of 3rd party extensions.
 
-- **Scalability** - Grow from dozens of users to tens of thousands on the same platform. Built on a high performance, single-tenant infrastructure, Mattermost E20 offers cluster-based high availability deployments with horizontal scaling and advanced performance monitoring.
+- **Scalability** - Grow from dozens of users to tens of thousands on the same server. Built on a high performance, single-tenant infrastructure, Mattermost E20 offers cluster-based high availability deployments with horizontal scaling and advanced performance monitoring.
 
 About the Mattermost open source project
 ----------------------------------------------

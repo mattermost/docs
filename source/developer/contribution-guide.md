@@ -4,8 +4,8 @@ Thank you for your interest in contributing to Mattermost. To help with translat
 
 ## Choose a Ticket
 
-1. Choose a ticket from the [Help Wanted GitHub Issues](https://github.com/mattermost/platform/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20%5BHelp%20Wanted%5D) list.
-    - Make sure that it doesn't have an [open pull request](https://github.com/mattermost/platform/pulls) for it.
+1. Choose a ticket from the [Help Wanted GitHub Issues](https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20%5BHelp%20Wanted%5D) list.
+    - Make sure that it doesn't have an open pull request in [the server repository](https://github.com/mattermost/mattermost-server/pulls) or in [the webapp repository](https://github.com/mattermost/mattermost-webapp/pulls) for it.
 
 2. Before starting to work on the ticket, comment to let people know you're working on it.
 
@@ -13,23 +13,23 @@ Thank you for your interest in contributing to Mattermost. To help with translat
 
 It is fine to submit a PR for a bug or an incremental improvement with less than 20 lines of code change without a Help Wanted issue if the change to existing behaviour is small. Some examples include
 
- - [Fix a formatting error in help text](https://github.com/mattermost/platform/pull/5640)
- - [Fix success typo in Makefile](https://github.com/mattermost/platform/pull/5809)
- - [Fix broken Cancel button in Edit Webhooks screen](https://github.com/mattermost/platform/pull/5612)
+ - [Fix a formatting error in help text](https://github.com/mattermost/mattermost-server/pull/5640)
+ - [Fix success typo in Makefile](https://github.com/mattermost/mattermost-server/pull/5809)
+ - [Fix broken Cancel button in Edit Webhooks screen](https://github.com/mattermost/mattermost-server/pull/5612)
  - [Fix Android app crashing when saving user notification settings](https://github.com/mattermost/mattermost-mobile/pull/364)
- - [Fix recent mentions search not working](https://github.com/mattermost/platform/pull/5878)
+ - [Fix recent mentions search not working](https://github.com/mattermost/mattermost-server/pull/5878)
 
 Core committers who review the PR are entitled to reject the PR if it significantly changes behavior or user expectations, which [requires a Help Wanted issue opened by the core team](http://docs.mattermost.com/process/help-wanted.html) so that the change can be tested, documented and supported.
 
 The best way to discuss opening a Help Wanted ticket with the core team is by [starting a conversation in the feature idea forum](https://www.mattermost.org/feature-ideas/).
 
-## Install Mattermost and set up a Fork
+## Install Mattermost and set up your Forks
 
 Once you have a ticket: 
 
 1. Follow the [developer setup instructions](http://docs.mattermost.com/developer/developer-setup.html) to install Mattermost.
 
-2. Create a branch with `<branch name>` set to the ID of the ticket you're working on, for example `PLT-394`, using the command: `git checkout -b <branch name>`
+2. Create a branch in your mattermost-server or mattermost-webapp repository with `<branch name>` set to the ID of the ticket you're working on, for example `PLT-394`, using the command: `git checkout -b <branch name>`
 
 3. Take a look at the [developer flow](https://docs.mattermost.com/developer/developer-flow.html) to learn how to work with the Mattermost codebase.
 
@@ -41,10 +41,10 @@ Before submitting a pull request (PR), check that:
 2. Your change has a [Help Wanted ticket](http://docs.mattermost.com/process/help-wanted.html)
 3. Your code follows the [Mattermost Style Guide](http://docs.mattermost.com/developer/style-guide.html).  
 4. Unit tests are included for new server side functionality. 
-5. Strings in user interface are included in [.../i18n/en.json](https://github.com/mattermost/platform/blob/master/i18n/en.json) and [.../webapp/i18n/en.json](https://github.com/mattermost/platform/tree/master/webapp/i18n/en.json) localization files. Files for other languages will automatically be updated through the [Mattermost Translation Server](http://translate.mattermost.com) and do not need to be included in the pull request.
+5. Strings in user interface are included in the server [i18n/en.json](https://github.com/mattermost/mattermost-server/blob/master/i18n/en.json) and in the webapp [i18n/en.json](https://github.com/mattermost/mattermost-webapp/tree/master/i18n/en.json) localization files. Files for other languages will automatically be updated through the [Mattermost Translation Server](http://translate.mattermost.com) and do not need to be included in the pull request.
 6. Change meets UX Guidelines of [Fast, Obvious, Forgiving](http://www.mattermost.org/design-principles/).
 7. If change requires user to understand a new concept or make a decision, PR for help documentation is submitted to [mattermost/docs](https://github.com/mattermost/docs).
-8. Change is thoroughly tested. If your change involves text processing, make sure to at least run markdown loadtests in [`/tests`](https://github.com/mattermost/platform/tree/master/tests) before submitting the PR. To run the loadtests:
+8. Change is thoroughly tested. If your change involves text processing, make sure to at least run markdown loadtests in [`/tests`](https://github.com/mattermost/mattermost-server/tree/master/tests) before submitting the PR. To run the loadtests:
     - Go to **System Console** > **Developer** and set **Enable Testing Commands** to true
     - Run `/test url test-markdown-basics.md` and follow the instructions
     - Run `/test url test-markdown-lists.md` and follow the instructions
@@ -56,8 +56,9 @@ Before submitting a pull request (PR), check that:
 When submitting a PR, check that:  
 
 1. PR is submitted against `master`
-2. PR title begins with the Jira Ticket ID (eg `PLT-394:`, [see examples](https://github.com/mattermost/platform/pulls?q=is%3Apr+is%3Aclosed))
+2. PR title begins with the Jira Ticket ID (eg `PLT-394:`, [see examples](https://github.com/mattermost/mattermost-server/pulls?q=is%3Apr+is%3Aclosed))
 3. PR comment describes the changes and how the feature is supposed to work
+4. Multiple dependant PRs in multiple repositories must include the dependency between them in the description.
 
 ## Managing an Open Pull Request 
 
@@ -83,8 +84,6 @@ If you've included your mailing address in the signed [Contributor License Agree
 ### Core Committers
 
 Core committers on Mattermost repositories consist of vetted core team members, including both community contributors as well as staff from Mattermost, Inc., who are trusted to review and merge PRs.
-
-Repository: https://github.com/mattermost/platform
 
 - **Core committers include**: coreyhulen, crspeller, csduarte, enahum, grundleborg, hmhealey, jwilander
 

@@ -99,7 +99,7 @@ Your work will become a permanent part of the open source project that you can r
 
 The simulation project reflects an investment from the core committers to work with the candidate through a series of significant contributions, answering questions, providing input and reviewing code as needed. It also reflects an investment from the candidate to explore the experience of working at Mattermost.
 
-The paid simulation project typically consists of a collection of challenging `Help Wanted tickets <https://github.com/mattermost/platform/issues?q=is%3Aissue+%5BHelp+Wanted%5D+is%3Aopen>`_ to be completed per the `Mattermost contribution guidelines <../developer/contribution-guide.html>`_ in a mutually agreed timeline reflecting 30-40 hours of development at the estimated skill level of the candidate.
+The paid simulation project typically consists of a collection of challenging `Help Wanted tickets <https://github.com/mattermost/mattermost-server/issues?q=is%3Aissue+%5BHelp+Wanted%5D+is%3Aopen>`_ to be completed per the `Mattermost contribution guidelines <../developer/contribution-guide.html>`_ in a mutually agreed timeline reflecting 30-40 hours of development at the estimated skill level of the candidate.
 
 A flat rate of $750 USD is offered to attempt the simulation project. This amount is a standard fee for simulations and not an indicator of the final offer that would be extended to a successful candidate. A `standard click-sign services agreement <https://docs.google.com/document/d/1G4wFLq_wHHEDJ-hrv5Kmu022mFJgh3rJ4-glM0W6riI/edit#heading=h.u3m8fmn6xapr>`_ is used to accept the fee. The fee is paid regardless of whether the project is completed.
 

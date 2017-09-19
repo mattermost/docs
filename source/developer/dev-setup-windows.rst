@@ -14,12 +14,18 @@ Installing Developer Components on Windows
 3. Download and install Node.js from https://nodejs.org/.
 4. Download and install Go 1.8 from https://golang.org/dl/.
 5. Install Yarn. Go to https://yarnpkg.com/en/docs/install#windows-tab and follow the installation instructions.
-6. Fork Mattermost on GitHub.com from https://github.com/mattermost/platform, then:
+6. Fork Mattermost server and webapp on GitHub from https://github.com/mattermost/mattermost-server and https://github.com/mattermost/mattermost-webapp, then:
   a. ``cd ~/go``
   b. ``mkdir -p src/github.com/mattermost``
   c. ``cd src/github.com/mattermost``
-  d. ``git clone https://github.com/{username}/platform.git``
-  e. ``cd platform``
+  d. ``git clone https://github.com/{username}/mattermost-server.git``
+  e. ``cd mattermost-server``
+  f. ``git config core.eol lf``
+  g. ``git config core.autocrlf input``
+  h. ``git reset --hard HEAD``
+  e. ``cd ..``
+  d. ``git clone https://github.com/{username}/mattermost-webapp.git``
+  e. ``cd mattermost-webapp``
   f. ``git config core.eol lf``
   g. ``git config core.autocrlf input``
   h. ``git reset --hard HEAD``

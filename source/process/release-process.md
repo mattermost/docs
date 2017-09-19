@@ -45,21 +45,21 @@ No pull requests for major features should be **merged** to the current release 
     - Queue an item for UX meeting to discuss worst UX bug and to do a 10-minute UI/UX bug bash
     - Notify community about upcoming release in Reception
 3. PM:
-    - PM area owners complete draft of Changelog in a WIP PR with updates for highlights, feature additions, known issues, compatibility updates for deprecated features, config.json, [database changes](https://github.com/mattermost/platform/blob/master/store/sql_upgrade.go#L181), [API changes](https://github.com/mattermost/platform/commits/master/model/client.go) (search `#api-proposal` and confirm with Dev) and WebSocket event changes; [see example](http://docs.mattermost.com/administration/changelog.html#compatibility)
+    - PM area owners complete draft of Changelog in a WIP PR with updates for highlights, feature additions, known issues, compatibility updates for deprecated features, config.json, [database changes](https://github.com/mattermost/mattermost-server/blob/master/store/sql_upgrade.go#L181), [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go) (search `#api-proposal` and confirm with Dev) and WebSocket event changes; [see example](http://docs.mattermost.com/administration/changelog.html#compatibility)
     - Review and update [company roadmap](https://about.mattermost.com/direction/) with which major features made it into the release
     - PM feature owners post draft section for the blog post in the Marketing Channel (including screenshots and a hashtag #mattermostXX where XX is the version number, see [example thread](https://pre-release.mattermost.com/core/pl/o611i4wz3pfafb6fpha9ggxxnh)) and [queue a tweet](https://pre-release.mattermost.com/core/pl/f3wsbwkgzfdr9nf9amtcwfpo6h)
     - Backlog is reviewed and tickets that won’t make it are moved to next release
 4. Docs:
     - Update [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) for any steps needed to upgrade to new version
     - Submit NOTICE.txt PR for any new libraries added from dev, if not added already. The following two files contain a list of dependencies:
-        - https://github.com/mattermost/platform/blob/master/webapp/package.json
-        - https://github.com/mattermost/platform/blob/master/glide.yaml
+        - https://github.com/mattermost/mattermost-webapp/blob/master/package.json
+        - https://github.com/mattermost/mattermost-server/blob/master/glide.yaml
 5. **(Team) Major Feature Complete Meeting (10:00am San Francisco time)**:  
     - Discuss worst bug currently on master
     - Discuss release highlights for marketing
     - Review status of last feature PRs to be merged
 6. Dev:
-    - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/platform/pulls) marked for the current release
+    - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
     - After the cut-off, any PRs that include significant code changes require approval of the release manager before merging.
 7. Marketing:
     - Prepare bullet points for release announcement
@@ -84,7 +84,7 @@ Day when leads and PM area owners decide which major features are included in th
     - Backlog is reviewed and tickets that won’t make it are moved to next release
     - Post a link to Release Discussion room for query of [remaining tickets in this release](https://mattermost.atlassian.net/issues/?filter=11102)
     - Update Changelog PR based on what's in/out of the release
-    - Create meta issue for release in GitHub (see [example](https://github.com/mattermost/platform/issues/3702))
+    - Create meta issue for release in GitHub (see [example](https://github.com/mattermost/mattermost-server/issues/3702))
     - Review the JIRA tickets remaining in the current release fix version and push those that won't make it to the next fix version
     - Review any features that are currently in Beta and confirm with leads if there are any to be promoted
 6. Marketing:
@@ -104,7 +104,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - Update [Team](http://www.mattermost.org/team/) page with new contributors
     - Add list of contributors to the Changelog draft
 3. Dev:
-    - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/platform/pulls) marked for the current release
+    - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
 4. PM:
     - Review all [Severity 1 bugs (data loss or security)](https://mattermost.atlassian.net/secure/IssueNavigator.jspa?mode=hide&requestId=10600) to consider for adding to Hotfix list.
     - Update documentation:  
@@ -335,7 +335,7 @@ Once final dot release build is ready to cut:
     - Update [ci-linux-mysql-prev](https://ci-linux-mysql-prev.mattermost.com) to the final release version
 5. Dev:
     - Delete RCs after final version is shipped    
-    - Check if any libraries need to be updated in all repositories, including `platform`, `desktop`, `mattermost-mobile` and `mattermost-redux`
+    - Check if any libraries need to be updated in all repositories, including `mattermost-server`, `mattermost-webapp`, `desktop`, `mattermost-mobile` and `mattermost-redux`
     - Test the GitLab RC containing the Mattermost final bits
     - Confirm gitlab.mattermost.com is updated to final build
     - Merge changes made to release branch into `master`
