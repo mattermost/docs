@@ -293,7 +293,7 @@ Check that your mobile application works properly with HTTPS by connecting to a 
 2. Erase your mobile application and reinstall it
 3. In your mobile app, enter the server URL https://demo.mattermost.com and confirm the connection is working by entering your credentials to login 
 
-If the login doesn't work, please report an issue to https://github.com/mattermost/mattermost-server/issues
+If the login doesn't work, please report an issue to https://github.com/mattermost/platform/issues
 
 If the login does work: 
 
