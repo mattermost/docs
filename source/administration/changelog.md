@@ -47,7 +47,6 @@ Release date: 2017-09-16
 - Added "Joined the channel" system message for the person who created the channel.
 
 #### Administration
-- Added a CLI command `platform channel modify` to convert a public channel to private, and vice versa.
 - Added a CLI command `platform channel move` to move a channel to another team.
 - CLI command `platform team delete` now lets you delete teams with no channels.
 
@@ -55,6 +54,7 @@ Release date: 2017-09-16
 - Removed the "Delete Channel" option for private channels, if you're the last channel member and policy setting restricts channel deletion to admins only.
 - In multi-node cluster environment, scheduled tasks such as LDAP sync will only happen on a single node through leader election for increased performance.
 - Added direct message channels to compliance exports.
+- Added a CLI command `platform channel modify` to convert a public channel to private, and vice versa.
 - Elasticsearch indexes over a certain age can be aggregated as part of the daily scheduled job.
 
 ### Bug Fixes
