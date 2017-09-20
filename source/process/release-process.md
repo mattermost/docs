@@ -44,7 +44,6 @@ No pull requests for major features should be **merged** to the current release 
     - Start posting a daily Zero Bug Balance query
     - Queue an item for UX meeting to discuss worst UX bug and to do a 10-minute UI/UX bug bash
     - Notify community about upcoming release in Reception
-    - Schedule daily triage from T-10 (Judgement Day) to T-5 (Release Candidate Testing Finished)
 3. PM:
     - PM area owners complete draft of Changelog in a WIP PR with updates for highlights, feature additions, known issues, compatibility updates for deprecated features, config.json, [database changes](https://github.com/mattermost/mattermost-server/blob/master/store/sql_upgrade.go#L181), [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go) (search `#api-proposal` and confirm with Dev) and WebSocket event changes; [see example](http://docs.mattermost.com/administration/changelog.html#compatibility)
     - Review and update [company roadmap](https://about.mattermost.com/direction/) with which major features made it into the release
@@ -305,7 +304,7 @@ Once final dot release build is ready to cut:
         - Major Feature Complete Meeting on T-12 at 10:00am San Francisco time
         - Judgment Day Meeting on T-10 at 10:00am San Francisco time
         - Code Complete Meeting on T-8 at 10:00am San Francisco time
-        - Release Triage and Update Meeting each weekday starting at T-8 and ending at T-2 at 9:30am San Francisco time for PM, QA and release dev.
+        - Release Triage and Update Meeting each weekday starting at T-10 and ending at T-2 at 9:30am San Francisco time for PM, QA and release dev.
     - Add “Release Retrospective” item to next team meeting, asking each core team member to give a letter grade (and brief explanation) for:
         - Release Quality
         - Release Process
