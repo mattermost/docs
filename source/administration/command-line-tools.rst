@@ -28,6 +28,7 @@ From the directory where the Mattermost server is installed, a
 -  Removing users from channels
 -  Listing all channels for a team
 -  Restoring previously deleted channels
+-  Modifying a channel's public/private type
 -  Migrating sign-in options
 -  Resetting multi-factor authentication for a user
 
