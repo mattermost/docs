@@ -145,14 +145,6 @@ Cannot connect a Mattermost account
 
   .. image:: ../images/zapier-error3.png
 
-Post Error
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-1. **"We hit an error creating a post message."**
-  a. Possible Solution: Ensure your **Message Text** is less than 4000 characters, since that is the maximum character limit for any single message in Mattermost.
-
-  .. image:: ../images/zapier-error5.png
-
 Deauthorize the Zapier App
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

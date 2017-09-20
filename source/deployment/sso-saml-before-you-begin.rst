@@ -6,7 +6,7 @@ Before you configure SAML:
 1. Make sure you have the `XML Security Library <https://www.aleksey.com/xmlsec/download.html>`_ installed on your Mattermost instance. The XML Security Library is usually included as part of Debian GNU/Linux.
 
 2. Install the *xmlsec1-openssl* library
- - On Ubuntu: ``sudo apt-get install libxmlsec1-openssl``
+ - On Ubuntu: ``sudo apt-get install xmlsec1``
  - On RHEL: ``sudo yum install xmlsec1-openssl``
 
 3. Generate encryption certificates for encrypting the SAML connection.

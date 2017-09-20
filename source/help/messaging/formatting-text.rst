@@ -185,7 +185,7 @@ Renders as:
 In-line Code
 ------------
 
-Create in-line monospaced font by surrounding it with backticks.
+Create in-line monospaced font by surrounding it with backticks (`), not with single quotes (').
 
 .. code-block:: none
 
@@ -227,13 +227,13 @@ Inline image with link
 
   .. code-block:: none
 
-    [![Mattermost](../../images/icon-76x76.png)](https://github.com/mattermost/platform)
+    [![Mattermost](../../images/icon-76x76.png)](https://github.com/mattermost/mattermost-server)
 
   Renders as:
 
   .. image:: ../../images/icon-76x76.png
     :alt: Mattermost
-    :target: https://github.com/mattermost/platform
+    :target: https://github.com/mattermost/mattermost-server
 
 Inline image displayed at 50 pixels wide and 76 pixels high
   .. code-block:: none

@@ -1,7 +1,7 @@
 Command Line Tools
 ==================
 
-From the directory where the Mattermost platform is installed, a
+From the directory where the Mattermost server is installed, a
 ``platform`` command is available for configuring the system, including:
 
 **General Administration**
@@ -28,6 +28,7 @@ From the directory where the Mattermost platform is installed, a
 -  Removing users from channels
 -  Listing all channels for a team
 -  Restoring previously deleted channels
+-  Modifying a channel's public/private type
 -  Migrating sign-in options
 -  Resetting multi-factor authentication for a user
 
@@ -35,18 +36,37 @@ From the directory where the Mattermost platform is installed, a
     :backlinks: top
     :local:
 
+Using the CLI
+^^^^^^^^^^^^^
+
+To run the CLI commands, you must be in the directory that contains the Mattermost executable. On a default install of Mattermost, the directory is ``/opt/mattermost/bin``. The name of the executable is ``platform``.
+
+**For example, to get the Mattermost version on a default installation of Mattermost:**
+
+  .. code-block:: bash
+
+    cd /opt/mattermost/bin
+    sudo ./platform version
+
+Using the CLI on GitLab Omnibus
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+On GitLab Omnibus, you must be in the following directory when you run CLI commands: ``/opt/gitlab/embedded/service/mattermost``. Also, you must run the commands as the user *mattermost* and specify the location of the configuration file. The executable is ``/opt/gitlab/embedded/bin/mattermost``.
+
+**For example, to get the Mattermost version on GitLab Omnibus:**
+
+  .. code-block:: bash
+
+    cd /opt/gitlab/embedded/service/mattermost
+    sudo -u mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json version
+
+.. note::
+  The example commands in the documentation are for a default installation of Mattermost. You must modify the commands so that they work on GitLab Omnibus.
+
 Mattermost 3.6 and later
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 The new CLI tool is supported in Mattermost 3.6 and later. To see available commands in the old CLI tool, see `Mattermost 3.5 and earlier`_.
-
-Typing ``sudo ./platform help`` and ``sudo ./platform help {command}`` returns help documentation for the CLI tool or any CLI command in particular.
-
-To return the help documentation in GitLab omnibus, type
-
-    .. code-block:: none
-
-      sudo -u mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json help
 
 Notes:
 
@@ -90,11 +110,23 @@ platform channel
 
   Child Commands
     -  `platform channel add`_ - Add users to a channel
+    -  `platform channel archive`_ - Archive a channel
     -  `platform channel create`_ - Create a channel
     -  `platform channel delete`_ - Delete a channel
     -  `platform channel list`_ - List all channels on specified teams
+    -  `platform channel modify`_ - Modify a channel's public/private type
+    -  `platform channel move`_ - Move a channel to another team
     -  `platform channel remove`_ - Remove users from a channel
-    -  `platform channel restore`_ - Restore a channels
+    -  `platform channel restore`_ - Restore a channel from the archive
+
+.. _channel-value-note:
+
+.. note::
+    **{channel} value**
+
+    For the *add*, *archive*, *delete*, *remove* and *restore* commands, you can specfiy the *{channels}* value by {team}:{channel} using the team and channel URLs, or by using channel IDs. For example, in the following URL the *{channels}* value is *myteam:mychannel*:
+
+    ``https://example.com/myteam/channels/mychannel``
 
 platform channel add
 ~~~~~~~~~~~~~~~~~~~~
@@ -112,6 +144,23 @@ platform channel add
 
       sudo ./platform channel add 8soyabwthjnf9qibfztje5a36h user@example.com username
       sudo ./platform channel add myteam:mychannel user@example.com username
+
+platform channel archive
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Archive a channel. Archived channels are not accessible to users, but remain in the database. To restore a channel from the archive, see `platform channel restore`_. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs.
+
+  Format
+    .. code-block:: none
+
+      platform channel archive {channels}
+
+  Examples
+    .. code-block:: none
+
+      sudo ./platform channel archive 8soyabwthjnf9qibfztje5a36h
+      sudo ./platform channel archive myteam:mychannel
 
 platform channel create
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -144,7 +193,7 @@ platform channel delete
 ~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Archives a channel with all related information, including posts. The channels are not deleted from the database. Channels can be specified by {team}:{channel} using the team and channel names or IDs.
+    Permanently delete a channel along with all related information, including posts from the database. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs.
 
   Format
     .. code-block:: none
@@ -173,6 +222,45 @@ platform channel list
 
       sudo ./platform channel list myteam
 
+platform channel modify
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Modify a channel's public/private type.
+
+  Format
+    .. code-block:: none
+
+      platform channel modify
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform channel modify myteam:mychannel --private
+
+  Options
+    .. code-block:: none
+
+          --public   Change a private channel to be public.
+          --private  Change a public channel to be private.
+
+platform channel move
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Move channels to another team. The command validates that all users in the channel belong to the target team. Incoming/Outgoing webhooks are moved along with the channel. Channels can be specified by ``[team]:[channel]`` or by channel ID.
+
+  Format
+    .. code-block:: none
+
+      platform channel move
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform channel move 8soyabwthjnf9qibfztje5a36h
+      sudo ./platform channel move myteam:mychannel
+
 platform channel remove
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -194,7 +282,7 @@ platform channel restore
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Restore a previously deleted channel. Channels can be specified by {team}:{channel} using the team and channel names or IDs.
+    Restore a channel from the archive. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs.
 
   Format
     .. code-block:: none
@@ -623,6 +711,10 @@ platform user migrate\_auth
     .. code-block:: none
 
       sudo ./platform user migrate_auth email ladp email
+  Options
+    .. code-block:: none
+
+      --force  Ignore duplicate entries on the LDAP server.
 
 platform user password
 ~~~~~~~~~~~~~~~~~~~~~~~~

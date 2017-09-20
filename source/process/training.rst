@@ -2,13 +2,13 @@
 Onboarding
 ==================================================
 
-This document in intended for new hires to summarize norms for working at Mattermost, Inc. including:
+This document is intended for new hires to summarize norms for working at Mattermost, Inc. including:
 
 - `Getting Started Checklist`_ - Getting ready to work here
 - `Meetings`_ - When we get together and why
 - `Mindsets`_ - Shared toolsets we have for solving problems
 - `Terminology`_- Shared vocabulary to convey ideas quickly
-- `Training`_ - Material available to help us ramp quickly in different areas.
+- `Training`_ - Material available to help us ramp quickly in different areas
 
 .. contents::
     :backlinks: top
@@ -16,6 +16,11 @@ This document in intended for new hires to summarize norms for working at Matter
 ---------------------------------------------------------
 Getting Started Checklist
 ---------------------------------------------------------
+
+Important things to know
+---------------------------------------------------------
+
+- Never sign any agreement on behalf of the company. The CEO is the only person authorized to sign an agreement on behalf of Mattermost, Inc. The only exception is that you are authorized to sign a non-disclosure agreement to enter a physical space. If you have questions, please check with your manager. 
 
 Hiring
 ---------------------------------------------------------
@@ -26,9 +31,10 @@ Hiring
 T-minus 1-3 weeks
 ---------------------------------------------------------
 
-- (People Ops & New Hire) People Ops should find out new hire's preference for laptop, either to be purchased or taken from stock and shipped by People Ops or purchased locally by new hire and expensed. Windows laptops generally cost less than Macs so budget is based on Macs. For non-developers, budget is cost of a Macbook in your local area, for developers budget is cost of a Macbook Pro.
+- (People Ops & New Hire) People Ops should find out new hire's preference for laptop, either to be purchased or taken from stock and shipped by People Ops or purchased locally by new hire and expensed. Windows laptops generally cost less than Macs so budget is based on Macs. For non-developers, budget is cost of a Macbook in your local area, for developers budget is cost of a Macbook Pro. Since these items are company property, you do not need to buy insurance or extended warranties for them, but you do need to report any loss or damage to People@mattermost.com as soon as it occurs.
 - (New Hire) Read the entirety of Onboarding page for info on meetings, mindsets, terminology and training materials.
-
+- (New Hire) Ask your manager for a link to the CEO's calendar to schedule a 45 minute meeting on your first day 
+ 
 T-minus 1 week
 ---------------------------------------------------------
 
@@ -41,13 +47,15 @@ First Day
 
 - (Manager) Posts welcome message in stand-up channel
 - (Manager) Meets New Hire for first 1-1 meeting
-- (Buddy) Meets New Hire for first 1-1 meeting,
+- (Buddy) Meets New Hire for first 1-1 meeting
+- (CEO) Meets New Hire for welcome meeting 
+- (New Hire) Confirm with Manager all HR paperwork is completed by end of first day (should have been sent in advance). 
 
 ---------------------------------------------------------
 Meetings
 ---------------------------------------------------------
 
-This section summarizes norms for public and private meetings for the Mattermost community and for Mattermost Inc.
+This section summarizes norms for public and private meetings for the Mattermost community and for Mattermost staff (people paid by Mattermost, Inc.).
 
 Timezones 
 ---------------------------------------------------------
@@ -55,6 +63,16 @@ Timezones
 When proposing meetings use famous cities as references for time (e.g. 9am New York time), since it's clear and `easy to web search <https://www.google.com/search?q=time+in+new+york&oq=time+in+new+&aqs=chrome.1.0l2j69i57j0l3.3135j0j7&sourceid=chrome&ie=UTF-8>`_. Avoid using "UTC", as it has been shown to cause confusion.
 
 When selecting a timezone city, use the most well-known city in a country where at least one team member is located. Exception: When possible, use a city where we have an official mailing address, e.g. In Western Americas use Palo Alto, instead of San Francisco. In Eastern Americas use Toronto, instead of New York. 
+
+Scheduling Recurring Group Meetings
+---------------------------------------------------------
+
+Recurring meetings with more than two people should have one or more regular slots on the calendar reserved so that meetings can be coordinated in a straight-forward way. 
+
+1. Meetings with internal colleagues should be coordinated by checking everyone's availability in G Suite Calendar. 
+2. Meetings with external colleagues should be coordinated manually with one internal person coordinating everyone's G Suite Calendars 
+
+For efficiency, when Mattermost works with advisors and consultants who engage with 2 or more internal team members, we aim to schedule meetings in regular slots (or a collection of regular slots) 2-4 weeks apart. 
 
 Open Meetings
 ---------------------------------------------------------
@@ -64,8 +82,8 @@ Developer Meeting
 
 **Open to the public** - (Developers - 1-2 hours/week) Wednesdays 10:00 (`San Francisco Time <http://everytimezone.com/>`_)
 
-- Goal: Discuss developer issues across Mattermost Inc, key contributors and the contributor community.
-- Attendees: (required) Mattermost Inc developers, (optional) key contributors, contributors and anyone who would like to join.
+- Goal: Discuss developer issues across Mattermost staff, key contributors and the contributor community.
+- Attendees: (required) Mattermost staff developers, (optional) key contributors, contributors and anyone who would like to join.
 
 Procedure:
 
@@ -77,16 +95,16 @@ Procedure:
 To review past agendas for the Developer meeting in the `Developers channel <https://pre-release.mattermost.com/core/channels/developers>`_ click on the ``#devmeeting`` hashtag in any of the meeting notes, or search for it directly.
 
 
-Mattermost Inc-only Meetings
+Mattermost Staff Meetings
 ----------------------------------------------------
 
-For confidentiality of customers, internal process meetings are limited to Mattermost Inc. only.
+For confidentiality of customers, internal process meetings are limited to Mattermost staff only.
 
 
 Sprint Planning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost Staff Only** - (Developer - 5-10 minutes/week) Tuesdays between 10:00 and 11:00 (`San Francisco Time <http://everytimezone.com/>`_)
+**Mattermost staff only** - (Developer - 5-10 minutes/week) Tuesdays between 10:00 and 11:00 (`San Francisco Time <http://everytimezone.com/>`_)
 
 - Goal: Review and discuss tickets selected by developer for next sprint
 - Attendees: (required) Each developer in sequence, plus spint planners (one dev, one PM), (optional) Mattermost staff colleagues welcome
@@ -107,10 +125,10 @@ Procedure:
 Triage Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost Inc-only** - (Triage team - 1-3 hours/week) Monday, Wednesday, Friday 09:00 (`San Francisco Time <http://everytimezone.com/>`_)
+**Mattermost staff-only** - (Triage team - 1-3 hours/week) Monday, Wednesday, Friday 09:00 (`San Francisco Time <http://everytimezone.com/>`_)
 
 - Goal: To provide consistent review, prioritization and ownership assignment of all tickets
-- Attendees: (required) dev and PM from Mattermost Inc., typically leads (optional) other Mattermost Inc. colleagues welcome
+- Attendees: (required) dev and PM from Mattermost staff, typically leads (optional) other Mattermost staff welcome
 
 Note:
 
@@ -130,7 +148,7 @@ Note:
 
 Procedure:
 
-1. (Chair): Just prior to meeting, post **Hangout** link in `Standup private channel <https://pre-release.mattermost.com/core/channels/stand-up>`_ (Mattermost Inc. only)
+1. (Chair): Just prior to meeting, post **Hangout** link in `Standup private channel <https://pre-release.mattermost.com/core/channels/stand-up>`_ (Mattermost staff only)
 
 2. (Attendees): Join the link
 
@@ -139,14 +157,14 @@ Procedure:
 Leads Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost Inc-only** - (Leads - 1-3 hours/week) Monday, Wednesday, Friday after Triage Meeting (09:00 `San Francisco Time <http://everytimezone.com/>`_)
+**Mattermost staff-only** - (Leads - 1-3 hours/week) Monday and Wednesday (9:00 `San Francisco Time <http://everytimezone.com/>`_)
 
 - Goal: Address leadership and process topics
-- Attendees: (required) dev, PM and community/marketing leads from Mattermost Inc. (optional) other Mattermost Inc. colleagues welcome
+- Attendees: (Required) Dev, PM, community/marketing leads from Mattermost staff, with sales lead and other Mattermost staff optional. 
 
 Note:
 
-- Decisions should go to Leads meetings when there is lack of clarify or ownership
+- Decisions should go to Leads meetings when there is lack of clarity or ownership, or to discuss special case topics where process is not well defined. 
 
     - When possible, decision-making should belong to the people closes to details
     - Individual developers or PMs should make most decisions, and raise to developer or PM team if things are unclear, and go to Leads if lack of clarify persists.
@@ -159,22 +177,20 @@ Note:
 
 Procedure:
 
-1. (PM & Dev Leads): Stay in **Hangout** after Triage meeting and message community/marketing lead to join.
+1. (Leads): Queue items in Leads channel for discussion. 
 
-2. (Attendees): Discuss agenda items in Leads private channel
-
-3. (Attendees): Respond to respective colleagues on decisions from Leads meeting
+2. (Leads): During meeting discuss agenda items in sequence. 
 
 Platform Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost Inc-only** - (Platform colleagues - 1 hour/week) Thursday's at 10:00 (`San Francisco Time <http://everytimezone.com/>`_).
+**Mattermost Inc-only** - (Product Staff - 1 hour/week) Thursday's at 10:00 (`San Francisco Time <http://everytimezone.com/>`_).
 
-Regular team meeting for platform team at Mattermost Inc.
+Regular team meeting for product staff team at Mattermost Inc.
 
 - Goal: Increase team output by effectively reviewing priorities and finding blindspots
 - Scope: Mattermost Inc-only meeting given confidential customer issues discussed
-- Attendees: Mattermost Inc colleagues working on platform
+- Attendees: Mattermost Inc colleagues working on mattermost-server and mattermost-webapp
 
 Platform meeting consists of two parts, Team Operation Review Meeting and Product Staff Meeting.
 
@@ -184,7 +200,7 @@ Only the product team attends the Product Staff Meeting, others' attendance is o
 
 Procedure:
 
-1. (Chair) 3-hours before standup, post reminders in `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only)
+1. (Chair) 3-hours before standup, post reminders in `Platform Meeting private channel <https://pre-release.mattermost.com/core/channels/platform-meeting>`_ (Mattermost Inc only)
 
 ::
 
@@ -328,6 +344,33 @@ This system has several benefits:
 3. Eventually the Mini-boss will be as skilled at reviewing as the End-boss, who will have nothing futher to add after the Mini-boss review. At this point, the Mini-boss becomes an End-boss, ready to train a new Mini-boss.
 
 
+Medic, Field Surgeon, Plastic Surgeon
+---------------------------------------------
+
+When making project investment decisions we optimize for high impact in the context of customer obsession, empowered by ownership, while being constrained by "be proud of what you build". 
+
+The failure case is over-investing in processes and infrastructure, stealing mana from higher priority work, reducing speed and agility for the company, and unnecessarily increasing cost and bureacracy. 
+
+In making these trade-offs, consider the following mindsets:
+
+- **Medic** 
+
+   Fix something that's important, broken and dangerous as fast as possible. Speed is critical, do not care about "leaving a scar" in our architecture or business process, just own it and get it done. Solve the problem, DO NOT OVER BUILD.
+ 
+   *Example:* Something incorrect on our public website with more than 100 page views a month should be fixed immediately and not put on a queue tied to a longer term project. 
+
+- **Field Surgeon** 
+
+   Triage things that are important, broken but not dangerous, and fix the most important things with a minimum of time and cost. Scarring should be a low-priority consideration--it is fine to leave scars and it is fine to spend a little energy to avoid big ones.  Solve the problem for the next stage of growth, but don't solve if to two to three stages ahead. 
+
+   *Example:* In Mattermost, spend 2 mana to enable automated messages over 4000 characters to be broken into multiple posts instead of being rejected, which is a problem every developer hits when they attempt to output log information via curl commands.
+
+- **Plastic Surgeon** 
+
+   Fix and optimize critical, high volume flows in our customer experience and product with heavy investment if needed to make high impact changes. Scars can be avoided and removed to produce a high impact result.  
+
+   *Example:* Click-tracking traffic on Mattermost.com and optimizing flows to direct visitors to convert into contact and purchase actions. 
+
 --------------------------
 Terminology
 --------------------------
@@ -372,7 +415,7 @@ An obvious error in Mattermost software. Changes required to accommodate unsuppo
 Dead Tarzan
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Discarding an imperfect solution without a clearly thought out alternative. Based on idea of `Tarzan of the Jungle <https://en.wikipedia.org/wiki/Tarzan>`_ letting go of a vine without having a new vine to swing to.
+Discarding an imperfect solution without a clearly thought out and working alternative. Based on idea of `Tarzan of the Jungle <https://en.wikipedia.org/wiki/Tarzan>`_ letting go of a vine without having a new vine to swing to.
 
 Decking
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -540,7 +583,7 @@ The following table summarizes abbreviations used in the above table:
 Leadership Coaching
 --------------------------
 
-To advanced the skills of senior and functional leaders we bring in experts to advise on key functions, including sales, operations, product, marketing, strategy, general management and other specialized topics. 
+To advance the skills of senior and functional leaders, we bring in experts to advise on key functions, including sales, operations, product, marketing, strategy, general management, and other specialized topics. 
 
 - As an example, `Jono Bacon <http://www.jonobacon.org/about/>`_--a leading author, speaker and consultant on open source community advocacy--meets with our community team regularly to refine our processes and understanding. There's a range of similiarly adept company advisers that help advance our thinking and capabilities in critical ways.
 

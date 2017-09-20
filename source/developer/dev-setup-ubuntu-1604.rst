@@ -39,10 +39,6 @@ Set up your development environment for building, running, and testing Mattermos
 
        ``sudo tar -C /usr/local -xzf go1.8.linux-amd64.tar.gz``
 
-    c. Modify permissions on ``/usr/local/go``. Replace *{user}* and *{group}* with the user and group that you are logged in with.
-
-      ``sudo chown -R {user}.{group} /usr/local/go``
-
 4. Set up your Go workspace:
 
   a. ``mkdir ~/go``
@@ -64,7 +60,7 @@ Set up your development environment for building, running, and testing Mattermos
 
     a. Add the Node.js repository to your repository list.
 
-      ``curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -``
+      ``curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -``
 
     b. Install Node.js
 
@@ -72,9 +68,11 @@ Set up your development environment for building, running, and testing Mattermos
 
 6. Install Yarn. Go to https://yarnpkg.com/en/docs/install and follow the installation instructions.
 
-7. Fork Mattermost on GitHub from https://github.com/mattermost/platform.
+7. Fork Mattermost server on GitHub from https://github.com/mattermost/mattermost-server.
 
-8. Download the Mattermost code from your forked repository:
+8. Fork Mattermost webapp on GitHub from https://github.com/mattermost/mattermost-webapp.
+
+9. Download the Mattermost code from your forked repositories:
 
   a. Create the directory for the code.
 
@@ -84,8 +82,12 @@ Set up your development environment for building, running, and testing Mattermos
 
     ``cd ~/go/src/github.com/mattermost``
 
-  c. Clone your Mattermost fork. In the following command, replace *{username}* with your GitHub username.
+  c. Clone your Mattermost server fork. In the following command, replace *{username}* with your GitHub username.
 
-    ``git clone https://github.com/{username}/platform.git``
+    ``git clone https://github.com/{username}/mattermost-server.git``
+
+  d. Clone your Mattermost webapp fork. In the following command, replace *{username}* with your GitHub username.
+
+    ``git clone https://github.com/{username}/mattermost-webapp.git``
 
 Now that everything is set up, you are ready to compile and run Mattermost. See :doc:`dev-setup-compiling`.

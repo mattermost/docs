@@ -44,6 +44,8 @@ Register an OAuth 2.0 Application
 
 .. image:: ../images/oauth2_authorization_screen.PNG
 
+Only System Admins can set OAuth 2.0 applications as trusted.
+
 4 - Specify the **Display Name**: Enter a name for your application made of up to 64 characters. This is the name users will see when granting access to the application, when viewing a list of authorized applications in **Account Settings > Security > OAuth 2.0 Applications** and when viewing a list of OAuth 2.0 applications in **Main Menu** > **Integrations**.
 
 5 - Add **Description**: This is a short description of your application that users will see when viewing a list of authorized applications in **Account Settings > Security > OAuth 2.0 Applications**.

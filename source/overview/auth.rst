@@ -51,6 +51,7 @@ Authentication options outside of a private network
 When deploying Mattermost to a DMZ location outside the security of a private network, additional authentication options include: 
 
 - `Okta integration via SAML <https://docs.mattermost.com/deployment/sso-saml-okta.html>`_
+- `OneLogin integration via SAML <https://docs.mattermost.com/deployment/sso-saml-onelogin.html>`_
 - `Active Directory Federation Services via SAML <https://docs.mattermost.com/deployment/sso-saml-adfs.html>`_
 - `SAML 2.0 authentication <https://docs.mattermost.com/deployment/sso-saml.html>`_
 - `Google Apps <https://docs.mattermost.com/deployment/sso-google.html>`_

@@ -12,7 +12,7 @@ If you have any problems installing, see the `troubleshooting guide <https://www
 Production Docker Setup on Ubuntu
 ----------------------------------------------------
 
-1. **Install Docker Compose** using `the Ubuntu online guide <https://docs.docker.com/installation/ubuntulinux/>`_ or these instructions:
+1. **Install Docker** using `the Ubuntu online guide <https://docs.docker.com/installation/ubuntulinux/>`_ or these instructions:
 
    .. code:: bash
 
@@ -23,7 +23,14 @@ Production Docker Setup on Ubuntu
        sudo service docker start
        newgrp docker
 
-2. **Deploy the Mattermost Production Docker** setup by running:
+2. **Install Docker Compose** using `the online guide <https://docs.docker.com/compose/install/>`_. You have to download the latest release from `Docker Compose Github's page <https://github.com/docker/compose/releases/>`_ and put the binary on your :code:`/usr/local/bin` folder. Usually, you can use the following command, replacing :code:`$dockerComposeVersion` by the Docker Compose version to install :
+
+   .. code:: bash
+   
+      curl -L https://github.com/docker/compose/releases/download/$dockerComposeVersion/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+      sudo chmod +x /usr/local/bin/docker-compose
+
+3. **Deploy the Mattermost Production Docker** setup by running:
 
    .. code:: bash
 
@@ -32,13 +39,13 @@ Production Docker Setup on Ubuntu
        docker-compose build
        docker-compose up -d
 
-3. **Configure TLS** by following `the instructions <https://github.com/mattermost/mattermost-docker#install-with-ssl-certificate>`_
+4. **Configure TLS** by following `the instructions <https://github.com/mattermost/mattermost-docker#install-with-ssl-certificate>`_
 
-4. **Configure Email** by following the `SMTP email setup guide <http://docs.mattermost.com/install/smtp-email-setup.html>`_
+5. **Configure Email** by following the `SMTP email setup guide <http://docs.mattermost.com/install/smtp-email-setup.html>`_
 
-5. (Optional) to enable enterprise features under **System Console** > **Edition and License** upload your `trial license <https://about.mattermost.com/trial/>`_ or `subscription license file <https://about.mattermost.com/pricing/>`_ received via email.
+6. (Optional) to enable enterprise features under **System Console** > **Edition and License** upload your `trial license <https://about.mattermost.com/trial/>`_ or `subscription license file <https://about.mattermost.com/pricing/>`_ received via email.
 
-6. **Configure your server** based on `configuration settings documentation <http://docs.mattermost.com/administration/config-settings.html>`_
+7. **Configure your server** based on `configuration settings documentation <http://docs.mattermost.com/administration/config-settings.html>`_
 
 Additional Guides:
 
@@ -58,4 +65,11 @@ Production Docker Setup on Mac OS X
 
 You can run a production deployment on Mac OS X by `installing Docker Compose using the online guide <http://docs.docker.com/installation/mac/>`_ then following the above instructions.
 
-**Other options:** To install a feature-equivalent version of Mattermost that does not upgrade to enterprise features using a license key, Mattermost Team Edition, repeat steps above excluding ``-b enterprise`` from ``git clone`` command.
+Other options:
+--------------
+
+To install Mattermost Team Edition instead of Mattermost Enterprise Edition, open ``docker-compose.yaml`` and comment out the following line:
+
+  .. code-block:: text
+
+    dockerfile: Dockerfile-enterprise

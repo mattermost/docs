@@ -15,11 +15,11 @@ You can use any certificate that you want, but these instructions show you how t
 2. Install git.
 
   If you are using Ubuntu or Debian:
-  
+
   ``sudo apt-get install git``
 
   If you are using RHEL:
-  
+
   ``sudo yum install git``
 
 3. Clone the Let's Encrypt repository on GitHub.
@@ -33,11 +33,11 @@ You can use any certificate that you want, but these instructions show you how t
 5. Stop NGINX.
 
   On Ubuntu 14.04 and RHEL 6.6:
-  
+
   ``sudo service nginx stop``
-  
+
   On Ubuntu 16.04 and RHEL 7.1:
-  
+
   ``sudo systemctl stop nginx``
 
 6. Run ``netstat`` to make sure that nothing is listening on port 80.
@@ -53,9 +53,9 @@ You can use any certificate that you want, but these instructions show you how t
 8. Open the file ``/etc/nginx/sites-available/mattermost`` as root in a text editor and update the *server* section to incorporate the highlighted lines in the following sample. Make sure to replace *{domain-name}* with your own domain name, in 3 places.
 
   .. code-block:: none
-    :emphasize-lines: 6-10, 13, 16-23
+    :emphasize-lines: 6-10, 13, 16-23, 32
 
-    . 
+    .
     .
     .
     proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=mattermost_cache:10m max_size=3g inactive=120m use_temp_path=off;
@@ -68,8 +68,8 @@ You can use any certificate that you want, but these instructions show you how t
 
     server {
       listen 443 ssl http2;
-      server_name    . . . ;
-      
+      server_name    {domain-name} ;
+
       ssl on;
       ssl_certificate /etc/letsencrypt/live/{domain-name}/fullchain.pem;
       ssl_certificate_key /etc/letsencrypt/live/{domain-name}/privkey.pem;
@@ -78,22 +78,28 @@ You can use any certificate that you want, but these instructions show you how t
       ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
       ssl_prefer_server_ciphers on;
       ssl_session_cache shared:SSL:10m;
-    }
-    
-    location /api/v3/users/websocket {
+
+      location ~ /api/v[0-9]+/(users/)?websocket$ {
         proxy_set_header Upgrade $http_upgrade;
         .
         .
         .
 
+    location / {
+        proxy_http_version 1.1;
+        .
+        .
+        .
+
+
 9. Restart NGINX.
 
   On Ubuntu 14.04 and RHEL 6.6:
-  
+
   ``sudo service nginx start``
-  
+
   On Ubuntu 16.04 and RHEL 7.1:
-  
+
   ``sudo systemctl start nginx``
 
 10. Check that your SSL certificate is set up correctly.
@@ -104,7 +110,7 @@ You can use any certificate that you want, but these instructions show you how t
 11. Configure ``cron`` so that the certificate will automatically renew every month.
 
   ``crontab -e``
-  
+
   In the following line, use your own domain name in place of *{domain-name}*
-  
+
   ``@monthly /home/ubuntu/letsencrypt/letsencrypt-auto certonly --reinstall --nginx -d {domain-name} && sudo service nginx reload``

@@ -45,6 +45,10 @@ Create the System Admin user and set up Mattermost for general use.
 
 8. Restart the Mattermost Service.
 
-  On Ubuntu 14.04 and RHEL 6.6: ``sudo restart mattermost``
+  On Ubuntu 14.04 and RHEL 6.6:
 
-  On Ubuntu 16.04 and RHEL 7.1: ``sudo systemctl restart mattermost``
+  ``sudo restart mattermost``
+
+  On Ubuntu 16.04, Debian Jessie, and RHEL 7.1:
+
+  ``sudo systemctl restart mattermost``

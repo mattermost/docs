@@ -14,7 +14,11 @@ Channel
 User
   Optional. If present, User objects must occur after the Team and Channel objects in the file and before any Post objects. Each User object defines the teams and channels that the user is a member of. If the corresponding teams and channels are not in the data file, then they must exist in the Mattermost database.
 Post
-  Optional. If present, Post objects must occur after all other objects in the file. Each Post object defines the team, the channel, and the username of the user who posted the message. If the corresponding team, channel, or user are not in the data file, then they must exist in the Mattermost database.
+  Optional. If present, Post objects must occur after the last User object but before any DirectChannel objects. Each Post object defines the team, the channel, and the username of the user who posted the message. If the corresponding team, channel, or user are not in the data file, then they must exist in the Mattermost database.
+DirectChannel
+  Optional. If present, DirectChannel objects must occur after all Post objects in the file and before any DirectPost objects.
+DirectPost
+  Optional. If present, DirectPost objects must occur after all other objects in the file. Each DirectPost object defines the usernames of the channel members and the username of the user who posted the message. If the corresponding usernames are not in the data file, then they must exist in the Mattermost database.
 
 With the exception of the Version object, each object has a field or a combination of fields that is used as the unique identifier of that object. The bulk loader uses the unique identifier to determine if the object being imported is a new object or an update to an existing object.
 
@@ -27,9 +31,12 @@ The identifiers for each object are listed in the following table:
   Team, *name*
   Channel, "*name*, *team*"
   User, *username*
+  UserNotifyProps, *username*
   UserTeamMembership, "*team*, *username*"
   UserChannelMembership, "*team*, *channel*, *username*"
   Post, "*channel*, *message*, *create_at*"
+  DirectChannel, *members*
+  DirectPost,  "*channel_members*, *user*, *message*, *create_at* "
 
 The following fragment is from a file that imports two teams, each with two channels, many users, and many posts.
 
@@ -432,28 +439,11 @@ Fields of the User object
       <td align="center" valign="middle">No</td>
     </tr>
     <tr class="row-odd">
-      <td valign="middle">selected_font</td>
-      <td valign="middle">string</td>
-      <td>The user’s display font, from the list available in Mattermost.</td>
-      <td align="center" valign="middle">No</td>
-      <td align="center" valign="middle">No</td>
-    </tr>
-    <tr class="row-odd">
       <td valign="middle">use_military_time</td>
       <td valign="middle">string</td>
       <td>How times should be displayed to this user. Must be one of the following values:<br>
         <kbd>"true"</kbd> - Use 24 hour clock.<br>
         <kbd>"false"</kbd> - Use 12 hour clock.</td>
-      <td align="center" valign="middle">No</td>
-      <td align="center" valign="middle">No</td>
-    </tr>
-    <tr class="row-odd">
-      <td valign="middle">name_format</td>
-      <td valign="middle">string</td>
-      <td>How names should be displayed to this user. Must be one of the following values:<br>
-        <kbd>"username"</kbd> - Show the username.<br>
-        <kbd>"nickname_full_name"</kbd> - Show the nickname if one exists, otherwise the first and last name.<br>
-        <kbd>"full_name"</kbd> - Show the first and last name.</td>
       <td align="center" valign="middle">No</td>
       <td align="center" valign="middle">No</td>
     </tr>
@@ -484,10 +474,122 @@ Fields of the User object
       <td align="center" valign="middle">No</td>
       <td align="center" valign="middle">No</td>
     </tr>
+    <tr class="row-odd">
+      <td valign="middle">tutorial_step</td>
+      <td valign="middle">string</td>
+      <td>Where to start the user tutorial. Must be one of the following values:<br>
+        <kbd>"1"</kbd>, <kbd>"2"</kbd> or <kbd>"3"</kbd> - Start from the specified tutorial step.<br>
+        <kbd>"999"</kbd> - Skip the user tutorial.</td>
+      <td align="center" valign="middle">No</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
   </table>
 
-Fields of the TeamMembership object
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fields of the UserNotifyProps object
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This object is a member of the User object.
+
+.. raw:: html
+
+  <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
+    <tfoot><tr><td colspan="5">[1] Not validated, but an error occurs if no such team exists when running in apply mode.</td></tr></tfoot>
+    <tr class="row-odd">
+      <th class="head">Field name</th>
+      <th class="head">Type</th>
+      <th class="head">Description</th>
+      <th class="head">Validated</th>
+      <th class="head">Mandatory</th>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">desktop</td>
+      <td valign="middle">string</td>
+      <td>Preference for sending desktop notifications. Must be one of the following values:<br>
+      <kbd>"all"</kbd> - For all activity.<br>
+      <kbd>"mention"</kbd> - Only for mentions.<br>
+      <kbd>"none"</kbd> - Never.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">desktop_duration</td>
+      <td valign="middle">string</td>
+      <td>Preference for how long desktop notifications remain on screen. Must be one of the following values:<br>
+      <kbd>"3"</kbd> - 3 seconds.<br>
+      <kbd>"5"</kbd> - 5 seconds.<br>
+      <kbd>"10"</kbd> - 10 seconds.<br>
+      <kbd>"0"</kbd> - Unlimited.</td>
+      <td align="center" valign="middle">No</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">desktop_sound</td>
+      <td valign="middle">string</td>
+      <td>Preference for whether desktop notification sound is played. Must be one of the following values:<br>
+      <kbd>"true"</kbd> - Sound is played.<br>
+      <kbd>"false"</kbd> - Sound is not played.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">email</td>
+      <td valign="middle">string</td>
+      <td>Preference for email notifications. Must be one of the following values:<br>
+      <kbd>"true"</kbd> - Email notifications are sent immediately.<br>
+      <kbd>"false"</kbd> - Email notifications are not sent.</td>
+      <td align="center" valign="middle">No</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">mobile</td>
+      <td valign="middle">string</td>
+      <td>Preference for sending mobile push notifications. Must be one of the following values:<br>
+      <kbd>"all"</kbd> - For all activity.<br>
+      <kbd>"mention"</kbd> - Only for mentions.<br>
+      <kbd>"none"</kbd> - Never.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">mobile_push_status</td>
+      <td valign="middle">string</td>
+      <td>Preference for when push notifications are triggered. Must be one of the following values:<br>
+      <kbd>"online"</kbd> - When online, away or offline.<br>
+      <kbd>"away"</kbd> - When away or offline.<br>
+      <kbd>"offline"</kbd> - When offline.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">channel</td>
+      <td valign="middle">string</td>
+      <td>Whether @all, @channel and @here trigger mentions. Must be one of the following values:<br>
+      <kbd>"true"</kbd> - Mentions are triggered.<br>
+      <kbd>"false"</kbd> - Mentions are not triggered.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">comments</td>
+      <td valign="middle">string</td>
+      <td>Preference for reply mention notifications. Must be one of the following values:<br>
+      <kbd>"any"</kbd> - Trigger notifications on messages in reply threads that the user starts or participates in.<br>
+      <kbd>"root"</kbd> - Trigger notifications on messages in threads that the user starts.<br>
+      <kbd>"never"</kbd> - Do not trigger notifications on messages in reply threads unless the user is mentioned.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">mention_keys</td>
+      <td valign="middle">string</td>
+      <td>Preference for custom non-case sensitive words that trigger mentions. Words must be separated by commas.</td>
+      <td align="center" valign="middle">No</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+  </table>
+
+Fields of the UserTeamMembership object
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This object is a member of the User object.
 
@@ -528,8 +630,8 @@ This object is a member of the User object.
     </tr>
   </table>
 
-Fields of the ChannelMembership object
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fields of the UserChannelMembership object
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This object is a member of the TeamMembership object.
 
@@ -566,6 +668,16 @@ This object is a member of the TeamMembership object.
       <td valign="middle">object</td>
       <td>The notify preferences for this user in this channel. Must be a <b>ChannelNotifyProps</b> object</td>
       <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">favorite</td>
+      <td valign="middle">boolean</td>
+      <td>Whether to favorite the channel. Must be one of the following values:<br>
+          <kbd>"true"</kbd> - Yes.<br>
+          <kbd>"false"</kbd> - No.</td>
+      </td>
+      <td align="center" valign="middle">No</td>
       <td align="center" valign="middle">No</td>
     </tr>
   </table>
@@ -611,7 +723,7 @@ This object is a member of the ChannelMembership object.
 Post object
 -----------
 
-Post objects must occur after all other objects in the file.
+ If present, Post objects must occur after the last User object in the file, but before any DirectChannel objects.
 
 Example Post object
 ~~~~~~~~~~~~~~~~~~~
@@ -627,7 +739,12 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
       channel: "channel-name",
       user: "username",
       message: "The post message",
-      create_at: 140012340013
+      create_at: 140012340013,
+      "flagged_by": [
+        "username1",
+        "username2",
+        "username3"
+      ]
     }
   }
 
@@ -687,5 +804,170 @@ Fields of the Post object
       <td>The timestamp for the post, in milliseconds since the Unix epoch.</td>
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">flagged_by</td>
+      <td valign="middle">array</td>
+      <td>Must contain a list of members who have flagged the post.</td>
+      <td align="center" valign="middle">No</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+  </table>
+
+DirectChannel object
+---------------------
+
+A direct channel can have from two to eight users as members of the channel. If there are only two members, Mattermost treats it as a Direct Message channel. If there are three or more members, Mattermost treats it as a Group Message channel.
+
+Example DirectChannel object
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For clarity, the object is shown using regular JSON formatting, but in the data file it cannot be spread across several lines. It must be all on one line.
+
+.. code-block:: javascript
+
+  {
+    "type": "direct_channel",
+    "direct_channel": {
+      "members": [
+        "username1",
+        "username2",
+        "username3"
+      ],
+      "header": "The Channel Header",
+      "favorited_by": [
+        "username1",
+        "username2",
+        "username3"
+      ]
+    }
+  }
+
+Fields of the DirectChannel object
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. raw:: html
+
+  <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
+    <tfoot>
+      <tr>
+        <td colspan="5">[1] Not validated, but an error occurs if one or more of the users don't exist when running in apply mode.
+        </td>
+      </tr>
+    </tfoot>
+    <tr class="row-odd">
+      <th class="head">Field name</th>
+      <th class="head">Type</th>
+      <th class="head">Description</th>
+      <th class="head">Validated</th>
+      <th class="head">Mandatory</th>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">members</td>
+      <td valign="middle">array</td>
+      <td>Must contain a list of members, with a minimum of two usernames and a maximum of eight usernames.</td>
+      <td align="center" valign="middle">No [1]</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">header</td>
+      <td valign="middle">string</td>
+      <td>The channel header.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">favorited_by</td>
+      <td valign="middle">array</td>
+      <td>Must contain a list of members who have favorited the channel.</td>
+      <td align="center" valign="middle">No</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+  </table>
+
+DirectPost object
+-----------------
+
+DirectPost objects must occur after all other objects in the file.
+
+Example DirectPost object
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For clarity, the object is shown using regular JSON formatting, but in the data file it cannot be spread across several lines. It must be all on one line.
+
+.. code-block:: javascript
+
+  {
+    "type": "direct_post",
+    "direct_post": {
+      "channel_members": [
+        "username1",
+        "username2",
+        "username3",
+      ],
+      "user": "username2",
+      "message": "Hello Group Channel",
+      "create_at": 140012340013,
+      "flagged_by": [
+        "username1",
+        "username2",
+        "username3"
+      ]
+    }
+  }
+
+Fields of the DirectPost object
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. raw:: html
+
+  <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
+    <tfoot>
+      <tr>
+        <td colspan="5">[1] Not validated, but an error occurs if no channels contain an identical list when running in apply mode.<br>[2] Not validated, but an error occurs if the user does not exist when running in apply mode.
+        </td>
+      </tr>
+    </tfoot>
+    <tr class="row-odd">
+      <th class="head">Field name</th>
+      <th class="head">Type</th>
+      <th class="head">Description</th>
+      <th class="head">Validated</th>
+      <th class="head">Mandatory</th>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">channel_members</td>
+      <td valign="middle">array</td>
+      <td>Must contain a list of members, with a minimum of two usernames and a maximum of eight usernames.</td>
+      <td align="center" valign="middle">No [1]</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">user</td>
+      <td valign="middle">string</td>
+      <td>The username of the user for this post.</td>
+      <td align="center" valign="middle">No [2]</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">message</td>
+      <td valign="middle">string</td>
+      <td>The message that the post contains.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">create_at</td>
+      <td valign="middle">int</td>
+      <td>The timestamp for the post, in milliseconds since the Unix epoch.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">flagged_by</td>
+      <td valign="middle">array</td>
+      <td>Must contain a list of members who have flagged the post.</td>
+      <td align="center" valign="middle">No</td>
+      <td align="center" valign="middle">No</td>
     </tr>
   </table>

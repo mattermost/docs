@@ -25,7 +25,7 @@ be used in production.
 
 7.  For Application Source, select **Upload your own** and upload the
     Dockerrun.aws.json file from
-    https://raw.githubusercontent.com/mattermost/mattermost-docker/master/Dockerrun.aws.json (select
+    https://raw.githubusercontent.com/mattermost/mattermost-docker/master/contrib/aws/Dockerrun.aws.json (select
     version you'd like to use), then click **Next**.
 8.  Type an Environment Name and URL. Make sure the URL is available by
     clicking **Check availability**, then click **Next**.
@@ -64,5 +64,5 @@ for product evaluation, and sets ``SendEmailNotifications=false`` so the
 product can function without enabling email. To see the product's full
 functionality, enabling SMTP email is recommended.
 
-.. include:: smtp-email-setup.rst 
+.. include:: smtp-email-setup.rst
 	:start-after: How to Enable Email

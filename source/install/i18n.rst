@@ -24,7 +24,7 @@ MySQL:
 `データベース構成に関する日本ご覧ください。ドキュメントを検索するにはMattermostを設定します <http://docs.mattermost.com/install/requirements.html#database-software>`__
 
 Postgres:
-`ここでは、日本のために、より良い検索作業を行うための提案です <https://github.com/mattermost/platform/issues/2159#issuecomment-206444074>`__
+`ここでは、日本のために、より良い検索作業を行うための提案です <https://github.com/mattermost/mattermost-server/issues/2159#issuecomment-206444074>`__
 
 私たちは、検索に日本語ドキュメントの改善を手助けしてください
 
@@ -37,7 +37,7 @@ Postgres:
 中文 / Chinese
 -----------------
 数据库版本请参考： `配置要求 <http://docs.mattermost.com/install/requirements.html#database-software>`_ 。
-其中MySQL的ngram配置可以参考 `Cannot search CJK contents <https://github.com/mattermost/platform/issues/2033#issuecomment-182336690>`_ 。
+其中MySQL的ngram配置可以参考 `Cannot search CJK contents <https://github.com/mattermost/mattermost-server/issues/2033#issuecomment-182336690>`_ 。
 
 更多中文相关问题讨论请访问 `中文讨论组 <https://forum.mattermost.org/c/international/chinese>`__ 。
 

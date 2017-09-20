@@ -4,11 +4,10 @@ Security Overview
 
 Security in Mattermost software is continually reviewed by developers, IT administrators and security researchers accountable for deploying the software in their organizations.
 
-Multiple rounds of penetration testing and security analysis, in addition to internal reviews, have produced a long list of safeguards, processes and policies. Please see:
+Multiple rounds of penetration testing and security analysis, in addition to internal reviews, have produced a long list of safeguards, processes, policies, and compliance features, please see: 
 
-- `Security Features <https://docs.mattermost.com/overview/security.html#security-features>`_ - Recommended features to enhance security on the Mattermost platform.
-- `Security Updates <https://docs.mattermost.com/overview/security.html#security-updates>`_ - Upgrades addressing newly discovered attacks `confidentially disclosed to Mattermost, Inc. <https://www.mattermost.org/responsible-disclosure-policy/>`_
-- `Security Policies <https://docs.mattermost.com/process/security.html>`_ - Internal security policies, development guidelines, business continuity plans and common security-related questions from enterprises.
+.. contents::
+    :backlinks: top
 
 To expand on each:
 
@@ -36,26 +35,29 @@ Transmission Security
 
    - Mattermost supports TLS encryption using AES-256 with 2048-bit RSA on all data transmissions between Mattermost client applications and the Mattermost server across both LAN and internet.
    - Connections to Active Directory/LDAP can be optionally secured with TLS or stunnel (E10).
-   - Encryption-at-rest is available through hardware and software disk encryption solutions applied to the Mattermost database, which resides on its own server within your infrastructure. To support end user search and compliance reporting of message histories, Mattermost does not offer encryption within the database.
+   - Encryption-at-rest is available for messages via hardware and software disk encryption solutions applied to the Mattermost database, which resides on its own server within your infrastructure. To enable end user search and compliance reporting of message histories, Mattermost does not offer encryption within the database.
+   - Encryption-at-rest is available for files stored via hardware and software disk encryption solutions applied to the server used for local storage or storage via Minio.
+   - Encryption-at-rest is available for files stored in Amazon's proprietary S3 system using server-side encryption with Amazon S3-managed keys <https://docs.mattermost.com/administration/config-settings.html#enable-server-side-encryption-for-amazon-s3>_ (E20) when users choose not to use open source options.<https://docs.mattermost.com/administration/config-settings.html#enable-server-side-encryption-for-amazon-s3>`_ (E20). 
    - Option to `exclude message contents from push notifications <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_ to comply with strict compliance policies, such as US HIPAA standards.
    - Ability to exclude or include the `contents of messages in push notifications <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_ to avoid disclosure on locked mobile screens, and via relay servers from Apple and Google when sending notifications to iOS or Android mobile apps (relevant to compliance standards such as HIPAA)
 
 Integrity & Audit Controls
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   - By default, Mattermost stores a complete history of messages, including edits and deletes, along with all files uploaded. User interface actions for "deleting" messages and channels remove the data only from the user interface; the data is retained within your database.
+   - By default, Mattermost stores a complete history of messages, including edits and deletes, along with all files uploaded. User interface actions for "deleting" messages and channels remove the data only from the user interface; the data is retained within your database. If your compliance guidelines require it, you can turn off users' ability to edit and delete their messages after they are posted.
    - The `output and archives of server logs <https://docs.mattermost.com/administration/config-settings.html#file-log-directory>`_ can be saved to a directory of your choice. Mattermost server logs plus logs from your web proxy can provide an end-to-end history of system usage.
    - `Ad hoc compliance reports of messaging by user, date range, and keyword, including edited and deleted messages <https://docs.mattermost.com/administration/compliance.html>`_ are available (E20). To protect against unauthorized use, all ad hoc report requests are logged.
-   - Daily compliance reports compatible with 3rd compliance solutions such as `Global Relay <https://docs.mattermost.com/administration/compliance.html#global-relay-support>`_ are also available (E20).
+   - Daily compliance reports compatible with 3rd party compliance solutions such as `Global Relay <https://docs.mattermost.com/administration/compliance.html#global-relay-support>`_ are also available (E20).
 
 Authentication Safeguards
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    - To protect against brute force attacks, you can set `rate limiting on APIs <https://docs.mattermost.com/administration/config-settings.html#id55>`_, varied by query frequency, memory store size, remote address and headers.
-   - Session length and session cache can be `configured according to your internal policies <https://docs.mattermost.com/administration/config-settings.html#id33>`_.
+   - Session length and session cache can be `configured according to your internal policies <https://docs.mattermost.com/administration/config-settings.html#id33>`_, automatically forcing a user to re-login after a specified period of time.
    - Remotely `revoke user sessions <https://docs.mattermost.com/help/settings/account-settings.html#view-and-logout-of-active-sessions>`_ across web, mobile devices and native desktop apps.
-   - Mattermost supports integrated authentication with `Active Directory and LDAP <https://docs.mattermost.com/deployment/sso-ldap.html>`_ (E10) as well as `Active Directory Federation Services <https://docs.mattermost.com/deployment/sso-saml-adfs.html>`_ and `Okta <https://docs.mattermost.com/deployment/sso-saml-okta.html>`_ via SAML 2.0 (E20)
-   - The ability to require `multi-factor authentication <https://docs.mattermost.com/deployment/auth.html>`_ is also available (E10)
+   - Remotely reset user passwords via the System Console or via the `command line <https://docs.mattermost.com/administration/command-line-tools.html#platform-user-password>`_.
+   - Mattermost supports integrated authentication with `Active Directory and LDAP <https://docs.mattermost.com/deployment/sso-ldap.html>`_ (E10) as well as `SAML 2.0 SSO integration <https://docs.mattermost.com/deployment/sso-saml.html>`_ with providers including `Active Directory Federation Services <https://docs.mattermost.com/deployment/sso-saml-adfs.html>`_,  `Okta <https://docs.mattermost.com/deployment/sso-saml-okta.html>`_, among others (E20).
+   - The ability to require `multi-factor authentication <https://docs.mattermost.com/deployment/auth.html>`_ is also available (E10).
 
 Access Control Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -101,9 +103,10 @@ Deploying Mattermost as part of a HIPAA-compliant IT infrastructure requires a d
 
 - HIPAA-compliant deployments commonly consider the following:
 
-     - Omitting the contents of messages from mobile push notifications:
+     - Omitting the contents of messages from mobile push and email notifications:
 
-        - If your `Push Notifications Contents <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_ option is set to ``Send full message snippet`` there is a chance Personal Health Information (PHI) contained in messages could be displayed on a user's locked phone as a notification. To avoid this, set the option to ``Send generic description with user and channel names``.
+        - If your `Push Notifications Contents <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_ option is set to ``Send full message snippet`` there is a chance Personal Health Information (PHI) contained in messages could be displayed on a user's locked phone as a notification. To avoid this, set the option to ``Send generic description with user and channel names`` or ``Send generic description with only sender name``.
+        - Similarly, setting `Email Notifications Contents <https://docs.mattermost.com/administration/config-settings.html#email-notification-contents>`_ to ``Send generic description with only sender name`` will only send the team name and name of the person who sent the message, with no information about channel name or message contents included in email notifications.
 
 - Beyond Technical Safeguards, HIPAA compliance deployments also require:
 
