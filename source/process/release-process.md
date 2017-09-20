@@ -44,6 +44,7 @@ No pull requests for major features should be **merged** to the current release 
     - Start posting a daily Zero Bug Balance query
     - Queue an item for UX meeting to discuss worst UX bug and to do a 10-minute UI/UX bug bash
     - Notify community about upcoming release in Reception
+    - Schedule daily triage from T-10 (Judgement Day) to T-5 (Release Candidate Testing Finished)
 3. PM:
     - PM area owners complete draft of Changelog in a WIP PR with updates for highlights, feature additions, known issues, compatibility updates for deprecated features, config.json, [database changes](https://github.com/mattermost/mattermost-server/blob/master/store/sql_upgrade.go#L181), [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go) (search `#api-proposal` and confirm with Dev) and WebSocket event changes; [see example](http://docs.mattermost.com/administration/changelog.html#compatibility)
     - Review and update [company roadmap](https://about.mattermost.com/direction/) with which major features made it into the release
@@ -75,6 +76,7 @@ Day when leads and PM area owners decide which major features are included in th
     - Verify all items in the last posted release checklist are complete
 2. Logistics:
     - Confirm, in Judgement Day meeting, date of marketing announcement for the release and update release channel header if needed
+    - Post an reminder to devs in the Release Discussion room of the the code complete date with the ZBB count
 3. Leads:
     - Finalize roadmap for next release, and identify planned marketing bullet points  
 4. **(Team) Judgment Day Meeting (10:00am San Francisco time)**:  
@@ -238,7 +240,7 @@ The final release is cut. If an urgent and important issue needs to be addressed
     - Finish draft of animated GIF (for Twitter announcement, MailChimp and blog post) made up of top announcements
     - Finish draft of MailChimp email blast and Twitter announcement and send for marketing lead to review. Once reviewed, schedule for 08:00 PST on the date of marketing announcement
     - **Note:** If the release contains a security update, also draft a Mailchimp email blast for the [Security Bulletin mailing list](http://eepurl.com/cAl5Rv)
-    - Finalize blog post for mattermost.com and set timer for 08:00 PST on the day of release
+    - Finalize blog post for mattermost.com, test on mobile view, and set timer for 08:00 PST on the day of release
     - Update [feature list](https://about.mattermost.com/pricing/) on mattermost.com with relevant new features
 
 If a bug fix release is required, run through the following steps:
