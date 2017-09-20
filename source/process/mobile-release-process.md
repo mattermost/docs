@@ -63,3 +63,4 @@ Notes:
 
 1. Marketing:
   - After the apps are approved and on the App Store (number of days may vary), send out release marketing
+  - Update the app version on the [download page](https://about.mattermost.com/download/#mattermostApps)
