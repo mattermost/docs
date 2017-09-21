@@ -351,11 +351,14 @@ Once final dot release build is ready to cut:
     - Post this checklist in Release channel
     - Verify all items in the last posted release checklist are complete
 2. Logistics:
-    - Confirm the Security Researchers list on the [Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/) is up to date
-    - Review "Community Installers" and update version numbers if there are any discrepancies https://www.mattermost.org/installation/ (move this to ops eventually)
-3. Leads:
+    - Provide Marketing with a list of new security researchers and/or updated contribution count/s for existing researchers from the Security spreadsheet.
+    - Provide Marketing with an updated list of 'latest version of Mattermost' supported by community installers for the Airtable Integrations Directory. 
+3. Marketing:
+    - Update Security Research Hall of Fame on the [Responsible Disclosure Policy](https://about.mattermost.com/report-security-issue/) page as per additions provided by Logistics in 2. above.
+    - Update 'latest version of Mattermost' supported in the Airtable Integrations Directory on the [Mattermost Apps and Integrations](https://about.mattermost.com/community-applications) page as per updates provided by Logistics in 2. above.
+4. Leads:
     - Update [company roadmap at mattermost.com](https://about.mattermost.com/direction/)
-4. Build:
+5. Build:
     - Put pre-release back on master
 
 ### K. (T-plus 10 working days) Update Mattermost Security Page
