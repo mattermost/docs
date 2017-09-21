@@ -332,7 +332,7 @@ Once final dot release build is ready to cut:
         - Submit a PR for changelog against the `vX.X-documentation` branch and add a `Work in Progress` label for it
         - Submit a PR to change version number in `docs/source/conf.py` against the `vX.X-documentation` branch
 4. Build
-    - Put CI servers and translation server back onto master
+    - Put CI servers and translation server back onto master, and post in Release Discussion channel once done
     - Update [ci-linux-mysql-prev](https://ci-linux-mysql-prev.mattermost.com) to the final release version
 5. Dev:
     - Delete RCs after final version is shipped    
