@@ -67,6 +67,8 @@ YouTube videos show a "Video not found" preview
 2. If you are using the Mattermost Desktop App, please ensure you have installed version 3.5.0 or later.
 3. If you have specified `a Google API key <https://docs.mattermost.com/administration/config-settings.html#google-api-key>`_ to enable the display of titles for embedded YouTube video previews, regenerate the key.
 
+.. include:: trouble_mysql.rst
+
 Mattermost Error Messages
 -------------------------
 

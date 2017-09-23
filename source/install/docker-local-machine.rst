@@ -24,8 +24,8 @@ If you have Docker set up, Mattermost installs in one-line:
 
 Otherwise, see step-by-step instructions:
 
-Mac OS X
-^^^^^^^^
+macOS
+^^^^^
 
 1. Install `Docker for Mac <http://docs.docker.com/installation/mac/>`_ 
 

@@ -1,7 +1,7 @@
 .. _dev-setup-osx:
 
-Installing Developer Components on Mac OS X
-===========================================
+Installing Developer Components on macOS
+========================================
 
 Set up your development environment for building, running, and testing Mattermost.
 

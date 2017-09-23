@@ -14,8 +14,8 @@ If you run into any issues getting your environment set up, check the Troublesho
 Development Environment Setup
 ---------------------------------
 
-Mac OS X
-~~~~~~~~~~~~
+macOS
+~~~~~~~~~
 
 1. Install `XCode 8.3 <https://developer.apple.com/download/>`_.
 
@@ -73,7 +73,7 @@ Android (Device)
 
   a. Go to `the Android developer downloads page <https://developer.android.com/studio/index.html#downloads>`_, scroll down to the Get Just the Command Line Tools, and download the zip file suitable for your operating system.
 
-  b. Unzip the SDK to somewhere on your hard drive. For example, ``/Users/<username>/Library/Android/sdk`` on Mac OS X.
+  b. Unzip the SDK to somewhere on your hard drive. For example, ``/Users/<username>/Library/Android/sdk`` on macOS.
 
 2. Configure the following environment variables:
 

@@ -60,10 +60,10 @@ Production Docker Setup on Arch Linux
 To install on Arch Linux, see the `installation guide <https://wiki.archlinux.org/index.php/Mattermost>`_ on the Arch Linux wiki.
 
 
-Production Docker Setup on Mac OS X
+Production Docker Setup on macOS
 ------------------------------------------------------------
 
-You can run a production deployment on Mac OS X by `installing Docker Compose using the online guide <http://docs.docker.com/installation/mac/>`_ then following the above instructions.
+You can run a production deployment on macOS by `installing Docker Compose using the online guide <http://docs.docker.com/installation/mac/>`_ then following the above instructions.
 
 Other options:
 --------------
