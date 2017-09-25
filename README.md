@@ -1,4 +1,4 @@
-# Mattermost Documentation
+# Mattermost Documentation 
 
 This repository generates the documentation available at http://docs.mattermost.com/
 
