@@ -78,6 +78,9 @@ For example, if you have a webhook created for *Town Square*, you can send a mes
 
   payload={"channel": "off-topic", "text": "Hello, this is some text\nThis is more text. :tada:"}
 
+  .. note::
+    Use the channel URL, not the channel display name, when specifying the ``channel`` paramater. For instance, use ``town-square``, not ``Town Square`` when posting messages to the Town Square channel.
+
 To send a message to a direct message channel, add an "@" symbol followed by the username to the ``channel`` parameter.
 
 .. code-block:: text
