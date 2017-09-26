@@ -151,7 +151,7 @@ After creating a user, ensure that this user has rights to the
 **User Exists**
 
 If the ``mmuser`` user exists, the ``DataSource`` element of the
-``/opt/mattermost/config/config.jason`` file may be incorrect. Open this
+``/opt/mattermost/config/config.json`` file may be incorrect. Open this
 file and search for ``DataSource``. Its value should be: ::
 
     "mmuser:<mmuser-password>@tcp(<host-name-or-IP>:3306)/mattermost?charset-utf8mb4,utf8&readTimeout-30s&writeTimeout-30s"
@@ -172,9 +172,9 @@ incorrect password displays an error message such as the following: ::
     [2017/09/20 17:09:10 EDT] [EROR] Failed to ping DB retrying in 10 seconds 
     err-Error 1045: Access denied for user 'mmuser'@'localhost' (using password: YES)
 
-**The Password in config.jason**
+**The Password in config.json**
 
-The ``DataSource`` element of the ``/opt/mattermost/config/config.jason``
+The ``DataSource`` element of the ``/opt/mattermost/config/config.json``
 file references the ``mmuser`` password. Open this file and search for
 ``DataSource``. Its value should be: ::
 
@@ -220,7 +220,7 @@ database. If this is the case, you may see an error message such as: ::
     [2017/09/20 17:20:53 EDT] [EROR] Failed to ping DB retrying in 10 seconds 
     err-Error 1044: Access denied for user 'mmuser'@'%' to database 'mattermost
 
-.. note:: Examine the error message closely. The user name displayed in the error message is the user identified in the ``DataSource`` element of the ``/opt/mattermost/config/config.jason`` file. For example, if the error message reads ``Access denied for user 'muser'@'%' ...`` you will know that you have misidentified the user as ``muser`` in the ``config.jason`` file.
+.. note:: Examine the error message closely. The user name displayed in the error message is the user identified in the ``DataSource`` element of the ``/opt/mattermost/config/config.json`` file. For example, if the error message reads ``Access denied for user 'muser'@'%' ...`` you will know that you have misidentified the user as ``muser`` in the ``config.json`` file.
 
 You can check if the user ``mmuser`` has access to the ``mattermost``
 database in the following way:
