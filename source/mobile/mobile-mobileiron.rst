@@ -27,7 +27,7 @@ Set Up Mattermost with MobileIron EMM
 
 .. image:: ../../source/images/mobileiron_step8.png
 
-9. Fill in a name for the configuration and optional description. Then fill the **AppConnect Custom Configuration** using the values from the :ref:`appconfig-table`.
+9. Fill in a name for the configuration and optional description. Then enter the key-value pairs using the values from the :ref:`appconfig-table`.
 
 .. image:: ../../source/images/mobileiron_step9.png
 
