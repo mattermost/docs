@@ -119,6 +119,7 @@ The links to download the final build will be posted in the Release Discussion c
 After a couple days pass you will need to set the CI servers to point back to `master`. To do this:
 
 1. Post `/mb setci master` into a private channel.
+2. Post `/mb setprerelease master` into a private channel.
 
 That's it!
 
