@@ -11,19 +11,17 @@ Thank you for your interest in contributing to Mattermost. To help with translat
 
 3. If you have questions, post them in [Mattermost forum](http://forum.mattermost.org/) or join the [Contributors](https://pre-release.mattermost.com/core/channels/tickets) channel and announce the ticket you'd like to work on so it can be assigned to you. 
 
-### Minor corrections and improvements are pull requests without a ticket are welcome 
+### Pull requests for minor corrections and improvements without a ticket are welcome 
 
-It is acceptable to submit a PR for a bug or an incremental improvement with less than 20 lines of code change without a Help Wanted issue if the change to existing behaviour is minor and does not require a change to documentation. Some examples include:
+It is acceptable to submit a PR for a bug or incremental improvement, with less than 20 lines of code change, without a Help Wanted ticket if the change to existing behaviour is minor. All pull requests submitted without a corresponding ticket will first be reviewed by a core team product manager. Some examples of minor corrections and improvements include:
 
  - [Fix a formatting error in help text](https://github.com/mattermost/mattermost-server/pull/5640)
  - [Fix success typo in Makefile](https://github.com/mattermost/mattermost-server/pull/5809)
  - [Fix broken Cancel button in Edit Webhooks screen](https://github.com/mattermost/mattermost-server/pull/5612)
  - [Fix Android app crashing when saving user notification settings](https://github.com/mattermost/mattermost-mobile/pull/364)
  - [Fix recent mentions search not working](https://github.com/mattermost/mattermost-server/pull/5878)
-
-### Automatic rejection of pull request needing documentation updates that are without a ticket 
-
-Pull requests requiring a change to documentation or user expectations [require a Help Wanted issue opened by the core team](http://docs.mattermost.com/process/help-wanted.html) so that the change can be tested, documented and supported.
+ 
+Larger pull requests, including those that require a change to documentation or user expectations, [require a Help Wanted issue opened by the core team](http://docs.mattermost.com/process/help-wanted.html) so that the change can be tested, documented and supported.
 
 The best way to discuss opening a Help Wanted ticket with the core team is by [starting a conversation in the feature idea forum](https://www.mattermost.org/feature-ideas/).
 
