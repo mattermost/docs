@@ -4,26 +4,27 @@ MySQL Installation Troubleshooting
 ----------------------------------
 
 Before you can run the Mattermost server, you must first install and
-configure a database. You can then start Mattermost by navigating to the
-``/opt/mattermost/bin`` directory and entering the command
-``sudo -u mattermost ./platform``. If the Mattermost server cannot
-connect to the database, Mattermost will fail to start. This section deals with
-MySQL database issues that you may encounter when you start up
-Mattermost for the first time.
+configure a database. You can then start Mattermost by navigating to
+``/opt/mattermost/bin`` and entering the command ``sudo -u mattermost ./platform``.
+If the Mattermost server cannot connect to the database, Mattermost
+will fail to start. This section deals with MySQL database issues that
+you may encounter when you start up Mattermost for the first time.
 
 How you install MySQL varies depending upon which Linux distribution you
-use. But once MySQL is installed the configuration instructions are the
-same for all supported distributions. You
-must create a ``mattermost`` database
+use, but once MySQL is installed the configuration instructions are the
+same for all supported distributions. You must create a ``mattermost`` database
 and a ``mattermost`` database user. Failure to create these database
 objects or improperly referencing them from the Mattermost configuration
-file, ``/opt/mattermost/config/config.jason``, causes Mattermost to
-fail. The troubleshooting tips given here deal with these specific
+file, ``/opt/mattermost/config/config.json``, prevents Mattermost from
+starting. The troubleshooting tips given here deal with these specific
 issues.
 
-Before proceeding confirm that your MySQL server is running. You can do
-this by issuing the command: ``mysqladmin -u root -p status``. When
-prompted, enter your password. If MySQL is running you should see output
+Before proceeding, confirm that your MySQL server is running. You can do
+this by issuing the following command: ::
+
+    mysqladmin -u root -p status
+
+When prompted, enter your password. If MySQL is running you should see output
 like the following: ::
 
     Uptime: 877134  Threads: 1  Questions: 9902  Slow queries: 0  Opens: 522  
@@ -37,7 +38,7 @@ your distribution.
 The mattermost Database
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The database created during installation is named ``mattermost``. If you
+The database created during installation should be named ``mattermost``. If you
 fail to create this database or you misname it, when you attempt to
 start the Mattermost server you will see an error such as: ::
 
@@ -54,8 +55,11 @@ the ``/opt/mattermost/config/config.json`` file.
 
 To confirm that the ``mattermost`` database exists, open MySQL as root
 by executing ``mysql -u root -p``. When prompted, enter your
-password and then issue the command ``show databases;``. This command
-displays all the databases. You should see something similar to the
+password and then issue the following command: ::
+
+    show databases;
+
+This command displays all the databases. You should see something similar to the
 following: ::
 
     +--------------------+
@@ -72,11 +76,14 @@ following: ::
 **No mattermost Database**
 
 If the ``mattermost`` database doesn't exist, create a database named
-``mattermost`` by opening MySQL as root and issuing the command:
-``create database mattermost;``.
+``mattermost`` by opening MySQL as root and issuing the command: ::
+
+    create database mattermost;
 
 If you accidentally created a database with the wrong name, you can
-remove it by issuing the command: :samp:`drop database {misnamed};`.
+remove it by issuing the command: ::
+
+    drop database {misnamed};
 
 After creation of the database, attempt to restart the Mattermost server
 by navigating to the ``/opt/mattermost/bin`` directory and entering the
@@ -84,7 +91,7 @@ command ``sudo -u mattermost ./platform``.
 
 **The mattermost Database Exists**
 
-If the ``mattermost`` database does exist, confirm that you have defined
+If the ``mattermost`` database does exist, confirm that you have set up
 the database driver correctly in the
 ``/opt/mattermost/config/config.json`` file. Open this file in a text
 editor, and review the value of ``"DataSource"``. It should be: ::
@@ -103,10 +110,12 @@ the ``/opt/mattermost/bin`` directory and entering the command
 The Database User
 ~~~~~~~~~~~~~~~~~
 
-During installation you create a MySQL database user from the *mysql*
-prompt by issuing the command
-:samp:`create user 'mmuser'@'%' identified by '{mmuser-password}';`. (The
-``mmuser-password`` value is a placeholder for the password you chose.)
+During installation, you create a MySQL database user from the *mysql*
+prompt by issuing the following command:::
+
+    create user 'mmuser'@'%' identified by '{mmuser-password}';`
+    
+The ``mmuser-password`` value is a placeholder for the password you chose.
 You may also have specified an IP address rather than the wild card
 ``%``.
 
@@ -121,11 +130,16 @@ will see an error such as: ::
 
 **Checking that mmuser Exists**
 
-To check that this user exists log in to MySQL as root:
-``mysql -u root -p``. When prompted, enter the root password that you chose 
-when installing MySQL. From the ``mysql`` prompt enter the command
-``select User, Host from mysql.user;``. You should see something
-like the following: ::
+To check that this user exists log in to MySQL as the root user: ::
+
+    mysql -u root -p
+
+When prompted, enter the root password that you chose 
+when installing MySQL. From the ``mysql`` prompt enter the following command: ::
+
+    select User, Host from mysql.user;
+
+You should see something like the following if the user exists: ::
 
     +------------------+-----------+
     | User             | Host      |
@@ -141,8 +155,9 @@ like the following: ::
 **User Doesn't Exist**
 
 If ``'mmuser'@'%'`` does not exist, create this user by logging into
-MySQL as root and issuing the command: 
-:samp:`create user 'mmuser'@'%' identified by '{mmuser-password}';`.
+MySQL as root and issuing the command: ::
+
+    create user 'mmuser'@'%' identified by '{mmuser-password}';
 
 After creating a user, ensure that this user has rights to the
 ``mattermost`` database by following the instructions given in
@@ -188,8 +203,11 @@ the command: ``sudo -u mattermost ./platform``.
 **Unsure of Password**
 
 If you are not sure that the ``mmuser`` password is correct, attempt to
-log in to MySQL as ``mmuser`` by issuing the command
-``mysql -u mmuser -p``. You will be prompted for your password. If your
+log in to MySQL as ``mmuser`` by issuing the command: ::
+
+    mysql -u mmuser -p
+
+You will be prompted for your password. If your
 login fails, you are not using the correct password.
 
 With a new database installation, the easiest solution for an unknown
