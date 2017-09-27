@@ -74,16 +74,12 @@ This indicates your AD/LDAP server configuration has a maximum page size set and
 
 To address this issue you can set the [max page size](https://docs.mattermost.com/administration/config-settings.html#maximum-page-size) for Mattermost's AD/LDAP configuration. This will return a sequence of result sets below the max page size set in AD/LDAP, rather than returning all results in a single query.
 
-##### How do I include all users in an LDAP sync if they're not logged in?
-
-You can sync users, even if they're not logged in, by using the [command line tools](https://docs.mattermost.com/administration/command-line-tools.html), in particular, the [platform user tools](https://docs.mattermost.com/administration/command-line-tools.html#platform-user).
-
 ##### Where can I find help on LDAP configuration settings in config.json?
 
 You can find an explanation of each of the configuration settings [here](https://docs.mattermost.com/administration/config-settings.html#ad-ldap).
 
 ##### Can the LDAP User Filter read Security groups?
 
-In order for the LDAP user filter to read security groups, check that:
+Yes it can, but make sure that:
  - permissions are correctly configured on the service account you are using
  - each user object is a direct member of the security group
