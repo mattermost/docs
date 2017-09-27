@@ -111,12 +111,14 @@ For enterprise deployments of 10,000-20,000 registered users with moderate usage
 
 **Proxy Server** 
 
-- One server with 4-8 vCPUs/cores, 16-32 GB RAM, minimum 4 GB SSD storage
+- One server with 4-8 vCPUs/cores, 16-32 GB RAM.
+- Minimum 4 GB SSD (solid state drive) storage for the binary and related files.
 - (Optional) Add one additional identical server for high availability mode, where one Mattermost server can be disabled or upgraded without interrupting service quality. Second server should be sized to carry the full load of the first server so performance does not degrade when the first server is taken offline.
 
 **Mattermost Server** (1 to 2 depending on level of redundancy and high availability required) 
 
-- One server with 4-8 vCPUs/cores, 16-32 GB RAM, minimum 4 GB SSD storage
+- One server with 4-8 vCPUs/cores, 16-32 GB RAM.
+- Minimum 4 GB SSD (solid state drive) storage for the binary and related files.
 - (Optional) Add one additional identical server for high availability mode, where one Mattermost server can be disabled or upgraded without interrupting service quality. Second server should be sized to carry the full load of the first server so performance does not degrade when the first server is taken offline. Note: The high availability option is available only by `contacting the Enterprise Edition team <https://about.mattermost.com/contact/>`_.
 
 **Network Attached Storage** 
@@ -125,7 +127,8 @@ For enterprise deployments of 10,000-20,000 registered users with moderate usage
 
 **Database Server** (2 recommended for redundancy) 
 
-- One database server with 8-16 vCPUs/cores, 16-32 GB memory, minimum 100 GB SSD storage
+- One database server with 8-16 vCPUs/cores, 16-32 GB memory.
+- Minimum 100 GB SSD (solid state drive) storage for the binary and related files.
 - (Recommended) Add one identical database server to setup a Master-Slave configuration where the master can failover to slave with minimal disruption to service.
 
 **Notes:**
