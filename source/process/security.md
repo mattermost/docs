@@ -64,7 +64,7 @@ In addition to checklists for quality and reliability, code changes receive mult
 
 ### Security Update Monitoring 
 
-The following resources are monitoring for information about new security threats and attack vectors. 
+The following resources are monitored for information about new security threats and attack vectors. 
 
 - https://www.iacr.org/
 - http://www.acm.org/
@@ -74,6 +74,8 @@ The following resources are monitoring for information about new security threat
 - https://groups.google.com/forum/#!forum/golang-announce
 - http://www.cert.org/
 - https://www.reddit.com/r/netsec/
+
+All dependencies are updated on a regular basis to ensure Mattermost uses the latest security updates.
 
 ## Common Security Related Questions for Enterprises
 
