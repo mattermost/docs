@@ -99,6 +99,11 @@ Examples:
 - `Production installation instructions for Debian Jessie with Systemd #1134 <https://github.com/mattermost/mattermost-server/pull/1134>`__ 
 - `Fix dead link to AWS file in doc #622 <https://github.com/mattermost/mattermost-server/pull/622>`__
 
+Documentation Pull Request Review
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you're assigned to a documentation pull request made by a core contributor and you see any minor grammar or spelling fixes, please make a commit to fix them to save time instead of including them in a review. Note that this should only be done for changes submitted by people familiar with the review process.
+
 Minor Improvements
 ^^^^^^^^^^^^^^^^^^
 
