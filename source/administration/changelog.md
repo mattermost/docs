@@ -20,6 +20,10 @@ Release date: 2017-10-16
 - Clicking on "More Unreads" bubble on channel sidebar now scrolls you to the next unread channel.
 - Added status indicators to direct message channel header.
 
+
+#### Notifications
+- Updating the channel header with channel-wide mentions no longer triggers notifications
+
 #### Performance
 - Improved initial load of the emoji picker, now supporting thousands of custom emojis including GIFs
 
@@ -42,6 +46,13 @@ Release date: 2017-10-16
 - Fixed a broken UI for an expired email verification link.
 - Fixed integration message attachments not always rendering in comment threads.
 - Fixed an issue where "Add Members" dialog would sometimes break.
+- Slash command responses now handle charset and boundary sets correctly.
+- Deactivated users are no longer counted in the Town Square member count.
+- iOS push notifications are now consistently cleared from the homescreen if all mentions are read on another device.
+- Webhooks no longer continue sending to the original channel if the target channel is changed.
+- Emails containing symbols now render correctly when switching to email authentication from other methods.
+- Attempting to open an invalid public file link no longer displays an unformatted error page.
+- 
 
 ### Compatibility
 
