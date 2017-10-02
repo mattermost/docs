@@ -23,7 +23,6 @@ List of contributors, in alphabetical order:
  - Joram Wilander (`@jwilander <https://github.com/jwilander>`_)
  - Nazar Laba (`@n1aba <https://github.com/n1aba>`_)
  - Ryan Wang (`@R-Wang97 <https://github.com/R-Wang97>`_)
- - Sudheer (`@sudheerDev <https://github.com/sudheerDev>`_)
 
 For guidance on migrating a webapp component to Redux, read the next section.
 
