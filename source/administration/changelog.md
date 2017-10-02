@@ -14,24 +14,32 @@ Release date: 2017-10-16
 #### Data Retention Beta ([Enterprise Edition E20](https://about.mattermost.com/pricing/))
 - Automatically delete old messages and file uploads through custom data retention policies.
 
+#### Languages
+- Promoted Italian and Turkish out of beta to release-quality translations.
+
 ### Improvements
 
 #### Web User Interface
 - Clicking on "More Unreads" bubble on channel sidebar now scrolls you to the next unread channel.
 - Added status indicators to direct message channel header.
 
+#### Search
+- Improved user search that supports two character full names and usernames.
+
+#### Integrations
+- Ephemeral slash command responses now support attachements without text.
 
 #### Notifications
-- Updating the channel header with channel-wide mentions no longer triggers notifications
+- Updating the channel header with channel-wide mentions no longer triggers notifications.
 
 #### Performance
-- Improved initial load of the emoji picker, now supporting thousands of custom emojis including GIFs
-
-#### Languages
-- Promoted Italian and Turkish to release-quality translations, removing beta tags.
+- Improved initial load of the emoji picker, now supporting thousands of custom emojis including GIFs.
 
 #### Enterprise Edition
 - Added tables in System Console for AD/LDAP sync, Elasticsearch and Data Retention to track the success of scheduled jobs.
+- Added an idle timeout setting to automatically log out users who are inactive for a specified amount of time.
+- Elasticsearch can now be used on a shared Elasticseearch cluster.
+- Added metrics for monitoring Elasticsearch system health and usage.
 
 ### Bug Fixes
 - Fixed an issue where closing brackets were ignored in URL links.
@@ -52,7 +60,9 @@ Release date: 2017-10-16
 - Webhooks no longer continue sending to the original channel if the target channel is changed.
 - Emails containing symbols now render correctly when switching to email authentication from other methods.
 - Attempting to open an invalid public file link no longer displays an unformatted error page.
-- 
+- Interactive message posts can now be updated without losing the action buttons.
+- Ticket links posted by the built-in JIRA plug-in are now correct if the JIRA URL has a custom context path.
+
 
 ### Compatibility
 
