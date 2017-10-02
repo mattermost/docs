@@ -11,17 +11,49 @@ Release date: 2017-10-16
 
 ### Highlights
 
+#### Data Retention Beta ([Enterprise Edition E20](https://about.mattermost.com/pricing/))
+- Automatically delete old messages and file uploads through custom data retention policies.
+
 ### Improvements
 
+#### Web User Interface
+- Clicking on "More Unreads" bubble on channel sidebar now scrolls you to the next unread channel.
+- Added status indicators to direct message channel header.
+
+#### Performance
+- Improved initial load of the emoji picker, now supporting thousands of custom emojis including GIFs
+
+#### Languages
+- Promoted Italian and Turkish to release-quality translations, removing beta tags.
+
+#### Enterprise Edition
+- Added tables in System Console for AD/LDAP sync, Elasticsearch and Data Retention to track the success of scheduled jobs.
+
 ### Bug Fixes
+- Fixed an issue where closing brackets were ignored in URL links.
+- Fixed Leave Team icon size and inconsistent channel header icon hover effects on IE11 mobile view.
+- Fixed an issue where right side menu disappeared after viewing search results on IE11 mobile view.
+- Fixed other minor UI issues on IE11 desktop view.
+- Fixed an issue where system and ephemeral messages could be flagged.
+- Error text in Edit modal no longer overlaps with help text.
+- Integration message attachments without `pretext` no longer overlap with username in Compact view.
+- Fixed channel member list being sorted by username instead of teammate name display.
+- "Password updated successfully" bar is now displayed after resetting password.
+- Fixed a broken UI for an expired email verification link.
+- Fixed integration message attachments not always rendering in comment threads.
+- Fixed an issue where "Add Members" dialog would sometimes break.
 
 ### Compatibility
 
 #### Breaking Changes
 
+// XXX APIv3
+
 #### Removed and Deprecated Features
 
 #### config.json
+
+// XXX Data retention settings
 
 ### Database Changes
 
