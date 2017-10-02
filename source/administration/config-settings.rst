@@ -2542,6 +2542,8 @@ In testing environments, such as when developing integrations locally on a devel
 
 By default, user-supplied URLs such as those used for Open Graph metadata, webhooks, or slash commands will not be allowed to connect to reserved IP addresses including loopback or link-local addresses used for internal networks. Push notification, OAuth 2.0 and WebRTC server URLs are trusted and not affected by this setting.
 
+Separate two or more domains with spaces instead of commas, for example: ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``
+
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AllowedUntrustedInternalConnections": ""`` with string input.                                                           |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
