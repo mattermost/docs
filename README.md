@@ -4,7 +4,7 @@ This repository generates the documentation available at http://docs.mattermost.
 
 All documentation is available under the terms of a [Creative Commons License](http://creativecommons.org/licenses/by-nc-sa/3.0/).
 
-## Usage
+## Usage 
 
 To generate the HTML files from markdown in the `/source` directory: 
 
