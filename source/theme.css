@@ -93,6 +93,14 @@ footer {
 
 .wy-menu-vertical li.toctree-l3.current li.toctree-l4>a {
 	background: transparent;
+	padding-right: 1em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4> a code {
+	font-size: 1em;
+    font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
 }
 
 .wy-menu-vertical li.toctree-l2.current li.toctree-l3>a {
