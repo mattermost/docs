@@ -27,7 +27,7 @@ Set up a connection app for Mattermost SSO
 	.. image:: ../../source/images/okta_2_general_settings.PNG
 
 5. Enter **SAML Settings**, including:
- - Single sign on URL: ``https://<your-mattermost-url>/login/sso/saml``
+ - Single sign on URL: ``https://<your-mattermost-url>/login/sso/saml`` where ``https://<your-mattermost-url>`` should typically match the `Mattermost Site URL <https://docs.mattermost.com/administration/config-settings.html#site-url>`_.
  - Audience URL: For instance, ``mattermost``
  - Name ID format: ``unspecified``
  - Application username: ``Email``
