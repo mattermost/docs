@@ -2487,6 +2487,8 @@ Data Deletion Time
 ^^^^^^^^^^^^^^^^^^^
 Set the start time of the daily scheduled data retention job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form HH:MM.
 
+This setting is based on the local time of the server.
+
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DeletionJobStartTime": 02:00`` with 24-hour time stamp input in the form HH:MM                                                   |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3074,7 +3076,7 @@ Elasticsearch indexes over the age specified by this setting will be aggregated 
 
 Post Aggregator Start Time
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The start time of the daily scheduled aggregator job.
+The start time of the daily scheduled aggregator job. This setting is based on the local time of the server.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PostsAggregatorJobStartTime": 03:00`` with 24-hour time stamp input in the form HH:MM      |
