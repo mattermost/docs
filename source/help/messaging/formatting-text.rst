@@ -37,6 +37,12 @@ Create labeled links by putting the desired text in square brackets and the asso
 
 Renders as: `Check out Mattermost! <https://about.mattermost.com/>`_
 
+Same link syntax may be used to apply color to text (beyond markdown standard).
+
+``[My red warning](color://red)``
+
+(Render is not shown since GitHub does not support this mattermost-specific feature)
+
 Headings
 --------
 
