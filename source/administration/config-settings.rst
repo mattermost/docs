@@ -1121,7 +1121,7 @@ The timeout value for queries to the AD/LDAP server. Increase this value if you 
 
 AD/LDAP Test
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This button can be used to test the connection to the AD/LDAP server. If the test us successful, it shows a confirmation message and if there is a problem with the configuration settings it will show an error message.
+This button can be used to test the connection to the AD/LDAP server. If the test is successful, it shows a confirmation message and if there is a problem with the configuration settings it will show an error message.
 
 AD/LDAP Synchronize Now
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
