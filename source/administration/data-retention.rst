@@ -53,7 +53,9 @@ Note that these files will still be removed from the Mattermost messages if they
 Why do I see ``Pending`` in the deletion job table with no details?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This means you haven't restarted your server after enabling the data retention policy. Restart your server and try again.
+This usually means another data retention job is in progress. You can verify this in the deletion job table in **System Console > Advanced > Data Retention Policy (Beta)**.
+
+If no jobs are in progress and the job has stayed pending for more than 2 minutes, then you may not have restarted your server after enabling the data retention policy. Restart your server and try again.
 
 How do I set a custom policy per team or channel?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -65,4 +67,4 @@ If you are interested in this feature, consider upvoting the `existing feature p
 How is data retention handled in the mobile apps?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When a message or file is deleted, they are als 
+When a message or file is deleted, they are no longer searchable in the Mattermost mobile apps. However, in some cases the message or file may be stored locally in the device itself. An improvement to locally wipe the app periodically of old data when data retention policy is enabled, is `scheduled for Q4/2017 <https://mattermost.atlassian.net/browse/RN-361>`_.
