@@ -66,23 +66,87 @@ Release date: 2017-10-16
 
 ### Compatibility
 
-#### Breaking Changes
-
-// XXX APIv3
-
 #### Removed and Deprecated Features
+- All APIv3 endpoints are scheduled for removal on January 16, 2018.
+
+For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
 
 #### config.json
 
 // XXX Data retention settings
 
-### Database Changes
-
 ### API v4 Changes
+
+- It is recommended that any new integrations use APIv4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
+- All APIv3 endpoints are scheduled for removal on January 16, 2018.
+
+**Added routes (API v4)**
+- `PUT` at `/oauth/apps/{app_id}`
+  - Update an OAuth 2.0 client application.
+- `GET` at `/data_retention/policy`
+  - Gets the current data retention policy details from the server, including what data should be purged and the cutoff times for each data type that should be purged.
+ 
+**Modified routes (API v4)**
+- `POST` at `/channels/members/{user_id}/view`
+  - Response only includes `last_viewed_at_times` in Mattermost server 4.3 and newer.
 
 ### Known Issues
 
+XXXXXX to be updated after final is cut
+
 ### Contributors
+
+/mattermost-server
+
+- [ccbrown](https://github.com/ccbrown), [coreyhulen](https://github.com/coreyhulen), [crspeller](https://github.com/crspeller), [enahum](https://github.com/enahum), [grundleborg](https://github.com/grundleborg), [hmhealey](https://github.com/hmhealey), [jasonblais](https://github.com/jasonblais), [jespino](https://github.com/jespino), [jwilander](https://github.com/jwilander), [moonmeister](https://github.com/moonmeister), [MusikPolice](https://github.com/MusikPolice), [n1aba](https://github.com/n1aba), [saturninoabril](https://github.com/saturninoabril)
+
+/mattermost-webapp
+
+- [asaadmahmood](https://github.com/asaadmahmood), [bbodenmiller](https://github.com/bbodenmiller), [ccbrown](https://github.com/ccbrown), [coreyhulen](https://github.com/coreyhulen), [crspeller](https://github.com/crspeller), [enahum](https://github.com/enahum), [grundleborg](https://github.com/grundleborg), [hmhealey](https://github.com/hmhealey), [jasonblais](https://github.com/jasonblais), [jazzzz](https://github.com/jazzzz), [jwilander](https://github.com/jwilander), [R-Wang97](https://github.com/R-Wang97), [saturninoabril](https://github.com/saturninoabril), [sudheerDev](https://github.com/sudheerDev)
+
+/desktop
+
+- [csduarte](https://github.com/csduarte), [dmeza](https://github.com/dmeza), [yuya-oc](https://github.com/yuya-oc)
+
+/mattermost-mobile
+
+- [csduarte](https://github.com/csduarte), [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [jarredwitt](https://github.com/jarredwitt), [lfbrock](https://github.com/lfbrock)
+
+/mattermost-api-reference
+
+- [atpons](https://github.com/atpons), [grundleborg](https://github.com/grundleborg), [jwilander](https://github.com/jwilander), [n1aba](https://github.com/n1aba), [pichouk](https://github.com/pichouk)
+
+/docs
+
+- [ccbrown](https://github.com/ccbrown), [crspeller](https://github.com/crspeller), [esethna](https://github.com/esethna), [hmhealey](https://github.com/hmhealey), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [jespino](https://github.com/jespino), [jwilander](https://github.com/jwilander), [lfbrock](https://github.com/lfbrock), [lindy65](https://github.com/lindy65)
+
+/mattermost-developer-kit
+
+- [jwilander](https://github.com/jwilander)
+
+/marked
+
+- [hmhealey](https://github.com/hmhealey)
+
+/mattermost-docker
+
+- [localsnet](https://github.com/localsnet), [pdemagny](https://github.com/pdemagny), [pichouk](https://github.com/pichouk), [tivvit](https://github.com/tivvit)
+
+/mattermost-redux
+
+- [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [jespino](https://github.com/jespino), [jwilander](https://github.com/jwilander), [n1aba](https://github.com/n1aba), [saturninoabril](https://github.com/saturninoabril)
+
+/mattermost-selenium
+
+- [lindalumitchell](https://github.com/lindalumitchell)
+
+/mattermost-mattermod
+
+- [crspeller](https://github.com/crspeller), [hmhealey](https://github.com/hmhealey)
+
+/mattermost-build
+
+- [crspeller](https://github.com/crspeller)
 
 ## Release v4.2.0
 Release date: 2017-09-16
