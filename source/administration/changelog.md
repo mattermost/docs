@@ -38,7 +38,7 @@ Release date: 2017-10-16
 #### Enterprise Edition
 - Added tables in System Console for AD/LDAP sync, Elasticsearch and Data Retention to track the success of scheduled jobs.
 - Added an idle timeout setting to automatically log out users who are inactive for a specified amount of time.
-- Elasticsearch can now be used on a shared Elasticseearch cluster.
+- Elasticsearch can now be used on a shared Elasticsearch cluster.
 - Added metrics for monitoring Elasticsearch system health and usage.
 
 ### Bug Fixes
@@ -106,7 +106,7 @@ Multiple setting options were added to `default.json`. Below is a list of the ad
  
 **Modified routes (API v4)**
 - `POST` at `/channels/members/{user_id}/view`
-  - Response only includes `last_viewed_at_times` in Mattermost server 4.3 and newer.
+  - Response includes `last_viewed_at_times` for Mattermost server 4.3 and newer.
 
 ### Known Issues
 
