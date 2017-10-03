@@ -71,10 +71,28 @@ Release date: 2017-10-16
 
 For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
 
-#### config.json
+#### default.json
 
-// XXX Data retention settings
+Multiple setting options were added to `default.json`. Below is a list of the additions and their default values on install. The settings can be modified in `default.json`, or the System Console when available.
 
+**Changes to Team Edition and Enterprise Edition**:
+
+- Under `TeamSettings` in `default.json`:
+  - Added `"EnableConfirmNotificationsToChannel": true` to disable the confirmation modal when sending channel-wide notifications.
+
+**Additional Changes to Enterprise Edition**:
+
+- Under `ServiceSettings` in `default.json`:
+  - Added `"SessionIdleTimeout": 0` to specify how long to wait before logging out inactive users.
+- Under `ElasticsearchSettings` in `default.json`:
+  - Added `"IndexPrefix": ""` to allow Elasticsearch to be used on a shared Elasticseearch cluster.
+- Under `DataRetentionSettings` in `default.json`:
+  - Added `"EnableMessageDeletion": false` XXXXXX
+  - Added `"EnableFileDeletion": false` XXXXXX
+  - Added `"MessageRetentionDays": 365` XXXXXX
+  - Added `"FileRetentionDays": 365` XXXXXX
+  - Added `"DeletionJobStartTime": "02:00"` to specify when to start the data retention job.
+  
 ### API v4 Changes
 
 - It is recommended that any new integrations use APIv4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
