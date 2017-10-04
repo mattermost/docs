@@ -1,0 +1,93 @@
+{{- if .Values.enabled -}}
+{{- $secret := randAlphaNum 128 | b64enc -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+    app: {{ template "fullname" . }}
+data:
+  gitlab.rb: |
+    ###################
+    # gitlab/gitlab-rails
+    external_url {{ .Values.external_url | quote }}
+    {{- if .Values.initial_root_password}}
+    gitlab_rails['initial_root_password'] = {{ .Values.initial_root_password | quote }}
+    {{- end }}
+    {{- if .Values.trusted_proxies }}
+    gitlab_rails['trusted_proxies'] = %w{{ .Values.trusted_proxies }}
+    {{- end }}
+    # PostgresQL related
+    {{- if .Values.psql.enabled }}
+    gitlab_rails['db_host'] = '127.0.0.1'
+    {{- else }}
+    gitlab_rails['db_host'] = {{ default "127.0.0.1" .Values.psql.host | quote }}
+    gitlab_rails['db_port'] = {{ default .Values.service.ports.psql .Values.psql.port }}
+    gitlab_rails['db_username'] = {{ default "gitlab" .Values.psql.username | quote }}
+    gitlab_rails['db_password'] = {{ .Values.psql.passsword | quote }}
+    gitlab_rails['db_database'] = {{ default "gitlabhq_production" .Values.psql.database | quote }}
+    {{- end }}
+    # Redis related
+    {{- if not .Values.redis.enabled }}
+    gitlab_rails['redis_host'] = {{ default "127.0.0.1" .Values.redis.host | quote }}
+    gitlab_rails['redis_port'] = {{ default .Values.service.ports.redis .Values.redis.port }}
+    gitlab_rails['redis_database'] = {{ default 0 .Values.redis.database }}
+    {{- end }}
+    gitlab_rails['redis_password'] = ENV['REDIS_PASSWORD']
+    # Rail-Registry related
+    gitlab_rails['registry_enabled'] = true
+    gitlab_rails['registry_host'] = {{ .Values.registry.host | quote }}
+    gitlab_rails['registry_port'] = {{ .Values.registry.port }}
+    gitlab_rails['registry_api_url'] = "http://{{ .Release.Name }}-registry:5000"
+    registry['internal_key'] = File.read("/etc/gitlab-registry/registry-certificate.crt")
+    # gitlab_rails['registry_key_path'] = "/etc/gitlab-registry/registry-certificate.crt"
+    ###################
+    # nginx
+    nginx['enable'] = {{ .Values.nginx.enabled }}
+    nginx['listen_port'] = {{ .Values.service.ports.nginx }}
+    nginx['listen_https'] = false
+    {{- if .Values.trusted_proxies }}
+    nginx['real_ip_trusted_addresses'] = %w{{ .Values.trusted_proxies }}
+    {{- end }}
+    ###################
+    # workhorse
+    gitlab_workhorse['enable'] = {{ .Values.workhorse.enabled }}
+    gitlab_workhorse['listen_network'] = 'tcp'
+    gitlab_workhorse['listen_addr'] = '0.0.0.0:{{ .Values.service.ports.workhorse }}'
+    gitlab_workhorse['auth_backend'] = {{ .Values.workhorse.auth_backend | quote }}
+    ###################
+    # unicorn
+    unicorn['listen'] = '*'
+    unicorn['port'] = {{ .Values.service.ports.unicorn }}
+    unicorn['worker_timeout'] = {{ .Values.unicorn.worker.timeout }}
+    unicorn['worker_processes'] = {{ .Values.unicorn.worker.processes }}
+    ###################
+    # sidekiq ?
+    ###################
+    # gitlab-shell
+    ###################
+    # PostgresQL
+    postgresql['enable'] = {{ .Values.psql.enabled }}
+    postgresql['listen_address'] = '0.0.0.0'
+    postgresql['port'] = {{ .Values.service.ports.psql }}
+    postgresql['shared_buffers'] = {{ .Values.psql.shared_buffers | quote }}
+    #postgresql['md5_auth_cidr_addresses'] = %w{{ .Values.trusted_proxies }}
+    postgresql['trust_auth_cidr_addresses'] = ['127.0.0.1/24', '172.16.0.0/12']
+    ###################
+    # Redis
+    redis['enable'] = {{ .Values.redis.enabled }}
+    redis['bind'] = '0.0.0.0'
+    redis['port'] = {{ .Values.service.ports.redis }}
+    redis['password'] = ENV['REDIS_PASSWORD']
+    ###################
+    # DISABLED SERVICES
+    # registry, pages, mattermost, prometheus
+    registry['enable'] = false
+    registry_nginx['enable'] = false
+    gitlab_pages['enable'] = false
+    pages_nginx['enable'] = false
+    mattermost['enable'] = false
+    mattermost_nginx['enable'] = false
+    prometheus['enable'] = false
+# Leave this here - This line denotes end of block to the parser.
+{{- end }}

@@ -1,0 +1,82 @@
+# Default values for omnibus.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+replicaCount: 1
+image:
+  repository: gitlab/gitlab-ee
+  tag: 10.0.2-ee.0
+  pullPolicy: IfNotPresent
+service:
+  name: omnibus
+  type: ClusterIP
+  clusterIP: '0.0.0.0'
+  ports:
+    nginx: 80
+    redis: 6397
+    psql: 5432
+    shell: 22
+    unicorn: 8080
+    workhorse: 8005
+    gitaly: 8075
+
+enabled: false
+# config items
+# initial_root_password:
+external_url: http://gitlab.example.local
+trusted_proxies:
+- "127.0.0.1/24"
+- "10.0.0.0/8"
+- "172.16.0.0/12"
+- "192.168.0.0/16"
+# enabled components
+nginx:
+  enabled: false
+redis:
+  enabled: false
+  # host: '127.0.0.1'
+  # port: 6397
+  # database: 0
+  # password provided as ENV, via Secret
+  password: {}
+    # secret:
+    # key:
+psql:
+  enabled: false
+  shared_buffers: "1MB"
+  # host: '127.0.0.1'
+  # port: '5432'
+  # database: 'gitlabhq_production'
+  # username: 'gitlab'
+  # password: nil
+shell:
+  enabled: false
+unicorn:
+  enabled: false
+  worker:
+    timeout: 60
+    processes: 2
+workhorse:
+  enabled: false
+  # point to Unicorn
+  auth_backend: "http://0.0.0.0:8080"
+gitaly:
+  enabled: false
+
+# registry
+registry:
+  host: registry.example.local
+  port: 80
+  secret: omnibus-registry
+  certificate: certificate.crt
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  #limits:
+  #  cpu: 100m
+  #  memory: 128Mi
+  #requests:
+  #  cpu: 100m
+  #  memory: 128Mi
