@@ -1,0 +1,40 @@
+{{- if .Values.enabled -}}
+{{- $httpSecret := randAlphaNum 128 | b64enc -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+    app: {{ template "fullname" . }}
+data:
+  config.yml: |
+    version: 0.1
+    log:
+      level: warn
+      fields:
+        service: registry
+    # health:
+    #   storagedriver:
+    #     enabled: true
+    #     interval: 10s
+    #     threshold: 3
+    http:
+      debug:
+        addr: :5001
+      headers:
+        X-Content-Type-Options: [nosniff]
+    # Filled from chart
+    http:
+      addr: :{{ .Values.service.internalPort }}
+      secret: {{ default $httpSecret .Values.registry.httpSecret }}
+    auth:
+      token:
+        realm: {{ .Values.registry.authEndpoint }}/jwt/auth
+        service: {{ .Values.registry.tokenService }}
+        issuer: {{ .Values.registry.tokenIssuer | quote }}
+        rootcertbundle: /etc/registry-secret/{{ .Values.registry.certBundle.bundleName }}
+    storage:
+      {{- if .Values.registry.storage }}
+{{ toYaml .Values.registry.storage | indent 6}}
+      {{- end }}
+{{- end -}}

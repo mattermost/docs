@@ -1,3 +1,4 @@
+{{- if .Values.enabled -}}
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -8,39 +9,34 @@ metadata:
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
 spec:
-  replicas: 1
+  replicas: {{ .Values.registry.replicas }}
   template:
     metadata:
       labels:
         app: {{ template "fullname" . }}
     spec:
       containers:
-      - name: registry
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-        imagePullPolicy: {{ default "" .Values.image.pullPolicy | quote }}
-        env:
-        - name: REGISTRY_HTTP_ADDR
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: http.addr
-        - name: REGISTRY_HTTP_SECRET
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: http.secret
-        - name: REGISTRY_AUTH_TOKEN_REALM
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key:  auth.token.realm
-        - name: REGISTRY_AUTH_TOKEN_SERVICE
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key:  auth.token.service
-        - name: REGISTRY_AUTH_TOKEN_ISSUER
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key:  auth.token.issuer
+        - name: registry
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ default "" .Values.image.pullPolicy | quote }}
+          volumeMounts:
+          - name: {{ .Release.Name }}-secret
+            mountPath: '/etc/registry-secret'
+            readOnly: true
+          - name: config-volume
+            mountPath: /etc/docker/registry/
+            readOnly: true
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+      volumes:
+      - name: {{ .Release.Name }}-secret
+        secret:
+            secretName: {{ .Values.registry.certBundle.secretName }}
+            items:
+                - key: {{ .Values.registry.certBundle.bundleName }}
+                  path: {{ .Values.registry.certBundle.bundleName }}
+            defaultMode: 0400
+      - name: config-volume
+        configMap:
+          name: {{ template "fullname" . }}
+{{- end -}}

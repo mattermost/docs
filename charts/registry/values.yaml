@@ -1,6 +1,6 @@
 image:
   repository: registry
-  tag: '2.6.1'
+  tag: '2.6'
   pullPolicy: 'IfNotPresent'
 service:
   name: registry
@@ -8,10 +8,46 @@ service:
   externalPort: 5000
   internalPort: 5000
   clusterIP: '0.0.0.0'
+
+# define some sane resource requests and limitations
+resources: {}
+  # limits:
+  #   cpu: 200m
+  #   memory: 1024Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+# Chart operation controls
+enabled: true
 registry:
-  httpSecretName: 'secret'
-  httpSecretKeyName: 'secret-key'
+  # Will be auto-populated if not present (`{{ randAlphaNum 128 | b64enc | quote }}`)
+  httpSecret: ''
   storage: {}
-  authEndpoint: 'https://gitlab.example.com'
+  # Protocol/Host only. '/jwt/auth' will be appended.
+  authEndpoint: 'https://gitlab.example.local'
+  # Do not change this
   tokenService: 'container_registry'
+  # This must match your GitLab Rails configuration
   tokenIssuer: 'gitlab-registry-issuer'
+  # Public side of the certificate bundle used to sign JWT auth requests
+  certBundle:
+    secretName: 'gitlab-registry-certbundle'
+    bundleName: 'gitlab-registry.crt'
+  # if replicas is >1, shared storage MUST be used.
+  replicas: 1
+
+# Chart specific Ingress
+ingress:
+  enabled: false
+  # Used to create Ingress record (should used with service.type: ClusterIP).
+  hosts:
+    # - name: registry.example.local
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  tls:
+    # Secrets must be manually created in the namespace.
+    # - hosts:
+    #   - registry.example.local
+    #   secretName: registry-example-tls
