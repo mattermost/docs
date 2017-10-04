@@ -46,9 +46,12 @@ Why didn't an old file get deleted after running the deletion job?
 
 First, check the data deletion was successful in the deletion job table in **System Console > Advanced > Data Retention Policy (Beta)**.
 
-Second, if the files were uploaded prior to Mattermost v4.2, you will need to delete the files manually from your local file storage or Amazon S3 storage. You may do this by simply deleting the relevant folders. // XXX George, any other info/help we can provide?
+Second, if the files were uploaded prior to Mattermost v4.2, you will need to delete the files manually from your local file storage or Amazon S3 storage:
 
-Note that these files will still be removed from the Mattermost messages if they were uploaded in Mattermost v3.5 or later, which contain the `FileInfo table <https://docs.mattermost.com/administration/changelog.html#database-changes-from-v3-4-to-v3-5>`_. 
+1. Wait until all files uploaded prior to Mattermost v4.2 are past the file retention policy duration.
+2. Delete the ``teams/`` folder in the root of your  Mattermost storage directory.
+
+Note that these files will still be removed from the Mattermost user interface if they were uploaded in Mattermost v3.5 or later, which contain the `FileInfo table <https://docs.mattermost.com/administration/changelog.html#database-changes-from-v3-4-to-v3-5>`_. 
 
 Why do I see ``Pending`` in the deletion job table with no details?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
