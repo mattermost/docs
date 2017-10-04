@@ -67,4 +67,4 @@ If you are interested in this feature, consider upvoting the `existing feature p
 How is data retention handled in the mobile apps?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When a message or file is deleted, they are no longer searchable in the Mattermost mobile apps. However, in some cases the message or file may be stored locally in the device itself. An improvement to locally wipe the app periodically of old data when data retention policy is enabled, is `scheduled for Q4/2017 <https://mattermost.atlassian.net/browse/RN-361>`_.
+When messages or files are deleted, they are no longer searchable in the Mattermost mobile apps. However, in some cases, the message or file may be stored locally on the device itself. An improvement to locally wipe the app periodically of old data when data retention policy is enabled, is `scheduled for Q4/2017 <https://mattermost.atlassian.net/browse/RN-361>`_.
