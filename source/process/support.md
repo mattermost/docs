@@ -7,7 +7,7 @@ Questions to ask when providing support for database issues.
 __IMPORTANT: Before asking for any database queries to be run, suggest a back-up is completed to prevent accidental data loss or corruption.__
 
 #### PostgreSQL or MySQL?
-Find out which database they are using. We only support PostgrSQL and MySQL currently.
+Find out which database they are using. We only support PostgreSQL and MySQL currently.
 
 If they're using Amazon Aurora MySQL, and their issue seems like a race condition, it might be due to the multi-region lag that Aurora can have. If this is the case there may be a race in code we need to fix. @christopher will know more.
 
