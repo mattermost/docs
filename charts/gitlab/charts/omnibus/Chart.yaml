@@ -1,13 +1,15 @@
 apiVersion: v1
-description: A Helm chart for GitLab
-name: gitlab-chart
+description: Omnibus GitLab for helm.gitlab.io
+name: omnibus
 version: 0.1.0
 keywords:
 - gitlab
+- omnibus
 home: https://about.gitlab.com/
 sources:
-- https://gitlab.com/charts/helm.gitlab.io
+- https://gitlab.com/gitlab-org/omnibus-gitlab
 maintainers:
 - name: GitLab Inc.
   email: support@gitlab.com
 - name: The Build Team
+details: For Development Use Only

@@ -1,0 +1,53 @@
+{{- if .Values.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+    app: {{ template "name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    {{- if .Values.nginx.enabled }}
+    - port: {{ .Values.service.ports.nginx }}
+      targetPort: {{ .Values.service.ports.nginx }}
+      protocol: TCP
+      name: og-nginx
+    {{- end }}
+    {{- if .Values.redis.enabled }}
+    - port: {{ .Values.service.ports.redis }}
+      targetPort: {{ .Values.service.ports.redis }}
+      protocol: TCP
+      name: og-redis
+    {{- end }}
+    {{- if .Values.psql.enabled }}
+    - port: {{ .Values.service.ports.psql }}
+      targetPort: {{ .Values.service.ports.psql }}
+      protocol: TCP
+      name: og-psql
+    {{- end }}
+    {{- if .Values.shell.enabled }}
+    - port: {{ .Values.service.ports.shell }}
+      targetPort: {{ .Values.service.ports.shell }}
+      protocol: TCP
+      name: og-shell
+    {{- end }}
+    {{- if .Values.unicorn.enabled }}
+    - port: {{ .Values.service.ports.unicorn }}
+      targetPort: {{ .Values.service.ports.unicorn }}
+      protocol: TCP
+      name: og-unicorn
+    {{- end }}
+    {{- if .Values.workhorse.enabled }}
+    - port: {{ .Values.service.ports.workhorse }}
+      targetPort: {{ .Values.service.ports.workhorse }}
+      protocol: TCP
+      name: og-workhorse
+    {{- end }}
+  selector:
+    app: {{ template "name" . }}
+    release: {{ .Release.Name }}
+{{- end }}

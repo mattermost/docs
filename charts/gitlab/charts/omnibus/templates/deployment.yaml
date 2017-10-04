@@ -1,0 +1,101 @@
+{{- if .Values.enabled }}
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+    app: {{ template "name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "name" . }}
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            {{- if .Values.nginx.enabled }}
+            - containerPort: {{ .Values.service.ports.nginx }}
+              name: og-nginx
+            {{- end }}
+            {{- if .Values.redis.enabled }}
+            - containerPort: {{ .Values.service.ports.redis }}
+              name: og-redis
+            {{- end }}
+            {{- if .Values.psql.enabled }}
+            - containerPort: {{ .Values.service.ports.psql }}
+              name: og-psql
+            {{- end }}
+            {{- if .Values.shell.enabled }}
+            - containerPort: {{ .Values.service.ports.shell }}
+              name: og-shell
+            {{- end }}
+            {{- if .Values.unicorn.enabled }}
+            - containerPort: {{ .Values.service.ports.unicorn }}
+              name: og-unicorn
+            {{- end }}
+            {{- if .Values.workhorse.enabled }}
+            - containerPort: {{ .Values.service.ports.workhorse }}
+              name: og-workhorse
+            {{- end }}
+            {{- if .Values.gitaly.enabled }}
+            - containerPort: {{ .Values.service.ports.gitaly }}
+              name: og-gitaly
+            {{- end }}
+          env:
+          # - name: GITLAB_OMNIBUS_CONFIG
+          #   valueFrom:
+          #     configMapKeyRef:
+          #       name: {{ template "fullname" . }}
+          #       key: gitlab.rb
+          - name: REDIS_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Values.redis.password.secret }}
+                key: {{ .Values.redis.password.key }}
+          volumeMounts:
+            - name: {{ .Release.Name }}-registry-secret
+              mountPath: '/etc/gitlab-registry'
+              readOnly: true
+            - name: gitlab-config
+              mountPath: '/etc/gitlab'
+          # livenessProbe:
+          #   initialDelaySeconds: 180
+          #   timeoutSeconds: 15
+          #   httpGet:
+          #     path: /help
+          #     port: {{ .Values.service.ports.nginx }}
+          # readinessProbe:
+          #   initialDelaySeconds: 15
+          #   timeoutSeconds: 1
+          #   httpGet:
+          #     path: /help
+          #     port: {{ .Values.service.ports.nginx }}
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+      volumes:
+      - name: {{ .Release.Name }}-registry-secret
+        secret:
+          secretName: {{ .Values.registry.secret }}
+          items:
+            - key: {{ .Values.registry.certificate }}
+              path: registry-certificate.crt
+          defaultMode: 0400
+      - name: gitlab-config
+        configMap:
+          name: {{ template "fullname" . }}
+          items:
+          - key: gitlab.rb
+            path: gitlab.rb
+    {{- if .Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml .Values.nodeSelector | indent 8 }}
+    {{- end }}
+{{- end }}

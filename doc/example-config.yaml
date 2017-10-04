@@ -1,0 +1,57 @@
+ingress:
+  enabled: true
+  hosts:
+    - name: registry.example.local
+      serviceName: registry
+      servicePort: registry
+    - name: gitlab.example.local
+      serviceName: omnibus
+      servicePort: og-workhorse
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    ingress.kubernetes.io/proxy-body-size: 1024M
+
+# Registry sub-chart
+registry:
+  enabled: true
+  registry:
+    replicas: 1
+    # https://docs.docker.com/registry/deploying/#storage-customization
+    storage:
+      filesystem:
+        rootdirectory: '/var/lib/registry'
+      cache:
+        blobdescriptor: 'inmemory'
+      delete:
+        enabled: true
+    authEndpoint: 'http://gitlab.example.local'
+    tokenIssuer: omnibus-gitlab-issuer
+    certBundle:
+      secretName: 'gitlab-registry-certbundle'
+      bundleName: 'gitlab-registry.crt'
+
+# GitLab sub-chart
+gitlab:
+    # sidekiq sub-chart
+    gitlab-sidekiq: {}
+
+    # omnibus sub-chart (development only)
+    omnibus:
+      enabled: true
+      initial_root_password: "minikube"
+      unicorn:
+        worker:
+          processes: 2
+          timeout: 60
+      redis:
+        enabled: true
+        password:
+          secret: gitlab-redis
+          key: redis-password
+      psql:
+        enabled: true
+      registry:
+        host: registry.example.local
+        port: 80
+        secret: omnibus-registry
+        certificate: gitlab-registry.key

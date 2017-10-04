@@ -1,13 +1,16 @@
 apiVersion: v1
-description: A Helm chart for GitLab
-name: gitlab-chart
+description: GitLab Sidekiq
+name: sidekiq
 version: 0.1.0
 keywords:
 - gitlab
+- sidekiq
 home: https://about.gitlab.com/
 sources:
-- https://gitlab.com/charts/helm.gitlab.io
+- https://gitlab.com/gitlab-org/gitlab-ce
+- https://gitlab.com/gitlab-org/gitlab-ee
 maintainers:
 - name: GitLab Inc.
   email: support@gitlab.com
 - name: The Build Team
+details: Sidekiq for GitLab Chart
