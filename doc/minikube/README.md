@@ -83,6 +83,13 @@ Minikube supports [PersistenVolumes](k8s-pv) of the `hostPath` type, which are m
 
 Further details, and listings of directories that _do_ persist, can be found [in the getting started guide](https://kubernetes.io/docs/getting-started-guides/minikube/#persistent-volumes)
 
+### Enable Addons
+
+Minikube handles some features apart from the base configuration. For the development of this project, we'll need access to `Ingress` and `kube-dns` will be helpful.
+
+- `minikube addons enable ingress`
+- `minikube addons enable kube-dns`
+
 ### Connecting to the dashboard
 
 You can find the URL for the dashboard by calling `minikube dashboard --url`.

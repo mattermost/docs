@@ -1,11 +1,12 @@
 apiVersion: v1
 name: registry
 version: 0.0.1
-description: "Helm chart for Container Registry"
+description: "Helm chart for Container Registry with GitLab"
 keywords:
 - registry
 - container
 - docker
+- gitlab
 home: https://github.com/docker/distribution
 sources:
 - https://github.com/docker/distribution
