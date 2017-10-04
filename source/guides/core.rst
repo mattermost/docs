@@ -36,6 +36,7 @@ Core Developer Handbook
    :glob:
 
    /developer/core-developer-handbook*
+   /process/support*
 
 Documentation Style Guide
 -------------------------
@@ -72,6 +73,7 @@ Marketing
    /process/marketing-guidelines*
    /process/asset-guidelines*
    /process/end-user-documentation*
+
    
 Partners
 -------------------------
