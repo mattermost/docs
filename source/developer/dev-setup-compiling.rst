@@ -14,7 +14,7 @@ Instructions are available for the following platforms:
 
 Mattermost uses `GNU Make <https://www.gnu.org/software/make/>`_ to control the generation of builds, to run the test suite, and to manage the build environment. You must run the ``make`` command from within the source directory. If you set up your developer machine according to the instructions, you can change to the source directory with the following command:
 
-  ``cd ~/go/src/github.com/mattermost/platform``
+  ``cd ~/go/src/github.com/mattermost/mattermost-server``
 
 The first time that you use the ``make run`` command can take a substantial amount of time depending on your machine's processor speed and memory size, and on the speed of your network. If you are developing in a VM, make sure that the VM has at least 2G of memory assigned to it.
 
