@@ -21,7 +21,7 @@ This endpoint can also be provided to schedulers like `Kubernetes <https://kuber
 
 .. code-block:: go
 
-  import "github.com/mattermost/platform/model"
+  import "github.com/mattermost/mattermost-server/model"
   
   Client := model.NewAPIv4Client("https://your-mattermost-url.com")
   Client.Login("email@domain.com", "Password1")
