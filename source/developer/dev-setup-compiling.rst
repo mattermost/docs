@@ -46,7 +46,7 @@ make build
 make build-client
   Builds the web client, which is the HTML, JavaScript, and CSS code that gets downloaded to the browser.
 make package
-  Creates packages for distributing your builds and puts them in the ``~/go/src/github.com/mattermost/platform/dist`` directory. If you want to make packages for targets other than your build machine, you must run the following commands first:
+  Creates packages for distributing your builds and puts them in the ``~/go/src/github.com/mattermost/mattermost-server/dist`` directory. If you want to make packages for targets other than your build machine, you must run the following commands first:
 
   1. Modify permissions on ``/usr/local/go``. Replace *{user}* and *{group}* with the user and group that you are logged in with.
 
