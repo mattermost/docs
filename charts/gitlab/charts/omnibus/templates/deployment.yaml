@@ -49,18 +49,15 @@ spec:
             - containerPort: {{ .Values.service.ports.gitaly }}
               name: og-gitaly
             {{- end }}
-          env:
-          - name: REDIS_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: {{ .Values.redis.password.secret }}
-                key: {{ .Values.redis.password.key }}
           volumeMounts:
             - name: {{ .Release.Name }}-registry-secret
               mountPath: '/etc/gitlab-registry'
               readOnly: true
             - name: gitlab-config
               mountPath: '/etc/gitlab'
+            - name: gitlab-redis
+              mountPath: '/etc/gitlab-redis'
+              readOnly: true
           # livenessProbe:
           #   initialDelaySeconds: 180
           #   timeoutSeconds: 15
@@ -89,6 +86,13 @@ spec:
           items:
           - key: gitlab.rb
             path: gitlab.rb
+      - name: gitlab-redis
+        secret:
+          secretName: {{ .Values.redis.password.secret }}
+          items:
+            - key: {{ .Values.redis.password.key }}
+              path: password
+          defaultMode: 0400
     {{- if .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml .Values.nodeSelector | indent 8 }}
