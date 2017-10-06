@@ -316,7 +316,7 @@ platform command move
   Examples
     .. code-block:: none
 
-      sudo ./platform commnad move newteam oldteam:command-trigger-word
+      sudo ./platform command move newteam oldteam:command-trigger-word
       sudo ./platform channel move newteam o8soyabwthjnf9qibfztje5a36h
 
 platform help
