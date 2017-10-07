@@ -50,7 +50,7 @@ If their Mattermost server is unable to connect to the database, make sure the c
 #### Other
 If they are receiving a specific error from the database, try using that to troubleshoot the issue.
 
-## Websocket Issues
+## WebSocket Issues
 
 #### Can you send us the following Mattermost server configuration settings?
 `ServiceSettings.SiteURL`, `ServiceSettings.ListenAddress`, `ServiceSettings.AllowCorsFrom`, `ServiceSettings.WebsocketSecurePort`, `ServiceSettings.WebsocketPort` Typically found in `/opt/mattermost/config/config.json`
