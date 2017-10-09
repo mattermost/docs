@@ -85,7 +85,7 @@ Mobile Apps
    /mobile/mobile-troubleshoot.rst
 
 Changelog
-=========
+----------
 
 .. toctree::
    :maxdepth: 2
