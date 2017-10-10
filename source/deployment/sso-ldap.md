@@ -63,14 +63,14 @@ Yes, using the [bulk import tool](https://docs.mattermost.com/deployment/bulk-lo
 
 ##### How does deactivating users work? 
 
-- Deleting Users: Deleting a user from LDAP will deactivate them from Mattermost in next sync. 
-- Disabling Users: Depends on the LDAP server. Some may deactivate the user in Mattermost, for others (like AD) you will need to specify with the user filter. 
-  - Active Directory, the query to filter out disabled users is: `(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))`
+- Deleting Users: Deleting a user from LDAP will deactivate them from Mattermost on the next sync. 
+- Disabling Users: Depends on the LDAP server. Some may deactivate the user in Mattermost, for others, such as Active Directory, you will need to specify with the user filter. 
+  - Active Directory, the qquery to filter out disabled users is: `(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))`
 - Deselecting with user filter: Any users not selected with the user filter will be deactivated in Mattermost.
 
 ##### Can I connect to multiple AD servers? 
 
-Not right now.  You'll need to connect the instances in a forest (a collection of LDAP domains).
+Not right now.  You'll need to connect the instances in a forest.
 
 Consider upvoting the [feature request](https://mattermost.uservoice.com/forums/306457-general/suggestions/13589904-add-the-abilitiry) on our forum.
 
