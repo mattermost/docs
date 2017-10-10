@@ -70,7 +70,7 @@ Yes, using the [bulk import tool](https://docs.mattermost.com/deployment/bulk-lo
 
 ##### Can I connect to multiple AD servers? 
 
-Not right now, need to connect the instances in a forest.
+Not right now.  You'll need to connect the instances in a forest (a collection of LDAP domains).
 
 Consider upvoting the [feature request](https://mattermost.uservoice.com/forums/306457-general/suggestions/13589904-add-the-abilitiry) on our forum.
 
