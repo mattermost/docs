@@ -9,6 +9,8 @@ Release date: 2017-10-16
 
 ### Security Update
 
+- Mattermost v4.3.0 contains multiple security fixes ranging from low to high severity. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+
 ### Highlights
 
 #### Data Retention Beta ([Enterprise Edition E20](https://about.mattermost.com/pricing/))
@@ -116,6 +118,24 @@ Multiple setting options were added to `default.json`. Below is a list of the ad
 ### Known Issues
 
 XXXXXX to be updated after final is cut
+
+- Google login fails on the Classic mobile apps.
+- User can receive a video call from another browser tab while already on a call.
+- Jump link in search results does not always jump to display the expected post.
+- Scrollbar is sometimes not visible in the left-hand sidebar after switching teams.
+- Certain code block labels don't appear while scrolling on iOS mobile web.
+- Deleted message doesn't clear unreads or unread mentions.
+- Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+- Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+- Searching with Elasticsearch enabled may not always highlight the searched terms.
+- Channel links to channels that the current user does not belong to may not render correctly.
+- Missing an indication if a message is pending but not yet sent.
+- Recent mention results are not sorted correctly if hashtags is included in "words that trigger mentions".
+- Team sidebar doesn't always show unreads from other teams on first load.
+- SVG thumbnails don't preview in the posted thumbnail.
+- Emojis names matching usernames can trigger mentions.
+- Integration message attachment fails to post if attachment length exceeds 7900 characters.
+- Uppercase letter is required for a password if the password requirement is set to at least 5 characters and a number.
 
 ### Contributors
 
