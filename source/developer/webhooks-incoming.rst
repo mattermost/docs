@@ -3,7 +3,7 @@
 Incoming Webhooks
 =================
 
-Mattermost supports webhooks to easily integrate external applications into the platform.
+Mattermost supports webhooks to easily integrate external applications into the server.
 
 Use incoming webhooks to post messages to Mattermost public channels, private channels, and direct messages. Messages are sent via an HTTP POST request to a Mattermost URL generated for each application and contain a specifically formatted JSON payload in the request body.
 
@@ -77,6 +77,9 @@ For example, if you have a webhook created for *Town Square*, you can send a mes
 .. code-block:: text
 
   payload={"channel": "off-topic", "text": "Hello, this is some text\nThis is more text. :tada:"}
+
+.. note::
+  Use the channel URL, not the channel display name, when specifying the ``channel`` parameter. For instance, use ``town-square``, not ``Town Square`` when posting messages to the Town Square channel.
 
 To send a message to a direct message channel, add an "@" symbol followed by the username to the ``channel`` parameter.
 

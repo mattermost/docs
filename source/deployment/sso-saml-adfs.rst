@@ -49,7 +49,7 @@ However, if you would like to set up encryption for your SAML connection, click 
 
 	.. image:: ../../source/images/adfs_7_configure_certificate_encryption.PNG
 
-7. In the **Configure URL** screen, select the option **Enable Support for the SAML 2.0 WebSSO protocol** and enter the **SAML 2.0 SSO service URL**, which is of the form ``https://<your-mattermost-url>/login/sso/saml``.
+7. In the **Configure URL** screen, select the option **Enable Support for the SAML 2.0 WebSSO protocol** and enter the **SAML 2.0 SSO service URL**, which is of the form ``https://<your-mattermost-url>/login/sso/saml`` where ``https://<your-mattermost-url>`` should typically match the `Mattermost Site URL <https://docs.mattermost.com/administration/config-settings.html#site-url>`_.
 
 	.. image:: ../../source/images/adfs_8_configure_url.PNG
 

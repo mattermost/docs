@@ -36,9 +36,11 @@ Set up your development environment for building, running, and testing Mattermos
 
     ``source ~/.bashprofile``
 
-5. Fork Mattermost on GitHub from https://github.com/mattermost/platform.
+5. Fork Mattermost server on GitHub from https://github.com/mattermost/mattermost-server.
 
-6. Download the Mattermost code from your forked repository:
+6. Fork Mattermost webapp on GitHub from https://github.com/mattermost/mattermost-webapp.
+
+6. Download the Mattermost code from your forked repositories:
 
   a. Create the directory for the code.
 
@@ -48,8 +50,12 @@ Set up your development environment for building, running, and testing Mattermos
 
     ``cd ~/go/src/github.com/mattermost``
 
-  c. Clone your Mattermost fork. In the following command, replace *{username}* with your GitHub username.
+  c. Clone your Mattermost server fork. In the following command, replace *{username}* with your GitHub username.
 
-    ``git clone https://github.com/{username}/platform.git``
+    ``git clone https://github.com/{username}/mattermost-server.git``
+
+  d. Clone your Mattermost webapp fork. In the following command, replace *{username}* with your GitHub username.
+
+    ``git clone https://github.com/{username}/mattermost-webapp.git``
 
 Now that everything is set up, you are ready to compile and run Mattermost. See :doc:`dev-setup-compiling`.

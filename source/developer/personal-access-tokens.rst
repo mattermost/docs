@@ -91,3 +91,10 @@ How do I identify a badly behaving personal access token?
 Best option is to go to **System Console > Logs** and finding error messages relating to a particular token ID.
 
 Once identified, you can search which user account the token ID belongs to in **System Console > Users** and revoke it through the **Manage Tokens** dropdown option.
+
+Do personal access tokens continue to work if the user is deactivated?
+........................................................................
+
+No. The session used by the personal access token is revoked immediately after a user is deactivated, and a new session won't be created.
+
+The tokens are preserved and continue to function if the user account is re-activated. This is useful when a bot account is temporarily deactivated for troubleshooting, for instance.

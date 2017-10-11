@@ -78,6 +78,7 @@ Commercial and open source organizations who demonstrate the ability to automate
 - Joint-webinar opportunties 
 - Promotion on Mattermost social media accounts 
 
+To apply for the program, complete the `contact form <https://about.mattermost.com/contact/>`_ with Mattermost requesting a deployment solutions partner discussion.
 
 Partner Directory 
 ------------------------------

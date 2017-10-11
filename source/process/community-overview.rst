@@ -49,7 +49,7 @@ Audiences
 
 2. Code contributors (Owner: Eric)
 
-  - They contribute features, small improvements and bug fixes to platform, mobile and desktop app repos
+  - They contribute features, small improvements and bug fixes to server, webapp, mobile and desktop app repos
 
 3. End users (Owner: Lindy)
 

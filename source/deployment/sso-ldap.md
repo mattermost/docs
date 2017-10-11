@@ -73,3 +73,13 @@ Note: Currently the value is case sensitive. If the ID attribute is set to the u
 This indicates your AD/LDAP server configuration has a maximum page size set and the query coming from Mattermost is returning a result set in excess of that limit.
 
 To address this issue you can set the [max page size](https://docs.mattermost.com/administration/config-settings.html#maximum-page-size) for Mattermost's AD/LDAP configuration. This will return a sequence of result sets below the max page size set in AD/LDAP, rather than returning all results in a single query.
+
+##### Where can I find help on LDAP configuration settings in config.json?
+
+You can find an explanation of each of the configuration settings [here](https://docs.mattermost.com/administration/config-settings.html#ad-ldap).
+
+##### Can the LDAP User Filter read Security groups?
+
+Yes it can, but make sure that:
+ - permissions are correctly configured on the service account you are using
+ - each user object is a direct member of the security group

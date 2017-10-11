@@ -184,13 +184,13 @@ Procedure:
 Platform Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost Inc-only** - (Platform colleagues - 1 hour/week) Thursday's at 10:00 (`San Francisco Time <http://everytimezone.com/>`_).
+**Mattermost Inc-only** - (Product Staff - 1 hour/week) Thursday's at 10:00 (`San Francisco Time <http://everytimezone.com/>`_).
 
-Regular team meeting for platform team at Mattermost Inc.
+Regular team meeting for product staff team at Mattermost Inc.
 
 - Goal: Increase team output by effectively reviewing priorities and finding blindspots
 - Scope: Mattermost Inc-only meeting given confidential customer issues discussed
-- Attendees: Mattermost Inc colleagues working on platform
+- Attendees: Mattermost Inc colleagues working on mattermost-server and mattermost-webapp
 
 Platform meeting consists of two parts, Team Operation Review Meeting and Product Staff Meeting.
 
@@ -200,7 +200,7 @@ Only the product team attends the Product Staff Meeting, others' attendance is o
 
 Procedure:
 
-1. (Chair) 3-hours before standup, post reminders in `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only)
+1. (Chair) 3-hours before standup, post reminders in `Platform Meeting private channel <https://pre-release.mattermost.com/core/channels/platform-meeting>`_ (Mattermost Inc only)
 
 ::
 

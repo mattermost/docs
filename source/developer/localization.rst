@@ -28,9 +28,9 @@ To translate a language:
 Translations Updates
 --------------------
 
-1 - New and updated strings are imported to the `Mattermost Translation Server <http://translate.mattermost.com>`_ each day at 00:00 GMT. Strings with a ``mobile`` prefix are imported from the `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_ project, others are from `platform <https://github.com/mattermost/platform>`_.
+1 - New and updated strings are imported to the `Mattermost Translation Server <http://translate.mattermost.com>`_ each day at 00:00 GMT. Strings with a ``mobile`` prefix are imported from the `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_ project, others are from `mattermost-server <https://github.com/mattermost/mattermost-server>`_ and `mattermost-webapp <https://github.com/mattermost/mattermost-webapp>`_.
 
-2 - A new pull request with latest translations that reach at least Beta Quality is submitted to both the `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_ and `platform <https://github.com/mattermost/platform>`_ repos each Monday at 22:00 GMT.
+2 - A new pull request with latest translations that reach at least Beta Quality is submitted to the `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_, `mattermost-server <https://github.com/mattermost/mattermost-server>`_ and `mattermost-webapp <https://github.com/mattermost/mattermost-webapp>`_ repos each Monday at 22:00 GMT.
 
     - A pull request will also be submitted on the day of major feature complete and code complete to ensure latest translations are included in the release.
     - A pull request may also be submitted for a release candidate.
@@ -84,10 +84,10 @@ If you'd like to review and verify translations prior to achieving Beta-quality 
 
 4 - Copy the generated [locale].json files to the corresponding directories:
 
-    - For platform they should be in the `i18n` directory.
-    - For webapp they should be in the `webapp/i18n` directory.
+    - For the server, copy the files to the i18n directory of the ``mattermost-server`` project.
+    - For the webapp, copy the files to the i18n directory of the ``mattermost-webapp`` project.
 
-5 - Modify the file `webapp/i18n/i18n.jsx` to include your translated strings.
+5 - Modify the file ``i18n/i18n.jsx`` in the ``mattermost-webapp`` project to include your translated strings.
 
 6 - Compile and run **Mattermost** to confirm everything works. You can then review and verify translations from your machine.
 

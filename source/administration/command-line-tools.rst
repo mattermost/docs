@@ -1,7 +1,7 @@
 Command Line Tools
 ==================
 
-From the directory where the Mattermost platform is installed, a
+From the directory where the Mattermost server is installed, a
 ``platform`` command is available for configuring the system, including:
 
 **General Administration**
@@ -28,6 +28,7 @@ From the directory where the Mattermost platform is installed, a
 -  Removing users from channels
 -  Listing all channels for a team
 -  Restoring previously deleted channels
+-  Modifying a channel's public/private type
 -  Migrating sign-in options
 -  Resetting multi-factor authentication for a user
 
