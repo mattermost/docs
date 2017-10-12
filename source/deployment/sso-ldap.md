@@ -55,7 +55,7 @@ The following are frequently asked questions and troubleshooting suggestions on 
 
 ##### When I first set up and synchronize LDAP, are the users automatically created in Mattermost? 
 
-No, the users are created on first log in. 
+No, each user is created on their first login. 
 
 ##### If I want to add people to channels, can I pre-create users somehow? 
 
@@ -63,14 +63,17 @@ Yes, using the [bulk import tool](https://docs.mattermost.com/deployment/bulk-lo
 
 ##### How does deactivating users work? 
 
-- Deleting Users: Deleting a user from LDAP will deactivate them from Mattermost on the next sync. 
-- Disabling Users: Depends on the LDAP server. Some may deactivate the user in Mattermost, for others, such as Active Directory, you will need to specify with the user filter. 
-  - Active Directory, the qquery to filter out disabled users is: `(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))`
-- Deselecting with user filter: Any users not selected with the user filter will be deactivated in Mattermost.
+Users can be deactivated as follows:
 
-##### Can I connect to multiple AD servers? 
+- LDAP Server
+  - Delete the user (they will be deactivated in Mattermost on the next sync)
+  - Deselect the user in the user filter
+- Active Directory
+  - Run the following query in the user filter: `(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))`
 
-Not right now.  You'll need to connect the instances in a forest.
+##### Can I connect to multiple Active Directory servers? 
+
+No, this is not possible at the moment.  You will need to connect the instances in a forest.
 
 Consider upvoting the [feature request](https://mattermost.uservoice.com/forums/306457-general/suggestions/13589904-add-the-abilitiry) on our forum.
 
