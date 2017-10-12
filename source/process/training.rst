@@ -607,8 +607,8 @@ To have a Mattermost avatar created, you'll be invited to create a Mattermost av
 
 Note: 
 
-- Character should be human-sized (no giant characters).
-- Character should be fully-dressed or in a complete uniform/costume (no scantily clad or topless characters).
+(a.) Character should be human-sized (no giant characters).
+(b.) Character's appearance should be family-friendly. For example, no gory or provocative costumes.
  
 You should receive your digital Mattermost avatars by email in 6-8 weeks. 
 
