@@ -49,9 +49,38 @@ Notes:
 
 Organizations using multiple domains can integrate with Mattermost using a "Forest" configuration to bring together multiple domains. Please see [Forests as Collections of Domain Controllers that Trust Each Other](https://technet.microsoft.com/en-us/library/cc759073%28v=ws.10%29.aspx?f=255&MSPPError=-2147217396) for more information.
 
-### Troubleshooting
+### Troubleshooting / FAQ
 
-The following are troubleshooting suggestions on common error messages and issues.
+The following are frequently asked questions and troubleshooting suggestions on common error messages and issues.
+
+##### When I first set up and synchronize LDAP, are the users automatically created in Mattermost? 
+
+No, each user is created on their first login. 
+
+##### If I want to add people to channels, can I pre-create users somehow? 
+
+Yes, using the [bulk import tool](https://docs.mattermost.com/deployment/bulk-loading.html#bulk-loading-data).
+
+##### How does deactivating users work? 
+
+Users can be deactivated as follows:
+
+- LDAP Server
+  - Delete the user (they will be deactivated in Mattermost on the next sync)
+  - Deselect the user in the user filter
+- Active Directory
+  - Run the following query in the user filter: `(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))`
+
+##### Can I connect to multiple Active Directory servers? 
+
+No, this is not possible at the moment.  You will need to connect the instances in a forest.
+
+Consider upvoting the [feature request](https://mattermost.uservoice.com/forums/306457-general/suggestions/13589904-add-the-abilitiry) on our forum.
+
+##### AD/LDAP not available on this server
+
+- Confirm that Enterprise Edition is installed (and not Team Edition).
+- Check license to confirm there are no issues.
 
 ##### User not registered on AD/LDAP server
 
