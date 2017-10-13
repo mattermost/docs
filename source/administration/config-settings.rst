@@ -1119,13 +1119,17 @@ The timeout value for queries to the AD/LDAP server. Increase this value if you 
 | This feature's ``config.json`` setting is ``"QueryTimeout": 60`` with whole number input.                                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+AD/LDAP Test
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This button can be used to test the connection to the AD/LDAP server. If the test is successful, it shows a confirmation message and if there is a problem with the configuration settings it will show an error message.
+
 AD/LDAP Synchronize Now
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 This button causes AD/LDAP synchronization to occur as soon as it is pressed. Use it whenever you have made a change in the AD/LDAP server you want to take effect immediately. After using the button, the next AD/LDAP synchronization will occur after the time specified by the Synchronization Interval.
 
-AD/LDAP Test
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This button can be used to test the connection to the AD/LDAP server. If the test us successful, it shows a confirmation message and if there is a problem with the configuration settings it will show an error message.
+You can monitor the status of the synchronization job in the table below this button.
+
+.. figure:: ../images/ldap-sync-table.png
 
 ________
 
@@ -1452,6 +1456,16 @@ Set the number of minutes to cache a session in memory.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SessionCacheInMinutes" : 10`` with whole number input.                                                                  |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Session Idle Timeout (minutes)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The number of minutes from the last time a user was active on the system to the expiry of the user's session. Once expired, the user will need to log in to continue. Minimum is 5 minutes, and 0 is unlimited.
+
+Applies to the desktop app and browsers. For mobile apps, use an EMM provider to lock the app when not in use. In High Availability mode, enable IP hash load balancing for reliable timeout measurement.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SessionIdleTimeout" : 0`` with whole number input.                                                                      |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -1963,6 +1977,14 @@ Hostname of your S3 Compatible Storage provider. Defaults to ``s3.amazonaws.com`
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AmazonS3Endpoint": "s3.amazonaws.com"`` with string input.                                                              |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Amazon S3 Region
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AWS region you selected for creating your S3 bucket. Refer to `AWS Reference Documentation <http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region>`_ and choose this variable from the Region column.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AmazonS3Region": ""`` with string input.                                                                                |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Secure Amazon S3 Connections
@@ -2901,14 +2923,6 @@ Font used in auto-generated profile pics with colored backgrounds.
 | This feature's ``config.json`` setting is ``"InitialFont": "luximbi.ttf"`` with string input.                                                                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Amazon S3 Region
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AWS region you selected for creating your S3 bucket. Refer to `AWS Reference Documentation <http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region>`_ and choose this variable from the Region column.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AmazonS3Region": ""`` with string input.                                                                                |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Amazon S3 Bucket Endpoint
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Set an endpoint URL for Amazon S3 buckets.
@@ -3083,6 +3097,14 @@ The start time of the daily scheduled aggregator job. This setting is based on t
 +-----------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PostsAggregatorJobStartTime": 03:00`` with 24-hour time stamp input in the form HH:MM      |
 +-----------------------------------------------------------------------------------------------------------------------------------------+
+
+Index Prefix
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Prefix on the Elasticsearch index name. Enables the use of Mattermost Elasticsearch on a shared Elasticsearch cluster.
+
++----------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"IndexPrefix": ""`` with string input      |
++----------------------------------------------------------------------------------------+
 
 Client Requirement Settings (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

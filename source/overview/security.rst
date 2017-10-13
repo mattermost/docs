@@ -54,7 +54,7 @@ Authentication Safeguards
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    - To protect against brute force attacks, you can set `rate limiting on APIs <https://docs.mattermost.com/administration/config-settings.html#id55>`_, varied by query frequency, memory store size, remote address and headers.
-   - Session length and session cache can be `configured according to your internal policies <https://docs.mattermost.com/administration/config-settings.html#id33>`_, automatically forcing a user to re-login after a specified period of time.
+   - Session length, session cache and idle timeout can be `configured according to your internal policies <https://docs.mattermost.com/administration/config-settings.html#sessions>`_, automatically forcing a user to re-login after a specified period of time.
    - Remotely `revoke user sessions <https://docs.mattermost.com/help/settings/account-settings.html#view-and-logout-of-active-sessions>`_ across web, mobile devices and native desktop apps.
    - Remotely reset user passwords via the System Console or via the `command line <https://docs.mattermost.com/administration/command-line-tools.html#platform-user-password>`_.
    - Mattermost supports integrated authentication with `Active Directory and LDAP <https://docs.mattermost.com/deployment/sso-ldap.html>`_ (E10) as well as `SAML 2.0 SSO integration <https://docs.mattermost.com/deployment/sso-saml.html>`_ with providers including `Active Directory Federation Services <https://docs.mattermost.com/deployment/sso-saml-adfs.html>`_,  `Okta <https://docs.mattermost.com/deployment/sso-saml-okta.html>`_, among others (E20).
