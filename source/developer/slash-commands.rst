@@ -89,6 +89,8 @@ You can follow these general guidelines to set up a custom Mattermost slash comm
    user_id=c3a4cqe3dfy6dgopqt8ai3hydh&
    user_name=somename
 
+If your integration sends back a JSON payload, make sure it returns the ``application/json`` content-type.
+
 9 - Add a configurable *MATTERMOST_TOKEN* variable to your application and set it to the **Token** value from step 7. This value will be used by your application to confirm the HTTP POST or GET request came from Mattermost.
 
 10 - To have your application post a message back to ``town-square``, it can respond to the HTTP POST request with a JSON response payload such as:
@@ -282,3 +284,10 @@ Command with a trigger of 'trigger_word' returned an empty response
 If you are using a slash command that previously worked in Slack, try specifying the ``response_type`` for the slash command. 
 
 Slack assumes the ``response_type`` is ``ephemeral`` while Mattermost does not, so the `response_type must be specified <https://docs.mattermost.com/developer/slash-commands.html#message-type>`_ before the command works.
+
+My integration prints the JSON payload data in a Mattermost channel
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost handles multiple content types for integrations, including plaintext content type. 
+
+If your integration prints the JSON payload data instead of rendering the generated message, make sure your integration is returning the ``application/jso``n content-type.
