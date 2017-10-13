@@ -66,7 +66,6 @@ Release date: 2017-10-16
 - Interactive message action buttons no longer disappear after updating the message.
 - Ticket links posted by the built-in JIRA plug-in are now correct if the JIRA URL has a custom context path.
 - Error message is now displayed in the System Console if the localization available languages does not include the default client language.
-- Removed the extra blank ephemeral message posted as an extra response to slash commands.
 - Fixed a race condition where bulk import sometimes fails to get team member when importing users.
 - Closing the channel switcher on mobile no longer sets focus to the text box.
 - Fixed an issue where the wrong channel name might appear in the right-hand side pinned post list.
