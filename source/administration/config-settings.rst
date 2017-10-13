@@ -3039,6 +3039,14 @@ The start time of the daily scheduled aggregator job.
 | This feature's ``config.json`` setting is ``"PostsAggregatorJobStartTime": 03:00`` with 24-hour time stamp input in the form HH:MM      |
 +-----------------------------------------------------------------------------------------------------------------------------------------+
 
+Index Prefix
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Prefix on the Elasticsearch index name. Enables the use of Mattermost Elasticsearch on a shared Elasticsearch cluster.
+
++----------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"IndexPrefix": ""`` with string input      |
++----------------------------------------------------------------------------------------+
+
 Client Requirement Settings (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
