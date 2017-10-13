@@ -94,10 +94,10 @@ Multiple setting options were added to `default.json`. Below is a list of the ad
 - Under `ElasticsearchSettings` in `default.json`:
   - Added `"IndexPrefix": ""` to allow Elasticsearch to be used on a shared Elasticseearch cluster.
 - Under `DataRetentionSettings` in `default.json`:
-  - Added `"EnableMessageDeletion": false` XXXXXX
-  - Added `"EnableFileDeletion": false` XXXXXX
-  - Added `"MessageRetentionDays": 365` XXXXXX
-  - Added `"FileRetentionDays": 365` XXXXXX
+  - Added `"EnableMessageDeletion": false` to enable message deletion.
+  - Added `"EnableFileDeletion": false` to enable file deletion.
+  - Added `"MessageRetentionDays": 365` to set how long Mattermost keeps messages in channels and direct messages.
+  - Added `"FileRetentionDays": 365` to set how long Mattermost keeps file uploads in channels and direct messages.
   - Added `"DeletionJobStartTime": "02:00"` to specify when to start the data retention job.
   
 ### API v4 Changes
@@ -116,8 +116,6 @@ Multiple setting options were added to `default.json`. Below is a list of the ad
   - Response includes `last_viewed_at_times` for Mattermost server 4.3 and newer.
 
 ### Known Issues
-
-XXXXXX to be updated after final is cut
 
 - Google login fails on the Classic mobile apps.
 - User can receive a video call from another browser tab while already on a call.
