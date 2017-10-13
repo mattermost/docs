@@ -63,7 +63,7 @@ Release date: 2017-10-16
 - Webhooks no longer continue sending to the original channel if the target channel is changed.
 - Emails containing symbols now render correctly when switching to email authentication from other methods.
 - Attempting to open an invalid public file link no longer displays an unformatted error page.
-- Interactive message posts can now be updated without losing the action buttons.
+- Interactive message action buttons no longer disappear after updating the message.
 - Ticket links posted by the built-in JIRA plug-in are now correct if the JIRA URL has a custom context path.
 - Error message is now displayed in the System Console if the localization available languages does not include the default client language.
 - Removed the extra blank ephemeral message posted as an extra response to slash commands.
@@ -82,12 +82,7 @@ For a list of past and upcoming deprecated features, [see our website](https://a
 
 Multiple setting options were added to `default.json`. Below is a list of the additions and their default values on install. The settings can be modified in `default.json`, or the System Console when available.
 
-**Changes to Team Edition and Enterprise Edition**:
-
-- Under `TeamSettings` in `default.json`:
-  - Added `"EnableConfirmNotificationsToChannel": true` to disable the confirmation modal when sending channel-wide notifications.
-
-**Additional Changes to Enterprise Edition**:
+**Changes to Enterprise Edition**:
 
 - Under `ServiceSettings` in `default.json`:
   - Added `"SessionIdleTimeout": 0` to specify how long to wait before logging out inactive users.
