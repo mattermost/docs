@@ -143,9 +143,8 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - Post this checklist in Release channel
     - Verify all items in the last posted release checklist are complete
 2. QA:
-    - Update Release Discussion header with links to RC instances and testing spreadsheet
-    - Post release testing instructions to Release Discussion channel ([example](https://pre-release.mattermost.com/core/pl/8z1tazpmm3ycbrehju36brd5nh))
-    - Post "Known Issues" to Release Discussion channel
+    - Update Release Discussion header with links to RC instances and testing spreadsheet ([template](https://pre-release.mattermost.com/core/pl/db3sur4r53d9tyih1i4wrmi9wy))
+    - Post release testing instructions to Release Discussion channel ([template](https://pre-release.mattermost.com/core/pl/uprogtcqzpbk7nkmdkfnhqkcac))
 3. Dev:
     - Run loadtests against the release candidate to find potential performance issues
 4. Logistics:
@@ -192,7 +191,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - Finish drafts of all art work (screenshots, GIFs and twitter banners) used for the blog post and send to marketing lead for review
     - Find [www-gitlab-com merge request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests?scope=all&utf8=%E2%9C%93&state=opened&label_name%5B%5D=blog%20post&label_name%5B%5D=release) for latest GitLab release blog post and make request for adding GitLab Mattermost update (see [example request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests/2910#note_14096885), [example update](https://about.gitlab.com/2016/07/22/gitlab-8-10-released/#gitlab-mattermost-32)). Post to Release Discussion channel with link to request.
 5. QA:
-    - Organize a mini-release testing spreadsheet for team members to carry out before final version is cut.
+    - Update Selenium and manual smoke tests as needed, to prepare to run on each RC after it is cut.
 
 ### H. (T-minus 2 working days) Release Build Cut
 
@@ -333,7 +332,7 @@ Once final dot release build is ready to cut:
         - Submit a PR to change version number in `docs/source/conf.py` against the `vX.X-documentation` branch
 4. Build
     - Put CI servers and translation server back onto master, and post in Release Discussion channel once done
-    - Update [ci-linux-mysql-prev](https://ci-linux-mysql-prev.mattermost.com) to the final release version
+    - Update [ci-linux-mysql-prev](https://ci-linux-mysql-prev.mattermost.com) to the previous release version
 5. Dev:
     - Delete RCs after final version is shipped    
     - Check if any libraries need to be updated in all repositories, including `mattermost-server`, `mattermost-webapp`, `desktop`, `mattermost-mobile` and `mattermost-redux`
