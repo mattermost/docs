@@ -605,10 +605,10 @@ To have a Mattermost avatar created, you'll be invited to create a Mattermost av
 2. Attach a clear image at least 600 pixels high and 600 pixels wide showing your character's full body in a standing pose. 
 3. Send a clear photo of your face at least 600 pixels high and 600 pixels wide facing the same direction as your character image.
 
-Note: 
+Notes: 
 
-- (a) Character should be human-sized (no giant characters).  
-- (b) Character's appearance should be family-friendly. For example, no gory or provocative costumes.
+1. Character should be human-sized (no giant characters).  
+2. Character's appearance should be family-friendly. For example, no gory or provocative costumes.
  
 You should receive your digital Mattermost avatars by email in 6-8 weeks. 
 
