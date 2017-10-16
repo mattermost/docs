@@ -225,4 +225,4 @@ Some common error messages include:
   1. You have space around JSON separator colons, ``payload={"Hello" : "test"}`` or  
   2. You are using single quotes to wrap the ``-d`` data, ``-d 'payload={"Hello":"test"}'``
 
-If your integration prints the JSON payload data instead of rendering the generated message, make sure your integration is returning the ``application/jso``n content-type.
+If your integration prints the JSON payload data instead of rendering the generated message, make sure your integration is returning the ``application/json`` content-type.
