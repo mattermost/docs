@@ -77,7 +77,7 @@ Release date: 2017-10-16
 
 For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
 
-#### default.json
+#### config.json
 
 Multiple setting options were added to `default.json`. Below is a list of the additions and their default values on install. The settings can be modified in `default.json`, or the System Console when available.
 
