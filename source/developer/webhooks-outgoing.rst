@@ -219,6 +219,6 @@ To debug outgoing webhooks in **System Console > Logs**, set **System Console > 
 My integration prints the JSON payload data in a Mattermost channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost handles multiple content types for integrations, including plaintext content type. 
+Mattermost handles multiple content types for integrations, including plain text content type. 
 
 If your integration prints the JSON payload data instead of rendering the generated message, make sure your integration is returning the ``application/json`` content-type.
