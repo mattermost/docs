@@ -75,6 +75,8 @@ In our example, we would set the channel to ``town-square`` and specify ``#build
       user_id=rnina9994bde8mua79zqcg5hmo&
       user_name=somename
 
+If your integration sends back a JSON payload, make sure it returns the ``application/json`` content-type.
+
 9 - Add a configurable *MATTERMOST_TOKEN* variable to your application and set it to the **Token** value from step 7. This value will be used by your application to confirm the HTTP POST request came from Mattermost.
 
 10 - To have your application post a message back to ``town-square``, it can respond to the HTTP POST request with a JSON response payload such as:
@@ -213,3 +215,10 @@ Troubleshooting
 ---------------
 
 To debug outgoing webhooks in **System Console > Logs**, set **System Console > Logging > Enable Webhook Debugging** to ``true`` and set **System Console > Logging > Console Log Level** to ``DEBUG``.
+
+My integration prints the JSON payload data in a Mattermost channel
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost handles multiple content types for integrations, including plain text content type. 
+
+If your integration prints the JSON payload data instead of rendering the generated message, make sure your integration is returning the ``application/json`` content-type.
