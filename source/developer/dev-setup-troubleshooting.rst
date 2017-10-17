@@ -51,7 +51,7 @@ Testing errors
 --------------
 
 I get the following error when running ``make test``: t.Run undefined (type *testing.T has no field or method Run)
-  You need to upgrade to Go 1.8. We don't support earlier versions than that.
+  You need to upgrade to Go 1.9. We don't support earlier versions than that.
 
 Other errors
 ------------

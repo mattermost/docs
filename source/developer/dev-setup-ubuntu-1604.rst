@@ -29,15 +29,15 @@ Set up your development environment for building, running, and testing Mattermos
 
   ``sudo apt-get install build-essential``
 
-3. Download and install Go 1.8 for Linux:
+3. Download and install Go 1.9 for Linux:
 
     a. Download the Go binary.
 
-       ``wget https://storage.googleapis.com/golang/go1.8.linux-amd64.tar.gz``
+       ``wget https://storage.googleapis.com/golang/go1.9.linux-amd64.tar.gz``
 
     b. Install the Go binary.
 
-       ``sudo tar -C /usr/local -xzf go1.8.linux-amd64.tar.gz``
+       ``sudo tar -C /usr/local -xzf go1.9.linux-amd64.tar.gz``
 
 4. Set up your Go workspace:
 

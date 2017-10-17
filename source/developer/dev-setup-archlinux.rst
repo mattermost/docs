@@ -16,7 +16,7 @@ Set up your development environment for building, running, and testing Mattermos
 
     ``127.0.0.1 dockerhost``
 
-2. Install Go 1.8.
+2. Install Go 1.9.
 
   ``pacman -S go``
 
