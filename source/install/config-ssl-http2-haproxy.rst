@@ -103,7 +103,7 @@ You can use any certificate that you want, but these instructions show you how t
   
     http01_port = 54321
     
-  Run a ``--dry-run`` so we don't actually renew anything
+  Run a ``--dry-run`` so nothing gets renewed.
     
     ``sudo certbot renew --dry-run``
 
