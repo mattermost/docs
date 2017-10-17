@@ -251,7 +251,7 @@ If a security fix release is required, run through the following steps:
     - Merge changes made to release branch into master
 2. PM:
     - Update the changelog
-    - Submit GitLab MR to update MM to 4.0.3 [MR here](https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests/1844)
+    - Submit GitLab MR to update MM to vXXX
     - Update the version archive in the [upgrade guide](https://github.com/mattermost/docs/blob/master/source/administration/upgrade.md)
     - Help [test the upgrade](https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg) once the GitLab MR is merged and included in their RC
 3. Marketing:
