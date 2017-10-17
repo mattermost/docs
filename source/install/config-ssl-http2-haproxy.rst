@@ -11,7 +11,7 @@ You can use any certificate that you want, but these instructions show you how t
 
 **To configure SSL and HTTP/2:**
 
-1. Log in to the server that hosts NGINX and open a terminal window.
+1. Log in to the server that hosts HAProxy and open a terminal window.
 2. Install git.
 
   If you are using Ubuntu or Debian:
@@ -50,10 +50,10 @@ You can use any certificate that you want, but these instructions show you how t
 
   When prompted, enter your domain name. After the installation is complete, you can find the certificate in the   ``/etc/letsencrypt/live`` directory.
 
-8. Open the file ``/etc/nginx/sites-available/mattermost`` as root in a text editor and update the *server* section to incorporate the highlighted lines in the following sample. Make sure to replace *{domain-name}* with your own domain name, in 3 places.
+8. Open the file ``/etc/haproxy/haproxy.cfg`` as root in a text editor and update the *server* section to incorporate the highlighted lines in the following sample. Make sure to replace *{domain-name}* with your own domain name, in 2 places.
 
   .. code-block:: none
-    :emphasize-lines: 6-10, 13, 16-23, 32
+    :emphasize-lines: 6-10, 13, 15-23, 33
 
     .
     .
@@ -80,7 +80,34 @@ You can use any certificate that you want, but these instructions show you how t
   * Test the SSL certificate by visiting a site such as https://www.ssllabs.com/ssltest/index.html
   * If there’s an error about the missing chain or certificate path, there is likely an intermediate certificate missing that needs to be included.
 
-11. Create a script called ``renew.sh`` to renew and generate a ``.pem`` for HAProxy.
+11. Configure a Let's Encrypt backend
+
+  .. code-block:: none
+  
+    backend letsencrypt
+    server 127.0.0.1:54321
+    
+12. Restart HAProxy.
+
+  On Ubuntu 14.04 and RHEL 6.6:
+
+  ``sudo service haproxy start``
+
+  On Ubuntu 16.04 and RHEL 7.1:
+
+  ``sudo systemctl start haproxy``
+  
+13. Open the file ``/etc/letsencrypt/renewal/{domain-name}.conf`` as root in a text editor and update the ``http01_port`` section to incorporate the highlighted lines in the following sample.
+
+  .. code-block:: none
+  
+    http01_port = 54321
+    
+    Run a ``--dry-run`` so we don't actually renew anything
+    
+    ``sudo certbot renew --dry-run``
+
+14. Create a script called ``renew.sh`` to renew and generate a ``.pem`` for HAProxy.
 
   In the following script, use your own domain name in place of *{domain-name}*
   
@@ -101,7 +128,7 @@ You can use any certificate that you want, but these instructions show you how t
   
     ``sudo chmod u+x /usr/local/bin/renew.sh``
     
-12. Configure ``cron`` so that the certificate will automatically renew every month.
+15. Configure ``cron`` so that the certificate will automatically renew every month.
   
   ``crontab -e``
 
