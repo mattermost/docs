@@ -11,3 +11,4 @@ data:
   hsts-include-subdomains: {{ .Values.hstsIncludeSubdomains | quote }}
   body-size: {{ .Values.proxyBodySize | quote }}
   server-name-hash-bucket-size: {{ .Values.serverNameHashBucketSize | quote }}
+  enable-vts-status: "true"

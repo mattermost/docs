@@ -7,6 +7,9 @@ metadata:
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
+  annotations:
+    prometheus.io/port: "10254"
+    prometheus.io/scrape: "true"
 spec:
   replicas: {{ .Values.replicaCount }}
   template:
@@ -31,6 +34,8 @@ spec:
               name: https
             - containerPort: 22
               name: ssh
+            - containerPort: 10254
+              name: prometheus
           # readinessProbe:
           #   httpGet:
           #     path: /healthz
