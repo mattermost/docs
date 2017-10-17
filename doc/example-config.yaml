@@ -1,15 +1,16 @@
-ingress:
-  enabled: true
-  hosts:
-    - name: registry.example.local
-      serviceName: registry
-      servicePort: registry
-    - name: gitlab.example.local
-      serviceName: omnibus
-      servicePort: og-workhorse
-  annotations:
-    kubernetes.io/ingress.class: nginx
-    ingress.kubernetes.io/proxy-body-size: 1024M
+nginx:
+  ingress:
+    enabled: true
+    hosts:
+      - name: registry.example.local
+        serviceName: registry
+        servicePort: registry
+      - name: gitlab.example.local
+        serviceName: omnibus
+        servicePort: og-workhorse
+    annotations:
+      kubernetes.io/ingress.class: nginx
+      ingress.kubernetes.io/proxy-body-size: 1024M
 
 # Registry sub-chart
 registry:
@@ -32,9 +33,6 @@ registry:
 
 # GitLab sub-chart
 gitlab:
-    # sidekiq sub-chart
-    gitlab-sidekiq: {}
-
     # omnibus sub-chart (development only)
     omnibus:
       enabled: true

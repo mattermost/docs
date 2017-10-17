@@ -1,0 +1,51 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+    app: {{ template "name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "name" . }}
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.images.nginxIngress.repository }}:{{ .Values.images.nginxIngress.tag }}"
+          imagePullPolicy: {{ .Values.images.nginxIngress.pullPolicy }}
+          args:
+          - /nginx-ingress-controller
+          - --default-backend-service={{ .Release.Namespace }}/{{ template "fullname" . }}-default-backend
+          - --nginx-configmap={{ .Release.Namespace }}/{{ template "fullname" . }}
+          - --tcp-services-configmap={{ .Release.Namespace }}/{{ template "fullname" . }}-tcp
+          ports:
+            - containerPort: 80
+              name: http
+            - containerPort: 443
+              name: https
+            - containerPort: 22
+              name: ssh
+          # readinessProbe:
+          #   httpGet:
+          #     path: /healthz
+          #     port: 10254
+          #     scheme: HTTP
+          #   initialDelaySeconds: 15
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 10254
+            initialDelaySeconds: 30
+            timeoutSeconds: 5
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+    {{- if .Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml .Values.nodeSelector | indent 8 }}
+    {{- end }}

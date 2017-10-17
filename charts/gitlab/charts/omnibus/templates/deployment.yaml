@@ -50,11 +50,6 @@ spec:
               name: og-gitaly
             {{- end }}
           env:
-          # - name: GITLAB_OMNIBUS_CONFIG
-          #   valueFrom:
-          #     configMapKeyRef:
-          #       name: {{ template "fullname" . }}
-          #       key: gitlab.rb
           - name: REDIS_PASSWORD
             valueFrom:
               secretKeyRef:
