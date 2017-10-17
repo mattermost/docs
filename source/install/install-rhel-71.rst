@@ -20,4 +20,6 @@ You can also use these instructions to install Mattermost on CentOS 7, Oracle Li
 .. include:: config-tls-mattermost.rst
 .. include:: install-rhel-nginx.rst
 .. include:: config-proxy-nginx.rst
+.. include:: config-proxy-haproxy.rst
 .. include:: config-ssl-http2-nginx.rst
+.. include:: config-ssl-http2-haproxy.rst
