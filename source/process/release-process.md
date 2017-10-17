@@ -306,7 +306,7 @@ Once final dot release build is ready to cut:
 6. Logistics:
     - Update [Mattermost server download page](https://mattermost.org/download) with the links to the EE and TE bits
       - Test the download links before and after updating the page
-    - Contact owners of [community installers](https://about.mattermost.com/download/) or submit PRs to update install version number
+    - Contact owners of [community installers](http://www.mattermost.org/installation/) or submit PRs to update install version number
     - For Puppet, Heroku and Ansible Playbook, post to Installers and Images channel announcing the new release.
     - For Chef Cookbook, open a new issue to announce the new release.
     - For Yunohost, open a new pull request to update the version.
