@@ -1,5 +1,5 @@
 apiVersion: extensions/v1beta1
-kind: Deployment
+kind: DaemonSet
 metadata:
   name: {{ template "fullname" . }}
   labels:
@@ -11,7 +11,6 @@ metadata:
     prometheus.io/port: "10254"
     prometheus.io/scrape: "true"
 spec:
-  replicas: {{ .Values.replicaCount }}
   template:
     metadata:
       labels:
@@ -27,6 +26,15 @@ spec:
           - --default-backend-service={{ .Release.Namespace }}/{{ template "fullname" . }}-default-backend
           - --nginx-configmap={{ .Release.Namespace }}/{{ template "fullname" . }}
           - --tcp-services-configmap={{ .Release.Namespace }}/{{ template "fullname" . }}-tcp
+          env:
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
           ports:
             - containerPort: 80
               name: http
