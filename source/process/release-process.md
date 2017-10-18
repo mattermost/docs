@@ -286,7 +286,6 @@ Once final dot release build is ready to cut:
 
 1. Dev:
     - Verify hashes and GPG signatures are correct, once build is cut
-    - Update ci-linux-mysql-prev to 4.0.3
     - Delete RCs after final version is shipped
     - Merge changes made to release branch into vXXX
 2. Build:  
