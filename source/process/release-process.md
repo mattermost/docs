@@ -251,7 +251,7 @@ If a security fix release is required, run through the following steps:
     - Merge changes made to release branch into master
 2. PM:
     - Update the changelog
-    - Submit GitLab MR to update MM to vXXX
+    - Submit GitLab MR to update Mattermost to vXXX
     - Update the version archive in the [upgrade guide](https://github.com/mattermost/docs/blob/master/source/administration/upgrade.md)
     - Help [test the upgrade](https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg) once the GitLab MR is merged and included in their RC
 3. Marketing:
@@ -282,35 +282,33 @@ If a bug fix release is required, run through the following steps:
 4. QA:
     - Test the new RC to verify fixes merged to the release branch work. Post in Release Discussion channel after testing 
 
-Once final dot release build is ready to cut:
+Once bug fix release is ready to cut:
 
 1. Dev:
+    - Tag a new release (e.g. 1.1.1) and run an official build
     - Verify hashes and GPG signatures are correct, once build is cut
     - Delete RCs after final version is shipped
-    - Merge changes made to release branch into vXXX
-2. Build:  
-    - Tag a new release (e.g. 1.1.1) and run an official build  
+    - Merge changes made to release branch into master 
     - Update CI servers, pre-release and GitLab Mattermost to the final version    
-3. PM:
+2. PM:
     - Update [Mattermost pricing page](https://about.mattermost.com/pricing/) if anything has changed
     - Merge the Changelog PR with notes on patch releases (see [example entry](https://docs.mattermost.com/administration/changelog.html#release-v3-5.1))
     - Submit GitLab MR to update the version number and MD5 hash to the dot release version. [See example](https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests/1127)
     - Update the version archive in the [upgrade guide](https://github.com/mattermost/docs/blob/master/source/administration/upgrade.md)
     - [Test the upgrade](https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg) once the MR is merged and the package is released to the GitLab package server
-4. QA:  
+3. QA:  
     - Verifies each of the issues in the patch release are fixed
-5. Docs:
-    - Update the version archive in the [upgrade guide](https://github.com/mattermost/docs/blob/master/source/administration/upgrade.md)
+4. Docs:
     - Submit an MR to update [GitLab Mattermost documentation](https://docs.gitlab.com/omnibus/gitlab-mattermost/README.html)
-6. Logistics:
+5. Logistics:
     - Update [Mattermost server download page](https://mattermost.org/download) with the links to the EE and TE bits
       - Test the download links before and after updating the page
     - Contact owners of [community installers](http://www.mattermost.org/installation/) or submit PRs to update install version number
-    - For Puppet, Heroku and Ansible Playbook, post to Installers and Images channel announcing the new release.
-    - For Chef Cookbook, open a new issue to announce the new release.
-    - For Yunohost, open a new pull request to update the version.
-    - For OpenShift, open a new pull request to update the version.
-7. Marketing:
+      - For Puppet, Heroku and Ansible Playbook, post to Installers and Images channel announcing the new release. See [example](https://pre-release.mattermost.com/core/pl/5eh8fw3jaiyzzqoc6nfwfaioya).
+      - For Chef Cookbook, open a new issue to announce the new release. See [example](https://github.com/verifi-inc/mattermost/issues/2).
+      - For Yunohost, open a new pull request to update the version. See [example](https://github.com/kemenaran/mattermost_ynh/pull/11).
+      - For OpenShift, open a new pull request to update the version. See [example](https://github.com/goern/mattermost-openshift/pull/13).
+6. Marketing:
     - Prepare [blog post](https://about.mattermost.com/mattermost-3-6-2/) for mattermost.com, MailChimp email blast, and [Twitter announcement](https://twitter.com/mattermosthq/status/827193482578112512), and send for marketing lead to review. Once reviewed, schedule for 08:00 PST on the day after dot release
       - **Note:** If the release contains a security update, also draft a Mailchimp email blast for the [Security Bulletin mailing list](http://eepurl.com/cAl5Rv)
       - Upgrade should be recommended if there are security fixes in the dot release version
