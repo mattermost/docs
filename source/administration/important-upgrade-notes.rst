@@ -22,6 +22,8 @@ Important Upgrade Notes
 |                                                    |                                                                                                                                                                 |
 |                                                    | Push notification, OAuth 2.0 and WebRTC server URLs are trusted and not affected by this setting.                                                               |
 |                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Uploaded file attachments are now grouped by day and stored in ``/data/<date-of-upload-as-YYYYMMDD>/teams/...`` of your file storage system.                    |
+|                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Mattermost `/platform` repo has been separated to `/mattermost-webapp` and `/mattermost-server`. This may affect you if you have a private fork of the          |
 |                                                    | `/platform` repo. `More details here <https://forum.mattermost.org/t/mattermost-separating-platform-into-two-repositories-on-september-6th/3708>`_.             |
 +----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+

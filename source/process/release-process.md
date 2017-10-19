@@ -143,9 +143,8 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - Post this checklist in Release channel
     - Verify all items in the last posted release checklist are complete
 2. QA:
-    - Update Release Discussion header with links to RC instances and testing spreadsheet
-    - Post release testing instructions to Release Discussion channel ([example](https://pre-release.mattermost.com/core/pl/8z1tazpmm3ycbrehju36brd5nh))
-    - Post "Known Issues" to Release Discussion channel
+    - Update Release Discussion header with links to RC instances and testing spreadsheet ([template](https://pre-release.mattermost.com/core/pl/db3sur4r53d9tyih1i4wrmi9wy))
+    - Post release testing instructions to Release Discussion channel ([template](https://pre-release.mattermost.com/core/pl/uprogtcqzpbk7nkmdkfnhqkcac))
 3. Dev:
     - Run loadtests against the release candidate to find potential performance issues
 4. Logistics:
@@ -192,7 +191,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - Finish drafts of all art work (screenshots, GIFs and twitter banners) used for the blog post and send to marketing lead for review
     - Find [www-gitlab-com merge request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests?scope=all&utf8=%E2%9C%93&state=opened&label_name%5B%5D=blog%20post&label_name%5B%5D=release) for latest GitLab release blog post and make request for adding GitLab Mattermost update (see [example request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests/2910#note_14096885), [example update](https://about.gitlab.com/2016/07/22/gitlab-8-10-released/#gitlab-mattermost-32)). Post to Release Discussion channel with link to request.
 5. QA:
-    - Organize a mini-release testing spreadsheet for team members to carry out before final version is cut.
+    - Update Selenium and manual smoke tests as needed, to prepare to run on each RC after it is cut.
 
 ### H. (T-minus 2 working days) Release Build Cut
 
@@ -240,7 +239,24 @@ The final release is cut. If an urgent and important issue needs to be addressed
     - Finish draft of MailChimp email blast and Twitter announcement and send for marketing lead to review. Once reviewed, schedule for 08:00 PST on the date of marketing announcement
     - **Note:** If the release contains a security update, also draft a Mailchimp email blast for the [Security Bulletin mailing list](http://eepurl.com/cAl5Rv)
     - Finalize blog post for mattermost.com, test on mobile view, and set timer for 08:00 PST on the day of release
-    - Update [feature list](https://about.mattermost.com/pricing/) on mattermost.com with relevant new features
+    - Update feature lists on https://about.mattermost.com/pricing/ and https://about.mattermost.com/features/ with relevant new features
+    - Update the [Admin guide](https://docs.mattermost.com/guides/administrator.html) if needed and add a link to it in the release blog post
+    
+If a security fix release is required, run through the following steps:
+
+1. Dev:
+    - Verify all patch fixes are backported
+    - Verify all patch fixes are tested (either via unit tests or RCs)
+    - Verify hashes and GPG signatures are correct, once build is cut
+    - Delete RCs after final version is shipped
+    - Merge changes made to release branch into master
+2. PM:
+    - Update the changelog
+    - Submit GitLab MR to update Mattermost to vXXX
+    - Update the version archive in the [upgrade guide](https://github.com/mattermost/docs/blob/master/source/administration/upgrade.md)
+    - Help [test the upgrade](https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg) once the GitLab MR is merged and included in their RC
+3. Marketing:
+    - Update security update email with any new information
 
 If a bug fix release is required, run through the following steps:
 
@@ -267,24 +283,32 @@ If a bug fix release is required, run through the following steps:
 4. QA:
     - Test the new RC to verify fixes merged to the release branch work. Post in Release Discussion channel after testing 
 
-Once final dot release build is ready to cut:
+Once bug fix release is ready to cut:
 
-1. Build:  
-    - Tag a new release (e.g. 1.1.1) and run an official build  
+1. Dev:
+    - Tag a new release (e.g. 1.1.1) and run an official build
+    - Verify hashes and GPG signatures are correct, once build is cut
+    - Delete RCs after final version is shipped
+    - Merge changes made to release branch into master 
     - Update CI servers, pre-release and GitLab Mattermost to the final version    
 2. PM:
     - Update [Mattermost pricing page](https://about.mattermost.com/pricing/) if anything has changed
     - Merge the Changelog PR with notes on patch releases (see [example entry](https://docs.mattermost.com/administration/changelog.html#release-v3-5.1))
     - Submit GitLab MR to update the version number and MD5 hash to the dot release version. [See example](https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests/1127)
-      - [Test the upgrade](https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg) once the MR is merged and the package is released to the GitLab package server
+    - Update the version archive in the [upgrade guide](https://github.com/mattermost/docs/blob/master/source/administration/upgrade.md)
+    - [Test the upgrade](https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg) once the MR is merged and the package is released to the GitLab package server
 3. QA:  
     - Verifies each of the issues in the patch release are fixed
 4. Docs:
-    - Update the version archive in the [upgrade guide](https://github.com/mattermost/docs/blob/master/source/administration/upgrade.md)
     - Submit an MR to update [GitLab Mattermost documentation](https://docs.gitlab.com/omnibus/gitlab-mattermost/README.html)
 5. Logistics:
     - Update [Mattermost server download page](https://mattermost.org/download) with the links to the EE and TE bits
       - Test the download links before and after updating the page
+    - Contact owners of [community installers](http://www.mattermost.org/installation/) or submit PRs to update install version number
+      - For Puppet, Heroku and Ansible Playbook, post to Installers and Images channel announcing the new release. See [example](https://pre-release.mattermost.com/core/pl/5eh8fw3jaiyzzqoc6nfwfaioya).
+      - For Chef Cookbook, open a new issue to announce the new release. See [example](https://github.com/verifi-inc/mattermost/issues/2).
+      - For Yunohost, open a new pull request to update the version. See [example](https://github.com/kemenaran/mattermost_ynh/pull/11).
+      - For OpenShift, open a new pull request to update the version. See [example](https://github.com/goern/mattermost-openshift/pull/13).
 6. Marketing:
     - Prepare [blog post](https://about.mattermost.com/mattermost-3-6-2/) for mattermost.com, MailChimp email blast, and [Twitter announcement](https://twitter.com/mattermosthq/status/827193482578112512), and send for marketing lead to review. Once reviewed, schedule for 08:00 PST on the day after dot release
       - **Note:** If the release contains a security update, also draft a Mailchimp email blast for the [Security Bulletin mailing list](http://eepurl.com/cAl5Rv)
@@ -312,15 +336,18 @@ Once final dot release build is ready to cut:
     - Close the release in Jira ([releases page](https://mattermost.atlassian.net/projects/PLT?selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased))
         - If there are many unresolved tickets in the current release, ask the release manager to review the ticket queue
         - Otherwise, release the fix version (Actions > [...] > Release)
-    - Prepare tickets for the next release,  with a corresponding vX.X prefix
-        - [Creating final release candidate](https://mattermost.atlassian.net/browse/PLT-2198)
-        - [Test Gitlab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/PLT-2197)
-        - [Test upgrade](https://mattermost.atlassian.net/browse/PLT-3940) to latest release based on [upgrade guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide)
-        - Test upgrade from Team Edition to Enterprise Edition
-        - [RC Build Testing for core team](https://mattermost.atlassian.net/browse/PLT-2208)
-        - [Upgrade gitlab.mattermost.com to RC1](https://mattermost.atlassian.net/browse/PLT-3116)
-        - [Push final build to gitlab.mattermost.com](https://mattermost.atlassian.net/browse/PLT-3117)
-        - [Cut build and set up RC1 servers, including a note to check for all XXX items](https://mattermost.atlassian.net/browse/PLT-3937)
+    - Prepare tickets for the next release, with a corresponding vX.X prefix, and put the tickets in the appropriate sprints as follows:
+        - The week RC is cut:
+            - [Cut build and set up RC1 servers, including a note to check for all XXX items](https://mattermost.atlassian.net/browse/PLT-3937)
+            - [RC Build Testing for core team](https://mattermost.atlassian.net/browse/PLT-2208)
+            - [Upgrade gitlab.mattermost.com to RC1](https://mattermost.atlassian.net/browse/PLT-3116)
+         - The week the final build is cut:
+             - [Create final release candidate](https://mattermost.atlassian.net/browse/PLT-2198)
+             - [Test upgrade](https://mattermost.atlassian.net/browse/PLT-3940) to latest release based on [upgrade guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide)
+             - Test upgrade from Team Edition to Enterprise Edition
+             - [Push final build to gitlab.mattermost.com](https://mattermost.atlassian.net/browse/PLT-3117)
+         - Release week (for PM)
+             - [Test Gitlab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/PLT-2197)
     - Confirm that [mattermost-docker](https://github.com/mattermost/mattermost-docker/releases) has been updated to the latest version. Contact the maintainer via direct message on pre-release if necessary.
     - Contact owners of [community installers](http://www.mattermost.org/installation/) or submit PRs to update install version number
       - For Puppet, Heroku and Ansible Playbook, post to Installers and Images channel announcing the new release. See [example](https://pre-release.mattermost.com/core/pl/5eh8fw3jaiyzzqoc6nfwfaioya).
@@ -333,7 +360,7 @@ Once final dot release build is ready to cut:
         - Submit a PR to change version number in `docs/source/conf.py` against the `vX.X-documentation` branch
 4. Build
     - Put CI servers and translation server back onto master, and post in Release Discussion channel once done
-    - Update [ci-linux-mysql-prev](https://ci-linux-mysql-prev.mattermost.com) to the final release version
+    - Update [ci-linux-mysql-prev](https://ci-linux-mysql-prev.mattermost.com) to the previous release version
 5. Dev:
     - Delete RCs after final version is shipped    
     - Check if any libraries need to be updated in all repositories, including `mattermost-server`, `mattermost-webapp`, `desktop`, `mattermost-mobile` and `mattermost-redux`
