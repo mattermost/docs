@@ -239,7 +239,8 @@ The final release is cut. If an urgent and important issue needs to be addressed
     - Finish draft of MailChimp email blast and Twitter announcement and send for marketing lead to review. Once reviewed, schedule for 08:00 PST on the date of marketing announcement
     - **Note:** If the release contains a security update, also draft a Mailchimp email blast for the [Security Bulletin mailing list](http://eepurl.com/cAl5Rv)
     - Finalize blog post for mattermost.com, test on mobile view, and set timer for 08:00 PST on the day of release
-    - Update [feature list](https://about.mattermost.com/pricing/) on mattermost.com with relevant new features
+    - Update feature lists on https://about.mattermost.com/pricing/ and https://about.mattermost.com/features/ with relevant new features
+    - Update the [Admin guide](https://docs.mattermost.com/guides/administrator.html) if needed and add a link to it in the release blog post
     
 If a security fix release is required, run through the following steps:
 
