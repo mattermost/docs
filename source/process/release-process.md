@@ -335,15 +335,18 @@ Once bug fix release is ready to cut:
     - Close the release in Jira ([releases page](https://mattermost.atlassian.net/projects/PLT?selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased))
         - If there are many unresolved tickets in the current release, ask the release manager to review the ticket queue
         - Otherwise, release the fix version (Actions > [...] > Release)
-    - Prepare tickets for the next release,  with a corresponding vX.X prefix
-        - [Creating final release candidate](https://mattermost.atlassian.net/browse/PLT-2198)
-        - [Test Gitlab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/PLT-2197)
-        - [Test upgrade](https://mattermost.atlassian.net/browse/PLT-3940) to latest release based on [upgrade guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide)
-        - Test upgrade from Team Edition to Enterprise Edition
-        - [RC Build Testing for core team](https://mattermost.atlassian.net/browse/PLT-2208)
-        - [Upgrade gitlab.mattermost.com to RC1](https://mattermost.atlassian.net/browse/PLT-3116)
-        - [Push final build to gitlab.mattermost.com](https://mattermost.atlassian.net/browse/PLT-3117)
-        - [Cut build and set up RC1 servers, including a note to check for all XXX items](https://mattermost.atlassian.net/browse/PLT-3937)
+    - Prepare tickets for the next release, with a corresponding vX.X prefix, and put the tickets in the appropriate sprints as follows:
+        - The week RC is cut:
+            - [Cut build and set up RC1 servers, including a note to check for all XXX items](https://mattermost.atlassian.net/browse/PLT-3937)
+            - [RC Build Testing for core team](https://mattermost.atlassian.net/browse/PLT-2208)
+            - [Upgrade gitlab.mattermost.com to RC1](https://mattermost.atlassian.net/browse/PLT-3116)
+         - The week the final build is cut:
+             - [Create final release candidate](https://mattermost.atlassian.net/browse/PLT-2198)
+             - [Test upgrade](https://mattermost.atlassian.net/browse/PLT-3940) to latest release based on [upgrade guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide)
+             - Test upgrade from Team Edition to Enterprise Edition
+             - [Push final build to gitlab.mattermost.com](https://mattermost.atlassian.net/browse/PLT-3117)
+         - Release week (for PM)
+             - [Test Gitlab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/PLT-2197)
     - Confirm that [mattermost-docker](https://github.com/mattermost/mattermost-docker/releases) has been updated to the latest version. Contact the maintainer via direct message on pre-release if necessary.
     - Contact owners of [community installers](http://www.mattermost.org/installation/) or submit PRs to update install version number
       - For Puppet, Heroku and Ansible Playbook, post to Installers and Images channel announcing the new release. See [example](https://pre-release.mattermost.com/core/pl/5eh8fw3jaiyzzqoc6nfwfaioya).
