@@ -160,7 +160,7 @@ Tips and Best Practices
 
 5. The external application may be written in any programming language as long as it supports sending an HTTP POST request in the required JSON format to a specified Mattermost URL.
 
-6. For the HTTP request body, if `Content-Type` is specified as `application/json` in the header of the HTTP request, then the body can be direct JSON. For example,
+6. For the HTTP request body, if `Content-Type` is specified as ``application/json`` in the header of the HTTP request, then the body can be direct JSON. For example,
 
 .. code-block:: text
 
@@ -224,3 +224,5 @@ Some common error messages include:
 4. ``curl: (3) [globbing] unmatched close brace/bracket in column N``: Typically an error when using cURL on Windows, when:
   1. You have space around JSON separator colons, ``payload={"Hello" : "test"}`` or  
   2. You are using single quotes to wrap the ``-d`` data, ``-d 'payload={"Hello":"test"}'``
+
+If your integration prints the JSON payload data instead of rendering the generated message, make sure your integration is returning the ``application/json`` content-type.

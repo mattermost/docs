@@ -64,6 +64,7 @@ Administration
    /administration/statistics.md
    /administration/announcement-banner.rst
    /administration/compliance*
+   /administration/data-retention*
    /administration/branding*
    /administration/backup*
    /administration/liveness-check*

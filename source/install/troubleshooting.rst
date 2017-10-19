@@ -60,6 +60,13 @@ Locked out of System Administrator account
 
 If email sign-in was turned off before the System Administrator switched sign-in methods, sign up for a new account and promote it to System Administrator from the command line.
 
+System Console settings revert to previous values after saving
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you try to save a System Console page and notice that the settings revert to previous values, your ``config.json`` file may have a permissions issue.
+
+Check that the ``config.json`` file is owned by the same user as the process that runs the Mattermost server. If not, change the owner to be the mattermost user and restart the server.
+
 YouTube videos show a "Video not found" preview
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

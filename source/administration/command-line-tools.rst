@@ -21,8 +21,6 @@ From the directory where the Mattermost server is installed, a
 
 **Advanced Automation**
 
-*Available in Enterprise Edition E10 and higher*
-
 -  Creating channels
 -  Inviting users to channels
 -  Removing users from channels
@@ -100,6 +98,7 @@ platform
 
   Child Commands
     -  `platform channel`_ - Management of channels
+    -  `platform command`_ - Management of slash commands
     -  `platform help`_ - Generate full documentation for the CLI
     -  `platform import`_ - Import data
     -  `platform ldap`_ - LDAP related utilities
@@ -288,7 +287,7 @@ platform channel move
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Move channels to another team. The command validates that all users in the channel belong to the target team. Incoming/Outgoing webhooks are moved along with the channel. Channels can be specified by ``[team]:[channel]`` or by channel ID.
+    Move channels to another team. The command validates that all users in the channel belong to the target team. Incoming/Outgoing webhooks are moved along with the channel. Channels can be specified by ``[team]:[channel]`` or by using channel IDs.
 
   .. The 'channel move' command will not execute. Is it an enterprise only command?
 
@@ -343,6 +342,32 @@ platform channel restore
 
       sudo ./platform channel restore 8soyabwthjnf9qibfztje5a36h
       sudo ./platform channel restore myteam:mychannel
+
+platform command
+-----------------
+
+  Description
+    Commands for slash command management.
+
+  Child Commands
+    -  `platform command move`_ - Move a slash command to a different team
+
+platform command move
+~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Move a slash command to a different team. Commands can be specified by {team}:{command-trigger-word}, or by using command IDs.
+
+  Format
+    .. code-block:: none
+
+      platform command move
+
+  Examples
+    .. code-block:: none
+
+      sudo ./platform command move newteam oldteam:command-trigger-word
+      sudo ./platform channel move newteam o8soyabwthjnf9qibfztje5a36h
 
 platform help
 ---------------
