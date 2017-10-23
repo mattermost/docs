@@ -4,8 +4,15 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
-## Release v4.3.0
-Release date: 2017-10-16
+## Release v4.3.1
+
+ - **v4.3.1, released 2017-10-20**
+   - Fixed an upgrade issue where the database schema would appear to be out of date and throw a log warning.
+   - Fixed the Idle Timeout setting in `config.json` by changing the setting title from `SessionIdleTimeout` to `SessionIdleTimeoutInMinutes`.
+   - Fixed a regression where slash commands were not functional in Direct or Group Messages.
+   - Mattermost v4.3.1 contains a low severity security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+ - **v4.3.0, released 2017-10-16**
+   - Original 4.3.0 release
 
 ### Security Update
 
@@ -79,7 +86,7 @@ For a list of past and upcoming deprecated features, [see our website](https://a
 
 #### config.json
 
-Multiple setting options were added to `default.json`. Below is a list of the additions and their default values on install. The settings can be modified in `default.json`, or the System Console when available.
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
 **Changes to Enterprise Edition**:
 
