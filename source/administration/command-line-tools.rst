@@ -47,7 +47,7 @@ To run the CLI commands, you must be in the directory that contains the Mattermo
     sudo ./platform version
 
 Using the CLI on GitLab Omnibus
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------
 
 On GitLab Omnibus, you must be in the following directory when you run CLI commands: ``/opt/gitlab/embedded/service/mattermost``. Also, you must run the commands as the user *mattermost* and specify the location of the configuration file. The executable is ``/opt/gitlab/embedded/bin/mattermost``.
 
@@ -61,18 +61,18 @@ On GitLab Omnibus, you must be in the following directory when you run CLI comma
 .. note::
   The example commands in the documentation are for a default installation of Mattermost. You must modify the commands so that they work on GitLab Omnibus.
   
-Using the CLI on Docker install
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Using the CLI on Docker Install
+-------------------------------
 
-On Docker install, you must be in the ``/mattermost`` directory within your Docker container when you run CLI commands.  The container name may be ``mattermostdocker_app_1`` if you installed mattermost with ``docker-compose.yml``.
+On Docker install, you must be in the ``/mattermost`` directory within your Docker container when you run CLI commands.  Note that the container name may be ``mattermostdocker_app_1`` if you installed mattermost with ``docker-compose.yml``.
 
-**For example, to get the Mattermost version on Docker install:**
+**For example, to get the Mattermost version on a Docker install:**
 
   .. code-block:: bash
 
-    $ docker exec -it <your-mattermost-container-name> /bin/bash
-    root@9e9160a3b5f6:/# cd /mattermost
-    root@9e9160a3b5f6:/# bin/platform -help
+    docker exec -it <your-mattermost-container-name> /bin/bash
+    cd /mattermost
+    bin/platform version
 
 Mattermost 3.6 and later
 ^^^^^^^^^^^^^^^^^^^^^^^^
