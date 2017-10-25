@@ -1465,7 +1465,7 @@ The number of minutes from the last time a user was active on the system to the 
 Applies to the desktop app and browsers. For mobile apps, use an EMM provider to lock the app when not in use. In High Availability mode, enable IP hash load balancing for reliable timeout measurement.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionIdleTimeout" : 0`` with whole number input.                                                                      |
+| This feature's ``config.json`` setting is ``"SessionIdleTimeoutInMinutes" : 0`` with whole number input.                                                             |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________

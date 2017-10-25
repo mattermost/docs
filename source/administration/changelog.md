@@ -91,7 +91,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 **Changes to Enterprise Edition**:
 
 - Under `ServiceSettings` in `default.json`:
-  - Added `"SessionIdleTimeout": 0` to specify how long to wait before logging out inactive users.
+  - Added `"SessionIdleTimeoutInMinutes": 0` to specify how long to wait before logging out inactive users.
 - Under `ElasticsearchSettings` in `default.json`:
   - Added `"IndexPrefix": ""` to allow Elasticsearch to be used on a shared Elasticseearch cluster.
 - Under `DataRetentionSettings` in `default.json`:
