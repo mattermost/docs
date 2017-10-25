@@ -211,7 +211,8 @@ The final release is cut. If an urgent and important issue needs to be addressed
         - Include a summary of updates in Team Edition that are relevant to GitLab
         - Include an update to the [GitLab changelog](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/CHANGELOG.md)
         - Include updates to [gitlab.rb](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-config-template/gitlab.rb.template#L1008-1171), [attributes default.rb](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-cookbooks/gitlab/attributes/default.rb#L667-829) and [config.json.erb](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-cookbooks/gitlab/templates/default/config.json.erb) with new TE config settings ([Example](https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests/1855))
-        - Post a link to the MR in the Release Discussion channel 
+        - Post a link to the MR in the Release Discussion channel
+        - If the release contains a security update, email @marin and @briann in GitLab with a link to the MR
     - Check Security Issues spreadsheet and confirm disclosure text
     - Check the security researcher was added to the [Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/) page
     - Confirm link to security updates appears in blog post if there are security updates in this release, with a note thanking the security researcher
@@ -252,7 +253,7 @@ If a security fix release is required, run through the following steps:
     - Merge changes made to release branch into master
 2. PM:
     - Update the changelog
-    - Submit GitLab MR to update Mattermost to vXXX
+    - Submit GitLab MR to update Mattermost to latest version and email @marin and @briann in GitLab with a link to the MR
     - Update the version archive in the [upgrade guide](https://github.com/mattermost/docs/blob/master/source/administration/upgrade.md)
     - Help [test the upgrade](https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg) once the GitLab MR is merged and included in their RC
 3. Marketing:
@@ -294,7 +295,7 @@ Once bug fix release is ready to cut:
 2. PM:
     - Update [Mattermost pricing page](https://about.mattermost.com/pricing/) if anything has changed
     - Merge the Changelog PR with notes on patch releases (see [example entry](https://docs.mattermost.com/administration/changelog.html#release-v3-5.1))
-    - Submit GitLab MR to update the version number and MD5 hash to the dot release version. [See example](https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests/1127)
+    - Submit GitLab MR to update the version number and MD5 hash to the dot release version. [See example](https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests/1127). If the release contains a security update, email @marin and @briann in GitLab with a link to the MR
     - Update the version archive in the [upgrade guide](https://github.com/mattermost/docs/blob/master/source/administration/upgrade.md)
     - [Test the upgrade](https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg) once the MR is merged and the package is released to the GitLab package server
 3. QA:  
@@ -406,9 +407,6 @@ Proposed update for new version of [Mattermost](https://gitlab.com/gitlab-org/om
 
 This version also includes security updates and [upgrade from earlier versions]((http://doc.gitlab.com/omnibus/gitlab-mattermost/)) is recommended.
 ```
-
-
-
 
 ## Release Numbering
 
