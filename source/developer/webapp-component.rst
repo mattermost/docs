@@ -1,5 +1,5 @@
 Building a Webapp React Component
-==========================
+==================================
 
 This page describes how to build a new React component in the webapp. All new components must meet the following requirements:
 
@@ -19,7 +19,7 @@ None of that make any sense to you, or new to React and Redux? Then check out th
 The components for the webapp currently live in the ``components/`` directory in the `mattermost-webapp repository <https://github.com/mattermost/mattermost-webapp>`__.
 
 Designing your Component
-------------------
+-------------------------
 
 The most important part of designing your component is deciding on what the props will be. Props are very much the API for your component, think of them as a contract between your component and the users of it.
 
@@ -116,7 +116,7 @@ If the selectors and/or actions you need don't yet exist in Redux then you shoul
 Your ``index.js`` and ``item_list.js`` files will live together in an ``item_list/`` directory.
 
 Implementing your Component
-------------------
+----------------------------
 
 With the props defined and, if necessary, the container built, you're ready to implement your component. For the most part implementing a component for the webapp is no different than building any other React component. That said, we do have a few rules to abide by:
 
@@ -173,16 +173,13 @@ Our ItemList example might look something like this:
   }
 
 Testing your Component
-------------------
+-----------------------
 
-The last required piece of building a webapp component is to test it. That can be done using the component testing framework described in this blog post:
+The last required piece of building a webapp component is to test it. That can be done using the component testing framework described in this blog post: https://grundleborg.github.io/posts/react-component-testing-in-mattermost/
 
-https://grundleborg.github.io/posts/react-component-testing-in-mattermost/
+Below is a brief guide on how to do component testing:
 
-Quick guides on how to do component testing
-~~~~~~~~~~~~~~~~~~
-
-1. Match snapshot using default or expected props. Consider global `mm_config` as necessary. Note that while snapshot is convenient, we require not to rely solely on this for every test case as this is easy to overlook by initiating `jest --updateSnapshot` without carefully inspecting the change.
+1. Match snapshot using default or expected props. Consider the global ``mm_config`` as necessary. Note that while the snapshot is convenient, we require not to rely solely on this for every test case as this is easy to overlook by initiating `jest --updateSnapshot` without carefully inspecting the change.
 
 .. code-block:: javascript
   :linenos:
@@ -194,15 +191,14 @@ Quick guides on how to do component testing
       expect(wrapper).toMatchSnapshot();
   });
 
-2. Add verification to important element.
+2. Add verification to important elements.
 
 .. code-block:: javascript
   :linenos:
 
   expect(wrapper.find('#emailNotificationImmediately').exists()).toBe(true);
 
-
-3. Simulate event and verify state changes accordingly.
+3. Simulate the event and verify state changes accordingly.
 
 .. code-block:: javascript
   :linenos:
@@ -227,7 +223,7 @@ Quick guides on how to do component testing
   expect(newUpdateSection).toHaveBeenCalledTimes(1);
   expect(newUpdateSection).toBeCalledWith('email');
 
-5. When a function is passed to a component via props, make sure to test it if it gets called for a particular event calls or state changes..
+5. When a function is passed to a component via props, make sure to test it if it gets called for a particular event calls or state changes.
 
 .. code-block:: javascript
   :linenos:
@@ -264,7 +260,7 @@ Quick guides on how to do component testing
       expect(patchChannel).toBeCalledWith('fake-id', {purpose: 'purpose'});
   });
 
-6. Test component's internal or lifecycle methods by having different sets of props.
+6. Test the component's internal or lifecycle methods by having different sets of props.
 
 .. code-block:: javascript
   :linenos:
@@ -285,7 +281,7 @@ Quick guides on how to do component testing
       expect(shouldUpdate).toBe(true);
   });
 
-7. Provide only simple mockup to imported component or library if necessary.
+7. Provide a simple mockup to an imported component or library if necessary.
 
 .. code-block:: javascript
   :linenos:
@@ -302,5 +298,5 @@ Quick guides on how to do component testing
 
 Finally, initiate the following commands:
 
-1. Run `yarn run test:watch`, select `p` and type filename, and see if the component test passed.
-2. Run `yarn run test:coverage`, and open corresponding html report at `coverage/components` folder to see the percentage covered. Update the test if necessary. Note that it's not required to meet 100% coverage of a component especially if it will take unnecessary or complicated mock up. Uncovered lines, statements, branch or functions will just be recorded so that it will be covered by next test layers like integrations or end-to-end testing. 
+1. Run ``yarn run test:watch``, select ``p`` and type filename, and see if the component test passed.
+2. Run ``yarn run test:coverage``, and open the corresponding html report at ``coverage/components`` folder to see the percentage covered. Update the test if necessary. Note that it's not required to meet 100% coverage of a component especially if it will require an unnecessary or complicated mock up. Uncovered lines, statements, branches or functions will just be recorded so that it will be covered by next test layers like integrations or end-to-end testing.
