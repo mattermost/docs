@@ -179,7 +179,7 @@ The last required piece of building a webapp component is to test it. That can b
 
 Below is a brief guide on how to do component testing:
 
-1. Match snapshot using default or expected props. Consider the global ``mm_config`` as necessary. Note that while the snapshot is convenient, we require not to rely solely on this for every test case as this is easy to overlook by initiating `jest --updateSnapshot` without carefully inspecting the change.
+1. Match snapshot using default or expected props. Consider the global ``mm_config`` as necessary. Note that while the snapshot is convenient, we require not to rely solely on this for every test case as this is easily overlooked by initiating `jest --updateSnapshot` without carefully inspecting the change.
 
 .. code-block:: javascript
   :linenos:
@@ -223,7 +223,7 @@ Below is a brief guide on how to do component testing:
   expect(newUpdateSection).toHaveBeenCalledTimes(1);
   expect(newUpdateSection).toBeCalledWith('email');
 
-5. When a function is passed to a component via props, make sure to test it if it gets called for a particular event calls or state changes.
+5. When a function is passed to a component via props, make sure to test it if it gets called for a particular event call or its state changes.
 
 .. code-block:: javascript
   :linenos:
