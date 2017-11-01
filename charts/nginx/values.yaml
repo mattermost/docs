@@ -1,0 +1,61 @@
+# Default values for nginx.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+replicaCount: 1
+images:
+  defaultbackend:
+    repository: gcr.io/google_containers/defaultbackend
+    tag: "1.0"
+    pullPolicy: IfNotPresent
+  nginxIngress:
+    repository: gcr.io/google_containers/nginx-ingress-controller
+    tag: "0.8.3"
+    pullPolicy: IfNotPresent
+service:
+  name: nginx
+  type: LoadBalancer
+  ports:
+  - http: 80
+  - https: 443
+  - ssh: 22
+
+proxyConnectTimeout: 15
+proxyReadTimeout: 600
+proxySendTimeout: 600
+proxyBodySize: "512m"
+hstsIncludeSubdomains: false
+serverNameHashBucketSize: 256
+
+shell:
+  name: omnibus
+  port: og-shell
+
+ingress:
+  enabled: false
+  # Used to create Ingress record (should used with service.type: ClusterIP).
+  hosts:
+    - name: gitlab.example.local
+      serviceName: omnibus
+      servicePort: og-workhorse
+    - name: registry.example.local
+      serviceName: registry
+      servicePort: registry
+  annotations:
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  tls:
+    # Secrets must be manually created in the namespace.
+    # - secretName: chart-example-tls
+    #   hosts:
+    #     - chart-example.local
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #  cpu: 100m
+  #  memory: 128Mi
+  #requests:
+  #  cpu: 100m
+  #  memory: 128Mi

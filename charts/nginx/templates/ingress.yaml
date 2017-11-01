@@ -1,6 +1,7 @@
-{{- if and .Values.ingress.enabled .Values.enabled -}}
+{{- if .Values.ingress.enabled -}}
 {{- $serviceName := include "fullname" . -}}
 {{- $servicePort := .Values.service.externalPort -}}
+{{- $releaseName := .Release.Name -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -17,13 +18,13 @@ metadata:
 spec:
   rules:
     {{- range $host := .Values.ingress.hosts }}
-    - host: {{ $host }}
+    - host: {{ $host.name }}
       http:
         paths:
           - path: /
             backend:
-              serviceName: {{ $serviceName }}
-              servicePort: {{ $servicePort }}
+              serviceName: "{{ $releaseName }}-{{ $host.serviceName }}"
+              servicePort: {{ $host.servicePort }}
     {{- end -}}
   {{- if .Values.ingress.tls }}
   tls:

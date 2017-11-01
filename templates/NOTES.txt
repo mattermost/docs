@@ -1,6 +1,0 @@
-1. Get the application URL by running these commands:
-{{- if .Values.ingress.hostname }}
-  http://{{- .Values.ingress.hostname }}
-{{- else }}
-  kubectl get ingress
-{{- end }}

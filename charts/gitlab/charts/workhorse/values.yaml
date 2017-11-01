@@ -7,23 +7,10 @@ image:
   tag: stable
   pullPolicy: IfNotPresent
 service:
-  name: nginx
+  name: workhorse
   type: ClusterIP
   externalPort: 80
   internalPort: 80
-ingress:
-  enabled: false
-  # Used to create Ingress record (should used with service.type: ClusterIP).
-  hosts:
-    - chart-example.local
-  annotations:
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
-  tls:
-    # Secrets must be manually created in the namespace.
-    # - secretName: chart-example-tls
-    #   hosts:
-    #     - chart-example.local
 enabled: false
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
