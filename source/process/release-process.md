@@ -64,7 +64,7 @@ No pull requests for major features should be **merged** to the current release 
     - Prepare bullet points for release announcement
     - Propose list of key features included in the release GIF and send to marketing lead for review
     - Draft release headline and send to marketing lead for review
-    - Queue twitter banners in the Marketing: Graphics channel
+    - Queue Twitter banners in the Marketing: Graphics channel
 
 ### D. (T-minus 10 working days) Judgment Day
 
