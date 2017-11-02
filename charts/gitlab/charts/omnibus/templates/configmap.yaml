@@ -33,7 +33,7 @@ data:
     gitlab_rails['redis_port'] = {{ default .Values.service.ports.redis .Values.redis.port }}
     gitlab_rails['redis_database'] = {{ default 0 .Values.redis.database }}
     {{- end }}
-    gitlab_rails['redis_password'] = ENV['REDIS_PASSWORD']
+    gitlab_rails['redis_password'] = File.read("/etc/gitlab-redis/password")
     # Rail-Registry related
     gitlab_rails['registry_enabled'] = true
     gitlab_rails['registry_host'] = {{ .Values.registry.host | quote }}
@@ -78,7 +78,7 @@ data:
     redis['enable'] = {{ .Values.redis.enabled }}
     redis['bind'] = '0.0.0.0'
     redis['port'] = {{ .Values.service.ports.redis }}
-    redis['password'] = ENV['REDIS_PASSWORD']
+    redis['password'] = File.read("/etc/gitlab-redis/password")
     ###################
     # DISABLED SERVICES
     # registry, pages, mattermost, prometheus
