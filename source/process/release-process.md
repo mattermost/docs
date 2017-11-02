@@ -28,10 +28,9 @@ No pull requests for major features should be **submitted** to the current relea
 2. PM:
     - Prioritize reviewing major features, ensuring any bugs and UX issues get fixed
     - Check that all major features are behind a feature flag
+    - Confirm with Leads that each Enterprise feature is in the correct [pricing SKU](https://about.mattermost.com/pricing/), if not alert the release manager
 3. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for major features
-4. Marketing:
-    - Confirm each Enterprise feature is in the correct [pricing SKU](https://about.mattermost.com/pricing/), if not alert the release manager
 
 ### C. (T-minus 12 working days) Cut-off for merging major features
 
@@ -42,10 +41,12 @@ No pull requests for major features should be **merged** to the current release 
     - Verify all items in the last posted release checklist are complete
 2. Logistics:
     - Start posting a daily Zero Bug Balance query
-    - Queue an item for UX meeting to discuss worst UX bug and to do a 10-minute UI/UX bug bash
+    - Queue an item for UX meeting to discuss worst UX bug and to do a 10-minute UI/UX bug bash 
+XXX ^ No UX meeting, what should we do with this 
     - Notify community about upcoming release in Reception
+XXX Can we automate this post somehow
 3. PM:
-    - PM area owners complete draft of Changelog in a WIP PR with updates for highlights, feature additions, known issues, compatibility updates for deprecated features, config.json, [database changes](https://github.com/mattermost/mattermost-server/blob/master/store/sql_upgrade.go#L181), [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go) (search `#api-proposal` and confirm with Dev) and WebSocket event changes; [see example](http://docs.mattermost.com/administration/changelog.html#compatibility)
+    - Draft changelog in a WIP PR with updates for highlights, feature additions, known issues, compatibility updates for deprecated features, config.json, [database changes](https://github.com/mattermost/mattermost-server/blob/master/store/sql_upgrade.go#L181), [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go) (search `#api-proposal` and confirm with Dev) and WebSocket event changes; [see example](http://docs.mattermost.com/administration/changelog.html#compatibility)
     - Review and update [company roadmap](https://about.mattermost.com/direction/) with which major features made it into the release
     - Backlog is reviewed and tickets that won’t make it are moved to next release
 4. Docs:
@@ -65,6 +66,7 @@ No pull requests for major features should be **merged** to the current release 
     - Propose list of key features included in the release GIF and send to marketing lead for review
     - Draft release headline and send to marketing lead for review
     - Queue Twitter banners in the Marketing: Graphics channel
+XXX Check with Amy on what is sent to Ed 
 
 ### D. (T-minus 10 working days) Judgment Day
 
