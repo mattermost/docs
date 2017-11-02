@@ -24,7 +24,7 @@ spec:
           args:
           - /nginx-ingress-controller
           - --default-backend-service={{ .Release.Namespace }}/{{ template "fullname" . }}-default-backend
-          - --nginx-configmap={{ .Release.Namespace }}/{{ template "fullname" . }}
+          - --configmap={{ .Release.Namespace }}/{{ template "fullname" . }}
           - --tcp-services-configmap={{ .Release.Namespace }}/{{ template "fullname" . }}-tcp
           env:
             - name: POD_NAME
