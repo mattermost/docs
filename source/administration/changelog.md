@@ -7,6 +7,167 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ## Release v4.4.0
 Release date: 2017-11-16
 
+### Highlights
+
+#### Plugins (Beta)
+- Beta release of Mattermost plugins, which allow admins to more easily integrate with third-party systems, extend functionality and customize the user interface of your Mattermost server. See [documentation](https://about.mattermost.com/default-plugins) to learn more.
+
+#### Do Not Disturb Status
+- Added "Do Not Disturb" status to temporarily turn off all desktop and mobile push notifications.
+
+#### Website Link Previews
+- Moved website previews out of beta, configurable in **Account Settings > Display**. // XXX is this big enough for a highlight?
+
+#### Support SAML sync via AD/LDAP ([Enterprise Edition E20](https://about.mattermost.com/pricing))
+- Added support for periodically synchronizing SAML user attributes, including user deactivation and removal, from AD/LDAP. See [documentation](https://about.mattermost.com/default-saml-ldap-sync) to learn more.
+
+### Improvements
+
+#### Web User Interface
+- Added an experimental feature to hide direct and group message channels after 7 days with no new messages. To enable it .. // XXX
+- Added an easy way to add a user to channel if mentioned user is not currently in the channel. // XXX Rewrite
+- Added "Edit Account Settings" link to the bottom of your own profile popover to more easily edit your settings.
+- URL address for internal links such as when hovering over the flag icon, is now hidden for better user experience.
+- URL address for teams and channels on the left-hand sidebar is now hidden on the desktop app. // XXX not yet merged
+- Added a loading spinner to Account Settings dialog after clicking the "Save" button.
+- Added full date tooltip to post timestamps in right-hand sidebar and search results.
+
+#### Performance
+- Reduced load times by optimizing database queries at large scale (40 million posts and above).
+- Prevented sessions from being stuck in cache by clearing the session cache if permission is denied.
+- Improved Elasticsearch bulk indexing query performance.
+- Adding Posts table indexes for 20M row // XXX
+
+#### Emoji Picker
+- Added emoji picker to the Edit Message dialog.
+- Removed categorization when searching for emojis in the emoji picker.
+
+#### Integrations
+- Added the ability to edit OAuth 2.0 applications.
+
+#### Slash Commands
+- Added `/remove` and `/kick` slash commands to remove a user from the channel.
+
+#### WebRTC Video and Audio Calls (Beta)
+- When you have multiple browser tabs open and receive a video call, the ringtone stops in all tabs when you accept the call.
+- Multiple STUN and TURN servers are now supported.
+
+#### System Console
+- Added a setting to disable channel wide (@-channel, @-all) mention confirmation in channels with more than five members.
+- Admin now receives a prompt when leaving a System Console page with unsaved changes.
+
+#### Enterprise Edition
+- Added support for batched live indexing for Elasticsearch.
+- Added a configurable timeout for Elasticsearch requests.
+
+### Bug Fixes
+- Fixes to channel link (~) autocomplete, such as not being able to autocomplete 'Town Square'.
+- Fixed an issue where System Console was sometimes temporarily accessible after demoting a user to a member.
+- Fixed failure to switch from email to SAML sign-in method if the user's email address has a plus sign.
+- Fixed "More Channels" modal not showing the correct the page number when displaying search results.
+- Fixed an incorrect error message when trying to add a user to a direct or group message channel via the APIs.
+- Fixed an issue where downloading a file containing spaces didn't preserve the name.
+- Fixed thumbnail image for .m4r file types.
+- Fixed an issue where search in Manage Members dialog didn't update results when there were no matches.
+- Fixed an issue where `in:` autocomplete for text search didn't display results after a hyphen in some servers.
+- Fixed a missing "No results" screen for Elasticsearch text search.
+- Fixed website preview not displayed for comments on the right-hand sidebar. // XXX This got broken again
+- Fixed channel member count not updating until refresh when a user is added or removed.
+- Fixed timestamp links on desktop app opening permalink view in a new app window.
+- Fixed an error caused by creating a new direct message channel via the channel switcher (CTRL/CMD+K).
+- Fixed SVG thumbnails not showing a preview.
+- Fixed team sidebar showing unreads for deleted channels.
+- Fixed a missing indicator when a message is pending but not yet sent.
+- Fixed emoji autocomplete appearing when typing an emoticon like :-D.
+- Fixed emoji names matching usernames triggering mentions.
+- Fixed incorrect order of recent mentions when a hashtag is a word that triggers mentions.
+- Fixed webhook message attachments longer than 8000 characters failing to post by truncating them, or splitting to multiple posts if the message has multiple attachments.
+- Fixed `/msg` command arbitrarily switching teams.
+- Fixed mentions not appearing linked in message drafts when in preview mode.
+
+### Compatibility
+
+#### Removed and Deprecated Features
+- All APIv3 endpoints are scheduled for removal on January 16, 2018.
+
+For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
+
+Database indexes leading to a longer upgrade time (for servers with 1M+ posts) // XXX
+
+#### config.json
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+**Changes to Team Edition and Enterprise Edition**:
+
+- Under `ServiceSettings` in `config.json`:
+  - Added `"CloseUnusedDirectMessages": false` to set whether users have the option to automatically close direct and group message channels older than 7 days.
+- Under `TeamSettings` in `config.json`:
+  - Added `"EnableConfirmNotificationsToChannel": true` to set whether a confirmation is shown for channel wide (@-channel, @-all) mentions in channels with more than five members.
+- Under `PluginSettings` in `config.json`:
+  - Enable .... // XXX
+  - EnableUploads .... // XXX
+  - Directory .... // XXX
+  - Plugins .... // XXX
+  - PluginStates .... // XXX
+
+**Additional Changes to Enterprise Edition**:
+
+- Under `ElasticsearchSettings` in `config.json`:
+  - Added `"LiveIndexingBatchSize": 1` to .... // XXX
+  - Added `"RequestTimeoutSeconds": 30` to .... // XXX
+
+// XXX Make sure all config settings are added to diagnostics + all diagnostics is documented 
+
+### Database Changes
+
+Database indexes leading to a longer upgrade time (for servers with 1M+ posts)
+https://github.com/mattermost/mattermost-server/pull/7728
+
+### API v4 Changes
+
+- It is recommended that any new integrations use API v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
+- All API v3 endpoints are scheduled for removal on January 16, 2018.
+
+**Added routes (API v4)**
+- `POST` at `/users/token/enable`
+  - Re-enables a personal access token that was previously disabled.
+- `POST` at `/users/token/disable`
+  - Disables a personal access token and deletes any sessions that uses the token. The token can be re-enabled using `/users/tokens/enable.`
+- `POST` at `/users/{user_id}/sessions/revoke/all`
+  - Revokes all user sessions from the provided user id and session id strings.
+
+**Modified routes (API v4)**
+- `POST` at `/logs`
+  - Unauthenticated users can now log ERROR or DEBUG messages when `ServiceSettings.EnableDeveloper` is set to `true`.
+
+### Websocket Event Changes
+
+**Added:**
+- `user_role_updated` that occurs when a user role is updated.
+
+### Known Issues
+
+- Google login fails on the Classic mobile apps.
+- User can receive a video call from another browser tab while already on a call.
+- Jump link in search results does not always jump to display the expected post.
+- Scrollbar is sometimes not visible in the left-hand sidebar after switching teams.
+- Certain code block labels don't appear while scrolling on iOS mobile web.
+- Deleted message doesn't clear unreads or unread mentions.
+- Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+- Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+- Searching with Elasticsearch enabled may not always highlight the searched terms.
+- Channel links to channels that the current user does not belong to may not render correctly.
+- Recent mention results are not sorted correctly if hashtags is included in "words that trigger mentions".
+- Team sidebar doesn't always show unreads from other teams on first load.
+- Uppercase letter is required for a password if the password requirement is set to at least 5 characters and a number.
+- System Admin cannot reset their own password via the System Console.
+- Channel scroll position flickers while images and link previews load.
+- Closing a direct or group message channel, then re-opening later, doesn't restore channel preferences.
+- CTRL/CMD+U shortcut to upload a file doesn't work on Firefox.
+
+### Contributors
+
 ## Release v4.3.0
 Release date: 2017-10-16
 
@@ -82,15 +243,15 @@ For a list of past and upcoming deprecated features, [see our website](https://a
 
 #### config.json
 
-Multiple setting options were added to `default.json`. Below is a list of the additions and their default values on install. The settings can be modified in `default.json`, or the System Console when available.
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
 **Changes to Enterprise Edition**:
 
-- Under `ServiceSettings` in `default.json`:
+- Under `ServiceSettings` in `config.json`:
   - Added `"SessionIdleTimeout": 0` to specify how long to wait before logging out inactive users.
-- Under `ElasticsearchSettings` in `default.json`:
+- Under `ElasticsearchSettings` in `config.json`:
   - Added `"IndexPrefix": ""` to allow Elasticsearch to be used on a shared Elasticseearch cluster.
-- Under `DataRetentionSettings` in `default.json`:
+- Under `DataRetentionSettings` in `config.json`:
   - Added `"EnableMessageDeletion": false` to enable message deletion.
   - Added `"EnableFileDeletion": false` to enable file deletion.
   - Added `"MessageRetentionDays": 365` to set how long Mattermost keeps messages in channels and direct messages.
@@ -324,8 +485,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
   - Added `"DefaultTheme": "default"` to set default theme for new users.
   - Added `"AllowCustomThemes": true` to set whether end users can set a custom theme.
   - Added `"AllowedThemes": []` to list which built-in Mattermost themes are available to users.
-
-### Database Changes
 
 ### API v4 Changes
 - It is recommended that any new integrations use APIv4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
