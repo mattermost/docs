@@ -158,7 +158,6 @@ https://github.com/mattermost/mattermost-server/pull/7728
 - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
 - Searching with Elasticsearch enabled may not always highlight the searched terms.
 - Channel links to channels that the current user does not belong to may not render correctly.
-- Recent mention results are not sorted correctly if hashtags is included in "words that trigger mentions".
 - Team sidebar doesn't always show unreads from other teams on first load.
 - Uppercase letter is required for a password if the password requirement is set to at least 5 characters and a number.
 - System Admin cannot reset their own password via the System Console.
