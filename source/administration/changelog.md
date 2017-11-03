@@ -113,9 +113,14 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 **Additional Changes to Enterprise Edition**:
 
+- Under `SamlSettings` in `config.json`:
+  - Added `EnableSync: false` to set whether AD/LDAP synchronization is enabled.
+- Under `LdapSettings` in `config.json`:
+  - Added `EnableSyncWithLdap: false` to set whether SAML user attributes, includign deactivation, are periodically synchronized from AD/LDAP.
 - Under `ElasticsearchSettings` in `config.json`:
   - Added `"LiveIndexingBatchSize": 1` to .... // XXX
   - Added `"RequestTimeoutSeconds": 30` to .... // XXX
+  - Added `"BulkIndexingTimeWindowSeconds": 3600` to .... // XXX
 
 // XXX Make sure all config settings are added to diagnostics + all diagnostics is documented 
 
