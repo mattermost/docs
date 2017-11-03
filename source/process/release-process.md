@@ -24,7 +24,7 @@ Pre-work for the current release begins at the code complete date of the previou
 No pull requests for major features should be **submitted** to the current release after this date (except if release manager decides to add "release-exception" label to Jira ticket).
 
 1. Release Manager:
-    - Post this checklist in Release channel
+    - Post this checklist in Release Checklist channel
 2. PM:
     - Prioritize reviewing major features, ensuring any bugs and UX issues get fixed
     - Check that all major features are behind a feature flag
@@ -37,7 +37,7 @@ No pull requests for major features should be **submitted** to the current relea
 No pull requests for major features should be **merged** to the current release after this date (except if release manager decides to add "release-exception" label to Jira ticket).
 
 1. Release Manager:
-    - Post this checklist in Release channel
+    - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
 2. Logistics:
     - Start posting a daily Zero Bug Balance query
@@ -73,11 +73,11 @@ XXX Check with Amy on what is sent to Ed
 Day when leads and PM area owners decide which major features are included in the release, and which are postponed.
 
 1. Release Manager:
-    - Post this checklist in Release channel
+    - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
 2. Logistics:
     - Confirm, in Judgement Day meeting, date of marketing announcement for the release and update release channel header if needed
-    - Post an reminder to devs in the Release Discussion room of the the code complete date with the ZBB count
+    - Post a reminder to devs in the Release Discussion channel of the the code complete date with the ZBB count
 3. Leads:
     - Finalize roadmap for next release, and identify planned marketing bullet points  
 4. **(Team) Judgment Day Meeting (10:00am San Francisco time)**:  
@@ -85,7 +85,7 @@ Day when leads and PM area owners decide which major features are included in th
 5. PM:
     - Based on discussion, create tickets for features that need to be turned on or off for the release
     - Backlog is reviewed and tickets that won’t make it are moved to next release
-    - Post a link to Release Discussion room for query of [remaining tickets in this release](https://mattermost.atlassian.net/issues/?filter=11102)
+    - Post a link to Release Discussion channel for query of [remaining tickets in this release](https://mattermost.atlassian.net/issues/?filter=11102)
     - Update Changelog PR based on what's in/out of the release
     - Create meta issue for release in GitHub (see [example](https://github.com/mattermost/mattermost-server/issues/3702))
     - Review the JIRA tickets remaining in the current release fix version and push those that won't make it to the next fix version
@@ -100,7 +100,7 @@ Day when leads and PM area owners decide which major features are included in th
 Exceptions can be made by the release manager setting priority to "Highest" and adding a "release-exception" label to the Jira ticket. This will add the ticket to the [hotfix list for release candidate](https://mattermost.atlassian.net/issues/?filter=10204).
 
 1. Release Manager:
-    - Post this checklist in Release channel
+    - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
 2. Logistics:
     - Mail out mugs to any new contributors
@@ -142,7 +142,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
 ### F. (T-minus 7 working days) Release Candidate Testing
 
 1. Release Manager:
-    - Post this checklist in Release channel
+    - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
 2. QA:
     - Update Release Discussion header with links to RC instances and testing spreadsheet ([template](https://pre-release.mattermost.com/core/pl/db3sur4r53d9tyih1i4wrmi9wy))
@@ -154,14 +154,14 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - Queue an item for UX meeting to do a 10-minute UI/UX bug bash
 5. Team:
     - Test assigned areas of the Release Candidate Testing Spreadsheet and file any bugs found in Jira
-    - Post a link to any "Blocking" issue that may need a hotfix to the RC in the Release room, with the **#blocking** tag. If the issue is security related or contains confidential information, post the link in the Confidential Bugs private channel. Blocking issues are considered to be security issues, data loss issues, and issues that break core functionality or significantly impact aesthetics.
+    - Post a link to any "Blocking" issue that may need a hotfix to the RC in the Release Discussion channel, with the **#blocking** tag. If the issue is security related or contains confidential information, post the link in the Confidential Bugs private channel. Blocking issues are considered to be security issues, data loss issues, and issues that break core functionality or significantly impact aesthetics.
     - Daily triage of hotfix candidates and decide on whether and when to cut next RC or final
 6. PM:
     - Queue an item for Release Update meeting to discuss worst bug
     - Update the meta issue:
         - Post comments to the meta issue with approved fixes for the next RCs
         - Download links and testing server links to the RCs
-    - Post screenshot and links to final tickets for next RC to the Release Discussion room
+    - Post screenshot and links to final tickets for next RC to the Release Discussion channel
     - Update Changelog “Known Issues” section with any significant issues that were found and not fixed for the final release
 7. Dev:
     - PRs for hotfixes made to release branch
@@ -176,7 +176,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
 ### G. (T-minus 5 working days) Release Candidate Testing Finished
 
 1. Release Manager:
-    - Post this checklist in Release channel
+    - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
     - Verify that the final translations PR for the release is submitted
 2. Team:
@@ -200,7 +200,7 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
 The final release is cut. If an urgent and important issue needs to be addressed between major releases, a bug fix release (e.g. 1.1.1) may be created.
 
 1. Release Manager:
-    - Post this checklist in Release channel
+    - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
 2. Build:
     - Tags a new release (e.g. 1.1.0) and runs an official build which should be essentially identical to the last RC 
@@ -320,7 +320,7 @@ Once bug fix release is ready to cut:
 ### I. (T-minus 0 working days) Release Day
 
 1. Release Manager:
-    - Post this checklist in Release channel
+    - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete, if not alert the release manager
 2. Logistics: 
     - Check for any [UserVoice](https://docs.google.com/spreadsheets/d/1nljd4cFh-9MXF4DxlUnC8b6bdqijkvi8KHquOmK8M6E/edit#gid=0) feature suggestions that were completed in the current release.  Find the [release tweet](https://twitter.com/mattermosthq/status/854781715914555393) and insert a link to the tweet next to the feature that shipped with the release.
@@ -378,7 +378,7 @@ Once bug fix release is ready to cut:
 
 ### J. (T-plus 5 working days) Release Updates
 1. Release Manager:
-    - Post this checklist in Release channel
+    - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
 2. Logistics:
     - Provide Marketing with a list of new security researchers and/or updated contribution count/s for existing researchers from the Security spreadsheet.
