@@ -122,12 +122,13 @@ Multiple setting options were added to `config.json`. Below is a list of the add
   - Added `"RequestTimeoutSeconds": 30` to .... // XXX
   - Added `"BulkIndexingTimeWindowSeconds": 3600` to .... // XXX
 
-// XXX Make sure all config settings are added to diagnostics + all diagnostics is documented 
-
 ### Database Changes
 
 Database indexes leading to a longer upgrade time (for servers with 1M+ posts)
-https://github.com/mattermost/mattermost-server/pull/7728
+https://github.com/mattermost/mattermost-server/pull/7728 // XXX
+
+**UserAccessTokens Table:**
+- Added `IsActive` column
 
 ### API v4 Changes
 
@@ -141,6 +142,10 @@ https://github.com/mattermost/mattermost-server/pull/7728
   - Disables a personal access token and deletes any sessions that uses the token. The token can be re-enabled using `/users/tokens/enable.`
 - `POST` at `/users/{user_id}/sessions/revoke/all`
   - Revokes all user sessions from the provided user id and session id strings.
+
+- Add post' root ID to APIv4 addChannelMember to render added user (as system post) at RHS // XXX ??? (needs API docs too)
+- ExecuteCommand executes a given slash command against the specified team // XXX ??? (needs API docs too)
+- Plugin APIs // XXX ???
 
 **Modified routes (API v4)**
 - `POST` at `/logs`
