@@ -12,6 +12,7 @@ spec:
   {{- if .Values.service.loadBalancerIP }}
   loadBalancerIP: {{.Values.service.loadBalancerIP }}
   {{- end }}
+  externalTrafficPolicy: "Local"
   ports:
     - port: 80
       targetPort: 80
