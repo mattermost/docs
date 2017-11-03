@@ -13,7 +13,7 @@ Is there a tablet version of the mobile apps?
 
 “Mattermost Classic” mobile apps support tablets.
 
-Our second generation mobile apps (“Mattermost”) have Beta support for the tablet version.
+Our second generation mobile apps (“Mattermost”) have beta support for tablets.
 
 How is data handled on mobile devices after a user account is deactivated?
 --------------------------------------------------------------------------
