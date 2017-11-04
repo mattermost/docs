@@ -23,7 +23,7 @@ List of contributors, in alphabetical order:
  - Hyeseong Kim (`@CometKim <https://github.com/CometKim>`_)
  - Jesús Espino (`@jespino <https://github.com/jespino>`_)
  - Joram Wilander (`@jwilander <https://github.com/jwilander>`_)
- - K. Y. (`@tkbky <https://github.com/tkbky>`_)
+ - K.Y. (`@tkbky <https://github.com/tkbky>`_)
  - Nazar Laba (`@n1aba <https://github.com/n1aba>`_)
  - Ryan Wang (`@R-Wang97 <https://github.com/R-Wang97>`_)
  - Sudheer (`@sudheerDev <https://github.com/sudheerDev>`_)
