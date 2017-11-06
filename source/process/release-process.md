@@ -73,6 +73,7 @@ Day when leads and PM area owners decide which major features are included in th
 1. Release Manager:
     - Post this checklist in Release channel
     - Verify all items in the last posted release checklist are complete
+    - Confirm there is a daily triage and release update meeting starting on this date to allow devs more time for bug fixes before code complete
 2. Logistics:
     - Confirm, in Judgement Day meeting, date of marketing announcement for the release and update release channel header if needed
     - Post an reminder to devs in the Release Discussion room of the the code complete date with the ZBB count
