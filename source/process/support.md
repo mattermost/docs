@@ -69,23 +69,23 @@ The username/password should be removed.
 #### What AD/LDAP server and version are you using?
 For example Active Directory on Windows Server 2016
 
-#### Are there andy LDAP errors in the logs?
+#### Are there any LDAP errors in the logs?
 
-#### Is there a limit on the number of users the LDAP server can return in a single query? If so have you set the Mazimum Page Size in Mattermost?
-Many LDAP servers have an uper limit on the number of users returned. So they might be hitting that limit. An error will apper in the logs usually informing of this case, but it's good to try anyway. 
+#### Is there a limit on the number of users the LDAP server can return in a single query? If so, have you set the Maximum Page Size in Mattermost?
+Many LDAP servers have an upper limit on the number of users returned. So they might be hitting that limit. An error will appear in the logs usually informing of this case, but it's good to try anyway. 
 
-#### Can you send an example user form you system? ldapsearch command format is preferred.
+#### Can you send an example user from you system? ldapsearch command format is preferred.
 
-#### Is the server properly licenced? Check the licencing page in the system console.
+#### Is the server properly licensed? Check the licensing page in the system console.
 
 ## TLS/SSL Issues
 
 #### Are you using a proxy or the built in TLS support?
 
-#### Are there any erros in the Mattermost logs?
+#### Are there any errors in the Mattermost logs?
 
 #### Send your config.json
 
-#### Send your proxy configuration if your using one.
+#### Send your proxy configuration if you are using one.
 
 #### Have you followed one of the setup guides?
