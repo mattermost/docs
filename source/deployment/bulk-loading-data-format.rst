@@ -43,25 +43,25 @@ The following fragment is from a file that imports two teams, each with two chan
 .. code-block:: javascript
   :linenos:
 
-  { type: "version", ... }
-  { type: "team", team: { name: "TeamA", ...} }
-  { type: "team", team: { name: "TeamB", ...} }
-  { type: "channel", channel: { team: "TeamA", name: "ChannelA1", ...} }
-  { type: "channel", channel: { team: "TeamA", name: "ChannelA2", ...} }
-  { type: "channel", channel: { team: "TeamB", name: "ChannelB1", ...} }
-  { type: "channel", channel: { team: "TeamB", name: "ChannelB1", ...} }
-  { type: "user", user: { username: "user001", ...} }
-  { type: "user", user: { username: "user002", ...} }
-  { type: "user", user: { username: "user003", ...} }
-  { type: "user", ... }
-  { type: "user", ... }
-  { type: "user", ... }
+  { "type": "version", ... }
+  { "type": "team", "team": { "name": "TeamA", ...} }
+  { "type": "team", "team": { "name": "TeamB", ...} }
+  { "type": "channel", "channel": { "team": "TeamA", "name": "ChannelA1", ...} }
+  { "type": "channel", "channel": { "team": "TeamA", "name": "ChannelA2", ...} }
+  { "type": "channel", "channel": { "team": "TeamB", "name": "ChannelB1", ...} }
+  { "type": "channel", "channel": { "team": "TeamB", "name": "ChannelB1", ...} }
+  { "type": "user", "user": { "username": "user001", ...} }
+  { "type": "user", "user": { "username": "user002", ...} }
+  { "type": "user", "user": { "username": "user003", ...} }
+  { "type": "user", ... }
+  { "type": "user", ... }
+  { "type": "user", ... }
   .
   .
   .
-  { type: "post", { team: "TeamA", name: "ChannelA1", user: "user001", ...} }
-  { type: "post", { team: "TeamA", name: "ChannelA1", user: "user001", ...} }
-  { type: "post", { team: "TeamA", name: "ChannelA1", user: "user001", ...} }
+  { "type": "post", { "team": "TeamA", "name": "ChannelA1", "user": "user001", ...} }
+  { "type": "post", { "team": "TeamA", "name": "ChannelA1", "user": "user001", ...} }
+  { "type": "post", { "team": "TeamA", "name": "ChannelA1", "user": "user001", ...} }
   .
   .
   .
@@ -80,7 +80,7 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
 
   {
     "type": "version",
-    "version": "1"
+    "version": 1
   }
 
 Fields of the Version object
