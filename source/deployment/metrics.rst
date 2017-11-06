@@ -167,7 +167,7 @@ Process Metrics:
 
 Search Metrics:
 
-    - ``mattermost_search_posts_searches_duration_seconds``:  The total duration in seconds of search query requests.
+    - ``mattermost_search_posts_searches_duration_seconds``:  The total duration, in seconds, of search query requests.
     - ``mattermost_search_posts_searches_total``: The total number of search query requests.
 
 WebSocket Metrics:
