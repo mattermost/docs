@@ -224,7 +224,7 @@ The final release is cut. If an urgent and important issue needs to be addressed
     - Review any changes made to install guides, and test if necessary
     - Run loadtests against the final release build to confirm there are no performance issues
     - Review [Security Policies](https://docs.mattermost.com/process/security.html) page is updated
-    - Update dependancies after release branch is cut
+    - Update dependancies after release branch is cut in `mattermost-server`, `mattermost-webapp`, `desktop`, `mattermost-mobile` and `mattermost-redux`
 5. Logistics:
     - Update the [Mattermost server download page](https://www.mattermost.org/download/) with the links to the EE and TE bits
       - Test the download links before and after updating the page
