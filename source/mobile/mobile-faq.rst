@@ -13,12 +13,17 @@ Is there a tablet version of the mobile apps?
 
 “Mattermost Classic” mobile apps support tablets.
 
-Our second generation mobile apps (“Mattermost”), do not yet support tablets but we plan to add support in future. The timeline depends on how many people have a need for it, so if you're looking for a tablet version please help us out by `upvoting the feature request <https://mattermost.uservoice.com/forums/306457/suggestions/20082079>`_!
+Our second generation mobile apps (“Mattermost”) have beta support for tablets.
 
 How is data handled on mobile devices after a user account is deactivated?
 --------------------------------------------------------------------------
 
 App data is wiped from the device when a user logs out of the app. If the user is logged in when the account is deactivated, then within one minute the system logs the user out, and as a result all app data is wiped from the device.
+
+Do I need to compile the mobile apps to host my own push notification server?
+------------------------------------------------------------------------------
+
+Yes. To host your own push notification server, you'll need to compile the mobile apps. See `documentation <https://docs.mattermost.com/mobile/mobile-compile-yourself.html>`_ to learn how to compile your own mobile apps.
 
 How can I get Google SSO to work with the Mattermost Mobile Apps?
 -----------------------------------------------------------------
