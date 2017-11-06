@@ -131,7 +131,7 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
     "display_name": "Team Display Name",
     "type": "O",
     "description": "The Team Description",
-    "allow_open_invite": "true"
+    "allow_open_invite": true
     }
   }
 
