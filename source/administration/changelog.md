@@ -15,28 +15,25 @@ Release date: 2017-11-16
 #### Do Not Disturb Status
 - Added "Do Not Disturb" status to temporarily turn off all desktop and mobile push notifications.
 
-#### Website Link Previews
-- Moved website previews out of beta, configurable in **Account Settings > Display**. // XXX is this big enough for a highlight?
-
 #### Support SAML sync via AD/LDAP ([Enterprise Edition E20](https://about.mattermost.com/pricing))
 - Added support for periodically synchronizing SAML user attributes, including user deactivation and removal, from AD/LDAP. See [documentation](https://about.mattermost.com/default-saml-ldap-sync) to learn more.
 
 ### Improvements
 
 #### Web User Interface
-- Added an experimental feature to hide direct and group message channels after 7 days with no new messages. To enable it .. // XXX
-- Added an easy way to add a user to channel if mentioned user is not currently in the channel. // XXX Rewrite
+- Added an experimental feature to hide direct and group message channels after 7 days with no new messages. To enable it .. // XXX add link to docs
+- Moved website previews out of beta, configurable in **Account Settings > Display**. Enable link previews in the [System Console](https://docs.mattermost.com/administration/config-settings.html#enable-link-previews).
+- Made it easier to add a user to channel if mentioned user is not already a channel member.
 - Added "Edit Account Settings" link to the bottom of your own profile popover to more easily edit your settings.
 - URL address for internal links such as when hovering over the flag icon, is now hidden for better user experience.
-- URL address for teams and channels on the left-hand sidebar is now hidden on the desktop app. // XXX not yet merged
+- URL addresses for channels on the left-hand sidebar are now hidden on the desktop app.
 - Added a loading spinner to Account Settings dialog after clicking the "Save" button.
 - Added full date tooltip to post timestamps in right-hand sidebar and search results.
 
 #### Performance
-- Reduced load times by optimizing database queries at large scale (40 million posts and above).
+- Reduced load times by optimizing database queries and adding composite indexes for the `Posts` table.
 - Prevented sessions from being stuck in cache by clearing the session cache if permission is denied.
 - Improved Elasticsearch bulk indexing query performance.
-- Adding Posts table indexes for 20M row // XXX
 
 #### Emoji Picker
 - Added emoji picker to the Edit Message dialog.
@@ -44,6 +41,7 @@ Release date: 2017-11-16
 
 #### Integrations
 - Added the ability to edit OAuth 2.0 applications.
+- Added improvements for interactive message buttons, such as displaying your username in ephemeral messages triggered by the message buttons.
 
 #### Slash Commands
 - Added `/remove` and `/kick` slash commands to remove a user from the channel.
@@ -71,7 +69,6 @@ Release date: 2017-11-16
 - Fixed an issue where search in Manage Members dialog didn't update results when there were no matches.
 - Fixed an issue where `in:` autocomplete for text search didn't display results after a hyphen in some servers.
 - Fixed a missing "No results" screen for Elasticsearch text search.
-- Fixed website preview not displayed for comments on the right-hand sidebar. // XXX This got broken again
 - Fixed channel member count not updating until refresh when a user is added or removed.
 - Fixed timestamp links on desktop app opening permalink view in a new app window.
 - Fixed an error caused by creating a new direct message channel via the channel switcher (CTRL/CMD+K).
@@ -84,15 +81,16 @@ Release date: 2017-11-16
 - Fixed webhook message attachments longer than 8000 characters failing to post by truncating them, or splitting to multiple posts if the message has multiple attachments.
 - Fixed `/msg` command arbitrarily switching teams.
 - Fixed mentions not appearing linked in message drafts when in preview mode.
+- Fixed an issue where an existing account could change their email address to one not in the [restricted domain list](https://docs.mattermost.com/administration/config-settings.html#restrict-account-creation-to-specified-email-domains).
 
 ### Compatibility
+
+Composite database indexes were added to the `Posts` table. This may lead to longer ugprade times for servers with more than 1 million messages.
 
 #### Removed and Deprecated Features
 - All APIv3 endpoints are scheduled for removal on January 16, 2018.
 
 For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
-
-Database indexes leading to a longer upgrade time (for servers with 1M+ posts) // XXX
 
 #### config.json
 
@@ -124,8 +122,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Database Changes
 
-Database indexes leading to a longer upgrade time (for servers with 1M+ posts)
-https://github.com/mattermost/mattermost-server/pull/7728 // XXX
+**Posts Table:**
+- Added a composite index for `ChannelId, DeleteAt, CreateAt`
+- Added a composite index for `ChannelId, UpdateAt`
 
 **UserAccessTokens Table:**
 - Added `IsActive` column
@@ -174,6 +173,7 @@ https://github.com/mattermost/mattermost-server/pull/7728 // XXX
 - Channel scroll position flickers while images and link previews load.
 - Closing a direct or group message channel, then re-opening later, doesn't restore channel preferences.
 - CTRL/CMD+U shortcut to upload a file doesn't work on Firefox.
+- Website previews are not displayed for comments on threads.
 
 ### Contributors
 
@@ -242,6 +242,7 @@ Release date: 2017-10-16
 - Fixed a race condition where bulk import sometimes fails to get team member when importing users.
 - Closing the channel switcher on mobile no longer sets focus to the text box.
 - Fixed an issue where the wrong channel name might appear in the right-hand side pinned post list.
+- Fixed team sidebar now always showing unreads from other teams on first load.
 
 ### Compatibility
 
@@ -296,7 +297,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Channel links to channels that the current user does not belong to may not render correctly.
 - Missing an indication if a message is pending but not yet sent.
 - Recent mention results are not sorted correctly if hashtags is included in "words that trigger mentions".
-- Team sidebar doesn't always show unreads from other teams on first load.
 - SVG thumbnails don't preview in the posted thumbnail.
 - Emojis names matching usernames can trigger mentions.
 - Integration message attachment fails to post if attachment length exceeds 7900 characters.
