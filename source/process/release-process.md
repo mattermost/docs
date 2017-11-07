@@ -343,7 +343,6 @@ Once bug fix release is ready to cut:
         - The week RC is cut:
             - [Cut build and set up RC1 servers, including a note to check for all XXX items](https://mattermost.atlassian.net/browse/PLT-3937)
             - [RC Build Testing for core team](https://mattermost.atlassian.net/browse/PLT-2208)
-            - [Upgrade gitlab.mattermost.com to RC1](https://mattermost.atlassian.net/browse/PLT-3116)
          - The week the final build is cut:
              - [Create final release candidate](https://mattermost.atlassian.net/browse/PLT-2198)
              - [Test upgrade](https://mattermost.atlassian.net/browse/PLT-3940) to latest release based on [upgrade guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide)
