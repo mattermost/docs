@@ -25,6 +25,57 @@ Typically located in `/opt/mattermost/logs`.
 #### Are you running Mattermost in a container and/or using container orchestration?
 E.g.: Docker and Kubernetes, Docker and Cloud Foundry
 
+
+## Mattermost Is not Working / The Server Keeps Dying
+
+Questions to ask when dealing with general complaints along the lines of "Mattermost is not working"
+or "the server keeps dying". See the previous section if you have not yet established from the
+information provided by the customer that the server is the likely issue.
+
+#### Check the status of the server process
+
+Assuming the customer has followed our Linux setup guide, there will be a systemd service called
+`mattermost.service` on their server. You can check the status of this process with:
+
+```
+sudo systemctl status mattermost.service
+```
+
+If the service is not running, and the status is not `failed`, instruct them to run:
+
+```
+sudo systemctl enable mattermost.service
+sudo systemctl start mattermost.service
+```
+
+#### Mattermost is not running after a reboot
+
+Many people miss the step in the setup guide that enables the systemd unit file for Mattermost.
+Rectify this with the following commands, and ask the customer to reboot to verify it is working.
+
+```
+sudo systemctl enable mattermost.service
+sudo systemctl start mattermost.service
+```
+
+#### Check the Mattermost logs
+
+Ask the customer to share the contents of `mattermost.log` from the `logs` directory of their
+Mattermost installation in order to look for any indications why Mattermost has stopped running.
+
+#### Check the System logs
+
+Often, the reason for Mattermost being reported as "randomly dying" is running out of memory. Ask
+the customer to send the results of the following command to inspect for evidence of OOM.
+
+```
+sudo journalctl -u mattermost.service
+```
+
+If the OOM killer is the problem, suggest they use a machine with more RAM. If they already have
+plenty of RAM for the load they are experiencing, this may indicate a bug in the Mattermost server.
+
+
 ## Database Issues
 
 Questions to ask when providing support for database issues.
