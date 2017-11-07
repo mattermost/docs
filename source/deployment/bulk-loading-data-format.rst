@@ -43,25 +43,25 @@ The following fragment is from a file that imports two teams, each with two chan
 .. code-block:: javascript
   :linenos:
 
-  { type: "version", ... }
-  { type: "team", team: { name: "TeamA", ...} }
-  { type: "team", team: { name: "TeamB", ...} }
-  { type: "channel", channel: { team: "TeamA", name: "ChannelA1", ...} }
-  { type: "channel", channel: { team: "TeamA", name: "ChannelA2", ...} }
-  { type: "channel", channel: { team: "TeamB", name: "ChannelB1", ...} }
-  { type: "channel", channel: { team: "TeamB", name: "ChannelB1", ...} }
-  { type: "user", user: { username: "user001", ...} }
-  { type: "user", user: { username: "user002", ...} }
-  { type: "user", user: { username: "user003", ...} }
-  { type: "user", ... }
-  { type: "user", ... }
-  { type: "user", ... }
+  { "type": "version", ... }
+  { "type": "team", "team": { "name": "TeamA", ...} }
+  { "type": "team", "team": { "name": "TeamB", ...} }
+  { "type": "channel", "channel": { "team": "TeamA", "name": "ChannelA1", ...} }
+  { "type": "channel", "channel": { "team": "TeamA", "name": "ChannelA2", ...} }
+  { "type": "channel", "channel": { "team": "TeamB", "name": "ChannelB1", ...} }
+  { "type": "channel", "channel": { "team": "TeamB", "name": "ChannelB1", ...} }
+  { "type": "user", "user": { "username": "user001", ...} }
+  { "type": "user", "user": { "username": "user002", ...} }
+  { "type": "user", "user": { "username": "user003", ...} }
+  { "type": "user", ... }
+  { "type": "user", ... }
+  { "type": "user", ... }
   .
   .
   .
-  { type: "post", { team: "TeamA", name: "ChannelA1", user: "user001", ...} }
-  { type: "post", { team: "TeamA", name: "ChannelA1", user: "user001", ...} }
-  { type: "post", { team: "TeamA", name: "ChannelA1", user: "user001", ...} }
+  { "type": "post", { "team": "TeamA", "name": "ChannelA1", "user": "user001", ...} }
+  { "type": "post", { "team": "TeamA", "name": "ChannelA1", "user": "user001", ...} }
+  { "type": "post", { "team": "TeamA", "name": "ChannelA1", "user": "user001", ...} }
   .
   .
   .
@@ -79,8 +79,8 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
 .. code-block:: javascript
 
   {
-    type: "version",
-    version: 1
+    "type": "version",
+    "version": 1
   }
 
 Fields of the Version object
@@ -125,13 +125,13 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
 .. code-block:: javascript
 
   {
-  type: "team",
-  team: {
-    name: "team-name",
-    display_name: "Team Display Name",
-    type: "O",
-    description: "The Team Description",
-    allow_open_invite: true
+  "type": "team",
+  "team": {
+    "name": "team-name",
+    "display_name": "Team Display Name",
+    "type": "O",
+    "description": "The Team Description",
+    "allow_open_invite": true
     }
   }
 
@@ -203,14 +203,14 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
 .. code-block:: javascript
 
   {
-    type: "channel",
-    channel: {
-      team: "team-name",
-      name: "channel-name",
-      display_name: "Channel Name",
-      type: "O",
-      header: "The Channel Header",
-      purpose: "The Channel Purpose",
+    "type": "channel",
+    "channel": {
+      "team": "team-name",
+      "name": "channel-name",
+      "display_name": "Channel Name",
+      "type": "O",
+      "header": "The Channel Header",
+      "purpose": "The Channel Purpose",
     }
   }
 
@@ -287,30 +287,30 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
 .. code-block:: javascript
 
   {
-    type: "user",
-    user: {
-      username: "username",
-      email: "email@example.com",
-      auth_service: "",
-      auth_data: "",
-      password: "passw0rd",
-      nickname: "bobuser",
-      first_name: "Bob",
-      last_name: "User",
-      position: "Senior Developer",
-      roles: "system_user",
-      locale: "pt_BR",
-      teams: [
+    "type": "user",
+    "user": {
+      "username": "username",
+      "email": "email@example.com",
+      "auth_service": "",
+      "auth_data": "",
+      "password": "passw0rd",
+      "nickname": "bobuser",
+      "first_name": "Bob",
+      "last_name": "User",
+      "position": "Senior Developer",
+      "roles": "system_user",
+      "locale": "pt_BR",
+      "teams": [
         {
-          name: "team-name",
-          roles: "team_user team_admin",
-          channels: [
+          "name": "team-name",
+          "roles": "team_user team_admin",
+          "channels": [
             {
-              name: "channel-name",
-              roles: "channel_user",
-              notify_props: {
-                desktop: "default",
-                mark_unread: "all"
+              "name": "channel-name",
+              "roles": "channel_user",
+              "notify_props": {
+                "desktop": "default",
+                "mark_unread": "all"
               }
             }
           ]
@@ -733,13 +733,13 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
 .. code-block:: javascript
 
   {
-    type: "post",
-    post: {
-      team: "team-name",
-      channel: "channel-name",
-      user: "username",
-      message: "The post message",
-      create_at: 140012340013,
+    "type": "post",
+    "post": {
+      "team": "team-name",
+      "channel": "channel-name",
+      "user": "username",
+      "message": "The post message",
+      "create_at": 140012340013,
       "flagged_by": [
         "username1",
         "username2",
