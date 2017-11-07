@@ -20,8 +20,8 @@ Actions are any sort of logic that will result in the manipulation of store stat
 
 Actions must:
 - Return `async functions <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function>`__ so the caller can `await <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await>`__ on them
-- The async function must return ``null`` on error, while dispatching an error to store state
-- The async function must return the data result or return ``true`` if there is no data to return, while dispatching the data
+- The async function must return an object with an error property containing the error (`{error: yourerrorhere}`), while dispatching an error to store state
+- The async function must return the result or return ``true`` in object containing data (`{data: yourresulthere}`) if there is no data to return, while dispatching the data
 - May be chained to return the results of other actions
 - Be unit tested
 
