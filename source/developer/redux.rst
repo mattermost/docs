@@ -92,7 +92,7 @@ If it's not a one-to-one mapping and you need to manipulate the data you get bac
                   {type: UserTypes.PROFILES_FAILURE, error},
                   getLogErrorAction(error)
               ]), getState);
-              return null;
+              return {error};
           }
 
           dispatch(batchActions([
@@ -105,7 +105,7 @@ If it's not a one-to-one mapping and you need to manipulate the data you get bac
               }
           ]));
 
-          return profiles;
+          return {data: profiles};
       };
   }
 
@@ -152,7 +152,7 @@ There can also be actions that just wrap one or more existing actions.
               value: 'true'
           };
 
-          savePreferences(currentUserId, [preference])(dispatch, getState);
+          return await savePreferences(currentUserId, [preference])(dispatch, getState);
       };
   }
 
