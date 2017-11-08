@@ -34,7 +34,7 @@ information provided by the customer that the server is the likely issue.
 
 #### Check the status of the server process
 
-Assuming the customer has followed our Linux setup guide, there will be a system service called
+Assuming the customer has followed our Linux setup guide, there will be a systemd service called
 `mattermost.service` on their server. You can check the status of this process with:
 
 ```
@@ -50,7 +50,7 @@ sudo systemctl start mattermost.service
 
 #### Mattermost is not running after a reboot
 
-Many people miss the step in the setup guide that enables the system unit file for Mattermost.
+Many people miss the step in the setup guide that enables the systemd unit file for Mattermost.
 Rectify this with the following commands, and ask the customer to reboot to verify it is working.
 
 ```
