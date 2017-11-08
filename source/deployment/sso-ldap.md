@@ -53,7 +53,7 @@ Organizations using multiple domains can integrate with Mattermost using a "Fore
 
 The following are frequently asked questions and troubleshooting suggestions on common error messages and issues.
 
-##### When I first set up and synchronize LDAP, are the users automatically created in Mattermost? 
+##### When I first set up and synchronize AD/LDAP, are the users automatically created in Mattermost? 
 
 No, each user is created on their first login. 
 
@@ -63,12 +63,12 @@ Yes, using the [bulk import tool](https://docs.mattermost.com/deployment/bulk-lo
 
 ##### How does deactivating users work? 
 
-When LDAP authentication is used in Mattermost, user deactivation must be done via the LDAP server. 
+When AD/LDAP authentication is used in Mattermost, user deactivation must be done via the AD/LDAP server. 
 
 There are two main ways to do this: 
 
-1. User Deletion: If the user is completely removed from the LDAP server, they will be deactivated in Mattermost on the next synchronization. 
-2. User Filter: Set the [user filter](https://docs.mattermost.com/administration/config-settings.html#user-filter) to only select the subset of LDAP users you want to have access to Mattermost. When someone is removed from the selected group, they will be deactivated in Mattermost on the next synchronization. 
+1. User Deletion: If the user is completely removed from the AD/LDAP server, they will be deactivated in Mattermost on the next synchronization. 
+2. User Filter: Set the [user filter](https://docs.mattermost.com/administration/config-settings.html#user-filter) to only select the subset of AD/LDAP users you want to have access to Mattermost. When someone is removed from the selected group, they will be deactivated in Mattermost on the next synchronization. 
 
 For Active Directory, to filter out deactivated users you must set the user filter to `(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))`.  
 
@@ -83,7 +83,7 @@ Consider upvoting the [feature request](https://mattermost.uservoice.com/forums/
 This indicates that there is a problem somewhere with your configuration. We recommend that you: 
 1. Confirm Enterprise Edition is installed
 2. Check your license to confirm it's uploaded and not expired 
-3. Check your Mattermost configuration settings to ensure that LDAP is enabled, and the settings are correct
+3. Check your Mattermost configuration settings to ensure that AD/LDAP is enabled, and the settings are correct
 
 If you are still having issues, you can [contact support](https://about.mattermost.com/support/) for additional troubleshooting. 
 
@@ -110,11 +110,11 @@ This indicates your AD/LDAP server configuration has a maximum page size set and
 
 To address this issue you can set the [max page size](https://docs.mattermost.com/administration/config-settings.html#maximum-page-size) in your Mattermost configuration to match the limit on your AD/LDAP server. This will return a sequence of result sets that do not exceed the max page size, rather than returning all results in a single query.
 
-##### Where can I find help on LDAP configuration settings in config.json?
+##### Where can I find help on AD/LDAP configuration settings in config.json?
 
 You can find an explanation of each of the configuration settings [here](https://docs.mattermost.com/administration/config-settings.html#ad-ldap).
 
-##### Can the LDAP User Filter read Security groups?
+##### Can the AD/LDAP User Filter read Security groups?
 
 Yes it can, but make sure that:
  - permissions are correctly configured on the service account you are using
