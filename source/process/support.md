@@ -25,8 +25,7 @@ Typically located in `/opt/mattermost/logs`.
 #### Are you running Mattermost in a container and/or using container orchestration?
 E.g.: Docker and Kubernetes, Docker and Cloud Foundry
 
-
-## Mattermost Is not Working / The Server Keeps Dying
+## Mattermost Is Not Working / The Server Keeps Dying
 
 Questions to ask when dealing with general complaints along the lines of "Mattermost is not working"
 or "the server keeps dying". See the previous section if you have not yet established from the
@@ -63,7 +62,7 @@ sudo systemctl start mattermost.service
 Ask the customer to share the contents of `mattermost.log` from the `logs` directory of their
 Mattermost installation in order to look for any indications why Mattermost has stopped running.
 
-#### Check the System logs
+#### Check the system logs
 
 Often, the reason for Mattermost being reported as "randomly dying" is running out of memory. Ask
 the customer to send the results of the following command to inspect for evidence of OOM.
