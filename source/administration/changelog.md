@@ -90,7 +90,7 @@ Release date: 2017-11-16
 
 ### Compatibility
 
-Composite database indexes were added to the `Posts` table. This may lead to longer ugprade times for servers with more than 1 million messages.
+Composite database indexes were added to the `Posts` table. This may lead to longer upgrade times for servers with more than 1 million messages.
 
 #### Removed and Deprecated Features
 - All APIv3 endpoints are scheduled for removal on January 16, 2018.
@@ -112,14 +112,14 @@ Multiple setting options were added to `config.json`. Below is a list of the add
   - Added `"EnableUploads": false` to set whether manual plugin uploads are enabled on the server. Disabling will keep existing plugins, including pre-packaged Mattermost plugins, installed on the server.
   - Added `"Directory": "./plugins"` to specify the directory of where plugins are stored.
   - `"Plugins": {}` to list installed plugins on the Mattermost server.
-  - `"PluginStates": {}` to set whether whether an installed plugin is active or inactive on the Mattermost server.
+  - `"PluginStates": {}` to set whether an installed plugin is active or inactive on the Mattermost server.
 
 **Additional Changes to Enterprise Edition**:
 
 - Under `SamlSettings` in `config.json`:
   - Added `EnableSync: false` to set whether AD/LDAP synchronization is enabled.
 - Under `LdapSettings` in `config.json`:
-  - Added `EnableSyncWithLdap: false` to set whether SAML user attributes, includign deactivation, are periodically synchronized from AD/LDAP.
+  - Added `EnableSyncWithLdap: false` to set whether SAML user attributes, including deactivation, are periodically synchronized from AD/LDAP.
 - Under `ElasticsearchSettings` in `config.json`:
   - Added `"LiveIndexingBatchSize": 1` to .... // XXX Eric please help?
   - Added `"RequestTimeoutSeconds": 30` to .... // XXX Eric please help?
