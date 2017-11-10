@@ -21,7 +21,7 @@ Release date: 2017-11-16
 ### Improvements
 
 #### Web User Interface
-- Added an experimental feature to hide direct and group message channels after 7 days with no new messages. To enable it .. // XXX add link to docs
+- Added an experimental feature to hide direct and group message channels after 7 days with no new messages. To enable it set `CloseUnusedDirectMessages` in `config.json` to `true`.
 - Moved website previews out of beta, configurable in **Account Settings > Display**. Enable link previews in the [System Console](https://docs.mattermost.com/administration/config-settings.html#enable-link-previews).
 - Made it easier to add a user to channel if mentioned user is not already a channel member.
 - Added "Edit Account Settings" link to the bottom of your own profile popover to more easily edit your settings.
@@ -29,6 +29,7 @@ Release date: 2017-11-16
 - URL addresses for channels on the left-hand sidebar are now hidden on the desktop app.
 - Added a loading spinner to Account Settings dialog after clicking the "Save" button.
 - Added full date tooltip to post timestamps in right-hand sidebar and search results.
+- Added "@" in front of the username field in user lists.
 
 #### Performance
 - Reduced load times by optimizing database queries and adding composite indexes for the `Posts` table.
@@ -54,11 +55,14 @@ Release date: 2017-11-16
 - Added a setting to disable channel wide (@-channel, @-all) mention confirmation in channels with more than five members.
 - Admin now receives a prompt when leaving a System Console page with unsaved changes.
 
-#### Enterprise Edition
+#### Elasticsearch ([Enterprise Edition E20](https://about.mattermost.com/pricing))
 - Added support for batched live indexing for Elasticsearch.
 - Added a configurable timeout for Elasticsearch requests.
+- Added a table to Elasticsearch System Console page to monitor indexing jobs.
+- Elasticsearch connection is now asynchronous so that a broken Elasticsearch server cannot block the startup of the Mattermost server.
 
 ### Bug Fixes
+- Fixed mobile push notification settings not saving in the System Console.
 - Fixes to channel link (~) autocomplete, such as not being able to autocomplete 'Town Square'.
 - Fixed an issue where System Console was sometimes temporarily accessible after demoting a user to a member.
 - Fixed failure to switch from email to SAML sign-in method if the user's email address has a plus sign.
@@ -82,6 +86,7 @@ Release date: 2017-11-16
 - Fixed `/msg` command arbitrarily switching teams.
 - Fixed mentions not appearing linked in message drafts when in preview mode.
 - Fixed an issue where an existing account could change their email address to one not in the [restricted domain list](https://docs.mattermost.com/administration/config-settings.html#restrict-account-creation-to-specified-email-domains).
+- Fixed emoji reactions being added to system messages when using the `+:emoji:` command.
 
 ### Compatibility
 
@@ -103,11 +108,11 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Under `TeamSettings` in `config.json`:
   - Added `"EnableConfirmNotificationsToChannel": true` to set whether a confirmation is shown for channel wide (@-channel, @-all) mentions in channels with more than five members.
 - Under `PluginSettings` in `config.json`:
-  - Enable .... // XXX
-  - EnableUploads .... // XXX
-  - Directory .... // XXX
-  - Plugins .... // XXX
-  - PluginStates .... // XXX
+  - Added `"Enable": true` to set whether plugins are enabled on the server.
+  - Added `"EnableUploads": false` to set whether manual plugin uploads are enabled on the server. Disabling will keep existing plugins, including pre-packaged Mattermost plugins, installed on the server.
+  - Added `"Directory": "./plugins"` to specify the directory of where plugins are stored.
+  - `"Plugins": {}` to list installed plugins on the Mattermost server.
+  - `"PluginStates": {}` to set whether whether an installed plugin is active or inactive on the Mattermost server.
 
 **Additional Changes to Enterprise Edition**:
 
@@ -116,9 +121,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Under `LdapSettings` in `config.json`:
   - Added `EnableSyncWithLdap: false` to set whether SAML user attributes, includign deactivation, are periodically synchronized from AD/LDAP.
 - Under `ElasticsearchSettings` in `config.json`:
-  - Added `"LiveIndexingBatchSize": 1` to .... // XXX
-  - Added `"RequestTimeoutSeconds": 30` to .... // XXX
-  - Added `"BulkIndexingTimeWindowSeconds": 3600` to .... // XXX
+  - Added `"LiveIndexingBatchSize": 1` to .... // XXX Eric please help?
+  - Added `"RequestTimeoutSeconds": 30` to .... // XXX Eric please help?
+  - Added `"BulkIndexingTimeWindowSeconds": 3600` to .... // XXX Eric please help?
 
 ### Database Changes
 
@@ -142,9 +147,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - `POST` at `/users/{user_id}/sessions/revoke/all`
   - Revokes all user sessions from the provided user id and session id strings.
 
-- Add post' root ID to APIv4 addChannelMember to render added user (as system post) at RHS // XXX ??? (needs API docs too)
-- ExecuteCommand executes a given slash command against the specified team // XXX ??? (needs API docs too)
-- Plugin APIs // XXX ???
+- Add post' root ID to APIv4 addChannelMember to render added user (as system post) at RHS // XXX Pinged SA to help
+- ExecuteCommand executes a given slash command against the specified team // XXX Pinged JF to help
+- Plugin APIs // XXX Pinged JW to help
 
 **Modified routes (API v4)**
 - `POST` at `/logs`
@@ -174,6 +179,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Closing a direct or group message channel, then re-opening later, doesn't restore channel preferences.
 - CTRL/CMD+U shortcut to upload a file doesn't work on Firefox.
 - Website previews are not displayed for comments on threads.
+- User gets a blank page after hitting "x" on a deleted message in permalink view.
+- Profile pictures don't immediately update across tabs or in the right-hand side comment threads.
 
 ### Contributors
 
