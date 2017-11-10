@@ -4,8 +4,10 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
-## Release v4.3.1
+## Release v4.3.2
 
+ - **v4.3.2, release date 2017-11-10**
+   - Fixed an issue where after creating a new direct message channel via channel switcher (CTRL/CMD+K), all messages fail to post until a page refresh.
  - **v4.3.1, released 2017-10-20**
    - Fixed an upgrade issue where the database schema would appear to be out of date and throw a log warning.
    - Fixed the Idle Timeout setting in `config.json` by changing the setting title from `SessionIdleTimeout` to `SessionIdleTimeoutInMinutes`.
