@@ -73,25 +73,25 @@ Typically found in `/var/log/nginx/error.log`
 
 1. If they try to access Mattermost and receive a "took too long to respond" error page, they should check to confirm that their `mattermost_external_url` is set correctly in their gitlab.rb. Then, they should run `gitlab-ctl reconfigure`.
 2. If they try to access Mattermost and receive a 502 error, their `mattermost_external_url` is set correctly, but their Mattermost instance does not appear to be running. They should then:
-    1. Run `gitlab-ctl status mattermost` to see if Mattermost is running
-    2. Check the logs to see if something is preventing Mattermost from starting. They can do this by running `gitlab-ctl tail mattermost` and using `gitlab-ctl restart mattermost` to attempt to start Mattermost
+    1. Run `gitlab-ctl status mattermost` to see if Mattermost is running.
+    2. Check the logs to see if something is preventing Mattermost from starting. They can do this by running `gitlab-ctl tail mattermost` and using `gitlab-ctl restart mattermost` to attempt to start Mattermost.
 
 #### Login issues
 
 1. Are they seeing any error messages when they try to log in? If so, what error messages are they seeing, and can they send us a screenshot?
-2. Does anything appear in the Mattermost logs when they try to log in? They can see these by running `gitlab-ctl tail mattermost`
+2. Does anything appear in the Mattermost logs when they try to log in? They can see these by running `gitlab-ctl tail mattermost`.
 
 #### Other debugging information
 
 Useful commands (need to be run with sudo):
-- `gitlab-ctl reconfigure` - Update config.json and other configuration files, then restart all services (including Mattermost)
-- `gitlab-ctl <stop/start/restart> mattermost` - Stop/start/restart Mattermost
-- `gitlab-ctl status mattermost` - Check if Mattermost is running. The message printed will start with "run" if it's running or "down" if it's not.
+- `gitlab-ctl reconfigure` - Update config.json and other configuration files, then restart all services (including Mattermost).
+- `gitlab-ctl <stop/start/restart> mattermost` - Stop/start/restart Mattermost.
+- `gitlab-ctl status mattermost` - Check if Mattermost is running. The message printed will start with `run` if it's running or `down` if it's not.
 - `gitlab-ctl tail mattermost` - Watch all Mattermost log files. Press Ctrl+C to exit.
-- `gitlab-ctl <stop/start/restart/status/tail> <nginx/postgresql/redis/etc>` - Control, view status, or view logs of a different service
+- `gitlab-ctl <stop/start/restart/status/tail> <nginx/postgresql/redis/etc>` - Control, view status, or view logs of a different service.
 
 File locations:
 - Configuration files are located at `/etc/gitlab/gitlab.rb` and `/var/opt/gitlab/mattermost/config.json`.
-- Log files are located in `/var/log/gitlab`. Mattermost's current logs in particular are in `/var/log/gitlab/mattermost`. The current log is named `current` with older ones being named `mattermost.log` or `mattermost.logmattermost.log` (the second one only appears due to a bug in certain versions).
+- Log files are located in `/var/log/gitlab`. Mattermost's current logs in particular are in `/var/log/gitlab/mattermost`. The current log is named `current` with older ones being named `mattermost.log` or `mattermost.logmattermost.log`.
 - The default data directory is `/var/opt/gitlab/mattermost/data`.
 - Other Mattermost resources (i18n, email templates, webapp code, etc) are located in `/opt/gitlab/embedded/service/mattermost`.
