@@ -1,5 +1,5 @@
-Custom Branding Tools
-=====================
+Custom Branding Tools  (E10)
+============================
 
 Available in `Enterprise Edition E10 and higher <https://about.mattermost.com/pricing/>`_.
 
