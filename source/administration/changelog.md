@@ -147,7 +147,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - `POST` at `/users/{user_id}/sessions/revoke/all`
   - Revokes all user sessions from the provided user id and session id strings.
 
-- ExecuteCommand executes a given slash command against the specified team // XXX Pinged JF to help
 - Plugin APIs // XXX Pinged JW to help
 
 **Modified routes (API v4)**
