@@ -65,8 +65,8 @@ I don't see anything logged to the console when Mattermost is running
 I can't log into Mattermost because I don't have an account
   You can create an account using the following command:
 
-  ``go run ./cmd/platform/*.go user create --email user@example.com --username test1 --password mypassword``
+  ``go build ./cmd/platform && ./platform user create --email user@example.com --username test1 --password mypassword``
 
   Optionally, you can make that account a System Admin with the following command:
 
-  ``go run ./cmd/platform/*.go user create --email user@example.com --username test1 --password mypassword --system_admin``
+  ``go build ./cmd/platform && ./platform user create --email user@example.com --username test1 --password mypassword --system_admin``
