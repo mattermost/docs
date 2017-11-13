@@ -21,7 +21,7 @@ Set Up Guide
 
 To enable plugins, follow these two simple steps.
 
-1) Go to **System Console > Plugins (Beta) > Configuration**. Here you can enable plugins and plugin uploads. If you do not plan to upload a plugin, set **Enable Plugin Uploads** to ``false` to control which plugins are installed on your server. 
+1) Go to **System Console > Plugins (Beta) > Configuration**. Here you can enable plugins and plugin uploads. If you do not plan to upload a plugin, set **Enable Plugin Uploads** to ``false`` to control which plugins are installed on your server. 
 2) Go to **System Console > Plugins (Beta) > Management** to manage your plugins, including:
 
  - Activating or deactivating pre-packaged Mattermost plugins.
