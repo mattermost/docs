@@ -12,7 +12,7 @@ There are three scenarios in which you would consider using a plugin:
 There are two main types of plugins:
 
  - **Client plugins**, which allow you to customize the Mattermost user interface, by overriding elements such as the profile popover, channel header or the sidebar. For a sample plugin, see `hovercardexample <https://github.com/jwilander/hovercardexample>`_.
- - **Server plugins**, which makes it easier to integrate with third-party systems such as JIRA, GitLab or Jenkins. A sample plugin for a video and audio call system such as Zoom and Skype for Business is currently in progress.
+ - **Server plugins**, which make it easier to integrate with third-party systems such as JIRA, GitLab or Jenkins. A sample plugin for a video and audio call system such as Zoom and Skype for Business is currently in progress.
 
 Later in upcoming releases, the `Enterprise Edition <https://about.mattermost.com/pricing>`_ will support server plugins that enable you to extend Mattermost functionality to meet a specific, complex requirement such as profiling performance metrics, and to implement highly customized compliance rules for `information barriers <http://www.17a-4.com/supervision-information-barriers/>`_.
 
