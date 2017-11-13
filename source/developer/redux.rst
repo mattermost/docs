@@ -20,8 +20,8 @@ Actions are any sort of logic that will result in the manipulation of store stat
 
 Actions must:
 - Return `async functions <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function>`__ so the caller can `await <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await>`__ on them
-- The async function must return ``null`` on error, while dispatching an error to store state
-- The async function must return the data result or return ``true`` if there is no data to return, while dispatching the data
+- The async function must return an object with an error property containing the error (``{error: yourerrorhere}``), while dispatching an error to store state
+- The async function must return the result in an object containing data (``{data: yourresulthere}``) or if there is nothing to return ``true`` in place of the result, while dispatching the data
 - May be chained to return the results of other actions
 - Be unit tested
 
@@ -92,7 +92,7 @@ If it's not a one-to-one mapping and you need to manipulate the data you get bac
                   {type: UserTypes.PROFILES_FAILURE, error},
                   getLogErrorAction(error)
               ]), getState);
-              return null;
+              return {error};
           }
 
           dispatch(batchActions([
@@ -105,7 +105,7 @@ If it's not a one-to-one mapping and you need to manipulate the data you get bac
               }
           ]));
 
-          return profiles;
+          return {data: profiles};
       };
   }
 
@@ -152,7 +152,7 @@ There can also be actions that just wrap one or more existing actions.
               value: 'true'
           };
 
-          savePreferences(currentUserId, [preference])(dispatch, getState);
+          return await savePreferences(currentUserId, [preference])(dispatch, getState);
       };
   }
 
