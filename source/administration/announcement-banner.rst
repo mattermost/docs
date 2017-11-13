@@ -1,5 +1,5 @@
-Announcement Banner
-===================
+Announcement Banner (E10)
+=========================
 
 Available in `Enterprise Edition E10 and higher <https://about.mattermost.com/pricing/>`_.
 
