@@ -3131,6 +3131,14 @@ Prefix on the Elasticsearch index name. Enables the use of Mattermost Elasticsea
 | This feature's ``config.json`` setting is ``"IndexPrefix": ""`` with string input      |
 +----------------------------------------------------------------------------------------+
 
+Request Timeout
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Timeout in seconds for Elasticseaerch calls.
+
++-------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RequestTimeoutSeconds": 30`` with whole number input     |
++-------------------------------------------------------------------------------------------------------+
+
 Client Requirement Settings (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
