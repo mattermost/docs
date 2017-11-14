@@ -3131,6 +3131,14 @@ Prefix on the Elasticsearch index name. Enables the use of Mattermost Elasticsea
 | This feature's ``config.json`` setting is ``"IndexPrefix": ""`` with string input      |
 +----------------------------------------------------------------------------------------+
 
+Live Indexing Batch Size
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+XXXXXX
+
++--------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LiveIndexingBatchSize": 1"`` with whole number input      |
++--------------------------------------------------------------------------------------------------------+
+
 Request Timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Timeout in seconds for Elasticseaerch calls.
