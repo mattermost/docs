@@ -54,6 +54,10 @@ Troubleshooting
 Plugin uploads fail even though uploads are enabled
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If plugin uploads fail and you see "permissions denied" errors in **System Console > Logs**  such as ``[2017/11/13 20:42:18 UTC] [EROR] failed to start up plugins: mkdir /home/ubuntu/mattermost/client/plugins: permission denied``, you don't have proper permissions for uploading plugins.
+If plugin uploads fail and you see "permissions denied" errors in **System Console > Logs**  such as 
 
-To resolve it, apply write access to the ``mattermost/client`` directory.
+.. code-block:: text
+
+  [2017/11/13 20:42:18 UTC] [EROR] failed to start up plugins: mkdir /home/ubuntu/mattermost/client/plugins: permission denied
+
+you don't have proper permissions for uploading plugins. To resolve it, apply write access to the ``mattermost/client`` directory.
