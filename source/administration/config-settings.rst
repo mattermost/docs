@@ -254,6 +254,17 @@ Maximum total number of users in a channel before @all, @here, and @channel no l
 | This feature's ``config.json`` setting is ``"MaxNotificationsPerChannel": 1000`` with whole number input.                                                                    |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Show @channel and @all confirmation dialog
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Users will be prompted to confirm when posting @channel and @all in channels with over five members.
+
+**False**: No confirmation is required.
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableConfirmNotificationsToChannel": true`` with options ``true`` and ``false`` for above settings respectively.               |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Restrict account creation to specified email domains
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Teams and user accounts can only be created by a verified email from this list of comma-separated domains (e.g. "corp.mattermost.com, mattermost.org").
@@ -2859,6 +2870,18 @@ WebSocket Port
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``WebsocketPort": 80`` with whole number input.                                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Autoclose Direct Messages in Sidebar (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: By default, direct message conversations with no activity for 7 days will be hidden from the sidebar. This can be disabled in **Account Settings** > **Sidebar**.
+
+**False**: Conversations remain in the sidebar until they are manually closed.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``CloseUnusedDirectMessages": false`` with options ``true`` and ``false`` for above settings respectively.                 |                                                                           
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 
 SQL Settings
 ~~~~~~~~~~~~
