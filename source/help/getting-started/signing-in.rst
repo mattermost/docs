@@ -74,7 +74,7 @@ that appears left of your channel list on the left-hand sidebar.
 
 Setting Your Status
 -------------------
-You can set your status as online, away, or offline by selecting a status from the menu that appears when you click your avatar at the top of the channel list.
+You can set your status as online, away, do not distrub, or offline by selecting a status from the menu that appears when you click your avatar at the top of the channel list.
 
 .. image:: ../../images/avatar-online-status-218x247.png
   :width: 218px
