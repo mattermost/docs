@@ -16,6 +16,7 @@ The following slash commands are available on all Mattermost installations:
     "/away", "Set your status away", "/away"
     "/offline", "Set your status offline", "/offline"
     "/online", "Set your status online", "/online"
+    "/dnd", "Set your status to Do Not Disturb", "/dnd"
     "/code *{text}*", "Display text as a code block", "/code File bugs"
     "/collapse", "Turn on auto-collapsing of image previews", "/collapse"
     "/expand", "Turn off auto-collapsing of image previews", "/expand"
