@@ -111,8 +111,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
   - Added `"Enable": true` to set whether plugins are enabled on the server.
   - Added `"EnableUploads": false` to set whether manual plugin uploads are enabled on the server. Disabling will keep existing plugins, including pre-packaged Mattermost plugins, installed on the server.
   - Added `"Directory": "./plugins"` to specify the directory of where plugins are stored.
-  - `"Plugins": {}` to list installed plugins on the Mattermost server.
-  - `"PluginStates": {}` to set whether an installed plugin is active or inactive on the Mattermost server.
+  - Added `"Plugins": {}` to list installed plugins on the Mattermost server.
+  - Added `"PluginStates": {}` to set whether an installed plugin is active or inactive on the Mattermost server.
 
 **Additional Changes to Enterprise Edition**:
 
