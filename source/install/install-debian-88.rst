@@ -19,5 +19,8 @@ Install a production-ready Mattermost system on 1 to 3 machines.
 .. include:: config-mattermost-server.rst
 .. include:: config-tls-mattermost.rst
 .. include:: install-nginx.rst
+.. include:: install-haproxy.rst
 .. include:: config-proxy-nginx.rst
+.. include:: config-proxy-haproxy.rst
 .. include:: config-ssl-http2-nginx.rst
+.. include:: config-ssl-http2-haproxy.rst
