@@ -47,3 +47,13 @@ You can share feedback in our `forums <https://forum.mattermost.org>`_ by creati
 All feedback is highly welcome!
 
 // XXX Joram: Any other "FAQ" community or customers might have?
+
+Troubleshooting
+-----------------
+
+Plugin uploads fail even though uploads are enabled
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If plugin uploads fail and you see "permissions denied" errors in **System Console > Logs**  such as ``[2017/11/13 20:42:18 UTC] [EROR] failed to start up plugins: mkdir /home/ubuntu/mattermost/client/plugins: permission denied``, you don't have proper permissions for uploading plugins.
+
+To resolve it, apply write access to the ``mattermost/client`` directory.
