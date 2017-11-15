@@ -104,7 +104,7 @@ platform
     -  `platform command`_ - Management of slash commands
     -  `platform help`_ - Generate full documentation for the CLI
     -  `platform import`_ - Import data
-    -  `platform ldap`_ - LDAP related utilities
+    -  `platform ldap`_ - AD/LDAP related utilities
     -  `platform license`_ - Licensing commands
     -  `platform reset`_ - Reset the database to initial state
     -  `platform roles`_ - Management of user roles
@@ -373,7 +373,7 @@ platform ldap
 -------------
 
   Description
-    Commands to configure and synchronize LDAP.
+    Commands to configure and synchronize AD/LDAP.
 
   Child Command
     -  `platform ldap sync`_ - Synchronize now
@@ -382,7 +382,7 @@ platform ldap sync
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Synchronize all LDAP users now.
+    Synchronize all AD/LDAP users now.
 
   Format
     .. code-block:: none
@@ -728,11 +728,11 @@ platform user invite
       sudo ./platform user invite user@example.com myteam
       sudo ./platform user invite user@example.com myteam1 myteam2
 
-platform user migrate\_auth
+platform user migrate_auth
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Migrates all user accounts from one authentication provider to another. For example, you can upgrade your authentication provider from email to LDAP. Output will display any accounts that are not migrated successfully.
+    Migrates all user accounts from one authentication provider to another. For example, you can upgrade your authentication provider from email to AD/LDAP. Output will display any accounts that are not migrated successfully.
 
     -  ``from_auth``: The authentication service from which to migrate user accounts. Supported options: ``email``, ``gitlab``, ``saml``.
 
@@ -752,7 +752,7 @@ platform user migrate\_auth
   Options
     .. code-block:: none
 
-      --force  Ignore duplicate entries on the LDAP server.
+      --force  Ignore duplicate entries on the AD/LDAP server.
 
 platform user password
 ~~~~~~~~~~~~~~~~~~~~~~~~
