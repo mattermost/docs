@@ -58,18 +58,18 @@ spec:
             - name: gitlab-redis
               mountPath: '/etc/gitlab-redis'
               readOnly: true
-          # livenessProbe:
-          #   initialDelaySeconds: 180
-          #   timeoutSeconds: 15
-          #   httpGet:
-          #     path: /help
-          #     port: {{ .Values.service.ports.nginx }}
-          # readinessProbe:
-          #   initialDelaySeconds: 15
-          #   timeoutSeconds: 1
-          #   httpGet:
-          #     path: /help
-          #     port: {{ .Values.service.ports.nginx }}
+          livenessProbe:
+            initialDelaySeconds: 180
+            timeoutSeconds: 15
+            httpGet:
+              path: /help
+              port: {{ .Values.service.ports.workhorse }}
+          readinessProbe:
+            initialDelaySeconds: 30
+            timeoutSeconds: 1
+            httpGet:
+              path: /help
+              port: {{ .Values.service.ports.workhorse }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
       volumes:
