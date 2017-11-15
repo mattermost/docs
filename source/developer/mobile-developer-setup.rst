@@ -87,7 +87,6 @@ Android
   - Google APIs Intel x86 Atom_64 System Image
  - Any other API version that you want to test
 
-
 Test Environment Setup
 --------------------------
 
@@ -191,6 +190,28 @@ Android (Device)
   ``make run-android``
 
 8. The installed APK may not be opened automatically. You may need to manually open the Mattermost app on your device.
+
+Start Developing and Building
+------------------------------------
+
+In order to develop and build the Mattermost mobile apps you'll need to get a copy of the source code. Also, since it is most likely that you'll want to contribute back your work it is best if you fork our mattermost-mobile repo.
+
+1. Fork the mattermost-mobile repository on GitHub
+2. Clone your fork locally:
+ - Open a terminal 
+ - Change to a directory you want to hold your local copy 
+ - Run
+`git clone https://github.com/<username>/mattermost-mobile.git` if you want to use HTTPS, or
+
+`git clone git@github.com:<username>/mattermost-mobile.git` if you want to use SSH
+
+Important: <username> refers to the username or organization in GitHub that forked the repository.
+
+3. Change the directory to `mattermost-mobile`
+ - `cd mattermost-mobile`
+
+4. Run `make pre-run` in order to install all the dependencies
+ - It is **highly** important that you run everything with the make commands and avoid using npm or yarn to install dependencies.
 
 Troubleshooting
 ------------------
