@@ -35,7 +35,7 @@ Install `Watchman <https://facebook.github.io/watchman/>`_.
  - Open a terminal and run `brew install watchman`
 
 Assuming that you have NodeJS already installed, you can now use npm to install `React Native CLI Tools <http://facebook.github.io/react-native/docs/understanding-cli.html>`_ globally
-	`npm -g install react-native-cli`
+ - npm -g install react-native-cli
 
 Install yarn (used as our package manager for the mobile apps)
  - Homebrew
@@ -45,7 +45,7 @@ Install yarn (used as our package manager for the mobile apps)
 
 We use GitHub to host the source code so we recommend that you install `Git <https://git-scm.com/`_ in order to get the source code and contribute back your changes with `pull requests <https://help.github.com/articles/creating-a-pull-request/>`_.
  - If you do not have git installed you can do so with Homebrew
-	Open a terminal and run `brew install git`
+  - Open a terminal and run `brew install git`
 
 iOS
 ~~~~~~~~~~~~~~~~~~~
