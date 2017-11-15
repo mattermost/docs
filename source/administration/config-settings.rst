@@ -3133,7 +3133,7 @@ Prefix on the Elasticsearch index name. Enables the use of Mattermost Elasticsea
 
 Live Indexing Batch Size
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-XXXXXX
+Determines how many new posts are batched together before they are added to the Elasticsearch index. It may be necessary to increase this value to avoid hitting the rate limit of your Elasticsearch cluster on installs handling multiple messages per second.
 
 +--------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LiveIndexingBatchSize": 1"`` with whole number input      |
@@ -3149,7 +3149,7 @@ Timeout in seconds for Elasticseaerch calls.
 
 Bulk Indexing Time Window
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-XXXXXX
+Determines the maximum time window for a batch of posts being indexed by the Bulk Indexer. This setting servers as a performance optimisation for installs with over ~10 millioin posts in the database. Approximate this value based on the average number of seconds for 2,000 posts to be added to the database on a typical day in production. Setting this value too low will cause Bulk Indexing jobs to run slowly.
 
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"BulkIndexingTimeWindowSeconds": 3600`` with whole number input     |
