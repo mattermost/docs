@@ -14,6 +14,40 @@ If you run into any issues getting your environment set up, check the Troublesho
 Development Environment Setup
 ---------------------------------
 
+We strongly recommend the use of a computer that supports macOS to develop and build the Mattermost mobile apps as macOS is required to build the iOS app.
+
+Software Requirements
+---------------------------------
+
+Common
+~~~~~~~~~~~~~~~~~~~
+
+No matter what platform are you going to develop and build, you'll need to install some prerequisite software. For macOS, we recommend using _`Homebrew <https://brew.sh/>`_ as a package manager.
+
+Install _`NodeJS <https://nodejs.org/en/>`_.
+ - Using Homebrew (recommended)
+ - Open a terminal and run `brew install node`
+ - Using _`NVM <https://github.com/creationix/nvm>`_
+ - Download and install the package from the _`NodeJS website <https://nodejs.org/en/>`_
+
+Install _`Watchman <https://facebook.github.io/watchman/>`_.
+ - Using Homebrew (recommended)
+ - Open a terminal and run `brew install watchman`
+
+Assuming that you have NodeJS already installed, you can now use npm to install _`React Native CLI Tools <http://facebook.github.io/react-native/docs/understanding-cli.html>'_ globally
+	`npm -g install react-native-cli`
+
+Install yarn (used as our package manager for the mobile apps)
+ - Homebrew
+ - Open a terminal and run `brew install yarn`
+ - NPM
+ - Open a terminal and run `npm -g install yarn` 
+
+We use GitHub to host the source code so we recommend that you install _`Git <https://git-scm.com/`_ in order to get the source code and contribute back your changes with _`pull requests <https://help.github.com/articles/creating-a-pull-request/_`.
+ - If you do not have git installed you can do so with Homebrew
+	Open a terminal and run `brew install git`
+
+
 Mac OS X
 ~~~~~~~~~~~~
 
