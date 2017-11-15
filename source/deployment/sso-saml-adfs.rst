@@ -15,7 +15,6 @@ The following are basic requirements to use ADFS for Mattermost:
  - An SSL certificate to sign your ADFS login page.
  - ADFS installed on your Microsoft Server. You can find a detailed guide for deploying and configuring ADFS in `this article <https://msdn.microsoft.com/en-us/library/gg188612.aspx>`_.
 
-
 On your ADFS installation, note down the value of the **SAML 2.0/W-Federation URL** in ADFS Endpoints section, also known as the **SAML SSO URL Endpoint** in this guide. If you chose the defaults for the installation, this will be ``/adfs/ls/``.
 
 Add a Relying Party Trust
@@ -152,8 +151,8 @@ Next, we export the identity provider certificate, which will be later uploaded 
 
 You’re now about to finish configuring SAML for Mattermost!
 
-Configure SAML for Mattermost
------------------------------
+Configure SAML sign-in for Mattermost
+--------------------------------------
 
 1. Start Mattermost server and sign into Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**.
   - *SAML SSO URL*: **SAML 2.0/W-Federation URL** ADFS Endpoint you copied earlier.
@@ -190,5 +189,7 @@ You’re done! If you’d like to confirm SAML SSO is successfully enabled, swit
 It is also recommended to post an announcement about how the migration will work to users.
 
 You may also configure SAML for ADFS by editing ``config.json`` to enable SAML based on :ref:`SAML configuration settings <saml-enterprise>`. You must restart the Mattermost server for the changes to take effect.
+
+.. include:: sso-saml-ldapsync.rst
 
 .. include:: sso-saml-troubleshooting.rst
