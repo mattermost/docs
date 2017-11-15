@@ -121,9 +121,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Under `LdapSettings` in `config.json`:
   - Added `EnableSyncWithLdap: false` to set whether SAML user attributes, including deactivation, are periodically synchronized from AD/LDAP.
 - Under `ElasticsearchSettings` in `config.json`:
-  - Added `"LiveIndexingBatchSize": 1` to .... // XXX Eric please help?
-  - Added `"RequestTimeoutSeconds": 30` to .... // XXX Eric please help?
-  - Added `"BulkIndexingTimeWindowSeconds": 3600` to .... // XXX Eric please help?
+  - Added `"LiveIndexingBatchSize": 1` to set how many new posts are batched together before they are added to the Elasticsearch index.
+  - Added `"RequestTimeoutSeconds": 30` to set the timeout in seconds for Elasticseaerch calls.
+  - Added `"BulkIndexingTimeWindowSeconds": 3600` to set the maximum time window for a batch of posts being indexed by the Bulk Indexer.
 
 ### Database Changes
 
