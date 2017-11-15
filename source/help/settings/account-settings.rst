@@ -182,7 +182,7 @@ Configure how names are displayed in Mattermost: nickname, username or full name
 
 Website Link Previews
 ~~~~~~~~~~~~~~~~~~~~~~~~
-When available, the first web link in a message will show a preview of the website content below the message. This setting must be enabled by your System Admin.
+When available, the first web link in a message will show a preview of the website content below the message. This `setting must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#link-previews>`_.
 
 Link Previews
 ~~~~~~~~~~~~~
@@ -224,7 +224,7 @@ Sidebar
 
 Automatically Close Direct Messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Hide Direct Message conversations with no activity for 7 days. These conversations can be reopened with the “+” button in the sidebar or by using the Channel Switcher (CTRL+K).
+Hide Direct Message conversations with no activity for 7 days. These conversations can be reopened with the “+” button in the sidebar or by using the Channel Switcher (CTRL+K). This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental>`_.
 
 Advanced
 --------
