@@ -16,6 +16,9 @@ spec:
       labels:
         app: {{ template "name" . }}
         release: {{ .Release.Name }}
+      annotations:
+        checksum/configmap: {{ .Files.Get "configmap.yml" | sha256sum }}
+        checksum/configmaptcp: {{ .Files.Get "configmap-tcp.yml" | sha256sum }}
     spec:
       containers:
         - name: {{ .Chart.Name }}
