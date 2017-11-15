@@ -224,7 +224,7 @@ Sidebar
 
 Automatically Close Direct Messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Hide Direct Message conversations with no activity for 7 days. These conversations can be reopened with the “+” button in the sidebar or using the Channel Switcher (CTRL+K).
+Hide Direct Message conversations with no activity for 7 days. These conversations can be reopened with the “+” button in the sidebar or by using the Channel Switcher (CTRL+K).
 
 Advanced
 --------
