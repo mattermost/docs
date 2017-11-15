@@ -1,5 +1,8 @@
 # Cloud Native GitLab Helm Chart
 
+**THIS REPOSITORY IS UNDER HEAVY DEVELOPMENT. IT SHOULD NOT BE USED FOR ANYTHING
+EXCEPT DEVELOPMENT**
+
 We are working on a new method of installing GitLab for customers who are
 looking to deploy into container schedulers like Kubernetes.
 
