@@ -45,6 +45,8 @@ Online Indicator
 	Color of the online indicator appearing next to team members names in the Direct Messages list.
 Away Indicator
 	Color of the away indicator appearing next to team members names in the Direct Messages list when they have had no browser activity for 5 minutes.
+Do Not Disturb Indicator
+	Color of the do not disturb indicator appearing next to team members names in the Direct Messages list.
 Mention Jewel BG
 	Background color of the jewel indicating unread mentions that appears to the right of the channel name. This is also the background color of the “Unread Posts Below/Above” indicator appearing at the top or bottom of the Channels pane on shorter browser windows.
 Mention Jewel Text
