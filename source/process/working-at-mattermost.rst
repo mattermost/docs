@@ -105,11 +105,6 @@ Please take off holidays relevant to your culture, resident country and preferen
 
 We're headquartered in the US and have a large Canadian contingent, so below are holidays we're expecting people from those countries to take off:
 
-US & Canadian Holidays remaining for 2016:
-
-- US & Canadian Christmas Day (12/25/2016)
-- Canadian Boxing Day (12/26/2016)
-
 US & Canadian Holidays for 2017:
 
 - US & Canadian New Year's (1/1/2017)

@@ -62,7 +62,13 @@ The following information is sent when the specified event occurs:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Non-personally Identifiable Error Information
-  Boolean when the following events occur: Email login error, AD/LDAP login error, SAML login error
+  Boolean when the following events occur:
+  
+  - *Sign-in Error*: Email login error, AD/LDAP login error, SAML login error
+  
+  Boolean when the following events occur, including the error message, recently dispatched Redux actions, and non-identifiable information of the device, operating system and the app:
+
+  - *Mobile App Errors*: App crashes caused by type errors, exceptions and failed logins
 
 Non-personally Identifiable Diagnostic Information
   Boolean when the following events occur:

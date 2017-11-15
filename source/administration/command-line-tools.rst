@@ -47,7 +47,7 @@ To run the CLI commands, you must be in the directory that contains the Mattermo
     sudo ./platform version
 
 Using the CLI on GitLab Omnibus
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------
 
 On GitLab Omnibus, you must be in the following directory when you run CLI commands: ``/opt/gitlab/embedded/service/mattermost``. Also, you must run the commands as the user *mattermost* and specify the location of the configuration file. The executable is ``/opt/gitlab/embedded/bin/mattermost``.
 
@@ -60,6 +60,19 @@ On GitLab Omnibus, you must be in the following directory when you run CLI comma
 
 .. note::
   The example commands in the documentation are for a default installation of Mattermost. You must modify the commands so that they work on GitLab Omnibus.
+  
+Using the CLI on Docker Install
+-------------------------------
+
+On Docker install, you must be in the ``/mattermost`` directory within your Docker container when you run CLI commands.  Note that the container name may be ``mattermostdocker_app_1`` if you installed Mattermost with ``docker-compose.yml``.
+
+**For example, to get the Mattermost version on a Docker install:**
+
+  .. code-block:: bash
+
+    docker exec -it <your-mattermost-container-name> /bin/bash
+    cd /mattermost
+    bin/platform version
 
 Mattermost 3.6 and later
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -91,7 +104,7 @@ platform
     -  `platform command`_ - Management of slash commands
     -  `platform help`_ - Generate full documentation for the CLI
     -  `platform import`_ - Import data
-    -  `platform ldap`_ - LDAP related utilities
+    -  `platform ldap`_ - AD/LDAP related utilities
     -  `platform license`_ - Licensing commands
     -  `platform reset`_ - Reset the database to initial state
     -  `platform roles`_ - Management of user roles
@@ -360,7 +373,7 @@ platform ldap
 -------------
 
   Description
-    Commands to configure and synchronize LDAP.
+    Commands to configure and synchronize AD/LDAP.
 
   Child Command
     -  `platform ldap sync`_ - Synchronize now
@@ -369,7 +382,7 @@ platform ldap sync
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Synchronize all LDAP users now.
+    Synchronize all AD/LDAP users now.
 
   Format
     .. code-block:: none
@@ -715,11 +728,11 @@ platform user invite
       sudo ./platform user invite user@example.com myteam
       sudo ./platform user invite user@example.com myteam1 myteam2
 
-platform user migrate\_auth
+platform user migrate_auth
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Migrates all user accounts from one authentication provider to another. For example, you can upgrade your authentication provider from email to LDAP. Output will display any accounts that are not migrated successfully.
+    Migrates all user accounts from one authentication provider to another. For example, you can upgrade your authentication provider from email to AD/LDAP. Output will display any accounts that are not migrated successfully.
 
     -  ``from_auth``: The authentication service from which to migrate user accounts. Supported options: ``email``, ``gitlab``, ``saml``.
 
@@ -739,7 +752,7 @@ platform user migrate\_auth
   Options
     .. code-block:: none
 
-      --force  Ignore duplicate entries on the LDAP server.
+      --force  Ignore duplicate entries on the AD/LDAP server.
 
 platform user password
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -861,7 +874,8 @@ Notes:
 - Team name and channel name refer to the handles, not the display names. So in the url ``https://pre-release.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``
 
 
-.. tip :: If you automate user creation through the CLI tool with SMTP enabled emails will be sent to all new users created. If you run such a load script, it is best to disable SMTP or to use test accounts so that new account creation emails aren't unintentionally set to people at your organization who aren't expecting them.
+.. tip :: If you automate user creation through the CLI tool with SMTP enabled, emails will be sent to all new users created. If you run such a load script, it is best to disable SMTP or to use test accounts so that new account creation emails aren't unintentionally sent to people at your organization who aren't expecting them.
+
 CLI Documentation:
 
 ::

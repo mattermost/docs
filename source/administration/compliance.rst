@@ -1,5 +1,5 @@
-Compliance Reporting and Oversight
-----------------------------------
+Compliance Reporting and Oversight (E20)
+-----------------------------------------
 
 Available in `Enterprise Edition E20 <https://about.mattermost.com/pricing/>`_
 

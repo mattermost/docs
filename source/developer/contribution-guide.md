@@ -42,7 +42,7 @@ Before submitting a pull request (PR), check that:
 
 1. You’ve signed the [Contributor License Agreement](http://www.mattermost.org/mattermost-contributor-agreement/), so you can be added to the Mattermost [Approved Contributor List](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true).  
 2. Your change has a [Help Wanted ticket](http://docs.mattermost.com/process/help-wanted.html)
-3. Your code follows the [Mattermost Style Guide](http://docs.mattermost.com/developer/style-guide.html).  
+3. Your code follows the [Mattermost Style Guide](http://docs.mattermost.com/developer/style-guide.html) and you've run `make check-style` to check for style errors.
 4. Unit tests are included for new server side functionality. 
 5. Strings in user interface are included in the server [i18n/en.json](https://github.com/mattermost/mattermost-server/blob/master/i18n/en.json) and in the webapp [i18n/en.json](https://github.com/mattermost/mattermost-webapp/tree/master/i18n/en.json) localization files. Files for other languages will automatically be updated through the [Mattermost Translation Server](http://translate.mattermost.com) and do not need to be included in the pull request.
 6. Change meets UX Guidelines of [Fast, Obvious, Forgiving](http://www.mattermost.org/design-principles/).

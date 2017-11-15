@@ -228,8 +228,17 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 - [crspeller](https://github.com/crspeller), [jasonblais](https://github.com/jasonblais)
 
-## Release v4.3.0
-Release date: 2017-10-16
+## Release v4.3.2
+
+ - **v4.3.2, release date 2017-11-10**
+   - Fixed an issue where after creating a new direct message channel via channel switcher (CTRL/CMD+K), all messages fail to post until a page refresh.
+ - **v4.3.1, released 2017-10-20**
+   - Fixed an upgrade issue where the database schema would appear to be out of date and throw a log warning.
+   - Fixed the Idle Timeout setting in `config.json` by changing the setting title from `SessionIdleTimeout` to `SessionIdleTimeoutInMinutes`.
+   - Fixed a regression where slash commands were not functional in Direct or Group Messages.
+   - Mattermost v4.3.1 contains a low severity security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+ - **v4.3.0, released 2017-10-16**
+   - Original 4.3.0 release
 
 ### Security Update
 
@@ -309,7 +318,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 **Changes to Enterprise Edition**:
 
 - Under `ServiceSettings` in `config.json`:
-  - Added `"SessionIdleTimeout": 0` to specify how long to wait before logging out inactive users.
+  - Added `"SessionIdleTimeoutInMinutes": 0` to specify how long to wait before logging out inactive users.
 - Under `ElasticsearchSettings` in `config.json`:
   - Added `"IndexPrefix": ""` to allow Elasticsearch to be used on a shared Elasticseearch cluster.
 - Under `DataRetentionSettings` in `config.json`:
@@ -407,8 +416,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 - [crspeller](https://github.com/crspeller)
 
-## Release v4.2.0
-Release date: 2017-09-16
+## Release v4.2.1
+
+ - **v4.2.1, released 2017-10-20**
+   - Mattermost v4.2.1 contains multiple security fixes ranging from low to high severity. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+ - **v4.2.0, released 2017-09-16**
+   - Original 4.2.0 release
 
 ### Security Update
 
@@ -617,8 +630,10 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 - [crspeller](https://github.com/crspeller)
 
-## Release v4.1.1
+## Release v4.1.2
 
+ - **v4.1.2, released 2017-10-20**
+   - Mattermost v4.1.2 contains multiple security fixes ranging from low to high severity. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **v4.1.1, released 2017-09-16**
    - Mattermost v4.1.1 contains multiple security fixes ranging from low to medium severity. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **v4.1.0, released 2017-08-16**

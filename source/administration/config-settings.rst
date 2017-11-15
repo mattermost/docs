@@ -1496,7 +1496,7 @@ The number of minutes from the last time a user was active on the system to the 
 Applies to the desktop app and browsers. For mobile apps, use an EMM provider to lock the app when not in use. In High Availability mode, enable IP hash load balancing for reliable timeout measurement.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionIdleTimeout" : 0`` with whole number input.                                                                      |
+| This feature's ``config.json`` setting is ``"SessionIdleTimeoutInMinutes" : 0`` with whole number input.                                                             |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -1818,52 +1818,6 @@ To manage who can create personal access tokens or to search users by token ID, 
 
 ________
 
-JIRA (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~
-Enable JIRA
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**True**: You can configure JIRA webhooks to post message in Mattermost. To help combat phishing attacks, all posts are labelled by a BOT tag.
-
-**False**: JIRA webhook integration is not enabled.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enabled": false`` with options ``true`` and ``false`` for above settings respectively.                                  |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-User
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Select the username that this integration is attached to.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UserName": ""`` with string input                                                                                       |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Secret
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The secret used to authenticate to Mattermost. Regenerating the secret for the webhook URL endpoint invalidates your existing JIRA integrations.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Secret": ""`` with string input                                                                                         |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Note that to set up a JIRA integration via ``config.json``, you can use the following format:
-
-  .. code-block:: text
-
-    "Plugins": {
-        "jira": {
-            "Enabled": true,
-            "Secret": "k-ZtjoTrmIdPs7eAGjalDEK_3Q8r3gXJ",
-            "UserName": "jira"
-        }
-    }
-
-where ``Enabled``, ``Secret`` and ``UserName`` are specified above.
-________
-
 WebRTC (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Enable Mattermost WebRTC
@@ -1949,6 +1903,103 @@ Using a Google API Key allows Mattermost to detect when a video is no longer ava
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"GoogleDeveloperKey": ""`` with string input.                                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+________
+
+Plugins (Beta)
+--------------------------------
+Settings to configure plugins.
+
+Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable Plugins
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Enables plugins on your Mattermost server. Use plugins to integrate with third-party systems, extend functionality or customize the user interface of your Mattermost server. See `documentation <https://about.mattermost.com/default-plugins>`_ to learn more.
+
+**False**: Disables plugins on your Mattermost server.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Enable": true`` with options ``true`` and ``false`` for above settings respectively.                                    | 
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable Plugin Uploads
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Enables plugin uploads by System Admins at **Plugins > Management**. If you do not plan to upload a plugin, set to false to control which plugins are installed on your server. See `documentation <https://about.mattermost.com/default-plugins-uploads>`_ to learn more.
+
+**False**: Disables plugin uploads on your Mattermost server.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableUploads": true`` with options ``true`` and ``false`` for above settings respectively.                             | 
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Management
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Upload Plugin
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Upload a plugin for your Mattermost server. See `documentation <https://about.mattermost.com/default-plugins-uploads>`_ to learn more.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Plugins": {}`` with string input.                                                                                       | 
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Installed Plugins
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Lists installed plugins on your Mattermost server. Pre-packaged plugins are installed by default, and can be deactivated but not removed.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"PluginStates": {}`` with string input.                                                                                  | 
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+JIRA (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable JIRA
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: You can configure JIRA webhooks to post message in Mattermost. To help combat phishing attacks, all posts are labelled by a BOT tag.
+
+**False**: JIRA webhook integration is not enabled.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Enabled": false`` with options ``true`` and ``false`` for above settings respectively.                                  |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+User
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Select the username that this integration is attached to.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"UserName": ""`` with string input                                                                                       |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Secret
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The secret used to authenticate to Mattermost. Regenerating the secret for the webhook URL endpoint invalidates your existing JIRA integrations.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Secret": ""`` with string input                                                                                         |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Note that to set up a JIRA integration via ``config.json``, you can use the following format in ``"PluginSettings:``:
+
+  .. code-block:: text
+
+    "Plugins": {
+        "jira": {
+            "Enabled": true,
+            "Secret": "k-ZtjoTrmIdPs7eAGjalDEK_3Q8r3gXJ",
+            "UserName": "jira"
+        }
+    }
+
+where ``Enabled``, ``Secret`` and ``UserName`` are specified above.
+
+
 
 ________
 
@@ -3247,9 +3298,9 @@ Default Theme
 
 Set a default theme that applies to all new users on the system.
 
-+-----------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DefaultTheme": "default"`` with options ``default``, ``organization``, ``mattermostDark`` and ``windows10``. |
-+-----------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Allow Custom Themes
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -3272,3 +3323,14 @@ Select the themes that can be chosen by users when ``"EnableThemeSelection"`` is
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AllowedThemes": "default"`` with options ``default``, ``organization``, ``mattermostDark`` and ``windows10`` optionally separated by commas. For example, ``["mattermostDark", "windows10"]`` |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Plugin Settings  (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Directory
+^^^^^^^^^^
+The location of the plugin files. If blank, they are stored in the ./plugins directory. The path that you set must exist and Mattermost must have write permissions in it.
+
++-----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Directory": "./plugins"`` with string input.                       |
++-----------------------------------------------------------------------------------------------------------------+

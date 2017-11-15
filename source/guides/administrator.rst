@@ -17,7 +17,6 @@ Installing Mattermost
    Installing on RHEL 6.6 </install/install-rhel-66.rst>
    Installing on RHEL 7.1 </install/install-rhel-71.rst>
    Installing on CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific.rst>
-   Installing on Debian Jessie (Unofficial) </install/prod-debian.rst>
    /install/deploy-bitnami*
    /install/docker-local*
    /install/docker-ebs*
@@ -62,15 +61,16 @@ Administration
    /administration/config*
    /administration/team-settings.md
    /administration/statistics.md
-   /administration/announcement-banner.rst
-   /administration/compliance*
-   /administration/data-retention*
-   /administration/branding*
-   /administration/backup*
-   /administration/liveness-check*
    /administration/upgrade.rst
    /administration/version-archive*
+   /administration/backup*
+   /administration/liveness-check*
    /administration/migrating.md
+   /administration/plugins*
+   /administration/announcement-banner.rst
+   /administration/branding*
+   /administration/compliance*
+   /administration/data-retention*
    
 Mobile Apps
 -----------

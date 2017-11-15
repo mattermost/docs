@@ -357,7 +357,7 @@ In making these trade-offs, consider the following mindsets:
 
    Fix something that's important, broken and dangerous as fast as possible. Speed is critical, do not care about "leaving a scar" in our architecture or business process, just own it and get it done. Solve the problem, DO NOT OVER BUILD.
  
-   *Example:* Something incorrect on our public website with more than 100 page views a month should be fixed immediately and not put on a queue tied to a longer term project. 
+   *Example:* Something incorrect on our public website with more than 100,000 page views a month should be fixed immediately and not put on a queue tied to a longer term project. 
 
 - **Field Surgeon** 
 
@@ -430,7 +430,7 @@ A specific type of mana for developers similar to "points" or "jelly beans" in a
 Expert Mode (and Crimson Force Field)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When documentation or on-screen text is written for someone with considerable knowledge or expertise, instead of being designed for a new learner. In general, try to state things simply rather than speaking to just the "experts" reading the the text.
+When documentation or on-screen text is written for someone with considerable knowledge or expertise, instead of being designed for a new learner. In general, try to state things simply rather than speaking to just the "experts" reading the text.
 
 If something is extremely difficult to understand, and yet still justified in the mind of the writer, we call it "Crimson Force Field". This term is intended to evoke the emotional response of coming across something that is difficult to understand, so writers of Crimson Force Field material can empathize with the readers. Crimson Force Field is drawn from an esoteric episode of Star Trek and it is unlikely anyone but the originator of the term understands its complete meaning. Crimson Force Field is itself Crimson Force Field.
 
