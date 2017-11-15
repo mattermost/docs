@@ -146,8 +146,18 @@ Multiple setting options were added to `config.json`. Below is a list of the add
   - Disables a personal access token and deletes any sessions that uses the token. The token can be re-enabled using `/users/tokens/enable.`
 - `POST` at `/users/{user_id}/sessions/revoke/all`
   - Revokes all user sessions from the provided user id and session id strings.
-
-- Plugin APIs // XXX Pinged JW to help
+- `POST` at `/plugins`
+  - Uploads a plugin in a compressed .tar.gz.
+- `GET` at `/plugins`
+  - Gets a list of active and inactive plugins.
+- `DELETE` at `/plugins/{plugin_id}`
+  - Removes a previously uploaded plugin.
+- `POST` at `/plugins/{plugin_id}/activate`
+  - Activates an installed plugin.
+- `POST` at `/plugins/{plugin_id}/deactivate`
+  - Deactivates an active plugin.
+- `GET` at `/plugins/webapp`
+  - Gets a list of plugin manifests for active plugins with webapp components.
 
 **Modified routes (API v4)**
 - `POST` at `/logs`
