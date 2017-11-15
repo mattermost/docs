@@ -22,7 +22,7 @@ Use a Direct Message when you want a private conversation with one other person.
 
 If your System Administrator has allowed it, you can start a Direct Message or a Group Message with people on other teams, not just your own.
 
-There is also an online status indicator next to the names in the Direct Message list. It displays: online (active browser), away (no browser activity for 5 minutes), and offline (browser closed).
+There is also an online status indicator next to the names in the Direct Message list. It displays: online (active browser), away (no browser activity for 5 minutes), do not disturb (disabled desktop and push notifications) and offline (browser closed).
 
 Managing Channels
 -----------------------------------------

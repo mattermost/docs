@@ -254,6 +254,17 @@ Maximum total number of users in a channel before @all, @here, and @channel no l
 | This feature's ``config.json`` setting is ``"MaxNotificationsPerChannel": 1000`` with whole number input.                                                                    |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Show @channel and @all confirmation dialog
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Users will be prompted to confirm when posting @channel and @all in channels with over five members.
+
+**False**: No confirmation is required.
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableConfirmNotificationsToChannel": true`` with options ``true`` and ``false`` for above settings respectively.               |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Restrict account creation to specified email domains
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Teams and user accounts can only be created by a verified email from this list of comma-separated domains (e.g. "corp.mattermost.com, mattermost.org").
@@ -944,6 +955,16 @@ Enable sign-in with AD/LDAP
 | This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable Synchronization with AD/LDAP
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: Mattermost periodically synchronizes users from AD/LDAP.
+
+**False**: AD/LDAP synchronization is disabled.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableSync": false`` with options ``true`` and ``false`` for above settings respectively.                               |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 AD/LDAP Server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The domain or IP address of the AD/LDAP server.
@@ -1147,6 +1168,16 @@ Enable Login With SAML
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                                   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable Synchronizing SAML Accounts With AD/LDAP
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: Mattermost periodically synchronizes SAML user attributes, including user deactivation and removal, with AD/LDAP. Enable and configure synchronization settings at Authentication > AD/LDAP. See `documentation <https://about.mattermost.com/default-saml-ldap-sync>`_ to learn more.
+
+**False**: Synchronization of SAML accounts with AD/LDAP is disabled.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableSyncWithLdap": false`` with options ``true`` and ``false`` for above settings respectively.                       |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 SAML SSO URL
@@ -2911,6 +2942,18 @@ WebSocket Port
 | This feature’s ``config.json`` setting is ``WebsocketPort": 80`` with whole number input.                                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Autoclose Direct Messages in Sidebar (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: By default, direct message conversations with no activity for 7 days will be hidden from the sidebar. This can be disabled in **Account Settings** > **Sidebar**.
+
+**False**: Conversations remain in the sidebar until they are manually closed.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``CloseUnusedDirectMessages": false`` with options ``true`` and ``false`` for above settings respectively.                 |                                                                           
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 SQL Settings
 ~~~~~~~~~~~~
 
@@ -3158,6 +3201,30 @@ Prefix on the Elasticsearch index name. Enables the use of Mattermost Elasticsea
 +----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IndexPrefix": ""`` with string input      |
 +----------------------------------------------------------------------------------------+
+
+Live Indexing Batch Size
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Determines how many new posts are batched together before they are added to the Elasticsearch index. It may be necessary to increase this value to avoid hitting the rate limit of your Elasticsearch cluster on installs handling multiple messages per second.
+
++--------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LiveIndexingBatchSize": 1"`` with whole number input      |
++--------------------------------------------------------------------------------------------------------+
+
+Request Timeout
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Timeout in seconds for Elasticseaerch calls.
+
++-------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RequestTimeoutSeconds": 30`` with whole number input     |
++-------------------------------------------------------------------------------------------------------+
+
+Bulk Indexing Time Window
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Determines the maximum time window for a batch of posts being indexed by the Bulk Indexer. This setting servers as a performance optimisation for installs with over ~10 millioin posts in the database. Approximate this value based on the average number of seconds for 2,000 posts to be added to the database on a typical day in production. Setting this value too low will cause Bulk Indexing jobs to run slowly.
+
++-----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"BulkIndexingTimeWindowSeconds": 3600`` with whole number input     |
++-----------------------------------------------------------------------------------------------------------------+
 
 Client Requirement Settings (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

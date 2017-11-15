@@ -23,27 +23,36 @@ There are two ways to setup AD/LDAP:
 2. **Configure AD/LDAP by editing `config.json`**
      - Before starting the Mattermost server, edit `config.json` to enable AD/LDAP based on [AD/LDAP settings documentation](http://docs.mattermost.com/administration/config-settings.html#ldap-settings-enterprise). When you start the Mattermost server the first user to log in with valid AD/LDAP credentials will be assigned the System Administrator role.
 
-#### Configure AD/LDAP using the System Console user interface
+#### Configure AD/LDAP sign-in
 
 After installing Mattermost:
 
-1. **Create a System Administrator account using email authentication**. On a new server create an account using email and password, which is automatically assigned the **System Administrator** role since it is the first account created. You may also assign the role to another account.    
+1. Create a System Administrator account using email authentication. On a new server create an account using email and password, which is automatically assigned the **System Administrator** role since it is the first account created. You may also assign the role to another account.    
 
-2. **Configure AD/LDAP**. Select **System Console** from the main screen, go to **AD/LDAP** and fill in AD/LDAP settings based on [configuration settings documentation](http://docs.mattermost.com/administration/config-settings.html#ad-ldap)    
+2. Configure AD/LDAP. Go to **System Console > AD/LDAP** and fill in AD/LDAP settings based on [configuration settings documentation](http://docs.mattermost.com/administration/config-settings.html#ad-ldap)    
 
-3. **Confirm AD/LDAP sign-on is enabled**.  After AD/LDAP has been enabled, confirm that users can sign in using AD/LDAP credentials.
+3. Confirm AD/LDAP sign-on is enabled.  After AD/LDAP has been enabled, confirm that users can sign in using AD/LDAP credentials.
 
-4. **Switch your System Administrator account from email to AD/LDAP authentication**. Go to **Account Settings** > **General** > **Sign-in Method** > **Switch to AD/LDAP** and sign-in with your AD/LDAP credentials to complete the switch.
+4. Switch your System Administrator account from email to AD/LDAP authentication. Go to **Account Settings** > **General** > **Sign-in Method** > **Switch to AD/LDAP** and sign-in with your AD/LDAP credentials to complete the switch.
 
-5. **(Optional) Restrict authentication to AD/LDAP**. Go to **System Console** > **Authentication** > **Email** and set **Allow Sign Up With Email** to `false` and **Allow Sign In With Email** to `false`. This should leave Active Directory/LDAP as the only single sign-in option.
+5. (Optional) Restrict authentication to AD/LDAP. Go to **System Console** > **Authentication** > **Email** and set **Allow Sign Up With Email** to `false` and **Allow Sign In With Email** to `false`. This should leave Active Directory/LDAP as the only single sign-in option.
 
 6. (Optional) If you configured First Name Attribute and Last Name Attribute in the System Console, go to **System Console > General > Users and Teams** and set **Teammate Name Display** to *Show first and last name*. This is recommended for a better user experience.
 
 If you've made a mistake and lock yourself out of the system somehow, you can [set an existing account to System Administrator using the commandline tool](http://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline).
 
-Notes:
-- Mattermost 3.0 checks AD/LDAP credentials at the time of sign-in and issues session tokens with configurable durations, defaulting to 30 days. If a shorter time intervals is required, this session length for SSO can be changed in **System Console** > **Security** > **Sessions**.
-- Any user attributes updated in the AD/LDAP Server will be reflected in Mattermost when AD/LDAP Synchronization occurs. The time interval for synchronization can be set in the **System Console** > **Authentication** > **AD/LDAP** > **Syncronization Interval**.
+#### Configure AD/LDAP synchronization
+
+In addition to configuring AD/LDAP sign-in, you can also configure AD/LDAP synchronization. When synchronizing, Mattermost queries AD/LDAP for relevant account information and updates Mattermost accounts based on changes to attributes (first name, last name, and nickname). When accounts are disabled in AD/LDAP users are made inactive in Mattermost, and their active sessions are revoked once Mattermost synchronizes attributes.
+
+To configure AD/LDAP synchronization with AD/LDAP sign-in:
+
+1. Go to **System Console > AD/LDAP** and set **Enable Synchronization with AD/LDAP** to `true`.
+2. Set **Syncronization Interval** to specify how often Mattermost accounts synchronize attributes with AD/LDAP. The default setting is 60 minutes.
+
+If you want to synchronize immediately after disabling an account, use the "AD/LDAP Synchronize Now" button in **System Console > AD/LDAP**.
+
+To configure AD/LDAP synchronization with SAML sign-in, see the [SAML documentation](https://about.mattermost.com/default-saml-ldap-sync).
 
 #### Configure AD/LDAP deployments with multiple domains
 

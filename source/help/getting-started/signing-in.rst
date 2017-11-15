@@ -74,11 +74,11 @@ that appears left of your channel list on the left-hand sidebar.
 
 Setting Your Status
 -------------------
-You can set your status as online, away, or offline by selecting a status from the menu that appears when you click your avatar at the top of the channel list.
+You can set your status as online, away, do not disturb, or offline by selecting a status from the menu that appears when you click your avatar at the top of the channel list. Do not disturb disables desktop and push notifications.
 
 .. image:: ../../images/avatar-online-status-218x247.png
-  :width: 218px
-  :height: 247px
+  :width: 239px
+  :height: 232px
   :alt: Image of avatar showing the status selection menu with the options online, away, and offline
 
 Logging Out
