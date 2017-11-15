@@ -27,7 +27,7 @@ To enable plugins, follow these two simple steps.
  - Activating or deactivating pre-packaged Mattermost plugins.
  - Upload and install a plugin for your Mattermost server, or remove them.
 
-For more information on building your own plugin, see the `developer documentation <//xxx Joram, anything we can reference?>`_.
+For more information on building your own plugin, see our `sample plugin <https://github.com/jwilander/hovercardexample>`_. More extensive developer documentation to come.
 
 Plugin Uploads
 ~~~~~~~~~~~~~~~~~~
@@ -44,7 +44,7 @@ Frequently Asked Questions (FAQ)
 Where can I share feedback on plugins?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can share feedback in our `forums <https://forum.mattermost.org>`_ by creating a new forum post or by replying to `our open issue <// XXX JB to create a forum post for community to share feedback>`_.
+You can share feedback in our `forums <https://forum.mattermost.org>`_ by creating a new forum post or by replying to `our open issue <https://forum.mattermost.org/t/mattermost-plugins-in-beta/4123>`_.
 
 All feedback is highly welcome!
 
