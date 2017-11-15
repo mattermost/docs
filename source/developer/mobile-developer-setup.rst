@@ -22,19 +22,19 @@ Software Requirements
 Common
 ~~~~~~~~~~~~~~~~~~~
 
-No matter what platform are you going to develop and build, you'll need to install some prerequisite software. For macOS, we recommend using _`Homebrew <https://brew.sh/>`_ as a package manager.
+No matter what platform are you going to develop and build, you'll need to install some prerequisite software. For macOS, we recommend using `Homebrew <https://brew.sh/>`_ as a package manager.
 
-Install _`NodeJS <https://nodejs.org/en/>`_.
+Install `NodeJS <https://nodejs.org/en/>`_.
  - Using Homebrew (recommended)
  - Open a terminal and run `brew install node`
- - Using _`NVM <https://github.com/creationix/nvm>`_
- - Download and install the package from the _`NodeJS website <https://nodejs.org/en/>`_
+ - Using `NVM <https://github.com/creationix/nvm>`_
+ - Download and install the package from the `NodeJS website <https://nodejs.org/en/>`_
 
-Install _`Watchman <https://facebook.github.io/watchman/>`_.
+Install `Watchman <https://facebook.github.io/watchman/>`_.
  - Using Homebrew (recommended)
  - Open a terminal and run `brew install watchman`
 
-Assuming that you have NodeJS already installed, you can now use npm to install _`React Native CLI Tools <http://facebook.github.io/react-native/docs/understanding-cli.html>'_ globally
+Assuming that you have NodeJS already installed, you can now use npm to install `React Native CLI Tools <http://facebook.github.io/react-native/docs/understanding-cli.html>`_ globally
 	`npm -g install react-native-cli`
 
 Install yarn (used as our package manager for the mobile apps)
@@ -43,10 +43,53 @@ Install yarn (used as our package manager for the mobile apps)
  - NPM
  - Open a terminal and run `npm -g install yarn` 
 
-We use GitHub to host the source code so we recommend that you install _`Git <https://git-scm.com/`_ in order to get the source code and contribute back your changes with _`pull requests <https://help.github.com/articles/creating-a-pull-request/_`.
+We use GitHub to host the source code so we recommend that you install `Git <https://git-scm.com/`_ in order to get the source code and contribute back your changes with `pull requests <https://help.github.com/articles/creating-a-pull-request/>`_.
  - If you do not have git installed you can do so with Homebrew
 	Open a terminal and run `brew install git`
 
+iOS
+~~~~~~~~~~~~~~~~~~~
+
+In order to build and run the app in iOS you'll need to install `Xcode 9 <https://idmsa.apple.com/IDMSWebAuth/login?appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2Fdownload%2F&rv=1>`_. You'll also need `Cocoapods <https://cocoapods.org/>`_ to install the project’s iOS dependencies.
+
+Android
+~~~~~~~~~~~~~~~~~~~
+
+1. First you'll need to download and install Android Studio or the Android SDK command line tools.
+2. Make sure you have the following ENV VARS configured
+ - `ANDROID_HOME` to where Android SDK is located (likely `/Users/<username>/Library/Android/sdk`)
+ - Make sure your `PATH` includes `ANDROID_HOME/tools` and `ANDROID_HOME/platform-tools`
+  
+  - On Mac, this usually looks like adding the following lines to your ~/.bash_profile file:
+  
+    - `export ANDROID_HOME=/Users/<username>/Library/Android/sdk`
+    - `export PATH=$ANDROID_HOME/platform-tools:$PATH`
+    - `export PATH=$ANDROID_HOME/tools:$PATH`
+    
+   Then reload your bash configuration: 
+    `source ~/.bashprofile`
+3. In the SDK Manager using Android Studio or the SDK CLI (sdkmanager) ensure the following are installed:
+ - Android SDK Build-Tools (multiple versions)
+  - 23.0.3
+  - 25.0.3
+  - 26.0.1
+ - Android Emulator
+ - Android SDK Platform-Tools
+ - Android SDK Tools
+ - Android Support Library
+ - Google Play services
+ - Intel x86 Emulator Accelerator (HAXM installer)
+ - Android Support Repository
+ - Google Repository
+ - Android API 23 (Marshmallow)
+  - Google APIs
+  - Android SDK Platform
+  - Google APIs Intel x86 Atom_64 System Image
+ - Any other API version that you want to test
+
+
+Test Environment Setup
+--------------------------
 
 Mac OS X
 ~~~~~~~~~~~~
@@ -97,8 +140,6 @@ Mac OS X
 
     ``make restart-server``
 
-Test Environment Setup
---------------------------
 
 Android (Device)
 ~~~~~~~~~~~~~~~~~~~
