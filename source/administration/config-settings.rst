@@ -3147,6 +3147,14 @@ Timeout in seconds for Elasticseaerch calls.
 | This feature's ``config.json`` setting is ``"RequestTimeoutSeconds": 30`` with whole number input     |
 +-------------------------------------------------------------------------------------------------------+
 
+Bulk Indexing Time Window
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+XXXXXX
+
++-----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"BulkIndexingTimeWindowSeconds": 3600`` with whole number input     |
++-----------------------------------------------------------------------------------------------------------------+
+
 Client Requirement Settings (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
