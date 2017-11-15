@@ -82,8 +82,8 @@ Create a OneLogin connection app for Mattermost SSO
   e. Click **DOWNLOAD** and save the file in a convenient location for use later.
 5. Save all your changes.
 
-Configure SAML for Mattermost
------------------------------
+Configure SAML sign-in for Mattermost
+--------------------------------------
 
 1. Sign into Mattermost as a System Administrator.
 2. Go to **System Console > Authentication > SAML**.
@@ -125,5 +125,7 @@ To confirm that SAML SSO is successfully enabled, switch your System Administrat
 It is also recommended to post an announcement about how the migration will work to users.
 
 You can also configure SAML for OneLogin by editing ``config.json`` to enable SAML based on :ref:`SAML configuration settings <saml-enterprise>`. You must restart the Mattermost server for the changes to take effect.
+
+.. include:: sso-saml-ldapsync.rst
 
 .. include:: sso-saml-troubleshooting.rst
