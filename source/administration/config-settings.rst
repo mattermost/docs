@@ -946,7 +946,7 @@ Enable sign-in with AD/LDAP
 
 Enable Synchronization with AD/LDAP
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: When true, Mattermost periodically synchronizes users from AD/LDAP.
+**True**: Mattermost periodically synchronizes users from AD/LDAP.
 
 **False**: AD/LDAP synchronization is disabled.
 
@@ -1161,7 +1161,7 @@ Enable Login With SAML
 
 Enable Synchronizing SAML Accounts With AD/LDAP
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: When true, Mattermost periodically synchronizes SAML user attributes, including user deactivation and removal, with AD/LDAP. Enable and configure synchronization settings at Authentication > AD/LDAP. See `documentation <https://about.mattermost.com/default-saml-ldap-sync>`_ to learn more.
+**True**: Mattermost periodically synchronizes SAML user attributes, including user deactivation and removal, with AD/LDAP. Enable and configure synchronization settings at Authentication > AD/LDAP. See `documentation <https://about.mattermost.com/default-saml-ldap-sync>`_ to learn more.
 
 **False**: Synchronization of SAML accounts with AD/LDAP is disabled.
 
