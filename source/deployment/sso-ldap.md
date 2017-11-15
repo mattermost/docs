@@ -52,7 +52,7 @@ To configure AD/LDAP synchronization with AD/LDAP sign-in:
 
 If you want to synchronize immediately after disabling an account, use the "AD/LDAP Synchronize Now" button in **System Console > AD/LDAP**.
 
-To configure AD/LDAP synchronization with SAML sign-in, see the [SMAL documentation](https://about.mattermost.com/default-saml-ldap-sync).
+To configure AD/LDAP synchronization with SAML sign-in, see the [SAML documentation](https://about.mattermost.com/default-saml-ldap-sync).
 
 #### Configure AD/LDAP deployments with multiple domains
 
@@ -77,7 +77,7 @@ When AD/LDAP authentication is used in Mattermost, user deactivation must be don
 There are two main ways to do this: 
 
 1. User Deletion: If the user is completely removed from the AD/LDAP server, they will be deactivated in Mattermost on the next synchronization. 
-2. User Filter: Set the [user filter](https://docs.mattermost.com/administration/config-settings.html#user-filter) to only select the subset of AD/LDAP users you want to have access to Mattermost. When someone is removed from the selected group, they will be deactivated in Mattermost on the next synchronization. 
+2. User Filter: Set the [user filter](https://docs.mattermost.com/administration/config-settings.html#user-filter) to select only the subset of AD/LDAP users you want to have access to Mattermost. When someone is removed from the selected group, they will be deactivated in Mattermost on the next synchronization. 
 
 For Active Directory, to filter out deactivated users you must set the user filter to `(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))`.  
 
