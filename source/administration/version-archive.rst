@@ -4,7 +4,7 @@ Version Archive
 Mattermost Enterprise Edition
 ------------------------------
 
-Mattermost Enterprise Edition v4.4.0 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v4-4-0>`_ - `Download <https://releases.mattermost.com/4.4,0/mattermost-4.4,0-linux-amd64.tar.gz>`_
+Mattermost Enterprise Edition v4.4.0 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v4-4-0>`_ - `Download <https://releases.mattermost.com/4.4.0/mattermost-4.4.0-linux-amd64.tar.gz>`_
   - ``https://releases.mattermost.com/4.4.0/mattermost-4.4.0-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``7289896f03b8513b7447b7c884a9553db07c4e3205e4269a710196224ecb5297``
 Mattermost Enterprise Edition v4.3.2 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v4-3-2>`_ - `Download <https://releases.mattermost.com/4.3.2/mattermost-4.3.2-linux-amd64.tar.gz>`_
