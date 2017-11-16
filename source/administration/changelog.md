@@ -4,8 +4,12 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
-## Release v4.4.0
-Release date: 2017-11-16
+## Release v4.4.1
+
+ - **v4.4.1, released 2017-11-16**
+   - Fixed an issue where an alternative config file location via ``--config`` flag is ignored.
+ - **v4.4.0, released 2017-11-16**
+   - Original 4.4.0 release
 
 ### Highlights
 
