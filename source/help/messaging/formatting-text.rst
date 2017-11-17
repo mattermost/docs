@@ -125,9 +125,30 @@ Renders as:
 Code Block
 ----------
 
-Create a fixed width code block by indenting each line by four spaces, or by placing ``````` on the line above and below your code.
- - This is best described as: three backticks, shift-enter, type stuff, shift-enter, three backticks, enter
- - Or by key code structures: 3x<`>, <SHIFT>+<ENTER>, **TYPE_OR_PASTE_CODE_AND_STUFF**, <SHIFT>+<ENTER>, 3x<`>, <ENTER>
+Creating a fixed width code block is recommended for pasting multi-line blocks of code or other text output that is easier to read with fixed width font alignment.
+
+.. code-block:: none
+
+  this is my code
+  123 alignment
+  alignment 456
+  fixed width!
+
+This can be accomplished in one of two ways:
+ 1. Indenting each line by four spaces
+
+Example:
+
+.. code-block:: none
+
+    this is my
+    code block
+
+
+or,
+
+ 2. Placing 3x backtics (```) on the line directly above and directly below your code.
+
 
 Example:
 
@@ -135,15 +156,12 @@ Example:
 
 
   ```
+  this is my
   code block
   ```
 
-Renders as:
 
-.. code-block:: none
-
-
-  code block
+ * **TIP**! - If you're having trouble as a first-timer, assuming default keyboard shortcuts for most clients, this can be accomplished by entering: 3x backticks \<\`\`\`\>, \<SHIFT\>+\<ENTER\>, \<type_your_code\>, \<SHIFT\>+\<ENTER\>, and finally 3x backtacs \<\`\`\`\>
 
 **Syntax Highlighting**
 
