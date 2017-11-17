@@ -213,6 +213,40 @@ Important: <username> refers to the username or organization in GitHub that fork
 4. Run `make pre-run` in order to install all the dependencies
  - It is **highly** important that you run everything with the make commands and avoid using npm or yarn to install dependencies.
 
+Adding new dependencies to the project
+------------------------------------
+
+If you need to add a new dependency to the project, it’s important to add them in the right way. Instructions for adding different types of dependencies are described below:
+
+Javascript only
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you need to add a new javascript dependency that is not related to React Native use yarn and not npm. Be sure to save the exact version number to avoid dealing with conflicts in the future. 
+
+	Eg. `yarn add -E <package-name>`
+  
+React Native
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+As with Javascript only, use yarn to add your dependency and include an exact version. Then you will need to link the library in react native.
+
+To link a library in react native you'll normally run in a terminal `react-native link <package-name>`.
+
+Be aware that we are using React Native Navigation. For Android, you might need to do complete the linking process manually as the react-native link command won't do it for you.
+
+After running the react-native link command, head to `<project-root>/android/app/src/main/java/com/mattermost/rnbeta/MainApplication.java` and initialize the react native library that you just added in the `createAdditionalReactPackages` method.
+
+Android
+~~~~~~~~~~~~
+
+This is normally not needed since in most cases, the react native libraries that you add to the project will take care of this. 
+
+If you come across a case where it is needed, we recommend you first review your work to confirm. The Android documentation should then be followed to add the libraries.
+
+iOS
+~~~~~~~~~~~~
+Sometimes you may need to add iOS specific dependencies that react native cannot link in normally. These will be in the form of Cocoapods. To add them, edit the `Podfile` located in the `ios` directory and then from that directory run `pod install` to update the `Podfile.lock` file.
+
 Troubleshooting
 ------------------
 
