@@ -207,13 +207,7 @@ The final release is cut. If an urgent and important issue needs to be addressed
     - Post in Release Discussion with links to the EE and Team Edition bits
 3. PM:
     - Close GitHub meta ticket for the release
-    - Submit GitLab MR to take next Mattermost version in the Omnibus (see [example](https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests/998)):
-        - Include changes to Mattermost version number ([`default_version`](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/config/software/mattermost.rb#L20)) and md5 sum of the final TE build ([`source md5`](https://gitlab.com/jasonblais/omnibus-gitlab/blob/master/config/software/mattermost.rb#L23)) in  [`config/software/mattermost.rb`](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/config/software/mattermost.rb)
-        - Include a summary of updates in Team Edition that are relevant to GitLab
-        - Include an update to the [GitLab changelog](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/CHANGELOG.md)
-        - Include updates to [gitlab.rb](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-config-template/gitlab.rb.template#L1008-1171), [attributes default.rb](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-cookbooks/gitlab/attributes/default.rb#L667-829) and [config.json.erb](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-cookbooks/gitlab/templates/default/config.json.erb) with new TE config settings ([Example](https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests/1855))
-        - Post a link to the MR in the Release Discussion channel
-        - If the release contains a security update, email @marin and @briann in GitLab with a link to the MR
+    - Work with a developer to submit GitLab MR [following this process](https://docs.mattermost.com/process/release-process.html#i-t-minus-0-working-days-release-day)
     - Check Security Issues spreadsheet and confirm disclosure text
     - Check the security researcher was added to the [Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/) page
     - Confirm link to security updates appears in blog post if there are security updates in this release, with a note thanking the security researcher
@@ -395,6 +389,21 @@ Once bug fix release is ready to cut:
     - Post [Mattermost Security Updates](https://about.mattermost.com/security-updates/) after reviewing with security lead
       - If a dot release is shipping with security fixes, do not post new details until T-plus 10 working days from the dot release ship date
     - Update Security Issues spreadsheet with issue number from posted update (e.g. v3.2.0.1)
+
+## GitLab Merge Request
+
+To submit a merge request to GitLab for taking the next Mattermost version, follow these steps. Note that the MR must be merged by the 7th of the month to be included in a GitLab release.
+
+1. Download the latest Team Edition release from [the download page](https://about.mattermost.com/download).
+2. Test the Mattermost version with GitLab Omnibus [following these steps](https://docs.mattermost.com/developer/developer-flow.html#testing-with-gitlab-omnibus).
+3. Once tested and all issues are resolved, submit an MR to the [`master` branch](https://gitlab.com/gitlab-org/omnibus-gitlab). Include the following:
+    - Changes to Mattermost version number ([`default_version`](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/config/software/mattermost.rb#L20)) and md5 sum of the final TE build ([`source md5`](https://gitlab.com/jasonblais/omnibus-gitlab/blob/master/config/software/mattermost.rb#L23)) in  [`config/software/mattermost.rb`](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/config/software/mattermost.rb)
+    - Update to the [GitLab changelog](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/CHANGELOG.md)
+    - Config.json updates to [gitlab.rb](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-config-template/gitlab.rb.template#L1008-1171), [attributes default.rb](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-cookbooks/gitlab/attributes/default.rb#L667-829) and [config.json.erb](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-cookbooks/gitlab/templates/default/config.json.erb) with new TE config settings ([Example](https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests/1855))
+    -  Summary of updates in Team Edition that are relevant to GitLab
+5. If the release contains a security update, email @marin and @briann in GitLab with a link to the MR.
+6. Post a link to the MR in the Release Discussion channel.
+7. Check daily for updates until the MR is merged, ensuring it gets merged by the 7th of the month.
 
 ## Templates
 
