@@ -213,14 +213,14 @@ Important: <username> refers to the username or organization in GitHub that fork
 4. Run `make pre-run` in order to install all the dependencies
  - It is **highly** important that you run everything with the make commands and avoid using npm or yarn to install dependencies.
  
-Make commands explained
+Make Commands Explained
 ------------------------------------
 
 We've included a bunch of make commands in order to control the development flow and to ensure that everything works as expected. Always try and use these make commands unless what you trying to do can't be accomplished by one of these commands.
 
 Every make command has to be run from a terminal in the project's root directory.
 
-Commands to prepare the app
+Commands to Prepare the App
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 These make commands are used to install dependencies, to configure necessary steps before running or building the app, and to clean everything.
@@ -232,7 +232,7 @@ These make commands are used to install dependencies, to configure necessary ste
  - make clean: Removes all the downloaded dependencies, clears the cache of those dependencies and deletes any builds that were created. It will NOT reset the repo, so your current changes will still be there.
  - make dist/assets: Builds the assets to be used including images, localization files and overriding any necessary files (see Override Assets & White Labeling for details).
  
-Commands to run the app
+Commands to Run the App
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 These make commands are used to run the app on a device or emulator in the case of Android, and on a simulator in the case of iOS. (see Running the App on a Device for details).
@@ -245,7 +245,7 @@ These make commands are used to run the app on a device or emulator in the case 
  - make run: Alias of run-ios.
  - make run-android: Compiles and runs the app for Android on a running emulator or a device connected through USB. This command will execute start to ensure the packager is running. (see Create and Manage Virtual Devices to configure and run the Android emulator).
 
-Commands to test the app
+Commands to Test the App
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 These make commands are used to ensure that the code follows the linter rules and that the tests work correctly.
@@ -253,12 +253,12 @@ These make commands are used to ensure that the code follows the linter rules an
  - make check-style: Runs the ESLint javascript linter.
  - make test: Runs the tests.
 
-Adding new dependencies to the project
-------------------------------------
+Adding New Dependencies to the Project
+-------------------------------------------
 
 If you need to add a new dependency to the project, it’s important to add them in the right way. Instructions for adding different types of dependencies are described below:
 
-Javascript only
+Javascript Only
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you need to add a new javascript dependency that is not related to React Native use yarn and not npm. Be sure to save the exact version number to avoid dealing with conflicts in the future. 
@@ -290,7 +290,7 @@ Sometimes you may need to add iOS specific dependencies that react native cannot
 Troubleshooting
 ------------------
 
-Errors when running 'make run-android'
+Errors When Running 'make run-android'
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Error message
