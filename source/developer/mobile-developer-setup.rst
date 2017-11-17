@@ -212,6 +212,46 @@ Important: <username> refers to the username or organization in GitHub that fork
 
 4. Run `make pre-run` in order to install all the dependencies
  - It is **highly** important that you run everything with the make commands and avoid using npm or yarn to install dependencies.
+ 
+Make commands explained
+------------------------------------
+
+We've included a bunch of make commands in order to control the development flow and to ensure that everything works as expected. Always try and use these make commands unless what you trying to do can't be accomplished by one of these commands.
+
+Every make command has to be run from a terminal in the project's root directory.
+
+Commands to prepare the app
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+These make commands are used to install dependencies, to configure necessary steps before running or building the app, and to clean everything.
+
+ - make pre-run: Downloads any project dependencies needed and will set up the app assets. This is the equivalent of running the .yarninstall, .podinstall and dist/assets make commands.
+ - make .yarninstall: Downloads javascript and react native dependencies. Once this command finishes executing it will create a `.yarninstall` empty file in the project's root directory to indicate that this command already ran. If yarn updates your local dependencies in the `node_modules` directory, it will automatically run `make post-install` for you.
+ - make .podinstall: Downloads cocoapods dependencies needed to build the iOS app. Once this command finishes executing it will create a `.podinstall` empty file in the project's root directory to indicate that this command already ran.
+ - make post-install: Normally this command will run automatically if yarn detects that the project updated some or all of its javascript dependencies. Once yarn finishes executing, this command will set up a few post installation steps for you automatically to ensure that everything runs correctly.
+ - make clean: Removes all the downloaded dependencies, clears the cache of those dependencies and deletes any builds that were created. It will NOT reset the repo, so your current changes will still be there.
+ - make dist/assets: Builds the assets to be used including images, localization files and overriding any necessary files (see Override Assets & White Labeling for details).
+ 
+Commands to run the app
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+These make commands are used to run the app on a device or emulator in the case of Android, and on a simulator in the case of iOS. (see Running the App on a Device for details).
+
+ - make start-packager: Runs the react-native packager used to bundle the javascript code. This command will execute pre-run to ensure the app is prepared.
+ - make start: Alias of start-packager.
+ - make stop-packager: Stops the react-native packager if it is running.
+ - make stop: Alias of stop-packager.
+ - make run-ios: Compiles and runs the app for iOS on an iPhone 6 simulator by default. You can set the environment variable SIMULATOR to the name of the device you want to use. This command will execute start to ensure the packager is running.
+ - make run: Alias of run-ios.
+ - make run-android: Compiles and runs the app for Android on a running emulator or a device connected through USB. This command will execute start to ensure the packager is running. (see Create and Manage Virtual Devices to configure and run the Android emulator).
+
+Commands to test the app
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+These make commands are used to ensure that the code follows the linter rules and that the tests work correctly.
+
+ - make check-style: Runs the ESLint javascript linter.
+ - make test: Runs the tests.
 
 Adding new dependencies to the project
 ------------------------------------
