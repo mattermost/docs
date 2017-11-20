@@ -207,7 +207,7 @@ The final release is cut. If an urgent and important issue needs to be addressed
     - Post in Release Discussion with links to the EE and Team Edition bits
 3. PM:
     - Close GitHub meta ticket for the release
-    - Work with a developer to submit GitLab MR [following this process](https://docs.mattermost.com/process/release-process.html#i-t-minus-0-working-days-release-day)
+    - Work with a developer to submit GitLab MR [following this process](https://docs.mattermost.com/process/release-process.html#gitlab-merge-request)
     - Check Security Issues spreadsheet and confirm disclosure text
     - Check the security researcher was added to the [Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/) page
     - Confirm link to security updates appears in blog post if there are security updates in this release, with a note thanking the security researcher
@@ -248,7 +248,7 @@ If a security fix release is required, run through the following steps:
     - Merge changes made to release branch into master
 2. PM:
     - Update the changelog
-    - Work with a developer to submit GitLab MR [following this process](https://docs.mattermost.com/process/release-process.html#i-t-minus-0-working-days-release-day)
+    - Work with a developer to submit GitLab MR [following this process](https://docs.mattermost.com/process/release-process.html#gitlab-merge-request)
     - Update the version archive in the [upgrade guide](https://github.com/mattermost/docs/blob/master/source/administration/upgrade.md)
 3. Marketing:
     - Update security update email with any new information
@@ -389,7 +389,7 @@ Once bug fix release is ready to cut:
 To submit a merge request to GitLab for taking the next Mattermost version, follow these steps. Note that the MR must be merged by the 7th of the month to be included in a GitLab release.
 
 1. Download the latest Team Edition release from [the download page](https://about.mattermost.com/download).
-2. Test the Mattermost version locally with GitLab Omnibus [following these steps](https://docs.mattermost.com/developer/developer-flow.html#testing-with-gitlab-omnibus). https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg
+2. Test the Mattermost version locally with GitLab Omnibus [following these steps](https://docs.mattermost.com/developer/developer-flow.html#testing-with-gitlab-omnibus).
 3. Once tested and all issues are resolved, submit an MR to the [`master` branch](https://gitlab.com/gitlab-org/omnibus-gitlab). Include the following:
     - Changes to Mattermost version number ([`default_version`](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/config/software/mattermost.rb#L20)) and md5 sum of the final TE build ([`source md5`](https://gitlab.com/jasonblais/omnibus-gitlab/blob/master/config/software/mattermost.rb#L23)) in  [`config/software/mattermost.rb`](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/config/software/mattermost.rb)
     - Update to the [GitLab changelog](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/CHANGELOG.md)
