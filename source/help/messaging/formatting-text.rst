@@ -164,7 +164,7 @@ Example:
   ```
 
 
-* **TIP**! - If you're having trouble as a first-timer, assuming default keyboard shortcuts for most clients, this can be accomplished by entering: 3x backticks <\`\`\`>, <SHIFT>+<ENTER>, <type_your_code>, <SHIFT>+<ENTER>, and finally 3x backtacs <\`\`\`>.
+* **TIP**! - If you're having trouble as a first-timer, assuming default keyboard shortcuts for most clients, this can be accomplished by entering: 3x backticks <\`\`\`>, <SHIFT>+<ENTER>, <type_your_code>, <SHIFT>+<ENTER>, and finally 3x backticks <\`\`\`>.
 
 **Syntax Highlighting**
 
