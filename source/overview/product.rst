@@ -53,7 +53,7 @@ and enhanced security that keeps vital communication behind your firewall.
 Roadmap
 ~~~~~~~
 
-The Mattermost roadmap is drawn by community contributors and paid staff at Mattermost, Inc.
+The Mattermost roadmap is influenced by community contributors and drawn by staff at Mattermost, Inc.
 Organizations with needs beyond the scope of the open source project can tap into the commercial *Enterprise Edition* extensions available from Mattermost, Inc. 
 The partnership with a core committer community coupled with revenue from the *Enterprise Edition* ensures the continued improvement of all editions.
 
