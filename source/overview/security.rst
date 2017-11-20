@@ -4,7 +4,7 @@ Security Overview
 
 Security in Mattermost software is continually reviewed by developers, 
 IT administrators,
-and security analysts who deploy Mattermost Editions in their organizations.
+and security researchers who deploy Mattermost Editions in their organizations.
 
 Our software undergoes multiple rounds of penetration testing and security analysis as well as constant internal review.
 This diligence and the efficacy of the open source community alongside our Enterprise Edition user feedback has produced a long list of safeguards, processes, 
