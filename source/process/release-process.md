@@ -389,7 +389,7 @@ Once bug fix release is ready to cut:
 To submit a merge request to GitLab for taking the next Mattermost version, follow these steps. Note that the MR must be merged by the 7th of the month to be included in a GitLab release.
 
 1. Download the latest Team Edition release from [the download page](https://about.mattermost.com/download).
-2. Test the Mattermost version with GitLab Omnibus [following these steps](https://docs.mattermost.com/developer/developer-flow.html#testing-with-gitlab-omnibus).
+2. Test the Mattermost version locally with GitLab Omnibus [following these steps](https://docs.mattermost.com/developer/developer-flow.html#testing-with-gitlab-omnibus). https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg
 3. Once tested and all issues are resolved, submit an MR to the [`master` branch](https://gitlab.com/gitlab-org/omnibus-gitlab). Include the following:
     - Changes to Mattermost version number ([`default_version`](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/config/software/mattermost.rb#L20)) and md5 sum of the final TE build ([`source md5`](https://gitlab.com/jasonblais/omnibus-gitlab/blob/master/config/software/mattermost.rb#L23)) in  [`config/software/mattermost.rb`](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/config/software/mattermost.rb)
     - Update to the [GitLab changelog](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/CHANGELOG.md)
@@ -399,6 +399,7 @@ To submit a merge request to GitLab for taking the next Mattermost version, foll
 5. If the release contains a security update, email @marin and @briann in GitLab with a link to the MR.
 6. Post a link to the MR in the Release Discussion channel.
 7. Check daily for updates until the MR is merged, ensuring it gets merged by the 7th of the month.
+8. Once the MR is merged and included in an RC, [test upgrade following these steps](https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg)
 
 ## Templates
 
