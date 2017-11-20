@@ -137,6 +137,7 @@ Renders as:
   fixed width!
 
 This can be accomplished in one of two ways:
+
  1. Indenting each line by four spaces
 
 Example:
@@ -149,10 +150,7 @@ Example:
   ^^^^ 4x spaces
 
 
-or,
-
  2. Placing 3x backtics (\`\`\`) on the line directly above and directly below your code
-
 
 Example:
 
