@@ -40,9 +40,11 @@ Writing an E2E test
 2. Identify its DOM structure by inspecting elements.
 3. Ensure that all relevant elements for assertion are assigned with element IDs.
 4. Under `/pages` folder, review existing files to check whether the DOM structure already has an existing Page Object.
+
     - If no file exists, add a new one containing the Page Object.
     - If a file does exist, then update the corresponding page file accordingly.
 5. Under `tests` folder, review existing files to check whether a related tag or test already exists.
+
     - If no file exists, add a new test file for both elements and action assertions.
     - If a file does exist, then update the corresponding test file accordingly.
 6. Initiate E2E test commands, preferably with tags or partial testing for quick iteration and then full testing for final observation.
