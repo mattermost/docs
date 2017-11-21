@@ -76,4 +76,4 @@ Setup Mattermost with BlackBerry EMM
 1. Login to your BlackBerry UEM environment. 
 2. Click on Apps
 
-
+.. image:: clicks_on_apps.png
