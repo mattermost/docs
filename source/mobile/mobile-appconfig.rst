@@ -51,6 +51,16 @@ As part of AppConfig, EMM administrators can set the following additional config
 
 Other configurations may be available depending on your EMM provider.
 
+Adding Mattermost mobile apps to your EMM provider
+------------------------------------------------------------------------
+
+Because the Mattermost mobile apps have support for AppConfig you can deploy the apps found in Google Play and the Apple App Store, or you can choose to deploy it as an in-house app.
+
+AppConfig EMM Members
+------------------------
+
+Mattermost mobile apps can be deployed with any of the EMM providers listed in the AppConfig Website 
+
 Mattermost Support for AppConfig in Native Mobile apps
 ---------------------------------------------------------------------
 
@@ -59,4 +69,11 @@ What is the AppConfig Community?
 The AppConfig Community is a collection of industry leading EMM solution providers and app developers that have come together to make it easier for developers and customers to drive mobility in business. The community’s mission is to streamline the adoption and deployment of mobile enterprise applications by providing a standard approach to app configuration and management, building upon the extensive app security and configuration frameworks available in the OS.
 
 Historically, developers used proprietary software development kits (SDKs) to enable configuration and management features of their apps through EMM. This required app developers to build different versions of their apps for each EMM vendor. Now, with AppConfig Community tools and best practices, developers do not require EMM-specific integrations for many enterprise use cases. End users also benefit from automated features such as an out-of-the-box experience to give the users instant app access without requiring cumbersome setup flows or user credentials.
+
+Setup Mattermost with BlackBerry EMM
+----------------------------------------------
+
+1. Login to your BlackBerry UEM environment. 
+2. Click on Apps
+
 
