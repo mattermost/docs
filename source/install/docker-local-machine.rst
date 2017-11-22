@@ -9,7 +9,7 @@ Note: This configuration should not be used in production, as it's using a known
 
 If you're looking for a production installation with Docker, please see the `Mattermost Production Docker Deployment Guide <http://docs.mattermost.com/install/prod-docker.html>`_.
 
-.. notes::
+.. note::
   If you have any problems installing Mattermost, see
   the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`_. For help with inviting users to your system, see `inviting team members <https://docs.mattermost.com/help/getting-started/managing-members.html#inviting-team-members>`_ and other `getting started information <https://docs.mattermost.com/guides/user.html#getting-started>`_.   To submit an improvement or correction, click  **Edit** at the top of this page.
   
