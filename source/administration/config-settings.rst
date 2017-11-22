@@ -1926,7 +1926,7 @@ Enable Plugins
 Enable Plugin Uploads
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Enables plugin uploads by System Admins at **Plugins > Management**. If you do not plan to upload a plugin, set to false to control which plugins are installed on your server. See `documentation <https://about.mattermost.com/default-plugins/#set-up-guide>`_ to learn more.
+**True**: Enables plugin uploads by System Admins at **Plugins > Management**. If you do not plan to upload a plugin, set to false to control which plugins are installed on your server. See `documentation <https://about.mattermost.com/default-plugin-uploads>`_ to learn more.
 
 **False**: Disables plugin uploads on your Mattermost server.
 
@@ -1939,7 +1939,7 @@ Management
 Upload Plugin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Upload a plugin for your Mattermost server. See `documentation <https://about.mattermost.com/default-plugins/#plugin-uploads>`_ to learn more.
+Upload a plugin for your Mattermost server. See `documentation <https://about.mattermost.com/default-plugin-uploads>`_ to learn more.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Plugins": {}`` with string input.                                                                                       | 
