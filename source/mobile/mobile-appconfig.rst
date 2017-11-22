@@ -81,3 +81,13 @@ Setup Mattermost with BlackBerry EMM
 3. Select the already published Mattermost app, or choose to add a new one.  When adding a new app, select App Store or Google Play to use the published apps by Mattermost. If you are building the apps yourself, use the option for Internal apps and then browse to select the .apk or .ipa file.
 
 .. image:: browse_apps.png
+
+4. Next fill in the app name, description, and any other information needed for deployment in the screen below. See Blackberry documentation for more details on the settings for internal apps, public iOS apps, and Android for Work apps.
+
+.. image:: fill_in_information_apps.png
+
+5. In the same screen look for App configuration. You can either upload this xml file as the template, or add the configuration manually with the keys and values described in the AppConfig table (see above).
+ - Using the template
+  - Browse for the xml template file (Note: If you build the app yourself, make sure to edit the template to use your bundle or package ID)
+
+.. image:: app_configuration_apps.png
