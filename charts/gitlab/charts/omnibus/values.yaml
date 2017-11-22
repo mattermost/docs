@@ -4,7 +4,7 @@
 replicaCount: 1
 image:
   repository: gitlab/gitlab-ee
-  tag: 10.1.3-ee.0
+  tag: 10.2.0-ee.0
   pullPolicy: IfNotPresent
 service:
   name: omnibus
