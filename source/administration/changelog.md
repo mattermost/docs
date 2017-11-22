@@ -6,7 +6,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v4.4.2
 
- - **v4.4.2, release date TBD**
+ - **v4.4.2, released 2017-11-23**
    - Fixed an issue where AD/LDAP accounts get deactivated following an AD/LDAP sync if their email address between the AD/LDAP server and Mattermost don't match case.
    - Fixed synchronization of SAML accounts with AD/LDAP.
    - Fixed AD/LDAP "Test Connection" button in the System Console not working when AD/LDAP login is disabled.
