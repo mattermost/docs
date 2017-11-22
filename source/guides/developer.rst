@@ -18,6 +18,7 @@ Development Process
    /developer/webapp-to-redux.rst
    /developer/webapp-component.rst
    /developer/redux.rst
+   /developer/webapp-end-to-end-testing.rst
    /developer/running-mattermost*
    /developer/style*
    /developer/fx*
