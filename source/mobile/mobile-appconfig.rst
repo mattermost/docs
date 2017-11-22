@@ -77,3 +77,7 @@ Setup Mattermost with BlackBerry EMM
 2. Click on Apps
 
 .. image:: clicks_on_apps.png
+
+3. Select the already published Mattermost app, or choose to add a new one.  When adding a new app, select App Store or Google Play to use the published apps by Mattermost. If you are building the apps yourself, use the option for Internal apps and then browse to select the .apk or .ipa file.
+
+.. image:: browse_apps.png
