@@ -91,3 +91,23 @@ Setup Mattermost with BlackBerry EMM
   - Browse for the xml template file (Note: If you build the app yourself, make sure to edit the template to use your bundle or package ID)
 
 .. image:: app_configuration_apps.png
+
+  - Set the name of the app configuration and edit the settings that appear on screen, then click “Save”
+  
+.. image:: save_apps.png
+
+ - Manual configuration
+  - Click on the "+" at the far right of the App configuration table and select "Configure Manually"
+
+  - Enter a name for the app configuration, and then add the key value pairs found in the App configuration table (see above)
+  
+.. image:: name_key_values_apps.png
+
+ - Save your configuration
+ 
+Setup Mattermost with MobileIron Cloud EMM
+----------------------------------------------
+
+1. Log in to your MobileIron Cloud tenant
+
+2. Click on “Apps” and then “App Catalog” 
