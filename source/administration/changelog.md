@@ -11,7 +11,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
    - Fixed synchronization of SAML accounts with AD/LDAP.
    - Fixed AD/LDAP "Test Connection" button in the System Console not working when AD/LDAP login is disabled.
    - Fixed system messages not being translated into user's language set in **Account Settings > Display > Language**.
-   - Fixed system messages about channel header updates being sometimes incorrectly formatted.
+   - Fixed system messages about channel header updates sometimes being incorrectly formatted.
  - **v4.4.1, released 2017-11-16**
    - Fixed an upgrade issue where an alternative config file location via ``--config`` flag is ignored.
  - **v4.4.0, released 2017-11-16**
