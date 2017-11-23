@@ -28,4 +28,4 @@ To deploy the apps hosted in the Apple App Store and Google Play, we recommend y
 
 5. Open the mobile application and enter the address of your Mattermost server to connect
 
-6. Confirm you're subscribed to `Mattermost Security Bulletins <https://about.mattermost.com/security-bulletin/>`_, In future, when notified of security updates, apply them promptly. 
+6. Confirm you're subscribed to `Mattermost Security Bulletins <https://about.mattermost.com/security-bulletin/>`_. In future, when notified of security updates, apply them promptly. 
