@@ -2066,7 +2066,7 @@ Amazon S3 Region
 AWS region you selected for creating your S3 bucket. Refer to `AWS Reference Documentation <http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region>`_ and choose this variable from the Region column.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AmazonS3Region": ""`` with string input.                                                                                |
+| This feature's ``config.json`` setting is ``"AmazonS3Region": "us-east-1"`` with string input.                                                                       |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Secure Amazon S3 Connections
