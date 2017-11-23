@@ -5,7 +5,7 @@ To deploy the apps hosted in the Apple App Store and Google Play, we recommend y
 
 1. Set up a way to connect to your private network Mattermost instance, using:
   - An external proxy with encrypted transport through HTTPS and WSS network connections
-  - (Recommended) Depending on your security policies, consider deploying a mobile VPN client with multi-factor authentication ("MFA"), GitLab SSO with MFA, run Mattermost Enterprise Edition with MFA
+  - (Recommended) Depending on your security policies, consider deploying a mobile VPN client with multi-factor authentication ("MFA"), GitLab SSO with MFA, or run Mattermost Enterprise Edition with MFA
   
 2. Enable mobile push notifications
   - Go to **System Console > Notifications > Mobile Push**
