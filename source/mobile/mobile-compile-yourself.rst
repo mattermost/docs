@@ -15,7 +15,7 @@ To deploy in production with privately-hosted mobile apps compiled by your organ
 
 3. Set up a way to connect to your private network Mattermost instance, using:
   - An external proxy with encrypted transport through HTTPS and WSS network connections
-  - (Recommended) Depending on your security policies, consider deploying a mobile VPN client with multi-factor authentication ("MFA"), GitLab SSO with MFA, run Mattermost Enterprise Edition with MFA, or deploy an Enterprise Mobility Management solution, such as Mobile Iron, Airwatch or Blackberry Dynamics 
+  - (Recommended) Depending on your security policies, consider deploying a mobile VPN client with multi-factor authentication ("MFA"), GitLab SSO with MFA, run Mattermost Enterprise Edition with MFA
 
 4. Enable mobile push notifications
   - Go to **System Console** > **Notifications** > **Mobile Push**
@@ -33,4 +33,4 @@ To deploy in production with privately-hosted mobile apps compiled by your organ
 
 6. Deploy to an Enterprise App Store
 
-7. Confirm you're subscribed to `Mattermost Security Bulletins <https://about.mattermost.com/security-bulletin/>`_ and promptly apply security updates. 
+7. Confirm you're subscribed to `Mattermost Security Bulletins <https://about.mattermost.com/security-bulletin/>`_. In future, when notified of security updates, apply them promptly. 
