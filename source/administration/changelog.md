@@ -4,11 +4,14 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
-## Release v4.4.1
+## Release v4.4.2
 
- - **v4.4.2, release date TBD**
-   - Investigating an issue where AD/LDAP synchronization causes some accounts to be deactivated.
-   - Investigating an issue where synchronization of SAML accounts with AD/LDAP isn't always successful.
+ - **v4.4.2, released 2017-11-23**
+   - Fixed an issue where AD/LDAP accounts get deactivated following an AD/LDAP sync if their email address between the AD/LDAP server and Mattermost don't match case.
+   - Fixed synchronization of SAML accounts with AD/LDAP.
+   - Fixed AD/LDAP "Test Connection" button in the System Console not working when AD/LDAP login is disabled.
+   - Fixed system messages not being translated into user's language set in **Account Settings > Display > Language**.
+   - Fixed system messages about channel header updates sometimes being incorrectly formatted.
  - **v4.4.1, released 2017-11-16**
    - Fixed an upgrade issue where an alternative config file location via ``--config`` flag is ignored.
  - **v4.4.0, released 2017-11-16**
