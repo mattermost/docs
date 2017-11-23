@@ -2317,6 +2317,7 @@ Restrict Custom Emoji Creation
 
 ________
 
+.. _legal-support-links:
 Legal and Support
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Legal and Support links will be hidden in the user interface if these fields are left blank.
