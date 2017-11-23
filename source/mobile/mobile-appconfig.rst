@@ -111,3 +111,15 @@ Setup Mattermost with MobileIron Cloud EMM
 1. Log in to your MobileIron Cloud tenant
 
 2. Click on “Apps” and then “App Catalog” 
+
+.. image:: select_apps.png
+
+3. Click the “Add” button
+
+4. Select App Store or Google Play to use the published apps by Mattermost. If you are building the apps yourself, use the option for In-House and then browse to select the .apk or .ipa file.
+
+.. image:: select_2_apps.png
+
+5. After uploading the .ipa or .apk file or selecting Mattermost from the published app search results, click “Next”. In our example will be using the app in the Apple App Store.
+
+6. Review or fill in the information for the app, and click “Next”
