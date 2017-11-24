@@ -55,5 +55,5 @@ To brand the desktop apps:
 
 1. Fork the `mattermost/desktop <https://github.com/mattermost/desktop>`_ repository
 2. Replace the name, images, and any key text strings
-3. Compile the apps
+3. Refer to `this documentation <https://github.com/mattermost/desktop/blob/master/docs/development.md>`_ for help with compiling the apps
 4. Share the desktop application with your users 
