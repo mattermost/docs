@@ -52,4 +52,4 @@ Don't forget to **Save** your configuration Changes
 
 Finally, because this feature is in Beta every user has to enable WebRTC in order to establish a video call with other users on the server. Go to  **Main Menu** -> **Account Settings** -> **Advanced** -> **Preview pre-release features and select Enable the ability to make and receive one-on-one WebRTC calls**.
 
-.. image:: enable_webb_rtc_calls_apps.png
+.. image:: enable_web_rtc_calls_apps.png
