@@ -3208,7 +3208,7 @@ The location of the plugin files. If blank, they are stored in the ./plugins dir
 Experimental settings in config.json
 -----------------------------------------
 
-There are a number of settings considered "experimental" and may be replaced or removed in a future release.
+There are a number of settings considered "experimental" and these may be replaced or removed in a future release.
 
 Service Settings
 ~~~~~~~~~~~~~~~~~
