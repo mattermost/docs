@@ -123,3 +123,36 @@ Setup Mattermost with MobileIron Cloud EMM
 5. After uploading the .ipa or .apk file or selecting Mattermost from the published app search results, click “Next”. In our example will be using the app in the Apple App Store.
 
 6. Review or fill in the information for the app, and click “Next”
+
+7. Choose an option for distributing the Mattermost app to users and click “Next”
+
+8. Here you'll be presented different options to configure the app. Fill in the ones you need, and then go to iOS Managed App Configuration and click on the "+" sign
+
+9. Fill in a name for the configuration an optional description. Then fill the AppConnect Custom Configuration using the values from the AppConfig table above
+
+10. Select a distribution option for this configuration and click “Next”
+
+11. Review all you config settings one more time and click “Done”
+
+Mattermost WebRTC Guide
+----------------------------------------------
+
+This guide is aimed to set up Mattermost WebRTC with a docker container if you need support for a full `Janus Gateway <https://janus.conf.meetecho.com/>`_ please visit their `Github repo <https://github.com/meetecho/janus-gateway>`_ for detail instructions.
+
+Assertions about using the Mattermost `WebRTC docker image <https://hub.docker.com/r/mattermost/webrtc/>`_
+ - You need docker to install this image (docker installation, configuration and management is out of the scope of this guide)
+ - You need a working Mattermost server (installation, configuration and management of the Mattermost server is out of the scope of this guide)
+ - Janus version is 0.2.2
+ - No TURN or STUN service included
+ - SSL Certificate valid for host **dockerhost** and until 2 January 2018
+ - Ability to connect using SSL or plain WebSocket and HTTP
+
+Deploying Mattermost WebRTC Docker Container
+
+Assuming you have docker installed and running you'll need to execute in a terminal the following command to install the Mattermost WebRTC docker image
+
+`docker run --name mattermost-webrtc -p 7088:7088 -p 7089:7089 -p 8188:8188 -p 8189:8189 -d mattermost/webrtc:latest`
+
+This will download, install and run your mattermost-webrtc container with the Janus Gateway pre-configured to use WebRTC within the Mattermost WebApp and Desktop Apps.
+
+Note: Make sure your Mattermost server can reach the running docker Mattermost WebRTC container.
