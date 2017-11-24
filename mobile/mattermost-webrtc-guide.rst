@@ -29,13 +29,13 @@ The first thing you need to decide is whether your are going to establish the co
 
 In case you decide to go ahead with SSL then you need to go to **System Console** -> **Security** -> **Connections and Enable Insecure Outgoing Connections**
 
-.. image:: connections_true_apps.png
+.. image:: images/connections_true_apps.png
 
 The reason for this is that Mattermost will make a http request to the Janus Gateway service to get a Token that is used to identify the user and so on and if you configure Mattermost to make requests to that service with SSL then the certificate won't be valid thus returns a status code of 500.
 
 Next we need to configure the WebRTC service on our Mattermost Server for that go to **System Console** -> **Integrations** -> **WebRTC (Beta)**
 
-.. image:: webrtc_apps.png
+.. image:: images/webrtc_apps.png
 
 Once you enable WebRTC you'll need to input a few values
  - **Gateway WebSocket URL**: This is the WebSocket route for the Janus Gateway service inside the Mattermost WebRTC container used to connect the peers on a Video Call. If you want to establish the connection using SSL then you need to set the protocol to **wss://**  and the port to **8189**, for non-SSL use protocol **ws://** and port **8188**.
@@ -46,10 +46,10 @@ Once you enable WebRTC you'll need to input a few values
  - **TURN Username**: The username of your TURN server if you have one.
  - **TURN Shared Key**: The password of your TURN server if you have one.
  
-.. image:: webrtc_values_apps.png
+.. image:: images/webrtc_values_apps.png
 
 Don't forget to **Save** your configuration Changes
 
 Finally, because this feature is in Beta every user has to enable WebRTC in order to establish a video call with other users on the server. Go to  **Main Menu** -> **Account Settings** -> **Advanced** -> **Preview pre-release features and select Enable the ability to make and receive one-on-one WebRTC calls**.
 
-.. image:: enable_web_rtc_calls_apps.png
+.. image:: images/enable_web_rtc_calls_apps.png
