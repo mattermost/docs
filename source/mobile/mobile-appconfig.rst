@@ -78,7 +78,7 @@ Setup Mattermost with BlackBerry EMM
 
 .. image:: clicks_on_apps.png
 
-3. Select the already published Mattermost app, or choose to add a new one.  When adding a new app, select App Store or Google Play to use the published apps by Mattermost. If you are building the apps yourself, use the option for Internal apps and then browse to select the .apk or .ipa file.
+3. Select the already published Mattermost app, or choose to add a new one.  When adding a new app, select **App Store** or **Google Play** to use the published apps by Mattermost. If you are building the apps yourself, use the option for **Internal apps** and then browse to select the .apk or .ipa file.
 
 .. image:: browse_apps.png
 
@@ -86,7 +86,7 @@ Setup Mattermost with BlackBerry EMM
 
 .. image:: fill_in_information_apps.png
 
-5. In the same screen look for App configuration. You can either upload this xml file as the template, or add the configuration manually with the keys and values described in the AppConfig table (see above).
+5. In the same screen look for **App configuration**. You can either upload this xml file as the template, or add the configuration manually with the keys and values described in the AppConfig table (see above).
  - Using the template
   - Browse for the xml template file (Note: If you build the app yourself, make sure to edit the template to use your bundle or package ID)
 
@@ -116,19 +116,19 @@ Setup Mattermost with MobileIron Cloud EMM
 
 3. Click the “Add” button
 
-4. Select App Store or Google Play to use the published apps by Mattermost. If you are building the apps yourself, use the option for In-House and then browse to select the .apk or .ipa file.
+4. Select **App Store** or **Google Play** to use the published apps by Mattermost. If you are building the apps yourself, use the option for **In-House** and then browse to select the .apk or .ipa file.
 
 .. image:: select_2_apps.png
 
-5. After uploading the .ipa or .apk file or selecting Mattermost from the published app search results, click “Next”. In our example will be using the app in the Apple App Store.
+5. After uploading the .ipa or .apk file or selecting **Mattermost** from the published app search results, click “Next”. In our example will be using the app in the Apple App Store.
 
 6. Review or fill in the information for the app, and click “Next”
 
 7. Choose an option for distributing the Mattermost app to users and click “Next”
 
-8. Here you'll be presented different options to configure the app. Fill in the ones you need, and then go to iOS Managed App Configuration and click on the "+" sign
+8. Here you'll be presented different options to configure the app. Fill in the ones you need, and then go to **iOS Managed App Configuration** and click on the "+" sign
 
-9. Fill in a name for the configuration an optional description. Then fill the AppConnect Custom Configuration using the values from the AppConfig table above
+9. Fill in a name for the configuration an optional description. Then fill the **AppConnect Custom Configuration** using the values from the AppConfig table above
 
 10. Select a distribution option for this configuration and click “Next”
 
@@ -148,6 +148,7 @@ Assertions about using the Mattermost `WebRTC docker image <https://hub.docker.c
  - Ability to connect using SSL or plain WebSocket and HTTP
 
 Deploying Mattermost WebRTC Docker Container
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Assuming you have docker installed and running you'll need to execute in a terminal the following command to install the Mattermost WebRTC docker image
 
@@ -156,3 +157,29 @@ Assuming you have docker installed and running you'll need to execute in a termi
 This will download, install and run your mattermost-webrtc container with the Janus Gateway pre-configured to use WebRTC within the Mattermost WebApp and Desktop Apps.
 
 Note: Make sure your Mattermost server can reach the running docker Mattermost WebRTC container.
+
+Configuring Mattermost to Enable WebRTC
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The first thing you need to decide is whether your are going to establish the connections to the Mattermost WebRTC container running the Janus Gateway with or without SSL, this is particularly important in this case because the SSL certificate used to run the Janus Gateway is not being signed by a trusted CA, that means that you will need to make some additional configuration changes in your Mattermost Server.
+
+In case you decide to go ahead with SSL then you need to go to **System Console** -> **Security** -> **Connections and Enable Insecure Outgoing Connections**
+
+The reason for this is that Mattermost will make a http request to the Janus Gateway service to get a Token that is used to identify the user and so on and if you configure Mattermost to make requests to that service with SSL then the certificate won't be valid thus returns a status code of 500.
+
+Next we need to configure the WebRTC service on our Mattermost Server for that go to **System Console** -> **Integrations** -> **WebRTC (Beta)**
+
+Once you enable WebRTC you'll need to input a few values
+ - **Gateway WebSocket URL**: This is the WebSocket route for the Janus Gateway service inside the Mattermost WebRTC container used to connect the peers on a Video Call. If you want to establish the connection using SSL then you need to set the protocol to **wss://**  and the port to **8189**, for non-SSL use protocol **ws://** and port **8188**.
+ - **Gateway Admin URL**: This is the admin route for the Janus Gateway service inside the Mattermost WebRTC container use to fetch a valid Token. If you want to establish the connection using SSL then you need to set the protocol to **https://**  and the port to **7089**, for non-SSL use protocol **http://** and port **7088**.
+ - **Gateway Admin Secret**: This is the admin's secret to validate the request being made to fetch the token, for any Janus  Gateway installation the default is **janusoverlord**, you can change it by editing the janus.cfg under /opt/janus/etc/janus and modify the value for admin_secret
+ - **STUN URI**: This is the Stun server to use, you need to have one so either deploy one or use the public google one. The google public stun server is **stun:stun.l.google.com:19302**
+ - **TURN URI**: In case you need NAT Traversal you'll need to configure a TURN server, you can use Coturn to accomplish that but is out of the scope of this guide
+ - **TURN Username**: The username of your TURN server if you have one.
+ - **TURN Shared Key**: The password of your TURN server if you have one.
+
+Don't forget to Save your configuration Changes
+
+Finally, because this feature is in Beta every user has to enable WebRTC in order to establish a video call with other users on the server. Go to  Main Menu -> Account Settings -> Advanced -> Preview pre-release features and select Enable the ability to make and receive one-on-one WebRTC calls.
+
+.. image:: enable_webb_rtc_calls_apps.png
