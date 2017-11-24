@@ -287,6 +287,11 @@ iOS
 ~~~~~~~~~~~~
 Sometimes you may need to add iOS specific dependencies that react native cannot link in normally. These will be in the form of Cocoapods. To add them, edit the `Podfile` located in the `ios` directory and then from that directory run `pod install` to update the `Podfile.lock` file.
 
+Project Directory Structure
+------------------------------------
+
+.. image:: project_directory_structure_apps.png
+
 Troubleshooting
 ------------------
 
