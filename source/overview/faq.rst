@@ -251,3 +251,12 @@ Any statements, clauses, or conditions included on or referenced by buyer's purc
 EXCEPT AS OTHERWISE EXPRESSLY AGREED BY THE PARTIES IN WRITING, MATTERMOST MAKES NO WARRANTIES OR REPRESENTATIONS WITH RESPECT TO ANY MATTERMOST PRODUCTS, DOCUMENTATION OR SUPPORT, AND HEREBY DISCLAIMS ALL OTHER EXPRESS AND ALL IMPLIED WARRANTIES, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
 
 
+Who owns Mattermost? 
+~~~~~~~~~~~~~~~~~~~~
+
+Similar to GitLab, MongoDB, and Docker, the trademark used for the Mattermost open source project is owned by a corporate entity. For Mattermost, it's Mattermost, Inc., a for-profit company which creates and develops software offered under both open source and commercial licenses. 
+
+As with all software offered under an open source license, you are welcome to create derivative works of Mattermost open source projects under the open source license, however, you are not permitted to use the Mattermost name, trademark and brand. 
+
+For example, `GitSwarm <https://www.quora.com/What-is-the-real-story-between-GitSwarm-and-GitLab>`_ is a derivate work of the GitLab open source project, that provides modified functionality with its own brand that does not infringe on the GitLab brand. A derivative project for Mattermost open source software would follow a similar approach. 
+
