@@ -290,7 +290,7 @@ Sometimes you may need to add iOS specific dependencies that react native cannot
 Project Directory Structure
 ------------------------------------
 
-.. image:: images/project_directory_structure_apps.png
+.. image:: ../../source/images/project_directory_structure_apps.png
 
 Troubleshooting
 ------------------
