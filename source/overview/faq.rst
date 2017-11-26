@@ -191,22 +191,16 @@ Not yet. You can `upvote the feature proposal online <https://mattermost.uservoi
 Design Decisions
 ----------------
 
-Why does Mattermost give an error message when they incorrectly enter a password? 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Why does Mattermost disclose whether or not an account exists when a user enters an incorrect password?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost's core design principle is to be `"fast, obvious, forgiving" <https://docs.mattermost.com/developer/fx-guidelines.html#fast-obvious-forgiving>`_ and tellings users that they made a mistake in entering their password is in service of our principle of prioritizing user interests. 
 
 When using username-password authentication, especially with AD/LDAP, there's the possibility of usernames being email addresses, Mattermost username, AD/LDAP username, AD/LDAP ID or other AD/LDAP attributes and our design principle intends to help end users understand if their login error came from having the wrong password or the wrong email/username.
 
-We believe this approach reduces geniune user login attempt errors, making it more obvious when malicious login attempt errors occur when monitoring system logs. 
+We believe this design increases productivity, speeds user adoption and reduces help desk tickets and support costs, and that these benefits outweigh the trade-offs. 
 
-We also believe this reduces the number of password reset requests, which reduces opportunities for attackers to spoof or intercept requests. 
-
-Finally, we believe this reduces the number of help desk tickets an organization encounters, which reclaims productivity and lowers costs. 
-
-Moreover, the approach to notifying a user when their password is incorrectly entered is a growing in popularity, with business applications like G Suite that serve tens of millions of users in this way. 
-
-The trade-off with this design is that if physical security is not in effect, and network security is not effect (i.e. no VPN, or a situation where an attacker has penetrated the private network), and username-password authentication is used, it is easier for an attacker to enumerate email addresses or usernames by sending HTTP requests to the system, up to the maximum number of requests per second defined in Mattermost's `API rate limiting settings <https://docs.mattermost.com/administration/config-settings.html#rate-limiting>`_. 
+The trade-off with this design is that if physical security is not in effect, and network security is not effect (i.e. no VPN, or a situation where an attacker has penetrated the private network), and username-password authentication is used, an attacker may be able to enumerate email addresses or usernames by sending HTTP requests to the system, up to the maximum number of requests per second defined in Mattermost's `API rate limiting settings <https://docs.mattermost.com/administration/config-settings.html#rate-limiting>`_. 
 
 For organizations who choose to deploy in such a configuration, please consider the following mitigations: 1) instead of username-password, use a single-sign-on provider in Mattermost Enterprise Edition like OneLogin, Okta or ADFS, use the open source GitLab SSO option available with Mattermost Team Edition, 2) per the recommended install instructions, use a VPN client to apply network security to your deployment, 3) enable monitoring and alerting from your proxy server to detect and isolate malicious behavior reaching your deployment. 
 
