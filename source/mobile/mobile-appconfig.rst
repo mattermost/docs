@@ -50,8 +50,3 @@ As part of AppConfig, EMM administrators can set the following additional config
 4. **Remotely Wipe App:** Use the EMM tool to distribute the app to devices as a managed application so it can be remotely wiped. If the app was previously installed, mark it so the EMM converts the app to a managed app.
 
 Other configurations may be available depending on your EMM provider.
-
-Adding Mattermost mobile apps to your EMM provider
-------------------------------------------------------------------------
-
-Because the Mattermost mobile apps have support for AppConfig, you can deploy the apps found in Google Play and the Apple App Store, or you can choose to deploy them as in-house apps.
