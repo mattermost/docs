@@ -226,9 +226,9 @@ Commands to Prepare the App
 These make commands are used to install dependencies, to configure necessary steps before running or building the app, and to clean everything.
 
  - **make pre-run**: Downloads any project dependencies needed and will set up the app assets. This is the equivalent of running the .yarninstall, .podinstall and dist/assets make commands.
- - **make .yarninstall**: Downloads javascript and react native dependencies. Once this command finishes executing it will create a `.yarninstall` empty file in the project's root directory to indicate that this command already ran. If yarn updates your local dependencies in the `node_modules` directory, it will automatically run `make post-install` for you.
+ - **make .yarninstall**: Downloads JavaScript and react native dependencies. Once this command finishes executing it will create a `.yarninstall` empty file in the project's root directory to indicate that this command already ran. If yarn updates your local dependencies in the `node_modules` directory, it will automatically run `make post-install` for you.
  - **make .podinstall**: Downloads cocoapods dependencies needed to build the iOS app. Once this command finishes executing it will create a `.podinstall` empty file in the project's root directory to indicate that this command already ran.
- - **make post-install**: Normally this command will run automatically if yarn detects that the project updated some or all of its javascript dependencies. Once yarn finishes executing, this command will set up a few post installation steps for you automatically to ensure that everything runs correctly.
+ - **make post-install**: Normally this command will run automatically if yarn detects that the project updated some or all of its JavaScript dependencies. Once yarn finishes executing, this command will set up a few post installation steps for you automatically to ensure that everything runs correctly.
  - **make clean**: Removes all the downloaded dependencies, clears the cache of those dependencies and deletes any builds that were created. It will NOT reset the repo, so your current changes will still be there.
  - **make dist/assets**: Builds the assets to be used including images, localization files and overriding any necessary files (see Override Assets & White Labeling for details).
  
@@ -237,7 +237,7 @@ Commands to Run the App
 
 These make commands are used to run the app on a device or emulator in the case of Android, and on a simulator in the case of iOS. (see *Running the App on a Device* for details).
 
- - **make start-packager**: Runs the react-native packager used to bundle the javascript code. This command will execute *pre-run* to ensure the app is prepared.
+ - **make start-packager**: Runs the react-native packager used to bundle the JavaScript code. This command will execute *pre-run* to ensure the app is prepared.
  - **make start**: Alias of *start-packager*.
  - **make stop-packager**: Stops the react-native packager if it is running.
  - **make stop**: Alias of *stop-packager*.
@@ -250,7 +250,7 @@ Commands to Test the App
 
 These make commands are used to ensure that the code follows the linter rules and that the tests work correctly.
 
- - **make check-style**: Runs the ESLint javascript linter.
+ - **make check-style**: Runs the ESLint JavaScript linter.
  - **make test**: Runs the tests.
 
 Adding New Dependencies to the Project
@@ -258,17 +258,17 @@ Adding New Dependencies to the Project
 
 If you need to add a new dependency to the project, it’s important to add them in the right way. Instructions for adding different types of dependencies are described below:
 
-Javascript Only
+JavaScript Only
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you need to add a new javascript dependency that is not related to React Native **use yarn** and **not npm**. Be sure to save the exact version number to avoid dealing with conflicts in the future. 
+If you need to add a new JavaScript dependency that is not related to React Native **use yarn** and **not npm**. Be sure to save the exact version number to avoid dealing with conflicts in the future. 
 
-	Eg. `yarn add -E <package-name>`
+	e.g. `yarn add -E <package-name>`
   
 React Native
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-As with *Javascript only*, **use yarn** to add your dependency and include an exact version. You will then need to **link the library** in react native.
+As with *JavaScript only*, **use yarn** to add your dependency and include an exact version. You will then need to **link the library** in react native.
 
 To link a library in react native, run `react-native link <package-name>` normally in a terminal.
 
