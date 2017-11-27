@@ -37,7 +37,7 @@ Install the following prerequisite software to develop and build the iOS or Andr
 
 4. Using Homebrew, install yarn (used as our package manager for the mobile apps)
  - Open a terminal and run ``brew install yarn``
- - Use NPM
+ - Use `NPM <https://github.com/npm/npm>`_
  - Open a terminal and run ``npm -g install yarn``
 
 5. We use GitHub to host the source code so we recommend that you install `Git <https://git-scm.com/`_ in order to get the source code and contribute your changes back with `pull requests <https://help.github.com/articles/creating-a-pull-request/>`_.
@@ -53,7 +53,7 @@ iOS
 Android
 ~~~~~~~~~~~~~~~~~~~
 
-1. First you'll need to download and install Android Studio or the Android SDK command line tools.
+1. First you'll need to download and install `Android Studio or the Android SDK command line tools <https://developer.android.com/studio/index.html#downloads>`_.
 2. Make sure you have the following ENV VARS configured:
  - ``ANDROID_HOME`` to where Android SDK is located (likely ``/Users/<username>/Library/Android/sdk``)
  - Make sure your ``PATH`` includes `ANDROID_HOME/tools` and ``ANDROID_HOME/platform-tools``
@@ -66,7 +66,7 @@ Android
     
    Then reload your bash configuration: 
     ``source ~/.bashprofile``
-3. In the SDK Manager using Android Studio or the SDK CLI (sdkmanager) ensure the following are installed:
+3. In the SDK Manager using Android Studio or the Android SDK command line tool, ensure the following are installed:
  - Android SDK Build-Tools (multiple versions)
   - 23.0.3
   - 25.0.3
@@ -192,7 +192,7 @@ Android (Device)
 Start Developing and Building
 ------------------------------------
 
-In order to develop and build the Mattermost mobile apps you'll need to get a copy of the source code. Also, it is best if you fork our mattermost-mobile repo since it is most likely that you'll want to contribute back your work.
+In order to develop and build the Mattermost mobile apps you'll need to get a copy of the source code. Forking the mattermost-mobile repository will also make it easy to contribute your work back to the project in the future.
 
 1. Fork the mattermost-mobile repository on GitHub.
 2. Clone your fork locally:
@@ -211,7 +211,7 @@ Important: <username> refers to the username or organization in GitHub that fork
 Make Commands Explained
 ------------------------------------
 
-We've included a bunch of make commands in order to control the development flow and to ensure that everything works as expected. Always try and use these make commands unless what you trying to do can't be accomplished by one of these commands.
+We've included a bunch of make commands in order to control the development flow and to ensure that everything works as expected. Always try and use these make commands unless what you're trying to do can't be accomplished by one of these commands.
 
 Every make command has to be run from a terminal in the project's root directory.
 
@@ -220,9 +220,9 @@ Commands to Prepare the App
 
 These make commands are used to install dependencies, to configure necessary steps before running or building the app, and to clean everything.
 
- - **make pre-run**: Downloads any project dependencies needed and will set up the app assets. This is the equivalent of running the .yarninstall, .podinstall and dist/assets make commands.
- - **make .yarninstall**: Downloads JavaScript and react native dependencies. Once this command finishes executing it will create a `.yarninstall` empty file in the project's root directory to indicate that this command already ran. If yarn updates your local dependencies in the `node_modules` directory, it will automatically run `make post-install` for you.
- - **make .podinstall**: Downloads cocoapods dependencies needed to build the iOS app. Once this command finishes executing it will create a `.podinstall` empty file in the project's root directory to indicate that this command already ran.
+ - **make pre-run**: Downloads any project dependencies needed and will set up the app assets. This is the equivalent of running the ``.yarninstall``, ``.podinstall`` and ``dist/assets`` make commands.
+ - **make .yarninstall**: Downloads JavaScript and react native dependencies. Once this command finishes executing it will create a ``.yarninstall`` empty file in the project's root directory to indicate that this command already ran. If yarn updates your local dependencies in the ``node_modules`` directory, it will automatically run ``make post-install`` for you.
+ - **make .podinstall**: Downloads cocoapods dependencies needed to build the iOS app. Once this command finishes executing it will create a ``.podinstall`` empty file in the project's root directory to indicate that this command already ran.
  - **make post-install**: Normally this command will run automatically if yarn detects that the project updated some or all of its JavaScript dependencies. Once yarn finishes executing, this command will set up a few post installation steps for you automatically to ensure that everything runs correctly.
  - **make clean**: Removes all the downloaded dependencies, clears the cache of those dependencies and deletes any builds that were created. It will NOT reset the repo, so your current changes will still be there.
  - **make dist/assets**: Builds the assets to be used including images, localization files and overriding any necessary files (see Override Assets & White Labeling for details).
@@ -230,14 +230,14 @@ These make commands are used to install dependencies, to configure necessary ste
 Commands to Run the App
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-These make commands are used to run the app on a device or emulator in the case of Android, and on a simulator in the case of iOS. (see *Running the App on a Device* for details).
+These make commands are used to run the app on a device or emulator in the case of Android, and on a simulator in the case of iOS. (see ``Running the App on a Device`` for details).
 
  - **make start-packager**: Runs the react-native packager used to bundle the JavaScript code. This command will execute *pre-run* to ensure the app is prepared.
- - **make start**: Alias of *start-packager*.
+ - **make start**: Alias of ``start-packager``.
  - **make stop-packager**: Stops the react-native packager if it is running.
- - **make stop**: Alias of *stop-packager*.
+ - **make stop**: Alias of ``stop-packager``.
  - **make run-ios**: Compiles and runs the app for iOS on an iPhone 6 simulator by default. You can set the environment variable SIMULATOR to the name of the device you want to use. This command will execute start to ensure the packager is running.
- - **make run**: Alias of *run-ios*.
+ - **make run**: Alias of ``run-ios``.
  - **make run-android**: Compiles and runs the app for Android on a running emulator or a device connected through USB. This command will execute start to ensure the packager is running. (see Create and Manage Virtual Devices to configure and run the Android emulator).
 
 Commands to Test the App
@@ -255,12 +255,12 @@ The set of commands for building the app are used in conjunction with `Fastlane 
 
 You will always be able to build an unsigned version of the app as it does not need provisioning profiles or certificates as long as you set up Fastlane in your environment.
 
- - **make build-ios**: Builds the iOS app and generates the *.ipa* file to be distributed. This make command expects an argument as the target which can be *dev*, *beta* or *release*. Depending on the target, a Fastlane script runs and each lane has the appropriate certificates and steps according to the Mattermost release process.
- - **make build-android**: Builds the Android app and generates the *.apk* file to be distributed. This make command expects an argument as the target which can be *dev*, *alpha* or *release*. Depending on the target, a Fastlane script runs and each lane has the appropriate certificates and steps according to the Mattermost release process.
- - **make unsigned-ios**: Builds the iOS app and generates an unsigned *Mattermost-unsigned.ipa* file in the project's root directory.
- - **make unsigned-android**: Builds the Android app and generates an unsigned *Mattermost-unsigned.apk* file in the project's root directory.
+ - **make build-ios**: Builds the iOS app and generates the ``.ipa`` file to be distributed. This make command expects an argument as the target which can be ``dev``, ``beta`` or ``release``. Depending on the target, a Fastlane script runs and each lane has the appropriate certificates and steps according to the Mattermost release process.
+ - **make build-android**: Builds the Android app and generates the ``.apk`` file to be distributed. This make command expects an argument as the target which can be ``dev``, ``alpha`` or ``release``. Depending on the target, a Fastlane script runs and each lane has the appropriate certificates and steps according to the Mattermost release process.
+ - **make unsigned-ios**: Builds the iOS app and generates an unsigned ``Mattermost-unsigned.ipa`` file in the project's root directory.
+ - **make unsigned-android**: Builds the Android app and generates an unsigned ``Mattermost-unsigned.apk`` file in the project's root directory.
 
-If you plan to use the **make build-*** commands, be sure to modify Fastlane to suit your needs or the commands will fail.
+If you plan to use the **make build-*** commands, be sure to `modify Fastlane <https://docs.fastlane.tools/>`_ to suit your needs or the commands will fail.
 
 Adding New Dependencies to the Project
 -------------------------------------------
@@ -272,16 +272,16 @@ JavaScript Only
 
 If you need to add a new JavaScript dependency that is not related to React Native **use yarn** and **not npm**. Be sure to save the exact version number to avoid dealing with conflicts in the future. 
 
-	e.g. `yarn add -E <package-name>`
+	e.g. ``yarn add -E <package-name>``
   
 React Native
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-As with *JavaScript only*, **use yarn** to add your dependency and include an exact version. You will then need to **link the library** in react native.
+As with ``JavaScript only``, **use yarn** to add your dependency and include an exact version. You will then need to **link the library** in react native.
 
-To link a library in react native, run `react-native link <package-name>` normally in a terminal.
+To link a library in react native, run ``react-native link <package-name>`` normally in a terminal.
 
-Be aware that we are using **React Native Navigation**. For Android, you might need to do complete the linking process manually as the react-native link command won't do it for you.
+Be aware that we are using **React Native Navigation**. For Android, you might need to complete the linking process manually as the react-native link command won't do it for you.
 
 After running the react-native link command, head to `<project-root>/android/app/src/main/java/com/mattermost/rnbeta/MainApplication.java` and initialize the react native library that you just added in the `createAdditionalReactPackages` method.
 
@@ -294,7 +294,7 @@ If you come across a case where it is needed, we recommend you first review your
 
 iOS
 ~~~~~~~~~~~~
-Sometimes you may need to add iOS specific dependencies that react native cannot link in normally. These will be in the form of Cocoapods. To add them, edit the `Podfile` located in the `ios` directory and then from that directory run `pod install` to update the `Podfile.lock` file.
+Sometimes you may need to add iOS specific dependencies that react native cannot link in normally. These will be in the form of Cocoapods. To add them, edit the ``Podfile`` located in the ``ios`` directory and then from that directory run ``pod install`` to update the ``Podfile.lock`` file.
 
 Project Directory Structure
 ------------------------------------
