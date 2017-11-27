@@ -14,15 +14,15 @@ If you run into any issues getting your environment set up, check the Troublesho
 Development Environment Setup
 ---------------------------------
 
-We strongly recommend the use of a computer that supports macOS to develop and build the Mattermost mobile apps as macOS is required to build the iOS app.
+A macOS computer is required to build the Mattermost iOS mobile app.
 
 Software Requirements
 ---------------------------------
 
-Common
+iOS and Android
 ~~~~~~~~~~~~~~~~~~~
 
-Irrespective of which platform you are going to develop and build, you'll need to install some prerequisite software. For macOS, we recommend using `Homebrew <https://brew.sh/>`_ as a package manager.
+Install the following prerequisite software to develop and build the iOS or Android apps. For macOS, we recommend using `Homebrew <https://brew.sh/>`_ as a package manager.
 
 Install `NodeJS <https://nodejs.org/en/>`_.
  - Using Homebrew (recommended)
@@ -39,9 +39,9 @@ Assuming that you already have NodeJS installed, you can now use **npm** to inst
 
 Install yarn (used as our package manager for the mobile apps)
  - Homebrew
- - Open a terminal and run `brew install yarn`
+ - Open a terminal and run ``brew install yarn``
  - NPM
- - Open a terminal and run `npm -g install yarn` 
+ - Open a terminal and run ``npm -g install yarn``
 
 We use GitHub to host the source code so we recommend that you install `Git <https://git-scm.com/`_ in order to get the source code and contribute your changes back with `pull requests <https://help.github.com/articles/creating-a-pull-request/>`_.
  - If you do not have git installed you can do so with Homebrew
@@ -50,15 +50,16 @@ We use GitHub to host the source code so we recommend that you install `Git <htt
 iOS
 ~~~~~~~~~~~~~~~~~~~
 
-In order to build and run the app in iOS you'll need to install `Xcode 9 <https://idmsa.apple.com/IDMSWebAuth/login?appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2Fdownload%2F&rv=1>`_. You'll also need `Cocoapods <https://cocoapods.org/>`_ to install the project’s iOS dependencies.
+1. In order to build and run the app in iOS you'll need to install `Xcode 9 <https://idmsa.apple.com/IDMSWebAuth/login?appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2Fdownload%2F&rv=1>`_. 
+2. You'll also need `Cocoapods <https://cocoapods.org/>`_ to install the project’s iOS dependencies.
 
 Android
 ~~~~~~~~~~~~~~~~~~~
 
 1. First you'll need to download and install Android Studio or the Android SDK command line tools.
 2. Make sure you have the following ENV VARS configured:
- - `ANDROID_HOME` to where Android SDK is located (likely `/Users/<username>/Library/Android/sdk`)
- - Make sure your `PATH` includes `ANDROID_HOME/tools` and `ANDROID_HOME/platform-tools`
+ - ``ANDROID_HOME`` to where Android SDK is located (likely ``/Users/<username>/Library/Android/sdk``)
+ - Make sure your ``PATH`` includes `ANDROID_HOME/tools` and ``ANDROID_HOME/platform-tools``
   
   - On Mac, this usually requires adding the following lines to your ~/.bash_profile file:
   
@@ -67,7 +68,7 @@ Android
     - `export PATH=$ANDROID_HOME/tools:$PATH`
     
    Then reload your bash configuration: 
-    `source ~/.bashprofile`
+    ``source ~/.bashprofile``
 3. In the SDK Manager using Android Studio or the SDK CLI (sdkmanager) ensure the following are installed:
  - Android SDK Build-Tools (multiple versions)
   - 23.0.3
@@ -194,24 +195,24 @@ Android (Device)
 Start Developing and Building
 ------------------------------------
 
-In order to develop and build the Mattermost mobile apps you'll need to get a copy of the source code. Also, since it is most likely that you'll want to contribute back your work it is best if you fork our mattermost-mobile repo.
+In order to develop and build the Mattermost mobile apps you'll need to get a copy of the source code. Also, it is best if you fork our mattermost-mobile repo since it is most likely that you'll want to contribute back your work.
 
 1. Fork the mattermost-mobile repository on GitHub.
 2. Clone your fork locally:
  - Open a terminal 
  - Change to a directory you want to hold your local copy 
  - Run
-`git clone https://github.com/<username>/mattermost-mobile.git` if you want to use HTTPS, or
+``git clone https://github.com/<username>/mattermost-mobile.git`` if you want to use HTTPS, or
 
-`git clone git@github.com:<username>/mattermost-mobile.git` if you want to use SSH
+``git clone git@github.com:<username>/mattermost-mobile.git`` if you want to use SSH
 
 Important: <username> refers to the username or organization in GitHub that forked the repository.
 
-3. Change the directory to `mattermost-mobile`.
- - `cd mattermost-mobile`
+3. Change the directory to ``mattermost-mobile``.
+ - ``cd mattermost-mobile``
 
-4. Run `make pre-run` in order to install all the dependencies.
- - It is **highly** important that you run everything with the make commands and avoid using npm or yarn to install dependencies.
+4. Run ``make pre-run`` in order to install all the dependencies.
+ - It is highly important that you run everything with the make commands and avoid using npm or yarn to install dependencies.
  
 Make Commands Explained
 ------------------------------------
@@ -252,6 +253,20 @@ These make commands are used to ensure that the code follows the linter rules an
 
  - **make check-style**: Runs the ESLint JavaScript linter.
  - **make test**: Runs the tests.
+ 
+ Commands to Build the App
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The set of commands for building the app are used in conjunction with `*Fastlane* <https://fastlane.tools/>`_. For most of them, you will need to modify `Fastfile <link>`_, since the commands are coupled with Mattermost's build and deployment process.
+
+You will always be able to build an unsigned version of the app as it does not need provisioning profiles or certificates as long as you set up *Fastlane* in your environment.
+
+ - **make build-ios**: Builds the iOS app and generates the *.ipa* file to be distributed. This make command expects an argument as the target which can be *dev*, *beta* or *release*. Depending on the target, a Fastlane script runs and each lane has the appropriate certificates and steps according to the Mattermost release process.
+ - **make build-android**: Builds the Android app and generates the *.apk* file to be distributed. This make command expects an argument as the target which can be *dev*, *alpha* or *release*. Depending on the target, a Fastlane script runs and each lane has the appropriate certificates and steps according to the Mattermost release process.
+ - **make unsigned-ios**: Builds the iOS app and generates an unsigned *Mattermost-unsigned.ipa* file in the project's root directory.
+ - **make unsigned-android**: Builds the Android app and generates an unsigned *Mattermost-unsigned.apk* file in the project's root directory.
+
+If you plan to use the **make build-*** commands, be sure to modify Fastlane to suit your needs or the commands will fail.
 
 Adding New Dependencies to the Project
 -------------------------------------------
