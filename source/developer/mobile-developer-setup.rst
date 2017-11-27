@@ -24,12 +24,12 @@ iOS and Android
 
 Install the following prerequisite software to develop and build the iOS or Android apps. For macOS, we recommend using `Homebrew <https://brew.sh/>`_ as a package manager.
 
-1. Using Homebrew (recommended), install `NodeJS <https://nodejs.org/en/>`_.
+1. Using Homebrew, install `NodeJS <https://nodejs.org/en/>`_.
  - Open a terminal and run ``brew install node``
  - Use `NVM <https://github.com/creationix/nvm>`_
  - Download and install the package from the `NodeJS website <https://nodejs.org/en/>`_
 
-2. Using Homebrew (recommended), install `Watchman <https://facebook.github.io/watchman/>`_.
+2. Using Homebrew, install `Watchman <https://facebook.github.io/watchman/>`_.
  - Open a terminal and run ``brew install watchman``
 
 3. Assuming that you already have NodeJS installed, you can now use **npm** to install `React Native CLI Tools <http://facebook.github.io/react-native/docs/understanding-cli.html>`_ globally
@@ -40,20 +40,19 @@ Install the following prerequisite software to develop and build the iOS or Andr
  - Use `NPM <https://github.com/npm/npm>`_
  - Open a terminal and run ``npm -g install yarn``
 
-5. We use GitHub to host the source code so we recommend that you install `Git <https://git-scm.com/`_ in order to get the source code and contribute your changes back with `pull requests <https://help.github.com/articles/creating-a-pull-request/>`_.
- - If you do not have git installed you can do so with Homebrew
-  - Open a terminal and run ``brew install git``
+5. We use GitHub to host the source code so we recommend that you install `Git <https://git-scm.com/>`_ to get the source code and contribute your changes back with `pull requests <https://help.github.com/articles/creating-a-pull-request/>`_.
+ - If you do not have git installed you can do so with Homebrew by running ``brew install git`` on your terminal
 
 iOS
 ~~~~~~~~~~~~~~~~~~~
 
-1. In order to build and run the app in iOS you'll need to install `Xcode 9 <https://idmsa.apple.com/IDMSWebAuth/login?appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2Fdownload%2F&rv=1>`_. 
-2. You'll also need `Cocoapods <https://cocoapods.org/>`_ to install the project’s iOS dependencies.
+1. Install `Xcode 9 <https://idmsa.apple.com/IDMSWebAuth/login?appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2Fdownload%2F&rv=1>`_ to to build and run the app on iOS.
+2. Install `Cocoapods <https://cocoapods.org/>`_. You'll need it to install the project’s iOS dependencies.
 
 Android
 ~~~~~~~~~~~~~~~~~~~
 
-1. First you'll need to download and install `Android Studio or the Android SDK command line tools <https://developer.android.com/studio/index.html#downloads>`_.
+1. Download and install `Android Studio or the Android SDK command line tools <https://developer.android.com/studio/index.html#downloads>`_.
 2. Make sure you have the following ENV VARS configured:
  - ``ANDROID_HOME`` to where Android SDK is located (likely ``/Users/<username>/Library/Android/sdk``)
  - Make sure your ``PATH`` includes `ANDROID_HOME/tools` and ``ANDROID_HOME/platform-tools``
@@ -65,7 +64,8 @@ Android
     - ``export PATH=$ANDROID_HOME/tools:$PATH``
     
    Then reload your bash configuration: 
-    ``source ~/.bashprofile``
+
+   ``source ~/.bashprofile``
 3. In the SDK Manager using Android Studio or the Android SDK command line tool, ensure the following are installed:
  - Android SDK Build-Tools (multiple versions)
   - 23.0.3
@@ -125,7 +125,7 @@ Mac OS X
 
   ``make pre-run``
 
-10. *Optional:* Install Mattermost locally so that you can run unit tests and connect to the server while doing development.
+10. (Optional): Install Mattermost locally so that you can run unit tests and connect to the server while doing development.
 
   a. Follow the steps in the `Developer Machine Setup <developer-setup.html>`_ to install Mattermost.
 
@@ -136,7 +136,6 @@ Mac OS X
   c. Start/restart your server.
 
     ``make restart-server``
-
 
 Android (Device)
 ~~~~~~~~~~~~~~~~~~~
@@ -192,26 +191,31 @@ Android (Device)
 Start Developing and Building
 ------------------------------------
 
-In order to develop and build the Mattermost mobile apps you'll need to get a copy of the source code. Forking the mattermost-mobile repository will also make it easy to contribute your work back to the project in the future.
+In order to develop and build the Mattermost mobile apps you'll need to get a copy of the source code. Forking the ``mattermost-mobile`` repository will also make it easy to contribute your work back to the project in the future.
 
-1. Fork the mattermost-mobile repository on GitHub.
+1. Fork the `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_ repository on GitHub.
 2. Clone your fork locally:
  - Open a terminal 
  - Change to a directory you want to hold your local copy 
  - Run ``git clone https://github.com/<username>/mattermost-mobile.git`` if you want to use HTTPS, or ``git clone git@github.com:<username>/mattermost-mobile.git`` if you want to use SSH
 
-Important: <username> refers to the username or organization in GitHub that forked the repository.
+.. important::
+  ``<username>`` refers to the username or organization in GitHub that forked the repository.
 
 3. Change the directory to ``mattermost-mobile``.
- - ``cd mattermost-mobile``
+
+  ``cd mattermost-mobile``
 
 4. Run ``make pre-run`` in order to install all the dependencies.
- - It is highly important that you run everything with the make commands and avoid using npm or yarn to install dependencies.
+
+
+.. important::
+  It is important that you run everything with the make commands and avoid using npm or yarn to install dependencies. If you use npm or yarn, you may skip steps and the app won't build correctly.
  
 Make Commands Explained
 ------------------------------------
 
-We've included a bunch of make commands in order to control the development flow and to ensure that everything works as expected. Always try and use these make commands unless what you're trying to do can't be accomplished by one of these commands.
+We've included several make commands to control the development flow and to ensure that everything works as expected. Always use these make commands unless what you're trying to do can't be accomplished by them.
 
 Every make command has to be run from a terminal in the project's root directory.
 
@@ -220,35 +224,35 @@ Commands to Prepare the App
 
 These make commands are used to install dependencies, to configure necessary steps before running or building the app, and to clean everything.
 
- - **make pre-run**: Downloads any project dependencies needed and will set up the app assets. This is the equivalent of running the ``.yarninstall``, ``.podinstall`` and ``dist/assets`` make commands.
+ - **make pre-run**: Downloads any project dependencies needed and sets up the app assets. This is the equivalent of running  ``.yarninstall``, ``.podinstall`` and ``dist/assets`` make commands.
  - **make .yarninstall**: Downloads JavaScript and react native dependencies. Once this command finishes executing it will create a ``.yarninstall`` empty file in the project's root directory to indicate that this command already ran. If yarn updates your local dependencies in the ``node_modules`` directory, it will automatically run ``make post-install`` for you.
  - **make .podinstall**: Downloads cocoapods dependencies needed to build the iOS app. Once this command finishes executing it will create a ``.podinstall`` empty file in the project's root directory to indicate that this command already ran.
- - **make post-install**: Normally this command will run automatically if yarn detects that the project updated some or all of its JavaScript dependencies. Once yarn finishes executing, this command will set up a few post installation steps for you automatically to ensure that everything runs correctly.
- - **make clean**: Removes all the downloaded dependencies, clears the cache of those dependencies and deletes any builds that were created. It will NOT reset the repo, so your current changes will still be there.
- - **make dist/assets**: Builds the assets to be used including images, localization files and overriding any necessary files (see Override Assets & White Labeling for details).
+ - **make post-install**: Normally this command runs automatically if yarn detects that the project updated some or all of its JavaScript dependencies. Once yarn finishes executing, this command automatically sets up a few post installation steps to ensure that everything runs correctly.
+ - **make clean**: Removes all downloaded dependencies, clears the cache of those dependencies and deletes any builds that were created. It will not reset the repo, so your current changes will still be there.
+ - **make dist/assets**: Builds the assets to be used including images, localization files and overriding of asset files (see Override Assets & White Labeling for details).
  
 Commands to Run the App
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-These make commands are used to run the app on a device or emulator in the case of Android, and on a simulator in the case of iOS. (see ``Running the App on a Device`` for details).
+These make commands are used to run the app on a device or emulator for Android, and on a simulator for iOS. (see ``Running the App on a Device`` for details).
 
  - **make start-packager**: Runs the react-native packager used to bundle the JavaScript code. This command will execute *pre-run* to ensure the app is prepared.
- - **make start**: Alias of ``start-packager``.
+ - **make start**: Alias of ``make start-packager``.
  - **make stop-packager**: Stops the react-native packager if it is running.
- - **make stop**: Alias of ``stop-packager``.
- - **make run-ios**: Compiles and runs the app for iOS on an iPhone 6 simulator by default. You can set the environment variable SIMULATOR to the name of the device you want to use. This command will execute start to ensure the packager is running.
- - **make run**: Alias of ``run-ios``.
- - **make run-android**: Compiles and runs the app for Android on a running emulator or a device connected through USB. This command will execute start to ensure the packager is running. (see Create and Manage Virtual Devices to configure and run the Android emulator).
+ - **make stop**: Alias of ``make stop-packager``.
+ - **make run-ios**: Compiles and runs the app for iOS on an iPhone 6 simulator by default. You can set the environment variable SIMULATOR to the name of the device you want to use. This command will execute ``make start`` to ensure the packager is running.
+ - **make run**: Alias of ``make run-ios``.
+ - **make run-android**: Compiles and runs the app for Android on a running emulator or a device connected through USB. This command will execute ``make start`` to ensure the packager is running (see Create and Manage Virtual Devices to configure and run the Android emulator).
 
 Commands to Test the App
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-These make commands are used to ensure that the code follows the linter rules and that the tests work correctly.
+These make commands are used to ensure that code follows linter rules and that tests pass succesfully.
 
  - **make check-style**: Runs the ESLint JavaScript linter.
  - **make test**: Runs the tests.
  
- Commands to Build the App
+Commands to Build the App
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The set of commands for building the app are used in conjunction with `Fastlane <https://fastlane.tools/>`_. For most of them, you will need to modify `Fastfile <link>`_, since the commands are coupled with Mattermost's build and deployment process.
@@ -265,36 +269,37 @@ If you plan to use the **make build-*** commands, be sure to `modify Fastlane <h
 Adding New Dependencies to the Project
 -------------------------------------------
 
-If you need to add a new dependency to the project, it’s important to add them in the right way. Instructions for adding different types of dependencies are described below:
+If you need to add a new dependency to the project, it is important to add them in the right way. Instructions for adding different types of dependencies are described below:
 
 JavaScript Only
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you need to add a new JavaScript dependency that is not related to React Native **use yarn** and **not npm**. Be sure to save the exact version number to avoid dealing with conflicts in the future. 
+If you need to add a new JavaScript dependency that is not related to React Native, **use yarn, not npm**. Be sure to save the exact version number to avoid conflicts in the future. 
 
 	e.g. ``yarn add -E <package-name>``
   
 React Native
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-As with ``JavaScript only``, **use yarn** to add your dependency and include an exact version. You will then need to **link the library** in react native.
+As with ``JavaScript only``, **use yarn** to add your dependency and include an exact version. Then link the library in react native by running ``react-native link <package-name>`` in a terminal.
 
-To link a library in react native, run ``react-native link <package-name>`` normally in a terminal.
+Be aware that we are using React Native Navigation. For Android, you might need to complete the linking process manually as the react-native link command won't do it for you.
 
-Be aware that we are using **React Native Navigation**. For Android, you might need to complete the linking process manually as the react-native link command won't do it for you.
-
-After running the react-native link command, head to `<project-root>/android/app/src/main/java/com/mattermost/rnbeta/MainApplication.java` and initialize the react native library that you just added in the `createAdditionalReactPackages` method.
+After running the react-native link command, head to ``<project-root>/android/app/src/main/java/com/mattermost/rnbeta/MainApplication.java`` and initialize the react native library that you just added in the ``createAdditionalReactPackages`` method.
 
 Android
 ~~~~~~~~~~~~
 
-This is normally not needed since in most cases the react native libraries that you add to the project will take care of this. 
+Usually the react native libraries that you add to the project will take care of adding new dependancies to the project. 
 
 If you come across a case where it is needed, we recommend you first review your work to confirm. The Android documentation should then be followed to add the libraries.
 
 iOS
 ~~~~~~~~~~~~
-Sometimes you may need to add iOS specific dependencies that react native cannot link in normally. These will be in the form of Cocoapods. To add them, edit the ``Podfile`` located in the ``ios`` directory and then from that directory run ``pod install`` to update the ``Podfile.lock`` file.
+
+Sometimes you may need to add iOS specific dependencies that react native cannot normally link. These will be in the form of Cocoapods.
+
+To add them, edit the ``Podfile`` located in the ``ios`` directory, then from that directory run ``pod install`` to update the ``Podfile.lock`` file.
 
 Project Directory Structure
 ------------------------------------
