@@ -24,28 +24,25 @@ iOS and Android
 
 Install the following prerequisite software to develop and build the iOS or Android apps. For macOS, we recommend using `Homebrew <https://brew.sh/>`_ as a package manager.
 
-Install `NodeJS <https://nodejs.org/en/>`_.
- - Using Homebrew (recommended)
- - Open a terminal and run `brew install node`
- - Using `NVM <https://github.com/creationix/nvm>`_
+1. Using Homebrew (recommended), install `NodeJS <https://nodejs.org/en/>`_.
+ - Open a terminal and run ``brew install node``
+ - Use `NVM <https://github.com/creationix/nvm>`_
  - Download and install the package from the `NodeJS website <https://nodejs.org/en/>`_
 
-Install `Watchman <https://facebook.github.io/watchman/>`_.
- - Using Homebrew (recommended)
- - Open a terminal and run `brew install watchman`
+2. Using Homebrew (recommended), install `Watchman <https://facebook.github.io/watchman/>`_.
+ - Open a terminal and run ``brew install watchman``
 
-Assuming that you already have NodeJS installed, you can now use **npm** to install `React Native CLI Tools <http://facebook.github.io/react-native/docs/understanding-cli.html>`_ globally
- - npm -g install react-native-cli
+3. Assuming that you already have NodeJS installed, you can now use **npm** to install `React Native CLI Tools <http://facebook.github.io/react-native/docs/understanding-cli.html>`_ globally
+ - ``npm -g install react-native-cli``
 
-Install yarn (used as our package manager for the mobile apps)
- - Homebrew
+4. Using Homebrew, install yarn (used as our package manager for the mobile apps)
  - Open a terminal and run ``brew install yarn``
- - NPM
+ - Use NPM
  - Open a terminal and run ``npm -g install yarn``
 
-We use GitHub to host the source code so we recommend that you install `Git <https://git-scm.com/`_ in order to get the source code and contribute your changes back with `pull requests <https://help.github.com/articles/creating-a-pull-request/>`_.
+5. We use GitHub to host the source code so we recommend that you install `Git <https://git-scm.com/`_ in order to get the source code and contribute your changes back with `pull requests <https://help.github.com/articles/creating-a-pull-request/>`_.
  - If you do not have git installed you can do so with Homebrew
-  - Open a terminal and run `brew install git`
+  - Open a terminal and run ``brew install git``
 
 iOS
 ~~~~~~~~~~~~~~~~~~~
@@ -63,9 +60,9 @@ Android
   
   - On Mac, this usually requires adding the following lines to your ~/.bash_profile file:
   
-    - `export ANDROID_HOME=/Users/<username>/Library/Android/sdk`
-    - `export PATH=$ANDROID_HOME/platform-tools:$PATH`
-    - `export PATH=$ANDROID_HOME/tools:$PATH`
+    - ``export ANDROID_HOME=/Users/<username>/Library/Android/sdk``
+    - ``export PATH=$ANDROID_HOME/platform-tools:$PATH``
+    - ``export PATH=$ANDROID_HOME/tools:$PATH``
     
    Then reload your bash configuration: 
     ``source ~/.bashprofile``
@@ -201,10 +198,7 @@ In order to develop and build the Mattermost mobile apps you'll need to get a co
 2. Clone your fork locally:
  - Open a terminal 
  - Change to a directory you want to hold your local copy 
- - Run
-``git clone https://github.com/<username>/mattermost-mobile.git`` if you want to use HTTPS, or
-
-``git clone git@github.com:<username>/mattermost-mobile.git`` if you want to use SSH
+ - Run ``git clone https://github.com/<username>/mattermost-mobile.git`` if you want to use HTTPS, or ``git clone git@github.com:<username>/mattermost-mobile.git`` if you want to use SSH
 
 Important: <username> refers to the username or organization in GitHub that forked the repository.
 
@@ -257,9 +251,9 @@ These make commands are used to ensure that the code follows the linter rules an
  Commands to Build the App
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The set of commands for building the app are used in conjunction with `*Fastlane* <https://fastlane.tools/>`_. For most of them, you will need to modify `Fastfile <link>`_, since the commands are coupled with Mattermost's build and deployment process.
+The set of commands for building the app are used in conjunction with `Fastlane <https://fastlane.tools/>`_. For most of them, you will need to modify `Fastfile <link>`_, since the commands are coupled with Mattermost's build and deployment process.
 
-You will always be able to build an unsigned version of the app as it does not need provisioning profiles or certificates as long as you set up *Fastlane* in your environment.
+You will always be able to build an unsigned version of the app as it does not need provisioning profiles or certificates as long as you set up Fastlane in your environment.
 
  - **make build-ios**: Builds the iOS app and generates the *.ipa* file to be distributed. This make command expects an argument as the target which can be *dev*, *beta* or *release*. Depending on the target, a Fastlane script runs and each lane has the appropriate certificates and steps according to the Mattermost release process.
  - **make build-android**: Builds the Android app and generates the *.apk* file to be distributed. This make command expects an argument as the target which can be *dev*, *alpha* or *release*. Depending on the target, a Fastlane script runs and each lane has the appropriate certificates and steps according to the Mattermost release process.
