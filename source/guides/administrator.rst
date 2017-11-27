@@ -84,6 +84,7 @@ Mobile Apps
    /mobile/mobile-hpns.rst
    /mobile/mobile-faq.rst
    /mobile/mobile-troubleshoot.rst
+   /mobile/mattermost-webrtc-guide.rst
 
 Changelog
 ----------
