@@ -194,11 +194,11 @@ Design Decisions
 Why does Mattermost disclose whether or not an account exists when a user enters an incorrect password?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost's core design principle is to be `"fast, obvious, forgiving" <https://docs.mattermost.com/developer/fx-guidelines.html#fast-obvious-forgiving>`_ and tellings users that they made a mistake in entering their password is in service of our principle of prioritizing user interests. 
+Mattermost's core design principle is to be `"fast, obvious, forgiving" <https://docs.mattermost.com/developer/fx-guidelines.html#fast-obvious-forgiving>`_ and, telling users that they made a mistake in entering their password, is in service of our principle of prioritizing user interests. 
 
 When using username-password authentication, especially with AD/LDAP, there's the possibility of usernames being email addresses, Mattermost username, AD/LDAP username, AD/LDAP ID or other AD/LDAP attributes and our design principle intends to help end users understand if their login error came from having the wrong password or the wrong email/username.
 
-We believe this design increases productivity, speeds user adoption and reduces help desk tickets and support costs, and that these benefits outweigh the trade-offs. 
+We believe this design increases productivity, speeds up user adoption and reduces help desk tickets and support costs and that these benefits outweigh the trade-offs. 
 
 The trade-off with this design is that if physical security is not in effect, and network security is not in effect (i.e. no VPN, or a malicious user within the private network), and username-password authentication is used, an attacker may be able to enumerate email addresses or usernames by sending HTTP requests to the system, up to the maximum number of requests per second defined in Mattermost's `API rate limiting settings <https://docs.mattermost.com/administration/config-settings.html#rate-limiting>`_. 
 
