@@ -33,3 +33,17 @@ To deploy in production with privately-hosted mobile apps compiled by your organ
 .. image:: ../images/mobile_push_contents.png
 
 6. Deploy to an Enterprise App Store
+
+Commands to Build the App
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The set of commands for building the app are used in conjunction with Fastlane.  For most of them, you will need to modify the Fastfile in order to make it work since they are very tightly coupled with Mattermost's build and deployment process.
+
+You will **always** be able to build an unsigned version of the app as it does not need provisioning profiles or certificates as long as you set up *Fastlane* in your environment.
+
+ - **make build-ios**: Builds the iOS app and generates the *.ipa* file to be distributed. This make command expects an argument as the target which can be *dev*, *beta* or *release*. Depending on the target, a Fastlane script runs and each lane has the appropriate certificates and steps according to the Mattermost release process.
+ - **make build-android**: Builds the Android app and generates the *.apk* file to be distributed. This make command expects an argument as the target which can be *dev*, *alpha* or *release*. Depending on the target, a Fastlane script runs and each lane has the appropriate certificates and steps according to the Mattermost release process.
+ - **make unsigned-ios**: Builds the iOS app and generates an unsigned *Mattermost-unsigned.ipa* file in the project's root directory.
+ - **make unsigned-android**: Builds the Android app and generates an unsigned *Mattermost-unsigned.apk* file in the project's root directory.
+
+If you plan to use the **make build-*** commands, be sure to modify Fastlane to suit your needs or the commands will fail.
