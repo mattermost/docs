@@ -22,7 +22,7 @@ Software Requirements
 Common
 ~~~~~~~~~~~~~~~~~~~
 
-No matter what platform are you going to develop and build, you'll need to install some prerequisite software. For macOS, we recommend using `Homebrew <https://brew.sh/>`_ as a package manager.
+Irrespective of which platform you are going to develop and build, you'll need to install some prerequisite software. For macOS, we recommend using `Homebrew <https://brew.sh/>`_ as a package manager.
 
 Install `NodeJS <https://nodejs.org/en/>`_.
  - Using Homebrew (recommended)
@@ -34,7 +34,7 @@ Install `Watchman <https://facebook.github.io/watchman/>`_.
  - Using Homebrew (recommended)
  - Open a terminal and run `brew install watchman`
 
-Assuming that you have NodeJS already installed, you can now use **npm** to install `React Native CLI Tools <http://facebook.github.io/react-native/docs/understanding-cli.html>`_ globally
+Assuming that you already have NodeJS installed, you can now use **npm** to install `React Native CLI Tools <http://facebook.github.io/react-native/docs/understanding-cli.html>`_ globally
  - npm -g install react-native-cli
 
 Install yarn (used as our package manager for the mobile apps)
@@ -43,7 +43,7 @@ Install yarn (used as our package manager for the mobile apps)
  - NPM
  - Open a terminal and run `npm -g install yarn` 
 
-We use GitHub to host the source code so we recommend that you install `Git <https://git-scm.com/`_ in order to get the source code and contribute back your changes with `pull requests <https://help.github.com/articles/creating-a-pull-request/>`_.
+We use GitHub to host the source code so we recommend that you install `Git <https://git-scm.com/`_ in order to get the source code and contribute your changes back with `pull requests <https://help.github.com/articles/creating-a-pull-request/>`_.
  - If you do not have git installed you can do so with Homebrew
   - Open a terminal and run `brew install git`
 
@@ -60,7 +60,7 @@ Android
  - `ANDROID_HOME` to where Android SDK is located (likely `/Users/<username>/Library/Android/sdk`)
  - Make sure your `PATH` includes `ANDROID_HOME/tools` and `ANDROID_HOME/platform-tools`
   
-  - On Mac, this usually looks like adding the following lines to your ~/.bash_profile file:
+  - On Mac, this usually requires adding the following lines to your ~/.bash_profile file:
   
     - `export ANDROID_HOME=/Users/<username>/Library/Android/sdk`
     - `export PATH=$ANDROID_HOME/platform-tools:$PATH`
