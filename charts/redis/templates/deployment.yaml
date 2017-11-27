@@ -1,0 +1,51 @@
+{{- if .Values.enabled -}}
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+    app: {{ template "fullname" . }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  replicas: {{ .Values.replicas }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "fullname" . }}
+      annotations:
+        checksum/configmap: {{ .Files.Get "configmap.yml" | sha256sum }}
+    spec:
+      containers:
+        - name: redis
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ default "" .Values.image.pullPolicy | quote }}
+          #command: ["redis-server"]
+          args:
+          - redis-server
+          - /etc/redis/redis.conf
+          - --requirepass
+          - $(cat /etc/redis/password)
+          volumeMounts:
+          - name: {{ .Release.Name }}
+            mountPath: /etc/redis/
+            readOnly: true
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+      volumes:
+      - name: {{ .Release.Name }}
+        projected:
+          defaultMode: 0644
+          sources:
+          - secret:
+              name: {{ .Values.password.secret }}
+              items:
+                - key: {{ .Values.password.key }}
+                  path: password
+          - configMap:
+              name: {{ template "fullname" . }}
+              items:
+              - key: redis.conf
+                path: redis.conf
+{{- end -}}
