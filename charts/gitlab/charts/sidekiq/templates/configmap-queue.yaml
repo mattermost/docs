@@ -1,0 +1,30 @@
+{{- if .Values.enabled -}}
+{{- $chartName := .Chart.Name -}}
+{{- $name := default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
+{{- $releaseName := .Release.Name -}}
+{{- $releaseService := .Release.Service -}}
+{{- $fullname := printf "%s-%s" $releaseName $name | trunc 63 | trimSuffix "-" -}}
+{{-   range .Values.pods -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ printf "%s-%s" $fullname .name | trunc 63 }}
+  labels:
+    app: {{ $fullname }}
+    queue-pod-name: {{ .name }}
+data:
+  sidekiq_queues.yml.erb: |
+    {{- if .concurrency }}
+    :concurrency: {{ .concurrency }}
+    {{- end }}
+    {{- if .timeout }}
+    :timeout: {{ .timeout }}
+    {{- end }}
+    {{- if .queues }}
+    :queues:
+{{ toYaml .queues | indent 6 }}
+    {{- end }}
+# Leave this here - This line denotes end of block to the parser.
+---
+{{-   end -}}
+{{- end }}

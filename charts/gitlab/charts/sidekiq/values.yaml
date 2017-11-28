@@ -20,3 +20,79 @@ resources: {}
   #  memory: 128Mi
 concurrency: 25
 timeout: 4
+
+pods:
+  - name: workflow
+    concurrency: 10
+    replicas: 2
+    queues:
+      - [post_receive, 5]
+      - [merge, 5]
+      - [update_merge_requests, 3]
+      - [process_commit, 3]
+      - [new_note, 2]
+      - [new_issue, 2]
+      - [new_merge_request, 2]
+  - name: pipeline
+    replicas: 1
+    queues:
+      - [build, 2]
+      - [pipeline, 2]
+      - [pipeline_processing, 5]
+      - [pipeline_default, 3]
+      - [pipeline_cache, 3]
+      - [pipeline_hooks, 2]
+  - name: glob
+    replicas: 1
+    queues:
+      - [gitlab_shell, 2]
+      - [email_receiver, 2]
+      - [emails_on_push, 2]
+      - [mailers, 2]
+      - [invalid_gpg_signature_update, 2]
+      - [create_gpg_signature, 2]
+      - [upload_checksum, 1]
+      - [repository_fork, 1]
+      - [repository_import, 1]
+      - [github_importer, 1]
+      - [github_importer_advance_stage, 1]
+      - [project_service, 1]
+      - [delete_user, 1]
+      - [delete_merged_branches, 1]
+      - [authorized_projects, 1]
+      - [expire_build_instance_artifacts, 1]
+      - [group_destroy, 1]
+      - [irker, 1]
+      - [namespaceless_project_destroy, 1]
+      - [project_cache, 1]
+      - [project_destroy, 1]
+      - [project_export, 1]
+      - [web_hook, 1]
+      - [repository_check, 1]
+      - [git_garbage_collect, 1]
+      - [reactive_caching, 1]
+      - [cronjob, 1]
+      - [default, 1]
+      - [pages, 1]
+      - [system_hook_push, 1]
+      - [update_user_activity, 1]
+      - [propagate_service_template, 1]
+      - [background_migration, 1]
+      - [gcp_cluster, 1]
+      - [project_migrate_hashed_storage, 1]
+      - [storage_migrator, 1]
+  - name: ee
+    replicas: 1
+    queues:
+      - [ldap_group_sync, 2]
+      - [geo, 1]
+      - [repository_update_mirror, 1]
+      - [repository_update_remote_mirror, 1]
+      - [project_update_repository_storage, 1]
+      - [admin_emails, 1]
+      - [geo_repository_update, 1]
+      - [elastic_batch_project_indexer, 1]
+      - [elastic_indexer, 1]
+      - [elastic_commit_indexer, 1]
+      - [export_csv, 1]
+      - [object_storage_upload, 1]
