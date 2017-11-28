@@ -1,25 +1,40 @@
 {{- if .Values.enabled -}}
+{{- $chart := printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" -}}
+{{- $name := default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
+{{- $releaseName := .Release.Name -}}
+{{- $releaseService := .Release.Service -}}
+{{- $fullname := printf "%s-%s" $releaseName $name | trunc 63 | trimSuffix "-" -}}
+{{- $image := printf "%s:%s" .Values.image.repository .Values.image.tag -}}
+{{- $imagePullPolicy := .Values.imagePullPolicy -}}
+{{- $replicas := .Values.replicaCount -}}
+{{- $concurrency := .Values.concurrency -}}
+{{- $timeout := .Values.timeout -}}
+{{- $redisSecret := .Values.redis.password -}}
+{{- $redisKey := .Values.redis.key -}}
+{{- range .Values.pods -}}
+{{- $queueName := printf "%s-%s" $fullname .name | trunc 63}}
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: {{ template "fullname" . }}
+  name: {{ $queueName }}
   labels:
-    app: {{ template "name" . }}
-    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
+    app: {{ $name }}
+    chart: {{ $chart }}
+    release: {{ $releaseName }}
+    heritage: {{ $releaseService }}
+    queue-pod-name: {{ .name }}
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: {{ default $replicas .replicas }}
   template:
     metadata:
       labels:
-        app: {{ template "name" . }}
-        release: {{ .Release.Name }}
+        app: {{ $name }}
+        release: {{ $releaseName }}
     spec:
       containers:
-        - name: {{ .Chart.Name }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+        - name: {{ $name }}
+          image: "{{ $image }}"
+          imagePullPolicy: {{ $imagePullPolicy }}
           env:
             - name: GITALY_FEATURE_DEFAULT_ON
               value: "1"
@@ -28,9 +43,9 @@ spec:
             - name: CONFIG_DIRECTORY
               value: '/home/git/gitlab/config'
             - name: SIDEKIQ_CONCURRENCY
-              value: {{ .Values.concurrency | quote }}
+              value: {{ default $concurrency .concurrency | quote }}
             - name: SIDEKIQ_TIMEOUT
-              value: {{ .Values.timeout | quote }}
+              value: {{ default $timeout .timeout | quote }}
           volumeMounts:
           - name: sidekiq-config
             mountPath: '/var/opt/gitlab/templates'
@@ -51,20 +66,26 @@ spec:
                 - -c1
                 - /dev/random
           resources:
-{{ toYaml .Values.resources | indent 12 }}
+{{ toYaml .resources | indent 12 }}
       volumes:
       - name: sidekiq-config
-        configMap:
-          name: {{ template "fullname" . }}
+        projected:
+          sources:
+            - configMap:
+                name: {{ $fullname }}
+            - configMap:
+                name: {{ $queueName }}
       - name: sidekiq-redis
         secret:
-          secretName: {{ .Values.redis.password }}
+          secretName: {{ $redisSecret }}
           items:
-            - key: {{ .Values.redis.key }}
+            - key: {{ $redisKey }}
               path: password
           defaultMode: 0400
-    {{- if .Values.nodeSelector }}
+    {{- if .nodeSelector }}
       nodeSelector:
-{{ toYaml .Values.nodeSelector | indent 8 }}
+{{ toYaml .nodeSelector | indent 8 }}
     {{- end }}
+---
+{{-   end -}}
 {{- end }}
