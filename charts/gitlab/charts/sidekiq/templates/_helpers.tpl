@@ -14,3 +14,31 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 {{- $name := default .Chart.Name .Values.nameOverride -}}
 {{- printf "%s-%s" .Release.Name $name | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
+
+{{/*
+Return the db hostname
+If the postgresql host is provided, it will use that, otherwise it will fallback
+to the service name
+*/}}
+{{- define "sidekiq.psql.host" -}}
+{{- if .Values.psql.host -}}
+{{- .Values.psql.host | quote -}}
+{{- else -}}
+{{- $name := default "omnibus" .Values.psql.serviceName -}}
+{{- printf "%s-%s" .Release.Name $name -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
+Return the redis hostname
+If the postgresql host is provided, it will use that, otherwise it will fallback
+to the service name
+*/}}
+{{- define "sidekiq.redis.host" -}}
+{{- if .Values.redis.host -}}
+{{- .Values.redis.host | quote -}}
+{{- else -}}
+{{- $name := default "omnibus" .Values.redis.serviceName -}}
+{{- printf "%s-%s" .Release.Name $name -}}
+{{- end -}}
+{{- end -}}

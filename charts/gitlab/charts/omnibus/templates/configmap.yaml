@@ -63,7 +63,8 @@ data:
     unicorn['worker_timeout'] = {{ .Values.unicorn.worker.timeout }}
     unicorn['worker_processes'] = {{ .Values.unicorn.worker.processes }}
     ###################
-    # sidekiq ?
+    # sidekiq
+    sidekiq['enable'] = {{ .Values.sidekiq.enabled }}
     ###################
     # gitlab-shell
     ###################
