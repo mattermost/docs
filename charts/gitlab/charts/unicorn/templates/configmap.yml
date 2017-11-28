@@ -1,0 +1,32 @@
+{{- if .Values.enabled -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+    app: {{ template "fullname" . }}
+data:
+  database.yml.erb: |
+    production:
+      adapter: postgresql
+      encoding: unicode
+      database: {{ default "gitlabhq_production" .Values.psql.database | quote }}
+      pool: 10
+      username: {{ default "gitlab" .Values.psql.username | quote }}
+      password: {{ .Values.psql.password | quote }}
+      host: {{ template "unicorn.psql.host" . }}
+      port: {{ default 5432 .Values.psql.port }}
+      # load_balancing:
+      #   hosts:
+      #     - host1.example.com
+      #     - host2.example.com
+  resque.yml.erb: |
+    production:
+      # Redis (single instance)
+      url: redis://:<%= File.read("/etc/gitlab-redis/password") %>@{{ template "unicorn.redis.host" . }}:{{ default 6379 .Values.redis.port }}
+  workhorse-config.toml.erb: |
+    [redis]
+    URL = "tcp://{{ template "unicorn.redis.host" . }}:{{ default 6379 .Values.redis.port }}"
+    Password = "<%= File.read("/etc/gitlab-redis/password") %>"
+# Leave this here - This line denotes end of block to the parser.
+{{- end }}
