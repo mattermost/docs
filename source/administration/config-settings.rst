@@ -2942,18 +2942,6 @@ WebSocket Port
 | This feature’s ``config.json`` setting is ``WebsocketPort": 80`` with whole number input.                                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Autoclose Direct Messages in Sidebar (Experimental)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**True**: By default, direct message conversations with no activity for 7 days will be hidden from the sidebar. This can be disabled in **Account Settings** > **Sidebar**.
-
-**False**: Conversations remain in the sidebar until they are manually closed.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``CloseUnusedDirectMessages": false`` with options ``true`` and ``false`` for above settings respectively.                 |                                                                           
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
 SQL Settings
 ~~~~~~~~~~~~
 
@@ -2984,28 +2972,6 @@ This setting defines the number of seconds after which the user's status indicat
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"UserStatusAwayTimeout": 300`` with whole number input.                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Enable X to Leave Channels from Left-Hand Sidebar (Experimental)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: Users can leave Public and Private Channels by clicking the "x" beside the channel name.
-
-**False**: Users must use the **Leave Channel** option from the channel menu to leave channels.
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableXToLeaveChannelsFromLHS": false`` with options ``true`` and ``false`` for above settings respectively.               |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Town Square is Read-Only (Experimental)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-*Available in Enterprise Edition E10 and higher*
-
-**True**: Only Administrators can post in Town Square.
-
-**False**: Anyone can post in Town Square.
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``""ExperimentalTownSquareIsReadOnly"": false`` with options ``true`` and ``false`` for above settings respectively.               |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
 
@@ -3226,6 +3192,63 @@ Determines the maximum time window for a batch of posts being indexed by the Bul
 | This feature's ``config.json`` setting is ``"BulkIndexingTimeWindowSeconds": 3600`` with whole number input     |
 +-----------------------------------------------------------------------------------------------------------------+
 
+Plugin Settings  (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Directory
+^^^^^^^^^^
+The location of the plugin files. If blank, they are stored in the ./plugins directory. The path that you set must exist and Mattermost must have write permissions in it.
+
++-----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Directory": "./plugins"`` with string input.                       |
++-----------------------------------------------------------------------------------------------------------------+
+
+------
+
+Experimental settings in config.json
+-----------------------------------------
+
+There are a number of settings considered "experimental" and these may be replaced or removed in a future release.
+
+Service Settings
+~~~~~~~~~~~~~~~~~
+
+Autoclose Direct Messages in Sidebar (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: By default, direct message conversations with no activity for 7 days will be hidden from the sidebar. This can be disabled in **Account Settings** > **Sidebar**.
+
+**False**: Conversations remain in the sidebar until they are manually closed.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``CloseUnusedDirectMessages": false`` with options ``true`` and ``false`` for above settings respectively.                 |                                                                           
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Team Settings
+~~~~~~~~~~~~~~
+
+Enable X to Leave Channels from Left-Hand Sidebar (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: Users can leave Public and Private Channels by clicking the "x" beside the channel name.
+
+**False**: Users must use the **Leave Channel** option from the channel menu to leave channels.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableXToLeaveChannelsFromLHS": false`` with options ``true`` and ``false`` for above settings respectively.               |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Town Square is Read-Only (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E10 and higher*
+
+**True**: Only Administrators can post in Town Square.
+
+**False**: Anyone can post in Town Square.
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``""ExperimentalTownSquareIsReadOnly"": false`` with options ``true`` and ``false`` for above settings respectively.               |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Client Requirement Settings (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -3323,14 +3346,3 @@ Select the themes that can be chosen by users when ``"EnableThemeSelection"`` is
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AllowedThemes": "default"`` with options ``default``, ``organization``, ``mattermostDark`` and ``windows10`` optionally separated by commas. For example, ``["mattermostDark", "windows10"]`` |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Plugin Settings  (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-Directory
-^^^^^^^^^^
-The location of the plugin files. If blank, they are stored in the ./plugins directory. The path that you set must exist and Mattermost must have write permissions in it.
-
-+-----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Directory": "./plugins"`` with string input.                       |
-+-----------------------------------------------------------------------------------------------------------------+
