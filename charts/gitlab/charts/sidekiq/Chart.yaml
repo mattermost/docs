@@ -1,7 +1,7 @@
 apiVersion: v1
 description: GitLab Sidekiq
 name: sidekiq
-version: 0.1.0
+version: 0.0.1
 keywords:
 - gitlab
 - sidekiq
@@ -9,6 +9,7 @@ home: https://about.gitlab.com/
 sources:
 - https://gitlab.com/gitlab-org/gitlab-ce
 - https://gitlab.com/gitlab-org/gitlab-ee
+- https://gitlab.com/gitlab-org/build/CNG
 maintainers:
 - name: GitLab Inc.
   email: support@gitlab.com

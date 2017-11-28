@@ -3,14 +3,9 @@
 # Declare variables to be passed into your templates.
 replicaCount: 1
 image:
-  repository: gitlab/sidekiq
+  repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-sidekiq
   tag: stable
   pullPolicy: IfNotPresent
-service:
-  name: sidekiq
-  type: ClusterIP
-  externalPort: 80
-  internalPort: 80
 enabled: false
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
@@ -23,3 +18,5 @@ resources: {}
   #requests:
   #  cpu: 100m
   #  memory: 128Mi
+concurrency: 25
+timeout: 4
