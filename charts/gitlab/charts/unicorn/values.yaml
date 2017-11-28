@@ -3,15 +3,31 @@
 # Declare variables to be passed into your templates.
 replicaCount: 1
 image:
-  repository: gitlab/unicorn
-  tag: stable
+  repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn
+  tag: latest
   pullPolicy: IfNotPresent
 service:
   name: unicorn
   type: ClusterIP
   externalPort: 8080
   internalPort: 8080
+  workhorseExternalPort: 8181
+  workhorseInternalPort: 8181
 enabled: false
+gitlab_host: localhost
+redis:
+  # host: '0.0.0.0'
+  # serviceName: 'omnibus'
+  password:
+    secret: gitlab-redis
+    key: redis-password
+psql:
+  # host: '0.0.0.0'
+  # serviceName: 'omnibus'
+  # port: '5432'
+  # database: 'gitlabhq_production'
+  # username: 'gitlab'
+  # password: nil
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little

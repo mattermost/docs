@@ -15,6 +15,10 @@ spec:
       targetPort: {{ .Values.service.internalPort }}
       protocol: TCP
       name: {{ .Values.service.name }}
+    - port: {{ .Values.service.workhorseExternalPort }}
+      targetPort: {{ .Values.service.workhorseInternalPort }}
+      protocol: TCP
+      name: workhorse
   selector:
     app: {{ template "name" . }}
     release: {{ .Release.Name }}

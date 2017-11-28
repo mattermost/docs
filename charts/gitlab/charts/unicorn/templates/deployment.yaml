@@ -15,6 +15,8 @@ spec:
       labels:
         app: {{ template "name" . }}
         release: {{ .Release.Name }}
+      annotations:
+        checksum/config: {{ .Files.Get "configmap.yml" | sha256sum }}
     spec:
       containers:
         - name: {{ .Chart.Name }}
@@ -22,16 +24,41 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: {{ .Values.service.internalPort }}
-          livenessProbe:
-            httpGet:
-              path: /
-              port: {{ .Values.service.internalPort }}
-          readinessProbe:
-            httpGet:
-              path: /
-              port: {{ .Values.service.internalPort }}
+            - containerPort: {{ .Values.service.workhorseInternalPort }}
+          env:
+            - name: CONFIG_TEMPLATE_DIRECTORY
+              value: '/var/opt/gitlab/templates'
+            - name: CONFIG_DIRECTORY
+              value: '/var/opt/gitlab/config/gitlab/'
+            - name: GITLAB_HOST
+              value: {{ .Values.gitlab_host }}
+          volumeMounts:
+            - name: unicorn-config
+              mountPath: '/var/opt/gitlab/templates'
+            - name: unicorn-redis
+              mountPath: '/etc/gitlab-redis'
+              readOnly: true
+          # livenessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: {{ .Values.service.internalPort }}
+          # readinessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: {{ .Values.service.internalPort }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
+      volumes:
+      - name: unicorn-config
+        configMap:
+          name: {{ template "fullname" . }}
+      - name: unicorn-redis
+        secret:
+          secretName: {{ .Values.redis.password.secret }}
+          items:
+            - key: {{ .Values.redis.password.key }}
+              path: password
+          defaultMode: 0400
     {{- if .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml .Values.nodeSelector | indent 8 }}
