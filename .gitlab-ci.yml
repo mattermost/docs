@@ -236,8 +236,8 @@ production:
       --set releaseOverride="$CI_ENVIRONMENT_SLUG" \
       --set nginx.service.loadBalancerIP="$DOMAIN_IP" \
       --set nginx.ingress.hosts[0].name="gitlab$DOMAIN" \
-      --set nginx.ingress.hosts[0].serviceName="omnibus" \
-      --set nginx.ingress.hosts[0].servicePort="og-workhorse" \
+      --set nginx.ingress.hosts[0].serviceName="unicorn" \
+      --set nginx.ingress.hosts[0].servicePort="workhorse" \
       --set nginx.ingress.hosts[1].name="registry$DOMAIN" \
       --set nginx.ingress.hosts[1].serviceName="registry" \
       --set nginx.ingress.hosts[1].servicePort="registry" \
