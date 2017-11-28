@@ -234,7 +234,7 @@ These make commands are used to install dependencies, to configure necessary ste
 Commands to Run the App
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-These make commands are used to run the app on a device or emulator for Android, and on a simulator for iOS. (see ``Running the App on a Device`` for details).
+These make commands are used to run the app on a device or emulator for Android, and on a simulator for iOS. (see `Running the App on a Device <http://facebook.github.io/react-native/docs/running-on-device.html>`_ for details).
 
  - **make start-packager**: Runs the react-native packager used to bundle the JavaScript code. This command will execute *pre-run* to ensure the app is prepared.
  - **make start**: Alias of ``make start-packager``.
@@ -242,7 +242,7 @@ These make commands are used to run the app on a device or emulator for Android,
  - **make stop**: Alias of ``make stop-packager``.
  - **make run-ios**: Compiles and runs the app for iOS on an iPhone 6 simulator by default. You can set the environment variable SIMULATOR to the name of the device you want to use. This command will execute ``make start`` to ensure the packager is running.
  - **make run**: Alias of ``make run-ios``.
- - **make run-android**: Compiles and runs the app for Android on a running emulator or a device connected through USB. This command will execute ``make start`` to ensure the packager is running (see Create and Manage Virtual Devices to configure and run the Android emulator).
+ - **make run-android**: Compiles and runs the app for Android on a running emulator or a device connected through USB. This command will execute ``make start`` to ensure the packager is running (see `Create and Manage Virtual Devices to configure and run the Android emulator <https://developer.android.com/studio/run/managing-avds.html>`_).
 
 Commands to Test the App
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -255,7 +255,7 @@ These make commands are used to ensure that code follows linter rules and that t
 Commands to Build the App
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The set of commands for building the app are used in conjunction with `Fastlane <https://fastlane.tools/>`_. For most of them, you will need to modify `Fastfile <link>`_, since the commands are coupled with Mattermost's build and deployment process.
+The set of commands for building the app are used in conjunction with `Fastlane <https://fastlane.tools/>`_. For most of them, you will need to modify ``Fastfile``, since the commands are coupled with Mattermost's build and deployment process.
 
 You will always be able to build an unsigned version of the app as it does not need provisioning profiles or certificates as long as you set up Fastlane in your environment.
 
@@ -281,7 +281,7 @@ If you need to add a new JavaScript dependency that is not related to React Nati
 React Native
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-As with ``JavaScript only``, **use yarn** to add your dependency and include an exact version. Then link the library in react native by running ``react-native link <package-name>`` in a terminal.
+As with `JavaScript only <JavaScript Only>`_, **use yarn** to add your dependency and include an exact version. Then link the library in react native by running ``react-native link <package-name>`` in a terminal.
 
 Be aware that we are using React Native Navigation. For Android, you might need to complete the linking process manually as the react-native link command won't do it for you.
 
