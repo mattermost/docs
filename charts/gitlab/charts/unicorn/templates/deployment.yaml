@@ -38,10 +38,13 @@ spec:
             - name: unicorn-redis
               mountPath: '/etc/gitlab-redis'
               readOnly: true
-          # livenessProbe:
-          #   httpGet:
-          #     path: /
-          #     port: {{ .Values.service.internalPort }}
+          livenessProbe:
+            exec:
+              command:
+              - /scripts/healthcheck
+            initialDelaySeconds: 10
+            timeoutSeconds: 30
+            periodSeconds: 30
           # readinessProbe:
           #   httpGet:
           #     path: /
