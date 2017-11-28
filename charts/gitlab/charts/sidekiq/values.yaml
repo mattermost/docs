@@ -7,6 +7,16 @@ image:
   tag: stable
   pullPolicy: IfNotPresent
 enabled: false
+redis:
+  # host: '0.0.0.0'
+  # serviceName: 'omnibus'
+  password:
+    secret: gitlab-redis
+    key: redis-password
+
+# Global defaults
+concurrency: 25
+timeout: 4
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
@@ -18,9 +28,8 @@ resources: {}
   #requests:
   #  cpu: 100m
   #  memory: 128Mi
-concurrency: 25
-timeout: 4
 
+# Define queue groups into Pods
 pods:
   - name: workflow
     concurrency: 10
