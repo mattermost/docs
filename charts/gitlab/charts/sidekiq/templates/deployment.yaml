@@ -9,8 +9,8 @@
 {{- $replicas := .Values.replicaCount -}}
 {{- $concurrency := .Values.concurrency -}}
 {{- $timeout := .Values.timeout -}}
-{{- $redisSecret := .Values.redis.password.secret -}}
-{{- $redisKey := .Values.redis.password.key -}}
+{{- $redisSecret := .Values.redis.password -}}
+{{- $redisKey := .Values.redis.key -}}
 {{- range .Values.pods -}}
 {{- $queueName := printf "%s-%s" $fullname .name | trunc 63}}
 apiVersion: extensions/v1beta1

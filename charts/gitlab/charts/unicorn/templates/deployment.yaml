@@ -24,9 +24,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: {{ .Values.service.internalPort }}
-              name: unicorn
             - containerPort: {{ .Values.service.workhorseInternalPort }}
-              name: workhorse
           env:
             - name: CONFIG_TEMPLATE_DIRECTORY
               value: '/var/opt/gitlab/templates'
