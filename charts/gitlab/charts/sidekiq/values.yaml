@@ -4,7 +4,7 @@
 replicaCount: 1
 image:
   repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-sidekiq
-  tag: stable
+  tag: 75b0daa9b399327212a26065ad16f75844bb85df
   pullPolicy: IfNotPresent
 enabled: false
 redis:
