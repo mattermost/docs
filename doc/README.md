@@ -26,10 +26,10 @@ Pertaining to the Container Registry:
 - (`registry.certificate`) contains the name of the key in that secret, which contains the certificate that will be used by GitLab Unicorn.
 
 This certificate can be created with the following example:
-`openssl req -new -newkey rsa:4096 -subj "/CN=gitlab-issuer" -nodes -x509 -keyout registry-auth.key -out registry-auth.crt`. The `-subj`, `-*out` values can be modified as you see fit.
+`openssl req -new -newkey rsa:4096 -subj "/CN=gitlab-issuer" -nodes -x509 -keyout gitlab-registry.key -out registry-certificate.crt`. The `-subj`, `-*out` values can be modified as you see fit.
 Once these files are created, create the k8s secret(s):
-- `kubectl create secret generic omnibus-registry  --from-file=registry-auth.key=registry-auth.key`
-- `kubectl create secret generic gitlab-registry-certbundle --from-file=registry-auth.crt=registry-auth.crt`
+- `kubectl create secret generic omnibus-registry  --from-file=registry-auth.key=gitlab-registry.key`
+- `kubectl create secret generic gitlab-registry-certbundle --from-file=registry-auth.crt=registry-certificate.crt`
 
 Pertaining to Redis:
 - `password.secret` provides the name of the secret which houses the password for Redis
