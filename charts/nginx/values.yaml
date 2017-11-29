@@ -42,7 +42,6 @@ ingress:
       serviceName: registry
       servicePort: registry
   annotations:
-    # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   tls:
     # Secrets must be manually created in the namespace.

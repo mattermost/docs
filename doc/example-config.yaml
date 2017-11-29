@@ -9,7 +9,6 @@ nginx:
         serviceName: omnibus
         servicePort: og-workhorse
     annotations:
-      kubernetes.io/ingress.class: nginx
       ingress.kubernetes.io/proxy-body-size: 1024M
 
 # Registry sub-chart
