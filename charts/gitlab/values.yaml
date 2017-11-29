@@ -24,7 +24,7 @@ mattermost:
 omnibus:
   enabled: false
   nginx:
-    enabled: true
+    enabled: false
   redis:
     enabled: true
     # password:
