@@ -39,6 +39,7 @@ Each Mattermost installation comes with some built-in slash commands that are re
     "/logout", "Log out of Mattermost", "/logout"
     "/me *{message}*", "Do an action", "/me Hello World"
     "/msg *{@username}* *{message}*", "Send a Direct Message to a user", "/msg @alice hello"
+    "/groupmsg *{@username1, @username2, ...}* *{message}*", "Sends a Group Message to the specified users", "/groupmsg @alice, @bob hello"
     "/search *{text}*", "Search text in messages", "/search meeting"
     "/settings", "Open the Account Settings dialog", "/settings"
     "/shortcuts", "Display a list of keyboard shortcuts", "/shortcuts"
