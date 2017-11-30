@@ -71,7 +71,7 @@ Posts, Files and Hashtags
 Team Statistics
 ---------------
 
-Team Statistics are viewable under **System Console > Team Statistics**.
+Team Statistics are viewable under **System Console > Team Statistics**. The data shown here is a cumulative sum across this team only, and excludes posts made in direct message channels, which are not tied to a team.
 
 Total Users
     The total number of active accounts on this team. Excludes deactivated accounts.
