@@ -10,7 +10,7 @@ Here's a general workflow a Mattermost developer working on our [mattermost-serv
 1. Take a look at the [Repository structure](https://docs.mattermost.com/developer/developer-flow.html#repository-structure) to find out where to look for what you're working on.
 2. On your fork, create a branch `PLT-####` where #### is the ticket number if it is a [Jira](https://mattermost.atlassian.net) ticket, or `GH-####` if it is a GitHub Issue without a Jira ticket.
 3. Make the code changes required to complete your ticket, making sure to write or modify unit tests where appropriate.
-4. To test your changes, run `make run` from the root directory of the server respository. This will start up the server and a watcher process that will build any changes to the client as you make them. To get changes to the server it must be restarted with `make restart-server`. Your server will be running at `http://localhost:8065`.
+4. To test your changes, run `make run` from the root directory of the server respository. This will start up the server and a watcher process that will build any changes to the client as you make them. To get changes to the webapp server it must be restarted with `make restart`. Your webapp server will be running at `http://localhost:8065`.
 5. Once everything works to meet the ticket requirements, stop mattermost running `make stop` in the server repository and then run `make check-style` for check your syntax and `make test` for run the test in both repositories, server and webapp.
 6. Commit your changes, push your branch and [create a pull request](https://docs.mattermost.com/developer/contribution-guide.html#preparing-a-pull-request).
 7. Respond to feedback on your pull request and make changes as necessary by commiting to your branch and pushing it. You might need to [rebase your changes](https://git-scm.com/book/en/v2/Git-Branching-Rebasing) if another pull request creates conflicts.
@@ -20,11 +20,14 @@ Here's a general workflow a Mattermost developer working on our [mattermost-serv
 
 Some other `make` commands that might be useful in addition to the ones mentioned above:
 
-* `make run-server` will run only the server and not the client
+* `make run` will run only the server and not the client
 * `make clean-docker` stops and removes your Docker images and is a good way to wipe your database
-* `make run-fullmap` will run the server and build the client with the full source map for easier debugging
 * `make clean` cleans your local environment of temporary files
 * `make nuke` wipes your local environment back to a completely fresh start
+
+### Useful webapp Makefile commands ###
+
+* `make run-fullmap` will build the client with the full source map for easier debugging
 
 ### Running only specific server unit tests ###
 

@@ -133,9 +133,9 @@ Mac OS X
 
     In ``config/config.json``, set ``"EnableOpenServer"`` to ``true``
 
-  c. Start/restart your server.
+  c. Start/restart your webapp server.
 
-    ``make restart-server``
+    ``make restart``
 
 Android (Device)
 ~~~~~~~~~~~~~~~~~~~

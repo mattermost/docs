@@ -27,10 +27,8 @@ make run
   Starts the Docker container, compiles the server and client code, and makes Mattermost available at http://localhost:8065 on the machine that you ran this command on. The first time that you use this command, the MySQL, PostgreSQL, and Inbucket Docker images are downloaded and installed.
 make test
   Runs the unit tests for server and client.
-make test-server
+make test
   Runs the unit tests for server only.
-make test-client
-  Runs the unit tests for client only.
 make clean
   Removes all output files, including log files and executable binaries.
 make start-docker
@@ -43,8 +41,6 @@ make build-linux, make build-osx, and make build-windows
   Builds the server for the specified platform. See the `make package` command for instructions on how to set up for cross-compiling.
 make build
   Builds the server for Linux, OS X, and Windows platforms. See the `make package` command for instructions on how to set up for cross-compiling.
-make build-client
-  Builds the web client, which is the HTML, JavaScript, and CSS code that gets downloaded to the browser.
 make package
   Creates packages for distributing your builds and puts them in the ``~/go/src/github.com/mattermost/mattermost-server/dist`` directory. If you want to make packages for targets other than your build machine, you must run the following commands first:
 
