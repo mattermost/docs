@@ -40,13 +40,13 @@ Install the following prerequisite software to develop and build the iOS or Andr
  - Use `NPM <https://github.com/npm/npm>`_
  - Open a terminal and run ``npm -g install yarn``
 
-5. We use GitHub to host the source code so we recommend that you install `Git <https://git-scm.com/>`_ to get the source code and contribute your changes back with `pull requests <https://help.github.com/articles/creating-a-pull-request/>`_.
+5. We use GitHub to host the source code so we recommend that you install `Git <https://git-scm.com/>`_ to get the source code. Optionally, you can also contribute your changes back with `pull requests <https://help.github.com/articles/creating-a-pull-request/>`_.
  - If you do not have git installed you can do so with Homebrew by running ``brew install git`` on your terminal
 
 iOS
 ~~~~~~~~~~~~~~~~~~~
 
-1. Install `Xcode 9 <https://idmsa.apple.com/IDMSWebAuth/login?appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2Fdownload%2F&rv=1>`_ to to build and run the app on iOS.
+1. Install `Xcode 9 <https://idmsa.apple.com/IDMSWebAuth/login?appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2Fdownload%2F&rv=1>`_ to build and run the app on iOS.
 2. Install `Cocoapods <https://cocoapods.org/>`_. You'll need it to install the project’s iOS dependencies.
 
 Android
@@ -55,7 +55,7 @@ Android
 1. Download and install `Android Studio or the Android SDK command line tools <https://developer.android.com/studio/index.html#downloads>`_.
 2. Make sure you have the following ENV VARS configured:
  - ``ANDROID_HOME`` to where Android SDK is located (likely ``/Users/<username>/Library/Android/sdk``)
- - Make sure your ``PATH`` includes `ANDROID_HOME/tools` and ``ANDROID_HOME/platform-tools``
+ - Make sure your ``PATH`` includes ``ANDROID_HOME/tools`` and ``ANDROID_HOME/platform-tools``
   
   - On Mac, this usually requires adding the following lines to your ~/.bash_profile file:
   
@@ -121,7 +121,7 @@ Mac OS X
 
   ``cd mattermost-mobile``
 
-9. Using npm, download any other dependencies.
+9. Download any other dependencies. The ``make pre-run`` command does this automatically using npm. 
 
   ``make pre-run``
 
@@ -215,7 +215,7 @@ In order to develop and build the Mattermost mobile apps you'll need to get a co
 Make Commands Explained
 ------------------------------------
 
-We've included several make commands to control the development flow and to ensure that everything works as expected. Always use these make commands unless what you're trying to do can't be accomplished by them.
+We've included several make commands to control the development flow and to ensure that everything works as expected. Always use these make commands unless they cannot accomplish what you're trying to do.
 
 Every make command has to be run from a terminal in the project's root directory.
 
@@ -269,7 +269,7 @@ If you plan to use the **make build-*** commands, be sure to `modify Fastlane <h
 Adding New Dependencies to the Project
 -------------------------------------------
 
-If you need to add a new dependency to the project, it is important to add them in the right way. Instructions for adding different types of dependencies are described below:
+If you need to add a new dependency to the project, it is important to add them in the right way. Instructions for adding different types of dependencies are described below.
 
 JavaScript Only
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -283,16 +283,16 @@ React Native
 
 As with `JavaScript only <JavaScript Only>`_, **use yarn** to add your dependency and include an exact version. Then link the library in react native by running ``react-native link <package-name>`` in a terminal.
 
-Be aware that we are using React Native Navigation. For Android, you might need to complete the linking process manually as the react-native link command won't do it for you.
+Be aware that we are using React Native Navigation. For Android, you might need to complete the linking process manually as the ``react-native link`` command won't do it for you.
 
-After running the react-native link command, head to ``<project-root>/android/app/src/main/java/com/mattermost/rnbeta/MainApplication.java`` and initialize the react native library that you just added in the ``createAdditionalReactPackages`` method.
+To do this, after running the ``react-native link`` command, head to ``<project-root>/android/app/src/main/java/com/mattermost/rnbeta/MainApplication.java`` and initialize the react native library that you just added in the ``createAdditionalReactPackages`` method.
 
 Android
 ~~~~~~~~~~~~
 
 Usually the react native libraries that you add to the project will take care of adding new dependancies to the project. 
 
-If you come across a case where it is needed, we recommend you first review your work to confirm. The Android documentation should then be followed to add the libraries.
+If you come across a case where it is needed, we recommend you first review your work to confirm the need. The Android documentation should then be followed to add the libraries.
 
 iOS
 ~~~~~~~~~~~~
