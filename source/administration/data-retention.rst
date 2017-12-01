@@ -72,9 +72,9 @@ How is data retention handled in the mobile apps?
 
 When messages or files are deleted, they are no longer searchable in the Mattermost mobile apps. 
 
-For iOS and Android apps, in v1.5 and later, messages and files are also deleted from local storage in the following cases if they exceed the policy duration:
+In v1.5 and later of the iOS and Android apps, messages and files are deleted from local storage in the following cases, if they exceed the retention policy duration:
 
 1. When the user opens the app.
-2. When the user sets the app to the background.
+2. When the user puts the app into the background.
 
-In v1.4 and earlier of the mobile apps, messages and files are not cleared from local storage when data retention policy is enabled.
+In v1.4 and earlier of the mobile apps, messages and files are not cleared from local storage when the data retention policy is enabled.
