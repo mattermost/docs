@@ -250,8 +250,18 @@ If a security fix release is required, run through the following steps:
     - Update the changelog
     - Work with a developer to submit GitLab MR [following this process](https://docs.mattermost.com/process/release-process.html#gitlab-merge-request)
     - Update the version archive in the [upgrade guide](https://github.com/mattermost/docs/blob/master/source/administration/upgrade.md)
-3. Marketing:
-    - Update security update email with any new information
+3. Logistics:
+    - Update [Mattermost server download page](https://mattermost.org/download) with the links to the EE and TE bits
+      - Test the download links before and after updating the page
+    - Contact owners of [community installers](http://www.mattermost.org/installation/) or submit PRs to update install version number
+      - For Puppet, Heroku and Ansible Playbook, post to Installers and Images channel announcing the new release. See [example](https://pre-release.mattermost.com/core/pl/5eh8fw3jaiyzzqoc6nfwfaioya).
+      - For Chef Cookbook, open a new issue to announce the new release. See [example](https://github.com/verifi-inc/mattermost/issues/2).
+      - For Yunohost, open a new pull request to update the version. See [example](https://github.com/kemenaran/mattermost_ynh/pull/11).
+      - For OpenShift, open a new pull request to update the version. See [example](https://github.com/goern/mattermost-openshift/pull/13).
+4. Marketing:
+    - Prepare [blog post](https://about.mattermost.com/mattermost-3-6-2/) for mattermost.com, MailChimp email blast, and [Twitter announcement](https://twitter.com/mattermosthq/status/827193482578112512), and send for marketing lead to review. Once reviewed, schedule for 08:00 PST on the day after dot release
+      - **Note:** If the release contains a security update, also draft a Mailchimp email blast for the [Security Bulletin mailing list](http://eepurl.com/cAl5Rv)
+      - Upgrade should be recommended if there are security fixes in the dot release version
 
 If a bug fix release is required, run through the following steps:
 
