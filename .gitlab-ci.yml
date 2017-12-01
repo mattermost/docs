@@ -24,9 +24,10 @@
 # `.buildpacks` that contains the URLs, one on each line, in order.
 # Note: Auto CI does not work with multiple buildpacks yet
 
-image: alpine:latest
+image: registry.gitlab.com/charts/helm.gitlab.io:latest
 
 variables:
+  GOOGLE_APPLICATION_CREDENTIALS: ${CI_PROJECT_DIR}/.google_keyfile.json
   # AUTO_DEVOPS_DOMAIN is the application deployment domain and should be set as a variable at the group or project level.
   # AUTO_DEVOPS_DOMAIN: domain.example.com
 
@@ -60,9 +61,9 @@ stages:
 review:
   stage: review
   script:
+    - terraform_init
     - check_kube_domain
-    - check_domain_ip
-    - install_dependencies
+    - terraform_up
 #    - download_chart
     - ensure_namespace
     - install_tiller
@@ -83,11 +84,10 @@ review:
 
 stop_review:
   stage: cleanup
-  variables:
-    GIT_STRATEGY: none
   script:
-    - install_dependencies
+    - terraform_init
     - delete
+    - terraform_down
   environment:
     name: review/$CI_COMMIT_REF_NAME
     action: stop
@@ -116,7 +116,6 @@ stop_review:
   script:
     - check_kube_domain
     - check_domain_ip
-    - install_dependencies
 #    - download_chart
     - ensure_namespace
     - install_tiller
@@ -141,7 +140,6 @@ stop_review:
   script:
     - check_kube_domain
     - check_domain_ip
-    - install_dependencies
 #    - download_chart
     - ensure_namespace
     - install_tiller
@@ -168,7 +166,6 @@ production:
   script:
     - check_kube_domain
     - check_domain_ip
-    - install_dependencies
     - download_chart
     - ensure_namespace
     - install_tiller
@@ -288,22 +285,6 @@ production:
       .
   }
 
-  function install_dependencies() {
-    apk add -U openssl curl tar gzip bash ca-certificates git
-    wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://raw.githubusercontent.com/sgerrand/alpine-pkg-glibc/master/sgerrand.rsa.pub
-    wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.23-r3/glibc-2.23-r3.apk
-    apk add glibc-2.23-r3.apk
-    rm glibc-2.23-r3.apk
-
-    curl https://kubernetes-helm.storage.googleapis.com/helm-v2.7.0-linux-amd64.tar.gz | tar zx
-    mv linux-amd64/helm /usr/bin/
-    helm version --client
-
-    curl -L -o /usr/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
-    chmod +x /usr/bin/kubectl
-    kubectl version --client
-  }
-
   function setup_test_db() {
     if [ -z ${KUBERNETES_PORT+x} ]; then
       DB_HOST=postgres
@@ -351,13 +332,13 @@ production:
 
   function check_domain_ip() {
     # Expect the `DOMAIN` is a wildcard.
-    domain_ip=$(nslookup fetch-ip$DOMAIN 2>/dev/null | grep "Address 1:" | cut -d' ' -f3)
+    domain_ip=$(nslookup gitlab$DOMAIN 2>/dev/null | grep "Address 1:" | cut -d' ' -f3)
     if [ -z $domain_ip ]; then
-      echo "There was a problem resolving the IP of 'fetch-ip$DOMAIN'. Be sure you have configured a DNS wildcard entry."
+      echo "There was a problem resolving the IP of 'gitlab$DOMAIN'. Be sure you have configured a DNS entry."
       false
     else
       export DOMAIN_IP=$domain_ip
-      echo "Found IP for fetch-ip$DOMAIN: $DOMAIN_IP"
+      echo "Found IP for gitlab$DOMAIN: $DOMAIN_IP"
       true
     fi
   }
@@ -392,6 +373,30 @@ production:
     fi
 
     helm delete "$name" || true
+  }
+
+  function terraform_up() {
+    pushd ci/terraform/
+    terraform apply -input=false -auto-approve -var environment=${CI_ENVIRONMENT_SLUG}
+    export DOMAIN_IP=$(terraform output loadBalancerIP)
+    popd
+  }
+
+  function terraform_down() {
+    pushd ci/terraform
+    terraform destroy -input=false -force -var environment=${CI_ENVIRONMENT_SLUG}
+    popd
+  }
+
+  function terraform_init() {
+    pushd ci/terraform
+    echo ${GOOGLE_CLOUD_KEYFILE_JSON} > ${GOOGLE_APPLICATION_CREDENTIALS}
+    # gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}
+    # gcloud config set project $GOOGLE_PROJECT_ID
+    terraform init -input=false \
+      -backend-config="bucket=${GOOGLE_STORAGE_BUCKET}" \
+      -backend-config="prefix=terraform/${CI_ENVIRONMENT_SLUG}"
+    popd
   }
 
 before_script:
