@@ -19,3 +19,7 @@
 .project
 .idea/
 *.tmproj
+# Project/CI/CD related items
+ci/
+doc/
+images/
