@@ -9,13 +9,22 @@ Release date: 2017-12-16
 
 ### Highlights
 
-#### Actiance
-
 #### Zoom Plugin (Beta)
+
+- [Zoom](https://www.zoom.us/) video calling and screensharing plugin. Learn more [here](XXXXXX JB Link to docs).
+
+#### Actiance Support ([Enterprise Edition E20](https://about.mattermost.com/pricing/))
+
+- Support for [Actiance](https://www.actiance.com/) as a compliance solution. Learn more [here](XXXXXX JB Link to docs).
 
 ### Improvements
 
-- System message
+#### Web UI
+- `CTRL` + `/` now toggles the keyboard shortcuts dialog.
+- Link previews now appear in right-hand side threads.
+- Timestamp permalinks now open in the current view on desktop and browser.
+- Pinned posts are now sorted newest to oldest.
+- Updated markdown to better handle non-latin characters in URLs.
 
 #### Integrations
 
@@ -27,26 +36,28 @@ Release date: 2017-12-16
 #### Notifications
 
 - Removed unnecessary log messages posted when pending email notifications are deleted because a user comes online before the batch is sent.
-- 
+- Desktop notification icon has been updated on Edge browsers.
 
+#### System Console
 
-
+- Added a confirm modal to the Data Retention settings page.
+- Added settings pages for uploading and managing plugins.
 
 
 ### Bug Fixes
 
-
-- Fixed an issue where uploading a plugin via the System Console didn't work.
 - Closing a direct or group message channel no longer purges channel preferences.
 - Users no longer get a blank page after hitting "x" on a deleted message in permalink view.
 - Fixed an issue where `AmazonS3Region` defaults to us-east-1 regardless of the value input.
 - Channel links render as expected when linking to a channel that the current user does not belong to.
 - Uppercase letter is no longer required for a password if the password requirement is set to at least 5 characters and a number.
-- Profile image updates are now visible in other active clients after the change.
+- Profile image updates are now visible in other active clients and the right-hand side after the change.
 - Plugins can no longer be uploaded if they have the same plugin ID.
 - Fixed the AD/LDAP Test Connection button.
 - Fixed an issue causing `invalid or expired session` server logs.
-
+- Removed a duplicate error message on the login page after a password reset.
+- Fixed an issue where the OAuth ClientID and Secret values were missing after setup.
+- Emoji picker now works when the right-hand side is expanded.
 
 
 ### Compatibility
