@@ -7,7 +7,111 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ## Release v4.5.0
 Release date: 2017-12-16
 
-Details to be added closer to release.
+### Highlights
+
+#### Actiance
+
+#### Zoom Plugin (Beta)
+
+### Improvements
+
+- System message
+
+#### Integrations
+
+- Add option for an outgoing webhooks to reply to the posted message as a comment.
+- Website previews are now displayed in threads.
+- https://github.com/mattermost/mattermost-server/pull/7841 XXXXXX JB
+- JIRA plugin is now bundled as an inpdependent plugin available [here](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v0.1).
+
+#### Notifications
+
+- Removed unnecessary log messages posted when pending email notifications are deleted because a user comes online before the batch is sent.
+- 
+
+
+
+
+
+### Bug Fixes
+
+
+- Fixed an issue where uploading a plugin via the System Console didn't work.
+- Closing a direct or group message channel no longer purges channel preferences.
+- Users no longer get a blank page after hitting "x" on a deleted message in permalink view.
+- Fixed an issue where `AmazonS3Region` defaults to us-east-1 regardless of the value input.
+- Channel links render as expected when linking to a channel that the current user does not belong to.
+- Uppercase letter is no longer required for a password if the password requirement is set to at least 5 characters and a number.
+- Profile image updates are now visible in other active clients after the change.
+- Plugins can no longer be uploaded if they have the same plugin ID.
+- Fixed the AD/LDAP Test Connection button.
+- Fixed an issue causing `invalid or expired session` server logs.
+
+
+
+### Compatibility
+
+Composite database indexes were added to the `Posts` table. This may lead to longer upgrade times for servers with more than 1 million messages.
+
+#### Removed and Deprecated Features
+- All APIv3 endpoints are scheduled for removal on January 16, 2018.
+
+For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
+
+#### config.json
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+**Changes to Team Edition and Enterprise Edition**:
+
+- Under `ServiceSettings` in `config.json`:
+  - Added `"EnablePreviewFeatures": true` 
+  - Added `"CloseUnusedDirectMessages": false` 
+  - Added `"ExperimentalEnableAuthenticationTransfer": true`
+- Under `EmailSettings` in `config.json`:
+  - Added `"UseChannelInEmailNotifications": false` 
+
+**Additional Changes to Enterprise Edition**:
+
+- Added `MessageExportSettings` in `config.json`:
+  - Added `"EnableExport": false`
+  - Added `"DailyRunTime": "01:00"`
+  - Added `"ExportFromTimestamp": 0`
+  - Added `"FileLocation": "export"`
+  - Added `"BatchSize": 10000`
+
+
+### Database Changes
+
+**PluginKeyVlaueStore Table:**
+- Added table
+
+### API v4 Changes
+
+- It is recommended that any new integrations use API v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
+- All API v3 endpoints are scheduled for removal on January 16, 2018.
+
+### Known Issues
+
+XXXXXX Will update more after release testing
+
+- Google login fails on the Classic mobile apps.
+- User can receive a video call from another browser tab while already on a call.
+- Jump link in search results does not always jump to display the expected post.
+- Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+- Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+- Searching with Elasticsearch enabled may not always highlight the searched terms.
+- Team sidebar doesn't always show unreads from other teams on first load.
+- System Admin cannot reset their own password via the System Console.
+- Channel scroll position flickers while images and link previews load.
+- CTRL/CMD+U shortcut to upload a file doesn't work on Firefox.
+- Profile pictures don't immediately update across tabs or in the right-hand side comment threads.
+- Fixed an issue where only System Admins could edit OAuth apps even if integration creation was not restricted to admins.
+
+
+### Contributors
+
+
 
 ## Release v4.4.0
 Release date: 2017-11-16
