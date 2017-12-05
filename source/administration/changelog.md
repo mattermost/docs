@@ -13,15 +13,16 @@ Release date: 2017-12-16
 
 - [Zoom](https://www.zoom.us/) video calling and screensharing plugin. Learn more [here](XXXXXX JB Link to docs).
 
-#### Actiance Support ([Enterprise Edition E20](https://about.mattermost.com/pricing/))
+#### Actiance Support (Beta) ([Enterprise Edition E20](https://about.mattermost.com/pricing/))
 
-- Support for [Actiance](https://www.actiance.com/) as a compliance solution. Learn more [here](XXXXXX JB Link to docs).
+- Message export supporting for [Actiance](https://www.actiance.com/) as a compliance solution. Learn more [here](XXXXXX JB Link to docs).
+- Access message export from the SYstem Console > Advanced > Message Export (Beta)
 
 ### Improvements
 
 #### Web UI
 - `CTRL` + `/` now toggles the keyboard shortcuts dialog.
-- Link previews now appear in right-hand side threads.
+- Link previews now appear in the right-hand side in comment threads.
 - Timestamp permalinks now open in the current view on desktop and browser.
 - Pinned posts are now sorted newest to oldest.
 - Updated markdown to better handle non-latin characters in URLs.
@@ -29,9 +30,11 @@ Release date: 2017-12-16
 #### Integrations
 
 - Add option for an outgoing webhooks to reply to the posted message as a comment.
-- Website previews are now displayed in threads.
-- https://github.com/mattermost/mattermost-server/pull/7841 XXXXXX JB
-- JIRA plugin is now bundled as an inpdependent plugin available [here](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v0.1).
+- JIRA plugin is now bundled as a prepackaged plugin managable from the System Console > Plugins > Management
+
+#### Channels
+
+- Direct Message channels with deactivated users are now hidden in the sidebar and can be reopened from the **More...**  Direct Messages list.
 
 #### Notifications
 
@@ -41,8 +44,7 @@ Release date: 2017-12-16
 #### System Console
 
 - Added a confirm modal to the Data Retention settings page.
-- Added settings pages for uploading and managing plugins.
-
+- Added settings pages for uploading and managing plugins in the System Console > Plugins (Beta) section.
 
 ### Bug Fixes
 
@@ -53,16 +55,15 @@ Release date: 2017-12-16
 - Uppercase letter is no longer required for a password if the password requirement is set to at least 5 characters and a number.
 - Profile image updates are now visible in other active clients and the right-hand side after the change.
 - Plugins can no longer be uploaded if they have the same plugin ID.
+- Creating a channel with a name including a reserved word no longer breaks the user interface.
 - Fixed the AD/LDAP Test Connection button.
 - Fixed an issue causing `invalid or expired session` server logs.
 - Removed a duplicate error message on the login page after a password reset.
 - Fixed an issue where the OAuth ClientID and Secret values were missing after setup.
 - Emoji picker now works when the right-hand side is expanded.
-
+- Error messages in the System Console user list no longer breaks the user interface.
 
 ### Compatibility
-
-Composite database indexes were added to the `Posts` table. This may lead to longer upgrade times for servers with more than 1 million messages.
 
 #### Removed and Deprecated Features
 - All APIv3 endpoints are scheduled for removal on January 16, 2018.
@@ -94,8 +95,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Database Changes
 
-**PluginKeyVlaueStore Table:**
-- Added table
+Looks like none, https://github.com/mattermost/mattermost-server/blob/master/store/sqlstore/upgrade.go confirm XXXXXX
 
 ### API v4 Changes
 
