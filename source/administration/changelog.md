@@ -22,7 +22,7 @@ Release date: 2017-12-16
 ### Improvements
 
 #### Web UI
-- `CTRL` + `/` now toggles the keyboard shortcuts dialog.
+- `CTRL/CMD` + `/` now toggles the keyboard shortcuts dialog.
 - Link previews now appear in the right-hand side in comment threads.
 - Timestamp permalinks now open in the current view on desktop and browser.
 - Pinned posts are now sorted newest to oldest.
@@ -92,11 +92,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
   - Added `"ExportFromTimestamp": 0`
   - Added `"FileLocation": "export"`
   - Added `"BatchSize": 10000`
-
-
-### Database Changes
-
-Looks like none, https://github.com/mattermost/mattermost-server/blob/master/store/sqlstore/upgrade.go confirm XXXXXX
 
 ### API v4 Changes
 
