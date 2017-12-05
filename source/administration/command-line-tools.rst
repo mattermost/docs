@@ -64,15 +64,13 @@ On GitLab Omnibus, you must be in the following directory when you run CLI comma
 Using the CLI on Docker Install
 -------------------------------
 
-On Docker install, you must be in the ``/mattermost`` directory within your Docker container when you run CLI commands.  Note that the container name may be ``mattermostdocker_app_1`` if you installed Mattermost with ``docker-compose.yml``.
+On Docker install, the default working directory is ``/mattermost/bin``, so you can use the CLI directly through ``docker exec`` command. Note that the container name may be ``mattermostdocker_app_1`` if you installed Mattermost with ``docker-compose.yml``.
 
 **For example, to get the Mattermost version on a Docker install:**
 
   .. code-block:: bash
 
-    docker exec -it <your-mattermost-container-name> /bin/bash
-    cd /mattermost
-    bin/platform version
+    docker exec -it <your-mattermost-container-name> platform version
 
 Mattermost 3.6 and later
 ^^^^^^^^^^^^^^^^^^^^^^^^
