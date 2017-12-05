@@ -12,11 +12,12 @@ Release date: 2017-12-16
 #### Zoom Plugin (Beta)
 
 - [Zoom](https://www.zoom.us/) video calling and screensharing plugin. Learn more [here](XXXXXX JB Link to docs).
+- Manage plugins from the **System Console > Plugins (Beta)** section.
 
 #### Actiance Support (Beta) ([Enterprise Edition E20](https://about.mattermost.com/pricing/))
 
 - Message export supporting for [Actiance](https://www.actiance.com/) as a compliance solution. Learn more [here](XXXXXX JB Link to docs).
-- Access message export from the SYstem Console > Advanced > Message Export (Beta)
+- Access message export from the **System Console > Advanced > Message Export (Beta)**.
 
 ### Improvements
 
