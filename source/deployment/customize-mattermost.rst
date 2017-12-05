@@ -23,14 +23,15 @@ The Mattermost webapp is licensed under the Apache 2.0 license. To modify and us
 
 In Mattermost Enterprise Edition, it is possible to customize certain parts of the webapp without forking using our :doc:`Custom Branding <../administration/branding>` settings. 
 
+To replace the logo in email notifications, change the file located in the ``/images`` directory. 
+
 Mattermost Server
 -----------------
 
 There are a few things that can be customized in the Mattermost server without forking. 
 
 1. Modify text in the Mattermost interface by modifying the ``en.json`` file 
-2. Replace the logo in email notifications by changing the file located in the ``/images`` directory 
-3. Customize or hide help and support links by modifying your :ref:`configuration settings <legal-support-links>`
+2. Customize or hide help and support links by modifying your :ref:`configuration settings <legal-support-links>`
 
 Mattermost Mobile Applications
 ------------------------------
