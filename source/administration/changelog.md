@@ -83,6 +83,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
   - Added `"ExperimentalEnableAuthenticationTransfer": true`
 - Under `EmailSettings` in `config.json`:
   - Added `"UseChannelInEmailNotifications": false` 
+- Under `PluginSettings` in `config.json`:
+  - Added `"ClientDirectory": "./client/plugins"` to set the location of client plugins.
 
 **Additional Changes to Enterprise Edition**:
 
