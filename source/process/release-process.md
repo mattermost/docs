@@ -150,7 +150,6 @@ Exceptions can be made by the release manager setting priority to "Highest" and 
     - Run loadtests against the release candidate to find potential performance issues
 4. Logistics:
     - Confirm community testers are directed to the Release Discussion channel
-    - Queue an item for UX meeting to do a 10-minute UI/UX bug bash
 5. Team:
     - Test assigned areas of the Release Candidate Testing Spreadsheet and file any bugs found in Jira
     - Post a link to any "Blocking" issue that may need a hotfix to the RC in the Release room, with the **#blocking** tag. If the issue is security related or contains confidential information, post the link in the Confidential Bugs private channel. Blocking issues are considered to be security issues, data loss issues, and issues that break core functionality or significantly impact aesthetics.
@@ -240,12 +239,9 @@ The final release is cut. If an urgent and important issue needs to be addressed
     
 If a security fix release is required, run through the following steps:
 
-1. Dev:
+1. QA:
     - Verify all patch fixes are backported
     - Verify all patch fixes are tested (either via unit tests or RCs)
-    - Verify hashes and GPG signatures are correct, once build is cut
-    - Delete RCs after final version is shipped
-    - Merge changes made to release branch into master
 2. PM:
     - Update the changelog
     - Work with a developer to submit GitLab MR [following this process](https://docs.mattermost.com/process/release-process.html#gitlab-merge-request)
