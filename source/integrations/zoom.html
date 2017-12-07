@@ -1,14 +1,23 @@
 Zoom Plugin
 ================================
 
-1. The System Console settings live in System Console > Plugins > Zoom. This is where the admin needs to go 
-configure Zoom for Mattermost. 
-2. There are steps where you need to change a few settings in Zoom.
-3. Once these steps are done, activate the plugin at System Console > Plugins > Management. 
-4. Once activated, you will see a video icon in the channel header. There are three different actions you can take (start meeting now/start
-meeting with topic/share meeting).
+With Zoom integration, Mattermost users can launch and join voice and video meetings without leaving 
+the Mattermost interface. In addition to being able to customize Zoom, users can also extend the plugin 
+to other video conferencing systems such as Skype and Google Hangouts.
 
-Setting for overriding usernames and icon URLs need to be set to true.
+_`Zoom <https://zoom.us/>`_ is one of the world’s leading video and web conferencing services. This 
+documentation includes instructions on how you can set up Zoom in Mattermost.
+
+Zoom Setup Guide
+~~~~~~~~~~~~~~~~~
+
+1. The System Console settings live in System Console > Plugins > Zoom. That's where the admin needs 
+to go configure Zoom for Mattermost.
+2. There are steps where you need to change a few settings in Zoom.
+3. Setting for overriding usernames and icon URLs need to be set to true.
+4. Once these steps are done, activate the plugin at System Console > Plugins > Management. 
+5. Once activated, you will see a video icon in the channel header. There are three different actions 
+you can take (start meeting now/start meeting with topic/share meeting).
 
 API Key
 .........................................
@@ -34,7 +43,9 @@ Webhook Secret
 .........................................
 
 The secret used to authenticate the webhook to Mattermost.
-(Button text) Regenerates the secret for the webhook URL endpoint. Regenrating the secret invalidates your existing Zoom webhook.
+
+**Enable** button regenerates the secret for the webhook URL endpoint. Regenrating the secret invalidates 
+your existing Zoom webhook.
 
 Footer
 .........................................
