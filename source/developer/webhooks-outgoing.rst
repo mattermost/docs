@@ -135,10 +135,21 @@ For example, you can use the following payload to override the profile picture t
 .. note::
   `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`_ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator. If not enabled, the icon of the creator of the webhook URL is used to post messages.
 
+Replies
+~~~~~~~~~~~~~~~~~~~~~~
+
+You can have the outgoing webhook post a reply to the message that triggered it. To post the webhook message as a reply, set ``response_type`` to ``comment``. For example:
+
+.. code-block:: text
+
+  payload={"text": "<!channel> this is a notification.", "response_type": "comment"}
+
+When the ``response_type`` is set to ``post``, or not set, the webhook message is made as a regular post.
+
 Mention notifications
 ~~~~~~~~~~~~~~~~~~~~~~
 
-You can trigger mention notifications with your outgoing webhook message. To trigger a mention, include *@username* in the `text` parameter of the JSON payload.
+You can trigger mention notifications with your outgoing webhook message. To trigger a mention, include *@username* in the ``text`` parameter of the JSON payload.
 
 Channels can be mentioned by including *@channel* or *<!channel>*. For example:
 
