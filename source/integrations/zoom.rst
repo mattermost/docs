@@ -1,11 +1,11 @@
 Zoom Plugin
 ================================
 
-With Zoom integration, Mattermost users can launch and join voice and video meetings without leaving 
+With `Zoom integration <https://github.com/mattermost/mattermost-plugin-zoom>`_, Mattermost users can launch and join voice and video meetings without leaving 
 the Mattermost interface. In addition to being able to customize Zoom, users can also extend the plugin 
 to other video conferencing systems such as Skype and Google Hangouts.
 
-_`Zoom <https://zoom.us/>`_ is one of the world’s leading video and web conferencing services. This 
+`Zoom <https://zoom.us/>`_ is one of the world’s leading video and web conferencing services. This 
 documentation includes instructions on how you can set up Zoom in Mattermost.
 
 Zoom Setup Guide
