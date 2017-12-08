@@ -133,12 +133,13 @@ Typically found in `/var/log/nginx/error.log`
 
 #### Other debugging information
 
-Useful commands (need to be run with sudo):
+Useful commands (may need to be run with sudo):
 - `gitlab-ctl reconfigure` - Update config.json and other configuration files, then restart all services (including Mattermost).
 - `gitlab-ctl <stop/start/restart> mattermost` - Stop/start/restart Mattermost.
 - `gitlab-ctl status mattermost` - Check if Mattermost is running. The message printed will start with `run` if it's running or `down` if it's not.
 - `gitlab-ctl tail mattermost` - Watch all Mattermost log files. Press Ctrl+C to exit.
 - `gitlab-ctl <stop/start/restart/status/tail> <nginx/postgresql/redis/etc>` - Control, view status, or view logs of a different service.
+- `sudo -u gitlab-psql /opt/gitlab/embedded/bin/psql --port 5432 -h /var/opt/gitlab/postgresql -d mattermost_production` - Access the embedded Mattermost database
 
 File locations:
 - Configuration files are located at `/etc/gitlab/gitlab.rb` and `/var/opt/gitlab/mattermost/config.json`.
