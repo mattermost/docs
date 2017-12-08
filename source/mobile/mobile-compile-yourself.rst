@@ -3,7 +3,8 @@ Build Your Own Version of the Mattermost Mobile Apps
 
 To deploy in production with privately-hosted mobile apps compiled by your organization in an Enterprise App Store:
 
-1. Compile your own iOS and Android mobile applications from the `open source repository <https://github.com/mattermost/mattermost-mobile>`_. Use :doc:`this guide <mobile-developer-setup>` to help set up your environment and build the apps.
+1. Compile your own iOS and Android mobile applications from the `open source repository <https://github.com/mattermost/mattermost-mobile>`_
+  - See the :doc:`mobile developer guide <../developer/mobile-developer-setup>` for help setting up your environment and building the apps
   - Note: If your server version is not supported by the Mattermost apps, you will need to use the Mattermost Classic app repositories for `iOS <https://github.com/mattermost/mattermost-ios-classic>`_ and `Android  <https://github.com/mattermost/mattermost-android-classic>`_
 
 2. Compile your own Mattermost Push Notification Service (MPNS) from the `open source repository <https://github.com/mattermost/push-proxy>`_
