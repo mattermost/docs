@@ -1,7 +1,6 @@
 # Default values for sidekiq.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
-replicaCount: 1
 image:
   repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-sidekiq
   tag: 75b0daa9b399327212a26065ad16f75844bb85df
@@ -9,12 +8,21 @@ image:
 enabled: false
 redis:
   # host: '0.0.0.0'
+  # port: 6379
   # serviceName: 'omnibus'
   password:
     secret: gitlab-redis
     key: redis-password
+psql:
+  # host: '0.0.0.0'
+  # serviceName: 'omnibus'
+  # port: '5432'
+  # database: 'gitlabhq_production'
+  # username: 'gitlab'
+  # password: nil
 
 # Global defaults
+replicas: 1
 concurrency: 25
 timeout: 4
 resources: {}
