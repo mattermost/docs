@@ -84,7 +84,7 @@ Enterprise Edition Features
 
 7. **High availability**
 
-![image](../images/network.PNG)
+.. image:: ../images/network.PNG
 
 8. **Compliance Reporting**
 
