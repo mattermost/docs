@@ -2562,7 +2562,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 **Changes to Team Edition and Enterprise Edition**:
 
 - Under `ServiceSettings` in `config.json`:
-    - Added `"ConnectionSecurity": ""` to select the type of encryption between Mattermost and your server
+    - Removed `"RestrictTeamNames": true` that controlled whether newly created team names were restricted.
+    - Added `"ConnectionSecurity": ""` to select the type of encryption between Mattermost and your server.
     - Added `"TLSCertFile": ""` to specify the certificate file to use.
     - Added `"TLSKeyFile": ""` to specify the private key to use.
     - Added `"UseLetsEncrypt": false` to enable automatic retreval of certificates from the Let's Encrypt.
