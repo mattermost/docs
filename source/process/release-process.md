@@ -59,9 +59,8 @@ No pull requests for major features should be **merged** to the current release 
       - After the cut-off, any PRs that include significant code changes require approval of the release manager before merging
 6. Marketing:
     - Prepare bullet points for release announcement
-    - Propose list of key features included in the release GIF and send to marketing lead for review
     - Draft release headline and send to marketing lead for review
-    - Queue Twitter banners in the Marketing: Graphics channel
+    - Decide which features will have an accompanying screenshot / photo
 
 ### D. (T-minus 10 working days) Judgment Day
 
