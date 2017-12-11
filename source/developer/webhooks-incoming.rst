@@ -32,13 +32,15 @@ Let's learn how to create a simple incoming webhook that posts the following mes
 
 .. code-block:: text
 
-  curl -i -X POST -d 'payload={"text": "Hello, this is some text\nThis is more text. :tada:"}' http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
+  curl -i -X POST -H 'Content-Type: application/json' -d '{"text": "Hello, this is some text\nThis is more text. :tada:"}' http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
+  # or
+  curl -i -X POST --data-urlencode 'payload={"text": "Hello, this is some text\nThis is more text. :tada:"}' http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
 
 If you're running cURL on Windows, you need to wrap the payload with double quotes (``"``) instead of single quotes (``'``). Moreover, ensure inner double quotes are escaped with a backslash and that colons have no spaces. Here's an example payload on Windows:
 
 .. code-block:: text
 
-  curl -i -X POST -d "payload={\"text\":\"Hello, this is some text\nThis is more text. :tada:\"}" http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
+  curl -i -X POST -H 'Content-Type: application/json' -d '{\"text\": "Hello, this is some text\nThis is more text. :tada:\"}' http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
 
 Parameters and Formatting
 --------------------------
