@@ -226,19 +226,23 @@ The final release is cut. If an urgent and important issue needs to be addressed
  
 If a security fix release is required, run through the following steps:
 
-1. Dev:
-    - Verify all patch fixes are backported
-    - Verify all patch fixes are tested (either via unit tests or RCs)
-    - Verify hashes and GPG signatures are correct, once build is cut
-    - Delete RCs after final version is shipped
-    - Merge changes made to release branch into master
-2. PM:
+1. PM:
     - Update the changelog
     - Submit GitLab MR to update Mattermost to latest version and email @marin and @briann in GitLab with a link to the MR
     - Update the version archive in the [upgrade guide](https://github.com/mattermost/docs/blob/master/source/administration/upgrade.md)
     - Help [test the upgrade](https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg) once the GitLab MR is merged and included in their RC
+    - Verify all patch fixes are backported
+    - Verify all patch fixes are tested (either via unit tests or RCs)
+2. Logistics:
+    - Update [Mattermost server download page](https://mattermost.org/download) with the links to the EE and TE bits
+      - Test the download links before and after updating the page
+    - Contact owners of [community installers](http://www.mattermost.org/installation/) or submit PRs to update install version number
+      - For Puppet, Heroku and Ansible Playbook, post to Installers and Images channel announcing the new release. See [example](https://pre-release.mattermost.com/core/pl/5eh8fw3jaiyzzqoc6nfwfaioya).
+      - For Chef Cookbook, open a new issue to announce the new release. See [example](https://github.com/verifi-inc/mattermost/issues/2).
+      - For Yunohost, open a new pull request to update the version. See [example](https://github.com/kemenaran/mattermost_ynh/pull/11).
+      - For OpenShift, open a new pull request to update the version. See [example](https://github.com/goern/mattermost-openshift/pull/13).
 3. Marketing:
-    - Update security update email with any new information
+    - Prepare [blog post](https://about.mattermost.com/mattermost-3-6-2/) for mattermost.com, MailChimp email blast, and [Twitter announcement](https://twitter.com/mattermosthq/status/827193482578112512), and send for marketing lead to review. Once reviewed, schedule for 08:00 PST on the day after dot release
 
 If a bug fix release is required, run through the following steps:
 
