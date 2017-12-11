@@ -120,8 +120,8 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Confirm changes to config.json in compatibility section of Changelog are written back to [settings documentation](http://docs.mattermost.com/administration/config-settings.html#configuration-settings)
 6. QA:
     - Confirm all PRs merged into the current release have been tested
-    - Finalize the release testing spreadsheet and ensure the core team has access permissions
-    - Assign each area of the spreadsheet to a team member
+    - Ensure the release testing spreadsheet covers any changes and new features, and confirm known issues are listed in the relevant tests 
+    - Assign each area of the spreadsheet to a team member and give the core team access permissions
 7. Build:  
     - Review all `TODO` notes, including one for uncommenting upgrade code
     - Confirm all PRs in [`/enterprise`](https://github.com/mattermost/enterprise/pulls) repo have been merged.
@@ -217,7 +217,7 @@ The final release is cut. If an urgent and important issue needs to be addressed
       - Submit a correction PR for any incorrect formatting or other errors missed during the initial review
     - Submit an MR to update [GitLab Mattermost documentation](https://docs.gitlab.com/omnibus/gitlab-mattermost/README.html)
 7. Marketing:
-    - Receive ign off on final version of animated GIF (for Twitter announcement, MailChimp and blog post) made up of top announcements
+    - Receive sign off on final version of animated GIF (for Twitter announcement, MailChimp and blog post) made up of top announcements
     - Receive sign off on final version of MailChimp email blast and Twitter announcement and schedule for 08:00 PST on the date of marketing announcement
     - **Note:** If the release contains a security update, also draft a Mailchimp email blast for the [Security Bulletin mailing list](http://eepurl.com/cAl5Rv)
     - Finalize blog post for mattermost.com, test on mobile view, and set timer for 08:00 PST on the day of release
