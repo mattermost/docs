@@ -40,7 +40,7 @@ Zoom webhook. Then hit **Save**.
 
 3. The setting for `overriding usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`_ and `icon URLs <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`_ need to be set to true.
 
-4. Once these steps are done, activate the plugin at **System Console > Plugins > Management**.
+4. Once these steps are done, activate the plugin at **System Console > Plugins > Management** by clicking **Activate**.
 
 .. image:: ../images/zoom_system-console_management.png
 
