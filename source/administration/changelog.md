@@ -4,8 +4,12 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
-## Release v4.4.3
+## Release v4.4.5
 
+ - **v4.4.5, release date 2017-12-11**
+   - Mattermost v4.4.5 contains a medium severity security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+ - **v4.4.4, release date 2017-12-06**
+   - Added a config.json setting, `ClientDirectory`, to set the directory to write web app plugins to. Added to better support plugins in GitLab Omnibus.
  - **v4.4.3, released 2017-12-05**
    - Fixed a medium level security issue affecting servers with [EnableOAuthServiceProvider](https://docs.mattermost.com/administration/config-settings.html#enable-oauth-2-0-service-provider) set to `true` and  [EnableOnlyAdminIntegrations](https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins) set to `false`. If you're affected, [upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **v4.4.2, released 2017-11-23**
@@ -240,8 +244,10 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 - [crspeller](https://github.com/crspeller), [jasonblais](https://github.com/jasonblais)
 
-## Release v4.3.3
+## Release v4.3.4
 
+ - **v4.3.4, release date 2017-12-11**
+   - Mattermost v4.3.4 contains a medium severity security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **v4.3.3, released 2017-12-05**
    - Fixed a medium level security issue affecting servers with [EnableOAuthServiceProvider](https://docs.mattermost.com/administration/config-settings.html#enable-oauth-2-0-service-provider) set to `true` and  [EnableOnlyAdminIntegrations](https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins) set to `false`. If you're affected, [upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **v4.3.2, released 2017-11-10**
@@ -430,8 +436,10 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 - [crspeller](https://github.com/crspeller)
 
-## Release v4.2.1
+## Release v4.2.2
 
+ - **v4.2.2, release date 2017-12-11**
+   - Mattermost v4.2.2 contains a medium severity security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **v4.2.1, released 2017-10-20**
    - Mattermost v4.2.1 contains multiple security fixes ranging from low to high severity. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **v4.2.0, released 2017-09-16**
