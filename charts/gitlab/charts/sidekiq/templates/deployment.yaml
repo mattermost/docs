@@ -11,6 +11,16 @@
 {{- $timeout := .Values.timeout -}}
 {{- $redisSecret := .Values.redis.password.secret -}}
 {{- $redisKey := .Values.redis.password.key -}}
+{{- /* The below is an messy attempt to read in, and reflect on the configmap-queues.yaml template. */}}
+{{- $queueConfigList := include (print $.Template.BasePath "/configmap-queue.yaml") . | split "\n---" }}
+{{- $queues := dict }}
+{{- range $k,$v := $queueConfigList }}
+{{-   $tmpConfig := $v | fromYaml }}
+{{-   $md := $tmpConfig.metadata }}
+{{-   $labels :=  $md.labels }}
+{{-   $_ := set $queues ( $labels.queue_pod_name | quote ) ( $v | quote ) }}
+{{- end }}
+{{- $configMapChecksum := include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
 {{- range .Values.pods -}}
 {{- $queueName := printf "%s-%s" $fullname .name | trunc 63}}
 apiVersion: extensions/v1beta1
@@ -23,6 +33,9 @@ metadata:
     release: {{ $releaseName }}
     heritage: {{ $releaseService }}
     queue-pod-name: {{ .name }}
+  annotations:
+    checksum/configmap: {{ $configMapChecksum }}
+    checksum/configmap-pod: {{ pluck ( .name | quote ) $queues | last | sha256sum }}
 spec:
   replicas: {{ default $replicas .replicas }}
   template:
