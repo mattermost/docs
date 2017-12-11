@@ -16,7 +16,7 @@ spec:
         app: {{ template "name" . }}
         release: {{ .Release.Name }}
       annotations:
-        checksum/config: {{ .Files.Get "configmap.yml" | sha256sum }}
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yml") . | sha256sum }}
     spec:
       containers:
         - name: {{ .Chart.Name }}
