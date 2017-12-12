@@ -33,9 +33,6 @@ metadata:
     release: {{ $releaseName }}
     heritage: {{ $releaseService }}
     queue-pod-name: {{ .name }}
-  annotations:
-    checksum/configmap: {{ $configMapChecksum }}
-    checksum/configmap-pod: {{ pluck ( .name | quote ) $queues | last | sha256sum }}
 spec:
   replicas: {{ default $replicas .replicas }}
   template:
@@ -43,6 +40,9 @@ spec:
       labels:
         app: {{ $name }}
         release: {{ $releaseName }}
+      annotations:
+        checksum/configmap: {{ $configMapChecksum }}
+        checksum/configmap-pod: {{ pluck ( .name | quote ) $queues | last | sha256sum }}
     spec:
       containers:
         - name: {{ $name }}
