@@ -3,19 +3,17 @@ Compliance Export Beta (E20 Add-On)
 
 Available as an `add-on to Enterprise Edition E20 <https://about.mattermost.com/pricing/>`_.
 
-This feature enables compliance exports to be produced from the System Console, with all query and download actions logged in an audit history to enable oversight and prevent unauthorized queries.
+This feature enables compliance exports to be produced from the System Console, containing all messages including those made in direct message channels, as well as file uploads.
 
 By default, Mattermost stores all message history providing an unlimited search history to admins and end users. In Enterprise Edition E20, you may set a `custom data retention policy <https://docs.mattermost.com/administration/data-retention.html>`_ for how long messages and file uploads are kept in Mattermost channels and direct messages.
 
 Those Enterprise deployments who want to archive history beyond the data retention period can enable this add-on to export compliance reports to third-party systems. Integration with Actiance Vantage is currently supported, with integrations with other systems such as GlobalRelay in the roadmap.
 
 .. note::
-  This feature will replace the existing `Compliance feature <https://docs.mattermost.com/administration/compliance.html>`_. Compliance exports to CSV will continue to be available in Enterprise Edition E20.
+  This feature will replace the existing :doc:`Compliance feature <compliance>` in a future release. Compliance exports to CSV will continue to be available in Enterprise Edition E20.
 
 .. toctree::
     :maxdepth: 2
-
-// XXXX JB: Add to TOC
 
 Set Up Guide
 --------------
@@ -27,17 +25,28 @@ Set Up Guide
 
 Save the settings. You’re now all set!
 
-// XXX JF: Any info on query output like in https://docs.mattermost.com/administration/compliance.html#compliance-query-definition-stored-in-meta-json-file that we should consider including?
+The compliance exports do not contain messages sent before the feature was enabled, but you can export past history via the ``export`` :doc:`command line tool <command-line-tools>`.
 
 Actiance Vantage Integration
 ---------------------------------
 
-// XXX JF: Is there a link to Actiance docs we can share?
+If you have chosen your file format to be Actiance XML, you can set up an integration with Actiance Vantage.
+
+For more information on Actiance Vantage archive system, see `their homepage <https://www.actiance.com/products/vantage/>`_.
 
 Frequently Asked Questions (FAQ)
 ---------------------------------
 
-// XXX JF: can you help with the following. Also happy to add more questions that you feel admins may ask about.
+How do I export past history?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1) How to export past history (via the CLI)?
-2) What happens when you archive manually --> i.e. what's exported on the next scheduled run? Is it messages between the last time the export was run to the time of the next scheduled run? If so, what happens if you run the export manually right before the scheduled run?
+Run the ``export`` :doc:`command line tool <command-line-tools>`. You can specify an `exportFrom` option to export data from. All posts that were made after this timestamp will be exported.
+
+What happens if I export data manually?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If the compliance export job is run automatically, manually via the System Console, or manually via the CLI (without the ``--exportFrom`` option), it exports all posts that were made since the last message that the previous job exported. If this is the first time that the job has ever run, all posts that were made since the feature was enabled will be exported.
+
+If the ``--exportFrom`` option is specified with the CLI command, all posts that have been made since the supplied timestamp will be exported.
+
+If the export is manually executed, and completes, right before the scheduled runtime, the scheduled instance of the job will export all posts that were made since the manual execution finished. Depending on the time between the two executions, this may be zero posts.
