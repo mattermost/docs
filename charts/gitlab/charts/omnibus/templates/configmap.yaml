@@ -24,7 +24,7 @@ data:
     gitlab_rails['db_host'] = {{ default "127.0.0.1" .Values.psql.host | quote }}
     gitlab_rails['db_port'] = {{ default .Values.service.ports.psql .Values.psql.port }}
     gitlab_rails['db_username'] = {{ default "gitlab" .Values.psql.username | quote }}
-    gitlab_rails['db_password'] = {{ .Values.psql.passsword | quote }}
+    gitlab_rails['db_password'] = {{ .Values.psql.password | quote }}
     gitlab_rails['db_database'] = {{ default "gitlabhq_production" .Values.psql.database | quote }}
     {{- end }}
     # Redis related
