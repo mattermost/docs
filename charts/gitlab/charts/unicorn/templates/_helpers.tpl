@@ -36,7 +36,7 @@ to the service name
 */}}
 {{- define "unicorn.redis.host" -}}
 {{- if .Values.redis.host -}}
-{{- .Values.redis.host | quote -}}
+{{- .Values.redis.host -}}
 {{- else -}}
 {{- $name := default "omnibus" .Values.redis.serviceName -}}
 {{- printf "%s-%s" .Release.Name $name -}}
