@@ -70,6 +70,7 @@ Administration
    /administration/announcement-banner.rst
    /administration/branding*
    /administration/compliance*
+   /administration/compliance-export*
    /administration/data-retention*
    
 Mobile Apps
