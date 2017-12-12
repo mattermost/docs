@@ -11,7 +11,7 @@ metadata:
   name: {{ printf "%s-%s" $fullname .name | trunc 63 }}
   labels:
     app: {{ $fullname }}
-    queue-pod-name: {{ .name }}
+    queue_pod_name: {{ .name }}
 data:
   sidekiq_queues.yml.erb: |
     {{- if .concurrency }}
