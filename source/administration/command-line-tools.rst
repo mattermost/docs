@@ -106,7 +106,7 @@ platform
     -  `platform import`_ - Import data
     -  `platform ldap`_ - AD/LDAP related utilities
     -  `platform license`_ - Licensing commands
-    -  `platform message_export`_ - Message export commands
+    -  `platform export`_ - Compliance export commands
     -  `platform reset`_ - Reset the database to initial state
     -  `platform roles`_ - Management of user roles
     -  `platform server`_ - Run the Mattermost server
@@ -420,17 +420,8 @@ platform license upload
 
       sudo ./platform license upload /path/to/license/mylicensefile.mattermost-license
 
-platform message_export
+platform export
 ------------------------
-
-  Description
-    Commands to run compliance exports.
-
-  Child Command
-    -  `platform message_export export`_ - Export data from Mattermost.
-
-platform message_export export
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Export data from Mattermost in a format suitable for importing into a third-party archive system.
@@ -438,17 +429,17 @@ platform message_export export
   Format
     .. code-block:: none
 
-      platform message_export export
+      platform export
 
   Example
     .. code-block:: none
 
-      sudo ./platform message_export export --format=actiance --exportFrom=1513102632
+      sudo ./platform export --format=actiance --exportFrom=1513102632
 
   Options
     .. code-block:: none
 
-          --format string Output file format. Currently, only ``actiance`` is supported
+          --format string     Output file format. Currently, only ``actiance`` is supported.
           --exportFrom string Unix timestamp (seconds since epoch, UTC) to export data from.
 
 platform reset
