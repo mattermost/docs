@@ -64,15 +64,13 @@ On GitLab Omnibus, you must be in the following directory when you run CLI comma
 Using the CLI on Docker Install
 -------------------------------
 
-On Docker install, you must be in the ``/mattermost`` directory within your Docker container when you run CLI commands.  Note that the container name may be ``mattermostdocker_app_1`` if you installed Mattermost with ``docker-compose.yml``.
+On Docker install, the default working directory is ``/mattermost/bin``, so you can use the CLI directly with the ``docker exec`` command. Note that the container name may be ``mattermostdocker_app_1`` if you installed Mattermost with ``docker-compose.yml``.
 
 **For example, to get the Mattermost version on a Docker install:**
 
   .. code-block:: bash
 
-    docker exec -it <your-mattermost-container-name> /bin/bash
-    cd /mattermost
-    bin/platform version
+    docker exec -it <your-mattermost-container-name> platform version
 
 Mattermost 3.6 and later
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -106,6 +104,7 @@ platform
     -  `platform import`_ - Import data
     -  `platform ldap`_ - AD/LDAP related utilities
     -  `platform license`_ - Licensing commands
+    -  `platform message_export`_ - Message export commands
     -  `platform reset`_ - Reset the database to initial state
     -  `platform roles`_ - Management of user roles
     -  `platform server`_ - Run the Mattermost server
@@ -418,6 +417,37 @@ platform license upload
     .. code-block:: none
 
       sudo ./platform license upload /path/to/license/mylicensefile.mattermost-license
+
+platform message_export
+------------------------
+
+  Description
+    Commands to run compliance exports.
+
+  Child Command
+    -  `platform message_export export`_ - Export data from Mattermost.
+
+platform message_export export
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Export data from Mattermost in a format suitable for importing into a third-party archive system.
+
+  Format
+    .. code-block:: none
+
+      platform message_export export
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform message_export export --format=actiance --exportFrom=1513102632
+
+  Options
+    .. code-block:: none
+
+          --format string Output file format. Currently, only ``actiance`` is supported
+          --exportFrom string Unix timestamp (seconds since epoch, UTC) to export data from.
 
 platform reset
 ---------------
