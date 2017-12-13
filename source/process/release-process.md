@@ -60,7 +60,7 @@ No pull requests for major features should be **merged** to the current release 
 6. Marketing:
     - Prepare bullet points for release announcement
     - Draft release headline and send to marketing lead for review
-    - Decide which features will have an accompanying screenshot / photo
+    - Decide which sections of the release announcement will have an accompanying screenshot / photo
 
 ### D. (T-minus 10 working days) Judgment Day
 
