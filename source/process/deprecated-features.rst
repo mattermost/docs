@@ -3,10 +3,10 @@ Deprecation Policy
 
 This document outlines the process for announcing deprecated features to the community. The guiding principle is `no surprises <https://docs.mattermost.com/developer/manifesto.html#no-surprises>`_ with guaranteed long-term stability, where admins or users should never run into anything unexpected with Mattermost.
 
-Definition of Deprecated Feature
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Definition of a Deprecated Feature
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A deprecated feature is considered one that breaks backwards compatibility with previous versions.
+A deprecated feature is considered to be one that breaks backwards compatibility with previous versions.
 
 Examples include:
 
