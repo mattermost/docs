@@ -216,7 +216,6 @@ The final release is cut. If an urgent and important issue needs to be addressed
       - Submit a correction PR for any incorrect formatting or other errors missed during the initial review
     - Submit an MR to update [GitLab Mattermost documentation](https://docs.gitlab.com/omnibus/gitlab-mattermost/README.html)
 7. Marketing:
-    - Receive sign off on final version of animated GIF (for Twitter announcement, MailChimp and blog post) made up of top announcements
     - Receive sign off on final version of MailChimp email blast and Twitter announcement and schedule for 08:00 PST on the date of marketing announcement
     - **Note:** If the release contains a security update, also draft a Mailchimp email blast for the [Security Bulletin mailing list](http://eepurl.com/cAl5Rv)
     - Finalize blog post for mattermost.com, test on mobile view, and set timer for 08:00 PST on the day of release
