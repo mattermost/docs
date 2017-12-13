@@ -7,7 +7,6 @@ channel <https://pre-release.mattermost.com/core/channels/apiv4>`__. The
 project leads are Joram Wilander (@joram) on development and Jason Blais
 (@jason) on product management.
 
-
 Looking for the API reference? That can be found here: https://api.mattermost.com/v4.
 
 Adding an Endpoint
