@@ -20,7 +20,7 @@ Set Up Guide
 
 1. Go to **System Console > Advanced > Compliance Export (Beta)**.
 2. Enable compliance exports, then set the start time of the daily scheduled compliance export job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form HH:MM.
-3. Set the export file format. Currently, export format to Actiance XML is supported, but support for the GlobalRelay EML format and the Mattermost CSV format are scheduled for a future release.
+3. Set the export file format. Currently, export format to Actiance XML is supported, but support for the GlobalRelay EML format and the Mattermost CSV format is scheduled for a future release.
 4. Set the export directory to write compliance export files to. Must be a subdirectory of the Local Storage Directory. Mattermost must have write access to this directory, and the path that you set must not include a filename.
 
 Save the settings. You’re now all set!
