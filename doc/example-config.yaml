@@ -6,10 +6,8 @@ nginx:
         serviceName: registry
         servicePort: registry
       - name: gitlab.example.local
-        serviceName: omnibus
-        servicePort: og-workhorse
-    annotations:
-      ingress.kubernetes.io/proxy-body-size: 1024M
+        serviceName: unicorn
+        servicePort: workhorse
 
 # Registry sub-chart
 registry:
@@ -32,14 +30,38 @@ registry:
 
 # GitLab sub-chart
 gitlab:
+    unicorn:
+      enabled: true
+      gitlab_host: gitlab.example.local
+      redis:
+        password:
+          secret: gitlab-redis
+          key: redis-password
+      psql:
+        serviceName: omnibus
+        password: secure-pgsql-password
+    sidekiq:
+      enabled: true
+      concurrency: 10
+      timeout: 5
+      redis:
+        password:
+          secret: gitlab-redis
+          key: redis-password
+      psql:
+        serviceName: omnibus
+        password: secure-pgsql-password
+
     # omnibus sub-chart (development only)
     omnibus:
       enabled: true
       initial_root_password: "minikube"
       unicorn:
-        worker:
-          processes: 2
-          timeout: 60
+        enabled: false
+      workhorse:
+        enabled: false
+      sidekiq:
+        enabled: false
       redis:
         enabled: true
         password:
