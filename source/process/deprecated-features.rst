@@ -1,7 +1,7 @@
 Deprecation Policy
 ===============================
 
-This document outlines the process for announcing deprecated features to the community. The guiding principle is `no surprises <https://docs.mattermost.com/developer/manifesto.html#no-surprises>`_ with guaranteed long-term stability, where admins or users should never run into anything unexpected with Mattermost.
+This document outlines the process for announcing deprecated features to the community. The guiding principle is `no surprises <https://docs.mattermost.com/developer/manifesto.html#no-surprises>`_ with guaranteed long-term stability, where admins or users should never run into anything unexpected while using Mattermost.
 
 Definition of a Deprecated Feature
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -55,6 +55,6 @@ See the table below for examples:
 | 3.10.0                | 3.10.0              | 5.0.0               |
 +-----------------------+---------------------+---------------------+
 
-Exceptions for the removal target date may be made if it impacts security or performance of using Mattermost. In such cases, the target date for removing the feature may be made sooner.
+Exceptions for the removal target date may be made if it impacts security or the performance of Mattermost. In such cases, the target date for removing the feature may be made sooner.
 
 On the other hand, if removing a feature is deemed significant, such as the removal of APIv3 endpoints, the target date for removing the feature may be extended to a later release.
