@@ -49,9 +49,9 @@ Production Docker Setup on Ubuntu
 
 Additional Guides:
 
-- **Start, stop and remove containers** using `management instructions. <https://github.com/mattermost/mattermost-docker/#startingstopping>`_
+- **Start, stop and remove containers** using `management instructions. <https://github.com/mattermost/mattermost-docker/#startingstopping-docker>`_
 
-- **Setup Database Backup** following the `database backup instructions. <https://github.com/mattermost/mattermost-docker/#database-backup>`_
+- **Setup Database Backup** following the `database backup instructions. <https://github.com/mattermost/mattermost-docker#aws>`_
 
 
 Production Docker Setup on Arch Linux
@@ -63,7 +63,7 @@ To install on Arch Linux, see the `installation guide <https://wiki.archlinux.or
 Production Docker Setup on Mac OS X
 ------------------------------------------------------------
 
-You can run a production deployment on Mac OS X by `installing Docker Compose using the online guide <http://docs.docker.com/installation/mac/>`_ then following the above instructions.
+You can run a production deployment on Mac OS X by `installing Docker Compose using the online guide <https://docs.docker.com/docker-for-mac/>`_ then following the above instructions.
 
 Other options:
 --------------
