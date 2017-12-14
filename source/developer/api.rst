@@ -1,4 +1,4 @@
 API
 ===
 
-The API has a separate `Documentation <https://api.mattermost.com>`__.
+The API has separate `documentation <https://api.mattermost.com>`__.
