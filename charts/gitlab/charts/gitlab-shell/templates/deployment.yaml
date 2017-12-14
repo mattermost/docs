@@ -15,23 +15,64 @@ spec:
       labels:
         app: {{ template "name" . }}
         release: {{ .Release.Name }}
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yml") . | sha256sum }}
     spec:
+      securityContext:
+        fsGroup: 1000
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: {{ .Values.service.internalPort }}
+          env:
+            - name: CONFIG_TEMPLATE_DIRECTORY
+              value: '/etc/gitlab-shell'
+            - name: CONFIG_DIRECTORY
+              value: '/srv/gitlab-shell'
+            - name: KEYS_DIRECTORY
+              value: '/etc/ssh/keys'
+          volumeMounts:
+            - name: shell-config
+              mountPath: '/etc/gitlab-shell'
+            - name: shell-secret
+              mountPath: '/etc/gitlab-secrets'
+              readOnly: true
+            - name: shell-redis
+              mountPath: '/etc/gitlab-redis'
+              readOnly: true
           livenessProbe:
-            httpGet:
-              path: /
-              port: {{ .Values.service.internalPort }}
-          readinessProbe:
-            httpGet:
-              path: /
-              port: {{ .Values.service.internalPort }}
+            exec:
+              command:
+              - /scripts/healthcheck
+            initialDelaySeconds: 10
+            timeoutSeconds: 3
+            periodSeconds: 10
+          # readinessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: {{ .Values.service.internalPort }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
+      volumes:
+      - name: shell-config
+        configMap:
+          name: {{ template "fullname" . }}
+      - name: shell-secret
+        secret:
+          secretName: {{ .Values.secret_token.secret }}
+          items:
+            - key: {{ .Values.secret_token.key }}
+              path: ".gitlab_shell_secret"
+          defaultMode: 0440
+      - name: shell-redis
+        secret:
+          secretName: {{ .Values.redis.password.secret }}
+          items:
+            - key: {{ .Values.redis.password.key }}
+              path: password
+          defaultMode: 0440
     {{- if .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml .Values.nodeSelector | indent 8 }}

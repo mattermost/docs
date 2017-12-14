@@ -28,5 +28,73 @@ data:
     [redis]
     URL = "tcp://{{ template "unicorn.redis.host" . }}:{{ default 6379 .Values.redis.port }}"
     Password = "<%= File.read("/etc/gitlab-redis/password") %>"
+  gitlab.yml.erb: |
+    production: &base
+      gitlab:
+        https: false # Set to true if using HTTPS, see installation.md#using-https for additional HTTPS configuration details
+        trusted_proxies:
+        email_from: example@example.com
+        email_display_name: GitLab
+        email_reply_to: noreply@example.com
+        email_subject_suffix: ''
+        default_projects_features:
+          issues: true
+          merge_requests: true
+          wiki: true
+          snippets: true
+          builds: true
+          container_registry: true
+      incoming_email:
+        enabled: false
+      artifacts:
+        enabled: true
+      lfs:
+        enabled: true
+        object_store:
+          enabled: false
+      pages:
+        enabled: false
+      mattermost:
+        enabled: false
+      gravatar:
+      registry:
+      gitlab_ci:
+      ldap:
+        enabled: false
+      kerberos:
+        enabled: false
+      omniauth:
+        enabled: false
+      shared:
+      gitaly:
+        client_path: /home/git/gitaly/bin
+        {{- if .Values.gitaly.auth_token }}
+        token: {{ .Values.gitaly.auth_token }}
+        {{- end }}
+      repositories:
+        storages: # You must have at least a `default` storage path.
+          default:
+            path: /var/opt/gitlab/repo
+            gitaly_address: tcp://{{ template "unicorn.gitaly.host" . }}:{{ default 8075 .Values.gitaly.port }}
+      backup:
+        path: "tmp/backups"   # Relative paths are relative to Rails.root (default: tmp/backups/)
+      gitlab_shell:
+        path: /home/git/gitlab-shell/
+        hooks_path: /home/git/gitlab-shell/hooks/
+        secret_file: /etc/gitlab-shell/.gitlab_shell_secret
+        upload_pack: true
+        receive_pack: true
+      workhorse:
+      git:
+        bin_path: /usr/bin/git
+      webpack:
+      monitoring:
+        ip_whitelist:
+          - 127.0.0.0/8
+        sidekiq_exporter:
+      extra:
+      rack_attack:
+        git_basic_auth:
+
 # Leave this here - This line denotes end of block to the parser.
 {{- end }}

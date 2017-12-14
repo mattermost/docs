@@ -4,7 +4,7 @@
 replicaCount: 1
 image:
   repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn
-  tag: d858c6c3ced96c32cb2b7439edd79cd98e734f36
+  tag: afeaa02cd39c81bc997c26838d904609ce03b1b2
   pullPolicy: IfNotPresent
 service:
   name: unicorn
@@ -28,6 +28,14 @@ psql:
   # database: 'gitlabhq_production'
   # username: 'gitlab'
   # password: nil
+shell:
+   secret: gitlab-shell-secret
+   key: secret
+gitaly: {}
+  # host: '0.0.0.0'
+  # serviceName: 'omnibus'
+  # port: 8075
+  # auth_token:
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little

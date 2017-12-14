@@ -31,7 +31,7 @@ to the service name
 
 {{/*
 Return the redis hostname
-If the postgresql host is provided, it will use that, otherwise it will fallback
+If the redis host is provided, it will use that, otherwise it will fallback
 to the service name
 */}}
 {{- define "unicorn.redis.host" -}}
@@ -39,6 +39,20 @@ to the service name
 {{- .Values.redis.host -}}
 {{- else -}}
 {{- $name := default "omnibus" .Values.redis.serviceName -}}
+{{- printf "%s-%s" .Release.Name $name -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
+Return the gitaly hostname
+If the gitaly host is provided, it will use that, otherwise it will fallback
+to the service name
+*/}}
+{{- define "unicorn.gitaly.host" -}}
+{{- if .Values.gitaly.host -}}
+{{- .Values.gitaly.host -}}
+{{- else -}}
+{{- $name := default "omnibus" .Values.gitaly.serviceName -}}
 {{- printf "%s-%s" .Release.Name $name -}}
 {{- end -}}
 {{- end -}}
