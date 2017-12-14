@@ -4,7 +4,7 @@
 replicaCount: 1
 image:
   repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn
-  tag: afeaa02cd39c81bc997c26838d904609ce03b1b2
+  tag: f0225fcfebc29ff96c75fd5932938edb2de02e8f
   pullPolicy: IfNotPresent
 service:
   name: unicorn
