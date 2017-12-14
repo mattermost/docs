@@ -22,8 +22,7 @@ Set Up Guide
 2. Enable compliance exports, then set the start time of the daily scheduled compliance export job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form HH:MM.
 3. Set the export file format. Currently, export format to Actiance XML is supported, but support for the GlobalRelay EML format and the Mattermost CSV format is scheduled for a future release.
 4. Set the export directory to write compliance export files to. Must be a subdirectory of the Local Storage Directory. Mattermost must have write access to this directory, and the path that you set must not include a filename.
-
-Save the settings. You’re now all set!
+5. Save the settings. You’re now all set!
 
 The compliance exports do not contain messages sent before the feature was enabled, but you can export past history via the ``export`` :doc:`command line tool <command-line-tools>`.
 
@@ -40,7 +39,7 @@ Frequently Asked Questions (FAQ)
 How do I export past history?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Run the ``export`` :doc:`command line tool <command-line-tools>`. You can specify an `exportFrom` option to export data from. All posts that were made after this timestamp will be exported.
+Run the ``export`` :doc:`command line tool <command-line-tools>`. You can specify an `exportFrom` option to export data from a specified timestamp. All posts that were made after this timestamp will be exported.
 
 What happens if I export data manually?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -49,4 +48,4 @@ If the compliance export job is run automatically, manually via the System Conso
 
 If the ``--exportFrom`` option is specified with the CLI command, all posts that have been made since the supplied timestamp will be exported.
 
-If the export is manually executed, and completes, right before the scheduled runtime, the scheduled instance of the job will export all posts that were made since the manual execution finished. Depending on the time between the two executions, this may be zero posts.
+If the export is manually executed and completed before the scheduled runtime, the scheduled instance of the job will export all posts that were made since the manual execution finished. Depending on the time between the two executions, this may be zero posts.
