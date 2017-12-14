@@ -3222,7 +3222,18 @@ Autoclose Direct Messages in Sidebar (Experimental)
 **False**: Conversations remain in the sidebar until they are manually closed.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``CloseUnusedDirectMessages": false`` with options ``true`` and ``false`` for above settings respectively.                 |                                                                           
+| This feature’s ``config.json`` setting is ``"CloseUnusedDirectMessages": false`` with options ``true`` and ``false`` for above settings respectively.                 |                                                                           
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable Preview Features (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Preview features can be enabled from **Account Settings** > **Advanced** > **Preview pre-release features**.
+
+**False**: Disables and hides preview features from **Account Settings** > **Advanced** > **Preview pre-release features**.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"EnablePreviewFeatures": true`` with options ``true`` and ``false`` for above settings respectively.                     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Team Settings
@@ -3247,8 +3258,21 @@ Town Square is Read-Only (Experimental)
 **False**: Anyone can post in Town Square.
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``""ExperimentalTownSquareIsReadOnly"": false`` with options ``true`` and ``false`` for above settings respectively.               |
+| This feature's ``config.json`` setting is ``"ExperimentalTownSquareIsReadOnly": false`` with options ``true`` and ``false`` for above settings respectively.                 |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Email Settings
+~~~~~~~~~~~~~~
+
+Use Channel Name in Email Notifications (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: Channel and team name appears in email notification subject lines. Useful for servers using only one team.
+
+**False**: Only team name appears in email notification subject line.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"UseChannelInEmailNotifications": false`` with options ``true`` and ``false`` for above settings respectively.        |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Client Requirement Settings (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
