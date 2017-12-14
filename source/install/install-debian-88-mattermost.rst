@@ -88,6 +88,9 @@ Assume that the IP address of this server is 10.10.10.2.
 
   .. note::
     If you are using MySQL, replace ``postgresql.service`` with ``mysql.service`` in 2 places in the ``[Unit]`` section.
+    
+  .. note::
+    If you have installed MySQL or PostgreSQL on a dedicated server then you need to remove the ``After=postgresql.service`` and ``Requires=postgresql.service`` or ``After=mysql.service`` and ``Requires=mysql.service`` lines in the ``[Unit]`` section or the Mattermost service will not start.
 
   c. Make systemd load the new unit.
 
