@@ -228,6 +228,9 @@ production:
     #echo "Generated root login: $ROOT_PASSWORD"
     # YAML_FILE=""${AUTO_DEVOPS_DOMAIN//\./-}.yaml"
 
+    # Use a dummy token until we have split gitaly out into its own chart
+    GITALY_AUTH_TOKEN="gitalytokenauthtokensample"
+
     helm upgrade --install \
       --wait \
       --set releaseOverride="$CI_ENVIRONMENT_SLUG" \
@@ -238,6 +241,8 @@ production:
       --set nginx.ingress.hosts[1].name="registry$DOMAIN" \
       --set nginx.ingress.hosts[1].serviceName="registry" \
       --set nginx.ingress.hosts[1].servicePort="registry" \
+      --set nginx.shell.name="gitlab-shell" \
+      --set nginx.shell.port="ssh" \
       --set nginx.ingress.tls[0].secretName=helm-charts-win-tls \
       --set nginx.ingress.tls[0].hosts[0]="gitlab$DOMAIN" \
       --set nginx.ingress.tls[0].hosts[1]="registry$DOMAIN" \
@@ -256,18 +261,26 @@ production:
       --set gitlab.sidekiq.redis.password.key=redis-password \
       --set gitlab.sidekiq.psql.serviceName=omnibus \
       --set gitlab.sidekiq.psql.password="$ROOT_PASSWORD" \
+      --set gitlab.sidekiq.gitaly.auth_token=$GITALY_AUTH_TOKEN \
       --set gitlab.unicorn.enabled=true \
       --set gitlab.unicorn.gitlab_host="gitlab$DOMAIN" \
       --set gitlab.unicorn.redis.password.secret=gitlab-redis \
       --set gitlab.unicorn.redis.password.key=redis-password \
       --set gitlab.unicorn.psql.serviceName=omnibus \
       --set gitlab.unicorn.psql.password="$ROOT_PASSWORD" \
+      --set gitlab.unicorn.shell.secret=gitlab-shell-secret \
+      --set gitlab.unicorn.shell.key=secret \
+      --set gitlab.unicorn.gitaly.auth_token=$GITALY_AUTH_TOKEN \
+      --set gitlab.gitlab-shell.enabled=true \
+      --set gitlab.gitlab-shell.secret_token.secret=gitlab-shell-secret \
+      --set gitlab.gitlab-shell.secret_token.key=secret \
       --set gitlab.omnibus.enabled=true \
       --set gitlab.omnibus.service.type=NodePort \
       --set gitlab.omnibus.external_url="https://gitlab$DOMAIN" \
       --set gitlab.omnibus.initial_root_password="$ROOT_PASSWORD" \
       --set gitlab.omnibus.sidekiq.enabled=false \
       --set gitlab.omnibus.unicorn.enabled=false \
+      --set gitlab.omnibus.unicorn.internal_api.serviceName=unicorn \
       --set gitlab.omnibus.workhorse.enabled=false \
       --set gitlab.omnibus.redis.enabled=true \
       --set gitlab.omnibus.redis.password.secret=gitlab-redis \
@@ -279,6 +292,8 @@ production:
       --set gitlab.omnibus.registry.port=443 \
       --set gitlab.omnibus.registry.secret=gitlab-registry \
       --set gitlab.omnibus.registry.certificate=registry-auth.key \
+      --set gitlab.omnibus.gitaly.enabled=true \
+      --set gitlab.omnibus.gitaly.auth_token=$GITALY_AUTH_TOKEN \
       --namespace="$KUBE_NAMESPACE" \
       --version="$CI_PIPELINE_ID-$CI_JOB_ID" \
       "$name" \

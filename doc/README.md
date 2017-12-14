@@ -45,3 +45,10 @@ For security purposes, this values is mapped as a file in the [omnibus][] chart.
 - `certificate` contains the name of the key in that secret which contains the cerficate itself.
 
 Use the `registry-auth.crt` and `secret` created in configuring the [omnibus][] chart secrets above.
+
+### GitLab Shell
+
+Generate a random secret for GitLab Shell, and use it to create the secret
+
+ - `ruby -e "require 'securerandom'; print SecureRandom.hex(64)" > ./shell_secret`
+ - `kubectl create secret generic gitlab-shell-secret --from-file=secret=shell_secret`

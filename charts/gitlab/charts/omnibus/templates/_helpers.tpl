@@ -17,7 +17,7 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 
 {{/*
 Return the workhorse auth backend
-If the postgresql host is provided, it will use that, otherwise it will fallback
+If the backend host is provided, it will use that, otherwise it will fallback
 to the service name
 */}}
 {{- define "workhorse.auth_backend" -}}
@@ -27,5 +27,19 @@ to the service name
 {{- else -}}
 {{- $name := default "omnibus" .Values.workhorse.auth_backend.serviceName -}}
 {{- printf "http://%s-%s:%s" .Release.Name $name $port -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
+Return the unicorn internal_api host
+If host is specified in the values it will use that.
+Else the serviceName will be used
+*/}}
+{{- define "unicorn.internal_api_host" -}}
+{{- if .Values.unicorn.internal_api.host -}}
+{{- .Values.unicorn.internal_api.host -}}
+{{- else if .Values.unicorn.internal_api.serviceName -}}
+{{- $name := default "omnibus" .Values.unicorn.internal_api.serviceName -}}
+{{- printf "%s-%s" .Release.Name $name -}}
 {{- end -}}
 {{- end -}}

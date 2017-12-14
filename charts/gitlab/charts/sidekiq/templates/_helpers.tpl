@@ -42,3 +42,17 @@ to the service name
 {{- printf "%s-%s" .Release.Name $name -}}
 {{- end -}}
 {{- end -}}
+
+{{/*
+Return the gitaly hostname
+If the gitaly host is provided, it will use that, otherwise it will fallback
+to the service name
+*/}}
+{{- define "sidekiq.gitaly.host" -}}
+{{- if .Values.gitaly.host -}}
+{{- .Values.gitaly.host -}}
+{{- else -}}
+{{- $name := default "omnibus" .Values.gitaly.serviceName -}}
+{{- printf "%s-%s" .Release.Name $name -}}
+{{- end -}}
+{{- end -}}

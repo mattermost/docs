@@ -37,6 +37,9 @@ spec:
           volumeMounts:
             - name: unicorn-config
               mountPath: '/var/opt/gitlab/templates'
+            - name: unicorn-shell
+              mountPath: '/etc/gitlab-shell'
+              readOnly: true
             - name: unicorn-redis
               mountPath: '/etc/gitlab-redis'
               readOnly: true
@@ -44,9 +47,9 @@ spec:
             exec:
               command:
               - /scripts/healthcheck
-            initialDelaySeconds: 10
+            initialDelaySeconds: 20
             timeoutSeconds: 30
-            periodSeconds: 30
+            periodSeconds: 60
           # readinessProbe:
           #   httpGet:
           #     path: /
@@ -57,6 +60,13 @@ spec:
       - name: unicorn-config
         configMap:
           name: {{ template "fullname" . }}
+      - name: unicorn-shell
+        secret:
+          secretName: {{ .Values.shell.secret }}
+          items:
+            - key: {{ default "secret" .Values.shell.key }}
+              path: ".gitlab_shell_secret"
+          defaultMode: 0400
       - name: unicorn-redis
         secret:
           secretName: {{ .Values.redis.password.secret }}

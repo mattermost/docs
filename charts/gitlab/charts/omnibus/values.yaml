@@ -56,6 +56,9 @@ unicorn:
   worker:
     timeout: 60
     processes: 2
+  internal_api: {}
+    # host: "0.0.0.0"
+    # serviceName: "unicorn"
 workhorse:
   enabled: false
   # point to Unicorn
@@ -66,7 +69,7 @@ workhorse:
 
 gitaly:
   enabled: false
-
+  # auth_token: nil
 # registry
 registry:
   host: registry.example.local

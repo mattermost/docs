@@ -47,6 +47,12 @@ spec:
       protocol: TCP
       name: og-workhorse
     {{- end }}
+    {{- if .Values.gitaly.enabled }}
+    - port: {{ .Values.service.ports.gitaly }}
+      targetPort: {{ .Values.service.ports.gitaly }}
+      protocol: TCP
+      name: og-gitaly
+    {{- end }}
   selector:
     app: {{ template "name" . }}
     release: {{ .Release.Name }}

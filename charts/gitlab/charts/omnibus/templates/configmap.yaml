@@ -41,6 +41,11 @@ data:
     gitlab_rails['registry_api_url'] = "http://{{ .Release.Name }}-registry:5000"
     registry['internal_key'] = File.read("/etc/gitlab-registry/registry-certificate.crt")
     # gitlab_rails['registry_key_path'] = "/etc/gitlab-registry/registry-certificate.crt"
+    # Shell related
+    {{- $apiHost := include "unicorn.internal_api_host" . -}}
+    {{- if $apiHost }}
+    gitlab_rails['internal_api_url'] = "http://{{ $apiHost }}:{{ .Values.service.ports.unicorn }}"
+    {{- end }}
     ###################
     # nginx
     nginx['enable'] = {{ .Values.nginx.enabled }}
@@ -67,6 +72,14 @@ data:
     sidekiq['enable'] = {{ .Values.sidekiq.enabled }}
     ###################
     # gitlab-shell
+    ###################
+    # gitaly
+    gitaly['enable'] = {{ .Values.gitaly.enabled }}
+    gitaly['socket_path'] = nil
+    gitaly['listen_addr'] = '0.0.0.0:{{ .Values.service.ports.gitaly }}'
+    {{- if .Values.gitaly.auth_token }}
+    gitaly['auth_token'] = {{ .Values.gitaly.auth_token | quote }}
+    {{- end }}
     ###################
     # PostgresQL
     postgresql['enable'] = {{ .Values.psql.enabled }}

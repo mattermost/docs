@@ -15,9 +15,10 @@ nginx:
 registry:
   enabled: false
 
-unicorn:
-  enabled: false
-
 gitlab:
   omnibus:
+    enabled: false
+  unicorn:
+    enabled: false
+  gitlab-shell:
     enabled: false
