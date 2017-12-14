@@ -117,10 +117,10 @@ gitlab:
     psql:
       enabled: false
       host: gl-db.home
-      password: supercalifragic
+      password: non-encoded-password
 ```
 
-These values were combined with [`example-config.yaml`]() to create `external.yaml` used below. Remove any other configuration for Redis & PostgreSQL that may be present.
+These values were combined with [`example-config.yaml`](example-config.yaml) to create `external.yaml` used below. Remove any other configuration for Redis & PostgreSQL that may be present.
 
 ## Deploy!
 

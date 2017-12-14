@@ -8,6 +8,9 @@ nginx:
       - name: gitlab.example.local
         serviceName: unicorn
         servicePort: workhorse
+  shell:
+    name: gitlab-shell
+    port: ssh
 
 # Registry sub-chart
 registry:
@@ -30,27 +33,47 @@ registry:
 
 # GitLab sub-chart
 gitlab:
+    # Unicorn (and workhorse) chart
     unicorn:
       enabled: true
       gitlab_host: gitlab.example.local
+      shell:
+        secret: gitlab-shell-secret
+      gitaly:
+        auth_token: generatedAuthToken
       redis:
+        serviceName: omnibus
         password:
           secret: gitlab-redis
           key: redis-password
       psql:
         serviceName: omnibus
         password: secure-pgsql-password
+    # Sidekiq chart, with split queues (see charts/gitlab/charts/sidekiq/values.yaml)
     sidekiq:
       enabled: true
       concurrency: 10
       timeout: 5
+      gitaly:
+        auth_token: generatedAuthToken
       redis:
+        serviceName: omnibus
         password:
           secret: gitlab-redis
           key: redis-password
       psql:
         serviceName: omnibus
         password: secure-pgsql-password
+
+    gitlab-shell:
+      enabled: true
+      unicorn:
+        serviceName: unicorn
+      redis:
+        serviceName: omnibus
+        password:
+          secret: gitlab-redis
+          key: redis-password
 
     # omnibus sub-chart (development only)
     omnibus:
@@ -62,6 +85,11 @@ gitlab:
         enabled: false
       sidekiq:
         enabled: false
+      shell:
+        enabled: false
+      gitaly:
+        enabled: true
+        auth_token: generatedAuthToken
       redis:
         enabled: true
         password:
@@ -69,6 +97,7 @@ gitlab:
           key: redis-password
       psql:
         enabled: true
+        sql_user_password: ${echo -n '${secure-pgsql-password}gitlab' | md5sum - | cut -d ' ' -f1}
       registry:
         host: registry.example.local
         port: 80

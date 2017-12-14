@@ -67,6 +67,65 @@ trusted_proxies:
 - "192.168.0.0/16"
 ```
 
+`initial_root_password` will be populated into the container, so that the root password workflow is not triggered.
+
+### unicorn
+
+```YAML
+unicorn:
+  enabled: false
+  worker:
+    timeout: 60
+    processes: 2
+  internal_api: {}
+    # host: "0.0.0.0"
+    # serviceName: "unicorn"
+```
+
+`enabled`: if `true`, use the Unicorn service inside the container.
+
+`worker.timeout`: Timeout in seconds per a worker process.
+
+`worker.processes`: Number of unicorn worker processes to create. **Note:** [Minimum is 2](https://gitlab.com/gitlab-org/gitlab-ce/issues/18771)
+
+`internal_api`: If set, will set the `internal_api_url` for services inside the `omnibus` container. This allows for API traffic to flow inside the cluster, without going through the `Ingress`. Set if you are _not_ using the `omnibus` chart for Unicorn services.
+
+### workhorse
+
+```YAML
+workhorse:
+  enabled: false
+  # point to Unicorn
+  auth_backend: {}
+    # host: "http://0.0.0.0"
+    # serviceName: "unicorn"
+    # port: 8080
+```
+
+`enabled`: if `true`, use Workhorse services from the `omnibus` chart.
+
+`auth_backend`: Configure this is Unicorn services are external to the `omnibus` chart.
+
+`host`: URI for the external Unicorn services. Use this if Unicorn services are outside the cluster.
+
+`serviceName`: The name of the service within the deployment that provides `unicorn` services. (Hint: `unicorn`)
+
+`port`: Provide the port number of the Unicorn services. Default: `8080`
+
+### sidekiq
+
+`enabled`: if `true`, use Sidekiq inside the `omnibus` chart.
+
+### shell
+
+`enabled`: if `true`, provide GitLab Shell services inside the `omnibus` chart.
+
+### gitaly
+
+`enabled`: if `true`, use the internal Gitaly service.
+
+`auth_token`: provide a generated secret for Gitaly authentication token. This should be provided to all charts that would use Gitaly from the `omnibus` chart.
+
 ## NGINX
 
 Out of the box, the NGINX component is disabled. It will be configured, but not started.
@@ -115,9 +174,9 @@ redis:
 ### Enable internal PostgreSQL
 
 
-Out of the box, the Redis component is disabled.
+Out of the box, the PostgreSQL component is disabled.
 
-To make use of the packaged Redis, set:
+To make use of the packaged PostgreSQL, set:
 
 ```
 psql:
@@ -133,7 +192,10 @@ If you use the built-in PostgreSQL, the following will default to connect intern
 - `port` contains the port on the `host` to connect to. Default: `5432`
 - `database` contains the database name GitLab will use. Default: `gitlabhq_production`
 - `username` contains the username for authentication to the server. Default: `gitlab`
-- `password` contains the password for authentication to the server. Default: `nil`.
+- `password` contains the password for authentication to the server. Default: `nil`
+- `sql_user_password` contains the encoded password for MD5 authentication to the psql server. Default: `nil`
+  - This should only be supplied when using the **internal** PostgreSQL.
+  - The value of this should be `echo -n "${password}gitlab" | md5sum - | cut -d ' ' -f 1`
 
 When using an external PostgreSQL, you will need to provide all of the above.
 
