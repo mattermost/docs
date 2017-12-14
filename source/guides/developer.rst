@@ -13,7 +13,7 @@ Development Process
    /developer/contribution*
    /developer/dev-setup.rst
    /developer/mobile-developer-setup.rst
-   /developer/api*
+   /developer/api-development*
    /developer/developer-flow*
    /developer/webapp-to-redux.rst
    /developer/webapp-component.rst
