@@ -11,12 +11,12 @@ Release date: 2017-12-16
 
 #### Zoom Plugin (Beta)
 
-- [Zoom](https://www.zoom.us/) video calling and screensharing plugin. Learn more [here](XXXXXX Link to docs).
+- [Zoom](https://www.zoom.us/) video calling and screensharing plugin. Learn more [here](XXXXXX JB).
 - Manage plugins from the **System Console > Plugins (Beta)** section.
 
 #### Actiance Support (Beta) ([Enterprise Edition E20](https://about.mattermost.com/pricing/))
 
-- Message export supporting for [Actiance](https://www.actiance.com/) as a compliance solution. Learn more [here](XXXXXX Link to docs).
+- Message export supporting for [Actiance](https://www.actiance.com/) as a compliance solution. Learn more [here](XXXXXX JB).
 - Access message export from the **System Console > Advanced > Message Export (Beta)**.
 
 ### Improvements
@@ -78,22 +78,22 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 **Changes to Team Edition and Enterprise Edition**:
 
 - Under `ServiceSettings` in `config.json`:
-  - Added `"EnablePreviewFeatures": true` 
-  - Added `"CloseUnusedDirectMessages": false` 
-  - Added `"ExperimentalEnableAuthenticationTransfer": true`
+  - Added `"EnablePreviewFeatures": true` to hide the **Advanced** > **Preview re-release features** section from Account Settings.
+  - Added `"CloseUnusedDirectMessages": false` to hide inactive direct message channels from the sidebar.
+  - Added `"ExperimentalEnableAuthenticationTransfer": true` to set whether users can change authentication methods.
 - Under `EmailSettings` in `config.json`:
-  - Added `"UseChannelInEmailNotifications": false` 
+  - Added `"UseChannelInEmailNotifications": false` to set whether email notifications contain the channel name in the subject line.
 - Under `PluginSettings` in `config.json`:
   - Added `"ClientDirectory": "./client/plugins"` to set the location of client plugins.
 
 **Additional Changes to Enterprise Edition**:
 
 - Added `MessageExportSettings` in `config.json`:
-  - Added `"EnableExport": false`
-  - Added `"DailyRunTime": "01:00"`
-  - Added `"ExportFromTimestamp": 0`
-  - Added `"FileLocation": "export"`
-  - Added `"BatchSize": 10000`
+  - Added `"EnableExport": false`to enable message export.
+  - Added `"DailyRunTime": "01:00"` to set the time for the daily export job.
+  - Added `"ExportFromTimestamp": 0` to set the timestamp for which posts to include in the message export.
+  - Added `"FileLocation": "export"` to set the message export location.
+  - Added `"BatchSize": 10000` XXXXXX JB - also are these message export settings written to the config settings doc?
 
 ### API v4 Changes
 
@@ -102,8 +102,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Known Issues
 
-XXXXXX Will update more after release testing
-
 - Google login fails on the Classic mobile apps.
 - User can receive a video call from another browser tab while already on a call.
 - Jump link in search results does not always jump to display the expected post.
@@ -111,12 +109,15 @@ XXXXXX Will update more after release testing
 - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
 - Searching with Elasticsearch enabled may not always highlight the searched terms.
 - Team sidebar doesn't always show unreads from other teams on first load.
+- Team sidebar on desktop app does not update when channels have been read on mobile.
 - System Admin cannot reset their own password via the System Console.
 - Channel scroll position flickers while images and link previews load.
 - CTRL/CMD+U shortcut to upload a file doesn't work on Firefox.
-- Profile pictures don't immediately update across tabs or in the right-hand side comment threads.
+- Profile pictures and usernames don't immediately update across tabs or in the right-hand side comment threads.
 - Fixed an issue where only System Admins could edit OAuth apps even if integration creation was not restricted to admins.
-
+- Numbered lists can sometimes extend beyond the normal post area.
+- Typing an emoji reaction does not add it to recently used emojis.
+- Server logs contain messages about initializing plugins even when plugins are disabled.
 
 ### Contributors
 
