@@ -26,12 +26,12 @@ Release date: 2017-12-16
 - Link previews now appear in the right-hand side in comment threads.
 - Timestamp permalinks now open in the current view on desktop and browser.
 - Pinned posts are now sorted newest to oldest.
-- Updated markdown to better handle non-latin characters in URLs.
+- Updated markdown to better handle non-Latin characters in URLs.
 
 #### Integrations
 
 - Add option for an outgoing webhooks to reply to the posted message as a comment.
-- JIRA plugin is now bundled as a prepackaged plugin managable from the System Console > Plugins > Management
+- JIRA plugin is now bundled as a prepackaged plugin manageable from the System Console > Plugins > Management
 
 #### Channels
 
@@ -89,7 +89,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 **Additional Changes to Enterprise Edition**:
 
 - Added `MessageExportSettings` in `config.json`:
-  - Added `"EnableExport": false`to enable message export.
+  - Added `"EnableExport": false` to enable message export.
   - Added `"DailyRunTime": "01:00"` to set the time for the daily export job.
   - Added `"ExportFromTimestamp": 0` to set the timestamp for which posts to include in the message export.
   - Added `"FileLocation": "export"` to set the message export location.
