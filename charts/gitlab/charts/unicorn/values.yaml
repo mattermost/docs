@@ -4,8 +4,8 @@
 replicaCount: 1
 image:
   repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn
-  tag: f0225fcfebc29ff96c75fd5932938edb2de02e8f
-  pullPolicy: IfNotPresent
+  tag: latest
+  pullPolicy: Always
 service:
   name: unicorn
   type: ClusterIP

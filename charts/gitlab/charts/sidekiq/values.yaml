@@ -3,8 +3,8 @@
 # Declare variables to be passed into your templates.
 image:
   repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-sidekiq
-  tag: a07e8f7858ec848012384fad6a31a9565f8742b8
-  pullPolicy: IfNotPresent
+  tag: latest
+  pullPolicy: Always
 enabled: false
 redis:
   # host: '0.0.0.0'
