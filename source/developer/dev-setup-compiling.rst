@@ -11,7 +11,7 @@ tl;dr
 
   # Start the web app (optional)
   cd $WEBAPP_DIR
-  make help
+  make run
 
   # Make docs from either repo
   make help
