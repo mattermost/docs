@@ -2604,6 +2604,44 @@ This button initiates a Data Retention deletion job immediately.
 You can monitor the status of the job in the data deletion job table below this button.
 ________
 
+Compliance Export (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*Available as an add-on to Enterprise Edition E20*
+
+Enable Compliance Export
+^^^^^^^^^^^^^^^^^^^^^^^^^
+**True:** When true, Mattermost will generate a compliance export file that contains all messages that were posted in the last 24 hours. The export task is scheduled to run once per day. See the `documentation to learn more <https://about.mattermost.com/default-compliance-export-documentation>`_.
+
+**False:** When false, Mattermost doesn't generate a compliance export file.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableExport": false`` with options ``true`` and ``false``.                                                                      |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Compliance Export Time
+^^^^^^^^^^^^^^^^^^^^^^^^
+Set the start time of the daily scheduled compliance export job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form HH:MM.
+
+This setting is based on the local time of the server.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DailyRunTime": 01:00`` with 24-hour time stamp input in the form HH:MM                                                           |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Export File Format
+^^^^^^^^^^^^^^^^^^^^^^^^
+File format of the compliance export. Corresponds to the system that you want to import the data into.
+
+Currently Actiance XML is supported.
+
+Run Compliance Export Job Now
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This button initiates a Compliance Export job immediately.
+
+You can monitor the status of the job in the compliance export job table below this button.
+
+________
+
 Elasticsearch (Beta)
 ~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
@@ -3191,6 +3229,37 @@ Determines the maximum time window for a batch of posts being indexed by the Bul
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"BulkIndexingTimeWindowSeconds": 3600`` with whole number input     |
 +-----------------------------------------------------------------------------------------------------------------+
+
+________
+
+Message Export Settings
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Export From Timestamp
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Set the Unix timestamp (seconds since epoch, UTC) to export data from.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExportFromTimestamp": "0"`` with whole number input.                                                                    |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+File Location
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Set the file location of the compliance exports.
+
+By default, they are written to the `exports` subdirectory of the configured `Local Storage directory <https://docs.mattermost.com/administration/config-settings.html#storage>`.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileLocation": "export"`` with string input.                                                                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Batch Size
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Determines how many new posts are batched together to a compliance export file.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"BatchSize": "10000"`` with whole number input.                                                                          |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Plugin Settings  (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~
