@@ -4,8 +4,8 @@
 replicaCount: 1
 image:
   repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-shell
-  tag: b4db3ec0027b461b18ca386da323f1b57b4e014c
-  pullPolicy: IfNotPresent
+  tag: latest
+  pullPolicy: Always
 service:
   name: gitlab-shell
   type: ClusterIP
