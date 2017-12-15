@@ -23,7 +23,7 @@ Set Up Guide
 3. Set the export file format. Currently, export format to Actiance XML is supported, but support for the GlobalRelay EML format and the Mattermost CSV format is scheduled for a future release.
 4. Save the settings. You’re now all set!
 
-The compliance exports do not contain messages sent before the feature was enabled, but you can export past history via the ``export`` :doc:`command line tool <command-line-tools>`.
+The compliance exports do not contain posts sent before the feature was enabled, but you can export past history via the ``export`` :doc:`command line tool <command-line-tools>`. Posts made prior to upgrading to Mattermost v4.5 will have less accurate channel member history information.
 
 The compliance exports are written to the `exports` subdirectory of the configured `Local Storage directory <https://docs.mattermost.com/administration/config-settings.html#storage>`_, in the format you chose in step 3.
 
