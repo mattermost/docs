@@ -76,7 +76,7 @@ Enterprise Edition Features
 
 5. **SAML-based SSO**
 
-.. image:: ../images/SAML-based_SSO.png
+.. image:: ../images/SAML_based_SSO.png
 
 6. **Performance Monitoring**
 
@@ -88,7 +88,7 @@ Enterprise Edition Features
 
 8. **Compliance Reporting**
 
-.. image:: ../images/compliance_reporting.png
+.. image:: ../images/compliance_reports.png
 
 9. **Data Retention**
 
