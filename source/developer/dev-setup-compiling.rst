@@ -1,5 +1,22 @@
 .. _dev-compiling:
 
+tl;dr
+-----
+
+.. code-block:: bash
+
+  # Start the API server (required)
+  cd ~/go/src/github.com/mattermost/mattermost-server
+  make run
+
+  # Start the web app (optional)
+  cd $WEBAPP_DIR
+  make help
+
+  # Make docs from either repo
+  make help
+  
+
 Compiling Mattermost
 ====================
 
@@ -20,28 +37,14 @@ The first time that you use the ``make run`` command can take a substantial amou
 
 To start contributing to Mattermost, see :doc:`Developer Flow <developer-flow>`.
 
-Useful Make Commands
---------------------
 
-make run
-  Starts the Docker container, compiles the server and client code, and makes Mattermost available at http://localhost:8065 on the machine that you ran this command on. The first time that you use this command, the MySQL, PostgreSQL, and Inbucket Docker images are downloaded and installed.
-make test
-  Runs the unit tests for server and client.
-make test
-  Runs the unit tests for server only.
-make clean
-  Removes all output files, including log files and executable binaries.
-make start-docker
-  Starts the Docker container.
-make stop-docker
-  Stops the Docker container.
-make clean-docker
-  Removes all content from the databases in the Docker container and resets them to their original state.
-make build-linux, make build-osx, and make build-windows
-  Builds the server for the specified platform. See the `make package` command for instructions on how to set up for cross-compiling.
-make build
-  Builds the server for Linux, OS X, and Windows platforms. See the `make package` command for instructions on how to set up for cross-compiling.
-make package
+Make Commands
+-------------
+
+``make help``:
+  Displays all of the make commands.
+
+``make package`` additional notes:
   Creates packages for distributing your builds and puts them in the ``~/go/src/github.com/mattermost/mattermost-server/dist`` directory. If you want to make packages for targets other than your build machine, you must run the following commands first:
 
   1. Modify permissions on ``/usr/local/go``. Replace *{user}* and *{group}* with the user and group that you are logged in with.
