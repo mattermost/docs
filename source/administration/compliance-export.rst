@@ -21,10 +21,11 @@ Set Up Guide
 1. Go to **System Console > Advanced > Compliance Export (Beta)**.
 2. Enable compliance exports, then set the start time of the daily scheduled compliance export job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form HH:MM.
 3. Set the export file format. Currently, export format to Actiance XML is supported, but support for the GlobalRelay EML format and the Mattermost CSV format is scheduled for a future release.
-4. Set the export directory to write compliance export files to. Must be a subdirectory of the Local Storage Directory. Mattermost must have write access to this directory, and the path that you set must not include a filename.
-5. Save the settings. You’re now all set!
+4. Save the settings. You’re now all set!
 
 The compliance exports do not contain messages sent before the feature was enabled, but you can export past history via the ``export`` :doc:`command line tool <command-line-tools>`.
+
+The compliance exports are written to the `exports` subdirectory of the configured `Local Storage directory <https://docs.mattermost.com/administration/config-settings.html#storage>`_, in the format you chose in step 3.
 
 Actiance Vantage Integration
 ---------------------------------
@@ -44,8 +45,6 @@ Run the ``export`` :doc:`command line tool <command-line-tools>`. You can specif
 What happens if I export data manually?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If the compliance export job is run automatically, manually via the System Console, or manually via the CLI (without the ``--exportFrom`` option), it exports all posts that were made since the last message that the previous job exported. If this is the first time that the job has ever run, all posts that were made since the feature was enabled will be exported.
+If the compliance export job is run automatically, manually via the System Console, or manually via the CLI (without the ``--exportFrom`` option), it exports all posts that were made since the last post that the previous execution of the job exported. If this is the first time that the job has ever run, all posts that were made since the feature was enabled will be exported.
 
 If the ``--exportFrom`` option is specified with the CLI command, all posts that have been made since the supplied timestamp will be exported.
-
-If the export is manually executed and completed before the scheduled runtime, the scheduled instance of the job will export all posts that were made since the manual execution finished. Depending on the time between the two executions, this may be zero posts.
