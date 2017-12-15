@@ -11,13 +11,13 @@ Release date: 2017-12-16
 
 #### Zoom Plugin (Beta)
 
-- [Zoom](https://www.zoom.us/) video calling and screensharing plugin. Learn more [here](XXXXXX JB).
+- [Zoom](https://www.zoom.us/) video calling and screensharing plugin. Learn more [here](https://about.mattermost.com/default-zoom-documentation).
 - Manage plugins from the **System Console > Plugins (Beta)** section.
 
 #### Actiance Support (Beta) ([Enterprise Edition E20](https://about.mattermost.com/pricing/))
 
-- Message export supporting for [Actiance](https://www.actiance.com/) as a compliance solution. Learn more [here](XXXXXX JB).
-- Access message export from the **System Console > Advanced > Message Export (Beta)**.
+- Compliance export supporting for [Actiance](https://www.actiance.com/) as a compliance solution. Learn more [here](https://about.mattermost.com/default-compliance-export-documentation).
+- Access compliance export from the **System Console > Advanced > Compliance Export (Beta)**.
 
 ### Improvements
 
@@ -93,7 +93,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
   - Added `"DailyRunTime": "01:00"` to set the time for the daily export job.
   - Added `"ExportFromTimestamp": 0` to set the timestamp for which posts to include in the message export.
   - Added `"FileLocation": "export"` to set the message export location.
-  - Added `"BatchSize": 10000` XXXXXX JB - also are these message export settings written to the config settings doc?
+  - Added `"BatchSize": 10000` to set how many new posts are batched together to a compliance export file.
 
 ### API v4 Changes
 
