@@ -13,6 +13,13 @@ To generate the HTML files from markdown in the `/source` directory:
 3. `pip install recommonmark`
 4. Type `make html`
 
+## Update HTML files on save of source files (macOS)
+
+```bash
+brew install fswatch
+make watch
+```
+
 ## Contributing
 
 **How to create Pull Requests to edit or create Mattermost documentation (by community members):**
