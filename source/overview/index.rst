@@ -8,6 +8,7 @@ Overviews of features, security, deployment, integrations and authentication.
    :glob:
 
    /overview/product*
+   /overview/features*
    /overview/security*
    /deployment/deployment*
    /overview/integrations*
