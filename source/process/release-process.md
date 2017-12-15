@@ -21,25 +21,25 @@ Pre-work for the current release begins at the code complete date of the previou
 
 ### B. (T-minus 15 working days) Cut-off for submitting major features
 
-No pull requests for major features should be **submitted** to the current release after this date. Exceptions can be made by the Release Manager in special cases. 
+No pull requests for major features should be **submitted** to the current release after this date. In special cases, exceptions can be made by the Release Manager. 
 
 1. Release Manager:
     - Post this checklist in Release Checklist channel
 2. PM:
     - Prioritize reviewing major features, ensuring any bugs and UX issues get fixed
     - Check that all major features are behind a feature flag
-    - Confirm with Leads that each Enterprise feature is in the correct [pricing SKU](https://about.mattermost.com/pricing/), if not alert the release manager
+    - Confirm with Leads that each Enterprise feature is in the correct [pricing SKU](https://about.mattermost.com/pricing/). If not, alert the release manager
 3. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for major features
 
 ### C. (T-minus 12 working days) Cut-off for merging major features
 
-No pull requests for major features should be **merged** to the current release after this date. Exceptions can be made by the release manager in special cases.
+No pull requests for major features should be **merged** to the current release after this date. In special cases, exceptions can be made by the Release Manager.
 
 1. **(Team) Major Feature Complete Meeting (10:00am San Francisco time)**:  
     - Discuss worst bug currently on master
     - Discuss release highlights for marketing
-    - Review status of last feature PRs to be merged
+    - Review status of remaining feature PRs to be merged
 2. Release Manager:
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
@@ -49,14 +49,14 @@ No pull requests for major features should be **merged** to the current release 
         - https://github.com/mattermost/mattermost-webapp/blob/master/package.json
         - https://github.com/mattermost/mattermost-server/blob/master/glide.yaml
 3. Logistics:
-    - Start posting a daily Zero Bug Balance query
-    - Notify community about upcoming release in Reception
+    - Start posting a daily Zero Bug Balance query (posted until zero bugs or day of release)
+    - Notify community about upcoming release in Reception [see example](https://pre-release.mattermost.com/core/pl/aq434e5dt3ntmfdowhekxjzi4r)
 4. PM:
     - Review and update [company roadmap](https://about.mattermost.com/direction/) with which major features made it into the release
-    - Review Jira Backlog and move any tickets that will not be merged to the next release
+    - Review Jira Backlog and move any tickets that will not be merged, to the next release
 5. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
-      - After the cut-off, any PRs that include significant code changes require approval of the release manager before merging
+      - After the cut-off, any PRs that include significant code changes, require approval of the release manager before merging
 6. Marketing:
     - Prepare bullet points for release announcement
     - Draft release headline and send to marketing lead for review
@@ -77,7 +77,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Create meta issue for release in GitHub (see [example](https://github.com/mattermost/mattermost-server/issues/3702))
 3. Logistics:
     - Confirm date of marketing announcement for the release date with Marketing, and update release channel header if needed
-    - Post a reminder to devs in the Release Discussion channel of the the code complete date with the ZBB count
+    - Post a reminder to devs in the Release Discussion channel of the the code complete date with the ZBB count [see example](https://pre-release.mattermost.com/core/pl/coggyys9atg7fqyam81q3gkmoo)
 4. Leads:
     - Finalize roadmap for next release, and identify planned marketing bullet points
 5. PM:
@@ -99,7 +99,7 @@ Day when Leads and PMs decide which major features are included in the release, 
 2. Release Manager:
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
-    - Review all [Severity 1 bugs (data loss or security)](https://mattermost.atlassian.net/secure/IssueNavigator.jspa?mode=hide&requestId=10600) to consider for adding to Hotfix list
+    - Review all [Severity 1 bugs (data loss or security)](https://mattermost.atlassian.net/secure/IssueNavigator.jspa?mode=hide&requestId=10600) to consider adding to Hotfix list
     - Update documentation:  
         - Submit Changelog PR
         - Draft [Mattermost Security Updates](http://about.mattermost.com/security-updates/), but do not post until 14 days after official release
@@ -240,7 +240,7 @@ If a security fix release is required, run through the following steps:
       - For Yunohost, open a new pull request to update the version. See [example](https://github.com/kemenaran/mattermost_ynh/pull/11).
       - For OpenShift, open a new pull request to update the version. See [example](https://github.com/goern/mattermost-openshift/pull/13).
 3. Marketing:
-    - Prepare [blog post](https://about.mattermost.com/mattermost-3-6-2/) for mattermost.com, MailChimp email blast, and [Twitter announcement](https://twitter.com/mattermosthq/status/827193482578112512), and send for marketing lead to review. Once reviewed, schedule for 08:00 PST on the day after dot release
+    - Prepare [blog post](https://about.mattermost.com/mattermost-3-6-2/) for mattermost.com, MailChimp email blast, and [Twitter announcement](https://twitter.com/mattermosthq/status/827193482578112512), and send to marketing lead for review. Once reviewed, schedule for 08:00 PST on the day after dot release
 
 If a bug fix release is required, run through the following steps:
 
@@ -333,7 +333,7 @@ Once bug fix release is ready to cut:
              - [Push final build to gitlab.mattermost.com](https://mattermost.atlassian.net/browse/PLT-3117)
          - Release week (for PM)
              - [Test Gitlab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/PLT-2197)
-    - Confirm that [mattermost-docker](https://github.com/mattermost/mattermost-docker/releases) has been updated to the latest version  (contact the maintainer via direct message on pre-release if necessary)
+    - Confirm that [mattermost-docker](https://github.com/mattermost/mattermost-docker/releases) has been updated to the latest version (contact the maintainer via direct message on pre-release if necessary)
     - Contact owners of [community installers](http://www.mattermost.org/installation/) or submit PRs to update install version number
       - For Puppet, Heroku and Ansible Playbook, post to Installers and Images channel announcing the new release. See [example](https://pre-release.mattermost.com/core/pl/5eh8fw3jaiyzzqoc6nfwfaioya).
       - For Chef Cookbook, open a new issue to announce the new release. See [example](https://github.com/verifi-inc/mattermost/issues/2).
