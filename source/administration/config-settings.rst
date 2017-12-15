@@ -3222,7 +3222,7 @@ Autoclose Direct Messages in Sidebar (Experimental)
 **False**: Conversations remain in the sidebar until they are manually closed.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"CloseUnusedDirectMessages": false`` with options ``true`` and ``false`` for above settings respectively.                 |                                                                           
+| This feature’s ``config.json`` setting is ``"CloseUnusedDirectMessages": false`` with options ``true`` and ``false`` for above settings respectively.                |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Preview Features (Experimental)
