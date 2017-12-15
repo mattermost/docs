@@ -15,23 +15,69 @@ spec:
       labels:
         app: {{ template "name" . }}
         release: {{ .Release.Name }}
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yml") . | sha256sum }}
     spec:
+      securityContext:
+        fsGroup: 1000
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: {{ .Values.service.internalPort }}
+          env:
+            - name: CONFIG_TEMPLATE_DIRECTORY
+              value: '/etc/gitaly/templates'
+            - name: CONFIG_DIRECTORY
+              value: '/etc/gitaly'
+            - name: GITALY_CONFIG_FILE
+              value: '/etc/gitaly/config.toml'
+          volumeMounts:
+            - name: gitaly-config
+              mountPath: '/etc/gitaly/templates'
+            - name: gitaly-secrets
+              mountPath: '/etc/gitlab-secrets'
+              readOnly: true
           livenessProbe:
-            httpGet:
-              path: /
-              port: {{ .Values.service.internalPort }}
+            exec:
+              command:
+              - /scripts/healthcheck
+            initialDelaySeconds: 30
+            timeoutSeconds: 3
+            periodSeconds: 10
           readinessProbe:
-            httpGet:
-              path: /
-              port: {{ .Values.service.internalPort }}
+            exec:
+              command:
+              - /scripts/healthcheck
+            initialDelaySeconds: 10
+            timeoutSeconds: 3
+            periodSeconds: 10
           resources:
 {{ toYaml .Values.resources | indent 12 }}
+      volumes:
+      - name: gitaly-config
+        configMap:
+          name: {{ template "fullname" . }}
+      - name: gitaly-secrets
+        projected:
+          defaultMode: 0440
+          sources:
+          - secret:
+              name: {{ .Values.secret.name }}
+              items:
+                - key: {{ .Values.secret.key }}
+                  path: "gitaly_token"
+          - secret:
+              name: {{ .Values.shell.secret }}
+              items:
+                - key: {{ .Values.shell.key }}
+                  path: ".gitlab_shell_secret"
+          - secret:
+              name: {{ .Values.redis.password.secret }}
+              items:
+                - key: {{ .Values.redis.password.key }}
+                  path: redis_password
     {{- if .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml .Values.nodeSelector | indent 8 }}

@@ -61,7 +61,7 @@ See [helm][] documentation for installation & initialization.
 ## Create Secrets
 
 For a functional deployment, these secrets are needed: Certificates, Registry
-certificates, Redis password, and GitLab Shell Secret.
+certificates, Redis password, GitLab Shell Secret, and Gitaly Secret.
 
 ### Certificates
 
@@ -117,6 +117,13 @@ Generate a random secret for GitLab Shell, and use it to create the secret
 ```
 $ ruby -e "require 'securerandom'; print SecureRandom.hex(64)" > ./shell_secret
 $ kubectl create secret generic gitlab-shell-secret --from-file=secret=shell_secret
+```
+
+### Gitaly Secret
+
+```
+$ ruby -e "require 'securerandom'; print SecureRandom.hex(64)" > ./gitaly_secret
+$ kubectl create secret generic gitaly-secret --from-file=token=gitaly_secret
 ```
 
 ## Configure

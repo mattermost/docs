@@ -33,13 +33,13 @@ omnibus:
   psql:
     enabled: true
   shell:
-    enabled: true
+    enabled: false
   unicorn:
-    enabled: true
+    enabled: false
   workhorse:
-    enabled: true
+    enabled: false
   gitaly:
-    enabled: true
+    enabled: false
 pages:
   enabled: false
 sidekiq:

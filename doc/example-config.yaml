@@ -40,7 +40,9 @@ gitlab:
       shell:
         secret: gitlab-shell-secret
       gitaly:
-        auth_token: generatedAuthToken
+        auth_token:
+          secret: gitaly-secret
+          key: token
       redis:
         serviceName: omnibus
         password:
@@ -74,22 +76,16 @@ gitlab:
         password:
           secret: gitlab-redis
           key: redis-password
+    gitaly:
+      enabled: true
+      secret:
+        name: gitaly-secret
+        key: token
 
     # omnibus sub-chart (development only)
     omnibus:
       enabled: true
       initial_root_password: "minikube"
-      unicorn:
-        enabled: false
-      workhorse:
-        enabled: false
-      sidekiq:
-        enabled: false
-      shell:
-        enabled: false
-      gitaly:
-        enabled: true
-        auth_token: generatedAuthToken
       redis:
         enabled: true
         password:
@@ -98,8 +94,3 @@ gitlab:
       psql:
         enabled: true
         sql_user_password: ${echo -n '${secure-pgsql-password}gitlab' | md5sum - | cut -d ' ' -f1}
-      registry:
-        host: registry.example.local
-        port: 80
-        secret: omnibus-registry
-        certificate: gitlab-registry.key

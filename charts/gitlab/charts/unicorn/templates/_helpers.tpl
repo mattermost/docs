@@ -52,7 +52,7 @@ to the service name
 {{- if .Values.gitaly.host -}}
 {{- .Values.gitaly.host -}}
 {{- else -}}
-{{- $name := default "omnibus" .Values.gitaly.serviceName -}}
+{{- $name := default "gitaly" .Values.gitaly.serviceName -}}
 {{- printf "%s-%s" .Release.Name $name -}}
 {{- end -}}
 {{- end -}}

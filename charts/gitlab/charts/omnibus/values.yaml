@@ -4,8 +4,8 @@
 replicaCount: 1
 image:
   repository: gitlab/gitlab-ee
-  tag: 10.2.0-ee.0
-  pullPolicy: IfNotPresent
+  tag: nightly
+  pullPolicy: Always
 service:
   name: omnibus
   type: ClusterIP
@@ -60,6 +60,8 @@ unicorn:
   internal_api: {}
     # host: "0.0.0.0"
     # serviceName: "unicorn"
+sidekiq:
+  enabled: false
 workhorse:
   enabled: false
   # point to Unicorn

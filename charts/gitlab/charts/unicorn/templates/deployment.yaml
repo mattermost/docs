@@ -37,6 +37,9 @@ spec:
             - name: unicorn-shell
               mountPath: '/etc/gitlab-shell'
               readOnly: true
+            - name: unicorn-gitaly
+              mountPath: '/etc/gitaly'
+              readOnly: true
             - name: unicorn-redis
               mountPath: '/etc/gitlab-redis'
               readOnly: true
@@ -61,6 +64,9 @@ spec:
               mountPath: '/var/opt/gitlab/templates'
             - name: unicorn-shell
               mountPath: '/etc/gitlab-shell'
+              readOnly: true
+            - name: unicorn-gitaly
+              mountPath: '/etc/gitaly'
               readOnly: true
             - name: unicorn-redis
               mountPath: '/etc/gitlab-redis'
@@ -88,6 +94,13 @@ spec:
           items:
             - key: {{ default "secret" .Values.shell.key }}
               path: ".gitlab_shell_secret"
+          defaultMode: 0400
+      - name: unicorn-gitaly
+        secret:
+          secretName: {{ .Values.gitaly.auth_token.secret }}
+          items:
+            - key: {{ default "token" .Values.gitaly.auth_token.key }}
+              path: "gitaly_token"
           defaultMode: 0400
       - name: unicorn-redis
         secret:
