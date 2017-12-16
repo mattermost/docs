@@ -33,6 +33,7 @@ nginx:
   enabled: false
 redis:
   enabled: false
+  # serviceName: nil
   # host: '127.0.0.1'
   # port: 6397
   # database: 0

@@ -29,7 +29,11 @@ data:
     {{- end }}
     # Redis related
     {{- if not .Values.redis.enabled }}
+    {{- if .Values.redis.serviceName }}
+    gitlab_rails['redis_host'] = {{ printf "%s-%s" .Release.Name .Values.redis.serviceName | quote }}
+    {{- else }}
     gitlab_rails['redis_host'] = {{ default "127.0.0.1" .Values.redis.host | quote }}
+    {{- end }}
     gitlab_rails['redis_port'] = {{ default .Values.service.ports.redis .Values.redis.port }}
     gitlab_rails['redis_database'] = {{ default 0 .Values.redis.database }}
     {{- end }}
