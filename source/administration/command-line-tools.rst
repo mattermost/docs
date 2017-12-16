@@ -100,6 +100,7 @@ platform
   Child Commands
     -  `platform channel`_ - Management of channels
     -  `platform command`_ - Management of slash commands
+    -  `platform export`_ - Compliance export commands
     -  `platform help`_ - Generate full documentation for the CLI
     -  `platform import`_ - Import data
     -  `platform ldap`_ - AD/LDAP related utilities
@@ -330,6 +331,29 @@ platform command move
 
       sudo ./platform command move newteam oldteam:command-trigger-word
       sudo ./platform channel move newteam o8soyabwthjnf9qibfztje5a36h
+
+platform export
+------------------------
+
+  Description
+    Export data from Mattermost in a format suitable for importing into a third-party archive system.
+
+  Format
+    .. code-block:: none
+
+      platform export
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform export --format=actiance --exportFrom=1513102632
+
+  Options
+    .. code-block:: none
+
+          --format string         Output file format. Currently, only ``actiance`` is supported.
+          --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
+          --timeoutSeconds string Set how long the export should run for before timing out.
 
 platform help
 ---------------
