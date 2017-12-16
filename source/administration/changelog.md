@@ -4,6 +4,203 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
+
+## Release v4.5
+Release date: 2017-12-16
+
+### Highlights
+
+#### Zoom Plugin (Beta)
+
+- [Zoom](https://www.zoom.us/) video calling and screensharing plugin. Learn more [here](https://about.mattermost.com/default-zoom-documentation).
+- Manage plugins from the **System Console > Plugins (Beta)** section.
+
+#### Actiance Support (Beta) ([Enterprise Edition E20](https://about.mattermost.com/pricing/))
+
+- Compliance export supporting for [Actiance](https://www.actiance.com/) as a compliance solution. Learn more [here](https://about.mattermost.com/default-compliance-export-documentation).
+- Access compliance export from the **System Console > Advanced > Compliance Export (Beta)**.
+
+### Improvements
+
+#### Web UI
+- `CTRL/CMD` + `/` now toggles the keyboard shortcuts dialog.
+- Link previews now appear in the right-hand side in comment threads.
+- Timestamp permalinks now open in the current view on desktop and browser.
+- Pinned posts are now sorted newest to oldest.
+- Updated markdown to better handle non-Latin characters in URLs.
+
+#### Integrations
+
+- Add option for an outgoing webhooks to reply to the posted message as a comment.
+- JIRA plugin is now bundled as a prepackaged plugin manageable from the System Console > Plugins > Management
+
+#### Channels
+
+- Direct Message channels with deactivated users are now hidden in the sidebar and can be reopened from the **More...**  Direct Messages list.
+
+#### Notifications
+
+- Removed unnecessary log messages posted when pending email notifications are deleted because a user comes online before the batch is sent.
+- Desktop notification icon has been updated on Edge browsers.
+
+#### System Console
+
+- Added a confirm modal to the Data Retention settings page.
+- Added settings pages for uploading and managing plugins in the System Console > Plugins (Beta) section.
+
+### Bug Fixes
+
+- Closing a direct or group message channel no longer purges channel preferences.
+- Users no longer get a blank page after hitting "x" on a deleted message in permalink view.
+- Fixed an issue where `AmazonS3Region` defaults to us-east-1 regardless of the value input.
+- Channel links render as expected when linking to a channel that the current user does not belong to.
+- Uppercase letter is no longer required for a password if the password requirement is set to at least 5 characters and a number.
+- Profile image updates are now visible in other active clients and the right-hand side after the change.
+- Plugins can no longer be uploaded if they have the same plugin ID.
+- Creating a channel with a name including a reserved word no longer breaks the user interface.
+- Fixed the AD/LDAP Test Connection button.
+- Fixed an issue causing `invalid or expired session` server logs.
+- Removed a duplicate error message on the login page after a password reset.
+- Fixed an issue where the OAuth ClientID and Secret values were missing after setup.
+- Emoji picker now works when the right-hand side is expanded.
+- Error messages in the System Console user list no longer breaks the user interface.
+
+### Compatibility
+
+#### Removed and Deprecated Features
+- All APIv3 endpoints are scheduled for removal on January 16, 2018.
+
+For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
+
+#### config.json
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+**Changes to Team Edition and Enterprise Edition**:
+
+- Under `ServiceSettings` in `config.json`:
+  - Added `"EnablePreviewFeatures": true` to hide the **Advanced** > **Preview re-release features** section from Account Settings.
+  - Added `"CloseUnusedDirectMessages": false` to hide inactive direct message channels from the sidebar.
+  - Added `"ExperimentalEnableAuthenticationTransfer": true` to set whether users can change authentication methods.
+- Under `EmailSettings` in `config.json`:
+  - Added `"UseChannelInEmailNotifications": false` to set whether email notifications contain the channel name in the subject line.
+- Under `PluginSettings` in `config.json`:
+  - Added `"ClientDirectory": "./client/plugins"` to set the location of client plugins.
+
+**Additional Changes to Enterprise Edition**:
+
+- Added `MessageExportSettings` in `config.json`:
+  - Added `"EnableExport": false` to enable message export.
+  - Added `"DailyRunTime": "01:00"` to set the time for the daily export job.
+  - Added `"ExportFromTimestamp": 0` to set the timestamp for which posts to include in the message export.
+  - Added `"FileLocation": "export"` to set the message export location.
+  - Added `"BatchSize": 10000` to set how many new posts are batched together to a compliance export file.
+
+### API v4 Changes
+
+- It is recommended that any new integrations use API v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
+- All API v3 endpoints are scheduled for removal on January 16, 2018.
+
+### Known Issues
+
+- Google login fails on the Classic mobile apps.
+- User can receive a video call from another browser tab while already on a call.
+- Jump link in search results does not always jump to display the expected post.
+- Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+- Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+- Searching with Elasticsearch enabled may not always highlight the searched terms.
+- Team sidebar doesn't always show unreads from other teams on first load.
+- Team sidebar on desktop app does not update when channels have been read on mobile.
+- System Admin cannot reset their own password via the System Console.
+- Channel scroll position flickers while images and link previews load.
+- CTRL/CMD+U shortcut to upload a file doesn't work on Firefox.
+- Profile pictures and usernames don't immediately update across tabs or in the right-hand side comment threads.
+- Fixed an issue where only System Admins could edit OAuth apps even if integration creation was not restricted to admins.
+- Numbered lists can sometimes extend beyond the normal post area.
+- Typing an emoji reaction does not add it to recently used emojis.
+- Server logs contain messages about initializing plugins even when plugins are disabled.
+
+### Contributors
+
+/mattermost-webapp
+
+- [asaadmahmood](https://github.com/asaadmahmood), [avasconcelos114](https://github.com/avasconcelos114), [ccbrown](https://github.com/ccbrown), [CometKim](https://github.com/CometKim), [coreyhulen](https://github.com/coreyhulen), [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [csduarte](https://github.com/csduarte), [deveshjadon98](https://github.com/deveshjadon98), [enahum](https://github.com/enahum), [fraziern](https://github.com/fraziern), [grundleborg](https://github.com/grundleborg), [h2oloopan](https://github.com/h2oloopan), [hmhealey](https://github.com/hmhealey), [jasonblais](https://github.com/jasonblais), [jespino](https://github.com/jespino), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [KishoreFartiyal](https://github.com/KishoreFartiyal), [lfbrock](https://github.com/lfbrock), [mikelinden1](https://github.com/mikelinden1), [mkraft](https://github.com/mkraft), [MusikPolice](https://github.com/MusikPolice), [QuantumKing](https://github.com/QuantumKing), [rickbatka](https://github.com/rickbatka), [R-Wang97](https://github.com/R-Wang97), [santos22](https://github.com/santos22), [saturninoabril](https://github.com/saturninoabril), [sudheerDev](https://github.com/sudheerDev), [tkbky](https://github.com/tkbky), [yth0625](https://github.com/yth0625)
+
+/mattermost-plugin-zoom
+
+- [crspeller](https://github.com/crspeller), [jwilander](https://github.com/jwilander)
+
+/mattermost-server
+
+- [amyblais](https://github.com/amyblais), [ccbrown](https://github.com/ccbrown), [coreyhulen](https://github.com/coreyhulen), [cpanato](https://github.com/cpanato), [cpfeiffer](https://github.com/cpfeiffer), [crspeller](https://github.com/crspeller), [csduarte](https://github.com/csduarte), [enahum](https://github.com/enahum), [grundleborg](https://github.com/grundleborg), [hmhealey](https://github.com/hmhealey), [jasonblais](https://github.com/jasonblais), [jespino](https://github.com/jespino), [jwilander](https://github.com/jwilander), [letsila](https://github.com/letsila), [lindalumitchell](https://github.com/lindalumitchell), [mkraft](https://github.com/mkraft), [mogul](https://github.com/mogul), 
+[MusikPolice](https://github.com/MusikPolice), [yeoji](https://github.com/yeoji)
+
+/mattermost-mobile
+
+- [cpfeiffer](https://github.com/cpfeiffer), [csduarte](https://github.com/csduarte), [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [jarredwitt](https://github.com/jarredwitt), [lfbrock](https://github.com/lfbrock), [mkraft](https://github.com/mkraft)
+
+/docs
+
+- [amyblais](https://github.com/amyblais), [bbodenmiller](https://github.com/bbodenmiller), [ccbrown](https://github.com/ccbrown), [comharris](https://github.com/comharris), [esethna](https://github.com/esethna), [grundleborg](https://github.com/grundleborg), [hmhealey](https://github.com/hmhealey), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), 
+[jespino](https://github.com/jespino), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [lfbrock](https://github.com/lfbrock), [lindalumitchell](https://github.com/lindalumitchell), [lindy65](https://github.com/lindy65), [mkdbns](https://github.com/mkdbns), [mkraft](https://github.com/mkraft), [saturninoabril](https://github.com/saturninoabril)
+
+/mattermost-docker
+
+- [andruwa13](https://github.com/andruwa13), [muffl0n](https://github.com/muffl0n), [pichouk](https://github.com/pichouk), [xcompass](https://github.com/xcompass)
+
+/mattermost-load-test
+
+- [ccbrown](https://github.com/ccbrown), [crspeller](https://github.com/crspeller), [jasonblais](https://github.com/jasonblais)
+
+/mattermost-redux
+
+- [brettmc](https://github.com/brettmc), [ccbrown](https://github.com/ccbrown), [csduarte](https://github.com/csduarte), [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [jespino](https://github.com/jespino), [jwilander](https://github.com/jwilander), [mkraft](https://github.com/mkraft), [sudheerDev](https://github.com/sudheerDev)
+
+/mattermost-developer-documentation
+
+- [ccbrown](https://github.com/ccbrown), [coreyhulen](https://github.com/coreyhulen), [crspeller](https://github.com/crspeller), [jwilander](https://github.com/jwilander), [MusikPolice](https://github.com/MusikPolice)
+
+/mattermost-plugin-jira
+
+- [ccbrown](https://github.com/ccbrown)
+
+/mattermost-webrtc
+
+- [enahum](https://github.com/enahum)
+
+/desktop
+
+- [dmeza](https://github.com/dmeza), [jasonblais](https://github.com/jasonblais), [yuya-oc](https://github.com/yuya-oc)
+
+/mattermost-kubernetes
+
+- [cpanato](https://github.com/cpanato)
+
+/mattermost-selenium
+
+- [lindalumitchell](https://github.com/lindalumitchell)
+
+/mattermost-api-reference
+
+- [grundleborg](https://github.com/grundleborg), [jasonblais](https://github.com/jasonblais), [jwilander](https://github.com/jwilander), [saturninoabril](https://github.com/saturninoabril)
+
+/mattermost-ios-classic
+
+- [coreyhulen](https://github.com/coreyhulen)
+
+/mattermost-developer-kit
+
+- [jwilander](https://github.com/jwilander)
+
+/mattermost-build
+
+- [crspeller](https://github.com/crspeller), [mthornba](https://github.com/mthornba)
+
+/marked
+
+- [hmhealey](https://github.com/hmhealey)
+
+
 ## Release v4.4.5
 
  - **v4.4.5, release date 2017-12-11**

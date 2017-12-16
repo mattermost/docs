@@ -102,11 +102,11 @@ Deactivating Users
 
 A System Admin can deactivate user accounts by going to **System Console > Users** for a list of all users on the server. The list can be searched and filtered to make finding users easier. Click the user's role and in the menu that opens, click **Deactivate**.
 
-When "Deactivate" is selected, the user is logged out of the system, and receives an error message if they try to log back in. The user no longer appears in the channel members list, and they are removed from the "Manage Members" list. They are also removed from the Direct Message "More" menu, but the Direct Message channel remains open for all users with it in the sidebar until it is closed. In the users list in the System Console, the user shows as "Inactive".
+When **Deactivate** is selected, the user is logged out of the system, and receives an error message if they try to log back in. The user no longer appears in channel member lists, and they are removed from the team members list. A deactivated account can also be reactivated from the System Console, in which case the user rejoins channels and teams that they previously belonged to.
 
-Because Mattermost is designed as a system-of-record, there is not an option to delete users from the Mattermost system, as such an operation could compromise the integrity of message archives.
+Direct Message channels with deactivated users are hidden in users' sidebars, but can be reopened using the **More...** button or the Channel Switcher (CMD/CTRL + K).
 
-A deactivated account can also be reactivated from the System Console. When reactivated, the user rejoins the channels that they previously belonged to.
+Mattermost is designed as a system-of-record, so there is not an option to delete users from the Mattermost system, as such an operation could compromise the integrity of message archives.
 
 Note that AD/LDAP user accounts cannot be deactivated from Mattermost; they must be deactivated from your Active Directory.
 
