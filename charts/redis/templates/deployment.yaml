@@ -15,37 +15,51 @@ spec:
       labels:
         app: {{ template "fullname" . }}
       annotations:
-        checksum/configmap: {{ .Files.Get "configmap.yml" | sha256sum }}
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
     spec:
+      initContainers:
+        - name: redis-configure
+          image: busybox
+          command: ['sh', '/config/configure']
+          volumeMounts:
+          - name: {{ .Release.Name }}
+            mountPath: /config
+            readOnly: true
+          - name: {{ .Release.Name }}-config
+            mountPath: /redis
+            readOnly: false
       containers:
         - name: redis
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ default "" .Values.image.pullPolicy | quote }}
-          #command: ["redis-server"]
           args:
           - redis-server
           - /etc/redis/redis.conf
-          - --requirepass
-          - $(cat /etc/redis/password)
           volumeMounts:
-          - name: {{ .Release.Name }}
+          - name: {{ .Release.Name }}-config
             mountPath: /etc/redis/
             readOnly: true
           resources:
 {{ toYaml .Values.resources | indent 12 }}
       volumes:
+      - name: {{ .Release.Name }}-config
+        emptyDir:
+          medium: "Memory"
+          sizeLimit: 10m
       - name: {{ .Release.Name }}
         projected:
           defaultMode: 0644
           sources:
-          - secret:
-              name: {{ .Values.password.secret }}
-              items:
-                - key: {{ .Values.password.key }}
-                  path: password
           - configMap:
               name: {{ template "fullname" . }}
               items:
               - key: redis.conf
                 path: redis.conf
+              - key: configure
+                path: configure
+          - secret:
+              name: {{ .Values.password.secret }}
+              items:
+                - key: {{ .Values.password.key }}
+                  path: password
 {{- end -}}
