@@ -48,6 +48,7 @@ Deployment
    /deployment/sso-google*
    /deployment/sso-office*
    /deployment/metrics*
+   /deployment/customize-mattermost.rst
    /deployment/client-side-data.rst
 
 Administration
@@ -70,6 +71,7 @@ Administration
    /administration/announcement-banner.rst
    /administration/branding*
    /administration/compliance*
+   /administration/compliance-export*
    /administration/data-retention*
    
 Mobile Apps

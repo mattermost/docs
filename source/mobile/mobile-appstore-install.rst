@@ -5,9 +5,8 @@ To deploy the apps hosted in the Apple App Store and Google Play, we recommend y
 
 1. Set up a way to connect to your private network Mattermost instance, using:
   - An external proxy with encrypted transport through HTTPS and WSS network connections
-  - (Optional) A mobile VPN client
-  - Note: If a mobile VPN client with multi-factor authentication is not used, we recommend requiring multi-factor authentication through Mattermost Enterprise Edition or your SSO provider
-
+  - (Recommended) Depending on your security policies, consider deploying a mobile VPN client with multi-factor authentication (MFA), GitLab SSO with MFA, or run Mattermost Enterprise Edition with MFA
+  
 2. Enable mobile push notifications
   - Go to **System Console > Notifications > Mobile Push**
   - If testing the apps, or using Team Edition: Select "Use iOS and Android apps on iTunes and Google Play with TPNS"
@@ -28,3 +27,5 @@ To deploy the apps hosted in the Apple App Store and Google Play, we recommend y
   - `Android App <https://about.mattermost.com/mattermost-android-app/>`_
 
 5. Open the mobile application and enter the address of your Mattermost server to connect
+
+6. Confirm you're subscribed to `Mattermost Security Bulletins <https://about.mattermost.com/security-bulletin/>`_. In future, when notified of security updates, apply them promptly. 

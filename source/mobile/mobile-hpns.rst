@@ -8,7 +8,7 @@ When using Mattermost mobile apps in the Apple App Store and Google Play, purcha
 
 Our Hosted Push Notification Service offers:
 
-  - Access to a publicly-hosted Mattermost Push Notification Service (MPNS) offering an explicit privacy policy where the contents of unencrypted messages are not examined or stored
+  - Access to a publicly-hosted Mattermost Push Notification Service (MPNS) offering an explicit `privacy policy <https://about.mattermost.com/hpns-privacy/>`_ where the contents of unencrypted messages are not examined or stored
   - Encrypted TLS connections between HPNS and Apple Push Notification Services, HPNS and Google’s Firebase Cloud Messaging service, and HPNS and your Mattermost server
   - Production-level uptime expectation
 

@@ -29,7 +29,7 @@ Fast has two parts: being "responsive" and being "quick".
 
 There is no such thing as "user error"--it’s always our fault as product designers. We stop problems from incorrect usage by making users aware of correct usage. Fixes could be through user interface improvements, adjustments to help text, or helping users recover when things go wrong–adding undelete, undo and rolling back for example.
 
-When our product is correct, users are never confused. Everything we do--features, interface layout, labeling, help text, and documentation--needs to make sense in the mind of the user, even if it means occassionally oversimplifying how things technically work.
+When our product is correct, users are never confused. Everything we do--features, interface layout, labeling, help text, and documentation--needs to make sense in the mind of the user, even if it means occasionally oversimplifying how things technically work.
 
 If a user doesn’t understand how to use a feature, all the underlying effort and code is wasted. The “Obvious” design principle also flows through to our `Documentation Guidelines <http://www.mattermost.org/documentation-guidelines/>`_.
 
@@ -88,7 +88,7 @@ Desktop
 UX Feedback Guidelines
 ****************************
 
-User experience design is a discipline drawing from ergonomics, ethnography, human factors research, and cognitive psychology. It's evaluated qualitatively with tools like heuristic evaluation and cognitive walkthroughs, and quantitatively through telemetry, anonymous usage data and other automated diagonistics.
+User experience design is a discipline drawing from ergonomics, ethnography, human factors research, and cognitive psychology. It's evaluated qualitatively with tools like heuristic evaluation and cognitive walkthroughs, and quantitatively through telemetry, anonymous usage data and other automated diagnostics.
 
 As with any design process, iteration, prototyping, informed critique and evaluation is vital to doing our best work. Developing the skill of informed critique in our community increases the quality of our designs and of our product.
 
@@ -114,7 +114,7 @@ Feedback speaks for itself, with relevant references to principles, audience, re
 
 Example: Thoughtful suggestion listing trade-offs that reference principles.
 
-   What if we used a reply icon, similar to replies in email, for the comment function? Screenshots below. Pros: a) More familiar to email users. b) More distinct than the word ballon icon typically used for "Comment", which is too easily confused for "Message".  Cons: i) We use the symbol of "Reply" for "Comment" (the UI has an "Add Comment" button in the UI), which could be confusing. ii) When we add a "Forward" icon later to move a message to a different channel, the "Reply" and "Forward" metaphors may get muddled".
+   What if we used a reply icon, similar to replies in email, for the comment function? Screenshots below. Pros: a) More familiar to email users. b) More distinct than the word balloon icon typically used for "Comment", which is too easily confused for "Message".  Cons: i) We use the symbol of "Reply" for "Comment" (the UI has an "Add Comment" button in the UI), which could be confusing. ii) When we add a "Forward" icon later to move a message to a different channel, the "Reply" and "Forward" metaphors may get muddled".
 
 UX feedback at intermediate level or higher is highly appreciated. It should be encouraged and recognized as a substantial contribution to the design process.
 
@@ -398,7 +398,7 @@ Mattermost voice for documentation and help text follows this simple guideline: 
     Incorrect:
         When a new message is received, flash the taskbar icon.
 
-    Ensure plural interpretations work when applicable and test help text with machine translation to reduce non-obvious, English-specific jardon:
+    Ensure plural interpretations work when applicable and test help text with machine translation to reduce non-obvious, English-specific jargon:
 
     Correct:
         You can adjust a few configuration settings when setting up your instance of Mattermost.

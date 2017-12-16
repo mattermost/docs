@@ -80,5 +80,6 @@ Non-personally Identifiable Diagnostic Information
   - *Advanced Feature Discovery Diagnostics:* Reacted to a message; favorited or un-favorited a channel; flagged or un-flagged a message; pinned or un-pinned a message; replied to a message; expanded the right-hand sidebar; started or finished a WebRTC video call; created or deleted a personal access token; added or removed post:all or post:channels permission
   - *Integration Discovery Diagnostics:* Created or triggered a webhook or slash command; created, authroized or deleted an OAuth 2.0 app; created, posted or deleted a custom emoji
   - *Commercial License Diagnostics (Enterprise Edition Only):* Uploaded an Enterprise license key to the server
+  - *Mobile Performance Diagnostics:* Load times for starting the app, switching channels, and switching teams 
 
   To opt out of error and diagnostic reporting, disable the feature in **System Console > General > Logging > Enable Error and Diagnostics Reporting**.

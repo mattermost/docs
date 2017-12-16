@@ -1926,7 +1926,7 @@ Enable Plugins
 Enable Plugin Uploads
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Enables plugin uploads by System Admins at **Plugins > Management**. If you do not plan to upload a plugin, set to false to control which plugins are installed on your server. See `documentation <https://about.mattermost.com/default-plugins-uploads>`_ to learn more.
+**True**: Enables plugin uploads by System Admins at **Plugins > Management**. If you do not plan to upload a plugin, set to false to control which plugins are installed on your server. See `documentation <https://about.mattermost.com/default-plugin-uploads>`_ to learn more.
 
 **False**: Disables plugin uploads on your Mattermost server.
 
@@ -1939,7 +1939,7 @@ Management
 Upload Plugin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Upload a plugin for your Mattermost server. See `documentation <https://about.mattermost.com/default-plugins-uploads>`_ to learn more.
+Upload a plugin for your Mattermost server. See `documentation <https://about.mattermost.com/default-plugin-uploads>`_ to learn more.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Plugins": {}`` with string input.                                                                                       | 
@@ -2317,6 +2317,7 @@ Restrict Custom Emoji Creation
 
 ________
 
+.. _legal-support-links:
 Legal and Support
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Legal and Support links will be hidden in the user interface if these fields are left blank.
@@ -2602,6 +2603,44 @@ Run Deletion Job Now
 This button initiates a Data Retention deletion job immediately.
 
 You can monitor the status of the job in the data deletion job table below this button.
+________
+
+Compliance Export (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*Available as an add-on to Enterprise Edition E20*
+
+Enable Compliance Export
+^^^^^^^^^^^^^^^^^^^^^^^^^
+**True:** When true, Mattermost will generate a compliance export file that contains all messages that were posted in the last 24 hours. The export task is scheduled to run once per day. See the `documentation to learn more <https://about.mattermost.com/default-compliance-export-documentation>`_.
+
+**False:** When false, Mattermost doesn't generate a compliance export file.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableExport": false`` with options ``true`` and ``false``.                                                                      |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Compliance Export Time
+^^^^^^^^^^^^^^^^^^^^^^^^
+Set the start time of the daily scheduled compliance export job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form HH:MM.
+
+This setting is based on the local time of the server.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DailyRunTime": 01:00`` with 24-hour time stamp input in the form HH:MM                                                           |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Export File Format
+^^^^^^^^^^^^^^^^^^^^^^^^
+File format of the compliance export. Corresponds to the system that you want to import the data into.
+
+Currently Actiance XML is supported.
+
+Run Compliance Export Job Now
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This button initiates a Compliance Export job immediately.
+
+You can monitor the status of the job in the compliance export job table below this button.
+
 ________
 
 Elasticsearch (Beta)
@@ -2942,18 +2981,6 @@ WebSocket Port
 | This feature’s ``config.json`` setting is ``WebsocketPort": 80`` with whole number input.                                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Autoclose Direct Messages in Sidebar (Experimental)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**True**: By default, direct message conversations with no activity for 7 days will be hidden from the sidebar. This can be disabled in **Account Settings** > **Sidebar**.
-
-**False**: Conversations remain in the sidebar until they are manually closed.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``CloseUnusedDirectMessages": false`` with options ``true`` and ``false`` for above settings respectively.                 |                                                                           
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
 SQL Settings
 ~~~~~~~~~~~~
 
@@ -2984,28 +3011,6 @@ This setting defines the number of seconds after which the user's status indicat
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"UserStatusAwayTimeout": 300`` with whole number input.                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Enable X to Leave Channels from Left-Hand Sidebar (Experimental)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: Users can leave Public and Private Channels by clicking the "x" beside the channel name.
-
-**False**: Users must use the **Leave Channel** option from the channel menu to leave channels.
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableXToLeaveChannelsFromLHS": false`` with options ``true`` and ``false`` for above settings respectively.               |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Town Square is Read-Only (Experimental)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-*Available in Enterprise Edition E10 and higher*
-
-**True**: Only Administrators can post in Town Square.
-
-**False**: Anyone can post in Town Square.
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``""ExperimentalTownSquareIsReadOnly"": false`` with options ``true`` and ``false`` for above settings respectively.               |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
 
@@ -3226,6 +3231,129 @@ Determines the maximum time window for a batch of posts being indexed by the Bul
 | This feature's ``config.json`` setting is ``"BulkIndexingTimeWindowSeconds": 3600`` with whole number input     |
 +-----------------------------------------------------------------------------------------------------------------+
 
+________
+
+Message Export Settings
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Export From Timestamp
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Set the Unix timestamp (seconds since epoch, UTC) to export data from.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExportFromTimestamp": "0"`` with whole number input.                                                                    |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+File Location
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Set the file location of the compliance exports.
+
+By default, they are written to the `exports` subdirectory of the configured `Local Storage directory <https://docs.mattermost.com/administration/config-settings.html#storage>`.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileLocation": "export"`` with string input.                                                                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Batch Size
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Determines how many new posts are batched together to a compliance export file.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"BatchSize": "10000"`` with whole number input.                                                                          |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Plugin Settings  (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Directory
+^^^^^^^^^^
+The location of the plugin files. If blank, they are stored in the ./plugins directory. The path that you set must exist and Mattermost must have write permissions in it.
+
++-----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Directory": "./plugins"`` with string input.                       |
++-----------------------------------------------------------------------------------------------------------------+
+
+------
+
+Experimental settings in config.json
+-----------------------------------------
+
+There are a number of settings considered "experimental" and these may be replaced or removed in a future release.
+
+Service Settings
+~~~~~~~~~~~~~~~~~
+
+Allow Authentication Transfer (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Users can change their sign-in method to any that is enabled on the server, either via Account Settings or the APIs.
+
+**False**: Users cannot change their sign-in method, regardless of which authentication options are enabled.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``ExperimentalEnableAuthenticationTransfer": true`` with options ``true`` and ``false`` for above settings respectively.   |                                                                           
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Autoclose Direct Messages in Sidebar (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: By default, direct message conversations with no activity for 7 days will be hidden from the sidebar. This can be disabled in **Account Settings** > **Sidebar**.
+
+**False**: Conversations remain in the sidebar until they are manually closed.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"CloseUnusedDirectMessages": false`` with options ``true`` and ``false`` for above settings respectively.                |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable Preview Features (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Preview features can be enabled from **Account Settings** > **Advanced** > **Preview pre-release features**.
+
+**False**: Disables and hides preview features from **Account Settings** > **Advanced** > **Preview pre-release features**.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"EnablePreviewFeatures": true`` with options ``true`` and ``false`` for above settings respectively.                     |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Team Settings
+~~~~~~~~~~~~~~
+
+Enable X to Leave Channels from Left-Hand Sidebar (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: Users can leave Public and Private Channels by clicking the "x" beside the channel name.
+
+**False**: Users must use the **Leave Channel** option from the channel menu to leave channels.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableXToLeaveChannelsFromLHS": false`` with options ``true`` and ``false`` for above settings respectively.               |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Town Square is Read-Only (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E10 and higher*
+
+**True**: Only Administrators can post in Town Square.
+
+**False**: Anyone can post in Town Square.
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalTownSquareIsReadOnly": false`` with options ``true`` and ``false`` for above settings respectively.                 |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Email Settings
+~~~~~~~~~~~~~~
+
+Use Channel Name in Email Notifications (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: Channel and team name appears in email notification subject lines. Useful for servers using only one team.
+
+**False**: Only team name appears in email notification subject line.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"UseChannelInEmailNotifications": false`` with options ``true`` and ``false`` for above settings respectively.        |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Client Requirement Settings (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -3323,14 +3451,3 @@ Select the themes that can be chosen by users when ``"EnableThemeSelection"`` is
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AllowedThemes": "default"`` with options ``default``, ``organization``, ``mattermostDark`` and ``windows10`` optionally separated by commas. For example, ``["mattermostDark", "windows10"]`` |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Plugin Settings  (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-Directory
-^^^^^^^^^^
-The location of the plugin files. If blank, they are stored in the ./plugins directory. The path that you set must exist and Mattermost must have write permissions in it.
-
-+-----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Directory": "./plugins"`` with string input.                       |
-+-----------------------------------------------------------------------------------------------------------------+

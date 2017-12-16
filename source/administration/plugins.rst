@@ -27,7 +27,7 @@ To enable plugins, follow these two simple steps.
  - Activating or deactivating pre-packaged Mattermost plugins.
  - Upload and install a plugin for your Mattermost server, or remove them.
 
-For more information on building your own plugin, see our `sample plugin <https://github.com/jwilander/hovercardexample>`_. More extensive developer documentation to come.
+For more information on building your own plugin, see our `developer documentation <https://developers.mattermost.com/extend/plugins/>`_.
 
 Plugin Uploads
 ~~~~~~~~~~~~~~~~~~

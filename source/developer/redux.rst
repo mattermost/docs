@@ -257,6 +257,6 @@ If you're thinking, "I don't get it. Why can't we just create the selector norma
 Testing the Selector
 ~~~~~~~~~~~~~~~~~~
 
-To test your selector you'll want to add a test to the appropriate file in the ``tests/selectos`` directory.
+To test your selector you'll want to add a test to the appropriate file in the ``tests/selectors`` directory.
 
 Testing selectors invovles building some test state and confirming that the data returned from your selector matches what you would expect it to return. Use other tests as examples and make sure to read the `README <https://github.com/mattermost/mattermost-redux/blob/master/README.md>`__ for information on running the tests.
