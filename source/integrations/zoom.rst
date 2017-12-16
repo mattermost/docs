@@ -1,4 +1,4 @@
-Zoom Plugin
+Zoom Plugin (Beta)
 ================================
 
 With `Zoom integration <https://github.com/mattermost/mattermost-plugin-zoom>`_, Mattermost users can launch and join voice and video meetings without leaving 
