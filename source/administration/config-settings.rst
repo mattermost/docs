@@ -3214,6 +3214,17 @@ There are a number of settings considered "experimental" and these may be replac
 Service Settings
 ~~~~~~~~~~~~~~~~~
 
+Allow Authentication Transfer (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Users can change their sign-in method to any that is enabled on the server, either via Account Settings or the APIs.
+
+**False**: Users cannot change their sign-in method, regardless of which authentication options are enabled.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``ExperimentalEnableAuthenticationTransfer": true`` with options ``true`` and ``false`` for above settings respectively.   |                                                                           
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Autoclose Direct Messages in Sidebar (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

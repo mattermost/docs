@@ -34,9 +34,11 @@ Enable JIRA on your Mattermost instance
 4 - Next, copy the webhook URL above the **Save** button, which is used to configure the plugin in your JIRA project.
 
 .. note::
-   Before pasting the webhook URL into JIRA, make sure to replace ``teamurl`` and ``channelurl`` with the Mattermost team URL and channel URL you want the JIRA events to post to. The values should be in lower case.
+   Before pasting the webhook URL into JIRA, make sure to replace ``teamurl`` and ``channelurl`` with the Mattermost team URL and channel URL you want the JIRA events to post to. The values should be in lower case. 
    
-   For instance, if the team URL is ``contributors`` and channel URL is ``town-square``, then the final webhook URL on the above screenshot would be 
+   Moreover, replace ``siteurl`` with the `site URL of your Mattermost instance <https://docs.mattermost.com/administration/config-settings.html#site-url>`_, and ``webhooksecret`` with the secret generated in step 3. 
+   
+   For instance, if the team URL is ``contributors``, channel URL is ``town-square`` and site URL is ``https://ci-linux-postgres.mattermost.com``, then the final webhook URL on the above screenshot would be 
    
   .. code-block:: text
      
