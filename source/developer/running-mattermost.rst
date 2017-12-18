@@ -1,6 +1,11 @@
 Running Mattermost
 ==================
 
+To get help
+  .. code-block:: text
+
+    make help
+
 To run changes to server-side code:
   .. code-block:: text
 
