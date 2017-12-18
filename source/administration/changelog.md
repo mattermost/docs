@@ -17,7 +17,7 @@ Release date: 2017-12-16
 
 #### Actiance Support (Beta) ([Enterprise Edition E20](https://about.mattermost.com/pricing/))
 
-- Compliance export supporting for [Actiance](https://www.actiance.com/) as a compliance solution. Learn more [here](https://about.mattermost.com/default-compliance-export-documentation).
+- Compliance export support for [Actiance](https://www.actiance.com/) as a compliance solution. Learn more [here](https://about.mattermost.com/default-compliance-export-documentation).
 - Access compliance export from the **System Console > Advanced > Compliance Export (Beta)**.
 
 ### Improvements
