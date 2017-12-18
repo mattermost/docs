@@ -256,7 +256,11 @@ production:
       --set registry.registry.tokenIssuer="omnibus-gitlab-issuer" \
       --set registry.registry.certBundle.secretName="gitlab-registry" \
       --set registry.registry.certBundle.bundleName="registry-auth.crt" \
+      --set redis.enabled=true \
+      --set redis.password.secret=gitlab-redis \
+      --set redis.password.key=redis-password \
       --set gitlab.sidekiq.enabled=true \
+      --set gitlab.sidekiq.redis.serviceName=redis \
       --set gitlab.sidekiq.redis.password.secret=gitlab-redis \
       --set gitlab.sidekiq.redis.password.key=redis-password \
       --set gitlab.sidekiq.psql.serviceName=omnibus \
@@ -264,6 +268,7 @@ production:
       --set gitlab.sidekiq.gitaly.auth_token=$GITALY_AUTH_TOKEN \
       --set gitlab.unicorn.enabled=true \
       --set gitlab.unicorn.gitlab_host="gitlab$DOMAIN" \
+      --set gitlab.unicorn.redis.serviceName=redis \
       --set gitlab.unicorn.redis.password.secret=gitlab-redis \
       --set gitlab.unicorn.redis.password.key=redis-password \
       --set gitlab.unicorn.psql.serviceName=omnibus \
@@ -282,7 +287,8 @@ production:
       --set gitlab.omnibus.unicorn.enabled=false \
       --set gitlab.omnibus.unicorn.internal_api.serviceName=unicorn \
       --set gitlab.omnibus.workhorse.enabled=false \
-      --set gitlab.omnibus.redis.enabled=true \
+      --set gitlab.omnibus.redis.enabled=false \
+      --set gitlab.omnibus.redis.serviceName=redis \
       --set gitlab.omnibus.redis.password.secret=gitlab-redis \
       --set gitlab.omnibus.redis.password.key=redis-password \
       --set gitlab.omnibus.psql.enabled=true \

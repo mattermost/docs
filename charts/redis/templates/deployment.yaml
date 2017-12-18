@@ -1,0 +1,65 @@
+{{- if .Values.enabled -}}
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+    app: {{ template "fullname" . }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  replicas: {{ .Values.replicas }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "fullname" . }}
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+    spec:
+      initContainers:
+        - name: redis-configure
+          image: busybox
+          command: ['sh', '/config/configure']
+          volumeMounts:
+          - name: {{ .Release.Name }}
+            mountPath: /config
+            readOnly: true
+          - name: {{ .Release.Name }}-config
+            mountPath: /redis
+            readOnly: false
+      containers:
+        - name: redis
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ default "" .Values.image.pullPolicy | quote }}
+          args:
+          - redis-server
+          - /etc/redis/redis.conf
+          volumeMounts:
+          - name: {{ .Release.Name }}-config
+            mountPath: /etc/redis/
+            readOnly: true
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+      volumes:
+      - name: {{ .Release.Name }}-config
+        emptyDir:
+          medium: "Memory"
+          sizeLimit: 10m
+      - name: {{ .Release.Name }}
+        projected:
+          defaultMode: 0644
+          sources:
+          - configMap:
+              name: {{ template "fullname" . }}
+              items:
+              - key: redis.conf
+                path: redis.conf
+              - key: configure
+                path: configure
+          - secret:
+              name: {{ .Values.password.secret }}
+              items:
+                - key: {{ .Values.password.key }}
+                  path: password
+{{- end -}}

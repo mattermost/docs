@@ -1,0 +1,30 @@
+image:
+  repository: redis
+  tag: '3.2.5'
+  pullPolicy: 'IfNotPresent'
+service:
+  name: redis
+  type: ClusterIP
+  externalPort: 6379
+  internalPort: 6379
+  clusterIP: '0.0.0.0'
+replicas: 1
+# define some sane resource requests and limitations
+resources: {}
+  # limits:
+  #   cpu: 200m
+  #   memory: 1024Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+# Chart operation controls
+enabled: false
+
+# Configuration items
+timeout: 60
+tcpKeepalive: 300
+loglevel: "notice"
+password:
+  secret: gitlab-redis
+  key: redis-password

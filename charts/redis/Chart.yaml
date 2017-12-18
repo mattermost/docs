@@ -1,0 +1,15 @@
+apiVersion: v1
+name: redis
+version: 0.0.1
+description: "Helm chart for Redis with GitLab"
+keywords:
+- redis
+- gitlab
+home: https://redis.io
+sources:
+- https://hub.docker.com/r/library/redis
+maintainers:
+- name: GitLab Inc.
+  email: support@gitlab.com
+- name: The Build Team
+details: "Redis used as part of GitLab deployment."

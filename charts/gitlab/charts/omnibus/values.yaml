@@ -33,10 +33,11 @@ nginx:
   enabled: false
 redis:
   enabled: false
+  # serviceName: nil
   # host: '127.0.0.1'
   # port: 6397
   # database: 0
-  # password provided as ENV, via Secret
+  # password provided as file, via Secret
   password: {}
     # secret:
     # key:
