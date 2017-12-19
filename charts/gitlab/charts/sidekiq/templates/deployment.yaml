@@ -63,6 +63,9 @@ spec:
           - name: sidekiq-config
             mountPath: '/var/opt/gitlab/templates'
             readOnly: true
+          - name: sidekiq-gitaly
+            mountPath: '/etc/gitaly'
+            readOnly: true
           - name: sidekiq-redis
             mountPath: '/etc/gitlab-redis'
             readOnly: true
@@ -88,6 +91,13 @@ spec:
                 name: {{ $fullname }}
             - configMap:
                 name: {{ $queueName }}
+      - name: sidekiq-gitaly
+        secret:
+          secretName: {{ .Values.gitaly.auth_token.secret }}
+          items:
+            - key: {{ default "token" .Values.gitaly.auth_token.key }}
+              path: "gitaly_token"
+          defaultMode: 0400
       - name: sidekiq-redis
         secret:
           secretName: {{ $redisSecret }}

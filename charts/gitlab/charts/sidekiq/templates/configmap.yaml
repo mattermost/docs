@@ -64,9 +64,7 @@ data:
       shared:
       gitaly:
         client_path: /home/git/gitaly/bin
-        {{- if .Values.gitaly.auth_token }}
-        token: {{ .Values.gitaly.auth_token }}
-        {{- end }}
+        token: "<%= File.read('/etc/gitaly/gitaly_token') %>"
       repositories:
         storages: # You must have at least a `default` storage path.
           default:

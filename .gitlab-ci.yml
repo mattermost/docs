@@ -262,7 +262,8 @@ production:
       --set gitlab.sidekiq.redis.password.key=redis-password \
       --set gitlab.sidekiq.psql.serviceName=omnibus \
       --set gitlab.sidekiq.psql.password="$ROOT_PASSWORD" \
-      --set gitlab.sidekiq.gitaly.auth_token=$GITALY_AUTH_TOKEN \
+      --set gitlab.sidekiq.gitaly.auth_token.secret=gitaly-secret \
+      --set gitlab.sidekiq.gitaly.auth_token.key=token \
       --set gitlab.unicorn.enabled=true \
       --set gitlab.unicorn.gitlab_host="gitlab$DOMAIN" \
       --set gitlab.unicorn.redis.serviceName=redis \

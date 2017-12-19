@@ -40,11 +40,12 @@ gitlab:
       shell:
         secret: gitlab-shell-secret
       gitaly:
+        serviceName: gitaly
         auth_token:
           secret: gitaly-secret
           key: token
       redis:
-        serviceName: omnibus
+        serviceName: redis
         password:
           secret: gitlab-redis
           key: redis-password
@@ -57,9 +58,12 @@ gitlab:
       concurrency: 10
       timeout: 5
       gitaly:
-        auth_token: generatedAuthToken
+        serviceName: gitaly
+        auth_token:
+          secret: gitaly-secret
+          key: token
       redis:
-        serviceName: omnibus
+        serviceName: redis
         password:
           secret: gitlab-redis
           key: redis-password
@@ -72,7 +76,7 @@ gitlab:
       unicorn:
         serviceName: unicorn
       redis:
-        serviceName: omnibus
+        serviceName: redis
         password:
           secret: gitlab-redis
           key: redis-password
@@ -87,7 +91,7 @@ gitlab:
       enabled: true
       initial_root_password: "minikube"
       redis:
-        enabled: true
+        enabled: false
         password:
           secret: gitlab-redis
           key: redis-password
