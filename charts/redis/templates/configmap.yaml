@@ -21,11 +21,18 @@ data:
     logfile ""
     # database count (picked from Omnibus' redis.conf)
     databases 16
-    # NO PERSISTENCE DURING POC!
+    # Database filename
+    dbfilename {{ template "fullname" . }}.rdb
+    # Working Directory (where DB is written)
+    dir /data/redis
+    # Configure persistence snapshotting
+    {{- if .Values.persistence.save }}
+    {{-   range .Values.persistence.save }}
+    save {{ .time }} {{ .changes }}
+    {{-   end }}
+    {{- else }}
     save ""
-    # save 900 1
-    # save 300 10
-    # save 60 10000
+    {{- end }}
   configure: |
     set -e
     cat /config/redis.conf > /redis/redis.conf;

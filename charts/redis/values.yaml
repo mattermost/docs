@@ -28,3 +28,24 @@ loglevel: "notice"
 password:
   secret: gitlab-redis
   key: redis-password
+# Configure persistence for Redis instance
+persistence:
+  # Configure the disk used for persistence.
+  # - if not configured, it will use an ephemeral `emptyDir`
+  #   persist for the lifetime of the `Pod`, in the event of
+  #   a container restart.
+  disk:
+    # use a PVC, by name
+    persistentVolumeClaim:
+  # Configure save points
+  # https://redis.io/topics/persistence
+  # - time: every X seconds
+  # - changes: if at least Y keys have changed
+  # If this is intentionally empty, persistence will be disabled!
+  save:
+    - time: 60
+      changes: 1000
+    - time: 300
+      changes: 10
+    - time: 900
+      changes: 1
