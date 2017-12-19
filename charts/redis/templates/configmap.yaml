@@ -28,7 +28,7 @@ data:
     # Configure persistence snapshotting
     {{- if .Values.persistence.save }}
     {{-   range .Values.persistence.save }}
-    save {{ .time }} {{ .changes }}
+    save {{ .time }} {{ .writes }}
     {{-   end }}
     {{- else }}
     save ""

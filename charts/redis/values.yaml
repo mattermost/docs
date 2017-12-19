@@ -40,12 +40,12 @@ persistence:
   # Configure save points
   # https://redis.io/topics/persistence
   # - time: every X seconds
-  # - changes: if at least Y keys have changed
+  # - writes: if at least Y keys have changed
   # If this is intentionally empty, persistence will be disabled!
   save:
     - time: 60
-      changes: 1000
+      writes: 1000
     - time: 300
-      changes: 10
+      writes: 10
     - time: 900
-      changes: 1
+      writes: 1
