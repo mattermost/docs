@@ -98,3 +98,6 @@ gitlab:
       psql:
         enabled: true
         sql_user_password: ${echo -n '${secure-pgsql-password}gitlab' | md5sum - | cut -d ' ' -f1}
+      registry:
+        secret: omnibus-registry
+        certificate: gitlab-registry.key
