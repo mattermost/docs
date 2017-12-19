@@ -39,13 +39,16 @@ spec:
           - name: {{ .Release.Name }}-config
             mountPath: /etc/redis/
             readOnly: true
+          - name: {{ .Release.Name }}-data
+            mountPath: /data/redis/
+            readOnly: false
           resources:
 {{ toYaml .Values.resources | indent 12 }}
       volumes:
       - name: {{ .Release.Name }}-config
         emptyDir:
           medium: "Memory"
-          sizeLimit: 10m
+          sizeLimit: 10M
       - name: {{ .Release.Name }}
         projected:
           defaultMode: 0644
@@ -62,4 +65,14 @@ spec:
               items:
                 - key: {{ .Values.password.key }}
                   path: password
+      - name: {{ .Release.Name }}-data
+        {{- with .Values.persistence }}
+        {{-   if .disk.persistentVolumeClaim }}
+        persistentVolumeClaim:
+          claimName: {{ .disk.persistentVolumeClaim }}
+        {{-   else }}
+        emptyDir:
+          sizeLimit: 10G
+        {{-   end }}
+        {{- end }}
 {{- end -}}

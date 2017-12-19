@@ -15,6 +15,9 @@ nginx:
 registry:
   enabled: false
 
+redis:
+  enabled: false
+
 gitlab:
   omnibus:
     enabled: false
