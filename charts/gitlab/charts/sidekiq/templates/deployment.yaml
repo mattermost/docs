@@ -11,6 +11,8 @@
 {{- $timeout := .Values.timeout -}}
 {{- $redisSecret := .Values.redis.password.secret -}}
 {{- $redisKey := .Values.redis.password.key -}}
+{{- $gitalySecret := .Values.gitaly.auth_token.secret -}}
+{{- $gitalyKey := default "token" .Values.gitaly.auth_token.key -}}
 {{- /* The below is an messy attempt to read in, and reflect on the configmap-queues.yaml template. */}}
 {{- $queueConfigList := include (print $.Template.BasePath "/configmap-queue.yaml") . | split "\n---" }}
 {{- $queues := dict }}
@@ -93,9 +95,9 @@ spec:
                 name: {{ $queueName }}
       - name: sidekiq-gitaly
         secret:
-          secretName: {{ .Values.gitaly.auth_token.secret }}
+          secretName: {{ $gitalySecret }}
           items:
-            - key: {{ default "token" .Values.gitaly.auth_token.key }}
+            - key: {{ $gitalyKey }}
               path: "gitaly_token"
           defaultMode: 0400
       - name: sidekiq-redis
