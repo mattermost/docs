@@ -93,6 +93,14 @@ data:
       extra:
       rack_attack:
         git_basic_auth:
+      ## Registry Integration
+      registry:
+        enabled: true
+        host: {{ .Values.registry.host }}
+        port: {{ default 443 .Values.registry.port }}
+        api_url: {{ default "http" .Values.registry.api.protocol }}://{{ template "unicorn.registry.api.host" . }}:{{ default 5000 .Values.registry.api.port }}
+        key: /etc/gitlab-registry/gitlab-registry.key
+        issuer: {{ .Values.registry.tokenIssuer }}
 
 # Leave this here - This line denotes end of block to the parser.
 {{- end }}

@@ -37,6 +37,15 @@ gitlab:
     unicorn:
       enabled: true
       gitlab_host: gitlab.example.local
+      registry:
+        host: registry.example.local
+        port: 80
+        api:
+          serviceName: registry
+        tokenIssuer: omnibus-gitlab-issuer
+        certificate:
+          secret: omnibus-registry
+          key: gitlab-registry.key
       shell:
         secret: gitlab-shell-secret
       gitaly:
