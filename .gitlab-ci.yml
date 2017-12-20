@@ -275,6 +275,11 @@ production:
       --set gitlab.unicorn.shell.key=secret \
       --set gitlab.unicorn.gitaly.auth_token.secret=gitaly-secret \
       --set gitlab.unicorn.gitaly.auth_token.key=token \
+      --set gitlab.unicorn.registry.host=registry$DOMAIN \
+      --set gitlab.unicorn.registry.api.serviceName=registry \
+      --set gitlab.unicorn.registry.tokenIssuer="omnibus-gitlab-issuer" \
+      --set gitlab.unicorn.registry.certificate.secret=gitlab-registry \
+      --set gitlab.unicorn.registry.certificate.key=registry-auth.key \
       --set gitlab.gitlab-shell.enabled=true \
       --set gitlab.gitlab-shell.secret_token.secret=gitlab-shell-secret \
       --set gitlab.gitlab-shell.secret_token.key=secret \

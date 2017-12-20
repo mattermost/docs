@@ -56,3 +56,17 @@ to the service name
 {{- printf "%s-%s" .Release.Name $name -}}
 {{- end -}}
 {{- end -}}
+
+{{/*
+Return the registry api hostname
+If the registry api host is provided, it will use that, otherwise it will fallback
+to the service name
+*/}}
+{{- define "unicorn.registry.api.host" -}}
+{{-   if .Values.registry.api.host -}}
+{{-     .Values.registry.api.host -}}
+{{-   else -}}
+{{-     $name := default "registry" .Values.registry.api.serviceName -}}
+{{-     printf "%s-%s" .Release.Name $name -}}
+{{-   end -}}
+{{- end -}}

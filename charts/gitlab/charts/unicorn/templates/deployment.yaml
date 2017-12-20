@@ -71,6 +71,8 @@ spec:
             - name: unicorn-redis
               mountPath: '/etc/gitlab-redis'
               readOnly: true
+            - name: unicorn-registry
+              mountPath: '/etc/gitlab-registry'
           livenessProbe:
             exec:
               command:
@@ -108,6 +110,13 @@ spec:
           items:
             - key: {{ .Values.redis.password.key }}
               path: password
+          defaultMode: 0400
+      - name: unicorn-registry
+        secret:
+          secretName: {{ .Values.registry.certificate.secret }}
+          items:
+            - key: {{ .Values.registry.certificate.key }}
+              path: gitlab-registry.key
           defaultMode: 0400
     {{- if .Values.nodeSelector }}
       nodeSelector:
