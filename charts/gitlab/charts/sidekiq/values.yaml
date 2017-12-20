@@ -20,11 +20,13 @@ psql:
   # database: 'gitlabhq_production'
   # username: 'gitlab'
   # password: nil
-gitaly: {}
+gitaly:
   # host: '0.0.0.0'
   # serviceName: 'omnibus'
   # port: 8075
-  # auth_token:
+  auth_token:
+    secret: gitaly-secret
+    key: token
 
 # Global defaults
 replicas: 1

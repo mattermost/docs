@@ -38,7 +38,7 @@ to the service name
 {{- if .Values.redis.host -}}
 {{- .Values.redis.host -}}
 {{- else -}}
-{{- $name := default "omnibus" .Values.redis.serviceName -}}
+{{- $name := default "redis" .Values.redis.serviceName -}}
 {{- printf "%s-%s" .Release.Name $name -}}
 {{- end -}}
 {{- end -}}
