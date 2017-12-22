@@ -42,9 +42,11 @@ Migrating to Mattermost from other messaging solutions
 Migrating from bespoke messaging solutions to Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Many enterprises choose to run bespoke, unsupported, undocumented messaging systems to meet their specific needs.
+Many enterprises run bespoke, unsupported, lightly documented messaging systems driven by the initial excitement of the product's promise. 
 
-Often the solutions were championed by tech-savy early adopters who loved a few features and pushed out the solution broadly. Over time, management moves to an IT team, where an unsupported solution becomes problematic to maintain and secure. Mattermost is often eventually selected to replace bespoke solutions by IT and DevOps teams as the stable, adaptable, long term solution with full commercial support. 
+Often the solutions were championed by tech-savy early adopters who loved a few features and pushed out the solution broadly. 
+
+Over time, management moves to an IT team, where an unsupported solution becomes problematic to maintain and secure. Mattermost is often selected to replace bespoke solutions by IT and DevOps teams as a stable, enterprise-grade, commercially supported solution on an open source platform that meets and exceeds the flexibility and innovation of bespoke solutions. 
 
 Why IT teams choose to leave bespoke solutions
 ```````````````````````````````````````````````
