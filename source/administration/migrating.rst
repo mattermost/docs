@@ -3,7 +3,7 @@ Migration Guide
 
 Thousands and thousands of organizations are moving to Mattermost for powerful, flexible, easy-to-manage workplace messaging. Mattermost deploys as a single Linux binary with MySQL or PostgreSQL and can scale from dozens to tens of thousands of users in a single channel. 
 
-This guide summarizes a number of tools and approaches for migrating data from other platforms onto Mattermost. 
+This guide summarizes different approaches to migrating Mattermost, from one Mattermost deployment to another, and migrating from other messengers, like Slack, HipChat, Jabber, and bespoke solutions, to Mattermost. 
 
 .. contents::
   :backlinks: top
@@ -36,15 +36,18 @@ The following instructions migrate Mattermost from one server to another by back
 
 Once your migration is complete and verified, you can optionally `upgrade the Team Edition of Mattermost to Enterprise Edition using the upgrade guide <https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition>`_.
 
-Migrating from other communication solutions
---------------------------------------------
+Migrating to Mattermost from other messaging solutions
+------------------------------------------------------
 
 Migrating from bespoke messaging solutions to Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Many enterprises choose to run bespoke, unsupported, undocumented messaging systems to meet their specific needs.
 
-Often the solutions were championed by tech-savy early adopters who loved a few features and pushed out the solution broadly. Over time, management moves to the IT department, where an unsupported solution becomes problematic to maintain and secure. 
+Often the solutions were championed by tech-savy early adopters who loved a few features and pushed out the solution broadly. Over time, management moves to the IT department, where an unsupported solution becomes problematic to maintain and secure. Mattermost is often eventually selected by IT and DevOps teams as the secure, adaptable, long term solution with full commercial support. 
+
+Why IT teams choose to leave bespoke solutions
+```````````````````````````````````````````````
 
 When considering a bespoke solution, IT teams often need to consider the following questions around system security: 
 
@@ -56,7 +59,13 @@ When considering a bespoke solution, IT teams often need to consider the followi
 
 Bespoke communication products that provide weak security assurance can dramatically increase the risk to IT teams and the organizations they are staffed to protect. When they move from early adopters to IT, there is often a project to consider Mattermost as a long term solution, given the `thousands of organizations (many in mission critical, high security industries) that have switched <https://about.mattermost.com/success-stories/>`_.
 
-Beyond the high quality, highly flexible experience Mattermost provides across web, PC and mobile, and the ease-of-management as a single Linux binary working with MySQL or PostgreSQL, Mattermost is preferred by many IT teams for its security assurances: 
+
+Why IT teams choose Mattermost over bespoke solutions
+``````````````````````````````````````````````````````
+
+Mattermost is designed to replace bespoke messaging solutions through a platform that is unmatched in flexibility. From the `hundreds of open source projects extending and customizing Mattermost through APIs and drivers <https://github.com/search?utf8=✓&q=mattermost&type=>`_, to innovative support for client and server plugins to adapt the Mattermost user experience to the specific workflows and needs of thousands of high performance teams who rely on Mattermost daily. 
+
+In addition, IT teams prefer Mattermost for its specific security assurances: 
 
 1. Mattermost products are backed by Mattermost, Inc., which has commercial contracts with hundreds of enterprises around the world, many with Fortune 500 and Global 2000 organizations who require significant obligations and assurances from vendors of critical infrastructure. 
 2. Mattermost offers a security bulletin to alert IT teams of high priority security updates, with step-by-step instructions for upgrade and options for commercial support. 
@@ -64,12 +73,28 @@ Beyond the high quality, highly flexible experience Mattermost provides across w
 4. To keep IT teams safe, Mattermost waits 14 days after releasing a security patch before disclosing the specific details of the vulnerability each addresses. 
 5. A Responsible Disclosure Policy is available to supplement internal security reviews with confidential reports from external security researchers, with a recognition program for security research contributions after the security patch is properly released.  
 
-Migrating from bespoke messengers to Mattermost can be challenging. Because of the difficulty of upgrade, the format for storing data in bespoke messengers is unpredictable, and the community around any single legacy release is small. 
+Bringing data from bespoke solutions into Mattermost 
+`````````````````````````````````````````````````````
 
-- WIP
+Migrating from bespoke messengers to Mattermost can be challenging. Because of the difficulty of upgrading and maintaining bespoke solutions, the format for storing data is unpredictable, and the community around any single legacy release is small. 
 
+Here are some approaches to consider: 
 
+If your data in the bespoke messenger is vital: 
 
+1. `**Mattermost Bulk Load Tool** <https://docs.mattermost.com/deployment/bulk-loading.html>`_ - Use the Mattermost bulk load tool to ETL from your bespoke system to Mattermost. 
+2. `**Mattermost ETL framework from BrightScout** <https://github.com/Brightscout/mattermost-etl>`_- Consider the Mattermost ETL framework from BrightScout to custom-configure an adapter 
+3. **Legacy Slack Import** - If you only recently switched from Slack to a bespoke tool, consider going back to import the data and users from the old Slack instance directly into Mattermost, leveraging extensive support for Slack-import provided
+4. **Export to Slack, then Import to Mattermost** - `Export HipChat, Flowdock, Campfire, Chatwork, Hall or CSV files to Slack <https://get.slack.help/hc/en-us/articles/201748703-Import-message-history>`_ and then export to a Slack export file and import the file into Mattermost. 
+
+If your data in the bespoke messenger is not vital, consider: 
+
+1. **Parallel systems** - Running Mattermost in parallel with your bespoke system until the majority of workflow and collaboration has moved to Mattermost
+2. **Hard switch** - Announce a "hard switch" to Mattermost after a period of time of running both systems in parallel. Often this has been done due to security concerns in bespoke products or products nearing end-of-life. 
+
+Sometimes systems running in parallel turn into a hard switch migration when a bespoke or deprecated system experiences a major outage or a security exploit. In 2017, this was experienced by many companies using Mattermost and HipChat.com in parallel when `HipChat suffered a major security breach where customer data was stolen by an unknown attacker. <https://thenextweb.com/insider/2017/04/24/hipchat-hacked-weekend-bad/#.tnw_lAotA9OV>`_  
+
+When IT adopts management of Mattermost often they will purchase the commercial version for additional compliance, access control, and scale features, in addition to high quality commercial support for upgrades and migrations. Teams can `purchase Mattermost Enterpise Edition with a credit card online <https://about.mattermost.com/pricing/>`_ or `contact sales <https://about.mattermost.com/contact/>`_ to engage in an enterprise procurement process. 
 
 Migrating from Slack
 ~~~~~~~~~~~~~~~~~~~~
