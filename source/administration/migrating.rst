@@ -111,11 +111,31 @@ Using the Imported Team
 
 * Once logged in, Mattermost users will have access to previous Slack messages in the public channels imported from Slack.
 
-Migrating from Bitnami
-----------------------
-
+https://github.com/Brightscout/mattermost-etl
 Bitnami uses MySQL, and renames the Mattermost database tables by converting the names to all lower case. For example, in non-Bitnami installations, the Users table is named "Users", but in Bitnami, the table is "users". As a result, when you migrate your data from Bitnami to a non-Bitnami installation, you must modify the MySQL start-up script so that it starts MySQL in lowercase table mode.
 
 You can modify the script by adding the ``--lower-case-table-names=1`` switch to the MySQL start command. The location of the start-up script generally depends on how you installed MySQL, whether by using the package manager for the operating system, or by manually installing MySQL. You must modify the start-up script before migrating the data.
 
 For more information about letter case in MySQL table names and the ``--lower-case-table-names`` switch, see the `Identifier Case Sensitivity <https://dev.mysql.com/doc/refman/5.7/en/identifier-case-sensitivity.html>`_ topic in the MySQL documentation.
+
+
+Migrating from Jabber to Mattermost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+BrightScout helped a major U.S. Federal Agency rapidly migrate from Jabber to Mattermost and open sourced their Extract, Transform and Load (ETL) tool at https://github.com/Brightscout/mattermost-etl
+
+Read more about their `case study <https://about.mattermost.com/blog/u-s-federal-agency-migrates-from-jabber-to-mattermost-the-open-source-way/>`_ online. 
+
+Migrating from Pidgin to Mattermost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In some cases people are using Pidgin clients with different backends to communicate. To continue using Pidgin with a Mattermost backend consider using `Mattermost ETL tool <https://github.com/Brightscout/mattermost-etl>`_ created by BrightScout to migrate data from your existing backend into Mattermost, then use the `Pidgin-Mattermost plugin <https://github.com/EionRobb/purple-mattermost>`_ (complete with an installer for end user machines) to continue to support legacy Pidgin users while offering a whole new Mattermost experience on web, mobile and PCs. 
+
+
+
+
+
+
+
+
+
