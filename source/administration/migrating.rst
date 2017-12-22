@@ -44,34 +44,39 @@ Migrating from bespoke messaging solutions to Mattermost
 
 Many enterprises choose to run bespoke, unsupported, undocumented messaging systems to meet their specific needs.
 
-Often the solutions were championed by tech-savy early adopters who loved a few features and pushed out the solution broadly. Over time, management moves to the IT department, where an unsupported solution becomes problematic to maintain and secure. Mattermost is often eventually selected by IT and DevOps teams as the secure, adaptable, long term solution with full commercial support. 
+Often the solutions were championed by tech-savy early adopters who loved a few features and pushed out the solution broadly. Over time, management moves to an IT team, where an unsupported solution becomes problematic to maintain and secure. Mattermost is often eventually selected to replace bespoke solutions by IT and DevOps teams as the stable, adaptable, long term solution with full commercial support. 
 
 Why IT teams choose to leave bespoke solutions
 ```````````````````````````````````````````````
 
-When considering a bespoke solution, IT teams often need to consider the following questions around system security: 
+Because messaging solutions in technical teams often contain confidential and highly exploitable data, messaging solutions become a security concern that could impact all of an organization's technical infrastructure. 
 
-1. Is the solution backed by a commercial entity with legal obligations to ensure the quality and security of its offering? 
-2. Is there a security bulletin available to alert users of newly released security updates and clear instructions to apply the patches? 
+When IT teams are asked to maintain a bespoke messaging solution, they often need to consider security issues such as the following: 
+
+1. Is the solution backed by a commercial entity with significant legal obligations to ensure the safety and security of the product? 
+2. Is there a security bulletin available to alert our organization of high priorty security updates, with clear instructions to apply the updates? 
 3. Does the solution have a clear and up-to-date list of security updates?
-4. To provide IT teams time to apply security updates, are security patches released in advanced of detailed disclosure of vulnerability details?
+4. To provide our organization time to apply security updates before vulnerabilities are widely known, are security updates released in advanced of detailed disclosure of vulnerability details?
 5. In addition to internal testing, is there a Responsible Disclosure Policy for external security researchers to confidentially report security issues, and a recognition program for their contributions? 
 
-Bespoke communication products that provide weak security assurance can dramatically increase the risk to IT teams and the organizations they are staffed to protect. When they move from early adopters to IT, there is often a project to consider Mattermost as a long term solution, given the `thousands of organizations (many in mission critical, high security industries) that have switched <https://about.mattermost.com/success-stories/>`_.
+Bespoke communication products that provide weak security assurance can dramatically increase the risk to IT teams and their organizations. 
 
+When early adopters of a bespoke solutions ask IT to "take over" and assume the risk of managing a rapidly installed, difficult-to-maintain system with limited or no assurance of security, the IT team is under a great deal of pressure. 
+
+Often at this point, IT teams accelerate their exploration of Mattermost as a long term solution, given the `thousands of organizations (many in mission critical, high security industries) that have switched <https://about.mattermost.com/success-stories/>`_.
 
 Why IT teams choose Mattermost over bespoke solutions
 ``````````````````````````````````````````````````````
 
-Mattermost is designed to replace bespoke messaging solutions through a platform that is unmatched in flexibility. From the `hundreds of open source projects extending and customizing Mattermost through APIs and drivers <https://github.com/search?utf8=✓&q=mattermost&type=>`_, to innovative support for client and server plugins to adapt the Mattermost user experience to the specific workflows and needs of thousands of high performance teams who rely on Mattermost daily. 
+Mattermost is designed to replace bespoke messaging solutions through a platform that is unmatched in flexibility. From the `hundreds of open source projects extending and customizing Mattermost through APIs and drivers <https://github.com/search?utf8=✓&q=mattermost&type=>`_, to an innovative client and server plugin framework for adapting the Mattermost user experience to the specific workflows and needs, thousands of high performance teams rely on Mattermost daily. 
 
-In addition, IT teams prefer Mattermost for its specific security assurances: 
+In addition, IT teams prefer Mattermost for its specific `security assurances <https://docs.mattermost.com/overview/security.html>`_: 
 
 1. Mattermost products are backed by Mattermost, Inc., which has commercial contracts with hundreds of enterprises around the world, many with Fortune 500 and Global 2000 organizations who require significant obligations and assurances from vendors of critical infrastructure. 
-2. Mattermost offers a security bulletin to alert IT teams of high priority security updates, with step-by-step instructions for upgrade and options for commercial support. 
-3. Mattermost maintains an up-to-date list of security updates for both its open source and commercial offerings. 
+2. Mattermost offers a `security bulletin <https://about.mattermost.com/security-bulletin/>`_ to alert IT teams and customers of high priority security updates, with step-by-step instructions for upgrade and options for commercial support. 
+3. Mattermost maintains an `up-to-date list of security updates <https://about.mattermost.com/security-updates/>`_ for both its open source and commercial offerings. 
 4. To keep IT teams safe, Mattermost waits 14 days after releasing a security patch before disclosing the specific details of the vulnerability each addresses. 
-5. A Responsible Disclosure Policy is available to supplement internal security reviews with confidential reports from external security researchers, with a recognition program for security research contributions after the security patch is properly released.  
+5. A `Responsible Disclosure Policy <https://about.mattermost.com/report-security-issue/>`_ is available to supplement internal security reviews with confidential reports from external security researchers, with a recognition program for security research contributions after the security patch is properly released.  
 
 Bringing data from bespoke solutions into Mattermost 
 `````````````````````````````````````````````````````
@@ -83,7 +88,7 @@ Here are some approaches to consider:
 If your data in the bespoke messenger is vital: 
 
 1. `**Mattermost Bulk Load Tool** <https://docs.mattermost.com/deployment/bulk-loading.html>`_ - Use the Mattermost bulk load tool to ETL from your bespoke system to Mattermost. 
-2. `**Mattermost ETL framework from BrightScout** <https://github.com/Brightscout/mattermost-etl>`_- Consider the Mattermost ETL framework from BrightScout to custom-configure an adapter 
+2. `**Mattermost ETL framework from BrightScout** <https://github.com/Brightscout/mattermost-etl>`_- Consider the Mattermost ETL framework from BrightScout to custom-configure an adapter to plug in to the Bulk Load tool mentioned above. 
 3. **Legacy Slack Import** - If you only recently switched from Slack to a bespoke tool, consider going back to import the data and users from the old Slack instance directly into Mattermost, leveraging extensive support for Slack-import provided
 4. **Export to Slack, then Import to Mattermost** - `Export HipChat, Flowdock, Campfire, Chatwork, Hall or CSV files to Slack <https://get.slack.help/hc/en-us/articles/201748703-Import-message-history>`_ and then export to a Slack export file and import the file into Mattermost. 
 
