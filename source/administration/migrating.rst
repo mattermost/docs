@@ -1,6 +1,14 @@
 Migration Guide
 ===============
 
+Thousands and thousands of organizations are moving to Mattermost for powerful, flexible, easy-to-manage workplace messaging. Mattermost deploys as a single Linux binary with MySQL or PostgreSQL and can scale from dozens to tens of thousands of users in a single channel. 
+
+This guide summarizes a number of tools and approaches for migrating data from other platforms onto Mattermost. 
+
+.. contents::
+  :backlinks: top
+  :local:
+
 Migrating the Mattermost Server
 -------------------------------
 
@@ -28,8 +36,43 @@ The following instructions migrate Mattermost from one server to another by back
 
 Once your migration is complete and verified, you can optionally `upgrade the Team Edition of Mattermost to Enterprise Edition using the upgrade guide <https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition>`_.
 
+Migrating from other communication solutions
+--------------------------------------------
+
+Migrating from bespoke messaging solutions to Mattermost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Many enterprises choose to run bespoke, unsupported, undocumented messaging systems to meet their specific needs.
+
+Often the solutions were championed by tech-savy early adopters who loved a few features and pushed out the solution broadly. Over time, management moves to the IT department, where an unsupported solution becomes problematic to maintain and secure. 
+
+When considering a bespoke solution, IT teams often need to consider the following questions around system security: 
+
+1. Is the solution backed by a commercial entity with legal obligations to ensure the quality and security of its offering? 
+2. Is there a security bulletin available to alert users of newly released security updates and clear instructions to apply the patches? 
+3. Does the solution have a clear and up-to-date list of security updates?
+4. To provide IT teams time to apply security updates, are security patches released in advanced of detailed disclosure of vulnerability details?
+5. In addition to internal testing, is there a Responsible Disclosure Policy for external security researchers to confidentially report security issues, and a recognition program for their contributions? 
+
+Bespoke communication products that provide weak security assurance can dramatically increase the risk to IT teams and the organizations they are staffed to protect. When they move from early adopters to IT, there is often a project to consider Mattermost as a long term solution, given the `thousands of organizations (many in mission critical, high security industries) that have switched <https://about.mattermost.com/success-stories/>`_.
+
+Beyond the high quality, highly flexible experience Mattermost provides across web, PC and mobile, and the ease-of-management as a single Linux binary working with MySQL or PostgreSQL, Mattermost is preferred by many IT teams for its security assurances: 
+
+1. Mattermost products are backed by Mattermost, Inc., which has commercial contracts with hundreds of enterprises around the world, many with Fortune 500 and Global 2000 organizations who require significant obligations and assurances from vendors of critical infrastructure. 
+2. Mattermost offers a security bulletin to alert IT teams of high priority security updates, with step-by-step instructions for upgrade and options for commercial support. 
+3. Mattermost maintains an up-to-date list of security updates for both its open source and commercial offerings. 
+4. To keep IT teams safe, Mattermost waits 14 days after releasing a security patch before disclosing the specific details of the vulnerability each addresses. 
+5. A Responsible Disclosure Policy is available to supplement internal security reviews with confidential reports from external security researchers, with a recognition program for security research contributions after the security patch is properly released.  
+
+Migrating from bespoke messengers to Mattermost can be challenging. Because of the difficulty of upgrade, the format for storing data in bespoke messengers is unpredictable, and the community around any single legacy release is small. 
+
+- WIP
+
+
+
+
 Migrating from Slack
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
 .. note:: As a proprietary SaaS service, Slack is able to change its export format quickly and without notice. If you encounter issues not mentioned in the documentation below, please alert the product team by `filing an issue <https://www.mattermost.org/filing-issues/>`_.
 
@@ -48,7 +91,7 @@ This feature can be accessed through the `Mattermost Web App <https://docs.matte
    If you don't use Docker, there are `step-by-step instructions <https://docs.mattermost.com/install/docker-local-machine.html>`_ to install Mattermost in preview mode in less than 5 minutes.
 
 Supported Features
-~~~~~~~~~~~~~~~~~~
+``````````````````
 
 The following key features are supported when importing from Slack:
 
@@ -69,7 +112,7 @@ When topic-change messages, purpose-change messages, and channel name-change mes
 .. note:: Slack user accounts with the same email address as existing accounts on your Mattermost server will be merged into those accounts on import.
 
 Limitations
-~~~~~~~~~~~
+```````````
 
 The following limitations are present when importing from Slack:
 
@@ -82,7 +125,7 @@ The following limitations are present when importing from Slack:
 * If the handle of an imported Slack channel is the same handle as a deleted Mattermost channel, then a random handle is generated for the imported Slack channel.
 
 Migrating from Slack using the Mattermost Web App
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`````````````````````````````````````````````````
 
 .. note:: For larger imports, particularly those where you have used the `slack-advanced-exporter tool` to add Slack post attachments to the archive, it is recommended to import the Slack data using the `CLI <https://docs.mattermost.com/administration/migrating.html#migrating-from-slack-using-the-mattermost-cli>`_.
 
@@ -94,7 +137,7 @@ Migrating from Slack using the Mattermost Web App
 
 
 Migrating from Slack using the Mattermost CLI
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`````````````````````````````````````````````
 
 1. Generate a Slack "Export" file from **Slack > Team Settings > Import/Export Data > Export > Start Export**.
 
@@ -103,7 +146,7 @@ Migrating from Slack using the Mattermost CLI
    ``$ platform import slack team_name /path/to/your-slack-export.zip``
 
 Using the Imported Team
-~~~~~~~~~~~~~~~~~~~~~~~
+````````````````````````
 
 * During the import process, the emails and usernames from Slack are used to create new Mattermost accounts.
 
@@ -118,6 +161,16 @@ You can modify the script by adding the ``--lower-case-table-names=1`` switch to
 
 For more information about letter case in MySQL table names and the ``--lower-case-table-names`` switch, see the `Identifier Case Sensitivity <https://dev.mysql.com/doc/refman/5.7/en/identifier-case-sensitivity.html>`_ topic in the MySQL documentation.
 
+Migrating from HipChat Server and HipChat Data Center to Mattermost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+HipChat.com has been discontinued and replaced by Stride. It is unclear whether the former product known as HipChat Server or the rebranded product now called HipChat DataCenter will continue. 
+
+For teams with very limited amounts of data stored, follow the `Export data from HipChat Data Center Guide <https://confluence.atlassian.com/hipchatdc3/export-data-from-hipchat-data-center-913476832.html>`_ and use the `Mattermost ETL framework <https://github.com/Brightscout/mattermost-etl>`_ to import the solution. If you have questions or encounter issues, `please open a ticket <https://github.com/Brightscout/mattermost-etl/issues>`_. 
+
+For teams with large amounts of data, the export function has been reported to fail and it may be difficult to reclaim your team's data. Consider contacting HipChat support to see if a new solution is available. 
+
+For teams who have their data trapped, the most standard procedure is to run Mattermost and HipChat in parallel until all the users have moved to Mattermost then deprecate the HipChat instance. 
 
 Migrating from Jabber to Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -130,6 +183,10 @@ Migrating from Pidgin to Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In some cases people are using Pidgin clients with different backends to communicate. To continue using Pidgin with a Mattermost backend consider using `Mattermost ETL tool <https://github.com/Brightscout/mattermost-etl>`_ created by BrightScout to migrate data from your existing backend into Mattermost, then use the `Pidgin-Mattermost plugin <https://github.com/EionRobb/purple-mattermost>`_ (complete with an installer for end user machines) to continue to support legacy Pidgin users while offering a whole new Mattermost experience on web, mobile and PCs. 
+
+
+
+
 
 
 
