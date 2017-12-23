@@ -62,13 +62,13 @@ Fields can be included as an optional array within ``attachments``, and are used
 Images
 ~~~~~~
 
-``image_url``: An optional URL to an image file (GIF, JPEG, PNG, or BMP) that is displayed inside a message attachment.
+``image_url``: An optional URL to an image file (GIF, JPEG, PNG, BMP, or SVG) that is displayed inside a message attachment.
 
 Large images are resized to a maximum width of 400px or a maximum height of 300px, while still maintaining the original aspect ratio.
 
 .. image:: ../images/attachments-image.png
 
-``thumb_url``: An optional URL to an image file (GIF, JPEG, PNG, or BMP)  that is displayed as a 75x75 pixel thumbnail on the right side of an attachment. We recommend using an image that is already 75x75 pixels, but larger images will be scaled down with the aspect ratio maintained.
+``thumb_url``: An optional URL to an image file (GIF, JPEG, PNG, BMP, or SVG)  that is displayed as a 75x75 pixel thumbnail on the right side of an attachment. We recommend using an image that is already 75x75 pixels, but larger images will be scaled down with the aspect ratio maintained.
 
 .. image:: ../images/attachments-thumb.png
 
