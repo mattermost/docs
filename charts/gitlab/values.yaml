@@ -21,6 +21,8 @@ gitlab-shell:
   enabled: false
 mattermost:
   enabled: false
+migrations:
+  enabled: false
 omnibus:
   enabled: false
   nginx:

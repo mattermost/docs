@@ -1,0 +1,59 @@
+{{- if .Values.enabled }}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ template "migrations.jobname" . }}
+  labels:
+    app: {{ template "migrations.name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+  annotations:
+    "helm.sh/hook": post-install,post-upgrade
+spec:
+  template:
+    metadata:
+      labels:
+        app: {{ template "migrations.name" . }}
+        release: {{ .Release.Name }}
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          args:
+            - /scripts/db-migrate
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: CONFIG_TEMPLATE_DIRECTORY
+              value: '/var/opt/gitlab/templates'
+            - name: CONFIG_DIRECTORY
+              value: '/var/opt/gitlab/config/gitlab/'
+            {{- if .Values.initial_root_password}}
+            - name: GITLAB_ROOT_PASSWORD
+              value: {{ .Values.initial_root_password | quote }}
+            {{- end }}
+          volumeMounts:
+            - name: migrations-config
+              mountPath: '/var/opt/gitlab/templates'
+            - name: migrations-redis
+              mountPath: '/etc/gitlab-redis'
+              readOnly: true
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+      volumes:
+      - name: migrations-config
+        configMap:
+          name: {{ template "migrations.fullname" . }}
+      - name: migrations-redis
+        secret:
+          secretName: {{ .Values.redis.password.secret }}
+          items:
+            - key: {{ .Values.redis.password.key }}
+              path: password
+          defaultMode: 0400
+    {{- if .Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml .Values.nodeSelector | indent 8 }}
+    {{- end }}
+{{- end }}

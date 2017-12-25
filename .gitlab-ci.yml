@@ -280,6 +280,13 @@ production:
       --set gitlab.unicorn.registry.tokenIssuer="omnibus-gitlab-issuer" \
       --set gitlab.unicorn.registry.certificate.secret=gitlab-registry \
       --set gitlab.unicorn.registry.certificate.key=registry-auth.key \
+      --set gitlab.migrations.enabled=true \
+      --set gitlab.migrations.redis.serviceName=redis \
+      --set gitlab.migrations.redis.password.secret=gitlab-redis \
+      --set gitlab.migrations.redis.password.key=redis-password \
+      --set gitlab.migrations.psql.serviceName=omnibus \
+      --set gitlab.migrations.psql.password="$ROOT_PASSWORD" \
+      --set gitlab.migrations.initial_root_password="$ROOT_PASSWORD" \
       --set gitlab.gitlab-shell.enabled=true \
       --set gitlab.gitlab-shell.secret_token.secret=gitlab-shell-secret \
       --set gitlab.gitlab-shell.secret_token.key=secret \
@@ -289,7 +296,7 @@ production:
       --set gitlab.omnibus.enabled=true \
       --set gitlab.omnibus.service.type=NodePort \
       --set gitlab.omnibus.external_url="https://gitlab$DOMAIN" \
-      --set gitlab.omnibus.initial_root_password="$ROOT_PASSWORD" \
+      --set gitlab.omnibus.auto_migrate=false \
       --set gitlab.omnibus.redis.enabled=false \
       --set gitlab.omnibus.redis.serviceName=redis \
       --set gitlab.omnibus.redis.password.secret=gitlab-redis \
