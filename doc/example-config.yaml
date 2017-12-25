@@ -95,10 +95,22 @@ gitlab:
         name: gitaly-secret
         key: token
 
+    migrations:
+      enabled: true
+      initial_root_password: "minikube"
+      redis:
+        serviceName: redis
+        password:
+          secret: gitlab-redis
+          key: redis-password
+      psql:
+        serviceName: omnibus
+        password: secure-pgsql-password
+
     # omnibus sub-chart (development only)
     omnibus:
       enabled: true
-      initial_root_password: "minikube"
+      auto_migrate: false
       redis:
         enabled: false
         password:

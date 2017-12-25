@@ -18,6 +18,7 @@ data:
     gitlab_rails['trusted_proxies'] = %w{{ .Values.trusted_proxies }}
     {{- end }}
     # PostgresQL related
+    gitlab_rails['auto_migrate'] = {{ .Values.auto_migrate }}
     {{- if .Values.psql.enabled }}
     gitlab_rails['db_host'] = '127.0.0.1'
     {{- else }}

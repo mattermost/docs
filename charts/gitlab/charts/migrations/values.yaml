@@ -1,0 +1,33 @@
+# Default values for migrations.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+image:
+  repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-rails
+  tag: latest
+  pullPolicy: Always
+enabled: false
+# initial_root_password:
+redis:
+  # host: '0.0.0.0'
+  # serviceName: 'omnibus'
+  password:
+    secret: gitlab-redis
+    key: redis-password
+psql:
+  # host: '0.0.0.0'
+  # serviceName: 'omnibus'
+  # port: '5432'
+  # database: 'gitlabhq_production'
+  # username: 'gitlab'
+  # password: nil
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #  cpu: 100m
+  #  memory: 128Mi
+  # requests:
+  #  cpu: 100m
+  #  memory: 128Mi
