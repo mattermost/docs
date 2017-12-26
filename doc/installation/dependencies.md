@@ -24,14 +24,22 @@ core 2017.11.06
 gcloud
 gsutil 4.28
 kubectl
-$ kubectl version
-Client Version: version.Info{Major:"1", Minor:"8", GitVersion:"v1.8.2", GitCommit:"bdaeafa71f6c7c04636251031f93464384d54963", GitTreeState:"clean", BuildDate:"2017-10-24T19:48:57Z", GoVersion:"go1.8.3", Compiler:"gc", Platform:"linux/amd64"}
-Server Version: version.Info{Major:"1", Minor:"7+", GitVersion:"v1.7.8-gke.0", GitCommit:"a7061d4b09b53ab4099e3b5ca3e80fb172e1b018", GitTreeState:"clean", BuildDate:"2017-10-10T18:48:45Z", GoVersion:"go1.8.3", Compiler:"gc", Platform:"linux/amd64"}
 ```
 ### Kubectl
 
 The [gcloud][] sdk & command contains `kubectl` binary. If you are not using gcloud,
 you can setup kubectl using the installation documentation for [kubectl][].
+
+At the time of writing this doc, the output of `kubectl version`:
+
+```
+$ kubectl version
+Client Version: version.Info{Major:"1", Minor:"8", GitVersion:"v1.8.2", GitCommit:"bdaeafa71f6c7c04636251031f93464384d54963", GitTreeState:"clean", BuildDate:"2017-10-24T19:48:57Z", GoVersion:"go1.8.3", Compiler:"gc", Platform:"linux/amd64"}
+Unable to connect to the server:
+```
+
+> Note: The server version of kubectl cannot be obtained until we connect to a
+cluster. Proceed with setting up Helm.
 
 ### Helm
 

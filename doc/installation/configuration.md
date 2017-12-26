@@ -7,7 +7,7 @@ As an example, we will use domain `helm-charts.win`.
 The filename of the template is derived from the domain name, `helm-charts-win`:
 
 ```
-$cp example-config.yaml helm-charts-win.yaml
+$cp doc/example-config.yaml helm-charts-win.yaml
 ```
 
 Next, we are replacing the contents of the `helm-charts-win.yaml` with valid
@@ -28,7 +28,8 @@ Set the following properties in `helm-charts-win.yaml`:
 - gitlab.omnibus.enabled: true
 - gitlab.omnibus.external_url: 'https://gitlab.helm-charts.win'
 - gitlab.omnibus.initial_root_password: [from 1Password]
-- gitlab.omnibus.redis.enabled: true
+- gitlab.omnibus.redis.enabled: false
+- gitlab.omnibus.redis.serviceName: redis
 - gitlab.omnibus.redis.password.secret: gitlab-redis
 - gitlab.omnibus.redis.password.key: redis-password
 - gitlab.omnibus.psql.enabled: true
