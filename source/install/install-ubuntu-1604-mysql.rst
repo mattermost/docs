@@ -45,6 +45,6 @@ Install and set up the database for use by the Mattermost server. You can instal
    ``mysql> exit``
    
    .. note::
-    If you have installed MySQL on its own server, you need to edit the ``/etc/mysql/mysql.conf.d/mysqld.cnf`` file and comment out the ``bind-address = 127.0.0.1`` using the ``#`` symbol. Restart your sql server once.
+    If you have installed MySQL on its own server, you need to edit the ``/etc/mysql/mysql.conf.d/mysqld.cnf`` file and comment out the ``bind-address = 127.0.0.1`` using the ``#`` symbol, then restart your sql server.
 
 With the database installed and the initial setup complete, you can now install the Mattermost server.
