@@ -6,3 +6,4 @@ RBAC affects a few different aspects of GitLab:
 * [Installation of GitLab using Helm](../helm/README.md#preparing-for-helm-with-rbac)
 * Prometheus monitoring
 * GitLab Runner
+* Kube-Lego
