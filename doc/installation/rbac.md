@@ -7,3 +7,4 @@ RBAC affects a few different aspects of GitLab:
 * Prometheus monitoring
 * GitLab Runner
 * Kube-Lego
+* nginx-ingress
