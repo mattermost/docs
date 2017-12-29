@@ -212,60 +212,6 @@ In order to develop and build the Mattermost mobile apps you'll need to get a co
 .. important::
   It is important that you run everything with the make commands and avoid using npm or yarn to install dependencies. If you use npm or yarn, you may skip steps and the app won't build correctly.
  
-Make Commands Explained
-------------------------------------
-
-We've included several make commands to control the development flow and to ensure that everything works as expected. Always use these make commands unless they cannot accomplish what you're trying to do.
-
-Every make command has to be run from a terminal in the project's root directory.
-
-Commands to Prepare the App
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-These make commands are used to install dependencies, to configure necessary steps before running or building the app, and to clean everything.
-
- - **make pre-run**: Downloads any project dependencies needed and sets up the app assets. This is the equivalent of running  ``.yarninstall``, ``.podinstall`` and ``dist/assets`` make commands.
- - **make .yarninstall**: Downloads JavaScript and react native dependencies. Once this command finishes executing it will create a ``.yarninstall`` empty file in the project's root directory to indicate that this command already ran. If yarn updates your local dependencies in the ``node_modules`` directory, it will automatically run ``make post-install`` for you.
- - **make .podinstall**: Downloads cocoapods dependencies needed to build the iOS app. Once this command finishes executing it will create a ``.podinstall`` empty file in the project's root directory to indicate that this command already ran.
- - **make post-install**: Normally this command runs automatically if yarn detects that the project updated some or all of its JavaScript dependencies. Once yarn finishes executing, this command automatically sets up a few post installation steps to ensure that everything runs correctly.
- - **make clean**: Removes all downloaded dependencies, clears the cache of those dependencies and deletes any builds that were created. It will not reset the repo, so your current changes will still be there.
- - **make dist/assets**: Builds the assets to be used including images, localization files and overriding of asset files (see Override Assets & White Labeling for details).
- 
-Commands to Run the App
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-These make commands are used to run the app on a device or emulator for Android, and on a simulator for iOS. (see `Running the App on a Device <http://facebook.github.io/react-native/docs/running-on-device.html>`_ for details).
-
- - **make start-packager**: Runs the react-native packager used to bundle the JavaScript code. This command will execute *pre-run* to ensure the app is prepared.
- - **make start**: Alias of ``make start-packager``.
- - **make stop-packager**: Stops the react-native packager if it is running.
- - **make stop**: Alias of ``make stop-packager``.
- - **make run-ios**: Compiles and runs the app for iOS on an iPhone 6 simulator by default. You can set the environment variable SIMULATOR to the name of the device you want to use. This command will execute ``make start`` to ensure the packager is running.
- - **make run**: Alias of ``make run-ios``.
- - **make run-android**: Compiles and runs the app for Android on a running emulator or a device connected through USB. This command will execute ``make start`` to ensure the packager is running (see `Create and Manage Virtual Devices to configure and run the Android emulator <https://developer.android.com/studio/run/managing-avds.html>`_).
-
-Commands to Test the App
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-These make commands are used to ensure that code follows linter rules and that tests pass succesfully.
-
- - **make check-style**: Runs the ESLint JavaScript linter.
- - **make test**: Runs the tests.
- 
-Commands to Build the App
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The set of commands for building the app are used in conjunction with `Fastlane <https://fastlane.tools/>`_. For most of them, you will need to modify ``Fastfile``, since the commands are coupled with Mattermost's build and deployment process.
-
-You will always be able to build an unsigned version of the app as it does not need provisioning profiles or certificates as long as you set up Fastlane in your environment.
-
- - **make build-ios**: Builds the iOS app and generates the ``.ipa`` file to be distributed. This make command expects an argument as the target which can be ``dev``, ``beta`` or ``release``. Depending on the target, a Fastlane script runs and each lane has the appropriate certificates and steps according to the Mattermost release process.
- - **make build-android**: Builds the Android app and generates the ``.apk`` file to be distributed. This make command expects an argument as the target which can be ``dev``, ``alpha`` or ``release``. Depending on the target, a Fastlane script runs and each lane has the appropriate certificates and steps according to the Mattermost release process.
- - **make unsigned-ios**: Builds the iOS app and generates an unsigned ``Mattermost-unsigned.ipa`` file in the project's root directory.
- - **make unsigned-android**: Builds the Android app and generates an unsigned ``Mattermost-unsigned.apk`` file in the project's root directory.
-
-If you plan to use the **make build-*** commands, be sure to `modify Fastlane <https://docs.fastlane.tools/>`_ to suit your needs or the commands will fail.
-
 Adding New Dependencies to the Project
 -------------------------------------------
 
@@ -305,6 +251,441 @@ Project Directory Structure
 ------------------------------------
 
 .. image:: ../../source/images/project_directory_structure_apps.png
+
+Make Commands Explained
+------------------------------------
+
+We've included a bunch of make commands in order to control the development flow and to ensure that everything works as expected. Always try and use these make commands unless what you trying to do can't be accomplished by one of these commands.
+
+Every make command has to be run from a terminal in the project's root directory. You can always try **make help** to get a small description in your terminal about every make command available.
+
+Commands to Prepare the App
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+These make commands are used to install dependencies, to configure necessary steps before running or building the app, and to clean everything.
+
+ - **make pre-run**: Downloads and installs any project dependencies and sets up the app assets required to build and run the app. Run this command when setting up your environment or after a **make clean**.
+ - **make clean**: Removes all downloaded dependencies, clears the cache of those dependencies and deletes any builds that were created. It will not reset the repo, so your current changes will still be there.
+
+
+Commands to Run the App
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+These make commands are used to run the app on a device or emulator in the case of Android, and on a simulator in the case of iOS. (see `Running the App on a Device`_ for details)
+
+ - **make start**: Runs the React Native packager server used to bundle the javascript code and leaves it in running in your terminal. Use this if you have a compiled app already running in dev mode on a device, emulator or simulator and you are only performing changes in you JavaScript code and there is no need to re-compile the app.
+ - **make stop**: Stops the React Native packager server if it is running. This command is optional if you need to terminate the packager server from another terminal.
+ - **make run**: Alias of ``run-ios``.
+ - **make run-ios**: Compiles and runs the app for iOS on an iPhone 6 simulator by default. You can set the environment variable SIMULATOR to the name of the device you want to use.
+ - **make run-android**: make run-android: Compiles and runs the app for Android on a running emulator or a device connected through USB. (see `Create and Manage Virtual Devices to configure and run the Android emulator <https://developer.android.com/studio/run/managing-avds.html>`_ to configure and run the Android emulator).
+
+Commands to Test the App
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+These make commands are used to ensure that the code follows the linter rules and that the tests work correctly.
+
+ - **make check-style**: Runs the ESLint JavaScript linter.
+ - **make test**: Runs the tests.
+
+Commands to Build the App
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The set of commands for building the app are used in conjunction with `Fastlane <https://fastlane.tools/>`_ and a set of environment variables that can be found under the project's fastlane directory.
+
+ - **make build-ios**: Builds the iOS app and generates the Mattermost.ipa file in the project's root directory to be distributed.
+ - **make build-android**: Builds the Android app and generates the Mattermost.apk file in the project's root directory to be distributed.
+ - **make unsigned-ios**: Builds the iOS app and generates an unsigned Mattermost-unsigned.ipa file in the project's root directory.
+ - **make unsigned-ios**: Builds the Android app and generates an unsigned Mattermost-unsigned.apk file in the project's root directory.
+
+If you plan to use the make build-* commands be sure to set your Environment variables for use in conjunction with Fastlane to suit your needs. For more information please refer to the `Build your own app from source`_ section.
+
+Running the App on a Device
+------------------------------
+
+If you want to test the app or if you want to make a contribution is always a good idea to run the app on an actual device, that way you can ensure that the app is working correctly and in a performant way before making a pull request.
+
+Running the app on Android devices
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Enable Debugging over USB
+++++++++++++++++++++++++++++
+
+Most android devices can only install and run apps downloaded from Google Play, by default, in order to be able to install our app in the device during development you will need to enable
+USB Debugging on your device in the "Developer options" menu by going to **Settings -> About phone** and then tap the Build number row at the bottom seven times,
+then go back to **Settings -> Developer options** and enable "USB debugging".
+
+Plug in your device via USB
+++++++++++++++++++++++++++++
+Plug in your Android device in any available USB port in your development machine (try to avoid hubs and plug it directly into your computer) and
+check that your device is properly connecting to ADB (Android Debug Bridge) by running **adb devices**.
+
+  .. code-block:: bash
+    $ adb devices
+    List of devices attached
+    42006fb3e4fb25b8    device
+
+If you see **device** in the right column that means that the device is connected. You must have **only one device connected** at a time.
+
+Run the app
++++++++++++++
+
+With your device connected to the USB port execute the following in your command prompt to install and launch the app on the device:
+
+  .. code-block:: bash
+
+    $ make run-android
+
+If you get a "bridge configuration isn't available" error. See `Using adb reverse <http://facebook.github.io/react-native/docs/running-on-device.html#method-1-using-adb-reverse-recommended>`_.
+
+You can also run a **Release** build of the app in your device by setting the *VARIANT* environment variable to "release" like:
+
+  .. code-block:: bash
+
+    $ VARIANT=release make run-android
+
+.. important::
+  If you have already a Debug app install in your phone you need to uninstall it first as the Debug and Release variant aren't compatible and you'll get an error saying ``INSTALL_FAILED_UPDATE_INCOMPATIBLE``.
+
+Also remember running the app in Release mode will be more performant than in debug mode but you cannot test new changes without recompiling the app.
+
+Running the app on iOS devices
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Plug in your device via USB
+++++++++++++++++++++++++++++
+
+Plug in your iOS device in any available USB port in your development machine (try to avoid hubs and plug it directly into your computer). Navigate to the ios folder in your ``mattermost-mobile`` project,
+then open the file **Mattermost.xcworkspace** in XCode.
+
+If this is your first time running an app on your iOS device, you may need to register your device for development, to do so,
+open the **Product** menu in XCode menu bar, then go to **Destination** then look for and select your device from the list.
+
+Configure code signing
++++++++++++++++++++++++
+
+Register for an `Apple developer account <https://developer.apple.com/>`_ if you don't have one yet.
+
+Select the **Mattermost** project in the Xcode Project Navigator, then select the **Mattermost** target.
+Look for the "General" tab. Go to the "Signing" section and make sure your Apple developer account or team is selected under the Team dropdown. Then make sure to change the *Bundle Identifier*
+in the "Identity" section that will be used for your own custom build. XCode will then register your provisioning profiles in your account for the Bundle Identifier you've entered.
+
+.. image:: ../../source/images/mobile/code_signing.png
+
+Repeat the steps for the **MattermostTest** target in the project and the **MattermostShare** target.
+
+.. important::
+  The **MattermostShare** target must use different *Bundle Identifier* than the other two targets.
+
+Configure App Groups
++++++++++++++++++++++
+
+Select the **Mattermost** project in the Xcode Project Navigator, then select the **Mattermost** target. Look for the "Capabilities" tab.
+Expand the **App Groups** capability and then enter the name for your app group, remember that it has to include the "group." prefix.
+
+Repeat the process for the **MattermostShare** target and use the same app group defined in the **Mattermost** target.
+App Groups are used to share data between the main app and the app extension.
+
+.. image:: ../../source/images/mobile/app_groups.png
+
+Finally you'll need to set the same app group in your config.json under the assets folder and you can refer to `Overriding assets & White labeling`_ section to learn how to do it.
+
+Build and Run the app
+++++++++++++++++++++++
+
+If everything is set up correctly, your device will be listed as the build target in the Xcode toolbar,
+and it will also appear in the Devices Pane (⇧⌘2). You can now press the **Build and run** button (⌘R) or select the **Run** from the Product menu.
+
+.. image:: ../../source/images/mobile/running_ios.png
+
+If you run into any issues, please take a look at Apple's `Launching You App on a Device <https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/LaunchingYourApponDevices/LaunchingYourApponDevices.html#//apple_ref/doc/uid/TP40012582-CH27-SW4>`_ documentation.
+
+If the app fails to build go to the **Product** menu and select **Clean** or by pressing the Option key while in the menu and select **Clean Build Folder…** and try again.
+
+Build your own app from source
+------------------------------
+
+Now is time to build the app from source to be able to distribute it within your team or company, either using the App Stores,
+an EMM provider or in any other possible way, to do so we recommend using the **make build-*** commands in conjunction with `Fastlane <https://docs.fastlane.tools/#choose-your-installation-method>`_.
+
+We've created a couple of lanes within Fastlane that will build the app by following a set of environment variables to help you overcome all the manual steps needed.
+
+Build preparations
+~~~~~~~~~~~~~~~~~~
+
+First of all ensure that the following remains exactly the same as in the original `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_ repo:
+ - The package Id for the Android app and the Bundle Identifier for the iOS app remain the same as the one in the original mattermost-mobile repo, meaning it should be com.mattermost.rnbeta.
+ - For android you have the source files under *android/app/src/main/java/com/mattermost/rnbeta*
+ - Set your `environment variables <https://github.com/mattermost/mattermost-mobile/blob/fastlane/fastlane/env_vars_example>`_ according to your needs
+
+Build the Android app
+~~~~~~~~~~~~~~~~~~~~~~
+
+Android requires that all apps be digitally signed with a certificate before they can be installed, so to distribute your Android application via Google Play Store, you'll need to generate a signed release APK.
+
+Generating a signing key
++++++++++++++++++++++++++
+
+To generate the signed key we'll be using **keytool** which should be present in your OS if you have a JDK installed.
+
+  .. code-block:: bash
+
+    $ keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
+
+The above command prompts you for passwords for the keystore and key
+(make sure you use the same password for both), and to provide the Distinguished Name fields for your key.
+It then generates the keystore as a file called my-release-key.keystore.
+
+The keystore contains a single key, valid for 10000 days. The alias is a name that you will use later when signing your app, so remember to take a note of the alias.
+
+.. note::
+  Remember to keep your keystore file private and never commit it to version control.
+
+Setting up gradle variables
+++++++++++++++++++++++++++++
+
+ - Place the *my-release-key.keystore* file under a directory that you have access, it can be in your home directory or even under *android/app* in the project folder.
+ - Edit the file ~/.gradle/gradle.properties or create it if one does not exist and add the following:
+
+   .. code-block:: bash
+
+     MATTERMOST_RELEASE_STORE_FILE=/full/path/to/directory/containing/my-release-key.keystore
+     MATTERMOST_RELEASE_KEY_ALIAS=my-key-alias
+     MATTERMOST_RELEASE_PASSWORD=*****
+
+.. important::
+  replace **/full/path/to/directory/containing/my-release-key.keystore** with the full path to the actual keystore file and ********* with the actual keystore password
+
+.. warning::
+  Once you publish the app on the Play Store, you will need to re-publish your app under a different package id (losing all downloads and ratings) if you want to change the signing key at any point. So backup your keystore and don't forget the password.
+
+Setting up environment variables
+++++++++++++++++++++++++++++++++
+In order to have a successful build using the **make build-android** command you'll need to set a few environment variables according to your needs,
+in this guide we will explain some of them and you can refer to the `env_vars_example <https://github.com/mattermost/mattermost-mobile/blob/fastlane/fastlane/env_vars_example>`_
+file under the fastlane directory to get a sense of all of them.
+
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
+| Variable                                      | Description                                                                                           | Default value           |
++===============================================+=======================================================================================================+=========================+
+| SUBMIT_ANDROID_TO_GOOGLE_PLAY                 | Should the app be submitted to the Play Store once it finishes to build, use along with               | false                   |
+|                                               | **SUPPLY_TRACK**.                                                                                     |                         |
+|                                               | Valid values are: true, false                                                                         |                         |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
+| ANDROID_BUILD_FOR_RELEASE                     | Defines if the Android app should be built in release mode.                                           | false                   |
+|                                               | Valid values are: true, false                                                                         |                         |
+|                                               |                                                                                                       |                         |
+|                                               | **Make sure you set this value to true if you plan to submit this app to the Play Store or distribute |                         |
+|                                               | it in any other way**.                                                                                |                         |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
+| ANDROID_PACKAGE_ID                            | The package Id for the android app.                                                                   | com.mattermost.rnbeta   |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
+| ANDROID_APP_NAME                              | The name of the app as it is going to be shown in the Android home screen.                            | Mattermost Beta         |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
+| ANDROID_REPLACE_ASSETS                        | Replaces the icons of the app with the ones found under the folder *assets/release/icons/android*.    | false                   |
+|                                               | Valid values are: true, false                                                                         |                         |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
+| ANDROID_INCREMENT_BUILD_NUMBER                | Increases the Android app build number, required when a new build is going to be publish to the       | false                   |
+|                                               | Google Play Store.                                                                                    |                         |
+|                                               | Valid values are: true, false                                                                         |                         |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
+| ANDROID_COMMIT_INCREMENT_BUILD_NUMBER_MESSAGE | The message that will be used for committing to git the increment of the build number, the actual     | Version Bump to         |
+|                                               | number will be appended to the end of this message.                                                   |                         |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
+| SUPPLY_TRACK                                  | The track of the application to use when submitting                                                   | production              |
+|                                               | the app to Google Play Store.                                                                         |                         |
+|                                               | Valid values are: alpha, beta, production                                                             |                         |
+|                                               |                                                                                                       |                         |
+|                                               | **We strongly recommend not submitting the app to to production, instead try any of the other tracks  |                         |
+|                                               | and then promote your app using the Google Play console**.                                            |                         |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
+| SUPPLY_PACKAGE_NAME                           | The package Id of your application, make sure it matches **ANDROID_PACKAGE_ID**.                      | com.mattermost.rnbeta   |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
+| SUPPLY_JSON_KEY                               | The path to the service account json file used to authenticate with Google.                           |                         |
+|                                               |                                                                                                       |                         |
+|                                               | See the `Supply documentation <https://docs.fastlane.tools/actions/supply/#setup>`_ to learn more.    |                         |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
+
+Building the app
+++++++++++++++++
+
+Once all the previous steps are done then you should execute the following command from within the project's directory
+
+  .. code-block:: bash
+
+    $ make build-android
+
+This will start the building process following the environment variables you've set and once it finishes it will
+create a *Mattermost.apk* file that is going to be saved in the project's root directory, if you decided not to
+submit the app to the Play Store, you can use this file to manually doing so or use any other available method
+not described in this guide to publish and distribute the app.
+
+Build the iOS app
+~~~~~~~~~~~~~~~~~~~~~~
+
+Apple requires that all apps be digitally signed with a certificate before they can be installed, so to distribute
+your iOS application via Apple App Store, you'll need to generate a signed release IPA. The process is the same as
+any other native iOS app, but in our case we've created a set of scripts in conjunction with Fastlane to
+make this process easier than the standard manual process.
+
+We make use of `Match <https://docs.fastlane.tools/actions/match/>`_ to sync your provisioning profiles (the profiles will be created for you if needed),
+then we'll be using `Gym <https://docs.fastlane.tools/actions/gym/>`_ to build and signed the app using your provisioning profile certificates
+and finally (optional) we'll be using `Pilot <https://docs.fastlane.tools/actions/pilot/>`_ to submit the app to
+TestFlight in order for you to promote the app to the App Store whenever you are ready.
+
+Setting up environment variables
+++++++++++++++++++++++++++++++++
+In order to have a successful build using the **make build-ios** command you'll need to set a few environment variables according to your needs,
+in this guide we will explain some of them and you can refer to the `env_vars_example <https://github.com/mattermost/mattermost-mobile/blob/fastlane/fastlane/env_vars_example>`_
+file under the fastlane directory to get a sense of all of them.
+
+.. note::
+  You must use your own provisioning profiles and certificates as well as your own Bundle Identifiers. By using the default values you won't be able to successfully build and sign the app.
+
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
+| Variable                                      | Description                                                                                           | Default value                          |
++===============================================+=======================================================================================================+========================================+
+| SYNC_IOS_PROVISIONING_PFOFILES                | Should we run **match** to sync the provisioning profiles.                                            | false                                  |
+|                                               | Valid values are: true, false                                                                         |                                        |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
+| SUBMIT_IOS_TO_TESTFLIGHT                      | Submit the app to TestFlight once the build finishes.                                                 | false                                  |
+|                                               | Valid values are: true, false                                                                         |                                        |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
+| IOS_BUILD_FOR_RELEASE                         | Defines if the iOS app should be built in release mode.                                               | false                                  |
+|                                               | Valid values are: true, false                                                                         |                                        |
+|                                               |                                                                                                       |                                        |
+|                                               | **Make sure you set this value to true if you plan to submit this app to TestFlight or distribute     |                                        |
+|                                               | it in any other way**.                                                                                |                                        |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
+| IOS_REPLACE_ASSETS                            | Replaces the icons of the app with the ones found under the folder *assets/release/icons/ios*.        | false                                  |
+|                                               | Valid values are: true, false                                                                         |                                        |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
+| IOS_INCREMENT_BUILD_NUMBER                    | Increases the iOS app build number, required when a new build is going to be publish to TestFlight    | false                                  |
+|                                               | and the Apple App Store.                                                                              |                                        |
+|                                               | Valid values are: true, false                                                                         |                                        |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
+| IOS_COMMIT_INCREMENT_BUILD_NUMBER_MESSAGE     | The message that will be used for committing to git the increment of the build number, the actual     | Version Bump to                        |
+|                                               | number will be appended to the end of this message.                                                   |                                        |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
+| IOS_APP_NAME                                  | The name of the app as it is going to be shown in the iOS home screen.                                | Mattermost Beta                        |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
+| IOS_MAIN_APP_IDENTIFIER                       | The Bundle Identifier for the app.                                                                    | com.mattermost.rnbeta                  |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
+| IOS_EXTENSION_APP_IDENTIFIER                  | The Bundle Identifier for the share extension app.                                                    | com.mattermost.rnbeta.MattermostShare  |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
+| IOS_APP_GROUP                                 | The iOS App Group identifier used to share data between the app and the share extension.              |                                        |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
+| IOS_BUILD_EXPORT_METHOD                       | Method used to export the archive.                                                                    | adhoc                                  |
+|                                               | Valid values are: app-store, ad-hoc, enterprise, development                                          |                                        |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
+| MATCH_USERNAME                                | Your Apple ID Username.                                                                               |                                        |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
+| MATCH_PASSWORD                                | Your Apple ID Password.                                                                               |                                        |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
+| MATCH_GIT_URL                                 | URL to the git repo containing all the certificates.                                                  |                                        |
+|                                               |                                                                                                       |                                        |
+|                                               | **Make sure this git repo is set to private. Remember this repo will be used to sync the provisioning |                                        |
+|                                               | profiles and other certificates**.                                                                    |                                        |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
+| MATCH_APP_IDENTIFIER                          | The Bundle Identifiers for the app (comma-separated).                                                 | com.mattermost.rnbeta.MattermostShare, |
+|                                               | In our case refers to the identifiers of the app and the share extension                              | com.mattermost.rnbeta                  |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
+| MATCH_TYPE                                    | Define the provisioning profile type to sync.                                                         | adhoc                                  |
+|                                               | Valid values are: appstore, adhoc, development, enterprise                                            |                                        |
+|                                               |                                                                                                       |                                        |
+|                                               | **Make sure you set this value to the same type as the IOS_BUILD_EXPORT_METHOD as you want to have    |                                        |
+|                                               | the same provisioning profiles installed the machine so they are found when signing the app**.        |                                        |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
+| FASTLANE_TEAM_ID                              | The ID of your Apple Developer Portal Team.                                                           |                                        |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
+| PILOT_USERNAME                                | Your Apple ID Username.                                                                               |                                        |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
+
+Building the app
+++++++++++++++++
+
+Once all the previous steps are done then you should execute the following command from within the project's directory
+
+  .. code-block:: bash
+
+    $ make build-ios
+
+This will start the building process following the environment variables you've set and once it finishes it will
+create a *Mattermost.ipa* file that is going to be saved in the project's root directory, if you decided not to
+submit the app to TestFlight, you can use this file to manually doing so or use any other available method
+not described in this guide to publish and distribute the app.
+
+Push notifications with your own build
+---------------------------------------
+
+If you plan to rollout your own custom build of the Mattermost mobile apps, you'll also need to rollout your own
+`Mattermost Push Proxy Server <https://github.com/mattermost/mattermost-push-proxy>`_ and make a few
+modifications to the source if you want to get push notifications.
+
+Set up Android to receive push notifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Push notifications on Android are managed and dispatched using `Google's GCM service <https://developers.google.com/cloud-messaging/gcm>`_ (now integrated into Firebase).
+
+ - Create a Firebase project within the `Firebase Console <https://console.firebase.google.com>`_.
+ - Click **Add Project**
+ .. image:: ../../source/images/mobile/firebase_console.png
+
+
+ - Enter the project name, project ID and Country
+ - Click **CREATE PROJECT**
+ .. image:: ../../source/images/mobile/firebase_project.png
+
+Once the project is created you'll be redirected to the Firebase project dashboard
+
+ .. image:: ../../source/images/mobile/firebase_dashboard.png
+
+ - Click **Add Firebase to your Android App**
+ - Enter your **Android package name** which is the package Id of the app that you are going to use to build the app. See `Build your own app from source`_.
+ - Then enter an **App nickname** so you can identify it with ease
+ - Click **REGISTER APP**
+ - Once the app has been registered download the **google-services.json** file as you'll need to replace the one in the project with this one
+ - Click **CONTINUE** and then **FINISH**
+ .. image:: ../../source/images/mobile/firebase_register_app.png
+ .. image:: ../../source/images/mobile/firebase_google_services.png
+ .. image:: ../../source/images/mobile/firebase_sdk.png
+
+Now that you have created the Firebase project and the app and you've downloaded the *google-services.json* file, you need to make some changes in the project.
+
+ - Replace the file in ``android/app/google-services.json`` with the one you've downloaded
+ - Open the ``google-services.json`` file that you just replace and look for the project_number and copy the value
+ - Open the ``android/app/AndroidManifest.xml`` file look for the line ``<meta-data android:name="com.wix.reactnativenotifications.gcmSenderId" android:value="184930218130\0"/>`` and replace the value with the one that you copied in the previous step
+
+.. important::
+  Leave the trailing \\0 intact
+
+At this point you can build the mattermost app for Android.
+
+Set up Mattermost Push Proxy Server to send Android push notifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Now that the app is capable of receiving push notifications we need to make sure that the Push Proxy server is able to send
+the notification to the device. If you haven't installed the Mattermost Push Proxy Server at this point you can
+do so by following the documentation on the `Mattermost Push Proxy Server repo <https://github.com/mattermost/mattermost-push-proxy/blob/master/README.md>`_
+and the documentation about `Hosted Push Notification Service <https://docs.mattermost.com/mobile/mobile-hpns.html>`_,
+this guide will only focus about the changes needed in the **mattermost-push-proxy.json** file which is the configuration file of the push proxy.
+
+- Go to the `Firebase Console <https://console.firebase.google.com>`_ and select the project you've created, once in the
+  dashboard go to the project settings and select **CLOUD MESSAGING**
+
+.. image:: ../../source/images/mobile/firebase_settings.png
+
+.. image:: ../../source/images/mobile/firebase_cloud_messaging.png
+
+- Look for the value of the **Legacy Server Key** and copy it.
+
+.. image:: ../../source/images/mobile/farebase_server_key.png
+
+- Open the **mattermost-push-proxy.json** file under the ``mattermost-push-proxy/config`` directory and paste the value in the "AndroidApiKey"
+
+.. image:: ../../source/images/mobile/proxy-config.png
+
+- Finally restart your Mattermost Push Proxy server and your app should start receiving push notifications.
 
 Troubleshooting
 ------------------
