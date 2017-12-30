@@ -23,6 +23,7 @@ You can use either ``_`` or ``*`` around a word to make it italic. Use two to ma
 * ``**bold**`` renders as **bold**
 * ``**_bold-italic_**`` renders as |bold_italics|
 * ``~~strikethrough~~`` renders as |strikethrough|
+
 .. |bold_italics| image:: ../../images/bold_italics.PNG
   :width: 100px
 .. |strikethrough| image:: ../../images/strikethrough.PNG
@@ -125,36 +126,11 @@ Renders as:
 Code Block
 ----------
 
-Creating a fixed width code block is recommended for pasting multi-line blocks of code or other text output that is easier to read with fixed width font alignment. Examples include block text snippets, ASCII tables, log files, etc.
+Creating a fixed width code block is recommended for pasting multi-line blocks of code or other text output that is easier to read with fixed width font alignment. Examples include block text snippets, ASCII tables, and log files.
 
-Renders as:
+Creating a code block can be accomplished in one of two ways:
 
-.. code-block:: none
-
-  this is my code
-  123 alignment
-  alignment 456
-  fixed width!
-
-This can be accomplished in one of two ways:
- 1. Indenting each line by four spaces
-
-Example:
-
-.. code-block:: none
-
-      this is my
-      code block
-
-  ^^^^ 4x spaces
-
-
-or,
-
- 2. Placing 3x backtics (\`\`\`) on the line directly above and directly below your code
-
-
-Example:
+ 1. Placing 3x backtics (\`\`\`) on the line directly above and directly below your code
 
 .. code-block:: none
 
@@ -164,7 +140,17 @@ Example:
   ```
 
 
-* **TIP**! - If you're having trouble as a first-timer, assuming default keyboard shortcuts for most clients, this can be accomplished by entering: 3x backticks <\`\`\`>, <SHIFT>+<ENTER>, <type_your_code>, <SHIFT>+<ENTER>, and finally 3x backtacs <\`\`\`>.
+* **TIP**! - If you're having trouble as a first-timer, assuming default keyboard shortcuts for most clients, this can be accomplished by entering: 3x backticks <\`\`\`>, <SHIFT>+<ENTER>, <type_your_code>, <SHIFT>+<ENTER>, and finally 3x backticks <\`\`\`>.
+
+ 2. Indenting each line by four spaces
+
+.. code-block:: none
+
+      this is my
+      code block
+
+  ^^^^ 4x spaces
+
 
 **Syntax Highlighting**
 
