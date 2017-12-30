@@ -160,7 +160,7 @@ Day when Leads and PMs decide which major features are included in the release, 
 1. **(Team) Daily Release Update Meeting**
     - Confirm testing assigned in the release testing spreadsheet is complete 
     - If final has not yet been cut, triage Jira tickets 
-    - If no blocking issues are found, PM, Dev and Ops sign off on the release and plan to cut final 
+    - If no blocking issues are found, PM, Dev and QA sign off on the release and plan to cut final 
 2. Release Manager:
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
