@@ -130,7 +130,7 @@ Creating a fixed width code block is recommended for pasting multi-line blocks o
 
 This can be accomplished in one of two ways:
 
- 1. Placing 3x backtics (\`\`\`) on the line directly above and directly below your code
+ 1. Placing 3x backtics :kbd:`\`\`\`` on the line directly above and directly below your code
 
 .. code-block:: none
 
