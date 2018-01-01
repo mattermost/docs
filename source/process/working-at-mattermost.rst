@@ -154,4 +154,4 @@ Just as flexible as our working hours, learn more about our `paid time-off polic
 
 **4. Additional US and Canadian employee benefits**
 
-Mattermost uses professional employement organizations in the United States and Canada and are able to offer additional `benefits to US employees <benefits-us.html>`_ and `benefits to Canadian employees <benefits-canada.html>`_.
+Mattermost uses professional employment organizations in the United States and Canada and are able to offer additional `benefits to US employees <benefits-us.html>`_ and `benefits to Canadian employees <benefits-canada.html>`_.
