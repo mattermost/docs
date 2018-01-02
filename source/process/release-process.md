@@ -29,6 +29,7 @@ No pull requests for major features should be **submitted** to the current relea
     - Prioritize reviewing major features, ensuring any bugs and UX issues get fixed
     - Check that all major features are behind a feature flag
     - Confirm with Leads that each Enterprise feature is in the correct [pricing SKU](https://about.mattermost.com/pricing/). If not, alert the release manager
+    - Review any features that are currently in beta and confirm with Leads if there are any to be promoted
 3. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for major features
 
@@ -58,8 +59,7 @@ No pull requests for major features should be **merged** to the current release 
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
       - After the cut-off, any PRs that include significant code changes, require approval of the release manager before merging
 6. Marketing:
-    - Prepare bullet points for release announcement
-    - Draft release headline and send to marketing lead for review
+    - Prepare bullet points and release headline for release announcement and send to Justin to work on
     - Decide which sections of the release announcement will have an accompanying screenshot / photo
 
 ### D. (T-minus 10 working days) Judgment Day
@@ -83,8 +83,7 @@ Day when Leads and PMs decide which major features are included in the release, 
 5. PM:
     - Based on results of Team Meeting discussion, create tickets for features that need to be turned on or off for the release
     - Review the JIRA tickets remaining in the current release fix version and push those that won't make it to the next fix version
-    - Post a link to Release Discussion channel for query of [remaining tickets in this release](https://mattermost.atlassian.net/issues/?filter=11102)
-    - Review any features that are currently in beta and confirm with Leads if there are any to be promoted
+    - Post a link to Release Discussion channel for query of [remaining bugs in this release](https://mattermost.atlassian.net/browse/PLT-8426?filter=14100)
 6. Marketing:
     - Start drafting blog post, tweet, and email for the release announcement
 
