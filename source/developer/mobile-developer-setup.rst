@@ -545,7 +545,7 @@ file under the fastlane directory to get a sense of all of them.
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
 | Variable                                      | Description                                                                                           | Default value                          |
 +===============================================+=======================================================================================================+========================================+
-| SYNC_IOS_PROVISIONING_PFOFILES                | Should we run **match** to sync the provisioning profiles.                                            | false                                  |
+| SYNC_IOS_PROVISIONING_PROFILES                | Should we run **match** to sync the provisioning profiles.                                            | false                                  |
 |                                               | Valid values are: true, false                                                                         |                                        |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
 | SUBMIT_IOS_TO_TESTFLIGHT                      | Submit the app to TestFlight once the build finishes.                                                 | false                                  |
