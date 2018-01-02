@@ -250,7 +250,41 @@ To add them, edit the ``Podfile`` located in the ``ios`` directory, then from th
 Project Directory Structure
 ------------------------------------
 
-.. image:: ../../source/images/project_directory_structure_apps.png
+  .. code-block:: bash
+
+    .
+    ├── android
+    ├── app
+    │   ├── actions
+    │   ├── components
+    │   ├── constants
+    │   ├── i18n
+    │   ├── mattermost_managed
+    │   ├── notification_preferences
+    │   ├── push_notifications
+    │   ├── reducers
+    │   ├── screens
+    │   ├── selectors
+    │   ├── store
+    │   ├── styles
+    │   └── utils
+    ├── assets
+    │   ├── base
+    │   │   ├── i18n
+    │   │   ├── images
+    │   │   └── release
+    │   └── fonts
+    ├── coverage
+    ├── dist
+    │   └── assets
+    │       ├── i18n
+    │       ├── images
+    │       └── release
+    ├── docs
+    ├── fastlane
+    ├── ios
+    ├── scripts
+    └── test
 
 Make Commands Explained
 ------------------------------------
@@ -321,6 +355,7 @@ Plug in your Android device in any available USB port in your development machin
 check that your device is properly connecting to ADB (Android Debug Bridge) by running **adb devices**.
 
   .. code-block:: bash
+
     $ adb devices
     List of devices attached
     42006fb3e4fb25b8    device
@@ -482,7 +517,7 @@ file under the fastlane directory to get a sense of all of them.
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
 | ANDROID_APP_NAME                              | The name of the app as it is going to be shown in the Android home screen.                            | Mattermost Beta         |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
-| ANDROID_REPLACE_ASSETS                        | Replaces the icons of the app with the ones found under the folder *assets/release/icons/android*.    | false                   |
+| ANDROID_REPLACE_ASSETS                        | Replaces the icons of the app with the ones found under the folder *dist/assets/release/icons/android*.    | false                   |
 |                                               | Valid values are: true, false                                                                         |                         |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
 | ANDROID_INCREMENT_BUILD_NUMBER                | Increases the Android app build number, required when a new build is going to be publish to the       | false                   |
@@ -557,7 +592,7 @@ file under the fastlane directory to get a sense of all of them.
 |                                               | **Make sure you set this value to true if you plan to submit this app to TestFlight or distribute     |                                        |
 |                                               | it in any other way**.                                                                                |                                        |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
-| IOS_REPLACE_ASSETS                            | Replaces the icons of the app with the ones found under the folder *assets/release/icons/ios*.        | false                                  |
+| IOS_REPLACE_ASSETS                            | Replaces the icons of the app with the ones found under the folder *dist/assets/release/icons/ios*.        | false                                  |
 |                                               | Valid values are: true, false                                                                         |                                        |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
 | IOS_INCREMENT_BUILD_NUMBER                    | Increases the iOS app build number, required when a new build is going to be publish to TestFlight    | false                                  |
@@ -672,20 +707,102 @@ this guide will only focus about the changes needed in the **mattermost-push-pro
 
 - Go to the `Firebase Console <https://console.firebase.google.com>`_ and select the project you've created, once in the
   dashboard go to the project settings and select **CLOUD MESSAGING**
-
 .. image:: ../../source/images/mobile/firebase_settings.png
 
 .. image:: ../../source/images/mobile/firebase_cloud_messaging.png
 
 - Look for the value of the **Legacy Server Key** and copy it.
-
 .. image:: ../../source/images/mobile/farebase_server_key.png
 
 - Open the **mattermost-push-proxy.json** file under the ``mattermost-push-proxy/config`` directory and paste the value in the "AndroidApiKey"
-
 .. image:: ../../source/images/mobile/proxy-config.png
 
 - Finally restart your Mattermost Push Proxy server and your app should start receiving push notifications.
+
+Set up iOS to receive push notifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Push notifications on iOS are managed and dispatched using `Apple's Push Notification Service <https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html>`_.
+You must have a **Paid Apple Developer account** to create certificates needed to send notifications using this service.
+
+ - Generate a Certificate from Keychain Access
+    * Launch the **Keychain Access application** in your Mac and select **KeyChain Access -> Certificate Assistant -> Request a Certificate From a Certificate Authority...**
+    .. image:: ../../source/images/mobile/ios_keychain_request_certificate.png
+
+    * Enter your email address in **User Email Address** and check the **"Save to disk"** option, then click **Continue**
+    .. image:: ../../source/images/mobile/ios_keychain_create_cert_request.png
+
+    * Save the certificate request
+    .. image:: ../../source/images/mobile/ios_keychain_save_cert_request.png
+
+ - Login to `Apple developer account <https://developer.apple.com/account>`_ and click **Certificates, Identifiers and Profiles**
+ .. image:: ../../source/images/mobile/ios_account.png
+
+ - Select iOS from the dropdown
+ .. image:: ../../source/images/mobile/ios_type.png
+
+ - Select App IDs from the side menu and look for the Bundle Identifier you are using for the Mattermost app
+ .. image:: ../../source/images/mobile/ios_appid.png
+
+ - Select the App ID and click **Edit**
+ .. image:: ../../source/images/mobile/ios_edit_appid.png
+
+ - Scroll down to the **Push Notification** Section and click Create a **Production SSL Certificate**
+ .. image:: ../../source/images/mobile/ios_create_push_certificate.png
+
+ - In the **About Creating a Certificate Signing Request (CSR)** screen click Continue
+ .. image:: ../../source/images/mobile/ios_csr.png
+
+ - Choose the certificate request file created using the Keychain access in the previous section and click **Continue**
+ .. image:: ../../source/images/mobile/ios_upload_csr.png
+
+ - Download the Certificate and click **Done** to finish the process
+
+Set up Mattermost Push Proxy Server to send iOS push notifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Now that the app is capable of receiving push notifications we need to make sure that the Push Proxy server is able to send
+the notification to the device. If you haven't installed the Mattermost Push Proxy Server at this point you can
+do so by following the documentation on the `Mattermost Push Proxy Server repo <https://github.com/mattermost/mattermost-push-proxy/blob/master/README.md>`_
+and the documentation about `Hosted Push Notification Service <https://docs.mattermost.com/mobile/mobile-hpns.html>`_,
+this guide will only focus about the changes needed in the **mattermost-push-proxy.json** file which is the configuration file of the push proxy.
+
+ - Double click the **Distribution Certificate** generated in the previous step to add it to your Keychain Access. Go to **Keychain Access**,
+   select the **login** keychain and **My Certificates** from the side menu.
+ .. image:: ../../source/images/mobile/ios_keychain_select.png
+
+ - Find the certificate you imported and then right click to **export** it as a **.p12** file
+ .. image:: ../../source/images/mobile/ios_keychain_export.png
+
+ - Enter a name for the filename and click **Save**
+ .. image:: ../../source/images/mobile/ios_keychain_export_save.png
+
+ - Leave the **password** blank and then click **OK**
+ .. image:: ../../source/images/mobile/ios_keychain_export_password.png
+
+ - Convert the downloaded certificate to **.pem**
+ .. code-block:: bash
+
+   $ openssl x509 -in aps.cer -inform DER -out aps_production.pem
+
+ - Extract the private key from the certificate you exported
+ .. code-block:: bash
+
+   $ openssl pkcs12 -in Certificates.p12 -out aps_production_priv.pem -nodes -clcerts -passin pass:
+
+ - Verify the certificate works with apple
+ .. code-block:: bash
+
+   $ openssl s_client -connect gateway.push.apple.com:2195 -cert aps_production.pem -key aps_production_priv.pem
+
+ - Copy the private key file ``aps_production_priv.pem`` into your ``mattermost-push-proxy/config`` directory
+
+ - Open the **mattermost-push-proxy.json** file under the ``mattermost-push-proxy/config`` directory and add the path to the private key file
+   as the value for **"ApplePushCertPrivate"** and the value for **"ApplePushTopic"** with your *Bundle Identifier*
+ .. image:: ../../source/images/mobile/proxy-config.png
+
+ - Finally restart your Mattermost Push Proxy server and your app should start receiving push notifications.
+
 
 Troubleshooting
 ------------------
