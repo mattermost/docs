@@ -518,7 +518,7 @@ file under the fastlane directory to see all of them.
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
 | ANDROID_APP_NAME                              | The name of the app as it is going to be shown in the Android home screen.                            | Mattermost Beta         |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
-| ANDROID_REPLACE_ASSETS                        | Replaces the icons of the app with the ones found under the folder *dist/assets/release/icons/android*.    | false                   |
+| ANDROID_REPLACE_ASSETS                        | Replaces app icons with the ones found under the folder *dist/assets/release/icons/android*.          | false                   |
 |                                               | Valid values are: true, false                                                                         |                         |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
 | ANDROID_INCREMENT_BUILD_NUMBER                | Increases the Android app build number, required when a new build is going to be publish to the       | false                   |
@@ -592,7 +592,7 @@ file under the fastlane directory to see all of them.
 |                                               | **Make sure you set this value to true if you plan to submit this app to TestFlight or distribute     |                                        |
 |                                               | it in any other way**.                                                                                |                                        |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
-| IOS_REPLACE_ASSETS                            | Replaces the icons of the app with the ones found under the folder *dist/assets/release/icons/ios*.        | false                                  |
+| IOS_REPLACE_ASSETS                            | Replaces the icons of the app with the ones found under the folder *dist/assets/release/icons/ios*.   | false                                  |
 |                                               | Valid values are: true, false                                                                         |                                        |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
 | IOS_INCREMENT_BUILD_NUMBER                    | Increases the iOS app build number, required when a new build is going to be publish to TestFlight    | false                                  |
