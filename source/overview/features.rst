@@ -59,7 +59,7 @@ Use the full featured web interface, or native client apps for Windows, OSX, and
 
 Work across multiple teams and projects from the same rich interface.
 
-.. image:: ../images/multi-team_support.png
+.. image:: ../images/multi_team_support.png
 
 10. **Threaded conversations**
 
