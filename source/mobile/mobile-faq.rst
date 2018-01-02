@@ -28,11 +28,9 @@ Yes. To host your own push notification server, you'll need to compile the mobil
 How can I get Google SSO to work with the Mattermost Mobile Apps?
 -----------------------------------------------------------------
 
-Google SSO is not supported by the apps on the Apple App Store and Google Play Store.
+The apps on the Apple App Store and Google Play Store cannot support Google SSO out of the box. This is because Google requires a unique Google API key that's specific to each organization.
 
-This is because the Google Login libraries require your own Google API key when the app is compiled, so there’s no way for us to include that in our apps.
-
-If you would like Google SSO, you will need to fork our `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_  repository and add support for Google SSO before compiling the app yourself. If this is something you’re interested in, please `file an issue in GitHub <https://github.com/mattermost/mattermost-mobile/issues>`_ to start the discussion.
+If you need Google SSO support, you can create a custom version of the app for your own organization. Fork the `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_  repository and add support for Google SSO before compiling the app yourself. If this is something you’re interested in, please `file an issue in GitHub <https://github.com/mattermost/mattermost-mobile/issues>`_ to start the discussion.
 
 .. _push-faq:
 How do push notifications work?
