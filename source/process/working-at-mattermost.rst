@@ -107,21 +107,22 @@ Please take off holidays relevant to your culture, resident country and preferen
 
 We're headquartered in the US and have a large Canadian contingent, so below are holidays we're expecting people from those countries to take off:
 
-US & Canadian Holidays for 2017:
+US & Canadian Holidays for 2018:
 
-- US & Canadian New Year's (1/1/2017)
-- US & Canadian New Year's Day Holiday (1/2/2017)
-- Canadian Family Day (2/20/2017)
-- US & Canadian Good Friday (4/14/2017)
-- Canadian Victoria Day (5/22/2017)
-- Canada Day (7/1/2017)
-- US Independence Day (7/4/2017)
-- Canadian Civic / Provincial Day (8/7/2017)
-- US Labor Day, Canadian Labour Day (9/4/2017)
-- Canadian Thanksgiving (10/9/2017)
-- US Thanksgiving (11/23/2017)
-- US & Canadian Christmas Day (12/25/2017)
-- Canadian Boxing Day (12/26/2017)
+- US & Canadian New Year's (1/1/2018)
+- US & Canadian New Year's Day Holiday (1/2/2018)
+- Canadian Family Day (2/19/2018)
+- US & Canadian Good Friday (3/30/2018)
+- Canadian Victoria Day (5/21/2018)
+- Canada Day (7/1/2018)
+- Canada Day additional statutory holiday (7/2/2018)
+- US Independence Day (7/4/2018)
+- Canadian Civic / Provincial Day (8/6/2018)
+- US Labor Day, Canadian Labour Day (9/3/2018)
+- Canadian Thanksgiving (10/8/2018)
+- US Thanksgiving (11/22/2018)
+- US & Canadian Christmas Day (12/25/2018)
+- Canadian Boxing Day (12/26/2018)
 
 It's up to meeting chairs to decide whether to reschedule if few people can attend (e.g. if there are a lot of US or Canadians in the meeting).
 
@@ -153,4 +154,4 @@ Just as flexible as our working hours, learn more about our `paid time-off polic
 
 **4. Additional US and Canadian employee benefits**
 
-Mattermost uses professional employement organizations in the United States and Canada and are able to offer additional `benefits to US employees <benefits-us.html>`_ and `benefits to Canadian employees <benefits-canada.html>`_.
+Mattermost uses professional employment organizations in the United States and Canada and are able to offer additional `benefits to US employees <benefits-us.html>`_ and `benefits to Canadian employees <benefits-canada.html>`_.
