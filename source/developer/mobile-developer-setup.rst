@@ -388,52 +388,54 @@ App Groups are used to share data between the main app and the app extension.
 
 .. image:: ../../source/images/mobile/app_groups.png
 
-Finally you'll need to set the same app group in your config.json under the assets folder and you can refer to `Overriding assets & White labeling`_ section to learn how to do it.
+Finally, you'll need to set the same app group in your config.json under the assets folder and you can refer to `Overriding assets & White labeling`_ section to learn how to do it.
 
 Build and Run the app
 ++++++++++++++++++++++
 
 If everything is set up correctly, your device will be listed as the build target in the Xcode toolbar,
-and it will also appear in the Devices Pane (⇧⌘2). You can now press the **Build and run** button (⌘R) or select the **Run** from the Product menu.
+and it will also appear in the Devices Pane (⇧⌘2). You can press the **Build and run** button (⌘R) or select the **Run** from the Product menu to run the app.
 
 .. image:: ../../source/images/mobile/running_ios.png
 
 If you run into any issues, please take a look at Apple's `Launching You App on a Device <https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/LaunchingYourApponDevices/LaunchingYourApponDevices.html#//apple_ref/doc/uid/TP40012582-CH27-SW4>`_ documentation.
 
-If the app fails to build go to the **Product** menu and select **Clean** or by pressing the Option key while in the menu and select **Clean Build Folder…** and try again.
+If the app fails to build, you can try to either of the following before trying to build the app again:
+- Go to the **Product** menu and select **Clean**
+- Go to the **Product** menu, hold down the Option key, and select **Clean Build Folder…**
 
 Build your own app from source
 ------------------------------
 
-Now is time to build the app from source to be able to distribute it within your team or company, either using the App Stores,
-an EMM provider or in any other possible way, to do so we recommend using the **make build-*** commands in conjunction with `Fastlane <https://docs.fastlane.tools/#choose-your-installation-method>`_.
+Now, you can build the app from source to be able to distribute it within your team or company either using the App Stores,
+an EMM provider or in any other possible way.
 
-We've created a couple of lanes within Fastlane that will build the app by following a set of environment variables to help you overcome all the manual steps needed.
+We recommend using the **make build-*** commands in conjunction with `Fastlane <https://docs.fastlane.tools/#choose-your-installation-method>`_. With Fastlane, you can also configure the app using environment variables.
 
 Build preparations
 ~~~~~~~~~~~~~~~~~~
 
-First of all ensure that the following remains exactly the same as in the original `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_ repo:
- - The package Id for the Android app and the Bundle Identifier for the iOS app remain the same as the one in the original mattermost-mobile repo, meaning it should be com.mattermost.rnbeta.
- - For android you have the source files under *android/app/src/main/java/com/mattermost/rnbeta*
- - Set your `environment variables <https://github.com/mattermost/mattermost-mobile/blob/fastlane/fastlane/env_vars_example>`_ according to your needs
+First of all, ensure that the following remains exactly the same as in the original `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_ repo:
+ - The package ID for the Android app and the Bundle Identifier for the iOS app remain the same as the one in the original mattermost-mobile repo, com.mattermost.rnbeta.
+ - Android-specific source files remain under *android/app/src/main/java/com/mattermost/rnbeta*
+ - Your `environment variables <https://github.com/mattermost/mattermost-mobile/blob/fastlane/fastlane/env_vars_example>`_ are set according to your needs
 
 Build the Android app
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Android requires that all apps be digitally signed with a certificate before they can be installed, so to distribute your Android application via Google Play Store, you'll need to generate a signed release APK.
+Android requires that all apps be digitally signed with a certificate before they can be installed, so to distribute your Android application via the Google Play Store, you'll need to generate a signed release APK.
 
 Generating a signing key
 +++++++++++++++++++++++++
 
-To generate the signed key we'll be using **keytool** which should be present in your OS if you have a JDK installed.
+To generate the signed key, we'll be using **keytool** which comes with the JDK required to develop for Android.
 
   .. code-block:: bash
 
     $ keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
 
 The above command prompts you for passwords for the keystore and key
-(make sure you use the same password for both), and to provide the Distinguished Name fields for your key.
+(make sure you use the same password for both) and to provide the Distinguished Name fields for your key.
 It then generates the keystore as a file called my-release-key.keystore.
 
 The keystore contains a single key, valid for 10000 days. The alias is a name that you will use later when signing your app, so remember to take a note of the alias.
@@ -444,8 +446,8 @@ The keystore contains a single key, valid for 10000 days. The alias is a name th
 Setting up gradle variables
 ++++++++++++++++++++++++++++
 
- - Place the *my-release-key.keystore* file under a directory that you have access, it can be in your home directory or even under *android/app* in the project folder.
- - Edit the file ~/.gradle/gradle.properties or create it if one does not exist and add the following:
+ - Place the *my-release-key.keystore* file under a directory that you can access. It can be in your home directory or even under *android/app* in the project folder so long as it is not checked in.
+ - Edit the file ~/.gradle/gradle.properties, or create it if one does not exist, and add the following:
 
    .. code-block:: bash
 
@@ -454,16 +456,15 @@ Setting up gradle variables
      MATTERMOST_RELEASE_PASSWORD=*****
 
 .. important::
-  replace **/full/path/to/directory/containing/my-release-key.keystore** with the full path to the actual keystore file and ********* with the actual keystore password
+  Replace **/full/path/to/directory/containing/my-release-key.keystore** with the full path to the actual keystore file and ********* with the actual keystore password.
 
 .. warning::
-  Once you publish the app on the Play Store, you will need to re-publish your app under a different package id (losing all downloads and ratings) if you want to change the signing key at any point. So backup your keystore and don't forget the password.
+  Once you publish the app on the Play Store, you will need to re-publish your app under a different package id (losing all downloads and ratings) if you change the signing key at any point, so backup your keystore and don't forget the password.
 
 Setting up environment variables
 ++++++++++++++++++++++++++++++++
-In order to have a successful build using the **make build-android** command you'll need to set a few environment variables according to your needs,
-in this guide we will explain some of them and you can refer to the `env_vars_example <https://github.com/mattermost/mattermost-mobile/blob/fastlane/fastlane/env_vars_example>`_
-file under the fastlane directory to get a sense of all of them.
+In order to use the **make build-android** command, you'll need to set a few environment variables. In this guide, we will explain some of them. You can refer to the `env_vars_example <https://github.com/mattermost/mattermost-mobile/blob/fastlane/fastlane/env_vars_example>`_
+file under the fastlane directory to see all of them.
 
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
 | Variable                                      | Description                                                                                           | Default value           |
@@ -478,7 +479,7 @@ file under the fastlane directory to get a sense of all of them.
 |                                               | **Make sure you set this value to true if you plan to submit this app to the Play Store or distribute |                         |
 |                                               | it in any other way**.                                                                                |                         |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
-| ANDROID_PACKAGE_ID                            | The package Id for the android app.                                                                   | com.mattermost.rnbeta   |
+| ANDROID_PACKAGE_ID                            | The package ID for the android app.                                                                   | com.mattermost.rnbeta   |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
 | ANDROID_APP_NAME                              | The name of the app as it is going to be shown in the Android home screen.                            | Mattermost Beta         |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
@@ -509,16 +510,15 @@ file under the fastlane directory to get a sense of all of them.
 Building the app
 ++++++++++++++++
 
-Once all the previous steps are done then you should execute the following command from within the project's directory
+Once all the previous steps are done, execute the following command from within the project's directory:
 
   .. code-block:: bash
 
     $ make build-android
 
-This will start the building process following the environment variables you've set and once it finishes it will
-create a *Mattermost.apk* file that is going to be saved in the project's root directory, if you decided not to
-submit the app to the Play Store, you can use this file to manually doing so or use any other available method
-not described in this guide to publish and distribute the app.
+This will start the building process following the environment variables you've set. Once it finishes, it will
+create a *Mattermost.apk* file in the project's root directory. If you have not set Fastlane to submit the app
+to the Play Store, you can use this file to manually publish and distribute the app.
 
 Build the iOS app
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -529,18 +529,18 @@ any other native iOS app, but in our case we've created a set of scripts in conj
 make this process easier than the standard manual process.
 
 We make use of `Match <https://docs.fastlane.tools/actions/match/>`_ to sync your provisioning profiles (the profiles will be created for you if needed),
-then we'll be using `Gym <https://docs.fastlane.tools/actions/gym/>`_ to build and signed the app using your provisioning profile certificates
-and finally (optional) we'll be using `Pilot <https://docs.fastlane.tools/actions/pilot/>`_ to submit the app to
-TestFlight in order for you to promote the app to the App Store whenever you are ready.
+then use `Gym <https://docs.fastlane.tools/actions/gym/>`_ to build and sign the app, and then optionally
+use `Pilot <https://docs.fastlane.tools/actions/pilot/>`_ to submit the app to
+TestFlight in order for you to promote the app to the App Store.
 
 Setting up environment variables
 ++++++++++++++++++++++++++++++++
-In order to have a successful build using the **make build-ios** command you'll need to set a few environment variables according to your needs,
-in this guide we will explain some of them and you can refer to the `env_vars_example <https://github.com/mattermost/mattermost-mobile/blob/fastlane/fastlane/env_vars_example>`_
-file under the fastlane directory to get a sense of all of them.
+In order to use the **make build-ios** command, you'll need to set a few environment variables. In this guide,
+we will explain some of them. you can refer to the `env_vars_example <https://github.com/mattermost/mattermost-mobile/blob/fastlane/fastlane/env_vars_example>`_
+file under the fastlane directory to see all of them.
 
 .. note::
-  You must use your own provisioning profiles and certificates as well as your own Bundle Identifiers. By using the default values you won't be able to successfully build and sign the app.
+  You must use your own provisioning profiles and certificates as well as your own Bundle Identifiers. If you use the default values, you will be unable to build and sign the app.
 
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
 | Variable                                      | Description                                                                                           | Default value                          |
@@ -604,23 +604,22 @@ file under the fastlane directory to get a sense of all of them.
 Building the app
 ++++++++++++++++
 
-Once all the previous steps are done then you should execute the following command from within the project's directory
+Once all the previous steps are done, you can run the following command from within the project's directory
 
   .. code-block:: bash
 
     $ make build-ios
 
-This will start the building process following the environment variables you've set and once it finishes it will
-create a *Mattermost.ipa* file that is going to be saved in the project's root directory, if you decided not to
-submit the app to TestFlight, you can use this file to manually doing so or use any other available method
-not described in this guide to publish and distribute the app.
+This will start the building process following the environment variables you've set. Once it finishes, it will
+create a *Mattermost.ipa* file in the project's root directory. If you have not set Fastlane to submit the app
+to TestFlight, you can use this file to manually publish and distribute the app.
 
 Push notifications with your own build
 ---------------------------------------
 
-If you plan to rollout your own custom build of the Mattermost mobile apps, you'll also need to rollout your own
+When building a custom version of the Mattermost mobile app, you will also need to host your own
 `Mattermost Push Proxy Server <https://github.com/mattermost/mattermost-push-proxy>`_ and make a few
-modifications to the source if you want to get push notifications.
+modifications to your Mattermost mobile app to be able to get push notifications.
 
 Set up Android to receive push notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -641,37 +640,36 @@ Once the project is created you'll be redirected to the Firebase project dashboa
  .. image:: ../../source/images/mobile/firebase_dashboard.png
 
  - Click **Add Firebase to your Android App**
- - Enter your **Android package name** which is the package Id of the app that you are going to use to build the app. See `Build your own app from source`_.
- - Then enter an **App nickname** so you can identify it with ease
+ - Enter the package ID of your custom Mattermost app as the **Android package name**. See `Build your own app from source`_ for more information on the package ID.
+ - Enter an **App nickname** so you can identify it with ease
  - Click **REGISTER APP**
- - Once the app has been registered download the **google-services.json** file as you'll need to replace the one in the project with this one
+ - Once the app has been registered, download the **google-services.json** file which will be used later.
  - Click **CONTINUE** and then **FINISH**
  .. image:: ../../source/images/mobile/firebase_register_app.png
  .. image:: ../../source/images/mobile/firebase_google_services.png
  .. image:: ../../source/images/mobile/firebase_sdk.png
 
-Now that you have created the Firebase project and the app and you've downloaded the *google-services.json* file, you need to make some changes in the project.
+Now that you have created the Firebase project and the app and downloaded the *google-services.json* file, you need to make some changes in the project.
 
- - Replace the file in ``android/app/google-services.json`` with the one you've downloaded
- - Open the ``google-services.json`` file that you just replace and look for the project_number and copy the value
- - Open the ``android/app/AndroidManifest.xml`` file look for the line ``<meta-data android:name="com.wix.reactnativenotifications.gcmSenderId" android:value="184930218130\0"/>`` and replace the value with the one that you copied in the previous step
+ - Replace ``android/app/google-services.json`` with the one you downloaded earlier
+ - Open ``android/app/google-services.json``, find the project_number and copy the value
+ - Open ``android/app/AndroidManifest.xml`` file, look for the line ``<meta-data android:name="com.wix.reactnativenotifications.gcmSenderId" android:value="184930218130\0"/>`` and replace the value with the one that you copied in the previous step
 
 .. important::
   Leave the trailing \\0 intact
 
-At this point you can build the mattermost app for Android.
+At this point, you can build the mattermost app for Android.
 
 Set up Mattermost Push Proxy Server to send Android push notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now that the app is capable of receiving push notifications we need to make sure that the Push Proxy server is able to send
-the notification to the device. If you haven't installed the Mattermost Push Proxy Server at this point you can
-do so by following the documentation on the `Mattermost Push Proxy Server repo <https://github.com/mattermost/mattermost-push-proxy/blob/master/README.md>`_
-and the documentation about `Hosted Push Notification Service <https://docs.mattermost.com/mobile/mobile-hpns.html>`_,
-this guide will only focus about the changes needed in the **mattermost-push-proxy.json** file which is the configuration file of the push proxy.
+Now that the app can receive push notifications, we need to make sure that the Push Proxy server is able to send
+the notification to the device. If you haven't installed the Mattermost Push Proxy Server, you should now
+do so by following the documentation in the `Mattermost Push Proxy Server repository <https://github.com/mattermost/mattermost-push-proxy/blob/master/README.md>`_
+and the documentation about `Hosted Push Notification Service <https://docs.mattermost.com/mobile/mobile-hpns.html>`_. This guide will focus on the changes needed to configure the push proxy.
 
-- Go to the `Firebase Console <https://console.firebase.google.com>`_ and select the project you've created, once in the
-  dashboard go to the project settings and select **CLOUD MESSAGING**
+- Go to the `Firebase Console <https://console.firebase.google.com>`_ and select the project you've created. Once in the
+  dashboard, go to the project settings and select **CLOUD MESSAGING**.
 
 .. image:: ../../source/images/mobile/firebase_settings.png
 
@@ -681,11 +679,11 @@ this guide will only focus about the changes needed in the **mattermost-push-pro
 
 .. image:: ../../source/images/mobile/farebase_server_key.png
 
-- Open the **mattermost-push-proxy.json** file under the ``mattermost-push-proxy/config`` directory and paste the value in the "AndroidApiKey"
+- Open the **mattermost-push-proxy.json** file in the ``mattermost-push-proxy/config`` directory and paste the value for the "AndroidApiKey" setting
 
 .. image:: ../../source/images/mobile/proxy-config.png
 
-- Finally restart your Mattermost Push Proxy server and your app should start receiving push notifications.
+- Finally, restart your Mattermost Push Proxy server, and your app should start receiving push notifications.
 
 Troubleshooting
 ------------------
