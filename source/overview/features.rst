@@ -4,7 +4,7 @@ Features Overview
 
 This page gives an overview of some of the features available in Mattermost Team Edition and Enterprise Edition.
 
-Team Edition Features
+Team Edition Feature
 ----------------------------------------------
 
 1. **1-1 and group messaging**
