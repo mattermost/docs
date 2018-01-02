@@ -56,14 +56,14 @@ Android
 2. Make sure you have the following ENV VARS configured:
  - ``ANDROID_HOME`` to where Android SDK is located (likely ``/Users/<username>/Library/Android/sdk``)
  - Make sure your ``PATH`` includes ``ANDROID_HOME/tools`` and ``ANDROID_HOME/platform-tools``
-  
+
   - On Mac, this usually requires adding the following lines to your ~/.bash_profile file:
-  
+
     - ``export ANDROID_HOME=/Users/<username>/Library/Android/sdk``
     - ``export PATH=$ANDROID_HOME/platform-tools:$PATH``
     - ``export PATH=$ANDROID_HOME/tools:$PATH``
-    
-   Then reload your bash configuration: 
+
+   Then reload your bash configuration:
 
    ``source ~/.bashprofile``
 3. In the SDK Manager using Android Studio or the Android SDK command line tool, ensure the following are installed:
@@ -121,7 +121,7 @@ Mac OS X
 
   ``cd mattermost-mobile``
 
-9. Download any other dependencies. The ``make pre-run`` command does this automatically using npm. 
+9. Download any other dependencies. The ``make pre-run`` command does this automatically using npm.
 
   ``make pre-run``
 
@@ -171,9 +171,9 @@ Android (Device)
   - Android 5.1.1 > Google APIs 22
 
   - Extras > Android Support Repository and/or Androud Support Library
-  
+
   - Extras > Google Play Services
-  
+
   - Extras > Google Repository
 
 4. Connect your Android device to your computer.
@@ -195,8 +195,8 @@ In order to develop and build the Mattermost mobile apps you'll need to get a co
 
 1. Fork the `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_ repository on GitHub.
 2. Clone your fork locally:
- - Open a terminal 
- - Change to a directory you want to hold your local copy 
+ - Open a terminal
+ - Change to a directory you want to hold your local copy
  - Run ``git clone https://github.com/<username>/mattermost-mobile.git`` if you want to use HTTPS, or ``git clone git@github.com:<username>/mattermost-mobile.git`` if you want to use SSH
 
 .. important::
@@ -211,7 +211,7 @@ In order to develop and build the Mattermost mobile apps you'll need to get a co
 
 .. important::
   It is important that you run everything with the make commands and avoid using npm or yarn to install dependencies. If you use npm or yarn, you may skip steps and the app won't build correctly.
- 
+
 Make Commands Explained
 ------------------------------------
 
@@ -230,7 +230,7 @@ These make commands are used to install dependencies, to configure necessary ste
  - **make post-install**: Normally this command runs automatically if yarn detects that the project updated some or all of its JavaScript dependencies. Once yarn finishes executing, this command automatically sets up a few post installation steps to ensure that everything runs correctly.
  - **make clean**: Removes all downloaded dependencies, clears the cache of those dependencies and deletes any builds that were created. It will not reset the repo, so your current changes will still be there.
  - **make dist/assets**: Builds the assets to be used including images, localization files and overriding of asset files (see Override Assets & White Labeling for details).
- 
+
 Commands to Run the App
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -251,7 +251,7 @@ These make commands are used to ensure that code follows linter rules and that t
 
  - **make check-style**: Runs the ESLint JavaScript linter.
  - **make test**: Runs the tests.
- 
+
 Commands to Build the App
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -274,10 +274,10 @@ If you need to add a new dependency to the project, it is important to add them 
 JavaScript Only
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you need to add a new JavaScript dependency that is not related to React Native, **use yarn, not npm**. Be sure to save the exact version number to avoid conflicts in the future. 
+If you need to add a new JavaScript dependency that is not related to React Native, **use yarn, not npm**. Be sure to save the exact version number to avoid conflicts in the future.
 
 	e.g. ``yarn add -E <package-name>``
-  
+
 React Native
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -290,7 +290,7 @@ To do this, after running the ``react-native link`` command, head to ``<project-
 Android
 ~~~~~~~~~~~~
 
-Usually the react native libraries that you add to the project will take care of adding new dependancies to the project. 
+Usually the react native libraries that you add to the project will take care of adding new dependancies to the project.
 
 If you come across a case where it is needed, we recommend you first review your work to confirm the need. The Android documentation should then be followed to add the libraries.
 
