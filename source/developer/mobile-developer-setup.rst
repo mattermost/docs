@@ -803,6 +803,62 @@ this guide will only focus about the changes needed in the **mattermost-push-pro
 
 - Finally, restart your Mattermost Push Proxy server, and your app should start receiving push notifications.
 
+Overriding assets & White labeling
+-----------------------------------
+
+Sometimes you end up wanting to white label the Mattermost app with your organization assets to have a sense of ownership. With this in mind
+we've made the mobile apps easy to white label and to override the assets used, the downside is that you have to `Build your own app from source`_.
+
+Ok so let's understand how this work!
+
+If you take a look at the `Project Directory Structure`_ you'll see that there is an assets folder, in this folder you have the base directory which is the assets that we provide,
+they include localization files, images and a release folder that contains the icons of the app to be used when building into release mode for deployment (this last set of assets is optional).
+
+If you want to replace the assets used in the project with your own assets all you need to do is create a sub-directory called ``override`` under the ``assets`` folder, and using the same
+sub-directory structure as the ``base`` directory as well as the same file names, you can have your own assets take be used instead.
+
+Localization strings
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To replace some or all of the strings in the app in any supported lenguage, copy over the files for the languages that you want to override under ``assets/base/i18n`` to ``assets/override/i18n``
+and make all the changes that you want to make to this files.
+
+.. warning::
+ Take into consideration that this files are constantly being updated and you'll need to have them in sync.
+
+Images
+~~~~~~
+
+To replace an image simply copy the image under ``assets/override/images/`` in the same location as it would be in the ``base`` folder and with the same filename.
+
+.. note::
+ Make sure the images have the same height, width and dpi as the images that you are overriding.
+
+Configuration
+~~~~~~~~~~~~~
+
+There are two special files under ``assets/base`` those are ``config.json`` and ``themes.json``.
+
+The config.json file is to handle custom configurations for the app. If you want to make a change to this file is easier if you
+create another config.json file under ``assets/override`` and just include those keys and values that you need.
+
+For example imagine that you want the app to not prompt the user to input a server URL and that the screen for adding the server URL is skipped, then in
+override config.json you can do add the following:
+
+.. code-block:: json
+
+  {
+    "DefaultServerUrl": "http://192.168.0.13:8065",
+    "AutoSelectServerUrl": true
+  }
+
+The above key/value pairs were taken from the original ``config.json`` file, and because we don't actually need anything else we didn't added the other configuration options
+
+.. note::
+ The two config.json files are being merged into one single resulting file under the ``dist`` folder thus removing the need to copy over all the key/value pairs.
+
+The scenario for the ``themes.json`` file is exactly the same as the ``config.json`` file, ``themes.json`` contains the default theme colors so you can use that to
+make the app follow your organization's
 
 Troubleshooting
 ------------------
