@@ -65,7 +65,7 @@ Android
     
    Then reload your bash configuration: 
 
-   ``source ~/.bashprofile``
+   ``source ~/.bash_profile``
 3. In the SDK Manager using Android Studio or the Android SDK command line tool, ensure the following are installed:
  - Android SDK Build-Tools (multiple versions)
   - 23.0.3
