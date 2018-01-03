@@ -64,27 +64,7 @@ cluster, use `kubectl config set-cluster minikube` to set the active cluster.
 
 When RBAC is enabled, Helm's Tiller will need to be granted permissions to perform operations. These instructions grant cluster wide permissions, however for more advanced deployments [permissions can be restricted to a single namespace](https://docs.helm.sh/using_helm/#example-deploy-tiller-in-a-namespace-restricted-to-deploying-resources-only-in-that-namespace). To grant access to the cluster, we will create a new `tiller` service account and bind it to the `cluster-admin` role.
 
-Create a file called `rbac-config.yaml` containing the role and binding:
-```yaml
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: tiller
-  namespace: kube-system
----
-apiVersion: rbac.authorization.k8s.io/v1beta1
-kind: ClusterRoleBinding
-metadata:
-  name: tiller
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: cluster-admin
-subjects:
-  - kind: ServiceAccount
-    name: tiller
-    namespace: kube-system
-```
+Create a file called `rbac-config.yaml` containing the role and binding, an example is [available here](examples/rbac-config.yaml).
 
 This role and binding then needs to be applied before Helm can run using `kubectl`. Ensure [kubectl is installed and up to date](https://kubernetes.io/docs/tasks/tools/install-kubectl/), as older versions do not support RBAC.
 
