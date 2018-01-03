@@ -806,44 +806,34 @@ this guide will only focus about the changes needed in the **mattermost-push-pro
 Overriding assets & White labeling
 -----------------------------------
 
-Sometimes you end up wanting to white label the Mattermost app with your organization assets to have a sense of ownership. With this in mind
-we've made the mobile apps easy to white label and to override the assets used, the downside is that you have to `Build your own app from source`_.
+We've made it easy to easy to white label the mobile app and to replace override the assets used, however, you have to `Build your own app from source`_.
 
-Ok so let's understand how this work!
+If you look at the `Project Directory Structure`_, you'll see that there is an assets folder containing a base folder with assets provided by Mattermost.
+These include localization files, images and a release folder that optionally contains the icons of the app when building in release mode.
 
-If you take a look at the `Project Directory Structure`_ you'll see that there is an assets folder, in this folder you have the base directory which is the assets that we provide,
-they include localization files, images and a release folder that contains the icons of the app to be used when building into release mode for deployment (this last set of assets is optional).
-
-If you want to replace the assets used in the project with your own assets all you need to do is create a sub-directory called ``override`` under the ``assets`` folder, and using the same
-sub-directory structure as the ``base`` directory as well as the same file names, you can have your own assets take be used instead.
+To replace these with your own assets, create a sub-directory called ``override`` in the ``assets`` folder. Using the same
+directory structure and file names as in the ``base`` directory, you can add assets to the override folder to be used instead.
 
 Localization strings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To replace some or all of the strings in the app in any supported lenguage, copy over the files for the languages that you want to override under ``assets/base/i18n`` to ``assets/override/i18n``
-and make all the changes that you want to make to this files.
-
-.. warning::
- Take into consideration that this files are constantly being updated and you'll need to have them in sync.
+To replace some or all of the strings in the app in any supported language, create a new json file for each locale you wish to support in ``assets/override/i18n``.
+Any strings that you provide will be used instead of the ones located in ``assets/base/i18n``, but any that you don't provide will fall back to the base ones.
 
 Images
 ~~~~~~
 
-To replace an image simply copy the image under ``assets/override/images/`` in the same location as it would be in the ``base`` folder and with the same filename.
+To replace an image, copy the image to ``assets/override/images/`` with the same location and file name as in the ``base`` folder.
 
 .. note::
- Make sure the images have the same height, width and dpi as the images that you are overriding.
+ Make sure the images have the same height, width and DPI as the images that you are overriding.
 
 Configuration
 ~~~~~~~~~~~~~
 
-There are two special files under ``assets/base`` those are ``config.json`` and ``themes.json``.
+The config.json file handles custom configuration for the app for settings that cannot be controlled by the Mattermost server. Like with localization strings, create a ``config.json`` file under ``assets/override`` and just include the keys and values that you wish to change.
 
-The config.json file is to handle custom configurations for the app. If you want to make a change to this file is easier if you
-create another config.json file under ``assets/override`` and just include those keys and values that you need.
-
-For example imagine that you want the app to not prompt the user to input a server URL and that the screen for adding the server URL is skipped, then in
-override config.json you can do add the following:
+For example, if you want the app to automatically provide a server URL and skip the screen to input it, you would add the following to ``assets/override/config.json``:
 
 .. code-block:: json
 
@@ -852,13 +842,7 @@ override config.json you can do add the following:
     "AutoSelectServerUrl": true
   }
 
-The above key/value pairs were taken from the original ``config.json`` file, and because we don't actually need anything else we didn't added the other configuration options
-
-.. note::
- The two config.json files are being merged into one single resulting file under the ``dist`` folder thus removing the need to copy over all the key/value pairs.
-
-The scenario for the ``themes.json`` file is exactly the same as the ``config.json`` file, ``themes.json`` contains the default theme colors so you can use that to
-make the app follow your organization's
+The above key/value pairs are taken from the original ``config.json`` file and since we don't need to change anything else, we only included these two settings.
 
 Troubleshooting
 ------------------
