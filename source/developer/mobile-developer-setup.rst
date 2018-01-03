@@ -82,7 +82,7 @@ Android
    - Android Support Repository
    - Google Repository
  - SDK Platforms
-  - .. image:: https://imgur.com/Jm9RySe
+  - .. image:: https://imgur.com/Jm9RySe.png
   - Android 6 (Marshmallow)
    - Google APIs
    - Android SDK Platform 23
