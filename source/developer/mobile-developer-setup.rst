@@ -806,7 +806,7 @@ this guide will only focus about the changes needed in the **mattermost-push-pro
 Overriding assets & White labeling
 -----------------------------------
 
-We've made it easy to easy to white label the mobile app and to replace override the assets used, however, you have to `Build your own app from source`_.
+We've made it easy to white label the mobile app and to replace override the assets used, however, you have to `Build your own app from source`_.
 
 If you look at the `Project Directory Structure`_, you'll see that there is an assets folder containing a base folder with assets provided by Mattermost.
 These include localization files, images and a release folder that optionally contains the icons of the app when building in release mode.
