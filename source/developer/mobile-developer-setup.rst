@@ -66,24 +66,25 @@ Android
    Then reload your bash configuration: 
 
    ``source ~/.bash_profile``
-3. In the SDK Manager using Android Studio or the Android SDK command line tool, ensure the following are installed:
- - Android SDK Build-Tools (multiple versions)
-  - 23.0.3
-  - 25.0.3
-  - 26.0.1
- - Android Emulator
- - Android SDK Platform-Tools
- - Android SDK Tools
- - Android Support Library
- - Google Play services
- - Intel x86 Emulator Accelerator (HAXM installer)
- - Android Support Repository
- - Google Repository
- - Android API 23 (Marshmallow)
-  - Google APIs
-  - Android SDK Platform
-  - Google APIs Intel x86 Atom_64 System Image
- - Any other API version that you want to test
+3. In the SDK Manager using Android Studio or the Android SDK command line tool, ensure the following are installed (you may have to click "Show Package Details" to expand packages)
+ -SDK Tools
+  - Android SDK Build-Tools (multiple versions)
+   - 23.0.3
+   - 25.0.3
+   - 26.0.1
+  - Android Emulator
+  - Android SDK Platform-Tools
+  - Android SDK Tools
+  - Google Play services
+  - Intel x86 Emulator Accelerator (HAXM installer)
+  - Android Support Repository
+  - Google Repository
+ - SDK Platforms
+  - Android API 23 (Marshmallow)
+   - Google APIs
+   - Android SDK Platform
+   - Google APIs Intel x86 Atom_64 System Image
+  - Any other API version that you want to test
 
 Test Environment Setup
 --------------------------
