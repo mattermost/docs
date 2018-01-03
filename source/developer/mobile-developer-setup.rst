@@ -77,13 +77,14 @@ Android
   - Android SDK Tools
   - Google Play services
   - Intel x86 Emulator Accelerator (HAXM installer)
-  - Android Support Repository
-  - Google Repository
+  - Support Repository
+   - Android Support Repository
+   - Google Repository
  - SDK Platforms
-  - Android API 23 (Marshmallow)
+  - Android 6 (Marshmallow)
    - Google APIs
-   - Android SDK Platform
-   - Google APIs Intel x86 Atom_64 System Image
+   - Android SDK Platform 23
+   - Intel x86 Atom_64 System Image
   - Any other API version that you want to test
 
 Test Environment Setup
