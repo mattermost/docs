@@ -68,6 +68,7 @@ Android
    ``source ~/.bash_profile``
 3. In the SDK Manager using Android Studio or the Android SDK command line tool, ensure the following are installed (you may have to click "Show Package Details" to expand packages)
  - SDK Tools
+  - .. image:: https://imgur.com/71wMoJj.png
   - Android SDK Build-Tools (multiple versions)
    - 23.0.3
    - 25.0.3
@@ -177,6 +178,8 @@ Android (Device)
   - Extras > Google Play Services
   
   - Extras > Google Repository
+  
+  
 
 4. Connect your Android device to your computer.
 
