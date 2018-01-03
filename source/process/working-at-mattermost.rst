@@ -110,7 +110,6 @@ We're headquartered in the US and have a large Canadian contingent, so below are
 US & Canadian Holidays for 2018:
 
 - US & Canadian New Year's (1/1/2018)
-- US & Canadian New Year's Day Holiday (1/2/2018)
 - Canadian Family Day (2/19/2018)
 - US & Canadian Good Friday (3/30/2018)
 - Canadian Victoria Day (5/21/2018)
