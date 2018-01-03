@@ -23,7 +23,9 @@ You can use:
 * [GKE cluster](#connect-to-gke-cluster)
 * [Local minikube cluster](#connect-to-local-minikube-cluster)
 
-Once you are connected to a Kubernetes cluster, you can initialize Helm
+If your cluster has Role Based Access Control (RBAC) enabled, you will need to [grant permissions to Helm Tiller first](#preparing-for-helm-with-rbac) and [deploy it with a service account](#deploy-helm-tiller-with-a-service-account).
+
+If your cluster does not have RBAC enabled, you can initialize Helm
 using `helm init`. If your cluster
 already had Tiller, run `helm init --upgrade` to ensure that the deployed version of Tiller matches.
 
@@ -55,6 +57,50 @@ kubernetes   <cluster-ip>:443   22d
 If you are doing local development, you can use `minikube` as your
 local cluster. If `kubectl cluster-info` is not showing `minikube` as the current
 cluster, use `kubectl config set-cluster minikube` to set the active cluster.
+
+### Preparing for Helm with RBAC
+
+> **Note**: Ensure you have kubectl installed and it is up to date. Older versions do not have support for RBAC and will generate errors.
+
+When RBAC is enabled, Helm's Tiller will need to be granted permissions to perform operations. These instructions grant cluster wide permissions, however for more advanced deployments [permissions can be restricted to a single namespace](https://docs.helm.sh/using_helm/#example-deploy-tiller-in-a-namespace-restricted-to-deploying-resources-only-in-that-namespace). To grant access to the cluster, we will create a new `tiller` service account and bind it to the `cluster-admin` role.
+
+Create a file called `rbac-config.yaml` containing the role and binding, an example is [available here](examples/rbac-config.yaml).
+
+This role and binding then needs to be applied before Helm can run using `kubectl`. Ensure [kubectl is installed and up to date](https://kubernetes.io/docs/tasks/tools/install-kubectl/), as older versions do not support RBAC.
+
+Depending on the Kubernetes provider, you may need to provide additional authentication to kubectl beyond your user account:
+* [Creating ClusterRoles on GKE with kubectl](#creating-clusterroles-on-gke-with-kubectl)
+
+#### Creating ClusterRoleBindings on GKE with kubectl
+
+On GKE, your standard user account does not have permissions to provision new ClusterRoles. You will need to instead utilize the `admin` account that was provisioned automatically during cluster setup. To do this, we will use the `gcloud` utility to display the information on the cluster:
+
+```
+gcloud container clusters describe cluster_name --zone cluster_zone
+```
+
+This command will output detailed information on the cluster, including the admin credentials that were created. We need the password to authenticate with `kubectl` and create the role:
+
+```
+...
+  password: xxxxxxxxxxxxxx
+  username: admin
+...
+```
+
+With the credentials on hand, we can now provision the role and binding using the YML file created [earlier](#setting-up-helm-with-rbac):
+
+```
+kubectl --username=admin --password=xxxxxxxxxxxxxx create -f rbac-config.yaml
+```
+
+### Deploy Helm Tiller with a service account
+
+Now that we have a ServiceAccount and ClusterRoleBinding for Tiller, we are ready to deploy it. To do so we will need to specify the desired service account we created earlier:
+
+```
+helm init --service-account tiller
+```
 
 ## Additional Information
 
