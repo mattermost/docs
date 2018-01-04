@@ -120,6 +120,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Confirm all PRs merged into the current release have been tested
     - Ensure the release testing spreadsheet covers any changes and new features, and confirm known issues are listed in the relevant tests 
     - Assign each area of the spreadsheet to a team member and give the core team access permissions
+    - Update rctesting and CI server invite links in Release Testing spreadsheet after they've been updated to release branch
 7. Build:  
     - Review all `TODO` notes, including one for uncommenting upgrade code
     - Confirm all PRs in [`/enterprise`](https://github.com/mattermost/enterprise/pulls) repo have been merged.
@@ -146,6 +147,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Post release testing instructions to Release Discussion channel ([template](https://pre-release.mattermost.com/core/pl/uprogtcqzpbk7nkmdkfnhqkcac))
     - Update Selenium and manual smoke tests as needed, to prepare to run on each RC after it is cut
     - As bug fixes are merged, verify fixes on new RCs and post in Release Channel after testing
+    - Update selenium.mattermost.com to latest RC
 3. Dev:
     - Run load tests against the release candidate to find potential performance issues
     - Make PRs for bug fixes to the release branch
