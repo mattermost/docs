@@ -5,7 +5,87 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v4.6
-Release date: TBD
+Release date: 2017-01-16
+
+### Highlights
+
+
+### Improvements
+
+#### Plugins (Beta)
+- Plugins now support slash commands.
+
+#### Administration
+- Incoming webhook display name is now included in the post.Props field for better auditing.
+- OAuth and SAML users can now be deactivated from the Mattermost System Console.
+
+### Bug Fixes
+- Username updates are now immediately visible across all browser tabs.
+- Server logs no longer contain info messages about initializing plugins when plugins are disabled.
+- Fixed Mattermost not loading on Firefox v52.
+
+
+You must also deactivate this user in the SSO provider or they will be reactivated on next login or sync.
+
+### Compatibility
+
+#### Removed and Deprecated Features
+
+// XXX APIv3 deprecation
+// XXX Other deprecations from the PM channel
+
+#### config.json
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+**Changes to Team Edition and Enterprise Edition**:
+
+- Under `ServiceSettings` in `config.json`:
+  - Added `"EnableTutorial": true` to control whether tutorial is shown to end users after account creation. // XXX Is this considered to be beta/experimental?
+
+**Additional Changes to Enterprise Edition**:
+
+### API Changes
+
+#### RESTful API v4 Changes
+
+- It is recommended that any new integrations use API v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
+- All API v3 endpoints are scheduled for removal on January 16, 2018.
+
+### Plugin API Changes (Beta)
+
+- Added `RegisterCommand` to register a custom slash command. When the command is triggered, your plugin can fulfill it via the `ExecuteCommand` hook.
+- Added `UnregisterCommand` to unregister a command previously registered via `RegisterCommand`.
+- Added `GetChannelMember` to get a channel membership for a user.
+
+### Plugin Hook Changes (Beta)
+
+- Added `ExecuteCommand` hook to execute a command that was previously registered via the `RegisterCommand` plugin API.
+
+
+
+### Known Issues // XXX Update
+
+- Google login fails on the Classic mobile apps.
+- User can receive a video call from another browser tab while already on a call.
+- Jump link in search results does not always jump to display the expected post.
+- Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+- Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+- Searching with Elasticsearch enabled may not always highlight the searched terms.
+- Team sidebar doesn't always show unreads from other teams on first load.
+- Team sidebar on desktop app does not update when channels have been read on mobile.
+- System Admin cannot reset their own password via the System Console.
+- Channel scroll position flickers while images and link previews load.
+- CTRL/CMD+U shortcut to upload a file doesn't work on Firefox.
+- Profile pictures and usernames don't immediately update across tabs or in the right-hand side comment threads.
+- Fixed an issue where only System Admins could edit OAuth apps even if integration creation was not restricted to admins.
+- Numbered lists can sometimes extend beyond the normal post area.
+- Typing an emoji reaction does not add it to recently used emojis.
+
+### Contributors
+
+
+
 
 ## Release v4.5
 Release date: 2017-12-16
@@ -201,7 +281,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 /marked
 
 - [hmhealey](https://github.com/hmhealey)
-
 
 ## Release v4.4.5
 
