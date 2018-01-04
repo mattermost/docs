@@ -65,7 +65,7 @@ Release date: 2017-01-16
 
 #### Removed and Deprecated Features
 
-// XXX APIv3 deprecation
+- All API v3 endpoints are now deprecated, and scheduled for removal in Mattermost v5.0.
 // XXX Other deprecations from the PM channel
 
 #### config.json
@@ -90,20 +90,32 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### API Changes
 
+// XXX @derrick can you help with this section?
+
 #### RESTful API v4 Changes
 
 - It is recommended that any new integrations use API v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
-- All API v3 endpoints are scheduled for removal on January 16, 2018.
+- All API v3 endpoints are now deprecated, and scheduled for removal in Mattermost v5.0.
 
-### Plugin API Changes (Beta)
+#### Plugin API Changes (Beta)
 
 - Added `RegisterCommand` to register a custom slash command. When the command is triggered, your plugin can fulfill it via the `ExecuteCommand` hook.
 - Added `UnregisterCommand` to unregister a command previously registered via `RegisterCommand`.
 - Added `GetChannelMember` to get a channel membership for a user.
 
-### Plugin Hook Changes (Beta)
+#### Plugin Hook Changes (Beta)
 
 - Added `ExecuteCommand` hook to execute a command that was previously registered via the `RegisterCommand` plugin API.
+
+### Database Changes
+
+**IncomingWebhooks Table:**
+- Renamed `PostUsername` column to `Username`.
+- Renamed `PostIconURL` column to `IconURL`.
+
+### WebSocket Changes
+
+// XXX @derrick can you help with this section?
 
 ### Known Issues
 
@@ -117,6 +129,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Channel scroll position flickers while images and link previews load.
 - CTRL/CMD+U shortcut to upload a file doesn't work on Firefox.
 - Numbered lists can sometimes extend beyond the normal post area.
+- Slack import through the CLI fails if email notifications are enabled.
+- Letters are skipped in a few dialogs when using Korean keyboard in IE11.
 
 ### Contributors
 
