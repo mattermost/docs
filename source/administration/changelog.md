@@ -5,27 +5,61 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v4.6
+
 Release date: 2017-01-16
 
 ### Highlights
 
+#### Client-Side Performance
+
+- Decreased channel switching time by up to 45% by reducing post mounting time.
+- Decreased how much memory is retained following a channel switch by up to 85%, by fixing memory leaks of the `post_time.jsx` component.
+- Decreased size of the most used icons and logos by 70-80%, by running `pngquant` to remove unnecessary metadata from PNGs.
 
 ### Improvements
 
+#### Web User Interface
+
+- Added a loading indicator while pinned posts and flagged posts lists are loading.
+- Added a loading indicator to MFA sign in button.
+- Added a tooltip for the '+' button when adding emoji reactions.
+- Channel switcher (CTRL/CMD+K) now filters by usernames, full names and nicknames.
+- Channel links are now rendered in the channel header.
+
 #### Plugins (Beta)
+
 - Plugins now support slash commands.
 
+#### Notifications
+
+- Updated default notification settings for new accounts to provide a better onboarding experience. Each of these can be configured in Account Settings. In particular, the updated default settings include:
+   - Desktop notifications only sent for mentions and direct messages.
+   - Mobile push notifications only sent when the user is away or offline, not when online.
+   - Mentions of the user's first name doesn't trigger mentions.
+
+#### 508 Compliance
+
+- Default language is now declared in HTML for Mattermost webpages.
+- Position of status indicators and reply icons updated when no CSS is rendered.
+- Use programmatically identifiable headings for team and channel name.
+
 #### Administration
+
 - Incoming webhook display name is now included in the post.Props field for better auditing.
-- OAuth and SAML users can now be deactivated from the Mattermost System Console.
+- System Admins can now reset their own passwod from the System Console users list.
 
 ### Bug Fixes
+
 - Username updates are now immediately visible across all browser tabs.
 - Server logs no longer contain info messages about initializing plugins when plugins are disabled.
 - Fixed Mattermost not loading on Firefox v52.
-
-
-You must also deactivate this user in the SSO provider or they will be reactivated on next login or sync.
+- Fixed issues with user at-mention autocomplete when using Tab multiple times.
+- Fixed an issue where typing an emoji reaction didn't add it to recently used emojis list.
+- OAuth and SAML users can now be deactivated from the Mattermost System Console, assuming they are also deactivated in the SSO provider.
+- Fixed email address validation for Microsoft Outlook formatted email addresses.
+- Fixed an issue where posts sometimes didn't send on iOS Classic app.
+- Team name can no longer be edited to be only one character long.
+- Editing a message to remove all text no longer deletes the message if it contains a file attachment.
 
 ### Compatibility
 
@@ -41,9 +75,18 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 **Changes to Team Edition and Enterprise Edition**:
 
 - Under `ServiceSettings` in `config.json`:
-  - Added `"EnableTutorial": true` to control whether tutorial is shown to end users after account creation. // XXX Is this considered to be beta/experimental?
+  - Added `"EnableTutorial": true` to control whether tutorial is shown to end users after account creation. // XXX @eric Is this considered to be beta/experimental?
+- Under `TeamSettings` in `config.json`:
+  - Added `"DefaultTeamName": ""` to .... // XXX @eric Is this considered to be beta/experimental?
+- Under `EmailSettings` in `config.json`:
+  - Added `"LoginButtonColor": ""`, `"LoginButtonBorderColor": ""` and `"LoginButtonTextColor": ""` to set the style of of the email login button for white labeling purposes.
 
 **Additional Changes to Enterprise Edition**:
+
+- Under `LdapSettings` in `config.json`:
+  - Added `"LoginButtonColor": ""`, `"LoginButtonBorderColor": ""` and `"LoginButtonTextColor": ""` to set the style of of the LDAP login button for white labeling purposes.
+- Under `SamlSettings` in `config.json`:
+  - Added `"LoginButtonColor": ""`, `"LoginButtonBorderColor": ""` and `"LoginButtonTextColor": ""` to set the style of of the SAML login button for white labeling purposes.
 
 ### API Changes
 
@@ -62,9 +105,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 - Added `ExecuteCommand` hook to execute a command that was previously registered via the `RegisterCommand` plugin API.
 
-
-
-### Known Issues // XXX Update
+### Known Issues
 
 - Google login fails on the Classic mobile apps.
 - User can receive a video call from another browser tab while already on a call.
@@ -72,20 +113,14 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
 - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
 - Searching with Elasticsearch enabled may not always highlight the searched terms.
-- Team sidebar doesn't always show unreads from other teams on first load.
 - Team sidebar on desktop app does not update when channels have been read on mobile.
-- System Admin cannot reset their own password via the System Console.
 - Channel scroll position flickers while images and link previews load.
 - CTRL/CMD+U shortcut to upload a file doesn't work on Firefox.
-- Profile pictures and usernames don't immediately update across tabs or in the right-hand side comment threads.
-- Fixed an issue where only System Admins could edit OAuth apps even if integration creation was not restricted to admins.
 - Numbered lists can sometimes extend beyond the normal post area.
-- Typing an emoji reaction does not add it to recently used emojis.
 
 ### Contributors
 
-
-
+- [amyblais](https://github.com/amyblais), [AndersonWebStudio](https://github.com/AndersonWebStudio), [asaadmahmood](https://github.com/asaadmahmood), [ccbrown](https://github.com/ccbrown), [coreyhulen](https://github.com/coreyhulen), [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [csduarte](https://github.com/csduarte), [cvitter](https://github.com/cvitter), [dlahn](https://github.com/dlahn), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [g3d](https://github.com/g3d), [grundleborg](https://github.com/grundleborg), [hmhealey](https://github.com/hmhealey), [it33](https://github.com/it33), [james-mm](https://github.com/james-mm), [jarredwitt](https://github.com/jarredwitt), [jespino](https://github.com/jespino), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [letsila](https://github.com/letsila), [lfbrock](https://github.com/lfbrock), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lindy65](https://github.com/lindy65), [lisakycho](https://github.com/lisakycho), [liusy182](https://github.com/liusy182), [LordVeovis](https://github.com/LordVeovis), [Matterchen](https://github.com/Matterchen), [mkraft](https://github.com/mkraft), [MusikPolice](https://github.com/MusikPolice), [panditsavitags](https://github.com/panditsavitags), [pichouk](https://github.com/pichouk), [pixelbrackets](https://github.com/pixelbrackets), [pruthvip](https://github.com/pruthvip), [R-Wang97](https://github.com/R-Wang97), [saturninoabril](https://github.com/saturninoabril), [skvale](https://github.com/skvale), [stephenkiers](https://github.com/stephenkiers), [sudheerDev](https://github.com/sudheerDev), [sumantro93](https://github.com/sumantro93), [tayre](https://github.com/tayre), [tborg](https://github.com/tborg), [tejasbubane](https://github.com/tejasbubane), [watadarkstar](https://github.com/watadarkstar), [yuya-oc](https://github.com/yuya-oc)
 
 ## Release v4.5
 Release date: 2017-12-16
@@ -104,31 +139,44 @@ Release date: 2017-12-16
 
 ### Improvements
 
-#### Web UI
+#### Web User Interface
 - `CTRL/CMD` + `/` now toggles the keyboard shortcuts dialog.
 - Link previews now appear in the right-hand side in comment threads.
 - Timestamp permalinks now open in the current view on desktop and browser.
 - Pinned posts are now sorted newest to oldest.
 - Updated markdown to better handle non-Latin characters in URLs.
+- Added WebRTC call icon to desktop mobile view header.
+- Added a '+' sign to quickly add emoji reactions to a post.
+- Added support for different emoji skintones.
+- Added inline playback for GIF attachments.
 
 #### Integrations
 
-- Add option for an outgoing webhooks to reply to the posted message as a comment.
-- JIRA plugin is now bundled as a prepackaged plugin manageable from the System Console > Plugins > Management
+- Added an option for an outgoing webhooks to reply to the posted message as a comment.
+- JIRA plugin is now bundled as a prepackaged plugin manageable from the System Console > Plugins > Management.
+- Added support for mentions with <@userid>, <!channel>, <!all> and <!here> in webhook posts.
+- Personal access tokens can now be temporarily deactivated in the Account Settings.
 
 #### Channels
 
 - Direct Message channels with deactivated users are now hidden in the sidebar and can be reopened from the **More...**  Direct Messages list.
+- You can now open a direct message channel with yourself.
 
 #### Notifications
 
 - Removed unnecessary log messages posted when pending email notifications are deleted because a user comes online before the batch is sent.
 - Desktop notification icon has been updated on Edge browsers.
 
+#### Keyboard Shortcuts
+
+- Added a `/groupmsg` command to start a new group message channel.
+- Added CTRL+SHIFT+L to set focus to the message input box.
+
 #### System Console
 
 - Added a confirm modal to the Data Retention settings page.
 - Added settings pages for uploading and managing plugins in the System Console > Plugins (Beta) section.
+- Added the ability to revoke a user's sessions from the System Console.
 
 ### Bug Fixes
 
@@ -146,6 +194,9 @@ Release date: 2017-12-16
 - Fixed an issue where the OAuth ClientID and Secret values were missing after setup.
 - Emoji picker now works when the right-hand side is expanded.
 - Error messages in the System Console user list no longer breaks the user interface.
+- Fixed an issue where only System Admins could edit OAuth apps even if integration creation was not restricted to admins.
+- Fixed an issue where "New messages v" bubble didn't always clear in a fresh direct message channel.
+- Fixed channel preferences not restoring after closing and reopening a direct or group message channel.
 
 ### Compatibility
 
@@ -197,7 +248,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Channel scroll position flickers while images and link previews load.
 - CTRL/CMD+U shortcut to upload a file doesn't work on Firefox.
 - Profile pictures and usernames don't immediately update across tabs or in the right-hand side comment threads.
-- Fixed an issue where only System Admins could edit OAuth apps even if integration creation was not restricted to admins.
 - Numbered lists can sometimes extend beyond the normal post area.
 - Typing an emoji reaction does not add it to recently used emojis.
 - Server logs contain messages about initializing plugins even when plugins are disabled.
