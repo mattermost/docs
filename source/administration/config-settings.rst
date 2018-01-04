@@ -1553,6 +1553,8 @@ Enable Email Batching
 
 Enable Notification Contents
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E20*
+
 **Send full message contents**: Sender name and channel are included in email notifications. 
 
 **Send generic description with only sender name**: The team name and name of the person who sent the message, with no information about channel name or message contents, is included in email notifications. Typically used for compliance reasons if Mattermost contains confidential information and policy dictates it cannot be stored in email.
