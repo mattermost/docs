@@ -3100,6 +3100,32 @@ Skip Server Certificate Verification
 | This feature's ``config.json`` setting is ``"SkipServerCertificateVerification": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
+Login Button Colour
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Specify the colour of the email login button for white labeling purposes.
+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
++-------------------------------------------------------------------------------------------------------------------------------+
+
+Login Button Border Colour
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Specify the colour of the email login button border for white labeling purposes.
+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LoginButtonBorderColor": ""`` with string input.                                 |
++-------------------------------------------------------------------------------------------------------------------------------+
+
+Login Button Text Colour
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Specify the colour of the email login button text for white labeling purposes.
+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
++-------------------------------------------------------------------------------------------------------------------------------+
+
+________
+
 GitLab Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Scope
@@ -3133,6 +3159,64 @@ Standard setting for OAuth to determine the scope of information shared with OAu
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Scope": "User.Read"`` with string input                                                                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+________
+
+AD/LDAP Settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Login Button Colour
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Specify the colour of the AD/LDAP login button for white labeling purposes.
+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
++-------------------------------------------------------------------------------------------------------------------------------+
+
+Login Button Border Colour
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Specify the colour of the AD/LDAP login button border for white labeling purposes.
+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LoginButtonBorderColor": ""`` with string input.                                 |
++-------------------------------------------------------------------------------------------------------------------------------+
+
+Login Button Text Colour
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Specify the colour of the AD/LDAP login button text for white labeling purposes.
+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
++-------------------------------------------------------------------------------------------------------------------------------+
+
+________
+
+SAML Settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Login Button Colour
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Specify the colour of the SAML login button for white labeling purposes.
+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
++-------------------------------------------------------------------------------------------------------------------------------+
+
+Login Button Border Colour
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Specify the colour of the SAML login button border for white labeling purposes.
+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LoginButtonBorderColor": ""`` with string input.                                 |
++-------------------------------------------------------------------------------------------------------------------------------+
+
+Login Button Text Colour
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Specify the colour of the SAML login button text for white labeling purposes.
+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
++-------------------------------------------------------------------------------------------------------------------------------+
 
 ________
 
