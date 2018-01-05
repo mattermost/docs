@@ -1,3 +1,6 @@
+# NGINX chart provides
+# - HTTP(S) Ingress services with SSL termination to all external facing services
+# - TCP Ingress for gitlab-shell's SSH services
 nginx:
   service:
     # loadBalancerIP: <GKE static IP address>
@@ -17,7 +20,7 @@ nginx:
     name: gitlab-shell
     port: ssh
 
-# Registry sub-chart
+# Registry chart Provides services to Unicorn/Omnibus chart(s) and external clients
 registry:
   enabled: true
   registry:
@@ -36,9 +39,12 @@ registry:
       secretName: gitlab-registry
       bundleName: registry-auth.crt
 
-# Redis chart
+# Redis chart provides Redis services to multiple charts
 redis:
   enabled: true
+  password:
+    secret: gitlab-redis
+    key: redis-password
 
 # GitLab sub-chart
 gitlab:
@@ -88,7 +94,7 @@ gitlab:
       psql:
         serviceName: omnibus
         password: secure-pgsql-password
-
+    # Shell provides SSH access
     gitlab-shell:
       enabled: true
       unicorn:
@@ -98,12 +104,13 @@ gitlab:
         password:
           secret: gitlab-redis
           key: redis-password
+    # Gitaly provides storage & API access to Git repository data
     gitaly:
       enabled: true
       secret:
         name: gitaly-secret
         key: token
-
+    # Handle database init and upgrade migrations, via gitlab-rails codebase
     migrations:
       enabled: true
       initial_root_password: "minikube"
@@ -115,19 +122,18 @@ gitlab:
       psql:
         serviceName: omnibus
         password: secure-pgsql-password
-
     # omnibus sub-chart (development only)
     omnibus:
       enabled: true
+      # the `migrations` chart handles this.
       auto_migrate: false
+      # use Redis chart
       redis:
         enabled: false
         password:
           secret: gitlab-redis
           key: redis-password
+      # provide PostgreSQL services
       psql:
         enabled: true
         sql_user_password: ${echo -n '${secure-pgsql-password}gitlab' | md5sum - | cut -d ' ' -f1}
-      registry:
-        secret: gitlab-registry
-        certificate: registry-auth.key
