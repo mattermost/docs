@@ -22,11 +22,11 @@ redis:
     key: redis-password
 ```
 
-`redis` - the name for what the current chart needs to connect to
-`host`  - overrides the use of serviceName
-`serviceName` - intended to be used by default, connect using the Kubernetes Service name
-`port` - the port to connect on.
-`password`- defines settings for the Kubernetes Secret containing the password.
+- `redis` - the name for what the current chart needs to connect to
+- `host`  - overrides the use of serviceName
+- `serviceName` - intended to be used by default, connect using the Kubernetes Service name
+- `port` - the port to connect on.
+- `password`- defines settings for the Kubernetes Secret containing the password.
 
 ### Sharing secrets
 
