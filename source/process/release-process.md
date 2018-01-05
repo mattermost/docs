@@ -105,9 +105,9 @@ Day when Leads and PMs decide which major features are included in the release, 
      - Merge changelog PR after review is complete, and update the GitHub meta issue to include a link to the changelog on the documentation branch
     - After build is cut, tweet announcement that RC1 is ready (see [example](https://pre-release.mattermost.com/core/pl/tefx1ijyz7bs8mabuxmpq9f7pw))
 3. Logistics:
-    - Mail out mugs to any new contributors
+    - Mail out contributor and security researcher mugs
     - Update [Team](http://www.mattermost.org/team/) page with new contributors
-    - Add list of contributors to the Changelog draft
+    - Provide release PM with a list of contributors for Changelog draft
 4. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
 4. PM:
