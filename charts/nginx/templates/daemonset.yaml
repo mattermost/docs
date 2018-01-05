@@ -17,8 +17,8 @@ spec:
         app: {{ template "name" . }}
         release: {{ .Release.Name }}
       annotations:
-        checksum/configmap: {{ .Files.Get "configmap.yml" | sha256sum }}
-        checksum/configmaptcp: {{ .Files.Get "configmap-tcp.yml" | sha256sum }}
+        checksum/configmap: {{ .Files.Get "configmap.yaml" | sha256sum }}
+        checksum/configmaptcp: {{ .Files.Get "configmap-tcp.yaml" | sha256sum }}
     spec:
       containers:
         - name: {{ .Chart.Name }}
@@ -65,3 +65,4 @@ spec:
       nodeSelector:
 {{ toYaml .Values.nodeSelector | indent 8 }}
     {{- end }}
+      serviceAccountName: "{{ template "nginx.serviceAccountName" . }}"

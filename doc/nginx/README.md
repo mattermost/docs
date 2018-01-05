@@ -105,6 +105,54 @@ tls:
 
 This field is an exact match to the standard `annotations` for [Kubernetes Ingress][kubernetes-ingress].
 
+## Setting the Service Account
+
+If your cluster is enforcing [Role Based Access Control][RBAC], then the nginx chart will need to run using a ServiceAccount
+that has adequate permissions.
+
+The ServiceAccount needs Role access to:
+
+- Get
+  * pods, namespaces, secrets, configmaps, endpoints, and nginx ingress resources
+- Create
+  * configmaps, endpoints
+- Update
+  * configmaps, endpoints, and nginx ingress resources
+
+It also needs ClusterRole access to:
+
+- Get
+  * nodes, services, extensions, ingresses
+- List/Watch
+  * configmaps, endpoints, nodes, pods, secrets, services, extensions, ingresses
+- Create/Patch
+  * events
+- Update
+  * services, extensions, and the ingressStatus resources
+
+### Generate the Service Account
+
+If the Helm Tiller server is running as a ServiceAccount with the [cluster-admin role](../helm/README.md#preparing-for-helm-with-rbac),
+then the chart can create and manage the ServiceAccount required for nginx.
+
+Enable it in the `serviceAccount` field:
+
+```
+serviceAccount:
+  autoGenerate: true
+```
+
+Otherwise, you will need to supply an existing ServiceAccount.
+
+### Provide existing Service Account
+
+If you have already created a ServiceAccount that has the adequate permissions for nginx. You can specify it by name in the `serviceAccount` field.
+
+```
+serviceAccount:
+  name: default
+```
+
 [Service]: ../../charts/nginx/templates/service.yaml
 [Deployment]: ../../charts/nginx/templates/deployment.yaml
 [ConfigMap]: ../../charts/nginx/templates/configmap.yaml
@@ -117,3 +165,4 @@ This field is an exact match to the standard `annotations` for [Kubernetes Ingre
 [kubernetes-secret]: https://kubernetes.io/docs/concepts/configuration/secret/
 [helm]: https://helm.sh
 [kubernetes-ingress-nginx-configuration]: https://github.com/kubernetes/ingress/blob/master/controllers/nginx/configuration.md
+[RBAC]: https://kubernetes.io/docs/admin/authorization/rbac/
