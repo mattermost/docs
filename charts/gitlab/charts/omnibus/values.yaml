@@ -78,8 +78,9 @@ gitaly:
 registry:
   host: registry.example.local
   port: 80
-  secret: omnibus-registry
-  certificate: certificate.crt
+  secret: gitlab-registry
+  certificate: registry-auth.key
+  tokenIssuer: gitlab-issuer
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
