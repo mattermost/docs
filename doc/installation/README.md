@@ -1,7 +1,7 @@
 # Installing GitLab using Helm
 
 This document provides all steps in installing a complete GitLab environment via
-[helm][../helm/README.md].
+[helm](../helm/README.md).
 
 ## Dependencies
 
