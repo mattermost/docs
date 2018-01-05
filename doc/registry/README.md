@@ -14,7 +14,7 @@ A Kubernetes `Deployment` was chosen as the deployment method for this chart to
 allow for simple scaling of instances, while allowing for [rolling-update](https://kubernetes.io/docs/user-guide/kubectl/v1.7/#rolling-update)s.
 
 This chart makes use of only two secrets:
-- `certBundle`: A secret that will contain the public certificate bundle to verify
+- `certificate`: A secret that will contain the public certificate bundle to verify
 the authentication tokens provided by the associated GitLab instance(s). See
 [documentation](https://docs.gitlab.com/ee/administration/container_registry.html#disable-container-registry-but-use-gitlab-as-an-auth-endpoint) on using GitLab as an auth endpoint.
 - *optional*: The secret which will contain the SSL certificates for the HTTPS
@@ -88,20 +88,20 @@ The value should include the protocol and hostname only. The chart template will
 
 Example: `authEndpoint: "https://gitlab.example.local"`
 
-#### certBundle
+#### certificate
 
-Field `certBundle` is a map containing two items: `secretName` and `bundleName`.
+Field `certificate` is a map containing two items: `secret` and `key`.
 
-`secretName` is a string containing the name of the [Kubernetes Secret][kubernetes-secret] that houses the certificate bundle to be used to verify the tokens created by the GitLab instance(s).
+`secret` is a string containing the name of the [Kubernetes Secret][kubernetes-secret] that houses the certificate bundle to be used to verify the tokens created by the GitLab instance(s).
 
-`bundleName` is the name of the `key` in the `Secret` which houses the certificate
+`key` is the name of the `key` in the `Secret` which houses the certificate
 bundle that will be provided to the [registry][] container as `auth.token.rootcertbundle`.
 
 Default Example:
 ```
-certBundle:
-  secretName: gitlab-registry
-  bundleName: registry-auth.crt
+certificate:
+  secret: gitlab-registry
+  key: registry-auth.crt
 ```
 
 #### replicas

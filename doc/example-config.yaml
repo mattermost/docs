@@ -35,9 +35,9 @@ registry:
         enabled: true
     authEndpoint: 'http://gitlab.example.local'
     tokenIssuer: gitlab-issuer
-    certBundle:
-      secretName: gitlab-registry
-      bundleName: registry-auth.crt
+    certificate:
+      secret: gitlab-registry
+      key: registry-auth.crt
 
 # Redis chart provides Redis services to multiple charts
 redis:

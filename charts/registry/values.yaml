@@ -31,8 +31,8 @@ registry:
   # This must match your GitLab Rails configuration
   tokenIssuer: 'gitlab-issuer'
   # Public side of the certificate bundle used to sign JWT auth requests
-  certBundle:
-    secretName: 'gitlab-registry'
-    bundleName: 'registry-auth.crt'
+  certificate:
+    secret: gitlab-registry
+    key: registry-auth.crt
   # if replicas is >1, shared storage MUST be used.
   replicas: 1

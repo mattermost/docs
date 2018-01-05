@@ -39,7 +39,7 @@ For security purposes, this values is mapped as a file in the [omnibus][] chart.
 
 ### Registry
 
-`registry.certBundle` contains two items:
+`registry.certificate` contains two items:
 - `secret` provides the name of the secret that houses the public certificate used for verifying JWT authentication tokens for the [Registry][].
 - `certificate` contains the name of the key in that secret which contains the cerficate itself.
 

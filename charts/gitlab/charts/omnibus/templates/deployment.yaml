@@ -77,9 +77,9 @@ spec:
       volumes:
       - name: {{ .Release.Name }}-registry-secret
         secret:
-          secretName: {{ .Values.registry.secret }}
+          secretName: {{ .Values.registry.certificate.secret }}
           items:
-            - key: {{ .Values.registry.certificate }}
+            - key: {{ .Values.registry.certificate.key }}
               path: registry-certificate.crt
           defaultMode: 0400
       - name: gitlab-config

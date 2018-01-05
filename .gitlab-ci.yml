@@ -251,8 +251,8 @@ production:
       --set registry.registry.storage.delete.enabled=true \
       --set registry.registry.authEndpoint="https://gitlab$DOMAIN" \
       --set registry.registry.tokenIssuer="gitlab-issuer" \
-      --set registry.registry.certBundle.secretName="gitlab-registry" \
-      --set registry.registry.certBundle.bundleName="registry-auth.crt" \
+      --set registry.registry.certificate.secret="gitlab-registry" \
+      --set registry.registry.certificate.key="registry-auth.crt" \
       --set redis.enabled=true \
       --set redis.password.secret=gitlab-redis \
       --set redis.password.key=redis-password \
@@ -304,8 +304,8 @@ production:
       --set gitlab.omnibus.psql.enabled=true \
       --set gitlab.omnibus.psql.password="$ROOT_PASSWORD" \
       --set gitlab.omnibus.psql.sql_user_password="$(echo -n ${ROOT_PASSWORD}gitlab | md5sum - | cut -d' ' -f1)" \
-      --set gitlab.omnibus.registry.secret=gitlab-registry \
-      --set gitlab.omnibus.registry.certificate=registry-auth.key \
+      --set gitlab.omnibus.registry.certificate.secret=gitlab-registry \
+      --set gitlab.omnibus.registry.certificate.key=registry-auth.key \
       --namespace="$KUBE_NAMESPACE" \
       --version="$CI_PIPELINE_ID-$CI_JOB_ID" \
       "$name" \
