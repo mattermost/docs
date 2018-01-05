@@ -32,7 +32,7 @@ data:
         realm: {{ .Values.registry.authEndpoint }}/jwt/auth
         service: {{ .Values.registry.tokenService }}
         issuer: {{ .Values.registry.tokenIssuer | quote }}
-        rootcertbundle: /etc/registry-secret/{{ .Values.registry.certBundle.bundleName }}
+        rootcertbundle: /etc/registry-secret/{{ .Values.registry.certificate.key }}
     storage:
       {{- if .Values.registry.storage }}
 {{ toYaml .Values.registry.storage | indent 6}}

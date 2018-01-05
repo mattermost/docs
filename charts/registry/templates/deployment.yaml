@@ -33,10 +33,10 @@ spec:
       volumes:
       - name: {{ .Release.Name }}-secret
         secret:
-            secretName: {{ .Values.registry.certBundle.secretName }}
+            secretName: {{ .Values.registry.certificate.secret }}
             items:
-                - key: {{ .Values.registry.certBundle.bundleName }}
-                  path: {{ .Values.registry.certBundle.bundleName }}
+                - key: {{ .Values.registry.certificate.key }}
+                  path: {{ .Values.registry.certificate.key }}
             defaultMode: 0400
       - name: config-volume
         configMap:

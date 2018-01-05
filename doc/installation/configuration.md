@@ -22,8 +22,8 @@ Set the following properties in `helm-charts-win.yaml`:
 - registry.service.type: NodePort
 - registry.registry.authEndpoint: 'https://gitlab.helm-charts.win'
 - registry.registry.tokenIssuer: gitlab-issuer
-- registry.registry.certBundle.secretName: gitlab-registry
-- registry.registry.certBundle.bundleName: registry-auth.crt
+- registry.registry.certificate.secret: gitlab-registry
+- registry.registry.certificate.key: registry-auth.crt
 - gitlab.omnibus.service.type: NodePort
 - gitlab.omnibus.enabled: true
 - gitlab.omnibus.external_url: 'https://gitlab.helm-charts.win'

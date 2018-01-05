@@ -78,8 +78,9 @@ gitaly:
 registry:
   host: registry.example.local
   port: 80
-  secret: gitlab-registry
-  certificate: registry-auth.key
+  certificate:
+    secret: gitlab-registry
+    key: registry-auth.key
   tokenIssuer: gitlab-issuer
 
 resources: {}
