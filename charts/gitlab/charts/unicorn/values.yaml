@@ -45,7 +45,7 @@ registry:
     protocol: http
     serviceName: registry
     port: 5000
-  tokenIssuer: gitlab-registry
+  tokenIssuer: gitlab-issuer
   certificate:
     secret: gitlab-registry
     key: gitlab-registry.key

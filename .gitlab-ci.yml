@@ -250,7 +250,7 @@ production:
       --set registry.registry.storage.cache.blobdescriptor="inmemory" \
       --set registry.registry.storage.delete.enabled=true \
       --set registry.registry.authEndpoint="https://gitlab$DOMAIN" \
-      --set registry.registry.tokenIssuer="omnibus-gitlab-issuer" \
+      --set registry.registry.tokenIssuer="gitlab-issuer" \
       --set registry.registry.certBundle.secretName="gitlab-registry" \
       --set registry.registry.certBundle.bundleName="registry-auth.crt" \
       --set redis.enabled=true \
@@ -277,7 +277,7 @@ production:
       --set gitlab.unicorn.gitaly.auth_token.key=token \
       --set gitlab.unicorn.registry.host=registry$DOMAIN \
       --set gitlab.unicorn.registry.api.serviceName=registry \
-      --set gitlab.unicorn.registry.tokenIssuer="omnibus-gitlab-issuer" \
+      --set gitlab.unicorn.registry.tokenIssuer="gitlab-issuer" \
       --set gitlab.unicorn.registry.certificate.secret=gitlab-registry \
       --set gitlab.unicorn.registry.certificate.key=registry-auth.key \
       --set gitlab.migrations.enabled=true \

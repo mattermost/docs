@@ -100,8 +100,8 @@ bundle that will be provided to the [registry][] container as `auth.token.rootce
 Default Example:
 ```
 certBundle:
-  secretName: gitlab-registry-certbundle
-  bundleName: gitlab-registry.crt
+  secretName: gitlab-registry
+  bundleName: registry-auth.crt
 ```
 
 #### replicas

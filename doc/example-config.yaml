@@ -26,10 +26,10 @@ registry:
       delete:
         enabled: true
     authEndpoint: 'http://gitlab.example.local'
-    tokenIssuer: omnibus-gitlab-issuer
+    tokenIssuer: gitlab-issuer
     certBundle:
-      secretName: 'gitlab-registry-certbundle'
-      bundleName: 'gitlab-registry.crt'
+      secretName: gitlab-registry
+      bundleName: registry-auth.crt
 
 # GitLab sub-chart
 gitlab:
@@ -42,10 +42,10 @@ gitlab:
         port: 80
         api:
           serviceName: registry
-        tokenIssuer: omnibus-gitlab-issuer
+        tokenIssuer: gitlab-issuer
         certificate:
-          secret: omnibus-registry
-          key: gitlab-registry.key
+          secret: gitlab-registry
+          key: registry-auth.key
       shell:
         secret: gitlab-shell-secret
       gitaly:
@@ -120,5 +120,5 @@ gitlab:
         enabled: true
         sql_user_password: ${echo -n '${secure-pgsql-password}gitlab' | md5sum - | cut -d ' ' -f1}
       registry:
-        secret: omnibus-registry
-        certificate: gitlab-registry.key
+        secret: gitlab-registry
+        certificate: registry-auth.key
