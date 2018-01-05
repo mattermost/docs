@@ -6,7 +6,7 @@ image:
   tag: latest
   pullPolicy: Always
 enabled: false
-# initial_root_password:
+# initialRootPassword:
 redis:
   # host: '0.0.0.0'
   # serviceName: 'omnibus'

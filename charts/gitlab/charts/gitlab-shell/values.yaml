@@ -12,7 +12,7 @@ service:
   externalPort: 22
   internalPort: 22
 enabled: false
-secret_token:
+secretToken:
    secret: gitlab-shell-secret
    key: secret
 unicorn: {}

@@ -19,6 +19,7 @@ Set the following properties in `helm-charts-win.yaml`:
 - nginx.ingress.hosts[1].name: registry.helm-charts.win
 - nginx.ingress.tls[0].secretName: helm-charts-win-tls
 - nginx.ingress.tls[0].hosts[]: gitlab.helm-charts.win, registry.helm-charts.win
+- gitlab.migrations.initialRootPassword: [from 1Password]
 - registry.service.type: NodePort
 - registry.registry.authEndpoint: 'https://gitlab.helm-charts.win'
 - registry.registry.tokenIssuer: gitlab-issuer
@@ -27,7 +28,6 @@ Set the following properties in `helm-charts-win.yaml`:
 - gitlab.omnibus.service.type: NodePort
 - gitlab.omnibus.enabled: true
 - gitlab.omnibus.external_url: 'https://gitlab.helm-charts.win'
-- gitlab.omnibus.initial_root_password: [from 1Password]
 - gitlab.omnibus.redis.enabled: false
 - gitlab.omnibus.redis.serviceName: redis
 - gitlab.omnibus.redis.password.secret: gitlab-redis

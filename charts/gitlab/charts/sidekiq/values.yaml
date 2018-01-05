@@ -24,7 +24,7 @@ gitaly:
   # host: '0.0.0.0'
   # serviceName: 'omnibus'
   # port: 8075
-  auth_token:
+  authToken:
     secret: gitaly-secret
     key: token
 

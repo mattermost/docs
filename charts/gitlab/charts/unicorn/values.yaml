@@ -14,7 +14,7 @@ service:
   workhorseExternalPort: 8181
   workhorseInternalPort: 8181
 enabled: false
-gitlab_host: localhost
+gitlabHost: localhost
 redis:
   # host: '0.0.0.0'
   # serviceName: 'omnibus'
@@ -35,7 +35,7 @@ gitaly:
   # host: '0.0.0.0'
   # serviceName: 'omnibus'
   # port: 8075
-  auth_token:
+  authToken:
     secret: gitaly-secret
     key: token
 registry:

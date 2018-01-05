@@ -29,9 +29,9 @@ spec:
               value: '/var/opt/gitlab/templates'
             - name: CONFIG_DIRECTORY
               value: '/var/opt/gitlab/config/gitlab/'
-            {{- if .Values.initial_root_password}}
+            {{- if .Values.initialRootPassword}}
             - name: GITLAB_ROOT_PASSWORD
-              value: {{ .Values.initial_root_password | quote }}
+              value: {{ .Values.initialRootPassword | quote }}
             {{- end }}
           volumeMounts:
             - name: migrations-config

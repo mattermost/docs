@@ -61,9 +61,9 @@ spec:
           name: {{ template "fullname" . }}
       - name: shell-secret
         secret:
-          secretName: {{ .Values.secret_token.secret }}
+          secretName: {{ .Values.secretToken.secret }}
           items:
-            - key: {{ .Values.secret_token.key }}
+            - key: {{ .Values.secretToken.key }}
               path: ".gitlab_shell_secret"
           defaultMode: 0440
       - name: shell-redis
