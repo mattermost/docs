@@ -29,8 +29,9 @@ psql:
   # username: 'gitlab'
   # password: nil
 shell:
-   secret: gitlab-shell-secret
-   key: secret
+  authToken:
+    secret: gitlab-shell-secret
+    key: secret
 gitaly:
   # host: '0.0.0.0'
   # serviceName: 'omnibus'

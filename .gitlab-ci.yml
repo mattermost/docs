@@ -271,8 +271,8 @@ production:
       --set gitlab.unicorn.redis.password.key=redis-password \
       --set gitlab.unicorn.psql.serviceName=omnibus \
       --set gitlab.unicorn.psql.password="$ROOT_PASSWORD" \
-      --set gitlab.unicorn.shell.secret=gitlab-shell-secret \
-      --set gitlab.unicorn.shell.key=secret \
+      --set gitlab.unicorn.shell.authToken.secret=gitlab-shell-secret \
+      --set gitlab.unicorn.shell.authToken.key=secret \
       --set gitlab.unicorn.gitaly.authToken.secret=gitaly-secret \
       --set gitlab.unicorn.gitaly.authToken.key=token \
       --set gitlab.unicorn.registry.host=registry$DOMAIN \
@@ -288,11 +288,11 @@ production:
       --set gitlab.migrations.psql.password="$ROOT_PASSWORD" \
       --set gitlab.migrations.initialRootPassword="$ROOT_PASSWORD" \
       --set gitlab.gitlab-shell.enabled=true \
-      --set gitlab.gitlab-shell.secretToken.secret=gitlab-shell-secret \
-      --set gitlab.gitlab-shell.secretToken.key=secret \
+      --set gitlab.gitlab-shell.authToken.secret=gitlab-shell-secret \
+      --set gitlab.gitlab-shell.authToken.key=secret \
       --set gitlab.gitaly.enabled=true \
-      --set gitlab.gitaly.secret.name=gitaly-secret \
-      --set gitlab.gitaly.secret.key=token \
+      --set gitlab.gitaly.authToken.secret=gitaly-secret \
+      --set gitlab.gitaly.authToken.key=token \
       --set gitlab.omnibus.enabled=true \
       --set gitlab.omnibus.service.type=NodePort \
       --set gitlab.omnibus.external_url="https://gitlab$DOMAIN" \

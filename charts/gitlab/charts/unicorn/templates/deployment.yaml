@@ -67,9 +67,9 @@ spec:
           name: {{ template "fullname" . }}
       - name: unicorn-shell
         secret:
-          secretName: {{ .Values.shell.secret }}
+          secretName: {{ .Values.shell.authToken.secret }}
           items:
-            - key: {{ default "secret" .Values.shell.key }}
+            - key: {{ default "secret" .Values.shell.authToken.key }}
               path: ".gitlab_shell_secret"
           defaultMode: 0400
       - name: unicorn-gitaly

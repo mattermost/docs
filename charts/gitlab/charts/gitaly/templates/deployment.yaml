@@ -64,14 +64,14 @@ spec:
           defaultMode: 0440
           sources:
           - secret:
-              name: {{ .Values.secret.name }}
+              name: {{ .Values.authToken.secret }}
               items:
-                - key: {{ .Values.secret.key }}
+                - key: {{ .Values.authToken.key }}
                   path: "gitaly_token"
           - secret:
-              name: {{ .Values.shell.secret }}
+              name: {{ .Values.shell.authToken.secret }}
               items:
-                - key: {{ .Values.shell.key }}
+                - key: {{ .Values.shell.authToken.key }}
                   path: ".gitlab_shell_secret"
           - secret:
               name: {{ .Values.redis.password.secret }}

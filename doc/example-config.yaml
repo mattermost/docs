@@ -62,7 +62,8 @@ gitlab:
           secret: gitlab-registry
           key: registry-auth.key
       shell:
-        secret: gitlab-shell-secret
+        authToken:
+          secret: gitlab-shell-secret
       gitaly:
         serviceName: gitaly
         authToken:
@@ -107,7 +108,7 @@ gitlab:
     # Gitaly provides storage & API access to Git repository data
     gitaly:
       enabled: true
-      secret:
+      authToken:
         name: gitaly-secret
         key: token
     # Handle database init and upgrade migrations, via gitlab-rails codebase
