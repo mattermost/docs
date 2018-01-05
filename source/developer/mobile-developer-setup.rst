@@ -227,7 +227,7 @@ If you need to add a new JavaScript dependency that is not related to React Nati
 React Native
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-As with `JavaScript only <JavaScript Only>`_, **use yarn** to add your dependency and include an exact version. Then link the library in react native by running ``react-native link <package-name>`` in a terminal.
+As with `JavaScript only <JavaScript Only>`_, **use yarn** to add your dependency and include an exact version. Then link the library in React Native by running ``react-native link <package-name>`` in a terminal.
 
 Be aware that we are using React Native Navigation. For Android, you might need to complete the linking process manually as the ``react-native link`` command won't do it for you.
 
@@ -236,14 +236,14 @@ To do this, after running the ``react-native link`` command, head to ``<project-
 Android
 ~~~~~~~~~~~~
 
-Usually the react native libraries that you add to the project will take care of adding new dependancies to the project. 
+Usually the React Native libraries that you add to the project will take care of adding new dependencies to the project. 
 
-If you come across a case where it is needed, we recommend you first review your work to confirm the need. The Android documentation should then be followed to add the libraries.
+If you come across a case where adding new dependencies manually is needed, we recommend you first review your work to confirm the need. The Android documentation should then be followed to add the libraries.
 
 iOS
 ~~~~~~~~~~~~
 
-Sometimes you may need to add iOS specific dependencies that react native cannot normally link. These will be in the form of Cocoapods.
+Sometimes you may need to add iOS specific dependencies that React Native cannot normally link. These will be in the form of Cocoapods.
 
 To add them, edit the ``Podfile`` located in the ``ios`` directory, then from that directory run ``pod install`` to update the ``Podfile.lock`` file.
 
@@ -289,9 +289,9 @@ Project Directory Structure
 Make Commands Explained
 ------------------------------------
 
-We've included a bunch of make commands in order to control the development flow and to ensure that everything works as expected. Always try and use these make commands unless what you trying to do can't be accomplished by one of these commands.
+We've included a bunch of make commands in order to control the development flow and to ensure that everything works as expected. Always try and use these make commands unless they can't accomplish what you need to do.
 
-Every make command has to be run from a terminal in the project's root directory. You can always try **make help** to get a small description in your terminal about every make command available.
+Every make command has to be run from a terminal in the project's root directory. Try running **make help** to get a short description in your terminal about every make command available.
 
 Commands to Prepare the App
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -307,11 +307,11 @@ Commands to Run the App
 
 These make commands are used to run the app on a device or emulator in the case of Android, and on a simulator in the case of iOS. (see `Running the App on a Device`_ for details)
 
- - **make start**: Runs the React Native packager server used to bundle the javascript code and leaves it in running in your terminal. Use this if you have a compiled app already running in dev mode on a device, emulator or simulator and you are only performing changes in you JavaScript code and there is no need to re-compile the app.
+ - **make start**: Runs the React Native packager server used to bundle the javascript code and leaves it running in your terminal. Use this if you have a compiled app already running in dev mode on a device, emulator or simulator and you have only made changes to your JavaScript code, so re-compiling the app isn't necessary.
  - **make stop**: Stops the React Native packager server if it is running. This command is optional if you need to terminate the packager server from another terminal.
  - **make run**: Alias of ``run-ios``.
  - **make run-ios**: Compiles and runs the app for iOS on an iPhone 6 simulator by default. You can set the environment variable SIMULATOR to the name of the device you want to use.
- - **make run-android**: make run-android: Compiles and runs the app for Android on a running emulator or a device connected through USB. (see `Create and Manage Virtual Devices to configure and run the Android emulator <https://developer.android.com/studio/run/managing-avds.html>`_ to configure and run the Android emulator).
+ - **make run-android**: make run-android: Compiles and runs the app for Android on a running emulator or a device connected through USB. (see `Create and Manage Virtual Devices <https://developer.android.com/studio/run/managing-avds.html>`_ to configure and run the Android emulator).
 
 Commands to Test the App
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -331,28 +331,25 @@ The set of commands for building the app are used in conjunction with `Fastlane 
  - **make unsigned-ios**: Builds the iOS app and generates an unsigned Mattermost-unsigned.ipa file in the project's root directory.
  - **make unsigned-ios**: Builds the Android app and generates an unsigned Mattermost-unsigned.apk file in the project's root directory.
 
-If you plan to use the make build-* commands be sure to set your Environment variables for use in conjunction with Fastlane to suit your needs. For more information please refer to the `Build your own app from source`_ section.
+If you plan to use the make build-* commands be sure to set your environment variables for use in conjunction with Fastlane to suit your needs. For more information please refer to the `Build Your Own App from Source`_ section.
 
 Running the App on a Device
 ------------------------------
 
-If you want to test the app or if you want to make a contribution is always a good idea to run the app on an actual device, that way you can ensure that the app is working correctly and in a performant way before making a pull request.
+If you want to test the app or if you want to make a contribution it is always a good idea to run the app on an actual device. This will let you ensure that the app is working correctly and in a performant way before making a pull request.
 
-Running the app on Android devices
+Running the App on Android Devices
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Enable Debugging over USB
 ++++++++++++++++++++++++++++
 
-Most android devices can only install and run apps downloaded from Google Play, by default, in order to be able to install our app in the device during development you will need to enable
-USB Debugging on your device in the "Developer options" menu by going to **Settings -> About phone** and then tap the Build number row at the bottom seven times,
-then go back to **Settings -> Developer options** and enable "USB debugging".
+Most Android devices can only install and run apps downloaded from Google Play. By default, in order to be able to install our app in the device during development you will need to enable USB Debugging on your device in the "Developer options" menu by going to **Settings -> About phone** and then tap the Build number row at the bottom seven times, then go back to **Settings -> Developer options** and enable "USB debugging".
 
-Plug in your device via USB
+Plug in Your Device via USB
 ++++++++++++++++++++++++++++
-Plug in your Android device in any available USB port in your development machine (try to avoid hubs and plug it directly into your computer) and
-check that your device is properly connecting to ADB (Android Debug Bridge) by running **adb devices**.
+Plug in your Android device in any available USB port in your development machine (try to avoid hubs and plug it directly into your computer) and check that your device is properly connecting to ADB (Android Debug Bridge) by running **adb devices**.
 
   .. code-block:: bash
 
@@ -362,7 +359,7 @@ check that your device is properly connecting to ADB (Android Debug Bridge) by r
 
 If you see **device** in the right column that means that the device is connected. You must have **only one device connected** at a time.
 
-Run the app
+Run the App
 +++++++++++++
 
 With your device connected to the USB port execute the following in your command prompt to install and launch the app on the device:
@@ -380,30 +377,28 @@ You can also run a **Release** build of the app in your device by setting the *V
     $ VARIANT=release make run-android
 
 .. important::
-  If you have already a Debug app install in your phone you need to uninstall it first as the Debug and Release variant aren't compatible and you'll get an error saying ``INSTALL_FAILED_UPDATE_INCOMPATIBLE``.
+  If you already have a Debug app install in your phone, you need to uninstall it first because the Debug and Release variants aren't compatible. If it is installed, you will get an error saying ``INSTALL_FAILED_UPDATE_INCOMPATIBLE``.
 
 Also remember running the app in Release mode will be more performant than in debug mode but you cannot test new changes without recompiling the app.
 
-Running the app on iOS devices
+Running the App on iOS Devices
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Plug in your device via USB
+Plug in Your Device via USB
 ++++++++++++++++++++++++++++
 
-Plug in your iOS device in any available USB port in your development machine (try to avoid hubs and plug it directly into your computer). Navigate to the ios folder in your ``mattermost-mobile`` project,
-then open the file **Mattermost.xcworkspace** in XCode.
+Plug in your iOS device in any available USB port in your development machine (try to avoid hubs and plug it directly into your computer). Navigate to the ios folder in your ``mattermost-mobile`` project, then open the file **Mattermost.xcworkspace** in XCode.
 
-If this is your first time running an app on your iOS device, you may need to register your device for development, to do so,
-open the **Product** menu in XCode menu bar, then go to **Destination** then look for and select your device from the list.
+If this is your first time running an app on your iOS device, you may need to register your device for development. To do so,
+open the **Product** menu in XCode menu bar, then go to **Destination** and look for your device to select from the list.
 
-Configure code signing
+Configure Code signing
 +++++++++++++++++++++++
 
 Register for an `Apple developer account <https://developer.apple.com/>`_ if you don't have one yet.
 
 Select the **Mattermost** project in the Xcode Project Navigator, then select the **Mattermost** target.
-Look for the "General" tab. Go to the "Signing" section and make sure your Apple developer account or team is selected under the Team dropdown. Then make sure to change the *Bundle Identifier*
-in the "Identity" section that will be used for your own custom build. XCode will then register your provisioning profiles in your account for the Bundle Identifier you've entered.
+Look for the "General" tab. Go to the "Signing" section and make sure your Apple developer account or team is selected under the Team dropdown. Then make sure to change the *Bundle Identifier* in the "Identity" section that will be used for your own custom build. XCode will then register your provisioning profiles in your account for the Bundle Identifier you've entered.
 
 .. image:: ../../source/images/mobile/code_signing.png
 
@@ -423,31 +418,29 @@ App Groups are used to share data between the main app and the app extension.
 
 .. image:: ../../source/images/mobile/app_groups.png
 
-Finally, you'll need to set the same app group in your config.json under the assets folder and you can refer to `Overriding assets & White labeling`_ section to learn how to do it.
+Finally, you'll need to set the same app group in your config.json under the assets folder. Refer to `Overriding Assets & White Labeling`_ section for further instructions.
 
-Build and Run the app
+Build and Run the App
 ++++++++++++++++++++++
 
-If everything is set up correctly, your device will be listed as the build target in the Xcode toolbar,
-and it will also appear in the Devices Pane (⇧⌘2). You can press the **Build and run** button (⌘R) or select the **Run** from the Product menu to run the app.
+If everything is set up correctly, your device will be listed as the build target in the Xcode toolbar, and it will also appear in the Devices Pane (⇧⌘2). You can press the **Build and run** button (⌘R) or select the **Run** from the Product menu to run the app.
 
 .. image:: ../../source/images/mobile/running_ios.png
 
-If you run into any issues, please take a look at Apple's `Launching You App on a Device <https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/LaunchingYourApponDevices/LaunchingYourApponDevices.html#//apple_ref/doc/uid/TP40012582-CH27-SW4>`_ documentation.
+If you run into any issues, please take a look at Apple's `Launching Your App on a Device <https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/LaunchingYourApponDevices/LaunchingYourApponDevices.html#//apple_ref/doc/uid/TP40012582-CH27-SW4>`_ documentation.
 
-If the app fails to build, you can try to either of the following before trying to build the app again:
+If the app fails to build, you can try either of the following options before trying to build the app again:
 - Go to the **Product** menu and select **Clean**
 - Go to the **Product** menu, hold down the Option key, and select **Clean Build Folder…**
 
-Build your own app from source
+Build Your Own App from Source
 ------------------------------
 
-Now, you can build the app from source to be able to distribute it within your team or company either using the App Stores,
-an EMM provider or in any other possible way.
+Now you can build the app from source and distribute it within your team or company either using the App Stores, Enterprise App Stores or EMM providers, or any other way.
 
 We recommend using the **make build-*** commands in conjunction with `Fastlane <https://docs.fastlane.tools/#choose-your-installation-method>`_. With Fastlane, you can also configure the app using environment variables.
 
-Build preparations
+Build Preparations
 ~~~~~~~~~~~~~~~~~~
 
 First of all, ensure that the following remains exactly the same as in the original `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_ repo:
@@ -455,12 +448,12 @@ First of all, ensure that the following remains exactly the same as in the origi
  - Android-specific source files remain under *android/app/src/main/java/com/mattermost/rnbeta*
  - Your `environment variables <https://github.com/mattermost/mattermost-mobile/blob/fastlane/fastlane/env_vars_example>`_ are set according to your needs
 
-Build the Android app
+Build the Android App
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Android requires that all apps be digitally signed with a certificate before they can be installed, so to distribute your Android application via the Google Play Store, you'll need to generate a signed release APK.
 
-Generating a signing key
+Generating a Signing Key
 +++++++++++++++++++++++++
 
 To generate the signed key, we'll be using **keytool** which comes with the JDK required to develop for Android.
@@ -469,16 +462,14 @@ To generate the signed key, we'll be using **keytool** which comes with the JDK 
 
     $ keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
 
-The above command prompts you for passwords for the keystore and key
-(make sure you use the same password for both) and to provide the Distinguished Name fields for your key.
-It then generates the keystore as a file called my-release-key.keystore.
+The above command prompts you for passwords for the keystore and key (make sure you use the same password for both), and asks you to provide the Distinguished Name fields for your key. It then generates the keystore as a file called my-release-key.keystore.
 
 The keystore contains a single key, valid for 10000 days. The alias is a name that you will use later when signing your app, so remember to take a note of the alias.
 
 .. note::
   Remember to keep your keystore file private and never commit it to version control.
 
-Setting up gradle variables
+Setting up Gradle Variables
 ++++++++++++++++++++++++++++
 
  - Place the *my-release-key.keystore* file under a directory that you can access. It can be in your home directory or even under *android/app* in the project folder so long as it is not checked in.
@@ -494,9 +485,9 @@ Setting up gradle variables
   Replace **/full/path/to/directory/containing/my-release-key.keystore** with the full path to the actual keystore file and ********* with the actual keystore password.
 
 .. warning::
-  Once you publish the app on the Play Store, you will need to re-publish your app under a different package id (losing all downloads and ratings) if you change the signing key at any point, so backup your keystore and don't forget the password.
+  Once you publish the app on the Play Store, you will need to republish your app under a different package id (losing all downloads and ratings) if you change the signing key at any point, so backup your keystore and don't forget the password.
 
-Setting up environment variables
+Setting up Environment Variables
 ++++++++++++++++++++++++++++++++
 In order to use the **make build-android** command, you'll need to set a few environment variables. In this guide, we will explain some of them. You can refer to the `env_vars_example <https://github.com/mattermost/mattermost-mobile/blob/fastlane/fastlane/env_vars_example>`_
 file under the fastlane directory to see all of them.
@@ -542,7 +533,7 @@ file under the fastlane directory to see all of them.
 |                                               | See the `Supply documentation <https://docs.fastlane.tools/actions/supply/#setup>`_ to learn more.    |                         |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
 
-Building the app
+Building the App
 ++++++++++++++++
 
 Once all the previous steps are done, execute the following command from within the project's directory:
@@ -551,11 +542,11 @@ Once all the previous steps are done, execute the following command from within 
 
     $ make build-android
 
-This will start the building process following the environment variables you've set. Once it finishes, it will
+This will start the build process following the environment variables you've set. Once it finishes, it will
 create a *Mattermost.apk* file in the project's root directory. If you have not set Fastlane to submit the app
 to the Play Store, you can use this file to manually publish and distribute the app.
 
-Build the iOS app
+Build the iOS App
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Apple requires that all apps be digitally signed with a certificate before they can be installed, so to distribute
@@ -563,16 +554,11 @@ your iOS application via Apple App Store, you'll need to generate a signed relea
 any other native iOS app, but in our case we've created a set of scripts in conjunction with Fastlane to
 make this process easier than the standard manual process.
 
-We make use of `Match <https://docs.fastlane.tools/actions/match/>`_ to sync your provisioning profiles (the profiles will be created for you if needed),
-then use `Gym <https://docs.fastlane.tools/actions/gym/>`_ to build and sign the app, and then optionally
-use `Pilot <https://docs.fastlane.tools/actions/pilot/>`_ to submit the app to
-TestFlight in order for you to promote the app to the App Store.
+We make use of `Match <https://docs.fastlane.tools/actions/match/>`_ to sync your provisioning profiles (the profiles will be created for you if needed), then use `Gym <https://docs.fastlane.tools/actions/gym/>`_ to build and sign the app, and then optionally use `Pilot <https://docs.fastlane.tools/actions/pilot/>`_ to submit the app to TestFlight in order for you to promote the app to the App Store.
 
 Setting up environment variables
 ++++++++++++++++++++++++++++++++
-In order to use the **make build-ios** command, you'll need to set a few environment variables. In this guide,
-we will explain some of them. you can refer to the `env_vars_example <https://github.com/mattermost/mattermost-mobile/blob/fastlane/fastlane/env_vars_example>`_
-file under the fastlane directory to see all of them.
+In order to use the **make build-ios** command, you'll need to set a few environment variables. In this guide, we will explain some of them. You can refer to the `env_vars_example <https://github.com/mattermost/mattermost-mobile/blob/fastlane/fastlane/env_vars_example>`_ file under the fastlane directory to see all of them.
 
 .. note::
   You must use your own provisioning profiles and certificates as well as your own Bundle Identifiers. If you use the default values, you will be unable to build and sign the app.
@@ -636,7 +622,7 @@ file under the fastlane directory to see all of them.
 | PILOT_USERNAME                                | Your Apple ID Username.                                                                               |                                        |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
 
-Building the app
+Building the App
 ++++++++++++++++
 
 Once all the previous steps are done, you can run the following command from within the project's directory
@@ -645,18 +631,14 @@ Once all the previous steps are done, you can run the following command from wit
 
     $ make build-ios
 
-This will start the building process following the environment variables you've set. Once it finishes, it will
-create a *Mattermost.ipa* file in the project's root directory. If you have not set Fastlane to submit the app
-to TestFlight, you can use this file to manually publish and distribute the app.
+This will start the build process following the environment variables you've set. Once it finishes, it will create a *Mattermost.ipa* file in the project's root directory. If you have not set Fastlane to submit the app to TestFlight, you can use this file to manually publish and distribute the app.
 
-Push notifications with your own build
+Push Notifications with Your Own Build
 ---------------------------------------
 
-When building a custom version of the Mattermost mobile app, you will also need to host your own
-`Mattermost Push Proxy Server <https://github.com/mattermost/mattermost-push-proxy>`_ and make a few
-modifications to your Mattermost mobile app to be able to get push notifications.
+When building a custom version of the Mattermost mobile app, you will also need to host your own `Mattermost Push Proxy Server <https://github.com/mattermost/mattermost-push-proxy>`_ and make a few modifications to your Mattermost mobile app to be able to get push notifications.
 
-Set up Android to receive push notifications
+Set Up Android to Receive Push Notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Push notifications on Android are managed and dispatched using `Google's GCM service <https://developers.google.com/cloud-messaging/gcm>`_ (now integrated into Firebase).
@@ -675,10 +657,10 @@ Once the project is created you'll be redirected to the Firebase project dashboa
  .. image:: ../../source/images/mobile/firebase_dashboard.png
 
  - Click **Add Firebase to your Android App**
- - Enter the package ID of your custom Mattermost app as the **Android package name**. See `Build your own app from source`_ for more information on the package ID.
+ - Enter the package ID of your custom Mattermost app as the **Android package name**. See `Build Your Own App from Source`_ for more information on the package ID.
  - Enter an **App nickname** so you can identify it with ease
  - Click **REGISTER APP**
- - Once the app has been registered, download the **google-services.json** file which will be used later.
+ - Once the app has been registered, download the **google-services.json** file which will be used later
  - Click **CONTINUE** and then **FINISH**
  .. image:: ../../source/images/mobile/firebase_register_app.png
  .. image:: ../../source/images/mobile/firebase_google_services.png
@@ -693,15 +675,12 @@ Now that you have created the Firebase project and the app and downloaded the *g
 .. important::
   Leave the trailing \\0 intact
 
-At this point, you can build the mattermost app for Android.
+At this point, you can build the Mattermost app for Android.
 
-Set up Mattermost Push Proxy Server to send Android push notifications
+Set Up Mattermost Push Proxy Server to Send Android Push Notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now that the app can receive push notifications, we need to make sure that the Push Proxy server is able to send
-the notification to the device. If you haven't installed the Mattermost Push Proxy Server, you should now
-do so by following the documentation in the `Mattermost Push Proxy Server repository <https://github.com/mattermost/mattermost-push-proxy/blob/master/README.md>`_
-and the documentation about `Hosted Push Notification Service <https://docs.mattermost.com/mobile/mobile-hpns.html>`_. This guide will focus on the changes needed to configure the push proxy.
+Now that the app can receive push notifications, we need to make sure that the Push Proxy server is able to send the notification to the device. If you haven't installed the Mattermost Push Proxy Server, you should now do so by following the documentation in the `Mattermost Push Proxy Server repository <https://github.com/mattermost/mattermost-push-proxy/blob/master/README.md>`_ and the documentation about `Hosted Push Notification Service <https://docs.mattermost.com/mobile/mobile-hpns.html>`_. This guide will focus on the changes needed to configure the push proxy.
 
 - Go to the `Firebase Console <https://console.firebase.google.com>`_ and select the project you've created. Once in the
   dashboard, go to the project settings and select **CLOUD MESSAGING**.
@@ -719,7 +698,7 @@ and the documentation about `Hosted Push Notification Service <https://docs.matt
 
 - Finally restart your Mattermost Push Proxy server and your app should start receiving push notifications.
 
-Set up iOS to receive push notifications
+Set Up iOS to Receive Push Notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Push notifications on iOS are managed and dispatched using `Apple's Push Notification Service <https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html>`_.
@@ -735,7 +714,7 @@ You must have a **Paid Apple Developer account** to create certificates needed t
     * Save the certificate request
     .. image:: ../../source/images/mobile/ios_keychain_save_cert_request.png
 
- - Login to `Apple developer account <https://developer.apple.com/account>`_ and click **Certificates, Identifiers and Profiles**
+ - Log in to `Apple developer account <https://developer.apple.com/account>`_ and click **Certificates, Identifiers and Profiles**
  .. image:: ../../source/images/mobile/ios_account.png
 
  - Select iOS from the dropdown
@@ -758,14 +737,12 @@ You must have a **Paid Apple Developer account** to create certificates needed t
 
  - Download the Certificate and click **Done** to finish the process
 
-Set up Mattermost Push Proxy Server to send iOS push notifications
+Set up Mattermost Push Proxy Server to Send iOS Push Notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now that the app is capable of receiving push notifications we need to make sure that the Push Proxy server is able to send
 the notification to the device. If you haven't installed the Mattermost Push Proxy Server at this point you can
-do so by following the documentation on the `Mattermost Push Proxy Server repo <https://github.com/mattermost/mattermost-push-proxy/blob/master/README.md>`_
-and the documentation about `Hosted Push Notification Service <https://docs.mattermost.com/mobile/mobile-hpns.html>`_,
-this guide will only focus about the changes needed in the **mattermost-push-proxy.json** file which is the configuration file of the push proxy.
+do so by following the documentation on the `Mattermost Push Proxy Server repo <https://github.com/mattermost/mattermost-push-proxy/blob/master/README.md>`_ and the documentation about `Hosted Push Notification Service <https://docs.mattermost.com/mobile/mobile-hpns.html>`_. This guide will only focus on the changes needed in the **mattermost-push-proxy.json** file which is the configuration file for the push proxy.
 
  - Double click the **Distribution Certificate** generated in the previous step to add it to your Keychain Access. Go to **Keychain Access**,
    select the **login** keychain and **My Certificates** from the side menu.
@@ -803,10 +780,10 @@ this guide will only focus about the changes needed in the **mattermost-push-pro
 
 - Finally, restart your Mattermost Push Proxy server, and your app should start receiving push notifications.
 
-Overriding assets & White labeling
+Overriding Assets & White Labeling
 -----------------------------------
 
-We've made it easy to white label the mobile app and to replace override the assets used, however, you have to `Build your own app from source`_.
+We've made it easy to white label the mobile app and to replace override the assets used, however, you have to `Build Your Own App from Source`_.
 
 If you look at the `Project Directory Structure`_, you'll see that there is an assets folder containing a base folder with assets provided by Mattermost.
 These include localization files, images and a release folder that optionally contains the icons of the app when building in release mode.
@@ -814,7 +791,7 @@ These include localization files, images and a release folder that optionally co
 To replace these with your own assets, create a sub-directory called ``override`` in the ``assets`` folder. Using the same
 directory structure and file names as in the ``base`` directory, you can add assets to the override folder to be used instead.
 
-Localization strings
+Localization Strings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To replace some or all of the strings in the app in any supported language, create a new json file for each locale you wish to support in ``assets/override/i18n``.
