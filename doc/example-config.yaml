@@ -1,4 +1,9 @@
 nginx:
+  service:
+    # loadBalancerIP: <GKE static IP address>
+  serviceAccount:
+    # Auto Generate the service accounts for RBAC support (requires tiller to be installed with sufficient privileges)
+    autoGenerate: false
   ingress:
     enabled: true
     hosts:
@@ -30,6 +35,10 @@ registry:
     certBundle:
       secretName: gitlab-registry
       bundleName: registry-auth.crt
+
+# Redis chart
+redis:
+  enabled: true
 
 # GitLab sub-chart
 gitlab:

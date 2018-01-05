@@ -20,6 +20,10 @@ service:
   - https: 443
   - ssh: 22
 
+serviceAccount:
+  autoGenerate: false
+  name: default # Only used when autoGenerate is false
+
 proxyConnectTimeout: 15
 proxyReadTimeout: 600
 proxySendTimeout: 600
