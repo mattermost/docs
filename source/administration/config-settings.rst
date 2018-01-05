@@ -3100,25 +3100,25 @@ Skip Server Certificate Verification
 | This feature's ``config.json`` setting is ``"SkipServerCertificateVerification": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-Login Button Colour
+Login Button Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the colour of the email login button for white labeling purposes.
+Specify the color of the email login button for white labeling purposes.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-Login Button Border Colour
+Login Button Border Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the colour of the email login button border for white labeling purposes.
+Specify the color of the email login button border for white labeling purposes.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonBorderColor": ""`` with string input.                                 |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-Login Button Text Colour
+Login Button Text Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the colour of the email login button text for white labeling purposes.
+Specify the color of the email login button text for white labeling purposes.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
@@ -3165,25 +3165,25 @@ ________
 AD/LDAP Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Login Button Colour
+Login Button Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the colour of the AD/LDAP login button for white labeling purposes.
+Specify the color of the AD/LDAP login button for white labeling purposes.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-Login Button Border Colour
+Login Button Border Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the colour of the AD/LDAP login button border for white labeling purposes.
+Specify the color of the AD/LDAP login button border for white labeling purposes.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonBorderColor": ""`` with string input.                                 |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-Login Button Text Colour
+Login Button Text Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the colour of the AD/LDAP login button text for white labeling purposes.
+Specify the color of the AD/LDAP login button text for white labeling purposes.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
@@ -3194,25 +3194,25 @@ ________
 SAML Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Login Button Colour
+Login Button Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the colour of the SAML login button for white labeling purposes.
+Specify the color of the SAML login button for white labeling purposes.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-Login Button Border Colour
+Login Button Border Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the colour of the SAML login button border for white labeling purposes.
+Specify the color of the SAML login button border for white labeling purposes.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonBorderColor": ""`` with string input.                                 |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-Login Button Text Colour
+Login Button Text Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the colour of the SAML login button text for white labeling purposes.
+Specify the color of the SAML login button text for white labeling purposes.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
