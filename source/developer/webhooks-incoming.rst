@@ -125,7 +125,7 @@ For example, you can use the following payload to override the profile picture t
 Mention notifications
 ~~~~~~~~~~~~~~~~~~~~~~
 
-You can trigger mention notifications with your incoming webhook message. To trigger a mention, include *@username* pr *<userid>* in the `text` parameter of the JSON payload.
+You can trigger mention notifications with your incoming webhook message. To trigger a mention, include *@username* or *<userid>* in the `text` parameter of the JSON payload.
 
 Channels can be mentioned by including *@channel* or *<!channel>*. For example:
 
