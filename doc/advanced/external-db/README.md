@@ -21,6 +21,8 @@ Follow the installation instructions for [Omnibus GitLab][]. When you perform th
 
 We'll create a minimal `gitlab.rb` file to be placed at `/etc/gitlab/gitlab.rb`. We'll intentionally _not_ use [Roles](https://docs.gitlab.com/omnibus/roles/README.html), so that we are _very_ explicit about what we want on this node. This example _is not intended_ to provide [PG HA](https://docs.gitlab.com/ee/administration/high_availability/database.html). The contents of that file are below.
 
+*Note*: you will need to chose the password for the PostgreSQL database, and provide the encoded value to `sql_user_password` below. See the comments on the snippet on how to encode it.
+
 ```Ruby
 ## Configure PostgreSQL
 postgresql['enable'] = true
@@ -60,28 +62,16 @@ run: postgresql: (pid 30562) 77637s; run: log: (pid 30561) 77637s
 
 ## Configure the Chart
 
-To connect the charts' services to the external databases, we'll need to set a few items. Below is a subset of items that show minimal configuration changes as opposed to using the `omnibus` chart, or other in-chart services. In summary, disable the `omnibus` chart and the PostgreSQL service it provides, and point the other services to the external one. You can use these values via `--set` or in a yaml file provided to the helm command. It is suggested to use a file when outside of CI to avoid errors in extremely long commands.
+To connect the charts' services to the external databases, we'll need to set a few items. [external-db-snippet.yaml](external-db-snippet.yaml) is a subset of items that show minimal configuration changes as opposed to using the `omnibus` chart to provide PostgreSQL services. In summary, disable the `omnibus` chart and the PostgreSQL service it provides, and point the other services to the external one.
 
-```YAML
-gitlab:
-  unicorn:
-    psql:
-      host: omnibus-vm.fqdn
-      password: non-encoded-password
-  sidekiq:
-    psql:
-      host: omnibus-vm.fqdn
-      password: non-encoded-password
-  omnibus:
-    enabled: false
-```
+Set the `host` value to the FQDN of the server/vm. Set `password` value to the un-encoded password for the PostgreSQL, which you should have chosen in the previous step.
 
-These values were combined with [`example-config.yaml`](example-config.yaml) to create `external.yaml` used below.
+Combine [external-db-snippet.yaml](external-db-snippet.yaml) values  with [`example-config.yaml`](../../example-config.yaml) to create `external-db.yaml` used below.
 
 ## Deploy!
 
 Once you have a complete configuration in YAML, provide that to the Helm command.
 
-`helm install -f external.yaml .`
+`helm install -f external-db.yaml .`
 
 [Omnibus GitLab]: https://about.gitlab.com/installation/#ubuntu

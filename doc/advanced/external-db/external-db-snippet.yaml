@@ -1,0 +1,12 @@
+# Snippet to make use of a PostgreSQL external to the chart
+gitlab:
+  unicorn:
+    psql:
+      host: omnibus-vm.fqdn
+      password: non-encoded-password
+  sidekiq:
+    psql:
+      host: omnibus-vm.fqdn
+      password: non-encoded-password
+  omnibus:
+    enabled: false
