@@ -24,30 +24,49 @@ iOS and Android
 
 Install the following prerequisite software to develop and build the iOS or Android apps. For macOS, we recommend using `Homebrew <https://brew.sh/>`_ as a package manager.
 
-1. Using Homebrew, install `NodeJS <https://nodejs.org/en/>`_.
- - Open a terminal and run ``brew install node``
- - Use `NVM <https://github.com/creationix/nvm>`_
+1. Install `NodeJS <https://nodejs.org/en/>`_.
+ - To install using Homebrew open a terminal and execute
+ .. code-block:: bash
+
+    $ brew install node
+
+ - Install using NVM by following the instructions  `here <https://github.com/creationix/nvm#install-script>`_
  - Download and install the package from the `NodeJS website <https://nodejs.org/en/>`_
 
-2. Using Homebrew, install `Watchman <https://facebook.github.io/watchman/>`_.
- - Open a terminal and run ``brew install watchman``
+2. Install `Watchman <https://facebook.github.io/watchman/>`_.
+ - To install using Homebrew open a terminal and execute
+ .. code-block:: bash
+
+    $ brew install watchman
 
 3. Assuming that you already have NodeJS installed, you can now use **npm** to install `React Native CLI Tools <http://facebook.github.io/react-native/docs/understanding-cli.html>`_ globally
- - ``npm -g install react-native-cli``
+ .. code-block:: bash
 
-4. Using Homebrew, install yarn (used as our package manager for the mobile apps)
- - Open a terminal and run ``brew install yarn``
- - Use `NPM <https://github.com/npm/npm>`_
- - Open a terminal and run ``npm -g install yarn``
+    $ npm -g install react-native-cli
+
+4. Install yarn (used as our package manager for the mobile apps)
+ - To install using Homebrew open a terminal and execute
+ .. code-block:: bash
+
+    $ brew install yarn
+
+ - To install using `NPM <https://github.com/npm/npm>`_ open a terminal and execute
+ .. code-block:: bash
+
+    $ npm -g install yarn
 
 5. We use GitHub to host the source code so we recommend that you install `Git <https://git-scm.com/>`_ to get the source code. Optionally, you can also contribute your changes back with `pull requests <https://help.github.com/articles/creating-a-pull-request/>`_.
- - If you do not have git installed you can do so with Homebrew by running ``brew install git`` on your terminal
+   If you do not have git installed you can do so with Homebrew by opening a terminal and executing:
+
+ .. code-block:: bash
+
+    $ brew install git
 
 iOS
 ~~~~~~~~~~~~~~~~~~~
 
-1. Install `Xcode 9 <https://idmsa.apple.com/IDMSWebAuth/login?appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2Fdownload%2F&rv=1>`_ to build and run the app on iOS.
-2. Install `Cocoapods <https://cocoapods.org/>`_. You'll need it to install the project’s iOS dependencies.
+1. Install `Xcode <https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12>`_ to build and run the app on iOS.
+2. Install `Cocoapods <https://cocoapods.org/>`_ using the ``gem`` method. You'll need it to install the project’s iOS dependencies.
 
 Android
 ~~~~~~~~~~~~~~~~~~~
@@ -66,7 +85,7 @@ Android
    Then reload your bash configuration: 
 
    ``source ~/.bash_profile``
-3. In the SDK Manager using Android Studio or the `Android SDK command line tool <https://developer.android.com/studio/command-line/sdkmanager.html>`_, ensure the following are installed 
+3. In the SDK Manager using Android Studio or the `Android SDK command line tool <https://developer.android.com/studio/command-line/sdkmanager.html>`_, ensure the following are installed
  - SDK Tools (you may have to click "Show Package Details" to expand packages)
   - .. image:: ../../source/images/mobile_SDK_Tools.png
   - Android SDK Build-Tools (multiple versions)
@@ -89,110 +108,6 @@ Android
    - Intel x86 Atom_64 System Image
   - Any other API version that you want to test
 
-Test Environment Setup
---------------------------
-
-Mac OS X
-~~~~~~~~~~~~
-
-1. Install `XCode 8.3 <https://developer.apple.com/download/>`_.
-
-2. Install `Homebrew <http://brew.sh/>`_.
-
-3. Using Homebrew, install `Node.js <https://nodejs.org>`_ and npm.
-
-  ``brew install node``
-
-4. Using Homebrew, install `Watchman <https://github.com/facebook/watchman>`_.
-
-  ``brew install watchman``
-
-5. Using npm, install the React Native CLI tools globally.
-
-  ``npm install -g react-native-cli``
-
-6. Using Homebrew or npm install `Yarn <https://yarnpkg.com>`_.
-
-   ``brew install yarn`` or ``npm install -g yarn``
-
-7. Fork `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_ on GitHub.
-
-8. Clone your fork locally.
-
-  ``cd`` into the folder that you want to store the local copy of your code
-
-  ``git clone https://github.com/<username>/mattermost-mobile.git``
-
-  ``cd mattermost-mobile``
-
-9. Download any other dependencies. The ``make pre-run`` command does this automatically using npm. 
-
-  ``make pre-run``
-
-10. (Optional): Install Mattermost locally so that you can run unit tests and connect to the server while doing development.
-
-  a. Follow the steps in the `Developer Machine Setup <developer-setup.html>`_ to install Mattermost.
-
-  b. Edit your Mattermost instance's configuration file to allow sign-up without an invite.
-
-    In ``config/config.json``, set ``"EnableOpenServer"`` to ``true``
-
-  c. Start/restart your server.
-
-    ``make restart-server``
-
-Android (Device)
-~~~~~~~~~~~~~~~~~~~
-
-1. Install the Android SDK (can be skipped if you already have Android Studio installed).
-
-  a. Go to `the Android developer downloads page <https://developer.android.com/studio/index.html#downloads>`_, scroll down to the Get Just the Command Line Tools, and download the zip file suitable for your operating system.
-
-  b. Unzip the SDK to somewhere on your hard drive. For example, ``/Users/<username>/Library/Android/sdk`` on Mac OS X.
-
-2. Configure the following environment variables:
-
-  - Set ``ANDROID_HOME`` to where Android SDK is located (likely ``/Users/<username>/Library/Android/sdk``)
-
-  - Add ``ANDROID_HOME/tools`` and ``ANDROID_HOME/platform-tools`` to the ``PATH``.
-
-3. Run ``android`` to open the Android SDK Manager and install the following packages:
-
-  - Tools > Android SDK Tools 25.2.5 or higher
-
-  - Tools > Android SDK Platform-tools 25.0.3
-
-  - Tools > Android SDK Build-tools 25.0.2
-
-  - Tools > Android SDK Build-tools 25.0.1
-
-  - Android 6.0 > SDK Platform 23
-
-  - Android 6.0 > Google APIs 23
-
-  - Android 5.1.1 > SDK Platform 22
-
-  - Android 5.1.1 > Google APIs 22
-
-  - Extras > Android Support Repository and/or Androud Support Library
-  
-  - Extras > Google Play Services
-  
-  - Extras > Google Repository
-  
-  
-
-4. Connect your Android device to your computer.
-
-5. Enable USB Debugging on your device.
-
-6. Ensure that your device is listed in the output of ``adb devices``.
-
-7. Start the React Native packager to deploy the APK to your device.
-
-  ``make run-android``
-
-8. The installed APK may not be opened automatically. You may need to manually open the Mattermost app on your device.
 
 Start Developing and Building
 ------------------------------------
