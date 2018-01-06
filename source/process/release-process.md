@@ -61,8 +61,15 @@ No pull requests for major features should be **merged** to the current release 
 6. Marketing:
     - Prepare bullet points and release headline for release announcement and send to Justin to work on
     - Decide which sections of the release announcement will have an accompanying screenshot / photo
+    
+### D. (T-minus 11 working days) Major feature testing
 
-### D. (T-minus 10 working days) Judgment Day
+1. QA:
+    - Prioritize testing merged PRs and resolved tickets
+    - Write and update tests in the Release Testing spreadsheet and in Selenium IDE
+    - Run Selenium IDE tests for updated areas, note Pass/Fail and date tested in the Release Testing spreadsheet
+
+### E. (T-minus 10 working days) Judgment Day
 
 Day when Leads and PMs decide which major features are included in the release, and which are postponed.
 
@@ -86,10 +93,10 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Post a link to Release Discussion channel for query of [remaining bugs in this release](https://mattermost.atlassian.net/browse/PLT-8426?filter=14100)
 6. Marketing:
     - Start drafting blog post, tweet, and email for the release announcement
+    
+### F. (T-minus 9 working days) Code complete
 
-### E. (T-minus 8 working days) Code Complete and Release Candidate Cut
-
-**Stabilization** period begins when all features for release have been committed. During this period, only **bugs** can be committed to the release branch. Non-bug pull requests are tagged for next version. Exceptions can be made by the Release Manager during triage. 
+**Stabilization** period begins when all features for release have been committed. During this period, only **bugs** can be committed to the release branch. Non-bug pull requests are tagged for next version. Exceptions can be made by the Release Manager during triage.
 
 1. **(Team) Code Complete Meeting (10:00am San Francisco time)**:  
     - (PM) Leads team review of Changelog
@@ -116,20 +123,27 @@ Day when Leads and PMs decide which major features are included in the release, 
 5. Docs:
     - Submit any remaining documentation PRs for product updates in the release
     - Confirm changes to config.json in compatibility section of Changelog are written back to [settings documentation](http://docs.mattermost.com/administration/config-settings.html#configuration-settings)
-6. QA:
+
+### G. (T-minus 8 working days) Release Candidate Cut
+
+1. QA:
     - Confirm all PRs merged into the current release have been tested
     - Ensure the release testing spreadsheet covers any changes and new features, and confirm known issues are listed in the relevant tests 
     - Assign each area of the spreadsheet to a team member and give the core team access permissions
     - Update rctesting and CI server invite links in Release Testing spreadsheet after they've been updated to release branch
-7. Build:  
+    - Test remaining merged PRs and resolved tickets for the release
+    - Write and update tests in the Release Testing spreadsheet and in Selenium IDE
+    - Run Selenium IDE tests for updated areas, note Pass/Fail and date tested in the Release Testing spreadsheet
+2. Build:  
     - Review all `TODO` notes, including one for uncommenting upgrade code
     - Confirm all PRs in [`/enterprise`](https://github.com/mattermost/enterprise/pulls) repo have been merged.
     - Master is tagged and branched and “Release Candidate 1″ is cut (e.g. 3.5.0-RC1) according to the Release Candidate Checklist in ``mattermost/process``
     - After branching, the database version in sql_upgrade.go on master is set to the next scheduled release version (e.g. 3.6.0)
     - CI servers are updated to the release branch
     - Translation server is locked to the release branch
+    - Run daily automated upgrade tests to avoid catching upgrade bugs late
 
-### F. (T-minus 7 working days) Release Candidate Testing
+### H. (T-minus 7 working days) Release Candidate Testing
 
 1. **(Team) Daily Release Update Meeting**
     - Triage Jira tickets
@@ -142,25 +156,26 @@ Day when Leads and PMs decide which major features are included in the release, 
         - Update download links and testing server links to the latest RCs
     - Post list of tickets to be fixed to the Release Discussion channel ([see example](https://pre-release.mattermost.com/core/pl/65k77x3bnigw5f9ffohfxonnfy))
     - Update Changelog “Known Issues” section with any significant issues that were found and not fixed for the final release
-2. QA:
+3. QA:
     - Update Release Discussion header with links to RC instances and testing spreadsheet ([template](https://pre-release.mattermost.com/core/pl/db3sur4r53d9tyih1i4wrmi9wy))
     - Post release testing instructions to Release Discussion channel ([template](https://pre-release.mattermost.com/core/pl/uprogtcqzpbk7nkmdkfnhqkcac))
     - Update Selenium and manual smoke tests as needed, to prepare to run on each RC after it is cut
     - As bug fixes are merged, verify fixes on new RCs and post in Release Channel after testing
     - Update selenium.mattermost.com to latest RC
-3. Dev:
+4. Dev:
     - Run load tests against the release candidate to find potential performance issues
     - Make PRs for bug fixes to the release branch
     - Review PRs made to release branch and merge changes into both the release branch and master
-8. Build: 
+    - Run daily automated upgrade tests to avoid catching upgrade bugs late
+5. Build: 
     - Verify with Release Manager before cutting any new RCs (approved fixes should be merged)
     - Push next RC to acceptance and announce in Town Square with new RC link
 
-### G. (T-minus 5 working days) Release Candidate Testing Finished
+### I. (T-minus 5 working days) Release Candidate Testing Finished
 
 1. **(Team) Daily Release Update Meeting**
     - Confirm testing assigned in the release testing spreadsheet is complete 
-    - If final has not yet been cut, triage Jira tickets 
+    - Continue to triage Jira tickets 
     - If no blocking issues are found, PM, Dev and QA sign off on the release and plan to cut final 
 2. Release Manager:
     - Post this checklist in Release Checklist channel
@@ -174,7 +189,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Finish drafts of all art work (screenshots, GIFs and twitter banners) used for the blog post and send to marketing lead for review
     - Find [www-gitlab-com merge request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests?scope=all&utf8=%E2%9C%93&state=opened&label_name%5B%5D=blog%20post&label_name%5B%5D=release) for latest GitLab release blog post and make request for adding GitLab Mattermost update (see [example request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests/2910#note_14096885), [example update](https://about.gitlab.com/2016/07/22/gitlab-8-10-released/#gitlab-mattermost-32)). Post to Release Discussion channel with link to request.
 
-### H. (T-minus 2 working days) Release Build Cut
+### J. (T-minus 2 working days) Release Build Cut
 
 The final release is cut. If an urgent and important issue needs to be addressed between major releases, a bug fix release (e.g. 1.1.1) may be created.
 
@@ -300,7 +315,7 @@ Once bug fix release is ready to cut:
       - **Note:** If the release contains a security update, also draft a Mailchimp email blast for the [Security Bulletin mailing list](http://eepurl.com/cAl5Rv)
       - Upgrade should be recommended if there are security fixes in the dot release version
 
-### I. (T-minus 0 working days) Release Day
+### K. (T-minus 0 working days) Release Day
 
 1. Release Manager:
     - Post this checklist in Release Checklist channel
@@ -359,7 +374,7 @@ Once bug fix release is ready to cut:
     - Update @mattermosthq Twitter profile with the next release date
     - Prepare retweet of GitLab release tweet ([see example here](https://pre-release.mattermost.com/core/pl/k7wchwj5mtrhucj6don96yx3sc))
 
-### J. (T-plus 5 working days) Release Updates
+### L. (T-plus 5 working days) Release Updates
 1. Release Manager:
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
@@ -374,7 +389,7 @@ Once bug fix release is ready to cut:
 5. Build:
     - Put pre-release back on master
 
-### K. (T-plus 10 working days) Update Mattermost Security Page
+### M. (T-plus 10 working days) Update Mattermost Security Page
 1. PM:
     - Post [Mattermost Security Updates](https://about.mattermost.com/security-updates/) after reviewing with security lead
       - If a dot release is shipping with security fixes, do not post new details until T-plus 10 working days from the dot release ship date
