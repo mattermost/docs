@@ -1,4 +1,4 @@
-To deploy, we'll simply run `helm install` with our configuration file, from the
+To deploy, we'll run `helm install` with our configuration file, from the
 root of this repository:
 
 ```
