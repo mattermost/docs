@@ -29,6 +29,7 @@ From the directory where the Mattermost server is installed, a
 -  Modifying a channel's public/private type
 -  Migrating sign-in options
 -  Resetting multi-factor authentication for a user
+-  Creating sample data
 
 .. contents::
     :backlinks: top
@@ -112,6 +113,7 @@ platform
     -  `platform user`_ - Management of users
     -  `platform version`_ - Display version information
     -  `platform config`_ - Work with the configuration file
+    -  `platform sampledata`_ - Sample data generation
 
 platform channel
 -----------------
@@ -879,6 +881,43 @@ platform config validate
       .. code-block:: none
 
         sudo ./platform config validate
+
+platform sampledata
+-------------------
+
+  Description
+    .. versionadded:: 4.7
+      Generate sample data and populate the mattermost database.
+
+  Format
+    .. code-block:: none
+
+      platform sampledata
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform sampledata --seed 10 --teams 4 --users 30
+
+  Options
+    .. code-block:: none
+
+          -u, --users int                      The number of sample users. (default 15)
+              --profile-images string          Optional. Path to folder with images to randomly pick as user profile image.
+          -t, --teams int                      The number of sample teams. (default 2)
+              --team-memberships int           The number of sample team memberships per user. (default 2)
+              --channels-per-team int          The number of sample channels per team. (default 10)
+              --channel-memberships int        The number of sample channel memberships per user in a team. (default 5)
+              --posts-per-channel int          The number of sample post per channel. (default 100)
+              --direct-channels int            The number of sample direct channels. (default 30)
+              --group-channels int             The number of sample group channels. (default 15)
+              --posts-per-direct-channel int   The number of sample post per direct channel. (default 15)
+              --posts-per-group-channel int    The number of sample post per group channel. (default 30)
+          -s, --seed int                       Seed used for generate the random data. (default 1)
+          -b, --bulk string                    Optional. Path to write a JSONL bulk file instead of loading into the database.
+          -w, --workers int                    How many workers to run whilst doing the import. (default 2)
+
+
 
 Mattermost 3.5 and earlier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
