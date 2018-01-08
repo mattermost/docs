@@ -2,8 +2,7 @@
 
 The `registry` sub-chart provides the Registry component to a complete cloud-native
 GitLab deployment on Kubernetes. This sub-chart makes use of the upstream [registry][]
-[container][docker-distribution-library] containing [Docker Distribution][docker-distribution]. This chart is composed of 3 primary parts: [Service][], [Deployment][], and [ConfigMap][]. An additional optional [Ingress][] has been
-provided to allow separation from the global [Ingress](../README.md#ingress) as provided by the parent chart.
+[container][docker-distribution-library] containing [Docker Distribution][docker-distribution]. This chart is composed of 3 primary parts: [Service][], [Deployment][], and [ConfigMap][].
 
 All configuration is handled according to the official [Registry configuration documentation][docker-distribution-config-docs]
 using `/etc/docker/registry/config.yml` variables provided to the [Deployment][], populated from the [ConfigMap][]. The [ConfigMap][] overrides the upstream defaults, but is [based upon them][registry-config].
@@ -11,17 +10,12 @@ using `/etc/docker/registry/config.yml` variables provided to the [Deployment][]
 ## Design Choices
 
 A Kubernetes `Deployment` was chosen as the deployment method for this chart to
-allow for simple scaling of instances, while allowing for [rolling-update](https://kubernetes.io/docs/user-guide/kubectl/v1.7/#rolling-update)s.
+allow for simple scaling of instances, while allowing for [rolling-update](https://kubernetes.io/docs/tutorials/kubernetes-basics/update-intro/)s.
 
 This chart makes use of only two secrets:
 - `certificate`: A secret that will contain the public certificate bundle to verify
 the authentication tokens provided by the associated GitLab instance(s). See
 [documentation](https://docs.gitlab.com/ee/administration/container_registry.html#disable-container-registry-but-use-gitlab-as-an-auth-endpoint) on using GitLab as an auth endpoint.
-- *optional*: The secret which will contain the SSL certificates for the HTTPS
-termination by the [Ingress][]. This secret follows the requirements set forth in
-[Kubernetes Ingress's TLS section][kubernetes-ingress]. If you chose to use
-the global [Ingress](../README.md#ingress) from the parent chart, this will not
-be required at all.
 
 # Configuration
 
@@ -124,13 +118,9 @@ external service other than the `filesystem` driver, such as `s3`, `gcs` or `azu
 [docker-distribution-config-docs]: https://docs.docker.com/registry/configuration
 [registry-config]: https://github.com/docker/distribution-library-image/blob/master/registry/config-example.yml
 
-[Service]: ../../charts/registry/templates/service.yaml
-[Deployment]: ../../charts/registry/templates/deployment.yaml
-[ConfigMap]: ../../charts/registry/templates/registry-configmap.yaml
-[Ingress]: ../../charts/registry/templates/ingress.yaml
-[values.yml]: ../../charts/registry/values.yml
+[Service]: ../../../charts/registry/templates/service.yaml
+[Deployment]: ../../../charts/registry/templates/deployment.yaml
+[ConfigMap]: ../../../charts/registry/templates/configmap.yaml
+[values.yml]: ../../../charts/registry/values.yaml
 
-[kubernetes-ingress]: https://kubernetes.io/docs/concepts/services-networking/ingress/#tls
 [kubernetes-secret]: https://kubernetes.io/docs/concepts/configuration/secret/
-[helm]: https://helm.sh
-[kubernetes-ingress-nginx-configuration]: https://github.com/kubernetes/ingress/blob/master/controllers/nginx/configuration.md

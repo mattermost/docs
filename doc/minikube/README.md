@@ -79,7 +79,7 @@ Unavailable:
 
 ### Gotcha: Persistent Volumes
 
-Minikube supports [PersistenVolumes](k8s-pv) of the `hostPath` type, which are mapped to directories inside the VM. As Minikube boots into a `tmpfs`, most directories will not persist across reboots via `minikube stop`.
+Minikube supports [PersistenVolumes][k8s-pv] of the `hostPath` type, which are mapped to directories inside the VM. As Minikube boots into a `tmpfs`, most directories will not persist across reboots via `minikube stop`.
 
 Further details, and listings of directories that _do_ persist, can be found [in the getting started guide](https://kubernetes.io/docs/getting-started-guides/minikube/#persistent-volumes)
 
@@ -96,7 +96,7 @@ You can find the URL for the dashboard by calling `minikube dashboard --url`.
 
 ## Hooking Helm to Minikube
 
-Once your Minikube is up and running, you can hook [Helm] to it easily with `helm init`.
+Once your Minikube is up and running, you can hook [Helm] to it with `helm init`.
 
 For further details on [Helm][helm], we'll move to [Developing for Helm](../helm/README.md)
 

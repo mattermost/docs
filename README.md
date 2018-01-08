@@ -1,7 +1,6 @@
 # Cloud Native GitLab Helm Chart
 
-**THIS REPOSITORY IS UNDER HEAVY DEVELOPMENT. IT SHOULD NOT BE USED FOR ANYTHING
-EXCEPT DEVELOPMENT**
+**THIS REPOSITORY IS UNDER HEAVY DEVELOPMENT. IT SHOULD NOT BE USED FOR ANYTHING EXCEPT DEVELOPMENT**
 
 We are working on a new method of installing GitLab for customers who are
 looking to deploy into container schedulers like Kubernetes.
@@ -61,7 +60,7 @@ We likely plan to leverage the following existing official containers for
 underlying services:
 
 * Docker Distribution ([Docker Registry 2.0](https://github.com/docker/distribution))
-* Redis
+* [Redis](https://hub.docker.com/_/redis/)
 * Prometheus
 * Node Exporter
 * Nginx
@@ -143,6 +142,13 @@ One reason is that there is a bug with variable handling between parent and
 child charts, but also because we will need to include the respective exporters
 as well.
 
+## Installation
+
+See [installation documentation](doc/installation/README.md) for a quick-start to using this chart.
+
+## Further Documentation
+
+See the [repository documentation](doc/README.md) for further documentation on charts, tools, and advanced configuration.
 
 ## Contributing
 

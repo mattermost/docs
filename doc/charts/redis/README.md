@@ -105,10 +105,10 @@ It is also possible to entirely disable snapshotting by providing an empty array
 [redis.conf]: http://download.redis.io/redis-stable/redis.conf
 [redis-config-docs]: https://redis.io/topics/config
 
-[Service]: ../../charts/redis/templates/service.yaml
-[Deployment]: ../../charts/redis/templates/deployment.yaml
-[ConfigMap]: ../../charts/redis/templates/configmap.yaml
-[values.yaml]: ../../charts/redis/values.yaml
+[Service]: ../../../charts/redis/templates/service.yaml
+[Deployment]: ../../../charts/redis/templates/deployment.yaml
+[ConfigMap]: ../../../charts/redis/templates/configmap.yaml
+[values.yaml]: ../../../charts/redis/values.yaml
 
 [PersistentVolume]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/
 [persistentVolumeClaim]: https://kubernetes.io/docs/concepts/storage/volumes/#persistentvolumeclaim
