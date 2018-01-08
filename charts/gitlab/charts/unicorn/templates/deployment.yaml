@@ -33,7 +33,7 @@ spec:
             - name: CONFIG_DIRECTORY
               value: '/var/opt/gitlab/config/gitlab/'
             - name: GITLAB_HOST
-              value: {{ .Values.gitlab_host }}
+              value: {{ .Values.gitlabHost }}
           volumeMounts:
             - name: unicorn-config
               mountPath: '/var/opt/gitlab/templates'
@@ -67,16 +67,16 @@ spec:
           name: {{ template "fullname" . }}
       - name: unicorn-shell
         secret:
-          secretName: {{ .Values.shell.secret }}
+          secretName: {{ .Values.shell.authToken.secret }}
           items:
-            - key: {{ default "secret" .Values.shell.key }}
+            - key: {{ default "secret" .Values.shell.authToken.key }}
               path: ".gitlab_shell_secret"
           defaultMode: 0400
       - name: unicorn-gitaly
         secret:
-          secretName: {{ .Values.gitaly.auth_token.secret }}
+          secretName: {{ .Values.gitaly.authToken.secret }}
           items:
-            - key: {{ default "token" .Values.gitaly.auth_token.key }}
+            - key: {{ default "token" .Values.gitaly.authToken.key }}
               path: "gitaly_token"
           defaultMode: 0400
       - name: unicorn-redis

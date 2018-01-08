@@ -12,8 +12,8 @@ service:
   externalPort: 8075
   internalPort: 8075
 enabled: false
-secret:
-  name: gitaly-secret
+authToken:
+  secret: gitaly-secret
   key: token
 unicorn: {}
   # host: '0.0.0.0'
@@ -26,6 +26,7 @@ redis:
     secret: gitlab-redis
     key: redis-password
 shell:
+  authToken:
    secret: gitlab-shell-secret
    key: secret
 resources: {}

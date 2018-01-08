@@ -11,7 +11,7 @@ One key example is that an "all-in-one container" becomes a challenge to configu
 
 To address this need we are working on the [Helm charts in this repository](#helm-charts) along with a new set of Docker containers that are specific to each component of GitLab.
 
-For more information on all of GitLab's Helm Charts, please consult our [documentation](http://docs.gitlab.com/ce/install/kubernetes/). 
+For more information on all of GitLab's Helm Charts, please consult our [documentation](http://docs.gitlab.com/ce/install/kubernetes/).
 
 ## Goals
 
@@ -147,3 +147,4 @@ as well.
 ## Contributing
 
 Please see the [contribution guidelines](CONTRIBUTING.md)
+And then check out the [development styleguide](doc/development/README.md)

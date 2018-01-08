@@ -51,7 +51,7 @@ gitlab:
     # Unicorn (and workhorse) chart
     unicorn:
       enabled: true
-      gitlab_host: gitlab.example.local
+      gitlabHost: gitlab.example.local
       registry:
         host: registry.example.local
         port: 80
@@ -62,10 +62,11 @@ gitlab:
           secret: gitlab-registry
           key: registry-auth.key
       shell:
-        secret: gitlab-shell-secret
+        authToken:
+          secret: gitlab-shell-secret
       gitaly:
         serviceName: gitaly
-        auth_token:
+        authToken:
           secret: gitaly-secret
           key: token
       redis:
@@ -83,7 +84,7 @@ gitlab:
       timeout: 5
       gitaly:
         serviceName: gitaly
-        auth_token:
+        authToken:
           secret: gitaly-secret
           key: token
       redis:
@@ -107,13 +108,13 @@ gitlab:
     # Gitaly provides storage & API access to Git repository data
     gitaly:
       enabled: true
-      secret:
+      authToken:
         name: gitaly-secret
         key: token
     # Handle database init and upgrade migrations, via gitlab-rails codebase
     migrations:
       enabled: true
-      initial_root_password: "minikube"
+      initialRootPassword: "minikube"
       redis:
         serviceName: redis
         password:
