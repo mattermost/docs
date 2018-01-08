@@ -887,7 +887,7 @@ platform sampledata
 
   Description
     .. versionadded:: 4.7
-      Generate sample data and populate the mattermost database.
+      Generate sample data and populate the Mattermost database.
 
   Format
     .. code-block:: none
