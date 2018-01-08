@@ -210,15 +210,15 @@ psql:
 ```
 
 [og-docker]: https://gitlab.com/gitlab-org/ominbus-gitlab/container_registry
-[helm-gitlab]: https://gitlab.org/charts/helm.gitlab.io
-[registry]: ../../charts/registry
+[helm-gitlab]: https://gitlab.com/charts/helm.gitlab.io
+[registry]: ../../registry
 [mattermost]: https://gitlab.com/mattermost
 [gl-pages]: https://about.gitlab.com/features/pages/
 [og-external-url]: https://docs.gitlab.com/omnibus/settings/configuration.html#configuring-the-external-url-for-gitlab
 [og-nginx-proxy]: https://docs.gitlab.com/omnibus/settings/nginx.html#configuring-gitlab-trusted_proxies-and-the-nginx-real_ip-module
 [og-trusted-proxy]: https://docs.gitlab.com/omnibus/settings/nginx.html#using-a-non-bundled-web-server
 
-[Service]: ../../charts/gitlab/charts/omnibus/templates/service.yaml
-[Deployment]: ../../charts/gitlab/charts/omnibus/templates/deployment.yaml
-[ConfigMap]: ../../charts/gitlab/charts/omnibus/templates/registry-configmap.yaml
+[Service]: ../../../../charts/gitlab/charts/omnibus/templates/service.yaml
+[Deployment]: ../../../../charts/gitlab/charts/omnibus/templates/deployment.yaml
+[ConfigMap]: ../../../../charts/gitlab/charts/omnibus/templates/registry-configmap.yaml
 [kubernetes-secret]: https://kubernetes.io/docs/concepts/configuration/secret/

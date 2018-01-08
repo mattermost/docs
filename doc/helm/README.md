@@ -88,7 +88,7 @@ This command will output detailed information on the cluster, including the admi
 ...
 ```
 
-With the credentials on hand, we can now provision the role and binding using the YML file created [earlier](#setting-up-helm-with-rbac):
+With the credentials on hand, we can now provision the role and binding using the YML file created [earlier](#preparing-for-helm-with-rbac):
 
 ```
 kubectl --username=admin --password=xxxxxxxxxxxxxx create -f rbac-config.yaml

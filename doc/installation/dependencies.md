@@ -46,9 +46,9 @@ cluster. Proceed with setting up Helm.
 Follow the [helm][] document for [installation instructions](https://github.com/kubernetes/helm#install).
 
 Once all dependencies are installed and configured, you can continue to
-[GitLab configuration](README.md#Configure).
+[GitLab configuration](configuration.md).
 
 
 [gcloud]: https://cloud.google.com/sdk/gcloud/
 [kubectl]: https://kubernetes.io/docs/tasks/tools/install-kubectl/
-[helm]: helm/README.md
+[helm]: ../helm/README.md

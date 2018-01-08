@@ -4,7 +4,7 @@ Until Kubernetes 1.7, there were no permissions within a cluster. With the launc
 
 RBAC affects a few different aspects of GitLab:
 * [Installation of GitLab using Helm](../helm/README.md#preparing-for-helm-with-rbac)
-* [nginx](../nginx/README.md#generate-the-service-account)
+* [nginx](../charts/nginx/README.md#generate-the-service-account)
 * Prometheus monitoring
 * GitLab Runner
 * Kube-Lego

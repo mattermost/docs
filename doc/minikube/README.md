@@ -79,7 +79,7 @@ Unavailable:
 
 ### Gotcha: Persistent Volumes
 
-Minikube supports [PersistenVolumes](k8s-pv) of the `hostPath` type, which are mapped to directories inside the VM. As Minikube boots into a `tmpfs`, most directories will not persist across reboots via `minikube stop`.
+Minikube supports [PersistenVolumes][k8s-pv] of the `hostPath` type, which are mapped to directories inside the VM. As Minikube boots into a `tmpfs`, most directories will not persist across reboots via `minikube stop`.
 
 Further details, and listings of directories that _do_ persist, can be found [in the getting started guide](https://kubernetes.io/docs/getting-started-guides/minikube/#persistent-volumes)
 

@@ -132,7 +132,7 @@ It also needs ClusterRole access to:
 
 ### Generate the Service Account
 
-If the Helm Tiller server is running as a ServiceAccount with the [cluster-admin role](../helm/README.md#preparing-for-helm-with-rbac),
+If the Helm Tiller server is running as a ServiceAccount with the [cluster-admin role](../../helm/README.md#preparing-for-helm-with-rbac),
 then the chart can create and manage the ServiceAccount required for nginx.
 
 Enable it in the `serviceAccount` field:
@@ -153,12 +153,12 @@ serviceAccount:
   name: default
 ```
 
-[Service]: ../../charts/nginx/templates/service.yaml
-[Deployment]: ../../charts/nginx/templates/deployment.yaml
-[ConfigMap]: ../../charts/nginx/templates/configmap.yaml
-[ConfigMapTcp]: ../../charts/nginx/templates/configmap-tcp.yaml
-[Ingress]: ../../charts/nginx/templates/ingress.yaml
-[values.yml]: ../../charts/nginx/values.yml
+[Service]: ../../../charts/nginx/templates/service.yaml
+[Deployment]: ../../../charts/nginx/templates/deployment.yaml
+[ConfigMap]: ../../../charts/nginx/templates/configmap.yaml
+[ConfigMapTcp]: ../../../charts/nginx/templates/configmap-tcp.yaml
+[Ingress]: ../../../charts/nginx/templates/ingress.yaml
+[values.yml]: ../../../charts/nginx/values.yml
 
 [registry]: https://hub.docker.com/_/registry/
 [kubernetes-ingress]: https://kubernetes.io/docs/concepts/services-networking/ingress/#tls
