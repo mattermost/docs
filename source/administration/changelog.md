@@ -25,10 +25,12 @@ Release date: 2017-01-16
 - Added a tooltip for the '+' button when adding emoji reactions.
 - Channel switcher (CTRL/CMD+K) now filters by usernames, full names and nicknames.
 - Channel links are now rendered in the channel header.
+- File names are now shown in attachment previews.
 
 #### Plugins (Beta)
 
 - Plugins now support slash commands.
+- Zoom plugin now supports an on-premise Zoom server.
 
 #### Notifications
 
@@ -60,6 +62,10 @@ Release date: 2017-01-16
 - Fixed an issue where posts sometimes didn't send on iOS Classic app.
 - Team name can no longer be edited to be only one character long.
 - Editing a message to remove all text no longer deletes the message if it contains a file attachment.
+- Fixed an issue where searching for a channel using the second or third word in the name didn't work.
+- Other users no longer see deleted GIF previews in reply threads.
+- Fixed an issue where channels with Japanese or cyrillic characters couldn't be created.
+- Fixed timestamp minute display for Zoom plugins.
 
 ### Compatibility
 
@@ -77,7 +83,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Under `ServiceSettings` in `config.json`:
   - Added `"EnableTutorial": true` to control whether tutorial is shown to end users after account creation. // XXX @eric Is this considered to be beta/experimental?
 - Under `TeamSettings` in `config.json`:
-  - Added `"DefaultTeamName": ""` to .... // XXX @eric Is this considered to be beta/experimental?
+  - Added `"ExperimentalPrimaryTeam": ""` to set the primary team of the server. This setting is experimental and may be replaced or removed in a future release.
 - Under `EmailSettings` in `config.json`:
   - Added `"LoginButtonColor": ""`, `"LoginButtonBorderColor": ""` and `"LoginButtonTextColor": ""` to set the style of of the email login button for white labeling purposes.
 
@@ -108,6 +114,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Added `ExecuteCommand` hook to execute a command that was previously registered via the `RegisterCommand` plugin API.
 
 ### Database Changes
+
+// XXX @derrick can you help confirm this section?
 
 **IncomingWebhooks Table:**
 - Renamed `PostUsername` column to `Username`.
