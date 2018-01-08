@@ -165,7 +165,7 @@ Day when Leads and PMs decide which major features are included in the release, 
 4. Dev:
     - Run load tests against the release candidate to find potential performance issues
     - Make PRs for bug fixes to the release branch
-    - Review PRs made to release branch and merge changes into both the release branch and master
+    - Review PRs made from release branch and merge changes into the release branch as required and merge the release branch back into master once per day
     - Run daily automated upgrade tests to avoid catching upgrade bugs late
 5. Build: 
     - Verify with Release Manager before cutting any new RCs (approved fixes should be merged)
