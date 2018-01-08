@@ -10,7 +10,7 @@ This chart depends on Redis, PostgreSQL, Gitaly, and Registry services, either a
 
 # Configuration
 
-The `unicorn` chart is configured in two parts: chart-wide external services, and chart-wide defaults.
+The `unicorn` chart is configured in two parts: External Services, and Chart Settings.
 
 ## External Services
 
@@ -114,7 +114,7 @@ The `authToken` attribute for Gitaly has to sub keys:
 
 ```YAML
 registry:
-  host: rank-racoon-registry
+  host: registry.example.local
   port: 443
   api:
     protocol: http
@@ -125,3 +125,78 @@ registry:
     secret: gitlab-registry
     key: gitlab-registry.key
 ```
+
+#### host
+
+The external hostname to use for providing docker commands to users in the GitLab UI.
+
+#### port
+
+The external port used in the hostname. Using port `80` or `443` will result in the URLs being formed with `http`/`https`. Other ports
+will all use `http` and append the port to the end of hostname. ex: `http://registry.example.com:8443`
+
+#### api
+
+Field `api` is a map containing three items: `protocol`, `serviceName`, and `port`
+
+#### api.protocol
+
+The protocol Unicorn should use to reach the Registry api.
+
+#### api.serviceName
+
+The name of the `service` which is operating the Registry server. The chart will template the hostname of the service (and current `.Release.Name`).  This will default to `registry`
+
+#### api.port
+
+The port on which to connect to the Registry api. Defaults to `5000`.
+
+#### tokenIssuer
+
+The name of the auth token issuer. This must match the name used in the Registry's configuration, as it incorporated into the token when it is sent. Defaults to `gitlab-issuer`, which is the same default we use in the Registry chart.
+
+#### certificate
+
+Field `certificate` is a map containing two items: `secret` and `key`.
+
+#### certificate.secret
+
+`secret` is a string containing the name of the [Kubernetes Secret][kubernetes-secret] that houses the certificate bundle to be used to verify the tokens created by the GitLab instance(s).
+
+#### certificate.key
+
+`key` is the name of the `key` in the `Secret` which houses the certificate
+bundle that will be provided to the [registry][] container as `auth.token.rootcertbundle`.
+
+## Chart Settings
+
+The following values are used to configure the Unicorn Pods.
+
+#### replicaCount
+
+Field `replicaCount` is an integer, controlling the number of Unicorn instances to create in the deployment. This defaults to `1`.
+
+#### gitlabHost
+
+The external GitLab hostname to use for providing git commands to users in the GitLab UI, and generating links to assets.
+
+### GitLab Shell
+
+GitLab Shell uses an Auth Token in its communication with Unicorn. Share the token with GitLab Shell and Unicorn using a shared Secret.
+
+```YAML
+shell:
+  authToken:
+   secret: gitlab-shell-secret
+   key: secret
+```
+
+#### authToken
+
+The `authToken` attribute for Gitaly has to sub keys:
+- `secret` defines the name of the kubernetes `Secret` to pull from
+- `key` defines the name of the key in the above secret that contains the authToken.
+
+
+[registry]: https://hub.docker.com/_/registry/
+[kubernetes-secret]: https://kubernetes.io/docs/concepts/configuration/secret/
