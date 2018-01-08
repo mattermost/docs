@@ -8,7 +8,7 @@ We are using camelCase for our function names, and properties where they are use
 
 ## Common structure for values.yaml
 
-Many of the chart need to be provided with the same information, for example we need to provide the redis and postgres connection settings to  multiple charts. Here we outline our standard naming and structure for those settings.
+Many charts need to be provided with the same information, for example we need to provide the redis and postgres connection settings to  multiple charts. Here we outline our standard naming and structure for those settings.
 
 ### Connecting to other services
 
