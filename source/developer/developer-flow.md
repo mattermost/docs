@@ -39,16 +39,14 @@ go test -v -run='TestPostUpdate' ./api
 
 ### Useful platform commands ###
 
-During the development sometimes you'll want to clean up your data o generate
-random data for manually testing your changes, for this porpose Mattermost
-comes with the following commands in the platform CLI.
+During development, you'll want to clean up your data to generate random data for manually testing your changes. For this purpose, Mattermost has the following commands in the platform CLI:
 
 You can reset your database to the initial state using:
 ```
 platform reset
 ```
 
-After that, you can generate random data to prepopulate the mattermost database using:
+After that, you can generate random data to prepopulate the Mattermost database using:
 ```
 platform sampledata
 ```
