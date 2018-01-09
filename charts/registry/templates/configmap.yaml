@@ -26,15 +26,15 @@ data:
     # Filled from chart
     http:
       addr: :{{ .Values.service.internalPort }}
-      secret: {{ default $httpSecret .Values.registry.httpSecret }}
+      secret: {{ default $httpSecret .Values.httpSecret }}
     auth:
       token:
-        realm: {{ .Values.registry.authEndpoint }}/jwt/auth
-        service: {{ .Values.registry.tokenService }}
-        issuer: {{ .Values.registry.tokenIssuer | quote }}
-        rootcertbundle: /etc/registry-secret/{{ .Values.registry.certificate.key }}
+        realm: {{ .Values.authEndpoint }}/jwt/auth
+        service: {{ .Values.tokenService }}
+        issuer: {{ .Values.tokenIssuer | quote }}
+        rootcertbundle: /etc/registry-secret/{{ .Values.certificate.key }}
     storage:
-      {{- if .Values.registry.storage }}
-{{ toYaml .Values.registry.storage | indent 6}}
+      {{- if .Values.storage }}
+{{ toYaml .Values.storage | indent 6}}
       {{- end }}
 {{- end -}}

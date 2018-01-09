@@ -9,7 +9,7 @@ metadata:
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
 spec:
-  replicas: {{ .Values.registry.replicas }}
+  replicas: {{ .Values.replicas }}
   template:
     metadata:
       labels:
@@ -33,10 +33,10 @@ spec:
       volumes:
       - name: {{ .Release.Name }}-secret
         secret:
-            secretName: {{ .Values.registry.certificate.secret }}
+            secretName: {{ .Values.certificate.secret }}
             items:
-                - key: {{ .Values.registry.certificate.key }}
-                  path: {{ .Values.registry.certificate.key }}
+                - key: {{ .Values.certificate.key }}
+                  path: {{ .Values.certificate.key }}
             defaultMode: 0400
       - name: config-volume
         configMap:

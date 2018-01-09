@@ -26,7 +26,12 @@ registry:
   enabled:
   image:
   service:
-  registry:
+  httpSecret:
+  authEndpoint:
+  tokenIssuer:
+  certificate:
+  replicas:
+  storage:
 ```
 
 If you should chose to deploy this chart as a standalone, remove the top level `registry`.
@@ -55,9 +60,9 @@ By default, the [Service][] is configured as:
 - `type: ClusterIP` on `0.0.0.0`, restricting access to the interal network of the Kubernetes cluster.
 - `name:` is set to `registry`.
 
-## Configuring the Registry
+## Defining the Registry Configuration
 
-The `registry` section of this chart pertains to the configuration of the underlying
+The following properties of this chart pertains to the configuration of the underlying
 [registry][] container. Only most critical values for integration with GitLab are
 exposed. For this integration, we make use of the `auth.token.x` settings of
 [Docker Distribution][docker-distribution], controlling authentication to the registry via JWT
@@ -106,10 +111,12 @@ Field `replicas` is an integer, controlling the number of [registry][] instances
 
 Field `storage` is a map, the value of which is taken directly from [Registry Configuration: `storage`](https://docs.docker.com/registry/configuration/#storage). Please refer to that documentation for extended details.
 
-If you chose to use the `filesystem` driver, you will need to provide persistent volumes for this data.
+If you chose to use the `filesystem` driver:
+- You will need to provide persistent volumes for this data.
+- [replicas](#replicas) should be set to `1`
 
 For the sake of resiliency and simplicity, it is recommended to make use of an
-external service other than the `filesystem` driver, such as `s3`, `gcs` or `azure`.
+external service other than the `filesystem` driver, such as `s3`, `gcs`, `azure` or other comaptible Object Storage.
 
 
 [registry]: https://hub.docker.com/_/registry/
