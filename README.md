@@ -142,13 +142,13 @@ One reason is that there is a bug with variable handling between parent and
 child charts, but also because we will need to include the respective exporters
 as well.
 
-## Installation
+## Quick-Start Installation
 
 See [installation documentation](doc/installation/README.md) for a quick-start to using this chart.
 
-## Further Documentation
+## Detailed Documentation
 
-See the [repository documentation](doc/README.md) for further documentation on charts, tools, and advanced configuration.
+See the [repository documentation](doc/README.md) for detailed documentation on charts, tools, and advanced configuration.
 
 ## Contributing
 
