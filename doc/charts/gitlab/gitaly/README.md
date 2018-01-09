@@ -89,7 +89,7 @@ The `authToken` attribute has two sub keys:
 
 ## GitLab Shell
 
-Gitaly contains a copy of GitLab Shell. And there are some shell specific configuration that can be set.
+Gitaly container has a copy of GitLab Shell, which has some configuration that can be set.
 
 #### shell.authToken
 
