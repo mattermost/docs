@@ -6,7 +6,7 @@ While this chart provides a default `pods:` declaration, if you provide an empty
 
 ## Requirements
 
-This chart depends on access to Redis and PostgreSQL services, either as part of the complete GitLab chart or provided as external services reachable from the Kubernetes cluster this chart is deployed onto.
+This chart depends on access to Redis, PostgreSQL, and Gitaly services, either as part of the complete GitLab chart or provided as external services reachable from the Kubernetes cluster this chart is deployed onto.
 
 ## Design Choices
 
@@ -18,7 +18,7 @@ The `sidekiq` chart is configured in three parts: chart-wide external services, 
 
 ## External Services
 
-This chart should be attached to the same Redis and PostgreSQL instances as the Unicorn chart. The values of external services will be populated into a `ConfigMap` that is shared across all Sidekiq pods.
+This chart should be attached to the same Redis, PostgreSQL, and Gitaly instances as the Unicorn chart. The values of external services will be populated into a `ConfigMap` that is shared across all Sidekiq pods.
 
 ### Redis
 
@@ -38,7 +38,7 @@ The hostname of the Redis server with the database to use. This can be omitted i
 
 #### serviceName
 
-The name of the `service` which is operating the Redis database. If this is present, and `host` is not, the chart will template the hostname of the service (and current `.Release.Name`) in place of the `host` value. This is convenient when using Redis as a part of the overall GitLab chart. This will default to `omnibus`
+The name of the `service` which is operating the Redis database. If this is present, and `host` is not, the chart will template the hostname of the service (and current `.Release.Name`) in place of the `host` value. This is convenient when using Redis as a part of the overall GitLab chart. This will default to `redis`
 
 #### port
 
@@ -69,7 +69,7 @@ The hostname of the PostgreSQL server with the database to use. This can be omit
 
 #### serviceName
 
-The name of the `service` which is operating the PostgreSQL database. If this is present, and `host` is not, the chart will template the hostname of the service (and current `.Release.Name`) in place of the `host` value. This is convenient when using Redis as a part of the overall GitLab chart. This will default to `omnibus`
+The name of the `service` which is operating the PostgreSQL database. If this is present, and `host` is not, the chart will template the hostname of the service (and current `.Release.Name`) in place of the `host` value. This is convenient when using PostgreSQL as a part of the overall GitLab chart. This will default to `omnibus`
 
 #### port
 
@@ -86,6 +86,36 @@ The username with which to authenticate to the database. This defaults to `gitla
 #### password
 
 The password with which to authenticate to the database. (This will be moved to a secret in the future)
+
+### Gitaly
+
+```YAML
+gitaly:
+  host: 'rank-racoon-gitaly'
+  serviceName: 'gitaly'
+  port: 8075
+  authToken:
+    secret: gitaly-secret
+    key: token
+```
+
+#### host
+
+The hostname of the Gitaly server to use. This can be omitted in lieu of `serviceName`
+
+#### serviceName
+
+The name of the `service` which is operating the Gitaly server. If this is present, and `host` is not, the chart will template the hostname of the service (and current `.Release.Name`) in place of the `host` value. This is convenient when using Gitaly as a part of the overall GitLab chart. This will default to `gitaly`
+
+#### port
+
+The port on which to connect to the Gitaly server. Defaults to `8075`.
+
+#### authToken
+
+The `authToken` attribute for Gitaly has to sub keys:
+- `secret` defines the name of the kubernetes `Secret` to pull from
+- `key` defines the name of the key in the above secret that contains the authToken.
 
 ## Chart-wide defaults
 

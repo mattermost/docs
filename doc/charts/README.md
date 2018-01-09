@@ -12,3 +12,4 @@ Non-GitLab components are packaged and documented on the top level. GitLab compo
 - GitLab/[Omnibus](gitlab/omnibus/README.md)
 - GitLab/[sidekiq](gitlab/sidekiq/README.md)
 - GitLab/[gitlab-shell](gitlab/gitlab-shell/README.md)
+- GitLab/[gitaly](gitlab/gitaly/README.md)
