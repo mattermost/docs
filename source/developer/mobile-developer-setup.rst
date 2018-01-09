@@ -82,7 +82,6 @@ Android
    - Android Support Repository
    - Google Repository
  - SDK Platforms (you may have to click "Show Package Details" to expand packages)
-  - .. image:: https://imgur.com/Jm9RySe.png
   - .. image:: ../../source/images/mobile_SDK_Platforms.png
   - Android 6 (Marshmallow)
    - Google APIs
