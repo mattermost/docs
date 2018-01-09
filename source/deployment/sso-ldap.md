@@ -71,13 +71,13 @@ The following are frequently asked questions and troubleshooting suggestions on 
 
 #### If "AD/LDAP Test" button fails, how can I troubleshoot the connection? 
 
-1. Check that your AD/LDAP connection settings are correct by running an AD/LDAP user query in an external system. See `LDAP Connection Test Example <http://ldaptool.sourceforge.net>`_ 
+1. Check that your AD/LDAP connection settings are correct by running an AD/LDAP user query in an external system. See [LDAP Connection Test Example](http://ldaptool.sourceforge.net).  
 
 If the AD/LDAP connection is verified to be working out side of Mattermost, try the following: 
 
-2. Check your AD/LDAP system to verify your ``Bind Username`` format.
+2. Check your AD/LDAP system to verify your `Bind Username` format.
 
-3. Check your ``AD/LDAP Port`` and ``Connection Security`` settings. (```AD/LDAP Port``` set to ``389`` typically uses ``Connection Security`` set to ``None``. ``AD/LDAP Port`` set to ``636`` typically ties to ``Connection Security`` set to ``TLS``). 
+3. Check your `AD/LDAP Port` and `Connection Security` settings. (`AD/LDAP Port` set to `389` typically uses `Connection Security` set to `None`. `AD/LDAP Port` set to `636` typically ties to `Connection Security` set to `TLS`). 
 
 If these options don't work, please contact Mattermost support via the email address that came with your license key. 
 
