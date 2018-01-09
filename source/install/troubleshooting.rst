@@ -175,7 +175,7 @@ If you are using an Amazon ELB check that ``Idle Timeout`` is set to ``120s``, i
 If you are using NGINX, make sure you follow the `Mattermost configuration instructions <https://docs.mattermost.com/install/config-proxy-nginx.html>`__ for setting the  ``proxy_read_timeout``. 
 
 ``Cannot connect to the server. Please check your server URL and internet connection.``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This error may appear on some devices when trying to connect to a server that is using an SSL curve that is not supported by the client device.
 
