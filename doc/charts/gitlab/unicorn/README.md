@@ -18,7 +18,7 @@ The `unicorn` chart is configured in two parts: External Services, and Chart Set
 
 ```YAML
 redis:
-  host: rank-racoon-redis
+  host: redis.example.local
   serviceName: redis
   port: 6379
   password:
@@ -48,7 +48,7 @@ The `password` atribute for Redis has to sub keys:
 
 ```YAML
 psql:
-  host: rank-racoon-psql
+  host: psql.example.local
   serviceName: omnibus
   port: 5432
   database: gitlabhq_production
@@ -84,7 +84,7 @@ The password with which to authenticate to the database. (This will be moved to 
 
 ```YAML
 gitaly:
-  host: rank-racoon-gitaly
+  host: gitaly.example.local
   serviceName: 'gitaly'
   port: 8075
   authToken:
