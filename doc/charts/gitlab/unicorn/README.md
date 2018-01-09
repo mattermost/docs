@@ -84,7 +84,7 @@ The password with which to authenticate to the database. (This will be moved to 
 
 ```YAML
 gitaly:
-  host: 'rank-racoon-gitaly'
+  host: rank-racoon-gitaly
   serviceName: 'gitaly'
   port: 8075
   authToken:
@@ -118,6 +118,7 @@ registry:
   port: 443
   api:
     protocol: http
+    host: registry.example.local
     serviceName: registry
     port: 5000
   tokenIssuer: gitlab-issuer
@@ -137,7 +138,11 @@ will all use `http` and append the port to the end of hostname. ex: `http://regi
 
 #### api
 
-Field `api` is a map containing three items: `protocol`, `serviceName`, and `port`
+Field `api` is a map containing four items: `host`, `protocol`, `serviceName`, and `port`
+
+#### api.host
+
+The hostname of the Registry server to use. This can be omitted in lieu of `api.serviceName`
 
 #### api.protocol
 
@@ -145,7 +150,7 @@ The protocol Unicorn should use to reach the Registry api.
 
 #### api.serviceName
 
-The name of the `service` which is operating the Registry server. The chart will template the hostname of the service (and current `.Release.Name`).  This will default to `registry`
+The name of the `service` which is operating the Registry server. If this is present, and `api.host` is not, the chart will template the hostname of the service (and current `.Release.Name`) in place of the `api.host` value. This is convenient when using Registry as a part of the overall GitLab chart. This will default to `registry`
 
 #### api.port
 
