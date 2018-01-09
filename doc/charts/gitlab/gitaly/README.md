@@ -22,7 +22,7 @@ This chart should be attached the Unicorn service, and should also use the same 
 
 ```YAML
 redis:
-  host: rank-racoon-redis
+  host: redis.example.local
   serviceName: redis
   port: 6379
   password:
@@ -52,8 +52,8 @@ The `password` atribute for Redis has to sub keys:
 
 ```YAML
 unicorn:
-  host: rank-racoon-unicorn
-  serviceName: 'unicorn'
+  host: unicorn.example.local
+  serviceName: unicorn
   port: 8080
 ```
 
