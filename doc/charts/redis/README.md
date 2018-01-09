@@ -8,6 +8,8 @@ All configuration is handled according to the official [Redis configuration docu
 
 At this time, this chart provides the capability of persistence via a [persistentVolumeClaim][], and when not provided will default to a [emptyDir][] to ensure persistence across the lifespan of the `Pod`.
 
+It [was decided][issue-112] that this chart will have persistence based on [RDB][persistence] saved to a [PersistentVolume][], if provided with a [PersistentVolumeClaim][]. The use of [AOF][persistence] has been deemed a research item for future development.
+
 We will add the capability to split Redis queues based on class, along with High Availability features in the future.
 
 # Configuration
@@ -91,9 +93,13 @@ This chart relies on one [Secret][kubernetes-secret], `password`.
 
 ### persistence
 
-Persistence on the Redis chart is configurable. If an administrator provides a `persistentVolumeClaim` name, the chart will make use of that external `PersistentVolume` and data will survive the `Pod`. If an administrator does not provide the `persistentVolumeClaim` name, the chart will fall back to creating an `emptyDir` volume limited to `10` gigabytes. This volume will live as long as the `Pod` that created it exists, and provides for persistence across `Pod` restarts and any unforseen incidents a the contaier level.
+#### disk.persistentVolumeClaim
 
-### save
+If an administrator provides a [PersistentVolumeClaim][] name, the chart will make use of that external [PersistentVolume][] and data will survive the `Pod`. If an administrator does not provide the [PersistentVolumeClaim][] name, the chart will fall back to creating an [emptyDir][] volume limited to `10` gigabytes. This volume will live as long as the `Pod` that created it exists, and provides for persistence across `Pod` restarts and any unforseen incidents a the contaier level, so long as that pod remains on the same node.
+
+[Investigation][issue-112] showed that a standard disk (e.g. `pd-standard` on GKE) is sufficient for the throughput needs of a properly configured Redis pod. The size of the disk should be at leat the requested memory of the Redis instance. For example, if providing a `maxmemory` of `1gb`, the [PersistentVolume][] should be a minimum of that `1gb`.
+
+#### save
 
 The `save` array provides for configuration of Redis data snapshotting, as described in the Redis [persistence][] documentation. The items are formatted in a manner to ensure clarity, with the default values taken directly from the stable [redis.conf][].
 
@@ -111,8 +117,10 @@ It is also possible to entirely disable snapshotting by providing an empty array
 [values.yaml]: ../../../charts/redis/values.yaml
 
 [PersistentVolume]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/
-[persistentVolumeClaim]: https://kubernetes.io/docs/concepts/storage/volumes/#persistentvolumeclaim
+[PersistentVolumeClaim]: https://kubernetes.io/docs/concepts/storage/volumes/#persistentvolumeclaim
 [emptyDir]: https://kubernetes.io/docs/concepts/storage/volumes/#emptydir
 
 [kubernetes-secret]: https://kubernetes.io/docs/concepts/configuration/secret/
 [persistence]: https://redis.io/topics/persistence
+
+[issue-112]:https://gitlab.com/charts/helm.gitlab.io/issues/112
