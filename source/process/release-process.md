@@ -98,35 +98,35 @@ Day when Leads and PMs decide which major features are included in the release, 
 
 **Stabilization** period begins when all features for release have been committed. During this period, only **bugs** can be committed to the release branch. Non-bug pull requests are tagged for next version. Exceptions can be made by the Release Manager during triage.
 
-1. **(Team) Code Complete Meeting (10:00am San Francisco time)**:  
-    - (PM) Leads team review of Changelog
-    - (Release Manager) Walk through each unfinished item of this checklist  
-    - (Dev) Last check of tickets that need to be merged before RC1   
-2. Release Manager:
+1. Release Manager:
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
     - Review all [Severity 1 bugs (data loss or security)](https://mattermost.atlassian.net/secure/IssueNavigator.jspa?mode=hide&requestId=10600) to consider adding to Hotfix list
     - Update documentation:  
         - Submit Changelog PR
         - Draft [Mattermost Security Updates](http://about.mattermost.com/security-updates/), but do not post until 14 days after official release
-     - Merge changelog PR after review is complete, and update the GitHub meta issue to include a link to the changelog on the documentation branch
+2. Dev:
+    - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
+3. PM:
+    - If there are any breaking compatibility changes in the release, open an issue in the [GitLab Omnibus](https://gitlab.com/gitlab-org/omnibus-gitlab) to make sure GitLab is aware. Post a link to the issue in the Release Discussion channel
+    - PM owner of System Admin features reviews changes to `config.json` to confirm they're included in the correct Mattermost Edition
+
+### G. (T-minus 8 working days) Release Candidate Cut
+
+1. **(Team) Code Complete Meeting (10:00am San Francisco time)**:  
+    - (PM) Leads team review of Changelog
+    - (Release Manager) Walk through each unfinished item of this checklist  
+    - (Dev) Last check of tickets that need to be merged before RC1
+2. Release Manager:
+    - Post this checklist in Release Checklist channel
+    - Verify all items in the last posted release checklist are complete
+    - Merge changelog PR after review is complete, and update the GitHub meta issue to include a link to the changelog on the documentation branch
     - After build is cut, tweet announcement that RC1 is ready (see [example](https://pre-release.mattermost.com/core/pl/tefx1ijyz7bs8mabuxmpq9f7pw))
 3. Logistics:
     - Mail out contributor and security researcher mugs
     - Update [Team](http://www.mattermost.org/team/) page with new contributors
     - Provide release PM with a list of contributors for Changelog draft
-4. Dev:
-    - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
-4. PM:
-    - If there are any breaking compatibility changes in the release, open an issue in the [GitLab Omnibus](https://gitlab.com/gitlab-org/omnibus-gitlab) to make sure GitLab is aware. Post a link to the issue in the Release Discussion channel
-    - PM owner of System Admin features reviews changes to `config.json` to confirm they're included in the correct Mattermost Edition
-5. Docs:
-    - Submit any remaining documentation PRs for product updates in the release
-    - Confirm changes to config.json in compatibility section of Changelog are written back to [settings documentation](http://docs.mattermost.com/administration/config-settings.html#configuration-settings)
-
-### G. (T-minus 8 working days) Release Candidate Cut
-
-1. QA:
+4. QA:
     - Confirm all PRs merged into the current release have been tested
     - Ensure the release testing spreadsheet covers any changes and new features, and confirm known issues are listed in the relevant tests 
     - Assign each area of the spreadsheet to a team member and give the core team access permissions
@@ -134,7 +134,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Test remaining merged PRs and resolved tickets for the release
     - Write and update tests in the Release Testing spreadsheet and in Selenium IDE
     - Run Selenium IDE tests for updated areas, note Pass/Fail and date tested in the Release Testing spreadsheet
-2. Build:  
+5. Build:  
     - Review all `TODO` notes, including one for uncommenting upgrade code
     - Confirm all PRs in [`/enterprise`](https://github.com/mattermost/enterprise/pulls) repo have been merged.
     - Master is tagged and branched and “Release Candidate 1″ is cut (e.g. 3.5.0-RC1) according to the Release Candidate Checklist in ``mattermost/process``
@@ -142,6 +142,9 @@ Day when Leads and PMs decide which major features are included in the release, 
     - CI servers are updated to the release branch
     - Translation server is locked to the release branch
     - Run daily automated upgrade tests to avoid catching upgrade bugs late
+6. Docs:
+    - Submit any remaining documentation PRs for product updates in the release
+    - Confirm changes to config.json in compatibility section of Changelog are written back to [settings documentation](http://docs.mattermost.com/administration/config-settings.html#configuration-settings)
 
 ### H. (T-minus 7 working days) Release Candidate Testing
 
