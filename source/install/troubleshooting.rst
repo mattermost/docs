@@ -183,7 +183,7 @@ This error may appear on some devices when trying to connect to a server that is
 
 If you are using NGINX as a proxy, set the ``ssl_ecdh_curve`` directive in your site configuration file (for example, in ``/etc/nginx/sites-available/mattermost``), to a value that is supported by both client and server. Suggested values for varying levels of compatibility can be found at `Mozilla's Security/Server Side TLS <https://wiki.mozilla.org/Security/Server_Side_TLS>`_ page.
 
-As security and encryption standards often change rapidly, it is best to check for up to date information. However, the suggested value as of January 2018 is to use the curves: prime256v1, secp384r1, secp521r1.
+As security and encryption standards often change rapidly, it is best to check for up-to-date information. However, the suggested value as of January 2018, is to use the curves: prime256v1, secp384r1, secp521r1.
 
 For NGINX, this would translate to ``ssl_ecdh_curve prime256v1:secp384r1:secp521r1;``
 
