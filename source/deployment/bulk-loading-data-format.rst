@@ -35,6 +35,8 @@ The identifiers for each object are listed in the following table:
   UserTeamMembership, "*team*, *username*"
   UserChannelMembership, "*team*, *channel*, *username*"
   Post, "*channel*, *message*, *create_at*"
+  Reply, "*post*, *message*, *create_at*"
+  Reaction, "*post*, *emoji_name*, *create_at*"
   DirectChannel, *members*
   DirectPost,  "*channel_members*, *user*, *message*, *create_at* "
 
@@ -289,6 +291,7 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
   {
     "type": "user",
     "user": {
+      "profile_image": "avatar.png",
       "username": "username",
       "email": "email@example.com",
       "auth_service": "",
@@ -331,6 +334,13 @@ Fields of the User object
       <th class="head">Description</th>
       <th class="head">Validated</th>
       <th class="head">Mandatory</th>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">profile_image</td>
+      <td valign="middle">string</td>
+      <td>The user’s profile image. This must be an existing file path.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">username</td>
@@ -723,7 +733,7 @@ This object is a member of the ChannelMembership object.
 Post object
 -----------
 
- If present, Post objects must occur after the last User object in the file, but before any DirectChannel objects.
+If present, Post objects must occur after the last User object in the file, but before any DirectChannel objects.
 
 Example Post object
 ~~~~~~~~~~~~~~~~~~~
@@ -744,7 +754,25 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
         "username1",
         "username2",
         "username3"
-      ]
+      ],
+      "replies": [{
+        "user": "username4",
+        "message": "The reply message",
+        "create_at": 140012352049,
+      }, {
+        "user": "username5",
+        "message": "Other reply message",
+        "create_at": 140012353057,
+      }],
+      "reactions": [{
+        "user": "username6",
+        "emoji_name": "+1",
+        "create_at": 140012356032,
+      }, {
+        "user": "username7",
+        "emoji_name": "heart",
+        "create_at": 140012359034,
+      }]
     }
   }
 
@@ -811,6 +839,96 @@ Fields of the Post object
       <td>Must contain a list of members who have flagged the post.</td>
       <td align="center" valign="middle">No</td>
       <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">replies</td>
+      <td valign="middle">array</td>
+      <td>The posts in reply to this post. Must be an array of <a href="#fields-of-the-reply-object">Reply</a> objects.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">reactions</td>
+      <td valign="middle">array</td>
+      <td>The emoji reactions to this post. Must be an array of <a href="#fields-of-the-reaction-object">Reaction</a> objects.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+  </table>
+
+Fields of the Reply object
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This object is a member of the Post/DirectPost object.
+
+.. raw:: html
+
+  <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
+    <tr class="row-odd">
+      <th class="head">Field name</th>
+      <th class="head">Type</th>
+      <th class="head">Description</th>
+      <th class="head">Validated</th>
+      <th class="head">Mandatory</th>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">user</td>
+      <td valign="middle">string</td>
+      <td>The username of the user for this reply.</td>
+      <td align="center" valign="middle">No [3]</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">message</td>
+      <td valign="middle">string</td>
+      <td>The message that the reply contains.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">create_at</td>
+      <td valign="middle">int</td>
+      <td>The timestamp for the reply, in milliseconds since the Unix epoch.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+  </table>
+
+Fields of the Reaction object
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This object is a member of the Post/DirectPost object.
+
+.. raw:: html
+
+  <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
+    <tr class="row-odd">
+      <th class="head">Field name</th>
+      <th class="head">Type</th>
+      <th class="head">Description</th>
+      <th class="head">Validated</th>
+      <th class="head">Mandatory</th>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">user</td>
+      <td valign="middle">string</td>
+      <td>The username of the user for this reply.</td>
+      <td align="center" valign="middle">No [3]</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">emoji_name</td>
+      <td valign="middle">string</td>
+      <td>The emoji of the reaction.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">create_at</td>
+      <td valign="middle">int</td>
+      <td>The timestamp for the reply, in milliseconds since the Unix epoch.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
     </tr>
   </table>
 
@@ -912,7 +1030,25 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
         "username1",
         "username2",
         "username3"
-      ]
+      ],
+      "replies": [{
+        "user": "username4",
+        "message": "The reply message",
+        "create_at": 140012352049,
+      }, {
+        "user": "username5",
+        "message": "Other reply message",
+        "create_at": 140012353057,
+      }],
+      "reactions": [{
+        "user": "username6",
+        "emoji_name": "+1",
+        "create_at": 140012356032,
+      }, {
+        "user": "username7",
+        "emoji_name": "heart",
+        "create_at": 140012359034,
+      }]
     }
   }
 
@@ -968,6 +1104,20 @@ Fields of the DirectPost object
       <td valign="middle">array</td>
       <td>Must contain a list of members who have flagged the post.</td>
       <td align="center" valign="middle">No</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">replies</td>
+      <td valign="middle">array</td>
+      <td>The posts in reply to this direct post. Must be an array of <a href="#fields-of-the-reply-object">Reply</a> objects.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">reactions</td>
+      <td valign="middle">array</td>
+      <td>The emoji reactions to this direct post. Must be an array of <a href="#fields-of-the-reaction-object">Reaction</a> objects.</td>
+      <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">No</td>
     </tr>
   </table>
