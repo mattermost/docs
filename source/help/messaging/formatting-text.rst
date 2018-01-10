@@ -140,7 +140,7 @@ This can be accomplished in one of two ways:
   ```
 
 
-* :guilabel:`TIP` - If you're having trouble as a first-timer, assuming default keyboard shortcuts for most clients, this can be accomplished by entering: 3x backticks :kbd:`\`\`\``, :kbd:`SHIFT + ENTER`, :kbd:`<type_your_code>`, :kbd:`SHIFT + ENTER`, and finally 3x backticks :kbd:`\`\`\``.
+* :guilabel:`TIP` - Enter 3x backticks :kbd:`\`\`\``, :kbd:`SHIFT + ENTER`, :kbd:`<type_your_code>`, :kbd:`SHIFT + ENTER`, and finally 3x backticks :kbd:`\`\`\``.
 
 
  2. Indenting each line by four spaces
