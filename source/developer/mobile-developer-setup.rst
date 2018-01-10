@@ -859,16 +859,12 @@ Solution
 Errors When Running 'make run-ios'
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-I just got a new machine and downloaded XCode. I used git to clone the React Native Mattermost project from Github. I have everything ready to go. I run ``make run-ios`` and see
-
 Error message
   .. code-block:: bash
 
     xcrun: error: unable to find utility "instruments", not a developer tool or in PATH
 
 Solution
-  The fix for this is pretty simple but not at all intuitive.
-
   - Launch XCode and agree to the terms first.
   - Go to **Preferences -> Locations** and you'll see an option for Command Line Tools, click the select box and choose the version of XCode you'll be using.
 
