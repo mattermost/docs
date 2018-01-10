@@ -17,7 +17,7 @@ enabled: false
 gitlabHost: localhost
 redis:
   # host: '0.0.0.0'
-  # serviceName: 'omnibus'
+  # serviceName: 'redis'
   password:
     secret: gitlab-redis
     key: redis-password
@@ -34,7 +34,7 @@ shell:
     key: secret
 gitaly:
   # host: '0.0.0.0'
-  # serviceName: 'omnibus'
+  # serviceName: 'gitaly'
   # port: 8075
   authToken:
     secret: gitaly-secret

@@ -9,7 +9,7 @@ enabled: false
 redis:
   # host: '0.0.0.0'
   # port: 6379
-  # serviceName: 'omnibus'
+  # serviceName: 'redis'
   password:
     secret: gitlab-redis
     key: redis-password
@@ -22,7 +22,7 @@ psql:
   # password: nil
 gitaly:
   # host: '0.0.0.0'
-  # serviceName: 'omnibus'
+  # serviceName: 'gitaly'
   # port: 8075
   authToken:
     secret: gitaly-secret
