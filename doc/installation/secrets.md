@@ -36,8 +36,6 @@ something like:
 
 ```
 $ kubectl create secret tls helm-charts-win-tls --cert=certs/-.helm-charts.win.chained.crt --key=certs/-.helm-charts.win.key
-
-secret "helm-charts-win-tls" created
 ```
 
 ### Registry certificates
@@ -53,11 +51,6 @@ Generate a certificate-key pair:
 
 ```
 $ openssl req -new -newkey rsa:4096 -subj="/CN=gitlab-issuer" -nodes -x509 -keyout certs/helm-charts-win-registry.key -out certs/helm-charts-win-registry.crt
-Generating a 4096 bit RSA private key
-..................................................................................................................................................++
-..............................................................................................................................................................++
-writing new private key to 'certs/helm-charts-win-registry.key'
------
 ```
 
 Create a secret containing these certificates.
@@ -66,8 +59,6 @@ Create a secret containing these certificates.
 
 ```
 $ kubectl create secret generic gitlab-registry --from-file=registry-auth.key=certs/helm-charts-win-registry.key --from-file=registry-auth.crt=certs/helm-charts-win-registry.crt
-
-secret "gitlab-registry" created
 ```
 
 In more isolated clusters, these certificates can be in separate secrets, as long
@@ -82,8 +73,6 @@ We'll generate a random 64 character alpha-numeric password for Redis.
 
 ```
 $ kubectl create secret generic gitlab-redis --from-literal=redis-password=<password>
-
-secret "gitlab-redis" created
 ```
 > Note: GitLab Inc. employees have this password generated and stored in `1Password Cloud Native` vault for development in this project.
 

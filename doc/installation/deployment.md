@@ -2,7 +2,7 @@ To deploy, we'll run `helm install` with our configuration file, from the
 root of this repository:
 
 ```
-$ helm install -f helm-charts-win.yaml .
+$ helm install -f configuration.yaml .
 NAME:   ill-dachshund
 LAST DEPLOYED: Wed Nov  8 15:40:40 2017
 NAMESPACE: master
