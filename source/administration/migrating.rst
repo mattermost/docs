@@ -186,6 +186,9 @@ Using the Imported Team
 
 * Once logged in, Mattermost users will have access to previous Slack messages in the public channels imported from Slack.
 
+Migrating from Bitnami
+~~~~~~~~~~~~~~~~~~~~~~
+
 https://github.com/Brightscout/mattermost-etl
 Bitnami uses MySQL, and renames the Mattermost database tables by converting the names to all lower case. For example, in non-Bitnami installations, the Users table is named "Users", but in Bitnami, the table is "users". As a result, when you migrate your data from Bitnami to a non-Bitnami installation, you must modify the MySQL start-up script so that it starts MySQL in lowercase table mode.
 
