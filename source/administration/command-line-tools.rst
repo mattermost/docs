@@ -909,11 +909,11 @@ platform sampledata
               --channels-per-team int          The number of sample channels per team. (default 10)
               --channel-memberships int        The number of sample channel memberships per user in a team. (default 5)
               --posts-per-channel int          The number of sample post per channel. (default 100)
-              --direct-channels int            The number of sample direct message channels per user. (default 30)
-              --group-channels int             The number of sample group message channels per user. (default 15)
+              --direct-channels int            The number of sample direct message channels. (default 30)
+              --group-channels int             The number of sample group message channels. (default 15)
               --posts-per-direct-channel int   The number of sample posts per direct message channel. (default 15)
               --posts-per-group-channel int    The number of sample post per group message channel. (default 30)
-          -s, --seed int                       Seed used for generating the random data. (default 1)
+          -s, --seed int                       Seed used for generating the random data (Different seeds generate different data). (default 1)
           -b, --bulk string                    Optional. Path to write a JSONL bulk file instead of loading into the database.
           -w, --workers int                    How many workers to run during the import. (default 2)
 
