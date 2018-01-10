@@ -13,3 +13,5 @@ Non-GitLab components are packaged and documented on the top level. GitLab compo
 - GitLab/[sidekiq](gitlab/sidekiq/README.md)
 - GitLab/[gitlab-shell](gitlab/gitlab-shell/README.md)
 - GitLab/[gitaly](gitlab/gitaly/README.md)
+- GitLab/[unicorn](gitlab/unicorn/README.md)
+- GitLab/[migrations](gitlab/migrations/README.md)
