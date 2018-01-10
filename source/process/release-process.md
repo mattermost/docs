@@ -30,6 +30,7 @@ No pull requests for major features should be **submitted** to the current relea
     - Check that all major features are behind a feature flag
     - Confirm with Leads that each Enterprise feature is in the correct [pricing SKU](https://about.mattermost.com/pricing/). If not, alert the release manager
     - Review any features that are currently in beta and confirm with Leads if there are any to be promoted
+    - Confirm all config settings and new features have diagnostics
 3. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for major features
 
@@ -145,6 +146,7 @@ Day when Leads and PMs decide which major features are included in the release, 
 6. Docs:
     - Submit any remaining documentation PRs for product updates in the release
     - Confirm changes to config.json in compatibility section of Changelog are written back to [settings documentation](http://docs.mattermost.com/administration/config-settings.html#configuration-settings)
+    - Confirm all new diagnostics are documented in the telemetry docs (https://docs.mattermost.com/administration/telemetry.html)
 
 ### H. (T-minus 7 working days) Release Candidate Testing
 
