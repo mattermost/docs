@@ -32,16 +32,16 @@ hstsIncludeSubdomains: false
 serverNameHashBucketSize: 256
 
 shell:
-  name: omnibus
-  port: og-shell
+  name: gitlab-shell
+  port: ssh
 
 ingress:
   enabled: false
   # Used to create Ingress record (should used with service.type: ClusterIP).
   hosts:
     - name: gitlab.example.local
-      serviceName: omnibus
-      servicePort: og-workhorse
+      serviceName: unicorn
+      servicePort: workhorse
     - name: registry.example.local
       serviceName: registry
       servicePort: registry
