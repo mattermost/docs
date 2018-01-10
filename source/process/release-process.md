@@ -173,6 +173,7 @@ Day when Leads and PMs decide which major features are included in the release, 
 5. Build: 
     - Verify with Release Manager before cutting any new RCs (approved fixes should be merged)
     - Push next RC to acceptance and announce in Town Square with new RC link
+    - Check CI servers running on release branch
 
 ### I. (T-minus 5 working days) Release Candidate Testing Finished
 
