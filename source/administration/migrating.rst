@@ -125,9 +125,9 @@ This feature can be accessed through the `Mattermost Web App <https://docs.matte
 Supported Features
 ``````````````````
 
-The following key features are supported when importing from Slack:
+The following key features can be imported from Slack:
 
-* User accounts with an email address set
+* User accounts
 
 * Public channels and the text messages posted in them, with formatting
 
@@ -149,8 +149,6 @@ Limitations
 The following limitations are present when importing from Slack:
 
 * The import is not idempotent, which means that duplicate posts are created if you import the same data more than once.
-
-* The Markdown subset used by Slack's Posts 2.0 feature announced on September 28, 2015 is not yet supported.
 
 * Direct Messages and Private Channels cannot be imported. Slack does not include these messages when generating the export archive.
 
@@ -180,7 +178,7 @@ Migrating from Slack using the Mattermost CLI
 Using the Imported Team
 ````````````````````````
 
-* During the import process, the emails and usernames from Slack are used to create new Mattermost accounts.
+* During the import process, the emails and usernames from Slack are used to create new Mattermost accounts. If emails are not present in the Slack export archive, then placeholder values will be generated and the System Admin will need to update these manually.
 
 * Slack users can activate their new Mattermost accounts by using Mattermost's Password Reset screen with their email addresses from Slack to set new passwords for their Mattermost accounts.
 
