@@ -39,9 +39,9 @@ redis:
   # port: 6397
   # database: 0
   # password provided as file, via Secret
-  password: {}
-    # secret:
-    # key:
+  password:
+    secret: gitlab-redis
+    key: redis-password
 psql:
   enabled: false
   shared_buffers: "1MB"

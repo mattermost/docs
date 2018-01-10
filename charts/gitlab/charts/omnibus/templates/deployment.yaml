@@ -52,9 +52,11 @@ spec:
               name: og-gitaly
             {{- end }}
           volumeMounts:
+            {{- if or .Values.unicorn.enabled .Values.sidekiq.enabled }}
             - name: {{ .Release.Name }}-registry-secret
               mountPath: '/etc/gitlab-registry'
               readOnly: true
+            {{- end }}
             - name: gitlab-config
               mountPath: '/etc/gitlab'
             - name: gitlab-redis
@@ -75,6 +77,7 @@ spec:
           resources:
 {{ toYaml .Values.resources | indent 12 }}
       volumes:
+      {{- if or .Values.unicorn.enabled .Values.sidekiq.enabled }}
       - name: {{ .Release.Name }}-registry-secret
         secret:
           secretName: {{ .Values.registry.certificate.secret }}
@@ -82,6 +85,7 @@ spec:
             - key: {{ .Values.registry.certificate.key }}
               path: registry-certificate.crt
           defaultMode: 0400
+      {{- end }}
       - name: gitlab-config
         configMap:
           name: {{ template "fullname" . }}

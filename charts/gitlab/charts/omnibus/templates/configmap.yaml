@@ -18,7 +18,11 @@ data:
     gitlab_rails['trusted_proxies'] = %w{{ .Values.trusted_proxies }}
     {{- end }}
     # PostgresQL related
+    {{- if or .Values.sidekiq.enabled .Values.unicorn.enabled | not }}
+    gitlab_rails['auto_migrate'] = false
+    {{- else }}
     gitlab_rails['auto_migrate'] = {{ .Values.auto_migrate }}
+    {{- end }}
     {{- if .Values.psql.enabled }}
     gitlab_rails['db_host'] = '127.0.0.1'
     {{- else }}
@@ -40,12 +44,13 @@ data:
     {{- end }}
     gitlab_rails['redis_password'] = File.read("/etc/gitlab-redis/password")
     # Rail-Registry related
+    {{- if or .Values.sidekiq.enabled .Values.unicorn.enabled }}
     gitlab_rails['registry_enabled'] = true
     gitlab_rails['registry_host'] = {{ .Values.registry.host | quote }}
     gitlab_rails['registry_port'] = {{ .Values.registry.port }}
     gitlab_rails['registry_api_url'] = "http://{{ .Release.Name }}-registry:5000"
     registry['internal_key'] = File.read("/etc/gitlab-registry/registry-certificate.crt")
-    # gitlab_rails['registry_key_path'] = "/etc/gitlab-registry/registry-certificate.crt"
+    {{- end }}
     # Shell related
     {{- $apiHost := include "unicorn.internal_api_host" . -}}
     {{- if $apiHost }}
@@ -54,24 +59,30 @@ data:
     ###################
     # nginx
     nginx['enable'] = {{ .Values.nginx.enabled }}
+    {{- if .Values.nginx.enabled }}
     nginx['listen_port'] = {{ .Values.service.ports.nginx }}
     nginx['listen_https'] = false
     {{- if .Values.trusted_proxies }}
     nginx['real_ip_trusted_addresses'] = %w{{ .Values.trusted_proxies }}
     {{- end }}
+    {{- end }}
     ###################
     # workhorse
     gitlab_workhorse['enable'] = {{ .Values.workhorse.enabled }}
+    {{- if .Values.workhorse.enabled }}
     gitlab_workhorse['listen_network'] = 'tcp'
     gitlab_workhorse['listen_addr'] = '0.0.0.0:{{ .Values.service.ports.workhorse }}'
     gitlab_workhorse['auth_backend'] = '{{ template "workhorse.auth_backend" . }}'
+    {{- end }}
     ###################
     # unicorn
     unicorn['enable'] = {{ .Values.unicorn.enabled }}
+    {{- if .Values.unicorn.enabled }}
     unicorn['listen'] = '*'
     unicorn['port'] = {{ .Values.service.ports.unicorn }}
     unicorn['worker_timeout'] = {{ .Values.unicorn.worker.timeout }}
     unicorn['worker_processes'] = {{ .Values.unicorn.worker.processes }}
+    {{- end }}
     ###################
     # sidekiq
     sidekiq['enable'] = {{ .Values.sidekiq.enabled }}
@@ -80,14 +91,17 @@ data:
     ###################
     # gitaly
     gitaly['enable'] = {{ .Values.gitaly.enabled }}
+    {{- if .Values.gitaly.enabled }}
     gitaly['socket_path'] = nil
     gitaly['listen_addr'] = '0.0.0.0:{{ .Values.service.ports.gitaly }}'
     {{- if .Values.gitaly.auth_token }}
     gitaly['auth_token'] = {{ .Values.gitaly.auth_token | quote }}
     {{- end }}
+    {{- end }}
     ###################
     # PostgresQL
     postgresql['enable'] = {{ .Values.psql.enabled }}
+    {{- if .Values.psql.enabled }}
     postgresql['listen_address'] = '0.0.0.0'
     postgresql['port'] = {{ .Values.service.ports.psql }}
     postgresql['shared_buffers'] = {{ .Values.psql.shared_buffers | quote }}
@@ -96,9 +110,11 @@ data:
     {{- if .Values.psql.sql_user_password }}
     postgresql['sql_user_password'] = {{ .Values.psql.sql_user_password | quote }}
     {{- end }}
+    {{- end }}
     ###################
     # Redis
     redis['enable'] = {{ .Values.redis.enabled }}
+    {{- if .Values.redis.enabled }}
     redis['bind'] = '0.0.0.0'
     redis['port'] = {{ .Values.service.ports.redis }}
     redis['password'] = File.read("/etc/gitlab-redis/password")
@@ -106,6 +122,7 @@ data:
       'redis.addr' => "redis://{{ default "127.0.0.1" .Values.redis.host }}:{{ default .Values.service.ports.redis .Values.redis.port }}",
       'redis.password' => File.read("/etc/gitlab-redis/password")
     }
+    {{- end }}
     ###################
     # DISABLED SERVICES
     # registry, pages, mattermost, prometheus
