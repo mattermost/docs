@@ -23,21 +23,21 @@ nginx:
 # Registry chart Provides services to Unicorn/Omnibus chart(s) and external clients
 registry:
   enabled: true
-  registry:
-    replicas: 1
-    # https://docs.docker.com/registry/deploying/#storage-customization
-    storage:
-      filesystem:
-        rootdirectory: '/var/lib/registry'
-      cache:
-        blobdescriptor: 'inmemory'
-      delete:
-        enabled: true
-    authEndpoint: 'http://gitlab.example.local'
-    tokenIssuer: gitlab-issuer
-    certificate:
-      secret: gitlab-registry
-      key: registry-auth.crt
+  authEndpoint: 'http://gitlab.example.local'
+  tokenIssuer: gitlab-issuer
+  certificate:
+    secret: gitlab-registry
+    key: registry-auth.crt
+  # See doc/charts/registry/README.md#replicas
+  replicas: 1
+  # https://docs.docker.com/registry/deploying/#storage-customization
+  storage:
+    filesystem:
+      rootdirectory: '/var/lib/registry'
+    cache:
+      blobdescriptor: 'inmemory'
+    delete:
+      enabled: true
 
 # Redis chart provides Redis services to multiple charts
 redis:

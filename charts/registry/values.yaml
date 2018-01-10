@@ -20,19 +20,18 @@ resources: {}
 
 # Chart operation controls
 enabled: true
-registry:
-  # Will be auto-populated if not present (`{{ randAlphaNum 128 | b64enc | quote }}`)
-  httpSecret: ''
-  storage: {}
-  # Protocol/Host only. '/jwt/auth' will be appended.
-  authEndpoint: 'https://gitlab.example.local'
-  # Do not change this
-  tokenService: 'container_registry'
-  # This must match your GitLab Rails configuration
-  tokenIssuer: 'gitlab-issuer'
-  # Public side of the certificate bundle used to sign JWT auth requests
-  certificate:
-    secret: gitlab-registry
-    key: registry-auth.crt
-  # if replicas is >1, shared storage MUST be used.
-  replicas: 1
+# Will be auto-populated if not present (`{{ randAlphaNum 128 | b64enc | quote }}`)
+httpSecret: ''
+# Protocol/Host only. '/jwt/auth' will be appended.
+authEndpoint: 'https://gitlab.example.local'
+# Do not change this
+tokenService: 'container_registry'
+# This must match your GitLab Rails configuration
+tokenIssuer: 'gitlab-issuer'
+# Public side of the certificate bundle used to sign JWT auth requests
+certificate:
+  secret: gitlab-registry
+  key: registry-auth.crt
+# if replicas is >1, shared storage MUST be used.
+replicas: 1
+storage: {}
