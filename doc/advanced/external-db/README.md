@@ -1,4 +1,4 @@
-# Configure this chart with External Databases
+# Configure this chart with External Database
 
 This document intends to provide documentation on how to configure this Helm chart with external PostgreSQL service.
 
@@ -21,7 +21,7 @@ Follow the installation instructions for [Omnibus GitLab][]. When you perform th
 
 We'll create a minimal `gitlab.rb` file to be placed at `/etc/gitlab/gitlab.rb`. We'll intentionally _not_ use [Roles](https://docs.gitlab.com/omnibus/roles/README.html), so that we are _very_ explicit about what we want on this node. This example _is not intended_ to provide [PG HA](https://docs.gitlab.com/ee/administration/high_availability/database.html). The contents of that file are below.
 
-*Note*: you will need to chose the password for the PostgreSQL database, and provide the encoded value to `sql_user_password` below. See the comments on the snippet on how to encode it.
+*Note*: You will need to choose the password for the PostgreSQL database. Provide the unencoded value to `db_password`, and the encoded value to `sql_user_password` below. See the comments on the snippet on how to encode it.
 
 ```Ruby
 ## Configure PostgreSQL
@@ -30,7 +30,7 @@ postgresql['enable'] = true
 postgresql['listen_address'] = '0.0.0.0'
 # Set to approximately 1/4 of available RAM.
 postgresql['shared_buffers'] = "512MB"
-# This password is: `echo -n '${password}${username}' | md5sum -`
+# This password is: `echo -n '${password}${username}' | md5sum - | cut -d' ' -f1`
 # The default username is `gitlab`
 postgresql['sql_user_password'] = "306a43a5ca6b2d72a89cf54dff4f1367"
 # Configure the CIDRs for MD5 authentication
@@ -40,8 +40,16 @@ postgresql['md5_auth_cidr_addresses'] = ['192.168.100.0/12']
 # Configure the CIDRs for trusted authentication (passwordless)
 postgresql['trust_auth_cidr_addresses'] = ['127.0.0.1/24']
 
+## Configure gitlab_rails
+# needed for PostgreSQL user, db, pg_trgm creation
+# Not needed for migrations
+gitlab_rails['enable'] = true
+gitlab_rails['auto_migrate'] = false
+gitlab_rails['db_username'] = "gitlab"
+gitlab_rails['db_password'] = "non-encoded-password"
+
+
 ## Disable everything else
-gitlab_rails['enable'] = false
 sidekiq['enable'] = false
 unicorn['enable'] = false
 registry['enable'] = false
