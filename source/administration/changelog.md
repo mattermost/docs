@@ -66,6 +66,8 @@ Release date: 2017-01-16
 - Other users no longer see deleted GIF previews in reply threads.
 - Fixed an issue where channels with Japanese or cyrillic characters couldn't be created.
 - Fixed timestamp minute display for Zoom plugins.
+- Fixed an issue where page would load infinitely long when trying to join a team with maximum capacity.
+- Fixed an issue where channel notification preferences reverted to defaults after updating preferences in one of the channels.
 
 ### Compatibility
 
@@ -98,10 +100,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 // XXX @derrick can you help with this section?
 
-#### RESTful API v4 Changes
-
 - It is recommended that any new integrations use API v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
 - All API v3 endpoints are now deprecated, and scheduled for removal in Mattermost v5.0.
+
+#### RESTful API v4 Changes
+
+- Added `/users/{user_id}/auth` to update a user's authentication method. This can be used to change them to/from LDAP authentication, for example.
 
 #### Plugin API Changes (Beta)
 
@@ -139,6 +143,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Numbered lists can sometimes extend beyond the normal post area.
 - Slack import through the CLI fails if email notifications are enabled.
 - Letters are skipped in a few dialogs when using Korean keyboard in IE11.
+- Push notifications don't always clear on iOS when running Mattermost in High Availibility mode.
+- Deleting a team via the API breaks the user interface.
 
 ### Contributors
 
