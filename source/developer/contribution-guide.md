@@ -88,7 +88,7 @@ If you've included your mailing address in the signed [Contributor License Agree
 
 Core committers on Mattermost repositories consist of vetted core team members, including both community contributors as well as staff from Mattermost, Inc., who are trusted to review and merge PRs.
 
-- **Core committers include**: coreyhulen, crspeller, csduarte, enahum, grundleborg, hmhealey, jwilander
+- **Core committers include**: ccbrown, coreyhulen, cpanato, crspeller, csduarte, enahum, grundleborg, hmhealey, jespino, jwilander, mkraft, MusikPolice, saturninoabril, stephenkiers
 
 - **Product managers include**: asaadmahmood, esethna, it33, jasonblais, lfbrock
 

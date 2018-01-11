@@ -27,7 +27,7 @@ Below is the list of core developers working on Mattermost:
   - Dev areas: Import/Export (Slack, Bulk Loading, etc.), Diagnostics/Telemetry, Search, Permissions
 - **Saturnino Abril**
   - @saturnino on [pre-release.mattermost.com](https://pre-release.mattermost.com/core/messages/@saturnino) and [@saturninoabril](https://github.com/saturninoabril) on GitHub
-  - Dev areas: Webapp, REST API, UI Tests
+  - Dev areas: Webapp, React Native, REST API, UI Tests
 - **Chris Duarte**
   - @uberchris on [pre-release.mattermost.com](https://pre-release.mattermost.com/core/messages/@uberchris) and [@csduarte](https://github.com/csduarte) on GitHub
 - **Carlos Panato**
@@ -39,6 +39,15 @@ Below is the list of core developers working on Mattermost:
 - **Jonathan Fritz**
   - @jonathan on [pre-release.mattermost.com](https://pre-release.mattermost.com/core/messages/@jonathan) and [@MusikPolice](https://github.com/MusikPolice) on GitHub
   - Dev areas: Desktop
+- **Martin Kraft**
+  - @martin.kraft on [pre-release.mattermost.com](https://pre-release.mattermost.com/core/messages/@martin.kraft) and [@mkraft](https://github.com/mkraft) on GitHub
+  - Dev areas: All areas
+- **Jesús Espino**
+  - @jesus.espino on [pre-release.mattermost.com](https://pre-release.mattermost.com/core/messages/@jesus.espino) and [@jespino](https://github.com/jespino) on GitHub
+  - Dev areas: Webapp, Permissions and Compliance, Sample data generation
+- **Stephen Kiers**
+  - @stephen.kiers on [pre-release.mattermost.com](https://pre-release.mattermost.com/core/messages/@stephen.kiers) and [@stephenkiers](https://github.com/stephenkiers) on GitHub
+  - Dev areas: Webapp, Mobile UX and UI
 
 Below is the list of core developers working on individual Mattermost repositories:
 - **Yuya Ochiai** - [desktop](https://github.com/mattermost/desktop)
