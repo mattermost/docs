@@ -48,7 +48,7 @@ Release date: 2017-01-16
 #### Administration
 
 - Incoming webhook display name is now included in the post.Props field for better auditing.
-- System Admins can now reset their own passwod from the System Console users list.
+- System Admins can now reset their own password from the System Console users list.
 
 ### Bug Fixes
 
@@ -64,7 +64,7 @@ Release date: 2017-01-16
 - Editing a message to remove all text no longer deletes the message if it contains a file attachment.
 - Fixed an issue where searching for a channel using the second or third word in the name didn't work.
 - Other users no longer see deleted GIF previews in reply threads.
-- Fixed an issue where channels with Japanese or cyrillic characters couldn't be created.
+- Fixed an issue where channels with Japanese or Cyrillic characters couldn't be created.
 - Fixed timestamp minute display for Zoom plugins.
 - Fixed an issue where page would load infinitely long when trying to join a team with maximum capacity.
 - Fixed an issue where channel notification preferences reverted to defaults after updating preferences in one of the channels.
@@ -87,14 +87,14 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Under `TeamSettings` in `config.json`:
   - Added `"ExperimentalPrimaryTeam": ""` to set the primary team of the server. This setting is experimental and may be replaced or removed in a future release.
 - Under `EmailSettings` in `config.json`:
-  - Added `"LoginButtonColor": ""`, `"LoginButtonBorderColor": ""` and `"LoginButtonTextColor": ""` to set the style of of the email login button for white labeling purposes.
+  - Added `"LoginButtonColor": ""`, `"LoginButtonBorderColor": ""` and `"LoginButtonTextColor": ""` to set the style of the email login button for white labelling purposes.
 
 **Additional Changes to Enterprise Edition**:
 
 - Under `LdapSettings` in `config.json`:
-  - Added `"LoginButtonColor": ""`, `"LoginButtonBorderColor": ""` and `"LoginButtonTextColor": ""` to set the style of of the LDAP login button for white labeling purposes.
+  - Added `"LoginButtonColor": ""`, `"LoginButtonBorderColor": ""` and `"LoginButtonTextColor": ""` to set the style of the LDAP login button for white labelling purposes.
 - Under `SamlSettings` in `config.json`:
-  - Added `"LoginButtonColor": ""`, `"LoginButtonBorderColor": ""` and `"LoginButtonTextColor": ""` to set the style of of the SAML login button for white labeling purposes.
+  - Added `"LoginButtonColor": ""`, `"LoginButtonBorderColor": ""` and `"LoginButtonTextColor": ""` to set the style of the SAML login button for white labelling purposes.
 
 ### API Changes
 
@@ -109,7 +109,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### Plugin API Changes (Beta)
 
-- Added `RegisterCommand` to register a custom slash command. When the command is triggered, your plugin can fulfill it via the `ExecuteCommand` hook.
+- Added `RegisterCommand` to register a custom slash command. When the command is triggered, your plugin can fulfil it via the `ExecuteCommand` hook.
 - Added `UnregisterCommand` to unregister a command previously registered via `RegisterCommand`.
 - Added `GetChannelMember` to get a channel membership for a user.
 
@@ -143,7 +143,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Numbered lists can sometimes extend beyond the normal post area.
 - Slack import through the CLI fails if email notifications are enabled.
 - Letters are skipped in a few dialogs when using Korean keyboard in IE11.
-- Push notifications don't always clear on iOS when running Mattermost in High Availibility mode.
+- Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
 - Deleting a team via the API breaks the user interface.
 
 ### Contributors
