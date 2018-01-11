@@ -866,7 +866,7 @@ Error message
 
 Solution
   - Launch XCode and agree to the terms first.
-  - Go to **Preferences -> Locations** and you'll see an option for Command Line Tools, click the select box and choose the version of XCode you'll be using.
+  - Go to **Preferences -> Locations** and you'll see an option to select a version of the Command Line Tools. Click the select box and choose any version to use.
 
   .. image:: ../../source/images/mobile/xcode_preferences.png
 
