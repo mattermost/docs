@@ -49,7 +49,7 @@ registry:
   tokenIssuer: gitlab-issuer
   certificate:
     secret: gitlab-registry
-    key: gitlab-registry.key
+    key: registry-auth.key
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little

@@ -124,7 +124,7 @@ registry:
   tokenIssuer: gitlab-issuer
   certificate:
     secret: gitlab-registry
-    key: gitlab-registry.key
+    key: registry-auth.key
 ```
 
 #### host
