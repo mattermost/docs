@@ -69,7 +69,7 @@ Create a file called `rbac-config.yaml` containing the role and binding, an exam
 This role and binding then needs to be applied before Helm can run using `kubectl`. Ensure [kubectl is installed and up to date](https://kubernetes.io/docs/tasks/tools/install-kubectl/), as older versions do not support RBAC.
 
 Depending on the Kubernetes provider, you may need to provide additional authentication to kubectl beyond your user account:
-* [Creating ClusterRoles on GKE with kubectl](#creating-clusterroles-on-gke-with-kubectl)
+* [Creating ClusterRoleBindings on GKE with kubectl](#creating-clusterrolebindings-on-gke-with-kubectl)
 
 #### Creating ClusterRoleBindings on GKE with kubectl
 

@@ -37,6 +37,7 @@ shell:
 
 ingress:
   enabled: false
+  acme: false
   # Used to create Ingress record (should used with service.type: ClusterIP).
   hosts:
     - name: gitlab.example.local

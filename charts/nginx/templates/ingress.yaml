@@ -13,6 +13,7 @@ metadata:
     heritage: {{ .Release.Service }}
   annotations:
     kubernetes.io/ingress.class: "nginx"
+    kubernetes.io/tls-acme: {{ eq .Values.ingress.acme true | quote }}
     ingress.kubernetes.io/proxy-body-size: {{ .Values.proxyBodySize | quote }}
   {{- range $key, $value := .Values.ingress.annotations }}
     {{ $key }}: {{ $value | quote }}
@@ -28,8 +29,18 @@ spec:
               serviceName: "{{ $releaseName }}-{{ $host.serviceName }}"
               servicePort: {{ $host.servicePort }}
     {{- end -}}
-  {{- if .Values.ingress.tls }}
+
+  {{- if or .Values.ingress.acme .Values.ingress.tls }}
   tls:
+  {{- end }}
+  {{- if .Values.ingress.acme }}
+    - hosts:
+      {{- range $host := .Values.ingress.hosts }}
+      - {{ $host.name }}
+      {{- end }}
+      secretName: {{ .Release.Name }}-acme-tls
+  {{- end }}
+  {{- if .Values.ingress.tls }}
 {{ toYaml .Values.ingress.tls | indent 4 }}
   {{- end -}}
 {{- end -}}

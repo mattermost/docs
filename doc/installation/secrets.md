@@ -22,6 +22,11 @@ vault in `1Password`.
 
 ### GitLab certificates
 
+#### Lets Encrypt
+
+If you are going to make use of Let's Encrypt certificates via [kube-lego](../kube-lego/README.md), then you can skip over [Wildcard certificates](#wildcard-certificates) and move to [Registry certificates](#registry-certificates)
+
+#### Wildcard certificates
 Add the TLS wildcard certificate to cluster secrets with:
 
 ```
