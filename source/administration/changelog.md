@@ -180,7 +180,7 @@ Release date: 2017-12-16
 
 #### Integrations
 
-- Added an option for an outgoing webhooks to reply to the posted message as a comment.
+- Added an option for an outgoing webhook to reply to the posted message as a comment.
 - JIRA plugin is now bundled as a prepackaged plugin manageable from the System Console > Plugins > Management.
 - Added support for mentions with <@userid>, <!channel>, <!all> and <!here> in webhook posts.
 - Personal access tokens can now be temporarily deactivated in the Account Settings.
