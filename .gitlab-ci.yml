@@ -238,8 +238,6 @@ production:
       --set nginx.ingress.hosts[1].name="registry$DOMAIN" \
       --set nginx.ingress.hosts[1].serviceName="registry" \
       --set nginx.ingress.hosts[1].servicePort="registry" \
-      --set nginx.shell.name="gitlab-shell" \
-      --set nginx.shell.port="ssh" \
       --set nginx.ingress.tls[0].secretName=helm-charts-win-tls \
       --set nginx.ingress.tls[0].hosts[0]="gitlab$DOMAIN" \
       --set nginx.ingress.tls[0].hosts[1]="registry$DOMAIN" \

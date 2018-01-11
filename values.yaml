@@ -9,8 +9,8 @@ nginx:
         serviceName: registry
         servicePort: registry
       - name: gitlab.example.local
-        serviceName: omnibus
-        servicePort: og-workhorse
+        serviceName: unicorn
+        servicePort: workhorse
 
 registry:
   enabled: false
