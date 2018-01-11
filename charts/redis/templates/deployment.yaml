@@ -48,7 +48,6 @@ spec:
       - name: {{ .Release.Name }}-config
         emptyDir:
           medium: "Memory"
-          sizeLimit: 10M
       - name: {{ .Release.Name }}
         projected:
           defaultMode: 0644
@@ -72,7 +71,6 @@ spec:
           claimName: {{ .disk.persistentVolumeClaim }}
         {{-   else }}
         emptyDir:
-          sizeLimit: 10G
         {{-   end }}
         {{- end }}
 {{- end -}}

@@ -11,77 +11,33 @@ service:
   type: ClusterIP
   clusterIP: '0.0.0.0'
   ports:
-    nginx: 80
-    redis: 6379
     psql: 5432
-    shell: 22
-    unicorn: 8080
-    workhorse: 8005
-    gitaly: 8075
 
 enabled: false
 # config items
-# initial_root_password:
 external_url: http://gitlab.example.local
 trusted_proxies:
 - "127.0.0.1/24"
 - "10.0.0.0/8"
 - "172.16.0.0/12"
 - "192.168.0.0/16"
-auto_migrate: true
-# enabled components
-nginx:
-  enabled: false
+# redis
 redis:
-  enabled: false
-  # serviceName: nil
-  # host: '127.0.0.1'
+  serviceName: redis
   # port: 6397
   # database: 0
   # password provided as file, via Secret
-  password: {}
-    # secret:
-    # key:
+  password:
+    secret: gitlab-redis
+    key: redis-password
+# enabled components
 psql:
-  enabled: false
   shared_buffers: "1MB"
-  # host: '0.0.0.0'
   # port: '5432'
   # database: 'gitlabhq_production'
   # username: 'gitlab'
   # password: nil
   # sql_user_password: nil
-shell:
-  enabled: false
-unicorn:
-  enabled: false
-  worker:
-    timeout: 60
-    processes: 2
-  internal_api: {}
-    # host: "0.0.0.0"
-    # serviceName: "unicorn"
-sidekiq:
-  enabled: false
-workhorse:
-  enabled: false
-  # point to Unicorn
-  auth_backend: {}
-    # host: "http://0.0.0.0"
-    # serviceName: "unicorn"
-    # port: 8080
-
-gitaly:
-  enabled: false
-  # auth_token: nil
-# registry
-registry:
-  host: registry.example.local
-  port: 80
-  certificate:
-    secret: gitlab-registry
-    key: registry-auth.key
-  tokenIssuer: gitlab-issuer
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious

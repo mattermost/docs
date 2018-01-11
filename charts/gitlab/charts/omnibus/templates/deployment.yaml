@@ -23,38 +23,9 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-            {{- if .Values.nginx.enabled }}
-            - containerPort: {{ .Values.service.ports.nginx }}
-              name: og-nginx
-            {{- end }}
-            {{- if .Values.redis.enabled }}
-            - containerPort: {{ .Values.service.ports.redis }}
-              name: og-redis
-            {{- end }}
-            {{- if .Values.psql.enabled }}
             - containerPort: {{ .Values.service.ports.psql }}
               name: og-psql
-            {{- end }}
-            {{- if .Values.shell.enabled }}
-            - containerPort: {{ .Values.service.ports.shell }}
-              name: og-shell
-            {{- end }}
-            {{- if .Values.unicorn.enabled }}
-            - containerPort: {{ .Values.service.ports.unicorn }}
-              name: og-unicorn
-            {{- end }}
-            {{- if .Values.workhorse.enabled }}
-            - containerPort: {{ .Values.service.ports.workhorse }}
-              name: og-workhorse
-            {{- end }}
-            {{- if .Values.gitaly.enabled }}
-            - containerPort: {{ .Values.service.ports.gitaly }}
-              name: og-gitaly
-            {{- end }}
           volumeMounts:
-            - name: {{ .Release.Name }}-registry-secret
-              mountPath: '/etc/gitlab-registry'
-              readOnly: true
             - name: gitlab-config
               mountPath: '/etc/gitlab'
             - name: gitlab-redis
@@ -75,13 +46,6 @@ spec:
           resources:
 {{ toYaml .Values.resources | indent 12 }}
       volumes:
-      - name: {{ .Release.Name }}-registry-secret
-        secret:
-          secretName: {{ .Values.registry.certificate.secret }}
-          items:
-            - key: {{ .Values.registry.certificate.key }}
-              path: registry-certificate.crt
-          defaultMode: 0400
       - name: gitlab-config
         configMap:
           name: {{ template "fullname" . }}

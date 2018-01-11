@@ -21,7 +21,7 @@ unicorn: {}
   # port: 8080
 redis:
   # host: '0.0.0.0'
-  # serviceName: 'omnibus'
+  # serviceName: 'redis'
   password:
     secret: gitlab-redis
     key: redis-password

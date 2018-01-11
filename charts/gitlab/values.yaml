@@ -25,23 +25,6 @@ migrations:
   enabled: false
 omnibus:
   enabled: false
-  nginx:
-    enabled: false
-  redis:
-    enabled: true
-    # password:
-    #   secret: gitlab-redis
-    #   key: redis-password
-  psql:
-    enabled: true
-  shell:
-    enabled: false
-  unicorn:
-    enabled: false
-  workhorse:
-    enabled: false
-  gitaly:
-    enabled: false
 pages:
   enabled: false
 sidekiq:
