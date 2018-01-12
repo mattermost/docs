@@ -1,4 +1,4 @@
-# Configure this chart with External Database
+# Configure this chart with External PostgreSQL
 
 This document intends to provide documentation on how to configure this Helm chart with external PostgreSQL service.
 
