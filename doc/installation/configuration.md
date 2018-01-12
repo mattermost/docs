@@ -25,8 +25,8 @@ information:
 
 Set the following properties in `configuration.yaml` (in order of appearance):
 - nginx.service.loadBalancerIP: [static-ip][]
-- nginx.ingress.hosts[0].name: gitlab.helm-charts.win
-- nginx.ingress.hosts[1].name: registry.helm-charts.win
+- nginx.ingress.hosts[0].name: registry.helm-charts.win
+- nginx.ingress.hosts[1].name: gitlab.helm-charts.win
 - registry.registry.authEndpoint: 'https://gitlab.helm-charts.win'
 - gitlab.unicorn.gitlabHost: gitlab.helm-charts.win
 - gitlab.unicorn.registry.host: registry.helm-charts.win
