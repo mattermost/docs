@@ -25,8 +25,8 @@ information:
 
 Set the following properties in `configuration.yaml` (in order of appearance):
 - nginx.service.loadBalancerIP: [static-ip][]
-- nginx.ingress.hosts[0].name: gitlab.helm-charts.win
-- nginx.ingress.hosts[1].name: registry.helm-charts.win
+- nginx.ingress.hosts[0].name: registry.helm-charts.win
+- nginx.ingress.hosts[1].name: gitlab.helm-charts.win
 - nginx.ingress.tls[0].secretName: helm-charts-win-tls
 - nginx.ingress.tls[0].hosts[]: gitlab.helm-charts.win, registry.helm-charts.win
 - registry.service.type: NodePort
