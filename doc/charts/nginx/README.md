@@ -68,6 +68,14 @@ This enables or disables this dedicated [Ingress][].
 
 Default `false`, set `true` to enable.
 
+#### acme
+
+Field `acme:`, boolean
+
+This enables the use of the [kube-lego](../kube-lego/README.md) chart, if available. If enabled, this will auto-populate the requirements and host values for `kube-lego` to request certificates from Let's Encrypt.
+
+Default `false`, set `true` to enable.
+
 #### hosts
 
 Field `hosts:`, a list of items in the form below:

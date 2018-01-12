@@ -4,6 +4,7 @@
 nginx:
   service:
     # loadBalancerIP: <GKE static IP address>
+  acme: false
   serviceAccount:
     # Auto Generate the service accounts for RBAC support (requires tiller to be installed with sufficient privileges)
     autoGenerate: false
