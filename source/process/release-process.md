@@ -282,7 +282,7 @@ If a bug fix release is required, run through the following steps:
     - Test the new RC to verify fixes merged to the release branch work. Post in Release Discussion channel after testing
 2. Dev:
     - PRs for hotfixes are made to release branch
-    - Review PRs made from release branch and merge changes into both the release branch and master
+    - Review PRs made from release branch and merge changes into the release branch as required and merge the release branch back into master once per day
 3. Build:
     - Verify with Release Manager before cutting any new dot release RCs (approved fixes should be merged)
     - Push dot release RC's to CI servers and pre-release
