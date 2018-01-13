@@ -131,7 +131,7 @@ If you are actively viewing a channel (public, private, or direct message) on de
 Trigger Mobile Push Notifications When
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can also choose when to send push notifications depending on your status. By default, push notifications are sent if your status is "Online, away or offline". If "Send Mobile Push Notifications" is set as "Never", this setting is hidden. If your System Administrator has not set up push notifications, this setting will be disabled.
+You can also choose when to send push notifications depending on your status. By default, push notifications are sent if your status is "Away or offline". If "Send Mobile Push Notifications" is set as "Never", this setting is hidden. If your System Administrator has not set up push notifications, this setting will be disabled.
 
 Words That Trigger Mentions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
