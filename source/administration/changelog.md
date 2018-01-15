@@ -12,9 +12,9 @@ Release date: 2017-01-16
 
 #### Client-Side Performance
 
-- Decreased channel switching time by up to 45% by reducing post mounting time.
-- Decreased how much memory is retained following a channel switch by up to 85%, by fixing memory leaks of the `post_time.jsx` component.
-- Decreased size of the most used icons and logos by 70-80%, by running `pngquant` to remove unnecessary metadata from PNGs.
+- Decreased channel switching time up to 45% by reducing post mounting time.
+- Decreased up to 85% of the memory retained following a channel switch by fixing memory leaks of the `post_time.jsx` component.
+- Decreased size of the most used icons and logos by 70-80% by running `pngquant` to remove unnecessary metadata from PNGs.
 
 ### Improvements
 
@@ -66,7 +66,7 @@ Release date: 2017-01-16
 - Other users no longer see deleted GIF previews in reply threads.
 - Fixed an issue where channels with Japanese or Cyrillic characters couldn't be created.
 - Fixed timestamp minute display for Zoom plugins.
-- Fixed an issue where page would load infinitely long when trying to join a team with maximum capacity.
+- Fixed an issue where page would load infinitely when trying to join a team with maximum capacity.
 - Fixed an issue where channel notification preferences reverted to defaults after updating preferences in one of the channels.
 
 ### Compatibility
@@ -83,7 +83,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 **Changes to Team Edition and Enterprise Edition**:
 
 - Under `ServiceSettings` in `config.json`:
-  - Added `"EnableTutorial": true` to control whether tutorial is shown to end users after account creation. // XXX @eric Is this considered to be beta/experimental?
+  - Added `"EnableTutorial": true` to control whether tutorial is shown to end users after account creation. This setting is experimental and may be replaced or removed in a future release.
 - Under `TeamSettings` in `config.json`:
   - Added `"ExperimentalPrimaryTeam": ""` to set the primary team of the server. This setting is experimental and may be replaced or removed in a future release.
 - Under `EmailSettings` in `config.json`:
