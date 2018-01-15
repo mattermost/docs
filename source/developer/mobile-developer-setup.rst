@@ -776,3 +776,19 @@ Error message
 
 Solution
   The development version of the Mattermost app cannot be installed alongside a release version. Open ``android/app/build.gradle`` and change the applicationId from ``"com.mattermost.react.native"`` to a unique string for your app.
+
+Errors When Running 'make run-ios'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Error message
+  .. code-block:: bash
+
+    xcrun: error: unable to find utility "instruments", not a developer tool or in PATH
+
+Solution
+  - Launch XCode and agree to the terms first.
+  - Go to **Preferences -> Locations** and you'll see an option to select a version of the Command Line Tools. Click the select box and choose any version to use.
+
+  .. image:: ../../source/images/mobile/xcode_preferences.png
+
+  After this go back to the command line and run ``make run-ios`` again.
