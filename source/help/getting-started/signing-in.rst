@@ -25,8 +25,8 @@ forgot my password** on the sign in screen, or contact your System Admin
 for help resetting your password.
 
 .. image:: ../../images/sign-in_with_email.png
-  :width: 50px
-  :height: 50px
+  :width: 239px
+  :height: 232px
 
 GitLab Single Sign-On (SSO)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
