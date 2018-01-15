@@ -34,7 +34,7 @@ GitLab Single Sign-On (SSO)
 When enabled by your System Admin, you can sign in using your GitLab
 account using a one-click sign in option.
 
-.. image:: ../../images/sign-in_with_saml.png
+.. image:: ../../images/sign-in_with_gitlab.png
   :width: 239px
   :height: 232px
 
@@ -56,6 +56,10 @@ Office 365 Single Sign-On (Beta)
 When enabled by your System Admin, you can sign in using your Office 365
 account using a one-click sign in option.
 
+.. image:: ../../images/sign-in_with_office_365.png
+  :width: 239px
+  :height: 232px
+
 AD/LDAP Sign In
 ~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E10 & E20*
@@ -63,6 +67,11 @@ AD/LDAP Sign In
 When enabled by your System Admin, you can sign in with your AD/LDAP
 credentials. This lets you use the same username and password for
 Mattermost that you use for various other company services.
+
+.. image:: ../../images/sign-in_with_ldap.png
+  :width: 239px
+  :height: 232px
+
 
 SAML Single Sign-On (SSO)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -75,6 +84,10 @@ officially supports `Okta`_ and `Microsoft ADFS`_ as an identity
 provider (IDP) for SAML, but you may use other SAML IDPs as well. Please
 see `documentation`_ to learn more about configuring SAML for
 Mattermost.
+
+.. image:: ../../images/sign-in_with_saml.png
+  :width: 239px
+  :height: 232px
 
 Switching Teams
 ---------------
