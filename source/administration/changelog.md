@@ -74,7 +74,7 @@ Release date: 2017-01-16
 #### Removed and Deprecated Features
 
 - All API v3 endpoints are now deprecated, and scheduled for removal in Mattermost v5.0.
-// XXX Other deprecations from the PM channel
+- The permanent query parameter of the DELETE `/teams/{team_id}` APIv4 endpoint for permanently deleting a team is scheduled for removal in Mattermost v4.7.
 
 #### config.json
 
@@ -98,10 +98,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### API Changes
 
-// XXX @derrick can you help with this section?
-
-- It is recommended that any new integrations use API v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
+- It is required that any new integrations use API v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
 - All API v3 endpoints are now deprecated, and scheduled for removal in Mattermost v5.0.
+- The permanent query parameter of the DELETE `/teams/{team_id}` APIv4 endpoint for permanently deleting a team is scheduled for removal in Mattermost v4.7.
 
 #### RESTful API v4 Changes
 
@@ -119,15 +118,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Database Changes
 
-// XXX @derrick can you help confirm this section?
-
 **IncomingWebhooks Table:**
 - Renamed `PostUsername` column to `Username`.
 - Renamed `PostIconURL` column to `IconURL`.
-
-### WebSocket Changes
-
-// XXX @derrick can you help with this section?
 
 ### Known Issues
 
