@@ -2,7 +2,7 @@ Important Upgrade Notes
 =======================
 
 .. important::
-   API version 3 is scheduled for removal on January 16th, 2018. See `api.mattermost.com <https://api.mattermost.com/#tag/APIv3-Deprecation>`_ to learn more.
+   API version 3 is deprecated and scheduled for removal on Mattermost v5.0 release. See `api.mattermost.com <https://api.mattermost.com/#tag/APIv3-Deprecation>`_ to learn more.
 
 +----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                         |
