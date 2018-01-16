@@ -8,6 +8,8 @@ This document provides all steps in installing a complete GitLab environment via
 Before you can install GitLab in an Kubernetes cluster, make sure you have
 all required tools. See [dependencies][] document for more information.
 
+> We support working with GKE clusters v1.8.5 at the moment
+
 ## Configure
 
 ### Resources
