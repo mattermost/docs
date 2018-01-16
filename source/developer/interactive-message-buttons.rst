@@ -1,7 +1,7 @@
 .. _interactive-message-buttons:
 
-Interactive Message Buttons (Beta)
-===================================
+Interactive Message Buttons
+============================
 
 Mattermost supports interactive message buttons for `incoming <https://docs.mattermost.com/developer/webhooks-incoming.html>`_ and `outgoing webhooks <https://docs.mattermost.com/developer/webhooks-outgoing.html>`_, and for `custom slash commands <https://docs.mattermost.com/developer/slash-commands.html>`_ via actions. They help make your integrations richer by completing common tasks inside Mattermost conversations, increasing user engagement and productivity.
 

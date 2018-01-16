@@ -189,7 +189,7 @@ Messages with advanced formatting can be created by including an :doc:`attachmen
 Mention notifications
 ~~~~~~~~~~~~~~~~~~~~~~
 
-You can trigger mention notifications with your message. To trigger a mention, include *@username* in the `text` parameter of the JSON payload.
+You can trigger mention notifications with your message. To trigger a mention, include *@username* or *<userid>* in the `text` parameter of the JSON payload.
 
 Channels can be mentioned by including *@channel* or *<!channel>*. For example:
 
@@ -272,7 +272,7 @@ Known Slack compatibility issues
 
 1. Using ``icon_emoji`` to override the username is not supported.
 2. Referencing  channels using ``<#CHANNEL_ID>`` does not link to the channel.
-3. ``<!here>``, ``<!everyone>``, and ``<!group>`` are not supported.
+3. ``<!everyone>`` and ``<!group>`` are not supported.
 4. Parameters "mrkdwn", "parse", and "link_names" are not supported (Mattermost always converts markdown and automatically links @mentions).
 5. Bold formatting supplied as ``*bold*`` is not supported (must be done as ``**bold**``).
 6. Slack assumes default values for some fields if they are not specified by the integration, while Mattermost does not.
