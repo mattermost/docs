@@ -25,7 +25,7 @@ redis:
 - `redis` - the name for what the current chart needs to connect to
 - `host`  - overrides the use of serviceName, comment out by default use `0.0.0.0` as the example
 - `serviceName` - intended to be used by default instead of the host, connect using the Kubernetes Service name
-- `port` - the port to connect on. Comment out by default, and use the default port as the example. 
+- `port` - the port to connect on. Comment out by default, and use the default port as the example.
 - `password`- defines settings for the Kubernetes Secret containing the password.
 
 ### Sharing secrets
@@ -100,3 +100,76 @@ gitaly:
 ```
 
 For example, where `gitaly` was the owning chart, and the other charts need to reference the `gitaly` authToken.
+
+## Developing template helpers
+
+A charts template helpers are located in `templates/_helpers.tpl`. These contain the [named templates](https://docs.helm.sh/chart_template_guide/#declaring-and-using-templates-with-define-and-template)
+used within the chart.
+
+When using these templates, there a few things to keep in mind regarding the [golang templating syntax](https://golang.org/pkg/text/template/).
+
+### Trapping non-printed values from actions
+
+In the go templating syntax, all actions (indicated by `{{  }}`) are expected
+to print a string, with the exception of control structures (define, if, with, range) and variable assignment.
+
+This means you will sometimes need to use variable assignment to trap output that is not meant to be printed.
+
+For example:
+
+```
+{{- $details := .Values.details -}}
+{{- $_ := set $details "serviceName" "example" -}}
+{{ template "serviceHost" $details }}
+```
+
+In the above example, the we want to add some addition data to a Map before passing it onto a different function for printing.
+But we had to trap the output of the `set` function. As it was not the output we wanted to print. Otherwise we would have
+received an error.
+
+### Passing variables between control structures
+
+The go templating syntax only gives us one way to assign variables, and that is by using [shorthand assignment](https://golang.org/pkg/text/template/#hdr-Variables).
+
+As a result you cannot reassign a variable that existed outside your control structure (if/with/range), and variables declared
+within your control structure are not available outside.
+
+For example:
+
+```
+{{- define "exampleTemplate" -}}
+{{- $someVar := "default" -}}
+{{- if true -}}
+{{-   $someVar := "desired" -}}
+{{- end -}}
+{{- $someVar -}}
+{{- end -}}
+```
+
+In the above example, calling `exampleTemplate` will always return `default` because the variable that contained `desired` was
+only accessible within the `if` control structure.
+
+To work around this issue, we either avoid the problem, or use a Dictionary to hold the values we want to change.
+
+Example of avoiding the issue:
+
+```
+{{- define "exampleTemplate" -}}
+{{- if true -}}
+{{-   "desired" -}}
+{{- else -}}
+{{-   "default" -}}
+{{- end -}}
+```
+
+Example of using a Dictionary:
+
+```
+{{- define "exampleTemplate" -}}
+{{- $result := dict "value" "default" -}}
+{{- if true -}}
+{{-   $_ := set $result "value" "desired" -}}
+{{- end -}}
+{{- $result.value -}}
+{{- end -}}
+```
