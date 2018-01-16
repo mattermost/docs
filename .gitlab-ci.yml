@@ -39,6 +39,7 @@ variables:
 stages:
   - test
   - review
+  - qa
   - staging
   - canary
   - production
@@ -69,6 +70,10 @@ review:
     - install_tiller
     - create_secret
     - deploy
+    - echo "export REVIEW_ENVIRONMENT_URL=gitlab-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN" >> variables
+  artifacts:
+    paths:
+    - variables
   environment:
     name: review/$CI_COMMIT_REF_NAME
     url: https://gitlab-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN
@@ -81,6 +86,31 @@ review:
     kubernetes: active
   except:
     - master
+
+qa:
+  image: registry.gitlab.com/gitlab-org/gitlab-omnibus-builder:ruby_docker-0.0.7
+  stage: qa
+  services:
+  - docker:dind
+  variables:
+    DOCKER_DRIVER: overlay2
+    DOCKER_HOST: tcp://docker:2375
+    DOMAIN: "review-$CI_COMMIT_REF_NAME.$AUTO_DEVOPS_DOMAIN"
+    QA_SCREENSHOTS_DIR: "$CI_PROJECT_DIR/screenshots"
+  script:
+    - docker login -u gitlab-ci-token -p "$CI_JOB_TOKEN" "$CI_REGISTRY"
+    - gem install gitlab-qa
+    - source variables
+    - GITLAB_USERNAME=root GITLAB_PASSWORD=$ROOT_PASSWORD gitlab-qa Test::Instance::Any EE nightly https://$REVIEW_ENVIRONMENT_URL
+
+  artifacts:
+    when: on_failure
+    expire_in: 7d
+    paths:
+    - screenshots
+  dependencies:
+    - review
+  allow_failure: true
 
 stop_review:
   stage: cleanup
