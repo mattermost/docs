@@ -23,7 +23,7 @@ Set up your development environment for building, running, and testing Mattermos
 
   a. ``mkdir ~/go``
 
-  b. Add the following lines to your ``~/.bashprofile`` file:
+  b. Add the following lines to your ``~/.bash_profile`` file:
 
     .. code-block:: bash
 
@@ -34,7 +34,7 @@ Set up your development environment for building, running, and testing Mattermos
 
   c. Reload your bash configuration.
 
-    ``source ~/.bashprofile``
+    ``source ~/.bash_profile``
 
 5. Fork Mattermost server on GitHub from https://github.com/mattermost/mattermost-server.
 

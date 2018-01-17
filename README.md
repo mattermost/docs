@@ -35,3 +35,7 @@ These steps are to be followed only in situations of urgency or in situations wh
 1. “Needs Editor Review” label should be processed **after merge**.
 2. IMPORTANT: Person conducting editor review needs to have their suggestions **merged by author**. Do this by mentioning the pre-release.mattermost.com user name in the GitHub Pull Request.
 3. Check weekly or bi-weekly that there are no “Needs Editor Review” labels on closed Pull Requests.
+
+## Installation issues
+
+If you can't install sphinx on MacOS try `sudo pip install sphinx sphinx-autobuild sphinx_rtd_theme --ignore-installed six`.

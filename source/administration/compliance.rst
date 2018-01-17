@@ -1,7 +1,7 @@
-Compliance Reporting and Oversight
-----------------------------------
+Compliance Reporting and Oversight (E20)
+-----------------------------------------
 
-Available in `Enterprise Edition E20 <https://about.mattermost.com/pricing/>`_
+Available in `Enterprise Edition E20 <https://about.mattermost.com/pricing/>`_.
 
 This feature enables compliance exports to be produced from the System Console, with all query and download actions logged in an audit history to enable oversight and prevent unauthorized queries. 
 
@@ -9,7 +9,10 @@ Compliance exports can be filtered to date range, user account, and keyword list
 
 Daily compliance reports may also be generated, supporting integration with compliance solutions like `Global Relay <https://docs.mattermost.com/administration/compliance.html#global-relay-support>`_. 
 
-Note: By default, all Mattermost Editions retain all messages, including edits and deletes, along with all files uploaded. 
+By default, all Mattermost Editions retain all messages, including edits and deletes, along with all files uploaded. 
+
+.. note::
+  This feature will be replaced by a new :doc:`Compliance Export feature <compliance-export>` in a future release.
 
 Enabling Compliance Reporting 
 =============================

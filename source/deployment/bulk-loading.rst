@@ -15,6 +15,8 @@ You can import the following data types:
 - Users' Channel memberships
 - Users' notification preferences
 - Posts (regular, non-reply posts)
+- Posts' Replies
+- Posts' Reactions
 - Direct Message and Group Message channels
 - Direct Messages and Group Messages
 

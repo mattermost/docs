@@ -146,6 +146,10 @@ footer {
 	line-height: 24px;
 }
 
+.rst-content .highlight>pre {
+	line-height: 1.5;
+}
+
 .rst-content dl dt {
 	margin-bottom: 5px;
 	line-height: 24px;

@@ -29,6 +29,7 @@ From the directory where the Mattermost server is installed, a
 -  Modifying a channel's public/private type
 -  Migrating sign-in options
 -  Resetting multi-factor authentication for a user
+-  Creating sample data
 
 .. contents::
     :backlinks: top
@@ -64,15 +65,13 @@ On GitLab Omnibus, you must be in the following directory when you run CLI comma
 Using the CLI on Docker Install
 -------------------------------
 
-On Docker install, you must be in the ``/mattermost`` directory within your Docker container when you run CLI commands.  Note that the container name may be ``mattermostdocker_app_1`` if you installed Mattermost with ``docker-compose.yml``.
+On Docker install, the ``/mattermost/bin`` directory was added to ``PATH``, so you can use the CLI directly with the ``docker exec`` command. Note that the container name may be ``mattermostdocker_app_1`` if you installed Mattermost with ``docker-compose.yml``.
 
 **For example, to get the Mattermost version on a Docker install:**
 
   .. code-block:: bash
 
-    docker exec -it <your-mattermost-container-name> /bin/bash
-    cd /mattermost
-    bin/platform version
+    docker exec -it <your-mattermost-container-name> platform version
 
 Mattermost 3.6 and later
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -102,9 +101,10 @@ platform
   Child Commands
     -  `platform channel`_ - Management of channels
     -  `platform command`_ - Management of slash commands
+    -  `platform export`_ - Compliance export commands
     -  `platform help`_ - Generate full documentation for the CLI
     -  `platform import`_ - Import data
-    -  `platform ldap`_ - LDAP related utilities
+    -  `platform ldap`_ - AD/LDAP related utilities
     -  `platform license`_ - Licensing commands
     -  `platform reset`_ - Reset the database to initial state
     -  `platform roles`_ - Management of user roles
@@ -113,6 +113,7 @@ platform
     -  `platform user`_ - Management of users
     -  `platform version`_ - Display version information
     -  `platform config`_ - Work with the configuration file
+    -  `platform sampledata`_ - Sample data generation
 
 platform channel
 -----------------
@@ -270,8 +271,8 @@ platform channel move
   Example
     .. code-block:: none
 
-      sudo ./platform channel move 8soyabwthjnf9qibfztje5a36h
-      sudo ./platform channel move myteam:mychannel
+      sudo ./platform channel move newteam 8soyabwthjnf9qibfztje5a36h
+      sudo ./platform channel move newteam myteam:mychannel
 
 platform channel remove
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -333,6 +334,29 @@ platform command move
       sudo ./platform command move newteam oldteam:command-trigger-word
       sudo ./platform channel move newteam o8soyabwthjnf9qibfztje5a36h
 
+platform export
+------------------------
+
+  Description
+    Export data from Mattermost in a format suitable for importing into a third-party archive system.
+
+  Format
+    .. code-block:: none
+
+      platform export
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform export --format=actiance --exportFrom=1513102632
+
+  Options
+    .. code-block:: none
+
+          --format string         Output file format. Currently, only ``actiance`` is supported.
+          --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
+          --timeoutSeconds string Set how long the export should run for before timing out.
+
 platform help
 ---------------
 
@@ -373,7 +397,7 @@ platform ldap
 -------------
 
   Description
-    Commands to configure and synchronize LDAP.
+    Commands to configure and synchronize AD/LDAP.
 
   Child Command
     -  `platform ldap sync`_ - Synchronize now
@@ -382,7 +406,7 @@ platform ldap sync
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Synchronize all LDAP users now.
+    Synchronize all AD/LDAP users now.
 
   Format
     .. code-block:: none
@@ -728,11 +752,11 @@ platform user invite
       sudo ./platform user invite user@example.com myteam
       sudo ./platform user invite user@example.com myteam1 myteam2
 
-platform user migrate\_auth
+platform user migrate_auth
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Migrates all user accounts from one authentication provider to another. For example, you can upgrade your authentication provider from email to LDAP. Output will display any accounts that are not migrated successfully.
+    Migrates all user accounts from one authentication provider to another. For example, you can upgrade your authentication provider from email to AD/LDAP. Output will display any accounts that are not migrated successfully.
 
     -  ``from_auth``: The authentication service from which to migrate user accounts. Supported options: ``email``, ``gitlab``, ``saml``.
 
@@ -752,7 +776,7 @@ platform user migrate\_auth
   Options
     .. code-block:: none
 
-      --force  Ignore duplicate entries on the LDAP server.
+      --force  Ignore duplicate entries on the AD/LDAP server.
 
 platform user password
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -857,6 +881,43 @@ platform config validate
       .. code-block:: none
 
         sudo ./platform config validate
+
+platform sampledata
+-------------------
+
+  Description
+    .. versionadded:: 4.7
+      Generate sample data and populate the Mattermost database.
+
+  Format
+    .. code-block:: none
+
+      platform sampledata
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform sampledata --seed 10 --teams 4 --users 30
+
+  Options
+    .. code-block:: none
+
+          -u, --users int                      The number of sample users. (default 15)
+              --profile-images string          Optional. Path to folder with images to randomly pick as user profile image.
+          -t, --teams int                      The number of sample teams. (default 2)
+              --team-memberships int           The number of sample team memberships per user. (default 2)
+              --channels-per-team int          The number of sample channels per team. (default 10)
+              --channel-memberships int        The number of sample channel memberships per user in a team. (default 5)
+              --posts-per-channel int          The number of sample post per channel. (default 100)
+              --direct-channels int            The number of sample direct message channels. (default 30)
+              --group-channels int             The number of sample group message channels. (default 15)
+              --posts-per-direct-channel int   The number of sample posts per direct message channel. (default 15)
+              --posts-per-group-channel int    The number of sample post per group message channel. (default 30)
+          -s, --seed int                       Seed used for generating the random data (Different seeds generate different data). (default 1)
+          -b, --bulk string                    Optional. Path to write a JSONL bulk file instead of loading into the database.
+          -w, --workers int                    How many workers to run during the import. (default 2)
+
+
 
 Mattermost 3.5 and earlier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^

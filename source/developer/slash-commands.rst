@@ -21,6 +21,7 @@ Each Mattermost installation comes with some built-in slash commands that are re
     "/away", "Set your status away", "/away"
     "/offline", "Set your status offline", "/offline"
     "/online", "Set your status online", "/online"
+    "/dnd", "Set your status to Do Not Disturb", "/dnd"
     "/code *{text}*", "Display text as a code block", "/code File bugs"
     "/collapse", "Turn on auto-collapsing of image previews", "/collapse"
     "/expand", "Turn off auto-collapsing of image previews", "/expand"
@@ -30,12 +31,15 @@ Each Mattermost installation comes with some built-in slash commands that are re
     "/rename *{text}*", "Rename the channel", "/rename Developers"
     "/help", "Open the Mattermost help page", "/help"
     "/invite_people *{name@domain.com ...}*", "Send an email invite to your Mattermost team","/invite_people john@example.com"
+    "/kick *{@username}*", "Remove a member from a public or private channel", "/kick @alice"
+    "/remove *{@username}*", "Remove a member from a public or private channel", "/remove @alice"
     "/join *{channel-name}*", "Join the open channel", "/join off-topic"
     "/open *{channel-name}*", "Join the open channel", "/open off-topic"
     "/leave", "Leave the current channel", "/leave"
     "/logout", "Log out of Mattermost", "/logout"
     "/me *{message}*", "Do an action", "/me Hello World"
     "/msg *{@username}* *{message}*", "Send a Direct Message to a user", "/msg @alice hello"
+    "/groupmsg *{@username1, @username2, ...}* *{message}*", "Sends a Group Message to the specified users", "/groupmsg @alice, @bob hello"
     "/search *{text}*", "Search text in messages", "/search meeting"
     "/settings", "Open the Account Settings dialog", "/settings"
     "/shortcuts", "Display a list of keyboard shortcuts", "/shortcuts"
@@ -185,7 +189,7 @@ Messages with advanced formatting can be created by including an :doc:`attachmen
 Mention notifications
 ~~~~~~~~~~~~~~~~~~~~~~
 
-You can trigger mention notifications with your message. To trigger a mention, include *@username* in the `text` parameter of the JSON payload.
+You can trigger mention notifications with your message. To trigger a mention, include *@username* or *<userid>* in the `text` parameter of the JSON payload.
 
 Channels can be mentioned by including *@channel* or *<!channel>*. For example:
 
@@ -268,7 +272,7 @@ Known Slack compatibility issues
 
 1. Using ``icon_emoji`` to override the username is not supported.
 2. Referencing  channels using ``<#CHANNEL_ID>`` does not link to the channel.
-3. ``<!here>``, ``<!everyone>``, and ``<!group>`` are not supported.
+3. ``<!everyone>`` and ``<!group>`` are not supported.
 4. Parameters "mrkdwn", "parse", and "link_names" are not supported (Mattermost always converts markdown and automatically links @mentions).
 5. Bold formatting supplied as ``*bold*`` is not supported (must be done as ``**bold**``).
 6. Slack assumes default values for some fields if they are not specified by the integration, while Mattermost does not.

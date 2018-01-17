@@ -22,8 +22,6 @@ Step 1: Add an OAuth application to your GitLab account
 
     If your GitLab instance is not set up to use SSL, your URIs must begin with ``http://`` instead of ``https://``.
 
-  c. In the *Scopes* section, select **api**.
-
 3. Click **Save application**.
 
 Keep the GitLab window open because you need the *Application Id* and *Secret* when you configure Mattermost.

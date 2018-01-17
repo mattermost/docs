@@ -2,11 +2,13 @@ Important Upgrade Notes
 =======================
 
 .. important::
-   API version 3 is scheduled for removal on January 16th, 2018. See `api.mattermost.com <https://api.mattermost.com/#tag/APIv3-Deprecation>`_ to learn more.
+   API version 3 is deprecated and scheduled for removal on Mattermost v5.0 release. See `api.mattermost.com <https://api.mattermost.com/#tag/APIv3-Deprecation>`_ to learn more.
 
 +----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                         |
 +====================================================+=================================================================================================================================================================+
+| v4.4.0                                             | Composite database indexes were added to the ``Posts`` table. This may lead to longer ugprade times for servers with more than 1 million messages.              |
++----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v4.2.0                                             | Mattermost now handles multiple content types for integrations, including plaintext content type. If your integration suddenly prints the JSON payload data     |
 |                                                    | instead of rendering the generated message, make sure your integration is returning the ``application/json`` content-type to retain previous behavior.          |
 |                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+

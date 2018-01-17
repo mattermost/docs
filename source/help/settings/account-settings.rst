@@ -131,7 +131,7 @@ If you are actively viewing a channel (public, private, or direct message) on de
 Trigger Mobile Push Notifications When
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can also choose when to send push notifications depending on your status. By default, push notifications are sent if your status is "Online, away or offline". If "Send Mobile Push Notifications" is set as "Never", this setting is hidden. If your System Administrator has not set up push notifications, this setting will be disabled.
+You can also choose when to send push notifications depending on your status. By default, push notifications are sent if your status is "Away or offline". If "Send Mobile Push Notifications" is set as "Never", this setting is hidden. If your System Administrator has not set up push notifications, this setting will be disabled.
 
 Words That Trigger Mentions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -180,6 +180,10 @@ Teammate Name Display
 
 Configure how names are displayed in Mattermost: nickname, username or full name.
 
+Website Link Previews
+~~~~~~~~~~~~~~~~~~~~~~~~
+When available, the first web link in a message will show a preview of the website content below the message. This `setting must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#link-previews>`_.
+
 Link Previews
 ~~~~~~~~~~~~~
 
@@ -215,10 +219,17 @@ Select what language Mattermost displays in the user interface. Options include:
 - 中文 (繁體) - Traditional Chinese
 - 日本語 - Japanese
 
+Sidebar
+--------
+
+Automatically Close Direct Messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Hide Direct Message conversations with no activity for 7 days. These conversations can be reopened with the “+” button in the sidebar or by using the Channel Switcher (CTRL+K). This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental>`_.
+
 Advanced
 --------
 
-Setting to configure when messages are sent.
+Settings to configure when messages are sent.
 
 Send Messages on CTRL+ENTER
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

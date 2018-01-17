@@ -72,7 +72,7 @@ Continuing the ItemList example above, maybe our parent component doesn't care a
       /**
        * An array of item components to display
        */
-      items: PropTypes.arrayOf(PropTypes.object).isRequired
+      items: PropTypes.arrayOf(PropTypes.object).isRequired,
 
       actions: PropTypes.shape({
           /**
