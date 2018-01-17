@@ -114,7 +114,10 @@ qa:
 
 stop_review:
   stage: cleanup
+  variables:
+    GIT_CHECKOUT: "false"
   script:
+    - git checkout master
     - terraform_init
     - delete
     - terraform_down
