@@ -10,6 +10,7 @@ metadata:
     heritage: {{ .Release.Service }}
   annotations:
     "helm.sh/hook": post-install,post-upgrade
+    "helm.sh/hook-delete-policy": hook-succeeded
 spec:
   template:
     metadata:
