@@ -7,7 +7,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v4.5
 
- - **v4.5.1, release date TBD**
+ - **v4.5.1, released 2018-01-16**
    - Fixed an issue where Mattermost wouldn't load on certain versions of Firefox, including v52-54 and v57 in private mode.
  - **v4.5.0, released 2017-12-16**
    - Original 4.5.0 release
