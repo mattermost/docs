@@ -9,19 +9,19 @@ Team Edition Features
 
 1. **1-1 and group messaging**
 
-Chat in real-time with individuals and teams. See all your conversations in one place.
+Chat in real time with individuals and teams. See all your conversations in one place.
 
 .. image:: ../images/messaging.png
 
 2. **File sharing**
 
-Share documents, videos, images, and other rich media, with inline previews.
+Share documents, videos, images and other rich media with inline previews.
 
 .. image:: ../images/file_sharing.png
 
-3. **Custom Emojis**
+3. **Custom emojis**
 
-Express yourself with a full set of emojis, and add your own custom ones.
+Express yourself with a full set of emojis and add your own custom ones.
 
 .. image:: ../images/custom_emojis.png
 
@@ -51,7 +51,7 @@ Collaborate with your teams on the go with rich native mobile apps, available fo
 
 8. **Desktop applications**
 
-Use the full featured web interface, or native client apps for Windows, OSX, and Linux.
+Use the full-featured web interface, or native client apps for Windows, OSX, and Linux.
 
 .. image:: ../images/desktop_apps.png
 
@@ -88,7 +88,7 @@ Streamline user provisioning and permissions with directory service integration.
 
 .. image:: ../images/AD_LDAP_SSO.png
 
-2. **Advanced Permissions**
+2. **Advanced permissions**
 
 Set detailed custom policies and granular permissions for your system.
 
@@ -112,7 +112,7 @@ Enable single sign-on with SAML integration to your directory service.
 
 .. image:: ../images/SAML_based_SSO.png
 
-6. **Performance Monitoring**
+6. **Performance monitoring**
 
 Get detailed service monitoring, with Prometheus and Grafana integration.
 
@@ -120,29 +120,29 @@ Get detailed service monitoring, with Prometheus and Grafana integration.
 
 7. **High availability**
 
-Scale to support the entire organization with high availability clustering.
+Scale to support the entire organization with high-availability clustering.
 
 .. image:: ../images/network_diagram.png
 
-8. **Compliance Reporting**
+8. **Compliance reporting**
 
 Meet compliance and governance requirements with Global Relay and Actiance integration.
 
 .. image:: ../images/compliance_reports.png
 
-9. **Data Retention**
+9. **Data retention**
 
 Set custom policies for how long messages and file uploads are kept in channels and direct messages.
 
 .. image:: ../images/data_retention.png
 
-10. **Custom Branding**
+10. **Custom branding**
 
-Customize your system to match your company identity, and even completely white-label the user experience.
+Customize your system to match your company identity and even completely white-label the user experience.
 
 .. image:: ../images/custom_branding.png
 
-11. **Enterprise Search**
+11. **Enterprise search**
 
 Provide instantaneous full text search with Elasticsearch integration.
 
