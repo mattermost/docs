@@ -30,7 +30,7 @@ The best way to discuss opening a Help Wanted ticket with the core team is by [s
 
 Once you have a ticket: 
 
-1. Follow the [developer setup instructions](http://docs.mattermost.com/developer/developer-setup.html) to install Mattermost.
+1. Follow the [developer setup instructions](https://docs.mattermost.com/developer/dev-setup.html) to install Mattermost.
 
 2. Create a branch in your mattermost-server or mattermost-webapp repository with `<branch name>` set to the ID of the ticket you're working on, for example, `PLT-394`, using the command: `git checkout -b <branch name>`
 

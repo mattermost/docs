@@ -335,11 +335,11 @@ Enable sending team invites from
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Set policy on who can invite others to a team using the **Send Email Invite**, **Get Team Invite Link**, and **Add Members to Team** options on the main menu. If **Get Team Invite Link** is used to share a link, you can expire the invite code from **Team Settings > Invite Code** after the desired users have joined the team. Options include:
 
-**All team members**: Allows any team member to invite others using an email invitation or team invite link.
+**All team members**: Allows any team member to invite others using an email invitation, team invite link or by adding members to the team directly.
 
-**Team and System Admins**: Hides the email invitation and team invite link in the Main Menu from users who are not Team Admins or System Admins.
+**Team and System Admins**: Hides the email invitation, team invite link, and the add members to team buttons in the Main Menu from users who are not Team Admins or System Admins.
 
-**System Admins**: Hides the email invitation and team invite link in the Main Menu from users who are not System Admins.
+**System Admins**: Hides the email invitation, team invite link, and add members to team buttons in the Main Menu from users who are not System Admins.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictTeamInvite": "all"`` with options ``all``, ``team_admin`` and ``system_admin`` for above settings respectively. |
@@ -3102,6 +3102,32 @@ Skip Server Certificate Verification
 | This feature's ``config.json`` setting is ``"SkipServerCertificateVerification": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
+Login Button Color
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Specify the color of the email login button for white labeling purposes. Use a hex code with a #-sign before the code.
+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
++-------------------------------------------------------------------------------------------------------------------------------+
+
+Login Button Border Color
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Specify the color of the email login button border for white labeling purposes. Use a hex code with a #-sign before the code.
+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LoginButtonBorderColor": ""`` with string input.                                 |
++-------------------------------------------------------------------------------------------------------------------------------+
+
+Login Button Text Color
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Specify the color of the email login button text for white labeling purposes. Use a hex code with a #-sign before the code.
+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
++-------------------------------------------------------------------------------------------------------------------------------+
+
+________
+
 GitLab Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Scope
@@ -3135,6 +3161,64 @@ Standard setting for OAuth to determine the scope of information shared with OAu
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Scope": "User.Read"`` with string input                                                                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+________
+
+AD/LDAP Settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Login Button Color
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Specify the color of the AD/LDAP login button for white labeling purposes. Use a hex code with a #-sign before the code.
+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
++-------------------------------------------------------------------------------------------------------------------------------+
+
+Login Button Border Color
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Specify the color of the AD/LDAP login button border for white labeling purposes. Use a hex code with a #-sign before the code.
+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LoginButtonBorderColor": ""`` with string input.                                 |
++-------------------------------------------------------------------------------------------------------------------------------+
+
+Login Button Text Color
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Specify the color of the AD/LDAP login button text for white labeling purposes. Use a hex code with a #-sign before the code.
+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
++-------------------------------------------------------------------------------------------------------------------------------+
+
+________
+
+SAML Settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Login Button Color
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Specify the color of the SAML login button for white labeling purposes. Use a hex code with a #-sign before the code.
+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
++-------------------------------------------------------------------------------------------------------------------------------+
+
+Login Button Border Color
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Specify the color of the SAML login button border for white labeling purposes. Use a hex code with a #-sign before the code.
+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LoginButtonBorderColor": ""`` with string input.                                 |
++-------------------------------------------------------------------------------------------------------------------------------+
+
+Login Button Text Color
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Specify the color of the SAML login button text for white labeling purposes. Use a hex code with a #-sign before the code.
+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
++-------------------------------------------------------------------------------------------------------------------------------+
 
 ________
 
@@ -3285,6 +3369,17 @@ There are a number of settings considered "experimental" and these may be replac
 Service Settings
 ~~~~~~~~~~~~~~~~~
 
+Enable Tutorial (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Users are prompted with a tutorial when they open Mattermost for the first time after account creation.
+
+**False**: The tutorial is disabled. Users are placed in Town Square when they open Mattermost for the first time after account creation.
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``EnableTutorial": true`` with options ``true`` and ``false`` for above settings respectively.   | 
++--------------------------------------------------------------------------------------------------------------------------------------------+
+
 Allow Authentication Transfer (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -3320,6 +3415,14 @@ Enable Preview Features (Experimental)
 
 Team Settings
 ~~~~~~~~~~~~~~
+
+Primary Team (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The team URL of the primary team of which users on the server are members. When a primary team is set, the options to join other teams or leave the primary team are disabled. 
+
++-----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalPrimaryTeam": ""`` with string input.                  |
++-----------------------------------------------------------------------------------------------------------------+
 
 Enable X to Leave Channels from Left-Hand Sidebar (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

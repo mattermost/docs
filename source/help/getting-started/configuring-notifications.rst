@@ -48,7 +48,8 @@ closed or have not had any browser activity for a short time.
 Desktop Notifications
 -------------------------------------
 
-These are browser notifications that appear in the corner of your main monitor for activity in channels you are not actively viewing. By default, these notifications are sent for all unread messages while Mattermost is open. Desktop notifications are available on Edge, Firefox, Safari, Chrome and `Mattermost Desktop Apps <https://about.mattermost.com/download/#mattermostApps>`_.
+These are browser notifications that appear in the corner of your main monitor for activity in channels you are not actively viewing. By default, these notifications are sent for any mentions or `other selected
+keywords <https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions>`__. Desktop notifications are available on Edge, Firefox, Safari, Chrome and `Mattermost Desktop Apps <https://about.mattermost.com/download/#mattermostApps>`_.
 
 -  Configure when desktop notifications are sent from **Account
    Settings** > **Notifications** > **Desktop Notifications** > **Send
@@ -79,8 +80,7 @@ Mobile Push Notifications
 
 If the Mattermost Android or iOS app is installed, push notifications
 can be sent to your mobile device. By default, these notifications are
-sent for mentions in any channel or direct message channel that is not
-being viewed on desktop.
+sent when you are away or offline for mentions in any channel that is not being viewed on desktop.
 
 -  Configure when push notifications are sent from **Account Settings**
    > **Notifications** > **Mobile Push Notifications** > **Send mobile

@@ -4,6 +4,144 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
+## Release v4.6
+
+Release date: 2017-01-16
+
+### Highlights
+
+#### Client-Side Performance
+
+- Decreased channel switching time up to 45% by reducing post mounting time.
+- Decreased up to 85% of the memory retained following a channel switch by fixing memory leaks of the `post_time.jsx` component.
+- Decreased size of the most used icons and logos by 70-80% by running `pngquant` to remove unnecessary metadata from PNGs.
+
+### Improvements
+
+#### Web User Interface
+
+- Added a loading indicator while pinned posts and flagged posts lists are loading.
+- Added a loading indicator to MFA sign in button.
+- Added a tooltip for the '+' button when adding emoji reactions.
+- Channel switcher (CTRL/CMD+K) now filters by usernames, full names and nicknames.
+- Channel links are now rendered in the channel header.
+- File names are now shown in attachment previews.
+
+#### Plugins (Beta)
+
+- Plugins now support slash commands.
+- Zoom plugin now supports an on-premise Zoom server.
+
+#### Notifications
+
+- Updated default notification settings for new accounts to provide a better onboarding experience. Each of these can be configured in Account Settings. In particular, the updated default settings include:
+   - Desktop notifications only sent for mentions and direct messages.
+   - Mobile push notifications only sent when the user is away or offline, not when online.
+   - Mentions of the user's first name doesn't trigger mentions.
+
+#### 508 Compliance
+
+- Default language is now declared in HTML for Mattermost webpages.
+- Position of status indicators and reply icons updated when no CSS is rendered.
+- Use programmatically identifiable headings for team and channel name.
+
+#### Administration
+
+- Incoming webhook display name is now included in the post.Props field for better auditing.
+- System Admins can now reset their own password from the System Console users list.
+
+### Bug Fixes
+
+- Username updates are now immediately visible across all browser tabs.
+- Server logs no longer contain info messages about initializing plugins when plugins are disabled.
+- Fixed Mattermost not loading on Firefox v52.
+- Fixed issues with user at-mention autocomplete when using Tab multiple times.
+- Fixed an issue where typing an emoji reaction didn't add it to recently used emojis list.
+- OAuth and SAML users can now be deactivated from the Mattermost System Console, assuming they are also deactivated in the SSO provider.
+- Fixed email address validation for Microsoft Outlook formatted email addresses.
+- Fixed an issue where posts sometimes didn't send on iOS Classic app.
+- Team name can no longer be edited to be only one character long.
+- Editing a message to remove all text no longer deletes the message if it contains a file attachment.
+- Fixed an issue where searching for a channel using the second or third word in the name didn't work.
+- Other users no longer see deleted GIF previews in reply threads.
+- Fixed an issue where channels with Japanese or Cyrillic characters couldn't be created.
+- Fixed timestamp minute display for Zoom plugins.
+- Fixed an issue where page would load infinitely when trying to join a team with maximum capacity.
+- Fixed an issue where channel notification preferences reverted to defaults after updating preferences in one of the channels.
+
+### Compatibility
+
+#### Removed and Deprecated Features
+
+- All API v3 endpoints are now deprecated, and scheduled for removal in Mattermost v5.0.
+- The permanent query parameter of the DELETE `/teams/{team_id}` APIv4 endpoint for permanently deleting a team is scheduled for removal in Mattermost v4.7.
+
+#### config.json
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+**Changes to Team Edition and Enterprise Edition**:
+
+- Under `ServiceSettings` in `config.json`:
+  - Added `"EnableTutorial": true` to control whether tutorial is shown to end users after account creation. This setting is experimental and may be replaced or removed in a future release.
+- Under `TeamSettings` in `config.json`:
+  - Added `"ExperimentalPrimaryTeam": ""` to set the primary team of the server. This setting is experimental and may be replaced or removed in a future release.
+- Under `EmailSettings` in `config.json`:
+  - Added `"LoginButtonColor": ""`, `"LoginButtonBorderColor": ""` and `"LoginButtonTextColor": ""` to set the style of the email login button for white labelling purposes.
+
+**Additional Changes to Enterprise Edition**:
+
+- Under `LdapSettings` in `config.json`:
+  - Added `"LoginButtonColor": ""`, `"LoginButtonBorderColor": ""` and `"LoginButtonTextColor": ""` to set the style of the LDAP login button for white labelling purposes.
+- Under `SamlSettings` in `config.json`:
+  - Added `"LoginButtonColor": ""`, `"LoginButtonBorderColor": ""` and `"LoginButtonTextColor": ""` to set the style of the SAML login button for white labelling purposes.
+
+### API Changes
+
+- It is required that any new integrations use API v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
+- All API v3 endpoints are now deprecated, and scheduled for removal in Mattermost v5.0.
+- The permanent query parameter of the DELETE `/teams/{team_id}` APIv4 endpoint for permanently deleting a team is scheduled for removal in Mattermost v4.7.
+
+#### RESTful API v4 Changes
+
+- Added `/users/{user_id}/auth` to update a user's authentication method. This can be used to change them to/from LDAP authentication, for example.
+
+#### Plugin API Changes (Beta)
+
+- Added `RegisterCommand` to register a custom slash command. When the command is triggered, your plugin can fulfil it via the `ExecuteCommand` hook.
+- Added `UnregisterCommand` to unregister a command previously registered via `RegisterCommand`.
+- Added `GetChannelMember` to get a channel membership for a user.
+
+#### Plugin Hook Changes (Beta)
+
+- Added `ExecuteCommand` hook to execute a command that was previously registered via the `RegisterCommand` plugin API.
+
+### Database Changes
+
+**IncomingWebhooks Table:**
+- Renamed `PostUsername` column to `Username`.
+- Renamed `PostIconURL` column to `IconURL`.
+
+### Known Issues
+
+- Google login fails on the Classic mobile apps.
+- User can receive a video call from another browser tab while already on a call.
+- Jump link in search results does not always jump to display the expected post.
+- Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+- Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+- Searching with Elasticsearch enabled may not always highlight the searched terms.
+- Team sidebar on desktop app does not update when channels have been read on mobile.
+- Channel scroll position flickers while images and link previews load.
+- CTRL/CMD+U shortcut to upload a file doesn't work on Firefox.
+- Numbered lists can sometimes extend beyond the normal post area.
+- Slack import through the CLI fails if email notifications are enabled.
+- Letters are skipped in a few dialogs when using Korean keyboard in IE11.
+- Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+- Deleting a team via the API breaks the user interface.
+
+### Contributors
+
+- [amyblais](https://github.com/amyblais), [AndersonWebStudio](https://github.com/AndersonWebStudio), [asaadmahmood](https://github.com/asaadmahmood), [ccbrown](https://github.com/ccbrown), [coreyhulen](https://github.com/coreyhulen), [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [csduarte](https://github.com/csduarte), [cvitter](https://github.com/cvitter), [dlahn](https://github.com/dlahn), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [g3d](https://github.com/g3d), [grundleborg](https://github.com/grundleborg), [hmhealey](https://github.com/hmhealey), [it33](https://github.com/it33), [james-mm](https://github.com/james-mm), [jarredwitt](https://github.com/jarredwitt), [jespino](https://github.com/jespino), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [letsila](https://github.com/letsila), [lfbrock](https://github.com/lfbrock), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lindy65](https://github.com/lindy65), [lisakycho](https://github.com/lisakycho), [liusy182](https://github.com/liusy182), [LordVeovis](https://github.com/LordVeovis), [Matterchen](https://github.com/Matterchen), [mkraft](https://github.com/mkraft), [MusikPolice](https://github.com/MusikPolice), [panditsavitags](https://github.com/panditsavitags), [pichouk](https://github.com/pichouk), [pixelbrackets](https://github.com/pixelbrackets), [pruthvip](https://github.com/pruthvip), [R-Wang97](https://github.com/R-Wang97), [saturninoabril](https://github.com/saturninoabril), [skvale](https://github.com/skvale), [stephenkiers](https://github.com/stephenkiers), [sudheerDev](https://github.com/sudheerDev), [sumantro93](https://github.com/sumantro93), [tayre](https://github.com/tayre), [tborg](https://github.com/tborg), [tejasbubane](https://github.com/tejasbubane), [watadarkstar](https://github.com/watadarkstar), [yuya-oc](https://github.com/yuya-oc)
 
 ## Release v4.5
 
@@ -26,31 +164,44 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ### Improvements
 
-#### Web UI
+#### Web User Interface
 - `CTRL/CMD` + `/` now toggles the keyboard shortcuts dialog.
 - Link previews now appear in the right-hand side in comment threads.
 - Timestamp permalinks now open in the current view on desktop and browser.
 - Pinned posts are now sorted newest to oldest.
 - Updated markdown to better handle non-Latin characters in URLs.
+- Added WebRTC call icon to desktop mobile view header.
+- Added a '+' sign to quickly add emoji reactions to a post.
+- Added support for different emoji skintones.
+- Added inline playback for GIF attachments.
 
 #### Integrations
 
-- Add option for an outgoing webhooks to reply to the posted message as a comment.
-- JIRA plugin is now bundled as a prepackaged plugin manageable from the System Console > Plugins > Management
+- Added an option for an outgoing webhook to reply to the posted message as a comment.
+- JIRA plugin is now bundled as a prepackaged plugin manageable from the System Console > Plugins > Management.
+- Added support for mentions with <@userid>, <!channel>, <!all> and <!here> in webhook posts.
+- Personal access tokens can now be temporarily deactivated in the Account Settings.
 
 #### Channels
 
 - Direct Message channels with deactivated users are now hidden in the sidebar and can be reopened from the **More...**  Direct Messages list.
+- You can now open a direct message channel with yourself.
 
 #### Notifications
 
 - Removed unnecessary log messages posted when pending email notifications are deleted because a user comes online before the batch is sent.
 - Desktop notification icon has been updated on Edge browsers.
 
+#### Keyboard Shortcuts
+
+- Added a `/groupmsg` command to start a new group message channel.
+- Added CTRL+SHIFT+L to set focus to the message input box.
+
 #### System Console
 
 - Added a confirm modal to the Data Retention settings page.
 - Added settings pages for uploading and managing plugins in the System Console > Plugins (Beta) section.
+- Added the ability to revoke a user's sessions from the System Console.
 
 ### Bug Fixes
 
@@ -68,6 +219,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 - Fixed an issue where the OAuth ClientID and Secret values were missing after setup.
 - Emoji picker now works when the right-hand side is expanded.
 - Error messages in the System Console user list no longer breaks the user interface.
+- Fixed an issue where only System Admins could edit OAuth apps even if integration creation was not restricted to admins.
+- Fixed an issue where "New messages v" bubble didn't always clear in a fresh direct message channel.
+- Fixed channel preferences not restoring after closing and reopening a direct or group message channel.
 
 ### Compatibility
 
@@ -119,7 +273,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Channel scroll position flickers while images and link previews load.
 - CTRL/CMD+U shortcut to upload a file doesn't work on Firefox.
 - Profile pictures and usernames don't immediately update across tabs or in the right-hand side comment threads.
-- Fixed an issue where only System Admins could edit OAuth apps even if integration creation was not restricted to admins.
 - Numbered lists can sometimes extend beyond the normal post area.
 - Typing an emoji reaction does not add it to recently used emojis.
 - Server logs contain messages about initializing plugins even when plugins are disabled.
@@ -203,7 +356,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 /marked
 
 - [hmhealey](https://github.com/hmhealey)
-
 
 ## Release v4.4.5
 
