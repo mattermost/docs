@@ -6,11 +6,11 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v4.7
 
-Release date: 2017-02-16
+Release date: 2018-02-16
 
 ## Release v4.6
 
-Release date: 2017-01-16
+Release date: 2018-01-16
 
 ### Highlights
 
