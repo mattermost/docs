@@ -183,7 +183,7 @@ stable:
     paths:
     - variables
   environment:
-    name: stable
+    name: production
     url: https://gitlab.$AUTO_DEVOPS_DOMAIN
   variables:
     DOMAIN: ".$AUTO_DEVOPS_DOMAIN"
