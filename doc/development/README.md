@@ -123,9 +123,9 @@ For example:
 {{ template "serviceHost" $details }}
 ```
 
-In the above example, the we want to add some addition data to a Map before passing it onto a different function for printing.
-But we had to trap the output of the `set` function. As it was not the output we wanted to print. Otherwise we would have
-received an error.
+In the above example, we want to add some additional data to a Map before passing it to a template function for output.
+We trapped the output of the `set` function by assigning it to the the `$_` variable. Without this assignment, the
+template would try to output the result of `set` (which returns the Map it modified) as a string.
 
 ### Passing variables between control structures
 
