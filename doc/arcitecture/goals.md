@@ -38,11 +38,11 @@ to manage settings via the `values.yaml` file.
 
 We plan to offer a three tiered set of Helm Charts
 
-![Helm Chart Structure](../../images/charts.png)
+![Helm Chart Structure](../images/charts.png)
 
 ## Redis and Postgres Charts
 
 We will also likely need to create specific charts for Redis and Postgres.
 One reason is that there is a bug with variable handling between parent and
-child charts, but also because we will need to include the respective exporters
+child charts, but also because we will need to include the respective Prometheus exporters
 as well.
