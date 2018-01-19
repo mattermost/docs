@@ -1933,7 +1933,7 @@ Enable Plugin Uploads
 **False**: Disables plugin uploads on your Mattermost server.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableUploads": true`` with options ``true`` and ``false`` for above settings respectively.                             | 
+| This feature's ``config.json`` setting is ``"EnableUploads": false`` with options ``true`` and ``false`` for above settings respectively.                            | 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Management
