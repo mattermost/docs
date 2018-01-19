@@ -86,14 +86,14 @@ $ kubectl create secret generic gitlab-redis --from-literal=redis-password=<pass
 Generate a random secret for GitLab Shell, and use it to create the secret
 
 ```
-$ ruby -e "require 'securerandom'; print SecureRandom.hex(64)" > ./shell_secret
+$ head -c 512 /dev/urandom | tr -cd 'a-zA-Z0-9' | head -c 64 > ./shell_secret
 $ kubectl create secret generic gitlab-shell-secret --from-file=secret=shell_secret
 ```
 
 ### Gitaly Secret
 
 ```
-$ ruby -e "require 'securerandom'; print SecureRandom.hex(64)" > ./gitaly_secret
+$ head -c 512 /dev/urandom | tr -cd 'a-zA-Z0-9' | head -c 64 > ./gitaly_secret
 $ kubectl create secret generic gitaly-secret --from-file=token=gitaly_secret
 ```
 
