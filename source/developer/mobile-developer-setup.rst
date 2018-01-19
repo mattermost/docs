@@ -591,7 +591,7 @@ Now that you have created the Firebase project and the app and downloaded the *g
 
  - Replace ``android/app/google-services.json`` with the one you downloaded earlier
  - Open ``android/app/google-services.json``, find the project_number and copy the value
- - Open ``android/app/AndroidManifest.xml`` file, look for the line ``<meta-data android:name="com.wix.reactnativenotifications.gcmSenderId" android:value="184930218130\0"/>`` and replace the value with the one that you copied in the previous step
+ - Open ``android/app/src/main/AndroidManifest.xml`` file, look for the line ``<meta-data android:name="com.wix.reactnativenotifications.gcmSenderId" android:value="184930218130\0"/>`` and replace the value with the one that you copied in the previous step
 
 .. important::
   Leave the trailing \\0 intact
