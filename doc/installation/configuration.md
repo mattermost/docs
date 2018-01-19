@@ -3,7 +3,7 @@
 Based on the [example-config.yaml](../example-config.yaml) file, you can generate
 your own yaml template.
 
-For this example, we will use domain `helm-charts.win`, and host names based on that: `gitlab.helm-charts.win`, `registry.helm-charts.win`.
+For this example, we will use domain `example.local`, and expect our hostnames to be: `gitlab.example.local`, `registry.example.local`.
 
 ```
 $ cp doc/example-config.yaml configuration.yaml
@@ -23,24 +23,63 @@ To create the create the encoded form of the PostgreSQL password, we'll note our
 Next, we are replacing the contents of the `configuration.yaml` with valid
 information:
 
-Set the following properties in `configuration.yaml` (in order of appearance):
-- nginx.service.loadBalancerIP: [static-ip][]
-- global.hosts.domain=helm-charts.win
-- global.hosts.https=true
-- gitlab.unicorn.psql.password: SQLPassword
-- gitlab.sidekiq.psql.password: SQLPassword
-- gitlab.migrations.initialRootPassword: initialRootPassword
-- gitlab.migrations.psql.password: SQLPassword
-- gitlab.omnibus.psql.sql_user_password: encodedSQLPassword
+Set the following properties in `configuration.yaml`
+
+> *Note:* Find and edit each property. They should already exist, but will need their value set, and may need to be uncommented.
+
+```YAML
+global:
+  hosts:
+    domain: example.local
+    https: true
+
+nginx:
+  service:
+    loadBalancerIP: <static ip>
+
+gitlab:
+  unicorn:
+    psql:
+      password: SQLPassword
+
+  sidekiq:
+    psql:
+      password: SQLPassword
+
+  migrations:
+    psql:
+      password: SQLPassword
+    initialRootPassword: initialRootPassword
+
+  omnibus:
+    psql:
+      sql_user_password: encodedSQLPassword
+```
 
 If you are using [Let's Encrypt certificates](secrets.md#lets-encrypt):
-- nginx.ingress.acme: true
 
-If you are using [Wildcard certificates](secrets.md#wildcard-certificates):
-- global.hosts.tls.secretName: helm-charts-win-tls
+```YAML
+nginx:
+  ingress:
+    acme: true
+```
+
+Or If you are using [Wildcard certificates](secrets.md#wildcard-certificates):
+
+```YAML
+global:
+  hosts:
+    tls:
+      secretName: example-local-tls
+```
 
 If you are using a cluster with [RBAC](rbac.md):
-- nginx.serviceAccount.autoGenerate: true
+
+```YAML
+nginx:
+  serviceAccount:
+    autoGenerate: true
+```
 
 Now that the template is generated, we can proceed [to deployment](README.md#deploy).
 
