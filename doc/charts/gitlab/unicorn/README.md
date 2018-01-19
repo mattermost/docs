@@ -10,7 +10,12 @@ This chart depends on Redis, PostgreSQL, Gitaly, and Registry services, either a
 
 # Configuration
 
-The `unicorn` chart is configured in two parts: External Services, and Chart Settings.
+The `unicorn` chart is configured in three parts: Global Settings, External Services, and Chart Settings.
+
+## Global Settings
+
+We share some common global settings among our charts. See the [Globals Documentation][globals] for common configuration
+options, such as GitLab and Registry hostnames.
 
 ## External Services
 
@@ -129,7 +134,9 @@ registry:
 
 #### host
 
-The external hostname to use for providing docker commands to users in the GitLab UI.
+The external hostname to use for providing docker commands to users in the GitLab UI. Falls back to the value set in the
+`registryHost` template. Which determines the registry hostname based on the values set in `global.hosts`. See the [Globals Documentation][globals]
+for more information.
 
 #### port
 
@@ -181,10 +188,6 @@ The following values are used to configure the Unicorn Pods.
 
 Field `replicaCount` is an integer, controlling the number of Unicorn instances to create in the deployment. This defaults to `1`.
 
-#### gitlabHost
-
-The external GitLab hostname to use for providing git commands to users in the GitLab UI, and generating links to assets.
-
 ### GitLab Shell
 
 GitLab Shell uses an Auth Token in its communication with Unicorn. Share the token with GitLab Shell and Unicorn using a shared Secret.
@@ -205,3 +208,4 @@ The `authToken` attribute for Gitaly has to sub keys:
 
 [registry]: https://hub.docker.com/_/registry/
 [kubernetes-secret]: https://kubernetes.io/docs/concepts/configuration/secret/
+[globals]: ../../globals.md

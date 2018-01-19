@@ -29,7 +29,7 @@ data:
       secret: {{ default $httpSecret .Values.httpSecret }}
     auth:
       token:
-        realm: {{ .Values.authEndpoint }}/jwt/auth
+        realm: {{ template "registry.authEndpoint" . }}/jwt/auth
         service: {{ .Values.tokenService }}
         issuer: {{ .Values.tokenIssuer | quote }}
         rootcertbundle: /etc/registry-secret/{{ .Values.certificate.key }}

@@ -87,6 +87,8 @@ The value should include the protocol and hostname only. The chart template will
 
 Example: `authEndpoint: "https://gitlab.example.local"`
 
+By default this field is populated with gitlab hostname configuration set using the [Global Settings][globals].
+
 #### certificate
 
 Field `certificate` is a map containing two items: `secret` and `key`.
@@ -129,5 +131,6 @@ external service other than the `filesystem` driver, such as `s3`, `gcs`, `azure
 [Deployment]: ../../../charts/registry/templates/deployment.yaml
 [ConfigMap]: ../../../charts/registry/templates/configmap.yaml
 [values.yml]: ../../../charts/registry/values.yaml
+[globals]: ../globals.md
 
 [kubernetes-secret]: https://kubernetes.io/docs/concepts/configuration/secret/

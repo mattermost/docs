@@ -9,6 +9,15 @@ service:
   internalPort: 5000
   clusterIP: '0.0.0.0'
 
+global:
+  hosts:
+    domain: example.local
+    hostSuffix:
+    https: false
+    gitlab: {}
+      #name: gitlab.example.local
+      #https: false
+
 # define some sane resource requests and limitations
 resources: {}
   # limits:
@@ -23,7 +32,7 @@ enabled: true
 # Will be auto-populated if not present (`{{ randAlphaNum 128 | b64enc | quote }}`)
 httpSecret: ''
 # Protocol/Host only. '/jwt/auth' will be appended.
-authEndpoint: 'https://gitlab.example.local'
+authEndpoint:
 # Do not change this
 tokenService: 'container_registry'
 # This must match your GitLab Rails configuration

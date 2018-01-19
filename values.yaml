@@ -4,13 +4,6 @@
 nginx:
   ingress:
     enabled: true
-    hosts:
-      - name: registry.example.local
-        serviceName: registry
-        servicePort: registry
-      - name: gitlab.example.local
-        serviceName: unicorn
-        servicePort: workhorse
 
 registry:
   enabled: false
@@ -25,3 +18,8 @@ gitlab:
     enabled: false
   gitlab-shell:
     enabled: false
+
+global:
+  hosts:
+    domain: example.local
+    https: false

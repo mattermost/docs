@@ -2,6 +2,15 @@
 {{- $serviceName := include "fullname" . -}}
 {{- $servicePort := .Values.service.externalPort -}}
 {{- $releaseName := .Release.Name -}}
+{{- $ingressHosts := .Values.ingress.hosts -}}
+{{- $registryHost := .Values.global.hosts.registry -}}
+{{- $_ := set $registryHost "name" (include "registryHost" .) -}}
+{{- $ingressHosts := prepend $ingressHosts $registryHost -}}
+{{- $registryTLSSecret := include "registryTLSSecret" . -}}
+{{- $gitlabHost := .Values.global.hosts.gitlab -}}
+{{- $_ := set $gitlabHost "name" (include "gitlabHost" .) -}}
+{{- $ingressHosts := prepend $ingressHosts $gitlabHost -}}
+{{- $gitlabTLSSecret := include "gitlabTLSSecret" . -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -20,7 +29,7 @@ metadata:
   {{- end }}
 spec:
   rules:
-    {{- range $host := .Values.ingress.hosts }}
+    {{- range $host := $ingressHosts }}
     - host: {{ $host.name }}
       http:
         paths:
@@ -30,17 +39,27 @@ spec:
               servicePort: {{ $host.servicePort }}
     {{- end -}}
 
-  {{- if or .Values.ingress.acme .Values.ingress.tls }}
+  {{- if or .Values.ingress.acme .Values.ingress.tls $registryTLSSecret $gitlabTLSSecret }}
   tls:
   {{- end }}
   {{- if .Values.ingress.acme }}
     - hosts:
-      {{- range $host := .Values.ingress.hosts }}
+      {{- range $host := $ingressHosts }}
       - {{ $host.name }}
       {{- end }}
       secretName: {{ .Release.Name }}-acme-tls
   {{- end }}
-  {{- if .Values.ingress.tls }}
+  {{- if $gitlabTLSSecret }}
+    - hosts:
+      - {{ template "gitlabHost" . }}
+      secretName: {{ $gitlabTLSSecret }}
+  {{- end }}
+  {{- if $registryTLSSecret }}
+    - hosts:
+      - {{ template "registryHost" . }}
+      secretName: {{ $registryTLSSecret }}
+  {{- end }}
+  {{- if $.Values.ingress.tls }}
 {{ toYaml .Values.ingress.tls | indent 4 }}
   {{- end -}}
 {{- end -}}

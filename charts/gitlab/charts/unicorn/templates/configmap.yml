@@ -31,7 +31,7 @@ data:
   gitlab.yml.erb: |
     production: &base
       gitlab:
-        https: false # Set to true if using HTTPS, see installation.md#using-https for additional HTTPS configuration details
+        https: {{ hasPrefix "https://" (include "gitlabUrl" .) }}
         trusted_proxies:
         email_from: example@example.com
         email_display_name: GitLab
@@ -57,7 +57,6 @@ data:
       mattermost:
         enabled: false
       gravatar:
-      registry:
       gitlab_ci:
       ldap:
         enabled: false
@@ -96,7 +95,7 @@ data:
       ## Registry Integration
       registry:
         enabled: true
-        host: {{ .Values.registry.host }}
+        host: {{ template "unicorn.registry.host" . }}
         port: {{ default 443 .Values.registry.port }}
         api_url: {{ default "http" .Values.registry.api.protocol }}://{{ template "unicorn.registry.api.host" . }}:{{ default 5000 .Values.registry.api.port }}
         key: /etc/gitlab-registry/gitlab-registry.key
