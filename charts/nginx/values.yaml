@@ -31,6 +31,28 @@ proxyBodySize: "512m"
 hstsIncludeSubdomains: false
 serverNameHashBucketSize: 256
 
+global:
+  hosts:
+    domain: example.local
+    hostSuffix:
+    https: false
+    tls: {}
+      # secretName:
+    gitlab:
+      #name: gitlab.example.local
+      #https: false
+      serviceName: unicorn
+      servicePort: workhorse
+      tls: {}
+        # secretName:
+    registry:
+      #name: registry.example.local
+      #https: false
+      serviceName: registry
+      servicePort: registry
+      tls: {}
+        # secretName:
+
 shell:
   name: gitlab-shell
   port: ssh
@@ -39,13 +61,10 @@ ingress:
   enabled: false
   acme: false
   # Used to create Ingress record (should used with service.type: ClusterIP).
-  hosts:
-    - name: gitlab.example.local
-      serviceName: unicorn
-      servicePort: workhorse
-    - name: registry.example.local
-      serviceName: registry
-      servicePort: registry
+  hosts: []
+    # - name: prometheus.example.local
+    #   serviceName: omnibus
+    #   servicePort: prometheus
   annotations:
     # kubernetes.io/tls-acme: "true"
   tls:

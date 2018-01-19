@@ -10,6 +10,11 @@ and `nginx-default-backend` which is `defaultbackend` from the [`gcr.io/google_c
 The NGINX deployment requires 2 [ConfigMap][]s: one for NGINX configuration,
 and one for TCP services configuration.
 
+### Global Settings
+
+We share some common global settings among our charts. See the [Globals Documentation][globals] for common configuration
+options, such as GitLab and Registry hostnames.
+
 ### Configuring the Service
 
 The [Service][] is configured as `type: LoadBalancer`. If you are on a hosted
@@ -60,6 +65,10 @@ This will result in a value like `default/spiffy-fox-omnibus:og-shell`.
 
 This section describes configuring the [Ingress][]. By default this is disabled, so you'll have to enable it to make use of the following series of settings. Primarily, these settings will be familiar with [Kubernetes Ingress][kubernetes-ingress] documentation, but slightly simplified thanks to [Helm][helm].
 
+## Configure hosts using the Global Settings.
+
+The hostnames for the GitLab Server and the Registry Server can be configured using our chart [Global Settings][globals]
+
 #### enabled
 
 Field `enabled:`, boolean
@@ -76,21 +85,26 @@ This enables the use of the [kube-lego](../kube-lego/README.md) chart, if availa
 
 Default `false`, set `true` to enable.
 
+*Note:* The acme field applies to all hosts in this ingress, including the ones set in the [Global Settings][globals]. This
+means with `acme` set to true, you do not need to populate any other of the tls secretNames.
+
 #### hosts
 
 Field `hosts:`, a list of items in the form below:
 ```
 hosts:
-  - name: gitlab.example.local
-    serviceName: omnibus
-    servicePort: og-workhorse
-  - name: registry.example.local
-    serviceName: registry
-    servicePort: registry
+  - name: prometheus.example.local
+    serviceName: prometheus
+    servicePort: og-prometheus
+  - name: pages.example.local
+    serviceName: pages
+    servicePort: pages
 ```
 
 This controls the hostnames accepted by the [Ingress][], and to which service
 the requests will be routed.
+
+*Note:* These are in addition to the `gitlab` and `registry` hosts provided in the [Global Settings][globals]
 
 #### tls
 
@@ -103,8 +117,8 @@ is found below appear as such:
 ```
 tls:
   - hosts:
-    - registry.example.local
-    secretName: registry-example-tls
+    - prometheus.example.local
+    secretName: prometheus-example-tls
 ```
 
 *Note:* While you may be able to combine `tls` with ACME, it is not tested.
@@ -167,6 +181,7 @@ serviceAccount:
 [ConfigMapTcp]: ../../../charts/nginx/templates/configmap-tcp.yaml
 [Ingress]: ../../../charts/nginx/templates/ingress.yaml
 [values.yml]: ../../../charts/nginx/values.yml
+[globals]: ../globals.md
 
 [registry]: https://hub.docker.com/_/registry/
 [kubernetes-ingress]: https://kubernetes.io/docs/concepts/services-networking/ingress/#tls

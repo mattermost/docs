@@ -79,6 +79,7 @@ review:
     url: https://gitlab-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN
     on_stop: stop_review
   variables:
+    HOST_SUFFIX: "$CI_ENVIRONMENT_SLUG"
     DOMAIN: "-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN"
   only:
     refs:
@@ -266,23 +267,17 @@ qa:
     helm upgrade --install \
       --wait \
       --set releaseOverride="$CI_ENVIRONMENT_SLUG" \
+      --set global.hosts.hostSuffix="$HOST_SUFFIX" \
+      --set global.hosts.domain="$AUTO_DEVOPS_DOMAIN" \
+      --set global.hosts.https=true \
+      --set global.hosts.tls.secretName=helm-charts-win-tls \
       --set nginx.service.loadBalancerIP="$DOMAIN_IP" \
-      --set nginx.ingress.hosts[0].name="gitlab$DOMAIN" \
-      --set nginx.ingress.hosts[0].serviceName="unicorn" \
-      --set nginx.ingress.hosts[0].servicePort="workhorse" \
-      --set nginx.ingress.hosts[1].name="registry$DOMAIN" \
-      --set nginx.ingress.hosts[1].serviceName="registry" \
-      --set nginx.ingress.hosts[1].servicePort="registry" \
-      --set nginx.ingress.tls[0].secretName=helm-charts-win-tls \
-      --set nginx.ingress.tls[0].hosts[0]="gitlab$DOMAIN" \
-      --set nginx.ingress.tls[0].hosts[1]="registry$DOMAIN" \
       --set registry.enabled=true \
       --set registry.service.type=NodePort \
       --set registry.replicas=1 \
       --set registry.storage.filesystem.rootdirectory="/var/lib/registry" \
       --set registry.storage.cache.blobdescriptor="inmemory" \
       --set registry.storage.delete.enabled=true \
-      --set registry.authEndpoint="https://gitlab$DOMAIN" \
       --set registry.tokenIssuer="gitlab-issuer" \
       --set registry.certificate.secret="gitlab-registry" \
       --set registry.certificate.key="registry-auth.crt" \
@@ -298,7 +293,6 @@ qa:
       --set gitlab.sidekiq.gitaly.authToken.secret=gitaly-secret \
       --set gitlab.sidekiq.gitaly.authToken.key=token \
       --set gitlab.unicorn.enabled=true \
-      --set gitlab.unicorn.gitlabHost="gitlab$DOMAIN" \
       --set gitlab.unicorn.redis.serviceName=redis \
       --set gitlab.unicorn.redis.password.secret=gitlab-redis \
       --set gitlab.unicorn.redis.password.key=redis-password \
@@ -308,7 +302,6 @@ qa:
       --set gitlab.unicorn.shell.authToken.key=secret \
       --set gitlab.unicorn.gitaly.authToken.secret=gitaly-secret \
       --set gitlab.unicorn.gitaly.authToken.key=token \
-      --set gitlab.unicorn.registry.host=registry$DOMAIN \
       --set gitlab.unicorn.registry.api.serviceName=registry \
       --set gitlab.unicorn.registry.tokenIssuer="gitlab-issuer" \
       --set gitlab.unicorn.registry.certificate.secret=gitlab-registry \

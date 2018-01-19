@@ -14,7 +14,18 @@ service:
   workhorseExternalPort: 8181
   workhorseInternalPort: 8181
 enabled: false
-gitlabHost: localhost
+global:
+  hosts:
+    domain: example.local
+    hostSuffix:
+    https: false
+    gitlab: {}
+      #name: gitlab.example.local
+      #https: false
+    registry:
+      #name: registry.example.local
+      #https: false
+      serviceName: registry
 redis:
   # host: '0.0.0.0'
   # serviceName: 'redis'
@@ -40,7 +51,7 @@ gitaly:
     secret: gitaly-secret
     key: token
 registry:
-  host: nil
+  host:
   # port: 443
   api:
     protocol: http
