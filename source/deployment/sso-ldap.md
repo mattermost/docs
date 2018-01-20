@@ -21,7 +21,7 @@ There are two ways to setup AD/LDAP:
 1. **Configure AD/LDAP using the System Console user interface**
      - Start the Mattermost server and create a new account using email and password, which is assigned the System Administrator role as the first user created, then configure AD/LDAP and then convert your System Administrator account to use the AD/LDAP sign-in method.
 2. **Configure AD/LDAP by editing `config.json`**
-     - Before starting the Mattermost server, edit `config.json` to enable AD/LDAP based on [AD/LDAP settings documentation](http://docs.mattermost.com/administration/config-settings.html#ldap-settings-enterprise). When you start the Mattermost server the first user to log in with valid AD/LDAP credentials will be assigned the System Administrator role.
+     - Before starting the Mattermost server, edit `config.json` to enable AD/LDAP based on [AD/LDAP settings documentation](http://docs.mattermost.com/administration/config-settings.html#ad-ldap). When you start the Mattermost server the first user to log in with valid AD/LDAP credentials will be assigned the System Administrator role.
 
 #### Configure AD/LDAP sign-in
 
@@ -39,7 +39,7 @@ After installing Mattermost:
 
 6. (Optional) If you configured First Name Attribute and Last Name Attribute in the System Console, go to **System Console > General > Users and Teams** and set **Teammate Name Display** to *Show first and last name*. This is recommended for a better user experience.
 
-If you've made a mistake and lock yourself out of the system somehow, you can [set an existing account to System Administrator using the commandline tool](http://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline).
+If you've made a mistake and lock yourself out of the system somehow, you can [set an existing account to System Administrator using the commandline tool](http://docs.mattermost.com/deployment/on-boarding.html#common-tasks).
 
 #### Configure AD/LDAP synchronization
 
