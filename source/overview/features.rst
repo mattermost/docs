@@ -7,143 +7,272 @@ This page gives an overview of some of the features available in Mattermost Team
 Team Edition Features
 ----------------------------------------------
 
-1. **1-1 and group messaging**
+----------------------------------------------
 
-Chat in real time with individuals and teams. See all your conversations in one place.
+.. raw:: html
+
+    <table class="features__table">
+        <tbody>
+            <tr>
+                <td>
+                    <h4>1-1 and group messaging</h4>
 
 .. image:: ../images/messaging.png
 
-2. **File sharing**
+.. raw:: html
 
-Share documents, videos, images and other rich media with inline previews.
+                    <p>Chat in real time with individuals and teams. See all your conversations in one place.</p>
+                </td>
+                <td>
+                    <h4>File sharing</h4>
 
 .. image:: ../images/file_sharing.png
 
-3. **Custom emojis**
+.. raw:: html
 
-Express yourself with a full set of emojis and add your own custom ones.
+                    <p>Share documents, videos, images and other rich media with inline previews.</p>
+                </td>
+                <td>
+                    <h4>Custom emojis</h4>
 
 .. image:: ../images/custom_emojis.png
 
-4. **Webhooks**
+.. raw:: html
 
-Tightly integrate chat with line-of-business systems using incoming and outgoing webhooks.
+                    <p>Express yourself with a full set of emojis and add your own custom ones.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4>Webhooks</h4>
 
 .. image:: ../images/webhooks.png
 
-5. **Slash commands**
+.. raw:: html
 
-Invoke custom automation from chat - create and update tickets, kick off builds, and more.
+                    <p>Tightly integrate chat with line-of-business systems using incoming and outgoing webhooks.</p>
+                </td>
+                <td>
+                    <h4>Slash commands</h4>
 
 .. image:: ../images/slash_commands.png
 
-6. **Plug-in framework**
+.. raw:: html
 
-Customize your chat interface with deep integrations with JIRA, directory information, and other systems.
+                    <p>Invoke custom automation from chat - create and update tickets, kick off builds, and more.</p>
+                </td>
+                <td>
+                    <h4>Plug-in framework</h4>
 
 .. image:: ../images/plugin_framework.png
 
-7. **Mobile applications**
+.. raw:: html
 
-Collaborate with your teams on the go with rich native mobile apps, available for iOS and Android.
+                    <p>Customize your chat interface with deep integrations with JIRA, directory information, and other systems.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4>Mobile applications</h4>
 
 .. image:: ../images/mobile_apps.png
 
-8. **Desktop applications**
+.. raw:: html
 
-Use the full-featured web interface, or native client apps for Windows, OSX, and Linux.
+                    <p>Collaborate with your teams on the go with rich native mobile apps, available for iOS and Android.</p>
+                </td>
+                <td>
+                    <h4>Desktop applications</h4>
 
 .. image:: ../images/desktop_apps.png
 
-9. **Multi-team support**
+.. raw:: html
 
-Work across multiple teams and projects from the same rich interface.
+                    <p>Use the full-featured web interface, or native client apps for Windows, OSX, and Linux.</p>
+                </td>
+                <td>
+                    <h4>Multi-team support</h4>
 
 .. image:: ../images/multi_team_support.png
 
-10. **Threaded conversations**
+.. raw:: html
 
-Keep conversations organized and on-point with threading and markdown formatting.
+                    <p>Work across multiple teams and projects from the same rich interface.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4>Threaded conversations</h4>
 
 .. image:: ../images/threaded_conversations.png
 
-11. **Theme colors**
+.. raw:: html
 
-Personalize your experience with build-in and custom themes.
+                    <p>Keep conversations organized and on-point with threading and markdown formatting.</p>
+                </td>
+                <td>
+                    <h4>Theme colors</h4>
 
 .. image:: ../images/theme_colors.png
 
-12. **Multi-language support**
+.. raw:: html
 
-Work across borders with one messaging system.
+                    <p>Personalize your experience with build-in and custom themes.</p>
+                </td>
+                <td>
+                    <h4>Multi-language support</h4>
 
 .. image:: ../images/multi-language_support.png
+
+.. raw:: html
+
+                    <p>Work across borders with one messaging system.</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
 
 Enterprise Edition Features
 ----------------------------------------------
 
-1. **AD/LDAP SSO**
+----------------------------------------------
 
-Streamline user provisioning and permissions with directory service integration.
+.. raw:: html
+
+    <table class="features__table">
+        <tr>
+            <td>
+                <h4>AD/LDAP SSO</h4>
 
 .. image:: ../images/AD_LDAP_SSO.png
 
-2. **Advanced permissions**
+.. raw:: html
 
-Set detailed custom policies and granular permissions for your system.
+                <p>
+                    Streamline user provisioning and permissions with directory service integration.
+                </p>
+            </td>
+            <td>
+                <h4>Advanced permissions</h4>
 
 .. image:: ../images/advanced_permissions.png
 
-3. **MFA**
+.. raw:: html
 
-Add an additional layer of security with multi-factor authentication.
+                <p>
+                    Set detailed custom policies and granular permissions for your system.
+                </p>
+            </td>
+            <td>
+                <h4>MFA</h4>
 
 .. image:: ../images/MFA.png
 
-4. **Enterprise support**
+.. raw:: html
 
-Get access to enterprise-level support to accelerate your deployment and rollout.
+                <p>
+                    Add an additional layer of security with multi-factor authentication.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Enterprise support</h4>
 
 .. image:: ../images/enterprise_edition_support.png
 
-5. **SAML-based SSO**
+.. raw:: html
 
-Enable single sign-on with SAML integration to your directory service.
+                <p>
+                    Get access to enterprise-level support to accelerate your deployment and rollout.
+                </p>
+            </td>
+            <td>
+                <h4>SAML-based SSO</h4>
 
 .. image:: ../images/SAML_based_SSO.png
 
-6. **Performance monitoring**
+.. raw:: html
 
-Get detailed service monitoring, with Prometheus and Grafana integration.
+                <p>
+                    Enable single sign-on with SAML integration to your directory service.
+                </p>
+            </td>
+            <td>
+                <h4>Performance monitoring</h4>
 
 .. image:: ../images/performance_monitoring.png
 
-7. **High availability**
+.. raw:: html
 
-Scale to support the entire organization with high-availability clustering.
+                <p>
+                    Get detailed service monitoring, with Prometheus and Grafana integration.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>High availability</h4>
 
 .. image:: ../images/network_diagram.png
 
-8. **Compliance reporting**
+.. raw:: html
 
-Meet compliance and governance requirements with Global Relay and Actiance integration.
+                <p>
+                    Scale to support the entire organization with high-availability clustering.
+                </p>
+            </td>
+            <td>
+                <h4>Compliance reporting</h4>
 
 .. image:: ../images/compliance_reports.png
 
-9. **Data retention**
+.. raw:: html
 
-Set custom policies for how long messages and file uploads are kept in channels and direct messages.
+                <p>
+                    Meet compliance and governance requirements with Global Relay and Actiance integration.
+                </p>
+            </td>
+            <td>
+                <h4>Data retention</h4>
 
 .. image:: ../images/data_retention.png
 
-10. **Custom branding**
+.. raw:: html
 
-Customize your system to match your company identity and even completely white-label the user experience.
+                <p>
+                    Set custom policies for how long messages and file uploads are kept in channels and direct messages.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Custom branding</h4>
 
 .. image:: ../images/custom_branding.png
 
-11. **Enterprise search**
+.. raw:: html
 
-Provide instantaneous full text search with Elasticsearch integration.
+                <p>
+                    Customize your system to match your company identity and even completely white-label the user experience.
+                </p>
+            </td>
+            <td>
+                <h4>Enterprise search</h4>
 
 .. image:: ../images/enterprise_search.png
+
+.. raw:: html
+
+                <p>
+                    Provide instantaneous full text search with Elasticsearch integration.
+                </p>
+            </td>
+            <td>
+            </td>
+        </tr>
+    </table>
+
