@@ -55,7 +55,7 @@ In the example below, we assume that we require self-signed certificates.
 Generate a certificate-key pair:
 
 ```
-$ openssl req -new -newkey rsa:4096 -subj="/CN=gitlab-issuer" -nodes -x509 -keyout certs/helm-charts-win-registry.key -out certs/helm-charts-win-registry.crt
+$ openssl req -new -newkey rsa:4096 -subj "/CN=gitlab-issuer" -nodes -x509 -keyout certs/helm-charts-win-registry.key -out certs/helm-charts-win-registry.crt
 ```
 
 Create a secret containing these certificates.
