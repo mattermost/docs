@@ -32,7 +32,7 @@ Team Edition Features
 
 .. raw:: html
 
-                    <p>Share documents, videos, images and other rich media with inline previews.</p>
+                    <p>Share documents, videos, images, and other rich media with inline previews.</p>
                 </td>
             </tr>
             <tr>
