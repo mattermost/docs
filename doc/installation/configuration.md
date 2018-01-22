@@ -18,7 +18,7 @@ In order to complete the configuration, we will need to prepare a few values:
 
 To create the create the encoded form of the PostgreSQL password, we'll note our selected password and then run the following command, replacing `${SQLPassword}` with your chosen password, using the value where you see `encodedSQLPassword`:
 
-`echo -n '${SQLPassword}gitlab' | md5sum - | cut -d ' ' -f1`
+`echo -n "${SQLPassword}gitlab" | md5sum - | cut -d ' ' -f1`
 
 Next, we are replacing the contents of the `configuration.yaml` with valid
 information:
