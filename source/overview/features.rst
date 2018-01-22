@@ -103,8 +103,8 @@ Team Edition Features
                 <td>
                     <h4>Multi-team support</h4>
 
-.. image:: ../images/multi_team_support.png
-   :target: ../_images/multi_team_support.png
+.. image:: ../images/multi-team_support.png
+   :target: ../_images/multi-team_support.png
 
 .. raw:: html
 
