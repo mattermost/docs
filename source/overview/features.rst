@@ -129,7 +129,7 @@ Team Edition Features
 
 .. raw:: html
 
-                    <p>Personalize your experience with build-in and custom themes.</p>
+                    <p>Personalize your experience with built-in and custom themes.</p>
                 </td>
                 <td>
                     <h4>Multi-language support</h4>
