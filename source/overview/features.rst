@@ -2,7 +2,7 @@
 Features Overview
 ============================
 
-This page gives an overview of some of the features available in Mattermost Team Edition and Enterprise Edition.
+This page gives an overview of some of the features available in Mattermost Team and Enterprise Editions.
 
 Team Edition Features
 ----------------------------------------------
@@ -75,7 +75,7 @@ Team Edition Features
 
 .. raw:: html
 
-                    <p>Customize your chat interface with deep integrations with JIRA, directory information, and other systems.</p>
+                    <p>Customize your chat interface using deep integrations with JIRA, directory information, and other systems.</p>
                 </td>
             </tr>
             <tr>
@@ -217,7 +217,7 @@ Enterprise Edition Features
 .. raw:: html
 
                 <p>
-                    Enable single sign-on with SAML integration to your directory service.
+                    Enable single sign-on with SAML integration added to your directory service.
                 </p>
             </td>
             <td>
@@ -229,7 +229,7 @@ Enterprise Edition Features
 .. raw:: html
 
                 <p>
-                    Get detailed service monitoring, with Prometheus and Grafana integration.
+                    Get detailed service monitoring, with Prometheus and Grafana integrations.
                 </p>
             </td>
         </tr>
@@ -243,7 +243,7 @@ Enterprise Edition Features
 .. raw:: html
 
                 <p>
-                    Scale to support the entire organization with high-availability clustering.
+                    Scale to support the entire organization with high availability clustering.
                 </p>
             </td>
             <td>
@@ -255,7 +255,7 @@ Enterprise Edition Features
 .. raw:: html
 
                 <p>
-                    Meet compliance and governance requirements with Global Relay and Actiance integration.
+                    Meet compliance and governance requirements with Global Relay and Actiance integrations.
                 </p>
             </td>
         <tr>
