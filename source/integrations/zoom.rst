@@ -53,8 +53,6 @@ Zoom webhook. Then hit **Save**.
 .. image:: ../images/zoom_channel_header2.png
 
 .. note::
-   Users will need their own Zoom account with the associated email address matching their Mattermost email address if they wish to start a meeting. If the user attempts to start a Zoom meeting without a Zoom account, they will see the following error message: "We could not verify your Mattermost account in Zoom. Please ensure that your Mattermost email address matches your Zoom email address."
-
-.. important::
-  The email account used by a user at Mattermost and Zoom must be the same.
-  In addition, the user must be added to the admin's Zoom account to quickly start a meeting without sharing personal meeting ID.
+   Users will need to sign-up for their own Zoom account using the same email address that they use for Mattermost. If the user attempts to start a Zoom meeting without a Zoom account, they will see the following error message: "We could not verify your Mattermost account in Zoom. Please ensure that your Mattermost email address matches your Zoom email address."
+   In addition, the user must be added to the admin's Zoom account to quickly start a meeting without having to share a personal meeting ID.
+  
