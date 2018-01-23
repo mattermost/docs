@@ -30,7 +30,6 @@ Release date: 2018-01-16
 #### Plugins (Beta)
 
 - Plugins now support slash commands.
-- Zoom plugin now supports an on-premise Zoom server.
 
 #### Notifications
 
@@ -138,6 +137,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Letters are skipped in a few dialogs when using Korean keyboard in IE11.
 - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
 - Deleting a team via the API breaks the user interface.
+- Bot messages from the Zoom plugin ignore the Zoom API URL field for on-prem Zoom servers.
 
 ### Contributors
 
