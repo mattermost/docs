@@ -77,7 +77,7 @@ Team Edition Features
                 <td>
                     <h4>Mobile applications</h4>
 
- <img src="https://user-images.githubusercontent.com/29708087/35307691-e4bd99cc-0071-11e8-9c77-b6d39e0e8fe1.png" height="235px"  width="400px">
+ <img src="https://user-images.githubusercontent.com/29708087/35338058-dbcdda42-00ea-11e8-94af-b6034fababb9.png" height="235px"  width="400px">
 
 .. raw:: html
 
