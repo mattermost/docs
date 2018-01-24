@@ -5,11 +5,11 @@ Staging Process
 This document outlines the process that should be used to push staging, in order to avoid the following issues:
 
  - It is unclear if people have work in progress in staging.
- - It is unclear when/how often staging is pushed, which can then lead to fixed bugs not being pushed live soon.
+ - It is unclear when/how often staging is being pushed, which can then lead to fixed bugs not being pushed live soon.
 
 All members in the marketing team should be aware of the following steps:
 
-1. Every time somebody makes an update on staging, post about it in the Marketing: Website channel starting with the web hashtag (`#web`) and a description of the change made. An automation process has been set up so that anything that starts with `#web` posted in the Marketing: Website channel will be added to a spreadsheet for tracking.
+1. Each time you make an update on staging, post about it in the Marketing: Website channel starting with the web hashtag (`#web`) and a description of the change made. An automation process has been set up so that anything that starts with `#web` posted in the Marketing: Website channel will be added to a website updates spreadsheet for tracking.
  - If the edit is something that will take a while, post about it when you start making the edit so that other people have visibility into what you are doing.
  - If you publish an update, make sure you preview it before publishing and do a quick test to make sure there are no issues/bugs.
  
