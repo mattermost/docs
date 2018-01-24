@@ -13,12 +13,12 @@ generate and maintain multiple sets of TLS certificates.
 
 For this guide, we will be describing the use of wildcard
 certificates. Ensure that the `.crt` file used is a properly structured full-chain
-certificate.
-
+certificate. Not using the full-chain certificate will result in a broken chain causing
+the certificate to not be trusted by many clients.
 
 > Note: GitLab Inc. employees have access to certificates generated specifically for
 development in this project. They are located in the `Cloud Native`
-vault in `1Password`.
+vault in `1Password`. Only the `*chained.crt` certificate should be used.
 
 ### GitLab certificates
 
