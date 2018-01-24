@@ -74,6 +74,7 @@ Marketing
    /process/marketing-guidelines*
    /process/asset-guidelines*
    /process/end-user-documentation*
+   /process/staging-process*
 
    
 Partners
