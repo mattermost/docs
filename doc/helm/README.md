@@ -19,6 +19,8 @@ You can get Helm from the project's [releases page](https://github.com/kubernete
 
 > **Note**: Ensure you have kubectl installed and it is up to date. Older versions do not have support for RBAC and will generate errors.
 
+Read [RBAC document](../installation/rbac.md) and if `RBAC` is not enabled in your cluster you can skip this section and proceed.
+
 Helm's Tiller will need to be granted permissions to perform operations. These instructions grant cluster wide permissions, however for more advanced deployments [permissions can be restricted to a single namespace](https://docs.helm.sh/using_helm/#example-deploy-tiller-in-a-namespace-restricted-to-deploying-resources-only-in-that-namespace). To grant access to the cluster, we will create a new `tiller` service account and bind it to the `cluster-admin` role.
 
 Copy the `rbac-config.yaml` file out of the examples:
