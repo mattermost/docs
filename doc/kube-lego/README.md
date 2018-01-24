@@ -17,13 +17,14 @@ Edit the file, filling in the following properties:
 
 ## Installation
 
-To install the `kube-lego` chart, with the configuation as prepared:
+Update the helm repository index, and install the `kube-lego` chart with:
 
 ```
+helm repo update
 helm install -f kube-lego.yaml stable/kube-lego --version 0.3.0
 ```
 
-This will install `kube-lego`, as well as create the needed [RBAC][] configuration for it, if `rbac.create` was set to `true` as described in [configuration](#configuration).
+This will install `kube-lego`, as well as create the needed [RBAC][] configuration for it, if `rbac.create` was set to `true` as described in [configuration](#configuration) above.
 
 [kube-lego]: https://github.com/kubernetes/charts/blob/master/stable/kube-lego/README.md
 [RBAC]: https://kubernetes.io/docs/admin/authorization/rbac/
