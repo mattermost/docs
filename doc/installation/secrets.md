@@ -30,17 +30,17 @@ If you are going to make use of Let's Encrypt certificates via [kube-lego](../ku
 Add the TLS wildcard certificate to cluster secrets with:
 
 ```
-$ kubectl create secret tls <name> --cert=<path/to.crt> --key=<path/to.key>
+kubectl create secret tls <name> --cert=<path/to.crt> --key=<path/to.key>
 
 secret "<name>" created
 ```
 
 For example, if we assume that our key-certificate pair is located in `certs` directory,
-and that we are creating a secret named `helm-charts-win-tls`, command will look
+and that we are creating a secret named `example-local-tls`, command will look
 something like:
 
 ```
-$ kubectl create secret tls helm-charts-win-tls --cert=certs/-.helm-charts.win.chained.crt --key=certs/-.helm-charts.win.key
+kubectl create secret tls example-local-tls --cert=certs/-.example.local.chained.crt --key=certs/-.example.local.key
 ```
 
 ### Registry certificates
@@ -55,7 +55,8 @@ In the example below, we assume that we require self-signed certificates.
 Generate a certificate-key pair:
 
 ```
-$ openssl req -new -newkey rsa:4096 -subj "/CN=gitlab-issuer" -nodes -x509 -keyout certs/helm-charts-win-registry.key -out certs/helm-charts-win-registry.crt
+mkdir -p certs
+openssl req -new -newkey rsa:4096 -subj "/CN=gitlab-issuer" -nodes -x509 -keyout certs/registry-example-local.key -out certs/registry-example-local.crt
 ```
 
 Create a secret containing these certificates.
@@ -63,7 +64,7 @@ Create a secret containing these certificates.
 `gitlab-registry` secret.
 
 ```
-$ kubectl create secret generic gitlab-registry --from-file=registry-auth.key=certs/helm-charts-win-registry.key --from-file=registry-auth.crt=certs/helm-charts-win-registry.crt
+kubectl create secret generic gitlab-registry --from-file=registry-auth.key=certs/registry-example-local.key --from-file=registry-auth.crt=certs/registry-example-local.crt
 ```
 
 In more isolated clusters, these certificates can be in separate secrets, as long
@@ -77,7 +78,7 @@ chart.
 We'll generate a random 64 character alpha-numeric password for Redis.
 
 ```
-$ kubectl create secret generic gitlab-redis --from-literal=redis-password=<password>
+kubectl create secret generic gitlab-redis --from-literal=redis-password=<password>
 ```
 > Note: GitLab Inc. employees have this password generated and stored in `1Password Cloud Native` vault for development in this project.
 
@@ -86,13 +87,13 @@ $ kubectl create secret generic gitlab-redis --from-literal=redis-password=<pass
 Generate a random secret for GitLab Shell.
 
 ```
-$ kubectl create secret generic gitlab-shell-secret --from-literal=secret=$(head -c 512 /dev/urandom | tr -cd 'a-zA-Z0-9' | head -c 64)
+kubectl create secret generic gitlab-shell-secret --from-literal=secret=$(head -c 512 /dev/urandom | tr -cd 'a-zA-Z0-9' | head -c 64)
 ```
 
 ### Gitaly Secret
 
 ```
-$ kubectl create secret generic gitaly-secret --from-literal=token=$(head -c 512 /dev/urandom | tr -cd 'a-zA-Z0-9' | head -c 64)
+kubectl create secret generic gitaly-secret --from-literal=token=$(head -c 512 /dev/urandom | tr -cd 'a-zA-Z0-9' | head -c 64)
 ```
 
 Once all secrets have been generated and stored, you can proceed to generating
