@@ -17,8 +17,7 @@ Team Edition Features
                 <td>
                     <h4>1-1 and group messaging</h4>
 
-.. image:: ../images/messaging.png
-   :target: ../_images/messaging.png
+ <img src="https://user-images.githubusercontent.com/29708087/35308655-99c4cb02-0076-11e8-90ae-bda096160995.png" height="230px"  width="400px">
 
 .. raw:: html
 
@@ -38,8 +37,7 @@ Team Edition Features
                 <td>
                     <h4>Custom emojis</h4>
 
-.. image:: ../images/custom_emojis.png
-   :target: ../_images/custom_emojis.png
+ <img src="https://user-images.githubusercontent.com/29708087/35308687-bc9b185c-0076-11e8-9ef6-0163486cdcc8.png" height="230px"  width="400px">
 
 .. raw:: html
 
@@ -59,8 +57,7 @@ Team Edition Features
                 <td>
                     <h4>Slash commands</h4>
 
-.. image:: ../images/slash_commands.png
-   :target: ../_images/slash_commands.png
+ <img src="https://user-images.githubusercontent.com/29708087/35308696-d47206fc-0076-11e8-8df9-e333f0e24cec.png" height="230px"  width="400px">
 
 .. raw:: html
 
@@ -69,8 +66,7 @@ Team Edition Features
                 <td>
                     <h4>Plug-in framework</h4>
 
-.. image:: ../images/plugin_framework.png
-   :target: ../_images/plugin_framework.png
+ <img src="https://user-images.githubusercontent.com/29708087/35308713-e92b1f7a-0076-11e8-8395-f419dc192cdf.png" height="230px"  width="400px">
 
 .. raw:: html
 
@@ -90,8 +86,7 @@ Team Edition Features
                 <td>
                     <h4>Desktop applications</h4>
 
-.. image:: ../images/desktop_apps.png
-   :target: ../_images/desktop_apps.png
+ <img src="https://user-images.githubusercontent.com/29708087/35308723-02c2421a-0077-11e8-88c7-b27ee1d4a201.png" height="230px"  width="400px">
 
 .. raw:: html
 
@@ -110,8 +105,7 @@ Team Edition Features
                 <td>
                     <h4>Threaded conversations</h4>
 
-.. image:: ../images/threaded_conversations.png
-   :target: ../_images/threaded_conversations.png
+ <img src="https://user-images.githubusercontent.com/29708087/35308735-1bc35be6-0077-11e8-830b-e9019158f376.png" height="230px"  width="400px">
 
 .. raw:: html
 
@@ -121,8 +115,7 @@ Team Edition Features
                 <td>
                     <h4>Theme colors</h4>
 
-.. image:: ../images/theme_colors.png
-   :target: ../_images/theme_colors.png
+ <img src="https://user-images.githubusercontent.com/29708087/35308755-323cb53e-0077-11e8-82bf-58fcbd777977.png" height="230px"  width="400px">
 
 .. raw:: html
 
@@ -190,8 +183,7 @@ Enterprise Edition Features
             <td>
                 <h4>Enterprise support</h4>
 
-.. image:: ../images/enterprise_edition_support.png
-   :target: ../_images/enterprise_edition_support.png
+ <img src="https://user-images.githubusercontent.com/29708087/35308785-4cbce096-0077-11e8-9639-e642275fd16d.png" height="230px"  width="400px">
 
 .. raw:: html
 
@@ -215,8 +207,7 @@ Enterprise Edition Features
             <td>
                 <h4>Performance monitoring</h4>
 
-.. image:: ../images/performance_monitoring.png
-   :target: ../_images/performance_monitoring.png
+ <img src="https://user-images.githubusercontent.com/29708087/35308795-5c414f8e-0077-11e8-98e6-fb072a77c8ff.png" height="230px"  width="400px">
 
 .. raw:: html
 
