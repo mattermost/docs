@@ -24,7 +24,7 @@ Helm's Tiller will need to be granted permissions to perform operations. These i
 Copy the `rbac-config.yaml` file out of the examples:
 
 ```
-$ cp doc/helm/examples/rbac-config.yaml rbac-config.yaml
+cp doc/helm/examples/rbac-config.yaml rbac-config.yaml
 ```
 
 Next we need to connect to the cluster and upload the RBAC config.
@@ -48,7 +48,7 @@ Look for the **Connect** button in the clusters list page.
 Use the command below, filling in your cluster's informtion:
 
 ```
-$ gcloud container clusters get-credentials <cluster-name> --zone <zone> --project <project-id>
+gcloud container clusters get-credentials <cluster-name> --zone <zone> --project <project-id>
 ```
 
 #### Connect to local minikube cluster
@@ -62,7 +62,7 @@ cluster, use `kubectl config set-cluster minikube` to set the active cluster.
 For GKE, you need to grab the admin credentials:
 
 ```
-$ gcloud container clusters describe <cluster-name> --zone <zone> --project <project-id> | grep -C 1 'username: admin'
+gcloud container clusters describe <cluster-name> --zone <zone> --project <project-id> | grep -C 1 'username: admin'
 ```
 
 This command will output the admin credentials. We need the password to authenticate with `kubectl` and create the role:
@@ -77,7 +77,7 @@ This command will output the admin credentials. We need the password to authenti
 #### Upload the RBAC config as an admin user
 
 ```
-$ kubectl --username=admin --password=xxxxxxxxxxxxxx create -f rbac-config.yaml
+kubectl --username=admin --password=xxxxxxxxxxxxxx create -f rbac-config.yaml
 ```
 
 ## Initialize Helm
@@ -92,7 +92,7 @@ If your cluster
 previously had Helm/Tiller installed, run the following to ensure that the deployed version of Tiller matches the local Helm version:
 
 ```
-$ helm init --upgrade --service-account tiller
+helm init --upgrade --service-account tiller
 ```
 
 # Additional Information

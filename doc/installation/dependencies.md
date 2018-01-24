@@ -16,7 +16,6 @@ If already installed, ensure they are up to date with `gcloud components update`
 At the time of writing this doc, the output of `gcloud version`:
 
 ```
-$ gcloud version
 Google Cloud SDK 179.0.0
 app-engine-python 1.9.62
 bq 2.0.27
@@ -33,7 +32,6 @@ you can setup kubectl using the installation documentation for [kubectl][].
 At the time of writing this doc, the output of `kubectl version`:
 
 ```
-$ kubectl version
 Client Version: version.Info{Major:"1", Minor:"8", GitVersion:"v1.8.2", GitCommit:"bdaeafa71f6c7c04636251031f93464384d54963", GitTreeState:"clean", BuildDate:"2017-10-24T19:48:57Z", GoVersion:"go1.8.3", Compiler:"gc", Platform:"linux/amd64"}
 Unable to connect to the server:
 ```
