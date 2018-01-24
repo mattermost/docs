@@ -27,8 +27,7 @@ Team Edition Features
                 <td>
                     <h4>File sharing</h4>
 
-.. image:: ../images/file_sharing.png
-   :target: ../_images/file_sharing.png
+   <img src="https://user-images.githubusercontent.com/13119842/35306887-1532c64e-006e-11e8-87fc-fb01bd5195d9.png" height="230px"  width="400px">
 
 .. raw:: html
 
@@ -49,8 +48,8 @@ Team Edition Features
                 <td>
                     <h4>Webhooks</h4>
 
-.. image:: ../images/webhooks.png
-   :target: ../_images/webhooks.png
+ <img src="https://user-images.githubusercontent.com/29708087/35307546-26c152d8-0071-11e8-985b-f7e3e9b7ca8f.png" height="230px"  width="400px">
+
 
 .. raw:: html
 
@@ -82,8 +81,7 @@ Team Edition Features
                 <td>
                     <h4>Mobile applications</h4>
 
-.. image:: ../images/mobile_apps.png
-   :target: ../_images/mobile_apps.png
+ <img src="https://user-images.githubusercontent.com/29708087/35307691-e4bd99cc-0071-11e8-9c77-b6d39e0e8fe1.png" height="230px"  width="400px">
 
 .. raw:: html
 
@@ -103,8 +101,7 @@ Team Edition Features
                 <td>
                     <h4>Multi-team support</h4>
 
-.. image:: ../images/multi-team_support.png
-   :target: ../_images/multi-team_support.png
+ <img src="https://user-images.githubusercontent.com/29708087/35307710-122714c4-0072-11e8-8185-35a794d1889d.png" height="230px"  width="400px">
 
 .. raw:: html
 
@@ -134,8 +131,7 @@ Team Edition Features
                 <td>
                     <h4>Multi-language support</h4>
 
-.. image:: ../images/multi-language_support.png
-   :target: ../_images/multi-language_support.png
+ <img src="https://user-images.githubusercontent.com/29708087/35307831-c75b34b0-0072-11e8-88ab-b245b81cfd41.png" height="230px"  width="400px">
 
 .. raw:: html
 
@@ -160,8 +156,7 @@ Enterprise Edition Features
             <td>
                 <h4>AD/LDAP SSO</h4>
 
-.. image:: ../images/AD_LDAP_SSO.png
-   :target: ../_images/AD_LDAP_SSO.png
+<img src="https://user-images.githubusercontent.com/29708087/35307948-46888134-0073-11e8-98f8-18b24f6b1afc.png" height="230px"  width="400px">
 
 .. raw:: html
 
@@ -172,8 +167,7 @@ Enterprise Edition Features
             <td>
                 <h4>Advanced permissions</h4>
 
-.. image:: ../images/advanced_permissions.png
-   :target: ../_images/advanced_permissions.png
+ <img src="https://user-images.githubusercontent.com/29708087/35307973-6daee9ba-0073-11e8-8641-99937852525d.png" height="230px"  width="400px">
 
 .. raw:: html
 
@@ -185,8 +179,7 @@ Enterprise Edition Features
             <td>
                 <h4>MFA</h4>
 
-.. image:: ../images/MFA.png
-   :target: ../_images/MFA.png
+ <img src="https://user-images.githubusercontent.com/29708087/35307741-39d2207c-0072-11e8-8e2b-6e02953a91d9.png" height="230px"  width="400px">
 
 .. raw:: html
 
@@ -211,8 +204,7 @@ Enterprise Edition Features
             <td>
                 <h4>SAML-based SSO</h4>
 
-.. image:: ../images/SAML_based_SSO.png
-   :target: ../_images/SAML_based_SSO.png
+ <img src="https://user-images.githubusercontent.com/29708087/35307997-84aa8926-0073-11e8-8697-205c960e538c.png" height="230px"  width="400px">
 
 .. raw:: html
 
@@ -249,8 +241,7 @@ Enterprise Edition Features
             <td>
                 <h4>Compliance reporting</h4>
 
-.. image:: ../images/compliance_reports.png
-   :target: ../_images/compliance_reports.png
+ <img src="https://user-images.githubusercontent.com/29708087/35308038-c06f397a-0073-11e8-9834-d8efcfcb46a0.png" height="230px"  width="400px">
 
 .. raw:: html
 
@@ -262,8 +253,7 @@ Enterprise Edition Features
             <td>
                 <h4>Data retention</h4>
 
-.. image:: ../images/data_retention.png
-   :target: ../_images/data_retention.png
+ <img src="https://user-images.githubusercontent.com/29708087/35308063-dd4c857a-0073-11e8-80d5-e644855573b4.png" height="230px"  width="400px">
 
 .. raw:: html
 
@@ -274,8 +264,7 @@ Enterprise Edition Features
             <td>
                 <h4>Custom branding</h4>
 
-.. image:: ../images/custom_branding.png
-   :target: ../_images/custom_branding.png
+ <img src="https://user-images.githubusercontent.com/29708087/35308069-ef3d4e54-0073-11e8-9cc7-aa427002e4c5.png" height="230px"  width="400px">
 
 .. raw:: html
 
