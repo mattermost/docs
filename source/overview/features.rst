@@ -229,8 +229,7 @@ Enterprise Edition Features
             <td>
                 <h4>High availability</h4>
 
-.. image:: ../images/network_diagram.png
-   :target: ../_images/network_diagram.png
+ <img src="https://user-images.githubusercontent.com/29708087/35308363-5eac6b66-0075-11e8-9274-884f4a218339.png" height="230px"  width="400px">
 
 .. raw:: html
 
@@ -277,8 +276,7 @@ Enterprise Edition Features
             <td>
                 <h4>Enterprise search</h4>
 
-.. image:: ../images/enterprise_search.png
-   :target: ../_images/enterprise_search.png
+ <img src="https://user-images.githubusercontent.com/29708087/35308347-4744a6a0-0075-11e8-89ae-8f9b2b299682.png" height="230px"  width="400px">
 
 .. raw:: html
 
