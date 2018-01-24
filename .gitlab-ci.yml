@@ -273,7 +273,6 @@ qa:
       --set global.hosts.tls.secretName=helm-charts-win-tls \
       --set nginx.service.loadBalancerIP="$DOMAIN_IP" \
       --set registry.enabled=true \
-      --set registry.service.type=NodePort \
       --set registry.replicas=1 \
       --set registry.storage.filesystem.rootdirectory="/var/lib/registry" \
       --set registry.storage.cache.blobdescriptor="inmemory" \
