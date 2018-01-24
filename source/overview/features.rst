@@ -149,7 +149,7 @@ Enterprise Edition Features
             <td>
                 <h4>AD/LDAP SSO</h4>
 
-<img src="https://user-images.githubusercontent.com/29708087/35307948-46888134-0073-11e8-98f8-18b24f6b1afc.png" height="230px"  width="400px">
+ <img src="https://user-images.githubusercontent.com/29708087/35307948-46888134-0073-11e8-98f8-18b24f6b1afc.png" height="230px"  width="400px">
 
 .. raw:: html
 
