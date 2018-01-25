@@ -10,9 +10,9 @@ all required tools. See [dependencies][] document for more information.
 
 > We support working with GKE clusters v1.8.5 at the moment
 
-## 2. Resources
+## 2. GKE resources
 
-You will need to create a few resources to use this chart, such as a static IP and DNS entry. See [resources document][resources] for more information.
+You will need to create a few resources to use this chart, such as a static IP and DNS entry. See [GKE resources document][resources] for more information.
 
 ## 3. Secrets
 
