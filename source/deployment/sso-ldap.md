@@ -65,6 +65,32 @@ For forest configurations that contain multiple domains which do NOT share a com
 
 See [Global Catalog and LDAP Searches](https://technet.microsoft.com/en-us/library/cc978012.aspx) for additional details.
 
+#### Pulling additional user attributes
+
+You can use a pre-packaged Mattermost plugin to pull additional user attributes from your AD/LDAP.
+
+**This endpoint only requires a valid session and no other permissions. Only non-confidential AD/LDAP fields should be exposed.**
+
+1. Configure the LdapServer, LdapPort, BaseDN, BindUsername, BindPassword, UserFilter and IdAttribute fields under LdapSettings in config.json. 
+  - When using SAML SSO, the IdAttribute must be the email field in LDAP that is mapped to the user in SAML.
+
+2. Add the plugin configuration under PluginSettings.Plugins in config.json. The list under “Attributes” will specify which AD/LDAP attributes the API endpoint pulls.
+
+```
+"PluginSettings": {
+    “Enable”: true,
+    "Plugins": {
+        "ldapextras": {
+            "Enabled": true,
+            "Attributes": ["attribute1", "attribute2"]
+        }
+    }
+}
+```
+
+3. Restart the Mattermost server.
+4. To confirm the plugin works, perform an HTTP GET against your-mattermost-url.com/plugins/ldapextras/users/{user_id}/attributes which will return a JSON object with attribute names as keys with the appropriate values.
+
 ### Troubleshooting / FAQ
 
 The following are frequently asked questions and troubleshooting suggestions on common error messages and issues.
