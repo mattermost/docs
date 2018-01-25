@@ -8,3 +8,11 @@ RBAC affects a few different aspects of GitLab:
 * Prometheus monitoring
 * GitLab Runner
 * [kube-lego](../kube-lego/README.md)
+
+## Checking that RBAC is enabled
+
+Try listing the current cluster roles, if it fails then `RBAC` is disabled
+
+This command will output `false` if `RBAC` is disabled and `true` otherwise
+
+`kubectl get clusterroles > /dev/null 2>&1 && echo true || echo false`
