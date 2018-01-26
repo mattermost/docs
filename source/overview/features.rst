@@ -2,7 +2,7 @@
 Features Overview
 ============================
 
-This page gives an overview of some of the features available in Mattermost Team and Enterprise Editions.
+This page gives an overview of the key features available in Mattermost Team and Enterprise Editions. The Enterprise Edition includes all the features in the Team Edition. To compare the editions in more detail, please see the `pricing page <https://about.mattermost.com/pricing-2/>`_.
 
 Team Edition Features
 ----------------------------------------------
@@ -15,13 +15,13 @@ Team Edition Features
         <tbody>
             <tr>
                 <td>
-                    <h4>1-1 and group messaging</h4>
+                    <h4>Direct 1-1 and group messaging</h4>
 
  <img src="https://user-images.githubusercontent.com/29708087/35308655-99c4cb02-0076-11e8-90ae-bda096160995.png" height="235px"  width="400px">
 
 .. raw:: html
 
-                    <p>Chat in real time with individuals and teams. See all your conversations in one place.</p>
+                    <p>Increase agility, efficiency and innovation by bringing all team communication into one place. Collaborate in real time with individuals and teams.</p>
                 </td>
                 <td>
                     <h4>File sharing</h4>
@@ -30,7 +30,7 @@ Team Edition Features
 
 .. raw:: html
 
-                    <p>Share documents, videos, images, and other rich media with inline previews.</p>
+                    <p>Focus on doing your best work in a collaborative digital workspace. Share documents, videos, images and other rich media with inline previews.</p>
                 </td>
             </tr>
             <tr>
@@ -41,7 +41,7 @@ Team Edition Features
 
 .. raw:: html
 
-                    <p>Express yourself with a full set of emojis and add your own custom ones.</p>
+                    <p>Be part of a vibrant work environment—even if everyone works remotely. Express yourself with a full set of emojis and add your own custom ones.</p>
                 </td>
                 <td>
                     <h4>Webhooks</h4>
@@ -51,7 +51,7 @@ Team Edition Features
 
 .. raw:: html
 
-                    <p>Tightly integrate chat with line-of-business systems using incoming and outgoing webhooks.</p>
+                    <p>Connect to any system on any cloud with any user, whether they’re walking through the airport or upgrading a data center. Tightly integrate collaboration with line-of-business systems using incoming and outgoing webhooks.</p>
                 </td>
             <tr>
                 <td>
@@ -61,16 +61,16 @@ Team Edition Features
 
 .. raw:: html
 
-                    <p>Invoke custom automation from chat - create and update tickets, kick off builds, and more.</p>
+                    <p>Focus on what you do best by automating repetitive manual work. Invoke custom automation from the messaging interface: create and update tickets, kick off builds and more.</p>
                 </td>
                 <td>
-                    <h4>Plug-in framework</h4>
+                    <h4>Plugin framework</h4>
 
  <img src="https://user-images.githubusercontent.com/29708087/35308713-e92b1f7a-0076-11e8-8395-f419dc192cdf.png" height="235px"  width="400px">
 
 .. raw:: html
 
-                    <p>Customize your chat interface using deep integrations with JIRA, directory information, and other systems.</p>
+                    <p>Be more effective by creating a personalized digital workspace, tailored for you and your team. Customize your messaging interface with deep integrations with Jira, directory information and other systems.</p>
                 </td>
             </tr>
             <tr>
@@ -81,7 +81,7 @@ Team Edition Features
 
 .. raw:: html
 
-                    <p>Collaborate with your teams on the go with rich native mobile apps, available for iOS and Android.</p>
+                    <p>Be productive anywhere, anytime. Collaborate with your teams on the go with rich native mobile apps, available for iOS and Android.</p>
                 </td>
                 <td>
                     <h4>Desktop applications</h4>
@@ -90,7 +90,7 @@ Team Edition Features
 
 .. raw:: html
 
-                    <p>Use the full-featured web interface, or native client apps for Windows, OSX, and Linux.</p>
+                    <p>Quickly get everyone up and running regardless of their operating system of choice. Use the full-featured web interface or native client apps for Windows, OSX and Linux.</p>
                 </td>
             </tr>
                 <td>
@@ -100,7 +100,7 @@ Team Edition Features
 
 .. raw:: html
 
-                    <p>Work across multiple teams and projects from the same rich interface.</p>
+                    <p>Reduce disruptions by using one communications platform that meets all of your needs. Work across multiple teams and projects from the same rich interface.</p>
                 </td>
                 <td>
                     <h4>Threaded conversations</h4>
@@ -109,7 +109,7 @@ Team Edition Features
 
 .. raw:: html
 
-                    <p>Keep conversations organized and on-point with threading and markdown formatting.</p>
+                    <p>Keep conversations organized and on point with threading and Markdown formatting. See all the conversations you are participating in with a single click.</p>
                 </td>
             <tr>
                 <td>
@@ -119,7 +119,7 @@ Team Edition Features
 
 .. raw:: html
 
-                    <p>Personalize your experience with built-in and custom themes.</p>
+                    <p>Make Mattermost your own. Personalize your experience with built-in and custom themes.</p>
                 </td>
                 <td>
                     <h4>Multi-language support</h4>
@@ -128,7 +128,7 @@ Team Edition Features
 
 .. raw:: html
 
-                    <p>Work across borders with one messaging system translated into over ten languages.</p>
+                    <p>Get everyone productively working on the same platform, no matter where they are. Work across borders with one messaging system.</p>
                 </td>
             </tr>
         </tbody>
@@ -154,7 +154,7 @@ Enterprise Edition Features
 .. raw:: html
 
                 <p>
-                    Streamline user provisioning and permissions with directory service integration.
+                    Reduce security risks by integrating with your corporate directory and using existing security policies. Streamline user provisioning and permissions with directory service integration..
                 </p>
             </td>
             <td>
@@ -165,7 +165,7 @@ Enterprise Edition Features
 .. raw:: html
 
                 <p>
-                    Set detailed custom policies and granular permissions for your system.
+                    Customize and implement security policies that work for your company and industry. Set detailed custom policies and granular permissions for your system.
                 </p>
             </td>
         <tr>
@@ -188,7 +188,7 @@ Enterprise Edition Features
 .. raw:: html
 
                 <p>
-                    Get access to enterprise-level support to accelerate your deployment and rollout.
+                    Get access to enterprise-level support to accelerate and optimize your deployment and rollout.
                 </p>
             </td>
         </tr>
@@ -201,7 +201,7 @@ Enterprise Edition Features
 .. raw:: html
 
                 <p>
-                    Enable single sign-on with SAML integration added to your directory service.
+                    Further reduce the potential attack surface with single sign-on. Enable single sign-on with SAML integration to your directory service.
                 </p>
             </td>
             <td>
@@ -212,7 +212,7 @@ Enterprise Edition Features
 .. raw:: html
 
                 <p>
-                    Get detailed service monitoring, with Prometheus and Grafana integrations.
+                    Get enterprise-grade service monitoring with Prometheus and Grafana integrations.
                 </p>
             </td>
         </tr>
@@ -225,7 +225,7 @@ Enterprise Edition Features
 .. raw:: html
 
                 <p>
-                    Scale to support the entire organization with high availability clustering.
+                    Scale to support the entire organization with high-availability clustering.
                 </p>
             </td>
             <td>
@@ -248,7 +248,7 @@ Enterprise Edition Features
 .. raw:: html
 
                 <p>
-                    Set custom policies for how long messages and file uploads are kept in channels and direct messages.
+                    Easily enforce your company’s data retention and governance policies. Set custom policies for how long messages and file uploads are kept in channels and direct messages.
                 </p>
             </td>
             <td>
@@ -259,7 +259,7 @@ Enterprise Edition Features
 .. raw:: html
 
                 <p>
-                    Customize your system to match your company identity and even completely white-label the user experience.
+                    Provide a fully customized experience for your users. Customize your system to match your company identity and even completely white-label the user experience.
                 </p>
             </td>
         </tr>
@@ -272,7 +272,7 @@ Enterprise Edition Features
 .. raw:: html
 
                 <p>
-                    Provide instantaneous full text search with Elasticsearch integration.
+                    Increase productivity by letting your users quickly find the things they need even across large numbers of channels. Provide instantaneous full text search with Elasticsearch integration.
                 </p>
             </td>
             <td>
