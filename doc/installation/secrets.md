@@ -75,31 +75,34 @@ chart.
 
 ### Redis password
 
-We'll generate a random 64 character alpha-numeric password for Redis.
+Generate a random 64 character alpha-numeric password for Redis.
 
 ```
-kubectl create secret generic gitlab-redis --from-literal=redis-password=<password>
+kubectl create secret generic gitlab-redis --from-literal=redis-password=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64)
 ```
-> Note: GitLab Inc. employees have this password generated and stored in `1Password Cloud Native` vault for development in this project.
 
 ### GitLab Shell
 
-Generate a random secret for GitLab Shell.
+Generate a random 64 character alpha-numeric secret for GitLab Shell.
 
 ```
-kubectl create secret generic gitlab-shell-secret --from-literal=secret=$(head -c 512 /dev/urandom | tr -cd 'a-zA-Z0-9' | head -c 64)
+kubectl create secret generic gitlab-shell-secret --from-literal=secret=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64)
 ```
 
 ### Gitaly Secret
 
+Generate a random 64 character alpha-numeric token for Gitaly.
+
 ```
-kubectl create secret generic gitaly-secret --from-literal=token=$(head -c 512 /dev/urandom | tr -cd 'a-zA-Z0-9' | head -c 64)
+kubectl create secret generic gitaly-secret --from-literal=token=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64)
 ```
 
 ### Minio Secret
 
+Generate a set of random 20 & 64 character alpha-numeric keys for Minio.
+
 ```
-$ kubectl create secret generic gitlab-minio --from-literal=accesskey=$(head -c 512 /dev/urandom | tr -cd 'a-zA-Z0-9' | head -c 20) --from-literal=secretkey=$(head -c 512 /dev/urandom | tr -cd 'a-zA-Z0-9' | head -c 64)
+$ kubectl create secret generic gitlab-minio --from-literal=accesskey=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 20) --from-literal=secretkey=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64)
 ```
 
 # Next Steps
