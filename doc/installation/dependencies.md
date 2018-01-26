@@ -79,10 +79,12 @@ cluster. Proceed with setting up Helm.
 
 Skip this if you ran the above install with defaults script
 
-Follow the [helm][] document for [installation instructions](https://github.com/kubernetes/helm#install).
+Follow the [helm][] document for installation instructions.
 
-Once all dependencies are installed and configured, you can continue to
-[GitLab configuration](configuration.md).
+# Next Steps
+
+Once all dependencies are installed and configured, you can continue to setting up
+[GKE resources](resources.md).
 
 [gcloud]: https://cloud.google.com/sdk/gcloud/
 [gcloud-install]: https://cloud.google.com/sdk/docs/quickstarts

@@ -33,4 +33,6 @@ In order to use ingress host rules to access various components of gitlab we wil
 Follow [This](https://cloud.google.com/dns/quickstart) to create the DNS entry.
 
 
+# Next Steps
+
 Once all resources have been generated and recorded, you can proceed to generating [secrets](README.md#secrets).
