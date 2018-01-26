@@ -96,5 +96,11 @@ kubectl create secret generic gitlab-shell-secret --from-literal=secret=$(head -
 kubectl create secret generic gitaly-secret --from-literal=token=$(head -c 512 /dev/urandom | tr -cd 'a-zA-Z0-9' | head -c 64)
 ```
 
+### Minio Secret
+
+```
+$ kubectl create secret generic gitlab-minio --from-literal=accesskey=$(head -c 512 /dev/urandom | tr -cd 'a-zA-Z0-9' | head -c 20) --from-literal=secretkey=$(head -c 512 /dev/urandom | tr -cd 'a-zA-Z0-9' | head -c 64)
+```
+
 Once all secrets have been generated and stored, you can proceed to generating
 a [Configuration file](README.md#configuration-file).

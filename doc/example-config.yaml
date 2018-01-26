@@ -29,6 +29,12 @@ registry:
 redis:
   enabled: true
 
+# Minio chart provides Minio servics for Object Storage
+minio:
+  enabled: true
+  defaultBuckets:
+    - name: registry
+
 # GitLab sub-chart
 gitlab:
     # Unicorn (and workhorse) chart

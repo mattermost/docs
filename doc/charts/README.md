@@ -13,6 +13,7 @@ on the different global configuration.
 ## Charts:
 - [NGINX](nginx/README.md)
 - [Redis](redis/README.md)
+- [Minio](minio/README.md)
 - [Registry](registry/README.md)
 - GitLab/[Omnibus](gitlab/omnibus/README.md)
 - GitLab/[sidekiq](gitlab/sidekiq/README.md)

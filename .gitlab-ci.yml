@@ -283,6 +283,8 @@ qa:
       --set redis.enabled=true \
       --set redis.password.secret=gitlab-redis \
       --set redis.password.key=redis-password \
+      --set minio.enabled=true \
+      --set minio.defaultBuckets[0].name=registry \
       --set gitlab.sidekiq.enabled=true \
       --set gitlab.sidekiq.redis.serviceName=redis \
       --set gitlab.sidekiq.redis.password.secret=gitlab-redis \
