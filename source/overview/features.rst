@@ -41,7 +41,7 @@ Team Edition Features
 
 .. raw:: html
 
-                    <p>Be part of a vibrant work environment—even if everyone works remotely. Express yourself with a full set of emojis and add your own custom ones.</p>
+                    <p>Be part of a vibrant work environment — even if everyone works remotely. Express yourself with a full set of emojis and add your own custom ones.</p>
                 </td>
                 <td>
                     <h4>Webhooks</h4>
@@ -154,7 +154,7 @@ Enterprise Edition Features
 .. raw:: html
 
                 <p>
-                    Reduce security risks by integrating with your corporate directory and using existing security policies. Streamline user provisioning and permissions with directory service integration..
+                Reduce security risks by integrating with your corporate directory and using existing security policies. Streamline user provisioning and permissions with directory service integration.
                 </p>
             </td>
             <td>
@@ -225,7 +225,7 @@ Enterprise Edition Features
 .. raw:: html
 
                 <p>
-                    Scale to support the entire organization with high-availability clustering.
+                    Scale to support the entire organization with high availability clustering.
                 </p>
             </td>
             <td>
