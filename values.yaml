@@ -8,6 +8,9 @@ nginx:
 registry:
   enabled: false
 
+minio:
+  enabled: false
+
 redis:
   enabled: false
 
