@@ -4,7 +4,7 @@ Desktop Application Changelog
 Release 4.0.0
 --------------
 
-Release date: January 23, 2018
+Release date: January 29, 2018
 
 This release contains multiple security updates for Windows, Mac and Linux, and it is highly recommended that users upgrade to this version.
 
@@ -20,6 +20,7 @@ All Platforms
 - The "Saved" indicator now appears for both Server Management and App Options on the Settings page.
 - Close button on the Settings page now has a hover effect.
 - Added new admin configuration settings for:
+
    - Disabling server management where the user cannot add or edit the server URL.
    - Setting one or more pre-configured server URLs for the end user.
    - Customizing the link in **Help > Learn More..**.
@@ -40,7 +41,7 @@ Mac
 Architectural Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Major version upgrade of Electron from v1.6.11 to v1.7.9. Electron is the underlying technology used to build the Desktop apps.
+- Major version upgrade of Electron from v1.7.11 to v1.7.9. Electron is the underlying technology used to build the Desktop apps.
 - The app now uses CSS to style the user interface. Styles are also divided to React's inline `style` and CSS.
 - Yarn is now used to manage dependencies across Windows, Mac and Linux builds.
 - Build is now run automatically before packaging the apps with `npm run package`.
@@ -97,8 +98,8 @@ Mac
 ^^^^^^^^^^^^^
 
 - The application crashes when a file upload dialog is canceled without closing Quick Look.
- - When the app auto-starts, app page opens on screen instead of being minimized to Dock.
- - You have to click twice when a window is out of focus to have actions performed.
+- When the app auto-starts, app page opens on screen instead of being minimized to Dock.
+- You have to click twice when a window is out of focus to have actions performed.
 
 Linux (Beta)
 ^^^^^^^^^^^^^
