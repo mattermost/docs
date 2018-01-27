@@ -38,6 +38,7 @@ metadata:
     heritage: {{ $releaseService }}
     queue-pod-name: {{ .name }}
 spec:
+
   replicas: {{ default $replicas .replicas }}
   template:
     metadata:
@@ -52,6 +53,31 @@ spec:
         runAsUser: 1000
         fsGroup: 1000
       initContainers:
+        - name: configure
+          command: ['sh', '/config/configure']
+          image: busybox
+          volumeMounts:
+          - name: sidekiq-config
+            mountPath: /config
+            readOnly: true
+          - name: init-sidekiq-gitaly
+            mountPath: /initconfig/gitaly
+            readOnly: true
+          - name: init-sidekiq-redis
+            mountPath: /initconfig/redis
+            readOnly: true
+          - name: init-sidekiq-postgres
+            mountPath: /initconfig/postgres
+            readonly: true
+          - name: sidekiq-gitaly
+            mountPath: /gitaly
+            readOnly: false
+          - name: sidekiq-redis
+            mountPath: /redis
+            readOnly: false
+          - name: sidekiq-postgres
+            mountPath: /po=stgres
+            readOnly: false
         - name: {{ $name }}-dependencies
           image: "{{ $image }}"
           imagePullPolicy: {{ $imagePullPolicy }}
@@ -131,24 +157,35 @@ spec:
                 name: {{ $fullname }}
             - configMap:
                 name: {{ $queueName }}
-      - name: sidekiq-gitaly
+      - name: init-sidekiq-gitaly
         secret:
           secretName: {{ $gitalySecret }}
           items:
             - key: {{ $gitalyKey }}
               path: "gitaly_token"
-      - name: sidekiq-redis
+          defaultMode: 0400
+      - name: init-sidekiq-redis
         secret:
           secretName: {{ $redisSecret }}
           items:
             - key: {{ $redisKey }}
               path: password
-      - name: sidekiq-postgres
+      - name: init-sidekiq-postgres
         secret:
           secretName: {{ $postgresSecret }}
           items:
             - key: {{ $postgresKey }}
               path: psql-password
+          defaultMode: 0400
+      - name: sidekiq-postgres
+        emptyDir:
+          medium: "Memory"
+      - name: sidekiq-redis
+        emptyDir:
+          medium: "Memory"
+      - name: sidekiq-gitaly
+        emptyDir:
+          medium: "Memory"
     {{- if .nodeSelector }}
       nodeSelector:
 {{ toYaml .nodeSelector | indent 8 }}
