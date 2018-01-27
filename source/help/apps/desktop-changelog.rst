@@ -28,13 +28,13 @@ Windows
 ^^^^^^^^^^^^^
 
 - Added support for protocol deep linking where the desktop app opens via `mattermost://` link if app is already installed.
-- Added the ability to more easily whitelabel the Mattermost taskbar icon on custom builds.
+- Added the ability to more easily white-label the Mattermost taskbar icon on custom builds.
 
 Mac
 ^^^^^^^^^^^^^
 
 - Added support for protocol deep linking where the desktop app opens via `mattermost://` link if app is already installed.
-- Added `Ctrl+Tab` and `Ctrl+Shift+Tab` shortcuts to switch between server tabs,
+- Added `Ctrl+Tab` and `Ctrl+Shift+Tab` shortcuts to switch between server tabs.
 - Added the option to bounce the Dock icon when receiving a notification.
 
 Architectural Changes
