@@ -32,6 +32,8 @@ data:
           default:
             path: /var/opt/gitlab/repo
             gitaly_address: tcp://localhost:8075
-
+  configure: |
+    set -e
+    cat /initconfig/redis/password > /redis/password
 # Leave this here - This line denotes end of block to the parser.
 {{- end }}

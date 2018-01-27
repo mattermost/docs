@@ -21,6 +21,20 @@ spec:
       securityContext:
         runAsUser: 1000
         fsGroup: 1000
+      initContainers:
+        - name: configure
+          command: ['sh', '/config/configure']
+          image: busybox
+          volumeMounts:
+          - name: migrations-config
+            mountPath: /config
+            readOnly: true
+          - name: init-migrations-redis
+            mountPath: /initconfig/redis
+            readOnly: true
+          - name: migrations-redis
+            mountPath: /redis
+            readOnly: false
       restartPolicy: OnFailure
       containers:
         - name: {{ .Chart.Name }}
@@ -54,6 +68,9 @@ spec:
         configMap:
           name: {{ template "migrations.fullname" . }}
       - name: migrations-redis
+        emptyDir:
+          medium: "Memory"
+      - name: init-migrations-redis
         secret:
           secretName: {{ .Values.redis.password.secret }}
           items:
