@@ -22,6 +22,43 @@ spec:
         runAsUser: 1000
         fsGroup: 1000
       initContainers:
+        - name: configure
+          command: ['sh', '/config/configure']
+          image: busybox
+          volumeMounts:
+          - name: unicorn-config
+            mountPath: /config
+            readOnly: true
+          - name: init-unicorn-registry
+            mountPath: /initconfig/registry
+            readOnly: true
+          - name: init-unicorn-redis
+            mountPath: /initconfig/redis
+            readOnly: true
+          - name: init-unicorn-gitaly
+            mountPath: /initconfig/gitaly
+            readOnly: true
+          - name: init-unicorn-shell
+            mountPath: /initconfig/shell
+            readOnly: true
+          - name: init-unicorn-postgres
+            mountPath: /initconfig/postgres
+            readonly: true
+          - name: unicorn-postgres
+            mountPath: /postgres
+            readOnly: false
+          - name: unicorn-redis
+            mountPath: /redis
+            readOnly: false
+          - name: unicorn-shell
+            mountPath: /shell
+            readOnly: false
+          - name: unicorn-gitaly
+            mountPath: /gitaly
+            readOnly: false
+          - name: unicorn-registry
+            mountPath: /registry
+            readOnly: false
         - name: {{ .Chart.Name }}-dependencies
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
@@ -105,36 +142,55 @@ spec:
       - name: unicorn-config
         configMap:
           name: {{ template "fullname" . }}
-      - name: unicorn-shell
+      - name: init-unicorn-shell
         secret:
           secretName: {{ .Values.shell.authToken.secret }}
           items:
             - key: {{ default "secret" .Values.shell.authToken.key }}
               path: ".gitlab_shell_secret"
-      - name: unicorn-gitaly
+          defaultMode: 0400
+      - name: init-unicorn-gitaly
         secret:
           secretName: {{ .Values.gitaly.authToken.secret }}
           items:
             - key: {{ default "token" .Values.gitaly.authToken.key }}
               path: "gitaly_token"
-      - name: unicorn-redis
+          defaultMode: 0400
+      - name: init-unicorn-redis
         secret:
           secretName: {{ .Values.redis.password.secret }}
           items:
             - key: {{ .Values.redis.password.key }}
               path: password
-      - name: unicorn-postgres
+      - name: init-unicorn-postgres
         secret:
           secretName: {{ .Values.psql.password.secret }}
           items:
             - key: {{ .Values.psql.password.key }}
               path: psql-password
-      - name: unicorn-registry
+          defaultMode: 0400
+      - name: init-unicorn-registry
         secret:
           secretName: {{ .Values.registry.certificate.secret }}
           items:
             - key: {{ .Values.registry.certificate.key }}
               path: gitlab-registry.key
+          defaultMode: 0400
+      - name: unicorn-shell
+        emptyDir:
+          medium: "Memory"
+      - name: unicorn-gitaly
+        emptyDir:
+          medium: "Memory"
+      - name: unicorn-redis
+        emptyDir:
+          medium: "Memory"
+      - name: unicorn-registry
+        emptyDir:
+          medium: "Memory"
+      - name: unicorn-postgres
+        emptyDir:
+          medium: "Memory"
     {{- if .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml .Values.nodeSelector | indent 8 }}
