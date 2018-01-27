@@ -1,0 +1,19 @@
+# Snippet to make use of a Redis external to the chart
+redis:
+  enabled: false
+gitlab:
+  unicorn:
+    redis:
+      host: omnibus-vm.fqdn
+  sidekiq:
+    redis:
+      host: omnibus-vm.fqdn
+  gitlab-shell:
+    redis:
+      host: omnibus-vm.fqdn
+  migrations:
+    redis:
+      host: omnibus-vm.fqdn
+  omnibus:
+    redis:
+      host: omnibus-vm.fqdn
