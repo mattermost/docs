@@ -41,7 +41,7 @@ Mac
 Architectural Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Major version upgrade of Electron from v1.7.11 to v1.7.9. Electron is the underlying technology used to build the Desktop apps.
+- Major version upgrade of Electron from v1.6.11 to v1.7.11. Electron is the underlying technology used to build the Desktop apps.
 - The app now uses CSS to style the user interface. Styles are also divided to React's inline `style` and CSS.
 - Yarn is now used to manage dependencies across Windows, Mac and Linux builds.
 - Build is now run automatically before packaging the apps with `npm run package`.
