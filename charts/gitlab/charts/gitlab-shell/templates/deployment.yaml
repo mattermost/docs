@@ -18,6 +18,27 @@ spec:
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/configmap.yml") . | sha256sum }}
     spec:
+      initContainers:
+        - name: configure
+          command: ['sh', '/config/configure']
+          image: busybox
+          volumeMounts:
+          - name: shell-config
+            mountPath: /config
+            readOnly: true
+          - name: shell-init-secret
+            mountPath: /initconfig/shell
+            readOnly: true
+          - name: shell-init-redis
+            mountPath: /initconfig/redis
+            readOnly: true
+          - name: shell-redis
+            mountPath: /redis
+            readOnly: false
+          - name: shell-secret
+            mountPath: /shell
+            readOnly: false
+
       securityContext:
         fsGroup: 1000
       containers:
@@ -62,20 +83,27 @@ spec:
       - name: shell-config
         configMap:
           name: {{ template "fullname" . }}
-      - name: shell-secret
+      - name: shell-init-secret
         secret:
           secretName: {{ .Values.authToken.secret }}
           items:
             - key: {{ .Values.authToken.key }}
               path: ".gitlab_shell_secret"
           defaultMode: 0440
-      - name: shell-redis
+      - name: shell-init-redis
         secret:
           secretName: {{ .Values.redis.password.secret }}
           items:
             - key: {{ .Values.redis.password.key }}
               path: password
           defaultMode: 0440
+      # Actual config dirs that will be used in the container
+      - name: shell-secret
+        emptyDir:
+          medium: "Memory"
+      - name: shell-redis
+        emptyDir:
+          medium: "Memory"
     {{- if .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml .Values.nodeSelector | indent 8 }}
