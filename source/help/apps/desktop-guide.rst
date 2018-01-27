@@ -91,3 +91,8 @@ Leave app running in notification center when application window is closed (Linu
     When enabled, closing the application window will leave the Mattermost desktop app running in your notification center. This can be useful if you want to check for unread mentions while away from the app.
 
     This setting is disabled by default.
+    
+Bounce the Dock icon when receiving a notification (Mac only)
+    When enabled, the Dock icon will bounce when receiving a notification.
+    
+    This setting is ________ by default.
