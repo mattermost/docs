@@ -14,12 +14,12 @@ Improvements
 All Platforms
 ^^^^^^^^^^^^^
 
- - Added a dialog to allow the user to reopen the desktop app if it quits unexpectedly.
- - Mattermost animation icon is now displayed when loading a page, instead of a blank screen.
- - Added a dialog to request permissions to show desktop notifications or to use microphone and video for [video calls](https://docs.mattermost.com/deployment/webrtc.html) from untrusted origins.
- - The "Saved" indicator now appears for both Server Management and App Options on the Settings page.
- - Close button on the Settings page now has a hover effect.
- - Added new admin configuration settings for:
+- Added a dialog to allow the user to reopen the desktop app if it quits unexpectedly.
+- Mattermost animation icon is now displayed when loading a page, instead of a blank screen.
+- Added a dialog to request permissions to show desktop notifications or to use microphone and video for video calls from untrusted origins.
+- The "Saved" indicator now appears for both Server Management and App Options on the Settings page.
+- Close button on the Settings page now has a hover effect.
+- Added new admin configuration settings for:
    - Disabling server management where the user cannot add or edit the server URL.
    - Setting one or more pre-configured server URLs for the end user.
    - Customizing the link in **Help > Learn More..**.
@@ -27,25 +27,25 @@ All Platforms
 Windows
 ^^^^^^^^^^^^^
 
- - Added support for protocol deep linking where the desktop app opens via `mattermost://` link if app is already installed.
- - Added the ability to more easily whitelabel the Mattermost taskbar icon on custom builds.
+- Added support for protocol deep linking where the desktop app opens via `mattermost://` link if app is already installed.
+- Added the ability to more easily whitelabel the Mattermost taskbar icon on custom builds.
 
 Mac
 ^^^^^^^^^^^^^
 
- - Added support for protocol deep linking where the desktop app opens via `mattermost://` link if app is already installed.
- - Added `Ctrl+Tab` and `Ctrl+Shift+Tab` shortcuts to switch between server tabs,
- - Added the option to bounce the Dock icon when receiving a notification.
+- Added support for protocol deep linking where the desktop app opens via `mattermost://` link if app is already installed.
+- Added `Ctrl+Tab` and `Ctrl+Shift+Tab` shortcuts to switch between server tabs,
+- Added the option to bounce the Dock icon when receiving a notification.
 
 Architectural Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- - Major version upgrade of Electron from v1.6.11 to v1.7.9. Electron is the underlying technology used to build the Desktop apps.
- - The app now uses CSS to style the user interface. Styles are also divided to React's inline `style` and CSS.
- - Yarn is now used to manage dependencies across Windows, Mac and Linux builds.
- - Build is now run automatically before packaging the apps with `npm run package`.
- - Removed hardcoded product name references.
- - Added an `rm` command to `npm`, which removes all dynamically generated files to make it easy to reset the app between builds and branches.
+- Major version upgrade of Electron from v1.6.11 to v1.7.9. Electron is the underlying technology used to build the Desktop apps.
+- The app now uses CSS to style the user interface. Styles are also divided to React's inline `style` and CSS.
+- Yarn is now used to manage dependencies across Windows, Mac and Linux builds.
+- Build is now run automatically before packaging the apps with `npm run package`.
+- Removed hardcoded product name references.
+- Added an `rm` command to `npm`, which removes all dynamically generated files to make it easy to reset the app between builds and branches.
 
 Bug Fixes
 ~~~~~~~~~~~~~~~
@@ -53,30 +53,30 @@ Bug Fixes
 All Platforms
 ^^^^^^^^^^^^^
 
- - Fixed the close button of the Settings page not working on first installation.
- - Fixed the app publisher referring to Yuya Ochiai instead of Mattermost, Inc.
- - Fixed font size not always persisting across app restarts.
- - Fixed an automatic reloading of the app when a DNS or network error page is manually reloaded with CTRL/CMD+R.
- - Fixed an issue where changing font size caused rendering issues on next restart.
- - Fixed an issue where after adding a server on the Settings page, focus remained on the "Add new server" link.
- - Fixed an issue where SAML certificate file couldn't be uploaded from the file upload dialog.
+- Fixed the close button of the Settings page not working on first installation.
+- Fixed the app publisher referring to Yuya Ochiai instead of Mattermost, Inc.
+- Fixed font size not always persisting across app restarts.
+- Fixed an automatic reloading of the app when a DNS or network error page is manually reloaded with CTRL/CMD+R.
+- Fixed an issue where changing font size caused rendering issues on next restart.
+- Fixed an issue where after adding a server on the Settings page, focus remained on the "Add new server" link.
+- Fixed an issue where SAML certificate file couldn't be uploaded from the file upload dialog.
 
 Windows
 ^^^^^^^^^^^^^
 
- - Fixed desktop notifications not working when the window was minimized from an inactive state.
- - Fixed the uninstaller not removing all files correctly.
+- Fixed desktop notifications not working when the window was minimized from an inactive state.
+- Fixed the uninstaller not removing all files correctly.
 
 Mac
 ^^^^^^^^^^^^^
 
- - Fixed an issue where after uploading a file, focus wasn't put back to the text box.
- - Fixed a mis-aligned `+` button in the server tab bar.
+- Fixed an issue where after uploading a file, focus wasn't put back to the text box.
+- Fixed a mis-aligned `+` button in the server tab bar.
 
 Linux
 ^^^^^^^^^^^^^
 
- - Fixed the main window not being minimized when the app is launched via "Start app on Login" option.
+- Fixed the main window not being minimized when the app is launched via "Start app on Login" option.
 
 Known Issues
 ~~~~~~~~~~~~~~~
@@ -84,14 +84,14 @@ Known Issues
 All Platforms
 ^^^^^^^^^^^^^
 
- - Insecure connection produces hundreds of log messages.
+- Insecure connection produces hundreds of log messages.
 
 Windows
 ^^^^^^^^^^^^^
 
- - App window doesn't save "floating" app position.
- - Windows 7: Sometimes the app tries to render the page inside the app instead of in a new browser tab when clicking links.
- - Windows 10: Incorrect task name in Windows 10 startup list.
+- App window doesn't save "floating" app position.
+- Windows 7: Sometimes the app tries to render the page inside the app instead of in a new browser tab when clicking links.
+- Windows 10: Incorrect task name in Windows 10 startup list.
 
 Mac
 ^^^^^^^^^^^^^
@@ -104,7 +104,7 @@ Linux (Beta)
 ^^^^^^^^^^^^^
 
 - Ubuntu - 64 bit: Right clicking taskbar icon and choosing **Quit** only minimizes the app.
- - Ubuntu - 64 bit: Direct message notification sometimes comes as a streak of line instead of a pop up.
+- Ubuntu - 64 bit: Direct message notification sometimes comes as a streak of line instead of a pop up.
 
 Contributors
 ~~~~~~~~~~~~~~~
