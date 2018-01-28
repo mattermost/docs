@@ -42,7 +42,7 @@ Architectural Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Major version upgrade of Electron from v1.6.11 to v1.7.11. Electron is the underlying technology used to build the Desktop apps.
-- The app now uses CSS to style the user interface. Styles are also divided to React's inline `style` and CSS.
+- The app now uses CSS to style the user interface. Styles are also divided into React's inline `style` and CSS.
 - Yarn is now used to manage dependencies across Windows, Mac and Linux builds.
 - Build is now run automatically before packaging the apps with `npm run package`.
 - Removed hardcoded product name references.
@@ -92,7 +92,7 @@ Windows
 
 - App window doesn't save "floating" app position.
 - Windows 7: Sometimes the app tries to render the page inside the app instead of in a new browser tab when clicking links.
-- Windows 10: Incorrect task name in Windows 10 startup list.
+- Windows 10: Incorrect task name in Windows 10 start-up list.
 
 Mac
 ^^^^^^^^^^^^^
@@ -105,7 +105,7 @@ Linux (Beta)
 ^^^^^^^^^^^^^
 
 - Ubuntu - 64 bit: Right clicking taskbar icon and choosing **Quit** only minimizes the app.
-- Ubuntu - 64 bit: Direct message notification sometimes comes as a streak of line instead of a pop up.
+- Ubuntu - 64 bit: Direct message notification sometimes renders as a streak or line instead of a pop up.
 
 Contributors
 ~~~~~~~~~~~~~~~
