@@ -2,13 +2,10 @@ To deploy, we'll run `helm install` with our configuration file, from the
 root of this repository:
 
 ```
-$ helm install -f configuration.yaml .
+$ helm install --name gitlab -f configuration.yaml .
 ```
 
-This will output the list of resources being installed.
+This will output the list of resources installed once the deployment finishes which may take 5-10 minutes.
 
-Later, the status of the deployment can be checked with `helm status <deployment-name>`.
-
-```
-$ helm status ill-dachshund
-```
+The status of the deployment can be checked by running `helm status gitlab` which can also be done while
+the deployment is taking place if you run the command in another terminal.
