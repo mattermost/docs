@@ -76,6 +76,11 @@ Flash taskbar icon when a new message is received (Windows, Linux only)
     Configure whether the taskbar icon flashes for a few messages when a new message is received on any of your active teams and servers.
 
     This setting is disabled by default.
+    
+Bounce the Dock icon when receiving a notification (Mac only)
+    When enabled, the Dock icon will either bounce once or bounce until the user opens the app when receiving a notification.
+    
+    This setting is disabled by default.
 
 Show Mattermost icon in the menu bar (Mac only)
     When enabled, Mattermost icon is added to the Mac menu bar.
@@ -91,3 +96,4 @@ Leave app running in notification center when application window is closed (Linu
     When enabled, closing the application window will leave the Mattermost desktop app running in your notification center. This can be useful if you want to check for unread mentions while away from the app.
 
     This setting is disabled by default.
+    
