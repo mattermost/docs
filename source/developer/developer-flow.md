@@ -1,7 +1,7 @@
 Developer Flow
 -----------------------------
 
-If you haven't [set up your developer environment](https://docs.mattermost.com/developer/developer-setup.html), please do so before continuing with this section.
+If you haven't [set up your developer environment](https://docs.mattermost.com/developer/dev-setup.html), please do so before continuing with this section.
 
 ### Workflow ###
 
