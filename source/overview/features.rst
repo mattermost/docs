@@ -21,7 +21,7 @@ Team Edition Features
 
 .. raw:: html
 
-                    <p>Increase agility, efficiency and innovation by bringing all team communication into one place. Collaborate in real time with individuals and teams.</p>
+                    <p>Increase agility, efficiency and innovation by bringing all team communication into one place. Collaborate in real time with individuals and teams</p>
                 </td>
                 <td>
                     <h4>File sharing</h4>
