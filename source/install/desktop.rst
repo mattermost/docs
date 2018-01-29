@@ -4,9 +4,10 @@ Desktop Application Install Guides
 
 Mattermost desktop applications are available for Windows, Mac and Linux operating systems. They support all the features of the web experience, plus:
 
- - Connect to multiple Mattermost servers from a single interface, and switch with shortcut keys.
+ - Connect to multiple Mattermost servers from a single interface, and switch with shortcut keys
  - Auto-start Mattermost when a user logs into their machine
  - (Windows) Add Mattermost to Start menu, taskbar and system tray
+ - (Windows/Mac) Deep link to the desktop app via mattermost:// protocol if app is already installed
  - (Mac) Add Mattermost to the applications Dock
  - (Linux) ``Desktop Entry`` for the application to more easily `integrate into a desktop environment <https://wiki.archlinux.org/index.php/Desktop_entries>`_
 
