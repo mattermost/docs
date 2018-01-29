@@ -26,6 +26,7 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           args:
+            - /scripts/wait-for-deps
             - /scripts/db-migrate
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
