@@ -110,7 +110,7 @@ kubectl create secret generic gitaly-secret --from-literal=token=$(head -c 512 /
 Generate a set of random 20 & 64 character alpha-numeric keys for Minio.
 
 ```
-$ kubectl create secret generic gitlab-minio --from-literal=accesskey=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 20) --from-literal=secretkey=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64)
+kubectl create secret generic gitlab-minio --from-literal=accesskey=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 20) --from-literal=secretkey=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64)
 ```
 
 # Next Steps

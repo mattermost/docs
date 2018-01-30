@@ -6,7 +6,7 @@ your own yaml template.
 For this example, we will use domain `example.local`, and expect our hostnames to be: `gitlab.example.local`, `registry.example.local`.
 
 ```
-$ cp doc/example-config.yaml configuration.yaml
+cp doc/example-config.yaml configuration.yaml
 ```
 
 In order to complete the configuration, we will need to prepare a few values:
