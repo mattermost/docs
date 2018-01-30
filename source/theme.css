@@ -14,6 +14,32 @@ footer {
 	padding-bottom: 30px;
 }
 
+.features__table {
+	margin-bottom: 50px;
+}
+
+.features__table td {
+	padding: 10px 20px;
+	width: 50%;
+}
+
+.features__table img {
+	width: 100%;
+}
+
+.features__table p {
+	font-size: 15px;
+	line-height: 1.5;
+	margin-top: 10px;
+	opacity: .7;
+}
+
+.features__table h4 {
+	margin-bottom: 10px;
+	font-size: 17px;
+	color: #555;
+}
+
 .rst-versions .rst-other-versions {
 	color: rgba(255, 255, 255, 0.6);
 	display: none;
