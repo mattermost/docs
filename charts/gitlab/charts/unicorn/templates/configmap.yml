@@ -96,7 +96,9 @@ data:
       registry:
         enabled: true
         host: {{ template "unicorn.registry.host" . }}
-        port: {{ default 443 .Values.registry.port }}
+        {{- if .Values.registry.port }}
+        port: {{ .Values.registry.port }}
+        {{- end }}
         api_url: {{ default "http" .Values.registry.api.protocol }}://{{ template "unicorn.registry.api.host" . }}:{{ default 5000 .Values.registry.api.port }}
         key: /etc/gitlab-registry/gitlab-registry.key
         issuer: {{ .Values.registry.tokenIssuer }}
