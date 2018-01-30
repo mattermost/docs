@@ -34,10 +34,15 @@ For the purposes of cross-plaform compatibility in this guide, we'll stick with 
 
 ### Starting / Stopping Minikube
 
-Once you have all the tools installed and configured, starting at stopping Minikube is easy:
+Once you have all the tools installed and configured, starting at stopping Minikube can be done with:
 
 ```
-[helm.gitlab.io]$ minikube start
+minikube start
+```
+
+This command should output something similar to:
+
+```
 Starting local Kubernetes v1.7.0 cluster...
 Starting VM...
 Downloading Minikube ISO
