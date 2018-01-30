@@ -6,6 +6,11 @@ metadata:
   labels:
     app: {{ template "fullname" . }}
 data:
+  configure: |
+    set -e
+    cat /initconfig/.gitlab_shell_secret > /secrets/.gitlab_shell_secret
+    cat /initconfig/gitaly_token > /secrets/gitaly_token
+    cat /initconfig/redis_password > /secrets/redis_password
   config.toml.erb: |
     # The directory where Gitaly's executables are stored
     bin_dir = "/usr/local/bin/gitaly"

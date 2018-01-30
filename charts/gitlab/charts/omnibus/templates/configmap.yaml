@@ -7,6 +7,9 @@ metadata:
   labels:
     app: {{ template "fullname" . }}
 data:
+  configure: |
+    set -e
+    cat /initconfig/redis/password > /redis/password
   gitlab.rb: |
     ###################
     # gitlab/gitlab-rails

@@ -18,6 +18,20 @@ spec:
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/configmap.yml") . | sha256sum }}
     spec:
+      initContainers:
+        - name: configure
+          command: ['sh', '/config/configure']
+          image: busybox
+          volumeMounts:
+          - name: gitaly-config
+            mountPath: /config
+            readOnly: true
+          - name: init-gitaly-secrets
+            mountPath: /initconfig
+            readOnly: true
+          - name: gitaly-secrets
+            mountPath: /secrets
+            readOnly: false
       securityContext:
         runAsUser: 1000
         fsGroup: 1000
@@ -61,6 +75,9 @@ spec:
         configMap:
           name: {{ template "fullname" . }}
       - name: gitaly-secrets
+        emptyDir:
+          medium: "Memory"
+      - name: init-gitaly-secrets
         projected:
           defaultMode: 0440
           sources:
