@@ -2,7 +2,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: {{ template "minio.fullname" . }}-svc
+  name: {{ template "minio.fullname" . }}
   labels:
     app: {{ template "minio.fullname" . }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
