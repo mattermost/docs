@@ -5,9 +5,9 @@ Features Overview
 This page gives an overview of the key features available in Mattermost Team and Enterprise Editions. The Enterprise Edition includes all the features in the Team Edition. To compare the editions in more detail, please see the `pricing page <https://about.mattermost.com/pricing-2/>`_.
 
 Team Edition Features
-----------------------------------------------
+---------------------------------------------
 
-----------------------------------------------
+---------------------------------------------
 
 .. raw:: html
 
