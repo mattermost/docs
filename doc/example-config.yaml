@@ -41,7 +41,6 @@ gitlab:
     unicorn:
       enabled: true
       registry:
-        port: 80
         tokenIssuer: gitlab-issuer
         certificate:
           secret: gitlab-registry
