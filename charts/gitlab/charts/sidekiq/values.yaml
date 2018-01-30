@@ -19,7 +19,9 @@ psql:
   # port: '5432'
   # database: 'gitlabhq_production'
   # username: 'gitlab'
-  # password: nil
+  password:
+    secret: gitlab-postgres
+    key: psql-password
 gitaly:
   # host: '0.0.0.0'
   # serviceName: 'gitaly'

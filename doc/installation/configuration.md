@@ -14,11 +14,6 @@ In order to complete the configuration, we will need to prepare a few values:
 - [static-ip][] for the `loadBalancerIP`
 - [DNS entry][] made for the domain
 - `initialRootPassword`, from 1Password or chosen at random
-- PostgreSQL database password, chosen and then encoded, for `SQLPassword` and `encodedSQLPassword`
-
-To create the create the encoded form of the PostgreSQL password, we'll note our selected password and then run the following command, replacing `${SQLPassword}` with your chosen password, using the value where you see `encodedSQLPassword`:
-
-`echo -n "${SQLPassword}gitlab" | md5sum - | cut -d ' ' -f1`
 
 Next, we are replacing the contents of the `configuration.yaml` with valid
 information:
@@ -40,22 +35,8 @@ nginx:
     autoGenerate: true
 
 gitlab:
-  unicorn:
-    psql:
-      password: SQLPassword
-
-  sidekiq:
-    psql:
-      password: SQLPassword
-
   migrations:
-    psql:
-      password: SQLPassword
     initialRootPassword: initialRootPassword
-
-  omnibus:
-    psql:
-      sql_user_password: encodedSQLPassword
 ```
 
 If you are using [Let's Encrypt certificates](secrets.md#lets-encrypt):

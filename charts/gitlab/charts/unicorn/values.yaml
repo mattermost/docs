@@ -38,7 +38,9 @@ psql:
   # port: '5432'
   # database: 'gitlabhq_production'
   # username: 'gitlab'
-  # password: nil
+  password:
+    secret: gitlab-postgres
+    key: psql-password
 shell:
   authToken:
     secret: gitlab-shell-secret
