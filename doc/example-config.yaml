@@ -17,13 +17,6 @@ nginx:
 
 # Registry chart Provides services to Unicorn/Omnibus chart(s) and external clients
 registry:
-  storage:
-    filesystem:
-      rootdirectory: '/tmp/registry'
-    cache:
-      blobdescriptor: 'inmemory'
-    delete:
-      enabled: true
 
 # Redis chart provides Redis services to multiple charts
 redis:
