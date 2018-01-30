@@ -8,9 +8,10 @@ metadata:
 data:
   configure: |
     set -e
-    cp /initconfig/.gitlab_shell_secret  /secrets/.gitlab_shell_secret
-    cp /initconfig/gitaly_token  /secrets/gitaly_token
-    cp /initconfig/redis_password  /secrets/redis_password
+    mkdir -p /init-secrets/redis /init-secrets/gitaly /init-secrets/shell
+    cp /init-config/.gitlab_shell_secret  /init-secrets/shell/.gitlab_shell_secret
+    cp /init-config/gitaly_token  /init-secrets/gitaly/gitaly_token
+    cp /init-config/redis_password  /init-secrets/redis/redis_password
   config.toml.erb: |
     # The directory where Gitaly's executables are stored
     bin_dir = "/usr/local/bin/gitaly"
@@ -23,7 +24,7 @@ data:
     path = "/home/git/repositories"
 
     [auth]
-    token = "<%= File.read('/etc/gitlab-secrets/gitaly_token') %>"
+    token = "<%= File.read('/etc/gitlab-secrets/gitaly/gitaly_token') %>"
 
     [gitaly-ruby]
     # The directory where gitaly-ruby is installed
@@ -40,7 +41,7 @@ data:
     # Url to gitlab instance. Used for api calls. Should end with a slash.
     gitlab_url: "http://{{ template "gitaly.unicorn.host" . }}:{{ default 8080 .Values.unicorn.port }}/"
 
-    secret_file: /etc/gitlab-secrets/.gitlab_shell_secret
+    secret_file: /etc/gitlab-secrets/shell/.gitlab_shell_secret
 
     http_settings:
       self_signed_cert: false
@@ -52,7 +53,7 @@ data:
     redis:
       host: {{ template "gitaly.redis.host" . }}
       port: {{ default 6379 .Values.redis.port }}
-      pass: "<%= File.read("/etc/gitlab-secrets/redis_password") %>"
+      pass: "<%= File.read("/etc/gitlab-secrets/redis/redis_password") %>"
       database: nil
       namespace: resque:gitlab
 
