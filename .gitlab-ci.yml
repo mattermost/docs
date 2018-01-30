@@ -274,9 +274,6 @@ qa:
       --set nginx.service.loadBalancerIP="$DOMAIN_IP" \
       --set registry.enabled=true \
       --set registry.replicas=1 \
-      --set registry.storage.filesystem.rootdirectory="/var/lib/registry" \
-      --set registry.storage.cache.blobdescriptor="inmemory" \
-      --set registry.storage.delete.enabled=true \
       --set registry.tokenIssuer="gitlab-issuer" \
       --set registry.certificate.secret="gitlab-registry" \
       --set registry.certificate.key="registry-auth.crt" \

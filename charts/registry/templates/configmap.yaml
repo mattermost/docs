@@ -36,5 +36,7 @@ data:
     storage:
       {{- if .Values.storage }}
 {{ toYaml .Values.storage | indent 6}}
+      {{- else }}
+{{ include (print $.Template.BasePath "/_storage_default.yaml") . | indent 6}}
       {{- end }}
 {{- end -}}
