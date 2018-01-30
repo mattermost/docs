@@ -19,7 +19,7 @@ nginx:
 registry:
   storage:
     filesystem:
-      rootdirectory: '/var/lib/registry'
+      rootdirectory: '/tmp/registry'
     cache:
       blobdescriptor: 'inmemory'
     delete:
