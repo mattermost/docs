@@ -19,7 +19,6 @@ spec:
         checksum/config: {{ include (print $.Template.BasePath "/configmap.yml") . | sha256sum }}
     spec:
       securityContext:
-        runAsUser: 1000
         fsGroup: 1000
       containers:
         - name: {{ .Chart.Name }}
