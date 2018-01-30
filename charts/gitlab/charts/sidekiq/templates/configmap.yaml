@@ -13,7 +13,7 @@ data:
       database: {{ default "gitlabhq_production" .Values.psql.database | quote }}
       pool: 10
       username: {{ default "gitlab" .Values.psql.username | quote }}
-      password: {{ .Values.psql.password | quote }}
+      password: <%= File.read("/etc/gitlab-postgres/psql-password") %>
       host: {{ template "sidekiq.psql.host" . }}
       port: {{ default 5432 .Values.psql.port }}
       # load_balancing:

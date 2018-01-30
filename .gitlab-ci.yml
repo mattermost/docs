@@ -290,7 +290,7 @@ qa:
       --set gitlab.sidekiq.redis.password.secret=gitlab-redis \
       --set gitlab.sidekiq.redis.password.key=redis-password \
       --set gitlab.sidekiq.psql.serviceName=omnibus \
-      --set gitlab.sidekiq.psql.password="$ROOT_PASSWORD" \
+      --set gitlab.sidekiq.psql.password.secret=gitlab-postgres \
       --set gitlab.sidekiq.gitaly.authToken.secret=gitaly-secret \
       --set gitlab.sidekiq.gitaly.authToken.key=token \
       --set gitlab.unicorn.enabled=true \
@@ -298,7 +298,7 @@ qa:
       --set gitlab.unicorn.redis.password.secret=gitlab-redis \
       --set gitlab.unicorn.redis.password.key=redis-password \
       --set gitlab.unicorn.psql.serviceName=omnibus \
-      --set gitlab.unicorn.psql.password="$ROOT_PASSWORD" \
+      --set gitlab.unicorn.psql.password.secret=gitlab-postgres \
       --set gitlab.unicorn.shell.authToken.secret=gitlab-shell-secret \
       --set gitlab.unicorn.shell.authToken.key=secret \
       --set gitlab.unicorn.gitaly.authToken.secret=gitaly-secret \
@@ -312,7 +312,7 @@ qa:
       --set gitlab.migrations.redis.password.secret=gitlab-redis \
       --set gitlab.migrations.redis.password.key=redis-password \
       --set gitlab.migrations.psql.serviceName=omnibus \
-      --set gitlab.migrations.psql.password="$ROOT_PASSWORD" \
+      --set gitlab.migrations.psql.password.secret=gitlab-postgres \
       --set gitlab.migrations.initialRootPassword="$ROOT_PASSWORD" \
       --set gitlab.gitlab-shell.enabled=true \
       --set gitlab.gitlab-shell.authToken.secret=gitlab-shell-secret \
@@ -322,8 +322,7 @@ qa:
       --set gitlab.gitaly.authToken.key=token \
       --set gitlab.omnibus.enabled=true \
       --set gitlab.omnibus.service.type=NodePort \
-      --set gitlab.omnibus.psql.password="$ROOT_PASSWORD" \
-      --set gitlab.omnibus.psql.sql_user_password="$(echo -n ${ROOT_PASSWORD}gitlab | md5sum - | cut -d' ' -f1)" \
+      --set gitlab.omnibus.psql.password.secret=gitlab-postgres \
       --namespace="$KUBE_NAMESPACE" \
       --version="$CI_PIPELINE_ID-$CI_JOB_ID" \
       "$name" \

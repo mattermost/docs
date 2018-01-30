@@ -36,8 +36,9 @@ psql:
   # port: '5432'
   # database: 'gitlabhq_production'
   # username: 'gitlab'
-  # password: nil
-  # sql_user_password: nil
+  password:
+    secret: gitlab-postgres
+    key: psql-password
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious

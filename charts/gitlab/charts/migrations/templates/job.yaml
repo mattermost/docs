@@ -43,6 +43,9 @@ spec:
             - name: migrations-redis
               mountPath: '/etc/gitlab-redis'
               readOnly: true
+            - name: migrations-postgres
+              mountPath: '/etc/gitlab-postgres'
+              readOnly: true
           resources:
 {{ toYaml .Values.resources | indent 12 }}
       volumes:
@@ -55,6 +58,13 @@ spec:
           items:
             - key: {{ .Values.redis.password.key }}
               path: password
+          defaultMode: 0400
+      - name: migrations-postgres
+        secret:
+          secretName: {{ .Values.psql.password.secret }}
+          items:
+            - key: {{ .Values.psql.password.key }}
+              path: psql-password
           defaultMode: 0400
     {{- if .Values.nodeSelector }}
       nodeSelector:

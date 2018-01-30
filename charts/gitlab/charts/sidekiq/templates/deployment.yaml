@@ -11,6 +11,8 @@
 {{- $timeout := .Values.timeout -}}
 {{- $redisSecret := .Values.redis.password.secret -}}
 {{- $redisKey := .Values.redis.password.key -}}
+{{- $postgresSecret := .Values.psql.password.secret -}}
+{{- $postgresKey := .Values.psql.password.key -}}
 {{- $gitalySecret := .Values.gitaly.authToken.secret -}}
 {{- $gitalyKey := default "token" .Values.gitaly.authToken.key -}}
 {{- /* The below is an messy attempt to read in, and reflect on the configmap-queues.yaml template. */}}
@@ -74,6 +76,9 @@ spec:
           - name: sidekiq-redis
             mountPath: '/etc/gitlab-redis'
             readOnly: true
+          - name: sidekiq-postgres
+            mountPath: '/etc/gitlab-postgres'
+            readOnly: true
           # livenessProbe:
           #   exec:
           #     command:
@@ -102,14 +107,18 @@ spec:
           items:
             - key: {{ $gitalyKey }}
               path: "gitaly_token"
-          defaultMode: 0400
       - name: sidekiq-redis
         secret:
           secretName: {{ $redisSecret }}
           items:
             - key: {{ $redisKey }}
               path: password
-          defaultMode: 0400
+      - name: sidekiq-postgres
+        secret:
+          secretName: {{ $postgresSecret }}
+          items:
+            - key: {{ $postgresKey }}
+              path: psql-password
     {{- if .nodeSelector }}
       nodeSelector:
 {{ toYaml .nodeSelector | indent 8 }}

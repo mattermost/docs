@@ -48,7 +48,7 @@ The port on which to connect to the Redis server. Defaults to `6379`.
 
 #### password
 
-The `password` atribute for Redis has to sub keys:
+The `password` attribute for Redis has to sub keys:
 - `secret` defines the name of the kubernetes `Secret` to pull from
 - `key` defines the name of the key in the above secret that contains the password.
 
@@ -61,7 +61,9 @@ psql:
   port: 5432
   database: gitlabhq_production
   username: gitlab
-  password: nil
+  password:
+    secret: gitlab-postgres
+    key: psql-password
 ```
 
 #### host
@@ -86,7 +88,9 @@ The username with which to authenticate to the database. This defaults to `gitla
 
 #### password
 
-The password with which to authenticate to the database. (This will be moved to a secret in the future)
+The `password` attribute for PostgreSQL has to sub keys:
+- `secret` defines the name of the kubernetes `Secret` to pull from
+- `key` defines the name of the key in the above secret that contains the password.
 
 ## Chart Settings
 

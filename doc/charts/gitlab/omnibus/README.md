@@ -100,9 +100,7 @@ If you use the built-in PostgreSQL, the following will default to connect intern
 
 - `database` contains the database name GitLab will use. Default: `gitlabhq_production`
 - `username` contains the username for authentication to the server. Default: `gitlab`
-- `password` contains the password for authentication to the server. Default: `nil`
-- `sql_user_password` contains the encoded password for MD5 authentication to the psql server. Default: `nil`
-  - The value of this should be `echo -n "${password}gitlab" | md5sum - | cut -d ' ' -f 1`
+- `password` contains a map of `secret` and `key`. This should contain the secret name, and key name which house the password that will be used for the PostgreSQL server.
 
 When using an external PostgreSQL, you will need to provide all of the above.
 
@@ -110,8 +108,9 @@ When using an external PostgreSQL, you will need to provide all of the above.
 psql:
   database: 'gitlabhq_production'
   username: 'gitlab'
-  password: nil
-  sql_user_password: nil
+  password:
+    secret: gitlab-postgres
+    key: psql-password
 ```
 
 [og-docker]: https://gitlab.com/gitlab-org/ominbus-gitlab/container_registry

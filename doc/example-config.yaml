@@ -61,7 +61,8 @@ gitlab:
           key: redis-password
       psql:
         serviceName: omnibus
-        password: secure-pgsql-password
+        password:
+          secret: gitlab-postgres
     # Sidekiq chart, with split queues (see charts/gitlab/charts/sidekiq/values.yaml)
     sidekiq:
       enabled: true
@@ -79,7 +80,8 @@ gitlab:
           key: redis-password
       psql:
         serviceName: omnibus
-        password: secure-pgsql-password
+        password:
+          secret: gitlab-postgres
     # Shell provides SSH access
     gitlab-shell:
       enabled: true
@@ -107,7 +109,8 @@ gitlab:
           key: redis-password
       psql:
         serviceName: omnibus
-        password: secure-pgsql-password
+        password:
+          secret: gitlab-postgres
     # omnibus sub-chart (development only)
     omnibus:
       enabled: true
@@ -118,4 +121,5 @@ gitlab:
           key: redis-password
       # provide PostgreSQL services
       psql:
-        sql_user_password: ${echo -n '${secure-pgsql-password}gitlab' | md5sum - | cut -d ' ' -f1}
+        password:
+          secret: gitlab-postgres

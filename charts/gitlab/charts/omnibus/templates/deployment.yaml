@@ -31,6 +31,9 @@ spec:
             - name: gitlab-redis
               mountPath: '/etc/gitlab-redis'
               readOnly: true
+            - name: gitlab-postgres
+              mountPath: '/etc/gitlab-postgres'
+              readOnly: true
           # livenessProbe:
           #   initialDelaySeconds: 180
           #   timeoutSeconds: 15
@@ -58,6 +61,13 @@ spec:
           items:
             - key: {{ .Values.redis.password.key }}
               path: password
+          defaultMode: 0400
+      - name: gitlab-postgres
+        secret:
+          secretName: {{ .Values.psql.password.secret }}
+          items:
+            - key: {{ .Values.psql.password.key }}
+              path: psql-password
           defaultMode: 0400
     {{- if .Values.nodeSelector }}
       nodeSelector:

@@ -81,6 +81,14 @@ Generate a random 64 character alpha-numeric password for Redis.
 kubectl create secret generic gitlab-redis --from-literal=redis-password=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64)
 ```
 
+### Postgres password
+
+Generate a random 64 character alpha-numeric password for Postgres.
+
+```
+kubectl create secret generic gitlab-postgres --from-literal=psql-password=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64)
+```
+
 ### GitLab Shell
 
 Generate a random 64 character alpha-numeric secret for GitLab Shell.
