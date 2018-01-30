@@ -18,6 +18,19 @@ global:
       #name: gitlab.example.local
       #https: false
 
+## Control the InitContainer behaviors.
+init:
+  image: "busybox"
+  tag: "latest"
+  pullPolicy: "IfNotPresent"
+  script: |-
+    if [ -e /config/accesskey ] ; then
+      sed -e 's@ACCESS_KEY@'"$(cat /config/accesskey)"'@' -e 's@SECRET_KEY@'"$(cat /config/secretkey)"'@' /config/config.yml > /registry/config.yml
+    else
+      cp /config/config.yml  /registry/config.yml
+    fi
+    cat /config/certificate.crt > /registry/certificate.crt
+
 # define some sane resource requests and limitations
 resources: {}
   # limits:
@@ -44,3 +57,8 @@ certificate:
 # if replicas is >1, shared storage MUST be used.
 replicas: 1
 storage: {}
+minio:
+  enabled: false
+  bucket: registry
+  credentials:
+    secret: gitlab-minio
