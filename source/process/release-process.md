@@ -302,7 +302,7 @@ Once bug fix release is ready to cut:
     - Update [Mattermost pricing page](https://about.mattermost.com/pricing/) if anything has changed
     - Merge the Changelog PR with notes on patch releases (see [example entry](https://docs.mattermost.com/administration/changelog.html#release-v3-5.1))
     - Work with a developer to submit GitLab MR [following this process](https://docs.mattermost.com/process/release-process.html#gitlab-merge-request)
-    - Update the version archive in the [upgrade guide](https://github.com/mattermost/docs/blob/master/source/administration/upgrade.md)
+    - Update the version archive in the [upgrade guide](https://docs.mattermost.com/administration/version-archive.html)
 3. QA:  
     - Verifies each of the issues in the patch release are fixed
 4. Logistics:
