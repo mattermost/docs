@@ -9,7 +9,7 @@ Important Upgrade Notes
 +====================================================+=================================================================================================================================================================+
 | v4.4.0                                             | Composite database indexes were added to the ``Posts`` table. This may lead to longer ugprade times for servers with more than 1 million messages.              |
 |                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | LDAP sync now depends on email. Make sure all users on your AD/LDAP server has an email address or their account is deactivated in Mattermost.                  |
+|                                                    | LDAP sync now depends on email. Make sure all users on your AD/LDAP server have  an email address or that their account is deactivated in Mattermost.                  |
 +----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v4.2.0                                             | Mattermost now handles multiple content types for integrations, including plaintext content type. If your integration suddenly prints the JSON payload data     |
 |                                                    | instead of rendering the generated message, make sure your integration is returning the ``application/json`` content-type to retain previous behavior.          |
