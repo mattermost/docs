@@ -250,7 +250,7 @@ If a security fix release is required, run through the following steps:
 1. PM:
     - Update the changelog
     - Work with a developer to submit GitLab MR [following this process](https://docs.mattermost.com/process/release-process.html#gitlab-merge-request)
-    - Update the version archive in the [upgrade guide](https://github.com/mattermost/docs/blob/master/source/administration/upgrade.md)
+    - Update the [version archive](https://docs.mattermost.com/administration/version-archive.html)
     - Help [test the upgrade](https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg) once the GitLab MR is merged and included in their RC
     - Verify all patch fixes are backported
     - Verify all patch fixes are tested (either via unit tests or RCs)
@@ -302,7 +302,7 @@ Once bug fix release is ready to cut:
     - Update [Mattermost pricing page](https://about.mattermost.com/pricing/) if anything has changed
     - Merge the Changelog PR with notes on patch releases (see [example entry](https://docs.mattermost.com/administration/changelog.html#release-v3-5.1))
     - Work with a developer to submit GitLab MR [following this process](https://docs.mattermost.com/process/release-process.html#gitlab-merge-request)
-    - Update the version archive in the [upgrade guide](https://github.com/mattermost/docs/blob/master/source/administration/upgrade.md)
+    - Update the [version archive](https://docs.mattermost.com/administration/version-archive.html)
 3. QA:  
     - Verifies each of the issues in the patch release are fixed
 4. Logistics:
