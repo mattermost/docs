@@ -21,6 +21,38 @@ spec:
       securityContext:
         runAsUser: 1000
         fsGroup: 1000
+      initContainers:
+        - name: {{ .Chart.Name }}-dependencies
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          args:
+            - /scripts/wait-for-deps
+          env:
+            - name: GITALY_FEATURE_DEFAULT_ON
+              value: "1"
+            - name: CONFIG_TEMPLATE_DIRECTORY
+              value: '/var/opt/gitlab/templates'
+            - name: CONFIG_DIRECTORY
+              value: '/var/opt/gitlab/config/gitlab/'
+            - name: GITLAB_HOST
+              value: {{ template "gitlabHost" . }}
+          volumeMounts:
+            - name: unicorn-config
+              mountPath: '/var/opt/gitlab/templates'
+            - name: unicorn-shell
+              mountPath: '/etc/gitlab-shell'
+              readOnly: true
+            - name: unicorn-gitaly
+              mountPath: '/etc/gitaly'
+              readOnly: true
+            - name: unicorn-redis
+              mountPath: '/etc/gitlab-redis'
+              readOnly: true
+            - name: unicorn-postgres
+              mountPath: '/etc/gitlab-postgres'
+              readOnly: true
+            - name: unicorn-registry
+              mountPath: '/etc/gitlab-registry'
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
