@@ -27,13 +27,10 @@ spec:
             mountPath: /config
             readOnly: true
           - name: init-gitlab-secrets
-            mountPath: /initconfig
+            mountPath: /init-config
             readOnly: true
-          - name: gitlab-postgres
-            mountPath: /postgres
-            readOnly: false
-          - name: gitlab-redis
-            mountPath: /redis
+          - name: gitlab-secrets
+            mountPath: /init-secrets
             readOnly: false
       containers:
         - name: {{ .Chart.Name }}
@@ -45,11 +42,8 @@ spec:
           volumeMounts:
             - name: gitlab-config
               mountPath: '/etc/gitlab'
-            - name: gitlab-redis
-              mountPath: '/etc/gitlab-redis'
-              readOnly: true
-            - name: gitlab-postgres
-              mountPath: '/etc/gitlab-postgres'
+            - name: gitlab-secrets
+              mountPath: '/etc/gitlab-secrets'
               readOnly: true
           # livenessProbe:
           #   initialDelaySeconds: 180
@@ -88,10 +82,7 @@ spec:
               items:
                 - key: {{ .Values.psql.password.key }}
                   path: postgres/psql-password
-      - name: gitlab-postgres
-        emptyDir:
-          medium: "Memory"
-      - name: gitlab-redis
+      - name: gitlab-secrets
         emptyDir:
           medium: "Memory"
     {{- if .Values.nodeSelector }}

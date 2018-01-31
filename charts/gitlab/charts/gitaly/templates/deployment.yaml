@@ -27,10 +27,10 @@ spec:
             mountPath: /config
             readOnly: true
           - name: init-gitaly-secrets
-            mountPath: /initconfig
+            mountPath: /init-config
             readOnly: true
           - name: gitaly-secrets
-            mountPath: /secrets
+            mountPath: /init-secrets
             readOnly: false
       securityContext:
         runAsUser: 1000

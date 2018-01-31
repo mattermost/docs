@@ -85,6 +85,19 @@ spec:
           - name: sidekiq-config
             mountPath: '/var/opt/gitlab/templates'
             readOnly: true
+          - name: sidekiq-gitaly
+            mountPath: '/etc/gitaly'
+            readOnly: true
+          - name: sidekiq-redis
+            mountPath: '/etc/gitlab-redis'
+            readOnly: true
+          - name: sidekiq-postgres
+            mountPath: '/etc/gitlab-postgres'
+            readOnly: true
+          volumeMounts:
+          - name: sidekiq-config
+            mountPath: '/var/opt/gitlab/templates'
+            readOnly: true
           - name: sidekiq-secrets
             mountPath: '/etc/gitlab'
             readOnly: true

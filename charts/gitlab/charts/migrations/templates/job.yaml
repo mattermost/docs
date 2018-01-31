@@ -30,13 +30,10 @@ spec:
             mountPath: /config
             readOnly: true
           - name: init-migrations-secrets
-            mountPath: /initconfig
+            mountPath: /init-config
             readOnly: true
-          - name: migrations-postgres
-            mountPath: /postgres
-            readOnly: false
-          - name: migrations-redis
-            mountPath: /redis
+          - name: migrations-secrets
+            mountPath: /init-secrets
             readOnly: false
       restartPolicy: OnFailure
       containers:
@@ -58,11 +55,8 @@ spec:
           volumeMounts:
             - name: migrations-config
               mountPath: '/var/opt/gitlab/templates'
-            - name: migrations-redis
-              mountPath: '/etc/gitlab-redis'
-              readOnly: true
-            - name: migrations-postgres
-              mountPath: '/etc/gitlab-postgres'
+            - name: migrations-secrets
+              mountPath: '/etc/gitlab'
               readOnly: true
           resources:
 {{ toYaml .Values.resources | indent 12 }}
@@ -84,10 +78,7 @@ spec:
               items:
                 - key: {{ .Values.psql.password.key }}
                   path: postgres/psql-password
-      - name: migrations-redis
-        emptyDir:
-          medium: "Memory"
-      - name: migrations-postgres
+      - name: migrations-secrets
         emptyDir:
           medium: "Memory"
     {{- if .Values.nodeSelector }}

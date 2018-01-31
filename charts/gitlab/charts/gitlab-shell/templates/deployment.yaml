@@ -27,14 +27,17 @@ spec:
             mountPath: /config
             readOnly: true
           - name: shell-init-secrets
-            mountPath: /initconfig
+            mountPath: /init-config
             readOnly: true
-          - name: shell-redis
-            mountPath: /redis
+          - name: shell-secrets
+            mountPath: /init-secrets
             readOnly: false
+<<<<<<< HEAD
           - name: shell-secret
             mountPath: /shell
             readOnly: false
+=======
+>>>>>>> Reduce number of emptyDir mounts
       securityContext:
         fsGroup: 1000
       containers:
@@ -56,11 +59,8 @@ spec:
           volumeMounts:
             - name: shell-config
               mountPath: '/etc/gitlab-shell'
-            - name: shell-secret
+            - name: shell-secrets
               mountPath: '/etc/gitlab-secrets'
-              readOnly: true
-            - name: shell-redis
-              mountPath: '/etc/gitlab-redis'
               readOnly: true
           livenessProbe:
             exec:
@@ -94,10 +94,7 @@ spec:
                   - key: {{ .Values.redis.password.key }}
                     path: redis/password
       # Actual config dirs that will be used in the container
-      - name: shell-secret
-        emptyDir:
-          medium: "Memory"
-      - name: shell-redis
+      - name: shell-secrets
         emptyDir:
           medium: "Memory"
     {{- if .Values.nodeSelector }}
