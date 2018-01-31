@@ -29,11 +29,8 @@ spec:
           - name: migrations-config
             mountPath: /config
             readOnly: true
-          - name: init-migrations-redis
-            mountPath: /initconfig/redis
-            readOnly: true
-          - name: init-migrations-postgres
-            mountPath: /initconfig/postgres
+          - name: init-migrations-secrets
+            mountPath: /initconfig
             readOnly: true
           - name: migrations-postgres
             mountPath: /postgres
@@ -73,23 +70,23 @@ spec:
       - name: migrations-config
         configMap:
           name: {{ template "migrations.fullname" . }}
+      - name: init-migrations-secrets
+        projected:
+          defaultMode: 0400
+          sources:
+          - secret:
+              name: {{ .Values.redis.password.secret }}
+              items:
+              - key: {{ .Values.redis.password.key }}
+                path: redis/password
+          - secret:
+              name: {{ .Values.psql.password.secret }}
+              items:
+                - key: {{ .Values.psql.password.key }}
+                  path: postgres/psql-password
       - name: migrations-redis
         emptyDir:
           medium: "Memory"
-      - name: init-migrations-redis
-        secret:
-          secretName: {{ .Values.redis.password.secret }}
-          items:
-            - key: {{ .Values.redis.password.key }}
-              path: password
-          defaultMode: 0400
-      - name: init-migrations-postgres
-        secret:
-          secretName: {{ .Values.psql.password.secret }}
-          items:
-            - key: {{ .Values.psql.password.key }}
-              path: psql-password
-          defaultMode: 0400
       - name: migrations-postgres
         emptyDir:
           medium: "Memory"

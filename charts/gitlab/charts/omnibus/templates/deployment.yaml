@@ -26,11 +26,8 @@ spec:
           - name: gitlab-config
             mountPath: /config
             readOnly: true
-          - name: init-gitlab-redis
-            mountPath: /initconfig/redis
-            readOnly: true
-          - name: init-gitlab-postgres
-            mountPath: /initconfig/postgres
+          - name: init-gitlab-secrets
+            mountPath: /initconfig
             readOnly: true
           - name: gitlab-postgres
             mountPath: /postgres
@@ -77,20 +74,20 @@ spec:
             path: gitlab.rb
           - key: configure
             path: configure
-      - name: init-gitlab-redis
-        secret:
-          secretName: {{ .Values.redis.password.secret }}
-          items:
-            - key: {{ .Values.redis.password.key }}
-              path: password
+      - name: init-gitlab-secrets
+        projected:
           defaultMode: 0400
-      - name: init-gitlab-postgres
-        secret:
-          secretName: {{ .Values.psql.password.secret }}
-          items:
-            - key: {{ .Values.psql.password.key }}
-              path: psql-password
-          defaultMode: 0400
+          sources:
+          - secret:
+              name: {{ .Values.redis.password.secret }}
+              items:
+                - key: {{ .Values.redis.password.key }}
+                  path: redis/password
+          - secret:
+              name: {{ .Values.psql.password.secret }}
+              items:
+                - key: {{ .Values.psql.password.key }}
+                  path: postgres/psql-password
       - name: gitlab-postgres
         emptyDir:
           medium: "Memory"

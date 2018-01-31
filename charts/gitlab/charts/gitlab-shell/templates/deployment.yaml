@@ -26,11 +26,8 @@ spec:
           - name: shell-config
             mountPath: /config
             readOnly: true
-          - name: shell-init-secret
-            mountPath: /initconfig/shell
-            readOnly: true
-          - name: shell-init-redis
-            mountPath: /initconfig/redis
+          - name: shell-init-secrets
+            mountPath: /initconfig
             readOnly: true
           - name: shell-redis
             mountPath: /redis
@@ -82,20 +79,20 @@ spec:
       - name: shell-config
         configMap:
           name: {{ template "fullname" . }}
-      - name: shell-init-secret
-        secret:
-          secretName: {{ .Values.authToken.secret }}
-          items:
-            - key: {{ .Values.authToken.key }}
-              path: ".gitlab_shell_secret"
+      - name: shell-init-secrets
+        projected:
           defaultMode: 0440
-      - name: shell-init-redis
-        secret:
-          secretName: {{ .Values.redis.password.secret }}
-          items:
-            - key: {{ .Values.redis.password.key }}
-              path: password
-          defaultMode: 0440
+          sources:
+            - secret:
+                name: {{ .Values.authToken.secret }}
+                items:
+                  - key: {{ .Values.authToken.key }}
+                    path: shell/.gitlab_shell_secret
+            - secret:
+                name: {{ .Values.redis.password.secret }}
+                items:
+                  - key: {{ .Values.redis.password.key }}
+                    path: redis/password
       # Actual config dirs that will be used in the container
       - name: shell-secret
         emptyDir:
