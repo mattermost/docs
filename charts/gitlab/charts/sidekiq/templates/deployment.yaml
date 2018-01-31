@@ -67,7 +67,7 @@ spec:
             readOnly: true
           - name: init-sidekiq-postgres
             mountPath: /initconfig/postgres
-            readonly: true
+            readOnly: true
           - name: sidekiq-gitaly
             mountPath: /gitaly
             readOnly: false

@@ -43,7 +43,7 @@ spec:
             readOnly: true
           - name: init-unicorn-postgres
             mountPath: /initconfig/postgres
-            readonly: true
+            readOnly: true
           - name: unicorn-postgres
             mountPath: /postgres
             readOnly: false
