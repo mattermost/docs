@@ -55,7 +55,7 @@ global:
     minio:
       #name: minio.example.local
       #https: false
-      serviceName: minio
+      serviceName: minio-svc
       servicePort: service
       tls: {}
         # secretName:
