@@ -13,7 +13,7 @@ data:
       database: {{ default "gitlabhq_production" .Values.psql.database | quote }}
       pool: 10
       username: {{ default "gitlab" .Values.psql.username | quote }}
-      password: <%= File.read("/etc/gitlab-postgres/psql-password") %>
+      password: <%= File.read("/etc/gitlab/postgres/psql-password") %>
       host: {{ template "migrations.psql.host" . }}
       port: {{ default 5432 .Values.psql.port }}
       # load_balancing:
@@ -23,7 +23,7 @@ data:
   resque.yml.erb: |
     production:
       # Redis (single instance)
-      url: redis://:<%= File.read("/etc/gitlab-redis/password") %>@{{ template "migrations.redis.host" . }}:{{ default 6379 .Values.redis.port }}
+      url: redis://:<%= File.read("/etc/gitlab/redis/password") %>@{{ template "migrations.redis.host" . }}:{{ default 6379 .Values.redis.port }}
   gitlab.yml: |
     production: &base
       gitlab:
@@ -34,7 +34,8 @@ data:
             gitaly_address: tcp://localhost:8075
   configure: |
     set -e
-    cp /initconfig/redis/password  /redis/password
-    cp /initconfig/postgres/psql-password  /postgres/psql-password
+    mkdir -p /init-secrets/redis /init-secrets/postgres
+    cp /init-config/redis/password  /init-secrets/redis/password
+    cp /init-config/postgres/psql-password  /init-secrets/postgres/psql-password
 # Leave this here - This line denotes end of block to the parser.
 {{- end }}
