@@ -75,7 +75,7 @@ spec:
             mountPath: /redis
             readOnly: false
           - name: sidekiq-postgres
-            mountPath: /po=stgres
+            mountPath: /postgres
             readOnly: false
         - name: {{ $name }}-dependencies
           image: "{{ $image }}"

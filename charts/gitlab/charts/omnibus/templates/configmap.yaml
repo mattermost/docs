@@ -10,6 +10,7 @@ data:
   configure: |
     set -e
     cat /initconfig/redis/password > /redis/password
+    cat /initconfig/postgres/psql-password > /postgres/psql-password
   gitlab.rb: |
     ###################
     # gitlab/gitlab-rails

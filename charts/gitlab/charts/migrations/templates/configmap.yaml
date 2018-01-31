@@ -35,5 +35,6 @@ data:
   configure: |
     set -e
     cat /initconfig/redis/password > /redis/password
+    cat /initconfig/postgres/psql-password > /postgres/psql-password
 # Leave this here - This line denotes end of block to the parser.
 {{- end }}

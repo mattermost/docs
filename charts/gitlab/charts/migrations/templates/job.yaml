@@ -32,6 +32,12 @@ spec:
           - name: init-migrations-redis
             mountPath: /initconfig/redis
             readOnly: true
+          - name: init-migrations-postgres
+            mountPath: /initconfig/postgres
+            readOnly: true
+          - name: migrations-postgres
+            mountPath: /postgres
+            readOnly: false
           - name: migrations-redis
             mountPath: /redis
             readOnly: false
@@ -77,13 +83,16 @@ spec:
             - key: {{ .Values.redis.password.key }}
               path: password
           defaultMode: 0400
-      - name: migrations-postgres
+      - name: init-migrations-postgres
         secret:
           secretName: {{ .Values.psql.password.secret }}
           items:
             - key: {{ .Values.psql.password.key }}
               path: psql-password
           defaultMode: 0400
+      - name: migrations-postgres
+        emptyDir:
+          medium: "Memory"
     {{- if .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml .Values.nodeSelector | indent 8 }}
