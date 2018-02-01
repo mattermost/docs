@@ -12,7 +12,8 @@ Release date: 2018-02-16
 
 #### Client-Side Performance
 
- -
+ - Added user based rate limiting.
+ - Optimized channel autocomplete query.
 
 #### Image Proxy Support
 
@@ -27,6 +28,16 @@ Release date: 2018-02-16
  - Added an experimental unread channel section in the sidebar to enable or disable the option to display the unread channel section in the sidebar.
 
 ### Improvements
+
+ - Implemented a descriptive error page for browser compatibility.
+ - Added a config property `EnableDefaultChannelLeaveJoinMessages` that allows for leave/join messages to be created in the default channel.
+ - Added a post change channel privacy system message.
+ - Added auto lowercase team and channel names in API requests.
+ - Added a `sampledata` platform command to generate realistic sample data.
+ - Added a new endpoint called `/users/tokens/search` which gets all tokens for all users if one has the `manage_system` permission.
+ - Added support for Slack attachments in outgoing webhook responses.
+ - Added `POST /emoji/search`, `GET /emojis/name/{emoji_name}`, and `GET /emoji/autocomplete` API endpoints.
+ - Increased size of position to 128 characters.
 
 ### Bug Fixes
 
@@ -48,6 +59,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Database Changes
 
 ### Known Issues
+
+ - OAuth account creation error page is unformatted.
+ - `ExperimentalEnableDefaultChannelLeaveJoinMessages` set to false still posts in town-square when user leaves team
+ - Plugin slash commands don't override username or icon
+ - Deleting a Team via the API Breaks the Web UI.
+ - Switch to the golang autocert library for let's encrypt.
 
 ### Contributors
 
