@@ -14,6 +14,8 @@ We use the data for the following purposes:
   - to help improve the quality of Mattermost software and related services
   - to make design decisions for future releases
 
+Telemetry data is sent by the client to the endpoint `api.segment.io`.
+
 Security Update Check Feature
 -----------------------------
 
