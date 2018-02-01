@@ -65,6 +65,7 @@ you don't have proper permissions for uploading plugins. To resolve it, apply wr
 Another potential cause is the working directory for the service running Mattermost is not correct. On Ubuntu you might see
 
 .. code-block:: text
+
     [2018/01/03 08:34:47 EST] [EROR] failed to start up plugins: mkdir ./client/plugins: no such file or directory
 
 This can be fixed on Ubuntu 16.04 and RHEL by opening the service configuration file and setting WorkingDirectory to the path to Mattermost, often ``/opt/mattermost``.
