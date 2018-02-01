@@ -31,6 +31,13 @@ global:
       servicePort: registry
       tls:
          secretName: registry.example.local
+    minio:
+      name: minio.example.local
+      https: false
+      serviceName: minio-svc
+      servicePort: service
+      tls:
+         secretName: minio.example.local
 ```
 
 #### domain
@@ -126,6 +133,36 @@ The named port of the `service` where the Registry server can be reached. This d
 #### registry.tls.secretName
 
 The name of the [Kubernetes TLS Secret][Secret] that containers a certificate and key for the Registry external hostname.
+Falls back to the `global.hosts.tls.secretName` when not provided. Defaults to not being set.
+
+*Note:* This secretName is ignored if kube-lego is being used on the ingress, in favor of the `acme` secret.
+
+### minio
+
+The `minio` section of `global.hosts` includes configuration for the Minio external hostname, and which internal service
+to point the hostname to.
+
+#### minio.name
+
+The hostname for Minio. If set, this hostname is used, regardless of the `global.hosts.domain` and `global.hosts.hostSuffix` settings.
+
+#### minio.https
+
+Set to true for the Minio external url to use `https://` instead of `http`. Defaults to false. If set to true, the `minio.tls.secretName`
+should also be provided
+
+#### minio.serviceName
+
+The name of the `service` which is operating the Minio server. The chart will template the hostname of the service (and
+current `.Release.Name`) to create the proper internal serviceName. This will default to `minio`
+
+#### minio.servicePort
+
+The named port of the `service` where the Minio server can be reached. This defaults to `minio`.
+
+#### minio.tls.secretName
+
+The name of the [Kubernetes TLS Secret][Secret] that containers a certificate and key for the Minio external hostname.
 Falls back to the `global.hosts.tls.secretName` when not provided. Defaults to not being set.
 
 *Note:* This secretName is ignored if kube-lego is being used on the ingress, in favor of the `acme` secret.
