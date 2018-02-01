@@ -62,7 +62,7 @@ If plugin uploads fail and you see "permissions denied" errors in **System Conso
 
 you don't have proper permissions for uploading plugins. To resolve it, apply write access to the ``mattermost/client`` directory.
 
-Another potential cause is the working directory for the service running Mattermost is not correct. On Ubuntu you might see
+Another potential cause is that the working directory for the service running Mattermost is not correct. On Ubuntu you might see
 
 .. code-block:: text
 
