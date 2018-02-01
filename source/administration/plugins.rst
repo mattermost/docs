@@ -61,3 +61,19 @@ If plugin uploads fail and you see "permissions denied" errors in **System Conso
   [2017/11/13 20:42:18 UTC] [EROR] failed to start up plugins: mkdir /home/ubuntu/mattermost/client/plugins: permission denied
 
 you don't have proper permissions for uploading plugins. To resolve it, apply write access to the ``mattermost/client`` directory.
+
+Another potential cause is the working directory for the service running Mattermost is not correct. On Ubuntu you might see
+
+.. code-block:: text
+    [2018/01/03 08:34:47 EST] [EROR] failed to start up plugins: mkdir ./client/plugins: no such file or directory
+
+This can be fixed on Ubuntu 16.04 and RHEL by opening the service configuration file and setting WorkingDirectory to the path to Mattermost, often ``/opt/mattermost``.
+
+Or on Windows
+
+.. code-block:: text
+
+    [EROR] failed to start up plugins: mkdir ./client/plugins: The system cannot find the path specified.
+
+To fix this, set the AppDirectory of your service using ``nssm set mattermost AppDirectory c:\mattermost``.
+
