@@ -12,13 +12,36 @@ Release date: 2018-02-16
 
 #### Client-Side Performance
 
--
+ -
+
+#### Image Proxy Support
+
+ - Added three new configuration keys: `ImageProxyType`, `ImageProxyURL`, `ImageProxyOptions` to ensure that posts served to the client will have their markdown modified such that all images are loaded through a proxy when these keys are configured.
+
+#### Updated Image Thumbnails
+
+ - Updated the appearance of image thumbnails in the UI so that single thumbnails will now expand to a larger preview without clicking the image to open the preview window.
+
+#### Experimental Setting for Unreads Sidebar Section
+
+ - Added an experimental unread channel section in the sidebar to enable or disable the option to display the unread channel section in the sidebar.
 
 ### Improvements
 
 ### Bug Fixes
 
 ### Compatibility
+
+#### config.json
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+
+ - Under `ServiceSettings` in `config.json`:
+    - Added `"ImageProxyType"` and `"ImageProxyURL"` to ensure posts served to the client will have their markdown modified such that all images are loaded through a proxy when these keys are configured.
+    - Added `"ExperimentalGroupUnreadChannels" setting` to show an unread channel section in the webapp sidebar.
+    - Added `"VaryByUser"`, a user based rate limiting, to rate limit on token and on userID.
 
 ### API Changes
 
