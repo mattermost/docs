@@ -44,6 +44,11 @@ Release date: 2018-02-16
  - Use last channel name for routing on team switch.
  - Added paging and server-side search to custom emoji management.
  - Updated help text for debugging webhooks.
+ - Fixed active state for dropdown.
+ - Disabled pull-to-refresh on Android(Chrome).
+ - Added support for image links to be previewed.
+ - Added username and profile picture to webhook set up pages.
+ - Use transparent pixel while the user profile isn't loaded.
 
 ### Bug Fixes
 
@@ -62,6 +67,8 @@ Release date: 2018-02-16
  - `Add a channel description` should open Edit Header, not Edit Purpose.
  - No unread mention appeared on non-mobile platform after receiving push notification.
  - CTRL/CMD+UP takes no action in RHS.
+ - No warning when mentioning (at)all in RHS.
+ - Some iOS emoji using alternate skin tones are rendering incorrectly on Chrome.
 
 ### Compatibility
 
