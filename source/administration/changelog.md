@@ -38,8 +38,30 @@ Release date: 2018-02-16
  - Added support for Slack attachments in outgoing webhook responses.
  - Added `POST /emoji/search`, `GET /emojis/name/{emoji_name}`, and `GET /emoji/autocomplete` API endpoints.
  - Increased size of position to 128 characters.
+ - Migrated file upload to be pure and use Redux.
+ - Show status icon in the channel member list and sorted it by user's status.
+ - Migrated `SettingItemMin` and `SettingItemMax` to pure component, and replaced anonymous function on props.
+ - Use last channel name for routing on team switch.
+ - Added paging and server-side search to custom emoji management.
+ - Updated help text for debugging webhooks.
 
 ### Bug Fixes
+
+ - OAuth account creation error page is unformatted.
+ - `ExperimentalEnableDefaultChannelLeaveJoinMessages` set to false still posts in town-square when user leaves team
+ - Plugin slash commands don't override username or icon
+ - Deleting a Team via the API Breaks the Web UI.
+ - Switch to the golang autocert library for let's encrypt.
+ - Pagination for team members modal shows a next button when there are no more users to show.
+ - At-channel in /header should not trigger confirmation modal.
+ - DM doesn't open on clicking user in member icon drop-down list.
+ - Fix dispatch prop warning on popover of profile_popover component.
+ - Auto-generated SAML Service provider login URL has two slashes instead of one.
+ - JavaScript error when trying to switch languages. Setting not saved.
+ - Profile picture uploader accepts images with a size less than 128px x 128px.
+ - `Add a channel description` should open Edit Header, not Edit Purpose.
+ - No unread mention appeared on non-mobile platform after receiving push notification.
+ - CTRL/CMD+UP takes no action in RHS.
 
 ### Compatibility
 
@@ -60,11 +82,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Known Issues
 
- - OAuth account creation error page is unformatted.
- - `ExperimentalEnableDefaultChannelLeaveJoinMessages` set to false still posts in town-square when user leaves team
- - Plugin slash commands don't override username or icon
- - Deleting a Team via the API Breaks the Web UI.
- - Switch to the golang autocert library for let's encrypt.
+ - Refactor sidebar to be pure and use redux.
 
 ### Contributors
 
