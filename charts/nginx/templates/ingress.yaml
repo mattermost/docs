@@ -3,14 +3,18 @@
 {{- $servicePort := .Values.service.externalPort -}}
 {{- $releaseName := .Release.Name -}}
 {{- $ingressHosts := .Values.ingress.hosts -}}
-{{- $registryHost := .Values.global.hosts.registry -}}
-{{- $_ := set $registryHost "name" (include "registryHost" .) -}}
-{{- $ingressHosts := prepend $ingressHosts $registryHost -}}
-{{- $registryTLSSecret := include "registryTLSSecret" . -}}
 {{- $gitlabHost := .Values.global.hosts.gitlab -}}
 {{- $_ := set $gitlabHost "name" (include "gitlabHost" .) -}}
 {{- $ingressHosts := prepend $ingressHosts $gitlabHost -}}
 {{- $gitlabTLSSecret := include "gitlabTLSSecret" . -}}
+{{- $registryHost := .Values.global.hosts.registry -}}
+{{- $_ := set $registryHost "name" (include "registryHost" .) -}}
+{{- $ingressHosts := prepend $ingressHosts $registryHost -}}
+{{- $registryTLSSecret := include "registryTLSSecret" . -}}
+{{- $minioHost := .Values.global.hosts.minio -}}
+{{- $_ := set $minioHost "name" (include "minioHost" .) -}}
+{{- $ingressHosts := prepend $ingressHosts $minioHost -}}
+{{- $minioTLSSecret := include "minioTLSSecret" . -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -58,6 +62,11 @@ spec:
     - hosts:
       - {{ template "registryHost" . }}
       secretName: {{ $registryTLSSecret }}
+  {{- end }}
+  {{- if $minioTLSSecret }}
+    - hosts:
+      - {{ template "minioHost" . }}
+      secretName: {{ $minioTLSSecret }}
   {{- end }}
   {{- if $.Values.ingress.tls }}
 {{ toYaml .Values.ingress.tls | indent 4 }}

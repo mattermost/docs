@@ -52,6 +52,14 @@ global:
       servicePort: registry
       tls: {}
         # secretName:
+    minio:
+      #name: minio.example.local
+      #https: false
+      serviceName: minio-svc
+      servicePort: service
+      tls: {}
+        # secretName:
+
 
 shell:
   name: gitlab-shell
