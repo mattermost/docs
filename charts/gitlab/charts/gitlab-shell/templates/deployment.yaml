@@ -32,12 +32,6 @@ spec:
           - name: shell-secrets
             mountPath: /init-secrets
             readOnly: false
-<<<<<<< HEAD
-          - name: shell-secret
-            mountPath: /shell
-            readOnly: false
-=======
->>>>>>> Reduce number of emptyDir mounts
       securityContext:
         fsGroup: 1000
       containers:
