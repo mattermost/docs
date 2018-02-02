@@ -121,6 +121,11 @@ Release date: 2018-02-16
  
 ### Compatibility
 
+#### Removed and Deprecated Features
+
+- All API v3 endpoints are now deprecated, and scheduled for removal in Mattermost v5.0.
+- The permanent query parameter of the DELETE `/teams/{team_id}` APIv4 endpoint for permanently deleting a team is scheduled for removal in Mattermost v4.7. // XXX Jason needs update
+
 #### config.json
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
@@ -129,12 +134,25 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
  - Under `ServiceSettings` in `config.json`:
     - Added `"ImageProxyType"` and `"ImageProxyURL"` to ensure posts served to the client will have their markdown modified such that all images are loaded through a proxy when these keys are configured.
-    - Added `"ExperimentalGroupUnreadChannels" setting` to show an unread channel section in the webapp sidebar.
-    - Added `"VaryByUser"`, a user based rate limiting, to rate limit on token and on userID.
+    - Added `"ExperimentalGroupUnreadChannels": false` setting to show an unread channel section in the webapp sidebar.
+    - Added `"VaryByUser": false`, a user based rate limiting, to rate limit on token and on userID.
+    - Added a config property `"ExperimentalEnableDefaultChannelLeaveJoinMessages": true` that allows for leave/join messages to be created in the default channel.
 
 ### API Changes
 
+- It is required that any new integrations use API v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
+- All API v3 endpoints have been deprecated, and scheduled for removal in Mattermost v5.0.
+
+#### RESTful API v4 Changes
+
+#### Plugin API Changes (Beta)
+
+#### Plugin Hook Changes (Beta)
+
+
 ### Database Changes
+
+### WebSocket Event Changes
 
 ### Known Issues
 
