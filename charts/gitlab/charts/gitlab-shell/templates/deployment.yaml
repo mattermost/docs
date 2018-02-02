@@ -38,7 +38,6 @@ spec:
           - name: shell-secret
             mountPath: /shell
             readOnly: false
-
       securityContext:
         fsGroup: 1000
       containers:

@@ -9,8 +9,7 @@ metadata:
 data:
   configure: |
     set -e
-    cat /initconfig/registry/{{ .Values.certificate.key }} > /registry/{{ .Values.certificate.key }}
-
+    cp /initconfig/registry/{{ .Values.certificate.key }} /registry/{{ .Values.certificate.key }}
   config.yml: |
     version: 0.1
     log:

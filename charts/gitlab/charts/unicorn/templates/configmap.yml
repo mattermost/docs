@@ -104,10 +104,10 @@ data:
         issuer: {{ .Values.registry.tokenIssuer }}
   configure: |
     set -e
-    cat /initconfig/redis/password > /redis/password
-    cat /initconfig/shell/.gitlab_shell_secret > /shell/.gitlab_shell_secret
-    cat /initconfig/gitaly/gitaly_token > /gitaly/gitaly_token
-    cat /initconfig/registry/gitlab-registry.key > /registry/gitlab-registry.key
-    cat /initconfig/postgres/psql-password > /postgres/psql-password
+    cp /initconfig/redis/password  /redis/password
+    cp /initconfig/shell/.gitlab_shell_secret  /shell/.gitlab_shell_secret
+    cp /initconfig/gitaly/gitaly_token  /gitaly/gitaly_token
+    cp /initconfig/registry/gitlab-registry.key  /registry/gitlab-registry.key
+    cp /initconfig/postgres/psql-password  /postgres/psql-password
 # Leave this here - This line denotes end of block to the parser.
 {{- end }}
