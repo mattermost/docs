@@ -8,9 +8,9 @@ metadata:
 data:
   configure: |
     set -e
-    cp /initconfig/redis/password  /redis/password
-    cp /initconfig/shell/.gitlab_shell_secret  /shell/.gitlab_shell_secret
-
+    mkdir -p /init-secrets/redis /init-secrets/shell
+    cp /init-config/redis/password  /init-secrets/redis/password
+    cp /init-config/shell/.gitlab_shell_secret  /init-secrets/shell/.gitlab_shell_secret
   config.yml.erb: |
     # GitLab user. git by default
     user: git
@@ -18,7 +18,7 @@ data:
     # Url to gitlab instance. Used for api calls. Should end with a slash.
     gitlab_url: "http://{{ template "shell.unicorn.host" . }}:{{ default 8080 .Values.unicorn.port }}/"
 
-    secret_file: /etc/gitlab-secrets/.gitlab_shell_secret
+    secret_file: /etc/gitlab-secrets/shell/.gitlab_shell_secret
 
     http_settings:
       self_signed_cert: false
@@ -30,7 +30,7 @@ data:
     redis:
       host: {{ template "shell.redis.host" . }}
       port: {{ default 6379 .Values.redis.port }}
-      pass: "<%= File.read("/etc/gitlab-redis/password") %>"
+      pass: "<%= File.read("/etc/gitlab-secrets/redis/password") %>"
       database: nil
       namespace: resque:gitlab
 

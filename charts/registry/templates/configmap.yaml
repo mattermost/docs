@@ -9,7 +9,8 @@ metadata:
 data:
   configure: |
     set -e
-    cp /initconfig/registry/{{ .Values.certificate.key }} /registry/{{ .Values.certificate.key }}
+    mkdir -p /init-secrets/registry
+    cp /init-config/registry/{{ .Values.certificate.key }} /init-secrets/registry/{{ .Values.certificate.key }}
   config.yml: |
     version: 0.1
     log:
@@ -35,7 +36,7 @@ data:
         realm: {{ template "registry.authEndpoint" . }}/jwt/auth
         service: {{ .Values.tokenService }}
         issuer: {{ .Values.tokenIssuer | quote }}
-        rootcertbundle: /etc/registry-secret/{{ .Values.certificate.key }}
+        rootcertbundle: /etc/registry-secret/registry/{{ .Values.certificate.key }}
     storage:
       {{- if .Values.storage }}
 {{ toYaml .Values.storage | indent 6}}

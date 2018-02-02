@@ -9,8 +9,9 @@ metadata:
 data:
   configure: |
     set -e
-    cp /initconfig/redis/password  /redis/password
-    cp /initconfig/postgres/psql-password  /postgres/psql-password
+    mkdir -p /init-secrets/redis /init-secrets/postgres
+    cp /init-config/redis/password  /init-secrets/redis/password
+    cp /init-config/postgres/psql-password  /init-secrets/postgres/psql-password
   gitlab.rb: |
     ###################
     # gitlab/gitlab-rails
@@ -26,7 +27,7 @@ data:
     gitlab_rails['redis_host'] = {{ printf "%s-%s" .Release.Name .Values.redis.serviceName | quote }}
     gitlab_rails['redis_port'] = {{ default 6397 .Values.redis.port }}
     gitlab_rails['redis_database'] = {{ default 0 .Values.redis.database }}
-    gitlab_rails['redis_password'] = File.read("/etc/gitlab-redis/password")
+    gitlab_rails['redis_password'] = File.read("/etc/gitlab-secrets/redis/password")
     ###################
     # PostgresQL
     postgresql['enable'] = true
@@ -36,7 +37,7 @@ data:
     postgresql['md5_auth_cidr_addresses'] = %w{{ .Values.trusted_proxies }}
     postgresql['trust_auth_cidr_addresses'] = ['127.0.0.1/24']
     {{-   if .Values.psql.password }}
-    postgresql['sql_user_password'] = Digest::MD5.hexdigest File.read("/etc/gitlab-postgres/psql-password") << {{ default "gitlab" .Values.psql.username | quote }}
+    postgresql['sql_user_password'] = Digest::MD5.hexdigest File.read("/etc/gitlab-secrets/postgres/psql-password") << {{ default "gitlab" .Values.psql.username | quote }}
     {{-   end }}
     ###################
     # DISABLED SERVICES

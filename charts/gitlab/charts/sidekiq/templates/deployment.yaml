@@ -59,23 +59,11 @@ spec:
           - name: sidekiq-config
             mountPath: /config
             readOnly: true
-          - name: init-sidekiq-gitaly
-            mountPath: /initconfig/gitaly
+          - name: init-sidekiq-secrets
+            mountPath: /init-secrets
             readOnly: true
-          - name: init-sidekiq-redis
-            mountPath: /initconfig/redis
-            readOnly: true
-          - name: init-sidekiq-postgres
-            mountPath: /initconfig/postgres
-            readOnly: true
-          - name: sidekiq-gitaly
-            mountPath: /gitaly
-            readOnly: false
-          - name: sidekiq-redis
-            mountPath: /redis
-            readOnly: false
-          - name: sidekiq-postgres
-            mountPath: /postgres
+          - name: sidekiq-secrets
+            mountPath: /sidekiq-secrets
             readOnly: false
         - name: {{ $name }}-dependencies
           image: "{{ $image }}"
@@ -106,6 +94,13 @@ spec:
           - name: sidekiq-postgres
             mountPath: '/etc/gitlab-postgres'
             readOnly: true
+          volumeMounts:
+          - name: sidekiq-config
+            mountPath: '/var/opt/gitlab/templates'
+            readOnly: true
+          - name: sidekiq-secrets
+            mountPath: '/etc/gitlab'
+            readOnly: true
       containers:
         - name: {{ $name }}
           image: "{{ $image }}"
@@ -125,14 +120,8 @@ spec:
           - name: sidekiq-config
             mountPath: '/var/opt/gitlab/templates'
             readOnly: true
-          - name: sidekiq-gitaly
-            mountPath: '/etc/gitaly'
-            readOnly: true
-          - name: sidekiq-redis
-            mountPath: '/etc/gitlab-redis'
-            readOnly: true
-          - name: sidekiq-postgres
-            mountPath: '/etc/gitlab-postgres'
+          - name: sidekiq-secrets
+            mountPath: '/etc/gitlab'
             readOnly: true
           # livenessProbe:
           #   exec:
@@ -156,33 +145,26 @@ spec:
                 name: {{ $fullname }}
             - configMap:
                 name: {{ $queueName }}
-      - name: init-sidekiq-gitaly
-        secret:
-          secretName: {{ $gitalySecret }}
-          items:
-            - key: {{ $gitalyKey }}
-              path: "gitaly_token"
+      - name: init-sidekiq-secrets
+        projected:
           defaultMode: 0400
-      - name: init-sidekiq-redis
-        secret:
-          secretName: {{ $redisSecret }}
-          items:
-            - key: {{ $redisKey }}
-              path: password
-      - name: init-sidekiq-postgres
-        secret:
-          secretName: {{ $postgresSecret }}
-          items:
-            - key: {{ $postgresKey }}
-              path: psql-password
-          defaultMode: 0400
-      - name: sidekiq-postgres
-        emptyDir:
-          medium: "Memory"
-      - name: sidekiq-redis
-        emptyDir:
-          medium: "Memory"
-      - name: sidekiq-gitaly
+          sources:
+          - secret:
+              name: {{ $gitalySecret }}
+              items:
+                - key: {{ $gitalyKey }}
+                  path: gitaly/gitaly_token
+          - secret:
+              name: {{ $redisSecret }}
+              items:
+                - key: {{ $redisKey }}
+                  path: redis/password
+          - secret:
+              name: {{ $postgresSecret }}
+              items:
+                - key: {{ $postgresKey }}
+                  path: postgres/psql-password
+      - name: sidekiq-secrets
         emptyDir:
           medium: "Memory"
     {{- if .nodeSelector }}

@@ -13,7 +13,7 @@ data:
       database: {{ default "gitlabhq_production" .Values.psql.database | quote }}
       pool: 10
       username: {{ default "gitlab" .Values.psql.username | quote }}
-      password: <%= File.read("/etc/gitlab-postgres/psql-password") %>
+      password: <%= File.read("/etc/gitlab/postgres/psql-password") %>
       host: {{ template "sidekiq.psql.host" . }}
       port: {{ default 5432 .Values.psql.port }}
       # load_balancing:
@@ -23,7 +23,7 @@ data:
   resque.yml.erb: |
     production:
       # Redis (single instance)
-      url: redis://:<%= File.read("/etc/gitlab-redis/password") %>@{{ template "sidekiq.redis.host" . }}:{{ default 6379 .Values.redis.port }}
+      url: redis://:<%= File.read("/etc/gitlab/redis/password") %>@{{ template "sidekiq.redis.host" . }}:{{ default 6379 .Values.redis.port }}
   gitlab.yml.erb: |
     production: &base
       gitlab:
@@ -64,7 +64,7 @@ data:
       shared:
       gitaly:
         client_path: /home/git/gitaly/bin
-        token: "<%= File.read('/etc/gitaly/gitaly_token') %>"
+        token: "<%= File.read('/etc/gitlab/gitaly/gitaly_token') %>"
       repositories:
         storages: # You must have at least a `default` storage path.
           default:
@@ -90,8 +90,9 @@ data:
         git_basic_auth:
   configure: |
     set -e
-    cp /initconfig/redis/password  /redis/password
-    cp /initconfig/gitaly/gitaly_token  /gitaly/gitaly_token
-    cp /initconfig/postgres/psql-password  /postgres/psql-password
+    mkdir -p /sidekiq-secrets/redis /sidekiq-secrets/postgres /sidekiq-secrets/gitaly
+    cp /init-secrets/redis/password /sidekiq-secrets/redis/password
+    cp /init-secrets/gitaly/gitaly_token /sidekiq-secrets/gitaly/gitaly_token
+    cp /init-secrets/postgres/psql-password /sidekiq-secrets/postgres/psql-password
 # Leave this here - This line denotes end of block to the parser.
 {{- end }}

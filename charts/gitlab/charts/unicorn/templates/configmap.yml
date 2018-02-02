@@ -13,7 +13,7 @@ data:
       database: {{ default "gitlabhq_production" .Values.psql.database | quote }}
       pool: 10
       username: {{ default "gitlab" .Values.psql.username | quote }}
-      password: <%= File.read("/etc/gitlab-postgres/psql-password") %>
+      password: <%= File.read("/etc/gitlab/postgres/psql-password") %>
       host: {{ template "unicorn.psql.host" . }}
       port: {{ default 5432 .Values.psql.port }}
       # load_balancing:
@@ -23,11 +23,11 @@ data:
   resque.yml.erb: |
     production:
       # Redis (single instance)
-      url: redis://:<%= File.read("/etc/gitlab-redis/password") %>@{{ template "unicorn.redis.host" . }}:{{ default 6379 .Values.redis.port }}
+      url: redis://:<%= File.read("/etc/gitlab/redis/password") %>@{{ template "unicorn.redis.host" . }}:{{ default 6379 .Values.redis.port }}
   workhorse-config.toml.erb: |
     [redis]
     URL = "tcp://{{ template "unicorn.redis.host" . }}:{{ default 6379 .Values.redis.port }}"
-    Password = "<%= File.read("/etc/gitlab-redis/password") %>"
+    Password = "<%= File.read("/etc/gitlab/redis/password") %>"
   gitlab.yml.erb: |
     production: &base
       gitlab:
@@ -67,7 +67,7 @@ data:
       shared:
       gitaly:
         client_path: /home/git/gitaly/bin
-        token: "<%= File.read('/etc/gitaly/gitaly_token') %>"
+        token: "<%= File.read('/etc/gitlab/gitaly/gitaly_token') %>"
       repositories:
         storages: # You must have at least a `default` storage path.
           default:
@@ -78,7 +78,7 @@ data:
       gitlab_shell:
         path: /home/git/gitlab-shell/
         hooks_path: /home/git/gitlab-shell/hooks/
-        secret_file: /etc/gitlab-shell/.gitlab_shell_secret
+        secret_file: /etc/gitlab/shell/.gitlab_shell_secret
         upload_pack: true
         receive_pack: true
       workhorse:
@@ -100,14 +100,16 @@ data:
         port: {{ .Values.registry.port }}
         {{- end }}
         api_url: {{ default "http" .Values.registry.api.protocol }}://{{ template "unicorn.registry.api.host" . }}:{{ default 5000 .Values.registry.api.port }}
-        key: /etc/gitlab-registry/gitlab-registry.key
+        key: /etc/gitlab/registry/gitlab-registry.key
         issuer: {{ .Values.registry.tokenIssuer }}
   configure: |
     set -e
-    cp /initconfig/redis/password  /redis/password
-    cp /initconfig/shell/.gitlab_shell_secret  /shell/.gitlab_shell_secret
-    cp /initconfig/gitaly/gitaly_token  /gitaly/gitaly_token
-    cp /initconfig/registry/gitlab-registry.key  /registry/gitlab-registry.key
-    cp /initconfig/postgres/psql-password  /postgres/psql-password
+    mkdir -p /init-secrets/redis /init-secrets/shell /init-secrets/gitaly \
+      /init-secrets/registry /init-secrets/postgres
+    cp /init-config/redis/password /init-secrets/redis/password
+    cp /init-config/shell/.gitlab_shell_secret /init-secrets/shell/.gitlab_shell_secret
+    cp /init-config/gitaly/gitaly_token /init-secrets/gitaly/gitaly_token
+    cp /init-config/registry/gitlab-registry.key /init-secrets/registry/gitlab-registry.key
+    cp /init-config/postgres/psql-password /init-secrets/postgres/psql-password
 # Leave this here - This line denotes end of block to the parser.
 {{- end }}

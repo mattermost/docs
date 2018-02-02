@@ -29,10 +29,10 @@ spec:
             mountPath: /config
             readOnly: true
           - name: init-{{ .Release.Name }}-secret
-            mountPath: /initconfig/registry
+            mountPath: /init-config/registry
             readOnly: true
           - name: {{ .Release.Name }}-secret
-            mountPath: /registry
+            mountPath: /init-secrets
             readOnly: false
       containers:
         - name: registry

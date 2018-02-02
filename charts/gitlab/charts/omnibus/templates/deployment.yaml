@@ -26,17 +26,11 @@ spec:
           - name: gitlab-config
             mountPath: /config
             readOnly: true
-          - name: init-gitlab-redis
-            mountPath: /initconfig/redis
+          - name: init-gitlab-secrets
+            mountPath: /init-config
             readOnly: true
-          - name: init-gitlab-postgres
-            mountPath: /initconfig/postgres
-            readOnly: true
-          - name: gitlab-postgres
-            mountPath: /postgres
-            readOnly: false
-          - name: gitlab-redis
-            mountPath: /redis
+          - name: gitlab-secrets
+            mountPath: /init-secrets
             readOnly: false
       containers:
         - name: {{ .Chart.Name }}
@@ -48,11 +42,8 @@ spec:
           volumeMounts:
             - name: gitlab-config
               mountPath: '/etc/gitlab'
-            - name: gitlab-redis
-              mountPath: '/etc/gitlab-redis'
-              readOnly: true
-            - name: gitlab-postgres
-              mountPath: '/etc/gitlab-postgres'
+            - name: gitlab-secrets
+              mountPath: '/etc/gitlab-secrets'
               readOnly: true
           # livenessProbe:
           #   initialDelaySeconds: 180
@@ -77,24 +68,21 @@ spec:
             path: gitlab.rb
           - key: configure
             path: configure
-      - name: init-gitlab-redis
-        secret:
-          secretName: {{ .Values.redis.password.secret }}
-          items:
-            - key: {{ .Values.redis.password.key }}
-              path: password
+      - name: init-gitlab-secrets
+        projected:
           defaultMode: 0400
-      - name: init-gitlab-postgres
-        secret:
-          secretName: {{ .Values.psql.password.secret }}
-          items:
-            - key: {{ .Values.psql.password.key }}
-              path: psql-password
-          defaultMode: 0400
-      - name: gitlab-postgres
-        emptyDir:
-          medium: "Memory"
-      - name: gitlab-redis
+          sources:
+          - secret:
+              name: {{ .Values.redis.password.secret }}
+              items:
+                - key: {{ .Values.redis.password.key }}
+                  path: redis/password
+          - secret:
+              name: {{ .Values.psql.password.secret }}
+              items:
+                - key: {{ .Values.psql.password.key }}
+                  path: postgres/psql-password
+      - name: gitlab-secrets
         emptyDir:
           medium: "Memory"
     {{- if .Values.nodeSelector }}

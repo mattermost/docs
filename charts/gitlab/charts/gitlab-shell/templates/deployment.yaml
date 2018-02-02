@@ -26,17 +26,11 @@ spec:
           - name: shell-config
             mountPath: /config
             readOnly: true
-          - name: shell-init-secret
-            mountPath: /initconfig/shell
+          - name: shell-init-secrets
+            mountPath: /init-config
             readOnly: true
-          - name: shell-init-redis
-            mountPath: /initconfig/redis
-            readOnly: true
-          - name: shell-redis
-            mountPath: /redis
-            readOnly: false
-          - name: shell-secret
-            mountPath: /shell
+          - name: shell-secrets
+            mountPath: /init-secrets
             readOnly: false
       securityContext:
         fsGroup: 1000
@@ -59,11 +53,8 @@ spec:
           volumeMounts:
             - name: shell-config
               mountPath: '/etc/gitlab-shell'
-            - name: shell-secret
+            - name: shell-secrets
               mountPath: '/etc/gitlab-secrets'
-              readOnly: true
-            - name: shell-redis
-              mountPath: '/etc/gitlab-redis'
               readOnly: true
           livenessProbe:
             exec:
@@ -82,25 +73,22 @@ spec:
       - name: shell-config
         configMap:
           name: {{ template "fullname" . }}
-      - name: shell-init-secret
-        secret:
-          secretName: {{ .Values.authToken.secret }}
-          items:
-            - key: {{ .Values.authToken.key }}
-              path: ".gitlab_shell_secret"
+      - name: shell-init-secrets
+        projected:
           defaultMode: 0440
-      - name: shell-init-redis
-        secret:
-          secretName: {{ .Values.redis.password.secret }}
-          items:
-            - key: {{ .Values.redis.password.key }}
-              path: password
-          defaultMode: 0440
+          sources:
+            - secret:
+                name: {{ .Values.authToken.secret }}
+                items:
+                  - key: {{ .Values.authToken.key }}
+                    path: shell/.gitlab_shell_secret
+            - secret:
+                name: {{ .Values.redis.password.secret }}
+                items:
+                  - key: {{ .Values.redis.password.key }}
+                    path: redis/password
       # Actual config dirs that will be used in the container
-      - name: shell-secret
-        emptyDir:
-          medium: "Memory"
-      - name: shell-redis
+      - name: shell-secrets
         emptyDir:
           medium: "Memory"
     {{- if .Values.nodeSelector }}
