@@ -20,7 +20,7 @@ Create a default fully qualified app name for minio
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 */}}
 {{- define "registry.minio" -}}
-{{- printf "%s-%s" .Release.Name "minio" | trunc 63 | trimSuffix "-" -}}
+{{- printf "%s-%s" .Release.Name "minio-svc" | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
 {{/*
