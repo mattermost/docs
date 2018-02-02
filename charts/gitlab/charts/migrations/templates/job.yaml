@@ -21,6 +21,26 @@ spec:
       securityContext:
         runAsUser: 1000
         fsGroup: 1000
+      initContainers:
+        - name: configure
+          command: ['sh', '/config/configure']
+          image: busybox
+          volumeMounts:
+          - name: migrations-config
+            mountPath: /config
+            readOnly: true
+          - name: init-migrations-redis
+            mountPath: /initconfig/redis
+            readOnly: true
+          - name: init-migrations-postgres
+            mountPath: /initconfig/postgres
+            readOnly: true
+          - name: migrations-postgres
+            mountPath: /postgres
+            readOnly: false
+          - name: migrations-redis
+            mountPath: /redis
+            readOnly: false
       restartPolicy: OnFailure
       containers:
         - name: {{ .Chart.Name }}
@@ -54,19 +74,25 @@ spec:
         configMap:
           name: {{ template "migrations.fullname" . }}
       - name: migrations-redis
+        emptyDir:
+          medium: "Memory"
+      - name: init-migrations-redis
         secret:
           secretName: {{ .Values.redis.password.secret }}
           items:
             - key: {{ .Values.redis.password.key }}
               path: password
           defaultMode: 0400
-      - name: migrations-postgres
+      - name: init-migrations-postgres
         secret:
           secretName: {{ .Values.psql.password.secret }}
           items:
             - key: {{ .Values.psql.password.key }}
               path: psql-password
           defaultMode: 0400
+      - name: migrations-postgres
+        emptyDir:
+          medium: "Memory"
     {{- if .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml .Values.nodeSelector | indent 8 }}

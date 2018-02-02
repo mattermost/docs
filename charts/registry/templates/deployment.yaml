@@ -20,6 +20,20 @@ spec:
       securityContext:
         runAsUser: 1000
         fsGroup: 1000
+      initContainers:
+        - name: configure
+          command: ['sh', '/config/configure']
+          image: busybox
+          volumeMounts:
+          - name: config-volume
+            mountPath: /config
+            readOnly: true
+          - name: init-{{ .Release.Name }}-secret
+            mountPath: /initconfig/registry
+            readOnly: true
+          - name: {{ .Release.Name }}-secret
+            mountPath: /registry
+            readOnly: false
       containers:
         - name: registry
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
@@ -34,13 +48,16 @@ spec:
           resources:
 {{ toYaml .Values.resources | indent 12 }}
       volumes:
-      - name: {{ .Release.Name }}-secret
+      - name: init-{{ .Release.Name }}-secret
         secret:
             secretName: {{ .Values.certificate.secret }}
             items:
                 - key: {{ .Values.certificate.key }}
                   path: {{ .Values.certificate.key }}
             defaultMode: 0400
+      - name: {{ .Release.Name }}-secret
+        emptyDir:
+          medium: "Memory"
       - name: config-volume
         configMap:
           name: {{ template "fullname" . }}

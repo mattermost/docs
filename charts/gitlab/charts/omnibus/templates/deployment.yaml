@@ -18,6 +18,26 @@ spec:
       annotations:
         checksum/configmap: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
     spec:
+      initContainers:
+        - name: configure
+          command: ['sh', '/config/configure']
+          image: busybox
+          volumeMounts:
+          - name: gitlab-config
+            mountPath: /config
+            readOnly: true
+          - name: init-gitlab-redis
+            mountPath: /initconfig/redis
+            readOnly: true
+          - name: init-gitlab-postgres
+            mountPath: /initconfig/postgres
+            readOnly: true
+          - name: gitlab-postgres
+            mountPath: /postgres
+            readOnly: false
+          - name: gitlab-redis
+            mountPath: /redis
+            readOnly: false
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
@@ -55,20 +75,28 @@ spec:
           items:
           - key: gitlab.rb
             path: gitlab.rb
-      - name: gitlab-redis
+          - key: configure
+            path: configure
+      - name: init-gitlab-redis
         secret:
           secretName: {{ .Values.redis.password.secret }}
           items:
             - key: {{ .Values.redis.password.key }}
               path: password
           defaultMode: 0400
-      - name: gitlab-postgres
+      - name: init-gitlab-postgres
         secret:
           secretName: {{ .Values.psql.password.secret }}
           items:
             - key: {{ .Values.psql.password.key }}
               path: psql-password
           defaultMode: 0400
+      - name: gitlab-postgres
+        emptyDir:
+          medium: "Memory"
+      - name: gitlab-redis
+        emptyDir:
+          medium: "Memory"
     {{- if .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml .Values.nodeSelector | indent 8 }}

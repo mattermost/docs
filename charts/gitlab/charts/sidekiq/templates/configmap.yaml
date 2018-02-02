@@ -88,5 +88,10 @@ data:
       extra:
       rack_attack:
         git_basic_auth:
+  configure: |
+    set -e
+    cp /initconfig/redis/password  /redis/password
+    cp /initconfig/gitaly/gitaly_token  /gitaly/gitaly_token
+    cp /initconfig/postgres/psql-password  /postgres/psql-password
 # Leave this here - This line denotes end of block to the parser.
 {{- end }}

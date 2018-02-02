@@ -7,6 +7,10 @@ metadata:
   labels:
     app: {{ template "fullname" . }}
 data:
+  configure: |
+    set -e
+    cp /initconfig/redis/password  /redis/password
+    cp /initconfig/postgres/psql-password  /postgres/psql-password
   gitlab.rb: |
     ###################
     # gitlab/gitlab-rails

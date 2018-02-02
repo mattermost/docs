@@ -6,6 +6,11 @@ metadata:
   labels:
     app: {{ template "fullname" . }}
 data:
+  configure: |
+    set -e
+    cp /initconfig/redis/password  /redis/password
+    cp /initconfig/shell/.gitlab_shell_secret  /shell/.gitlab_shell_secret
+
   config.yml.erb: |
     # GitLab user. git by default
     user: git

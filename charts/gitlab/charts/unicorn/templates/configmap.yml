@@ -102,6 +102,12 @@ data:
         api_url: {{ default "http" .Values.registry.api.protocol }}://{{ template "unicorn.registry.api.host" . }}:{{ default 5000 .Values.registry.api.port }}
         key: /etc/gitlab-registry/gitlab-registry.key
         issuer: {{ .Values.registry.tokenIssuer }}
-
+  configure: |
+    set -e
+    cp /initconfig/redis/password  /redis/password
+    cp /initconfig/shell/.gitlab_shell_secret  /shell/.gitlab_shell_secret
+    cp /initconfig/gitaly/gitaly_token  /gitaly/gitaly_token
+    cp /initconfig/registry/gitlab-registry.key  /registry/gitlab-registry.key
+    cp /initconfig/postgres/psql-password  /postgres/psql-password
 # Leave this here - This line denotes end of block to the parser.
 {{- end }}
