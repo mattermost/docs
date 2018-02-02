@@ -116,6 +116,8 @@ Release date: 2018-02-16
  - Fixed translation string typo and added missing translations.
  - Fixed an issue where leaving channel in one tab redirected other channels on other tabs to Town Square as well.
  - Fixed refactor sidebar to be pure and use redux.
+ - Fixed redirects with 4XX status codes.
+ - Fixed markdown parsing crash (dos) on empty image url.
  
 ### Compatibility
 
