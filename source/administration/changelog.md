@@ -65,7 +65,7 @@ Release date: 2018-02-16
  - Fixed an issue where OAuth account creation error page was unformatted.
  - Fixed an issue where `ExperimentalEnableDefaultChannelLeaveJoinMessages` set to false still posted in town-square when user left team.
  - Fixed an issue where plugin slash commands didn't override username or icon.
- - Fixed deleting a Team via the API Breaks the Web UI.
+ - Fixed deleting a team via the API breaks the web UI.
  - Switched to the golang autocert library for Let's Encrypt.
  - Fixed an issue where pagination for team members modal showed a next button when there are no more users to show.
  - Fixed an issue where at-channel in /header should not trigger confirmation modal.
@@ -83,7 +83,7 @@ Release date: 2018-02-16
  - Fixed an issue where search box in GitHub theme appeared dark in mobile view.
  - Fixed an issue where some emoji picker search results are unexpected and not selectable.
  - Fixed text of upload button when uploading custom brand image.
- - Fixed an issue where reactions added by clicking another user's reaction should appear in Recently Used.
+ - Fixed an issue where reactions added by clicking another user's reaction should appear in recently Used.
  - Fixed JS warning: (node) warning: possible EventEmitter memory leak detected.
  - Fixed error bar and bad connection state for textbox.
  - Fixed an issue where CTRL/CMD+UP erased text draft from message box.
@@ -156,7 +156,19 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Known Issues
 
-
+- Google login fails on the Classic mobile apps.
+- User can receive a video call from another browser tab while already on a call.
+- Jump link in search results does not always jump to display the expected post.
+- Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+- Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+- Searching with Elasticsearch enabled may not always highlight the searched terms.
+- Team sidebar on desktop app does not update when channels have been read on mobile.
+- Channel scroll position flickers while images and link previews load.
+- CTRL/CMD+U shortcut to upload a file doesn't work on Firefox.
+- Numbered lists can sometimes extend beyond the normal post area.
+- Slack import through the CLI fails if email notifications are enabled.
+- Letters are skipped in a few dialogs when using Korean keyboard in IE11.
+- Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
 
 ### Contributors
 
