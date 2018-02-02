@@ -115,6 +115,7 @@ Release date: 2018-02-16
  - Fixed unreads not clearing.
  - Fixed translation string typo and added missing translations.
  - Fixed an issue where leaving channel in one tab redirected other channels on other tabs to Town Square as well.
+ - Fixed refactor sidebar to be pure and use redux.
  
 ### Compatibility
 
@@ -135,7 +136,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Known Issues
 
- - Refactor sidebar to be pure and use redux.
+
 
 ### Contributors
 
