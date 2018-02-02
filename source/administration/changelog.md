@@ -59,6 +59,9 @@ Release date: 2018-02-16
  - Update initial scrolling on post list.
  - Added async loading of emojis in posts for the webapp.
  - Improved formatting for quotes in channel header.
+ - Changed URLs of Direct Messages to usernames.
+ - Added paging/search of custom emojis to webapp emoji picker.
+ - Handled custom emojis in channel header and login page.
 
 ### Bug Fixes
 
@@ -118,6 +121,10 @@ Release date: 2018-02-16
  - Fixed refactor sidebar to be pure and use redux.
  - Fixed redirects with 4XX status codes.
  - Fixed markdown parsing crash (dos) on empty image url.
+ - Fixed error code/message and panic when creating post with bad props.
+ - Fixed an issue where bot messages from the Zoom plugin ignore the Zoom API URL field for on-prem Zoom servers.
+ - Fixed an issue where current master doesn't load on Win10 Edge or IE11.
+ - Fixed JS warning: (node) warning: possible EventEmitter memory leak detected.
  
 ### Compatibility
 
@@ -133,7 +140,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Changes to Team Edition and Enterprise Edition:
 
  - Under `ServiceSettings` in `config.json`:
-    - Added `"ImageProxyType"` and `"ImageProxyURL"` to ensure posts served to the client will have their markdown modified such that all images are loaded through a proxy when these keys are configured.
+    - Added `"ImageProxyType": ""`, `"ImageProxyOptions": ""`, and `"ImageProxyURL": ""` to ensure posts served to the client will have their markdown modified such that all images are loaded through a proxy when these keys are configured.
     - Added `"ExperimentalGroupUnreadChannels": false` setting to show an unread channel section in the webapp sidebar.
     - Added `"VaryByUser": false`, a user based rate limiting, to rate limit on token and on userID.
     - Added a config property `"ExperimentalEnableDefaultChannelLeaveJoinMessages": true` that allows for leave/join messages to be created in the default channel.
