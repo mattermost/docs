@@ -65,66 +65,33 @@ Release date: 2018-02-16
 
 ### Bug Fixes
 
- - Fixed an issue where OAuth account creation error page was unformatted.
  - Fixed an issue where `ExperimentalEnableDefaultChannelLeaveJoinMessages` set to false still posted in town-square when user left team.
  - Fixed an issue where plugin slash commands didn't override username or icon.
  - Fixed deleting a team via the API breaks the web UI.
- - Switched to the golang autocert library for Let's Encrypt.
  - Fixed an issue where pagination for team members modal showed a next button when there are no more users to show.
  - Fixed an issue where at-channel in /header should not trigger confirmation modal.
  - Fixed an issue where DM didn't open on clicking user in member icon drop-down list.
- - Fixed dispatch prop warning on popover of profile_popover component.
  - Fixed an issue where auto-generated SAML Service provider login URL had two slashes instead of one.
- - Fixed a JavaScript error when trying to switch languages (setting was not saved).
- - Fixed an issue with profile picture uploader accepting images with a size less than 128px x 128px.
  - Fixed an issue where `Add a channel description` should open Edit Header, not Edit Purpose.
  - Fixed an issue where no unread mention appeared on non-mobile platform after receiving push notification.
- - Fixed an issue where CTRL/CMD+UP took no action in RHS.
  - Fixed an issue where there was no warning when mentioning (at)all in RHS.
  - Fixed an issue where some iOS emoji using alternate skin tones were rendering incorrectly on Chrome.
- - Fixed incorrect channel notification settings when switching teams.
- - Fixed an issue where search box in GitHub theme appeared dark in mobile view.
- - Fixed an issue where some emoji picker search results are unexpected and not selectable.
- - Fixed text of upload button when uploading custom brand image.
  - Fixed an issue where reactions added by clicking another user's reaction should appear in recently Used.
- - Fixed JS warning: (node) warning: possible EventEmitter memory leak detected.
- - Fixed error bar and bad connection state for textbox.
- - Fixed an issue where CTRL/CMD+UP erased text draft from message box.
- - Fixed cannot scroll on team selection page.
- - Fixed an issue where emoji posted in center channel didn't appear in Recently Used in emoji picker.
- - Fixed an issue where the text box was hidden by the keyboard when replying to a post.
- - Fixed username autocomplete not working with mixed cases.
- - Fixed an issue where reply arrow was on a second line.
- - Fixed and issue where status icons in centre channel and RHS were off-centre.
- - Fixed and issue where +-icon in team sidebar had tooltip "Name undefined".
- - Fixed mobile push notifications not saving setting to `Manually enter...` service location.
- - Fixed race condition on persistStore initialization.
- - Fixed JS error on outgoing webhook search.
- - Disabled remove button after the first click to prevent multiple request.
- - Fixed an issue where autocomplete failed to close after typing full command.
- - Fixed a regression where users were not allowed to expand Team Setting's sections.
- - Fixed scroll issue on onboarding.
  - Fixed an issue where timestamp was not clickable in desktop mobile view.
  - Ensured that emoji picker search should not be case-sensitive.
  - Fixed unable to type Korean quickly in some dialogs.
- - Fixed duplicate requests on first page load.
- - Fixed case sensitive mention highlighting.
  - Fixed an issue where notification preference settings didn't respect case sensitivity for mention highlighting.
  - Fixed after an ephemeral message, cannot use +:emoji: to react to the previous message.
- - Fixed JS error after completing MFA setup.
- - Fixed a problem with the last version of webrtc-adapter.
+ - Changed version of webrtc-adapter to 6.0.4 to prevent application crashes due to a webrtc-adapter bug in any version
+previous to 6.0.3 and after 6.0.4.
  - Fixed an issue where empty post menu box displayed sometimes.
- - Fixed login screen flashes before pre-release loads.
- - Fixed unreads not clearing.
- - Fixed translation string typo and added missing translations.
+ - Fixed login screen flashes before Mattermost server loads.
+ - Fixed an issue where the current channel wasn't marked as read when the window was on focus.
  - Fixed an issue where leaving channel in one tab redirected other channels on other tabs to Town Square as well.
- - Fixed refactor sidebar to be pure and use redux.
  - Fixed redirects with 4XX status codes.
  - Fixed markdown parsing crash (dos) on empty image url.
  - Fixed error code/message and panic when creating post with bad props.
  - Fixed an issue where bot messages from the Zoom plugin ignore the Zoom API URL field for on-prem Zoom servers.
- - Fixed an issue where current master doesn't load on Win10 Edge or IE11.
- - Fixed JS warning: (node) warning: possible EventEmitter memory leak detected.
  
 ### Compatibility
 
