@@ -30,74 +30,90 @@ Release date: 2018-02-16
 
 ### Improvements
 
+#### Web UI
  - Implemented a descriptive error page for browser compatibility.
- - Added a config property `EnableDefaultChannelLeaveJoinMessages` that allows for leave/join messages to be created in the default channel.
- - Added a post change channel privacy system message.
- - Added auto lowercase team and channel names in API requests.
- - Added a `sampledata` platform command to generate realistic sample data.
- - Added a new endpoint called `/users/tokens/search` which gets all tokens for all users if one has the `manage_system` permission.
- - Added support for Slack attachments in outgoing webhook responses.
- - Added `POST /emoji/search`, `GET /emojis/name/{emoji_name}`, and `GET /emoji/autocomplete` API endpoints.
- - Increased size of position to 128 characters.
  - Migrated file upload to be pure and use Redux.
  - Show status icon in the channel member list and sorted it by user's status.
- - Migrated `SettingItemMin` and `SettingItemMax` to pure component, and replaced anonymous function on props.
- - Use last channel name for routing on team switch.
  - Updated help text for debugging webhooks.
- - Fixed active state for dropdown.
+ - Fixed active state for dropdown for channel header options.
  - Disabled pull-to-refresh on Android(Chrome).
  - Added support for image links to be previewed.
- - Added username and profile picture to webhook set up pages.
  - Use transparent pixel while the user profile isn't loaded.
  - Added a copy link option for the buttons in the desktop app for sidebar channels.
  - Fixed tab and alt-tab keyboard navigation for links on login page.
- - Made system messages always use "User did something" instead of "User has done something.
  - Added the ability to navigate emoji picker with keyboard.
- - Added date separator for search results.
  - Set focus on the input box after hitting "Edit" for one of the account setting options.
- - Updated react-router to version 4.
- - Update initial scrolling on post list.
  - Added async loading of emojis in posts for the webapp.
  - Improved formatting for quotes in channel header.
- - Changed URLs of Direct Messages to usernames.
- - Added paging/search of custom emojis to webapp emoji picker.
  - Handled custom emojis in channel header and login page.
+
+#### Notifications
+ - Added a post change channel privacy system message.
+ - Made system messages always use "User did something" instead of "User has done something.
+
+#### Administration
+ - Added a new endpoint called `/users/tokens/search` which gets all tokens for all users if one has the `manage_system` permission.
+
+#### Integrations
+ - Added support for Slack attachments in outgoing webhook responses.
+
+#### Channels
+ - Added a config property `EnableDefaultChannelLeaveJoinMessages` that allows for leave/join messages to be created in the default channel.
+ - Added auto lowercase team and channel names in API requests.
+ - Use last channel name for routing on team switch.
+ - Updated initial scrolling on post list.
+ - Changed URLs of Direct Messages to usernames.
+
+#### System console
+ - Added username and profile picture to webhook set up pages.
+
+#### Performance
+ - Migrated `SettingItemMin` and `SettingItemMax` to pure component, and replaced anonymous function on props.
+
+#### Emoji picker
+ - Added paging/search of custom emojis to webapp emoji picker.
+
+#### Search
+ - Added date separator for search results.
+
+#### Enterprise Edition
+- Increased max length of User.Position field to 128 characters to meet LDAP max length.
 
 ### Bug Fixes
 
- - Fixed an issue where `ExperimentalEnableDefaultChannelLeaveJoinMessages` set to false still posted in town-square when user left team.
+ - Fixed an issue where `ExperimentalEnableDefaultChannelLeaveJoinMessages` set to false still posted in town-square when user left a team.
  - Fixed an issue where plugin slash commands didn't override username or icon.
  - Fixed deleting a team via the API breaks the web UI.
  - Fixed an issue where pagination for team members modal showed a next button when there are no more users to show.
- - Fixed an issue where at-channel in /header should not trigger confirmation modal.
+ - Fixed an issue where at-channel in `/header` should not trigger confirmation modal.
  - Fixed an issue where DM didn't open on clicking user in member icon drop-down list.
  - Fixed an issue where auto-generated SAML Service provider login URL had two slashes instead of one.
  - Fixed an issue where `Add a channel description` should open Edit Header, not Edit Purpose.
  - Fixed an issue where no unread mention appeared on non-mobile platform after receiving push notification.
- - Fixed an issue where there was no warning when mentioning (at)all in RHS.
+ - Fixed an issue where there was no warning when mentioning (at)all in the RHS.
  - Fixed an issue where some iOS emoji using alternate skin tones were rendering incorrectly on Chrome.
  - Fixed an issue where reactions added by clicking another user's reaction should appear in recently Used.
  - Fixed an issue where timestamp was not clickable in desktop mobile view.
  - Ensured that emoji picker search should not be case-sensitive.
  - Fixed unable to type Korean quickly in some dialogs.
  - Fixed an issue where notification preference settings didn't respect case sensitivity for mention highlighting.
- - Fixed after an ephemeral message, cannot use +:emoji: to react to the previous message.
+ - Fixed after an ephemeral message, cannot use `+:emoji:` to react to the previous message.
  - Changed version of webrtc-adapter to 6.0.4 to prevent application crashes due to a webrtc-adapter bug in any version
 previous to 6.0.3 and after 6.0.4.
  - Fixed an issue where empty post menu box displayed sometimes.
  - Fixed login screen flashes before Mattermost server loads.
  - Fixed an issue where the current channel wasn't marked as read when the window was on focus.
  - Fixed an issue where leaving channel in one tab redirected other channels on other tabs to Town Square as well.
- - Fixed redirects with 4XX status codes.
- - Fixed markdown parsing crash (dos) on empty image url.
+ - Fixed redirects with `4XX` status codes.
  - Fixed error code/message and panic when creating post with bad props.
  - Fixed an issue where bot messages from the Zoom plugin ignore the Zoom API URL field for on-prem Zoom servers.
+ - Fixed an issue where clicking a DM in LHS that displays something other than username redirects to Town Square.
  
 ### Compatibility
 
 #### Removed and Deprecated Features
 
-- All API v3 endpoints are now deprecated, and scheduled for removal in Mattermost v5.0.
+- All API v3 endpoints have been deprecated, and scheduled for removal in Mattermost v5.0.
 - The permanent query parameter of the DELETE `/teams/{team_id}` APIv4 endpoint for permanently deleting a team is scheduled for removal in Mattermost v4.7. // XXX Jason needs update
 
 #### config.json
