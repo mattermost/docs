@@ -46,7 +46,7 @@ spec:
               mountPath: '/etc/gitlab-secrets'
               readOnly: true
             - name: postgres-data
-              mountPath: '/var/opt/gitlab/postgresql/data'
+              mountPath: '/postgresql'
               {{- if and .Values.psql.persistence.enabled .Values.psql.persistence.subPath }}
               subPath: "{{ .Values.psql.persistence.subPath }}"
               {{- end }}
