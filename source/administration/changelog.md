@@ -12,9 +12,10 @@ Release date: 2018-02-16
 
 #### Client-Side Performance
 
- - Added user based rate limiting.
- - Optimized channel autocomplete query.
- - Added paging and server-side search to custom emoji management.
+ - Added user based rate limiting, in addition to rate limiting API access by IP address. // XXX not sure how to quantify perf increase
+ - Decreased page load time by loading custom emojis asynchronously rather than all on first page load.
+ - Optimized channel autocomplete (~) query by returning client-side results immediately.
+ - Decreased the size of most image assets by more than 25% by running `pngquant` to remove unnecessary metadata from PNGs.
 
 #### Image Proxy Support
 
