@@ -83,4 +83,4 @@ Non-personally Identifiable Diagnostic Information
   - *Commercial License Diagnostics (Enterprise Edition Only):* Uploaded an Enterprise license key to the server
   - *Mobile Performance Diagnostics:* Load times for starting the app, switching channels, and switching teams 
 
-  To opt out of error and diagnostic reporting, disable the feature in **System Console > General > Logging > Enable Error and Diagnostics Reporting**.
+Error and diagnostic reporting is sent by the client to the endpoint `api.segment.io`. To opt out, disable the feature in **System Console > General > Logging > Enable Error and Diagnostics Reporting**.
