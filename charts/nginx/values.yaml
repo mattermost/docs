@@ -21,7 +21,7 @@ service:
   - ssh: 22
 
 serviceAccount:
-  autoGenerate: false
+  autoGenerate: true
   name: default # Only used when autoGenerate is false
 
 proxyConnectTimeout: 15

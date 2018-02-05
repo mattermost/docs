@@ -157,21 +157,23 @@ It also needs ClusterRole access to:
 If the Helm Tiller server is running as a ServiceAccount with the [cluster-admin role](../../helm/README.md#preparing-for-helm-with-rbac),
 then the chart can create and manage the ServiceAccount required for nginx.
 
-Enable it in the `serviceAccount` field:
+This is enabled by default in the `serviceAccount` field:
 
 ```
 serviceAccount:
   autoGenerate: true
 ```
 
-Otherwise, you will need to supply an existing ServiceAccount.
+Rather than auto-generate the account, you can supply an existing ServiceAccount.
 
 ### Provide existing Service Account
 
-If you have already created a ServiceAccount that has the adequate permissions for nginx. You can specify it by name in the `serviceAccount` field.
+If you have already created a ServiceAccount that has the adequate permissions for nginx. You can specify it by name in
+the `serviceAccount` field, and turning off the `autoGenerate` option.
 
 ```
 serviceAccount:
+  autoGenerate: false
   name: default
 ```
 
