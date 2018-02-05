@@ -19,72 +19,61 @@ Release date: 2018-02-16
 
 #### Image Proxy Support
 
- - Added three new configuration keys: `ImageProxyType`, `ImageProxyURL`, `ImageProxyOptions` to ensure that posts served to the client will have their markdown modified such that all images are loaded through a proxy when these keys are configured.
+ - Image proxy servers increase performance through a layer of caching, and provide custom options to resize images.
+ - Three new configuration keys, `ImageProxyType`, `ImageProxyURL`, `ImageProxyOptions`, ensure that posts served to the client will have their markdown modified such that all images are loaded through a proxy.
 
 #### Updated Image Thumbnails
 
- - Updated the appearance of image thumbnails in the UI so that single thumbnails will now expand to a larger preview without clicking the image to open the preview window.
+ - Updated the appearance of image thumbnails, so that single thumbnails will now expand to a larger preview without clicking the image to open the preview window.
 
 #### Experimental Setting for Unreads Sidebar Section
 
- - Added an experimental unread channel section in the sidebar to enable or disable the option to display the unread channel section in the sidebar.
+ - Added an experimental setting to group unread channels in the channel sidebar.
 
 ### Improvements
 
-#### Web UI
+#### Web User Interface
  - Implemented a descriptive error page for browser compatibility.
- - Migrated file upload to be pure and use Redux.
- - Show status icon in the channel member list and sorted it by user's status.
- - Updated help text for debugging webhooks.
- - Fixed active state for dropdown for channel header options.
- - Disabled pull-to-refresh on Android(Chrome).
- - Added support for image links to be previewed.
- - Use transparent pixel while the user profile isn't loaded.
- - Added a copy link option for the buttons in the desktop app for sidebar channels.
- - Fixed tab and alt-tab keyboard navigation for links on login page.
- - Added the ability to navigate emoji picker with keyboard.
- - Set focus on the input box after hitting "Edit" for one of the account setting options.
- - Added async loading of emojis in posts for the webapp.
- - Improved formatting for quotes in channel header.
- - Handled custom emojis in channel header and login page.
+ - Added a status icon in the channel member list and sorted it by user's status.
+ - Disabled pull-to-refresh on Android (Chrome). //XXX Amy Why? What's the user benefit?
+ - Added support for image links to be previewed. //XXX Not sure what this means
+ - Use transparent pixel while the user profile isn't loaded. //XXX Amy Why? What's the user benefit?
+ - Added a `Copy Link` option for sidebar channels in the Desktop App.
+ - Added focus on the input box after hitting "Edit" for one of the Account Settings options.
+ - Custom emojis are now loaded asynchronously in posts for the webapp, for increased performance.
+ - Improved formatting of quotes in the channel header.
+ - Added a date separator for search results.
 
 #### Notifications
- - Added a post change channel privacy system message.
- - Made system messages always use "User did something" instead of "User has done something.
-
-#### Administration
- - Added a new endpoint called `/users/tokens/search` which gets all tokens for all users if one has the `manage_system` permission.
+ - Added a post change channel privacy system message. //XXX Amy Why? What's the user benefit?
+ - Made system messages always use "User did something" instead of "User has done something" for consistency.
 
 #### Integrations
+ - Added username and profile picture to webhook set up pages.
  - Added support for Slack attachments in outgoing webhook responses.
 
+#### Emoji Picker
+ - Added the ability to navigate emoji picker with the keyboard.
+ - Added paging and search of custom emojis to webapp emoji picker.
+
 #### Channels
- - Added a config property `EnableDefaultChannelLeaveJoinMessages` that allows for leave/join messages to be created in the default channel.
- - Added auto lowercase team and channel names in API requests.
- - Use last channel name for routing on team switch.
- - Updated initial scrolling on post list.
- - Changed URLs of Direct Messages to usernames.
+ - Added auto lowercase team and channel names in API requests. //XXX To API changes section
+ - Use last channel name for routing on team switch. //XXX Amy Why? What's the user benefit?
+ - Updated initial scrolling on post list. //XXX Bug fix
+ - Changed URLs of Direct Messages to usernames. //XXX Amy Why? What's the user benefit?
 
-#### System console
- - Added username and profile picture to webhook set up pages.
-
-#### Performance
- - Migrated `SettingItemMin` and `SettingItemMax` to pure component, and replaced anonymous function on props.
-
-#### Emoji picker
- - Added paging/search of custom emojis to webapp emoji picker.
-
-#### Search
- - Added date separator for search results.
+#### Administration
+ - Added a new endpoint called `/users/tokens/search` which gets all tokens for all users if one has the `manage_system` permission. //XXX To API changes section
 
 #### Enterprise Edition
-- Increased max length of User.Position field to 128 characters to meet LDAP max length.
+- Increased max length of `User.Position` field to 128 characters to meet LDAP max length.
 
 ### Bug Fixes
-
+ - Fixed tab and alt-tab keyboard navigation for links on sign-in page.
+ - Fixed active state for dropdown for channel header options.
  - Fixed an issue where `ExperimentalEnableDefaultChannelLeaveJoinMessages` set to false still posted in town-square when user left a team.
  - Fixed an issue where plugin slash commands didn't override username or icon.
- - Fixed deleting a team via the API breaks the web UI.
+ - Fixed deleting a team via the API breaking the web UI.
  - Fixed an issue where pagination for team members modal showed a next button when there are no more users to show.
  - Fixed an issue where at-channel in `/header` should not trigger confirmation modal.
  - Fixed an issue where DM didn't open on clicking user in member icon drop-down list.
@@ -95,20 +84,19 @@ Release date: 2018-02-16
  - Fixed an issue where some iOS emoji using alternate skin tones were rendering incorrectly on Chrome.
  - Fixed an issue where reactions added by clicking another user's reaction should appear in recently Used.
  - Fixed an issue where timestamp was not clickable in desktop mobile view.
- - Ensured that emoji picker search should not be case-sensitive.
- - Fixed unable to type Korean quickly in some dialogs.
+ - Fixed emoji picker search being case-sensitive.
+ - Fixed not being able to type Korean quickly in some dialogs.
  - Fixed an issue where notification preference settings didn't respect case sensitivity for mention highlighting.
- - Fixed after an ephemeral message, cannot use `+:emoji:` to react to the previous message.
- - Changed version of webrtc-adapter to 6.0.4 to prevent application crashes due to a webrtc-adapter bug in any version
-previous to 6.0.3 and after 6.0.4.
+ - Fixed where after an ephemeral message, couldn't use `+:emoji:` to react to the previous message.
+ - Fixed Mattermost not loading on Firefox if the `media.peerconnection.enabled` setting in Firefox is set to false.
  - Fixed an issue where empty post menu box displayed sometimes.
- - Fixed login screen flashes before Mattermost server loads.
+ - Fixed login screen sometimes flashing before Mattermost server loads.
  - Fixed an issue where the current channel wasn't marked as read when the window was on focus.
  - Fixed an issue where leaving channel in one tab redirected other channels on other tabs to Town Square as well.
  - Fixed redirects with `4XX` status codes.
  - Fixed error code/message and panic when creating post with bad props.
- - Fixed an issue where bot messages from the Zoom plugin ignore the Zoom API URL field for on-prem Zoom servers.
- - Fixed an issue where clicking a DM in LHS that displays something other than username redirects to Town Square.
+ - Fixed an issue where bot messages from the Zoom plugin ignored the Zoom API URL field for on-prem Zoom servers.
+ - Fixed an issue where clicking a direct message channel in left-hand sidebar that displays something other than username redirects to Town Square.
  
 ### Compatibility
 
@@ -126,8 +114,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under `ServiceSettings` in `config.json`:
     - Added `"ImageProxyType": ""`, `"ImageProxyOptions": ""`, and `"ImageProxyURL": ""` to ensure posts served to the client will have their markdown modified such that all images are loaded through a proxy when these keys are configured.
     - Added `"ExperimentalGroupUnreadChannels": false` setting to show an unread channel section in the webapp sidebar.
-    - Added `"VaryByUser": false`, a user based rate limiting, to rate limit on token and on userID.
-    - Added a config property `"ExperimentalEnableDefaultChannelLeaveJoinMessages": true` that allows for leave/join messages to be created in the default channel.
+    - Added `"VaryByUser": false`, a user based rate limiting, to rate limit on token and on userID. // XXXX This is under `RateLimitingSettings`
+    - Added `"ExperimentalEnableDefaultChannelLeaveJoinMessages": true` that allows disabling of leave/join messages in the default channel, usually Town Square.
 
 ### API Changes
 
@@ -139,7 +127,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Plugin API Changes (Beta)
 
 #### Plugin Hook Changes (Beta)
-
 
 ### Database Changes
 
@@ -158,7 +145,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - CTRL/CMD+U shortcut to upload a file doesn't work on Firefox.
 - Numbered lists can sometimes extend beyond the normal post area.
 - Slack import through the CLI fails if email notifications are enabled.
-- Letters are skipped in a few dialogs when using Korean keyboard in IE11.
 - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
 
 ### Contributors
