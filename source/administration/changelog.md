@@ -35,9 +35,8 @@ Release date: 2018-02-16
 #### Web User Interface
  - Implemented a descriptive error page for browser compatibility.
  - Added a status icon in the channel member list and sorted it by user's status.
- - Disabled pull-to-refresh on Android (Chrome). //XXX Amy Why? What's the user benefit?
- - Added support for image links to be previewed. //XXX Not sure what this means
- - Use transparent pixel while the user profile isn't loaded. //XXX Amy Why? What's the user benefit?
+ - Disabled pull-to-refresh feature on Android (Chrome) to prevent unwanted page refresh.
+ - Added ability to preview image links in a similar way that image links uploaded from Mattermost can be previewed.
  - Added a `Copy Link` option for sidebar channels in the Desktop App.
  - Added focus on the input box after hitting "Edit" for one of the Account Settings options.
  - Custom emojis are now loaded asynchronously in posts for the webapp, for increased performance.
@@ -45,7 +44,7 @@ Release date: 2018-02-16
  - Added a date separator for search results.
 
 #### Notifications
- - Added a post change channel privacy system message. //XXX Amy Why? What's the user benefit?
+ - Added a post change channel privacy system message when a team is changed from public to private.
  - Made system messages always use "User did something" instead of "User has done something" for consistency.
 
 #### Integrations
@@ -57,13 +56,8 @@ Release date: 2018-02-16
  - Added paging and search of custom emojis to webapp emoji picker.
 
 #### Channels
- - Added auto lowercase team and channel names in API requests. //XXX To API changes section
- - Use last channel name for routing on team switch. //XXX Amy Why? What's the user benefit?
- - Updated initial scrolling on post list. //XXX Bug fix
- - Changed URLs of Direct Messages to usernames. //XXX Amy Why? What's the user benefit?
-
-#### Administration
- - Added a new endpoint called `/users/tokens/search` which gets all tokens for all users if one has the `manage_system` permission. //XXX To API changes section
+ - Added a feature where the user will be dericted to the last channel they viewed in another team when switching to the other team.
+ - Changed URLs of Direct Messages to use the form of `https://servername.com/messages/@username`, letting users open a direct message with another user using the URL format.
 
 #### Enterprise Edition
 - Increased max length of `User.Position` field to 128 characters to meet LDAP max length.
@@ -93,17 +87,17 @@ Release date: 2018-02-16
  - Fixed login screen sometimes flashing before Mattermost server loads.
  - Fixed an issue where the current channel wasn't marked as read when the window was on focus.
  - Fixed an issue where leaving channel in one tab redirected other channels on other tabs to Town Square as well.
- - Fixed redirects with `4XX` status codes.
  - Fixed error code/message and panic when creating post with bad props.
  - Fixed an issue where bot messages from the Zoom plugin ignored the Zoom API URL field for on-prem Zoom servers.
  - Fixed an issue where clicking a direct message channel in left-hand sidebar that displays something other than username redirects to Town Square.
+ - Updated initial scrolling on post list.
  
 ### Compatibility
 
 #### Removed and Deprecated Features
 
 - All API v3 endpoints have been deprecated, and scheduled for removal in Mattermost v5.0.
-- The permanent query parameter of the DELETE `/teams/{team_id}` APIv4 endpoint for permanently deleting a team is scheduled for removal in Mattermost v4.7. // XXX Jason needs update
+- The permanent query parameter of the DELETE `/teams/{team_id}` APIv4 endpoint for permanently deleting a team is scheduled for removal in Mattermost v4.7. // XXX Jason needs to update
 
 #### config.json
 
@@ -119,8 +113,11 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### API Changes
 
-- It is required that any new integrations use API v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
-- All API v3 endpoints have been deprecated, and scheduled for removal in Mattermost v5.0.
+ - It is required that any new integrations use API v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
+ - All API v3 endpoints have been deprecated, and scheduled for removal in Mattermost v5.0.
+ - Added auto lowercase team and channel names in API requests.
+ - Added `POST /emoji/search`, `GET /emojis/name/{emoji_name}`, and `GET /emoji/autocomplete` API endpoints.
+ - Added a new endpoint called `/users/tokens/search` which gets all tokens for all users if one has the `manage_system` permission.
 
 #### RESTful API v4 Changes
 
