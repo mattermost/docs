@@ -64,17 +64,10 @@ cluster, use `kubectl config set-cluster minikube` to set the active cluster.
 For GKE, you need to grab the admin credentials:
 
 ```
-gcloud container clusters describe <cluster-name> --zone <zone> --project <project-id> | grep -C 1 'username: admin'
+gcloud container clusters describe <cluster-name> --zone <zone> --project <project-id> --format='value(masterAuth.password)'
 ```
 
-This command will output the admin credentials. We need the password to authenticate with `kubectl` and create the role:
-
-```
-...
-  password: xxxxxxxxxxxxxx
-  username: admin
-...
-```
+This command will output the admin password. We need the password to authenticate with `kubectl` and create the role.
 
 #### Upload the RBAC config as an admin user
 
