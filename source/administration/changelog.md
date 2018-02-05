@@ -35,19 +35,14 @@ Release date: 2018-02-16
 #### Web User Interface
  - Implemented a descriptive error page for browser compatibility.
  - Added a status icon in the channel member list and sorted it by user's status.
- - Disabled pull-to-refresh feature on Android (Chrome) to prevent unwanted page refresh.
  - Added ability to preview image links in a similar way that image links uploaded from Mattermost can be previewed.
  - Added a `Copy Link` option for sidebar channels in the Desktop App.
  - Added focus on the input box after hitting "Edit" for one of the Account Settings options.
  - Custom emojis are now loaded asynchronously in posts for the webapp, for increased performance.
  - Improved formatting of quotes in the channel header.
  - Added a date separator for search results.
-
-#### Notifications
- - Added a post change channel privacy system message when a team is changed from public to private.
- - Made system messages always use "User did something" instead of "User has done something" for consistency.
-
-#### Integrations
+ 
+ #### Integrations
  - Added username and profile picture to webhook set up pages.
  - Added support for Slack attachments in outgoing webhook responses.
 
@@ -56,8 +51,12 @@ Release date: 2018-02-16
  - Added paging and search of custom emojis to webapp emoji picker.
 
 #### Channels
- - Added a feature where the user will be dericted to the last channel they viewed in another team when switching to the other team.
+ - Users are directed to the last channel they viewed in another team when switching to the other team.
  - Changed URLs of Direct Messages to use the form of `https://servername.com/messages/@username`, letting users open a direct message with another user using the URL format.
+ 
+#### Notifications
+ - Added a post change channel privacy system message when a team is changed from public to private.
+ - Made system messages always use "User did something" instead of "User has done something" for consistency.
 
 #### Enterprise Edition
 - Increased max length of `User.Position` field to 128 characters to meet LDAP max length.
@@ -91,6 +90,7 @@ Release date: 2018-02-16
  - Fixed an issue where bot messages from the Zoom plugin ignored the Zoom API URL field for on-prem Zoom servers.
  - Fixed an issue where clicking a direct message channel in left-hand sidebar that displays something other than username redirects to Town Square.
  - Updated initial scrolling on post list.
+ - Disabled pull-to-refresh feature on Android (Chrome) to prevent unwanted page refresh.
  
 ### Compatibility
 
@@ -115,11 +115,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
  - It is required that any new integrations use API v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
  - All API v3 endpoints have been deprecated, and scheduled for removal in Mattermost v5.0.
- - Added auto lowercase team and channel names in API requests.
- - Added `POST /emoji/search`, `GET /emojis/name/{emoji_name}`, and `GET /emoji/autocomplete` API endpoints.
- - Added a new endpoint called `/users/tokens/search` which gets all tokens for all users if one has the `manage_system` permission.
 
 #### RESTful API v4 Changes
+
+ - Added auto lowercase team and channel names in API requests. This ensures that the channel name is automatically lowercased for endpoints taking team or channel names as URL parameters.
+ - Added `POST /emoji/search`, `GET /emojis/name/{emoji_name}`, and `GET /emoji/autocomplete` API endpoints. These ensure that the benefits of `GET` for important performance related actions such as autocompleting are included.
+ - Added a new endpoint called `/users/tokens/search`. This endpoint gets all tokens for all users if one has the `manage_system` permission.
 
 #### Plugin API Changes (Beta)
 
