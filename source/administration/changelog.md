@@ -91,6 +91,17 @@ Release date: 2018-02-16
  - Fixed an issue where clicking a direct message channel in left-hand sidebar that displays something other than username redirects to Town Square.
  - Updated initial scrolling on post list.
  - Disabled pull-to-refresh feature on Android (Chrome) to prevent unwanted page refresh.
+ - Fixed an issue where LDAP Sync posted an incorrect log message.
+ - Fixed an issue with missing validation when an invalid credential was used.
+ - Fixed an issue where clicking `Save` in `Rename Channel` modal without changes did nothing.
+ - Fixed an issue where pasting files into a channel didn't work.
+ - Fixed an issue where Mattermost crashed when posting a code snippet containing white space.
+ - Fixed an issue where a validation error message did not get cleared when switching between creating a private/public channel.
+ - Fixed an issue where the `Manage Custom Emoji` list didn't scroll to the top when switching pages.
+ - Fixed an issue where a channel with no mention was bolded as unread, if "Mark Channel Unread" was set to only for mentions and `ExperimentalGroupUnreadChannels` config.json setting was set to true.
+ - Fixed issues with channels staying in the "unreads" section after viewing.
+ - Fixed an issue where leaving a team crashed the app.
+ - Fixed an issue where the `ALT+SHIFT+UP/DOWN` was broken with the unreads section.
  
 ### Compatibility
 
