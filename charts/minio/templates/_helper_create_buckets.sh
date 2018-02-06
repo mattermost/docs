@@ -13,7 +13,7 @@ connectToMinio() {
   MC_COMMAND="mc config host add myminio http://$MINIO_ENDPOINT:$MINIO_PORT $ACCESS $SECRET" ;
   $MC_COMMAND ;
   STATUS=$? ;
-  until [ $STATUS ] ;
+  until [ $STATUS -eq 0 ] ;
   do
     ATTEMPTS=`expr $ATTEMPTS + 1` ;
     echo \"Failed attempts: $ATTEMPTS\" ;
