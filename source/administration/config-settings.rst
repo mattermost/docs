@@ -309,6 +309,18 @@ Enable Team Directory
 | This feature's ``config.json`` setting is ``"EnableTeamListing": false`` with options ``true`` and ``false`` for above settings respectively.                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable Default Channel Leave/Join Messages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Allows for leave/join messages to be created in the default channel.
+
+**True**: Leave/join messages can be created in the default channel.
+
+**False**: Leave/join messages will not be created in the DB for the default channel.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableDefaultChannelLeaveJoinMessages": "true"`` with options ``true`` and ``false`` for above settings respectively. |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Teammate Name Display
 ^^^^^^^^^^^^^^^^^^^^^
 Specifies how names are displayed in the user interface.
