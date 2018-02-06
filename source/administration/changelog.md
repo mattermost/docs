@@ -62,27 +62,23 @@ Release date: 2018-02-16
 - Increased max length of `User.Position` field to 128 characters to meet LDAP max length.
 
 ### Bug Fixes
+ - Fixed an issue where OAuth account creation error page was unformatted.
  - Fixed tab and alt-tab keyboard navigation for links on sign-in page.
  - Fixed active state for dropdown for channel header options.
  - Fixed an issue where `ExperimentalEnableDefaultChannelLeaveJoinMessages` set to false still posted in town-square when user left a team.
  - Fixed an issue where plugin slash commands didn't override username or icon.
- - Fixed deleting a team via the API breaking the web UI.
  - Fixed an issue where pagination for team members modal showed a next button when there are no more users to show.
  - Fixed an issue where at-channel in `/header` should not trigger confirmation modal.
- - Fixed an issue where DM didn't open on clicking user in member icon drop-down list.
  - Fixed an issue where auto-generated SAML Service provider login URL had two slashes instead of one.
- - Fixed an issue where `Add a channel description` should open Edit Header, not Edit Purpose.
  - Fixed an issue where no unread mention appeared on non-mobile platform after receiving push notification.
- - Fixed an issue where there was no warning when mentioning (at)all in the RHS.
- - Fixed an issue where some iOS emoji using alternate skin tones were rendering incorrectly on Chrome.
- - Fixed an issue where reactions added by clicking another user's reaction should appear in recently Used.
- - Fixed an issue where timestamp was not clickable in desktop mobile view.
- - Fixed emoji picker search being case-sensitive.
+ - Fixed an issue where emoji posted in center channel doesn't appear in Recently Used in emoji picker.
+ - Fixed an issue where the text box was hidden by the keyboard when replying to a post.
+ - Fixed username autocomplete not working with mixed cases.
+ - Fixed an issue where reply arrow was on a second line.
  - Fixed not being able to type Korean quickly in some dialogs.
  - Fixed an issue where notification preference settings didn't respect case sensitivity for mention highlighting.
  - Fixed where after an ephemeral message, couldn't use `+:emoji:` to react to the previous message.
  - Fixed Mattermost not loading on Firefox if the `media.peerconnection.enabled` setting in Firefox is set to false.
- - Fixed an issue where empty post menu box displayed sometimes.
  - Fixed login screen sometimes flashing before Mattermost server loads.
  - Fixed an issue where the current channel wasn't marked as read when the window was on focus.
  - Fixed an issue where leaving channel in one tab redirected other channels on other tabs to Town Square as well.
@@ -91,7 +87,6 @@ Release date: 2018-02-16
  - Fixed an issue where clicking a direct message channel in left-hand sidebar that displays something other than username redirects to Town Square.
  - Updated initial scrolling on post list.
  - Disabled pull-to-refresh feature on Android (Chrome) to prevent unwanted page refresh.
- - Fixed an issue where LDAP Sync posted an incorrect log message.
  - Fixed an issue with missing validation when an invalid credential was used.
  - Fixed an issue where clicking `Save` in `Rename Channel` modal without changes did nothing.
  - Fixed an issue where pasting files into a channel didn't work.
