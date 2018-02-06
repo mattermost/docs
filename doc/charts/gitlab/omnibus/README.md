@@ -113,6 +113,50 @@ psql:
     key: psql-password
 ```
 
+### PostgreSQL Persistence
+
+This chart provisions a PersistentVolumeClaim and mounts corresponding persistent volume for the PostgreSQL data.
+You'll need physical storage available in the Kubernetes cluster for this to work. If you'd rather use emptyDir,
+disable PersistentVolumeClaim by: `psql.persitence.enabled: false`
+
+```
+psql:
+  persistence:
+    enabled: true
+    volumeName: gitlab-psql-data
+    storageClass: standard
+    accessMode: ReadWriteOnce
+    size: 10Gi
+    subPath: "/data"
+```
+
+#### enabled
+
+Sets whether or not to use a PersistentVolumeClaims for the PostgreSQL data. Otherwise a emptyDir volume is used. Defaults to true.
+
+#### volumeName
+
+If set, the chart will use the existing named PersistentVolume. Use this when you are not using dynamic provisioning. Defaults to unset.
+
+#### storageClass
+
+Sets the storageClassName on the Volume Claim for dynamic provisioning. When unset or null, the default provisioner will be used.
+If set to a hyphen, dynamic provisioning is disabled. Defaults to unset.
+f defined, storageClassName: <storageClass>
+
+#### accessMode
+
+Sets the accessMode requested in the PersistentVolumeClaim. See [Kubernetes Access Modes Documentation][access-modes] for details.
+Defaults to ReadWriteOnce
+
+#### size
+
+The minimum volume size to request for the data persistence. Defaults to 10Gi
+
+#### subPath
+
+Sets the path within the volume to mount, rather than the volume root. The root is used if the subPath is empty. Defaults to empty.
+
 [og-docker]: https://gitlab.com/gitlab-org/ominbus-gitlab/container_registry
 [helm-gitlab]: https://gitlab.com/charts/helm.gitlab.io
 [nginx]: ../../nginx
@@ -127,6 +171,7 @@ psql:
 [og-external-url]: https://docs.gitlab.com/omnibus/settings/configuration.html#configuring-the-external-url-for-gitlab
 [og-nginx-proxy]: https://docs.gitlab.com/omnibus/settings/nginx.html#configuring-gitlab-trusted_proxies-and-the-nginx-real_ip-module
 [og-trusted-proxy]: https://docs.gitlab.com/omnibus/settings/nginx.html#using-a-non-bundled-web-server
+[access-modes]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes
 
 [Service]: ../../../../charts/gitlab/charts/omnibus/templates/service.yaml
 [Deployment]: ../../../../charts/gitlab/charts/omnibus/templates/deployment.yaml
