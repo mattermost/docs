@@ -35,11 +35,11 @@ Set up your development environment for building, running, and testing Mattermos
 
     a. Download the Go binary.
 
-       ``wget https://storage.googleapis.com/golang/go1.9.linux-amd64.tar.gz``
+       ``wget https://storage.googleapis.com/golang/go1.9.2.linux-amd64.tar.gz``
 
     b. Install the Go binary.
 
-       ``sudo tar -C /usr/local -xzf go1.9.linux-amd64.tar.gz``
+       ``sudo tar -C /usr/local -xzf go1.9.2.linux-amd64.tar.gz``
 
 4. Set up your Go workspace:
 
