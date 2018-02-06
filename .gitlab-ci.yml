@@ -231,6 +231,44 @@ qa:
   export CI_CONTAINER_NAME=ci_job_build_${CI_JOB_ID}
   export TILLER_NAMESPACE=$KUBE_NAMESPACE
 
+  function previousDeployFailed() {
+    set +e
+    echo "Checking for previous deploymet of $CI_ENVIRONMENT_SLUG"
+    deployment_status=$(helm status $CI_ENVIRONMENT_SLUG >/dev/null 2>&1)
+    status=$?
+    # if `status` is `0`, deployment exists, has a status
+    if [ $status -eq 0 ]; then
+      echo "Previous deployment found, checking status: $CI_ENVIRONMENT_SLUG"
+      deployment_status=$(helm status $CI_ENVIRONMENT_SLUG | grep ^STATUS | cut -d' ' -f2)
+      echo "Previous deployment state: $deployment_status"
+      if [[ "$deployment_status" == "FAILED" || "$deployment_status" == "PENDING_UPGRADE" ]]; then
+        status=0;
+      fi
+    else
+      echo "Previous deployment NOT found."
+    fi
+    set -e
+    return $status
+  }
+
+  function purgeJobs() {
+    jobs=$(kubectl get job | grep $CI_ENVIRONMENT_SLUG | wc -l)
+    if [ $jobs -gt 0 ]; then
+      echo "Found dangling jobs:" $jobs
+      kubectl get job | grep $CI_ENVIRONMENT_SLUG | cut -d' ' -f1 | xargs kubectl delete job || true
+    else
+      echo "No dangling jobs found."
+    fi
+  }
+
+  function cleanup() {
+    if previousDeployFailed ; then
+      echo "Deployment in bad state, cleaning up $CI_ENVIRONMENT_SLUG"
+      delete
+      purgeJobs
+    fi
+  }
+
   function deploy() {
     track="${1-stable}"
     name="$CI_ENVIRONMENT_SLUG"
@@ -263,6 +301,8 @@ qa:
     #ROOT_PASSWORD=$(cat /dev/urandom | LC_TYPE=C tr -dc "[:alpha:]" | head -c 16)
     #echo "Generated root login: $ROOT_PASSWORD"
     # YAML_FILE=""${AUTO_DEVOPS_DOMAIN//\./-}.yaml"
+    # Cleanup and previous installs, as FAILED and PENDING_UPGRADE will cause errors with `upgrade`
+    cleanup
 
     helm upgrade --install \
       --wait \
