@@ -86,6 +86,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Create meta issue for release in GitHub (see [example](https://github.com/mattermost/mattermost-server/issues/3702))
 3. Logistics:
     - Confirm date of marketing announcement for the release date with Marketing, and update release channel header if needed
+      - If release day falls on a Friday, the blog post goes out on the Friday and the emailed newsletter goes out the following Tuesday.
     - Post a reminder to devs in the Release Discussion channel of the the code complete date with the ZBB count [see example](https://pre-release.mattermost.com/core/pl/coggyys9atg7fqyam81q3gkmoo)
 4. Leads:
     - Finalize roadmap for next release, and identify planned marketing bullet points
