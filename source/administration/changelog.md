@@ -42,7 +42,7 @@ Release date: 2018-02-16
  - Added a date separator for search results.
  
  #### Integrations
- - Added username and profile picture to webhook set up pages.
+ - Added username and profile picture to incoming webhook set up pages.
  - Added support for Slack attachments in outgoing webhook responses.
 
 #### Emoji Picker
@@ -130,6 +130,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Database Changes
 
 ### WebSocket Event Changes
+
+ - Added `delete_team` web socket event to notify client whenever a team is deleted (e.g. via API call).
 
 ### Known Issues
 
