@@ -33,7 +33,6 @@ Release date: 2018-02-16
 ### Improvements
 
 #### Web User Interface
- - Implemented a descriptive error page for browser compatibility.
  - Added a status icon in the channel member list and sorted it by user's status.
  - Added ability to preview image links in a similar way that image links uploaded from Mattermost can be previewed.
  - Added a `Copy Link` option for sidebar channels in the Desktop App.
@@ -80,23 +79,19 @@ Release date: 2018-02-16
  - Fixed where after an ephemeral message, couldn't use `+:emoji:` to react to the previous message.
  - Fixed Mattermost not loading on Firefox if the `media.peerconnection.enabled` setting in Firefox is set to false.
  - Fixed login screen sometimes flashing before Mattermost server loads.
- - Fixed an issue where the current channel wasn't marked as read when the window was on focus.
  - Fixed an issue where leaving channel in one tab redirected other channels on other tabs to Town Square as well.
  - Fixed error code/message and panic when creating post with bad props.
  - Fixed an issue where bot messages from the Zoom plugin ignored the Zoom API URL field for on-prem Zoom servers.
- - Fixed an issue where clicking a direct message channel in left-hand sidebar that displays something other than username redirects to Town Square.
  - Updated initial scrolling on post list.
+ - Fixed a problem with the last version of webrtc-adapter.
+ - Fixed case sensitive mention highlighting.
+ - Disabled remove button after the first click to prevent multiple request.
  - Disabled pull-to-refresh feature on Android (Chrome) to prevent unwanted page refresh.
  - Fixed an issue with missing validation when an invalid credential was used.
  - Fixed an issue where clicking `Save` in `Rename Channel` modal without changes did nothing.
  - Fixed an issue where pasting files into a channel didn't work.
  - Fixed an issue where Mattermost crashed when posting a code snippet containing white space.
  - Fixed an issue where a validation error message did not get cleared when switching between creating a private/public channel.
- - Fixed an issue where the `Manage Custom Emoji` list didn't scroll to the top when switching pages.
- - Fixed an issue where a channel with no mention was bolded as unread, if "Mark Channel Unread" was set to only for mentions and `ExperimentalGroupUnreadChannels` config.json setting was set to true.
- - Fixed issues with channels staying in the "unreads" section after viewing.
- - Fixed an issue where leaving a team crashed the app.
- - Fixed an issue where the `ALT+SHIFT+UP/DOWN` was broken with the unreads section.
  
 ### Compatibility
 
