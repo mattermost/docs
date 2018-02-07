@@ -253,26 +253,6 @@ qa:
     return $status
   }
 
-  function purgeJobs() {
-    set +e # don't get bitten by grep not finding anything in the output.
-    jobs=$(kubectl get job | grep $CI_ENVIRONMENT_SLUG | wc -l)
-    if [ $jobs -gt 0 ]; then
-      echo "Found dangling jobs:" $jobs
-      kubectl get job | grep $CI_ENVIRONMENT_SLUG | cut -d' ' -f1 | xargs kubectl delete job || true
-    else
-      echo "No dangling jobs found."
-    fi
-    set -e
-  }
-
-  function cleanup() {
-    if previousDeployFailed ; then
-      echo "Deployment in bad state, cleaning up $CI_ENVIRONMENT_SLUG"
-      delete
-      purgeJobs
-    fi
-  }
-
   function deploy() {
     track="${1-stable}"
     name="$CI_ENVIRONMENT_SLUG"
@@ -306,7 +286,10 @@ qa:
     #echo "Generated root login: $ROOT_PASSWORD"
     # YAML_FILE=""${AUTO_DEVOPS_DOMAIN//\./-}.yaml"
     # Cleanup and previous installs, as FAILED and PENDING_UPGRADE will cause errors with `upgrade`
-    cleanup
+    if previousDeployFailed ; then
+      echo "Deployment in bad state, cleaning up $CI_ENVIRONMENT_SLUG"
+      delete
+    fi
 
     helm upgrade --install \
       --wait \
@@ -449,6 +432,17 @@ qa:
       -o yaml --dry-run | kubectl replace -n "$KUBE_NAMESPACE" --force -f -
   }
 
+  function purgeJobs() {
+    jobs=$(kubectl get job -l "relase=$CI_ENVIRONMENT_SLUG" | wc -l)
+    # The will always have a header or "no jobs found" (wc -l >= 1), and exit `0`
+    if [ $jobs -gt 1 ]; then
+      echo "Found dangling jobs:"
+      kubectl delete job -l "release=$CI_ENVIRONMENT_SLUG"
+    else
+      echo "No dangling jobs found."
+    fi
+  }
+
   function delete() {
     track="${1-stable}"
     name="$CI_ENVIRONMENT_SLUG"
@@ -456,7 +450,7 @@ qa:
     if [[ "$track" != "stable" ]]; then
       name="$name-$track"
     fi
-
+    purgeJobs
     helm delete --purge "$name" || true
   }
 
