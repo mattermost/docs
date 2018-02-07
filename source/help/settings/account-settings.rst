@@ -226,6 +226,10 @@ Automatically Close Direct Messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Hide Direct Message conversations with no activity for 7 days. These conversations can be reopened with the “+” button in the sidebar or by using the Channel Switcher (CTRL+K). This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental>`_.
 
+Experimental Group Unreads Section
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+If enabled, this features groups unread channels at the top of the sidebar. This setting is experimental and can be disabled from **Account Settings** -> **Sidebar** -> **Group Unreads Channels**.
+
 Advanced
 --------
 
