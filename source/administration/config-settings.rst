@@ -317,9 +317,9 @@ Allows for leave/join messages to be created in the default channel.
 
 **False**: Leave/join messages will not be created in the DB for the default channel.
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableDefaultChannelLeaveJoinMessages": "true"`` with options ``true`` and ``false`` for above settings respectively. |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableDefaultChannelLeaveJoinMessages": true`` with options ``true`` and ``false`` for above settings respectively.          |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Teammate Name Display
 ^^^^^^^^^^^^^^^^^^^^^
