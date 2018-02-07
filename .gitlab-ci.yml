@@ -233,12 +233,12 @@ qa:
 
   function previousDeployFailed() {
     set +e
-    echo "Checking for previous deploymet of $CI_ENVIRONMENT_SLUG"
+    echo "Checking for previous deployment of $CI_ENVIRONMENT_SLUG"
     deployment_status=$(helm status $CI_ENVIRONMENT_SLUG >/dev/null 2>&1)
     status=$?
     # if `status` is `0`, deployment exists, has a status
     if [ $status -eq 0 ]; then
-      echo "Previous deployment found, checking status: $CI_ENVIRONMENT_SLUG"
+      echo "Previous deployment found, checking status"
       deployment_status=$(helm status $CI_ENVIRONMENT_SLUG | grep ^STATUS | cut -d' ' -f2)
       echo "Previous deployment state: $deployment_status"
       if [[ "$deployment_status" == "FAILED" || "$deployment_status" == "PENDING_UPGRADE" ]]; then
