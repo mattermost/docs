@@ -22,43 +22,40 @@ spec:
         fsGroup: 1000
       initContainers:
         - name: configure
-          command: ['sh', '/config/configure']
-          image: busybox
+          image: {{ .Values.init.image }}:{{ .Values.init.tag}}
+          imagePullPolicy: {{ .Values.init.pullPolicy }}
+          command: ["sh", "/config/configure"]
           volumeMounts:
-          - name: config-volume
-            mountPath: /config
-            readOnly: true
-          - name: init-{{ .Release.Name }}-secret
-            mountPath: /init-config/registry
-            readOnly: true
-          - name: {{ .Release.Name }}-secret
-            mountPath: /init-secrets
-            readOnly: false
+            - name: registry-secrets
+              mountPath: /config
+            - name: registry-server-config
+              mountPath: /registry
       containers:
         - name: registry
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ default "" .Values.image.pullPolicy | quote }}
           volumeMounts:
-          - name: {{ .Release.Name }}-secret
-            mountPath: '/etc/registry-secret'
-            readOnly: true
-          - name: config-volume
+          - name: registry-server-config
             mountPath: /etc/docker/registry/
             readOnly: true
           resources:
 {{ toYaml .Values.resources | indent 12 }}
       volumes:
-      - name: init-{{ .Release.Name }}-secret
-        secret:
-            secretName: {{ .Values.certificate.secret }}
-            items:
-                - key: {{ .Values.certificate.key }}
-                  path: {{ .Values.certificate.key }}
-            defaultMode: 0400
-      - name: {{ .Release.Name }}-secret
+      - name: registry-server-config
         emptyDir:
           medium: "Memory"
-      - name: config-volume
-        configMap:
-          name: {{ template "fullname" . }}
+      - name: registry-secrets
+        projected:
+          sources:
+          - configMap:
+              name: {{ template "fullname" . }}
+          - secret:
+              name: {{ .Values.certificate.secret }}
+              items:
+                  - key: {{ .Values.certificate.key }}
+                    path: certificate.crt
+          {{- if .Values.minio.enabled }}
+          - secret:
+              name: {{ .Values.minio.credentials.secret }}
+          {{- end }}
 {{- end -}}

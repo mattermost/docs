@@ -17,7 +17,8 @@ nginx:
 
 # Registry chart Provides services to Unicorn/Omnibus chart(s) and external clients
 registry:
-
+  minio:
+    enabled: true
 # Redis chart provides Redis services to multiple charts
 redis:
   enabled: true

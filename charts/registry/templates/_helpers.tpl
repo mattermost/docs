@@ -16,6 +16,14 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 {{- end -}}
 
 {{/*
+Create a default fully qualified app name for minio
+We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
+*/}}
+{{- define "registry.minio" -}}
+{{- printf "%s-%s" .Release.Name "minio-svc" | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+
+{{/*
 Return the registry authEndpoint
 Defaults to the globally set gitlabHostname if an authEndpoint hasn't been provided
 to the chart

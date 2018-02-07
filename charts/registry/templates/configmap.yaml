@@ -7,10 +7,8 @@ metadata:
   labels:
     app: {{ template "fullname" . }}
 data:
-  configure: |
-    set -e
-    mkdir -p /init-secrets/registry
-    cp /init-config/registry/{{ .Values.certificate.key }} /init-secrets/registry/{{ .Values.certificate.key }}
+  configure: |-
+{{ .Values.init.script | indent 4 }}
   config.yml: |
     version: 0.1
     log:
@@ -36,10 +34,25 @@ data:
         realm: {{ template "registry.authEndpoint" . }}/jwt/auth
         service: {{ .Values.tokenService }}
         issuer: {{ .Values.tokenIssuer | quote }}
-        rootcertbundle: /etc/registry-secret/registry/{{ .Values.certificate.key }}
+        # This is provided from the initContainer execution, at a known path.
+        rootcertbundle: /etc/docker/registry/certificate.crt
     storage:
       {{- if .Values.storage }}
 {{ toYaml .Values.storage | indent 6}}
+      {{- else if .Values.minio.enabled }}
+      s3:
+        accesskey: "ACCESS_KEY"
+        secretkey: "SECRET_KEY"
+        region: us-east-1
+        regionendpoint: http://{{ template "registry.minio" . }}:9000
+        bucket: {{ .Values.minio.bucket }}
+        secure: true
+        v4auth: true
+        rootdirectory: /
+      cache:
+        blobdescriptor: 'inmemory'
+      delete:
+        enabled: true
       {{- else }}
 {{ include (print $.Template.BasePath "/_storage_default.yaml") . | indent 6}}
       {{- end }}

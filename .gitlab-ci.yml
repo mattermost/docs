@@ -277,6 +277,7 @@ qa:
       --set registry.tokenIssuer="gitlab-issuer" \
       --set registry.certificate.secret="gitlab-registry" \
       --set registry.certificate.key="registry-auth.crt" \
+      --set registry.minio.enabled=true \
       --set redis.enabled=true \
       --set redis.password.secret=gitlab-redis \
       --set redis.password.key=redis-password \
