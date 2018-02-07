@@ -1,0 +1,22 @@
+{{- if and .Values.enabled .Values.psql.persistence.enabled }}
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ template "fullname" . }}-psql
+spec:
+  accessModes:
+    - {{ .Values.psql.persistence.accessMode | quote }}
+  resources:
+    requests:
+      storage: {{ .Values.psql.persistence.size | quote }}
+{{- if .Values.psql.persistence.volumeName }}
+  volumeName: {{ .Values.psql.persistence.volumeName }}
+{{- end }}
+{{- if .Values.psql.persistence.storageClass }}
+{{- if (eq "-" .Values.psql.persistence.storageClass) }}
+  storageClassName: ""
+{{- else }}
+  storageClassName: "{{ .Values.psql.persistence.storageClass }}"
+{{- end }}
+{{- end }}
+{{- end }}

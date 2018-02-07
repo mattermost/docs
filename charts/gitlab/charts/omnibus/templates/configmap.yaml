@@ -36,6 +36,7 @@ data:
     postgresql['shared_buffers'] = {{ .Values.psql.shared_buffers | quote }}
     postgresql['md5_auth_cidr_addresses'] = %w{{ .Values.trusted_proxies }}
     postgresql['trust_auth_cidr_addresses'] = ['127.0.0.1/24']
+    postgresql['data_dir'] = "/postgresql/data"
     {{-   if .Values.psql.password }}
     postgresql['sql_user_password'] = Digest::MD5.hexdigest File.read("/etc/gitlab-secrets/postgres/psql-password") << {{ default "gitlab" .Values.psql.username | quote }}
     {{-   end }}

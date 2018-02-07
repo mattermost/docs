@@ -45,6 +45,11 @@ spec:
             - name: gitlab-secrets
               mountPath: '/etc/gitlab-secrets'
               readOnly: true
+            - name: postgres-data
+              mountPath: '/postgresql'
+              {{- if and .Values.psql.persistence.enabled .Values.psql.persistence.subPath }}
+              subPath: "{{ .Values.psql.persistence.subPath }}"
+              {{- end }}
           # livenessProbe:
           #   initialDelaySeconds: 180
           #   timeoutSeconds: 15
@@ -68,6 +73,13 @@ spec:
             path: gitlab.rb
           - key: configure
             path: configure
+      - name: postgres-data
+      {{- if .Values.psql.persistence.enabled }}
+        persistentVolumeClaim:
+          claimName: {{ template "fullname" . }}-psql
+      {{- else }}
+        emptyDir: {}
+      {{- end }}
       - name: init-gitlab-secrets
         projected:
           defaultMode: 0400
