@@ -33,7 +33,7 @@ After installing Mattermost:
 
 3. Confirm AD/LDAP sign-on is enabled.  After AD/LDAP has been enabled, confirm that users can sign in using AD/LDAP credentials.
 
-4. Switch your System Administrator account from email to AD/LDAP authentication. Go to **Account Settings** > **General** > **Sign-in Method** > **Switch to AD/LDAP** and sign-in with your AD/LDAP credentials to complete the switch.
+4. Switch your System Administrator account from email to AD/LDAP authentication. Go to **Account Settings** > **Security** > **Sign-in Method** > **Switch to AD/LDAP** and sign-in with your AD/LDAP credentials to complete the switch.
 
 5. (Optional) Restrict authentication to AD/LDAP. Go to **System Console** > **Authentication** > **Email** and set **Allow Sign Up With Email** to `false` and **Allow Sign In With Email** to `false`. This should leave Active Directory/LDAP as the only single sign-in option.
 
