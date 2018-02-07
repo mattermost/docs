@@ -243,6 +243,8 @@ qa:
       echo "Previous deployment state: $deployment_status"
       if [[ "$deployment_status" == "FAILED" || "$deployment_status" == "PENDING_UPGRADE" ]]; then
         status=0;
+      else
+        status=1;
       fi
     else
       echo "Previous deployment NOT found."
