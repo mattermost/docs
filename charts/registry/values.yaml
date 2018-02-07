@@ -29,6 +29,7 @@ init:
     else
       cp /config/config.yml  /registry/config.yml
     fi
+    # Set to known path, to used ConfigMap
     cat /config/certificate.crt > /registry/certificate.crt
 
 # define some sane resource requests and limitations

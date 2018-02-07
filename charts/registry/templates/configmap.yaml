@@ -34,6 +34,7 @@ data:
         realm: {{ template "registry.authEndpoint" . }}/jwt/auth
         service: {{ .Values.tokenService }}
         issuer: {{ .Values.tokenIssuer | quote }}
+        # This is provided from the initContainer execution, at a known path.
         rootcertbundle: /etc/docker/registry/certificate.crt
     storage:
       {{- if .Values.storage }}
