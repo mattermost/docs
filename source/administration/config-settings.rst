@@ -3434,6 +3434,17 @@ Enable Preview Features (Experimental)
 | This feature’s ``config.json`` setting is ``"EnablePreviewFeatures": true`` with options ``true`` and ``false`` for above settings respectively.                     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Group Unreads Channels (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Show unreads channels in the User Interface.
+
+**False**:  Hides unreads channels in the User Interface and disables this feature for the server.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"ExperimentalGroupUnreadChannels": false`` with options ``true`` and ``false`` for above settings respectively.                     |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Team Settings
 ~~~~~~~~~~~~~~
 
