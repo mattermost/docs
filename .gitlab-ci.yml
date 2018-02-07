@@ -252,6 +252,7 @@ qa:
   }
 
   function purgeJobs() {
+    set +e # don't get bitten by grep not finding anything in the output.
     jobs=$(kubectl get job | grep $CI_ENVIRONMENT_SLUG | wc -l)
     if [ $jobs -gt 0 ]; then
       echo "Found dangling jobs:" $jobs
@@ -259,6 +260,7 @@ qa:
     else
       echo "No dangling jobs found."
     fi
+    set -e
   }
 
   function cleanup() {
