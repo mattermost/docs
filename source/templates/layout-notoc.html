@@ -67,7 +67,10 @@
         <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}"/>
     {%- endif %}
   {%- endblock %}
-  {%- block extrahead %} 
+  {%- block extrahead %}
+    <!-- Bizible Script -->
+    <script src="//cdn.bizible.com/scripts/bizible.js" async=""></script>
+
     {% if googleanalytics_enabled %}
       <!-- Google Analytics -->
       <script>
@@ -105,7 +108,7 @@
 </head>
 
 <body class="wy-body-for-nav" role="document">
-  
+
   {% block menu %} {% endblock %}
   {% block extrabody %} {% endblock %}
 
