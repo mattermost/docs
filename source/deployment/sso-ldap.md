@@ -111,6 +111,10 @@ If these options don't work, please contact Mattermost support via the email add
 
 No, each user is created on their first login. 
 
+##### When I try to synchronize AD/LDAP, why does the Status show as ``Pending`` and does not complete? 
+
+Go to **System Console > AD/LDAP** and make sure that the **Enable Synchronization with AD/LDAP** setting is set to ``true``.
+
 ##### If I want to add people to channels, can I pre-create users somehow? 
 
 Yes, using the [bulk import tool](https://docs.mattermost.com/deployment/bulk-loading.html#bulk-loading-data).
