@@ -111,7 +111,7 @@ If these options don't work, please contact Mattermost support via the email add
 
 No, each user is created on their first login. 
 
-##### When I try to synchronize AD/LDAP, why does the Status not complete and show as ``Pending``? 
+##### When I try to synchronize AD/LDAP, why does the Status show as ``Pending`` and not complete? 
 
 Go to **System Console > AD/LDAP** and make sure that the **Enable Synchronization with AD/LDAP** setting is set to ``true``.
 
