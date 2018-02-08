@@ -102,6 +102,7 @@ Release date: 2018-02-16
 
 - All API v3 endpoints have been deprecated, and scheduled for removal in Mattermost v5.0.
 - The permanent query parameter of the DELETE `/teams/{team_id}` APIv4 endpoint for permanently deleting a team is scheduled for removal in Mattermost v4.7. // XXX Jason needs to update
+- The `mentionKeys` prop in post type plugins is now removed to fix case sensitive mention highlighting. Plugins can retrieve the `mentionKeys` prop from the store as needed.
 
 #### config.json
 
