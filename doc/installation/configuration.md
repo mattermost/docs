@@ -56,7 +56,9 @@ global:
       secretName: example-local-tls
 ```
 
-Now that the template is generated, we can proceed [to deployment](README.md#deploy).
+# Next Steps
+
+Now that the template is generated, we can proceed [to deployment](deployment.md).
 
 [static-ip]: resources.md#static-ip
 [DNS entry]: resources.md#dns-entry
