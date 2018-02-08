@@ -54,6 +54,11 @@ spec:
             - name: gitaly-secrets
               mountPath: '/etc/gitlab-secrets'
               readOnly: true
+            - name: repo-data
+              mountPath: '/home/git/repositories'
+              {{- if and .Values.persistence.enabled .Values.persistence.subPath }}
+              subPath: "{{ .Values.persistence.subPath }}"
+              {{- end }}
           livenessProbe:
             exec:
               command:
@@ -74,6 +79,13 @@ spec:
       - name: gitaly-config
         configMap:
           name: {{ template "fullname" . }}
+      - name: repo-data
+      {{- if .Values.persistence.enabled }}
+        persistentVolumeClaim:
+          claimName: {{ template "fullname" . }}-repos
+      {{- else }}
+        emptyDir: {}
+      {{- end }}
       - name: gitaly-secrets
         emptyDir:
           medium: "Memory"
