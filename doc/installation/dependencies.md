@@ -43,13 +43,13 @@ The table below describes all variables.
 | CLUSTER_VERSION | The version of your GKE cluster                                      | 1.8.5-gke.0                      |
 | MACHINE_TYPE    | The cluster instances' type                                          | n1-standard-2                    |
 | NUM_NODES       | The number of nodes required.                                        | 2                                |
-| PROJECT         | the name of your project                                             | No defaults, required to be set. |
+| PROJECT         | the id of your GCP project                                           | No defaults, required to be set. |
 | RBAC_ENABLED    | If you know whether your cluster has RBAC enabled set this variable. | true                             |
 
 Run the script, passing in your desired parameters. (The script can work with default parameters except for `PROJECT` which is required.)
 
 ```bash
-PROJECT=<gcloud project name> ./scripts/gke_bootstrap_script.sh
+PROJECT=<gcloud project id> ./scripts/gke_bootstrap_script.sh
 ```
 
 > *Note:* You need to be logged into your account using gcloud before running the bootstrap script
