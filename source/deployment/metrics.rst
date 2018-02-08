@@ -88,6 +88,17 @@ For install instructions, see `Grafana install guides <http://docs.grafana.org/i
 
 For user guides and tutorials, check the `Grafana documentation to learn more <http://docs.grafana.org/guides/basic_concepts/>`_.
 
+Getting Started
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To help you get started, you can download three sample dashboards shared in Grafana:
+
+ - `Mattermost Performance KPI Metrics <https://grafana.com/dashboards/2539>`_, which contains key metrics for monitoring performance and system health.
+ - `Mattermost Performance Monitoring <https://grafana.com/dashboards/2542>`_, which contains detailed charts for performance monitoring.
+ - `Mattermost Performance Monitoring (Bonus Metrics) <https://grafana.com/dashboards/2545>`_, which contains additional metrics such as emails sent or files uploaded, which may be important to monitor in some deployments.
+
+See `this guide <http://docs.grafana.org/reference/export_import/>`_ to learn how to import Grafana dashboards either from the UI or from the HTTP API.
+
 Statistics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -154,6 +165,11 @@ Process Metrics:
     - ``mattermost_process_start_time_seconds``: Start time of the process since unix epoch in seconds.
     - ``mattermost_process_virtual_memory_bytes``: Virtual memory size in bytes.
 
+Search Metrics:
+
+    - ``mattermost_search_posts_searches_duration_seconds``:  The total duration, in seconds, of search query requests.
+    - ``mattermost_search_posts_searches_total``: The total number of search query requests.
+
 WebSocket Metrics:
 
     - ``mattermost_websocket_broadcasts_total``: The total number of WebSocket broadcasts sent by type.
@@ -186,3 +202,4 @@ where you can replace ``localhost`` with the server name. The profiling reports 
     - ``/debug/pprof/block``/ for block profiling
 
 .. image:: ../images/perf_monitoring_go_metrics.png
+

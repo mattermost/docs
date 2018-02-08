@@ -43,7 +43,7 @@ The various community channels are outlined below, along with the responsibiliti
 
   - Description:
 
-    - Ops reviews new `GitHub mattermost/platform <https://github.com/mattermost/platform>`_ issues daily, and responds to all new issues:
+    - Ops reviews new `GitHub mattermost/mattermost-server <https://github.com/mattermost/mattermost-server>`_ issues daily, and responds to all new issues:
 
         - Bug Report: Try to reproduce, or ask another team member to reproduce
         - Troubleshooting: Request to move to forums
@@ -51,7 +51,7 @@ The various community channels are outlined below, along with the responsibiliti
 
     - Ops posts [Help Wanted] #forum @here can anyone help with these forum questions? These forum posts are open to everyone in the community. If you find something you think you know the answer to or can help with, please help post a response and be part of creating a vibrant Mattermost community!" with a list that includes:
 
-      - Forum and `GitHub mattermost/platform <https://github.com/mattermost/platform>`_ posts that are >=2 days old (this gives community members a chance to respond first)
+      - Forum and `GitHub mattermost/mattermost-server <https://github.com/mattermost/mattermost-server>`_ posts that are >=2 days old (this gives community members a chance to respond first)
       - New forum posts referencing Enterprise features or upgrade issues after a release
       - Forum posts with a new reply to questions asked by the core team
 
@@ -98,7 +98,7 @@ The various community channels are outlined below, along with the responsibiliti
 
     - Ops Team @mentions the Community PM and posts a list of “GitHub issues with activity older than 7 days” from the following repos:
 
-      - https://github.com/mattermost/platform/issues
+      - https://github.com/mattermost/mattermost-server/issues
       - https://github.com/mattermost/docs/issues
       - https://github.com/mattermost/ios/issues
       - https://github.com/mattermost/push-proxy/pulls

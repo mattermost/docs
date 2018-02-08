@@ -16,7 +16,7 @@ Set up your development environment for building, running, and testing Mattermos
 
     ``127.0.0.1 dockerhost``
 
-2. Install Go 1.8.
+2. Install Go 1.9.
 
   ``pacman -S go``
 
@@ -49,9 +49,15 @@ Set up your development environment for building, running, and testing Mattermos
 
   ``pacman -S nodejs npm``
 
-6. Fork Mattermost on GitHub.com from https://github.com/mattermost/platform.
+6. Install Yarn.
 
-7. Download the Mattermost code from your forked repository:
+  ``pacman -S yarn``
+
+7. Fork Mattermost server on GitHub from https://github.com/mattermost/mattermost-server.
+
+8. Fork Mattermost webapp on GitHub from https://github.com/mattermost/mattermost-webapp.
+
+9. Download the Mattermost code from your forked repositories:
 
   a. Create the directory for the code.
 
@@ -61,8 +67,12 @@ Set up your development environment for building, running, and testing Mattermos
 
     ``cd ~/go/src/github.com/mattermost``
 
-  c. Clone your Mattermost fork. In the following command, replace *{username}* with your GitHub username.
+  c. Clone your Mattermost server fork. In the following command, replace *{username}* with your GitHub username.
 
-    ``git clone https://github.com/{username}/platform.git``
+    ``git clone https://github.com/{username}/mattermost-server.git``
+
+  d. Clone your Mattermost webapp fork. In the following command, replace *{username}* with your GitHub username.
+
+    ``git clone https://github.com/{username}/mattermost-webapp.git``
 
 Now that everything is set up, you are ready to compile and run Mattermost. See :doc:`dev-setup-compiling`.

@@ -16,6 +16,26 @@ Contributing
 
 If you're interested in contributing please join the `Redux channel on pre-release.mattermost.com <https://pre-release.mattermost.com/core/channels/redux>`__. Progress on moving individual components over to use Redux is `tracked on this spreadsheet <https://docs.google.com/spreadsheets/d/1AlFS2F4H74JsONxIS_VNZBxrVJolZxFh7yN46RNCwyg/edit#gid=0>`__. If you want to work on one of the components let us know in the Redux channel or by making a comment on the spreadsheet.
 
+List of contributors, in alphabetical order:
+
+ - Adrian Carolli (`@adriancarolli <https://github.com/watadarkstar>`_)
+ - Aibulatov Alex (`@Zapix <https://github.com/Zapix>`_)
+ - Andre Vasconcelos (`@avasconcelos114 <https://github.com/avasconcelos114>`_)
+ - Carlos Panato (`@cpanato <https://github.com/cpanato>`_)
+ - Devesh Jadon (`@deveshjadon98 <https://github.com/deveshjadon98>`_)
+ - Eric Webster (`@ericwebster <https://github.com/QuantumKing>`_)
+ - Hyeseong Kim (`@CometKim <https://github.com/CometKim>`_)
+ - Jesús Espino (`@jespino <https://github.com/jespino>`_)
+ - Joram Wilander (`@jwilander <https://github.com/jwilander>`_)
+ - K.Y. (`@tkbky <https://github.com/tkbky>`_)
+ - Nazar Laba (`@n1aba <https://github.com/n1aba>`_)
+ - Ryan Wang (`@R-Wang97 <https://github.com/R-Wang97>`_)
+ - Sam Kvale (`@skvale <https://github.com/skvale>`_)
+ - Savita Pandit (`@panditsavitags <https://github.com/panditsavitags>`_)
+ - Shengying Pan (`@h2oloopan <https://github.com/h2oloopan>`_)
+ - Sudheer Timmaraju (`@sudheerDev <https://github.com/sudheerDev>`_)
+ - Taehyeon Yun (`@yth0625 <https://github.com/yth0625>`_)
+
 For guidance on migrating a webapp component to Redux, read the next section.
 
 Component Migration Steps
@@ -41,10 +61,10 @@ There are a few steps involved with migrating a component to use Redux. Some of 
  3. Replace each action call to use the actions in the props (ex. ``this.props.actions.someAction()``).
  4. Remove all action imports from the component.
 5. Move any other variables holding store state into props fed from Redux or parent components.
-6. Add component tests `as described by this blog post <https://grundleborg.github.io/posts/react-component-testing-in-mattermost/>`__ and by following the `example of other tests <https://github.com/mattermost/platform/tree/master/webapp/tests/components>`__.
+6. Add component tests `as described by this blog post <https://grundleborg.github.io/posts/react-component-testing-in-mattermost/>`__ and by following the `example of other tests <https://github.com/mattermost/mattermost-webapp/tree/master/tests/components>`__.
 
 Examples
 ------------------
 You can see some example pull requests here:
 
-- https://github.com/mattermost/platform/pull/6416
+- https://github.com/mattermost/mattermost-server/pull/6416

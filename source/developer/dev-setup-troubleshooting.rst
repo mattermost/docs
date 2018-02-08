@@ -34,12 +34,24 @@ I get the following error when running ``make run``: "Error starting server, err
 
   If there isn't another copy of Mattermost running and you need to change the port that Mattermost is running on, you can do so by changing the ``ListenAddress`` setting in the *ServiceSettings* section of ``config/config.json``.
 
+Mac OS X: I get the following error or something similar when running ``make run``: [EROR] Failed to ping DB retrying in 10 seconds err=Error 1045: Access denied for user ‘mmuser’@’localhost’ (using password: YES) 
+  It appears that 'mmuser' is not created as a user in your MySQL database. Hence create the new user by using the following command:
+  ``CREATE USER 'mmuser'@'localhost' IDENTIFIED BY 'mostest';``
+
+  Grant all the permissions to the user using the command:
+
+  ``GRANT ALL PRIVILEGES ON * . * TO '
+  mmuser
+  '@'localhost';``
+
+  Reload the privileges, so that the changes can be reflected: 
+  ``FLUSH PRIVILEGES;``
 
 Testing errors
 --------------
 
 I get the following error when running ``make test``: t.Run undefined (type *testing.T has no field or method Run)
-  You need to upgrade to Go 1.8. We don't support earlier versions than that.
+  You need to upgrade to Go 1.9. We don't support earlier versions than that.
 
 Other errors
 ------------
@@ -53,8 +65,8 @@ I don't see anything logged to the console when Mattermost is running
 I can't log into Mattermost because I don't have an account
   You can create an account using the following command:
 
-  ``go run ./cmd/platform/*.go user create --email user@example.com --username test1 --password mypassword``
+  ``go build ./cmd/platform && ./platform user create --email user@example.com --username test1 --password mypassword``
 
   Optionally, you can make that account a System Admin with the following command:
 
-  ``go run ./cmd/platform/*.go user create --email user@example.com --username test1 --password mypassword --system_admin``
+  ``go build ./cmd/platform && ./platform user create --email user@example.com --username test1 --password mypassword --system_admin``

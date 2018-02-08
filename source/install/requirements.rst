@@ -26,7 +26,7 @@ Client Software
 PC Web Experience
 ^^^^^^^^^^^^^^^^^
 
--  PC: Windows 7, Windows 8, Windows 10 with (IE 11*, Chrome 43+, Firefox 38+, and Edge)
+-  PC: Windows 7, Windows 8, Windows 10 with IE 11*, Chrome 43+, Firefox 52+, and Edge 40+ (or EdgeHTML v15+)
 -  Mac: OS 10 (Safari 9, Chrome 43+)
 -  Linux: Arch 4.0.0 (Chrome 43+)
 
@@ -36,7 +36,7 @@ Mobile App Experience
 ^^^^^^^^^^^^^^^^^^^^^
 
 -  iPhone 4s and later with iOS 9+
--  Android devices with Android 4.4+
+-  Android devices with Android 5+
 
 Mobile Web Experience
 ^^^^^^^^^^^^^^^^^^^^^
@@ -58,6 +58,7 @@ Mattermost Server Operating System
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Ubuntu 14.04, Ubuntu 16.04, Debian Jessie, CentOS 6.6+, CentOS 7.1+, RedHat Enterprise Linux 6.6+, RedHat Enterprise Linux 7.1+, Oracle Linux 6.6+, Oracle Linux 7.1+
+- Using Mattermost `Docker image <https://docs.mattermost.com/install/prod-docker.html>`_ on a Docker-compatible operating system (Linux-based OS is still recommended)
 
 While community support exists for Fedora, FreeBSD and Arch Linux, Mattermost does not currently include production support for these platforms.
 
@@ -67,7 +68,7 @@ Database Software
 -  MySQL 5.6+
 -  PostgreSQL 9.4+
 
-Deployments requiring searching in Chinese, Japanese and Korean languages require MySQL 5.7.6+ and the configuration of `ngram Full-Text parser <https://dev.mysql.com/doc/refman/5.7/en/fulltext-search-ngram.html>`__. For searching two characters, you will also need to set ``ft_min_word_len`` and ``innodb_ft_min_token_size`` to ``2`` and restart MySQL. See `CJK discussion <https://github.com/mattermost/platform/issues/2033#issuecomment-183872616>`__ for details.
+Deployments requiring searching in Chinese, Japanese and Korean languages require MySQL 5.7.6+ and the configuration of `ngram Full-Text parser <https://dev.mysql.com/doc/refman/5.7/en/fulltext-search-ngram.html>`__. For searching two characters, you will also need to set ``ft_min_word_len`` and ``innodb_ft_min_token_size`` to ``2`` and restart MySQL. See `CJK discussion <https://github.com/mattermost/mattermost-server/issues/2033#issuecomment-183872616>`__ for details.
 
 Hardware Requirements
 ---------------------
@@ -111,12 +112,14 @@ For enterprise deployments of 10,000-20,000 registered users with moderate usage
 
 **Proxy Server** 
 
-- One server with 4-8 vCPUs/cores, 16-32 GB RAM, minimum 4 GB SSD storage
+- One server with 4-8 vCPUs/cores, 16-32 GB RAM.
+- Minimum 4 GB SSD (solid state drive) storage for the binary and related files.
 - (Optional) Add one additional identical server for high availability mode, where one Mattermost server can be disabled or upgraded without interrupting service quality. Second server should be sized to carry the full load of the first server so performance does not degrade when the first server is taken offline.
 
 **Mattermost Server** (1 to 2 depending on level of redundancy and high availability required) 
 
-- One server with 4-8 vCPUs/cores, 16-32 GB RAM, minimum 4 GB SSD storage
+- One server with 4-8 vCPUs/cores, 16-32 GB RAM.
+- Minimum 4 GB SSD (solid state drive) storage for the binary and related files.
 - (Optional) Add one additional identical server for high availability mode, where one Mattermost server can be disabled or upgraded without interrupting service quality. Second server should be sized to carry the full load of the first server so performance does not degrade when the first server is taken offline. Note: The high availability option is available only by `contacting the Enterprise Edition team <https://about.mattermost.com/contact/>`_.
 
 **Network Attached Storage** 
@@ -125,7 +128,8 @@ For enterprise deployments of 10,000-20,000 registered users with moderate usage
 
 **Database Server** (2 recommended for redundancy) 
 
-- One database server with 8-16 vCPUs/cores, 16-32 GB memory, minimum 100 GB SSD storage
+- One database server with 8-16 vCPUs/cores, 16-32 GB memory.
+- Minimum 100 GB SSD (solid state drive) storage for the binary and related files.
 - (Recommended) Add one identical database server to setup a Master-Slave configuration where the master can failover to slave with minimal disruption to service.
 
 **Notes:**
@@ -135,7 +139,7 @@ For enterprise deployments of 10,000-20,000 registered users with moderate usage
 Alternate Storage Calculations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-As an alternative to recommended storage sizing above, you can forecast your own storage usuage. Begin with a Mattermost server approximately 600 MB to 800 MB in size including operating system and database, then add the multiplied product of:
+As an alternative to recommended storage sizing above, you can forecast your own storage usage. Begin with a Mattermost server approximately 600 MB to 800 MB in size including operating system and database, then add the multiplied product of:
 
 -  Estimated storage per user per month (see below), multipled by 12 months in a year
 -  Estimated mean average number of users in a year

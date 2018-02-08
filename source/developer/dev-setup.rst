@@ -10,6 +10,7 @@ If you don't plan on contributing code to the Mattermost open source project, th
   .. toctree::
 
     Setting up Ubuntu 16.04 <dev-setup-ubuntu-1604.rst>
+    Setting up CentOS 7 <dev-setup-centos-7.rst>
     Setting up Mac OS X <dev-setup-osx.rst>
     Setting up Archlinux <dev-setup-archlinux.rst>
     Setting up Windows <dev-setup-windows.rst>

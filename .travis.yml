@@ -1,14 +1,13 @@
 language: python
 python:
-- 3.6
+  - 3.6
 install:
-- pip install sphinx sphinx-autobuild sphinx_rtd_theme
-- pip install recommonmark
-- pip install awscli
+  - pip install pipenv
+  - pipenv install --dev
 script:
-- make html
+  - make html
 before_deploy:
-- aws s3 rm s3://docs.mattermost.com/ --recursive --region us-east-1 
+  - aws s3 rm s3://docs.mattermost.com/ --recursive --region us-east-1
 deploy:
   - provider: s3
     access_key_id: AKIAJXLDG4C2F4MIZP4Q

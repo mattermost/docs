@@ -55,6 +55,8 @@ This is the default role given to users when they join a team. Members have basi
 Channel Admin
 ~~~~~~~~~~~~~
 
+*Available in Enterprise Edition E10 and higher*
+
 The person who creates a channel is assigned the Channel Admin role for that channel. People with the Channel Admin role have the following privileges:
 
 - Ability to assign the Channel Admin role to other members of the channel.
@@ -85,16 +87,28 @@ The System Admin is typically a member of the IT staff and has all the privilege
 - Ability to deactivate user accounts and to reactivate them
 - Access to private channels, but only if given the link to the private channel
 
+User With Personal Access Token Permission
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A System Admin can enable `personal access tokens <https://docs.mattermost.com/developer/personal-access-tokens.html>`_ and give permissions for that account to create personal access tokens in **System Console > Users**.
+
+In addition, the System Admin can optionally set the following permissions for the account, useful for integrations and bot accounts:
+
+ - **post:all**: Allows the account to post to all Mattermost channels including direct messages. 
+ - **post:channels**: Allows the account to post to all Mattermost public channels.
+
 Deactivating Users
 ~~~~~~~~~~~~~~~~~~
 
 A System Admin can deactivate user accounts by going to **System Console > Users** for a list of all users on the server. The list can be searched and filtered to make finding users easier. Click the user's role and in the menu that opens, click **Deactivate**.
 
-When "Deactivate" is selected, the user is logged out of the system, and receives an error message if they try to log back in. The user no longer appears in the channel members list, and they are removed from the "Manage Members" list. They are also removed from the Direct Message "More" menu, but the Direct Message channel remains open for all users with it in the sidebar until it is closed. In the users list in the System Console, the user shows as "Inactive".
+When **Deactivate** is selected, the user is logged out of the system, and receives an error message if they try to log back in. The user no longer appears in channel member lists, and they are removed from the team members list. A deactivated account can also be reactivated from the System Console, in which case the user rejoins channels and teams that they previously belonged to.
 
-Because Mattermost is designed as a system-of-record, there is not an option to delete users from the Mattermost system, as such an operation could compromise the integrity of message archives.
+Direct Message channels with deactivated users are hidden in users' sidebars, but can be reopened using the **More...** button or the Channel Switcher (CMD/CTRL + K).
 
-A deactivated account can also be reactivated from the System Console. When reactivated, the user rejoins the channels that they previously belonged to.
+Mattermost is designed as a system-of-record, so there is not an option to delete users from the Mattermost system, as such an operation could compromise the integrity of message archives.
+
+Note that AD/LDAP user accounts cannot be deactivated from Mattermost; they must be deactivated from your Active Directory.
 
 Removing a User from a Team or Leaving a Team
 ---------------------------------------------
@@ -115,4 +129,4 @@ Leaving a Team
 
 Users can also choose to remove themselves from a team, by going to the three dot **Main Menu > Leave Team**. This will remove the user from the team, and from all public channels and private channels on the team.
 
-They will only be able to rejoin the team if it is set to ["Allow any user with an account on this server to join this team"](http://docs.mattermost.com/help/settings/team-settings.html#allow-anyone-to-join-this-team) team, or if they receive a new invite. If they do rejoin, they will no longer be a part of their old channels.
+They will only be able to rejoin the team if it is set to `"Allow any user with an account on this server to join this team" <http://docs.mattermost.com/help/settings/team-settings.html#allow-anyone-to-join-this-team>`_ team, or if they receive a new invite. If they do rejoin, they will no longer be a part of their old channels.

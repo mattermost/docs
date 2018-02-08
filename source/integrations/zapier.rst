@@ -8,8 +8,8 @@ Integrate over 700 apps into Mattermost, including `Email <https://zapier.com/za
 This documentation includes:
 
 - `Zapier Setup Guide <https://docs.mattermost.com/integrations/zapier.html#id1>`_ - Instructions on registering the Zapier app on your server and creating a zap.
-- `Message Formatting Tips <https://docs.mattermost.com/integrations/zapier.html#id4>`_ - Tips from the Mattermost team on formatting Zapier integration messages.
-- `Troubleshooting Guide <https://docs.mattermost.com/integrations/zapier.html#id6>`_ - Advice on troubleshooting common setup issues.
+- `Message Formatting Tips <https://docs.mattermost.com/integrations/zapier.html#id6>`_ - Tips from the Mattermost team on formatting Zapier integration messages.
+- `Troubleshooting Guide <https://docs.mattermost.com/integrations/zapier.html#id8>`_ - Advice on troubleshooting common setup issues.
 
 
 Zapier Setup Guide
@@ -35,7 +35,7 @@ Register Zapier as an OAuth 2.0 Application
   b. **Display Name**: ``Zapier``
   c. **Description**: ``Application for Zapier integrations``
   d. **Homepage**: ``https://zapier.com/``
-  e. **Icon URL**: ``http://bit.ly/2bxrzv0``
+  e. **Icon URL**: ``http://bit.ly/2yMR7E7``
   f. **Callback URLs**: ``https://zapier.com/dashboard/auth/oauth/return/MattermostDevAPI/``
 3. Click **Save** to create the application. You will be provided with a **Client ID** and **Client Secret**. Save these values, or share them with your team to connect Zapier in the steps below.
 
@@ -144,14 +144,6 @@ Cannot connect a Mattermost account
   a. Possible Solution: The **Client ID** might be incorrect. Verify this value in **Main Menu** > **Integrations** > **OAuth 2.0 Applications**, or check with your System Admin.
 
   .. image:: ../images/zapier-error3.png
-
-Post Error
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-1. **"We hit an error creating a post message."**
-  a. Possible Solution: Ensure your **Message Text** is less than 4000 characters, since that is the maximum character limit for any single message in Mattermost.
-
-  .. image:: ../images/zapier-error5.png
 
 Deauthorize the Zapier App
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

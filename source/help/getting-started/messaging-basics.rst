@@ -36,7 +36,7 @@ message timestamp.
 .. figure:: ../../images/flagicon.png
    :alt: flags
 
-Learn more about: 
+Learn more about:
 
 * `Composing Messages and Replies <http://docs.mattermost.com/help/messaging/sending-messages.html>`__
 * `Mentioning Teammates <http://docs.mattermost.com/help/messaging/mentioning-teammates.html>`__

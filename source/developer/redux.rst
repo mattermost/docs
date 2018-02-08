@@ -3,7 +3,7 @@ Working with Redux
 
 This page describes how to add actions and selectors to the client service and storage layer built on Redux. This Redux service layer is what drives the majority of actions, storage and server interaction for both the Mattermost webapp and the React Native mobile apps.
 
-As of Mattermost version 3.9, the webapp has begun moving to replace Flux with Redux. If you're interested in contributing to this campaign, please see `migrating webapp components to Redux <./migrating-to-redux>`__ and join the `Redux channel on pre-release.mattermost.com <https://pre-release.mattermost.com/core/channels/redux>`__.
+As of Mattermost version 3.9, the webapp has begun moving to replace Flux with Redux. If you're interested in contributing to this campaign, please see `migrating webapp components to Redux <./webapp-to-redux.html>`__ and join the `Redux channel on pre-release.mattermost.com <https://pre-release.mattermost.com/core/channels/redux>`__.
 
 The respository for the Redux service layer is here: https://github.com/mattermost/mattermost-redux
 
@@ -20,8 +20,8 @@ Actions are any sort of logic that will result in the manipulation of store stat
 
 Actions must:
 - Return `async functions <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function>`__ so the caller can `await <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await>`__ on them
-- The async function must return ``null`` on error, while dispatching an error to store state
-- The async function must return the data result or return ``true`` if there is no data to return, while dispatching the data
+- The async function must return an object with an error property containing the error (``{error: yourerrorhere}``), while dispatching an error to store state
+- The async function must return the result in an object containing data (``{data: yourresulthere}``) or if there is nothing to return ``true`` in place of the result, while dispatching the data
 - May be chained to return the results of other actions
 - Be unit tested
 
@@ -92,7 +92,7 @@ If it's not a one-to-one mapping and you need to manipulate the data you get bac
                   {type: UserTypes.PROFILES_FAILURE, error},
                   getLogErrorAction(error)
               ]), getState);
-              return null;
+              return {error};
           }
 
           dispatch(batchActions([
@@ -105,7 +105,7 @@ If it's not a one-to-one mapping and you need to manipulate the data you get bac
               }
           ]));
 
-          return profiles;
+          return {data: profiles};
       };
   }
 
@@ -152,7 +152,7 @@ There can also be actions that just wrap one or more existing actions.
               value: 'true'
           };
 
-          savePreferences(currentUserId, [preference])(dispatch, getState);
+          return await savePreferences(currentUserId, [preference])(dispatch, getState);
       };
   }
 
@@ -257,6 +257,6 @@ If you're thinking, "I don't get it. Why can't we just create the selector norma
 Testing the Selector
 ~~~~~~~~~~~~~~~~~~
 
-To test your selector you'll want to add a test to the appropriate file in the ``tests/selectos`` directory.
+To test your selector you'll want to add a test to the appropriate file in the ``tests/selectors`` directory.
 
 Testing selectors invovles building some test state and confirming that the data returned from your selector matches what you would expect it to return. Use other tests as examples and make sure to read the `README <https://github.com/mattermost/mattermost-redux/blob/master/README.md>`__ for information on running the tests.

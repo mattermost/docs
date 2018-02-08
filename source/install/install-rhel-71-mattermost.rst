@@ -73,7 +73,7 @@ Assume that the IP address of this server is 10.10.10.2
 
       [Service]
       Type=simple
-      WorkingDirectory=/opt/mattermost/bin
+      WorkingDirectory=/opt/mattermost
       User=mattermost
       ExecStart=/opt/mattermost/bin/platform
       PIDFile=/var/spool/mattermost/pid/master.pid
@@ -82,6 +82,9 @@ Assume that the IP address of this server is 10.10.10.2
       [Install]
       WantedBy=multi-user.target
 
+     .. note::
+       If you are using MySQL, replace ``postgresql-9.4.service`` by ``mysqld.service`` in the ``[unit]`` section.
+     
   c. Make the service executable.
 
     ``sudo chmod 664 /etc/systemd/system/mattermost.service``
