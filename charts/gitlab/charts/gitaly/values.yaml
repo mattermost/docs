@@ -29,6 +29,32 @@ shell:
   authToken:
    secret: gitlab-shell-secret
    key: secret
+
+## Enable persistence using Persistent Volume Claims
+## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
+##
+persistence:
+  enabled: true
+
+  ## git repositories Persistent Volume Storage Class
+  ## If defined, storageClassName: <storageClass>
+  ## If set to "-", storageClassName: "", which disables dynamic provisioning
+  ## If undefined (the default) or set to null, no storageClassName spec is
+  ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+  ##   GKE, AWS & OpenStack)
+  ##
+  # storageClass: "-"
+  accessMode: ReadWriteOnce
+  size: 50Gi
+
+  ## If subPath is set mount a sub folder of a volume instead of the root of the volume.
+  ## This is especially handy for volume plugins that don't natively support sub mounting (like glusterfs).
+  ##
+  subPath: ""
+
+  ## if volumeName is set, use this existing PersistentVolume
+  # volumeName:
+
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
