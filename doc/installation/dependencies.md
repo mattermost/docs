@@ -29,7 +29,7 @@ kubectl
 
 Google Cloud SDK is a dependency of this script, you will have to make sure it is set up correctly in order for the script to work. Follow the [instructions](../helm/README.md#connect-to-the-cluster) for connecting your GKE cluster.
 
-The `scripts/gke_bootstrap_script.sh` script creates a new GKE cluster, sets up kubectl to connect to it and has helm installed and initialized.
+The `[scripts/gke_bootstrap_script.sh](../../scripts/gke_bootstrap_script.sh)` script creates a new GKE cluster, sets up kubectl to connect to it and has helm installed and initialized.
 
 The script reads various parameters from environment variables.
 
