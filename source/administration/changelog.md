@@ -464,6 +464,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 Composite database indexes were added to the `Posts` table. This may lead to longer upgrade times for servers with more than 1 million messages.
 
+Moreover, LDAP sync now depends on email. If you have AD/LDAP login enabled, make sure all users on your AD/LDAP server have an email address or that their account is deactivated in Mattermost. 
+
 #### Removed and Deprecated Features
 - All APIv3 endpoints are scheduled for removal on January 16, 2018.
 
