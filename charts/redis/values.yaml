@@ -30,13 +30,27 @@ password:
   key: redis-password
 # Configure persistence for Redis instance
 persistence:
-  # Configure the disk used for persistence.
-  # - if not configured, it will use an ephemeral `emptyDir`
-  #   persist for the lifetime of the `Pod`, in the event of
-  #   a container restart.
-  disk:
-    # use a PVC, by name
-    persistentVolumeClaim:
+  enabled: true
+
+  ## postgres data Persistent Volume Storage Class
+  ## If defined, storageClassName: <storageClass>
+  ## If set to "-", storageClassName: "", which disables dynamic provisioning
+  ## If undefined (the default) or set to null, no storageClassName spec is
+  ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+  ##   GKE, AWS & OpenStack)
+  ##
+  # storageClass: "-"
+  accessMode: ReadWriteOnce
+  size: 5Gi
+
+  ## If subPath is set mount a sub folder of a volume instead of the root of the volume.
+  ## This is especially handy for volume plugins that don't natively support sub mounting (like glusterfs).
+  ##
+  subPath: ""
+
+  ## if volumeName is set, use this existing PersistentVolume
+  # volumeName:
+
   # Configure save points
   # https://redis.io/topics/persistence
   # - time: every X seconds

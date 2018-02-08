@@ -41,6 +41,9 @@ spec:
             readOnly: true
           - name: {{ .Release.Name }}-data
             mountPath: /data/redis/
+            {{- if and .Values.persistence.enabled .Values.persistence.subPath }}
+            subPath: "{{ .Values.persistence.subPath }}"
+            {{- end }}
             readOnly: false
           resources:
 {{ toYaml .Values.resources | indent 12 }}
@@ -65,12 +68,10 @@ spec:
                 - key: {{ .Values.password.key }}
                   path: password
       - name: {{ .Release.Name }}-data
-        {{- with .Values.persistence }}
-        {{-   if .disk.persistentVolumeClaim }}
+        {{- if .Values.persistence.enabled }}
         persistentVolumeClaim:
-          claimName: {{ .disk.persistentVolumeClaim }}
-        {{-   else }}
-        emptyDir:
-        {{-   end }}
+          claimName: {{ template "fullname" . }}
+        {{- else }}
+        emptyDir: {}
         {{- end }}
 {{- end -}}

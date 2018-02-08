@@ -6,8 +6,6 @@ All configuration is handled according to the official [Redis configuration docu
 
 ## Design Choices
 
-At this time, this chart provides the capability of persistence via a [persistentVolumeClaim][], and when not provided will default to a [emptyDir][] to ensure persistence across the lifespan of the `Pod`.
-
 It [was decided][issue-112] that this chart will have persistence based on [RDB][persistence] saved to a [PersistentVolume][], if provided with a [PersistentVolumeClaim][]. The use of [AOF][persistence] has been deemed a research item for future development.
 
 We will add the capability to split Redis queues based on class, along with High Availability features in the future.
@@ -28,9 +26,13 @@ redis:
   password:
     secret: gitlab-redis
     key: redis-password
-  persistence
-    disk:
-      persistentVolumeClaim:
+  persistence:
+    enabled: true
+    volumeName: gitlab-redis-data
+    storageClass: standard
+    accessMode: ReadWriteOnce
+    size: 5Gi
+    subPath: "/data"
     save:
     - time: 60
       writes: 1000
@@ -93,11 +95,36 @@ This chart relies on one [Secret][kubernetes-secret], `password`.
 
 ### persistence
 
-#### disk.persistentVolumeClaim
+This chart provisions a PersistentVolumeClaim and mounts corresponding persistent volume for the Redis data.
+You'll need physical storage available in the Kubernetes cluster for this to work. If you'd rather use emptyDir,
+disable PersistentVolumeClaim by: `persitence.enabled: false`
 
-If an administrator provides a [PersistentVolumeClaim][] name, the chart will make use of that external [PersistentVolume][] and data will survive the `Pod`. If an administrator does not provide the [PersistentVolumeClaim][] name, the chart will fall back to creating an [emptyDir][] volume limited to `10` gigabytes. This volume will live as long as the `Pod` that created it exists, and provides for persistence across `Pod` restarts and any unforseen incidents a the contaier level, so long as that pod remains on the same node.
+#### enabled
 
-[Investigation][issue-112] showed that a standard disk (e.g. `pd-standard` on GKE) is sufficient for the throughput needs of a properly configured Redis pod. The size of the disk should be at leat the requested memory of the Redis instance. For example, if providing a `maxmemory` of `1gb`, the [PersistentVolume][] should be a minimum of that `1gb`.
+Sets whether or not to use a PersistentVolumeClaims for the Redis data. Otherwise a emptyDir volume is used. Defaults to true.
+
+#### volumeName
+
+If set, the chart will use the existing named PersistentVolume. Use this when you are not using dynamic provisioning. Defaults to unset.
+
+#### storageClass
+
+Sets the storageClassName on the Volume Claim for dynamic provisioning. When unset or null, the default provisioner will be used.
+If set to a hyphen, dynamic provisioning is disabled. Defaults to unset.
+f defined, storageClassName: <storageClass>
+
+#### accessMode
+
+Sets the accessMode requested in the PersistentVolumeClaim. See [Kubernetes Access Modes Documentation][access-modes] for details.
+Defaults to ReadWriteOnce
+
+#### size
+
+The minimum volume size to request for the data persistence. Defaults to 5Gi
+
+#### subPath
+
+Sets the path within the volume to mount, rather than the volume root. The root is used if the subPath is empty. Defaults to empty.
 
 #### save
 
@@ -122,5 +149,6 @@ It is also possible to entirely disable snapshotting by providing an empty array
 
 [kubernetes-secret]: https://kubernetes.io/docs/concepts/configuration/secret/
 [persistence]: https://redis.io/topics/persistence
+[access-modes]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes
 
 [issue-112]:https://gitlab.com/charts/helm.gitlab.io/issues/112
