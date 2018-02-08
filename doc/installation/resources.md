@@ -18,11 +18,11 @@ External IP for ingress is required so that your cluster can be reachable. The e
 
 To create a static IP run the following gcloud command:
 
-`gcloud compute addresses create $EXTERNAL_IP_NAME --region $REGION --project $PROJECT`
+`gcloud compute addresses create ${CLUSTER_NAME}-external-ip --region $REGION --project $PROJECT`
 
 To get the address of the newly created IP run the following gcloud command:
 
-`gcloud compute addresses describe $EXTERNAL_IP_NAME --region $REGION --project $PROJECT --format='value(address)'`
+`gcloud compute addresses describe ${CLUSTER_NAME}-external-ip --region $REGION --project $PROJECT --format='value(address)'`
 
 We will use this IP to bind with a DNS name in the next section.
 
