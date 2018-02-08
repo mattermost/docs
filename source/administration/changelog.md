@@ -7,7 +7,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ## Release v4.6
 
  - **v4.6.1, release date 2018-01-30**
-   - Fixed an issue where Let's Encrypt certificates were broken on Mattermost servers.
+   - Fixed an issue where Let's Encrypt certificates were broken on Mattermost servers. The cache will be deleted upon upgrade so your certificate will be immediately renewed.
  - **v4.6.0, released 2018-01-16**
    - Original 4.6.0 release
 
