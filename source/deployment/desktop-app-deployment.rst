@@ -77,10 +77,10 @@ You can distribute the official Windows Desktop App silently to end users, pre-c
 
 2. Move the executable file into a shared folder.
 
-3. Create a batch file in Windows
+3. To create a batch file in Windows:
 
   1. Open a text editor of your choice, such as Notepad or Notepad++.
-  2. Copy and paste the following commands in the text file
+  2. Copy and paste the following commands in the text file:
 
     .. code-block:: none
 
