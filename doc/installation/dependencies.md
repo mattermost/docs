@@ -8,6 +8,15 @@ Items and information needed:
 - Secrets for Certificates, Registry, Redis
 - A regional static IP in Google Cloud, with an A record in DNS
 
+**Table of Contents**
+
+- [Google Cloud SDK](#google-cloud-sdk)
+- [Install with defaults](#install-with-defaults)
+- [Custom Install](#custom-install)
+  * [Kubectl](#kubectl)
+  * [Helm](#helm)
+- [Next Steps](#next-steps)
+
 ## Google Cloud SDK
 
 Install this per [gcloud installation documentation][gcloud-install].
