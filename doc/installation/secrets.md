@@ -6,6 +6,21 @@ For a functional deployment, different types of secrets are needed:
 * TLS certificates for Registry
 * Passwords for individual components
 
+**Table of Contents**
+
+- [Certificates](#certificates)
+  * [GitLab certificates](#gitlab-certificates)
+    - [Let's Encrypt](#lets-encrypt)
+    - [Wildcard certificates](#wildcard-certificates)
+  * [Registry certificates](#registry-certificates)
+- [Passwords](#passwords)
+  * [Redis password](#redis-password)
+  * [Postgres password](#postgres-password)
+  * [GitLab Shell](#gitLab-shell)
+  * [Gitaly Secret](#gitaly-secret)
+  * [Minio Secret](#minio-secret)
+- [Next Steps](#next-steps)
+
 ## Certificates
 
 We advise that wildcard certificates are obtained to prevent the need to
@@ -22,7 +37,7 @@ vault in `1Password`. Only the `*chained.crt` certificate should be used.
 
 ### GitLab certificates
 
-#### Lets Encrypt
+#### Let's Encrypt
 
 If you are going to make use of Let's Encrypt certificates via [kube-lego](../kube-lego/README.md), then you can skip over [Wildcard certificates](#wildcard-certificates) and move to [Registry certificates](#registry-certificates)
 
