@@ -53,12 +53,16 @@ Release date: 2018-02-16
  - Users are directed to the last channel they viewed in another team when switching to the other team.
  - Changed URLs of Direct Messages to use the form of `https://servername.com/messages/@username`, letting users open a direct message with another user using the URL format.
  
+#### System Console
+ - Added paging to system console log viewer and set the default value of `per_paging` for logs to 1000.
+ 
 #### Notifications
  - Added a post change channel privacy system message when a team is changed from public to private.
  - Made system messages always use "User did something" instead of "User has done something" for consistency.
 
 #### Enterprise Edition
 - Increased max length of `User.Position` field to 128 characters to meet LDAP max length.
+- Increased OAuth state parameter limit some systems may send a state longer than 128 characters.
 
 ### Bug Fixes
  - Fixed an issue where OAuth account creation error page was unformatted.
