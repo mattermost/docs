@@ -31,8 +31,6 @@ global:
 nginx:
   service:
     loadBalancerIP: <static ip>
-  serviceAccount:
-    autoGenerate: true
 
 kube-lego:
   LEGO_EMAIL: <valid email address>
