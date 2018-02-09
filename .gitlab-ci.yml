@@ -266,6 +266,7 @@ qa:
 
     helm upgrade --install \
       --wait \
+      --set kube-lego.enabled=false \
       --set releaseOverride="$CI_ENVIRONMENT_SLUG" \
       --set global.hosts.hostSuffix="$HOST_SUFFIX" \
       --set global.hosts.domain="$AUTO_DEVOPS_DOMAIN" \
