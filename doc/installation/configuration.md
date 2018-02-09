@@ -26,7 +26,6 @@ Set the following properties in `configuration.yaml`
 global:
   hosts:
     domain: example.local
-    https: true
 
 nginx:
   service:
