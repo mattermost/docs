@@ -286,7 +286,7 @@ qa:
     #echo "Generated root login: $ROOT_PASSWORD"
     # YAML_FILE=""${AUTO_DEVOPS_DOMAIN//\./-}.yaml"
     # Cleanup and previous installs, as FAILED and PENDING_UPGRADE will cause errors with `upgrade`
-    if previousDeployFailed ; then
+    if [ "$CI_ENVIRONMENT_SLUG" != "production" ] && previousDeployFailed ; then
       echo "Deployment in bad state, cleaning up $CI_ENVIRONMENT_SLUG"
       delete
     fi
