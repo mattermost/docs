@@ -3437,12 +3437,14 @@ Enable Preview Features (Experimental)
 Group Unreads Channels (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Show unreads channels in the User Interface.
+**Disabled**: Unreads channels section is disabled and hidden in the account settings.
+ 
+**Default On**:  Enables the unread channels by default. Can be turned off in the account settings.
 
-**False**:  Hides unreads channels in the User Interface and disables this feature for the server.
+**Default Off**: Disables the unread channels by default. Can be turned on in the account settings.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"ExperimentalGroupUnreadChannels": false`` with options ``true`` and ``false`` for above settings respectively.                     |
+| This feature’s ``config.json`` setting is ``"ExperimentalGroupUnreadChannels": true`` as ``default_on`` or `"ExperimentalGroupUnreadChannels": false` as ``disabled``.                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Team Settings
