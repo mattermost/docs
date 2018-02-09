@@ -231,6 +231,28 @@ qa:
   export CI_CONTAINER_NAME=ci_job_build_${CI_JOB_ID}
   export TILLER_NAMESPACE=$KUBE_NAMESPACE
 
+  function previousDeployFailed() {
+    set +e
+    echo "Checking for previous deployment of $CI_ENVIRONMENT_SLUG"
+    deployment_status=$(helm status $CI_ENVIRONMENT_SLUG >/dev/null 2>&1)
+    status=$?
+    # if `status` is `0`, deployment exists, has a status
+    if [ $status -eq 0 ]; then
+      echo "Previous deployment found, checking status"
+      deployment_status=$(helm status $CI_ENVIRONMENT_SLUG | grep ^STATUS | cut -d' ' -f2)
+      echo "Previous deployment state: $deployment_status"
+      if [[ "$deployment_status" == "FAILED" || "$deployment_status" == "PENDING_UPGRADE" ]]; then
+        status=0;
+      else
+        status=1;
+      fi
+    else
+      echo "Previous deployment NOT found."
+    fi
+    set -e
+    return $status
+  }
+
   function deploy() {
     track="${1-stable}"
     name="$CI_ENVIRONMENT_SLUG"
@@ -263,6 +285,11 @@ qa:
     #ROOT_PASSWORD=$(cat /dev/urandom | LC_TYPE=C tr -dc "[:alpha:]" | head -c 16)
     #echo "Generated root login: $ROOT_PASSWORD"
     # YAML_FILE=""${AUTO_DEVOPS_DOMAIN//\./-}.yaml"
+    # Cleanup and previous installs, as FAILED and PENDING_UPGRADE will cause errors with `upgrade`
+    if [ "$CI_ENVIRONMENT_SLUG" != "production" ] && previousDeployFailed ; then
+      echo "Deployment in bad state, cleaning up $CI_ENVIRONMENT_SLUG"
+      delete
+    fi
 
     helm upgrade --install \
       --wait \
@@ -408,6 +435,17 @@ qa:
       -o yaml --dry-run | kubectl replace -n "$KUBE_NAMESPACE" --force -f -
   }
 
+  function purgeJobs() {
+    jobs=$(kubectl get job -l "relase=$CI_ENVIRONMENT_SLUG" | wc -l)
+    # The will always have a header or "no jobs found" (wc -l >= 1), and exit `0`
+    if [ $jobs -gt 1 ]; then
+      echo "Found dangling jobs:"
+      kubectl delete job -l "release=$CI_ENVIRONMENT_SLUG"
+    else
+      echo "No dangling jobs found."
+    fi
+  }
+
   function delete() {
     track="${1-stable}"
     name="$CI_ENVIRONMENT_SLUG"
@@ -415,7 +453,7 @@ qa:
     if [[ "$track" != "stable" ]]; then
       name="$name-$track"
     fi
-
+    purgeJobs
     helm delete --purge "$name" || true
   }
 
