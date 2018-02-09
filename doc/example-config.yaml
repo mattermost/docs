@@ -2,7 +2,7 @@
 global:
   hosts:
     domain: example.local
-    https: false
+    https: true
     # tls:
     #   secretName:  example-local-tls
 
@@ -16,7 +16,7 @@ nginx:
     acme: true
     enabled: true
 
-## Kube lego
+# Kube lego
 kube-lego:
   enabled: true
   LEGO_EMAIL: email@domain.tld
