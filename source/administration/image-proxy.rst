@@ -49,6 +49,8 @@ console. For example:
  - "ImageProxyURL": "https://image-proxy.mattermost.com",
  - "ImageProxyOptions": "500,fit"
 
+.. image:: ../images/Screenshot_56.png
+
 The URL will be replaced with something similar to the following: https://imageproxy.mysite.com/x500,s5xQmRR3GQa13jFHdJJb01fqATSoZkbBvMXG7Vs4jFGU=/https://i.redd.it/6cohydckk6501.jpg
 (See https://github.com/willnorris/imageproxy).
   
