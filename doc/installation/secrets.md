@@ -116,4 +116,4 @@ kubectl create secret generic gitlab-minio --from-literal=accesskey=$(head -c 51
 # Next Steps
 
 Once all secrets have been generated and stored, you can proceed to generating
-a [Configuration file](README.md#configuration-file).
+a [Configuration file](configuration.md).
