@@ -1,9 +1,22 @@
 # Default values for gitlab-chart.
 # This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
+
+global:
+  hosts:
+    domain: example.local
+    https: true
+
 nginx:
   ingress:
     enabled: true
+    acme: true
+
+kube-lego:
+  enabled: true
+  LEGO_EMAIL: email@domain.tld
+  # LEGO_URL: https://acme-v01.api.letsencrypt.org/directory
+  rbac:
+    create: true
 
 registry:
   enabled: false
@@ -17,12 +30,13 @@ redis:
 gitlab:
   omnibus:
     enabled: false
+  migrations:
+    enabled: false
   unicorn:
+    enabled: false
+  sidekiq:
+    enabled: false
+  gitaly:
     enabled: false
   gitlab-shell:
     enabled: false
-
-global:
-  hosts:
-    domain: example.local
-    https: false
