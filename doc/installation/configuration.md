@@ -34,6 +34,10 @@ nginx:
   serviceAccount:
     autoGenerate: true
 
+kube-lego:
+  LEGO_EMAIL: <valid email address>
+  # LEGO_URL: <url> should be uncommented if you desire production ready certificates
+
 gitlab:
   migrations:
     initialRootPassword: initialRootPassword
@@ -46,6 +50,11 @@ edit the config file as follows:
 nginx:
   ingress:
     acme: false
+```
+
+```YAML
+kube-lego:
+  enabled: false
 ```
 
 ```YAML
