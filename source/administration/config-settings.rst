@@ -2145,6 +2145,15 @@ When false, disables file downloads on mobile apps. Users can still download fil
 | This feature's ``config.json`` setting is ``"EnableMobileDownload": true`` with options ``true`` and ``false``.     |
 +---------------------------------------------------------------------------------------------------------------------+
 
+Image Proxy
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Includes three configuration keys: `ImageProxyType`, `ImageProxyURL` and `ImageProxyOptions`. When these keys are configured, posts served to the client will have their markdown modified such that all images are loaded through a proxy.
+
++---------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ImageProxyType": ""``, ``"ImageProxyURL": ""`` and ``"ImageProxyOptions": ""`` with string input.     |
++---------------------------------------------------------------------------------------------------------------------+
+
 Maximum File Size
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Maximum file size for message attachments entered in megabytes in the System Console UI. Converted to bytes in ``config.json`` at 1048576 bytes per megabyte.
