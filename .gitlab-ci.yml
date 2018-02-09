@@ -272,6 +272,7 @@ qa:
       --set global.hosts.https=true \
       --set global.hosts.tls.secretName=helm-charts-win-tls \
       --set nginx.service.loadBalancerIP="$DOMAIN_IP" \
+      --set nginx.ingress.acme=false \
       --set registry.enabled=true \
       --set registry.replicas=1 \
       --set registry.tokenIssuer="gitlab-issuer" \

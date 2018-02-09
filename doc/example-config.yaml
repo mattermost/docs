@@ -13,6 +13,7 @@ nginx:
   service:
     # loadBalancerIP: <GKE static IP address>
   ingress:
+    acme: true
     enabled: true
 
 # Registry chart Provides services to Unicorn/Omnibus chart(s) and external clients

@@ -39,15 +39,14 @@ gitlab:
     initialRootPassword: initialRootPassword
 ```
 
-If you are using [Let's Encrypt certificates](secrets.md#lets-encrypt):
+If you wish to use your own [custom wildcard certificates](secrets.md#custom-certificates),
+edit the config file as follows:
 
 ```YAML
 nginx:
   ingress:
-    acme: true
+    acme: false
 ```
-
-Or If you are using [Wildcard certificates](secrets.md#wildcard-certificates):
 
 ```YAML
 global:
