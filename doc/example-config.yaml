@@ -12,6 +12,8 @@ global:
 nginx:
   service:
     # loadBalancerIP: <GKE static IP address>
+  serviceAccount:
+    autoGenerate: true
   ingress:
     acme: true
     enabled: true
