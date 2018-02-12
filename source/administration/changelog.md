@@ -113,7 +113,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
  - Under `ServiceSettings` in `config.json`:
     - Added `"ImageProxyType": ""`, `"ImageProxyOptions": ""`, and `"ImageProxyURL": ""` to ensure posts served to the client will have their markdown modified such that all images are loaded through a proxy when these keys are configured.
-    - Added `"ExperimentalGroupUnreadChannels": false` setting to show an unread channel section in the webapp sidebar.
+    - Added `"ExperimentalGroupUnreadChannels": true` as `default_on` or `"ExperimentalGroupUnreadChannels": false` as `disabled` settings to show an unread channel section in the webapp sidebar.
     - Added `"VaryByUser": false`, a user based rate limiting, to rate limit on token and on userID. // XXXX This is under `RateLimitingSettings`
     - Added `"ExperimentalEnableDefaultChannelLeaveJoinMessages": true` that allows disabling of leave/join messages in the default channel, usually Town Square.
 
