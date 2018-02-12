@@ -20,8 +20,9 @@ function validations(){
     exit 1;
   fi
 
-  command -v gcloud >/dev/null 2>&1 || { echo >&2 "gcloud is required please follow: https://cloud.google.com/sdk/downloads"; exit 1; }
+  command -v gcloud  >/dev/null 2>&1 || { echo >&2 "gcloud is required please follow: https://cloud.google.com/sdk/downloads"; exit 1; }
   command -v kubectl >/dev/null 2>&1 || { echo >&2 "kubectl is required please follow: https://kubernetes.io/docs/tasks/tools/install-kubectl"; exit 1; }
+  command -v helm    >/dev/null 2>&1 || { echo >&2 "helm is required please follow: https://github.com/kubernetes/helm/blob/master/docs/install.md"; exit 1; }
 
   gcloud container clusters list >/dev/null 2>&1 || { echo >&2 "Gcloud seems to be configured incorrectly or authentication is unsuccessfull"; exit 1; }
 }
@@ -44,9 +45,6 @@ function bootstrap(){
   export KUBECONFIG=$(pwd)/demo/.kube/config;
 
   gcloud container clusters get-credentials $CLUSTER_NAME --zone $ZONE --project $PROJECT;
-
-  # Get helm
-  curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash;
 
   # Create roles for RBAC Helm
   if $RBAC_ENABLED; then
