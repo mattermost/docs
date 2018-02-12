@@ -7,14 +7,15 @@ Implementation Plan
 1.1 Purpose
 .........................................
 
-Mattermost is an open source, private cloud alternative to proprietary SaaS messaging solutions designed to offer organizations superior control, data sovereignty, configurability, freedom from lock-in, and enhanced security by keeping vital communications behind your firewall. You have chosen to implement Mattermost in our supported [editions](https://about.mattermost.com/features/): 
+Mattermost is an open source, private cloud alternative to proprietary SaaS messaging solutions designed to offer organizations superior control, data sovereignty, configurability, freedom from lock-in, and enhanced security by keeping vital communications behind your firewall. You have chosen to implement Mattermost in our supported `editions:`_
+
+.. _`editions:`: https://about.mattermost.com/features/
 
  - Team Edition
 
  - Enterprise Edition (E10) which adds additional features to the platform including AD/LDAP integration, multi-factor authentication ("MFA"), custom branding, advanced access control policy and next business day support.
 
  - Enterprise Edition (E20) includes E10 features plus security controls, compliance reporting, high availability, and enterprise class support. 
-
 
 The purpose of this Implementation Plan is to:
 
@@ -242,7 +243,7 @@ Train administrators on the tasks required to manage Mattermost.
 
 Send all users a welcome email with instructions on how to get started using Mattermost including links to the mobile applications and the User Guide.
 
-Reference: 
+**References**: 
  - Links to download Mattermost apps:  https://about.mattermost.com/download/#mattermostApps 
  - User Guides: https://docs.mattermost.com/guides/user.html 
 
