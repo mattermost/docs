@@ -58,7 +58,7 @@ Owner and group of the install directory - *{owner}* and *{group}*
   a. Back up your database using your organization’s standard procedures for backing up MySQL or PostgreSQL.
   b. Back up your application by moving into your archive folder (e.g. ``mattermost-back-YYYY-MM-DD``).
 
-    ``mv {install-path}/mattermost {install-path}/{mattermost-back-YYYY-MM-DD}``
+    ``sudo mv {install-path}/mattermost {install-path}/{mattermost-back-YYYY-MM-DD}``
 
 7. Copy the files that you extracted earlier to the install directory.
 
@@ -86,7 +86,7 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
   .. code-block:: text
 
-    cd {install-path}
+    cd {install-path}/mattermost
     sudo setcap cap_net_bind_service=+ep ./bin/platform
 
 12. Upgrade your ``config.json`` schema:
