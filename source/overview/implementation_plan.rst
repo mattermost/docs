@@ -84,7 +84,8 @@ A minimal installation of Mattermost Enterprise E20 for up to 500 users with app
 | Proxy             | 2       | 1 vCPUs/cores | 4 GB   | 10 GB    |
 +-------------------+---------+---------------+--------+----------+
 
-Note: Mattermost hardware sizing guidance can be found here: https://docs.mattermost.com/install/requirements.html#hardware-requirements
+.. note::
+Mattermost hardware sizing guidance can be found here: https://docs.mattermost.com/install/requirements.html#hardware-requirements
 
 1.3 Project References
 .........................................
@@ -213,28 +214,28 @@ Mattermost E20 supports integrated health and performance monitoring with Promet
 
 Mattermost supports AD/LDAP integration for user authentication and user attribute syncing. 
 
-Reference: https://docs.mattermost.com/deployment/sso-ldap.html 
+**Reference**: https://docs.mattermost.com/deployment/sso-ldap.html 
 
 2.3.10 Multi-Factor Authentication (E10, E10)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Configure multi-factor authentication (“MFA”) if required as part of your IT security policy. Compatible with Google Authenticator
 
-Reference: https://docs.mattermost.com/deployment/auth.html 
+**Reference**: https://docs.mattermost.com/deployment/auth.html 
 
 2.3.11 SAML Single-Sign-On (E20)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Mattermost can be configured to act as a SAML 2.0 Service Provider. Mattermost officially supports Okta, OneLogin and Microsoft ADFS as the identity providers (IDPs).
 
-Reference: https://docs.mattermost.com/deployment/sso-saml.html
+**Reference**: https://docs.mattermost.com/deployment/sso-saml.html
 
 2.3.12 Train Administrators
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Train administrators on the tasks required to manage Mattermost.
 
-Reference: https://docs.mattermost.com/guides/administrator.html
+**Reference**: https://docs.mattermost.com/guides/administrator.html
 
 2.3.13 Onboard Users
 ^^^^^^^^^^^^^^^^^^^^^^^^
