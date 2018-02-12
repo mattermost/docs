@@ -50,7 +50,12 @@ function bootstrap(){
 
   # Create roles for RBAC Helm
   if $RBAC_ENABLED; then
-    curl -o rbac-config.yaml -s "https://gitlab.com/charts/helm.gitlab.io/raw/master/doc/helm/examples/rbac-config.yaml";
+    status_code=$(curl -w '%{http_code}' -o rbac-config.yaml -s "https://gitlab.com/charts/helm.gitlab.io/raw/master/doc/helm/examples/rbac-config.yaml");
+    if [ "$status_code" != 200 ]; then
+      echo "Failed to download rbac-config.yaml, status code: $status_code";
+      exit 1;
+    fi
+
     password=$(gcloud container clusters describe $CLUSTER_NAME --zone $ZONE --project $PROJECT --format='value(masterAuth.password)');
 
     kubectl --username=admin --password=$password create -f rbac-config.yaml;
