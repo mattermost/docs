@@ -8,7 +8,7 @@ Mattermost is an open source, private cloud alternative to proprietary SaaS mess
 
 - Team Edition
 
-- Enterprise Edition (E10) which adds additional features to the platform including AD/LDAP integration, multi-factor authenication ("mfa"), custom branding, advanced access control policy and next business day support.
+- Enterprise Edition (E10) which adds additional features to the platform including AD/LDAP integration, multi-factor authentication ("MFA"), custom branding, advanced access control policy and next business day support.
 
 - Enterprise Edition (E20) includes E10 features plus security controls, compliance reporting, high availability, and enterprise class support. 
 
@@ -50,9 +50,9 @@ In this implementation, you are planning to deploy Mattermost to **[NUMBER OF US
 A Mattermost Enterprise E20 implementation consists of the following system components:
 
 - **Mattermost Server**
-  - The Mattermost Server is a single binary that includes the RESTful JSON web service, authentication client, authentication provider, notification service, and data management service. The Mattermost Server can be deployed in stand alone or high availability mode where two or more servers are clustered together using gossip protocol and a proxy server that routes traffic from client applications to healthy servers in the cluster.
+  - The Mattermost Server is a single binary that includes the RESTful JSON web service, authentication client, authentication provider, notification service, and data management service. The Mattermost Server can be deployed in stand-alone or high availability mode where two or more servers are clustered together using gossip protocol and a proxy server that routes traffic from client applications to healthy servers in the cluster.
 - **Mattermost Database**
-  - A MySQL or PostgreSQL database in stand alone or high-availability configurations (master with read replicas).
+  - A MySQL or PostgreSQL database in stand-alone or high-availability configurations (master with read replicas).
 Mattermost Push Notification Service
 Hosted or on-prem service that pushes notifications to Mattermost Android and Mattermost iOS mobile applications.
 - **Mattermost Client Applications**
@@ -63,7 +63,7 @@ Hosted or on-prem service that pushes notifications to Mattermost Android and Ma
   - The use of a proxy server (NGINX, Apache, HAProxy, ELB, etc.) is recommended with Mattermost to obtain the benefits of: SSL termination, HTTP to HTTPS redirection, port mapping :80 to :8065, and the creation of standard request logs.
 
 
-The following diagram is a high level illustration of the Mattermost platform and how its various components interact with each other within a network:
+The following diagram is a high-level illustration of the Mattermost platform and how its various components interact with each other within a network:
 
 ![image](../source/images/network.PNG)
 **Reference**: https://docs.mattermost.com/deployment/deployment.html
@@ -100,7 +100,7 @@ The subsequent sections provide a brief description of the implementation and ma
 ### 2.1 Description of Implementation
 
 ### 2.2 Team
-In this section, identify the System Proponent, the name of the responsible organization(s), and titles and telephone numbers of the staff who serve as points of contact for the system implementation.  These points of contact could include the Project Manager. Program Manager, Security Manager.  Database Administrator, Configuration Management Manager, or other managers with responsibilities relating to the system implementation.  The site implementation representative for each field installation or implementation site should also he included, if appropriate.  List all managers and staff with whom the implementation must be coordinated.
+In this section, identify the System Proponent, the name of the responsible organization(s), and titles and telephone numbers of the staff who serve as points of contact for the system implementation.  These points of contact could include the Project Manager. Program Manager, Security Manager.  Database Administrator, Configuration Management Manager, or other managers with responsibilities relating to the system implementation.  The site implementation representative for each field installation or implementation site should also be included, if appropriate.  List all managers and staff with whom the implementation must be coordinated.
 
 #### 2.2.1 Team Members
 
@@ -237,10 +237,10 @@ The Mattermost platform will be secured in the following ways:
 - Mattermost will be hosted entirely on-premises behind your company firewall with access restricted to VPN connections;
 - Mobile access to Mattermost will be further restricted by the use of multi-factor authorization;
 - Transmissions to and from Mattermost will be encrypted using TLS;
-- Encryption-at-rest will be applied using your company’s standards;
+- Encryption-at-rest will be applied using your company's standards;
 - Mattermost’s integrity and audit controls store a complete history of messages, including edits and deletes, along with all files uploaded. User interface actions for “deleting” messages and channels remove the data only from the user interface; the data is retained within your database. If your compliance guidelines require it, you can turn off users’ ability to edit and delete their messages after they are posted.
 - Mattermost will be protected against brute force attacks by its rate limiting API;
-- Authentication to Mattermost will be controlled using your company‘s Active Directory/LDAP/SAML directory server. 
+- Authentication to Mattermost will be controlled using your company's Active Directory/LDAP/SAML directory server. 
 
 **Reference**: https://docs.mattermost.com/overview/security.html
 
