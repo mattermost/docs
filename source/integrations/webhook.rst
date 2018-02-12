@@ -29,7 +29,7 @@ If your script doesn't take very long to run you can use the ``include-command-o
 Authenticating Requests
 ------------------------
 
-Mattermost can be configured to send a token with an outgoing webhook to make sure that your webhook only responds to authorized requests. To enable this, use this in your webhook configuration::
+Mattermost can be configured to send a token with an outgoing webhook to make sure that your webhook only responds to authorized requests. To enable this, use the following in your webhook configuration::
 
 
     "trigger-rule":
