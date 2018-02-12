@@ -22,4 +22,4 @@ Follow these guidelines to develop a clear and concise guest blog post:
 - Include a screenshot of the guest company's logo in the post.
 - At the end of the post, include a short summary of the guest company as well as a call for readers to share feedback.
 - Also, refer to `style guidelines <https://docs.mattermost.com/process/marketing-guidelines.html>`_ while writing the article.
-- Choose a relevant visual for the blog post, such as a photo of the author or the guest company building.
+- Choose a relevant visual for the blog post, such as a photo of the author or the guest company's building.
