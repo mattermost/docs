@@ -40,7 +40,7 @@ Google Cloud SDK is a dependency of this script, you will have to make sure it i
 
 The [scripts/gke_bootstrap_script.sh](../../scripts/gke_bootstrap_script.sh) script creates a new GKE cluster, sets up kubectl to connect to it and has helm installed and initialized.
 
-The script reads various parameters from environment variables.
+The script reads various parameters from environment variables and an argument `up` or `down` for bootstrap and clean up respectively.
 
 The table below describes all variables.
 
@@ -58,9 +58,14 @@ The table below describes all variables.
 Run the script, passing in your desired parameters. (The script can work with default parameters except for `PROJECT` which is required.)
 
 ```bash
-PROJECT=<gcloud project id> ./scripts/gke_bootstrap_script.sh
+PROJECT=<gcloud project id> ./scripts/gke_bootstrap_script.sh up
 ```
 
+The script can also be used to clean up the created GKE resources by running
+
+```bash
+PROJECT=<gcloud project id> ./scripts/gke_bootstrap_script.sh down
+```
 > *Note:* You need to be logged into your account using gcloud before running the bootstrap script
 
  Skip the Custom Install section if you used the script.
