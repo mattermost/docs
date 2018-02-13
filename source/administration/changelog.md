@@ -12,7 +12,7 @@ Release date: 2018-02-16
 
 #### Client-Side Performance
 
- - Added user based rate limiting, in addition to rate limiting API access by IP address. // XXX not sure how to quantify perf increase
+ - Added user-based rate limiting, in addition to rate limiting API access by IP address. // XXX not sure how to quantify perf increase
  - Decreased page load time by loading custom emojis asynchronously rather than all on first page load.
  - Optimized channel autocomplete (~) query by returning client-side results immediately.
  - Decreased the size of most image assets by more than 25% by running `pngquant` to remove unnecessary metadata from PNGs.
@@ -59,7 +59,7 @@ Release date: 2018-02-16
 
 #### Enterprise Edition
 - Increased max length of `User.Position` field to 128 characters to meet LDAP max length.
-- Increased OAuth state parameter limit some systems may send a state longer than 128 characters.
+- Increased OAuth state parameter limit. Some systems may send a state longer than 128 characters.
 
 ### Bug Fixes
  - Fixed an issue where OAuth account creation error page was unformatted.
@@ -77,7 +77,7 @@ Release date: 2018-02-16
  - Fixed an issue where reply arrow was on a second line.
  - Fixed not being able to type Korean quickly in some dialogs.
  - Fixed an issue where notification preference settings didn't respect case sensitivity for mention highlighting.
- - Fixed where after an ephemeral message, couldn't use `+:emoji:` to react to the previous message.
+ - Fixed where, after an ephemeral message, couldn't use `+:emoji:` to react to the previous message.
  - Fixed Mattermost not loading on Firefox if the `media.peerconnection.enabled` setting in Firefox is set to false.
  - Fixed login screen sometimes flashing before Mattermost server loads.
  - Fixed an issue where leaving channel in one tab redirected other channels on other tabs to Town Square as well.
