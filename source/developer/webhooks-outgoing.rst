@@ -173,6 +173,15 @@ For example, to create a message with a heading, and an italicized text on the n
 
 Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` and :doc:`interactive message buttons <interactive-message-buttons>` in the JSON payload.
 
+Custom post type
+~~~~~~~~~~~~~~~~~~
+
+You can specify a custom post type when sending the webhook message. To set the type, use the `type` parameter of the JSON payload.
+
+.. code-block:: text
+
+  payload={"username": "webhook-bot", "text": "Hello, this is some text\nThis is more text. :tada:", "type": "custom_type_here"}
+
 Tips and Best Practices
 ------------------------
 
