@@ -122,8 +122,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under `ServiceSettings` in `config.json`:
     - Added `"ImageProxyType": ""`, `"ImageProxyOptions": ""`, and `"ImageProxyURL": ""` to ensure posts served to the client will have their markdown modified such that all images are loaded through a proxy when these keys are configured.
     - Added `"ExperimentalGroupUnreadChannels": true` as `default_on` or `"ExperimentalGroupUnreadChannels": false` as `disabled` settings to show an unread channel section in the webapp sidebar.
-    - Added `"VaryByUser": false`, a user-based rate limiting, to rate limit on token and on userID. // XXXX This is under `RateLimitingSettings`
     - Added `"ExperimentalEnableDefaultChannelLeaveJoinMessages": true` that allows disabling of leave/join messages in the default channel, usually Town Square.
+ - Under `RateLimitingSettings` in `config.json`:
+    - Added `"VaryByUser": false`, a user-based rate limiting, to rate limit on token and on userID.
 
 ### API Changes
 
@@ -132,9 +133,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### RESTful API v4 Changes
 
- - Added auto lowercase team and channel names in API requests. This ensures that the channel name is automatically lowercased for endpoints taking team or channel names as URL parameters.
- - Added `POST /emoji/search`, `GET /emojis/name/{emoji_name}`, and `GET /emoji/autocomplete` API endpoints. These ensure that the benefits of `GET` for important performance related actions such as autocompleting are included.
- - Added a new endpoint called `/users/tokens/search`. This endpoint gets all tokens for all users if one has the `manage_system` permission.
+ - Added `GetChannelByName` and `GetTeamByName` to auto lowercase team and channel names in API requests. This ensures that the channel name is automatically lowercased for endpoints taking team or channel names as URL parameters.
+ - Added `POST /emoji/search`, `GET /emojis/name/{emoji_name}`, and `GET /emoji/autocomplete` to add consistency with user search/autocomplete endpoints. These API endpoints ensure that the benefits of `GET` for important performance related actions such as autocompleting are included.
+ - Added `/users/tokens/search` to allow System Admin to be able to find, manage and revoke personal access tokens as needed. This endpoint gets all tokens for all users if one has the `manage_system` permission.
 
 #### Plugin API Changes (Beta)
 
