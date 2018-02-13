@@ -45,6 +45,7 @@ No pull requests for major features should be **merged** to the current release 
 2. Release Manager:
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
+    - Review and update [company roadmap](https://about.mattermost.com/direction/) with which major features made it into the release
     - Queue a list of MVP candidates in alphabetical order to the Platform Meeting channel. [See example](https://pre-release.mattermost.com/private-core/pl/q9jdbzw7c7ribjsp78857xbomh)
     - Draft Changelog in a WIP PR with updates for highlights, feature additions, known issues, compatibility updates for deprecated features, config.json, [database changes](https://github.com/mattermost/mattermost-server/blob/master/store/sql_upgrade.go#L181), [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go) (search `#api-proposal` and confirm with Dev) and WebSocket event changes; [see example](http://docs.mattermost.com/administration/changelog.html#compatibility)
     - Update [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) with any special notes for upgrading to the new version
@@ -55,7 +56,6 @@ No pull requests for major features should be **merged** to the current release 
     - Start posting a daily Zero Bug Balance query (posted until zero bugs or day of release)
     - Notify community about upcoming release in Reception [see example](https://pre-release.mattermost.com/core/pl/aq434e5dt3ntmfdowhekxjzi4r)
 4. PM:
-    - Review and update [company roadmap](https://about.mattermost.com/direction/) with which major features made it into the release
     - Review Jira Backlog and move any tickets that will not be merged, to the next release
 5. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
@@ -84,6 +84,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Verify all items in the last posted release checklist are complete
     - Update Changelog PR based on what's in/out of the release
     - Create meta issue for release in GitHub (see [example](https://github.com/mattermost/mattermost-server/issues/3702))
+    - Post a link to Release Discussion channel for query of [remaining bugs in this release](https://mattermost.atlassian.net/browse/PLT-8426?filter=14100)
 3. Logistics:
     - Confirm date of marketing announcement for the release date with Marketing, and update release channel header if needed
       - If release day falls on a Friday, the blog post goes out on the Friday and the emailed newsletter goes out the following Tuesday.
@@ -93,7 +94,6 @@ Day when Leads and PMs decide which major features are included in the release, 
 5. PM:
     - Based on results of Team Meeting discussion, create tickets for features that need to be turned on or off for the release
     - Review the JIRA tickets remaining in the current release fix version and push those that won't make it to the next fix version
-    - Post a link to Release Discussion channel for query of [remaining bugs in this release](https://mattermost.atlassian.net/browse/PLT-8426?filter=14100)
 6. Marketing:
     - Start drafting blog post, tweet, and email for the release announcement
     
@@ -265,8 +265,8 @@ If a security fix release is required, run through the following steps:
       - For OpenShift, open a new pull request to update the version. See [example](https://github.com/goern/mattermost-openshift/pull/13).
 3. Marketing:
     - Prepare [blog post](https://about.mattermost.com/mattermost-3-6-2/) for mattermost.com, MailChimp email blast, and [Twitter announcement](https://twitter.com/mattermosthq/status/827193482578112512), and send to marketing lead for review. Once reviewed, schedule for 08:00 PST on the day after dot release
+    
 If a bug fix release is required, run through the following steps:
-
 1. PM:
     - Schedule a Daily Release Update meeting every day until the dot release is complete
     - Post links to approved tickets for the dot release to the Release Discussion channel
