@@ -459,6 +459,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Fixed mentions not appearing linked in message drafts when in preview mode.
 - Fixed an issue where an existing account could change their email address to one not in the [restricted domain list](https://docs.mattermost.com/administration/config-settings.html#restrict-account-creation-to-specified-email-domains).
 - Fixed emoji reactions being added to system messages when using the `+:emoji:` command.
+- Fixed an issue where message retention policy didn't work in Postgres databases if there were emoji reactions to delete.
 
 ### Compatibility
 
@@ -739,6 +740,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Emojis names matching usernames can trigger mentions.
 - Integration message attachment fails to post if attachment length exceeds 7900 characters.
 - Uppercase letter is required for a password if the password requirement is set to at least 5 characters and a number.
+- Message retention policy may not work in Postgres databases if there are emoji reactions to delete.
 
 ### Contributors
 
