@@ -212,7 +212,7 @@ Mattermost automatically translates the data coming from Slack:
 
 2. The HTTP POST request body sent to a web service is formatted the same as Slack's. This means your Slack integration's receiving function does not need change to be compatible with Mattermost.
 
-3. Slack attachments are supported with Slack-compatible outgoing webhooks. It also adds support for mentions with `<@userid>` and announcement tokens (eg. `<!here>`) in the outgoing webhook responses.
+3. Slack attachments are supported with Slack-compatible outgoing webhooks. They also add support for mentions with `<@userid>` and announcement tokens (eg. `<!here>`) in the outgoing webhook responses.
   
 Known Slack compatibility issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
