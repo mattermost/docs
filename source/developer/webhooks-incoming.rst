@@ -105,8 +105,8 @@ For example, to send the message as a ``webhook-bot``, use the following payload
 
 To prevent malicious users from trying to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`_ a *BOT* indicator appears next to posts coming from webhooks regardless of what username is specified.
 
-  .. note::
-    `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`_ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator to do so. If not enabled, the username is set to `webhook`.
+.. note::
+  `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`_ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator to do so. If not enabled, the username is set to `webhook`.
 
 Override the profile picture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -119,8 +119,8 @@ For example, you can use the following payload to override the profile picture t
 
   payload={"icon_url": "http://example.com/somecoolimage.jpg", "text": "Hello, this is some text\nThis is more text. :tada:"}
 
-  .. note::
-    `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`_ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator to do so. If not enabled, the icon of the creator of the webhook URL is used to post messages.
+.. note::
+  `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`_ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator to do so. If not enabled, the icon of the creator of the webhook URL is used to post messages.
 
 Mention notifications
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -148,6 +148,15 @@ For example, to create a message with a heading, and an italicized text on the n
   :width: 300 px
 
 Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` and :doc:`interactive message buttons <interactive-message-buttons>` in the JSON payload.
+
+Custom post type
+~~~~~~~~~~~~~~~~~~
+
+You can specify a custom post type when sending the webhook message. To set the type, use the `type` parameter of the JSON payload.
+
+.. code-block:: text
+
+  payload={"username": "webhook-bot", "text": "Hello, this is some text\nThis is more text. :tada:", "type": "custom_type_here"}
 
 Tips and Best Practices
 ------------------------
