@@ -43,16 +43,16 @@ Setup Guide
 
 This guide gives an example of how to set up an image proxy.
 
-First, deploy a `willnorris/imageproxy` instance to image-proxy.mattermost.com and update the configuration in the system
-console. For example:
- - "ImageProxyType": "willnorris/imageproxy",
+First, deploy a `atmos/camo` (https://github.com/atmos/camo) instance to image-proxy.mattermost.com and update the 
+configuration in the system console. For example:
+ - "ImageProxyType": "atmos/camo",
  - "ImageProxyURL": "https://image-proxy.mattermost.com",
  - "ImageProxyOptions": "500,fit"
 
-.. image:: ../images/Screenshot_56.png
+.. image:: ../images/image-proxy.png
 
 The URL will be replaced with something similar to the following: https://imageproxy.mysite.com/x500,s5xQmRR3GQa13jFHdJJb01fqATSoZkbBvMXG7Vs4jFGU=/https://i.redd.it/6cohydckk6501.jpg
-(See https://github.com/willnorris/imageproxy).
+(See https://github.com/atmos/camo).
   
 Next, if you post a message with an image, you will get a proxied image in your post. This will ensure that every image
 is downloaded via HTTPS. In this specific example, having `ImageProxyOptions` set to `500,fit` will also resize images
