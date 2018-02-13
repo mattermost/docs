@@ -190,6 +190,8 @@ Checklist
 - Center pane: Make the center pane one of the Favorited channels. Make sure that the heading of the center pane is fully visible to avoid truncation. Also, make the first message in the center pane fully visible right below the channel header.
 - Profiles: Profile pictures and real people's names should be filled out throughout the screenshot. For the profile picture, use either normal-looking Avatars or stock photography.
 - Clarity: Do not include an "unread posts" indicator in the left-hand side, but you can have a few mentions. Also, avoid showing any text with acronyms and abbreviations. Do not show any bugs or defects.
+- Outline: Ensure that the screenshot has a grey outline so that it looks good on both dark and light backgrounds.
+- Outstanding look: Ensure that the contents of the screenshot shows the Mattermost product in the best light. 
 
 Animated GIFs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
