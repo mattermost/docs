@@ -315,7 +315,7 @@ Allows for leave/join messages to be created in the default channel.
 
 **True**: Leave/join messages can be created in the default channel.
 
-**False**: Leave/join messages will not be created in the DB for the default channel.
+**False**: Leave/join messages will not be created in the database for the default channel.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableDefaultChannelLeaveJoinMessages": true`` with options ``true`` and ``false`` for above settings respectively.          |
@@ -2148,7 +2148,7 @@ When false, disables file downloads on mobile apps. Users can still download fil
 Image Proxy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Includes three configuration keys: `ImageProxyType`, `ImageProxyURL` and `ImageProxyOptions`. When these keys are configured, posts served to the client will have their markdown modified such that all images are loaded through a proxy.
+Includes three configuration keys: `ImageProxyType`, `ImageProxyURL` and `ImageProxyOptions`. When these keys are configured, posts served to the client will have their markdown modified enabling all images to be loaded through a proxy.
 
 +---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ImageProxyType": ""``, ``"ImageProxyURL": ""`` and ``"ImageProxyOptions": ""`` with string input.     |
@@ -3443,10 +3443,10 @@ Enable Preview Features (Experimental)
 | This feature’s ``config.json`` setting is ``"EnablePreviewFeatures": true`` with options ``true`` and ``false`` for above settings respectively.                     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Group Unreads Channels (Experimental)
+Group Unread Channels (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Disabled**: Unreads channels section is disabled and hidden in the account settings.
+**Disabled**: Unread channels section is disabled and hidden in the account settings.
  
 **Default On**:  Enables the unread channels by default. Can be turned off in the account settings.
 
