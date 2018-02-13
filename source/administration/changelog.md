@@ -16,7 +16,7 @@ Release date: 2018-02-16
 
 #### Client-Side Performance
 
- - Added user-based rate limiting, in addition to rate limiting API access by IP address. // XXX not sure how to quantify perf increase
+ - Added user-based rate limiting, in addition to rate limiting API access by IP address.
  - Decreased page load time by loading custom emojis asynchronously rather than all on first page load.
  - Optimized channel autocomplete (~) query by returning client-side results immediately.
  - Decreased the size of most image assets by more than 25% by running `pngquant` to remove unnecessary metadata from PNGs.
@@ -61,6 +61,9 @@ Release date: 2018-02-16
  - Added a post change channel privacy system message when a team is changed from public to private.
  - Made system messages always use "User did something" instead of "User has done something" for consistency.
 
+#### Plugins (Beta)
+ - Zoom plugin now supports an on-premise Zoom server.
+
 #### Enterprise Edition
 - Increased max length of `User.Position` field to 128 characters to meet LDAP max length.
 - Increased OAuth state parameter limit. Some systems may send a state longer than 128 characters.
@@ -97,17 +100,18 @@ Release date: 2018-02-16
  - Fixed an issue where pasting files into a channel didn't work.
  - Fixed an issue where Mattermost crashed when posting a code snippet containing white space.
  - Fixed an issue where a validation error message did not get cleared when switching between creating a private/public channel.
- - Fixed emoji picker search should not be case-sensitive.
- - Fixed timestamp not clickable in desktop mobile view.
- - Fixed deleting a Team via the API breaks the Web UI.
+ - Fixed emoji picker search being case-sensitive.
+ - Fixed timestamp not being clickable in desktop mobile view.
+ - Fixed an issue where deleting a team via the API broke the web user interface.
  
 ### Compatibility
 
 #### Removed and Deprecated Features
 
 - All API v3 endpoints have been deprecated, and scheduled for removal in Mattermost v5.0.
-- The permanent query parameter of the DELETE `/teams/{team_id}` APIv4 endpoint for permanently deleting a team is scheduled for removal in Mattermost v4.7. // XXX Jason needs to update
 - The `mentionKeys` prop in post type plugins is now removed to fix case sensitive mention highlighting. Plugins can retrieve the `mentionKeys` prop from the store as needed.
+
+Note that the permanent query parameter of the DELETE `/teams/{team_id}` APIv4 endpoint is not removed as previously announced, given customer and community feedback.
 
 #### config.json
 
