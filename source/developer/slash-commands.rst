@@ -230,6 +230,15 @@ For example, you can use the following payload to override the profile picture t
 .. note::
   `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`_ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator. If not enabled, the icon of the creator of the webhook URL is used to post messages.
 
+Custom post type
+~~~~~~~~~~~~~~~~~~
+
+You can specify a custom post type when sending the webhook message. To set the type, use the `type` parameter of the JSON payload.
+
+.. code-block:: text
+
+  payload={"username": "webhook-bot", "text": "Hello, this is some text\nThis is more text. :tada:", "type": "custom_type_here"}
+
 Tips and Best Practices
 ------------------------
 
