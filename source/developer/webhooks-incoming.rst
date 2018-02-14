@@ -152,7 +152,7 @@ Messages with advanced formatting can be created by including an :doc:`attachmen
 Custom post type
 ~~~~~~~~~~~~~~~~~~
 
-You can specify a custom post type `via client plugins <about.mattermost.com/default-plugins>`_ when sending a webhook message. To set the type, use the `type` parameter on the JSON payload.
+You can specify a custom post type when sending a webhook message, for use by `plugins <about.mattermost.com/default-plugins>`_. To set the type, use the `type` parameter on the JSON payload.
 
 .. code-block:: text
 
