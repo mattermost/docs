@@ -85,3 +85,67 @@ NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory
   By default, the Mattermost server accepts connections on port 8065 from every machine on the network. Use your firewall to deny connections on port 8065 to all machines except the machine that hosts NGINX and the machine that you use to administer Mattermost server. If you're installing on Amazon Web Services, you can use security groups to restrict access.
 
 Now that NGINX is installed and running, you can configure it to use SSL, which allows you to use HTTPS connections and the HTTP/2 protocol.
+
+NGINX FAQ
+=========
+
+1. "Why are Websocket connections returning a 403 error?"
+
+  This is likely due to a cross-origin check failing. A check is applied for websocket code to see if the Origin header is the same as the host header and it may not be.
+
+  .. code-block:: none
+
+    location ~ /api/v[0-9]+/(users/)?websocket$ {
+      proxy_pass            http://backend;
+      (...)
+      proxy_set_header      Host (your host name);
+      proxy_set_header      X-Forwarded-For $remote_addr;
+    }
+
+  You may need to add variants of the host name that clients may call. Your NGINX log will be helpful in diagnosing the problem.
+
+2. "How do I setup nginx-proxy with the mattermost-docker installation?"
+
+  Step 1 is to find the name of the Mattermost network and connect it to nginx-proxy:
+
+  .. code-block:: none
+
+    docker network ls
+    # Grep the name of your Mattermost network like "mymattermost_default".
+    docker network connect mymattermost_default nginx-proxy
+
+  Step 2 is to restart the Mattermost containers
+
+    .. code-block:: none
+
+      docker-compose stop app
+      docker-compose start app
+
+  Tip: There is no need to run the 'web' container, since nginx-proxy is accepting incoming requests.
+
+  Next update your docker-compose.yml file to include a new environment variable ``VIRTUAL_HOST`` and ``expose`` directive.
+
+    .. code-block:: none
+
+      environment:
+        # set same as db credentials and dbname
+        - MM_USERNAME=mmuser
+        - MM_PASSWORD=mmuser_password
+        - MM_DBNAME=mattermost
+        - VIRTUAL_HOST=mymattermost.tld
+      expose:
+      - "80"
+
+  If you are using SSL, you may also need to expose port 443. 
+
+3. "Why does NGINX fail when installing Gitlab CE with Mattermost on Azure?"
+
+  You may need to update the Callback URLs for the Application entry of Mattermost inside your Gitlab instance.
+
+  - Log into your GitLab instance as the admin
+  - Go to the Admin area -> Applications
+  - Then click Edit on GitLab-Mattermost
+  - Update the Callback URLs to your new domain/URL
+  - Save the changes
+
+  Also make sure to update the external URL for Gitlab and Mattermost in  ``/etc/gitlab/gitlab.rb``.
