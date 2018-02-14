@@ -70,7 +70,16 @@ Database Software
 
 Deployments requiring searching in Chinese, Japanese and Korean languages require MySQL 5.7.6+ and the configuration of `ngram Full-Text parser <https://dev.mysql.com/doc/refman/5.7/en/fulltext-search-ngram.html>`__. For searching two characters, you will also need to set ``ft_min_word_len`` and ``innodb_ft_min_token_size`` to ``2`` and restart MySQL. See `CJK discussion <https://github.com/mattermost/mattermost-server/issues/2033#issuecomment-183872616>`__ for details.
 
-Note: On Postgres databases, searching for website and email addresses does not work properly and hashtags which end with an inverted questionmark aren’t properly highlighted. If this an issue, you can either enable the ElasticSearch feature or install MySQL instead.
+Notes on PostgreSQL:
+
+- Email addresses do not return results.
+- Hashtags or recent mentions of usernames containing a dash do not return search results.
+- Terms containing a dash return incorrect results as dashes are ignored in the search engine.
+- If any of the above is an issue, you can either enable the ElasticSearch (E20) feature or install MySQL instead.
+
+Notes on MySQL:
+
+- Hashtags or recent mentions of usernames containing a dot do not return search results.
 
 Hardware Requirements
 ---------------------
