@@ -50,7 +50,7 @@ spec:
               value: '/var/opt/gitlab/config/gitlab/'
             {{- if .Values.initialRootPassword}}
             - name: GITLAB_ROOT_PASSWORD
-              value: {{ .Values.initialRootPassword | quote }}
+              value: {{ include "migrations.validate_root_password" . | required "migrations.initialRootPassword needs to be more than 6 characters" | quote }}
             {{- end }}
           volumeMounts:
             - name: migrations-config

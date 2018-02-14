@@ -7,6 +7,17 @@ Expand the name of the chart.
 {{- end -}}
 
 {{/*
+Validates initialRootPassword making sure it is >= 6 characters
+Returns an empty string if invalid password else password
+*/}}
+{{- define "migrations.validate_root_password" -}}
+{{ $length := len .Values.initialRootPassword }}
+{{- if ge $length 6 -}}
+{{ .Values.initialRootPassword }}
+{{- end -}}
+{{- end -}}
+
+{{/*
 Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 */}}
