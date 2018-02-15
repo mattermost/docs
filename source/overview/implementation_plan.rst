@@ -15,7 +15,7 @@ Mattermost is an open source, private cloud alternative to proprietary SaaS mess
 
  - Enterprise Edition (E10) which adds additional features to the platform including AD/LDAP integration, multi-factor authentication ("MFA"), custom branding, advanced access control policy and next business day support.
 
- - Enterprise Edition (E20) includes E10 features plus security controls, compliance reporting, high availability, and enterprise class support. 
+ - Enterprise Edition (E20) includes E10 features plus SAML 2.0 authentication, security controls, compliance reporting, high availability, and enterprise class support. 
 
 The purpose of this Implementation Plan is to:
 
@@ -25,13 +25,13 @@ The purpose of this Implementation Plan is to:
 
  - Identify support required during the implementation process.
 
-1.2 System Overview
-.........................................
+2 System Overview
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This section provides a brief overview of the system to be implemented, including a description of the system and its organization.
 
-1.2.1 System Description
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2.1 System Description
+.........................................
 
 Mattermost is a messaging solution designed to remove friction for inter-organizational communications. You are implementing Mattermost in order to:
 
@@ -50,8 +50,8 @@ In this implementation, you are planning to deploy Mattermost to **[NUMBER OF US
 3. **[TEAM 3]**
 
 
-1.2.2  System Organization
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2.2  System Organization
+.........................................
 
 A Mattermost Enterprise E20 implementation consists of the following system components:
 
@@ -88,7 +88,7 @@ A minimal installation of Mattermost Enterprise E20 for up to 500 users with app
 .. note::
 Mattermost hardware sizing guidance can be found here: https://docs.mattermost.com/install/requirements.html#hardware-requirements
 
-1.3 Project References
+2.3 Project References
 .........................................
 
 This section provides a bibliography of key project references and deliverables that have been produced before this point in the project development.
@@ -99,27 +99,27 @@ This section provides a bibliography of key project references and deliverables 
  - Mattermost Administrator Guide: https://docs.mattermost.com/guides/administrator.html
  - Mattermost User Guide: https://docs.mattermost.com/guides/user.html
 
-1.4      Glossary
+2.4      Glossary
 .........................................
 
 Provide a glossary of all terms and abbreviations used in the manual.  If it is several pages in length, it may be placed in an appendix.
 
 ---
 
-2   Management Overview
+3   Management Overview
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The subsequent sections provide a brief description of the implementation and major tasks involved in this section.
 
-2.1 Description of Implementation
+3.1 Description of Implementation
 .........................................
 
-2.2 Team
+3.2 Team
 .........................................
 
 In this section, identify the System Proponent, the name of the responsible organization(s), and titles and telephone numbers of the staff who serve as points of contact for the system implementation.  These points of contact could include the Project Manager. Program Manager, Security Manager.  Database Administrator, Configuration Management Manager, or other managers with responsibilities relating to the system implementation.  The site implementation representative for each field installation or implementation site should also be included, if appropriate.  List all managers and staff with whom the implementation must be coordinated.
 
-2.2.1 Team Members
+3.2.1 Team Members
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 +----------+-----------------+----------------------+--------------+
@@ -132,12 +132,12 @@ In this section, identify the System Proponent, the name of the responsible orga
 |          |                 |                      |              |
 +----------+-----------------+----------------------+--------------+
 
-2.3 Major Tasks
+3.3 Major Tasks
 .........................................
 
 This section provides a brief description of each major task required for the implementation of the system. Add as many subsections as necessary to this section to describe all the major tasks adequately. The tasks described in this section are not site-specific, but generic or overall project tasks that are required to install hardware and software, prepare data, and verify the system. 
 
-2.3.1 Create System Architecture Document
+3.3.1 Create System Architecture Document
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The System Architecture Document is used to document the environments that Mattermost will be deployed to including:
@@ -149,19 +149,19 @@ The System Architecture Document is used to document the environments that Matte
 
 **Reference**: https://docs.mattermost.com/deployment/deployment.html
 
-2.3.2 Gather Required Software and Documentation
+3.3.2 Gather Required Software and Documentation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Gather all of the software and documentation required for a successful implementation of the Mattermost platform and place it within the organization’s configuration management system.
 
-2.3.3 Prepare Deployment Environments
+3.3.3 Prepare Deployment Environments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Build out the required deployment environments (development, staging, production, etc.) and implement configuration management (using a tool like Chef, Puppet, Salt, etc.)
 
 **Reference**: https://docs.mattermost.com/install/requirements.html
 
-2.3.4 Install Software
+3.3.4 Install Software
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Install and configure Mattermost and its component software (MySQL or PostgreSQL, Nginx or another proxy, etc.)
@@ -170,14 +170,14 @@ Install and configure Mattermost and its component software (MySQL or PostgreSQL
 
 Install in High Availability (E20): https://docs.mattermost.com/deployment/cluster.html 
 
-2.3.5 Test Deployment
+3.3.5 Test Deployment
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Verify that the software has been deployed successfully in each environment. Create, or update, automated tests to verify deployments.
 
 **Reference**: https://docs.mattermost.com/administration/liveness-check.html
 
-2.3.6 Bulk Load Data
+3.3.6 Bulk Load Data
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Large quantities of data can be imported from a JSON file into Mattermost at the command line using the bulk loading feature. This feature is most suitable for migrating data from an existing messaging system, or for pre-populating a new installation with data.
@@ -196,49 +196,49 @@ You can import the following data types:
 
 **Reference**: https://docs.mattermost.com/deployment/bulk-loading.html 
 
-2.3.7 Implement Backup
+3.3.7 Implement Backup
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Implement backup procedures to protect data stored within the Mattermost database, files uploaded by users, and the Mattermost config.json file.
 
 **Reference**: https://docs.mattermost.com/administration/backup.html
 
-2.3.8 Implement Monitoring
+3.3.8 Implement Monitoring
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Mattermost E20 supports integrated health and performance monitoring with Prometheus and Grafana. A guide to the statistics collected and reported on is available in the reference below:
 
 **Reference**: https://docs.mattermost.com/deployment/metrics.html
 
-2.3.9 AD/LDAP Setup (E10, E20)
+3.3.9 AD/LDAP Setup (E10, E20)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Mattermost supports AD/LDAP integration for user authentication and user attribute syncing. 
 
 **Reference**: https://docs.mattermost.com/deployment/sso-ldap.html 
 
-2.3.10 Multi-Factor Authentication (E10, E10)
+3.3.10 Multi-Factor Authentication (E10, E10)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Configure multi-factor authentication (“MFA”) if required as part of your IT security policy. Compatible with Google Authenticator
 
 **Reference**: https://docs.mattermost.com/deployment/auth.html 
 
-2.3.11 SAML Single-Sign-On (E20)
+3.3.11 SAML Single-Sign-On (E20)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Mattermost can be configured to act as a SAML 2.0 Service Provider. Mattermost officially supports Okta, OneLogin and Microsoft ADFS as the identity providers (IDPs).
 
 **Reference**: https://docs.mattermost.com/deployment/sso-saml.html
 
-2.3.12 Train Administrators
+3.3.12 Train Administrators
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Train administrators on the tasks required to manage Mattermost.
 
 **Reference**: https://docs.mattermost.com/guides/administrator.html
 
-2.3.13 Onboard Users
+3.3.13 Onboard Users
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Send all users a welcome email with instructions on how to get started using Mattermost including links to the mobile applications and the User Guide.
@@ -247,10 +247,10 @@ Send all users a welcome email with instructions on how to get started using Mat
  - Links to download Mattermost apps:  https://about.mattermost.com/download/#mattermostApps 
  - User Guides: https://docs.mattermost.com/guides/user.html 
 
-2.4 Implementation Schedule
+3.4 Implementation Schedule
 .........................................
 
-In this section, provide a schedule of activities to be accomplished during implementation.  Show the required tasks (described in Section 2.3, Major Tasks) in chronological order, with the beginning and end dates of each task.
+In this section, provide a schedule of activities to be accomplished during implementation.  Show the required tasks (described in Section 3.3, Major Tasks) in chronological order, with the beginning and end dates of each task.
 
 +----+--------------------------------------------+------------+------------+
 |    | Task                                       | Start Date | End Date   |
@@ -276,12 +276,12 @@ In this section, provide a schedule of activities to be accomplished during impl
 | 10 | Onboard Users                              |            |            |
 +----+--------------------------------------------+------------+------------+
 
-2.5 Security
+3.5 Security
 .........................................
 
 If appropriate for the system to be implemented, include an overview of the system security features and requirements during the implementation.
 
-2.5.1     System Security Features
+3.5.1     System Security Features
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Mattermost platform will be secured in the following ways:
@@ -296,54 +296,54 @@ The Mattermost platform will be secured in the following ways:
 
 **Reference**: https://docs.mattermost.com/overview/security.html
 
-2.5.2     Security During Implementation
+3.5.2     Security During Implementation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This section addresses security issues specifically related to the implementation effort, if any. For example, if LAN servers or workstations will he installed at a site with sensitive data preloaded on non-removable hard disk drives, address how security would be provided for the data on these devices during shipping, transport, and installation because theft of the devices could compromise the sensitive data.
 
 ---
 
-3        IMPLEMENTATION SUPPORT
+4        IMPLEMENTATION SUPPORT
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This section describes the support software, materials, equipment, and facilities required for the implementation, as well as the personnel requirements and training necessary for the implementation.  The information provided in this section is not site-specific.  If there are additional support requirements not covered by the subsequent sections, others may be added as needed.
 
-3.1      Hardware, Software, Facilities, and Materials
+4.1      Hardware, Software, Facilities, and Materials
 .........................................
 
 In this section, list support software, materials, equipment, and facilities required for the implementation, if any.
 
-3.1.1     Hardware
+4.1.1     Hardware
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-This section provides a list of support equipment and includes all hardware used for testing time implementation.  For example, if a client/server database is implemented on a LAN, a network monitor or “sniffer” might be used, along with test programs. to determine the performance of the database and LAN at high-utilization rates.  If the equipment is site-specific, list it in Section 4, Implementation Requirements by Site.
+This section provides a list of support equipment and includes all hardware used for testing time implementation.  For example, if a client/server database is implemented on a LAN, a network monitor or “sniffer” might be used, along with test programs. to determine the performance of the database and LAN at high-utilization rates.  If the equipment is site-specific, list it in Section 5, Implementation Requirements by Site.
 
-3.1.2     Software
+4.1.2     Software
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 This section provides a list of software and databases required to support the implementation. Identify the software by name, code, or acronym.  Identify which software is commercial off-the-shelf and which is State-specific.  Identify any software used to facilitate the implementation process.  If the software is site-specific, list it in Section 4.
 
-3.1.3     Facilities
+4.1.3     Facilities
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 In this section, identify the physical facilities and accommodations required during implementation.  Examples include physical workspace for assembling and testing hardware components, desk space for software installers, and classroom space for training the implementation stall.  Specify the hours per day needed, number of days, and anticipated dates. If the facilities needed are site-specific, provide this information in Section 4, Implementation Requirements by Site.
 
-3.1.4     Material
+4.1.4     Material
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 This section provides a list of required support materials, such as magnetic tapes and disk packs.
 
-3.2      Personnel
+4.2      Personnel
 .........................................
 
 This section describes personnel requirements and any known or proposed staffing requirements, if appropriate.  Also describe the training, if any, to be provided for the implementation staff.
 
-3.2.1     Personnel Requirements and Staffing
+4.2.1     Personnel Requirements and Staffing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In this section, describe the number of personnel, length of time needed, types of skills, and skill levels for the staff required during the implementation period.  If particular staff members have been selected or proposed for the implementation, identify them and their roles in the implementation.
 
-3.2.2     Training of Implementation Staff
+4.2.2     Training of Implementation Staff
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This section addresses the training, if any, necessary to prepare staff for implementing and maintaining the system; it does not address user training, which is the subject of the Training Plan.  Describe the type and amount of training required for each of the following areas, if appropriate, for the system:
@@ -358,12 +358,12 @@ If training will be provided by one or more commercial vendors, identify them, t
  
 If the training will be provided by State staff, provide the course name(s) and an outline of the content of each course.  Identify the resources, support materials, and proposed instructors required to teach the course(s).
 
-3.3      Performance Monitoring (E20)
+4.3      Performance Monitoring (E20)
 .........................................
 
-This section describes the performance monitoring tool and techniques and how it will be used to help decide if the implementation is successful.
+This section describes the performance monitoring tool and techniques and how it will be used to help decide if the implementation is successful: https://docs.mattermost.com/deployment/metrics.html
 
-3.4      Configuration Management Interface
+4.4      Configuration Management Interface
 .........................................
 
 This section describes the interactions required with the Configuration Management (CM) representative on CM-related issues, such as when software listings will be distributed, and how to confirm that libraries have been moved from the development to the production environment.
