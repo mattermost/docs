@@ -103,12 +103,10 @@ Release date: 2018-02-16
   - RestrictPublicChannelDeletion
   - RestrictPrivateChannelDeletion
   - RestrictPrivateChannelManageMembers
-  - RestrictPostDelete
   - EnableTeamCreation
   - EnableOnlyAdminIntegrations
   - RestrictPostDelete
   - AllowEditPost
-  - EnableOnlyAdminIntegrations
   - RestrictTeamInvite
   - RestrictCustomEmojiCreation
 
