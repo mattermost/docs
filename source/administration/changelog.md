@@ -37,11 +37,10 @@ Release date: 2018-02-16
 ### Improvements
 
 #### Web User Interface
- - Added a status icon in the channel member list and sorted it by user's status.
- - Added ability to preview image links in a similar way that image links uploaded from Mattermost can be previewed.
+ - Added a status icon in the channel member list and sorted it by user status.
+ - Added ability to preview images found in link previews.
  - Added a `Copy Link` option for sidebar channels in the Desktop App.
- - Added focus on the input box after hitting "Edit" for one of the Account Settings options.
- - Custom emojis are now loaded asynchronously in posts for the webapp, for increased performance.
+ - Added focus on the text box after hitting "Edit" on Account Settings options.
  - Improved formatting of quotes in the channel header.
  - Added a date separator for search results.
  
@@ -54,15 +53,14 @@ Release date: 2018-02-16
  - Added paging and search of custom emojis to webapp emoji picker.
 
 #### Channels
- - Users are directed to the last channel they viewed in another team when switching to the other team.
- - Changed URLs of Direct Messages to use the form of `https://servername.com/messages/@username`, letting users open a direct message with another user using the URL format.
+ - Users are directed to the last channel they viewed in a team when switching to that team.
+ - Changed URLs of Direct Messages to use the form of `https://servername.com/messages/@username`, letting users open a direct message with each other via URL.
  
 #### Notifications
- - Added a post change channel privacy system message when a team is changed from public to private.
- - Made system messages always use "User did something" instead of "User has done something" for consistency.
+ - Added a system message when a team is changed from public to private.
 
 #### Plugins (Beta)
- - Zoom plugin now supports an on-premise Zoom server.
+ - Zoom plugin now supports on-premise Zoom servers.
 
 #### Enterprise Edition
 - Increased max length of `User.Position` field to 128 characters to meet LDAP max length.
@@ -71,35 +69,21 @@ Release date: 2018-02-16
 ### Bug Fixes
  - Fixed an issue where OAuth account creation error page was unformatted.
  - Fixed tab and alt-tab keyboard navigation for links on sign-in page.
- - Fixed active state for dropdown for channel header options.
- - Fixed an issue where `ExperimentalEnableDefaultChannelLeaveJoinMessages` set to false still posted in town-square when user left a team.
  - Fixed an issue where plugin slash commands didn't override username or icon.
  - Fixed an issue where pagination for team members modal showed a next button when there are no more users to show.
  - Fixed an issue where at-channel in `/header` should not trigger confirmation modal.
  - Fixed an issue where auto-generated SAML Service provider login URL had two slashes instead of one.
  - Fixed an issue where no unread mention appeared on non-mobile platform after receiving push notification.
- - Fixed an issue where emoji posted in center channel doesn't appear in Recently Used in emoji picker.
- - Fixed an issue where the text box was hidden by the keyboard when replying to a post.
+ - Fixed an issue where the text box was hidden by the keyboard when replying to a post in mobile view.
  - Fixed username autocomplete not working with mixed cases.
- - Fixed an issue where reply arrow was on a second line.
  - Fixed not being able to type Korean quickly in some dialogs.
  - Fixed an issue where notification preference settings didn't respect case sensitivity for mention highlighting.
  - Fixed where, after an ephemeral message, couldn't use `+:emoji:` to react to the previous message.
  - Fixed Mattermost not loading on Firefox if the `media.peerconnection.enabled` setting in Firefox is set to false.
  - Fixed login screen sometimes flashing before Mattermost server loads.
- - Fixed an issue where leaving channel in one tab redirected other channels on other tabs to Town Square as well.
- - Fixed error code/message and panic when creating post with bad props.
  - Fixed an issue where bot messages from the Zoom plugin ignored the Zoom API URL field for on-prem Zoom servers.
- - Updated initial scrolling on post list.
- - Fixed a problem with the last version of webrtc-adapter.
- - Fixed case sensitive mention highlighting.
- - Disabled remove button after the first click to prevent multiple request.
  - Disabled pull-to-refresh feature on Android (Chrome) to prevent unwanted page refresh.
- - Fixed an issue with missing validation when an invalid credential was used.
  - Fixed an issue where clicking `Save` in `Rename Channel` modal without changes did nothing.
- - Fixed an issue where pasting files into a channel didn't work.
- - Fixed an issue where Mattermost crashed when posting a code snippet containing white space.
- - Fixed an issue where a validation error message did not get cleared when switching between creating a private/public channel.
  - Fixed emoji picker search being case-sensitive.
  - Fixed timestamp not being clickable in desktop mobile view.
  - Fixed an issue where deleting a team via the API broke the web user interface.
@@ -110,8 +94,23 @@ Release date: 2018-02-16
 
 - All API v3 endpoints have been deprecated, and scheduled for removal in Mattermost v5.0.
 - The `mentionKeys` prop in post type plugins is now removed to fix case sensitive mention highlighting. Plugins can retrieve the `mentionKeys` prop from the store as needed.
-
-Note that the permanent query parameter of the DELETE `/teams/{team_id}` APIv4 endpoint is not removed as previously announced, given customer and community feedback.
+- The permanent query parameter of the DELETE `/teams/{team_id}` APIv4 endpoint is not removed as previously announced, given customer and community feedback.
+- As Mattermost moves to a role based permissions system in v4.8, a number of configuration settings will be migrated to roles in the database, and changing their `config.json` values will no longer take effect. These permissions can still be modified by their respective System Console settings. The `config.json` settings to be migrated are:
+  - RestrictPublicChannelManagement
+  - RestrictPrivateChannelManagement
+  - RestrictPublicChannelCreation
+  - RestrictPrivateChannelCreation
+  - RestrictPublicChannelDeletion
+  - RestrictPrivateChannelDeletion
+  - RestrictPrivateChannelManageMembers
+  - RestrictPostDelete
+  - EnableTeamCreation
+  - EnableOnlyAdminIntegrations
+  - RestrictPostDelete
+  - AllowEditPost
+  - EnableOnlyAdminIntegrations
+  - RestrictTeamInvite
+  - RestrictCustomEmojiCreation
 
 #### config.json
 
@@ -120,8 +119,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Changes to Team Edition and Enterprise Edition:
 
  - Under `ServiceSettings` in `config.json`:
-    - Added `"ImageProxyType": ""`, `"ImageProxyOptions": ""`, and `"ImageProxyURL": ""` to ensure posts served to the client will have their markdown modified such that all images are loaded through a proxy when these keys are configured.
-    - Added `"ExperimentalGroupUnreadChannels": true` as `default_on` or `"ExperimentalGroupUnreadChannels": false` as `disabled` settings to show an unread channel section in the webapp sidebar.
+    - Added `"ImageProxyType": ""`, `"ImageProxyOptions": ""`, and `"ImageProxyURL": ""` to ensure posts served to the client will have their markdown modified such that all images are loaded through a proxy.
+    - Added `"ExperimentalGroupUnreadChannels": disabled` to show an unread channel section in the webapp sidebar.
     - Added `"ExperimentalEnableDefaultChannelLeaveJoinMessages": true` that allows disabling of leave/join messages in the default channel, usually Town Square.
  - Under `RateLimitingSettings` in `config.json`:
     - Added `"VaryByUser": false`, a user-based rate limiting, to rate limit on token and on userID.
