@@ -41,9 +41,9 @@ service provider to learn more about what options are supported.
 Setup Guide
 ~~~~~~~~~~~~~~~~~
 
-This guide gives an example of how to set up an image proxy.
+This guide gives an example of how to set up an image proxy using `atmos/camo`:
 
-First, deploy a `atmos/camo` (https://github.com/atmos/camo) instance to image-proxy.mattermost.com and update the 
+Deploy an `atmos/camo` (https://github.com/atmos/camo) instance to image-proxy.mattermost.com and update the 
 configuration in the system console. For example:
  - "ImageProxyType": "atmos/camo",
  - "ImageProxyURL": "https://image-proxy.mattermost.com",
