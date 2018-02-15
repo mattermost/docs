@@ -118,24 +118,24 @@ For other troubleshooting tips for WebSocket errors, see `potential solutions he
 
 2. Restart the Mattermost Docker containers
 
-    .. code-block:: none
+  .. code-block:: none
 
-      docker-compose stop app
-      docker-compose start app
+    docker-compose stop app
+    docker-compose start app
 
 .. tip :: There is no need to run the 'web' container, since NGINX proxy accepts incoming requests.
 
 3. Update your docker-compose.yml file to include a new environment variable ``VIRTUAL_HOST`` and an ``expose`` directive.
 
-    .. code-block:: none
+  .. code-block:: none
 
-      environment:
-        # set same as db credentials and dbname
-        - MM_USERNAME=mmuser
-        - MM_PASSWORD=mmuser_password
-        - MM_DBNAME=mattermost
-        - VIRTUAL_HOST=mymattermost.tld
-      expose:
+    environment:
+      # set same as db credentials and dbname
+      - MM_USERNAME=mmuser
+      - MM_PASSWORD=mmuser_password
+      - MM_DBNAME=mattermost
+      - VIRTUAL_HOST=mymattermost.tld
+    expose:
       - "80"
 
 If you are using SSL, you may also need to expose port 443. 
