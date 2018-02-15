@@ -1,6 +1,6 @@
 image:
-  repository: registry
-  tag: '2.6'
+  repository: registry.gitlab.com/gitlab-org/build/cng/registry
+  tag: '2.6.2-with-patch'
   pullPolicy: 'IfNotPresent'
 service:
   name: registry
