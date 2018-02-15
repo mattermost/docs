@@ -318,7 +318,7 @@ Allows for leave/join messages to be created in the default channel.
 **False**: Leave/join messages will not be created in the database for the default channel.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableDefaultChannelLeaveJoinMessages": true`` with options ``true`` and ``false`` for above settings respectively.          |
+| This feature's ``config.json`` setting is ``"EnableDefaultChannelLeaveJoinMessages": true`` with options ``true`` and ``false`` for above settings respectively.     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Teammate Name Display
@@ -3446,11 +3446,11 @@ Enable Preview Features (Experimental)
 Group Unread Channels (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Disabled**: Unread channels section is disabled and hidden in the account settings.
+**Disabled**: Unread channels section is disabled for all users.
  
-**Default On**:  Enables the unread channels by default. Can be turned off in the account settings.
+**Default On**:  Enables the unread channels sidebar section by default. Users can turned it off in **Account Settings** > **Sidebar**.
 
-**Default Off**: Disables the unread channels by default. Can be turned on in the account settings.
+**Default Off**: Disables the unread channels sidebar section by default. Users can turned it on in **Account Settings** > **Sidebar**.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"ExperimentalGroupUnreadChannels": true`` as ``default_on`` or `"ExperimentalGroupUnreadChannels": false` as ``disabled``.                   |
