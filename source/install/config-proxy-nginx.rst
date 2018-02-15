@@ -87,9 +87,9 @@ NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory
 Now that NGINX is installed and running, you can configure it to use SSL, which allows you to use HTTPS connections and the HTTP/2 protocol.
 
 **NGINX Configuration FAQ**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Why are Websocket connections returning a 403 error?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Why are Websocket connections returning a 403 error?**
 
 This is likely due to a failing cross-origin check. A check is applied for WebSocket code to see if the ``Origin`` header is the same as the host header. If it's not, a 403 errors is returned.
 
@@ -106,8 +106,7 @@ You may need to add variants of the host name that clients may call. Your NGINX 
 
 For other troubleshooting tips for WebSocket errors, see `potential solutions here <https://docs.mattermost.com/install/troubleshooting.html#please-check-connection-mattermost-unreachable-if-issue-persists-ask-administrator-to-check-websocket-port>`_.
 
-How do I setup an NGINX proxy with the Mattermost Docker installation?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**How do I setup an NGINX proxy with the Mattermost Docker installation?**
 
 1. Find the name of the Mattermost network and connect it to the NGINX proxy:
 
@@ -141,8 +140,7 @@ How do I setup an NGINX proxy with the Mattermost Docker installation?
 
 If you are using SSL, you may also need to expose port 443. 
 
-Why does NGINX fail when installing Gitlab CE with Mattermost on Azure?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Why does NGINX fail when installing Gitlab CE with Mattermost on Azure?**
 
 You may need to update the Callback URLs for the Application entry of Mattermost inside your Gitlab instance.
 
