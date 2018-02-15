@@ -24,7 +24,7 @@ iOS and Android
 
 Install the following prerequisite software to develop and build the iOS or Android apps. For macOS, we recommend using `Homebrew <https://brew.sh/>`_ as a package manager.
 
-1. Install `NodeJS <https://nodejs.org/en/>`_.
+1. Install `NodeJS <https://nodejs.org/en/>`_. (minimum required version is 9.3.0)
  - To install using Homebrew open a terminal and execute
  .. code-block:: bash
 
@@ -33,18 +33,18 @@ Install the following prerequisite software to develop and build the iOS or Andr
  - Install using NVM by following the instructions  `here <https://github.com/creationix/nvm#install-script>`_
  - Download and install the package from the `NodeJS website <https://nodejs.org/en/>`_
 
-2. Install `Watchman <https://facebook.github.io/watchman/>`_.
+2. Install `Watchman <https://facebook.github.io/watchman/>`_. (minimum required version is 4.9.0)
  - To install using Homebrew open a terminal and execute
  .. code-block:: bash
 
     $ brew install watchman
 
-3. Assuming that you already have NodeJS installed, you can now use **npm** to install `React Native CLI Tools <http://facebook.github.io/react-native/docs/understanding-cli.html>`_ globally
+3. Assuming that you already have NodeJS installed, you can now use **npm** to install `React Native CLI Tools <http://facebook.github.io/react-native/docs/understanding-cli.html>`_ globally (minimum required version is 2.0.1)
  .. code-block:: bash
 
     $ npm -g install react-native-cli
 
-4. Install yarn (used as our package manager for the mobile apps)
+4. Install yarn (used as our package manager for the mobile apps, recommended version is 1.3.2)
  - To install using Homebrew open a terminal and execute
  .. code-block:: bash
 
@@ -65,8 +65,8 @@ Install the following prerequisite software to develop and build the iOS or Andr
 iOS
 ~~~~~~~~~~~~~~~~~~~
 
-1. Install `Xcode <https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12>`_ to build and run the app on iOS.
-2. Install `Cocoapods <https://cocoapods.org/>`_ using the ``gem`` method. You'll need it to install the project’s iOS dependencies.
+1. Install `Xcode <https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12>`_ to build and run the app on iOS. (minimum required version is 9.0)
+2. Install `Cocoapods <https://cocoapods.org/>`_ using the ``gem`` method. You'll need it to install the project’s iOS dependencies. (required version is 1.3.1)
 
 Android
 ~~~~~~~~~~~~~~~~~~~
