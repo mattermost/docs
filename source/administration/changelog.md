@@ -108,7 +108,6 @@ Release date: 2018-02-16
   - RestrictPostDelete
   - AllowEditPost
   - RestrictTeamInvite
-  - RestrictCustomEmojiCreation
 
 #### config.json
 
