@@ -115,7 +115,7 @@ No, each user is created on their first login.
 
 ##### When I try to synchronize AD/LDAP, why does the Status show as ``Pending`` and not complete? 
 
-Go to **System Console > AD/LDAP** and make sure that the **Enable Synchronization with AD/LDAP** setting is set to ``true``.
+Go to **System Console > AD/LDAP** and make sure that the **Enable Synchronization with AD/LDAP** setting is set to ``true``.  If the issue persists, try performing a sync with the **User Filter** field blank. If the sync completes in this scenario, then the general syntax was formatted incorrectly. Refer to this [document](https://docs.mattermost.com/administration/config-settings.html#user-filter) for guidance on setting a correct syntax format.
 
 ##### If I want to add people to channels, can I pre-create users somehow? 
 
