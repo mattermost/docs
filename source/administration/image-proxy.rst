@@ -19,9 +19,7 @@ loaded through a proxy.
 Image Proxy Type
 ........................
 
-Configure an image proxy to load all Markdown images through a proxy. The image proxy prevents users from making 
-insecure image requests to Mattermost, provides caching for increased performance, and automates image adjustments 
-such as resizing.
+Configure an image proxy to load all Markdown images through a proxy. The image proxy prevents users from making insecure image requests to third-party sites and provides caching for increased performance.
 
 Image Proxy URL
 ........................
@@ -31,7 +29,7 @@ URL of your image proxy server.
 Image Proxy Options
 ........................
 
-Additional options for basic image adjustments such as resizing, cropping and rotation. Contact your image proxy 
+Additional options for basic image adjustments such as the URL signing key. Contact your image proxy 
 service provider to learn more about what options are supported.
 
 Setup Guide
