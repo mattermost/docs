@@ -33,12 +33,31 @@ gcloud
 gsutil 4.28
 kubectl
 ```
+### Kubectl
+
+The [gcloud][] sdk & command contains `kubectl` binary. If you are not using gcloud,
+you can setup kubectl using the installation documentation for [kubectl][].
+
+At the time of writing this doc, the output of `kubectl version`:
+
+```
+Client Version: version.Info{Major:"1", Minor:"8", GitVersion:"v1.8.2", GitCommit:"bdaeafa71f6c7c04636251031f93464384d54963", GitTreeState:"clean", BuildDate:"2017-10-24T19:48:57Z", GoVersion:"go1.8.3", Compiler:"gc", Platform:"linux/amd64"}
+Unable to connect to the server:
+```
+
+> Note: The server version of kubectl cannot be obtained until we connect to a
+cluster. Proceed with setting up Helm.
+
+### Helm
+
+Follow the [helm][] document for installation instructions.
+
 
 ## Install with defaults
 
 Google Cloud SDK is a dependency of this script, you will have to make sure it is set up correctly in order for the script to work. Follow the [instructions](../helm/README.md#connect-to-the-cluster) for connecting your GKE cluster.
 
-The [scripts/gke_bootstrap_script.sh](../../scripts/gke_bootstrap_script.sh) script creates a new GKE cluster, sets up kubectl to connect to it and has helm installed and initialized.
+The [scripts/gke_bootstrap_script.sh](../../scripts/gke_bootstrap_script.sh) script creates a new GKE cluster, sets up kubectl to connect to it and initializes helm.
 
 The script reads various parameters from environment variables and an argument `up` or `down` for bootstrap and clean up respectively.
 
@@ -67,33 +86,6 @@ The script can also be used to clean up the created GKE resources by running
 PROJECT=<gcloud project id> ./scripts/gke_bootstrap_script.sh down
 ```
 > *Note:* You need to be logged into your account using gcloud before running the bootstrap script
-
- Skip the Custom Install section if you used the script.
-
-## Custom Install
-
-### Kubectl
-
-Skip this if you ran the above install with defaults script
-
-The [gcloud][] sdk & command contains `kubectl` binary. If you are not using gcloud,
-you can setup kubectl using the installation documentation for [kubectl][].
-
-At the time of writing this doc, the output of `kubectl version`:
-
-```
-Client Version: version.Info{Major:"1", Minor:"8", GitVersion:"v1.8.2", GitCommit:"bdaeafa71f6c7c04636251031f93464384d54963", GitTreeState:"clean", BuildDate:"2017-10-24T19:48:57Z", GoVersion:"go1.8.3", Compiler:"gc", Platform:"linux/amd64"}
-Unable to connect to the server:
-```
-
-> Note: The server version of kubectl cannot be obtained until we connect to a
-cluster. Proceed with setting up Helm.
-
-### Helm
-
-Skip this if you ran the above install with defaults script
-
-Follow the [helm][] document for installation instructions.
 
 # Next Steps
 
