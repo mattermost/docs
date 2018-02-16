@@ -8,6 +8,26 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 Release date: 2018-03-16
 
+## Highlights
+
+### GlobalRelay (?)
+
+ - Added username to the queries that select compliance export data out of the database that is used in GlobalRelay exports.
+
+## Improvements
+
+ - Updated incoming webhooks to accept multipart/form-data content type such as that supplied by `curl -F`.
+ - Added unit tests for `SetRolePermissionsFromConfig` function in the server using JSON to ensure that what the server does in the migration for any combination of config values is consistent with what the System Console is expecting.
+ - Post a system message when a channel is moved between teams by the CLI command.
+ - Investigate improving caching for `getRootPosts`.
+ 
+## Bug Fixes
+
+ - Fixed when clicking on the link preview title, a child window will pop up instead of default browser.
+ - Markdown parsing crash (dos) on empty image url.
+ - Fixed can join a team with email invite link after regenerating the invite code.
+ - Fixed generic push notifications in GM channels always say "User has mentioned you".
+
 
 ## Release v4.7
 
