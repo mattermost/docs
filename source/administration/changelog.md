@@ -4,9 +4,162 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
+## Release v4.7
+
+Release date: 2018-02-16
+
+### Security Update
+
+- Mattermost v4.7.0 contains multiple security fixes ranging from low to high severity. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+
+### Highlights
+
+#### Client-Side Performance
+
+ - Added user-based rate limiting, in addition to rate limiting API access by IP address.
+ - Decreased page load time by loading custom emojis asynchronously rather than all on first page load.
+ - Optimized channel autocomplete (~) query by returning client-side results immediately.
+ - Decreased the size of most image assets by more than 25% by running `pngquant` to remove unnecessary metadata from PNGs.
+
+#### Image Proxy Support
+
+ - Image proxy servers increase performance through a layer of caching, and provide custom options to resize images.
+ - Three new configuration keys, `ImageProxyType`, `ImageProxyURL`, `ImageProxyOptions`, ensure that posts served to the client will have their markdown modified such that all images are loaded through a proxy.
+
+#### Updated Image Thumbnails
+
+ - Updated the appearance of image thumbnails, so that single thumbnails will now expand to a larger preview without clicking the image to open the preview window.
+
+#### Experimental Setting for Unreads Sidebar Section
+
+ - Added an experimental setting to group unread channels in the channel sidebar.
+
+### Improvements
+
+#### Web User Interface
+ - Added a status icon in the channel member list and sorted it by user status.
+ - Added ability to preview images found in link previews.
+ - Added a `Copy Link` option for sidebar channels in the Desktop App.
+ - Added focus on the text box after hitting "Edit" on Account Settings options.
+ - Improved formatting of quotes in the channel header.
+ - Added a date separator for search results.
+ 
+ #### Integrations
+ - Added username and profile picture to incoming webhook set up pages.
+ - Added support for Slack attachments in outgoing webhook responses.
+
+#### Emoji Picker
+ - Added the ability to navigate emoji picker with the keyboard.
+ - Added paging and search of custom emojis to webapp emoji picker.
+
+#### Channels
+ - Users are directed to the last channel they viewed in a team when switching to that team.
+ - Changed URLs of Direct Messages to use the form of `https://servername.com/messages/@username`, letting users open a direct message with each other via URL.
+ 
+#### Notifications
+ - Added a system message when a team is changed from public to private.
+
+#### Plugins (Beta)
+ - Zoom plugin now supports on-premise Zoom servers.
+
+#### Enterprise Edition
+- Increased max length of `User.Position` field to 128 characters to meet LDAP max length.
+- Increased OAuth state parameter limit. Some systems may send a state longer than 128 characters.
+
+### Bug Fixes
+ - Fixed an issue where OAuth account creation error page was unformatted.
+ - Fixed tab and alt-tab keyboard navigation for links on sign-in page.
+ - Fixed an issue where plugin slash commands didn't override username or icon.
+ - Fixed an issue where pagination for team members modal showed a next button when there are no more users to show.
+ - Fixed an issue where at-channel in `/header` should not trigger confirmation modal.
+ - Fixed an issue where auto-generated SAML Service provider login URL had two slashes instead of one.
+ - Fixed an issue where no unread mention appeared on non-mobile platform after receiving push notification.
+ - Fixed an issue where the text box was hidden by the keyboard when replying to a post in mobile view.
+ - Fixed username autocomplete not working with mixed cases.
+ - Fixed not being able to type Korean quickly in some dialogs.
+ - Fixed an issue where notification preference settings didn't respect case sensitivity for mention highlighting.
+ - Fixed where, after an ephemeral message, couldn't use `+:emoji:` to react to the previous message.
+ - Fixed Mattermost not loading on Firefox if the `media.peerconnection.enabled` setting in Firefox is set to false.
+ - Fixed login screen sometimes flashing before Mattermost server loads.
+ - Fixed an issue where bot messages from the Zoom plugin ignored the Zoom API URL field for on-prem Zoom servers.
+ - Disabled pull-to-refresh feature on Android (Chrome) to prevent unwanted page refresh.
+ - Fixed an issue where clicking `Save` in `Rename Channel` modal without changes did nothing.
+ - Fixed emoji picker search being case-sensitive.
+ - Fixed timestamp not being clickable in desktop mobile view.
+ - Fixed an issue where deleting a team via the API broke the web user interface.
+ 
+### Compatibility
+
+#### Removed and Deprecated Features
+
+- All API v3 endpoints have been deprecated, and scheduled for removal in Mattermost v5.0.
+- The `mentionKeys` prop in post type plugins is now removed to fix case sensitive mention highlighting. Plugins can retrieve the `mentionKeys` prop from the store as needed.
+- The permanent query parameter of the DELETE `/teams/{team_id}` APIv4 endpoint is not removed as previously announced, given customer and community feedback.
+- As Mattermost moves to a role based permissions system in v4.8, a number of configuration settings will be migrated to roles in the database, and changing their `config.json` values will no longer take effect. These permissions can still be modified by their respective System Console settings. The `config.json` settings to be migrated are:
+  - RestrictPublicChannelManagement
+  - RestrictPrivateChannelManagement
+  - RestrictPublicChannelCreation
+  - RestrictPrivateChannelCreation
+  - RestrictPublicChannelDeletion
+  - RestrictPrivateChannelDeletion
+  - RestrictPrivateChannelManageMembers
+  - EnableTeamCreation
+  - EnableOnlyAdminIntegrations
+  - RestrictPostDelete
+  - AllowEditPost
+  - RestrictTeamInvite
+  - RestrictCustomEmojiCreation
+
+#### config.json
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+
+ - Under `ServiceSettings` in `config.json`:
+    - Added `"ImageProxyType": ""`, `"ImageProxyOptions": ""`, and `"ImageProxyURL": ""` to ensure posts served to the client will have their markdown modified such that all images are loaded through a proxy.
+    - Added `"ExperimentalGroupUnreadChannels": disabled` to show an unread channel section in the webapp sidebar.
+    - Added `"ExperimentalEnableDefaultChannelLeaveJoinMessages": true` that allows disabling of leave/join messages in the default channel, usually Town Square.
+ - Under `RateLimitingSettings` in `config.json`:
+    - Added `"VaryByUser": false`, a user-based rate limiting, to rate limit on token and on userID.
+
+### API Changes
+
+ - It is required that any new integrations use API v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
+ - All API v3 endpoints have been deprecated, and scheduled for removal in Mattermost v5.0.
+
+#### RESTful API v4 Changes
+
+ - Added `GetChannelByName` and `GetTeamByName` to auto lowercase team and channel names in API requests. This ensures that the channel name is automatically lowercased for endpoints taking team or channel names as URL parameters.
+ - Added `POST /emoji/search`, `GET /emojis/name/{emoji_name}`, and `GET /emoji/autocomplete` to add consistency with user search/autocomplete endpoints. These API endpoints ensure that the benefits of `GET` for important performance related actions such as autocompleting are included.
+ - Added `/users/tokens/search` to allow System Admin to be able to find, manage and revoke personal access tokens as needed. This endpoint gets all tokens for all users if one has the `manage_system` permission.
+
+### WebSocket Event Changes
+
+ - Added `delete_team` web socket event to notify client whenever a team is deleted (e.g. via API call).
+
+### Known Issues
+
+- Google login fails on the Classic mobile apps.
+- User can receive a video call from another browser tab while already on a call.
+- Jump link in search results does not always jump to display the expected post.
+- Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+- Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+- Searching with Elasticsearch enabled may not always highlight the searched terms.
+- Team sidebar on desktop app does not update when channels have been read on mobile.
+- Channel scroll position flickers while images and link previews load.
+- CTRL/CMD+U shortcut to upload a file doesn't work on Firefox.
+- Numbered lists can sometimes extend beyond the normal post area.
+- Slack import through the CLI fails if email notifications are enabled.
+- Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+
+### Contributors
+
+[amyblais](https://github.com/amyblais), [AndersonWebStudio](https://github.com/AndersonWebStudio), [andruwa13](https://github.com/andruwa13), [asaadmahmood](https://github.com/asaadmahmood), [bbodenmiller](https://github.com/bbodenmiller), [Brunzer](https://github.com/Brunzer), [ccbrown](https://github.com/ccbrown), [chclaus](https://github.com/chclaus), [cherniavskii](https://github.com/cherniavskii), [CometKim](https://github.com/CometKim), [coreyhulen](https://github.com/coreyhulen), [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [csduarte](https://github.com/csduarte), [cvitter](https://github.com/cvitter), [darkman](https://github.com/darkman), [der-test](https://github.com/der-test), [dlahn](https://github.com/dlahn), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [fermulator](https://github.com/fermulator), [gig177](https://github.com/gig177), [grundleborg](https://github.com/grundleborg), [Hanzei](https://github.com/Hanzei), [hmhealey](https://github.com/hmhealey), [it33](https://github.com/it33), [james-mm](https://github.com/james-mm), [jarredwitt](https://github.com/jarredwitt), [jasonblais](https://github.com/jasonblais), [jespino](https://github.com/jespino), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kemenaran](https://github.com/kemenaran), [knechtionscoding](https://github.com/knechtionscoding), [laginha87](https://github.com/laginha87), [lasley](https://github.com/lasley), [letsila](https://github.com/letsila), [lfbrock](https://github.com/lfbrock), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lindy65](https://github.com/lindy65), [liusy182](https://github.com/liusy182), [Matterchen](https://github.com/Matterchen), [mkraft](https://github.com/mkraft), [MusikPolice](https://github.com/MusikPolice), [phuihock](https://github.com/phuihock), [pichouk](https://github.com/pichouk), [Rohlik](https://github.com/Rohlik), [R-Wang97](https://github.com/R-Wang97), [santos22](https://github.com/santos22), [saturninoabril](https://github.com/saturninoabril), [stephenkiers](https://github.com/stephenkiers), [sudheerDev](https://github.com/sudheerDev), [tayre](https://github.com/tayre), [tejasbubane](https://github.com/tejasbubane), [tkbky](https://github.com/tkbky), [Tristramg](https://github.com/Tristramg), [ulm0](https://github.com/ulm0), [watadarkstar](https://github.com/watadarkstar), [xuxip](https://github.com/xuxip), [yeoji](https://github.com/yeoji), [yuya-oc](https://github.com/yuya-oc)
+
 ## Release v4.6
 
-Release date: 2017-01-16
+Release date: 2018-01-16
 
 ### Highlights
 
