@@ -21,7 +21,7 @@ Configuring CloudFront to host Mattermost static assets
    g. Select ``Custom SSL Certificate`` and set the certificate for your domain.
    h. Set Default Root Object to ``/static/root.html``.
 
-6. After creating your distribution. You need to add an aditional origin. Select the origins tab and create an origin. Set the origin domain name to your Mattermost load balancer.
+6. After creating your distribution. You need to add an additional origin. Select the origins tab and create an origin. Set the origin domain name to your Mattermost load balancer.
 7. Next, create a behavior. 
 
    a. Set the Path Pattern to ``/api/*``.
@@ -38,7 +38,7 @@ Configuring CloudFront to host Mattermost static assets
    d. Set HTTP Response Code to ``200``.
    e. Repeat the above steps for HTTP Error Code 404.
 
-9. Now you can set up the domain you want Mattermost to be served from to point to your CoudFront distribution.
+9. Now you can set up the domain you want Mattermost to be served from to point to your CloudFront distribution.
 10. Finally, set these Mattermost ``config.json`` settings:
 
     a. SiteURL: ``https://mattermost.example.com``
