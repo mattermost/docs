@@ -17,7 +17,7 @@ text.
 
 **Format your messages** using Markdown that supports text styling,
 headings, links, emoticons, code blocks, block quotes, tables, lists and
-in-line images.
+in-line images
 
 .. image:: ../../images/messagesTable1.PNG
    :alt: markdown
