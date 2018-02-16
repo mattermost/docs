@@ -7,7 +7,7 @@ Configuring CloudFront to host Mattermost's static assets allows for improved ca
 
 1. Create an S3 bucket using your desired domain. In our example it will be mattermost.example.com.
 2. Enable static hosting for your S3 bucket.
-3. From the Mattermost distribution, upload the ``client`` directory to S3. Rename it to ``static``. You can use the AWS CLI command below from within the ``client`` directory. Note that the files are publicly readable, so be careful how you do it.
+3. From the Mattermost distribution, upload the ``client`` directory to S3 and rename it to ``static``. You can use the AWS CLI command below from within the ``client`` directory  to upload all the files to S3. The files must be publicly readable with the permission ``public-read``.
 
     ``aws s3 cp --acl public-read --recursive . s3://static.spinmint.com/static/``
 
@@ -40,7 +40,7 @@ Configuring CloudFront to host Mattermost's static assets allows for improved ca
    d. Set HTTP Response Code to ``200``.
    e. Repeat the above steps for HTTP Error Code 404.
 
-9. Now you can set up the domain you want Mattermost to be served from to point to your CloudFront distribution.
+9. Now you can set up the domain you want Mattermost to be served from to point to your CloudFront distribution. Setting up this domain is beyond the scope of this guide.
 10. Finally, set these Mattermost ``config.json`` settings:
 
     a. SiteURL: ``https://mattermost.example.com``
@@ -48,7 +48,9 @@ Configuring CloudFront to host Mattermost's static assets allows for improved ca
     c. AllowCorsFrom: ``https://mattermost.example.com``
     d. AllowCookiesForSubdomains: ``true``
 
+Upgrade Notes
+~~~~~~~~~~~~~~~
 
-** Upgrade Notes **
+When you upgrade your Mattermost app servers, you will need to re-upload the new client to your S3 bucket (see step 3 above).
 
-When you upgrade your Mattermost app servers you will need to re-upload the new client to your S3 bucket. (step 3 above) You should also run a CloudFront invalidation for ``/static/root.html``. You can do this in the console under the invalidations tab. 
+You should also run a CloudFront invalidation for ``/static/root.html``. You can do this in the console under the invalidations tab. 
