@@ -2150,7 +2150,7 @@ Includes three configuration keys: `ImageProxyType`, `ImageProxyURL` and `ImageP
 .. _documentation: https://docs.mattermost.com/administration/image-proxy
 
 +---------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ImageProxyType": ""``, ``"ImageProxyURL": ""`` and ``"ImageProxyOptions": ""`` with string input.     |
+| This feature's ``config.json`` setting is ``"ImageProxyType": ""``, ``"ImageProxyURL": ""`` and ``"ImageProxyOptions": ""`` with string input.      |
 +---------------------------------------------------------------------------------------------------------------------+
 
 Maximum File Size
@@ -2495,9 +2495,9 @@ Vary rate limit by user
 
 **False**: Rate limiting does not vary by user authentication token.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"VaryByUser": false`` with options ``true`` and ``false`` for above settings respectively.                          |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"VaryByUser": false`` with options ``true`` and ``false`` for above settings respectively.                              |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ________
 
 
@@ -3451,9 +3451,9 @@ Enable Preview Features (Experimental)
 
 **False**: Disables and hides preview features from **Account Settings** > **Advanced** > **Preview pre-release features**.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EnablePreviewFeatures": true`` with options ``true`` and ``false`` for above settings respectively.                     |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"EnablePreviewFeatures": true`` with options ``true`` and ``false`` for above settings respectively.                    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Group Unread Channels (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
