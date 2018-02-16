@@ -3,6 +3,8 @@
 Configuring CloudFront to host Mattermost static assets
 =======================================================
 
+Configuring CloudFront to host Mattermost's static assets allows for improved caching performance and shorter load times for those members of your team geographicly distributed throughout the world. 
+
 1. Create an S3 bucket using your desired domain. In our example it will be mattermost.example.com.
 2. Enable static hosting for your S3 bucket.
 3. From the Mattermost distribution, upload the ``client`` directory to S3. Rename it to ``static``. You can use the AWS CLI command below from within the ``client`` directory. Note that the files are publicly readable, so be careful how you do it.
@@ -45,3 +47,8 @@ Configuring CloudFront to host Mattermost static assets
     b. WebsocketURL: ``wss://ws.mattermost.example.com``
     c. AllowCorsFrom: ``https://mattermost.example.com``
     d. AllowCookiesForSubdomains: ``true``
+
+
+** Upgrade Notes **
+
+When you upgrade your Mattermost app servers you will need to re-upload the new client to your S3 bucket. (step 3 above) You should also run a CloudFront invalidation for ``/static/root.html``. You can do this in the console under the invalidations tab. 
