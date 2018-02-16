@@ -6,10 +6,6 @@ servers, tracking pixels is allowed. Users can put invisible images in posts tha
 for every user that views the post. An image proxy protects user privacy by eliminating this direct interaction with 
 third-party servers.
 
-Many proxy servers also provide resizing-as-a-service. For example, if you use `atmos/camo image proxy server <https://github.com/atmos/camo>`_, you can configure 
-``ImageProxyOptions`` to resize images if they're more than ``x`` pixels tall. Users can save bandwidth by downloading 
-only the resolution they need.
-
 Proxy servers also provide a layer of caching, and can be made faster and more reliable than third-party sites. This caching 
 also helps preserve posts by protecting them from dead images.
 
@@ -47,13 +43,11 @@ Deploy an ``atmos/camo`` (https://github.com/atmos/camo) instance to image-proxy
 configuration in the system console. For example:
  - "ImageProxyType": "atmos/camo",
  - "ImageProxyURL": "https://image-proxy.mattermost.com",
- - "ImageProxyOptions": "500,fit"
+ - "ImageProxyOptions": the secret string that was used as the CAMO_KEY for the atmos/camo deployment.
 
 .. image:: ../images/image-proxy.png
 
-The URL will be replaced with something similar to the following: https://imageproxy.mysite.com/x500,s5xQmRR3GQa13jFHdJJb01fqATSoZkbBvMXG7Vs4jFGU=/https://i.redd.it/6cohydckk6501.jpg
-(See `https://github.com/atmos/camo <https://github.com/atmos/camo>`_).
+The URL will be replaced with something similar to the following: https://image-proxy.mattermost.com/d7b4022717e8d015440cd70183b81196298b9453/687474703a2f2f692e726564642e69742f36636f687964636b6b363530312e6a7067 (See `https://github.com/atmos/camo <https://github.com/atmos/camo>`_).
   
 Next, if you post a message with an image, you will get a proxied image in your post. This will ensure that every image
-is downloaded via HTTPS. In this specific example, having ``ImageProxyOptions`` set to ``500,fit`` will also resize images
-for clients to a maximum of 500 pixels in either dimension.
+is downloaded via HTTPS.
