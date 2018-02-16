@@ -74,8 +74,9 @@ Assume that the IP address of this server is 10.10.10.2.
     Requires=postgresql.service
 
     [Service]
-    Type=simple
+    Type=notify
     ExecStart=/opt/mattermost/bin/platform
+    TimeoutStartSec=90
     Restart=always
     RestartSec=10
     WorkingDirectory=/opt/mattermost
