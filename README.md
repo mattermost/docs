@@ -6,12 +6,13 @@ All documentation is available under the terms of a [Creative Commons License](h
 
 ## Usage
 
-To generate the HTML files from markdown in the `/source` directory: 
+To generate the HTML files from markdown in the `/source` directory:
 
 1. Download repo onto a machine with Python installed
-2. `pip install sphinx sphinx-autobuild sphinx_rtd_theme`
-3. `pip install recommonmark`
-4. Type `make html`
+2. Install [pipenv](https://docs.pipenv.org/): `pip install pipenv`
+3. `cd` into the cloned repository
+4. Install required packages: `pipenv install`
+5. Build: `make html` - generates files in `/build` directory
 
 ## Contributing
 

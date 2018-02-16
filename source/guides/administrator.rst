@@ -73,6 +73,7 @@ Administration
    /administration/compliance*
    /administration/compliance-export*
    /administration/data-retention*
+   /administration/image-proxy*
    
 Mobile Apps
 -----------

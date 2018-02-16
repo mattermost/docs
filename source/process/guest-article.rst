@@ -18,8 +18,8 @@ Mattermost Guest Blog Post Coordinator
 
 Follow these guidelines to develop a clear and concise guest blog post:
 
-- Commission a banner which includes the guest company member's photo (using a grayscale effect), the guest company's logo, and a heading. Use this `example as a template <https://about.mattermost.com/sourced-group-offers-mattermost-as-a-service-for-enterprises/>`_. Please see this example on how to commission a banner: https://pre-release.mattermost.com/core/pl/pu9a4popnjbwtjmo5gnghorbaa.
 - Begin the article with a short bio and introduction of the author(s). Include a link to the guest company's website the first time it is mentioned in the text.
 - Include a screenshot of the guest company's logo in the post.
 - At the end of the post, include a short summary of the guest company as well as a call for readers to share feedback.
 - Also, refer to `style guidelines <https://docs.mattermost.com/process/marketing-guidelines.html>`_ while writing the article.
+- Choose a relevant visual for the blog post, such as a photo of the author or the guest company's building.

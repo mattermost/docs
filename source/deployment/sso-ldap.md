@@ -21,7 +21,7 @@ There are two ways to setup AD/LDAP:
 1. **Configure AD/LDAP using the System Console user interface**
      - Start the Mattermost server and create a new account using email and password, which is assigned the System Administrator role as the first user created, then configure AD/LDAP and then convert your System Administrator account to use the AD/LDAP sign-in method.
 2. **Configure AD/LDAP by editing `config.json`**
-     - Before starting the Mattermost server, edit `config.json` to enable AD/LDAP based on [AD/LDAP settings documentation](http://docs.mattermost.com/administration/config-settings.html#ldap-settings-enterprise). When you start the Mattermost server the first user to log in with valid AD/LDAP credentials will be assigned the System Administrator role.
+     - Before starting the Mattermost server, edit `config.json` to enable AD/LDAP based on [AD/LDAP settings documentation](http://docs.mattermost.com/administration/config-settings.html#ad-ldap). When you start the Mattermost server the first user to log in with valid AD/LDAP credentials will be assigned the System Administrator role.
 
 #### Configure AD/LDAP sign-in
 
@@ -33,17 +33,19 @@ After installing Mattermost:
 
 3. Confirm AD/LDAP sign-on is enabled.  After AD/LDAP has been enabled, confirm that users can sign in using AD/LDAP credentials.
 
-4. Switch your System Administrator account from email to AD/LDAP authentication. Go to **Account Settings** > **General** > **Sign-in Method** > **Switch to AD/LDAP** and sign-in with your AD/LDAP credentials to complete the switch.
+4. Switch your System Administrator account from email to AD/LDAP authentication. Go to **Account Settings** > **Security** > **Sign-in Method** > **Switch to AD/LDAP** and sign-in with your AD/LDAP credentials to complete the switch.
 
 5. (Optional) Restrict authentication to AD/LDAP. Go to **System Console** > **Authentication** > **Email** and set **Allow Sign Up With Email** to `false` and **Allow Sign In With Email** to `false`. This should leave Active Directory/LDAP as the only single sign-in option.
 
 6. (Optional) If you configured First Name Attribute and Last Name Attribute in the System Console, go to **System Console > General > Users and Teams** and set **Teammate Name Display** to *Show first and last name*. This is recommended for a better user experience.
 
-If you've made a mistake and lock yourself out of the system somehow, you can [set an existing account to System Administrator using the commandline tool](http://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline).
+If you've made a mistake and lock yourself out of the system somehow, you can [set an existing account to System Administrator using the commandline tool](http://docs.mattermost.com/deployment/on-boarding.html#common-tasks).
 
 #### Configure AD/LDAP synchronization
 
 In addition to configuring AD/LDAP sign-in, you can also configure AD/LDAP synchronization. When synchronizing, Mattermost queries AD/LDAP for relevant account information and updates Mattermost accounts based on changes to attributes (first name, last name, and nickname). When accounts are disabled in AD/LDAP users are made inactive in Mattermost, and their active sessions are revoked once Mattermost synchronizes attributes.
+
+Note that the AD/LDAP sync depends on email. Make sure all users on your AD/LDAP server have an email address or that their account is deactivated in Mattermost. 
 
 To configure AD/LDAP synchronization with AD/LDAP sign-in:
 
@@ -65,6 +67,32 @@ For forest configurations that contain multiple domains which do NOT share a com
 
 See [Global Catalog and LDAP Searches](https://technet.microsoft.com/en-us/library/cc978012.aspx) for additional details.
 
+#### Pulling additional user attributes
+
+You can use a pre-packaged Mattermost plugin to pull additional user attributes from your AD/LDAP.
+
+**This endpoint only requires a valid session and no other permissions. Only non-confidential AD/LDAP fields should be exposed.**
+
+1. Configure the LdapServer, LdapPort, BaseDN, BindUsername, BindPassword, UserFilter and IdAttribute fields under LdapSettings in config.json. 
+  - When using SAML SSO, the IdAttribute must be the email field in LDAP that is mapped to the user in SAML.
+
+2. Add the plugin configuration under PluginSettings.Plugins in config.json. The list under “Attributes” will specify which AD/LDAP attributes the API endpoint pulls.
+
+```
+"PluginSettings": {
+    “Enable”: true,
+    "Plugins": {
+        "ldapextras": {
+            "Enabled": true,
+            "Attributes": ["attribute1", "attribute2"]
+        }
+    }
+}
+```
+
+3. Restart the Mattermost server.
+4. To confirm the plugin works, perform an HTTP GET against your-mattermost-url.com/plugins/ldapextras/users/{user_id}/attributes which will return a JSON object with attribute names as keys with the appropriate values.
+
 ### Troubleshooting / FAQ
 
 The following are frequently asked questions and troubleshooting suggestions on common error messages and issues.
@@ -84,6 +112,10 @@ If these options don't work, please contact Mattermost support via the email add
 ##### When I first set up and synchronize AD/LDAP, are the users automatically created in Mattermost? 
 
 No, each user is created on their first login. 
+
+##### When I try to synchronize AD/LDAP, why does the Status show as ``Pending`` and not complete? 
+
+Go to **System Console > AD/LDAP** and make sure that the **Enable Synchronization with AD/LDAP** setting is set to ``true``.
 
 ##### If I want to add people to channels, can I pre-create users somehow? 
 

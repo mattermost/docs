@@ -8,8 +8,8 @@ Integrate over 700 apps into Mattermost, including `Email <https://zapier.com/za
 This documentation includes:
 
 - `Zapier Setup Guide <https://docs.mattermost.com/integrations/zapier.html#id1>`_ - Instructions on registering the Zapier app on your server and creating a zap.
-- `Message Formatting Tips <https://docs.mattermost.com/integrations/zapier.html#id4>`_ - Tips from the Mattermost team on formatting Zapier integration messages.
-- `Troubleshooting Guide <https://docs.mattermost.com/integrations/zapier.html#id6>`_ - Advice on troubleshooting common setup issues.
+- `Message Formatting Tips <https://docs.mattermost.com/integrations/zapier.html#id6>`_ - Tips from the Mattermost team on formatting Zapier integration messages.
+- `Troubleshooting Guide <https://docs.mattermost.com/integrations/zapier.html#id8>`_ - Advice on troubleshooting common setup issues.
 
 
 Zapier Setup Guide
