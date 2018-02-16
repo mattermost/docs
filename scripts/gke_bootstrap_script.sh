@@ -73,6 +73,8 @@ function cleanup_gke_resources(){
 
   gcloud compute addresses delete -q $external_ip_name --region $REGION --project $PROJECT;
   echo "Deleted ip: $external_ip_name successfully";
+
+  echo "\033[;33m Warning: Disks created during the helm deployment are not deleted, please delete them manually from the gcp console \033[0m";
 }
 
 
