@@ -309,18 +309,6 @@ Enable Team Directory
 | This feature's ``config.json`` setting is ``"EnableTeamListing": false`` with options ``true`` and ``false`` for above settings respectively.                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable Default Channel Leave/Join Messages
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Allows for leave/join messages to be created in the default channel.
-
-**True**: Leave/join messages can be created in the default channel.
-
-**False**: Leave/join messages will not be created in the database for the default channel.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableDefaultChannelLeaveJoinMessages": true`` with options ``true`` and ``false`` for above settings respectively.     |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Teammate Name Display
 ^^^^^^^^^^^^^^^^^^^^^
 Specifies how names are displayed in the user interface.
@@ -2494,9 +2482,9 @@ Vary rate limiting by HTTP header field specified (e.g. when configuring Ngnix s
 
 Vary rate limit by user
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: Rate limit API access by user authentication token.
+**True**: Rate limit API access by user authentication token. Recommended to set to ``true`` if you're using a proxy.
 
-**False**: Rate limiting does not vary by IP address.
+**False**: Rate limiting does not vary by user authentication token.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"VaryByUser": false`` with options ``true`` and ``false`` for above settings respectively.                          |
@@ -2985,6 +2973,18 @@ This setting determines whether channel_viewed WebSocket events are sent, which 
 +------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableChannelViewedMessages": true`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------------+
+
+Enable Default Channel Leave/Join System Messages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This setting determines whether team leave/join system messages are posted in the default ``town-square`` channel.
+
+**True**: Enables leave/join system messages in the default ``town-square`` channel.
+
+**False**: Disables leave/join messages from the default ``town-square`` channel. These system messages won't be added to the database either.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableDefaultChannelLeaveJoinMessages": true`` with options ``true`` and ``false`` for above settings respectively.     |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Segment Write Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
