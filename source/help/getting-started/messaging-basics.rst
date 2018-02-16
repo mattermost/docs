@@ -19,7 +19,7 @@ text.
 headings, links, emoticons, code blocks, block quotes, tables, lists and
 in-line images.
 
-.. image:: ../images/messagesTable1.png
+.. image:: ../../images/messagesTable1.png
    :alt: markdown
 
 **Quickly add emoji** by typing ":" followed by two characters, which will open an emoji
