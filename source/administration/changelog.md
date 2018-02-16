@@ -134,12 +134,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added `POST /emoji/search`, `GET /emojis/name/{emoji_name}`, and `GET /emoji/autocomplete` to add consistency with user search/autocomplete endpoints. These API endpoints ensure that the benefits of `GET` for important performance related actions such as autocompleting are included.
  - Added `/users/tokens/search` to allow System Admin to be able to find, manage and revoke personal access tokens as needed. This endpoint gets all tokens for all users if one has the `manage_system` permission.
 
-#### Plugin API Changes (Beta)
-
-#### Plugin Hook Changes (Beta)
-
-### Database Changes
-
 ### WebSocket Event Changes
 
  - Added `delete_team` web socket event to notify client whenever a team is deleted (e.g. via API call).
