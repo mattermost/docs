@@ -2492,9 +2492,9 @@ Vary rate limiting by HTTP header field specified (e.g. when configuring Ngnix s
 
 Vary rate limit by user
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: // XXXX Need help here
+**True**: Rate limit API access by user authentication token.
 
-**False**: 
+**False**: Rate limiting does not vary by IP address.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"VaryByUser": false`` with options ``true`` and ``false`` for above settings respectively.                          |
