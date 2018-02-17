@@ -13,13 +13,17 @@ Release date: 2018-03-16
 ### GlobalRelay (?)
 
  - Added username to the queries that select compliance export data out of the database that is used in GlobalRelay exports.
+ 
+### Remove mm_config and mm_license global state from webapp
+
+ - These changes, as a whole, move towards removing our dependence on the global `mm_config` and `mm_license objects`. These changes allow for stopping hard-refreshing the application whenever someone makes a configuration change.
 
 ## Improvements
 
  - Updated incoming webhooks to accept multipart/form-data content type such as that supplied by `curl -F`.
  - Added unit tests for `SetRolePermissionsFromConfig` function in the server using JSON to ensure that what the server does in the migration for any combination of config values is consistent with what the System Console is expecting.
  - Post a system message when a channel is moved between teams by the CLI command.
- - Investigate improving caching for `getRootPosts`.
+ - Investigated improving caching for `getRootPosts`.
  
 ## Bug Fixes
 
@@ -27,6 +31,30 @@ Release date: 2018-03-16
  - Markdown parsing crash (dos) on empty image url.
  - Fixed can join a team with email invite link after regenerating the invite code.
  - Fixed generic push notifications in GM channels always say "User has mentioned you".
+ - Fixed `ChannelMemberHistoryStore LogJoinEvent` attempts to Insert Username Field into Table.
+ - Fixed posting @user.name followed by "." (like "@user.name.") does not appear mention jewel.
+ - Fixed able to join team that already has maximum number of members.
+ - Fixed Bulk Import doesn't force Town Square membership.
+ - Fixed v4.7 results in error messages whenever someone joins/leaves a channel, and breaks the compliance export feature.
+ - Fixed duplicate calls of "view" request when switching channels.
+ - Fixed permalinks to public channels don't join the channels if not in them.
+ - Fixed on the first reply to a message, placeholder text persists as part of reply text.
+ - Fixed emoji picker skipping pages of custom emoji.
+ - Fixed deleted teams appear as choices in team selection list.
+ - Fixed wide or tall image thumbnails are cropping before fully scaled down.
+ - Fixed mobile landing page on iOS Safari cannot scroll.
+ - Fixed single image thumbnails are not cropping appropriately.
+ - Fixed note on adding DM/GM to only show `This will start a new conversation. If you’re adding a lot of people, consider creating a private channel instead` when it's an existing channel.
+ - Fixed single image attachment does not display in message.
+ - Fixed able to join team that already has maximum number of members.
+ - Fixed image proxying does not proxy inline image previews.
+ - Fixed after clicking permalink of a deleted post, "Back to Mattermost" momentarily shows login page and returns to different team (other than to where it was before the error).
+ - Fixed MFA Setup Returns 403 Forbidden when MFA is Enforced and a User that Doesn't have MFA Enabled is Redirected to it.
+ - Fixed CTRL/CMD+U (attach file) shortcut key not working.
+ - Fixed image URL with `?foo` appended shows generic preview.
+ - Fixed leaving a team doesn't succeed on iOS Browser/Classic App.
+ - Fixed clicking "Add Members" button for group message channel does nothing.
+ - Fixed team invite link no longer redirects to team after sign in.
 
 
 ## Release v4.7
