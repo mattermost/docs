@@ -12,7 +12,7 @@ also helps preserve posts by protecting them from dead images.
 Configuration Keys
 ~~~~~~~~~~~~~~~~~
 
-Three configuration keys are included: ``ImageProxyType``, ``ImageProxyURL``, ``ImageProxyOptions``. When these
+Three configuration keys are included: ``ImageProxyType``, ``ImageProxyURL`` and ``ImageProxyOptions``. When these
 keys are configured, posts served to the client will have their markdown modified such that all images are 
 loaded through a proxy.
 
@@ -41,7 +41,7 @@ Deploy an ``atmos/camo`` (https://github.com/atmos/camo) instance to image-proxy
 configuration in the system console. For example:
  - "ImageProxyType": "atmos/camo",
  - "ImageProxyURL": "https://image-proxy.mattermost.com",
- - "ImageProxyOptions": the secret string that was used as the CAMO_KEY for the atmos/camo deployment.
+ - "ImageProxyOptions": the secret string that was used as the `CAMO_KEY` for the atmos/camo deployment.
 
 .. image:: ../images/image-proxy.png
 
