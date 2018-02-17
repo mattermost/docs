@@ -24,21 +24,34 @@ Release date: 2018-03-16
  - Migrated System Console "Policy" page to configure role permissions behind the scenes.
  - Implemented permission checking functions in the webapp.
  - Migrated System Console "Enable Create Team" to configure role permissions behind the scenes.
- - Migrate `EnableOnlyAdminIntegrations` config in system console to set role permissions.
- - `AllowEditPost` and `PostEditTimeLimit` migration.
+ - Migrated `EnableOnlyAdminIntegrations` config in system console to set role permissions.
+ - Migrated `AllowEditPost` and `PostEditTimeLimit`.
+ - Added unit tests for `SetRolePermissionsFromConfig` function in the server using JSON to ensure that what the server does in the migration for any combination of config values is consistent with what the System Console is expecting.
 
 ## Improvements
 
- - Updated incoming webhooks to accept multipart/form-data content type such as that supplied by `curl -F`.
- - Added unit tests for `SetRolePermissionsFromConfig` function in the server using JSON to ensure that what the server does in the migration for any combination of config values is consistent with what the System Console is expecting.
- - Post a system message when a channel is moved between teams by the CLI command.
+### Web UI
+ - Added a web app build hash to About Mattermost to tell what version of the web app is being used as opposed to the server where we can easily look up the exact code that's in use.
+ 
+### Performance
  - Investigated improving caching for `getRootPosts`.
- - Added paging to system console log viewer and set default value of `per_paging` for logs to 1000.
- - Fixed scroll pop issue when viewing single images except of svg file type.
- - Added a web app build hash to About Mattermost.
+
+### 508 Compliance
  - 508 Compliance: Add alt to profile pictures (for image previews use the image name).
+
+### Integrations
+ - Updated incoming webhooks to accept multipart/form-data content type such as that supplied by `curl -F`.
+
+### Channels
+Keyboard shortcuts
+
+### Notifications
+ - Post a system message when a channel is moved between teams by the CLI command.
+
+### System console
  - Removed plugin upload setting from System Console UI, and block flipping the setting from the API.
  - Created a new section called "Compliance", above "Advanced".
+ - Added paging to system console log viewer and set default value of `per_paging` for logs to 1000.
  
 ## Bug Fixes
 
@@ -89,6 +102,39 @@ Release date: 2018-03-16
  - Fixed cropping of images below minimum dimension.
  - Fixed cannot read property 'redirect_to' of null after LDAP account "creation".
  - Fixed paragraph spacing for last child.
+ - Fixed scroll pop issue when viewing single images except of svg file type.
+
+### Compatibility
+
+#### Removed and Deprecated Features
+
+#### config.json
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+
+### API Changes
+
+#### RESTful API v4 Changes
+
+### WebSocket Event Changes
+
+### Known Issues
+
+- Google login fails on the Classic mobile apps.
+- User can receive a video call from another browser tab while already on a call.
+- Jump link in search results does not always jump to display the expected post.
+- Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+- Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+- Searching with Elasticsearch enabled may not always highlight the searched terms.
+- Team sidebar on desktop app does not update when channels have been read on mobile.
+- Channel scroll position flickers while images and link previews load.
+- Numbered lists can sometimes extend beyond the normal post area.
+- Slack import through the CLI fails if email notifications are enabled.
+- Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+
+### Contributors
 
 
 ## Release v4.7
