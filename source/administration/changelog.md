@@ -55,6 +55,17 @@ Release date: 2018-03-16
  - Fixed leaving a team doesn't succeed on iOS Browser/Classic App.
  - Fixed clicking "Add Members" button for group message channel does nothing.
  - Fixed team invite link no longer redirects to team after sign in.
+ - Fixed markdown links containing emoji formatting for emojis that do not exist render as empty spaces.
+ - Fixed purpose field is cleared after editing channel URL in create channel modal.
+ - Fixed mobile landing page doesn't show up on iOS Safari.
+ - Fixed can't open attachment previews in compact view.
+ - Fixed scroll pop issues with single image thumbnails.
+ - Fixed uncaught TypeError: Cannot read property 'replace' of undefined trying to switch from oauth to email.
+ - Fixed image thumbnail scrolls over `New message`(s) indicator.
+ - Fixed channels being read in the unreads section should maintain their sidebar position until switching to another channel.
+ - Fixed can't close channel in Unreads section by clicking "X" if a GM or DM channel is in the Unreads section.
+ - Fixed `Sidebar Unread Text` setting is ignored in custom theme.
+ - Fixed `ALT+SHIFT+UP/DOWN` broken with the unreads section.
 
 
 ## Release v4.7
