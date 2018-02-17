@@ -13,10 +13,19 @@ Release date: 2018-03-16
 ### GlobalRelay (?)
 
  - Added username to the queries that select compliance export data out of the database that is used in GlobalRelay exports.
+ - Added System Console Support for Configuring GlobalRelay Compliance Exports.
  
 ### Remove mm_config and mm_license global state from webapp
 
  - These changes, as a whole, move towards removing our dependence on the global `mm_config` and `mm_license objects`. These changes allow for stopping hard-refreshing the application whenever someone makes a configuration change.
+ 
+## Advanced Permissions (Phase 1)
+
+ - Migrated System Console "Policy" page to configure role permissions behind the scenes.
+ - Implemented permission checking functions in the webapp.
+ - Migrated System Console "Enable Create Team" to configure role permissions behind the scenes.
+ - Migrate `EnableOnlyAdminIntegrations` config in system console to set role permissions.
+ - `AllowEditPost` and `PostEditTimeLimit` migration.
 
 ## Improvements
 
@@ -24,6 +33,12 @@ Release date: 2018-03-16
  - Added unit tests for `SetRolePermissionsFromConfig` function in the server using JSON to ensure that what the server does in the migration for any combination of config values is consistent with what the System Console is expecting.
  - Post a system message when a channel is moved between teams by the CLI command.
  - Investigated improving caching for `getRootPosts`.
+ - Added paging to system console log viewer and set default value of `per_paging` for logs to 1000.
+ - Fixed scroll pop issue when viewing single images except of svg file type.
+ - Added a web app build hash to About Mattermost.
+ - 508 Compliance: Add alt to profile pictures (for image previews use the image name).
+ - Removed plugin upload setting from System Console UI, and block flipping the setting from the API.
+ - Created a new section called "Compliance", above "Advanced".
  
 ## Bug Fixes
 
@@ -66,6 +81,14 @@ Release date: 2018-03-16
  - Fixed can't close channel in Unreads section by clicking "X" if a GM or DM channel is in the Unreads section.
  - Fixed `Sidebar Unread Text` setting is ignored in custom theme.
  - Fixed `ALT+SHIFT+UP/DOWN` broken with the unreads section.
+ - Fixed some iOS emoji using alternate skin tones are rendering incorrectly on Chrome.
+ - Fixed the Manage Custom Emoji list doesn't scroll to the top when you switch pages.
+ - Fixed channel with no mention bolded as unread, if "Mark Channel Unread" is set to only for mentions and "ExperimentalGroupUnreadChannels" config.json setting is set to true.
+ - Fixed channels staying in the UNREADS section after viewing.
+ - Fixed if `ExperimentalTownSquareIsReadOnly` is set to true, messages posted by a non-admin in Town Square are lost.
+ - Fixed cropping of images below minimum dimension.
+ - Fixed cannot read property 'redirect_to' of null after LDAP account "creation".
+ - Fixed paragraph spacing for last child.
 
 
 ## Release v4.7
