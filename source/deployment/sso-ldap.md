@@ -109,19 +109,21 @@ If the AD/LDAP connection is verified to be working out side of Mattermost, try 
 
 If these options don't work, please contact Mattermost support via the email address that came with your license key. 
 
-##### When I first set up and synchronize AD/LDAP, are the users automatically created in Mattermost? 
+#### When I first set up and synchronize AD/LDAP, are the users automatically created in Mattermost? 
 
 No, each user is created on their first login. 
 
-##### When I try to synchronize AD/LDAP, why does the Status show as ``Pending`` and not complete? 
+#### When I try to synchronize AD/LDAP, why does the Status show as ``Pending`` and not complete? 
 
 Go to **System Console > AD/LDAP** and make sure that the **Enable Synchronization with AD/LDAP** setting is set to ``true``.
 
-##### If I want to add people to channels, can I pre-create users somehow? 
+If the issue persists, try performing a sync with the **User Filter** field blank. If the sync completes in this scenario, then the general syntax was formatted incorrectly. Refer to this [document](https://docs.mattermost.com/administration/config-settings.html#user-filter) for guidance on setting a correct syntax format.
+
+#### If I want to add people to channels, can I pre-create users somehow? 
 
 Yes, using the [bulk import tool](https://docs.mattermost.com/deployment/bulk-loading.html#bulk-loading-data).
 
-##### How does deactivating users work? 
+#### How does deactivating users work? 
 
 When AD/LDAP authentication is used in Mattermost, user deactivation must be done via the AD/LDAP server. 
 
@@ -132,13 +134,13 @@ There are two main ways to do this:
 
 For Active Directory, to filter out deactivated users you must set the user filter to `(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))`.  
 
-##### Can I connect to multiple Active Directory servers? 
+#### Can I connect to multiple Active Directory servers? 
 
 There is currently no built-in way to connect to multiple AD servers. You will need to connect the instances in a forest before connecting to Mattermost.
 
 Consider upvoting the [feature request](https://mattermost.uservoice.com/forums/306457-general/suggestions/13589904-add-the-abilitiry) on our forum.
 
-##### When trying to sign in, I see the error `AD/LDAP not available on this server`
+#### When trying to sign in, I see the error `AD/LDAP not available on this server`
 
 This indicates that there is a problem somewhere with your configuration. We recommend that you: 
 1. Confirm Enterprise Edition is installed
@@ -147,7 +149,7 @@ This indicates that there is a problem somewhere with your configuration. We rec
 
 If you are still having issues, you can [contact support](https://about.mattermost.com/support/) for additional troubleshooting. 
 
-##### I see the error `User not registered on AD/LDAP server`
+#### I see the error `User not registered on AD/LDAP server`
 
 This means the query sent back to the Active Directory/LDAP server returned no results. We recommend that you: 
 1. Check that the user credentials were entered properly - you should login with the field set as the [`ID Attribute`](https://docs.mattermost.com/administration/config-settings.html#id-attribute)
@@ -156,7 +158,7 @@ This means the query sent back to the Active Directory/LDAP server returned no r
 
 If you are still having issues, you can [contact support](https://about.mattermost.com/support/) for additional troubleshooting. 
 
-##### I updated a user account in AD/LDAP, and they can no longer log in to Mattermost
+#### I updated a user account in AD/LDAP, and they can no longer log in to Mattermost
 
 If the user can no longer log in to Mattermost with their AD/LDAP credentials - for example, they get an error message `An account with that email already exists`, or a new Mattermost account is created when they try to log in - this means the ID attribute for their account has changed.
 
@@ -164,17 +166,17 @@ The issue can be fixed by changing the value of the field used for the ID attrib
 
 Note: Currently the value is case sensitive. If the ID attribute is set to the username and the username changes from `John.Smith` to `john.smith`, the user would have problems logging in.   
 
-##### I see the log error `LDAP Result Code 4 "Size Limit Exceeded"`
+#### I see the log error `LDAP Result Code 4 "Size Limit Exceeded"`
 
 This indicates your AD/LDAP server configuration has a maximum page size set and the query coming from Mattermost is returning a result set in excess of that limit.
 
 To address this issue you can set the [max page size](https://docs.mattermost.com/administration/config-settings.html#maximum-page-size) in your Mattermost configuration to match the limit on your AD/LDAP server. This will return a sequence of result sets that do not exceed the max page size, rather than returning all results in a single query.
 
-##### Where can I find help on AD/LDAP configuration settings in config.json?
+#### Where can I find help on AD/LDAP configuration settings in config.json?
 
 You can find an explanation of each of the configuration settings [here](https://docs.mattermost.com/administration/config-settings.html#ad-ldap).
 
-##### Can the AD/LDAP User Filter read Security groups?
+#### Can the AD/LDAP User Filter read Security groups?
 
 Yes it can, but make sure that:
  - permissions are correctly configured on the service account you are using
