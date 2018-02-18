@@ -19,7 +19,7 @@ text.
 headings, links, emoticons, code blocks, block quotes, tables, lists and
 in-line images.
 
-You can use either ``_`` or ``*`` around a word to make it italic. Use two to make it bold.
+You can use either ``_`` or ``*`` for italics and bold text. See the table below for examples.
 
 .. image:: ../../images/messagesTable1.PNG
    :alt: markdown
