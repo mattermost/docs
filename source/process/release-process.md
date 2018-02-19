@@ -61,7 +61,7 @@ No pull requests for major features should be **merged** to the current release 
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
       - After the cut-off, any PRs that include significant code changes, require approval of the release manager before merging
 6. Marketing:
-    - Prepare bullet points and release headline for release announcement and send to Justin to work on
+    - Prepare bullet points and release headline for release announcement. Release manager to review the outline (benefits and order of major features) with PMs before sending to Justin to work on
     - Decide which sections of the release announcement will have an accompanying screenshot / photo
     
 ### D. (T-minus 11 working days) Major feature testing
@@ -192,9 +192,9 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Confirm Changelog reflects any changes since it was merged (including known issues and contributors from all repositories) 
       - If there is a security fix, confirm the Changelog recommends upgrade, with a note mentioning the security level and thanking the security researcher (security process doc for example)
 3. Marketing:
-    - Finish draft of blog post for mattermost.com and send for marketing lead to review
+    - Finish draft of blog post for mattermost.com and send for release manager and PMs to review before sending for marketing lead to review
         - Upgrade should be recommended if there are security fixes in this version, with a note thanking the security researcher
-    - Finish drafts of all art work (screenshots, GIFs and twitter banners) used for the blog post and send to marketing lead for review
+    - Finish drafts of all art work (screenshots, GIFs and twitter banners) used for the blog post and review with PMs before sending for marketing lead to review
     - Find [www-gitlab-com merge request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests?scope=all&utf8=%E2%9C%93&state=opened&label_name%5B%5D=blog%20post&label_name%5B%5D=release) for latest GitLab release blog post and make request for adding GitLab Mattermost update (see [example request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests/2910#note_14096885), [example update](https://about.gitlab.com/2016/07/22/gitlab-8-10-released/#gitlab-mattermost-32)). Post to Release Discussion channel with link to request.
 
 ### J. (T-minus 2 working days) Release Build Cut
