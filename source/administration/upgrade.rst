@@ -46,7 +46,9 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
 4. Extract the Mattermost Server files.
 
-  ``tar -xzf mattermost*.gz``
+  ``tar -x --transform='s,^[^/]\+,\0-upgrade,' -f mattermost*.gz``
+  
+  The ``transform`` option adds a suffix to the topmost extracted directory so it does not conflict with the usual install directory.
 
 5. Stop Mattermost Server.
 
@@ -56,21 +58,27 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
 6. Back up your data and application.
   a. Back up your database using your organization’s standard procedures for backing up MySQL or PostgreSQL.
-  b. Back up your application by moving into your archive folder (e.g. ``mattermost-back-YYYY-MM-DD``).
+  b. Back up your application by copying into an archive folder (e.g. ``mattermost-back-YYYY-MM-DD``).
 
-    ``sudo mv {install-path}/mattermost {install-path}/{mattermost-back-YYYY-MM-DD}``
+    ``sudo cp -ra {install-path}/mattermost/ {install-path}/{mattermost-back-YYYY-MM-DD}/``
 
-7. Copy the files that you extracted earlier to the install directory.
-
-  ``sudo cp -r mattermost {install-path}``
-
-8. Restore your configuration, local file storage and logs.
+7. Copy only *new* files from the special folders in the extracted directory to the install directory.
 
   .. code-block:: text
 
-    sudo cp -r {install-path}/{mattermost-back-YYYY-MM-DD}/config {install-path}/mattermost
-    sudo cp -r {install-path}/{mattermost-back-YYYY-MM-DD}/data {install-path}/mattermost
-    sudo cp -r {install-path}/{mattermost-back-YYYY-MM-DD}/logs {install-path}/mattermost
+    sudo cp -nr mattermost-upgrade/config/. {install-path}/mattermost/config/
+    sudo rm -rf mattermost-upgrade/config/
+    sudo cp -nr mattermost-upgrade/data/. {install-path}/mattermost/data/
+    sudo rm -rf mattermost-upgrade/data/
+    sudo cp -nr mattermost-upgrade/logs/. {install-path}/mattermost/logs/
+    sudo rm -rf mattermost-upgrade/logs/
+
+8. Copy the remaining files to your install directory and remove the temporary files.
+
+  .. code-block:: text
+
+    sudo cp -r mattermost-upgrade/. {install-path}/mattermost/
+    sudo rm -rf mattermost-upgrade/
 
 9. Change ownership of the new files.
 
