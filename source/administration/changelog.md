@@ -21,12 +21,13 @@ Release date: 2018-03-16
  
 ## Advanced Permissions (Phase 1)
 
- - Migrated System Console "Policy" page to configure role permissions behind the scenes.
  - Implemented permission checking functions in the webapp.
  - Migrated System Console "Enable Create Team" to configure role permissions behind the scenes.
  - Migrated `EnableOnlyAdminIntegrations` config in system console to set role permissions.
  - Migrated `AllowEditPost` and `PostEditTimeLimit`.
  - Added unit tests for `SetRolePermissionsFromConfig` function in the server using JSON to ensure that what the server does in the migration for any combination of config values is consistent with what the System Console is expecting.
+ - Added `ADD_REACTION`, `REMOVE_REACTION` and `REMOVE_OTHERS_REACTIONS` permissions to divide them in one check per test.
+ - Renamed permissions gates to change perm with permissions.
 
 ## Improvements
 
@@ -58,7 +59,6 @@ Keyboard shortcuts
  - Fixed an issue where generic push notifications in GM channels always say "User has mentioned you".
  - Fixed `ChannelMemberHistoryStore` `LogJoinEvent` attempts to insert username field into table.
  - Fixed posting `@user.name` followed by "." (like "@user.name.") does not appear mention jewel.
- - Fixed v4.7 results in error messages whenever someone joins/leaves a channel, and breaks the compliance export feature.
  - Fixed permalinks to public channels don't join the channels if not in them.
  - Fixed on the first reply to a message, placeholder text persists as part of reply text.
  - Fixed wide or tall image thumbnails are cropping before fully scaled down.
