@@ -48,9 +48,9 @@ resources: {}
 
 # Define queue groups into Pods
 pods:
-  - name: workflow
+  - name: all-in-1
     concurrency: 10
-    replicas: 2
+    replicas: 1
     queues:
       - [post_receive, 5]
       - [merge, 5]
@@ -59,18 +59,12 @@ pods:
       - [new_note, 2]
       - [new_issue, 2]
       - [new_merge_request, 2]
-  - name: pipeline
-    replicas: 1
-    queues:
       - [build, 2]
       - [pipeline, 2]
       - [pipeline_processing, 5]
       - [pipeline_default, 3]
       - [pipeline_cache, 3]
       - [pipeline_hooks, 2]
-  - name: glob
-    replicas: 1
-    queues:
       - [gitlab_shell, 2]
       - [email_receiver, 2]
       - [emails_on_push, 2]
@@ -107,9 +101,6 @@ pods:
       - [gcp_cluster, 1]
       - [project_migrate_hashed_storage, 1]
       - [storage_migrator, 1]
-  - name: ee
-    replicas: 1
-    queues:
       - [ldap_group_sync, 2]
       - [geo, 1]
       - [repository_update_mirror, 1]
