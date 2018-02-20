@@ -94,24 +94,24 @@ Now that NGINX is installed and running, you can configure it to use SSL, which 
 This is likely due to a failing cross-origin check. A check is applied for WebSocket code to see if the ``Origin`` header is the same as the host header. If it's not, a 403 error is returned.  Open the file ``/etc/nginx/sites-available/mattermost`` 
 as root in a text editor and make sure that the host header being set in the proxy is dynamic:
 
-  .. code-block:: none
-    :emphasize-lines: 4
+.. code-block:: none
+  :emphasize-lines: 4
 
-    location ~ /api/v[0-9]+/(users/)?websocket$ {
-      proxy_pass            http://backend;
-      (...)
-      proxy_set_header      Host $host;
-      proxy_set_header      X-Forwarded-For $remote_addr;
-    }
+  location ~ /api/v[0-9]+/(users/)?websocket$ {
+    proxy_pass            http://backend;
+    (...)
+    proxy_set_header      Host $host;
+    proxy_set_header      X-Forwarded-For $remote_addr;
+  }
 
-Then in ``config.json`` set the ``AllowCorsFrom`` setting to match the domain being used by clients.  You may need to add variations of the host name that clients may send. Your NGINX log will be helpful in diagnosing the problem.
+Then in ``config.json`` set the ``AllowCorsFrom`` setting to match the domain being used by clients. You may need to add variations of the host name that clients may send. Your NGINX log will be helpful in diagnosing the problem.
 
-  .. code-block:: none
-    :emphasize-lines: 2
+.. code-block:: none
+  :emphasize-lines: 2
 
-    "EnableUserAccessTokens": false,
-    "AllowCorsFrom": "domain.com domain.com:443 im.domain.com",
-    "SessionLengthWebInDays": 30,
+  "EnableUserAccessTokens": false,
+  "AllowCorsFrom": "domain.com domain.com:443 im.domain.com",
+  "SessionLengthWebInDays": 30,
 
 For other troubleshooting tips for WebSocket errors, see `potential solutions here <https://docs.mattermost.com/install/troubleshooting.html#please-check-connection-mattermost-unreachable-if-issue-persists-ask-administrator-to-check-websocket-port>`_.
 
