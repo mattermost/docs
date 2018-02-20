@@ -9,25 +9,10 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 Release date: 2018-03-16
 
 ## Highlights
-
-### GlobalRelay (?)
-
- - Added username to the queries that select compliance export data out of the database that is used in GlobalRelay exports.
- - Added System Console Support for Configuring GlobalRelay Compliance Exports.
  
-### Remove mm_config and mm_license global state from webapp
+## SAML migration command
 
- - These changes, as a whole, move towards removing our dependence on the global `mm_config` and `mm_license objects`. These changes allow for stopping hard-refreshing the application whenever someone makes a configuration change.
- 
-## Advanced Permissions (Phase 1)
-
- - Implemented permission checking functions in the webapp.
- - Migrated System Console "Enable Create Team" to configure role permissions behind the scenes.
- - Migrated `EnableOnlyAdminIntegrations` config in system console to set role permissions.
- - Migrated `AllowEditPost` and `PostEditTimeLimit`.
- - Added unit tests for `SetRolePermissionsFromConfig` function in the server using JSON to ensure that what the server does in the migration for any combination of config values is consistent with what the System Console is expecting.
- - Added `ADD_REACTION`, `REMOVE_REACTION` and `REMOVE_OTHERS_REACTIONS` permissions to divide them in one check per test.
- - Renamed permissions gates to change perm with permissions.
+## CloudFront support
 
 ## Improvements
 
@@ -42,6 +27,9 @@ Release date: 2018-03-16
 
 ### Integrations
  - Updated incoming webhooks to accept multipart/form-data content type such as that supplied by `curl -F`.
+ 
+## Plugins
+ - Made the "Plugins have been disabled." message more informative.
 
 ### Channels
 Keyboard shortcuts
