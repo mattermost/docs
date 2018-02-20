@@ -89,7 +89,7 @@ Usage of CPU, RAM and storage space can vary significantly based on user behavio
 Hardware Sizing for Team Deployments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Most small to medium Mattermost team deployments can be supported on a single server with the following specifications based on registered users:
+Most small to medium Mattermost team deployments can be supported on a single t2.small server with the following specifications based on registered users:
 
 -  250-500 users - 2 vCPUs/cores, 4 GB RAM, and 45-90 GB storage
 -  500-1,000 users - 4 vCPUs/cores, 8 GB RAM, and 90-180 GB storage
