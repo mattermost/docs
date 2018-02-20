@@ -10,9 +10,9 @@ Release date: 2018-03-16
 
 ## Highlights
  
-## SAML migration command
+### SAML migration command
 
-## CloudFront support
+### CloudFront support
 
 ## Improvements
 
@@ -83,6 +83,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### RESTful API v4 Changes
 
 ### WebSocket Event Changes
+
+### Database Changes
 
 ### Known Issues
 
