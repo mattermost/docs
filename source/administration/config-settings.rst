@@ -2145,9 +2145,7 @@ When false, disables file downloads on mobile apps. Users can still download fil
 Image Proxy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Includes three configuration keys: `ImageProxyType`, `ImageProxyURL` and `ImageProxyOptions`. When these keys are configured, posts served to the client will have their markdown modified enabling all images to be loaded through a proxy. See `documentation`_ for more details.
-
-.. _documentation: https://docs.mattermost.com/administration/image-proxy
+Includes three configuration keys: `ImageProxyType`, `ImageProxyURL` and `ImageProxyOptions`. When these keys are configured, posts served to the client will have their markdown modified enabling all images to be loaded through a proxy. See `documentation <https://docs.mattermost.com/administration/image-proxy>`_ for more details.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ImageProxyType": ""``, ``"ImageProxyURL": ""`` and ``"ImageProxyOptions": ""`` with string input.      |
