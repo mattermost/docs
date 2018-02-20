@@ -9,7 +9,7 @@ Mattermost's outgoing webhooks feature  can be used with this fairly easily as l
 Sending information from Mattermost
 ------------------------------------
 
-Mattermost's [interactive message buttons](/developer/interactive-message-buttons.html) send information using a parameter called "context." The easiest way to get all the information from Mattermost is to use the following configuration, which will pass the entire payload to your script as a string::
+Mattermost's :doc:`interactive message buttons <interactive-message-buttons>` send information using a parameter called "context." The easiest way to get all the information from Mattermost is to use the following configuration, which will pass the entire payload to your script as a string:
 
 
   {
@@ -20,7 +20,7 @@ Mattermost's [interactive message buttons](/developer/interactive-message-button
 Responding to the request
 ---------------------------
 
-If you don't respond to the request you'll see an error in your Mattermost logs that looks like "``Action integration error [details: err=EOF]``"  
+If you don't respond to the request you'll see an error in your Mattermost logs that looks like ``Action integration error [details: err=EOF]``.
 
 To solve this, use the ``response-message`` configuration property to send back a response to prevent this. This response is sent immediately after receiving the webhook. 
 
@@ -29,7 +29,7 @@ If your script doesn't take very long to run you can use the ``include-command-o
 Authenticating Requests
 ------------------------
 
-Mattermost can be configured to send a token with an outgoing webhook to make sure that your webhook only responds to authorized requests. To enable this, use the following in your webhook configuration::
+Mattermost can be configured to send a token with an outgoing webhook to make sure that your webhook only responds to authorized requests. To enable this, use the following in your webhook configuration:
 
 
     "trigger-rule":
