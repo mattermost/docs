@@ -93,7 +93,7 @@ Assume that the IP address of this server is 10.10.10.2.
     If you have installed MySQL or PostgreSQL on a dedicated server then you need to remove the ``After=postgresql.service`` and ``Requires=postgresql.service`` or ``After=mysql.service`` and ``Requires=mysql.service`` lines in the ``[Unit]`` section and replace the ``WantedBy=postgresql.service`` or ``WantedBy=mysql.service`` line in the ``[Install]`` section with ``WantedBy=multi-user.target`` or the Mattermost service will not start.
 
   .. note::
-    Setting ``WantedBy`` to your local database service ensures that whenever the database service is started the Mattermost is (re-)started too, preventing the Mattermost server from stopping to work after an automatic update of the database.
+    Setting ``WantedBy`` to your local database service ensures that whenever the database service is started, the Mattermost server is (re-)started too, preventing the Mattermost server from stopping to work after an automatic update of the database.
 
   c. Make systemd load the new unit.
 
