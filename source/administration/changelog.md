@@ -35,7 +35,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 #### Experimental Setting for Unreads Sidebar Section
 
- - Added an experimental setting to group unread channels in the channel sidebar. The setting must first be enabled by the System Admin, by replacing `disabled` with either `default_off` or `default_on`.
+ - Added an experimental setting to group unread channels in the channel sidebar. The setting [must first be enabled by the System Admin](https://docs.mattermost.com/administration/config-settings.html#group-unread-channels-experimental), by replacing `disabled` with either `default_off` or `default_on` in config.json.
 
 ### Improvements
 
