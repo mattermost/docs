@@ -197,3 +197,11 @@ pods:
         cpu: 800m
         memory: 2Gi
 ```
+
+
+### Production usage
+
+By default all of sidekiq queues run in an all-in-one container which is not suitable for production use cases.
+
+Check the [example config](./example-queues.yaml) for a more production ready sidekiq deployment. You can move queues around pods as a part of your tuning.
+
