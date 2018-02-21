@@ -67,13 +67,13 @@ Administration
    /administration/backup*
    /administration/liveness-check*
    /administration/migrating.md
+   /administration/image-proxy*
    /administration/plugins*
    /administration/announcement-banner.rst
    /administration/branding*
    /administration/compliance*
    /administration/compliance-export*
    /administration/data-retention*
-   /administration/image-proxy*
    
 Mobile Apps
 -----------
