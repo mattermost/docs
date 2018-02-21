@@ -13,7 +13,7 @@ Release date: 2018-03-16
 ### CloudFront support
 
  - Added support for configuring CloudFront to host Mattermost's static assets.
- - Allows for improved caching performance and shorter load times for those members of your team geographicly distributed throughout the world.
+ - Allows for improved caching performance and shorter load times for those members of your team geographically distributed throughout the world.
 
 ### SAML Migration Command  ([Enterprise Edition E20](https://about.mattermost.com/pricing/))
 
