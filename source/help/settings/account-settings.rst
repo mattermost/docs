@@ -228,7 +228,7 @@ Hide Direct Message conversations with no activity for 7 days. These conversatio
 
 Group unreads channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-If enabled, this feature groups unread channels at the top of the channel sidebar. This setting is experimental and can be disabled from **Account Settings** -> **Sidebar** -> **Group Unreads Channels**.
+If enabled, this feature groups unread channels at the top of the channel sidebar. This setting is experimental and can be disabled from **Account Settings** -> **Sidebar** -> **Group Unreads Channels**. The setting must first be enabled by the System Admin, by replacing `disabled` with either `default_off` or `default_on`.
 
 Advanced
 --------
