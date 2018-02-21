@@ -3,33 +3,50 @@
 This document provides all steps in installing a complete GitLab environment via
 helm, and should be followed in order.
 
-## 1. Dependencies
+## Required tools
 
-Before you can install GitLab in an Kubernetes cluster, make sure you have
-all required tools. See [dependencies][] document for more information.
+Before you can install GitLab in a Kubernetes cluster, make sure you have
+all required tools. See [local setup][] document for more information.
 
-> We support working with GKE clusters v1.8.5 at the moment
+## Where do you want to install GitLab?
 
-## 2. GKE resources
+### Google Kubernetes Engine
+
+If you want to install GitLab on Google Kubernetes engine, please follow the
+[installing on GKE][] documentation.
+
+### Amazon EKS
+
+Documentation to be added.
+
+### Azure Container Service
+
+Documentation to be added.
+
+### On-Premises solutions
+
+Documentation to be added.
+
+## GKE resources
 
 You will need to create a few resources to use this chart, such as a static IP and DNS entry. See [GKE resources document][resources] for more information.
 
-## 3. Secrets
+## Secrets
 
 For a functional deployment, various secrets are necessary. See [secrets document][secrets] for more information.
 
-## 4. Configuration file
+## Configuration file
 
 Next, populate your configuration which will be used to deploy. See
 [generating configuration document][configuration] for more information.
 
-## 5. Deploy
+## Deploy
 
 Now that we have the environment setup and configuration generated,
 we can proceed to [deployment][].
 
-[dependencies]: dependencies.md
-[helm]: helm/README.md
+[installing on GKE]: cloud/gke.md
+[local setup]: tools.md
 [resources]: resources.md
 [secrets]: secrets.md
 [configuration]: configuration.md
