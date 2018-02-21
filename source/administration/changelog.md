@@ -45,27 +45,15 @@ Release date: 2018-03-16
 ## Bug Fixes
 
  - Fixed an issue where generic push notifications in group message channels always said "User has mentioned you".
- - Fixed an issue where `ChannelMemberHistoryStore` `LogJoinEvent` attempted to insert username field into table.
- - Fixed an issue where posting `@user.name` followed by "." (such as "@user.name.") did not produce a mention jewel.
- - Fixed an issue where permalinks to public channels didn't join the channels if not in them.
- - Fixed an issue where on the first reply to a message, placeholder text persisted as part of reply text.
- - Fixed an issue where wide or tall image thumbnails were not cropping before fully scaled down.
- - Fixed an issue where single image attachment did not display in message.
- - Fixed an issue with image proxying not proxying inline image previews.
- - Fixed an issue where after clicking permalink of a deleted post, "Back to Mattermost" momentarily showed login page and returned to different team (other than to where it was before the error).
- - Fixed an issue where CTRL/CMD+U (attach file) shortcut key was not working.
+ - Fixed an issue where posting `@user.name` followed by "." (such as "@user.name.") did not produce a mention jewel. //XXX
+ - Fixed an issue where on the first reply to a message, placeholder text persisted as part of reply text. //XXX
+ - Fixed an issue where after clicking permalink of a deleted post, "Back to Mattermost" momentarily showed login page and returned to different team (other than to where it was before the error). //XXX
+ - Fixed an issue where CTRL/CMD+U (attach file) shortcut key was not working. //XXX
  - Fixed an issue where image URL with `?foo` appended showed generic preview.
- - Fixed an issue where team invite link no longer redirected to team after signing in.
- - Fixed an issue with not being able to open attachment previews in compact view.
- - Fixed an issue with scroll pop issues with single image thumbnails.
- - Fixed an issue where Sidebar Unread Text setting was ignored in custom theme.
- - Fixed an issue with not being able to close channel in Unreads section by clicking "X" if a GM or DM channel was in the Unreads section.
- - Fixed an issue where image thumbnail scrolled over New message(s) indicator.
- - Fixed an issue where `ALT+SHIFT+UP/DOWN` was broken with the unreads section.
- - Fixed an issue where channels being read in the unreads section should have maintained their sidebar position until switching to another channel.
- - Fixed an issue where channel with no mention was bolded as unread if "Mark Channel Unread" was set to only for mentions and "ExperimentalGroupUnreadChannels" config.json setting was set to true.
- - Fixed an issue with channels staying in the UNREADS section after viewing.
- - Fixed a scroll pop issue when viewing single images except of svg file type.
+ - Fixed an issue where team invite link no longer redirected to team after signing in. //XXX
+ - Fixed an issue where Sidebar Unread Text setting was ignored in custom theme. //XXX
+ - Fixed an issue where channels being read in the unreads section should have maintained their sidebar position until switching to another channel. //XXX
+ - Fixed a scroll pop issue when viewing single images except of svg file type. //XXX
 
 ### Compatibility
 
