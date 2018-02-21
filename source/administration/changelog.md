@@ -9,46 +9,42 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 Release date: 2018-03-16
 
 ## Highlights
- 
-### SAML migration command
-
- - Migrated "platform user migrate_auth" CLI command support to SAML. A user who initially enabled LDAP or GitLab SSO and then wants to migrate their users to SAML can now more easily do so from the CLI or the APIs.
 
 ### CloudFront support
 
  - Added support for configuring CloudFront to host Mattermost's static assets.
  - Allows for improved caching performance and shorter load times for those members of your team geographicly distributed throughout the world.
 
+### SAML Migration Command  ([Enterprise Edition E20](https://about.mattermost.com/pricing/))
+
+ - Added a CLI command to easily migrate users to SAML.
+
 ## Improvements
 
-### Web UI
- - Added a web app build hash to About Mattermost to tell what version of the web app is being used as opposed to the server where we can easily look up the exact code that's in use.
+### Web User Interface
+ - Added a web app build hash to About Mattermost dialog to tell what version of the web app is being used.
  
 ### Performance
- - Investigated improving caching for `getRootPosts`.
- - Web Hub optimizations including optimizing web socket events destined for a single user and precomputing the raw JSON for websocket events.
- - Created an endpoint to upload an file as octect-stream in order to use `NSUrlSessionUploadTask` that will let us upload files larger than 20 Mb.
+ - Reduced load times by optimizing database queries, and optimizing WebSocket events destined for a single user by precomputing the raw JSON for WebSocket events.
+ - Created an endpoint to upload an file as octect-stream in order to use `NSUrlSessionUploadTask` that will let us upload files larger than 20 Mb. // XXX was this on the mobile app?
+ - Improved caching of `getRootPosts` call.
 
 ### 508 Compliance
- - 508 Compliance: Add alt to profile pictures (for image previews use the image name).
+ - Added alt attribute to profile pictures.
 
 ### Integrations
  - Updated incoming webhooks to accept multipart/form-data content type such as that supplied by `curl -F`.
- 
-## Plugins
- - Made the "Plugins have been disabled." message more informative.
 
 ### Notifications
- - Post a system message when a channel is moved between teams by the CLI command.
+ - A system message is now posted when a channel is moved between teams by the CLI command.
 
-### System console
- - Removed plugin upload setting from System Console UI, and block flipping the setting from the API.
- - Created a new section called "Compliance", above "Advanced".
+### System Console
+ - Removed plugin upload setting from System Console UI, and prevented switching the setting from the API.
  - Added paging to system console log viewer and set default value of `per_paging` for logs to 1000.
  
-## Bug Fixes
+## Bug Fixes // XXX Can you review which of these were fixed in v4.7? I think many of them were merged to v4.7 branch.
 
- - Fixed an issue where generic push notifications in GM channels always say "User has mentioned you".
+ - Fixed an issue where generic push notifications in group message channels always said "User has mentioned you".
  - Fixed `ChannelMemberHistoryStore` `LogJoinEvent` attempts to insert username field into table.
  - Fixed posting `@user.name` followed by "." (like "@user.name.") does not appear mention jewel.
  - Fixed permalinks to public channels don't join the channels if not in them.
@@ -56,7 +52,7 @@ Release date: 2018-03-16
  - Fixed wide or tall image thumbnails are cropping before fully scaled down.
  - Fixed single image thumbnails are not cropping appropriately.
  - Fixed single image attachment does not display in message.
- - Fixed image proxying does not proxy inline image previews.
+ - Fixed image proxying not proxying inline image previews.
  - Fixed after clicking permalink of a deleted post, "Back to Mattermost" momentarily shows login page and returns to different team (other than to where it was before the error).
  - Fixed CTRL/CMD+U (attach file) shortcut key not working.
  - Fixed image URL with ?foo appended shows generic preview.
@@ -77,6 +73,20 @@ Release date: 2018-03-16
 #### Removed and Deprecated Features
 
  - All API v3 endpoints have been deprecated, and scheduled for removal in Mattermost v5.0.
+ - As Mattermost moves to a role based permissions system in v4.9, a number of configuration settings will be migrated to roles in the database, and changing their `config.json` values will no longer take effect. These permissions can still be modified by their respective System Console settings. The `config.json` settings to be migrated are:
+  - RestrictPublicChannelManagement
+  - RestrictPrivateChannelManagement
+  - RestrictPublicChannelCreation
+  - RestrictPrivateChannelCreation
+  - RestrictPublicChannelDeletion
+  - RestrictPrivateChannelDeletion
+  - RestrictPrivateChannelManageMembers
+  - EnableTeamCreation
+  - EnableOnlyAdminIntegrations
+  - RestrictPostDelete
+  - AllowEditPost
+  - RestrictTeamInvite
+  - RestrictCustomEmojiCreation
 
 #### config.json
 
@@ -84,12 +94,18 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### Changes to Team Edition and Enterprise Edition:
 
+// XXX Two settings added with https://github.com/mattermost/mattermost-server/pull/8307
+
 ### API Changes
 
  - It is required that any new integrations use API v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
  - All API v3 endpoints have been deprecated, and scheduled for removal in Mattermost v5.0.
 
 #### RESTful API v4 Changes
+
+#### Plugin API Changes (Beta)
+
+#### Plugin Hook Changes (Beta)
 
 ### WebSocket Event Changes
 
@@ -108,6 +124,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Numbered lists can sometimes extend beyond the normal post area.
  - Slack import through the CLI fails if email notifications are enabled.
  - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+
+// XXX Should `CTRL/CMD+U shortcut to upload a file doesn’t work on Firefox.` still be an issue?
 
 ### Contributors
 
