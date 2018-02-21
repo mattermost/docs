@@ -25,8 +25,8 @@ Release date: 2018-03-16
  - Added a web app build hash to About Mattermost dialog to tell what version of the web app is being used.
  
 ### Performance
- - Reduced load times by optimizing database queries, and optimizing WebSocket events destined for a single user by precomputing the raw JSON for WebSocket events.
- - Created an endpoint to upload an file as octect-stream in order to use `NSUrlSessionUploadTask` that will let us upload files larger than 20 Mb. // XXX was this on the mobile app?
+ - Reduced load times by optimizing database queries and optimizing WebSocket events destined for a single user by precomputing the raw JSON for WebSocket events.
+ - Created an endpoint on iOS to upload an file as octect-stream in order to use `NSUrlSessionUploadTask` that will let us upload files larger than 20 Mb.
  - Improved caching of `getRootPosts` call.
 
 ### 508 Compliance
@@ -42,31 +42,30 @@ Release date: 2018-03-16
  - Removed plugin upload setting from System Console UI, and prevented switching the setting from the API.
  - Added paging to system console log viewer and set default value of `per_paging` for logs to 1000.
  
-## Bug Fixes // XXX Can you review which of these were fixed in v4.7? I think many of them were merged to v4.7 branch.
+## Bug Fixes
 
  - Fixed an issue where generic push notifications in group message channels always said "User has mentioned you".
- - Fixed `ChannelMemberHistoryStore` `LogJoinEvent` attempts to insert username field into table.
- - Fixed posting `@user.name` followed by "." (like "@user.name.") does not appear mention jewel.
- - Fixed permalinks to public channels don't join the channels if not in them.
- - Fixed on the first reply to a message, placeholder text persists as part of reply text.
- - Fixed wide or tall image thumbnails are cropping before fully scaled down.
- - Fixed single image thumbnails are not cropping appropriately.
- - Fixed single image attachment does not display in message.
- - Fixed image proxying not proxying inline image previews.
- - Fixed after clicking permalink of a deleted post, "Back to Mattermost" momentarily shows login page and returns to different team (other than to where it was before the error).
- - Fixed CTRL/CMD+U (attach file) shortcut key not working.
- - Fixed image URL with ?foo appended shows generic preview.
- - Fixed team invite link no longer redirects to team after sign in.
- - Fixed can't open attachment previews in compact view.
- - Fixed scroll pop issues with single image thumbnails.
- - Fixed Sidebar Unread Text setting is ignored in custom theme.
- - Fixed can't close channel in Unreads section by clicking "X" if a GM or DM channel is in the Unreads section.
- - Fixed image thumbnail scrolls over New message(s) indicator.
- - Fixed ALT+SHIFT+UP/DOWN broken with the unreads section.
- - Fixed channels being read in the unreads section should maintain their sidebar position until switching to another channel.
- - Fixed channel with no mention bolded as unread, if "Mark Channel Unread" is set to only for mentions and "ExperimentalGroupUnreadChannels" config.json setting is set to true.
- - Fixed channels staying in the UNREADS section after viewing.
- - Fixed scroll pop issue when viewing single images except of svg file type.
+ - Fixed an issue where `ChannelMemberHistoryStore` `LogJoinEvent` attempted to insert username field into table.
+ - Fixed an issue where posting `@user.name` followed by "." (such as "@user.name.") did not produce a mention jewel.
+ - Fixed an issue where permalinks to public channels didn't join the channels if not in them.
+ - Fixed an issue where on the first reply to a message, placeholder text persisted as part of reply text.
+ - Fixed an issue where wide or tall image thumbnails were not cropping before fully scaled down.
+ - Fixed an issue where single image attachment did not display in message.
+ - Fixed an issue with image proxying not proxying inline image previews.
+ - Fixed an issue where after clicking permalink of a deleted post, "Back to Mattermost" momentarily showed login page and returned to different team (other than to where it was before the error).
+ - Fixed an issue where CTRL/CMD+U (attach file) shortcut key was not working.
+ - Fixed an issue where image URL with `?foo` appended showed generic preview.
+ - Fixed an issue where team invite link no longer redirected to team after signing in.
+ - Fixed an issue with not being able to open attachment previews in compact view.
+ - Fixed an issue with scroll pop issues with single image thumbnails.
+ - Fixed an issue where Sidebar Unread Text setting was ignored in custom theme.
+ - Fixed an issue with not being able to close channel in Unreads section by clicking "X" if a GM or DM channel was in the Unreads section.
+ - Fixed an issue where image thumbnail scrolled over New message(s) indicator.
+ - Fixed an issue where `ALT+SHIFT+UP/DOWN` was broken with the unreads section.
+ - Fixed an issue where channels being read in the unreads section should have maintained their sidebar position until switching to another channel.
+ - Fixed an issue where channel with no mention was bolded as unread if "Mark Channel Unread" was set to only for mentions and "ExperimentalGroupUnreadChannels" config.json setting was set to true.
+ - Fixed an issue with channels staying in the UNREADS section after viewing.
+ - Fixed a scroll pop issue when viewing single images except of svg file type.
 
 ### Compatibility
 
@@ -94,7 +93,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### Changes to Team Edition and Enterprise Edition:
 
-// XXX Two settings added with https://github.com/mattermost/mattermost-server/pull/8307
+ - Under `GetCookieDomain` in `config.json`:
+    - Added `AllowCookiesForSubdomains`, to ensure that the Domain parameter is set on our cookies, which allows the browser to send the cookies to subdomains as well.
+    - Added `WebsocketURL`, which allows the server to instruct clients where they should try to connect by websockets to.
 
 ### API Changes
 
@@ -124,8 +125,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Numbered lists can sometimes extend beyond the normal post area.
  - Slack import through the CLI fails if email notifications are enabled.
  - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
-
-// XXX Should `CTRL/CMD+U shortcut to upload a file doesn’t work on Firefox.` still be an issue?
+ - CTRL/CMD+U shortcut to upload a file doesn’t work on Firefox.
 
 ### Contributors
 
