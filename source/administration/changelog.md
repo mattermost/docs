@@ -44,16 +44,13 @@ Release date: 2018-03-16
  
 ## Bug Fixes
 
- - Fixed an issue where generic push notifications in group message channels always said "User has mentioned you".
- - Fixed an issue where posting `@user.name` followed by "." (such as "@user.name.") did not produce a mention jewel. //XXX
- - Fixed an issue where on the first reply to a message, placeholder text persisted as part of reply text. //XXX
- - Fixed an issue where after clicking permalink of a deleted post, "Back to Mattermost" momentarily showed login page and returned to different team (other than to where it was before the error). //XXX
- - Fixed an issue where CTRL/CMD+U (attach file) shortcut key was not working. //XXX
- - Fixed an issue where image URL with `?foo` appended showed generic preview.
- - Fixed an issue where team invite link no longer redirected to team after signing in. //XXX
- - Fixed an issue where Sidebar Unread Text setting was ignored in custom theme. //XXX
- - Fixed an issue where channels being read in the unreads section should have maintained their sidebar position until switching to another channel. //XXX
- - Fixed a scroll pop issue when viewing single images except of svg file type. //XXX
+ - Fixed an issue where Sidebar Unread Text setting was ignored in custom theme.
+ - Fixed an issue where Emoji picker had an empty line at the bottom of the list.
+ - Fixed an issue with Display Markdown help on a second line in Edit Message dialog.
+ - Fixed an issue where after leaving last team the "Logout" link did nothing.
+ - Fixed an issue where focus was sometimes wrong on delete post modal.
+ - Fixed an issue where Bulk Import didn't force Town Square membership.
+ - Fixed an issue with duplicate calls of "view" request when switched channels.
 
 ### Compatibility
 
