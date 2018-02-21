@@ -46,6 +46,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added focus on the text box after hitting "Edit" on Account Settings options.
  - Improved formatting of quotes in the channel header.
  - Added a date separator for search results.
+ - Channel names are now sorted correctly in the left-hand-side by taking non-alphabetical characters into consideration (e.g. brackets, hash sign, etc.)
  
  #### Integrations
  - Added username and profile picture to incoming webhook set up pages.
