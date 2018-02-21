@@ -35,7 +35,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 #### Experimental Setting for Unreads Sidebar Section
 
- - Added an experimental setting to group unread channels in the channel sidebar.
+ - Added an experimental setting to group unread channels in the channel sidebar. The setting must first be enabled by the System Admin, by replacing `disabled` with either `default_off` or `default_on`.
 
 ### Improvements
 
@@ -120,7 +120,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
  - Under `ServiceSettings` in `config.json`:
     - Added `"ImageProxyType": ""`, `"ImageProxyOptions": ""`, and `"ImageProxyURL": ""` to ensure posts served to the client will have their markdown modified such that all images are loaded through a proxy.
-    - Added `"ExperimentalGroupUnreadChannels": disabled` to show an unread channel section in the webapp sidebar.
+    - Added `"ExperimentalGroupUnreadChannels": disabled` to show an unread channel section in the webapp sidebar. The setting must first be enabled by the System Admin, by replacing `disabled` with either `default_off` or `default_on`.
     - Added `"ExperimentalEnableDefaultChannelLeaveJoinMessages": true` that allows disabling of leave/join messages in the default channel, usually Town Square.
  - Under `RateLimitingSettings` in `config.json`:
     - Added `"VaryByUser": false`, a user-based rate limiting, to rate limit on token and on userID.
