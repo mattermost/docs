@@ -16,10 +16,8 @@ Release date: 2018-03-16
 
 ### CloudFront support
 
- - Added two configuration settings:
-   - `AllowCookiesForSubdomains`, which set's the Domain parameter on our cookies, allowing the browser to send the cookies to subdomains as well.
-   - `WebsocketURL`, which allows the server to instruct clients where they should try to connect by websockets to.
- - Combined the above two configuration settings allow the bypass of a main proxy server or CDN such as CloudFront that does not support websockets by using a websocket subdomain.
+ - Added support for configuring CloudFront to host Mattermost's static assets.
+ - Allows for improved caching performance and shorter load times for those members of your team geographicly distributed throughout the world.
 
 ## Improvements
 
