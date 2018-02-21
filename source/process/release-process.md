@@ -273,7 +273,7 @@ If a bug fix release is required, run through the following steps:
     - Make a post in Town Square announcing the dot release [See example](https://pre-release.mattermost.com/core/pl/4aippek8yp8a3nex9anen5rjoc)
     - Open an issue in the [GitLab Omnibus](https://gitlab.com/gitlab-org/omnibus-gitlab) mentioning a dot release is coming 
 2. Release Manager:
-    - Post links to approved tickets for the dot release to the Release Discussion channel
+    - Post links of approved tickets for the dot release to the Release Discussion channel
     - Update the GitHub meta issue:
         - Change the title to "Mattermost vx.x.x - RCx", where `vx.x.x` is the version number of the dot release
         - Post a comment to the meta issue with approved fixes for the next RC of the dot release
