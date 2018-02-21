@@ -12,7 +12,14 @@ Release date: 2018-03-16
  
 ### SAML migration command
 
+ - Migrated "platform user migrate_auth" CLI command support to SAML. A user who initially enabled LDAP or GitLab SSO and then wants to migrate their users to SAML can now more easily do so from the CLI or the APIs.
+
 ### CloudFront support
+
+ - Added two configuration settings:
+   - `AllowCookiesForSubdomains`, which set's the Domain parameter on our cookies, allowing the browser to send the cookies to subdomains as well.
+   - `WebsocketURL`, which allows the server to instruct clients where they should try to connect by websockets to.
+ - Combined the above two configuration settings allow the bypass of a main proxy server or CDN such as CloudFront that does not support websockets by using a websocket subdomain.
 
 ## Improvements
 
@@ -21,6 +28,8 @@ Release date: 2018-03-16
  
 ### Performance
  - Investigated improving caching for `getRootPosts`.
+ - Web Hub optimizations including optimizing web socket events destined for a single user and precomputing the raw JSON for websocket events.
+ - Created an endpoint to upload an file as octect-stream in order to use `NSUrlSessionUploadTask` that will let us upload files larger than 20 Mb.
 
 ### 508 Compliance
  - 508 Compliance: Add alt to profile pictures (for image previews use the image name).
@@ -30,9 +39,6 @@ Release date: 2018-03-16
  
 ## Plugins
  - Made the "Plugins have been disabled." message more informative.
-
-### Channels
-Keyboard shortcuts
 
 ### Notifications
  - Post a system message when a channel is moved between teams by the CLI command.
@@ -72,6 +78,8 @@ Keyboard shortcuts
 
 #### Removed and Deprecated Features
 
+ - All API v3 endpoints have been deprecated, and scheduled for removal in Mattermost v5.0.
+
 #### config.json
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
@@ -79,6 +87,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Changes to Team Edition and Enterprise Edition:
 
 ### API Changes
+
+ - It is required that any new integrations use API v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
+ - All API v3 endpoints have been deprecated, and scheduled for removal in Mattermost v5.0.
 
 #### RESTful API v4 Changes
 
@@ -88,17 +99,17 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Known Issues
 
-- Google login fails on the Classic mobile apps.
-- User can receive a video call from another browser tab while already on a call.
-- Jump link in search results does not always jump to display the expected post.
-- Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
-- Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
-- Searching with Elasticsearch enabled may not always highlight the searched terms.
-- Team sidebar on desktop app does not update when channels have been read on mobile.
-- Channel scroll position flickers while images and link previews load.
-- Numbered lists can sometimes extend beyond the normal post area.
-- Slack import through the CLI fails if email notifications are enabled.
-- Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - Google login fails on the Classic mobile apps.
+ - User can receive a video call from another browser tab while already on a call.
+ - Jump link in search results does not always jump to display the expected post.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Channel scroll position flickers while images and link previews load.
+ - Numbered lists can sometimes extend beyond the normal post area.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
 
 ### Contributors
 
