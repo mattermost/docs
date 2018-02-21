@@ -140,6 +140,13 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### WebSocket Event Changes
 
  - Added `delete_team` web socket event to notify client whenever a team is deleted (e.g. via API call).
+ 
+ ### Database Changes
+
+**User.Position field:**
+- Increased size of `user.Position` from `35` to `128` characters.
+**OAuth state parameter:**
+- Increased OAuth2 state parameter limit from `128` to `1024`.
 
 ### Known Issues
 
