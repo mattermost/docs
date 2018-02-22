@@ -54,6 +54,8 @@ To configure AD/LDAP synchronization with AD/LDAP sign-in:
 
 If you want to synchronize immediately after disabling an account, use the "AD/LDAP Synchronize Now" button in **System Console > AD/LDAP**.
 
+Note: Make sure that at least 1 LDAP user is in Mattermost or the sync will not complete.
+
 To configure AD/LDAP synchronization with SAML sign-in, see the [SAML documentation](https://about.mattermost.com/default-saml-ldap-sync).
 
 #### Configure AD/LDAP deployments with multiple domains
@@ -95,7 +97,7 @@ You can use a pre-packaged Mattermost plugin to pull additional user attributes 
 
 ### Troubleshooting / FAQ
 
-The following are frequently asked questions and troubleshooting suggestions on common error messages and issues.
+The following are frequently asked questions and troubleshooting suggestions on common error messages and issues. It is recommendeded that you check your logs for errors as they can provide an idea of what the issue is.
 
 #### If "AD/LDAP Test" button fails, how can I troubleshoot the connection? 
 
@@ -118,6 +120,8 @@ No, each user is created on their first login.
 Go to **System Console > AD/LDAP** and make sure that the **Enable Synchronization with AD/LDAP** setting is set to ``true``.
 
 If the issue persists, try performing a sync with the **User Filter** field blank. If the sync completes in this scenario, then the general syntax was formatted incorrectly. Refer to this [document](https://docs.mattermost.com/administration/config-settings.html#user-filter) for guidance on setting a correct syntax format.
+
+Make sure that you also have at least 1 LDAP user in Mattermost or the sync will not complete.
 
 #### If I want to add people to channels, can I pre-create users somehow? 
 
@@ -171,6 +175,8 @@ Note: Currently the value is case sensitive. If the ID attribute is set to the u
 This indicates your AD/LDAP server configuration has a maximum page size set and the query coming from Mattermost is returning a result set in excess of that limit.
 
 To address this issue you can set the [max page size](https://docs.mattermost.com/administration/config-settings.html#maximum-page-size) in your Mattermost configuration to match the limit on your AD/LDAP server. This will return a sequence of result sets that do not exceed the max page size, rather than returning all results in a single query.
+
+If the error is still occurring, it is likely that no AD/LDAP users have logged into Mattermost yet. Ensure that at least 1 AD/LDAP user has logged into Mattermost and re-run the sync. The error should disappear at that point.
 
 #### Where can I find help on AD/LDAP configuration settings in config.json?
 
