@@ -97,7 +97,7 @@ You can use a pre-packaged Mattermost plugin to pull additional user attributes 
 
 ### Troubleshooting / FAQ
 
-The following are frequently asked questions and troubleshooting suggestions on common error messages and issues. It is recommendeded to check your logs for errors as they can provide you with an idea of what the issue is.
+The following are frequently asked questions and troubleshooting suggestions on common error messages and issues. It is recommendeded that you check your logs for errors as they can provide an idea of what the issue is.
 
 #### If "AD/LDAP Test" button fails, how can I troubleshoot the connection? 
 
@@ -121,7 +121,7 @@ Go to **System Console > AD/LDAP** and make sure that the **Enable Synchronizati
 
 If the issue persists, try performing a sync with the **User Filter** field blank. If the sync completes in this scenario, then the general syntax was formatted incorrectly. Refer to this [document](https://docs.mattermost.com/administration/config-settings.html#user-filter) for guidance on setting a correct syntax format.
 
-Make sure that you also have at least 1 LDAP user in Mattermost as having 0 will not complete.
+Make sure that you also have at least 1 LDAP user in Mattermost or the sync will not complete.
 
 #### If I want to add people to channels, can I pre-create users somehow? 
 
@@ -176,7 +176,7 @@ This indicates your AD/LDAP server configuration has a maximum page size set and
 
 To address this issue you can set the [max page size](https://docs.mattermost.com/administration/config-settings.html#maximum-page-size) in your Mattermost configuration to match the limit on your AD/LDAP server. This will return a sequence of result sets that do not exceed the max page size, rather than returning all results in a single query.
 
-If the error is still occurring, it is likely that no AD/LDAP users have logged into Mattermost yet. Ensure that at least 1 AD/LDAP user has logged into Mattermost and re-run the sync. The error should go away at that point.
+If the error is still occurring, it is likely that no AD/LDAP users have logged into Mattermost yet. Ensure that at least 1 AD/LDAP user has logged into Mattermost and re-run the sync. The error should disappear at that point.
 
 #### Where can I find help on AD/LDAP configuration settings in config.json?
 
