@@ -97,7 +97,7 @@ In this example, a team manager is handing out assignments to various team membe
 Since messaging is at the core of your Mattermost application, below are other examples of what you can do:
 
 - `Mention teammates so they get notified <https://docs.mattermost.com/help/messaging/mentioning-teammates.html>`__
-- `Formatting text <https://docs.mattermost.com/help/messaging/formatting-text.html>`__
+- `Formatting text (styling, emojis, code, etc) <https://docs.mattermost.com/help/messaging/formatting-text.html>`__
 - `Share files <https://docs.mattermost.com/help/messaging/attaching-files.html>`__
 - `Execute commands <https://docs.mattermost.com/help/messaging/executing-commands.html>`__
 - `Flag <https://docs.mattermost.com/help/messaging/flagging-messages.html>`__ and `pin <https://docs.mattermost.com/help/messaging/pinning-messages.html>`__ messages
