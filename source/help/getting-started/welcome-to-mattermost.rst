@@ -48,6 +48,9 @@ A team is a digital workspace where you and your teammates can collaborate on Ma
 
 You have the ability to switch back and forth between teams on the Team sidebar, located on the upper left side of the app.
 
+.. image:: ../../images/ui_teams.png
+   :alt: ui_teams
+
 
 **Channels**
 ---------------------
@@ -64,7 +67,7 @@ There are three types of channels: Public Channels, Private Channels, and Direct
 
 Public Channels are open to everyone on a team. New team members are automatically added to two Public Channels when they sign up: Town Square and Off-Topic.
 
-Public Channels are identified with a **circle icon**.
+Public Channels are identified with a **globe icon**.
 
 - **Private Channels:**
 
@@ -86,32 +89,40 @@ For more information on Channels and how to manage them, `click here <https://do
 ---------------------
 Sending messages and replying to messages are important ways to keep conversations active with your team. You can edit and delete messages after you have sent them. You can also share links to any message in Mattermost.
 
-Below is a list of other things you can do with Mattermost:
+In this example, a team manager is handing out assignments to various team members to complete as part of a review:
 
-Since messaging is at the core of your Mattermost application, below are examples of what you can do:
+.. image:: ../../images/ui_messages.png
+   :alt: ui_messages
 
-- `Mention teammates <https://docs.mattermost.com/help/messaging/mentioning-teammates.html>`__
+Since messaging is at the core of your Mattermost application, below are other examples of what you can do:
+
+- `Mention teammates so they get notified <https://docs.mattermost.com/help/messaging/mentioning-teammates.html>`__
 - `Formatting text <https://docs.mattermost.com/help/messaging/formatting-text.html>`__
 - `Share files <https://docs.mattermost.com/help/messaging/attaching-files.html>`__
 - `Execute commands <https://docs.mattermost.com/help/messaging/executing-commands.html>`__
 - `Flag <https://docs.mattermost.com/help/messaging/flagging-messages.html>`__ and `pin <https://docs.mattermost.com/help/messaging/pinning-messages.html>`__ messages
 - `Keyboard shortcuts <https://docs.mattermost.com/help/messaging/keyboard-shortcuts.html>`__
 
-`Click here <https://docs.mattermost.com/guides/user.html#messaging>`__ or a complete list with instructions.
+`Click here <https://docs.mattermost.com/guides/user.html#messaging>`__ for a complete list with instructions.
 
 
 **Search**
 ---------------------
 Use the search box to find messages and replies that match the search terms that you enter. All channels that you are a member of in the current team are searched.
 
-You can also do more advanced search using search modifiers `here <https://docs.mattermost.com/help/getting-started/searching.html>`__
+.. image:: ../../images/ui_search.png
+   :alt: ui_search
 
+You can also do more advanced search using search modifiers `here <https://docs.mattermost.com/help/getting-started/searching.html>`__
 
 **Notifications**
 ---------------------
 Notifications in Mattermost alert you to unread messages and mentions.
 
-You can configure Mattermost on how you want to be notified `here <https://docs.mattermost.com/help/getting-started/configuring-notifications.html>`__
+.. image:: ../../images/ui_notifications.png
+   :alt: ui_notifications
+
+You can configure your Mattermost account on how you want to be notified `here <https://docs.mattermost.com/help/getting-started/configuring-notifications.html>`__
 
 
 **What's Next?**
