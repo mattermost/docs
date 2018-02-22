@@ -50,7 +50,7 @@ data:
       artifacts:
         enabled: true
       lfs:
-        enabled: true
+        enabled: false
         object_store:
           enabled: false
       pages:

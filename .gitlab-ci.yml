@@ -241,7 +241,7 @@ qa:
       echo "Previous deployment found, checking status"
       deployment_status=$(helm status $CI_ENVIRONMENT_SLUG | grep ^STATUS | cut -d' ' -f2)
       echo "Previous deployment state: $deployment_status"
-      if [[ "$deployment_status" == "FAILED" || "$deployment_status" == "PENDING_UPGRADE" ]]; then
+      if [[ "$deployment_status" == "FAILED" || "$deployment_status" == "PENDING_UPGRADE" || "$deployment_status" == "PENDING_INSTALL" ]]; then
         status=0;
       else
         status=1;
