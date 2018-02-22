@@ -78,6 +78,23 @@ function cleanup_gke_resources(){
 }
 
 
+function kube_monkey(){
+  validations;
+  set +e
+
+  DIR=$(dirname "$(readlink -f "$0")")
+
+  if $RBAC_ENABLED; then
+    password=$(gcloud container clusters describe $CLUSTER_NAME --zone $ZONE --project $PROJECT --format='value(masterAuth.password)');
+
+    kubectl --username=admin --password=$password create -f $DIR/../doc/kube-monkey/kube-monkey-role.yaml;
+  fi
+
+  kubectl --namespace=kube-system create configmap km-config --from-file=config.toml=$DIR/../doc/kube-monkey/km-config.toml
+
+  kubectl create -f $DIR/../doc/kube-monkey/kube-monkey-deployment.yaml
+}
+
 if [ -z "$1" ]; then
   echo "You need to pass up or down";
 fi
@@ -88,6 +105,9 @@ case $1 in
     ;;
   down)
     cleanup_gke_resources;
+    ;;
+  chaos)
+    kube_monkey;
     ;;
   *)
     echo "Unknown command $1";
