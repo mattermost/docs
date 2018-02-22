@@ -87,12 +87,12 @@ function kube_monkey(){
   if $RBAC_ENABLED; then
     password=$(gcloud container clusters describe $CLUSTER_NAME --zone $ZONE --project $PROJECT --format='value(masterAuth.password)');
 
-    kubectl --username=admin --password=$password create -f $DIR/../doc/kube-monkey/kube-monkey-role.yaml;
+    kubectl --username=admin --password=$password create -f $DIR/kube-monkey-resources/kube-monkey-role.yaml;
   fi
 
-  kubectl --namespace=kube-system create configmap km-config --from-file=config.toml=$DIR/../doc/kube-monkey/km-config.toml
+  kubectl --namespace=kube-system create configmap km-config --from-file=config.toml=$DIR/kube-monkey-resources/km-config.toml
 
-  kubectl create -f $DIR/../doc/kube-monkey/kube-monkey-deployment.yaml
+  kubectl create -f $DIR/kube-monkey-resources/kube-monkey-deployment.yaml
 }
 
 if [ -z "$1" ]; then
