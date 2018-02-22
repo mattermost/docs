@@ -1,7 +1,7 @@
 Welcome to Mattermost!
 ==========
 
-This article will go over the basics of Mattermost and a general overview of the appliation so that you can get a good headstart.
+This article will go over the basics of Mattermost and a general overview of the appliation so that you can start using it right way.
 
 Ready? Let's get started!
 
@@ -21,20 +21,18 @@ Some of the major benefits of using Mattermost are:
 - Sharing files
 
 
-**Basic information**
+**The Basics**
 ---------------------
 
 To understand how Mattermost works, below are some of the basic things you'll need to know. 
-
 
 This is a what a typical Mattermost workspace looks like. 
 
 .. image:: ../../images/ui3.png
    :alt: ui
-   :width: 239px
-   :height: 232px
 
 
+These are the main functions of Mattermost, we will be going over each one to understand how each one works:
 
 - Teams
 - Channels
@@ -44,44 +42,47 @@ This is a what a typical Mattermost workspace looks like.
 
 
 
-
 **Teams**
 ---------------------
-A team is a digital workspace where you and your teammates can collborate on Mattermost. Depending on how Mattermost is set up in your organization, you can belong to 1 team or multiple teams.
+A team is a digital workspace where you and your teammates can collaborate on Mattermost. Depending on how Mattermost is set up in your organization, you can belong to one team or multiple teams.
 
+You have the ability to switch back and forth between teams on the Team sidebar, located on the upper left side of the app.
 
 
 **Channels**
 ---------------------
-Channels are used to organize conversations across different topics, they are located on the left-hand panel of your Mattermost application. There are three types of channels: Public Channels, Private Channels, and Direct Messages.
+Channels are used to organize conversations across different topics. They are located on the left-hand panel of Mattermost. 
+
+There are three types of channels: Public Channels, Private Channels, and Direct Messages.
 
 
-**Public Channels:**
+.. image:: ../../images/ui_channels2.png
+   :alt: ui_channels
+
+
+- **Public Channels:**
 
 Public Channels are open to everyone on a team. New team members are automatically added to two Public Channels when they sign up: Town Square and Off-Topic.
 
-Public Channels are identified with a **circle icon**
+Public Channels are identified with a **circle icon**.
 
-**Private Channels:**
+- **Private Channels:**
 
 Private Channels are for sensitive topics and are only visible to select team members. Any member of a Private Channel can add additional members. Channel members can choose to leave at any time, but only the channel owner or Team Admin can remove other members.
 
-Private Channels have a **lock icon**
+Private Channels have a **lock icon**.
 
-**Direct Messages (DM)**
+- **Direct Messages (DM)**
 
-Direct Messages are for conversations between two people. Group Messages are Direct Messages that have conversations among three or more people. Both are visible only to the people involved.
+Direct Messages are for conversations between two people. 
 
-Use a Direct Message when you want a private conversation with one other person. 
-
-Use a Group Message when you want to quickly set up a conversation with up to seven other participants. If you want more than that, you must create a Private Channel.
-
-
+Group Messages are Direct Messages that have conversations among three or more people. Both are visible only to the people involved.
 
 
 For more information on channels and how to manage them, `click here <https://docs.mattermost.com/help/getting-started/organizing-conversations.html>`__
 
-**Sending Messages**
+
+**Messages**
 ---------------------
 Sending messages and replying to messages are important ways to keep conversations active with your team. You can edit and delete messages after you have sent them. You can also share links to any message in Mattermost.
 
@@ -89,12 +90,12 @@ Below is a list of other things you can do with Mattermost:
 
 Since messaging is at the core of your Mattermost application, below are examples of what you can do:
 
-- Mention teammates
-- Format text (emojis, text style, links code, tables)
-- Share files
-- Execute commands
-- Flag and pin messages
-- Keyboard shortcuts
+- `Mention teammates <https://docs.mattermost.com/help/messaging/mentioning-teammates.html>`__
+- `Formatting text <https://docs.mattermost.com/help/messaging/formatting-text.html>`__
+- `Share files <https://docs.mattermost.com/help/messaging/attaching-files.html>`__
+- `Execute commands <https://docs.mattermost.com/help/messaging/executing-commands.html>`__
+- `Flag <https://docs.mattermost.com/help/messaging/flagging-messages.html>`__ and `pin <https://docs.mattermost.com/help/messaging/pinning-messages.html>`__ messages
+- `Keyboard shortcuts <https://docs.mattermost.com/help/messaging/keyboard-shortcuts.html>`__
 
 `Click here <https://docs.mattermost.com/guides/user.html#messaging>`__ or a complete list with instructions.
 
