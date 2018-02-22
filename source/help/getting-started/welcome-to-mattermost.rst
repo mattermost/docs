@@ -32,7 +32,7 @@ This is a what a typical Mattermost workspace looks like.
    :alt: ui
 
 
-These are the main functions of Mattermost, we will be going over each one to understand how each one works:
+These are the main features of Mattermost, we will be going over each one to understand how they work:
 
 - Teams
 - Channels
@@ -79,7 +79,7 @@ Direct Messages are for conversations between two people.
 Group Messages are Direct Messages that have conversations among three or more people. Both are visible only to the people involved.
 
 
-For more information on channels and how to manage them, `click here <https://docs.mattermost.com/help/getting-started/organizing-conversations.html>`__
+For more information on Channels and how to manage them, `click here <https://docs.mattermost.com/help/getting-started/organizing-conversations.html>`__
 
 
 **Messages**
@@ -112,3 +112,8 @@ You can also do more advanced search using search modifiers `here <https://docs.
 Notifications in Mattermost alert you to unread messages and mentions.
 
 You can configure Mattermost on how you want to be notified `here <https://docs.mattermost.com/help/getting-started/configuring-notifications.html>`__
+
+
+**What's Next?**
+--------------------- 
+Feel free to browse through our `full user guide <https://docs.mattermost.com/guides/user.html>`__ for more information on how to use Mattermost!
