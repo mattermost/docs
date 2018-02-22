@@ -1,6 +1,6 @@
 # Kube monkey
 
-[kube monkey](https://github.com/asobti/kube-monkey) is an implementation of netflix's [chaos monkey] for kubernetes clusters. It schedules randomly killing of pods
+[kube monkey](https://github.com/asobti/kube-monkey) is an implementation of netflix's [chaos monkey](https://github.com/Netflix/chaosmonkey) for kubernetes clusters. It schedules randomly killing of pods
 in order to test fault tollerance of a highly available system.
 
 ## Why
