@@ -44,13 +44,13 @@ Release date: 2018-03-16
  
 ## Bug Fixes
 
- - Fixed an issue where Sidebar Unread Text setting was ignored in custom theme.
- - Fixed an issue where Emoji picker had an empty line at the bottom of the list.
- - Fixed an issue with Display Markdown help on a second line in Edit Message dialog.
+ - Fixed an issue where sidebar unreads text setting was ignored in custom theme.
+ - Fixed an issue where emoji picker had an empty line at the bottom of the list.
+ - Fixed an issue with Markdown help wrapping on a second line in Edit Message dialog.
  - Fixed an issue where after leaving last team the "Logout" link did nothing.
  - Fixed an issue where focus was sometimes wrong on delete post modal.
- - Fixed an issue where Bulk Import didn't force Town Square membership.
- - Fixed an issue with duplicate calls of "view" request when switched channels.
+ - Fixed an issue where the bulk import tool didn't force Town Square membership.
+ - Fixed duplicate calls of the "view" request when switching channels.
 
 ### Compatibility
 
@@ -78,9 +78,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### Changes to Team Edition and Enterprise Edition:
 
- - Under `GetCookieDomain` in `config.json`:
-    - Added `AllowCookiesForSubdomains`, to ensure that the Domain parameter is set on our cookies, which allows the browser to send the cookies to subdomains as well.
-    - Added `WebsocketURL`, which allows the server to instruct clients where they should try to connect by websockets to.
+ - Under `ServiceSettings` in `config.json`:
+    - Added `AllowCookiesForSubdomains`, to ensure that the domain parameter is set for cookies, which allows the browser to send the cookies to subdomains as well.
+    - Added `WebsocketURL`, which allows the server to instruct clients where they should try to connect WebSockets to.
 
 ### API Changes
 
