@@ -1,7 +1,7 @@
 Welcome to Mattermost!
 ==========
 
-This article will go over the basics of Mattermost and a general overview of the appliation so that you can start using it right way.
+This article will cover the basics of Mattermost and give a general overview of the application so that you can start using it right way.
 
 Ready? Let's get started!
 
@@ -9,11 +9,11 @@ Ready? Let's get started!
 **What is Mattermost?**
 -----------------------------------
 
-Mattermost is a modern, digital workspace that will help you be more productive in your day to day work life.
+Mattermost is a modern, digital workspace that will help you be more productive in your day-to-day work life.
 
 Some of the major benefits of using Mattermost are:
 
-- Direct 1:1 and group messaging with your colleages
+- Direct 1:1 and group messaging with your colleagues
 - Channels for topic-based, group-based, or meeting-based chat
 - Streamlined collaboration on projects
 - Reduced email clutter
@@ -44,9 +44,9 @@ These are the main features of Mattermost, we will be going over each one to und
 
 **Teams**
 ---------------------
-A team is a digital workspace where you and your teammates can collaborate on Mattermost. Depending on how Mattermost is set up in your organization, you can belong to one team or multiple teams.
+A team is a digital workspace where you and your teammates can collaborate in Mattermost. Depending on how Mattermost is set up in your organization, you can belong to one team or multiple teams.
 
-You have the ability to switch back and forth between teams on the Team sidebar, located on the upper left side of the app.
+You have the ability to switch back and forth between teams on the Team Sidebar, located on the upper left side of the app.
 
 .. image:: ../../images/ui_teams.png
    :alt: ui_teams
@@ -122,7 +122,7 @@ Notifications in Mattermost alert you to unread messages and mentions.
 .. image:: ../../images/ui_notifications.png
    :alt: ui_notifications
 
-You can configure your Mattermost account on how you want to be notified `here <https://docs.mattermost.com/help/getting-started/configuring-notifications.html>`__
+You can configure your Mattermost account for how you want to be notified `here <https://docs.mattermost.com/help/getting-started/configuring-notifications.html>`__
 
 
 **What's Next?**
