@@ -51,6 +51,7 @@ Release date: 2018-03-16
  - Fixed an issue where focus was sometimes wrong on delete post modal.
  - Fixed an issue where the bulk import tool didn't force Town Square membership.
  - Fixed duplicate calls of the "view" request when switching channels.
+ - Fixed an issue where channel name was included in push notifications if someone posted only files with Push Notification Contents set to not include channel name.
 
 ### Compatibility
 
