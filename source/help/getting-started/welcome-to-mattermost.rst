@@ -75,7 +75,7 @@ Private Channels are for sensitive topics and are only visible to select team me
 
 Private Channels have a **lock icon**.
 
-- **Direct Messages (DM)**
+- **Direct Messages (DM) and Group Messages (GM)**
 
 Direct Messages are for conversations between two people. 
 
