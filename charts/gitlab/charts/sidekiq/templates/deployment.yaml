@@ -9,6 +9,8 @@
 {{- $replicas := .Values.replicaCount -}}
 {{- $concurrency := .Values.concurrency -}}
 {{- $timeout := .Values.timeout -}}
+{{- $resources := .Values.resources -}}
+{{- $nodeSelector := .Values.nodeSelector -}}
 {{- $redisSecret := .Values.redis.password.secret -}}
 {{- $redisKey := .Values.redis.password.key -}}
 {{- $postgresSecret := .Values.psql.password.secret -}}
@@ -27,6 +29,7 @@
 {{- $configMapChecksum := include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
 {{- range .Values.pods -}}
 {{- $queueName := printf "%s-%s" $fullname .name | trunc 63}}
+{{- $podNodeSelector := default $nodeSelector .nodeSelector -}}
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -136,7 +139,7 @@ spec:
                 - -c1
                 - /dev/random
           resources:
-{{ toYaml .resources | indent 12 }}
+{{ toYaml ( default $resources .resources ) | indent 12 }}
       volumes:
       - name: sidekiq-config
         projected:
@@ -167,9 +170,9 @@ spec:
       - name: sidekiq-secrets
         emptyDir:
           medium: "Memory"
-    {{- if .nodeSelector }}
+    {{- if $podNodeSelector }}
       nodeSelector:
-{{ toYaml .nodeSelector | indent 8 }}
+{{ toYaml $podNodeSelector | indent 8 }}
     {{- end }}
 ---
 {{-   end -}}
