@@ -1,25 +1,29 @@
 # Generate configuration
 
-Based on the [example-config.yaml](../example-config.yaml) file, you can generate
-your own yaml template.
+In order to complete the configuration, make sure you have done the following:
 
-For this example, we will use domain `example.local`, and expect our hostnames to be: `gitlab.example.local`, `registry.example.local`.
+- `Secrets` are created - [secrets documentation](secrets.md)
+- You have the static-ip for the `loadBalancerIP`
+- DNS entry made for the domain pointing to the `loadBalancerIP`
+- `initialRootPassword` - created or chosen at random
+
+Now you can, based on the [example-config.yaml](../example-config.yaml) file, generate
+your own configuration file.
 
 ```
 cp doc/example-config.yaml configuration.yaml
 ```
+For this example:
 
-In order to complete the configuration, we will need to prepare a few values:
-- Creation of `Secrets` from [secrets documentation](secrets.md)
-- [static-ip][] for the `loadBalancerIP`
-- [DNS entry][] made for the domain
-- `initialRootPassword`, from 1Password or chosen at random
+- We will use domain `example.local` as our `DNS entry`, and expect our hostnames
+  to be: `gitlab.example.local`, `registry.example.local`.
+- We will use `X.X.X.X` as our `loadBalancerIP`
+- Our `initialRootPassword` will be `example-password`
 
 Next, we are replacing the contents of the `configuration.yaml` with valid
 information:
 
 Set the following properties in `configuration.yaml`
-
 > *Note:* Find and edit each property. They should already exist, but will need their value set, and may need to be uncommented.
 
 ```YAML
@@ -29,7 +33,7 @@ global:
 
 nginx:
   service:
-    loadBalancerIP: <static ip>
+    loadBalancerIP: X.X.X.X
 
 kube-lego:
   LEGO_EMAIL: <valid email address>
@@ -37,7 +41,7 @@ kube-lego:
 
 gitlab:
   migrations:
-    initialRootPassword: initialRootPassword
+    initialRootPassword: example-password
 ```
 
 If you wish to use your own [custom wildcard certificates](secrets.md#custom-certificates),
@@ -65,7 +69,5 @@ global:
 
 Now that the template is generated, we can proceed [to deployment](deployment.md).
 
-[static-ip]: resources.md#static-ip
-[DNS entry]: resources.md#dns-entry
 [secret-gl-certs]: secrets.md#gitlab-certificates
 [secret-reg-certs]: secrets.md#registry-certificates
