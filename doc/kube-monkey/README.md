@@ -23,3 +23,7 @@ The [gke bootstrap script](../../scripts/gke_bootstrap_script.sh) takes an optio
 and role if RBAC is enabled.
 
 To install and unleash kube-monkey run `scripts/gke-bootstrap-script.sh chaos`
+
+### Configuration
+
+Kube monkey can be configured by editing `scripts/kube-monkey-resources/km-config.toml` file. For more info read [kube monkey docs](https://github.com/asobti/kube-monkey#configuring)
