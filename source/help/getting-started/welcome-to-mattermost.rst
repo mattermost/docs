@@ -29,7 +29,7 @@ To understand how Mattermost works, below are some of the basic things you'll ne
 
 This is a what a typical Mattermost workspace looks like. 
 
-.. image:: ../../images/ui.png
+.. image:: ../../images/ui3.png
    :alt: ui
    :width: 239px
    :height: 232px
@@ -41,7 +41,6 @@ This is a what a typical Mattermost workspace looks like.
 - Messages
 - Search
 - Notifications
-- File sharing
 
 
 
@@ -97,15 +96,18 @@ Since messaging is at the core of your Mattermost application, below are example
 - Flag and pin messages
 - Keyboard shortcuts
 
-`Click here <https://docs.mattermost.com/guides/user.html#messaging>`__ or a complete list with instructions, go to: 
+`Click here <https://docs.mattermost.com/guides/user.html#messaging>`__ or a complete list with instructions.
 
 
 **Search**
 ---------------------
 Use the search box to find messages and replies that match the search terms that you enter. All channels that you are a member of in the current team are searched.
 
-You can also do more advanced search using search modifiers. You can 
+You can also do more advanced search using search modifiers `here <https://docs.mattermost.com/help/getting-started/searching.html>`__
 
 
 **Notifications**
 ---------------------
+Notifications in Mattermost alert you to unread messages and mentions.
+
+You can configure Mattermost on how you want to be notified `here <https://docs.mattermost.com/help/getting-started/configuring-notifications.html>`__
