@@ -67,6 +67,7 @@ Administration
    /administration/backup*
    /administration/liveness-check*
    /administration/migrating.md
+   /administration/image-proxy*
    /administration/plugins*
    /administration/announcement-banner.rst
    /administration/branding*

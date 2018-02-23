@@ -19,3 +19,4 @@ Detailed documentation on extending and integrating with the Mattermost server.
    /integrations/zoom*
    /developer/integration*
    /integrations/embedding*
+   /integrations/webhook*
