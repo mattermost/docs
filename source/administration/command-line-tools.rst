@@ -842,12 +842,12 @@ platform user migrate_auth (to saml)
         mapping = {}
 
         for user in users.result:
-            mapping[user.email] = user.login
+            mapping[user.profile.email] = user.profile.login
 
         while not users.is_last_page():
             users = usersClient.get_paged_users(url=users.next_url)
             for user in users.result:
-                mapping[user.email] = user.login
+                mapping[user.profile.email] = user.profile.login
 
         with file("saml_users.json", "w") as fd:
             json.dump(mapping, fd)
