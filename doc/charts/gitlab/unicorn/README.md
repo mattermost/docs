@@ -192,6 +192,14 @@ The following values are used to configure the Unicorn Pods.
 
 Field `replicaCount` is an integer, controlling the number of Unicorn instances to create in the deployment. This defaults to `1`.
 
+#### workerProcesses
+
+Field `workerProcesses` is an integer, controller the number of Unicorn workers to run per pod. You must have at least `2` workers available in your cluster in order for GitLab to properly function. Note that as you increase the `workerProcesses` the memory required will increase by approximately `400MB`, so you should update the pod `resources` accordingly.  `workerProcesses` defaults to `2`.
+
+#### workerTimeout
+
+Field `workerTimeout` is an integer specifying the number of seconds a request can be pending before it times out. Defaults to `60`
+
 ### GitLab Shell
 
 GitLab Shell uses an Auth Token in its communication with Unicorn. Share the token with GitLab Shell and Unicorn using a shared Secret.
