@@ -28,6 +28,34 @@ data:
     [redis]
     URL = "tcp://{{ template "unicorn.redis.host" . }}:{{ default 6379 .Values.redis.port }}"
     Password = "<%= File.read("/etc/gitlab/redis/password") %>"
+  unicorn.rb: |
+    worker_processes {{ .Values.workerProcesses }}
+    working_directory "/home/git/gitlab"
+    listen "0.0.0.0:{{ .Values.service.internalPort }}", :tcp_nopush => true
+    timeout {{ .Values.workerTimeout }}
+    pid "/home/git/unicorn.pid"
+    preload_app true
+
+    before_fork do |server, worker|
+      old_pid = "#{server.config[:pid]}.oldbin"
+      if old_pid != server.pid
+        begin
+          sig = (worker.nr + 1) >= server.worker_processes ? :QUIT : :TTOU
+          Process.kill(sig, File.read(old_pid).to_i)
+        rescue Errno::ENOENT, Errno::ESRCH
+        end
+      end
+
+      ActiveRecord::Base.connection.disconnect! if defined?(ActiveRecord::Base)
+    end
+
+    after_fork do |server, worker|
+      ActiveRecord::Base.establish_connection if defined?(ActiveRecord::Base)
+      defined?(::Prometheus::Client.reinitialize_on_pid_change) && Prometheus::Client.reinitialize_on_pid_change
+    end
+
+    ENV['GITLAB_UNICORN_MEMORY_MIN'] = (400 * 1 << 20).to_s
+    ENV['GITLAB_UNICORN_MEMORY_MAX'] = (650 * 1 << 20).to_s
   gitlab.yml.erb: |
     production: &base
       gitlab:
