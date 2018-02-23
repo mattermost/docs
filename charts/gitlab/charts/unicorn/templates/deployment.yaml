@@ -47,6 +47,8 @@ spec:
               value: '/var/opt/gitlab/templates'
             - name: CONFIG_DIRECTORY
               value: '/var/opt/gitlab/config/gitlab/'
+            - name: WORKHORSE_ARCHIVE_CACHE_DISABLED
+              value: "1"
           volumeMounts:
             - name: unicorn-config
               mountPath: '/var/opt/gitlab/templates'
