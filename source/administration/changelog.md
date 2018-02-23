@@ -11,6 +11,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
    - Fixed an issue where channels with a name 26 characters long were inaccessible with a 404 error.
    - Fixed “We couldn’t get the emoji” server log messages.
    - Fixed an issue with being unable to switch to direct or group message channels via CTRL/CMD+K channel switcher or via “msg/groupmsg” slash commands.
+   - Fixed an issue where clicking on "Send Message" from a user's profile popover redirected to Town Square instead of the user's direct message channel.
    - Fixed an issue where links to direct and group message channels opened in a new tab.
  - **v4.7.1, released 2018-02-20**
    - Fixed an issue with [compliance export](https://docs.mattermost.com/administration/compliance-export.html) outputs, resulting in `Failed to update ChannelMemberHistory table` error  messages in the log when a user joins or leaves a channel. Issue updates [posted here](https://mattermost.atlassian.net/browse/MM-9633).
