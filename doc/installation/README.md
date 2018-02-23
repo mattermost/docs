@@ -30,7 +30,7 @@ Next, populate your configuration which will be used to deploy. See
 Now that we have the environment setup and configuration generated,
 we can proceed to [deployment][].
 
-[Google Kubernetes Engine]: cloud/gke.md
+[Google Kubernetes Engine]: ../cloud/gke.md
 [local setup]: tools.md
 [resources]: resources.md
 [secrets]: secrets.md
