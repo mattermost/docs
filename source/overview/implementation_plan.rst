@@ -58,9 +58,9 @@ A Mattermost Enterprise E20 implementation consists of the following system comp
  - **Mattermost Server**
    - The Mattermost Server is a single binary that includes the RESTful JSON web service, authentication client, authentication provider, notification service, and data management service. The Mattermost Server can be deployed in stand-alone or high availability mode where two or more servers are clustered together using gossip protocol and a proxy server that routes traffic from client applications to healthy servers in the cluster.
  - **Mattermost Database**
-   - A MySQL or PostgreSQL database in stand-alone or high-availability configurations (master with read replicas).
-Mattermost Push Notification Service
-Hosted or on-prem service that pushes notifications to Mattermost Android and Mattermost iOS mobile applications.
+   - A MySQL or PostgreSQL database in stand-alone or high-availability configurations (master with read replicas). When choosing the database, consider the `inherent search limitations of the database type <https://docs.mattermost.com/install/requirements.html#database-software>`_ and whether `Elasticsearch <https://docs.mattermost.com/deployment/elasticsearch.html>`_ is most appropriate for your deployment.
+ - **Mattermost Push Notification Service**
+   - Hosted or on-prem service that pushes notifications to Mattermost Android and Mattermost iOS mobile applications.
  - **Mattermost Client Applications**
    - Client applications are available for Mattermost for the following platforms: Android, iOS, Windows, OSX, and Linux (Beta).
  - **Mattermost Web Client**
