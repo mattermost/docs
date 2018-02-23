@@ -42,6 +42,9 @@ Release date: 2018-03-16
  - Removed plugin upload setting from System Console UI, and prevented switching the setting from the API.
  - Added paging to system console log viewer and set default value of `per_paging` for logs to 1000.
  
+### Enterprise Edition
+ - Added SiteURL for OAuth SSO and fell back to constructed URL if SiteURL blank.
+ 
 ## Bug Fixes
 
  - Fixed an issue where sidebar unreads text setting was ignored in custom theme.
@@ -58,6 +61,7 @@ Release date: 2018-03-16
  - Fixed an issue where the "More Unreads Above" indicator didn't always work.
  - Fixed an issue where IE11 posted placeholder from hidden textbox.
  - Fixed an issue with not being able to submit a reply with CMD+ENTER "Send messages on CTRL+ENTER" on.
+ - Fixed an issue emojis were difficult to click when trying to add en emoji from the picker.
 
 ### Compatibility
 
@@ -93,6 +97,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
  - It is required that any new integrations use API v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
  - All API v3 endpoints have been deprecated, and scheduled for removal in Mattermost v5.0.
+ - Flipped `EnableAPIV3` setting off for new installs, and added a User Interface top banner for System Admins who use APIv3.
 
 #### RESTful API v4 Changes
 
