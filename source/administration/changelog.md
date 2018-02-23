@@ -151,6 +151,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 **User.Position field:**
 - Increased size of `user.Position` from `35` to `128` characters.
+
 **OAuth state parameter:**
 - Increased OAuth2 state parameter limit from `128` to `1024`.
 
