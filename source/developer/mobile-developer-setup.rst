@@ -250,7 +250,7 @@ The set of commands for building the app are used in conjunction with `Fastlane 
  - **make build-ios**: Builds the iOS app and generates the Mattermost.ipa file in the project's root directory to be distributed.
  - **make build-android**: Builds the Android app and generates the Mattermost.apk file in the project's root directory to be distributed.
  - **make unsigned-ios**: Builds the iOS app and generates an unsigned Mattermost-unsigned.ipa file in the project's root directory.
- - **make unsigned-ios**: Builds the Android app and generates an unsigned Mattermost-unsigned.apk file in the project's root directory.
+ - **make unsigned-android**: Builds the Android app and generates an unsigned Mattermost-unsigned.apk file in the project's root directory.
 
 If you plan to use the make build-* commands be sure to set your environment variables for use in conjunction with Fastlane to suit your needs. For more information please refer to the `Build Your Own App from Source`_ section.
 
