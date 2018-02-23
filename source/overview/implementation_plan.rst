@@ -73,7 +73,7 @@ The following diagram is a high-level illustration of the Mattermost platform an
 .. image:: ../images/network.PNG
 **Reference**: https://docs.mattermost.com/deployment/deployment.html
 
-A minimal installation of Mattermost Enterprise E20 for up to 500 users with application (Mattermost Server) and database high availability features enabled will require the following physical, or virtual, servers:
+A recommended installation of Mattermost Enterprise E20 configured with a redundant, highly available, highly scalable mode, with application (Mattermost Server) and database high availability features enabled, will require the following physical, or virtual, servers:
 
 +-------------------+---------+---------------+--------+----------+
 | Task              | Qty     | CPU           | Memory | Storage  |
@@ -217,7 +217,7 @@ Mattermost supports AD/LDAP integration for user authentication and user attribu
 
 **Reference**: https://docs.mattermost.com/deployment/sso-ldap.html 
 
-3.3.10 Multi-Factor Authentication (E10, E10)
+3.3.10 Multi-Factor Authentication (E10, E20)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Configure multi-factor authentication (“MFA”) if required as part of your IT security policy. Compatible with Google Authenticator
