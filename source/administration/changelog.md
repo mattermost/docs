@@ -57,6 +57,7 @@ Release date: 2018-03-16
  - Fixed an issue where a username such as "user.name" gets a highlight only on "name" when @-icon is clicked.
  - Fixed an issue where the "More Unreads Above" indicator didn't always work.
  - Fixed an issue where IE11 posted placeholder from hidden textbox.
+ - Fixed an issue with not being able to submit a reply with CMD+ENTER "Send messages on CTRL+ENTER" on.
 
 ### Compatibility
 
