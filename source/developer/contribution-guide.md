@@ -23,7 +23,7 @@ It is acceptable to submit a PR for a bug or incremental improvement, with less 
  
 Larger pull requests, including those that require a change to documentation or user expectations, [require a Help Wanted issue opened by the core team](http://docs.mattermost.com/process/help-wanted.html) so that the change can be tested, documented and supported.
 
-The best way to discuss opening a Help Wanted ticket with the core team is by [starting a conversation in the feature idea forum](https://www.mattermost.org/feature-ideas/).
+The best way to discuss opening a Help Wanted ticket with the core team is by [starting a conversation in the feature idea forum](https://www.mattermost.org/feature-ideas/) or [opening an issue in the GitHub repository](https://github.com/mattermost/mattermost-server/issues/new).
 
 
 ## Install Mattermost and set up your Forks
