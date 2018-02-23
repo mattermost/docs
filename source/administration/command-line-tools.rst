@@ -752,12 +752,15 @@ platform user invite
       sudo ./platform user invite user@example.com myteam
       sudo ./platform user invite user@example.com myteam1 myteam2
 
-platform user migrate_auth (to ldap)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+platform user migrate_auth
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Migrates all user accounts from one authentication provider to another. For example, you can upgrade your authentication provider from email to AD/LDAP. Output will display any accounts that are not migrated successfully.
+    Migrates all user accounts from one authentication provider to another. For example, you can upgrade your authentication provider from email to AD/LDAP, or from AD/LDAP to SAML. Output will display any accounts that are not migrated successfully.
 
+**Migrate to AD/LDAP**
+
+  Parameters
     -  ``from_auth``: The authentication service from which to migrate user accounts. Supported options: ``email``, ``gitlab``, ``saml``.
 
     -  ``to_auth``: The authentication service to which to migrate user accounts. Supported options: ``ldap``.
@@ -779,31 +782,25 @@ platform user migrate_auth (to ldap)
       --force  Ignore duplicate entries on the AD/LDAP server.
       --dryRun Run a simulation of the migration process without changing the database.
 
+**Migrate to SAML**
 
-platform user migrate_auth (to saml)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Description
-    Migrates all user accounts from one authentication provider to another. For example, you can upgrade your authentication provider from email to SAML. Output will display any accounts that are not migrated successfully.
+  Parameters
 
     -  ``from_auth``: The authentication service from which to migrate user accounts. Supported options: ``email``, ``gitlab``. ``ldap``.
 
     -  ``to_auth``: The authentication service to which to migrate user accounts. Supported options: ``saml``.
 
-    -  ``users_file``: The path of a json file with the usernames and emails of all users to migrate to SAML. The username and email must be the same that the SAML service provider store. And the email must match with the email in mattermost database. For example:
+    -  ``users_file``: The path of a JSON file with the usernames and emails of all users to migrate to SAML. The username and email must be the same as in your SAML service provider. Moreover, the email must match the email address of the Mattermost user account. An example of the users file is below:
 
     .. code-block:: json
 
         {
-          "usr1@email.com": "usr.one",
-          "usr2@email.com": "usr.two"
+          "user1@email.com": "user.one",
+          "user2@email.com": "user.two"
         }
 
-  Users list generation
-    The users file generation depends on how the system is configure and which
-    SAML service are you using. You can use this two example scripts for
-    OneLogin and Okta services as starting point of your own script to get the
-    data from your service provider and configuration.
+  Users file generation
+    Generating the ``users_file`` depends on how the system is configured and which SAML service provider is used. Below are two sample scripts for OneLogin and Okta service providers. For ADFS, you can use the AD/LDAP protocol to directly extract the users information and export it to a JSON file.
 
     OneLogin:
 
@@ -852,7 +849,6 @@ platform user migrate_auth (to saml)
         with file("saml_users.json", "w") as fd:
             json.dump(mapping, fd)
 
-
   Format
     .. code-block:: none
 
@@ -862,11 +858,12 @@ platform user migrate_auth (to saml)
     .. code-block:: none
 
       sudo ./platform user migrate_auth email saml users.json
+
   Options
     .. code-block:: none
 
       --auto   Automatically migrate all users. Assumes the usernames and emails are identical between Mattermost and SAML services.
-      --dryRun Run a simulation of the migration process without changing the database.
+      --dryRun Run a simulation of the migration process without changing the database. Useful to test if the migration results in any errors.
 
 platform user password
 ~~~~~~~~~~~~~~~~~~~~~~~~
