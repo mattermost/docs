@@ -10,7 +10,7 @@ Release date: 2018-03-16
 
 ## Highlights
 
-### CloudFront support
+### CloudFront enhanced compatibility
 
  - Added support for configuring CloudFront to host Mattermost's static assets.
  - Allows for improved caching performance and shorter load times for those members of your team geographically distributed throughout the world.
@@ -53,6 +53,10 @@ Release date: 2018-03-16
  - Fixed duplicate calls of the "view" request when switching channels.
  - Fixed an issue where channel name was included in push notifications if someone posted only files with Push Notification Contents set to not include channel name.
  - Fixed an issue where attempting to preview an attached document failed to finish "loading" if the file extension didn't match the actual file type.
+ - Fixed an issue with no auto-focusing into input text when replying to a message in Classic Mobile App.
+ - Fixed an issue where a username such as "user.name" gets a highlight only on "name" when @-icon is clicked.
+ - Fixed an issue where the "More Unreads Above" indicator didn't always work.
+ - Fixed an issue where IE11 posted placeholder from hidden textbox.
 
 ### Compatibility
 
