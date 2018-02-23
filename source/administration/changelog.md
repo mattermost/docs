@@ -150,7 +150,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v4.5
 
- - **v4.5.2, release date 2018-02-16**
+ - **v4.5.2, release date 2018-02-23**
    - Mattermost v4.5.2 contains multiple security fixes ranging from low to high severity. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **v4.5.1, released 2018-01-16**
    - Fixed an issue where Mattermost wouldn't load on certain versions of Firefox, including v52-54 and v57 in private mode.
