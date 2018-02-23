@@ -6,10 +6,12 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v4.7
 
- - **v4.7.2, release date TBD**
-   - Fixed an issue where message attachments didn't render emojis.
-   - Fixed channels with a name 26 characters long being inaccessible with a 404 error.
-   - Fixed `We couldn't get the emoji` server log messages.
+ - **v4.7.2, released 2018-02-23**
+   - Fixed an issue where message attachments didn’t render emojis.
+   - Fixed an issue where channels with a name 26 characters long were inaccessible with a 404 error.
+   - Fixed “We couldn’t get the emoji” server log messages.
+   - Fixed an issue with being unable to switch to DM or GM channels from channel switcher or by using “msg/groupmsg” commands.
+   - Fixed an issue where links to direct/group channels opened in new tab.
  - **v4.7.1, released 2018-02-20**
    - Fixed an issue with [compliance export](https://docs.mattermost.com/administration/compliance-export.html) outputs, resulting in `Failed to update ChannelMemberHistory table` error  messages in the log when a user joins or leaves a channel. Issue updates [posted here](https://mattermost.atlassian.net/browse/MM-9633).
  - **v4.7.0, released 2018-02-16**
