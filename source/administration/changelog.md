@@ -28,6 +28,9 @@ Release date: 2018-03-16
  - Reduced load times by optimizing database queries and optimizing WebSocket events destined for a single user by precomputing the raw JSON for WebSocket events.
  - Created an endpoint on iOS to upload an file as octect-stream in order to use `NSUrlSessionUploadTask` that will let us upload files larger than 20 Mb.
  - Improved caching of `getRootPosts` call.
+ 
+### Channels
+ - Switched search bar to a button and updated it so that clicking it expands the right hand sidebar with the search box at the top and cursor in place.
 
 ### 508 Compliance
  - Added alt attribute to profile pictures.
@@ -62,6 +65,10 @@ Release date: 2018-03-16
  - Fixed an issue where IE11 posted placeholder from hidden textbox.
  - Fixed an issue with not being able to submit a reply with CMD+ENTER "Send messages on CTRL+ENTER" on.
  - Fixed an issue emojis were difficult to click when trying to add en emoji from the picker.
+ - Fixed an issue where last channel was not remembered after refresh when switching teams.
+ - Fixed an issue with no auto-focusing into input text when attaching a file in Classic Mobile App.
+ - Fixed an issue with not being able to type with composed characters (e.g. CJK) in View Team Members modal and channel switcher.
+ - Fixed an issue where insecure images were loaded by sending client before proxying.
 
 ### Compatibility
 
