@@ -73,7 +73,7 @@ Implementing the API Handler
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To implement the API handler you'll first need to `setup your developer
-environment <https://docs.mattermost.com/developer/developer-setup.html>`__, then follow these steps:
+environment <https://docs.mattermost.com/developer/dev-setup.html>`__, then follow these steps:
 
 1. Add the declaration for your endpoint.
 
