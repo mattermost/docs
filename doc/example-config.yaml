@@ -28,6 +28,7 @@ kube-lego:
 
 # Registry chart Provides services to Unicorn/Omnibus chart(s) and external clients
 registry:
+  enabled: true
   minio:
     enabled: true
 # Redis chart provides Redis services to multiple charts
