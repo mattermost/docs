@@ -17,6 +17,8 @@
 {{- $postgresKey := .Values.psql.password.key -}}
 {{- $gitalySecret := .Values.gitaly.authToken.secret -}}
 {{- $gitalyKey := default "token" .Values.gitaly.authToken.key -}}
+{{- $railsSecretName := .Values.railsSecrets.secret -}}
+{{- $railsSecretKey  := .Values.railsSecrets.key | quote -}}
 {{- /* The below is an messy attempt to read in, and reflect on the configmap-queues.yaml template. */}}
 {{- $queueConfigList := include (print $.Template.BasePath "/configmap-queue.yaml") . | split "\n---" }}
 {{- $queues := dict }}
@@ -88,19 +90,6 @@ spec:
           - name: sidekiq-config
             mountPath: '/var/opt/gitlab/templates'
             readOnly: true
-          - name: sidekiq-gitaly
-            mountPath: '/etc/gitaly'
-            readOnly: true
-          - name: sidekiq-redis
-            mountPath: '/etc/gitlab-redis'
-            readOnly: true
-          - name: sidekiq-postgres
-            mountPath: '/etc/gitlab-postgres'
-            readOnly: true
-          volumeMounts:
-          - name: sidekiq-config
-            mountPath: '/var/opt/gitlab/templates'
-            readOnly: true
           - name: sidekiq-secrets
             mountPath: '/etc/gitlab'
             readOnly: true
@@ -126,6 +115,9 @@ spec:
           - name: sidekiq-secrets
             mountPath: '/etc/gitlab'
             readOnly: true
+          - name: sidekiq-secrets
+            mountPath: /home/git/gitlab/config/secrets.yml
+            subPath: rails-secrets/secrets.yml
           # livenessProbe:
           #   exec:
           #     command:
@@ -152,6 +144,11 @@ spec:
         projected:
           defaultMode: 0400
           sources:
+          - secret:
+              name: {{ $railsSecretName }}
+              items:
+                - key: {{ $railsSecretKey }}
+                  path: rails-secrets/secrets.yml
           - secret:
               name: {{ $gitalySecret }}
               items:

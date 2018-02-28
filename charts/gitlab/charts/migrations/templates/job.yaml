@@ -58,6 +58,9 @@ spec:
             - name: migrations-secrets
               mountPath: '/etc/gitlab'
               readOnly: true
+            - name: migrations-secrets
+              mountPath: /home/git/gitlab/config/secrets.yml
+              subPath: rails-secrets/secrets.yml
           resources:
 {{ toYaml .Values.resources | indent 12 }}
       volumes:
@@ -68,6 +71,11 @@ spec:
         projected:
           defaultMode: 0400
           sources:
+          - secret:
+              name: {{ .Values.railsSecrets.secret }}
+              items:
+                - key: {{ .Values.railsSecrets.key | quote }}
+                  path: rails-secrets/secrets.yml
           - secret:
               name: {{ .Values.redis.password.secret }}
               items:

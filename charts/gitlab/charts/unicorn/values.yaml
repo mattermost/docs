@@ -16,6 +16,9 @@ service:
 enabled: false
 workerProcesses: 2
 workerTimeout: 60
+railsSecrets:
+  secret: rails-secrets
+  key: secrets.yml
 global:
   hosts:
     domain: example.local
