@@ -1,5 +1,5 @@
 image:
-  repository: registry.gitlab.com/gitlab-org/build/cng/cluster-admin
+  repository: registry.gitlab.com/gitlab-org/build/cng/kubectl
   tag: latest
   pullPolicy: Always
 resources: {}
