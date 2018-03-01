@@ -24,9 +24,6 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           command: ['/bin/bash', '/scripts/generate-secrets']
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          env:
-            - name: RAILS_ENV
-              value: {{ .Values.env }}
           volumeMounts:
             - name: scripts
               mountPath: /scripts
