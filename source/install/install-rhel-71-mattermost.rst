@@ -77,7 +77,7 @@ Assume that the IP address of this server is 10.10.10.2
       User=mattermost
       ExecStart=/opt/mattermost/bin/platform
       PIDFile=/var/spool/mattermost/pid/master.pid
-      TimeoutStartSec=90
+      TimeoutStartSec=3600
       LimitNOFILE=49152
 
       [Install]

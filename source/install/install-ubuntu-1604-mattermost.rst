@@ -76,7 +76,7 @@ Assume that the IP address of this server is 10.10.10.2.
     [Service]
     Type=notify
     ExecStart=/opt/mattermost/bin/platform
-    TimeoutStartSec=90
+    TimeoutStartSec=3600
     Restart=always
     RestartSec=10
     WorkingDirectory=/opt/mattermost
