@@ -10,7 +10,7 @@ metadata:
     "helm.sh/hook-weight": "-3"
 data:
   generate-secrets: |
-    NAMESPACE=${NAMESPACE-default}
+    NAMESPACE={{ .Release.Namespace }}
     # Args pattern, length
     function gen_random(){
       head -c 4096 /dev/urandom | LC_CTYPE=C tr -cd $1 | head -c $2
@@ -25,6 +25,11 @@ data:
       else
         echo "secret \"$secret_name\" already exists"
       fi;
+    }
+    function cleanup(){
+      kubectl delete configmap {{ .Release.Name }}-shared-secrets
+      kubectl delete serviceaccount {{ .Release.Name }}-shared-secrets
+      kubectl delete clusterrolebindings {{ .Release.Name }}-shared-secrets
     }
 
     # Redis password
@@ -65,3 +70,4 @@ data:
     EOF
       generate_secret_if_needed rails-secrets --from-file secrets.yml
     fi
+    cleanup;
