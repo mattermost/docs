@@ -11,6 +11,8 @@ metadata:
     prometheus.io/port: "10254"
     prometheus.io/scrape: "true"
 spec:
+  updateStrategy:
+    type: RollingUpdate
   template:
     metadata:
       labels:
@@ -28,6 +30,7 @@ spec:
           - /nginx-ingress-controller
           - --default-backend-service={{ .Release.Namespace }}/{{ template "fullname" . }}-default-backend
           - --configmap={{ .Release.Namespace }}/{{ template "fullname" . }}
+          - --ingress-class={{ .Release.Name }}-nginx
           - --tcp-services-configmap={{ .Release.Namespace }}/{{ template "fullname" . }}-tcp
           env:
             - name: POD_NAME
