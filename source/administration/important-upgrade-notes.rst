@@ -7,6 +7,8 @@ Important Upgrade Notes
 +----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                         |
 +====================================================+=================================================================================================================================================================+
+| v4.6.2                                             | When Let's Encrypt is enabled, port 80 must be forwarded through a firewall to complete the Let's Encrypt certification.                                        |
++----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v4.4.0                                             | Composite database indexes were added to the ``Posts`` table. This may lead to longer ugprade times for servers with more than 1 million messages.              |
 |                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | LDAP sync now depends on email. Make sure all users on your AD/LDAP server have an email address or that their account is deactivated in Mattermost.            |
