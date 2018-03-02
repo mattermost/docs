@@ -180,7 +180,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - **v4.6.2, release date 2018-02-23**
    - Mattermost v4.6.2 contains multiple security fixes ranging from low to high severity. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **v4.6.1, release date 2018-01-30**
-   - Fixed an issue where Let's Encrypt certificates were broken on Mattermost servers. The cache will be deleted upon upgrade so your certificate will be immediately renewed.
+   - Fixed an issue where Let's Encrypt certificates were broken on Mattermost servers. The cache will be deleted upon upgrade so your certificate will be immediately renewed and port 80 must be forwarded through a firewall to complete the Let's Encrypt certification.
  - **v4.6.0, released 2018-01-16**
    - Original 4.6.0 release
 
