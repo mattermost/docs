@@ -15,7 +15,7 @@ service:
   workhorseInternalPort: 8181
 enabled: true
 ingress:
-  enabled: false
+  enabled: true
   proxyConnectTimeout: 15
   proxyReadTimeout: 600
   proxyBodySize: "512m"
@@ -31,7 +31,6 @@ railsSecrets:
 global:
   ingress:
     enabled: true
-    acme: true
     annotations: {}
     tls: {}
       # secretName:

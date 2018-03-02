@@ -7,16 +7,25 @@ global:
     https: true
   ingress:
     enabled: true
-    acme: true
+    configure_externaldns: true
+    configure_certmanager: true
+    annotations: {}
 
-# kube-lego:
-#   enabled: true
-#   config:
-#     LEGO_EMAIL: email@domain.tld
-#     # LEGO_URL: https://acme-v01.api.letsencrypt.org/directory
-#   rbac:
-#     create: true
-#
+nginx:
+  install: false
+
+certmanager:
+  # Install cert-manager chart. Set to false if you already have cert-manager
+  # installed or if you are not using cert-manager.
+  install: false
+  # Configure an ACME Issuer in cert-manager. Only used if configure==true
+  issuer:
+    server: https://acme-staging.api.letsencrypt.org/directory
+  # Other cert-manager configurations from upstream
+  # See https://github.com/kubernetes/charts/tree/master/stable/cert-manager#configuration
+  rbac:
+    create: true
+
 # registry:
 #   enabled: false
 #

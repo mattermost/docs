@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-    name: {{ template "fullname" . }}-tcp
-    labels:
-      app: {{ template "name" . }}
-data:
-  22: "{{ .Release.Namespace }}/{{ .Release.Name }}-{{ .Values.shell.name }}:{{ .Values.shell.port }}"
