@@ -170,7 +170,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Numbered lists can sometimes extend beyond the normal post area.
 - Slack import through the CLI fails if email notifications are enabled.
 - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
-- `[WARN] unable to create user namespace: fork/exec /proc/self/exe: no such file or directory` log message is posted when sandboxing isn't enabled for plugins. If you don't use plugins, you can ignore this message. If you have plugins enabled, [learn how to enable sandboxing](https://developers.mattermost.com/extend/plugins/security/#sandboxing).
+- `[WARN] plugin sandboxing is not supported. plugins will run with the same access level as the server` log message is created when sandboxing isn't enabled for plugins. If you don't use plugins, you can ignore this message. If you have plugins enabled, [learn how to enable sandboxing](https://developers.mattermost.com/extend/plugins/security/#sandboxing).
 
 ### Contributors
 
