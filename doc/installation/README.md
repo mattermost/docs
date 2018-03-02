@@ -15,17 +15,12 @@ all required tools. See [local setup][] document for more information.
 * Azure Container Service - Documentation to be added.
 * On-Premises solutions - Documentation to be added.
 
-## 3. Secrets
-
-For a functional deployment, various secrets are necessary.
-See [secrets document][secrets] for more information.
-
-## 4. Configuration file
+## 3. Configuration file
 
 Next, populate your configuration which will be used to deploy. See
 [generating configuration][configuration] for more information.
 
-## 5. Deploy
+## 4. Deploy
 
 Now that we have the environment setup and configuration generated,
 we can proceed to [deployment][].
@@ -33,6 +28,5 @@ we can proceed to [deployment][].
 [Google Kubernetes Engine]: ../cloud/gke.md
 [local setup]: tools.md
 [resources]: resources.md
-[secrets]: secrets.md
 [configuration]: configuration.md
 [deployment]: deployment.md
