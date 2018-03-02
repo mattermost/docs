@@ -31,6 +31,42 @@ We test to 60,000 concurrent users regularly, and have a peak concurrent utiliza
 
 Mattermost provides an open source, well-documented load test simulator to verify that your Mattermost deployment can achieve the stated scale benchmarks ahead of production deployment. 
 
+Community Questions
+-------------------
+
+How can I get involved or contribute to Mattermost? 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can get involved and contribute to Mattermost in the following ways:
+
+- Contribute Code
+- Find "Help Wanted" projects
+- Join Developer Discussion on a Mattermost Server for contributors
+- File Bugs
+- Share Feature Ideas
+- Get Troubleshooting Help
+- Help translate Mattermost
+
+See the `Get Involved <https://github.com/mattermost/mattermost-server#get-involved>`_ section of the Mattermost GitHub README for more information.
+
+Can contributors add themselves to the Mattermost company page on LinkedIn? 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes! If you have contributed to the Mattermost project we think you should be recognized for it professionally beyond GitHub.
+To add yourself to the Mattermost company page on LinkedIn, do the following:
+
+1. Login to LinkedIn or create an account.
+2. Go to "Me" > "View profile"
+3. Under Experience, click on “plus” symbol and edit the following:
+  - Title: Contributor
+  - Company: Find “Mattermost” (you’ll see the Mattermost logo)
+  - Location: “Remote” or find where you live
+  - From: Date of first contribution or perhaps month you cloned github.com/mattermost
+  - I currently work here: Check
+  - Update my industry: unchecked
+  - Update my headline: unchecked
+  - Description: leave blank or write a sentence about what you have contributed. 
+
 Mobile Applications
 -------------------
 
