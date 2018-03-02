@@ -34,7 +34,10 @@ gitaly:
 replicas: 1
 concurrency: 25
 timeout: 4
-resources: 
+railsSecrets:
+  secret: rails-secrets
+  key: secrets.yml
+resources:
   # limits:
   #  cpu: 500m
   #  memory: 1G

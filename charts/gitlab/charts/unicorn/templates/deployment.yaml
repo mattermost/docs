@@ -77,6 +77,9 @@ spec:
             - name: unicorn-secrets
               mountPath: '/etc/gitlab'
               readOnly: true
+            - name: unicorn-secrets
+              mountPath: /home/git/gitlab/config/secrets.yml
+              subPath: rails-secrets/secrets.yml
           livenessProbe:
             exec:
               command:
@@ -98,6 +101,11 @@ spec:
         projected:
           defaultMode: 0400
           sources:
+          - secret:
+              name: {{ .Values.railsSecrets.secret }}
+              items:
+                - key: {{ .Values.railsSecrets.key | quote }}
+                  path: rails-secrets/secrets.yml
           - secret:
               name: {{ .Values.shell.authToken.secret }}
               items:

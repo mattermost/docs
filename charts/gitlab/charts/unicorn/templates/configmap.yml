@@ -134,11 +134,12 @@ data:
   configure: |
     set -e
     mkdir -p /init-secrets/redis /init-secrets/shell /init-secrets/gitaly \
-      /init-secrets/registry /init-secrets/postgres
+      /init-secrets/registry /init-secrets/postgres /init-secrets/rails-secrets
     cp /init-config/redis/password /init-secrets/redis/password
     cp /init-config/shell/.gitlab_shell_secret /init-secrets/shell/.gitlab_shell_secret
     cp /init-config/gitaly/gitaly_token /init-secrets/gitaly/gitaly_token
     cp /init-config/registry/gitlab-registry.key /init-secrets/registry/gitlab-registry.key
     cp /init-config/postgres/psql-password /init-secrets/postgres/psql-password
+    cp /init-config/rails-secrets/secrets.yml /init-secrets/rails-secrets/secrets.yml
 # Leave this here - This line denotes end of block to the parser.
 {{- end }}

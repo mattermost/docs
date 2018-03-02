@@ -90,9 +90,11 @@ data:
         git_basic_auth:
   configure: |
     set -e
-    mkdir -p /sidekiq-secrets/redis /sidekiq-secrets/postgres /sidekiq-secrets/gitaly
+    mkdir -p /sidekiq-secrets/redis /sidekiq-secrets/postgres \
+    /sidekiq-secrets/gitaly /sidekiq-secrets/rails-secrets
     cp /init-secrets/redis/password /sidekiq-secrets/redis/password
     cp /init-secrets/gitaly/gitaly_token /sidekiq-secrets/gitaly/gitaly_token
     cp /init-secrets/postgres/psql-password /sidekiq-secrets/postgres/psql-password
+    cp /init-secrets/rails-secrets/secrets.yml /sidekiq-secrets/rails-secrets/secrets.yml
 # Leave this here - This line denotes end of block to the parser.
 {{- end }}

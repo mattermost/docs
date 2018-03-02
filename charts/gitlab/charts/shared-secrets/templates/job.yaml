@@ -1,0 +1,33 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ template "shared-secrets.jobname" . }}
+  labels:
+    app: {{ template "shared-secrets.name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+  annotations:
+    "helm.sh/hook": pre-install,pre-upgrade
+    "helm.sh/hook-delete-policy": hook-succeeded
+spec:
+  template:
+    metadata:
+      labels:
+        app: {{ template "shared-secrets.name" . }}
+        release: {{ .Release.Name }}
+    spec:
+      serviceAccountName: {{ template "shared-secrets.fullname" . }}
+      restartPolicy: Never
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          command: ['/bin/bash', '/scripts/generate-secrets']
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          volumeMounts:
+            - name: scripts
+              mountPath: /scripts
+      volumes:
+      - name: scripts
+        configMap:
+          name: {{ template "shared-secrets.fullname" . }}

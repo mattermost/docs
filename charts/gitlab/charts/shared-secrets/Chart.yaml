@@ -1,0 +1,4 @@
+apiVersion: v1
+description: Populates secrets needed by CNG charts
+name: shared-secrets
+version: 0.1.0
