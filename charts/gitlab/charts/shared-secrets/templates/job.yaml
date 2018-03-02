@@ -18,7 +18,7 @@ spec:
         release: {{ .Release.Name }}
     spec:
       serviceAccountName: {{ template "shared-secrets.fullname" . }}
-      restartPolicy: OnFailure
+      restartPolicy: Never
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
