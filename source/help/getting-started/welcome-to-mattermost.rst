@@ -63,19 +63,21 @@ There are three types of channels: Public Channels, Private Channels, and Direct
    :alt: ui_channels
 
 
-- **Public Channels:**
+**Public Channels:**
 
 Public Channels are open to everyone on a team. New team members are automatically added to two Public Channels when they sign up: Town Square and Off-Topic.
 
 Public Channels are identified with a **globe icon**.
 
-- **Private Channels:**
+Want to get jump right in? Click on the **More...** button at the bottom of the Public Channels section to explore channels to join!
+
+**Private Channels:**
 
 Private Channels are for sensitive topics and are only visible to select team members. Any member of a Private Channel can add additional members. Channel members can choose to leave at any time, but only the channel owner or Team Admin can remove other members.
 
 Private Channels have a **lock icon**.
 
-- **Direct Messages (DM) and Group Messages (GM)**
+**Direct Messages (DM) and Group Messages (GM)**
 
 Direct Messages are for conversations between two people. 
 
