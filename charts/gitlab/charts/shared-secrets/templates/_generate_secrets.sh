@@ -17,11 +17,6 @@ function generate_secret_if_needed(){
     echo "secret \"$secret_name\" already exists"
   fi;
 }
-function cleanup(){
-  kubectl delete configmap ${release}-shared-secrets
-  kubectl delete serviceaccount ${release}-shared-secrets
-  kubectl delete clusterrolebindings ${release}-shared-secrets
-}
 
 # Redis password
 generate_secret_if_needed gitlab-redis --from-literal=redis-password=$(gen_random 'a-zA-Z0-9' 64)
@@ -61,5 +56,3 @@ if [ -n "$env" ]; then
 EOF
   generate_secret_if_needed rails-secrets --from-file secrets.yml
 fi
-
-cleanup;
