@@ -1,17 +1,16 @@
 Welcome to Mattermost!
-==========
+====================
 
-This article will cover the basics of Mattermost and give a general overview of the application so that you can start using it right way.
+This article covers the basics of Mattermost and gives a general overview of the application to help you start using it the right way.
 
 Ready? Let's get started!
 
-
-**What is Mattermost?**
+What is Mattermost?
 -----------------------------------
 
 Mattermost is a modern, digital workspace that will help you be more productive in your day-to-day work life.
 
-Some of the major benefits of using Mattermost are:
+Some of the major benefits of using Mattermost include:
 
 - Direct 1:1 and group messaging with your colleagues
 - Channels for topic-based, group-based, or meeting-based chat
@@ -20,19 +19,15 @@ Some of the major benefits of using Mattermost are:
 - Searching across messages and channels
 - Sharing files
 
-
-**The Basics**
+The Basics
 ---------------------
 
-To understand how Mattermost works, below are some of the basic things you'll need to know. 
-
-This is a what a typical Mattermost workspace looks like. 
+This is a what a typical Mattermost workspace looks like: 
 
 .. image:: ../../images/ui3.png
    :alt: ui
 
-
-These are the main features of Mattermost, we will be going over each one to understand how they work:
+To understand how Mattermost works, below is a list of the main features of Mattermost with instructions on how to use them:
 
 - Teams
 - Channels
@@ -40,9 +35,7 @@ These are the main features of Mattermost, we will be going over each one to und
 - Search
 - Notifications
 
-
-
-**Teams**
+Teams
 ---------------------
 A team is a digital workspace where you and your teammates can collaborate in Mattermost. Depending on how Mattermost is set up in your organization, you can belong to one team or multiple teams.
 
@@ -51,17 +44,14 @@ You have the ability to switch back and forth between teams on the Team Sidebar,
 .. image:: ../../images/ui_teams.png
    :alt: ui_teams
 
-
-**Channels**
+Channels
 ---------------------
 Channels are used to organize conversations across different topics. They are located on the left-hand panel of Mattermost. 
 
 There are three types of channels: Public Channels, Private Channels, and Direct Messages.
 
-
 .. image:: ../../images/ui_channels2.png
    :alt: ui_channels
-
 
 **Public Channels:**
 
@@ -69,24 +59,21 @@ There are three types of channels: Public Channels, Private Channels, and Direct
 
   Public Channels are identified with a **globe icon**.
 
-  Want to get jump right in? Click on the **More...** button at the bottom of the Public Channels section to explore channels to join!
+  Click on the **More...** button at the bottom of the Public Channels section to explore more channels to join!
 
 **Private Channels:**
 
-  Private Channels are for sensitive topics and are only visible to select team members. Any member of a Private Channel can add additional members. Channel members can choose to leave at any time, but only the channel owner or Team Admin can remove other members.
+  Private Channels are for sensitive topics and are only visible to selected team members. Any member of a Private Channel can add additional members. Channel members can choose to leave at any time, but only the channel owner or Team Admin can remove other members.
 
   Private Channels have a **lock icon**.
 
 **Direct Messages (DM) and Group Messages (GM)**
 
-  Direct Messages are for conversations between two people. 
-
-  Group Messages are Direct Messages that have conversations among three or more people. Both are visible only to the people involved.
+  Direct Messages are for conversations between two people. Group Messages are Direct Messages that have conversations among three or more people. Both are visible only to the people involved.
 
 For more information on Channels and how to manage them, `click here <https://docs.mattermost.com/help/getting-started/organizing-conversations.html>`__
 
-
-**Messages**
+Messages
 ---------------------
 Sending messages and replying to messages are important ways to keep conversations active with your team. You can edit and delete messages after you have sent them. You can also share links to any message in Mattermost.
 
@@ -98,34 +85,34 @@ In this example, a team manager is handing out assignments to various team membe
 Since messaging is at the core of your Mattermost application, below are other examples of what you can do:
 
 - `Mention teammates so they get notified <https://docs.mattermost.com/help/messaging/mentioning-teammates.html>`__
-- `Formatting text (styling, emojis, code, etc) <https://docs.mattermost.com/help/messaging/formatting-text.html>`__
+- `Formatting text (styling, emojis, code, and so on) <https://docs.mattermost.com/help/messaging/formatting-text.html>`__
 - `Share files <https://docs.mattermost.com/help/messaging/attaching-files.html>`__
 - `Execute commands <https://docs.mattermost.com/help/messaging/executing-commands.html>`__
 - `Flag <https://docs.mattermost.com/help/messaging/flagging-messages.html>`__ and `pin <https://docs.mattermost.com/help/messaging/pinning-messages.html>`__ messages
 - `Keyboard shortcuts <https://docs.mattermost.com/help/messaging/keyboard-shortcuts.html>`__
 
-`Click here <https://docs.mattermost.com/guides/user.html#messaging>`__ for a complete list with instructions.
+`Click here <https://docs.mattermost.com/guides/user.html#messaging>`__ for a complete list of messaging basics with instructions.
 
-
-**Search**
+Search
 ---------------------
 Use the search box to find messages and replies that match the search terms that you enter. All channels that you are a member of in the current team are searched.
 
 .. image:: ../../images/ui_search.png
    :alt: ui_search
 
-You can also do more advanced search using search modifiers `here <https://docs.mattermost.com/help/getting-started/searching.html>`__
+You can also do more advanced search using search modifiers `here <https://docs.mattermost.com/help/getting-started/searching.html>`__.
 
-**Notifications**
+Notifications
 ---------------------
 Notifications in Mattermost alert you to unread messages and mentions.
 
 .. image:: ../../images/ui_notifications.png
    :alt: ui_notifications
 
-You can configure your Mattermost account for how you want to be notified `here <https://docs.mattermost.com/help/getting-started/configuring-notifications.html>`__
+You can configure your Mattermost account for how you want to be notified `here <https://docs.mattermost.com/help/getting-started/configuring-notifications.html>`__.
 
 
-**What's Next?**
+What's Next?
 --------------------- 
 Feel free to browse through our `full user guide <https://docs.mattermost.com/guides/user.html>`__ for more information on how to use Mattermost!
+  
