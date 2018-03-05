@@ -13,7 +13,7 @@ service:
   ports:
     psql: 5432
 
-enabled: false
+enabled: true
 # config items
 external_url: http://gitlab.example.local
 trusted_proxies:
@@ -23,10 +23,10 @@ trusted_proxies:
 - "192.168.0.0/16"
 # redis
 redis:
-  serviceName: redis
   # port: 6397
   # database: 0
   # password provided as file, via Secret
+  serviceName: redis
   password:
     secret: gitlab-redis
     key: redis-password

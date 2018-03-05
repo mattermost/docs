@@ -11,17 +11,18 @@ service:
   type: ClusterIP
   externalPort: 22
   internalPort: 22
-enabled: false
+enabled: true
 authToken:
    secret: gitlab-shell-secret
    key: secret
-unicorn: {}
+unicorn:
+  serviceName: unicorn
   # host: '0.0.0.0'
   # serviceName: 'unicorn'
   # port: 8080
 redis:
   # host: '0.0.0.0'
-  # serviceName: 'redis'
+  serviceName: 'redis'
   password:
     secret: gitlab-redis
     key: redis-password

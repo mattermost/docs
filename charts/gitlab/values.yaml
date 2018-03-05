@@ -1,48 +1,7 @@
-# Default values for gitlab.
+# Default values for gitlab-chart.
 # This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-ingress:
-  enabled: false
-  # Used to create Ingress record (should used with service.type: ClusterIP).
-  hosts:
-    # - name: gitlab.example.local
-  annotations:
-    kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
-  tls:
-    # Secrets must be manually created in the namespace.
-    # - hosts:
-    #   - registry.example.local
-    #   secretName: registry-example-tls
 
 global:
   hosts:
     domain: example.local
-    hostSuffix:
-    https: false
-    gitlab: {}
-      #name: gitlab.example.local
-      #https: false
-    registry:
-      #name: registry.example.local
-      #https: false
-      serviceName: registry
-
-gitaly:
-  enabled: false
-gitlab-shell:
-  enabled: false
-mattermost:
-  enabled: false
-migrations:
-  enabled: false
-omnibus:
-  enabled: false
-pages:
-  enabled: false
-sidekiq:
-  enabled: false
-unicorn:
-  enabled: false
-workhorse:
-  enabled: false
+    https: true

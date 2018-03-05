@@ -66,8 +66,8 @@ shell:
   port: ssh
 
 ingress:
-  enabled: false
-  acme: false
+  enabled: true
+  acme: true
   # Used to create Ingress record (should used with service.type: ClusterIP).
   hosts: []
     # - name: prometheus.example.local

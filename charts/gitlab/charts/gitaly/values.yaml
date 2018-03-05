@@ -11,7 +11,8 @@ service:
   type: ClusterIP
   externalPort: 8075
   internalPort: 8075
-enabled: false
+enabled: true
+serviceName: gitaly
 authToken:
   secret: gitaly-secret
   key: token

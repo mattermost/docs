@@ -13,7 +13,7 @@ service:
   internalPort: 8080
   workhorseExternalPort: 8181
   workhorseInternalPort: 8181
-enabled: false
+enabled: true
 workerProcesses: 2
 workerTimeout: 60
 railsSecrets:
@@ -33,7 +33,7 @@ global:
       serviceName: registry
 redis:
   # host: '0.0.0.0'
-  # serviceName: 'redis'
+  serviceName: 'redis'
   password:
     secret: gitlab-redis
     key: redis-password
@@ -52,8 +52,8 @@ shell:
     key: secret
 gitaly:
   # host: '0.0.0.0'
-  # serviceName: 'gitaly'
   # port: 8075
+  serviceName: 'gitaly'
   authToken:
     secret: gitaly-secret
     key: token
