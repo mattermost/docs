@@ -23,6 +23,7 @@ Release date: 2018-03-16
 
 ### Web User Interface
  - Added a web app build hash to About Mattermost dialog to tell what version of the web app is being used.
+ - Added team icons to team sidebar.
  
 ### Performance
  - Reduced load times by optimizing database queries and optimizing WebSocket events destined for a single user by precomputing the raw JSON for WebSocket events.
