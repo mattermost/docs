@@ -27,11 +27,11 @@ Release date: 2018-03-16
  
 ### Performance
  - Reduced load times by optimizing database queries and optimizing WebSocket events destined for a single user by precomputing the raw JSON for WebSocket events.
- - Created an endpoint on iOS to upload an file as octect-stream in order to use `NSUrlSessionUploadTask` that will let us upload files larger than 20 Mb.
+ - Created an endpoint on iOS to upload a file as octect-stream in order to use `NSUrlSessionUploadTask` that will let us upload files larger than 20 Mb.
  - Improved caching of `getRootPosts` call.
  
 ### Channels
- - Switched search bar to a button and updated it so that clicking it expands the right hand sidebar with the search box at the top and cursor in place.
+ - Switched search bar to a button and updated it so that clicking it expands the right-hand sidebar with the search box at the top and cursor in place.
 
 ### 508 Compliance
  - Added alt attribute to profile pictures.
@@ -43,7 +43,7 @@ Release date: 2018-03-16
  - A system message is now posted when a channel is moved between teams by the CLI command.
 
 ### System Console
- - Removed plugin upload setting from System Console UI, and prevented switching the setting from the API.
+ - Removed plugin upload setting from System Console UI and prevented switching the setting from the API.
  - Added paging to system console log viewer and set default value of `per_paging` for logs to 1000.
  
 ### Enterprise Edition
@@ -65,7 +65,7 @@ Release date: 2018-03-16
  - Fixed an issue where the "More Unreads Above" indicator didn't always work.
  - Fixed an issue where IE11 posted placeholder from hidden textbox.
  - Fixed an issue with not being able to submit a reply with CMD+ENTER "Send messages on CTRL+ENTER" on.
- - Fixed an issue emojis were difficult to click when trying to add en emoji from the picker.
+ - Fixed an issue emojis were difficult to click when trying to add an emoji from the picker.
  - Fixed an issue where last channel was not remembered after refresh when switching teams.
  - Fixed an issue with no auto-focusing into input text when attaching a file in Classic Mobile App.
  - Fixed an issue with not being able to type with composed characters (e.g. CJK) in View Team Members modal and channel switcher.
@@ -75,8 +75,8 @@ Release date: 2018-03-16
 
 #### Removed and Deprecated Features
 
- - All API v3 endpoints have been deprecated, and scheduled for removal in Mattermost v5.0.
- - As Mattermost moves to a role based permissions system in v4.9, a number of configuration settings will be migrated to roles in the database, and changing their `config.json` values will no longer take effect. These permissions can still be modified by their respective System Console settings. The `config.json` settings to be migrated are:
+ - All API v3 endpoints have been deprecated and are scheduled for removal in Mattermost v5.0.
+ - As Mattermost moves to a role-based permissions system in v4.9, a number of configuration settings will be migrated to roles in the database and changing their `config.json` values will no longer take effect. These permissions can still be modified by their respective System Console settings. The `config.json` settings to be migrated are:
   - RestrictPublicChannelManagement
   - RestrictPrivateChannelManagement
   - RestrictPublicChannelCreation
@@ -104,8 +104,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### API Changes
 
  - It is required that any new integrations use API v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
- - All API v3 endpoints have been deprecated, and scheduled for removal in Mattermost v5.0.
- - Flipped `EnableAPIV3` setting off for new installs, and added a User Interface top banner for System Admins who use APIv3.
+ - All API v3 endpoints have been deprecated and are scheduled for removal in Mattermost v5.0.
+ - Flipped `EnableAPIV3` setting off for new installs and added a User Interface top banner for System Admins who use APIv3.
 
 #### RESTful API v4 Changes
 
