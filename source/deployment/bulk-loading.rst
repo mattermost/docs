@@ -4,7 +4,8 @@
 Bulk Loading Data
 =================
 
-Large quantities of data can be imported from a JSON file into Mattermost at the command line using the bulk loading feature. This feature is most suitable for migrating data from an existing messaging system, or for pre-populating a new installation with data.
+Large quantities of data can be imported from a `JSONL
+<http://jsonlines.org>`_ file into Mattermost at the command line using the bulk loading feature. This feature is most suitable for migrating data from an existing messaging system, or for pre-populating a new installation with data.
 
 You can import the following data types:
 
