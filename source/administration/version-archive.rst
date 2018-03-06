@@ -4,9 +4,9 @@ Version Archive
 Mattermost Enterprise Edition
 ------------------------------
 
-Mattermost Enterprise Edition v4.7.2 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v4-7>`_ - `Download <https://releases.mattermost.com/4.7.2/mattermost-4.7.2-linux-amd64.tar.gz>`_
-  - ``https://releases.mattermost.com/4.7.2/mattermost-4.7.2-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``947577631a94a003d660b4eb08f07585e0e1f93c3e5b63a8c30a72e0abcde9c1``
+Mattermost Enterprise Edition v4.7.3 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v4-7>`_ - `Download <https://releases.mattermost.com/4.7.3/mattermost-4.7.3-linux-amd64.tar.gz>`_
+  - ``https://releases.mattermost.com/4.7.3/mattermost-4.7.3-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ````
 Mattermost Enterprise Edition v4.6.2 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v4-6>`_ - `Download <https://releases.mattermost.com/4.6.2/mattermost-4.6.2-linux-amd64.tar.gz>`_
   - ``https://releases.mattermost.com/4.6.2/mattermost-4.6.2-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``c656af38fad0b40755df3e66c00a79553b0689ff0f47c7ab20127925f857a11b``
@@ -71,9 +71,9 @@ Mattermost Enterprise Edition v2.1.0 - `View Changelog <https://docs.mattermost.
 Mattermost Team Edition Server Archive
 ---------------------------------------
 
-Mattermost Team Edition v4.7.2 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v4-7>`_ - `Download <https://releases.mattermost.com/4.7.2/mattermost-team-4.7.2-linux-amd64.tar.gz>`_
-  - ``https://releases.mattermost.com/4.7.2/mattermost-team-4.7.2-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``639388f5f5d0e0f18852883febd1170f59d37ee68d49c6b030089fd3ff3ff991``
+Mattermost Team Edition v4.7.3 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v4-7>`_ - `Download <https://releases.mattermost.com/4.7.3/mattermost-team-4.7.3-linux-amd64.tar.gz>`_
+  - ``https://releases.mattermost.com/4.7.3/mattermost-team-4.7.3-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ````
 Mattermost Team Edition v4.6.2 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v4-6>`_ - `Download <https://releases.mattermost.com/4.6.2/mattermost-team-4.6.2-linux-amd64.tar.gz>`_
   - ``https://releases.mattermost.com/4.6.2/mattermost-team-4.6.2-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``55306151f1e930cb391b00ee0d68d3d0f47b0c51ba8c46b29cfb976fd53ba57c``
