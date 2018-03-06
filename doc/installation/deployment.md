@@ -6,8 +6,7 @@ helm install . --name gitlab --timeout 600 \
   --set global.hosts.domain=<domain name> \
   --set nginx.service.loadBalancerIP=<External IP> \
   --set kube-lego.LEGO_EMAIL=<Valid Email> \
-  --set gitlab.migrations.initialRootPassword=<Your Password> \
-  .
+  --set gitlab.migrations.initialRootPassword=<Your Password>
 ```
 
 This will output the list of resources installed once the deployment finishes which may take 5-10 minutes.
