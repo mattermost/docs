@@ -9,12 +9,12 @@ There are three scenarios in which you would consider using a plugin:
  - When you want to extend Mattermost functionality to meet a specific, complex requirement
  - When you want to build integrations that are managed by your Mattermost server
 
-There are two main types of plugins:
+There are two main types of plugins, both of which are supported in Team and Enterprise Editions:
 
  - **Client plugins**: Allows you to customize the Mattermost user interface, by overriding elements such as the profile popover, channel header or the sidebar. For a sample plugin, see `hovercardexample <https://github.com/jwilander/hovercardexample>`_.
  - **Server plugins**: Makes it easier to integrate with third-party systems such as JIRA, GitLab or Jenkins. A sample plugin for a video and audio call system such as Zoom and Skype for Business is currently in progress.
 
-Later in upcoming releases, the `Enterprise Edition <https://about.mattermost.com/pricing>`_ will support server plugins that enable you to extend Mattermost functionality to meet a specific, complex requirement such as profiling performance metrics, and to implement highly customized compliance rules for `information barriers <http://www.17a-4.com/supervision-information-barriers/>`_.
+Later in upcoming releases, the `Enterprise Edition <https://about.mattermost.com/pricing>`_ will also support plugins that enable you to extend Mattermost functionality to meet a specific, complex requirement such as profiling performance metrics, and to implement highly customized compliance rules for `information barriers <http://www.17a-4.com/supervision-information-barriers/>`_.
 
 Set Up Guide
 --------------
