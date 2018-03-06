@@ -323,7 +323,7 @@ Look for the "General" tab. Go to the "Signing" section and make sure your Apple
 
 .. image:: ../../source/images/mobile/code_signing.png
 
-Repeat the steps for the **MattermostTest** target in the project and the **MattermostShare** target.
+Repeat the steps for the **MattermostTests** target in the project and the **MattermostShare** target.
 
 .. important::
   The **MattermostShare** target must use different *Bundle Identifier* than the other two targets.
@@ -411,7 +411,14 @@ Setting up Gradle Variables
 Setting up Environment Variables
 ++++++++++++++++++++++++++++++++
 In order to use the **make build-android** command, you'll need to set a few environment variables. In this guide, we will explain some of them. You can refer to the `env_vars_example <https://github.com/mattermost/mattermost-mobile/blob/fastlane/fastlane/env_vars_example>`_
-file under the fastlane directory to see all of them. In order to make fastlane work with these environment variables, copy the file with your variables to ../mattermost-mobile/fastlane/.env where .env is the file name.
+file under the fastlane directory to see all of them.
+In order to make fastlane work with these environment variables you have two options:
+
+1. copy the file with your variables to ``../mattermost-mobile/fastlane/.env`` where ``.env`` is the file name.
+
+or
+
+2. create a .sh file with your variables (for example ``my_env.sh``), and execute ``source my_env.sh`` in the terminal session where you will later execute ``make build-android`` 
 
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
 | Variable                                      | Description                                                                                           | Default value           |
@@ -479,7 +486,13 @@ We make use of `Match <https://docs.fastlane.tools/actions/match/>`_ to sync you
 
 Setting up environment variables
 ++++++++++++++++++++++++++++++++
-In order to use the **make build-ios** command, you'll need to set a few environment variables. In this guide, we will explain some of them. You can refer to the `env_vars_example <https://github.com/mattermost/mattermost-mobile/blob/fastlane/fastlane/env_vars_example>`_ file under the fastlane directory to see all of them. In order to make fastlane work with these environment variables, copy the file with your variables to ../mattermost-mobile/fastlane/.env where .env is the file name.
+In order to use the **make build-ios** command, you'll need to set a few environment variables. In this guide, we will explain some of them. You can refer to the `env_vars_example <https://github.com/mattermost/mattermost-mobile/blob/fastlane/fastlane/env_vars_example>`_ file under the fastlane directory to see all of them. In order to make fastlane work with these environment variables you have two options:
+
+1. copy the file with your variables to ``../mattermost-mobile/fastlane/.env`` where ``.env`` is the file name.
+
+or
+
+2. create a .sh file with your variables (for example ``my_env.sh``), and execute ``source my_env.sh`` in the terminal session where you will later execute ``make build-ios`` 
 
 .. note::
   You must use your own provisioning profiles and certificates as well as your own Bundle Identifiers. If you use the default values, you will be unable to build and sign the app.
