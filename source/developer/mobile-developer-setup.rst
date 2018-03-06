@@ -411,7 +411,7 @@ Setting up Gradle Variables
 Setting up Environment Variables
 ++++++++++++++++++++++++++++++++
 In order to use the **make build-android** command, you'll need to set a few environment variables. In this guide, we will explain some of them. You can refer to the `env_vars_example <https://github.com/mattermost/mattermost-mobile/blob/fastlane/fastlane/env_vars_example>`_
-file under the fastlane directory to see all of them.
+file under the fastlane directory to see all of them. In order to make fastlane work with these environment variables, copy the file with your variables to ../mattermost-mobile/fastlane/.env where .env is the file name.
 
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
 | Variable                                      | Description                                                                                           | Default value           |
@@ -479,7 +479,7 @@ We make use of `Match <https://docs.fastlane.tools/actions/match/>`_ to sync you
 
 Setting up environment variables
 ++++++++++++++++++++++++++++++++
-In order to use the **make build-ios** command, you'll need to set a few environment variables. In this guide, we will explain some of them. You can refer to the `env_vars_example <https://github.com/mattermost/mattermost-mobile/blob/fastlane/fastlane/env_vars_example>`_ file under the fastlane directory to see all of them.
+In order to use the **make build-ios** command, you'll need to set a few environment variables. In this guide, we will explain some of them. You can refer to the `env_vars_example <https://github.com/mattermost/mattermost-mobile/blob/fastlane/fastlane/env_vars_example>`_ file under the fastlane directory to see all of them. In order to make fastlane work with these environment variables, copy the file with your variables to ../mattermost-mobile/fastlane/.env where .env is the file name.
 
 .. note::
   You must use your own provisioning profiles and certificates as well as your own Bundle Identifiers. If you use the default values, you will be unable to build and sign the app.
