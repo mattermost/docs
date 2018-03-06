@@ -6,7 +6,7 @@ image:
   tag: latest
   pullPolicy: Always
 enabled: true
-initialRootPassword: minikube
+# initialRootPassword: password
 redis:
   # host: '0.0.0.0'
   serviceName: 'redis'
