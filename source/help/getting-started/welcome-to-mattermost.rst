@@ -24,7 +24,7 @@ The Basics
 
 This is a what a typical Mattermost workspace looks like: 
 
-.. image:: ../../images/ui3.png
+.. image:: ../../images/ui2.png
    :alt: ui
 
 To understand how Mattermost works, below is a list of the main features of Mattermost with instructions on how to use them:
@@ -50,7 +50,7 @@ Channels are used to organize conversations across different topics. They are lo
 
 There are three types of channels: Public Channels, Private Channels, and Direct Messages.
 
-.. image:: ../../images/ui_channels2.png
+.. image:: ../../images/ui_channels5.png
    :alt: ui_channels
 
 **Public Channels:**
