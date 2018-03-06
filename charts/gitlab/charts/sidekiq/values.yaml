@@ -5,38 +5,38 @@ image:
   repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-sidekiq
   tag: latest
   pullPolicy: Always
-enabled: false
+enabled: true
 redis:
   # host: '0.0.0.0'
   # port: 6379
-  # serviceName: 'redis'
+  serviceName: 'redis'
   password:
     secret: gitlab-redis
     key: redis-password
 psql:
   # host: '0.0.0.0'
-  # serviceName: 'omnibus'
   # port: '5432'
   # database: 'gitlabhq_production'
   # username: 'gitlab'
+  serviceName: 'omnibus'
   password:
     secret: gitlab-postgres
     key: psql-password
 gitaly:
   # host: '0.0.0.0'
-  # serviceName: 'gitaly'
   # port: 8075
+  serviceName: 'gitaly'
   authToken:
     secret: gitaly-secret
     key: token
 
 # Global defaults
 replicas: 1
-concurrency: 25
-timeout: 4
 railsSecrets:
   secret: rails-secrets
   key: secrets.yml
+concurrency: 10
+timeout: 5
 resources:
   # limits:
   #  cpu: 500m

@@ -59,7 +59,7 @@ certificate:
 replicas: 1
 storage: {}
 minio:
-  enabled: false
+  enabled: true
   bucket: registry
   credentials:
     secret: gitlab-minio

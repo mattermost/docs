@@ -23,7 +23,6 @@ kube-lego:
   enabled: true
   config:
     LEGO_EMAIL: email@domain.tld
-    # LEGO_URL: https://acme-v01.api.letsencrypt.org/directory
   rbac:
     create: true
 
@@ -46,85 +45,25 @@ gitlab:
     # Unicorn (and workhorse) chart
     unicorn:
       enabled: true
-      registry:
-        tokenIssuer: gitlab-issuer
-        certificate:
-          secret: gitlab-registry
-          key: registry-auth.key
-      shell:
-        authToken:
-          secret: gitlab-shell-secret
-      gitaly:
-        serviceName: gitaly
-        authToken:
-          secret: gitaly-secret
-          key: token
-      redis:
-        serviceName: redis
-        password:
-          secret: gitlab-redis
-          key: redis-password
       psql:
         serviceName: omnibus
-        password:
-          secret: gitlab-postgres
     # Sidekiq chart, with split queues (see charts/gitlab/charts/sidekiq/values.yaml)
     sidekiq:
       enabled: true
-      concurrency: 10
-      timeout: 5
-      gitaly:
-        serviceName: gitaly
-        authToken:
-          secret: gitaly-secret
-          key: token
-      redis:
-        serviceName: redis
-        password:
-          secret: gitlab-redis
-          key: redis-password
       psql:
         serviceName: omnibus
-        password:
-          secret: gitlab-postgres
     # Shell provides SSH access
     gitlab-shell:
       enabled: true
-      unicorn:
-        serviceName: unicorn
-      redis:
-        serviceName: redis
-        password:
-          secret: gitlab-redis
-          key: redis-password
     # Gitaly provides storage & API access to Git repository data
     gitaly:
       enabled: true
-      authToken:
-        name: gitaly-secret
-        key: token
     # Handle database init and upgrade migrations, via gitlab-rails codebase
     migrations:
       enabled: true
       initialRootPassword: "minikube"
-      redis:
-        serviceName: redis
-        password:
-          secret: gitlab-redis
-          key: redis-password
       psql:
         serviceName: omnibus
-        password:
-          secret: gitlab-postgres
     # omnibus sub-chart (development only)
     omnibus:
       enabled: true
-      # use Redis chart
-      redis:
-        password:
-          secret: gitlab-redis
-          key: redis-password
-      # provide PostgreSQL services
-      psql:
-        password:
-          secret: gitlab-postgres
