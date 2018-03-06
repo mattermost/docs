@@ -47,12 +47,12 @@ if [ -n "$env" ]; then
   openid_connect_signing_key=$(openssl genrsa 2048);
 
   cat << EOF > secrets.yml
-  $env:
+$env:
   secret_key_base: $secret_key_base
   otp_key_base: $otp_key_base
   db_key_base: $db_key_base
   openid_connect_signing_key: |
-  $(openssl genrsa 2048 | awk '{print "    " $0}')
+$(openssl genrsa 2048 | awk '{print "    " $0}')
 EOF
   generate_secret_if_needed rails-secrets --from-file secrets.yml
 fi
