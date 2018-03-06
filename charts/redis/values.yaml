@@ -19,7 +19,7 @@ resources: {}
   #   memory: 128Mi
 
 # Chart operation controls
-enabled: false
+enabled: true
 
 # Configuration items
 timeout: 60
