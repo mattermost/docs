@@ -31,6 +31,9 @@ From the directory where the Mattermost server is installed, a
 -  Resetting multi-factor authentication for a user
 -  Creating sample data
 
+.. note::
+   The destination team names in the URL always have to be written in lowercase.
+
 .. contents::
     :backlinks: top
     :local:
