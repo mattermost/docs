@@ -1,0 +1,59 @@
+{{- if .Values.enabled }}
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "fullname" . }}-sentinel
+spec:
+  replicas: {{ .Values.replicas.sentinels }}
+  template:
+    metadata:
+      labels:
+{{ include "labels.standard" . | indent 8 }}
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 1
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - {{ template "fullname" . }}
+                - key: redis-role
+                  operator: In
+                  values:
+                  - sentinel
+              topologyKey: "kubernetes.io/hostname"
+      serviceAccountName: {{ template "redis-ha.serviceAccountName" . }}
+      {{- if .Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml .Values.nodeSelector | indent 8 }}
+      {{- end }}
+      {{- if .Values.tolerations }}
+      tolerations:
+{{ toYaml .Values.tolerations | indent 8 }}
+      {{- end }}
+      containers:
+      - name: sentinel
+        image: {{ .Values.redis_image }}
+        resources:
+{{ toYaml .Values.resources.sentinel | indent 10 }}
+        env:
+          - name: SENTINEL
+            value: "true"
+          - name: REDIS_CHART_PREFIX
+            value: {{ template "fullname" . }}
+          - name: REDIS_PASSWORD_FILE
+            value: "/config/redis-password"
+        ports:
+          - containerPort: 26379
+        volumeMounts:
+          - name: {{ .Release.Name }}-config
+            mountPath: /config/
+      volumes:
+      - name: {{ .Release.Name }}-config
+        secret:
+          secretName: {{ .Values.password.secret }}
+{{- end -}}

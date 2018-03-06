@@ -21,7 +21,11 @@ spec:
         runAsUser: {{ .Values.securityContext.runAsUser }}
         fsGroup: {{ .Values.securityContext.fsGroup }}
       initContainers:
+<<<<<<< HEAD
         - name: configure
+=======
+        - name: redis-configure
+>>>>>>> 23aed20... adding back redis from master
           image: busybox
           command: ['sh', '/config/configure']
           securityContext:
