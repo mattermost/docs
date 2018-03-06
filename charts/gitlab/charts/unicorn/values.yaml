@@ -39,10 +39,10 @@ redis:
     key: redis-password
 psql:
   # host: '0.0.0.0'
-  # serviceName: 'omnibus'
   # port: '5432'
   # database: 'gitlabhq_production'
   # username: 'gitlab'
+  serviceName: 'omnibus'
   password:
     secret: gitlab-postgres
     key: psql-password

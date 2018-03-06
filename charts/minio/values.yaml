@@ -79,6 +79,7 @@ resources:
 ## Create a buckets after minio install
 ## An array of items, with name, policy, and purge
 defaultBuckets:
+  - name: registry
   ## If enabled, must be a string with length > 0
   # - name: example
   ## Can be one of none|download|upload|public, defaults to `none`
