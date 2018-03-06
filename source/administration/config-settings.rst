@@ -2995,6 +2995,30 @@ This setting determines whether team leave/join system messages are posted in th
 | This feature's ``config.json`` setting is ``"EnableDefaultChannelLeaveJoinMessages": true`` with options ``true`` and ``false`` for above settings respectively.     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Allow Cookies for Subdomains
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This setting set's the Domain parameter on our cookies, which allows the browser to send the cookies to subdomains as well.
+
+**True** XXXX Christopher
+
+**False** XXXX Christopher
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AllowCookiesForSubdomains": true`` with options ``true`` and ``false`` for above settings respectively.                 |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Websocket URL
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This setting allows the server to instruct clients where they should try to connect by websockets to.
+
+**True** XXXX Christopher
+
+**False** XXXX Christopher
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"WebsocketURL": true`` with options ``true`` and ``false`` for above settings respectively.                              |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Segment Write Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
