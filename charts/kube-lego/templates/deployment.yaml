@@ -34,6 +34,8 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: status.podIP
+            - name: LEGO_SUPPORTED_INGRESS_CLASS
+              value: "{{ .Release.Name }}-nginx"
           # {{ required "config.LEGO_EMAIL is a required field" .Values.config.LEGO_EMAIL }}
           {{- range $key, $value := .Values.config }}
             - name: "{{ $key }}"
