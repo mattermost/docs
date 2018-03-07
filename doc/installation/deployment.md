@@ -5,7 +5,7 @@ root of this repository:
 helm install . --name gitlab --timeout 600 \
   --set global.hosts.domain=<domain name> \
   --set nginx.service.loadBalancerIP=<External IP> \
-  --set kube-lego.LEGO_EMAIL=<Valid Email> \
+  --set kube-lego.config.LEGO_EMAIL=<Valid Email> \
   --set gitlab.migrations.initialRootPassword=<Your Password>
 ```
 
