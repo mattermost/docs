@@ -8,6 +8,10 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 Release date: 2018-03-16
 
+### Security Update  XXXXXXX
+
+- Mattermost v4.8.0 contains a security fix ranging from low to high severity. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+
 ## Highlights
 
 ### CloudFront enhanced compatibility
@@ -24,10 +28,12 @@ Release date: 2018-03-16
 ### Web User Interface
  - Added a web app build hash to About Mattermost dialog to tell what version of the web app is being used.
  - Added team icons to team sidebar.
+ - Added rendering of at-mentions by the teammate name display.
+ - Made ctrl work wherever cmd works on macOS.
  
 ### Performance
  - Reduced load times by optimizing database queries and optimizing WebSocket events destined for a single user by precomputing the raw JSON for WebSocket events.
- - Created an endpoint on iOS to upload a file as octect-stream in order to use `NSUrlSessionUploadTask` that will let us upload files larger than 20 Mb.
+ - Created an endpoint on iOS to upload a file as octet-stream in order to use `NSUrlSessionUploadTask` that will let us upload files larger than 20 Mb.
  - Improved caching of `getRootPosts` call.
  
 ### Channels
@@ -70,6 +76,8 @@ Release date: 2018-03-16
  - Fixed an issue with no auto-focusing into input text when attaching a file in Classic Mobile App.
  - Fixed an issue with not being able to type with composed characters (e.g. CJK) in View Team Members modal and channel switcher.
  - Fixed an issue where insecure images were loaded by sending client before proxying.
+ - Fixed an issue with sandboxing support for CentOS and Bosh.
+ - Fixed an issue where JIRA plugin posts were not properly truncated.
 
 ### Compatibility
 
