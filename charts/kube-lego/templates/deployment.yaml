@@ -37,9 +37,11 @@ spec:
             - name: LEGO_SUPPORTED_INGRESS_CLASS
               value: "{{ .Release.Name }}-nginx"
             - name: LEGO_SUPPORTED_INGRESS_PROVIDER
-              value: "{{ .Release.Name }}-nginx"
+              value: "nginx"
             - name: LEGO_DEFAULT_INGRESS_CLASS
               value: "{{ .Release.Name }}-nginx"
+            - name: LEGO_DEFAULT_INGRESS_PROVIDER
+              value: "nginx"
           # {{ required "config.LEGO_EMAIL is a required field" .Values.config.LEGO_EMAIL }}
           {{- range $key, $value := .Values.config }}
             - name: "{{ $key }}"
