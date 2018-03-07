@@ -23,7 +23,7 @@ rules:
     resources:
       - configmaps
     resourceNames:
-      - {{ .Release.Name }}-nginx
+      - ingress-controller-leader-{{ .Release.Name }}-nginx
     verbs:
       - get
       - update
