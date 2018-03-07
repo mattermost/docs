@@ -1,6 +1,8 @@
 # Integrations FAQ
 ---
 
+Come [join our "Contributors" community channel](https://pre-release.mattermost.com/core/channels/tickets) on our daily build server, where you can discuss questions with community members and the Mattermost core team. Join our ["Developers" channel](https://pre-release.mattermost.com/core/channels/developers) for technical discussions and our ["Integrations" channel](https://pre-release.mattermost.com/core/channels/integrations) for all integrations and plugins discussions.
+
 ## What's the difference between incoming and outgoing webhooks?
 
 A webhook is a way for one app to send real-time data to another app.

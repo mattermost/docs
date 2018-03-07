@@ -1,6 +1,10 @@
 # Code Contribution Guidelines
 
-Thank you for your interest in contributing to the [Mattermost open source project](https://docs.mattermost.com/developer/manifesto.html). To help with translations, [see the localization process](https://docs.mattermost.com/developer/localization.html). For code contributions, here's the process:  
+Thank you for your interest in contributing to the [Mattermost open source project](https://docs.mattermost.com/developer/manifesto.html). To help with translations, [see the localization process](https://docs.mattermost.com/developer/localization.html).
+
+Come [join our "Contributors" community channel](https://pre-release.mattermost.com/core/channels/tickets) on our daily build server, where you can discuss questions with community members and the Mattermost core team. Join our ["Developers" channel](https://pre-release.mattermost.com/core/channels/developers) for technical discussions and our ["Integrations" channel](https://pre-release.mattermost.com/core/channels/integrations) for all integrations and plugins discussions.
+
+For code contributions, here's the process:  
 
 ## Choose a Ticket
 
