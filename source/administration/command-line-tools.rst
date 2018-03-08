@@ -118,7 +118,7 @@ platform
 platform channel
 -----------------
 
-Description
+  Description
     Commands for channel management.
 
   Child Commands
@@ -141,7 +141,7 @@ Description
 
     ``https://example.com/myteam/channels/mychannel``
     
-    Also, the destination channel names in the URL always have to be written in lowercase.
+    Also, the team and channel names in the URL should be written in lowercase.
 
 platform channel add
 ~~~~~~~~~~~~~~~~~~~~
@@ -517,7 +517,7 @@ platform server
 platform team
 ----------------
 
-Description
+  Description
     Commands to manage teams.
 
   Child Commands
@@ -535,7 +535,7 @@ Description
 
     ``https://example.com/myteam/channels/mychannel``
     
-    Also, the destination team names in the URL always have to be written in lowercase.
+    Also, the team and channel names in the URL should be written in lowercase.
 
 platform team add
 ~~~~~~~~~~~~~~~~~~~~~~~~
