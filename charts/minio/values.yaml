@@ -13,7 +13,6 @@ ingress:
   proxyReadTimeout: 900
   proxyBodySize: "0"
   proxyBuffering: "off"
-  http2: false
   acme: false
   tls: {}
     # secretName:
