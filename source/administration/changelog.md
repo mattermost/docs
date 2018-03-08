@@ -6,7 +6,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v4.7
 
- - **v4.7.3, released TBD**
+ - **v4.7.3, released 2018-03-09**
    - Fixed an issue where making a post with invalid LaTeX crashed Mattermost whenever the post was viewed.
  - **v4.7.2, released 2018-02-23**
    - Fixed an issue where message attachments didn’t render emojis.
