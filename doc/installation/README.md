@@ -15,12 +15,7 @@ all required tools. See [local setup][] document for more information.
 * Azure Container Service - Documentation to be added.
 * On-Premises solutions - Documentation to be added.
 
-## 3. Configuration file
-
-Next, populate your configuration which will be used to deploy. See
-[generating configuration][configuration] for more information.
-
-## 4. Deploy
+## 3. Deploy
 
 Now that we have the environment setup and configuration generated,
 we can proceed to [deployment][].
@@ -28,5 +23,4 @@ we can proceed to [deployment][].
 [Google Kubernetes Engine]: ../cloud/gke.md
 [local setup]: tools.md
 [resources]: resources.md
-[configuration]: configuration.md
 [deployment]: deployment.md
