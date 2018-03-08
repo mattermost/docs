@@ -68,6 +68,6 @@ Returns the secret name for the Secret containing the minio TLS certificate and 
 {{- if coalesce .Values.ingress.acme .Values.global.ingress.acme | default false -}}
 {{- printf "%s-acme-tls" .Release.Name -}}
 {{- else -}}
-{{- default "" (coalesce .Values.ingress.tls.secretName .Values.global.hosts.tls.secretName) -}}
+{{- default "" (coalesce .Values.ingress.tls.secretName .Values.global.ingress.tls.secretName) -}}
 {{- end -}}
 {{- end -}}
