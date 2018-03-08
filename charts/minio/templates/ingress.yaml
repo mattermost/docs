@@ -19,7 +19,7 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-body-size: {{ .Values.ingress.proxyBodySize | quote }}
     nginx.ingress.kubernetes.io/proxy-read-timeout: {{ .Values.ingress.proxyReadTimeout | quote }}
     nginx.ingress.kubernetes.io/proxy-request-buffering: {{ .Values.ingress.proxyBuffering | quote }}
-    nginx.ingress.kubernetes.io/proxy-buffering: {{ .Values.ingress.proxyBuffering | quote }}"
+    nginx.ingress.kubernetes.io/proxy-buffering: {{ .Values.ingress.proxyBuffering | quote }}
     nginx.ingress.kubernetes.io/use-http2: {{ .Values.ingress.http2 | quote }}
   {{- range $key, $value := merge .Values.global.ingress.annotations .Values.ingress.annotations }}
     {{ $key }}: {{ $value | quote }}
