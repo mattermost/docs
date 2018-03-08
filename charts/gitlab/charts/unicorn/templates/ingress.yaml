@@ -1,0 +1,41 @@
+{{- if .Values.enabled -}}
+{{- if coalesce .Values.ingress.enabled .Values.global.ingress.enabled | default false -}}
+{{- $gitlabHost := include "gitlabHost" . -}}
+{{- $gitlabTLSSecret := include "gitlabTLSSecret" . -}}
+{{- $useAcme := coalesce .Values.ingress.acme .Values.global.ingress.acme | default false -}}
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+    app: {{ template "name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+  annotations:
+    kubernetes.io/ingress.class: "{{ .Release.Name }}-nginx"
+    kubernetes.io/ingress.provider: nginx
+    kubernetes.io/tls-acme: {{ eq $useAcme true | quote }}
+    nginx.ingress.kubernetes.io/proxy-body-size: {{ .Values.ingress.proxyBodySize | quote }}
+    nginx.ingress.kubernetes.io/proxy-read-timeout: {{ .Values.ingress.proxyReadTimeout | quote }}
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: {{ .Values.ingress.proxyConnectTimeout | quote }}
+  {{- range $key, $value := merge .Values.global.ingress.annotations .Values.ingress.annotations }}
+    {{ $key }}: {{ $value | quote }}
+  {{- end }}
+spec:
+  rules:
+    - host: {{ $gitlabHost }}
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: {{ template "fullname" . }}
+              servicePort: {{ .Values.service.workhorseExternalPort }}
+  {{- if $gitlabTLSSecret }}
+  tls:
+    - hosts:
+      - {{ $gitlabHost }}
+      secretName: {{ $gitlabTLSSecret }}
+  {{- end }}
+{{- end -}}
+{{- end -}}

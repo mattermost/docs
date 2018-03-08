@@ -297,9 +297,9 @@ qa:
       --set releaseOverride="$CI_ENVIRONMENT_SLUG" \
       --set global.hosts.hostSuffix="$HOST_SUFFIX" \
       --set global.hosts.domain="$AUTO_DEVOPS_DOMAIN" \
-      --set global.hosts.tls.secretName=helm-charts-win-tls \
+      --set global.ingress.tls.secretName=helm-charts-win-tls \
+      --set global.ingress.acme=false \
       --set nginx.service.loadBalancerIP="$DOMAIN_IP" \
-      --set nginx.ingress.acme=false \
       --set kube-lego.enabled=false \
       --set gitlab.migrations.initialRootPassword="$ROOT_PASSWORD" \
       --set gitlab.omnibus.service.type=NodePort \

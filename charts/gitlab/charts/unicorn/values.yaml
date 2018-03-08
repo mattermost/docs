@@ -14,23 +14,37 @@ service:
   workhorseExternalPort: 8181
   workhorseInternalPort: 8181
 enabled: true
+ingress:
+  enabled: false
+  proxyConnectTimeout: 15
+  proxyReadTimeout: 600
+  proxyBodySize: "512m"
+  acme: false
+  tls: {}
+    # secretName:
+  annotations: {}
 workerProcesses: 2
 workerTimeout: 60
 railsSecrets:
   secret: rails-secrets
   key: secrets.yml
 global:
+  ingress:
+    enabled: true
+    acme: true
+    annotations: {}
+    tls: {}
+      # secretName:
   hosts:
     domain: example.local
     hostSuffix:
-    https: false
+    https: true
     gitlab: {}
       #name: gitlab.example.local
       #https: false
-    registry:
+    registry: {}
       #name: registry.example.local
       #https: false
-      serviceName: registry
 redis:
   # host: '0.0.0.0'
   serviceName: 'redis'

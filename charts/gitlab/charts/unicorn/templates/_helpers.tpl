@@ -138,3 +138,14 @@ otherwise the hostname will be assembed using `registry` as the prefix, and the 
 {{- define "registryHost" -}}
 {{- coalesce .Values.registry.host .Values.global.hosts.registry.name (include "assembleHost"  (dict "name" "registry" "context" . )) -}}
 {{- end -}}
+
+{{/*
+Returns the secret name for the Secret containing the gitlab TLS certificate and key.
+*/}}
+{{- define "gitlabTLSSecret" -}}
+{{- if coalesce .Values.ingress.acme .Values.global.ingress.acme | default false -}}
+{{- printf "%s-acme-tls" .Release.Name -}}
+{{- else -}}
+{{- default "" (coalesce .Values.ingress.tls.secretName .Values.global.hosts.tls.secretName) -}}
+{{- end -}}
+{{- end -}}
