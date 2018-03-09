@@ -143,8 +143,9 @@ otherwise the hostname will be assembed using `registry` as the prefix, and the 
 Returns the secret name for the Secret containing the gitlab TLS certificate and key.
 */}}
 {{- define "gitlabTLSSecret" -}}
+{{- $fullname := include "fullname" . -}}
 {{- if coalesce .Values.ingress.acme .Values.global.ingress.acme | default false -}}
-{{- printf "%s-acme-tls" .Release.Name -}}
+{{- printf "%s-acme-tls" $fullname -}}
 {{- else -}}
 {{- default "" (coalesce .Values.ingress.tls.secretName .Values.global.ingress.tls.secretName) -}}
 {{- end -}}
