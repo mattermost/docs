@@ -27,7 +27,6 @@ Release date: 2018-03-16
 
 ### Web User Interface
  - Added a web app build hash to About Mattermost dialog to tell what version of the web app is being used.
- - Added team icons to team sidebar.
  - Added rendering of at-mentions by the teammate name display.
  - Made ctrl work wherever cmd works on macOS.
  
