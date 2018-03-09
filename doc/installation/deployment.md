@@ -31,9 +31,11 @@ helm install . --name gitlab --timeout 600 \
 
 ```
 helm install . --name gitlab --timeout 600 \
-  --set global.hosts.domain=<domain name> \
-  --set nginx.service.loadBalancerIP=<External IP> \
-  --set kube-lego.config.LEGO_EMAIL=<Valid Email> \
+  --set global.hosts.domain=example.local \
+  --set global.hosts.tls.secretName=example-local-tls \
+  --set nginx.service.loadBalancerIP=X.X.X.X \
+  --set nginx.ingress.acme=false \
+  --set kube-lego.enabled=false \
   --set gitlab.migrations.initialRootPassword=<Your Password>
 ```
 
