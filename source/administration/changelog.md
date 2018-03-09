@@ -29,14 +29,12 @@ Release date: 2018-03-16
  - Added a web app build hash to About Mattermost dialog to tell what version of the web app is being used.
  - Added rendering of at-mentions by the teammate name display.
  - Made ctrl work wherever cmd works on macOS.
+ - Switched search bar to a button in tablet view, to increase how much space is available in the channel header.
  
 ### Performance
  - Reduced load times by optimizing database queries and optimizing WebSocket events destined for a single user by precomputing the raw JSON for WebSocket events.
  - Created an endpoint on iOS to upload a file as octet-stream in order to use `NSUrlSessionUploadTask` that will let us upload files larger than 20 Mb.
  - Improved caching of `getRootPosts` call.
- 
-### Channels
- - Switched search bar to a button and updated it so that clicking it expands the right-hand sidebar with the search box at the top and cursor in place.
 
 ### 508 Compliance
  - Added alt attribute to profile pictures.
@@ -47,15 +45,14 @@ Release date: 2018-03-16
 ### Notifications
  - A system message is now posted when a channel is moved between teams by the CLI command.
 
+### Authentication
+ - Reduced OAuth SSO login errors by falling back to a constructed URL if Site URL is blank.
+
 ### System Console
  - Removed plugin upload setting from System Console UI and prevented switching the setting from the API.
  - Added paging to system console log viewer and set default value of `per_paging` for logs to 1000.
  
-### Enterprise Edition
- - Added SiteURL for OAuth SSO and fell back to constructed URL if SiteURL blank.
- 
 ## Bug Fixes
-
  - Fixed an issue where sidebar unreads text setting was ignored in custom theme.
  - Fixed an issue where emoji picker had an empty line at the bottom of the list.
  - Fixed an issue with Markdown help wrapping on a second line in Edit Message dialog.
