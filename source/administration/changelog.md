@@ -8,13 +8,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 Release date: 2018-03-16
 
-### Security Update  XXXXXXX
-
-- Mattermost v4.8.0 contains a security fix ranging from low to high severity. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
-
 ## Highlights
 
-### CloudFront enhanced compatibility
+### Enhanced compatibility with CloudFront
 
  - Added support for configuring CloudFront to host Mattermost's static assets.
  - Allows for improved caching performance and shorter load times for those members of your team geographically distributed throughout the world.
@@ -27,8 +23,6 @@ Release date: 2018-03-16
 
 ### Web User Interface
  - Added a web app build hash to About Mattermost dialog to tell what version of the web app is being used.
- - Added rendering of at-mentions by the teammate name display.
- - Made ctrl work wherever cmd works on macOS.
  - Switched search bar to a button in tablet view, to increase how much space is available in the channel header.
  
 ### Performance
