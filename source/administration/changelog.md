@@ -77,6 +77,12 @@ Release date: 2018-03-16
  - Fixed an issue where insecure images were loaded by sending client before proxying.
  - Fixed an issue with sandboxing support for CentOS and Bosh.
  - Fixed an issue where JIRA plugin posts were not properly truncated.
+ - Fixed an issue where tall/wide emojis appeared stretched in emoji picker.
+ - Fixed an issue where web app could not be built if not in a git repository.
+ - Fixed an issue where jumping to a search result does not always load the context posts.
+ - Fixed an issue where cursor was not placed in the search text input box in channel header in tablet view.
+ - Fixed an issue where edit box changed size on switching to markdown preview in some languages.
+ - Fixed an issue where overlay for post controls did not overlay the post textbox.
 
 ### Compatibility
 
