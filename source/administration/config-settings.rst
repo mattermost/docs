@@ -137,7 +137,7 @@ Allow use of API v3 endpoints
 Set to false to disable all version 3 endpoints of the REST API. Integrations that rely on API v3 will fail and can then be identified for migration to API v4. API v3 is deprecated and will be removed in the near future. See https://api.mattermost.com for details.
 
 +---------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableAPIv3": false`` with options ``false`` and ``true``.  |
+| This feature's ``config.json`` setting is ``"EnableAPIv3": false`` with options ``false`` and ``true``. |
 +---------------------------------------------------------------------------------------------------------+
 
 Webserver Mode
@@ -2999,7 +2999,6 @@ This setting determines whether team leave/join system messages are posted in th
 
 Allow Cookies for Subdomains
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This setting set's the Domain parameter on our cookies, which allows the browser to send the cookies to subdomains as well.
 
 **True** True when cookies are allowed.
 
@@ -3013,12 +3012,12 @@ Websocket URL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 This setting allows the server to instruct clients where they should try to connect by websockets to.
 
-**True** True when cookies are allowed.
+Correct example: XXXXXX.
 
-**False** False when cookies are not allowed.
+Incorrect example: XXXXXXX.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"WebsocketURL": true`` with options ``true`` and ``false`` for above settings respectively.                              |
+| This feature's ``config.json`` setting is ``"WebsocketURL": ""`` with string input.                                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Segment Write Key
