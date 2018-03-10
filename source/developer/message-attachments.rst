@@ -94,22 +94,22 @@ Here is an example message attachment:
         "title_link": "http://docs.mattermost.com/developer/message-attachments.html",
         "fields": [
           {
-            "short": false,
+            "short":"false",
             "title":"Long Field",
             "value":"Testing with a very long piece of text that will take up the whole width of the table. And then some more text to make it extra long."
           },
           {
-            "short":true,
+            "short":"true",
             "title":"Column One",
             "value":"Testing"
           },
           {
-            "short":true,
+            "short":"true",
             "title":"Column Two",
             "value":"Testing"
           },
           {
-          "short":false,
+          "short":"false",
           "title":"Another Field",
           "value":"Testing"
           }
