@@ -26,8 +26,8 @@ Release date: 2018-03-16
  - Switched search bar to a button in tablet view, to increase how much space is available in the channel header.
  
 ### Performance
- - Reduced load times by optimizing database queries and optimizing WebSocket events destined for a single user by precomputing the raw JSON for WebSocket events.
- - Created an endpoint on iOS to upload a file as octet-stream in order to use `NSUrlSessionUploadTask` that will let us upload files larger than 20 Mb.
+ - Reduced load times by optimizing database queries and WebSocket events destined for a single users.
+ - Ceated an iOS endpoint that enables users to upload files larger than 20MB.
  - Improved caching of `getRootPosts` call.
 
 ### 508 Compliance
