@@ -15,29 +15,15 @@ global:
     domain: example.local
     hostSuffix: staging
     https: false
-    tls:
-      secretName: example-tls
     gitlab:
       name: gitlab.example.local
       https: false
-      serviceName: unicorn
-      servicePort: workhorse
-      tls:
-        secretName: gitlab-example-tls
     registry:
       name: registry.example.local
       https: false
-      serviceName: registry
-      servicePort: registry
-      tls:
-         secretName: registry.example.local
     minio:
       name: minio.example.local
       https: false
-      serviceName: minio-svc
-      servicePort: service
-      tls:
-         secretName: minio.example.local
 ```
 
 #### domain
@@ -166,6 +152,47 @@ The name of the [Kubernetes TLS Secret][Secret] that containers a certificate an
 Falls back to the `global.hosts.tls.secretName` when not provided. Defaults to not being set.
 
 *Note:* This secretName is ignored if kube-lego is being used on the ingress, in favor of the `acme` secret.
+
+## Configure Ingress settings
+
+The GitLab global host settings are located under the `global.ingress` key.
+
+|name|type|default|
+|:---|:---|:------|
+|[global.ingress.enabled](#global-ingress-enabled)|boolean|true|
+|[global.ingress.acme](#global-ingress-acme)|boolean|true|
+|[global.ingress.tls.secretName](#global-ingress-tls-secretName)|string|(empty)|
+|[global.ingress.annotations.*annotation-key*](#global-ingress-annotations-annotation-key)|string|(empty)|
+
+### global.ingress.enabled
+
+Global setting that controls whether to create ingress objects for services that support them. Defaults to `true`.
+
+### global.ingress.acme
+
+This enables the use of the [kube-lego](kube-lego/README.md) chart, if available. If enabled, this will auto-populate the requirements and host values for `kube-lego` to request certificates from Let's Encrypt.
+
+Defaults to `true`.
+
+*Note:* With `acme` set to true, you do not need to populate any other of the tls secretNames.
+
+### global.ingress.tls.secretName
+
+The name of the [Kubernetes TLS Secret][Secret] that contains a **wildcard** certificate and key for the domain used in `global.hosts.domain`.
+
+Defaults to not being set.
+
+*Note:* This secretName is ignored if kube-lego is being used on the ingress, in favor of the `acme` secret.
+
+### global.ingress.annotations.annotation-key
+
+Where `annotation-key` is a string that will be used with the value as an annotation on every ingress.
+
+ex:
+
+`global.ingress.annotations."nginx\.ingress\.kubernetes\.io/enable-access-log"=true`
+
+No global annotations are provided by default.
 
 [Secret]:https://kubernetes.io/docs/concepts/configuration/secret/
 [GitLab Secrets]:../installation/secrets.md

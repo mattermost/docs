@@ -32,6 +32,15 @@ registry:
   certificate:
   replicas:
   storage:
+  ingress:
+    enabled:
+    acme:
+    tls:
+      secretName
+    annotations:
+    proxyReadTimeout:
+    proxyBodySize:
+    proxyBuffering:
 ```
 
 If you should chose to deploy this chart as a standalone, remove the top level `registry`.
@@ -59,6 +68,42 @@ be populated by the [values.yml][].
 By default, the [Service][] is configured as:
 - `type: ClusterIP` on `0.0.0.0`, restricting access to the interal network of the Kubernetes cluster.
 - `name:` is set to `registry`.
+
+## Configuring the `ingress`
+
+This section controls the registry ingress.
+
+### enabled
+
+Setting that controls whether to create ingress objects for services that support them.
+
+When `false` the `global.ingress.enabled` setting is used.
+
+Defaults to `false`.
+
+### acme
+
+This enables the use of the kube-lego chart, if available. If enabled, this will auto-populate the requirements and host values for kube-lego to request certificates from Let's Encrypt.
+
+When `false` the `global.ingress.acme` setting is used.
+
+Defaults to `false`.
+
+Note: With acme set to `true`, you do not need to populate the tls secretName.
+
+### tls.secretName
+
+The name of the Kubernetes TLS Secret that contains a valid certificate and key for the registry url.
+
+When not set, the `global.ingress.tls.secretName` is used instead.
+
+Defaults to not being set.
+
+Note: This secretName is ignored if kube-lego is being used on the ingress, in favor of the acme secret.
+
+### annotations
+
+This field is an exact match to the standard `annotations` for [Kubernetes Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress).
 
 ## Defining the Registry Configuration
 

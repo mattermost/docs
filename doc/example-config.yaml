@@ -1,10 +1,13 @@
 # Global chart properties
 global:
+  ingress:
+    acme: true
+    enabled: true
+    # tls:
+    #   secretName:  example-local-tls
   hosts:
     domain: example.local
     https: true
-    # tls:
-    #   secretName:  example-local-tls
 
 # NGINX chart provides
 # - HTTP(S) Ingress services with SSL termination to all external facing services
@@ -14,9 +17,6 @@ nginx:
     # loadBalancerIP: <GKE static IP address>
   serviceAccount:
     autoGenerate: true
-  ingress:
-    acme: true
-    enabled: true
 
 # Kube lego
 kube-lego:

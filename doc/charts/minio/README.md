@@ -21,6 +21,15 @@ We will describe all the major sections of the configuration below. When configu
 minio:
   enabled:
   init:
+  ingress:
+    enabled:
+    acme:
+    tls:
+      secretName
+    annotations:
+    proxyReadTimeout:
+    proxyBodySize:
+    proxyBuffering:
   persistence: (upstream)
     volumeName:
   serviceType: (upstream)
@@ -60,6 +69,42 @@ The initContainer is handed the following items:
 - An `emptyDir` mounted at `/minio` that will be passed to the daemon's container.
 
 The initContainer is expected to populate `/minio/config.json` with a completed configuration, using `/config/configure` script. When the `minio-config` container has completed that task, the `/minio` directory will be passed to the `minio` container, and used to provide the `config.json` to the [minio][] server.
+
+## Configuring the Ingress
+
+This section controls the minio ingress.
+
+### enabled
+
+Setting that controls whether to create ingress objects for services that support them.
+
+When `false` the `global.ingress.enabled` setting is used.
+
+Defaults to `false`.
+
+### acme
+
+This enables the use of the kube-lego chart, if available. If enabled, this will auto-populate the requirements and host values for kube-lego to request certificates from Let's Encrypt.
+
+When `false` the `global.ingress.acme` setting is used.
+
+Defaults to `false`.
+
+Note: With acme set to `true`, you do not need to populate the tls secretName.
+
+### tls.secretName
+
+The name of the Kubernetes TLS Secret that contains a valid certificate and key for the minio url.
+
+When not set, the `global.ingress.tls.secretName` is used instead.
+
+Defaults to not being set.
+
+Note: This secretName is ignored if kube-lego is being used on the ingress, in favor of the acme secret.
+
+### annotations
+
+This field is an exact match to the standard `annotations` for [Kubernetes Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress).
 
 ## Configuring the image
 
