@@ -55,7 +55,7 @@ Fields can be included as an optional array within ``attachments``, and are used
 
 ``value``: The text value of the field. It can be formatted using :doc:`Markdown <../help/messaging/formatting-text>`.
 
-``short``: Optionally set to “True” or “False” to indicate whether the ``value`` is short enough to be displayed beside other values.
+``short``: Optionally set to True or False (boolean) to indicate whether the ``value`` is short enough to be displayed beside other values.
 
 .. image:: ../images/attachments-fields.png
 
@@ -94,22 +94,22 @@ Here is an example message attachment:
         "title_link": "http://docs.mattermost.com/developer/message-attachments.html",
         "fields": [
           {
-            "short":"false",
+            "short":False,
             "title":"Long Field",
             "value":"Testing with a very long piece of text that will take up the whole width of the table. And then some more text to make it extra long."
           },
           {
-            "short":"true",
+            "short":True,
             "title":"Column One",
             "value":"Testing"
           },
           {
-            "short":"true",
+            "short":True,
             "title":"Column Two",
             "value":"Testing"
           },
           {
-          "short":"false",
+          "short":False,
           "title":"Another Field",
           "value":"Testing"
           }
