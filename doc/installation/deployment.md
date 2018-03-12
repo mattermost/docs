@@ -39,6 +39,8 @@ helm install . --name gitlab --timeout 600 \
   --set gitlab.migrations.initialRootPassword=<Your Password>
 ```
 
+A complete list  of command line options can be found [here](./command-line-options.md)
+
 ## Monitoring Deployment
 
 This will output the list of resources installed once the deployment finishes which may take 5-10 minutes.
