@@ -14,6 +14,7 @@ In order to easily support SSH replicas, and avoid using shared storage for the 
 
 The `gitlab-shell` chart is configured in two parts: external services, and chart settings.
 
+A complete list of possible configurations can be found [here](./command-line-options.md)
 ## External Services
 
 This chart should be attached the Unicorn service, and should also use the same Redis as the attached Unicorn service.

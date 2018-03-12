@@ -29,6 +29,7 @@ minio:
   minioConfig: (upstream)
 ```
 
+A complete list of possible configurations can be found [here](./command-line-options.md)
 ## Enable the sub-chart
 
 They way we've chosen to implement compartmentalized sub-charts includes the ability to disable the components that you may not want in a given deployment. For this reason, the first settings you should decided upon is `enabled:`.

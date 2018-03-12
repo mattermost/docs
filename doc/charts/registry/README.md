@@ -60,6 +60,7 @@ By default, the [Service][] is configured as:
 - `type: ClusterIP` on `0.0.0.0`, restricting access to the interal network of the Kubernetes cluster.
 - `name:` is set to `registry`.
 
+A complete list of possible configurations can be found [here](./command-line-options.md)
 ## Defining the Registry Configuration
 
 The following properties of this chart pertains to the configuration of the underlying

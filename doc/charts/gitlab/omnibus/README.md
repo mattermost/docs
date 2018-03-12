@@ -37,6 +37,8 @@ The components below have been replaced by other charts
 
 # Configuration
 
+A complete list of possible configurations can be found [here](./command-line-options.md)
+
 ## Enable the sub-chart
 
 The `omnibus` chart is disabled out of the box. To make use of it as a developer

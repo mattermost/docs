@@ -44,7 +44,7 @@ redis:
 
 If you should chose to deploy this chart as a standalone, remove the top level `redis`. Not that any setting not provided will result in the defaults being used. Thus, it is not required to provided all values.
 
-See [values.yaml][] for all available options.
+A complete list of possible configurations can be found [here](./command-line-options.md)
 
 ## Enable the sub-chart
 

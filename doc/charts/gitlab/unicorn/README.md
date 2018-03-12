@@ -12,6 +12,7 @@ This chart depends on Redis, PostgreSQL, Gitaly, and Registry services, either a
 
 The `unicorn` chart is configured in three parts: Global Settings, External Services, and Chart Settings.
 
+A complete list of possible configurations can be found [here](./command-line-options.md)
 ## Global Settings
 
 We share some common global settings among our charts. See the [Globals Documentation][globals] for common configuration

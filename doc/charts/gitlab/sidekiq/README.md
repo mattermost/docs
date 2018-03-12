@@ -16,6 +16,7 @@ This chart creates multiple `Deployment`s and associated `ConfigMap`s. It was de
 
 The `sidekiq` chart is configured in three parts: chart-wide external services, chart-wide defaults, and per-pod definitions.
 
+A complete list of possible configurations can be found [here](./command-line-options.md)
 ## External Services
 
 This chart should be attached to the same Redis, PostgreSQL, and Gitaly instances as the Unicorn chart. The values of external services will be populated into a `ConfigMap` that is shared across all Sidekiq pods.

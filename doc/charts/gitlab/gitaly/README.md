@@ -14,6 +14,7 @@ The Gitlay container used in this chart also contains the gitlab-shell code-base
 
 The `gitaly` chart is configured in two parts: external services, and chart settings.
 
+A complete list of possible configurations can be found [here](./command-line-options.md)
 ## External Services
 
 This chart should be attached the Unicorn service, and should also use the same Redis as the attached Unicorn service.

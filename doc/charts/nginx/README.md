@@ -31,6 +31,7 @@ service:
   - ssh: 22
 ```
 
+A complete list of possible configurations can be found [here](./command-line-options.md)
 ### NGINX options
 
 ```

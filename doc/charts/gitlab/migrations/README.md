@@ -20,6 +20,7 @@ The container used in this chart has some additional optimizations that we are n
 
 The `migrations` chart is configured in two parts: external services, and chart settings.
 
+A complete list of possible configurations can be found [here](./command-line-options.md)
 ## External Services
 
 ### Redis
