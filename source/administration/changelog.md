@@ -74,6 +74,11 @@ Release date: 2018-03-16
  - Fixed an issue where cursor was not placed in the search text input box in channel header in tablet view.
  - Fixed an issue where edit box changed size on switching to markdown preview in some languages.
  - Fixed an issue where overlay for post controls did not overlay the post textbox.
+ - Fixed an issue where Javascript exception and main menu failed to open during final tutorial step.
+ - Fixed an issue where browser tabs sometimes did not show asterisk when unreads existed.
+ - Fixed an issue where ENTER failed to create a new channel after typing channel name.
+ - Fixed an issue with not being able to scroll sideways to view file thumbnails until file finished uploading.
+ - Fixed an issue where unflagging posts in flagged posts sidebar didn't always remove the post.
 
 ### Compatibility
 
