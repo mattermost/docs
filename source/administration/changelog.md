@@ -24,7 +24,6 @@ Release date: 2018-03-16
 ### Web User Interface
  - Added a web app build hash to About Mattermost dialog to tell what version of the web app is being used.
  - Switched search bar to a button in tablet view, to increase how much space is available in the channel header.
- - Added rendering of at-mentions by the teammate name display.
  
 ### Performance
  - Reduced load times by optimizing database queries and WebSocket events destined for a single users.
