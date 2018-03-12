@@ -36,7 +36,6 @@ service:
 ```
 hstsIncludeSubdomains: false
 serverNameHashBucketSize: 256
-use-http2: false
 ```
 
 The above values correlate directly to their values in the NGINX configuration file.
