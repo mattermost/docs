@@ -18,7 +18,7 @@ spec:
         checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
     spec:
       initContainers:
-        - name: redis-configure
+        - name: configure
           image: busybox
           command: ['sh', '/config/configure']
           volumeMounts:
