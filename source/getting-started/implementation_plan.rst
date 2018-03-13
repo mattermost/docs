@@ -303,7 +303,7 @@ This section addresses security issues specifically related to the implementatio
 
 ---
 
-4        IMPLEMENTATION SUPPORT
+4        Implementation Support
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This section describes the support software, materials, equipment, and facilities required for the implementation, as well as the personnel requirements and training necessary for the implementation.  The information provided in this section is not site-specific.  If there are additional support requirements not covered by the subsequent sections, others may be added as needed.
