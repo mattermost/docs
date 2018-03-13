@@ -5,12 +5,10 @@ global:
   hosts:
     domain: example.local
     https: true
+  ingress:
+    enabled: true
+    acme: true
 
-# nginx:
-#   ingress:
-#     enabled: true
-#     acme: true
-#
 # kube-lego:
 #   enabled: true
 #   config:

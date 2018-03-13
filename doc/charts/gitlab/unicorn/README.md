@@ -10,7 +10,7 @@ This chart depends on Redis, PostgreSQL, Gitaly, and Registry services, either a
 
 # Configuration
 
-The `unicorn` chart is configured in three parts: Global Settings, External Services, and Chart Settings.
+The `unicorn` chart is configured as follows: Global Settings, Ingress Settings External Services, and Chart Settings.
 
 ## Installation command line options
 
@@ -57,6 +57,53 @@ Table below contains all the possible charts configurations that can be supplied
 
 We share some common global settings among our charts. See the [Globals Documentation][globals] for common configuration
 options, such as GitLab and Registry hostnames.
+
+## Ingress Settings
+
+|name|type|default|
+|:---|:---|:------|
+|[ingress.enabled](#ingress-enabled)|boolean|false|
+|[ingress.acme](#ingress-acme)|boolean|false|
+|[ingress.tls.secretName](#ingress-tls-secretName)|string|(empty)|
+|[ingress.annotations.*annotation-key*](#ingress-annotations-annotation-key)|string|(empty)|
+
+### ingress.enabled
+
+Setting that controls whether to create ingress objects for services that support them.
+
+When `false` the `global.ingress.enabled` setting is used.
+
+Defaults to `false`.
+
+### ingress.acme
+
+This enables the use of the kube-lego chart, if available. If enabled, this will auto-populate the requirements and host values for kube-lego to request certificates from Let's Encrypt.
+
+When `false` the `global.ingress.acme` setting is used.
+
+Defaults to `false`.
+
+Note: With acme set to `true`, you do not need to populate the tls secretName.
+
+### ingress.tls.secretName
+
+The name of the Kubernetes TLS Secret that contains a valid certificate and key for the gitlab url.
+
+When not set, the `global.ingress.tls.secretName` is used instead.
+
+Defaults to not being set.
+
+Note: This secretName is ignored if kube-lego is being used on the ingress, in favor of the acme secret.
+
+### ingress.annotations.annotation-key
+
+Where `annotation-key` is a string that will be used with the value as an annotation on every ingress.
+
+ex:
+
+`ingress.annotations."nginx\.ingress\.kubernetes\.io/enable-access-log"=true`
+
+No annotations are provided by default.
 
 ## External Services
 

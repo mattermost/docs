@@ -24,62 +24,13 @@ serviceAccount:
   autoGenerate: true
   name: default # Only used when autoGenerate is false
 
-proxyConnectTimeout: 15
-proxyReadTimeout: 600
-proxySendTimeout: 600
-proxyBodySize: "512m"
 hstsIncludeSubdomains: false
 serverNameHashBucketSize: 256
-
-global:
-  hosts:
-    domain: example.local
-    hostSuffix:
-    https: false
-    tls: {}
-      # secretName:
-    gitlab:
-      #name: gitlab.example.local
-      #https: false
-      serviceName: unicorn
-      servicePort: workhorse
-      tls: {}
-        # secretName:
-    registry:
-      #name: registry.example.local
-      #https: false
-      serviceName: registry
-      servicePort: registry
-      tls: {}
-        # secretName:
-    minio:
-      #name: minio.example.local
-      #https: false
-      serviceName: minio-svc
-      servicePort: service
-      tls: {}
-        # secretName:
-
 
 shell:
   name: gitlab-shell
   port: ssh
 
-ingress:
-  enabled: true
-  acme: true
-  # Used to create Ingress record (should used with service.type: ClusterIP).
-  hosts: []
-    # - name: prometheus.example.local
-    #   serviceName: omnibus
-    #   servicePort: prometheus
-  annotations:
-    # kubernetes.io/tls-acme: "true"
-  tls:
-    # Secrets must be manually created in the namespace.
-    # - secretName: chart-example-tls
-    #   hosts:
-    #     - chart-example.local
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little

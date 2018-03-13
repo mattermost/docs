@@ -9,13 +9,40 @@ service:
   internalPort: 5000
   clusterIP: '0.0.0.0'
 
+## Enable/Disable
+enabled: true
+
+ingress:
+  enabled: false
+  proxyReadTimeout: 900
+  proxyBodySize: "0"
+  proxyBuffering: "off"
+  acme: false
+  tls: {}
+    # secretName:
+  annotations: {}
+
 global:
+  ingress:
+    enabled: true
+    acme: true
+    annotations: {}
+    tls: {}
+      # secretName:
   hosts:
     domain: example.local
     hostSuffix:
-    https: false
+    https: true
+    tls: {}
+      # secretName:
     gitlab: {}
       #name: gitlab.example.local
+      #https: false
+    registry: {}
+      #name: registry.example.local
+      #https: false
+    minio: {}
+      #name: minio.example.local
       #https: false
 
 ## Control the InitContainer behaviors.

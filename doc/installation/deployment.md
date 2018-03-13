@@ -32,9 +32,9 @@ helm install . --name gitlab --timeout 600 \
 ```
 helm install . --name gitlab --timeout 600 \
   --set global.hosts.domain=example.local \
-  --set global.hosts.tls.secretName=example-local-tls \
+  --set global.ingress.tls.secretName=example-local-tls \
+  --set global.ingress.acme=false \
   --set nginx.service.loadBalancerIP=X.X.X.X \
-  --set nginx.ingress.acme=false \
   --set kube-lego.enabled=false \
   --set gitlab.migrations.initialRootPassword=<Your Password>
 ```

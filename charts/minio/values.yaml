@@ -7,6 +7,34 @@ imagePullPolicy: "Always"
 
 ## Enable/Disable
 enabled: true
+
+ingress:
+  enabled: false
+  proxyReadTimeout: 900
+  proxyBodySize: "0"
+  proxyBuffering: "off"
+  acme: false
+  tls: {}
+    # secretName:
+  annotations: {}
+
+global:
+  ingress:
+    enabled: true
+    acme: true
+    annotations: {}
+    tls: {}
+      # secretName:
+  hosts:
+    domain: example.local
+    hostSuffix:
+    https: true
+    tls: {}
+      # secretName:
+    minio: {}
+      #name: minio.example.local
+      #https: false
+
 ## Control the InitContainer behaviors.
 init:
   image: "busybox"

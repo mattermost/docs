@@ -1,0 +1,42 @@
+{{- if .Values.enabled -}}
+{{- if coalesce .Values.ingress.enabled .Values.global.ingress.enabled | default false -}}
+{{- $minioHost := include "minioHost" . -}}
+{{- $minioTLSSecret := include "minioTLSSecret" . -}}
+{{- $useAcme := coalesce .Values.ingress.acme .Values.global.ingress.acme | default false -}}
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ template "minio.fullname" . }}
+  labels:
+    app: {{ template "minio.name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+  annotations:
+    kubernetes.io/ingress.class: "{{ .Release.Name }}-nginx"
+    kubernetes.io/ingress.provider: nginx
+    kubernetes.io/tls-acme: {{ eq $useAcme true | quote }}
+    nginx.ingress.kubernetes.io/proxy-body-size: {{ .Values.ingress.proxyBodySize | quote }}
+    nginx.ingress.kubernetes.io/proxy-read-timeout: {{ .Values.ingress.proxyReadTimeout | quote }}
+    nginx.ingress.kubernetes.io/proxy-request-buffering: {{ .Values.ingress.proxyBuffering | quote }}
+    nginx.ingress.kubernetes.io/proxy-buffering: {{ .Values.ingress.proxyBuffering | quote }}
+  {{- range $key, $value := merge .Values.global.ingress.annotations .Values.ingress.annotations }}
+    {{ $key }}: {{ $value | quote }}
+  {{- end }}
+spec:
+  rules:
+    - host: {{ $minioHost }}
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: {{ template "minio.fullname" . }}-svc
+              servicePort: 9000
+  {{- if $minioTLSSecret }}
+  tls:
+    - hosts:
+      - {{ $minioHost }}
+      secretName: {{ $minioTLSSecret }}
+  {{- end }}
+{{- end -}}
+{{- end -}}
