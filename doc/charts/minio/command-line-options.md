@@ -2,25 +2,24 @@
 
 Table below contains all the possible charts configurations that can be supplied to `helm install` command using the `--set` flags
 
-| Parameter                       | Description                         | Default                      |
-| ---                             | ---                                 | ---                          |
-| minio.image                     | Minio image                         | minio/minio                  |
-| minio.imageTag                  | Minio image tag                     | RELEASE.2017-12-28T01-21-00Z |
-| minio.imagePullPolicy           | Minio image pull policy             | Always                       |
-| minio.enabled                   | Minio enable flag                   | true                         |
-| minio.credentials.secret        | Minio credentials secret            | gitlab-minio                 |
-| minio.mountPath                 | Minio config file mount path        | /export                      |
-| minio.replicas                  | Minio number of replicas            | 4                            |
-| minio.persistence.enabled       | Minio enable persistence flag       | true                         |
-| minio.persistence.accessMode    | Minio persistence access mode       | ReadWriteOnce                |
-| minio.persistence.size          | Minio persistence volume size       | 10Gi                         |
-| minio.persistence.subPath       | Minio persistence volume mount path |                              |
-| minio.serviceType               | Minio service type                  | ClusterIP                    |
-| minio.servicePort               | Minio service port                  | 9000                         |
-| minio.resources.requests.memory | Minio minimum memory requested      | 256Mi                        |
-| minio.resources.requests.cpu    | Minio minimum cpu requested         | 250m                         |
-| minio.defaultBuckets            | Minio default buckets               | [{"name": "registry"}]       |
-| minio.minioConfig.region        | Minio region                        | us-east-1                    |
-| minio.minioConfig.browser       | Minio browser flag                  | on                           |
-| minio.minioConfig.domain        | Minio domain                        |                              |
-
+| Parameter                 | Description                         | Default                      |
+| ---                       | ---                                 | ---                          |
+| image                     | Minio image                         | minio/minio                  |
+| imageTag                  | Minio image tag                     | RELEASE.2017-12-28T01-21-00Z |
+| imagePullPolicy           | Minio image pull policy             | Always                       |
+| enabled                   | Minio enable flag                   | true                         |
+| credentials.secret        | Minio credentials secret            | gitlab-minio                 |
+| mountPath                 | Minio config file mount path        | /export                      |
+| replicas                  | Minio number of replicas            | 4                            |
+| persistence.enabled       | Minio enable persistence flag       | true                         |
+| persistence.accessMode    | Minio persistence access mode       | ReadWriteOnce                |
+| persistence.size          | Minio persistence volume size       | 10Gi                         |
+| persistence.subPath       | Minio persistence volume mount path |                              |
+| serviceType               | Minio service type                  | ClusterIP                    |
+| servicePort               | Minio service port                  | 9000                         |
+| resources.requests.memory | Minio minimum memory requested      | 256Mi                        |
+| resources.requests.cpu    | Minio minimum cpu requested         | 250m                         |
+| defaultBuckets            | Minio default buckets               | [{"name": "registry"}]       |
+| minioConfig.region        | Minio region                        | us-east-1                    |
+| minioConfig.browser       | Minio browser flag                  | on                           |
+| minioConfig.domain        | Minio domain                        |                              |
