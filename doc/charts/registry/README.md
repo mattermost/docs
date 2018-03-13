@@ -36,6 +36,24 @@ registry:
 
 If you should chose to deploy this chart as a standalone, remove the top level `registry`.
 
+## Installation command line options
+
+Table below contains all the possible charts configurations that can be supplied to `helm install` command using the `--set` flags
+
+| Parameter                | Description                         | Default              |
+| ---                      | ---                                 | ---                  |
+| enabled                  | Enable registry flag                | true                 |
+| httpSecret               | Https secret                        |                      |
+| authEndpoint             | Auth endpoint                       | Undefined by default |
+| tokenService             | JWT token service                   | container_registry   |
+| tokenIssuer              | JWT token issuer                    | gitlab-issuer        |
+| certificate.secret       | JWT certificate                     | gitlab-registry      |
+| certificate.key          | JWT certificate private key         | registry-auth.crt    |
+| replicas                 | Number of replicas                  | 1                    |
+| minio.enabled            | Enable minio flag                   | true                 |
+| minio.bucket             | Minio registry bucket name          | registry             |
+| minio.credentials.secret | Secret containing minio credentials | gitlab-minio         |
+
 ## Enable the sub-chart
 
 They way we've chosen to implement compartmentalized sub-charts includes the ability to disable the components that you may not want in a given deployment. For this reason, the first settings you should decided upon is `enabled:`.
@@ -60,7 +78,6 @@ By default, the [Service][] is configured as:
 - `type: ClusterIP` on `0.0.0.0`, restricting access to the interal network of the Kubernetes cluster.
 - `name:` is set to `registry`.
 
-A complete list of possible configurations can be found [here](./command-line-options.md)
 ## Defining the Registry Configuration
 
 The following properties of this chart pertains to the configuration of the underlying
