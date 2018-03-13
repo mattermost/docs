@@ -45,6 +45,9 @@ global:
     registry: {}
       #name: registry.example.local
       #https: false
+    minio: {}
+      #name: minio.example.local
+      #https: false
   psql:
     # host: '0.0.0.0'
     # port: '5432'
@@ -73,6 +76,23 @@ gitaly:
   authToken:
     secret: gitaly-secret
     key: token
+lfs:
+  enabled: true
+
+  proxy_download: true
+  # bucket:
+  # connection:
+  #   provider: AWS
+  #   region: us-east-1
+  #   accesskey: aws_access_key_id
+  #   secretkey: aws_secret_access_key
+  #   host: s3.amazonaws.com
+  #   path_style: false
+minio:
+  enabled: true
+  bucket: git-lfs
+  credentials:
+    secret: gitlab-minio
 registry:
   host:
   # port: 443

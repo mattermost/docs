@@ -78,9 +78,37 @@ data:
       artifacts:
         enabled: true
       lfs:
-        enabled: false
+        enabled: {{ eq .Values.lfs.enabled true }}
         object_store:
-          enabled: false
+          enabled: true
+          {{- if .Values.minio.enabled }}
+          remote_directory: {{ .Values.minio.bucket }}
+          {{- else }}
+          remote_directory: {{ .Values.lfs.bucket }}
+          {{- end }}
+          direct_upload: true
+          background_upload: false
+          proxy_download: {{ eq .Values.lfs.proxy_download true }}
+          {{- if and .Values.minio.enabled }}
+          connection:
+            provider: AWS
+            region: us-east-1
+            aws_access_key_id: "<%= File.read('/etc/gitlab/minio/accesskey') %>"
+            aws_secret_access_key: "<%= File.read('/etc/gitlab/minio/secretkey') %>"
+            host: {{ template "minioHost" . }}
+            path_style: true
+          {{- else }}
+          connection:
+            provider: {{ .Values.lfs.provider }}
+            region: {{ .Values.lfs.region | quote }}
+            aws_access_key_id: {{ .Values.lfs.accesskey | quote }}
+            aws_secret_acces_key: {{ .Values.lfs.secretkey | quote }}
+            host: {{ .Values.lfs.host | quote }}
+            {{- if .Values.lfs.endpoint }}
+            endpoint: {{ .Values.lfs.endpoint | quote }}
+            {{- end }}
+            path_style: {{ .Values.lfs.path_style }}
+          {{- end }}
       pages:
         enabled: false
       mattermost:
@@ -141,5 +169,9 @@ data:
     cp /init-config/registry/gitlab-registry.key /init-secrets/registry/gitlab-registry.key
     cp /init-config/postgres/psql-password /init-secrets/postgres/psql-password
     cp /init-config/rails-secrets/secrets.yml /init-secrets/rails-secrets/secrets.yml
+    if [ -e /init-config/minio ]; then
+      mkdir /init-secrets/minio
+      cp /init-config/minio/* /init-secrets/minio/
+    fi
 # Leave this here - This line denotes end of block to the parser.
 {{- end }}
