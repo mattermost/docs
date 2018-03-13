@@ -50,7 +50,7 @@ spec:
           emptyDir:
             medium: "Memory"
       initContainers:
-        - name: minio-config
+        - name: configure
           image: {{ .Values.init.image }}:{{ .Values.init.tag}}
           imagePullPolicy: {{ .Values.init.pullPolicy }}
           command: ["sh", "/config/configure"]

@@ -35,7 +35,7 @@ spec:
           - name: unicorn-secrets
             mountPath: /init-secrets
             readOnly: false
-        - name: {{ .Chart.Name }}-dependencies
+        - name: dependencies
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           args:

@@ -70,7 +70,7 @@ spec:
           - name: sidekiq-secrets
             mountPath: /sidekiq-secrets
             readOnly: false
-        - name: {{ $name }}-dependencies
+        - name: dependencies
           image: "{{ $image }}"
           imagePullPolicy: {{ $imagePullPolicy }}
           args:
