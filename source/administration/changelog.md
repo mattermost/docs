@@ -83,6 +83,7 @@ Release date: 2018-03-16
 #### Removed and Deprecated Features
 
  - All API v3 endpoints have been deprecated and are scheduled for removal in Mattermost v5.0.
+ - An unused `ExtraUpdateAt` field will be removed from the channel model in Mattermost v5.0.
  - As Mattermost moves to a role-based permissions system in v4.9, a number of configuration settings will be migrated to roles in the database and changing their `config.json` values will no longer take effect. These permissions can still be modified by their respective System Console settings. The `config.json` settings to be migrated are:
    - RestrictPublicChannelManagement
    - RestrictPrivateChannelManagement
