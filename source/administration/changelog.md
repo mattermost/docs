@@ -101,12 +101,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under `ServiceSettings` in `config.json`:
     - Added `AllowCookiesForSubdomains`, to ensure that the domain parameter is set for cookies, which allows the browser to send the cookies to subdomains as well.
     - Added `WebsocketURL`, which allows the server to instruct clients where they should try to connect WebSockets to.
+    - Changed `EnableAPIV3` setting to `false` for new installs, as all API v3 endpoints have been deprecated and are scheduled for removal in Mattermost v5.0.
 
 ### API Changes
 
  - It is required that any new integrations use API v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
  - All API v3 endpoints have been deprecated and are scheduled for removal in Mattermost v5.0.
- - Flipped `EnableAPIV3` setting off for new installs.
 
 #### RESTful API v4 Changes
 
