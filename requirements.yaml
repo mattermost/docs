@@ -1,0 +1,6 @@
+dependencies:
+- name: cert-manager
+  version: 0.2.2
+  repository: https://kubernetes-charts.storage.googleapis.com/
+  condition: certmanager.install
+  alias: certmanager
