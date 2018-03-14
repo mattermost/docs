@@ -167,6 +167,15 @@ otherwise the hostname will be assembed using `minio` as the prefix, and the `as
 {{- end -}}
 
 {{/*
+Return the minio service endpoint
+*/}}
+{{- define "unicorn.minio.endpoint" -}}
+{{- $name := default "minio-svc" .Values.minio.serviceName -}}
+{{- $port := default "9000" .Values.minio.port -}}
+{{- printf "http://%s-%s:%s" .Release.Name $name $port -}}
+{{- end -}}
+
+{{/*
 Returns the secret name for the Secret containing the gitlab TLS certificate and key.
 */}}
 {{- define "gitlabTLSSecret" -}}
