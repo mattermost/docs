@@ -45,7 +45,7 @@ Below is the list of core developers working on Mattermost:
   - @jesus.espino on [pre-release.mattermost.com](https://pre-release.mattermost.com/core/messages/@jesus.espino) and [@jespino](https://github.com/jespino) on GitHub
   - Dev areas: Webapp, Permissions and Compliance, Sample data generation
 - **Jesse Hallam**
-  - @jesse.hallam on [pre-release.mattermost.com](https://pre-release.mattermost.com/core/messages/@ccbrown) and [@lieut-data](https://github.com/ccbrown) on GitHub
+  - @jesse.hallam on [pre-release.mattermost.com](https://pre-release.mattermost.com/core/messages/@jesse.hallam) and [@lieut-data](https://github.com/lieut-data) on GitHub
   - Dev areas: Performance, Webapp, Database
 
 Below is the list of core developers working on individual Mattermost repositories:
