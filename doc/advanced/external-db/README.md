@@ -6,10 +6,7 @@ If you need to spawn a postgresql instance for non-production purposes follow se
 
 ## Configure the Chart
 
-`migrations`, `unicorn` and `sidekiq` gitlab charts needs a postgresql database and so we will need to provide to all of them.
-
-Each of these chart has it's postgresql configurations. However, these charts support overriding their psql configs by specifying it globally if you intend
-to deploy multiple of these charts together instead of specifying the same config multiple times.
+The `migrations`, `unicorn`, and `sidekiq` charts require a Postgres database to function. When not using the GitLab chart's provided service, we'll need to provide the configuration information to all three. Each chart can be configured individually on a per-chart basis, or you can make use of global values to configure all charts from a single point.
 
 ### Specify per-chart value
 
