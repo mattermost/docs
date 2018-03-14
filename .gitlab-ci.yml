@@ -300,7 +300,7 @@ qa:
       --set global.ingress.tls.secretName=helm-charts-win-tls \
       --set global.ingress.acme=false \
       --set nginx.service.loadBalancerIP="$DOMAIN_IP" \
-      --set kube-lego.enabled=false \
+      --set certmanager.issuer.email="foo@example.com" \
       --set gitlab.migrations.initialRootPassword="$ROOT_PASSWORD" \
       --set gitlab.omnibus.service.type=NodePort \
       --namespace="$KUBE_NAMESPACE" \
