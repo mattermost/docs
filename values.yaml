@@ -8,6 +8,8 @@ global:
   ingress:
     enabled: true
     acme: true
+  psql:
+    password: {}
 
 # kube-lego:
 #   enabled: true
