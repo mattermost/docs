@@ -77,10 +77,11 @@ function cleanup_gke_resources(){
   echo "\033[;33m Warning: Disks created during the helm deployment are not deleted, please delete them manually from the gcp console \033[0m";
 }
 
-
 if [ -z "$1" ]; then
   echo "You need to pass up or down";
 fi
+
+DIR=$(dirname "$(readlink -f "$0")")
 
 case $1 in
   up)
@@ -88,6 +89,9 @@ case $1 in
     ;;
   down)
     cleanup_gke_resources;
+    ;;
+  chaos)
+    $DIR/kube-monkey.sh;
     ;;
   *)
     echo "Unknown command $1";

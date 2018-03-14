@@ -1,0 +1,13 @@
+[kubemonkey]
+dry_run = false
+# run_hour = 6
+# start_hour = 8
+# end_hour = 15
+
+blacklisted_namespaces = ["kube-system"] # Critical apps live here
+time_zone = "America/New_York"
+
+[debug]
+enabled = true # Enable debug mode
+schedule_delay = 60 # Wait for n seconds before scheduling
+force_should_kill = true # Start terminating immediately after scheduling
