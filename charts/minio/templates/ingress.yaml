@@ -12,7 +12,6 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
   annotations:
-    kubernetes.io/ingress.class: "{{ .Release.Name }}-nginx"
     kubernetes.io/ingress.provider: nginx
     nginx.ingress.kubernetes.io/proxy-body-size: {{ .Values.ingress.proxyBodySize | quote }}
     nginx.ingress.kubernetes.io/proxy-read-timeout: {{ .Values.ingress.proxyReadTimeout | quote }}
