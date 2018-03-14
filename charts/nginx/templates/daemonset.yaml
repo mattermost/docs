@@ -32,6 +32,7 @@ spec:
           - --configmap={{ .Release.Namespace }}/{{ template "fullname" . }}
           - --ingress-class={{ .Release.Name }}-nginx
           - --tcp-services-configmap={{ .Release.Namespace }}/{{ template "fullname" . }}-tcp
+          - --publish-service={{ .Release.Namespace }}/{{ template "fullname" . }}
           env:
             - name: POD_NAME
               valueFrom:
