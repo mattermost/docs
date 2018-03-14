@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+    app: {{ template "name" . }}
+data:
+  hsts-include-subdomains: {{ .Values.hstsIncludeSubdomains | quote }}
+  server-name-hash-bucket-size: {{ .Values.serverNameHashBucketSize | quote }}
+  enable-vts-status: "true"
+  use-http2: "false"
