@@ -134,6 +134,8 @@ If using HTTP (insecure), this is the maximum time allowed from the end of readi
 
 Allow use of API v3 endpoints
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*`EnableAPIV3` setting has been flipped off for new installs.*
+
 Set to false to disable all version 3 endpoints of the REST API. Integrations that rely on API v3 will fail and can then be identified for migration to API v4. API v3 is deprecated and will be removed in the near future. See https://api.mattermost.com for details.
 
 +---------------------------------------------------------------------------------------------------------+
