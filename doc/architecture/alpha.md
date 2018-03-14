@@ -13,7 +13,7 @@ During Alpha, we will be using the latest versions of tools such as `kubectl`,
 We are working on Google Kubernetes Engine exclusively, but other k8s deployments
 may also work. In case of a specific non-GKE deployment issue, please raise an issue.
 
-As of the moment of writing this document, we are using Kubernetes version 1.8.5.
+As of the moment of writing this document, we are using Kubernetes version 1.8.7.
 Definitive minimum cluster version requirement will be set after the next
 chart milestone, most likely during Beta.
 
@@ -56,7 +56,6 @@ not to be fully functional:
 * No support for incoming email https://gitlab.com/charts/helm.gitlab.io/issues/235
 * No support for customizing GitLab options, eg. LDAP https://gitlab.com/charts/helm.gitlab.io/issues/236
 * No support for advanced workhorse configuration https://gitlab.com/charts/helm.gitlab.io/issues/249
-* No support for configuring the unicorn workers https://gitlab.com/charts/helm.gitlab.io/issues/237
 * CI traces are not persisted https://gitlab.com/charts/helm.gitlab.io/issues/245
 * No support for scaling unicorn separate from workhorse https://gitlab.com/charts/helm.gitlab.io/issues/61
 * GitLab maintenace rake tasks won't work in k8s environments
@@ -65,9 +64,7 @@ not to be fully functional:
 
 Once GitLab is deployed and running, you might encounter currently known issues:
 
-* No LFS support https://gitlab.com/charts/helm.gitlab.io/issues/242
-* Adding attachment to a comment does not work https://gitlab.com/charts/helm.gitlab.io/issues/227
-* Navigating to Registry shows page 500 https://gitlab.com/charts/helm.gitlab.io/issues/225
+* User uploaded content such as attachments to comments, are not persisted https://gitlab.com/charts/helm.gitlab.io/issues/227
 * Navigating to Wiki shows page 500 https://gitlab.com/charts/helm.gitlab.io/issues/226
 * Emails are not sent https://gitlab.com/charts/helm.gitlab.io/issues/234
 
