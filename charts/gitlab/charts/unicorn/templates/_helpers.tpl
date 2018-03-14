@@ -21,11 +21,37 @@ If the postgresql host is provided, it will use that, otherwise it will fallback
 to the service name
 */}}
 {{- define "unicorn.psql.host" -}}
-{{- if .Values.psql.host -}}
-{{- .Values.psql.host | quote -}}
+{{- if or .Values.psql.host .Values.global.psql.host -}}
+{{- .Values.global.psql.host | default .Values.psql.host | quote -}}
 {{- else -}}
 {{- $name := default "omnibus" .Values.psql.serviceName -}}
 {{- printf "%s-%s" .Release.Name $name -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
+Return the db username
+If the postgresql username is provided, it will use that, otherwise it will fallback
+to "gitlab" default
+*/}}
+{{- define "unicorn.psql.username" -}}
+{{- if or .Values.psql.username .Values.global.psql.username -}}
+{{- .Values.global.psql.username | default .Values.psql.username | quote -}}
+{{- else -}}
+gitlab
+{{- end -}}
+{{- end -}}
+
+{{/*
+Return the db port
+If the postgresql port is provided, it will use that, otherwise it will fallback
+to 5432 default
+*/}}
+{{- define "unicorn.psql.port" -}}
+{{- if or .Values.psql.port .Values.global.psql.port -}}
+{{- .Values.global.psql.port | default .Values.psql.port -}}
+{{- else -}}
+5432
 {{- end -}}
 {{- end -}}
 

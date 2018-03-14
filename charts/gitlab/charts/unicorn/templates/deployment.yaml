@@ -122,9 +122,9 @@ spec:
                 - key: {{ .Values.redis.password.key }}
                   path: redis/password
           - secret:
-              name: {{ .Values.psql.password.secret }}
+              name: {{ default .Values.psql.password.secret .Values.global.psql.password.secret }}
               items:
-                - key: {{ .Values.psql.password.key }}
+                - key: {{ default .Values.psql.password.key .Values.global.psql.password.key }}
                   path: postgres/psql-password
           - secret:
               name: {{ .Values.registry.certificate.secret }}
