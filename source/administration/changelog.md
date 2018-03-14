@@ -56,12 +56,10 @@ Release date: 2018-03-16
  - Fixed duplicate calls of the "view" request when switching channels.
  - Fixed an issue where channel name was included in push notifications if someone posted only files with Push Notification Contents set to not include channel name.
  - Fixed an issue where attempting to preview an attached document failed to finish "loading" if the file extension didn't match the actual file type.
- - Fixed an issue with no auto-focusing into input text when replying to a message in Classic Mobile App.
+ - Fixed an issue where focus was not set to input box after replying to a message in Classic Mobile App.
  - Fixed an issue where a username such as "user.name" gets a highlight only on "name" when @-icon is clicked.
  - Fixed an issue where the "More Unreads Above" indicator didn't always work.
  - Fixed an issue where IE11 posted placeholder from hidden textbox.
- - Fixed an issue with not being able to submit a reply with CMD+ENTER "Send messages on CTRL+ENTER" on.
- - Fixed an issue emojis were difficult to click when trying to add an emoji from the picker.
  - Fixed an issue where last channel was not remembered after refresh when switching teams.
  - Fixed an issue with no auto-focusing into input text when attaching a file in Classic Mobile App.
  - Fixed an issue with not being able to type with composed characters (e.g. CJK) in View Team Members modal and channel switcher.
@@ -70,13 +68,8 @@ Release date: 2018-03-16
  - Fixed an issue where JIRA plugin posts were not properly truncated.
  - Fixed an issue where tall/wide emojis appeared stretched in emoji picker.
  - Fixed an issue where web app could not be built if not in a git repository.
- - Fixed an issue where jumping to a search result does not always load the context posts.
- - Fixed an issue where cursor was not placed in the search text input box in channel header in tablet view.
+ - Fixed an issue where jumping to a search result did not always load the context posts.
  - Fixed an issue where edit box changed size on switching to markdown preview in some languages.
- - Fixed an issue where overlay for post controls did not overlay the post textbox.
- - Fixed an issue where Javascript exception and main menu failed to open during final tutorial step.
- - Fixed an issue where browser tabs sometimes did not show asterisk when unreads existed.
- - Fixed an issue with not being able to scroll sideways to view file thumbnails until file finished uploading.
 
 ### Compatibility
 
@@ -113,7 +106,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
  - It is required that any new integrations use API v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
  - All API v3 endpoints have been deprecated and are scheduled for removal in Mattermost v5.0.
- - Flipped `EnableAPIV3` setting off for new installs and added a User Interface top banner for System Admins who use APIv3.
+ - Flipped `EnableAPIV3` setting off for new installs.
 
 #### RESTful API v4 Changes
 
