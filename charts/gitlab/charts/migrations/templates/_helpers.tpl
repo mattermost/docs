@@ -46,7 +46,7 @@ to the service name
 */}}
 {{- define "migrations.psql.host" -}}
 {{- if or .Values.psql.host .Values.global.psql.host -}}
-{{- .Values.global.psql.host | default .Values.psql.host | quote -}}
+{{- coalesce .Values.global.psql.host .Values.psql.host | quote -}}
 {{- else -}}
 {{- $name := default "omnibus" .Values.psql.serviceName -}}
 {{- printf "%s-%s" .Release.Name $name -}}
@@ -59,11 +59,7 @@ If the postgresql username is provided, it will use that, otherwise it will fall
 to "gitlab" default
 */}}
 {{- define "migrations.psql.username" -}}
-{{- if or .Values.psql.username .Values.global.psql.username -}}
-{{- .Values.global.psql.username | default .Values.psql.username | quote -}}
-{{- else -}}
-gitlab
-{{- end -}}
+{{- coalesce .Values.global.psql.username .Values.psql.username "gitlab" -}}
 {{- end -}}
 
 {{/*
@@ -72,11 +68,7 @@ If the postgresql port is provided, it will use that, otherwise it will fallback
 to 5432 default
 */}}
 {{- define "migrations.psql.port" -}}
-{{- if or .Values.psql.port .Values.global.psql.port -}}
-{{- .Values.global.psql.port | default .Values.psql.port -}}
-{{- else -}}
-5432
-{{- end -}}
+{{- coalesce .Values.global.psql.port .Values.psql.port 5432 -}}
 {{- end -}}
 
 {{/*
