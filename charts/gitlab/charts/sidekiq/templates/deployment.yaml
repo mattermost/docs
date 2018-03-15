@@ -13,8 +13,8 @@
 {{- $nodeSelector := .Values.nodeSelector -}}
 {{- $redisSecret := .Values.redis.password.secret -}}
 {{- $redisKey := .Values.redis.password.key -}}
-{{- $postgresSecret := coalesce .Values.global.psql.password.secret .Values.psql.password.secret -}}
-{{- $postgresKey := coalesce .Values.global.psql.password.key .Values.psql.password.key -}}
+{{- $postgresSecret := coalesce .Values.psql.password.secret .Values.global.psql.password.secret -}}
+{{- $postgresKey := coalesce .Values.psql.password.key .Values.global.psql.password.key -}}
 {{- $gitalySecret := .Values.gitaly.authToken.secret -}}
 {{- $gitalyKey := default "token" .Values.gitaly.authToken.key -}}
 {{- $railsSecretName := .Values.railsSecrets.secret -}}

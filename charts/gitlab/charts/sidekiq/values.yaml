@@ -13,15 +13,19 @@ redis:
   password:
     secret: gitlab-redis
     key: redis-password
+
 psql:
-  # host: '0.0.0.0'
-  # port: '5432'
-  # database: 'gitlabhq_production'
-  # username: 'gitlab'
-  serviceName: 'omnibus'
-  password:
-    secret: gitlab-postgres
-    key: psql-password
+  password: {}
+global:
+  psql:
+    # host: '0.0.0.0'
+    # port: '5432'
+    # database: 'gitlabhq_production'
+    # username: 'gitlab'
+    serviceName: 'omnibus'
+    password:
+      secret: gitlab-postgres
+      key: psql-password
 gitaly:
   # host: '0.0.0.0'
   # port: 8075

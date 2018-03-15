@@ -45,6 +45,15 @@ global:
     registry: {}
       #name: registry.example.local
       #https: false
+  psql:
+    # host: '0.0.0.0'
+    # port: '5432'
+    # database: 'gitlabhq_production'
+    # username: 'gitlab'
+    serviceName: 'omnibus'
+    password:
+      secret: gitlab-postgres
+      key: psql-password
 redis:
   # host: '0.0.0.0'
   serviceName: 'redis'
@@ -52,14 +61,7 @@ redis:
     secret: gitlab-redis
     key: redis-password
 psql:
-  # host: '0.0.0.0'
-  # port: '5432'
-  # database: 'gitlabhq_production'
-  # username: 'gitlab'
-  serviceName: 'omnibus'
-  password:
-    secret: gitlab-postgres
-    key: psql-password
+  password: {}
 shell:
   authToken:
     secret: gitlab-shell-secret
