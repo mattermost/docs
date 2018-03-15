@@ -43,7 +43,7 @@ function bootstrap(){
       exit 1;
     fi
 
-    password=$(gcloud container clusters describe $CLUSTER_NAME --zone $ZONE --project $PROJECT --format='value(masterAuth.password)');
+    password=$(cluster_admin_password_gke);
 
     kubectl --username=admin --password=$password create -f rbac-config.yaml;
   fi

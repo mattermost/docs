@@ -12,7 +12,7 @@ source $DIR/common.sh
 
 validate_required_tools;
 if $RBAC_ENABLED; then
-  password=$(gcloud container clusters describe $CLUSTER_NAME --zone $ZONE --project $PROJECT --format='value(masterAuth.password)');
+  password=$(cluster_admin_password_gke);
   kubectl --username=admin --password=$password create -f $DIR/kube-monkey-resources/kube-monkey-role.yaml;
 fi
 

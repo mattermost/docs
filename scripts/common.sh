@@ -16,3 +16,7 @@ function validate_required_tools(){
   gcloud container clusters list >/dev/null 2>&1 || { echo >&2 "Gcloud seems to be configured incorrectly or authentication is unsuccessfull"; exit 1; }
 
 }
+
+function cluster_admin_password_gke(){
+  gcloud container clusters describe $CLUSTER_NAME --zone $ZONE --project $PROJECT --format='value(masterAuth.password)';
+}
