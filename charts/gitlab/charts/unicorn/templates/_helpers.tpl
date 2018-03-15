@@ -99,7 +99,7 @@ if there is a shared tls secret for all ingresses.
 {{- end -}}
 
 {{- define "gitlab.externaldns_annotations" -}}
-{{- if (pluck "configure_externaldns" .Values.global.ingress .Values.ingress (dict "configure_externaldns" false) | first) -}}
+{{- if (pluck "configureExternaldns" .Values.global.ingress .Values.ingress (dict "configureExternaldns" false) | first) -}}
 {{- printf "external-dns.alpha.kubernetes.io/hostname: %s" (include "gitlabHost" . | quote) -}}
 {{- end -}}
 {{- end -}}

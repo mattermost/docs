@@ -40,7 +40,7 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 {{- end -}}
 
 {{- define "gitlab.certmanager_annotations" -}}
-{{- if (pluck "configure_certmanager" .Values.global.ingress .Values.ingress (dict "configure_certmanager" false) | first) -}}
+{{- if (pluck "configureCertmanager" .Values.global.ingress .Values.ingress (dict "configureCertmanager" false) | first) -}}
 certmanager.k8s.io/issuer: "{{ .Release.Name }}-issuer"
 {{- end -}}
 {{- end -}}

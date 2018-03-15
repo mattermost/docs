@@ -7,8 +7,8 @@ global:
     https: true
   ingress:
     enabled: true
-    configure_externaldns: true
-    configure_certmanager: true
+    configureExternaldns: true
+    configureCertmanager: true
     annotations: {}
 
 nginx:

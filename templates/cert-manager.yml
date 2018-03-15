@@ -1,4 +1,4 @@
-{{ if (pluck "configure_certmanager" .Values.global.ingress (dict "configure_certmanager" false) | first) }}
+{{ if (pluck "configureCertmanager" .Values.global.ingress (dict "configureCertmanager" false) | first) }}
 apiVersion: certmanager.k8s.io/v1alpha1
 kind: Issuer
 metadata:

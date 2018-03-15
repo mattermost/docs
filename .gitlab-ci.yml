@@ -304,7 +304,7 @@ qa:
       --set nginx.service.loadBalancerIP="$DOMAIN_IP" \
       --set certmanager.issuer.email="foo@example.com" \
       --set certmanager.install=true \
-      --set global.ingress.configure_certmanager=false \
+      --set global.ingress.configureCertmanager=false \
       --set gitlab.migrations.initialRootPassword="$ROOT_PASSWORD" \
       --set gitlab.omnibus.service.type=NodePort \
       --namespace="$KUBE_NAMESPACE" \
@@ -316,7 +316,7 @@ qa:
       --wait \
       --timeout 600 \
       --reuse-values \
-      --set global.ingress.configure_certmanager=true \
+      --set global.ingress.configureCertmanager=true \
       "$name" \
       .
   }
