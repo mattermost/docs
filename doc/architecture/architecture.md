@@ -65,13 +65,13 @@ should work, whether all of them should be available, etc.
 
 Included in this chart are the Helm Charts for each service:
 * [registry](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/registry)
-* [sidekiq](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/sidekiq)
-* [unicorn](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/unicorn)
+* [sidekiq](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/gitlab/charts/sidekiq)
+* [unicorn](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/gitlab/charts/unicorn)
 * workhorse (currently a part of the unicorn chart)
-* [gitaly](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/gitaly)
+* [gitaly](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/gitlab/charts/gitaly)
 * pages
 * prometheus
-* [gitlab-shell](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/gitlab-shell)
+* [gitlab-shell](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/gitlab/charts/gitlab-shell)
 
 ## Design Decisions
 

@@ -28,7 +28,7 @@ Related issues:
 - [#90](https://gitlab.com/charts/helm.gitlab.io/issues/90)
 - [#114](https://gitlab.com/charts/helm.gitlab.io/issues/114)
 
-[dind]: (https://hub.docker.com/r/gitlab/dind/)
+[dind]: https://hub.docker.com/r/gitlab/dind/
 [devops-post]: https://about.gitlab.com/2017/10/11/from-dev-to-devops/
 [initContainers]: https://kubernetes.io/docs/concepts/workloads/pods/init-containers/
 
