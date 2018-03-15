@@ -15,9 +15,11 @@ NUM_NODES=${NUM_NODES-2}
 external_ip_name=${CLUSTER_NAME}-external-ip;
 DIR=$(dirname "$(readlink -f "$0")")
 
+source $DIR/common.sh;
+
 function bootstrap(){
   set -e
-  $DIR/validations.sh;
+  validate_required_tools;
   gcloud container clusters create $CLUSTER_NAME --zone $ZONE \
     --cluster-version $CLUSTER_VERSION --machine-type $MACHINE_TYPE \
     --node-version $CLUSTER_VERSION --num-nodes $NUM_NODES --project $PROJECT;
@@ -53,7 +55,7 @@ function bootstrap(){
 
 #Deletes everything created during bootstrap
 function cleanup_gke_resources(){
-  $DIR/validations.sh;
+  validate_required_tools;
 
   gcloud container clusters delete -q $CLUSTER_NAME --zone $ZONE --project $PROJECT;
   echo "Deleted $CLUSTER_NAME cluster successfully";
