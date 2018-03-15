@@ -2,9 +2,16 @@
 
 Our contribution policies can be found in [CONTRIBUTING.md](../../CONTRIBUTING.md)
 
+**Table of Contents**
+
+- [Naming Conventions](#naming-conventions)
+- [Common Structure for values.yaml](#common-structure-for-valuesyaml)
+- [Developing template helpers](#developing-template-helpers)
+- [When to fork from upstream charts](#when-to-fork-upstream-charts)
+
 ## Naming Conventions
 
-We are using camelCase for our function names, and properties where they are used in values.yaml
+We are using [camelCase](https://en.wikipedia.org/wiki/Camel_case) for our function names, and properties where they are used in values.yaml
 
 ## Common structure for values.yaml
 
@@ -173,3 +180,25 @@ Example of using a Dictionary:
 {{- $result.value -}}
 {{- end -}}
 ```
+
+## When to fork upstream charts
+
+### No changes, no fork
+
+Let it be stated that any chart that does not require changes to function
+for our use *should not* be forked into this repository.
+
+### Guidelines for forking
+
+#### Sensitive information
+
+If a given chart expects that sensitive communication secrets will be presented
+from within environment, such as passwords or cryptographic keys, [we prefer to
+use initContainers][initContainer-vs-env].
+
+[initContainer-vs-env]: ../architecture/decisions.md#preference-of-secrets-in-initcontainer-over-environment
+
+#### Extending functionality
+
+There are some cases where it is needed to extend the functionality of a chart in
+such a way that an upstream may not accept.
