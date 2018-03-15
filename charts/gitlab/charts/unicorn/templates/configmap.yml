@@ -100,7 +100,7 @@ data:
             path_style: true
           {{- else if .Values.lfs.connection}}
           connection:
-{{ .Values.connection | indent 12}}
+{{ toYaml .Values.lfs.connection | indent 12}}
           {{- end }}
       pages:
         enabled: false
