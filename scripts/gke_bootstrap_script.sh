@@ -13,24 +13,13 @@ MACHINE_TYPE=${MACHINE_TYPE-n1-standard-4}
 RBAC_ENABLED=${RBAC_ENABLED-true}
 NUM_NODES=${NUM_NODES-2}
 external_ip_name=${CLUSTER_NAME}-external-ip;
+DIR=$(dirname "$(readlink -f "$0")")
 
-function validations(){
-  if [ -z "$PROJECT" ]; then
-    echo "$PROJECT needs to be set to your project id";
-    exit 1;
-  fi
-
-  command -v gcloud  >/dev/null 2>&1 || { echo >&2 "gcloud is required please follow: https://cloud.google.com/sdk/downloads"; exit 1; }
-  command -v kubectl >/dev/null 2>&1 || { echo >&2 "kubectl is required please follow: https://kubernetes.io/docs/tasks/tools/install-kubectl"; exit 1; }
-  command -v helm    >/dev/null 2>&1 || { echo >&2 "helm is required please follow: https://github.com/kubernetes/helm/blob/master/docs/install.md"; exit 1; }
-
-  gcloud container clusters list >/dev/null 2>&1 || { echo >&2 "Gcloud seems to be configured incorrectly or authentication is unsuccessfull"; exit 1; }
-}
+source $DIR/common.sh;
 
 function bootstrap(){
   set -e
-  validations;
-
+  validate_required_tools;
   gcloud container clusters create $CLUSTER_NAME --zone $ZONE \
     --cluster-version $CLUSTER_VERSION --machine-type $MACHINE_TYPE \
     --node-version $CLUSTER_VERSION --num-nodes $NUM_NODES --project $PROJECT;
@@ -54,7 +43,7 @@ function bootstrap(){
       exit 1;
     fi
 
-    password=$(gcloud container clusters describe $CLUSTER_NAME --zone $ZONE --project $PROJECT --format='value(masterAuth.password)');
+    password=$(cluster_admin_password_gke);
 
     kubectl --username=admin --password=$password create -f rbac-config.yaml;
   fi
@@ -66,7 +55,7 @@ function bootstrap(){
 
 #Deletes everything created during bootstrap
 function cleanup_gke_resources(){
-  validations;
+  validate_required_tools;
 
   gcloud container clusters delete -q $CLUSTER_NAME --zone $ZONE --project $PROJECT;
   echo "Deleted $CLUSTER_NAME cluster successfully";
