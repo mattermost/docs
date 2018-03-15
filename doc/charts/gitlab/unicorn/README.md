@@ -246,7 +246,7 @@ Defaults to `nil`, not used when `minio.enabled: true`
 #### connection
 
 The `connection` property is a YAML block, in accordance with the documentation
-present at [GitLab LFS Administration](lfscon) documentation. This matches to
+present at [GitLab LFS Administration][lfscon] documentation. This matches to
 [Fog](https://github.com/fog), is different between provider modules.
 
 Defaults to `{}` and will be ignored if `minio.enabled` is `true`.
@@ -397,3 +397,4 @@ The `authToken` attribute for Gitaly has to sub keys:
 [registry]: https://hub.docker.com/_/registry/
 [kubernetes-secret]: https://kubernetes.io/docs/concepts/configuration/secret/
 [globals]: ../../globals.md
+[lfscon]: https://docs.gitlab.com/ee/workflow/lfs/lfs_administration.html
