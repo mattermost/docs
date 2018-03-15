@@ -11,6 +11,8 @@ data:
     mkdir -p /init-secrets/redis /init-secrets/shell
     cp /init-config/redis/password  /init-secrets/redis/password
     cp /init-config/shell/.gitlab_shell_secret  /init-secrets/shell/.gitlab_shell_secret
+    cp /init-config/ssh_host_* /init-secrets/
+    chmod 0400 /init-secrets/ssh_host_*
   config.yml.erb: |
     # GitLab user. git by default
     user: git

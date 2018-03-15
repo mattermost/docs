@@ -15,6 +15,8 @@ enabled: true
 authToken:
    secret: gitlab-shell-secret
    key: secret
+hostKeys:
+  secret: gitlab-shell-host-keys
 unicorn:
   serviceName: unicorn
   # host: '0.0.0.0'
