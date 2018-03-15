@@ -108,16 +108,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - It is required that any new integrations use API v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
  - All API v3 endpoints have been deprecated and are scheduled for removal in Mattermost v5.0.
 
-#### RESTful API v4 Changes
-
-#### Plugin API Changes (Beta)
-
-#### Plugin Hook Changes (Beta)
-
-### WebSocket Event Changes
-
-### Database Changes
-
 ### Known Issues
 
  - Google login fails on the Classic mobile apps.
