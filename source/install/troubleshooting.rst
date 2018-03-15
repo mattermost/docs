@@ -58,7 +58,13 @@ The System Administrator can now turn off email sign-in and still access their a
 Locked out of System Administrator account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If email sign-in was turned off before the System Administrator switched sign-in methods, sign up for a new account and promote it to System Administrator from the command line.
+If email sign-in was turned off before the System Administrator switched sign-in methods, sign up for a new account and promote it to System Administrator from the command line. First, log into the server Mattermost is running on via ``ssh`` and then go to the directory with the Mattermost application. If you've followed our setup process this is ``/opt/mattermost``. Then run this command:
+
+```
+$ sudo ./platform roles system_admin {username}
+```
+
+Replace ``{username}`` with the name of the user you'd like to promote to an admin.
 
 System Console settings revert to previous values after saving
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -73,6 +79,11 @@ YouTube videos show a "Video not found" preview
 1. First, make sure the YouTube video exists by pasting a link to the video into your browser's address bar.
 2. If you are using the Mattermost Desktop App, please ensure you have installed version 3.5.0 or later.
 3. If you have specified `a Google API key <https://docs.mattermost.com/administration/config-settings.html#google-api-key>`_ to enable the display of titles for embedded YouTube video previews, regenerate the key.
+
+Mattermost can't connect to LDAP/AD server
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+LDAP and Active Directory troubleshooting can be found on `this page. <https://docs.mattermost.com/deployment/sso-ldap.html#troubleshooting-faq>`_
 
 Mattermost Error Messages
 -------------------------
