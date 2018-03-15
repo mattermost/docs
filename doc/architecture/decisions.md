@@ -39,14 +39,39 @@ our [guidelines for forking](../development/README.md#guidelines-for-forking)
 
 ### redis
 
-The [redis chart][] was altered to
+Our [redis chart][] was altered from upstream [redis][].
+
+- Populate the password directly into the `redis.conf` instead of via Environment
+- Make use of pre-existing Kubernetes secrets instead of creating new ones from properties.
 
 [redis chart]: ../../charts/redis
+[redis]: https://github.com/kubernetes/charts/tree/master/stable/redis
 
 ### redis-ha
 
-[redis chart]: ../../charts/redis-ha
+Our [redis-ha chart][] was altered from upstream [redis-ha][].
+
+[redis-ha chart]: ../../charts/redis-ha
+[redis-ha]: https://github.com/kubernetes/charts/tree/master/stable/redis-ha
 
 ### minio
 
+Our [minio chart][] was altered from upstream [minio][].
+
+- Make use of pre-existing Kubernetes secrets instead of creating new ones from properties.
+- Remove providing the sensitive keys via Environment.
+- Automate the creation of multiple buckets via `defaultBuckets` in place of
+`defaultBucket.*` properties.
+
+[minio chart]: ../../charts/minio
+[minio]: https://github.com/kubernetes/charts/tree/master/stable/minio
+
 ### registry
+
+Our [registry chart][] was altered from upstream [docker-registry][].
+
+- Enable the use of in-chart Minio services automatically.
+- Automatically hook authentication to the GitLab services.
+
+[registry chart]: ../../charts/registry
+[docker-registry]: https://github.com/kubernetes/charts/tree/master/stable/docker-registry
