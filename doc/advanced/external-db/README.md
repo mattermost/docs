@@ -13,7 +13,14 @@ The `migrations`, `unicorn`, and `sidekiq` charts require a Postgres database to
 To specify it per chart you will need to set `gitlab.omnibus.enabled=false`, `chartName.psql.host`, `chartname.psql.password.secret` and `chartname.psql.password.key` values
 via helm's `--set` flag while [deploying](../installation/deployment.md)
 
-example: `helm install --set gitlab.omnibus.enabled=false unicorn.psql.host=omnibus-vm --set unicorn.psql.password.secret=psql-secret --set unicorn.psql.password.key=<key>`
+example:
+
+```
+helm install
+  --set gitlab.omnibus.enabled=false unicorn.psql.host=omnibus-vm
+  --set unicorn.psql.password.secret=psql-secret
+  --set unicorn.psql.password.key=<key>
+```
 
 You can also set the port number using `chartName.psql.port` setting. Default port is assumed to be `5432`
 
@@ -21,7 +28,13 @@ You can also set the port number using `chartName.psql.port` setting. Default po
 
 You need to set `gitlab.omnibus.enabled=false`, `global.psql.host`, `global.psql.password.secret` and `global.psql.password.key`values via helm's `--set` flag while deploying
 
-`helm install --set gitlab.omnibus.enabled=false --set global.psql.host=omnibus-vm --set global.psql.password.secret=psql-secret --set global.psql.password.key=<key>`
+```
+helm install
+  --set gitlab.omnibus.enabled=false
+  --set global.psql.host=omnibus-vm
+  --set global.psql.password.secret=psql-secret
+  --set global.psql.password.key=<key>
+```
 
 You can also set the port number useing `global.psql.port` setting. Default is assumed to be `5432`
 
