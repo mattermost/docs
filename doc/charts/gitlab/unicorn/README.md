@@ -47,13 +47,7 @@ Table below contains all the possible charts configurations that can be supplied
 | lfs.enabled                   | Enable Git LFS storage                         | true                                             |
 | lfs.proxy_download            | Proxy all LFS downloads through GitLab         | true                                             |
 | lfs.bucket                    | Object storage bucket name                     | nil                                              |
-| lfs.connection.provider       | Object storage provider                        | nil                                              |
-| lfs.connection.region         | Region where bucket is located                 | nil                                              |
-| lfs.connection.accesskey      | Object storage access key                      | nil                                              |
-| lfs.connection.secretkey      | Object storage secret key                      | nil                                              |
-| lfs.connection.host           | Object storage host name                       | nil                                              |
-| lfs.connection.path_style     | Enable path style access to storage bucket     | nil                                              |
-| minio.enabled                 | Enable use of Minio chart for object storage   | true                                             |
+| lfs.connection                | See [GitLab documentation][lfscon] for details | {}                                               |
 | minio.bucket                  | Name of storage bucket, when using Minio       | git-lfs                                          |
 | minio.credentials.secret      | Secret containing access/secret keys for Minio | gitlab-minio                                     |
 | minio.serviceName             | Name of Minio service                          | minio-svc                                        |
@@ -228,13 +222,7 @@ lfs:
   enabled: true
   proxy_download: true
   bucket: git-lfs
-  connection:
-    provider: AWS
-    region: us-east-1
-    accesskey: aws_access_key_id
-    secretkey: aws_secret_access_key
-    host: s3.amazonaws.com
-    path_style: false
+  connection: {}
 ```
 
 #### enabled
@@ -255,41 +243,13 @@ Name of the bucket to use from object storage provider.
 
 Defaults to `nil`, not used when `minio.enabled: true`
 
-#### connection.provider
+#### connection
 
-Name of provider to use for cloud storage. Currently, only supported value is `AWS`. This supports all S3 compatible hosts, such as Minio.
+The `connection` property is a YAML block, in accordance with the documentation
+present at [GitLab LFS Administration](lfscon) documentation. This matches to
+[Fog](https://github.com/fog), is different between provider modules.
 
-Defaults to `nil`, not used when `minio.enabled: true`
-
-#### connection.region
-
-The region where `bucket` is located with `provider`.
-
-Defaults to `nil`, not used when `minio.enabled: true`
-
-#### connection.accesskey
-
-Access key for `provider`. This translates to `AWS_ACCESS_KEY_ID` from S3.
-
-Defaults to `nil`, not used when `minio.enabled: true`
-
-#### connection.accesskey
-
-Secret access key for `provider`. This translates to `AWS_SECRET_ACCESS_KEY` from S3.
-
-Defaults to `nil`, not used when `minio.enabled: true`
-
-#### connection.host
-
-The host name for the `provider`. For `AWS` this is `s3.amazonaws.com`. For Minio, this could be `https://minio.example.com`.
-
-Defaults to `nil`, not used when `minio.enabled: true`
-
-#### connection.path_style
-
-Set to true to use host/bucket_name/object style paths instead of bucket_name.host/object. Set as `false` for `AWS` S3. Set to `true` for providers like Minio.
-
-Defaults to `nil`, not used when `minio.enabled: true`
+Defaults to `{}` and will be ignored if `minio.enabled` is `true`.
 
 ### Minio
 

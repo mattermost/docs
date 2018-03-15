@@ -80,13 +80,7 @@ lfs:
   enabled: true
   proxy_download: true
   # bucket:
-  # connection:
-  #   provider: AWS
-  #   region: us-east-1
-  #   accesskey: aws_access_key_id
-  #   secretkey: aws_secret_access_key
-  #   host: s3.amazonaws.com
-  #   path_style: false
+  # connection: {}
 minio:
   enabled: true
   bucket: git-lfs
