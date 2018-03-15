@@ -13,24 +13,11 @@ MACHINE_TYPE=${MACHINE_TYPE-n1-standard-4}
 RBAC_ENABLED=${RBAC_ENABLED-true}
 NUM_NODES=${NUM_NODES-2}
 external_ip_name=${CLUSTER_NAME}-external-ip;
-
-function validations(){
-  if [ -z "$PROJECT" ]; then
-    echo "$PROJECT needs to be set to your project id";
-    exit 1;
-  fi
-
-  command -v gcloud  >/dev/null 2>&1 || { echo >&2 "gcloud is required please follow: https://cloud.google.com/sdk/downloads"; exit 1; }
-  command -v kubectl >/dev/null 2>&1 || { echo >&2 "kubectl is required please follow: https://kubernetes.io/docs/tasks/tools/install-kubectl"; exit 1; }
-  command -v helm    >/dev/null 2>&1 || { echo >&2 "helm is required please follow: https://github.com/kubernetes/helm/blob/master/docs/install.md"; exit 1; }
-
-  gcloud container clusters list >/dev/null 2>&1 || { echo >&2 "Gcloud seems to be configured incorrectly or authentication is unsuccessfull"; exit 1; }
-}
+DIR=$(dirname "$(readlink -f "$0")")
 
 function bootstrap(){
   set -e
-  validations;
-
+  $DIR/validations.sh;
   gcloud container clusters create $CLUSTER_NAME --zone $ZONE \
     --cluster-version $CLUSTER_VERSION --machine-type $MACHINE_TYPE \
     --node-version $CLUSTER_VERSION --num-nodes $NUM_NODES --project $PROJECT;
@@ -66,7 +53,7 @@ function bootstrap(){
 
 #Deletes everything created during bootstrap
 function cleanup_gke_resources(){
-  validations;
+  $DIR/validations.sh;
 
   gcloud container clusters delete -q $CLUSTER_NAME --zone $ZONE --project $PROJECT;
   echo "Deleted $CLUSTER_NAME cluster successfully";
