@@ -12,10 +12,10 @@ data:
       encoding: unicode
       database: {{ default "gitlabhq_production" .Values.psql.database | quote }}
       pool: 10
-      username: {{ default "gitlab" .Values.psql.username | quote }}
+      username: {{ template "migrations.psql.username" . }}
       password: <%= File.read("/etc/gitlab/postgres/psql-password") %>
       host: {{ template "migrations.psql.host" . }}
-      port: {{ default 5432 .Values.psql.port }}
+      port: {{ template "migrations.psql.port" . }}
       # load_balancing:
       #   hosts:
       #     - host1.example.com
