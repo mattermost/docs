@@ -1,6 +1,6 @@
 image:
   repository: registry.gitlab.com/gitlab-org/build/cng/kubectl
-  tag: kubectl-ssh-ssl
+  tag: latest
   pullPolicy: Always
 resources: {}
 env: production
