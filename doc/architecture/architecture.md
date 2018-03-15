@@ -72,3 +72,8 @@ Included in this chart are the Helm Charts for each service:
 * pages
 * prometheus
 * gitlab-shell
+
+## Design Decisions
+
+Documentation of the decisions made regarding the architecture of these charts can
+be found in [Design Decisions](decisions.md) documentation
