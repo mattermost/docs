@@ -98,7 +98,7 @@ In more isolated clusters, these certificates can be in separate secrets, as lon
 as the configuration information as to which secret to use is passed to the appropriate
 chart.
 
-## SSH Host Key
+## SSH Host Keys
 
 Generate the OpenSSH certificate-key pairs:
 
