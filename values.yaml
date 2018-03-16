@@ -19,7 +19,7 @@ certmanager:
   install: false
   # Configure an ACME Issuer in cert-manager. Only used if configure==true
   issuer:
-    server: https://acme-staging.api.letsencrypt.org/directory
+    server: https://acme-v01.api.letsencrypt.org/directory
   # Other cert-manager configurations from upstream
   # See https://github.com/kubernetes/charts/tree/master/stable/cert-manager#configuration
   rbac:
