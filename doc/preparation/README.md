@@ -38,3 +38,29 @@ We usually use `cloud-native-win` or `k8s-ftw`
 ## Kube monkey
 
 Follow our [kube monkey](../kube-monkey/README.md) guide for running kube monkey, this is usually done after the demo.
+
+## Git LFS
+
+In order to test LFS storage in the chart, you will need to have the ability to use `git lfs`.
+
+### Install git-lfs
+
+Start by installing `git-lfs`, per instructions at https://git-lfs.github.com
+
+### Prepare binary source
+
+Next, have a non-text file on hand to add to your test repository via LFS. A good example is [the GitLab logo](https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo.png).
+
+### Example workflow
+
+```
+git clone URL
+cd project
+curl -JLO https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo.png
+git lfs track "*.png"
+git add .gitattributes
+git add logo.png
+git commit -m "Add logo via LFS"
+git push origin master
+```
+
