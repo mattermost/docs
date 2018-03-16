@@ -58,13 +58,17 @@ The System Administrator can now turn off email sign-in and still access their a
 Locked out of System Administrator account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If email sign-in was turned off before the System Administrator switched sign-in methods, sign up for a new account and promote it to System Administrator from the command line. First, log into the server Mattermost is running on via ``ssh`` and then go to the directory with the Mattermost application. If you've followed our setup process this is ``/opt/mattermost``. Then run this command:
+If email sign-in was turned off before the System Administrator switched sign-in methods, sign up for a new account and promote it to System Administrator from the command line: 
 
-```
-$ sudo ./platform roles system_admin {username}
-```
+1. Sign in to the server Mattermost is running on via ``ssh``.
+2. Go to the directory of the Mattermost application. If you've followed our setup process this is ``/opt/mattermost``.
+3. Run
 
-Replace ``{username}`` with the name of the user you'd like to promote to an admin.
+  .. code-block:: none
+
+    $ sudo ./platform roles system_admin {username}
+
+4. Replace ``{username}`` with the name of the user you'd like to promote to an admin.
 
 System Console settings revert to previous values after saving
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
