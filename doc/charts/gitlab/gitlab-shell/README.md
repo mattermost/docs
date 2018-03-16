@@ -29,6 +29,7 @@ The `gitlab-shell` sub-chart provides a SSH server configured for Git SSH access
 | service.externalPort  | Shell exposed port                    | 22                                             |
 | service.internalPort  | Shell internal port                   | 22                                             |
 | enabled               | Shell enable flag                     | true                                           |
+| hostKeys.secrets      | Shell SSH Host Keys Secret            | gitlab-shell-host-keys                         |
 | authToken.secret      | Shell auth secret                     | gitlab-shell-secret                            |
 | authToken.key         | Shell auth secret key                 | secret                                         |
 | unicorn.serviceName   | Unicorn service name                  | unicorn                                        |
@@ -94,6 +95,10 @@ The port on which to connect to the Unicorn server. Defaults to `8080`.
 ## Chart Settings
 
 The following values are used to configure the GitLab Shell Pods.
+
+#### hostKeys.secret
+
+The name of the Kubernetes `secret` to grab the SSH host keys from. The keys in the secret must start with the key names `ssh_host_` in order to be used by GitLab Shell.
 
 #### authToken
 
