@@ -97,6 +97,8 @@ Use Let's Encrypt
 | This feature's ``config.json`` setting is ``"UseLetsEncrypt": false`` with options ``true`` and ``false`` for above settings respectively.                        |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+.. note::
+   If Let's Encrypt is enabled, forward port 80 through a firewall, with `Forward80To443<https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443>`_ ``config.json`` setting set to ``true`` to complete the Let's Encrypt certification.
 
 Let's Encrypt Certificate Cache File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
