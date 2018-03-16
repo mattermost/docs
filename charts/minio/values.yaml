@@ -5,17 +5,6 @@ image: "minio/minio"
 imageTag: "RELEASE.2017-12-28T01-21-00Z"
 imagePullPolicy: "Always"
 
-ingress:
-  proxyConnectTimeout: 15
-  proxyReadTimeout: 600
-  proxyBodySize: "512m"
-  tls: {}
-  annotations: {}
-
-global:
-  ingress:
-    tls: {}
-
 ## Enable/Disable
 enabled: true
 
@@ -24,7 +13,6 @@ ingress:
   proxyReadTimeout: 900
   proxyBodySize: "0"
   proxyBuffering: "off"
-  acme: false
   tls: {}
     # secretName:
   annotations: {}
@@ -32,7 +20,6 @@ ingress:
 global:
   ingress:
     enabled: true
-    acme: true
     annotations: {}
     tls: {}
       # secretName:

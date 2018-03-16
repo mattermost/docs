@@ -6,13 +6,9 @@ global:
     domain: example.local
     https: true
   ingress:
-    enabled: true
     configureExternaldns: true
-    configureCertmanager: true
+    configureCertmanager: false
     annotations: {}
-
-nginx:
-  install: false
 
 certmanager:
   # Install cert-manager chart. Set to false if you already have cert-manager

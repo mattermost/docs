@@ -86,7 +86,7 @@ If the hostname is set in `global.hosts.gitlab.name`, that will be returned,
 otherwise the hostname will be assembed using `gitlab` as the prefix, and the `assembleHost` function.
 */}}
 {{- define "gitlabHost" -}}
-{{- coalesce .Values.ingress.hostname (include "assembleHost"  (dict "name" "gitlab" "context" . )) -}}
+{{- coalesce .Values.ingress.hostname .Values.global.hosts.gitlab.name (include "assembleHost"  (dict "name" "gitlab" "context" . )) -}}
 {{- end -}}
 
 {{/*
@@ -99,7 +99,7 @@ if there is a shared tls secret for all ingresses.
 {{- end -}}
 
 {{- define "gitlab.externaldns_annotations" -}}
-{{- if (pluck "configureExternaldns" .Values.global.ingress .Values.ingress (dict "configureExternaldns" false) | first) -}}
+{{- if (pluck "configureExternaldns" .Values.ingress .Values.global.ingress (dict "configureExternaldns" false) | first) -}}
 {{- printf "external-dns.alpha.kubernetes.io/hostname: %s" (include "gitlabHost" . | quote) -}}
 {{- end -}}
 {{- end -}}
