@@ -35,3 +35,6 @@ Make sure to have one of the Domain names ready for the demo either by creating 
 
 We usually use `cloud-native-win` or `k8s-ftw`
 
+## Kube monkey
+
+Follow our [kube monkey](../kube-monkey/README.md) guide for running kube monkey, this is usually done after the demo.

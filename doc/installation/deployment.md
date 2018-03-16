@@ -24,6 +24,7 @@ helm install . --name gitlab --timeout 600 \
   --set global.hosts.domain=example.local \
   --set nginx.service.loadBalancerIP=X.X.X.X \
   --set kube-lego.config.LEGO_EMAIL=user@example.local \
+  --set kube-lego.config.LEGO_URL=https://acme-v01.api.letsencrypt.org/directory \
   --set gitlab.migrations.initialRootPassword="example-password"
 ```
 
@@ -40,6 +41,13 @@ helm install . --name gitlab --timeout 600 \
 ```
 
 A complete list  of command line options can be found [here](./command-line-options.md)
+
+## Postgresql
+
+By default we use omnibus chart to provide a postgresql database for deployments. The omnibus
+provided postgresql is not production ready and should not be used in production.
+
+To use an external database follow the [advanced database docs](../advanced/external-db/README.md)
 
 ## Monitoring Deployment
 

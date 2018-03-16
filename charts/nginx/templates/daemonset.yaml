@@ -7,9 +7,6 @@ metadata:
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
-  annotations:
-    prometheus.io/port: "10254"
-    prometheus.io/scrape: "true"
 spec:
   updateStrategy:
     type: RollingUpdate
@@ -21,6 +18,8 @@ spec:
       annotations:
         checksum/configmap: {{ .Files.Get "configmap.yaml" | sha256sum }}
         checksum/configmaptcp: {{ .Files.Get "configmap-tcp.yaml" | sha256sum }}
+        prometheus.io/port: "10254"
+        prometheus.io/scrape: "true"
     spec:
       containers:
         - name: {{ .Chart.Name }}

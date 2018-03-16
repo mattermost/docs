@@ -5,12 +5,30 @@ If the postgresql host is provided, it will use that, otherwise it will fallback
 to the service name
 */}}
 {{- define "unicorn.psql.host" -}}
-{{- if .Values.psql.host -}}
-{{- .Values.psql.host | quote -}}
+{{- if or .Values.psql.host .Values.global.psql.host -}}
+{{- coalesce .Values.psql.host .Values.global.psql.host | quote -}}
 {{- else -}}
 {{- $name := default "omnibus" .Values.psql.serviceName -}}
 {{- printf "%s-%s" .Release.Name $name -}}
 {{- end -}}
+{{- end -}}
+
+{{/*
+Return the db username
+If the postgresql username is provided, it will use that, otherwise it will fallback
+to "gitlab" default
+*/}}
+{{- define "unicorn.psql.username" -}}
+{{- coalesce .Values.psql.username .Values.global.psql.username "gitlab" -}}
+{{- end -}}
+
+{{/*
+Return the db port
+If the postgresql port is provided, it will use that, otherwise it will fallback
+to 5432 default
+*/}}
+{{- define "unicorn.psql.port" -}}
+{{- coalesce .Values.psql.port .Values.global.psql.port 5432 -}}
 {{- end -}}
 
 {{/*
@@ -87,6 +105,24 @@ otherwise the hostname will be assembed using `gitlab` as the prefix, and the `a
 */}}
 {{- define "gitlabHost" -}}
 {{- coalesce .Values.ingress.hostname .Values.global.hosts.gitlab.name (include "assembleHost"  (dict "name" "gitlab" "context" . )) -}}
+{{- end -}}
+
+{{/*
+Returns the minio hostname.
+If the hostname is set in `global.hosts.minio.name`, that will be returned,
+otherwise the hostname will be assembed using `minio` as the prefix, and the `assembleHost` function.
+*/}}
+{{- define "minioHost" -}}
+{{- coalesce .Values.global.hosts.minio.name (include "assembleHost"  (dict "name" "minio" "context" . )) -}}
+{{- end -}}
+
+{{/*
+Return the minio service endpoint
+*/}}
+{{- define "unicorn.minio.endpoint" -}}
+{{- $name := default "minio-svc" .Values.minio.serviceName -}}
+{{- $port := default 9000 .Values.minio.port | int -}}
+{{- printf "http://%s-%s:%d" .Release.Name $name $port -}}
 {{- end -}}
 
 {{/*

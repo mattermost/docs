@@ -12,10 +12,10 @@ data:
       encoding: unicode
       database: {{ default "gitlabhq_production" .Values.psql.database | quote }}
       pool: 10
-      username: {{ default "gitlab" .Values.psql.username | quote }}
+      username: {{ template "unicorn.psql.username" . }}
       password: <%= File.read("/etc/gitlab/postgres/psql-password") %>
       host: {{ template "unicorn.psql.host" . }}
-      port: {{ default 5432 .Values.psql.port }}
+      port: {{ template "unicorn.psql.port" . }}
       # load_balancing:
       #   hosts:
       #     - host1.example.com
@@ -78,9 +78,30 @@ data:
       artifacts:
         enabled: true
       lfs:
-        enabled: false
+        enabled: {{ eq .Values.lfs.enabled true }}
         object_store:
-          enabled: false
+          enabled: true
+          {{- if .Values.minio.enabled }}
+          remote_directory: {{ .Values.minio.bucket }}
+          {{- else }}
+          remote_directory: {{ .Values.lfs.bucket }}
+          {{- end }}
+          direct_upload: true
+          background_upload: false
+          proxy_download: {{ eq .Values.lfs.proxy_download true }}
+          {{- if .Values.minio.enabled }}
+          connection:
+            provider: AWS
+            region: us-east-1
+            aws_access_key_id: "<%= File.read('/etc/gitlab/minio/accesskey') %>"
+            aws_secret_access_key: "<%= File.read('/etc/gitlab/minio/secretkey') %>"
+            host: {{ template "minioHost" . }}
+            endpoint: {{ template "unicorn.minio.endpoint" . }}
+            path_style: true
+          {{- else if .Values.lfs.connection}}
+          connection:
+{{ toYaml .Values.lfs.connection | indent 12}}
+          {{- end }}
       pages:
         enabled: false
       mattermost:
@@ -141,5 +162,9 @@ data:
     cp /init-config/registry/gitlab-registry.key /init-secrets/registry/gitlab-registry.key
     cp /init-config/postgres/psql-password /init-secrets/postgres/psql-password
     cp /init-config/rails-secrets/secrets.yml /init-secrets/rails-secrets/secrets.yml
+    if [ -e /init-config/minio ]; then
+      mkdir /init-secrets/minio
+      cp /init-config/minio/* /init-secrets/minio/
+    fi
 # Leave this here - This line denotes end of block to the parser.
 {{- end }}
