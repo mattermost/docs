@@ -110,7 +110,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  
 #### RESTful API v4 Changes
 
- - Created `NSUrlSessionUploadTask` endpoint for the iOS share extension to upload a file as octet-stream. This enables uploading files larger than 20 Mb.
+ - Updated `POST /files` to support requests with only the `channel_id` and `filename` defined as query parameters with the contents of a single file in the body of the request.
 
 ### Known Issues
 
