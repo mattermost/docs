@@ -20,6 +20,8 @@ Release date: 2018-04-16
  - Implemented permission checking functions in the webapp.
  - Migrated System Console "Enable Create Team" to configure role permissions behind the scenes.
  - Migrates `EnableOnlyAdminIntegrations` config in system console to set role permissions.
+ - Added `CreateAt/UpdateAt/DeleteAt` fields to roles table.
+ - Added license check to patchRoles endpoint.
  
 #### Global Relay
 
