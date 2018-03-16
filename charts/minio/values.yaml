@@ -108,6 +108,7 @@ resources:
 ## An array of items, with name, policy, and purge
 defaultBuckets:
   - name: registry
+  - name: git-lfs
   ## If enabled, must be a string with length > 0
   # - name: example
   ## Can be one of none|download|upload|public, defaults to `none`

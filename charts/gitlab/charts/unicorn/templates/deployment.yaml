@@ -131,6 +131,15 @@ spec:
               items:
                 - key: {{ .Values.registry.certificate.key }}
                   path: registry/gitlab-registry.key
+          {{- if .Values.minio.enabled }}
+          - secret:
+              name: {{ .Values.minio.credentials.secret }}
+              items:
+                - key: accesskey
+                  path: minio/accesskey
+                - key: secretkey
+                  path: minio/secretkey
+          {{- end }}
       - name: unicorn-secrets
         emptyDir:
           medium: "Memory"
