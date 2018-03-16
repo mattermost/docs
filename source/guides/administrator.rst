@@ -27,15 +27,16 @@ Installing Mattermost
    Installing on RHEL 6.6 </install/install-rhel-66.rst>
    Installing on RHEL 7.1 </install/install-rhel-71.rst>
    Installing on CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific.rst>
+   /install/ee-install*
    /install/deploy-bitnami*
    /install/docker-local*
-   /install/docker-ebs*
-   /install/ee-install*
    /install/prod-docker*
-   /install/smtp*
+   /install/docker-ebs*
    /install/troubleshooting*
-   /install/i18n*
    /install/desktop*
+   /install/smtp*
+   /install/config-cloudfront*
+   /install/i18n*
    /install/config-apache2.rst
 
 Deployment
