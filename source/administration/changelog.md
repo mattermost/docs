@@ -16,6 +16,7 @@ Release date: 2018-04-16
  - `AllowEditPost` and `PostEditTimeLimit` migration.
  - Added `ADD_REACTION`, `REMOVE_REACTION` and `REMOVE_OTHERS_REACTIONS` permissions.
  - Added consistent permissions checking between Incoming/Outgoing webhooks.
+ - Added support for commands in the enterprise version, related to the future need for a command to manage advanced permissions.
  
 #### Global Relay
 
@@ -23,12 +24,18 @@ Release date: 2018-04-16
  - `ChannelMemberHistory` records are now created for DM channels.
  - Added settings, validation, and internationalization strings for new GlobalRelay config settings.
  - Added `ChannelType` field to the compliance export related model for use in adding some extra headers to the GlobalRelay email.
+ - Split the email sending process into to 2 steps: create the client connection to the SMTP server and send the email.
 
 ### Improvements
 
  - Added rendering of at-mentions by the teammate name display.
- - Added a User Interface top banner for System Admins who use APIv3.
+ - Added a user interface top banner for System Admins who use APIv3.
  - Added cache invalidation totals to metrics.
+ - Added a platform command to change user email address.
+ - Added push notifications are sent for own DM's.
+ - Added support for LOGIN authentication method for SMTP.
+ - Added support for AWS Identity and Access Management (IAM) role, and added a button to test AWS connection.
+ - Integration of Team Icons which appear in the team sidebar within the border of the existing team icons.
 
 ### Bug Fixes
 
