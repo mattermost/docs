@@ -17,6 +17,9 @@ Release date: 2018-04-16
  - Added `ADD_REACTION`, `REMOVE_REACTION` and `REMOVE_OTHERS_REACTIONS` permissions.
  - Added consistent permissions checking between Incoming/Outgoing webhooks.
  - Added support for commands in the enterprise version, related to the future need for a command to manage advanced permissions.
+ - Implemented permission checking functions in the webapp.
+ - Migrated System Console "Enable Create Team" to configure role permissions behind the scenes.
+ - Migrates `EnableOnlyAdminIntegrations` config in system console to set role permissions.
  
 #### Global Relay
 
@@ -25,6 +28,7 @@ Release date: 2018-04-16
  - Added settings, validation, and internationalization strings for new GlobalRelay config settings.
  - Added `ChannelType` field to the compliance export related model for use in adding some extra headers to the GlobalRelay email.
  - Split the email sending process into to 2 steps: create the client connection to the SMTP server and send the email.
+ - Added System Console Support for Configuring GlobalRelay Compliance Exports.
 
 ### Improvements
 
@@ -34,8 +38,12 @@ Release date: 2018-04-16
  - Added a platform command to change user email address.
  - Added push notifications are sent for own DM's.
  - Added support for LOGIN authentication method for SMTP.
+ - Added support for ec2 instance profile authentication.
  - Added support for AWS Identity and Access Management (IAM) role, and added a button to test AWS connection.
  - Integration of Team Icons which appear in the team sidebar within the border of the existing team icons.
+ - Changed wording of messages indicating that push notifications are disabled.
+ - Return cursor to reply thread input box after deleting a reply from the right-hand sidebar.
+ - Migrated admin console to a new declarative way.
 
 ### Bug Fixes
 
