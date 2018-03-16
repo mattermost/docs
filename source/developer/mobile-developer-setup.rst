@@ -250,7 +250,7 @@ The set of commands for building the app are used in conjunction with `Fastlane 
  - **make build-ios**: Builds the iOS app and generates the Mattermost.ipa file in the project's root directory to be distributed.
  - **make build-android**: Builds the Android app and generates the Mattermost.apk file in the project's root directory to be distributed.
  - **make unsigned-ios**: Builds the iOS app and generates an unsigned Mattermost-unsigned.ipa file in the project's root directory.
- - **make unsigned-ios**: Builds the Android app and generates an unsigned Mattermost-unsigned.apk file in the project's root directory.
+ - **make unsigned-android**: Builds the Android app and generates an unsigned Mattermost-unsigned.apk file in the project's root directory.
 
 If you plan to use the make build-* commands be sure to set your environment variables for use in conjunction with Fastlane to suit your needs. For more information please refer to the `Build Your Own App from Source`_ section.
 
@@ -367,7 +367,7 @@ Build Preparations
 First of all, ensure that the following remains exactly the same as in the original `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_ repo:
  - The package ID for the Android app and the Bundle Identifier for the iOS app remain the same as the one in the original mattermost-mobile repo, com.mattermost.rnbeta.
  - Android-specific source files remain under *android/app/src/main/java/com/mattermost/rnbeta*
- - Your `environment variables <https://github.com/mattermost/mattermost-mobile/blob/fastlane/fastlane/env_vars_example>`_ are set according to your needs
+ - Your `environment variables <https://github.com/mattermost/mattermost-mobile/blob/master/fastlane/env_vars_example>`_ are set according to your needs
 
 Build the Android App
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -410,7 +410,7 @@ Setting up Gradle Variables
 
 Setting up Environment Variables
 ++++++++++++++++++++++++++++++++
-In order to use the **make build-android** command, you'll need to set a few environment variables. In this guide, we will explain some of them. You can refer to the `env_vars_example <https://github.com/mattermost/mattermost-mobile/blob/fastlane/fastlane/env_vars_example>`_
+In order to use the **make build-android** command, you'll need to set a few environment variables. In this guide, we will explain some of them. You can refer to the `env_vars_example <https://github.com/mattermost/mattermost-mobile/blob/master/fastlane/env_vars_example>`_
 file under the fastlane directory to see all of them.
 
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
@@ -479,7 +479,7 @@ We make use of `Match <https://docs.fastlane.tools/actions/match/>`_ to sync you
 
 Setting up environment variables
 ++++++++++++++++++++++++++++++++
-In order to use the **make build-ios** command, you'll need to set a few environment variables. In this guide, we will explain some of them. You can refer to the `env_vars_example <https://github.com/mattermost/mattermost-mobile/blob/fastlane/fastlane/env_vars_example>`_ file under the fastlane directory to see all of them.
+In order to use the **make build-ios** command, you'll need to set a few environment variables. In this guide, we will explain some of them. You can refer to the `env_vars_example <https://github.com/mattermost/mattermost-mobile/blob/master/fastlane/env_vars_example>`_ file under the fastlane directory to see all of them.
 
 .. note::
   You must use your own provisioning profiles and certificates as well as your own Bundle Identifiers. If you use the default values, you will be unable to build and sign the app.

@@ -1,6 +1,10 @@
 # Code Contribution Guidelines
 
-Thank you for your interest in contributing to the [Mattermost open source project](https://docs.mattermost.com/developer/manifesto.html). To help with translations, [see the localization process](https://docs.mattermost.com/developer/localization.html). For code contributions, here's the process:  
+Thank you for your interest in contributing to the [Mattermost open source project](https://docs.mattermost.com/developer/manifesto.html). To help with translations, [see the localization process](https://docs.mattermost.com/developer/localization.html).
+
+Come [join our "Contributors" community channel](https://pre-release.mattermost.com/core/channels/tickets) on our daily build server, where you can discuss questions with community members and the Mattermost core team. Join our ["Developers" channel](https://pre-release.mattermost.com/core/channels/developers) for technical discussions and our ["Integrations" channel](https://pre-release.mattermost.com/core/channels/integrations) for all integrations and plugins discussions.
+
+For code contributions, here's the process:  
 
 ## Choose a Ticket
 
@@ -23,7 +27,7 @@ It is acceptable to submit a PR for a bug or incremental improvement, with less 
  
 Larger pull requests, including those that require a change to documentation or user expectations, [require a Help Wanted issue opened by the core team](http://docs.mattermost.com/process/help-wanted.html) so that the change can be tested, documented and supported.
 
-The best way to discuss opening a Help Wanted ticket with the core team is by [starting a conversation in the feature idea forum](https://www.mattermost.org/feature-ideas/).
+The best way to discuss opening a Help Wanted ticket with the core team is by [starting a conversation in the feature idea forum](https://www.mattermost.org/feature-ideas/) or [opening an issue in the GitHub repository](https://github.com/mattermost/mattermost-server/issues/new).
 
 
 ## Install Mattermost and set up your Forks
@@ -88,7 +92,7 @@ If you've included your mailing address in the signed [Contributor License Agree
 
 Core committers on Mattermost repositories consist of vetted core team members, including both community contributors as well as staff from Mattermost, Inc., who are trusted to review and merge PRs.
 
-- **Core committers include**: ccbrown, coreyhulen, cpanato, crspeller, csduarte, enahum, grundleborg, hmhealey, jespino, jwilander, mkraft, MusikPolice, saturninoabril, stephenkiers
+- **Core committers include**: ccbrown, coreyhulen, cpanato, crspeller, csduarte, enahum, grundleborg, hmhealey, jespino, jwilander, lieut-data, mkraft, saturninoabril
 
 - **Product managers include**: asaadmahmood, esethna, it33, jasonblais, lfbrock
 

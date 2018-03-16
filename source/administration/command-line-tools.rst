@@ -140,6 +140,8 @@ platform channel
     For the *add*, *archive*, *delete*, *remove* and *restore* commands, you can specfiy the *{channels}* value by {team}:{channel} using the team and channel URLs, or by using channel IDs. For example, in the following URL the *{channels}* value is *myteam:mychannel*:
 
     ``https://example.com/myteam/channels/mychannel``
+    
+    Also, the team and channel names in the URL should be written in lowercase.
 
 platform channel add
 ~~~~~~~~~~~~~~~~~~~~
@@ -532,6 +534,8 @@ platform team
     For the *add*, *delete*, and *remove* commands, you can determine the *{team-name}* value from the URLs that you use to access your instance of Mattermost. For example, in the following URL the *{team-name}* value is *myteam*:
 
     ``https://example.com/myteam/channels/mychannel``
+    
+    Also, the team and channel names in the URL should be written in lowercase.
 
 platform team add
 ~~~~~~~~~~~~~~~~~~~~~~~~

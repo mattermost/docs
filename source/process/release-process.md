@@ -61,7 +61,7 @@ No pull requests for major features should be **merged** to the current release 
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
       - After the cut-off, any PRs that include significant code changes, require approval of the release manager before merging
 6. Marketing:
-    - Prepare bullet points and release headline for release announcement and send to Justin to work on
+    - Prepare bullet points and release headline for release announcement. Release manager to review the outline (benefits and order of major features) with PMs before sending to Justin to work on
     - Decide which sections of the release announcement will have an accompanying screenshot / photo
     
 ### D. (T-minus 11 working days) Major feature testing
@@ -101,21 +101,6 @@ Day when Leads and PMs decide which major features are included in the release, 
 
 **Stabilization** period begins when all features for release have been committed. During this period, only **bugs** can be committed to the release branch. Non-bug pull requests are tagged for next version. Exceptions can be made by the Release Manager during triage.
 
-1. Release Manager:
-    - Post this checklist in Release Checklist channel
-    - Verify all items in the last posted release checklist are complete
-    - Review all [Severity 1 bugs (data loss or security)](https://mattermost.atlassian.net/secure/IssueNavigator.jspa?mode=hide&requestId=10600) to consider adding to Hotfix list
-    - Update documentation:  
-        - Submit Changelog PR
-        - Draft [Mattermost Security Updates](http://about.mattermost.com/security-updates/), but do not post until 14 days after official release
-2. Dev:
-    - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
-3. PM:
-    - If there are any breaking compatibility changes in the release, open an issue in the [GitLab Omnibus](https://gitlab.com/gitlab-org/omnibus-gitlab) to make sure GitLab is aware. Post a link to the issue in the Release Discussion channel
-    - PM owner of System Admin features reviews changes to `config.json` to confirm they're included in the correct Mattermost Edition
-
-### G. (T-minus 8 working days) Release Candidate Cut
-
 1. **(Team) Code Complete Meeting (10:00am San Francisco time)**:  
     - (PM) Leads team review of Changelog
     - (Release Manager) Walk through each unfinished item of this checklist  
@@ -123,13 +108,28 @@ Day when Leads and PMs decide which major features are included in the release, 
 2. Release Manager:
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
+    - Review all [Severity 1 bugs (data loss or security)](https://mattermost.atlassian.net/secure/IssueNavigator.jspa?mode=hide&requestId=10600) to consider adding to Hotfix list
+    - Update documentation:  
+        - Submit Changelog PR
+        - Draft [Mattermost Security Updates](http://about.mattermost.com/security-updates/), but do not post until 14 days after official release
+3. Dev:
+    - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
+4. PM:
+    - If there are any breaking compatibility changes in the release, open an issue in the [GitLab Omnibus](https://gitlab.com/gitlab-org/omnibus-gitlab) to make sure GitLab is aware. Post a link to the issue in the Release Discussion channel
+    - PM owner of System Admin features reviews changes to `config.json` to confirm they're included in the correct Mattermost Edition
+
+### G. (T-minus 8 working days) Release Candidate Cut
+
+1. Release Manager:
+    - Post this checklist in Release Checklist channel
+    - Verify all items in the last posted release checklist are complete
     - Merge changelog PR after review is complete, and update the GitHub meta issue to include a link to the changelog on the documentation branch
     - After build is cut, tweet announcement that RC1 is ready (see [example](https://pre-release.mattermost.com/core/pl/tefx1ijyz7bs8mabuxmpq9f7pw))
-3. Logistics:
+2. Logistics:
     - Mail out contributor and security researcher mugs
     - Update [Team](http://www.mattermost.org/team/) page with new contributors
     - Provide release PM with a list of contributors for Changelog draft
-4. QA:
+3. QA:
     - Confirm all PRs merged into the current release have been tested
     - Ensure the release testing spreadsheet covers any changes and new features, and confirm known issues are listed in the relevant tests 
     - Assign each area of the spreadsheet to a team member and give the core team access permissions
@@ -137,7 +137,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Test remaining merged PRs and resolved tickets for the release
     - Write and update tests in the Release Testing spreadsheet and in Selenium IDE
     - Run Selenium IDE tests for updated areas, note Pass/Fail and date tested in the Release Testing spreadsheet
-5. Build:  
+4. Build:  
     - Review all `TODO` notes, including one for uncommenting upgrade code
     - Confirm all PRs in [`/enterprise`](https://github.com/mattermost/enterprise/pulls) repo have been merged.
     - Master is tagged and branched and “Release Candidate 1″ is cut (e.g. 3.5.0-RC1) according to the Release Candidate Checklist in ``mattermost/process``
@@ -145,7 +145,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     - CI servers are updated to the release branch
     - Translation server is locked to the release branch
     - Run daily automated upgrade tests to avoid catching upgrade bugs late
-6. Docs:
+5. Docs:
     - Submit any remaining documentation PRs for product updates in the release
     - Confirm changes to config.json in compatibility section of Changelog are written back to [settings documentation](http://docs.mattermost.com/administration/config-settings.html#configuration-settings)
     - Confirm all new diagnostics are documented in the telemetry docs (https://docs.mattermost.com/administration/telemetry.html)
@@ -192,9 +192,9 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Confirm Changelog reflects any changes since it was merged (including known issues and contributors from all repositories) 
       - If there is a security fix, confirm the Changelog recommends upgrade, with a note mentioning the security level and thanking the security researcher (security process doc for example)
 3. Marketing:
-    - Finish draft of blog post for mattermost.com and send for marketing lead to review
+    - Finish draft of blog post for mattermost.com and send for release manager and PMs to review before sending for marketing lead to review
         - Upgrade should be recommended if there are security fixes in this version, with a note thanking the security researcher
-    - Finish drafts of all art work (screenshots, GIFs and twitter banners) used for the blog post and send to marketing lead for review
+    - Finish drafts of all art work (screenshots, GIFs and twitter banners) used for the blog post and review with PMs before sending to marketing lead for review
     - Find [www-gitlab-com merge request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests?scope=all&utf8=%E2%9C%93&state=opened&label_name%5B%5D=blog%20post&label_name%5B%5D=release) for latest GitLab release blog post and make request for adding GitLab Mattermost update (see [example request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests/2910#note_14096885), [example update](https://about.gitlab.com/2016/07/22/gitlab-8-10-released/#gitlab-mattermost-32)). Post to Release Discussion channel with link to request.
 
 ### J. (T-minus 2 working days) Release Build Cut
@@ -249,13 +249,14 @@ The final release is cut. If an urgent and important issue needs to be addressed
 If a security fix release is required, run through the following steps:
 
 1. PM:
-    - Update the changelog
     - Work with a developer to submit GitLab MR [following this process](https://docs.mattermost.com/process/release-process.html#gitlab-merge-request)
-    - Update the [version archive](https://docs.mattermost.com/administration/version-archive.html)
     - Help [test the upgrade](https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg) once the GitLab MR is merged and included in their RC
     - Verify all patch fixes are backported
     - Verify all patch fixes are tested (either via unit tests or RCs)
-2. Logistics:
+2. Release Manager:
+    - Update the changelog
+    - Update the [version archive](https://docs.mattermost.com/administration/version-archive.html)
+3. Logistics:
     - Update [Mattermost server download page](https://mattermost.org/download) with the links to the EE and TE bits
       - Test the download links before and after updating the page
     - Contact owners of [community installers](http://www.mattermost.org/installation/) or submit PRs to update install version number
@@ -263,15 +264,16 @@ If a security fix release is required, run through the following steps:
       - For Chef Cookbook, open a new issue to announce the new release. See [example](https://github.com/verifi-inc/mattermost/issues/2).
       - For Yunohost, open a new pull request to update the version. See [example](https://github.com/kemenaran/mattermost_ynh/pull/11).
       - For OpenShift, open a new pull request to update the version. See [example](https://github.com/goern/mattermost-openshift/pull/13).
-3. Marketing:
+4. Marketing:
     - Prepare [blog post](https://about.mattermost.com/mattermost-3-6-2/) for mattermost.com, MailChimp email blast, and [Twitter announcement](https://twitter.com/mattermosthq/status/827193482578112512), and send to marketing lead for review. Once reviewed, schedule for 08:00 PST on the day after dot release
     
 If a bug fix release is required, run through the following steps:
 1. PM:
     - Schedule a Daily Release Update meeting every day until the dot release is complete
-    - Post links to approved tickets for the dot release to the Release Discussion channel
     - Make a post in Town Square announcing the dot release [See example](https://pre-release.mattermost.com/core/pl/4aippek8yp8a3nex9anen5rjoc)
     - Open an issue in the [GitLab Omnibus](https://gitlab.com/gitlab-org/omnibus-gitlab) mentioning a dot release is coming 
+2. Release Manager:
+    - Post links of approved tickets for the dot release to the Release Discussion channel
     - Update the GitHub meta issue:
         - Change the title to "Mattermost vx.x.x - RCx", where `vx.x.x` is the version number of the dot release
         - Post a comment to the meta issue with approved fixes for the next RC of the dot release
@@ -279,15 +281,13 @@ If a bug fix release is required, run through the following steps:
     - Update Changelog:
         - Start a WIP PR for the dot release changelog and commit updates as new issues are fixed on the dot release RCs
         - Update “Known Issues” section with any significant issues that were found during RC testing and not fixed for the dot release
-    - Push RC versions to acceptance and announce in Town Square with new RC link as they are cut
-    - Test the new RC to verify fixes merged to the release branch work. Post in Release Discussion channel after testing
-2. Dev:
+3. Dev:
     - PRs for hotfixes are made to release branch
     - Review PRs made from release branch and merge changes into the release branch as required and merge the release branch back into master once per day
-3. Build:
+4. Build:
     - Verify with Release Manager before cutting any new dot release RCs (approved fixes should be merged)
     - Push dot release RC's to CI servers and pre-release
-4. QA:
+5. QA:
     - Test the new RC to verify fixes merged to the release branch work
     - Post in Release Discussion channel after testing 
 
@@ -301,12 +301,13 @@ Once bug fix release is ready to cut:
     - Update CI servers, pre-release and GitLab Mattermost to the final version    
 2. PM:
     - Update [Mattermost pricing page](https://about.mattermost.com/pricing/) if anything has changed
-    - Merge the Changelog PR with notes on patch releases (see [example entry](https://docs.mattermost.com/administration/changelog.html#release-v3-5.1))
     - Work with a developer to submit GitLab MR [following this process](https://docs.mattermost.com/process/release-process.html#gitlab-merge-request)
+3. Release Manager:
+    - Merge the Changelog PR with notes on patch releases (see [example entry](https://docs.mattermost.com/administration/changelog.html#release-v3-5.1))
     - Update the [version archive](https://docs.mattermost.com/administration/version-archive.html)
-3. QA:  
+4. QA:  
     - Verifies each of the issues in the patch release are fixed
-4. Logistics:
+5. Logistics:
     - Update [Mattermost server download page](https://mattermost.org/download) with the links to the EE and TE bits
       - Test the download links before and after updating the page
     - Contact owners of [community installers](http://www.mattermost.org/installation/) or submit PRs to update install version number
@@ -360,6 +361,7 @@ Once bug fix release is ready to cut:
         - Submit a PR for changelog against the `vX.X-documentation` branch and add a `Work in Progress` label for it
         - Submit a PR to change version number in `docs/source/conf.py` against the `vX.X-documentation` branch
 4. Build
+    - Put pre-release back on master
     - Put CI servers and translation server back onto master, and post in Release Discussion channel once done
     - Update [ci-linux-mysql-prev](https://ci-linux-mysql-prev.mattermost.com) to the previous release version
 5. Dev:
@@ -384,8 +386,6 @@ Once bug fix release is ready to cut:
     - Update 'latest version of Mattermost' supported in the Airtable Integrations Directory on the [Mattermost Apps and Integrations](https://about.mattermost.com/community-applications) page as per updates provided by Logistics in 2. above.
 4. Leads:
     - Update [company roadmap at mattermost.com](https://about.mattermost.com/direction/)
-5. Build:
-    - Put pre-release back on master
 
 ### M. (T-plus 10 working days) Update Mattermost Security Page
 1. PM:

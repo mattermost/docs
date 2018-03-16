@@ -3,6 +3,16 @@ Administrator's Guide
 
 In-depth documentation on installation, deployment and administration of Mattermost system.
 
+Getting Started
+---------------------
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+
+   /getting-started/implementation_plan.rst
+
+
 Installing Mattermost
 ---------------------
 
@@ -67,13 +77,13 @@ Administration
    /administration/backup*
    /administration/liveness-check*
    /administration/migrating.md
+   /administration/image-proxy*
    /administration/plugins*
    /administration/announcement-banner.rst
    /administration/branding*
    /administration/compliance*
    /administration/compliance-export*
    /administration/data-retention*
-   /administration/image-proxy*
    
 Mobile Apps
 -----------

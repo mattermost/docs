@@ -74,7 +74,7 @@ Test Translations
 
 If you'd like to review and verify translations prior to achieving Beta-quality status, you can follow these steps:
 
-1 - Build Mattermost on your machine following the `Developer Machine Setup Guides <http://docs.mattermost.com/developer/developer-setup.html>`_.
+1 - Build Mattermost on your machine following the `Developer Machine Setup Guides <https://docs.mattermost.com/developer/dev-setup.html>`_.
 
 2 - Download a copy of your translations to your local machine.
 

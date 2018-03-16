@@ -18,6 +18,8 @@ After purchasing a subscription to Mattermost E10 or higher from Mattermost, Inc
 
 Both TPNS and HPNS only work with the Mattermost Apple App Store and Google Play apps. If you have compiled the apps yourselves, you must also host your own Mattermost push proxy server. See our FAQ on :ref:`how push notifications work <push-faq>` for more details.
 
+If you use HPNS you need to ensure that the push proxy can be reached on port 443 from the Mattermost server, for TPNS it is port 80. If you host your own proxy server the default port is 8086.
+
 
 Setting up HPNS push notifications in Enterprise Edition
 --------------------------------------------------------

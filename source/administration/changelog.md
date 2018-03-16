@@ -129,7 +129,19 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v4.7
 
-Release date: 2018-02-16
+ - **v4.7.3, released 2018-03-09**
+   - Mattermost v4.7.3 contains a moderate severity security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+ - **v4.7.2, released 2018-02-23**
+   - Fixed an issue where message attachments didn’t render emojis.
+   - Fixed an issue where channels with a name 26 characters long were inaccessible with a 404 error.
+   - Fixed “We couldn’t get the emoji” server log messages.
+   - Fixed an issue with being unable to switch to direct or group message channels via CTRL/CMD+K channel switcher or via “msg/groupmsg” slash commands.
+   - Fixed an issue where clicking on "Send Message" from a user's profile popover redirected to Town Square instead of the user's direct message channel.
+   - Fixed an issue where links to direct and group message channels opened in a new tab.
+ - **v4.7.1, released 2018-02-20**
+   - Fixed an issue with [compliance export](https://docs.mattermost.com/administration/compliance-export.html) outputs, resulting in `Failed to update ChannelMemberHistory table` error  messages in the log when a user joins or leaves a channel. Issue updates [posted here](https://mattermost.atlassian.net/browse/MM-9633).
+ - **v4.7.0, released 2018-02-16**
+   - Original 4.7.0 release
 
 ### Security Update
 
@@ -155,7 +167,7 @@ Release date: 2018-02-16
 
 #### Experimental Setting for Unreads Sidebar Section
 
- - Added an experimental setting to group unread channels in the channel sidebar.
+ - Added an experimental setting to group unread channels in the channel sidebar. The setting [must first be enabled by the System Admin](https://docs.mattermost.com/administration/config-settings.html#group-unread-channels-experimental), by replacing `disabled` with either `default_off` or `default_on` in config.json.
 
 ### Improvements
 
@@ -166,6 +178,7 @@ Release date: 2018-02-16
  - Added focus on the text box after hitting "Edit" on Account Settings options.
  - Improved formatting of quotes in the channel header.
  - Added a date separator for search results.
+ - Channel names are now sorted correctly in the left-hand-side by taking non-alphabetical characters into consideration (e.g. brackets, hash sign, etc.)
  
  #### Integrations
  - Added username and profile picture to incoming webhook set up pages.
@@ -231,7 +244,6 @@ Release date: 2018-02-16
   - RestrictPostDelete
   - AllowEditPost
   - RestrictTeamInvite
-  - RestrictCustomEmojiCreation
 
 #### config.json
 
@@ -241,7 +253,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
  - Under `ServiceSettings` in `config.json`:
     - Added `"ImageProxyType": ""`, `"ImageProxyOptions": ""`, and `"ImageProxyURL": ""` to ensure posts served to the client will have their markdown modified such that all images are loaded through a proxy.
-    - Added `"ExperimentalGroupUnreadChannels": disabled` to show an unread channel section in the webapp sidebar.
+    - Added `"ExperimentalGroupUnreadChannels": disabled` to show an unread channel section in the webapp sidebar. The setting must first be enabled by the System Admin, by replacing `disabled` with either `default_off` or `default_on`.
     - Added `"ExperimentalEnableDefaultChannelLeaveJoinMessages": true` that allows disabling of leave/join messages in the default channel, usually Town Square.
  - Under `RateLimitingSettings` in `config.json`:
     - Added `"VaryByUser": false`, a user-based rate limiting, to rate limit on token and on userID.
@@ -260,6 +272,14 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### WebSocket Event Changes
 
  - Added `delete_team` web socket event to notify client whenever a team is deleted (e.g. via API call).
+ 
+ ### Database Changes
+
+**User.Position field:**
+- Increased size of `user.Position` from `35` to `128` characters.
+
+**OAuth state parameter:**
+- Increased OAuth2 state parameter limit from `128` to `1024`.
 
 ### Known Issues
 
@@ -275,6 +295,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Numbered lists can sometimes extend beyond the normal post area.
 - Slack import through the CLI fails if email notifications are enabled.
 - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+- `[WARN] plugin sandboxing is not supported. plugins will run with the same access level as the server` log message is created when sandboxing isn't enabled for plugins. If you don't use plugins, you can ignore this message. If you have plugins enabled, [learn how to enable sandboxing](https://developers.mattermost.com/extend/plugins/security/#sandboxing).
 
 ### Contributors
 
@@ -282,8 +303,10 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v4.6
 
+ - **v4.6.2, release date 2018-02-23**
+   - Mattermost v4.6.2 contains multiple security fixes ranging from low to high severity. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **v4.6.1, release date 2018-01-30**
-   - Fixed an issue where Let's Encrypt certificates were broken on Mattermost servers. The cache will be deleted upon upgrade so your certificate will be immediately renewed.
+   - Fixed an issue where Let's Encrypt certificates were broken on Mattermost servers. The cache will be deleted upon upgrade so your certificate will be immediately renewed. Moreover, port 80 must be forwarded through a firewall, with [Forward80To443](https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443) `config.json` setting set to `true`, to complete the Let's Encrypt certification.
  - **v4.6.0, released 2018-01-16**
    - Original 4.6.0 release
 
@@ -424,6 +447,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v4.5
 
+ - **v4.5.2, release date 2018-02-23**
+   - Mattermost v4.5.2 contains multiple security fixes ranging from low to high severity. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **v4.5.1, released 2018-01-16**
    - Fixed an issue where Mattermost wouldn't load on certain versions of Firefox, including v52-54 and v57 in private mode.
  - **v4.5.0, released 2017-12-16**
