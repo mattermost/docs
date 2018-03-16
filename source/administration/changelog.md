@@ -10,10 +10,25 @@ Release date: 2018-04-16
 
 ### Highlights
 
+#### Permissions Backend Phase 1
+
+ - Added unit tests for `SetRolePermissionsFromConfig` using JSON.
+ - `AllowEditPost` and `PostEditTimeLimit` migration.
+ - Added `ADD_REACTION`, `REMOVE_REACTION` and `REMOVE_OTHERS_REACTIONS` permissions.
+ - Added consistent permissions checking between Incoming/Outgoing webhooks.
+ 
+#### Global Relay
+
+ - Added username to the queries that select compliance export data out of the database.
+ - `ChannelMemberHistory` records are now created for DM channels.
+ - Added settings, validation, and internationalization strings for new GlobalRelay config settings.
+ - Added `ChannelType` field to the compliance export related model for use in adding some extra headers to the GlobalRelay email.
+
 ### Improvements
 
  - Added rendering of at-mentions by the teammate name display.
  - Added a User Interface top banner for System Admins who use APIv3.
+ - Added cache invalidation totals to metrics.
 
 ### Bug Fixes
 
