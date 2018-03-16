@@ -24,6 +24,7 @@ helm install . --name gitlab --timeout 600 \
   --set global.hosts.domain=example.local \
   --set nginx.service.loadBalancerIP=X.X.X.X \
   --set kube-lego.config.LEGO_EMAIL=user@example.local \
+  --set kube-lego.config.LEGO_URL=https://acme-v01.api.letsencrypt.org/directory \
   --set gitlab.migrations.initialRootPassword="example-password"
 ```
 
