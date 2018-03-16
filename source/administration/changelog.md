@@ -8,45 +8,45 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 Release date: 2018-03-16
 
-## Highlights
+### Highlights
 
-### Enhanced compatibility with CloudFront
+#### Enhanced compatibility with CloudFront
 
  - Added support for configuring CloudFront to host Mattermost's static assets.
  - Allows for improved caching performance and shorter load times for those members of your team geographically distributed throughout the world.
 
-### SAML Migration Command  ([Enterprise Edition E20](https://about.mattermost.com/pricing/))
+#### SAML Migration Command  ([Enterprise Edition E20](https://about.mattermost.com/pricing/))
 
  - Added a CLI command to easily migrate users to SAML.
 
-## Improvements
+### Improvements
 
-### Web User Interface
+#### Web User Interface
  - Added a web app build hash to About Mattermost dialog to tell what version of the web app is being used.
  - Switched search bar to a button in tablet view, to increase how much space is available in the channel header.
  
-### Performance
+#### Performance
  - Reduced load times by optimizing database queries and WebSocket events destined for a single users.
  - Ceated an iOS endpoint that enables users to upload files larger than 20MB.
  - Improved caching of `getRootPosts` call.
 
-### 508 Compliance
+#### 508 Compliance
  - Added alt attribute to profile pictures.
 
-### Integrations
+#### Integrations
  - Updated incoming webhooks to accept multipart/form-data content type such as that supplied by `curl -F`.
 
-### Notifications
+#### Notifications
  - A system message is now posted when a channel is moved between teams by the CLI command.
 
-### Authentication
+#### Authentication
  - Reduced OAuth SSO login errors by falling back to a constructed URL if Site URL is blank.
 
-### System Console
+#### System Console
  - Removed plugin upload setting from System Console UI and prevented switching the setting from the API.
  - Added paging to system console log viewer and set default value of `per_paging` for logs to 1000.
  
-## Bug Fixes
+### Bug Fixes
  - Fixed an issue where sidebar unreads text setting was ignored in custom theme.
  - Fixed an issue where emoji picker had an empty line at the bottom of the list.
  - Fixed an issue with Markdown help wrapping on a second line in Edit Message dialog.
