@@ -4,6 +4,42 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
+## Release v4.9
+
+Release date: 2018-04-16
+
+### Highlights
+
+### Improvements
+
+ - Added rendering of at-mentions by the teammate name display.
+ - Added a User Interface top banner for System Admins who use APIv3.
+
+### Bug Fixes
+
+ - Fixed plugin webapp manifest field 'bundle_path' to match documentation and be the path to the plugin's JavaScript bundle relative to the root of the plugin, similar to the server manifest 'executable' field.
+
+### Compatibility
+
+#### Removed and Deprecated Features
+
+ - All API v3 endpoints have been deprecated and are scheduled for removal in Mattermost v5.0.
+ - An unused `ExtraUpdateAt` field will be removed from the channel model in Mattermost v5.0.
+ 
+ #### config.json
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+### API Changes
+
+ - It is required that any new integrations use API v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
+ - All API v3 endpoints have been deprecated and are scheduled for removal in Mattermost v5.0.
+
+### Known Issues
+
+### Contributors
+
+
 ## Release v4.8
 
 Release date: 2018-03-16
