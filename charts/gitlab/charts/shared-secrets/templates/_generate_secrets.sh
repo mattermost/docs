@@ -56,3 +56,9 @@ $(openssl genrsa 2048 | awk '{print "    " $0}')
 EOF
   generate_secret_if_needed rails-secrets --from-file secrets.yml
 fi
+
+# Shell ssh host keys
+ssh-keygen -A
+mkdir -p host_keys
+cp /etc/ssh/ssh_host_* host_keys/
+generate_secret_if_needed gitlab-shell-host-keys --from-file host_keys

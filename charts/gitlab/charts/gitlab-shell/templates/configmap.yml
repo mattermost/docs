@@ -8,9 +8,11 @@ metadata:
 data:
   configure: |
     set -e
-    mkdir -p /init-secrets/redis /init-secrets/shell
+    mkdir -p /init-secrets/redis /init-secrets/shell /init-secrets/ssh
     cp /init-config/redis/password  /init-secrets/redis/password
     cp /init-config/shell/.gitlab_shell_secret  /init-secrets/shell/.gitlab_shell_secret
+    cp /init-config/ssh_host_* /init-secrets/ssh/
+    chmod 0400 /init-secrets/ssh/ssh_host_*
   config.yml.erb: |
     # GitLab user. git by default
     user: git

@@ -4,13 +4,14 @@ For a functional deployment, different types of secrets are needed:
 
 * TLS Certificates for GitLab, Registry, Minio
 * Registry authentication certificates
+* SSH Host Keys and Certificates for GitLab Shell
 * Passwords for individual components
 
 A user of these charts may chose to provide any or all of the below secrets.
-Any secret not provided by the user will be automatically generated automatically,
+**Any secret not provided by the user will be automatically generated automatically,
 via the included [`shared-secrets` Job](../../charts/gitlab/charts/shared-secrets) which will
 populate all necessary secrets with random values. When used in combination with
-the integration of Let's Encrypt ACME, a user need not complete any of the following.
+the integration of Let's Encrypt ACME, a user need not complete any of the following.**
 
 To make use of automatic secret handling, you may skip to [Next steps](#next-steps)
 
@@ -21,6 +22,7 @@ To provide one or more manual secrets, continue reading.
 - [TLS Certificates](#tls-certificates)
   * [Custom certificates](#custom-certificates)
 - [Registry authentication certificates](#registry-authentication-certificates)
+- [SSH Host Keys](#ssh-host-keys)
 - [Passwords](#passwords)
   * [Redis password](#redis-password)
   * [Postgres password](#postgres-password)
@@ -95,6 +97,24 @@ kubectl create secret generic gitlab-registry --from-file=registry-auth.key=cert
 In more isolated clusters, these certificates can be in separate secrets, as long
 as the configuration information as to which secret to use is passed to the appropriate
 chart.
+
+## SSH Host Keys
+
+Generate the OpenSSH certificate-key pairs:
+
+```
+mkdir -p hostKeys
+ssh-keygen -t rsa  -f hostKeys/ssh_host_rsa_key -N ""
+ssh-keygen -t dsa  -f hostKeys/ssh_host_dsa_key -N ""
+ssh-keygen -t ecdsa  -f hostKeys/ssh_host_ecdsa_key -N ""
+ssh-keygen -t ed25519  -f hostKeys/ssh_host_ed25519_key -N ""
+```
+
+Create the secret containing these certificates.
+
+```
+kubectl create secret generic gitlab-shell-host-keys --from-file hostKeys
+```
 
 ## Passwords
 

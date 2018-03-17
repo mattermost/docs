@@ -49,7 +49,7 @@ spec:
             - name: CONFIG_DIRECTORY
               value: '/srv/gitlab-shell'
             - name: KEYS_DIRECTORY
-              value: '/etc/ssh/keys'
+              value: '/etc/gitlab-secrets/ssh'
           volumeMounts:
             - name: shell-config
               mountPath: '/etc/gitlab-shell'
@@ -77,6 +77,8 @@ spec:
         projected:
           defaultMode: 0440
           sources:
+            - secret:
+                name: {{ .Values.hostKeys.secret }}
             - secret:
                 name: {{ .Values.authToken.secret }}
                 items:
