@@ -23,14 +23,17 @@ spec:
           command: ['sh', '/config/configure']
           image: busybox
           volumeMounts:
-          - name: gitlab-config
+          - name: config
             mountPath: /config
             readOnly: true
-          - name: init-gitlab-secrets
-            mountPath: /init-config
+          - name: init-secrets
+            mountPath: /init-secrets
             readOnly: true
           - name: gitlab-secrets
-            mountPath: /init-secrets
+            mountPath: /gitlab-secrets
+            readOnly: false
+          - name: gitlab-config
+            mountPath: /gitlab-config
             readOnly: false
       containers:
         - name: {{ .Chart.Name }}
@@ -65,7 +68,7 @@ spec:
           resources:
 {{ toYaml .Values.resources | indent 12 }}
       volumes:
-      - name: gitlab-config
+      - name: config
         configMap:
           name: {{ template "fullname" . }}
           items:
@@ -80,7 +83,7 @@ spec:
       {{- else }}
         emptyDir: {}
       {{- end }}
-      - name: init-gitlab-secrets
+      - name: init-secrets
         projected:
           defaultMode: 0400
           sources:
@@ -95,6 +98,9 @@ spec:
                 - key: {{ .Values.psql.password.key }}
                   path: postgres/psql-password
       - name: gitlab-secrets
+        emptyDir:
+          medium: "Memory"
+      - name: gitlab-config
         emptyDir:
           medium: "Memory"
     {{- if .Values.nodeSelector }}
