@@ -353,6 +353,8 @@ Once bug fix release is ready to cut:
              - [Push final build to gitlab.mattermost.com](https://mattermost.atlassian.net/browse/PLT-3117)
          - Release week (for PM)
              - [Test Gitlab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/PLT-2197)
+         - Week after release (for Dev)
+             - [Submit Gitlab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/MM-9872)
     - Confirm that [mattermost-docker](https://github.com/mattermost/mattermost-docker/releases) has been updated to the latest version (contact the maintainer via direct message on pre-release if necessary)
     - Contact owners of [community installers](http://www.mattermost.org/installation/) or submit PRs to update install version number
       - For Puppet, Heroku and Ansible Playbook, post to Installers and Images channel announcing the new release. See [example](https://pre-release.mattermost.com/core/pl/5eh8fw3jaiyzzqoc6nfwfaioya).
