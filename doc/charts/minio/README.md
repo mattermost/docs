@@ -32,6 +32,8 @@ minio:
     proxyBuffering:
   persistence: (upstream)
     volumeName:
+    matchLabels:
+    matchExpressions:
   serviceType: (upstream)
   servicePort: (upstream)
   defaultBuckets:
@@ -42,27 +44,31 @@ minio:
 
 Table below contains all the possible charts configurations that can be supplied to `helm install` command using the `--set` flags
 
-| Parameter                 | Description                         | Default                      |
-| ---                       | ---                                 | ---                          |
-| image                     | Minio image                         | minio/minio                  |
-| imageTag                  | Minio image tag                     | RELEASE.2017-12-28T01-21-00Z |
-| imagePullPolicy           | Minio image pull policy             | Always                       |
-| enabled                   | Minio enable flag                   | true                         |
-| credentials.secret        | Minio credentials secret            | gitlab-minio                 |
-| mountPath                 | Minio config file mount path        | /export                      |
-| replicas                  | Minio number of replicas            | 4                            |
-| persistence.enabled       | Minio enable persistence flag       | true                         |
-| persistence.accessMode    | Minio persistence access mode       | ReadWriteOnce                |
-| persistence.size          | Minio persistence volume size       | 10Gi                         |
-| persistence.subPath       | Minio persistence volume mount path |                              |
-| serviceType               | Minio service type                  | ClusterIP                    |
-| servicePort               | Minio service port                  | 9000                         |
-| resources.requests.memory | Minio minimum memory requested      | 256Mi                        |
-| resources.requests.cpu    | Minio minimum cpu requested         | 250m                         |
-| defaultBuckets            | Minio default buckets               | [{"name": "registry"}]       |
-| minioConfig.region        | Minio region                        | us-east-1                    |
-| minioConfig.browser       | Minio browser flag                  | on                           |
-| minioConfig.domain        | Minio domain                        |                              |
+| Parameter                    | Description                             | Default                      |
+| ---                          | ---                                     | ---                          |
+| image                        | Minio image                             | minio/minio                  |
+| imageTag                     | Minio image tag                         | RELEASE.2017-12-28T01-21-00Z |
+| imagePullPolicy              | Minio image pull policy                 | Always                       |
+| enabled                      | Minio enable flag                       | true                         |
+| credentials.secret           | Minio credentials secret                | gitlab-minio                 |
+| mountPath                    | Minio config file mount path            | /export                      |
+| replicas                     | Minio number of replicas                | 4                            |
+| persistence.enabled          | Minio enable persistence flag           | true                         |
+| persistence.accessMode       | Minio persistence access mode           | ReadWriteOnce                |
+| persistence.size             | Minio persistence volume size           | 10Gi                         |
+| persistence.subPath          | Minio persistence volume mount path     |                              |
+| persistence.storageClass     | Minio storageClassName for provisioning |                              |
+| persistence.volumeName       | Minio existing persistent volume name   |                              |
+| persistence.matchLabels      | Minio label-value matches to bind       |                              |
+| persistence.matchExpressions | Minio label-expression matches to bind  |                              |
+| serviceType                  | Minio service type                      | ClusterIP                    |
+| servicePort                  | Minio service port                      | 9000                         |
+| resources.requests.memory    | Minio minimum memory requested          | 256Mi                        |
+| resources.requests.cpu       | Minio minimum cpu requested             | 250m                         |
+| defaultBuckets               | Minio default buckets                   | [{"name": "registry"}]       |
+| minioConfig.region           | Minio region                            | us-east-1                    |
+| minioConfig.browser          | Minio browser flag                      | on                           |
+| minioConfig.domain           | Minio domain                            |                              |
 
 ## Enable the sub-chart
 
@@ -142,16 +148,26 @@ The behaviors for [`persistence`][minio-persistence] are [documented upstream][m
 
 > This chart provisions a PersistentVolumeClaim and mounts corresponding persistent volume to default location /export. You'll need physical storage available in the Kubernetes cluster for this to work. If you'd rather use emptyDir, disable PersistentVolumeClaim by: `persitence.enabled: false`
 
-GitLab has added one item:
+GitLab has added a few items:
 
 ```
 persistence:
   volumeName:
+  matchLabels:
+  matchExpressions:
 ```
 
 ### volumeName
 
 When `volumeName` is provided, the `PersistentVolumeClaim` will use the provided `PersistentVolume` by name, in place of creating a `PersistentVolume` dynamically. This overrides the upstream behavior.
+
+### matchLabels
+
+`matchLabels` accepts a dictionary of label name and label values to match against when choosing a volume to bind. This is used in the `PersistentVolumeClaim` `selector` section. See the [volumes documentation](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#selector)
+
+### matchExpressions
+
+`matchExpressions` accepts an array of label condition objects to match against when choosing a volume to bind. This is used in the `PersistentVolumeClaim` `selector` section. See the [volumes documentation](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#selector)
 
 ## defaultBuckets
 

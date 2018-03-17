@@ -56,6 +56,14 @@ persistence:
   ## if volumeName is set, use this existing PersistentVolume
   # volumeName:
 
+  ## Only bind to a volume with the following exactly matched labels with values.
+  ## ref: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#selector
+  matchLabels: {}
+
+  ## Only bind to a volume with the following exppression matched labels.
+  ## ref: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#selector
+  matchExpressions: []
+
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
