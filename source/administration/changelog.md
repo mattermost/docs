@@ -26,7 +26,7 @@ Release date: 2018-03-16
  - Switched search bar to a button in tablet view, to increase how much space is available in the channel header.
  
 #### Performance
- - Reduced load times by optimizing database queries and WebSocket events destined for a single users.
+ - Reduced load times by optimizing database queries and WebSocket events destined for a single user.
  - Ceated an iOS endpoint that enables users to upload files larger than 20MB.
  - Improved caching of `getRootPosts` call.
 
