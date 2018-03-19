@@ -77,7 +77,9 @@ If the AD/LDAP connection is verified to be working out side of Mattermost, try 
 
 2. Check your AD/LDAP system to verify your `Bind Username` format.
 
-3. Check your `AD/LDAP Port` and `Connection Security` settings. (`AD/LDAP Port` set to `389` typically uses `Connection Security` set to `None`. `AD/LDAP Port` set to `636` typically ties to `Connection Security` set to `TLS`). 
+3. Check your `AD/LDAP Port` and `Connection Security` settings. (`AD/LDAP Port` set to `389` typically uses `Connection Security` set to `None`. `AD/LDAP Port` set to `636` typically ties to `Connection Security` set to `TLS`).
+
+4. If you are seeing `x509: certificate signed by unknown authority` in your logs, try installing an intermediate SSL certificate on the Mattermost servers or have your LDAP server send the complete certificate chain. 
 
 If these options don't work, please contact Mattermost support via the email address that came with your license key. 
 
