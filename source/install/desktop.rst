@@ -38,15 +38,13 @@ This will start an installer for the app. Once finished, the Mattermost desktop 
 Mac OS X 10.9+
 --------------------------------------------------
 
-1. Download `latest version of the Mattermost desktop app <https://releases.mattermost.com/desktop/4.0.0/mattermost-desktop-4.0.0-osx.tar.gz>`_
+1. Download `latest version of the Mattermost desktop app <https://releases.mattermost.com/desktop/4.0.0/mattermost-desktop-4.0.0-osx.tar.gz>`_.
 
-2. From the ``/Downloads`` directory, find ``/mattermost-desktop...`` folder.
+2. Double-click the download to expand the archive.
 
-   - If one doesn’t exist, from the ``/Downloads`` directory, find a file ending in ``-osx.tar.gz`` and double-click on the file. The ``/mattermost-desktop...`` folder should now be created.
+3. Drag the extracted file to the ``Applications`` folder.
 
-3. From the ``/mattermost-desktop...`` folder, right-click on ``Mattermost`` package and select **Open**. If you see a dialog to confirm the application, choose **Open**.
-
-The Mattermost desktop should open automatically.
+`Homebrew <https://brew.sh>`_ users can install with ``brew cask install mattermost``.
 
 Linux (Beta)
 --------------------------------------------------
