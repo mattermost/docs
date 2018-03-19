@@ -4,6 +4,8 @@ Core Developer Handbook
 This handbook contains documentation useful for Mattermost core developers. A core developer is
 a maintainer on the [Mattermost project](https://github.com/mattermost) that has merge access to the Mattermost repositories. They are responsible for reviewing pull requests, cultivating the Mattermost developer community and guiding the technical vision of Mattermost.
 
+Come [join our "Contributors" community channel](https://pre-release.mattermost.com/core/channels/tickets) on our daily build server, where you can discuss questions with community members and the Mattermost core team. Join our ["Developers" channel](https://pre-release.mattermost.com/core/channels/developers) for technical discussions and our ["Integrations" channel](https://pre-release.mattermost.com/core/channels/integrations) for all integrations and plugins discussions.
+
 ### Current Core Developers ###
 
 Below is the list of core developers working on Mattermost:
@@ -36,18 +38,15 @@ Below is the list of core developers working on Mattermost:
 - **Chris Brown**
   - @ccbrown on [pre-release.mattermost.com](https://pre-release.mattermost.com/core/messages/@ccbrown) and [@ccbrown](https://github.com/ccbrown) on GitHub
   - Dev areas: Security, Integrations, Server Plugins, Test Reliability
-- **Jonathan Fritz**
-  - @jonathan on [pre-release.mattermost.com](https://pre-release.mattermost.com/core/messages/@jonathan) and [@MusikPolice](https://github.com/MusikPolice) on GitHub
-  - Dev areas: Desktop
 - **Martin Kraft**
   - @martin.kraft on [pre-release.mattermost.com](https://pre-release.mattermost.com/core/messages/@martin.kraft) and [@mkraft](https://github.com/mkraft) on GitHub
   - Dev areas: All areas
 - **Jesús Espino**
   - @jesus.espino on [pre-release.mattermost.com](https://pre-release.mattermost.com/core/messages/@jesus.espino) and [@jespino](https://github.com/jespino) on GitHub
   - Dev areas: Webapp, Permissions and Compliance, Sample data generation
-- **Stephen Kiers**
-  - @stephen.kiers on [pre-release.mattermost.com](https://pre-release.mattermost.com/core/messages/@stephen.kiers) and [@stephenkiers](https://github.com/stephenkiers) on GitHub
-  - Dev areas: Webapp, Mobile UX and UI
+- **Jesse Hallam**
+  - @jesse.hallam on [pre-release.mattermost.com](https://pre-release.mattermost.com/core/messages/@jesse.hallam) and [@lieut-data](https://github.com/lieut-data) on GitHub
+  - Dev areas: Performance, Webapp, Database
 
 Below is the list of core developers working on individual Mattermost repositories:
 - **Yuya Ochiai** - [desktop](https://github.com/mattermost/desktop)

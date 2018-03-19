@@ -72,11 +72,12 @@ Assume that the IP address of this server is 10.10.10.2
       After=syslog.target network.target postgresql-9.4.service
 
       [Service]
-      Type=simple
+      Type=notify
       WorkingDirectory=/opt/mattermost
       User=mattermost
       ExecStart=/opt/mattermost/bin/platform
       PIDFile=/var/spool/mattermost/pid/master.pid
+      TimeoutStartSec=3600
       LimitNOFILE=49152
 
       [Install]

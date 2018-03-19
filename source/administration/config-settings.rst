@@ -137,7 +137,7 @@ Allow use of API v3 endpoints
 Set to false to disable all version 3 endpoints of the REST API. Integrations that rely on API v3 will fail and can then be identified for migration to API v4. API v3 is deprecated and will be removed in the near future. See https://api.mattermost.com for details.
 
 +---------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableAPIv3": true`` with options ``true`` and ``false``.  |
+| This feature's ``config.json`` setting is ``"EnableAPIv3": false`` with options ``false`` and ``true``. |
 +---------------------------------------------------------------------------------------------------------+
 
 Webserver Mode
@@ -626,7 +626,7 @@ Level of detail at which log events are written to the console when **EnableCons
 
 Output logs to file
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Typically set to true in production. When true, logged events are written to the ``mattermost.log`` file in the directory specified by the **FileLocation** setting. The logs are rotated at 10,000 lines and archived to a file in the same directory, and given a name with a datestamp and serial number. For example, ``mattermost.2017-03-31.001``.
+Typically set to true in production. When true, logged events are written to the ``mattermost.log`` file in the directory specified by the **FileLocation** setting. The logs are archived to a file in the same directory, and given a name with a datestamp and serial number. For example, ``mattermost.2017-03-31.001``.
 
 **True**:  Log files are written to files specified in **FileLocation**.
 
@@ -1035,7 +1035,14 @@ Password of the user given in **Bind Username**. This field is required, and ano
 
 User Filter
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-(Optional) Enter an AD/LDAP Filter to use when searching for user objects (accepts `general syntax <http://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm>`_). Only the users selected by the query will be able to access Mattermost. For Active Directory, the query to filter out disabled users is ``(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))``
+(Optional) Enter an AD/LDAP Filter to use when searching for user objects (accepts `general syntax <http://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm>`_). Only the users selected by the query will be able to access Mattermost. 
+
+Sample filters for Active Directory:
+
+- To filter out disabled users: ``(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))``
+- To filter out by group membership, determine the distinguishedName of your group, then use the group membership general syntax format as your filter.
+
+  * For example, if the security group distinguishedName is ``CN=group1,OU=groups,DC=example,DC=com``, then the user filter to use is: ``(memberOf=CN=group1,OU=groups,DC=example,DC=com)``. Note that the user must explicitly belong to this group for the filter to apply.
 
 This filter uses the permissions of the **Bind Username** account to execute the search. Administrators should make sure to use a specially created account for Bind Username with read-only access to the portion of the AD/LDAP tree specified in the **Base DN** field.
 
@@ -1149,6 +1156,8 @@ AD/LDAP Synchronize Now
 This button causes AD/LDAP synchronization to occur as soon as it is pressed. Use it whenever you have made a change in the AD/LDAP server you want to take effect immediately. After using the button, the next AD/LDAP synchronization will occur after the time specified by the Synchronization Interval.
 
 You can monitor the status of the synchronization job in the table below this button.
+
+Note: If synchronization **Status** displays as ``Pending`` and does not complete, make sure that the **Enable Synchronization with AD/LDAP** setting is set to ``true``.
 
 .. figure:: ../images/ldap-sync-table.png
 
@@ -1335,7 +1344,7 @@ Enable Multi-factor Authentication
 **False**: Multi-factor authentication is disabled.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableMultifactorAuthentication": false`` with options ``true`` and ``false`` for above settings respectively.           |
+| This feature's ``config.json`` setting is ``"EnableMultifactorAuthentication": false`` with options ``true`` and ``false`` for above settings respectively.          |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enforce Multi-factor Authentication
@@ -1346,7 +1355,7 @@ Enforce Multi-factor Authentication
 **False**: Multi-factor authentication is optional.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnforceMultifactorAuthentication": false`` with options ``true`` and ``false`` for above settings respectively.           |
+| This feature's ``config.json`` setting is ``"EnforceMultifactorAuthentication": false`` with options ``true`` and ``false`` for above settings respectively.         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -1898,7 +1907,7 @@ External Services
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Google API Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Mattermost offers the ability to embed YouTube videos from URLs shared by end users. Set this key to enable the display of titles for embedded YouTube video previews. Without the key, YouTube previews will still be created based on hyperlinks appearing in messages or comments but they will not show the video title. If Google detects the number of views is exceedingly high, they may throttle embed access. Should this occur, you can remove the throttle by registering for a Google Developer Key and entering it in this field following these instructions: https://www.youtube.com/watch?v=Im69kzhpR3I. Your Google Developer Key is used in client-side Javascript.
+Mattermost offers the ability to embed YouTube videos from URLs shared by end users. Set this key and add YouTube Data API v3 as a service to your key to enable the display of titles for embedded YouTube video previews. Without the key, YouTube previews will still be created based on hyperlinks appearing in messages or comments but they will not show the video title. If Google detects the number of views is exceedingly high, they may throttle embed access. Should this occur, you can remove the throttle by registering for a Google Developer Key and entering it in this field following these instructions: https://www.youtube.com/watch?v=Im69kzhpR3I. Your Google Developer Key is used in client-side Javascript.
 
 Using a Google API Key allows Mattermost to detect when a video is no longer available and display the post with a *Video not found* label.
 
@@ -1933,7 +1942,7 @@ Enable Plugin Uploads
 **False**: Disables plugin uploads on your Mattermost server.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableUploads": true`` with options ``true`` and ``false`` for above settings respectively.                             | 
+| This feature's ``config.json`` setting is ``"EnableUploads": false`` with options ``true`` and ``false`` for above settings respectively.                            | 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Management
@@ -2132,6 +2141,15 @@ When false, disables file downloads on mobile apps. Users can still download fil
 +---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableMobileDownload": true`` with options ``true`` and ``false``.     |
 +---------------------------------------------------------------------------------------------------------------------+
+
+Image Proxy
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Includes three configuration keys: ``ImageProxyType``, ``ImageProxyURL`` and ``ImageProxyOptions``. When these keys are configured, posts served to the client will have their markdown modified enabling all images to be loaded through a proxy. See `documentation <https://docs.mattermost.com/administration/image-proxy.html>`_ for more details.
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ImageProxyType": ""``, ``"ImageProxyURL": ""`` and ``"ImageProxyOptions": ""`` with string input.      |
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Maximum File Size
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2405,150 +2423,8 @@ Configurable link to download the iOS app. When a link is present, users who acc
 
 ________
 
-Advanced
+Compliance
 --------------------------------
-Advanced settings to configure rate limiting, databases and developer options.
-
-Rate Limiting
-~~~~~~~~~~~~~~~~~~~~~~~~~
-Changing properties in this section will require a server restart before taking effect.
-
-Enable Rate Limiting
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: APIs are throttled at the rate specified by **PerSec**.
-
-**False**: APIs are not throttled.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                        |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Maximum Queries per Second
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Throttle API at this number of requests per second if rate limiting is enabled.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PerSec": 10`` with whole number input.                                                                                  |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Maximum Burst Size
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Maximum number of requests allowed beyond the per second query limit.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MaxBurst": 100`` with whole number input.                                                                               |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Memory Store Size
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Maximum number of user sessions connected to the system as determined by **VaryByRemoteAddr** and **VaryByHeader** variables.
-
-Typically set to the number of users in the system.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MemoryStoreSize": 10000`` with whole number input.                                                                      |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Vary rate limit by remote address
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: Rate limit API access by IP address. Recommended to set to ``true`` if you're using a proxy.
-
-**False**: Rate limiting does not vary by IP address.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"VaryByRemoteAddr": true`` with options ``true`` and ``false`` for above settings respectively.                          |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Vary rate limit by HTTP header
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Vary rate limiting by HTTP header field specified (e.g. when configuring Ngnix set to "X-Real-IP", when configuring AmazonELB set to "X-Forwarded-For"). Recommended to be set if you're using a proxy.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"VaryByHeader": ""`` with string input.                                                                                  |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-________
-
-
-Database
-~~~~~~~~~~~~~~~~~~~~~~~~~
-Changing properties in this section will require a server restart before taking effect.
-
-Driver Name
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This setting can only be changed from config.json file, it cannot be changed from the System Console user interface.
-
-``mysql``: enables driver to MySQL database.
-
-``postgres``: enables driver to PostgreSQL database.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DriverName": "mysql"`` with string input.                                                                               |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Data Source
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This is the connection string to the master database. When **DriverName** ="postgres" then use a connection string in the form ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10``. This setting can only be changed from config.json file, it cannot be changed from the System Console user interface.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DataSource": ""`` with string input.                                                                                    |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Maximum Idle Connections
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Maximum number of idle connections held open to the database.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MaxIdleConns": 10`` with whole number input.                                                                            |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Maximum Open Connections
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Maximum number of open connections held open to the database.
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MaxOpenConns": 10`` with whole number input.                                                                             |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-SQL Query Timeout
-^^^^^^^^^^^^^^^^^
-The number of seconds to wait for a response from the database after opening a connection and sending the query. Errors that you see in the UI or in the logs as a result of a query timeout can vary depending on the type of query.
-
-+-------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"QueryTimeout": 30`` with whole number input, in the *SqlSettings* section. |
-+-------------------------------------------------------------------------------------------------------------------------+
-
-At Rest Encrypt Key
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-A 32-character key for encrypting and decrypting sensitive fields in the database. You can generate your own cryptographically random alphanumeric string, or you can go to **System Console > Advanced > Database** and click **Regenerate**, which displays the value until you click **Save**.
-
-When using High Availability, the salt must be identical in each instance of Mattermost.
-
-+------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AtRestEncryptKey": ""`` with string input.  |
-+------------------------------------------------------------------------------------------+
-
-Trace
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: Executing SQL statements are written to the log for development.
-
-**False**: SQL statements are not written to the log.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Trace": false`` with options ``true`` and ``false`` for above settings respectively.                                    |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Recycle Database Connections
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-*Available in Enterprise Edition E20*
-
-This button reconnects to the database listed in the configuration settings. All old connections are closed after 20s.
-
-The workflow for failover without downing the server is to change the database line in the config.json file, click **Reload Configuration from Disk** in the General > Configuration section then click **Recycle Database Connections**.
-
-________
 
 Data Retention Policy (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2642,6 +2518,159 @@ Run Compliance Export Job Now
 This button initiates a Compliance Export job immediately.
 
 You can monitor the status of the job in the compliance export job table below this button.
+________
+
+Advanced
+--------------------------------
+Advanced settings to configure rate limiting, databases and developer options.
+
+Rate Limiting
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Changing properties in this section will require a server restart before taking effect.
+
+Enable Rate Limiting
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: APIs are throttled at the rate specified by **PerSec**.
+
+**False**: APIs are not throttled.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Maximum Queries per Second
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Throttle API at this number of requests per second if rate limiting is enabled.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"PerSec": 10`` with whole number input.                                                                                  |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Maximum Burst Size
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Maximum number of requests allowed beyond the per second query limit.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"MaxBurst": 100`` with whole number input.                                                                               |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Memory Store Size
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Maximum number of user sessions connected to the system as determined by **VaryByRemoteAddr** and **VaryByHeader** variables.
+
+Typically set to the number of users in the system.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"MemoryStoreSize": 10000`` with whole number input.                                                                      |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Vary rate limit by remote address
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: Rate limit API access by IP address. Recommended to set to ``true`` if you're using a proxy.
+
+**False**: Rate limiting does not vary by IP address.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"VaryByRemoteAddr": true`` with options ``true`` and ``false`` for above settings respectively.                          |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Vary rate limit by HTTP header
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Vary rate limiting by HTTP header field specified (e.g. when configuring Ngnix set to "X-Real-IP", when configuring AmazonELB set to "X-Forwarded-For"). Recommended to be set if you're using a proxy.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"VaryByHeader": ""`` with string input.                                                                                  |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Vary rate limit by user
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: Rate limit API access by user authentication token. Recommended to set to ``true`` if you're using a proxy.
+
+**False**: Rate limiting does not vary by user authentication token.
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"VaryByUser": false`` with options ``true`` and ``false`` for above settings respectively.                              |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+________
+
+
+Database
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Changing properties in this section will require a server restart before taking effect.
+
+Driver Name
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This setting can only be changed from config.json file, it cannot be changed from the System Console user interface.
+
+``mysql``: enables driver to MySQL database.
+
+``postgres``: enables driver to PostgreSQL database.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DriverName": "mysql"`` with string input.                                                                               |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Data Source
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This is the connection string to the master database. When **DriverName** ="postgres" then use a connection string in the form ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10``. This setting can only be changed from config.json file, it cannot be changed from the System Console user interface.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DataSource": ""`` with string input.                                                                                    |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Maximum Idle Connections
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Maximum number of idle connections held open to the database.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"MaxIdleConns": 10`` with whole number input.                                                                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Maximum Open Connections
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Maximum number of open connections held open to the database.
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"MaxOpenConns": 10`` with whole number input.                                                                             |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+SQL Query Timeout
+^^^^^^^^^^^^^^^^^
+The number of seconds to wait for a response from the database after opening a connection and sending the query. Errors that you see in the UI or in the logs as a result of a query timeout can vary depending on the type of query.
+
++-------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"QueryTimeout": 30`` with whole number input, in the *SqlSettings* section. |
++-------------------------------------------------------------------------------------------------------------------------+
+
+At Rest Encrypt Key
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+A 32-character key for encrypting and decrypting sensitive fields in the database. You can generate your own cryptographically random alphanumeric string, or you can go to **System Console > Advanced > Database** and click **Regenerate**, which displays the value until you click **Save**.
+
+When using High Availability, the salt must be identical in each instance of Mattermost.
+
++------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AtRestEncryptKey": ""`` with string input.  |
++------------------------------------------------------------------------------------------+
+
+Trace
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: Executing SQL statements are written to the log for development.
+
+**False**: SQL statements are not written to the log.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Trace": false`` with options ``true`` and ``false`` for above settings respectively.                                    |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Recycle Database Connections
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E20*
+
+This button reconnects to the database listed in the configuration settings. All old connections are closed after 20s.
+
+The workflow for failover without downing the server is to change the database line in the config.json file, click **Reload Configuration from Disk** in the General > Configuration section then click **Recycle Database Connections**.
 
 ________
 
@@ -2896,6 +2925,14 @@ There are a number of settings customizable in ``config.json`` unavailable in th
 Service Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+WebSocket URL
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This setting allows the server to instruct clients where they should try to connect WebSockets to.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"WebsocketURL": ""`` with string input.                                                                                  |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 License File Location
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -2904,6 +2941,17 @@ Path and filename of the license file on disk. On startup, if Mattermost cannot 
 +---------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LicenseFileLocation": ""`` with string input.  |
 +---------------------------------------------------------------------------------------------+
+
+Allow Cookies for Subdomains
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True** Allows cookies for subdomains by setting the domain parameter on Mattermost cookies.
+
+**False** Cookies not allowed for subdomains.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AllowCookiesForSubdomains": true`` with options ``true`` and ``false`` for above settings respectively.                 |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Cluster Log Timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2953,6 +3001,18 @@ This setting determines whether channel_viewed WebSocket events are sent, which 
 +------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableChannelViewedMessages": true`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------------+
+
+Enable Default Channel Leave/Join System Messages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This setting determines whether team leave/join system messages are posted in the default ``town-square`` channel.
+
+**True**: Enables leave/join system messages in the default ``town-square`` channel.
+
+**False**: Disables leave/join messages from the default ``town-square`` channel. These system messages won't be added to the database either.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableDefaultChannelLeaveJoinMessages": true`` with options ``true`` and ``false`` for above settings respectively.     |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Segment Write Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -3377,18 +3437,19 @@ Enable Tutorial (Experimental)
 **False**: The tutorial is disabled. Users are placed in Town Square when they open Mattermost for the first time after account creation.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``EnableTutorial": true`` with options ``true`` and ``false`` for above settings respectively.   | 
+| This feature’s ``config.json`` setting is ``"EnableTutorial": true`` with options ``true`` and ``false`` for above settings respectively.  | 
 +--------------------------------------------------------------------------------------------------------------------------------------------+
 
 Allow Authentication Transfer (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E20 and higher*
 
 **True**: Users can change their sign-in method to any that is enabled on the server, either via Account Settings or the APIs.
 
 **False**: Users cannot change their sign-in method, regardless of which authentication options are enabled.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``ExperimentalEnableAuthenticationTransfer": true`` with options ``true`` and ``false`` for above settings respectively.   |                                                                           
+| This feature’s ``config.json`` setting is ``"ExperimentalEnableAuthenticationTransfer": true`` with options ``true`` and ``false`` for above settings respectively.  |                                                                           
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Autoclose Direct Messages in Sidebar (Experimental)
@@ -3409,9 +3470,22 @@ Enable Preview Features (Experimental)
 
 **False**: Disables and hides preview features from **Account Settings** > **Advanced** > **Preview pre-release features**.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EnablePreviewFeatures": true`` with options ``true`` and ``false`` for above settings respectively.                     |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"EnablePreviewFeatures": true`` with options ``true`` and ``false`` for above settings respectively.                    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Group Unread Channels (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Disabled**: Unread channels section is disabled for all users.
+ 
+**Default On**:  Enables the unread channels sidebar section by default. Users can turned it off in **Account Settings** > **Sidebar**.
+
+**Default Off**: Disables the unread channels sidebar section by default. Users can turned it on in **Account Settings** > **Sidebar**.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"ExperimentalGroupUnreadChannels": ``disabled``, ``default_on`` or ``default_off``.                                    |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Team Settings
 ~~~~~~~~~~~~~~

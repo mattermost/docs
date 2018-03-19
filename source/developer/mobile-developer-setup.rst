@@ -24,7 +24,7 @@ iOS and Android
 
 Install the following prerequisite software to develop and build the iOS or Android apps. For macOS, we recommend using `Homebrew <https://brew.sh/>`_ as a package manager.
 
-1. Install `NodeJS <https://nodejs.org/en/>`_.
+1. Install `NodeJS <https://nodejs.org/en/>`_. (minimum required version is 9.3.0)
  - To install using Homebrew open a terminal and execute
  .. code-block:: bash
 
@@ -33,18 +33,18 @@ Install the following prerequisite software to develop and build the iOS or Andr
  - Install using NVM by following the instructions  `here <https://github.com/creationix/nvm#install-script>`_
  - Download and install the package from the `NodeJS website <https://nodejs.org/en/>`_
 
-2. Install `Watchman <https://facebook.github.io/watchman/>`_.
+2. Install `Watchman <https://facebook.github.io/watchman/>`_. (minimum required version is 4.9.0)
  - To install using Homebrew open a terminal and execute
  .. code-block:: bash
 
     $ brew install watchman
 
-3. Assuming that you already have NodeJS installed, you can now use **npm** to install `React Native CLI Tools <http://facebook.github.io/react-native/docs/understanding-cli.html>`_ globally
+3. Assuming that you already have NodeJS installed, you can now use **npm** to install `React Native CLI Tools <http://facebook.github.io/react-native/docs/understanding-cli.html>`_ globally (minimum required version is 2.0.1)
  .. code-block:: bash
 
     $ npm -g install react-native-cli
 
-4. Install yarn (used as our package manager for the mobile apps)
+4. Install yarn (used as our package manager for the mobile apps, recommended version is 1.3.2)
  - To install using Homebrew open a terminal and execute
  .. code-block:: bash
 
@@ -65,8 +65,8 @@ Install the following prerequisite software to develop and build the iOS or Andr
 iOS
 ~~~~~~~~~~~~~~~~~~~
 
-1. Install `Xcode <https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12>`_ to build and run the app on iOS.
-2. Install `Cocoapods <https://cocoapods.org/>`_ using the ``gem`` method. You'll need it to install the project’s iOS dependencies.
+1. Install `Xcode <https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12>`_ to build and run the app on iOS. (minimum required version is 9.0)
+2. Install `Cocoapods <https://cocoapods.org/>`_ using the ``gem`` method. You'll need it to install the project’s iOS dependencies. (required version is 1.3.1)
 
 Android
 ~~~~~~~~~~~~~~~~~~~
@@ -250,7 +250,7 @@ The set of commands for building the app are used in conjunction with `Fastlane 
  - **make build-ios**: Builds the iOS app and generates the Mattermost.ipa file in the project's root directory to be distributed.
  - **make build-android**: Builds the Android app and generates the Mattermost.apk file in the project's root directory to be distributed.
  - **make unsigned-ios**: Builds the iOS app and generates an unsigned Mattermost-unsigned.ipa file in the project's root directory.
- - **make unsigned-ios**: Builds the Android app and generates an unsigned Mattermost-unsigned.apk file in the project's root directory.
+ - **make unsigned-android**: Builds the Android app and generates an unsigned Mattermost-unsigned.apk file in the project's root directory.
 
 If you plan to use the make build-* commands be sure to set your environment variables for use in conjunction with Fastlane to suit your needs. For more information please refer to the `Build Your Own App from Source`_ section.
 
@@ -323,7 +323,7 @@ Look for the "General" tab. Go to the "Signing" section and make sure your Apple
 
 .. image:: ../../source/images/mobile/code_signing.png
 
-Repeat the steps for the **MattermostTest** target in the project and the **MattermostShare** target.
+Repeat the steps for the **MattermostTests** target in the project and the **MattermostShare** target.
 
 .. important::
   The **MattermostShare** target must use different *Bundle Identifier* than the other two targets.
@@ -359,7 +359,7 @@ Build Your Own App from Source
 
 Now you can build the app from source and distribute it within your team or company either using the App Stores, Enterprise App Stores or EMM providers, or any other way.
 
-We recommend using the **make build-*** commands in conjunction with `Fastlane <https://docs.fastlane.tools/#choose-your-installation-method>`_. With Fastlane, you can also configure the app using environment variables.
+We recommend using the **make build-*** commands in conjunction with `Fastlane <https://docs.fastlane.tools/#choose-your-installation-method>`_. With Fastlane, you can also configure the app using environment variables. 
 
 Build Preparations
 ~~~~~~~~~~~~~~~~~~
@@ -367,7 +367,7 @@ Build Preparations
 First of all, ensure that the following remains exactly the same as in the original `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_ repo:
  - The package ID for the Android app and the Bundle Identifier for the iOS app remain the same as the one in the original mattermost-mobile repo, com.mattermost.rnbeta.
  - Android-specific source files remain under *android/app/src/main/java/com/mattermost/rnbeta*
- - Your `environment variables <https://github.com/mattermost/mattermost-mobile/blob/fastlane/fastlane/env_vars_example>`_ are set according to your needs
+ - Your `environment variables <https://github.com/mattermost/mattermost-mobile/blob/master/fastlane/env_vars_example>`_ are set according to your needs
 
 Build the Android App
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -410,8 +410,15 @@ Setting up Gradle Variables
 
 Setting up Environment Variables
 ++++++++++++++++++++++++++++++++
-In order to use the **make build-android** command, you'll need to set a few environment variables. In this guide, we will explain some of them. You can refer to the `env_vars_example <https://github.com/mattermost/mattermost-mobile/blob/fastlane/fastlane/env_vars_example>`_
+In order to use the **make build-android** command, you'll need to set a few environment variables. In this guide, we will explain some of them. You can refer to the `env_vars_example <https://github.com/mattermost/mattermost-mobile/blob/master/fastlane/env_vars_example>`_
 file under the fastlane directory to see all of them.
+In order to make fastlane work with these environment variables you have two options:
+
+1. Copy the file with your variables to ``../mattermost-mobile/fastlane/.env`` where ``.env`` is the file name.
+
+or
+
+2. Create an .sh file with your variables (for example ``my_env.sh``), and execute ``source my_env.sh`` in the terminal session where you will later execute ``make build-android`` 
 
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
 | Variable                                      | Description                                                                                           | Default value           |
@@ -479,7 +486,14 @@ We make use of `Match <https://docs.fastlane.tools/actions/match/>`_ to sync you
 
 Setting up environment variables
 ++++++++++++++++++++++++++++++++
-In order to use the **make build-ios** command, you'll need to set a few environment variables. In this guide, we will explain some of them. You can refer to the `env_vars_example <https://github.com/mattermost/mattermost-mobile/blob/fastlane/fastlane/env_vars_example>`_ file under the fastlane directory to see all of them.
+
+In order to use the **make build-ios** command, you'll need to set a few environment variables. In this guide, we will explain some of them. You can refer to the `env_vars_example <https://github.com/mattermost/mattermost-mobile/blob/fastlane/fastlane/env_vars_example>`_ file under the fastlane directory to see all of them. In order to make fastlane work with these environment variables you have two options:
+
+1. Copy the file with your variables to ``../mattermost-mobile/fastlane/.env`` where ``.env`` is the file name.
+
+or
+
+2. Create an .sh file with your variables (for example ``my_env.sh``), and execute ``source my_env.sh`` in the terminal session where you will later execute ``make build-ios`` 
 
 .. note::
   You must use your own provisioning profiles and certificates as well as your own Bundle Identifiers. If you use the default values, you will be unable to build and sign the app.
@@ -591,7 +605,7 @@ Now that you have created the Firebase project and the app and downloaded the *g
 
  - Replace ``android/app/google-services.json`` with the one you downloaded earlier
  - Open ``android/app/google-services.json``, find the project_number and copy the value
- - Open ``android/app/AndroidManifest.xml`` file, look for the line ``<meta-data android:name="com.wix.reactnativenotifications.gcmSenderId" android:value="184930218130\0"/>`` and replace the value with the one that you copied in the previous step
+ - Open ``android/app/src/main/AndroidManifest.xml`` file, look for the line ``<meta-data android:name="com.wix.reactnativenotifications.gcmSenderId" android:value="184930218130\0"/>`` and replace the value with the one that you copied in the previous step
 
 .. important::
   Leave the trailing \\0 intact

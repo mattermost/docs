@@ -16,8 +16,9 @@ configure Zoom for Mattermost.
 
 .. image:: ../images/zoom_system_console.png
 
-2. Set the Zoom API URL if you're using an on-premise Zoom server, for example, https://api.yourzoom.com/v2. Leave blank when not using an on-premise Zoom deployment.
-3. Set the API Key and API Secret.
+2. Set the Zoom URL if you're using an on-premise Zoom server, for example, https://yourzoom.com. Leave blank when not using an on-premise Zoom deployment.
+3. Set the Zoom API URL if you're using an on-premise Zoom server, for example, https://api.yourzoom.com/v2. Leave blank when not using an on-premise Zoom deployment.
+4. Set the API Key and API Secret.
 
 API Key and API Secret
 .........................................
@@ -42,12 +43,17 @@ Zoom webhook. Then hit **Save**.
 
 .. image:: ../images/zoom_webhook.png
 
-4. The settings for `overriding usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`_ and `profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`_ need to be enabled.
+5. The settings for `overriding usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`_ and `profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`_ need to be enabled.
 
-5. Once these steps are done, activate the plugin at **System Console > Plugins > Management** by clicking **Activate**.
+6. Once these steps are done, activate the plugin at **System Console > Plugins > Management** by clicking **Activate**.
 
 .. image:: ../images/zoom_system-console_management.png
 
-6. Once activated, you will see a video icon in the channel header. Clicking the icon will open a drop-down menu with three actions you can take: **start meeting now**, **start meeting with topic**, and **share meeting**.
+7. Once activated, you will see a video icon in the channel header. Clicking the icon will open a drop-down menu with three actions you can take: **Start Zoom Meeting Now**, **Start Zoom Meeting with Topic**, and **Share Zoom Meeting**.
 
 .. image:: ../images/zoom_channel_header2.png
+
+.. note::
+   Users will need to sign-up for their own Zoom account using the same email address that they use for Mattermost. If the user attempts to start a Zoom meeting without a Zoom account, they will see the following error message: "We could not verify your Mattermost account in Zoom. Please ensure that your Mattermost email address matches your Zoom email address."
+   In addition, the user must be added to the admin's Zoom account to quickly start a meeting without having to share a personal meeting ID.
+  

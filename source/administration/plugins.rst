@@ -9,12 +9,12 @@ There are three scenarios in which you would consider using a plugin:
  - When you want to extend Mattermost functionality to meet a specific, complex requirement
  - When you want to build integrations that are managed by your Mattermost server
 
-There are two main types of plugins:
+There are two main types of plugins, both of which are supported in Team and Enterprise Editions:
 
  - **Client plugins**: Allows you to customize the Mattermost user interface, by overriding elements such as the profile popover, channel header or the sidebar. For a sample plugin, see `hovercardexample <https://github.com/jwilander/hovercardexample>`_.
  - **Server plugins**: Makes it easier to integrate with third-party systems such as JIRA, GitLab or Jenkins. A sample plugin for a video and audio call system such as Zoom and Skype for Business is currently in progress.
 
-Later in upcoming releases, the `Enterprise Edition <https://about.mattermost.com/pricing>`_ will support server plugins that enable you to extend Mattermost functionality to meet a specific, complex requirement such as profiling performance metrics, and to implement highly customized compliance rules for `information barriers <http://www.17a-4.com/supervision-information-barriers/>`_.
+Later in upcoming releases, the `Enterprise Edition <https://about.mattermost.com/pricing>`_ will also support plugins that enable you to extend Mattermost functionality to meet a specific, complex requirement such as profiling performance metrics, and to implement highly customized compliance rules for `information barriers <http://www.17a-4.com/supervision-information-barriers/>`_.
 
 Set Up Guide
 --------------
@@ -61,3 +61,20 @@ If plugin uploads fail and you see "permissions denied" errors in **System Conso
   [2017/11/13 20:42:18 UTC] [EROR] failed to start up plugins: mkdir /home/ubuntu/mattermost/client/plugins: permission denied
 
 you don't have proper permissions for uploading plugins. To resolve it, apply write access to the ``mattermost/client`` directory.
+
+Another potential cause is that the working directory for the service running Mattermost is not correct. On Ubuntu you might see
+
+.. code-block:: text
+
+    [2018/01/03 08:34:47 EST] [EROR] failed to start up plugins: mkdir ./client/plugins: no such file or directory
+
+This can be fixed on Ubuntu 16.04 and RHEL by opening the service configuration file and setting WorkingDirectory to the path to Mattermost, often ``/opt/mattermost``.
+
+Or on Windows
+
+.. code-block:: text
+
+    [EROR] failed to start up plugins: mkdir ./client/plugins: The system cannot find the path specified.
+
+To fix this, set the AppDirectory of your service using ``nssm set mattermost AppDirectory c:\mattermost``.
+

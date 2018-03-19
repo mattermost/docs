@@ -184,12 +184,18 @@ Setup
 Checklist
 ~~~~~~~~~~~~~
 
-- Screen size: Provide screenshots that are 20-30% larger than needed - this will make it easier for the screenshot to be included in banners. To do this, close the right-hand sidebar and shrink your screen horizontally to make it narrower, leaving the screen wide enough until the "mobile send button" no longer appears in the bottom-right corner. Make sure not to cut off any sides of the page in the screenshot.
+- Screen size: Provide screenshots that are 20-30% larger than needed - this will make it easier for the screenshot to be included in blog posts, documentation, and others. To do this, close the right-hand sidebar and shrink your screen horizontally to make it narrower, leaving the screen wide enough until the "mobile send button" no longer appears in the bottom-right corner. Make sure not to cut off any sides of the page in the screenshot.
 - Left-hand side: Include Favorite, Public, and Private channels on the left-hand side. Make sure that you scroll all the way to the top in the channel list on the left-hand side for the screenshot.
 - Favorites channel list: Include one Public channel, a Direct Message channel with someone who is online, as well as a Group Direct Message channel using people with short names to avoid truncation.
 - Center pane: Make the center pane one of the Favorited channels. Make sure that the heading of the center pane is fully visible to avoid truncation. Also, make the first message in the center pane fully visible right below the channel header.
 - Profiles: Profile pictures and real people's names should be filled out throughout the screenshot. For the profile picture, use either normal-looking Avatars or stock photography.
-- Clarity: Do not include an "unread posts" indicator in the left-hand side, but you can have a few mentions. Also, avoid showing any text with acronyms and abbreviations. Do not show any bugs or defects.
+- Clarity: Do not include an "unread posts" indicator in the left-hand side, but you can have a few mentions. Also, avoid showing any text with acronyms and abbreviations. Do not show any bugs or defects. Make sure that the area of focus is big enough to read in blog posts, documentation, and others.
+- Outline: Ensure that the screenshot has a grey outline so that it looks good on both dark and light backgrounds.
+- Outstanding look: Ensure that the contents of the screenshot shows the Mattermost product in the best light.
+   
+   - Show the feature in action.
+   - Make sure that the screenshot is positive - give whoever is viewing it a positive emotion.
+   - Show how the feature can be extended and customized. For instance, use custom slash commands instead of the default commands.
 
 Animated GIFs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
