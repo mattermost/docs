@@ -327,12 +327,12 @@ Once bug fix release is ready to cut:
 1. Release Manager:
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete, if not alert the release manager
-    - Schedule a release retrospective meeting, to be held within 5 days from the release day
+    - Schedule a release retrospective meeting, to be held within 5 days from the release 
     - Post key dates for the next release in the header of the Release Discussion channel and remove links to RC candidates and testing spreadsheet
-      - Make sure that statutory holidays for Canada and US are accounted for in the release dates
-2. Logistics: 
+        - Make sure that statutory holidays for Canada and US are accounted for in the release dates
     - Check for any [UserVoice](https://docs.google.com/spreadsheets/d/1nljd4cFh-9MXF4DxlUnC8b6bdqijkvi8KHquOmK8M6E/edit#gid=0) feature suggestions that were completed in the current release
       - Find the [release tweet](https://twitter.com/mattermosthq/status/854781715914555393) and insert a link to the tweet next to the feature that shipped with the release.
+2. Logistics: 
     - For the next release, create the following team meetings. If they conflict with existing meetings, check with meeting owner to reschedule or reschedule the release meeting
       - PM Release Update meeting on T-15 at 7:30am San Francisco time
       - Major Feature Complete Meeting on T-12 at 10:00am San Francisco time
@@ -357,10 +357,10 @@ Once bug fix release is ready to cut:
              - [Submit Gitlab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/MM-9872)
     - Confirm that [mattermost-docker](https://github.com/mattermost/mattermost-docker/releases) has been updated to the latest version (contact the maintainer via direct message on pre-release if necessary)
     - Contact owners of [community installers](http://www.mattermost.org/installation/) or submit PRs to update install version number
-      - For Puppet, Heroku and Ansible Playbook, post to Installers and Images channel announcing the new release. See [example](https://pre-release.mattermost.com/core/pl/5eh8fw3jaiyzzqoc6nfwfaioya).
-      - For Chef Cookbook, open a new issue to announce the new release. See [example](https://github.com/verifi-inc/mattermost/issues/2).
-      - For Yunohost, open a new pull request to update the version. See [example](https://github.com/kemenaran/mattermost_ynh/pull/11).
-      - For OpenShift, open a new pull request to update the version. See [example](https://github.com/goern/mattermost-openshift/pull/13).
+      - For Puppet, Heroku and Ansible Playbook, post to Installers and Images channel announcing the new release. See [example](https://pre-release.mattermost.com/core/pl/fgjqthmn67nujjtx4fcrn1hd9a).
+      - For Chef Cookbook, open a new issue to announce the new release. See [example](https://github.com/ist-dsi/mattermost-cookbook/issues/22).
+      - For Yunohost, open a new pull request to update the version. See [example](https://github.com/YunoHost-Apps/mattermost_ynh/pull/103).
+      - For OpenShift, open a new issue to update the version. See [example](https://github.com/rhdt/mattermost-openshift/issues/7).
 3. Docs:
     - Create a new branch on docs for the next release - `vX.X-documentation`
         - Submit a PR for changelog against the `vX.X-documentation` branch and add a `Work in Progress` label for it
