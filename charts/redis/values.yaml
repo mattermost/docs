@@ -51,6 +51,14 @@ persistence:
   ## if volumeName is set, use this existing PersistentVolume
   # volumeName:
 
+  ## Only bind to a volume with the following exactly matched labels with values.
+  ## ref: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#selector
+  matchLabels: {}
+
+  ## Only bind to a volume with the following exppression matched labels.
+  ## ref: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#selector
+  matchExpressions: []
+
   # Configure save points
   # https://redis.io/topics/persistence
   # - time: every X seconds

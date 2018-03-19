@@ -17,6 +17,15 @@ spec:
   storageClassName: ""
 {{- else }}
   storageClassName: "{{ .Values.persistence.storageClass }}"
+{{- end -}}
 {{- end }}
-{{- end }}
+  selector:
+{{- if .Values.persistence.matchLabels }}
+    matchLabels:
+{{ toYaml .Values.persistence.matchLabels | indent 6 }}
+{{- end -}}
+{{- if .Values.persistence.matchExpressions }}
+    matchExpressions:
+{{ toYaml .Values.persistence.matchExpressions | indent 6 }}
+{{- end -}}
 {{- end }}

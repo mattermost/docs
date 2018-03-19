@@ -23,8 +23,8 @@ The table below describes all variables.
 | REGION          | The region where your cluster lives                                  | us-central1                      |
 | ZONE            | The zone where your cluster instances lives                          | us-central1a                     |
 | CLUSTER_NAME    | The name of the cluster                                              | gitlab-cluster                   |
-| CLUSTER_VERSION | The version of your GKE cluster                                      | 1.8.5-gke.0                      |
-| MACHINE_TYPE    | The cluster instances' type                                          | n1-standard-2                    |
+| CLUSTER_VERSION | The version of your GKE cluster                                      | 1.8.8-gke.0                      |
+| MACHINE_TYPE    | The cluster instances' type                                          | n1-standard-4                    |
 | NUM_NODES       | The number of nodes required.                                        | 2                                |
 | PROJECT         | the id of your GCP project                                           | No defaults, required to be set. |
 | RBAC_ENABLED    | If you know whether your cluster has RBAC enabled set this variable. | true                             |
@@ -66,3 +66,7 @@ We will use this IP to bind with a DNS name in the next section.
 In order to use ingress host rules to access various components of gitlab we will need a public domain with an `A record` wild card DNS entry pointing to the IP we just created.
 
 Follow [This](https://cloud.google.com/dns/quickstart) to create the DNS entry.
+
+# Next Steps
+
+Continue with the [installation of the chart](../installation/README.md) once you have the cluster up and running, and have the static IP and DNS entry ready.
