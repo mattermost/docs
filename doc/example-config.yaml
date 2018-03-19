@@ -1,7 +1,6 @@
 # Global chart properties
 global:
   ingress:
-    acme: true
     enabled: true
     # tls:
     #   secretName:  example-local-tls

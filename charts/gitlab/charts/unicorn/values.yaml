@@ -19,7 +19,6 @@ ingress:
   proxyConnectTimeout: 15
   proxyReadTimeout: 600
   proxyBodySize: "512m"
-  acme: false
   tls: {}
     # secretName:
   annotations: {}
