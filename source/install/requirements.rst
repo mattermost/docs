@@ -101,7 +101,6 @@ Notes:
 2. Larger deployments should estimate utilization based on pilots representative of full scale usage. 
 3. Storage recommendation is based on storing 3 years of archives with moderate file sharing.
 4. Solid state drives (SSD) can be used in place of disk storage for higher concurrency.
-5. Team Edition deployments assume registered users are divided into teams of 10-100.
 
 .. _hardware-sizing-for-enterprise:
 
