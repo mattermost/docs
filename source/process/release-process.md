@@ -327,10 +327,9 @@ Once bug fix release is ready to cut:
     - Verify all items in the last posted release checklist are complete, if not alert the release manager
     - Post key dates for the next release in the header of the Release Discussion channel and remove links to RC candidates and testing spreadsheet
         - Make sure that statutory holidays for Canada and US are accounted for in the release dates
-2. PM: 
     - Check for any [UserVoice](https://docs.google.com/spreadsheets/d/1nljd4cFh-9MXF4DxlUnC8b6bdqijkvi8KHquOmK8M6E/edit#gid=0) feature suggestions that were completed in the current release
       - Find the [release tweet](https://twitter.com/mattermosthq/status/854781715914555393) and insert a link to the tweet next to the feature that shipped with the release.
-3. Logistics:
+2. Logistics:
     - For the next release, create the following team meetings. If they conflict with existing meetings, check with meeting owner to reschedule or reschedule the release meeting
         - PM Release Update meeting on T-15 at 7:30am San Francisco time
         - Major Feature Complete Meeting on T-12 at 10:00am San Francisco time
@@ -357,19 +356,19 @@ Once bug fix release is ready to cut:
       - For Chef Cookbook, open a new issue to announce the new release. See [example](https://github.com/ist-dsi/mattermost-cookbook/issues/22).
       - For Yunohost, open a new pull request to update the version. See [example](https://github.com/YunoHost-Apps/mattermost_ynh/pull/103).
       - For OpenShift, open a new issue to update the version. See [example](https://github.com/rhdt/mattermost-openshift/issues/7).
-4. Docs:
+3. Docs:
     - Create a new branch on docs for the next release - `vX.X-documentation`
         - Submit a PR for changelog against the `vX.X-documentation` branch and add a `Work in Progress` label for it
         - Submit a PR to change version number in `docs/source/conf.py` against the `vX.X-documentation` branch
-5. Build
+4. Build
     - Put pre-release back on master
     - Put CI servers and translation server back onto master, and post in Release Discussion channel once done
     - Update [ci-linux-mysql-prev](https://ci-linux-mysql-prev.mattermost.com) to the previous release version
-6. Dev:
+5. Dev:
     - Delete RCs after final version is shipped    
     - Confirm gitlab.mattermost.com is updated to final build
     - Merge changes made to release branch into `master`
-7. Marketing:
+6. Marketing:
     - Turn on CrazyEgg for blog post page
     - Confirm marketing has been posted (animated GIFs, screenshots, mail announcement, tweets, blog posts)
     - Update @mattermosthq Twitter profile with the next release date
