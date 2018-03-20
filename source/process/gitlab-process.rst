@@ -95,15 +95,15 @@ Templates
 GitLab announcement proposal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-```
-Proposed update for new version of [Mattermost](https://gitlab.com/gitlab-org/omnibus-gitlab/issues/1241).
+.. code-block:: none
 
-## GitLab Mattermost 2.2
+  Proposed update for new version of [Mattermost](https://gitlab.com/gitlab-org/omnibus-gitlab/issues/1241).
 
-[Mattermost 2.2](http://www.mattermost.org/mattermost-2-2-threaded-messages-and-more/) ships in GitLab 8.7 with threaded messages, French translation, new themes, new Trello and IRC support, plus many more new benefits.
+  ## GitLab Mattermost 2.2
 
-This version also includes [security updates](http://about.mattermost.com/security-updates/) and upgrade from earlier versions is recommended.
-```
+  [Mattermost 2.2](http://www.mattermost.org/mattermost-2-2-threaded-messages-and-more/) ships in GitLab 8.7 with threaded messages, French translation, new themes, new Trello and IRC support, plus many more new benefits.
+
+  This version also includes [security updates](http://about.mattermost.com/security-updates/) and upgrade from earlier versions is recommended.
 
 GitLab forum responses
 ~~~~~~~~~~~~~~~~~~~~~~~
