@@ -24,7 +24,7 @@ To submit a merge request (MR) to GitLab for taking the next Mattermost version,
 4. If the release contains a security update, email @marin and @briann in GitLab with a link to the MR, and all subsequent backports.
 5. Post a link to the MR in the Release Discussion channel.
 6. Check daily for updates until the MR is merged, ensuring it gets merged by the 7th of the month.
-7. Once the MR is merged and included in an RC, `test upgrade following these steps <https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg>`_
+7. Once the MR is merged and included in an RC, `test upgrade following these steps <https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg>`_.
 
 Testing
 --------
@@ -32,18 +32,16 @@ Testing
 The following steps are taken to test the Mattermost package in GitLab Omnibus:
 
 1. Each Mattermost version is tested on a GitLab Omnibus build at `http://ci-linux-gitlab-omnibus.mattermost.com/ <http://ci-linux-gitlab-omnibus.mattermost.com/>`_. Testing covers all core Mattermost features, including notifications and GitLab SSO.
-2. Before each merge request to GitLab Omnibus, upgrade is tested `following these steps <https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg>`, using the `nightly Omnibus packages <https://packages.gitlab.com/gitlab/nightly-builds>`_ to validate the integration. This is so the packaging code and OAuth setup can be tested as well, which has historically been the main source of issues. Other test areas include:
+2. Before each merge request to GitLab Omnibus, upgrade is tested `following these steps <https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg>`_, using the `nightly Omnibus packages <https://packages.gitlab.com/gitlab/nightly-builds>`_ to validate the integration. This is so the packaging code and OAuth setup can be tested as well, which has historically been the main source of issues. Other test areas include:
 
  - Pre-provisioning OAuth configuration automatically on the Omnibus package
- - Mattermost ChatOps slash command integration
- - OAuth team creation option in GitLab Omnibus
-
-3. After each merge request, upgrade is tested `following these steps <https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg>`_.
+ - Mattermost ChatOps slash command integration
+ - OAuth team creation option in GitLab Omnibus
 
 Communication
 ---------------
 
-Changes and features affecting GitLab Omnibus are communicated via `GitLab issues <https://gitlab.com/gitlab-org/gitlab-ce/issues>`_ and `GitLab Slack channel <https://gitlab.slack.com>`.
+Changes and features affecting GitLab Omnibus are communicated via `GitLab issues <https://gitlab.com/gitlab-org/gitlab-ce/issues>`_ and `GitLab Slack channel <https://gitlab.slack.com>`_.
 
 Moreover, a recurring monthly meeting between a product manager at GitLab and Mattermost is organized to cover
 
@@ -115,18 +113,18 @@ See `sample forum responses listed here <https://docs.mattermost.com/process/com
 Upcoming Work
 ---------------
 
-1. Environment variables support for `config.json` settings. - Due: Mattermost v4.10 / GitLab v11.0
+1. Environment variables support for `config.json` settings. - **Due: Mattermost v4.10 / GitLab v11.0**
 
  - `Disable Mattermost System Console settings that are configured via environment variables <https://mattermost.atlassian.net/browse/MM-9849>`_.
  - `Investigate what config.json-only settings need to be added to the Mattermost System Console <https://mattermost.atlassian.net/browse/MM-9850>`_.
  - `Update documentation <https://gitlab.com/gitlab-org/omnibus-gitlab/issues/3284>`_ and fully test the migration.
 
-2. `Add timezones.json to GitLab Omnibus build <https://mattermost.atlassian.net/browse/MM-9873>`_ to support new Timezone user setting. - Due: Mattermost v4.10 / GitLab v11.0
+2. `Add timezones.json to GitLab Omnibus build <https://mattermost.atlassian.net/browse/MM-9873>`_ to support new Timezone user setting. - **Due: Mattermost v4.10 / GitLab v11.0**
 
-3. `Add a config.json setting to disable the permanent API v4 delete team parameter` <https://mattermost.atlassian.net/browse/MM-9916>`_. This allows Mattermost to disable the parameter without any changes to GitLab Omnibus. - Due: Mattermost v5.0 / GitLab v11.1
+3. `Add a config.json setting to disable the permanent API v4 delete team parameter <https://mattermost.atlassian.net/browse/MM-9916>`_. This allows Mattermost to disable the parameter without any changes to GitLab Omnibus. - **Due: Mattermost v5.0 / GitLab v11.1**
 
-4. `Migrate Mattermost slash command integration in GitLab to Mattermost API v4 <https://gitlab.com/gitlab-org/gitlab-ce/issues/41631>`_. - Due: Mattermost v5.0 / GitLab v11.1
+4. `Migrate Mattermost slash command integration in GitLab to Mattermost API v4 <https://gitlab.com/gitlab-org/gitlab-ce/issues/41631>`_. - **Due: Mattermost v5.0 / GitLab v11.1**
 
-5. Releasing an extended support release (ESR) version of Mattermost, and shipping it in GitLab Omnibus. `A discussion is open in the Mattermost forums <https://forum.mattermost.org/t/extended-support-release-discussion/4598>`_. - Due: TBD
+5. Releasing an extended support release (ESR) version of Mattermost, and shipping it in GitLab Omnibus. `A discussion is open in the Mattermost forums <https://forum.mattermost.org/t/extended-support-release-discussion/4598>`_. - **Due: TBD**
 
-6. Bundling Mattermost Enterprise Edition in GitLab EE. `A discussion is open in GitLab repository <https://gitlab.com/gitlab-org/omnibus-gitlab/issues/1609>`_. - Due: TBD
+6. Bundling Mattermost Enterprise Edition in GitLab EE. `A discussion is open in GitLab repository <https://gitlab.com/gitlab-org/omnibus-gitlab/issues/1609>`_. - **Due: TBD**
