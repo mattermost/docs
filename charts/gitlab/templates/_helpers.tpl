@@ -21,15 +21,6 @@ otherwise the hostname will be assembed using `gitlab` as the prefix, and the `a
 {{- coalesce .Values.ingress.hostname (include "assembleHost"  (dict "name" "gitlab" "context" . )) -}}
 {{- end -}}
 
-{{/*
-Returns the secret name for the Secret containing the gitlab TLS certificate and key.
-Uses `ingress.tls.secretName` first and falls back to `global.ingress.tls.secretName`
-if there is a shared tls secret for all ingresses.
-*/}}
-{{- define "gitlabTLSSecret" -}}
-{{- pluck "secretName" .Values.ingress.tls .Values.global.ingress.tls (dict "secretName" (printf "%s-gitlab-tls" .Release.Name)) | first -}}
-{{- end -}}
-
 {{- define "gitlab.externaldns_annotations" -}}
 {{- if (pluck "configureExternaldns" .Values.global.ingress .Values.ingress (dict "configureExternaldns" false) | first) -}}
 {{- printf "external-dns.alpha.kubernetes.io/hostname: %s" (include "gitlabHost" . | quote) -}}
