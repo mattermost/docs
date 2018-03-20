@@ -3,6 +3,9 @@ GitLab Process
 
 This document outlines the processes for supporting the Mattermost package in GitLab Omnibus.
 
+.. contents::
+    :backlinks: top
+
 Merge Requests
 -----------------
 
@@ -28,15 +31,72 @@ Testing
 
 The following steps are taken to test the Mattermost package in GitLab Omnibus:
 
-1. Each Mattermost version is tested on a GitLab Omnibus build at `http://ci-linux-gitlab-omnibus.mattermost.com/ <http://ci-linux-gitlab-omnibus.mattermost.com/>`_. Testing covers all core Mattermost features.
-2. Before each merge request to GitLab Omnibus, // XXX add areas mentioned by Josh (slash commands, creating a Mattermost group), GitLab SSO
-3. After each merge request, upgrade is tested `following these steps <https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg>`_
+1. Each Mattermost version is tested on a GitLab Omnibus build at `http://ci-linux-gitlab-omnibus.mattermost.com/ <http://ci-linux-gitlab-omnibus.mattermost.com/>`_. Testing covers all core Mattermost features, including notifications and GitLab SSO.
+2. Before each merge request to GitLab Omnibus, upgrade is tested `following these steps <https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg>`, using the `nightly Omnibus packages <https://packages.gitlab.com/gitlab/nightly-builds>`_ to validate the integration. This is so the packaging code and OAuth setup can be tested as well, which has historically been the main source of issues. Other test areas include:
+
+ - Pre-provisioning OAuth configuration automatically on the Omnibus package
+ - Mattermost ChatOps slash command integration
+ - OAuth team creation option in GitLab Omnibus
+
+3. After each merge request, upgrade is tested `following these steps <https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg>`_.
+
+Communication
+---------------
+
+Changes and features affecting GitLab Omnibus are communicated via `GitLab issues <https://gitlab.com/gitlab-org/gitlab-ce/issues>`_ and `GitLab Slack channel <https://gitlab.slack.com>`.
+
+Moreover, a recurring monthly meeting between a product manager at GitLab and Mattermost is organized to cover
+
+ - concerns/issues from GitLab Omnibus team,
+ - new upcoming changes or features in Mattermost affecting GitLab Omnibus, and
+ - other miscellaneous queued items.
+
+Optionally, an engineer from both GitLab and Mattermost teams also joins the recurring monthly meeting.
+
+Service-Level Agreement (SLA)
+-------------------------------
+
+This process is still a work-in-progress.
 
 
+// XXX Add process
 
-## Templates
+Create support@mattermost.com account in GitLab // XXX
 
-Templates for GitLab announcement proposal
+For EE premier support customers, GitLab has a 4-hour support window. They would like us to meet that window for MM issues. Josh will get back to me on non-premier support issues, but generally business day coverage should be more than enough.
+
+5. SLA agreement
+ - 4-hour SLA
+ - Josh to create an account within GitLab. Or actually Jason should create it for `mattermost-support` and give the username to Josh
+ - emails anytime the account is mentioned or assigned
+ - can subscribe to the label for specific mentions --> then send alerts to a Mattermost channel
+ - need to loop in with Paul/Hanna/Lindsay/James
+ 
+ Mattermost to investigate feasibility and best process for GitLab customers with Premium Support, so we don't breach our SLA's.
+For other customers, proposal to create a Mattermost Support account within GitLab. GitLab support could then assign issues to that user when they need attention. This should offer a good workflow for the Mattermost team and clear indication we need help on a particular issue. 
+We will continue to label Mattermost issues accordingly, so they can be subscribed to broadly.
+
+@joshlambert to work with GitLab legal to understand process for sharing any sensitive customer information (e.g. logs) with Mattermost.
+
+support@mattermost.com
+ - Mattermost-label should be helpful
+ - subscribe labels —> send alerts
+ - Mattermost support account in GitLab.
+
+ - best effort issue support for CE issues or EE starter [business day support or best effort]
+ - for EE issues, business day support would be important
+
+This is what GitLab agrees with EE premium and above customers https://about.gitlab.com/features/premium-support/ [this is 4 hours]
+
+Only bundle community version of MM
+What about paid version of MM —> that way we’d get some revenue for it
+
+Templates
+----------
+
+GitLab announcement proposal
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 ```
 Proposed update for new version of [Mattermost](https://gitlab.com/gitlab-org/omnibus-gitlab/issues/1241).
 
@@ -47,31 +107,26 @@ Proposed update for new version of [Mattermost](https://gitlab.com/gitlab-org/om
 This version also includes [security updates](http://about.mattermost.com/security-updates/) and upgrade from earlier versions is recommended.
 ```
 
+GitLab forum responses
+~~~~~~~~~~~~~~~~~~~~~~~
 
-SLA
+See `sample forum responses listed here <https://docs.mattermost.com/process/community-guidelines.html#sample-responses>`_.
 
-Communication
+Upcoming Work
 ---------------
 
-Changes and features affecting GitLab Omnibus are communicated via `GitLab issues <https://gitlab.com/gitlab-org/gitlab-ce/issues>`_ and `GitLab Slack channel <https://gitlab.slack.com>`.
+1. Environment variables support for `config.json` settings. - Due: Mattermost v4.10 / GitLab v11.0
 
-Moreover, a recurring monthly meeting between a product manager at GitLab and Mattermost is organized to cover
+ - `Disable Mattermost System Console settings that are configured via environment variables <https://mattermost.atlassian.net/browse/MM-9849>`_.
+ - `Investigate what config.json-only settings need to be added to the Mattermost System Console <https://mattermost.atlassian.net/browse/MM-9850>`_.
+ - `Update documentation <https://gitlab.com/gitlab-org/omnibus-gitlab/issues/3284>`_ and fully test the migration.
 
-concerns/issues from GitLab Omnibus team
-- new upcoming changes or features in Mattermost affecting GitLab Omnibus
-- other miscellaneous queued items
+2. `Add timezones.json to GitLab Omnibus build <https://mattermost.atlassian.net/browse/MM-9873>`_ to support new Timezone user setting. - Due: Mattermost v4.10 / GitLab v11.0
 
-The original proposed API change for the delete team API endpoint wasn’t communicated properly, resulting in confusion on both sides. We could have also done a better job communicating environment variables.
+3. `Add a config.json setting to disable the permanent API v4 delete team parameter` <https://mattermost.atlassian.net/browse/MM-9916>`_. This allows Mattermost to disable the parameter without any changes to GitLab Omnibus. - Due: Mattermost v5.0 / GitLab v11.1
 
-One quick way to keep GitLab and Mattermost teams in sync is to have a 20-minute call once or twice a month. We can start small with, perhaps Marin on the call with two of our engineers. The meeting agenda could follow something like:
+4. `Migrate Mattermost slash command integration in GitLab to Mattermost API v4 <https://gitlab.com/gitlab-org/gitlab-ce/issues/41631>`_. - Due: Mattermost v5.0 / GitLab v11.1
 
+5. Releasing an extended support release (ESR) version of Mattermost, and shipping it in GitLab Omnibus. `A discussion is open in the Mattermost forums <https://forum.mattermost.org/t/extended-support-release-discussion/4598>`_. - Due: TBD
 
-concerns/issues from GitLab Omnibus team
-new upcoming changes or features in Mattermost affecting GitLab Omnibus
-other miscellaneous queued items
-
-https://gitlab.slack.com
-monthyl meeting
-
-
-Upcoming work
+6. Bundling Mattermost Enterprise Edition in GitLab EE. `A discussion is open in GitLab repository <https://gitlab.com/gitlab-org/omnibus-gitlab/issues/1609>`_. - Due: TBD
