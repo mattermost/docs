@@ -4,7 +4,7 @@
 replicaCount: 1
 image:
   repository: registry.gitlab.com/gitlab-org/build/cng/gitaly
-  tag: latest
+  tag: ssh-non-root
   pullPolicy: Always
 service:
   name: gitaly
