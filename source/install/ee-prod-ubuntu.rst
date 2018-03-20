@@ -233,7 +233,8 @@ Set up NGINX Server
 Set up NGINX with SSL (Recommended)
 -----------------------------------
 
-.. note:: If Let’s Encrypt is enabled, forward port 80 through a firewall, with `Forward80To443 <https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443>`_ ``config.json`` setting set to ``true`` to complete the Let’s Encrypt certification.
+.. note::
+   If Let’s Encrypt is enabled, forward port 80 through a firewall, with `Forward80To443 <https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443>`_ ``config.json`` setting set to ``true`` to complete the Let’s Encrypt certification.
 
 1. You can use a free and an open certificate security like let's
    encrypt, this is how to proceed
