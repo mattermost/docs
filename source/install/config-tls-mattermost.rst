@@ -29,6 +29,9 @@ The easiest option is to set up TLS on the Mattermost Server, but if you expect 
 
     a. Change the **Use Let's Encrypt** setting to ``true``.
     b. Restart the Mattermost server for these changes to take effect.
+    
+.. note::
+   If Let's Encrypt is enabled, forward port 80 through a firewall, with `Forward80To443<https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443>`_ ``config.json`` setting set to ``true`` to complete the Let's Encrypt certification.
 
   **To use your own certificate**:
 
