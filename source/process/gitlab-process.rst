@@ -27,7 +27,7 @@ To submit a merge request (MR) to GitLab for taking the next Mattermost version,
 7. Once the MR is merged and included in an RC, `test upgrade following these steps <https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg>`_.
 
 Testing
---------
+----------------
 
 The following steps are taken to test the Mattermost package in GitLab Omnibus:
 
@@ -39,7 +39,7 @@ The following steps are taken to test the Mattermost package in GitLab Omnibus:
  - OAuth team creation option in GitLab Omnibus
 
 Communication
----------------
+-------------------
 
 Changes and features affecting GitLab Omnibus are communicated via `GitLab issues <https://gitlab.com/gitlab-org/gitlab-ce/issues>`_ and `GitLab Slack channel <https://gitlab.slack.com>`_.
 
@@ -54,43 +54,30 @@ Optionally, an engineer from both GitLab and Mattermost teams also joins the rec
 Service-Level Agreement (SLA)
 -------------------------------
 
-This process is still a work-in-progress.
+This process is still a work-in-progress, being developed together with GitLab.
 
+GitLab Premier Support Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-// XXX Add process
+GitLab has a `4-hour support window for their premier support customers <https://about.gitlab.com/features/premium-support/>`_. Mattermost is setting up a process to meet those requirements for relevant questions raised by the GitLab premier support customers.
 
-Create support@mattermost.com account in GitLab // XXX
+GitLab is also working with their legal team to understand the process for sharing any sensitive customer information (e.g. logs) with Mattermost.
 
-For EE premier support customers, GitLab has a 4-hour support window. They would like us to meet that window for MM issues. Josh will get back to me on non-premier support issues, but generally business day coverage should be more than enough.
+More details to be added.
 
-5. SLA agreement
- - 4-hour SLA
- - Josh to create an account within GitLab. Or actually Jason should create it for `mattermost-support` and give the username to Josh
- - emails anytime the account is mentioned or assigned
- - can subscribe to the label for specific mentions --> then send alerts to a Mattermost channel
- - need to loop in with Paul/Hanna/Lindsay/James
+GitLab Non-Premier Support Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost has created a `mattermost-support` account in GitLab for support issues. The plan is for Mattermost to
+
+ - integrate GitLab issue reviews as part of existing forum issue monitoring processes,
+ - aim to answer within one business day, or at best effort, and
+ - subscribe to email alerts sent automatically when a `Mattermost` label is added to an issue, or when the `mattermost-support` account is assigned to a GitLab issue.
  
- Mattermost to investigate feasibility and best process for GitLab customers with Premium Support, so we don't breach our SLA's.
-For other customers, proposal to create a Mattermost Support account within GitLab. GitLab support could then assign issues to that user when they need attention. This should offer a good workflow for the Mattermost team and clear indication we need help on a particular issue. 
-We will continue to label Mattermost issues accordingly, so they can be subscribed to broadly.
-
-@joshlambert to work with GitLab legal to understand process for sharing any sensitive customer information (e.g. logs) with Mattermost.
-
-support@mattermost.com
- - Mattermost-label should be helpful
- - subscribe labels —> send alerts
- - Mattermost support account in GitLab.
-
- - best effort issue support for CE issues or EE starter [business day support or best effort]
- - for EE issues, business day support would be important
-
-This is what GitLab agrees with EE premium and above customers https://about.gitlab.com/features/premium-support/ [this is 4 hours]
-
-Only bundle community version of MM
-What about paid version of MM —> that way we’d get some revenue for it
+usiness day coverage should be more than enough.
 
 Templates
-----------
+--------------
 
 GitLab announcement proposal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
