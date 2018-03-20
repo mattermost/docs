@@ -30,6 +30,7 @@ Each Mattermost installation comes with some built-in slash commands that are re
     "/purpose *{text}*", "Edit the channel purpose", "/purpose A channel to discuss bugs"
     "/rename *{text}*", "Rename the channel", "/rename Developers"
     "/help", "Open the Mattermost help page", "/help"
+    "/invite *{user}* *{channel-name}*", "Invite user to the channel","/invite @john sampleChannel"
     "/invite_people *{name@domain.com ...}*", "Send an email invite to your Mattermost team","/invite_people john@example.com"
     "/kick *{@username}*", "Remove a member from a public or private channel", "/kick @alice"
     "/remove *{@username}*", "Remove a member from a public or private channel", "/remove @alice"
