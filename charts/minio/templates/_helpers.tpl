@@ -60,9 +60,3 @@ if there is a shared tls secret for all ingresses.
 {{- end -}}
 {{- pluck "secretName" .Values.ingress.tls .Values.global.ingress.tls $defaultName | first -}}
 {{- end -}}
-
-{{- define "minio.externaldns_annotations" -}}
-{{- if (pluck "configureExternaldns" .Values.global.ingress .Values.ingress (dict "configureExternaldns" false) | first) -}}
-{{- printf "external-dns.alpha.kubernetes.io/hostname: %s" (include "minioHost" . | quote) -}}
-{{- end -}}
-{{- end -}}

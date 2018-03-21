@@ -35,12 +35,6 @@ if there is a shared tls secret for all ingresses.
 {{- pluck "secretName" .Values.ingress.tls .Values.global.ingress.tls $defaultName | first -}}
 {{- end -}}
 
-{{- define "registry.externaldns_annotations" -}}
-{{- if (pluck "configureExternaldns" .Values.global.ingress .Values.ingress (dict "configureExternaldns" false) | first) -}}
-{{- printf "external-dns.alpha.kubernetes.io/hostname: %s" (include "registryHost" . | quote) -}}
-{{- end -}}
-{{- end -}}
-
 {{/*
 Returns the registry Url, ex: `http://registry.example.local`
 If `global.hosts.https` or `global.hosts.registry.https` is true, it uses https, otherwise http.

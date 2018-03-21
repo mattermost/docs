@@ -18,7 +18,6 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-read-timeout: {{ .Values.ingress.proxyReadTimeout | quote }}
     nginx.ingress.kubernetes.io/proxy-request-buffering: {{ .Values.ingress.proxyBuffering | quote }}
     nginx.ingress.kubernetes.io/proxy-buffering: {{ .Values.ingress.proxyBuffering | quote }}
-    {{ include "registry.externaldns_annotations" . }}
     {{ include "gitlab.certmanager_annotations" . }}
   {{- range $key, $value := merge .Values.global.ingress.annotations .Values.ingress.annotations }}
     {{ $key }}: {{ $value | quote }}

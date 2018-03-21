@@ -6,7 +6,6 @@ global:
     domain: example.local
     https: true
   ingress:
-    configureExternaldns: true
     configureCertmanager: false
     annotations: {}
     enabled: true

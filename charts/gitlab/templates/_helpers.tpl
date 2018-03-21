@@ -11,9 +11,3 @@ Calls into the `gitlabHost` function for the hostname part of the url.
 {{-   printf "http://%s" (include "gitlabHost" .) -}}
 {{- end -}}
 {{- end -}}
-
-{{- define "gitlab.externaldns_annotations" -}}
-{{- if (pluck "configureExternaldns" .Values.global.ingress .Values.ingress (dict "configureExternaldns" false) | first) -}}
-{{- printf "external-dns.alpha.kubernetes.io/hostname: %s" (include "gitlabHost" . | quote) -}}
-{{- end -}}
-{{- end -}}
