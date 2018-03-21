@@ -32,7 +32,7 @@ spec:
             backend:
               serviceName: {{ template "minio.fullname" . }}-svc
               servicePort: {{ .Values.servicePort }}
-  {{- if ne $minioTLSSecret "" }}
+  {{- if $minioTLSSecret }}
   tls:
     - hosts:
       - {{ $minioHost }}

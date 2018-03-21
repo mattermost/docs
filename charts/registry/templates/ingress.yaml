@@ -32,7 +32,7 @@ spec:
             backend:
               serviceName: {{ template "fullname" . }}
               servicePort: {{ .Values.service.externalPort }}
-  {{- if ne $registryTLSSecret "" }}
+  {{- if $registryTLSSecret }}
   tls:
     - hosts:
       - {{ $registryHost }}
