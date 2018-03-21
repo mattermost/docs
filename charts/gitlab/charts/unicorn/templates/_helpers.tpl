@@ -154,7 +154,7 @@ If the hostname is set in `global.hosts.gitlab.name`, that will be returned,
 otherwise the hostname will be assembed using `gitlab` as the prefix, and the `assembleHost` function.
 */}}
 {{- define "gitlabHost" -}}
-{{- coalesce .Values.ingress.hostname .Values.global.hosts.gitlab.name (include "assembleHost"  (dict "name" "gitlab" "context" . )) -}}
+{{- coalesce .Values.global.hosts.gitlab.name (include "assembleHost"  (dict "name" "gitlab" "context" . )) -}}
 {{- end -}}
 
 {{/*
