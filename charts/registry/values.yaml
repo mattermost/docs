@@ -60,13 +60,13 @@ init:
     cat /config/certificate.crt > /registry/certificate.crt
 
 # define some sane resource requests and limitations
-resources: {}
+resources:
   # limits:
   #   cpu: 200m
   #   memory: 1024Mi
-  # requests:
-  #   cpu: 100m
-  #   memory: 128Mi
+  requests:
+    cpu: 50m
+    memory: 64Mi
 
 # Chart operation controls
 enabled: true
