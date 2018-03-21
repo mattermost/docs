@@ -105,4 +105,4 @@ resources:
   #  memory: 2G
   requests:
     cpu: 200m
-    memory: 1.4G
+    memory: 2G
