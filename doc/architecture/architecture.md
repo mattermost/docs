@@ -36,14 +36,14 @@ underlying services:
 * Prometheus
 * Node Exporter
 * Nginx
-* kube-lego
+* cert-manager
 
 
 ## The GitLab Chart
 
 This is the top level `gitlab` chart, which configures all necessary resources
 for a complete configuration of GitLab. This includes GitLab, PostgreSQL, Redis,
-Ingress, and LEGO certificate management charts.
+Ingress, and certificate management charts.
 
 At this high level, a customer can make decisions like:
 

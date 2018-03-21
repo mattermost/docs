@@ -68,7 +68,6 @@ Table below contains all the possible charts configurations that can be supplied
 | shell.name                        | Shell service name                                     | gitlab-shell                                                   |
 | shell.port                        | Shell port name                                        | ssh                                                            |
 | ingress.enabled                   | Enable ingress                                         | true                                                           |
-| ingress.acme                      | Enable lets encrypt via kube-lego                      | true                                                           |
 | ingress.hosts                     | Hosts ingress listens to                               | Empty array                                                    |
 | ingress.annotations               | Annotations                                            | Undefined by default                                           |
 | ingress.tls                       | Tls certificates (custom)                              | Undefined by default                                           |

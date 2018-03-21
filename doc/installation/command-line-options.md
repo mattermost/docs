@@ -1,16 +1,35 @@
 # Installation command line options
 
-Table below contains all the possible charts configurations that can be supplied to `helm install` command using the `--set` flags
+Tables below contain all the possible charts configurations that can be supplied to `helm install` command using the `--set` flags
+
+## Basic configuration
 
 | Parameter                                    | Description                                                                  | Default                                                           |
 | ---                                          | ---                                                                          | ---                                                               |
 | global.hosts.domain                          | Domain name that will be used for all publicly exposed services              | Required                                                          |
+| nginx.LoadBalancerIp                         | Static IP to assign to nginx ingress controller                              | Required                                                          |
+| gitlab.migrations.initialRootPassword        | Password to the gitlab root account                                          | Required                                                          |
+| global.psql.host                             | Global hostname of an external psql, overrides subcharts' psql configuration | _Uses in-cluster non-production postgress_                        |
+| global.psql.password.secret                  | Global name of the secret containing the psql password                       | _Uses in-cluster non-production postgress_                        |
+| global.psql.password.key                     | Key pointing to the psql password in the psql secret                         | _Uses in-cluster non-production postgress_                        |
+
+## TLS configuration
+
+| Parameter                                    | Description                                                                  | Default                                                           |
+| ---                                          | ---                                                                          | ---                                                               |
 | global.hosts.https                           | Serve over https                                                             | true                                                              |
-| global.psql.host                             | Global hostname of an external psql, overrides subcharts' psql configuration | Optional                                                          |
-| global.psql.password.secret                  | Global name of the secret containing the psql password                       | Optional                                                          |
-| global.psql.password.key                     | Key pointing to the psql password in the psql secret                         | Optional                                                          |
+| global.ingress.configureCertmanager          | Configure cert-manager to get certificates from Let's Encrypt                | false                                                             |
+| certmanager.issuer.email                     | Email for Let's Encrypt account                                              | false                                                             |
+| global.ingress.tls.secretName                | Existing `Secret` containing wildcard TLS certificate and key                | _none_                                                            |
+| gitlab.unicorn.ingress.tls.secretName        | Existing `Secret` containing TLS certificate and key for gitlab              | {Release.Name}-gitlab-tls                                         |
+| minio.ingress.tls.secretName                 | Existing `Secret` containing TLS certificate and key for minio               | {Release.Name}-minio-tls                                          |
+| registry.ingress.tls.secretName              | Existing `Secret` containing TLS certificate and key for registry            | {Release.Name}-registry-tls                                       |
+
+## Advanced nginx ingress configuration
+
+| Parameter                                    | Description                                                                  | Default                                                           |
+| ---                                          | ---                                                                          | ---                                                               |
 | nginx.replicaCount                           | Number of replicas                                                           | 1                                                                 |
-| nginx.LoadBalancerIp                         | IP of the external load balancer                                             | Required                                                          |
 | nginx.images.defaultbackend.repository       | Default backend that nginx routes to eg: 404                                 | gcr.io/google_containers/defaultbackend                           |
 | nginx.images.defaultbackend.tag              | dafault backend image tag                                                    | 1.4                                                               |
 | nginx.images.defaultbackend.pullPolicy       | default backend pull policy                                                  | IfNotPresent                                                      |
@@ -28,22 +47,17 @@ Table below contains all the possible charts configurations that can be supplied
 | nginx.proxyBodySize                          | body size                                                                    | 512m                                                              |
 | nginx.hstsIncludeSubdomains                  | set HSTS for all subdomains                                                  | false                                                             |
 | nginx.serverNameHashBucketSize               | Sets the bucket size for the server names hash tables                        | 256                                                               |
-| nginx.global.hosts.domain                    | Domain name                                                                  | example.local                                                     |
-| nginx.global.hosts.hostSuffix                |                                                                              | Undefined by default                                              |
-| nginx.global.hosts.https                     | True if nginx will serve over https                                          | false                                                             |
-| nginx.global.hosts.gitlab.serviceName        | Gitlab service name                                                          | unicorn                                                           |
-| nginx.global.hosts.gitlab.servicePort        | Gitlab service port name                                                     | workhorse                                                         |
-| nginx.global.hosts.registry.serviceName      | Registry service name                                                        | registry                                                          |
-| nginx.global.hosts.registry.servicePort      | Registry port name                                                           | registry                                                          |
-| nginx.global.hosts.minio.serviceName         | Minio service name                                                           | minio-svc                                                         |
-| nginx.global.hosts.minio.servicePort         | Minio port name                                                              | service                                                           |
 | nginx.shell.name                             | Shell service name                                                           | gitlab-shell                                                      |
 | nginx.shell.port                             | Shell port name                                                              | ssh                                                               |
 | nginx.ingress.enabled                        | Enable ingress                                                               | true                                                              |
-| nginx.ingress.acme                           | Enable lets encrypt via kube-lego                                            | true                                                              |
 | nginx.ingress.hosts                          | Hosts ingress listens to                                                     | Empty array                                                       |
 | nginx.ingress.annotations                    | Annotations                                                                  | Undefined by default                                              |
 | nginx.ingress.tls                            | Tls certificates (custom)                                                    | Undefined by default                                              |
+
+## Advanced in-cluster redis configuration
+
+| Parameter                                    | Description                                                                  | Default                                                           |
+| ---                                          | ---                                                                          | ---                                                               |
 | redis.image.repository                       | Redis image repository                                                       | redis                                                             |
 | redis.image.tag                              | Redis image tag                                                              | 3.2.5                                                             |
 | redis.image.pullPolicy                       | Redis image pull policy                                                      | IfNotPresent                                                      |
@@ -63,7 +77,12 @@ Table below contains all the possible charts configurations that can be supplied
 | redis.persistence.accessMode                 | Redis access mode                                                            | ReadWriteOnce                                                     |
 | redis.persistence.size                       | Size of volume needed for redis persistence                                  | 5Gi                                                               |
 | redis.persistence.subPath                    | Subpath to mount persistence volume at                                       |                                                                   |
-| registry.enabled                             | Enable registry flag                                                         | true                                                              |
+
+## Advanced registry configuration
+
+| Parameter                                    | Description                                                                  | Default                                                           |
+| ---                                          | ---                                                                          | ---                                                               |
+| registry.enabled                             | Enable docker registry                                                       | true                                                              |
 | registry.httpSecret                          | Https secret                                                                 |                                                                   |
 | registry.authEndpoint                        | Auth endpoint                                                                | Undefined by default                                              |
 | registry.tokenService                        | JWT token service                                                            | container_registry                                                |
@@ -74,6 +93,11 @@ Table below contains all the possible charts configurations that can be supplied
 | registry.minio.enabled                       | Enable minio flag                                                            | true                                                              |
 | registry.minio.bucket                        | Minio registry bucket name                                                   | registry                                                          |
 | registry.minio.credentials.secret            | Secret containing minio credentials                                          | gitlab-minio                                                      |
+
+## Advanced minio configuration
+
+| Parameter                                    | Description                                                                  | Default                                                           |
+| ---                                          | ---                                                                          | ---                                                               |
 | minio.image                                  | Minio image                                                                  | minio/minio                                                       |
 | minio.imageTag                               | Minio image tag                                                              | RELEASE.2017-12-28T01-21-00Z                                      |
 | minio.imagePullPolicy                        | Minio image pull policy                                                      | Always                                                            |
@@ -93,6 +117,11 @@ Table below contains all the possible charts configurations that can be supplied
 | minio.minioConfig.region                     | Minio region                                                                 | us-east-1                                                         |
 | minio.minioConfig.browser                    | Minio browser flag                                                           | on                                                                |
 | minio.minioConfig.domain                     | Minio domain                                                                 |                                                                   |
+
+## Advanced gitlab configuration
+
+| Parameter                                    | Description                                                                  | Default                                                           |
+| ---                                          | ---                                                                          | ---                                                               |
 | gitlab.gitaly.replicaCount                   | Gitaly replicas                                                              | 1                                                                 |
 | gitlab.gitaly.image.repository               | Gitaly image repository                                                      | registry.gitlab.com/gitlab-org/build/cng/gitaly                   |
 | gitlab.gitaly.image.tag                      | Gitaly image tag                                                             | latest                                                            |
@@ -215,5 +244,3 @@ Table below contains all the possible charts configurations that can be supplied
 | gitlab.migrations.psql.password.key          | key to psql password in psql secret                                          | psql-password                                                     |
 | gitlab.migrations.railsSecrets.secret        | Secret containing rails secrets.yml                                          | rails-secrets                                                     |
 | gitlab.migrations.railsSecrets.key           | Key to contents of secrets.yml in rails secret                               | secrets.yml                                                       |
-| gitlab.migrations.initialRootPassword        | Password to the gitlab root account                                          | Required                                                          |
-

@@ -2,7 +2,6 @@
 
 For a functional deployment, different types of secrets are needed:
 
-* TLS Certificates for GitLab, Registry, Minio
 * Registry authentication certificates
 * SSH Host Keys and Certificates for GitLab Shell
 * Passwords for individual components
@@ -19,8 +18,6 @@ To provide one or more manual secrets, continue reading.
 
 **Table of Contents**
 
-- [TLS Certificates](#tls-certificates)
-  * [Custom certificates](#custom-certificates)
 - [Registry authentication certificates](#registry-authentication-certificates)
 - [SSH Host Keys](#ssh-host-keys)
 - [Passwords](#passwords)
@@ -30,46 +27,6 @@ To provide one or more manual secrets, continue reading.
   * [Gitaly Secret](#gitaly-secret)
   * [Minio Secret](#minio-secret)
 - [Next Steps](#next-steps)
-
-## TLS Certificates
-
-By default Let's Encrypt certificates are used via [kube-lego](../kube-lego/README.md).
-
-Using [custom certificates](#custom-certificates) is optionally supported.
-
-### Custom certificates
-
-Using Let's encrypt certificates can be optionally disabled and custom certificates can be used
-instead.
-
-We advise that wildcard certificates are obtained to prevent the need to
-generate and maintain multiple sets of TLS certificates.
-
-In this section, we will be describing the use of wildcard
-certificates. Ensure that the `.crt` file used is a properly structured full-chain
-certificate. Not using the full-chain certificate will result in a broken chain causing
-the certificate to not be trusted by many clients.
-
-> Note: GitLab Inc. employees have access to certificates generated specifically for
-development in this project. They are located in the `Cloud Native`
-vault in `1Password`. Only the `*chained.crt` certificate should be used.
-
-
-Add the TLS wildcard certificate to cluster secrets with:
-
-```
-kubectl create secret tls <name> --cert=<path/to.crt> --key=<path/to.key>
-
-secret "<name>" created
-```
-
-For example, if we assume that our key-certificate pair is located in `certs` directory,
-and that we are creating a secret named `example-local-tls`, command will look
-something like:
-
-```
-kubectl create secret tls example-local-tls --cert=certs/-.example.local.chained.crt --key=certs/-.example.local.key
-```
 
 ## Registry authentication certificates
 

@@ -7,4 +7,3 @@ Documentation Organization:
 - [Charts](charts/README.md) (laid out as the charts are)
 - [Minikube](minikube/README.md)
 - [Helm](helm/README.md)
-- [Let's Encrypt via kube-lego](kube-lego/README.md)

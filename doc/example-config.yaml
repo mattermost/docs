@@ -17,14 +17,6 @@ nginx:
   serviceAccount:
     autoGenerate: true
 
-# Kube lego
-kube-lego:
-  enabled: true
-  config:
-    LEGO_EMAIL: email@domain.tld
-  rbac:
-    create: true
-
 # Registry chart Provides services to Unicorn/Omnibus chart(s) and external clients
 registry:
   enabled: true

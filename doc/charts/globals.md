@@ -49,19 +49,16 @@ The above config would result in using external hostnames like: `gitlab-staging.
 
 #### https
 
-Set to true for external urls to use `https://` instead of `http`. Defaults to false. If set to true, you will need to ensure
-the nginx chart has access to the certificates. This can be done by providing the `tls.secretName` (see below) or by setting
-up [kube-lego](../kube-lego/README.md) and enabling [acme support in the nginx chart](nginx/README.md#acme).
+Set to false for external urls to use `http://` instead of `https`. Defaults to true. If set to true, you will need to ensure
+the nginx chart has access to the certificates.
 
 #### tls.secretName
 
-Set the name of the [Kubernetes TLS Secret][Secret] that contains the **wildcard** certificate and key to use for all subdomains
+Set the name of the [Kubernetes TLS Secret][Secret] that contains a **wildcard** certificate and key to use for all subdomains
 of the base `domain` ([See our docs on creating the secrets][GitLab Secrets]). Alternatively you can give each host a different
 certificate in their own `tls` section. See `gitlab.tls.secretName` and `registry.tls.secretName` below.
 
 Defaults to not being set.
-
-*Note:* This secretName is ignored if kube-lego is being used on the ingress, in favor of the `acme` secret.
 
 ### gitlab
 
@@ -91,8 +88,6 @@ The named port of the `service` where the GitLab server can be reached. This def
 The name of the [Kubernetes TLS Secret][Secret] that containers a certificate and key for the gitlab external hostname.
 Falls back to the `global.hosts.tls.secretName` when not provided. Defaults to not being set.
 
-*Note:* This secretName is ignored if kube-lego is being used on the ingress, in favor of the `acme` secret.
-
 ### registry
 
 The `registry` section of `global.hosts` includes configuration for the Registry external hostname, and which internal service
@@ -120,8 +115,6 @@ The named port of the `service` where the Registry server can be reached. This d
 
 The name of the [Kubernetes TLS Secret][Secret] that containers a certificate and key for the Registry external hostname.
 Falls back to the `global.hosts.tls.secretName` when not provided. Defaults to not being set.
-
-*Note:* This secretName is ignored if kube-lego is being used on the ingress, in favor of the `acme` secret.
 
 ### minio
 
@@ -151,8 +144,6 @@ The named port of the `service` where the Minio server can be reached. This defa
 The name of the [Kubernetes TLS Secret][Secret] that containers a certificate and key for the Minio external hostname.
 Falls back to the `global.hosts.tls.secretName` when not provided. Defaults to not being set.
 
-*Note:* This secretName is ignored if kube-lego is being used on the ingress, in favor of the `acme` secret.
-
 ## Configure Ingress settings
 
 The GitLab global host settings are located under the `global.ingress` key.
@@ -160,7 +151,6 @@ The GitLab global host settings are located under the `global.ingress` key.
 |name|type|default|
 |:---|:---|:------|
 |[global.ingress.enabled](#global-ingress-enabled)|boolean|true|
-|[global.ingress.acme](#global-ingress-acme)|boolean|true|
 |[global.ingress.tls.secretName](#global-ingress-tls-secretName)|string|(empty)|
 |[global.ingress.annotations.*annotation-key*](#global-ingress-annotations-annotation-key)|string|(empty)|
 
@@ -168,21 +158,11 @@ The GitLab global host settings are located under the `global.ingress` key.
 
 Global setting that controls whether to create ingress objects for services that support them. Defaults to `true`.
 
-### global.ingress.acme
-
-This enables the use of the [kube-lego](kube-lego/README.md) chart, if available. If enabled, this will auto-populate the requirements and host values for `kube-lego` to request certificates from Let's Encrypt.
-
-Defaults to `true`.
-
-*Note:* With `acme` set to true, you do not need to populate any other of the tls secretNames.
-
 ### global.ingress.tls.secretName
 
 The name of the [Kubernetes TLS Secret][Secret] that contains a **wildcard** certificate and key for the domain used in `global.hosts.domain`.
 
 Defaults to not being set.
-
-*Note:* This secretName is ignored if kube-lego is being used on the ingress, in favor of the `acme` secret.
 
 ### global.ingress.annotations.annotation-key
 
@@ -193,6 +173,3 @@ ex:
 `global.ingress.annotations."nginx\.ingress\.kubernetes\.io/enable-access-log"=true`
 
 No global annotations are provided by default.
-
-[Secret]:https://kubernetes.io/docs/concepts/configuration/secret/
-[GitLab Secrets]:../installation/secrets.md
