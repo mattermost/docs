@@ -16,7 +16,7 @@ global:
 certmanager:
   # Install cert-manager chart. Set to false if you already have cert-manager
   # installed or if you are not using cert-manager.
-  install: false
+  install: true
   # Configure an ACME Issuer in cert-manager. Only used if configure==true
   issuer:
     server: https://acme-v01.api.letsencrypt.org/directory
