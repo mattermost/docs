@@ -75,13 +75,11 @@ from your cluster's IP ranges. For example if your cluster has pods using `100.6
 ## Deploy using helm
 
 Once you have all of your configuration options collected, we can get any dependencies and
-run helm. In this example, we've named our helm release "gitlab" and we're installing it in
-the "gitlab" namespace
+run helm. In this example, we've named our helm release "gitlab".
 
 ```
 $ helm dependencies update
 $ helm upgrade --install gitlab . \
-  --namespace gitlabdemo \
   --timeout 600 \
   --set global.hosts.domain=example.local \
   --set nginx.service.loadBalancerIP=10.10.10.10 \
