@@ -1,18 +1,22 @@
 # Preparing GKE resources
 
-To operate effectively, you will need to create a few resources before configuration and deployment of this chart.
+For a fully functional GitLab instance, you will need to create a few resources before deployment of this chart.
 
-You'll need a domain on which to host the services, which we will not cover here.
+1. A [GKE cluster](#creating-the-gke-cluster) with an associated external IP
+1. A [wildcard DNS entry](#dns-entry) which resolves to the external IP
 
-You will need a [static IP](#static-ip) for the Ingress, so that you can create a [DNS entry](#dns-entry) for your hostnames.
+## Creating the GKE cluster
 
-## Bootstrap
+To make getting started easier, we have provided a script to [automate cluster creation](#scripted-cluster-creation-on-gke). Alternatively, a cluster can be [created manually](#manual-cluster-creation) as well.
 
-Google Cloud SDK is a dependency of this script, you will have to make sure it is set up correctly in order for the script to work.
+### Scripted cluster creation
 
-Follow the [instructions](../helm/README.md#connect-to-the-cluster) for connecting your GKE cluster.
+We have created a [bootstrap script](../../scripts/gke_bootstrap_script.sh) to automate much of the setup process for users on GCP/GKE. It will:
+* Create a new GKE cluster
+* Setup kubectl, and connect it to the cluster
+* Initialize Helm and install Tiller
 
-The [scripts/gke_bootstrap_script.sh](../../scripts/gke_bootstrap_script.sh) script creates a new GKE cluster, sets up kubectl to connect to it and initializes helm.
+Google Cloud SDK is a dependency of this script, you will have to make sure it is [set up correctly](../helm/README.md#connect-to-the-cluster) in order for the script to work.
 
 The script reads various parameters from environment variables and an argument `up` or `down` for bootstrap and clean up respectively.
 
@@ -40,16 +44,25 @@ The script can also be used to clean up the created GKE resources by running
 ```bash
 PROJECT=<gcloud project id> ./scripts/gke_bootstrap_script.sh down
 ```
-> *Note:* You need to be logged into your account using gcloud before running the bootstrap script
 
+With the cluster created, continue to [creating the DNS entry](#dns-entry).
 
-## Static IP
+### Manual cluster creation
 
-**If you used the default bootstrap install script to setup your cluster, the script will have output your static IP address when it completed. Skip the rest of this section and use that IP address to configure DNS in the next section.**
+Two resources need to be created in GCP, a Kubernetes cluster and an external IP.
 
-External IP for ingress is required so that your cluster can be reachable. The external IP needs to be regional and in the same region as the cluster itself
+#### Creating the Kubernetes cluster
 
-> A global IP or an IP outside the region will not work.
+To provision the Kubernetes cluster manually, follow the [GKE instructions](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-container-cluster).
+
+* We recommend a cluster with 8vCPU and 30gb of RAM.
+* Make a note of the cluster's region, it will be needed in the next step.
+
+#### Creating the external IP
+
+An external IP is required so that your cluster can be reachable. The external IP needs to be regional and in the same region as the cluster itself.
+
+> A global IP or an IP outside the cluster's region will not work.
 
 To create a static IP run the following gcloud command:
 
