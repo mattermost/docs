@@ -75,3 +75,22 @@ Features that are currently out of scope:
 
 * Support for MySQL https://gitlab.com/charts/helm.gitlab.io/issues/250
 * Mattermost https://gitlab.com/charts/helm.gitlab.io/issues/251
+
+## Path to beta and general availability
+
+The next phase in the chart lifecycle after alpha will be a beta phase. Our goals for entering beta are:
+
+* All features of GitLab are fully functional
+* Backup and restore are supported
+* Upgrades are supported
+* Object storage support for S3 compatible interfaces
+* No expected breaking changes
+
+Once beta is complete, the next phase will be general availability. Our goals for the charts to be generally available are:
+
+* High availability, with self-healing pods
+* Scalable to very large deployments
+* Down-time free upgrades
+* Production grade monitoring, logging
+* Mature support and documentation for common Kubernetes deployment targets, like: on-premise, EKS, AKS, PKS.
+* No breaking changes
