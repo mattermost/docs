@@ -104,6 +104,7 @@ Upcoming Work
 
  - `Disable Mattermost System Console settings that are configured via environment variables <https://mattermost.atlassian.net/browse/MM-9849>`_.
  - `Investigate what config.json-only settings need to be added to the Mattermost System Console <https://mattermost.atlassian.net/browse/MM-9850>`_.
+ - `Support environment variable configuration options even if there's no entry for it in config.json <https://mattermost.atlassian.net/browse/MM-8400>`_.
  - `Update documentation <https://gitlab.com/gitlab-org/omnibus-gitlab/issues/3284>`_ and fully test the migration.
 
 2. `Add timezones.json to GitLab Omnibus build <https://mattermost.atlassian.net/browse/MM-9873>`_ to support new Timezone user setting. - **Due: Mattermost v4.10 / GitLab v11.0**
