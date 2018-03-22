@@ -1,8 +1,8 @@
 # Cloud Native GitLab Helm Chart
 
 > **Notes**:
-  * This chart is **alpha**. It should not be used for production deployments.
-  * There are [known issues and limitations](doc/architecture/alpha.md).
+* This chart is **alpha**. It should not be used for production deployments.
+* There are [known issues and limitations](doc/architecture/alpha.md).
 
 
 We are working on a new cloud native method of deploying GitLab on Kubernetes.
