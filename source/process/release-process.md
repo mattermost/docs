@@ -52,15 +52,14 @@ No pull requests for major features should be **merged** to the current release 
     - Submit NOTICE.txt PR for any new libraries added from dev, if not added already. The following two files contain a list of dependencies:
         - https://github.com/mattermost/mattermost-webapp/blob/master/package.json
         - https://github.com/mattermost/mattermost-server/blob/master/glide.yaml
-3. Logistics:
     - Start posting a daily Zero Bug Balance query (posted until zero bugs or day of release)
     - Notify community about upcoming release in Reception [see example](https://pre-release.mattermost.com/core/pl/aq434e5dt3ntmfdowhekxjzi4r)
-4. PM:
+3. PM:
     - Review Jira Backlog and move any tickets that will not be merged to the next release
-5. Dev:
+4. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
       - After the cut-off, any PRs that include significant code changes, require approval of the release manager before merging
-6. Marketing:
+5. Marketing:
     - Prepare bullet points and release headline for release announcement. Release manager to review the outline (benefits and order of major features) with PMs before sending to Justin to work on
     - Decide which sections of the release announcement will have an accompanying screenshot / photo
     
@@ -85,16 +84,15 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Update Changelog PR based on what's in/out of the release
     - Create meta issue for release in GitHub (see [example](https://github.com/mattermost/mattermost-server/issues/3702))
     - Post a link to Release Discussion channel for query of [remaining bugs in this release](https://mattermost.atlassian.net/browse/PLT-8426?filter=14100)
-3. Logistics:
     - Confirm date of marketing announcement for the release date with Marketing, and update release channel header if needed
       - If release day falls on a Friday, the blog post goes out on the Friday and the emailed newsletter goes out the following Tuesday.
     - Post a reminder to devs in the Release Discussion channel of the the code complete date with the ZBB count [see example](https://pre-release.mattermost.com/core/pl/coggyys9atg7fqyam81q3gkmoo)
-4. Leads:
+3. Leads:
     - Finalize roadmap for next release, and identify planned marketing bullet points
-5. PM:
+4. PM:
     - Based on results of Team Meeting discussion, create tickets for features that need to be turned on or off for the release
     - Review the JIRA tickets remaining in the current release fix version and push those that won't make it to the next fix version
-6. Marketing:
+5. Marketing:
     - Start drafting blog post, tweet, and email for the release announcement
     
 ### F. (T-minus 9 working days) Code complete
@@ -207,6 +205,8 @@ The final release is cut. If an urgent and important issue needs to be addressed
     - Close GitHub meta ticket for the release
     - Add the download links and SHA-256 hash [upgrade guide](http://docs.mattermost.com/administration/upgrade.html#version-archive)
     - Merge changelog PR after review is complete
+    - Update the [Mattermost server download page](https://www.mattermost.org/download/) with the links to the EE and TE bits
+      - Test the download links before and after updating the page
 2. Build:
     - Tags a new release (e.g. 1.1.0) and runs an official build which should be essentially identical to the last RC 
     - Posts SHA key, md5 sum and GPG signatures of the final build to release channel
@@ -232,8 +232,6 @@ The final release is cut. If an urgent and important issue needs to be addressed
     - Ensure [Security Policies](https://docs.mattermost.com/process/security.html) page has been updated
     - Update dependancies after release branch is cut in `mattermost-server`, `mattermost-webapp`, `desktop`, `mattermost-mobile` and `mattermost-redux`
 5. Logistics:
-    - Update the [Mattermost server download page](https://www.mattermost.org/download/) with the links to the EE and TE bits
-      - Test the download links before and after updating the page
     - Update [MVP page](https://www.mattermost.org/mvp/) with the most valuable contributor of the release
 6. Docs:
     - Finalize docs
@@ -257,7 +255,6 @@ If a security fix release is required, run through the following steps:
 2. Release Manager:
     - Update the changelog
     - Update the [version archive](https://docs.mattermost.com/administration/version-archive.html)
-3. Logistics:
     - Update [Mattermost server download page](https://mattermost.org/download) with the links to the EE and TE bits
       - Test the download links before and after updating the page
     - Contact owners of [community installers](http://www.mattermost.org/installation/) or submit PRs to update install version number
@@ -265,7 +262,7 @@ If a security fix release is required, run through the following steps:
       - For Chef Cookbook, open a new issue to announce the new release. See [example](https://github.com/verifi-inc/mattermost/issues/2).
       - For Yunohost, open a new pull request to update the version. See [example](https://github.com/kemenaran/mattermost_ynh/pull/11).
       - For OpenShift, open a new pull request to update the version. See [example](https://github.com/goern/mattermost-openshift/pull/13).
-4. Marketing:
+3. Marketing:
     - Prepare [blog post](https://about.mattermost.com/mattermost-3-6-2/) for mattermost.com, MailChimp email blast, and [Twitter announcement](https://twitter.com/mattermosthq/status/827193482578112512), and send to marketing lead for review. Once reviewed, schedule for 08:00 PST on the day after dot release
     
 If a bug fix release is required, run through the following steps:
@@ -307,9 +304,6 @@ Once bug fix release is ready to cut:
 3. Release Manager:
     - Merge the Changelog PR with notes on patch releases (see [example entry](https://docs.mattermost.com/administration/changelog.html#release-v3-5.1))
     - Update the [version archive](https://docs.mattermost.com/administration/version-archive.html)
-4. QA:  
-    - Verifies each of the issues in the patch release are fixed
-5. Logistics:
     - Update [Mattermost server download page](https://mattermost.org/download) with the links to the EE and TE bits
       - Test the download links before and after updating the page
     - Contact owners of [community installers](http://www.mattermost.org/installation/) or submit PRs to update install version number
@@ -317,7 +311,9 @@ Once bug fix release is ready to cut:
       - For Chef Cookbook, open a new issue to announce the new release. See [example](https://github.com/verifi-inc/mattermost/issues/2).
       - For Yunohost, open a new pull request to update the version. See [example](https://github.com/kemenaran/mattermost_ynh/pull/11).
       - For OpenShift, open a new pull request to update the version. See [example](https://github.com/goern/mattermost-openshift/pull/13).
-6. Marketing:
+4. QA:  
+    - Verifies each of the issues in the patch release are fixed
+5. Marketing:
     - Prepare [blog post](https://about.mattermost.com/mattermost-3-6-2/) for mattermost.com, MailChimp email blast, and [Twitter announcement](https://twitter.com/mattermosthq/status/827193482578112512), and send for marketing lead to review. Once reviewed, schedule for 08:00 PST on the day after dot release
       - **Note:** If the release contains a security update, also draft a Mailchimp email blast for the [Security Bulletin mailing list](http://eepurl.com/cAl5Rv)
       - Upgrade should be recommended if there are security fixes in the dot release version
@@ -332,7 +328,6 @@ Once bug fix release is ready to cut:
         - Make sure that statutory holidays for Canada and US are accounted for in the release dates
     - Check for any [UserVoice](https://docs.google.com/spreadsheets/d/1nljd4cFh-9MXF4DxlUnC8b6bdqijkvi8KHquOmK8M6E/edit#gid=0) feature suggestions that were completed in the current release
       - Find the [release tweet](https://twitter.com/mattermosthq/status/854781715914555393) and insert a link to the tweet next to the feature that shipped with the release.
-2. Logistics: 
     - For the next release, create the following team meetings. If they conflict with existing meetings, check with meeting owner to reschedule or reschedule the release meeting
       - PM Release Update meeting on T-15 at 7:30am San Francisco time
       - Major Feature Complete Meeting on T-12 at 10:00am San Francisco time
@@ -361,19 +356,19 @@ Once bug fix release is ready to cut:
       - For Chef Cookbook, open a new issue to announce the new release. See [example](https://github.com/ist-dsi/mattermost-cookbook/issues/22).
       - For Yunohost, open a new pull request to update the version. See [example](https://github.com/YunoHost-Apps/mattermost_ynh/pull/103).
       - For OpenShift, open a new issue to update the version. See [example](https://github.com/rhdt/mattermost-openshift/issues/7).
-3. Docs:
+2. Docs:
     - Create a new branch on docs for the next release - `vX.X-documentation`
         - Submit a PR for changelog against the `vX.X-documentation` branch and add a `Work in Progress` label for it
         - Submit a PR to change version number in `docs/source/conf.py` against the `vX.X-documentation` branch
-4. Build:
+3. Build:
     - Put pre-release back on master
     - Put CI servers and translation server back onto master, and post in Release Discussion channel once done
     - Update [ci-linux-mysql-prev](https://ci-linux-mysql-prev.mattermost.com) to the previous release version
-5. Dev:
+4. Dev:
     - Delete RCs after final version is shipped    
     - Confirm gitlab.mattermost.com is updated to final build
     - Merge changes made to release branch into `master`
-6. Marketing:
+5. Marketing:
     - Turn on CrazyEgg for blog post page
     - Confirm marketing has been posted (animated GIFs, screenshots, mail announcement, tweets, blog posts)
     - Update @mattermosthq Twitter profile with the next release date
@@ -383,13 +378,9 @@ Once bug fix release is ready to cut:
 1. Release Manager:
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
-2. Logistics:
-    - Provide Marketing with a list of new security researchers and/or updated contribution count/s for existing researchers from the Security spreadsheet
-    - Provide Marketing with an updated list of 'latest version of Mattermost' supported by community installers for the Airtable Integrations Directory.
-3. Marketing:
-    - Update Security Research Hall of Fame on the [Responsible Disclosure Policy](https://about.mattermost.com/report-security-issue/) page as per additions provided by Logistics in 2. above
-    - Update 'latest version of Mattermost' supported in the Airtable Integrations Directory on the [Mattermost Apps and Integrations](https://about.mattermost.com/community-applications) page as per updates provided by Logistics in 2. above.
-4. Leads:
+    - Update Security Research Hall of Fame on the [Responsible Disclosure Policy](https://about.mattermost.com/report-security-issue/) page
+    - Update 'latest version of Mattermost' supported in the Airtable Integrations Directory on the [Mattermost Apps and Integrations](https://about.mattermost.com/community-applications) page
+2. Leads:
     - Update [company roadmap at mattermost.com](https://about.mattermost.com/direction/)
 
 ### M. (T-plus 10 working days) Update Mattermost Security Page
