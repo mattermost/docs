@@ -1,11 +1,10 @@
-# Deploy
+# Deploying GitLab
 
-In order to deploy, make sure you have done the following:
+In order to deploy, make sure you have completed the following:
 
-- `Secrets` are created - [secrets documentation](secrets.md)
-- You have the static-ip for the `loadBalancerIP`
-- DNS entry made for the domain pointing to the `loadBalancerIP`
-- `initialRootPassword` - created or chosen at random
+- [`Secrets` have been created](secrets.md)
+- An [external IP](../cloud/gke.md#creating-the-external-ip) in the same region as your cluster, to be used as the `loadBalancerIP`
+- A wildcard [DNS entry](../cloud/gke.md#dns-entry) which resolves to the external IP above
 
 For these examples:
 
@@ -14,8 +13,10 @@ For these examples:
 - We will use `X.X.X.X` as our `loadBalancerIP`
 - Our `initialRootPassword` will be `example-password`
 
-To deploy, we'll run `helm install` with our settings, from the
-root of this repository. Ensure you are at the root of your git checkout!
+To deploy, first clone the repository locally: `git clone git@gitlab.com:charts/helm.gitlab.io.git`
+
+We will run `helm install` with our settings, from the
+root of this repository.
 
 ## Deploy with Let's Encrypt
 
@@ -37,19 +38,18 @@ helm install . --name gitlab --timeout 600 \
   --set global.ingress.acme=false \
   --set nginx.service.loadBalancerIP=X.X.X.X \
   --set kube-lego.enabled=false \
-  --set gitlab.migrations.initialRootPassword=<Your Password>
+  --set gitlab.migrations.initialRootPassword="example-password"
 ```
 
 A complete list  of command line options can be found [here](./command-line-options.md)
 
-## Postgresql
+## PostgreSQL
 
-By default we use omnibus chart to provide a postgresql database for deployments. The omnibus
-provided postgresql is not production ready and should not be used in production.
+By default we use a single node PostgreSQL instance for deployments. This postgres instance is not production ready and should not be used in production.
 
 To use an external database follow the [advanced database docs](../advanced/external-db/README.md)
 
-## Monitoring Deployment
+## Monitoring the Deployment
 
 This will output the list of resources installed once the deployment finishes which may take 5-10 minutes.
 

@@ -6,7 +6,7 @@ We plan to support three tiers of components:
 1. Scheduler (Kubernetes)
 1. Higher level configuration tool (Helm)
 
-The main method customers would use to install would be the [Helm Charts]() in this repository.
+The main method customers would use to install would be the [Helm Chart](https://helm.sh/) in this repository.
 At some point in the future, we may also offer other deployment methods like
 Amazon CloudFormation or Docker Swarm.
 
