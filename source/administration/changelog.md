@@ -39,6 +39,7 @@ Release date: 2018-04-16
  - Added a user interface top banner for System Admins who use APIv3.
  - Added integration of team icons which appear in the team sidebar within the border of the existing team icons.
  - Return cursor to reply thread input box after deleting a reply from the right-hand sidebar.
+ - Added ability for users to load more recent messages after jumping to a search result.
  
 #### Performance
  - Added cache invalidation totals to metrics.
@@ -61,6 +62,7 @@ Release date: 2018-04-16
  - Added support for LOGIN authentication method for SMTP.
  - Added support for AWS Identity and Access Management (IAM) role, and added a button to test AWS connection.
  - Added support for ec2 instance profile authentication.
+ - Emitted all default enterprise configuration options, even for team edition.
 
 ### Bug Fixes
 
