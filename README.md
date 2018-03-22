@@ -2,7 +2,7 @@
 
 > **Notes**:
 * This chart is **alpha**. It should not be used for production deployments.
-* There are [known issues and limitations](doc/architecture/alpha.md).
+* There are [known issues and limitations](doc/architecture/alpha.md#known-issues-and-limitations).
 
 
 We are working on a new cloud native method of deploying GitLab on Kubernetes.
@@ -17,7 +17,7 @@ Some of the key benefits of the new chart and containers are:
 * No requirement for root privileges
 * Utilization of object storage instead of NFS for storage
 
-The chart is currently in alpha, and not recommended for production use. For more information on all of GitLab's Helm Charts, please consult our [documentation](http://docs.gitlab.com/ce/install/kubernetes/).
+This chart is currently in alpha, and should only be used for testing and development. If you'd like to run GitLab in production today, we recommend using the [`omnibus-gitlab` chart](https://docs.gitlab.com/ce/install/kubernetes/gitlab_omnibus.html).
 
 ## Architecture and goals
 
