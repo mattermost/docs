@@ -34,18 +34,33 @@ Release date: 2018-04-16
 
 ### Improvements
 
+#### Web User Interface
  - Added rendering of at-mentions by the teammate name display.
  - Added a user interface top banner for System Admins who use APIv3.
- - Added cache invalidation totals to metrics.
- - Added a platform command to change user email address.
- - Added push notifications are sent for own DM's.
- - Added support for LOGIN authentication method for SMTP.
- - Added support for ec2 instance profile authentication.
- - Added support for AWS Identity and Access Management (IAM) role, and added a button to test AWS connection.
- - Integration of Team Icons which appear in the team sidebar within the border of the existing team icons.
- - Changed wording of messages indicating that push notifications are disabled.
+ - Added integration of team icons which appear in the team sidebar within the border of the existing team icons.
  - Return cursor to reply thread input box after deleting a reply from the right-hand sidebar.
+ 
+#### Performance
+ - Added cache invalidation totals to metrics.
+ - Rewrote `getParentsPosts` to force the database to use the `PRIMARY` index when fetching posts instead of trying to filter down by channel and doing a scan. 
+ 
+#### Plugins (beta)
+ - Exported text formatting functions to webapp plugins to allow them to format text, emojis, markdown, and so on.
+
+#### Notifications
+ - Changed push notifications so that they are sent for own direct messages.
+ - Changed wording of messages indicating that push notifications are disabled.
+ 
+#### Administration
  - Migrated admin console to a new declarative way.
+ 
+#### Slash commands
+ - Added a platform command to change user email address.
+ 
+#### Enterprise Edition
+ - Added support for LOGIN authentication method for SMTP.
+ - Added support for AWS Identity and Access Management (IAM) role, and added a button to test AWS connection.
+ - Added support for ec2 instance profile authentication.
 
 ### Bug Fixes
 
@@ -61,6 +76,17 @@ Release date: 2018-04-16
  #### config.json
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+
+ - Under `MessageExportSettings` in `config.json`:
+     - Added `"CustomerType": "A9"`, to ensure...
+     - Added `"SmtpUsername": ""`, to ensure...
+     - Added `"SmtpPassword": ""`, to ensure...
+     - Added `"EmailAddress": ""`, to ensure...
+ - Under ` "SamlSettings"` in `config.json`:
+     - Added `"ScopingIDPProviderId": ""`, to esure...
+     - Added `"ScopingIDPName": ""`, to ensure...
 
 ### API Changes
 
