@@ -6,12 +6,12 @@ Troubleshooting Setup and Build
 Build errors
 ------------
 
-Mac OS X: I get the following error when running ``make run``: "Cannot connect to the Docker daemon"
+macOS: I get the following error when running ``make run``: "Cannot connect to the Docker daemon"
   If you have Docker Tools installed (as opposed to Docker for Mac), make sure docker-machine is running.
 
   ``docker-machine start dev``
 
-Mac OS X: I get the following error or something similar when running ``make run``: "Module build failed: Error: dyld: Library not loaded: /usr/local/opt/libpng/lib/libpng16.16.dylib"
+macOS: I get the following error or something similar when running ``make run``: "Module build failed: Error: dyld: Library not loaded: /usr/local/opt/libpng/lib/libpng16.16.dylib"
   libpng needs to be updated because it is used by one of our dependencies. If you do not have libpng installed through Homebrew, run
 
   ``brew install libpng``
@@ -34,7 +34,7 @@ I get the following error when running ``make run``: "Error starting server, err
 
   If there isn't another copy of Mattermost running and you need to change the port that Mattermost is running on, you can do so by changing the ``ListenAddress`` setting in the *ServiceSettings* section of ``config/config.json``.
 
-Mac OS X: I get the following error or something similar when running ``make run``: [EROR] Failed to ping DB retrying in 10 seconds err=Error 1045: Access denied for user ‘mmuser’@’localhost’ (using password: YES) 
+macOS: I get the following error or something similar when running ``make run``: [EROR] Failed to ping DB retrying in 10 seconds err=Error 1045: Access denied for user ‘mmuser’@’localhost’ (using password: YES) 
   It appears that 'mmuser' is not created as a user in your MySQL database. Hence create the new user by using the following command:
   ``CREATE USER 'mmuser'@'localhost' IDENTIFIED BY 'mostest';``
 
