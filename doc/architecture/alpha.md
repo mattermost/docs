@@ -1,16 +1,29 @@
-# Alpha charts
+# GitLab Cloud Native Chart Alpha
 
-During the alpha release of these charts, certain features and functionality
-won't be available.
+We have been working hard on the chart and it's underlying containers, and are excited to be able to reach alpha status to share it with the GitLab community.
+
+This effort has required extensive changes across the  product:
+* Support for directly uploading to object storage
+* No dependency on shared storage
+* New containers for each component of GitLab
+* New Helm chart
+
+While much of the underlying work has been completed, there are a few changes that will be arriving after alpha has started. This means that there are a few features of GitLab [that may not work as expected](#known-issues-and-limitations).
+
+## Release cadence
+
+In order to maximize our testing opportunity in alpha, the chart and containers will be rebuilt off `master` as changes are merged. This means that fixes and improvements will be available in alpha as soon as they are merged, instead of waiting for a specific release window.
+
+Along with the standard issues and merge requests in this repo, a [changelog](https://gitlab.com/charts/helm.gitlab.io/issues/289) is being made available to more easily follow along with updates throughout the alpha period.
 
 ## Tools
 
-During Alpha, we will be using the latest versions of tools such as `kubectl`,
+During alpha, we will be using the latest versions of tools such as `kubectl`,
 `helm` and we will upgrade and downgrade them as needed.
 
-## Clusters
+## Kubernetes Cluster Support
 
-We are working on Google Kubernetes Engine exclusively, but other k8s deployments
+GitLab development and testing is taking place on [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine/) exclusively, but other k8s deployments
 may also work. In case of a specific non-GKE deployment issue, please raise an issue.
 
 As of the moment of writing this document, we are using Kubernetes version 1.8.7.
@@ -20,7 +33,7 @@ chart milestone, most likely during Beta.
 ## GitLab Enterprise Edition
 
 During Alpha, we will only support GitLab Enterprise Edition. GitLab EE offers
-same functionality as GitLab CE when no licence is supplied.
+same functionality as GitLab CE when no license is supplied.
 
 Before making these charts generally available, we will address this support
 in issue https://gitlab.com/charts/helm.gitlab.io/issues/173 .
@@ -41,10 +54,9 @@ issue triage.
 Before raising an issue, please see the list below of known limitations of charts
 during Alpha.
 
-## Functionality and features
+## Known issues and limitations
 
-Below you can find a non-definitive list of issues that are currently known
-not to be fully functional:
+Below you can find a non-definitive list of issues that are currently known not to be fully functional:
 
 * No in-cluster database https://gitlab.com/charts/helm.gitlab.io/issues/48
 * No backup restore procedure https://gitlab.com/charts/helm.gitlab.io/issues/28
@@ -58,7 +70,7 @@ not to be fully functional:
 * No support for advanced workhorse configuration https://gitlab.com/charts/helm.gitlab.io/issues/249
 * CI traces are not persisted https://gitlab.com/charts/helm.gitlab.io/issues/245
 * No support for scaling unicorn separate from workhorse https://gitlab.com/charts/helm.gitlab.io/issues/61
-* GitLab maintenace rake tasks won't work in k8s environments
+* GitLab maintenance rake tasks won't work in k8s environments
 * No guarantees on safe pod shutdown: https://gitlab.com/charts/helm.gitlab.io/issues/239
 * New ssh hostkeys each time the shell container restarts https://gitlab.com/charts/helm.gitlab.io/issues/247
 
