@@ -1,9 +1,11 @@
 # Required tools
 
-- [kubectl][] latest version (Minimum supported version to be defined.)
-- [helm][] latest version (Minimum supported version to be defined.)
+- [kubectl][] latest version
+- [helm][] latest version
 
-### Kubectl
+Minimum required versions will be defined in beta.
+
+### kubectl
 
 You can setup kubectl using the installation documentation for [kubectl][].
 

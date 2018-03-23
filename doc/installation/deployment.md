@@ -1,6 +1,8 @@
 # Deployment Guide
 
-In order to deploy, you need to make some decisions about how you will run gitlab.
+To deploy, first clone the repository locally: `git clone git@gitlab.com:charts/helm.gitlab.io.git`
+
+Before running `helm install`, you need to make some decisions about how you will run gitlab.
 Options can be specified using helm's `--set option.name=value` command line option.
 A complete list  of command line options can be found [here](./command-line-options.md).
 This guide will cover required values and common options.
@@ -8,6 +10,10 @@ This guide will cover required values and common options.
 ## Selecting configuration options
 
 In each section collect the options that will be combined to use with `helm install`.
+
+### Secrets
+
+There are some secrets that need to be created (e.g. ssh keys). By default they will be generated automatically, but if you want to specify them, you can follow the [secrets guide](secrets.md).
 
 ### Networking
 
@@ -89,7 +95,7 @@ $ helm upgrade --install gitlab . \
   --set 'gitlab.omnibus.trusted_proxies[1]=127.0.0.1/32'
 ```
 
-## Monitoring Deployment
+## Monitoring the Deployment
 
 This will output the list of resources installed once the deployment finishes which may take 5-10 minutes.
 

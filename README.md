@@ -1,31 +1,42 @@
 # Cloud Native GitLab Helm Chart
 
-**THIS REPOSITORY IS UNDER HEAVY DEVELOPMENT. IT SHOULD NOT BE USED FOR ANYTHING EXCEPT DEVELOPMENT**
+> **Notes**:
+* This chart is **alpha**. It should not be used for production deployments.
+* There are [known issues and limitations](doc/architecture/alpha.md#known-issues-and-limitations).
 
-We are working on a new method of installing GitLab for customers who are
-looking to deploy into container schedulers like Kubernetes.
+
+We are working on a new cloud native method of deploying GitLab on Kubernetes.
 
 While this is possible today using our [Omnibus GitLab based Docker image](https://docs.gitlab.com/omnibus/docker/README.html) and [corresponding Helm charts](https://gitlab.com/charts/charts.gitlab.io), there are challenges.
-One key example is that an "all-in-one container" becomes a challenge to configure and operate at large scale.
+One key example is that an "all-in-one container" becomes a challenge to configure and operate at scale.
 
-To address this need we are working on the [Helm charts in this repository](#helm-charts) along with a new set of Docker containers that are specific to each component of GitLab.
+To address this need we are working on the [Helm chart in this repository](#helm-charts) along with a [new set of Docker containers](https://gitlab.com/gitlab-org/build/CNG) that are specific to each component of GitLab.
 
-For more information on all of GitLab's Helm Charts, please consult our [documentation](http://docs.gitlab.com/ce/install/kubernetes/).
+Some of the key benefits of the new chart and containers are:
+* Improved scalability and reliability
+* No requirement for root privileges
+* Utilization of object storage instead of NFS for storage
+
+This chart is currently in alpha, and should only be used for testing and development. If you'd like to run GitLab in production today, we recommend using the [`omnibus-gitlab` chart](https://docs.gitlab.com/ce/install/kubernetes/gitlab_omnibus.html).
 
 ## Architecture and goals
 
 See [architecture documentation](doc/architecture/README.md) for an overview
 of this project goals and architecture.
 
-## Quick-Start Installation
+## Known issues and limitations
 
-See [installation documentation](doc/installation/README.md) for a quick-start to using this chart.
+The current alpha release of this chart contains a number of known issues and limitations. Please review our [alpha documentation](doc/architecture/alpha.md) for more details.
 
-## Detailed Documentation
+## Quick-start installation
+
+See the [installation documentation](doc/installation/README.md) for a quick-start to using this chart.
+
+## Detailed documentation
 
 See the [repository documentation](doc/README.md) for detailed documentation on charts, tools, and advanced configuration.
 
 ## Contributing
 
 Please see the [contribution guidelines](CONTRIBUTING.md)
-And then check out the [development styleguide](doc/development/README.md)
+And then check out the [development styleguide](doc/development/README.md).

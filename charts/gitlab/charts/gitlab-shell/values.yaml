@@ -10,7 +10,7 @@ service:
   name: gitlab-shell
   type: ClusterIP
   externalPort: 22
-  internalPort: 22
+  internalPort: 2222
 enabled: true
 authToken:
    secret: gitlab-shell-secret
@@ -28,7 +28,7 @@ redis:
   password:
     secret: gitlab-redis
     key: redis-password
-resources: {}
+resources:
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
@@ -36,6 +36,6 @@ resources: {}
   # limits:
   #  cpu: 100m
   #  memory: 128Mi
-  #requests:
-  #  cpu: 100m
-  #  memory: 128Mi
+  requests:
+    cpu: 200m
+    memory: 64Mi
