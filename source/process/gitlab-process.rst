@@ -105,12 +105,10 @@ Upcoming Work
  - `Support environment variable configuration options even if there's no entry for it in config.json <https://mattermost.atlassian.net/browse/MM-8400>`_.
  - `Update documentation <https://gitlab.com/gitlab-org/omnibus-gitlab/issues/3284>`_ and fully test the migration.
 
-2. `Add timezones.json to GitLab Omnibus build <https://mattermost.atlassian.net/browse/MM-9873>`_ to support new Timezone user setting. - **Due: Mattermost v4.10 / GitLab v11.0**
+2. `Add a config.json setting to disable the permanent API v4 delete team parameter <https://mattermost.atlassian.net/browse/MM-9916>`_. This allows Mattermost to disable the parameter without any changes to GitLab Omnibus. - **Due: Mattermost v5.0 / GitLab v11.1**
 
-3. `Add a config.json setting to disable the permanent API v4 delete team parameter <https://mattermost.atlassian.net/browse/MM-9916>`_. This allows Mattermost to disable the parameter without any changes to GitLab Omnibus. - **Due: Mattermost v5.0 / GitLab v11.1**
+3. `Migrate Mattermost slash command integration in GitLab to Mattermost API v4 <https://gitlab.com/gitlab-org/gitlab-ce/issues/41631>`_. - **Due: Mattermost v5.0 / GitLab v11.1**
 
-4. `Migrate Mattermost slash command integration in GitLab to Mattermost API v4 <https://gitlab.com/gitlab-org/gitlab-ce/issues/41631>`_. - **Due: Mattermost v5.0 / GitLab v11.1**
+4. Releasing an extended support release (ESR) version of Mattermost, and shipping it in GitLab Omnibus. `A discussion is open in the Mattermost forums <https://forum.mattermost.org/t/extended-support-release-discussion/4598>`_. - **Due: TBD**
 
-5. Releasing an extended support release (ESR) version of Mattermost, and shipping it in GitLab Omnibus. `A discussion is open in the Mattermost forums <https://forum.mattermost.org/t/extended-support-release-discussion/4598>`_. - **Due: TBD**
-
-6. Bundling Mattermost Enterprise Edition in GitLab EE. `A discussion is open in GitLab repository <https://gitlab.com/gitlab-org/omnibus-gitlab/issues/1609>`_. - **Due: TBD**
+5. Bundling Mattermost Enterprise Edition in GitLab EE. `A discussion is open in GitLab repository <https://gitlab.com/gitlab-org/omnibus-gitlab/issues/1609>`_. - **Due: TBD**
