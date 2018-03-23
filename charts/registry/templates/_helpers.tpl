@@ -19,7 +19,7 @@ If the hostname is set in `global.hosts.registry.name`, that will be returned,
 otherwise the hostname will be assembed using `minio` as the prefix, and the `assembleHost` function.
 */}}
 {{- define "registryHost" -}}
-{{- coalesce .Values.global.hosts.gitlab.name (include "assembleHost"  (dict "name" "registry" "context" . )) -}}
+{{- coalesce .Values.global.hosts.registry.name (include "assembleHost"  (dict "name" "registry" "context" . )) -}}
 {{- end -}}
 
 {{/*
