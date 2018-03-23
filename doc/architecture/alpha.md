@@ -85,6 +85,7 @@ The next phase in the chart lifecycle after alpha will be a beta phase. Our goal
 * Upgrades are supported
 * Object storage support for S3 compatible interfaces
 * No expected breaking changes
+* Releases are versioned
 
 Once beta is complete, the next phase will be general availability. Our goals for the charts to be generally available are:
 

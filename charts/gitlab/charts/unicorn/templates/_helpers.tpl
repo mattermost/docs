@@ -187,3 +187,10 @@ if there is a shared tls secret for all ingresses.
 {{- end -}}
 {{- pluck "secretName" .Values.ingress.tls .Values.global.ingress.tls $defaultName | first -}}
 {{- end -}}
+
+{{/*
+Returns the nginx ingress class
+*/}}
+{{- define "unicorn.ingressclass" -}}
+{{- pluck "class" .Values.global.ingress (dict "class" (printf "%s-nginx" .Release.Name)) | first -}}
+{{- end -}}

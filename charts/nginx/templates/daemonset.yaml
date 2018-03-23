@@ -1,3 +1,4 @@
+{{- if .Values.enabled }}
 apiVersion: extensions/v1beta1
 kind: DaemonSet
 metadata:
@@ -69,3 +70,4 @@ spec:
 {{ toYaml .Values.nodeSelector | indent 8 }}
     {{- end }}
       serviceAccountName: "{{ template "nginx.serviceAccountName" . }}"
+{{- end -}}
