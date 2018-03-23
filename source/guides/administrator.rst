@@ -52,6 +52,7 @@ Deployment
    /deployment/sso-ldap*
    /deployment/auth*
    /deployment/sso-saml.rst
+   /deployment/certificate-based-authentication*
    /deployment/scaling*
    /deployment/cluster.rst
    /deployment/elastic*
