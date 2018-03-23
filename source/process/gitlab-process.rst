@@ -70,11 +70,9 @@ GitLab Non-Premier Support Issues
 
 Mattermost has created a `mattermost-support` account in GitLab for support issues. The plan is for Mattermost to
 
- - integrate GitLab issue reviews as part of existing forum issue monitoring processes,
- - aim to answer within one business day, or at best effort, and
- - subscribe to email alerts sent automatically when a `Mattermost` label is added to an issue, or when the `mattermost-support` account is assigned to a GitLab issue.
- 
-usiness day coverage should be more than enough.
+- integrate GitLab issue reviews as part of existing forum issue monitoring processes,
+- aim to answer within one business day, or at best effort, and
+- subscribe to email alerts sent automatically when a `Mattermost` label is added to an issue, or when the `mattermost-support` account is assigned to a GitLab issue.
 
 Templates
 --------------
