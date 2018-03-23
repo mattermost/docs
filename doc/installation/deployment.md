@@ -84,8 +84,8 @@ Once you have all of your configuration options collected, we can get any depend
 run helm. In this example, we've named our helm release "gitlab".
 
 ```
-$ helm dependencies update
-$ helm upgrade --install gitlab . \
+helm dependencies update
+helm upgrade --install gitlab . \
   --timeout 600 \
   --set global.hosts.domain=example.local \
   --set nginx.service.loadBalancerIP=10.10.10.10 \
@@ -93,6 +93,12 @@ $ helm upgrade --install gitlab . \
   --set certmanager.issuer.email=me@example.local \
   --set 'gitlab.omnibus.trusted_proxies[0]=100.64.0.0/10' \
   --set 'gitlab.omnibus.trusted_proxies[1]=127.0.0.1/32'
+
+# Second step to configure cert-manager
+helm upgrade --install gitlab . \
+  --timeout 600 \
+  --reuse-values \
+  --set global.ingress.configureCertmanager=true
 ```
 
 ## Monitoring the Deployment
