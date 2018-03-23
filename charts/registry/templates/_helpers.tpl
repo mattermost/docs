@@ -71,18 +71,6 @@ Calls into the `minioHost` function for the hostname part of the url.
 {{- end -}}
 
 {{/*
-Returns the secret name for the Secret containing the registry TLS certificate and key.
-*/}}
-{{- define "registryTLSSecret" -}}
-{{- $fullname := include "fullname" . -}}
-{{- if coalesce .Values.ingress.acme .Values.global.ingress.acme | default false -}}
-{{- printf "%s-acme-tls" $fullname -}}
-{{- else -}}
-{{- default "" (coalesce .Values.ingress.tls.secretName .Values.global.ingress.tls.secretName) -}}
-{{- end -}}
-{{- end -}}
-
-{{/*
 Returns the nginx ingress class
 */}}
 {{- define "registry.ingressclass" -}}
