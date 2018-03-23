@@ -186,3 +186,10 @@ Returns the secret name for the Secret containing the gitlab TLS certificate and
 {{- default "" (coalesce .Values.ingress.tls.secretName .Values.global.ingress.tls.secretName) -}}
 {{- end -}}
 {{- end -}}
+
+{{/*
+Returns the nginx ingress class
+*/}}
+{{- define "unicorn.ingressclass" -}}
+{{- pluck "class" .Values.global.ingress (dict "class" (printf "%s-nginx" .Release.Name)) | first -}}
+{{- end -}}
