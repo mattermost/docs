@@ -35,7 +35,7 @@ Windows 10+, Windows 8.1+, Windows 7+
 
 This will start an installer for the app. Once finished, the Mattermost desktop app will open automatically.
 
-Mac OS X 10.9+
+macOS 10.9+
 --------------------------------------------------
 
 1. Download `latest version of the Mattermost desktop app <https://releases.mattermost.com/desktop/4.0.0/mattermost-desktop-4.0.0-osx.tar.gz>`_.
