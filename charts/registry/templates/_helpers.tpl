@@ -129,3 +129,10 @@ Returns the secret name for the Secret containing the registry TLS certificate a
 {{- default "" (coalesce .Values.ingress.tls.secretName .Values.global.ingress.tls.secretName) -}}
 {{- end -}}
 {{- end -}}
+
+{{/*
+Returns the nginx ingress class
+*/}}
+{{- define "registry.ingressclass" -}}
+{{- pluck "class" .Values.global.ingress (dict "class" (printf "%s-nginx" .Release.Name)) | first -}}
+{{- end -}}

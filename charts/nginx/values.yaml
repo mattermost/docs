@@ -20,6 +20,8 @@ service:
   - https: 443
   - ssh: 22
 
+enabled: true
+
 serviceAccount:
   autoGenerate: true
   name: default # Only used when autoGenerate is false

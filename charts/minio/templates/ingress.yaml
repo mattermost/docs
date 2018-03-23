@@ -13,7 +13,7 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
   annotations:
-    kubernetes.io/ingress.class: "{{ .Release.Name }}-nginx"
+    kubernetes.io/ingress.class: "{{ template "minio.ingressclass" . }}"
     kubernetes.io/ingress.provider: nginx
     kubernetes.io/tls-acme: {{ eq $useAcme true | quote }}
     nginx.ingress.kubernetes.io/proxy-body-size: {{ .Values.ingress.proxyBodySize | quote }}
