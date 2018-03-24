@@ -69,15 +69,6 @@ If you have an external postgres database ready,
 --set global.psql.password.key=key_that_contains_postgres_password
 ```
 
-If you are using the default in-kubernetes postgres database, you'll need to be sure to allow traffic
-from your cluster's IP ranges. For example if your cluster has pods using `100.64.0.0/10`:
-
-*Include these options in your helm install command:*
-```
---set 'gitlab.omnibus.trusted_proxies[0]=100.64.0.0/10'
---set 'gitlab.omnibus.trusted_proxies[1]=127.0.0.1/32'
-```
-
 ## Deploy using helm
 
 Once you have all of your configuration options collected, we can get any dependencies and
@@ -90,9 +81,7 @@ helm upgrade --install gitlab . \
   --set global.hosts.domain=example.local \
   --set nginx.service.loadBalancerIP=10.10.10.10 \
   --set gitlab.migrations.initialRootPassword="example-password" \
-  --set certmanager.issuer.email=me@example.local \
-  --set 'gitlab.omnibus.trusted_proxies[0]=100.64.0.0/10' \
-  --set 'gitlab.omnibus.trusted_proxies[1]=127.0.0.1/32'
+  --set certmanager.issuer.email=me@example.local
 
 # Second step to configure cert-manager
 helm upgrade --install gitlab . \

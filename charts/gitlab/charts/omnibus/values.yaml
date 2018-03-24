@@ -17,10 +17,7 @@ enabled: true
 # config items
 external_url: http://gitlab.example.local
 trusted_proxies:
-- "127.0.0.1/24"
-- "10.0.0.0/8"
-- "172.16.0.0/12"
-- "192.168.0.0/16"
+- "0.0.0.0/0"
 # redis
 redis:
   # port: 6397
