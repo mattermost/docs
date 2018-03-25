@@ -71,7 +71,6 @@ options, such as GitLab and Registry hostnames.
 |name|type|default|
 |:---|:---|:------|
 |[ingress.enabled](#ingress-enabled)|boolean|false|
-|[ingress.acme](#ingress-acme)|boolean|false|
 |[ingress.tls.secretName](#ingress-tls-secretName)|string|(empty)|
 |[ingress.annotations.*annotation-key*](#ingress-annotations-annotation-key)|string|(empty)|
 
@@ -83,16 +82,6 @@ When `false` the `global.ingress.enabled` setting is used.
 
 Defaults to `false`.
 
-### ingress.acme
-
-This enables the use of the kube-lego chart, if available. If enabled, this will auto-populate the requirements and host values for kube-lego to request certificates from Let's Encrypt.
-
-When `false` the `global.ingress.acme` setting is used.
-
-Defaults to `false`.
-
-Note: With acme set to `true`, you do not need to populate the tls secretName.
-
 ### ingress.tls.secretName
 
 The name of the Kubernetes TLS Secret that contains a valid certificate and key for the gitlab url.
@@ -100,8 +89,6 @@ The name of the Kubernetes TLS Secret that contains a valid certificate and key 
 When not set, the `global.ingress.tls.secretName` is used instead.
 
 Defaults to not being set.
-
-Note: This secretName is ignored if kube-lego is being used on the ingress, in favor of the acme secret.
 
 ### ingress.annotations.annotation-key
 

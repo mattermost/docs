@@ -2,7 +2,6 @@
 {{- if coalesce .Values.ingress.enabled .Values.global.ingress.enabled | default false -}}
 {{- $registryHost := include "registryHost" . -}}
 {{- $registryTLSSecret := include "registryTLSSecret" . -}}
-{{- $useAcme := coalesce .Values.ingress.acme .Values.global.ingress.acme | default false -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -15,11 +14,11 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: "{{ template "registry.ingressclass" . }}"
     kubernetes.io/ingress.provider: nginx
-    kubernetes.io/tls-acme: {{ eq $useAcme true | quote }}
     nginx.ingress.kubernetes.io/proxy-body-size: {{ .Values.ingress.proxyBodySize | quote }}
     nginx.ingress.kubernetes.io/proxy-read-timeout: {{ .Values.ingress.proxyReadTimeout | quote }}
     nginx.ingress.kubernetes.io/proxy-request-buffering: {{ .Values.ingress.proxyBuffering | quote }}
     nginx.ingress.kubernetes.io/proxy-buffering: {{ .Values.ingress.proxyBuffering | quote }}
+    {{ include "gitlab.certmanager_annotations" . }}
   {{- range $key, $value := merge .Values.global.ingress.annotations .Values.ingress.annotations }}
     {{ $key }}: {{ $value | quote }}
   {{- end }}
@@ -37,6 +36,6 @@ spec:
     - hosts:
       - {{ $registryHost }}
       secretName: {{ $registryTLSSecret }}
-  {{- end }}
+  {{- end -}}
 {{- end -}}
 {{- end -}}

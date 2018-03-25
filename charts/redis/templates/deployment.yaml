@@ -32,6 +32,9 @@ spec:
         - name: redis
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ default "" .Values.image.pullPolicy | quote }}
+          ports:
+            - name: redis
+              containerPort: {{ .Values.service.internalPort }}
           args:
           - redis-server
           - /etc/redis/redis.conf

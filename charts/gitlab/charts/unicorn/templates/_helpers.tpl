@@ -127,15 +127,6 @@ to the global registry host name.
 {{- end -}}
 
 {{/*
-Returns the GitLab hostname.
-If the hostname is set in `global.hosts.gitlab.name`, that will be returned,
-otherwise the hostname will be assembed using `gitlab` as the prefix, and the `assembleHost` function.
-*/}}
-{{- define "gitlabHost" -}}
-{{- coalesce .Values.global.hosts.gitlab.name (include "assembleHost"  (dict "name" "gitlab" "context" . )) -}}
-{{- end -}}
-
-{{/*
 Returns the GitLab Url, ex: `http://gitlab.example.local`
 If `global.hosts.https` or `global.hosts.gitlab.https` is true, it uses https, otherwise http.
 Calls into the `gitlabHost` function for the hostname part of the url.
@@ -158,6 +149,15 @@ otherwise the hostname will be assembed using `registry` as the prefix, and the 
 {{- end -}}
 
 {{/*
+Returns the hostname.
+If the hostname is set in `global.hosts.gitlab.name`, that will be returned,
+otherwise the hostname will be assembed using `gitlab` as the prefix, and the `assembleHost` function.
+*/}}
+{{- define "gitlabHost" -}}
+{{- coalesce .Values.global.hosts.gitlab.name (include "assembleHost"  (dict "name" "gitlab" "context" . )) -}}
+{{- end -}}
+
+{{/*
 Returns the minio hostname.
 If the hostname is set in `global.hosts.minio.name`, that will be returned,
 otherwise the hostname will be assembed using `minio` as the prefix, and the `assembleHost` function.
@@ -176,15 +176,16 @@ Return the minio service endpoint
 {{- end -}}
 
 {{/*
-Returns the secret name for the Secret containing the gitlab TLS certificate and key.
+Returns the secret name for the Secret containing the TLS certificate and key.
+Uses `ingress.tls.secretName` first and falls back to `global.ingress.tls.secretName`
+if there is a shared tls secret for all ingresses.
 */}}
 {{- define "gitlabTLSSecret" -}}
-{{- $fullname := include "fullname" . -}}
-{{- if coalesce .Values.ingress.acme .Values.global.ingress.acme | default false -}}
-{{- printf "%s-acme-tls" $fullname -}}
-{{- else -}}
-{{- default "" (coalesce .Values.ingress.tls.secretName .Values.global.ingress.tls.secretName) -}}
+{{- $defaultName := (dict "secretName" "") -}}
+{{- if .Values.global.ingress.configureCertmanager -}}
+{{- $_ := set $defaultName "secretName" (printf "%s-gitlab-tls" .Release.Name) -}}
 {{- end -}}
+{{- pluck "secretName" .Values.ingress.tls .Values.global.ingress.tls $defaultName | first -}}
 {{- end -}}
 
 {{/*

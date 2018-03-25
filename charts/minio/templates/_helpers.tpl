@@ -49,28 +49,16 @@ otherwise the hostname will be assembed using `minio` as the prefix, and the `as
 {{- end -}}
 
 {{/*
-Returns the minio Url, ex: `http://minio.example.local`
-If `global.hosts.https` or `global.hosts.minio.https` is true, it uses https, otherwise http.
-Calls into the `minioHost` function for the hostname part of the url.
-*/}}
-{{- define "minioUrl" -}}
-{{- if or .Values.global.hosts.https .Values.global.hosts.minio.https -}}
-{{-   printf "https://%s" (include "minioHost" .) -}}
-{{- else -}}
-{{-   printf "http://%s" (include "minioHost" .) -}}
-{{- end -}}
-{{- end -}}
-
-{{/*
-Returns the secret name for the Secret containing the minio TLS certificate and key.
+Returns the secret name for the Secret containing the TLS certificate and key.
+Uses `ingress.tls.secretName` first and falls back to `global.ingress.tls.secretName`
+if there is a shared tls secret for all ingresses.
 */}}
 {{- define "minioTLSSecret" -}}
-{{- $fullname := include "minio.fullname" . -}}
-{{- if coalesce .Values.ingress.acme .Values.global.ingress.acme | default false -}}
-{{- printf "%s-acme-tls" $fullname -}}
-{{- else -}}
-{{- default "" (coalesce .Values.ingress.tls.secretName .Values.global.ingress.tls.secretName) -}}
+{{- $defaultName := (dict "secretName" "") -}}
+{{- if .Values.global.ingress.configureCertmanager -}}
+{{- $_ := set $defaultName "secretName" (printf "%s-minio-tls" .Release.Name) -}}
 {{- end -}}
+{{- pluck "secretName" .Values.ingress.tls .Values.global.ingress.tls $defaultName | first -}}
 {{- end -}}
 
 {{/*

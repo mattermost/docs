@@ -7,7 +7,6 @@ RBAC affects a few different aspects of GitLab:
 * [nginx](../charts/nginx/README.md#generate-the-service-account)
 * Prometheus monitoring
 * GitLab Runner
-* [kube-lego](../kube-lego/README.md)
 
 ## Checking that RBAC is enabled
 

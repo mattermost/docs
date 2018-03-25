@@ -13,11 +13,10 @@ service:
 enabled: true
 
 ingress:
-  enabled: false
+  enabled: true
   proxyReadTimeout: 900
   proxyBodySize: "0"
   proxyBuffering: "off"
-  acme: false
   tls: {}
     # secretName:
   annotations: {}
@@ -25,7 +24,6 @@ ingress:
 global:
   ingress:
     enabled: true
-    acme: true
     annotations: {}
     tls: {}
       # secretName:

@@ -1,16 +1,13 @@
 {{/* vim: set filetype=mustache: */}}
 {{/*
-Expand the name of the chart.
+Returns the GitLab Url, ex: `http://gitlab.example.local`
+If `global.hosts.https` or `global.hosts.gitlab.https` is true, it uses https, otherwise http.
+Calls into the `gitlabHost` function for the hostname part of the url.
 */}}
-{{- define "name" -}}
-{{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
+{{- define "gitlabUrl" -}}
+{{- if or .Values.global.hosts.https .Values.global.hosts.gitlab.https -}}
+{{-   printf "https://%s" (include "gitlabHost" .) -}}
+{{- else -}}
+{{-   printf "http://%s" (include "gitlabHost" .) -}}
 {{- end -}}
-
-{{/*
-Create a default fully qualified app name.
-We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
-*/}}
-{{- define "fullname" -}}
-{{- $name := default .Chart.Name .Values.nameOverride -}}
-{{- printf "%s-%s" .Release.Name $name | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
