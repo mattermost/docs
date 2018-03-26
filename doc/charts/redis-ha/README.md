@@ -1,58 +1,15 @@
-# Redis
+# Redis-ha subchart
 
 [Redis](http://redis.io/) is an advanced key-value cache and store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets, sorted sets, bitmaps and hyperloglogs.
 
-## TL;DR;
-
-```bash
-$ helm install stable/redis-ha
-```
-
-By default this chart install one master pod containing redis master container and sentinel container, 2 sentinels and 1 redis slave.
-
-## Introduction
-
-This chart bootstraps a [Redis](https://github.com/bitnami/bitnami-docker-redis) deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
+By default this chart install one master pod containing redis master container and sentinel container, 3 sentinels and 2 redis slave.
 
 ## Prerequisites
 
 - Kubernetes 1.5+ with Beta APIs enabled
 - PV provisioner support in the underlying infrastructure
 
-## Installing the Chart
-
-To install the chart
-
-```bash
-$ helm install stable/redis-ha
-```
-
 The command deploys Redis on the Kubernetes cluster in the default configuration. By default this chart install one master pod containing redis master container and sentinel container, 2 sentinels and 1 redis slave. The [configuration](#configuration) section lists the parameters that can be configured during installation.
-
-> **Tip**: List all releases using `helm list`
-
-## Uninstalling the Chart
-
-To uninstall/delete the deployment:
-
-```bash
-$ helm delete <chart-name>
-```
-
-The command removes all the Kubernetes components associated with the chart and deletes the release.
-
-## Appliance mode
-
-This chart can be used to launch Redis in a black box appliance mode that you can think of like a managed service. To run as an appliance, change the service type for the master and slave LBs to enable local access from within the K8S cluster.
-
-To launch in VPC-only appliance mode, set appliance.serviceType to "LoadBalancer". If using appliance mode in Google Cloud, set appliance.annotations to:
-`cloud.google.com/load-balancer-type:Internal`
-
-```bash
-$ helm install \
-  --set="servers.annotations.cloud\.google\.com/load-balancer-type=Internal,servers.serviceType=LoadBalancer" \
-    stable/redis-ha
-```
 
 ## Configuration
 
@@ -60,7 +17,7 @@ The following tables lists the configurable parameters of the Redis chart and th
 
 | Parameter                        | Description                                                                                                                  | Default                                                   |
 | -------------------------------- | -----------------------------------------------------                                                                        | --------------------------------------------------------- |
-| `redis_image`                    | Redis image                                                                                                                  | `quay.io/smile/redis:4.0.6r2`                             |
+| `redis_image`                    | Redis image                                                                                                                  | `registry.gitlab.com/gitlab-org/build/cng/gitlab-redis-ha:latest`                             |
 | `resources.master`               | CPU/Memory for master nodes resource requests/limits                                                                         | Memory: `200Mi`, CPU: `100m`                              |
 | `resources.slave`                | CPU/Memory for slave nodes  resource requests/limits                                                                         | Memory: `200Mi`, CPU: `100m`                              |
 | `resources.sentinel`             | CPU/Memory for sentinel node resource requests/limits                                                                        | Memory: `200Mi`, CPU: `100m`                              |
@@ -74,24 +31,6 @@ The following tables lists the configurable parameters of the Redis chart and th
 | `serviceAccount.create`          | whether a new service account name that the agent will use should be created.                                                | true                                                      |
 | `serviceAccount.name`            | service account to be used.  If not set and serviceAccount.create is `true` a name is generated using the fullname template. | ``                                                        |
 
-
-Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
-
-```bash
-$ helm install \
-  --set redis_image=quay.io/smile/redis:4.0.6r2 \
-    stable/redis-ha
-```
-
-The above command sets the Redis server within  `default` namespace.
-
-Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. For example,
-
-```bash
-$ helm install -f values.yaml stable/redis-ha
-```
-
-> **Tip**: You can use the default [values.yaml](values.yaml)
 
 ## Internals
 The customized Redis server image determines whether the pod that executes it will be a Redis Sentinel,
