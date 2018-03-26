@@ -31,6 +31,9 @@ Release date: 2018-04-16
  - Added `ChannelType` field to the compliance export related model for use in adding some extra headers to the GlobalRelay email.
  - Split the email sending process into to 2 steps: create the client connection to the SMTP server and send the email.
  - Added System Console Support for Configuring GlobalRelay Compliance Exports.
+ 
+#### Increased 4K character limit
+ - Added a setting to control whether or not the Posts.Message column should be changed to remove the 4000 character limit for existing users.
 
 ### Improvements
 
@@ -96,6 +99,18 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - All API v3 endpoints have been deprecated and are scheduled for removal in Mattermost v5.0.
 
 ### Known Issues
+ - Google login fails on the Classic mobile apps.
+ - User can receive a video call from another browser tab while already on a call.
+ - Jump link in search results does not always jump to display the expected post.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Channel scroll position flickers while images and link previews load.
+ - Numbered lists can sometimes extend beyond the normal post area.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - CTRL/CMD+U shortcut to upload a file doesn’t work on Firefox.
 
 ### Contributors
 
