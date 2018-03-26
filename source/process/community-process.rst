@@ -85,7 +85,7 @@ The various community channels are outlined below, along with the responsibiliti
 
         - Thank you [NAME] for nominating the feature! It is now available in Mattermost [X.Y]. Would anyone like to help re-tweet the announcement? [LINK TO TWEET]
         
-        - Updates `Spreadsheet <https://docs.google.com/spreadsheets/d/1nljd4cFh-9MXF4DxlUnC8b6bdqijkvi8KHquOmK8M6E/edit#gid=0>`_ to track UserVoice issues to be announced in upcoming releases.
+        - Updates a `spreadsheet <https://docs.google.com/spreadsheets/d/1nljd4cFh-9MXF4DxlUnC8b6bdqijkvi8KHquOmK8M6E/edit#gid=0>`_ that tracks UserVoice issues announced in upcoming releases.
 
     - Sales Responsibility - Enterprise Edition:
     
