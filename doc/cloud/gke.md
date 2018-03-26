@@ -32,6 +32,7 @@ The table below describes all variables.
 | NUM_NODES       | The number of nodes required.                                        | 2                                |
 | PROJECT         | the id of your GCP project                                           | No defaults, required to be set. |
 | RBAC_ENABLED    | If you know whether your cluster has RBAC enabled set this variable. | true                             |
+| PREEMPTIBLE     | Cheaper, clusters live at *most* 24 hrs. No SLA on nodes/disks       | false                            |
 
 Run the script, passing in your desired parameters. (The script can work with default parameters except for `PROJECT` which is required.)
 

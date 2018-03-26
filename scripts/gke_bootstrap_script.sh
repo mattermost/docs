@@ -12,6 +12,8 @@ CLUSTER_VERSION=${CLUSTER_VERSION-1.8.8-gke.0}
 MACHINE_TYPE=${MACHINE_TYPE-n1-standard-4}
 RBAC_ENABLED=${RBAC_ENABLED-true}
 NUM_NODES=${NUM_NODES-2}
+PREEMPTIBLE=${PREEMPTIBLE-false}
+EXTRA_CREATE_ARGS=${EXTRA_CREATE_ARGS-""}
 external_ip_name=${CLUSTER_NAME}-external-ip;
 DIR=$(dirname "$(readlink -f "$0")")
 
@@ -20,9 +22,14 @@ source $DIR/common.sh;
 function bootstrap(){
   set -e
   validate_required_tools;
+
+  if $PREEMPTIBLE; then
+    EXTRA_CREATE_ARGS="$EXTRA_CREATE_ARGS --preemptible"
+  fi
+
   gcloud container clusters create $CLUSTER_NAME --zone $ZONE \
     --cluster-version $CLUSTER_VERSION --machine-type $MACHINE_TYPE \
-    --node-version $CLUSTER_VERSION --num-nodes $NUM_NODES --project $PROJECT;
+    --node-version $CLUSTER_VERSION --num-nodes $NUM_NODES --project $PROJECT $EXTRA_CREATE_ARGS;
 
   gcloud compute addresses create $external_ip_name --region $REGION --project $PROJECT;
   address=$(gcloud compute addresses describe $external_ip_name --region $REGION --project $PROJECT --format='value(address)');
