@@ -43,7 +43,7 @@ spec:
         runAsUser: 2000
         fsGroup: 2000
       initContainers:
-        - name: redis-configure
+        - name: configure
           image: busybox
           command: ['sh', '/config/configure']
           volumeMounts:

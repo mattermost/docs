@@ -26,6 +26,7 @@ certmanager:
 
 redis-ha:
   nameOverride: redis
+  enabled: false
 
 # nginx:
 #   ingress:
