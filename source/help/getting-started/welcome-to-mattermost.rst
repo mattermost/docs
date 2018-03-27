@@ -114,5 +114,5 @@ You can configure your Mattermost account for how you want to be notified `here 
 
 What's Next?
 --------------------- 
-Feel free to browse through our `full user guide <https://docs.mattermost.com/guides/user.html>`__ for more information on how to use Mattermost!
+Feel free to view our `Mattermost demo video  <https://www.youtube.com/watch?v=lng8AoMYZGQ>`__ and browse through our `full user guide <https://docs.mattermost.com/guides/user.html>`__ for more information on how to use Mattermost!
   
