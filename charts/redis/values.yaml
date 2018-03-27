@@ -28,6 +28,12 @@ loglevel: "notice"
 password:
   secret: gitlab-redis
   key: redis-password
+
+securityContext:
+  runAsUser: 999
+  fsGroup: 999
+  allowPrivilegeEscalation: false
+
 # Configure persistence for Redis instance
 persistence:
   enabled: true
