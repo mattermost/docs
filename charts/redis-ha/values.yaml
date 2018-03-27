@@ -6,8 +6,8 @@ resources:
     requests:
       memory: 200Mi
       cpu: 100m
-    limits:
-      memory: 700Mi
+    # limits:
+    #   memory: 700Mi
   sentinel:
     requests:
       memory: 200Mi
