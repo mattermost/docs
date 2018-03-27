@@ -465,7 +465,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - [Zoom](https://www.zoom.us/) video calling and screensharing plugin. Learn more [here](https://about.mattermost.com/default-zoom-documentation).
 - Manage plugins from the **System Console > Plugins (Beta)** section.
 
-#### Actiance Support (Beta) ([Enterprise Edition E20](https://about.mattermost.com/pricing/))
+#### Actiance Support (Beta) ([Enterprise Edition E20](https://about.mattermost.com/pricing/) Add-On)
 
 - Compliance export support for [Actiance](https://www.actiance.com/) as a compliance solution. Learn more [here](https://about.mattermost.com/default-compliance-export-documentation).
 - Access compliance export from the **System Console > Advanced > Compliance Export (Beta)**.

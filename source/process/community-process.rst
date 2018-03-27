@@ -76,13 +76,14 @@ The various community channels are outlined below. On a daily basis, the Communi
         
       - where a PM might want to ask a question for clarification or ideas on how to design something
       - where the requester specifies they want to work on the feature
-      - that are completed
       
     - Community PM Responsibility - Team Edition:
     
       - The PM who is release manager for the current release cycle will update the issues after release date.
 
-        - Thank you [NAME] for nominating the feature! It is available in Mattermost [X.Y]. Would anyone like to help re-tweet the announcement? [LINK TO TWEET]
+        - Thank you [NAME] for nominating the feature! It is now available in Mattermost [X.Y]. Would anyone like to help re-tweet the announcement? [LINK TO TWEET]
+        
+        - Updates a `spreadsheet <https://docs.google.com/spreadsheets/d/1nljd4cFh-9MXF4DxlUnC8b6bdqijkvi8KHquOmK8M6E/edit#gid=0>`_ that tracks UserVoice issues announced in upcoming releases.
 
     - Sales Responsibility - Enterprise Edition:
     
