@@ -5,10 +5,12 @@ Mattermost desktop applications are available for Windows, Mac and Linux operati
 
 You can `download the apps directly from our download page <https://about.mattermost.com/downloads/>`_ and visit our `installation guides <https://docs.mattermost.com/install/desktop.html>`_ for help during setup and for troubleshooting tips.
 
-This page provides a guide on how to 
+This page provides a guide on how to customize and distribute your own Mattermost Desktop App, and how to distribute the official Windows Desktop App silently to end users, pre-configured with the server URL and other app settings.
 
- - `customize and distribute your own Mattermost Desktop App <XXX>`_
- - `distribute the official Windows Desktop App silently to end users, pre-configured with the server URL and other app settings <XXX>`_
+.. contents::
+  :depth: 1
+  :local:
+  :backlinks: entry
 
 Custom Build Configuration
 ---------------------------
@@ -71,11 +73,11 @@ You can customize and distribute your own Mattermost Desktop application by conf
 Windows App: Pre-Configuration and Silent Deployment
 ------------------------------------------------------
 
-You can distribute the official Windows Desktop App silently to end users, pre-configured with the server URL and other app settings.
+You can distribute the official Windows Desktop App silently to end users, pre-configured with the server URL. You can also set all the `app settings <https://docs.mattermost.com/help/apps/desktop-guide.html#app-options>`_ except for the **Start app on login** option.
 
 1. Download the latest Windows installer from the `Mattermost download page <https://about.mattermost.com/download/#mattermostApps>`_.
 
-2. Move the executable file into a shared folder.
+2. Move the executable file into a shared place such as a file server.
 
 3. To create a batch file in Windows:
 
@@ -85,7 +87,7 @@ You can distribute the official Windows Desktop App silently to end users, pre-c
     .. code-block:: none
 
 
-      rem "Step 1: Install mattermost desktop into user's local disk"
+      rem "Step 1: Install Mattermost Desktop App silently into user's local disk"
       start /wait \\SERVER\shared_folder\mattermost-setup-3.7.0-win64.exe --silent
 
       rem "Step 2: Generate initial config.json into user's config directory"
@@ -106,7 +108,10 @@ You can distribute the official Windows Desktop App silently to end users, pre-c
         echo }
       ) > %APPDATA%\Mattermost\config.json
 
-  3. Save the text file with extension .bat. For instance, mattermost-app-install.bat.
-  4. Run the batch file by double-clicking the file in File Explorer.
+.. note::
+  Instead of using the ``rem`` command to install the Desktop App into a shared folder, you can also copy the executable to the folder before running it. This allows the shared folder to only require read-only permissions.
 
-Once run, the desktop app is added to the user’s local directory, along with the pre-configured config.json file.
+  3. Save the text file with extension .bat. For instance, mattermost-app-install.bat.
+  4. Use standard software asset management tools to distribute and deploy the batch file to each user.
+
+Once run, the desktop app is added to the user’s local directory, along with the pre-configured config.json file. The installer creates a shortcut for the Desktop App in the user's start menu; if a zip version is used, you need to create the shortcut manually.
