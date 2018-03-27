@@ -58,11 +58,11 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
 6. Back up your data and application.
   a. Back up your database using your organization’s standard procedures for backing up MySQL or PostgreSQL.
-  b. Back up your application by copying into an archive folder (e.g. ``mattermost-back-YYYY-MM-DD``).
+  b. Back up your application by copying into an archive folder (e.g. ``mattermost-back-YYYY-MM-DD-HH-mm``).
 
-    ``sudo cp -ra {install-path}/mattermost/ {install-path}/{mattermost-back-YYYY-MM-DD}/``
+    ``sudo cp -ra {install-path}/mattermost/ {install-path}/mattermost-back-$(date +'%F-%H-%M')/``
 
-7. Copy only *new* files from the special folders in the extracted directory to the install directory.
+7. Copy only *new* files from the extracted special directories to the install directory, then remove those extracted directories so they do not overwrite the current ones.
 
   .. code-block:: text
 
