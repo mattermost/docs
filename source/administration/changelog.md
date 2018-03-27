@@ -46,7 +46,8 @@ Release date: 2018-04-16
  
 #### Performance
  - Added cache invalidation totals to metrics.
- - Rewrote `getParentsPosts` to force the database to use the `PRIMARY` index when fetching posts instead of trying to filter down by channel and doing a scan. 
+ - Rewrote `getParentsPosts` to force the database to use the `PRIMARY` index when fetching posts instead of trying to filter down by channel and doing a scan.
+ - Investigated reduced client performance in busy channels to address degraded client-side performance connected to busy channels.
  
 #### Plugins (beta)
  - Exported text formatting functions to webapp plugins to allow them to format text, emojis, markdown, and so on.
