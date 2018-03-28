@@ -1,5 +1,4 @@
 {{- if .Values.enabled -}}
-{{- $httpSecret := randAlphaNum 128 | b64enc -}}
 apiVersion: v1
 kind: ConfigMap
 metadata:
