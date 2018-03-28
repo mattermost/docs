@@ -4,3 +4,7 @@ dependencies:
   repository: https://kubernetes-charts.storage.googleapis.com/
   condition: certmanager.install
   alias: certmanager
+- name: prometheus
+  version: 5.5.3
+  repository: https://kubernetes-charts.storage.googleapis.com/
+  condition: prometheus.install

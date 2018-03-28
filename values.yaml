@@ -24,6 +24,11 @@ certmanager:
   rbac:
     create: true
 
+prometheus:
+  install: true
+  rbac:
+    create: true
+
 # registry:
 #   enabled: false
 #
