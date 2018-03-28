@@ -89,6 +89,9 @@ To send a message to a direct message channel, add an "@" symbol followed by the
 
   payload={"channel": "@username", "text": "Hello, this is some text\nThis is more text. :tada:"}
 
+.. note::
+  Direct messages sent via webhooks will appear to come from the user who created the webhook. So if you create a webhook with the user ``alice`` and send a direct message to ``bob`` using a webhook it will show up as a direct message from ``alice`` to ``bob`` regardless of other settings such as username.
+
 Override the username
 ~~~~~~~~~~~~~~~~~~~~~
 
