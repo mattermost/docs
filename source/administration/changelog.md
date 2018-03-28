@@ -40,9 +40,6 @@ Release date: 2018-04-16
  
 #### Team Icons
  - Added integration of team icons which appear in the team sidebar within the border of the existing team icons.
- 
-#### Increased 4K character limit
- - Added a setting to control whether or not the Posts.Message column should be changed to remove the 4000 character limit for existing users.
 
 ### Improvements
 
@@ -50,6 +47,7 @@ Release date: 2018-04-16
  - Added a user interface top banner for System Admins who use APIv3.
  - Return cursor to reply thread input box after deleting a reply from the right-hand sidebar.
  - Added ability for users to load more recent messages after jumping to a search result.
+ - Hid edit able elements for Town Square for non admin users when `"ExperimentalTownSquareIsReadOnly": true`.
  
 #### Performance
  - Added cache invalidation totals to metrics.
