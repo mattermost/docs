@@ -21,6 +21,9 @@ spec:
         release: "{{ .Release.Name }}"
         heritage: "{{ .Release.Service }}"
     spec:
+      securityContext:
+        runAsUser: 1000
+        fsGroup: 1000
 {{- if .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml .Values.nodeSelector | indent 8 }}
@@ -63,11 +66,7 @@ spec:
         - name: minio
           image: {{ .Values.image }}:{{ .Values.imageTag }}
           imagePullPolicy: {{ .Values.imagePullPolicy }}
-          {{- if .Values.configPath }}
-          args: ["-C", "{{ .Values.configPath }}", "--quiet", "server", "{{ .Values.mountPath }}"]
-          {{- else }}
-          args: ["--quiet", "server", "{{ .Values.mountPath }}"]
-          {{- end }}
+          args: ["-C", "{{ default "/tmp/.minio" .Values.configPath }}", "--quiet", "server", "{{ .Values.mountPath }}"]
           volumeMounts:
             - name: export
               mountPath: {{ .Values.mountPath }}
@@ -75,7 +74,8 @@ spec:
               subPath: "{{ .Values.persistence.subPath }}"
               {{- end }}
             - name: minio-server-config
-              mountPath: {{ default "/root/.minio/" .Values.configPath | quote }}
+              # this path altered from upstream, for use with `securityContext`/UID 1000
+              mountPath: {{ default "/tmp/.minio" .Values.configPath | quote }}
             - name: podinfo
               mountPath: /podinfo
               readOnly: false
