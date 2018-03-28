@@ -12,7 +12,7 @@ Follow these steps to configure user CBA for your browser, Mattermost Desktop Ap
   :local:
   :depth: 2
   
-// XXX Should break this into two stories: one about CBA for device (first half) and one about CBA for user (second half, involving the PureBred integration, extra config settings, and targeted for government)
+// XXX Consider breaking this into two stories: one about CBA for device (first half) and one about CBA for user (second half, involving the PureBred integration, extra config settings, and targeted for G20 SKU)
 
 Set Up mutual TLS authentication for the Web App
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -171,7 +171,7 @@ On Ubuntu 16.04, Debian Jessie, and RHEL 7.1:
 Set up Purebred sample apps on iOS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-// XXX These will likely be removed from the final docs, but I did a quick formatting edit for this section.
+// XXX These will likely be removed from the final docs, but I did a quick formatting edit for this section anyway.
 
 1. Clone the sample repos from `https://github.com/Purebred/KeyShareConsumer <https://github.com/Purebred/KeyShareConsumer>`_ and `https://github.com/Purebred/SampleKeyProvider <https://github.com/Purebred/SampleKeyProvider>`_.
 2. Replace all ``red.hound`` strings with ``com.mattermost``.
