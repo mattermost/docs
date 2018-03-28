@@ -17,10 +17,15 @@ spec:
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
     spec:
+      securityContext:
+        runAsUser: {{ .Values.securityContext.runAsUser }}
+        fsGroup: {{ .Values.securityContext.fsGroup }}
       initContainers:
         - name: configure
           image: busybox
           command: ['sh', '/config/configure']
+          securityContext:
+            allowPrivilegeEscalation: {{ .Values.securityContext.allowPrivilegeEscalation }}
           volumeMounts:
           - name: {{ .Release.Name }}
             mountPath: /config
@@ -48,6 +53,8 @@ spec:
             subPath: "{{ .Values.persistence.subPath }}"
             {{- end }}
             readOnly: false
+          securityContext:
+            allowPrivilegeEscalation: {{ .Values.securityContext.allowPrivilegeEscalation }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
       volumes:
