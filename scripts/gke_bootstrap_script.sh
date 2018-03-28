@@ -8,7 +8,6 @@ set -e
 REGION=${REGION-us-central1}
 ZONE=${REGION}-a
 CLUSTER_NAME=${CLUSTER_NAME-gitlab-cluster}
-CLUSTER_VERSION=${CLUSTER_VERSION-1.8.8-gke.0}
 MACHINE_TYPE=${MACHINE_TYPE-n1-standard-4}
 RBAC_ENABLED=${RBAC_ENABLED-true}
 NUM_NODES=${NUM_NODES-2}
@@ -22,6 +21,11 @@ source $DIR/common.sh;
 function bootstrap(){
   set -e
   validate_required_tools;
+
+  # Use the default cluster version for the specified zone if not provided
+  if [ -z "${CLUSTER_VERSION}" ]; then
+    CLUSTER_VERSION=$(gcloud container get-server-config --zone $ZONE  --format='value(defaultClusterVersion)' 2>/dev/null);
+  fi
 
   if $PREEMPTIBLE; then
     EXTRA_CREATE_ARGS="$EXTRA_CREATE_ARGS --preemptible"
