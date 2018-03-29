@@ -28,6 +28,14 @@ prometheus:
   install: true
   rbac:
     create: true
+  alertmanager:
+    enabled: false
+  alertmanagerFiles:
+    alertmanager.yml: {}
+  kubeStateMetrics:
+    enabled: false
+  nodeExporter:
+    enabled: false
 
 # registry:
 #   enabled: false
