@@ -109,7 +109,7 @@ You can distribute the official Windows Desktop App silently to end users, pre-c
       ) > %APPDATA%\Mattermost\config.json
 
 .. note::
-  Instead of using the ``rem`` command to install the Desktop App into a shared folder, you can also copy the executable to the folder before running it. This allows the shared folder to only require read-only permissions.
+  Instead of using this command to install the Desktop App into a shared folder, you can also copy the executable to the folder before running it. This allows the shared folder to only require read-only permissions.
 
   3. Save the text file with extension .bat. For instance, mattermost-app-install.bat.
   4. Use standard software asset management tools to distribute and deploy the batch file to each user.
