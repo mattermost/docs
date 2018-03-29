@@ -48,6 +48,7 @@ Release date: 2018-04-16
  - Return cursor to reply thread input box after deleting a reply from the right-hand sidebar.
  - Added ability for users to load more recent messages after jumping to a search result.
  - Hid edit able elements for Town Square for non admin users when `"ExperimentalTownSquareIsReadOnly": true`.
+ - Added an `ExperimentalTimezone` flag to hide the timezone feature from clients.
  
 #### Performance
  - Added cache invalidation totals to metrics.
@@ -123,6 +124,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under ` "SamlSettings"` in `config.json`:
      - Added `"ScopingIDPProviderId": ""`, to esure...
      - Added `"ScopingIDPName": ""`, to ensure...
+ - Under `DisplaySettings"` in `config.json`:
+     - Added `"ExperimentalTimezone": false`, to ensure..
 
 ### API Changes
 
