@@ -11,7 +11,7 @@ This release contains multiple security updates for Windows, Mac and Linux, and 
 Architectural Changes
 ~~~~~~~~~~~~~~~
 
-Minor version upgrade of Electron from v1.7.11 to v1.7.13. Electron is the underlying technology used to build the Desktop apps.
+- Minor version upgrade of Electron from v1.7.11 to v1.7.13. Electron is the underlying technology used to build the Desktop apps.
 
 Bux Fixes
 ~~~~~~~~~~~~~~~
