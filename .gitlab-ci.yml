@@ -302,6 +302,12 @@ qa:
       --set nginx.service.loadBalancerIP="$DOMAIN_IP" \
       --set gitlab.migrations.initialRootPassword="$ROOT_PASSWORD" \
       --set gitlab.omnibus.service.type=NodePort \
+      --set gitlab.omnibus.resources.requests.cpu=100m \
+      --set gitlab.unicorn.resources.requests.cpu=100m \
+      --set gitlab.sidekiq.resources.requests.cpu=100m \
+      --set gitlab.gitlab-shell.resources.requests.cpu=100m \
+      --set redis.resources.requests.cpu=100m \
+      --set minio.resources.requests.cpu=100m \
       --set certmanager.install=false \
       --namespace="$KUBE_NAMESPACE" \
       --version="$CI_PIPELINE_ID-$CI_JOB_ID" \
