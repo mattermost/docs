@@ -30,6 +30,13 @@ to the service name
 {{- end -}}
 
 {{/*
+Return the db database name
+*/}}
+{{- define "unicorn.psql.database" -}}
+{{- coalesce .Values.psql.database .Values.global.psql.database "gitlabhq_production" | quote -}}
+{{- end -}}
+
+{{/*
 Return the db username
 If the postgresql username is provided, it will use that, otherwise it will fallback
 to "gitlab" default

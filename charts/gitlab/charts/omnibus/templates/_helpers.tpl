@@ -14,3 +14,19 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 {{- $name := default .Chart.Name .Values.nameOverride -}}
 {{- printf "%s-%s" .Release.Name $name | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
+
+{{/*
+Return the db database name
+*/}}
+{{- define "omnibus.psql.database" -}}
+{{- coalesce .Values.psql.database .Values.global.psql.database "gitlabhq_production" | quote -}}
+{{- end -}}
+
+{{/*
+Return the db username
+If the postgresql username is provided, it will use that, otherwise it will fallback
+to "gitlab" default
+*/}}
+{{- define "omnibus.psql.username" -}}
+{{- coalesce .Values.psql.username .Values.global.psql.username "gitlab" -}}
+{{- end -}}
