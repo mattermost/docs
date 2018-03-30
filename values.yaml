@@ -36,6 +36,8 @@ prometheus:
     enabled: false
   nodeExporter:
     enabled: false
+  pushgateway:
+    enabled: false
 
 # registry:
 #   enabled: false
