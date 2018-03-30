@@ -395,7 +395,7 @@ qa:
   }
 
   function purgeJobs() {
-    jobs=$(kubectl get job -l "relase=$CI_ENVIRONMENT_SLUG" | wc -l)
+    jobs=$(kubectl get job -l "release=$CI_ENVIRONMENT_SLUG" | wc -l)
     # The will always have a header or "no jobs found" (wc -l >= 1), and exit `0`
     if [ $jobs -gt 1 ]; then
       echo "Found dangling jobs:"
