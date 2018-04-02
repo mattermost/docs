@@ -21,7 +21,7 @@ Hi all,
  
 As some of you already know, we are moving to Mattermost as our communication platform. Mattermost is a messaging app where you can talk, share files, and collaborate on projects or initiatives. Mattermost also integrates with many of the apps that you use every day, like **[add apps]**.  
 
-We are moving to Mattermost because it will allow us to become more productive by being able communicate in one place instead of using email, instant chat, and a multitude of other programs.
+We are moving to Mattermost because it will host all our communication in one place, is instantly searchable and available from all your devices.
 
 Some of the major benefits of using Mattermost are:
 
@@ -39,7 +39,7 @@ Some of the major benefits of using Mattermost are:
 
 To get started:
 
-1. Open a browser on your computer, go to **[Mattermost URL]** and log in with your **[LDAP/AD, SAML, Google, etc]** credentials. 
+1. Open a browser on your computer, go to **[Mattermost URL]** and log in with your **[LDAP/AD, SAML, Google, etc]** credentials. Remember to bookmark the URL as that you can use it next time to log in.
 
 2. `Download <https://about.mattermost.com/download/#mattermostApps>`_ the Mattermost apps for desktop and mobile. Refer to the `Mattermost Welcome Guide <https://docs.mattermost.com/help/getting-started/welcome-to-mattermost.html>`_ on how to get up and running quickly.
 
