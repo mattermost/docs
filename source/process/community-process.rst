@@ -69,7 +69,7 @@ The various community channels are outlined below. On a daily basis, the Communi
       
         - Under Review: After a ticket is created but the spec is not yet complete
         - Planned: Jira ticket with a plan on how to build the feature
-        - Started: When a developer has begun work and has the specific Jira ticket in progress
+        - Started: When a developer has begun to work on the Jira ticket (the ticket shows that it is in progress)
         - Help Wanted: Ticket that is open to any contributor wanting to work on the issue
         - Completed: When ticket is resolved
         - Declined: When the suggestion does not fit with the `product vision <https://www.mattermost.org/manifesto/>`_
