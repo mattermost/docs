@@ -122,7 +122,7 @@ UX feedback at intermediate level or higher is highly appreciated. It should be 
 
 Example: Noticing a design issue and influencing a change in UX guidelines to correct things system-wide.
 
-   **XXXX** A menu with 10 items without groupings seems too long. Both Apple (link) and Windows (link) user interface guidelines suggest fewer than 7 options before grouping. I'd propose we use fewer than 5. There's research showing 5 items as an amount most people can comfortably store mentally (link), and looking through other products I don't see situations where we wouldn't be able to group by 5. Also, fewer menu items, perhaps through sub-menus, should also help mobile, where ungrouped 10 item menus just look messy. I've added a PR on UX guidelines where we can discuss this as well.
+   A menu with 10 items without groupings seems too long. Both Apple (link) and Windows (link) user interface guidelines suggest fewer than 7 options before grouping. I'd propose we use fewer than 5. There's research showing 5 items as an amount most people can comfortably store mentally (link), and looking through other products I don't see situations where we wouldn't be able to group by 5. Also, fewer menu items, perhaps through sub-menus, should also help mobile experience, where ungrouped 10 item menus just look messy. I've added a PR on UX guidelines where we can discuss this as well.
 
 -----
 
@@ -372,12 +372,12 @@ Mattermost voice for documentation and help text follows this simple guideline: 
         Channel URL: The web address used to reach your channel.
 
     Incorrect:
-        Handle: The name of the subdirectory used to navigate to a channel using the site URL appended with the handle name. Must use only valid URL inputs
+        Handle: The name of the subdirectory used to navigate to a channel using the site URL appended with the handle name. Must use only valid URL inputs.
 
     The fieldname of a setting should explicitly describe what a setting affects.
 
     Correct:
-        Automatically expand link previews
+        Automatically expand link previews.
 
     Incorrect:
         Link previews
@@ -388,7 +388,7 @@ Mattermost voice for documentation and help text follows this simple guideline: 
 
     In general, avoid describing the technical requirements of the field in Help Text, and use Placeholder input text, field validation and error messages to convey requirements. The exception to this guideline is if requirements are non-obvious, such as passwords needing different numbers of characters, symbols, etc.
 
-    For a setting involving a CONDITION and an ACTION, the help text should be written as "ACTION when/for CONDITION"
+    For a setting involving a CONDITION and an ACTION, the help text should be written as "ACTION when/for CONDITION".
 
     Correct:
         Flash the taskbar icon when a new message is received.
@@ -430,7 +430,7 @@ Mattermost voice for documentation and help text follows this simple guideline: 
 
         **Example 2:**
 
-            If a user enters invalid uppercase letters and spaces for a URL, show an error message and also offer a correction, substituting dashes for spaces and lower case letters for uppercase letters, so the user can resubmit immediately with valid input.
+            If a user enters invalid uppercase letters and spaces for a URL, show an error message and also offer a correction, substituting dashes for spaces and lower case letters for uppercase letters, so that the user can resubmit immediately with valid input.
 
 -----
 
@@ -440,19 +440,19 @@ Input: Input Patterns
 All inputs such as textareas should behave consistently. If the default behavior is to perform an action on "Enter", then all inputs of that type should be consistent and perform an action on "Enter".
 
 **Example 1:**
-    If pressing "Enter" posts a message in the center channel post input.
+    If pressing "Enter" posts a message in the center channel post input...
 
     ..  image:: ../images/inputBehaviour1.png
         :alt: Center channel post area
 
 **Example 2:**
-    Then pressing "Enter" in the comment thread textarea should also post a comment.
+    ...then pressing "Enter" in the comment thread textarea should also post a comment...
 
     ..  image:: ../images/inputBehaviour2.png
         :alt: Comment thread textarea
 
 **Example 3:**
-    And other textareas or inputs should also perform their primary action when "Enter" is pressed, here's an example of the "Edit Header" modal.
+    ...and other textareas or inputs should also perform their primary action when "Enter" is pressed. Here's an example of the "Edit Header" modal:
 
     ..  image:: ../images/inputBehaviour3.png
         :alt: Edit header modal
@@ -481,7 +481,7 @@ User should be notified about the action they perform along with any implication
 
 **Save prompt:**
 
-A prompt should appears if a user makes changes to a setting and attempts to navigate away without saving them.
+A prompt should appear if a user makes changes to a setting and attempts to navigate away without saving them.
 
   Example:
     "You have unsaved changes, are you sure you want to discard them?"
@@ -559,21 +559,21 @@ There are several modes for this element:
 Markdown Rendering
 ---------------------
 
-Markdown rendering in Mattermost is designed to be a fast, obvious, forgiving formatting standard for a messaging application. To achieve this goal, it has variations from markdown in GitHub (the most wildly used implementation), including:
+Markdown rendering in Mattermost is designed to be a fast, obvious and forgiving formatting standard for a messaging application. To achieve this goal, it has variations from markdown in GitHub (the most wildly used implementation), including:
 
 - Bullets directly below a line of text render as a bullet, not as a continued line of text
 - {Other variations to be concisely listed here, one line each}
 
 While we intend to eventually document all the variations from GitHub markdown, until that is complete we consider any variation in rendering from the current release of Mattermost to be a regression that should either be fixed prior to the next release, or documented here.
 
-Currently the `/test tool <https://github.com/mattermost/mattermost-server/tree/master/tests>`_ can be used for testing Mattermost markdown versus GitHub markdown, and we have `a ticket to update the tests for Mattermost markdown specifically <https://mattermost.atlassian.net/browse/PLT-5648>`_.
+Currently the `/test tool <https://github.com/mattermost/mattermost-server/tree/master/tests>`_ can be used for testing Mattermost markdown versus GitHub markdown.
 
 -----
 
 Organization: Reduce Obvious Steps
 ----------------------------------
 
-If the action users need to perform is obvious, we should make conscious decisions to reduce some of the steps involved in that process.
+If the action a user need to perform is obvious, we should make conscious decisions to reduce some of the steps involved in that process.
 
     **Example 1:**
         Clicking on the search icon on mobile should focus the search bar when it slides in.
@@ -629,4 +629,4 @@ User Experience Checklist
 
 **5\) Does the UI work with a dark theme?**
 
-    Sometimes bugs are found with theme colors, so it's important to test on both light and dark themes.
+    Sometimes bugs are found with theme colors, so it is important to test on both light and dark themes.
