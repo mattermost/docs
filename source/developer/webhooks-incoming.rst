@@ -240,3 +240,15 @@ Some common error messages include:
   2. You are using single quotes to wrap the ``-d`` data, ``-d 'payload={"Hello":"test"}'``
 
 If your integration prints the JSON payload data instead of rendering the generated message, make sure your integration is returning the ``application/json`` content-type.
+
+Frequently Asked Questions
+----------------------------
+
+How do I send a webhook post to a direct message channel?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To send a message to a direct message channel, add an "@" symbol followed by the username to the channel parameter. You can add your own username to send the webhook posts to a direct message channel with yourself.
+
+.. code-block:: text
+
+  payload={"channel": "@username", "text": "Hello, this is some text\nThis is more text. :tada:"}
