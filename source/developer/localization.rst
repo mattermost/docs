@@ -98,7 +98,7 @@ Translations require updates on a monthly basis as features are added and change
 
 Below are current official reviewers and maintainers for languages that have reached at least Beta-quality. Official reviewers submit final translations for languages; maintainers suggest translations and step in when official reviewers aren't able to help in a certain release.
 
-If you're interested in contributing to the process, please join the `Mattermost localization channel to discuss <https://pre-release.mattermost.com/core/channels/localization>`_.
+If you're interested in contributing to the process, please join the `Mattermost localization channel to discuss <https://pre-release.mattermost.com/core/channels/localization>`_. Creating localization channels is also encouraged - see examples of current channels including `Italian <https://pre-release.mattermost.com/core/channels/i18n-italian>`_, `German <https://pre-release.mattermost.com/core/channels/i18n-german>`_ and `Swedish <https://pre-release.mattermost.com/core/channels/i18n-swedish>`_.
 
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
 | Language                                 | Official Reviewer(s)                                                                                                  | Maintainers                                                                                          |
