@@ -10,28 +10,6 @@ Release date: 2018-04-16
 
 ### Highlights
 
-#### Permissions Backend Phase 1
-
- - Added unit tests for `SetRolePermissionsFromConfig` using JSON.
- - `AllowEditPost` and `PostEditTimeLimit` migration.
- - Added `ADD_REACTION`, `REMOVE_REACTION` and `REMOVE_OTHERS_REACTIONS` permissions.
- - Added consistent permissions checking between Incoming/Outgoing webhooks.
- - Added support for commands in the enterprise version, related to the future need for a command to manage advanced permissions.
- - Implemented permission checking functions in the webapp.
- - Migrated System Console "Enable Create Team" to configure role permissions behind the scenes.
- - Migrates `EnableOnlyAdminIntegrations` config in system console to set role permissions.
- - Added `CreateAt/UpdateAt/DeleteAt` fields to roles table.
- - Added license check to patchRoles endpoint.
- 
-#### Global Relay
-
- - Added username to the queries that select compliance export data out of the database.
- - `ChannelMemberHistory` records are now created for DM channels.
- - Added settings, validation, and internationalization strings for new GlobalRelay config settings.
- - Added `ChannelType` field to the compliance export related model for use in adding some extra headers to the GlobalRelay email.
- - Split the email sending process into to 2 steps: create the client connection to the SMTP server and send the email.
- - Added System Console Support for Configuring GlobalRelay Compliance Exports.
- 
 #### Channel Mute
  - Added a `/mute` command, meaning that when a channel is muted, desktop, push and email notifications are not sent for the channel.
  
@@ -40,6 +18,23 @@ Release date: 2018-04-16
  
 #### Team Icons
  - Added integration of team icons which appear in the team sidebar within the border of the existing team icons.
+
+#### Permissions Backend Phase 1
+
+ - `AllowEditPost` and `PostEditTimeLimit` migration.
+ - Added `ADD_REACTION`, `REMOVE_REACTION` and `REMOVE_OTHERS_REACTIONS` permissions.
+ - Added consistent permissions checking between incoming/outgoing webhooks.
+ - Added support for commands in the enterprise version, related to the future need for a command to manage advanced permissions.
+ - Implemented permission checking functions in the webapp.
+ - Migrated `EnableOnlyAdminIntegrations` config in system console to set role permissions.
+ 
+#### Global Relay
+
+ - Added username to the queries that select compliance export data out of the database.
+ - `ChannelMemberHistory` records are now created for DM channels.
+ - Added settings, validation, and internationalization strings for new GlobalRelay config settings.
+ - Added `ChannelType` field to the compliance export related model for use in adding some extra headers to the GlobalRelay email.
+ - Split the email sending process into to 2 steps: create the client connection to the SMTP server and send the email.
 
 ### Improvements
 
@@ -77,6 +72,10 @@ Release date: 2018-04-16
 ### Bug Fixes
 
  - Fixed plugin webapp manifest field 'bundle_path' to match documentation and be the path to the plugin's JavaScript bundle relative to the root of the plugin, similar to the server manifest 'executable' field.
+ - Reverted `DisplayName` index on Channels table.
+ - Fixed 404 error on a custom emoji in the logs.
+ - Fixed an issue where cursor jumped to end of line when trying to edit text in the middle of search bar.
+ - Fixed an issue where a download link opened image in a new tab.
 
 ### Compatibility
 
@@ -131,6 +130,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
  - It is required that any new integrations use API v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
  - All API v3 endpoints have been deprecated and are scheduled for removal in Mattermost v5.0.
+ 
+#### RESTful API v4 Changes
+
+### WebSocket Event Changes
+ 
+### Database Changes
 
 ### Known Issues
  - Google login fails on the Classic mobile apps.
