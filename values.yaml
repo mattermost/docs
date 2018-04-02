@@ -24,6 +24,10 @@ certmanager:
   rbac:
     create: true
 
+redis-ha:
+  nameOverride: redis
+  enabled: false
+
 # registry:
 #   enabled: false
 #

@@ -26,6 +26,10 @@ registry:
 redis:
   enabled: true
 
+# If stateful, highly available Redis is required enable redis-ha and disable redis above
+redis-ha:
+  enabled: false
+
 # Minio chart provides Minio servics for Object Storage
 minio:
   enabled: true
