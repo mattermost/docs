@@ -24,6 +24,21 @@ certmanager:
   rbac:
     create: true
 
+prometheus:
+  install: true
+  rbac:
+    create: true
+  alertmanager:
+    enabled: false
+  alertmanagerFiles:
+    alertmanager.yml: {}
+  kubeStateMetrics:
+    enabled: false
+  nodeExporter:
+    enabled: false
+  pushgateway:
+    enabled: false
+
 redis-ha:
   nameOverride: redis
   enabled: false
