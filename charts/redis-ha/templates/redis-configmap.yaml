@@ -68,8 +68,8 @@ data:
     {{- end }}
   configure: |
     set -e
-    cat /config/redis-master.conf > /redis/master.conf;
-    cat /config/redis-slave.conf > /redis/slave.conf 
+    cat /config/redis-master.conf > /redis/master.conf
+    cat /config/redis-slave.conf > /redis/slave.conf
     echo "$(cat /config/password)" >> /redis/pass
 # leave this here. Signals end of block to the parser
 {{- end -}}

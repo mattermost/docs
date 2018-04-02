@@ -77,7 +77,7 @@ spec:
         ports:
           - containerPort: 6379
         volumeMounts:
-          - mountPath: /redis-master-data 
+          - mountPath: /redis-master-data
             name: data
           - name: {{ .Release.Name }}-config
             mountPath: /etc/redis/

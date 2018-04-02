@@ -71,7 +71,7 @@ If you have an external postgres database ready,
 
 ### Redis
 
-By default we use an single, no replicated Redis instance. If desired, a highly available redis can be deployed instead. You can learn more about configuring: [Redis](../charts/redis) and [Redis-ha](../charts/redis-ha).
+By default we use an single, non-replicated Redis instance. If desired, a highly available redis can be deployed instead. You can learn more about configuring: [Redis](../charts/redis) and [Redis-ha](../charts/redis-ha).
 
 * To deploy `redis-ha` instead of the default `redis`, include these options in your helm install command:*
 ```

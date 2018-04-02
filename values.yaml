@@ -28,19 +28,6 @@ redis-ha:
   nameOverride: redis
   enabled: false
 
-# nginx:
-#   ingress:
-#     enabled: true
-#     acme: true
-#
-# kube-lego:
-#   enabled: true
-#   config:
-#     LEGO_EMAIL: email@domain.tld
-#     # LEGO_URL: https://acme-v01.api.letsencrypt.org/directory
-#   rbac:
-#     create: true
-#
 # registry:
 #   enabled: false
 #

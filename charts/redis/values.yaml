@@ -11,9 +11,9 @@ service:
 replicas: 1
 # define some sane resource requests and limitations
 resources:
-  #limits:
-  #  cpu: 200m
-  #  memory: 1024Mi
+  # limits:
+  #   cpu: 200m
+  #   memory: 1024Mi
   requests:
     cpu: 100m
     memory: 128Mi
@@ -64,6 +64,7 @@ persistence:
   ## Only bind to a volume with the following exppression matched labels.
   ## ref: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#selector
   matchExpressions: []
+
   # Configure save points
   # https://redis.io/topics/persistence
   # - time: every X seconds
