@@ -20,7 +20,6 @@ Release date: 2018-04-16
  - Added integration of team icons which appear in the team sidebar within the border of the existing team icons.
 
 #### Permissions Backend Phase 1
-
  - `AllowEditPost` and `PostEditTimeLimit` migration.
  - Added `ADD_REACTION`, `REMOVE_REACTION` and `REMOVE_OTHERS_REACTIONS` permissions.
  - Added consistent permissions checking between incoming/outgoing webhooks.
@@ -29,7 +28,6 @@ Release date: 2018-04-16
  - Migrated `EnableOnlyAdminIntegrations` config in system console to set role permissions.
  
 #### Global Relay
-
  - Added username to the queries that select compliance export data out of the database.
  - `ChannelMemberHistory` records are now created for DM channels.
  - Added settings, validation, and internationalization strings for new GlobalRelay config settings.
