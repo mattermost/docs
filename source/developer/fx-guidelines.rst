@@ -29,13 +29,13 @@ Fast has two parts: being "responsive" and being "quick".
 
 **Obvious**
 
-There is no such thing as "user error"--it’s always our fault as product designers. We stop problems from incorrect usage by making users aware of correct usage. Fixes could be through user interface improvements, adjustments to help text, or helping users recover when things go wrong–adding undelete, undo and rolling back for example.
+There is no such thing as "user error"--it’s always our fault as product designers. We stop problems from incorrect usage by making users aware of correct usage. Fixes could be through user interface improvements, adjustments to help text or helping users recover when things go wrong–for example, adding undelete, undo and rolling back.
 
-When our product is correct, users are never confused. Everything we do--features, interface layout, labeling, help text, and documentation--needs to make sense in the mind of the user, even if it means occasionally oversimplifying how things technically work.
+When our product is correct, users are never confused. Everything we do--features, interface layout, labeling, help text and documentation--needs to make sense in the mind of the user, even if it means occasionally oversimplifying how things technically work.
 
 If a user doesn’t understand how to use a feature, all the underlying effort and code is wasted. The “Obvious” design principle also flows through to our `Documentation Guidelines <http://www.mattermost.org/documentation-guidelines/>`_.
 
-Given `Hick’s Law <https://en.wikipedia.org/wiki/Hick%27s_law>`_, core functionality should be apparent, and advanced functionality should be possible via sub-menus and well documented and tested. Functionality that is not fundamental to the product purpose should be ruthlessly omitted.
+Given `Hick’s Law <https://en.wikipedia.org/wiki/Hick%27s_law>`_, core functionality should be apparent, and advanced functionality should be possible via sub-menus and be well documented and tested. Functionality that is not fundamental to the product purpose should be ruthlessly omitted.
 
 Use design patterns familiar to our audience--general non-technical users for the core messaging experience, IT administrators for configuration experience, developers for the developer experience. Mattermost UX should be drawn from patterns and derivations of other experiences in a mix of familiar approaches. Remember: Software is an invention--there's nothing "intuitive" about it, there is only what is familiar.
 
@@ -45,7 +45,7 @@ There will be unavoidable product failures, whether through technical issues lik
 
 Features like confirmation dialogs on critical actions or temporarily saving user input in case of disconnect are examples of forgiveness.
 
-That said, forgiving does not mean allowing the product to be used incorrectly, and breaking the obvious principle. As an analogy, if someone kicks a football and misses the goal, being forgiving means giving them a chance to kick again, it does not mean counting the miss as a goal.
+That said, forgiving does not mean allowing the product to be used incorrectly, and breaking the "Obvious" principle. As an analogy, if someone kicks a football and misses the goal, being forgiving means giving them a chance to kick again, it does not mean counting the miss as a goal.
 
 2) International, Compatible, Priority-focused
 -------------------------------------------------
@@ -54,8 +54,7 @@ That said, forgiving does not mean allowing the product to be used incorrectly, 
 
 **Compatible** - When aligned with our other design principles, we should deploy UX and integration patterns from the other products for which we support the import of teams and users.
 
-**Priority-focused** - Communication is a starting point towards the end goal of helping users within an enterprise achieve their highest priorities through modern communication. We prefer term "messaging" to convey the sending of thoughtful communications that moves ideas forward, to the term "chat", which doesn't imply progress.
-
+**Priority-focused** - Communication is a starting point towards the end goal of helping users within an enterprise achieve their highest priorities through modern communication. We prefer the term "messaging" to convey the sending of thoughtful communications that moves ideas forward, to the term "chat", which doesn't imply progress.
 
 -----
 
@@ -70,7 +69,7 @@ Since we’re using `bootstrap <http://getbootstrap.com/>`_, try to utilize `boo
 Custom Styles
 -------------
 
-We’re using `BEM methodology <https://en.bem.info/method/>`_  and would advise everyone to do so when creating new classes or ids. There’s a lot of places in our app that currently don’t follow BEM but we’re trying to improve the codebase. `Here <http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/>`_ is a brief overview of the BEM syntax.
+We’re using `BEM methodology <https://en.bem.info/method/>`_  and would advise everyone to do so when creating new classes or ids. There are many places in our app that currently don’t follow BEM, but we’re trying to improve the codebase. `Here <http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/>`_ is a brief overview of the BEM syntax.
 
 -----
 
@@ -86,15 +85,14 @@ Desktop
 
 -----
 
-
 UX Feedback Guidelines
 ****************************
 
-User experience design is a discipline drawing from ergonomics, ethnography, human factors research, and cognitive psychology. It's evaluated qualitatively with tools like heuristic evaluation and cognitive walkthroughs, and quantitatively through telemetry, anonymous usage data and other automated diagnostics.
+User experience design is a discipline drawing from ergonomics, ethnography, human factors research and cognitive psychology. It's evaluated qualitatively with tools like heuristic evaluation and cognitive walkthroughs, and quantitatively through telemetry, anonymous usage data and other automated diagnostics.
 
 As with any design process, iteration, prototyping, informed critique and evaluation is vital to doing our best work. Developing the skill of informed critique in our community increases the quality of our designs and of our product.
 
-This guide outlines the levels of UX feedback in order of positive impact in order to guide contributors towards the behaviors that best  advances a fast-moving, asychronously-developed open source product.
+This guide outlines the levels of UX feedback in the order of positive impact in order to guide contributors towards the behaviors that best  advances a fast-moving, asychronously-developed open source product.
 
 **Entry-level UX feedback:** Authentic questions or suggestions for design changes, presented with good intentions, coming from personal preferences with less than 2 minutes spent thinking about the pros and cons of the changes the feedback suggests.
 
@@ -104,7 +102,7 @@ Example 1: Well intentioned suggestion that does not consider pros and cons.
 
 
 
-Example 2: Attempt to help provide "input" in a design discussion, but instead of using objective criteria such as audience, community, customers, examples, research, or principles, expresses a political "vote" that may bias or confuse a design discussion.
+Example 2: Attempt to help provide "input" in a design discussion, but instead of using objective criteria such as audience, community, customers, examples, research or principles, expresses a political "vote" that may bias or confuse a design discussion.
 
    +1, that is my personal preference!
 
@@ -112,7 +110,7 @@ While it's important to welcome people sharing entry-level feedback, and to extr
 
 **Intermediate UX feedback:** - Comments, critique or questions about design with thoughtful consideration--including trade-offs--of the goal and principles of a design, along with UX principles of the project, and patterns from other products.
 
-Feedback speaks for itself, with relevant references to principles, audience, research and other objective criteria. May include descriptions of experience using the feature or similar features that can be generalized to the intended audience,
+Feedback speaks for itself, with relevant references to principles, audience, research and other objective criteria. May include descriptions of experience using the feature or similar features that can be generalized to the intended audience:
 
 Example: Thoughtful suggestion listing trade-offs that reference principles.
 
@@ -124,8 +122,7 @@ UX feedback at intermediate level or higher is highly appreciated. It should be 
 
 Example: Noticing a design issue and influencing a change in UX guidelines to correct things system-wide.
 
-   A menu with 10 items without groupings seems too long. Both Apple (link) and Windows (link) user interface guidelines suggest fewer than 7 options before grouping. I'd propose we use fewer than 5. There's research showing 5 items as an amount most people can comfortably store mentally (link), and looking through other products I don't see situations where we wouldn't be able to group by 5. Also, fewer menu items, perhaps through sub-menus, should also help mobile, where ungrouped 10 item menus just look messy. I've added a PR on UX guidelines where we can discuss this as well.
-
+   **XXXX** A menu with 10 items without groupings seems too long. Both Apple (link) and Windows (link) user interface guidelines suggest fewer than 7 options before grouping. I'd propose we use fewer than 5. There's research showing 5 items as an amount most people can comfortably store mentally (link), and looking through other products I don't see situations where we wouldn't be able to group by 5. Also, fewer menu items, perhaps through sub-menus, should also help mobile, where ungrouped 10 item menus just look messy. I've added a PR on UX guidelines where we can discuss this as well.
 
 -----
 
@@ -156,7 +153,7 @@ Create space between elements, such as buttons, text, line separators, headers a
 
     **Example:**
 
-        Roles right justified with respect to the text and irrespective of the icon.
+        Roles right-justified with respect to the text and irrespective of the icon.
             ..  image:: ../images/align3.jpg
                 :alt: Vertically justified
                 :width: 500 px
@@ -168,7 +165,7 @@ Display: Button Placement
 
 **Button in the footer of the dialog should either be “Close”, or “Cancel” and [ACTION_BUTTON].**
 
-If there’s one button on the bottom right, it should be “Close”, if there are two, the one on the left should be “Cancel” and the one on the right should be an [ACTION_BUTTON], like “Save” or “Send Invitations”.
+If there’s one button on the bottom right, it should be “Close”. If there are two, the one on the left should be “Cancel” and the one on the right should be an [ACTION_BUTTON], like “Save” or “Send Invitations”.
 
 **Example:**
 
@@ -230,8 +227,8 @@ Display: Icons
     a. When using icons, different options in the same section should have different icons.
 
 4. Testing
-    a. File a bug if the icon is difficult to understand or has cosmetic defects (size, blur, etc.)
-    b. File a bug when an icon doesn’t obviously indicate the underlying feature
+    a. File a bug if the icon is difficult to understand or has cosmetic defects (size, blur, etc.).
+    b. File a bug when an icon doesn’t obviously indicate the underlying feature.
 
 |
 ---------------------------
@@ -307,11 +304,11 @@ On occasion, Mattermost users may encounter a problem that prevents them or the 
 
 Error messages should:
 
-- State the encountered problem with the component in the title (e.g. Team URL Not Found).
+- State the encountered problem with the component in the title (e.g. "Team URL Not Found").
 - Describe very briefly why the error happened under the title.
 - When possible, have a link to direct users to help complete their original task or return to the previous state.
 - Give recommendations/solution(s) for the next course of action.
-- Be consistent with the Mattermost voice and look professional.
+- Be consistent with the Mattermost voice and professional look.
 - Be avoided when possible (by avoiding the error condition).
 
 Error messages should not:
@@ -341,8 +338,7 @@ Error messages should not:
 Input: Fields
 -------------
 
-Users should enter information into fields without much thinking. Enter button on last
-input field should trigger default dialog button.
+Users should enter information into fields without much thinking. Enter button on last input field should trigger default dialog button.
 
 **Example 1:**
 
