@@ -88,7 +88,7 @@ Paid Time Off
 1) Time-off
 ~~~~~~~~~~~
 
-Our culture is high trust and results-focused. We want people to take time away to relax, think and come back energized. 
+Our culture is high trust and results-focused. We want people to take time away to relax, think and come back energized.
 
 When you take time-off, please remember:
 
@@ -122,6 +122,20 @@ US & Canadian Holidays for 2018:
 - US Thanksgiving (11/22/2018)
 - US & Canadian Christmas Day (12/25/2018)
 - Canadian Boxing Day (12/26/2018)
+
+Germany Holidays for 2018 (only for Berlin):
+
+- New Year's (1/1/2018)
+- Good Friday (3/30/2018)
+- Easter Day (4/2/2018)
+- Labor Day (5/1/2018)
+- Ascension Day (5/10/2018)
+- Whit Monday (5/21/2018)
+- Day of German Unity (10/3/2018)
+- Christmas Eve (12/24/2018)
+- Christmas Day (12/25/2018)
+- St. Stephen's Day (12/26/2018)
+- New Years Eve (12/31/2018)
 
 It's up to meeting chairs to decide whether to reschedule if few people can attend (e.g. if there are a lot of US or Canadians in the meeting).
 
