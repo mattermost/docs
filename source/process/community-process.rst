@@ -89,7 +89,7 @@ The various community channels are outlined below. On a daily basis, the Communi
     
       - Responds to the issues and closes them after release date.
       
-        - Thank you [NAME] for nominating the feature! It is now available in Mattermost [X.Y]. Would anyone like to help re-tweet the announcement? [LINK TO TWEET]
+        - Thank you [NAME] for nominating the feature! It is now available in Mattermost [X.Y].
         
       - Updates `Spreadsheet <https://docs.google.com/spreadsheets/d/1nljd4cFh-9MXF4DxlUnC8b6bdqijkvi8KHquOmK8M6E/edit#gid=0>`_ to track UserVoice issues to be announced in upcoming releases.
 
