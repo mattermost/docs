@@ -39,6 +39,10 @@ prometheus:
   pushgateway:
     enabled: false
 
+redis-ha:
+  nameOverride: redis
+  enabled: false
+
 # registry:
 #   enabled: false
 #

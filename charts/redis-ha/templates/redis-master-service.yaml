@@ -1,0 +1,19 @@
+{{- if .Values.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "fullname" . }}
+  annotations:
+{{ toYaml .Values.servers.annotations | indent 4 }}
+spec:
+  ports:
+  - port: {{ .Values.servers.externalPort }}
+    protocol: TCP
+    targetPort: {{ .Values.servers.internalPort }}
+  selector:
+    app: {{ template "fullname" . }}
+    redis-node: "true"
+    redis-role: "master"
+    release: "{{ .Release.Name }}"
+  type: "{{ .Values.servers.serviceType }}"
+{{- end -}}

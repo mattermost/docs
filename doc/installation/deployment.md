@@ -69,6 +69,16 @@ If you have an external postgres database ready,
 --set global.psql.password.key=key_that_contains_postgres_password
 ```
 
+### Redis
+
+By default we use an single, non-replicated Redis instance. If desired, a highly available redis can be deployed instead. You can learn more about configuring: [Redis](../charts/redis) and [Redis-ha](../charts/redis-ha).
+
+* To deploy `redis-ha` instead of the default `redis`, include these options in your helm install command:*
+```
+--set redis.enabled=false
+--set redis-ha.enabled=true
+```
+
 ## Deploy using helm
 
 Once you have all of your configuration options collected, we can get any dependencies and

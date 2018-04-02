@@ -1,0 +1,15 @@
+description: Highly available Redis cluster using StatefuleSets with multiple sentinels and standbys.
+engine: gotpl
+home: http://redis.io/
+icon: https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Redis_Logo.svg/1200px-Redis_Logo.svg.png
+keywords:
+- redis
+- keyvalue
+- database
+maintainers:
+- name: GitLab Inc.
+  email: support@gitlab.com
+- name: The Build Team
+details: "Redis used as part of GitLab deployment."
+name: redis-ha
+version: 3.0
