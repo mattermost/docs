@@ -69,7 +69,7 @@ The various community channels are outlined below. On a daily basis, the Communi
       
         - Under Review: After a ticket is created but the spec is not yet complete
         - Planned: Jira ticket with a plan on how to build the feature
-        - Started: When it’s added to current sprint
+        - Started: When a developer has begun to work on the Jira ticket (the ticket shows that it is in progress)
         - Help Wanted: Ticket that is open to any contributor wanting to work on the issue
         - Completed: When ticket is resolved
         - Declined: When the suggestion does not fit with the `product vision <https://www.mattermost.org/manifesto/>`_
@@ -88,6 +88,8 @@ The various community channels are outlined below. On a daily basis, the Communi
     - Sales Responsibility - Enterprise Edition:
     
       - Responds to the issues and closes them after release date.
+      
+        - Thank you [NAME] for nominating the feature! It is now available in Mattermost [X.Y].
         
       - Updates `Spreadsheet <https://docs.google.com/spreadsheets/d/1nljd4cFh-9MXF4DxlUnC8b6bdqijkvi8KHquOmK8M6E/edit#gid=0>`_ to track UserVoice issues to be announced in upcoming releases.
 
