@@ -101,13 +101,13 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Changes to Team Edition and Enterprise Edition:
 
  - Under `MessageExportSettings` in `config.json`:
-     - Added `"CustomerType": "A9"`, to ensure... // XXX need Dev help with these or I'll figure out when I update config settings doc
+     - Added `"CustomerType": "A9"`, to ensure... // XXX need Dev help with these
      - Added `"SmtpUsername": ""`, to ensure...
      - Added `"SmtpPassword": ""`, to ensure...
      - Added `"EmailAddress": ""`, to ensure...
  - Under ` "SamlSettings"` in `config.json`:
-     - Added `"ScopingIDPProviderId": ""`, to esure...
-     - Added `"ScopingIDPName": ""`, to ensure...
+     - Added `"ScopingIDPProviderId": ""`, to allow an authenticated user to skip the initial login page of their federated Azure AD server, and only require a password to log in.
+     - Added `"ScopingIDPName": ""`, to add the name associated with a user's Scoping Identity Provider ID.
  - Under `DisplaySettings"` in `config.json`:
      - Added `"ExperimentalTimezone": false`, to ensure..
 
@@ -133,7 +133,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Channel scroll position flickers while images and link previews load.
  - Numbered lists can sometimes extend beyond the normal post area.
  - Slack import through the CLI fails if email notifications are enabled.
- - Push notifications don't always clear on iOS when running Mattermost in High Availability mode. // XXX Fixed?
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
  - CTRL/CMD+U shortcut to upload a file doesn’t work on Firefox.
 
 ### Contributors
