@@ -1,0 +1,4 @@
+apiVersion: v1
+description: GitLab Issuer for certmanager
+name: certmanager-issuer
+version: 0.1.0
