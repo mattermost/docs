@@ -39,6 +39,7 @@ Release date: 2018-04-16
  
 #### Plugins (Beta)
  - Plugins now have more flexibility to format text, emojis and Markdown.
+ - Added support for plugins to add actions to the sidebar dropdowns.
  
 #### Administration
  - Added support for OWA SMTP servers by supporting the LOGIN authentication method for SMTP.
@@ -59,6 +60,9 @@ Release date: 2018-04-16
  - Fixed plugin webapp manifest field 'bundle_path' to match documentation and be the path to the plugin's JavaScript bundle relative to the root of the plugin, similar to the server manifest 'executable' field.
  - Fixed an issue where Direct Message channel with yourself did not show up in channel switcher.
  - Fixed an issue where deleting one username from "add member to a channel" field deleted all names.
+ - Fixed an issue where link was missing in an ephemeral message to add mentioned user to the channel.
+ - Fixed an issue where View/Manage members should have been sorted by username, not online status.
+ - Fixed an issue where a non-system-admin should not see `Is Trusted` option on OAuth 2.0 integrations.
 
 ### Compatibility
 
