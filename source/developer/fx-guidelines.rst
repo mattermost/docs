@@ -29,7 +29,7 @@ Fast has two parts: being "responsive" and being "quick".
 
 **Obvious**
 
-There is no such thing as "user error"--it’s always our fault as product designers. We stop problems from incorrect usage by making users aware of correct usage. Fixes could be through user interface improvements, adjustments to help text or helping users recover when things go wrong–for example, adding undelete, undo and rolling back.
+There is no such thing as "user error"--it’s always our fault as product designers. We prevent problems of incorrect usage by making users aware of correct usage. Fixes could be through user interface improvements, adjustments to help text or helping users recover when things go wrong–for example, adding undelete, undo and rolling back.
 
 When our product is correct, users are never confused. Everything we do--features, interface layout, labeling, help text and documentation--needs to make sense in the mind of the user, even if it means occasionally oversimplifying how things technically work.
 
@@ -45,7 +45,7 @@ There will be unavoidable product failures, whether through technical issues lik
 
 Features like confirmation dialogs on critical actions or temporarily saving user input in case of disconnect are examples of forgiveness.
 
-That said, forgiving does not mean allowing the product to be used incorrectly, and breaking the "Obvious" principle. As an analogy, if someone kicks a football and misses the goal, being forgiving means giving them a chance to kick again, it does not mean counting the miss as a goal.
+That said, forgiving does not mean allowing the product to be used incorrectly by breaking the "Obvious" principle. As an analogy, if someone kicks a football and misses the goal, being forgiving means giving them a chance to kick again, it does not mean counting the miss as a goal.
 
 2) International, Compatible, Priority-focused
 -------------------------------------------------
@@ -92,7 +92,7 @@ User experience design is a discipline drawing from ergonomics, ethnography, hum
 
 As with any design process, iteration, prototyping, informed critique and evaluation is vital to doing our best work. Developing the skill of informed critique in our community increases the quality of our designs and of our product.
 
-This guide outlines the levels of UX feedback in the order of positive impact in order to guide contributors towards the behaviors that best  advances a fast-moving, asychronously-developed open source product.
+This guide outlines the levels of UX feedback in the order of positive impact in order to guide contributors towards the behaviors that best advance a fast-moving, asychronously-developed open source product.
 
 **Entry-level UX feedback:** Authentic questions or suggestions for design changes, presented with good intentions, coming from personal preferences with less than 2 minutes spent thinking about the pros and cons of the changes the feedback suggests.
 
@@ -122,7 +122,7 @@ UX feedback at intermediate level or higher is highly appreciated. It should be 
 
 Example: Noticing a design issue and influencing a change in UX guidelines to correct things system-wide.
 
-   A menu with 10 items without groupings seems too long. Both Apple (link) and Windows (link) user interface guidelines suggest fewer than 7 options before grouping. I'd propose we use fewer than 5. There's research showing 5 items as an amount most people can comfortably store mentally (link), and looking through other products I don't see situations where we wouldn't be able to group by 5. Also, fewer menu items, perhaps through sub-menus, should also help mobile experience, where ungrouped 10 item menus just look messy. I've added a PR on UX guidelines where we can discuss this as well.
+   A menu with 10 items without groupings seems too long. Both Apple (link) and Windows (link) user interface guidelines suggest fewer than 7 options before grouping. I'd propose we use fewer than 5. There's research showing 5 items as a number most people can comfortably store mentally (link), and looking through other products I don't see situations where we wouldn't be able to group by 5. Also, fewer menu items, perhaps through sub-menus, should also help mobile experience, where ungrouped 10-item menus just look messy. I've added a PR on UX guidelines where we can discuss this as well.
 
 -----
 
@@ -573,7 +573,7 @@ Currently the `/test tool <https://github.com/mattermost/mattermost-server/tree/
 Organization: Reduce Obvious Steps
 ----------------------------------
 
-If the action a user need to perform is obvious, we should make conscious decisions to reduce some of the steps involved in that process.
+If the action a user needs to perform is obvious, we should make conscious decisions to reduce some of the steps involved in that process.
 
     **Example 1:**
         Clicking on the search icon on mobile should focus the search bar when it slides in.
