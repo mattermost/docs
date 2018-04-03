@@ -298,10 +298,10 @@ qa:
       --set releaseOverride="$CI_ENVIRONMENT_SLUG" \
       --set global.hosts.hostSuffix="$HOST_SUFFIX" \
       --set global.hosts.domain="$AUTO_DEVOPS_DOMAIN" \
+      --set global.hosts.externalIP="$DOMAIN_IP" \
       --set global.ingress.tls.secretName=helm-charts-win-tls \
       --set global.ingress.configureCertmanager=false \
       --set certmanager.install=false \
-      --set nginx.service.loadBalancerIP="$DOMAIN_IP" \
       --set gitlab.migrations.initialRootPassword="$ROOT_PASSWORD" \
       --set gitlab.omnibus.service.type=NodePort \
       --set gitlab.omnibus.resources.requests.cpu=100m \
