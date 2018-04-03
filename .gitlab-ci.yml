@@ -97,6 +97,7 @@ stop_review:
     - git checkout master
     - terraform_init
     - delete
+    - cleanup
     - terraform_down
   environment:
     name: review/$CI_COMMIT_REF_NAME
@@ -288,6 +289,7 @@ qa:
     if [ "$CI_ENVIRONMENT_SLUG" != "production" ] && previousDeployFailed ; then
       echo "Deployment in bad state, cleaning up $CI_ENVIRONMENT_SLUG"
       delete
+      cleanup
     fi
 
     helm dep update .
@@ -408,6 +410,27 @@ qa:
     fi
     purgeJobs
     helm delete --purge "$name" || true
+  }
+
+  function kubectl_cleanup() {
+    type=$1
+    name=$2
+    kubectl get $type | \
+        grep -v NAME | \
+        grep ^$name | \
+        cut -d ' ' -f1 | \
+        xargs kubectl delete $type
+  }
+
+  function cleanup() {
+    name="$CI_ENVIRONMENT_SLUG"
+    kubectl_cleanup deployment $name || true
+    kubectl_cleanup daemonset $name || true
+    kubectl_cleanup statefulset $name || true
+    kubectl_cleanup ingress $name || true
+    kubectl_cleanup job $name || true
+    kubectl_cleanup pod $name || true
+    kubectl_cleanup secret $name || true
   }
 
   function terraform_up() {
