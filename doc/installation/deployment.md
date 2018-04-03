@@ -2,7 +2,7 @@
 
 To deploy, first clone the repository locally: `git clone git@gitlab.com:charts/helm.gitlab.io.git`
 
-Before running `helm install`, you need to make some decisions about how you will run gitlab.
+Before running `helm install`, you need to make some decisions about how you will run GitLab.
 Options can be specified using helm's `--set option.name=value` command line option.
 A complete list  of command line options can be found [here](./command-line-options.md).
 This guide will cover required values and common options.
@@ -30,7 +30,7 @@ Before beginning, you should have a domain name with A records for `gitlab`,
 
 ### Initial root password
 
-Select a root password for your gitlab install. The root account will have full
+Select a root password for your GitLab install. The root account will have full
 administrative access and can be used to create other accounts.
 
 *Include these options in your helm install command:*
@@ -40,7 +40,7 @@ administrative access and can be used to create other accounts.
 
 ### TLS certificates
 
-You should be running gitlab using https which requires TLS certificates. By default the
+You should be running GitLab using https which requires TLS certificates. By default the
 chart will install and configure [cert-manager](https://github.com/jetstack/cert-manager)
 to obtain free TLS certificates.
 If you have your own wildcard certificate, you already have cert-manager installed, or you
@@ -55,7 +55,7 @@ certificates.
 
 ### Postgresql
 
-By default we use the Gitlab omnibus chart to provide an in-kubernetes postgresql database. This
+By default we use the GitLab omnibus chart to provide an in-kubernetes postgresql database. This
 configuration should not be used in production.
 
 You can read more about setting up your production-ready database in the [advanced database docs](../advanced/external-db/README.md).
