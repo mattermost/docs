@@ -57,8 +57,12 @@ Release date: 2018-04-16
  - Fixed an issue where a download link opened images in a new tab instead of downloading them.
  - Fixed push notifications being sent for your own direct messages.
  - Fixed plugin webapp manifest field 'bundle_path' to match documentation and be the path to the plugin's JavaScript bundle relative to the root of the plugin, similar to the server manifest 'executable' field.
+ - Fixed an issue where Direct Message channel with yourself did not show up in channel switcher.
+ - Fixed an issue where deleting one username from "add member to a channel" field deleted all names.
 
 ### Compatibility
+
+ - IE11 Compatibility View now shows an "Unsupported Browser" error page, [given it's not a supported version](https://docs.mattermost.com/install/requirements.html#pc-web-experience).
 
 #### Removed and Deprecated Features
 
