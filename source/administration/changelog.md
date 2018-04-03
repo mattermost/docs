@@ -17,63 +17,46 @@ Release date: 2018-04-16
  - Added rendering of at-mentions by the teammate name display.
  
 #### Team Icons
- - Added integration of team icons which appear in the team sidebar within the border of the existing team icons.
+ - Added support for team icons in the team sidebar, within the border of the existing team icons.
 
-#### Permissions Backend Phase 1
- - `AllowEditPost` and `PostEditTimeLimit` migration.
- - Added `ADD_REACTION`, `REMOVE_REACTION` and `REMOVE_OTHERS_REACTIONS` permissions.
- - Added consistent permissions checking between incoming/outgoing webhooks.
- - Added support for commands in the enterprise version, related to the future need for a command to manage advanced permissions.
- - Implemented permission checking functions in the webapp.
- - Migrated `EnableOnlyAdminIntegrations` config in system console to set role permissions.
+#### Advanced Permissions ([Enterprise Edition E20](https://about.mattermost.com/pricing/))
+ - Migrated system permissions to roles, which allows for more granular permissions at team and channel level, as well as custom roles, in future Mattermost releases.
+ - Several configuration settings were migrated to roles in the database where changing their `config.json` values no longer take effect. See the compatibility section of this changelog to learn more.
  
-#### Global Relay
- - Added username to the queries that select compliance export data out of the database.
- - `ChannelMemberHistory` records are now created for DM channels.
- - Added settings, validation, and internationalization strings for new GlobalRelay config settings.
- - Added `ChannelType` field to the compliance export related model for use in adding some extra headers to the GlobalRelay email.
- - Split the email sending process into to 2 steps: create the client connection to the SMTP server and send the email.
+#### Global Relay (Beta) ([Enterprise Edition E20](https://about.mattermost.com/pricing/) Add-On)
+ - Added compliance export support for Global Relay as a compliance solution. [Learn more here](https://about.mattermost.com/default-compliance-export-documentation).
 
 ### Improvements
 
 #### Web User Interface
- - Added a user interface top banner for System Admins who use APIv3.
- - Return cursor to reply thread input box after deleting a reply from the right-hand sidebar.
+ - Users can now set their timezone in **Account Settings > Timezone**.
  - Added ability for users to load more recent messages after jumping to a search result.
- - Hid edit able elements for Town Square for non admin users when `"ExperimentalTownSquareIsReadOnly": true`.
- - Added an `ExperimentalTimezone` flag to hide the timezone feature from clients.
- 
-#### Performance
- - Added cache invalidation totals to metrics.
- - Rewrote `getParentsPosts` to force the database to use the `PRIMARY` index when fetching posts instead of trying to filter down by channel and doing a scan.
- - Investigated reduced client performance in busy channels to address degraded client-side performance connected to busy channels.
- 
-#### Plugins (beta)
- - Exported text formatting functions to webapp plugins to allow them to format text, emojis, markdown, and so on.
+ - Cursor now returns to the reply thread input box after deleting a reply on the right-hand sidebar.
 
-#### Notifications
- - Changed push notifications so that they are sent for own direct messages.
- - Changed wording of messages indicating that push notifications are disabled.
+#### Performance
+ - Decreased channel load time by optimizing the `getParentsPosts` database query.
+ - Decreased loadtime of large channels with 5,000+ messages by up to 90% by optimizing the `formatPostInChannel` and `postsInThread` database queries.
+ 
+#### Plugins (Beta)
+ - Plugins now have more flexibility to format text, emojis and Markdown.
  
 #### Administration
- - Migrated admin console to a new declarative way.
- 
-#### Slash commands
- - Added a platform command to change user email address.
- 
+ - Added support for OWA SMTP servers by supporting the LOGIN authentication method for SMTP.
+ - Added support for AWS Identity and Access Management (IAM) roles for Amazon S3 file storage.
+ - Added a "Test Connection" button to test Amazon S3 connection.
+ - Added a `platform user email` command to change a user's email address.
+
 #### Enterprise Edition
- - Added support for LOGIN authentication method for SMTP.
- - Added support for AWS Identity and Access Management (IAM) role, and added a button to test AWS connection.
- - Added support for ec2 instance profile authentication.
- - Emitted all default enterprise configuration options, even for team edition.
+ - When `ExperimentalTownSquareIsReadOnly` is set to `true`, non-admins can no longer react to messages, pin messages or update channel information.
+ - Added cache invalidation totals to [Performance Monitoring](https://docs.mattermost.com/deployment/metrics.html).
 
 ### Bug Fixes
 
- - Fixed plugin webapp manifest field 'bundle_path' to match documentation and be the path to the plugin's JavaScript bundle relative to the root of the plugin, similar to the server manifest 'executable' field.
- - Reverted `DisplayName` index on Channels table.
- - Fixed 404 error on a custom emoji in the logs.
+ - Fixed 404 errors about custom emoji in the logs.
  - Fixed an issue where cursor jumped to end of line when trying to edit text in the middle of search bar.
- - Fixed an issue where a download link opened image in a new tab.
+ - Fixed an issue where a download link opened images in a new tab instead of downloading them.
+ - Fixed push notifications being sent for your own direct messages.
+ - Fixed plugin webapp manifest field 'bundle_path' to match documentation and be the path to the plugin's JavaScript bundle relative to the root of the plugin, similar to the server manifest 'executable' field.
 
 ### Compatibility
 
@@ -96,7 +79,7 @@ Release date: 2018-04-16
    
 #### Upcoming Deprecated Features in Mattermost v5.0
 
- - The following deprecations are planned for the Mattermost v5.0 release, which is scheduled for summer/2018. This list is subject to change prior to the release.
+The following deprecations are planned for the Mattermost v5.0 release, which is scheduled for summer/2018. This list is subject to change prior to the release.
 
 1. All API v3 endpoints will be removed. [See documentation](https://api.mattermost.com/#tag/schema) to learn more about how to migrate your integrations to API v4. [Ticket #8708](https://mattermost.atlassian.net/browse/MM-8708).
 2. `platform` binary will be renamed to mattermost for a more clear install and upgrade experience. All command line tools, including the bulk loading tool and developer tools, will also be renamed from platform to mattermost. [Ticket #9985](https://mattermost.atlassian.net/browse/MM-9985).
@@ -104,8 +87,8 @@ Release date: 2018-04-16
 4. A new `config.json` setting to whitelist types of protocols for autolinking will be added. [Ticket #9547](https://mattermost.atlassian.net/browse/MM-9547).
 5. A new `config.json` setting to disable the [permanent APIv4 delete team parameter](https://api.mattermost.com/#tag/teams%2Fpaths%2F~1teams~1%7Bteam_id%7D%2Fput) will be added. The setting will be off by default for all new and existing installs, except those deployed on GitLab Omnibus. A System Administrator can enable the API v4 endpoint from the config.json file. [Ticket #9916](https://mattermost.atlassian.net/browse/MM-9916).
 6. Potential breaking changes to Slack import tool following username removal in Slack. [Ticket #7697](https://mattermost.atlassian.net/browse/MM-7697).
-7. An unused ExtraUpdateAt field will be removed from the channel model. [Ticket #9739](https://mattermost.atlassian.net/browse/MM-9739).
-8. [Enterprise Edition E20] Current CSV export feature will be replaced by the [new Compliance Export](https://docs.mattermost.com/administration/compliance-export.html) feature in the Government Edition E20. [Ticket #8810](https://mattermost.atlassian.net/browse/MM-8810).
+7. An unused `ExtraUpdateAt` field will be removed from the channel model. [Ticket #9739](https://mattermost.atlassian.net/browse/MM-9739).
+8. [Enterprise Edition E20] Current CSV export feature will be replaced by the [new Compliance Export](https://docs.mattermost.com/administration/compliance-export.html) feature. [Ticket #8810](https://mattermost.atlassian.net/browse/MM-8810).
  
 #### config.json
 
@@ -114,7 +97,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Changes to Team Edition and Enterprise Edition:
 
  - Under `MessageExportSettings` in `config.json`:
-     - Added `"CustomerType": "A9"`, to ensure... XXX/// need Dev help with these or I'll figure out when I update config settings doc
+     - Added `"CustomerType": "A9"`, to ensure... // XXX need Dev help with these or I'll figure out when I update config settings doc
      - Added `"SmtpUsername": ""`, to ensure...
      - Added `"SmtpPassword": ""`, to ensure...
      - Added `"EmailAddress": ""`, to ensure...
@@ -124,16 +107,16 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under `DisplaySettings"` in `config.json`:
      - Added `"ExperimentalTimezone": false`, to ensure..
 
-### API Changes
+#### API Changes
 
  - It is required that any new integrations use API v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
  - All API v3 endpoints have been deprecated and are scheduled for removal in Mattermost v5.0.
  
-#### RESTful API v4 Changes
+##### RESTful API v4 Changes
 
-### WebSocket Event Changes
+#### WebSocket Event Changes
  
-### Database Changes
+#### Database Changes
 
 ### Known Issues
  - Google login fails on the Classic mobile apps.
@@ -146,7 +129,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Channel scroll position flickers while images and link previews load.
  - Numbered lists can sometimes extend beyond the normal post area.
  - Slack import through the CLI fails if email notifications are enabled.
- - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode. // XXX Fixed?
  - CTRL/CMD+U shortcut to upload a file doesn’t work on Firefox.
 
 ### Contributors
