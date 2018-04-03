@@ -868,8 +868,8 @@ platform user migrate_auth
   Options
     .. code-block:: none
 
-      --auto   Automatically migrate all users. Assumes the usernames and emails are identical between Mattermost and SAML services.
-      --dryRun Run a simulation of the migration process without changing the database. Useful to test if the migration results in any errors.
+      --auto   Automatically migrate all users without a {users_file}. Assumes the usernames and emails are identical between Mattermost and SAML services.
+      --dryRun Run a simulation of the migration process without changing the database. Useful to test if the migration results in any errors. You can use this option with or without a {users_file}.
 
 platform user password
 ~~~~~~~~~~~~~~~~~~~~~~~~
