@@ -1,0 +1,5 @@
+---
+title: Bring CHANGELOG logic from gitlab-ce to helm.gitlab.io
+merge_request: 200
+author: Jason Plum
+type: other

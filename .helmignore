@@ -24,3 +24,8 @@ ci/
 doc/
 images/
 certs/
+scripts/
+*.md
+CHANGELOG
+changelogs/
+bin/
