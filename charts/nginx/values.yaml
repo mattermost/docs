@@ -20,6 +20,10 @@ service:
   - https: 443
   - ssh: 22
 
+global:
+  hosts:
+    externalIP:
+
 enabled: true
 
 serviceAccount:

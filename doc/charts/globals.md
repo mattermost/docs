@@ -15,6 +15,7 @@ global:
     domain: example.local
     hostSuffix: staging
     https: false
+    externalIP:
     gitlab:
       name: gitlab.example.local
       https: false
@@ -51,6 +52,12 @@ The above config would result in using external hostnames like: `gitlab-staging.
 
 Set to false for external urls to use `http://` instead of `https`. Defaults to true. If set to true, you will need to ensure
 the nginx chart has access to the certificates.
+
+#### externalIP
+
+Set the external IP address that will be claimed from the provider. This will be templated into the
+[nginx chart](nginx/README.md#configuring-the-service), in place of the more complex `nginx.service.loadBalancerIP`.
+Defaults to `nil`.
 
 #### tls.secretName
 

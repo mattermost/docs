@@ -25,7 +25,7 @@ Before beginning, you should have a domain name with A records for `gitlab`,
 *Include these options in your helm install command:*
 ```
 --set global.hosts.domain=example.local
---set nginx.service.loadBalancerIP=10.10.10.10
+--set global.hosts.externalIP=10.10.10.10
 ```
 
 ### Initial root password
@@ -89,7 +89,7 @@ helm dependencies update
 helm upgrade --install gitlab . \
   --timeout 600 \
   --set global.hosts.domain=example.local \
-  --set nginx.service.loadBalancerIP=10.10.10.10 \
+  --set global.hosts.externalIP=10.10.10.10 \
   --set gitlab.migrations.initialRootPassword="example-password" \
   --set gitlab.certmanager-issuer.email=me@example.local
 ```

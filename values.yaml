@@ -5,6 +5,7 @@ global:
   hosts:
     domain: example.local
     https: true
+    externalIP:
   ingress:
     configureCertmanager: true
     annotations: {}
