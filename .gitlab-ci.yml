@@ -299,6 +299,8 @@ qa:
       --set global.hosts.hostSuffix="$HOST_SUFFIX" \
       --set global.hosts.domain="$AUTO_DEVOPS_DOMAIN" \
       --set global.ingress.tls.secretName=helm-charts-win-tls \
+      --set global.ingress.configureCertmanager=false \
+      --set certmanager.install=false \
       --set nginx.service.loadBalancerIP="$DOMAIN_IP" \
       --set gitlab.migrations.initialRootPassword="$ROOT_PASSWORD" \
       --set gitlab.omnibus.service.type=NodePort \
@@ -308,7 +310,6 @@ qa:
       --set gitlab.gitlab-shell.resources.requests.cpu=100m \
       --set redis.resources.requests.cpu=100m \
       --set minio.resources.requests.cpu=100m \
-      --set certmanager.install=false \
       --namespace="$KUBE_NAMESPACE" \
       --version="$CI_PIPELINE_ID-$CI_JOB_ID" \
       "$name" \

@@ -7,13 +7,12 @@ metadata:
     app: {{ template "name" . }}
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
     release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
 spec:
   acme:
     # The ACME server URL
-    server: {{ .Values.certmanager.issuer.server | quote }}
+    server: {{ .Values.server | quote }}
     # Email address used for ACME registration
-    email: {{ required "You must provide an email to associate with your TLS certificates. Please set certmanager.issuer.email" .Values.certmanager.issuer.email | quote }}
+    email: {{ required "You must provide an email to associate with your TLS certificates. Please set certmanager-issuer.email" .Values.email | quote }}
     # Name of a secret used to store the ACME account private key
     privateKeySecretRef:
       name: {{ .Release.Name }}-acme-key

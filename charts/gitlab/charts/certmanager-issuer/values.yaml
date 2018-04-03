@@ -1,0 +1,15 @@
+image:
+  repository: registry.gitlab.com/gitlab-org/build/cng/kubectl
+  tag: latest
+  pullPolicy: Always
+
+# Configure an ACME Issuer in cert-manager. Only used if configure==true
+server: https://acme-v01.api.letsencrypt.org/directory
+
+# Provide an email to associate with your TLS certificates
+# email:
+
+rbac:
+  create: true
+
+resources: {}
