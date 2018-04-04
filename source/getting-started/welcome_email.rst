@@ -39,7 +39,7 @@ Some of the major benefits of using Mattermost are:
 
 To get started:
 
-1. Open a browser on your computer, go to **[Mattermost URL]** and log in with your **[LDAP/AD, SAML, Google, etc]** credentials. Remember to bookmark the URL as that you can use it next time to log in.
+1. Open a browser on your computer, go to **[Mattermost URL]** and log in with your **[LDAP/AD, SAML, Google, etc]** credentials. Remember to bookmark the URL so you can use it to log in next time.
 
 2. `Download <https://about.mattermost.com/download/#mattermostApps>`_ the Mattermost apps for desktop and mobile. Refer to the `Mattermost Welcome Guide <https://docs.mattermost.com/help/getting-started/welcome-to-mattermost.html>`_ on how to get up and running quickly.
 
