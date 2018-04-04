@@ -760,7 +760,7 @@ platform user migrate_auth
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Migrates all user accounts from one authentication provider to another. For example, you can upgrade your authentication provider from email to AD/LDAP, or from AD/LDAP to SAML. Output will display any accounts that are not migrated successfully.
+    Migrates all existing Mattermost user accounts from one authentication provider to another. For example, you can upgrade your authentication provider from email to AD/LDAP, or from AD/LDAP to SAML. Output will display any accounts that are not migrated successfully.
 
 **Migrate to AD/LDAP**
 
@@ -805,6 +805,8 @@ platform user migrate_auth
 
   Users file generation
     Generating the ``users_file`` depends on how the system is configured and which SAML service provider is used. Below are two sample scripts for OneLogin and Okta service providers. For ADFS, you can use the AD/LDAP protocol to directly extract the users information and export it to a JSON file.
+    
+    After generating the ``users_file``, you can manually update the file to obtain a list of Mattermost user accounts you want to migrate to SAML. Note that users listed in ``users_file`` that do not yet exist in Mattermost are ignored during the migration process.
 
     OneLogin:
 
@@ -866,8 +868,8 @@ platform user migrate_auth
   Options
     .. code-block:: none
 
-      --auto   Automatically migrate all users. Assumes the usernames and emails are identical between Mattermost and SAML services.
-      --dryRun Run a simulation of the migration process without changing the database. Useful to test if the migration results in any errors.
+      --auto   Automatically migrate all users without a {users_file}. Assumes the usernames and emails are identical between Mattermost and SAML services.
+      --dryRun Run a simulation of the migration process without changing the database. Useful to test if the migration results in any errors. You can use this option with or without a {users_file}.
 
 platform user password
 ~~~~~~~~~~~~~~~~~~~~~~~~
