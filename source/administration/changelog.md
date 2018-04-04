@@ -64,6 +64,7 @@ Release date: 2018-04-16
  - Fixed an issue where View/Manage members should have been sorted by username, not online status.
  - Fixed an issue where a non-system-admin should not see `Is Trusted` option on OAuth 2.0 integrations.
  - Fixed an issue with being unable to click on pinned post, channel members, and so on with keyboard focus on search box.
+ - Fixed an issue where Mattermost only imported first user during Slack import.
 
 ### Compatibility
 
