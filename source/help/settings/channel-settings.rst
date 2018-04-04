@@ -10,6 +10,14 @@ Channel Notification Preferences
 
 Notification preferences can be modified for each channel you belong to.
 
+Mute Channel
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+By default, channel muting is turned off for all channels. 
+To mute or unmute a channel, click the channel
+name at the top of the page to access the channel menu, then click
+**Notification Preferences > Mute channel**.
+
 Send Desktop Notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
