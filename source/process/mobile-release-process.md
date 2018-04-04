@@ -55,6 +55,8 @@ Notes:
     - Create release in GitHub 
     - Close the release in Jira 
     - Schedule a release retrospective meeting, to be held within 5 days from the release
+    - Post key dates for the next release in the header of the Release Discussion channel
+        - Make sure that statutory holidays for Canada and US are accounted for in the release dates
 3. Marketing:
     - Finish draft of blog post and marketing images and send to marketing lead for review
 4. Logistics:
