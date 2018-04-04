@@ -65,6 +65,8 @@ Release date: 2018-04-16
  - Fixed an issue where a non-system-admin should not see `Is Trusted` option on OAuth 2.0 integrations.
  - Fixed an issue with being unable to click on pinned post, channel members, and so on with keyboard focus on search box.
  - Fixed an issue where Mattermost only imported first user during Slack import.
+ - Fixed an issue where cleared search term reappeared after closing RHS.
+ - Fixed an issue where image was posted while RHS was open with an oversized thumbnail.
 
 ### Compatibility
 
