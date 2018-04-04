@@ -366,7 +366,7 @@ Once bug fix release is ready to cut:
     - Delete RCs after final version is shipped    
     - Confirm gitlab.mattermost.com is updated to final build
     - Merge changes made to release branch into `master`
-    - Update existing or create new tickets for the next release
+    - Update existing tickets or create new ones for the next release
 5. Marketing:
     - Turn on CrazyEgg for blog post page
     - Confirm marketing has been posted (animated GIFs, screenshots, mail announcement, tweets, blog posts)
