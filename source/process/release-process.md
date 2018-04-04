@@ -343,14 +343,8 @@ Once bug fix release is ready to cut:
         - Otherwise, release the fix version (Actions > [...] > Release)
     - Prepare tickets for the next release, with a corresponding vX.X prefix, and put the tickets in the appropriate sprints as follows:
         - The week RC is cut:
-            - [Cut build and set up RC1 servers, including a note to check for all XXX items](https://mattermost.atlassian.net/browse/PLT-3937)
             - [RC Build Testing for core team](https://mattermost.atlassian.net/browse/PLT-2208)
-         - The week the final build is cut:
-             - [Create final release candidate](https://mattermost.atlassian.net/browse/PLT-2198)
-             - [Test upgrade](https://mattermost.atlassian.net/browse/PLT-3940) to latest release based on [upgrade guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide)
-             - Test upgrade from Team Edition to Enterprise Edition
-             - [Push final build to gitlab.mattermost.com](https://mattermost.atlassian.net/browse/PLT-3117)
-         - Release week (for PM)
+         - Release week (for Dev)
              - [Test Gitlab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/PLT-2197)
          - Week after release (for Dev)
              - [Submit Gitlab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/MM-9872)
@@ -372,6 +366,7 @@ Once bug fix release is ready to cut:
     - Delete RCs after final version is shipped    
     - Confirm gitlab.mattermost.com is updated to final build
     - Merge changes made to release branch into `master`
+    - Update existing tickets or create new ones for the next release
 5. Marketing:
     - Turn on CrazyEgg for blog post page
     - Confirm marketing has been posted (animated GIFs, screenshots, mail announcement, tweets, blog posts)
