@@ -227,7 +227,6 @@ Set up Mattermost Server
    - Make sure the service is executable with ``sudo chmod 664 /etc/systemd/system/mattermost.service``
    * Reload the services with ``sudo systemctl daemon-reload``
    * Start Mattermost service with``\ sudo systemctl start mattermost.service``
-   * ``sudo chkconfig mattermost on``
    * Start server on reboot ``sudo systemctl enable mattermost.service``
 
 Unix-domain socket connection
@@ -294,8 +293,8 @@ Set up NGINX Server
           enabled=1
 
    -  ``sudo yum install nginx.x86_64``
-   -  ``sudo service nginx start``
-   -  ``sudo chkconfig nginx on``
+   -  ``sudo systemctl start nginx``
+   -  ``sudo systemctl enable nginx``
 
 4. Verify NGINX is running
 
