@@ -5,8 +5,9 @@ global:
   hosts:
     domain: example.local
     https: true
+    externalIP:
   ingress:
-    configureCertmanager: false
+    configureCertmanager: true
     annotations: {}
     enabled: true
   psql:
@@ -16,13 +17,29 @@ certmanager:
   # Install cert-manager chart. Set to false if you already have cert-manager
   # installed or if you are not using cert-manager.
   install: true
-  # Configure an ACME Issuer in cert-manager. Only used if configure==true
-  issuer:
-    server: https://acme-v01.api.letsencrypt.org/directory
   # Other cert-manager configurations from upstream
   # See https://github.com/kubernetes/charts/tree/master/stable/cert-manager#configuration
   rbac:
     create: true
+
+prometheus:
+  install: true
+  rbac:
+    create: true
+  alertmanager:
+    enabled: false
+  alertmanagerFiles:
+    alertmanager.yml: {}
+  kubeStateMetrics:
+    enabled: false
+  nodeExporter:
+    enabled: false
+  pushgateway:
+    enabled: false
+
+redis-ha:
+  nameOverride: redis
+  enabled: false
 
 # registry:
 #   enabled: false

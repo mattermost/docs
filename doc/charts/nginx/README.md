@@ -20,11 +20,17 @@ options, such as GitLab and Registry hostnames.
 The [Service][] is configured as `type: LoadBalancer`. If you are on a hosted
 Kubernetes cluster that requires claiming a static IP (e.g. GKE), you will need
 add the `loadBalancerIP` value, which will populate into the [Service][] if present.
+If this value is not provided, the [Service][] will claim an ephemeral IP address
+from the provider.
+
+You may specify this value via `service.loadBalancerIP` or via the chart global
+`global.hosts.externalIP`.
 
 ```
 service:
   name: nginx
   type: LoadBalancer
+  loadBalancerIP: <address>
   ports:
   - http: 80
   - https: 443
@@ -38,7 +44,6 @@ Table below contains all the possible charts configurations that can be supplied
 | Parameter                         | Description                                            | Default                                                        |
 | ---                               | ---                                                    | ---                                                            |
 | replicaCount                      | Number of replicas                                     | 1                                                              |
-| LoadBalancerIp                    | IP of the external load balancer                       | Required                                                       |
 | images.defaultbackend.repository  | Default backend that nginx routes to eg: 404           | gcr.io/google_containers/defaultbackend                        |
 | images.defaultbackend.tag         | dafault backend image tag                              | 1.4                                                            |
 | images.defaultbackend.pullPolicy  | default backend pull policy                            | IfNotPresent                                                   |
@@ -48,6 +53,7 @@ Table below contains all the possible charts configurations that can be supplied
 | service.name                      | nginx service name                                     | nginx                                                          |
 | service.type                      | nginx service type                                     | LoadBalancer                                                   |
 | service.ports                     | nginx service ports                                    | [{"http": 80}, {"https": 443}, {"ssh": 22}]                    |
+| service.loadBalancerIP            | IP of the external load balancer                       | Undefined                                                      |
 | serviceAccount.autoGenerate       | Whether chart should generate service account for RBAC | true                                                           |
 | serviceAccount.name               | Service account name                                   | default                                                        |
 | proxyConnectTimeout               | Defines a timeout for establishing a connection        | 15                                                             |
@@ -65,6 +71,7 @@ Table below contains all the possible charts configurations that can be supplied
 | global.hosts.registry.servicePort | Registry port name                                     | registry                                                       |
 | global.hosts.minio.serviceName    | Minio service name                                     | minio-svc                                                      |
 | global.hosts.minio.servicePort    | Minio port name                                        | service                                                        |
+| global.hosts.externalIP           | IP of the external load balancer, from global          | Undefined                                                      |
 | shell.name                        | Shell service name                                     | gitlab-shell                                                   |
 | shell.port                        | Shell port name                                        | ssh                                                            |
 | ingress.enabled                   | Enable ingress                                         | true                                                           |

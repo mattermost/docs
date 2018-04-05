@@ -10,8 +10,8 @@ metadata:
     heritage: {{ .Release.Service }}
 spec:
   type: {{ .Values.service.type }}
-  {{- if .Values.service.loadBalancerIP }}
-  loadBalancerIP: {{.Values.service.loadBalancerIP }}
+  {{- if or .Values.global.hosts.externalIP .Values.service.loadBalancerIP }}
+  loadBalancerIP: {{ coalesce .Values.service.loadBalancerIP .Values.global.hosts.externalIP }}
   {{- end }}
   externalTrafficPolicy: "Local"
   ports:

@@ -4,10 +4,15 @@ Our contribution policies can be found in [CONTRIBUTING.md](../../CONTRIBUTING.m
 
 **Table of Contents**
 
+- [Changelog Entries](#changelog-entries)
 - [Naming Conventions](#naming-conventions)
 - [Common Structure for values.yaml](#common-structure-for-valuesyaml)
 - [Developing template helpers](#developing-template-helpers)
 - [When to fork from upstream charts](#when-to-fork-upstream-charts)
+
+## Changelog Entries
+
+All `CHANGELOG.md` entries should be created via the [changelog entries](changelog.md) workflow.
 
 ## Naming Conventions
 

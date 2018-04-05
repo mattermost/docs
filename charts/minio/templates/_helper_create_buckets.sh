@@ -5,7 +5,6 @@ set -e ; # Have script exit in the event of a failed command.
 # connectToMinio
 # Use a check-sleep-check loop to wait for Minio service to be available
 connectToMinio() {
-  ATTEMPTS=0 ; LIMIT=29 ; # Allow 30 attempts
   set -e ; # fail if we can't read the keys.
   ACCESS=$(cat /config/accesskey) ; SECRET=$(cat /config/secretkey) ;
   set +e ; # The connections to minio are allowed to fail.
@@ -15,11 +14,6 @@ connectToMinio() {
   STATUS=$? ;
   until [ $STATUS -eq 0 ] ;
   do
-    ATTEMPTS=`expr $ATTEMPTS + 1` ;
-    echo \"Failed attempts: $ATTEMPTS\" ;
-    if [ $ATTEMPTS -gt $LIMIT ]; then
-      exit 1 ;
-    fi ;
     sleep 1 ; # 1 second intervals between attempts
     $MC_COMMAND ;
     STATUS=$? ;

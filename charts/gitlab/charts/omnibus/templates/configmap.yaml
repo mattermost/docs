@@ -33,8 +33,8 @@ data:
     gitlab_rails['auto_migrate'] = false
     gitlab_rails['db_host'] = '127.0.0.1'
     gitlab_rails['db_port'] = {{ default .Values.service.ports.psql .Values.psql.port }}
-    gitlab_rails['db_username'] = {{ default "gitlab" .Values.psql.username | quote }}
-    gitlab_rails['db_database'] = {{ default "gitlabhq_production" .Values.psql.database | quote }}
+    gitlab_rails['db_username'] = {{ template "omnibus.psql.username" . }}
+    gitlab_rails['db_database'] = {{ template "omnibus.psql.database" . }}
     # Redis related
     gitlab_rails['redis_host'] = {{ printf "%s-%s" .Release.Name .Values.redis.serviceName | quote }}
     gitlab_rails['redis_port'] = {{ default 6397 .Values.redis.port }}

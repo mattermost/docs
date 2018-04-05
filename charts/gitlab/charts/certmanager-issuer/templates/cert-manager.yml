@@ -1,0 +1,16 @@
+{{ if (pluck "configureCertmanager" .Values.global.ingress (dict "configureCertmanager" false) | first) }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "fullname" . }}-certmanager
+  labels:
+    app: {{ template "name" . }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+data:
+  create-issuer: |
+{{ include (print $.Template.BasePath "/_create_issuer.sh") . | indent 4 }}
+  issuer.yml: |
+{{ include (print $.Template.BasePath "/_issuer.yaml") . | indent 4 }}
+{{ end }}

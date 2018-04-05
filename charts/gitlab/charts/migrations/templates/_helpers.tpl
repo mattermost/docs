@@ -35,8 +35,7 @@ reduce collision
 */}}
 {{- define "migrations.jobname" -}}
 {{- $name := include "migrations.fullname" . | trunc 55 | trimSuffix "-" -}}
-{{- $rand := randAlphaNum 3 | lower }}
-{{- printf "%s.%d-%s" $name .Release.Revision $rand | trunc 63 | trimSuffix "-" -}}
+{{- printf "%s.%d" $name .Release.Revision | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
 {{/*
@@ -51,6 +50,13 @@ to the service name
 {{- $name := default "omnibus" .Values.psql.serviceName -}}
 {{- printf "%s-%s" .Release.Name $name -}}
 {{- end -}}
+{{- end -}}
+
+{{/*
+Return the db database name
+*/}}
+{{- define "migrations.psql.database" -}}
+{{- coalesce .Values.psql.database .Values.global.psql.database "gitlabhq_production" | quote -}}
 {{- end -}}
 
 {{/*

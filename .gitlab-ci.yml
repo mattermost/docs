@@ -300,11 +300,18 @@ qa:
       --set releaseOverride="$CI_ENVIRONMENT_SLUG" \
       --set global.hosts.hostSuffix="$HOST_SUFFIX" \
       --set global.hosts.domain="$AUTO_DEVOPS_DOMAIN" \
+      --set global.hosts.externalIP="$DOMAIN_IP" \
       --set global.ingress.tls.secretName=helm-charts-win-tls \
-      --set nginx.service.loadBalancerIP="$DOMAIN_IP" \
+      --set global.ingress.configureCertmanager=false \
+      --set certmanager.install=false \
       --set gitlab.migrations.initialRootPassword="$ROOT_PASSWORD" \
       --set gitlab.omnibus.service.type=NodePort \
-      --set certmanager.install=false \
+      --set gitlab.omnibus.resources.requests.cpu=100m \
+      --set gitlab.unicorn.resources.requests.cpu=100m \
+      --set gitlab.sidekiq.resources.requests.cpu=100m \
+      --set gitlab.gitlab-shell.resources.requests.cpu=100m \
+      --set redis.resources.requests.cpu=100m \
+      --set minio.resources.requests.cpu=100m \
       --namespace="$KUBE_NAMESPACE" \
       --version="$CI_PIPELINE_ID-$CI_JOB_ID" \
       "$name" \
@@ -391,7 +398,7 @@ qa:
   }
 
   function purgeJobs() {
-    jobs=$(kubectl get job -l "relase=$CI_ENVIRONMENT_SLUG" -n "$KUBE_NAMESPACE" | wc -l)
+    jobs=$(kubectl get job -l "release=$CI_ENVIRONMENT_SLUG" -n "$KUBE_NAMESPACE" | wc -l)
     # The will always have a header or "no jobs found" (wc -l >= 1), and exit `0`
     if [ $jobs -gt 1 ]; then
       echo "Found dangling jobs:"

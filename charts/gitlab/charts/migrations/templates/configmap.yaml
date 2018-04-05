@@ -10,7 +10,7 @@ data:
     production:
       adapter: postgresql
       encoding: unicode
-      database: {{ default "gitlabhq_production" .Values.psql.database | quote }}
+      database: {{ template "migrations.psql.database" . }}
       pool: 10
       username: {{ template "migrations.psql.username" . }}
       password: <%= File.read("/etc/gitlab/postgres/psql-password") %>

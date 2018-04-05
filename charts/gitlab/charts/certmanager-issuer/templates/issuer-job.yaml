@@ -1,0 +1,35 @@
+{{ if (pluck "configureCertmanager" .Values.global.ingress (dict "configureCertmanager" false) | first) }}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ template "certmanager-issuer.jobname" . }}
+  labels:
+    app: {{ template "name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  activeDeadlineSeconds: 300
+  template:
+    metadata:
+      labels:
+        app: {{ template "name" . }}
+        release: {{ .Release.Name }}
+    spec:
+      {{- if .Values.rbac.create }}
+      serviceAccountName: {{ template "fullname" . }}-admin
+      {{- end }}
+      restartPolicy: OnFailure
+      containers:
+        - name: create-issuer
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          command: ['/bin/bash', '/scripts/create-issuer', '/scripts/issuer.yml']
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          volumeMounts:
+            - name: scripts
+              mountPath: /scripts
+      volumes:
+      - name: scripts
+        configMap:
+          name: {{ template "fullname" . }}-certmanager
+{{- end }}
