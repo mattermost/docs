@@ -79,11 +79,12 @@ GitLab announcement proposal
 
   Proposed update for new version of [Mattermost](https://gitlab.com/gitlab-org/omnibus-gitlab/issues/1241).
 
-  ## GitLab Mattermost 2.2
+  ### GitLab Mattermost 4.7
 
-  [Mattermost 2.2](http://www.mattermost.org/mattermost-2-2-threaded-messages-and-more/) ships in GitLab 8.7 with threaded messages, French translation, new themes, new Trello and IRC support, plus many more new benefits.
+  GitLab 10.6 includes [Mattermost 4.7](https://about.mattermost.com/releases/mattermost-4-7/), an [open source Slack-alternative](https://about.mattermost.com/) whose newest release includes enhanced image preview and thumbnails, faster load times, upgraded desktop app, plus much more.
 
-  This version also includes [security updates](http://about.mattermost.com/security-updates/) and upgrade from earlier versions is recommended.
+  This version also includes [security updates](https://about.mattermost.com/security-updates/) and upgrading is recommended.
+
 
 GitLab forum responses
 ~~~~~~~~~~~~~~~~~~~~~~~
