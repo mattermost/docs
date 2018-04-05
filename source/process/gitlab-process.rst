@@ -54,7 +54,7 @@ GitLab Premier Support Issues
 
 GitLab has a `4-hour support window for their premier support customers <https://about.gitlab.com/features/premium-support/>`_ and Mattermost has set up a process to support this window.
 
-When a premier support issue requires escalation to the Mattermost support team, GitLab assigns the issue to the ``mattermost-support`` account. This assignment sends an email notification, which is automatically escalated to the critical level technical support who answers the question within 4 hours using the ``mattermost-support`` account..
+When a premier support issue requires escalation to the Mattermost support team, GitLab assigns the issue to the ``mattermost-support`` account. This assignment sends an email notification, which is automatically escalated to the critical level technical support who answers the question within 4 hours using the ``mattermost-support`` account.
 
 Monthly Meetings
 -------------------
@@ -83,7 +83,7 @@ Upcoming Work
 
 3. `Migrate Mattermost slash command integration in GitLab to Mattermost API v4 <https://gitlab.com/gitlab-org/gitlab-ce/issues/41631>`_. - **Due: Mattermost v5.0 / GitLab v11.1**
 
-4. Releasing an extended support release (ESR) version of Mattermost, and shipping it in GitLab Omnibus. `A discussion is open in the Mattermost forums <https://forum.mattermost.org/t/extended-support-release-discussion/4598>`_. - **Due: TBD**
+4. Releasing an extended support release (ESR) version of Mattermost and shipping it in GitLab Omnibus. `A discussion is open in the Mattermost forums <https://forum.mattermost.org/t/extended-support-release-discussion/4598>`_. - **Due: TBD**
 
 5. Bundling Mattermost Enterprise Edition in GitLab EE. `A discussion is open in GitLab repository <https://gitlab.com/gitlab-org/omnibus-gitlab/issues/1609>`_. - **Due: TBD**
 
