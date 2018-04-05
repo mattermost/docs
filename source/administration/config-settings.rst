@@ -97,6 +97,8 @@ Use Let's Encrypt
 | This feature's ``config.json`` setting is ``"UseLetsEncrypt": false`` with options ``true`` and ``false`` for above settings respectively.                        |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+.. note::
+   If Let's Encrypt is enabled, forward port 80 through a firewall, with `Forward80To443<https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443>`_ ``config.json`` setting set to ``true`` to complete the Let's Encrypt certification.
 
 Let's Encrypt Certificate Cache File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -137,7 +139,7 @@ Allow use of API v3 endpoints
 Set to false to disable all version 3 endpoints of the REST API. Integrations that rely on API v3 will fail and can then be identified for migration to API v4. API v3 is deprecated and will be removed in the near future. See https://api.mattermost.com for details.
 
 +---------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableAPIv3": true`` with options ``true`` and ``false``.  |
+| This feature's ``config.json`` setting is ``"EnableAPIv3": false`` with options ``false`` and ``true``. |
 +---------------------------------------------------------------------------------------------------------+
 
 Webserver Mode
@@ -291,7 +293,9 @@ Enable users to open Direct Message channels with
 
 **Any user on the Mattermost server**: The Direct Messages "More" menu has the option to open a Direct Message channel with any user on the server.
 
-**Any member of the team**: The Direct Messages "More" menu only has the option to open a Direct Message channel with users on the current team.  If a user belongs to multiple teams, direct messages will still be received regardless of what team they are currently on.
+**Any member of the team**: The Direct Messages "More" menu only has the option to open a Direct Message channel with users on the current team, and CTRL/CMD+K channel switcher only lists users on the current team.  If a user belongs to multiple teams, direct messages will still be received regardless of what team they are currently on.
+
+This setting only affects the UI, not permissions on the server. For instance, a Direct Message channel can be created with anyone on the server regardless of this setting.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictDirectMessage": "any"`` with options ``any`` and ``team`` for above settings respectively.                      |
@@ -1907,7 +1911,7 @@ External Services
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Google API Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Mattermost offers the ability to embed YouTube videos from URLs shared by end users. Set this key to enable the display of titles for embedded YouTube video previews. Without the key, YouTube previews will still be created based on hyperlinks appearing in messages or comments but they will not show the video title. If Google detects the number of views is exceedingly high, they may throttle embed access. Should this occur, you can remove the throttle by registering for a Google Developer Key and entering it in this field following these instructions: https://www.youtube.com/watch?v=Im69kzhpR3I. Your Google Developer Key is used in client-side Javascript.
+Mattermost offers the ability to embed YouTube videos from URLs shared by end users. Set this key and add YouTube Data API v3 as a service to your key to enable the display of titles for embedded YouTube video previews. Without the key, YouTube previews will still be created based on hyperlinks appearing in messages or comments but they will not show the video title. If Google detects the number of views is exceedingly high, they may throttle embed access. Should this occur, you can remove the throttle by registering for a Google Developer Key and entering it in this field following these instructions: https://www.youtube.com/watch?v=Im69kzhpR3I. Your Google Developer Key is used in client-side Javascript.
 
 Using a Google API Key allows Mattermost to detect when a video is no longer available and display the post with a *Video not found* label.
 
@@ -2423,6 +2427,103 @@ Configurable link to download the iOS app. When a link is present, users who acc
 
 ________
 
+Compliance
+--------------------------------
+
+Data Retention Policy (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*Available in Enterprise Edition E20*
+
+Changing properties in this section will require a server restart before taking effect.
+
+.. warning:: Once a message or a file is deleted, the action is irreversible. Please be careful when setting up a custom data retention policy.
+
+Message Retention
+^^^^^^^^^^^^^^^^^^
+Set how long Mattermost keeps messages in channels and direct messages.
+
+If **Keep messages for a set amount of time** is chosen, set how many days messages are kept in Mattermost. Messages, including file attachments older than the duration you set will be deleted nightly. The minimum time is one day.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableMessageDeletion": false`` with options ``true`` and ``false``.                                                             |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+and
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"MessageRetentionDays": 365`` with whole number input.                                                                            |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+File Retention
+^^^^^^^^^^^^^^^^^^
+Set how long Mattermost keeps file uploads in channels and direct messages.
+
+If **Keep files for a set amount of time** is chosen, set how many days file uploads are kept in Mattermost. Files older than the duration you set will be deleted nightly. The minimum time is one day.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableFileDeletion": false`` with options ``true`` and ``false``.                                                                |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+and
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileRetentionDays": 365`` with whole number input.                                                                               |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Data Deletion Time
+^^^^^^^^^^^^^^^^^^^
+Set the start time of the daily scheduled data retention job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form HH:MM.
+
+This setting is based on the local time of the server.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DeletionJobStartTime": 02:00`` with 24-hour time stamp input in the form HH:MM                                                   |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Run Deletion Job Now
+^^^^^^^^^^^^^^^^^^^^^
+This button initiates a Data Retention deletion job immediately.
+
+You can monitor the status of the job in the data deletion job table below this button.
+________
+
+Compliance Export (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*Available as an add-on to Enterprise Edition E20*
+
+Enable Compliance Export
+^^^^^^^^^^^^^^^^^^^^^^^^^
+**True:** When true, Mattermost will generate a compliance export file that contains all messages that were posted in the last 24 hours. The export task is scheduled to run once per day. See the `documentation to learn more <https://about.mattermost.com/default-compliance-export-documentation>`_.
+
+**False:** When false, Mattermost doesn't generate a compliance export file.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableExport": false`` with options ``true`` and ``false``.                                                                      |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Compliance Export Time
+^^^^^^^^^^^^^^^^^^^^^^^^
+Set the start time of the daily scheduled compliance export job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form HH:MM.
+
+This setting is based on the local time of the server.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DailyRunTime": 01:00`` with 24-hour time stamp input in the form HH:MM                                                           |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Export File Format
+^^^^^^^^^^^^^^^^^^^^^^^^
+File format of the compliance export. Corresponds to the system that you want to import the data into.
+
+Currently Actiance XML is supported.
+
+Run Compliance Export Job Now
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This button initiates a Compliance Export job immediately.
+
+You can monitor the status of the job in the compliance export job table below this button.
+________
+
 Advanced
 --------------------------------
 Advanced settings to configure rate limiting, databases and developer options.
@@ -2574,101 +2675,6 @@ Recycle Database Connections
 This button reconnects to the database listed in the configuration settings. All old connections are closed after 20s.
 
 The workflow for failover without downing the server is to change the database line in the config.json file, click **Reload Configuration from Disk** in the General > Configuration section then click **Recycle Database Connections**.
-
-________
-
-Data Retention Policy (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*Available in Enterprise Edition E20*
-
-Changing properties in this section will require a server restart before taking effect.
-
-.. warning:: Once a message or a file is deleted, the action is irreversible. Please be careful when setting up a custom data retention policy.
-
-Message Retention
-^^^^^^^^^^^^^^^^^^
-Set how long Mattermost keeps messages in channels and direct messages.
-
-If **Keep messages for a set amount of time** is chosen, set how many days messages are kept in Mattermost. Messages, including file attachments older than the duration you set will be deleted nightly. The minimum time is one day.
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableMessageDeletion": false`` with options ``true`` and ``false``.                                                             |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-and
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MessageRetentionDays": 365`` with whole number input.                                                                            |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-File Retention
-^^^^^^^^^^^^^^^^^^
-Set how long Mattermost keeps file uploads in channels and direct messages.
-
-If **Keep files for a set amount of time** is chosen, set how many days file uploads are kept in Mattermost. Files older than the duration you set will be deleted nightly. The minimum time is one day.
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableFileDeletion": false`` with options ``true`` and ``false``.                                                                |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-and
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileRetentionDays": 365`` with whole number input.                                                                               |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Data Deletion Time
-^^^^^^^^^^^^^^^^^^^
-Set the start time of the daily scheduled data retention job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form HH:MM.
-
-This setting is based on the local time of the server.
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DeletionJobStartTime": 02:00`` with 24-hour time stamp input in the form HH:MM                                                   |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Run Deletion Job Now
-^^^^^^^^^^^^^^^^^^^^^
-This button initiates a Data Retention deletion job immediately.
-
-You can monitor the status of the job in the data deletion job table below this button.
-________
-
-Compliance Export (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*Available as an add-on to Enterprise Edition E20*
-
-Enable Compliance Export
-^^^^^^^^^^^^^^^^^^^^^^^^^
-**True:** When true, Mattermost will generate a compliance export file that contains all messages that were posted in the last 24 hours. The export task is scheduled to run once per day. See the `documentation to learn more <https://about.mattermost.com/default-compliance-export-documentation>`_.
-
-**False:** When false, Mattermost doesn't generate a compliance export file.
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableExport": false`` with options ``true`` and ``false``.                                                                      |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Compliance Export Time
-^^^^^^^^^^^^^^^^^^^^^^^^
-Set the start time of the daily scheduled compliance export job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form HH:MM.
-
-This setting is based on the local time of the server.
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DailyRunTime": 01:00`` with 24-hour time stamp input in the form HH:MM                                                           |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Export File Format
-^^^^^^^^^^^^^^^^^^^^^^^^
-File format of the compliance export. Corresponds to the system that you want to import the data into.
-
-Currently Actiance XML is supported.
-
-Run Compliance Export Job Now
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This button initiates a Compliance Export job immediately.
-
-You can monitor the status of the job in the compliance export job table below this button.
 
 ________
 
@@ -2923,6 +2929,14 @@ There are a number of settings customizable in ``config.json`` unavailable in th
 Service Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+WebSocket URL
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This setting allows the server to instruct clients where they should try to connect WebSockets to.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"WebsocketURL": ""`` with string input.                                                                                  |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 License File Location
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -2931,6 +2945,17 @@ Path and filename of the license file on disk. On startup, if Mattermost cannot 
 +---------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LicenseFileLocation": ""`` with string input.  |
 +---------------------------------------------------------------------------------------------+
+
+Allow Cookies for Subdomains
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True** Allows cookies for subdomains by setting the domain parameter on Mattermost cookies.
+
+**False** Cookies not allowed for subdomains.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AllowCookiesForSubdomains": true`` with options ``true`` and ``false`` for above settings respectively.                 |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Cluster Log Timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

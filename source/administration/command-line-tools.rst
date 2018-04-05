@@ -757,11 +757,14 @@ platform user invite
       sudo ./platform user invite user@example.com myteam1 myteam2
 
 platform user migrate_auth
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Migrates all user accounts from one authentication provider to another. For example, you can upgrade your authentication provider from email to AD/LDAP. Output will display any accounts that are not migrated successfully.
+    Migrates all existing Mattermost user accounts from one authentication provider to another. For example, you can upgrade your authentication provider from email to AD/LDAP, or from AD/LDAP to SAML. Output will display any accounts that are not migrated successfully.
 
+**Migrate to AD/LDAP**
+
+  Parameters
     -  ``from_auth``: The authentication service from which to migrate user accounts. Supported options: ``email``, ``gitlab``, ``saml``.
 
     -  ``to_auth``: The authentication service to which to migrate user accounts. Supported options: ``ldap``.
@@ -771,7 +774,7 @@ platform user migrate_auth
   Format
     .. code-block:: none
 
-      platform user migrate_auth {from_auth} {to_auth} {match_field}
+      platform user migrate_auth {from_auth} ldap {match_field}
 
   Example
     .. code-block:: none
@@ -781,6 +784,92 @@ platform user migrate_auth
     .. code-block:: none
 
       --force  Ignore duplicate entries on the AD/LDAP server.
+      --dryRun Run a simulation of the migration process without changing the database.
+
+**Migrate to SAML**
+
+  Parameters
+
+    -  ``from_auth``: The authentication service from which to migrate user accounts. Supported options: ``email``, ``gitlab``. ``ldap``.
+
+    -  ``to_auth``: The authentication service to which to migrate user accounts. Supported options: ``saml``.
+
+    -  ``users_file``: The path of a JSON file with the usernames and emails of all users to migrate to SAML. The username and email must be the same as in your SAML service provider. Moreover, the email must match the email address of the Mattermost user account. An example of the users file is below:
+
+    .. code-block:: json
+
+        {
+          "user1@email.com": "user.one",
+          "user2@email.com": "user.two"
+        }
+
+  Users file generation
+    Generating the ``users_file`` depends on how the system is configured and which SAML service provider is used. Below are two sample scripts for OneLogin and Okta service providers. For ADFS, you can use the AD/LDAP protocol to directly extract the users information and export it to a JSON file.
+    
+    After generating the ``users_file``, you can manually update the file to obtain a list of Mattermost user accounts you want to migrate to SAML. Note that users listed in ``users_file`` that do not yet exist in Mattermost are ignored during the migration process.
+
+    OneLogin:
+
+    .. code-block:: python
+
+        from onelogin.api.client import OneLoginClient
+        import json
+
+        client_id = input("Client id: ")
+        client_secret = input("Secret: ")
+        region = input("Region (us, eu): ")
+
+        client = OneLoginClient(client_id, client_secret, region)
+
+        mapping = {}
+        for user in client.get_users():
+            mapping[user.email] = user.username
+
+        with file("saml_users.json", "w") as fd:
+            json.dump(mapping, fd)
+
+    Okta:
+
+    .. code-block:: python
+
+        from okta import UsersClient
+        import json
+
+        base_url = input("Base url (example: https://example.okta.com): ")
+        api_token = input("API Token: ")
+
+        usersClient = UsersClient(base_url, api_token)
+
+        users = usersClient.get_paged_users(limit=25)
+
+        mapping = {}
+
+        for user in users.result:
+            mapping[user.profile.email] = user.profile.login
+
+        while not users.is_last_page():
+            users = usersClient.get_paged_users(url=users.next_url)
+            for user in users.result:
+                mapping[user.profile.email] = user.profile.login
+
+        with file("saml_users.json", "w") as fd:
+            json.dump(mapping, fd)
+
+  Format
+    .. code-block:: none
+
+      platform user migrate_auth {from_auth} saml {users_file}
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform user migrate_auth email saml users.json
+
+  Options
+    .. code-block:: none
+
+      --auto   Automatically migrate all users without a {users_file}. Assumes the usernames and emails are identical between Mattermost and SAML services.
+      --dryRun Run a simulation of the migration process without changing the database. Useful to test if the migration results in any errors. You can use this option with or without a {users_file}.
 
 platform user password
 ~~~~~~~~~~~~~~~~~~~~~~~~

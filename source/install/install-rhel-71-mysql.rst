@@ -43,7 +43,7 @@ Install and set up the database for use by the Mattermost server. You can instal
 
 9. Set MySQL to start automatically when the machine starts.
 
-  ``sudo chkconfig mysqld on``
+  ``sudo systemctl enable mysqld``
 
 10. Create the Mattermost user 'mmuser'.
 
