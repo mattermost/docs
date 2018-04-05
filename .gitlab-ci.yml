@@ -97,6 +97,7 @@ stop_review:
     - git checkout master
     - terraform_init
     - delete
+    - cleanup
     - terraform_down
   environment:
     name: review/$CI_COMMIT_REF_NAME
@@ -288,6 +289,7 @@ qa:
     if [ "$CI_ENVIRONMENT_SLUG" != "production" ] && previousDeployFailed ; then
       echo "Deployment in bad state, cleaning up $CI_ENVIRONMENT_SLUG"
       delete
+      cleanup
     fi
 
     helm dep update .
@@ -396,11 +398,11 @@ qa:
   }
 
   function purgeJobs() {
-    jobs=$(kubectl get job -l "release=$CI_ENVIRONMENT_SLUG" | wc -l)
+    jobs=$(kubectl get job -l "release=$CI_ENVIRONMENT_SLUG" -n "$KUBE_NAMESPACE" | wc -l)
     # The will always have a header or "no jobs found" (wc -l >= 1), and exit `0`
     if [ $jobs -gt 1 ]; then
       echo "Found dangling jobs:"
-      kubectl delete job -l "release=$CI_ENVIRONMENT_SLUG"
+      kubectl delete job -l "release=$CI_ENVIRONMENT_SLUG" -n "$KUBE_NAMESPACE"
     else
       echo "No dangling jobs found."
     fi
@@ -415,6 +417,14 @@ qa:
     fi
     purgeJobs
     helm delete --purge "$name" || true
+  }
+
+  function cleanup() {
+    kubectl get ingress,configmap,all -n "$KUBE_NAMESPACE" \
+      -o jsonpath='{range .items[*]}{.kind}{" "}{.metadata.name}{"\n"}{end}' \
+      | grep "CI_ENVIRONMENT_SLUG" \
+      | xargs -n2 kubectl delete -n "$KUBE_NAMESPACE" \
+      || true
   }
 
   function terraform_up() {
