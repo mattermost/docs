@@ -4,11 +4,11 @@ MAINTAINER GitLab Build Team
 ENV TF_VERSION=0.11.1
 ENV TF_URL=https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSION}_linux_amd64.zip
 
-ENV HELM_VERSION=2.7.2
+ENV HELM_VERSION=2.8.2
 ENV HELM_URL=https://kubernetes-helm.storage.googleapis.com/helm-v${HELM_VERSION}-linux-amd64.tar.gz
 
 # kubectl (possibly in gcloud?)
-ENV KUBECTL_VERSION=1.8.4
+ENV KUBECTL_VERSION=1.8.8
 ENV KUBECTL_URL=https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl
 
 # Install dependencies
