@@ -255,7 +255,7 @@ To send a message to a direct message channel, add an "@" symbol followed by the
 
   payload={"channel": "@username", "text": "Hello, this is some text\nThis is more text. :tada:"}
 
-This will send a message from the account that has set up the incoming webhook to the username after the "@" symbol. To send messages to a different direct message channel you can specify the channel with the user IDs for the users separated with two underscore (_) symbols.
+This will send a message from the account that has set up the incoming webhook to the username after the "@" symbol. To send a message to a different direct message channel between two other users, you can specify the channel with the user IDs for the users separated with two underscore (_) symbols. To find the user ID you can `use the ``platform`` command <https://docs.mattermost.com/administration/command-line-tools.html#platform-user-search>`
 
 .. code-block:: text
 
