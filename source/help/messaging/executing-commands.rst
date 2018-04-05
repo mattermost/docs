@@ -31,7 +31,7 @@ The following slash commands are available on all Mattermost installations:
     "/join *{channel-name}*", "Join the open channel", "/join off-topic"
     "/open *{channel-name}*", "Join the open channel", "/open off-topic"
     "/leave", "Leave the current channel", "/leave"
-    "/mute", "Turns off desktop, email and push notifications for the current channel or the [channel] specified", "/mute"
+    "/mute", "Turns off desktop, email and push notifications for the current channel or the [channel] specified", "/mute ~[channel]"
     "/logout", "Log out of Mattermost", "/logout"
     "/me *{message}*", "Do an action", "/me Hello World"
     "/msg *{@username}* *{message}*", "Send a Direct Message to a user", "/msg @alice hello"
