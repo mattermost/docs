@@ -1,0 +1,5 @@
+---
+title: 'Unicorn: add support for configuring Omniauth'
+merge_request: 210
+author:
+type: added

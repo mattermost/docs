@@ -24,6 +24,11 @@ ingress:
   annotations: {}
 workerProcesses: 2
 workerTimeout: 60
+omniauth:
+  providers: []
+  # - name: google_oauth2
+  #   secretName: gitlab-google-oauth2
+  #   args: { access_type: 'offline', approval_prompt: '' }
 railsSecrets:
   secret: rails-secrets
   key: secrets.yml

@@ -31,6 +31,7 @@ Table below contains all the possible charts configurations that can be supplied
 | enabled                       | Unicorn enabled flag                           | true                                             |
 | workerProcesses               | Unicorn number of workers                      | 2                                                |
 | workerTimeout                 | Unicorn worker timeout                         | 60                                               |
+| omniauth.providers            | Omniauth providers                             | nil                                              |
 | railsSecrets.secret           | Secret containing rails secrets.yml            | rails-secrets                                    |
 | railsSecrets.key              | Key to contents of secrets.yml in rails secret | secrets.yml                                      |
 | redis.serviceName             | Redis service name                             | redis                                            |
@@ -362,6 +363,53 @@ Field `workerProcesses` is an integer, controller the number of Unicorn workers 
 #### workerTimeout
 
 Field `workerTimeout` is an integer specifying the number of seconds a request can be pending before it times out. Defaults to `60`
+
+#### omniauth.providers
+
+This setting allows for the configuration of [Omniauth Providers](https://docs.gitlab.com/ee/integration/omniauth.html). It is presented as an array of maps, which will be translated into the the appropriate configuration in `gitlab.yml`, as with an instllation from source. The available selection of [Supported Providers](https://docs.gitlab.com/ee/integration/omniauth.html#supported-providers) can be found in GitLab documentation.
+
+Required items:
+- `name`: The name to be given for this provider.
+- `secretName`: The name of a Kubernetes `Secret` containing two items: `app_id` and `app_secret`.
+
+The `Secret` for these entries contains two items: `app_id` and `app_secret`. To create this secret, follow the appropriate instructions for retrieval of these items, then use the following command.
+```
+kubectl create secret generic -n NAMESPACE SECRET_NAME \
+    --from-literal=app_id='APP_ID' \
+    --from-literal=app_secret='APP_SECRET'
+```
+
+If your chosen provider requires arguments, they should be supplied as items under `args` per the example below.
+
+
+An example configuration snippet:
+```YAML
+omniauth:
+  providers:
+    - name: google_oauth2
+      secretName: gitlab-google-oauth2
+      args:
+        access_type: offline
+        approval_prompt: ''
+```
+
+Example configuration `--set` items, when using the global chart:
+```
+--set gitlab.unicorn.omniauth.providers[0].name=google_oauth2 \
+--set gitlab.unicorn.omniauth.providers[0].secretName=gitlab-google-oauth2 \
+--set gitlab.unicorn.omniauth.providers[0].args.access_type=offline \
+--set gitlab.unicorn.omniauth.providers[0].args.approval_prompt=''
+```
+
+Due to the complexity of using `--set` arguments, a user may with to use a YAML snippet, passed to `helm` with `-f omniauth.yaml`. If this is done for the global chart, note that that `omniauth` should be nested under `gitlab.unicorn` as shown below.
+
+```YAML
+gitlab:
+  unicorn:
+    omniauth:
+```
+
+Defaults to `[]`, which results in Omniauth being disabled.
 
 ### GitLab Shell
 
