@@ -32,6 +32,8 @@ Actiance Vantage Integration
 
 If you have chosen your file format to be Actiance XML, you can set up an integration with Actiance Vantage.
 
+Channel names will now be exported in the Actiance XML file with the channel type prepended.
+
 For more information on Actiance Vantage archive system, see `their homepage <https://www.actiance.com/products/vantage/>`_.
 
 Frequently Asked Questions (FAQ)
