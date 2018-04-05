@@ -47,14 +47,14 @@ Mattermost has created a ``mattermost-support`` account in GitLab for support is
  - `gitlab-ce <https://gitlab.com/gitlab-org/gitlab-ce>`_
  - `gitlab-ee <https://gitlab.com/gitlab-org/gitlab-ee>`_
 
-When a `mattermost` label is applied, an email notification is sent to the technical support team who answers the question within two business days.
+When a `mattermost` label is applied, an email notification is sent to the technical support team who answers the question within two business days using the ``mattermost-support`` account.
 
 GitLab Premier Support Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 GitLab has a `4-hour support window for their premier support customers <https://about.gitlab.com/features/premium-support/>`_ and Mattermost has set up a process to support this window.
 
-When a premier support issue requires escalation to the Mattermost support team, GitLab assigns the issue to the ``mattermost-support`` account. This assignment sends an email notification, which is automatically escalated to the critical level technical support who answers the question within 4 hours.
+When a premier support issue requires escalation to the Mattermost support team, GitLab assigns the issue to the ``mattermost-support`` account. This assignment sends an email notification, which is automatically escalated to the critical level technical support who answers the question within 4 hours using the ``mattermost-support`` account..
 
 Monthly Meetings
 -------------------
