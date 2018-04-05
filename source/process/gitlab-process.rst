@@ -38,19 +38,6 @@ The following steps are taken to test the Mattermost package in GitLab Omnibus:
  - Mattermost ChatOps slash command integration
  - OAuth team creation option in GitLab Omnibus
 
-Communication
--------------------
-
-Changes and features affecting GitLab Omnibus are communicated via `GitLab issues <https://gitlab.com/gitlab-org/gitlab-ce/issues>`_ and `GitLab Slack channel <https://gitlab.slack.com>`_.
-
-Moreover, a recurring monthly meeting between a product manager at GitLab and Mattermost is organized to cover
-
- - concerns/issues from GitLab Omnibus team,
- - new upcoming changes or features in Mattermost affecting GitLab Omnibus, and
- - other miscellaneous queued items.
-
-Optionally, an engineer from both GitLab and Mattermost teams also joins the recurring monthly meeting.
-
 Service-Level Agreement (SLA)
 -------------------------------
 
@@ -69,27 +56,18 @@ GitLab has a `4-hour support window for their premier support customers <https:/
 
 When a premier support issue requires escalation to the Mattermost support team, GitLab assigns the issue to the ``mattermost-support`` account. This assignment sends an email notification, which is automatically escalated to the critical level technical support who answers the question within 4 hours.
 
-Templates
---------------
+Monthly Meetings
+-------------------
 
-GitLab announcement proposal
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Changes and features affecting GitLab Omnibus are communicated via `GitLab issues <https://gitlab.com/gitlab-org/gitlab-ce/issues>`_ and `GitLab Slack channel <https://gitlab.slack.com>`_.
 
-.. code-block:: none
+Moreover, a recurring monthly meeting between a product manager at GitLab and Mattermost is organized to cover
 
-  Proposed update for new version of [Mattermost](https://gitlab.com/gitlab-org/omnibus-gitlab/issues/1241).
+ - concerns/issues from GitLab Omnibus team,
+ - new upcoming changes or features in Mattermost affecting GitLab Omnibus, and
+ - other miscellaneous queued items.
 
-  ### GitLab Mattermost 4.7
-
-  GitLab 10.6 includes [Mattermost 4.7](https://about.mattermost.com/releases/mattermost-4-7/), an [open source Slack-alternative](https://about.mattermost.com/) whose newest release includes enhanced image preview and thumbnails, faster load times, upgraded desktop app, plus much more.
-
-  This version also includes [security updates](https://about.mattermost.com/security-updates/) and upgrading is recommended.
-
-
-GitLab forum responses
-~~~~~~~~~~~~~~~~~~~~~~~
-
-See `sample forum responses listed here <https://docs.mattermost.com/process/community-guidelines.html#sample-responses>`_.
+Optionally, an engineer from both GitLab and Mattermost teams also joins the meeting.
 
 Upcoming Work
 ---------------
@@ -108,3 +86,25 @@ Upcoming Work
 4. Releasing an extended support release (ESR) version of Mattermost, and shipping it in GitLab Omnibus. `A discussion is open in the Mattermost forums <https://forum.mattermost.org/t/extended-support-release-discussion/4598>`_. - **Due: TBD**
 
 5. Bundling Mattermost Enterprise Edition in GitLab EE. `A discussion is open in GitLab repository <https://gitlab.com/gitlab-org/omnibus-gitlab/issues/1609>`_. - **Due: TBD**
+
+
+Templates
+--------------
+
+GitLab announcement proposal
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: none
+
+  Proposed update for new version of [Mattermost](https://gitlab.com/gitlab-org/omnibus-gitlab/issues/1241).
+
+  ### GitLab Mattermost 4.7
+
+  GitLab 10.6 includes [Mattermost 4.7](https://about.mattermost.com/releases/mattermost-4-7/), an [open source Slack-alternative](https://about.mattermost.com/) whose newest release includes enhanced image preview and thumbnails, faster load times, upgraded desktop app, plus much more.
+
+  This version also includes [security updates](https://about.mattermost.com/security-updates/) and upgrading is recommended.
+
+GitLab forum responses
+~~~~~~~~~~~~~~~~~~~~~~~
+
+See `sample forum responses listed here <https://docs.mattermost.com/process/community-guidelines.html#sample-responses>`_.
