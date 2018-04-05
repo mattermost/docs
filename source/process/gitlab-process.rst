@@ -54,25 +54,20 @@ Optionally, an engineer from both GitLab and Mattermost teams also joins the rec
 Service-Level Agreement (SLA)
 -------------------------------
 
-This process is still a work-in-progress, being developed together with GitLab.
+Mattermost has created a ``mattermost-support`` account in GitLab for support issues, and has subscribed to the ``mattermost`` label in the following projects:
+
+ - `omnibus-gitlab <https://gitlab.com/gitlab-org/omnibus-gitlab>`_
+ - `gitlab-ce <https://gitlab.com/gitlab-org/gitlab-ce>`_
+ - `gitlab-ee <https://gitlab.com/gitlab-org/gitlab-ee>`_
+
+When a `mattermost` label is applied, an email notification is sent to the technical support team who answers the question within two business days.
 
 GitLab Premier Support Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-GitLab has a `4-hour support window for their premier support customers <https://about.gitlab.com/features/premium-support/>`_. Mattermost is setting up a process to meet those requirements for relevant questions raised by the GitLab premier support customers.
+GitLab has a `4-hour support window for their premier support customers <https://about.gitlab.com/features/premium-support/>`_ and Mattermost has set up a process to support this window.
 
-GitLab is also working with their legal team to understand the process for sharing any sensitive customer information (e.g. logs) with Mattermost.
-
-More details to be added.
-
-GitLab Non-Premier Support Issues
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Mattermost has created a `mattermost-support` account in GitLab for support issues. The plan is for Mattermost to
-
-- integrate GitLab issue reviews as part of existing forum issue monitoring processes,
-- aim to answer within one business day, or at best effort, and
-- subscribe to email alerts sent automatically when a `Mattermost` label is added to an issue, or when the `mattermost-support` account is assigned to a GitLab issue.
+When a premier support issue requires escalation to the Mattermost support team, GitLab assigns the issue to the ``mattermost-support`` account. This assignment sends an email notification, which is automatically escalated to the critical level technical support who answers the question within 4 hours.
 
 Templates
 --------------
