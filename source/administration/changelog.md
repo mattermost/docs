@@ -67,6 +67,10 @@ Release date: 2018-04-16
  - Fixed an issue where Mattermost only imported first user during Slack import.
  - Fixed an issue where cleared search term reappeared after closing RHS.
  - Fixed an issue where image was posted while RHS was open with an oversized thumbnail.
+ - Fixed an issue where both "test" and "test.example" were added to channel when adding "test.example" user to a channel via ephemeral message that appears when mentioning someone not in a channel.
+ - Fixed an issue with a JavaScript error when using CMD/CTRL-K keyboard shortcut to change channels.
+ - Fixed an issue with not being able to get past second page of `/admin_console/users`.
+ - Fixed an issue where ALT+UP/DOWN caused error in console and then stopped working.
 
 ### Compatibility
 
