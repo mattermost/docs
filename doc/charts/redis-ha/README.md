@@ -30,6 +30,7 @@ The following tables lists the configurable parameters of the Redis chart and th
 | `rbac.create`                    |  whether RBAC resources should be created                                                                                    | true                                                      |
 | `serviceAccount.create`          | whether a new service account name that the agent will use should be created.                                                | true                                                      |
 | `serviceAccount.name`            | service account to be used.  If not set and serviceAccount.create is `true` a name is generated using the fullname template. | ``                                                        |
+| `metrics.enabled`                | Toggle Prometheus Redis exporter sidecar container                                                                           | true                                                      |
 
 
 ## Internals
@@ -53,4 +54,3 @@ To see the pod roles, run the following:
 ```bash
 $ kubectl get pods -L redis-role
 ```
-
