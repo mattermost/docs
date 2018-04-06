@@ -69,16 +69,9 @@ We discuss these goals every other week during the [weekly developer meeting](ht
 - Orchestration/SAAS
 - Developer Toolkit (APIs, plugins, integrations, samples, documentation)
 
-### Technical Direction Resolutions ###
+### Developer Decisions ###
 
-Technical direction resolutions are any decisions made by the team affecting the technical direction of Mattermost. The current resolutions in effect are listed below:
-
-1. Removing usage of jQuery. When working in a file that imports jQuery, developers should make an effort to replace it with vanilla JavaScript and remove the import. When reviewing pull requests that add more jQuery, please ask the submitter to use vanilla JS.
-2. [Server](https://github.com/mattermost/mattermost-server) and [client](https://github.com/mattermost/mattermost-webapp) pull requests must be merged in order. First add server support, then add client support.
-3. As of server 3.8, all new API endpoints should be made in API version 4. API version 3 should only be modified for bug fixes, security and/or performance issues. ([https://pre-release.mattermost.com/core/pl/xcyqqdpkgtb4mcexxxu7mpfssh](https://pre-release.mattermost.com/core/pl/xcyqqdpkgtb4mcexxxu7mpfssh))
-4. Moving the webapp over to share a service layer built on top of Redux. ([https://pre-release.mattermost.com/core/pl/x49ra6zk9frq7yccpo753a377o](https://pre-release.mattermost.com/core/pl/x49ra6zk9frq7yccpo753a377o))
-5. Removing localization of the server logs. We haven't found it beneficial to localize these messages, and in some cases it has made it more difficult for us to help troubleshoot issues for non-English users. This will also reduce some of the work required when translating Mattermost. ([https://pre-release.mattermost.com/core/pl/13xdrfnw5bb5mnagth5kt48kyr](https://pre-release.mattermost.com/core/pl/13xdrfnw5bb5mnagth5kt48kyr))
-6. All new webapp components should be built against Redux and [follow the new guide](https://docs.mattermost.com/developer/webapp-component.html)
+We track decisions made during the [weekly developer meeting](https://docs.mattermost.com/process/training.html#developer-meeting) in a [Google doc here](https://docs.google.com/document/d/1iPzYkqM8Q0oZ1u1VkETUG18lyY47vKN0vAa3WIgvaiI).
 
 ### Reviewing & Merging Pull Requests ###
 
