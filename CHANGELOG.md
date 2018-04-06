@@ -2,4 +2,6 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
-## Alpha (2018-03-22)
+## 2018-03-22 Alpha
+
+- See [alpha documentation](https://gitlab.com/charts/helm.gitlab.io/blob/master/doc/architecture/alpha.md)

@@ -37,6 +37,7 @@ variables:
   POSTGRES_DB: $CI_ENVIRONMENT_SLUG
 
 stages:
+  - changelog
   - test
   - review
   - staging
@@ -218,6 +219,14 @@ qa:
     expire_in: 7d
     paths:
     - screenshots
+
+changelog_manager:
+  stage: changelog
+  script:
+    - scripts/changelog_manager.rb .
+  only:
+    refs:
+      - master
 
 # ---------------------------------------------------------------------------
 
