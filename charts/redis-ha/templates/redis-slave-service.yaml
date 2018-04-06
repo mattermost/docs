@@ -4,12 +4,23 @@ kind: Service
 metadata:
   name: {{ template "fullname" . }}-slave-svc
   annotations:
+{{- if .Values.servers.annotations }}
 {{ toYaml .Values.servers.annotations | indent 4 }}
+{{- end }}
+{{- if .Values.metrics.enabled }}
+{{ toYaml .Values.metrics.annotations | indent 4 }}
+{{- end }}
 spec:
   ports:
-  - port: {{ .Values.servers.externalPort }}
+  - name: redis
+    port: {{ .Values.servers.externalPort }}
     protocol: TCP
     targetPort: {{ .Values.servers.internalPort }}
+  {{- if .Values.metrics.enabled }}
+  - name: metrics
+    port: {{ .Values.metrics.port }}
+    targetPort: metrics
+  {{- end }}
   selector:
     app: {{ template "fullname" . }}
     redis-node: "true"

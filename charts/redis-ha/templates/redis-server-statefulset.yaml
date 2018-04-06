@@ -81,6 +81,24 @@ spec:
             name: data
           - name: {{ .Release.Name }}-config
             mountPath: /etc/redis/
+{{- if .Values.metrics.enabled }}
+      - name: metrics
+        image: "{{ .Values.metrics.image }}:{{ .Values.metrics.imageTag }}"
+        imagePullPolicy: {{ .Values.metrics.imagePullPolicy | quote }}
+        env:
+        - name: REDIS_ALIAS
+          value: {{ template "fullname" . }}
+        - name: REDIS_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.password.secret }}
+              key: {{ .Values.password.key }}
+        ports:
+        - name: metrics
+          containerPort: {{ .Values.metrics.port }}
+        resources:
+{{ toYaml .Values.metrics.resources | indent 10 }}
+{{- end }}
       volumes:
       - name: {{ .Release.Name }}-config
         emptyDir:
