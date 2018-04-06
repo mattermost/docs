@@ -57,6 +57,24 @@ spec:
             allowPrivilegeEscalation: {{ .Values.securityContext.allowPrivilegeEscalation }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
+{{- if .Values.metrics.enabled }}
+        - name: metrics
+          image: "{{ .Values.metrics.image }}:{{ .Values.metrics.imageTag }}"
+          imagePullPolicy: {{ .Values.metrics.imagePullPolicy | quote }}
+          env:
+          - name: REDIS_ALIAS
+            value: {{ template "fullname" . }}
+          - name: REDIS_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Values.password.secret }}
+                key: {{ .Values.password.key }}
+          ports:
+          - name: metrics
+            containerPort: {{ .Values.metrics.port }}
+          resources:
+{{ toYaml .Values.metrics.resources | indent 12 }}
+{{- end }}
       volumes:
       - name: {{ .Release.Name }}-config
         emptyDir:
