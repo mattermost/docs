@@ -12,7 +12,7 @@ ENV KUBECTL_VERSION=1.8.8
 ENV KUBECTL_URL=https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl
 
 # Install dependencies
-RUN apk --no-cache add -U openssl curl tar gzip bash ca-certificates git python2 \
+RUN apk --no-cache add -U openssl curl tar gzip bash ca-certificates git python2 ruby\
   && mkdir /opt
 
 # Install kubectl
@@ -31,3 +31,11 @@ RUN wget -q -O - ${HELM_URL} | tar zxf - \
     && mv linux-amd64/helm /usr/bin/ \
     && chmod +x /usr/bin/helm \
     && helm version --client
+
+# Install Ruby gems for changelog_manager
+RUN apk add --no-cache --virtual .ruby-gem-builddeps \
+        autoconf cmake make gcc coreutils glib-dev libc-dev libffi-dev \
+        ruby-dev openssl-dev \
+    && gem install -N rugged \
+    && gem install -N activesupport \
+    && apk del .ruby-gem-builddeps
