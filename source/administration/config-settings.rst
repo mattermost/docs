@@ -59,6 +59,16 @@ On Linux you can use: ``sudo setcap cap_net_bind_service=+ep ./bin/platform`` to
 | This feature's ``config.json`` setting is ``"ListenAddress": ":8065"`` with string input  |
 +-------------------------------------------------------------------------------------------+
 
+Forward port 80 to 443
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: Forwards all insecure traffic from port 80 to secure port 443.
+
+**False**: When using a proxy such as NGINX in front of Mattermost this setting is unnecessary and should be set to `false`.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Forward80To443": false`` with options ``true`` and ``false`` for above settings respectively.                        |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Connection Security
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -78,7 +88,6 @@ The path to the certificate file to use for TLS connection security.
 | This feature's ``config.json`` setting is ``"TLSCertFile": ""`` with string input  |
 +------------------------------------------------------------------------------------+
 
-
 TLS Key File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The path to the TLS key file to use for TLS connection security.
@@ -97,7 +106,6 @@ Use Let's Encrypt
 | This feature's ``config.json`` setting is ``"UseLetsEncrypt": false`` with options ``true`` and ``false`` for above settings respectively.                        |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Let's Encrypt Certificate Cache File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The path to the file where certificates and other data about the Let's Encrypt service will be stored.
@@ -105,16 +113,6 @@ The path to the file where certificates and other data about the Let's Encrypt s
 +-----------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LetsEncryptCertificateCacheFile": "./config/letsencrypt.cache"`` with string input.  |
 +-----------------------------------------------------------------------------------------------------------------------------------+
-
-Forward port 80 to 443
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: Forwards all insecure traffic from port 80 to secure port 443.
-
-**False**: When using a proxy such as NGINX in front of Mattermost this setting is unnecessary and should be set to `false`.
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Forward80To443": false`` with options ``true`` and ``false`` for above settings respectively.                        |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Read Timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -421,22 +419,6 @@ Restrict the permission level required to rename and set the header or purpose f
 | This feature's ``config.json`` setting is ``"RestrictPrivateChannelManagement": "all"`` with options ``all``, ``channel_admin``, ``team_admin``, and ``system_admin`` for above settings respectively.   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable private channel deletion for
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Restrict the permission level required to delete private channels. Deleted channels can be recovered from the database using a `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`_.
-
-**All channel members**: Allow all channel members to delete private channels.
-
-**Channel Admins, Team Admins, and System Admins**: Restrict deleting private channels to Channel Admins, Team Admins, and System Admins that are members of the private channel.
-
-**Team Admins and System Admins**: Restrict deleting private channels to Team Admins and System Admins that are members of the private channel.
-
-**System Admins**: Restrict deleting private channels to System Admins that are members of the private channel.
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RestrictPrivateChannelDeletion": "all"`` with options ``all``, ``channel_admin``, ``team_admin``, and ``system_admin`` for above settings respectively.   |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Enable managing of private channel members for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Set policy on who can add and remove members from private channels.
@@ -452,6 +434,22 @@ Set policy on who can add and remove members from private channels.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictPrivateChannelManageMembers": "all"`` with options ``all``, ``channel_admin``, ``team_admin``, and ``system_admin`` for above settings respectively. |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable private channel deletion for
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Restrict the permission level required to delete private channels. Deleted channels can be recovered from the database using a `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`_.
+
+**All channel members**: Allow all channel members to delete private channels.
+
+**Channel Admins, Team Admins, and System Admins**: Restrict deleting private channels to Channel Admins, Team Admins, and System Admins that are members of the private channel.
+
+**Team Admins and System Admins**: Restrict deleting private channels to Team Admins and System Admins that are members of the private channel.
+
+**System Admins**: Restrict deleting private channels to System Admins that are members of the private channel.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RestrictPrivateChannelDeletion": "all"`` with options ``all``, ``channel_admin``, ``team_admin``, and ``system_admin`` for above settings respectively.   |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Allow which users to delete messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1669,6 +1667,17 @@ Connection Security
 | This feature's ``config.json`` setting is ``"ConnectionSecurity": ""`` with options ``""``, ``TLS`` and ``STARTTLS`` for above settings respectively.                           |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Skip Server Certificate Verification
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Mattermost will not verify the email server certificate.
+
+**False**: Mattermost will verify the email server certificate.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SkipServerCertificateVerification": false`` with options ``false` and ``true`` for above settings respectively.                    |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Enable Security Alerts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -2130,6 +2139,9 @@ Enable Amazon S3 Debugging
 | This feature's ``config.json`` setting is ``"AmazonS3Trace": false`` with options ``true`` and ``false`` for above settings respectively.                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Test Connection
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Allow File Sharing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 When false, disables file sharing on the server. All file and image uploads on messages are forbidden across clients and devices, including mobile.
@@ -2301,20 +2313,6 @@ Description of service shown in login screens and UI. When not specified, "All t
 
 ________
 
-Link Previews
-~~~~~~~~~~~~~~~~~~~~~~~~~
-Enable Link Previews
-^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: Enables users to display a preview of website content below the message, if available. When true, website previews can be enabled from Account Settings > Advanced > Preview pre-release features.
-
-**False**: Website link previews are disabled.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableLinkPreviews": false`` with options ``true`` and ``false`` for above settings respectively.                       |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-________
-
 Emoji
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Enable Emoji Picker
@@ -2350,6 +2348,20 @@ Restrict Custom Emoji Creation
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictCustomEmojiCreation": "all"`` with options ``all``, ``admin`` and ``system_admin`` for above settings respectively. |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+________
+
+Link Previews
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable Link Previews
+^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: Enables users to display a preview of website content below the message, if available. When true, website previews can be enabled from Account Settings > Advanced > Preview pre-release features.
+
+**False**: Website link previews are disabled.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableLinkPreviews": false`` with options ``true`` and ``false`` for above settings respectively.                       |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
 
