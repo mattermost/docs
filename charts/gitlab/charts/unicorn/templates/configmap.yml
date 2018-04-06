@@ -113,7 +113,21 @@ data:
       kerberos:
         enabled: false
       omniauth:
+      {{- if not .Values.omniauth.providers }}
         enabled: false
+      {{- else }}
+        enabled: true
+        providers:
+        {{- range $index, $entry := .Values.omniauth.providers }}
+          - name: '{{ $entry.name }}'
+            app_id: '<%= File.read('/etc/gitlab/omniauth/{{ $entry.name }}/app_id') %>'
+            app_secret: '<%= File.read('/etc/gitlab/omniauth/{{ $entry.name}}/app_secret') %>'
+        {{-  if $entry.args }}
+            args:
+{{ toYaml $entry.args | indent 14 }}
+        {{-  end }}
+        {{- end }}
+      {{- end }}
       shared:
       gitaly:
         client_path: /home/git/gitaly/bin
@@ -165,6 +179,10 @@ data:
     if [ -e /init-config/minio ]; then
       mkdir /init-secrets/minio
       cp /init-config/minio/* /init-secrets/minio/
+    fi
+    if [ -e /init-config/omniauth ]; then
+      mkdir -p /init-secrets/omniauth
+      cp -r /init-config/omniauth/* /init-secrets/omniauth/
     fi
 # Leave this here - This line denotes end of block to the parser.
 {{- end }}
