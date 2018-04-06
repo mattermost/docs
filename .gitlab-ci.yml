@@ -224,6 +224,7 @@ changelog_manager:
   stage: changelog
   script:
     - scripts/changelog_manager.rb .
+  allow_failure: true
   only:
     refs:
       - master
