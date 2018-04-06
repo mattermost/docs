@@ -2620,6 +2620,8 @@ Data Source
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 This is the connection string to the master database. When **DriverName** ="postgres" then use a connection string in the form ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10``. This setting can only be changed from config.json file, it cannot be changed from the System Console user interface.
 
+Note: If your SQL driver supports it and you would like to enable SSL, add “tls=true” to your database connection string (or “tls=skip-verify” if you’re using self-signed certs).
+
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DataSource": ""`` with string input.                                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
