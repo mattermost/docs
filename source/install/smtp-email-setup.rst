@@ -111,6 +111,13 @@ Hotmail
 -  Set **SMTP Port** to **587**
 -  Set **Connection Security** to **STARTTLS**
 
+Office365 / Outlook
+^^^^^^^^^^^^^^^^^^^^^
+
+- Set **SMTP Server Name** to **smtp.office365.com**
+- Set **SMTP Port** to **587**
+- Set **SMTP Encryption Method** to **STARTTLS**
+
 Troubleshooting SMTP
 ~~~~~~~~~~~~~~~~~~~~
 
