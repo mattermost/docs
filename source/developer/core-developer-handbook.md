@@ -35,9 +35,6 @@ Below is the list of core developers working on Mattermost:
 - **Carlos Panato**
   - @cpanato on [pre-release.mattermost.com](https://pre-release.mattermost.com/core/messages/@cpanato) and [@cpanato](https://github.com/cpanato) on GitHub
   - Dev areas: Webapp, Redux, REST API, WebSocket Events
-- **Chris Brown**
-  - @ccbrown on [pre-release.mattermost.com](https://pre-release.mattermost.com/core/messages/@ccbrown) and [@ccbrown](https://github.com/ccbrown) on GitHub
-  - Dev areas: Security, Integrations, Server Plugins, Test Reliability
 - **Martin Kraft**
   - @martin.kraft on [pre-release.mattermost.com](https://pre-release.mattermost.com/core/messages/@martin.kraft) and [@mkraft](https://github.com/mkraft) on GitHub
   - Dev areas: All areas
@@ -47,6 +44,9 @@ Below is the list of core developers working on Mattermost:
 - **Jesse Hallam**
   - @jesse.hallam on [pre-release.mattermost.com](https://pre-release.mattermost.com/core/messages/@jesse.hallam) and [@lieut-data](https://github.com/lieut-data) on GitHub
   - Dev areas: Performance, Webapp, Database
+- **Sudheer Timmaraju**
+  - @sudheerdev on [pre-release.mattermost.com](https://pre-release.mattermost.com/core/messages/@sudheerdev) and [@sudheerDev](https://github.com/sudheerDev) on GitHub
+  - Dev areas: Webapp, React, Redux, Performance
 
 Below is the list of core developers working on individual Mattermost repositories:
 - **Yuya Ochiai** - [desktop](https://github.com/mattermost/desktop)
