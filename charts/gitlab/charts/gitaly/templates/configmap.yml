@@ -14,7 +14,7 @@ data:
     cp /init-config/redis_password  /init-secrets/redis/redis_password
   config.toml.erb: |
     # The directory where Gitaly's executables are stored
-    bin_dir = "/usr/local/bin/gitaly"
+    bin_dir = "/usr/local/bin"
 
     # listen on a TCP socket. This is insecure (no authentication)
     listen_addr = "0.0.0.0:8075"

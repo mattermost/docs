@@ -1,0 +1,5 @@
+---
+title: Add updated sidekiq queues for GitLab 10.7
+merge_request: 212
+author:
+type: fixed
