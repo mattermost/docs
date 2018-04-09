@@ -1639,6 +1639,14 @@ Enable SMTP Authentication
 | This feature's ``config.json`` setting is ``"EnableSMTPAuth": false`` with options ``true`` and ``false`` for above settings respectively.                           |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Customer Type
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Type of Global Relay customer account your organization has.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"CustomerType": A9/Type 9`` with options ``A9/Type 9`` and ``A10/Type 10`` for above settings respectively.              |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 SMTP Server Username
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The username for authenticating to the SMTP server.
@@ -1655,17 +1663,9 @@ The password associated with the SMTP username.
 | This feature's ``config.json`` setting is ``"SMTPPassword": ""`` with string input.                                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Customer Type
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-XXXX///
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"CustomerType": "A9"`` with string input.                                                                                |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Email Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-XXXX///
+The email address your Global Relay server monitors for incoming compliance exports.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EmailAddress": ""`` with string input.                                                                                  |
