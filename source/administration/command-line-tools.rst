@@ -748,12 +748,12 @@ platform user email
   Format
     .. code-block:: none
 
-       platform user email {user} {email}
+       platform user email {user} {new email}
 
   Example
     .. code-block:: none
 
-      sudo ./platform user email user@example.com user@example.com
+      sudo ./platform user email user@example.com user1@example.com
 
 platform user invite
 ~~~~~~~~~~~~~~~~~~~~~~~~
