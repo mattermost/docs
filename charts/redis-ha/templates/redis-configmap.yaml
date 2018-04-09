@@ -71,5 +71,6 @@ data:
     cat /config/redis-master.conf > /redis/master.conf
     cat /config/redis-slave.conf > /redis/slave.conf
     echo "$(cat /config/password)" >> /redis/pass
+    echo "127.0.0.1:{{ .Values.servers.internalPort }},$(cat /config/password),{{ template "fullname" . }}" > /metrics/redis
 # leave this here. Signals end of block to the parser
 {{- end -}}
