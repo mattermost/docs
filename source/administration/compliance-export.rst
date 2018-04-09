@@ -7,7 +7,7 @@ This feature enables compliance exports to be produced from the System Console, 
 
 By default, Mattermost stores all message history providing an unlimited search history to admins and end users. In Enterprise Edition E20, you may set a `custom data retention policy <https://docs.mattermost.com/administration/data-retention.html>`_ for how long messages and file uploads are kept in Mattermost channels and direct messages.
 
-Those Enterprise deployments who want to archive history beyond the data retention period can enable this add-on to export compliance reports to third-party systems. Integration with Actiance Vantage is currently supported, with integrations with other systems such as GlobalRelay in the roadmap.
+Those Enterprise deployments who want to archive history beyond the data retention period can enable this add-on to export compliance reports to third-party systems. Integration with Actiance Vantage and GlobalRelay are currently supported, with integrations with other systems in the roadmap.
 
 .. note::
   This feature will replace the existing :doc:`Compliance feature <compliance>` in a future release. Compliance exports to CSV will continue to be available in Enterprise Edition E20.
@@ -20,7 +20,7 @@ Set Up Guide
 
 1. Go to **System Console > Advanced > Compliance Export (Beta)**.
 2. Enable compliance exports, then set the start time of the daily scheduled compliance export job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form HH:MM.
-3. Set the export file format. Currently, export format to Actiance XML is supported, but support for the GlobalRelay EML format and the Mattermost CSV format is scheduled for a future release.
+3. Set the export file format. Currently, export format to Actiance XML and GlobalRelay EML are supported, but support for the Mattermost CSV format is scheduled for a future release.
 4. Save the settings. You’re now all set!
 
 The compliance exports do not contain posts sent before the feature was enabled, but you can export past history via the ``export`` :doc:`command line tool <command-line-tools>`. Posts made prior to upgrading to Mattermost v4.5 will have less accurate channel member history information.
@@ -35,6 +35,17 @@ If you have chosen your file format to be Actiance XML, you can set up an integr
 Channel names will now be exported in the Actiance XML file with the channel type prepended.
 
 For more information on Actiance Vantage archive system, see `their homepage <https://www.actiance.com/products/vantage/>`_.
+
+GlobalRelay Integration
+---------------------------------
+
+If you have chosen your file format to be GlobalRelay EML, you can set up an integration with GlobalRelay.
+
+Users must configure the email settings as provided by Global Relay.
+
+Global Relay exports with channel data totalling more than 100MB may fail.
+
+For more information on GlobalRelay archive system, see `their homepage <https://www.globalrelay.com/>`_
 
 Frequently Asked Questions (FAQ)
 ---------------------------------
