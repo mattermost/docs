@@ -33,6 +33,9 @@ spec:
           - name: {{ .Release.Name }}-config
             mountPath: /redis
             readOnly: false
+          - name: {{ .Release.Name }}-metrics
+            mountPath: /metrics
+            readOnly: false
       containers:
         - name: redis
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
@@ -62,20 +65,22 @@ spec:
           image: "{{ .Values.metrics.image }}:{{ .Values.metrics.imageTag }}"
           imagePullPolicy: {{ .Values.metrics.imagePullPolicy | quote }}
           env:
-          - name: REDIS_ALIAS
-            value: {{ template "fullname" . }}
-          - name: REDIS_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: {{ .Values.password.secret }}
-                key: {{ .Values.password.key }}
+          - name: REDIS_FILE
+            value: /metrics/redis
           ports:
           - name: metrics
             containerPort: {{ .Values.metrics.port }}
+          volumeMounts:
+          - name: {{ .Release.Name }}-metrics
+            mountPath: /metrics
+            readOnly: true
           resources:
 {{ toYaml .Values.metrics.resources | indent 12 }}
 {{- end }}
       volumes:
+      - name: {{ .Release.Name }}-metrics
+        emptyDir:
+          medium: "Memory"
       - name: {{ .Release.Name }}-config
         emptyDir:
           medium: "Memory"
