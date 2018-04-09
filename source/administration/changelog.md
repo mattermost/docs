@@ -113,8 +113,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Changes to Team Edition and Enterprise Edition:
 
  - Under `MessageExportSettings` in `config.json`:
-     - Added `"CustomerType": "A9"`, to ensure... // XXXX need help with these
-     - Added `"EmailAddress": ""`, to ensure...
+     - Added `"CustomerType": "A9"`, to allow selecting the type of Global Relay customer account the user's organization has.
+     - Added `"EmailAddress": ""`, to allow selecting the email address the user's Global Relay server monitors for incoming compliance exports.
  - Under ` "SamlSettings"` in `config.json`:
      - Added `"ScopingIDPProviderId": ""`, to allow an authenticated user to skip the initial login page of their federated Azure AD server, and only require a password to log in.
      - Added `"ScopingIDPName": ""`, to add the name associated with a user's Scoping Identity Provider ID.
