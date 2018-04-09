@@ -113,15 +113,13 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Changes to Team Edition and Enterprise Edition:
 
  - Under `MessageExportSettings` in `config.json`:
-     - Added `"CustomerType": "A9"`, to ensure... // XXX need Dev help with these
-     - Added `"SmtpUsername": ""`, to ensure...
-     - Added `"SmtpPassword": ""`, to ensure...
+     - Added `"CustomerType": "A9"`, to ensure... // XXXX need help with these
      - Added `"EmailAddress": ""`, to ensure...
  - Under ` "SamlSettings"` in `config.json`:
      - Added `"ScopingIDPProviderId": ""`, to allow an authenticated user to skip the initial login page of their federated Azure AD server, and only require a password to log in.
      - Added `"ScopingIDPName": ""`, to add the name associated with a user's Scoping Identity Provider ID.
  - Under `DisplaySettings"` in `config.json`:
-     - Added `"ExperimentalTimezone": false`, to ensure...
+     - Added `"ExperimentalTimezone": false`, to allow selecting the timezone used for timestamps in the user interface and email notifications.
 
 #### API Changes
 
