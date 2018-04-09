@@ -140,10 +140,8 @@ Global Relay Support (Beta)
 
 Mattermost daily compliance reports are compatible with Global Relay compliance solutions through the conversion of Mattermost ``.CSV`` exports into Global Relay ``EML`` files.
 
-- Users must configure the email settings as provided by Global Relay.
-
-- Global Relay exports with channel data totalling more than 100MB may fail.
-
 - This conversion can be done by in-house developers who have previously written scripts to convert other communication systems into Global Relay format based on your organization's specific needs.
 
-- You can also contact your Global Relay account manager about a services project to establish this conversion. 
+- You can also contact your Global Relay account manager about a services project to establish this conversion.
+
+Read more details `here <https://docs.mattermost.com/administration/compliance-export.html>`_.
