@@ -102,7 +102,7 @@ By default, the [Service][] is configured as:
 
 ## Configuring `metrics`
 
-By default, a sidecar container exposing a Prometheus metrics exporter is launched along with each Redis container. The endpoint exposes a `/metrics` endpoint on port `9121`. When metrics are enabled annotations are added to the Redis service allowing a Prometheus server to discover and scrape the exposed metrics.
+By default, a sidecar container exposing a Prometheus metrics exporter is launched along with each Redis container. The exporter exposes a `/metrics` endpoint on port `9121`. When metrics are enabled, annotations are added to the Redis service allowing a Prometheus server to discover and scrape the exposed metrics.
 
 ## Configuring Redis
 
