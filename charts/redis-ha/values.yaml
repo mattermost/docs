@@ -34,6 +34,17 @@ servers:
   internalPort: 6379
   clusterIP: '0.0.0.0'
 
+metrics:
+  enabled: true
+  port: 9121
+  image: oliver006/redis_exporter
+  imageTag: latest
+  imagePullPolicy: IfNotPresent
+  resources: {}
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "9121"
+
 # Chart operation controls
 enabled: true
 # Configuration items
@@ -94,5 +105,3 @@ persistentVolume:
   ## Useful if the volume's root directory is not empty
   ##
   subPath: ""
-
-

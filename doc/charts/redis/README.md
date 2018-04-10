@@ -65,6 +65,7 @@ Table below contains all the possible charts configurations that can be supplied
 | timeout                      | Timeout in seconds                          | 60             |
 | tcpKeepalive                 | Keep alive in seconds                       | 300            |
 | loglevel                     | Log verbosity                               | notice         |
+| metrics.enabled              | Toggle Prometheus exporter sidecar          | true           |
 | password.secret              | Secret name                                 | gitlab-redis   |
 | password.key                 | Key to password in the secret               | redis-password |
 | persistence.enabled          | Enable persistence flag                     | true           |
@@ -98,6 +99,10 @@ be populated by the [values.yml][].
 By default, the [Service][] is configured as:
 - `type: ClusterIP` on `0.0.0.0`, restricting access to the interal network of the Kubernetes cluster.
 - `name:` is set to `redis`.
+
+## Configuring `metrics`
+
+By default, a sidecar container exposing a Prometheus metrics exporter is launched along with each Redis container. The exporter exposes a `/metrics` endpoint on port `9121`. When metrics are enabled, annotations are added to the Redis service allowing a Prometheus server to discover and scrape the exposed metrics.
 
 ## Configuring Redis
 

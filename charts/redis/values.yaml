@@ -29,6 +29,17 @@ password:
   secret: gitlab-redis
   key: redis-password
 
+metrics:
+  enabled: true
+  port: 9121
+  image: oliver006/redis_exporter
+  imageTag: latest
+  imagePullPolicy: IfNotPresent
+  resources: {}
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "9121"
+
 securityContext:
   runAsUser: 999
   fsGroup: 999

@@ -30,7 +30,11 @@ The following tables lists the configurable parameters of the Redis chart and th
 | `rbac.create`                    |  whether RBAC resources should be created                                                                                    | true                                                      |
 | `serviceAccount.create`          | whether a new service account name that the agent will use should be created.                                                | true                                                      |
 | `serviceAccount.name`            | service account to be used.  If not set and serviceAccount.create is `true` a name is generated using the fullname template. | ``                                                        |
+| `metrics.enabled`                | Toggle Prometheus Redis exporter sidecar container                                                                           | true                                                      |
 
+## Configuring `metrics`
+
+By default, a sidecar container exposing a Prometheus metrics exporter is launched along with each Redis master/slave container. The exporter exposes a `/metrics` endpoint on port `9121`. When metrics are enabled, annotations are added to each service allowing a Prometheus server to discover and scrape the exposed metrics.
 
 ## Internals
 The customized Redis server image determines whether the pod that executes it will be a Redis Sentinel,
@@ -53,4 +57,3 @@ To see the pod roles, run the following:
 ```bash
 $ kubectl get pods -L redis-role
 ```
-
