@@ -407,17 +407,6 @@ changelog_manager:
       -o yaml --dry-run | kubectl replace -n "$KUBE_NAMESPACE" --force -f -
   }
 
-  function purgeJobs() {
-    jobs=$(kubectl get job -l "release=$CI_ENVIRONMENT_SLUG" -n "$KUBE_NAMESPACE" | wc -l)
-    # The will always have a header or "no jobs found" (wc -l >= 1), and exit `0`
-    if [ $jobs -gt 1 ]; then
-      echo "Found dangling jobs:"
-      kubectl delete job -l "release=$CI_ENVIRONMENT_SLUG" -n "$KUBE_NAMESPACE"
-    else
-      echo "No dangling jobs found."
-    fi
-  }
-
   function delete() {
     track="${1-stable}"
     name="$CI_ENVIRONMENT_SLUG"
@@ -425,7 +414,6 @@ changelog_manager:
     if [[ "$track" != "stable" ]]; then
       name="$name-$track"
     fi
-    purgeJobs
     helm delete --purge "$name" || true
   }
 
