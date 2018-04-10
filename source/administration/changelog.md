@@ -24,7 +24,7 @@ Release date: 2018-04-16
  - Several configuration settings were migrated to roles in the database where changing their `config.json` values no longer take effect. See the compatibility section of this changelog to learn more.
  
 #### Global Relay (Beta) ([Enterprise Edition E20](https://about.mattermost.com/pricing/) Add-On)
- - Added compliance export support for Global Relay as a compliance solution. [Learn more here](https://about.mattermost.com/default-compliance-export-documentation).
+ - Added export support for Global Relay as a compliance solution. [Learn more here](https://about.mattermost.com/default-compliance-export-documentation).
 
 ### Improvements
 
@@ -34,8 +34,8 @@ Release date: 2018-04-16
  - Cursor now returns to the reply thread input box after deleting a reply on the right-hand sidebar.
 
 #### Performance
- - Decreased channel load time by optimizing the `getParentsPosts` database query.
- - Decreased load time of large channels with 5,000+ messages by up to 90% by optimizing the `formatPostInChannel` and `postsInThread` database queries.
+ - Decreased channel load time by optimizing database queries used to fetch threads and parent posts in a channel.
+ - Decreased load time of large channels with 5,000+ messages by up to 90% by optimizing many client functions related to rendering posts and threads.
  
 #### Plugins (Beta)
  - Plugins now have more flexibility to format text, emojis and Markdown.
