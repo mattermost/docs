@@ -100,6 +100,10 @@ By default, the [Service][] is configured as:
 - `type: ClusterIP` on `0.0.0.0`, restricting access to the interal network of the Kubernetes cluster.
 - `name:` is set to `redis`.
 
+## Configuring `metrics`
+
+By default, a sidecar container exposing a Prometheus metrics exporter is launched along with each Redis container. The endpoint exposes a `/metrics` endpoint on port `9121`. When metrics are enabled annotations are added to the Redis service allowing a Prometheus server to discover and scrape the exposed metrics.
+
 ## Configuring Redis
 
 ### timeout
