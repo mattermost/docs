@@ -135,13 +135,12 @@ Compliance query results stored in ``posts.csv`` file
 | PostFilenames       | Comma separated list of filesnames attached to post           | ["/f../ho.png","/f../hi.png"] |
 +---------------------+---------------------------------------------------------------+-------------------------------+
 
-Global Relay Support (Beta)
+Global Relay Support
 =============================
 
 Mattermost daily compliance reports are compatible with Global Relay compliance solutions through the conversion of Mattermost ``.CSV`` exports into Global Relay ``EML`` files.
 
 - This conversion can be done by in-house developers who have previously written scripts to convert other communication systems into Global Relay format based on your organization's specific needs.
-
 - You can also contact your Global Relay account manager about a services project to establish this conversion.
 
-Read more details `here <https://docs.mattermost.com/administration/compliance-export.html>`_.
+You may also use the new :doc:`Compliance Export feature <compliance-export>` for Global Relay exports.
