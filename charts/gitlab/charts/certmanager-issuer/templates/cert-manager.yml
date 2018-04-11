@@ -5,9 +5,9 @@ metadata:
   name: {{ template "fullname" . }}-certmanager
   labels:
     app: {{ template "name" . }}
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-    release: "{{ .Release.Name }}"
-    heritage: "{{ .Release.Service }}"
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
 data:
   create-issuer: |
 {{ include (print $.Template.BasePath "/_create_issuer.sh") . | indent 4 }}

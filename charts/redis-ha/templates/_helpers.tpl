@@ -25,7 +25,7 @@ labels.standard prints the standard Helm labels.
 The standard labels are frequently used in metadata.
 */ -}}
 {{- define "labels.standard" -}}
-app: {{ template "fullname" . }}
+app: {{ template "name" . }}
 heritage: {{ .Release.Service | quote }}
 release: {{ .Release.Name | quote }}
 chart: {{ template "chartref" . }}
@@ -55,4 +55,3 @@ Create the name of the service account to use
     {{ default "default" .Values.serviceAccount.name }}
 {{- end -}}
 {{- end -}}
-

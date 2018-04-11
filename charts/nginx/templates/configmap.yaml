@@ -5,6 +5,9 @@ metadata:
   name: {{ template "fullname" . }}
   labels:
     app: {{ template "name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
 data:
   hsts-include-subdomains: {{ .Values.hstsIncludeSubdomains | quote }}
   server-name-hash-bucket-size: {{ .Values.serverNameHashBucketSize | quote }}

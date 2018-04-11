@@ -5,6 +5,9 @@ metadata:
     name: {{ template "fullname" . }}-tcp
     labels:
       app: {{ template "name" . }}
+      chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+      release: {{ .Release.Name }}
+      heritage: {{ .Release.Service }}
 data:
   22: "{{ .Release.Namespace }}/{{ .Release.Name }}-{{ .Values.shell.name }}:{{ .Values.shell.port }}"
 {{- end -}}

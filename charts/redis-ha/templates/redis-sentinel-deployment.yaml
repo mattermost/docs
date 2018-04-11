@@ -3,6 +3,8 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: {{ template "fullname" . }}-sentinel
+  labels:
+{{ include "labels.standard" . | indent 4 }}
 spec:
   replicas: {{ .Values.replicas.sentinels }}
   template:

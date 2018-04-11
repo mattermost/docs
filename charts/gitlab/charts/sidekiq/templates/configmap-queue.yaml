@@ -1,4 +1,5 @@
 {{- if .Values.enabled -}}
+{{- $chart := printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" -}}
 {{- $chartName := .Chart.Name -}}
 {{- $name := default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
 {{- $releaseName := .Release.Name -}}
@@ -10,7 +11,10 @@ kind: ConfigMap
 metadata:
   name: {{ printf "%s-%s" $fullname .name | trunc 63 }}
   labels:
-    app: {{ $fullname }}
+    app: {{ $name }}
+    chart: {{ $chart }}
+    release: {{ $releaseName }}
+    heritage: {{ $releaseService }}
     queue_pod_name: {{ .name }}
 data:
   sidekiq_queues.yml.erb: |
