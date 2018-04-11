@@ -103,7 +103,7 @@ You can distribute the official Windows Desktop App silently to end users, pre-c
         echo   "notifications": {
         echo     "flashWindow": 1
         echo   },
-        echo   "useSpellChecker": true
+        echo   "useSpellChecker": true,
         echo   "showUnreadBadge": true
         echo }
       ) > %APPDATA%\Mattermost\config.json
