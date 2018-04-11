@@ -32,6 +32,36 @@ Related issues:
 [devops-post]: https://about.gitlab.com/2017/10/11/from-dev-to-devops/
 [initContainers]: https://kubernetes.io/docs/concepts/workloads/pods/init-containers/
 
+## Sub-charts are deployed from global chart
+
+All sub-charts of this repository are designed to be deployed via the global chart.
+Each component can still be deployed individually, but make use of a common set of
+properties facilitated by the global chart.
+
+This decision simplifies both the use and maintenance of the repository as a whole.
+
+Related issue:
+- [#352](https://gitlab.com/charts/helm.gitlab.io/issues/352)
+
+## Template partials for `gitlab/*` should be global whenever possible
+
+All template partials of the `gitlab/*` sub-charts should be a part of the global or
+GitLab sub-chart `templates/_helpers.tpl` whenever possible. Templates from
+[forked charts](#forked-charts) will remain a part of those charts. This reduces
+the maintenance impact of these forks.
+
+The benefits of this are straight-forward:
+- Increased DRY behavior, leading to easier maintenance. There should be no reason
+to have duplicates of the same function across multiple sub-charts when a single
+entry will suffice.
+- Reduction of template naming conflicts. All [partials throughout a chart are
+compiled together][helm-dev-doc], and thus we can treat them like the global behavior they are.
+
+Related issue:
+- [#352](https://gitlab.com/charts/helm.gitlab.io/issues/352)
+
+[helm-dev-doc]: https://docs.helm.sh/chart_template_guide/#declaring-and-using-templates-with-define-and-template)
+
 ## Forked charts
 
 The following charts have been forked or re-created in this repository following
