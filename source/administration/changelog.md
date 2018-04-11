@@ -11,17 +11,15 @@ Release date: 2018-04-16
 ### Highlights
 
 #### Channel Mute
- - Added a `/mute` command, meaning that when a channel is muted, desktop, push and email notifications are not sent for the channel.
+ - Added a `/mute` command, meaning that when a channel is muted, desktop, push and email notifications are not sent for the channel.   
+ - Channel Mute is also accessible via Channel Notification Preferences. 
+ - A muted channel gets sorted at the bottom of the left-hand sidebar section.
  
 #### Teammate Name Display Setting
- - Added rendering of at-mentions by the teammate name display.
+ - Added the setting for rendering of at-mentions by the teammate name display back to the Account Settings.
  
 #### Team Icons
- - Added support for team icons in the team sidebar, within the border of the existing team icons.
-
-#### Advanced Permissions ([Enterprise Edition E20](https://about.mattermost.com/pricing/))
- - Migrated system permissions to roles, which allows for more granular permissions at team and channel level, as well as custom roles, in future Mattermost releases.
- - Several configuration settings were migrated to roles in the database where changing their `config.json` values no longer take effect. See the compatibility section of this changelog to learn more.
+ - Added support for team icons in the team sidebar.
  
 #### Global Relay (Beta) ([Enterprise Edition E20](https://about.mattermost.com/pricing/) Add-On)
  - Added export support for Global Relay as a compliance solution. [Learn more here](https://about.mattermost.com/default-compliance-export-documentation).
@@ -30,7 +28,6 @@ Release date: 2018-04-16
 
 #### Web User Interface
  - Users can now set their timezone in **Account Settings > Timezone**.
- - Added ability for users to load more recent messages after jumping to a search result.
  - Cursor now returns to the reply thread input box after deleting a reply on the right-hand sidebar.
 
 #### Performance
@@ -45,7 +42,7 @@ Release date: 2018-04-16
  - Added support for OWA SMTP servers by supporting the LOGIN authentication method for SMTP.
  - Added support for AWS Identity and Access Management (IAM) roles for Amazon S3 file storage.
  - Added a "Test Connection" button to test Amazon S3 connection.
- - Added a `platform user email` command to change a user's email address.
+ - Added a `platform user email` CLI command to change a user's email address.
 
 #### Enterprise Edition
  - When `ExperimentalTownSquareIsReadOnly` is set to `true`, non-admins can no longer react to messages, pin messages or update channel information.
@@ -53,21 +50,18 @@ Release date: 2018-04-16
 
 ### Bug Fixes
 
- - Fixed 404 errors about custom emoji in the logs.
+ - Fixed server log 404 error messages "We couldn't get the emoji" for numeric emojis.
  - Fixed an issue where cursor jumped to end of line when trying to edit text in the middle of search bar.
  - Fixed an issue where a download link opened images in a new tab instead of downloading them.
- - Fixed push notifications being sent for your own direct messages.
- - Fixed plugin webapp manifest field 'bundle_path' to match documentation and be the path to the plugin's JavaScript bundle relative to the root of the plugin, similar to the server manifest 'executable' field.
  - Fixed an issue where Direct Message channel with yourself did not show up in channel switcher.
  - Fixed an issue where deleting one username from "add member to a channel" field deleted all names.
- - Fixed an issue where link was missing in an ephemeral message to add mentioned user to the channel.
  - Fixed an issue where View/Manage members should have been sorted by username, not online status.
  - Fixed an issue where a non-system-admin should not see `Is Trusted` option on OAuth 2.0 integrations.
  - Fixed an issue with being unable to click on pinned post, channel members, and so on with keyboard focus on search box.
  - Fixed an issue where Mattermost only imported first user during Slack import.
  - Fixed an issue where cleared search term reappeared after closing RHS.
- - Fixed an issue where image was posted while RHS was open with an oversized thumbnail.
- - Fixed an issue where both "test" and "test.example" were added to channel when adding "test.example" user to a channel via ephemeral message that appears when mentioning someone not in a channel.
+ - Fixed an issue where a thumbnail appeared larger than expected in center channel when posting an image while the right hand side was open.
+ - Fixed an issue with adding users to channels when the usernames contained periods.
  - Fixed an issue with a JavaScript error when using CMD/CTRL-K keyboard shortcut to change channels.
  - Fixed an issue with not being able to get past second page of `/admin_console/users`.
  - Fixed an issue where ALT+UP/DOWN caused error in console and then stopped working.
