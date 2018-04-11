@@ -4,10 +4,10 @@ kind: ConfigMap
 metadata:
   name: {{ template "minio.fullname" . }}-config-cm
   labels:
-    app: {{ template "minio.fullname" . }}
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-    release: "{{ .Release.Name }}"
-    heritage: "{{ .Release.Service }}"
+    app: {{ template "minio.name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
 data:
   initialize: |-
 {{ include (print $.Template.BasePath "/_helper_create_buckets.sh") . | indent 4 }}
