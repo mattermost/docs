@@ -1323,7 +1323,7 @@ Login Button Text
 
 Scoping IDP Provider Id
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Allows an authenticated user to skip the initial login page of their federated Azure AD server, and only require a password to log in. (XXXX/// optional?)
+Allows an authenticated user to skip the initial login page of their federated Azure AD server, and only require a password to log in.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ScopingIDPProviderId": ""`` with string input.                                                                          |
@@ -1331,7 +1331,7 @@ Allows an authenticated user to skip the initial login page of their federated A
 
 Scoping IDP Name
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Adds the name associated with a user's Scoping Identity Provider ID. (XXXX/// optional?)
+Adds the name associated with a user's Scoping Identity Provider ID.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ScopingIDPName": ""`` with string input.                                                                                |
@@ -1641,7 +1641,7 @@ Enable SMTP Authentication
 
 Customer Type
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Type of Global Relay customer account your organization has.
+Type of Global Relay customer account your organization has, either ``A9/Type 9`` or ``A10/Type 10``.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"CustomerType": A9/Type 9`` with options ``A9/Type 9`` and ``A10/Type 10`` for above settings respectively.              |
@@ -1826,8 +1826,6 @@ Enable OAuth 2.0 Service Provider
 
 Restrict managing integrations to Admins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-*Removed in April 16th, 2018 release*
-
 **True**: When true, webhooks and slash commands can only be created, edited and viewed by Team and System Admins, and OAuth 2.0 applications by System Admins. Integrations are available to all users after they have been created by the Admin.
 
 **False**: Any team members can create webhooks, slash commands and OAuth 2.0 applications from **Main Menu** > **Integrations**.
@@ -2159,6 +2157,7 @@ Enable Amazon S3 Debugging
 
 Test Connection
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Ensures that the user can access the server and that the settings are valid.
 
 Allow File Sharing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -3681,9 +3680,12 @@ Display Settings  (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Timezone
+^^^^^^^^^^^^^^^^^^^^^^^^^
 Select the timezone used for timestamps in the user interface and email notifications.
 
-XXXXX///
+**True** The Timezone setting is visible in the Account Settings and a time zone is automatically assigned in the next active session.
+
+**False** The Timezone setting is hidden in the Account Settings.
 
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalTimezone": false`` with options ``false`` and ``true`` |
