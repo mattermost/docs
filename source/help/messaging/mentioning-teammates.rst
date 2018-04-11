@@ -10,7 +10,6 @@ Mentioning Teammates
 Use @mentions to get the attention of specific team members.
 
 .. Note::
-
 Message edits do not trigger new @mention notifications, desktop notifications, or notification sounds.
 
 @username
