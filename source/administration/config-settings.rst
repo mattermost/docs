@@ -59,6 +59,16 @@ On Linux you can use: ``sudo setcap cap_net_bind_service=+ep ./bin/platform`` to
 | This feature's ``config.json`` setting is ``"ListenAddress": ":8065"`` with string input  |
 +-------------------------------------------------------------------------------------------+
 
+Forward port 80 to 443
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: Forwards all insecure traffic from port 80 to secure port 443.
+
+**False**: When using a proxy such as NGINX in front of Mattermost this setting is unnecessary and should be set to `false`.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Forward80To443": false`` with options ``true`` and ``false`` for above settings respectively.                        |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Connection Security
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -78,7 +88,6 @@ The path to the certificate file to use for TLS connection security.
 | This feature's ``config.json`` setting is ``"TLSCertFile": ""`` with string input  |
 +------------------------------------------------------------------------------------+
 
-
 TLS Key File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The path to the TLS key file to use for TLS connection security.
@@ -97,7 +106,6 @@ Use Let's Encrypt
 | This feature's ``config.json`` setting is ``"UseLetsEncrypt": false`` with options ``true`` and ``false`` for above settings respectively.                        |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Let's Encrypt Certificate Cache File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The path to the file where certificates and other data about the Let's Encrypt service will be stored.
@@ -105,16 +113,6 @@ The path to the file where certificates and other data about the Let's Encrypt s
 +-----------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LetsEncryptCertificateCacheFile": "./config/letsencrypt.cache"`` with string input.  |
 +-----------------------------------------------------------------------------------------------------------------------------------+
-
-Forward port 80 to 443
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: Forwards all insecure traffic from port 80 to secure port 443.
-
-**False**: When using a proxy such as NGINX in front of Mattermost this setting is unnecessary and should be set to `false`.
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Forward80To443": false`` with options ``true`` and ``false`` for above settings respectively.                        |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Read Timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -365,11 +363,11 @@ Restrict the permission level required to rename and set the header or purpose f
 
 **All channel members**: Allow all channel members to rename public channels.
 
-**Channel Admins, Team Admins, and System Admins**: Restrict renaming public channels to Channel Admins, Team Admins, and System Admins that are members of the channel.
+**Channel Admins, Team Admins, and System Admins**: Restrict renaming public channels to Channel Admins, Team Admins, and System Admins who are members of the channel.
 
-**Team Admins and System Admins**: Restrict renaming public channels to Team Admins and System Admins that are members of the channel.
+**Team Admins and System Admins**: Restrict renaming public channels to Team Admins and System Admins who are members of the channel.
 
-**System Admins**: Restrict renaming public channels to System Admins that are members of the channel.
+**System Admins**: Restrict renaming public channels to System Admins who are members of the channel.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictPublicChannelManagement": "all"`` with options ``all``, ``channel_admin``, ``team_admin``, and ``system_admin`` for above settings respectively.   |
@@ -381,11 +379,11 @@ Restrict the permission level required to delete public channels. Deleted channe
 
 **All channel members**: Allow all channel members to delete public channels.
 
-**Channel Admins, Team Admins, and System Admins**: Restrict deleting public channels to Channel Admins, Team Admins, and System Admins that are members of the channel.
+**Channel Admins, Team Admins, and System Admins**: Restrict deleting public channels to Channel Admins, Team Admins, and System Admins who are members of the channel.
 
-**Team Admins and System Admins**: Restrict deleting public channels to Team Admins and System Admins that are members of the channel.
+**Team Admins and System Admins**: Restrict deleting public channels to Team Admins and System Admins who are members of the channel.
 
-**System Admins**: Restrict deleting public channels to System Admins that are members of the channel.
+**System Admins**: Restrict deleting public channels to System Admins who are members of the channel.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictPublicChannelDeletion": "all"`` with options ``all``, ``channel_admin``, ``team_admin``, and ``system_admin`` for above settings respectively.   |
@@ -411,31 +409,15 @@ Restrict the permission level required to rename and set the header or purpose f
 
 **All channel members**: Allow all channel members to rename private channels.
 
-**Channel Admins, Team Admins, and System Admins**: Restrict renaming private channels to Channel Admins, Team Admins, and System Admins that are members of the private channel.
+**Channel Admins, Team Admins, and System Admins**: Restrict renaming private channels to Channel Admins, Team Admins, and System Admins who are members of the private channel.
 
-**Team Admins and System Admins**: Restrict renaming private channels to Team Admins and System Admins that are members of the private channel.
+**Team Admins and System Admins**: Restrict renaming private channels to Team Admins and System Admins who are members of the private channel.
 
-**System Admins**: Restrict renaming private channels to System Admins that are members of the private channel.
+**System Admins**: Restrict renaming private channels to System Admins who are members of the private channel.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictPrivateChannelManagement": "all"`` with options ``all``, ``channel_admin``, ``team_admin``, and ``system_admin`` for above settings respectively.   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Enable private channel deletion for
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Restrict the permission level required to delete private channels. Deleted channels can be recovered from the database using a `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`_.
-
-**All channel members**: Allow all channel members to delete private channels.
-
-**Channel Admins, Team Admins, and System Admins**: Restrict deleting private channels to Channel Admins, Team Admins, and System Admins that are members of the private channel.
-
-**Team Admins and System Admins**: Restrict deleting private channels to Team Admins and System Admins that are members of the private channel.
-
-**System Admins**: Restrict deleting private channels to System Admins that are members of the private channel.
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RestrictPrivateChannelDeletion": "all"`` with options ``all``, ``channel_admin``, ``team_admin``, and ``system_admin`` for above settings respectively.   |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable managing of private channel members for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -452,6 +434,22 @@ Set policy on who can add and remove members from private channels.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictPrivateChannelManageMembers": "all"`` with options ``all``, ``channel_admin``, ``team_admin``, and ``system_admin`` for above settings respectively. |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable private channel deletion for
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Restrict the permission level required to delete private channels. Deleted channels can be recovered from the database using a `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`_.
+
+**All channel members**: Allow all channel members to delete private channels.
+
+**Channel Admins, Team Admins, and System Admins**: Restrict deleting private channels to Channel Admins, Team Admins, and System Admins who are members of the private channel.
+
+**Team Admins and System Admins**: Restrict deleting private channels to Team Admins and System Admins who are members of the private channel.
+
+**System Admins**: Restrict deleting private channels to System Admins who are members of the private channel.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RestrictPrivateChannelDeletion": "all"`` with options ``all``, ``channel_admin``, ``team_admin``, and ``system_admin`` for above settings respectively.   |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Allow which users to delete messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -480,7 +478,7 @@ Set the time limit that users have to edit their messages after posting.
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature has two settings in ``config.json``. The first setting is ``"AllowEditPost": "always"`` with options ``always``, ``never``, and ``time_limit``.  |
 |                                                                                                                                                               |
-| The second setting is ``"PostEditTimeLimit": 300`` with whole number input. To enable ``PostEditTimeLimit``, set ``AllowEditPost`` to ``time_limit``.         |
+| The second setting is ``"PostEditTimeLimit": -1`` with whole number input. To enable ``PostEditTimeLimit``, set ``AllowEditPost`` to ``time_limit``.         |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Announcement Banner
@@ -1323,6 +1321,22 @@ Login Button Text
 | This feature's ``config.json`` setting is ``"LoginButtonText": ""`` with string input.                                                                               |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Scoping IDP Provider Id
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Allows an authenticated user to skip the initial login page of their federated Azure AD server, and only require a password to log in.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ScopingIDPProviderId": ""`` with string input.                                                                          |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Scoping IDP Name
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Adds the name associated with a user's Scoping Identity Provider ID.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ScopingIDPName": ""`` with string input.                                                                                |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 ________
 
 
@@ -1625,6 +1639,14 @@ Enable SMTP Authentication
 | This feature's ``config.json`` setting is ``"EnableSMTPAuth": false`` with options ``true`` and ``false`` for above settings respectively.                           |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Customer Type
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Type of Global Relay customer account your organization has, either ``A9/Type 9`` or ``A10/Type 10``.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"CustomerType": A9/Type 9`` with options ``A9/Type 9`` and ``A10/Type 10`` for above settings respectively.              |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 SMTP Server Username
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The username for authenticating to the SMTP server.
@@ -1641,6 +1663,14 @@ The password associated with the SMTP username.
 | This feature's ``config.json`` setting is ``"SMTPPassword": ""`` with string input.                                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Email Address
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The email address your Global Relay server monitors for incoming compliance exports.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EmailAddress": ""`` with string input.                                                                                  |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Connection Security
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ``None``: Send email over an unsecure connection.
@@ -1652,6 +1682,17 @@ Connection Security
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ConnectionSecurity": ""`` with options ``""``, ``TLS`` and ``STARTTLS`` for above settings respectively.                           |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Skip Server Certificate Verification
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Mattermost will not verify the email server certificate.
+
+**False**: Mattermost will verify the email server certificate.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SkipServerCertificateVerification": false`` with options ``false` and ``true`` for above settings respectively.                    |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Security Alerts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2040,22 +2081,6 @@ Directory to which files are written. If blank, directory will be set to ./data/
 | This feature's ``config.json`` setting is ``"Directory": "./data/"`` with string input.                                                                              |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Amazon S3 Access Key ID
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Obtain this credential from your Amazon AWS administrator.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AmazonS3AccessKeyId": ""`` with string input.                                                                           |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Amazon S3 Secret Access Key
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Obtain this credential from your Amazon AWS administrator.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AmazonS3SecretAccessKey": ""`` with string input.                                                                       |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Amazon S3 Bucket
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Name you selected for your S3 bucket in AWS.
@@ -2064,20 +2089,36 @@ Name you selected for your S3 bucket in AWS.
 | This feature's ``config.json`` setting is ``"AmazonS3Bucket": ""`` with string input.                                                                                |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Amazon S3 Region
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AWS region you selected when creating your S3 bucket. If no region is set, Mattermost attempts to get the appropriate region from AWS, or sets it to 'us-east-1' if none found.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AmazonS3Region": ""`` with string input.                                                                                |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Amazon S3 Endpoint
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Hostname of your S3 Compatible Storage provider. Defaults to ``s3.amazonaws.com``.
+Hostname of your S3 Compatible Storage provider. Defaults to "s3.amazonaws.com".
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AmazonS3Endpoint": "s3.amazonaws.com"`` with string input.                                                              |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Amazon S3 Region
+Amazon S3 Access Key ID
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AWS region you selected for creating your S3 bucket. Refer to `AWS Reference Documentation <http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region>`_ and choose this variable from the Region column.
+Only required if you do not want to authenticate to S3 using an `IAM role <https://about.mattermost.com/default-iam-role>`_. Enter the Access Key ID provided by your Amazon EC2 administrator.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AmazonS3Region": ""`` with string input.                                                                                |
+| This feature's ``config.json`` setting is ``"AmazonS3AccessKeyId": ""`` with string input.                                                                           |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Amazon S3 Secret Access Key
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The secret access key associated with your Amazon S3 Access Key ID.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AmazonS3SecretAccessKey": ""`` with string input.                                                                       |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Secure Amazon S3 Connections
@@ -2106,13 +2147,17 @@ Enable Server-Side Encryption for Amazon S3
 
 Enable Amazon S3 Debugging
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: Additional debugging information is included in the system logs. Typically set to `false` in production.
+**True**: When true, log additional debugging information to the system logs. Typically set to `false` in production.
 
 **False**: No Amazon S3 debugging information is included in the system logs.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AmazonS3Trace": false`` with options ``true`` and ``false`` for above settings respectively.                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Test Connection
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Ensures that the user can access the server and that the settings are valid.
 
 Allow File Sharing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2142,15 +2187,6 @@ When false, disables file downloads on mobile apps. Users can still download fil
 | This feature's ``config.json`` setting is ``"EnableMobileDownload": true`` with options ``true`` and ``false``.     |
 +---------------------------------------------------------------------------------------------------------------------+
 
-Image Proxy
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Includes three configuration keys: ``ImageProxyType``, ``ImageProxyURL`` and ``ImageProxyOptions``. When these keys are configured, posts served to the client will have their markdown modified enabling all images to be loaded through a proxy. See `documentation <https://docs.mattermost.com/administration/image-proxy.html>`_ for more details.
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ImageProxyType": ""``, ``"ImageProxyURL": ""`` and ``"ImageProxyOptions": ""`` with string input.      |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Maximum File Size
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Maximum file size for message attachments entered in megabytes in the System Console UI. Converted to bytes in ``config.json`` at 1048576 bytes per megabyte.
@@ -2160,6 +2196,15 @@ Maximum file size for message attachments entered in megabytes in the System Con
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. warning:: Verify server memory can support your setting choice. Large file sizes increase the risk of server crashes and failed uploads due to network disruptions.
+
+Image Proxy
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Includes three configuration keys: ``ImageProxyType``, ``ImageProxyURL`` and ``ImageProxyOptions``. When these keys are configured, posts served to the client will have their markdown modified enabling all images to be loaded through a proxy. See `documentation <https://docs.mattermost.com/administration/image-proxy.html>`_ for more details.
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ImageProxyType": ""``, ``"ImageProxyURL": ""`` and ``"ImageProxyOptions": ""`` with string input.      |
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
 
@@ -2285,20 +2330,6 @@ Description of service shown in login screens and UI. When not specified, "All t
 
 ________
 
-Link Previews
-~~~~~~~~~~~~~~~~~~~~~~~~~
-Enable Link Previews
-^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: Enables users to display a preview of website content below the message, if available. When true, website previews can be enabled from Account Settings > Advanced > Preview pre-release features.
-
-**False**: Website link previews are disabled.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableLinkPreviews": false`` with options ``true`` and ``false`` for above settings respectively.                       |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-________
-
 Emoji
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Enable Emoji Picker
@@ -2334,6 +2365,20 @@ Restrict Custom Emoji Creation
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictCustomEmojiCreation": "all"`` with options ``all``, ``admin`` and ``system_admin`` for above settings respectively. |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+________
+
+Link Previews
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable Link Previews
+^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: Enables users to display a preview of website content below the message, if available. When true, website previews can be enabled from Account Settings > Advanced > Preview pre-release features.
+
+**False**: Website link previews are disabled.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableLinkPreviews": false`` with options ``true`` and ``false`` for above settings respectively.                       |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
 
@@ -3630,3 +3675,18 @@ Select the themes that can be chosen by users when ``"EnableThemeSelection"`` is
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AllowedThemes": "default"`` with options ``default``, ``organization``, ``mattermostDark`` and ``windows10`` optionally separated by commas. For example, ``["mattermostDark", "windows10"]`` |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Display Settings  (Experimental)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Timezone
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Select the timezone used for timestamps in the user interface and email notifications.
+
+**True** The Timezone setting is visible in the Account Settings and a time zone is automatically assigned in the next active session.
+
+**False** The Timezone setting is hidden in the Account Settings.
+
++-----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalTimezone": false`` with options ``true`` and ``false`` |
++-----------------------------------------------------------------------------------------------------------------+
