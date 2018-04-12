@@ -3688,5 +3688,5 @@ Select the timezone used for timestamps in the user interface and email notifica
 **False** The Timezone setting is hidden in the Account Settings.
 
 +-----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalTimezone": false`` with options ``false`` and ``true`` |
+| This feature's ``config.json`` setting is ``"ExperimentalTimezone": false`` with options ``true`` and ``false`` |
 +-----------------------------------------------------------------------------------------------------------------+
