@@ -15,16 +15,39 @@ In each section collect the options that will be combined to use with `helm inst
 
 There are some secrets that need to be created (e.g. ssh keys). By default they will be generated automatically, but if you want to specify them, you can follow the [secrets guide](secrets.md).
 
-### Networking
+### Networking and DNS
 
-Before beginning, you should have a domain name with A records for `gitlab`,
-`registry`, and `minio` all pointing to a single static IP. For example if you choose
-`example.local` and you have a static IP of `10.10.10.10`, then `gitlab.example.local`,
-`registry.example.local` and `minio.example.local` should all resolve to `10.10.10.10`.
+By default, the chart relies on Kubernetes `Service` objects of `type: LoadBalancer`
+to expose Gitlab services using name-based virtual servers configured with`Ingress`
+objects. You'll need to specify a domain which will contain records to resolve
+`gitlab`, `registry`, and `minio` to the appropriate IP for your chart.
 
 *Include these options in your helm install command:*
 ```
 --set global.hosts.domain=example.local
+```
+
+#### Dynamic IPs with external-dns
+
+If you plan to use an automatic DNS registration service like [external-dns](https://github.com/kubernetes-incubator/external-dns),
+you won't need any additional configuration.
+
+If you provisioned a GKE cluster using the scripts in this repo, [external-dns](https://github.com/kubernetes-incubator/external-dns)
+is already installed in your cluster.
+
+#### Static IP
+
+If you plan to manually configure your DNS records they should all point to a
+static IP. For example if you choose `example.local` and you have a static IP
+of `10.10.10.10`, then `gitlab.example.local`, `registry.example.local` and
+`minio.example.local` should all resolve to `10.10.10.10`.
+
+If you are using GKE, there is some documentation [here](../cloud/gke.md#creating-the-external-ip)
+for configuring static IPs and DNS. Consult your Cloud and/or DNS provider's
+documentation for more help on this process.
+
+*Include these options in your helm install command:*
+```
 --set global.hosts.externalIP=10.10.10.10
 ```
 

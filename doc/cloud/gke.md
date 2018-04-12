@@ -3,7 +3,6 @@
 For a fully functional GitLab instance, you will need to create a few resources before deployment of this chart.
 
 1. A [GKE cluster](#creating-the-gke-cluster) with an associated external IP
-1. A [wildcard DNS entry](#dns-entry) which resolves to the external IP
 
 ## Creating the GKE cluster
 
@@ -13,6 +12,7 @@ To make getting started easier, we have provided a script to [automate cluster c
 
 We have created a [bootstrap script](../../scripts/gke_bootstrap_script.sh) to automate much of the setup process for users on GCP/GKE. It will:
 * Create a new GKE cluster
+* Allow the cluster to modify DNS records
 * Setup kubectl, and connect it to the cluster
 * Initialize Helm and install Tiller
 
@@ -22,17 +22,18 @@ The script reads various parameters from environment variables and an argument `
 
 The table below describes all variables.
 
-| Variable        | Description                                                          | Default value                    |
-|-----------------|----------------------------------------------------------------------|----------------------------------|
-| REGION          | The region where your cluster lives                                  | us-central1                      |
-| ZONE            | The zone where your cluster instances lives                          | us-central1a                     |
-| CLUSTER_NAME    | The name of the cluster                                              | gitlab-cluster                   |
-| CLUSTER_VERSION | The version of your GKE cluster                                      | GKE default, check [GKE release notes][]. |
-| MACHINE_TYPE    | The cluster instances' type                                          | n1-standard-4                    |
-| NUM_NODES       | The number of nodes required.                                        | 2                                |
-| PROJECT         | the id of your GCP project                                           | No defaults, required to be set. |
-| RBAC_ENABLED    | If you know whether your cluster has RBAC enabled set this variable. | true                             |
-| PREEMPTIBLE     | Cheaper, clusters live at *most* 24 hrs. No SLA on nodes/disks       | false                            |
+| Variable        | Description                                                                 | Default value                    |
+|-----------------|-----------------------------------------------------------------------------|----------------------------------|
+| REGION          | The region where your cluster lives                                         | us-central1                      |
+| ZONE            | The zone where your cluster instances lives                                 | us-central1a                     |
+| CLUSTER_NAME    | The name of the cluster                                                     | gitlab-cluster                   |
+| CLUSTER_VERSION | The version of your GKE cluster                                             | GKE default, check [GKE release notes][]. |
+| MACHINE_TYPE    | The cluster instances' type                                                 | n1-standard-4                    |
+| NUM_NODES       | The number of nodes required.                                               | 2                                |
+| PROJECT         | the id of your GCP project                                                  | No defaults, required to be set. |
+| RBAC_ENABLED    | If you know whether your cluster has RBAC enabled set this variable.        | true                             |
+| PREEMPTIBLE     | Cheaper, clusters live at *most* 24 hrs. No SLA on nodes/disks              | false                            |
+| USE_STATIC_IP   | Create a static IP for Gitlab instead of an ephemeral IP with managed DNS   | false                            |
 
 [GKE release notes]: https://cloud.google.com/kubernetes-engine/release-notes
 
@@ -79,7 +80,8 @@ We will use this IP to bind with a DNS name in the next section.
 
 ## DNS Entry
 
-In order to use ingress host rules to access various components of gitlab we will need a public domain with an `A record` wild card DNS entry pointing to the IP we just created.
+If you created your cluster manually or used the `USE_STATIC_IP` option with the scripted creation,
+you'll need a public domain with an `A record` wild card DNS entry pointing to the IP we just created.
 
 Follow [This](https://cloud.google.com/dns/quickstart) to create the DNS entry.
 
