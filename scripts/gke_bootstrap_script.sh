@@ -13,6 +13,7 @@ RBAC_ENABLED=${RBAC_ENABLED-true}
 NUM_NODES=${NUM_NODES-2}
 PREEMPTIBLE=${PREEMPTIBLE-false}
 EXTRA_CREATE_ARGS=${EXTRA_CREATE_ARGS-""}
+USE_STATIC_IP=${USE_STATIC_IP-false};
 external_ip_name=${CLUSTER_NAME}-external-ip;
 DIR=$(dirname "$(readlink -f "$0")")
 
@@ -33,12 +34,15 @@ function bootstrap(){
 
   gcloud container clusters create $CLUSTER_NAME --zone $ZONE \
     --cluster-version $CLUSTER_VERSION --machine-type $MACHINE_TYPE \
+    --scopes "https://www.googleapis.com/auth/ndev.clouddns.readwrite","https://www.googleapis.com/auth/compute","https://www.googleapis.com/auth/devstorage.read_only","https://www.googleapis.com/auth/logging.write","https://www.googleapis.com/auth/monitoring","https://www.googleapis.com/auth/servicecontrol","https://www.googleapis.com/auth/service.management.readonly","https://www.googleapis.com/auth/trace.append" \
     --node-version $CLUSTER_VERSION --num-nodes $NUM_NODES --project $PROJECT $EXTRA_CREATE_ARGS;
 
-  gcloud compute addresses create $external_ip_name --region $REGION --project $PROJECT;
-  address=$(gcloud compute addresses describe $external_ip_name --region $REGION --project $PROJECT --format='value(address)');
+  if ${USE_STATIC_IP}; then
+    gcloud compute addresses create $external_ip_name --region $REGION --project $PROJECT;
+    address=$(gcloud compute addresses describe $external_ip_name --region $REGION --project $PROJECT --format='value(address)');
 
-  echo "Successfully provisioned external IP address $address , You need to add an A record to the DNS name to point to this address. See https://gitlab.com/charts/helm.gitlab.io/blob/master/doc/cloud/gke.md#dns-entry.";
+    echo "Successfully provisioned external IP address $address , You need to add an A record to the DNS name to point to this address. See https://gitlab.com/charts/helm.gitlab.io/blob/master/doc/cloud/gke.md#dns-entry.";
+  fi
 
   mkdir -p demo/.kube;
   touch demo/.kube/config;
@@ -59,9 +63,17 @@ function bootstrap(){
     kubectl --username=admin --password=$password create -f rbac-config.yaml;
   fi
 
-  helm init --service-account tiller;
+  echo "Installing helm..."
+  helm init --wait --service-account tiller
+  helm repo update
 
-  helm repo update;
+  if ! ${USE_STATIC_IP}; then
+    helm install --name dns --namespace kube-system stable/external-dns \
+      --set provider=google \
+      --set google.project=$PROJECT \
+      --set rbac.create=true \
+      --set policy=sync
+  fi
 }
 
 #Deletes everything created during bootstrap
@@ -71,10 +83,12 @@ function cleanup_gke_resources(){
   gcloud container clusters delete -q $CLUSTER_NAME --zone $ZONE --project $PROJECT;
   echo "Deleted $CLUSTER_NAME cluster successfully";
 
-  gcloud compute addresses delete -q $external_ip_name --region $REGION --project $PROJECT;
-  echo "Deleted ip: $external_ip_name successfully";
+  if ${USE_STATIC_IP}; then
+    gcloud compute addresses delete -q $external_ip_name --region $REGION --project $PROJECT;
+    echo "Deleted ip: $external_ip_name successfully";
+  fi
 
-  echo "\033[;33m Warning: Disks created during the helm deployment are not deleted, please delete them manually from the gcp console \033[0m";
+  echo "\033[;33m Warning: Disks, load balancers, DNS records, and other cloud resources created during the helm deployment are not deleted, please delete them manually from the gcp console \033[0m";
 }
 
 if [ -z "$1" ]; then
