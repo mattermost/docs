@@ -253,10 +253,14 @@ Set up NGINX with SSL (Recommended)
    you will have to give your domain name
 4. You can find your certificate in ``/etc/letsencrypt/live``
 5. Modify the file at ``/etc/nginx/sites-available/mattermost`` and add
-   the following lines:
+   the following lines. Make sure that you use your own values for the Mattermost server IP address and FQDN for *server_name*.
 
   ::
 
+      upstream backend {
+        server 10.10.10.2:8065;
+      }
+      
       server {
          listen         80;
          server_name    mattermost.example.com;
@@ -276,6 +280,21 @@ Set up NGINX with SSL (Recommended)
          ssl_prefer_server_ciphers on;
          ssl_session_cache shared:SSL:10m;
 
+         location ~ /api/v[0-9]+/(users/)?websocket$ {
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection "upgrade";
+            client_max_body_size 50M;
+            proxy_set_header Host $http_host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_set_header X-Frame-Options SAMEORIGIN;
+            proxy_buffers 256 16k;
+            proxy_buffer_size 16k;
+            proxy_read_timeout 600s;
+            proxy_pass http://backend;
+          }
+
          location / {
             gzip off;
             proxy_set_header X-Forwarded-Ssl on;
@@ -287,7 +306,7 @@ Set up NGINX with SSL (Recommended)
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
             proxy_set_header X-Forwarded-Proto $scheme;
             proxy_set_header X-Frame-Options SAMEORIGIN;
-            proxy_pass http://10.10.10.2:8065;
+            proxy_pass http://backend;
          }
       }
 
