@@ -11,6 +11,7 @@ Getting Started
    :glob:
 
    /getting-started/implementation_plan.rst
+   /getting-started/welcome_email.rst
 
 
 Installing Mattermost
