@@ -33,6 +33,7 @@ Release date: 2018-04-16
 #### Performance
  - Decreased channel load time by optimizing database queries used to fetch threads and parent posts in a channel.
  - Decreased load time of large channels with 5,000+ messages by up to 90% by optimizing many client functions related to rendering posts and threads.
+ - Changing properties other than Site URL in ``/general/logging`` section will now require a server restart before taking effect.
  
 #### Plugins (Beta)
  - Plugins now have more flexibility to format text, emojis and Markdown.
