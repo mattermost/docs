@@ -41,6 +41,11 @@ spec:
             - /scripts/db-migrate
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
+            - name: GITLAB_SHARED_RUNNERS_REGISTRATION_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: gitlab-runner
+                  key: runner-registration-token
             - name: CONFIG_TEMPLATE_DIRECTORY
               value: '/var/opt/gitlab/templates'
             - name: CONFIG_DIRECTORY
