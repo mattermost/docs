@@ -11,20 +11,18 @@ Merge Requests
 
 To submit a merge request (MR) to GitLab for taking the next Mattermost version, follow these steps. The MR must be merged by the 7th of the month to be included in a GitLab release.
 
-1. Download the latest Team Edition release from `the download page <https://about.mattermost.com/download>`_.
-2. Test the Mattermost version locally with GitLab Omnibus `following these steps <https://docs.mattermost.com/developer/developer-flow.html#testing-with-gitlab-omnibus>`_.
-3. Once tested and all issues are resolved, submit an MR to the `master branch <https://gitlab.com/gitlab-org/omnibus-gitlab>`_. Include the following:
-
+1. Check out the latest version of GitLab Omnibus and make a branch with the following changes:
     - Changes to Mattermost version number (`default_version <https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/config/software/mattermost.rb#L20>`_) and md5 sum of the final TE build (`source md5 <https://gitlab.com/jasonblais/omnibus-gitlab/blob/master/config/software/mattermost.rb#L23>`_) in  `config/software/mattermost.rb <https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/config/software/mattermost.rb>`_
     - Update to the `GitLab changelog <https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/CHANGELOG.md>`_
     - Config.json updates to `gitlab.rb <https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-config-template/gitlab.rb.template>`_, `attributes default.rb <https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-cookbooks/mattermost/attributes/default.rb>`_ and `config.json.erb <https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-cookbooks/mattermost/templates/default/config.json.erb>`_ with new TE config settings (`see example <https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests/1855>`_)
     - Update to `GitLab Mattermost documentation <https://docs.gitlab.com/omnibus/gitlab-mattermost/README.html>`_
-    - Summary of updates in Team Edition that are relevant to GitLab
+2. Build GitLab and test it locally `following these steps <https://docs.mattermost.com/developer/developer-flow.html#testing-with-gitlab-omnibus>`_.
+3. Submit a MR to the `master branch of Gitlab <https://gitlab.com/gitlab-org/omnibus-gitlab>`_, including a summary of updates in Team Edition that are relevant to GitLab
+4. Post a link to the MR in the Release Discussion channel.
+5. Check daily for updates until the MR is merged, ensuring it gets merged by the 7th of the month.
+6. Once the MR is merged and included in an RC, `test upgrade following these steps <https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg>`_.
 
-4. If the release contains a security update, email @marin and @briann in GitLab with a link to the MR, and all subsequent backports.
-5. Post a link to the MR in the Release Discussion channel.
-6. Check daily for updates until the MR is merged, ensuring it gets merged by the 7th of the month.
-7. Once the MR is merged and included in an RC, `test upgrade following these steps <https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg>`_.
+If the release contains a security update, PM owner emails @marin and @briann in GitLab with a link to the MR, and all subsequent backports.
 
 Testing
 ----------------
