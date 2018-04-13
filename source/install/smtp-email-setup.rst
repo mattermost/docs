@@ -110,6 +110,7 @@ Hotmail
 -  Set **SMTP Port** to **587**
 -  Set **Connection Security** to **STARTTLS**
 
+
 Troubleshooting SMTP
 ~~~~~~~~~~~~~~~~~~~~
 
