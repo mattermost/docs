@@ -173,7 +173,7 @@ Any requests that are made to the response URL should either be a plain text or 
 Markdown formatting
 ~~~~~~~~~~~~~~~~~~~~
 
-A rich range of formatting is made possible through :doc:`Markdown support <../help/messaging/formatting-text>` in Mattermost, including headings, formatted fonts, tables, inline images and other options supported by Mattermost Markdown. All of these options are also supported by slash commands.
+A rich range of formatting is made possible through :doc:`Markdown support <../help/messaging/formatting-text>` in Mattermost, including headings, formatted fonts, tables, inline images and other options supported by Mattermost markdown. All of these options are also supported by slash commands.
 
 For example, to create a message with a heading and an italicized text on the next line, use the following response. 
 
