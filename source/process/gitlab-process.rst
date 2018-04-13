@@ -32,11 +32,111 @@ Testing
 The following steps are taken to test the Mattermost package in GitLab Omnibus:
 
 1. Each Mattermost version is tested on a GitLab Omnibus build at `http://ci-linux-gitlab-omnibus.mattermost.com/ <http://ci-linux-gitlab-omnibus.mattermost.com/>`_. Testing covers all core Mattermost features, including notifications and GitLab SSO.
-2. Before each merge request to GitLab Omnibus, upgrade is tested `following these steps <https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg>`_, using the `nightly Omnibus packages <https://packages.gitlab.com/gitlab/nightly-builds>`_ to validate the integration. This is so the packaging code and OAuth setup can be tested as well, which has historically been the main source of issues. Other test areas include:
+2. Before each merge request to GitLab Omnibus, upgrade is tested `following the steps below <https://docs.mattermost.com/process/gitlab-process.html#testing-upgrade-process>`_, using the `nightly Omnibus packages <https://packages.gitlab.com/gitlab/nightly-builds>`_ to validate the integration. This is so the packaging code and OAuth setup can be tested as well, which has historically been the main source of issues. Other test areas include:
 
  - Pre-provisioning OAuth configuration automatically on the Omnibus package
  - Mattermost ChatOps slash command integration
  - OAuth team creation option in GitLab Omnibus
+
+Upgrade Process
+~~~~~~~~~~~~~~~~~~
+
+Follow these steps to test the upgrade process for Mattermost in GitLab Omnibus.
+
+The current test servers are located at:
+
+ - `http://gitlab-rc-testing.spinmint.com <http://gitlab-rc-testing.spinmint.com>`_ - The GitLab instance itself
+ - `http://gitlab-rc-testing2.spinmint.com <http://gitlab-rc-testing2.spinmint.com>`_ - GitLab Mattermost
+
+The root admin account for them has username `root` and password `Password1`.
+
+1. Connect to the previously configured instance using the key you used to set it up. The host name is ``ubuntu@gitlab-rc-testing.spinmint.com``.
+2. Make sure your package manager is configured to allow for Gitlab RCs:
+
+ - Go to `https://packages.gitlab.com/gitlab/unstable <https://packages.gitlab.com/gitlab/unstable>`_.
+ - Click on the newest release candidate that’s marked CE and is for Ubuntu/Trusty.
+ - Run the first command listed on that page on your server. It looks something like:
+
+   .. code-block:: text
+
+     curl -s https://packages.gitlab.com/install/repositories/gitlab/unstable/script.deb.sh | sudo bash
+
+3. Update the package manager
+
+  .. code-block:: text
+
+    sudo apt-get update
+
+4. Update GitLab by running the second command listed on the page you opened on step 2. It looks something like:
+
+   .. code-block:: text
+
+     sudo apt-get install gitlab-ce=8.10.0-rc13.ce.0
+
+5. Reconfigure GitLab:
+
+  .. code-block:: text
+
+   sudo gitlab-ctl reconfigure
+
+6. Restart GitLab:
+
+  .. code-block:: text
+
+   sudo gitlab-ctl restart
+
+7. To confirm the upgrade was successful:
+
+ - Go to `http://gitlab-rc-testing2.spinmint.com  <http://gitlab-rc-testing2.spinmint.com >`_.
+ - Create an account and log in.
+ - Confirm the correct version number in **Main Menu** > **About Mattermost**.
+
+Useful Commands
+~~~~~~~~~~~~~~~~~~
+
+1. View config.json directly (arrow keys to scroll, press Q to exit):
+
+  .. code-block:: text
+
+    sudo less /var/opt/gitlab/mattermost/config.json
+
+2. Stop/start Mattermost manually:
+
+  .. code-block:: text
+
+	sudo /opt/gitlab/bin/gitlab-ctl stop mattermost
+	sudo /opt/gitlab/bin/gitlab-ctl start mattermost
+
+3. Access the GitLab admin console (press CTRL+D to exit):
+
+  .. code-block:: text
+
+	sudo gitlab-rails console production
+
+  You can then make actions such as update a user's password:
+
+    .. code-block:: text
+
+	  user = User.find_by(email: 'admin@local.host')
+	  user.password = 'secret_pass'
+	  user.password_confirmation = 'secret_pass'
+	  user.save!
+
+4. Edit NGINX configuration directly:
+
+  .. code-block:: text
+
+	sudo vim /var/opt/gitlab/nginx/conf/gitlab-mattermost-http.conf
+	sudo vim /var/opt/gitlab/nginx/conf/gitlab-http.conf
+	sudo vim /var/opt/gitlab/nginx/conf/nginx.conf
+	sudo vim /var/opt/gitlab/nginx/conf/nginx-status.conf
+
+5. Stop/start NGINX manually:
+
+  .. code-block:: text
+
+	sudo /opt/gitlab/bin/gitlab-ctl stop nginx
+	sudo /opt/gitlab/bin/gitlab-ctl start nginx
 
 Service-Level Agreement (SLA)
 -------------------------------
@@ -86,7 +186,6 @@ Upcoming Work
 4. Releasing an extended support release (ESR) version of Mattermost and shipping it in GitLab Omnibus. `A discussion is open in the Mattermost forums <https://forum.mattermost.org/t/extended-support-release-discussion/4598>`_. - **Due: TBD**
 
 5. Bundling Mattermost Enterprise Edition in GitLab EE. `A discussion is open in GitLab repository <https://gitlab.com/gitlab-org/omnibus-gitlab/issues/1609>`_. - **Due: TBD**
-
 
 Templates
 --------------
