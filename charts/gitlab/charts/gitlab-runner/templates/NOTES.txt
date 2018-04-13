@@ -1,0 +1,3 @@
+{{- if include "gitlabUrl" . }}
+Your GitLab Runner should now be registered against the GitLab instance reachable at: {{ template "gitlabUrl" . }}
+{{- end -}}
