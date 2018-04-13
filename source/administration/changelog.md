@@ -40,7 +40,6 @@ Release date: 2018-04-16
  - Added support for plugins to add actions to the sidebar dropdowns.
  
 #### Administration
- - Added support for OWA SMTP servers by supporting the LOGIN authentication method for SMTP.
  - Added support for AWS Identity and Access Management (IAM) roles for Amazon S3 file storage.
  - Added a "Test Connection" button to test Amazon S3 connection.
 
