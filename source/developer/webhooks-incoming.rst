@@ -139,7 +139,7 @@ Channels can be mentioned by including *@channel* or *<!channel>*. For example:
 Markdown formatting
 ~~~~~~~~~~~~~~~~~~~~
 
-A rich range of formatting is made possible through :doc:`markdown support <../help/messaging/formatting-text>` in Mattermost, including headings, formatted fonts, tables, inline images and other options supported by Mattermost Markdown. All of these options are also supported by incoming webhooks.
+A rich range of formatting is made possible through :doc:`markdown support <../help/messaging/formatting-text>` in Mattermost, including headings, formatted fonts, tables, inline images and other options supported by Mattermost markdown. All of these options are also supported by incoming webhooks.
 
 For example, to create a message with a heading, and an italicized text on the next line, use the following payload. 
 
