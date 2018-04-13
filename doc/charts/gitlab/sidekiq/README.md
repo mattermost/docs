@@ -26,6 +26,7 @@ Table below contains all the possible charts configurations that can be supplied
 | image.tag                 | Sidekiq image tag                              | latest                                           |
 | image.pullPolicy          | Sidekiq image pull policy                      | Always                                           |
 | enabled                   | Sidekiq enabled flag                           | true                                             |
+| metrics.enabled           | Toggle Prometheus metrics exporter             | true                                             |
 | redis.serviceName         | Redis service name                             | redis                                            |
 | redis.password.secret     | Redis secret                                   | gitlab-redis                                     |
 | redis.password.key        | Key to redis password in redis secret          | redis-password                                   |
@@ -148,6 +149,10 @@ The `authToken` attribute for Gitaly has to sub keys:
 - `secret` defines the name of the kubernetes `Secret` to pull from
 - `key` defines the name of the key in the above secret that contains the authToken.
 
+## Metrics
+
+By default, a Prometheus metrics exporter is enabled per pod. Metrics are only available when [GitLab Prometheus metrics](https://docs.gitlab.com/ee/administration/monitoring/prometheus/gitlab_metrics.html) are enabled in the Admin area. The exporter exposes a `/metrics` endpoint on port `3807`. When metrics are enabled, annotations are added to each pod allowing a Prometheus server to discover and scrape the exposed metrics.
+
 ## Chart-wide defaults
 
 The following values will be used chart-wide, in the event that a value is not presented on a per-pod basis.
@@ -231,4 +236,3 @@ pods:
 By default all of sidekiq queues run in an all-in-one container which is not suitable for production use cases.
 
 Check the [example config](./example-queues.yaml) for a more production ready sidekiq deployment. You can move queues around pods as a part of your tuning.
-
