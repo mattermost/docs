@@ -7,7 +7,7 @@ This feature enables compliance exports to be produced from the System Console, 
 
 By default, Mattermost stores all message history providing an unlimited search history to admins and end users. In Enterprise Edition E20, you may set a `custom data retention policy <https://docs.mattermost.com/administration/data-retention.html>`_ for how long messages and file uploads are kept in Mattermost channels and direct messages.
 
-Those Enterprise deployments who want to archive history beyond the data retention period can enable this add-on to export compliance reports to third-party systems. Integration with Actiance Vantage is currently supported, with integrations with other systems such as GlobalRelay in the roadmap.
+Those Enterprise deployments who want to archive history beyond the data retention period can enable this add-on to export compliance reports to third-party systems. Integration with Actiance Vantage and Global Relay are currently supported, with integrations with other systems in the roadmap.
 
 .. note::
   This feature will replace the existing :doc:`Compliance feature <compliance>` in a future release. Compliance exports to CSV will continue to be available in Enterprise Edition E20.
@@ -16,23 +16,42 @@ Those Enterprise deployments who want to archive history beyond the data retenti
     :maxdepth: 2
 
 Set Up Guide
---------------
+----------------------------
+
+Use the following guides to configure exports for Actiance XML or Global Relay EML. Compliance exports are written to the ``exports`` subdirectory of the configured `Local Storage directory <https://docs.mattermost.com/administration/config-settings.html#storage>`_ in the chosen format.
+
+.. note::
+  The compliance exports do not contain posts sent before the feature was enabled, but you can export past history via the ``export`` :doc:`command line tool <command-line-tools>`. Posts made prior to upgrading to Mattermost v4.5 will have less accurate channel member history information.
+
+Actiance XML
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Go to **System Console > Advanced > Compliance Export (Beta)**.
 2. Enable compliance exports, then set the start time of the daily scheduled compliance export job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form HH:MM.
-3. Set the export file format. Currently, export format to Actiance XML is supported, but support for the GlobalRelay EML format and the Mattermost CSV format is scheduled for a future release.
+3. Set the export file format to Actiance XML.
 4. Save the settings. You’re now all set!
 
-The compliance exports do not contain posts sent before the feature was enabled, but you can export past history via the ``export`` :doc:`command line tool <command-line-tools>`. Posts made prior to upgrading to Mattermost v4.5 will have less accurate channel member history information.
+If you have chosen your file format to be Actiance XML, you can set up an integration with Actiance Vantage archive system. For more information, see `their homepage <https://www.actiance.com/products/vantage/>`_.
 
-The compliance exports are written to the `exports` subdirectory of the configured `Local Storage directory <https://docs.mattermost.com/administration/config-settings.html#storage>`_, in the format you chose in step 3.
+.. note::
+  In Actiance XML exports, channel type is prepended to the channel names.
 
-Actiance Vantage Integration
----------------------------------
+Global Relay EML
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you have chosen your file format to be Actiance XML, you can set up an integration with Actiance Vantage.
+1. Go to **System Console > Advanced > Compliance Export (Beta)**.
+2. Enable compliance exports, then set the start time of the daily scheduled compliance export job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form HH:MM.
+3. Set the export file format to GlobalRelay EML.
+4. Set the Global Relay Customer Account, either `A9/Type 9` or `A10/Type 10`. This is the type of Global Relay customer account your organization has.
+5. Set the Global Relay SMTP username, password and email address as provided by Global Relay.
+6. Save the settings. You’re now all set!
 
-For more information on Actiance Vantage archive system, see `their homepage <https://www.actiance.com/products/vantage/>`_.
+If you have chosen your file format to be Global Relay EML, you can set up an integration with Global Relay archive system. For more information, see `their homepage <https://www.globalrelay.com/gr-services/archive>`_.
+
+.. note::
+  Messages larger than 100MB will have their attachments removed because they are too large to send to Global Relay. An error is added to the server logs with id ``global_relay_attachments_removed``. It includes the post ID the attachments were removed from. A `ticket is queued to better handle large messages <https://mattermost.atlassian.net/browse/MM-10038>`_.
+
+For more information on GlobalRelay archive system, see `their homepage <https://www.globalrelay.com/>`_
 
 Frequently Asked Questions (FAQ)
 ---------------------------------
