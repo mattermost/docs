@@ -25,7 +25,7 @@ function bootstrap(){
 
   # Use the default cluster version for the specified zone if not provided
   if [ -z "${CLUSTER_VERSION}" ]; then
-    CLUSTER_VERSION=$(gcloud container get-server-config --zone $ZONE  --format='value(defaultClusterVersion)' 2>/dev/null);
+    CLUSTER_VERSION=$(gcloud container get-server-config --zone $ZONE  --format='value(defaultClusterVersion)');
   fi
 
   if $PREEMPTIBLE; then
