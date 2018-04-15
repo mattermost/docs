@@ -15,15 +15,15 @@ Adding an Endpoint
 To add an endpoint to API version 4, each item on the following checklist must be completed:
 
 -  `Document the
-   endpoint <https://docs.mattermost.com/developer/api4.html#documenting-the-endpoint>`__
+   endpoint <https://docs.mattermost.com/developer/api-development-version4.html#documenting-the-endpoint>`__
 -  `Implement the API handler on the
-   server <https://docs.mattermost.com/developer/api4.html#implementing-the-api-handler>`__
+   server <https://docs.mattermost.com/developer/api-development-version4.html#implementing-the-api-handler>`__
 -  `Add a function to the Go
-   driver <https://docs.mattermost.com/developer/api4.html#updating-the-go-driver>`__
+   driver <https://docs.mattermost.com/developer/api-development-version4.html#updating-the-go-driver>`__
 -  `Write a unit
-   test <https://docs.mattermost.com/developer/api4.html#writing-a-unit-test>`__
+   test <https://docs.mattermost.com/developer/api-development-version4.html#writing-a-unit-test>`__
 -  `Submit your
-   implementation! <https://docs.mattermost.com/developer/api4.html#submitting-your-pull-request>`__
+   implementation! <https://docs.mattermost.com/developer/api-development-version4.html#submitting-your-pull-request>`__
 
 A full example can be found through these two pull requests:
 

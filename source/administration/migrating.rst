@@ -159,7 +159,7 @@ Migrating from Slack using the Mattermost Web App
 
 .. note:: For larger imports, particularly those where you have used the `slack-advanced-exporter tool` to add Slack post attachments to the archive, it is recommended to import the Slack data using the `CLI <https://docs.mattermost.com/administration/migrating.html#migrating-from-slack-using-the-mattermost-cli>`_.
 
-1. Generate a Slack "Export" file from **Slack > Team Settings > Import/Export Data > Export > Start Export**.
+1. Generate a Slack "Export" file from **Slack** > **Administration** > **Workspace settings** > **Import/Export Data** > **Export** > **Start Export**.
 
 2. In Mattermost go to **Team Settings > Import > Import from Slack**. Team Admin or System Admin role is required to access this menu option.
 
@@ -169,7 +169,7 @@ Migrating from Slack using the Mattermost Web App
 Migrating from Slack using the Mattermost CLI
 `````````````````````````````````````````````
 
-1. Generate a Slack "Export" file from **Slack > Team Settings > Import/Export Data > Export > Start Export**.
+1. Generate a Slack "Export" file from **Slack** > **Administration** > **Workspace settings** > **Import/Export Data** > **Export** > **Start Export**.
 
 2. Run the following Mattermost CLI command, with the name of a team you have already created:
 
