@@ -67,7 +67,7 @@ You should be running GitLab using https which requires TLS certificates. By def
 chart will install and configure [cert-manager](https://github.com/jetstack/cert-manager)
 to obtain free TLS certificates.
 If you have your own wildcard certificate, you already have cert-manager installed, or you
-have some other way of obtaining TLS certificates, read more about TLS options [here](./tls.md).
+have some other way of obtaining TLS certificates, [read about more TLS options here](./tls.md).
 
 For the default configuration, you must specify an email address to register your TLS
 certificates.
