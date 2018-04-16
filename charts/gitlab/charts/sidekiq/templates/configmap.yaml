@@ -84,19 +84,14 @@ data:
       git:
         bin_path: /usr/bin/git
       webpack:
-{{- if .Values.metrics.enabled }}
-      monitoring:
-        ip_whitelist:
-          - 0.0.0.0/0
-        sidekiq_exporter:
-          enabled: true
-          address: 0.0.0.0
-          port: {{ .Values.metrics.port }}
-{{- else -}}
       monitoring:
         ip_whitelist:
           - 127.0.0.0/8
         sidekiq_exporter:
+{{- if .Values.metrics.enabled }}
+          enabled: true
+          address: 0.0.0.0
+          port: {{ .Values.metrics.port }}
 {{- end }}
       extra:
       rack_attack:

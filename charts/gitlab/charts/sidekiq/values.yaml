@@ -7,11 +7,6 @@ image:
   pullPolicy: Always
 enabled: true
 
-service:
-  name: sidekiq
-  type: ClusterIP
-  clusterIP: '0.0.0.0'
-
 metrics:
   enabled: true
   port: 3807
