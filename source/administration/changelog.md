@@ -10,7 +10,22 @@ Release date: 2018-05-16
 
 ### Highlights
 
+#### Advanced Permissions Phase 2
+
+#### /invite Slash Command
+ - Added ``/invite`` slash command to invite users to a channel.
+
+#### Increase 4k Character Limit on Posts
+ - Relaxed 4k post message limit.
+
+#### Environment Variables Support for GitLab
+ - Added tracking of which system console settings are configured via environment variables.
+
 ### Improvements
+
+ - Added ``/platform`` list of commands to teams command in CLI.
+ - Added a loader for channel invite modal.
+ - Removed ``mm_config`` and ``mm_license`` global state from webapp.
 
 ### Bug Fixes
 
@@ -50,6 +65,8 @@ The following deprecations are planned for the Mattermost v5.0 release, which is
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
+
+ - "ExperimentalEnableAutomaticReplies": false,
 
 #### API Changes
 
