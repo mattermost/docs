@@ -113,7 +113,7 @@ Useful Commands
 
 	sudo gitlab-rails console production
 
-  You can then make actions such as update a user's password:
+  You can then carry out commands such as updating a user's password:
 
     .. code-block:: text
 
