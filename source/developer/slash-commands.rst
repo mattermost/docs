@@ -174,7 +174,7 @@ Any requests that are made to the response URL should either be a plain text or 
 Markdown formatting
 ~~~~~~~~~~~~~~~~~~~~
 
-A rich range of formatting unavailable in Slack is made possible through :doc:`Markdown support <../help/messaging/formatting-text>` in Mattermost, including headings, formatted fonts, tables, inline images and other options supported by Mattermost Markdown. All of these options are also supported by slash commands.
+A rich range of formatting is made possible through :doc:`Markdown support <../help/messaging/formatting-text>` in Mattermost, including headings, formatted fonts, tables, inline images and other options supported by Mattermost markdown. All of these options are also supported by slash commands.
 
 For example, to create a message with a heading and an italicized text on the next line, use the following response. 
 
@@ -249,7 +249,7 @@ Tips and Best Practices
 
 3. You can restrict who can create slash commands in `System Console > Integrations > Custom Integrations <https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins>`_.
 
-4. Mattermost outgoing webhooks are Slack-compatible. You can copy-and-paste code used for a Slack outgoing webhook to create Mattermost integrations. Mattermost `automatically translates Slack's proprietary JSON format <../developer/slash-commands#translate-slacks-proprietary-data-format-to-mattermost>`_.
+4. Mattermost outgoing webhooks are Slack-compatible. You can copy-and-paste code used for a Slack outgoing webhook to create Mattermost integrations. Mattermost `automatically translates Slack's JSON format <../developer/slash-commands#translate-slacks-data-format-to-mattermost>`_.
 
 5. The external application may be written in any programming language. It needs to provide a URL which receives the request sent by your Mattermost server and responds with in the required JSON format.
 
@@ -265,8 +265,8 @@ Slack Compatibility
 
 Mattermost makes it easy to migrate integrations written for Slack to Mattermost. 
 
-Translate Slack's proprietary data format to Mattermost
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Translate Slack's data format to Mattermost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost automatically translates the data coming from Slack:
 

@@ -13,9 +13,8 @@ Mattermost is an open source, private cloud alternative to proprietary SaaS mess
 
  - Team Edition
 
- - Enterprise Edition (E10) which adds additional features to the platform including AD/LDAP integration, multi-factor authentication ("MFA"), custom branding, advanced access control policy and next business day support.
-
- - Enterprise Edition (E20) includes E10 features plus SAML 2.0 authentication, security controls, compliance reporting, high availability, and enterprise class support. 
+ - Enterprise Edition (E10) which adds additional features to the platform including `AD/LDAP Integration <https://docs.mattermost.com/deployment/sso-ldap.html>`_, `Multi-Factor Authentication ("MFA") <https://docs.mattermost.com/deployment/auth.html>`_, `Encrypted Push Notifications <https://docs.mattermost.com/mobile/mobile-hpns.html>`_, `Branding <https://docs.mattermost.com/administration/branding.html>`_, `Advanced Access Control Policy <https://docs.mattermost.com/administration/config-settings.html#policy>`_, and next business day support.
+ - Enterprise Edition (E20) includes E10 features plus `SAML 2.0 Authentication <https://docs.mattermost.com/deployment/sso-saml.html>`_, `Compliance Reporting <https://docs.mattermost.com/administration/compliance.html>`_, `High Availability <https://docs.mattermost.com/deployment/cluster.html>`_, `Elasticsearch <https://docs.mattermost.com/deployment/elasticsearch.html>`_, `Performance Monitoring <https://docs.mattermost.com/deployment/metrics.html>`_, `Data Retention Policy <https://docs.mattermost.com/administration/data-retention.html>`_, and enterprise class support.
 
 The purpose of this Implementation Plan is to:
 

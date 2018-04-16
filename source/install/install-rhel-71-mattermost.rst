@@ -83,8 +83,8 @@ Assume that the IP address of this server is 10.10.10.2
       [Install]
       WantedBy=multi-user.target
 
-     .. note::
-       If you are using MySQL, replace ``postgresql-9.4.service`` by ``mysqld.service`` in the ``[unit]`` section.
+    .. note::
+      If you are using MySQL, replace ``postgresql-9.4.service`` by ``mysqld.service`` in the ``[unit]`` section.
      
   c. Make the service executable.
 
@@ -94,11 +94,7 @@ Assume that the IP address of this server is 10.10.10.2
 
     ``sudo systemctl daemon-reload``
 
-  f. Enable the Mattermost service.
-
-    ``sudo chkconfig mattermost on``
-
-  g. Set Mattermost to start on boot.
+  e. Set Mattermost to start on boot.
 
     ``sudo systemctl enable mattermost``
 

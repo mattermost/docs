@@ -66,7 +66,6 @@ For client work, you'll be working in the [webapp repository](https://github.com
  * [./components/](https://github.com/mattermost/mattermost-webapp/tree/master/components) holds all the [React](https://facebook.github.io/react/) UI components and views
  * [./actions/](https://github.com/mattermost/mattermost-webapp/tree/master/actions) holds all [Flux actions](https://facebook.github.io/flux/docs/in-depth-overview.html#content) where the majority of the logic of the webapp takes place
  * [./stores/](https://github.com/mattermost/mattermost-webapp/tree/master/stores) holds the stores responsible for storing and providing the views with data
- * [./routes/](https://github.com/mattermost/mattermost-webapp/tree/master/routes) holds the definitions for all the [React-Router](https://github.com/ReactTraining/react-router) routes
  * [./i18n/](https://github.com/mattermost/mattermost-webapp/tree/master/i18n) holds the localization files for the client
  * [./utils/](https://github.com/mattermost/mattermost-webapp/tree/master/utils) holds all widely-used utilities
  * [./tests/](https://github.com/mattermost/mattermost-webapp/tree/master/tests) holds all the client unit tests

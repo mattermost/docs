@@ -227,7 +227,6 @@ Set up Mattermost Server
    - Make sure the service is executable with ``sudo chmod 664 /etc/systemd/system/mattermost.service``
    * Reload the services with ``sudo systemctl daemon-reload``
    * Start Mattermost service with``\ sudo systemctl start mattermost.service``
-   * ``sudo chkconfig mattermost on``
    * Start server on reboot ``sudo systemctl enable mattermost.service``
 
 Unix-domain socket connection
@@ -294,8 +293,8 @@ Set up NGINX Server
           enabled=1
 
    -  ``sudo yum install nginx.x86_64``
-   -  ``sudo service nginx start``
-   -  ``sudo chkconfig nginx on``
+   -  ``sudo systemctl start nginx``
+   -  ``sudo systemctl enable nginx``
 
 4. Verify NGINX is running
 
@@ -310,12 +309,31 @@ Set up NGINX Server
    -  Create a configuration for Mattermost
    -  ``sudo touch /etc/nginx/conf.d/mattermost.conf``
    -  Below is a sample configuration with the minimum settings required
-      to configure Mattermost:
+      to configure Mattermost.  Make sure that you use your own values for the Mattermost server IP address and FQDN for *server_name*.
 
       ::
+          upstream backend {
+            listen 80;
+            server 10.10.10.2:8065;
+          }
 
           server {
             server_name mattermost.example.com;
+
+            location ~ /api/v[0-9]+/(users/)?websocket$ {
+              proxy_set_header Upgrade $http_upgrade;
+              proxy_set_header Connection "upgrade";
+              client_max_body_size 50M;
+              proxy_set_header Host $http_host;
+              proxy_set_header X-Real-IP $remote_addr;
+              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+              proxy_set_header X-Forwarded-Proto $scheme;
+              proxy_set_header X-Frame-Options SAMEORIGIN;
+              proxy_buffers 256 16k;
+              proxy_buffer_size 16k;
+              proxy_read_timeout 600s;
+              proxy_pass http://backend;
+            }
 
             location / {
                client_max_body_size 50M;
@@ -326,7 +344,7 @@ Set up NGINX Server
                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
                proxy_set_header X-Forwarded-Proto $scheme;
                proxy_set_header X-Frame-Options SAMEORIGIN;
-               proxy_pass http://10.10.10.2:8065;
+               proxy_pass http://backend;
             }
          }
 
@@ -345,6 +363,9 @@ Set up NGINX Server
 Set up NGINX with SSL (Recommended)
 -----------------------------------
 
+.. note::
+   If Let’s Encrypt is enabled, forward port 80 through a firewall, with `Forward80To443 <https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443>`_ ``config.json`` setting set to ``true`` to complete the Let’s Encrypt certification.
+
 1. You can use a free and an open certificate security like `Let's
    Encrypt <https://letsencrypt.org/>`_, this is how to proceed
 
@@ -352,7 +373,7 @@ Set up NGINX with SSL (Recommended)
 -  ``git clone https://github.com/letsencrypt/letsencrypt``
 -  ``cd letsencrypt``
 
-2. Be sure that the port 80 is not use by stopping NGINX
+2. Be sure that the port 80 is not in use by stopping NGINX
 
 -  ``sudo service nginx stop``
 -  ``netstat -na | grep ':80.*LISTEN'``

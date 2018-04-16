@@ -51,5 +51,4 @@ Import
 Import from Slack (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can import channels and users from Slack into Mattermost from **Team Settings > Import**. Please review our documentation on `Slack Import <https://docs.mattermost.com/administration/migrating.html#migrating-from-slack>`_ for more details.
-
+You can import channels and users from Slack into Mattermost from **Slack** > **Administration** > **Workspace settings** > **Import/Export Data** > **Export** > **Start Export**. Please review our documentation on `Slack Import <https://docs.mattermost.com/administration/migrating.html#migrating-from-slack>`_ for more details.

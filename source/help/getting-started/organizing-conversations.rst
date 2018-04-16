@@ -46,11 +46,17 @@ Removing Members from a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Click the channel name at the top of the center pane to access the drop-down menu, then click **Manage Members**. Any member of a channel can remove other members by clicking **Remove** next to a user's name.
 
-Renaming a Channel
+Naming a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Click the channel name at the top of the center pane to access the drop-down menu, then click **Rename Channel**. Anyone can rename the channels they belong to, unless the System Administrator has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-renaming-for>`_.
+Channels can be identified by:
 
-You may also change the channel URL (also known as the channel handle) when renaming a channel. Changing channel URL may break existing links.
+1. Channel display name: This is the channel name appearing in the Mattermost user interface. Click the channel name at the top of the center pane to access the drop-down menu, then click **Rename Channel**. Anyone can rename the channels they belong to, unless the System Administrator has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-renaming-for>`_.
+2. Channel handle: This is part of the channel URL. You may also change the channel handle when renaming a channel, but changing channel handle may break existing links.
+
+For example, for the following channel: https://pre-release.mattermost.com/core/channels/ux-design
+
+- Channel display name: ``UX Design``
+- Channel handle: ``ux-design`` 
 
 Leaving a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

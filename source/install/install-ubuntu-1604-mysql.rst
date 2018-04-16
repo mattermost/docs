@@ -1,4 +1,4 @@
-.. _install-ubuntu-1604-mysql:
+j/.. _install-ubuntu-1604-mysql:
 
 Installing MySQL Database Server
 ================================
@@ -40,11 +40,19 @@ Install and set up the database for use by the Mattermost server. You can instal
 
   ``mysql> grant all privileges on mattermost.* to 'mmuser'@'%';``
 
+  .. note::
+  This query grants the MySQL user we just created all privileges on the database for convenience. If you need more security you can use this query to grant the user only the privileges necessary to run Mattermost.
+
+  ``mysql> GRANT ALTER, CREATE, DELETE, DROP, INDEX, INSERT, SELECT, UPDATE ON mattermost.* TO 'mmuser'@'%';``
+
 7. Log out of MySQL.
  
    ``mysql> exit``
    
    .. note::
     If you have installed MySQL on its own server, you need to edit the ``/etc/mysql/mysql.conf.d/mysqld.cnf`` file and comment out the ``bind-address = 127.0.0.1`` using the ``#`` symbol, then restart your sql server.
+
+    
+
 
 With the database installed and the initial setup complete, you can now install the Mattermost server.

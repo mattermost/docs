@@ -11,6 +11,7 @@ Getting Started
    :glob:
 
    /getting-started/implementation_plan.rst
+   /getting-started/welcome_email.rst
 
 
 Installing Mattermost
@@ -48,6 +49,7 @@ Deployment
 
    /deployment/on-boarding*
    /deployment/bulk-loading.rst
+   /deployment/desktop-app-deployment*
    AppConfig for EMM Solutions </deployment/mobile-appconfig.rst>
    /deployment/sso-ldap*
    /deployment/auth*
