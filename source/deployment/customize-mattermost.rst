@@ -32,6 +32,7 @@ There are a few things that can be customized in the Mattermost server without f
 
 1. Modify text in the Mattermost interface by modifying the ``en.json`` file 
 2. Customize or hide help and support links by modifying your :ref:`configuration settings <legal-support-links>`
+3. Customize email notifications by editing the HTML files in ``/templates``
 
 Mattermost Mobile Applications
 ------------------------------
