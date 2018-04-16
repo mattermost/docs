@@ -183,7 +183,7 @@ Configure how names are displayed in Mattermost: nickname, username or full name
 Timezone
 ~~~~~~~~~~~~~~~~~~~~~
 
-Select the timezone used for timestamps in the user interface and email notifications.
+Select the timezone used for timestamps in the user interface and email notifications. The setting `must first be enabled by the System Admin <https://docs.mattermost.com/administration/config-settings.html#timezone>`_ by replacing ``false`` with ``true`` in config.json.
 
 Website Link Previews
 ~~~~~~~~~~~~~~~~~~~~~~~~
