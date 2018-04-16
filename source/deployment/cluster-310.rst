@@ -122,6 +122,21 @@ A sample configuration for NGINX is provided below. It assumes that you have two
       server {
           server_name mattermost.example.com;
 
+          location ~ /api/v[0-9]+/(users/)?websocket$ {
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "upgrade";
+                client_max_body_size 50M;
+                proxy_set_header Host $http_host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+                proxy_set_header X-Frame-Options SAMEORIGIN;
+                proxy_buffers 256 16k;
+                proxy_buffer_size 16k;
+                proxy_read_timeout 600s;
+                proxy_pass http://backend;
+          }
+
           location / {
                 client_max_body_size 50M;
                 proxy_set_header Upgrade $http_upgrade;
