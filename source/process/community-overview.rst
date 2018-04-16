@@ -62,7 +62,7 @@ Audiences
 
   - They help translate and maintain languages in Pootle translation server.
 
-5. Orchestration solution maintainers (Owner: Lindy)
+5. Orchestration solution maintainers (Owner: Amy)
 
   - They create deployment solution programs to more easily install and deploy Mattermost.
   - Examples: Modules (e.g. Puppet, Heroku), Installers (e.g. Yunohost, Chef Cookbook) and Package managers (Bitnami, HPE Gold).
