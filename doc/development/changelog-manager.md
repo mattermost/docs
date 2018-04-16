@@ -24,6 +24,5 @@ git push
 
 ## CI Automation
 
-This task will be integrated with CI in the future. It is currently blocked by 
+This task will be integrated with CI in the future. It is currently blocked by
 [#344](https://gitlab.com/charts/helm.gitlab.io/issues/344)
-
