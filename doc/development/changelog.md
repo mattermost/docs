@@ -1,7 +1,8 @@
 # Changelog entries
 
 This guide contains instructions for when and how to generate a changelog entry
-file, as well as information and history about our changelog process.
+file, as well as information and history about our changelog process. These entries
+are later integrated by [changelog_manager](#changelog-manager.md)
 
 ## Overview
 

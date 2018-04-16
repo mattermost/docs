@@ -1,0 +1,2 @@
+gem "rugged"
+gem "activesupport"
