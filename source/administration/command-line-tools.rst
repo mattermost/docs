@@ -524,6 +524,7 @@ platform team
     -  `platform team add`_ - Add users to a team
     -  `platform team create`_ - Create a team
     -  `platform team delete`_ - Delete a team
+    -  `platform team list`_ - List all teams
     -  `platform team remove`_ - Remove users from a team
 
 .. _team-value-note:
@@ -598,6 +599,22 @@ platform team delete
     .. code-block:: none
 
           --confirm   Confirm you really want to delete the team and a DB backup has been performed.
+
+platform team list
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    List all teams on the server.
+
+  Format
+    .. code-block:: none
+
+      platform team list
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform team list
 
 platform team remove
 ~~~~~~~~~~~~~~~~~~~~~~~~
