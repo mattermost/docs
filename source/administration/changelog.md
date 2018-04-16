@@ -4,14 +4,15 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
-## Release v4.9
+## Release v4.10
 
 Release date: 2018-05-16
 
 ### Highlights
 
 #### Advanced Permissions Phase 2
-
+ -
+ 
 #### /invite Slash Command
  - Added ``/invite`` slash command to invite users to a channel.
 
