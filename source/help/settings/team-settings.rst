@@ -26,6 +26,13 @@ Your **Team Description** is displayed when viewing the list of teams available 
 
 You can enter a description up to 50 characters in length.
 
+Team Icon
+~~~~~~~~~~~~~~~~
+
+Your **Team Icon** appears in the team sidebar within the border of the existing team icons.
+
+You can upload a team icon in BMP, JPG or PNG format.
+
 Allow anyone to join this team
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

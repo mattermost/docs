@@ -180,8 +180,14 @@ Teammate Name Display
 
 Configure how names are displayed in Mattermost: nickname, username or full name.
 
+Timezone
+~~~~~~~~~~~~~~~~~~~~~
+
+Select the timezone used for timestamps in the user interface and email notifications.
+
 Website Link Previews
 ~~~~~~~~~~~~~~~~~~~~~~~~
+
 When available, the first web link in a message will show a preview of the website content below the message. This `setting must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#link-previews>`_.
 
 Link Previews

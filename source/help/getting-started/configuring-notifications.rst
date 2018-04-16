@@ -34,6 +34,14 @@ at the top of the screen.
 Learn more about `mentioning
 teammates <http://docs.mattermost.com/help/messaging/mentioning-teammates.html>`__.
 
+Muting a Channel
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+By default, channel muting is turned off for all channels. 
+To mute or unmute a channel, click the channel
+name at the top of the page to access the channel menu, then click
+**Notification Preferences > Mute channel**.
+
 Email Notifications
 -------------------------------------
 
