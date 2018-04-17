@@ -27,6 +27,8 @@ Release date: 2018-05-16
  - Added ``/platform`` list of commands to teams command in CLI.
  - Added a loader for channel invite modal.
  - Removed ``mm_config`` and ``mm_license`` global state from webapp.
+ - Added support to REST API for sending ephemeral messages to users.
+ - Investigated avoiding duplicating unique indexes.
 
 ### Bug Fixes
 
