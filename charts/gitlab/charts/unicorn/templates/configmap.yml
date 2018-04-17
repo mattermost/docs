@@ -154,7 +154,7 @@ data:
       webpack:
       monitoring:
         ip_whitelist:
-          - 127.0.0.0/8
+          - 0.0.0.0/0
         sidekiq_exporter:
       extra:
       rack_attack:

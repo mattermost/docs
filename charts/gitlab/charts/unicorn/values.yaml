@@ -6,6 +6,12 @@ image:
   repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn
   tag: latest
   pullPolicy: Always
+metrics:
+  enabled: true
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "8080"
+    prometheus.io/path: "/-/metrics"
 service:
   name: unicorn
   type: ClusterIP
