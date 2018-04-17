@@ -31,6 +31,7 @@ Table below contains all the possible charts configurations that can be supplied
 | enabled                       | Unicorn enabled flag                           | true                                             |
 | workerProcesses               | Unicorn number of workers                      | 2                                                |
 | workerTimeout                 | Unicorn worker timeout                         | 60                                               |
+| metrics.enabled               | Toggle Prometheus metrics exporter             | true                                             |
 | omniauth.providers            | Omniauth providers                             | nil                                              |
 | railsSecrets.secret           | Secret containing rails secrets.yml            | rails-secrets                                    |
 | railsSecrets.key              | Key to contents of secrets.yml in rails secret | secrets.yml                                      |
@@ -363,6 +364,10 @@ Field `workerProcesses` is an integer, controller the number of Unicorn workers 
 #### workerTimeout
 
 Field `workerTimeout` is an integer specifying the number of seconds a request can be pending before it times out. Defaults to `60`
+
+### metrics.enabled
+
+By default, each pod exposes a metrics endpoint at `/-/metrics`. Metrics are only available when [GitLab Prometheus metrics](https://docs.gitlab.com/ee/administration/monitoring/prometheus/gitlab_metrics.html) are enabled in the Admin area. When metrics are enabled, annotations are added to each pod allowing a Prometheus server to discover and scrape the exposed metrics.
 
 #### omniauth.providers
 

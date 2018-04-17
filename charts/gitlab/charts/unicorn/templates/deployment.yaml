@@ -17,6 +17,9 @@ spec:
         release: {{ .Release.Name }}
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/configmap.yml") . | sha256sum }}
+{{- if .Values.metrics.enabled }}
+{{ toYaml .Values.metrics.annotations | indent 8 }}
+{{- end }}
     spec:
       securityContext:
         runAsUser: 1000
@@ -71,7 +74,15 @@ spec:
               value: '/var/opt/gitlab/templates'
             - name: CONFIG_DIRECTORY
               value: '/var/opt/gitlab/config/gitlab/'
+{{- if .Values.metrics.enabled }}
+            - name: prometheus_multiproc_dir
+              value: /metrics
+{{- end }}
           volumeMounts:
+{{- if .Values.metrics.enabled }}
+            - name: unicorn-metrics
+              mountPath: '/metrics'
+{{- end }}
             - name: unicorn-config
               mountPath: '/var/opt/gitlab/templates'
             - name: unicorn-secrets
@@ -94,6 +105,11 @@ spec:
           resources:
 {{ toYaml .Values.resources | indent 12 }}
       volumes:
+{{- if .Values.metrics.enabled }}
+      - name: unicorn-metrics
+        emptyDir:
+          medium: "Memory"
+{{- end }}
       - name: unicorn-config
         configMap:
           name: {{ template "fullname" . }}
