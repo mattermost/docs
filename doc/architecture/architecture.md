@@ -54,24 +54,18 @@ database like Aamzon RDS for Postgres.
 
 Customers who would like to get started quickly and easily should begin with this chart.
 
-### The GitLab-Services Charts
+### Subcharts
 
-This chart is dedicated to core GitLab services that make up the Idea to
-Production workflow: code repository, issue tracking, CI/CD, monitoring, container
-registry, etc.
+The gitlab chart is made of multiple subcharts. These charts provide individual components of the GitLab software.
 
-This chart would also include options to configure exactly how these services
-should work, whether all of them should be available, etc.
-
-Included in this chart are the Helm Charts for each service:
-* [registry](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/registry)
+Subhcarts included are :
 * [sidekiq](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/gitlab/charts/sidekiq)
 * [unicorn](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/gitlab/charts/unicorn)
-* workhorse (currently a part of the unicorn chart)
-* [gitaly](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/gitlab/charts/gitaly)
-* pages
-* prometheus
 * [gitlab-shell](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/gitlab/charts/gitlab-shell)
+* [gitaly](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/gitlab/charts/gitaly)
+* [minio](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/minio)
+* [redis](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/redis)
+* [nginx](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/registry)
 
 ## Design Decisions
 
