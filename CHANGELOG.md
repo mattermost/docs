@@ -2,6 +2,23 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2018-04-17
+
+### Fixed (1 change)
+
+- Add updated sidekiq queues for GitLab 10.7. !212
+
+### Added (3 changes, 1 of them is from the community)
+
+- Implement global to configure extnernal static IP to simplify. !206
+- Unicorn: add support for configuring Omniauth. !210
+- Add Prometheus metrics exporters to Redis and Redis-HA charts. !215 (Dave Konopka)
+
+### Other (2 changes, 1 of them is from the community)
+
+- Bring CHANGELOG logic from gitlab-ce to helm.gitlab.io. !200 (Jason Plum)
+- Changelog: introduce changelog_manager, with CI. !208
+
 ## 2018-03-22 Alpha
 
 - See [alpha documentation](https://gitlab.com/charts/helm.gitlab.io/blob/master/doc/architecture/alpha.md)

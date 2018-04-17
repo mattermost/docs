@@ -1,5 +1,0 @@
----
-title: Add Prometheus metrics exporters to Redis and Redis-HA charts
-merge_request: 215
-author: Dave Konopka
-type: added
