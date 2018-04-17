@@ -56,13 +56,12 @@ Customers who would like to get started quickly and easily should begin with thi
 
 ### Subcharts
 
-Underneath the main `gitlab` chart are multiple subcharts for individual services.
+The gitlab chart is made of multiple subcharts. These charts provide individual components of the GitLab software.
 
 Subhcarts included are :
 * [sidekiq](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/gitlab/charts/sidekiq)
 * [unicorn](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/gitlab/charts/unicorn)
 * [gitlab-shell](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/gitlab/charts/gitlab-shell)
-* [workhorse](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/gitlab/charts/workhorse)
 * [gitaly](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/gitlab/charts/gitaly)
 * [minio](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/minio)
 * [redis](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/redis)
