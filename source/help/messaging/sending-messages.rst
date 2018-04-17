@@ -34,6 +34,9 @@ Click the **[...]** link next to a message that you have sent, then click **Dele
 
 Your System Admin can disable the **Delete** feature.
 
+.. note::
+  Restricting editing and deleting messages is currently available in Mattermost Enterprise Edition E20.
+
 Linking to Messages
 --------------------
 
