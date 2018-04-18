@@ -1,0 +1,4 @@
+apiVersion: v1
+description: For manually running rake tasks through kubectl
+name: gitlab-tasks-runner
+version: 0.1.0

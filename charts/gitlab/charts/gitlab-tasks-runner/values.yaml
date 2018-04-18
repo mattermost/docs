@@ -1,0 +1,81 @@
+image:
+  repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-task-runner
+  tag: latest
+  pullPolicy: Always
+enabled: true
+resources: {}
+env: production
+railsSecrets:
+  secret: rails-secrets
+  key: secrets.yml
+global:
+  ingress:
+    enabled: true
+    annotations: {}
+    tls: {}
+      # secretName:
+  hosts:
+    domain: example.local
+    hostSuffix:
+    https: true
+    gitlab: {}
+    registry: {}
+    minio: {}
+  psql:
+    # host: '0.0.0.0'
+    # port: '5432'
+    # database: 'gitlabhq_production'
+    # username: 'gitlab'
+    serviceName: 'omnibus'
+    password:
+      secret: gitlab-postgres
+      key: psql-password
+redis:
+  # host: '0.0.0.0'
+  serviceName: 'redis'
+  password:
+    secret: gitlab-redis
+    key: redis-password
+psql:
+  password: {}
+shell:
+  authToken:
+    secret: gitlab-shell-secret
+    key: secret
+gitaly:
+  # host: '0.0.0.0'
+  # port: 8075
+  serviceName: 'gitaly'
+  authToken:
+    secret: gitaly-secret
+    key: token
+lfs:
+  enabled: true
+  proxy_download: true
+  # bucket:
+  # connection: {}
+minio:
+  enabled: true
+  bucket: git-lfs
+  credentials:
+    secret: gitlab-minio
+  serviceName: 'minio-svc'
+  port: 9000
+registry:
+  host:
+  # port: 443
+  api:
+    protocol: http
+    serviceName: registry
+    port: 5000
+  tokenIssuer: gitlab-issuer
+  certificate:
+    secret: gitlab-registry
+    key: registry-auth.key
+resources:
+  # limits:
+  #  cpu: 1
+  #  memory: 2G
+  requests:
+    cpu: 200m
+    memory: 2G
