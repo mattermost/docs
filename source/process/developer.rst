@@ -1,3 +1,21 @@
+=====================================
+Product Manager - Hiring Process: 
+=====================================
+
+Application/Email: In your application we welcome you to include highlights of your accomplishments related to this position
+Video Call: Telephone  interview - Selected candidates will be invited for a 25-minute call with a recruiter.
+Video Call: Soft-skills discussion: Next, candidates will be invited to schedule a 20 - 45 minute interview with a Member of our Head of Product Management 
+Take Home Exercise: Candidates who appear technically strong and a cultural fit who are unable to show work they have completed with a previous employer for reasons of confidentiality may be asked complete a Product Management Related Assignment within a mutually agreed timeline which could be anywhere from 10-20 hours depending on the estimated skill level of the candidate.  A standard sponsorship of $750 USD is paid at the outset of the project. It is not an indicator of the final offer that would be extended to a successful candidate. A standard click-sign services agreement is used to accept the fee. The fee is paid regardless of whether the project is completed.
+Video Call: Take Home Assignment Review - A member of our Product Management Team will review your assignment with you when complete 
+Reference Checks: You’ll be sent an email request by SkillSurvey to list 3 references who can verify your past achievements.
+Video call with CTO: Candidates are invited to a 45-minute interview with our CTO and co-creator of the Mattermost open source project. The interview may include technical questions along with a discussion of either past work or results of the simulation, the candidate’s interests, their career aspirations, and how being a core committer at Mattermost could align with those interests and aspirations.
+Offer Stage: Successful candidates will receive an offer via email. Mattermost offers compensation competitive with a candidate’s local market opportunities.
+Product Managers in Canada are typically offered full-time employment through a Canadian co-employer, with local payroll via ADP, benefits and T4 tax reporting.
+Product Managers in the US are typically offered full-time employment through a U.S. co-employer, with local payroll via TriNet, benefits and W2 tax reporting.
+Product Managers  outside the U.S. and Canada are offered employment as a Freelancer or Contractor 
+
+
+
 ====================================
 Staff Developers
 ====================================
