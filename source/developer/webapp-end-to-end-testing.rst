@@ -15,7 +15,7 @@ Quick Overview of Running E2E Testing
 -------------------------------------
 
 1. Run a local Mattermost instance by initiating ``make run`` to the `mattermost-server` folder. Confirm that the instance has started successfully.
-2. Change directory to `mattermost-webapp` and run ``yarn run test:e2e``. This will start full E2E testing. To run partial testing, select a specific tag and initiate ``yarn run test:e2e tagname`` (e.g. ``yarn run test:e2e login``).
+2. Change directory to `mattermost-webapp` and run ``npm run test:e2e``. This will start full E2E testing. To run partial testing, select a specific tag and initiate ``npm run test:e2e tagname`` (e.g. ``npm run test:e2e login``).
 3. Full testing makes use of both Chrome and Firefox browsers, while partial testing uses Chrome only.
 4. Tests are executed according to your selection and will display whether the tests passed or failed.
 

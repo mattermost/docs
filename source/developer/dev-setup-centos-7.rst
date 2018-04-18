@@ -77,7 +77,7 @@ Set up your development environment for building, running, and testing Mattermos
 
       ``sudo yum install -y nodejs``
 
-6. Install Yarn. Go to https://yarnpkg.com/en/docs/install and follow the installation instructions.
+6. Install NPM. Go to https://www.npmjs.com/get-npm and follow the installation instructions.
 
 7. Fork Mattermost server on GitHub from https://github.com/mattermost/mattermost-server.
 

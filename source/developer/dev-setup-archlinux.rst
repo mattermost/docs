@@ -49,9 +49,9 @@ Set up your development environment for building, running, and testing Mattermos
 
   ``pacman -S nodejs npm``
 
-6. Install Yarn.
+6. Install NPM.
 
-  ``pacman -S yarn``
+  ``pacman -S npm``
 
 7. Fork Mattermost server on GitHub from https://github.com/mattermost/mattermost-server.
 

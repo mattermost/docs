@@ -24,7 +24,7 @@ iOS and Android
 
 Install the following prerequisite software to develop and build the iOS or Android apps. For macOS, we recommend using `Homebrew <https://brew.sh/>`_ as a package manager.
 
-1. Install `NodeJS <https://nodejs.org/en/>`_. (minimum required version is 9.3.0)
+1. Install `NodeJS <https://nodejs.org/en/>`_. This includes NPM which is also needed. (minimum required version is 9.3.0)
  - To install using Homebrew open a terminal and execute
  .. code-block:: bash
 
@@ -44,18 +44,7 @@ Install the following prerequisite software to develop and build the iOS or Andr
 
     $ npm -g install react-native-cli
 
-4. Install yarn (used as our package manager for the mobile apps, recommended version is 1.3.2)
- - To install using Homebrew open a terminal and execute
- .. code-block:: bash
-
-    $ brew install yarn
-
- - To install using `NPM <https://github.com/npm/npm>`_ open a terminal and execute
- .. code-block:: bash
-
-    $ npm -g install yarn
-
-5. We use GitHub to host the source code so we recommend that you install `Git <https://git-scm.com/>`_ to get the source code. Optionally, you can also contribute your changes back with `pull requests <https://help.github.com/articles/creating-a-pull-request/>`_.
+4. We use GitHub to host the source code so we recommend that you install `Git <https://git-scm.com/>`_ to get the source code. Optionally, you can also contribute your changes back with `pull requests <https://help.github.com/articles/creating-a-pull-request/>`_.
    If you do not have git installed you can do so with Homebrew by opening a terminal and executing:
 
  .. code-block:: bash
@@ -141,14 +130,14 @@ If you need to add a new dependency to the project, it is important to add them 
 JavaScript Only
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you need to add a new JavaScript dependency that is not related to React Native, **use yarn, not npm**. Be sure to save the exact version number to avoid conflicts in the future. 
+If you need to add a new JavaScript dependency that is not related to React Native, **use npm, not yarn**. Be sure to save the exact version number to avoid conflicts in the future. 
 
-	e.g. ``yarn add -E <package-name>``
+	e.g. ``npm add -E <package-name>``
   
 React Native
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-As with `JavaScript only <JavaScript Only>`_, **use yarn** to add your dependency and include an exact version. Then link the library in React Native by running ``react-native link <package-name>`` in a terminal.
+As with `JavaScript only <JavaScript Only>`_, **use npm** to add your dependency and include an exact version. Then link the library in React Native by running ``react-native link <package-name>`` in a terminal.
 
 Be aware that we are using React Native Navigation. For Android, you might need to complete the linking process manually as the ``react-native link`` command won't do it for you.
 
