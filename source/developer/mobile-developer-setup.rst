@@ -44,7 +44,7 @@ Install the following prerequisite software to develop and build the iOS or Andr
 
     $ npm -g install react-native-cli
 
-4. We use GitHub to host the source code so we recommend that you install `Git <https://git-scm.com/>`_ to get the source code. Optionally, you can also contribute your changes back with `pull requests <https://help.github.com/articles/creating-a-pull-request/>`_.
+4. We use GitHub to host the source code so we recommend that you install `Git <https://git-scm.com/>`_ to get the source code. Optionally, you can also contribute by submitting `pull requests <https://help.github.com/articles/creating-a-pull-request/>`_.
    If you do not have git installed you can do so with Homebrew by opening a terminal and executing:
 
  .. code-block:: bash
