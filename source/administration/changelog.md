@@ -29,6 +29,8 @@ Release date: 2018-05-16
  - Removed ``mm_config`` and ``mm_license`` global state from webapp.
  - Added support to REST API for sending ephemeral messages to users.
  - Investigated avoiding duplicating unique indexes.
+ - Added a CLI Command to "Reset to Default" for permission system.
+ - Added a ClI Platform command to change user email address.
 
 ### Bug Fixes
 
