@@ -25,20 +25,14 @@ Click the **[...]** link next to a message that you have sent, then click **Edit
 .. note::
   Message edits do not trigger new @mention notifications, desktop notifications, or notification sounds.
 
-Your System Admin `can disable the **Edit** feature or set a time limit <https://docs.mattermost.com/administration/config-settings.html?highlight=config%20settings#allow-users-to-edit-their-messages>`_ before messages become uneditable.
-
-.. note::
-  The restriction of editing and deleting messages is currently available in Mattermost Enterprise Edition E20.
+Your System Admin `can disable the **Edit** feature or set a time limit <https://docs.mattermost.com/administration/config-settings.html?highlight=config%20settings#allow-users-to-edit-their-messages>`_ before messages become uneditable, available in Mattermost Enterprise Edition E10 and E20.
 
 Deleting Messages
 ------------------
 
 Click the **[...]** link next to a message that you have sent, then click **Delete**.
 
-Your System Admin can `disable the **Delete** feature <https://docs.mattermost.com/administration/config-settings.html?highlight=config%20settings#allow-which-users-to-delete-messages>`_.
-
-.. note::
-  The restriction of editing and deleting messages is currently available in Mattermost Enterprise Edition E20.
+Your System Admin can `disable the **Delete** feature <https://docs.mattermost.com/administration/config-settings.html?highlight=config%20settings#allow-which-users-to-delete-messages>`_, available in Mattermost Enterprise Edition E10 and E20.
 
 Linking to Messages
 --------------------
