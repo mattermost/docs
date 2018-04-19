@@ -484,7 +484,7 @@ Set the time limit that users have to edit their messages after posting.
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature has two settings in ``config.json``. The first setting is ``"AllowEditPost": "always"`` with options ``always``, ``never``, and ``time_limit``.  |
 |                                                                                                                                                               |
-| The second setting is ``"PostEditTimeLimit": -1`` with whole number input. To enable ``PostEditTimeLimit``, set ``AllowEditPost`` to ``time_limit``.         |
+| The second setting is ``"PostEditTimeLimit": -1`` with whole number input. To enable ``PostEditTimeLimit``, set ``AllowEditPost`` to ``time_limit``.          |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Announcement Banner
@@ -2569,7 +2569,7 @@ Export File Format
 ^^^^^^^^^^^^^^^^^^^^^^^^
 File format of the compliance export. Corresponds to the system that you want to import the data into.
 
-Currently Actiance XML is supported.
+Currently Actiance XML and Global Relay EML are supported.
 
 Run Compliance Export Job Now
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2593,7 +2593,7 @@ Enable Rate Limiting
 **False**: APIs are not throttled.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                        |
+| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Maximum Queries per Second
@@ -2799,7 +2799,7 @@ Enable Elasticsearch for search queries
 **False**: Database search is used for search queries.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableSearching": false`` with options ``true`` and ``false`` for above settings respectively.                                    |
+| This feature's ``config.json`` setting is ``"EnableSearching": false`` with options ``true`` and ``false`` for above settings respectively.                          |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
