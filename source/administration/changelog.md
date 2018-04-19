@@ -30,7 +30,9 @@ Release date: 2018-05-16
  - Added support to REST API for sending ephemeral messages to users.
  - Investigated avoiding duplicating unique indexes.
  - Added a CLI Command to "Reset to Default" for permission system.
- - Added a ClI Platform command to change user email address.
+ - Added a CLI Platform command to change user email address.
+ - Investigated "Download" link to external resources may not actually trigger download.
+ - Removed WebRTC end user setting.
 
 ### Bug Fixes
 
