@@ -15,9 +15,9 @@ Set up your development environment for building, running, and testing Mattermos
 
 2. Download and install Brew, which you'll use for installing dependencies. Follow the Brew installation instructions at https://brew.sh/
 
-3. Install Node.js, Yarn, libpng, and Go:
+3. Install Node.js, NPM (included with Node.js), libpng, and Go:
 
-  ``brew install node yarn libpng go``
+  ``brew install node libpng go``
 
 4. Set up your Go workspace:
 

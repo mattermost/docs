@@ -13,7 +13,7 @@ Installing Developer Components on Windows
   d. Add the line ``{Docker-IP} dockerhost`` to ``C:\Windows\System32\drivers\etc\hosts`` using a text editor with administrator privileges.
 3. Download and install Node.js from https://nodejs.org/.
 4. Download and install Go 1.9 from https://golang.org/dl/.
-5. Install Yarn. Go to https://yarnpkg.com/en/docs/install#windows-tab and follow the installation instructions.
+5. Install NPM. Go to https://www.npmjs.com/get-npm and follow the installation instructions.
 6. Fork Mattermost server and webapp on GitHub from https://github.com/mattermost/mattermost-server and https://github.com/mattermost/mattermost-webapp, then:
   a. ``cd ~/go``
   b. ``mkdir -p src/github.com/mattermost``
