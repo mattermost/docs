@@ -63,6 +63,12 @@ Table below contains all the possible charts configurations that can be supplied
 | resources.requests.cpu        | Unicorn minimum cpu                            | 200m                                             |
 | resources.requests.memory     | Unicorn minimum memory                         | 1.4G                                             |
 
+## Using the Community Edition of this chart
+
+By default, the Helm charts use the Enterprise Edition of GitLab. If desired, you can instead use the Community Edition. Learn more about the [difference between the two](https://about.gitlab.com/installation/ce-or-ee/).
+
+In order to use the Community Edition, set `image.repository` to `registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn-ce`
+
 ## Global Settings
 
 We share some common global settings among our charts. See the [Globals Documentation][globals] for common configuration
