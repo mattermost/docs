@@ -71,7 +71,9 @@ Release date: 2018-04-16
 
 #### Removed and Deprecated Features
 
- - Several configuration settings have been migrated to roles in the database and changing their `config.json` values no longer take effect. These permissions can still be modified by their respective System Console settings as before. The affected `config.json` settings are:
+ - To improve the production use of Mattermost with Docker, the docker image is now running a as non root user and listening on port 8000. Please read the [upgrade instructions](https://github.com/mattermost/mattermost-docker#upgrading-mattermost-to-49) for important changes to existing installations.
+
+- Several configuration settings have been migrated to roles in the database and changing their `config.json` values no longer take effect. These permissions can still be modified by their respective System Console settings as before. The affected `config.json` settings are:
    - RestrictPublicChannelManagement
    - RestrictPrivateChannelManagement
    - RestrictPublicChannelCreation
