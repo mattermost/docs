@@ -44,6 +44,10 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
+            - name: S3_CONFIG_DIR
+              value: "/etc/gitlab/minio"
+            - name: S3_ENDPOINT
+              value: {{ template "tasks-runner.minio.endpoint" .}}
             - name: GITALY_FEATURE_DEFAULT_ON
               value: "1"
             - name: CONFIG_TEMPLATE_DIRECTORY

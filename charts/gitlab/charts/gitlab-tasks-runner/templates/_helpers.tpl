@@ -182,23 +182,3 @@ Return the minio service endpoint
 {{- $port := default 9000 .Values.minio.port | int -}}
 {{- printf "http://%s-%s:%d" .Release.Name $name $port -}}
 {{- end -}}
-
-{{/*
-Returns the secret name for the Secret containing the TLS certificate and key.
-Uses `ingress.tls.secretName` first and falls back to `global.ingress.tls.secretName`
-if there is a shared tls secret for all ingresses.
-*/}}
-{{- define "gitlabTLSSecret" -}}
-{{- $defaultName := (dict "secretName" "") -}}
-{{- if .Values.global.ingress.configureCertmanager -}}
-{{- $_ := set $defaultName "secretName" (printf "%s-gitlab-tls" .Release.Name) -}}
-{{- end -}}
-{{- pluck "secretName" .Values.ingress.tls .Values.global.ingress.tls $defaultName | first -}}
-{{- end -}}
-
-{{/*
-Returns the nginx ingress class
-*/}}
-{{- define "tasks-runner.ingressclass" -}}
-{{- pluck "class" .Values.global.ingress (dict "class" (printf "%s-nginx" .Release.Name)) | first -}}
-{{- end -}}

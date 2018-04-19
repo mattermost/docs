@@ -3,7 +3,6 @@ image:
   tag: latest
   pullPolicy: Always
 enabled: true
-resources: {}
 env: production
 railsSecrets:
   secret: rails-secrets
