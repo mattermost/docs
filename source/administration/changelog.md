@@ -33,6 +33,8 @@ Release date: 2018-05-16
  - Added a CLI Platform command to change user email address.
  - Investigated "Download" link to external resources may not actually trigger download.
  - Removed WebRTC end user setting.
+ - Investigated switching back to npm.
+ - Investigated long loading time after clearing cache and refreshing the page.
 
 ### Bug Fixes
 
