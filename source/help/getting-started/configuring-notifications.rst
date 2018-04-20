@@ -67,6 +67,8 @@ keywords <https://docs.mattermost.com/help/settings/account-settings.html#words-
    Notifications**. By default, all channels use the global setting
    configured in *Account Settings*.
    
+When `Desktop App <https://about.mattermost.com/download/#mattermostApps>`_ notifications are set to "Only for mentions and direct messages", an empty red circle is displayed over the upper right corner of the Mattermost dock icon when any message without an at-mention is received. A solid red circle with a post count is displayed when a message with an at-mention is received.
+   
 Notification Sounds
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
