@@ -2,9 +2,15 @@
 
 GitLab requires a variety of secrets to operate:
 
+Gitlab Components:
 * Registry authentication certificates
 * SSH Host Keys and Certificates for GitLab Shell
-* Passwords for individual components
+* Passwords for individual Gitlab services
+
+Optional External Services
+* SMTP server
+* Omniauth
+
 
 Any secret not provided manually will be automatically generated with a random value. Automatic generation of HTTPS certificates is provided by Let's Encrypt.
 
@@ -68,9 +74,7 @@ Create the secret containing these certificates.
 kubectl create secret generic gitlab-shell-host-keys --from-file hostKeys
 ```
 
-### Passwords
-
-#### Redis password
+### Redis password
 
 Generate a random 64 character alpha-numeric password for Redis.
 
@@ -78,7 +82,7 @@ Generate a random 64 character alpha-numeric password for Redis.
 kubectl create secret generic gitlab-redis --from-literal=redis-password=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64)
 ```
 
-#### Postgres password
+### Postgres password
 
 Generate a random 64 character alpha-numeric password for Postgres.
 
@@ -86,7 +90,7 @@ Generate a random 64 character alpha-numeric password for Postgres.
 kubectl create secret generic gitlab-postgres --from-literal=psql-password=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64)
 ```
 
-#### GitLab Shell secret
+### GitLab Shell secret
 
 Generate a random 64 character alpha-numeric secret for GitLab Shell.
 
@@ -94,7 +98,7 @@ Generate a random 64 character alpha-numeric secret for GitLab Shell.
 kubectl create secret generic gitlab-shell-secret --from-literal=secret=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64)
 ```
 
-#### Gitaly secret
+### Gitaly secret
 
 Generate a random 64 character alpha-numeric token for Gitaly.
 
@@ -102,7 +106,7 @@ Generate a random 64 character alpha-numeric token for Gitaly.
 kubectl create secret generic gitaly-secret --from-literal=token=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64)
 ```
 
-#### Minio secret
+### Minio secret
 
 Generate a set of random 20 & 64 character alpha-numeric keys for Minio.
 
@@ -110,13 +114,24 @@ Generate a set of random 20 & 64 character alpha-numeric keys for Minio.
 kubectl create secret generic gitlab-minio --from-literal=accesskey=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 20) --from-literal=secretkey=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64)
 ```
 
-### Chart specific secrets
+## External services
 
 Some charts have further secrets to enable functionality that can not be automatically generated.
 
-#### Unicorn Omniauth
+### Unicorn Omniauth
 
 In order to enable the use of [Omniauth Providers](https://docs.gitlab.com/ee/integration/omniauth.html) with the deployed GitLab, please follow the [instructions in the Unicorn chart](../charts/gitlab/unicorn/README.md#omniauth.providers)
+
+### SMTP password
+
+If you are using an SMTP server that requires authentication, store the password
+in a Kubernetes secret.
+
+```
+kubectl create secret generic smtp-password --from-literal=password=yourpasswordhere
+```
+
+Then use `--set global.smtp.password.secret=smtp-password` in your helm command.
 
 ## Next steps
 

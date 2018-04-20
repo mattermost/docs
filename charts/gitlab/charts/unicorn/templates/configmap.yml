@@ -23,6 +23,8 @@ data:
       #   hosts:
       #     - host1.example.com
       #     - host2.example.com
+  smtp_settings.rb: |
+{{ include "gitlab.smtp_settings" . | indent 4 }}
   resque.yml.erb: |
     production:
       # Redis (single instance)
@@ -180,12 +182,16 @@ data:
     cp /init-config/postgres/psql-password /init-secrets/postgres/psql-password
     cp /init-config/rails-secrets/secrets.yml /init-secrets/rails-secrets/secrets.yml
     if [ -e /init-config/minio ]; then
-      mkdir /init-secrets/minio
+      mkdir -p /init-secrets/minio
       cp /init-config/minio/* /init-secrets/minio/
     fi
     if [ -e /init-config/omniauth ]; then
       mkdir -p /init-secrets/omniauth
       cp -r /init-config/omniauth/* /init-secrets/omniauth/
+    fi
+    if [ -e /init-config/smtp/smtp-password ]; then
+      mkdir -p /init-secrets/smtp
+      cp /init-config/smtp/smtp-password /init-secrets/smtp/
     fi
 # Leave this here - This line denotes end of block to the parser.
 {{- end }}
