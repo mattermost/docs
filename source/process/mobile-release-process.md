@@ -19,20 +19,19 @@ No pull requests for major features should be **merged** to the current release 
     - Start posting a daily Zero Bug Balance query (posted until zero bugs or day of release)
 2. PM:
     - Prioritize reviewing major features, ensuring any bugs and UX issues get fixed
-    - Check that all major features are behind a feature flag
-    - Review Jira Backlog and move any tickets that will not be merged to the next release
 3. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the pull request queue marked for the current release
-      - After the cut-off, any PRs that include significant code changes, require approval of the release manager before merging
-4. Marketing:
+      - After the cut-off, any PRs that include significant code changes, require approval of the release manager and React Native PM before merging
+4. Build:
+    - Cut a beta build
+5. Marketing:
     - Prepare a list of highlights to be included in the next platform release announcement
 
 ### B. (T-minus 11 working days) Major feature testing
 
 1. QA:
     - Prioritize testing merged PRs and resolved tickets
-    - Write and update tests in the Release Testing spreadsheet and in Selenium IDE
-    - Run Selenium IDE tests for updated areas, note Pass/Fail and date tested in the Release Testing spreadsheet
+    - Write and update tests in the Release Testing spreadsheet
     
 ### C. (T-minus 10 working days) Judgment Day
 
@@ -44,7 +43,6 @@ Day when PM decides which major features are included in the release, and which 
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
     - Update Changelog PR based on what's in/out of the release
-    - Create meta issue for release in GitHub
     - Post a link to Native Mobile Apps channel for query of remaining bugs in this release
 3. PM:
     - Review the JIRA tickets remaining in the current release fix version and push those that won't make it to the next fix version
@@ -56,19 +54,17 @@ Day when PM decides which major features are included in the release, and which 
 1. Release Manager:
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
-    - Update the GitHub meta issue to include a link to the changelog on the documentation branch
-2. PM:
-    - Check the minimum server version required and submit pull request to update in fastlane files
-3. Dev:
+2. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the pull request queue marked for the current release
+    - Check the minimum server version required and submit pull request to update in fastlane files
+3. Build:
+    - Create release branch for mattermost-mobile and mattermost-redux
+    - Cut release candidate build
 4. QA:
     - Confirm all pull requests merged into the current release have been tested
     - Ensure the release testing spreadsheet covers any changes and new features, and confirm known issues are listed in the relevant tests
     - Assign each area of the spreadsheet to a team member and give the core team access permissions
-5. Build:
-    - Create release branch for mattermost-mobile and mattermost-redux
-    - Cut release candidate build
-6. Docs:
+5. Docs:
     - Submit any remaining documentation PRs for product updates in the release
 
 ### E. (T-minus 7 working days) Release Candidate Testing
@@ -76,13 +72,10 @@ Day when PM decides which major features are included in the release, and which 
 1. Release Manager:
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
-    - Update the GitHub meta issue:
-        - Post comments to the meta issue with approved fixes for the next builds
-        - Update download links and testing server links to the latest build
-    - Post list of tickets to be fixed to the Release Discussion channel
+    - Post list of tickets to be fixed to the Native Mobile Apps channel
     - Update Changelog for any new bug fixes
 2. QA:
-    - Post release testing instructions and spreadsheet to Native Mobile Apps channel
+    - Post release testing instructions and spreadsheet to Release Discussion channel
     - As bug fixes are merged, verify fixes on new builds and post in Native Mobile Apps channel after testing
 3. Team:
     - Test assigned areas of the testing spreadsheet and file any bugs found in Jira 
@@ -105,7 +98,6 @@ The final release is cut. If an urgent and important issue needs to be addressed
 1. Release Manager:
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
-    - Close GitHub meta ticket for the release
     - Submit changelog PR for review
         - Merge changelog PR after review is complete
 2. Build: 
@@ -130,8 +122,7 @@ The final release is cut. If an urgent and important issue needs to be addressed
 2. Build:
     - Merge the release branch back in to master
     - Review and update project dependencies as needed
-3. PM:
-    - Submit final build to iOS App Store and Google Play Store
+    - Submit final build to Google Play Store and iTunes Connect
     - Confirm that minimum server version required is clear in update notes 
     - Create release in GitHub 
     - Close the release in Jira
@@ -142,4 +133,3 @@ The final release is cut. If an urgent and important issue needs to be addressed
     - After the apps are approved and on the App Store (number of days may vary), send out release marketing
     - Update the app version on the [download page](https://about.mattermost.com/download/#mattermostApps)
     - Send out a Twitter announcement
-    
