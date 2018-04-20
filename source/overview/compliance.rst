@@ -2,9 +2,6 @@
 Export Compliance Overview
 =====================================
 
-.. contents::
-    :backlinks: top
-
 Summary Table
 ------------------------------------
 
