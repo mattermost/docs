@@ -45,7 +45,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: BACKUP_BUCKET_NAME
-              value: "gitlab-backups"
+              value: .Values.backups.bucketName
             - name: S3_CONFIG_DIR
               value: "/etc/gitlab/minio"
             - name: S3_ENDPOINT
