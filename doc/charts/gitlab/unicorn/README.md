@@ -19,7 +19,7 @@ Table below contains all the possible charts configurations that can be supplied
 | Parameter                     | Description                                    | Default                                          |
 | ---                           | ---                                            | ---                                              |
 | replicaCount                  | Unicorn number of replicas                     | 1                                                |
-| image.repository              | Unicorn image repository                       | registry.com/gitlab-org/build/cng/gitlab-unicorn |
+| image.repository              | Unicorn image repository                       | registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn-ee |
 | image.tag                     | Unicorn image tag                              | latest                                           |
 | image.pullPolicy              | Unicorn image pull policy                      | Always                                           |
 | service.name                  | Unicorn service name                           | unicorn                                          |

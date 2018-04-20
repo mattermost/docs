@@ -178,7 +178,7 @@ Tables below contain all the possible charts configurations that can be supplied
 | gitlab.omnibus.psql.persistence.accessMode          | psql persistence access mode                   | ReadWriteOnce                                                     |
 | gitlab.omnibus.psql.persistence.size                | psql persistence volume size                   | 10Gi                                                              |
 | gitlab.omnibus.psql.persistence.subPath             | psql persistence volume mountpath              |                                                                   |
-| gitlab.sidekiq.image.repository                     | Sidekiq image repository                       | registry.gitlab.com/gitlab-org/build/cng/gitlab-sidekiq           |
+| gitlab.sidekiq.image.repository                     | Sidekiq image repository                       | registry.gitlab.com/gitlab-org/build/cng/gitlab-sidekiq-ee        |
 | gitlab.sidekiq.image.tag                            | Sidekiq image tag                              | latest                                                            |
 | gitlab.sidekiq.image.pullPolicy                     | Sidekiq image pull policy                      | Always                                                            |
 | gitlab.sidekiq.enabled                              | Sidekiq enabled flag                           | true                                                              |
@@ -199,7 +199,7 @@ Tables below contain all the possible charts configurations that can be supplied
 | gitlab.sidekiq.resources.requests.cpu               | Sidekiq minimum needed cpu                     | 100m                                                              |
 | gitlab.sidekiq.resources.requests.memory            | Sidekiq minimum needed memory                  | 600M                                                              |
 | gitlab.unicorn.replicaCount                         | Unicorn number of replicas                     | 1                                                                 |
-| gitlab.unicorn.image.repository                     | Unicorn image repository                       | registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn           |
+| gitlab.unicorn.image.repository                     | Unicorn image repository                       | registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn-ee        |
 | gitlab.unicorn.image.tag                            | Unicorn image tag                              | latest                                                            |
 | gitlab.unicorn.image.pullPolicy                     | Unicorn image pull policy                      | Always                                                            |
 | gitlab.unicorn.service.name                         | Unicorn service name                           | unicorn                                                           |
@@ -232,7 +232,7 @@ Tables below contain all the possible charts configurations that can be supplied
 | gitlab.unicorn.registry.certificate.key             | Registry certificate key                       | registry-auth.key                                                 |
 | gitlab.unicorn.resources.requests.cpu               | Unicorn minimum cpu                            | 200m                                                              |
 | gitlab.unicorn.resources.requests.memory            | Unicorn minimum memory                         | 1.4G                                                              |
-| gitlab.migrations.image.repository                  | Migrations image repository                    | registry.gitlab.com/gitlab-org/build/cng/gitlab-rails             |
+| gitlab.migrations.image.repository                  | Migrations image repository                    | registry.gitlab.com/gitlab-org/build/cng/gitlab-rails-ee          |
 | gitlab.migrations.image.tag                         | Migrations image tag                           | latest                                                            |
 | gitlab.migrations.image.pullPolicy                  | Migrations pull policy                         | Always                                                            |
 | gitlab.migrations.enabled                           | Migrations enable flag                         | true                                                              |
@@ -276,4 +276,3 @@ Tables below contain all the possible charts configurations that can be supplied
 | gitlab.gitlab-runner.resources.limits.cpu           | runner resources                               |                                                                   |
 | gitlab.gitlab-runner.resources.requests.memory      | runner resources                               |                                                                   |
 | gitlab.gitlab-runner.resources.requests.cpu         | runner resources                               |                                                                   |
-

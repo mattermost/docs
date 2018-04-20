@@ -22,7 +22,7 @@ Table below contains all the possible charts configurations that can be supplied
 
 | Parameter                 | Description                                    | Default                                          |
 | ---                       | ---                                            | ---                                              |
-| image.repository          | Sidekiq image repository                       | registry.com/gitlab-org/build/cng/gitlab-sidekiq |
+| image.repository          | Sidekiq image repository                       | registry.gitlab.com/gitlab-org/build/cng/gitlab-sidekiq-ee |
 | image.tag                 | Sidekiq image tag                              | latest                                           |
 | image.pullPolicy          | Sidekiq image pull policy                      | Always                                           |
 | enabled                   | Sidekiq enabled flag                           | true                                             |
