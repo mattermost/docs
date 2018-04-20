@@ -3,16 +3,10 @@ image:
   tag: latest
   pullPolicy: Always
 enabled: true
-env: production
 railsSecrets:
   secret: rails-secrets
   key: secrets.yml
 global:
-  ingress:
-    enabled: true
-    annotations: {}
-    tls: {}
-      # secretName:
   hosts:
     domain: example.local
     hostSuffix:
@@ -77,4 +71,4 @@ resources:
   #  memory: 2G
   requests:
     cpu: 200m
-    memory: 2G
+    memory: 500M
