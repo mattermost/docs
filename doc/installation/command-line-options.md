@@ -25,6 +25,21 @@ Tables below contain all the possible charts configurations that can be supplied
 | minio.ingress.tls.secretName                 | Existing `Secret` containing TLS certificate and key for minio               | {Release.Name}-minio-tls                                          |
 | registry.ingress.tls.secretName              | Existing `Secret` containing TLS certificate and key for registry            | {Release.Name}-registry-tls                                       |
 
+## SMTP configuration
+
+| Parameter                       | Description                                                                             | Default          |
+| ---                             | ---                                                                                     | ---              |
+| global.smtp.enabled             | Enable outgoing email                                                                   | false            |
+| global.smtp.address             | Hostname or IP of the remote mail server                                                | smtp.mailgun.org |
+| global.smtp.port                | Port for SMTP                                                                           | 2525             |
+| global.smtp.user_name           | Username for SMTP authentication https                                                  | ""               |
+| global.smtp.password.secret     | Name of a `Secret` containing the SMTP password                                         | ""               |
+| global.smtp.password.key        | Key in `global.smtp.password.secret` that contains the SMTP password                    | password         |
+| global.smtp.domain              | Optional HELO domain for SMTP                                                           | ""               |
+| global.smtp.authentication      | Type of SMTP authentication ("plain", "login", "cram_md5", or "" for no authentication) | plain            |
+| global.smtp.starttls_auto       | Use STARTTLS if enabled on the mail server                                              | false            |
+| global.smtp.openssl_verify_mode | TLS verification mode ("none", "peer", or "ssl/tls")                                    | peer             |
+
 ## Advanced nginx ingress configuration
 
 | Parameter                                    | Description                                                                  | Default                                                           |

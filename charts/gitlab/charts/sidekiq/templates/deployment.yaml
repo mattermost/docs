@@ -137,6 +137,9 @@ spec:
           - name: sidekiq-secrets
             mountPath: /home/git/gitlab/config/secrets.yml
             subPath: rails-secrets/secrets.yml
+          - name: sidekiq-config
+            mountPath: '/home/git/gitlab/config/initializers/smtp_settings.rb'
+            subPath: smtp_settings.rb
           # livenessProbe:
           #   exec:
           #     command:
@@ -188,6 +191,13 @@ spec:
               items:
                 - key: {{ $postgresKey }}
                   path: postgres/psql-password
+          {{- if and $.Values.global.smtp.enabled $.Values.global.smtp.authentication }}
+          - secret:
+              name: {{ $.Values.global.smtp.password.secret | required "Missing required secret containing the SMTP password. Make sure to set `global.smtp.password.secret`" }}
+              items:
+                - key: {{ $.Values.global.smtp.password.key }}
+                  path: smtp/smtp-password
+          {{- end }}
       - name: sidekiq-secrets
         emptyDir:
           medium: "Memory"
