@@ -3,7 +3,7 @@ Export Compliance Overview
 =====================================
 
 Summary Table
-------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | Mattermost Product                            | Export Control Classification Number (ECCN)                                                                                                     |
@@ -19,7 +19,7 @@ Summary Table
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Overview 
-------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The U.S. government regulates the transfer of information, commodities, technology and software considered
 to be strategically important to the U.S. in the interest of national security, economic and/or foreign policy
