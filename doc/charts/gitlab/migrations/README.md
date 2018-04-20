@@ -26,7 +26,7 @@ Table below contains all the possible charts configurations that can be supplied
 
 | Parameter             | Description                                    | Default                                        |
 | ---                   | ---                                            | ---                                            |
-| image.repository      | Migrations image repository                    | registry.com/gitlab-org/build/cng/gitlab-rails |
+| image.repository      | Migrations image repository                    | registry.gitlab.com/gitlab-org/build/cng/gitlab-rails-ee |
 | image.tag             | Migrations image tag                           | latest                                         |
 | image.pullPolicy      | Migrations pull policy                         | Always                                         |
 | enabled               | Migrations enable flag                         | true                                           |
