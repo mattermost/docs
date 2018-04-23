@@ -243,7 +243,7 @@ Train administrators on the tasks required to manage Mattermost.
 .. image:: ../images/legal_and_support_settings.png
 	:alt: Legal and Support settings 
 
-Mattermost has configuration settings for the terms of service, privacy policy, and support URLs and emails. It is highly recommended that you modify these in your configuration so that your users have the correct legal information and can contact administrators to resolve account issues. You can find these under System Console > Legal and Support.
+Mattermost has configuration settings for the terms of service, privacy policy, and support URLs and emails. It is highly recommended that you modify these in your configuration so that your users have the correct legal information and can contact administrators to resolve account issues. You can find these under **System Console > Legal and Support**.
 
 3.3.14 Onboard Users
 ^^^^^^^^^^^^^^^^^^^^^^^^
