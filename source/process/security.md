@@ -7,10 +7,14 @@ This document summarizes the internal security policies at Mattermost, Inc.
   - [Security Review Checklist](#security-review-checklist) 
 - [Common Security Related Questions for Enterprises](#common-security-related-questions-for-enterprises)
    - [Governance](#governance)
+   - [Access Control](#access-control)
+   - [Operational Security](#operational-security)
    - [Software Development Life Cycle (SDLC)](#software-development-life-cycle-sdlc)
    - [Training](#training)
    - [Validation](#validation)
    - [Security Response](#security-response)
+   - [Business Resiliency](#business-resiliency)
+   - [Compliance](#compliance)
 - [Business Continuity Plan](#business-continuity-plan)
 
 ## Security benefits of an open source platform
@@ -38,14 +42,14 @@ The commercial Mattermost Enterprise Edition extends the security and productivi
 
 #### Reporting 
 
-* Mattermost uses a [responsible disclosure policy](https://www.mattermost.org/responsible-disclosure-policy/) to accept confidential reports of new threats, so they can be addressed either immediately through a dot release, or by the next bi-monthly release depending on potential impact. 
-* When Mattermost software undergoes security and penetration testing at customer sites security updates are added to the core software and [publicly documented by release](http://about.mattermost.com/security-updates/). 
+* Mattermost uses a [responsible disclosure policy](https://www.mattermost.org/responsible-disclosure-policy/) to accept confidential reports of new threats, so they can be addressed either immediately through a dot release, or by the next monthly release depending on potential impact. 
+* When Mattermost software undergoes security and penetration testing at customer sites security updates are added to the core software and [publicly documented by release](https://about.mattermost.com/security-updates/). 
 
 #### Patch Management 
-* Critical updates are released for urgent, high priority security issues or critical losses of functionality that should not wait for the next bi-monthly release. 
-* Mattermost software has as mandatory upgrade policy and customers and users need to be on the latest release to receive critical updates. 
+* Critical updates are released for urgent, high priority security issues or critical losses of functionality that should not wait for the next monthly release. 
+* Mattermost software has a mandatory upgrade policy and customers and users need to be on the latest release to receive critical updates. 
 * Critical updates are delivered as dot releases, for example a critical update to release `3.1.0` would be named `3.1.1`.
-* Customers and subscribers to the Mattermost Insiders mailing list receive notification about all critical updates. 
+* Customers and subscribers to the Security Bulletin [mailing list](http://eepurl.com/cAl5Rv) receive notifications about all critical updates. 
 
 ### Security Review Checklist 
 In addition to checklists for quality and reliability, code changes receive multiple reviews for the following system security design principles: 
@@ -57,6 +61,21 @@ In addition to checklists for quality and reliability, code changes receive mult
 - Preventing cross-site scripting 
 - Preventing cross-site forgery 
 - Preventing remote code execution 
+
+### Security Update Monitoring 
+
+The following resources are monitored for information about new security threats and attack vectors. 
+
+- https://www.iacr.org/
+- http://www.acm.org/
+- https://www.usenix.org/
+- https://www.exploit-db.com/
+- https://security.googleblog.com/
+- https://groups.google.com/forum/#!forum/golang-announce
+- http://www.cert.org/
+- https://www.reddit.com/r/netsec/
+
+All dependencies are updated on a regular basis to ensure Mattermost uses the latest security updates.
 
 ## Common Security Related Questions for Enterprises
 
@@ -74,26 +93,165 @@ In addition to checklists for quality and reliability, code changes receive mult
 1. Is there defined management oversight who is responsible for application quality and security reporting & signoff?
    - Yes. 
 
-1. Is access to and maintenance of applications, systems, network components (including routers, databases, firewalls, voice communications servers, voice recording servers, etc), operating systems, virtualization components, hypervisors, or other information objects restricted to authorized personnel only?
-   - Yes.
-
-1. Is access to and maintenance of applications, systems, network components (including routers, firewalls, voice communications servers, voice recording servers, voice response units (VRU) etc), operating systems, virtualization components, hypervisors, or other information objects granted based upon need-to-know job function?
-   - Yes.
-
 1. For all IT systems including but not limited to servers, routers, switches, firewalls, databases, and external social spaces, is management approval required prior to creating all user and privileged accounts (e.g., system or security administrator)?
    - Yes.
 
-1. For all IT systems including but not limited to servers, routers, switches, firewalls, databases are privileged accounts (e.g., system or security administrator) logged at all times and reviewed on at least a quarterly basis?
-   - Yes.
-
-1. Are passwords prevented from being displayed in clear text during user authentication or in electronic/printed reports?
+1. For all IT systems including but not limited to servers, routers, switches, firewalls and databases, are privileged accounts (e.g., system or security administrator) logged at all times and reviewed on at least a quarterly basis?
    - Yes.
 
 1. Are all system, application and device password files encrypted using an industry standard encryption algorithm where technically feasible?
    - Yes
 
+1. For all IT systems including but not limited to servers, routers, switches, firewalls and databases, do privileged accounts (e.g., system or security administrator) that communicate directly with the Internet, contain any personally identifiable information (PII) such as: social security numbers, credit card numbers, patient health record information, or other confidential records?
+   - Yes
+
+1. Is all sensitive, protected health information (PHI) and personally identifiable information (PII) protected using an industry standard encryption algorithm where technically feasible?
+   - Yes
+
+1. Are information assets classified?
+   - Yes.
+
+1. Are security roles and responsibilities of personnel defined and documented in accordance with the organization’s information security policy?
+   - Yes.
+
+1. Is a background screening performed prior to allowing personnel access to Scoped Systems and Data?
+   - Yes.
+
+1. Are new hires required to sign any agreements upon hire?
+   - Yes.
+
+1. Is there a disciplinary process for non-compliance with information security policies?
+   - Yes, disclosure of confidential information or egregious disregard for documented security policies is grounds for termination. 
+
+1. Is there a personnel termination or change of status process?
+   - Yes.
+
+### Access Control
+
+1. Is access to and maintenance of applications, systems, network components (including routers, databases, firewalls, voice communications servers, voice recording servers, voice response units (VRU) etc), operating systems, virtualization components, hypervisors, or other information objects restricted to authorized personnel only?
+   - Yes.
+
+1. Is access to and maintenance of applications, systems, network components (including routers, databases, firewalls, voice communications servers, voice recording servers, voice response units (VRU) etc), operating systems, virtualization components, hypervisors, or other information objects granted based upon need-to-know job function?
+   - Yes.
+
+1. Are unique user IDs required for all user and privileged accounts (e.g., system or security administrator) to access all IT systems including but not limited to servers, routers, switches, firewalls and databases?
+   - Yes.
+
+1. Are passwords required for all user and privileged accounts (e.g., system or security administrator) to access all IT systems including but not limited to servers, routers, switches, firewalls and databases?
+   - Yes.
+
+1. Are there written network password policies and/or procedures?
+   - Yes.
+
+1. Is password administration employed for critical systems? 
+   - Yes.
+
+1. Are passwords prevented from being displayed in clear text during user authentication or in electronic/printed reports?
+   - Yes.
+
 1. If user accounts are assigned to non-permanent personnel (e.g., contractors, consultants)  for troubleshooting purposes, are the accounts disabled or removed after each use?
    - Yes
+
+### Operational Security
+
+1. Is there a risk assessment program that has been approved by management, communicated to appropriate personnel and has an owner to maintain and review the program?
+   - Yes.
+
+1. Is there an information security policy that has been approved by management, communicated to appropriate personnel and has an owner to maintain and review the policy?
+   - Yes.
+
+1. Is there a vendor management program?
+   - Yes.
+
+1. Is there a respondent information security function responsible for security initiatives?
+   - Yes.
+
+1. Is there an asset management policy or program that has been approved by management, communicated to appropriate personnel and has an owner to maintain and review the policy?
+   - Yes.
+
+1. Are management approved operating procedures utilized?
+   - Yes.
+
+1. Is there an operational change management / change control policy or program that has been approved by management, communicated to appropriate personnel and has an owner to maintain and review the policy?
+   - Yes.
+
+1. Are system backups performed?
+   - Yes.
+
+1. Are firewalls in use for both internal and external connections?
+   - Yes.
+
+1. Are firewalls or IPS(s) secured against unauthorized access from the Internet, Extranet and Intranet users?
+   - Yes.
+
+1. Are vulnerability assessments, scans or penetration tests performed on internal or external networks?
+   - Yes.
+
+1. Are incoming e-mails scanned for questionable file attachments?
+   - Yes.
+
+1. Does the company use spam filtering software to reduce the number of unsolicited e-mails?
+   - Yes.
+
+1. Are e-mail attachments scanned by anti-virus software?
+   - Yes.
+
+### Business Resiliency
+
+For more information on Business Resiliency, see the [Mattermost Business Continuity Plan](https://docs.mattermost.com/process/security.html#business-continuity-plan).
+
+1. Is there an established Business Resiliency program that has been approved by management and communicated to appropriate personnel?
+   - Yes.
+
+1. Has a Business Impact Analysis been conducted?
+   - Yes.
+
+1. Is there a formal process focused on identifying and addressing risks of disruptive incidents to the organization?
+   - Yes.
+
+1. Is there an established Business Resiliency program that has been approved by management and communicated to appropriate personnel?
+   - Yes.
+
+1. Are specific response and recovery strategies defined for addressing risks of disruptive incidents to the organization?
+   - Yes.
+
+1. Are formal business continuity procedures developed and documented?
+   - Yes.
+
+1. Has senior management assigned the responsibility for the overall management of the response and recovery efforts?
+   - Yes.
+
+1. Is there a periodic review of your Business Resiliency Program?
+   - Yes, annually.
+
+1. Is there an Influenza Pandemic/Infectious Disease Outbreak Plan?
+   - Yes.
+
+1. Is there insurance coverage for business interruptions or general services interruption?
+   - Yes.
+
+### Compliance
+
+1. Is there an internal audit, risk management or compliance department with responsibility for identifying and tracking resolution of outstanding regulatory issues?
+   - Yes.
+
+1. Are there policies and procedures to ensure compliance with applicable legislative, regulatory and contractual requirements to address intellectual property rights on business processes or information technology software products?
+   - Yes.
+
+1. Is there a records retention policy covering paper and electronic records, including email in support of applicable regulations, standards and contractual requirements?
+   - Yes. For example, records of customers with NDAs are retained in the event an NDA is terminated and requires destruction of records.
+
+1. Is licensing maintained in all jurisdictions where the business operates or where licensing is required?
+   - Yes.
+
+1. Is there an internal compliance and ethics program to ensure professional ethics and business practices are implemented?
+   - Yes.
+
+1. Are policies and procedures maintained for enabling compliance with applicable legal, regulatory, statutory, or contractual obligations related to any information security requirements?
+   - Yes.
+
+1. Is there a formalized governance process to identify and assess changes that could significantly affect the system of internal controls for security, confidentiality and availability?
+   - Yes.
 
 ### Software Development Life Cycle (SDLC)
 
@@ -170,8 +328,7 @@ In addition to checklists for quality and reliability, code changes receive mult
    - Yes. Security updates are announced via email to customers as well as mailing list subscribers. 
 
 1. Is there a specified response policy that includes the timeframe issues are to be addressed?
-   - Yes, please see: https://about.mattermost.com/support/
-
+   - Yes, please see: [https://about.mattermost.com/support/](https://about.mattermost.com/support/)
 
 ## Infrastructure Security Policies
 
@@ -180,6 +337,19 @@ In addition to checklists for quality and reliability, code changes receive mult
 1. Business process, HR process and policies are regularly reviewed for potential threats and vulnerabilities.
 
 ## Business Continuity Plan
+
+This document outlines Mattermost, Inc.'s **Disaster Recovery and Business Continuity Plan (DRBCP)** informed by the Federal Financial Institutions Examination Council guidelines on Business Continuity Planning in the context of Mattermost, Inc. being a vendor providing self-hosted software and consulting services to financial institutions. 
+
+Because Mattermost software runs within a customer's data center, behind a customer's firewall and existing layers of security, without dependency to services hosted by Mattermost, the disruption of the business continuity of Mattermost, Inc. does not immediately impact the operating continuity of its customers. It does affect Mattermost's ability to answer support requests, provide consulting services and provide new improvements or patches to Mattermost software. 
+
+At a high level, precautions include: 
+
+- DRBCP is tested, evaluated and refined annually to ensure our processes are working and up-to-date
+- As support is the most critical service offered, multiple channels for support engagement are available and monitored, including email, a Mattermost community server available on web, desktop and mobile, online forums, online forms, social media channels (Twitter and Facebook), and for Premier Support customers, we offer a telephone-based call center. 
+- Subject Matter Experts for escalations are available in at least three centers in different timezones to provide redundant coverage should communication with one or multiple centers be disrupted. Mattermost staff use a diverse set of operating systems, including Mac, Windows and different distributions of Linux, and a diverse set of global internet service providers, to reduce the potential damage of a single strain of malware, single desktop computing exploit or single telecommunications outage. 
+- As further redundancy, we have a network of [partners](https://about.mattermost.com/partners/) around the world skilled in Mattermost technologies to be contacted for assistance for critical customer issues.  
+- As further redundancy, we have a community of several hundred engineers around the world and over a thousands contributors to our online forums, who have sufficient access and expertise in Mattermost's open source technologies that could be contact in the highly unlikely event both Mattermost, Inc. and our partner networks are unable to service our customers. 
+- As further redundancy, Mattermost provides open source code for its core server technology, mobile applications, desktop applications and a wide array of extensions which allows customers to have transparency into the functionality of the software and solve the issue with their internal technical teams should a massive worldwide failure of Mattermost, Inc., its partners and its community arise. 
 
 Mattermost, Inc. is headquartered in Palo Alto, California with a distributed organization across three timezones, and is therefore not easily affected by typical causes of business disruption, such as local failures of equipment, power, telecommunications, social unrest, fire, or natural disasters. Even so, threats considered in the context of business continuity are categorized by impact of the disruption.
 
@@ -235,6 +405,14 @@ Solution(s):
 - Mattermost, Inc. runs multiple monitoring and alerting services to detect and isolate suspicious traffic and requests in order to minimize downtime from potential online threats.  
 - Should our self-hosted Mattermost instance be disrupted we can, if needed, quickly re-deploy the solution within our VPN. 
 
+#### Disruption due to influenza pandemic or infectious disease outbreak
+
+Effect: 
+- Reduced capacity to continue business operations
+
+Solution(s): 
+- Mattermost, Inc. employs staff and engineers in multiple timezones and geographic areas, reducing the risk of significant disruption that an influenza pandemic or infectious disease outbreak would cause to business operations.
+
 ### Priority 3: Outages greater than 72 hours impacting business continuity 
 
 #### Outage of online CRM system 
@@ -243,7 +421,7 @@ Effect:
 - Reduced ability to continue sales operations
 
 Solution(s): 
-- While there is no current failover plan should our online CRM system become disrupted, we have SLAs with our CRM vendor--which is used by thousands of other organizations--and believe the probability out sustained outage is low. 
+- While there is no current failover plan should our online CRM system become disrupted, we have SLAs with our CRM vendor--which is used by thousands of other organizations--and believe the probability of sustained outage is low. 
 
 ### Priority 4: Outages greater than 10 days impacting business continuity 
 
@@ -253,6 +431,4 @@ Effect:
 - Reduced ability to continue HR and internal operations
 
 Solution(s): 
-- While there is no current failover plan should our online HR or intranet system become disrupted, we have SLAs with our  vendors--which is used by thousands of other organizations--and believe the probability out sustained outage is low. 
-
-
+- While there is no current failover plan should our online HR or intranet system become disrupted, we have SLAs with our  vendors--which is used by thousands of other organizations--and believe the probability of sustained outage is low. 

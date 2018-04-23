@@ -1,32 +1,34 @@
 Developer Flow
 -----------------------------
 
-If you haven't [set up your developer environment](https://docs.mattermost.com/developer/developer-setup.html), please do so before continuing with this section.
+If you haven't [set up your developer environment](https://docs.mattermost.com/developer/dev-setup.html), please do so before continuing with this section.
+
+Come [join our "Contributors" community channel](https://pre-release.mattermost.com/core/channels/tickets) on our daily build server, where you can discuss questions with community members and the Mattermost core team. Join our ["Developers" channel](https://pre-release.mattermost.com/core/channels/developers) for technical discussions and our ["Integrations" channel](https://pre-release.mattermost.com/core/channels/integrations) for all integrations and plugins discussions.
 
 ### Workflow ###
 
-Here's a general workflow a Mattermost developer working on our [platform repository](https://github.com/mattermost/platform) follows:
+Here's a general workflow a Mattermost developer working on our [mattermost-server](https://github.com/mattermost/mattermost-server) and [mattermost-webapp](https://github.com/mattermost/mattermost-webapp) repositories follows:
 
 1. Take a look at the [Repository structure](https://docs.mattermost.com/developer/developer-flow.html#repository-structure) to find out where to look for what you're working on.
-2. On your fork, create a branch `PLT-####` where #### is the ticket number if it is a [Jira](https://mattermost.atlassian.net) ticket, or `GH-####` if it is a GitHub Issue without a Jira ticket.
+2. On your fork, create a branch `MM-####` where #### is the ticket number if it is a [Jira](https://mattermost.atlassian.net) ticket, or `GH-####` if it is a GitHub Issue without a Jira ticket.
 3. Make the code changes required to complete your ticket, making sure to write or modify unit tests where appropriate.
-4. To test your changes, run `make run` from the root directory of the respository. This will start up the server and a watcher process that will build any changes to the client as you make them. To get changes to the server it must be restarted with `make restart-server`. Your server will be running at `http://localhost:8065`.
-5. Once everything works to meet the ticket requirements, stop the server with `make stop` and then run both `make check-style` and `make test` to make sure there are no errors with your syntax or tests.
+4. To test your changes, run `make run` from the root directory of the server respository. This will start up the server and a watcher process that will build any changes to the client as you make them. To get changes to the server it must be restarted with `make restart-server`. Your server will be running at `http://localhost:8065`.
+5. Once everything works to meet the ticket requirements, stop mattermost running `make stop` in the server repository and then run `make check-style` for check your syntax and `make test` for run the test in both repositories, server and webapp.
 6. Commit your changes, push your branch and [create a pull request](https://docs.mattermost.com/developer/contribution-guide.html#preparing-a-pull-request).
 7. Respond to feedback on your pull request and make changes as necessary by commiting to your branch and pushing it. You might need to [rebase your changes](https://git-scm.com/book/en/v2/Git-Branching-Rebasing) if another pull request creates conflicts.
 8. That's it! Rejoice that you've helped make Mattermost better.
 
-### Useful Makefile commands ###
+### Useful server Makefile commands ###
 
 Some other `make` commands that might be useful in addition to the ones mentioned above:
 
 * `make run-server` will run only the server and not the client
-* `make clean-docker` stops and removes your docker images and is a good way to wipe your database
+* `make clean-docker` stops and removes your Docker images and is a good way to wipe your database
 * `make run-fullmap` will run the server and build the client with the full source map for easier debugging
 * `make clean` cleans your local environment of temporary files
-* `make nuke` wipes your local envrionment back to a completely fresh start
+* `make nuke` wipes your local environment back to a completely fresh start
 
-### Running only specific unit tests ###
+### Running only specific server unit tests ###
 
 Since running every single unit test takes a lot of time while making changes, you can run a subset of the serverside unit tests by using the following:
 ```
@@ -37,22 +39,39 @@ For example, if you wanted to run `TestPostUpdate` in `api/post_test.go`, you wo
 go test -v -run='TestPostUpdate' ./api
 ```
 
-Alternatively, if you're writing client-side code, you can run only the client-side unit tests by using `make test-client`.
+### Useful platform commands ###
+
+During development you may want to reset the database and generate random data for testing your changes. For this purpose, Mattermost has the following commands in the platform CLI:
+
+You can reset your database to the initial state using:
+```
+platform reset
+```
+
+After that, you can generate random data to populate the Mattermost database using:
+```
+platform sampledata
+```
 
 ### Repository structure ###
 
-For server work, all the directories you'll need are at the root of the repository.
- * [./api/](https://github.com/mattermost/platform/tree/master/api) holds all API and application related code
- * [./model/](https://github.com/mattermost/platform/tree/master/model) holds all data model definitions and the Go driver
- * [./store/](https://github.com/mattermost/platform/tree/master/store) holds all database querying code
- * [./utils/](https://github.com/mattermost/platform/tree/master/utils) holds all utilities, such as the mail utility
- * [./i18n/](https://github.com/mattermost/platform/tree/master/i18n) holds all localization files for the server
+For server work, you'll be working in the [server repository](https://github.com/mattermost/mattermost-server).
+ * [./api/](https://github.com/mattermost/mattermost-server/tree/master/api) holds all API and application related code
+ * [./model/](https://github.com/mattermost/mattermost-server/tree/master/model) holds all data model definitions and the Go driver
+ * [./store/](https://github.com/mattermost/mattermost-server/tree/master/store) holds all database querying code
+ * [./utils/](https://github.com/mattermost/mattermost-server/tree/master/utils) holds all utilities, such as the mail utility
+ * [./i18n/](https://github.com/mattermost/mattermost-server/tree/master/i18n) holds all localization files for the server
 
-For client work, you'll mostly be working in [./webapp/](https://github.com/mattermost/platform/tree/master/webapp).
- * [./webapp/components/](https://github.com/mattermost/platform/tree/master/webapp/components) holds all the [React](https://facebook.github.io/react/) UI components and views
- * [./webapp/actions/](https://github.com/mattermost/platform/tree/master/webapp/actions) holds all [Flux actions](https://facebook.github.io/flux/docs/actions-and-the-dispatcher.html#content) where the majority of the logic of the webapp takes place
- * [./webapp/stores/](https://github.com/mattermost/platform/tree/master/webapp/stores) holds the stores responsible for storing and providing the views with data
- * [./webapp/routes/](https://github.com/mattermost/platform/tree/master/webapp/routes) holds the definitions for all the [React-Router](https://github.com/ReactTraining/react-router) routes
- * [./webapp/i18n/](https://github.com/mattermost/platform/tree/master/webapp/i18n) holds the localization files for the client
- * [./webapp/utils/](https://github.com/mattermost/platform/tree/master/webapp/utils) holds all widely-used utilities
- * [./webapp/tests/](https://github.com/mattermost/platform/tree/master/webapp/tests) holds all the client unit tests
+For client work, you'll be working in the [webapp repository](https://github.com/mattermost/mattermost-webapp).
+ * [./components/](https://github.com/mattermost/mattermost-webapp/tree/master/components) holds all the [React](https://facebook.github.io/react/) UI components and views
+ * [./actions/](https://github.com/mattermost/mattermost-webapp/tree/master/actions) holds all [Flux actions](https://facebook.github.io/flux/docs/in-depth-overview.html#content) where the majority of the logic of the webapp takes place
+ * [./stores/](https://github.com/mattermost/mattermost-webapp/tree/master/stores) holds the stores responsible for storing and providing the views with data
+ * [./i18n/](https://github.com/mattermost/mattermost-webapp/tree/master/i18n) holds the localization files for the client
+ * [./utils/](https://github.com/mattermost/mattermost-webapp/tree/master/utils) holds all widely-used utilities
+ * [./tests/](https://github.com/mattermost/mattermost-webapp/tree/master/tests) holds all the client unit tests
+
+### Testing with GitLab Omnibus ###
+
+To test a locally compiled version of Mattermost with GitLab Omnibus, replace the following GitLab files:
+ * The compiled `platform` binary in `/opt/gitlab/embedded/bin/plattermost`
+ * The assets (templates, i18n, fonts, webapp) in `/opt/gitlab/embedded/service/mattermost`

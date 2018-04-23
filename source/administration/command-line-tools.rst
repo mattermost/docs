@@ -1,49 +1,1032 @@
 Command Line Tools
 ==================
 
-From the directory where the Mattermost platform is installed a ``platform`` command is available for configuring the system, including:
+From the directory where the Mattermost server is installed, a
+``platform`` command is available for configuring the system, including:
 
-General Administration
-----------------------
+**General Administration**
 
-- Creating teams
-- Creating users
-- Assigning roles to users
-- Reseting user passwords
-- Inviting users to teams
+-  Creating teams
+-  Creating users
+-  Assigning roles to users
+-  Resetting user passwords
+-  Inviting users to teams
 
-Advanced Administration
------------------------
+**Advanced Administration**
 
-- Permanently deleting users (use cautiously - database backup recommended before use)
-- Permanently deleting teams (use cautiously - database backup recommended before use)
+-  Permanently deleting users (use cautiously - database backup
+   recommended before use)
+-  Permanently deleting teams (use cautiously - database backup
+   recommended before use)
 
-Advanced Automation
+**Advanced Automation**
+
+-  Creating channels
+-  Inviting users to channels
+-  Removing users from channels
+-  Listing all channels for a team
+-  Restoring previously deleted channels
+-  Modifying a channel's public/private type
+-  Migrating sign-in options
+-  Resetting multi-factor authentication for a user
+-  Creating sample data
+
+.. contents::
+    :backlinks: top
+    :local:
+
+Using the CLI
+^^^^^^^^^^^^^
+
+To run the CLI commands, you must be in the directory that contains the Mattermost executable. On a default install of Mattermost, the directory is ``/opt/mattermost/bin``. The name of the executable is ``platform``.
+
+**For example, to get the Mattermost version on a default installation of Mattermost:**
+
+  .. code-block:: bash
+
+    cd /opt/mattermost/bin
+    sudo ./platform version
+
+Using the CLI on GitLab Omnibus
+-------------------------------
+
+On GitLab Omnibus, you must be in the following directory when you run CLI commands: ``/opt/gitlab/embedded/service/mattermost``. Also, you must run the commands as the user *mattermost* and specify the location of the configuration file. The executable is ``/opt/gitlab/embedded/bin/mattermost``.
+
+**For example, to get the Mattermost version on GitLab Omnibus:**
+
+  .. code-block:: bash
+
+    cd /opt/gitlab/embedded/service/mattermost
+    sudo -u mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json version
+
+.. note::
+  The example commands in the documentation are for a default installation of Mattermost. You must modify the commands so that they work on GitLab Omnibus.
+  
+Using the CLI on Docker Install
+-------------------------------
+
+On Docker install, the ``/mattermost/bin`` directory was added to ``PATH``, so you can use the CLI directly with the ``docker exec`` command. Note that the container name may be ``mattermostdocker_app_1`` if you installed Mattermost with ``docker-compose.yml``.
+
+**For example, to get the Mattermost version on a Docker install:**
+
+  .. code-block:: bash
+
+    docker exec -it <your-mattermost-container-name> platform version
+
+Mattermost 3.6 and later
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+The new CLI tool is supported in Mattermost 3.6 and later. To see available commands in the old CLI tool, see `Mattermost 3.5 and earlier`_.
+
+Notes:
+
+-  Parameters in CLI commands are order-specific.
+-  If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``-password mypassword\!``).
+-  Team name and channel name refer to the handles, not the display names. So in the url ``https://pre-release.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``
+
+.. tip::
+   If you automate user creation through the CLI tool with SMTP enabled, emails will be sent to all new users created. If you run such a load script, it is best to disable SMTP or to use test accounts so that new account creation emails aren't unintentionally sent to people at your organization who aren't expecting them.
+
+platform
+--------
+
+  Description
+    Commands for configuring and managing your Mattermost instance and users.
+
+  Options
+    .. code-block:: none
+
+      -c, --config {string}   Configuration file to use. (default "config.json")
+
+  Child Commands
+    -  `platform channel`_ - Management of channels
+    -  `platform command`_ - Management of slash commands
+    -  `platform export`_ - Compliance export commands
+    -  `platform help`_ - Generate full documentation for the CLI
+    -  `platform import`_ - Import data
+    -  `platform ldap`_ - AD/LDAP related utilities
+    -  `platform license`_ - Licensing commands
+    -  `platform reset`_ - Reset the database to initial state
+    -  `platform roles`_ - Management of user roles
+    -  `platform server`_ - Run the Mattermost server
+    -  `platform team`_ - Management of teams
+    -  `platform user`_ - Management of users
+    -  `platform version`_ - Display version information
+    -  `platform config`_ - Work with the configuration file
+    -  `platform sampledata`_ - Sample data generation
+
+platform channel
+-----------------
+
+  Description
+    Commands for channel management.
+
+  Child Commands
+    -  `platform channel add`_ - Add users to a channel
+    -  `platform channel archive`_ - Archive a channel
+    -  `platform channel create`_ - Create a channel
+    -  `platform channel delete`_ - Delete a channel
+    -  `platform channel list`_ - List all channels on specified teams
+    -  `platform channel modify`_ - Modify a channel's public/private type
+    -  `platform channel move`_ - Move a channel to another team
+    -  `platform channel remove`_ - Remove users from a channel
+    -  `platform channel restore`_ - Restore a channel from the archive
+
+.. _channel-value-note:
+
+.. note::
+    **{channel} value**
+
+    For the *add*, *archive*, *delete*, *remove* and *restore* commands, you can specfiy the *{channels}* value by {team}:{channel} using the team and channel URLs, or by using channel IDs. For example, in the following URL the *{channels}* value is *myteam:mychannel*:
+
+    ``https://example.com/myteam/channels/mychannel``
+    
+    Also, the team and channel names in the URL should be written in lowercase.
+
+platform channel add
+~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Add users to a channel. If adding multiple users, use a space-separated list.
+
+  Format
+    .. code-block:: none
+
+      platform channel add {channel} {users}
+
+  Examples
+    .. code-block:: none
+
+      sudo ./platform channel add 8soyabwthjnf9qibfztje5a36h user@example.com username
+      sudo ./platform channel add myteam:mychannel user@example.com username
+
+platform channel archive
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Archive a channel. Archived channels are not accessible to users, but remain in the database. To restore a channel from the archive, see `platform channel restore`_. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs.
+
+  Format
+    .. code-block:: none
+
+      platform channel archive {channels}
+
+  Examples
+    .. code-block:: none
+
+      sudo ./platform channel archive 8soyabwthjnf9qibfztje5a36h
+      sudo ./platform channel archive myteam:mychannel
+
+platform channel create
+~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Create a channel.
+
+  Format
+    .. code-block:: none
+
+     platform channel create
+
+  Examples
+    .. code-block:: none
+
+      sudo ./platform channel create --team myteam --name mynewchannel --display_name "My New Channel"
+      sudo ./platform channel create --team myteam --name mynewprivatechannel --display_name "My New Private Channel" --private
+
+  Options
+    .. code-block:: none
+
+          --display_name string   Channel Display Name
+          --header string         Channel header
+          --name string           Channel Name
+          --private               Create a private channel.
+          --purpose string        Channel purpose
+          --team string           Team name or ID
+
+platform channel delete
+~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Permanently delete a channel along with all related information, including posts from the database. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs.
+
+  Format
+    .. code-block:: none
+
+      platform channel delete {channels}
+
+  Examples
+    .. code-block:: none
+
+      sudo ./platform channel delete 8soyabwthjnf9qibfztje5a36h
+      sudo ./platform channel delete myteam:mychannel
+
+platform channel list
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    List all channels on a specified team. Archived channels are appended with ``(archived)``.
+
+  Format
+    .. code-block:: none
+
+      platform channel list {teams}
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform channel list myteam
+
+platform channel modify
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Modify a channel's public/private type.
+
+  Format
+    .. code-block:: none
+
+      platform channel modify
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform channel modify myteam:mychannel --private
+
+  Options
+    .. code-block:: none
+
+          --public   Change a private channel to be public.
+          --private  Change a public channel to be private.
+
+platform channel move
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Move channels to another team. The command validates that all users in the channel belong to the target team. Incoming/Outgoing webhooks are moved along with the channel. Channels can be specified by ``[team]:[channel]`` or by using channel IDs.
+
+  Format
+    .. code-block:: none
+
+      platform channel move
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform channel move newteam 8soyabwthjnf9qibfztje5a36h
+      sudo ./platform channel move newteam myteam:mychannel
+
+platform channel remove
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Remove users from a channel.
+
+  Format
+    .. code-block:: none
+
+      platform channel remove {channel} {users}
+
+  Examples
+    .. code-block:: none
+
+      sudo ./platform channel remove 8soyabwthjnf9qibfztje5a36h user@example.com username
+      sudo ./platform channel remove myteam:mychannel user@example.com username
+
+platform channel restore
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Restore a channel from the archive. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs.
+
+  Format
+    .. code-block:: none
+
+      platform channel restore {channels}
+
+  Examples
+    .. code-block:: none
+
+      sudo ./platform channel restore 8soyabwthjnf9qibfztje5a36h
+      sudo ./platform channel restore myteam:mychannel
+
+platform command
+-----------------
+
+  Description
+    Commands for slash command management.
+
+  Child Commands
+    -  `platform command move`_ - Move a slash command to a different team
+
+platform command move
+~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Move a slash command to a different team. Commands can be specified by {team}:{command-trigger-word}, or by using command IDs.
+
+  Format
+    .. code-block:: none
+
+      platform command move
+
+  Examples
+    .. code-block:: none
+
+      sudo ./platform command move newteam oldteam:command-trigger-word
+      sudo ./platform channel move newteam o8soyabwthjnf9qibfztje5a36h
+
+platform export
+------------------------
+
+  Description
+    Export data from Mattermost in a format suitable for importing into a third-party archive system.
+
+  Format
+    .. code-block:: none
+
+      platform export
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform export --format=actiance --exportFrom=1513102632
+
+  Options
+    .. code-block:: none
+
+          --format string         Output file format. Currently, only ``actiance`` is supported.
+          --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
+          --timeoutSeconds string Set how long the export should run for before timing out.
+
+platform help
+---------------
+
+  Description
+    Generate full documentation in Markdown format for the Mattermost command line tools.
+
+  Format
+    .. code-block:: none
+
+      platform help {outputdir}
+
+platform import
+----------------
+
+  Description
+    Import data into Mattermost.
+
+  Child Command
+    -  `platform import slack`_ - Import a team from Slack.
+
+platform import slack
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Import a team from a Slack export zip file.
+
+  Format
+    .. code-block:: none
+
+      platform import slack {team} {file}
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform import slack myteam slack_export.zip
+
+platform ldap
+-------------
+
+  Description
+    Commands to configure and synchronize AD/LDAP.
+
+  Child Command
+    -  `platform ldap sync`_ - Synchronize now
+
+platform ldap sync
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Synchronize all AD/LDAP users now.
+
+  Format
+    .. code-block:: none
+
+      platform ldap sync
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform ldap sync
+
+platform license
+-----------------
+
+  Description
+    Commands to manage licensing.
+
+  Child Command
+    -  `platform license upload`_ - Upload a license.
+
+platform license upload
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Upload a license. This command replaces the current license if one is already uploaded.
+
+  Format
+    .. code-block:: none
+
+      platform license upload {license}
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform license upload /path/to/license/mylicensefile.mattermost-license
+
+platform reset
+---------------
+
+  Description
+    Completely erase the database causing the loss of all data. This resets Mattermost to its initial state.
+
+  Format
+    .. code-block:: none
+
+      platform reset
+
+  Options
+    .. code-block:: none
+
+          --confirm   Confirm you really want to delete everything and a DB backup has been performed.
+
+platform roles
+---------------
+
+  Description
+    Commands to manage user roles.
+
+  Child Commands
+    -  `platform roles member`_ - Remove System Admin privileges from a user
+    -  `platform roles system_admin`_ - Make a user into a System Admin
+
+platform roles member
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Remove system admin privileges from a user.
+
+  Format
+    .. code-block:: none
+
+      platform roles member {users}
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform roles member user1
+
+platform roles system\_admin
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Promote a user to a System Admin.
+
+  Format
+    .. code-block:: none
+
+      platform roles system_admin {users}
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform roles system_admin user1
+
+platform server
+----------------
+
+  Description
+    Runs the Mattermost server.
+
+  Format
+    .. code-block:: none
+
+      platform server
+
+platform team
+----------------
+
+  Description
+    Commands to manage teams.
+
+  Child Commands
+    -  `platform team add`_ - Add users to a team
+    -  `platform team create`_ - Create a team
+    -  `platform team delete`_ - Delete a team
+    -  `platform team remove`_ - Remove users from a team
+
+.. _team-value-note:
+
+.. note::
+    **{team-name} value**
+
+    For the *add*, *delete*, and *remove* commands, you can determine the *{team-name}* value from the URLs that you use to access your instance of Mattermost. For example, in the following URL the *{team-name}* value is *myteam*:
+
+    ``https://example.com/myteam/channels/mychannel``
+    
+    Also, the team and channel names in the URL should be written in lowercase.
+
+platform team add
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Add users to a team. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
+
+  Format
+    .. code-block:: none
+
+      platform team add {team-name} {users}
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform team add myteam user@example.com username
+
+platform team create
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Create a team.
+
+  Format
+    .. code-block:: none
+
+      platform team create
+
+  Examples
+    .. code-block:: none
+
+      sudo ./platform team create --name mynewteam --display_name "My New Team"
+      sudo ./platform teams create --name private --display_name "My New Private Team" --private
+
+  Options
+    .. code-block:: none
+
+          --display_name string   Team Display Name
+          --email string          Administrator Email (anyone with this email is automatically a team admin)
+          --name string           Team Name
+          --private               Create a private team.
+
+platform team delete
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Permanently delete a team along with all related information, including posts from the database. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
+
+  Format
+    .. code-block:: none
+
+      platform team delete {team-name}
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform team delete myteam
+
+  Options
+    .. code-block:: none
+
+          --confirm   Confirm you really want to delete the team and a DB backup has been performed.
+
+platform team remove
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Remove users from a team. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
+
+  Format
+    .. code-block:: none
+
+      platform team remove {team-name} {users}
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform team remove myteam user@example.com username
+
+platform user
+---------------
+
+  Description
+    Commands to manage users.
+
+  Child Commands
+    -  `platform user activate`_ - Activate a user
+    -  `platform user create`_ - Create a user
+    -  `platform user deactivate`_ - Deactivate a user
+    -  `platform user delete`_ - Delete a user and all posts
+    -  `platform user deleteall`_ - Delete all users and all posts
+    -  `platform user invite`_ - Send a user an email invitation to a team
+    -  `platform user migrate_auth`_ - Mass migrate all user accounts to a new authentication type
+    -  `platform user password`_ - Set a user's password
+    -  `platform user resetmfa`_ - Turn off MFA for a user
+    -  `platform user search`_ - Search for users based on username, email, or user ID
+    -  `platform user verify`_ - Verify email address of a new user
+
+platform user activate
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Activate users that have been deactivated. If activating multiple users, use a space-separated list.
+
+  Format
+    .. code-block:: none
+
+      platform user activate {emails, usernames, userIds}
+
+  Examples
+    .. code-block:: none
+
+      sudo ./platform user activate user@example.com
+      sudo ./platform user activate username1 username2
+
+platform user create
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Create a user.
+
+  Format
+    .. code-block:: none
+
+      platform user create
+
+  Examples
+    .. code-block:: none
+
+      sudo ./platform user create --email user@example.com --username userexample --password Password1
+      sudo ./platform user create --firstname Joe --system_admin --email joe@example.com --username joe --password Password1
+
+  Options
+    .. code-block:: none
+
+          --email string       Email
+          --firstname string   First Name
+          --lastname string    Last Name
+          --locale string      Locale (ex: en, fr)
+          --nickname string    Nickname
+          --password string    Password
+          --system_admin       Make the user a system administrator
+          --username string    Username
+
+platform user deactivate
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Deactivate a user. Deactivated users are immediately logged out of all sessions and are unable to log back in.
+
+  Format
+    .. code-block:: none
+
+      platform user deactivate {emails, usernames, userIds}
+
+  Examples
+    .. code-block:: none
+
+      sudo ./platform user deactivate user@example.com
+      sudo ./platform user deactivate username
+
+platform user delete
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Permanently delete a user and all related information, including posts.
+
+  Format
+    .. code-block:: none
+
+      platform user delete {users}
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform user delete user@example.com
+
+  Options
+    .. code-block:: none
+
+          --confirm   Confirm you really want to delete the user and a DB backup has been performed.
+
+platform user deleteall
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Permanently delete all users and all related information, including posts.
+
+  Format
+    .. code-block:: none
+
+      platform user deleteall
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform user deleteall
+
+  Options
+    .. code-block:: none
+
+          --confirm   Confirm you really want to delete the user and a DB backup has been performed.
+
+platform user invite
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Send a user an email invite to a team. You can invite a user to multiple teams by listing the team names or team IDs.
+
+  Format
+    .. code-block:: none
+
+      platform user invite {email} {teams}
+
+  Examples
+    .. code-block:: none
+
+      sudo ./platform user invite user@example.com myteam
+      sudo ./platform user invite user@example.com myteam1 myteam2
+
+platform user migrate_auth
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Migrates all user accounts from one authentication provider to another. For example, you can upgrade your authentication provider from email to AD/LDAP, or from AD/LDAP to SAML. Output will display any accounts that are not migrated successfully.
+
+**Migrate to AD/LDAP**
+
+  Parameters
+    -  ``from_auth``: The authentication service from which to migrate user accounts. Supported options: ``email``, ``gitlab``, ``saml``.
+
+    -  ``to_auth``: The authentication service to which to migrate user accounts. Supported options: ``ldap``.
+
+    -  ``match_field``: The field that is guaranteed to be the same in both authentication services. For example, if the user emails are consistent set to email. Supported options: ``email``, ``username``.
+
+  Format
+    .. code-block:: none
+
+      platform user migrate_auth {from_auth} ldap {match_field}
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform user migrate_auth email ladp email
+  Options
+    .. code-block:: none
+
+      --force  Ignore duplicate entries on the AD/LDAP server.
+      --dryRun Run a simulation of the migration process without changing the database.
+
+**Migrate to SAML**
+
+  Parameters
+
+    -  ``from_auth``: The authentication service from which to migrate user accounts. Supported options: ``email``, ``gitlab``. ``ldap``.
+
+    -  ``to_auth``: The authentication service to which to migrate user accounts. Supported options: ``saml``.
+
+    -  ``users_file``: The path of a JSON file with the usernames and emails of all users to migrate to SAML. The username and email must be the same as in your SAML service provider. Moreover, the email must match the email address of the Mattermost user account. An example of the users file is below:
+
+    .. code-block:: json
+
+        {
+          "user1@email.com": "user.one",
+          "user2@email.com": "user.two"
+        }
+
+  Users file generation
+    Generating the ``users_file`` depends on how the system is configured and which SAML service provider is used. Below are two sample scripts for OneLogin and Okta service providers. For ADFS, you can use the AD/LDAP protocol to directly extract the users information and export it to a JSON file.
+
+    OneLogin:
+
+    .. code-block:: python
+
+        from onelogin.api.client import OneLoginClient
+        import json
+
+        client_id = input("Client id: ")
+        client_secret = input("Secret: ")
+        region = input("Region (us, eu): ")
+
+        client = OneLoginClient(client_id, client_secret, region)
+
+        mapping = {}
+        for user in client.get_users():
+            mapping[user.email] = user.username
+
+        with file("saml_users.json", "w") as fd:
+            json.dump(mapping, fd)
+
+    Okta:
+
+    .. code-block:: python
+
+        from okta import UsersClient
+        import json
+
+        base_url = input("Base url (example: https://example.okta.com): ")
+        api_token = input("API Token: ")
+
+        usersClient = UsersClient(base_url, api_token)
+
+        users = usersClient.get_paged_users(limit=25)
+
+        mapping = {}
+
+        for user in users.result:
+            mapping[user.profile.email] = user.profile.login
+
+        while not users.is_last_page():
+            users = usersClient.get_paged_users(url=users.next_url)
+            for user in users.result:
+                mapping[user.profile.email] = user.profile.login
+
+        with file("saml_users.json", "w") as fd:
+            json.dump(mapping, fd)
+
+  Format
+    .. code-block:: none
+
+      platform user migrate_auth {from_auth} saml {users_file}
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform user migrate_auth email saml users.json
+
+  Options
+    .. code-block:: none
+
+      --auto   Automatically migrate all users. Assumes the usernames and emails are identical between Mattermost and SAML services.
+      --dryRun Run a simulation of the migration process without changing the database. Useful to test if the migration results in any errors.
+
+platform user password
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Set a user's password.
+
+  Format
+    .. code-block:: none
+
+      platform user password {user} {password}
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform user password user@example.com Password1
+
+platform user resetmfa
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Turns off multi-factor authentication for a user. If MFA enforcement is enabled, the user will be forced to re-enable MFA with a new device as soon as they log in.
+
+  Format
+    .. code-block:: none
+
+      platform user resetmfa {users}
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform user resetmfa user@example.com
+
+platform user search
+~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Search for users based on username, email, or user ID.
+
+  Format
+    .. code-block:: none
+
+      platform user search {users}
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform user search user1@example.com user2@example.com
+
+platform user verify
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Verify the email address of a new user.
+
+  Format
+    .. code-block:: none
+
+      platform user verify {users}
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform user verify user1
+
+platform version
+------------------
+
+  Description
+    Displays Mattermost version information.
+
+  Format
+    .. code-block:: none
+
+      platform version
+
+platform config
+---------------
+
+  Description
+    Commands for managing the configuration file.
+
+  Child Command
+    - `platform config validate`_ - Validate the configuration file.
+
+platform config validate
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Makes sure the configuration file has the following properties:
+
+    - Is valid JSON.
+    - Has attributes of the correct type, such as *bool*, *int*, and *str*.
+    - All entries are valid. For example, checks that entries are below the maximum length.
+
+    Format
+      .. code-block:: none
+
+        platform config validate
+
+    Example
+      .. code-block:: none
+
+        sudo ./platform config validate
+
+platform sampledata
 -------------------
 
-`Available in Enterprise Edition E10 and higher`
+  Description
+    .. versionadded:: 4.7
+      Generate sample data and populate the Mattermost database.
 
-- Creating channels
-- Inviting users to channels
-- Removing users from channels
-- Listing all public channels and private groups for a team
-- Restoring previously deleted channels
-- Migrating sign-in options
-- Resetting multi-factor authentication for a user
+  Format
+    .. code-block:: none
 
-Using the CLI tool
--------------------
+      platform sampledata
 
-Typing ``platform -help`` brings up documentation for the CLI tool.
+  Example
+    .. code-block:: none
+
+      sudo ./platform sampledata --seed 10 --teams 4 --users 30
+
+  Options
+    .. code-block:: none
+
+          -u, --users int                      The number of sample users. (default 15)
+              --profile-images string          Optional. Path to folder with images to randomly pick as user profile image.
+          -t, --teams int                      The number of sample teams. (default 2)
+              --team-memberships int           The number of sample team memberships per user. (default 2)
+              --channels-per-team int          The number of sample channels per team. (default 10)
+              --channel-memberships int        The number of sample channel memberships per user in a team. (default 5)
+              --posts-per-channel int          The number of sample post per channel. (default 100)
+              --direct-channels int            The number of sample direct message channels. (default 30)
+              --group-channels int             The number of sample group message channels. (default 15)
+              --posts-per-direct-channel int   The number of sample posts per direct message channel. (default 15)
+              --posts-per-group-channel int    The number of sample post per group message channel. (default 30)
+          -s, --seed int                       Seed used for generating the random data (Different seeds generate different data). (default 1)
+          -b, --bulk string                    Optional. Path to write a JSONL bulk file instead of loading into the database.
+          -w, --workers int                    How many workers to run during the import. (default 2)
+
+
+
+Mattermost 3.5 and earlier
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Typing ``sudo ./platform -help`` brings up documentation for the CLI tool. To return the help documentation in GitLab omnibus, type
+
+    .. code-block:: none
+
+      sudo -u mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json -help
 
 Notes:
 
 - Parameters in CLI commands are order-specific.
-- If special characters (``!``, ``|``, ``(``, ``)``, ``\``, `````, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``-password mypassword/!``).
+- If special characters (``!``, ``|``, ``(``, ``)``, ``\``, `````, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``-password mypassword\!``).
 - Team name and channel name refer to the handles, not the display names. So in the url ``https://pre-release.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``
 
 
-.. tip :: If you automate user creation through the CLI tool with SMTP enabled emails will be sent to all new users created. If you run such a load script, it is best to disable SMTP or to use test accounts so that new account creation emails aren't unintentionally set to people at your organization who aren't expecting them.
+.. tip :: If you automate user creation through the CLI tool with SMTP enabled, emails will be sent to all new users created. If you run such a load script, it is best to disable SMTP or to use test accounts so that new account creation emails aren't unintentionally sent to people at your organization who aren't expecting them.
 
 CLI Documentation:
 
@@ -79,7 +1062,7 @@ CLI Documentation:
       -channel_type="type"	        The channel type used in other commands
                                         valid values are
                                           "O" - public channel
-                                          "P" - private group
+                                          "P" - private channel
 
       -role="system_admin"               The role used in other commands
                                          valid values are
@@ -135,7 +1118,7 @@ CLI Documentation:
           Example:
               platform -leave_channel -email="user@example.com" -team_name="name" -channel_name="channel_name"
 
-      -list_channels                     Lists all public channels and private groups for a given team.
+      -list_channels                     Lists all channels for a given team.
                                          It will append ' (archived)' to the channel name if archived.  It requires the
                                          -team_name flag.  Requires an enterprise license.
           Example:

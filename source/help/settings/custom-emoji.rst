@@ -13,7 +13,7 @@ To create a Custom Emoji:
 5. Click **Select**, and choose what image to use for the emoji.
 6. Click **Save**.
 
-Small, square pictures work best when selecting an image. The file can be any JPG, GIF, or PNG less than 64KB in size with dimensions up to 128x128 pixels.
+Small, square pictures work best when selecting an image. The file can be any JPG, GIF, or PNG.
 
 After saving, your emoji will show up in the list of Custom Emoji. To add your Custom Emoji to a message, simply type ":" followed by your emoji name to bring it up in the emoji autocomplete. Other users on the site will also be able to see your emoji in the autocomplete, and will be able to use it in their own messages.
 

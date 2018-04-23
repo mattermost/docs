@@ -3,14 +3,10 @@
 Production Enterprise Install on Ubuntu 14.04 LTS
 =================================================
 
-Install Mattermost Enterprise Edition in production mode on one, two or three machines, using the following steps: 
+Install Mattermost Enterprise Edition in production mode on one, two or three machines.
 
-- `Install Ubuntu Server (x64) 14.04 LTS`_
-- `Set up Database Server`_
-- `Set up Mattermost Server`_
-- `Set up NGINX Server`_
-- `Test setup and configure Mattermost Server`_
-
+.. contents::
+  :backlinks: top
 
 Install Ubuntu Server (x64) 14.04 LTS
 -------------------------------------
@@ -19,7 +15,7 @@ Install Ubuntu Server (x64) 14.04 LTS
    servers will be used for the Proxy, Mattermost (must be
    x64), and Database.
 
-   -  **Optional:** You can also use a **1 machine setup** (Proxy, Mattermost and Database on one machine) or a **2 machine setup** (Proxy and Mattermost on one machine, Database on another) depending on your data center standards. 
+   -  **Optional:** You can also use a **1 machine setup** (Proxy, Mattermost and Database on one machine) or a **2 machine setup** (Proxy and Mattermost on one machine, Database on another) depending on your data center standards.
 
 2. Make sure the system is up to date with the most recent security
    patches.
@@ -101,8 +97,8 @@ Set up Mattermost Server
 4. Download `any version of Mattermost Enterprise Edition <https://docs.mattermost.com/administration/upgrade.html#version-archive>`_ by typing:
 
    -  ``wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz``
-   -  Where ``vX.X.X`` is typically the latest Mattermost release version, which is currently ``v3.3.0``. 
-   
+   -  Where ``vX.X.X`` is typically the latest Mattermost release version, which is currently ``v3.3.0``.
+
 5. Unzip the Mattermost Server by typing:
 
    -  ``tar -xvzf mattermost-X.X.X-linux-amd64.tar.gz``
@@ -139,7 +135,7 @@ Set up Mattermost Server
    -  ``./platform``
    -  You should see a console log like ``Server is listening on :8065``
       letting you know the service is running.
-   -  Stop the server for now by typing ``ctrl-c``
+   -  Stop the server for now by pressing CTRL+C
 
 9. Setup Mattermost to use the Upstart daemon which handles supervision
    of the Mattermost process.
@@ -237,6 +233,9 @@ Set up NGINX Server
 Set up NGINX with SSL (Recommended)
 -----------------------------------
 
+.. note::
+   If Let’s Encrypt is enabled, forward port 80 through a firewall, with `Forward80To443 <https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443>`_ ``config.json`` setting set to ``true`` to complete the Let’s Encrypt certification.
+
 1. You can use a free and an open certificate security like let's
    encrypt, this is how to proceed
 
@@ -306,16 +305,16 @@ Set up NGINX with SSL (Recommended)
 Setup HTTP2
 ------------
 
-It is recomented to enable HTTP2 for enhanced performance. 
+For enhanced performance, enabling HTTP2 is recommended.
 
 1. Modify your NGINX configuration as above. Then,
 
   - Change the line ``listen 443 ssl;`` to ``listen 443 ssl http2;``
   - Change the line ``proxy_pass http://10.10.10.2:8065;`` to ``proxy_pass https://10.10.10.2:8065;``
-  
+
 2. Restart NGINX
 
-3. Setup TLS on the Mattermost server by following `these instrucions. <https://docs.mattermost.com/install/setup-tls.html>`_
+3. Setup TLS on the Mattermost server by following `these instructions. <config-tls-mattermost.html>`_
 
 Test setup and configure Mattermost Server
 ------------------------------------------

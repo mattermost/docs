@@ -1,16 +1,14 @@
 Message Attachments
--------------------
+===================
 
-Basic formatting such as bold and italic can be included in the ``text`` field of an integration’s payload by using markdown.
+A wide range of rich text formatting options, including bold, italic, headings, in-line images, and tables, can be used in integrations. For more information about formatting, see :doc:`../help/messaging/formatting-text`.
 
-For more advanced formatting, it is necessary to send an ``attachments`` array in the payload sent by an integration.
+For additional formatting options, and for compatibility with Slack non-markdown integrations, an ``attachments`` array can be sent by integrations and rendered by Mattermost.
 
----------------------------
-
-|
+You can also add interactive message buttons as part of attachments. They help make your integrations richer by completing common tasks inside Mattermost conversations, increasing user engagement and productivity. For more information, see :doc:`documentation <interactive-message-buttons>`.
 
 Attachment Options
-==================
+------------------
 
 When sending an attachment, you can use any of the following to format how you want the posted message to look.
 
@@ -24,11 +22,12 @@ When sending an attachment, you can use any of the following to format how you w
 
 .. image:: ../images/attachments-pretext.png
 
-``text``: The text to be included in the attachment. It can be formatted using  `markdown <http://docs.mattermost.com/help/messaging/formatting-text.html>`_. If it includes more than 700 characters or more than 5 line breaks, the message will be collapsed and a “Show More” link will be added to expand the message.
+``text``: The text to be included in the attachment. It can be formatted using :doc:`Markdown <../help/messaging/formatting-text>`. If it includes more than 300 characters or more than 5 line breaks, the message will be collapsed and a “Show More” link will be added to expand the message.
 
 .. image:: ../images/attachments-text.png
 
-**Author Details**
+Author Details
+~~~~~~~~~~~~~~
 
 ``author_name``: An optional name used to identify the author. It will be included in a small section at the top of the attachment.
 
@@ -38,7 +37,8 @@ When sending an attachment, you can use any of the following to format how you w
 
 .. image:: ../images/attachments-author.png
 
-**Titles**
+Titles
+~~~~~~
 
 ``title``: An optional title displayed below the author information in the attachment.
 
@@ -46,32 +46,34 @@ When sending an attachment, you can use any of the following to format how you w
 
 .. image:: ../images/attachments-titles.png
 
-**Fields**
+Fields
+~~~~~~
 
 Fields can be included as an optional array within ``attachments``, and are used to display information in a table format inside the attachment.
 
 ``title``: A title shown in the table above the ``value``.
 
-``value``: The text value of the field. It can be formatted using `markdown <http://docs.mattermost.com/help/messaging/formatting-text.html>`_.
+``value``: The text value of the field. It can be formatted using :doc:`Markdown <../help/messaging/formatting-text>`.
 
-``short``: Optionally set to “True” or “False” to indicate whether the ``value`` is short enough to be displayed beside other values.
+``short``: Optionally set to true or false (boolean) to indicate whether the ``value`` is short enough to be displayed beside other values.
 
 .. image:: ../images/attachments-fields.png
 
-**Images**
+Images
+~~~~~~
 
-``image_url``: An optional URL to an image file (GIF, JPEG, PNG, or BMP) that will be displayed inside a message attachment.
+``image_url``: An optional URL to an image file (GIF, JPEG, PNG, BMP, or SVG) that is displayed inside a message attachment.
 
-Large images will be resized to a maximum width of 400px or a maximum height of 300px, while still maintaining the original aspect ratio.
+Large images are resized to a maximum width of 400px or a maximum height of 300px, while still maintaining the original aspect ratio.
 
 .. image:: ../images/attachments-image.png
 
-``thumb_url``: An optional URL to an image file (GIF, JPEG, PNG, or BMP)  that will be displayed as a 75x75 pixel thumbnail on the right side of an attachment. We recommend using an image that is already 75x75 pixels, but larger images will be scaled down with the aspect ratio maintained.
+``thumb_url``: An optional URL to an image file (GIF, JPEG, PNG, BMP, or SVG)  that is displayed as a 75x75 pixel thumbnail on the right side of an attachment. We recommend using an image that is already 75x75 pixels, but larger images will be scaled down with the aspect ratio maintained.
 
 .. image:: ../images/attachments-thumb.png
 
 Example Message Attachment
-==========================
+--------------------------
 
 Here is an example message attachment:
 
@@ -92,7 +94,7 @@ Here is an example message attachment:
         "title_link": "http://docs.mattermost.com/developer/message-attachments.html",
         "fields": [
           {
-            "short": false,
+            "short":false,
             "title":"Long Field",
             "value":"Testing with a very long piece of text that will take up the whole width of the table. And then some more text to make it extra long."
           },
@@ -124,7 +126,7 @@ And here is how it renders in Mattermost:
 
 
 Known Issues
-=============
+------------
 
 1. ``color`` parameter does not support "good", "warning", and "danger" values
 2. Footer information fields are not yet supported (``footer``, ``footer_icon``, and timestamp ``ts``)

@@ -1,68 +1,98 @@
 # Code Contribution Guidelines
 
-Thank you for your interest in contributing to Mattermost. Here's the process:  
+Thank you for your interest in contributing to the [Mattermost open source project](https://docs.mattermost.com/developer/manifesto.html). To help with translations, [see the localization process](https://docs.mattermost.com/developer/localization.html).
+
+Come [join our "Contributors" community channel](https://pre-release.mattermost.com/core/channels/tickets) on our daily build server, where you can discuss questions with community members and the Mattermost core team. Join our ["Developers" channel](https://pre-release.mattermost.com/core/channels/developers) for technical discussions and our ["Integrations" channel](https://pre-release.mattermost.com/core/channels/integrations) for all integrations and plugins discussions.
+
+For code contributions, here's the process:  
 
 ## Choose a Ticket
 
-1. Choose a ticket from the [Help Wanted GitHub Issues](https://github.com/mattermost/platform/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20%5BHelp%20Wanted%5D) or the [Accepting Pull Requests](https://mattermost.atlassian.net/issues/?filter=10101) (APR Tickets) list
-    - Choose any ticket marked "Open", even if it's assigned, and comment to let people know you're working on it. 
-    - If you're looking for a quick ticket, pick something from the [Good First Contribution](https://mattermost.atlassian.net/issues/?filter=10206) list instead
+1. Choose a ticket from the [Help Wanted GitHub Issues](https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20%5BHelp%20Wanted%5D) list.
+    - Make sure that it doesn't have an open pull request in [the server repository](https://github.com/mattermost/mattermost-server/pulls) or in [the webapp repository](https://github.com/mattermost/mattermost-webapp/pulls) for it.
 
-2. If you have questions post in [Mattermost forum](http://forum.mattermost.org/) or join the [Contributors](https://pre-release.mattermost.com/core/channels/tickets) channel and announce the ticket you'd like to work on so it can be assigned to you. 
+2. Before starting to work on the ticket, comment to let people know you're working on it.
 
-It's okay to submit PRs to fix obvious bugs or add small improvements, but anything that significantly changes behavior or user expectations [requires an APR ticket opened by the core team](http://docs.mattermost.com/process/accepting-pull-request.html) so that the change can be tested, documented and supported. 
+3. If you have questions, post them in [Mattermost forum](http://forum.mattermost.org/) or join the [Contributors](https://pre-release.mattermost.com/core/channels/tickets) channel and announce the ticket you'd like to work on so it can be assigned to you. 
 
-The best way to discuss opening an APR ticket with the core team is by [starting a conversation in the feature idea forum](http://www.mattermost.org/feature-requests/).
+### Pull requests for minor corrections and improvements without a ticket are welcome 
 
-## Install Mattermost and set up a Fork
+It is acceptable to submit a PR for a bug or incremental improvement, with less than 20 lines of code change, without a Help Wanted ticket if the change to existing behaviour is minor. All pull requests submitted without a corresponding ticket will first be reviewed by a core team product manager. Some examples of minor corrections and improvements include:
+
+ - [Fix a formatting error in help text](https://github.com/mattermost/mattermost-server/pull/5640)
+ - [Fix success typo in Makefile](https://github.com/mattermost/mattermost-server/pull/5809)
+ - [Fix broken Cancel button in Edit Webhooks screen](https://github.com/mattermost/mattermost-server/pull/5612)
+ - [Fix Android app crashing when saving user notification settings](https://github.com/mattermost/mattermost-mobile/pull/364)
+ - [Fix recent mentions search not working](https://github.com/mattermost/mattermost-server/pull/5878)
+ 
+Larger pull requests, including those that require a change to documentation or user expectations, [require a Help Wanted issue opened by the core team](http://docs.mattermost.com/process/help-wanted.html) so that the change can be tested, documented and supported.
+
+The best way to discuss opening a Help Wanted ticket with the core team is by [starting a conversation in the feature idea forum](https://www.mattermost.org/feature-ideas/) or [opening an issue in the GitHub repository](https://github.com/mattermost/mattermost-server/issues/new).
+
+
+## Install Mattermost and set up your Forks
 
 Once you have a ticket: 
 
-1. Follow [developer setup instructions](http://docs.mattermost.com/developer/developer-setup.html) to install Mattermost
+1. Follow the [developer setup instructions](https://docs.mattermost.com/developer/dev-setup.html) to install Mattermost.
 
-2. Create a branch with `<branch name>` set to the ID of the ticket you're working on, for example `PLT-394`, using command: `git checkout -b <branch name>`
+2. Create a branch in your mattermost-server or mattermost-webapp repository with `<branch name>` set to the ID of the ticket you're working on, for example, `PLT-394`, using the command: `git checkout -b <branch name>`
 
-3. Take a look at the [developer flow](https://docs.mattermost.com/developer/developer-flow.html) to learn how to work with the Mattermost codebase
+3. Take a look at the [developer flow](https://docs.mattermost.com/developer/developer-flow.html) to learn how to work with the Mattermost codebase.
 
 ## Preparing a Pull Request 
 
 Before submitting a pull request (PR), check that:  
 
 1. You’ve signed the [Contributor License Agreement](http://www.mattermost.org/mattermost-contributor-agreement/), so you can be added to the Mattermost [Approved Contributor List](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true).  
-2. Your change has an [APR Ticket](http://docs.mattermost.com/process/accepting-pull-request.html).
-3. Your code follows the [Mattermost Style Guide](http://docs.mattermost.com/developer/style-guide.html).  
-4. Unit tests are included for new server side functionality. 
-5. Strings in user interface are included in [.../i18n/en.json](https://github.com/mattermost/platform/blob/master/i18n/en.json) and [.../webapp/i18n/en.json](https://github.com/mattermost/platform/tree/master/webapp/i18n/en.json) localization files. Files for other languages will automatically be updated through the [Mattermost Translation Server](http://translate.mattermost.com) and do not need to be included in the pull request.
+2. Your change has a [Help Wanted ticket](http://docs.mattermost.com/process/help-wanted.html)
+3. Your code follows the [Mattermost Style Guide](http://docs.mattermost.com/developer/style-guide.html) and you've run `make check-style` to check for style errors.
+4. Unit tests are included for new server-side functionality. 
+5. Strings in user interface are included in the server [i18n/en.json](https://github.com/mattermost/mattermost-server/blob/master/i18n/en.json) and in the webapp [i18n/en.json](https://github.com/mattermost/mattermost-webapp/tree/master/i18n/en.json) localization files. Files for other languages will automatically be updated through the [Mattermost Translation Server](http://translate.mattermost.com) and do not need to be included in the pull request.
 6. Change meets UX Guidelines of [Fast, Obvious, Forgiving](http://www.mattermost.org/design-principles/).
-7. If change requires user to understand a new concept or make a decision, PR for help documentation is submitted to [mattermost/docs](https://github.com/mattermost/docs).
-8. Change is thoroughly tested. If your change involves text processing, make sure to run tests in [`/tests`](https://github.com/mattermost/platform/tree/master/tests).
+7. If a change requires the user to understand a new concept or make a decision, PR for help documentation is submitted to [mattermost/docs](https://github.com/mattermost/docs).
+8. Change is thoroughly tested. If your change involves text processing, make sure to at least run markdown loadtests in [`/tests`](https://github.com/mattermost/mattermost-server/tree/master/tests) before submitting the PR. To run the loadtests:
+    - Go to **System Console** > **Developer** and set **Enable Testing Commands** to true
+    - Run `/test url test-markdown-basics.md` and follow the instructions
+    - Run `/test url test-markdown-lists.md` and follow the instructions
+    - Run `/test url test-tables.md` and follow the instructions
 9. Confirm you have [squashed your commits](http://git-scm.com/book/en/v2/Git-Tools-Rewriting-History#Squashing-Commits).
 
 ## Submitting a Pull Request 
 
 When submitting a PR, check that:  
 
-1. PR is submitted against `master`  
-2. PR title begins with the Jira Ticket ID (eg `PLT-394:`, [see examples](https://github.com/mattermost/platform/pulls?q=is%3Apr+is%3Aclosed))  
-3. PR comment describes the changes and how the feature is supposed to work  
+1. PR is submitted against `master`
+2. PR title begins with the Jira Ticket ID (eg `PLT-394:`, [see examples](https://github.com/mattermost/mattermost-server/pulls?q=is%3Apr+is%3Aclosed))
+3. PR comment describes the changes and how the feature is supposed to work
+4. Multiple dependant PRs in multiple repositories must include the dependency between them in the description.
 
 ## Managing an Open Pull Request 
 
 After submitting a PR, before it is merged:  
 
 1. Automated build process must pass  
-    - If the build fails, check the error log to narrow down the reason  
+    - If the build fails, check the error log to narrow down the reason. 
     - Sometimes one of the multiple build tests will randomly fail due to issues in Travis CI. If you see just one build failure and no clear error message, it may be a random issue. Add a comment so the reviewer for your change can re-run the build for you, or close the PR and re-submit and that typically clears the issue. 
-2. Pull requests require review by an approved reviewer and an approved seconder.
-3. Feedback from reviewers needs to be addressed 
-3. If user interface changes do not match specification in Jira ticket, PM approval is needed.
+2. PM review must pass
+    - A Product Manager will review the pull request to make sure it:
+        - Fits with our product roadmap
+        - Works as expected
+        - Meets [UX guidelines](https://docs.mattermost.com/developer/fx-guidelines.html)
+    - The Product Manager may come back with some bugs or UI improvements to fix before the pull request moves on to dev review.
+3. CSS review must pass
+    - Any pull request containing CSS changes should be reviewed by the UX and HTML/CSS dev.
+4. Dev review must pass
+    - Two core committers will review the pull request and either give feedback or approve the PR.
+    - Any comments will need to be addressed before the pull request is ready to merge.
 
-If you've included your mailing address in Step 1, you may receive a [Limited Edition Mattermost Mug](https://forum.mattermost.org/t/limited-edition-mattermost-mugs/143) as a thank you gift after your first pull request is merged. 
+If you've included your mailing address in the signed [Contributor License Agreement](https://www.mattermost.org/mattermost-contributor-agreement/), you may receive a [Limited Edition Mattermost Mug](https://forum.mattermost.org/t/limited-edition-mattermost-mugs/143) as a thank you gift after your first pull request is merged. 
 
-### Approved Reviewers
+### Core Committers
 
-_Please DO NOT @-mention reviewers if they haven't yet commented on your PR._
-_Pull requests are reviewed in sequence._
+Core committers on Mattermost repositories consist of vetted core team members, including both community contributors as well as staff from Mattermost, Inc., who are trusted to review and merge PRs.
 
-**Approved reviewers include**: coreyhulen, crspeller, hmhealey, jwilander  
-**Approved seconders include**: coreyhulen, crspeller, hmhealey, jwilander
+- **Core committers include**: ccbrown, coreyhulen, cpanato, crspeller, csduarte, enahum, grundleborg, hmhealey, jespino, jwilander, lieut-data, mkraft, saturninoabril
+
+- **Product managers include**: asaadmahmood, esethna, it33, jasonblais, lfbrock
+

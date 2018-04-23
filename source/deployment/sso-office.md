@@ -1,7 +1,7 @@
-# Office 365 Single-Sign-On (E20)
+# Office 365 Single Sign-On (E20)
 ___
 
-Follow these steps to configure Mattermost to use Office 365 as a single-sign-on (SSO) service for team creation, account creation and sign-in.
+Follow these steps to configure Mattermost to use Office 365 as a single sign-on (SSO) service for team creation, account creation and sign-in.
 
 **The system must be using SSL for use with Office365 as Microsoft only allows OAuth redirect URIs that are SSL enabled.**
 

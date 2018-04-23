@@ -1,7 +1,7 @@
-# Google Single-Sign-On (E20) 
+# Google Single Sign-On (E20) 
 ___
 
-Follow these steps to configure Mattermost to use Google as a single-sign-on (SSO) service for team creation, account creation and sign-in.
+Follow these steps to configure Mattermost to use Google as a single sign-on (SSO) service for team creation, account creation and sign-in.
 
 1 - [Log in](https://accounts.google.com/login) to your Google account.
 
