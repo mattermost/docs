@@ -73,7 +73,7 @@ in `proliferation <https://www.bis.doc.gov/index.php/documents/regulation-docs/4
 
 **Restricted Parties**: You may not export to parties listed on US government `restricted parties lists <https://www.bis.doc.gov/index.php/policy-guidance/lists-of-parties-of-concern>`_, and should be screening against these prior to export. There is a `consolidated screening list <http://apps.export.gov/csl-search#/csl-search>`_ available supported by the U.S. government at export.gov at no charge, to use for screening.
 
-**Deemed Exports**:  Release of controlled technology to foreign persons in the U.S. are "deemed" to be an export to the
+**Deemed Exports**:  Release of controlled technology to foreign persons in the U.S. is "deemed" to be an export to the
 person’s country or countries of nationality and is found in `734.2(b) <https://www.bis.doc.gov/index.php/documents/regulation-docs/412-part-734-scope-of-the-export-administration-regulations/file>`_ of the EAR, which you can read about under the Export Administration Regulations on the BIS website.
 
 **Know your Customer**: You’ll see by reviewing the BIS website that it is very important to “know your customers”, be 
