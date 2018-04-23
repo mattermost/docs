@@ -35,8 +35,11 @@ Release date: 2018-05-16
  - Removed WebRTC end user setting.
  - Investigated switching back to npm.
  - Investigated long loading time after clearing cache and refreshing the page.
+ - Added ability to convert public channels to private in the UI.
 
 ### Bug Fixes
+
+ - Fixed an issue where sign-up and team joining were broken on Mattermost server.
 
 ### Compatibility
 
