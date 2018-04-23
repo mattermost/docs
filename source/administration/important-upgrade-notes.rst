@@ -7,6 +7,9 @@ Important Upgrade Notes
 +----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                         |
 +====================================================+=================================================================================================================================================================+
+|                                                    | Old email invitation links will no longer work due to a bug fix where teams could be re-joined via the link.                                                    |
+|                                                    | Team invite links copied from the Team Invite Link dialog, password reset links, and email verification links are not affected and are still valid.             |
+|                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v4.10.0                                            | This release includes support for post messages longer than the default of 4000 characters, but may require a manual database migration. This migration is      |
 |                                                    | entirely optional, and need only be done if you want to enable longer post messages. For many installations, no migration will be required, or the old limit    |
 |                                                    | remains sufficient.                                                                                                                                             |
@@ -26,7 +29,6 @@ Important Upgrade Notes
 |                                                    | To migrate a PostgreSQL database, connect to your database and run the following:                                                                               |
 |                                                    |                                                                                                                                                                 |
 |                                                    |   ALTER TABLE Posts ALTER COLUMN Message TYPE VARCHAR(65535)                                                                                                    |
-|                                                    |                                                                                                                                                                 |
 |                                                    | Restart your Mattermost instances to take advantage of the longer post messages.                                                                                |
 +----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v4.6.2                                             | If Let's Encrypt is enabled, forward port 80 through a firewall, with `Forward80To443                                                                           |
