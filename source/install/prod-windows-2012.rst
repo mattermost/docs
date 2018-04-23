@@ -1,14 +1,16 @@
 ..  _prod-windows:
 
-Production Install on Windows Server (Unofficial) 
-=================================================
+Production Install on Windows Server
+====================================
 
-Install Mattermost in production mode on one, two or three machines.
-
-.. attention:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. `Community testing, feedback and improvements are welcome and greatly appreciated. <https://github.com/mattermost/docs/issues/360>`_
- 
-.. contents::
-  :backlinks: top
+.. attention:: This install guide has been contributed by the Mattermost community. 
+   It has not yet been tested by the core team. We have `an open ticket 
+   <https://github.com/mattermost/docs/issues/360>`__ requesting the community help test and 
+   improve this guide. 
+   
+   Once the community has confirmed we have multiple deployments on these 
+   instructions, we can update the text here. If you're installing on Windows anyway, please let 
+   us know of any issues or suggest improvements? https://github.com/mattermost/docs/issues/360
 
 Install Windows Server 2012+
 ----------------------------
@@ -152,8 +154,8 @@ Set up Mattermost Server
 
       .. image:: ../images/windows_2_platform_exe_test.png
 
-   d. Stop the server by pressing CTRL+C
-   
+   d. Stop the server for now by typing ``ctrl-c``
+
 Configure the Firewall
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -186,7 +188,6 @@ a wrapper-utility must be used.
 
        cd c:\mattermost\bin
        nssm install mattermost c:\mattermost\bin\platform.exe
-       nssm set mattermost AppDirectory c:\mattermost
 
 12. Start the service by executing the following
 
@@ -376,7 +377,7 @@ Finish Mattermost Server Setup
    
 4. Update **General** > **Configuration** settings to properly configure your reverse proxy by entering `https://mattermost.example.com` as the **Site URL**
 
-   .. attention:: Failure to properly set the Site URL properly __will__ result in unexpected behavior.
+   .. attention:: Failure to properly set the Site URL properly __will__ result in unexpected behavior.  Do not include the trailing '/' on the URL.
 
 5. Update **Notification** > **Email** settings to setup an SMTP email service. The example below assumes AmazonSES.
 

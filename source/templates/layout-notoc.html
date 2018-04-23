@@ -67,24 +67,7 @@
         <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}"/>
     {%- endif %}
   {%- endblock %}
-  {%- block extrahead %}
-    <!-- Bizible Script -->
-    <script src="//cdn.bizible.com/scripts/bizible.js" async=""></script>
-
-    {% if googleanalytics_enabled %}
-      <!-- Google Analytics -->
-      <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-        ga('create', '{{ googleanalytics_id }}', 'auto');
-        ga('send', 'pageview');
-      </script>
-      <!-- End Google Analytics -->
-    {% endif %}
-  {% endblock %}
+  {%- block extrahead %} {% endblock %}
 
   {# Keep modernizr in head - http://modernizr.com/docs/#installing #}
   <script src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
@@ -108,7 +91,7 @@
 </head>
 
 <body class="wy-body-for-nav" role="document">
-
+  
   {% block menu %} {% endblock %}
   {% block extrabody %} {% endblock %}
 

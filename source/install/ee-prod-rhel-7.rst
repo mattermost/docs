@@ -3,10 +3,14 @@
 Production Enterprise Install on RHEL 7.1+
 ==========================================
 
-Install Mattermost Enterprise Edition in production mode on one, two or three machines.
- 
-.. contents::
-  :backlinks: top
+Install Mattermost Enterprise Edition in production mode on one, two or three machines, using the following steps:
+
+- `Install Red Hat Enterprise Linux (x64) 7.1+`_
+- `Set up Database Server`_
+- `Set up Mattermost Server`_
+- `Set up NGINX Server`_
+- `Test setup and configure Mattermost Server`_
+
 
 Install Red Hat Enterprise Linux (x64) 7.1+
 -------------------------------------------
@@ -20,8 +24,7 @@ Install Red Hat Enterprise Linux (x64) 7.1+
 2. Make sure the system is up to date with the most recent security
    patches.
 
-   -  ``sudo yum update``
-   -  ``sudo yum upgrade``
+   -  ``sudo dnf upgrade``
 
 Set up Database Server
 ----------------------
@@ -41,11 +44,11 @@ section.
 
 2.  Install PostgreSQL 9.4+ (or MySQL 5.6+)
 
-    -  ``sudo yum install http://yum.postgresql.org/9.4/redhat/rhel-7-x86_64/pgdg-redhat94-9.4-3.noarch.rpm``
-    -  ``sudo yum install postgresql94-server postgresql94-contrib``
+    -  ``sudo dnf install http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/pgdg-redhat94-9.4-1.noarch.rpm``
+    -  ``sudo dnf install postgresql94-server postgresql94-contrib``
     -  ``sudo /usr/pgsql-9.4/bin/postgresql94-setup initdb``
-    -  ``sudo systemctl enable postgresql-9.4.service``
-    -  ``sudo systemctl start postgresql-9.4.service``
+    -  ``sudo systemctl enable postgresql.service``
+    -  ``sudo systemctl start postgresql.service``
 
 3.  PostgreSQL created a user account called ``postgres``. You will need
     to log into that account with:
@@ -76,42 +79,20 @@ section.
 
     -  ``exit``
 
-10. Allow Postgres to listen on all assigned IP Addresses:
+10. Alter ``/var/lib/pgsql/9.4/data/postgresql.conf`` to allow Postgres to listen
+on all assigned IP Addresses:
 
-  a. Open ``/var/lib/pgsql/9.4/data/postgresql.conf`` as root in a text editor
-  
-  b. Find the following line:
-  
-    ``#listen_addresses = 'localhost'``
-    
-  c. Uncomment the line and change ``localhost`` to ``*``:
-  
-    ``listen_addresses = '*'``
+    -  Uncomment ``listen_addresses`` and change ``localhost`` to ``\*``
 
-11. Modify the file ``pg_hba.conf`` to allow the Mattermost server to communicate with the database.
+11. Alter ``/var/lib/pgsql/9.4/data/pg_hba.conf`` to allow the Mattermost Server to talk to the
+    Postgres database:
 
-  **If the Mattermost server and the database are on the same machine**:
+    -  Add the following line to the ``IPv4 local connections``:
+    -  ``host all all 10.10.10.2/32 md5``
 
-    a. Open ``/var/lib/pgsql/9.4/data/pg_hba.conf`` as root in a text editor.
-
-    b. Find the following line:
-
-      ``local   all             all                        peer``
-
-    c. Change ``peer`` to ``trust``:
-
-      ``local   all             all                        trust``
-
-  **If the Mattermost server and the database are on different machines**:
-
-    a. Open ``/var/lib/pgsql/9.4/data/pg_hba.conf`` as root in a text editor.
-
-    b. Add the following line to the end of the file, where *{mattermost-server-IP}* is the IP address of the machine that contains the Mattermost server.
-
-      ``host all all {mattermost-server-IP}/32 md5``
 12. Reload Postgres database:
 
-    -  ``sudo systemctl reload postgresql-9.4.service``
+    -  ``sudo systemctl reload postgresql.service``
 
 13. Attempt to connect with the new created user to verify everything
     looks good:
@@ -130,7 +111,7 @@ Set up Mattermost Server
 2. Download `any version of Mattermost Enterprise Edition <https://docs.mattermost.com/administration/upgrade.html#version-archive>`_ by typing:
 
    -  ``wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz``
-   -  Where ``vX.X.X`` is typically the latest Mattermost release version, which you can find out from the `download page <https://about.mattermost.com/download/>`_.
+   -  Where ``vX.X.X`` is typically the latest Mattermost release version, which is currently ``v3.3.0``.
 
 3. Install Mattermost under ``/opt``
 
@@ -179,18 +160,18 @@ Set up Mattermost Server
    -  ``./platform``
    -  You should see a console log like ``Server is listening on :8065``
       letting you know the service is running.
-   -  Stop the server for now by pressing CTRL+C
+   -  Stop the server for now by typing ``Ctrl-C``
 
 8. Set up Mattermost to use the systemd init daemon which handles
    supervision of the Mattermost process. 
 
-   * In case you use PostgreSQL, create and edit ``/etc/systemd/system/mattermost.service``
+   * Create and edit ``/etc/systemd/system/mattermost.service``
 
       ::
 
           [Unit]
           Description=Mattermost server
-          After=network.target postgresql-9.4.service
+          After=network.target postgresql.service
 
           [Service]
           User=mattermost
@@ -203,26 +184,6 @@ Set up Mattermost Server
 
           [Install]
           WantedBy=multi-user.target
-
-   * In case you use MySQL, create and edit ``/etc/systemd/system/mattermost.service``
-
-      ::
-
-          [Unit]
-          Description=Mattermost server
-          After=network.target mysqld.service
-
-          [Service]
-          User=mattermost
-          Group=mattermost
-          WorkingDirectory=/opt/mattermost
-          ExecStart=/opt/mattermost/bin/platform
-          Restart=on-failures
-          PIDFile=/var/spool/mattermost/pid/master.pid
-          LimitNOFILE=49152
-
-          [Install]
-          WantedBy=multi-user.target      
 
    - Make sure the service is executable with ``sudo chmod 664 /etc/systemd/system/mattermost.service``
    * Reload the services with ``sudo systemctl daemon-reload``
@@ -293,7 +254,7 @@ Set up NGINX Server
           gpgcheck=0
           enabled=1
 
-   -  ``sudo yum install nginx.x86_64``
+   -  ``sudo dnf install nginx.x86_64``
    -  ``sudo service nginx start``
    -  ``sudo chkconfig nginx on``
 
@@ -345,17 +306,14 @@ Set up NGINX Server
 Set up NGINX with SSL (Recommended)
 -----------------------------------
 
-.. note::
-   If Let’s Encrypt is enabled, forward port 80 through a firewall, with `Forward80To443 <https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443>`_ ``config.json`` setting set to ``true`` to complete the Let’s Encrypt certification.
-
 1. You can use a free and an open certificate security like `Let's
    Encrypt <https://letsencrypt.org/>`_, this is how to proceed
 
--  ``sudo yum install git``
+-  ``sudo dnf install git``
 -  ``git clone https://github.com/letsencrypt/letsencrypt``
 -  ``cd letsencrypt``
 
-2. Be sure that the port 80 is not in use by stopping NGINX
+2. Be sure that the port 80 is not use by stopping NGINX
 
 -  ``sudo service nginx stop``
 -  ``netstat -na | grep ':80.*LISTEN'``

@@ -3,7 +3,7 @@
 SMTP Email Setup
 ================
 
-To run in production, Mattermost requires SMTP email to be enabled for email notifications and password reset for systems using email-based authentication.
+To run in production, Mattermost requires SMTP email to be enabled for email notifications and password reset for systems usign email-based authentication. 
 
 How to Enable Email
 ~~~~~~~~~~~~~~~~~~~
@@ -100,7 +100,7 @@ Gmail
 -  Set **SMTP Password** to **your\_password**
 -  Set **SMTP Server** to **smtp.gmail.com**
 -  Set **SMTP Port** to **587**
--  Set **Connection Security** to **STARTTLS**
+-  Set **Connection Security** to **TLS**
 
 Hotmail
 ^^^^^^^
@@ -114,14 +114,14 @@ Hotmail
 Troubleshooting SMTP
 ~~~~~~~~~~~~~~~~~~~~
 
-TLS/STARTTLS Requirements 
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Tip 1
+^^^^^
 
 If you fill in **SMTP Username** and **SMTP Password** then you must set
 **Connection Security** to **TLS** or to **STARTTLS**
 
-Troubleshooting using Logs
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Tip 2
+^^^^^
 
 If you have issues with your SMTP install, from your Mattermost team
 site go to the main menu and open **System Console -> Logs** to look for
@@ -138,14 +138,14 @@ For example, if **System Console -> Logs** has an error code reading:
 Search for ``554 5.7.1 error`` and
 ``Client host rejected: Access denied``.
 
-Checking your SMTP server is reachable 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Tip 3
+^^^^^
 
 -  Attempt to telnet to the email service to make sure the server is
    reachable.
 -  You must run the following commands from the same machine or virtual
    instance where ``mattermost/bin/platform`` is located. So if you're
-   running Mattermost from Docker you need to
+   running Mattermost from docker you need to
    ``docker exec -ti mattermost-dev /bin/bash``
 -  Telnet to the email server with ``telnet mail.example.com 25``. If
    the command works you should see something like
@@ -165,7 +165,3 @@ Checking your SMTP server is reachable
        250-STARTTLS
        250-PIPELINING
        250 8BITMIME
-
-.. note::
-  For additional troubleshooting tips, see
-  the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`_. To submit an improvement or correction, click  **Edit** at the top of this page.
