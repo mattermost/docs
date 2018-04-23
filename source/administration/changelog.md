@@ -6,7 +6,12 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v4.9
 
-Release date: 2018-04-16
+ - **4.9.1, released 2018-04-?**
+   - Fixed an issue with race condition on loading roles in the admin console.
+   - Fixed an issue where HA and Roles backed settings showed a false error.
+   - Reverted "MM-9770: rewrite getParentsPosts to improve performance".
+ - **v4.9.0, released 2018-04-16**
+   - Original 4.9.0 release
 
 ### Highlights
 
