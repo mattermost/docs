@@ -25,8 +25,8 @@ This concern is why we've decided to prefer the population of sensitive informat
 via [initContainers][].
 
 Related issues:
-- [#90](https://gitlab.com/charts/helm.gitlab.io/issues/90)
-- [#114](https://gitlab.com/charts/helm.gitlab.io/issues/114)
+- [#90](https://gitlab.com/charts/gitlab/issues/90)
+- [#114](https://gitlab.com/charts/gitlab/issues/114)
 
 [dind]: https://hub.docker.com/r/gitlab/dind/
 [devops-post]: https://about.gitlab.com/2017/10/11/from-dev-to-devops/
@@ -41,7 +41,7 @@ properties facilitated by the global chart.
 This decision simplifies both the use and maintenance of the repository as a whole.
 
 Related issue:
-- [#352](https://gitlab.com/charts/helm.gitlab.io/issues/352)
+- [#352](https://gitlab.com/charts/gitlab/issues/352)
 
 ## Template partials for `gitlab/*` should be global whenever possible
 
@@ -58,7 +58,7 @@ entry will suffice.
 compiled together][helm-dev-doc], and thus we can treat them like the global behavior they are.
 
 Related issue:
-- [#352](https://gitlab.com/charts/helm.gitlab.io/issues/352)
+- [#352](https://gitlab.com/charts/gitlab/issues/352)
 
 [helm-dev-doc]: https://docs.helm.sh/chart_template_guide/#declaring-and-using-templates-with-define-and-template)
 

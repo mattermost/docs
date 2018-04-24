@@ -59,13 +59,13 @@ Customers who would like to get started quickly and easily should begin with thi
 The gitlab chart is made of multiple subcharts. These charts provide individual components of the GitLab software.
 
 Subhcarts included are :
-* [sidekiq](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/gitlab/charts/sidekiq)
-* [unicorn](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/gitlab/charts/unicorn)
-* [gitlab-shell](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/gitlab/charts/gitlab-shell)
-* [gitaly](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/gitlab/charts/gitaly)
-* [minio](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/minio)
-* [redis](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/redis)
-* [nginx](https://gitlab.com/charts/helm.gitlab.io/tree/master/charts/registry)
+* [sidekiq](https://gitlab.com/charts/gitlab/tree/master/charts/gitlab/charts/sidekiq)
+* [unicorn](https://gitlab.com/charts/gitlab/tree/master/charts/gitlab/charts/unicorn)
+* [gitlab-shell](https://gitlab.com/charts/gitlab/tree/master/charts/gitlab/charts/gitlab-shell)
+* [gitaly](https://gitlab.com/charts/gitlab/tree/master/charts/gitlab/charts/gitaly)
+* [minio](https://gitlab.com/charts/gitlab/tree/master/charts/minio)
+* [redis](https://gitlab.com/charts/gitlab/tree/master/charts/redis)
+* [nginx](https://gitlab.com/charts/gitlab/tree/master/charts/registry)
 
 ## Design Decisions
 

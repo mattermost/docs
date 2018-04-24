@@ -1,6 +1,6 @@
 # Deployment Guide
 
-To deploy, first clone the repository locally: `git clone git@gitlab.com:charts/helm.gitlab.io.git`
+To deploy, first clone the repository locally: `git clone git@gitlab.com:charts/gitlab.git`
 
 Before running `helm install`, you need to make some decisions about how you will run GitLab.
 Options can be specified using helm's `--set option.name=value` command line option.

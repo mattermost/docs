@@ -28,8 +28,8 @@ valid options are: added, fixed, changed, deprecated, removed, security, other. 
 Community contributors and core team members are encouraged to add their name to
 the `author` field. GitLab team members **should not**.
 
-[changelog.md]: https://gitlab.com/charts/helm.gitlab.io/blob/master/CHANGELOG.md
-[unreleased]: https://gitlab.com/charts/helm.gitlab.io/tree/master/changelogs/
+[changelog.md]: https://gitlab.com/charts/gitlab/blob/master/CHANGELOG.md
+[unreleased]: https://gitlab.com/charts/gitlab/tree/master/changelogs/
 [YAML]: https://en.wikipedia.org/wiki/YAML
 
 ## What warrants a changelog entry?
