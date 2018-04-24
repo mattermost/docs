@@ -7,7 +7,6 @@ The below diagram illustrates an on-premises deployment of Mattermost with optio
 [View Mattermost Network Diagram](http://docs.mattermost.com/_images/network.PNG)
 
 Notes:
-- Mattermost Enterprise Edition server in High Availability configuration available Q3, 2016.
 - GitLab Mattermost deployment is [documented separately](http://doc.gitlab.com/omnibus/gitlab-mattermost/) and not included below.
 
 ## Requirements and Installation Guides
@@ -118,7 +117,7 @@ Sends notifications via SMTP email and mobile push notifications via Mattermost 
 
 Connects to and manages supported databases.
 
-### High Availability (Enterprise Edition, available 2016)
+### High Availability (Enterprise Edition)
 
 Large organizations needing sophisticated, high scale, high availability configurations can contact the [Enterprise team](https://about.mattermost.com/contact/) for guidance on configuring and sizing Mattermost Enterprise Edition to support their specific needs. Multiple Mattermost servers may be configured with cache and event synchronization to horizontally scale the Mattermost service.
 
@@ -138,7 +137,7 @@ For enterprise deployments the Mattermost database can be configured with a mast
 
 You can configure one or more search replicas to isolate search queries. A search replica is similar to a read replica, but is used only for handling search queries.
 
-#### Global Deployments (Enterprise Edition, available 2016)
+#### Global Deployments (Enterprise Edition)
 
 Enterprise customers with deployments spanning many time zones can contact the [Enterprise Team](https://about.mattermost.com/contact/) for advanced configurations to minimize latency by:    
 
