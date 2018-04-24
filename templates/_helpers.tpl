@@ -79,3 +79,13 @@ ActionMailer::Base.smtp_settings = {
 }
 {{- end -}}
 {{- end -}}
+
+{{/* Default from address for emails based on domain */}}
+{{- define "gitlab.email.from" -}}
+{{ .Values.global.email.from | default (printf "gitlab@%s" .Values.global.hosts.domain ) | quote -}}
+{{- end -}}
+
+{{/* Default replyto address for emails based on domain */}}
+{{- define "gitlab.email.reply_to" -}}
+{{ .Values.global.email.reply_to | default (printf "noreply@%s" .Values.global.hosts.domain ) | quote -}}
+{{- end -}}

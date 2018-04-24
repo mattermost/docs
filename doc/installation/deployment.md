@@ -105,8 +105,8 @@ By default we use an single, non-replicated Redis instance. If desired, a highly
 ### Outgoing email
 
 By default outgoing email is disabled. To enable it, provide details for your SMTP server
-using the `global.smtp` settings. You can find details for these settings in the
-[command line options](command-line-options.md#smtp-configuration).
+using the `global.smtp` and `global.email` settings. You can find details for these settings in the
+[command line options](command-line-options.md#email-configuration).
 
 If your SMTP server requires authentication make sure to read the section on providing
 your password in the [secrets documentation](secrets.md#smtp-password).

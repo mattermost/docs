@@ -12,6 +12,7 @@ global:
     enabled: true
   psql:
     password: {}
+  # Outgoing email server settings
   smtp:
     enabled: false
     address: smtp.mailgun.org
@@ -24,6 +25,12 @@ global:
     authentication: "plain"
     starttls_auto: false
     openssl_verify_mode: "peer"
+  # Email persona used in email sent by GitLab
+  email:
+    from: ''
+    display_name: GitLab
+    reply_to: ''
+    subject_suffix: ''
 
 certmanager:
   # Install cert-manager chart. Set to false if you already have cert-manager
