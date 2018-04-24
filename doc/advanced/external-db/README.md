@@ -4,7 +4,7 @@ This document assumes you already have your own PostgreSQL database.
 
 If you do not have one, consider a cloud provided solution like [AWS Aurora](https://aws.amazon.com/rds/aurora/) or [GCP Cloud SQL](https://cloud.google.com/sql/). For on-premise or deployment to VM, consider our [Omnibus GitLab package](./external-omnibus-psql.md).
 
-## Exteral database requirements
+## External database requirements
 
 To use an external database with the `gitlab` chart, there are a few prerequisites.
 
