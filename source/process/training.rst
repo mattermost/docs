@@ -124,10 +124,10 @@ Procedure:
 Triage Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost staff-only** - (Triage team - 1-3 hours/week) Monday, Wednesday, Friday 09:00 (`San Francisco Time <http://everytimezone.com/>`_)
+**Mattermost staff-only** - (Triage team - 1-3 hours/week) Tuesday, Thursday, 09:30 (`San Francisco Time <http://everytimezone.com/>`_)
 
 - Goal: To provide consistent review, prioritization and ownership assignment of all tickets
-- Attendees: (required) dev and PM from Mattermost staff, typically leads (optional) other Mattermost staff welcome
+- Attendees: (required) PM from Mattermost staff, Dev representative from each feature team, typically leads (optional) and other Mattermost staff welcome
 
 Note:
 
@@ -147,11 +147,9 @@ Note:
 
 Procedure:
 
-1. (Chair): Just prior to meeting, post **Hangout** link in `Standup private channel <https://pre-release.mattermost.com/core/channels/stand-up>`_ (Mattermost staff only)
+1. (Attendees): Join the meeting (via Zoom link in Calendar invitation)
 
-2. (Attendees): Join the link
-
-3. (Attendees): Review `query for tickets needing triage <https://mattermost.atlassian.net/browse/PLT-1203?filter=10105>`_ and assign owner and fix version
+3. (Attendees): Review `query for tickets needing triage <https://mattermost.atlassian.net/browse/MM-8015?filter=15011>`_ and assign team, sprint and fix version
 
 Leads Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
