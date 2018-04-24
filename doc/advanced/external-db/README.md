@@ -1,34 +1,28 @@
 # External PostgreSQL database
 
-This document assumes that you have an external PostgreSQL that is up and running.
+This document assumes you already have your own PostgreSQL database. 
 
-If you need to spawn a postgresql instance for non-production purposes follow setting up [external omnibus postgresql instance](./external-omnibus-psql.md)
+If you do not have one, consider a cloud provided solution like [AWS Aurora](https://aws.amazon.com/rds/aurora/) or [GCP Cloud SQL](https://cloud.google.com/sql/). For on-premise or deployment to VM, consider our [Omnibus GitLab package](./external-omnibus-psql.md).
 
-## Configure the Chart
+## Exteral database requirements
 
-The `migrations`, `unicorn`, and `sidekiq` charts require a PostgreSQL database to function. When not using the GitLab chart's provided service, we'll need to provide the configuration information to all three. Each chart can be configured individually on a per-chart basis, or you can make use of global values to configure all charts from a single point.
+To use an external database with the `gitlab` chart, there are a few prerequisites.
 
-The PostgreSQL password must be provided to the deployment via a `Secret`. The [Secrets documentation][secrets] shows how to create a secret with random value. You can either use the random value, or enter your own. If you use your own when configuring the PostgreSQL database, ensure that this secret is created with that value. If you chose to use the random value, be sure to provided the decoded value to your PostgreSQL database.
+1. GitLab requires PostgreSQL 9.6.
+1. The `pg_trgm` extension must be available
+1. A user named `gitlab` with the password created as a [Kubernetes Secret](../../installation/secrets.md#postgres-password)
+1. A database named `gitlabhq_production`, which the `gitlab` user has access to
 
-### Specify per-chart value
+## Configuring `gitlab` to use an external database
 
-To specify it per chart you will need to set `gitlab.omnibus.enabled=false`, `chartName.psql.host`, `chartname.psql.password.secret` and `chartname.psql.password.key` values
-via helm's `--set` flag while [deploying][deployment]
+You need to set the following parameters: 
+* `gitlab.omnibus.enabled`: Set to `false` to disable the embedded database
+* `global.psql.host`: Set to the hostname of the external database
+* `global.psql.port`: The port the database is available on, defaults to `5432`
+* `global.psql.password.secret`: The name of the secret which contains the database password for the `gitlab` user
+* `global.psql.password.key`: The key within the secret, which contains the password
 
-example:
-
-```
-helm install
-  --set gitlab.omnibus.enabled=false unicorn.psql.host=omnibus-vm
-  --set unicorn.psql.password.secret=psql-secret
-  --set unicorn.psql.password.key=<key>
-```
-
-You can also set the port number using `chartName.psql.port` setting. Default port is assumed to be `5432`
-
-### Specify a global value
-
-You need to set `gitlab.omnibus.enabled=false`, `global.psql.host`, `global.psql.password.secret` and `global.psql.password.key`values via helm's `--set` flag while deploying
+For example, pass these values via helm's `--set` flag while deploying:
 
 ```
 helm install
@@ -37,11 +31,3 @@ helm install
   --set global.psql.password.secret=psql-secret
   --set global.psql.password.key=<key>
 ```
-
-You can also set the port number useing `global.psql.port` setting. Default is assumed to be `5432`
-
-
-> For a description for these configurations [lookup](../installation/command-line-options.md)
-
-[secrets]: ../../installation/secrets.md#postgres-password
-[deployment]: ../../installation/deployment.md
