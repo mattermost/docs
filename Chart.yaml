@@ -6,7 +6,7 @@ keywords:
 - gitlab
 home: https://about.gitlab.com/
 sources:
-- https://gitlab.com/charts/helm.gitlab.io
+- https://gitlab.com/charts/gitlab
 maintainers:
 - name: GitLab Inc.
   email: support@gitlab.com

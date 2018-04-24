@@ -200,7 +200,7 @@ The minimum volume size to request for the data persistence. Defaults to 10Gi
 Sets the path within the volume to mount, rather than the volume root. The root is used if the subPath is empty. Defaults to empty.
 
 [og-docker]: https://gitlab.com/gitlab-org/ominbus-gitlab/container_registry
-[helm-gitlab]: https://gitlab.com/charts/helm.gitlab.io
+[helm-gitlab]: https://gitlab.com/charts/gitlab
 [nginx]: ../../nginx
 [registry]: ../../registry
 [redis]: ../../redis

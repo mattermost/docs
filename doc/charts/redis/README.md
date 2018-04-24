@@ -194,4 +194,4 @@ It is also possible to entirely disable snapshotting by providing an empty array
 [persistence]: https://redis.io/topics/persistence
 [access-modes]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes
 
-[issue-112]:https://gitlab.com/charts/helm.gitlab.io/issues/112
+[issue-112]:https://gitlab.com/charts/gitlab/issues/112

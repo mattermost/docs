@@ -1,5 +1,5 @@
 > This chart is beta. We are building a set of Cloud Native
-charts at [helm.gitlab.io](https://gitlab.com/charts/helm.gitlab.io). The goal of that work
+charts at [helm.gitlab.io](https://gitlab.com/charts/gitlab). The goal of that work
 is to fully replace this chart.
 
 # GitLab Runner Helm Chart
