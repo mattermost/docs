@@ -103,31 +103,18 @@ For confidentiality of customers, internal process meetings are limited to Matte
 Sprint Planning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost staff only** - (Developer - 5-10 minutes/week) Tuesdays between 10:00 and 11:00 (`San Francisco Time <http://everytimezone.com/>`_)
+**Mattermost staff only** - Each team is responsible for its own sprint planning process. Sprints are currently one week long, and start on Tuesdays. Before the next sprint begins, teams share a quick recap of their past and upcoming sprint with leads.  
 
-- Goal: Review and discuss tickets selected by developer for next sprint
-- Attendees: (required) Each developer in sequence, plus spint planners (one dev, one PM), (optional) Mattermost staff colleagues welcome
-
-Note:
-
-- This meeting uses a special `Mattermost staff-only BACKLOG query <https://mattermost.atlassian.net/secure/RapidBoard.jspa?rapidView=1&view=planning.nodetail&quickFilter=7>`_ showing tickets by sprint, with tabs across the top for each developer
-- Prior to meeting, developers drag and drop tickets from their backlog to next sprint based on team priorities
-- Developers are welcome at any time to discuss reassigning tickets with colleagues using common sense (if both are okay with the change, add "triage" tag to fix version with comment and triage team will review to make the change)
-- During the meeting, developer's next sprint is reviewed, discussed, possibly adjusted and locked
-
-Procedure:
-
-1. (Chair): Just prior to meeting, post **Hangout** link in `Standup private channel <https://pre-release.mattermost.com/private-core/channels/stand-up>`_
-2. (Developer): Replies in Standup private channel when sprint is ready for review
-3. (Chair): Will (at)mention next developer to join **Hangout** to review tickets. Developer joins, tickets are discussed and finalized for next sprint. Developer leaves **Hangout** and next developer rotates in.
+- Goal: Share demos, reflect on previous sprint, and lock on tickets for next sprint
+- Attendees: Development team members (developers and product manager), plus leads for Tuesday recap
 
 Triage Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost staff-only** - (Triage team - 1-3 hours/week) Monday, Wednesday, Friday 09:00 (`San Francisco Time <http://everytimezone.com/>`_)
+**Mattermost staff-only** - (Triage team - 1-3 hours/week) Tuesdays and Thursdays at 09:30 (`San Francisco Time <http://everytimezone.com/>`_), or daily when a release is upcoming.
 
 - Goal: To provide consistent review, prioritization and ownership assignment of all tickets
-- Attendees: (required) dev and PM from Mattermost staff, typically leads (optional) other Mattermost staff welcome
+- Attendees: One dev from each team, one PM, QA team, and optionally leads
 
 Note:
 
@@ -147,11 +134,9 @@ Note:
 
 Procedure:
 
-1. (Chair): Just prior to meeting, post **Hangout** link in `Standup private channel <https://pre-release.mattermost.com/core/channels/stand-up>`_ (Mattermost staff only)
+1. (Attendees): Join Zoom meeting link at scheduled time.
 
-2. (Attendees): Join the link
-
-3. (Attendees): Review `query for tickets needing triage <https://mattermost.atlassian.net/browse/PLT-1203?filter=10105>`_ and assign owner and fix version
+3. (Attendees): Review `query for tickets needing triage <https://mattermost.atlassian.net/issues/?filter=15011>`_ and assign to a development team and fix version
 
 Leads Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
