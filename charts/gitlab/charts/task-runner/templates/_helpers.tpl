@@ -2,7 +2,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "tasks-runner.name" -}}
+{{- define "task-runner.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
@@ -10,7 +10,7 @@ Expand the name of the chart.
 Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 */}}
-{{- define "tasks-runner.fullname" -}}
+{{- define "task-runner.fullname" -}}
 {{- $name := default .Chart.Name .Values.nameOverride -}}
 {{- printf "%s-%s" .Release.Name $name | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
@@ -21,7 +21,7 @@ Return the db hostname
 If the postgresql host is provided, it will use that, otherwise it will fallback
 to the service name
 */}}
-{{- define "tasks-runner.psql.host" -}}
+{{- define "task-runner.psql.host" -}}
 {{- if or .Values.psql.host .Values.global.psql.host -}}
 {{- coalesce .Values.psql.host .Values.global.psql.host | quote -}}
 {{- else -}}
@@ -33,7 +33,7 @@ to the service name
 {{/*
 Return the db database name
 */}}
-{{- define "tasks-runner.psql.database" -}}
+{{- define "task-runner.psql.database" -}}
 {{- coalesce .Values.psql.database .Values.global.psql.database "gitlabhq_production" | quote -}}
 {{- end -}}
 
@@ -42,7 +42,7 @@ Return the db username
 If the postgresql username is provided, it will use that, otherwise it will fallback
 to "gitlab" default
 */}}
-{{- define "tasks-runner.psql.username" -}}
+{{- define "task-runner.psql.username" -}}
 {{- coalesce .Values.psql.username .Values.global.psql.username "gitlab" -}}
 {{- end -}}
 
@@ -51,7 +51,7 @@ Return the db port
 If the postgresql port is provided, it will use that, otherwise it will fallback
 to 5432 default
 */}}
-{{- define "tasks-runner.psql.port" -}}
+{{- define "task-runner.psql.port" -}}
 {{- coalesce .Values.psql.port .Values.global.psql.port 5432 -}}
 {{- end -}}
 
@@ -60,7 +60,7 @@ Return the redis hostname
 If the redis host is provided, it will use that, otherwise it will fallback
 to the service name
 */}}
-{{- define "tasks-runner.redis.host" -}}
+{{- define "task-runner.redis.host" -}}
 {{- if .Values.redis.host -}}
 {{- .Values.redis.host -}}
 {{- else -}}
@@ -74,7 +74,7 @@ Return the gitaly hostname
 If the gitaly host is provided, it will use that, otherwise it will fallback
 to the service name
 */}}
-{{- define "tasks-runner.gitaly.host" -}}
+{{- define "task-runner.gitaly.host" -}}
 {{- if .Values.gitaly.host -}}
 {{- .Values.gitaly.host -}}
 {{- else -}}
@@ -88,7 +88,7 @@ Return the registry api hostname
 If the registry api host is provided, it will use that, otherwise it will fallback
 to the service name
 */}}
-{{- define "tasks-runner.registry.api.host" -}}
+{{- define "task-runner.registry.api.host" -}}
 {{-   if .Values.registry.api.host -}}
 {{-     .Values.registry.api.host -}}
 {{-   else -}}
@@ -102,7 +102,7 @@ Return the registry external hostname
 If the chart registry host is provided, it will use that, otherwise it will fallback
 to the global registry host name.
 */}}
-{{- define "tasks-runner.registry.host" -}}
+{{- define "task-runner.registry.host" -}}
 {{-   if .Values.registry.host -}}
 {{-     .Values.registry.host -}}
 {{-   else -}}
@@ -177,7 +177,7 @@ otherwise the hostname will be assembed using `minio` as the prefix, and the `as
 {{/*
 Return the minio service endpoint
 */}}
-{{- define "tasks-runner.minio.endpoint" -}}
+{{- define "task-runner.minio.endpoint" -}}
 {{- $name := default "minio-svc" .Values.minio.serviceName -}}
 {{- $port := default 9000 .Values.minio.port | int -}}
 {{- printf "http://%s-%s:%d" .Release.Name $name $port -}}

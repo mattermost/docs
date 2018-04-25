@@ -13,16 +13,16 @@ data:
     production:
       adapter: postgresql
       encoding: unicode
-      database: {{ template "tasks-runner.psql.database" . }}
+      database: {{ template "task-runner.psql.database" . }}
       pool: 10
-      username: {{ template "tasks-runner.psql.username" . }}
+      username: {{ template "task-runner.psql.username" . }}
       password: <%= File.read("/etc/gitlab/postgres/psql-password") %>
-      host: {{ template "tasks-runner.psql.host" . }}
-      port: {{ template "tasks-runner.psql.port" . }}
+      host: {{ template "task-runner.psql.host" . }}
+      port: {{ template "task-runner.psql.port" . }}
   resque.yml.erb: |
     production:
       # Redis (single instance)
-      url: redis://:<%= File.read("/etc/gitlab/redis/password") %>@{{ template "tasks-runner.redis.host" . }}:{{ default 6379 .Values.redis.port }}
+      url: redis://:<%= File.read("/etc/gitlab/redis/password") %>@{{ template "task-runner.redis.host" . }}:{{ default 6379 .Values.redis.port }}
   gitlab.yml.erb: |
     production: &base
       gitlab:
@@ -63,7 +63,7 @@ data:
             aws_access_key_id: "<%= File.read('/etc/gitlab/minio/accesskey') %>"
             aws_secret_access_key: "<%= File.read('/etc/gitlab/minio/secretkey') %>"
             host: {{ template "minioHost" . }}
-            endpoint: {{ template "tasks-runner.minio.endpoint" . }}
+            endpoint: {{ template "task-runner.minio.endpoint" . }}
             path_style: true
           {{- else if .Values.lfs.connection}}
           connection:
@@ -78,7 +78,7 @@ data:
         storages: # You must have at least a `default` storage path.
           default:
             path: /var/opt/gitlab/repo
-            gitaly_address: tcp://{{ template "tasks-runner.gitaly.host" . }}:{{ default 8075 .Values.gitaly.port }}
+            gitaly_address: tcp://{{ template "task-runner.gitaly.host" . }}:{{ default 8075 .Values.gitaly.port }}
       backup:
         path: "tmp/backups"   # Relative paths are relative to Rails.root (default: tmp/backups/)
       gitlab_shell:
@@ -101,11 +101,11 @@ data:
       ## Registry Integration
       registry:
         enabled: true
-        host: {{ template "tasks-runner.registry.host" . }}
+        host: {{ template "task-runner.registry.host" . }}
         {{- if .Values.registry.port }}
         port: {{ .Values.registry.port }}
         {{- end }}
-        api_url: {{ default "http" .Values.registry.api.protocol }}://{{ template "tasks-runner.registry.api.host" . }}:{{ default 5000 .Values.registry.api.port }}
+        api_url: {{ default "http" .Values.registry.api.protocol }}://{{ template "task-runner.registry.api.host" . }}:{{ default 5000 .Values.registry.api.port }}
         key: /etc/gitlab/registry/gitlab-registry.key
         issuer: {{ .Values.registry.tokenIssuer }}
   configure: |
