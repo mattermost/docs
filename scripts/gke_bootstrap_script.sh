@@ -53,7 +53,7 @@ function bootstrap(){
 
   # Create roles for RBAC Helm
   if $RBAC_ENABLED; then
-    status_code=$(curl -L -w '%{http_code}' o rbac-config.yaml -s "https://gitlab.com/charts/gitlab/raw/master/doc/helm/examples/rbac-config.yaml");
+    status_code=$(curl -L -w '%{http_code}' -o rbac-config.yaml -s "https://gitlab.com/charts/gitlab/raw/master/doc/helm/examples/rbac-config.yaml");
     if [ "$status_code" != 200 ]; then
       echo "Failed to download rbac-config.yaml, status code: $status_code";
       exit 1;
