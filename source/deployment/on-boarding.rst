@@ -25,7 +25,7 @@ Creating System Admin account from the command line
 
 Deactivating a user
   - System Admins can go to **System Console > Users** for a list of all users on the server. The list can be searched and filtered to make finding the user easier. Click the user's role and in the menu that opens, click **Deactivate**.
-  - To preserve audit history, users are typically never deleted from the system. If permanently deleting a user is necessary (e.g. for the purposes of GDPR), a :doc:`CLI tool <../administration/command-line-tools>` can be used to do so.
+  - To preserve audit history, users are typically never deleted from the system. If permanently deleting a user is necessary (e.g. for the purposes of `GDPR <https://gdpr-info.eu/>`_), a :doc:`CLI tool <../administration/command-line-tools>` can be used to do so.
   - Note that AD/LDAP user accounts cannot be deactivated from Mattermost; they must be deactivated from your Active Directory.
 
 Checking for a valid license in Enterprise Edition without logging in
