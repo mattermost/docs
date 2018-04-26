@@ -165,34 +165,6 @@ On Ubuntu 16.04, Debian Jessie, and RHEL 7.1:
 
 4. Go to https://example.mattermost.com and try to log in. The server should require the x.509 cert to have an ``emailAddress`` equal to the Mattermost user's email.
 
-Set up Purebred sample apps on iOS
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. note::
-  A real iOS device is required to run the sample apps, since some of the libraries do not target ``x86_amd64``.
-
-1. Clone the sample repos from `https://github.com/Purebred/KeyShareConsumer <https://github.com/Purebred/KeyShareConsumer>`_ and `https://github.com/Purebred/SampleKeyProvider <https://github.com/Purebred/SampleKeyProvider>`_.
-2. Replace all ``red.hound`` strings with ``com.mattermost``.
-3. Open the KeyShareConsumer and SampleKeyProvider apps. Go to **Project settings > Target > ...**
-
-    - Verify all the bundle indentifiers are renamed to ``com.mattermost`.
-    - Select **Mattermost Team** for the signing profile.
-
-4. Run both apps on the device and confirm they can interact with each other on the device.
-5. Import one of the existing sample keys from the SampleKeyProvider app to KeyShareConsumer app.
-6. If the import succeeds, then import (or drag-and-drop) the ``mmuser-mattermost.p12`` certificate into the SampleKeyProvider app.
-7. Modify ``ViewController.m`` by adding the following:
-
-.. code-block::
-
-  NSURL* fifth = [NSURL URLWithString:[[NSBundle mainBundle] pathForResource:@"mmuser-mattermost" ofType:@"p12"]];
-  OSStatus stat5 = [Pkcs12ViewController importP12:fifth password:@"mmuser-passphrase" deleteAfterImport:false];
-    
-  if(0 == stat1 && 0 == stat2 && 0 == stat3 && 0 == stat4 && 0 == stat5)
-  {
-
-8. Rerun the sample, and import the new key ``mmuser-mattermost.p12`` which appears as ``mmuser``. Confirm everything works with the sample apps.
-
 Run the modified Mattermost React Native Mobile App
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
