@@ -312,6 +312,7 @@ Set up NGINX Server
       to configure Mattermost.  Make sure that you use your own values for the Mattermost server IP address and FQDN for *server_name*.
 
       ::
+      
           upstream backend {
             listen 80;
             server 10.10.10.2:8065;
@@ -334,7 +335,7 @@ Set up NGINX Server
               proxy_read_timeout 600s;
               proxy_pass http://backend;
             }
-
+            
             location / {
                client_max_body_size 50M;
                proxy_set_header Upgrade $http_upgrade;
@@ -347,7 +348,6 @@ Set up NGINX Server
                proxy_pass http://backend;
             }
          }
-
 
    - Remove the existing file with:
    - ``sudo mv /etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf.bak``
