@@ -1,9 +1,9 @@
 Certificate-Based Authentication (E20)
 =======================================
 
-Certificate-based authentication (CBA) can be used identify a user or a device before granting access to Mattermost, providing an additional layer of security to access the system.
+Certificate-based authentication (CBA) can be used to identify a user or a device before granting access to Mattermost, providing an additional layer of security to access the system.
 
-Follow these steps to configure user CBA for your browser, Mattermost Desktop Apps, and the Mattermost iOS App. Before you begin, follow the `official guides to install Mattermost <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`_ on your system, including NGINX configuration as a proxy with SSL and HTTP/2, and a valid Let's Encrypt certificate.
+Follow these steps to configure user CBA for your browser, Mattermost Desktop Apps, and the Mattermost iOS App. Before you begin, follow the `official guides to install Mattermost <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`_ on your system, including NGINX configuration as a proxy with SSL and HTTP/2, and a valid SSL certificate such as Let's Encrypt.
 
 .. contents::
   :backlinks: top
@@ -20,6 +20,9 @@ With this custom build, the Mattermost server can be used to log in with a clien
 
 Set up mutual TLS authentication for the Web App
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+  Generating the client certificates in this section is optional if you have already generated them before.
 
 .. note::
   For the purposes of this guide, the Mattermost server domain name is example.mattermost.com, and the user account is ``mmuser`` with email ``mmuser@mattermost.com`` and password ``mmuser-password``.
