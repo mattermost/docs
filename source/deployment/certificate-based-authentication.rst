@@ -88,7 +88,6 @@ In addition to thes steps for the Mattermost Web App and the Desktop Apps, more 
 5. Open the file ``/etc/nginx/sites-available/mattermost`` and modify the following lines, so that the NGINX proxy server requests and verifies the client certificate:
 
 .. code-block::
-  :emphasize-lines: 4-5, 10-11, 16-17
 
   ssl on;
   ssl_certificate /etc/letsencrypt/live/example.mattermost.com/fullchain.pem;
@@ -136,17 +135,27 @@ You should see the Mattermost login page. If you see:
 		1. Go to **Settings > Advanced > Privacy and security > Manage certificates**. This opens the Keychain Access app.
 		2. Go to **File > Import Items** and select the ``mmuser-mattermost.p12`` file.
 
-10. Go to https://example.mattermost.com. You should see a popup for the client certifcate request.
+10. Go to https://example.mattermost.com. You should see a popup for the client certificate request.
 
 Set up Mattermost server to log in with a client certificate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. In ``ExperimentalSettings`` of the ``config.json`` file, set ``ClientSideCertEnable`` to ``true`` and ``ClientSideCertCheck`` to one of the following values:
+1. Make sure the custom build from the ``mm-cba-proto`` branch is licensed with a valid Enterprise Edition E20 license.
+2. In ``ExperimentalSettings`` of the ``config.json`` file, set ``ClientSideCertEnable`` to ``true`` and ``ClientSideCertCheck`` to one of the following values:
 
 - ``primary`` - After the client side certificate is verified, user's email is retrieved from the certificate and used to log in without a password.
 - ``secondary`` - After the client side certificate is verified, user's email is retrieved from the certificate and matched against the one supplied by the user. If they match, the user logs in with regular email/password credentials.
 
-2. Restart the Mattermost server.
+The ``config.json`` file should then have the following lines
+
+.. code-block::
+
+  "ExperimentalSettings": {
+      "ClientSideCertEnable": true,
+      "ClientSideCertCheck": "secondary"
+  },
+
+3. Restart the Mattermost server.
 
 On Ubuntu 14.04 and RHEL 6.6:
 
@@ -160,10 +169,13 @@ On Ubuntu 16.04, Debian Jessie, and RHEL 7.1:
 
   sudo systemctl restart mattermost
 
-3. Go to https://example.mattermost.com and try to log in. The server should require the x.509 cert to have an ``emailAddress`` equal to the Mattermost user's email.
+4. Go to https://example.mattermost.com and try to log in. The server should require the x.509 cert to have an ``emailAddress`` equal to the Mattermost user's email.
 
 Set up Purebred sample apps on iOS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+  A real iOS device is required to run the sample apps, since some of the libraries do not target ``x86_amd64``.
 
 1. Clone the sample repos from `https://github.com/Purebred/KeyShareConsumer <https://github.com/Purebred/KeyShareConsumer>`_ and `https://github.com/Purebred/SampleKeyProvider <https://github.com/Purebred/SampleKeyProvider>`_.
 2. Replace all ``red.hound`` strings with ``com.mattermost``.
@@ -172,12 +184,9 @@ Set up Purebred sample apps on iOS
     - Verify all the bundle indentifiers are renamed to ``com.mattermost`.
     - Select **Mattermost Team** for the signing profile.
 
-.. note::
-  A real iOS device is required to run the sample apps, since some of the libraries do not target ``x86_amd64``.
-
 4. Run both apps on the device and confirm they can interact with each other on the device.
 5. Import one of the existing sample keys from the SampleKeyProvider app to KeyShareConsumer app.
-6. If the import succeeds, then import the ``mmuser-mattermost.p12`` certificate into the SampleKeyProvider app.
+6. If the import succeeds, then import (or drag-and-drop) the ``mmuser-mattermost.p12`` certificate into the SampleKeyProvider app.
 7. Modify ``ViewController.m`` by adding the following:
 
 .. code-block::
@@ -188,7 +197,7 @@ Set up Purebred sample apps on iOS
   if(0 == stat1 && 0 == stat2 && 0 == stat3 && 0 == stat4 && 0 == stat5)
   {
 
-9. Rerun the sample, and import the new key ``mmuser-mattermost.p12`` which appears as ``mmuser``. Confirm everything works with the sample apps.
+8. Rerun the sample, and import the new key ``mmuser-mattermost.p12`` which appears as ``mmuser``. Confirm everything works with the sample apps.
 
 Run the modified Mattermost React Native Mobile App
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -197,4 +206,3 @@ Run the modified Mattermost React Native Mobile App
 2. Set **ExperimentalClientSideCertEnable** to ``true`` in the `mattermost-mobile/assets/base/config.json <https://github.com/mattermost/mattermost-mobile/blob/cba/assets/base/config.json#L15>`_ file.
 3. `Use this guide <https://docs.mattermost.com/mobile/mobile-compile-yourself.html>`_ to build the apps based on the branch you created and modified in steps 1 and 2.
 4. Import the certificate from the previous section above into the Mattermost iOS App and use it for mutual TLS authentication. You can `watch a demonstration video of this step here <https://drive.google.com/file/d/1zzk9XQ6RBvsWbCTrIfgE0484pD7w9Ux1/view>`_.
-5. A user account is created automatically on first use, and the login credentials for email/password are bypassed with a button to sign in with the client-side certificate instead.
