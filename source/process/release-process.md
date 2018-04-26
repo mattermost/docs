@@ -334,6 +334,8 @@ Once bug fix release is ready to cut:
             - [RC Build Testing for core team](https://mattermost.atlassian.net/browse/PLT-2208)
          - Release week (for GitLab dev owner)
              - [Test Gitlab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/PLT-2197)
+         - Release week (for dependancies owner)
+             - Upgrade dependancies for Webapp and Server
          - Week after release (for GitLab dev owner)
              - [Submit Gitlab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/MM-9872)
     - Confirm that [mattermost-docker](https://github.com/mattermost/mattermost-docker/releases) has been updated to the latest version (contact the maintainer via direct message on pre-release if necessary)
@@ -369,6 +371,7 @@ Once bug fix release is ready to cut:
 1. Release Manager:
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
+    - Check that dependancies have been upgraded
     - Update Security Research Hall of Fame on the [Responsible Disclosure Policy](https://about.mattermost.com/report-security-issue/) page
     - Update 'latest version of Mattermost' supported in the Airtable Integrations Directory on the [Mattermost Apps and Integrations](https://about.mattermost.com/community-applications) page
 2. Leads:
