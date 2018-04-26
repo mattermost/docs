@@ -176,80 +176,65 @@ Regular team meeting for product staff team at Mattermost Inc.
 - Scope: Mattermost Inc-only meeting given confidential customer issues discussed
 - Attendees: Mattermost Inc colleagues working on mattermost-server and mattermost-webapp
 
-Platform meeting consists of two parts, Team Operation Review Meeting and Product Staff Meeting.
-
-All Mattermost staff attends the Team Operation Review Meeting. It provides an opportunity to teach and learn between people who don’t otherwise deal with each other much. Includes presentations and demos.
-
-Only the product team attends the Product Staff Meeting, others' attendance is optional. The meeting consists of people who work closely together. Includes controlled agenda items (e.g. queued items) with an "open session" where staff can bring up anything they want. Staff should arrive at decisions during the meeting or schedule further discussion for the next meeting.
+The meeting includes presentations and demos, controlled agenda items (e.g. queued items) with an "open session" where staff can bring up anything they want. Staff should arrive at decisions during the meeting or schedule further discussion for the next meeting.
 
 Procedure:
 
-1. (Chair) 3-hours before standup, post reminders in `Platform Meeting private channel <https://pre-release.mattermost.com/core/channels/platform-meeting>`_ (Mattermost Inc only)
+1. (Vice Chair) the day before the meeting, post a reminder in `Platform Meeting private channel <https://pre-release.mattermost.com/core/channels/platform-meeting>`_ (Mattermost Inc only)
 
 ::
 
-   #### @channel Platform Meeting Reminder
-   Everyone please:
-   - **Prepare your demos**
-   - **Prepare your roundtable open discussion**
-
-   @[RELEASE MANAGER] please:
-   - **Prepare your roadmap checkin**
-
-   @[WHOEVER] are you ready for your "Ice-breaker"?
+   #### @channel A reminder to prepare your items for Platform meeting [DATE]:
+   1. @[name], @[name] & @[name] - you're up for ice-breaker [Question](https://docs.google.com/document/d/1A0D96O4t4GS33-  yaHvLQBdtgIScmwzVo15c2vSFeYis/edit#bookmark=id.q182tvgkdewa)
+   2. If you'll be giving a demo, please queue it [in the meeting notes](link) 
+   ##### Everyone is encouraged to bring up items for discussion. If the discussion is `time-copped` during the meeting, please be sure to add a `next step` to the notes and post a link to where the conversation can be continued. ~platform channel is usually a good place to continue discussions.
 
 
 2. (Team) At time of meeting:
 
-   - Join the **Hangout** link in the header of the `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`_
+   - Join the **Zoom** link in the header of the `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`_
    - Open the **Notes** link in the header to see the agenda
 
-3. (Vice-Chair) Post `"Standing Items" template <https://docs.google.com/document/d/1ImSgkF7T03wbKwz_t4-Dr4n3I8LixVbFb2Db_u0FmdM>`_ into Platform Meeting Notes
+3. (Vice-Chair) Post `"meeting notes template <https://docs.google.com/document/d/1ImSgkF7T03wbKwz_t4-Dr4n3I8LixVbFb2Db_u0FmdM>`_ into Platform Meeting Notes
 
     - Add **Follow-ups** from previous meeting
     - Add **New items** queued in `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only)
 
 Meeting Agenda:
 
-Team Operation Review Meeting
-
-- **Warm-up** - Currently: "Share something interesting about your weekend."
+- **Ice-breaker** - Currently: "Questions"
 - **Roadmap check-in** - Review of roadmap status in current and next release
-- **Demos (optional)** - Team members show highlights of what's been completed this week. Relevant follow-ups noted.
+- **Company update** - A summary from leads
+- **Demos (optional)** - Team members show highlights of what's been completed this week. Relevant follow-ups noted
 - **New items** - New team relevant items are discussed
-
-Product Staff Meeting
-
-- **Roundtable Open Discussion** - Each colleague shares something important to discuss with the team. Examples: external customer or user issue, potential process improvement. Follow-ups noted.
-- **New items** - New product staff relevant items are discussed
-- **Follow-ups** - Follow-ups from previous meeting are discussed
-- **Questions** - To find blindspots, meeting does not end until 3 open questions are asked and answered.
+- **Blind spots, Inspiration, Knowledge Share** - Colleagues share areas of concern and ask questions
 
 Post Meeting:
 
-- Follow-up items are posted to the  `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only)
+- If there are follow-up items, these are posted to the  `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only)
 
 Meeting Elements
 -----------------------
 
 Here we summarize meeting elements that can be re-used for meetings across teams.
 
-Warm-ups
+Ice-breaker
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - 2-3 minute exercises designed to learn more a colleagues at the start of a recurring meeting
-- Typically rotates alphabetically by first name, one colleague per meeting
+- Typically rotates alphabetically by first name, three colleagues per meeting
 - Examples:
 
    - "Hobby talk" - sharing about an interesting hobby, past or present
    - "My home town" - sharing something interesting about where you grew up
-   - "Two truths and a lie" - share two true facts about yourself and one lie, team guesses which is the lie.
+   - "Two truths and a lie" - share two true facts about yourself and one lie, team guesses which is the lie
+   - "Questions" - e.g. "What would constitute a “perfect” day for you?"
 
-Open Questions
+Blind spots, Inspiration, Knowledge Share
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Exercise to find blindspots in team thinking at the end of a meeting
-- Meeting does not end until 3 questions are asked and answered, typically at least one of the questions reveals a blindspot or opportunity to improve communication.
+- Colleagues share areas of concern and ask questions which invariably disclose blind-spots or are an opportunity to improve communication.
 - Examples of questions:
 
     - "What's the status on X?" // often an important item that got forgotten
@@ -301,7 +286,6 @@ Consider when two rational people disagree, the cause often comes from one of th
 
 While the emotions, assumptions, priority mindset won't work for everyone in every case, it's helped resolve complex decisions in our company's history.
 
-
 Likes & Wishes
 ---------------------------------------------
 
@@ -311,7 +295,6 @@ An easy way to check in with team members about how things are going.
 - What do you *wish* we might change?
 
 Use these one-on-one or in a group as a way to open conversations about what to keep and what to change in how we do things.
-
 
 Mini-boss, End-boss
 ---------------------------------------------
