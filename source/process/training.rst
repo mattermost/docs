@@ -144,7 +144,7 @@ Leads Meeting
 **Mattermost staff-only** - (Leads - 1-3 hours/week) Monday and Wednesday (9:00 `San Francisco Time <http://everytimezone.com/>`_)
 
 - Goal: Address leadership and process topics
-- Attendees: (Required) Dev, PM, community/marketing leads from Mattermost staff, with sales lead and other Mattermost staff optional. 
+- Attendees: (Required) Dev, PM, community/marketing leads from Mattermost staff, with sales lead and other Mattermost staff optional
 
 Note:
 
@@ -195,7 +195,7 @@ Procedure:
    - Join the **Zoom** link in the header of the `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`_
    - Open the **Notes** link in the header to see the agenda
 
-3. (Vice-Chair) Post `"meeting notes template <https://docs.google.com/document/d/1ImSgkF7T03wbKwz_t4-Dr4n3I8LixVbFb2Db_u0FmdM>`_ into Platform Meeting Notes
+3. (Vice-Chair) Post `meeting notes template <https://docs.google.com/document/d/1ImSgkF7T03wbKwz_t4-Dr4n3I8LixVbFb2Db_u0FmdM>`_ into Platform Meeting Notes
 
     - Add **Follow-ups** from previous meeting
     - Add **New items** queued in `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only)
