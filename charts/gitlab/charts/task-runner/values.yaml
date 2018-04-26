@@ -1,5 +1,5 @@
 image:
-  repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-task-runner
+  repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-task-runner-ee
   tag: latest
   pullPolicy: Always
 enabled: false
