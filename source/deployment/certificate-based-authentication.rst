@@ -12,15 +12,15 @@ Follow these steps to configure user CBA for your browser, Mattermost Desktop Ap
   :local:
   :depth: 2
 
-Test
-~~~~~
+Run a custom build of the Mattermost server
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-// XXX work in progress. To be updated once PR is finished and merged. Currently requires a special build from the `mm-cba-proto server branch <https://github.com/mattermost/mattermost-server/tree/mm-cba-proto>`_ licensed with Enterprise E20 key.
+1. Fork the `mm-cba-proto <https://github.com/mattermost/mattermost-server/tree/mm-cba-proto>`_ branch from the mattermost-server repository.
+2. `Use this guide <https://docs.mattermost.com/developer/dev-setup.html>`_ to create a custom build of the server based on the branch from step 1.
 
-The Mattermost server can be used to log in with a client side certifiate supplied as part of mutual TLS authentication from above. This guide has made some simple assumptions about how the certificates map to Mattermost users.
+With this custom build, the Mattermost server can be used to log in with a client side certifiate supplied as part of mutual TLS authentication from above. This guide has made some simple assumptions about how the certificates map to Mattermost users.
 
-
-Set Up mutual TLS authentication for the Web App
+Set up mutual TLS authentication for the Web App
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Enterprise Edition E20 supports device CBA with client side certificates through SAML 2.0 SSO and mutual TLS authentication at the NGINX proxy level. Many SAML service providers support certificate authentication, such as `ADFS and Azure AD <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-user-certificate-authentication>`_.
