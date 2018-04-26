@@ -51,6 +51,11 @@ documentation for more help on this process.
 --set global.hosts.externalIP=10.10.10.10
 ```
 
+### Persistence
+
+If you want to use some other method of data persistence for the Chart, other than using the default dynamic provisioning,
+you will want to customize the persistence settings for the Chart. There is some storage documentation [here](storage.md).
+
 ### Initial root password
 
 Select a root password for your GitLab install. The root account will have full
