@@ -3,8 +3,6 @@ Certificate-Based Authentication (E20)
 
 Certificate-based authentication (CBA) can be used identify a user or a device before granting access to Mattermost, providing an additional layer of security to access the system.
 
-Enterprise Edition E20 supports device CBA with client side certificates through SAML 2.0 SSO and mutual TLS authentication at the NGINX proxy level. Additional configuration is required for user CBA.
-
 Follow these steps to configure user CBA for your browser, Mattermost Desktop Apps, and the Mattermost iOS App. Before you begin, follow the `official guides to install Mattermost <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`_ on your system, including NGINX configuration as a proxy with SSL and HTTP/2, and a valid Let's Encrypt certificate.
 
 .. contents::
@@ -22,10 +20,6 @@ With this custom build, the Mattermost server can be used to log in with a clien
 
 Set up mutual TLS authentication for the Web App
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Enterprise Edition E20 supports device CBA with client side certificates through SAML 2.0 SSO and mutual TLS authentication at the NGINX proxy level. Many SAML service providers support certificate authentication, such as `ADFS and Azure AD <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-user-certificate-authentication>`_.
-
-In addition to thes steps for the Mattermost Web App and the Desktop Apps, more information about setting up mutual TLS authentication `can be found here <https://blog.codeship.com/how-to-set-up-mutual-tls-authentication/>`_.
 
 .. note::
   For the purposes of this guide, the Mattermost server domain name is example.mattermost.com, and the user account is ``mmuser`` with email ``mmuser@mattermost.com`` and password ``mmuser-password``.
