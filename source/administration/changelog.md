@@ -39,6 +39,7 @@ Release date: 2018-05-16
  - Improved slash command error message when payload is invalid JSON.
  - Made Shift+up switch keyboard focus to RHS if it's already open to the current thread.
  - Added ability for team / system admin to convert a channel to private in the User Interface.
+ - Added structured logging.
 
 ### Bug Fixes
 
