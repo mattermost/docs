@@ -30,6 +30,8 @@ ingress:
   annotations: {}
 workerProcesses: 2
 workerTimeout: 60
+workhorse:
+  sentryDSN: ""
 omniauth:
   providers: []
   # - name: google_oauth2

@@ -11,6 +11,7 @@ service:
   type: ClusterIP
   externalPort: 80
   internalPort: 80
+sentryDSN: ""
 enabled: false
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
