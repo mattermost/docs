@@ -6,7 +6,13 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v4.9
 
-Release date: 2018-04-16
+ - **4.9.1, released 2018-04-27**
+   - Fixed an issue where System Console permissions settings displayed a false error when running High Availability mode.
+   - Fixed a race condition on loading roles in the System Console.
+   - Reverted a change causing significant performance degradation when loading posts.
+   - Fixed a performance issue causing significant initial load time for the Desktop application.
+ - **v4.9.0, released 2018-04-16**
+   - Original 4.9.0 release
 
 ### Highlights
 
