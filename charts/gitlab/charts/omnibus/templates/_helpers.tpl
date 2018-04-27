@@ -28,5 +28,5 @@ If the postgresql username is provided, it will use that, otherwise it will fall
 to "gitlab" default
 */}}
 {{- define "omnibus.psql.username" -}}
-{{- coalesce .Values.psql.username .Values.global.psql.username "gitlab" -}}
+{{- coalesce .Values.psql.username .Values.global.psql.username "gitlab" | quote -}}
 {{- end -}}
