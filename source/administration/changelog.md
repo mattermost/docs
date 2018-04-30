@@ -12,25 +12,35 @@ Release date: 2018-05-16
 
 #### Environment Variables Support for GitLab
  - Added tracking of which system console settings are configured via environment variables.
+ - Disabled system console settings that are configured via environment variables.
 
 ### Improvements
 
- - Added ``/invite`` slash command to invite users to a channel.
+#### Web User Interface
  - Added a loader for channel invite modal.
  - Made Shift+up switch keyboard focus to RHS if it's already open to the current thread.
  - Added ability for team / system admin to convert a channel to private in the User Interface.
+ - Removed WebRTC end user setting.
+ - Removed support for transparent team icons and added ability to remove team icons. 
+
+#### Performance
  - Added structured logging.
+ - Investigated long loading time after clearing cache and refreshing the page.
+ 
+ #### Slash Commands
+ - Added ``/invite`` slash command to invite users to a channel.
  - Added ``/platform`` list of commands to teams command in CLI.
+ - Improved slash command error message when payload is invalid JSON. 
+ 
+ #### Other (XXXX/// Need help with a category)
  - Removed ``mm_config`` and ``mm_license`` global state from webapp.
  - Added support to REST API for sending ephemeral messages to users.
  - Investigated avoiding duplicating unique indexes.
  - Added a CLI Command to "Reset to Default" for permission system.
  - Added a CLI Platform command to change user email address.
  - Investigated "Download" link to external resources may not actually trigger download.
- - Removed WebRTC end user setting.
  - Investigated switching back to npm.
- - Investigated long loading time after clearing cache and refreshing the page.
- - Improved slash command error message when payload is invalid JSON.
+ - Upgraded minio-go library to v6.0.0.
 
 ### Bug Fixes
 
@@ -73,7 +83,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### Changes to Team Edition and Enterprise Edition:
 
- - "ExperimentalEnableAutomaticReplies": false,
+ - Under `"TeamSettings"` in `config.json`:
+   - Added ``"ExperimentalEnableAutomaticReplies": false,`` to allow
 
 #### API Changes
 
@@ -262,7 +273,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  
 #### Performance
  - Reduced load times by optimizing database queries and WebSocket events destined for a single user.
- - Ceated an iOS endpoint that enables users to upload files larger than 20MB.
+ - Created an iOS endpoint that enables users to upload files larger than 20MB.
  - Improved caching of `getRootPosts` call.
 
 #### 508 Compliance
