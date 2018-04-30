@@ -10,22 +10,17 @@ Release date: 2018-05-16
 
 ### Highlights
 
-#### Advanced Permissions Phase 2
- -
- 
-#### /invite Slash Command
- - Added ``/invite`` slash command to invite users to a channel.
-
-#### Increase 4k Character Limit on Posts
- - Relaxed 4k post message limit.
-
 #### Environment Variables Support for GitLab
  - Added tracking of which system console settings are configured via environment variables.
 
 ### Improvements
 
- - Added ``/platform`` list of commands to teams command in CLI.
+ - Added ``/invite`` slash command to invite users to a channel.
  - Added a loader for channel invite modal.
+ - Made Shift+up switch keyboard focus to RHS if it's already open to the current thread.
+ - Added ability for team / system admin to convert a channel to private in the User Interface.
+ - Added structured logging.
+ - Added ``/platform`` list of commands to teams command in CLI.
  - Removed ``mm_config`` and ``mm_license`` global state from webapp.
  - Added support to REST API for sending ephemeral messages to users.
  - Investigated avoiding duplicating unique indexes.
@@ -35,11 +30,7 @@ Release date: 2018-05-16
  - Removed WebRTC end user setting.
  - Investigated switching back to npm.
  - Investigated long loading time after clearing cache and refreshing the page.
- - Added ability to convert public channels to private in the UI.
  - Improved slash command error message when payload is invalid JSON.
- - Made Shift+up switch keyboard focus to RHS if it's already open to the current thread.
- - Added ability for team / system admin to convert a channel to private in the User Interface.
- - Added structured logging.
 
 ### Bug Fixes
 
@@ -91,6 +82,19 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Database Changes
 
 ### Known Issues
+
+ - Google login fails on the Classic mobile apps.
+ - User can receive a video call from another browser tab while already on a call.
+ - Jump link in search results does not always jump to display the expected post.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Channel scroll position flickers while images and link previews load.
+ - Numbered lists can sometimes extend beyond the normal post area.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - CTRL/CMD+U shortcut to upload a file doesn’t work on Firefox.
 
 ### Contributors
 
