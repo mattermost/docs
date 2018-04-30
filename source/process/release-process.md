@@ -51,7 +51,7 @@ No pull requests for major features should be **merged** to the current release 
     - Update [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) with any special notes for upgrading to the new version
     - Submit NOTICE.txt PR for any new libraries added from dev, if not added already. The following two files contain a list of dependencies:
         - https://github.com/mattermost/mattermost-webapp/blob/master/package.json
-        - https://github.com/mattermost/mattermost-server/blob/master/glide.yaml
+        - https://github.com/mattermost/mattermost-server/blob/master/Gopkg.lock
     - Start posting a daily Zero Bug Balance query (posted until zero bugs or day of release)
 3. PM:
     - Review Jira Backlog and move any tickets that will not be merged to the next release
