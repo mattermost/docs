@@ -144,8 +144,7 @@ Set up Mattermost Server
 
    -  ``cd /opt/mattermost/bin``
    -  Run the Mattermost Server by typing:
-   -  ``sudo su mattermost``
-   -  ``./platform``
+   -  ``sudo -u mattermost ./platform``
    -  You should see a console log like ``Server is listening on :8065``
       letting you know the service is running.
    -  Stop the server for now by pressing CTRL+C
@@ -266,7 +265,6 @@ Set up NGINX Server
    - **Optional** if you're running on the same server as the Mattermost server and see 502 errors you may need to run ``sudo setsebool -P httpd_can_network_connect true`` because SELinux is
      preventing the connection
 
-
 Set up NGINX with SSL (Recommended)
 -----------------------------------
 
@@ -366,7 +364,12 @@ Test setup and configure Mattermost Server
    ``system_admin`` role, which gives you access to the System Console.
 3. From the ``town-square`` channel click the dropdown and choose the
    ``System Console`` option
-4.  Update **Notification** > **Email** settings to setup an SMTP email service. The example below assumes AmazonSES.
+4. Set the Site URL:
+
+ - In the **GENERAL** section of the System Console, click **Configuration**.
+ - In the **Site URL** field, set the URL that users point their browsers at. For example, *https://mattermost.example.com*. If you are using HTTPS, make sure that you set up TLS, either on Mattermost Server or on a proxy.
+
+5.  Update **Notification** > **Email** settings to set up an SMTP email service. The example below assumes AmazonSES.
 
    -  Set *Send Email Notifications* to ``true``
    -  Set *Require Email Verification* to ``true``
@@ -379,21 +382,21 @@ Test setup and configure Mattermost Server
    -  Set *Connection Security* to ``TLS``
    -  Save the Settings
 
-5. Update **File** > **Storage** settings:
+6. Update **File** > **Storage** settings:
 
    -  Change *Local Directory Location* from ``./data/`` to
       ``/opt/mattermost/data``
 
-6. Update **General** > **Logging** settings:
+7. Update **General** > **Logging** settings:
 
    -  Set *Log to The Console* to ``false``
 
-7. Update **Advanced** > **Rate Limiting** settings:
+8. Update **Advanced** > **Rate Limiting** settings:
 
    -  Set *Vary By Remote Address* to ``false``
    -  Set *Vary By HTTP Header* to ``X-Real-IP``
 
-8. Feel free to modify other settings
-9. Restart the Mattermost Service by typing:
+9. Feel free to modify other settings
+10. Restart the Mattermost Service by typing:
 
    -  ``sudo restart mattermost``
