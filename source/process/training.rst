@@ -86,12 +86,10 @@ Developer Meeting
 
 Procedure:
 
-1. (Chair): Post meeting agenda in `Developers channel <https://pre-release.mattermost.com/core/channels/developers>`_ (open to the public), tagged with ``#devmeeting``
+1. (Team and Public): Post meeting agenda in `Developers Meeting channel <https://pre-release.mattermost.com/core/channels/developers-meeting>`_ (open to the public). Please see instructions on `how to queue an item <https://pre-release.mattermost.com/core/pl/q4wcrcnxhtf1fr9grneb6fbrxy>`_.
 2. (Team and Public): At the time of the meeting:
 
-      - Join the **Hangouts** link posted in the meeting agenda in the `Developers channel <https://pre-release.mattermost.com/core/channels/developers>`_
-
-To review past agendas for the Developer meeting in the `Developers channel <https://pre-release.mattermost.com/core/channels/developers>`_ click on the ``#devmeeting`` hashtag in any of the meeting notes, or search for it directly.
+      - Join the **Hangouts** link posted in the meeting agenda in the `Developers Meeting channel <https://pre-release.mattermost.com/core/channels/developers-meeting>`_
 
 
 Mattermost Staff Meetings
