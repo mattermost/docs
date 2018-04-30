@@ -5,3 +5,6 @@ global:
   hosts:
     domain: example.local
     https: true
+
+gitlab-runner:
+  enabled: false

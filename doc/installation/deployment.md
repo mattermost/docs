@@ -73,7 +73,7 @@ For the default configuration, you must specify an email address to register you
 certificates.
 *Include these options in your helm install command:*
 ```
---set gitlab.certmanager-issuer.email=me@example.local
+--set certmanager-issuer.email=me@example.local
 ```
 
 ### Postgresql
@@ -138,7 +138,7 @@ helm upgrade --install gitlab . \
   --set global.hosts.domain=example.local \
   --set global.hosts.externalIP=10.10.10.10 \
   --set gitlab.migrations.initialRootPassword="example-password" \
-  --set gitlab.certmanager-issuer.email=me@example.local
+  --set certmanager-issuer.email=me@example.local
 ```
 
 ## Monitoring the Deployment

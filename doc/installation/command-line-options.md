@@ -19,7 +19,7 @@ Tables below contain all the possible charts configurations that can be supplied
 | ---                                          | ---                                                                          | ---                                                               |
 | global.hosts.https                           | Serve over https                                                             | true                                                              |
 | global.ingress.configureCertmanager          | Configure cert-manager to get certificates from Let's Encrypt                | true                                                             |
-| gitlab.certmanager-issuer.email              | Email for Let's Encrypt account                                              | false                                                             |
+| certmanager-issuer.email                     | Email for Let's Encrypt account                                              | false                                                             |
 | global.ingress.tls.secretName                | Existing `Secret` containing wildcard TLS certificate and key                | _none_                                                            |
 | gitlab.unicorn.ingress.tls.secretName        | Existing `Secret` containing TLS certificate and key for gitlab              | {Release.Name}-gitlab-tls                                         |
 | minio.ingress.tls.secretName                 | Existing `Secret` containing TLS certificate and key for minio               | {Release.Name}-minio-tls                                          |

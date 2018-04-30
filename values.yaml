@@ -69,7 +69,9 @@ redis-ha:
 # redis:
 #   enabled: false
 #
-# gitlab:
+gitlab:
+  gitlab-runner:
+    enabled: true
 #   omnibus:
 #     enabled: false
 #   migrations:

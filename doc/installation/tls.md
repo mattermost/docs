@@ -22,7 +22,7 @@ helm dep update
 
 ```
 helm install ...
-  --set gitlab.certmanager-issuer.email=you@example.local
+  --set certmanager-issuer.email=you@example.local
 ```
 
 Intalling certmanager is controlled by the `certmanager.install` setting, and using it in the charts is controlled by the
