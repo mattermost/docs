@@ -86,11 +86,7 @@ data:
         enabled: {{ eq .Values.lfs.enabled true }}
         object_store:
           enabled: true
-          {{- if .Values.minio.enabled }}
-          remote_directory: {{ .Values.minio.bucket }}
-          {{- else }}
           remote_directory: {{ .Values.lfs.bucket }}
-          {{- end }}
           direct_upload: true
           background_upload: false
           proxy_download: {{ eq .Values.lfs.proxy_download true }}
@@ -106,6 +102,27 @@ data:
           {{- else if .Values.lfs.connection}}
           connection:
 {{ toYaml .Values.lfs.connection | indent 12}}
+          {{- end }}
+      uploads:
+        enabled: {{ eq .Values.uploads.enabled true }}
+        object_store:
+          enabled: true
+          remote_directory: {{ .Values.uploads.bucket }}
+          direct_upload: true
+          background_upload: false
+          proxy_download: {{ eq .Values.uploads.proxy_download true }}
+          {{- if .Values.minio.enabled }}
+          connection:
+            provider: AWS
+            region: us-east-1
+            aws_access_key_id: "<%= File.read('/etc/gitlab/minio/accesskey') %>"
+            aws_secret_access_key: "<%= File.read('/etc/gitlab/minio/secretkey') %>"
+            host: {{ template "minioHost" . }}
+            endpoint: {{ template "unicorn.minio.endpoint" . }}
+            path_style: true
+          {{- else if .Values.uploads.connection}}
+          connection:
+{{ toYaml .Values.uploads.connection | indent 12}}
           {{- end }}
       pages:
         enabled: false
