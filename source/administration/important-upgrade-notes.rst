@@ -8,7 +8,7 @@ Important Upgrade Notes
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                         |
 +====================================================+=================================================================================================================================================================+
 | v4.10.0                                            | Old email invitation links will no longer work due to a bug fix where teams could be re-joined via the link.                                                    |
-|                                                    | Team invite links copied from the Team Invite Link dialog, password reset links and email verification links are not affected and are still valid.             |
+|                                                    | Team invite links copied from the Team Invite Link dialog, password reset links and email verification links are not affected and are still valid.              |
 |                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Server logs written to **System Console > Logs** and to the mattermost.log file specified in **System Console > Logging > File Log Directory**                  |
 |                                                    | now use JSON formatting. If you have built a tool that parses the server logs and sends them to an external system, make sure it supports the JSON format.      |
