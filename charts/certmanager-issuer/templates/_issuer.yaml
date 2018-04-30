@@ -12,7 +12,7 @@ spec:
     # The ACME server URL
     server: {{ .Values.server | quote }}
     # Email address used for ACME registration
-    email: {{ required "You must provide an email to associate with your TLS certificates. Please set gitlab.certmanager-issuer.email" .Values.email | quote }}
+    email: {{ required "You must provide an email to associate with your TLS certificates. Please set certmanager-issuer.email" .Values.email | quote }}
     # Name of a secret used to store the ACME account private key
     privateKeySecretRef:
       name: {{ .Release.Name }}-acme-key
