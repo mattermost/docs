@@ -13,12 +13,12 @@ data:
     production:
       adapter: postgresql
       encoding: unicode
-      database: {{ template "sidekiq.psql.database"  . }}
+      database: {{ template "gitlab.psql.database"  . }}
       pool: 10
-      username: {{ template "sidekiq.psql.username" . }}
+      username: {{ template "gitlab.psql.username" . }}
       password: <%= File.read("/etc/gitlab/postgres/psql-password") %>
-      host: {{ template "sidekiq.psql.host" . }}
-      port: {{ template "sidekiq.psql.port" . }}
+      host: {{ template "gitlab.psql.host" . }}
+      port: {{ template "gitlab.psql.port" . }}
       # load_balancing:
       #   hosts:
       #     - host1.example.com
@@ -28,7 +28,7 @@ data:
   resque.yml.erb: |
     production:
       # Redis (single instance)
-      url: redis://:<%= File.read("/etc/gitlab/redis/password") %>@{{ template "sidekiq.redis.host" . }}:{{ default 6379 .Values.redis.port }}
+      url: redis://:<%= File.read("/etc/gitlab/redis/password") %>@{{ template "gitlab.redis.host" . }}:{{ default 6379 .Values.redis.port }}
   gitlab.yml.erb: |
     production: &base
       gitlab:
@@ -74,7 +74,7 @@ data:
         storages: # You must have at least a `default` storage path.
           default:
             path: /var/opt/gitlab/repo
-            gitaly_address: tcp://{{ template "sidekiq.gitaly.host" . }}:{{ default 8075 .Values.gitaly.port }}
+            gitaly_address: tcp://{{ template "gitlab.gitaly.host" . }}:{{ default 8075 .Values.gitaly.port }}
       backup:
         path: "tmp/backups"   # Relative paths are relative to Rails.root (default: tmp/backups/)
       gitlab_shell:
