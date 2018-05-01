@@ -1,4 +1,4 @@
 apiVersion: v1
 description: A collection of GitLab application services
-name: gitlab-services
+name: gitlab
 version: 0.1.0
