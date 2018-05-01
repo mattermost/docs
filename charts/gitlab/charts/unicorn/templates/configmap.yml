@@ -98,8 +98,8 @@ data:
             region: us-east-1
             aws_access_key_id: "<%= File.read('/etc/gitlab/minio/accesskey') %>"
             aws_secret_access_key: "<%= File.read('/etc/gitlab/minio/secretkey') %>"
-            host: {{ template "minioHost" . }}
-            endpoint: {{ template "unicorn.minio.endpoint" . }}
+            host: {{ template "gitlab.minio.hostname" . }}
+            endpoint: {{ template "gitlab.minio.endpoint" . }}
             path_style: true
           {{- else if .Values.artifacts.connection}}
           connection:
