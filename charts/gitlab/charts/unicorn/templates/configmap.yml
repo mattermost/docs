@@ -85,7 +85,26 @@ data:
       incoming_email:
         enabled: false
       artifacts:
-        enabled: true
+        enabled: {{ eq .Values.artifacts.enabled true }}
+        object_store:
+          enabled: true
+          remote_directory: {{ .Values.artifacts.bucket }}
+          direct_upload: true
+          background_upload: false
+          proxy_download: {{ eq .Values.artifacts.proxy_download true }}
+          {{- if .Values.minio.enabled }}
+          connection:
+            provider: AWS
+            region: us-east-1
+            aws_access_key_id: "<%= File.read('/etc/gitlab/minio/accesskey') %>"
+            aws_secret_access_key: "<%= File.read('/etc/gitlab/minio/secretkey') %>"
+            host: {{ template "minioHost" . }}
+            endpoint: {{ template "unicorn.minio.endpoint" . }}
+            path_style: true
+          {{- else if .Values.artifacts.connection}}
+          connection:
+{{ toYaml .Values.artifacts.connection | indent 12}}
+          {{- end }}
       lfs:
         enabled: {{ eq .Values.lfs.enabled true }}
         object_store:

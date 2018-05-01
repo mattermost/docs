@@ -118,6 +118,7 @@ defaultBuckets:
   - name: git-lfs
   - name: runner-cache
   - name: gitlab-uploads
+  - name: gitlab-artifacts
   - name: gitlab-backups
   ## If enabled, must be a string with length > 0
   # - name: example
