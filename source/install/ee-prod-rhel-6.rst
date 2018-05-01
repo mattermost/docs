@@ -344,7 +344,7 @@ Set up NGINX with SSL (Recommended)
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_set_header X-Frame-Options SAMEORIGIN;
-        proxy_pass http://backend;
+        proxy_pass ``http://backend``;
      }
   }
 
