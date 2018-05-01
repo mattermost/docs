@@ -17,7 +17,7 @@ configure Zoom for Mattermost.
 .. image:: ../images/zoom_system_console.png
 
 2. Set the Zoom URL if you're using an on-premise Zoom server, for example, https://yourzoom.com. Leave blank when not using an on-premise Zoom deployment.
-3. Set the Zoom API URL if you're using an on-premise Zoom server, for example, https://api.yourzoom.com/v2. Leave blank when not using an on-premise Zoom deployment.
+3. Set the Zoom API URL if you're using an on-premise Zoom server, for example, ``https://api.yourzoom.com/v2``. Leave blank when not using an on-premise Zoom deployment.
 4. Set the API Key and API Secret.
 
 API Key and API Secret
