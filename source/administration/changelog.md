@@ -10,6 +10,9 @@ Release date: 2018-05-16
 
 ### Highlights
 
+#### Autoresponder
+ - Added a setting that automatically answers messages sent to a user who is away.
+
 #### Environment Variables Support for GitLab
  - Added tracking of which system console settings are configured via environment variables.
  - Disabled system console settings that are configured via environment variables.
@@ -21,16 +24,20 @@ Release date: 2018-05-16
  - Made Shift+up switch keyboard focus to RHS if it's already open to the current thread.
  - Added ability for team / system admin to convert a channel to private in the User Interface.
  - Removed WebRTC end user setting.
- - Removed support for transparent team icons and added ability to remove team icons. 
+ - Removed support for transparent team icons and added ability to remove team icons.
+ - Added an on-hover effect for image link previews.
 
 #### Performance
  - Added structured logging.
  - Investigated long loading time after clearing cache and refreshing the page.
  
+ #### Plugins
+ - Added better plugin error handling and reporting.
+ 
  #### Slash Commands
  - Added ``/invite`` slash command to invite users to a channel.
  - Added ``/platform`` list of commands to teams command in CLI.
- - Improved slash command error message when payload is invalid JSON. 
+ - Improved slash command error message when payload is invalid JSON.
  
  #### Other (XXXX/// Need help with a category)
  - Removed ``mm_config`` and ``mm_license`` global state from webapp.
@@ -45,6 +52,7 @@ Release date: 2018-05-16
 ### Bug Fixes
 
  - Fixed an issue where sign-up and team joining were broken on Mattermost server.
+ - Fixed an issue with a mention badge missing for DMs in CTRL/CMD+K channel switcher.
 
 ### Compatibility
 
