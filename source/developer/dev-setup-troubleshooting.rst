@@ -56,7 +56,7 @@ I get the following error when running ``make test``: t.Run undefined (type *tes
 Other errors
 ------------
 
-I don't see any error messages, but I can't access http://localhost:8065
+I don't see any error messages, but I can't access ``http://localhost:8065``
   It's possible that the server reported an error, but it was missed because of all of the output from the JavaScript compiler. Try running ``make run-server`` by itself to see its output. If you still don't see any error messages, continue to the next section.
 
 I don't see anything logged to the console when Mattermost is running
