@@ -219,6 +219,9 @@ qa:
     expire_in: 7d
     paths:
     - screenshots
+  only:
+    refs:
+      - branches
 
 changelog_manager:
   stage: changelog
