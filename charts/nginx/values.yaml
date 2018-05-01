@@ -9,7 +9,7 @@ images:
     pullPolicy: IfNotPresent
   nginxIngress:
     repository: quay.io/kubernetes-ingress-controller/nginx-ingress-controller
-    tag: "0.9.0"
+    tag: "0.14.0"
     pullPolicy: IfNotPresent
 service:
   name: nginx
