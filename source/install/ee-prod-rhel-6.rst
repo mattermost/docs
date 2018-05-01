@@ -302,7 +302,7 @@ Set up NGINX with SSL (Recommended)
   server {
      listen         80;
      server_name    mattermost.example.com;
-     return         301 https://$server_name$request_uri;
+     return         301 ``https://$server_name$request_uri``;
   }
 
   server {
