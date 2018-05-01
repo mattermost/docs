@@ -51,6 +51,10 @@ documentation for more help on this process.
 --set global.hosts.externalIP=10.10.10.10
 ```
 
+### Persistence
+
+By default the chart will create Volume Claims with the expectation that a dynamic provisioner will create the underlying Persistent Volumes. If you would like to customize the storageClass or manually create and assign volumes, please review the [storage documentation](storage.md).
+
 ### Initial root password
 
 Select a root password for your GitLab install. The root account will have full
