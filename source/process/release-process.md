@@ -68,7 +68,7 @@ No pull requests for major features should be **merged** to the current release 
 
 1. QA:
     - Prioritize testing merged PRs and resolved tickets
-    - Ensure that new features also designed for mobile are also properly tested on mobile
+    - Ensure that new features designed for mobile are also properly tested on mobile
     - Write and update tests in the Release Testing spreadsheet and in Selenium IDE
     - Run Selenium IDE tests for updated areas, note Pass/Fail and date tested in the Release Testing spreadsheet
 
@@ -248,7 +248,7 @@ If a security fix release is required, run through the following steps:
 2. Release Manager:
     - Work with a developer to submit GitLab MR [following this process](https://docs.mattermost.com/process/gitlab-process.html#merge-requests) and [test the upgrade](https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg) once the GitLab MR is merged and included in their RC.
       - Open a ticket to [submit Gitlab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/MM-10365)
-    - Make a post in Announcements channel announcing the dot release to the rest of the team with links to approved tickets and a link to ticket to submit GitLab MR
+    - Make a post in Announcements channel announcing the dot release to the rest of the team with links to approved tickets and include a link to the ticket to submit the GitLab MR
     - Update the changelog
     - Update the [version archive](https://docs.mattermost.com/administration/version-archive.html)
     - Update [Mattermost server download page](https://mattermost.org/download) with the links to the EE and TE bits
@@ -272,7 +272,7 @@ If a bug fix release is required, run through the following steps:
 2. Release Manager:
     - Work with a developer to submit GitLab MR [following this process](https://docs.mattermost.com/process/gitlab-process.html#merge-requests) and [test the upgrade](https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg) once the GitLab MR is merged and included in their RC.
       - Open a ticket to [submit Gitlab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/MM-10365)
-    - Make a post in Announcements channel announcing the dot release to the rest of the team with links to approved tickets and a link to ticket to submit GitLab MR
+    - Make a post in Announcements channel announcing the dot release to the rest of the team with links to approved tickets and include a link to the ticket to submit the GitLab MR
     - Update the GitHub meta issue:
         - Change the title to "Mattermost vx.x.x - RCx", where `vx.x.x` is the version number of the dot release
         - Post a comment to the meta issue with approved fixes for the next RC of the dot release
