@@ -53,8 +53,7 @@ documentation for more help on this process.
 
 ### Persistence
 
-If you want to use some other method of data persistence for the Chart, other than using the default dynamic provisioning,
-you will want to customize the persistence settings for the Chart. There is some storage documentation [here](storage.md).
+By default the chart will create Volume Claims with the expectation that a dynamic provisioner will create the underlying Persistent Volumes. If you would like to customize the storageClass or manually create and assign volumes, please review the [storage documentation](storage.md).
 
 ### Initial root password
 
