@@ -139,10 +139,10 @@ Procedure:
 Leads Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost staff-only** - (Leads - 1-3 hours/week) Monday and Wednesday (9:00 `San Francisco Time <http://everytimezone.com/>`_)
+**Mattermost staff-only** - (Leads - 1 hour/week) Wednesday (13:00 `San Francisco Time <http://everytimezone.com/>`_)
 
 - Goal: Address leadership and process topics
-- Attendees: (Required) Dev, PM, community/marketing leads from Mattermost staff, with sales lead and other Mattermost staff optional
+- Attendees: (Required) Leads from R&D, Marketing, Sales, and Operations
 
 Note:
 
