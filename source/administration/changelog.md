@@ -25,7 +25,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added the setting for rendering of at-mentions by the teammate name display back to the Account Settings.
  
 #### Team Icons
- - Added support for team icons in the team sidebar.
+ - Added support for team icons in the team sidebar. 
+    - Transparent team icons should have a white background.
  
 #### Global Relay (Beta) ([Enterprise Edition E20](https://about.mattermost.com/pricing/) Add-On)
  - Added export support for Global Relay as a compliance solution. [Learn more here](https://about.mattermost.com/default-compliance-export-documentation).
