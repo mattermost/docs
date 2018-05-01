@@ -1,0 +1,5 @@
+---
+title: Update NGINX Ingress to 0.14.0
+merge_request:
+author:
+type: security
