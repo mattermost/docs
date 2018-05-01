@@ -2,6 +2,13 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2018-05-01
+
+### Added (2 changes, 1 of them is from the community)
+
+- Add configuration options for outgoing email persona. !238 (Corey O'Brien)
+- Add object storage support for Uploads. !250
+
 ## 2018-04-17
 
 ### Fixed (1 change)
