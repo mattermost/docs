@@ -20,11 +20,6 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          env:
-{{- if .Values.sentryDSN }}
-            - name: GITLAB_WORKHORSE_SENTRY_DSN
-              value: {{ .Values.sentryDSN }}
-{{- end }}
           ports:
             - containerPort: {{ .Values.service.internalPort }}
           livenessProbe:
