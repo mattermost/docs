@@ -215,6 +215,8 @@ Enable Account Creation
 
 Enable Team Creation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*This permission has been migrated to the database and changing the config.json value no longer takes effect after upgrading to v4.9, released on April 16th, 2018. This permission can be modified using the System Console user interface.*
+
 **True**: Ability to create a new team is enabled for all users.
 
 **False**: Only System Administrators can create teams from the team selection page. The **Create A New Team** button is hidden in the main menu UI.
@@ -1862,6 +1864,8 @@ Enable OAuth 2.0 Service Provider
 
 Restrict managing integrations to Admins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*This permission has been migrated to the database and changing the config.json value no longer takes effect after upgrading to v4.9, released on April 16th, 2018. This permission can be modified using the System Console user interface.*
+
 **True**: When true, webhooks and slash commands can only be created, edited and viewed by Team and System Admins, and OAuth 2.0 applications by System Admins. Integrations are available to all users after they have been created by the Admin.
 
 **False**: Any team members can create webhooks, slash commands and OAuth 2.0 applications from **Main Menu** > **Integrations**.
@@ -2393,6 +2397,8 @@ Enable Custom Emoji
 Restrict Custom Emoji Creation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E10 and higher*
+
+*This permission has been migrated to the database and changing the config.json value no longer takes effect after upgrading to v4.9, released on April 16th, 2018. This permission can be modified using the System Console user interface.*
 
 **Allow everyone to create custom emoji**: Allows everyone to create custom emoji from the **Main Menu** > **Custom Emoji**.
 
