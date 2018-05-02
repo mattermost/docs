@@ -492,7 +492,7 @@ Restrict the permission level required to delete messages. Team Admins, Channel 
 
 Allow users to edit their messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-*This permission has been migrated to the database and changing the ``"AllowEditPost"`` config.json value no longer takes effect after upgrading to v4.9, released on April 16th, 2018. This permission can be modified using the System Console user interface.*
+*This permission has been migrated to the database and changing the config.json value no longer takes effect after upgrading to v4.9, released on April 16th, 2018. This permission can be modified using the System Console user interface.*
 
 Set whether users can edit their messages after posting.
 
