@@ -427,7 +427,7 @@ or
 | ANDROID_APP_NAME                              | The name of the app as it is going to be shown in the Android home screen.                            | Mattermost Beta         |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
 | ANDROID_REPLACE_ASSETS                        | Replaces app icons with the ones found under the folder *dist/assets/release/icons/android* and       | false                   |
-|                                               | the splash screen with the ones found under the folder */dist/assets/release/splash_screen/android*   |                         |
+|                                               | the splash screen with the ones found under the folder */dist/assets/release/splash_screen/android*.  |                         |
 |                                               | Valid values are: true, false                                                                         |                         |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
 | ANDROID_INCREMENT_BUILD_NUMBER                | Increases the Android app build number, required when a new build is going to be publish to the       | false                   |
@@ -504,7 +504,7 @@ or
 |                                               | it in any other way**.                                                                                |                                        |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
 | IOS_REPLACE_ASSETS                            | Replaces the icons of the app with the ones found under the folder *dist/assets/release/icons/ios*    | false                                  |
-|                                               | and the splash screen with the one found under the folder *dist/assets/release/splash_screen/ios*     |                                        |
+|                                               | and the splash screen with the one found under the folder *dist/assets/release/splash_screen/ios*.    |                                        |
 |                                               | Valid values are: true, false                                                                         |                                        |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
 | IOS_INCREMENT_BUILD_NUMBER                    | Increases the iOS app build number, required when a new build is going to be publish to TestFlight    | false                                  |
@@ -731,18 +731,18 @@ To replace an image, copy the image to ``assets/override/images/`` with the same
 .. note::
  Make sure the images have the same height, width and DPI as the images that you are overriding.
 
-App Splash screen and Launch icons
+App Splash Screen and Launch Icons
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In the ``assets`` directory you will find a folder named ``assets/base/release`` which contains an ``icons`` folder and a ``splash_screen`` folder
 under each platform directory.
 
-Copy the full ``release`` directory under ``assets/override/release`` and then replace each image with the same name, make sure you replace all the
-icons image for the platform you are building the app and the same applies to the splash screen.
+Copy the full ``release`` directory under ``assets/override/release`` and then replace each image with the same name. Make sure you replace all the
+icon images for the platform you are building for the app - the same applies to the splash screen.
 
 .. important::
-The Splash Screen's background color is white by default and the image is centered, if you need to change the color or the layout to improve the experience of your new splash screen
-make sure that you also override the file ``launch_screen.xml`` for Android and ``LaunchScreen.xib`` for iOS. `` Both can found under ``assets/base/release/splash_screen/<platform>``
+The Splash Screen's background color is white by default and the image is centered. If you need to change the color or the layout to improve the experience of your new splash screen
+make sure that you also override the file ``launch_screen.xml`` for Android and ``LaunchScreen.xib`` for iOS. `` Both can found under ``assets/base/release/splash_screen/<platform>``.
 
 .. note::
  Make sure the images have the same height, width and DPI as the images that you are overriding.
