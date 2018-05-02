@@ -4,15 +4,15 @@ The gitlab-runner subchart provides a gitlab runner for running CI jobs. It is e
 
 ## Requirements
 
-This chart depends on shared-secrets subchart to populate it's `registrationToken` for automatic registration. If you intend to run this chart as a stand-alone chart with an existing gitlab instance then you will need to manually set the `registrationToken` in the `gitlab-runner` secret to be equal to that displayed by the running gitlab instance.
+This chart depends on the shared-secrets subchart to populate it's `registrationToken` for automatic registration. If you intend to run this chart as a stand-alone chart with an existing gitlab instance then you will need to manually set the `registrationToken` in the `gitlab-runner` secret to be equal to that displayed by the running gitlab instance.
 
 ## Configuration
 
-All the possible configurations are optional and provide reasonable defaults. It should work out of the box if you deploy all of the charts together.
+There are no required settings, it should work out of the box if you deploy all of the charts together.
 
 ## Deploying a stand-alone runner
 
-By default we do infere `gitlabUrl`, automatically generate a registration token and inforce it through the `migrations` chart. This behaviour will not work if you intend to deploy it with a running gitlab instance.
+By default we do infer `gitlabUrl`, automatically generate a registration token, and generate it through the `migrations` chart. This behaviour will not work if you intend to deploy it with a running gitlab instance.
 
 In this case you will need to set `gitlabUrl` value to be the url of the running gitlab instance. You will also need to manually create `gitlab-runner` secret and fill it with the `registrationToken` provided by the running gitlab.
 
@@ -39,7 +39,7 @@ Priveleged containers have extended capabilities, for example they can mount arb
 | gitlab-runner.rbac.serviceAccountName        | name of the rbac service account to create | default                             |
 | gitlab-runner.runners.image                  | default container image to use in builds   | ubuntu:16.04                        |
 | gitlab-runner.runners.imagePullSecrets       | imagePullSecrets                           | []                                  |
-| gitlab-runner.runners.privileged             | run in privieleged mode,needed for `dind`  | false                               |
+| gitlab-runner.runners.privileged             | run in privileged mode,needed for `dind`  | false                               |
 | gitlab-runner.runners.namespace              | numespace to run jobs in                   | default                             |
 | gitlab-runner.runners.cache.cacheType        | cache type                                 | s3                                  |
 | gitlab-runner.runners.cache.s3BucketName.    | name of the bucket                         | runner-cache                        |
