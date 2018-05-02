@@ -89,7 +89,7 @@ Procedure:
 1. (Team and Public): Post meeting agenda in `Developers Meeting channel <https://pre-release.mattermost.com/core/channels/developers-meeting>`_ (open to the public). Please see instructions on `how to queue an item <https://pre-release.mattermost.com/core/pl/q4wcrcnxhtf1fr9grneb6fbrxy>`_.
 2. (Team and Public): At the time of the meeting:
 
-      - Join the **Hangouts** link posted in the meeting agenda in the `Developers Meeting channel <https://pre-release.mattermost.com/core/channels/developers-meeting>`_
+      - Join the **Hangouts** link posted in the meeting agenda in the `Developers Meeting channel <https://pre-release.mattermost.com/core/channels/developers-meeting>`_.
 
 
 Mattermost Staff Meetings
@@ -103,16 +103,16 @@ Sprint Planning
 
 **Mattermost staff only** - Each team is responsible for its own sprint planning process. Sprints are currently one week long, and start on Tuesdays. Before the next sprint begins, teams share a quick recap of their past and upcoming sprint with leads.  
 
-- Goal: Share demos, reflect on previous sprint, and lock on tickets for next sprint
-- Attendees: Development team members (developers and product manager), plus leads for Tuesday recap
+- Goal: Share demos, reflect on previous sprint, and lock on tickets for next sprint.
+- Attendees: Development team members (developers and product manager), plus leads for Tuesday recap.
 
 Triage Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Mattermost staff-only** - (Triage team - 1-3 hours/week) Tuesdays and Thursdays at 09:30 (`San Francisco Time <http://everytimezone.com/>`_), or daily when a release is upcoming.
 
-- Goal: To provide consistent review, prioritization and ownership assignment of all tickets
-- Attendees: One dev representative from each team (ABC, XYZ, ICU), one PM, QA team, Release Manager during release, and optionally leads and other Mattermost staff
+- Goal: To provide consistent review, prioritization and ownership assignment of all tickets.
+- Attendees: One dev representative from each team (ABC, XYZ, ICU), one PM, QA team, Release Manager during release, and optionally leads and other Mattermost staff.
 
 Note:
 
@@ -141,21 +141,21 @@ Leads Meeting
 
 **Mattermost staff-only** - (Leads - 1 hour/week) Wednesday (13:00 `San Francisco Time <http://everytimezone.com/>`_)
 
-- Goal: Address leadership and process topics
-- Attendees: (Required) Leads from R&D, Marketing, Sales, and Operations
+- Goal: Address leadership and process topics.
+- Attendees: (Required) Leads from R&D, Marketing, Sales, and Operations.
 
 Note:
 
 - Decisions should go to Leads meetings when there is lack of clarity or ownership, or to discuss special case topics where process is not well defined. 
 
-    - When possible, decision-making should belong to the people closes to details
+    - When possible, decision-making should belong to the people closes to details.
     - Individual developers or PMs should make most decisions, and raise to developer or PM team if things are unclear, and go to Leads if lack of clarify persists.
 
-- To queue an item for Leads ask the dev or PM lead
+- To queue an item for Leads ask the dev or PM lead.
 
-- Leads is also used for cross-discipline Q&A
+- Leads is also used for cross-discipline Q&A.
 
-    - Rather than randomize individual contributors, cross-discipline discussion (e.g. marketing to PM, community to dev, etc.) can happen in leads
+    - Rather than randomize individual contributors, cross-discipline discussion (e.g. marketing to PM, community to dev, etc.) can happen in leads.
 
 Procedure:
 
@@ -170,9 +170,9 @@ Platform Meeting
 
 Regular team meeting for product staff team at Mattermost Inc.
 
-- Goal: Increase team output by effectively reviewing priorities and finding blindspots
-- Scope: Mattermost Inc-only meeting given confidential customer issues discussed
-- Attendees: Mattermost Inc colleagues working on mattermost-server and mattermost-webapp
+- Goal: Increase team output by effectively reviewing priorities and finding blindspots.
+- Scope: Mattermost Inc-only meeting given confidential customer issues discussed.
+- Attendees: Mattermost Inc colleagues working on mattermost-server and mattermost-webapp.
 
 The meeting includes presentations and demos, controlled agenda items (e.g. queued items) with an "open session" where staff can bring up anything they want. Staff should arrive at decisions during the meeting or schedule further discussion for the next meeting.
 
@@ -190,13 +190,13 @@ Procedure:
 
 2. (Team) At time of meeting:
 
-   - Join the **Zoom** link in the header of the `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`_
-   - Open the **Notes** link in the header to see the agenda
+   - Join the **Zoom** link in the header of the `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`_.
+   - Open the **Notes** link in the header to see the agenda.
 
-3. (Vice-Chair) Post `meeting notes template <https://docs.google.com/document/d/1ImSgkF7T03wbKwz_t4-Dr4n3I8LixVbFb2Db_u0FmdM>`_ into Platform Meeting Notes
-
-    - Add **Follow-ups** from previous meeting
-    - Add **New items** queued in `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only)
+3. (Vice-Chair) Post `meeting notes template <https://docs.google.com/document/d/1ImSgkF7T03wbKwz_t4-Dr4n3I8LixVbFb2Db_u0FmdM>`_ into Platform Meeting Notes.
+   
+   - Add **Follow-ups** from previous meeting.
+   - Add **New items** queued in `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only).
 
 Meeting Agenda:
 
@@ -209,7 +209,7 @@ Meeting Agenda:
 
 Post Meeting:
 
-- If there are follow-up items, these are posted to the  `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only)
+- If there are follow-up items, these are posted to the  `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only).
 
 Meeting Elements
 -----------------------
