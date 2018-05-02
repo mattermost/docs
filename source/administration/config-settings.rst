@@ -610,6 +610,8 @@ Output logs to console
 
 **False**: Output log messages are not written to the console.
 
+Changing this setting requires a server restart before taking effect.
+
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableConsole": true`` with options ``true`` and ``false`` for above settings respectively.                             |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -631,6 +633,8 @@ Level of detail at which log events are written to the console when **EnableCons
 Output logs to file
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Typically set to true in production. When true, logged events are written to the ``mattermost.log`` file in the directory specified by the **FileLocation** setting. The logs are archived to a file in the same directory, and given a name with a datestamp and serial number. For example, ``mattermost.2017-03-31.001``.
+
+Changing this setting requires a server restart before taking effect.
 
 **True**:  Log files are written to files specified in **FileLocation**.
 
@@ -657,6 +661,8 @@ Level of detail at which log events are written to log files when **EnableFile**
 File Log Directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The location of the log files. If blank, they are stored in the ``./logs`` directory. The path that you set must exist and Mattermost must have write permissions in it.
+
+Changing this setting requires a server restart before taking effect.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileLocation": ""`` with string input.                                                                                  |
@@ -685,10 +691,11 @@ Format of log message output. If blank, FileFormat = "[%D %T] [%L] (%S) %M", whe
    * - %M
      - Message
 
+Changing this setting requires a server restart before taking effect.
+
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileFormat": ""`` with string input.                                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 Enable Webhook Debugging
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -701,7 +708,6 @@ Enable Webhook Debugging
 | This feature's ``config.json`` setting is ``"EnableWebhookDebugging": true`` with options ``true`` and ``false`` for above settings respectively.                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Enable Diagnostics and Error Reporting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -712,8 +718,6 @@ Enable Diagnostics and Error Reporting
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableDiagnostics": true`` with options ``true`` and ``false`` for above settings respectively.                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
 
 ________
 
