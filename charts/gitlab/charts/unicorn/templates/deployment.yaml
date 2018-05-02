@@ -78,6 +78,10 @@ spec:
             - name: prometheus_multiproc_dir
               value: /metrics
 {{- end }}
+{{- if .Values.workhorse.sentryDSN }}
+            - name: GITLAB_WORKHORSE_SENTRY_DSN
+              value: {{ .Values.workhorse.sentryDSN }}
+{{- end }}
           volumeMounts:
 {{- if .Values.metrics.enabled }}
             - name: unicorn-metrics
