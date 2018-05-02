@@ -426,7 +426,8 @@ or
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
 | ANDROID_APP_NAME                              | The name of the app as it is going to be shown in the Android home screen.                            | Mattermost Beta         |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
-| ANDROID_REPLACE_ASSETS                        | Replaces app icons with the ones found under the folder *dist/assets/release/icons/android*.          | false                   |
+| ANDROID_REPLACE_ASSETS                        | Replaces app icons with the ones found under the folder *dist/assets/release/icons/android* and       | false                   |
+|                                               | the splash screen with the ones found under the folder */dist/assets/release/splash_screen/android*   |                         |
 |                                               | Valid values are: true, false                                                                         |                         |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
 | ANDROID_INCREMENT_BUILD_NUMBER                | Increases the Android app build number, required when a new build is going to be publish to the       | false                   |
@@ -502,7 +503,8 @@ or
 |                                               | **Make sure you set this value to true if you plan to submit this app to TestFlight or distribute     |                                        |
 |                                               | it in any other way**.                                                                                |                                        |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
-| IOS_REPLACE_ASSETS                            | Replaces the icons of the app with the ones found under the folder *dist/assets/release/icons/ios*.   | false                                  |
+| IOS_REPLACE_ASSETS                            | Replaces the icons of the app with the ones found under the folder *dist/assets/release/icons/ios*    | false                                  |
+|                                               | and the splash screen with the one found under the folder *dist/assets/release/splash_screen/ios*     |                                        |
 |                                               | Valid values are: true, false                                                                         |                                        |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
 | IOS_INCREMENT_BUILD_NUMBER                    | Increases the iOS app build number, required when a new build is going to be publish to TestFlight    | false                                  |
@@ -710,7 +712,7 @@ Overriding Assets & White Labeling
 We've made it easy to white label the mobile app and to replace override the assets used, however, you have to `Build Your Own App from Source`_.
 
 If you look at the `Project Directory Structure`_, you'll see that there is an assets folder containing a base folder with assets provided by Mattermost.
-These include localization files, images and a release folder that optionally contains the icons of the app when building in release mode.
+These include localization files, images and a release folder that optionally contains the icons and the splash screen of the app when building in release mode.
 
 To replace these with your own assets, create a sub-directory called ``override`` in the ``assets`` folder. Using the same
 directory structure and file names as in the ``base`` directory, you can add assets to the override folder to be used instead.
@@ -725,6 +727,22 @@ Images
 ~~~~~~
 
 To replace an image, copy the image to ``assets/override/images/`` with the same location and file name as in the ``base`` folder.
+
+.. note::
+ Make sure the images have the same height, width and DPI as the images that you are overriding.
+
+App Splash screen and Launch icons
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In the ``assets`` directory you will find a folder named ``assets/base/release`` which contains an ``icons`` folder and a ``splash_screen`` folder
+under each platform directory.
+
+Copy the full ``release`` directory under ``assets/override/release`` and then replace each image with the same name, make sure you replace all the
+icons image for the platform you are building the app and the same applies to the splash screen.
+
+.. important::
+The Splash Screen's background color is white by default and the image is centered, if you need to change the color or the layout to improve the experience of your new splash screen
+make sure that you also override the file ``launch_screen.xml`` for Android and ``LaunchScreen.xib`` for iOS. `` Both can found under ``assets/base/release/splash_screen/<platform>``
 
 .. note::
  Make sure the images have the same height, width and DPI as the images that you are overriding.
