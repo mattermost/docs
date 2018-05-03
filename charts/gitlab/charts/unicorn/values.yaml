@@ -114,6 +114,19 @@ registry:
   certificate:
     secret: gitlab-registry
     key: registry-auth.key
+extra: {}
+  # google_analytics_id: '_your_tracking_id'
+  # piwik_url: '_your_piwik_url'
+  # piwik_site_id: '_your_piwik_site_id'
+rack_attack:
+  git_basic_auth:
+    enabled: false
+    # enabled: true
+    # ip_whitelist: ["127.0.0.1"]
+    # maxretry: 10
+    # findtime: 60
+    # bantime: 3600
+trusted_proxies: []
 resources:
   # limits:
   #  cpu: 1

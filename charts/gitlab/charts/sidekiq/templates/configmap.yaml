@@ -34,6 +34,10 @@ data:
       gitlab:
         https: false # Set to true if using HTTPS, see installation.md#using-https for additional HTTPS configuration details
         trusted_proxies:
+        {{- if .Values.trusted_proxies }}
+{{ toYaml .Values.trusted_proxies | indent 10 }}
+        {{- end }}
+        time_zone: {{ .Values.global.time_zone | quote }}
         email_from: {{ template "gitlab.email.from" . }}
         email_display_name: {{ .Values.global.email.display_name | quote }}
         email_reply_to: {{ template "gitlab.email.reply_to" . }}
@@ -96,8 +100,14 @@ data:
           port: {{ .Values.metrics.port }}
 {{- end }}
       extra:
+        {{- if .Values.extra }}
+{{ toYaml .Values.extra | indent 8 }}
+        {{- end }}
       rack_attack:
         git_basic_auth:
+          {{- if .Values.rack_attack.git_basic_auth.enabled }}
+{{ toYaml .Values.rack_attack.git_basic_auth | indent 10 }}
+          {{- end }}
   configure: |
     set -e
     mkdir -p /sidekiq-secrets/redis /sidekiq-secrets/postgres \

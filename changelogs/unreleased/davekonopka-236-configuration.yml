@@ -1,0 +1,6 @@
+---
+title: Add configuration options for time_zone, rack_attack, trusted_proxies, and
+  extras
+merge_request: 260
+author:
+type: added

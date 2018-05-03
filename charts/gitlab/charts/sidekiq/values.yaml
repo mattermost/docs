@@ -42,6 +42,19 @@ gitaly:
     secret: gitaly-secret
     key: token
 
+extra: {}
+
+rack_attack:
+  git_basic_auth:
+    enabled: false
+    # enabled: true
+    # ip_whitelist: ["127.0.0.1"]
+    # maxretry: 10
+    # findtime: 60
+    # bantime: 3600
+
+trusted_proxies: []
+
 # Global defaults
 replicas: 1
 railsSecrets:

@@ -29,6 +29,10 @@ data:
         host: {{ template "gitlabHost" . }}
         https: {{ hasPrefix "https://" (include "gitlabUrl" .) }}
         trusted_proxies:
+        {{- if .Values.trusted_proxies }}
+{{ toYaml .Values.trusted_proxies | indent 10 }}
+        {{- end }}
+        time_zone: {{ .Values.global.time_zone | quote }}
         email_from: example@example.com
         email_display_name: GitLab
         email_reply_to: noreply@example.com
@@ -96,8 +100,14 @@ data:
           - 127.0.0.0/8
         sidekiq_exporter:
       extra:
+        {{- if .Values.extra }}
+{{ toYaml .Values.extra | indent 8 }}
+        {{- end }}
       rack_attack:
         git_basic_auth:
+          {{- if .Values.rack_attack.git_basic_auth.enabled }}
+{{ toYaml .Values.rack_attack.git_basic_auth | indent 10 }}
+          {{- end }}
       ## Registry Integration
       registry:
         enabled: true
