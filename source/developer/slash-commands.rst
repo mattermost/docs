@@ -8,7 +8,7 @@ Mattermost supports slash commands to easily integrate external applications int
 Messages that begin with ``/`` are interpreted as slash commands. The commands will send an HTTP POST request to a web service, and process a response back to Mattermost. Mattermost supports both `built-in <https://docs.mattermost.com/developer/slash-commands.html#built-in-commands>`_ and `custom slash commands <https://docs.mattermost.com/developer/slash-commands.html#custom-slash-command>`_.
 
 .. note::
-  To prevent malicious users from trying to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`_ a *BOT* indicator appears next to posts coming from webhooks regardless of what username is specified.
+  To prevent malicious users from trying to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`_, a *BOT* indicator appears next to posts coming from webhooks regardless of what username is specified.
 
 .. toctree::
    :maxdepth: 2
@@ -122,7 +122,7 @@ If your integration sends back a JSON response, make sure it returns the ``appli
    ---
    "}
 
-Which would render in Mattermost as
+which would render in Mattermost as
 
 .. image:: ../images/weatherBot.PNG
   :alt: Shows what the JSON response renders as in Mattermost
@@ -133,8 +133,7 @@ Messages with advanced formatting can be created by including an :doc:`attachmen
 
 .. note::
   `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`_ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator. If not enabled, the username is set to `webhook`.
-
-.. note::
+  
   Similarly, `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`_ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator. If not enabled, the icon of the creator of the webhook URL is used to post messages.
 
 Custom post type
