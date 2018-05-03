@@ -11,8 +11,10 @@ Use incoming webhooks to post messages to Mattermost public channels, private ch
   :width: 500 px
 *An example of a GitHub integration that posts updates to a Developers channel*
 
-
 Use `curl <https://curl.haxx.se/>`_, a simple command line tool for sending HTTP requests in the examples that follow.
+
+.. note::
+  To prevent malicious users from trying to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`_ a *BOT* indicator appears next to posts coming from webhooks regardless of what username is specified.
 
 .. toctree::
    :maxdepth: 2
@@ -67,99 +69,14 @@ This will be displayed in the Town Square channel.
 .. image:: ../images/incoming_webhooks_full_example.png
   :width: 500 px
 
-Below we give a brief description of each parameter to help you customize the webhook post in Mattermost.
-
-Override the channel
-~~~~~~~~~~~~~~~~~~~~~
-
-You can override the channel the webhook posts to by specifying a ``channel`` parameter in your JSON payload.
-
-For example, if you have a webhook created for *Town Square*, you can send a message to the *Off-Topic* channel via the same webhook URL by using the following payload.
-
-.. code-block:: text
-
-  payload={"channel": "off-topic", "text": "Hello, this is some text\nThis is more text. :tada:"}
-
-.. note::
-  Use the channel URL, not the channel display name, when specifying the ``channel`` parameter. For instance, use ``town-square``, not ``Town Square`` when posting messages to the Town Square channel.
-
-To send a message to a direct message channel, add an "@" symbol followed by the username to the ``channel`` parameter.
-
-.. code-block:: text
-
-  payload={"channel": "@username", "text": "Hello, this is some text\nThis is more text. :tada:"}
-
-.. note::
-  Direct messages sent via webhooks will appear to come from the user who created the webhook. So if you create a webhook with the user ``alice`` and send a direct message to ``bob`` using a webhook it will show up as a direct message from ``alice`` to ``bob`` regardless of other settings such as username.
-
-Override the username
-~~~~~~~~~~~~~~~~~~~~~
-
-You can override the username the messages post as by specifying a ``username`` parameter in your JSON payload.
-
-For example, to send the message as a ``webhook-bot``, use the following payload.
-
-.. code-block:: text
-
-  payload={"username": "webhook-bot", "text": "Hello, this is some text\nThis is more text. :tada:"}
-  
-.. image:: ../images/incoming_webhooks_override_username.png
-  :width: 400 px
-
-To prevent malicious users from trying to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`_ a *BOT* indicator appears next to posts coming from webhooks regardless of what username is specified.
-
-.. note::
-  `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`_ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator to do so. If not enabled, the username is set to `webhook`.
-
-Override the profile picture
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You can also override the profile picture the messages post with by specifying an ``icon_url`` parameter in your JSON payload.
-
-For example, you can use the following payload to override the profile picture to use the image located at http://example.com/somecoolimage.jpg.
-
-.. code-block:: text
-
-  payload={"icon_url": "http://example.com/somecoolimage.jpg", "text": "Hello, this is some text\nThis is more text. :tada:"}
-
-.. note::
-  `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`_ must be set to `true` in `config.json` to override profile picture icons. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator to do so. If not enabled, the icon of the creator of the webhook URL is used to post messages.
-
-Mention notifications
-~~~~~~~~~~~~~~~~~~~~~~
-
-You can trigger mention notifications with your incoming webhook message. To trigger a mention, include *@username* or *<userid>* in the `text` parameter of the JSON payload.
-
-Channels can be mentioned by including *@channel* or *<!channel>*. For example:
-
-.. code-block:: text
-
-  payload={"text": "<!channel> this is a notification."}
-
-Markdown formatting
-~~~~~~~~~~~~~~~~~~~~
-
-A rich range of formatting is made possible through :doc:`markdown support <../help/messaging/formatting-text>` in Mattermost, including headings, formatted fonts, tables, inline images and other options supported by Mattermost markdown. All of these options are also supported by incoming webhooks.
-
-For example, to create a message with a heading, and an italicized text on the next line, use the following payload. 
-
-.. code-block:: text
-
-  payload={"text": "# This is a heading\n_This text is italicized._"}
-
-.. image:: ../images/incoming_webhooks_markdown_formatting.png
-  :width: 300 px
+See `developer documentation <https://developers.mattermost.com/integrate/incoming-webhooks/`_ for details on what parameters are supported by incoming webhooks. For instance, you can override the username and profile picture the messages post as, or specify a custom post type when sending a webhook message for use by `plugins <about.mattermost.com/default-plugins>`_.
 
 Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` and :doc:`interactive message buttons <interactive-message-buttons>` in the JSON payload.
 
-Custom post type
-~~~~~~~~~~~~~~~~~~
-
-You can specify a custom post type when sending a webhook message, for use by `plugins <about.mattermost.com/default-plugins>`_. To set the type, use the `type` parameter on the JSON payload.
-
-.. code-block:: text
-
-  payload={"username": "webhook-bot", "text": "Hello, this is some text\nThis is more text. :tada:", "type": "custom_type_here"}
+.. note::
+  `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`_ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator to do so. If not enabled, the username is set to `webhook`.
+  
+  Similarly, `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`_ must be set to `true` in `config.json` to override profile picture icons. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator to do so. If not enabled, the icon of the creator of the webhook URL is used to post messages.
 
 Tips and Best Practices
 ------------------------
@@ -241,8 +158,6 @@ Some common error messages include:
 
 If your integration prints the JSON payload data instead of rendering the generated message, make sure your integration is returning the ``application/json`` content-type.
 
-
-
 Frequently Asked Questions
 ----------------------------
 
@@ -255,7 +170,9 @@ To send a message to a direct message channel, add an "@" symbol followed by the
 
   payload={"channel": "@username", "text": "Hello, this is some text\nThis is more text. :tada:"}
 
-This will send a message from the account that has set up the incoming webhook to the username after the "@" symbol. To send a message to a different direct message channel between two other users, you can specify the channel with the user IDs for the users separated with two underscore (_) symbols. To find the user ID you can `use the ``platform`` command <https://docs.mattermost.com/administration/command-line-tools.html#platform-user-search>`
+This will send a message from the account that has set up the incoming webhook to the username after the "@" symbol. For example, if you create a webhook with the user ``alice`` and send a direct message to ``bob`` using a webhook, it will show up as a direct message from ``alice`` to ``bob`` regardless of other settings such as username.
+
+To send a message to a different direct message channel between two other users, you can specify the channel with the user IDs for the users separated with two underscore (_) symbols. To find the user ID you can `use the ``platform`` command <https://docs.mattermost.com/administration/command-line-tools.html#platform-user-search>`
 
 .. code-block:: text
 
