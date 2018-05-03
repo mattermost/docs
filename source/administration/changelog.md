@@ -10,9 +10,6 @@ Release date: 2018-05-16
 
 ### Highlights
 
-#### Autoresponder
- - Added a setting that automatically answers messages sent to a user who is away.
-
 #### Environment Variables Support for GitLab
  - Added tracking of which system console settings are configured via environment variables.
  - Disabled system console settings that are configured via environment variables.
@@ -20,9 +17,10 @@ Release date: 2018-05-16
 ### Improvements
 
 #### Web User Interface
+ - Added a setting that automatically answers messages sent to a user who is away.
+ - Added ability for team / system admin to convert a channel to private in the User Interface.
  - Added a loader for channel invite modal.
  - Made Shift+up switch keyboard focus to RHS if it's already open to the current thread.
- - Added ability for team / system admin to convert a channel to private in the User Interface.
  - Removed WebRTC end user setting.
  - Removed support for transparent team icons and added ability to remove team icons.
  - Added an on-hover effect for image link previews.
@@ -39,9 +37,6 @@ Release date: 2018-05-16
  - Added ``/platform`` list of commands to teams command in CLI.
  - Improved slash command error message when payload is invalid JSON.
  
- #### Enterprise Edition
- - Added channel scheme and team scheme API endpoint.
- 
  #### Other (XXXX/// Need help with a category)
  - Removed ``mm_config`` and ``mm_license`` global state from webapp.
  - Added support to REST API for sending ephemeral messages to users.
@@ -56,25 +51,17 @@ Release date: 2018-05-16
 
  - Fixed an issue where sign-up and team joining were broken on Mattermost server.
  - Fixed an issue with a mention badge missing for DMs in CTRL/CMD+K channel switcher.
+ - Fixed an issue with weird spacing in post control menu of a post by another user.
+ - Fixed an issue where using CMD/CTRL+K to switch to DM failed with errors in console.
+ - Fixed an issue where focus with CTRL/CMD+SHIFT+L was always set to the right-hand side when reply thread was open.
+ - Fixed an issue where a user added to a channel wasn't immediately removed from other users' add-members list.
+ - Fixed an issue where 'Copy Link' context menu option was partially hidden when right-clicking a team in team sidebar.
+ - Fixed an issue where a channel name overlapped the star icon in channel header.
+ - Fixed an issue where the mention badge in team sidebar was cut off by the team icon border.
+ - Fixed an issue where there was no on-hover effect for buttons in APIv3 deprecation system notice, and in System Console and Integrations pages.
+ - Fixed an issue where ``[...]`` menu was missing on other users' posts if user was not an admin.
 
 ### Compatibility
-
-#### Removed and Deprecated Features
-
- - Several configuration settings have been migrated to roles in the database and changing their `config.json` values no longer take effect. These permissions can still be modified by their respective System Console settings as before. The affected `config.json` settings are:
-   - RestrictPublicChannelManagement
-   - RestrictPrivateChannelManagement
-   - RestrictPublicChannelCreation
-   - RestrictPrivateChannelCreation
-   - RestrictPublicChannelDeletion
-   - RestrictPrivateChannelDeletion
-   - RestrictPrivateChannelManageMembers
-   - EnableTeamCreation
-   - EnableOnlyAdminIntegrations
-   - RestrictPostDelete
-   - AllowEditPost
-   - RestrictTeamInvite
-   - RestrictCustomEmojiCreation
    
 #### Upcoming Deprecated Features in Mattermost v5.0
 
@@ -87,6 +74,8 @@ The following deprecations are planned for the Mattermost v5.0 release, which is
 5. A new `config.json` setting to disable the [permanent APIv4 delete team parameter](https://api.mattermost.com/#tag/teams%2Fpaths%2F~1teams~1%7Bteam_id%7D%2Fput) will be added. The setting will be off by default for all new and existing installs, except those deployed on GitLab Omnibus. A System Administrator can enable the API v4 endpoint from the config.json file. [Ticket #9916](https://mattermost.atlassian.net/browse/MM-9916).
 6. An unused `ExtraUpdateAt` field will be removed from the channel model. [Ticket #9739](https://mattermost.atlassian.net/browse/MM-9739).
 7. [Enterprise Edition E20] Current CSV export feature will be replaced by the [new Compliance Export](https://docs.mattermost.com/administration/compliance-export.html) feature. [Ticket #8810](https://mattermost.atlassian.net/browse/MM-8810).
+8. A Mattermost user setting to configure desktop notification duration in **Account Settings** > **Notifications** > **Desktop Notifications** will be removed.
+9. Slash commands configured to receive a GET request will have the payload being encoded in the query string instead of receiving it in the body of the request, consistent with standard HTTP requests. Although unlikely, this could break custom slash commands that use GET requests incorrectly. [Ticket 10201](https://mattermost.atlassian.net/browse/MM-10201).
  
 #### config.json
 
@@ -98,6 +87,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
    - Added ``"ExperimentalEnableAutomaticReplies": false,`` to allow
 
 #### API Changes
+
+ - Added an APIv4 endpoint to convert a channel from public to private and to restrict this setting to ``system_admin``.
 
 ### WebSocket Event Changes
 
@@ -119,7 +110,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - CTRL/CMD+U shortcut to upload a file doesn’t work on Firefox.
 
 ### Contributors
-
+[amyblais](https://github.com/amyblais), [AndersonWebStudio](https://github.com/AndersonWebStudio), [antoineHC](https://github.com/antoineHC), [asaadmahmood](https://github.com/asaadmahmood), [Autre31415](https://github.com/Autre31415), [cometkim](https://github.com/cometkim), [coreyhulen](https://github.com/coreyhulen), [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [csduarte](https://github.com/csduarte), [daanlevi](https://github.com/daanlevi), [DSchalla](https://github.com/DSchalla), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [grundleborg](https://github.com/grundleborg), [guydemi](https://github.com/guydemi), [hmhealey](https://github.com/hmhealey), [icelander](https://github.com/icelander), [iri-dw](https://github.com/iri-dw), [it33](https://github.com/it33), [james-mm](https://github.com/james-mm), [jasonblais](https://github.com/jasonblais), [jespino](https://github.com/jespino), [jordanbuchman](https://github.com/jordanbuchman), [jwilander](https://github.com/jwilander), [kethinov](https://github.com/kethinov), [koxen](https://github.com/koxen), [lfbrock](https://github.com/lfbrock), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lindy65](https://github.com/lindy65), [lisakycho](https://github.com/lisakycho), [liusy182](https://github.com/liusy182), [Merlin2001](https://github.com/merlin2001), [michaeltaylor-kerauno](https://github.com/michaeltaylor-kerauno), [mkraft](https://github.com/mkraft), [n1aba](https://github.com/n1aba), [pichouk](https://github.com/pichouk), [saturninoabril](https://github.com/saturninoabril), [stanchan](https://github.com/stanchan), [sudheerDev](https://github.com/sudheerDev), [tejasbubane](https://github.com/tejasbubane), [timconner](https://github.com/timconner), [tomo667a](https://github.com/tomo667a), [yuya-oc](https://github.com/yuya-oc)
 
 ## Release v4.9
 
