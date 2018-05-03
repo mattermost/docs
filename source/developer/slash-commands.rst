@@ -192,18 +192,4 @@ Known Slack compatibility issues
 Troubleshooting
 ---------------
 
-To debug slash commands in **System Console > Logs**, set **System Console > Logging > Enable Webhook Debugging** to ``true`` and set **System Console > Logging > Console Log Level** to ``DEBUG``.
-
-Command with a trigger of 'trigger_word' returned an empty response
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you are using a slash command that previously worked in Slack, try specifying the ``response_type`` for the slash command. 
-
-Slack assumes the ``response_type`` is ``ephemeral`` while Mattermost does not, so the `response_type must be specified <https://docs.mattermost.com/developer/slash-commands.html#message-type>`_ before the command works.
-
-My integration prints the JSON data in a Mattermost channel
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Mattermost handles multiple content types for integrations, including plain text content type. 
-
-If your integration prints the JSON data instead of rendering the generated message, make sure your integration is returning the ``application/json`` content-type.
+See `developer documentation <https://developers.mattermost.com/integrate/slash-commands>`_ for troubleshooting help.
