@@ -343,7 +343,7 @@ Test setup and configure Mattermost Server
 2. The first user in the system is automatically granted the
    ``system_admin`` role, which gives you access to the System Console.
 3. From the ``town-square`` channel click the dropdown and choose the
-   ``System Console`` option
+   ``System Console`` option.
 4. Set the Site URL:
 
    - In the **GENERAL** section of the System Console, click **Configuration**.
