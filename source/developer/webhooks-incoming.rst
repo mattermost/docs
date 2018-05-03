@@ -44,7 +44,7 @@ If you're running cURL on Windows, ensure inner double quotes are escaped with a
 
   curl -i -X POST -H 'Content-Type: application/json' -d '{\"text\": \"Hello, this is some text\nThis is more text. :tada:\"}' http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
 
-See `developer documentation <https://developers.mattermost.com/integrate/incoming-webhooks/>`_ for details on what parameters are supported by incoming webhooks. For instance, you can override the username and profile picture the messages post as, or specify a custom post type when sending a webhook message for use by `plugins <about.mattermost.com/default-plugins>`_. The following payload gives an example webhook that uses additional parameters and formatting options:
+See `developer documentation <https://developers.mattermost.com/integrate/incoming-webhooks/>`_ for details on what parameters are supported by incoming webhooks. For instance, you can override the username and profile picture the messages post as, or specify a custom post type when sending a webhook message for use by `plugins <https://about.mattermost.com/default-plugins>`_. The following payload gives an example webhook that uses additional parameters and formatting options:
 
 .. code-block:: text
 
@@ -82,7 +82,7 @@ Tips and Best Practices
 
 3. You can restrict who can create incoming webhooks in `System Console > Integrations > Custom Integrations <https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins>`_.
 
-4. Mattermost incoming webhooks are Slack-compatible. You can copy-and-paste code used for a Slack incoming webhook to create Mattermost integrations. Mattermost `automatically translates the Slack's proprietary JSON payload format <../developer/webhooks-incoming#translate-slacks-data-format-to-mattermost>`_.
+4. Mattermost incoming webhooks are Slack-compatible. You can copy-and-paste code used for a Slack incoming webhook to create Mattermost integrations. Mattermost `automatically translates the Slack's proprietary JSON payload format <https://docs.mattermost.com/developer/webhooks-incoming#translate-slacks-data-format-to-mattermost>`_.
 
 5. The external application may be written in any programming language as long as it supports sending an HTTP POST request in the required JSON format to a specified Mattermost URL.
 
