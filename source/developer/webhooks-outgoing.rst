@@ -10,8 +10,10 @@ Use outgoing webhooks to post automated responses to posts made by your users. O
  - It is posted in a specified channel
  - The first word matches or starts with one of the defined trigger words, such as ``gif``
 
-  .. note::
-    Outgoing webhooks are supported in public channels only. If you need a trigger that works in a private channel or a direct message, consider using a `slash command <https://docs.mattermost.com/developer/slash-commands.html>`_ instead.
+Outgoing webhooks are supported in public channels only. If you need a trigger that works in a private channel or a direct message, consider using a `slash command <https://docs.mattermost.com/developer/slash-commands.html>`_ instead.
+
+.. note::
+  To prevent malicious users from trying to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`_ a *BOT* indicator appears next to posts coming from webhooks regardless of what username is specified.
 
 .. toctree::
    :maxdepth: 2
@@ -95,92 +97,14 @@ which would render in Mattermost as:
 
 .. image:: ../images/webhooksTable.PNG
 
-11 - You're all set! See below for message formatting options for the JSON response, as well as tips and best practices for setting up your outgoing webhook.
+11 - You're all set! See `developer documentation <https://developers.mattermost.com/integrate/incoming-webhooks/`_ for details on what parameters are supported by incoming webhooks. For instance, you can override the username and profile picture the messages post as, or specify a custom post type when sending a webhook message for use by `plugins <about.mattermost.com/default-plugins>`_.
 
-Parameters and Formatting
---------------------------
-
-Below we give a brief description of additional parameters that help you customize the webhook post in Mattermost.
-
-Override the username
-~~~~~~~~~~~~~~~~~~~~~
-
-You can override the username the messages posts as by specifying a ``username`` parameter in your JSON response.
-
-For example, to send the message as a ``webhook-bot``, use the following response.
-
-.. code-block:: text
-
-  {"username": "webhook-bot", "text": "Hello, this is some text\nThis is more text. :tada:"}
-  
-.. image:: ../images/incoming_webhooks_override_username.png
-  :width: 400 px
-
-To prevent malicious users from trying to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`_ a *BOT* indicator appears next to posts coming from webhooks regardless of what username is specified.
+Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` and :doc:`interactive message buttons <interactive-message-buttons>` in the JSON payload.
 
 .. note::
   `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`_ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator. If not enabled, the username is set to `webhook`.
 
-Override the profile picture
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You can also override the profile picture the messages post with by specifying an ``icon_url`` parameter in your JSON response.
-
-For example, you can use the following response to override the profile picture to use the image located at http://example.com/somecoolimage.jpg.
-
-.. code-block:: text
-
-  {"icon_url": "http://example.com/somecoolimage.jpg", "text": "Hello, this is some text\nThis is more text. :tada:"}
-
-.. note::
-  `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`_ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator. If not enabled, the icon of the creator of the webhook URL is used to post messages.
-
-Replies
-~~~~~~~~~~~~~~~~~~~~~~
-
-You can have the outgoing webhook post a reply to the message that triggered it. To post the webhook message as a reply, set ``response_type`` to ``comment``. For example:
-
-.. code-block:: text
-
-  {"text": "<!channel> this is a notification.", "response_type": "comment"}
-
-When the ``response_type`` is set to ``post``, or not set, the webhook message is made as a regular post.
-
-Mention notifications
-~~~~~~~~~~~~~~~~~~~~~~
-
-You can trigger mention notifications with your outgoing webhook message. To trigger a mention, include *@username* or *<userid>* in the ``text`` parameter of the JSON response.
-
-Channels can be mentioned by including *@channel* or *<!channel>*. For example:
-
-.. code-block:: text
-
-  {"text": "<!channel> this is a notification."}
-
-Markdown formatting
-~~~~~~~~~~~~~~~~~~~~
-
-A rich range of formatting is made possible through :doc:`markdown support <../help/messaging/formatting-text>` in Mattermost, including headings, formatted fonts, tables, inline images and other options supported by Mattermost markdown. All of these options are also supported by outgoing webhooks.
-
-For example, to create a message with a heading, and an italicized text on the next line, use the following response. 
-
-.. code-block:: text
-
-  {"text": "# This is a heading\n_This text is italicized._"}
-
-.. image:: ../images/incoming_webhooks_markdown_formatting.png
-  :width: 300 px
-
-Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` and :doc:`interactive message buttons <interactive-message-buttons>` in the JSON response.
-
-Custom post type
-~~~~~~~~~~~~~~~~~~
-
-You can specify a custom post type when sending a webhook message, for use by `plugins <about.mattermost.com/default-plugins>`_. To set the type, use the `type` parameter on the JSON response.
-
-.. code-block:: text
-
-  {"username": "webhook-bot", "text": "Hello, this is some text\nThis is more text. :tada:", "type": "custom_type_here"}
+ Similarly, `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`_ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator. If not enabled, the icon of the creator of the webhook URL is used to post messages.
 
 Tips and Best Practices
 ------------------------
