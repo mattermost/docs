@@ -5,7 +5,7 @@ Outgoing Webhooks
 
 Mattermost supports webhooks to easily integrate external applications into the server.
 
-Use outgoing webhooks to post automated responses to posts made by your users. Outgoing webhooks will send an HTTP POST request to a web service, and process a response back to Mattermost, when a message matches one or both of the following conditions:
+Use outgoing webhooks to post automated responses to posts made by your users. Outgoing webhooks will send an HTTP POST request to a web service and process a response back to Mattermost when a message matches one or both of the following conditions:
 
  - It is posted in a specified channel
  - The first word matches or starts with one of the defined trigger words, such as ``gif``
