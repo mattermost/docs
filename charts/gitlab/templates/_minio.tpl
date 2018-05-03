@@ -8,3 +8,12 @@ otherwise the hostname will be assembed using `minio` as the prefix, and the `as
 {{- define "minioHost" -}}
 {{- coalesce .Values.global.hosts.minio.name (include "assembleHost"  (dict "name" "minio" "context" . )) -}}
 {{- end -}}
+
+{{/*
+Return the minio service endpoint
+*/}}
+{{- define "gitlab.minio.endpoint" -}}
+{{- $name := default "minio-svc" .Values.minio.serviceName -}}
+{{- $port := default 9000 .Values.minio.port | int -}}
+{{- printf "http://%s-%s:%d" .Release.Name $name $port -}}
+{{- end -}}
