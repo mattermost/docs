@@ -98,7 +98,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 The following deprecations are planned for the Mattermost v5.0 release, which is scheduled for summer/2018. This list is subject to change prior to the release.
 
-1. All API v3 endpoints will be removed. [See documentation](https://api.mattermost.com/#tag/schema) to learn more about how to migrate your integrations to API v4. [Ticket #8708](https://mattermost.atlassian.net/browse/MM-8708).
+1. All API v3 endpoints will be removed. [See documentation](https://api.mattermost.com/#tag/APIv3-Deprecation) to learn more about how to migrate your integrations to API v4. [Ticket #8708](https://mattermost.atlassian.net/browse/MM-8708).
 2. `platform` binary will be renamed to mattermost for a clearer install and upgrade experience. All command line tools, including the bulk loading tool and developer tools, will also be renamed from platform to mattermost. [Ticket #9985](https://mattermost.atlassian.net/browse/MM-9985).
 3. [Site URL setting](https://docs.mattermost.com/administration/config-settings.html#site-url) will be enforced to reduce number of OAuth, plugin and email notification set up errors. The setting has already been required since Mattermost v3.8. [Ticket #9983](https://mattermost.atlassian.net/browse/MM-9983).
 4. A new `config.json` setting to whitelist types of protocols for auto-linking will be added. [Ticket #9547](https://mattermost.atlassian.net/browse/MM-9547).
