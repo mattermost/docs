@@ -45,7 +45,7 @@ Important Upgrade Notes
 |                                                    | By default, user-supplied URLs such as those used for Open Graph metadata, webhooks, or slash commands will no longer be allowed to connect to reserved IP      |
 |                                                    | addresses including loopback or link-local addresses used for internal networks.                                                                                |
 |                                                    |                                                                                                                                                                 |
-|                                                    | This change may cause private integrations to break in testing environments, which may point to a URL such as http://127.0.0.1:1021/my-command.                 |
+|                                                    | This change may cause private integrations to break in testing environments, which may point to a URL such as ``http://127.0.0.1:1021/my-command``.             |
 |                                                    |                                                                                                                                                                 |
 |                                                    | If you point private integrations to such URLs, you may whitelist such domains, IP addresses, or CIDR notations via the                                         |
 |                                                    | `AllowedUntrustedInternalConnections config setting <https://docs.mattermost.com/administration/config-settings.html#allow-untrusted-internal-connections-to>`_ |
