@@ -69,7 +69,7 @@ This will be displayed in the Town Square channel.
 .. image:: ../images/incoming_webhooks_full_example.png
   :width: 500 px
 
-See `developer documentation <https://developers.mattermost.com/integrate/incoming-webhooks/`_ for details on what parameters are supported by incoming webhooks. For instance, you can override the username and profile picture the messages post as, or specify a custom post type when sending a webhook message for use by `plugins <about.mattermost.com/default-plugins>`_.
+See `developer documentation <https://developers.mattermost.com/integrate/incoming-webhooks/>`_ for details on what parameters are supported by incoming webhooks. For instance, you can override the username and profile picture the messages post as, or specify a custom post type when sending a webhook message for use by `plugins <about.mattermost.com/default-plugins>`_.
 
 Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` and :doc:`interactive message buttons <interactive-message-buttons>` in the JSON payload.
 
