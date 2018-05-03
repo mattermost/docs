@@ -7,6 +7,9 @@ Mattermost supports slash commands to easily integrate external applications int
 
 Messages that begin with ``/`` are interpreted as slash commands. The commands will send an HTTP POST request to a web service, and process a response back to Mattermost. Mattermost supports both `built-in <https://docs.mattermost.com/developer/slash-commands.html#built-in-commands>`_ and `custom slash commands <https://docs.mattermost.com/developer/slash-commands.html#custom-slash-command>`_.
 
+.. note::
+  To prevent malicious users from trying to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`_ a *BOT* indicator appears next to posts coming from webhooks regardless of what username is specified.
+
 .. toctree::
    :maxdepth: 2
 
@@ -124,122 +127,20 @@ Which would render in Mattermost as
 .. image:: ../images/weatherBot.PNG
   :alt: Shows what the JSON response renders as in Mattermost
 
-11 - You're all set! See below for message formatting options for the JSON response, as well as tips and best practices for setting up your slash command.
+11 - You're all set! See `developer documentation <https://developers.mattermost.com/integrate/slash-commands>`_ for details on what parameters are supported by slash commands. For instance, you can override the username and profile picture the messages post as, or specify a custom post type when sending a webhook message for use by `plugins <about.mattermost.com/default-plugins>`_.
 
-Parameters and Formatting
---------------------------
-
-Below we give a brief description of additional parameters that help you customize the post in Mattermost made by your slash command.
-
-Message type
-~~~~~~~~~~~~~~~~~~~~
-
-You can use the ``response_type`` parameter to set whether the command posts a regular message or an ephemeral message. Ephemeral messages are only displayed temporarily to the user who activated the command.
-
-For example, to send an ephemeral message, use the following response.
-
-.. code-block:: text
-
-  {"response_type": "ephemeral", "text": "Hello, this is some text\nThis is more text. :tada:"}
-
-To send the response as a regular message, use the following response.
-
-.. code-block:: text
-
-  {"response_type": "in_channel", "text": "Hello, this is some text\nThis is more text. :tada:"}
-
-Redirect to an external webpage
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You can use the ``goto_location`` parameter to redirect the user of your command to an external webpage.
-
-If the parameter is present, the user is redirected to the specified URL in a new browser tab. For instance, to redirect the user to `https://about.mattermost.com <https://about.mattermost.com>`_, use the following response.
-
-.. code-block:: text
-
-  {"response_type": "ephemeral", "goto_location": "https://about.mattermost.com", "text": "Hello, this is some text\nThis is more text. :tada:"}
-
-The parameter supports any custom protocol including ``http://``, ``https://``, ``ftp://``, ``ssh://`` and ``mailto://``.
-
-Delayed and multiple responses
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You can use the ``response_url`` parameter to supply multiple responses or a delayed response to a slash command. Response URLs can be used to send five additional messages within a 30-minute time period from the original command invocation. 
-
-Delayed responses are useful when the action takes more than three seconds to perform. For instance:
-- Retrieval of data from external third-party services, where the response time may take longer than three seconds.
-- Report generation, batch processing or other long-running processes that take longer than three seconds to respond.
-
-Any requests that are made to the response URL should either be a plain text or JSON-encoded body. The JSON-encoded message supports both Markdown formatting and message attachments.
-
-Markdown formatting
-~~~~~~~~~~~~~~~~~~~~
-
-A rich range of formatting is made possible through :doc:`Markdown support <../help/messaging/formatting-text>` in Mattermost, including headings, formatted fonts, tables, inline images and other options supported by Mattermost markdown. All of these options are also supported by slash commands.
-
-For example, to create a message with a heading and an italicized text on the next line, use the following response. 
-
-.. code-block:: text
-
-  {"text": "# This is a heading\n_This text is italicized._"}
-
-.. image:: ../images/incoming_webhooks_markdown_formatting.png
-  :width: 300 px
-  
-Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` and :doc:`interactive message buttons <interactive-message-buttons>` in the JSON response.
-
-Mention notifications
-~~~~~~~~~~~~~~~~~~~~~~
-
-You can trigger mention notifications with your message. To trigger a mention, include *@username* or *<userid>* in the `text` parameter of the JSON response.
-
-Channels can be mentioned by including *@channel* or *<!channel>*. For example:
-
-.. code-block:: text
-
-  {"text": "<!channel> this is a notification."}
-
-Override the username
-~~~~~~~~~~~~~~~~~~~~~
-
-In addition to specifying the response username when setting up your slash command, you can also override it by specifying a ``username`` parameter in your JSON response.
-
-For example, to send the message as a ``webhook-bot``, use the following response.
-
-.. code-block:: text
-
-  {"username": "webhook-bot", "text": "Hello, this is some text\nThis is more text. :tada:"}
-  
-.. image:: ../images/incoming_webhooks_override_username.png
-  :width: 400 px
-
-To prevent malicious users from trying to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`_, a *BOT* indicator appears next to posts coming from webhooks regardless of what username is specified.
+Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` and :doc:`interactive message buttons <interactive-message-buttons>` in the JSON payload.
 
 .. note::
   `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`_ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator. If not enabled, the username is set to `webhook`.
 
-Override the profile picture
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Similary to the username, you can also override the profile picture by specifying an ``icon_url`` parameter in your JSON response.
-
-For example, you can use the following response to override the profile picture to use the image located at http://example.com/somecoolimage.jpg.
-
-.. code-block:: text
-
-  {"icon_url": "http://example.com/somecoolimage.jpg", "text": "Hello, this is some text\nThis is more text. :tada:"}
-
 .. note::
-  `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`_ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator. If not enabled, the icon of the creator of the webhook URL is used to post messages.
+  Similarly, `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`_ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator. If not enabled, the icon of the creator of the webhook URL is used to post messages.
 
 Custom post type
 ~~~~~~~~~~~~~~~~~~
 
 You can specify a custom post type when sending a webhook message, for use by `plugins <about.mattermost.com/default-plugins>`_. To set the type, use the `type` parameter on the JSON response.
-
-.. code-block:: text
-
-  {"username": "webhook-bot", "text": "Hello, this is some text\nThis is more text. :tada:", "type": "custom_type_here"}
 
 Tips and Best Practices
 ------------------------
