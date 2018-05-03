@@ -13,12 +13,12 @@ data:
     production:
       adapter: postgresql
       encoding: unicode
-      database: {{ template "unicorn.psql.database" . }}
+      database: {{ template "gitlab.psql.database" . }}
       pool: 10
-      username: {{ template "unicorn.psql.username" . }}
+      username: {{ template "gitlab.psql.username" . }}
       password: <%= File.read("/etc/gitlab/postgres/psql-password") %>
-      host: {{ template "unicorn.psql.host" . }}
-      port: {{ template "unicorn.psql.port" . }}
+      host: {{ template "gitlab.psql.host" . }}
+      port: {{ template "gitlab.psql.port" . }}
       # load_balancing:
       #   hosts:
       #     - host1.example.com
@@ -28,10 +28,10 @@ data:
   resque.yml.erb: |
     production:
       # Redis (single instance)
-      url: redis://:<%= File.read("/etc/gitlab/redis/password") %>@{{ template "unicorn.redis.host" . }}:{{ default 6379 .Values.redis.port }}
+      url: redis://:<%= File.read("/etc/gitlab/redis/password") %>@{{ template "gitlab.redis.host" . }}:{{ default 6379 .Values.redis.port }}
   workhorse-config.toml.erb: |
     [redis]
-    URL = "tcp://{{ template "unicorn.redis.host" . }}:{{ default 6379 .Values.redis.port }}"
+    URL = "tcp://{{ template "gitlab.redis.host" . }}:{{ default 6379 .Values.redis.port }}"
     Password = "<%= File.read("/etc/gitlab/redis/password") %>"
   unicorn.rb: |
     worker_processes {{ .Values.workerProcesses }}
@@ -97,7 +97,7 @@ data:
             aws_access_key_id: "<%= File.read('/etc/gitlab/minio/accesskey') %>"
             aws_secret_access_key: "<%= File.read('/etc/gitlab/minio/secretkey') %>"
             host: {{ template "minioHost" . }}
-            endpoint: {{ template "unicorn.minio.endpoint" . }}
+            endpoint: {{ template "gitlab.minio.endpoint" . }}
             path_style: true
           {{- else if .Values.lfs.connection}}
           connection:
@@ -118,7 +118,7 @@ data:
             aws_access_key_id: "<%= File.read('/etc/gitlab/minio/accesskey') %>"
             aws_secret_access_key: "<%= File.read('/etc/gitlab/minio/secretkey') %>"
             host: {{ template "minioHost" . }}
-            endpoint: {{ template "unicorn.minio.endpoint" . }}
+            endpoint: {{ template "gitlab.minio.endpoint" . }}
             path_style: true
           {{- else if .Values.uploads.connection}}
           connection:
@@ -158,7 +158,7 @@ data:
         storages: # You must have at least a `default` storage path.
           default:
             path: /var/opt/gitlab/repo
-            gitaly_address: tcp://{{ template "unicorn.gitaly.host" . }}:{{ default 8075 .Values.gitaly.port }}
+            gitaly_address: tcp://{{ template "gitlab.gitaly.host" . }}:{{ default 8075 .Values.gitaly.port }}
       backup:
         path: "tmp/backups"   # Relative paths are relative to Rails.root (default: tmp/backups/)
       gitlab_shell:
@@ -181,11 +181,11 @@ data:
       ## Registry Integration
       registry:
         enabled: true
-        host: {{ template "unicorn.registry.host" . }}
+        host: {{ template "gitlab.registry.host" . }}
         {{- if .Values.registry.port }}
         port: {{ .Values.registry.port }}
         {{- end }}
-        api_url: {{ default "http" .Values.registry.api.protocol }}://{{ template "unicorn.registry.api.host" . }}:{{ default 5000 .Values.registry.api.port }}
+        api_url: {{ default "http" .Values.registry.api.protocol }}://{{ template "gitlab.registry.api.host" . }}:{{ default 5000 .Values.registry.api.port }}
         key: /etc/gitlab/registry/gitlab-registry.key
         issuer: {{ .Values.registry.tokenIssuer }}
   configure: |

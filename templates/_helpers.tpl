@@ -60,3 +60,12 @@ otherwise the hostname will be assembed using `gitlab` as the prefix, and the `a
 certmanager.k8s.io/issuer: "{{ .Release.Name }}-issuer"
 {{- end -}}
 {{- end -}}
+
+{{/* ######### ingress templates */}}
+
+{{/*
+Returns the nginx ingress class
+*/}}
+{{- define "gitlab.ingressclass" -}}
+{{- pluck "class" .Values.global.ingress (dict "class" (printf "%s-nginx" .Release.Name)) | first -}}
+{{- end -}}
