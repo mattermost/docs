@@ -2018,17 +2018,6 @@ Enable Plugins
 | This feature's ``config.json`` setting is ``"Enable": true`` with options ``true`` and ``false`` for above settings respectively.                                    | 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable Plugin Uploads
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**True**: Enables plugin uploads by System Admins at **Plugins > Management**. If you do not plan to upload a plugin, set to false to control which plugins are installed on your server. See `documentation <https://about.mattermost.com/default-plugin-uploads>`_ to learn more.
-
-**False**: Disables plugin uploads on your Mattermost server.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableUploads": false`` with options ``true`` and ``false`` for above settings respectively.                            | 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Management
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Upload Plugin
@@ -3503,6 +3492,17 @@ Determines how many new posts are batched together to a compliance export file.
 
 Plugin Settings  (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~
+
+Enable Plugin Uploads
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Enables plugin uploads by System Admins at **Plugins > Management**. If you do not plan to upload a plugin, set to false to control which plugins are installed on your server. See `documentation <https://about.mattermost.com/default-plugin-uploads>`_ to learn more.
+
+**False**: Disables plugin uploads on your Mattermost server.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableUploads": false`` with options ``true`` and ``false`` for above settings respectively.                            | 
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Directory
 ^^^^^^^^^^

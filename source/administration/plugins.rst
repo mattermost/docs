@@ -21,7 +21,7 @@ Set Up Guide
 
 To enable plugins, follow these two simple steps.
 
-1) Go to **System Console > Plugins (Beta) > Configuration**. Here you can enable plugins and plugin uploads. If you do not plan to upload a plugin, set **Enable Plugin Uploads** to ``false`` to control which plugins are installed on your server. 
+1) Go to **System Console > Plugins (Beta) > Configuration**. Here you can enable plugins.
 2) Go to **System Console > Plugins (Beta) > Management** to manage your plugins, including:
 
  - Activating or deactivating pre-packaged Mattermost plugins.
@@ -34,7 +34,9 @@ Plugin Uploads
 
 Mattermost supports plugin uploads by System Admins, which allow you to customize and extend the platform that would otherwise not be available. These plugins are not pre-packaged in Mattermost, and have either been developed by the community or by a Mattermost staff member.
 
-If you don't plan to upload plugins on your server, you can disable plugin uploads anytime in **System Console > Plugins (Beta) > Configuration**. Note that disabling uploads will not disable plugins already installed on your server.
+By default, plugin uploads are disabled on your server. To enable them, set **PluginSettings > EnableUploads** to ``true`` in your ``config.json`` file.
+
+You can disable plugin uploads anytime to control which plugins are installed on your server. This action won't disable plugins already installed on your server.
 
 If you run your Mattermost server in `High Availability mode <https://docs.mattermost.com/deployment/cluster.html>`_, plugins need to be uploaded on all app servers.
 
