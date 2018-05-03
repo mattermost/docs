@@ -97,7 +97,7 @@ which would render in Mattermost as:
 
 .. image:: ../images/webhooksTable.PNG
 
-11 - You're all set! See `developer documentation <https://developers.mattermost.com/integrate/outgoing-webhooks/>`_ for details on what parameters are supported by outgoing webhooks. For instance, you can override the username and profile picture the messages post as, or specify a custom post type when sending a webhook message for use by `plugins <about.mattermost.com/default-plugins>`_.
+11 - You're all set! See `developer documentation <https://developers.mattermost.com/integrate/outgoing-webhooks/>`_ for details on what parameters are supported by outgoing webhooks. For instance, you can override the username and profile picture the messages post as, or specify a custom post type when sending a webhook message for use by `plugins <https://about.mattermost.com/default-plugins>`_.
 
 Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` and :doc:`interactive message buttons <interactive-message-buttons>` in the JSON payload.
 
@@ -109,7 +109,7 @@ Messages with advanced formatting can be created by including an :doc:`attachmen
 Tips and Best Practices
 ------------------------
 
-1. Webhooks are designed to easily allow you to post messages. For other actions such as channel creation, you must also use the `Mattermost APIs <../developer/api.html>`_.
+1. Webhooks are designed to easily allow you to post messages. For other actions such as channel creation, you must also use the `Mattermost APIs <https://docs.mattermost.com/developer/api.html>`_.
 
 2. If the text in the JSON response is longer than 4000 characters, the message is split into multiple consecutive posts, each within the 4000 character limit.
 
@@ -117,7 +117,7 @@ Tips and Best Practices
 
 4. You can restrict who can create outgoing webhooks in `System Console > Integrations > Custom Integrations <https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins>`_.
 
-5. Mattermost outgoing webhooks are Slack-compatible. You can copy-and-paste code used for a Slack outgoing webhook to create Mattermost integrations. Mattermost `automatically translates the Slack's proprietary JSON response format <../developer/webhooks-outgoing#translate-slacks-data-format-to-mattermost>`_.
+5. Mattermost outgoing webhooks are Slack-compatible. You can copy-and-paste code used for a Slack outgoing webhook to create Mattermost integrations. Mattermost `automatically translates the Slack's proprietary JSON response format <https://docs.mattermost.com//developer/webhooks-outgoing.html#translate-slacks-data-format-to-mattermost>`_.
 
 6. The external application may be written in any programming language. It needs to provide a URL which reacts to the request sent by your Mattermost server, and send an HTTP POST in the required JSON format as a response.
  
