@@ -366,8 +366,8 @@ Test setup and configure Mattermost Server
    ``System Console`` option
 4. Set the Site URL:
 
- - In the **GENERAL** section of the System Console, click **Configuration**.
- - In the **Site URL** field, set the URL that users point their browsers at. For example, *https://mattermost.example.com*. If you are using HTTPS, make sure that you set up TLS, either on Mattermost Server or on a proxy.
+  - In the **GENERAL** section of the System Console, click **Configuration**.
+  - In the **Site URL** field, set the URL that users point their browsers at. For example, *https://mattermost.example.com*. If you are using HTTPS, make sure that you set up TLS, either on Mattermost Server or on a proxy.
 
 5. Update **Notification** > **Email** settings to set up an SMTP email service. The example below assumes AmazonSES.
 
