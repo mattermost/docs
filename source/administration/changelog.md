@@ -39,6 +39,9 @@ Release date: 2018-05-16
  - Added ``/platform`` list of commands to teams command in CLI.
  - Improved slash command error message when payload is invalid JSON.
  
+ #### Enterprise Edition
+ - Added channel scheme and team scheme API endpoint.
+ 
  #### Other (XXXX/// Need help with a category)
  - Removed ``mm_config`` and ``mm_license`` global state from webapp.
  - Added support to REST API for sending ephemeral messages to users.
