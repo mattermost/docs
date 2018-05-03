@@ -5,7 +5,7 @@ Incoming Webhooks
 
 Mattermost supports webhooks to easily integrate external applications into the server.
 
-Use incoming webhooks to post messages to Mattermost public channels, private channels, and direct messages. Messages are sent via an HTTP POST request to a Mattermost URL generated for each application and contain a specifically formatted JSON payload in the request body.
+Use incoming webhooks to post messages to Mattermost public channels, private channels and direct messages. Messages are sent via an HTTP POST request to a Mattermost URL generated for each application and contain a specifically formatted JSON payload in the request body.
 
 .. image:: ../images/incoming_webhooks_sample.png
   :width: 500 px
@@ -14,7 +14,7 @@ Use incoming webhooks to post messages to Mattermost public channels, private ch
 Use `curl <https://curl.haxx.se/>`_, a simple command line tool for sending HTTP requests in the examples that follow.
 
 .. note::
-  To prevent malicious users from trying to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`_ a *BOT* indicator appears next to posts coming from webhooks regardless of what username is specified.
+  To prevent malicious users from trying to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`_, a *BOT* indicator appears next to posts coming from webhooks regardless of what username is specified.
 
 .. toctree::
    :maxdepth: 2
@@ -38,13 +38,13 @@ Let's learn how to create a simple incoming webhook that posts the following mes
   # or
   curl -i -X POST --data-urlencode 'payload={"text": "Hello, this is some text\nThis is more text. :tada:"}' http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
 
-If you're running cURL on Windows ensure inner double quotes are escaped with a backslash. Here's an example payload on Windows:
+If you're running cURL on Windows, ensure inner double quotes are escaped with a backslash. Here's an example payload on Windows:
 
 .. code-block:: text
 
   curl -i -X POST -H 'Content-Type: application/json' -d '{\"text\": \"Hello, this is some text\nThis is more text. :tada:\"}' http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
 
-See `developer documentation <https://developers.mattermost.com/integrate/incoming-webhooks/>`_ for details on what parameters are supported by incoming webhooks. For instance, you can override the username and profile picture the messages post as, or specify a custom post type when sending a webhook message for use by `plugins <about.mattermost.com/default-plugins>`_. The following payload gives an example webhook that uses additional parameters and formatting options.
+See `developer documentation <https://developers.mattermost.com/integrate/incoming-webhooks/>`_ for details on what parameters are supported by incoming webhooks. For instance, you can override the username and profile picture the messages post as, or specify a custom post type when sending a webhook message for use by `plugins <about.mattermost.com/default-plugins>`_. The following payload gives an example webhook that uses additional parameters and formatting options:
 
 .. code-block:: text
 
@@ -61,7 +61,7 @@ See `developer documentation <https://developers.mattermost.com/integrate/incomi
     "
     }
 
-This will be displayed in the Town Square channel.
+This content will be displayed in the Town Square channel.
 
 .. image:: ../images/incoming_webhooks_full_example.png
   :width: 500 px
