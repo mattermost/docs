@@ -3,7 +3,7 @@ kind: Job
 metadata:
   name: {{ template "shared-secrets.jobname" . }}
   labels:
-    app: {{ template "shared-secrets.name" . }}
+    app: {{ template "name" . }}
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
@@ -14,10 +14,10 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ template "shared-secrets.name" . }}
+        app: {{ template "name" . }}
         release: {{ .Release.Name }}
     spec:
-      serviceAccountName: {{ template "shared-secrets.fullname" . }}
+      serviceAccountName: {{ template "fullname" . }}
       restartPolicy: Never
       containers:
         - name: {{ .Chart.Name }}
@@ -30,4 +30,4 @@ spec:
       volumes:
       - name: scripts
         configMap:
-          name: {{ template "shared-secrets.fullname" . }}
+          name: {{ template "fullname" . }}
