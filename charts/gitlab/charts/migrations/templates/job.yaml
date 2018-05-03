@@ -4,7 +4,7 @@ kind: Job
 metadata:
   name: {{ template "migrations.jobname" . }}
   labels:
-    app: {{ template "migrations.name" . }}
+    app: {{ template "name" . }}
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
@@ -12,7 +12,7 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ template "migrations.name" . }}
+        app: {{ template "name" . }}
         release: {{ .Release.Name }}
     spec:
       securityContext:
@@ -68,7 +68,7 @@ spec:
       volumes:
       - name: migrations-config
         configMap:
-          name: {{ template "migrations.fullname" . }}
+          name: {{ template "fullname" . }}
       - name: init-migrations-secrets
         projected:
           defaultMode: 0400
