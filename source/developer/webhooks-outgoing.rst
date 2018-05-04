@@ -109,7 +109,7 @@ Messages with advanced formatting can be created by including an :doc:`attachmen
 Tips and Best Practices
 ------------------------
 
-1. Webhooks are designed to easily allow you to post messages. For other actions such as channel creation, you must also use the `Mattermost APIs <https://docs.mattermost.com/developer/api.html>`_.
+1. Webhooks are designed to easily allow you to post messages. For other actions such as channel creation, you must also use the `Mattermost APIs <https://api.mattermost.com>`_.
 
 2. If the text in the JSON response is longer than 4000 characters, the message is split into multiple consecutive posts, each within the 4000 character limit.
 
@@ -117,7 +117,7 @@ Tips and Best Practices
 
 4. You can restrict who can create outgoing webhooks in `System Console > Integrations > Custom Integrations <https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins>`_.
 
-5. Mattermost outgoing webhooks are Slack-compatible. You can copy-and-paste code used for a Slack outgoing webhook to create Mattermost integrations. Mattermost `automatically translates the Slack's proprietary JSON response format <https://docs.mattermost.com//developer/webhooks-outgoing.html#translate-slacks-data-format-to-mattermost>`_.
+5. Mattermost outgoing webhooks are Slack-compatible. You can copy-and-paste code used for a Slack outgoing webhook to create Mattermost integrations. Mattermost `automatically translates the Slack's proprietary JSON response format <https://docs.mattermost.com/developer/webhooks-outgoing.html?highlight=translate%20slack%20data%20format%20mattermost#translate-slack-s-data-format-to-mattermost>`_.
 
 6. The external application may be written in any programming language. It needs to provide a URL which reacts to the request sent by your Mattermost server, and send an HTTP POST in the required JSON format as a response.
  
