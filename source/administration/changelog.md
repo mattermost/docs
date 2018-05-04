@@ -6,6 +6,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v4.9
 
+ - **4.9.2, released 2018-05-04**
+   - Fixed an issue with permissions migration when ``AllowEditPost`` was set to "Always".
  - **4.9.1, released 2018-04-27**
    - Fixed an issue where System Console permissions settings displayed a false error when running High Availability mode.
    - Fixed a race condition on loading roles in the System Console.
