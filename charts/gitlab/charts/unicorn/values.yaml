@@ -32,6 +32,7 @@ workerProcesses: 2
 workerTimeout: 60
 workhorse:
   sentryDSN: ""
+  extraArgs: ""
 omniauth:
   providers: []
   # - name: google_oauth2
