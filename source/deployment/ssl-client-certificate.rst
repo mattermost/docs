@@ -70,6 +70,7 @@ Set up mutual TLS authentication for the Web App
 5. Open the file ``/etc/nginx/sites-available/mattermost`` and modify the following lines, so that the NGINX proxy server requests and verifies the client certificate:
 
 .. code-block::
+  :emphasize-lines: 4-5, 10-11, 16-17
 
   ssl on;
   ssl_certificate /etc/letsencrypt/live/example.mattermost.com/fullchain.pem;
