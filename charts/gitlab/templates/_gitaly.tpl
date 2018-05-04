@@ -10,6 +10,6 @@ to the service name
 {{- .Values.gitaly.host -}}
 {{- else -}}
 {{- $name := default "gitaly" .Values.gitaly.serviceName -}}
-{{- printf "%s-%s" .Release.Name $name -}}
+{{- printf "%s-%s-0.%s-%s" .Release.Name $name .Release.Name $name -}}
 {{- end -}}
 {{- end -}}
