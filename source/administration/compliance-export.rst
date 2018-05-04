@@ -1,7 +1,7 @@
-Compliance Export Beta (E20 Add-On)
+Compliance Export Beta (E20)
 =====================================
 
-Available as an `add-on to Enterprise Edition E20 <https://about.mattermost.com/pricing/>`_.
+Available in `Enterprise Edition E20 <https://about.mattermost.com/pricing/>`_.
 
 This feature enables compliance exports to be produced from the System Console, containing all messages including those made in direct message channels, as well as file uploads. The exports also include information on channel member history at the time of the message was posted.
 
