@@ -127,7 +127,7 @@ which would render in Mattermost as
 .. image:: ../images/weatherBot.PNG
   :alt: Shows what the JSON response renders as in Mattermost
 
-11 - You're all set! See `developer documentation <https://developers.mattermost.com/integrate/slash-commands>`_ for details on what parameters are supported by slash commands. For instance, you can override the username and profile picture the messages post as, or specify a custom post type when sending a webhook message for use by `plugins <about.mattermost.com/default-plugins>`_.
+11 - You're all set! See `developer documentation <https://developers.mattermost.com/integrate/slash-commands>`_ for details on what parameters are supported by slash commands. For instance, you can override the username and profile picture the messages post as, or specify a custom post type when sending a webhook message for use by `plugins <https://about.mattermost.com/default-plugins>`_.
 
 Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` and :doc:`interactive message buttons <interactive-message-buttons>` in the JSON payload.
 
@@ -139,18 +139,18 @@ Messages with advanced formatting can be created by including an :doc:`attachmen
 Custom post type
 ~~~~~~~~~~~~~~~~~~
 
-You can specify a custom post type when sending a webhook message, for use by `plugins <about.mattermost.com/default-plugins>`_. To set the type, use the `type` parameter on the JSON response.
+You can specify a custom post type when sending a webhook message, for use by `plugins <https://about.mattermost.com/default-plugins>`_. To set the type, use the `type` parameter on the JSON response.
 
 Tips and Best Practices
 ------------------------
 
-1. Slash commands are designed to easily allow you to post messages. For other actions such as channel creation, you must also use the `Mattermost APIs <../developer/api.html>`_.
+1. Slash commands are designed to easily allow you to post messages. For other actions such as channel creation, you must also use the `Mattermost APIs <https://api.mattermost.com>`_.
 
 2. If the text in the JSON response is longer than 4000 characters, the message is split into multiple consecutive posts, each within the 4000 character limit.
 
 3. You can restrict who can create slash commands in `System Console > Integrations > Custom Integrations <https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins>`_.
 
-4. Mattermost outgoing webhooks are Slack-compatible. You can copy-and-paste code used for a Slack outgoing webhook to create Mattermost integrations. Mattermost `automatically translates Slack's JSON format <../developer/slash-commands#translate-slacks-data-format-to-mattermost>`_.
+4. Mattermost outgoing webhooks are Slack-compatible. You can copy-and-paste code used for a Slack outgoing webhook to create Mattermost integrations. Mattermost `automatically translates Slack's JSON format <https://docs.mattermost.com/developer/slash-commands.html?highlight=translate%20slack%20data%20format%20mattermost#translate-slack-s-data-format-to-mattermost>`_.
 
 5. The external application may be written in any programming language. It needs to provide a URL which receives the request sent by your Mattermost server and responds with in the required JSON format.
 
