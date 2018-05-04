@@ -1,11 +1,11 @@
-Liveness and Readiness Check
-=============================
+Health Check
+=============
 
-This page describes how to configure liveness and readiness probes for a Mattermost server.
+This page describes how to configure health check probes for a Mattermost server.
 
 Before you begin, you should have a running Mattermost server. If you don't, you can `install Mattermost on various distributions <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`_ or deploy a `Kubernetes cluster with Minikube <https://github.com/mattermost/mattermost-kubernetes>`_.  Note that `highly available Mattermost cluster <https://docs.mattermost.com/deployment/cluster.html>`_ is available in `Enterprise Edition E20 <https://about.mattermost.com/pricing/>`_.
 
-You can perform a liveness and readiness check with two methods:
+You can perform a health check with two methods:
 
 ``/ping`` APIv4 Endpoint
 -------------------------

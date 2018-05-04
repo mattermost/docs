@@ -284,7 +284,6 @@ If a bug fix release is required, run through the following steps:
     - Review PRs made from release branch and merge changes into the release branch as required and merge the release branch back into master once per day
 4. Build:
     - Verify with Release Manager before cutting any new dot release RCs (approved fixes should be merged)
-    - Push dot release RC's to CI servers and pre-release
 5. QA:
     - Test the new RC to verify fixes merged to the release branch work
     - Post in Release Discussion channel after testing
@@ -295,8 +294,7 @@ Once bug fix release is ready to cut:
     - Tag a new release (e.g. 1.1.1) and run an official build
     - Verify hashes and GPG signatures are correct, once build is cut
     - Delete RCs after final version is shipped
-    - Merge changes made to release branch into master
-    - Update CI servers, pre-release and GitLab Mattermost to the final version  
+    - Merge changes made to release branch into master 
 2. PM:
     - Update [Mattermost pricing page](https://about.mattermost.com/pricing/) if anything has changed
 3. Release Manager:

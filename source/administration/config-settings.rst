@@ -215,6 +215,8 @@ Enable Account Creation
 
 Enable Team Creation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*This permission has been migrated to the database and changing the config.json value no longer takes effect after upgrading to v4.9, released on April 16th, 2018. This permission can be modified using the System Console user interface.*
+
 **True**: Ability to create a new team is enabled for all users.
 
 **False**: Only System Administrators can create teams from the team selection page. The **Create A New Team** button is hidden in the main menu UI.
@@ -337,6 +339,8 @@ Settings to configure the permission restrictions for sending team invite links 
 
 Enable sending team invites from
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*This permission has been migrated to the database and changing the config.json value no longer takes effect after upgrading to v4.9, released on April 16th, 2018. This permission can be modified using the System Console user interface.*
+
 Set policy on who can invite others to a team using the **Send Email Invite**, **Get Team Invite Link**, and **Add Members to Team** options on the main menu. If **Get Team Invite Link** is used to share a link, you can expire the invite code from **Team Settings > Invite Code** after the desired users have joined the team. Options include:
 
 **All team members**: Allows any team member to invite others using an email invitation, team invite link or by adding members to the team directly.
@@ -351,6 +355,8 @@ Set policy on who can invite others to a team using the **Send Email Invite**, *
 
 Enable public channel creation for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*This permission has been migrated to the database and changing the config.json value no longer takes effect after upgrading to v4.9, released on April 16th, 2018. This permission can be modified using the System Console user interface.*
+
 Restrict the permission level required to create public channels.
 
 **All team members**: Allow all team members to create public channels.
@@ -365,6 +371,8 @@ Restrict the permission level required to create public channels.
 
 Enable public channel renaming for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*This permission has been migrated to the database and changing the config.json value no longer takes effect after upgrading to v4.9, released on April 16th, 2018. This permission can be modified using the System Console user interface.*
+
 Restrict the permission level required to rename and set the header or purpose for public channels.
 
 **All channel members**: Allow all channel members to rename public channels.
@@ -381,6 +389,8 @@ Restrict the permission level required to rename and set the header or purpose f
 
 Enable public channel deletion for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*This permission has been migrated to the database and changing the config.json value no longer takes effect after upgrading to v4.9, released on April 16th, 2018. This permission can be modified using the System Console user interface.*
+
 Restrict the permission level required to delete public channels. Deleted channels can be recovered from the database using a `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`_.
 
 **All channel members**: Allow all channel members to delete public channels.
@@ -397,6 +407,8 @@ Restrict the permission level required to delete public channels. Deleted channe
 
 Enable private channel creation for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*This permission has been migrated to the database and changing the config.json value no longer takes effect after upgrading to v4.9, released on April 16th, 2018. This permission can be modified using the System Console user interface.*
+
 Restrict the permission level required to create private channels.
 
 **All team members**: Allow all team members to create private channels.
@@ -411,6 +423,8 @@ Restrict the permission level required to create private channels.
 
 Enable private channel renaming for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*This permission has been migrated to the database and changing the config.json value no longer takes effect after upgrading to v4.9, released on April 16th, 2018. This permission can be modified using the System Console user interface.*
+
 Restrict the permission level required to rename and set the header or purpose for private channels.
 
 **All channel members**: Allow all channel members to rename private channels.
@@ -427,6 +441,8 @@ Restrict the permission level required to rename and set the header or purpose f
 
 Enable managing of private channel members for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*This permission has been migrated to the database and changing the config.json value no longer takes effect after upgrading to v4.9, released on April 16th, 2018. This permission can be modified using the System Console user interface.*
+
 Set policy on who can add and remove members from private channels.
 
 **All team members**: Allow all team members to add and remove members.
@@ -443,6 +459,8 @@ Set policy on who can add and remove members from private channels.
 
 Enable private channel deletion for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*This permission has been migrated to the database and changing the config.json value no longer takes effect after upgrading to v4.9, released on April 16th, 2018. This permission can be modified using the System Console user interface.*
+
 Restrict the permission level required to delete private channels. Deleted channels can be recovered from the database using a `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`_.
 
 **All channel members**: Allow all channel members to delete private channels.
@@ -459,6 +477,8 @@ Restrict the permission level required to delete private channels. Deleted chann
 
 Allow which users to delete messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*This permission has been migrated to the database and changing the config.json value no longer takes effect after upgrading to v4.9, released on April 16th, 2018. This permission can be modified using the System Console user interface.*
+
 Restrict the permission level required to delete messages. Team Admins, Channel Admins, and System Admins can delete messages only in channels where they are members. Messages can be deleted anytime.
 
 **Message authors can delete their own messages, and Administrators can delete any message**: Allow authors to delete their own messages, and allow Team Admins, Channel Admins, and System Admins to delete any message.
@@ -473,19 +493,27 @@ Restrict the permission level required to delete messages. Team Admins, Channel 
 
 Allow users to edit their messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Set the time limit that users have to edit their messages after posting.
+*This permission has been migrated to the database and changing the config.json value no longer takes effect after upgrading to v4.9, released on April 16th, 2018. This permission can be modified using the System Console user interface.*
+
+Set whether users can edit their messages after posting.
 
 **Any time**: Allow users to edit their messages at any time after posting.
 
 **Never**: Do not allow users to edit their messages.
 
-**{n} seconds after posting**: Users can edit their messages within the specified time limit after posting.
+**{n} seconds after posting**: Users can edit their messages within the specified time limit after posting. The time limit is applied using the config.json setting ``"PostEditTimeLimit"`` described below.
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature has two settings in ``config.json``. The first setting is ``"AllowEditPost": "always"`` with options ``always``, ``never``, and ``time_limit``.  |
-|                                                                                                                                                               |
-| The second setting is ``"PostEditTimeLimit": -1`` with whole number input. To enable ``PostEditTimeLimit``, set ``AllowEditPost`` to ``time_limit``.          |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AllowEditPost": "always"`` with options ``always``, ``never``, and ``time_limit`` for above settings respectively.  |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Post edit time limit
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+When post editing is permitted, setting ``"PostEditTimeLimit": -1`` allows editing anytime, or setting ``"PostEditTimeLimit"`` to a positive integer restricts editing time in seconds. If post editing is disabled, this setting does not apply.
+
++--------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"PostEditTimeLimit": -1`` with whole number input.   |
++--------------------------------------------------------------------------------------------------+
 
 Enable Announcement Banner
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1837,6 +1865,8 @@ Enable OAuth 2.0 Service Provider
 
 Restrict managing integrations to Admins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*This permission has been migrated to the database and changing the config.json value no longer takes effect after upgrading to v4.9, released on April 16th, 2018. This permission can be modified using the System Console user interface.*
+
 **True**: When true, webhooks and slash commands can only be created, edited and viewed by Team and System Admins, and OAuth 2.0 applications by System Admins. Integrations are available to all users after they have been created by the Admin.
 
 **False**: Any team members can create webhooks, slash commands and OAuth 2.0 applications from **Main Menu** > **Integrations**.
@@ -1986,17 +2016,6 @@ Enable Plugins
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Enable": true`` with options ``true`` and ``false`` for above settings respectively.                                    | 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Enable Plugin Uploads
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**True**: Enables plugin uploads by System Admins at **Plugins > Management**. If you do not plan to upload a plugin, set to false to control which plugins are installed on your server. See `documentation <https://about.mattermost.com/default-plugin-uploads>`_ to learn more.
-
-**False**: Disables plugin uploads on your Mattermost server.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableUploads": false`` with options ``true`` and ``false`` for above settings respectively.                            | 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Management
@@ -2368,6 +2387,8 @@ Enable Custom Emoji
 Restrict Custom Emoji Creation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E10 and higher*
+
+*This permission has been migrated to the database and changing the config.json value no longer takes effect after upgrading to v4.9, released on April 16th, 2018. This permission can be modified using the System Console user interface.*
 
 **Allow everyone to create custom emoji**: Allows everyone to create custom emoji from the **Main Menu** > **Custom Emoji**.
 
@@ -3471,6 +3492,17 @@ Determines how many new posts are batched together to a compliance export file.
 
 Plugin Settings  (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~
+
+Enable Plugin Uploads
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Enables plugin uploads by System Admins at **Plugins > Management**. If you do not plan to upload a plugin, set to false to control which plugins are installed on your server. See `documentation <https://about.mattermost.com/default-plugin-uploads>`_ to learn more.
+
+**False**: Disables plugin uploads on your Mattermost server.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableUploads": false`` with options ``true`` and ``false`` for above settings respectively.                            | 
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Directory
 ^^^^^^^^^^

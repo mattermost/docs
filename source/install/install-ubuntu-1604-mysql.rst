@@ -1,4 +1,4 @@
-j/.. _install-ubuntu-1604-mysql:
+.. _install-ubuntu-1604-mysql:
 
 Installing MySQL Database Server
 ================================
