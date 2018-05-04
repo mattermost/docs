@@ -7,7 +7,7 @@ We'll make use of the [Omnibus GitLab][] package for Ubuntu. This package provid
 ## Set up the VM
 
 ### Create a Virtual Machine
-Create a VM on your provider of choice, or locally. This was tested with VirtualBox, KVM, and Bhyve.
+Create a VM on your provider of choice, or locally. This was tested with VirtualBox, KVM, and Bhyve. Ensure that the Redis instance will be reachable from the cluster. Be sure firewall policies are in place to allow traffic.
 
 ### Install and Configure Ubuntu Server
 
