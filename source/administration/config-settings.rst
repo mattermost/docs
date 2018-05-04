@@ -2564,7 +2564,7 @@ ________
 
 Compliance Export (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*Available as an add-on to Enterprise Edition E20*
+*Available in Enterprise Edition E20*
 
 Enable Compliance Export
 ^^^^^^^^^^^^^^^^^^^^^^^^^
