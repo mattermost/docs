@@ -18,7 +18,7 @@ Release date: 2018-05-16
 
 #### Web User Interface
  - Added a setting that automatically answers messages sent to a user who is away.
- - Added ability for team / system admin to convert a channel to private in the User Interface.
+ - Added ability for both team and system admins to convert a channel to private in the User Interface.
  - Added a loader for channel invite modal.
  - Made Shift+up switch keyboard focus to RHS if it's already open to the current thread.
  - Removed WebRTC end user setting.
@@ -60,6 +60,9 @@ Release date: 2018-05-16
  - Fixed an issue where the mention badge in team sidebar was cut off by the team icon border.
  - Fixed an issue where there was no on-hover effect for buttons in APIv3 deprecation system notice, and in System Console and Integrations pages.
  - Fixed an issue where ``[...]`` menu was missing on other users' posts if user was not an admin.
+ - Fixed an issue where authdata failed to migrate properly during migration from LDAP to SAML.
+ - Fixed an issue where username in "is typing" message was missing.
+ - Fixed an issue where a message time displayed the long timestamp instead of the short form.
 
 ### Compatibility
    
