@@ -3,6 +3,9 @@
 Outgoing Webhooks
 =================
 
+.. note::
+  This is the admin documentation for outgoing webhooks. If you're a developer looking to build an integration, see `our developer documentation <https://developers.mattermost.com/integrate>`_.
+
 Mattermost supports webhooks to easily integrate external applications into the server.
 
 Use outgoing webhooks to post automated responses to posts made by your users. Outgoing webhooks will send an HTTP POST request to a web service and process a response back to Mattermost when a message matches one or both of the following conditions:
