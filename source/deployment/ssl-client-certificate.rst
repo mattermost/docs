@@ -5,7 +5,7 @@ Follow these steps to configure SSL client certificates for your browser and the
 
 Before you begin, follow the `official guides to install Mattermost <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`_ on your system, including NGINX configuration as a proxy with SSL and HTTP/2, and a valid SSL certificate such as Let's Encrypt.
 
-For the purposes of this guide, the Mattermost server domain name is example.mattermost.com, and the user account is ``mmuser`` with email ``mmuser@mattermost.com`` and password ``mmuser-password``.
+For the purposes of this guide, the Mattermost server domain name is ``example.mattermost.com``, and the user account is ``mmuser`` with email ``mmuser@mattermost.com`` and password ``mmuser-password``.
 
 .. note::
   Generating the client certificates in this section is optional if you have already generated them before.
@@ -55,13 +55,13 @@ Set up mutual TLS authentication for the Web App
 
   Challenge password: mmuser-passphrase
 
-3. Sign the user's client certificate with the previously created CA certificate.
+3. Sign the user's client certificate with the previously created CA certificate:
 
 .. code-block::
 
   openssl x509 -req -days 365 -in mmuser-mattermost.csr -CA ca.mattermost.crt -CAkey ca.mattermost.key -set_serial 01 -out mmuser-mattermost.crt
 
-4. Check the newly generated client certificate for ``mmuser``
+4. Check the newly generated client certificate for ``mmuser``:
 
 .. code-block::
 
@@ -92,7 +92,7 @@ Set up mutual TLS authentication for the Web App
  
   ...
 
-6. Confirm the CA key for ``mmuser`` works by the following curl command to the proxy
+6. Confirm the CA key for ``mmuser`` works by the following curl command to the proxy:
 
 .. code-block::
 
@@ -103,7 +103,7 @@ You should see the Mattermost login page. If you see:
  - ``No required SSL certificate was sent``, something went wrong. Review the above steps and try again.
  - ``* error reading X.509 key or certificate file: Decryption has failed.``, make sure the passphrase is included together with the certificate, because curl doesn't prompt for it separately. 
 
-7. Generate a PKCS12 file from the CA key and certificate, to install the certificate into your client machine for your browser to use.
+7. Generate a PKCS12 file from the CA key and certificate, to install the certificate into your client machine for your browser to use:
 
 .. code-block::
 
