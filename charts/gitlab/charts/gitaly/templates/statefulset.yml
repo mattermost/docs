@@ -90,6 +90,10 @@ spec:
       - name: gitaly-config
         configMap:
           name: {{ template "fullname" . }}
+      {{- if not .Values.persistence.enabled }}
+      - name: repo-data
+        emptyDir: {}
+      {{- end }}
       - name: gitaly-secrets
         emptyDir:
           medium: "Memory"
@@ -112,10 +116,6 @@ spec:
               items:
                 - key: {{ .Values.redis.password.key }}
                   path: redis_password
-      {{- if not .Values.persistence.enabled }}
-      - name: repo-data
-        emptyDir: {}
-      {{- end }}
     {{- if .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml .Values.nodeSelector | indent 8 }}
