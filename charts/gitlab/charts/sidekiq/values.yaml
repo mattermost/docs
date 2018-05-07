@@ -15,12 +15,7 @@ metrics:
     prometheus.io/port: "3807"
 
 redis:
-  # host: '0.0.0.0'
-  # port: 6379
-  serviceName: 'redis'
-  password:
-    secret: gitlab-redis
-    key: redis-password
+  password: {}
 
 psql:
   password: {}
@@ -34,6 +29,10 @@ global:
     password:
       secret: gitlab-postgres
       key: psql-password
+  redis:
+    password:
+      secret: gitlab-redis
+      key: redis-password
 gitaly:
   # host: '0.0.0.0'
   # port: 8075

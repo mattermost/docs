@@ -13,6 +13,13 @@ service:
   internalPort: 8075
 enabled: true
 serviceName: gitaly
+
+global:
+  redis:
+    password:
+      secret: gitlab-redis
+      key: redis-password
+
 authToken:
   secret: gitaly-secret
   key: token
@@ -21,11 +28,7 @@ unicorn: {}
   # serviceName: 'unicorn'
   # port: 8080
 redis:
-  # host: '0.0.0.0'
-  # serviceName: 'redis'
-  password:
-    secret: gitlab-redis
-    key: redis-password
+  password: {}
 shell:
   authToken:
    secret: gitlab-shell-secret
