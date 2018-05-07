@@ -23,7 +23,8 @@ data:
     listen_addr = "0.0.0.0:8075"
 
     [[storage]]
-    name = "default"
+    <% storageOrdinal = Integer(ENV['POD_NAME'].scan(/\d+$/).first) %>
+    name = "<%= storageOrdinal == 0 ? "default" : "secondary" %>"
     path = "/home/git/repositories"
 
     [auth]

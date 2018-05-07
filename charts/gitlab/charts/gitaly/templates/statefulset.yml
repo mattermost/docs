@@ -14,7 +14,7 @@ spec:
       app: {{ template "name" . }}
       release: {{ .Release.Name }}
   serviceName: {{ template "fullname" . }}
-  replicas: 1
+  replicas: {{ .Values.replicaCount }}
   podManagementPolicy: Parallel
   template:
     metadata:
@@ -55,6 +55,10 @@ spec:
               value: '/etc/gitaly'
             - name: GITALY_CONFIG_FILE
               value: '/etc/gitaly/config.toml'
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
           volumeMounts:
             - name: gitaly-config
               mountPath: '/etc/gitaly/templates'
