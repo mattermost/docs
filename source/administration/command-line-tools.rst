@@ -767,7 +767,7 @@ platform user migrate_auth
   Parameters
     -  ``from_auth``: The authentication service from which to migrate user accounts. Supported options: ``email``, ``gitlab``, ``saml``.
 
-    -  ``to_auth``: The authentication service to which to migrate user accounts. Supported options: ``ldap``.
+    -  ``to_auth``: The authentication service to which to migrate user accounts. Supported options: ``ldap``, ``saml``.
 
     -  ``match_field``: The field that is guaranteed to be the same in both authentication services. For example, if the user emails are consistent set to email. Supported options: ``email``, ``username``.
 
