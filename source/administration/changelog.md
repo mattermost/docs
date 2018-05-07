@@ -10,15 +10,20 @@ Release date: 2018-05-16
 
 ### Highlights
 
-#### Environment Variables Support for GitLab
- - Added tracking of which system console settings are configured via environment variables.
- - Disabled system console settings that are configured via environment variables.
+#### Convert Public Channels to Private
+- Team and System Admins can now convert a channel to private in the user interface. System Admins can also convert channels back to public [via the commandline](https://docs.mattermost.com/administration/command-line-tools.html#platform-channel-modify).
+
+#### Performance Improvements
+- Decreased loading time by up to 90% for users with lots of direct and group message channels.
+
+#### Environment Variables Support for GitLab Omnibus
+ - Added tracking of which System Console settings are configured via environment variables.
+ - Disabled System Console settings that are configured via environment variables.
 
 ### Improvements
 
 #### Web User Interface
  - Added a setting that automatically answers messages sent to a user who is away.
- - Added ability for both team and system admins to convert a channel to private in the User Interface.
  - Added a loader for channel invite modal.
  - Made Shift+up switch keyboard focus to RHS if it's already open to the current thread.
  - Removed WebRTC end user setting.
@@ -27,7 +32,6 @@ Release date: 2018-05-16
 
 #### Performance
  - Added structured logging.
- - Investigated long loading time after clearing cache and refreshing the page.
  
  #### Plugins
  - Added better plugin error handling and reporting.
