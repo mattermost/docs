@@ -79,9 +79,6 @@ data:
           default:
             path: /var/opt/gitlab/repo
             gitaly_address: tcp://{{ template "gitlab.gitaly.host" . }}:{{ default 8075 .Values.gitaly.port }}
-          secondary:
-            path: /var/opt/gitlab/repo
-            gitaly_address: tcp://{{ template "gitlab.gitaly.host1" . }}:{{ default 8075 .Values.gitaly.port }}
       backup:
         path: "tmp/backups"   # Relative paths are relative to Rails.root (default: tmp/backups/)
       gitlab_shell:

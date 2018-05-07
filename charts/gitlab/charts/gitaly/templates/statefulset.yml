@@ -14,7 +14,7 @@ spec:
       app: {{ template "name" . }}
       release: {{ .Release.Name }}
   serviceName: {{ template "fullname" . }}
-  replicas: {{ .Values.replicaCount }}
+  replicas: 1
   podManagementPolicy: Parallel
   template:
     metadata:
@@ -117,6 +117,10 @@ spec:
               items:
                 - key: {{ .Values.redis.password.key }}
                   path: redis_password
+      {{- if .Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml .Values.nodeSelector | indent 8 }}
+      {{- end -}}
   {{- if .Values.persistence.enabled }}
   volumeClaimTemplates:
     - metadata:

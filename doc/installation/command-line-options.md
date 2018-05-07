@@ -142,7 +142,6 @@ Tables below contain all the possible charts configurations that can be supplied
 
 | Parameter                                           | Description                                    | Default                                                    |
 | ---                                                 | ---                                            | ---                                                        |
-| gitlab.gitaly.replicaCount                          | Gitaly replicas                                | 1                                                          |
 | gitlab.gitaly.image.repository                      | Gitaly image repository                        | registry.gitlab.com/gitlab-org/build/cng/gitaly            |
 | gitlab.gitaly.image.tag                             | Gitaly image tag                               | latest                                                     |
 | gitlab.gitaly.image.pullPolicy                      | Gitaly image pull policy                       | Always                                                     |
