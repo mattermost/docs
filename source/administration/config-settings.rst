@@ -3035,6 +3035,17 @@ Path and filename of the license file on disk. On startup, if Mattermost cannot 
 | This feature's ``config.json`` setting is ``"LicenseFileLocation": ""`` with string input.  |
 +---------------------------------------------------------------------------------------------+
 
+Go Routine Health Threshold
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set a threshold on the number of Go Routines when the Mattermost system is considered to be in a healthy state. When Go Routines exceed this limit, a warning is returned in the server logs.
+
+To turn off checking for the threshold, set this value to -1.
+
++----------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"GoroutineHealthThreshold": "-1"`` with whole number input.  |
++----------------------------------------------------------------------------------------------------------+
+
 Allow Cookies for Subdomains
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -3533,6 +3544,17 @@ Enable Tutorial (Experimental)
 | This feature’s ``config.json`` setting is ``"EnableTutorial": true`` with options ``true`` and ``false`` for above settings respectively.  | 
 +--------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable Join Leave Messages in Default Channel (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: System messages about a user has joined or left a channel are posted to Town Square.
+
+**False**: System messages about joining or leaving a channel are not posted to Town Square.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"ExperimentalEnableDefaultChannelLeaveJoinMessages": true`` with options ``true`` and ``false`` for above settings respectively.  | 
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Allow Authentication Transfer (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E20 and higher*
@@ -3735,6 +3757,17 @@ Select the timezone used for timestamps in the user interface and email notifica
 
 **False** The Timezone setting is hidden in the Account Settings.
 
++------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalTimezone": false`` with options ``true`` and ``false``. |
++------------------------------------------------------------------------------------------------------------------+
+
+Supported Timezones Path
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Set the path of the JSON file that lists supported timezones when ``ExperimentalTimezone`` is set to true.
+
+The file must be in the same directory as your ``config.json`` file. Defaults to ``timezones.json``.
+
 +-----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalTimezone": false`` with options ``true`` and ``false`` |
+| This feature's ``config.json`` setting is ``"SupportedTimezonesPath": "timezones.json"`` with string input.     |
 +-----------------------------------------------------------------------------------------------------------------+
+
