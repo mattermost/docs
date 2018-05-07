@@ -274,8 +274,13 @@ platform channel move
   Example
     .. code-block:: none
 
-      sudo ./platform channel move newteam 8soyabwthjnf9qibfztje5a36h
-      sudo ./platform channel move newteam myteam:mychannel
+      sudo ./platform channel move newteam 8soyabwthjnf9qibfztje5a36h --username myusername
+      sudo ./platform channel move newteam myteam:mychannel --username myusername
+
+  Options
+    .. code-block:: none
+
+          --username [REQUIRED] Username of the user who is moving the team
 
 platform channel remove
 ~~~~~~~~~~~~~~~~~~~~~~~~
