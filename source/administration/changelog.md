@@ -11,14 +11,14 @@ Release date: 2018-05-16
 ### Highlights
 
 #### Convert Public Channels to Private
-- Team and System Admins can now convert a channel to private in the user interface. System Admins can also convert channels back to public [via the commandline](https://docs.mattermost.com/administration/command-line-tools.html#platform-channel-modify).
+ - Team and System Admins can now convert a channel to private from the user interface. System Admins can also convert channels back to public [via the commandline](https://docs.mattermost.com/administration/command-line-tools.html#platform-channel-modify).
 
 #### Performance Improvements
-- Decreased loading time by up to 90% for users with lots of direct and group message channels.
+ - Decreased loading time by up to 90% for users with lots of direct and group message channels.
 
-#### Environment Variables Support for GitLab Omnibus
- - Added tracking of which System Console settings are configured via environment variables.
- - Disabled System Console settings that are configured via environment variables.
+#### Environment Variables Support in GitLab Omnibus
+ - Simplified Mattermost administration by supporting environment variables in GitLab Omnibus.
+ - See [documentation](https://docs.gitlab.com/omnibus/gitlab-mattermost/#upgrading-gitlab-mattermost-from-versions-prior-to-11-0) to learn more.
 
 ### Improvements
 
