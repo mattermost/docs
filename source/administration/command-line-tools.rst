@@ -251,11 +251,12 @@ platform channel modify
   Example
     .. code-block:: none
 
-      sudo ./platform channel modify myteam:mychannel --private
+      sudo ./platform channel modify myteam:mychannel --username myusername --private
 
   Options
     .. code-block:: none
 
+          --username [REQUIRED] Username of the user who is changing the channel privacy.
           --public   Change a private channel to be public.
           --private  Change a public channel to be private.
 
