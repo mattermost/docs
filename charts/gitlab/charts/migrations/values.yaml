@@ -8,11 +8,7 @@ image:
 enabled: true
 # initialRootPassword: password
 redis:
-  # host: '0.0.0.0'
-  serviceName: 'redis'
-  password:
-    secret: gitlab-redis
-    key: redis-password
+  password: {}
 psql:
   password: {}
 global:
@@ -25,6 +21,10 @@ global:
     password:
       secret: gitlab-postgres
       key: psql-password
+  redis:
+    password:
+      secret: gitlab-redis
+      key: redis-password
 railsSecrets:
   secret: rails-secrets
   key: secrets.yml

@@ -68,12 +68,13 @@ global:
     password:
       secret: gitlab-postgres
       key: psql-password
+  redis:
+    # host: '0.0.0.0'
+    password:
+      secret: gitlab-redis
+      key: redis-password
 redis:
-  # host: '0.0.0.0'
-  serviceName: 'redis'
-  password:
-    secret: gitlab-redis
-    key: redis-password
+  password: {}
 psql:
   password: {}
 shell:

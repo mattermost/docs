@@ -12,6 +12,8 @@ global:
     enabled: true
   psql:
     password: {}
+  redis:
+    password: {}
   # Outgoing email server settings
   smtp:
     enabled: false
