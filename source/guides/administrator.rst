@@ -62,6 +62,7 @@ Deployment
    /deployment/sso-office*
    /deployment/metrics*
    /deployment/customize-mattermost.rst
+   /deployment/ssl-client-certificate*
    /deployment/client-side-data.rst
 
 Administration
