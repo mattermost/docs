@@ -64,3 +64,6 @@ git commit -m "Add logo via LFS"
 git push origin master
 ```
 
+## Run GitLab QA
+
+As preparation for the demo, one should also [run GitLab QA against the deployed chart](../gitlab-qa/README.md)
