@@ -31,6 +31,8 @@ Important Upgrade Notes
 |                                                    | When post editing is permitted, set ``"PostEditTimeLimit": -1`` to allow editing anytime, or set ``"PostEditTimeLimit"`` to a positive integer to restrict      | 
 |                                                    | editing time in seconds. If post editing is disabled, this setting does not apply.                                                                              |
 +----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| v4.9.0                                             | When adding a team icon, make sure all transparent icons have a white background. Transparent icons will not display unless they have a white background.       |
++----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v4.6.2                                             | If Let's Encrypt is enabled, forward port 80 through a firewall, with `Forward80To443                                                                           |
 |                                                    | <https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443>`_ ``config.json`` setting set to ``true`` to complete the Let's        |
 |                                                    | Encrypt certification.                                                                                                                                          |
