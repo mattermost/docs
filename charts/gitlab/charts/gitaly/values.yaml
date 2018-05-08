@@ -32,8 +32,7 @@ shell:
    key: secret
 
 ## Enable prometheus metrics and set the port to scrape the 
-## container on.  Note the colon before the port number, as 
-## this is required to be part of the env variable.
+## container on.  
 metrics:
   enabled: true
   metricsPort: 9236
