@@ -23,11 +23,11 @@ Release date: 2018-05-16
 ### Improvements
 
 #### Web User Interface
- - Added a setting that automatically answers messages sent to a user who is away.
- - Added a loader for channel invite modal.
+ - Removed support for transparent team icons to support any sidebar theme colors and added ability to remove team icons.
+ - Added an experimental setting that automatically answers messages sent to a user who is away.
+ - Added a loader for "Add Members" channel invite modal.
  - Made SHIFT+UP switch keyboard focus to right-hand side if it's already open to the current thread.
  - Removed an unnecessary WebRTC end user setting to avoid user errors and confusion.
- - Removed support for transparent team icons to support any sidebar theme colors and added ability to remove team icons.
  - Added an on-hover effect for image link previews.
  
  #### Plugins
@@ -48,24 +48,21 @@ Release date: 2018-05-16
  - Added a CLI Command to "Reset to Default" for permission system.
  - Added a CLI Platform command to change user email address.
  - Investigated "Download" link to external resources may not actually trigger download.
- - Upgraded minio-go library to v6.0.0.
 
 ### Bug Fixes
 
  - Fixed an issue where sign-up and team joining were broken on Mattermost server.
- - Fixed an issue with a mention badge missing for DMs in CTRL/CMD+K channel switcher.
- - Fixed an issue with weird spacing in post control menu of a post by another user.
+ - Fixed an issue where a mention badge was missing for DMs in CTRL/CMD+K channel switcher.
  - Fixed an issue where using CMD/CTRL+K to switch to DM failed with errors in console.
  - Fixed an issue where focus with CTRL/CMD+SHIFT+L was always set to the right-hand side when reply thread was open.
  - Fixed an issue where a user added to a channel wasn't immediately removed from other users' "Add Members" dialog.
  - Fixed an issue where 'Copy Link' context menu option was partially hidden when right-clicking a team in team sidebar.
- - Fixed an issue where a channel name overlapped the star icon in channel header.
  - Fixed an issue where the mention badge in team sidebar was cut off by the team icon border.
  - Fixed an issue where there was no on-hover effect for buttons in APIv3 deprecation system notice, and in System Console and Integrations pages.
  - Fixed an issue where ``[...]`` menu was missing on other users' posts if user was not an admin.
- - Fixed an issue where authdata failed to migrate properly during migration from LDAP to SAML.
+ - Fixed an issue where a user could not log in to Mattermost when authdata failed to migrate properly during migration from LDAP to SAML.
  - Fixed an issue where username in "is typing" message was missing.
- - Fixed an issue where a message time displayed the long timestamp instead of the short form.
+ - Fixed an issue where plugin configuration was not saved in the System Console.
 
 ### Compatibility
    
