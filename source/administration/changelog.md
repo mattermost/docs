@@ -25,13 +25,10 @@ Release date: 2018-05-16
 #### Web User Interface
  - Added a setting that automatically answers messages sent to a user who is away.
  - Added a loader for channel invite modal.
- - Made Shift+up switch keyboard focus to RHS if it's already open to the current thread.
- - Removed WebRTC end user setting.
- - Removed support for transparent team icons and added ability to remove team icons.
+ - Made SHIFT+UP switch keyboard focus to right-hand side if it's already open to the current thread.
+ - Removed an unnecessary WebRTC end user setting to avoid user errors and confusion.
+ - Removed support for transparent team icons to support any sidebar theme colors and added ability to remove team icons.
  - Added an on-hover effect for image link previews.
-
-#### Performance
- - Added structured logging.
  
  #### Plugins
  - Added better plugin error handling and reporting.
@@ -39,16 +36,18 @@ Release date: 2018-05-16
  #### Slash Commands
  - Added ``/invite`` slash command to invite users to a channel.
  - Added ``/platform`` list of commands to teams command in CLI.
- - Improved slash command error message when payload is invalid JSON.
+ - Improved slash command error message when payload has invalid JSON.
+ 
+ #### Administration
+ - Added structured logging.
+ - Users' client no longer refreshes after changing a System Console or ``config.json`` setting.
  
  #### Other (XXXX/// Need help with a category)
- - Removed ``mm_config`` and ``mm_license`` global state from webapp.
  - Added support to REST API for sending ephemeral messages to users.
  - Investigated avoiding duplicating unique indexes.
  - Added a CLI Command to "Reset to Default" for permission system.
  - Added a CLI Platform command to change user email address.
  - Investigated "Download" link to external resources may not actually trigger download.
- - Investigated switching back to npm.
  - Upgraded minio-go library to v6.0.0.
 
 ### Bug Fixes
@@ -58,7 +57,7 @@ Release date: 2018-05-16
  - Fixed an issue with weird spacing in post control menu of a post by another user.
  - Fixed an issue where using CMD/CTRL+K to switch to DM failed with errors in console.
  - Fixed an issue where focus with CTRL/CMD+SHIFT+L was always set to the right-hand side when reply thread was open.
- - Fixed an issue where a user added to a channel wasn't immediately removed from other users' add-members list.
+ - Fixed an issue where a user added to a channel wasn't immediately removed from other users' "Add Members" dialog.
  - Fixed an issue where 'Copy Link' context menu option was partially hidden when right-clicking a team in team sidebar.
  - Fixed an issue where a channel name overlapped the star icon in channel header.
  - Fixed an issue where the mention badge in team sidebar was cut off by the team icon border.
@@ -77,12 +76,12 @@ The following deprecations are planned for the Mattermost v5.0 release, which is
 1. All API v3 endpoints will be removed. [See documentation](https://api.mattermost.com/#tag/schema) to learn more about how to migrate your integrations to API v4. [Ticket #8708](https://mattermost.atlassian.net/browse/MM-8708).
 2. `platform` binary will be renamed to mattermost for a clearer install and upgrade experience. All command line tools, including the bulk loading tool and developer tools, will also be renamed from platform to mattermost. [Ticket #9985](https://mattermost.atlassian.net/browse/MM-9985).
 3. [Site URL setting](https://docs.mattermost.com/administration/config-settings.html#site-url) will be enforced to reduce number of OAuth, plugin and email notification set up errors. The setting has already been required since Mattermost v3.8. [Ticket #9983](https://mattermost.atlassian.net/browse/MM-9983).
-4. A new `config.json` setting to whitelist types of protocols for auto-linking will be added. [Ticket #9547](https://mattermost.atlassian.net/browse/MM-9547).
-5. A new `config.json` setting to disable the [permanent APIv4 delete team parameter](https://api.mattermost.com/#tag/teams%2Fpaths%2F~1teams~1%7Bteam_id%7D%2Fput) will be added. The setting will be off by default for all new and existing installs, except those deployed on GitLab Omnibus. A System Administrator can enable the API v4 endpoint from the config.json file. [Ticket #9916](https://mattermost.atlassian.net/browse/MM-9916).
-6. An unused `ExtraUpdateAt` field will be removed from the channel model. [Ticket #9739](https://mattermost.atlassian.net/browse/MM-9739).
-7. [Enterprise Edition E20] Current CSV export feature will be replaced by the [new Compliance Export](https://docs.mattermost.com/administration/compliance-export.html) feature. [Ticket #8810](https://mattermost.atlassian.net/browse/MM-8810).
-8. A Mattermost user setting to configure desktop notification duration in **Account Settings** > **Notifications** > **Desktop Notifications** will be removed.
-9. Slash commands configured to receive a GET request will have the payload being encoded in the query string instead of receiving it in the body of the request, consistent with standard HTTP requests. Although unlikely, this could break custom slash commands that use GET requests incorrectly. [Ticket 10201](https://mattermost.atlassian.net/browse/MM-10201).
+4. A Mattermost user setting to configure desktop notification duration in **Account Settings** > **Notifications** > **Desktop Notifications** will be removed.
+5. Slash commands configured to receive a GET request will have the payload being encoded in the query string instead of receiving it in the body of the request, consistent with standard HTTP requests. Although unlikely, this could break custom slash commands that use GET requests incorrectly. [Ticket 10201](https://mattermost.atlassian.net/browse/MM-10201).
+6. A new `config.json` setting to whitelist types of protocols for auto-linking will be added. [Ticket #9547](https://mattermost.atlassian.net/browse/MM-9547).
+7. A new `config.json` setting to disable the [permanent APIv4 delete team parameter](https://api.mattermost.com/#tag/teams%2Fpaths%2F~1teams~1%7Bteam_id%7D%2Fput) will be added. The setting will be off by default for all new and existing installs, except those deployed on GitLab Omnibus. A System Administrator can enable the API v4 endpoint from the config.json file. [Ticket #9916](https://mattermost.atlassian.net/browse/MM-9916).
+8. An unused `ExtraUpdateAt` field will be removed from the channel model. [Ticket #9739](https://mattermost.atlassian.net/browse/MM-9739).
+9. [Enterprise Edition E20] Current CSV export feature will be replaced by the [new Compliance Export](https://docs.mattermost.com/administration/compliance-export.html) feature. [Ticket #8810](https://mattermost.atlassian.net/browse/MM-8810).
  
 #### config.json
 
@@ -92,10 +91,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
  - Under `"TeamSettings"` in `config.json`:
    - Added ``"ExperimentalEnableAutomaticReplies": false,`` to allow
+ - Under `"LogSettings"` in `config.json`:
+   - Changed ``"FileFormat": "",`` to ``""FileJson": true,`` to allow
 
 #### API Changes
 
- - Added an APIv4 endpoint to convert a channel from public to private and to restrict this setting to ``system_admin``.
+ - An APIv4 endpoint was added to convert a channel from public to private and to restrict this setting to ``system_admin``.
 
 ### WebSocket Event Changes
 
