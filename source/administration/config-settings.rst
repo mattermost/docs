@@ -3106,18 +3106,6 @@ This setting determines whether channel_viewed WebSocket events are sent, which 
 | This feature's ``config.json`` setting is ``"EnableChannelViewedMessages": true`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------------+
 
-Enable Default Channel Leave/Join System Messages
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This setting determines whether team leave/join system messages are posted in the default ``town-square`` channel.
-
-**True**: Enables leave/join system messages in the default ``town-square`` channel.
-
-**False**: Disables leave/join messages from the default ``town-square`` channel. These system messages won't be added to the database either.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableDefaultChannelLeaveJoinMessages": true`` with options ``true`` and ``false`` for above settings respectively.     |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Segment Write Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -3544,12 +3532,13 @@ Enable Tutorial (Experimental)
 | This feature’s ``config.json`` setting is ``"EnableTutorial": true`` with options ``true`` and ``false`` for above settings respectively.  | 
 +--------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable Join Leave Messages in Default Channel (Experimental)
+Enable Default Channel Leave/Join System Messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This setting determines whether team leave/join system messages are posted in the default ``town-square`` channel.
 
-**True**: System messages about a user has joined or left a channel are posted to Town Square.
+**True**: Enables leave/join system messages in the default ``town-square`` channel.
 
-**False**: System messages about joining or leaving a channel are not posted to Town Square.
+**False**: Disables leave/join messages from the default ``town-square`` channel. These system messages won't be added to the database either.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"ExperimentalEnableDefaultChannelLeaveJoinMessages": true`` with options ``true`` and ``false`` for above settings respectively.  | 
@@ -3765,7 +3754,7 @@ Supported Timezones Path
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Set the path of the JSON file that lists supported timezones when ``ExperimentalTimezone`` is set to true.
 
-The file must be in the same directory as your ``config.json`` file. Defaults to ``timezones.json``.
+The file must be in the same directory as your ``config.json`` file if you set a relative path. Defaults to ``timezones.json``.
 
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SupportedTimezonesPath": "timezones.json"`` with string input.     |
