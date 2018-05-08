@@ -11,6 +11,13 @@ service:
   type: ClusterIP
   externalPort: 22
   internalPort: 2222
+
+global:
+  redis:
+    password:
+      secret: gitlab-redis
+      key: redis-password
+
 enabled: true
 authToken:
    secret: gitlab-shell-secret
@@ -23,11 +30,7 @@ unicorn:
   # serviceName: 'unicorn'
   # port: 8080
 redis:
-  # host: '0.0.0.0'
-  serviceName: 'redis'
-  password:
-    secret: gitlab-redis
-    key: redis-password
+  password: {}
 resources:
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little

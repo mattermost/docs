@@ -5,6 +5,11 @@ to be set in the `global` section of `values.yml`. These global settings are use
 are scoped within their chart. See the [Helm documentation on globals](https://docs.helm.sh/developing_charts/#global-values)
 for more information on how the global variables work.
 
+- [Hosts](#configure-host-settings)
+- [Ingress](#configure-ingress-settings)
+- [PostgreSQL](#configure-postgresql-settings)
+- [Redis](#configure-redis-settings)
+
 ## Configure Host settings
 
 The GitLab global host settings are located under the `global.hosts` key.
@@ -180,3 +185,37 @@ ex:
 `global.ingress.annotations."nginx\.ingress\.kubernetes\.io/enable-access-log"=true`
 
 No global annotations are provided by default.
+
+## Configure PostgreSQL settings
+
+The GitLab global PostgreSQL settings are located under the `global.psql` key.
+
+```YAML
+global:
+  psql:
+    host: db.example.local
+    port: 5432
+    password:
+      secret: gitlab-postgres
+      key: psql-password
+```
+
+For further details on these settings, see the documentation within the
+[unicorn chart](gitlab/unicorn/README.md#postgresql)
+
+## Configure Redis settings
+
+The GitLab global Redis settings are located under the `global.redis` key.
+
+```YAML
+global:
+  redis:
+    host: redis.example.local
+    port: 6379
+    password:
+      secret: gitlab-redis
+      key: redis-password
+```
+
+For further details on these settings, see the documentation within the
+[unicorn chart](gitlab/unicorn/README.md#redis)

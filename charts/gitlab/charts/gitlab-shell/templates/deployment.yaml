@@ -86,9 +86,9 @@ spec:
                   - key: {{ .Values.authToken.key }}
                     path: shell/.gitlab_shell_secret
             - secret:
-                name: {{ .Values.redis.password.secret }}
+                name: {{ coalesce .Values.redis.password.secret .Values.global.redis.password.secret }}
                 items:
-                  - key: {{ .Values.redis.password.key }}
+                  - key: {{ coalesce .Values.redis.password.key .Values.global.redis.password.key }}
                     path: redis/password
       # Actual config dirs that will be used in the container
       - name: shell-secrets
