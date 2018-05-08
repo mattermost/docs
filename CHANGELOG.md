@@ -2,6 +2,16 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2018-05-08
+
+### Security (1 change)
+
+- Update NGINX Ingress to 0.14.0. !249
+
+### Added (1 change)
+
+- Add configuration options for time_zone, rack_attack, trusted_proxies, and extras. !260
+
 ## 2018-05-01
 
 ### Added (2 changes, 1 of them is from the community)

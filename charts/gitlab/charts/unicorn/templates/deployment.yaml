@@ -140,9 +140,9 @@ spec:
                 - key: {{ default "token" .Values.gitaly.authToken.key }}
                   path: gitaly/gitaly_token
           - secret:
-              name: {{ .Values.redis.password.secret }}
+              name: {{ coalesce .Values.redis.password.secret .Values.global.redis.password.secret }}
               items:
-                - key: {{ .Values.redis.password.key }}
+                - key: {{ coalesce .Values.redis.password.key .Values.global.redis.password.key }}
                   path: redis/password
           - secret:
               name: {{ coalesce .Values.psql.password.secret .Values.global.psql.password.secret }}

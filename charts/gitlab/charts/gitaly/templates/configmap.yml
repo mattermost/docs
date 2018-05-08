@@ -55,7 +55,7 @@ data:
     # Redis settings used for pushing commit notices to gitlab
     redis:
       host: {{ template "gitlab.redis.host" . }}
-      port: {{ default 6379 .Values.redis.port }}
+      port: {{ template "gitlab.redis.port" }}
       pass: "<%= File.read("/etc/gitlab-secrets/redis/redis_password") %>"
       database: nil
       namespace: resque:gitlab

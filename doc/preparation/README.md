@@ -1,7 +1,12 @@
 # Pre-install preparations
 
 This document covers our weekly demos preparation steps but can also be useful to anyone who tries to install using the charts before going through [installation](../installation/README.md).
-The demoer need to go throw this document before the demo.
+The person giving the demo needs to go throw this document before the demo,
+and should perform setup the day prior to the demo itself.
+
+- [GKE setup](#gke-setup)
+- [External resources](#external-resources)
+- [Omniauth for Google OAuth2](#omniauth-for-google-oauth2)
 
 ## GKE setup
 
@@ -63,4 +68,47 @@ git add logo.png
 git commit -m "Add logo via LFS"
 git push origin master
 ```
+
+## External resources
+
+As a part of the demo, we also wish to provide for testing the use of external
+resources for PostgreSQL and Redis.
+
+Ensure that these external sources will be reachable from the deployed
+cluster, which may mean configuring firewall rules. The `cloud-native` GCP
+project used for our CI has firewall rules in place, which can be used by
+applying the `demo-pgsql` and `demo-redis` tags to any VM instance created
+within the project.
+
+### PostgreSQL
+
+Preparation of chart-external PostgreSQL services (as a pet or SaaS), can
+be found in [advanced/external-db](../advanced/external-db/README.md). This
+can be done several ways documented there. Once that is configured, the chart
+should be configured with the external service by making use of the `globals.psql`
+properties section of the global chart.
+
+### Redis
+
+Preparation of chart-external PostgreSQL services (as a pet or SaaS), can
+be found in [advanced/external-redis](../advanced/external-redis/README.md).
+This can be done as documented there. Once that is configured, the chart should
+be configured with the external service by making use of the `globals.redis`
+properties section of the global chart.
+
+## Omniauth for Google OAuth2
+
+Configuring a deployment with the capability to integrate with GKE requires
+the use of Omniauth. You will need to ensure that a set of
+**OAuth Client ID** credentials have been created for the hostname of the GitLab
+endpoint in your cluster.
+
+Cursory instructions for [creating a set of OAuth credentials can be found
+here](https://support.google.com/cloud/answer/6158849?hl=en).
+
+The credentials from GCP can be added per the [`unicorn` chart's `omniauth.providers` configuration documentation](../charts/gitlab/unicorn/README.md#omniauthproviders).
+
+## Run GitLab QA
+
+As preparation for the demo, one should also [run GitLab QA against the deployed chart](../gitlab-qa/README.md)
 

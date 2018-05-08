@@ -11,8 +11,8 @@
 {{- $timeout := .Values.timeout -}}
 {{- $resources := .Values.resources -}}
 {{- $nodeSelector := .Values.nodeSelector -}}
-{{- $redisSecret := .Values.redis.password.secret -}}
-{{- $redisKey := .Values.redis.password.key -}}
+{{- $redisSecret := coalesce .Values.redis.password.secret .Values.global.redis.password.secret -}}
+{{- $redisKey := coalesce .Values.redis.password.key .Values.global.redis.password.key -}}
 {{- $postgresSecret := coalesce .Values.psql.password.secret .Values.global.psql.password.secret -}}
 {{- $postgresKey := coalesce .Values.psql.password.key .Values.global.psql.password.key -}}
 {{- $gitalySecret := .Values.gitaly.authToken.secret -}}

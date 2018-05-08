@@ -112,9 +112,9 @@ spec:
                 - key: {{ .Values.shell.authToken.key }}
                   path: ".gitlab_shell_secret"
           - secret:
-              name: {{ .Values.redis.password.secret }}
+              name: {{ coalesce .Values.redis.password.secret .Values.global.redis.password.secret }}
               items:
-                - key: {{ .Values.redis.password.key }}
+                - key: {{ coalesce .Values.redis.password.key .Values.global.redis.password.key }}
                   path: redis_password
     {{- if .Values.nodeSelector }}
       nodeSelector:

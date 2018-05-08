@@ -28,10 +28,10 @@ data:
   resque.yml.erb: |
     production:
       # Redis (single instance)
-      url: redis://:<%= File.read("/etc/gitlab/redis/password") %>@{{ template "gitlab.redis.host" . }}:{{ default 6379 .Values.redis.port }}
+      url: redis://:<%= File.read("/etc/gitlab/redis/password") %>@{{ template "gitlab.redis.host" . }}:{{ template "gitlab.redis.port" }}
   workhorse-config.toml.erb: |
     [redis]
-    URL = "tcp://{{ template "gitlab.redis.host" . }}:{{ default 6379 .Values.redis.port }}"
+    URL = "tcp://{{ template "gitlab.redis.host" . }}:{{ template "gitlab.redis.port" }}"
     Password = "<%= File.read("/etc/gitlab/redis/password") %>"
   unicorn.rb: |
     worker_processes {{ .Values.workerProcesses }}
