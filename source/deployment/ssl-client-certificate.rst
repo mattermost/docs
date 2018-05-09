@@ -118,7 +118,7 @@ Set up mutual TLS authentication for the Web App
 
 6. Confirm the CA key for ``mmuser`` works by the following curl command to the proxy:
 
-.. code-block::
+    .. code-block::
 
     curl -v -s -k --key mmuser-mattermost.key --cert mmuser-mattermost.crt:mmuser-passphrase https://example.mattermost.com
 
@@ -129,7 +129,7 @@ You should see the Mattermost login page. If you see:
 
 7. Generate a PKCS12 file from the CA key and certificate, to install the certificate into your client machine for your browser to use:
 
-.. code-block::
+    .. code-block::
 
     openssl pkcs12 -export -out mmuser-mattermost.p12 -inkey mmuser-mattermost.key -in mmuser-mattermost.crt -certfile ca.mattermost.crt
 
