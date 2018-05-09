@@ -15,88 +15,112 @@ Set up mutual TLS authentication for the Web App
 
 1. Create a `certificate authority (CA) key <https://en.wikipedia.org/wiki/Certificate_authority>`_ and a certificate for signing the client certificate. When establishing a TLS connection, the NGINX proxy server requests and validates a client certificate provided by the web app.
 
-.. code-block::
+    .. code-block:: none
 
-  openssl genrsa -des3 -out ca.mattermost.key 4096
+    openssl genrsa -des3 -out ca.mattermost.key 4096
 
-  pass phrase: capassword
+    pass phrase: capassword
+    
+    ...
+    
+    .. code-block:: none
 
-.. code-block::
+    openssl req -new -x509 -days 365 -key ca.mattermost.key -out ca.mattermost.crt
 
-  openssl req -new -x509 -days 365 -key ca.mattermost.key -out ca.mattermost.crt
-
-  Country Name: US
-  State: Maryland
-  Locality Name: Meade
-  Organization Name: Mattermost
-  Organization Unit: Smarttotem
-  Common Name: example.mattermost.com
-  Email Address: admin@mattermost.com
+    Country Name: US
+    
+    State: Maryland
+    
+    Locality Name: Meade
+    
+    Organization Name: Mattermost
+    
+    Organization Unit: Smarttotem
+    
+    Common Name: example.mattermost.com
+    
+    Email Address: admin@mattermost.com
 
 2. Create the client side key for ``mmuser`` with a passphrase, and the certificate signing request:
 
-.. code-block::
+    .. code-block:: none
 
-  openssl genrsa -des3 -out mmuser-mattermost.key 1024
+    openssl genrsa -des3 -out mmuser-mattermost.key 1024
 
-  passphrase: mmuser-passphrase
+    passphrase: mmuser-passphrase
 
-.. code-block::
+    ...
+   
+    .. code-block:: none
 
-  openssl req -new -key mmuser-mattermost.key -out mmuser-mattermost.csr
+    openssl req -new -key mmuser-mattermost.key -out mmuser-mattermost.csr
 
-  Country Name: US
-  State: Maryland
-  Locality Name: Meade
-  Organization Name: Mattermost
-  Organization Unit: Smarttotem
-  Common Name: mmuser
-  Email Address: mmuser@mattermost.com
+    Country Name: US
+    
+    State: Maryland
+    
+    Locality Name: Meade
+    
+    Organization Name: Mattermost
+    
+    Organization Unit: Smarttotem
+    
+    Common Name: mmuser
+    
+    Email Address: mmuser@mattermost.com
 
-  Challenge password: mmuser-passphrase
+    Challenge password: mmuser-passphrase
 
 3. Sign the user's client certificate with the previously created CA certificate:
 
-.. code-block::
+    .. code-block:: none
 
-  openssl x509 -req -days 365 -in mmuser-mattermost.csr -CA ca.mattermost.crt -CAkey ca.mattermost.key -set_serial 01 -out mmuser-mattermost.crt
+    openssl x509 -req -days 365 -in mmuser-mattermost.csr -CA ca.mattermost.crt -CAkey ca.mattermost.key -set_serial 01 -out mmuser-mattermost.crt
 
 4. Check the newly generated client certificate for ``mmuser``:
 
-.. code-block::
+    .. code-block:: none
 
-  openssl x509 -in mmuser-mattermost.crt -text -noout
+    openssl x509 -in mmuser-mattermost.crt -text -noout
 
 5. Open the file ``/etc/nginx/sites-available/mattermost`` and modify the following lines, so that the NGINX proxy server requests and verifies the client certificate:
 
-.. code-block::
-  :emphasize-lines: 4-5, 10-11, 16-17
+    .. code-block:: none
+    :emphasize-lines: 4-5, 10-11, 16-17
 
-  ssl on;
-  ssl_certificate /etc/letsencrypt/live/example.mattermost.com/fullchain.pem;
-  ssl_certificate_key /etc/letsencrypt/live/example.mattermost.com/privkey.pem;
-  ssl_client_certificate /opt/mattermost/config/ca.mattermost.crt;
-  ssl_verify_client on;
+    ssl on;
+    
+    ssl_certificate /etc/letsencrypt/live/example.mattermost.com/fullchain.pem;
+    
+    ssl_certificate_key /etc/letsencrypt/live/example.mattermost.com/privkey.pem;
+    
+    ssl_client_certificate /opt/mattermost/config/ca.mattermost.crt;
+    
+    ssl_verify_client on;
 
-  ...
+    ...
 
-  location ~ /api/v[0-9]+/(users/)?websocket$ {
-   proxy_set_header X-SSL-Client-Cert $ssl_client_cert;
-   proxy_set_header X-SSL-Client-Cert-Subject-DN $ssl_client_s_dn;
+    location ~ /api/v[0-9]+/(users/)?websocket$ {
+    
+    proxy_set_header X-SSL-Client-Cert $ssl_client_cert;
+    
+    proxy_set_header X-SSL-Client-Cert-Subject-DN $ssl_client_s_dn;
      
-  ...
+    ...
 
-  location / {
-   proxy_set_header X-SSL-Client-Cert $ssl_client_cert;
-   proxy_set_header X-SSL-Client-Cert-Subject-DN $ssl_client_s_dn;
+    location / {
+    
+    proxy_set_header X-SSL-Client-Cert $ssl_client_cert;
+    
+    proxy_set_header X-SSL-Client-Cert-Subject-DN $ssl_client_s_dn;
  
-  ...
+    ...
 
 6. Confirm the CA key for ``mmuser`` works by the following curl command to the proxy:
 
 .. code-block::
 
-  curl -v -s -k --key mmuser-mattermost.key --cert mmuser-mattermost.crt:mmuser-passphrase https://example.mattermost.com
+    curl -v -s -k --key mmuser-mattermost.key --cert mmuser-mattermost.crt:mmuser-passphrase https://example.mattermost.com
 
 You should see the Mattermost login page. If you see:
 
@@ -107,9 +131,9 @@ You should see the Mattermost login page. If you see:
 
 .. code-block::
 
-  openssl pkcs12 -export -out mmuser-mattermost.p12 -inkey mmuser-mattermost.key -in mmuser-mattermost.crt -certfile ca.mattermost.crt
+    openssl pkcs12 -export -out mmuser-mattermost.p12 -inkey mmuser-mattermost.key -in mmuser-mattermost.crt -certfile ca.mattermost.crt
 
-  Enter Export Password: mmuser-passphrase
+    Enter Export Password: mmuser-passphrase
 
 8. Repeat steps 2-7 above for other users as needed.
 
