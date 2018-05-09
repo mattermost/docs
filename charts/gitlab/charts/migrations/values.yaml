@@ -9,18 +9,15 @@ enabled: true
 # initialRootPassword: password
 redis:
   password: {}
-psql:
-  password: {}
 global:
-  psql:
+  psql: {}
     # host: '0.0.0.0'
     # port: '5432'
     # database: 'gitlabhq_production'
     # username: 'gitlab'
-    serviceName: 'omnibus'
-    password:
-      secret: gitlab-postgres
-      key: psql-password
+    # password:
+    #   secret: gitlab-postgres
+    #   key: psql-password
   redis:
     password:
       secret: gitlab-redis

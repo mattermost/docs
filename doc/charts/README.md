@@ -15,7 +15,6 @@ on the different global configuration.
 - [Redis](redis/README.md)
 - [Minio](minio/README.md)
 - [Registry](registry/README.md)
-- GitLab/[Omnibus](gitlab/omnibus/README.md)
 - GitLab/[sidekiq](gitlab/sidekiq/README.md)
 - GitLab/[gitlab-shell](gitlab/gitlab-shell/README.md)
 - GitLab/[gitaly](gitlab/gitaly/README.md)

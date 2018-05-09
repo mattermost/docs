@@ -12,6 +12,10 @@ global:
     enabled: true
   psql:
     password: {}
+    # host: myexternalsql.hostedsomewhere.else
+    # port: 123
+    # username: gitlab
+    # database: gitlabhq_production
   redis:
     password: {}
   # Outgoing email server settings
@@ -63,6 +67,15 @@ redis-ha:
   nameOverride: redis
   enabled: false
 
+postgresql:
+  install: true
+  postgresUser: gitlab
+  postgresDatabase: gitlabhq_production
+  imageTag: 9.6.8
+  usePasswordFile: true
+  postgresPassword:
+    useExternal: true
+
 # registry:
 #   enabled: false
 #
@@ -75,8 +88,6 @@ redis-ha:
 gitlab:
   gitlab-runner:
     enabled: true
-#   omnibus:
-#     enabled: false
 #   migrations:
 #     enabled: false
 #   unicorn:

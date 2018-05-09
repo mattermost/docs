@@ -38,7 +38,6 @@ Table below contains all the possible charts configurations that can be supplied
 | redis.serviceName             | Redis service name                             | redis                                            |
 | redis.password.secret         | Redis secret                                   | gitlab-redis                                     |
 | redis.password.key            | Key to redis password in redis secret          | redis-password                                   |
-| psql.serviceName              | psql service name                              | omnibus                                          |
 | psql.password.secret          | psql secret name                               | gitlab-postgres                                  |
 | psql.password.key             | Key to psql password in psql secret            | psql-password                                    |
 | shell.authToken.secret        | Shell token secret                             | gitlab-shell-secret                              |
@@ -152,7 +151,6 @@ The `password` attribute for Redis has to sub keys:
 ```YAML
 psql:
   host: psql.example.local
-  serviceName: omnibus
   port: 5432
   database: gitlabhq_production
   username: gitlab
@@ -163,11 +161,7 @@ psql:
 
 #### host
 
-The hostname of the PostgreSQL server with the database to use. This can be omitted in lieu of `serviceName`
-
-#### serviceName
-
-The name of the `service` which is operating the PostgreSQL database. If this is present, and `host` is not, the chart will template the hostname of the service (and current `.Release.Name`) in place of the `host` value. This is convenient when using PostgreSQL as a part of the overall GitLab chart. This will default to `omnibus`
+The hostname of the PostgreSQL server with the database to use. This can be omitted if `postgresql.install=true` (default non-production).
 
 #### port
 

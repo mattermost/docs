@@ -177,27 +177,6 @@ Tables below contain all the possible charts configurations that can be supplied
 | gitlab.gitlab-shell.redis.serviceName               | Redis service name                             | redis                                                      |
 | gitlab.gitlab-shell.redis.password.secret           | Redis secret                                   | gitlab-redis                                               |
 | gitlab.gitlab-shell.redis.password.key              | Key to redis password in redis secret          | redis-password                                             |
-| gitlab.omnibus.replicaCount                         | Omnibus replicas                               | 1                                                          |
-| gitlab.omnibus.image.repository                     | Omnibus image repository                       | gitlab/gitlab-ee                                           |
-| gitlab.omnibus.image.tag                            | Omnibus image tag                              | nightly                                                    |
-| gitlab.omnibus.image.pullPolicy                     | Omnibus image pull policy                      | Always                                                     |
-| gitlab.omnibus.service.name                         | Omnibus service name                           | omnibus                                                    |
-| gitlab.omnibus.service.type                         | Omnibus service type                           | ClusterIP                                                  |
-| gitlab.omnibus.service.clusterIP                    | Omnibus cluster IP                             | 0.0.0.0                                                    |
-| gitlab.omnibus.service.ports.psql                   | Omnibus psql port                              | 5432                                                       |
-| gitlab.omnibus.enabled                              | Omnibus enable flag                            | true                                                       |
-| gitlab.omnibus.external_url                         | Omnibus external url                           | http://gitlab.example.local                                |
-| gitlab.omnibus.trusted_proxies                      |                                                | ["0.0.0.0/0"]                                              |
-| gitlab.omnibus.redis.serviceName                    | Redis service name                             | redis                                                      |
-| gitlab.omnibus.redis.password.secret                | Redis secret                                   | gitlab-redis                                               |
-| gitlab.omnibus.redis.password.key                   | Key to redis password in redis secret          | redis-password                                             |
-| gitlab.omnibus.psql.shared_buffers                  | Size of psql shared buffers                    | 1MB                                                        |
-| gitlab.omnibus.psql.password.secret                 | Secret containing psql password                | gitlab-postgres                                            |
-| gitlab.omnibus.psql.password.key                    | Key to psql password in psql secret            | psql-password                                              |
-| gitlab.omnibus.psql.persistence.enabled             | psql persistence enabled flag                  | true                                                       |
-| gitlab.omnibus.psql.persistence.accessMode          | psql persistence access mode                   | ReadWriteOnce                                              |
-| gitlab.omnibus.psql.persistence.size                | psql persistence volume size                   | 10Gi                                                       |
-| gitlab.omnibus.psql.persistence.subPath             | psql persistence volume mountpath              |                                                            |
 | gitlab.sidekiq.image.repository                     | Sidekiq image repository                       | registry.gitlab.com/gitlab-org/build/cng/gitlab-sidekiq-ee |
 | gitlab.sidekiq.image.tag                            | Sidekiq image tag                              | latest                                                     |
 | gitlab.sidekiq.image.pullPolicy                     | Sidekiq image pull policy                      | Always                                                     |
@@ -205,7 +184,6 @@ Tables below contain all the possible charts configurations that can be supplied
 | gitlab.sidekiq.redis.serviceName                    | Redis service name                             | redis                                                      |
 | gitlab.sidekiq.redis.password.secret                | Redis secret                                   | gitlab-redis                                               |
 | gitlab.sidekiq.redis.password.key                   | Key to redis password in redis secret          | redis-password                                             |
-| gitlab.sidekiq.psql.serviceName                     | psql service name                              | omnibus                                                    |
 | gitlab.sidekiq.psql.password.secret                 | psql password secret                           | gitlab-postgres                                            |
 | gitlab.sidekiq.psql.password.key                    | key to psql password in psql secret            | psql-password                                              |
 | gitlab.sidekiq.gitaly.serviceName                   | gitaly service name                            | gitaly                                                     |
@@ -236,7 +214,6 @@ Tables below contain all the possible charts configurations that can be supplied
 | gitlab.unicorn.redis.serviceName                    | Redis service name                             | redis                                                      |
 | gitlab.unicorn.redis.password.secret                | Redis secret                                   | gitlab-redis                                               |
 | gitlab.unicorn.redis.password.key                   | Key to redis password in redis secret          | redis-password                                             |
-| gitlab.unicorn.psql.serviceName                     | psql service name                              | omnibus                                                    |
 | gitlab.unicorn.psql.password.secret                 | psql secret name                               | gitlab-postgres                                            |
 | gitlab.unicorn.psql.password.key                    | Key to psql password in psql secret            | psql-password                                              |
 | gitlab.unicorn.shell.authToken.secret               | Shell token secret                             | gitlab-shell-secret                                        |
@@ -260,7 +237,6 @@ Tables below contain all the possible charts configurations that can be supplied
 | gitlab.migrations.redis.serviceName                 | Redis service name                             | redis                                                      |
 | gitlab.migrations.redis.password.secret             | Redis secret                                   | gitlab-redis                                               |
 | gitlab.migrations.redis.password.key                | Key to redis password in redis secret          | redis-password                                             |
-| gitlab.migrations.psql.serviceName                  | psql service name                              | omnibus                                                    |
 | gitlab.migrations.psql.password.secret              | psql secret                                    | gitlab-postgres                                            |
 | gitlab.migrations.psql.password.key                 | key to psql password in psql secret            | psql-password                                              |
 | gitlab.migrations.railsSecrets.secret               | Secret containing rails secrets.yml            | rails-secrets                                              |

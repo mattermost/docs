@@ -145,9 +145,9 @@ spec:
                 - key: {{ coalesce .Values.redis.password.key .Values.global.redis.password.key }}
                   path: redis/password
           - secret:
-              name: {{ coalesce .Values.psql.password.secret .Values.global.psql.password.secret }}
+              name: {{ template "postgresql.password.secret" . }}
               items:
-                - key: {{ coalesce .Values.psql.password.key .Values.global.psql.password.key }}
+                - key: {{ template "postgresql.password.key" . }}
                   path: postgres/psql-password
           - secret:
               name: {{ .Values.registry.certificate.secret }}

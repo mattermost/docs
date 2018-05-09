@@ -17,7 +17,7 @@ nginx:
   serviceAccount:
     autoGenerate: true
 
-# Registry chart Provides services to Unicorn/Omnibus chart(s) and external clients
+# Registry chart Provides services to Unicorn chart(s) and external clients
 registry:
   enabled: true
   minio:
@@ -42,12 +42,10 @@ gitlab:
     unicorn:
       enabled: true
       psql:
-        serviceName: omnibus
     # Sidekiq chart, with split queues (see charts/gitlab/charts/sidekiq/values.yaml)
     sidekiq:
       enabled: true
       psql:
-        serviceName: omnibus
     # Shell provides SSH access
     gitlab-shell:
       enabled: true
@@ -59,7 +57,3 @@ gitlab:
       enabled: true
       initialRootPassword: "minikube"
       psql:
-        serviceName: omnibus
-    # omnibus sub-chart (development only)
-    omnibus:
-      enabled: true

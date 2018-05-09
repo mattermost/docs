@@ -318,8 +318,6 @@ changelog_manager:
       --set global.ingress.configureCertmanager=false \
       --set certmanager.install=false \
       --set gitlab.migrations.initialRootPassword="$ROOT_PASSWORD" \
-      --set gitlab.omnibus.service.type=NodePort \
-      --set gitlab.omnibus.resources.requests.cpu=100m \
       --set gitlab.unicorn.resources.requests.cpu=100m \
       --set gitlab.sidekiq.resources.requests.cpu=100m \
       --set gitlab.gitlab-shell.resources.requests.cpu=100m \
