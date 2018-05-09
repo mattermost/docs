@@ -245,10 +245,8 @@ If a security fix release is required, run through the following steps:
 1. PM:
     - Verify all patch fixes are backported
     - Verify all patch fixes are tested (either via unit tests or RCs)
-2. Logistics
-    - Notify community about upcoming security release in Reception [see example](https://pre-release.mattermost.com/core/pl/aq434e5dt3ntmfdowhekxjzi4r)
-3. Release Manager:
-    - Notify community about upcoming security release in changelog with links to approved fixes and a date tagged as "TBD"
+2. Release Manager:
+    - Notify community about upcoming security release through a Twitter announcement and in changelog with links to approved fixes and a date tagged as "TBD"
     - Work with a developer to submit GitLab MR [following this process](https://docs.mattermost.com/process/gitlab-process.html#merge-requests) and [test the upgrade](https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg) once the GitLab MR is merged and included in their RC.
       - Open a ticket to [submit Gitlab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/MM-10365)
     - Make a post in Announcements channel announcing the dot release to the rest of the team with links to approved tickets and include a link to the ticket to submit the GitLab MR
@@ -264,7 +262,7 @@ If a security fix release is required, run through the following steps:
     - Update Security Research Hall of Fame on the [Responsible Disclosure Policy](https://about.mattermost.com/report-security-issue/) page
     - Post [Mattermost Security Updates](https://about.mattermost.com/security-updates/) 10 working days after the dot release has shipped
       - Update Security Issues spreadsheet with issue number from posted update (e.g. v3.2.0.1)
-4. Marketing:
+3. Marketing:
     - Prepare [blog post](https://about.mattermost.com/mattermost-3-6-2/) for mattermost.com, MailChimp email blast, and [Twitter announcement](https://twitter.com/mattermosthq/status/827193482578112512), and send to marketing lead for review. Once reviewed, schedule for 08:00 PST on the day after dot release
     
 If a bug fix release is required, run through the following steps:
@@ -272,11 +270,9 @@ If a bug fix release is required, run through the following steps:
 1. PM:
     - Schedule a Daily Release Update meeting every day until the dot release is complete
     - Open an issue in the [GitLab Omnibus](https://gitlab.com/gitlab-org/omnibus-gitlab) mentioning a dot release is coming 
-2. Logistics
-    - Notify community about upcoming dot release in Reception [see example](https://pre-release.mattermost.com/core/pl/aq434e5dt3ntmfdowhekxjzi4r)
+2. Release Manager:
+    - Notify community about upcoming dot release through a Twitter announcement and in changelog with links to approved fixes and a date tagged as "TBD"
 3. Release Manager:
-    - Notify community about upcoming dot release in changelog with links to approved fixes and a date tagged as "TBD"
-4. Release Manager:
     - Work with a developer to submit GitLab MR [following this process](https://docs.mattermost.com/process/gitlab-process.html#merge-requests) and [test the upgrade](https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg) once the GitLab MR is merged and included in their RC.
       - Open a ticket to [submit Gitlab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/MM-10365)
     - Make a post in Announcements channel announcing the dot release to the rest of the team with links to approved tickets and include a link to the ticket to submit the GitLab MR
@@ -286,12 +282,12 @@ If a bug fix release is required, run through the following steps:
         - Post download links and testing server links for the next RC when it's cut
     - Update Changelog:
         - Start a WIP PR for the dot release changelog and commit updates as new issues are fixed on the dot release RCs
-5. Dev:
+4. Dev:
     - PRs for hotfixes are made to release branch
     - Review PRs made from release branch and merge changes into the release branch as required and merge the release branch back into master once per day
-6. Build:
+5. Build:
     - Verify with Release Manager before cutting any new dot release RCs (approved fixes should be merged)
-7. QA:
+6. QA:
     - Test the new RC to verify fixes merged to the release branch work
     - Post in Release Discussion channel after testing
 
