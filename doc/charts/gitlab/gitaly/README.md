@@ -20,7 +20,6 @@ Table below contains all the possible charts configurations that can be supplied
 
 | Parameter                    | Description                            | Default                                  |
 | ---                          | ---                                    | ---                                      |
-| replicaCount                 | Gitaly replicas                        | 1                                        |
 | image.repository             | Gitaly image repository                | registry.com/gitlab-org/build/cng/gitaly |
 | image.tag                    | Gitaly image tag                       | latest                                   |
 | image.pullPolicy             | Gitaly image pull policy               | Always                                   |

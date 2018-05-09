@@ -1,7 +1,9 @@
 # Default values for gitaly.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
-replicaCount: 1
+
+# Support for more than one gitaly replica is coming in the future
+# replicaCount: 1
 image:
   repository: registry.gitlab.com/gitlab-org/build/cng/gitaly
   tag: latest

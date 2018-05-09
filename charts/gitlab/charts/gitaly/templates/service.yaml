@@ -15,15 +15,12 @@ metadata:
   {{- end }}
 spec:
   type: {{ .Values.service.type }}
+  clusterIP: "None"
   ports:
     - port: {{ .Values.service.externalPort }}
-      targetPort: {{ .Values.service.internalPort }}
-      protocol: TCP
       name: {{ .Values.service.name }}
    {{- if .Values.metrics.enabled }}
     - port: {{ .Values.metrics.metricsPort }}
-      targetPort: {{ .Values.metrics.metricsPort }}
-      protocol: TCP
       name: {{ .Values.service.name }}-metrics
    {{- end }}
   selector:

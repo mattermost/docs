@@ -9,7 +9,8 @@ to the service name
 {{- if .Values.gitaly.host -}}
 {{- .Values.gitaly.host -}}
 {{- else -}}
+{{- $podName := printf "%s-gitaly-0" .Release.Name -}}
 {{- $name := default "gitaly" .Values.gitaly.serviceName -}}
-{{- printf "%s-%s" .Release.Name $name -}}
+{{- printf "%s.%s-%s" $podName .Release.Name $name -}}
 {{- end -}}
 {{- end -}}
