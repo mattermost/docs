@@ -12,7 +12,7 @@ The name of the environment variable for any setting can be derived from the nam
 
 1. Find the setting in ``config.json``. In this case, *ServiceSettings.SiteURL*.
 2. Add ``MM_`` to the beginning and convert all characters to uppercase and replace the ``.`` with ``_``. For example, *MM_SERVICESETTINGS_SITEURL*.
-3. The setting becomes ``export MM_SERVICESETTINGS_SITEURL="http://example.com"``
+3. The setting becomes ``export MM_SERVICESETTINGS_SITEURL="http://example.com"``.
 
 Finally, if a setting is configured through an environment variable, modifying it in the System Console is disabled.
 
@@ -636,7 +636,7 @@ Typically set to true in production. When true, logged events are written to the
 
 Changing this setting requires a server restart before taking effect.
 
-**True**:  Log files are written to files specified in **FileLocation**.
+**True**: Log files are written to files specified in **FileLocation**.
 
 **False**: Log files are not written.
 
@@ -684,9 +684,9 @@ Output file logs as JSON
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Typically set to true in production. When true, logged events are written in a machine readable JSON format. Otherwise they are printed as plain text. Changing this setting requires a server restart before taking effect.
 
-**True**:  Logged events are written in a machine readable JSON format.
+**True**: Logged events are written in a machine readable JSON format.
 
-**False**: Logged events are written in plaint text.
+**False**: Logged events are written in plain text.
 
 +----------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileJson": true`` with options ``true`` and ``false`` for above settings respectively.    |
@@ -3569,7 +3569,7 @@ Town Square is Read-Only (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E10 and higher*
 
-**True**: Only System Admins can post in Town Square. Other members are not able to post, reply, upload files, emoji react or pin messages to Town Square, nor able to change the channel name, header or purpose.
+**True**: Only System Admins can post in Town Square. Other members are not able to post, reply, upload files, emoji react or pin messages to Town Square, nor are able to change the channel name, header or purpose.
 
 **False**: Anyone can post in Town Square.
 
