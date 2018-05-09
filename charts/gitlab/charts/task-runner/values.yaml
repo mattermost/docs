@@ -23,7 +23,7 @@ global:
   redis:
     password:
       secret: gitlab-redis
-      key: gitlab-password
+      key: redis-password
 backups:
   bucketName: gitlab-backups
 
