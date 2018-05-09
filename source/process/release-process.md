@@ -285,6 +285,7 @@ If a bug fix release is required, run through the following steps:
     - Review PRs made from release branch and merge changes into the release branch as required and merge the release branch back into master once per day
 4. Build:
     - Verify with Release Manager before cutting any new dot release RCs (approved fixes should be merged)
+    - If the dot release takes place during a regular release, update ``ci-linux-mysql-prev`` to dot-release RCs for the previous release and keep ``rctesting.reddogsofwar`` on the latest regular release version
 5. QA:
     - Test the new RC to verify fixes merged to the release branch work
     - Post in Release Discussion channel after testing
