@@ -51,17 +51,10 @@ Release date: 2018-05-16
 
 ### Bug Fixes
 
- - Fixed an issue where sign-up and team joining were broken on Mattermost server.
- - Fixed an issue where a mention badge was missing for DMs in CTRL/CMD+K channel switcher.
- - Fixed an issue where using CMD/CTRL+K to switch to DM failed with errors in console.
  - Fixed an issue where focus with CTRL/CMD+SHIFT+L was always set to the right-hand side when reply thread was open.
  - Fixed an issue where a user added to a channel wasn't immediately removed from other users' "Add Members" dialog.
  - Fixed an issue where 'Copy Link' context menu option was partially hidden when right-clicking a team in team sidebar.
- - Fixed an issue where the mention badge in team sidebar was cut off by the team icon border.
- - Fixed an issue where there was no on-hover effect for buttons in APIv3 deprecation system notice, and in System Console and Integrations pages.
- - Fixed an issue where ``[...]`` menu was missing on other users' posts if user was not an admin.
- - Fixed an issue where a user could not log in to Mattermost when authdata failed to migrate properly during migration from LDAP to SAML.
- - Fixed an issue where username in "is typing" message was missing.
+ - Fixed an issue where a user could not log in to Mattermost when their login id ("authdata") failed to migrate properly during migration from LDAP to SAML.
  - Fixed an issue where plugin configuration was not saved in the System Console.
 
 ### Compatibility
@@ -89,7 +82,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under `"TeamSettings"` in `config.json`:
    - Added ``"ExperimentalEnableAutomaticReplies": false,`` to allow
  - Under `"LogSettings"` in `config.json`:
-   - Changed ``"FileFormat": "",`` to ``""FileJson": true,`` to allow
+   - Removed ``"FileFormat": "",`` and added ``""FileJson": true,`` and ``"ConsoleJson": true,`` to allow
 
 #### API Changes
 
