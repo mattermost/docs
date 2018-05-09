@@ -12,6 +12,8 @@ Important Upgrade Notes
 |                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Server logs written to **System Console > Logs** and to the mattermost.log file specified in **System Console > Logging > File Log Directory**                  |
 |                                                    | now use JSON formatting. If you have built a tool that parses the server logs and sends them to an external system, make sure it supports the JSON format.      |
+|                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | When adding a team icon, all transparent icons will be filled with a white background.                                                                          |
 +----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v4.9.0                                             | To improve the production use of Mattermost with Docker, the docker image is now running as a non-root user and listening on port 8000. Please read the         |
 |                                                    | `upgrade instructions <https://github.com/mattermost/mattermost-docker#upgrading-mattermost-to-49>`_ for important changes to existing installations.           |
