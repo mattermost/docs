@@ -36,6 +36,12 @@ shell:
    secret: gitlab-shell-secret
    key: secret
 
+## Enable prometheus metrics and set the port to scrape the 
+## container on.  
+metrics:
+  enabled: true
+  metricsPort: 9236
+
 ## Enable persistence using Persistent Volume Claims
 ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
 ##

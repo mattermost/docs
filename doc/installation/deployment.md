@@ -82,7 +82,7 @@ certificates.
 
 ### Postgresql
 
-By default we use the GitLab omnibus chart to provide an in-kubernetes postgresql database. This
+By default this chart provides an in-cluster postgresql database. This
 configuration should not be used in production.
 
 You can read more about setting up your production-ready database in the [advanced database docs](../advanced/external-db/README.md).

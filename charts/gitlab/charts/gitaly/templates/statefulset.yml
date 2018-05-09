@@ -48,6 +48,9 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: {{ .Values.service.internalPort }}
+           {{- if .Values.metrics.enabled }}
+            - containerPort: {{ .Values.metrics.metricsPort }}
+           {{- end }}
           env:
             - name: CONFIG_TEMPLATE_DIRECTORY
               value: '/etc/gitaly/templates'
@@ -55,6 +58,10 @@ spec:
               value: '/etc/gitaly'
             - name: GITALY_CONFIG_FILE
               value: '/etc/gitaly/config.toml'
+            {{- if .Values.metrics.enabled }}
+            - name: GITALY_PROMETHEUS_LISTEN_ADDR
+              value: ':{{ .Values.metrics.metricsPort }}'
+            {{- end }}
             - name: POD_NAME
               valueFrom:
                 fieldRef:
