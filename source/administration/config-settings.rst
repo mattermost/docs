@@ -8,13 +8,13 @@ The default location of ``config.json`` is in the ``mattermost/config`` director
 **Environment Variables**
 Starting in Mattermost version 3.8, you can use environment variables to manage the configuration. Environment variables override settings in ``config.json``. If a change to a setting in ``config.json`` requires a restart for it to take effect, then changes to the corresponding environment variable also require a server restart.
 
-The name of the environment variable for any setting can be derived from the name of that setting in ``config.json``.
-
-For example, to derive the name of the Site URL setting:
+The name of the environment variable for any setting can be derived from the name of that setting in ``config.json``. For example, to derive the name of the Site URL setting:
 
 1. Find the setting in ``config.json``. In this case, *ServiceSettings.SiteURL*.
 2. Add ``MM_`` to the beginning and convert all characters to uppercase and replace the ``.`` with ``_``. For example, *MM_SERVICESETTINGS_SITEURL*.
 3. The setting becomes ``export MM_SERVICESETTINGS_SITEURL="http://example.com"``
+
+Finally, if a setting is configured through an environment variable, modifying it in the System Console is disabled.
 
 For any setting that is not set in ``config.json`` or in environment variables, the Mattermost server uses the default value as documented here.
 
