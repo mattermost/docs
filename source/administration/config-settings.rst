@@ -644,6 +644,18 @@ Changing this setting requires a server restart before taking effect.
 | This feature's ``config.json`` setting is ``"EnableFile": true`` with options ``true`` and ``false`` for above settings respectively.  |
 +----------------------------------------------------------------------------------------------------------------------------------------+
 
+Output console logs as JSON
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Typically set to true in production. When true, logged events are written in a machine readable JSON format. Otherwise they are printed as plain text. Changing this setting requires a server restart before taking effect.
+
+**True**:  Logged events are written in a machine readable JSON format.
+
+**False**: Logged events are written in plaint text.
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ConsoleJson": true`` with options ``true`` and ``false`` for above settings respectively. |
++----------------------------------------------------------------------------------------------------------------------------------------+
+
 File Log Level
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Level of detail at which log events are written to log files when **EnableFile** = ``true``.
@@ -668,34 +680,17 @@ Changing this setting requires a server restart before taking effect.
 | This feature's ``config.json`` setting is ``"FileLocation": ""`` with string input.                                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-File Log Format
+Output file logs as JSON
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Typically set to true in production. When true, logged events are written in a machine readable JSON format. Otherwise they are printed as plain text. Changing this setting requires a server restart before taking effect.
 
-Format of log message output. If blank, FileFormat = "[%D %T] [%L] (%S) %M", where:
+**True**:  Logged events are written in a machine readable JSON format.
 
-.. list-table::
-   :widths: 20 80
+**False**: Logged events are written in plaint text.
 
-   * - %T
-     - Time (15:04:05 MST)
-   * - %t
-     - Time (15:04)
-   * - %D
-     - Date (2006/01/02)
-   * - %d
-     - Date (01/02/06)
-   * - %L
-     - Level (FNST, FINE, DEBG, TRAC, WARN, EROR, CRIT)
-   * - %S
-     - Source
-   * - %M
-     - Message
-
-Changing this setting requires a server restart before taking effect.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileFormat": ""`` with string input.                                                                                    |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileJson": true`` with options ``true`` and ``false`` for above settings respectively.    |
++----------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Webhook Debugging
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
