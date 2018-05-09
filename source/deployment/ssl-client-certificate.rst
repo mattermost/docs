@@ -15,7 +15,7 @@ Set up mutual TLS authentication for the Web App
 
 1. Create a `certificate authority (CA) key <https://en.wikipedia.org/wiki/Certificate_authority>`_ and a certificate for signing the client certificate. When establishing a TLS connection, the NGINX proxy server requests and validates a client certificate provided by the web app.
 
-    .. code-block:: none
+    .. code-block::
 
     openssl genrsa -des3 -out ca.mattermost.key 4096
 
@@ -23,7 +23,7 @@ Set up mutual TLS authentication for the Web App
     
     ...
     
-    .. code-block:: none
+    .. code-block::
 
     openssl req -new -x509 -days 365 -key ca.mattermost.key -out ca.mattermost.crt
 
@@ -43,7 +43,7 @@ Set up mutual TLS authentication for the Web App
 
 2. Create the client side key for ``mmuser`` with a passphrase, and the certificate signing request:
 
-    .. code-block:: none
+    .. code-block::
 
     openssl genrsa -des3 -out mmuser-mattermost.key 1024
 
@@ -51,7 +51,7 @@ Set up mutual TLS authentication for the Web App
 
     ...
    
-    .. code-block:: none
+    .. code-block::
 
     openssl req -new -key mmuser-mattermost.key -out mmuser-mattermost.csr
 
@@ -73,19 +73,19 @@ Set up mutual TLS authentication for the Web App
 
 3. Sign the user's client certificate with the previously created CA certificate:
 
-    .. code-block:: none
+    .. code-block::
 
     openssl x509 -req -days 365 -in mmuser-mattermost.csr -CA ca.mattermost.crt -CAkey ca.mattermost.key -set_serial 01 -out mmuser-mattermost.crt
 
 4. Check the newly generated client certificate for ``mmuser``:
 
-    .. code-block:: none
+    .. code-block::
 
     openssl x509 -in mmuser-mattermost.crt -text -noout
 
 5. Open the file ``/etc/nginx/sites-available/mattermost`` and modify the following lines, so that the NGINX proxy server requests and verifies the client certificate:
 
-    .. code-block:: none
+    .. code-block::
     :emphasize-lines: 4-5, 10-11, 16-17
 
     ssl on;
