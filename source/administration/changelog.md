@@ -41,6 +41,7 @@ Release date: 2018-05-16
  #### Administration
  - Added structured logging.
  - Users' client no longer refreshes after changing a System Console or ``config.json`` setting.
+ - Added ``IncrementClusterEventType`` function to metrics interface.
  
  #### Other (XXXX/// Need help with a category)
  - Added support to REST API for sending ephemeral messages to users.
