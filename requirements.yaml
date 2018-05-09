@@ -8,3 +8,8 @@ dependencies:
   version: 5.5.3
   repository: https://kubernetes-charts.storage.googleapis.com/
   condition: prometheus.install
+- name: postgresql
+  version: 0.12.0
+  # repository: https://kubernetes-charts.storage.googleapis.com/
+  repository: file://dependencies/postgresql
+  condition: postgresql.install

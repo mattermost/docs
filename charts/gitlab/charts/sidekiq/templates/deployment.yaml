@@ -13,8 +13,6 @@
 {{- $nodeSelector := .Values.nodeSelector -}}
 {{- $redisSecret := coalesce .Values.redis.password.secret .Values.global.redis.password.secret -}}
 {{- $redisKey := coalesce .Values.redis.password.key .Values.global.redis.password.key -}}
-{{- $postgresSecret := coalesce .Values.psql.password.secret .Values.global.psql.password.secret -}}
-{{- $postgresKey := coalesce .Values.psql.password.key .Values.global.psql.password.key -}}
 {{- $gitalySecret := .Values.gitaly.authToken.secret -}}
 {{- $gitalyKey := default "token" .Values.gitaly.authToken.key -}}
 {{- $railsSecretName := .Values.railsSecrets.secret -}}
@@ -187,9 +185,9 @@ spec:
                 - key: {{ $redisKey }}
                   path: redis/password
           - secret:
-              name: {{ $postgresSecret }}
+              name: {{ template "postgresql.password.secret" $ }}
               items:
-                - key: {{ $postgresKey }}
+                - key: {{ template "postgresql.password.key" $ }}
                   path: postgres/psql-password
           {{- if and $.Values.global.smtp.enabled $.Values.global.smtp.authentication }}
           - secret:

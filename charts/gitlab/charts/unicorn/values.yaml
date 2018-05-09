@@ -59,23 +59,20 @@ global:
     minio: {}
       #name: minio.example.local
       #https: false
-  psql:
+  psql: {}
     # host: '0.0.0.0'
     # port: '5432'
     # database: 'gitlabhq_production'
     # username: 'gitlab'
-    serviceName: 'omnibus'
-    password:
-      secret: gitlab-postgres
-      key: psql-password
+    # password:
+    #   secret: gitlab-postgres
+    #   key: psql-password
   redis:
     # host: '0.0.0.0'
     password:
       secret: gitlab-redis
       key: redis-password
 redis:
-  password: {}
-psql:
   password: {}
 shell:
   authToken:

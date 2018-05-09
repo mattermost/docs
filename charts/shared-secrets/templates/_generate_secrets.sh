@@ -21,9 +21,10 @@ function generate_secret_if_needed(){
 # Redis password
 generate_secret_if_needed gitlab-redis --from-literal=redis-password=$(gen_random 'a-zA-Z0-9' 64)
 
+{{if not .Values.global.psql.host -}}
 # Postgres password
-
-generate_secret_if_needed gitlab-postgres --from-literal=psql-password=$(gen_random 'a-zA-Z0-9' 64)
+generate_secret_if_needed {{ template "postgresql.password.secret" . }} --from-literal=postgres-password=$(gen_random 'a-zA-Z0-9' 64)
+{{ end }}
 
 # Gitlab shell
 generate_secret_if_needed gitlab-shell-secret --from-literal=secret=$(gen_random 'a-zA-Z0-9' 64)
