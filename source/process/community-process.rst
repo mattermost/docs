@@ -41,7 +41,7 @@ The various community channels are outlined below. On a daily basis, the Communi
 
   - Description:
 
-    - Community Manager reviews new `GitHub mattermost/mattermost-server <https://github.com/mattermost/mattermost-server>`_ issues daily, and responds to all new issues:
+    - Community Manager reviews new `GitHub mattermost/mattermost-server <https://github.com/mattermost/mattermost-server>`_ and `GitHub mattermost/mattermost-mobile <https://github.com/mattermost/mattermost-mobile/issues>`_ issues daily, and responds to all new issues:
 
         - Bug Report: Try to reproduce, or ask another team member to reproduce
         - Troubleshooting: Request to move to forums
