@@ -3760,3 +3760,35 @@ The file must be in the same directory as your ``config.json`` file if you set a
 | This feature's ``config.json`` setting is ``"SupportedTimezonesPath": "timezones.json"`` with string input.     |
 +-----------------------------------------------------------------------------------------------------------------+
 
+Jobs
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Settings to configure the how Mattermost schedules and completes periodic tasks such as the deletion of old posts with Data Retention enabled or indexing of posts with Elasticsearch. These settings control which Mattermost servers are designated as a Scheduler, a server that queues that tasks at the correct times, and as a Worker, a server that completes the given tasks.
+
+When running Mattermost on a single machine, both ``RunJobs`` and ``RunScheduler`` should be enabled. Without both of these enabled, Mattermost will not function properly.
+
+When running Mattermost in High Availability mode, ``RunJobs`` should be enabled on one or more servers while ``RunScheduler`` should be enabled on all servers under normal circumstances. A High Availability cluster will have one Scheduler and one or more Workers. See the below sections for more information.
+
+Run Jobs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Set whether or not this Mattermost server will handle tasks created by the Scheduler.
+
+When running Mattermost on a single machine, this setting should always be enabled.
+
+When running Mattermost in High Availablity mode, one or more servers should have this setting enabled. It is recommended that a High Availability cluster has one or more dedicated Workers with this setting enabled while the remaining Mattermost app servers have it disabled.
+
++------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RunJobs": true`` with options ``true`` and ``false`` for above settings respectively. |
++------------------------------------------------------------------------------------------------------------------------------------+
+
+Run Scheduler
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Set whether or not this Mattermost server will schedule tasks that will be completed by a Worker.
+
+When running Mattermost on a single machine, this setting should always be enabled.
+
+When running Mattermost in High Availablity mode, this setting should always be enabled. In a High Availability cluster, exactly one of the servers will be designated as the Scheduler at a time to ensure that duplicate tasks aren't created.
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RunScheduler": true`` with options ``true`` and ``false`` for above settings respectively. |
++-----------------------------------------------------------------------------------------------------------------------------------------+
