@@ -30,6 +30,9 @@ Release date: 2018-05-16
  - Removed an unnecessary WebRTC end user setting to avoid user errors and confusion.
  - Added an on-hover effect for image link previews.
  
+ #### Performance
+ - Remove duplicate indexes accidentally created on the ``Channels``, ``Emoji`` and ``OAuthAccessData`` tables.
+ 
  #### Plugins
  - Added better plugin error handling and reporting.
  
@@ -37,16 +40,13 @@ Release date: 2018-05-16
  - Added ``/invite`` slash command to invite users to a channel.
  - Improved slash command error message when payload has invalid JSON.
  
- #### Command Line Interface (CLI)
- - Added ``./platform`` team list command to list all teams on the server.
- 
  #### Administration
  - Added structured logging to more easily review server logs.
  - Users' client no longer refreshes after changing a System Console or ``config.json`` setting.
  - Added ``IncrementClusterEventType`` function to metrics interface.
  
- #### Other (XXXX/// Need help with a category)
- - Investigated avoiding duplicating unique indexes.
+ #### Command Line Interface (CLI)
+ - Added ``./platform`` team list command to list all teams on the server.
  - Added a CLI Command to "Reset to Default" for permission system.
 
 ### Bug Fixes
