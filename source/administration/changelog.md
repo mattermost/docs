@@ -7,7 +7,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ## Release v4.9
 
  - **4.9.3, released TBD**
-   - Fixed an issue where plugin configuration got corrupted upon saving the configuration via system console.
+   - Fixed an issue where plugin configuration got corrupted upon saving the configuration via the System Console.
  - **4.9.2, released 2018-05-04**
    - Fixed an issue with permissions migration when ``AllowEditPost`` was set to "Always".
  - **4.9.1, released 2018-04-27**
