@@ -75,6 +75,10 @@ postgresql:
   usePasswordFile: true
   postgresPassword:
     useExternal: true
+  metrics:
+    enabled: true
+    ## Optionally define additional custom metrics
+    ## ref: https://github.com/wrouesnel/postgres_exporter#adding-new-metrics-via-a-config-file
 
 # registry:
 #   enabled: false
