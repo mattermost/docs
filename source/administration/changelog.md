@@ -35,20 +35,19 @@ Release date: 2018-05-16
  
  #### Slash Commands
  - Added ``/invite`` slash command to invite users to a channel.
- - Added ``/platform`` list of commands to teams command in CLI.
  - Improved slash command error message when payload has invalid JSON.
  
+ #### Command Line Interface (CLI)
+ - Added ``./platform`` team list command to list all teams on the server.
+ 
  #### Administration
- - Added structured logging.
+ - Added structured logging to more easily review server logs.
  - Users' client no longer refreshes after changing a System Console or ``config.json`` setting.
  - Added ``IncrementClusterEventType`` function to metrics interface.
  
  #### Other (XXXX/// Need help with a category)
- - Added support to REST API for sending ephemeral messages to users.
  - Investigated avoiding duplicating unique indexes.
  - Added a CLI Command to "Reset to Default" for permission system.
- - Added a CLI Platform command to change user email address.
- - Investigated "Download" link to external resources may not actually trigger download.
 
 ### Bug Fixes
 
@@ -83,11 +82,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under `"TeamSettings"` in `config.json`:
    - Added ``"ExperimentalEnableAutomaticReplies": false,`` to allow
  - Under `"LogSettings"` in `config.json`:
-   - Removed ``"FileFormat": "",`` and added ``""FileJson": true,`` and ``"ConsoleJson": true,`` to allow
+   - Removed ``FileFormat`` and added ``""FileJson": true,`` and ``"ConsoleJson": true,`` to allow logged events to be written as a machine readable JSON format instead of the be printed as plain text.
 
 #### API Changes
 
  - An APIv4 endpoint was added to convert a channel from public to private and to restrict this setting to ``system_admin``.
+ - Support was added to REST API for sending ephemeral messages to users.
 
 ### WebSocket Event Changes
 
