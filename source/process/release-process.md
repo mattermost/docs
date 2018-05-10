@@ -164,6 +164,7 @@ Day when Leads and PMs decide which major features are included in the release, 
 3. QA:
     - Update Release Discussion header with links to RC instances and testing spreadsheet ([template](https://pre-release.mattermost.com/core/pl/db3sur4r53d9tyih1i4wrmi9wy))
     - Post release testing instructions to Release Discussion channel ([template](https://pre-release.mattermost.com/core/pl/uprogtcqzpbk7nkmdkfnhqkcac))
+    - Post "Bug Hunter Coin" message to Reception channel ([see example](https://pre-release.mattermost.com/core/pl/3o15eoq89fdq5m1ac5dyp4nc3e))
     - Update Selenium and manual smoke tests as needed, to prepare to run on each RC after it is cut
     - As bug fixes are merged, verify fixes on new RCs and post in Release Channel after testing
     - Update selenium.mattermost.com to latest RC
@@ -288,6 +289,7 @@ If a bug fix release is required, run through the following steps:
 5. Build:
     - Verify with Release Manager before cutting any new dot release RCs (approved fixes should be merged)
 6. QA:
+    - If the dot release takes place during a regular release, update ``ci-linux-mysql-prev`` to dot-release RCs for the previous release and keep ``rctesting.reddogsofwar`` on the latest regular release version
     - Test the new RC to verify fixes merged to the release branch work
     - Post in Release Discussion channel after testing
 
