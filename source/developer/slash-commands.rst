@@ -178,6 +178,8 @@ Mattermost automatically translates the data coming from Slack:
    
    - *<>* to denote a URL link, such as ``{"text": "<http://www.mattermost.com/>"}``
    - *|* within a *<>* to define linked text, such as ``{"text": "Click <http://www.mattermost.com/|here> for a link."}``
+   - *<userid>*  to trigger a mention to a user, such as ``{"text": "<5fb5f7iw8tfrfcwssd1xmx3j7y> this is a notification."}``
+   - *<!channel>*, *<!here>* or *<!all>*  to trigger a mention to a channel, such as ``{"text": "<!channel> this is a notification."}``
 
 2. Both the HTTP POST and GET request bodies sent to a web service are formatted the same as Slack's. This means your Slack integration's receiving function does not need change to be compatible with Mattermost.
   
