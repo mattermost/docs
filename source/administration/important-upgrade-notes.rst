@@ -13,6 +13,8 @@ Important Upgrade Notes
 |                                                    | Server logs written to **System Console > Logs** and to the mattermost.log file specified in **System Console > Logging > File Log Directory**                  |
 |                                                    | now use JSON formatting. If you have built a tool that parses the server logs and sends them to an external system, make sure it supports the JSON format.      |
 |                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Team icons with transparency will be filled with a white background in the Team Sidebar.                                                                        |
+|                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Those servers with SAML authentication enabled should upgrade during non-peak hours. SAML email addresses are migrated to lowercase to prevent login issues,    |
 |                                                    | which could result in longer than usual upgrade time.                                                                                                           |
 +----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+

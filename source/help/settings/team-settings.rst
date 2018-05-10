@@ -31,7 +31,7 @@ Team Icon
 
 Your **Team Icon** appears in the team sidebar within the border of the existing team icons.
 
-You can upload a team icon in BMP, JPG or PNG format.
+You can upload a team icon in BMP, JPG or PNG format. Square images with a solid background color are recommended. Transparency in PNG icons will fill with a white background in the Team Sidebar.
 
 Allow anyone to join this team
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
