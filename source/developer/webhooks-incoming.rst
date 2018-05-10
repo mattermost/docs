@@ -114,10 +114,10 @@ Mattermost automatically translates the data coming from Slack:
 
 1. JSON payloads written for Slack, that contain the following, are translated to Mattermost markdown and rendered equivalently to Slack:
    
-   - *<>* to denote a URL link, such as ``payload={"text": "<http://www.mattermost.com/>"}``
-   - *|* within a *<>* to define linked text, such as ``payload={"text": "Click <http://www.mattermost.com/|here> for a link."}``
-   - *<userid>*  to trigger a mention to a user, such as ``{"text": "<5fb5f7iw8tfrfcwssd1xmx3j7y> this is a notification."}``
-   - *<!channel>*, *<!here>* or *<!all>*  to trigger a mention to a channel, such as ``{"text": "<!channel> this is a notification."}``
+   - ``<>`` to denote a URL link, such as ``{"text": "<http://www.mattermost.com/>"}``
+   - ``|`` within a ``<>`` to define linked text, such as ``{"text": "Click <http://www.mattermost.com/|here> for a link."}``
+   - ``<userid>``  to trigger a mention to a user, such as ``{"text": "<5fb5f7iw8tfrfcwssd1xmx3j7y> this is a notification."}``
+   - ``<!channel>``, ``<!here>`` or ``<!all>`` to trigger a mention to a channel, such as ``{"text": "<!channel> this is a notification."}``
 
 2. You can override the channel name with a *@username*, such as ```payload={"text": "Hi", channel: "@jim"}`` to send a direct message like in Slack.
 3. You can prepend a channel name with *#* and the message will still be sent to the correct channel like in Slack.
