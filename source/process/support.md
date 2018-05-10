@@ -114,20 +114,22 @@ Typically found in `/var/log/nginx/error.log`
 
 ## LDAP Issues
 
-#### Attach your LDAP settings from config.json
+#### Attach your LDAP settings from config.json.
 The username/password should be removed.
 
 #### What AD/LDAP server and version are you using?
-For example Active Directory on Windows Server 2016
+E.g.: Active Directory on Windows Server 2016.
 
 #### Are there any LDAP errors in the logs?
 
 #### Is there a limit on the number of users the LDAP server can return in a single query? If so, have you set the Maximum Page Size in Mattermost?
-Many LDAP servers have an upper limit on the number of users returned. So they might be hitting that limit. An error will appear in the logs usually informing of this case, but it's good to try anyway. 
+Many LDAP servers have an upper limit on the number of users returned, so they might be hitting that limit. An error will appear in the logs usually informing of this case, but it's good to try anyway. 
 
-#### Can you send an example user from you system? ldapsearch command format is preferred.
+#### Can you send an example user from you system? 
+ldapsearch command format is preferred.
 
-#### Is the server properly licensed? Check the licensing page in the system console.
+#### Is the server properly licensed?
+Check the licensing page in the system console.
 
 ## TLS/SSL Issues
 
@@ -135,7 +137,7 @@ Many LDAP servers have an upper limit on the number of users returned. So they m
 
 #### Are there any errors in the Mattermost logs?
 
-#### Send your config.json
+#### Send us your config.json.
 
 #### Send your proxy configuration if you are using one.
 
