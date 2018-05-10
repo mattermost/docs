@@ -330,6 +330,14 @@ App Groups are used to share data between the main app and the app extension.
 
 Finally, you'll need to set the same app group in your config.json under the assets folder. Refer to `Overriding Assets & White Labeling`_ section for further instructions.
 
+Configure iCloud container identifier
+++++++++++++++++++++++++++++++++++++++
+
+Select the **Mattermost** project in the Xcode Project Navigator, then select the **Mattermost** target. Look for the "Capabilities" tab.
+Expand the **iCloud** capability, select the option to *Specify custom containers* and then add and enable your own.
+
+.. image:: ../../source/images/mobile/ios_icloud.png
+
 Build and Run the App
 ++++++++++++++++++++++
 
@@ -521,6 +529,8 @@ or
 | IOS_EXTENSION_APP_IDENTIFIER                  | The Bundle Identifier for the share extension app.                                                    | com.mattermost.rnbeta.MattermostShare  |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
 | IOS_APP_GROUP                                 | The iOS App Group identifier used to share data between the app and the share extension.              |                                        |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
+| IOS_ICLOUD_CONTAINER                          | The iOS iCloud container identifier used to support iCloud storage.                                   | iCloud.com.mattermost.rnbeta           |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
 | IOS_BUILD_EXPORT_METHOD                       | Method used to export the archive.                                                                    | adhoc                                  |
 |                                               | Valid values are: app-store, ad-hoc, enterprise, development                                          |                                        |
