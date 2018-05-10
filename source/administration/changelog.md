@@ -17,15 +17,14 @@ Release date: 2018-05-16
  - Decreased loading time by up to 90% for users with lots of direct and group message channels.
 
 #### Environment Variables Support in GitLab Omnibus
- - Simplified Mattermost administration by supporting environment variables in GitLab Omnibus.
- - See [documentation](https://docs.gitlab.com/omnibus/gitlab-mattermost/#upgrading-gitlab-mattermost-from-versions-prior-to-11-0) to learn more.
+ - Simplified Mattermost administration by supporting environment variables in GitLab Omnibus. See [documentation](https://docs.gitlab.com/omnibus/gitlab-mattermost/#upgrading-gitlab-mattermost-from-versions-prior-to-11-0) to learn more.
 
 ### Improvements
 
 #### Web User Interface
- - Removed support for transparent team icons to support any sidebar theme colors and added ability to remove team icons.
+ - Removed support for transparent team icons to support any sidebar theme colors and added the ability to remove team icons.
  - Added an experimental setting that automatically answers messages sent to a user who is away.
- - Added a loader for "Add Members" channel invite modal.
+ - Added a loading animation for "Add Members" channel invite modal.
  - Made SHIFT+UP switch keyboard focus to right-hand side if it's already open to the current thread.
  - Removed an unnecessary WebRTC end user setting to avoid user errors and confusion.
  - Added an on-hover effect for image link previews.
@@ -43,11 +42,13 @@ Release date: 2018-05-16
  #### Administration
  - Added structured logging to more easily review server logs.
  - Users' client no longer refreshes after changing a System Console or ``config.json`` setting.
- - Added ``IncrementClusterEventType`` function to metrics interface.
  
  #### Command Line Interface (CLI)
- - Added ``./platform`` team list command to list all teams on the server.
- - Added a CLI Command to "Reset to Default" for permission system.
+ - Added `./platform team list` command to list all teams on the server.
+ - Added `./platform permissions reset` command to reset the permissions system to its default state.
+
+#### Enterprise Edition E20
+ - Added cluster event types to [Performance Monitoring](https://docs.mattermost.com/deployment/metrics.html).
 
 ### Bug Fixes
 
@@ -67,7 +68,7 @@ The following deprecations are planned for the Mattermost v5.0 release, which is
 2. `platform` binary will be renamed to mattermost for a clearer install and upgrade experience. All command line tools, including the bulk loading tool and developer tools, will also be renamed from platform to mattermost. [Ticket #9985](https://mattermost.atlassian.net/browse/MM-9985).
 3. [Site URL setting](https://docs.mattermost.com/administration/config-settings.html#site-url) will be enforced to reduce number of OAuth, plugin and email notification set up errors. The setting has already been required since Mattermost v3.8. [Ticket #9983](https://mattermost.atlassian.net/browse/MM-9983).
 4. A Mattermost user setting to configure desktop notification duration in **Account Settings** > **Notifications** > **Desktop Notifications** will be removed.
-5. Slash commands configured to receive a GET request will have the payload being encoded in the query string instead of receiving it in the body of the request, consistent with standard HTTP requests. Although unlikely, this could break custom slash commands that use GET requests incorrectly. [Ticket 10201](https://mattermost.atlassian.net/browse/MM-10201).
+5. Slash commands configured to receive a GET request will have the payload being encoded in the query string instead of receiving it in the body of the request, consistent with standard HTTP requests. Although unlikely, this could break custom slash commands that use GET requests incorrectly. [Ticket #10201](https://mattermost.atlassian.net/browse/MM-10201).
 6. A new `config.json` setting to whitelist types of protocols for auto-linking will be added. [Ticket #9547](https://mattermost.atlassian.net/browse/MM-9547).
 7. A new `config.json` setting to disable the [permanent APIv4 delete team parameter](https://api.mattermost.com/#tag/teams%2Fpaths%2F~1teams~1%7Bteam_id%7D%2Fput) will be added. The setting will be off by default for all new and existing installs, except those deployed on GitLab Omnibus. A System Administrator can enable the API v4 endpoint from the config.json file. [Ticket #9916](https://mattermost.atlassian.net/browse/MM-9916).
 8. An unused `ExtraUpdateAt` field will be removed from the channel model. [Ticket #9739](https://mattermost.atlassian.net/browse/MM-9739).
