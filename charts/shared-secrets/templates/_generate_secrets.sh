@@ -23,7 +23,7 @@ generate_secret_if_needed gitlab-redis --from-literal=redis-password=$(gen_rando
 
 {{if not .Values.global.psql.host -}}
 # Postgres password
-generate_secret_if_needed {{ template "postgresql.password.secret" . }} --from-literal=postgres-password=$(gen_random 'a-zA-Z0-9' 64)
+generate_secret_if_needed {{ template "gitlab.psql.password.secret" . }} --from-literal=postgres-password=$(gen_random 'a-zA-Z0-9' 64)
 {{ end }}
 
 # Gitlab shell
