@@ -18,12 +18,23 @@ If you're interested in contributing please join the `Redux channel on pre-relea
 
 List of contributors, in alphabetical order:
 
+ - Adrian Carolli (`@adriancarolli <https://github.com/watadarkstar>`_)
+ - Aibulatov Alex (`@Zapix <https://github.com/Zapix>`_)
+ - Andre Vasconcelos (`@avasconcelos114 <https://github.com/avasconcelos114>`_)
  - Carlos Panato (`@cpanato <https://github.com/cpanato>`_)
+ - Devesh Jadon (`@deveshjadon98 <https://github.com/deveshjadon98>`_)
+ - Eric Webster (`@ericwebster <https://github.com/QuantumKing>`_)
+ - Hyeseong Kim (`@CometKim <https://github.com/CometKim>`_)
  - Jesús Espino (`@jespino <https://github.com/jespino>`_)
  - Joram Wilander (`@jwilander <https://github.com/jwilander>`_)
+ - K.Y. (`@tkbky <https://github.com/tkbky>`_)
  - Nazar Laba (`@n1aba <https://github.com/n1aba>`_)
  - Ryan Wang (`@R-Wang97 <https://github.com/R-Wang97>`_)
- - Sudheer (`@sudheerDev <https://github.com/sudheerDev>`_)
+ - Sam Kvale (`@skvale <https://github.com/skvale>`_)
+ - Savita Pandit (`@panditsavitags <https://github.com/panditsavitags>`_)
+ - Shengying Pan (`@h2oloopan <https://github.com/h2oloopan>`_)
+ - Sudheer Timmaraju (`@sudheerDev <https://github.com/sudheerDev>`_)
+ - Taehyeon Yun (`@yth0625 <https://github.com/yth0625>`_)
 
 For guidance on migrating a webapp component to Redux, read the next section.
 

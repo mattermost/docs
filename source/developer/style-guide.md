@@ -1,9 +1,10 @@
 # Mattermost Style Guide
 
+Come [join our "Contributors" community channel](https://pre-release.mattermost.com/core/channels/tickets) on our daily build server, where you can discuss questions with community members and the Mattermost core team. Join our ["Developers" channel](https://pre-release.mattermost.com/core/channels/developers) for technical discussions and our ["Integrations" channel](https://pre-release.mattermost.com/core/channels/integrations) for all integrations and plugins discussions.
+
 1. [Go](#go)
 2. [Javascript](#javascript)
 3. [React-JSX](#react-jsx)
-
 
 ## Go
 

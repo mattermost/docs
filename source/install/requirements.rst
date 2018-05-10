@@ -58,6 +58,7 @@ Mattermost Server Operating System
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Ubuntu 14.04, Ubuntu 16.04, Debian Jessie, CentOS 6.6+, CentOS 7.1+, RedHat Enterprise Linux 6.6+, RedHat Enterprise Linux 7.1+, Oracle Linux 6.6+, Oracle Linux 7.1+
+- Using Mattermost `Docker image <https://docs.mattermost.com/install/prod-docker.html>`_ on a Docker-compatible operating system (Linux-based OS is still recommended)
 
 While community support exists for Fedora, FreeBSD and Arch Linux, Mattermost does not currently include production support for these platforms.
 
@@ -66,13 +67,25 @@ Database Software
 
 -  MySQL 5.6+
 -  PostgreSQL 9.4+
+-  Amazon Aurora MySQL 5.6+
 
 Deployments requiring searching in Chinese, Japanese and Korean languages require MySQL 5.7.6+ and the configuration of `ngram Full-Text parser <https://dev.mysql.com/doc/refman/5.7/en/fulltext-search-ngram.html>`__. For searching two characters, you will also need to set ``ft_min_word_len`` and ``innodb_ft_min_token_size`` to ``2`` and restart MySQL. See `CJK discussion <https://github.com/mattermost/mattermost-server/issues/2033#issuecomment-183872616>`__ for details.
+
+Search limitations on PostgreSQL:
+
+- Email addresses do not return results.
+- Hashtags or recent mentions of usernames containing a dash do not return search results.
+- Terms containing a dash return incorrect results as dashes are ignored in the search query.
+- If any of the above is an issue, you can either enable the `Elasticsearch (E20) feature <https://docs.mattermost.com/deployment/elasticsearch.html>`__ or install MySQL instead.
+
+Search limitations on MySQL:
+
+- Hashtags or recent mentions of usernames containing a dot do not return search results.
 
 Hardware Requirements
 ---------------------
 
-Usage of CPU, RAM and storage space can vary significantly based on user behavior. For deployments larger than 500 users, it's highly recommended usage patterns in a small pilot deployment representative of your large organization is observed before rolling out the full scale service.
+Usage of CPU, RAM and storage space can vary significantly based on user behavior. For deployments larger than 500 users, it's highly recommended usage patterns in a small pilot deployment representative of your large organization are observed before rolling out the full scale service.
 
 Hardware Sizing for Team Deployments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -85,11 +98,10 @@ Most small to medium Mattermost team deployments can be supported on a single se
 
 Notes:
 
-1. Memory requirements are largely driven by peak file sharing activity. Recommendation is based on defaul 50 MB max file size, which can be adjusted from the System Console. Changing this number may change memory requirements.   
+1. Memory requirements are largely driven by peak file sharing activity. Recommendation is based on default 50 MB max file size, which can be adjusted from the System Console. Changing this number may change memory requirements. 
 2. Larger deployments should estimate utilization based on pilots representative of full scale usage. 
 3. Storage recommendation is based on storing 3 years of archives with moderate file sharing.
 4. Solid state drives (SSD) can be used in place of disk storage for higher concurrency.
-5. Team Edition deployments assume registered users are divided into teams of 10-100.
 
 .. _hardware-sizing-for-enterprise:
 

@@ -101,9 +101,9 @@ Listing Location of Key Office
 In the partner listing, city locations follow a "concise clarity" principle:  
 
 - Cities that are not well-known, or which have very similiarly named cities in the same country, are displayed as CITY, STATE/PROVINCE, COUNTRY
-- Otherwise for well-known and uniquely named cities, display is CITY, COUNTRY. For example: A well-known city with a unique name like 
+- Otherwise for well-known and uniquely named cities, display is CITY, COUNTRY.
 
-Johanesberg would be displayed as "Johannesburg, South Africa" and not "Johannesburg, Gauteng, South Africa", which is unnecessarily long. Similiarly a not well-known city, like "Arvada" is referenced as "Arvada, Colorado, USA".
+For example: A well-known city with a unique name like Johanesberg would be displayed as "Johannesburg, South Africa" and not "Johannesburg, Gauteng, South Africa", which is unnecessarily long. Similiarly a not well-known city, like "Arvada" is referenced as "Arvada, Colorado, USA".
 
 Partner Evaluation License 
 ----------------------------------

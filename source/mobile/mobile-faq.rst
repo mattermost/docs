@@ -4,30 +4,33 @@ Mobile Apps FAQ
 Can I connect to multiple Mattermost servers using the mobile apps?
 -------------------------------------------------------------------
 
-At the moment, we only support connecting to one server at a time. If you need to connect to multiple servers, please `upvote the feature request <https://mattermost.uservoice.com/forums/306457/suggestions/1097593>`_ so we can track demand for it.
+At the moment, we only support connecting to one server at a time; however, we are aware that this is one of the `top feature requests <https://mattermost.uservoice.com/forums/306457-general/suggestions/10975938-ios-and-android-apps-should-allow-multiple-server>`_ for the mobile app. We are currently investigating some technical challenges, such as how to handle push notifications coming from multiple servers. We expect to add multiserver support by end of 2018.
 
-As a workaround, you can install both the released "Mattermost" app and sign up to be a `tester <https://github.com/mattermost/mattermost-mobile/blob/master/README.md#testing>`_ for the "Mattermost Beta" app so you can connect to two servers at once.
+As a workaround, you can install both the released "Mattermost" app and sign up to be a `tester <https://github.com/mattermost/mattermost-mobile/blob/master/README.md#testing>`_ for the "Mattermost Beta" app. This allows you to connect and log in to a different server from each app.
 
 Is there a tablet version of the mobile apps?
 ---------------------------------------------
 
 “Mattermost Classic” mobile apps support tablets.
 
-Our second generation mobile apps (“Mattermost”), do not yet support tablets but we plan to add support in future. The timeline depends on how many people have a need for it, so if you're looking for a tablet version please help us out by `upvoting the feature request <https://mattermost.uservoice.com/forums/306457/suggestions/20082079>`_!
+Our second generation mobile apps (“Mattermost”) have beta support for tablets.
 
 How is data handled on mobile devices after a user account is deactivated?
 --------------------------------------------------------------------------
 
 App data is wiped from the device when a user logs out of the app. If the user is logged in when the account is deactivated, then within one minute the system logs the user out, and as a result all app data is wiped from the device.
 
+Do I need to compile the mobile apps to host my own push notification server?
+------------------------------------------------------------------------------
+
+Yes. To host your own push notification server, you'll need to compile the mobile apps. See `documentation <https://docs.mattermost.com/mobile/mobile-compile-yourself.html>`_ to learn how to compile your own mobile apps.
+
 How can I get Google SSO to work with the Mattermost Mobile Apps?
 -----------------------------------------------------------------
 
-Google SSO is not supported by the apps on the Apple App Store and Google Play Store.
+The apps on the Apple App Store and Google Play Store cannot support Google SSO out of the box. This is because Google requires a unique Google API key that's specific to each organization.
 
-This is because the Google Login libraries require your own Google API key when the app is compiled, so there’s no way for us to include that in our apps.
-
-If you would like Google SSO, you will need to fork our `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_  repository and add support for Google SSO before compiling the app yourself. If this is something you’re interested in, please `file an issue in GitHub <https://github.com/mattermost/mattermost-mobile/issues>`_ to start the discussion.
+If you need Google SSO support, you can create a custom version of the app for your own organization. Fork the `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_  repository and add support for Google SSO before compiling the app yourself. If this is something you’re interested in, please `file an issue in GitHub <https://github.com/mattermost/mattermost-mobile/issues>`_ to start the discussion.
 
 .. _push-faq:
 How do push notifications work?

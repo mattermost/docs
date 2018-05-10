@@ -2,11 +2,43 @@ Important Upgrade Notes
 =======================
 
 .. important::
-   API version 3 is scheduled for removal on January 16th, 2018. See `api.mattermost.com <https://api.mattermost.com/#tag/APIv3-Deprecation>`_ to learn more.
+   API version 3 is deprecated and scheduled for removal on Mattermost v5.0 release. See `api.mattermost.com <https://api.mattermost.com/#tag/APIv3-Deprecation>`_ to learn more.
 
 +----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                         |
 +====================================================+=================================================================================================================================================================+
+| v4.9.0                                             | To improve the production use of Mattermost with Docker, the docker image is now running a as non-root user and listening on port 8000. Please read the         |
+|                                                    | `upgrade instructions <https://github.com/mattermost/mattermost-docker#upgrading-mattermost-to-49>`_ for important changes to existing installations.           |
+|                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Several configuration settings have been migrated to roles in the database and changing their config.json values no longer takes effect. These permissions      |
+|                                                    | can still be modified by their respective System Console settings as before. The affected config.json settings are:                                             |
+|                                                    |                                                                                                                                                                 |
+|                                                    | ``RestrictPublicChannelManagement``,                                                                                                                            |
+|                                                    | ``RestrictPrivateChannelManagement``,                                                                                                                           |
+|                                                    | ``RestrictPublicChannelCreation``,                                                                                                                              |
+|                                                    | ``RestrictPrivateChannelCreation``,                                                                                                                             |
+|                                                    | ``RestrictPublicChannelDeletion``,                                                                                                                              |
+|                                                    | ``RestrictPrivateChannelDeletion``,                                                                                                                             |
+|                                                    | ``RestrictPrivateChannelManageMembers``,                                                                                                                        |
+|                                                    | ``EnableTeamCreation``,                                                                                                                                         |
+|                                                    | ``EnableOnlyAdminIntegrations``,                                                                                                                                |
+|                                                    | ``RestrictPostDelete``,                                                                                                                                         |
+|                                                    | ``AllowEditPost``,                                                                                                                                              |
+|                                                    | ``RestrictTeamInvite``,                                                                                                                                         |
+|                                                    | ``RestrictCustomEmojiCreation``.                                                                                                                                |
+|                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | The behavior of the config.json setting ``PostEditTimeLimit`` has been updated to accomodate the migration to a roles based permission system.                  |
+|                                                    | When post editing is permitted, set ``"PostEditTimeLimit": -1`` to allow editing anytime, or set ``"PostEditTimeLimit"`` to a positive integer to restrict      | 
+|                                                    | editing time in seconds. If post editing is disabled, this setting does not apply.                                                                              |
++----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| v4.6.2                                             | If Let's Encrypt is enabled, forward port 80 through a firewall, with `Forward80To443                                                                           |
+|                                                    | <https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443>`_ ``config.json`` setting set to ``true`` to complete the Let's        |
+|                                                    | Encrypt certification.                                                                                                                                          |
++----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| v4.4.0                                             | Composite database indexes were added to the ``Posts`` table. This may lead to longer ugprade times for servers with more than 1 million messages.              |
+|                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | LDAP sync now depends on email. Make sure all users on your AD/LDAP server have an email address or that their account is deactivated in Mattermost.            |
++----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v4.2.0                                             | Mattermost now handles multiple content types for integrations, including plaintext content type. If your integration suddenly prints the JSON payload data     |
 |                                                    | instead of rendering the generated message, make sure your integration is returning the ``application/json`` content-type to retain previous behavior.          |
 |                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+

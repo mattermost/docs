@@ -16,6 +16,7 @@ Development Process
    /process/overview*
    /process/release-process*
    /process/mobile-release*
+   /process/deprecated-features*
 
 Community Process
 -------------------

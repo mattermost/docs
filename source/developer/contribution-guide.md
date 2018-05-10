@@ -1,6 +1,10 @@
 # Code Contribution Guidelines
 
-Thank you for your interest in contributing to Mattermost. To help with translations, [see the localization process](https://docs.mattermost.com/developer/localization.html). For code contributions, here's the process:  
+Thank you for your interest in contributing to the [Mattermost open source project](https://docs.mattermost.com/developer/manifesto.html). To help with translations, [see the localization process](https://docs.mattermost.com/developer/localization.html).
+
+Come [join our "Contributors" community channel](https://pre-release.mattermost.com/core/channels/tickets) on our daily build server, where you can discuss questions with community members and the Mattermost core team. Join our ["Developers" channel](https://pre-release.mattermost.com/core/channels/developers) for technical discussions and our ["Integrations" channel](https://pre-release.mattermost.com/core/channels/integrations) for all integrations and plugins discussions.
+
+For code contributions, here's the process:  
 
 ## Choose a Ticket
 
@@ -23,16 +27,16 @@ It is acceptable to submit a PR for a bug or incremental improvement, with less 
  
 Larger pull requests, including those that require a change to documentation or user expectations, [require a Help Wanted issue opened by the core team](http://docs.mattermost.com/process/help-wanted.html) so that the change can be tested, documented and supported.
 
-The best way to discuss opening a Help Wanted ticket with the core team is by [starting a conversation in the feature idea forum](https://www.mattermost.org/feature-ideas/).
+The best way to discuss opening a Help Wanted ticket with the core team is by [starting a conversation in the feature idea forum](https://www.mattermost.org/feature-ideas/) or [opening an issue in the GitHub repository](https://github.com/mattermost/mattermost-server/issues/new).
 
 
 ## Install Mattermost and set up your Forks
 
 Once you have a ticket: 
 
-1. Follow the [developer setup instructions](http://docs.mattermost.com/developer/developer-setup.html) to install Mattermost.
+1. Follow the [developer setup instructions](https://docs.mattermost.com/developer/dev-setup.html) to install Mattermost.
 
-2. Create a branch in your mattermost-server or mattermost-webapp repository with `<branch name>` set to the ID of the ticket you're working on, for example `PLT-394`, using the command: `git checkout -b <branch name>`
+2. Create a branch in your mattermost-server or mattermost-webapp repository with `<branch name>` set to the ID of the ticket you're working on, for example, `PLT-394`, using the command: `git checkout -b <branch name>`
 
 3. Take a look at the [developer flow](https://docs.mattermost.com/developer/developer-flow.html) to learn how to work with the Mattermost codebase.
 
@@ -42,11 +46,11 @@ Before submitting a pull request (PR), check that:
 
 1. You’ve signed the [Contributor License Agreement](http://www.mattermost.org/mattermost-contributor-agreement/), so you can be added to the Mattermost [Approved Contributor List](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true).  
 2. Your change has a [Help Wanted ticket](http://docs.mattermost.com/process/help-wanted.html)
-3. Your code follows the [Mattermost Style Guide](http://docs.mattermost.com/developer/style-guide.html).  
-4. Unit tests are included for new server side functionality. 
+3. Your code follows the [Mattermost Style Guide](http://docs.mattermost.com/developer/style-guide.html) and you've run `make check-style` to check for style errors.
+4. Unit tests are included for new server-side functionality. 
 5. Strings in user interface are included in the server [i18n/en.json](https://github.com/mattermost/mattermost-server/blob/master/i18n/en.json) and in the webapp [i18n/en.json](https://github.com/mattermost/mattermost-webapp/tree/master/i18n/en.json) localization files. Files for other languages will automatically be updated through the [Mattermost Translation Server](http://translate.mattermost.com) and do not need to be included in the pull request.
 6. Change meets UX Guidelines of [Fast, Obvious, Forgiving](http://www.mattermost.org/design-principles/).
-7. If change requires user to understand a new concept or make a decision, PR for help documentation is submitted to [mattermost/docs](https://github.com/mattermost/docs).
+7. If a change requires the user to understand a new concept or make a decision, PR for help documentation is submitted to [mattermost/docs](https://github.com/mattermost/docs).
 8. Change is thoroughly tested. If your change involves text processing, make sure to at least run markdown loadtests in [`/tests`](https://github.com/mattermost/mattermost-server/tree/master/tests) before submitting the PR. To run the loadtests:
     - Go to **System Console** > **Developer** and set **Enable Testing Commands** to true
     - Run `/test url test-markdown-basics.md` and follow the instructions
@@ -88,7 +92,7 @@ If you've included your mailing address in the signed [Contributor License Agree
 
 Core committers on Mattermost repositories consist of vetted core team members, including both community contributors as well as staff from Mattermost, Inc., who are trusted to review and merge PRs.
 
-- **Core committers include**: coreyhulen, crspeller, csduarte, enahum, grundleborg, hmhealey, jwilander
+- **Core committers include**: ccbrown, coreyhulen, cpanato, crspeller, csduarte, enahum, grundleborg, hmhealey, jespino, jwilander, lieut-data, mkraft, saturninoabril
 
 - **Product managers include**: asaadmahmood, esethna, it33, jasonblais, lfbrock
 

@@ -1,4 +1,4 @@
-Set Up Mattermost with Blackberry EMM
+Set Up Mattermost with BlackBerry EMM
 =====================================
 
 1. Log in to your BlackBerry UEM environment.
@@ -11,7 +11,7 @@ Set Up Mattermost with Blackberry EMM
 
 .. image:: ../../source/images/blackberry_step3.png
 
-4. Next fill in the app name, description, and any other information needed for deployment in the screen below. See Blackberry documentation for more details on the settings for `internal apps <http://help.blackberry.com/en/blackberry-uem/12.6/administration/adr1393870066674.html>`_, `public iOS apps <http://help.blackberry.com/en/blackberry-uem/12.6/administration/ios-apps.html>`_, and `Android for Work apps <http://help.blackberry.com/en/blackberry-uem/12.6/administration/adr1427221741509.html>`_.
+4. Next fill in the app name, description, and any other information needed for deployment in the screen below. See BlackBerry documentation for more details on the settings for `internal apps <http://help.blackberry.com/en/blackberry-uem/12.6/administration/adr1393870066674.html>`_, `public iOS apps <http://help.blackberry.com/en/blackberry-uem/12.6/administration/ios-apps.html>`_, and `Android for Work apps <http://help.blackberry.com/en/blackberry-uem/12.6/administration/adr1427221741509.html>`_.
 
 .. image:: ../../source/images/blackberry_step4.png
 

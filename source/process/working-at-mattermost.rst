@@ -1,6 +1,6 @@
-==============================================================
+=====================
 Working at Mattermost
-==============================================================
+=====================
 
 The mission of Mattermost, Inc. is to give all organizations the power to achieve their highest priorities through modern communication. Our vision is a world more connected to what matters most.
 
@@ -23,9 +23,11 @@ Top 10 reasons to work for Mattermost:
 9. **Learn, Master, Teach:** Building new skills, becoming experts, and training others is core to our culture.
 10. **Friends around the world:** Build relationships with staff and contributors in dozens of countries.
 
-----------------------------------------------------------
+Also, we have Meetups around the world, see `our latest Core Commiter Summit in Las Vegas, Nevada, USA. <https://www.youtube.com/watch?v=_RpmrM-5UFY>`_
+
+----------------
 Working Remotely
-----------------------------------------------------------
+----------------
 
 We're headquartered in Palo Alto, California, and like many open source companies a large portion of Mattermost, Inc. works remotely from around the world.
 
@@ -40,13 +42,13 @@ This gives us tremendous advantages:
 We run as a distributed, high performance team using a few principles:
 
 1) Work from anywhere with good Internet
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Working from anywhere means more time with loved ones, no commute, and controlling everything about your workspace.
 
 The one requirement is having a strong internet connection for occassional video or audio conferences. Ethernet connections are preferred over Wifi, since Wifi can have interference.
 
 2) Be explicit
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Working remote means it may take time before a person reads your message and responds, so make sure you are clear.
 
@@ -61,11 +63,11 @@ Write unambiguously:
 Likewise, we emphasize written communication. Reading is faster than listening and it reaches more people, which means more happens in less time.
 
 3) Follow through
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 When working on problems, make sure to be clear about next steps, and either follow through or create a ticket to track the work.
 
 4) Hang out
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~
 We have `warm-ups <https://docs.mattermost.com/process/training.html#warm-ups>`_ in some meetings to learn more about each other. It's part of a culture where we get to know each other.
 
 Find time after meetings and video conferences to get to know your teammates. Ask them about their weekends and how their life is outside of work.
@@ -73,20 +75,20 @@ Find time after meetings and video conferences to get to know your teammates. As
 When you meet in person at off-sites and events, build on those relationships.
 
 5) Be the change you want to see
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 When something's not clearly documented, take the initiative to figure out what's going on and update the documentation for the people who come after you.
 
 `Learn, Master, Teach <https://docs.mattermost.com/process/training.html#learn-master-teach>`_ is a model we use to pass on training after you've been trained to help grow everyone at the company.
 
 
-----------------------------------------------------------
+-------------
 Paid Time Off
-----------------------------------------------------------
+-------------
 
 1) Time-off
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~
 
-Our culture is high trust and results-focused. No need to ask anyone when you plan to be away, just plan ahead and let teammates know in advance.
+Our culture is high trust and results-focused. We want people to take time away to relax, think and come back energized. 
 
 When you take time-off, please remember:
 
@@ -94,46 +96,46 @@ a) Block off time on your calendar so it's easy to see when you're away.
 
 b) For meetings you'll miss, message the chair with any status update.
 
-c) Post in the Standup channel dates you're away and who'll be your backup
+c) Post in the Standup channel dates you're away and who'll be your backup.
 
-There is no limit to how much time-off you can take. We strongly recommend a minimum of 2 weeks per year.
+There is no limit to how much time-off you can take when your work is meeting or exceeding expectations. We strongly recommend a minimum of 2 weeks per year.
 
 2) Holidays
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~
 
 Please take off holidays relevant to your culture, resident country and preferences. Please just follow the TIME OFF process in 1) above.
 
 We're headquartered in the US and have a large Canadian contingent, so below are holidays we're expecting people from those countries to take off:
 
-US & Canadian Holidays for 2017:
+US & Canadian Holidays for 2018:
 
-- US & Canadian New Year's (1/1/2017)
-- US & Canadian New Year's Day Holiday (1/2/2017)
-- Canadian Family Day (2/20/2017)
-- US & Canadian Good Friday (4/14/2017)
-- Canadian Victoria Day (5/22/2017)
-- Canada Day (7/1/2017)
-- US Independence Day (7/4/2017)
-- Canadian Civic / Provincial Day (8/7/2017)
-- US Labor Day, Canadian Labour Day (9/4/2017)
-- Canadian Thanksgiving (10/9/2017)
-- US Thanksgiving (11/23/2017)
-- US & Canadian Christmas Day (12/25/2017)
-- Canadian Boxing Day (12/26/2017)
+- US & Canadian New Year's (1/1/2018)
+- Canadian Family Day (2/19/2018)
+- US & Canadian Good Friday (3/30/2018)
+- Canadian Victoria Day (5/21/2018)
+- Canada Day (7/1/2018)
+- Canada Day additional statutory holiday (7/2/2018)
+- US Independence Day (7/4/2018)
+- Canadian Civic / Provincial Day (8/6/2018)
+- US Labor Day, Canadian Labour Day (9/3/2018)
+- Canadian Thanksgiving (10/8/2018)
+- US Thanksgiving (11/22/2018)
+- US & Canadian Christmas Day (12/25/2018)
+- Canadian Boxing Day (12/26/2018)
 
 It's up to meeting chairs to decide whether to reschedule if few people can attend (e.g. if there are a lot of US or Canadians in the meeting).
 
 3) On-call rotations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 We have an "On-call" schedule for key staff to support customer escalations and for sales. Should your on-call schedule fall on a holiday or during time-off, you can trade with teammates of similar qualification, or if you are called in because you are on-call during a holiday, you're encouraged to take time-off on a non-holiday in exchange.
 
-----------------------------------------------------------------
+--------
 Benefits
-----------------------------------------------------------------
+--------
 
 General Benefits
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 **1. Flexible hours**
 
@@ -151,4 +153,4 @@ Just as flexible as our working hours, learn more about our `paid time-off polic
 
 **4. Additional US and Canadian employee benefits**
 
-Mattermost uses professional employement organizations in the United States and Canada and are able to offer additional `benefits to US employees <benefits-us.html>`_ and `benefits to Canadian employees <benefits-canada.html>`_.
+Mattermost uses professional employment organizations in the United States and Canada and are able to offer additional `benefits to US employees <benefits-us.html>`_ and `benefits to Canadian employees <benefits-canada.html>`_.

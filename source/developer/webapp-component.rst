@@ -72,7 +72,7 @@ Continuing the ItemList example above, maybe our parent component doesn't care a
       /**
        * An array of item components to display
        */
-      items: PropTypes.arrayOf(PropTypes.object).isRequired
+      items: PropTypes.arrayOf(PropTypes.object).isRequired,
 
       actions: PropTypes.shape({
           /**
@@ -298,5 +298,5 @@ Below is a brief guide on how to do component testing:
 
 Finally, initiate the following commands:
 
-1. Run ``yarn run test:watch``, select ``p`` and type filename, and see if the component test passed.
-2. Run ``yarn run test:coverage``, and open the corresponding html report at ``coverage/components`` folder to see the percentage covered. Update the test if necessary. Note that it's not required to meet 100% coverage of a component especially if it will require an unnecessary or complicated mock up. Uncovered lines, statements, branches or functions will just be recorded so that it will be covered by next test layers like integrations or end-to-end testing.
+1. Run ``npm run test:watch``, select ``p`` and type filename, and see if the component test passed.
+2. Run ``npm run test:coverage``, and open the corresponding html report at ``coverage/components`` folder to see the percentage covered. Update the test if necessary. Note that it's not required to meet 100% coverage of a component especially if it will require an unnecessary or complicated mock up. Uncovered lines, statements, branches or functions will just be recorded so that it will be covered by next test layers like integrations or end-to-end testing.

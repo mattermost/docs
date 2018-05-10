@@ -35,11 +35,11 @@ Set up your development environment for building, running, and testing Mattermos
 
     a. Download the Go binary.
 
-       ``wget https://storage.googleapis.com/golang/go1.9.linux-amd64.tar.gz``
+       ``wget https://storage.googleapis.com/golang/go1.9.4.linux-amd64.tar.gz``
 
     b. Install the Go binary.
 
-       ``sudo tar -C /usr/local -xzf go1.9.linux-amd64.tar.gz``
+       ``sudo tar -C /usr/local -xzf go1.9.4.linux-amd64.tar.gz``
 
 4. Set up your Go workspace:
 
@@ -77,7 +77,7 @@ Set up your development environment for building, running, and testing Mattermos
 
       ``sudo yum install -y nodejs``
 
-6. Install Yarn. Go to https://yarnpkg.com/en/docs/install and follow the installation instructions.
+6. Install NPM. Go to https://www.npmjs.com/get-npm and follow the installation instructions.
 
 7. Fork Mattermost server on GitHub from https://github.com/mattermost/mattermost-server.
 

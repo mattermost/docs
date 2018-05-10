@@ -46,6 +46,9 @@ Follow these steps to connect your Elasticsearch server to Mattermost and genera
   - Note: It is recommended that bulk indexing be completed before enabling Elasticsearch, otherwise search results will be incomplete. When this setting is ``false``, database search is used for all search queries.
 7. Restart the Mattermost server.
 
+ .. note::
+    Additional advanced Elasticsearch settings for large deployments can be configured outside the System Console in the `config.json`. Please see `documentation to learn more <https://docs.mattermost.com/administration/config-settings.html#elasticsearch-settings-beta>`_.
+
 Beta Limitations
 -----------------
 

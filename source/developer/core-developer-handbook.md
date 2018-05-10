@@ -4,6 +4,8 @@ Core Developer Handbook
 This handbook contains documentation useful for Mattermost core developers. A core developer is
 a maintainer on the [Mattermost project](https://github.com/mattermost) that has merge access to the Mattermost repositories. They are responsible for reviewing pull requests, cultivating the Mattermost developer community and guiding the technical vision of Mattermost.
 
+Come [join our "Contributors" community channel](https://pre-release.mattermost.com/core/channels/tickets) on our daily build server, where you can discuss questions with community members and the Mattermost core team. Join our ["Developers" channel](https://pre-release.mattermost.com/core/channels/developers) for technical discussions and our ["Integrations" channel](https://pre-release.mattermost.com/core/channels/integrations) for all integrations and plugins discussions.
+
 ### Current Core Developers ###
 
 Below is the list of core developers working on Mattermost:
@@ -27,18 +29,24 @@ Below is the list of core developers working on Mattermost:
   - Dev areas: Import/Export (Slack, Bulk Loading, etc.), Diagnostics/Telemetry, Search, Permissions
 - **Saturnino Abril**
   - @saturnino on [pre-release.mattermost.com](https://pre-release.mattermost.com/core/messages/@saturnino) and [@saturninoabril](https://github.com/saturninoabril) on GitHub
-  - Dev areas: Webapp, REST API, UI Tests
+  - Dev areas: Webapp, React Native, REST API, UI Tests
 - **Chris Duarte**
   - @uberchris on [pre-release.mattermost.com](https://pre-release.mattermost.com/core/messages/@uberchris) and [@csduarte](https://github.com/csduarte) on GitHub
 - **Carlos Panato**
   - @cpanato on [pre-release.mattermost.com](https://pre-release.mattermost.com/core/messages/@cpanato) and [@cpanato](https://github.com/cpanato) on GitHub
   - Dev areas: Webapp, Redux, REST API, WebSocket Events
-- **Chris Brown**
-  - @ccbrown on [pre-release.mattermost.com](https://pre-release.mattermost.com/core/messages/@ccbrown) and [@ccbrown](https://github.com/ccbrown) on GitHub
-  - Dev areas: Security, Integrations, Server Plugins, Test Reliability
-- **Jonathan Fritz**
-  - @jonathan on [pre-release.mattermost.com](https://pre-release.mattermost.com/core/messages/@jonathan) and [@MusikPolice](https://github.com/MusikPolice) on GitHub
-  - Dev areas: Desktop
+- **Martin Kraft**
+  - @martin.kraft on [pre-release.mattermost.com](https://pre-release.mattermost.com/core/messages/@martin.kraft) and [@mkraft](https://github.com/mkraft) on GitHub
+  - Dev areas: All areas
+- **Jesús Espino**
+  - @jesus.espino on [pre-release.mattermost.com](https://pre-release.mattermost.com/core/messages/@jesus.espino) and [@jespino](https://github.com/jespino) on GitHub
+  - Dev areas: Webapp, Permissions and Compliance, Sample data generation
+- **Jesse Hallam**
+  - @jesse.hallam on [pre-release.mattermost.com](https://pre-release.mattermost.com/core/messages/@jesse.hallam) and [@lieut-data](https://github.com/lieut-data) on GitHub
+  - Dev areas: Performance, Webapp, Database
+- **Sudheer Timmaraju**
+  - @sudheerdev on [pre-release.mattermost.com](https://pre-release.mattermost.com/core/messages/@sudheerdev) and [@sudheerDev](https://github.com/sudheerDev) on GitHub
+  - Dev areas: Webapp, React, Redux, Performance
 
 Below is the list of core developers working on individual Mattermost repositories:
 - **Yuya Ochiai** - [desktop](https://github.com/mattermost/desktop)
@@ -61,16 +69,9 @@ We discuss these goals every other week during the [weekly developer meeting](ht
 - Orchestration/SAAS
 - Developer Toolkit (APIs, plugins, integrations, samples, documentation)
 
-### Technical Direction Resolutions ###
+### Developer Decisions ###
 
-Technical direction resolutions are any decisions made by the team affecting the technical direction of Mattermost. The current resolutions in effect are listed below:
-
-1. Removing usage of jQuery. When working in a file that imports jQuery, developers should make an effort to replace it with vanilla JavaScript and remove the import. When reviewing pull requests that add more jQuery, please ask the submitter to use vanilla JS.
-2. [Server](https://github.com/mattermost/mattermost-server) and [client](https://github.com/mattermost/mattermost-webapp) pull requests must be merged in order. First add server support, then add client support.
-3. As of server 3.8, all new API endpoints should be made in API version 4. API version 3 should only be modified for bug fixes, security and/or performance issues. ([https://pre-release.mattermost.com/core/pl/xcyqqdpkgtb4mcexxxu7mpfssh](https://pre-release.mattermost.com/core/pl/xcyqqdpkgtb4mcexxxu7mpfssh))
-4. Moving the webapp over to share a service layer built on top of Redux. ([https://pre-release.mattermost.com/core/pl/x49ra6zk9frq7yccpo753a377o](https://pre-release.mattermost.com/core/pl/x49ra6zk9frq7yccpo753a377o))
-5. Removing localization of the server logs. We haven't found it beneficial to localize these messages, and in some cases it has made it more difficult for us to help troubleshoot issues for non-English users. This will also reduce some of the work required when translating Mattermost. ([https://pre-release.mattermost.com/core/pl/13xdrfnw5bb5mnagth5kt48kyr](https://pre-release.mattermost.com/core/pl/13xdrfnw5bb5mnagth5kt48kyr))
-6. All new webapp components should be built against Redux and [follow the new guide](https://docs.mattermost.com/developer/webapp-component.html)
+We track decisions made during the [weekly developer meeting](https://docs.mattermost.com/process/training.html#developer-meeting) in a [Google doc here](https://docs.google.com/document/d/1iPzYkqM8Q0oZ1u1VkETUG18lyY47vKN0vAa3WIgvaiI).
 
 ### Reviewing & Merging Pull Requests ###
 

@@ -8,7 +8,7 @@ Before compiling Mattermost, make sure to set up your developer machine accordin
 Instructions are available for the following platforms:
 
   - :doc:`Ubuntu 16.04 <dev-setup-ubuntu-1604>`
-  - :doc:`Mac OS X <dev-setup-osx>`
+  - :doc:`macOS <dev-setup-osx>`
   - :doc:`Archlinux <dev-setup-archlinux>`
   - :doc:`Windows <dev-setup-windows>`
 

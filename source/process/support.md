@@ -25,6 +25,56 @@ Typically located in `/opt/mattermost/logs`.
 #### Are you running Mattermost in a container and/or using container orchestration?
 E.g.: Docker and Kubernetes, Docker and Cloud Foundry
 
+## Mattermost Is Not Working / The Server Keeps Dying
+
+Questions to ask when dealing with general complaints along the lines of "Mattermost is not working"
+or "the server keeps dying". See the previous section if you have not yet established from the
+information provided by the customer that the server is the likely issue.
+
+#### Check the status of the server process
+
+Assuming the customer has followed our Linux setup guide, there will be a systemd service called
+`mattermost.service` on their server. You can check the status of this process with:
+
+```
+sudo systemctl status mattermost.service
+```
+
+If the service is not running, and the status is not `failed`, instruct them to run:
+
+```
+sudo systemctl enable mattermost.service
+sudo systemctl start mattermost.service
+```
+
+#### Mattermost is not running after a reboot
+
+Many people miss the step in the setup guide that enables the systemd unit file for Mattermost.
+Rectify this with the following commands, and ask the customer to reboot to verify it is working.
+
+```
+sudo systemctl enable mattermost.service
+sudo systemctl start mattermost.service
+```
+
+#### Check the Mattermost logs
+
+Ask the customer to share the contents of `mattermost.log` from the `logs` directory of their
+Mattermost installation in order to look for any indications why Mattermost has stopped running.
+
+#### Check the system logs
+
+Often, the reason for Mattermost being reported as "randomly dying" is running out of memory. Ask
+the customer to send the results of the following command to inspect for evidence of OOM.
+
+```
+sudo journalctl -u mattermost.service
+```
+
+If the OOM killer is the problem, suggest they use a machine with more RAM. If they already have
+plenty of RAM for the load they are experiencing, this may indicate a bug in the Mattermost server.
+
+
 ## Database Issues
 
 Questions to ask when providing support for database issues.
@@ -61,6 +111,7 @@ Typically found in `/etc/nginx/nginx.conf` and `/etc/nginx/sites-available/matte
 #### Can you send us a snippet of your Nginx error logs around the time of the incident?
 Typically found in `/var/log/nginx/error.log`
 
+
 ## LDAP Issues
 
 #### Attach your LDAP settings from config.json
@@ -89,3 +140,39 @@ Many LDAP servers have an upper limit on the number of users returned. So they m
 #### Send your proxy configuration if you are using one.
 
 #### Have you followed one of the setup guides?
+
+## GitLab Issues
+
+#### General Questions
+
+1. Have they set up Mattermost on its own, or are they using GitLab Omnibus?
+2. If using GitLab Omnibus, what version of it do they have?
+3. If using GitLab Omnibus, Can they send us the Mattermost section of their gitlab.rb (found in `/etc/gitlab/gitlab.rb`) and their config.json (found in `/var/opt/gitlab/mattermost/config.json`)?
+
+#### Connection issues
+
+1. If they try to access Mattermost and receive a "took too long to respond" error page, they should check to confirm that their `mattermost_external_url` is set correctly in their gitlab.rb. Then, they should run `gitlab-ctl reconfigure`.
+2. If they try to access Mattermost and receive a 502 error, their `mattermost_external_url` is set correctly, but their Mattermost instance does not appear to be running. They should then:
+    1. Run `gitlab-ctl status mattermost` to see if Mattermost is running.
+    2. Check the logs to see if something is preventing Mattermost from starting. They can do this by running `gitlab-ctl tail mattermost` and using `gitlab-ctl restart mattermost` to attempt to start Mattermost.
+
+#### Login issues
+
+1. Are they seeing any error messages when they try to log in? If so, what error messages are they seeing, and can they send us a screenshot?
+2. Does anything appear in the Mattermost logs when they try to log in? They can see these by running `gitlab-ctl tail mattermost`.
+
+#### Other debugging information
+
+Useful commands (may need to be run with sudo):
+- `gitlab-ctl reconfigure` - Update config.json and other configuration files, then restart all services (including Mattermost).
+- `gitlab-ctl <stop/start/restart> mattermost` - Stop/start/restart Mattermost.
+- `gitlab-ctl status mattermost` - Check if Mattermost is running. The message printed will start with `run` if it's running or `down` if it's not.
+- `gitlab-ctl tail mattermost` - Watch all Mattermost log files. Press Ctrl+C to exit.
+- `gitlab-ctl <stop/start/restart/status/tail> <nginx/postgresql/redis/etc>` - Control, view status, or view logs of a different service.
+- `sudo -u gitlab-psql /opt/gitlab/embedded/bin/psql --port 5432 -h /var/opt/gitlab/postgresql -d mattermost_production` - Access the embedded Mattermost database
+
+File locations:
+- Configuration files are located at `/etc/gitlab/gitlab.rb` and `/var/opt/gitlab/mattermost/config.json`.
+- Log files are located in `/var/log/gitlab`. Mattermost's current logs in particular are in `/var/log/gitlab/mattermost`. The current log is named `current` with older ones being named `mattermost.log` or `mattermost.logmattermost.log`.
+- The default data directory is `/var/opt/gitlab/mattermost/data`.
+- Other Mattermost resources (i18n, email templates, webapp code, etc) are located in `/opt/gitlab/embedded/service/mattermost`.

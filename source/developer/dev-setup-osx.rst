@@ -1,6 +1,6 @@
 .. _dev-setup-osx:
 
-Installing Developer Components on Mac OS X
+Installing Developer Components on macOS
 ===========================================
 
 Set up your development environment for building, running, and testing Mattermost.
@@ -15,15 +15,15 @@ Set up your development environment for building, running, and testing Mattermos
 
 2. Download and install Brew, which you'll use for installing dependencies. Follow the Brew installation instructions at https://brew.sh/
 
-3. Install Node.js, Yarn, libpng, and Go:
+3. Install Node.js, NPM (included with Node.js), libpng, and Go:
 
-  ``brew install node yarn libpng go``
+  ``brew install node libpng go``
 
 4. Set up your Go workspace:
 
   a. ``mkdir ~/go``
 
-  b. Add the following lines to your ``~/.bashprofile`` file:
+  b. Add the following lines to your ``~/.bash_profile`` file:
 
     .. code-block:: bash
 
@@ -34,7 +34,7 @@ Set up your development environment for building, running, and testing Mattermos
 
   c. Reload your bash configuration.
 
-    ``source ~/.bashprofile``
+    ``source ~/.bash_profile``
 
 5. Fork Mattermost server on GitHub from https://github.com/mattermost/mattermost-server.
 

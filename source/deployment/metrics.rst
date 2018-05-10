@@ -165,6 +165,11 @@ Process Metrics:
     - ``mattermost_process_start_time_seconds``: Start time of the process since unix epoch in seconds.
     - ``mattermost_process_virtual_memory_bytes``: Virtual memory size in bytes.
 
+Search Metrics:
+
+    - ``mattermost_search_posts_searches_duration_seconds``:  The total duration, in seconds, of search query requests.
+    - ``mattermost_search_posts_searches_total``: The total number of search query requests.
+
 WebSocket Metrics:
 
     - ``mattermost_websocket_broadcasts_total``: The total number of WebSocket broadcasts sent by type.

@@ -148,6 +148,21 @@ A sample configuration for NGINX is provided below. It assumes that you have two
       server {
           server_name mattermost.example.com;
 
+          location ~ /api/v[0-9]+/(users/)?websocket$ {
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "upgrade";
+                client_max_body_size 50M;
+                proxy_set_header Host $http_host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+                proxy_set_header X-Frame-Options SAMEORIGIN;
+                proxy_buffers 256 16k;
+                proxy_buffer_size 16k;
+                proxy_read_timeout 600s;
+                proxy_pass http://backend;
+          }
+
           location / {
                 client_max_body_size 50M;
                 proxy_set_header Upgrade $http_upgrade;
@@ -196,6 +211,21 @@ To configure a multi-database Mattermost server:
 
 1. Update the ``DataSource`` setting in ``config.json`` with a connection string to your master database server. The connection string is based on the database type set in ``DriverName``, either ``postgres`` or ``mysql``.
 2. Update the ``DataSourceReplicas`` setting in ``config.json`` with a series of connection strings to your database read replica servers in the format ``["readreplica1", "readreplica2"]``. Each connection should also be compatible with the ``DriverName`` setting.
+
+Here's an example SqlSettings block for one master and two read replicas:
+
+  "SqlSettings": {
+        "DriverName": "mysql",
+        "DataSource": "master_user:master_password@tcp(master.server)/mattermost?charset=utf8mb4,utf8\u0026readTimeout=30s\u0026writeTimeout=30s",
+        "DataSourceReplicas": ["slave_user:slave_password@tcp(replica1.server)/mattermost?charset=utf8mb4,utf8\u0026readTimeout=30s\u0026writeTimeout=30s","slave_user:slave_password@tcp(replica2.server)/mattermost?charset=utf8mb4,utf8\u0026readTimeout=30s\u0026writeTimeout=30s"],
+        "DataSourceSearchReplicas": [],
+        "MaxIdleConns": 20,
+        "MaxOpenConns": 300,
+        "Trace": false,
+        "AtRestEncryptKey": "",
+        "QueryTimeout": 30
+    }  
+
 
 The new settings can be applied by either stopping and starting the server, or by loading the configuration settings as described in the next section.
 

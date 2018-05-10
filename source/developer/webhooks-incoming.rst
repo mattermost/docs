@@ -32,13 +32,15 @@ Let's learn how to create a simple incoming webhook that posts the following mes
 
 .. code-block:: text
 
-  curl -i -X POST -d 'payload={"text": "Hello, this is some text\nThis is more text. :tada:"}' http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
+  curl -i -X POST -H 'Content-Type: application/json' -d '{"text": "Hello, this is some text\nThis is more text. :tada:"}' http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
+  # or
+  curl -i -X POST --data-urlencode 'payload={"text": "Hello, this is some text\nThis is more text. :tada:"}' http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
 
-If you're running cURL on Windows, you need to wrap the payload with double quotes (``"``) instead of single quotes (``'``). Moreover, ensure inner double quotes are escaped with a backslash and that colons have no spaces. Here's an example payload on Windows:
+If you're running cURL on Windows ensure inner double quotes are escaped with a backslash. Here's an example payload on Windows:
 
 .. code-block:: text
 
-  curl -i -X POST -d "payload={\"text\":\"Hello, this is some text\nThis is more text. :tada:\"}" http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
+  curl -i -X POST -H 'Content-Type: application/json' -d '{\"text\": \"Hello, this is some text\nThis is more text. :tada:\"}' http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
 
 Parameters and Formatting
 --------------------------
@@ -87,6 +89,9 @@ To send a message to a direct message channel, add an "@" symbol followed by the
 
   payload={"channel": "@username", "text": "Hello, this is some text\nThis is more text. :tada:"}
 
+.. note::
+  Direct messages sent via webhooks will appear to come from the user who created the webhook. So if you create a webhook with the user ``alice`` and send a direct message to ``bob`` using a webhook it will show up as a direct message from ``alice`` to ``bob`` regardless of other settings such as username.
+
 Override the username
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -103,8 +108,8 @@ For example, to send the message as a ``webhook-bot``, use the following payload
 
 To prevent malicious users from trying to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`_ a *BOT* indicator appears next to posts coming from webhooks regardless of what username is specified.
 
-  .. note::
-    `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`_ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator to do so. If not enabled, the username is set to `webhook`.
+.. note::
+  `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`_ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator to do so. If not enabled, the username is set to `webhook`.
 
 Override the profile picture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -117,13 +122,13 @@ For example, you can use the following payload to override the profile picture t
 
   payload={"icon_url": "http://example.com/somecoolimage.jpg", "text": "Hello, this is some text\nThis is more text. :tada:"}
 
-  .. note::
-    `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`_ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator to do so. If not enabled, the icon of the creator of the webhook URL is used to post messages.
+.. note::
+  `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`_ must be set to `true` in `config.json` to override profile picture icons. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator to do so. If not enabled, the icon of the creator of the webhook URL is used to post messages.
 
 Mention notifications
 ~~~~~~~~~~~~~~~~~~~~~~
 
-You can trigger mention notifications with your incoming webhook message. To trigger a mention, include *@username* in the `text` parameter of the JSON payload.
+You can trigger mention notifications with your incoming webhook message. To trigger a mention, include *@username* or *<userid>* in the `text` parameter of the JSON payload.
 
 Channels can be mentioned by including *@channel* or *<!channel>*. For example:
 
@@ -134,7 +139,7 @@ Channels can be mentioned by including *@channel* or *<!channel>*. For example:
 Markdown formatting
 ~~~~~~~~~~~~~~~~~~~~
 
-A rich range of formatting unavailable in Slack is made possible through :doc:`markdown support <../help/messaging/formatting-text>` in Mattermost, including headings, formatted fonts, tables, inline images and other options supported by Mattermost Markdown. All of these options are also supported by incoming webhooks.
+A rich range of formatting is made possible through :doc:`markdown support <../help/messaging/formatting-text>` in Mattermost, including headings, formatted fonts, tables, inline images and other options supported by Mattermost markdown. All of these options are also supported by incoming webhooks.
 
 For example, to create a message with a heading, and an italicized text on the next line, use the following payload. 
 
@@ -147,6 +152,15 @@ For example, to create a message with a heading, and an italicized text on the n
 
 Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` and :doc:`interactive message buttons <interactive-message-buttons>` in the JSON payload.
 
+Custom post type
+~~~~~~~~~~~~~~~~~~
+
+You can specify a custom post type when sending a webhook message, for use by `plugins <about.mattermost.com/default-plugins>`_. To set the type, use the `type` parameter on the JSON payload.
+
+.. code-block:: text
+
+  payload={"username": "webhook-bot", "text": "Hello, this is some text\nThis is more text. :tada:", "type": "custom_type_here"}
+
 Tips and Best Practices
 ------------------------
 
@@ -156,7 +170,7 @@ Tips and Best Practices
 
 3. You can restrict who can create incoming webhooks in `System Console > Integrations > Custom Integrations <https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins>`_.
 
-4. Mattermost incoming webhooks are Slack-compatible. You can copy-and-paste code used for a Slack incoming webhook to create Mattermost integrations. Mattermost `automatically translates the Slack's proprietary JSON payload format <../developer/webhooks-incoming#translate-slacks-proprietary-data-format-to-mattermost>`_.
+4. Mattermost incoming webhooks are Slack-compatible. You can copy-and-paste code used for a Slack incoming webhook to create Mattermost integrations. Mattermost `automatically translates the Slack's proprietary JSON payload format <../developer/webhooks-incoming#translate-slacks-data-format-to-mattermost>`_.
 
 5. The external application may be written in any programming language as long as it supports sending an HTTP POST request in the required JSON format to a specified Mattermost URL.
 
@@ -178,8 +192,8 @@ Slack Compatibility
 
 Mattermost makes it easy to migrate integrations written for Slack to Mattermost. 
 
-Translate Slack's proprietary data format to Mattermost
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Translate Slack's data format to Mattermost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost automatically translates the data coming from Slack:
 
@@ -206,7 +220,7 @@ Known Slack compatibility issues
 
 1. Using ``icon_emoji`` to override the username is not supported.
 2. Referencing  channels using <#CHANNEL_ID> does not link to the channel.
-3. ``<!here>``, ``<!everyone>``, and ``<!group>`` are not supported.
+3. ``<!everyone>`` and ``<!group>`` are not supported.
 4. Parameters "mrkdwn", "parse", and "link_names" are not supported. Mattermost converts Markdown by default and automatically links @mentions.
 5. Bold formatting as ``*bold*`` is not supported (must be done as ``**bold**``).
 6. Webhooks cannot direct message the user who created the webhook.
@@ -226,3 +240,23 @@ Some common error messages include:
   2. You are using single quotes to wrap the ``-d`` data, ``-d 'payload={"Hello":"test"}'``
 
 If your integration prints the JSON payload data instead of rendering the generated message, make sure your integration is returning the ``application/json`` content-type.
+
+
+
+Frequently Asked Questions
+----------------------------
+
+How do I send a webhook post to a direct message channel?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To send a message to a direct message channel, add an "@" symbol followed by the username to the channel parameter. You can add your own username to send the webhook posts to a direct message channel with yourself.
+
+.. code-block:: text
+
+  payload={"channel": "@username", "text": "Hello, this is some text\nThis is more text. :tada:"}
+
+This will send a message from the account that has set up the incoming webhook to the username after the "@" symbol. To send a message to a different direct message channel between two other users, you can specify the channel with the user IDs for the users separated with two underscore (_) symbols. To find the user ID you can `use the ``platform`` command <https://docs.mattermost.com/administration/command-line-tools.html#platform-user-search>`
+
+.. code-block:: text
+
+  payload={"channel": "6w41z1q367dujfaxr1nrykr5oc__94dzjnkd8igafdraw66syi1cde", "text": "Hello, this is some text\nThis is more text. :tada:"}

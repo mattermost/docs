@@ -12,4 +12,5 @@ Overviews of features, security, deployment, integrations and authentication.
    /deployment/deployment*
    /overview/integrations*
    /overview/auth*
+   /overview/compliance*
    /overview/faq*

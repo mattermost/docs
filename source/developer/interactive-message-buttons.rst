@@ -1,7 +1,7 @@
 .. _interactive-message-buttons:
 
-Interactive Message Buttons (Beta)
-===================================
+Interactive Message Buttons
+============================
 
 Mattermost supports interactive message buttons for `incoming <https://docs.mattermost.com/developer/webhooks-incoming.html>`_ and `outgoing webhooks <https://docs.mattermost.com/developer/webhooks-outgoing.html>`_, and for `custom slash commands <https://docs.mattermost.com/developer/slash-commands.html>`_ via actions. They help make your integrations richer by completing common tasks inside Mattermost conversations, increasing user engagement and productivity.
 
@@ -183,3 +183,14 @@ Message buttons don't show up for slash commands
 Make sure the `response type <https://docs.mattermost.com/developer/slash-commands.html#message-type>`_ of your slash command is set to ``in_channel``, not ``ephemeral``.
 
 Ephemeral messages do not have a state, and therefore do not support interactive message buttons at this time.
+
+Message button triggers no action and returns a 400 error
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+It is likely for one of three reasons:
+
+1. Mattermost wasn't able to connect to the integration. If the integration is on your internal infrastructure, it'll need to be whitelisted (see `"AllowedUntrustedInternalConnections" config.json setting <https://docs.mattermost.com/administration/config-settings.html#allow-untrusted-internal-connections-to>`_). The log will include the text ``err=address forbidden`` in the error message.
+
+2. The integration didn't return HTTP status 200. The log will include the text ``status=XXX`` in the error message.
+
+3. The integration didn't return a valid JSON response. The log will include the text ``err=some json error message`` in the error message.

@@ -99,6 +99,8 @@ Desktop Notifications
 
 Desktop notifications appear in the corner of your main monitor when there is activity in Mattermost.
 
+When `Desktop App <https://about.mattermost.com/download/#mattermostApps>`_ notifications are set to "Only for mentions and direct messages", an empty red circle is displayed over the upper right corner of the Mattermost dock icon when any message without an at-mention is received. A solid red circle with a post count is displayed when a message with an at-mention is received.
+
 Send Desktop Notifications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -131,7 +133,7 @@ If you are actively viewing a channel (public, private, or direct message) on de
 Trigger Mobile Push Notifications When
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can also choose when to send push notifications depending on your status. By default, push notifications are sent if your status is "Online, away or offline". If "Send Mobile Push Notifications" is set as "Never", this setting is hidden. If your System Administrator has not set up push notifications, this setting will be disabled.
+You can also choose when to send push notifications depending on your status. By default, push notifications are sent if your status is "Away or offline". If "Send Mobile Push Notifications" is set as "Never", this setting is hidden. If your System Administrator has not set up push notifications, this setting will be disabled.
 
 Words That Trigger Mentions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -180,6 +182,16 @@ Teammate Name Display
 
 Configure how names are displayed in Mattermost: nickname, username or full name.
 
+Timezone
+~~~~~~~~~~~~~~~~~~~~~
+
+Select the timezone used for timestamps in the user interface and email notifications. The setting `must first be enabled by the System Admin <https://docs.mattermost.com/administration/config-settings.html#timezone>`_ by replacing ``false`` with ``true`` in config.json.
+
+Website Link Previews
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+When available, the first web link in a message will show a preview of the website content below the message. This `setting must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#link-previews>`_.
+
 Link Previews
 ~~~~~~~~~~~~~
 
@@ -215,10 +227,21 @@ Select what language Mattermost displays in the user interface. Options include:
 - 中文 (繁體) - Traditional Chinese
 - 日本語 - Japanese
 
+Sidebar
+--------
+
+Automatically close direct messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Hide Direct Message conversations with no activity for 7 days. These conversations can be reopened with the “+” button in the sidebar or by using the Channel Switcher (CTRL+K). This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental>`_.
+
+Group unreads channels
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+If enabled, this feature groups unread channels at the top of the channel sidebar. This setting is experimental and can be disabled from **Account Settings** -> **Sidebar** -> **Group Unreads Channels**. The setting `must first be enabled by the System Admin <https://docs.mattermost.com/administration/config-settings.html#group-unread-channels-experimental>`_, by replacing ``disabled`` with either ``default_off`` or ``default_on`` in config.json.
+
 Advanced
 --------
 
-Setting to configure when messages are sent.
+Settings to configure when messages are sent.
 
 Send Messages on CTRL+ENTER
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

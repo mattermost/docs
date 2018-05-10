@@ -76,8 +76,7 @@ Amazon SES
 ^^^^^^^^^^
 
 -  Set **SMTP Username** to **[YOUR_SMTP_USERNAME]**
--  Set **SMTP Password** to
-   **[YOUR_SMTP_PASSWORD]**
+-  Set **SMTP Password** to **[YOUR_SMTP_PASSWORD]**
 -  Set **SMTP Server** to **email-smtp.us-east-1.amazonaws.com**
 -  Set **SMTP Port** to **465**
 -  Set **Connection Security** to **TLS**
@@ -110,6 +109,7 @@ Hotmail
 -  Set **SMTP Server** to **smtp-mail.outlook.com**
 -  Set **SMTP Port** to **587**
 -  Set **Connection Security** to **STARTTLS**
+
 
 Troubleshooting SMTP
 ~~~~~~~~~~~~~~~~~~~~
