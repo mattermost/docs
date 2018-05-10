@@ -739,22 +739,6 @@ platform user deleteall
 
           --confirm   Confirm you really want to delete the user and a DB backup has been performed.
 
-platform user email
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Description
-    Set a user's email.
-
-  Format
-    .. code-block:: none
-
-       platform user email {user} {new email}
-
-  Example
-    .. code-block:: none
-
-      sudo ./platform user email user@example.com user@example.com
-
 platform user invite
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
