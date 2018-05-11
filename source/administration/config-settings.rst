@@ -8,13 +8,13 @@ The default location of ``config.json`` is in the ``mattermost/config`` director
 **Environment Variables**
 Starting in Mattermost version 3.8, you can use environment variables to manage the configuration. Environment variables override settings in ``config.json``. If a change to a setting in ``config.json`` requires a restart for it to take effect, then changes to the corresponding environment variable also require a server restart.
 
-The name of the environment variable for any setting can be derived from the name of that setting in ``config.json``.
-
-For example, to derive the name of the Site URL setting:
+The name of the environment variable for any setting can be derived from the name of that setting in ``config.json``. For example, to derive the name of the Site URL setting:
 
 1. Find the setting in ``config.json``. In this case, *ServiceSettings.SiteURL*.
 2. Add ``MM_`` to the beginning and convert all characters to uppercase and replace the ``.`` with ``_``. For example, *MM_SERVICESETTINGS_SITEURL*.
-3. The setting becomes ``export MM_SERVICESETTINGS_SITEURL="http://example.com"``
+3. The setting becomes ``export MM_SERVICESETTINGS_SITEURL="http://example.com"``.
+
+Finally, if a setting is configured through an environment variable, modifying it in the System Console is disabled.
 
 For any setting that is not set in ``config.json`` or in environment variables, the Mattermost server uses the default value as documented here.
 
@@ -636,12 +636,24 @@ Typically set to true in production. When true, logged events are written to the
 
 Changing this setting requires a server restart before taking effect.
 
-**True**:  Log files are written to files specified in **FileLocation**.
+**True**: Log files are written to files specified in **FileLocation**.
 
 **False**: Log files are not written.
 
 +----------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableFile": true`` with options ``true`` and ``false`` for above settings respectively.  |
++----------------------------------------------------------------------------------------------------------------------------------------+
+
+Output console logs as JSON
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Typically set to true in production. When true, logged events are written in a machine readable JSON format. Otherwise they are printed as plain text. Changing this setting requires a server restart before taking effect.
+
+**True**:  Logged events are written in a machine readable JSON format.
+
+**False**: Logged events are written in plaint text.
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ConsoleJson": true`` with options ``true`` and ``false`` for above settings respectively. |
 +----------------------------------------------------------------------------------------------------------------------------------------+
 
 File Log Level
@@ -668,34 +680,17 @@ Changing this setting requires a server restart before taking effect.
 | This feature's ``config.json`` setting is ``"FileLocation": ""`` with string input.                                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-File Log Format
+Output file logs as JSON
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Typically set to true in production. When true, logged events are written in a machine readable JSON format. Otherwise they are printed as plain text. Changing this setting requires a server restart before taking effect.
 
-Format of log message output. If blank, FileFormat = "[%D %T] [%L] (%S) %M", where:
+**True**: Logged events are written in a machine readable JSON format.
 
-.. list-table::
-   :widths: 20 80
+**False**: Logged events are written in plain text.
 
-   * - %T
-     - Time (15:04:05 MST)
-   * - %t
-     - Time (15:04)
-   * - %D
-     - Date (2006/01/02)
-   * - %d
-     - Date (01/02/06)
-   * - %L
-     - Level (FNST, FINE, DEBG, TRAC, WARN, EROR, CRIT)
-   * - %S
-     - Source
-   * - %M
-     - Message
-
-Changing this setting requires a server restart before taking effect.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileFormat": ""`` with string input.                                                                                    |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileJson": true`` with options ``true`` and ``false`` for above settings respectively.    |
++----------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Webhook Debugging
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1894,9 +1889,6 @@ Enable Mattermost WebRTC
 **True**: Mattermost will allow making one-on-one video calls on Chrome, Firefox and `Mattermost Desktop Apps <https://about.mattermost.com/download/#mattermostApps>`_ on a server running in SSL mode.
 
 **False**: Mattermost doesn't allow one-on-one video calls.
-
-.. note::
-  To enable the Mattermost WebRTC service, the System Administrator agrees to the `Terms of Service <https://about.mattermost.com/webrtc-terms/>`_ and `Privacy Policy <https://about.mattermost.com/webrtc-privacy/>`_.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                                   |
@@ -3577,7 +3569,7 @@ Town Square is Read-Only (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E10 and higher*
 
-**True**: Only Administrators can post in Town Square.
+**True**: Only System Admins can post in Town Square. Other members are not able to post, reply, upload files, emoji react or pin messages to Town Square, nor are able to change the channel name, header or purpose.
 
 **False**: Anyone can post in Town Square.
 

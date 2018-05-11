@@ -124,6 +124,7 @@ Cluster Metrics:
 
     - ``mattermost_cluster_cluster_request_duration_seconds``:  The total duration in seconds of the inter-node cluster requests.
     - ``mattermost_cluster_cluster_requests_total``: The total number of inter-node requests.
+    - ``mattermost_cluster_event_type_totals``: The total number of cluster requests sent for any type.
 
 Database Metrics:
 
