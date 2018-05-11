@@ -38,8 +38,15 @@ By default, plugin uploads are disabled on your server. To enable them, set **Pl
 
 Once enabled, install plugins in one of the following ways:
 
- - Go to **System Console > Plugins (Beta) > Management**, and click **Upload** to upload the plugin, or
- - Add the plugin to the directory set by **PluginSettings > Directory** in your ``config.json`` file and restart the server. Each (non-compressed) plugin must be in a folder with the same name as the plugin id you specified in ``plugin.json/plugin.yaml``. On start-up, the server automatically populates the client directory, set by **PluginSettings > ClientDirectory** in your ``config.json`` file.
+1) Through System Console UI:
+ - Log in to Mattermost as a System Admin.
+ - Navigate to **Plugins > Management** and upload the `plugin.tar.gz` you generated above.
+ - Click "Activate" under the plugin after it has uploaded.
+
+2) Through `config.json`:
+ - Extract `plugin.tar.gz` to a folder with the same name as the plugin id you specified in ``plugin.json/plugin.yaml``.
+ - Add the plugin to the directory set by **PluginSettings > Directory** in your ``config.json`` file. If none is set, defaults to `./plugins`.
+ - Restart the Mattermost server.
 
 If you run your Mattermost server in `High Availability mode <https://docs.mattermost.com/deployment/cluster.html>`_, plugins need to be uploaded on all app servers.
 
