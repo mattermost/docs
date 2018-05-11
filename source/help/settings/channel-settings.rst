@@ -64,3 +64,10 @@ Channel Name
 In the channel menu, select **Rename Channel** to change the channel name or handle. Changing the channel handle changes the channel URL. Any channel
 member can edit this setting, unless the System Administrator has
 `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-renaming-for>`__.
+
+Convert Public Channels to Private
+----------------------------------
+
+Team and System Admins have the ability to convert public channels to private channels. When a channel is converted, history and membership are preserved. Membership in a private channel is by invitation only. Publicly shared files remain accessible to anyone with the link. 
+
+Note that conversion of private channels to public channels is not supported given security concerns of sharing private channel history.
