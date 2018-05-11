@@ -23,7 +23,7 @@ Release date: 2018-05-16
 
 #### Web User Interface
  - Removed support for transparent team icons to support any sidebar theme colors and added the ability to remove team icons.
- - Added an experimental setting that automatically answers messages sent to a user who is away.
+ - Added an experimental setting that users can use to set a custom message that will be automatically sent in response to Direct Messages.
  - Added a loading animation for "Add Members" channel invite modal.
  - Made SHIFT+UP switch keyboard focus to right-hand side if it's already open to the current thread.
  - Removed an unnecessary WebRTC end user setting to avoid user errors and confusion.
@@ -81,7 +81,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Changes to Team Edition and Enterprise Edition:
 
  - Under `"TeamSettings"` in `config.json`:
-   - Added ``"ExperimentalEnableAutomaticReplies": false,`` to allow
+   - Added ``"ExperimentalEnableAutomaticReplies": false,`` to allow users to set a custom message that will be automatically sent in response to Direct Messages.
  - Under `"LogSettings"` in `config.json`:
    - Removed ``FileFormat`` and added ``""FileJson": true,`` and ``"ConsoleJson": true,`` to allow logged events to be written as a machine readable JSON format instead of the be printed as plain text.
 
