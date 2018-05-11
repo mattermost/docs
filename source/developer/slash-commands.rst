@@ -139,11 +139,6 @@ Messages with advanced formatting can be created by including an :doc:`attachmen
   
   Similarly, `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`_ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator. If not enabled, the icon of the creator of the webhook URL is used to post messages.
 
-Custom post type
-~~~~~~~~~~~~~~~~~~
-
-You can specify a custom post type when sending a webhook message, for use by `plugins <https://about.mattermost.com/default-plugins>`_. To set the type, use the `type` parameter on the JSON response.
-
 Tips and Best Practices
 ------------------------
 
