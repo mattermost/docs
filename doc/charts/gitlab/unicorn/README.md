@@ -418,6 +418,7 @@ ldap:
       host: '_your_ldap_server'
       port: 636
       uid: 'sAMAccountName'
+      bind_dn: 'cn=administrator,cn=Users,dc=domain,dc=net'
 ```
 
 Example configuration `--set` items, when using the global chart:
@@ -425,8 +426,11 @@ Example configuration `--set` items, when using the global chart:
 --set gitlab.unicorn.ldap.servers.main.label='LDAP' \
 --set gitlab.unicorn.ldap.servers.main.host='your_ldap_server' \
 --set gitlab.unicorn.ldap.servers.main.port='636' \
---set gitlab.unicorn.ldap.servers.main.uid='sAMAccountName'
+--set gitlab.unicorn.ldap.servers.main.uid='sAMAccountName' \
+--set gitlab.unicorn.ldap.servers.main.bind_dn='cn=administrator\,cn=Users\,dc=domain\,dc=net'
 ```
+
+Commas are considered [special characters](https://github.com/kubernetes/helm/blob/master/docs/using_helm.md#the-format-and-limitations-of---set) within Helm `--set` items. Be sure to escape commas in values such as `bind_dn`: `--set gitlab.unicorn.ldap.servers.main.bind_dn='cn=administrator\,cn=Users\,dc=domain\,dc=net'`
 
 #### omniauth.providers
 
