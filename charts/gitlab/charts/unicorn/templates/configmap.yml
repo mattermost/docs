@@ -135,7 +135,13 @@ data:
       gravatar:
       gitlab_ci:
       ldap:
+      {{- if not .Values.ldap.servers }}
         enabled: false
+      {{- else }}
+        enabled: true
+        servers:
+{{ toYaml .Values.ldap.servers | indent 10 }}
+      {{- end }}
       kerberos:
         enabled: false
       omniauth:

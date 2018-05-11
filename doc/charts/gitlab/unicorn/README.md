@@ -32,6 +32,7 @@ Table below contains all the possible charts configurations that can be supplied
 | workerProcesses               | Unicorn number of workers                      | 2                                                |
 | workerTimeout                 | Unicorn worker timeout                         | 60                                               |
 | metrics.enabled               | Toggle Prometheus metrics exporter             | true                                             |
+| ldap.servers                  | LDAP user authentication servers               | nil                                              |
 | omniauth.providers            | Omniauth providers                             | nil                                              |
 | railsSecrets.secret           | Secret containing rails secrets.yml            | rails-secrets                                    |
 | railsSecrets.key              | Key to contents of secrets.yml in rails secret | secrets.yml                                      |
@@ -403,9 +404,37 @@ Field `workerTimeout` is an integer specifying the number of seconds a request c
 
 By default, each pod exposes a metrics endpoint at `/-/metrics`. Metrics are only available when [GitLab Prometheus metrics](https://docs.gitlab.com/ee/administration/monitoring/prometheus/gitlab_metrics.html) are enabled in the Admin area. When metrics are enabled, annotations are added to each pod allowing a Prometheus server to discover and scrape the exposed metrics.
 
+#### ldap.servers
+
+This setting allows for the configuration of [LDAP](https://docs.gitlab.com/ee/administration/auth/ldap.html) user authentication. It is presented as a map, which will be translated into the the appropriate LDAP servers configuration in `gitlab.yml`, as with an installation from source.
+
+An example configuration snippet:
+```YAML
+ldap:
+  servers:
+    # 'main' is the GitLab 'provider ID' of this LDAP server
+    main:
+      label: 'LDAP'
+      host: '_your_ldap_server'
+      port: 636
+      uid: 'sAMAccountName'
+      bind_dn: 'cn=administrator,cn=Users,dc=domain,dc=net'
+```
+
+Example configuration `--set` items, when using the global chart:
+```
+--set gitlab.unicorn.ldap.servers.main.label='LDAP' \
+--set gitlab.unicorn.ldap.servers.main.host='your_ldap_server' \
+--set gitlab.unicorn.ldap.servers.main.port='636' \
+--set gitlab.unicorn.ldap.servers.main.uid='sAMAccountName' \
+--set gitlab.unicorn.ldap.servers.main.bind_dn='cn=administrator\,cn=Users\,dc=domain\,dc=net'
+```
+
+Commas are considered [special characters](https://github.com/kubernetes/helm/blob/master/docs/using_helm.md#the-format-and-limitations-of---set) within Helm `--set` items. Be sure to escape commas in values such as `bind_dn`: `--set gitlab.unicorn.ldap.servers.main.bind_dn='cn=administrator\,cn=Users\,dc=domain\,dc=net'`
+
 #### omniauth.providers
 
-This setting allows for the configuration of [Omniauth Providers](https://docs.gitlab.com/ee/integration/omniauth.html). It is presented as an array of maps, which will be translated into the the appropriate configuration in `gitlab.yml`, as with an instllation from source. The available selection of [Supported Providers](https://docs.gitlab.com/ee/integration/omniauth.html#supported-providers) can be found in GitLab documentation.
+This setting allows for the configuration of [Omniauth Providers](https://docs.gitlab.com/ee/integration/omniauth.html). It is presented as an array of maps, which will be translated into the the appropriate configuration in `gitlab.yml`, as with an installation from source. The available selection of [Supported Providers](https://docs.gitlab.com/ee/integration/omniauth.html#supported-providers) can be found in GitLab documentation.
 
 Required items:
 - `name`: The name to be given for this provider.
