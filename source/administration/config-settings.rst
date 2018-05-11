@@ -3577,6 +3577,17 @@ Town Square is Read-Only (Experimental)
 | This feature's ``config.json`` setting is ``"ExperimentalTownSquareIsReadOnly": false`` with options ``true`` and ``false`` for above settings respectively.                 |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable Automatic Replies (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Users can enable Automatic Replies in Account Settings > Notifications. Users set a custom message that will be automatically sent in response to Direct Messages.
+
+**False**: Disables the Automatic Direct Message Replies feature and hides it from Account Settings.
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalEnableAutomaticReplies": false`` with options ``true`` and ``false`` for above settings respectively.               |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Email Settings
 ~~~~~~~~~~~~~~
 
