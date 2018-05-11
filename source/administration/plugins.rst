@@ -34,9 +34,12 @@ Plugin Uploads
 
 Mattermost supports plugin uploads by System Admins, which allow you to customize and extend the platform that would otherwise not be available. These plugins are not pre-packaged in Mattermost, and have either been developed by the community or by a Mattermost staff member.
 
-By default, plugin uploads are disabled on your server. To enable them, set **PluginSettings > EnableUploads** to ``true`` in your ``config.json`` file.
+By default, plugin uploads are disabled on your server. To enable them, set **PluginSettings > EnableUploads** to ``true`` in your ``config.json`` file. You can disable plugin uploads anytime to control which plugins are installed on your server. This action won't disable plugins already installed on your server.
 
-You can disable plugin uploads anytime to control which plugins are installed on your server. This action won't disable plugins already installed on your server.
+Once enabled, install plugins in one of the following ways:
+
+ - Go to **System Console > Plugins (Beta) > Management**, and click **Upload** to upload the plugin, or
+ - Add the plugin to the directory set by **PluginSettings > Directory** in your ``config.json`` file and restart the server. Each (non-compressed) plugin must be in a folder with the same name as the plugin id you specified in ``plugin.json/plugin.yaml``. On start-up, the server automatically populates the client directory, set by **PluginSettings > ClientDirectory** in your ``config.json`` file.
 
 If you run your Mattermost server in `High Availability mode <https://docs.mattermost.com/deployment/cluster.html>`_, plugins need to be uploaded on all app servers.
 
