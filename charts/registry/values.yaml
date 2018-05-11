@@ -2,6 +2,7 @@ image:
   repository: registry
   tag: '2.6'
   pullPolicy: 'IfNotPresent'
+  pullSecrets: []
 service:
   name: registry
   type: ClusterIP

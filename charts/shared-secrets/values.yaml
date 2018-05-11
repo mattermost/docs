@@ -2,5 +2,6 @@ image:
   repository: registry.gitlab.com/gitlab-org/build/cng/kubectl
   tag: latest
   pullPolicy: Always
+  pullSecrets: []
 resources: {}
 env: production

@@ -7,10 +7,12 @@ images:
     repository: gcr.io/google_containers/defaultbackend
     tag: "1.4"
     pullPolicy: IfNotPresent
+    pullSecrets: []
   nginxIngress:
     repository: quay.io/kubernetes-ingress-controller/nginx-ingress-controller
     tag: "0.14.0"
     pullPolicy: IfNotPresent
+    pullSecrets: []
 service:
   name: nginx
   type: LoadBalancer

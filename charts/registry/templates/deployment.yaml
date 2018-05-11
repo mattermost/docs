@@ -30,6 +30,12 @@ spec:
               mountPath: /config
             - name: registry-server-config
               mountPath: /registry
+      {{- if .Values.image.pullSecrets }}
+      imagePullSecrets:
+      {{-   range $index, $entry := .Values.image.pullSecrets }}
+      - name: {{$entry.name}}
+      {{-   end }}
+      {{- end }}
       containers:
         - name: registry
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
