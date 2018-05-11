@@ -143,6 +143,10 @@ Reply Notifications
 
 In addition to **Words that Trigger Mentions**, this setting allows you to receive mention notifications when someone replies to a thread that you started or participated in. You are considered to start a thread when you post a message to which other members of your team reply. You are considered to participate in a thread when you post a message using the `reply button <https://docs.mattermost.com/help/getting-started/messaging-basics.html#messaging-basics>`_ in an already existing thread.
 
+Automatic Direct Message Replies
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Set a custom message that will be automatically sent in response to Direct Messages. Mentions in Public and Private Channels will not trigger the automated reply. Enabling Automatic Replies sets your status to Out of Office and disables email and push notifications. This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#automatic-direct-message-replies-experimental>`_.
+
 Display
 -------
 
