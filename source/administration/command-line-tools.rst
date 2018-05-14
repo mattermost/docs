@@ -114,6 +114,7 @@ platform
     -  `platform version`_ - Display version information
     -  `platform config`_ - Work with the configuration file
     -  `platform sampledata`_ - Sample data generation
+    -  `platform permissions`_ - Management of the permissions system
 
 platform channel
 -----------------
@@ -1016,6 +1017,35 @@ platform sampledata
           -b, --bulk string                    Optional. Path to write a JSONL bulk file instead of loading into the database.
           -w, --workers int                    How many workers to run during the import. (default 2)
 
+platform permissions
+--------------------
+
+  Description
+    Commands to manage the permissions system.
+
+  Child Commands
+    -  `platform permissions reset`_ - Reset the permissions system to its default sate.
+
+platform permissions reset
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Reset the permissions system to its default state.
+
+  Format
+    .. code-block:: none
+
+      platform permissions reset
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform permissions reset
+
+  Options
+    .. code-block:: none
+
+          --confirm   Confirm you really want to reset the permissions system and a DB backup has been performed.
 
 
 Mattermost 3.5 and earlier
