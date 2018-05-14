@@ -1030,7 +1030,7 @@ platform permissions reset
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Reset the permissions system to its default state.
+    Reset the permissions system to its default state on new installs.
 
   Format
     .. code-block:: none
