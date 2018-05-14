@@ -87,8 +87,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### API Changes
 
- - An APIv4 endpoint was added to convert a channel from public to private and to restrict this setting to ``system_admin``.
  - Support was added to REST API for sending ephemeral messages to users.
+ 
+#### RESTful API v4 Changes
+
+ - An APIv4 endpoint of ``POST /channels/{channel_id}/convert`` was added to convert a channel from public to private and to restrict this setting to ``team_admin``.
+ - An APIv4 endpoint of ``DELETE /teams/{team_id}/image`` was added to remove team icon and restrict it to ``team_admin``.
 
 ### WebSocket Event Changes
 
