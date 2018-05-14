@@ -753,7 +753,7 @@ platform user email
   Example	
     .. code-block:: none	
 	
-      sudo ./platform user email user@example.com user@example.com
+      sudo ./platform user email user@example.com newuser@example.com
 
 platform user invite
 ~~~~~~~~~~~~~~~~~~~~~~~~
